@@ -3227,9 +3227,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -3243,9 +3243,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -3281,25 +3281,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3335,25 +3335,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3443,25 +3443,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3505,9 +3505,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3605,9 +3605,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3667,9 +3667,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3713,9 +3713,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3767,9 +3767,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3829,9 +3829,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3875,25 +3875,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3983,17 +3983,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4037,17 +4037,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4099,9 +4099,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4145,17 +4145,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4207,17 +4207,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4253,25 +4253,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4307,9 +4307,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4323,9 +4323,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4361,25 +4361,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4415,25 +4415,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4469,9 +4469,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4585,9 +4585,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4639,9 +4639,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4693,17 +4693,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4747,9 +4747,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4801,17 +4801,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4847,9 +4847,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4863,9 +4863,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4901,9 +4901,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4917,9 +4917,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4963,17 +4963,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5009,9 +5009,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5025,9 +5025,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5071,17 +5071,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5117,25 +5117,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5171,17 +5171,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5233,9 +5233,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5279,9 +5279,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5295,9 +5295,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5341,9 +5341,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5387,9 +5387,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5403,9 +5403,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5441,9 +5441,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5457,9 +5457,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5495,25 +5495,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5603,9 +5603,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5619,9 +5619,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5711,9 +5711,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5766,25 +5766,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5828,9 +5828,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5882,17 +5882,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5936,17 +5936,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5982,25 +5982,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6036,25 +6036,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6152,9 +6152,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6206,17 +6206,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6414,25 +6414,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6476,9 +6476,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6522,25 +6522,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6584,17 +6584,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6638,17 +6638,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6692,9 +6692,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6746,9 +6746,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6792,9 +6792,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6847,9 +6847,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6902,25 +6902,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6956,25 +6956,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7018,9 +7018,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7072,9 +7072,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7118,9 +7118,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7180,9 +7180,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7234,9 +7234,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7288,9 +7288,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7388,9 +7388,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7404,9 +7404,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -7450,17 +7450,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -7504,9 +7504,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7558,9 +7558,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7612,9 +7612,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7712,25 +7712,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7774,9 +7774,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7820,25 +7820,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7874,9 +7874,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7928,9 +7928,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7968,25 +7968,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8030,9 +8030,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8076,9 +8076,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8092,9 +8092,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -8130,9 +8130,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8160,25 +8160,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8214,9 +8214,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8268,9 +8268,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8314,9 +8314,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8352,9 +8352,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8406,25 +8406,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8460,25 +8460,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8514,9 +8514,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8560,9 +8560,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8682,17 +8682,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -8736,25 +8736,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8774,25 +8774,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8812,25 +8812,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8866,25 +8866,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8920,9 +8920,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8974,9 +8974,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9028,9 +9028,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9066,17 +9066,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9120,9 +9120,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9166,9 +9166,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9182,9 +9182,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9212,9 +9212,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9266,9 +9266,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9282,9 +9282,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9320,9 +9320,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9336,9 +9336,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9358,25 +9358,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9412,17 +9412,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9450,9 +9450,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9466,9 +9466,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9496,9 +9496,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9526,9 +9526,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9542,9 +9542,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9588,9 +9588,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9642,9 +9642,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9696,9 +9696,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9750,9 +9750,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9796,9 +9796,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9842,9 +9842,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9858,9 +9858,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9934,9 +9934,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9973,25 +9973,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10019,17 +10019,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10049,25 +10049,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10087,25 +10087,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10141,9 +10141,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10195,9 +10195,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10249,9 +10249,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10287,17 +10287,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10387,9 +10387,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10417,25 +10417,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10479,9 +10479,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10525,25 +10525,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10579,9 +10579,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10633,9 +10633,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10671,9 +10671,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10726,25 +10726,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10823,9 +10823,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-repair-missed-call-recovery': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10839,9 +10839,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11060,9 +11060,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -11127,17 +11127,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11248,17 +11248,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11294,9 +11294,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'real-estate-inquiry-routing': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -11310,9 +11310,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11437,9 +11437,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -11537,9 +11537,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-review-generation-automation': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -11553,9 +11553,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11599,17 +11599,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11653,17 +11653,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',

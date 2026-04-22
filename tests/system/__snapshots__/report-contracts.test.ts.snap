@@ -826,7 +826,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 2,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 9,
+            "industryCount": 12,
             "isOrphan": false,
             "nodes": [
               {
@@ -885,7 +885,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -905,7 +904,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For repair shops, mobile mechanics, body shops, and detailers where calls get missed, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.",
+                "description": "For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -944,7 +943,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Automotive Service Businesses — Stop Losing Calls, Quotes, and Reviews | MindWP",
+                "title": "Automotive Service Shops — Stop Losing Work At The Front Desk | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -961,7 +960,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -998,7 +997,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -1014,7 +1013,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -1051,7 +1050,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -1067,7 +1066,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For plumbers, electricians, roofers, HVAC, and landscapers where urgent calls go to whoever picked up first, quoted jobs go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.",
+                "description": "For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -1107,7 +1106,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Home Service Trades — Stop Losing Calls, Quotes & Reviews | MindWP",
+                "title": "Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -1124,7 +1123,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For roofers who lose work in the storm-morning surge and watch big re-roof quotes go quiet for a fortnight. Triage the inbox, chase the big quotes, and get reviews onto Maps.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -1161,7 +1160,113 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP",
+                "title": "Roofing Companies — Catch The Storm Surge, Close The Re-Roof | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/hvac-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, annual service reminders, and install quote chase.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:hvac-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/hvac-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "hvac-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "HVAC Firms — Catch The Cold Snap, Refill The Service Diary | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/plumbing-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For plumbers whose burst-pipe calls go to whoever picked up first and whose bathroom refit quotes go silent for ten days. After-hours triage, big-ticket chase, reviews on Maps.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:plumbing-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/plumbing-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "plumbing-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -1177,7 +1282,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes go cold over a long weekend. Fault triage, big-ticket chase, reviews on Maps.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -1214,7 +1319,60 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Electrical Firms — Catch The Fault Call, Close The EV Quote | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/landscaping-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For landscapers whose first warm weekend triples the inbox and whose big patio quotes drift. Surge handling, refit quote chase, lapsed-regular nudges before the season starts.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:landscaping-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/landscaping-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "landscaping-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "Landscapers — Catch The Spring Surge, Close The Refit Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -1526,7 +1684,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -1592,7 +1749,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "why-auto-repair-shops-lose-phone-leads",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -1718,7 +1874,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -1814,7 +1969,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -1880,7 +2034,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "why-salons-need-lead-handling-systems",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2088,6 +2241,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -2145,7 +2299,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "hvac-lead-handling-example",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2215,7 +2368,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "lead-automation-framework",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2298,7 +2450,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -2370,7 +2521,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -2423,6 +2573,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2660,7 +2811,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 6,
             "serviceCount": 1,
-            "supportCount": 22,
+            "supportCount": 25,
             "supportTypes": [
               "resource",
               "service",
@@ -2676,7 +2827,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 1,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 8,
+            "industryCount": 10,
             "isOrphan": false,
             "nodes": [
               {
@@ -2702,7 +2853,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "missed-call-recovery-system",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2803,7 +2953,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -2824,7 +2973,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For repair shops, mobile mechanics, body shops, and detailers where calls get missed, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.",
+                "description": "For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -2863,7 +3012,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Automotive Service Businesses — Stop Losing Calls, Quotes, and Reviews | MindWP",
+                "title": "Automotive Service Shops — Stop Losing Work At The Front Desk | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2880,7 +3029,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -2917,7 +3066,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2933,7 +3082,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -2970,7 +3119,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -2986,7 +3135,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For plumbers, electricians, roofers, HVAC, and landscapers where urgent calls go to whoever picked up first, quoted jobs go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.",
+                "description": "For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -3026,7 +3175,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Home Service Trades — Stop Losing Calls, Quotes & Reviews | MindWP",
+                "title": "Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -3043,7 +3192,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For roofers who lose work in the storm-morning surge and watch big re-roof quotes go quiet for a fortnight. Triage the inbox, chase the big quotes, and get reviews onto Maps.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -3080,7 +3229,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP",
+                "title": "Roofing Companies — Catch The Storm Surge, Close The Re-Roof | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -3096,7 +3245,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, annual service reminders, and install quote chase.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -3133,7 +3282,113 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP",
+                "title": "HVAC Firms — Catch The Cold Snap, Refill The Service Diary | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/plumbing-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For plumbers whose burst-pipe calls go to whoever picked up first and whose bathroom refit quotes go silent for ten days. After-hours triage, big-ticket chase, reviews on Maps.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:plumbing-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/plumbing-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "plumbing-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/electrical-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes go cold over a long weekend. Fault triage, big-ticket chase, reviews on Maps.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:electrical-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/electrical-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "electrical-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "Electrical Firms — Catch The Fault Call, Close The EV Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -3360,7 +3615,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -3428,7 +3682,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "why-auto-repair-missed-calls-lose-booked-work",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -3556,7 +3809,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -3624,7 +3876,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "why-roofing-missed-calls-cost-emergency-jobs",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -3752,7 +4003,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -3815,7 +4065,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "missed-call-recovery-for-auto-repair",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -3900,7 +4149,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -3963,7 +4211,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "missed-call-recovery-for-roofing",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -4048,7 +4295,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -4120,7 +4366,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -4171,7 +4416,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "auto-repair-missed-call-recovery",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -4286,7 +4530,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -4340,7 +4583,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "hvac-seasonal-lead-surge-handling",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -4455,7 +4697,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -4478,7 +4719,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 5,
             "serviceCount": 2,
-            "supportCount": 20,
+            "supportCount": 22,
             "supportTypes": [
               "resource",
               "service",
@@ -4520,7 +4761,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "missed-call-recovery-system",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -4621,7 +4861,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -4642,7 +4881,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -4679,7 +4918,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP",
+                "title": "Body Shops — Win The Photo Race After A Bump | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -5029,7 +5268,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -5106,6 +5344,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -5234,7 +5473,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -5311,6 +5549,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "why-slow-lead-response-is-killing-automotive-businesses",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -5456,6 +5695,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -5510,7 +5750,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "auto-reply-funnel",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -5605,6 +5844,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -5671,7 +5911,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -5724,7 +5963,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "auto-repair-missed-call-recovery",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -5839,7 +6077,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -5894,7 +6131,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "real-estate-inquiry-routing",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6010,7 +6246,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -6049,7 +6284,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 1,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 24,
+            "industryCount": 25,
             "isOrphan": false,
             "nodes": [
               {
@@ -6141,7 +6376,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For repair shops, mobile mechanics, body shops, and detailers where calls get missed, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.",
+                "description": "For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6180,7 +6415,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Automotive Service Businesses — Stop Losing Calls, Quotes, and Reviews | MindWP",
+                "title": "Automotive Service Shops — Stop Losing Work At The Front Desk | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6197,7 +6432,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6234,7 +6469,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6250,7 +6485,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6287,7 +6522,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP",
+                "title": "Body Shops — Win The Photo Race After A Bump | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6303,7 +6538,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6340,7 +6575,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Car Detailing — Stop Losing Bookings to Slow Replies | MindWP",
+                "title": "Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6356,7 +6591,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6393,7 +6628,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6409,7 +6644,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For plumbers, electricians, roofers, HVAC, and landscapers where urgent calls go to whoever picked up first, quoted jobs go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.",
+                "description": "For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6449,7 +6684,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Home Service Trades — Stop Losing Calls, Quotes & Reviews | MindWP",
+                "title": "Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6466,7 +6701,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For roofers who lose work in the storm-morning surge and watch big re-roof quotes go quiet for a fortnight. Triage the inbox, chase the big quotes, and get reviews onto Maps.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6503,7 +6738,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP",
+                "title": "Roofing Companies — Catch The Storm Surge, Close The Re-Roof | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6519,7 +6754,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, annual service reminders, and install quote chase.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6556,7 +6791,60 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP",
+                "title": "HVAC Firms — Catch The Cold Snap, Refill The Service Diary | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/plumbing-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For plumbers whose burst-pipe calls go to whoever picked up first and whose bathroom refit quotes go silent for ten days. After-hours triage, big-ticket chase, reviews on Maps.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:plumbing-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/plumbing-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "plumbing-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6572,7 +6860,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes go cold over a long weekend. Fault triage, big-ticket chase, reviews on Maps.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6609,7 +6897,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
+                "title": "Electrical Firms — Catch The Fault Call, Close The EV Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -6625,7 +6913,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For landscapers whose first warm weekend triples the inbox and whose big patio quotes drift. Surge handling, refit quote chase, lapsed-regular nudges before the season starts.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -6662,7 +6950,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP",
+                "title": "Landscapers — Catch The Spring Surge, Close The Refit Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -8840,7 +9128,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 5,
             "serviceCount": 1,
-            "supportCount": 35,
+            "supportCount": 36,
             "supportTypes": [
               "resource",
               "service",
@@ -9970,6 +10258,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -10799,6 +11088,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -10853,6 +11143,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-architecture",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -10965,6 +11256,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -11007,7 +11299,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 0,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 10,
+            "industryCount": 8,
             "isOrphan": false,
             "nodes": [
               {
@@ -11056,7 +11348,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -11093,7 +11385,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP",
+                "title": "Body Shops — Win The Photo Race After A Bump | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -11109,7 +11401,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For plumbers, electricians, roofers, HVAC, and landscapers where urgent calls go to whoever picked up first, quoted jobs go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.",
+                "description": "For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -11149,7 +11441,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Home Service Trades — Stop Losing Calls, Quotes & Reviews | MindWP",
+                "title": "Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -11157,112 +11449,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                 ],
                 "type": "industry-category",
-              },
-              {
-                "canonical": "/industries/home-services/electrical-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:electrical-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/electrical-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "electrical-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
-              },
-              {
-                "canonical": "/industries/home-services/landscaping-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:landscaping-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/landscaping-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "landscaping-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
               },
               {
                 "canonical": "/industries/local-appointment-businesses",
@@ -11808,7 +11994,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -11969,7 +12154,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "service-business-follow-up-automation-guide",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -12223,7 +12407,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 2,
             "serviceCount": 1,
-            "supportCount": 17,
+            "supportCount": 15,
             "supportTypes": [
               "resource",
               "service",
@@ -12460,7 +12644,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -12640,7 +12823,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -12704,7 +12886,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "multi-channel-lead-capture-system-for-service-businesses",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -12804,7 +12985,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -12853,7 +13033,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "auto-repair-missed-call-recovery",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -12968,7 +13147,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -13023,7 +13201,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "real-estate-inquiry-routing",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -13139,7 +13316,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -13202,7 +13378,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "unified-communication-system",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -13382,7 +13557,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -13446,7 +13620,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "lead-routing-models-for-service-companies",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -13546,7 +13719,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -13595,7 +13767,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "hvac-emergency-lead-routing",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -13679,7 +13850,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "real-estate-inquiry-routing",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -13811,6 +13981,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -13846,6 +14017,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "website-crm-integration-vs-manual-lead-handling",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -14355,7 +14527,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -14416,7 +14587,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "lead-qualification-framework-for-service-businesses",
                 "supports": [
-                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -14513,7 +14683,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -14563,6 +14732,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -16774,6 +16944,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -16809,6 +16980,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "website-crm-integration-vs-manual-lead-handling",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -17118,6 +17290,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -17227,6 +17400,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -17285,6 +17459,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "website-crm-integration-explained",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -18543,6 +18718,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -18709,7 +18885,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For repair shops, mobile mechanics, body shops, and detailers where calls get missed, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.",
+                "description": "For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -18748,7 +18924,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Automotive Service Businesses — Stop Losing Calls, Quotes, and Reviews | MindWP",
+                "title": "Automotive Service Shops — Stop Losing Work At The Front Desk | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -18765,7 +18941,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -18802,7 +18978,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Car Detailing — Stop Losing Bookings to Slow Replies | MindWP",
+                "title": "Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -20709,7 +20885,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 0,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 1,
+            "industryCount": 0,
             "isOrphan": false,
             "nodes": [
               {
@@ -20792,59 +20968,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                 ],
                 "type": "service",
-              },
-              {
-                "canonical": "/industries/home-services/plumbing-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:plumbing-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/plumbing-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "plumbing-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
               },
               {
                 "canonical": "/blog/customer-feedback-loop-for-plumbing-companies",
@@ -21249,11 +21372,10 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 1,
             "serviceCount": 1,
-            "supportCount": 4,
+            "supportCount": 3,
             "supportTypes": [
               "resource",
               "service",
-              "industry",
               "case-study",
             ],
             "topic": "feedback-loops",
@@ -24396,7 +24518,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 0,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 1,
+            "industryCount": 0,
             "isOrphan": false,
             "nodes": [
               {
@@ -24470,59 +24592,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                 ],
                 "type": "service",
-              },
-              {
-                "canonical": "/industries/home-services/landscaping-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:landscaping-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/landscaping-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "landscaping-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
               },
               {
                 "canonical": "/blog/local-service-page-architecture-for-local-businesses",
@@ -24920,11 +24989,10 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 1,
             "serviceCount": 1,
-            "supportCount": 4,
+            "supportCount": 3,
             "supportTypes": [
               "resource",
               "service",
-              "industry",
               "case-study",
             ],
             "topic": "local-service-pages",
@@ -25603,6 +25671,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -25673,6 +25742,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "revenue-visibility-for-roofing-companies",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -25785,6 +25855,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -25835,6 +25906,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -25977,6 +26049,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -26012,6 +26085,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "website-crm-integration-vs-manual-lead-handling",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -26319,6 +26393,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -26390,6 +26465,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-architecture-for-service-businesses",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -26540,6 +26616,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -26613,6 +26690,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "plumbing-crm-pipeline-for-job-management",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -26762,6 +26840,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -26835,6 +26914,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "salon-crm-pipeline-for-client-retention",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -26984,6 +27064,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -27057,6 +27138,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "why-salons-lose-clients-without-crm-pipeline",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -27175,6 +27257,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -27255,6 +27338,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -27308,6 +27392,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -27615,7 +27700,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 0,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 3,
+            "industryCount": 4,
             "isOrphan": false,
             "nodes": [
               {
@@ -27664,7 +27749,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "description": "[truncated: max depth reached]",
                   "title": "[truncated: max depth reached]",
                 },
-                "description": "For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
+                "description": "For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.",
                 "hero": {
                   "badge": "[truncated: max depth reached]",
                   "cssPrefix": "[truncated: max depth reached]",
@@ -27701,7 +27786,60 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                 ],
-                "title": "Car Detailing — Stop Losing Bookings to Slow Replies | MindWP",
+                "title": "Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP",
+                "topics": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "type": "industry-detail",
+              },
+              {
+                "canonical": "/industries/home-services/landscaping-companies",
+                "conversionGoal": "lead",
+                "conversionPriority": 90,
+                "cta": {
+                  "description": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "description": "For landscapers whose first warm weekend triples the inbox and whose big patio quotes drift. Surge handling, refit quote chase, lapsed-regular nudges before the season starts.",
+                "hero": {
+                  "badge": "[truncated: max depth reached]",
+                  "cssPrefix": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "list": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "id": "industry-detail:landscaping-companies",
+                "industries": [
+                  "[truncated: max depth reached]",
+                ],
+                "openGraph": {
+                  "description": "[truncated: max depth reached]",
+                  "images": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                  "url": "[truncated: max depth reached]",
+                },
+                "parent": "home-services",
+                "path": "/industries/home-services/landscaping-companies",
+                "robots": {
+                  "follow": "[truncated: max depth reached]",
+                  "index": "[truncated: max depth reached]",
+                },
+                "seo": {
+                  "canonical": "[truncated: max depth reached]",
+                  "description": "[truncated: max depth reached]",
+                  "keywords": "[truncated: max depth reached]",
+                  "title": "[truncated: max depth reached]",
+                },
+                "slug": "landscaping-companies",
+                "systems": [
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
+                ],
+                "title": "Landscapers — Catch The Spring Surge, Close The Refit Quote | MindWP",
                 "topics": [
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -27916,6 +28054,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -28021,6 +28160,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -28075,6 +28215,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "client-reactivation-systems",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -28221,7 +28362,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 1,
             "serviceCount": 1,
-            "supportCount": 7,
+            "supportCount": 8,
             "supportTypes": [
               "resource",
               "service",
@@ -28726,6 +28867,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -28796,6 +28938,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "tracking-salon-client-lifetime-value",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -28908,6 +29051,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -28992,115 +29136,9 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 0,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 2,
+            "industryCount": 0,
             "isOrphan": false,
             "nodes": [
-              {
-                "canonical": "/industries/home-services/hvac-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:hvac-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/hvac-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "hvac-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
-              },
-              {
-                "canonical": "/industries/home-services/plumbing-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:plumbing-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/plumbing-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "plumbing-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
-              },
               {
                 "canonical": "/blog/hvac-emergency-call-handling-mistakes",
                 "conversionGoal": "email-capture",
@@ -29410,7 +29448,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -29432,10 +29469,9 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 1,
             "serviceCount": 0,
-            "supportCount": 4,
+            "supportCount": 2,
             "supportTypes": [
               "resource",
-              "industry",
               "case-study",
             ],
             "topic": "emergency-handling",
@@ -29544,6 +29580,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -29601,6 +29638,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "tracking-salon-client-lifetime-value",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -30639,6 +30677,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -30734,6 +30773,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -30769,6 +30809,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "website-crm-integration-vs-manual-lead-handling",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -30915,6 +30956,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -30996,6 +31038,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -31054,6 +31097,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-architecture",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -31155,6 +31199,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -31235,6 +31280,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -31288,6 +31334,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -31738,6 +31785,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -31805,6 +31853,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "sales-pipeline-visibility-framework",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -31917,6 +31966,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -31966,6 +32016,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -32144,6 +32195,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -32199,6 +32251,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "building-revenue-visibility-through-crm-tracking",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -32327,6 +32380,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "crm-pipeline-visibility-transformation",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -32941,62 +32995,9 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "featureCount": 0,
             "hasInternalLinkPath": true,
             "hasSupportingPost": true,
-            "industryCount": 1,
+            "industryCount": 0,
             "isOrphan": false,
             "nodes": [
-              {
-                "canonical": "/industries/home-services/plumbing-companies",
-                "conversionGoal": "lead",
-                "conversionPriority": 90,
-                "cta": {
-                  "description": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "description": "For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.",
-                "hero": {
-                  "badge": "[truncated: max depth reached]",
-                  "cssPrefix": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "list": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "id": "industry-detail:plumbing-companies",
-                "industries": [
-                  "[truncated: max depth reached]",
-                ],
-                "openGraph": {
-                  "description": "[truncated: max depth reached]",
-                  "images": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                  "url": "[truncated: max depth reached]",
-                },
-                "parent": "home-services",
-                "path": "/industries/home-services/plumbing-companies",
-                "robots": {
-                  "follow": "[truncated: max depth reached]",
-                  "index": "[truncated: max depth reached]",
-                },
-                "seo": {
-                  "canonical": "[truncated: max depth reached]",
-                  "description": "[truncated: max depth reached]",
-                  "keywords": "[truncated: max depth reached]",
-                  "title": "[truncated: max depth reached]",
-                },
-                "slug": "plumbing-companies",
-                "systems": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "title": "Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP",
-                "topics": [
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                  "[truncated: max depth reached]",
-                ],
-                "type": "industry-detail",
-              },
               {
                 "canonical": "/blog/automotive-service-reminders-explained",
                 "conversionGoal": "email-capture",
@@ -33056,6 +33057,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                 },
                 "slug": "automotive-service-reminders-explained",
                 "supports": [
+                  "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
@@ -33170,6 +33172,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
                   "[truncated: max depth reached]",
+                  "[truncated: max depth reached]",
                 ],
                 "systems": [
                   "[truncated: max depth reached]",
@@ -33241,10 +33244,9 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "resourceCount": 1,
             "serviceCount": 0,
-            "supportCount": 3,
+            "supportCount": 2,
             "supportTypes": [
               "resource",
-              "industry",
               "case-study",
             ],
             "topic": "service-reminders",
@@ -33326,6 +33328,26 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "serviceCount": 0,
             "suggestions": [],
             "supportCount": 2,
+            "topic": "emergency-handling",
+            "validatingCaseStudyCount": 1,
+            "validatingResourceCount": 1,
+            "validationStatus": "validated",
+          },
+          {
+            "blogCount": 1,
+            "caseStudyCount": 1,
+            "classification": "core",
+            "featureCount": 0,
+            "industryCount": 0,
+            "missing": [
+              "weak-authority",
+            ],
+            "missingValidation": [],
+            "resourceCount": 1,
+            "score": 65,
+            "serviceCount": 0,
+            "suggestions": [],
+            "supportCount": 2,
             "topic": "lifetime-value",
             "validatingCaseStudyCount": 1,
             "validatingResourceCount": 1,
@@ -33351,6 +33373,26 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "validatingResourceCount": 1,
             "validationStatus": "validated",
           },
+          {
+            "blogCount": 1,
+            "caseStudyCount": 1,
+            "classification": "core",
+            "featureCount": 0,
+            "industryCount": 0,
+            "missing": [
+              "weak-authority",
+            ],
+            "missingValidation": [],
+            "resourceCount": 1,
+            "score": 65,
+            "serviceCount": 0,
+            "suggestions": [],
+            "supportCount": 2,
+            "topic": "service-reminders",
+            "validatingCaseStudyCount": 1,
+            "validatingResourceCount": 1,
+            "validationStatus": "validated",
+          },
         ],
       },
       "issues": [],
@@ -33373,7 +33415,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
       "data": {
         "clusters": [
           {
-            "avgAuthority": 362.31,
+            "avgAuthority": 362.19,
             "edgeCount": 164,
             "health": "healthy",
             "id": "topic:website-infrastructure",
@@ -33381,7 +33423,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 291.88,
+            "avgAuthority": 290.54,
             "edgeCount": 32,
             "health": "healthy",
             "id": "topic:lead-capture",
@@ -33389,7 +33431,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 297.75,
+            "avgAuthority": 297.5,
             "edgeCount": 21,
             "health": "healthy",
             "id": "topic:conversion-optimization",
@@ -33405,7 +33447,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 408,
+            "avgAuthority": 407.2,
             "edgeCount": 12,
             "health": "healthy",
             "id": "topic:service-pages",
@@ -33421,31 +33463,31 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 416.11,
-            "edgeCount": 17,
+            "avgAuthority": 449.35,
+            "edgeCount": 20,
             "health": "healthy",
             "id": "topic:client-reactivation",
-            "nodeCount": 9,
+            "nodeCount": 10,
             "type": "topic",
           },
           {
-            "avgAuthority": 541.26,
-            "edgeCount": 52,
+            "avgAuthority": 516.53,
+            "edgeCount": 44,
             "health": "healthy",
             "id": "topic:follow-up",
-            "nodeCount": 19,
+            "nodeCount": 17,
             "type": "topic",
           },
           {
-            "avgAuthority": 499.3,
-            "edgeCount": 283,
+            "avgAuthority": 521.28,
+            "edgeCount": 315,
             "health": "healthy",
             "id": "topic:missed-calls",
-            "nodeCount": 25,
+            "nodeCount": 27,
             "type": "topic",
           },
           {
-            "avgAuthority": 396.24,
+            "avgAuthority": 396.05,
             "edgeCount": 117,
             "health": "healthy",
             "id": "topic:lead-response-time",
@@ -33453,7 +33495,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 363.43,
+            "avgAuthority": 360.57,
             "edgeCount": 14,
             "health": "healthy",
             "id": "topic:lead-routing",
@@ -33461,11 +33503,11 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 477.57,
-            "edgeCount": 192,
+            "avgAuthority": 509.22,
+            "edgeCount": 217,
             "health": "healthy",
             "id": "topic:lead-management",
-            "nodeCount": 27,
+            "nodeCount": 30,
             "type": "topic",
           },
           {
@@ -33501,7 +33543,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 265.67,
+            "avgAuthority": 265,
             "edgeCount": 4,
             "health": "healthy",
             "id": "topic:authority-signals",
@@ -33509,19 +33551,19 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 445.92,
-            "edgeCount": 14,
+            "avgAuthority": 387,
+            "edgeCount": 9,
             "health": "healthy",
             "id": "topic:local-service-pages",
-            "nodeCount": 6,
+            "nodeCount": 5,
             "type": "topic",
           },
           {
-            "avgAuthority": 632.67,
-            "edgeCount": 484,
+            "avgAuthority": 638.55,
+            "edgeCount": 499,
             "health": "healthy",
             "id": "topic:review-generation",
-            "nodeCount": 40,
+            "nodeCount": 41,
             "type": "topic",
           },
           {
@@ -33541,7 +33583,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 400.5,
+            "avgAuthority": 399.5,
             "edgeCount": 6,
             "health": "healthy",
             "id": "topic:customer-feedback",
@@ -33557,11 +33599,11 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 439.75,
-            "edgeCount": 15,
+            "avgAuthority": 389.4,
+            "edgeCount": 10,
             "health": "healthy",
             "id": "topic:feedback-loops",
-            "nodeCount": 6,
+            "nodeCount": 5,
             "type": "topic",
           },
           {
@@ -33573,7 +33615,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 413.8,
+            "avgAuthority": 416.5,
             "edgeCount": 163,
             "health": "healthy",
             "id": "topic:crm-pipeline",
@@ -33581,7 +33623,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 492.39,
+            "avgAuthority": 494.39,
             "edgeCount": 32,
             "health": "healthy",
             "id": "topic:crm-integration",
@@ -33589,7 +33631,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 548.35,
+            "avgAuthority": 548.5,
             "edgeCount": 29,
             "health": "healthy",
             "id": "topic:lead-qualification",
@@ -33597,7 +33639,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 407,
+            "avgAuthority": 411.25,
             "edgeCount": 42,
             "health": "healthy",
             "id": "topic:pipeline-architecture",
@@ -33605,7 +33647,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 338,
+            "avgAuthority": 337.67,
             "edgeCount": 14,
             "health": "healthy",
             "id": "topic:systems-first-websites",
@@ -33613,7 +33655,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 639.92,
+            "avgAuthority": 640.15,
             "edgeCount": 41,
             "health": "healthy",
             "id": "topic:booking-systems",
@@ -33621,23 +33663,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 633,
-            "edgeCount": 8,
-            "health": "healthy",
-            "id": "topic:emergency-handling",
-            "nodeCount": 5,
-            "type": "topic",
-          },
-          {
-            "avgAuthority": 326,
-            "edgeCount": 1,
-            "health": "healthy",
-            "id": "topic:service-reminders",
-            "nodeCount": 4,
-            "type": "topic",
-          },
-          {
-            "avgAuthority": 487.36,
+            "avgAuthority": 488.14,
             "edgeCount": 69,
             "health": "healthy",
             "id": "topic:booking-automation",
@@ -33645,7 +33671,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 581.93,
+            "avgAuthority": 582.5,
             "edgeCount": 13,
             "health": "healthy",
             "id": "topic:no-show-reduction",
@@ -33653,7 +33679,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 574.11,
+            "avgAuthority": 576.11,
             "edgeCount": 25,
             "health": "healthy",
             "id": "topic:pipeline-visibility",
@@ -33661,7 +33687,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 313.5,
+            "avgAuthority": 317,
             "edgeCount": 3,
             "health": "healthy",
             "id": "topic:crm-visibility",
@@ -33669,7 +33695,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 380.5,
+            "avgAuthority": 207.5,
+            "edgeCount": 1,
+            "health": "healthy",
+            "id": "topic:service-reminders",
+            "nodeCount": 3,
+            "type": "topic",
+          },
+          {
+            "avgAuthority": 385,
             "edgeCount": 5,
             "health": "healthy",
             "id": "topic:revenue-visibility",
@@ -33677,7 +33711,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 274.7,
+            "avgAuthority": 277.5,
             "edgeCount": 8,
             "health": "healthy",
             "id": "topic:revenue-tracking",
@@ -33685,7 +33719,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 408,
+            "avgAuthority": 409.8,
             "edgeCount": 7,
             "health": "healthy",
             "id": "topic:conversion-tracking",
@@ -33693,7 +33727,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 328.25,
+            "avgAuthority": 559.5,
+            "edgeCount": 2,
+            "health": "healthy",
+            "id": "topic:emergency-handling",
+            "nodeCount": 3,
+            "type": "topic",
+          },
+          {
+            "avgAuthority": 331.25,
             "edgeCount": 4,
             "health": "healthy",
             "id": "topic:customer-lifetime-value",
@@ -33701,7 +33743,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 312.83,
+            "avgAuthority": 315.5,
             "edgeCount": 2,
             "health": "healthy",
             "id": "topic:lifetime-value",
@@ -33709,7 +33751,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "topic",
           },
           {
-            "avgAuthority": 554.2,
+            "avgAuthority": 556.63,
             "edgeCount": 1924,
             "health": "healthy",
             "id": "system:smart-website-systems",
@@ -33717,7 +33759,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "system",
           },
           {
-            "avgAuthority": 176.59,
+            "avgAuthority": 177.47,
             "edgeCount": 125,
             "health": "healthy",
             "id": "system:revenue-growth",
@@ -33725,15 +33767,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "system",
           },
           {
-            "avgAuthority": 466.16,
-            "edgeCount": 2097,
+            "avgAuthority": 463.13,
+            "edgeCount": 2048,
             "health": "healthy",
             "id": "system:ai-lead-handling",
-            "nodeCount": 64,
+            "nodeCount": 63,
             "type": "system",
           },
           {
-            "avgAuthority": 580.53,
+            "avgAuthority": 583.55,
             "edgeCount": 873,
             "health": "healthy",
             "id": "system:local-seo-authority",
@@ -33741,7 +33783,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "system",
           },
           {
-            "avgAuthority": 561.28,
+            "avgAuthority": 563.82,
             "edgeCount": 2171,
             "health": "healthy",
             "id": "system:reputation-review",
@@ -33749,11 +33791,11 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "system",
           },
           {
-            "avgAuthority": 531.46,
-            "edgeCount": 2772,
+            "avgAuthority": 536.54,
+            "edgeCount": 2823,
             "health": "healthy",
             "id": "system:crm-automation",
-            "nodeCount": 71,
+            "nodeCount": 72,
             "type": "system",
           },
           {
@@ -34591,7 +34633,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "blog",
           },
           {
-            "authority": 305.5,
+            "authority": 301.5,
             "issue": "low-authority",
             "slug": "lead-qualification-framework-for-service-businesses",
             "type": "blog",
@@ -34609,7 +34651,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "blog",
           },
           {
-            "authority": 241,
+            "authority": 239,
             "issue": "low-authority",
             "slug": "local-service-page-architecture-for-local-businesses",
             "type": "blog",
@@ -34705,7 +34747,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "case-study",
           },
           {
-            "authority": 243.5,
+            "authority": 239.5,
             "issue": "low-authority",
             "slug": "hvac-emergency-lead-routing",
             "type": "case-study",
@@ -34729,13 +34771,13 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "case-study",
           },
           {
-            "authority": 256,
+            "authority": 258,
             "issue": "low-authority",
             "slug": "local-authority-system-impact",
             "type": "case-study",
           },
           {
-            "authority": 241,
+            "authority": 237,
             "issue": "low-authority",
             "slug": "real-estate-inquiry-routing",
             "type": "case-study",
@@ -34759,7 +34801,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "type": "case-study",
           },
           {
-            "authority": 266.5,
+            "authority": 270.5,
             "issue": "low-authority",
             "slug": "salon-no-show-reduction-system",
             "type": "case-study",
@@ -37292,8 +37334,8 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
               "reputation-review",
             ],
             "topics": [
-              "lead-management",
               "missed-calls",
+              "lead-management",
               "review-generation",
             ],
             "type": "industry-detail",
@@ -39787,22 +39829,22 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
           },
           {
             "authority": 413.5,
-            "derivedEdges": 36,
-            "edgeCount": 36,
+            "derivedEdges": 35,
+            "edgeCount": 35,
             "path": "/services/missed-call-recovery-system",
             "slug": "missed-call-recovery-system",
             "type": "service",
           },
           {
             "authority": 314,
-            "derivedEdges": 36,
-            "edgeCount": 36,
+            "derivedEdges": 35,
+            "edgeCount": 35,
             "path": "/services/unified-communication-system",
             "slug": "unified-communication-system",
             "type": "service",
           },
           {
-            "authority": 323,
+            "authority": 321,
             "derivedEdges": 38,
             "edgeCount": 38,
             "path": "/services/local-seo-authority",
@@ -39818,25 +39860,25 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "service",
           },
           {
-            "authority": 374.5,
-            "derivedEdges": 39,
-            "edgeCount": 39,
+            "authority": 378.5,
+            "derivedEdges": 40,
+            "edgeCount": 40,
             "path": "/services/crm-infrastructure-implementation",
             "slug": "crm-infrastructure-implementation",
             "type": "service",
           },
           {
-            "authority": 374.5,
-            "derivedEdges": 39,
-            "edgeCount": 39,
+            "authority": 378.5,
+            "derivedEdges": 40,
+            "edgeCount": 40,
             "path": "/services/website-crm-integration-vs-manual-lead-handling",
             "slug": "website-crm-integration-vs-manual-lead-handling",
             "type": "service",
           },
           {
             "authority": 421.5,
-            "derivedEdges": 36,
-            "edgeCount": 36,
+            "derivedEdges": 35,
+            "edgeCount": 35,
             "path": "/services/ai-lead-handling",
             "slug": "ai-lead-handling",
             "type": "service",
@@ -39946,7 +39988,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-detail",
           },
           {
-            "authority": 789,
+            "authority": 813,
             "derivedEdges": 0,
             "edgeCount": 0,
             "path": "/industries/home-services/hvac-companies",
@@ -39954,7 +39996,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-detail",
           },
           {
-            "authority": 685.5,
+            "authority": 787.5,
             "derivedEdges": 0,
             "edgeCount": 0,
             "path": "/industries/home-services/plumbing-companies",
@@ -39962,7 +40004,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-detail",
           },
           {
-            "authority": 748.5,
+            "authority": 784.5,
             "derivedEdges": 0,
             "edgeCount": 0,
             "path": "/industries/home-services/electrical-companies",
@@ -40196,7 +40238,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-detail",
           },
           {
-            "authority": 789,
+            "authority": 813,
             "derivedEdges": 0,
             "edgeCount": 0,
             "path": "/industries/home-services/hvac-companies",
@@ -40204,7 +40246,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-detail",
           },
           {
-            "authority": 685.5,
+            "authority": 787.5,
             "derivedEdges": 0,
             "edgeCount": 0,
             "path": "/industries/home-services/plumbing-companies",
@@ -40212,7 +40254,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-detail",
           },
           {
-            "authority": 748.5,
+            "authority": 784.5,
             "derivedEdges": 0,
             "edgeCount": 0,
             "path": "/industries/home-services/electrical-companies",
@@ -40406,6 +40448,14 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-category",
           },
           {
+            "authority": 813,
+            "derivedEdges": 0,
+            "edgeCount": 0,
+            "path": "/industries/home-services/hvac-companies",
+            "slug": "hvac-companies",
+            "type": "industry-detail",
+          },
+          {
             "authority": 811.5,
             "derivedEdges": 0,
             "edgeCount": 0,
@@ -40422,11 +40472,11 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "type": "industry-category",
           },
           {
-            "authority": 789,
+            "authority": 787.5,
             "derivedEdges": 0,
             "edgeCount": 0,
-            "path": "/industries/home-services/hvac-companies",
-            "slug": "hvac-companies",
+            "path": "/industries/home-services/plumbing-companies",
+            "slug": "plumbing-companies",
             "type": "industry-detail",
           },
           {
@@ -40457,25 +40507,17 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
             "authority": 784.5,
             "derivedEdges": 0,
             "edgeCount": 0,
-            "path": "/industries/real-estate-property-services/home-inspectors",
-            "slug": "home-inspectors",
+            "path": "/industries/home-services/electrical-companies",
+            "slug": "electrical-companies",
             "type": "industry-detail",
           },
           {
-            "authority": 763,
+            "authority": 784.5,
             "derivedEdges": 0,
             "edgeCount": 0,
-            "path": "/industries/beauty-personal-care",
-            "slug": "beauty-personal-care",
-            "type": "industry-category",
-          },
-          {
-            "authority": 762.5,
-            "derivedEdges": 65,
-            "edgeCount": 65,
-            "path": "/resources/roofing-estimate-follow-up-workflow",
-            "slug": "roofing-estimate-follow-up-workflow",
-            "type": "resource",
+            "path": "/industries/real-estate-property-services/home-inspectors",
+            "slug": "home-inspectors",
+            "type": "industry-detail",
           },
         ],
         "totalDerivedEdges": 9626,
@@ -40549,7 +40591,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
           "type": "industry-detail",
         },
         {
-          "authority": 789,
+          "authority": 813,
           "derivedEdges": 0,
           "edgeCount": 0,
           "path": "/industries/home-services/hvac-companies",
@@ -40557,7 +40599,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
           "type": "industry-detail",
         },
         {
-          "authority": 685.5,
+          "authority": 787.5,
           "derivedEdges": 0,
           "edgeCount": 0,
           "path": "/industries/home-services/plumbing-companies",
@@ -40565,7 +40607,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/graph.jso
           "type": "industry-detail",
         },
         {
-          "authority": 748.5,
+          "authority": 784.5,
           "derivedEdges": 0,
           "edgeCount": 0,
           "path": "/industries/home-services/electrical-companies",

@@ -1,12 +1,11 @@
 import {
   Calendar,
-  Clock3,
-  MessageSquare,
-  Search,
-  ShieldCheck,
-  Sparkles,
+  Compass,
+  DoorOpen,
+  Footprints,
+  Smartphone,
   Star,
-  Workflow,
+  Wrench,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -14,278 +13,158 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildNailSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Nail Salons',
-    title: 'A Client Wants a Slot This Weekend. They Picked Whoever Replied First.',
+    title: 'Saturday Lunchtime. Three Walk-Ins At The Door And Two Phones Going.',
     description:
-      'Nail salon enquiries arrive between clients. The chair is busy. The phone rings out. The next salon picks up.',
-    list: ['Missed calls', 'Lost bookings', 'No infills', 'Few reviews'],
+      'Nail salons live in a constant tension between the walk-in at the door and the appointment in the chair. Saturday lunchtime, the front desk has three walk-ins, two phones going, and a regular due in seven minutes. Whoever the front desk had to put on hold or turn away came back to find someone else replied first.',
+    list: ['Walk-in chaos', 'Held-on calls', 'Lost regulars'],
     cssPrefix: 'nail-salons-hero',
   };
 
-  const imageStripData = {
-    badge: 'How Bookings Come In',
-    title: 'A client wants a slot soon',
+  const comparisonData = {
+    badge: 'What Actually Changes',
+    title: 'A normal Saturday, before and after',
     description:
-      'A set, an infill, a special occasion. They want to know if you can fit them in, when, and that the work will look right.',
-    items: [
+      'The chair work stays the same. The front desk stops being the bottleneck.',
+    comparisons: [
       {
-        title: 'New client enquiries',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing nail salon enquiries',
+        type: 'before' as const,
+        title: 'How Saturday runs now',
+        items: [
+          'Three walk-ins at the door, two phones going, regulars due any minute',
+          'Calls go on hold and customers hang up',
+          'A late-night DM from Friday is still unread',
+          'A regular who used to come every two weeks has not booked in six',
+        ],
       },
       {
-        title: 'Booking and reminders',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing nail salon booking',
-      },
-      {
-        title: 'Infills and repeat visits',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing nail salon repeat visits',
-      },
-      {
-        title: 'Reviews and referrals',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing nail salon reviews',
+        type: 'after' as const,
+        title: 'How Saturday runs after',
+        items: [
+          'Walk-ins get attention because the phone is no longer hijacking the front desk',
+          'Missed calls get a warm text-back within a minute and lock a slot',
+          'Friday\u2019s late DM was answered by 9pm with a deposit link',
+          'A nudge fires when a regular drifts past her usual cycle',
+        ],
       },
     ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'nail-salons-image-strip',
   };
 
   const operatingPatternsData = {
-    badge: 'Where Bookings Slip',
-    title: 'The chair is full but new clients and infills slip through',
+    badge: 'Where The Saturday Bleeds',
+    title: 'Four moments most nail salons know by heart',
+    description:
+      'A handful of patterns show up in nearly every nail bar.',
     benefits: [
       {
-        icon: Sparkles,
-        title: 'Calls miss the front desk',
-        description: 'The team is with a client. The phone rings out. The new client books the next salon.',
+        icon: Footprints,
+        title: 'Three walk-ins at the door, two phones going',
+        description:
+          'The front desk has to triage in the gap between the door and the diary. The walk-ins win, the phones lose.',
         iconType: 'primary' as const,
       },
       {
-        icon: Calendar,
-        title: 'Booking turns into a back and forth',
-        description: 'A simple slot takes too many messages before anything is on the diary.',
+        icon: DoorOpen,
+        title: 'A walk-in turned away because nothing was free',
+        description:
+          'No waitlist, no follow-up. She walked next door instead and never came back.',
         iconType: 'secondary' as const,
       },
       {
-        icon: Clock3,
-        title: 'Past clients drift away',
-        description: 'A great set a few weeks ago. Nobody nudged them for the next infill.',
+        icon: Smartphone,
+        title: 'A late-night DM about Saturday',
+        description:
+          'Decided after 10pm, seen at 9 the next morning. By then she had asked two more salons.',
         iconType: 'accent' as const,
       },
       {
-        icon: Sparkles,
-        title: 'Online you look smaller than the work you do',
-        description: 'Plenty of happy clients. Almost none ever wrote anything online.',
+        icon: Star,
+        title: 'A wall of beautiful nails, almost no proof on Maps',
+        description:
+          'The Instagram is gorgeous. The Maps page looks like nobody recommends you.',
         iconType: 'primary' as const,
       },
     ],
     columns: 4 as const,
   };
 
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every enquiry, booking, and repeat visit',
-    description: 'Each piece does one job. Together they keep the chair full without the front desk chasing.',
-    featureCategories: [
-      {
-        title: 'Catch every call and form',
-        description: 'Calls, missed calls, web forms — all in one place with the client and the service noted.',
-        icon: MessageSquare,
-        features: [
-          'Missed calls texted back instantly',
-          'Web enquiries land with the front desk',
-          'Client and service captured up front',
-        ],
-      },
-      {
-        title: 'Get the booking confirmed without phone tag',
-        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
-        icon: Calendar,
-        features: [
-          'Slots clients can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'Front desk sees the day at a glance',
-        ],
-      },
-      {
-        title: 'Bring past clients back on time',
-        description: 'Gentle nudges before the next infill so the diary fills itself.',
-        icon: Workflow,
-        features: [
-          'Infill reminders sent automatically',
-          'Past clients nudged at the right moment',
-          'Repeat visits without front-desk chasing',
-        ],
-      },
-      {
-        title: 'Turn happy clients into reviews',
-        description: 'A review request goes out at the right moment so the work shows up online.',
-        icon: ShieldCheck,
-        features: [
-          'Review requests after appointments',
-          'Asked when the client is happiest',
-          'More reviews where local people search',
-        ],
-      },
-      {
-        title: 'Show up when local people search',
-        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for a salon.',
-        icon: Search,
-        features: [
-          'Found on Maps for the work you do',
-          'Service pages that match real searches',
-          'Local area coverage that is visible',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
-
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal week, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on the front desk remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
-        items: [
-          'Phone rings while the team is with a client. Goes to voicemail. Lost.',
-          'A new client wants a slot. Three messages later, still no time set.',
-          'A great set a few weeks ago. Nobody nudged them for the next infill.',
-          'You finished a great set last week. They never got asked for a review.',
-        ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know the salon will reply.',
-          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
-          'A gentle nudge goes out and the next booking lands without effort.',
-          'A review request goes out after the visit. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
-
   const pathwaysData = {
-    badge: 'Where Most Salons Start',
-    title: 'Three stages, most salons feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most clients.',
+    badge: 'Where Most Nail Salons Start',
+    title: 'You do not have to fix everything at once',
+    description:
+      'Most nail salons feel one of these three louder than the others. Pick the loudest leak.',
     packages: [
       {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when the team is busy and new client calls do not get answered.',
+        name: 'Stop the front desk being the bottleneck',
+        description:
+          'For when Saturday lunchtime is three walk-ins and two phones at once.',
         price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
+        priceDetail: 'Start here if Saturday chaos is the loudest leak',
         features: [
-          'Missed-call text-back so they know you will reply',
-          'One inbox for calls, forms, and web enquiries',
-          'Client and service captured before the conversation',
+          'Warm text-back within a minute on every missed call',
+          'DMs answered with availability and a deposit link',
+          'Front desk free to look after the door',
         ],
       },
       {
-        name: 'Get the booking confirmed the same day',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
+        name: 'Catch the walk-in you had to turn away',
+        description:
+          'For when somebody walked in, nothing was free, and she walked next door instead.',
         price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
+        priceDetail: 'Start here if turned-away walk-ins are the gap',
         features: [
-          'Slots clients can pick themselves',
-          'Reminders the day before so chairs stay full',
-          'Front desk sees the day at a glance',
+          'Waitlist on a tap',
+          'Cancellations re-offered automatically',
+          'Walk-ins booked in for later in the day instead of lost',
         ],
         popular: true,
       },
       {
-        name: 'Bring past clients back and turn visits into reviews',
-        description: 'For when the diary is fine but past clients drift away and reviews never get asked for.',
+        name: 'Stop regulars drifting and get the proof on Maps',
+        description:
+          'For when regulars quietly stop coming and reviews never reflect the work.',
         price: 'Stage 3',
-        priceDetail: 'Start here if repeat visits and reputation are the weak spots',
+        priceDetail: 'Start here if retention and proof are the gap',
         features: [
-          'Infill reminders sent automatically',
-          'Past clients nudged at the right moment',
-          'Review requests at the right moment',
+          'Rebook nudges at the right interval per service',
+          'Review ask the day after a finished set',
+          'Local visibility that finally matches the work',
         ],
       },
     ],
-  };
-
-  const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on the front desk remembering.',
-    workflows: [
-      {
-        trigger: 'The team is with a client and a new enquiry call rings out.',
-        actions: [
-          'They get a text inside a minute saying the salon will reply',
-          'The text captures the client and the service',
-          'The lead is held instead of going to the next salon',
-        ],
-      },
-      {
-        trigger: 'A client wants a slot this weekend.',
-        actions: [
-          'They pick a slot from a link, no more text tag',
-          'A reminder goes out the day before',
-          'The front desk sees who is coming in and why',
-        ],
-      },
-      {
-        trigger: 'A past client is due for an infill.',
-        actions: [
-          'A gentle nudge goes out automatically at the right moment',
-          'They book again without the front desk chasing',
-          'The diary keeps filling without extra marketing',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'nail-salons-workflow-examples',
-  };
-
-  const caseStudiesData = {
-    category: 'beauty-personal-care' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports beauty and personal care businesses in this category.',
-    limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system that come up most often for nail salons.',
+    description: 'The other parts of the system nail salons tend to lean on most.',
     cards: [
       {
-        icon: Workflow,
+        icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
+        description: 'Holds enquiry, deposit and waitlist flow together through Saturday.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
       },
       {
         icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support booking, reminders, and clearer next steps.',
+        title: 'Booking & Waitlist',
+        description: 'Deposits, reminders and the waitlist on a tap.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },
       {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen salon visibility and local trust.',
+        icon: Compass,
+        title: 'Local Authority & SEO',
+        description: 'Visibility for "nails near me" the moment somebody searches.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
       },
       {
         icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn appointments into reviews and proof.',
+        title: 'Reputation & Reviews',
+        description: 'Turns finished sets into proof on Maps and search.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -296,38 +175,38 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things nail salons usually ask',
-    description: 'Straight answers about how this fits into a busy salon.',
+    title: 'What nail salon owners tend to ask first',
+    description: 'Direct, no hedging.',
     faqs: [
       {
-        question: 'The front desk is already stretched. Will this make more work?',
+        question: 'Will the auto text-back annoy a walk-in customer ringing for an appointment?',
         answer:
-          'It does the opposite. Missed calls get answered by text on their own. Reminders fire by themselves. The front desk sees a clearer day at a glance.',
+          'No. The text reads like the front desk and gives availability up front. Most customers prefer it to being on hold.',
       },
       {
-        question: 'Will clients feel like they are getting an automated response?',
+        question: 'How does the waitlist work for a turned-away walk-in?',
         answer:
-          'No. The messages are short and written like the front desk would actually text someone. The aim is to hold the lead until you can reply.',
+          'She gets a quick offer for later in the day or tomorrow with a deposit link. A lot of turned-away walk-ins come back the same week instead of going next door.',
       },
       {
-        question: 'Can it handle bookings that need a consultation first?',
+        question: 'Will it interrupt the techs at the chair?',
         answer:
-          'Yes. The first reply confirms a slot or sets up the consultation, depending on how you usually work.',
+          'No. It runs in the background. The team only sees the booking once it is locked.',
       },
       {
-        question: 'Do we have to chase reviews ourselves?',
+        question: 'Can it actually reply at 11pm without sounding off?',
         answer:
-          'No. The request goes out on its own after the visit, when the client is happiest.',
+          'Yes. The reply reads like the salon, gives availability, and offers a deposit link.',
       },
       {
-        question: 'What about clients we have not seen in a while?',
+        question: 'When does the review request go out?',
         answer:
-          'They get gentle nudges so the next booking happens without effort.',
+          'The day after a finished set, while she is still pleased. That is the moment with the highest yield.',
       },
       {
         question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
+          'Usually not. The bottleneck is what happens after the form is sent.',
       },
     ],
   };
@@ -341,40 +220,36 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
       'local-seo-authority',
       'reputation-review',
     ],
-    topics: ['booking-automation', 'no-show-reduction', 'review-generation'],
+    topics: ['booking-systems', 'client-reactivation', 'review-generation'],
     type: 'detail',
     parentSlug: 'beauty-personal-care',
     seo: {
-      title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+      title: 'Nail Salons \u2014 Stop The Saturday Front-Desk Bottleneck | MindWP',
       description:
-        'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+        'For nail salons whose Saturday lunchtime has three walk-ins and two phones at once. Text-back capture, walk-in waitlist, rebook nudges, reviews on Maps.',
       keywords: [
-        'nail salon website design',
-        'nail salon booking system',
-        'nail salon lead handling system',
-        'nail salon seo services',
-        'nail salon reputation management system',
+        'nail salon booking automation',
+        'nail salon walk-in waitlist',
+        'nail salon front desk system',
+        'nail salon client retention',
+        'nail salon review automation',
       ],
       canonical: '/industries/beauty-personal-care/nail-salons',
     },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
-    operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
+    hero: { ...heroData },
     comparison: comparisonData,
+    operatingPatterns: operatingPatternsData,
     pathways: pathwaysData,
-    workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where bookings are slipping',
+      title: 'Tell us about last Saturday lunchtime',
       description:
-        'If calls miss the front desk, past clients drift away, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
+        'Walk us through last Saturday \u2014 how many walk-ins were turned away, how many calls went to hold. We will tell you what to plug first.',
     },
   };
 }
 
-export const nailSalonsIndustryPageData: IndustryPageData = buildNailSalonsIndustryPageData();
+
+export const nailSalonsIndustryPageData: IndustryPageData =
+  buildNailSalonsIndustryPageData();

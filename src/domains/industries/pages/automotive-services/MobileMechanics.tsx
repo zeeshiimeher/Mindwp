@@ -1,13 +1,13 @@
 import {
-  Calendar,
-  Car,
-  Clock3,
-  MapPinned,
-  MessageSquare,
-  Search,
-  ShieldCheck,
+  Compass,
+  Inbox,
+  MapPin,
+  Navigation,
+  PhoneOff,
+  Route,
   Star,
-  Workflow,
+  Truck,
+  Wrench,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -15,233 +15,41 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildMobileMechanicsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Mobile Mechanics',
-    title: 'You Are Under a Bonnet on the Driveway. The Phone Keeps Ringing.',
+    title: 'You Were Under The Bonnet On A Driveway. The Phone Was In The Glovebox.',
     description:
-      'Mobile mechanics lose work in the gaps between jobs. Calls go to voicemail while a job is in progress. Quotes get sent and forgotten. The drivers who needed help today book whoever rang back first.',
-    list: ['Missed calls', 'Cold quotes', 'Slow callbacks', 'Few reviews'],
+      'A mobile mechanic\u2019s front desk is a phone in the seat well. The day runs from one driveway to the next. Half the calls land while there is no clean hand to answer them, and half of every wasted hour gets eaten by a job in the wrong postcode that nobody priced before the drive.',
+    list: ['Glovebox calls', 'Wrong postcodes', 'Cold quotes'],
     cssPrefix: 'mobile-mechanics-hero',
   };
 
-  const imageStripData = {
-    badge: 'How Mobile Work Comes In',
-    title: 'A driver wants to know if you can come out today',
-    description:
-      'A breakdown, a no-start, a quick service at the office car park. They want to know if you can fit them in, what it might cost, and that you will turn up.',
-    items: [
-      {
-        title: 'Roadside and on-site enquiries',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing mobile mechanic enquiries',
-      },
-      {
-        title: 'Booking and arrival window',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing mobile mechanic booking',
-      },
-      {
-        title: 'Estimates and approvals',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing mobile mechanic estimates',
-      },
-      {
-        title: 'Reviews and repeat customers',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing mobile mechanic reviews',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'mobile-mechanics-image-strip',
-  };
-
-  const operatingPatternsData = {
-    badge: 'Where The Work Slips',
-    title: 'The work is steady. The bit between calls is where it leaks.',
-    description: 'Same handful of gaps for nearly every mobile mechanic.',
-    benefits: [
-      {
-        icon: Car,
-        title: 'The phone rings while you are mid-job',
-        description: 'By the time you wipe your hands and ring back, they have already booked someone else.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: Calendar,
-        title: 'Booking turns into texts back and forth',
-        description: 'A simple slot agreement takes half a day of messages while you are on the road.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Clock3,
-        title: 'Quotes go out and never get chased',
-        description: 'You sent a price the night before. By the next morning it is forgotten.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: MapPinned,
-        title: 'The garage down the road has a wall of reviews. You do not.',
-        description: 'You do good work. Online you look smaller because nobody was ever asked.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
-
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every enquiry from the side of the road',
-    description: 'Each piece does one job. Together they make sure work does not fall on the floor while you are mid-job.',
-    featureCategories: [
-      {
-        title: 'Catch every call and form',
-        description: 'Calls, forms, missed calls, web chat — they all land in one place with the car and the issue noted.',
-        icon: MessageSquare,
-        features: [
-          'Missed calls texted back instantly',
-          'Web enquiries sent to your phone',
-          'Vehicle and fault captured up front',
-        ],
-      },
-      {
-        title: 'Get the visit booked without ten texts',
-        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
-        icon: Calendar,
-        features: [
-          'Slots people can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'Arrival window in the same message',
-        ],
-      },
-      {
-        title: 'Stop quotes going quiet',
-        description: 'Every estimate gets a follow-up on a schedule, even when you are flat out on the road.',
-        icon: Workflow,
-        features: [
-          'Quotes chased automatically',
-          'Open jobs in one place',
-          'Old quotes warmed up instead of forgotten',
-        ],
-      },
-      {
-        title: 'Turn finished jobs into proof',
-        description: 'A review request goes out at the right moment. Reputation catches up to the work.',
-        icon: ShieldCheck,
-        features: [
-          'Review requests after every job',
-          'Asked when the customer is happiest',
-          'More five-stars where local people search',
-        ],
-      },
-      {
-        title: 'Show up when local drivers search',
-        description: 'Service pages and Google profile lined up so you appear when someone nearby needs help.',
-        icon: Search,
-        features: [
-          'Found on Maps for the work you do',
-          'Service pages that match real searches',
-          'Local area coverage that is visible',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
-
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal day on the road, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on you remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
-        items: [
-          'Phone rings while you are under a bonnet. Goes to voicemail. Lost.',
-          'A driver wants a slot. Three texts later, you are still trying to confirm.',
-          'Quote sent last night. No reply. Nobody chased it.',
-          'You finished a great job last week. They never got asked for a review.',
-        ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know you will ring back.',
-          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
-          'The quote gets a polite chase the next morning. You can see who is waiting.',
-          'A review request goes out the day you finish. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
-
-  const pathwaysData = {
-    badge: 'Where Most Mobile Mechanics Start',
-    title: 'Three stages, most mechanics feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
-    packages: [
-      {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when the phone rings out and quick enquiries sit unread.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
-        features: [
-          'Missed-call text-back so they know you will ring',
-          'One inbox for calls, forms, and web chat',
-          'Vehicle and fault noted before the conversation',
-        ],
-      },
-      {
-        name: 'Get the visit booked the same day',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
-        features: [
-          'Slots customers can pick themselves',
-          'Reminders the day before so jobs actually happen',
-          'Arrival window sent automatically',
-        ],
-        popular: true,
-      },
-      {
-        name: 'Keep quotes moving and turn jobs into reviews',
-        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if follow-up and reputation are the weak spots',
-        features: [
-          'Quotes chased automatically',
-          'Past customers nudged for return work',
-          'Review requests at the right moment',
-        ],
-      },
-    ],
-  };
-
   const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on you remembering.',
+    badge: 'A Day From The Van',
+    title: 'Three moments most mobile mechanics know by heart',
+    description:
+      'These are the moments that lose the most jobs and the most diesel. Each one has a small fix that does not need you to stop work.',
     workflows: [
       {
-        trigger: 'You are mid-job on a driveway and the phone rings.',
+        trigger: 'You are mid-job on a driveway. The phone rings in the glovebox.',
         actions: [
-          'They get a text inside a minute saying you will ring back',
-          'The text captures the car and the issue',
-          'The voicemail is not the only thing keeping the lead alive',
+          'A short, real-sounding text fires back inside a minute capturing the car and the issue',
+          'The driver knows you will ring back instead of assuming you ghosted',
+          'When the bonnet is back down, the callback already has context',
         ],
       },
       {
-        trigger: 'A driver wants help before the weekend.',
+        trigger: 'A driver fifty miles away wants someone out today',
         actions: [
-          'They pick a slot from a link, no more text tag',
-          'A reminder goes out the day before',
-          'You get the booking with the car and the issue attached',
+          'The first reply checks the postcode and the job before you load the van',
+          'Out-of-area enquiries get a polite, useful response without you driving for nothing',
+          'In-area enquiries get a slot in the same message',
         ],
       },
       {
-        trigger: 'You sent a quote a few days ago and have not heard back.',
+        trigger: 'You sent a price by text three nights ago and never heard back',
         actions: [
-          'A polite chase goes out automatically the next morning',
-          'You can see all the open quotes in one place',
-          'If they say yes, the booking happens without another five messages',
+          'A polite morning chase fires automatically asking if they want to book it',
+          'Open quotes sit somewhere you can scan in ten seconds',
+          'Old quotes start turning back into work without you having to remember',
         ],
       },
     ],
@@ -249,45 +57,187 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     cssPrefix: 'mobile-mechanics-workflow-examples',
   };
 
-  const caseStudiesData = {
-    category: 'automotive-services' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports automotive service businesses in this category.',
-    limit: 2,
+  const operatingPatternsData = {
+    badge: 'Where The Day Bleeds',
+    title: 'Four moments where a one-van business quietly loses its margin',
+    description:
+      'A mobile mechanic\u2019s leak is rarely the workmanship. It is the bit between the seat and the next driveway.',
+    benefits: [
+      {
+        icon: PhoneOff,
+        title: 'Calls land while your hands are dirty',
+        description:
+          'You hear the buzz. You cannot pick up. By the time the job is done the message is two hours old and the driver has rung two other vans.',
+        iconType: 'primary' as const,
+      },
+      {
+        icon: Navigation,
+        title: 'Half a day driving to a wrong postcode',
+        description:
+          'A call comes in, the slot gets agreed, and only on arrival does it become obvious the job needed a workshop or the area was an hour out of patch.',
+        iconType: 'secondary' as const,
+      },
+      {
+        icon: Route,
+        title: 'Quotes sent by text at 9pm, gone by morning',
+        description:
+          'You did the right thing and replied late. By the time anyone follows up, the driver has either booked elsewhere or assumed it never happened.',
+        iconType: 'accent' as const,
+      },
+      {
+        icon: Star,
+        title: 'Good work, almost no proof of it on a map',
+        description:
+          'No shopfront sign means the Google profile is the shopfront. Five reviews against the garage on the high street with eighty.',
+        iconType: 'primary' as const,
+      },
+    ],
+    columns: 4 as const,
+  };
+
+  const systemLayersData = {
+    badge: 'What Goes In',
+    title: 'Five small pieces designed for a business run from the seat',
+    description:
+      'No CRM dashboards to live inside. Each piece does one job in the place a mobile mechanic is most likely to drop a lead.',
+    featureCategories: [
+      {
+        title: 'Hold the call you could not take',
+        description:
+          'A short text fires back automatically when you cannot answer. Captures the car, the issue, and tells them when you will ring \u2014 reads like you wrote it from the driver\u2019s seat.',
+        icon: PhoneOff,
+        features: [
+          'Text-back inside a minute on missed calls',
+          'Vehicle, fault and postcode captured up front',
+          'Driver knows you are coming back to them',
+        ],
+      },
+      {
+        title: 'Filter out the postcode-waste jobs before you drive',
+        description:
+          'First reply checks the area and the job. Out-of-patch enquiries get a polite handoff. In-patch enquiries get a slot.',
+        icon: MapPin,
+        features: [
+          'Service-area check on first reply',
+          'Polite redirect on out-of-area enquiries',
+          'Less diesel spent on jobs that should not have been booked',
+        ],
+      },
+      {
+        title: 'Let drivers book a slot without ten texts',
+        description:
+          'A link they can use to pick a slot. Lands in your day with the car and the fault attached. Reminder fires the day before so they actually open the gate.',
+        icon: Truck,
+        features: [
+          'Self-serve slots with arrival window',
+          'Day-before reminder so jobs do not no-show',
+          'Slot, vehicle and fault all in one view',
+        ],
+      },
+      {
+        title: 'Stop quotes dying in old text threads',
+        description:
+          'Every late-night quote gets a polite morning chase. Open quotes live somewhere you can scan between jobs.',
+        icon: Inbox,
+        features: [
+          'Morning chase on every open quote',
+          'Open quotes you can read at a red light',
+          'Old quotes warmed up into real bookings',
+        ],
+      },
+      {
+        title: 'Get the proof onto the map',
+        description:
+          'A short review request fires the evening of the job, when the driver is still pleased the car is back on the road.',
+        icon: Star,
+        features: [
+          'Review ask the evening you finish',
+          'Reviews land on the Google profile drivers actually look at',
+          'Reputation that catches up to a business with no shop sign',
+        ],
+      },
+    ],
+    columns: 3 as const,
+  };
+
+  const pathwaysData = {
+    badge: 'Where Most Mobile Mechanics Start',
+    title: 'You do not have to fix everything at once',
+    description:
+      'Most one-van businesses feel one of these louder than the others. Pick the one that is bleeding the most and start there.',
+    packages: [
+      {
+        name: 'Catch the calls you cannot take',
+        description:
+          'For days where the phone keeps ringing while your hands are in an engine bay.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if missed calls are the loudest leak',
+        features: [
+          'Text-back inside a minute',
+          'Vehicle and fault captured up front',
+          'One inbox for calls, forms and texts',
+        ],
+      },
+      {
+        name: 'Stop driving to the wrong postcode',
+        description:
+          'For when too many jobs only become "no-go" once the van is parked outside.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if wasted journeys are the pain',
+        features: [
+          'Service-area check on the first reply',
+          'Self-serve slot with arrival window',
+          'Day-before reminder so the gate is open',
+        ],
+        popular: true,
+      },
+      {
+        name: 'Warm up old quotes and stack reviews',
+        description:
+          'For when work comes in fine but late-night quotes go cold and the Google profile is bare.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if follow-up and reputation are the gap',
+        features: [
+          'Morning chase on every open quote',
+          'Past customer nudges on the right interval',
+          'Review ask the evening you finish the job',
+        ],
+      },
+    ],
   };
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system that come up most often for mobile mechanics.',
+    description: 'The other parts of the system one-van mechanics tend to lean on.',
     cards: [
       {
-        icon: Workflow,
+        icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
+        description: 'Holds enquiry, slot and quote flow together for a business with no shopfront.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
       },
       {
-        icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support visit booking, reminders, and clearer next steps.',
-        href: '/services/crm-infrastructure-implementation',
+        icon: Inbox,
+        title: 'AI Lead Handling',
+        description: 'Catches missed calls and out-of-hours enquiries when the van is on a job.',
+        href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
       },
       {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen mobile mechanic visibility and local trust.',
+        icon: Compass,
+        title: 'Local Authority & SEO',
+        description: 'Visibility for "mobile mechanic near me" the moment a car will not start.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
       },
       {
         icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn finished jobs into reviews and proof.',
+        title: 'Reputation & Reviews',
+        description: 'Turns finished driveway jobs into proof on the Google profile.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -298,38 +248,38 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things mobile mechanics usually ask',
-    description: 'Straight answers about how this fits into a one-van business.',
+    title: 'What mobile mechanics tend to ask first',
+    description: 'Direct, no hedging.',
     faqs: [
       {
-        question: 'I am on the road all day. How much extra work is this?',
+        question: 'I cannot stop a job to type. Will this just be more notifications?',
         answer:
-          'Almost none after setup. Missed calls get answered by text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves.',
+          'It is the opposite. The text-back, the chase, the reminder all fire on their own. Less time on the phone between jobs, not more.',
       },
       {
-        question: 'Will customers feel like they are getting an automated response?',
+        question: 'My customers want to talk to a person. Won\u2019t this feel automated?',
         answer:
-          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
+          'No. The first reply reads like something you would actually send between jobs. The point is to hold the lead until you can ring back, not to fake a conversation.',
       },
       {
-        question: 'Can it handle quotes for jobs that need to be seen first?',
+        question: 'How does the postcode filter work without me checking it?',
         answer:
-          'Yes. The first reply confirms a visit and the quote follows after you have looked at the car.',
+          'You set the patch once. Anything outside it gets a polite handoff message instead of going on the diary. You stop the wrong-postcode drive without thinking about it.',
       },
       {
-        question: 'Do I have to chase reviews myself?',
+        question: 'Can it handle quotes that need a look before a price?',
         answer:
-          'No. The request goes out on its own after the job is done, when the customer is happiest.',
+          'Yes. The first reply confirms the visit. The proper quote follows once you have looked under the bonnet.',
       },
       {
-        question: 'What about quotes sitting in old text threads?',
+        question: 'I send half my quotes by text from the van. Does it pick those up?',
         answer:
-          'Those get worked in too. A lot of mobile mechanics find that warming up old quotes brings in real money before any new marketing kicks in.',
+          'Yes. Texts you send get tracked too, and a polite morning chase fires if there is no reply. Old text threads stop being where quotes go to die.',
       },
       {
-        question: 'Do I need a brand new website?',
+        question: 'Do I need a website at all?',
         answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
+          'A small one helps because the Google profile and search results need somewhere to point. It does not need to be big.',
       },
     ],
   };
@@ -337,41 +287,42 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
   return {
     slug: 'mobile-mechanics',
     industries: ['mobile-mechanic'],
-    systems: ['smart-website-systems', 'ai-lead-handling', 'local-seo-authority', 'reputation-review'],
-    topics: ['lead-management', 'missed-calls', 'review-generation'],
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['missed-calls', 'lead-management', 'review-generation'],
     type: 'detail',
     parentSlug: 'automotive-services',
     seo: {
-      title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+      title: 'Mobile Mechanics \u2014 Stop Losing Calls From The Glovebox | MindWP',
       description:
-        'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+        'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
       keywords: [
-        'mobile mechanic website design',
+        'mobile mechanic missed call recovery',
         'mobile mechanic booking system',
-        'mobile mechanic lead handling system',
-        'mobile mechanic seo services',
-        'mobile mechanic reputation management system',
+        'mobile mechanic service area',
+        'mobile mechanic quote follow up',
+        'mobile mechanic local SEO',
       ],
       canonical: '/industries/automotive-services/mobile-mechanics',
     },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
+    hero: { ...heroData },
+    workflowExamples: workflowExamplesData,
     operatingPatterns: operatingPatternsData,
     systemLayers: systemLayersData,
-    comparison: comparisonData,
     pathways: pathwaysData,
-    workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the work is slipping',
+      title: 'Tell us about today\u2019s missed calls',
       description:
-        'If calls go to voicemail mid-job, quotes go quiet, or reviews never get asked for, walk us through how the day runs and we will show you the first thing worth fixing.',
+        'Walk us through the calls that hit voicemail and the postcodes that wasted the day. We will tell you what to plug first.',
     },
   };
 }
 
-export const mobileMechanicsIndustryPageData: IndustryPageData = buildMobileMechanicsIndustryPageData();
+export const mobileMechanicsIndustryPageData: IndustryPageData =
+  buildMobileMechanicsIndustryPageData();

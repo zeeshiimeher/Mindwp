@@ -1,13 +1,11 @@
 import {
   Calendar,
-  Clock3,
-  MessageSquare,
-  Scissors,
-  Search,
-  ShieldCheck,
-  Sparkles,
+  CalendarX,
+  Compass,
+  Moon,
+  Repeat,
   Star,
-  Workflow,
+  Wrench,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -15,232 +13,121 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildHairSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Hair Salons',
-    title: 'A Client Wants a Slot This Week. They Picked Whoever Replied First.',
+    title: 'Six Weeks Became Eight. Eight Became Three Months. Then She Booked Down The Road.',
     description:
-      'Hair salon enquiries arrive between blow-dries. The chair is full. The phone rings out. The client books the next salon that answers.',
-    list: ['Missed calls', 'Lost bookings', 'No-shows', 'Few reviews'],
+      'Hair salons rarely lose a regular in one go. They lose them in slow drift. The cut that should have been six weeks turns into eight. Eight turns into three months. Nobody nudged. By the time anyone notices, she has already tried the salon two streets over. The Tuesdays sit empty for the same reason: nobody offered the gap to anyone.',
+    list: ['Drifting regulars', 'Quiet Tuesdays', 'Late-night DMs'],
     cssPrefix: 'hair-salons-hero',
   };
 
-  const imageStripData = {
-    badge: 'How Bookings Come In',
-    title: 'A client wants a slot soon',
-    description:
-      'A cut, a colour, a special occasion. They want to know if you can fit them in, when, and that the salon will look after them.',
-    items: [
-      {
-        title: 'New client enquiries',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing hair salon enquiries',
-      },
-      {
-        title: 'Booking and reminders',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing hair salon booking',
-      },
-      {
-        title: 'Repeat visits',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing hair salon repeat visits',
-      },
-      {
-        title: 'Reviews and referrals',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing hair salon reviews',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'hair-salons-image-strip',
-  };
-
   const operatingPatternsData = {
-    badge: 'Where Bookings Slip',
-    title: 'The chair is full but the new clients are not all landing',
+    badge: 'Where Salons Bleed',
+    title: 'Four moments most salon owners know by heart',
+    description:
+      'A handful of patterns show up in nearly every salon.',
     benefits: [
       {
-        icon: Scissors,
-        title: 'Calls miss the front desk',
-        description: 'The team is with a client. The phone rings out. The new client books the next salon.',
+        icon: Repeat,
+        title: 'A regular cut that should have been six weeks ago',
+        description:
+          'She used to come in every six weeks. It is now eleven and the diary forgot. Nobody nudged. She is testing the salon down the road.',
         iconType: 'primary' as const,
       },
       {
-        icon: Calendar,
-        title: 'Booking turns into a back and forth',
-        description: 'A simple slot takes too many texts before anything is on the diary.',
+        icon: CalendarX,
+        title: 'A peak Saturday slot that nobody re-offered',
+        description:
+          'A late cancellation on a Friday night. Nobody texted the waitlist. The chair sat empty all afternoon.',
         iconType: 'secondary' as const,
       },
       {
-        icon: Clock3,
-        title: 'Past clients drift away',
-        description: 'A great cut a few months ago. Nobody nudged them for the next one.',
+        icon: Moon,
+        title: 'A DM at 10:42pm asking about colour for Saturday',
+        description:
+          'Seen at 9 the next morning. By then she had asked two more salons and someone else had already locked Saturday.',
         iconType: 'accent' as const,
       },
       {
-        icon: Sparkles,
-        title: 'Online you look smaller than the work you do',
-        description: 'Plenty of happy clients. Almost none ever wrote anything online.',
+        icon: Star,
+        title: 'A wall of beautiful colour, almost no proof on Maps',
+        description:
+          'The work on Instagram is gorgeous. The Maps page looks like a quiet salon nobody recommends.',
         iconType: 'primary' as const,
       },
     ],
     columns: 4 as const,
   };
 
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every enquiry, booking, and repeat visit',
-    description: 'Each piece does one job. Together they keep the chair full without the front desk chasing.',
-    featureCategories: [
+  const spectrumData = {
+    badge: 'Different Salons, Same Drift',
+    title: 'Solo stylist, two-chair team and a six-chair floor break in different places',
+    description:
+      'The leak is not the same in every salon. Once you place yours, the right next step gets obvious.',
+    cards: [
       {
-        title: 'Catch every call and form',
-        description: 'Calls, missed calls, web forms — all in one place with the client and the service noted.',
-        icon: MessageSquare,
-        features: [
-          'Missed calls texted back instantly',
-          'Web enquiries land with the front desk',
-          'Client and service captured up front',
+        title: 'Solo stylist or single chair',
+        description:
+          'One pair of hands. The phone goes mid-cut, the DMs back up, and there is no front desk to catch any of it.',
+        points: [
+          'DMs missed mid-appointment',
+          'No re-offer when someone cancels',
+          'No nudge when a regular drifts',
         ],
       },
       {
-        title: 'Get the booking confirmed without phone tag',
-        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
-        icon: Calendar,
-        features: [
-          'Slots clients can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'Front desk sees the day at a glance',
+        title: 'Small team, two to four chairs',
+        description:
+          'More chairs, more handoffs. Things slip in the gap between booker, stylist and client.',
+        points: [
+          'Bookings nobody confirmed',
+          'Tuesday afternoons sit empty',
+          'Regulars drift quietly',
         ],
+        featured: true,
       },
       {
-        title: 'Bring past clients back',
-        description: 'Gentle nudges for the next visit so the diary fills itself.',
-        icon: Workflow,
-        features: [
-          'Past clients nudged automatically',
-          'Repeat visits without front-desk chasing',
-          'Reminders for the next appointment',
-        ],
-      },
-      {
-        title: 'Turn happy clients into reviews',
-        description: 'A review request goes out at the right moment so the work shows up online.',
-        icon: ShieldCheck,
-        features: [
-          'Review requests after appointments',
-          'Asked when the client is happiest',
-          'More reviews where local people search',
-        ],
-      },
-      {
-        title: 'Show up when local people search',
-        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for a salon.',
-        icon: Search,
-        features: [
-          'Found on Maps for the work you do',
-          'Service pages that match real searches',
-          'Local area coverage that is visible',
+        title: 'Six-chair floor and up',
+        description:
+          'Front desk runs the salon. The cost of one missed regular per week, multiplied across the team, is the salary of another stylist.',
+        points: [
+          'Drift across dozens of regulars',
+          'Empty midweek across the floor',
+          'Reviews that never match the work',
         ],
       },
     ],
-    columns: 3 as const,
-  };
-
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal week, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on the front desk remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
-        items: [
-          'Phone rings while the team is with a client. Goes to voicemail. Lost.',
-          'A new client wants a slot. Three texts later, still no time set.',
-          'A great client a few months back. Nobody nudged them for the next visit.',
-          'You finished a great cut last week. They never got asked for a review.',
-        ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know the salon will reply.',
-          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
-          'A gentle nudge goes out and the next booking lands without effort.',
-          'A review request goes out after the visit. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
-
-  const pathwaysData = {
-    badge: 'Where Most Salons Start',
-    title: 'Three stages, most salons feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most clients.',
-    packages: [
-      {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when the team is busy and new client calls do not get answered.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
-        features: [
-          'Missed-call text-back so they know you will reply',
-          'One inbox for calls, forms, and web enquiries',
-          'Client and service captured before the conversation',
-        ],
-      },
-      {
-        name: 'Get the booking confirmed the same day',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
-        features: [
-          'Slots clients can pick themselves',
-          'Reminders the day before so chairs stay full',
-          'Front desk sees the day at a glance',
-        ],
-        popular: true,
-      },
-      {
-        name: 'Bring past clients back and turn visits into reviews',
-        description: 'For when the diary is fine but past clients drift away and reviews never get asked for.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if repeat visits and reputation are the weak spots',
-        features: [
-          'Past clients nudged automatically',
-          'Reminders for the next visit',
-          'Review requests at the right moment',
-        ],
-      },
-    ],
+    backgroundColor: 'bg-alt',
+    cssPrefix: 'hair-salons-spectrum',
   };
 
   const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on the front desk remembering.',
+    badge: 'Real Salon Moments',
+    title: 'Three moments where the diary either fills or stays empty',
+    description:
+      'These are the moments at the top of the page. This is what happens to them after.',
     workflows: [
       {
-        trigger: 'The team is with a client and a new enquiry call rings out.',
+        trigger: 'A regular has not booked in eleven weeks',
         actions: [
-          'They get a text inside a minute saying the salon will reply',
-          'The text captures the client and the service',
-          'The lead is held instead of going to the next salon',
+          'A short, warm nudge fires from the front-desk identity',
+          'She rebooks in two messages without a phone call',
+          'The drift stops at one missed cycle instead of three',
         ],
       },
       {
-        trigger: 'A client wants a slot this week.',
+        trigger: 'A late cancellation on Friday for a Saturday colour',
         actions: [
-          'They pick a slot from a link, no more text tag',
-          'A reminder goes out the day before',
-          'The front desk sees who is coming in and why',
+          'The slot opens to a tagged waitlist within minutes',
+          'A regular waiting for Saturday gets first refusal',
+          'The chair fills before the salon even opens',
         ],
       },
       {
-        trigger: 'A past client is due for their next visit.',
+        trigger: 'A 10:42pm DM about a colour for Saturday',
         actions: [
-          'A gentle nudge goes out automatically',
-          'They book again without the front desk chasing',
-          'The diary keeps filling without extra marketing',
+          'A warm reply from the salon goes out within a minute with availability and a deposit link',
+          'She locks the slot before bed instead of asking two more salons',
+          'Saturday fills with the right client at the right price',
         ],
       },
     ],
@@ -248,45 +135,84 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     cssPrefix: 'hair-salons-workflow-examples',
   };
 
-  const caseStudiesData = {
-    category: 'beauty-personal-care' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports beauty and personal care businesses in this category.',
-    limit: 2,
+  const pathwaysData = {
+    badge: 'Where Most Salons Start',
+    title: 'You do not have to fix everything at once',
+    description:
+      'Most salons feel one of these three louder than the others. Pick the loudest leak.',
+    packages: [
+      {
+        name: 'Catch the late-night DMs and missed calls',
+        description:
+          'For when bookings are decided after 9pm and the salon does not see the message until morning.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if late-night DMs are the loudest leak',
+        features: [
+          'Warm reply from the salon within a minute',
+          'Availability and deposit link in the same message',
+          'Late-night enquiries lock instead of drifting',
+        ],
+      },
+      {
+        name: 'Fill the empty midweek and the cancelled chair',
+        description:
+          'For when Tuesdays sit empty and a Friday cancellation costs a full Saturday.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if midweek and cancellations are the gap',
+        features: [
+          'Waitlist on a tap',
+          'Cancellations re-offered automatically',
+          'Quiet midweek slots filled from regulars',
+        ],
+        popular: true,
+      },
+      {
+        name: 'Stop regulars drifting',
+        description:
+          'For when nobody nudges the regulars and they slowly stop coming in.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if rebook retention is the gap',
+        features: [
+          'Rebook nudges at the right interval per service',
+          'Lapsed regulars warmed up before they go cold',
+          'Review ask the day after a finished colour',
+        ],
+      },
+    ],
   };
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system that come up most often for hair salons.',
+    description: 'The other parts of the system salons tend to lean on most.',
     cards: [
       {
-        icon: Workflow,
+        icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
+        description: 'Holds enquiry, booking and rebook flow together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
       },
       {
         icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support booking, reminders, and clearer next steps.',
+        title: 'Booking & Rebooking',
+        description: 'Deposits, reminders and the waitlist on a tap.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },
       {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen salon visibility and local trust.',
+        icon: Compass,
+        title: 'Local Authority & SEO',
+        description: 'Visibility for "hair salon near me" the moment somebody searches.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
       },
       {
         icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn appointments into reviews and proof.',
+        title: 'Reputation & Reviews',
+        description: 'Turns finished colour into proof on Maps and search.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -297,38 +223,38 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things hair salons usually ask',
-    description: 'Straight answers about how this fits into a busy salon.',
+    title: 'What salon owners tend to ask first',
+    description: 'Direct, no hedging.',
     faqs: [
       {
-        question: 'The front desk is already stretched. Will this make more work?',
+        question: 'Will the rebook nudge feel pushy to a long-term regular?',
         answer:
-          'It does the opposite. Missed calls get answered by text on their own. Reminders fire by themselves. The front desk sees a clearer day at a glance.',
+          'No. The message is short, warm and reads like the front desk noticed. Most regulars appreciate it because they had also forgotten to rebook.',
       },
       {
-        question: 'Will clients feel like they are getting an automated response?',
+        question: 'How does the waitlist actually work on a Friday cancellation?',
         answer:
-          'No. The messages are short and written like the front desk would actually text someone. The aim is to hold the lead until you can reply.',
+          'The slot fires to a tagged group of regulars who said they wanted Saturdays. First reply gets it. The chair fills before anyone in the salon has to think.',
       },
       {
-        question: 'Can it handle bookings that need a consultation first?',
+        question: 'Can it actually reply at 11pm without sounding like a bot?',
         answer:
-          'Yes. The first reply confirms a slot or sets up the consultation, depending on how you usually work.',
+          'Yes. The reply reads like the salon, gives availability, and offers a deposit link. The client books before bed instead of asking two more salons.',
       },
       {
-        question: 'Do we have to chase reviews ourselves?',
+        question: 'Will it interrupt the team mid-cut?',
         answer:
-          'No. The request goes out on its own after the visit, when the client is happiest.',
+          'No. It runs in the background. The team only sees the booking once it is locked.',
       },
       {
-        question: 'What about clients we have not seen in a while?',
+        question: 'When does the review request go out?',
         answer:
-          'They get gentle nudges so the next booking happens without effort.',
+          'The day after a finished colour, while she is still pleased. That is the moment with the highest yield.',
       },
       {
         question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
+          'Usually not. The bottleneck is what happens after the form is sent.',
       },
     ],
   };
@@ -342,40 +268,37 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
       'local-seo-authority',
       'reputation-review',
     ],
-    topics: ['booking-automation', 'no-show-reduction', 'review-generation'],
+    topics: ['booking-systems', 'client-reactivation', 'review-generation'],
     type: 'detail',
     parentSlug: 'beauty-personal-care',
     seo: {
-      title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+      title: 'Hair Salons \u2014 Stop Regulars Drifting, Fill The Empty Midweek | MindWP',
       description:
-        'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+        'For hair salons whose six-week regulars quietly become eleven-week regulars and whose Tuesdays sit empty. Rebook nudges, waitlist on a tap, late-night DM capture.',
       keywords: [
-        'hair salon website design',
-        'hair salon booking system',
-        'salon lead handling system',
-        'salon seo services',
-        'salon reputation management system',
+        'hair salon rebooking automation',
+        'hair salon waitlist system',
+        'hair salon late night DM reply',
+        'salon client retention',
+        'hair salon review automation',
       ],
       canonical: '/industries/beauty-personal-care/hair-salons',
     },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
+    hero: { ...heroData },
     operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
-    comparison: comparisonData,
-    pathways: pathwaysData,
+    spectrum: spectrumData,
     workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
+    pathways: pathwaysData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where bookings are slipping',
+      title: 'Tell us about the regulars who quietly drifted',
       description:
-        'If calls miss the front desk, past clients drift away, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
+        'Walk us through the last regular who stopped coming and the last Tuesday that sat empty. We will tell you what to plug first.',
     },
   };
 }
 
-export const hairSalonsIndustryPageData: IndustryPageData = buildHairSalonsIndustryPageData();
+
+export const hairSalonsIndustryPageData: IndustryPageData =
+  buildHairSalonsIndustryPageData();

@@ -1,13 +1,14 @@
 import {
   Calendar,
-  Clock3,
-  CloudRain,
-  Home,
+  ClipboardList,
+  Compass,
+  Eye,
+  FileSearch,
+  Hourglass,
   MessageSquare,
-  Search,
-  ShieldCheck,
+  Phone,
   Star,
-  Workflow,
+  Wrench,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -15,279 +16,223 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Roofing Companies',
-    title: 'Storm Hits. Phones Light Up. By Tomorrow Most of Those Calls Are Booked Elsewhere.',
+    title: 'Three Quotes On The Kitchen Table. Yours Was The One Nobody Chased.',
     description:
-      'Roofing demand comes in waves. When the weather turns, every nearby homeowner is calling around. The roofers who answer first, get on the roof first, and follow up first — those are the ones who get the work.',
-    list: ['Storm-day calls', 'Slow callbacks', 'Quotes that stall', 'Few reviews'],
+      'A re-roof is a six-week conversation, not a phone call. The homeowner asks three roofers up the ladder, sits with three quotes for a fortnight, talks to the spouse, talks to the neighbour. The job goes to whichever firm stayed in the conversation. Most of the work that walks past a roofing firm walks past in that quiet middle, where nobody followed up because nobody knew it was still open.',
+    list: ['Quote silence', 'Slow decisions', 'Lost re-roofs'],
     cssPrefix: 'roofing-companies-hero',
   };
 
-  const imageStripData = {
-    badge: 'How Roofing Work Comes In',
-    title: 'A homeowner has a leak and is ringing around',
-    description:
-      'A storm, a missing tile, a damp patch on a ceiling. They want someone to come and look, give them a price, and turn up when they said they would.',
-    items: [
-      {
-        title: 'Storm-day call surges',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing roofing storm call surges',
-      },
-      {
-        title: 'Site visits and inspections',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing roofing site visits',
-      },
-      {
-        title: 'Quotes and approvals',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing roofing quotes',
-      },
-      {
-        title: 'Reviews and referrals',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing roofing reviews',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'roofing-companies-image-strip',
-  };
-
   const operatingPatternsData = {
-    badge: 'Where The Work Slips',
-    title: 'The work is there. The way it gets handled is what loses it.',
-    description: 'A handful of patterns show up in nearly every roofing company.',
+    badge: 'Where The Decision Slips',
+    title: 'Where roofers actually lose the re-roof',
+    description:
+      'The roof is rarely the problem. The problem is the four weeks between the survey and the deposit, where nobody at the firm knows whose head they are still in.',
     benefits: [
       {
-        icon: CloudRain,
-        title: 'After a storm, the phones go off all at once',
-        description: 'Most calls go to voicemail. By the next morning the homeowners have already booked someone else.',
+        icon: Hourglass,
+        title: 'Quote sent Monday, no idea by Friday whether you are still in the running',
+        description:
+          'Twelve grand on the table. The homeowner is mulling. Nobody nudged. By the time someone wonders, another roofer has been chosen.',
         iconType: 'primary' as const,
       },
       {
-        icon: Calendar,
-        title: 'Inspections turn into a back and forth',
-        description: 'Booking a visit takes days of texts and missed calls instead of a clear time on the calendar.',
+        icon: ClipboardList,
+        title: 'Open quotes living in three different folders',
+        description:
+          'One in email, one written on the back of a survey sheet, one in someone\u2019s phone. Nobody can scan the open list in ten seconds, so half of them never get touched again.',
+        iconType: 'primary' as const,
+      },
+      {
+        icon: FileSearch,
+        title: 'Insurance claim job stalls and the homeowner stops trusting the timeline',
+        description:
+          'Photos sent to a personal phone. Adjuster paperwork in a different thread. Two weeks pass with no update and the homeowner quietly starts asking around.',
         iconType: 'secondary' as const,
       },
       {
-        icon: Clock3,
-        title: 'Quotes go out and never get chased',
-        description: 'A price gets sent, the homeowner thinks about it, and nobody ever follows up.',
+        icon: Phone,
+        title: 'Storm-morning calls overflow, but most of the lost work is in the quiet that follows',
+        description:
+          'A windy night sends twenty calls in. The biggest job of the year, though, is still the re-roof quote sitting from a fortnight ago that nobody warmed back up.',
         iconType: 'accent' as const,
-      },
-      {
-        icon: Home,
-        title: 'Online you look smaller than the work you do',
-        description: 'You finish good roofs every week. Online there are barely any reviews to show for it.',
-        iconType: 'primary' as const,
       },
     ],
     columns: 4 as const,
   };
 
+  const comparisonData = {
+    badge: 'A Six-Week Decision',
+    title: 'A re-roof conversation, before and after',
+    description:
+      'Same survey. Same crew. What changes is whether you stay in the conversation while the homeowner is making up their mind.',
+    comparisons: [
+      {
+        type: 'before' as const,
+        title: 'How the quote runs now',
+        items: [
+          'Quote goes out. Nobody at the firm knows when, or whether to chase.',
+          'A week passes. The homeowner has now seen two more quotes. You have no idea.',
+          'Open quotes live in three different places. Nobody can read the list in ten seconds.',
+          'You find out you lost it two months later from the neighbour.',
+        ],
+      },
+      {
+        type: 'after' as const,
+        title: 'How the quote runs after',
+        items: [
+          'Every quote gets a friendly check-in a few days later, and again a week or so after.',
+          'Open quotes sit on a single board the office can scan in ten seconds.',
+          'You can see who has gone quiet, who is still warm, and who needs a price tweak.',
+          'Half the quotes that used to drift get closed because someone stayed in the conversation.',
+        ],
+      },
+    ],
+  };
+
   const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every call, visit, quote, and finished job',
-    description: 'Each piece does one job. Together they keep work from falling on the floor when the phones go off.',
+    badge: 'What Goes In',
+    title: 'Five pieces sized for a long sales cycle and a roof full of comparisons',
+    description:
+      'Each piece does one job in the middle weeks of a re-roof decision. None of them ask the crew to come off a roof to type.',
     featureCategories: [
       {
-        title: 'Catch every call and form',
-        description: 'Calls, missed calls, web forms — all in one place with the address and the issue captured.',
+        title: 'Make every open quote visible in one place',
+        description:
+          'Re-roof, repair and insurance quotes sit on a single board, sorted by how warm and how old. The office can scan it in ten seconds.',
+        icon: Eye,
+        features: [
+          'One board for every open quote',
+          'Status visible at a glance',
+          'No more "did anyone chase that?"',
+        ],
+      },
+      {
+        title: 'Stay in the conversation while the homeowner mulls',
+        description:
+          'A friendly check-in fires a few days after the quote, and again a week or so later. It reads like a person at the office, not a sequence.',
         icon: MessageSquare,
         features: [
-          'Missed calls texted back instantly',
-          'Web enquiries sent to the office and the crew lead',
-          'Address and issue noted up front',
+          'Auto chase at the right intervals',
+          'Reads like a person, not a robot',
+          'Quotes warmed up before they go cold',
         ],
       },
       {
-        title: 'Get the inspection booked without the back-and-forth',
-        description: 'A clear way to offer a visit time, confirm it, and remind the homeowner the day before.',
-        icon: Calendar,
+        title: 'Pull insurance jobs out of paperwork limbo',
+        description:
+          'Photos, adjuster paperwork and the homeowner\u2019s thread all attached to the address. Nothing lives on a personal phone.',
+        icon: FileSearch,
         features: [
-          'Visit slots people can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'Crew sees the address and the issue before they arrive',
+          'Photos and paperwork in one place per job',
+          'Address, claim and timeline tied together',
+          'Homeowner gets an update before they start asking around',
         ],
       },
       {
-        title: 'Stop quotes going quiet',
-        description: 'Every estimate gets a follow-up on a schedule, even when the team is back up on a roof.',
-        icon: Workflow,
+        title: 'Hold the storm-morning calls without it being chaos',
+        description:
+          'Missed calls fire a short, real-sounding text in under a minute capturing the address and the damage. The inbox triages by urgency, not by who shouted last.',
+        icon: Phone,
         features: [
-          'Quotes chased automatically',
-          'Open quotes in one place',
-          'Old quotes warmed up instead of forgotten',
+          'Text-back inside 60 seconds',
+          'One queue across calls, photos and forms',
+          'Crew sees who needs a tarp on first',
         ],
       },
       {
-        title: 'Turn finished roofs into proof',
-        description: 'A review request goes out at the right moment so the work you do shows up online.',
-        icon: ShieldCheck,
+        title: 'A short ask the day the scaffold comes down',
+        description:
+          'While the homeowner is still admiring the new roof from the front lawn, a friendly review request lands. They actually leave one because they were just asked at the right moment.',
+        icon: Star,
         features: [
-          'Review requests after every completed job',
-          'Asked when the homeowner is happiest',
-          'More reviews where local people search',
-        ],
-      },
-      {
-        title: 'Show up when local homeowners search',
-        description: 'Service pages and Google profile lined up so you appear when someone nearby needs a roofer.',
-        icon: Search,
-        features: [
-          'Found on Maps for the work you do',
-          'Service pages that match real searches',
-          'Local area coverage that is visible',
+          'Review ask the day the scaffold comes down',
+          'Reviews on the page that gets the next click',
+          'Reputation that catches up to the actual workload',
         ],
       },
     ],
     columns: 3 as const,
   };
 
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal week, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
-        items: [
-          'Storm hits. Phones ring all morning. Most go to voicemail. Lost.',
-          'Homeowner wants a visit. Three texts later, you are still trying to confirm.',
-          'Quote sent on Monday. By Friday nobody has chased it.',
-          'You finished a great roof last week. They never got asked for a review.',
-        ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know you will ring back.',
-          'They pick a visit slot from a link. Confirmed. Reminder fires the day before.',
-          'The quote gets a polite chase the next morning. You can see who is waiting.',
-          'A review request goes out the day you finish. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
-
   const pathwaysData = {
     badge: 'Where Most Roofers Start',
-    title: 'Three stages, most roofers feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
+    title: 'You do not have to fix the whole sales cycle at once',
+    description:
+      'Most roofing firms feel one of these louder than the others. Pick the loudest leak.',
     packages: [
       {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when the phones go off after a storm and most never get answered.',
+        name: 'Stop re-roof quotes drifting',
+        description:
+          'For when small repairs flow fine but the twelve-grand quotes go quiet for a fortnight and nobody knows where you stand.',
         price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
+        priceDetail: 'Start here if quote follow-up is the loudest leak',
         features: [
-          'Missed-call text-back so they know you will ring',
-          'One inbox for calls, forms, and web enquiries',
-          'Address and issue noted before the conversation',
-        ],
-      },
-      {
-        name: 'Get the inspection booked the same week',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a site visit.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
-        features: [
-          'Visit slots homeowners can pick themselves',
-          'Reminders the day before so visits actually happen',
-          'Crew sees the job before they arrive',
+          'One board for every open quote',
+          'Auto chase a few days after the quote, and again a week later',
+          'Old quotes warmed up before they go cold',
         ],
         popular: true,
       },
       {
-        name: 'Keep quotes moving and turn jobs into reviews',
-        description: 'For when work comes in fine but quotes stall and reviews never get asked for.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if follow-up and reputation are the weak spots',
+        name: 'Tighten insurance and storm work',
+        description:
+          'For when claim jobs stall in paperwork and storm-morning calls outpace the office line.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if claims and surge handling are the gap',
         features: [
-          'Quotes chased automatically',
-          'Past customers nudged for return work',
-          'Review requests at the right moment',
+          'Photos and paperwork attached to the address',
+          'Text-back inside a minute on every missed storm call',
+          'One queue across calls, photos and forms',
+        ],
+      },
+      {
+        name: 'Get the reputation onto the map',
+        description:
+          'For when the work is good and the Google profile does not show it.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if the review count is the embarrassment',
+        features: [
+          'Review ask the day the scaffold comes down',
+          'Reviews on the page next homeowners actually look at',
+          'Local visibility for the postcodes that pay',
         ],
       },
     ],
-  };
-
-  const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on someone remembering.',
-    workflows: [
-      {
-        trigger: 'A storm has just gone through and the phones are going off.',
-        actions: [
-          'Every missed call gets a text inside a minute',
-          'Each enquiry is logged with the address and the issue',
-          'The crew lead sees a clear list of who needs a visit first',
-        ],
-      },
-      {
-        trigger: 'A homeowner needs an inspection this week.',
-        actions: [
-          'They pick a visit slot from a link, no more text tag',
-          'A reminder goes out the day before',
-          'You arrive with the address and the issue already noted',
-        ],
-      },
-      {
-        trigger: 'You sent a quote a few days ago and have not heard back.',
-        actions: [
-          'A polite chase goes out automatically',
-          'You can see all the open quotes in one place',
-          'If they say yes, the booking happens without another five messages',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'roofing-companies-workflow-examples',
-  };
-
-  const caseStudiesData = {
-    category: 'home-services' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports home service businesses in this category.',
-    limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system that come up most often for roofing companies.',
+    description: 'The other parts roofing firms tend to lean on most.',
     cards: [
       {
-        icon: Workflow,
+        icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
+        description: 'Holds enquiry, survey and quote flow together through a long decision cycle.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
       },
       {
         icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support visit booking, reminders, and clearer next steps.',
-        href: '/services/crm-infrastructure-implementation',
+        title: 'CRM Automation',
+        description: 'Holds the open quote board and the friendly check-ins that close re-roofs.',
+        href: '/services/crm-automation',
         gradient: 'teal',
         iconBg: 'teal',
       },
       {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen roofing visibility and local trust.',
+        icon: Compass,
+        title: 'Local Authority & SEO',
+        description: 'Visibility for "roofer near me" the morning after a windy night.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
       },
       {
         icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn finished roofs into reviews and proof.',
+        title: 'Reputation & Reviews',
+        description: 'Turns finished re-roofs into proof on Maps and search.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -298,38 +243,38 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things roofers usually ask',
-    description: 'Straight answers about how this fits into a roofing business.',
+    title: 'What roofing firms ask first',
+    description: 'Direct, no hedging.',
     faqs: [
       {
-        question: 'After a storm the phones never stop. Will this actually keep up?',
+        question: 'Most of our re-roof quotes go quiet for two weeks. Will a chase actually help?',
         answer:
-          'That is the part it handles best. Every missed call gets a text back instantly, and every enquiry lands in one place so nothing gets lost in the surge.',
+          'Yes \u2014 that is the moment most of them get lost. A friendly check-in a few days after the quote, and again a week or so later, keeps you in the conversation while the homeowner is still deciding.',
       },
       {
-        question: 'Will homeowners feel like they are getting an automated response?',
+        question: 'Will the chase make us look pushy?',
         answer:
-          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
+          'No. It reads like a person at the office, fires at sensible intervals, and most homeowners thank you for the nudge.',
       },
       {
-        question: 'Can it handle quotes for jobs that need a site visit first?',
+        question: 'How does the open quote board actually help us close more?',
         answer:
-          'Yes. The first reply confirms a visit and the quote follows after the inspection.',
+          'You can see who is warm, who has gone quiet, and who has not been touched in a week. The office stops guessing, the crew stops finding out from the neighbour.',
       },
       {
-        question: 'Do I have to chase reviews myself?',
+        question: 'Can it handle insurance work and storm-claim photos?',
         answer:
-          'No. The request goes out on its own after the job is done, when the homeowner is happiest.',
+          'Yes. Photos and adjuster paperwork land in one place per job, attached to the address, instead of being scattered across personal phones.',
       },
       {
-        question: 'What about old quotes sitting in email threads?',
+        question: 'Storm mornings can still bury the line. Does this help?',
         answer:
-          'Those get worked in too. Many roofers find that warming up old quotes brings in real money before any new marketing kicks in.',
+          'Yes. Every missed call gets a short, real text inside a minute and the inbox triages by urgency. It is not the biggest lever for a roofer \u2014 the bigger lever is the quote pipeline \u2014 but it stops the worst of the surge bleed.',
       },
       {
-        question: 'Do I need a brand new website?',
+        question: 'When does the review request go out without being awkward?',
         answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
+          'The day the scaffold comes down, while the homeowner is still admiring the new roof.',
       },
     ],
   };
@@ -337,41 +282,42 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   return {
     slug: 'roofing-companies',
     industries: ['roofing'],
-    systems: ['smart-website-systems', 'ai-lead-handling', 'local-seo-authority', 'reputation-review'],
-    topics: ['lead-management', 'missed-calls', 'review-generation'],
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'client-reactivation', 'review-generation'],
     type: 'detail',
     parentSlug: 'home-services',
     seo: {
-      title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+      title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
       description:
-        'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+        'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
       keywords: [
-        'roofing company website design',
-        'roofing booking system',
-        'roofing lead handling system',
-        'roofing seo services',
-        'roofing reputation management system',
+        'roofing re-roof quote follow up',
+        'roofing quote pipeline',
+        'roofing insurance claim handling',
+        'roofing review automation',
+        'roofer local SEO',
       ],
       canonical: '/industries/home-services/roofing-companies',
     },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
+    hero: { ...heroData },
     operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
     comparison: comparisonData,
+    systemLayers: systemLayersData,
     pathways: pathwaysData,
-    workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the work is slipping',
+      title: 'Tell us about the last re-roof you lost in the silence',
       description:
-        'If storm-day calls go to voicemail, quotes stall, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
+        'Walk us through a recent re-roof quote that went quiet \u2014 when it went out, when you last heard back, who eventually got the job. We will tell you what to plug first.',
     },
   };
 }
 
-export const roofingCompaniesIndustryPageData: IndustryPageData = buildRoofingCompaniesIndustryPageData();
+export const roofingCompaniesIndustryPageData: IndustryPageData =
+  buildRoofingCompaniesIndustryPageData();

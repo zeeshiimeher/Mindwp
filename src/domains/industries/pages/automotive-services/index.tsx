@@ -1,14 +1,13 @@
 import {
-  AlertCircle,
-  Calendar,
-  Car,
+  Building2,
+  ClipboardList,
   Clock3,
+  Headset,
   MapPinned,
-  MessageSquare,
-  Search,
-  Shield,
-  Sparkles,
+  PhoneMissed,
+  Receipt,
   Star,
+  Truck,
   Users,
   Wrench,
 } from 'lucide-react';
@@ -18,287 +17,169 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Automotive Service Businesses',
-    title: 'The Bay Is Full. The Phone Is Ringing. The Quote Hasn’t Been Chased.',
+    title: 'The Bays Stay Booked. The Front Desk Is What Loses Work.',
     description:
-      'Repair shops, mobile mechanics, body shops, detailers — most don’t lose work because the work is bad. They lose it in the gaps. Calls that go to voicemail. Quotes that go quiet. Reviews nobody asked for. We put the system in place that catches it.',
-    list: [
-      'Calls missed during jobs',
-      'Quotes that go cold',
-      'Out-of-area enquiries that waste the day',
-      'Reviews that never get asked for',
-    ],
+      'In most automotive shops the work itself is fine. What slips is everything around it. The phone goes during a job. An estimate sits in a thread. A driver picks the next garage because nobody got back to them. The skill is in the workshop. The leak is at the desk.',
+    list: ['Phone chaos', 'Stalled quotes', 'Quiet review wall', 'Buried admin'],
     cssPrefix: 'automotive-services-hero',
   };
 
-  const imageStripData = {
-    badge: 'How The Work Comes In',
-    title: 'The hands-on work is fine. The mess is everything around it.',
-    description:
-      'Calls land mid-job. Estimates need a chase. Bookings need a confirmation. Reviews need an ask. Most automotive businesses already have the demand — they just need a way to stop it slipping through while the team is on the tools.',
-    items: [
-      {
-        title: 'Urgent repair and fault enquiries',
-        image: '/images/placeholders/service-card-1.svg',
-        alt: 'Abstract placeholder image representing urgent automotive repair enquiries',
-      },
-      {
-        title: 'Estimate and inspection requests',
-        image: '/images/placeholders/service-card-2.svg',
-        alt: 'Abstract placeholder image representing automotive inspection scheduling',
-      },
-      {
-        title: 'Workshop scheduling pressure',
-        image: '/images/placeholders/service-card-3.svg',
-        alt: 'Abstract placeholder image representing workshop scheduling pressure',
-      },
-      {
-        title: 'Review and return-visit follow-up',
-        image: '/images/placeholders/service-card-4.svg',
-        alt: 'Abstract placeholder image representing automotive review and return-visit follow-up',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'automotive-services-image-strip',
-  };
-
   const operatingPatternsData = {
-    badge: 'Where The Work Slips',
-    title: 'The same handful of leaks shows up in nearly every automotive business',
+    badge: 'The Same Few Leaks',
+    title: 'Across repair shops, body shops, detailers and mobile vans, the same handful of moments keep losing work',
     description:
-      'Different shops, same patterns — the bay’s full, the phone goes, and somebody quietly gets booked elsewhere.',
+      'Different setups. Different tools. Same pinch point — somebody waits a few hours and books elsewhere.',
     benefits: [
       {
-        icon: AlertCircle,
-        title: 'The phone rings while everyone’s under a bonnet',
+        icon: PhoneMissed,
+        title: 'Calls land while everyone is on the tools',
         description:
-          'Three missed calls before lunch. Two of them already booked someone who answered.',
+          'Three rings. Voicemail. Nobody hears the message until the bay is clear, by which point the driver has rung the next two shops on the list.',
         iconType: 'primary' as const,
       },
       {
-        icon: Clock3,
-        title: 'Quotes go out and never get chased',
+        icon: Receipt,
+        title: 'Estimates sit half-written in someone\u2019s inbox',
         description:
-          'Estimate sent Tuesday. By Friday nobody’s rung them back. The job either rings you or quietly goes elsewhere.',
+          'The number was almost ready on Tuesday. By Friday the driver assumes you forgot. They did not chase you. They booked the shop that chased them.',
         iconType: 'secondary' as const,
       },
       {
-        icon: MapPinned,
-        title: 'The competitor down the road has eighty reviews. You have eleven.',
+        icon: Star,
+        title: 'A wall of good work, almost no proof of it online',
         description:
-          'Plenty of happy customers. Almost none of them ever wrote anything. Locally you look quieter than you actually are.',
+          'You finished thirty jobs last month. Two reviews showed up. The garage on the next street has eighty and worse mechanics.',
         iconType: 'accent' as const,
       },
       {
-        icon: MessageSquare,
-        title: 'More work coming in just makes the admin worse',
+        icon: ClipboardList,
+        title: 'More demand makes the office feel worse, not better',
         description:
-          'The marketing works. Then the front desk drowns. Reply times get worse, not better.',
+          'Marketing turns the dial up. The inbox fills. The team works longer. Nothing actually catches more of it.',
         iconType: 'primary' as const,
       },
     ],
     columns: 4 as const,
   };
 
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch every enquiry, book the work, and turn jobs into proof',
-    description:
-      'Each piece does one job. Together they stop work from slipping while the team is on the tools.',
-    featureCategories: [
-      {
-        title: 'Catch every call and message in one place',
-        description:
-          'Calls, forms, web chat, missed calls, DMs — all land somewhere the team actually checks.',
-        icon: MessageSquare,
-        features: [
-          'Missed-call text-back inside a minute',
-          'One inbox for every channel',
-          'Vehicle and fault captured up front',
-        ],
-      },
-      {
-        title: 'Get the booking confirmed without phone tag',
-        description:
-          'Slots customers can pick. Confirmations and reminders that fire on their own. Cars that actually turn up.',
-        icon: Calendar,
-        features: [
-          'Self-serve booking that fits how you run',
-          'Reminders the day before',
-          'Cleaner front-desk-to-workshop handover',
-        ],
-      },
-      {
-        title: 'Keep the workshop and the office in sync',
-        description:
-          'Everyone sees what’s booked, what’s waiting on a quote, and what’s ready for handover.',
-        icon: Wrench,
-        features: [
-          'Live view of every open job',
-          'Service path attached to each enquiry',
-          'Less “did anyone ring them back?”',
-        ],
-      },
-      {
-        title: 'Turn finished jobs into reviews you can show',
-        description:
-          'A review request goes out at the right moment. Your reputation finally catches up to the work.',
-        icon: Star,
-        features: [
-          'Review requests after every job',
-          'Asked when customers are happiest',
-          'More five-stars where local people search',
-        ],
-      },
-      {
-        title: 'Show up when local drivers search for the work you do',
-        description:
-          'Service pages, Google profile, local listings — lined up so the right people find you instead of the next garage.',
-        icon: Search,
-        features: [
-          'Pages for the work you actually do',
-          'Found on Maps for local searches',
-          'Service-area visibility that compounds',
-        ],
-      },
-      {
-        title: 'Stop quotes from going cold',
-        description:
-          'Pending estimates, missed enquiries, and old leads get a polite chase on their own.',
-        icon: Shield,
-        features: [
-          'Quotes followed up automatically',
-          'Old enquiries warmed up instead of forgotten',
-          'Repeat-service nudges at the right interval',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
-
   const spectrumData = {
-    badge: 'Different Shapes, Same Leaks',
-    title: 'A workshop, a van, and a detailing unit don’t look the same — but the gaps usually are',
+    badge: 'Different Shapes Of Shop',
+    title: 'A workshop, a body shop, a detailer and a van do not bleed work in the same place',
     description:
-      'Owner-led garages, team workshops, mobile operators — different setups, but the friction lives in similar places.',
+      'Same category, different geometry. Each shape has its own first leak. The fix has to start where the leak actually is.',
     cards: [
       {
-        title: 'Owner-led garages',
+        title: 'Owner-led repair shops',
         description:
-          'One pair of hands does most of it. The phone going during a brake job is the single biggest leak.',
-        points: [
-          'Calls missed mid-job',
-          'Quotes never followed up',
-          'Reviews barely asked for',
-        ],
+          'Two or three pairs of hands. Whoever is closest to the desk answers when they can. Quotes get drafted between jobs and rarely chased.',
+        points: ['Mid-job phone calls', 'Half-written estimates', 'No follow-up window'],
       },
       {
-        title: 'Workshop teams',
+        title: 'Body shops with insurance work',
         description:
-          'More hands, more handoffs. Things slip in the gap between the front desk, the workshop, and the customer.',
-        points: [
-          'Bookings that nobody confirmed',
-          'Quotes sitting in someone’s email',
-          '“Who was supposed to ring them?”',
-        ],
+          'Photos arrive after a bump. The first reply usually wins the job. The shop that opens the email Tuesday afternoon has already lost it.',
+        points: ['Photo response time', 'Insurer back-and-forth', 'Quote chase delay'],
         featured: true,
       },
       {
-        title: 'Mobile and specialist operators',
+        title: 'Detailers and appearance specialists',
         description:
-          'No workshop sign on the road, so the website and Google profile are the storefront — and they have to do real work.',
-        points: [
-          'Out-of-area enquiries that eat the day',
-          'Trust that has to be built before the call',
-          'Arrival timing that depends on memory',
-        ],
+          'Most enquiries arrive on phones over the weekend. DMs, web forms, late texts. The bay is where you live, the inbox is where the booking dies.',
+        points: ['Weekend DM gap', 'Slot back-and-forth', 'Regulars drifting'],
+      },
+      {
+        title: 'Mobile and van-based mechanics',
+        description:
+          'No shopfront. The phone in the glovebox is the front desk. Half of every wasted hour is driving to a postcode that did not need to be quoted by phone.',
+        points: ['Roadside calls', 'Postcode waste', 'Trust before arrival'],
       },
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'automotive-services-spectrum',
   };
 
-  const decisionChecklistData = {
-    badge: 'Sound Familiar?',
-    title: 'A few signs this is worth looking at properly',
-    description:
-      'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
-    items: [
-      'Calls go to voicemail more days than not, and the callback happens hours later',
-      'Estimates go out and you don’t really know which ones got chased',
-      'Reviews online don’t reflect how the actual work compares to the competition',
-      '“Did anyone ring them back?” gets asked more than once a week',
-      'You’ve spent on ads or SEO before but enquiries still drop on the floor',
-      'More demand just makes the front desk feel worse, not better',
-    ],
-    columns: 2 as const,
-    backgroundColor: 'bg-base',
-    cssPrefix: 'automotive-services-decision-checklist',
-  };
-
   const serviceEnvironmentsData = {
-    badge: 'How You Actually Work',
-    title: 'A workshop, a team, and a van each break in different places',
+    badge: 'How You Actually Run',
+    title: 'The fix is shaped by the shop, not the other way around',
     description:
-      'A repair shop and a mobile mechanic and a detailer all do good work — but the moment things slip is different in each one. That’s where the system has to be shaped.',
+      'Before anything is built, we look at how enquiries actually arrive in your shop, who is meant to handle them, and where they slip in a normal week.',
     features: [
       {
-        title: 'Workshop-led repair',
+        title: 'A shop with bays and a counter',
         description:
-          'Calls land mid-job, quotes need chasing, the front desk gets buried when the bays are full.',
-        icon: Car,
+          'The desk is the bottleneck. Calls, walk-ins, and quote requests all queue behind whoever is also writing the next invoice.',
+        icon: Building2,
       },
       {
-        title: 'Team-based operation',
+        title: 'A team split between front and workshop',
         description:
-          'Handoffs between the person taking the call, the person quoting, and the person doing the work.',
+          'Handoffs happen on yellow notes and verbal reminders. The slip is usually in the gap between who took the call and who was meant to ring back.',
         icon: Users,
       },
       {
-        title: 'Mobile or appearance-led',
+        title: 'A van and a phone',
         description:
-          'No shopfront. The website and Google profile do the trust work — plus arrival timing matters.',
-        icon: Sparkles,
+          'The day runs from the seat. There is no buffer between the job and the next call. Whatever does not get answered in the moment usually does not get answered at all.',
+        icon: Truck,
       },
     ],
-    tagline: 'Same category, different bottlenecks',
-    narrativeTitle: 'Why we look at the shape of the business first',
+    tagline: 'Same trade, different friction',
+    narrativeTitle: 'We start with the shape, not the software',
     narrativeParagraphs: [
-      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
-      'From there, the right next step — catching calls, sorting bookings, chasing quotes, building reviews — becomes obvious instead of generic.',
+      'A short conversation usually shows where the leak actually lives. Sometimes it is the phone. Sometimes it is the estimate that goes out and never gets nudged. Sometimes it is the regulars who quietly stopped coming back.',
+      'Once the leak is named, the order of work is obvious. Nothing gets bolted on for the sake of looking busy.',
     ],
-    backgroundColor: 'bg-alt',
+    backgroundColor: 'bg-base',
     cssPrefix: 'automotive-services-service-environments',
   };
 
-  const processData = {
-    badge: 'How We Get Started',
-    title: 'How a typical conversation moves from “we’re losing work” to “we’ve stopped losing work”',
+  const decisionChecklistData = {
+    badge: 'Worth A Look If',
+    title: 'A few honest signs the leak is bigger than another marketing tweak will fix',
     description:
-      'Nothing fancy. We look at how the business actually runs, then put the missing pieces in place in the order that helps most.',
+      'Tick most of these and the issue is structural. Another set of ads will not change the answer.',
+    items: [
+      'You have lost count of how many calls hit voicemail in a normal week',
+      '"Did anyone ring them back?" gets asked more than once a day',
+      'Estimates go out, then nobody really knows which ones got chased',
+      'The competitor up the road has triple your reviews and you know your work is better',
+      'Last time you spent on ads, the inbox got worse, not the diary',
+      'New customers find you fine. Past customers vanish without a trace',
+    ],
+    columns: 2 as const,
+    backgroundColor: 'bg-alt',
+    cssPrefix: 'automotive-services-decision-checklist',
+  };
+
+  const processData = {
+    badge: 'How A Conversation Goes',
+    title: 'From "we keep losing work" to "we stopped losing it" without a rebuild',
+    description:
+      'No pitch decks. We look at where the work is actually leaving and start with the leak that costs you the most.',
     steps: [
       {
         number: '01',
-        title: 'We look at how enquiries arrive now',
+        title: 'Walk through a normal week',
         description:
-          'Calls, forms, DMs, walk-ins. Where they go, who sees them, who replies.',
+          'How calls land, who answers them, where forms go, what happens to a quote after it leaves the inbox.',
       },
       {
         number: '02',
-        title: 'We map where work is slipping',
+        title: 'Name the biggest leak',
         description:
-          'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
+          'Usually one of: missed calls, dead estimates, no-shows, missing reviews. Whichever is bleeding the most work is what we touch first.',
       },
       {
         number: '03',
-        title: 'The biggest leak gets fixed first',
+        title: 'Plug the leak',
         description:
-          'Missed calls, dead quotes, no-shows, missing reviews — whichever is bleeding the most work.',
+          'Small, specific change in the place that hurts. Not a rebuild. Not a re-platforming.',
       },
       {
         number: '04',
-        title: 'It runs while the team is on the tools',
+        title: 'Move to the next leak',
         description:
-          'Replies, reminders, reviews, follow-up. Going on their own while the workshop runs the workshop.',
+          'Once the first one is steady, the next one is obvious. The shop carries on running while it gets quieter at the desk.',
       },
     ],
     columns: 4 as const,
@@ -307,38 +188,38 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'By Type Of Shop',
-    title: 'Pick the one closest to how you run',
+    badge: 'By Shape Of Shop',
+    title: 'Pick the page that sounds like your week',
     description:
-      'Same category, different bottlenecks. These pages get into the specifics for each kind of automotive business.',
+      'Same category, different leaks. Each page goes deeper on the specific moments that lose work in that kind of shop.',
     items: [
       {
         title: 'Auto Repair',
         description:
-          'For shops where calls go missing mid-job, estimates go quiet, and reviews never get asked for.',
+          'For shops where the phone goes during a brake job and the estimate that went out on Tuesday is still sitting unread.',
         href: '/industries/automotive-services/auto-repair',
         icon: Wrench,
       },
       {
+        title: 'Body Shops',
+        description:
+          'For shops where a photo of the damage hits three inboxes at once and the slowest one to open it loses the repair.',
+        href: '/industries/automotive-services/body-shops',
+        icon: Headset,
+      },
+      {
         title: 'Car Detailing',
         description:
-          'For detailers losing Saturdays to slow DMs, no-shows, and regulars who quietly stopped coming.',
+          'For detailers whose Saturday morning DMs sit unread until 6pm and whose best regulars quietly stopped booking.',
         href: '/industries/automotive-services/car-detailing',
-        icon: Sparkles,
+        icon: Clock3,
       },
       {
         title: 'Mobile Mechanics',
         description:
-          'For van-based mechanics whose day is run from the glovebox — missed calls, out-of-area enquiries, arrival texts.',
+          'For van-based mechanics whose front desk is a phone in the glovebox and half a day gets lost driving to wrong postcodes.',
         href: '/industries/automotive-services/mobile-mechanics',
-        icon: Car,
-      },
-      {
-        title: 'Body Shops',
-        description:
-          'For body shops losing quotes to whoever replies first — photos sat unread, estimates that went cold.',
-        href: '/industries/automotive-services/body-shops',
-        icon: Shield,
+        icon: MapPinned,
       },
     ],
     backgroundColor: 'bg-muted/20',
@@ -359,39 +240,33 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     topics: ['lead-management', 'missed-calls', 'review-generation', 'booking-systems'],
     industries: ['auto-repair', 'body-shop', 'car-detailing', 'mobile-mechanic'],
     seo: {
-      title: 'Automotive Service Businesses — Stop Losing Calls, Quotes, and Reviews | MindWP',
+      title: 'Automotive Service Shops \u2014 Stop Losing Work At The Front Desk | MindWP',
       description:
-        'For repair shops, mobile mechanics, body shops, and detailers where calls get missed, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.',
+        'For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.',
       keywords: [
-        'automotive service website systems',
-        'auto repair booking system',
-        'automotive lead handling',
-        'automotive estimate follow up system',
-        'local automotive business infrastructure',
+        'automotive shop missed call recovery',
+        'auto repair estimate follow up',
+        'body shop photo response time',
+        'detailer booking system',
+        'mobile mechanic dispatch',
       ],
       canonical: '/industries/automotive-services',
     },
     hero: heroData,
-    imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
     spectrum: spectrumData,
-    decisionChecklist: decisionChecklistData,
     serviceEnvironments: serviceEnvironmentsData,
-    systemLayers: systemLayersData,
+    decisionChecklist: decisionChecklistData,
     process: processData,
     detailRoutes: detailRoutesData,
     sectionControls: {
-      subIndustries: {
-        enabled: false,
-      },
-      caseStudies: {
-        enabled: false,
-      },
+      subIndustries: { enabled: false },
+      caseStudies: { enabled: false },
     },
     cta: {
-      title: 'Tell us where the work is slipping',
+      title: 'Show us where the work is leaving',
       description:
-        'If calls go missing, quotes go quiet, or reviews never get asked for — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
+        'Walk us through a normal week at the shop. We will tell you the one leak worth fixing first and what it would take to plug it.',
     },
   };
 }
