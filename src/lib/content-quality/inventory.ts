@@ -16,7 +16,7 @@ import {
 import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '@/lib/content-graph/types';
-import imageIndex from '@/lib/image-system/data/imageIndex.json';
+import { getImage } from '@/lib/image-system/resolver';
 import { normalizePath } from '@/lib/seo/config';
 import { getMetadataBase, SITE_NAME, toAbsoluteUrl } from '@/lib/seo/config';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
@@ -57,13 +57,8 @@ export interface RouteInventoryEntry {
 }
 
 const routeInventoryPromise = new Map<string, Promise<RouteInventoryEntry[]>>();
-const workspaceRoot = process.cwd();
 const isDevelopmentRuntime =
   process.env.NODE_ENV === 'development' && process.env.VITEST !== 'true';
-const runtimeImageIndex = imageIndex as Record<
-  string,
-  Partial<Record<'featured-clean' | 'featured-overlay' | 'content', { file?: string }>>
->;
 
 type SystemSnapshot = {
   routeInventory?: RouteInventoryEntry[];
@@ -109,19 +104,9 @@ function resolveInventoryOpenGraphImages(canonical: string): string[] {
     return [DEFAULT_OG_IMAGE_PATH];
   }
 
-  const indexedAssetPath = runtimeImageIndex[assetSlug]?.['featured-overlay']?.file;
-  if (indexedAssetPath) {
-    const webPath = `/${indexedAssetPath.replace(/^public\//, '')}`;
-    const indexedFilePath = path.join(workspaceRoot, indexedAssetPath);
-    if (fs.existsSync(indexedFilePath)) {
-      return [webPath];
-    }
-  }
-
-  const candidatePath = `/images/${assetDirectory}/${assetSlug}.webp`;
-  const candidateFilePath = path.join(workspaceRoot, 'public', candidatePath.replace(/^\//, ''));
-  if (fs.existsSync(candidateFilePath)) {
-    return [candidatePath];
+  const imagePath = getImage(assetSlug, assetDirectory, 'featured-overlay');
+  if (imagePath && imagePath !== DEFAULT_OG_IMAGE_PATH) {
+    return [imagePath];
   }
 
   const message = `[inventory] Missing open graph image for ${canonical}.`;

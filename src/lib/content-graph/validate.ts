@@ -9,7 +9,6 @@ function assert(condition: unknown, message: string): asserts condition {
 
 export function validateContentGraph(graph: Record<string, ContentGraphNode>): true {
   const nodes = Object.values(graph);
-  const slugSet = new Set<string>();
   const idSet = new Set<string>();
   const pathSet = new Set<string>();
 
@@ -21,9 +20,6 @@ export function validateContentGraph(graph: Record<string, ContentGraphNode>): t
     idSet.add(node.id);
 
     assert(typeof node.slug === 'string' && node.slug.length > 0, `Node ${node.id} has empty slug`);
-
-    assert(!slugSet.has(node.slug), `Duplicate slug detected: ${node.slug}`);
-    slugSet.add(node.slug);
 
     assert(
       typeof node.path === 'string' && node.path.trim().length > 0,
@@ -56,7 +52,7 @@ export function validateContentGraph(graph: Record<string, ContentGraphNode>): t
       ...(node.validates ?? []),
     ];
     for (const edge of references) {
-      const isResolved = idSet.has(edge.id) || slugSet.has(edge.id);
+      const isResolved = idSet.has(edge.id) || nodes.some(candidate => candidate.slug === edge.id);
       assert(isResolved, `Node ${node.id} has unresolved relationship reference: ${edge.id}`);
     }
   }

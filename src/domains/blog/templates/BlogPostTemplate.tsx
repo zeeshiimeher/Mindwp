@@ -45,6 +45,7 @@ import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inl
 import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { systemWarning } from '@/lib/system/runtimeWarnings';
 
 export interface BlogPostTemplateProps {
   pageId: string;
@@ -73,6 +74,19 @@ export interface BlogPostTemplateProps {
 }
 
 type AuthorInfo = NonNullable<BlogPostTemplateProps['author']>;
+
+const RENDERABLE_BLOG_SECTION_TYPES = new Set<BlogPostSection['type']>([
+  'introduction',
+  'content',
+  'cta',
+  'callout',
+  'takeaways',
+  'quote',
+  'steps',
+  'checklist',
+  'image',
+  'faq',
+]);
 
 const AUTHOR_KEYS_BY_CATEGORY: Record<BlogCategory, Array<keyof typeof BLOG_AUTHORS>> = {
   'smart-website-systems': ['TECHNICAL'],
@@ -184,6 +198,53 @@ function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
   return `${minutes} min read`;
 }
 
+function getBlogSectionType(section: unknown) {
+  if (!section || typeof section !== 'object' || !('type' in section)) {
+    return null;
+  }
+
+  return typeof section.type === 'string' ? section.type : null;
+}
+
+export function validateRenderableBlogSection(section: BlogPostSection) {
+  if (!RENDERABLE_BLOG_SECTION_TYPES.has(section.type)) {
+    return false;
+  }
+
+  switch (section.type) {
+    case 'introduction':
+      return Array.isArray(section.content) && section.content.length > 0;
+    case 'content':
+      return Boolean(
+        section.heading &&
+          (typeof section.content === 'string' ||
+            (Array.isArray(section.content) && section.content.length > 0))
+      );
+    case 'callout':
+      return Boolean(section.callout);
+    case 'takeaways':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'quote':
+      return Boolean(section.quote);
+    case 'steps':
+      return Array.isArray(section.steps) && section.steps.length > 0;
+    case 'checklist':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'image':
+      return Boolean(section.src && section.alt);
+    case 'faq':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'cta':
+      return Boolean(section.heading && section.content);
+    default:
+      return false;
+  }
+}
+
+export function getBlogRenderedSectionTypes(sections: BlogPostSection[]) {
+  return sections.filter(validateRenderableBlogSection).map(section => section.type);
+}
+
 export function BlogPostTemplate({
   pageId,
   title,
@@ -218,10 +279,13 @@ export function BlogPostTemplate({
 
     if (section.type === 'cta') {
       ctaSection = section;
-      continue;
     }
 
     articleSections.push(section);
+  }
+
+  if (sections.length < 5 && env.NODE_ENV === 'development') {
+    systemWarning(`BlogPostTemplate: ${slug} has fewer than 5 authored sections.`);
   }
 
   const faqSchema = buildFaqSchema(faqItems);
@@ -288,6 +352,27 @@ export function BlogPostTemplate({
     );
   }
 
+  function safeRenderSection(section: unknown, index: number) {
+    const type = getBlogSectionType(section);
+    if (!type) {
+      systemWarning(`BlogPostTemplate: skipping section at index ${index} because type is invalid.`);
+      return null;
+    }
+
+    if (!validateRenderableBlogSection(section as BlogPostSection)) {
+      systemWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
+      return null;
+    }
+
+    try {
+      return renderSection(section as BlogPostSection, index);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      systemWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      return null;
+    }
+  }
+
   // Function to render a section based on its type
   function renderSection(section: BlogPostSection, index: number) {
     switch (section.type) {
@@ -351,7 +436,20 @@ export function BlogPostTemplate({
         );
 
       case 'cta':
-        return null;
+        return (
+          <SmartCTA
+            key={`cta-${index}`}
+            system={systems?.[0] ?? 'smart-website-systems'}
+            pageType='blog'
+            slug={slug}
+            intent='conversion'
+            position='footer'
+            title={section.heading}
+            description={section.content}
+            cssPrefix='blog-cta'
+            backgroundColor='blog-surface--muted'
+          />
+        );
 
       case 'takeaways':
         return section.items && section.items.length > 0 ? (
@@ -493,7 +591,7 @@ export function BlogPostTemplate({
               {/* Main Content Column */}
               <div className='blog-post__stack'>
                 {/* Render sections dynamically */}
-                {articleSections.map((section, index) => renderSection(section, index))}
+                {articleSections.map((section, index) => safeRenderSection(section, index))}
 
                 {tags.length > 0 && (
                   <div className='blog-post__tags'>
@@ -575,21 +673,9 @@ export function BlogPostTemplate({
               </div>
             </div>
           </SectionWrapper>
-          {ctaSection ? (
-            <SmartCTA
-              system={systems?.[0] ?? 'smart-website-systems'}
-              pageType='blog'
-              slug={slug}
-              intent='conversion'
-              position='footer'
-              title={ctaSection.heading}
-              description={ctaSection.content}
-              cssPrefix='blog-cta'
-              backgroundColor='blog-surface--muted'
-            />
-          ) : (
+          {!ctaSection ? (
             <BlogFooterCTA system={primarySystem} slug={slug} />
-          )}
+          ) : null}
 
           {faqSchema && (
             <script

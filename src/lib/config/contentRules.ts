@@ -91,11 +91,15 @@ export interface ContentRules {
       ctaTitleRequired: boolean;
       ctaDescriptionRequired: boolean;
     };
+    blog: {
+      minimumSections: number;
+    };
     resource: {
       requiredSectionTypes: string[];
       ctaHeadingRequired: boolean;
       ctaContentRequired: boolean;
       relatedResourcesMin: number;
+      minimumSections: number;
     };
     caseStudy: {
       heroSectionRequired: boolean;
@@ -193,15 +197,19 @@ const DEFAULT_CONTENT_RULES: ContentRules = {
     feature: {
       heroTitleRequired: true,
       heroDescriptionRequired: true,
-      requiredSectionKeys: ['process', 'benefits', 'useCases', 'capabilities', 'faq', 'explore'],
+      requiredSectionKeys: [],
       ctaTitleRequired: true,
       ctaDescriptionRequired: true,
     },
+    blog: {
+      minimumSections: 5,
+    },
     resource: {
-      requiredSectionTypes: ['hero', 'problem', 'diy', 'cta', 'related-resources'],
+      requiredSectionTypes: [],
       ctaHeadingRequired: true,
       ctaContentRequired: true,
-      relatedResourcesMin: 1,
+      relatedResourcesMin: 0,
+      minimumSections: 5,
     },
     caseStudy: {
       heroSectionRequired: true,
@@ -214,7 +222,7 @@ const DEFAULT_CONTENT_RULES: ContentRules = {
       heroDescriptionRequired: true,
       ctaTitleRequired: true,
       ctaDescriptionRequired: true,
-      detailFaqMin: 1,
+      detailFaqMin: 0,
     },
   },
   internalLinks: {

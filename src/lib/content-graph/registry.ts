@@ -134,9 +134,15 @@ export function buildGraphIndexes(nodes: ContentGraphNode[]): ContentGraphIndexe
   const systems = new Map<string, ContentGraphNode[]>();
   const topics = new Map<string, ContentGraphNode[]>();
   const slugIndex: Record<string, ContentGraphNode> = {};
+  const ambiguousSlugs = new Set<string>();
 
   for (const node of nodes) {
-    slugIndex[node.slug] = node;
+    if (slugIndex[node.slug]) {
+      delete slugIndex[node.slug];
+      ambiguousSlugs.add(node.slug);
+    } else if (!ambiguousSlugs.has(node.slug)) {
+      slugIndex[node.slug] = node;
+    }
 
     for (const industry of node.industries ?? []) {
       appendToIndex(industries, industry, node);
@@ -156,6 +162,7 @@ export function buildGraphIndexes(nodes: ContentGraphNode[]): ContentGraphIndexe
     systems,
     topics,
     slugIndex,
+    ambiguousSlugs,
   };
 }
 
@@ -163,10 +170,9 @@ export function buildContentGraph(
   registries: GraphRegistryInput
 ): Record<string, ContentGraphNode> {
   const graph: Record<string, ContentGraphNode> = {};
-  const featureSlugs = new Set(registries.features.map(f => f.slug));
 
   for (const service of Object.values(registries.services)) {
-    if (BUILDER_SERVICE_SLUGS.has(service.slug) || featureSlugs.has(service.slug)) {
+    if (BUILDER_SERVICE_SLUGS.has(service.slug)) {
       continue;
     }
 
@@ -345,5 +351,8 @@ export function getStructuredContentGraph(): ContentGraph {
 
 export function getNodeBySlug(slug: string): ContentGraphNode | undefined {
   const graph = getStructuredContentGraph();
+  if (graph.indexes?.ambiguousSlugs.has(slug)) {
+    return undefined;
+  }
   return graph.indexes?.slugIndex[slug];
 }

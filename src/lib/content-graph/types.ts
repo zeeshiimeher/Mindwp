@@ -55,6 +55,7 @@ export interface ContentGraphIndexes {
   systems: Map<string, ContentGraphNode[]>;
   topics: Map<string, ContentGraphNode[]>;
   slugIndex: Record<string, ContentGraphNode>;
+  ambiguousSlugs: Set<string>;
 }
 
 export interface ContentGraph {

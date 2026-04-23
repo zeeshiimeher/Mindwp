@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { BLOG_POSTS } from '@/domains/blog/registry';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { resolveContentRules } from '@/lib/config/contentRules';
@@ -127,6 +128,15 @@ function validateResourcePages(resources) {
     const resourceRules = rules.resource;
     const sectionTypes = new Set(resource.sections.map(section => section.type));
 
+    if (resource.sections.length < resourceRules.minimumSections) {
+      pushViolation(
+        'resource',
+        resource.slug,
+        'insufficient-sections',
+        `Resource page requires at least ${resourceRules.minimumSections} authored sections.`
+      );
+    }
+
     for (const requiredType of resourceRules.requiredSectionTypes) {
       if (!sectionTypes.has(requiredType)) {
         pushViolation(
@@ -154,15 +164,41 @@ function validateResourcePages(resources) {
 
     const related = resource.sections.find(section => section.type === 'related-resources');
     if (
-      !related ||
-      !Array.isArray(related.resources) ||
-      related.resources.length < resourceRules.relatedResourcesMin
+      resourceRules.relatedResourcesMin > 0 &&
+      (!related ||
+        !Array.isArray(related.resources) ||
+        related.resources.length < resourceRules.relatedResourcesMin)
     ) {
       pushViolation(
         'resource',
         resource.slug,
         'related-resources-missing',
         'Resource page requires at least one related resource.'
+      );
+    }
+  }
+}
+
+function validateBlogPosts(posts) {
+  for (const post of posts) {
+    const rules = resolveContentRules('blog', post.slug).templatePayload;
+
+    if (post.sections.length < rules.blog.minimumSections) {
+      pushViolation(
+        'blog',
+        post.slug,
+        'insufficient-sections',
+        `Blog post requires at least ${rules.blog.minimumSections} authored sections.`
+      );
+    }
+
+    const cta = post.sections.find(section => section.type === 'cta');
+    if (cta && (!hasText(cta.heading) || !hasText(cta.content))) {
+      pushViolation(
+        'blog',
+        post.slug,
+        'cta-incomplete',
+        'Blog CTA requires heading and content when a CTA section is present.'
       );
     }
   }
@@ -276,6 +312,7 @@ async function main() {
 
   validateServicePages(servicePages);
   validateFeaturePages(featurePages);
+  validateBlogPosts(Object.values(BLOG_POSTS));
   validateResourcePages(Object.values(RESOURCE_REGISTRY));
   validateCaseStudies(Object.values(CASE_STUDY_REGISTRY));
   validateIndustryPages(industryPages);
@@ -285,6 +322,7 @@ async function main() {
     sources: {
       services: servicePages.length,
       features: featurePages.length,
+      blog: Object.keys(BLOG_POSTS).length,
       resources: Object.keys(RESOURCE_REGISTRY).length,
       caseStudies: Object.keys(CASE_STUDY_REGISTRY).length,
       industries: industryPages.length,
@@ -312,7 +350,7 @@ async function main() {
   }
 
   logger.printSummary(
-    `passed (${servicePages.length + featurePages.length + Object.keys(RESOURCE_REGISTRY).length + Object.keys(CASE_STUDY_REGISTRY).length + industryPages.length} pages checked)`
+    `passed (${servicePages.length + featurePages.length + Object.keys(BLOG_POSTS).length + Object.keys(RESOURCE_REGISTRY).length + Object.keys(CASE_STUDY_REGISTRY).length + industryPages.length} pages checked)`
   );
 }
 

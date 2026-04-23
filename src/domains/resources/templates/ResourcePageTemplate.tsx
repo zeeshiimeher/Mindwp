@@ -2,6 +2,7 @@ import { type AnchorHTMLAttributes, type ReactNode } from 'react';
 import { Award, CheckCircle2, Heart, Phone, Shield, Star } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { RelatedCardsSection } from '@/components/reusable/sections/core/RelatedCardsSection';
 import {
   extractAutomationContent,
   extractBusinessCostsContent,
@@ -13,6 +14,7 @@ import {
   extractFAQContent,
   extractHeroContent,
   extractProblemContent,
+  extractRelatedResourcesContent,
   extractSidebarCTAContent,
   extractTakeawaysContent,
   extractTemplatesContent,
@@ -46,6 +48,7 @@ import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates'
 import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
 import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
+import { systemWarning } from '@/lib/system/runtimeWarnings';
 
 import type { ResourcePageTemplateSection } from './types';
 export type { ResourcePageTemplateSection } from './types';
@@ -91,6 +94,7 @@ export type ResourcePageTemplateProps = {
     description?: string;
     image?: string;
   };
+  featuredImage?: string | null;
   schema?: {
     type: 'Article' | 'Guide' | 'HowTo';
     headline?: string;
@@ -104,21 +108,11 @@ export type ResourcePageTemplateProps = {
 
 // Validation function for required sections
 function validateRequiredSections(sections: ResourcePageTemplateSection[]) {
-  const requiredTypes = ['hero', 'problem', 'diy', 'cta', 'related-resources'];
+  const minimumSections = 5;
   const missingSections: string[] = [];
 
-  for (const type of requiredTypes) {
-    let found = false;
-    for (const section of sections) {
-      if (section.type === type) {
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      missingSections.push(type);
-    }
+  if (sections.length < minimumSections) {
+    missingSections.push(`at least ${minimumSections} sections`);
   }
 
   if (missingSections.length > 0) {
@@ -132,6 +126,62 @@ function validateRequiredSections(sections: ResourcePageTemplateSection[]) {
     return missingSections;
   }
   return [];
+}
+
+function getResourceSectionType(section: unknown) {
+  if (!section || typeof section !== 'object' || !('type' in section)) {
+    return null;
+  }
+
+  return typeof section.type === 'string' ? section.type : null;
+}
+
+export function validateRenderableResourceSection(section: ResourcePageTemplateSection) {
+  switch (section.type) {
+    case 'hero':
+      return true;
+    case 'takeaways':
+    case 'checklist':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'problem':
+    case 'business-costs':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'diy':
+      return Array.isArray(section.steps) && section.steps.length > 0;
+    case 'solution-cards':
+      return Array.isArray(section.solutions) && section.solutions.length > 0;
+    case 'comparison':
+      return Boolean(section.before && section.after);
+    case 'templates':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'faq':
+      return Array.isArray(section.items) && section.items.length > 0;
+    case 'cta':
+      return Boolean(section.heading && section.content);
+    case 'related-resources':
+      return Array.isArray(section.resources) && section.resources.length > 0;
+    case 'sidebar-cta':
+      return Boolean(section.heading && section.content);
+    case 'case':
+      return Boolean(section.caseExample?.businessType);
+    default:
+      return false;
+  }
+}
+
+export function getResourceRenderedSectionTypes(sections: ResourcePageTemplateSection[]) {
+  const renderedTypes: string[] = [];
+
+  if (sections.some(section => section.type === 'hero')) {
+    renderedTypes.push('hero');
+  }
+
+  return renderedTypes.concat(
+    sections
+      .filter(section => section.type !== 'hero' && section.type !== 'sidebar-cta')
+    .filter(validateRenderableResourceSection)
+    .map(section => section.type)
+  );
 }
 
 export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
@@ -204,41 +254,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   // Extract content from sections for rendering using organized utilities
   const heroData = extractHeroContent(props.sections, props.title, props.description);
   const sidebarCTAData = extractSidebarCTAContent(props.sections);
+  const hasAuthoredRelatedResources = props.sections.some(section => section.type === 'related-resources');
 
-  // Show error message for missing sections in development
-  if (missingSections.length > 0 && env.NODE_ENV === 'development') {
-    return (
-      <CTARegistryProvider pageId={props.pageId} pageType='resource'>
-        <div className='resource-page'>
-          <main className='resource-page__main l-section'>
-            <div className='l-container'>
-              <div className='resource-page__dev-error'>
-                <h2 className='resource-page__dev-error-title'>
-                  Resource Template Configuration Error
-                </h2>
-                <p className='resource-page__dev-error-text'>
-                  This resource page is missing required sections. Please add the following sections
-                  to make it complete:
-                </p>
-                <ul className='resource-page__dev-error-list'>
-                  {missingSections.map(section => (
-                    <li key={section} className='capitalize'>
-                      {section.replace('-', ' ')} section
-                    </li>
-                  ))}
-                </ul>
-                <div className='resource-page__dev-error-note'>
-                  <p className='resource-page__dev-error-note-text'>
-                    <strong>Note:</strong> This error is only shown in development mode. In
-                    production, the page will render with available sections.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-      </CTARegistryProvider>
-    );
+  if (props.sections.length < 5 && env.NODE_ENV === 'development') {
+    systemWarning(`ResourcePageTemplate: ${currentSlug} has fewer than 5 authored sections.`);
   }
 
   // Function to render a section based on its type
@@ -403,34 +422,78 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
         ) : null;
       }
 
-      case 'related-resources':
-        return null;
+      case 'cta': {
+        const ctaData = extractCTAContent(section);
+        return ctaData.heading ? (
+          <div key={`cta-${index}`} className='resource-page__cta'>
+            <div className='l-container'>
+              <div className='text-sm text-muted-foreground l-max-w-3xl pb-3'>
+                If this resource has already named the leak, the next step is to turn that into a
+                clear priority, scope, and first system move instead of guessing which fix matters
+                most.
+              </div>
+            </div>
+            <SmartCTA
+              system={primarySystem}
+              pageType='resource'
+              slug={currentSlug}
+              intent='conversion'
+              position='footer'
+              title={ctaData.heading}
+              description={ctaData.content}
+              metaItems={ctaData.features?.map(f => ({ text: f.text }))}
+            />
+          </div>
+        ) : null;
+      }
+
+      case 'related-resources': {
+        const relatedData = extractRelatedResourcesContent(section);
+        return relatedData.resources.length > 0 ? (
+          <RelatedCardsSection
+            key={`related-resources-${index}`}
+            badge={relatedData.badge}
+            title={relatedData.heading || 'Related Resources'}
+            description={relatedData.subheading}
+            items={relatedData.resources.map(resource => ({
+              title: resource.title,
+              description: resource.description,
+              href: resource.url,
+            }))}
+            cssPrefix='resource-related-resources'
+          />
+        ) : null;
+      }
 
       default:
         return null;
     }
   }
 
-  const contentSections: ResourcePageTemplateSection[] = [];
-  const mainSections: ResourcePageTemplateSection[] = [];
-  const ctaSections: Extract<ResourcePageTemplateSection, { type: 'cta' }>[] = [];
-
-  for (const section of props.sections) {
-    if (section.type === 'hero') {
-      continue;
+  function safeRenderSection(section: unknown, index: number) {
+    const type = getResourceSectionType(section);
+    if (!type) {
+      systemWarning(`ResourcePageTemplate: skipping section at index ${index} because type is invalid.`);
+      return null;
     }
 
-    contentSections.push(section);
-
-    if (section.type === 'cta') {
-      ctaSections.push(section);
-      continue;
+    if (!validateRenderableResourceSection(section as ResourcePageTemplateSection)) {
+      systemWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
+      return null;
     }
 
-    if (section.type !== 'related-resources') {
-      mainSections.push(section);
+    try {
+      return renderSection(section as ResourcePageTemplateSection, index);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      systemWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      return null;
     }
   }
+
+  const mainSections = props.sections.filter(
+    section => section.type !== 'hero' && section.type !== 'sidebar-cta'
+  );
 
   return (
     <CTARegistryProvider pageId={props.pageId} pageType='resource'>
@@ -513,7 +576,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               {/* Main Content Column */}
               <div className='resource-page__stack'>
                 {/* Render sections dynamically in the order they appear, excluding full-width sections */}
-                {mainSections.map((section, index) => renderSection(section, index))}
+                {mainSections.map((section, index) => safeRenderSection(section, index))}
               </div>
 
               {/* Sidebar (always on for canonical template to match the standard layout) */}
@@ -582,43 +645,19 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               </aside>
             </div>
           </div>
-          {/* CTA section - full width outside container */}
-          <div className='resource-page__cta'>
-            <div className='l-container'>
-              <div className='text-sm text-muted-foreground l-max-w-3xl pb-3'>
-                If this resource has already named the leak, the next step is to turn that into a
-                clear priority, scope, and first system move instead of guessing which fix matters
-                most.
-              </div>
-            </div>
-            {ctaSections.map((section, index) => {
-              const ctaData = extractCTAContent(section);
-              return ctaData.heading ? (
-                <SmartCTA
-                  key={`cta-${index}`}
-                  system={primarySystem}
-                  pageType='resource'
-                  slug={currentSlug}
-                  intent='conversion'
-                  position='footer'
-                  title={ctaData.heading}
-                  description={ctaData.content}
-                  metaItems={ctaData.features?.map(f => ({ text: f.text }))}
-                />
-              ) : null;
-            })}
-          </div>
           <div className='l-container'>
             <div className='text-sm text-muted-foreground l-max-w-3xl pt-4'>
               If you are not ready to act yet, compare the adjacent bottlenecks here so you can
               separate the primary leak from the secondary ones before you commit to a build.
             </div>
           </div>
-          <SmartRelatedSection
-            pageId={`resource:${currentSlug}`}
-            pageType='resource'
-            slug={currentSlug}
-          />
+          {!hasAuthoredRelatedResources ? (
+            <SmartRelatedSection
+              pageId={`resource:${currentSlug}`}
+              pageType='resource'
+              slug={currentSlug}
+            />
+          ) : null}
         </main>
       </div>
     </CTARegistryProvider>

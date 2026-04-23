@@ -19,6 +19,7 @@ export default defineConfig({
       'tests/unit/**/*.test.tsx',
       'tests/integration/**/*.test.ts',
       'tests/system/**/*.test.ts',
+      'tests/system/**/*.test.tsx',
     ],
     exclude: ['tests/e2e/**', 'node_modules/**'],
   },

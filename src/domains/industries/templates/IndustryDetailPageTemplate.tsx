@@ -16,6 +16,7 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
+import { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
 
 import type { IndustryExploreSectionProps } from '../components/IndustryExploreSection';
@@ -67,8 +68,8 @@ export function IndustryDetailPageTemplate({
   packages,
   pathways,
   workflowExamples,
-  caseStudies: _caseStudies,
-  explore: _explore,
+  caseStudies,
+  explore,
   faq,
   cta,
 }: IndustryDetailPageTemplateProps) {
@@ -121,6 +122,8 @@ export function IndustryDetailPageTemplate({
           )}
           {workflowExamples && <IndustryWorkflowExamplesSection {...workflowExamples} />}
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
+          {explore && <IndustryExploreSection title='Explore Related Systems' {...explore} />}
+          {caseStudies && <IndustryCaseStudiesSection {...caseStudies} />}
           <FAQSection {...faq} />
           <SmartCTA
             system={system}

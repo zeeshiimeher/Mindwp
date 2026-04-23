@@ -5,6 +5,7 @@ import { RelatedCardsSection } from '@/components/reusable/sections/core/Related
 import {
   IndustryChallengesSection,
   IndustryChecklistSection,
+  IndustryCaseStudiesSection,
   IndustryComparisonSection,
   IndustryExploreSection,
   IndustryHeroSection,
@@ -43,6 +44,7 @@ export type IndustryCategoryPageTemplateProps = {
   packages?: React.ComponentProps<typeof IndustryPackagesSection>;
   pathways?: React.ComponentProps<typeof IndustryPathwaysSection>;
   explore?: Omit<React.ComponentProps<typeof IndustryExploreSection>, 'title'>;
+  caseStudies?: React.ComponentProps<typeof IndustryCaseStudiesSection>;
   detailRoutes?: React.ComponentProps<typeof RelatedCardsSection>;
   sectionControls?: {
     subIndustries?: {
@@ -86,8 +88,10 @@ export function IndustryCategoryPageTemplate({
   comparison,
   packages,
   pathways,
+  explore,
   detailRoutes,
   sectionControls,
+  caseStudies,
   cta,
 }: IndustryCategoryPageTemplateProps) {
   const challengeSection = operatingPatterns ?? challenges;
@@ -143,6 +147,11 @@ export function IndustryCategoryPageTemplate({
           {comparison && <IndustryComparisonSection {...comparison} />}
 
           {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
+
+          {explore && <IndustryExploreSection title='Explore Related Systems' {...explore} />}
+
+          {caseStudies && <IndustryCaseStudiesSection {...caseStudies} />}
+
           <SmartCTA
             system={system}
             pageType='industry-category'

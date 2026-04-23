@@ -1,4 +1,4 @@
-import { SERVICE_PAGE_DATA_BY_SLUG } from '@/domains/services/pageData';
+import { SERVICE_DOMAIN_REGISTRY } from '@/domains/services/pageData';
 
 export interface ServiceMetadata {
   slug: string;
@@ -13,10 +13,10 @@ export interface ServiceMetadata {
 }
 
 export const SERVICE_REGISTRY = Object.fromEntries(
-  Object.values(SERVICE_PAGE_DATA_BY_SLUG).map(data => [
-    data.slug,
+  Object.values(SERVICE_DOMAIN_REGISTRY).map(({ data, slug }) => [
+    slug,
     {
-      slug: data.slug,
+      slug,
       path: data.seo.canonical,
       title: data.seo.title,
       description: data.seo.description,

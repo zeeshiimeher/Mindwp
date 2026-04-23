@@ -2,14 +2,7 @@ import type { ComponentType } from 'react';
 
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
-import AiChat from '@/domains/features/pages/aichat';
-import Calendars from '@/domains/features/pages/calendars';
-import Crm from '@/domains/features/pages/crm';
-import Inbox from '@/domains/features/pages/inbox';
-import Reputation from '@/domains/features/pages/reputation';
-import VoiceCalls from '@/domains/features/pages/voicecalls';
-import Workflows from '@/domains/features/pages/workflows';
-import { getFeaturePageDataBySlug } from '@/domains/features/registry';
+import { FEATURE_DOMAIN_REGISTRY, getFeaturePageDataBySlug } from '@/domains/features/registry';
 import type { FeaturePageData } from '@/domains/features/types';
 
 type FeatureEntry<TData extends FeaturePageData = FeaturePageData> = {
@@ -20,15 +13,11 @@ const createFeatureEntry = <TData extends FeaturePageData>(
   page: ComponentType<{ data: TData }>
 ): FeatureEntry<TData> => ({ page });
 
-export const FEATURE_ENTRY_BY_SLUG = {
-  voicecalls: createFeatureEntry(VoiceCalls),
-  aichat: createFeatureEntry(AiChat),
-  reputation: createFeatureEntry(Reputation),
-  inbox: createFeatureEntry(Inbox),
-  workflows: createFeatureEntry(Workflows),
-  calendars: createFeatureEntry(Calendars),
-  crm: createFeatureEntry(Crm),
-} as const;
+export const FEATURE_ENTRY_BY_SLUG = Object.fromEntries(
+  Object.entries(FEATURE_DOMAIN_REGISTRY).map(([slug, entry]) => [slug, createFeatureEntry(entry.page)])
+) as {
+  [K in keyof typeof FEATURE_DOMAIN_REGISTRY]: FeatureEntry<(typeof FEATURE_DOMAIN_REGISTRY)[K]['data']>;
+};
 
 export type FeatureSlug = keyof typeof FEATURE_ENTRY_BY_SLUG;
 

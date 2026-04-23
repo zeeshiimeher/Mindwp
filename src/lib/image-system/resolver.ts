@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 import imageIndex from '@/lib/image-system/data/imageIndex.json';
+import { warnOrThrow } from '@/lib/system/runtimeWarnings';
 import { DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
 
 type ImageType = 'featured-clean' | 'featured-overlay' | 'inline-1';
@@ -16,18 +17,28 @@ type ImageIndexRecord = Record<
 >;
 
 const runtimeImageIndex = imageIndex as ImageIndexRecord;
-const isDevelopmentRuntime =
-  process.env.NODE_ENV === 'development' && process.env.VITEST !== 'true';
 
 function toWebPath(filePath: string) {
   const normalized = filePath.replace(/^public\//, '');
   return normalized.startsWith('/') ? normalized : `/${normalized}`;
 }
 
-function resolveIndexedImage(slug: string, type: ImageType) {
+function getImageIndexKeys(domain: string, slug: string) {
+  const normalizedDomain = domain.replace(/^\/+|\/+$/g, '');
+  return [`${normalizedDomain}/${slug}`, slug];
+}
+
+function resolveIndexedImage(slug: string, domain: string, type: ImageType) {
   const imageType = type === 'inline-1' ? 'content' : type;
-  const entry = runtimeImageIndex[slug]?.[imageType];
-  return entry?.file ? toWebPath(entry.file) : null;
+
+  for (const key of getImageIndexKeys(domain, slug)) {
+    const entry = runtimeImageIndex[key]?.[imageType];
+    if (entry?.file) {
+      return toWebPath(entry.file);
+    }
+  }
+
+  return null;
 }
 
 function resolveFileBackedImage(webPath: string) {
@@ -37,13 +48,7 @@ function resolveFileBackedImage(webPath: string) {
 
 function handleMissingImage(slug: string, domain: string, type: ImageType) {
   const message = `[image-system] Missing ${type} image for ${domain}/${slug}.`;
-
-  if (isDevelopmentRuntime && domain === 'case-studies') {
-    throw new Error(message);
-  }
-
-  // eslint-disable-next-line no-console
-  console.warn(`${message} Falling back to ${DEFAULT_OG_IMAGE_PATH}.`);
+  warnOrThrow(`${message} Falling back to ${DEFAULT_OG_IMAGE_PATH}.`);
 
   return DEFAULT_OG_IMAGE_PATH;
 }
@@ -58,7 +63,7 @@ function handleMissingImage(slug: string, domain: string, type: ImageType) {
  *  - inline-1          → in-content image (blogs/resources only)
  */
 export function getImage(slug: string, domain: string, type: ImageType): string | null {
-  const indexedPath = resolveIndexedImage(slug, type);
+  const indexedPath = resolveIndexedImage(slug, domain, type);
   if (indexedPath) {
     const indexedFile = resolveFileBackedImage(indexedPath);
     if (indexedFile) {

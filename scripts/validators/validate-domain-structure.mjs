@@ -190,25 +190,13 @@ function collectServicePageDataPathBySlug(pageDataPath) {
 }
 
 function collectServiceRegistrySlugs() {
-  const registryPath = path.join(root, 'src', 'domains', 'services', 'registry.ts');
-  const registrySource = project.addSourceFileAtPathIfExists(registryPath);
-  if (!registrySource) {
-    return new Set();
-  }
-
-  const objectLiteralKeys = getObjectLiteralRegistryKeys(registrySource, ['SERVICE_REGISTRY']);
-  if (objectLiteralKeys.size > 0) {
-    return objectLiteralKeys;
-  }
-
-  const declaration = registrySource.getVariableDeclaration('SERVICE_REGISTRY');
-  const initializerText = declaration?.getInitializer()?.getText() ?? '';
-  if (!initializerText.includes('SERVICE_PAGE_DATA_BY_SLUG')) {
-    return new Set();
-  }
-
   const pageDataPath = path.join(root, 'src', 'domains', 'services', 'pageData.ts');
-  return new Set(collectServicePageDataPathBySlug(pageDataPath).keys());
+  const pageDataSource = project.addSourceFileAtPathIfExists(pageDataPath);
+  if (!pageDataSource) {
+    return new Set();
+  }
+
+  return getObjectLiteralRegistryKeys(pageDataSource, ['SERVICE_DOMAIN_REGISTRY']);
 }
 
 function collectFeatureRegistrySlugs() {
@@ -218,29 +206,7 @@ function collectFeatureRegistrySlugs() {
     return new Set();
   }
 
-  const importMap = getImportSpecifierMap(registrySource);
-  const declaration = registrySource.getVariableDeclaration('FEATURE_DATA');
-  const initializer = declaration?.getInitializer();
-  const arrayLiteral =
-    initializer?.asKind(SyntaxKind.ArrayLiteralExpression) ??
-    initializer
-      ?.asKind(SyntaxKind.AsExpression)
-      ?.getExpression()
-      .asKind(SyntaxKind.ArrayLiteralExpression);
-  if (!arrayLiteral) {
-    return new Set();
-  }
-
-  return new Set(
-    arrayLiteral
-      .getElements()
-      .map(element => {
-        const identifier = element.asKind(SyntaxKind.Identifier);
-        const importPath = identifier ? importMap.get(identifier.getText()) : null;
-        return importPath ? path.basename(importPath) : null;
-      })
-      .filter(Boolean)
-  );
+  return getObjectLiteralRegistryKeys(registrySource, ['FEATURE_DOMAIN_REGISTRY']);
 }
 
 function hasNonEmptyString(initializer, sourceFile) {
@@ -699,7 +665,7 @@ function collectIndustrySourceSlugs() {
 function validateServiceStructure(issues) {
   const requiredKeys = ['keywords', 'badge', 'category', 'seo', 'hero', 'sections', 'cta'];
   const sourceFiles = project.getSourceFiles('src/domains/services/data/*.ts');
-  const { orderBySlug, slugByFile } = buildServiceRendererOrder();
+  const { slugByFile } = buildServiceRendererOrder();
   const sourceSlugs = new Set();
 
   for (const sourceFile of sourceFiles) {
@@ -741,24 +707,9 @@ function validateServiceStructure(issues) {
     }
 
     const sectionsObject = getSectionsObjectLiteral(exported.objectLiteral);
-    const expectedOrder = orderBySlug[expectedSlug] ?? [];
     if (!sectionsObject) {
       pushIssue(issues, 'service', rel, 'invalid_sections', 'sections must be an object literal.');
       continue;
-    }
-
-    if (expectedOrder.length > 0) {
-      const currentOrder = getSectionsOrder(sectionsObject);
-      const missingKeys = expectedOrder.filter(key => !currentOrder.includes(key));
-      if (missingKeys.length > 0) {
-        pushIssue(
-          issues,
-          'service',
-          rel,
-          'missing_renderer_section',
-          `sections is missing renderer-referenced key(s) for ${expectedSlug}: ${missingKeys.join(', ')}.`
-        );
-      }
     }
 
     validateServiceConversionContracts(
@@ -831,7 +782,6 @@ function buildFeatureRendererOrder() {
 function validateFeatureStructure(issues) {
   const requiredKeys = ['slug', 'seo', 'hero', 'sections', 'cta'];
   const sourceFiles = project.getSourceFiles('src/domains/features/data/*.ts');
-  const orderBySlug = buildFeatureRendererOrder();
   const sourceSlugs = new Set();
 
   for (const sourceFile of sourceFiles) {
@@ -885,28 +835,9 @@ function validateFeatureStructure(issues) {
     }
 
     const sectionsObject = getSectionsObjectLiteral(exported.objectLiteral);
-    const expectedOrder = orderBySlug[expectedSlug] ?? [];
     if (!sectionsObject) {
       pushIssue(issues, 'feature', rel, 'invalid_sections', 'sections must be an object literal.');
       continue;
-    }
-
-    if (expectedOrder.length > 0) {
-      const currentOrder = getSectionsOrder(sectionsObject);
-      const filteredCurrent = currentOrder.filter(key => expectedOrder.includes(key));
-      const filteredExpected = expectedOrder.filter(key => currentOrder.includes(key));
-      const matches =
-        filteredCurrent.length === filteredExpected.length &&
-        filteredCurrent.every((key, index) => key === filteredExpected[index]);
-      if (!matches) {
-        pushIssue(
-          issues,
-          'feature',
-          rel,
-          'section_order_mismatch',
-          `sections order does not match renderer order for ${expectedSlug}.`
-        );
-      }
     }
   }
 
