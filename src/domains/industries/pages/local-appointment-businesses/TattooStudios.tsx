@@ -18,7 +18,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         title: 'They Saved The Reference Months Ago. They Still Have Not Booked.',
         description:
             'Tattoo enquiries are emotional and comparison-heavy, not urgent. People sit with the idea for weeks, browse multiple artists, and the booking often cools off when the reply is slow or the style match never gets made clear enough to keep them moving.',
-        list: ['Saved ideas', 'Slow replies', 'Style match', 'Deposit drop-off'],
+        list: ['Saved ideas', 'Slow replies', 'Deposit drop-off'],
         cssPrefix: 'tattoo-studios-hero',
     };
 

@@ -18,7 +18,7 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
         title: 'The Proposal Was Sent Three Weeks Ago. Nobody Has Opened It Since.',
         description:
             'Most accounting firms do not lose business owners on the call itself. They lose them after the proposal lands, gets parked for later, and sits there while the owner quietly compares two or three firms and hears back from someone else first.',
-        list: ['Proposal parked', 'No follow-up', 'Quiet comparison', 'Decision drift'],
+        list: ['Proposal parked', 'No follow-up', 'Decision drift'],
         cssPrefix: 'accounting-firms-hero',
     };
 

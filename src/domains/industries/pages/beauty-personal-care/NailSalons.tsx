@@ -18,7 +18,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         title: 'She Tapped "Book Now" At 11:43. By 11:46 She Had Booked Somewhere Else.',
         description:
             'Nail clients usually want to book fast, not start a conversation. If booking takes more than a few taps, asks for a phone call, or makes a walk-in wait with no clear next step, they keep moving until somewhere easier lets them claim a slot.',
-        list: ['Slow taps', 'Phone-only', 'Walk-in loss', 'Missed rebooks'],
+        list: ['Slow taps', 'Phone-only', 'Walk-in loss'],
         cssPrefix: 'nail-salons-hero',
     };
 

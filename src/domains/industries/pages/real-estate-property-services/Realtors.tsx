@@ -19,7 +19,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         title: 'You Were Mid-Viewing. Their Phone Rang Three Times. The Next Agent Picked Up On The First.',
         description:
             'Buyers and sellers do not sit on an enquiry for long, especially when they are halfway through comparing agents on a portal. A viewing request, missed call, or late reply can turn into a booked valuation or a different agent before you have even got back to the car.',
-        list: ['Viewing gaps', 'Late calls', 'Cold leads', 'Missed follow-up'],
+        list: ['Viewing gaps', 'Late calls', 'Missed follow-up'],
         cssPrefix: 'realtors-hero',
     };
 

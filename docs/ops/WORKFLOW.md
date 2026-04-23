@@ -1,86 +1,43 @@
 # MindWP Workflow
 
-## Philosophy
-
-- Local-first
-- Deterministic validation
-- No unsafe deploys
-- Minimal commands
-
----
-
-## Commands
+## Command Path
 
 ### `system:quick`
 
-FAST DEV CHECK
+Checks type safety.
 
-Runs:
-
-- typecheck
-- core validators
-
-Does NOT:
-
-- rebuild snapshot
-- run heavy analyzers
-
----
-
-### `system:regen`
-
-REGENERATE SYSTEM
-
-Runs:
-
-- snapshot rebuild
-- analyzers
-- reports
-
----
+- runs core validators
+- skips snapshot rebuild
 
 ### `system:full`
 
-FULL SYSTEM GATE
+Runs the full gate.
 
-Runs:
+- runs validators
+- verifies snapshot integrity
+- runs tests
+- checks env and manifest integrity
 
-- all validators
-- tests
-- snapshot
-- env validation
-- manifest integrity
-
----
-
-## Build Safety
+## Build Path
 
 `npm run build`
 
-- automatically runs `system:full`
-- blocks if the system fails
+- runs `system:full`
+- stops on failure
 
----
-
-## Development Flow
+## Working Order
 
 ```bash
 npm run system:quick
-npm run system:regen
 npm run system:full
 ```
 
----
+## Git Gates
 
-## Git Workflow
-
-- pre-commit -> `system:quick`
-- pre-push -> `system:full`
-
----
+- pre-commit: `system:quick`
+- pre-push: `system:full`
 
 ## Rules
 
-- never deploy without `system:full`
-- never edit generated files
-- regenerate after content changes
+- run `system:full` before deploy
+- do not edit generated files

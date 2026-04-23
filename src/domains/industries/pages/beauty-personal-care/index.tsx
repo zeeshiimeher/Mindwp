@@ -18,8 +18,8 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
         badge: 'Beauty & Appointment Businesses',
         title: 'A Booking Window Closes. A Refill Gets Forgotten. A Quiet Regular Tries Somewhere New. The Chair Stays Empty For The Same Reason Every Week.',
         description:
-            'Salons, lash studios, med spas, and clinics all run on the same loop: quick reply, easy booking, timely return. The treatment changes, but the loss usually starts in the same place — someone looked, hesitated, then never came back to finish booking.',
-        list: ['Slow reply', 'Booking drag', 'Missed returns', 'Thin reviews'],
+            'Salons, lash studios, med spas, and clinics all run on the same loop: quick reply, easy booking, timely return. The treatment changes, but the loss usually starts in the same place — someone looked, hesitated, then never came back to finish the booking.',
+        list: ['Slow reply', 'Booking drag', 'Missed returns'],
         cssPrefix: 'beauty-personal-care-hero',
     };
 

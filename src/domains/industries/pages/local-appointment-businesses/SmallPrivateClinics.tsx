@@ -18,7 +18,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         title: 'They Sent The Enquiry. Read Your Reply Twice. Still Did Not Book.',
         description:
             'Most private clinic enquiries do not disappear because the person was never interested. They hesitate, read the reply twice, check reviews, wait a few days, and often never book because the next step felt unclear and nobody followed up while the decision was still open.',
-        list: ['Trust hesitation', 'Booking delay', 'Quiet comparison', 'No follow-up'],
+        list: ['Trust hesitation', 'Booking delay', 'No follow-up'],
         cssPrefix: 'small-private-clinics-hero',
     };
 

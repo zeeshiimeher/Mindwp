@@ -18,7 +18,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For Roofing Companies',
     title: 'Three Quotes On The Kitchen Table. Yours Was The One Nobody Chased.',
     description:
-      'A re-roof is usually a long decision, not a same-day yes. The homeowner gets a few prices, leaves them on the kitchen table for a fortnight, asks around, and the job often goes to the roofer who checked back in while everyone else assumed silence meant no.',
+      'A re-roof is usually a long decision, not a same-day yes. The homeowner gets a few prices, leaves them on the kitchen table for a fortnight, asks around, and the job usually goes to the roofer who stayed in touch while everyone else took the silence at face value.',
     list: ['Quote silence', 'Slow decisions', 'Kitchen tables'],
     cssPrefix: 'roofing-companies-hero',
   };
@@ -65,7 +65,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'A Six-Week Decision',
     title: 'A re-roof conversation, before and after',
     description:
-      'Same survey and same crew, but a very different result once somebody actually holds the conversation after the quote goes out. The change is not in the roofing. It is in what happens during the slow decision.',
+      'Same survey and same crew, but a very different result once somebody keeps the conversation moving after the quote goes out. The change is not in the roofing. It is in what happens during the slow decision.',
     comparisons: [
       {
         type: 'before' as const,
@@ -244,7 +244,8 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What roofing firms ask first',
-    description: 'Straight answers about longer quote cycles, insurance paperwork, and what actually helps when the silence starts after the survey.',
+    description:
+      'Straight answers about the long gap after the survey, the paperwork that slows claim jobs down, and what actually helps when a re-roof quote goes quiet.',
     faqs: [
       {
         question: 'Most of our re-roof quotes go quiet for two weeks. Will a chase actually help?',

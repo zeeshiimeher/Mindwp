@@ -19,7 +19,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
         title: 'Her Refill Was Due Three Weeks Ago. She Did Not Switch — She Just Got Tired Of Remembering.',
         description:
             'Lash work lives or dies on the refill cycle, and that cycle slips faster than people think. Miss the usual week-three or week-four moment, and the next booking often goes to whoever showed up in her feed or had a slot ready when she finally noticed the gap.',
-        list: ['Missed refills', 'Cycle drift', 'Quiet gaps', 'Fragile loyalty'],
+        list: ['Missed refills', 'Cycle drift', 'Quiet gaps'],
         cssPrefix: 'lash-extensions-hero',
     };
 
@@ -43,7 +43,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
             },
             {
                 icon: Eye,
-                title: 'A regular booked elsewhere "just to try"',
+                title: 'A regular grabbed the first refill slot she saw',
                 description: 'She was not trying to make a dramatic change. She just needed a refill that fit this week, missed her normal window, and took the first decent slot that appeared before yours did.',
                 iconType: 'accent' as const,
             },

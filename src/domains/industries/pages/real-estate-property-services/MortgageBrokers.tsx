@@ -19,7 +19,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         title: 'They Found A House On Saturday. They Needed A Decision In Principle By Monday. You Saw The Email Tuesday.',
         description:
             'Mortgage enquiries usually appear when the buyer has just viewed, just had an offer accepted, or just been told they need an answer fast. In that moment they are comparing brokers in real time, and the one who replies first often wins the case before rates or fees are even properly discussed.',
-        list: ['Weekend gaps', 'Late answers', 'Stalled DIPs', 'Cold cases'],
+        list: ['Weekend gaps', 'Late answers', 'Stalled DIPs'],
         cssPrefix: 'mortgage-brokers-hero',
     };
 

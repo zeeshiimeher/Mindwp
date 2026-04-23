@@ -19,7 +19,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         title: 'She Filled In The Consultation Form On Tuesday Night. By Friday She Had Booked The Clinic That Replied On Wednesday.',
         description:
             'Med spa clients rarely book on impulse, but they do notice quickly when interest goes cold. If the enquiry sits too long, the consult happens with no clear next step, or the plan is never followed up calmly, the booking quietly falls away before treatment ever starts.',
-        list: ['Cold enquiries', 'Slow consults', 'Quiet hesitation', 'Dropped plans'],
+        list: ['Cold enquiries', 'Slow consults', 'Dropped plans'],
         cssPrefix: 'small-med-spas-hero',
     };
 

@@ -271,7 +271,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       keywords: [
         'car detailing booking system',
         'detailing instagram reply automation',
-        'car detailing customer retention',
+        'car detailing repeat bookings',
         'detailing review automation',
         'car detailing local SEO',
       ],

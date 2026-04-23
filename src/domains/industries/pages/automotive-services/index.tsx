@@ -20,7 +20,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     title: 'The Bays Stay Booked. The Front Desk Is What Loses Work.',
     description:
       'In most automotive businesses, the workmanship is not the problem. The leak shows up around the job: a phone ringing while everyone is busy, an estimate still sitting there the next morning, a driver giving the work to the shop that replied first.',
-    list: ['Missed calls', 'Slow quotes', 'Thin reviews', 'Desk drag'],
+    list: ['Missed calls', 'Slow quotes', 'Desk drag'],
     cssPrefix: 'automotive-services-hero',
   };
 

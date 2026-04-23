@@ -18,7 +18,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
         title: 'The Discovery Call Went Well. Then "Let Us Think About It." Then Nothing.',
         description:
             'Most consulting work is not lost in the call itself. It is lost afterwards, when the buyer cannot clearly repeat the offer internally, there is no obvious next step, and the conversation slowly disappears into "we are still discussing it" silence.',
-        list: ['Unclear offer', 'No next step', 'Internal drift', 'Quiet stall'],
+        list: ['Unclear offer', 'No next step', 'Quiet stall'],
         cssPrefix: 'consultants-hero',
     };
 

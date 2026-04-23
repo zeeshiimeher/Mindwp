@@ -18,7 +18,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         title: 'They Started The Enquiry Form Twice. They Closed It Both Times.',
         description:
             'Most legal enquiries do not disappear because somebody made a fast decision. They disappear because the person hesitated, waited another week, delayed making contact, and only reached out when one firm finally felt safe enough to trust with something serious.',
-        list: ['Quiet hesitation', 'Delayed contact', 'Trust barrier', 'Cold replies'],
+        list: ['Quiet hesitation', 'Delayed contact', 'Trust barrier'],
         cssPrefix: 'small-law-firms-hero',
     };
 

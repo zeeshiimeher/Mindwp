@@ -19,7 +19,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         title: 'A Landlord With Eight Doors Emailed Three Agencies On Sunday Night. By Monday Lunchtime, Two Had Replied.',
         description:
             'Landlords usually compare agencies quietly before they move a portfolio, and they notice speed immediately. A slow reply, no update on a tenant issue, or another month of hearing nothing can do more damage than one big mistake because it makes the whole relationship feel unattended.',
-        list: ['Late replies', 'No updates', 'Tenant gaps', 'Quiet exits'],
+        list: ['Late replies', 'No updates', 'Quiet exits'],
         cssPrefix: 'property-managers-hero',
     };
 

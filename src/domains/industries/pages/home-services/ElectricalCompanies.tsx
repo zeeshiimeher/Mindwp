@@ -77,7 +77,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
         features: [
           'Text-back inside 60 seconds',
           'Address and symptom captured up front',
-          'Customer knows you have seen it',
+          'Caller knows you have seen it',
         ],
       },
       {
@@ -154,7 +154,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
         trigger: 'A consumer unit upgrade is signed off and commissioned',
         actions: [
           'A short ask lands the next day while the lights still feel new',
-          'The customer leaves a review because they were asked at the right moment',
+          'The homeowner leaves a review because they were asked at the right moment',
           'The Maps profile starts to look like the actual workload',
         ],
       },
@@ -257,7 +257,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Most fault calls come after six. Will this actually help then?',
         answer:
-          'That is the moment it earns its keep. The text-back fires whether anyone at the office is awake or not, and the customer stops dialling the next number.',
+          'That is the moment it earns its keep. The text-back fires whether anyone at the office is awake or not, and the caller stops dialling the next number.',
       },
       {
         question: 'How does it tell a fault from a routine job?',

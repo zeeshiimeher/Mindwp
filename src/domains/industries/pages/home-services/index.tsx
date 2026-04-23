@@ -25,8 +25,8 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     badge: 'For Home Service Trades',
     title: 'Water’s On The Floor. They’re Dialling The Next Number While Yours Rings Out.',
     description:
-      'In home services, the best enquiries usually arrive when something has already gone wrong and nobody wants to wait. The call gets missed, the callback comes too late, or the quote never gets chased, and the job goes to the number that answered first.',
-    list: ['Missed calls', 'Late callbacks', 'Cold quotes', 'Fast rivals'],
+      'In home services, the best enquiries usually land when something has already gone wrong and nobody is willing to wait around. The call gets missed, the callback comes too late, or the quote sits there untouched, and the job goes to the number that answered first.',
+    list: ['Missed calls', 'Late callbacks', 'Cold quotes'],
     cssPrefix: 'home-services-hero',
   };
 
@@ -187,7 +187,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
           'Photos, scope, invoice, and claim number stay tied to the same homeowner instead of getting scattered across phones, inboxes, and notes. That cuts down the chasing once the job moves beyond the first call.',
         icon: FileText,
         features: [
-          'Job folder per customer, not per channel',
+          'Job folder per enquiry, not per channel',
           'Faster claims, fewer chasers',
           'No more “who has the photos?”',
         ],
@@ -199,7 +199,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
         icon: Star,
         features: [
           'Request goes out at the moment of relief',
-          'Asked when the customer is happiest',
+          'Asked when the homeowner is happiest',
           'Online count starts to match the workload',
         ],
       },
@@ -222,7 +222,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       {
         title: 'Office and field crew',
         description:
-          'More hands, more handoffs. Quotes get sent and forgotten. Nobody is sure who was meant to ring the customer back.',
+          'More hands, more handoffs. Quotes get sent and forgotten. Nobody is sure who was meant to ring the caller back.',
         icon: Users,
       },
       {

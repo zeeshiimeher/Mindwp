@@ -23,7 +23,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
         title: 'Property Work Is Won In Minutes And Lost In Months. Both Halves Are Pipeline.',
         description:
             'Realtors, property managers, mortgage brokers, and inspectors all work on somebody else\'s timing. The first reply opens the conversation, the later follow-up keeps it moving, and most of the loss happens in the long stretch between those two points.',
-        list: ['Late replies', 'Cold follow-up', 'Silent updates', 'Missed visibility'],
+        list: ['Late replies', 'Cold follow-up', 'Silent updates'],
         cssPrefix: 'real-estate-property-services-hero',
     };
 

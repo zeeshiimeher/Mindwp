@@ -19,7 +19,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         title: 'She Wanted A Cut This Saturday. You Were Mid-Colour. Another Salon Replied In Two Minutes.',
         description:
             'Hair clients often want a chair this Saturday, after work, before a trip, or because they suddenly have a free hour. When the phone rings or the DM lands while someone is sitting in the chair mid-colour, the salon that shows a real slot first usually gets the booking.',
-        list: ['Busy chair', 'Slow slots', 'Missed rebooks', 'Quiet gaps'],
+        list: ['Busy chair', 'Slow slots', 'Missed rebooks'],
         cssPrefix: 'hair-salons-hero',
     };
 

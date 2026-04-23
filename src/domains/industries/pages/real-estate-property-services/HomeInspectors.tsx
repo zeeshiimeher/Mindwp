@@ -19,7 +19,7 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         title: 'The Agent Needed Someone Booked For Thursday. You Replied Friday Morning. Thursday Was Already Inspected.',
         description:
             'Inspections live inside somebody else\'s deadline, not yours. The agent needs someone booked this week, the buyer needs the report before the next step in the purchase, and the inspector who confirms today usually gets the work before tomorrow even has a chance.',
-        list: ['Missed deadlines', 'Slow replies', 'Agent drift', 'Lost slots'],
+        list: ['Missed deadlines', 'Slow replies', 'Lost slots'],
         cssPrefix: 'home-inspectors-hero',
     };
 

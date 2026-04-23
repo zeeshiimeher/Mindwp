@@ -135,7 +135,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
           'A quiet nudge goes to lapsed maintenance regulars a few weeks before spring really starts moving. Most of them re-book without much thought because you reached out before somebody else filled the slot in their head.',
         icon: Repeat,
         features: [
-          'Lapsed-customer nudges before the season starts',
+          'Lapsed regular nudges before the season starts',
           'Maintenance diary fills before the surge',
           'Less surge dependency every spring',
         ],
@@ -177,11 +177,11 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         name: 'Bring lapsed regulars back before the first cut',
         description:
-          'For when last year\u2019s monthly customers stopped in October and nobody nudged them in March.',
+          'For when last year\u2019s monthly regulars stopped in October and nobody nudged them in March.',
         price: 'Stage 2',
         priceDetail: 'Start here if maintenance retention is the gap',
         features: [
-          'Lapsed-customer nudge before the season starts',
+          'Lapsed regular nudge before the season starts',
           'Maintenance diary fills before the surge',
           'Less reliance on the spring rush',
         ],
@@ -267,7 +267,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
           'A short, low-pressure message goes out a few weeks before the season starts to anyone who has not booked since the previous autumn. Most of them re-book without thinking.',
       },
       {
-        question: 'Will customers feel they got an automated reply on the first contact?',
+        question: 'Will homeowners feel they got an automated reply on the first contact?',
         answer:
           'No. The first message reads like the office wrote it. Short, useful, and clear about when you will be in touch next.',
       },
@@ -298,7 +298,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       keywords: [
         'landscaper patio quote follow up',
         'landscaper open quote board',
-        'landscaping customer retention',
+        'landscaping repeat bookings',
         'landscaping review automation',
         'landscaper local SEO',
       ],

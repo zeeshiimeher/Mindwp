@@ -18,7 +18,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         title: 'They Came In Once, Loved The Job, And Never Came Back.',
         description:
             'Most repair-shop work is not panic work, but it still goes elsewhere when the timing feels easier somewhere else. A person wants to know when they can drop it off, how long it will take, and whether anyone got back to them quickly enough to make booking feel simple.',
-        list: ['Slow replies', 'Unclear timing', 'Missed recalls', 'Dropped jobs'],
+        list: ['Slow replies', 'Unclear timing', 'Missed recalls'],
         cssPrefix: 'repair-shops-hero',
     };
 
@@ -39,9 +39,9 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
                 alt: 'Abstract placeholder image representing repair shop drop-offs',
             },
             {
-                title: 'Repeat customers',
+                title: 'Repeat work',
                 image: '/images/placeholders/service-card-7.svg',
-                alt: 'Abstract placeholder image representing repair shop repeat customers',
+                alt: 'Abstract placeholder image representing repeat repair work',
             },
             {
                 title: 'Reviews and local search',
@@ -55,7 +55,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
 
     const operatingPatternsData = {
         badge: 'Where Repeat Work Slips',
-        title: 'The bench is busy. The customer base is shrinking quietly.',
+        title: 'The bench is busy. The repeat work is shrinking quietly.',
         description:
             'Most repair shops do not lose people because the repair was bad. They lose them because the booking felt slow, the timing felt vague, or nobody stayed in touch once the job was done.',
         benefits: [
@@ -67,7 +67,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
             },
             {
                 icon: RotateCcw,
-                title: 'Past customers are never recalled',
+                title: 'Past jobs are never followed back up',
                 description: 'You fixed it, they paid, and the experience was fine. Six months later, when the next small problem shows up, they Google again because nobody reminded them they already had a shop they trusted.',
                 iconType: 'secondary' as const,
             },
@@ -89,7 +89,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
 
     const systemLayersData = {
         badge: 'What We Put In Place',
-        title: 'A steadier base of repeat customers, not just whoever walks in today',
+        title: 'A steadier base of repeat work, not just whoever walks in today',
         description:
             'You keep doing the bench work and handling the day in front of you. The repeat business, scheduling clarity, and lighter follow-up stop depending on memory or whoever had five spare minutes that afternoon.',
         featureCategories: [
@@ -98,13 +98,13 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
                 description: 'A clearer way to take drop-offs without letting the bench get derailed by whoever happened to walk in next. That helps the day feel more organised for you and more predictable for the person booking.',
                 icon: Calendar,
                 features: [
-                    'Slots customers can pick themselves',
+                    'Slots people can pick themselves',
                     'Walk-ins logged in the same place as bookings',
                     'You see what is actually coming in',
                 ],
             },
             {
-                title: 'Bring past customers back',
+                title: 'Bring past jobs back into view',
                 description: 'Quiet recall messages go out on a sensible cycle so the people you already helped think of you first next time. That matters more than most shops realise because a lot of repeat work is lost through simple forgetfulness.',
                 icon: RotateCcw,
                 features: [
@@ -119,7 +119,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
                 icon: ClipboardList,
                 features: [
                     'One inbox for messages, forms, missed calls',
-                    'Customer and item captured up front',
+                    'Caller and item captured up front',
                     'Small jobs queued without admin',
                 ],
             },
@@ -151,18 +151,18 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         badge: 'Real Situations',
         title: 'A few moments where the difference shows up',
         description:
-            'These are the small handoffs that decide whether someone becomes a repeat customer or just another one-off repair. None of them look dramatic in the moment, but they shape whether booking the next job feels easy or not.',
+            'These are the small handoffs that decide whether someone comes back or stays a one-off repair. None of them look dramatic in the moment, but they shape whether booking the next job feels easy or not.',
         workflows: [
             {
                 trigger: 'A walk-in drops something off mid-job.',
                 actions: [
                     'Logged in the same place as bookings',
-                    'Customer and item noted in seconds',
+                    'Caller and item noted in seconds',
                     'They get a text when it is ready',
                 ],
             },
             {
-                trigger: 'A past customer has not been seen in six months.',
+                trigger: 'A past job has gone quiet for six months.',
                 actions: [
                     'A quiet recall message goes out',
                     'It is short and written like you',
@@ -190,7 +190,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
             {
                 icon: Users,
                 title: 'CRM & Follow-up Automation',
-                description: 'Keeps past customers warm and stops smaller jobs from disappearing just because nobody got back to them clearly enough.',
+                description: 'Keeps past jobs warm and stops smaller repairs from disappearing just because nobody got back to them clearly enough.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -230,14 +230,14 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
             'These are the practical questions that usually come up in a busy repair shop where timing, drop-offs, and repeat work all compete with the bench. Straight answers, no extra polish.',
         faqs: [
             {
-                question: 'Will customers feel spammed by recall messages?',
+                question: 'Will people feel spammed by recall messages?',
                 answer:
                     'No. They are short, friendly, and on a sensible cycle. The moment they reply, the follow-up stops.',
             },
             {
                 question: 'How is this different from just answering the phone better?',
                 answer:
-                    'The phone is one channel. This pulls walk-ins, missed calls, messages, and past customers into one place so nobody slips out the side.',
+                    'The phone is one channel. This pulls walk-ins, missed calls, messages, and past jobs into one place so nobody slips out the side.',
             },
             {
                 question: 'Do small jobs really matter?',
@@ -252,7 +252,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
             {
                 question: 'How long until repeat work shows up?',
                 answer:
-                    'Recall messages tend to bring people back inside the first month, because most past customers had simply forgotten.',
+                    'Recall messages tend to bring people back inside the first month, because most past jobs had simply slipped their mind.',
             },
         ],
     };
@@ -270,11 +270,11 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         type: 'detail',
         parentSlug: 'local-appointment-businesses',
         seo: {
-            title: 'Repair Shops — Stop Living Off Walk-Ins, Build A Repeat Customer Base | MindWP',
+            title: 'Repair Shops — Stop Living Off Walk-Ins, Build A Repeat Work Base | MindWP',
             description:
-                'For repair shops where the bench is busy but past customers never come back. We put recall, easy booking, and review prompts in place so today fixes the year, not just the day.',
+                'For repair shops where the bench is busy but past jobs never come back. We put recall, easy booking, and review prompts in place so today fixes the year, not just the day.',
             keywords: [
-                'repair shop customer recall',
+                'repair shop recall system',
                 'repair shop booking system',
                 'repair shop crm',
                 'repair shop local seo',

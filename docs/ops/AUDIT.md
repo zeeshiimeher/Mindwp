@@ -1,90 +1,31 @@
-# MindWP Audit System
+# MindWP Audit
 
-## Overview
+## Enforcement Surface
 
-MindWP is a deterministic validation system.
-
-Correctness is enforced through:
-
-- validators
-- analyzers
-- manifest
-- snapshot
-
----
+- validators enforce blocking rules
+- snapshot enforces stable shared inputs
+- manifest enforces declared system structure
+- generated-file protection enforces read-only artifacts
 
 ## `system:full`
 
-The only trusted gate.
+`system:full` is the release gate.
 
-Ensures:
+- runs validators
+- checks snapshot integrity
+- verifies route, env, and manifest integrity
+- blocks build on failure
 
-- system integrity
-- SEO correctness
-- indexing policy
-- route ownership
-- env validation
-
----
-
-## Validation Layers
-
-### Validators
-
-- blocking
-- manifest-driven
-- enforce rules
-
----
-
-## Snapshot System
-
-- built once
-- reused across validators
-- prevents drift
-
----
-
-## Generated File Protection
-
-- metadata enforced
-- cannot be manually edited
-
----
-
-## Manifest Control
-
-- single source of truth
-- defines system structure
-
----
-
-## Determinism Guarantee
-
-Running:
+## Determinism
 
 ```bash
 npm run system:full
 ```
 
-twice must produce identical outputs.
+Repeated runs should produce the same result.
 
----
+## Failure State
 
-## Failure Behavior
-
-If anything fails:
-
-- `system:full` fails
-- build is blocked
-- deployment is unsafe
-
----
-
-## Principle
-
-System is:
-
-- deterministic
-- enforced
-- non-optional
+- failing validators stop `system:full`
+- failed `system:full` blocks build
+- blocked build means do not deploy

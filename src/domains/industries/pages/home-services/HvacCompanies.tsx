@@ -19,7 +19,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For HVAC Firms',
     title: 'Minus Four Overnight. The Phones Lit Up At Six. Half Rang Out By Nine.',
     description:
-      'HVAC has a few days each year when everything breaks at once and the line fills faster than anyone can answer it. The cold snap or heatwave does not beat you because the work is hard. It beats you because too many calls land in the same hour and somebody else gets back first.',
+      'HVAC has a few days each year when everything breaks at once and the line fills faster than anyone can answer it. The cold snap or heatwave does not beat you because the work is hard. It beats you because too many calls land in the same hour and another firm gets back first.',
     list: ['Call overload', 'Surge mornings', 'Late dispatch'],
     cssPrefix: 'hvac-companies-hero',
   };
@@ -105,7 +105,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         features: [
           'Text-back inside 60 seconds',
           'Boiler make and symptom captured up front',
-          'Customer knows you have seen it',
+          'Caller knows you have seen it',
         ],
       },
       {
@@ -163,7 +163,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       'These are the kinds of moments that usually make a surge day feel out of control. This is what changes once the volume can be held and sorted properly instead of just shouted through.',
     workflows: [
       {
-        trigger: '5:48am \u2014 boiler down, customer dialling round',
+        trigger: '5:48am \u2014 boiler down, caller working through the list',
         actions: [
           'A short text fires inside a minute capturing the boiler and the symptom',
           'The enquiry sits at the top of the queue tagged "no heat"',
@@ -182,7 +182,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         trigger: 'A boiler installed twelve months ago hits its anniversary',
         actions: [
           'A quiet annual service nudge fires on the right interval',
-          'The customer books for the quiet weeks before the next cold snap',
+          'The homeowner books for the quiet weeks before the next cold snap',
           'May and June stop being empty in the diary',
         ],
       },
@@ -298,14 +298,14 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
           'Yes. A short, friendly check-in fires a few days after the quote, and again a week or so later. Most homeowners appreciate the nudge because the weather spike usually pushed the decision down their list too.',
       },
       {
-        question: 'Will customers feel the response is automated during a panic?',
+        question: 'Will callers feel the response is automated during a panic?',
         answer:
           'No. The first reply reads like the office wrote it. Short, useful, tells them when you will ring back.',
       },
       {
         question: 'Can it handle annual service nudges without becoming spam?',
         answer:
-          'Yes. A short message goes out around twelve months after the install. It reads like a person, opt-out is one click, and most customers book.',
+          'Yes. A short message goes out around twelve months after the install. It reads like a person, opt-out is one click, and most homeowners book.',
       },
       {
         question: 'Do we need a brand new website?',

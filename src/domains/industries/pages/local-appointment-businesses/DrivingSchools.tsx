@@ -18,7 +18,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
         title: 'Tuesday Enquiry. "I\'ll Book Next Week." Six Weeks Later, Nothing.',
         description:
             'Most driving school enquiries do not disappear dramatically. A learner asks if you have a slot this week or before their test date, the reply comes later than they hoped, and the diary never hears back because they booked wherever availability looked clearer.',
-        list: ['Test dates', 'Late replies', 'Open slots', 'No follow-up'],
+        list: ['Test dates', 'Late replies', 'No follow-up'],
         cssPrefix: 'driving-schools-hero',
     };
 
@@ -61,7 +61,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
                 title: 'Without follow-up',
                 items: [
                     'Enquiry comes in Tuesday. You reply. Silence.',
-                    'Nobody knows whether they booked elsewhere or just paused.',
+                    'Nobody knows whether they took another slot or just paused.',
                     'Past learners who stopped at lesson five are never nudged.',
                     'Test-pass moments come and go without a review ask.',
                 ],

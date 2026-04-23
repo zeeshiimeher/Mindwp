@@ -22,7 +22,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         title: 'Professional Work Is Rarely Lost Loudly. It Is Lost In The Long, Quiet Middle.',
         description:
             'Solicitors, accountants, and consultants rarely lose work in one obvious moment. It usually fades out over days or weeks while the prospect compares firms, sits on the proposal, and hears nothing useful enough to keep the conversation moving.',
-        list: ['Slow decisions', 'Quiet drop-offs', 'Weak follow-up', 'Trust drift'],
+        list: ['Slow decisions', 'Weak follow-up', 'Trust drift'],
         cssPrefix: 'legal-professional-services-hero',
     };
 

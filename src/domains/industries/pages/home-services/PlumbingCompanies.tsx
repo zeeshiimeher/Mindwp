@@ -19,7 +19,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For Plumbing Firms',
     title: 'Stopcock In One Hand. Phone In The Other. They Were Already Calling Number Three.',
     description:
-      'A leak starts spreading at twenty past seven and the homeowner is not browsing options calmly. They are ringing plumbers one after another until somebody answers, and by the time you see the missed call from dinner another van is already on the way and the later refit conversation has gone with it.',
+      'A leak starts spreading at twenty past seven and the homeowner is not browsing options calmly. They are ringing plumbers one after another until somebody answers, and by the time you see the missed call after dinner another van is already on the way and the later refit conversation has gone with it.',
     list: ['Water leaks', 'Missed evenings', 'Next number'],
     cssPrefix: 'plumbing-companies-hero',
   };
@@ -251,7 +251,8 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What plumbing firms ask first',
-    description: 'Straight answers about after-hours leaks, evening call handling, and how to stop water-damage jobs slipping to the next number.',
+    description:
+      'Straight answers about after-hours leaks, the calls that come in while you are still on another job, and what actually helps before the next number gets the work.',
     faqs: [
       {
         question: 'Most calls come after six. Will the text-back actually help then?',

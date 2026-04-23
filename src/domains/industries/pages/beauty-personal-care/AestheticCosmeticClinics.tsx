@@ -21,7 +21,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         title: 'She Sat Through The Consult, Took The Brochure Home, Talked To Her Sister, And Then Heard Nothing From You.',
         description:
             'High-ticket aesthetic decisions are rarely made in the consult room itself. They get made over the next few days at home, in the mirror, in messages with family, and in moments of doubt where a calm follow-up can either steady the decision or lose it completely.',
-        list: ['Consult silence', 'Doubt window', 'Weak follow-up', 'Thin trust'],
+        list: ['Consult silence', 'Doubt window', 'Weak follow-up'],
         cssPrefix: 'aesthetic-cosmetic-clinics-hero',
     };
 

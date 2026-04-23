@@ -21,13 +21,13 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
     title: 'They Enquired With Three Of You On Sunday Night. Whoever Replied First With A Slot Got The Booking.',
     description:
       'Dental practices, private clinics, driving schools, repair shops, and tattoo studios rarely lose bookings because of the work itself. They lose them when the reply comes late, the availability is not clear, the booking takes too long, or nobody follows up after the first enquiry goes quiet.',
-    list: ['Late replies', 'Unclear slots', 'Slow booking', 'No follow-up'],
+    list: ['Late replies', 'Unclear slots', 'No follow-up'],
     cssPrefix: 'local-appointment-businesses-hero',
   };
 
   const imageStripData = {
     badge: 'How Booking Decisions Happen',
-    title: 'You’re mid-appointment. Three enquiries piled up. Two booked elsewhere by the time you looked.',
+    title: 'You’re mid-appointment. Three enquiries piled up. Two had already taken another slot by the time you looked.',
     description:
       'Evenings, Sunday nights, lunch breaks, school holidays. The person booking usually wants two things quickly: a rough price and a real slot. If either one stays vague for too long, the booking drifts before anyone notices.',
     items: [
@@ -101,14 +101,14 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       'Each piece handles one part of the booking leak. Together they help the diary keep moving while you stay focused on the appointment in front of you.',
     featureCategories: [
       {
-        title: 'Reply to enquiries while you’re with a customer',
+        title: 'Reply to enquiries while you’re with someone in front of you',
         description:
           'A call, DM, or form lands and gets a quick reply with a price band and a real next step while you are still with someone else. That usually holds the enquiry long enough for the proper reply to happen later the same day.',
         icon: MessageSquare,
         features: [
           'Instant acknowledgement on every enquiry',
           'Price band and slot up front',
-          'Holds the customer until you can reply properly',
+          'Holds the enquiry until you can reply properly',
         ],
       },
       {
@@ -200,7 +200,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       {
         title: 'Walk-in and quote-led work',
         description:
-          'Repair shops, GP-style private clinics, smaller practices — the customer wants a price and a wait time, fast.',
+          'Repair shops, GP-style private clinics, smaller practices — the caller wants a price and a wait time, fast.',
         points: [
           '“How much?” calls go to whoever picks up',
           'Drop-offs that ghost cost the bench',
@@ -219,7 +219,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       'If two or three of these sound familiar, the issue is usually bigger than "we just need a new website." The real gap is often in the response, the booking step, or what happens after the first enquiry goes quiet.',
     items: [
       'You’ve missed enquiries this week because you were with a patient, learner, or client',
-      'A booking recently took ten messages to confirm and the customer half-disappeared',
+      'A booking recently took ten messages to confirm and the caller half-disappeared',
       'You had a no-show on a high-value slot and no deposit was taken',
       'Hygiene recalls, lesson rebookings, or follow-up appointments slipped because nobody had time',
       'The business down the road has 5–10x your reviews despite worse work',

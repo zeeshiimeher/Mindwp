@@ -18,7 +18,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         title: 'The Treatment Plan Was Agreed In April. The Chair Has Been Empty Since.',
         description:
             'Dental clinics usually carry two kinds of booking pressure at once: the person calling with pain who needs an answer quickly, and the routine patient or treatment-plan patient who keeps putting the next appointment off. Both get lost when the reply, booking step, or follow-up is too slow.',
-        list: ['Pain calls', 'Missed recalls', 'Late booking', 'Stalled plans'],
+        list: ['Pain calls', 'Missed recalls', 'Stalled plans'],
         cssPrefix: 'dental-clinics-hero',
     };
 
