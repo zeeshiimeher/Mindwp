@@ -6,31 +6,32 @@ export type CaseStudyMetadata = CaseStudyTemplateMetadata;
 
 export type CaseStudyContent = {
   keyMetrics: Array<CaseStudyData['keyMetrics'][number] & { icon: string }>;
-  problemHeading: string;
-  problemDescription: string[];
-  painPoints: string[];
-  solutionHeading: string;
-  solutionDescription: string;
-  whatWeDid: {
+  problemHeading?: string;
+  problemDescription?: string[];
+  painPoints?: string[];
+  solutionHeading?: string;
+  solutionDescription?: string;
+  whatWeDid?: {
     title: string;
     description: string;
     icon: string;
   }[];
-  howWeDidIt: {
+  howWeDidIt?: {
     phase: string;
     title: string;
     description: string;
     duration: string;
   }[];
-  featuresUsed: {
+  featuresUsed?: {
     category: string;
     features: string[];
   }[];
   results: {
-    metric: string;
-    before: string;
-    after: string;
-    improvement: string;
+    metric?: string;
+    before?: string;
+    after?: string;
+    improvement?: string;
+    title?: string;
     description: string;
   }[];
   testimonial?: {
@@ -38,7 +39,7 @@ export type CaseStudyContent = {
     author: string;
     role: string;
   };
-  investment: {
+  investment?: {
     setup: string;
     monthly: string;
     roi?: string;

@@ -5,7 +5,9 @@ import path from 'node:path';
 
 import { describe, expect, test } from 'vitest';
 
+import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { buildRouteInventory } from '@/lib/content-quality/inventory';
+import { getImage } from '@/lib/image-system/resolver';
 import { buildRoutePathFromSegments } from '@/lib/seo/config';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
@@ -73,12 +75,16 @@ describe('integration: route inventory coverage', () => {
     expect(staticAppRoutes.every(routePath => inventoryPaths.has(routePath))).toBe(true);
   });
 
-  test('inventory uses canonical case-study assets for case-study open graph images', async () => {
+  test('inventory uses resolved case-study assets for case-study open graph images', async () => {
     const inventory = await buildRouteInventory();
-    const entry = inventory.find(item => item.path === '/case-studies/hvac-emergency-lead-routing');
 
-    expect(entry?.openGraph.images).toEqual([
-      '/images/case-studies/hvac-emergency-lead-routing.webp',
-    ]);
+    for (const caseStudy of Object.values(CASE_STUDY_REGISTRY)) {
+      const entry = inventory.find(item => item.path === caseStudy.seo.canonical);
+
+      expect(entry, `Missing route inventory entry for ${caseStudy.slug}`).toBeDefined();
+      expect(entry?.openGraph.images).toEqual([
+        getImage(caseStudy.slug, 'case-studies', 'featured-overlay'),
+      ]);
+    }
   });
 });

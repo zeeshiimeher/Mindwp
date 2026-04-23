@@ -5,37 +5,35 @@ import type { CaseStudyData } from '../types';
 function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Summit Roofing Solutions is a mid-sized residential roofing company based in Leeds. The
-      business generates between 25 and 40 estimates per week across repairs, replacements, and
-      insurance-related work. Despite consistent lead volume, the close rate had plateaued at around
-      18%. The team sent estimates via email or handed them over in person — but beyond that,
-      follow-up was inconsistent. Some estimates received a single phone call a few days later. Most
-      received nothing at all.
+      Summit Roofing Solutions in Leeds was sending plenty of quotes. That was not the hard part.
+      The problem started after that. Some homeowners opened the quote and went quiet. Some meant to
+      call back and never did. Some were still thinking it over while the team had already moved on
+      to the next job. Too much of the quote book was being left to chance.
     </>
   );
 
   const keyMetrics: CaseStudyContent['keyMetrics'] = [
     {
-      label: 'Estimate Close Rate',
-      value: '35%',
+      label: 'Quotes properly followed up',
+      value: 'Most of them',
       icon: 'Receipt',
       color: 'case-study-accent--success',
     },
     {
-      label: 'Follow-Up Completion',
-      value: '94%',
+      label: 'First follow-up timing',
+      value: 'A lot sooner',
       icon: 'CheckCircle2',
       color: 'case-study-accent--primary',
     },
     {
-      label: 'Revenue Recovered',
-      value: '£8.2k/mo',
+      label: 'Recovered work',
+      value: 'Around GBP7k-GBP9k a month',
       icon: 'PoundSterling',
       color: 'case-study-accent--amber',
     },
     {
-      label: 'Pipeline Visibility',
-      value: 'Full CRM',
+      label: 'Quote visibility',
+      value: 'Much clearer',
       icon: 'BarChart3',
       color: 'case-study-accent--purple',
     },
@@ -43,57 +41,69 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
 
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: Estimates Sent, Then Forgotten',
+    problemHeading: 'Roofing quotes kept going quiet after they were sent out',
     problemDescription: [
-      'Summit Roofing sent an average of 32 estimates per week. The sales process ended at delivery — estimates were emailed or handed to the homeowner and then left to sit. Follow-up depended entirely on individual memory and willingness to make calls.',
-      'Of the estimates that did receive follow-up, most came 5–7 days after delivery — well past the point where homeowners had already started comparing alternatives. Roughly 60% of estimates received no follow-up at all. There was no system tracking which estimates were open, pending, or lost.',
+      'Quotes were being sent, but the next step depended too much on who remembered to call and when they happened to get around to it.',
+      'Some homeowners needed a nudge. Some needed a second explanation. Some insurance jobs moved on a different rhythm entirely. Instead, too many quotes sat there until they were cold.',
     ],
     painPoints: [
-      'Average of 32 estimates sent per week with only 18% closing',
-      '60% of estimates received zero follow-up after delivery',
-      'Follow-up calls happened 5–7 days after delivery — too late for most homeowners',
-      'No visibility into which estimates were pending, viewed, or lost',
-      'Insurance-related estimates had different timelines but received the same treatment',
-      'Sales team relied on memory rather than a tracking system',
-      'Revenue leakage estimated at over £8,000 per month from unconverted estimates',
+      'Too many quotes had no proper follow-up at all',
+      'The first call often happened later than it should have',
+      'Different quote types were being treated the same way',
+      'Nobody had a clear view of what was still live and what had already gone',
+      'The team was relying on memory, notes, and good intentions',
+    ],
+  };
+
+  const workflowsSection: CaseStudyTemplateSection = {
+    type: 'workflows',
+    badge: 'How It Ran',
+    title: 'Follow-up stopped depending on who remembered',
+    description:
+      'The aim was not to flood people with messages. It was to stop good quotes from being forgotten.',
+    workflows: [
+      {
+        trigger: 'A new quote went out',
+        actions: [
+          'The quote was marked properly instead of disappearing into the week',
+          'A first check-in was lined up much earlier than before',
+          'The team could see what still needed attention without hunting through notes',
+        ],
+      },
+      {
+        trigger: 'The homeowner stayed quiet',
+        actions: [
+          'A later nudge went out instead of leaving the quote untouched',
+          'Insurance jobs could be handled a bit differently where needed',
+          'Some quotes still needed a manual call because not every job followed the same pattern',
+        ],
+      },
     ],
   };
 
   const solutionSection: CaseStudyTemplateSection = {
     type: 'solution',
-    solutionHeading: 'The System: CRM Pipeline With Automated Follow-Up Sequences',
+    solutionHeading: 'They gave every quote a clearer next step',
     solutionDescription:
-      'The implementation centred on building a structured CRM pipeline that tracked every estimate from delivery through to decision, with automated follow-up sequences triggered at the right intervals based on estimate type.',
+      'The team put a cleaner handoff in place after a quote was sent. That meant earlier follow-up, clearer status, and less guesswork about what still had a chance of turning into a job.',
     whatWeDid: [
       {
-        title: 'Estimate Pipeline Setup',
+        title: 'Quotes were tracked properly',
         description:
-          'Created a CRM pipeline with stages for Sent, Viewed, Follow-Up Due, Negotiation, Won, and Lost — giving the team a clear picture of every active estimate.',
+          'Each quote had a clear status instead of being left in somebody\'s inbox or notebook.',
         icon: 'GitBranch',
       },
       {
-        title: 'Automated Follow-Up Sequences',
+        title: 'The first follow-up happened sooner',
         description:
-          'Built three follow-up sequences: a check-in at 48 hours, a comparison-help message at 5 days, and a final gentle close at 10 days. Each was adapted for estimate type.',
+          'The team did not wait nearly as long to check back in, which kept more homeowners engaged while the quote was still being considered.',
         icon: 'Timer',
       },
       {
-        title: 'Estimate Type Segmentation',
+        title: 'Different quote types were treated differently',
         description:
-          'Separated insurance-claim estimates from standard repair and replacement estimates so each followed a timeline appropriate to the homeowner\u2019s decision cycle.',
+          'Insurance work and standard roofing jobs were no longer forced into one identical follow-up pattern.',
         icon: 'Tags',
-      },
-      {
-        title: 'Team Notifications',
-        description:
-          'Configured CRM alerts so sales staff received a notification when a follow-up was due, removing the dependency on memory.',
-        icon: 'Bell',
-      },
-      {
-        title: 'Win/Loss Tracking',
-        description:
-          'Added outcome tracking so the team could report on close rates by estimate type, source, and follow-up stage — enabling continuous improvement.',
-        icon: 'BarChart3',
       },
     ],
   };
@@ -102,58 +112,36 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'Estimate Close Rate',
-        before: '18% across all estimate types',
-        after: '35% average close rate',
-        improvement: '+17 percentage points',
+        title: 'A lot more quotes got proper attention before they went stale',
+        improvement: 'Most quotes were no longer being left alone after day one',
         description:
-          'Structured follow-up at the right intervals gave homeowners the information and nudge they needed to commit, rather than going silent.',
+          'The main win was consistency. People were hearing back while they were still comparing options instead of a week later when the moment had passed.',
       },
       {
-        metric: 'Follow-Up Completion',
-        before: '40% of estimates received at least one follow-up call',
-        after: '94% of estimates completed the full follow-up sequence',
-        improvement: '+54 percentage points',
+        title: 'Earlier follow-up helped more quotes turn into real conversations',
+        improvement: 'Enough to make the close rate move properly',
         description:
-          'Automated sequences ensured every estimate received three follow-up touchpoints regardless of team workload.',
+          'Not every homeowner replied to the first nudge. Some still needed a manual call. But the team was seeing more replies, more back-and-forth, and more jobs that would have gone quiet before.',
       },
       {
-        metric: 'Monthly Revenue Recovered',
-        before: 'Estimated £8,200/month lost from unconverted estimates',
-        after: 'Revenue recovered through improved close rates',
-        improvement: '£8,200/month captured',
+        title: 'The recovered work was meaningful without being perfectly neat',
+        improvement: 'Around GBP7k-GBP9k a month stayed in reach',
         description:
-          'The combination of faster follow-up and consistent sequences converted estimates that would have previously gone cold.',
-      },
-      {
-        metric: 'Average Follow-Up Speed',
-        before: '6.2 days after estimate delivery',
-        after: '48 hours (first automated touchpoint)',
-        improvement: '77% faster first contact',
-        description:
-          'The first follow-up now happens within 2 days instead of nearly a week, keeping Summit Roofing top-of-mind during the homeowner\u2019s decision window.',
-      },
-      {
-        metric: 'Pipeline Visibility',
-        before: 'No visibility — estimates tracked in spreadsheets or not at all',
-        after: 'Full CRM pipeline with real-time status for every open estimate',
-        improvement: 'Complete operational clarity',
-        description:
-          'The team could see exactly how many estimates were active, which stage each was in, and where bottlenecks were forming.',
+          'It was not the same every month and it was not down to one message. Some categories still needed a different touch. Even so, the change was clear enough in the jobs won and in the quotes that stopped drifting out of view.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Estimates Going Unanswered?',
-    body: 'Book a free 20-minute call and we\u2019ll show you how a CRM follow-up system could recover lost revenue from your existing estimate pipeline.',
+    heading: 'Do too many quotes go quiet after they are sent?',
+    body: 'Book a free 20-minute call and we can look at where your quote follow-up is slipping and what would make it easier to keep more of those jobs alive.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
-    { type: 'metrics', keyMetrics },
     problemSection,
+    workflowsSection,
     solutionSection,
     resultsSection,
     { type: 'more' },
@@ -161,11 +149,11 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
   ];
 
   return {
-    slug: 'roofing-estimate-follow-up-automation',
-    title: 'Roofing Estimate Follow-Up Automation',
-    metaTitle: 'Roofing Estimate Follow-Up | 18% to 35% Close Rate',
+    slug: 'roofing-quotes-not-being-followed-up',
+    title: 'Roofing quotes kept going quiet after they were sent out',
+    metaTitle: 'Roofing quote follow-up case study: more estimates turning into jobs',
     metaDescription:
-      'How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.',
+      'How a Leeds roofing company stopped leaving so many quotes untouched and recovered around GBP7k-GBP9k a month in work that had been drifting away.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -177,7 +165,7 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     business: 'Summit Roofing Solutions',
     duration: '6 weeks',
     completedDate: 'October 2025',
-    heroHeadline: 'How a Roofing Company Recovered £8,200/Month by Automating Estimate Follow-Up',
+    heroHeadline: 'Roofing quotes kept going quiet after they were sent out',
     keyMetrics: keyMetrics.map(metric => ({
       value: metric.value,
       label: metric.label,
@@ -185,28 +173,28 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     })),
     tags: ['Estimate Follow-Up', 'CRM Pipeline', 'Roofing', 'Revenue Recovery', 'Automation'],
     seo: {
-      canonical: '/case-studies/roofing-estimate-follow-up-automation',
+      canonical: '/case-studies/roofing-quotes-not-being-followed-up',
       openGraph: {
-        title: 'Why Roofing Estimates Go Unanswered | MindWP Case Study',
+        title: 'Roofing quote follow-up case study: more estimates turning into jobs',
         description:
-          'How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.',
+          'How a Leeds roofing company stopped leaving so many quotes untouched and kept more of that work alive.',
       },
     },
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Revenue Recovery' },
-      metrics: { resultsSectionTitle: 'Key Outcomes' },
-      problem: { challengeBadgeLabel: 'The Revenue Problem' },
-      solution: { solutionBadgeLabel: 'System Implementation' },
+      hero: { scenarioBadgeLabel: 'Quote Follow-Up' },
+      problem: { challengeBadgeLabel: 'What Was Happening' },
+      workflows: { workflowsBadgeLabel: 'How It Ran' },
+      solution: { solutionBadgeLabel: 'What They Changed' },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Estimate Pipeline Performance',
+        detailedResultsBadgeLabel: 'What Improved',
+        detailedResultsSectionTitle: 'What Changed Once Quotes Stopped Being Left Alone',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for trades' },
+          { text: 'No pressure' },
+          { text: 'Useful for quote-heavy trades' },
         ],
       },
     },

@@ -84,7 +84,7 @@ test('critical routes load and are not 404', async ({ page }) => {
     '/industries',
     industryPath,
     '/case-studies',
-    `/case-study/${caseStudySlug}`,
+    `/case-studies/${caseStudySlug}`,
   ];
 
   if (includeComponentsRoute) {

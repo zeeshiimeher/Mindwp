@@ -5,38 +5,36 @@ import type { CaseStudyData } from '../types';
 function buildAutoRepairMissedCallRecovery(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Premier Auto Care is an independent garage in Leicester with three mechanics and one front
-      desk staff member. The garage serviced a mix of walk-in MOTs, pre-booked repairs, and
-      emergency breakdowns. The front desk handled phone calls, check-ins, and payment processing.
-      During peak hours — particularly between 8 AM and 10 AM when clients dropped off vehicles —
-      the phone rang constantly and went unanswered. Voicemails were checked inconsistently, and
-      many callers never left a message. The garage had no system for capturing or following up on
-      missed calls.
+      Premier Auto Care is a busy independent garage in Leicester. Most mornings start the same
+      way: MOT drop-offs, keys changing hands, somebody asking for a quick look at a warning light,
+      and the phone going again while the front desk is already tied up. That was the point where
+      new enquiries kept slipping away. Not because the team did not care. They just could not pick
+      up every time.
     </>
   );
 
   const keyMetrics: CaseStudyContent['keyMetrics'] = [
     {
-      label: 'Call Capture',
-      value: '41% → 93%',
+      label: 'Missed callers reached later',
+      value: 'Most of them',
       icon: 'Phone',
       color: 'case-study-accent--success',
     },
     {
-      label: 'Response Time',
-      value: '<4 min',
+      label: 'First reply speed',
+      value: 'Much quicker',
       icon: 'Clock',
       color: 'case-study-accent--primary',
     },
     {
-      label: 'Recovered Leads',
-      value: '9/week',
+      label: 'Extra booked work',
+      value: 'Around 8-10 jobs a week',
       icon: 'UserPlus',
       color: 'case-study-accent--purple',
     },
     {
-      label: 'Monthly Revenue',
-      value: '+£3.8k',
+      label: 'Recovered revenue',
+      value: 'Around GBP3k-GBP4k a month',
       icon: 'TrendingUp',
       color: 'case-study-accent--amber',
     },
@@ -44,51 +42,42 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
 
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: Missed Calls During the Morning Drop-Off Rush',
+    problemHeading: 'The phone kept ringing while the ramps were full',
     problemDescription: [
-      'Premier Auto Care\u2019s busiest period was the morning drop-off window between 8 AM and 10 AM. Clients arrived to leave their vehicles for MOTs and pre-booked repairs, while new callers phoned for quotes, availability checks, and emergency breakdown enquiries. The single front desk staff member could not manage walk-in check-ins and phone calls simultaneously.',
-      'Call logs showed an average of 18 missed calls per week, with 11 occurring during the 8\u201310 AM window. Most callers did not leave voicemails. Of those who did, follow-up was delayed by hours — often until the afternoon when the front desk was less busy. By that point, many customers had already called a competitor. The garage had no visibility into how many calls were missed or what they were about.',
+      'The garage was strongest in the first two hours of the day and weakest at answering the phone in those same two hours. Cars were arriving, people wanted updates, and the front desk had one pair of hands.',
+      'Some callers rang back. Plenty did not. A few left voicemails, but those often sat there until later on. By then the urgent ones had usually tried somewhere else.',
     ],
     painPoints: [
-      '18 missed calls per week on average — 11 during the morning rush',
-      'Single front desk staff handling walk-ins and phone simultaneously',
-      'Most missed callers did not leave a voicemail',
-      'Voicemail follow-up delayed by 3\u20135 hours',
-      'No tracking or visibility into missed call volume',
-      'Emergency breakdown callers lost to competitors within minutes',
-      'No automated response to let callers know their call was received',
+      'Morning drop-off was the main pressure point',
+      'Missed calls were common, but nobody could see the full picture',
+      'Voicemails were checked late when the desk calmed down',
+      'Breakdown and urgent repair callers moved on quickly',
+      'The team relied on memory more than a proper callback list',
     ],
   };
 
-  const solutionSection: CaseStudyTemplateSection = {
-    type: 'solution',
-    solutionHeading: 'The System: Automated Missed Call Recovery With SMS and CRM Logging',
-    solutionDescription:
-      'The solution introduced an automated missed call detection and recovery system that sent immediate SMS responses to missed callers, logged every call in the CRM, and prioritised emergency enquiries for rapid follow-up.',
-    whatWeDid: [
+  const workflowsSection: CaseStudyTemplateSection = {
+    type: 'workflows',
+    badge: 'What Changed',
+    title: 'Missed calls stopped disappearing into the morning rush',
+    description:
+      'Instead of a missed call turning into guesswork later, the garage had a simple way to respond while the desk was still busy.',
+    workflows: [
       {
-        title: 'Missed Call Detection',
-        description:
-          'Connected the phone system to detect unanswered calls in real time and trigger an automated response within 60 seconds.',
-        icon: 'PhoneOff',
+        trigger: 'A caller rang and nobody could answer',
+        actions: [
+          'A short text went out straight away saying the garage had seen the call',
+          'The missed call landed in one place instead of being left to memory',
+          'If the caller texted back with something urgent, it was easier to spot fast',
+        ],
       },
       {
-        title: 'Instant SMS Response',
-        description:
-          'Sent an automatic text message acknowledging the missed call, confirming the garage would call back, and providing an option to describe the enquiry via text.',
-        icon: 'MessageSquare',
-      },
-      {
-        title: 'CRM Call Logging',
-        description:
-          'Every missed call was logged in GoHighLevel CRM with timestamp, phone number, and any SMS reply from the caller — creating a follow-up task for the front desk.',
-        icon: 'Database',
-      },
-      {
-        title: 'Emergency Prioritisation',
-        description:
-          'Callers who replied with keywords like "breakdown" or "urgent" were flagged as high priority and pushed to the top of the callback queue.',
-        icon: 'AlertTriangle',
+        trigger: 'The desk finally had breathing room',
+        actions: [
+          'The callback list was already there, in order, with context',
+          'Staff could work through it without digging through voicemails',
+          'A few callers still needed a second try, but far fewer were lost completely',
+        ],
       },
     ],
   };
@@ -97,62 +86,47 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'Call Capture Rate',
-        before: '41% — only 18 of 31 weekly calls answered',
-        after: '93% — missed calls recovered via SMS within 60 seconds',
-        improvement: '+52 percentage points',
+        title: 'More missed callers actually came back into the conversation',
+        improvement: 'Most of the ones they would have lost before were at least reached properly',
         description:
-          'While the garage still missed the same number of calls during busy periods, the automated SMS recovery meant those callers were engaged immediately instead of lost.',
+          'The biggest shift was simple: a missed call no longer meant silence. People got a quick acknowledgement, and the garage had a real callback trail instead of hoping someone remembered later.',
       },
       {
-        metric: 'Average Response Time',
-        before: '3\u20135 hours for voicemail follow-up',
-        after: 'Under 4 minutes from missed call to SMS + callback',
-        improvement: '98% faster response',
+        title: 'Replies happened sooner, while the job was still live',
+        improvement: 'Faster enough to matter',
         description:
-          'The combination of instant SMS and priority queuing meant most callers heard back within minutes rather than hours.',
+          'They were getting back to people much quicker than before. Not instantly every single time, but usually fast enough that the enquiry was still warm and worth saving.',
       },
       {
-        metric: 'Recovered Leads Per Week',
-        before: '0 — missed calls were not tracked or followed up systematically',
-        after: '9 leads per week recovered from previously-lost missed calls',
-        improvement: '9 new leads/week',
+        title: 'The extra work was noticeable without feeling exaggerated',
+        improvement: 'Around GBP3k-GBP4k a month in recovered jobs',
         description:
-          'Callers who would have gone to competitors now received an immediate response and stayed in the pipeline.',
-      },
-      {
-        metric: 'Monthly Revenue Impact',
-        before: 'Estimated £4,200/month lost to unrecovered missed calls',
-        after: '£3,800/month recovered from leads that would have been lost',
-        improvement: '+£3,800/month',
-        description:
-          'With an average job value of £420 and 9 recovered leads per week converting at a rate consistent with answered calls, the system recovered the majority of previously-lost revenue.',
+          'It was not a perfect line upward every week. Some callers still never replied. But enough did that the recovered work was obvious in the workshop diary and in the month-end numbers.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Missing Calls From Potential Customers?',
-    body: 'Book a free 20-minute call and we\u2019ll show you how an automated missed call recovery system could capture leads you\u2019re currently losing.',
+    heading: 'Missing calls during the busy part of the day?',
+    body: 'Book a free 20-minute call and we can look at what happens when your phone rings at the wrong moment and how to stop those enquiries going cold.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
-    { type: 'metrics', keyMetrics },
     problemSection,
-    solutionSection,
+    workflowsSection,
     resultsSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
-    slug: 'auto-repair-missed-call-recovery',
-    title: 'Auto Repair Missed Call Recovery',
-    metaTitle: 'Auto Repair Missed Call Recovery | 9 Leads Per Week',
+    slug: 'garage-morning-rush-missed-calls',
+    title: 'The phone kept ringing while the ramps were full',
+    metaTitle: 'Garage missed call case study: more enquiries recovered',
     metaDescription:
-      'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+      'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['auto-repair'],
@@ -164,37 +138,35 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     business: 'Premier Auto Care',
     duration: '9 weeks',
     completedDate: 'February 2026',
-    heroHeadline:
-      'How a Garage Recovered 9 Lost Leads Per Week With Automated Missed Call Recovery',
+    heroHeadline: 'The phone kept ringing while the ramps were full',
     keyMetrics: keyMetrics.map(metric => ({
       value: metric.value,
       label: metric.label,
       ...(metric.color ? { color: metric.color } : {}),
     })),
-    tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Automation', 'Automotive'],
+    tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Follow-Up', 'Automotive'],
     seo: {
-      canonical: '/case-studies/auto-repair-missed-call-recovery',
+      canonical: '/case-studies/garage-morning-rush-missed-calls',
       openGraph: {
-        title: 'Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study',
+        title: 'Garage missed call case study: more enquiries recovered',
         description:
-          'How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery.',
+          'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been slipping away.',
       },
     },
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Operational Problem' },
-      metrics: { resultsSectionTitle: 'Key Outcomes' },
-      problem: { challengeBadgeLabel: 'The Missed Call Problem' },
-      solution: { solutionBadgeLabel: 'System Architecture' },
+      hero: { scenarioBadgeLabel: 'Morning Pressure Point' },
+      problem: { challengeBadgeLabel: 'What Was Going Wrong' },
+      workflows: { workflowsBadgeLabel: 'What Changed' },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Call Recovery Performance',
+        detailedResultsBadgeLabel: 'What Improved',
+        detailedResultsSectionTitle: 'What Changed Once Missed Calls Were Handled Better',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for garages' },
+          { text: 'No pressure' },
+          { text: 'Useful for busy garages' },
         ],
       },
     },

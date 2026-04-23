@@ -206,6 +206,18 @@ function validateCaseStudies(caseStudies) {
         'Case study CTA requires heading and body.'
       );
     }
+
+    const lastNarrativeSection = [...caseStudy.sections]
+      .reverse()
+      .find(section => section.type !== 'more');
+    if (lastNarrativeSection?.type !== 'cta') {
+      pushViolation(
+        'case-study',
+        caseStudy.slug,
+        'cta-not-last',
+        'Case study CTA must be the last narrative section.'
+      );
+    }
   }
 }
 

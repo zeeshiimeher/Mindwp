@@ -86,6 +86,14 @@ They own:
 
 Case studies demonstrate what happened, what changed, and what improved without becoming generic sales copy.
 
+Case studies do not require a fixed section set.
+
+Sections are flexible and narrative-driven.
+
+The renderer must support:
+- missing sections
+- reordered sections
+- varied combinations
 ---
 
 ## FUNNEL ROLE SEPARATION (LOCKED)

@@ -200,6 +200,19 @@ Case studies must not use:
 - marketing tone
 - perfect transformation arcs
 
+Case Study Section Naming Rule
+Case studies should avoid exposing system structure.
+
+❌ Avoid:
+- solution
+- implementation
+- system
+
+✅ Prefer:
+- what changed
+- what happened next
+- how it started working differently
+
 ---
 
 ## 5. LANGUAGE RULES

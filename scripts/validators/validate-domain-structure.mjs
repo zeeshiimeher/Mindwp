@@ -40,6 +40,8 @@ if (argsSet.has('--fix')) {
   );
 }
 const reportPath = path.join(root, 'reports', 'domain-structure-report.json');
+const CASE_STUDY_WARNING_TITLE_MIN_LENGTH = 12;
+const CASE_STUDY_WARNING_DESCRIPTION_MIN_LENGTH = 60;
 
 function normalizeRequestedType(value) {
   if (!value) return null;
@@ -67,6 +69,10 @@ function getExportedObjectLiteral(sourceFile) {
 
 function pushIssue(issues, type, file, code, message) {
   issues.push({ type, file, code, message });
+}
+
+function pushWarning(warnings, type, file, code, message) {
+  warnings.push({ type, file, code, message });
 }
 
 function validateRegistryCoverage(issues, type, file, registryLabel, sourceSlugs, registrySlugs) {
@@ -1184,45 +1190,115 @@ function validateIndustryStructure(issues) {
   return scanned;
 }
 
-function getCaseStudySections(buildFn) {
-  const declaration = buildFn
-    .getBodyOrThrow()
-    .getDescendantsOfKind(SyntaxKind.VariableDeclaration)
-    .find(item => item.getName() === 'sections');
-
-  const arrayLiteral = declaration?.getInitializerIfKind(SyntaxKind.ArrayLiteralExpression);
-  if (!arrayLiteral) return null;
-
-  const identifierMap = {
-    problemSection: 'problem',
-    solutionSection: 'solution',
-    processSection: 'process',
-    featuresSection: 'features',
-    resultsSection: 'results',
-    testimonialSection: 'testimonial',
-    investmentSection: 'investment',
-    businessImpactSection: 'business-impact',
-    deliverablesSection: 'deliverables',
-    workflowsSection: 'workflows',
-    faqSection: 'faq',
-    ctaSection: 'cta',
-  };
-
-  return arrayLiteral
-    .getElements()
-    .map(element => {
-      if (element.isKind(SyntaxKind.ObjectLiteralExpression)) {
-        return getStringLiteralValue(getPropertyAssignment(element, 'type')?.getInitializer());
+function resolveCaseStudyReturnObject(sourceFile) {
+  const exportedCaseStudy = sourceFile
+    .getVariableDeclarations()
+    .find(declaration => {
+      if (!declaration.getVariableStatement()?.isExported()) {
+        return false;
       }
-      if (element.isKind(SyntaxKind.Identifier)) {
-        return identifierMap[element.getText()] ?? null;
-      }
-      return null;
-    })
-    .filter(Boolean);
+
+      const typeNode = declaration.getTypeNode();
+      return typeNode?.getText().includes('CaseStudyData') ?? false;
+    });
+
+  if (!exportedCaseStudy) {
+    return null;
+  }
+
+  const initializer = exportedCaseStudy.getInitializer();
+  if (!initializer) {
+    return null;
+  }
+
+  if (initializer.isKind(SyntaxKind.ObjectLiteralExpression)) {
+    return initializer;
+  }
+
+  if (!initializer.isKind(SyntaxKind.CallExpression)) {
+    return null;
+  }
+
+  const buildFn = sourceFile.getFunction(initializer.getExpression().getText());
+  if (!buildFn) {
+    return null;
+  }
+
+  const returnStatement = buildFn
+    .getDescendantsOfKind(SyntaxKind.ReturnStatement)
+    .find(statement => statement.getExpression()?.isKind(SyntaxKind.ObjectLiteralExpression));
+
+  return returnStatement?.getExpression()?.asKind(SyntaxKind.ObjectLiteralExpression) ?? null;
 }
 
-function validateCaseStudyStructure(issues) {
+function getCaseStudySections(returnObject, sourceFile) {
+  const localVariableDeclarations = sourceFile.getDescendantsOfKind(SyntaxKind.VariableDeclaration);
+  const getLocalDeclaration = name =>
+    localVariableDeclarations.find(declaration => declaration.getName() === name) ?? null;
+
+  const sectionsInitializer = getPropertyInitializer(returnObject, 'sections');
+  const sectionsArray = sectionsInitializer?.asKind(SyntaxKind.ArrayLiteralExpression);
+
+  if (sectionsArray) {
+    return sectionsArray
+      .getElements()
+      .map(element => {
+        if (!element.isKind(SyntaxKind.ObjectLiteralExpression)) {
+          return null;
+        }
+
+        return resolveStringValue(getPropertyInitializer(element, 'type'), sourceFile);
+      })
+      .filter(Boolean);
+  }
+
+  if (sectionsInitializer?.isKind(SyntaxKind.Identifier)) {
+    const declaration = getLocalDeclaration(sectionsInitializer.getText());
+    const arrayLiteral = declaration?.getInitializerIfKind(SyntaxKind.ArrayLiteralExpression);
+    if (!arrayLiteral) {
+      return null;
+    }
+
+    return arrayLiteral
+      .getElements()
+      .map(element => {
+        if (element.isKind(SyntaxKind.ObjectLiteralExpression)) {
+          return resolveStringValue(getPropertyInitializer(element, 'type'), sourceFile);
+        }
+
+        if (!element.isKind(SyntaxKind.Identifier)) {
+          return null;
+        }
+
+        const sectionDeclaration = getLocalDeclaration(element.getText());
+        const sectionObject = sectionDeclaration?.getInitializerIfKind(
+          SyntaxKind.ObjectLiteralExpression
+        );
+        return sectionObject
+          ? resolveStringValue(getPropertyInitializer(sectionObject, 'type'), sourceFile)
+          : null;
+      })
+      .filter(Boolean);
+  }
+
+  return null;
+}
+
+function getCaseStudyRegistrySlugs() {
+  const registryPath = path.join(root, 'src', 'domains', 'case-studies', 'registry.ts');
+  if (!fs.existsSync(registryPath)) {
+    return null;
+  }
+
+  const registrySource = project.addSourceFileAtPathIfExists(registryPath);
+  if (!registrySource) {
+    return null;
+  }
+
+  return getObjectLiteralRegistryKeys(registrySource, ['CASE_STUDY_REGISTRY']);
+}
+
+function validateCaseStudyStructure(issues, warnings) {
   const contentDir = path.join(root, 'src', 'domains', 'case-studies', 'content');
   const files = fs.existsSync(contentDir)
     ? fs
@@ -1231,25 +1307,26 @@ function validateCaseStudyStructure(issues) {
         .map(item => path.join(contentDir, item.name))
     : [];
 
+  const sourceSlugs = new Set();
+  const duplicateTypesAllowList = new Set(['results', 'workflows']);
+
   for (const filePath of files) {
     const sourceFile = project.addSourceFileAtPathIfExists(filePath);
     const rel = path.relative(root, filePath);
-    const buildFn = sourceFile
-      ?.getFunctions()
-      .find(fn => fn.getName()?.startsWith('build') && fn.getBody());
+    const returnObject = sourceFile ? resolveCaseStudyReturnObject(sourceFile) : null;
 
-    if (!buildFn) {
+    if (!returnObject || !sourceFile) {
       pushIssue(
         issues,
         'case-study',
         rel,
-        'missing_builder',
-        'Missing build* case-study function.'
+        'missing_export',
+        'Missing exported CaseStudyData object.'
       );
       continue;
     }
 
-    const sections = getCaseStudySections(buildFn);
+    const sections = getCaseStudySections(returnObject, sourceFile);
     if (!sections) {
       pushIssue(issues, 'case-study', rel, 'invalid_sections', 'Unable to parse sections array.');
       continue;
@@ -1267,18 +1344,38 @@ function validateCaseStudyStructure(issues) {
     if (!sections.includes('cta')) {
       pushIssue(issues, 'case-study', rel, 'missing_cta', 'Case study sections must include cta.');
     }
-    if (sections.at(-1) !== 'cta') {
+    const lastNarrativeSection = [...sections].reverse().find(section => section !== 'more');
+    if (lastNarrativeSection !== 'cta') {
       pushIssue(issues, 'case-study', rel, 'cta_not_terminal', 'cta must be the final section.');
     }
 
-    const returnStatement = buildFn
-      .getDescendantsOfKind(SyntaxKind.ReturnStatement)
-      .find(statement => statement.getExpression()?.isKind(SyntaxKind.ObjectLiteralExpression));
-    const returnObject = returnStatement
-      ?.getExpression()
-      ?.asKind(SyntaxKind.ObjectLiteralExpression);
+    const sectionCounts = new Map();
+    for (const section of sections) {
+      sectionCounts.set(section, (sectionCounts.get(section) ?? 0) + 1);
+    }
+    for (const [section, count] of sectionCounts.entries()) {
+      if (count > 1 && !duplicateTypesAllowList.has(section)) {
+        pushIssue(
+          issues,
+          'case-study',
+          rel,
+          'duplicate_section_type',
+          `${section} sections must not appear more than once.`
+        );
+      }
+    }
+
     const slug = getStringLiteralValue(
       getPropertyAssignment(returnObject, 'slug')?.getInitializer()
+    );
+    const title = getStringLiteralValue(
+      getPropertyAssignment(returnObject, 'title')?.getInitializer()
+    );
+    const metaTitle = getStringLiteralValue(
+      getPropertyAssignment(returnObject, 'metaTitle')?.getInitializer()
+    );
+    const metaDescription = getStringLiteralValue(
+      getPropertyAssignment(returnObject, 'metaDescription')?.getInitializer()
     );
     const seoObject = getPropertyAssignment(returnObject, 'seo')?.getInitializerIfKind(
       SyntaxKind.ObjectLiteralExpression
@@ -1295,6 +1392,41 @@ function validateCaseStudyStructure(issues) {
         'missing_slug',
         'Case study return object requires slug.'
       );
+    } else {
+      if (sourceSlugs.has(slug)) {
+        pushIssue(
+          issues,
+          'case-study',
+          rel,
+          'duplicate_slug',
+          `Duplicate case study slug detected: ${slug}.`
+        );
+      }
+      sourceSlugs.add(slug);
+    }
+
+    if (!title) {
+      pushIssue(issues, 'case-study', rel, 'missing_title', 'Case study return object requires title.');
+    }
+
+    if (!metaTitle) {
+      pushWarning(
+        warnings,
+        'case-study',
+        rel,
+        'missing_meta_title',
+        'Case study return object should define metaTitle.'
+      );
+    }
+
+    if (!metaDescription) {
+      pushWarning(
+        warnings,
+        'case-study',
+        rel,
+        'missing_meta_description',
+        'Case study return object should define metaDescription.'
+      );
     }
 
     if (slug && canonical !== `/case-studies/${slug}`) {
@@ -1306,6 +1438,48 @@ function validateCaseStudyStructure(issues) {
         `seo.canonical must be /case-studies/${slug}.`
       );
     }
+
+    if (title && title.trim().length < CASE_STUDY_WARNING_TITLE_MIN_LENGTH) {
+      pushWarning(
+        warnings,
+        'case-study',
+        rel,
+        'weak_title',
+        `Title is short enough to be fragile during rewrites: "${title}".`
+      );
+    }
+
+    if (sections.length === 0) {
+      pushWarning(
+        warnings,
+        'case-study',
+        rel,
+        'empty_sections',
+        'Case study sections array is empty.'
+      );
+    }
+
+    if (metaDescription && metaDescription.trim().length < CASE_STUDY_WARNING_DESCRIPTION_MIN_LENGTH) {
+      pushWarning(
+        warnings,
+        'case-study',
+        rel,
+        'short_meta_description',
+        'metaDescription is very short and may be weak in search or reports.'
+      );
+    }
+  }
+
+  const registrySlugs = getCaseStudyRegistrySlugs();
+  if (registrySlugs) {
+    validateRegistryCoverage(
+      issues,
+      'case-study',
+      path.relative(root, path.join(root, 'src', 'domains', 'case-studies', 'registry.ts')),
+      'CASE_STUDY_REGISTRY',
+      sourceSlugs,
+      registrySlugs
+    );
   }
 
   return files.length;
@@ -1321,6 +1495,7 @@ const validators = {
 
 function main() {
   const issues = [];
+  const warnings = [];
   const scannedByType = {};
   const selectedType = normalizeRequestedType(requestedType);
 
@@ -1332,7 +1507,7 @@ function main() {
 
   const activeTypes = selectedType ? [selectedType] : Object.keys(validators);
   for (const type of activeTypes) {
-    scannedByType[type] = validators[type](issues);
+    scannedByType[type] = validators[type](issues, warnings);
   }
 
   const report = {
@@ -1340,7 +1515,9 @@ function main() {
     passed: issues.length === 0,
     scannedByType,
     issueCount: issues.length,
+    warningCount: warnings.length,
     issues,
+    warnings,
   };
 
   if (shouldReportJson) {
@@ -1349,6 +1526,12 @@ function main() {
   }
 
   if (issues.length === 0) {
+    if (warnings.length > 0) {
+      console.warn(`! Domain structure warnings found (${warnings.length}).`);
+      for (const warning of warnings) {
+        console.warn(`  - [${warning.type}] ${warning.file}: ${warning.message}`);
+      }
+    }
     console.log(`✓ Domain structure validation passed (${activeTypes.join(', ')}).`);
     return;
   }

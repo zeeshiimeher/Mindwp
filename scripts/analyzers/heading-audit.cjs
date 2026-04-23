@@ -14,6 +14,27 @@ const ROOT = path.resolve(__dirname, '../..');
 const OUT_DIR = path.join(ROOT, 'reports', 'visual-audit');
 const BASE_URL = process.env.BASE_URL || 'http://127.0.0.1:3009';
 
+function getDynamicCaseStudyDetails() {
+  const contentDir = path.join(ROOT, 'src', 'domains', 'case-studies', 'content');
+  if (!fs.existsSync(contentDir)) {
+    return [];
+  }
+
+  const slugs = fs
+    .readdirSync(contentDir)
+    .filter(name => name.endsWith('.tsx'))
+    .map(name => fs.readFileSync(path.join(contentDir, name), 'utf8'))
+    .map(source => source.match(/slug:\s*'([^']+)'/))
+    .map(match => match?.[1])
+    .filter(Boolean)
+    .sort();
+
+  return slugs.slice(0, 2).map((slug, index) => ({
+    name: `case-study-detail-${index + 1}`,
+    url: `/case-studies/${slug}`,
+  }));
+}
+
 const PAGES = [
   { name: 'homepage', url: '/' },
   { name: 'services', url: '/services' },
@@ -36,9 +57,6 @@ const DETAIL_URLS = [
   // Blog details
   { name: 'blog-detail-1', url: '/blog/ai-reception-for-automotive-shops' },
   { name: 'blog-detail-2', url: '/blog/authority-signals-for-local-search' },
-  // Case study details
-  { name: 'case-study-detail-1', url: '/case-study/auto-repair-missed-call-recovery' },
-  { name: 'case-study-detail-2', url: '/case-study/salon-booking-automation' },
   // Resource details
   { name: 'resource-detail-1', url: '/resources/lead-automation-framework' },
   { name: 'resource-detail-2', url: '/resources/crm-pipeline-architecture' },
@@ -141,7 +159,7 @@ async function auditHeadings(page) {
 
 async function main() {
   const browser = await chromium.launch({ headless: true });
-  const allPages = [...PAGES, ...DETAIL_URLS];
+  const allPages = [...PAGES, ...DETAIL_URLS, ...getDynamicCaseStudyDetails()];
   const results = {};
 
   for (const pg of allPages) {

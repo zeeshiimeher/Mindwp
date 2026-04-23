@@ -5,39 +5,35 @@ import type { CaseStudyData } from '../types';
 function buildLocalAuthoritySystemImpact(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Brookfield Electrical is an independent electrician based in Oxford, running a three-person
-      team that handles domestic rewires, consumer unit upgrades, and commercial fit-outs. The
-      business had relied entirely on word of mouth and a single Google Ads campaign for new client
-      acquisition. Despite strong technical reputation, the company was virtually invisible in
-      organic local search. Searching for &quot;electrician Oxford&quot; returned the Google
-      Business Profile on page 2 of map results, and the website didn&apos;t appear in the first 50
-      organic results for any target keyword. The business had no review strategy, no local content,
-      and no citations beyond the initial Google Business Profile created 4 years ago.
+      They were doing the work. Google barely showed it. Brookfield Electrical in Oxford had the
+      kind of reputation people talked about once they had used them, but that did not help much
+      when a homeowner searched for an electrician and stopped at whichever profile looked active,
+      nearby, and recently trusted.
     </>
   );
 
   const keyMetrics: CaseStudyContent['keyMetrics'] = [
     {
-      label: 'Map Ranking',
-      value: 'Page 2 → Top 3',
+      label: 'Maps visibility',
+      value: 'From buried to often seen',
       icon: 'MapPin',
       color: 'case-study-accent--success',
     },
     {
-      label: 'Organic Leads',
-      value: '2 → 17/mo',
+      label: 'Organic enquiries',
+      value: 'Steadily up',
       icon: 'TrendingUp',
       color: 'case-study-accent--primary',
     },
     {
-      label: 'Review Count',
-      value: '11 → 58',
+      label: 'Fresh reviews',
+      value: 'Coming in regularly',
       icon: 'Star',
       color: 'case-study-accent--amber',
     },
     {
-      label: 'Ad Dependency',
-      value: '91% → 44%',
+      label: 'Ads doing less of the heavy lifting',
+      value: 'Noticeably less',
       icon: 'PieChart',
       color: 'case-study-accent--purple',
     },
@@ -45,71 +41,49 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
 
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: Invisible in Local Search Despite Strong Service Quality',
+    problemHeading: 'The better-known online firms were getting the first look',
     problemDescription: [
-      'Brookfield Electrical had been trading for 9 years with an excellent track record — zero complaints, consistent 5-star feedback from clients who found them through referrals. But the digital presence told a different story: 11 Google reviews (the most recent 14 months old), a website with no structured service pages, and a Google Business Profile that hadn\u2019t been updated since creation.',
-      'The business generated 91% of its new clients through Google Ads at an average cost of £65 per lead. When the owner paused ads for a test month, enquiries dropped to 2 — both from word of mouth. The business had no organic visibility whatsoever. Local competitors with lower service quality but active local SEO profiles were capturing the majority of organic and map-pack leads. The owner was effectively paying a monthly tax to Google Ads because there was no organic foundation.',
+      'Brookfield Electrical had years of solid work behind them, but that was not what a local searcher saw. The profile looked quiet, the review count looked old, and the website gave Google very little to work with.',
+      'That left the business leaning hard on paid traffic. If ads slowed down, the enquiry flow slowed with them. The awkward part was that the work quality was not the issue. The business just was not showing up where local trust now gets judged.',
     ],
     painPoints: [
-      'Google Business Profile on page 2 of local map results',
-      'Zero organic visibility for any target keyword',
-      'Only 11 reviews — most recent 14 months old',
-      '91% of new clients came from Google Ads at £65/lead',
-      'Pausing ads dropped enquiries to near zero',
-      'Website had no structured service pages targeting local terms',
-      'No local citations beyond the original GBP listing',
-      'Competitors with weaker service capturing organic leads',
+      'Map results barely surfaced the business where local searchers were looking first',
+      'Old reviews made the profile feel quieter than the real workload',
+      'The website gave weak local signals for the jobs and areas that mattered most',
+      'Paid traffic was carrying too much of the month',
+      'Rankings moved unevenly across service areas before they settled',
     ],
   };
 
-  const deliverablesSection: CaseStudyTemplateSection = {
-    type: 'deliverables',
-    badge: 'Deliverables',
-    title: 'What Was Built',
-    description:
-      'A complete local authority ecosystem — Google Business Profile, automated review generation, service-area content, and citation consistency across local directories.',
-    items: [
-      'Google Business Profile optimisation with full attributes and regular posts',
-      'Automated post-job review requests via GoHighLevel CRM',
-      'Service-specific pages targeting local search terms with schema markup',
-      'Citation building across 35+ local and industry directories',
-      'Sentiment pre-check before Google Review redirect',
-      'Map ranking and keyword position monitoring dashboard',
-      'Monthly local authority health reporting',
-    ],
-    columns: 2,
-  };
-
-  const processSection: CaseStudyTemplateSection = {
-    type: 'process',
-    howWeDidIt: [
+  const whatChangedSection: CaseStudyTemplateSection = {
+    type: 'solution',
+    solutionHeading: 'What started showing up properly',
+    solutionDescription:
+      'The business did not need a louder story. It needed its local proof to stop looking neglected and start matching the work it was already doing.',
+    whatWeDid: [
       {
-        phase: 'Phase 1',
-        title: 'Local Visibility Audit',
+        title: 'The profile stopped looking abandoned',
         description:
-          'Audited the Google Business Profile, website SEO, review profile, and citation landscape. Benchmarked against the top 5 competitors for "electrician Oxford".',
-        duration: '1 week',
+          'Core details, service signals, and regular activity were brought back into shape so the listing looked current instead of forgotten.',
+        icon: 'MapPin',
       },
       {
-        phase: 'Phase 2',
-        title: 'Foundation Build',
+        title: 'Finished jobs finally turned into fresh reviews',
         description:
-          'Optimised the GBP listing, built local service pages on the website, created schema markup, and submitted to 35+ directories.',
-        duration: '3 weeks',
+          'Review requests started going out at the right moment, which gave Google and searchers a steadier sign that the business was active.',
+        icon: 'Star',
       },
       {
-        phase: 'Phase 3',
-        title: 'Review Generation Launch',
+        title: 'The website got clearer local intent',
         description:
-          'Connected GoHighLevel CRM to the review request workflow and activated post-job review requests for all completed work.',
-        duration: '1 week',
+          'Service pages were tightened around the jobs and places the team actually wanted, instead of leaving everything vague and broad.',
+        icon: 'Search',
       },
       {
-        phase: 'Phase 4',
-        title: 'Authority Building & Monitoring',
+        title: 'Listings stopped contradicting each other',
         description:
-          'Maintained regular GBP posts, monitored ranking changes, tracked review velocity, and measured organic lead growth over 16 weeks.',
-        duration: '16 weeks',
+          'Local mentions were cleaned up so the business looked more consistent wherever people found it.',
+        icon: 'CheckCircle2',
       },
     ],
   };
@@ -118,62 +92,47 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'Google Map Ranking',
-        before: 'Page 2 of local map results for "electrician Oxford"',
-        after: 'Top 3 map pack for "electrician Oxford" and 6 related terms',
-        improvement: 'Map pack visibility achieved',
+        title: 'The business started getting seen in the places that decide the first click',
+        improvement: 'More often in the map pack and local search',
         description:
-          'The combination of GBP optimisation, review velocity, citations, and local content pushed the listing from page 2 into the visible map pack — the first 3 results shown to searchers.',
+          'The shift was not perfectly even across every postcode at once, but the profile was showing up far more often where it had barely been visible before.',
       },
       {
-        metric: 'Monthly Organic Leads',
-        before: '2 organic leads per month (word of mouth only)',
-        after: '17 organic leads per month from search and map listings',
-        improvement: '750% increase',
+        title: 'Organic enquiries stopped feeling accidental',
+        improvement: 'A steadier stream without leaning so hard on ads',
         description:
-          'The local authority foundation created a steady organic lead channel that had simply never existed before — reducing reliance on paid ads.',
+          'Instead of treating unpaid enquiries like the occasional bonus, the business started seeing local search bring in a real share of new work.',
       },
       {
-        metric: 'Google Review Count',
-        before: '11 reviews — most recent 14 months old',
-        after: '58 reviews — 47 new reviews in 16 weeks (average 4.9 stars)',
-        improvement: '+427% review growth',
+        title: 'The online proof began to resemble the actual reputation',
+        improvement: 'More fresh reviews and a stronger first impression',
         description:
-          'The automated post-job review system generated consistent fresh reviews, signalling active engagement to Google\u2019s local ranking algorithm.',
-      },
-      {
-        metric: 'Google Ads Dependency',
-        before: '91% of new clients via ads — near-total dependency',
-        after: '44% via ads, 56% via organic and referral channels',
-        improvement: 'Ad dependency halved',
-        description:
-          'With organic leads now contributing more than half of new business, the owner could reduce ad spend without losing revenue — or maintain spend for growth.',
+          'That mattered because people were no longer weighing the firm against older, quieter signals. They were seeing recent trust, recent activity, and a business that looked alive.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Invisible in Local Search?',
-    body: 'Book a free 20-minute call and we\u2019ll show you how a local authority system could reduce your ad dependency and build organic lead flow.',
+    heading: 'Doing good work but still hard to find locally?',
+    body: 'Book a free 20-minute call and we can look at where your local proof is thinning out before the right searchers ever reach you.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    deliverablesSection,
-    processSection,
+    whatChangedSection,
     resultsSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
-    slug: 'local-authority-system-impact',
-    title: 'Local Authority System Impact',
-    metaTitle: 'Local SEO System | Page 2 to Top 3 in Google Maps',
+    slug: 'electrician-not-showing-up-where-locals-search',
+    title: 'They were doing the work. Google barely showed it.',
+    metaTitle: 'Electrician local visibility case study: found more often in Google Maps',
     metaDescription:
-      'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+      'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -191,41 +150,35 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
     business: 'Brookfield Electrical',
     duration: '21 weeks',
     completedDate: 'July 2026',
-    heroHeadline:
-      'How an Electrician Went From Page 2 to Top 3 in Google Maps and Halved Ad Dependency',
+    heroHeadline: 'They were doing the work. Google barely showed it.',
     keyMetrics: keyMetrics.map(metric => ({
       value: metric.value,
       label: metric.label,
       ...(metric.color ? { color: metric.color } : {}),
     })),
-    tags: ['Local SEO', 'Google Maps', 'Review Generation', 'Local Authority', 'Home Services'],
+    tags: ['Local SEO', 'Google Maps', 'Electrical', 'Review Growth', 'Home Services'],
     seo: {
-      canonical: '/case-studies/local-authority-system-impact',
+      canonical: '/case-studies/electrician-not-showing-up-where-locals-search',
       openGraph: {
-        title: 'Why Service Businesses Stay Invisible in Local Search | MindWP Case Study',
+        title: 'Electrician local visibility case study: found more often in Google Maps',
         description:
-          'How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month.',
+          'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
       },
     },
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'System Implementation' },
-      problem: { challengeBadgeLabel: 'The Visibility Problem' },
-      deliverables: { deliverablesBadgeLabel: 'Deliverables' },
-      process: {
-        implementationBadgeLabel: 'Implementation',
-        implementationSectionTitle: 'How the System Was Built',
-        implementationSectionSubtitle: 'From invisible to map pack in 21 weeks',
-      },
+      hero: { scenarioBadgeLabel: 'Local Search' },
+      problem: { challengeBadgeLabel: 'What Was Happening' },
+      solution: { solutionBadgeLabel: 'What Changed' },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Local Visibility',
+        detailedResultsBadgeLabel: 'What Changed',
+        detailedResultsSectionTitle: 'What Changed Once Local Trust Started Showing Up Properly',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Works for any local business' },
+          { text: 'No pressure' },
+          { text: 'Useful for local trades' },
         ],
       },
     },

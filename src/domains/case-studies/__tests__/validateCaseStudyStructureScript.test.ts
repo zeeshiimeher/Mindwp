@@ -161,16 +161,72 @@ describe('validate-case-study-structure script', () => {
     expect(result.status).toBe(0);
   });
 
-  it('fails when cta is not the last section', () => {
+  it('allows a trailing non-narrative more section after cta', () => {
     const workspaceRoot = createTempWorkspace({ ctaLast: false });
     const result = runValidator(workspaceRoot);
 
-    expect(result.status).toBe(1);
-    expect(`${result.stdout}\n${result.stderr}`).toContain('cta must be the final section');
+    expect(result.status).toBe(0);
   });
 
   it('fails when duplicate section types exist', () => {
     const workspaceRoot = createTempWorkspace({ duplicateSection: 'problem' });
+    const result = runValidator(workspaceRoot);
+
+    expect(result.status).toBe(1);
+    expect(`${result.stdout}\n${result.stderr}`).toContain('must not appear more than once');
+  });
+
+  it('allows duplicate results sections', () => {
+    const workspaceRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'mindwp-case-study-validator-'));
+    tempDirs.push(workspaceRoot);
+
+    writeFile(
+      path.join(workspaceRoot, 'src/domains/case-studies/content/TestCaseStudy.tsx'),
+      [
+        "import type { CaseStudyData } from '../types';",
+        '',
+        'function buildTestCaseStudy(): CaseStudyData {',
+        '  const firstResultsSection = { type: \'results\', results: [{ description: \'One\' }] };',
+        '  const secondResultsSection = { type: \'results\', results: [{ description: \'Two\' }] };',
+        '  const sections = [',
+        "    { type: 'hero', introHtml: 'Intro' },",
+        '    firstResultsSection,',
+        '    secondResultsSection,',
+        "    { type: 'cta', heading: 'CTA', body: 'CTA body' },",
+        '  ];',
+        '',
+        '  return {',
+        "    slug: 'test-case-study',",
+        "    title: 'Test case study title',",
+        "    metaTitle: 'Test Meta',",
+        "    metaDescription: 'This is a long enough meta description for warning-free validation.',",
+        "    industryCategory: 'beauty-personal-care',",
+        "    industryLabel: 'Beauty & Personal Care',",
+        "    publishDate: '2024-01-01',",
+        "    client: 'Client',",
+        "    location: 'UK',",
+        "    business: 'Business',",
+        "    duration: '1 month',",
+        "    completedDate: '2024-02-01',",
+        "    heroHeadline: 'Headline',",
+        '    keyMetrics: [],',
+        '    tags: [],',
+        '    seo: {',
+        "      canonical: '/case-studies/test-case-study',",
+        '      openGraph: {',
+        "        title: 'OG Title',",
+        "        description: 'OG Description',",
+        '      },',
+        '    },',
+        '    sections,',
+        '  };',
+        '}',
+        '',
+        'export const testCaseStudy: CaseStudyData = buildTestCaseStudy();',
+        '',
+      ].join('\n')
+    );
+
     const result = runValidator(workspaceRoot);
 
     expect(result.status).toBe(0);

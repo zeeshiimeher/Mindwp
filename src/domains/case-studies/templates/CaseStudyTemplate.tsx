@@ -21,24 +21,9 @@ import { TestimonialCard } from '@/components/reusable/single';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { env } from '@/env';
 
-import type { CaseStudyContent, CaseStudyMetadata } from './types';
-
-const SECTION_ORDER: Record<string, number> = {
-  metrics: 0,
-  problem: 1,
-  'business-impact': 2,
-  solution: 3,
-  deliverables: 4,
-  workflows: 5,
-  process: 6,
-  features: 7,
-  results: 8,
-  testimonial: 9,
-  investment: 10,
-};
+import type { CaseStudyMetadata } from './types';
 
 export type CaseStudyTemplateSection =
   | {
@@ -47,39 +32,66 @@ export type CaseStudyTemplateSection =
     }
   | {
       type: 'metrics';
-      keyMetrics: CaseStudyContent['keyMetrics'];
+      keyMetrics: Array<{ value: string; label: string; color?: string }>;
     }
   | {
       type: 'problem';
-      problemHeading: CaseStudyContent['problemHeading'];
-      problemDescription: CaseStudyContent['problemDescription'];
-      painPoints: CaseStudyContent['painPoints'];
+      problemHeading?: string;
+      problemDescription?: string[];
+      painPoints?: string[];
     }
   | {
       type: 'solution';
-      solutionHeading: CaseStudyContent['solutionHeading'];
-      solutionDescription: CaseStudyContent['solutionDescription'];
-      whatWeDid: CaseStudyContent['whatWeDid'];
+      solutionHeading?: string;
+      solutionDescription?: string;
+      whatWeDid?: {
+        title: string;
+        description: string;
+        icon: string;
+      }[];
     }
   | {
       type: 'process';
-      howWeDidIt: CaseStudyContent['howWeDidIt'];
+      howWeDidIt?: {
+        phase: string;
+        title: string;
+        description: string;
+        duration: string;
+      }[];
     }
   | {
       type: 'features';
-      featuresUsed: CaseStudyContent['featuresUsed'];
+      featuresUsed?: {
+        category: string;
+        features: string[];
+      }[];
     }
   | {
       type: 'results';
-      results: CaseStudyContent['results'];
+      results: {
+        metric?: string;
+        before?: string;
+        after?: string;
+        improvement?: string;
+        title?: string;
+        description: string;
+      }[];
     }
   | {
       type: 'testimonial';
-      testimonial: CaseStudyContent['testimonial'];
+      testimonial?: {
+        quote: string;
+        author: string;
+        role: string;
+      };
     }
   | {
       type: 'investment';
-      investment: CaseStudyContent['investment'];
+      investment?: {
+        setup: string;
+        monthly: string;
+        roi?: string;
+      };
     }
   | {
       type: 'business-impact';
@@ -120,23 +132,70 @@ export type CaseStudyTemplateSection =
       metaItems?: { text: string }[];
     };
 
-type SectionOfType<T extends CaseStudyTemplateSection['type']> =
-  CaseStudyTemplateSection extends infer S ? (S extends { type: T } ? S : never) : never;
+const nonDuplicateSectionTypes = new Set([
+  'hero',
+  'metrics',
+  'problem',
+  'solution',
+  'process',
+  'features',
+  'testimonial',
+  'investment',
+  'business-impact',
+  'deliverables',
+  'faq',
+  'cta',
+  'more',
+]);
+
+function warnCaseStudyTemplate(message: string) {
+  if (env.NODE_ENV === 'development') {
+    // eslint-disable-next-line no-console
+    console.warn(`CaseStudyTemplate: ${message}`);
+  }
+}
+
+function getSectionType(section: unknown) {
+  if (!section || typeof section !== 'object' || !('type' in section)) {
+    return null;
+  }
+
+  return typeof section.type === 'string' ? section.type : null;
+}
+
+function isSectionArray(value: unknown) {
+  return Array.isArray(value) && value.length > 0;
+}
+
+function validateRenderableSection(section: CaseStudyTemplateSection) {
+  switch (section.type) {
+    case 'problem':
+      return Boolean(section.problemHeading && section.problemDescription?.length && section.painPoints?.length);
+    case 'solution':
+      return Boolean(section.solutionHeading && section.solutionDescription && section.whatWeDid?.length);
+    case 'process':
+      return isSectionArray(section.howWeDidIt);
+    case 'features':
+      return isSectionArray(section.featuresUsed);
+    case 'results':
+      return isSectionArray(section.results);
+    case 'investment':
+      return Boolean(section.investment);
+    case 'workflows':
+      return isSectionArray(section.workflows);
+    case 'faq':
+      return isSectionArray(section.items);
+    default:
+      return true;
+  }
+}
 
 function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
   const requiredTypes: CaseStudyTemplateSection['type'][] = ['hero', 'cta'];
   const missing: CaseStudyTemplateSection['type'][] = [];
 
   for (const type of requiredTypes) {
-    let found = false;
-    for (const section of sections) {
-      if (section.type === type) {
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
+    if (!sections.some(section => section.type === type)) {
       missing.push(type);
     }
   }
@@ -145,25 +204,35 @@ function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
     // eslint-disable-next-line no-console
     console.warn(`CaseStudyTemplate: Missing required sections: ${missing.join(', ')}`);
   }
+
   return missing;
 }
 
-function findSection<T extends CaseStudyTemplateSection['type']>(
-  sections: CaseStudyTemplateSection[],
-  type: T
-): SectionOfType<T> | null {
-  const section = sections.find((entry): entry is SectionOfType<T> => entry.type === type);
-  return section ?? null;
+function warnForSectionQuality(sections: CaseStudyTemplateSection[]) {
+  const seen = new Set<string>();
+
+  for (const section of sections) {
+    const type = getSectionType(section);
+    if (!type) {
+      warnCaseStudyTemplate('Encountered section without a valid type.');
+      continue;
+    }
+
+    if (nonDuplicateSectionTypes.has(type) && seen.has(type)) {
+      warnCaseStudyTemplate(`Duplicate ${type} section encountered.`);
+    }
+    seen.add(type);
+
+    if (!validateRenderableSection(section)) {
+      warnCaseStudyTemplate(`Skipping invalid ${type} section shape.`);
+    }
+  }
 }
 
 export function CaseStudyTemplate({
   pageId,
   metadata,
-  content,
   sections,
-  heroIntroHtml,
-  ctaHeading,
-  ctaBody,
   featuredImage,
   hero,
   metrics,
@@ -178,11 +247,7 @@ export function CaseStudyTemplate({
 }: {
   pageId: string;
   metadata: CaseStudyMetadata;
-  content?: CaseStudyContent;
   sections?: CaseStudyTemplateSection[];
-  heroIntroHtml?: React.ReactNode;
-  ctaHeading?: string;
-  ctaBody?: string;
   featuredImage?: string | null;
   hero?: {
     scenarioBadgeLabel?: string;
@@ -223,6 +288,7 @@ export function CaseStudyTemplate({
     metaItems?: { text: string }[];
   };
 }) {
+  const resolvedSections = sections ?? [];
   const backToCaseStudiesLabel = 'Back to Case Studies';
   const resolvedResultsSectionTitle = metrics?.resultsSectionTitle ?? 'The Results';
   const resolvedChallengeBadgeLabel = problem?.challengeBadgeLabel ?? 'The Challenge';
@@ -260,43 +326,8 @@ export function CaseStudyTemplate({
     { text: 'Built for local businesses' },
   ];
 
-  const resolvedSections: CaseStudyTemplateSection[] = sections
-    ? sections
-    : (() => {
-        if (!content || !heroIntroHtml || !ctaHeading || !ctaBody) return [];
-        return [
-          { type: 'hero', introHtml: heroIntroHtml },
-          { type: 'metrics', keyMetrics: content.keyMetrics },
-          {
-            type: 'problem',
-            problemHeading: content.problemHeading,
-            problemDescription: content.problemDescription,
-            painPoints: content.painPoints,
-          },
-          {
-            type: 'solution',
-            solutionHeading: content.solutionHeading,
-            solutionDescription: content.solutionDescription,
-            whatWeDid: content.whatWeDid,
-          },
-          { type: 'process', howWeDidIt: content.howWeDidIt },
-          { type: 'features', featuresUsed: content.featuresUsed },
-          { type: 'results', results: content.results },
-          { type: 'testimonial', testimonial: content.testimonial },
-          { type: 'investment', investment: content.investment },
-          { type: 'more' },
-          {
-            type: 'cta',
-            heading: ctaHeading,
-            body: ctaBody,
-            metaItems: resolvedCtaMetaItems,
-          },
-        ];
-      })();
-
   const missingSections = validateRequiredSections(resolvedSections);
-  const heroSection = findSection(resolvedSections, 'hero');
-  const ctaSection = findSection(resolvedSections, 'cta');
+  warnForSectionQuality(resolvedSections);
 
   if (missingSections.length > 0 && env.NODE_ENV === 'development') {
     return (
@@ -328,16 +359,65 @@ export function CaseStudyTemplate({
 
   function renderSection(section: CaseStudyTemplateSection, index: number) {
     switch (section.type) {
+      case 'hero':
+        if (featuredImage) {
+          return (
+            <div
+              key={`hero-${index}`}
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <CaseStudyHeroSection
+                backToCaseStudiesLabel={backToCaseStudiesLabel}
+                industry={metadata.industryLabel}
+                duration={metadata.duration}
+                heroHeadline={metadata.heroHeadline}
+                scenarioBadge={resolvedScenarioBadgeLabel}
+                heroIntroHtml={section.introHtml}
+                business={metadata.business}
+                location={metadata.location}
+                completedDate={metadata.completedDate}
+                backgroundColor=''
+              />
+            </div>
+          );
+        }
+
+        return (
+          <CaseStudyHeroSection
+            key={`hero-${index}`}
+            backToCaseStudiesLabel={backToCaseStudiesLabel}
+            industry={metadata.industryLabel}
+            duration={metadata.duration}
+            heroHeadline={metadata.heroHeadline}
+            scenarioBadge={resolvedScenarioBadgeLabel}
+            heroIntroHtml={section.introHtml}
+            business={metadata.business}
+            location={metadata.location}
+            completedDate={metadata.completedDate}
+          />
+        );
+
       case 'metrics':
         return (
           <CaseStudyMetricsSection
             key={`metrics-${index}`}
             resultsSectionTitle={resolvedResultsSectionTitle}
-            keyMetrics={section.keyMetrics}
+            keyMetrics={section.keyMetrics.map(metric => ({
+              ...metric,
+              icon: 'BarChart3',
+            }))}
           />
         );
 
       case 'problem':
+        if (!section.problemHeading || !section.problemDescription || !section.painPoints) {
+          return null;
+        }
+
         return (
           <CaseStudyProblemSection
             key={`problem-${index}`}
@@ -349,6 +429,10 @@ export function CaseStudyTemplate({
         );
 
       case 'solution':
+        if (!section.solutionHeading || !section.solutionDescription || !section.whatWeDid) {
+          return null;
+        }
+
         return (
           <CaseStudySolutionSection
             key={`solution-${index}`}
@@ -360,6 +444,10 @@ export function CaseStudyTemplate({
         );
 
       case 'process':
+        if (!section.howWeDidIt) {
+          return null;
+        }
+
         return (
           <CaseStudyProcessSection
             key={`process-${index}`}
@@ -371,6 +459,10 @@ export function CaseStudyTemplate({
         );
 
       case 'features':
+        if (!section.featuresUsed) {
+          return null;
+        }
+
         return (
           <CaseStudyFeaturesSection
             key={`features-${index}`}
@@ -383,36 +475,19 @@ export function CaseStudyTemplate({
 
       case 'results':
         return (
-          <React.Fragment key={`results-${index}`}>
-            <CaseStudyResultsSection
-              detailedResultsBadgeLabel={resolvedDetailedResultsBadgeLabel}
-              detailedResultsSectionTitle={resolvedDetailedResultsSectionTitle}
-              results={section.results}
-            />
-            <div className='l-container'>
-              <div className='text-sm text-muted-foreground l-max-w-3xl pt-2 pb-3'>
-                These gains came from fixing the workflow underneath the result, not just making the
-                page look better. The next step is to test whether the same handoff, response, or
-                routing issue is still slowing down your business and which system change would
-                remove it first.
-              </div>
-            </div>
-            <SmartCTA
-              system={metadata.systems[0] ?? 'smart-website-systems'}
-              pageType='case-study'
-              slug={metadata.slug}
-              intent='diagnostic'
-              position='mid'
-              title='Want to see which handoff fix would create the biggest lift in your business?'
-              description='We can map which part of your enquiry, routing, or follow-up flow matches the breakdown this case study fixed so you leave with a clearer first priority before committing to implementation.'
-              primaryActionVariant='primary'
-              backgroundColor='bg-base'
-            />
-          </React.Fragment>
+          <CaseStudyResultsSection
+            key={`results-${index}`}
+            detailedResultsBadgeLabel={resolvedDetailedResultsBadgeLabel}
+            detailedResultsSectionTitle={resolvedDetailedResultsSectionTitle}
+            results={section.results}
+          />
         );
 
       case 'testimonial':
-        if (!section.testimonial) return null;
+        if (!section.testimonial) {
+          return null;
+        }
+
         return (
           <SectionWrapper
             key={`testimonial-${index}`}
@@ -431,6 +506,10 @@ export function CaseStudyTemplate({
         );
 
       case 'investment':
+        if (!section.investment) {
+          return null;
+        }
+
         return (
           <CaseStudyInvestmentSection
             key={`investment-${index}`}
@@ -488,95 +567,53 @@ export function CaseStudyTemplate({
           />
         );
 
+      case 'cta':
+        return (
+          <SmartCTA
+            key={`cta-${index}`}
+            system={metadata.systems[0] ?? 'smart-website-systems'}
+            pageType='case-study'
+            slug={metadata.slug}
+            intent='diagnostic'
+            position='footer'
+            title={section.heading}
+            description={section.body}
+            metaItems={section.metaItems ?? resolvedCtaMetaItems}
+            backgroundColor='bg-gradient-primary'
+          />
+        );
+
+      case 'more':
       default:
         return null;
     }
   }
 
-  const inFlowSections: CaseStudyTemplateSection[] = [];
-  const pinnedFaqSections: Array<SectionOfType<'faq'>> = [];
-
-  for (const section of resolvedSections) {
-    if (section.type === 'faq') {
-      pinnedFaqSections.push(section);
-      continue;
+  function safeRender(section: unknown, index: number) {
+    const type = getSectionType(section);
+    if (!type) {
+      warnCaseStudyTemplate(`Skipping section at index ${index} because it has no valid type.`);
+      return null;
     }
 
-    if (section.type === 'hero' || section.type === 'cta' || section.type === 'more') {
-      continue;
+    if (!validateRenderableSection(section as CaseStudyTemplateSection)) {
+      warnCaseStudyTemplate(`Skipping ${type} section at index ${index} because its shape is invalid.`);
+      return null;
     }
 
-    const targetOrder = SECTION_ORDER[section.type] ?? 99;
-    let insertAt = inFlowSections.length;
-    for (let index = 0; index < inFlowSections.length; index += 1) {
-      const existingOrder = SECTION_ORDER[inFlowSections[index].type] ?? 99;
-      if (targetOrder < existingOrder) {
-        insertAt = index;
-        break;
-      }
+    try {
+      return renderSection(section as CaseStudyTemplateSection, index);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      warnCaseStudyTemplate(`Skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      return null;
     }
-    inFlowSections.splice(insertAt, 0, section);
   }
 
   return (
     <CTARegistryProvider pageId={pageId} pageType='case-study'>
       <div className='case-study-detail'>
-        {featuredImage ? (
-          <div
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <CaseStudyHeroSection
-              backToCaseStudiesLabel={backToCaseStudiesLabel}
-              industry={metadata.industryLabel}
-              duration={metadata.duration}
-              heroHeadline={metadata.heroHeadline}
-              scenarioBadge={resolvedScenarioBadgeLabel}
-              heroIntroHtml={heroSection?.introHtml}
-              business={metadata.business}
-              location={metadata.location}
-              completedDate={metadata.completedDate}
-              backgroundColor=''
-            />
-          </div>
-        ) : (
-          <CaseStudyHeroSection
-            backToCaseStudiesLabel={backToCaseStudiesLabel}
-            industry={metadata.industryLabel}
-            duration={metadata.duration}
-            heroHeadline={metadata.heroHeadline}
-            scenarioBadge={resolvedScenarioBadgeLabel}
-            heroIntroHtml={heroSection?.introHtml}
-            business={metadata.business}
-            location={metadata.location}
-            completedDate={metadata.completedDate}
-          />
-        )}
-
-        {inFlowSections.map((section, index) => renderSection(section, index))}
-
-        {pinnedFaqSections.map((section, index) => renderSection(section, index))}
-        {ctaSection && (
-          <SmartCTA
-            system={metadata.systems[0] ?? 'smart-website-systems'}
-            pageType='case-study'
-            slug={metadata.slug}
-            intent='conversion'
-            position='footer'
-            title={ctaSection.heading}
-            description={ctaSection.body}
-            metaItems={ctaSection.metaItems ?? resolvedCtaMetaItems}
-            backgroundColor='bg-gradient-primary'
-          />
-        )}
-        <SmartRelatedSection
-          pageId={`case-study:${metadata.slug}`}
-          pageType='case-study'
-          slug={metadata.slug}
-        />
+        {resolvedSections.map((section, index) => safeRender(section, index))}
       </div>
     </CTARegistryProvider>
   );

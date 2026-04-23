@@ -5,37 +5,35 @@ import type { CaseStudyData } from '../types';
 function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Apex Roofing is a residential roofing contractor based in Birmingham, serving the wider West
-      Midlands area. The business handles around 35–50 inbound calls per week during normal
-      conditions, but during storm season that volume doubles. The existing phone setup relied on a
-      single office line answered by one member of staff. When storms hit over weekends, Monday
-      morning call surges overwhelmed the team — most calls went to voicemail or rang out entirely.
-      Leads were being lost before anyone could respond.
+      The storm had passed by Sunday night. Monday still started with a wall of voicemails.
+      Apex Roofing in Birmingham would walk in to a full call log, blurred damage photos, and
+      homeowners already ringing the next number because they wanted somebody out before the leak
+      spread any further.
     </>
   );
 
   const keyMetrics: CaseStudyContent['keyMetrics'] = [
     {
-      label: 'Lead Recovery Rate',
-      value: '89%',
+      label: 'Missed callers kept in play',
+      value: 'Most of them',
       icon: 'PhoneIncoming',
       color: 'case-study-accent--success',
     },
     {
-      label: 'Avg Response Time',
-      value: '3 min',
+      label: 'First reply speed',
+      value: 'Within minutes',
       icon: 'Clock',
       color: 'case-study-accent--primary',
     },
     {
-      label: 'Missed Calls / Day',
-      value: '2',
+      label: 'Monday backlog',
+      value: 'Much lighter',
       icon: 'PhoneMissed',
       color: 'case-study-accent--purple',
     },
     {
-      label: 'Conversion Rate',
-      value: '34%',
+      label: 'Extra booked inspections',
+      value: 'Noticeably more',
       icon: 'TrendingUp',
       color: 'case-study-accent--amber',
     },
@@ -43,82 +41,41 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
 
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: Storm Season Overwhelmed a Single Phone Line',
+    problemHeading: 'By Monday morning, half the best calls had already cooled off',
     problemDescription: [
-      'Apex Roofing operated with one office phone line and a part-time administrator. During calm periods, the setup was manageable. But after weekend storms, Monday morning brought 20–30 calls before midday — far more than one person could answer.',
-      'Inspection requests spiked sharply on Monday mornings after weekend storms. Homeowners discovering damage would call first thing, and most expected a response within an hour. Calls that went unanswered were rarely followed up because there was no system tracking missed calls or logging caller information.',
+      'During a normal week, one office line and one administrator were just about enough. After heavy weather, they were not. Calls stacked up before the team had even finished the first coffee.',
+      'Some homeowners would leave a message. Plenty would not. If water was still getting in, they were not waiting around for a callback that might happen later in the day.',
     ],
     painPoints: [
-      'Single phone line overwhelmed during storm-driven call surges',
-      'No missed call tracking or automatic logging',
-      'Monday morning inspection requests exceeded capacity by 3×',
-      'Average response time during surge periods exceeded 38 minutes',
-      'Homeowners moved to competitors after reaching voicemail',
-      'No way to prioritise urgent storm-damage calls over routine enquiries',
-      'Office staff spent entire mornings returning calls instead of scheduling inspections',
-    ],
-  };
-
-  const solutionSection: CaseStudyTemplateSection = {
-    type: 'solution',
-    solutionHeading: 'The System: Missed Call Recovery With CRM Lead Routing',
-    solutionDescription:
-      'Rather than hiring additional phone staff, the solution focused on automating the response to missed calls and routing every inbound lead into a structured CRM pipeline where it could be tracked and followed up systematically.',
-    whatWeDid: [
-      {
-        title: 'Missed Call Detection',
-        description:
-          'Configured the phone system to detect unanswered and abandoned calls in real time, logging the caller number and call timestamp.',
-        icon: 'Phone',
-      },
-      {
-        title: 'Automated SMS Response',
-        description:
-          'Triggered an instant SMS to every missed caller within 60 seconds, confirming receipt and offering to book an inspection online.',
-        icon: 'MessageSquare',
-      },
-      {
-        title: 'CRM Lead Creation',
-        description:
-          'Every missed call automatically created a new lead in the CRM pipeline with caller details, timestamp, and source tag for storm-season tracking.',
-        icon: 'Database',
-      },
-      {
-        title: 'Lead Priority Routing',
-        description:
-          'Storm-season leads were tagged and prioritised in the CRM so follow-up tasks appeared at the top of the queue for the next available team member.',
-        icon: 'ArrowUpRight',
-      },
-      {
-        title: 'Follow-Up Sequence',
-        description:
-          'Leads that did not respond to the initial SMS received a follow-up message after 2 hours and a final follow-up the next morning.',
-        icon: 'RefreshCw',
-      },
+      'Storm weeks pushed call volume far past what one person could answer',
+      'The best inspection enquiries often landed when the line was already backed up',
+      'Voicemails gave the team a delay, not much control',
+      'Urgent roof damage and routine calls arrived mixed together',
+      'Crews still could not answer every live call during peak weather windows',
     ],
   };
 
   const workflowsSection: CaseStudyTemplateSection = {
     type: 'workflows',
-    badge: 'Automation Workflow',
-    title: 'Missed Call Recovery Flow',
-    description: 'The automated sequence from missed call to scheduled inspection.',
+    badge: 'What Happened Next',
+    title: 'A missed call stopped being the end of the conversation',
+    description:
+      'The change was simple on paper. The important part was that it happened fast enough to matter when the weather had everyone calling at once.',
     workflows: [
       {
-        trigger: 'Inbound call goes unanswered or reaches voicemail',
+        trigger: 'A storm-week call rang out or hit voicemail',
         actions: [
-          'Caller number logged with timestamp',
-          'SMS sent within 60 seconds with booking link',
-          'CRM lead created with storm-season priority tag',
-          'Follow-up task assigned to next available team member',
+          'A short text went back quickly so the caller knew they had not vanished into a queue',
+          'The enquiry landed in one place with the number, timing, and enough context to call back properly',
+          'Jobs that looked urgent were easier to spot before the team started working through routine noise',
         ],
       },
       {
-        trigger: 'Lead does not respond to initial SMS within 2 hours',
+        trigger: 'Monday morning opened with a full backlog',
         actions: [
-          'Second SMS sent with alternative contact options',
-          'Lead status updated to "awaiting response" in CRM',
-          'Final follow-up scheduled for next morning at 8:30 AM',
+          'The office was working from a live list instead of a pile of voicemails and scraps of paper',
+          'Inspectors could pick up the hotter enquiries first',
+          'Some callers still needed a second try because storm weeks never tidy up perfectly',
         ],
       },
     ],
@@ -128,70 +85,47 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'Lead Recovery Rate',
-        before: '23% of missed calls returned',
-        after: '89% of missed calls recovered via SMS + follow-up',
-        improvement: '+66 percentage points',
+        title: 'Far fewer storm callers disappeared in the first hour',
+        improvement: 'More of the urgent ones were still reachable when the team called back',
         description:
-          'The automated SMS response captured leads that previously disappeared entirely. Most homeowners booked an inspection directly from the text link.',
+          'The main win was not perfection. It was that a missed call no longer meant silence. More homeowners stayed in contact long enough to get an inspection booked instead of moving on immediately.',
       },
       {
-        metric: 'Average Response Time',
-        before: '38 minutes during normal periods, 2+ hours during surges',
-        after: '3 minutes average (automated SMS + CRM creation)',
-        improvement: '92% faster',
+        title: 'Monday mornings felt less like damage control',
+        improvement: 'The backlog was still real, just no longer blind',
         description:
-          'Automated responses removed the dependency on staff availability. Leads received acknowledgement within a minute regardless of call volume.',
+          'Instead of burning half the day listening through voicemails and trying to work out what mattered first, the team could start with the clearest and hottest enquiries.',
       },
       {
-        metric: 'Daily Missed Calls',
-        before: '11 per day during storm weeks',
-        after: '2 per day (remaining calls handled by follow-up sequence)',
-        improvement: '82% reduction in unrecovered calls',
+        title: 'The recovered work showed up across storm weeks',
+        improvement: 'More inspections and repair jobs stayed in reach',
         description:
-          'The combination of faster SMS response and structured follow-up meant very few leads went completely cold.',
-      },
-      {
-        metric: 'Conversion Rate',
-        before: '19% of all inbound enquiries converted to booked inspections',
-        after: '34% conversion rate across all lead sources',
-        improvement: '+15 percentage points',
-        description:
-          'Faster response and structured follow-up improved the ratio of enquiries that converted into paid inspection visits.',
-      },
-      {
-        metric: 'Monday Morning Call Handling',
-        before: '3+ hours spent returning calls manually',
-        after: '45 minutes reviewing pre-qualified CRM leads',
-        improvement: '75% time reduction',
-        description:
-          'The administrator shifted from reactive call-returning to reviewing a prioritised CRM queue with pre-logged lead details.',
+          'Not every caller replied. Not every week looked the same. But enough of those missed calls turned back into booked work that the difference was obvious once the next bad-weather spell hit.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Losing Leads From Missed Calls?',
-    body: 'Book a free 20-minute call and we\u2019ll walk through how a missed call recovery system could work for your roofing business — no pressure, no sales scripts.',
+    heading: 'Do storm weeks bury the phone before the day starts?',
+    body: 'Book a free 20-minute call and we can look at where your missed calls are slipping away when the weather turns and the whole backlog lands at once.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
     workflowsSection,
-    solutionSection,
     resultsSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
-    slug: 'storm-season-lead-handling-system',
-    title: 'Storm Season Lead Handling System',
-    metaTitle: 'Storm Season Lead Handling | 89% Missed Call Recovery',
+    slug: 'roofing-storm-calls-overwhelmed-the-team',
+    title: 'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
+    metaTitle: 'Roofing storm call case study: more missed calls recovered',
     metaDescription:
-      'How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response, CRM lead routing, and priority triage.',
+      'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -204,36 +138,35 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
     duration: '5 weeks',
     completedDate: 'September 2025',
     heroHeadline:
-      'How a Roofing Contractor Recovered 89% of Missed Storm-Season Leads With Automated Call Recovery',
+      'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
     keyMetrics: keyMetrics.map(metric => ({
       value: metric.value,
       label: metric.label,
       ...(metric.color ? { color: metric.color } : {}),
     })),
-    tags: ['Missed Call Recovery', 'Lead Handling', 'Roofing', 'Storm Season', 'CRM Automation'],
+    tags: ['Missed Call Recovery', 'Roofing', 'Storm Damage', 'Lead Handling', 'Home Services'],
     seo: {
-      canonical: '/case-studies/storm-season-lead-handling-system',
+      canonical: '/case-studies/roofing-storm-calls-overwhelmed-the-team',
       openGraph: {
-        title: 'Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study',
+        title: 'Roofing storm call case study: more missed calls recovered',
         description:
-          'How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing.',
+          'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
       },
     },
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Operational Problem' },
-      problem: { challengeBadgeLabel: 'The Operational Problem' },
-      workflows: { workflowsBadgeLabel: 'Automation Workflow' },
-      solution: { solutionBadgeLabel: 'System Implementation' },
+      hero: { scenarioBadgeLabel: 'Storm Week' },
+      problem: { challengeBadgeLabel: 'What Was Happening' },
+      workflows: { workflowsBadgeLabel: 'What Happened Next' },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Storm Season Performance',
+        detailedResultsBadgeLabel: 'What Changed',
+        detailedResultsSectionTitle: 'What Changed Once Storm Calls Were Caught Earlier',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for trades' },
+          { text: 'No pressure' },
+          { text: 'Useful for storm-heavy trades' },
         ],
       },
     },
