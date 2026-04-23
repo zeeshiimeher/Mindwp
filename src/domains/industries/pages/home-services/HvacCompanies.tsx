@@ -19,8 +19,8 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For HVAC Firms',
     title: 'Minus Four Overnight. The Phones Lit Up At Six. Half Rang Out By Nine.',
     description:
-      'HVAC has two days a year that pay for the rest. The first deep cold morning. The first proper heatwave. On those days every borderline boiler tips over the same hour, and the office line gets calls faster than anyone can answer them. The week is not won by the engineer on the van. It is won by who could be reached, and how quickly the next van could be sent.',
-    list: ['Surge mornings', 'Backed-up dispatch', 'Cold install quotes'],
+      'HVAC has a few days each year when everything breaks at once and the line fills faster than anyone can answer it. The cold snap or heatwave does not beat you because the work is hard. It beats you because too many calls land in the same hour and somebody else gets back first.',
+    list: ['Call overload', 'Surge mornings', 'Late dispatch'],
     cssPrefix: 'hvac-companies-hero',
   };
 
@@ -28,34 +28,34 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where The Surge Bleeds',
     title: 'A cold-snap morning, hour by hour',
     description:
-      'These are the moments that decide whether a sub-zero week pays out or just sounds busy.',
+      'These are the moments that decide whether a weather spike turns into good work or just noise. The issue is rarely a lack of demand. It is what happens when too much of it lands at once.',
     benefits: [
       {
         icon: Snowflake,
         title: '6:14am \u2014 calls coming in faster than anyone can pick up',
         description:
-          'Twenty no-heat calls in the first hour. The office line cannot keep pace. Half of them never leave a voicemail because they are already on to the next number.',
+          'Twenty no-heat calls land in the first hour and the office line cannot keep pace with any of them properly. Half never leave a voicemail because they are already ringing the next firm before the first person can call back.',
         iconType: 'primary' as const,
       },
       {
         icon: Route,
         title: 'The dispatcher is sending the wrong engineer to the wrong end of the patch',
         description:
-          'No view of who is closest. The senior engineer is across town for a service while a no-heat sits ten minutes from another van. Half a day disappears in the routing.',
+          'There is no clean view of who is closest once the board fills up and the phones keep going. The senior engineer is across town on a service while a no-heat sits ten minutes from another van, and half a day disappears in the routing.',
         iconType: 'primary' as const,
       },
       {
         icon: AlarmClock,
         title: 'Routine bookings get triaged in the middle of the panic',
         description:
-          'A May service enquiry is sitting under a no-hot-water at six in the morning. Nobody can tell which is which without reading every voicemail.',
+          'A routine spring service is sitting underneath a no-hot-water call from six in the morning, because everything landed in the same pile. Nobody can tell which is which without listening through every message one by one.',
         iconType: 'secondary' as const,
       },
       {
         icon: Thermometer,
         title: 'A boiler swap quote went out before the surge and never got chased',
         description:
-          'Four grand sitting in someone\u2019s inbox. The cold week made everyone too busy to notice. By the time it calms down, a different firm has already fitted one.',
+          'Four grand is sitting in a homeowner\'s inbox while the cold week eats the whole office alive. By the time things calm down enough to remember it, another firm has already kept the conversation moving and booked the install.',
         iconType: 'accent' as const,
       },
     ],
@@ -66,7 +66,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'A Cold Tuesday Morning',
     title: 'A surge morning, before and after',
     description:
-      'Same engineers. Same vans. What changes is the layer between the phone and the diary.',
+      'Same engineers and same vans, but a very different morning once the calls stop piling up in the wrong order. What changes is the handling between the phone, the dispatcher, and the diary.',
     comparisons: [
       {
         type: 'before' as const,
@@ -95,12 +95,12 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five pieces sized for a business that lives or dies in two weeks of weather',
     description:
-      'Each piece does one job in the surge week. None of them depend on the office having a free hand.',
+      'Each piece handles one pressure point in the surge week, when no one in the office has spare time and the phones still will not stop. They help the business absorb volume instead of losing work inside it.',
     featureCategories: [
       {
         title: 'Hold the panic call before it hits the next number',
         description:
-          'A short, real-sounding text fires inside a minute on every missed call, capturing the boiler and the symptom. The customer stops dialling.',
+          'A short, real-sounding text fires inside a minute on every missed call and captures the boiler and the symptom straight away. That often stops the homeowner dialling the next firm while the office is still trying to catch up.',
         icon: PhoneOff,
         features: [
           'Text-back inside 60 seconds',
@@ -111,7 +111,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Triage the surge inbox by urgency, not by arrival time',
         description:
-          'No-heat surfaces above a service booking. The dispatcher reads a clean list, not a voicemail pile.',
+          'No-heat and no-hot-water rise above routine service bookings the moment they land. The dispatcher works from a clean list instead of a voicemail pile built by whichever calls came in first.',
         icon: Inbox,
         features: [
           'Urgency tag the moment it lands',
@@ -122,7 +122,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Send the closest van first',
         description:
-          'Each enquiry lands with the postcode and the symptom tagged. The dispatcher can see who is nearest and route around the patch instead of by guesswork.',
+          'Each enquiry lands with the postcode and the symptom already tagged, so the dispatcher can see who is nearest without guessing under pressure. That matters most when several calls are waiting and the whole patch is moving at once.',
         icon: Map,
         features: [
           'Postcode and severity tagged on intake',
@@ -133,7 +133,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Stop install quotes dying during the cold week',
         description:
-          'Boiler swap quotes get a friendly check-in a few days later. Open quotes sit on a board the office can scan in ten seconds.',
+          'Boiler swap quotes get a friendly check-in a few days later instead of disappearing behind the weather spike. Open quotes stay on one board the office can scan in ten seconds before the line starts going again.',
         icon: CalendarCheck,
         features: [
           'Auto chase a few days after the quote',
@@ -144,7 +144,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Refill the diary before next year\u2019s cold morning',
         description:
-          'Twelve months after every install, a quiet annual service nudge fires. The contract diary fills itself instead of going cold in May.',
+          'Twelve months after every install, a quiet annual service nudge goes out before the next weather swing hits. That helps the service diary fill itself instead of going flat once the emergency season passes.',
         icon: Compass,
         features: [
           'Annual service reminders on schedule',
@@ -160,7 +160,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Surge Moments',
     title: 'Three moments from a cold-snap morning, and what changes',
     description:
-      'These are the moments at the top of the page. This is what happens to them after.',
+      'These are the kinds of moments that usually make a surge day feel out of control. This is what changes once the volume can be held and sorted properly instead of just shouted through.',
     workflows: [
       {
         trigger: '5:48am \u2014 boiler down, customer dialling round',
@@ -195,7 +195,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where Most HVAC Firms Start',
     title: 'You do not have to fix the whole season at once',
     description:
-      'Most HVAC firms feel one of these louder than the others. Pick the loudest leak.',
+      'Most HVAC firms can point to one of these problems straight away once they stop calling it "just a busy week". Start with the one that makes the biggest dent when weather-driven volume hits.',
     packages: [
       {
         name: 'Survive the surge week',
@@ -239,12 +239,12 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts HVAC firms tend to lean on most.',
+    description: 'These are the supporting services HVAC firms tend to lean on most once they can see where the weather spikes are breaking the handling. Each one supports response, routing, visibility, or proof from a different angle.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, survey and quote flow together through a cold snap.',
+        description: 'Helps enquiry, survey, and quote handling stay connected through a cold snap or heatwave instead of splitting apart under the volume.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -252,7 +252,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: PhoneOff,
         title: 'AI Lead Handling',
-        description: 'Catches no-heat calls before they hit the next firm in the list.',
+        description: 'Catches no-heat calls before they hit the next firm in the list, especially on the mornings when too many of them land at once.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -260,7 +260,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "boiler engineer near me" the morning the heating dies.',
+        description: 'Helps you stay visible for "boiler engineer near me" or cooling breakdown searches the morning the heating or AC gives out.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -268,7 +268,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns commissioned installs into proof on Maps and search.',
+        description: 'Turns commissioned installs and relief-call fixes into proof on Maps and search, so the next homeowner sees recent work they can trust.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -280,7 +280,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What HVAC firms ask first',
-    description: 'Direct, no hedging.',
+    description: 'Straight answers about cold-snap overload, dispatch pressure, and how to hold more of the surge without adding chaos.',
     faqs: [
       {
         question: 'A cold-snap morning is chaos. Will this actually keep up with twenty calls in an hour?',
@@ -295,7 +295,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'We send a lot of install quotes after a survey. Can it chase those without sounding pushy?',
         answer:
-          'Yes. A short, friendly check-in fires a few days after the quote, and again a week or so later. Most customers appreciate the nudge.',
+          'Yes. A short, friendly check-in fires a few days after the quote, and again a week or so later. Most homeowners appreciate the nudge because the weather spike usually pushed the decision down their list too.',
       },
       {
         question: 'Will customers feel the response is automated during a panic?',
@@ -310,7 +310,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Do we need a brand new website?',
         answer:
-          'Usually not. The bottleneck is what happens after the form is sent. The site only changes if it is in the way.',
+          'Usually not. The bigger bottleneck is what happens after the call or form lands during a surge. The site only changes if it is in the way of that.',
       },
     ],
   };
@@ -351,7 +351,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us about the last cold morning',
       description:
-        'Walk us through the last surge \u2014 how many calls rang out, how many vans went the wrong way. We will tell you what to plug first.',
+        'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
     },
   };
 }

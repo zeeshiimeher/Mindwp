@@ -1,4 +1,4 @@
-# SYSTEM — MindWP
+# FOUNDATION — MindWP
 
 > Root authority for identity, service hierarchy, vocabulary, positioning, and boundary rules.
 > If any other document conflicts with this file, fix the conflict immediately.
@@ -7,7 +7,7 @@
 
 ## USE THIS DOC
 
-Read this first in any new session. This file defines what MindWP is, which systems exist, how they relate, and which language is allowed.
+Read this first in any new session. It defines what MindWP is, which systems exist, how they relate, and which language is allowed.
 
 ---
 
@@ -32,6 +32,47 @@ MindWP does not position itself as:
 - a SaaS product
 
 The commercial posture is calm, clear, and operational. MindWP sells structure before scale and infrastructure before growth.
+
+## PAGE BEHAVIOR MODEL (NEW — CRITICAL)
+
+All public pages fall into one of three behavior types. This is a positioning and writing constraint, not a routing change.
+
+### 1) Landing Pages (Primary for Industries and BOFU)
+
+Purpose:
+- recognition in seconds
+- direct relevance to a real situation
+- immediate path to contact
+
+Rules:
+- do not teach or explain systems
+- do not read like guides or blogs
+- must reflect real-world situations the reader recognises
+- must lead naturally to contact without friction
+
+Outcome:
+- the reader thinks “this is exactly what happens in my business”
+
+### 2) System Pages (Service / BOFU)
+
+Purpose:
+- explain how the system changes outcomes
+- connect structure → result without technical detail
+
+Rules:
+- remain outcome-first
+- do not become tool explanations
+- do not expand into adjacent systems beyond bridge rules
+
+### 3) Entry Pages (SEO / Topics / Resources)
+
+Purpose:
+- capture intent and route into the correct system
+
+Rules:
+- may educate lightly
+- must transition toward system pages or contact
+- must not position as standalone services
 
 ---
 
@@ -80,18 +121,14 @@ Tier 3 pages support execution and acquisition. They do not become strategic pil
 
 ---
 
-## FULL SYSTEM FLOW (MANDATORY)
+## SYSTEM CONTRACT (MANDATORY)
 
-1. A visitor enters through a canonical route.
-2. The route resolves to one page type and one page identity.
-3. The page belongs to one primary system and may declare supporting metadata.
-4. Domain registries feed that metadata into the content model.
-5. The graph and resolver turn metadata overlap into structure and related-content candidates.
-6. The page template renders the correct narrative for that page type and system role.
-7. `CTARegistryProvider` creates page-level enforcement state.
-8. `SmartCTA` renders the CTA panel with canonical system and generated source context.
-9. `/contact` receives full conversion context and preserves it through submission.
-10. Validators confirm that routing, content, CTA, and reports still match the canonical model.
+1. Every public page resolves to one page type and one page identity.
+2. Every page belongs to one primary system and may declare supporting metadata.
+3. Every page must respect its behavior type and the corresponding writing rules.
+4. Validators and reports must confirm alignment with the canonical model.
+
+Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md), [./GRAPH.md](./GRAPH.md), and [./CONVERSION.md](./CONVERSION.md).
 
 ---
 
@@ -207,6 +244,24 @@ Avoid terms such as:
 - page structure
 - pipeline management
 
+### CROSS-SYSTEM LANGUAGE GUARD (NEW)
+
+Language must not blur system boundaries or collapse positioning into generic “web design”.
+
+Never introduce:
+
+- generic agency language
+- mixed system terminology in one explanation
+- wording that makes all systems sound the same
+
+Each system must remain:
+
+- distinct in role
+- clear in responsibility
+- consistent in vocabulary
+
+If a sentence could apply to multiple systems → it is too vague.
+
 ---
 
 ## POSITIONING RULES
@@ -226,6 +281,32 @@ MindWP copy must not use phrases such as:
 - affordable packages
 - dominate competitors
 - explosive growth
+
+### EXPERIENCE-LED POSITIONING (NEW)
+
+MindWP must be described through what the business experiences changing, not what is built.
+
+Always prioritise:
+
+- what goes wrong today
+- what improves after implementation
+- how enquiries are handled differently
+- how opportunities are no longer missed
+
+Avoid leading with:
+
+- deliverables
+- features
+- tools
+- page types
+
+Correct direction:
+
+- “Enquiries come in. They are handled properly.”
+- “Follow-up happens without chasing.”
+- “Nothing gets missed or delayed.”
+
+If copy starts describing what is built instead of what changes → rewrite.
 
 ---
 ### POSITIONING ENFORCEMENT (CRITICAL)
@@ -255,6 +336,31 @@ Even partially.
 
 If the sentence starts describing what we build instead of what goes wrong or what changes → IT IS WRONG.
 
+### LANDING PAGE POSITIONING LOCK (NEW)
+
+On landing pages (especially industry pages):
+
+- lead with situations, not services
+- lead with problems, not deliverables
+- lead with recognition, not explanation
+
+Do NOT:
+
+- open with what MindWP builds
+- describe features before context
+- introduce systems before the problem is clear
+
+Correct flow:
+
+1. what is happening (real situation)
+2. what is going wrong
+3. what changes
+4. how it is handled differently
+
+If the opening sounds like a service description → rewrite immediately.
+
+---
+
 ## NOT ALLOWED
 
 - Parallel service models that conflict with the six canonical systems.
@@ -263,6 +369,10 @@ If the sentence starts describing what we build instead of what goes wrong or wh
 - Tool-first public positioning that replaces operational outcomes.
 - Vocabulary that crosses system boundaries and creates role drift.
 - Audit/history language inside governing docs.
+- Generic landing page templates reused across industries.
+- Content that can be copied between industries with minimal changes.
+- Educational or blog-style introductions on landing pages.
+- Language that positions MindWP primarily as a website builder.
 
 ---
 

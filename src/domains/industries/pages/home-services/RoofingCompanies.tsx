@@ -18,8 +18,8 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For Roofing Companies',
     title: 'Three Quotes On The Kitchen Table. Yours Was The One Nobody Chased.',
     description:
-      'A re-roof is a six-week conversation, not a phone call. The homeowner asks three roofers up the ladder, sits with three quotes for a fortnight, talks to the spouse, talks to the neighbour. The job goes to whichever firm stayed in the conversation. Most of the work that walks past a roofing firm walks past in that quiet middle, where nobody followed up because nobody knew it was still open.',
-    list: ['Quote silence', 'Slow decisions', 'Lost re-roofs'],
+      'A re-roof is usually a long decision, not a same-day yes. The homeowner gets a few prices, leaves them on the kitchen table for a fortnight, asks around, and the job often goes to the roofer who checked back in while everyone else assumed silence meant no.',
+    list: ['Quote silence', 'Slow decisions', 'Kitchen tables'],
     cssPrefix: 'roofing-companies-hero',
   };
 
@@ -27,34 +27,34 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where The Decision Slips',
     title: 'Where roofers actually lose the re-roof',
     description:
-      'The roof is rarely the problem. The problem is the four weeks between the survey and the deposit, where nobody at the firm knows whose head they are still in.',
+      'The roof is rarely the problem here. The real leak sits in the four weeks between the survey and the deposit, while the homeowner compares, delays, and hears very little from most of the firms they asked out.',
     benefits: [
       {
         icon: Hourglass,
         title: 'Quote sent Monday, no idea by Friday whether you are still in the running',
         description:
-          'Twelve grand on the table. The homeowner is mulling. Nobody nudged. By the time someone wonders, another roofer has been chosen.',
+          'Twelve grand is on the table and the homeowner is still mulling it over with two other prices nearby. Nobody checks back in, so by the time someone wonders what happened the decision is already leaning toward the roofer who stayed visible.',
         iconType: 'primary' as const,
       },
       {
         icon: ClipboardList,
         title: 'Open quotes living in three different folders',
         description:
-          'One in email, one written on the back of a survey sheet, one in someone\u2019s phone. Nobody can scan the open list in ten seconds, so half of them never get touched again.',
+          'One quote is in email, one is written on the back of a survey sheet, and one is still in somebody\'s phone notes. Nobody can scan the live list in ten seconds, so too many of them never get touched again once the week gets busy.',
         iconType: 'primary' as const,
       },
       {
         icon: FileSearch,
         title: 'Insurance claim job stalls and the homeowner stops trusting the timeline',
         description:
-          'Photos sent to a personal phone. Adjuster paperwork in a different thread. Two weeks pass with no update and the homeowner quietly starts asking around.',
+          'Photos are sent to a personal phone and the adjuster paperwork is in a different thread again. Two weeks pass with no useful update, and the homeowner starts asking around because the whole thing feels less certain than it should.',
         iconType: 'secondary' as const,
       },
       {
         icon: Phone,
         title: 'Storm-morning calls overflow, but most of the lost work is in the quiet that follows',
         description:
-          'A windy night sends twenty calls in. The biggest job of the year, though, is still the re-roof quote sitting from a fortnight ago that nobody warmed back up.',
+          'A windy night can flood the line, but that is not usually where the biggest money disappears. More often it is the re-roof quote from a fortnight ago that nobody warmed back up while the homeowner kept comparing in silence.',
         iconType: 'accent' as const,
       },
     ],
@@ -65,7 +65,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'A Six-Week Decision',
     title: 'A re-roof conversation, before and after',
     description:
-      'Same survey. Same crew. What changes is whether you stay in the conversation while the homeowner is making up their mind.',
+      'Same survey and same crew, but a very different result once somebody actually holds the conversation after the quote goes out. The change is not in the roofing. It is in what happens during the slow decision.',
     comparisons: [
       {
         type: 'before' as const,
@@ -94,12 +94,12 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five pieces sized for a long sales cycle and a roof full of comparisons',
     description:
-      'Each piece does one job in the middle weeks of a re-roof decision. None of them ask the crew to come off a roof to type.',
+      'Each piece handles one part of the long middle of a re-roof decision, when nobody is saying yes yet but nobody is definitely out either. None of them ask the crew to come off a roof just to keep a quote alive.',
     featureCategories: [
       {
         title: 'Make every open quote visible in one place',
         description:
-          'Re-roof, repair and insurance quotes sit on a single board, sorted by how warm and how old. The office can scan it in ten seconds.',
+          'Re-roof, repair, and insurance quotes sit on a single board sorted by how warm they still are and how long they have been sitting. The office can scan it in ten seconds instead of searching three different places for what is still live.',
         icon: Eye,
         features: [
           'One board for every open quote',
@@ -110,7 +110,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Stay in the conversation while the homeowner mulls',
         description:
-          'A friendly check-in fires a few days after the quote, and again a week or so later. It reads like a person at the office, not a sequence.',
+          'A friendly check-in goes out a few days after the quote and again a week or so later, while the homeowner is still comparing and talking it through at home. It reads like a real person in the office, not like a canned sequence.',
         icon: MessageSquare,
         features: [
           'Auto chase at the right intervals',
@@ -121,7 +121,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Pull insurance jobs out of paperwork limbo',
         description:
-          'Photos, adjuster paperwork and the homeowner\u2019s thread all attached to the address. Nothing lives on a personal phone.',
+          'Photos, adjuster paperwork, and the homeowner\'s messages all stay attached to the address instead of living on somebody\'s personal phone. That keeps the claim moving and makes the timeline feel steadier from their side as well.',
         icon: FileSearch,
         features: [
           'Photos and paperwork in one place per job',
@@ -132,7 +132,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Hold the storm-morning calls without it being chaos',
         description:
-          'Missed calls fire a short, real-sounding text in under a minute capturing the address and the damage. The inbox triages by urgency, not by who shouted last.',
+          'Missed calls fire a short, real-sounding text in under a minute with the address and the damage captured straight away. That helps hold the urgent storm work, but without distracting from the slower quote decisions that are still sitting open behind it.',
         icon: Phone,
         features: [
           'Text-back inside 60 seconds',
@@ -143,7 +143,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'A short ask the day the scaffold comes down',
         description:
-          'While the homeowner is still admiring the new roof from the front lawn, a friendly review request lands. They actually leave one because they were just asked at the right moment.',
+          'While the homeowner is still admiring the new roof from the front lawn, a friendly review request lands at the right moment. That is why they actually leave one instead of meaning to do it later and never getting back to it.',
         icon: Star,
         features: [
           'Review ask the day the scaffold comes down',
@@ -159,7 +159,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where Most Roofers Start',
     title: 'You do not have to fix the whole sales cycle at once',
     description:
-      'Most roofing firms feel one of these louder than the others. Pick the loudest leak.',
+      'Most roofing firms can hear one of these problems louder than the others as soon as they look at the open quotes properly. Start with the leak that is costing the most work in the quiet middle.',
     packages: [
       {
         name: 'Stop re-roof quotes drifting',
@@ -203,12 +203,12 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts roofing firms tend to lean on most.',
+    description: 'These are the supporting services roofing firms tend to lean on most once they can see where longer decisions, insurance jobs, and open quotes are slipping. Each one supports follow-up, proof, or visibility from a different angle.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, survey and quote flow together through a long decision cycle.',
+        description: 'Helps enquiry, survey, and quote handling stay connected through the long decision cycle instead of fading out after the survey is done.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -216,7 +216,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'CRM Automation',
-        description: 'Holds the open quote board and the friendly check-ins that close re-roofs.',
+        description: 'Keeps the open quote board clear and sends the friendly check-ins that stop re-roof decisions drifting into silence.',
         href: '/services/crm-automation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -224,7 +224,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "roofer near me" the morning after a windy night.',
+        description: 'Helps you stay visible for the local roofing searches that matter, whether the trigger is storm damage or a slower planned re-roof.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -232,7 +232,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished re-roofs into proof on Maps and search.',
+        description: 'Turns finished re-roofs into proof on Maps and search, so the next homeowner comparing three firms sees real jobs that feel current.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -244,7 +244,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What roofing firms ask first',
-    description: 'Direct, no hedging.',
+    description: 'Straight answers about longer quote cycles, insurance paperwork, and what actually helps when the silence starts after the survey.',
     faqs: [
       {
         question: 'Most of our re-roof quotes go quiet for two weeks. Will a chase actually help?',
@@ -254,7 +254,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Will the chase make us look pushy?',
         answer:
-          'No. It reads like a person at the office, fires at sensible intervals, and most homeowners thank you for the nudge.',
+          'No. It reads like a person at the office, fires at sensible intervals, and most homeowners are glad someone checked back in while they were still weighing the quotes up.',
       },
       {
         question: 'How does the open quote board actually help us close more?',
@@ -314,7 +314,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us about the last re-roof you lost in the silence',
       description:
-        'Walk us through a recent re-roof quote that went quiet \u2014 when it went out, when you last heard back, who eventually got the job. We will tell you what to plug first.',
+        'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
     },
   };
 }

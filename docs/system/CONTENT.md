@@ -1,13 +1,13 @@
 # CONTENT — MindWP
 
 > Source of truth for content hierarchy, page roles, metadata rules, authority rules, and editorial boundaries.
-> If this file conflicts with [./SYSTEM.md](./SYSTEM.md), fix the conflict immediately.
+> If this file conflicts with [./FOUNDATION.md](./FOUNDATION.md), fix the conflict immediately.
 
 ---
 
 ## USE THIS DOC
 
-Use this file when creating or editing service, feature, blog, resource, industry, case-study, or landing-page content.
+Use this doc for service, feature, blog, resource, industry, case-study, and landing-page content.
 
 ---
 
@@ -61,6 +61,19 @@ Resource pages explain frameworks, architectures, comparisons, and implementatio
 
 Industry pages translate the system into a vertical context. They do not become isolated sales narratives detached from the canonical services.
 
+### Industry Behavior Enforcement (NEW — CRITICAL)
+
+Industry detail pages must follow the landing-page behavior defined in [./FOUNDATION.md](./FOUNDATION.md).
+
+They must:
+
+- lead with recognition first
+- reflect real situations the business recognises
+- stay specific to the industry's dominant problems
+- avoid reusable structure or phrasing
+
+If an industry page could apply to another industry with minimal changes → it is invalid.
+
 ### Case Study
 
 Case studies validate a system through implementation proof. They demonstrate structure, intervention, and outcome without becoming generic sales copy.
@@ -76,6 +89,14 @@ Case studies validate a system through implementation proof. They demonstrate st
 - Case studies supply proof and validation; they do not replace service pages.
 
 If a page absorbs the funnel role of another page type, it has drifted and must be corrected.
+
+### Behavior Alignment Requirement (NEW)
+
+Funnel role alone is not sufficient.
+
+Each page must also match its behavior type as defined in [./FOUNDATION.md](./FOUNDATION.md).
+
+If funnel role and behavior conflict → behavior must be corrected.
 
 ---
 
@@ -120,6 +141,19 @@ The services landing page may curate these layers deliberately, but it may not f
 
 One page owns one primary search intent. Do not merge multiple intent classes into one page.
 
+### Intent + Behavior Alignment (NEW)
+
+Search intent must align with page behavior.
+
+Examples:
+
+- Industry pages: commercial + situational recognition
+- Service pages: decision-ready intent
+- Blog pages: informational problem intent
+- Resource pages: framework and comparison intent
+
+If intent and behavior diverge → the page loses clarity and must be corrected.
+
 ---
 
 ## CONTENT SYSTEM INTEGRITY RULE (LOCKED)
@@ -130,6 +164,8 @@ Content integrity depends on four aligned contracts:
 2. The metadata matches the page subject.
 3. The CTA behavior matches the page role.
 4. Related content resolves from metadata rather than editorial shortcuts.
+
+5. The page behavior (landing, system, entry) matches its role and positioning.
 
 Do not invent parallel identifiers, parallel page roles, or parallel relationship systems.
 
@@ -151,7 +187,16 @@ The canonical content path is:
 
 domain data -> registry -> content model -> graph -> resolver -> route -> page -> CTA -> validator
 
-Relationship generation is metadata-first. The resolver uses metadata overlap to rank related content. Public display remains stricter than the graph itself.
+Relationship generation and ranking are defined in [./GRAPH.md](./GRAPH.md).
+
+### Behavior + Conversion Integrity (NEW)
+
+Content flow must preserve not only structure, but meaning:
+
+- routing must support conversion progression
+- related content must not break page intent or funnel role
+
+Graph relationship logic and authority handling are owned by [./GRAPH.md](./GRAPH.md).
 
 ---
 
@@ -162,8 +207,7 @@ Authority resolution is graph-owned.
 Rules:
 
 - Content declares `systems[]`, `topics[]`, and `industries[]` where required.
-- The graph derives relationships from metadata overlap.
-- The resolver ranks candidates using the graph and authority rules defined in [./GRAPH.md](./GRAPH.md).
+- Relationship derivation and ranking are defined in [./GRAPH.md](./GRAPH.md).
 - Only graph-valid candidates may enter the related-content display surface.
 
 Manual presentation helpers do not own related-content truth.
@@ -176,6 +220,16 @@ Manual presentation helpers do not own related-content truth.
 - The zone shows at most three items.
 - The zone is fed by graph-ranked candidates, not ad hoc editorial lists.
 - Inline editorial links may support the narrative, but they do not replace the related-content system.
+
+### Behavior-Safe Related Content (NEW)
+
+Related content must respect page behavior:
+
+- Landing pages must not surface unrelated educational chains
+- Blog pages must not loop into shallow discovery cycles
+- Service pages must prioritize conversion-relevant content
+
+If related content weakens user progression → it must be removed or reordered.
 
 ---
 
@@ -266,11 +320,12 @@ Case studies may support service conversion, but the case study itself remains a
 | Graph integrity                                 | Content model and graph registry | `validate-graph.ts`                               |
 | Related-content duplication                     | Related-content system           | `validate-related-duplication.ts`                 |
 | Internal link and docs hygiene                  | Content and docs surfaces        | `validate-internal-links.ts`, `validate-docs.mjs` |
+| Behavior and positioning alignment              | Content layer and page type       | System rules + validators (behavior-aware checks) |
 
 ---
 
 ## CROSS-REFERENCE MAP
 
-- Identity and system hierarchy: [./SYSTEM.md](./SYSTEM.md)
+- Identity and system hierarchy: [./FOUNDATION.md](./FOUNDATION.md)
 - Graph and resolver mechanics: [./GRAPH.md](./GRAPH.md)
 - CTA and contact contracts: [./CONVERSION.md](./CONVERSION.md)

@@ -18,31 +18,33 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
         badge: 'Beauty & Appointment Businesses',
         title: 'A Booking Window Closes. A Refill Gets Forgotten. A Quiet Regular Tries Somewhere New. The Chair Stays Empty For The Same Reason Every Week.',
         description:
-            'Salons, lash studios, med spas, and aesthetic clinics all live and die on the same loop — fastest reply, easiest booking, most remembered business. Where that loop breaks looks different by treatment, but the leak is always the same.',
-        list: ['Slow first reply', 'Hard booking', 'Forgotten regulars', 'No nudge'],
+            'Salons, lash studios, med spas, and clinics all run on the same loop: quick reply, easy booking, timely return. The treatment changes, but the loss usually starts in the same place — someone looked, hesitated, then never came back to finish booking.',
+        list: ['Slow reply', 'Booking drag', 'Missed returns', 'Thin reviews'],
         cssPrefix: 'beauty-personal-care-hero',
     };
 
     const operatingPatternsData = {
         badge: 'The Three Patterns Every Appointment Business Shares',
         title: 'You are not losing clients to better treatments. You are losing them to faster, easier, more present ones.',
+        description:
+            'Across the category, the same three moments keep showing up: the first reply, the rebook timing, and what happens when availability opens up suddenly. When those moments are loose, clients move on quietly.',
         benefits: [
             {
                 icon: Clock4,
                 title: 'The first reply decides who books',
-                description: 'New enquiries DM two or three places at once. Whoever replies first with a real slot — not "DM us back" — usually gets sat down.',
+                description: 'New enquiries usually message two or three places at once, then wait a short while before choosing. The place that replies with a clear next step, not more friction, usually gets the booking.',
                 iconType: 'primary' as const,
             },
             {
                 icon: RefreshCw,
                 title: 'The rebook nudge decides who comes back',
-                description: 'Six-week trims, three-week refills, three-session plans — they all rely on a nudge at the right moment. Without it, regulars quietly drift.',
+                description: 'Trims, refills, maintenance visits, treatment plans — all of them have a natural return point. Miss that timing by a few weeks and a regular can quietly fall out of the habit.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: Bell,
                 title: 'The empty chair decides what next month looks like',
-                description: 'Cancellations and no-shows are the loudest leak. The salons that fill them in the same hour rarely feel "quiet weeks".',
+                description: 'Cancellations and no-shows are where the week starts slipping. The businesses that refill those gaps quickly rarely experience the same kind of sudden quiet patch.',
                 iconType: 'accent' as const,
             },
         ],
@@ -52,7 +54,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     const decisionChecklistData = {
         badge: 'A Quick Self-Check',
         title: 'Three honest questions about your last booked week',
-        description: 'If any of these read uncomfortable, the leak is probably not the treatment — it is the loop around it.',
+        description: 'If more than one of these feels familiar, the issue is probably not the quality of the treatment itself. It is what happens around the booking, the return, and the follow-up.',
         items: [
             'New DMs wait until after closing for a real reply',
             'Regulars only rebook if the front desk remembers to ask',
@@ -69,7 +71,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     const spectrumData = {
         badge: 'How The Loop Looks By Treatment',
         title: 'Same loop. Different breaking points.',
-        description: 'Booking, rebook, and recall all matter — but they break in different places depending on the treatment.',
+        description: 'Every part of the category relies on booking, return timing, and trust. The difference is where the pressure shows up first depending on the treatment and how quickly the decision gets made.',
         cards: [
             {
                 title: 'Walk-in & fast booking',
@@ -107,11 +109,11 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What This Looks Like Across The Category',
         title: 'A small set of systems that fit every chair, room, and clinic',
-        description: 'The same four layers, tuned to each treatment. Salons get fast booking. Lash studios get cycle nudges. Med spas get structured follow-up. The principle is the same.',
+        description: 'The same four layers keep appearing across the category, just tuned differently by treatment. Salons need easier booking, lash studios need better timing, and clinics need steadier follow-up after interest shows up.',
         featureCategories: [
             {
                 title: 'First reply with a real slot',
-                description: 'The first message back includes live availability — not "DM us". Bookable from Instagram, Google, and the site.',
+                description: 'The first message back includes a real next step instead of another dead end. Availability can be reached from Instagram, Google, and the site without sending people in circles.',
                 icon: MessageSquare,
                 features: [
                     'Live slots in the first reply',
@@ -121,7 +123,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Rebook on the right cycle, every time',
-                description: 'Six-week trims, three-week refills, three-session plans — each gets the right rebook prompt with the right tone.',
+                description: 'Each treatment type has its own return rhythm, and the reminder needs to match it. The prompt lands at the point where rebooking still feels natural instead of overdue.',
                 icon: RefreshCw,
                 features: [
                     'Service-specific rebook timing',
@@ -131,7 +133,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Reviews from the moments worth reviewing',
-                description: 'Review requests fire when results are freshest — not at random. Reviews then stack where new clients are scrolling.',
+                description: 'Review requests go out when the result still feels fresh, not at some random delay. That turns good experiences into visible proof in the places new clients already check.',
                 icon: Star,
                 features: [
                     'Trigger-based review timing',
@@ -141,7 +143,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable for the actual search',
-                description: '"Lash refill near me", "nail salon Saturday", "skin consult [city]" — your profile and pages line up for the search she runs.',
+                description: 'Your profile and treatment pages need to line up with the specific search someone actually types. That makes it easier to be found by intent, not just by being generally nearby.',
                 icon: Search,
                 features: [
                     'Treatment + area pages',
@@ -156,35 +158,35 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     const detailRoutesData = {
         badge: 'Where Each Treatment Sits',
         title: 'Pick the page closest to your day',
-        description: 'Each detail page goes deeper into how the loop breaks for that specific treatment, and what we put in place.',
+        description: 'Each detail page goes one step deeper on the treatment-specific weak spots without changing the overall pattern. Pick the one that sounds most like the way your bookings actually behave.',
         items: [
             {
                 title: 'Hair Salons',
-                description: 'Saturday DMs, six-week regulars, and the chair that sat empty mid-foil.',
+                description: 'Saturday messages, repeat colour or cut timing, and the chair that stayed empty because nobody filled the opening fast enough.',
                 href: '/industries/beauty-personal-care/hair-salons',
                 icon: Sparkles,
             },
             {
                 title: 'Nail Salons',
-                description: 'Three-tap booking, same-hour cancellation fills, and rebook before she Googles new.',
+                description: 'Fast booking, low-patience decisions, and cancellation gaps that need filling while someone is still looking for somewhere nearby.',
                 href: '/industries/beauty-personal-care/nail-salons',
                 icon: CheckCircle2,
             },
             {
                 title: 'Lash Studios',
-                description: 'Refill cycle nudges, quiet win-backs, and tech-led loyalty.',
+                description: 'Refill timing, missed cycles, and the quiet drop-off that starts when a regular skips one appointment and never re-enters the pattern.',
                 href: '/industries/beauty-personal-care/lash-lift-and-extensions',
                 icon: HeartHandshake,
             },
             {
                 title: 'Small Med Spas',
-                description: 'Same-day reply, written treatment plans, and rebooks that complete the plan.',
+                description: 'Consultation interest, calmer follow-up, and the gap between someone asking about treatment and actually choosing a time to come in.',
                 href: '/industries/beauty-personal-care/small-med-spas',
                 icon: Bell,
             },
             {
                 title: 'Aesthetic & Cosmetic Clinics',
-                description: 'Day-three and day-seven nurture, outcome-based reviews, calm trust.',
+                description: 'High-consideration enquiries, trust-sensitive follow-up, and the quiet hesitation that appears after a good consultation but before the booking is ever confirmed.',
                 href: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
                 icon: Calendar,
             },
@@ -196,12 +198,12 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The systems that show up across this whole category.',
+        description: 'These are the supporting services that keep showing up across the whole category. They all support the same booking, return, and review gaps from different angles.',
         cards: [
             {
                 icon: MessageSquare,
                 title: 'Smart Website Systems',
-                description: 'First-reply availability, three-tap booking, written summaries.',
+                description: 'Handles first-reply availability, cleaner booking paths, and the simple next steps people need when they are ready to decide.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -209,7 +211,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
             {
                 icon: RefreshCw,
                 title: 'CRM & Rebook Automation',
-                description: 'Cycle-aware rebooks, calm nurture, quiet win-backs.',
+                description: 'Keeps rebook timing, calmer follow-up, and return prompts moving without relying on someone to remember each cycle manually.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -217,7 +219,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Reviews from the right moment, where new clients scroll.',
+                description: 'Gets reviews out at the right moment and helps the online proof match how full the diary feels in real life.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -225,7 +227,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be the salon, studio, or clinic people find for the actual search.',
+                description: 'Makes it easier to show up for the actual treatment search someone types when they want an appointment, not just a general category term.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -275,7 +277,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
         },
         faq: {
             title: 'Things owners ask before they pick a page',
-            description: 'A few common questions before you go deeper into the right detail page.',
+            description: 'A few common questions that come up before choosing the closest treatment page. These stay broad on purpose so you can decide where to go next quickly.',
             faqs: [
                 {
                     question: 'I run more than one of these — which page should I read?',
@@ -297,7 +299,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Pick the page closest to your chair',
             description:
-                'Each detail page below goes deeper into how the loop breaks for that specific treatment — and what we put in place to fix it.',
+                'Each detail page below shows where the booking or return loop usually breaks for that treatment. Start with the one that sounds closest to the way your week actually runs.',
         },
     };
 }

@@ -2,9 +2,23 @@
 
 Rules derived from execution decisions. Enforced by validators.
 
-**Behavioral authority:** CONVERSION-SYSTEM.md governs all conversion behavior, CTA routing, and data contracts. Rules in this document must not contradict the contract.
+**Behavioral authority:** [./CONVERSION.md](./CONVERSION.md) governs all conversion behavior, CTA routing, and data contracts. Rules in this document must not contradict that contract.
 
 **Updated:** 2026-04-09
+
+---
+
+## 0. Page Behavior Enforcement (NEW — CRITICAL)
+
+Follow the behavior model defined in [./FOUNDATION.md](./FOUNDATION.md).
+
+Enforcement rules:
+
+- Landing pages must validate as recognition-first
+- System pages must validate as outcome-first
+- Entry pages must validate as routing into systems
+
+If page behavior is unclear → STOP and fix before continuing.
 
 ---
 
@@ -86,6 +100,16 @@ We optimise for:
 
 If anything breaks validation → STOP and fix.
 
+### Execution Clarity Rule (NEW)
+
+All changes must preserve:
+
+- content behavior (landing vs system vs entry)
+- positioning (experience-led, not build-led)
+- deterministic output (no drift)
+
+If a change improves wording but breaks behavior → REJECT it.
+
 ---
 
 ## 5. Content Scope Rule
@@ -121,7 +145,7 @@ Do NOT:
 
 - Redesign content structure
 - Modify blueprint formats
-- Change CTA logic (governed by CONVERSION-SYSTEM.md)
+- Change CTA logic (governed by [./CONVERSION.md](./CONVERSION.md))
 - Alter content graph logic
 - Introduce new abstractions
 - Rename canonical values
@@ -181,15 +205,12 @@ Forbidden:
 
 ## 9. SmartCTA Mandate
 
-`SmartCTA` is the system CTA component for primary page-level CTA panels. Deterministic contact routing is governed by `CONVERSION-SYSTEM.md` and enforced through `src/lib/contact/contactHref.ts`.
+`SmartCTA` is the system CTA component for primary page-level CTA panels. Deterministic contact routing is governed by [./CONVERSION.md](./CONVERSION.md) and enforced through `src/lib/contact/contactHref.ts`.
 
 Rules:
 
 - Primary page CTA panels should render through `SmartCTA`.
-- `SmartCTA` resolves its primary label through `resolveCtaLabel(system)`.
-- `SmartCTA` builds its primary href through `buildContactHref({ system, sourceType, slug })`.
-- Contextual CTA hrefs outside `SmartCTA` must be generated through `buildContactHref()` or a typed scoped helper such as `buildServiceContactHref()`.
-- Domain payloads may carry `buttonText` and `buttonHref` fields where template contracts require explicit CTA actions.
+- CTA routing and label rules must follow [./CONVERSION.md](./CONVERSION.md).
 - Any CTA that routes to contact must preserve canonical `system` plus normalized `source` context.
 
 Forbidden:
@@ -199,6 +220,12 @@ Forbidden:
 - Literal metadata or page-local metadata objects that bypass inventory.
 - Contact routes that bypass `/contact` or drop `system` / `source` context.
 
+### CTA Context Integrity (NEW)
+
+CTA context must match page type and the contract defined in [./CONVERSION.md](./CONVERSION.md).
+
+If CTA tone or context does not match the page contract → it is invalid.
+
 ---
 
 ## 10. Graph Execution
@@ -207,6 +234,7 @@ The content graph resolves relationships at build time via singleton initializat
 
 Rules:
 
+- Graph execution must follow [./GRAPH.md](./GRAPH.md).
 - Graph query functions are called in `page.tsx` server-side data preparation or generator scripts. Never in components.
 - Related content arrays are fully resolved, sorted, and sliced before passing as props.
 - `ensureGraphInitialized()` runs once per build via singleton cache. Runtime singleton initialization is allowed.
@@ -218,6 +246,12 @@ Forbidden:
 - Runtime relationship inference (e.g., keyword matching to derive links).
 - Dynamic graph mutation or edge creation outside the canonical registry system.
 - `Math.random()` or non-deterministic behavior in graph resolution.
+
+### Content Meaning Integrity (NEW)
+
+Graph relationships must preserve the contract defined in [./GRAPH.md](./GRAPH.md).
+
+If a link would confuse a user → it is invalid.
 
 ---
 
@@ -243,6 +277,12 @@ Forbidden:
 - Run validators after every batch
 
 If any task requires structural change → STOP and escalate instead of implementing.
+
+### No Template Duplication Rule (NEW)
+
+Industry-page differentiation must follow [./FOUNDATION.md](./FOUNDATION.md) and [./WRITING.md](./WRITING.md).
+
+If two pages feel similar → rewrite one.
 
 ---
 
@@ -278,3 +318,4 @@ If any task requires structural change → STOP and escalate instead of implemen
 | Creating CTA label outside approved config | Route through `CTA_CONFIG`                                                                                     |
 | Skipping validation after a change         | Run the narrow validator/test needed, then rerun `system:full` when the change affects reports or system state |
 | Manually editing generated images          | Regenerate with `--force` flag                                                                                 |
+| Reusing industry content patterns           | Rewrite with industry-specific problems and situations                                                         |

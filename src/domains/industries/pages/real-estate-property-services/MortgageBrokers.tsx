@@ -18,31 +18,33 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         badge: 'For Mortgage Brokers',
         title: 'They Found A House On Saturday. They Needed A Decision In Principle By Monday. You Saw The Email Tuesday.',
         description:
-            'Mortgage enquiries do not arrive when you are at your desk. They arrive after a viewing, after an offer is being drafted, after a lender call has spooked the buyer. The broker who answers in the next two hours is usually the broker who places the case.',
-        list: ['Weekend miss', 'Late callback', 'Lost DIP', 'Cold case'],
+            'Mortgage enquiries usually appear when the buyer has just viewed, just had an offer accepted, or just been told they need an answer fast. In that moment they are comparing brokers in real time, and the one who replies first often wins the case before rates or fees are even properly discussed.',
+        list: ['Weekend gaps', 'Late answers', 'Stalled DIPs', 'Cold cases'],
         cssPrefix: 'mortgage-brokers-hero',
     };
 
     const operatingPatternsData = {
         badge: 'Where Cases Decide Themselves',
         title: 'Buyers do not shop around for weeks. They pick whoever picked up.',
+        description:
+            'Most broker enquiries feel urgent because they usually are. Buyers are often trying to move an offer forward that day, secure a decision in principle quickly, or confirm somebody can actually guide the case before they lose momentum.',
         benefits: [
             {
                 icon: AlarmClock,
                 title: 'The enquiry came in on a weekend',
-                description: 'They were viewing on Saturday. Asked Sunday. By Monday morning, they had a decision in principle from someone else.',
+                description: 'They had spent the weekend viewing and needed an answer before the next conversation with the agent or seller. By Monday morning, another broker had already moved them toward a decision in principle while your email was still waiting.',
                 iconType: 'primary' as const,
             },
             {
                 icon: PhoneCall,
                 title: 'They were ringing three brokers in the same hour',
-                description: 'Whoever rang back first got the call. The other two never heard from them again.',
+                description: 'They were calling three brokers in the same hour because they needed clarity the same day. Whoever called back first got the real conversation, and the others usually never learned the buyer had already decided who felt most on it.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: FileSignature,
                 title: 'A pre-approved buyer never came back to complete',
-                description: 'A DIP went out. They went quiet. The case quietly stalled because nobody followed up at the right point in the cycle.',
+                description: 'A DIP went out, then the buyer went quiet while the property search carried on. Without the right follow-up at the right stage, the case drifted until another broker or portal became the easier option when they were ready again.',
                 iconType: 'accent' as const,
             },
         ],
@@ -52,7 +54,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     const workflowExamplesData = {
         badge: 'Real Moments',
         title: 'The hours that decide whose name goes on the application',
-        description: 'Small handoffs that decide whether a buyer becomes a placed case or a cold lead.',
+        description: 'These are the small handoffs that decide whether a buyer becomes a placed case or a cold lead. They usually look minor in the moment, but they are exactly where urgency turns into comparison and comparison turns into a decision.',
         workflows: [
             {
                 trigger: 'A new enquiry lands at 9pm on a Sunday.',
@@ -86,11 +88,11 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Be the broker who replied first, and the broker who is still there at remortgage',
-        description: 'You keep doing the cases. The two-hour window after an enquiry, and the two-year window before a remortgage, both stop relying on memory.',
+        description: 'You keep doing the advice and case work. The urgent first hours after an enquiry, plus the long stretch before a remortgage window opens, stop relying on memory, luck, or whoever happens to be checking messages first.',
         featureCategories: [
             {
                 title: 'Reply in the first hour, even on a weekend',
-                description: 'Web forms, missed calls, and out-of-hours enquiries all answered by a personal-feeling reply within minutes.',
+                description: 'Web forms, missed calls, and out-of-hours enquiries all get a reply that feels personal within minutes. That matters most when the buyer needs an answer the same day and is actively comparing who feels available.',
                 icon: MessageSquare,
                 features: [
                     'Out-of-hours acknowledgement that holds the lead',
@@ -100,7 +102,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Hold cases through the buying cycle',
-                description: 'DIPs, full applications, valuations, exchanges — every stage has a follow-up cadence so cases stop stalling silently.',
+                description: 'DIPs, full applications, valuations, and exchanges all get a follow-up cadence tied to the stage the buyer is actually in. That stops cases from going cold just because nobody checked back in when the next decision point arrived.',
                 icon: CalendarCheck,
                 features: [
                     'Stage-aware nudges for stalled cases',
@@ -110,7 +112,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Keep clients warm to remortgage',
-                description: 'Two and five-year fixes flagged in advance, with a structured re-engagement before they Google another broker.',
+                description: 'Two and five-year fixes are flagged in advance, with a structured re-engagement before the client starts Googling other brokers or clicking back into a comparison site. Repeat business stops being left to chance.',
                 icon: Banknote,
                 features: [
                     'Remortgage windows surfaced early',
@@ -120,7 +122,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Turn completed cases into proof',
-                description: 'A review request the day after completion, when the relief is freshest.',
+                description: 'A review request goes out the day after completion while the relief is still fresh and the buyer can still describe the experience clearly. That keeps your visible proof closer to the amount of work you are actually completing.',
                 icon: ShieldCheck,
                 features: [
                     'Review request triggered by completion',
@@ -130,7 +132,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable when the offer is being drafted',
-                description: 'Pages and Google profile lined up for the kind of buyer and area you actually want to serve.',
+                description: 'Your pages and Google profile line up around the buyer type, location, and urgency you actually want to serve. That helps you appear when the offer is being drafted and the buyer is deciding who to trust quickly.',
                 icon: Search,
                 features: [
                     'Found for area + buyer type',
@@ -144,12 +146,12 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for mortgage brokers.',
+        description: 'These are the supporting services that come up most often once a broker sees how much business depends on speed, stage-aware follow-up, and staying remembered. Each one reinforces a different part of that system.',
         cards: [
             {
                 icon: Handshake,
                 title: 'Smart Website Systems',
-                description: 'Be the first reply, even at 9pm on a Sunday.',
+                description: 'Helps you be the first reply, even at 9pm on a Sunday, when the buyer is still comparing who can move quickly.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -157,7 +159,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             {
                 icon: CalendarCheck,
                 title: 'CRM & Case Follow-up',
-                description: 'Hold every open DIP and case through the buying cycle.',
+                description: 'Keeps every open DIP and live case moving through the buying cycle so same-day urgency does not turn into silent drift later on.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -165,7 +167,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Reviews from completed cases, where the next buyer is reading.',
+                description: 'Gets reviews from completed cases in the places the next buyer is already reading while deciding which broker feels safest to contact.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -173,7 +175,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be the broker name buyers find when the offer is being drafted.',
+                description: 'Helps you become the broker name buyers find when an offer is being drafted and they need a trustworthy answer quickly.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -185,7 +187,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things mortgage brokers usually ask',
-        description: 'Honest answers about how this fits a deadline-driven, regulated practice.',
+        description: 'These are the practical questions that usually come up in a deadline-driven, regulated practice where urgency matters but the process still needs to stay careful. Straight answers, built around that balance.',
         faqs: [
             {
                 question: 'Will buyers feel they are getting an automated response?',
@@ -251,7 +253,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the cases are going elsewhere',
             description:
-                'If weekend enquiries are getting placed by other brokers, or remortgages are quietly going to a portal, walk us through how the last few cases ran and we will show you the first thing worth fixing.',
+                'If buyers needing same-day answers are ending up with another broker, or remortgages are quietly going to a portal later on, walk us through the last few cases and we will show you the first thing worth fixing.',
         },
     };
 }

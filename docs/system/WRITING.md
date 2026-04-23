@@ -20,44 +20,36 @@
 
 Before writing anything, lock this:
 
-**MindWP is NOT** a website design service, page builder, or SEO agency.
-**MindWP IS** a business operation layer — focused on what happens AFTER someone shows interest.
-
-Traffic, calls, and messages already exist. The problem: leads aren't handled, follow-up doesn't happen, enquiries aren't routed, opportunities are lost silently.
+Follow positioning rules defined in [./FOUNDATION.md](./FOUNDATION.md).
 
 **Writing direction:** FLOW → HANDLING → RESULT
 **Never:** PAGES → DESIGN → FEATURES
-### POSITIONING ENFORCEMENT (CRITICAL)
 
-The business MUST NOT be described as:
+**Boundary:** Writing controls language and execution. System ownership stays in the governing docs.
 
-- web design service
-- custom website provider
-- agency building websites
-- redesign service
+### INDUSTRY LANDING PAGE CONTEXT (NEW — CRITICAL)
 
-Even partially.
+Follow landing-page behavior defined in [./FOUNDATION.md](./FOUNDATION.md).
 
-#### WRONG EXAMPLES (REJECT)
+This means:
 
-❌ "Custom websites for service businesses"  
-❌ "We build websites that convert"  
-❌ "Professional website design with automation"
+- User must relate in seconds
+- Content must feel like “this happens in my business”
+- No teaching, explaining, or SEO-style openings
 
-#### CORRECT DIRECTION
+WRONG:
+"In this guide, we explore how businesses can improve lead handling"
 
-✅ "Leads come in. Nobody follows up."  
-✅ "People reach out. It goes nowhere."  
-✅ "Enquiries are missed, delayed, or forgotten."
+CORRECT:
+"The phone rang. You were already on a job. They didn’t leave a message."
 
-#### RULE
+Each industry page must reflect:
 
-If the sentence starts describing what we build instead of what goes wrong or what changes → IT IS WRONG.
+- how that specific business loses work
+- what goes wrong in real situations
+- what actually happens day-to-day
 
-If content sounds like building websites, designing pages, or selling SEO → STOP and REWRITE.
-
-**System boundary:** Writing controls perception only. Writing does NOT control graph relationships or conversion logic. If writing conflicts with graph or conversion → writing adapts without exposing system complexity.
-
+If content feels reusable across industries → it is wrong.
 ---
 
 ## 2. AI EXECUTION CONTRACT
@@ -175,6 +167,22 @@ We set things up — then it belongs to them. Use "your", not "our".
 ❌ "Our CRM tracks every lead." → ✅ "Your CRM tracks every lead."
 ❌ "Our system handles follow-ups." → ✅ "Follow-up emails go out on their own."
 
+### Landing Page Override (HIGH PRIORITY)
+
+When writing landing pages (especially industry pages):
+
+- Speed > completeness
+- Recognition > explanation
+- Specific > general
+
+Reader should NOT need to think.
+
+If they need to interpret → rewrite.
+
+Every key line should feel like:
+
+→ "I've seen this happen"
+
 ---
 
 ## 5. LANGUAGE RULES
@@ -214,6 +222,25 @@ Test: if a designer would say it → rewrite. If a business owner would say it �
 
 ❌ "Our system handles leads"
 ✅ "Leads get handled properly"
+
+### Generic Phrase Kill List (NEW)
+
+These phrases must ALWAYS be removed or rewritten:
+
+- "they chose someone else"
+- "they went elsewhere"
+- "you lose customers"
+- "missed opportunities"
+
+Replace with REAL outcomes:
+
+- missed call
+- late reply
+- no follow-up
+- no response
+- unanswered enquiry
+
+If language feels summarised → expand into a situation.
 
 ---
 
@@ -297,6 +324,24 @@ Per section: max 3 core ideas, max 5 bullets, max 1 idea per bullet.
 **Global:** one idea appears only once per page. If repeated across sections → keep strongest, delete rest.
 
 ---
+
+### Description Length Rule (NEW — STRICT)
+
+All section descriptions must be:
+
+- 2 lines minimum
+- 2–3 sentences max
+- must add clarity
+
+❌ BAD:
+Short 6–10 word lines
+
+✅ GOOD:
+Two-line descriptions that clearly explain what is happening
+
+Descriptions must be complete thoughts, not fragments.
+
+If a description feels incomplete → expand it.
 
 ## 9. OBSERVATION SYSTEM (LEVEL 5)
 
@@ -388,6 +433,28 @@ If hero can fit another page → it is wrong. If two heroes feel similar → rew
 ✅ "People visit your site. Then nothing happens."
 ✅ "Your competitors show up. You don't."
 
+### Industry Hero Enforcement (NEW)
+
+For industry pages specifically:
+
+Hero MUST:
+
+- describe a real moment
+- include physical or time-based context
+- feel like something that already happened
+
+❌ BAD:
+"Leads are missed"
+
+✅ GOOD:
+"The phone rang while you were under a car. They didn’t leave a message."
+
+Hero must NOT:
+
+- be abstract
+- be reusable across industries
+- sound like marketing copy
+
 ---
 
 ## 12. COMPARISON RULES
@@ -474,6 +541,25 @@ Content must align with graph metadata, conversion system, and page intent. Mism
 ### Entry Page Rule
 
 Even SEO/entry pages must reflect system thinking, NOT sound like standalone services, and naturally lead to core systems. If a page can exist independently → FAIL.
+
+### Industry Differentiation Rule (NEW)
+
+Each industry MUST differ in:
+
+- dominant pain
+- urgency level
+- decision speed
+- emotional tone
+
+Examples:
+
+- Automotive → urgency + missed calls  
+- Home services → surge + overload  
+- Beauty → repeat visits + availability  
+- Legal → trust + delay  
+- Real estate → pipeline + timing  
+
+If two pages feel similar → rewrite one completely.
 
 ---
 
@@ -701,6 +787,23 @@ When processing multiple pages:
 - After each section: run connector audit + duplication check + density filter
 - Do NOT over-engineer low-impact sections (FAQ, Included = L3 is fine)
 
+### AI WRITE SAFETY (NEW — CRITICAL)
+
+When AI is editing files:
+
+- NEVER append content
+- ALWAYS overwrite entire file cleanly
+- DO NOT partially merge sections
+- DO NOT reuse old content blocks
+
+Editor Safety:
+
+- Assume file may already be open
+- Replace content top → bottom
+- Avoid duplication bugs
+
+If duplicate content appears → rewrite file cleanly.
+
 ---
 
 ## QUICK REFERENCE — THE 6 QUESTIONS
@@ -718,4 +821,4 @@ If every section passes → content is ready.
 
 ## SYSTEM-LEVEL RULES (REFERENCE)
 
-Service definitions, boundaries, terminology, and system consistency → **SYSTEM.md**
+Service definitions, boundaries, terminology, and system consistency → [./FOUNDATION.md](./FOUNDATION.md)

@@ -18,8 +18,8 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For Landscapers',
     title: 'Patio Quote Sent In April. Decision In June. Six Other Landscapers Got A Look In Between.',
     description:
-      'Landscaping decisions are not made over the phone. They are made over six weeks of mulling, comparing, and asking the neighbour. The first warm weekend of spring fills the inbox in days. By midsummer, half of those quotes are still open and nobody at the firm can tell which are warm, which are cold, and which lapsed maintenance regular has just hired someone else for the season.',
-    list: ['Slow decisions', 'Drifting quotes', 'Lost regulars'],
+      'Landscaping decisions usually take weeks, not one phone call. The first warm weekend fills the inbox fast, then the homeowner slows down, compares ideas, waits for the weather to settle, and the quote often goes to whoever stayed in touch while everyone else let it drift into summer.',
+    list: ['Slow decisions', 'Spring backlogs', 'Drifting quotes'],
     cssPrefix: 'landscaping-companies-hero',
   };
 
@@ -27,34 +27,34 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where The Season Slips',
     title: 'Where landscapers actually lose the season',
     description:
-      'It is rarely a single bad day. It is the slow erosion of an inbox that fills in March and goes unread by June.',
+      'It is rarely one dramatic day that causes the loss. More often it is the slow erosion of an inbox that fills in March, gets replied to unevenly in April, and still has open quotes nobody fully understands by June.',
     benefits: [
       {
         icon: Sprout,
         title: 'First warm weekend, twenty quote requests, five replied to by Friday',
         description:
-          'You are on a job. The inbox triples. By the time the rain comes back, fifteen homeowners have asked someone else and you do not even know which fifteen.',
+          'You are on a job and the inbox triples before anyone really has a chance to catch up. By the time the rain comes back, fifteen homeowners have already spoken to other landscapers and you do not even know which fifteen are still worth calling back.',
         iconType: 'primary' as const,
       },
       {
         icon: Hourglass,
         title: 'A patio quote sat open for six weeks while the homeowner thought about it',
         description:
-          'Eight grand. Quote sent in April. Nobody nudged in May. By June the homeowner has had two more quotes, picked one, and you never knew the conversation was still alive.',
+          'Eight grand, quote sent in April, then no nudge in May while everybody assumed the homeowner would come back when ready. By June they have seen two more quotes, talked it through at home, and chosen someone while you still thought it was only waiting.',
         iconType: 'primary' as const,
       },
       {
         icon: Repeat,
         title: 'Last year\u2019s monthly maintenance regular never re-engaged',
         description:
-          'They had you in every month until October. Spring came round again, nobody nudged, and a different firm started cutting in March.',
+          'They had you in every month until October, then winter happened and nobody spoke again. Spring came round, nobody nudged them early, and a different firm started cutting in March before you even realised they had drifted.',
         iconType: 'secondary' as const,
       },
       {
         icon: Eye,
         title: 'Open quotes living across email, paper notes and a phone',
         description:
-          'Nobody can scan the open list in ten seconds. The garden refit that needed one polite check-in in May is now three months stale.',
+          'Nobody can scan the open list in ten seconds because half of it lives in email and the rest lives in notes and phones. The garden refit that needed one polite check-in in May is now stale by July.',
         iconType: 'accent' as const,
       },
     ],
@@ -65,7 +65,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'A Six-Week Decision',
     title: 'A spring quote, before and after',
     description:
-      'Same gardens. Same crew. What changes is whether you stay in the homeowner\u2019s head while they take their time.',
+      'Same gardens and same crew, but a very different outcome once somebody actually holds the quote through the slow middle. What changes is whether you stay in the homeowner\'s head while they take their time deciding.',
     comparisons: [
       {
         type: 'before' as const,
@@ -94,23 +94,23 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five pieces sized for one big season and three quiet ones',
     description:
-      'Each piece does one job in the slow middle of a homeowner\u2019s decision. None of them ask you to come off a job to type.',
+      'Each piece handles one part of the slow middle of a landscaping decision, when the homeowner is still comparing ideas, timing, and price. None of them ask you to come off a job just to keep the quote alive.',
     featureCategories: [
       {
         title: 'Catch the spring-surge enquiry inside a minute',
         description:
-          'Calls and forms fire a real-sounding text-back capturing the property and the job. The homeowner stops shopping around for a day or two.',
+          'Calls and forms fire a real-sounding text-back that captures the property and the job before the enquiry disappears into the spring backlog. That buys you time while the homeowner is still figuring out who to get out for a proper look.',
         icon: Sprout,
         features: [
           'Text-back inside 60 seconds',
           'Property and job type captured up front',
-          'Customer knows you have seen it',
+          'Homeowner knows you have seen it',
         ],
       },
       {
         title: 'Make every open quote visible in one place',
         description:
-          'Refit, patio, lawn and maintenance quotes sit on a single board sorted by how warm and how old. The office can scan it in ten seconds.',
+          'Refit, patio, lawn, and maintenance quotes sit on a single board sorted by how warm they still are and how old they have become. The office can scan it in ten seconds instead of guessing which spring jobs are still live.',
         icon: Eye,
         features: [
           'One board for every open quote',
@@ -121,7 +121,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Stay in the conversation through the slow middle',
         description:
-          'A friendly check-in fires a few days after the quote, and again a week or two on. It reads like a person at the office, not a sequence.',
+          'A friendly check-in goes out a few days after the quote, and again a week or two later while the homeowner is still thinking it over. It reads like a real person in the office, not something automated and overly smooth.',
         icon: Clock,
         features: [
           'Auto chase at the right intervals',
@@ -132,7 +132,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Bring last year\u2019s regulars back before the first cut',
         description:
-          'A quiet nudge fires to lapsed maintenance customers a few weeks before spring. Most of them re-book without thinking.',
+          'A quiet nudge goes to lapsed maintenance regulars a few weeks before spring really starts moving. Most of them re-book without much thought because you reached out before somebody else filled the slot in their head.',
         icon: Repeat,
         features: [
           'Lapsed-customer nudges before the season starts',
@@ -143,7 +143,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'A short ask after a finished garden',
         description:
-          'The day after a refit lands, while the homeowner is still wandering out with a cup of tea looking at it, a friendly review request goes out.',
+          'The day after a refit lands, while the homeowner is still wandering out with a cup of tea and looking at it again, a friendly review request goes out. That is when the work still feels vivid enough to talk about properly.',
         icon: Star,
         features: [
           'Review ask the day after',
@@ -159,7 +159,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where Most Landscapers Start',
     title: 'You do not have to fix the whole season at once',
     description:
-      'Most landscaping firms feel one of these louder than the others. Pick the loudest leak.',
+      'Most landscaping firms can hear one of these problems louder than the others as soon as spring starts stacking work up. Start with the leak that is costing the most jobs across the whole season, not just this week.',
     packages: [
       {
         name: 'Stop refit quotes drifting',
@@ -203,12 +203,12 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts landscapers tend to lean on most.',
+    description: 'These are the supporting services landscapers tend to lean on most once they can see where spring demand, slow decisions, and lapsed regulars are slipping. Each one helps hold follow-up, visibility, proof, or reactivation together a bit better.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, survey and quote flow together through spring surge.',
+        description: 'Helps enquiry, survey, and quote handling stay connected through the spring surge instead of fading apart once the inbox starts filling.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -216,7 +216,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'CRM Automation',
-        description: 'Holds the open quote board, the friendly check-ins and the lapsed-regular nudges.',
+        description: 'Keeps the open quote board, the friendly check-ins, and the lapsed-regular nudges moving without somebody having to remember every one by hand.',
         href: '/services/crm-automation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -224,7 +224,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "landscaper near me" the moment the sun comes out.',
+        description: 'Helps you stay visible when the first warm weekend hits and homeowners start searching for patios, gardens, and regular maintenance again.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -232,7 +232,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished patios and refits into proof on Maps and search.',
+        description: 'Turns finished patios and refits into proof on Maps and search, so the next homeowner comparing ideas sees real work that still feels fresh.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -244,7 +244,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What landscapers ask first',
-    description: 'Direct, no hedging.',
+    description: 'Straight answers about slower patio decisions, spring demand, and how to stop good quotes drifting across the season.',
     faqs: [
       {
         question: 'Most of our patio quotes go quiet for a month. Will a chase actually help?',
@@ -254,7 +254,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Will the chase make us look pushy?',
         answer:
-          'No. It reads like a person at the office, fires at sensible intervals, and most homeowners thank you for the nudge.',
+          'No. It reads like a person at the office, fires at sensible intervals, and most homeowners are glad someone checked back in while they were still comparing ideas and prices.',
       },
       {
         question: 'How does the open quote board help us through spring?',
@@ -269,7 +269,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Will customers feel they got an automated reply on the first contact?',
         answer:
-          'No. The first message reads like the office wrote it. Short, useful, and tells them when you will be in touch.',
+          'No. The first message reads like the office wrote it. Short, useful, and clear about when you will be in touch next.',
       },
       {
         question: 'When does the review request go out?',
@@ -314,7 +314,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us about the patio quote that went quiet',
       description:
-        'Walk us through a recent refit quote that drifted \u2014 when it went out, when you last heard back, who eventually did the job. We will tell you what to plug first.',
+        'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
     },
   };
 }

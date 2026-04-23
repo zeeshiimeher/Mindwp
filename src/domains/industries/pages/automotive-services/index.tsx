@@ -19,16 +19,17 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     badge: 'For Automotive Service Businesses',
     title: 'The Bays Stay Booked. The Front Desk Is What Loses Work.',
     description:
-      'In most automotive shops the work itself is fine. What slips is everything around it. The phone goes during a job. An estimate sits in a thread. A driver picks the next garage because nobody got back to them. The skill is in the workshop. The leak is at the desk.',
-    list: ['Phone chaos', 'Stalled quotes', 'Quiet review wall', 'Buried admin'],
+      'In most automotive businesses, the workmanship is not the problem. The leak shows up around the job: a phone ringing while everyone is busy, an estimate still sitting there the next morning, a driver giving the work to the shop that replied first.',
+    list: ['Missed calls', 'Slow quotes', 'Thin reviews', 'Desk drag'],
     cssPrefix: 'automotive-services-hero',
   };
 
   const operatingPatternsData = {
     badge: 'The Same Few Leaks',
-    title: 'Across repair shops, body shops, detailers and mobile vans, the same handful of moments keep losing work',
+    title:
+      'Across repair shops, body shops, detailers and mobile vans, the same handful of moments keep losing work',
     description:
-      'Different setups. Different tools. Same pinch point — somebody waits a few hours and books elsewhere.',
+      'Different setups. Different tools. Same pressure points. Someone tries to get through, waits longer than they expected, then gives the job to whoever made the next step easier.',
     benefits: [
       {
         icon: PhoneMissed,
@@ -41,7 +42,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
         icon: Receipt,
         title: 'Estimates sit half-written in someone\u2019s inbox',
         description:
-          'The number was almost ready on Tuesday. By Friday the driver assumes you forgot. They did not chase you. They booked the shop that chased them.',
+          'The number was nearly ready before lunch on Tuesday. By Thursday afternoon the driver has stopped expecting it, and the repair has gone to the shop that kept the conversation moving.',
         iconType: 'secondary' as const,
       },
       {
@@ -102,7 +103,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     badge: 'How You Actually Run',
     title: 'The fix is shaped by the shop, not the other way around',
     description:
-      'Before anything is built, we look at how enquiries actually arrive in your shop, who is meant to handle them, and where they slip in a normal week.',
+      'Before we touch anything, we look at how work actually reaches you, who is supposed to pick it up, and where it goes thin in a normal week. The answer is different in a workshop, a body shop, a detailing bay, and a van.',
     features: [
       {
         title: 'A shop with bays and a counter',
@@ -137,14 +138,14 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     badge: 'Worth A Look If',
     title: 'A few honest signs the leak is bigger than another marketing tweak will fix',
     description:
-      'Tick most of these and the issue is structural. Another set of ads will not change the answer.',
+      'Tick most of these and the problem is not visibility on its own. More clicks or more calls will only add pressure to the same weak spots.',
     items: [
       'You have lost count of how many calls hit voicemail in a normal week',
       '"Did anyone ring them back?" gets asked more than once a day',
       'Estimates go out, then nobody really knows which ones got chased',
       'The competitor up the road has triple your reviews and you know your work is better',
       'Last time you spent on ads, the inbox got worse, not the diary',
-      'New customers find you fine. Past customers vanish without a trace',
+      'New drivers find you fine. Past drivers vanish without a trace',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-alt',
@@ -155,7 +156,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     badge: 'How A Conversation Goes',
     title: 'From "we keep losing work" to "we stopped losing it" without a rebuild',
     description:
-      'No pitch decks. We look at where the work is actually leaving and start with the leak that costs you the most.',
+      'No big presentation, no inflated scope. We look at the exact point where work is escaping now and start with the leak that costs you the most in a normal week.',
     steps: [
       {
         number: '01',
@@ -191,33 +192,33 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     badge: 'By Shape Of Shop',
     title: 'Pick the page that sounds like your week',
     description:
-      'Same category, different leaks. Each page goes deeper on the specific moments that lose work in that kind of shop.',
+      'Same category, different weak spots. Each page stays broad enough to scan quickly, but specific enough to sound like the kind of week your team actually has.',
     items: [
       {
         title: 'Auto Repair',
         description:
-          'For shops where the phone goes during a brake job and the estimate that went out on Tuesday is still sitting unread.',
+          'For shops where the phone goes during a brake job, voicemail piles up before lunch, and Tuesday’s estimate is still sitting there when the bay finally clears.',
         href: '/industries/automotive-services/auto-repair',
         icon: Wrench,
       },
       {
         title: 'Body Shops',
         description:
-          'For shops where a photo of the damage hits three inboxes at once and the slowest one to open it loses the repair.',
+          'For shops where a damage photo lands from a car park, the first useful reply wins trust fast, and a slow estimate makes the whole shop feel harder to deal with.',
         href: '/industries/automotive-services/body-shops',
         icon: Headset,
       },
       {
         title: 'Car Detailing',
         description:
-          'For detailers whose Saturday morning DMs sit unread until 6pm and whose best regulars quietly stopped booking.',
+          'For detailers whose Saturday DMs stack up while they are in the bay, and whose old regulars drift a season at a time because nobody nudged them back in.',
         href: '/industries/automotive-services/car-detailing',
         icon: Clock3,
       },
       {
         title: 'Mobile Mechanics',
         description:
-          'For van-based mechanics whose front desk is a phone in the glovebox and half a day gets lost driving to wrong postcodes.',
+          'For van-based mechanics working from driveways and roadside callouts, where missed calls, bad postcodes, and slow follow-up waste time before the spanners even come out.',
         href: '/industries/automotive-services/mobile-mechanics',
         icon: MapPinned,
       },

@@ -20,8 +20,8 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For Electrical Firms',
     title: 'Sunday 9pm. The Board Kept Tripping. Three Sparkies Got The Call.',
     description:
-      'The baby was asleep upstairs. Half the house was dark. The homeowner was not waiting around — they had Google open and were dialling down a list. Whoever answered got the fault, then the consumer unit upgrade two weeks later, then the EV charger after that. The other two never knew the call happened.',
-    list: ['Tripping boards', 'Burning smells', 'Quiet EV quotes'],
+      'Half the house was dark, the board kept tripping, and nobody in that house was waiting until morning to see what happened next. The caller had Google open, rang three sparkies in a row, and stuck with the one who answered before the fault turned into a longer night.',
+    list: ['Power out', 'Board tripping', 'Night faults'],
     cssPrefix: 'electrical-companies-hero',
   };
 
@@ -29,34 +29,34 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where The Work Walks Out',
     title: 'Where electrical firms quietly lose the next job',
     description:
-      'Two truths about electrical work. People do not wait when the power is wrong. And the bigger the quote, the longer the silence before someone else gets it.',
+      'Two things happen in electrical work every week. Fault calls come in when the power is wrong and nobody will wait, and bigger quotes go quiet because the follow-up never gets sent once the urgent jobs take over again.',
     benefits: [
       {
         icon: ZapOff,
         title: 'A board trips on a Sunday and the call rings out',
         description:
-          'You are at dinner. The voicemail says "half the house has gone". By the time you see it Monday, an emergency call-out has already happened and the customer remembers a different name.',
+          'You are at dinner and the voicemail says half the house has gone off again. By the time you pick it up on Monday, the emergency call-out has already happened and the homeowner only remembers the name that answered on Sunday night.',
         iconType: 'primary' as const,
       },
       {
         icon: Flame,
         title: 'A burning smell at midnight goes to nobody',
         description:
-          'They tried the office line. Then they tried two others. One picked up. That one is now also booked for the rewire conversation that came up on the visit.',
+          'They tried the office line, then two others, because something smelled wrong and they wanted an answer fast. One picked up, handled the fault, and stayed in the frame for the rewire conversation that came up while they were there.',
         iconType: 'primary' as const,
       },
       {
         icon: BatteryCharging,
         title: 'EV charger quote sits in someone\u2019s inbox for a fortnight',
         description:
-          'Survey done. Quote sent. Nobody nudged. The customer is not annoyed — they just assumed you were full and went with the firm that emailed twice.',
+          'Survey done, quote sent, then nothing for two weeks because everyone got dragged back into fault work and smaller jobs. The homeowner is not annoyed. They just assume you are too busy and reply to the firm that checked back in.',
         iconType: 'secondary' as const,
       },
       {
         icon: CircuitBoard,
         title: 'A consumer unit job goes cold without anyone noticing',
         description:
-          'No board. No reminder. No second look. The quote disappears into the same drawer as last month\u2019s open ones, and nobody finds out until a customer says "we got someone else".',
+          'No board, no reminder, no second look after the quote goes out. It disappears into the same drawer as last month\u2019s open jobs, and nobody notices until the homeowner has stopped replying and the week has moved on.',
         iconType: 'accent' as const,
       },
     ],
@@ -67,12 +67,12 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five pieces sized for fault calls and big-ticket quotes',
     description:
-      'Two halves of the same business. Catch the fault before the next number is dialled. Stop the quote disappearing before someone remembers it.',
+      'There are really two pressures here: fault calls that need holding immediately and install quotes that need following up later. These pieces keep both sides moving without asking someone in the office to remember everything by hand.',
     featureCategories: [
       {
         title: 'Hold the fault call before the next number gets dialled',
         description:
-          'Every missed call fires a short text in under a minute. It captures the address and what is happening at the board. The customer stops scrolling.',
+          'Every missed call fires a short text in under a minute and asks what is happening at the board or in the house. That is often enough to stop the caller scrolling to the next sparkie while you are still finishing the job in front of you.',
         icon: PhoneOff,
         features: [
           'Text-back inside 60 seconds',
@@ -83,7 +83,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Faults sit at the top of the queue, not in date order',
         description:
-          '"Burning smell" and "no power" surface above a routine fitting job. Nobody has to read three voicemails to triage.',
+          '"Burning smell", "power out", and "board tripping" surface above routine fitting jobs the moment they land. Nobody has to sit there listening through three voicemails before working out what needs calling back first.',
         icon: AlarmClock,
         features: [
           'Urgency tag the moment it lands',
@@ -94,7 +94,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Big-ticket quotes get a real follow-up, not silence',
         description:
-          'EV chargers, consumer units and rewires get a polite check-in a few days later. Open quotes sit on a board the office can scan in ten seconds.',
+          'EV chargers, consumer units, and rewires get a polite check-in a few days later instead of dropping into silence. Open quotes stay in one place the office can scan in ten seconds before another busy day takes over.',
         icon: ListChecks,
         features: [
           'Auto chase that reads like a person',
@@ -105,7 +105,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'EV and rewire enquiries arrive with the right details',
         description:
-          'Instead of "can someone ring me back about a charger?" the enquiry already has the car, the parking, the fuse board age. The first reply is useful, not a back-and-forth.',
+          'Instead of "can someone ring me back about a charger?" the enquiry already includes the car, the parking setup, and the age of the fuse board. The first reply can move things forward instead of turning into a slow back-and-forth.',
         icon: Bell,
         features: [
           'Tailored intake for EV, CU and rewires',
@@ -116,7 +116,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'A short ask after commissioning so reviews actually land',
         description:
-          'Day after the new board is in and the lights are on, a friendly request goes out. They actually leave one because they were just asked at the right moment.',
+          'The day after the new board is in and the lights are back on, a friendly request goes out while the relief still feels fresh. That is when people are most likely to leave the review instead of meaning to and forgetting.',
         icon: Star,
         features: [
           'Review ask the day after commissioning',
@@ -132,7 +132,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Three Real Moments',
     title: 'Three moments that decided last month, and what changes',
     description:
-      'These are the moments at the top of the page. This is what happens to them after.',
+      'These are the kinds of calls and quotes that decide the month without looking dramatic in the diary. This is what changes once the reply and follow-up stop relying on memory.',
     workflows: [
       {
         trigger: 'Sunday 9pm \u2014 board keeps tripping, missed call to the office',
@@ -167,7 +167,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where Most Sparkies Start',
     title: 'You do not have to fix everything at once',
     description:
-      'Most electrical firms feel one of these louder than the others. Pick the loudest leak.',
+      'Most electrical firms can hear one of these problems louder than the rest as soon as they look properly. Start with the one that is costing the most work right now.',
     packages: [
       {
         name: 'Catch the fault calls',
@@ -211,12 +211,12 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts electrical firms tend to lean on most.',
+    description: 'These are the supporting services electrical firms tend to lean on most once they can see where calls and quotes are slipping. Each one helps hold response, visibility, or proof together a bit better.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, survey and quote flow together.',
+        description: 'Helps enquiry, survey, and quote handling stay connected so fault calls and bigger installs do not drift apart.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -224,7 +224,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: PhoneOff,
         title: 'AI Lead Handling',
-        description: 'Catches fault calls before the next number is dialled.',
+        description: 'Catches fault calls before the next number is dialled, especially when the board is tripping and nobody wants to wait around.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -232,7 +232,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "electrician near me" the moment a board trips.',
+        description: 'Helps you stay visible for "electrician near me" at the exact moment a board trips or the power goes out in the evening.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -240,7 +240,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns commissioned installs into proof on Maps and search.',
+        description: 'Turns commissioned installs and fault fixes into proof on Maps and search, so the next caller sees work that feels current and real.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -252,7 +252,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What sparkies ask first',
-    description: 'Direct, no hedging.',
+    description: 'Straight answers about fault calls, bigger installs, and what actually helps when the phone goes after hours.',
     faqs: [
       {
         question: 'Most fault calls come after six. Will this actually help then?',
@@ -267,7 +267,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Will the chase on EV and CU quotes sound like a robot?',
         answer:
-          'No. It reads like the office wrote it. Short, friendly, and most customers thank you for the nudge.',
+          'No. It reads like the office wrote it. Short, friendly, and most homeowners are glad someone checked back in before the quote dropped off their radar.',
       },
       {
         question: 'Can EV and rewire intake actually be useful before we ring back?',
@@ -282,7 +282,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Do we need a brand new website?',
         answer:
-          'Usually not. The bottleneck is what happens after the form is sent.',
+          'Usually not. The bigger leak is normally what happens after the call or form lands, not the website itself.',
       },
     ],
   };
@@ -322,7 +322,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us about last Sunday\u2019s fault call',
       description:
-        'Walk us through the last fault call that hit voicemail and the EV quote that went silent. We will tell you what to plug first.',
+        'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
     },
   };
 }

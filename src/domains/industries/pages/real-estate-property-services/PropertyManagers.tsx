@@ -18,37 +18,39 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         badge: 'For Property Managers',
         title: 'A Landlord With Eight Doors Emailed Three Agencies On Sunday Night. By Monday Lunchtime, Two Had Replied.',
         description:
-            'Landlords do not change agency on a whim. They change because they got tired of chasing for updates, of tenants going quiet, of nobody owning the small things. The new agency rarely wins on price. They win because someone replied on Monday morning like it mattered.',
-        list: ['Slow landlord reply', 'Tenant frustration', 'Silent portfolio', 'Lost door'],
+            'Landlords usually compare agencies quietly before they move a portfolio, and they notice speed immediately. A slow reply, no update on a tenant issue, or another month of hearing nothing can do more damage than one big mistake because it makes the whole relationship feel unattended.',
+        list: ['Late replies', 'No updates', 'Tenant gaps', 'Quiet exits'],
         cssPrefix: 'property-managers-hero',
     };
 
     const operatingPatternsData = {
         badge: 'Where Doors Quietly Walk',
         title: 'Portfolios are not lost in a single moment. They erode in unanswered messages.',
+        description:
+            'Most landlords do not announce that they are losing confidence. They compare, wait for replies, and keep score on the small communication moments that make a portfolio feel steady or neglected.',
         benefits: [
             {
                 icon: Inbox,
                 title: 'The landlord enquiry sat all weekend',
-                description: 'They emailed Sunday night. You saw it Monday afternoon. They had already booked a call with the agency that replied at 9am.',
+                description: 'They emailed on Sunday night after another week of frustration and started comparing by Monday morning. By the time you saw it in the afternoon, they had already booked a call with the agency that replied first and sounded more present.',
                 iconType: 'primary' as const,
             },
             {
                 icon: Wrench,
                 title: 'A tenant issue went two days without an update',
-                description: 'It was on someone\'s list. They were waiting for a contractor. Nobody told the tenant. The trust quietly broke.',
+                description: 'The issue was on someone\'s list and a contractor was being chased, but the tenant heard nothing in the meantime. Two days without an update feels like nobody owns it, and that trust is hard to rebuild once it slips.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: ClipboardList,
                 title: 'The landlord never hears unless something is wrong',
-                description: 'Quiet months feel like neglect. A short, scheduled update keeps the relationship steady when there is genuinely nothing to report.',
+                description: 'Quiet months do not always feel calm to a landlord. They often feel like neglect unless somebody says otherwise, and that is exactly when another agency\'s tidy monthly update can start looking more reassuring.',
                 iconType: 'accent' as const,
             },
             {
                 icon: KeyRound,
                 title: 'A renewal slipped past the window',
-                description: 'A tenant served notice. Nobody had had the renewal conversation in time. The void is on you.',
+                description: 'The renewal conversation should have started before notice was even on the table, but it did not. By the time the tenant served notice, the avoidable void already felt like something the agency had simply not stayed ahead of.',
                 iconType: 'primary' as const,
             },
         ],
@@ -58,7 +60,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     const comparisonData = {
         badge: 'Two Months In The Same Portfolio',
         title: 'Same doors. Same tenants. Two completely different landlord experiences.',
-        description: 'The work is broadly the same. What differs is whether the landlord ever has to chase, and whether the tenant ever has to wonder.',
+        description: 'The underlying work may be similar in both cases, but the experience is not. What changes is whether the landlord has to chase for certainty and whether the tenant is left wondering what is actually happening.',
         comparisons: [
             {
                 type: 'before' as const,
@@ -86,11 +88,11 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Reliability the landlord can feel, without growing the team',
-        description: 'You keep running the portfolio. The bits that decide whether a door stays or walks stop relying on whoever happened to check the inbox.',
+        description: 'You keep running the portfolio itself. The communication moments that decide whether a landlord stays, whether a tenant trusts you, and whether a renewal gets rescued stop relying on whoever happened to notice the inbox first.',
         featureCategories: [
             {
                 title: 'Acknowledge new landlord enquiries the same hour',
-                description: 'A warm, named reply within the hour, even on a Sunday evening enquiry. They stop emailing other agencies.',
+                description: 'A warm, named reply goes back inside the hour, even on a Sunday evening enquiry. That matters because landlords comparing agencies are often still waiting to see who takes them seriously first.',
                 icon: MessageCircle,
                 features: [
                     'Same-hour acknowledgement',
@@ -100,7 +102,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Keep tenants in the loop without extra calls',
-                description: 'Status updates fire automatically as a maintenance ticket moves. The tenant stops wondering. The reviews start matching the work.',
+                description: 'Status updates go out automatically as a maintenance ticket moves, so the tenant is not left waiting in silence. That removes a lot of the frustration that usually gets blamed on the team even when the work itself is in hand.',
                 icon: Wrench,
                 features: [
                     'Auto-update when a contractor is booked',
@@ -110,7 +112,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Send the landlord update they never had to ask for',
-                description: 'A short, scheduled portfolio note — even in quiet months. The relationship stops needing rescuing.',
+                description: 'A short, scheduled portfolio note goes out even when nothing dramatic has happened. That stops the relationship from drifting into one where the landlord only hears from you when something has already gone wrong.',
                 icon: Mail,
                 features: [
                     'Monthly or quarterly cadence per landlord',
@@ -120,7 +122,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'See the renewal before the notice',
-                description: 'Renewal windows surfaced 60 days out, with a structured conversation flow so voids stop being a surprise.',
+                description: 'Renewal windows get surfaced early enough for the right conversation to happen before notice appears. That makes voids less likely to arrive as an avoidable surprise everyone saw too late.',
                 icon: ShieldCheck,
                 features: [
                     'Renewal flag at the right point',
@@ -130,7 +132,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable for the right kind of landlord',
-                description: 'Pages and search visibility lined up for portfolio size, area, and property type — not generic letting.',
+                description: 'Pages and search visibility line up around portfolio size, area, and property type instead of generic letting language. That helps the right kind of landlord find you at the point they have started comparing alternatives.',
                 icon: Search,
                 features: [
                     'Found for area + portfolio profile',
@@ -144,12 +146,12 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for property managers.',
+        description: 'These are the supporting services that come up most often once a property manager sees how much trust is being won or lost through communication. They reinforce replies, updates, proof, and landlord visibility from different sides.',
         cards: [
             {
                 icon: Users,
                 title: 'CRM & Tenant Communication',
-                description: 'Auto-updates so tenants stop chasing and reviews stop suffering.',
+                description: 'Keeps tenant updates moving so people stop chasing for basic information and the review picture stops being dragged down by silence.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -157,7 +159,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             {
                 icon: Building2,
                 title: 'Smart Website Systems',
-                description: 'Catch landlord enquiries the same hour, even at the weekend.',
+                description: 'Helps you catch landlord enquiries the same hour, even at the weekend, before they finish comparing the next agency on the list.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -165,7 +167,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             {
                 icon: ShieldCheck,
                 title: 'Reputation & Review Systems',
-                description: 'Build a review base that actually reflects how the portfolio runs.',
+                description: 'Builds a review base that more accurately reflects how the portfolio runs when communication is handled properly and people are not left chasing.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -173,7 +175,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be the agency landlords find for the area you actually serve.',
+                description: 'Helps you show up as the agency landlords find for the area and portfolio type you actually want to manage, not just as another generic local listing.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -185,7 +187,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things property managers usually ask',
-        description: 'Honest answers about how this fits a busy lettings or block management team.',
+        description: 'These are the practical questions that usually come up in a busy lettings or block management team where landlords expect certainty and tenants expect updates. Straight answers, written around that pressure.',
         faqs: [
             {
                 question: 'Will tenants feel they are getting robotic messages?',
@@ -251,7 +253,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the portfolio is leaking',
             description:
-                'If landlords leave quietly or tenant reviews do not match how hard the team works, walk us through a normal month and we will show you which gap is costing the most doors.',
+                'If landlords keep chasing for certainty or tenants are left waiting with no update, walk us through a normal month and we will show you which gap is costing the most doors.',
         },
     };
 }

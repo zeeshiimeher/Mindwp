@@ -18,15 +18,15 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         badge: 'For Small Med Spas',
         title: 'She Filled In The Consultation Form On Tuesday Night. By Friday She Had Booked The Clinic That Replied On Wednesday.',
         description:
-            'Med spa clients do not buy on impulse. They enquire, they compare, they wait. The clinic that calls them back the next morning — calmly, not pushy — is almost always the one that ends up doing the treatment.',
-        list: ['Cold enquiry', 'Slow callback', 'No follow-up', 'Plan dropped'],
+            'Med spa clients rarely book on impulse, but they do notice quickly when interest goes cold. If the enquiry sits too long, the consult happens with no clear next step, or the plan is never followed up calmly, the booking quietly falls away before treatment ever starts.',
+        list: ['Cold enquiries', 'Slow consults', 'Quiet hesitation', 'Dropped plans'],
         cssPrefix: 'small-med-spas-hero',
     };
 
     const decisionChecklistData = {
         badge: 'How A Med Spa Enquiry Actually Decides',
         title: 'Three things she is quietly checking before she books',
-        description: 'She is not comparing prices. She is checking whether you feel safe, organised, and present.',
+        description: 'She is not only comparing prices or treatment menus. She is checking whether the clinic feels safe, organised, and steady enough to trust with something she is still slightly nervous about.',
         items: [
             'A same-day, named reply with two suggested consult times',
             'A short pre-consult intake that respects her time',
@@ -43,23 +43,25 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     const operatingPatternsData = {
         badge: 'Where Consults Become Bookings — Or Don\'t',
         title: 'The treatment is not the sale. The follow-up is.',
+        description:
+            'The consult may go well and the practitioner may feel right, but that does not finish the decision. The booking usually depends on what happens in the quiet day or two after she leaves thinking it over.',
         benefits: [
             {
                 icon: MessageSquare,
                 title: 'The form sat in an inbox until Wednesday',
-                description: 'By the time anyone replied, she had a Friday consult booked elsewhere. The form was fine. The reply was not.',
+                description: 'By the time anyone replied, she had already taken a Friday consult somewhere that felt more responsive. The enquiry itself was fine. What failed was the speed and tone of the first reply.',
                 iconType: 'primary' as const,
             },
             {
                 icon: FileSearch,
                 title: 'The consult went well. Then nothing.',
-                description: 'No written plan, no follow-up at the right window. She liked the practitioner. She just did not feel chased — in the right way.',
+                description: 'No written plan arrived and no calm follow-up came in the window where she was still thinking hard about it. She liked the practitioner, but the silence made the whole decision easier to postpone.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: CalendarCheck,
                 title: 'The treatment plan stalled at session two',
-                description: 'Series-based treatments need scheduled rebook prompts. Without them, plans quietly become single sessions.',
+                description: 'Series-based treatments need steady rebook timing or the plan starts slipping after the early momentum. Without that structure, a four-session plan can quietly turn into one or two visits and then stop.',
                 iconType: 'accent' as const,
             },
         ],
@@ -69,11 +71,11 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Calm, fast, structured follow-up — from first enquiry to plan completion',
-        description: 'You stay focused on assessment and treatment. The bit that turns enquiry into a booked plan stops depending on someone remembering to email back.',
+        description: 'You stay focused on assessment and treatment. The part that turns an enquiry into a booked consult and a consult into a completed plan stops depending on someone remembering to chase it later.',
         featureCategories: [
             {
                 title: 'Same-day, named reply to every enquiry',
-                description: 'No web form sits past lunch. The first reply offers two consult times and feels like a real human, not a portal.',
+                description: 'No web form sits untouched into the next day. The first reply offers two consult times and sounds like a real person in the clinic, not an empty portal message.',
                 icon: PhoneCall,
                 features: [
                     'Same-day acknowledgement',
@@ -83,7 +85,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Pre-consult intake, post-consult plan',
-                description: 'A short structured intake before the consult, and a written plan after. She sees you take it seriously.',
+                description: 'A short structured intake arrives before the consult, then a written plan follows after it. She can see the clinic has taken her goals seriously instead of leaving her to remember everything herself.',
                 icon: ClipboardList,
                 features: [
                     'Pre-consult intake form',
@@ -93,7 +95,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Treatment plan rebooks, not loose ends',
-                description: 'Series-based treatments get scheduled rebook prompts at the right interval. Plans complete instead of stalling.',
+                description: 'Series-based treatments get rebook prompts at the right interval, before the plan loses momentum. That keeps a treatment journey moving instead of leaving it to stall after session one or two.',
                 icon: CalendarCheck,
                 features: [
                     'Scheduled rebook prompts per plan',
@@ -103,7 +105,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Reviews from completed plans, not first sessions',
-                description: 'Review requests fire at the right window — when results are visible — not at session one when she is still nervous.',
+                description: 'Review requests go out when results are visible and the client feels settled in the choice she made. That is very different from asking after session one when she may still be unsure and watching closely.',
                 icon: Star,
                 features: [
                     'Outcome-based review timing',
@@ -113,7 +115,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Trust-led local presence',
-                description: 'A Google profile and pages that match the actual treatments, recent reviews, and practitioner credentials. Quiet confidence, not loud claims.',
+                description: 'Your Google profile and treatment pages line up around the actual treatments, real reviews, and practitioner credentials. The tone stays calm and confident, which matters more here than sounding loud or salesy.',
                 icon: Search,
                 features: [
                     'Found for the treatments you actually offer',
@@ -127,12 +129,12 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for small med spas.',
+        description: 'These are the supporting services that come up most often once a med spa sees where enquiries and plans are quietly dropping. They all support the same trust, reply, and completion gaps from different sides.',
         cards: [
             {
                 icon: PhoneCall,
                 title: 'Smart Website Systems',
-                description: 'Same-day reply, two consult slots, written plan — without the inbox guilt.',
+                description: 'Keeps same-day replies, consult booking, and written next steps moving without leaving the clinic to carry the whole load in the inbox.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -140,7 +142,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             {
                 icon: CalendarCheck,
                 title: 'CRM & Treatment Plan Automation',
-                description: 'Series rebooks, follow-ups, and plan completion that does not stall at session two.',
+                description: 'Keeps series rebooks, follow-ups, and plan completion moving so a treatment journey does not quietly stall after the first signs of hesitation.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -148,7 +150,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Reviews from completed plans, where comparison clients are scrolling.',
+                description: 'Collects reviews from completed plans so the proof seen by comparison-minded clients matches the quality of the journeys you are already delivering.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -156,7 +158,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be the clinic that shows up — and reads as safe — for the treatments you actually offer.',
+                description: 'Helps the clinic show up for the treatments it actually offers and read as safe, credible, and organised from the first search impression.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -168,7 +170,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things small med spas usually ask',
-        description: 'Honest answers about how this fits a clinic-led, considered-purchase day.',
+        description: 'These are the practical questions that usually come up in a clinic-led business where the decision is slower, more cautious, and easier to lose in the follow-up. Straight answers, no sales gloss.',
         faqs: [
             {
                 question: 'We do not want to feel pushy. Will follow-up sound like sales?',
@@ -234,7 +236,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the consult goes quiet',
             description:
-                'If enquiries cool before Wednesday or plans stall after session two, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
+                'If enquiries cool before anyone calls back or treatment plans keep fading after the consult, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
         },
     };
 }

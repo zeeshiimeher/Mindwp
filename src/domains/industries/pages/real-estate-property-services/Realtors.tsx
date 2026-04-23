@@ -18,31 +18,33 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         badge: 'For Realtors & Estate Agents',
         title: 'You Were Mid-Viewing. Their Phone Rang Three Times. The Next Agent Picked Up On The First.',
         description:
-            'Buyers and sellers do not wait. They scroll a portal, message four agents in eight minutes, and instruct whoever spoke to them like a person first. The deal is rarely lost on commission. It is lost in the seven minutes it took someone else to ring back.',
-        list: ['Mid-viewing miss', 'Late callback', 'Cold portal lead', 'No nudge'],
+            'Buyers and sellers do not sit on an enquiry for long, especially when they are halfway through comparing agents on a portal. A viewing request, missed call, or late reply can turn into a booked valuation or a different agent before you have even got back to the car.',
+        list: ['Viewing gaps', 'Late calls', 'Cold leads', 'Missed follow-up'],
         cssPrefix: 'realtors-hero',
     };
 
     const operatingPatternsData = {
         badge: 'Where Deals Decide Themselves',
         title: 'The first response wins the conversation. The last follow-up wins the instruction.',
+        description:
+            'Most agency work slips in two places: the first few minutes after contact, and the quiet stretch after the first conversation ends. If either one goes loose, the instruction often moves without any dramatic warning.',
         benefits: [
             {
                 icon: PhoneMissed,
                 title: 'The enquiry came in mid-viewing',
-                description: 'You could not break the conversation in front of you. By the time you stepped out, they were on the phone with someone else.',
+                description: 'You could not break the viewing conversation in front of you to answer a fresh call or viewing request. By the time you stepped outside and listened back, another agent had already got the first proper conversation.',
                 iconType: 'primary' as const,
             },
             {
                 icon: Timer,
                 title: 'Portal leads went cold inside an hour',
-                description: 'Rightmove or Zillow forwards an enquiry. So does your competitor. Whoever rings within ten minutes is the agent they remember.',
+                description: 'A portal lead comes through, and the same lead likely goes through to two or three other agents nearby. The one who rings inside ten minutes usually becomes the name they remember when the instruction gets serious later that day.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: Bell,
                 title: 'Old leads were never circled back to',
-                description: 'A buyer who was "looking in spring" never got a nudge in spring. They bought through whoever stayed in front of them.',
+                description: 'A buyer who said "we are probably looking again in spring" never heard from you in spring. A vendor who wanted to wait until summer never got the second call. The deal did not vanish overnight. It just moved to the person who replied again.',
                 iconType: 'accent' as const,
             },
         ],
@@ -52,7 +54,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     const workflowExamplesData = {
         badge: 'Real Moments',
         title: 'The minutes that decide who gets the call back',
-        description: 'Tiny handoffs between portal, phone, and pipeline. They cost real instructions when they fail.',
+        description: 'These are the small handoffs between portal, phone, and follow-up that decide who stays in the frame. When they fail, the instruction often slips before anybody even says they have moved on.',
         workflows: [
             {
                 trigger: 'A portal enquiry lands while you are at a viewing.',
@@ -86,11 +88,11 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Be the first response, and the last follow-up, without being chained to the phone',
-        description: 'You stay at viewings and valuations. The seven minutes that decide each enquiry stop depending on perfect timing.',
+        description: 'You stay at viewings, valuations, and negotiations. The minutes that decide each enquiry, plus the later follow-up that keeps it alive, stop depending on you being perfectly free at exactly the right second.',
         featureCategories: [
             {
                 title: 'Catch the enquiry in the first minute',
-                description: 'Portal forms, web forms, missed calls — all answered by a personal-feeling reply within a minute.',
+                description: 'Portal forms, website forms, viewing requests, and missed calls all get a reply that feels personal within a minute. That keeps the lead warm until you can give it proper attention.',
                 icon: MessageSquare,
                 features: [
                     'Missed-call text-back inside a minute',
@@ -100,7 +102,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Hold the pipeline you keep forgetting',
-                description: 'Old buyers, old vendors, old valuations — visible in one place, nudged on a sensible cycle.',
+                description: 'Old buyers, old vendors, and old valuations stay visible instead of dropping into an old spreadsheet or somebody\'s memory. Nudges go out on a sensible cycle so the next decision does not happen without you.',
                 icon: Clock,
                 features: [
                     'Stale leads surfaced before they go to a competitor',
@@ -110,7 +112,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Make the callback a confirmed slot',
-                description: 'A booked-in time beats "I will ring you back at some point". Vendors and buyers stop chasing.',
+                description: 'A booked-in callback time works better than "I will ring you back later" because it gives the buyer or seller something concrete to wait for. That cuts down the drift that happens when they hear nothing and call the next agent instead.',
                 icon: KeyRound,
                 features: [
                     'Self-serve callback windows',
@@ -120,7 +122,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Turn completed deals into proof',
-                description: 'A review request after exchange or completion, when the relief is freshest.',
+                description: 'A review request goes out after exchange or completion, when the relief is still fresh and the work is easy to describe. That helps the online proof catch up to the amount of business you are already getting through.',
                 icon: ShieldCheck,
                 features: [
                     'Review request triggered by completion',
@@ -130,7 +132,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable for the streets you actually sell',
-                description: 'Pages and Google profile lined up for the postcodes and price brackets you want more of.',
+                description: 'Your pages and Google profile line up around the postcodes, property types, and buyer or seller intent you actually want more of. That makes it easier to be visible when the instruction is still being decided.',
                 icon: Search,
                 features: [
                     'Found for area + property type',
@@ -144,12 +146,12 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for estate agents and realtors.',
+        description: 'These are the supporting services that come up most often once an agency sees how much is being lost in speed and follow-up. They reinforce first response, memory, proof, and local visibility from different angles.',
         cards: [
             {
                 icon: MessageSquare,
                 title: 'Smart Website Systems',
-                description: 'Be the first response, even when you are mid-viewing.',
+                description: 'Helps you be the first response even when you are mid-viewing, on a valuation, or away from the desk when the lead lands.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -157,7 +159,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             {
                 icon: Home,
                 title: 'CRM & Pipeline Memory',
-                description: 'Hold old buyers and vendors so they come back to you, not a competitor.',
+                description: 'Keeps old buyers and vendors visible so the next useful follow-up comes from you, not the agent who simply remembered them first.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -165,7 +167,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Reviews from completed sales, where the next vendor is looking.',
+                description: 'Gets reviews out after completed sales so the next vendor sees proof that feels current, local, and grounded in real outcomes.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -173,7 +175,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be the agent for the area, not just on the portal.',
+                description: 'Helps you read as the trusted agent for the area itself, not just one more listing on the portal with the same stock language.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -185,7 +187,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things agents usually ask',
-        description: 'Honest answers about how this fits a phone-driven, viewing-led week.',
+        description: 'These are the practical questions that usually come up in a phone-driven, viewing-led week where speed matters early and follow-up matters later. Straight answers, no padding.',
         faqs: [
             {
                 question: 'Will buyers feel they are getting an automated response?',
@@ -251,7 +253,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the calls are going elsewhere',
             description:
-                'If portal leads cool off before you can ring, or "looking in spring" buyers never come back, walk us through how the last few enquiries went and we will show you where the seven-minute window is being lost.',
+                'If viewing requests cool off before you can ring back or old buyers never hear from you again when their timing changes, walk us through the last few enquiries and we will show you where the seven-minute window is being lost.',
         },
     };
 }

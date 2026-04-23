@@ -17,31 +17,33 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         badge: 'For Small Private Clinics',
         title: 'They Sent The Enquiry. Read Your Reply Twice. Still Did Not Book.',
         description:
-            'Most private clinic enquiries are not price problems. They are trust problems. The patient is quietly weighing risk, reading reviews, and waiting to feel safe enough to pick up the phone.',
-        list: ['Quiet readers', 'Trust hesitation', 'Silent compare', 'Unbooked enquiries'],
+            'Most private clinic enquiries do not disappear because the person was never interested. They hesitate, read the reply twice, check reviews, wait a few days, and often never book because the next step felt unclear and nobody followed up while the decision was still open.',
+        list: ['Trust hesitation', 'Booking delay', 'Quiet comparison', 'No follow-up'],
         cssPrefix: 'small-private-clinics-hero',
     };
 
     const operatingPatternsData = {
         badge: 'Where Patients Hold Back',
         title: 'They are not shopping price. They are checking whether you feel safe.',
+        description:
+            'Most private clinic decisions happen slowly and quietly. The person enquiring is often weighing trust, timing, and whether the clinic feels careful enough to take the next step with, even when the treatment itself sounds right.',
         benefits: [
             {
                 icon: HeartPulse,
                 title: 'The first reply has to do reassurance, not just info',
-                description: 'A clinical answer to a nervous question reads as cold. They quietly move on.',
+                description: 'A clinical answer to a nervous question can read as colder than it means to. When that happens, people usually do not argue with it or ask for more. They just take longer to decide and often never come back.',
                 iconType: 'primary' as const,
             },
             {
                 icon: Lock,
                 title: 'Reviews are read more than the website',
-                description: 'They look you up on Google before they ever ring. Thin reviews, thin trust.',
+                description: 'They often look you up on Google before they ever ring or confirm anything. If the reviews feel sparse or old, the trust takes longer to form and the booking often gets delayed while they keep comparing.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: UserCheck,
                 title: 'They want to know who they will see',
-                description: 'A name, a face, a tone. Anonymous brochure pages do not unlock the booking.',
+                description: 'They want a name, a face, and a tone they can picture before they commit to anything. Anonymous brochure-style pages rarely unlock the booking because the decision still feels too exposed or uncertain.',
                 iconType: 'accent' as const,
             },
         ],
@@ -51,7 +53,8 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     const comparisonData = {
         badge: 'Two Versions Of The Same Enquiry',
         title: 'Same patient. Two very different clinics. Only one gets booked.',
-        description: 'The difference is rarely the treatment. It is what the patient feels in the gap between asking and booking.',
+        description:
+            'The difference is rarely the treatment itself. It is what the person feels in the days between asking and booking, while they are still deciding whether this clinic feels safe enough to trust properly.',
         comparisons: [
             {
                 type: 'before' as const,
@@ -79,11 +82,12 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Quiet trust signals from the first message to the booked consultation',
-        description: 'The clinical work is yours. Everything around it stops feeling like admin.',
+        description:
+            'The clinical work stays entirely yours. What changes is that the messages, booking step, reviews, and follow-up stop feeling like cold admin while the person is still trying to make up their mind.',
         featureCategories: [
             {
                 title: 'Reply in a way that reassures',
-                description: 'Templates that sound like a real person, not a portal.',
+                description: 'The first replies sound like a real person in the clinic rather than a portal or admin desk. That matters because the first message often decides whether the person feels calmer or more hesitant after enquiring.',
                 icon: MessageCircle,
                 features: [
                     'Warm first replies that address the worry',
@@ -93,7 +97,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Make booking feel like a small step',
-                description: 'A short consultation slot beats a treatment commitment for nervous patients.',
+                description: 'A short consultation slot feels easier to say yes to than a bigger treatment commitment when someone is still feeling cautious. That lowers the pressure around booking without making the clinic feel vague or passive.',
                 icon: Calendar,
                 features: [
                     'Self-serve consultation slots',
@@ -103,7 +107,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Build the trust the website cannot',
-                description: 'A steady flow of recent reviews so Google looks the way the clinic actually feels.',
+                description: 'A steady flow of recent reviews helps Google look the way the clinic actually feels when someone visits or calls. That matters because people often need that extra proof while they are still deciding whether to book.',
                 icon: ShieldCheck,
                 features: [
                     'Review request at the right moment',
@@ -113,7 +117,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Hold the patient who went quiet',
-                description: 'A short, polite follow-up if an enquiry stalls, then a graceful close.',
+                description: 'A short, polite follow-up goes out if an enquiry stalls while the decision is still open, then closes off gracefully if nothing moves. That matters because a lot of bookings are lost in silence, not in a clear rejection.',
                 icon: Sparkles,
                 features: [
                     'Two gentle nudges, never more',
@@ -123,7 +127,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Show up when local patients search',
-                description: 'Pages and Google profile lined up for the treatments you actually offer.',
+                description: 'Your pages and Google profile line up around the treatments you actually offer and the questions people really search. That helps the clinic look clearer and more trustworthy before the first enquiry is even sent.',
                 icon: Search,
                 features: [
                     'Found on Maps for treatment + area',
@@ -137,12 +141,13 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for small private clinics.',
+        description:
+            'These are the supporting services that come up most often once a clinic sees how much trust and booking delay sit in the gap after the first enquiry. Each one helps reinforce reassurance, proof, or a clearer next step.',
         cards: [
             {
                 icon: Stethoscope,
                 title: 'Smart Website Systems',
-                description: 'Pages and replies that read warm, not clinical-cold.',
+                description: 'Helps pages and first replies read warm and clear instead of too clinical or too distant when someone is already hesitating.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -150,7 +155,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             {
                 icon: ShieldCheck,
                 title: 'Reputation & Review Systems',
-                description: 'A steady flow of recent reviews that match the clinic.',
+                description: 'Builds a steadier flow of recent reviews so the visible trust matches the care and attention people actually get from the clinic.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -158,7 +163,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             {
                 icon: Calendar,
                 title: 'Booking & Scheduling System',
-                description: 'Make the first consultation a small, safe step.',
+                description: 'Makes the first consultation feel like a smaller, safer step when someone is not ready to jump straight into a larger commitment.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -166,7 +171,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Show up for treatment + area without paid noise.',
+                description: 'Helps you show up for treatment and area searches with clearer trust signals instead of relying on paid noise to fill the gap.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -178,7 +183,8 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things private clinics usually ask',
-        description: 'Honest answers about how this fits a careful, clinical setting.',
+        description:
+            'These are the practical questions that usually come up in a careful clinical setting where hesitation is normal and trust takes time to build. Straight answers, written for that pace.',
         faqs: [
             {
                 question: 'Will the messages feel too marketing?',
@@ -244,7 +250,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where patients are hesitating',
             description:
-                'If enquiries come in but rarely turn into a first consultation, walk us through the patient journey and we will show you where the trust gap actually is.',
+                'If enquiries come in but the booking keeps getting delayed or quietly disappears, walk us through the patient journey and we will show you where the trust gap actually is.',
         },
     };
 }

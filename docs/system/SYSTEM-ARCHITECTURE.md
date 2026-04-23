@@ -1,13 +1,13 @@
 # SYSTEM ARCHITECTURE — MindWP
 
 > High-level architecture map for the live repo surface.
-> This file explains how the main layers fit together and which runtime owners matter.
+> Shows how the main layers fit together and which runtime owners matter.
 
 ---
 
 ## USE THIS DOC
 
-Use this file when you need the shortest architecture map across governance, domain data, graph, presentation, validation, and reports.
+Use this doc for the shortest architecture map across governance, domain data, graph, presentation, validation, and reports.
 
 If you are new to the repo, read this file for the mental model, then read `../ops/WORKFLOW.md` for the day-to-day command path.
 
@@ -18,6 +18,12 @@ If you are new to the repo, read this file for the mental model, then read `../o
 ```text
 Governance -> Domain data and registries -> Graph and resolver -> Routes and templates -> CTA/contact -> Validators -> Reports and dashboard
 ```
+
+## PAGE BEHAVIOR (ENFORCED)
+
+All pages must follow the behavior model defined in [./FOUNDATION.md](./FOUNDATION.md).
+
+If a page is written with the wrong behavior → it is invalid even if technically correct.
 
 ### Governance
 
@@ -67,6 +73,8 @@ Think about MindWP in two lanes:
 
 Human rule: the runtime lane produces behavior, and the control-plane lane confirms that behavior. The dashboard only reads the control-plane outputs.
 
+Behavior rule: runtime produces behavior, and validators confirm alignment against the governing docs.
+
 ---
 
 ## FULL SYSTEM FLOW
@@ -80,6 +88,7 @@ Human rule: the runtime lane produces behavior, and the control-plane lane confi
 7. `SmartCTA` generates the correct CTA behavior and `/contact` context.
 8. Validators and reports confirm that runtime behavior still matches the contracts.
 9. The dashboard reads frozen report outputs for operator visibility.
+10. Page content respects the governing docs.
 
 ---
 
@@ -93,6 +102,19 @@ Human rule: the runtime lane produces behavior, and the control-plane lane confi
 - Generated files and report artifacts are not edited manually.
 - The full refresh path is `npm run system:full`, not a manual side path.
 - `npm run system:quick` is a safe operator check, not a replacement for the full source-of-truth run.
+- Page content must stay aligned with the governing docs.
+
+---
+
+## POSITIONING + WRITING INTEGRATION
+
+Architecture depends on clear document ownership:
+
+- [./FOUNDATION.md](./FOUNDATION.md) owns positioning and page behavior
+- [./WRITING.md](./WRITING.md) owns tone and language
+- [./SYSTEM-RULES.md](./SYSTEM-RULES.md) owns enforcement and validation constraints
+
+All runtime content must satisfy all three layers.
 
 ---
 
@@ -124,9 +146,6 @@ Read in this order:
 4. `CONVERSION.md`
 5. `../ops/AUDIT.md`
 6. `../ops/WORKFLOW.md`
+7. `SYSTEM-RULES.md`
 
-For day-to-day work, the practical order is:
-
-1. `SYSTEM-ARCHITECTURE.md`
-2. `../ops/WORKFLOW.md`
-3. the narrow domain or contract doc for the surface you are changing
+This ensures behavior, positioning, and execution constraints are always applied after architectural understanding.

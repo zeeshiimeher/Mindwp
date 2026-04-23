@@ -17,31 +17,33 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
         badge: 'For Independent Consultants',
         title: 'The Discovery Call Went Well. Then "Let Us Think About It." Then Nothing.',
         description:
-            'Most consulting work is not lost on price. It is lost on clarity. The client liked you, agreed the problem mattered, and then could not explain to their team what they would actually be buying. The conversation just quietly stopped.',
-        list: ['Unclear scope', 'No next step', 'Internal stall', 'Slow drift'],
+            'Most consulting work is not lost in the call itself. It is lost afterwards, when the buyer cannot clearly repeat the offer internally, there is no obvious next step, and the conversation slowly disappears into "we are still discussing it" silence.',
+        list: ['Unclear offer', 'No next step', 'Internal drift', 'Quiet stall'],
         cssPrefix: 'consultants-hero',
     };
 
     const operatingPatternsData = {
         badge: 'Where Engagements Stall',
         title: 'They did not pick a competitor. They just could not pick anything at all.',
+        description:
+            'Most consulting opportunities do not end with a clean rejection. They slow down after a promising first conversation, then get harder to recover because nobody turned the value into something simple to carry forward internally.',
         benefits: [
             {
                 icon: HelpCircle,
                 title: '"What exactly do we get?" never got answered cleanly',
-                description: 'The call covered the problem. Nobody nailed the deliverable. Internally it sounds vague, so it dies.',
+                description: 'The call covered the problem well enough, but the offer still sounded broad when the buyer tried to repeat it later. Once it sounds vague inside the business, the engagement usually slows down without anyone saying no outright.',
                 iconType: 'primary' as const,
             },
             {
                 icon: Compass,
                 title: 'No clear next step after the discovery call',
-                description: 'A "we will be in touch" closes the meeting and opens a void. Whoever defines the next move usually wins.',
+                description: 'The call ended with "we will be in touch" instead of a defined next move, date, or decision point. That creates a gap where momentum drops and the prospect has nothing concrete to carry forward on your behalf.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: ArrowRightCircle,
                 title: 'It went quiet inside the buying committee',
-                description: 'A champion took it to a board, a partner, a CFO. With no clear summary, it lost momentum in someone else\'s meeting.',
+                description: 'A champion took it to a board, a partner group, or a CFO meeting and had to explain it from memory. Without a clear summary or structured follow-up after the discovery call, the engagement lost shape in someone else\'s conversation.',
                 iconType: 'accent' as const,
             },
         ],
@@ -51,11 +53,12 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Make the offer easy to repeat, the next step obvious, and the follow-up quietly automatic',
-        description: 'You keep delivering the work. The bit that used to depend on the client perfectly explaining you to their team stops being a coin flip.',
+        description:
+            'You keep delivering the consulting work itself. What changes is the part that used to depend on the buyer remembering your offer clearly, explaining it well internally, and then deciding to come back without any structured follow-up.',
         featureCategories: [
             {
                 title: 'Make the offer easy to forward',
-                description: 'A clear, plain-English summary of what they get and why it is worth it — built to survive being passed around inside a buying committee.',
+                description: 'A clear, plain-English summary explains what they get, why it matters, and what shape the engagement takes. It is built to survive being passed around internally without you needing to jump back in and translate it again.',
                 icon: Layers,
                 features: [
                     'Scope written in client language, not consultant language',
@@ -65,7 +68,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Define the next step on every call',
-                description: 'Discovery does not end on "we will think about it." It ends on a specific, dated next move that lives somewhere both sides can see.',
+                description: 'Discovery does not end on "we will think about it" and then silence. It ends on a specific next move, date, or follow-up point that both sides can see clearly once the call is over.',
                 icon: Target,
                 features: [
                     'Standard "next step" template per call type',
@@ -75,7 +78,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Follow up the quiet ones gracefully',
-                description: 'Two short, written-like-you nudges over the weeks they are deciding internally. Calm, not chasing.',
+                description: 'Two short nudges go out during the weeks they are discussing it internally and deciding who needs to sign it off. They read like you wrote them, stay calm in tone, and stop the moment a real reply comes back.',
                 icon: Mail,
                 features: [
                     'Spaced follow-ups that survive a buying committee',
@@ -85,7 +88,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Position for the work you want more of',
-                description: 'Pages, case studies, and search visibility lined up for the kind of brief you actually want, not generic consulting.',
+                description: 'Your pages, case studies, and search visibility line up around the kind of brief you actually want to win. That makes the offer easier to recognise before the buyer ever reaches the discovery-call stage.',
                 icon: Search,
                 features: [
                     'Found for the niche you actually serve',
@@ -95,7 +98,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Turn finished engagements into proof',
-                description: 'A short, structured ask after delivery so testimonials and case studies stop being something you mean to do.',
+                description: 'A short, structured ask goes out after delivery so testimonials and case studies stop living on the "we should do that later" list. That proof then helps the next buyer trust the engagement more quickly.',
                 icon: Sparkles,
                 features: [
                     'Testimonial request at the right moment',
@@ -110,7 +113,8 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     const workflowExamplesData = {
         badge: 'Real Moments',
         title: 'The points where consulting deals usually decide themselves',
-        description: 'Small handoffs that decide whether the engagement happens or quietly dies in someone else\'s inbox.',
+        description:
+            'These are the small handoffs that usually decide whether the engagement keeps moving or quietly dies in someone else\'s inbox. They tend to look minor at the time, but they are where most of the drift actually starts.',
         workflows: [
             {
                 trigger: 'A discovery call just ended.',
@@ -143,12 +147,13 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for independent consultants.',
+        description:
+            'These are the supporting services that come up most often once a consultant sees how much is being lost in clarity and follow-up after the first call. Each one strengthens recognition, follow-through, proof, or visibility.',
         cards: [
             {
                 icon: BriefcaseBusiness,
                 title: 'Smart Website Systems',
-                description: 'Pages that read as a specialist, not a generic consultant.',
+                description: 'Helps your pages read like a specialist offer with a clear next step, not a broad consulting promise that is hard to pin down.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -156,7 +161,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             {
                 icon: Mail,
                 title: 'CRM & Follow-up Automation',
-                description: 'Hold open conversations and nudge gracefully through buying committees.',
+                description: 'Keeps open conversations visible and sends the right follow-up while the buyer is still carrying your offer through internal discussions.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -164,7 +169,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Authority & SEO Systems',
-                description: 'Be findable for the niche brief you actually want.',
+                description: 'Helps you get found for the niche brief you actually want, so the right kind of buyer is seeing a clearer offer from the start.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -172,7 +177,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             {
                 icon: Sparkles,
                 title: 'Reputation & Proof Systems',
-                description: 'Capture testimonials and case studies before they slip away.',
+                description: 'Captures testimonials and case studies before they slip away, so the next buyer has something solid to trust when the decision gets discussed internally.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -184,7 +189,8 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things consultants usually ask',
-        description: 'Honest answers about how this fits a relationship-led, longer-cycle practice.',
+        description:
+            'These are the practical questions that usually come up in a relationship-led, longer-cycle consulting practice where the work is serious and the decision still needs holding together afterwards. Straight answers, no consultancy fluff.',
         faqs: [
             {
                 question: 'Will this make my work feel productised?',
@@ -250,7 +256,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the conversations stall',
             description:
-                'If discovery calls go well but engagements rarely turn into signed work, walk us through the last few that went quiet and we will show you where the offer or the follow-up is actually breaking.',
+                'If discovery calls go well but the prospect stops responding afterwards, walk us through the last few that went quiet and we will show you whether the offer, next step, or follow-up is where it is breaking down.',
         },
     };
 }

@@ -17,15 +17,15 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         badge: 'For Nail Salons',
         title: 'She Tapped "Book Now" At 11:43. By 11:46 She Had Booked Somewhere Else.',
         description:
-            'Nail clients do not wait. They want it done today, tomorrow morning, before the wedding. If your booking takes more than three taps or a phone call, they are already in the next salon\'s app.',
-        list: ['Booking friction', 'Phone-only', 'Three-tap rule', 'No reminder'],
+            'Nail clients usually want to book fast, not start a conversation. If booking takes more than a few taps, asks for a phone call, or makes a walk-in wait with no clear next step, they keep moving until somewhere easier lets them claim a slot.',
+        list: ['Slow taps', 'Phone-only', 'Walk-in loss', 'Missed rebooks'],
         cssPrefix: 'nail-salons-hero',
     };
 
     const comparisonData = {
         badge: 'Three Taps Vs Three Days',
         title: 'Same client. Two salons. The one that booked her in 30 seconds gets the loyalty.',
-        description: 'She is not loyal yet. She will be — but only to the salon that did not make her work for the appointment.',
+        description: 'At the first booking, she is not choosing based on deep loyalty. She is choosing based on speed, convenience, and whether the appointment felt easy to claim before the next thing in her day started.',
         comparisons: [
             {
                 type: 'before' as const,
@@ -53,23 +53,25 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     const operatingPatternsData = {
         badge: 'Where Bookings Slip In Seconds',
         title: 'The friction is not in the nails. It is in the booking.',
+        description:
+            'Nail bookings are often quick decisions made between errands, on a break, or while someone is already walking past the salon. A little friction is enough to lose the slot before anyone notices it was ever there.',
         benefits: [
             {
                 icon: MousePointerClick,
                 title: '"DM to book" cost a same-day booking',
-                description: 'She did not want to negotiate. She wanted to tap, pick, and go on with her day.',
+                description: 'She was not looking to message back and forth about times. She wanted to tap, see a slot, and get on with her day before lunch finished or the idea wore off.',
                 iconType: 'primary' as const,
             },
             {
                 icon: Hand,
                 title: 'Walk-ins came in, walked out',
-                description: 'No way to text her when a chair frees up. She tried two more salons on the same street.',
+                description: 'There was no space right then and no easy way to hold her for the next opening. She stepped back onto the street, checked two more salons nearby, and the chair stayed empty later anyway.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: Clock,
                 title: 'A repeat client never came back at three weeks',
-                description: 'No nudge, no reminder. By week four her nails were grown out and she had tried somewhere new.',
+                description: 'No nudge went out at the usual point and no reminder caught her when she started thinking about a fresh set. By week four she had already squeezed in somewhere else that made booking easier.',
                 iconType: 'accent' as const,
             },
         ],
@@ -79,11 +81,11 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Make booking a tap, make rebook a habit, fill the chair the moment it frees up',
-        description: 'You stay focused on the set. The friction that costs same-day bookings stops being part of the day.',
+        description: 'You stay focused on the set in front of you. The friction that costs same-day bookings, missed walk-ins, and weak rebook timing stops sitting in the middle of an already busy day.',
         featureCategories: [
             {
                 title: 'Three taps, not three messages',
-                description: 'Live availability on Instagram, on the site, and inline in the first reply. She picks a slot without typing.',
+                description: 'Live availability shows up on Instagram, on the site, and inside the first reply instead of hiding behind another message. She can pick a slot without typing out her whole life story first.',
                 icon: Zap,
                 features: [
                     'Live slot list in the first reply',
@@ -93,7 +95,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Fill cancellations the same hour',
-                description: 'When a slot opens, the right waiting client gets a tap-to-claim text. The chair stops sitting empty.',
+                description: 'When a slot opens, the right waiting client gets a quick claim-it text while the time is still useful. That keeps a cancellation from turning into a dead patch in the middle of the day.',
                 icon: Sparkles,
                 features: [
                     'Cancellation auto-fill list',
@@ -103,7 +105,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Rebook on a tap, not a memory',
-                description: 'A rebook nudge goes out at the right interval for the service — gel, acrylic, BIAB — with her usual time.',
+                description: 'A rebook nudge goes out at the right interval for gel, BIAB, acrylic, or pedicure, with the kind of time she normally takes. That catches the habit before it slips past the usual return window.',
                 icon: CheckCircle2,
                 features: [
                     'Service-specific rebook timing',
@@ -113,7 +115,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Cut no-shows without sounding stern',
-                description: 'A morning-of confirm tap and an easy reschedule beats a stern policy any day.',
+                description: 'A morning-of confirm tap and an easy reschedule link do more than a stern warning ever will. It keeps the tone light while still giving the salon a better chance of protecting the slot.',
                 icon: MessageCircle,
                 features: [
                     'Day-before reminder',
@@ -123,7 +125,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable when she searches "nails near me"',
-                description: 'Pages and Google profile lined up for service, vibe, and street, not generic.',
+                description: 'Pages and the Google profile line up around service, vibe, and area instead of sounding generic. That helps the salon show up for the specific local search someone makes when they want to book quickly.',
                 icon: Search,
                 features: [
                     'Found for service + area',
@@ -137,12 +139,12 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for nail salons.',
+        description: 'These are the supporting services that come up most often once the salon sees how much demand is being lost to booking drag. They reinforce speed, rebook timing, and visible proof from different directions.',
         cards: [
             {
                 icon: Zap,
                 title: 'Smart Website Systems',
-                description: 'Live slots in the first reply. Booking in three taps.',
+                description: 'Puts live slots into the first reply and keeps booking down to a few taps instead of another round of messages.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -150,7 +152,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             {
                 icon: CheckCircle2,
                 title: 'CRM & Rebook Automation',
-                description: 'Service-specific rebook nudges before she Googles somewhere new.',
+                description: 'Sends service-specific rebook nudges before the usual return point slips by and the client starts checking who else has space.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -158,7 +160,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Reviews from happy sets, where the next client is scrolling.',
+                description: 'Turns happy sets into reviews in the places the next client is already checking while deciding where to book.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -166,7 +168,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be the nail salon people find for the street, not generic search.',
+                description: 'Helps the salon show up for the actual local search, not just as another generic option buried in the same area results.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -178,7 +180,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things nail salons usually ask',
-        description: 'Honest answers about how this fits a fast, walk-in-led day.',
+        description: 'These are the practical questions that usually come up in a fast, walk-in-led salon where people book quickly and lose patience even quicker. Straight answers that match that pace.',
         faqs: [
             {
                 question: 'I run a small team. Is this overkill?',
@@ -244,7 +246,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where booking is leaking',
             description:
-                'If "DM to book" is costing same-day chairs, walk us through a typical Saturday and we will show you where three-tap booking would catch the most.',
+                'If "DM to book" keeps costing same-day chairs or walk-ins drift off before the next opening, walk us through a typical Saturday and we will show you where easier booking would catch the most.',
         },
     };
 }

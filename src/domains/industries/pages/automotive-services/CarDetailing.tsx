@@ -13,10 +13,10 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildCarDetailingIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Detailers',
-    title: 'Saturday Morning DM. Read at 6pm. They Booked Someone Else by Friday.',
+    title: 'Saturday Morning DM. Read at 6pm. Sunday Was Gone by Lunch.',
     description:
-      'Most detailing enquiries do not arrive on a phone call. They arrive on Instagram, on a contact form, on a late-night text. Whoever replies on Sunday morning gets the slot. The detailer who is heads-down in a foam bath usually does not.',
-    list: ['Weekend DMs', 'Lost regulars', 'Ghost bookings'],
+      'Most detailing enquiries land while you are already in the bay: Instagram DMs, contact forms, late-night texts, someone asking if next weekend is free. If that first reply waits until the evening, the slot usually goes to the detailer who answered while you were still rinsing the wheels.',
+    list: ['Weekend DMs', 'Repeat gaps', 'Slow booking'],
     cssPrefix: 'car-detailing-hero',
   };
 
@@ -24,7 +24,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     badge: 'A Normal Weekend',
     title: 'Same weekend, different inbox',
     description:
-      'You still spend Saturday in the bay. What changes is what happens to the messages that landed while you were elbow-deep in a wheel arch.',
+      'You still spend Saturday in the bay and Sunday cleaning up the edges of the week. What changes is whether the messages that landed during that time turn into slots or just sit there cooling off.',
     comparisons: [
       {
         type: 'before' as const,
@@ -53,13 +53,13 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     badge: 'Where The Diary Leaks',
     title: 'A few honest moments where bookings quietly leave the building',
     description:
-      'A detailer\u2019s pinch point is rarely the work. It is the half hour between an enquiry and a reply.',
+      'A detailer\u2019s weak spot is rarely the finish on the car. It is the gap between someone asking for a slot and getting a reply while the weekend calendar is still worth grabbing.',
     benefits: [
       {
         icon: Instagram,
         title: 'DMs arrive when you are in the bay',
         description:
-          'Instagram, Facebook, the form on the site \u2014 all on phones, almost all at the weekend, almost all read too late.',
+          'Instagram, Facebook, the site form, late-night texts. Most of it lands on Friday night or Saturday morning, exactly when you are busiest and least likely to clear the inbox properly.',
         iconType: 'primary' as const,
       },
       {
@@ -73,7 +73,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         icon: RefreshCcw,
         title: 'Regulars who quietly stopped',
         description:
-          'The customer who used to come every quarter has not booked since spring. They did not leave. They just got busy and nobody nudged them.',
+          'The owner who used to book every quarter has not been back since spring. They did not complain or announce it. They just got busy, missed one cycle, then another, and nobody nudged them back in.',
         iconType: 'accent' as const,
       },
       {
@@ -91,12 +91,12 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     badge: 'Where Most Detailers Start',
     title: 'You do not have to fix the whole weekend at once',
     description:
-      'Most detailers feel one of these three louder than the others. Pick the one that costs you the most slots and start there.',
+      'Most detailers know which part hurts most: unread weekend messages, too much booking back-and-forth, or regulars drifting between one season and the next. Start where the lost slots are easiest to picture.',
     packages: [
       {
         name: 'Catch the weekend DMs and forms',
         description:
-          'For when most enquiries arrive on a phone while you are in the bay and most of them go cold.',
+          'For when most enquiries arrive on a phone while you are polishing, rinsing, or midway through a correction, and too many of them cool off before dinner.',
         price: 'Stage 1',
         priceDetail: 'Start here if first replies are the loudest leak',
         features: [
@@ -108,7 +108,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         name: 'Take the friction out of booking the slot',
         description:
-          'For when bookings work fine until the eighth text \u2014 and then quietly stop.',
+          'For when the first message goes well, then the slot booking turns into eight texts about package, timing, and availability before the owner stops replying.',
         price: 'Stage 2',
         priceDetail: 'Start here if booking is where it slows down',
         features: [
@@ -121,11 +121,11 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         name: 'Bring back regulars and stack reviews',
         description:
-          'For when the diary should fill itself with returning customers \u2014 but does not.',
+          'For when people who used to book every few months have slipped a season or two, and the finished work still is not turning into enough visible proof.',
         price: 'Stage 3',
         priceDetail: 'Start here if repeats and reputation are the gap',
         features: [
-          'Quiet nudges to past customers on the right interval',
+          'Quiet nudges to past owners on the right interval',
           'Review ask the evening of the detail',
           'Reviews that land where local drivers actually search',
         ],
@@ -137,7 +137,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     badge: 'Real Moments',
     title: 'Three Saturday moments and what changes',
     description:
-      'Same DM that opened the page. This is what happens to it after.',
+      'Same weekend pressure, same bay, same kind of messages landing while you work. This is what changes once the reply and follow-up stop depending on when you finally check your phone.',
     workflows: [
       {
         trigger: 'Sat 9:14am \u2014 Instagram DM: "anything for next weekend?"',
@@ -148,7 +148,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         ],
       },
       {
-        trigger: 'A repeat customer from May has not booked since',
+        trigger: 'A repeat owner from May has not booked since',
         actions: [
           'A short, low-pressure nudge goes out: "your last detail was four months ago, want a slot before the salt season starts?"',
           'They book without you remembering they were due',
@@ -170,12 +170,14 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system detailers tend to lean on.',
+    description:
+      'These are the supporting pieces detailers usually lean on once weekend replies and repeat business become the obvious weak spots. Each one keeps the diary moving without making the brand feel generic.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, booking and follow-up together so the weekend stops leaking.',
+        description:
+          'Holds enquiry, booking, and follow-up together so weekend interest does not spill across DMs, forms, and manual reminders.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -183,7 +185,8 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         icon: Inbox,
         title: 'AI Lead Handling',
-        description: 'First-reply infrastructure for DMs, forms and weekend texts.',
+        description:
+          'First-reply handling for DMs, forms, and weekend texts, built to hold the slot while you are still in the bay with another car.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -191,7 +194,8 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "car detailing near me" before the next detailer gets the click.',
+        description:
+          'Visibility for "car detailing near me" and similar searches, so the next owner finds a clear option before your competitor gets the easier click.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -199,7 +203,8 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turn finished details into the proof the next driver actually looks at.',
+        description:
+          'Turn finished details into the proof the next owner actually checks, so the review picture catches up with the photos already on your feed.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -211,7 +216,8 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What detailers tend to ask first',
-    description: 'Direct, no hedging.',
+    description:
+      'These are the practical questions that usually come up once a detailer sees how much weekend demand is being handled too late. Short answers, no soft edges.',
     faqs: [
       {
         question: 'I am in the bay all weekend. How much extra is this for me?',
@@ -219,24 +225,24 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
           'Almost none after setup. The first reply, the slot link, and the reminders fire on their own. The bit where you spend Sunday morning catching up on DMs goes away.',
       },
       {
-        question: 'My customers like a personal feel. Won\u2019t this sound automated?',
+        question: 'My owners like a personal feel. Won\u2019t this sound automated?',
         answer:
           'No. The first reply is short and reads like the kind of message you would actually send between cars. It is not a bot script.',
       },
       {
-        question: 'Do I have to use someone else\u2019s booking page?',
+        question: 'Do I have to use a third-party booking page?',
         answer:
           'No. The slots can sit on your own site and look like the rest of your work. It is a link in a message, not a third-party tool people get bounced to.',
       },
       {
-        question: 'Will it nudge regulars without being annoying?',
+        question: 'Will it nudge regulars without getting annoying?',
         answer:
           'Yes. The nudge fires on a sensible interval and reads like something a friendly detailer would actually say. It is opt-out and rarely complained about.',
       },
       {
         question: 'How do reviews get asked for without it feeling pushy?',
         answer:
-          'A short, friendly message goes out the evening of the detail when the customer is happiest. No follow-up nag if they do not reply.',
+          'A short, friendly message goes out the evening of the detail when the owner is happiest. No follow-up nag if they do not reply.',
       },
       {
         question: 'Do I need a brand new website?',

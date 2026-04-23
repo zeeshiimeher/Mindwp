@@ -1,7 +1,7 @@
 # DESIGN — MindWP
 
 > Design tokens, CSS architecture, component patterns, and UI rules.
-> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
+> If this document conflicts with [./FOUNDATION.md](./FOUNDATION.md) → [./FOUNDATION.md](./FOUNDATION.md) wins.
 
 ---
 

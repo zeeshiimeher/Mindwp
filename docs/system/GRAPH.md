@@ -1,13 +1,13 @@
 # GRAPH — MindWP
 
 > Source of truth for graph ontology, metadata requirements, derived relationships, and authority scoring.
-> If this file conflicts with `SYSTEM.md` or `CONTENT.md`, fix the conflict immediately.
+> If this file conflicts with [./FOUNDATION.md](./FOUNDATION.md) or [./CONTENT.md](./CONTENT.md), fix the conflict immediately.
 
 ---
 
 ## USE THIS DOC
 
-Use this file when working on graph structure, metadata, relationship resolution, related-content ranking, or graph query access.
+Use this doc for graph structure, metadata, relationship resolution, related-content ranking, and graph query access.
 
 ---
 
@@ -38,6 +38,14 @@ That metadata feeds:
 3. related-content selection
 4. cluster and query APIs
 
+### Behavior Awareness (NEW)
+
+Behavior types are defined in [./FOUNDATION.md](./FOUNDATION.md) and must be respected.
+
+This classification does not change relationships. It influences ranking preference, related-content selection, and conversion context.
+
+If graph output ignores page behavior → it is invalid for UI use.
+
 ---
 
 ## CANONICAL NODE TYPES
@@ -65,6 +73,12 @@ Features are not standalone systems.
 - Industry detail nodes participate in graph relationships.
 - Industry category nodes support grouping and navigation.
 - Industry category nodes do not pollute derived relationship logic.
+
+### Industry Behavior Constraint (NEW)
+
+Industry detail nodes must remain context-specific and must not act as generic hubs.
+
+Graph relationships must not turn industry pages into broad navigation clusters.
 
 ---
 
@@ -211,6 +225,21 @@ Disallowed graph owners include:
 
 The graph decides what is valid. The UI decides what is shown.
 
+### Behavior-Safe Output (NEW)
+
+UI consumption must respect both:
+
+- graph validity
+- page behavior
+
+Examples:
+
+- Landing pages should not surface unrelated educational chains
+- Entry pages should guide toward system or landing pages
+- System pages should surface conversion-relevant content
+
+If graph-valid results violate page behavior, they must be filtered or reordered.
+
 ---
 
 ## AUTHORITY RESOLUTION
@@ -230,11 +259,30 @@ The authority resolver turns graph-valid candidates into ranked related-content 
 score = (systemOverlap * 3) + (topicOverlap * 2) + (industryOverlap * 1)
 ```
 
-Rules:
+### Ranking Adjustments (NON-DESTRUCTIVE LAYER)
 
-- Only candidates with `score > 0` may render.
-- Peer relationships rank before supporting relationships, which rank before validation relationships.
-- If fewer than three valid results exist, fallback order is same domain -> services -> highest-scoring remaining valid content.
+The base scoring formula remains unchanged.
+
+A secondary ordering layer may adjust ranking using soft priorities:
+
+- Service nodes (system pages) have highest conversion priority
+- Industry detail nodes (landing pages) have strong contextual priority
+- Resource nodes support structure and explanation
+- Blog nodes support discovery and should not dominate final output
+
+This layer must NOT override base score eligibility.
+It only refines ordering among valid candidates.
+
+### Intent Sensitivity (NEW)
+
+Where intent metadata is available, ranking should prefer:
+
+- BOFU (conversion-ready) over MOFU
+- MOFU over TOFU
+
+Intent must act as a tiebreaker, not a replacement for scoring.
+
+If intent conflicts with relevance score, relevance remains primary.
 
 ### Static Authority Map
 
@@ -255,11 +303,21 @@ Primary query shapes include:
 
 Query access stays deterministic. No runtime AI or ad hoc scoring layer is allowed.
 
+### Query Responsibility (EXTENDED)
+
+Graph queries must return results that are:
+
+- structurally valid (metadata overlap)
+- behavior-aware (page type alignment)
+- conversion-aligned (system and intent relevance)
+
+Consumers must not bypass these constraints.
+
 ---
 
 ## CROSS-REFERENCE MAP
 
-- Page roles and exposure rules: `CONTENT.md`
-- Identity and system boundaries: `SYSTEM.md`
-- CTA and contact context: `CONVERSION.md`
-- Control plane and validation: `../ops/AUDIT.md`
+- Page roles and exposure rules: [./CONTENT.md](./CONTENT.md)
+- Identity and system boundaries: [./FOUNDATION.md](./FOUNDATION.md)
+- CTA and contact context: [./CONVERSION.md](./CONVERSION.md)
+- Control plane and validation: [../ops/AUDIT.md](../ops/AUDIT.md)

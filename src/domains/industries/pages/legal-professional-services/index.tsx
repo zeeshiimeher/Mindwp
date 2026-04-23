@@ -21,8 +21,8 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         badge: 'Legal & Professional Services',
         title: 'Professional Work Is Rarely Lost Loudly. It Is Lost In The Long, Quiet Middle.',
         description:
-            'Solicitors, accountants, consultants — the work does not vanish on the call. It vanishes in the weeks afterwards, while clients deliberate, compare, postpone, and quietly choose whoever stayed in front of them. The firms that win are not faster. They are simply still in the room when the decision finally happens.',
-        list: ['Slow decisions', 'Quiet drift', 'Comparison stalls', 'Invisible leaks'],
+            'Solicitors, accountants, and consultants rarely lose work in one obvious moment. It usually fades out over days or weeks while the prospect compares firms, sits on the proposal, and hears nothing useful enough to keep the conversation moving.',
+        list: ['Slow decisions', 'Quiet drop-offs', 'Weak follow-up', 'Trust drift'],
         cssPrefix: 'legal-professional-services-hero',
     };
 
@@ -30,27 +30,27 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         badge: 'Three Patterns That Repeat Across The Category',
         title: 'Different practices, the same three failures',
         description:
-            'A small law firm, a five-partner accountancy, and an independent consultant lose work in surprisingly similar ways. None of them are about the technical work itself.',
+            'A small law firm, a five-partner accountancy, and an independent consultant can look very different day to day. The way work slips away is often far more similar than most firms realise.',
         benefits: [
             {
                 icon: HourglassIcon,
                 title: 'Slow decisions outlast the firm\'s memory',
                 description:
-                    'Buying decisions take weeks, sometimes months. By the time the client is ready, the firm has moved on to the next matter and forgotten to circle back.',
+                    'Decisions often take weeks, sometimes longer, especially when more than one person is involved. By the time the prospect is ready to talk again, the firm has usually moved on and nobody has picked the thread back up.',
                 iconType: 'primary' as const,
             },
             {
                 icon: EyeOff,
                 title: 'Drop-offs happen silently',
                 description:
-                    'Nobody emails to say "we went elsewhere." Proposals just stop being mentioned. Enquiries just stop replying. The leak is real but invisible until it is measured.',
+                    'Almost nobody writes back to say they chose another firm or decided to wait. Proposals sit in inboxes, enquiries stop replying, and the loss only becomes visible when somebody bothers to trace what happened.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: Compass,
                 title: 'Comparison happens in rooms you are not in',
                 description:
-                    'Boards, partners, spouses, finance directors. The decision is made in a room without you. Whoever is easiest to summarise and forward usually wins.',
+                    'Partners, spouses, finance leads, directors, or internal buyers all shape the decision without speaking to you directly. The firm that stays easiest to trust and easiest to forward usually has the advantage in that room.',
                 iconType: 'accent' as const,
             },
         ],
@@ -60,7 +60,8 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     const decisionChecklistData = {
         badge: 'Quietly Familiar?',
         title: 'A few signs the leak is in consideration, not in marketing',
-        description: 'If most of these ring true across the practice, the bottleneck is rarely lead generation. It is what happens to the leads you already have.',
+        description:
+            'If most of these feel familiar, the problem is probably not getting attention in the first place. It is what happens after the enquiry arrives and before the prospect makes up their mind.',
         items: [
             'Discovery calls go well, but the close rate does not match the call quality',
             'Proposals get sent and then nobody knows what happened to them',
@@ -78,7 +79,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         badge: 'Where Practices Sit',
         title: 'Same category, three very different shapes of leak',
         description:
-            'The category looks similar from the outside. The actual point where work is lost is different in each kind of practice.',
+            'From the outside, these practices can sound similar. In reality, each one loses work in a different part of the decision cycle once the first contact has happened.',
         cards: [
             {
                 title: 'Trust-first practices',
@@ -120,12 +121,12 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         badge: 'What We Put In Place',
         title: 'Stay in the room while the decision happens — without becoming a salesperson',
         description:
-            'The work itself is yours. What we put around it is the quiet, professional follow-up that keeps the firm in front of clients while they think.',
+            'The legal, financial, or advisory work stays yours. What changes is the quiet follow-up, clearer next step, and steady trust signals that stop a live prospect from drifting away while they think it over.',
         featureCategories: [
             {
                 title: 'Acknowledge every enquiry like a partner would',
                 description:
-                    'A warm, human first reply inside the hour. It names the next step and the person. The client stops emailing other firms while they wait.',
+                    'A warm first reply goes back quickly and sounds like it came from a real person in the firm. It names the next step and who owns it, so the prospect is not left wondering whether to keep looking elsewhere.',
                 icon: MessageSquare,
                 features: [
                     'Same-hour acknowledgement, in your voice',
@@ -136,7 +137,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 title: 'Hold the open proposals and quotes',
                 description:
-                    'Every open proposal lives in one place. Two scheduled, polite check-ins close the ones that would otherwise drift.',
+                    'Every open proposal stays visible instead of living in somebody\'s inbox and fading out. Two calm, well-timed follow-ups catch the decisions that would otherwise disappear without a clear no.',
                 icon: ClipboardList,
                 features: [
                     'Pipeline visible to all partners',
@@ -147,7 +148,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 title: 'Make the offer easy to forward',
                 description:
-                    'Whether it is a fee schedule, a scope, or an engagement summary — written so a client can repeat it inside their own organisation without needing you in the room.',
+                    'Whether it is a fee schedule, scope, or engagement summary, it is written clearly enough to survive being forwarded internally. That matters when the real decision happens somewhere you are not present to explain it again.',
                 icon: Layers,
                 features: [
                     'Written in client language, not firm language',
@@ -158,7 +159,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 title: 'Turn finished work into the proof you have earned',
                 description:
-                    'Reviews, testimonials, and light-touch case studies, asked at the right moment so they actually get given.',
+                    'Reviews, testimonials, and light-touch proof are requested at the point they are most likely to be given. That helps trust stay visible for the next prospect who is still deciding whether to make contact.',
                 icon: ShieldCheck,
                 features: [
                     'Asked once, at the right point',
@@ -169,7 +170,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 title: 'Be findable for the work you actually want',
                 description:
-                    'Pages and search visibility lined up for sector, niche, matter type, or area — not generic professional services.',
+                    'Your pages and search visibility line up around sector, niche, matter type, or area instead of generic professional-services wording. That makes it easier for the right kind of brief to recognise itself quickly.',
                 icon: Search,
                 features: [
                     'Pages for the work you want more of',
@@ -185,7 +186,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         badge: 'How We Start',
         title: 'A short, honest look at where the practice actually loses work',
         description:
-            'No pitch. We sit with how the practice runs, listen to where it leaks, and put the missing piece in place in the order that helps most.',
+            'No pitch and no long theory session. We look at how the practice actually runs, where prospects go quiet, and which missing follow-up or clarity step is costing the most work first.',
         steps: [
             {
                 number: '01',
@@ -217,7 +218,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         badge: 'By Practice Type',
         title: 'Pick the one closest to how you actually run',
         description:
-            'Same category, different leaks. Each page gets into the specifics for a different shape of practice.',
+            'Same category, different decision patterns. Each page stays closer to one type of practice so the examples feel more like your actual week.',
         items: [
             {
                 title: 'Small Law Firms',
@@ -248,12 +249,13 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The parts that come up most across legal, accounting, and consulting.',
+        description:
+            'These are the supporting services that keep coming up across law, accounting, and consulting. Each one helps hold trust, follow-up, and visibility together without changing how the firm actually delivers the work.',
         cards: [
             {
                 icon: CheckCircle2,
                 title: 'CRM & Follow-up Automation',
-                description: 'Hold open proposals and decisions, nudge gracefully, stop the drift.',
+                description: 'Keeps open proposals and slower decisions visible so nobody has to rely on memory to send the next follow-up.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -261,7 +263,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 icon: MessageSquare,
                 title: 'Smart Website Systems',
-                description: 'Acknowledge enquiries the way a partner would, in the hour.',
+                description: 'Helps new enquiries get a prompt, grounded first reply so the prospect does not sit there wondering what happens next.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -269,7 +271,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Make the proof match the quality of the work.',
+                description: 'Makes the visible proof feel closer to the standard of work the firm is already delivering behind the scenes.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -277,7 +279,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Be findable for the kind of brief you actually want more of.',
+                description: 'Helps the firm show up for the kind of brief, niche, or local search that is actually worth taking seriously.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -336,7 +338,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the practice quietly loses work',
             description:
-                'If discovery calls go well but signed engagements do not match the call quality, or if proposals and enquiries quietly stop replying, walk us through the last few that went quiet. We will show you where the leak actually is.',
+                'If enquiries are acknowledged late, proposals sit untouched, or prospects quietly stop replying after a good first conversation, walk us through the last few that went quiet. We will show you where the leak actually sits.',
         },
     };
 }

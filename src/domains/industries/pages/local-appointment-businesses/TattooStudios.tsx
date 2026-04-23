@@ -17,8 +17,8 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         badge: 'For Tattoo Studios',
         title: 'They Saved The Reference Months Ago. They Still Have Not Booked.',
         description:
-            'Tattoo enquiries are emotional, not urgent. People sit with the idea for weeks. They DM, get quiet, come back, go quiet again. The studio that stays in their head, not the one that replies fastest, gets the deposit.',
-        list: ['Saved-not-booked', 'Long thinking', 'No deposit', 'Idea-on-hold'],
+            'Tattoo enquiries are emotional and comparison-heavy, not urgent. People sit with the idea for weeks, browse multiple artists, and the booking often cools off when the reply is slow or the style match never gets made clear enough to keep them moving.',
+        list: ['Saved ideas', 'Slow replies', 'Style match', 'Deposit drop-off'],
         cssPrefix: 'tattoo-studios-hero',
     };
 
@@ -26,7 +26,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         badge: 'How Pieces Begin',
         title: 'A reference, a feeling, a half-formed idea',
         description:
-            'They are not buying a thing. They are choosing a person. They want to know your style fits, the studio feels right, and the deposit is not the moment everything goes silent.',
+            'They are not choosing a product. They are choosing an artist, a style, and whether the studio feels right for something personal. The booking usually moves when the fit feels obvious and the conversation does not go cold in between messages.',
         items: [
             {
                 title: 'Custom piece enquiries',
@@ -56,23 +56,25 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     const operatingPatternsData = {
         badge: 'Where Pieces Stall',
         title: 'It is rarely a no. It is months of "I want to but not yet."',
+        description:
+            'Most tattoo enquiries do not end with a clean rejection. They drift while the person compares artists, sits with the idea, and waits to feel certain enough to send the next message or pay the deposit.',
         benefits: [
             {
                 icon: Bookmark,
                 title: 'They saved a reference and forgot to send it',
-                description: 'Your work lives in their saved folder. The DM never gets typed.',
+                description: 'Your work lives in their saved folder beside three other artists they are considering. The DM never gets typed because the timing slips or another profile feels easier to message when they come back to it later.',
                 iconType: 'primary' as const,
             },
             {
                 icon: Heart,
                 title: 'They DM, then go quiet for weeks',
-                description: 'They are sitting with it. No artist stays in their head while they do.',
+                description: 'They are sitting with it, checking other artists, and deciding whether the style really feels like the right fit. If the reply was slow or the conversation felt thin, you stop being the studio they keep coming back to in their head.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: HandCoins,
                 title: 'The deposit is the moment they vanish',
-                description: 'Conversation flows, then the deposit ask kills it. Often it is the way it gets asked.',
+                description: 'The conversation can feel warm right up until the deposit ask lands too abruptly or too vaguely. When that happens, the booking often goes quiet rather than turning into an actual no.',
                 iconType: 'accent' as const,
             },
         ],
@@ -82,11 +84,12 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Stay in their head while they sit with the idea, without ever feeling pushy',
-        description: 'You stay in the chair. The bit between the saved reference and the booked session stops depending on memory.',
+        description:
+            'You stay in the chair and keep doing the work. The part between the saved reference, the first DM, and the booked session stops depending on memory, delayed replies, or whether the person happened to come back at the right moment.',
         featureCategories: [
             {
                 title: 'Catch the messy first message',
-                description: 'A reference photo, a vague description, a half-formed idea — held in one place per artist.',
+                description: 'A reference photo, a vague description, and a half-formed idea all stay held together in one place per artist. That makes it easier to reply in a way that feels specific enough to keep the conversation alive.',
                 icon: MessageSquare,
                 features: [
                     'DMs, forms, and missed calls in one inbox',
@@ -96,7 +99,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Make the deposit feel small',
-                description: 'How and when the deposit is asked decides whether the conversation survives it.',
+                description: 'How and when the deposit is asked often decides whether the conversation survives it. A clearer, friendlier ask tied to a real next step usually lands better than dropping a cold payment link into the chat.',
                 icon: HandCoins,
                 features: [
                     'Deposit link sent at the right moment',
@@ -106,7 +109,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Stay in their head gently',
-                description: 'A couple of soft nudges over the weeks they are thinking, then a graceful pause.',
+                description: 'A couple of soft nudges go out over the weeks they are thinking it through, comparing artists, or waiting for the right timing. That helps the studio stay in the frame without turning the whole thing into a hard sell.',
                 icon: Heart,
                 features: [
                     'Spaced follow-ups, never spam',
@@ -116,7 +119,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Turn healed work into the next booking',
-                description: 'Healed photos, review asks, and a quiet door for the next piece.',
+                description: 'Healed photos, review asks, and a quiet door for the next piece all happen while the work still feels current and worth sharing. That makes it easier for one good experience to turn into the next booking or referral.',
                 icon: ShieldCheck,
                 features: [
                     'Review request at the healed-photo moment',
@@ -126,7 +129,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable when the urge finally lands',
-                description: 'Pages and Google profile lined up for style + area, so the saved-reference person can find you again.',
+                description: 'Your pages and Google profile line up around style and area, so the person who saved a reference three months ago can actually find you again when they are finally ready to book. That matters more than most studios realise.',
                 icon: Search,
                 features: [
                     'Found on Maps for the work you do',
@@ -140,12 +143,13 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for tattoo studios.',
+        description:
+            'These are the supporting services that come up most often once a studio sees how much of the booking lives in reply speed, style match, and the quieter weeks between messages. Each one helps hold attention, proof, or booking momentum together.',
         cards: [
             {
                 icon: Palette,
                 title: 'Smart Website Systems',
-                description: 'Style-led pages and artist profiles that hold attention.',
+                description: 'Helps style-led pages and artist profiles hold attention long enough for the right person to feel the match and send the next message.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -153,7 +157,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             {
                 icon: MessageSquare,
                 title: 'CRM & Follow-up Automation',
-                description: 'Stay in their head while they think. Stop chasing manually.',
+                description: 'Keeps the studio in their head while they think, compare artists, and decide whether to book, without anyone having to chase manually.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -161,7 +165,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'Healed photos and reviews that pull the next booking in.',
+                description: 'Uses healed photos and reviews to pull the next booking in, especially from people still deciding which artist feels safest to trust.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -169,7 +173,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             {
                 icon: Calendar,
                 title: 'Booking & Deposit Flow',
-                description: 'Tie the deposit to a specific session so it does not kill the chat.',
+                description: 'Ties the deposit to a specific session and next step so it does not kill the chat right when the person was almost ready to commit.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -181,7 +185,8 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things tattoo studios usually ask',
-        description: 'Honest answers about how this fits an emotional, slow-burn enquiry.',
+        description:
+            'These are the practical questions that usually come up in an emotional, slow-burn enquiry where style fit and timing matter as much as price. Straight answers, written for that pace.',
         faqs: [
             {
                 question: 'Will the follow-up feel pushy?',
@@ -247,7 +252,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where the conversation goes quiet',
             description:
-                'If DMs come in fine but the deposit is where everything stops, walk us through how a typical enquiry runs and we will show you the first thing worth fixing.',
+                'If DMs come in fine but slow replies or the deposit step keep cooling the booking off, walk us through how a typical enquiry runs and we will show you the first thing worth fixing.',
         },
     };
 }

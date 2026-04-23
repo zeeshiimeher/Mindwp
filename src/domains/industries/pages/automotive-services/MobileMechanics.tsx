@@ -17,7 +17,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     badge: 'For Mobile Mechanics',
     title: 'You Were Under The Bonnet On A Driveway. The Phone Was In The Glovebox.',
     description:
-      'A mobile mechanic\u2019s front desk is a phone in the seat well. The day runs from one driveway to the next. Half the calls land while there is no clean hand to answer them, and half of every wasted hour gets eaten by a job in the wrong postcode that nobody priced before the drive.',
+      'A mobile mechanic\u2019s front desk is a phone in the seat well while you are on a driveway, in a workplace car park, or at the roadside with a car that will not move. Calls come in while your hands are dirty, and bad postcodes or weak first replies can waste the next hour before you even pull away.',
     list: ['Glovebox calls', 'Wrong postcodes', 'Cold quotes'],
     cssPrefix: 'mobile-mechanics-hero',
   };
@@ -26,13 +26,13 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     badge: 'A Day From The Van',
     title: 'Three moments most mobile mechanics know by heart',
     description:
-      'These are the moments that lose the most jobs and the most diesel. Each one has a small fix that does not need you to stop work.',
+      'These are the moments that waste the most time, trust, and diesel in a one-van day. Each one has a fix that works while you are still trying to get the current car moving again.',
     workflows: [
       {
         trigger: 'You are mid-job on a driveway. The phone rings in the glovebox.',
         actions: [
           'A short, real-sounding text fires back inside a minute capturing the car and the issue',
-          'The driver knows you will ring back instead of assuming you ghosted',
+          'The driver knows you will ring back instead of assuming you vanished on them',
           'When the bonnet is back down, the callback already has context',
         ],
       },
@@ -61,27 +61,27 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     badge: 'Where The Day Bleeds',
     title: 'Four moments where a one-van business quietly loses its margin',
     description:
-      'A mobile mechanic\u2019s leak is rarely the workmanship. It is the bit between the seat and the next driveway.',
+      'A mobile mechanic\u2019s leak is rarely the workmanship itself. It is the stretch between the current driveway, the next postcode, and the calls you cannot answer while someone is waiting for the car to move again.',
     benefits: [
       {
         icon: PhoneOff,
         title: 'Calls land while your hands are dirty',
         description:
-          'You hear the buzz. You cannot pick up. By the time the job is done the message is two hours old and the driver has rung two other vans.',
+          'You hear the buzz while you are halfway through a battery change on a driveway or tracing a fault at the roadside. By the time you listen back, the message is old and the stranded driver has already tried two other vans.',
         iconType: 'primary' as const,
       },
       {
         icon: Navigation,
         title: 'Half a day driving to a wrong postcode',
         description:
-          'A call comes in, the slot gets agreed, and only on arrival does it become obvious the job needed a workshop or the area was an hour out of patch.',
+          'A call comes in, the slot gets agreed, and only when you arrive do you realise the job needs a workshop or the address is well outside your patch. The diesel is gone either way.',
         iconType: 'secondary' as const,
       },
       {
         icon: Route,
         title: 'Quotes sent by text at 9pm, gone by morning',
         description:
-          'You did the right thing and replied late. By the time anyone follows up, the driver has either booked elsewhere or assumed it never happened.',
+          'You did the right thing and sent the price late from the van. By the next morning, the driver either has another mechanic lined up or has stopped trusting that you will turn up when you said.',
         iconType: 'accent' as const,
       },
       {
@@ -99,7 +99,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five small pieces designed for a business run from the seat',
     description:
-      'No CRM dashboards to live inside. Each piece does one job in the place a mobile mechanic is most likely to drop a lead.',
+      'No bloated dashboard to babysit from the van. Each piece handles one job in the exact place a mobile mechanic is most likely to lose the lead, the route, or the follow-up.',
     featureCategories: [
       {
         title: 'Hold the call you could not take',
@@ -115,7 +115,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         title: 'Filter out the postcode-waste jobs before you drive',
         description:
-          'First reply checks the area and the job. Out-of-patch enquiries get a polite handoff. In-patch enquiries get a slot.',
+          'The first reply checks the area and the job before you turn the key. Out-of-patch enquiries get a polite handoff, and in-patch ones get a slot you can trust is worth the drive.',
         icon: MapPin,
         features: [
           'Service-area check on first reply',
@@ -137,7 +137,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         title: 'Stop quotes dying in old text threads',
         description:
-          'Every late-night quote gets a polite morning chase. Open quotes live somewhere you can scan between jobs.',
+          'Every late-night quote gets a polite morning chase while the issue is still fresh. Open quotes live somewhere you can scan between jobs instead of disappearing into old text threads.',
         icon: Inbox,
         features: [
           'Morning chase on every open quote',
@@ -164,12 +164,12 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     badge: 'Where Most Mobile Mechanics Start',
     title: 'You do not have to fix everything at once',
     description:
-      'Most one-van businesses feel one of these louder than the others. Pick the one that is bleeding the most and start there.',
+      'Most one-van businesses can name the pain straight away: missed calls on live jobs, wasted drives, or quotes that cool off overnight. Start with the one that steals the most time from the week.',
     packages: [
       {
         name: 'Catch the calls you cannot take',
         description:
-          'For days where the phone keeps ringing while your hands are in an engine bay.',
+          'For days where the phone keeps ringing while your hands are in an engine bay, under a bonnet, or on the floor beside a wheel that has to come off.',
         price: 'Stage 1',
         priceDetail: 'Start here if missed calls are the loudest leak',
         features: [
@@ -181,7 +181,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         name: 'Stop driving to the wrong postcode',
         description:
-          'For when too many jobs only become "no-go" once the van is parked outside.',
+          'For when too many jobs only become a no-go once the van is parked outside and you realise the address, access, or repair was wrong from the start.',
         price: 'Stage 2',
         priceDetail: 'Start here if wasted journeys are the pain',
         features: [
@@ -194,12 +194,12 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         name: 'Warm up old quotes and stack reviews',
         description:
-          'For when work comes in fine but late-night quotes go cold and the Google profile is bare.',
+          'For when work comes in fine but late-night quotes cool off by morning and the Google profile still looks too thin for how many jobs you finish each week.',
         price: 'Stage 3',
         priceDetail: 'Start here if follow-up and reputation are the gap',
         features: [
           'Morning chase on every open quote',
-          'Past customer nudges on the right interval',
+          'Past drivers nudged on the right interval',
           'Review ask the evening you finish the job',
         ],
       },
@@ -208,12 +208,14 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system one-van mechanics tend to lean on.',
+    description:
+      'These are the supporting pieces one-van mechanics usually lean on once missed calls, service area issues, and trust gaps are obvious. Each one helps the van feel easier to book and easier to trust before you arrive.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, slot and quote flow together for a business with no shopfront.',
+        description:
+          'Holds enquiry, slot, and quote flow together for a business with no shopfront, so the next job does not depend on whoever catches a text first.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -221,7 +223,8 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         icon: Inbox,
         title: 'AI Lead Handling',
-        description: 'Catches missed calls and out-of-hours enquiries when the van is on a job.',
+        description:
+          'Catches missed calls and out-of-hours enquiries while the van is on a job, so roadside urgency does not die just because you could not answer cleanly.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -229,7 +232,8 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "mobile mechanic near me" the moment a car will not start.',
+        description:
+          'Visibility for "mobile mechanic near me" and similar searches, right at the moment a car will not start and somebody needs a fast answer nearby.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -237,7 +241,8 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished driveway jobs into proof on the Google profile.',
+        description:
+          'Turns finished driveway and roadside jobs into proof on the Google profile, so the trust picture matches the reliability people get once you arrive.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -249,7 +254,8 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What mobile mechanics tend to ask first',
-    description: 'Direct, no hedging.',
+    description:
+      'These are the practical questions that usually come up once a one-van business sees how much of the week is being lost between the call and the driveway. Straight answers only.',
     faqs: [
       {
         question: 'I cannot stop a job to type. Will this just be more notifications?',
@@ -257,7 +263,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
           'It is the opposite. The text-back, the chase, the reminder all fire on their own. Less time on the phone between jobs, not more.',
       },
       {
-        question: 'My customers want to talk to a person. Won\u2019t this feel automated?',
+        question: 'Drivers want to talk to a person. Won\u2019t this feel automated?',
         answer:
           'No. The first reply reads like something you would actually send between jobs. The point is to hold the lead until you can ring back, not to fake a conversation.',
       },

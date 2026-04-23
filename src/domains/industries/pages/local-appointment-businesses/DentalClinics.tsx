@@ -17,31 +17,33 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         badge: 'For Dental Clinics',
         title: 'The Treatment Plan Was Agreed In April. The Chair Has Been Empty Since.',
         description:
-            'Most dental clinics do not lose growth at the front door. They lose it in the middle. Recalls go out and get ignored. Treatment plans get postponed. The patients who need you most are the ones who quietly avoid the next appointment.',
-        list: ['Missed recalls', 'Treatment drop-off', 'Avoidance', 'Postponed plans'],
+            'Dental clinics usually carry two kinds of booking pressure at once: the person calling with pain who needs an answer quickly, and the routine patient or treatment-plan patient who keeps putting the next appointment off. Both get lost when the reply, booking step, or follow-up is too slow.',
+        list: ['Pain calls', 'Missed recalls', 'Late booking', 'Stalled plans'],
         cssPrefix: 'dental-clinics-hero',
     };
 
     const operatingPatternsData = {
         badge: 'Where Treatment Drops Off',
         title: 'The recall list is long. The reasons for ignoring it are personal.',
+        description:
+            'Dental clinics usually deal with two very different behaviours at once. Pain enquiries need a quick answer because the person wants certainty today, while routine and agreed treatment often slip because the next booking feels easy to postpone.',
         benefits: [
             {
                 icon: CalendarX,
                 title: 'The recall went out and got buried',
-                description: 'A single email six months later is easy to ignore. Especially by the patients who least want to come.',
+                description: 'A single email six months later is easy to ignore, especially for the people who already do not love coming in. One reminder without any follow-up is rarely enough to turn intention into an actual booking.',
                 iconType: 'primary' as const,
             },
             {
                 icon: ClipboardList,
                 title: 'Agreed treatment quietly stalls',
-                description: 'They said yes in the chair. Life happened. Nobody followed up gently.',
+                description: 'They said yes in the chair, then life got busy, the cost needed thinking about, or they wanted to wait until after a holiday. Nobody followed up gently while the decision was still sitting there unfinished.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: HeartPulse,
                 title: 'Avoidance gets confused with disinterest',
-                description: 'The patients you most need to see are the ones most likely to delay. Cold reminders push them further away.',
+                description: 'The people you most need to see are often the ones most likely to delay, especially if there is anxiety or discomfort involved. Cold reminders or slow booking replies usually push them further away instead of bringing them closer.',
                 iconType: 'accent' as const,
             },
         ],
@@ -51,7 +53,8 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
     const comparisonData = {
         badge: 'A Recall Cycle, Two Ways',
         title: 'Same patient list. Two very different outcomes.',
-        description: 'The difference is not effort. It is whether the messages meet the patient where they actually are.',
+        description:
+            'The difference is not effort alone. It is whether the messages and booking steps match the way patients actually behave when they are in pain, anxious, busy, or quietly putting treatment off for another month.',
         comparisons: [
             {
                 type: 'before' as const,
@@ -79,11 +82,12 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Recall and treatment follow-up that actually meets patients where they are',
-        description: 'The clinical work is yours. The bit that decides whether the chair fills next month stops depending on memory.',
+        description:
+            'The clinical work stays entirely yours. What changes is that pain enquiries get answered more cleanly, routine booking gets easier, and follow-up on recalls or paused treatment stops depending on memory alone.',
         featureCategories: [
             {
                 title: 'Make recall something patients actually open',
-                description: 'Short, warm, written like a real person. Then a gentle second nudge if needed.',
+                description: 'Recall messages stay short, warm, and written like a real person instead of a generic reminder feed. Then a gentle second nudge goes out if needed, because one message alone rarely catches the people who keep postponing.',
                 icon: Bell,
                 features: [
                     'Two-touch recall, not one-and-done',
@@ -93,7 +97,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Hold the treatment plan that paused',
-                description: 'A polite check-in at sensible intervals so agreed work does not just disappear.',
+                description: 'A polite check-in goes out at sensible intervals so agreed work does not simply disappear after the chair conversation. That matters most when the patient intended to book but needed more time and then went quiet.',
                 icon: ClipboardList,
                 features: [
                     'Plan-specific follow-up cadence',
@@ -103,7 +107,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Catch the new patient enquiry warmly',
-                description: 'A first reply that reassures, captures the reason, and leads to a short consult.',
+                description: 'A first reply reassures, captures the reason for the enquiry, and makes the next step clear quickly enough for both pain cases and routine patients. That helps pain callers feel answered and routine enquiries feel easy to book without a long delay.',
                 icon: MessageSquare,
                 features: [
                     'Missed-call text-back',
@@ -113,7 +117,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Build the trust the brochure cannot',
-                description: 'A steady flow of recent reviews so Google looks the way the clinic actually feels.',
+                description: 'A steady flow of recent reviews helps Google look the way the clinic actually feels when someone visits or calls. That matters for both the person in pain checking quickly and the routine patient taking longer to decide.',
                 icon: ShieldCheck,
                 features: [
                     'Review request at the right moment',
@@ -123,7 +127,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Show up when local patients search',
-                description: 'Pages and Google profile lined up for treatment + area, not generic dentistry.',
+                description: 'Your pages and Google profile line up around treatment and area instead of generic dentistry alone. That makes it easier to show up for both urgent pain searches and slower treatment research without blurring the two together.',
                 icon: Search,
                 features: [
                     'Found on Maps for treatment + area',
@@ -137,12 +141,13 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for dental clinics.',
+        description:
+            'These are the supporting services that come up most often once a clinic sees how much pain calls, recalls, and treatment plans all depend on better response and steadier follow-up. Each one strengthens a different part of that gap.',
         cards: [
             {
                 icon: Bell,
                 title: 'CRM & Recall Automation',
-                description: 'Two-touch recall and treatment follow-up that runs itself.',
+                description: 'Keeps two-touch recall and treatment follow-up moving so the chair is not left relying on one reminder and crossed fingers.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -150,7 +155,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             {
                 icon: Stethoscope,
                 title: 'Smart Website Systems',
-                description: 'Pages and replies that read warm, not clinical-cold.',
+                description: 'Helps pages and first replies read warm and clear, so pain enquiries and routine questions both feel handled properly from the start.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -158,7 +163,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             {
                 icon: Star,
                 title: 'Reputation & Review Systems',
-                description: 'A steady flow of recent reviews patients actually read.',
+                description: 'Builds a steady flow of recent reviews that patients actually read while deciding whether this clinic feels trustworthy enough to book.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -166,7 +171,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Show up for treatment + area, not generic dentistry.',
+                description: 'Helps you show up for treatment and area searches with clearer intent, whether someone is looking for urgent help or planning a routine visit.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -178,7 +183,8 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things dental clinics usually ask',
-        description: 'Honest answers about how this fits a careful, clinical setting.',
+        description:
+            'These are the practical questions that usually come up in a careful clinical setting where pain calls, recalls, and treatment plans all behave differently. Straight answers, written for that mix.',
         faqs: [
             {
                 question: 'How is this different from the recall our practice software already does?',
@@ -244,7 +250,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where treatment is dropping off',
             description:
-                'If recall goes out but the chair stays empty, or agreed treatment quietly stalls, walk us through how the month runs and we will show you the first thing worth fixing.',
+                'If pain calls are being answered too slowly or routine treatment and recall keep slipping after the first conversation, walk us through how the month runs and we will show you the first thing worth fixing.',
         },
     };
 }

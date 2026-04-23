@@ -1,13 +1,13 @@
 # CONVERSION — MindWP
 
 > Source of truth for CTA ownership, contact context, page-level CTA enforcement, and `/contact` conversion rules.
-> If this file conflicts with [./SYSTEM.md](./SYSTEM.md), fix the conflict immediately.
+> If this file conflicts with [./FOUNDATION.md](./FOUNDATION.md), fix the conflict immediately.
 
 ---
 
 ## USE THIS DOC
 
-Use this file when working on `SmartCTA`, page adapters, CTA placement, contact URLs, or the `/contact` flow.
+Use this doc for `SmartCTA`, page adapters, CTA placement, contact URLs, and the `/contact` flow.
 
 ---
 
@@ -106,6 +106,7 @@ Default page-intent mapping is owned by `src/lib/page/pageIdentity.ts`.
 | `page`              | `entry`        |
 
 This default may be narrowed by the page template, but it may not break page-level registry rules.
+This default may be narrowed by the page template, but it may not break registry rules.
 
 ---
 
@@ -128,6 +129,7 @@ Runtime owners:
 ## CTA LABEL RESOLUTION
 
 CTA labels are resolved, not manually invented page by page.
+CTA labels are resolved, not invented page by page.
 
 Rules:
 
@@ -148,6 +150,7 @@ Rules:
 6. Submission passes complete conversion context onward.
 
 If `system` or `source` is invalid or missing, the conversion contract has failed.
+If `system` or `source` is invalid or missing, the conversion contract fails.
 
 ---
 
@@ -178,4 +181,4 @@ If `system` or `source` is invalid or missing, the conversion contract has faile
 ## CROSS-REFERENCE MAP
 
 - Page roles and funnel boundaries: [./CONTENT.md](./CONTENT.md)
-- System hierarchy and system vocabulary: [./SYSTEM.md](./SYSTEM.md)
+- System hierarchy and system vocabulary: [./FOUNDATION.md](./FOUNDATION.md)

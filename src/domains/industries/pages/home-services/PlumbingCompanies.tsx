@@ -19,8 +19,8 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'For Plumbing Firms',
     title: 'Stopcock In One Hand. Phone In The Other. They Were Already Calling Number Three.',
     description:
-      'A pipe gives way at twenty past seven on a Tuesday. The homeowner is not browsing. They are scrolling their saved list of plumbers and dialling, one after the other, until somebody answers. By the time you see the missed call from dinner, another van is already driving over and the bathroom rebuild quote you might have been asked for next month belongs to someone else.',
-    list: ['7pm bursts', 'Dial-down lists', 'Quiet refits'],
+      'A leak starts spreading at twenty past seven and the homeowner is not browsing options calmly. They are ringing plumbers one after another until somebody answers, and by the time you see the missed call from dinner another van is already on the way and the later refit conversation has gone with it.',
+    list: ['Water leaks', 'Missed evenings', 'Next number'],
     cssPrefix: 'plumbing-companies-hero',
   };
 
@@ -28,34 +28,34 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where The Evening Bleeds',
     title: 'Where plumbing firms quietly lose the next homeowner',
     description:
-      'Plumbing emergencies follow a pattern. Three phones in a row. The first to answer keeps the customer for the next ten years.',
+      'Plumbing emergencies follow the same pattern again and again. Water is spreading, the caller is ringing three numbers in a row, and the first person to answer often keeps the homeowner for far more than just that one evening.',
     benefits: [
       {
         icon: Droplets,
         title: 'A burst at 7:14pm and you are eating dinner',
         description:
-          'The phone rings out. They are already pressing call on the next saved number. By 7:18 they have a plumber. It is not you.',
+          'The phone rings out while you are eating dinner and they are already pressing call on the next saved number. By 7:18 they have a plumber on the way, and you do not even know the call mattered yet.',
         iconType: 'primary' as const,
       },
       {
         icon: Moon,
         title: 'Late-evening enquiries pile up untriaged until morning',
         description:
-          'Forms, texts, missed calls between six and midnight. The morning starts with reading them in date order, not in order of who is still standing in water.',
+          'Forms, texts, and missed calls stack up between six and midnight while nobody has a clean way to sort them. The morning starts with reading them in date order, not in order of who is still standing in water or has a ceiling staining through.',
         iconType: 'secondary' as const,
       },
       {
         icon: ShowerHead,
         title: 'A bathroom rebuild quote sits open for a fortnight',
         description:
-          'Three grand. Quote sent Monday. By the next Tuesday the homeowner has two more on the table and yours is the one nobody chased.',
+          'Three grand, quote sent Monday, then no follow-up while emergency work keeps interrupting the week. By the next Tuesday the homeowner has two more prices on the table and yours is the one nobody bothered to chase.',
         iconType: 'accent' as const,
       },
       {
         icon: FileText,
         title: 'Insurance leak job stalls in paperwork limbo',
         description:
-          'Photos on a personal phone. Address in a different thread. The claim drifts and the homeowner starts wondering if anyone is on it.',
+          'Photos are on a personal phone, the address is in another thread, and the insurer wants details nobody can find quickly. The claim drifts and the homeowner starts wondering if anyone is properly on it at all.',
         iconType: 'primary' as const,
       },
     ],
@@ -66,7 +66,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Three Evening Moments',
     title: 'Three evenings, and what changes',
     description:
-      'These are the moments at the top of the page. This is what happens to them after.',
+      'These are the kinds of after-hours moments that decide the week without much warning. This is what changes once the reply and follow-up stop depending on who happened to notice first.',
     workflows: [
       {
         trigger: '7:14pm Tuesday \u2014 burst pipe, missed call to the office',
@@ -101,23 +101,23 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five pieces sized for a business where the next homeowner is on the phone right now',
     description:
-      'Each piece does one job in one of the moments above. None of them ask you to come off a job.',
+      'Each piece handles one of the pressure points above while you are still on the tools or on the road. None of them depend on you stopping the job in front of you just to hold the next one together.',
     featureCategories: [
       {
         title: 'Catch the call before they reach the next number on the list',
         description:
-          'Every missed call fires a short text in under a minute. It captures the address and what is leaking. The homeowner stops dialling.',
+          'Every missed call fires a short text in under a minute and asks what is leaking and where. That is often enough to stop the homeowner dialling the next number while water is still spreading and the floor is getting worse.',
         icon: PhoneOff,
         features: [
           'Text-back inside 60 seconds',
           'Address and emergency captured up front',
-          'Customer knows you have seen it',
+          'Caller knows you have seen it',
         ],
       },
       {
         title: 'Pull every channel into one queue overnight',
         description:
-          'Calls, forms, texts and WhatsApps from the evening land in one place tagged by urgency \u2014 not by which channel they came in on.',
+          'Calls, forms, texts, and WhatsApps from the evening all land in one place and get tagged by urgency instead of by channel. That makes the first hour of the morning less like a search mission through yesterday\'s messages.',
         icon: Inbox,
         features: [
           'One queue across calls, forms, texts and WhatsApp',
@@ -128,7 +128,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Lift bursts and leaks above the routine',
         description:
-          '"Burst", "no water", "flooding" surface above a tap drip. The dispatcher does not have to guess which is which.',
+          '"Burst", "no water", and "flooding" rise above a tap drip or slower repair request the moment they land. The dispatcher does not have to guess which call belongs at the top while somebody is still trying to contain the leak.',
         icon: AlarmClock,
         features: [
           'Urgency tag the moment it lands',
@@ -139,7 +139,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Stop refit quotes drifting after the survey',
         description:
-          'Bathroom and kitchen refit quotes get a polite check-in a few days later. Open quotes live on a board the office can scan.',
+          'Bathroom and kitchen refit quotes get a polite check-in a few days later instead of being buried by emergency work and forgotten. Open quotes live on a board the office can scan quickly before another busy day starts pulling attention away again.',
         icon: DropletIcon,
         features: [
           'Auto chase on every refit quote',
@@ -150,7 +150,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'A short ask after the leak is fixed and the kitchen is dry',
         description:
-          'The day after the fix, while the homeowner is still relieved, a friendly review request lands. They actually leave one because they were just asked at the right moment.',
+          'The day after the fix, while the kitchen is dry and the relief still feels fresh, a friendly review request lands. That is when people are most likely to leave one instead of meaning to and forgetting once normal life starts again.',
         icon: Star,
         features: [
           'Review ask the day after the fix',
@@ -166,7 +166,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'Where Most Plumbers Start',
     title: 'You do not have to fix the whole evening at once',
     description:
-      'Most plumbing firms feel one of these louder than the others. Pick the loudest leak.',
+      'Most plumbing firms can hear one of these problems louder than the rest as soon as they look properly. Start with the leak that is costing the most work right now, not the one that sounds best on paper.',
     packages: [
       {
         name: 'Catch the after-hours call',
@@ -210,12 +210,12 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts plumbing firms tend to lean on most.',
+    description: 'These are the supporting services plumbing firms tend to lean on most once they can see where evening calls, leak jobs, and refit quotes are slipping. Each one helps hold response, follow-up, proof, or visibility together a bit better.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Holds enquiry, dispatch and quote flow together through a busy week.',
+        description: 'Helps enquiry, dispatch, and quote handling stay connected through a busy week instead of splitting between calls, texts, and office memory.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -223,7 +223,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: PhoneOff,
         title: 'AI Lead Handling',
-        description: 'Catches after-hours bursts before the next number is dialled.',
+        description: 'Catches after-hours bursts and leak calls before the next number is dialled while the homeowner is still standing in the problem.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -231,7 +231,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "emergency plumber near me" the moment a stopcock turns.',
+        description: 'Helps you stay visible for "emergency plumber near me" the moment the stopcock comes out and someone realises this is not waiting until tomorrow.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -239,7 +239,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished fixes into proof on Maps and search.',
+        description: 'Turns finished fixes into proof on Maps and search, so the next homeowner sees recent jobs that feel close to their own situation.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -251,7 +251,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What plumbing firms ask first',
-    description: 'Direct, no hedging.',
+    description: 'Straight answers about after-hours leaks, evening call handling, and how to stop water-damage jobs slipping to the next number.',
     faqs: [
       {
         question: 'Most calls come after six. Will the text-back actually help then?',
@@ -276,7 +276,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         question: 'Will the chase on bathroom refit quotes sound pushy?',
         answer:
-          'No. It reads like a person, fires a few days after the quote, and most homeowners thank you for the nudge.',
+          'No. It reads like a person, fires a few days after the quote, and most homeowners are glad someone checked back in before the whole thing got lost behind other jobs and other prices.',
       },
       {
         question: 'When does the review request go out without being awkward?',
@@ -321,7 +321,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us about last Tuesday\u2019s 7pm call',
       description:
-        'Walk us through the last after-hours emergency that hit voicemail. We will tell you what to plug first.',
+        'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
     },
   };
 }

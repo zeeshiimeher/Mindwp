@@ -17,8 +17,8 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         badge: 'For Small Law Firms',
         title: 'They Started The Enquiry Form Twice. They Closed It Both Times.',
         description:
-            'Most legal enquiries are not lost to another firm. They are lost before the firm hears about them at all. The person needed help, sat with the form open, and quietly decided it was not the right moment. Whoever felt easiest to contact eventually got the call.',
-        list: ['Half-typed forms', 'Silent worry', 'Comparing quietly', 'No reply'],
+            'Most legal enquiries do not disappear because somebody made a fast decision. They disappear because the person hesitated, waited another week, delayed making contact, and only reached out when one firm finally felt safe enough to trust with something serious.',
+        list: ['Quiet hesitation', 'Delayed contact', 'Trust barrier', 'Cold replies'],
         cssPrefix: 'small-law-firms-hero',
     };
 
@@ -26,7 +26,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         badge: 'How Clients Reach Out',
         title: 'They are nervous before they ever pick up the phone',
         description:
-            'A dispute, a will, a property, a separation. They are not shopping. They are working up the courage to ring a firm at all. Whoever feels approachable, clear, and human wins the call.',
+            'A dispute, a will, a property matter, a separation. They are not browsing casually. They are working up the courage to contact a firm at all, and the one that feels most approachable and clear usually gets the first real conversation.',
         items: [
             {
                 title: 'Sensitive first enquiries',
@@ -56,23 +56,25 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     const operatingPatternsData = {
         badge: 'Where Clients Hold Back',
         title: 'They are not silent because they have decided. They are silent because it feels heavy.',
+        description:
+            'Most people contacting a small law firm are dealing with something they do not want to explain twice. The hesitation is often emotional before it is practical, which is why small moments of friction can stop the contact altogether.',
         benefits: [
             {
                 icon: Lock,
                 title: 'They started the form. They did not finish it.',
-                description: 'Halfway through, they realised they were not ready to put the situation in writing to a stranger.',
+                description: 'Halfway through, they realised they were not ready to put the situation in writing to a stranger just yet. They closed the tab, told themselves they would come back tomorrow, and often did not.',
                 iconType: 'primary' as const,
             },
             {
                 icon: UserRound,
                 title: 'They want to know who they will actually speak to',
-                description: 'Anonymous "Contact Us" pages do not unlock the call. A name, a face, a tone does.',
+                description: 'Anonymous contact pages rarely do enough when the issue feels personal or high-stakes. A name, a face, and a tone that feels steady can be what finally makes someone decide to get in touch.',
                 iconType: 'secondary' as const,
             },
             {
                 icon: Phone,
                 title: 'The first reply set the tone for everything',
-                description: 'A cold or slow first response confirmed the worry. They did not call back.',
+                description: 'A cold or delayed first response can confirm the prospect\'s worry that the whole process will feel difficult or impersonal. They do not usually argue with that feeling. They just do not proceed.',
                 iconType: 'accent' as const,
             },
         ],
@@ -82,7 +84,8 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     const comparisonData = {
         badge: 'Two Versions Of The Same Enquiry',
         title: 'Same person. Same situation. Two firms. Only one ever hears from them.',
-        description: 'The barrier is not legal expertise. It is whether the firm feels safe enough to talk to before they have committed to anything.',
+        description:
+            'The difference here is rarely legal expertise on paper. It is whether the firm feels safe enough to contact before the person has fully committed to saying the whole situation out loud.',
         comparisons: [
             {
                 type: 'before' as const,
@@ -110,11 +113,12 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     const systemLayersData = {
         badge: 'What We Put In Place',
         title: 'Lower the barrier to the first conversation, then handle it like a professional firm should',
-        description: 'The legal work is yours. The bit that decides whether a worried person ever rings at all stops being left to chance.',
+        description:
+            'The legal work stays exactly where it belongs. What changes is the part that decides whether a worried person ever makes contact at all, whether they get a reassuring first reply, and whether they feel safe enough to continue.',
         featureCategories: [
             {
                 title: 'Make the first step small',
-                description: 'A short, low-pressure way to start the conversation, not a full case summary up front.',
+                description: 'The first step stays short and low-pressure instead of asking for a full case summary upfront. That matters when the person is still deciding whether they are ready to explain the issue to anybody at all.',
                 icon: FileSignature,
                 features: [
                     'Short initial form, asking only what is needed',
@@ -124,7 +128,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Reply in a way that reassures',
-                description: 'A first response that sounds like a person at the firm, not a portal. Calm, clear, dated.',
+                description: 'The first response sounds like a real person at the firm rather than a cold portal acknowledgement. It stays calm, clear, and dated so the prospect knows exactly what happens next and when.',
                 icon: MessageSquare,
                 features: [
                     'Warm acknowledgement inside the hour',
@@ -134,7 +138,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Catch the half-typed and the unsent',
-                description: 'Started-but-abandoned forms and missed calls held in one place, with one polite follow-up offered.',
+                description: 'Started-but-abandoned forms and missed calls stay visible in one place instead of disappearing without trace. One polite, carefully judged follow-up gives the person a second chance to continue when the moment feels easier.',
                 icon: ShieldCheck,
                 features: [
                     'Started-not-submitted enquiries flagged',
@@ -144,7 +148,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Book the consultation without the back-and-forth',
-                description: 'A short slot they can pick themselves, with a reminder so the appointment actually happens.',
+                description: 'A short consultation slot can be picked without the usual back-and-forth that makes people put it off again. Reminders help the appointment still happen once they have finally built up to booking it.',
                 icon: Calendar,
                 features: [
                     'Self-serve consultation slots',
@@ -154,7 +158,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             },
             {
                 title: 'Be findable when the moment finally comes',
-                description: 'Pages and Google profile lined up for the kind of matter and area you actually want.',
+                description: 'Your pages and Google profile line up around the matter types and areas you actually want to handle. That helps someone recognise the fit quickly when they finally decide they are ready to contact a firm.',
                 icon: Search,
                 features: [
                     'Found for matter type + area',
@@ -168,12 +172,13 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
 
     const exploreData = {
         badge: 'Related',
-        description: 'The other parts that come up most often for small law firms.',
+        description:
+            'These are the supporting services that come up most often once a small law firm sees how much trust is being won or lost before the first real conversation. Each one helps lower friction, strengthen reassurance, or make the firm easier to trust quietly.',
         cards: [
             {
                 icon: Scale,
                 title: 'Smart Website Systems',
-                description: 'Pages and replies that lower the barrier to the first call.',
+                description: 'Helps pages and first replies lower the barrier to the first call so a worried prospect does not back out before the firm even hears from them.',
                 href: '/services/smart-website-systems',
                 gradient: 'purple',
                 iconBg: 'purple',
@@ -181,7 +186,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             {
                 icon: ShieldCheck,
                 title: 'Reputation & Review Systems',
-                description: 'Build the trust signals worried people quietly check.',
+                description: 'Builds the trust signals worried people quietly check before they decide whether this firm feels safe enough to contact.',
                 href: '/services/reputation-review-systems',
                 gradient: 'amber',
                 iconBg: 'amber',
@@ -189,7 +194,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             {
                 icon: MessageSquare,
                 title: 'CRM & Follow-up Automation',
-                description: 'Catch the half-typed enquiries and missed calls without dropping any.',
+                description: 'Keeps half-typed enquiries and missed calls from disappearing completely, while handling follow-up with the right level of care.',
                 href: '/services/crm-infrastructure-implementation',
                 gradient: 'teal',
                 iconBg: 'teal',
@@ -197,7 +202,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             {
                 icon: Search,
                 title: 'Local Authority & SEO Systems',
-                description: 'Show up for matter type and area, not generic legal search.',
+                description: 'Helps the firm show up for the right matter type and area instead of blending into broad, generic legal search results.',
                 href: '/services/local-seo-authority',
                 gradient: 'blue',
                 iconBg: 'blue',
@@ -209,7 +214,8 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
 
     const faqData = {
         title: 'Things small law firms usually ask',
-        description: 'Honest answers about how this fits a careful, regulated practice.',
+        description:
+            'These are the practical questions that usually come up in a careful, regulated firm where trust matters before a client is even ready to speak. Straight answers, written for that context.',
         faqs: [
             {
                 question: 'Will the messages feel too marketing for a legal context?',
@@ -276,7 +282,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         cta: {
             title: 'Tell us where worried clients are dropping off',
             description:
-                'If enquiries get started but rarely finished, or first calls feel cold before the firm even hears about them, walk us through the journey and we will show you where the door is actually closing.',
+                'If people start making contact but do not complete it, or if first replies feel too cold for a serious legal decision, walk us through the journey and we will show you where the door is actually closing.',
         },
     };
 }

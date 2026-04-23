@@ -19,7 +19,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     badge: 'For Body Shops',
     title: 'After The Bump They Sent The Photo To Three Shops. Yours Opened It On Tuesday.',
     description:
-      'Bodywork enquiries arrive in a panic. A bumper, a wing, a scrape that has to clear before insurance gets messy. The driver is on their phone in a car park, sending photos to whoever shows up first in the search results. The shop that opens the email Tuesday afternoon already lost the job before lunchtime Monday.',
+      'Bodywork enquiries usually start with someone standing beside a damaged car in a car park, on a driveway, or outside work, sending the same photo to three shops at once. If your first useful reply lands late, trust drops before price even enters the conversation and the repair starts moving somewhere else.',
     list: ['Photo race', 'Insurance limbo', 'Cold estimates'],
     cssPrefix: 'body-shops-hero',
   };
@@ -28,7 +28,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     badge: 'How Bodywork Comes In',
     title: 'A driver standing next to a damaged car, taking the same photo three times',
     description:
-      'It is rarely a phone call first. It is a photo, a rough description, and a question about how soon. The first reply that lands gets the job most of the time.',
+      'It is rarely a phone call first. It is a photo from a forecourt, a supermarket car park, or outside the house, plus a quick question about price and how soon you can look at it.',
     items: [
       {
         title: 'Damage photos arriving on a phone',
@@ -59,20 +59,20 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     badge: 'Where Repairs Get Lost',
     title: 'Bodywork is won in the first reply, not in the workshop',
     description:
-      'Skill is not the differentiator at the enquiry stage. Speed of response is. The four moments below are where most shops quietly lose work they could have done well.',
+      'At the enquiry stage, nobody can see the quality of your prep or your paint match yet. They judge the shop by speed, clarity, and whether the first reply feels like somebody is actually on it.',
     benefits: [
       {
         icon: FileImage,
         title: 'A photo lands while the booth is hissing',
         description:
-          'The estimator is masking up. The email pings. By the time anyone opens it the driver has already had a reply from two other shops and a slot from one of them.',
+          'The estimator is masking up, the compressor is going, and the email lands with six photos of a cracked bumper. By the time anyone opens it, the driver already has two replies and an inspection slot from one of them.',
         iconType: 'primary' as const,
       },
       {
         icon: Timer,
         title: 'A first reply that takes a working day',
         description:
-          'A polite "we will get back to you" goes out late afternoon. The customer has already booked. The shop just spent a day losing a job.',
+          'A polite "we will get back to you" goes out at 4:40. By then the driver has stopped trusting the pace of the whole job, not just the estimate, and has booked an inspection somewhere that felt more switched on.',
         iconType: 'secondary' as const,
       },
       {
@@ -97,7 +97,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     badge: 'What Goes In',
     title: 'Five small pieces, all of them aimed at the first reply',
     description:
-      'In bodywork the first reply does most of the selling. Every layer below is built to make that reply faster and the next step smoother.',
+      'In bodywork, the first reply carries more weight than most shops admit. Every layer below is there to make that first contact faster, clearer, and easier to trust.',
     featureCategories: [
       {
         title: 'Get the first reply out before the booth opens',
@@ -113,7 +113,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         title: 'Offer an inspection slot in the first message',
         description:
-          'A link the driver can use to pick a slot before the conversation stalls. The slot lands in the diary the workshop already runs from.',
+          'A link the driver can use to pick a slot before the conversation stalls or the photos get buried. The slot lands in the same diary the workshop already works from.',
         icon: CalendarRange,
         features: [
           'Inspection slots offered with the first reply',
@@ -135,7 +135,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         title: 'Stop estimates dying after they leave',
         description:
-          'A polite chase fires the next morning on every estimate. The open estimate board makes it obvious what is waiting.',
+          'A polite chase fires the next morning on every estimate, while the repair is still fresh in their head. The open estimate board makes it obvious what is waiting and what is starting to drift.',
         icon: Inbox,
         features: [
           'Automatic next-morning chase',
@@ -162,7 +162,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     badge: 'Real Moments',
     title: 'Three moments where bodywork is usually lost, and what changes',
     description:
-      'These are the same moments that lost the photo at the top of the page.',
+      'These are the same moments that lose trust at the top of the page. The work itself has not changed here, only how fast and clearly the next step gets handled.',
     workflows: [
       {
         trigger: 'A driver in a supermarket car park sends a photo of a creased wing',
@@ -197,13 +197,13 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     badge: 'Same Week, Different Shop',
     title: 'A week of enquiries before and after the first-reply gap closes',
     description:
-      'Same volume of photos. Same workshop. Different number of cars in the booth by Friday.',
+      'Same volume of photo enquiries. Same estimators, same booth, same workshop. The difference is whether people still trust you by the time your reply reaches them.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How the week runs now',
         items: [
-          'Mon 10am photo arrives. Opened Tuesday afternoon. Already booked elsewhere.',
+          'Mon 10am photo arrives. Opened Tuesday afternoon. Inspection already booked with another shop.',
           'Insurer thread lives in one estimator\u2019s inbox. Half of Friday lost to chasing it.',
           'Estimate sent Wednesday. Nobody is sure who is meant to chase it.',
           'Three resprays handed back. Zero review asks went out.',
@@ -224,12 +224,14 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'The other parts of the system that body shops lean on most.',
+    description:
+      'These are the supporting pieces body shops usually lean on once the first-reply gap is obvious. They all help the same job feel easier to start and easier to trust.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'The frame that holds enquiry, estimate and inspection booking together.',
+        description:
+          'The frame that keeps enquiry, estimate, and inspection booking connected, so the first contact does not splinter across forms, inboxes, and callbacks.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -237,7 +239,8 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         icon: Inbox,
         title: 'AI Lead Handling',
-        description: 'First-reply infrastructure for photo and form enquiries.',
+        description:
+          'First-reply handling for photo and form enquiries, built to get something useful back fast while the driver is still comparing shops.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -245,7 +248,8 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Visibility for "body shop near me" the moment after a bump.',
+        description:
+          'Visibility for "body shop near me" and similar searches, so you are in the shortlist before the damaged-car photo ever gets sent around.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -253,7 +257,8 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         icon: CarTaxiFront,
         title: 'Reputation & Reviews',
-        description: 'Turn finished resprays into proof on Maps and search.',
+        description:
+          'Turn finished resprays into visible proof on Maps and search, so the online picture looks as careful as the paintwork leaving the booth.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -265,7 +270,8 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What body shops usually want answered first',
-    description: 'Direct, no hedging.',
+    description:
+      'These are usually the first practical questions once a shop sees how much trust is won or lost in that first reply. Straight answers, no filler.',
     faqs: [
       {
         question: 'Photos need a human eye to price properly. Won\u2019t a fast reply just guess?',
@@ -278,7 +284,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
           'Yes. Insurance threads move off a personal inbox onto a per-job board so the team can see what is waiting on which adjuster without anyone forwarding emails around.',
       },
       {
-        question: 'Will customers feel they got an automated reply?',
+        question: 'Will drivers feel they got an automated reply?',
         answer:
           'No. The first messages read like something the front desk would actually send. The aim is to sound human and useful, not to fake a conversation.',
       },
