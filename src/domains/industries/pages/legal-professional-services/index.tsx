@@ -1,393 +1,345 @@
 import {
-  AlertCircle,
-  BriefcaseBusiness,
-  Calculator,
-  Calendar,
-  Clock3,
-  FileText,
-  MessageSquare,
-  Scale,
-  Search,
-  Shield,
-  Star,
+    BriefcaseBusiness,
+    Calculator,
+    CheckCircle2,
+    ClipboardList,
+    Compass,
+    EyeOff,
+    HourglassIcon,
+    Layers,
+    MessageSquare,
+    Scale,
+    Search,
+    ShieldCheck,
+    Star,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
-  const heroData = {
-    badge: 'For Legal & Professional Practices',
-    title: 'They Sent The Same Enquiry To Three Firms On Tuesday. By Thursday, Whoever Replied First Was Instructed.',
-    description:
-      'Solicitors, accountants, consultants — different work, same leaks. Enquiries that took two days to reply to. Consultations stuck in email tennis. Proposals and quotes that went quiet. We put the system in place that catches the right enquiries before they go to the firm down the road.',
-    list: [
-      'Enquiries that took two days to acknowledge',
-      'Consultations lost in email tennis',
-      'Quotes and proposals that went quiet',
-      'Reviews from happy clients you never asked',
-    ],
-    cssPrefix: 'legal-professional-services-hero',
-  };
+    const heroData = {
+        badge: 'Legal & Professional Services',
+        title: 'Professional Work Is Rarely Lost Loudly. It Is Lost In The Long, Quiet Middle.',
+        description:
+            'Solicitors, accountants, consultants — the work does not vanish on the call. It vanishes in the weeks afterwards, while clients deliberate, compare, postpone, and quietly choose whoever stayed in front of them. The firms that win are not faster. They are simply still in the room when the decision finally happens.',
+        list: ['Slow decisions', 'Quiet drift', 'Comparison stalls', 'Invisible leaks'],
+        cssPrefix: 'legal-professional-services-hero',
+    };
 
-  const imageStripData = {
-    badge: 'How Advisory Enquiries Actually Land',
-    title: 'It’s rarely “who’s the best” — it’s “who replied first and made the next step obvious”',
-    description:
-      'A founder needs an accountant. A homeowner needs a solicitor. A scale-up needs a consultant. They contact three firms, and the one that replied first with a clear next step usually wins.',
-    items: [
-      {
-        title: 'Qualification and fit enquiries',
-        image: '/images/placeholders/service-card-1.svg',
-        alt: 'Abstract placeholder image representing professional services qualification enquiries',
-      },
-      {
-        title: 'Consultation booking pressure',
-        image: '/images/placeholders/service-card-2.svg',
-        alt: 'Abstract placeholder image representing consultation booking pressure',
-      },
-      {
-        title: 'Documents and next-step clarity',
-        image: '/images/placeholders/service-card-3.svg',
-        alt: 'Abstract placeholder image representing document-readiness and next-step guidance',
-      },
-      {
-        title: 'Proof and follow-up trust',
-        image: '/images/placeholders/service-card-4.svg',
-        alt: 'Abstract placeholder image representing professional services trust and follow-up',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'legal-professional-services-image-strip',
-  };
+    const operatingPatternsData = {
+        badge: 'Three Patterns That Repeat Across The Category',
+        title: 'Different practices, the same three failures',
+        description:
+            'A small law firm, a five-partner accountancy, and an independent consultant lose work in surprisingly similar ways. None of them are about the technical work itself.',
+        benefits: [
+            {
+                icon: HourglassIcon,
+                title: 'Slow decisions outlast the firm\'s memory',
+                description:
+                    'Buying decisions take weeks, sometimes months. By the time the client is ready, the firm has moved on to the next matter and forgotten to circle back.',
+                iconType: 'primary' as const,
+            },
+            {
+                icon: EyeOff,
+                title: 'Drop-offs happen silently',
+                description:
+                    'Nobody emails to say "we went elsewhere." Proposals just stop being mentioned. Enquiries just stop replying. The leak is real but invisible until it is measured.',
+                iconType: 'secondary' as const,
+            },
+            {
+                icon: Compass,
+                title: 'Comparison happens in rooms you are not in',
+                description:
+                    'Boards, partners, spouses, finance directors. The decision is made in a room without you. Whoever is easiest to summarise and forward usually wins.',
+                iconType: 'accent' as const,
+            },
+        ],
+        columns: 3 as const,
+    };
 
-  const operatingPatternsData = {
-    badge: 'Where The Work Slips',
-    title: 'You’re heads-down with current clients. The new enquiry waits. They instructed somebody else.',
-    description: 'Same handful of leaks across legal, accounting, and consulting. None of them are about the actual advisory work.',
-    benefits: [
-      {
-        icon: AlertCircle,
-        title: 'A serious enquiry sat unread for two days',
-        description:
-          'You were in court, on year-end, or delivering a workshop. By the time you replied, they’d already chosen.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: Clock3,
-        title: 'Five emails to land one consultation',
-        description:
-          '“Tuesday at 2?” “Can’t do Tuesday.” The good ones don’t stick around for that.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Shield,
-        title: 'A quote or proposal went quiet for weeks',
-        description:
-          'One nudge would have closed half of these. Nobody had time to send it.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: MessageSquare,
-        title: 'The firm down the road has hundreds of reviews. You have a handful.',
-        description:
-          'Your retention is better. Online you look smaller because nobody was ever asked at the right moment.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
+    const decisionChecklistData = {
+        badge: 'Quietly Familiar?',
+        title: 'A few signs the leak is in consideration, not in marketing',
+        description: 'If most of these ring true across the practice, the bottleneck is rarely lead generation. It is what happens to the leads you already have.',
+        items: [
+            'Discovery calls go well, but the close rate does not match the call quality',
+            'Proposals get sent and then nobody knows what happened to them',
+            'Enquiries take more than a day to acknowledge during busy periods',
+            'Past clients who would refer are never asked, because nobody owns it',
+            'Pipeline visibility lives in someone\'s head, not anywhere a partner can see it',
+            'Reviews online do not reflect the actual quality of the work',
+        ],
+        columns: 2 as const,
+        backgroundColor: 'bg-base',
+        cssPrefix: 'legal-professional-services-decision-checklist',
+    };
 
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle enquiries, book consultations, and turn finished work into reviews',
-    description:
-      'Each piece does one job. Together they keep the intake moving while you do the actual advisory work.',
-    featureCategories: [
-      {
-        title: 'Reply to enquiries the same hour, even mid-matter',
+    const spectrumData = {
+        badge: 'Where Practices Sit',
+        title: 'Same category, three very different shapes of leak',
         description:
-          'Form lands, an instant acknowledgement goes out with what to expect next. Most enquirers stop messaging other firms.',
-        icon: MessageSquare,
-        features: [
-          'Same-hour acknowledgement on every enquiry',
-          'Service type and urgency captured up front',
-          'Holds the lead until you can call back',
+            'The category looks similar from the outside. The actual point where work is lost is different in each kind of practice.',
+        cards: [
+            {
+                title: 'Trust-first practices',
+                description:
+                    'Small law firms where clients hesitate before they ever pick up the phone. The leak is at the door — half-typed forms, unmade calls, abandoned enquiries.',
+                points: [
+                    'Enquiries started but never sent',
+                    'Cold first replies set the wrong tone',
+                    'No safe, low-pressure first step',
+                ],
+            },
+            {
+                title: 'Proposal-driven practices',
+                description:
+                    'Accounting firms where the call goes well, the proposal goes out, and then the inbox goes silent for three weeks. The leak is in follow-up.',
+                points: [
+                    'Open proposals nobody owns',
+                    'No structured nudge after sending',
+                    'Decisions drift to whoever stayed present',
+                ],
+                featured: true,
+            },
+            {
+                title: 'Decision-committee practices',
+                description:
+                    'Independent consultants whose buyers carry the decision into rooms the consultant is not in. The leak is in clarity and forward-ability.',
+                points: [
+                    'Offer too vague to repeat internally',
+                    'No defined next step after discovery',
+                    'Long buying cycles with no holding follow-up',
+                ],
+            },
         ],
-      },
-      {
-        title: 'Book the consultation without the email tennis',
-        description:
-          'Clients pick a slot themselves. “When are you free?” gets replaced with a calendar link.',
-        icon: Calendar,
-        features: [
-          'Self-serve consultation booking',
-          'Reminders the day before',
-          'Reschedule link instead of a no-show',
-        ],
-      },
-      {
-        title: 'See where every enquiry is in one place',
-        description:
-          'Quote sent, consultation booked, matter open, review asked. Nothing slips because nobody had time to write it down.',
-        icon: FileText,
-        features: [
-          'Pipeline visible in one place',
-          'Document-readiness context',
-          'Better handoff between fee earners',
-        ],
-      },
-      {
-        title: 'Turn finished matters into reviews you can show',
-        description:
-          'A polite review request goes out the week after completion, when the relief or result is freshest.',
-        icon: Star,
-        features: [
-          'Review requests at the right moment',
-          'Asked once, never again',
-          'Reviews catch up to the workload',
-        ],
-      },
-      {
-        title: 'Show up for the right kind of client locally and online',
-        description:
-          'Service pages and authority content lined up so the right matter, niche, or area finds you first.',
-        icon: Search,
-        features: [
-          'Pages for the work and clients you want',
-          'Found on the searches that bring real briefs',
-          'Less time on enquiries that aren’t a fit',
-        ],
-      },
-      {
-        title: 'Follow up the quotes and proposals that go quiet',
-        description:
-          'Sent Monday, polite check-in a week later, another the week after. Quietly closes more.',
-        icon: Shield,
-        features: [
-          'Follow-up at the right intervals',
-          'Pending matters visible in one place',
-          'Closing rate goes up without nagging',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
+        backgroundColor: 'bg-alt',
+        cssPrefix: 'legal-professional-services-spectrum',
+    };
 
-  const spectrumData = {
-    badge: 'Different Practices, Same Leaks',
-    title: 'A solo solicitor, a high-street firm, and a six-person consultancy don’t look alike — but the gaps usually are',
-    description:
-      'Different setups, similar friction. Once you place yours, the right next step gets obvious.',
-    cards: [
-      {
-        title: 'Owner-led specialist firms',
+    const systemLayersData = {
+        badge: 'What We Put In Place',
+        title: 'Stay in the room while the decision happens — without becoming a salesperson',
         description:
-          'You’re the fee earner and the intake desk. Anything that drops between the two costs work.',
-        points: [
-          'Enquiries missed during client meetings',
-          'Consultations booked late at night',
-          'Reviews never asked for',
+            'The work itself is yours. What we put around it is the quiet, professional follow-up that keeps the firm in front of clients while they think.',
+        featureCategories: [
+            {
+                title: 'Acknowledge every enquiry like a partner would',
+                description:
+                    'A warm, human first reply inside the hour. It names the next step and the person. The client stops emailing other firms while they wait.',
+                icon: MessageSquare,
+                features: [
+                    'Same-hour acknowledgement, in your voice',
+                    'Names who will follow up and when',
+                    'Captures only what is needed up front',
+                ],
+            },
+            {
+                title: 'Hold the open proposals and quotes',
+                description:
+                    'Every open proposal lives in one place. Two scheduled, polite check-ins close the ones that would otherwise drift.',
+                icon: ClipboardList,
+                features: [
+                    'Pipeline visible to all partners',
+                    'Day 5 and day 12 nudges, calm in tone',
+                    'Stops the moment they reply or sign',
+                ],
+            },
+            {
+                title: 'Make the offer easy to forward',
+                description:
+                    'Whether it is a fee schedule, a scope, or an engagement summary — written so a client can repeat it inside their own organisation without needing you in the room.',
+                icon: Layers,
+                features: [
+                    'Written in client language, not firm language',
+                    'Outcome stated up front',
+                    'Survives being passed to a board or partner',
+                ],
+            },
+            {
+                title: 'Turn finished work into the proof you have earned',
+                description:
+                    'Reviews, testimonials, and light-touch case studies, asked at the right moment so they actually get given.',
+                icon: ShieldCheck,
+                features: [
+                    'Asked once, at the right point',
+                    'Tone matched to a professional firm',
+                    'Reviews catch up to the workload',
+                ],
+            },
+            {
+                title: 'Be findable for the work you actually want',
+                description:
+                    'Pages and search visibility lined up for sector, niche, matter type, or area — not generic professional services.',
+                icon: Search,
+                features: [
+                    'Pages for the work you want more of',
+                    'Found on the searches that bring real briefs',
+                    'Less time on enquiries that are not a fit',
+                ],
+            },
         ],
-      },
-      {
-        title: 'Team-based practices',
+        columns: 3 as const,
+    };
+
+    const processData = {
+        badge: 'How We Start',
+        title: 'A short, honest look at where the practice actually loses work',
         description:
-          'More hands, more handoffs. Things slip in the gap between reception, fee earner, and follow-up.',
-        points: [
-          'Quotes that nobody owned',
-          'Consultations nobody confirmed',
-          '“Who was supposed to ring them?”',
+            'No pitch. We sit with how the practice runs, listen to where it leaks, and put the missing piece in place in the order that helps most.',
+        steps: [
+            {
+                number: '01',
+                title: 'Look at the last twenty enquiries',
+                description: 'Where they came from, who replied, who never replied, and what happened next.',
+            },
+            {
+                number: '02',
+                title: 'Map the silent drop-offs',
+                description: 'Half-typed forms, unsent proposals, quiet quotes. The leak that nobody has been measuring.',
+            },
+            {
+                number: '03',
+                title: 'Fix the biggest leak first',
+                description: 'Acknowledgement, follow-up, offer clarity, or proof — whichever is costing the practice the most work right now.',
+            },
+            {
+                number: '04',
+                title: 'Let it run while the partners do the work',
+                description: 'Replies, reminders, reviews, follow-up. Quietly going in the background while fee earners do the actual practice.',
+            },
         ],
-        featured: true,
-      },
-      {
-        title: 'Relationship-led consultants',
+        columns: 4 as const,
+        backgroundColor: 'bg-base',
+        cssPrefix: 'legal-professional-services-process',
+    };
+
+    const detailRoutesData = {
+        badge: 'By Practice Type',
+        title: 'Pick the one closest to how you actually run',
         description:
-          'Longer sales cycles. Buying committees, board sign-offs, summer holidays. Proposals drift if nobody nudges.',
-        points: [
-          'Proposals quiet for weeks',
-          'Past clients who would refer if asked',
-          'Pipeline that depends on memory',
+            'Same category, different leaks. Each page gets into the specifics for a different shape of practice.',
+        items: [
+            {
+                title: 'Small Law Firms',
+                description:
+                    'For firms where worried clients hesitate before they ever ring, and half-typed enquiries quietly disappear.',
+                href: '/industries/legal-professional-services/small-law-firms',
+                icon: Scale,
+            },
+            {
+                title: 'Accounting Firms',
+                description:
+                    'For practices where proposals go out and then go silent, and good prospects drift to whoever stayed in front of them.',
+                href: '/industries/legal-professional-services/accounting-firms',
+                icon: Calculator,
+            },
+            {
+                title: 'Consultants',
+                description:
+                    'For independent consultants whose engagements stall in buying committees and "let us think about it" rooms.',
+                href: '/industries/legal-professional-services/consultants',
+                icon: BriefcaseBusiness,
+            },
         ],
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    cssPrefix: 'legal-professional-services-spectrum',
-  };
+        backgroundColor: 'bg-muted/20',
+        cssPrefix: 'legal-professional-services-detail-routes',
+        styleVariant: 'style1' as const,
+    };
 
-  const decisionChecklistData = {
-    badge: 'Sound Familiar?',
-    title: 'A few signs this is worth looking at properly',
-    description: 'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
-    items: [
-      'Enquiries take a day or more to be acknowledged, even the urgent ones',
-      'Consultations or discovery calls take five emails to book',
-      'Quotes and proposals go quiet for weeks before anybody chases them',
-      'Reviews online don’t reflect how good the work actually is',
-      'Pipeline visibility lives in someone’s head, not in a system',
-      'More work just makes the office feel worse, not better',
-    ],
-    columns: 2 as const,
-    backgroundColor: 'bg-base',
-    cssPrefix: 'legal-professional-services-decision-checklist',
-  };
+    const exploreData = {
+        badge: 'Related',
+        description: 'The parts that come up most across legal, accounting, and consulting.',
+        cards: [
+            {
+                icon: CheckCircle2,
+                title: 'CRM & Follow-up Automation',
+                description: 'Hold open proposals and decisions, nudge gracefully, stop the drift.',
+                href: '/services/crm-infrastructure-implementation',
+                gradient: 'teal',
+                iconBg: 'teal',
+            },
+            {
+                icon: MessageSquare,
+                title: 'Smart Website Systems',
+                description: 'Acknowledge enquiries the way a partner would, in the hour.',
+                href: '/services/smart-website-systems',
+                gradient: 'purple',
+                iconBg: 'purple',
+            },
+            {
+                icon: Star,
+                title: 'Reputation & Review Systems',
+                description: 'Make the proof match the quality of the work.',
+                href: '/services/reputation-review-systems',
+                gradient: 'amber',
+                iconBg: 'amber',
+            },
+            {
+                icon: Search,
+                title: 'Local Authority & SEO Systems',
+                description: 'Be findable for the kind of brief you actually want more of.',
+                href: '/services/local-seo-authority',
+                gradient: 'blue',
+                iconBg: 'blue',
+            },
+        ],
+        backgroundColor: 'bg-alt',
+        columns: 2 as const,
+    };
 
-  const serviceEnvironmentsData = {
-    badge: 'How You Actually Work',
-    title: 'A high-street firm, a recurring-fee accountancy, and a project-led consultant break in different places',
-    description:
-      'Different setups, different leaks. The bit that costs you the most work isn’t the same in a small law firm as in an independent consultancy.',
-    features: [
-      {
-        title: 'Matter-led legal practice',
-        description:
-          'Urgent enquiries arrive when fee earners are in court or with clients. Speed of acknowledgement is everything.',
-        icon: Scale,
-      },
-      {
-        title: 'Recurring advisory practice',
-        description:
-          'New enquiries land while the team is heads-down on year-ends or VAT. Same-hour acknowledgement makes the difference.',
-        icon: Calculator,
-      },
-      {
-        title: 'Project-led consulting',
-        description:
-          'Longer sales cycles, buying committees, summer holidays. Proposals drift unless somebody nudges at the right moment.',
-        icon: BriefcaseBusiness,
-      },
-    ],
-    tagline: 'Same category, different bottlenecks',
-    narrativeTitle: 'Why we look at the shape of the practice first',
-    narrativeParagraphs: [
-      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
-      'From there, the right next step — instant acknowledgement, consultation booking, proposal follow-up, review collection — becomes obvious instead of generic.',
-    ],
-    backgroundColor: 'bg-alt',
-    cssPrefix: 'legal-professional-services-service-environments',
-  };
-
-  const processData = {
-    badge: 'How We Get Started',
-    title: 'How a typical conversation moves from “we’re losing work” to “we’ve stopped losing work”',
-    description:
-      'Nothing fancy. We look at how the practice actually runs, then put the missing pieces in place in the order that helps most.',
-    steps: [
-      {
-        number: '01',
-        title: 'We look at how enquiries arrive now',
-        description: 'Calls, forms, referrals, walk-ins. Where they go, who sees them, who replies.',
-      },
-      {
-        number: '02',
-        title: 'We map where the matters are slipping',
-        description: 'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
-      },
-      {
-        number: '03',
-        title: 'The biggest leak gets fixed first',
-        description:
-          'Slow acknowledgement, consultation booking, proposal follow-up, missing reviews — whichever is bleeding the most work.',
-      },
-      {
-        number: '04',
-        title: 'It runs while the team is on matters',
-        description:
-          'Replies, reminders, reviews, follow-up. Going on their own while the fee earners do the law.',
-      },
-    ],
-    columns: 4 as const,
-    backgroundColor: 'bg-base',
-    cssPrefix: 'legal-professional-services-process',
-  };
-
-  const detailRoutesData = {
-    badge: 'By Practice Type',
-    title: 'Pick the one closest to how you run',
-    description:
-      'Same category, different bottlenecks. These pages get into the specifics for each kind of practice.',
-    items: [
-      {
-        title: 'Small Law Firms',
-        description:
-          'For high-street firms losing Friday-evening enquiries and conveyancing quotes that go quiet.',
-        href: '/industries/legal-professional-services/small-law-firms',
-        icon: Scale,
-      },
-      {
-        title: 'Accounting Firms',
-        description:
-          'For small practices where founders email three accountants and pick whoever replied first.',
-        href: '/industries/legal-professional-services/accounting-firms',
-        icon: Calculator,
-      },
-      {
-        title: 'Consultants',
-        description:
-          'For independent consultants where proposals go quiet for a month and testimonials never get asked for.',
-        href: '/industries/legal-professional-services/consultants',
-        icon: BriefcaseBusiness,
-      },
-    ],
-    backgroundColor: 'bg-muted/20',
-    cssPrefix: 'legal-professional-services-detail-routes',
-    styleVariant: 'style1' as const,
-  };
-
-  return {
-    slug: 'legal-professional-services',
-    type: 'category',
-    category: 'legal-professional-services',
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: [
-      'lead-qualification',
-      'crm-integration',
-      'reputation-monitoring',
-      'pipeline-visibility',
-    ],
-    industries: ['accounting', 'consulting', 'law-firm'],
-    seo: {
-      title: 'Legal, Accounting & Consulting Practices — Stop Losing Enquiries, Consultations & Proposals | MindWP',
-      description:
-        'For solicitors, accountants, and consultants where enquiries go to whoever replied first, consultations take five emails to book, and proposals go quiet for weeks. We put the system in place that catches the right work.',
-      keywords: [
-        'legal professional services website systems',
-        'law firm consultation booking system',
-        'professional services lead handling',
-        'consultation follow up system',
-        'local advisory business infrastructure',
-      ],
-      canonical: '/industries/legal-professional-services',
-    },
-    hero: heroData,
-    imageStrip: imageStripData,
-    operatingPatterns: operatingPatternsData,
-    spectrum: spectrumData,
-    decisionChecklist: decisionChecklistData,
-    serviceEnvironments: serviceEnvironmentsData,
-    systemLayers: systemLayersData,
-    process: processData,
-    detailRoutes: detailRoutesData,
-    sectionControls: {
-      subIndustries: {
-        enabled: false,
-      },
-      caseStudies: {
-        enabled: false,
-      },
-    },
-    cta: {
-      title: 'Tell us where the work is leaking',
-      description:
-        'If new enquiries take days to acknowledge, if consultations take a week of emails, or if proposals and quotes go quiet — walk us through how the practice runs and we’ll show you the first thing worth fixing.',
-    },
-  };
+    return {
+        slug: 'legal-professional-services',
+        type: 'category',
+        category: 'legal-professional-services',
+        systems: [
+            'crm-automation',
+            'smart-website-systems',
+            'reputation-review',
+            'local-seo-authority',
+        ],
+        topics: [
+            'follow-up',
+            'lead-qualification',
+            'pipeline-visibility',
+            'review-generation',
+        ],
+        industries: ['accounting', 'consulting', 'law-firm'],
+        seo: {
+            title: 'Legal, Accounting & Consulting Practices — Stop Losing Work In The Quiet Middle | MindWP',
+            description:
+                'For law firms, accountants, and consultants where the leak is not in marketing but in the long, quiet middle — slow decisions, silent drop-offs, and rooms you are not in. We put the follow-up, clarity, and proof in place so the firm stays present while clients decide.',
+            keywords: [
+                'legal professional services follow-up system',
+                'professional services proposal follow-up',
+                'law firm consultation system',
+                'accounting firm crm',
+                'consulting buyer enablement',
+            ],
+            canonical: '/industries/legal-professional-services',
+        },
+        hero: heroData,
+        operatingPatterns: operatingPatternsData,
+        decisionChecklist: decisionChecklistData,
+        spectrum: spectrumData,
+        systemLayers: systemLayersData,
+        process: processData,
+        detailRoutes: detailRoutesData,
+        explore: exploreData,
+        sectionControls: {
+            subIndustries: {
+                enabled: false,
+            },
+            caseStudies: {
+                enabled: false,
+            },
+        },
+        cta: {
+            title: 'Tell us where the practice quietly loses work',
+            description:
+                'If discovery calls go well but signed engagements do not match the call quality, or if proposals and enquiries quietly stop replying, walk us through the last few that went quiet. We will show you where the leak actually is.',
+        },
+    };
 }
 
 export const legalProfessionalServicesIndustryPageData: IndustryPageData =
-  buildLegalProfessionalServicesIndustryPageData();
+    buildLegalProfessionalServicesIndustryPageData();

@@ -1,261 +1,259 @@
 import {
-  Calendar,
-  CalendarClock,
-  Compass,
-  Eye,
-  Moon,
-  Star,
-  Wrench,
+    AlertCircle,
+    Bell,
+    Calendar,
+    Eye,
+    HeartHandshake,
+    MessageSquare,
+    RefreshCw,
+    Search,
+    Sparkles,
+    Star,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLashExtensionsIndustryPageData(): IndustryPageData {
-  const heroData = {
-    badge: 'For Lash Artists',
-    title: 'Hands Were Glued To A Set For Two Hours. The Phone Lit Up Eleven Times. Three Were Bookings.',
-    description:
-      'Lash work is the most hands-busy job in beauty. A full set is two hours of complete focus. The phone goes, the DMs back up, and there is no front desk to catch any of it. Most lash artists lose more bookings to the inbox sitting overnight than to anything that happens at the chair.',
-    list: ['Hands-busy DMs', 'Late infills', 'Lapsed regulars'],
-    cssPrefix: 'lash-extensions-hero',
-  };
+    const heroData = {
+        badge: 'For Lash Techs & Studios',
+        title: 'Her Refill Was Due Three Weeks Ago. She Did Not Switch — She Just Got Tired Of Remembering.',
+        description:
+            'Lash work lives or dies on the refill cycle. Miss week three, and you are competing with the home Instagram ad she just scrolled past. The tech who remembers her cycle keeps her. The tech who waits for her to message rarely sees her again.',
+        list: ['Refill missed', 'Cycle drift', 'Silent gap', 'Quiet switch'],
+        cssPrefix: 'lash-extensions-hero',
+    };
 
-  const workflowExamplesData = {
-    badge: 'Real Lash Moments',
-    title: 'Three moments that decide the week',
-    description:
-      'These are the moments at the top of the page. This is what happens to them after.',
-    workflows: [
-      {
-        trigger: 'Mid-set, hands glued, three DMs land in twenty minutes',
-        actions: [
-          'Each DM gets a warm reply within a minute with availability and a deposit link',
-          'The replies land in one queue the artist can scan between sets',
-          'Two of the three lock a slot before lunch',
+    const operatingPatternsData = {
+        badge: 'How Loyal Lash Clients Drift',
+        title: 'They do not leave you. They just stop hearing from you.',
+        benefits: [
+            {
+                icon: RefreshCw,
+                title: 'Week three came and went',
+                description: 'No nudge. By week four her lashes were sparse. By week five she had Googled "lash refill near me" and someone else had her in the chair.',
+                iconType: 'primary' as const,
+            },
+            {
+                icon: AlertCircle,
+                title: 'A new client came in once and never again',
+                description: 'The full set was perfect. But there was no follow-up, no refill prompt, and no warm "ready when you are". Loyalty needs a first nudge.',
+                iconType: 'secondary' as const,
+            },
+            {
+                icon: Eye,
+                title: 'A regular booked elsewhere "just to try"',
+                description: 'She was not looking to switch. She was looking for a slot that fit her week. Yours did not show up in time.',
+                iconType: 'accent' as const,
+            },
         ],
-      },
-      {
-        trigger: 'A regular\u2019s last infill was three weeks ago and she has not rebooked',
-        actions: [
-          'A short, friendly nudge fires at the right interval for her cycle',
-          'She rebooks an infill before the gaps grow out and a full set is needed',
-          'The diary stays full of infills instead of last-minute panics',
-        ],
-      },
-      {
-        trigger: 'A 9pm DM asking for a set on Saturday',
-        actions: [
-          'A warm reply goes out within a minute with the next two Saturday slots and a deposit link',
-          'She locks one before bed instead of asking two more lash artists',
-          'Saturday fills with the right client at the right price',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'lash-extensions-workflow-examples',
-  };
+        columns: 3 as const,
+    };
 
-  const operatingPatternsData = {
-    badge: 'Where Lash Artists Bleed',
-    title: 'Four moments most solo lash artists know by heart',
-    description:
-      'A handful of patterns show up in nearly every lash business.',
-    benefits: [
-      {
-        icon: Eye,
-        title: 'Hands glued mid-set, eleven phone events nobody could catch',
-        description:
-          'Two hours of focus on a client. The inbox piles up. By the time the set is done, the easy bookings have asked someone else.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: CalendarClock,
-        title: 'A regular missed the infill window',
-        description:
-          'Three weeks turned into five. The retention dropped past the point where infill is enough. She booked a full set with someone else.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Moon,
-        title: 'Late-night DMs about Saturday sets',
-        description:
-          'Decided after 9pm. Seen at 8 the next morning. By then she had already asked two more lash artists.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: Star,
-        title: 'A wall of beautiful sets, almost no proof on Maps',
-        description:
-          'The Instagram is full of finished work. The Maps page looks like nobody recommends you.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
-
-  const pathwaysData = {
-    badge: 'Where Most Lash Artists Start',
-    title: 'You do not have to fix everything at once',
-    description:
-      'Most lash artists feel one of these three louder than the others. Pick the loudest leak.',
-    packages: [
-      {
-        name: 'Catch DMs while your hands are full',
-        description:
-          'For when most bookings come through DMs and the inbox sits while you are mid-set.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if hands-busy DMs are the loudest leak',
-        features: [
-          'Warm reply within a minute on every DM and missed call',
-          'Availability and deposit link in the same message',
-          'One queue you can scan between sets',
+    const workflowExamplesData = {
+        badge: 'Real Refill Moments',
+        title: 'The handful of nudges that keep a lash client in your chair for a year',
+        description: 'These are not campaigns. They are the small, named messages that sit between sets and refills.',
+        workflows: [
+            {
+                trigger: 'A new full set just left the studio.',
+                actions: [
+                    'A warm aftercare message lands the same evening',
+                    'A refill prompt is queued for her ideal cycle, not a generic one',
+                    'A review request goes out at 24 hours when she is loving the look',
+                ],
+            },
+            {
+                trigger: 'A regular is approaching her usual refill week.',
+                actions: [
+                    'A friendly nudge offers her usual time band with her usual tech',
+                    'She rebooks in a tap, no DM thread',
+                    'If she does not, a single follow-up nudge goes out — never more',
+                ],
+            },
+            {
+                trigger: 'A client has not been in for two cycles.',
+                actions: [
+                    'A personal "we miss you" goes out, not a coupon blast',
+                    'It offers a fresh full set slot, not a refill she cannot use',
+                    'It stops the moment she replies or rebooks',
+                ],
+            },
         ],
-      },
-      {
-        name: 'Stop infills slipping into full sets',
-        description:
-          'For when regulars miss the infill window and end up needing a full set somewhere else.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if infill retention is the gap',
-        features: [
-          'Infill nudges at the right interval per client',
-          'Lapsed regulars warmed up before they go cold',
-          'A diary that stays full of infills',
+        backgroundColor: 'bg-base',
+        cssPrefix: 'lash-extensions-workflow-examples',
+    };
+
+    const systemLayersData = {
+        badge: 'What We Put In Place',
+        title: 'A refill cycle the studio remembers, not the client',
+        description: 'You stay focused on the lash line. The cycle that decides whether she comes back stops depending on her memory.',
+        featureCategories: [
+            {
+                title: 'Refill nudges that match her cycle',
+                description: 'Two-week, three-week, four-week — the nudge fires at the right window for her, not a generic blast.',
+                icon: Bell,
+                features: [
+                    'Cycle-aware refill prompts',
+                    'Personal tone, named tech',
+                    'Stops the moment she rebooks',
+                ],
+            },
+            {
+                title: 'Win-backs that do not feel like a coupon',
+                description: 'A single warm message at the right moment outperforms three discount blasts every time.',
+                icon: HeartHandshake,
+                features: [
+                    'Two-cycle drift detection',
+                    '"We miss you" tone, not "% off"',
+                    'Direct rebook link to her usual tech',
+                ],
+            },
+            {
+                title: 'Reply with a slot, not "DM us"',
+                description: 'New enquiries see real availability in the first reply, including refill vs full set.',
+                icon: Calendar,
+                features: [
+                    'Live slots in the first reply',
+                    'Service-aware (full set vs refill)',
+                    'Bookable from Instagram and Google',
+                ],
+            },
+            {
+                title: 'Reviews from the look she loved',
+                description: 'A review request goes out at the moment the lashes look freshest.',
+                icon: Star,
+                features: [
+                    '24-hour review request',
+                    'Photo-friendly prompt',
+                    'Reviews stack where new clients scroll',
+                ],
+            },
+            {
+                title: 'Be findable for refill, not just lashes',
+                description: 'Search intent for "lash refill near me" is the highest-fit search you can show up for. We line the studio up for it.',
+                icon: Search,
+                features: [
+                    'Found for refill + area',
+                    'Profile that matches your style',
+                    'Right-fit clients, fewer one-offs',
+                ],
+            },
         ],
-        popular: true,
-      },
-      {
-        name: 'Get the proof on Maps',
-        description:
-          'For when the work is gorgeous but the Maps page does not show it.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if local proof is the gap',
-        features: [
-          'Review ask the day after a finished set',
-          'Reviews that land on Maps and search',
-          'Local visibility that finally matches the work',
+        columns: 3 as const,
+    };
+
+    const exploreData = {
+        badge: 'Related',
+        description: 'The other parts that come up most often for lash studios.',
+        cards: [
+            {
+                icon: Bell,
+                title: 'CRM & Rebook Automation',
+                description: 'Refill nudges that match her cycle, not a generic calendar.',
+                href: '/services/crm-infrastructure-implementation',
+                gradient: 'teal',
+                iconBg: 'teal',
+            },
+            {
+                icon: Calendar,
+                title: 'Smart Website Systems',
+                description: 'First reply with live refill and full-set slots.',
+                href: '/services/smart-website-systems',
+                gradient: 'purple',
+                iconBg: 'purple',
+            },
+            {
+                icon: Star,
+                title: 'Reputation & Review Systems',
+                description: 'Reviews from the look she loved most.',
+                href: '/services/reputation-review-systems',
+                gradient: 'amber',
+                iconBg: 'amber',
+            },
+            {
+                icon: Search,
+                title: 'Local Authority & SEO Systems',
+                description: 'Found by people searching "lash refill near me".',
+                href: '/services/local-seo-authority',
+                gradient: 'blue',
+                iconBg: 'blue',
+            },
         ],
-      },
-    ],
-  };
+        backgroundColor: 'bg-alt',
+        columns: 2 as const,
+    };
 
-  const exploreData = {
-    badge: 'Related',
-    description: 'The other parts of the system lash artists tend to lean on most.',
-    cards: [
-      {
-        icon: Wrench,
-        title: 'Smart Website Systems',
-        description: 'Holds DM, deposit and infill flow together while your hands are full.',
-        href: '/services/smart-website-systems',
-        gradient: 'purple',
-        iconBg: 'purple',
-      },
-      {
-        icon: Calendar,
-        title: 'Booking & Infill Reminders',
-        description: 'Deposits, reminders and infill nudges at the right interval.',
-        href: '/services/crm-infrastructure-implementation',
-        gradient: 'teal',
-        iconBg: 'teal',
-      },
-      {
-        icon: Compass,
-        title: 'Local Authority & SEO',
-        description: 'Visibility for "lash extensions near me" the moment somebody searches.',
-        href: '/services/local-seo-authority',
-        gradient: 'blue',
-        iconBg: 'blue',
-      },
-      {
-        icon: Star,
-        title: 'Reputation & Reviews',
-        description: 'Turns finished sets into proof on Maps and search.',
-        href: '/services/reputation-review-systems',
-        gradient: 'amber',
-        iconBg: 'amber',
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    columns: 2 as const,
-  };
+    const faqData = {
+        title: 'Things lash techs usually ask',
+        description: 'Honest answers about how this fits a refill-led studio.',
+        faqs: [
+            {
+                question: 'Will the nudges feel like spam?',
+                answer:
+                    'No. They are single, warm, named messages timed to her cycle. They stop the moment she rebooks. The point is to feel like the tech remembered her, not a system.',
+            },
+            {
+                question: 'Can it tell refill from full set?',
+                answer:
+                    'Yes. The nudge offers what fits her last service, with the right slot length. She does not have to think.',
+            },
+            {
+                question: 'I work on my own. Is this overkill?',
+                answer:
+                    'Solo techs feel this the most. The biggest leak is forgetting to nudge a regular at week three, and that is exactly what this fixes.',
+            },
+            {
+                question: 'What if she has gone quiet for months?',
+                answer:
+                    'A single, warm win-back goes out — not a discount blast. If she does not respond, it does not chase. It respects her.',
+            },
+            {
+                question: 'Do we need a full website?',
+                answer:
+                    'Not always. Many lash studios get the biggest lift from booking + refill nudges + a Google profile that is actually set up for the search she runs.',
+            },
+        ],
+    };
 
-  const faqData = {
-    title: 'What lash artists tend to ask first',
-    description: 'Direct, no hedging.',
-    faqs: [
-      {
-        question: 'Will the auto-reply sound like a bot?',
-        answer:
-          'No. The reply reads like the artist, gives availability, and offers a deposit link. The client locks the slot before asking somebody else.',
-      },
-      {
-        question: 'How do the infill nudges know the right interval per client?',
-        answer:
-          'They follow the cycle she actually books. Every client has a slightly different infill window and the nudge fires accordingly.',
-      },
-      {
-        question: 'Will it interrupt me mid-set?',
-        answer:
-          'No. It runs in the background. You only see the booking once it is locked.',
-      },
-      {
-        question: 'Can it actually reply at 10pm without sounding off?',
-        answer:
-          'Yes. The reply reads like the artist, gives the next two Saturday slots, and offers a deposit link. The client books before bed instead of asking two more lash artists.',
-      },
-      {
-        question: 'When does the review request go out?',
-        answer:
-          'The day after a finished set, while she is still pleased. That is the moment with the highest yield.',
-      },
-      {
-        question: 'Do I need a brand new website?',
-        answer:
-          'Usually not. The bottleneck is what happens after the form is sent.',
-      },
-    ],
-  };
-
-  return {
-    slug: 'lash-lift-and-extensions',
-    industries: ['lash-extensions'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['booking-systems', 'client-reactivation', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'beauty-personal-care',
-    seo: {
-      title: 'Lash Artists \u2014 Catch The DM While Your Hands Are Full | MindWP',
-      description:
-        'For solo lash artists whose phone lights up mid-set and whose infill regulars slip into needing a full set somewhere else. DM capture, infill nudges, reviews on Maps.',
-      keywords: [
-        'lash extension booking automation',
-        'lash artist DM reply',
-        'lash infill reminder',
-        'lash artist client retention',
-        'lash review automation',
-      ],
-      canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',
-    },
-    hero: { ...heroData },
-    workflowExamples: workflowExamplesData,
-    operatingPatterns: operatingPatternsData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about the DMs you missed mid-set',
-      description:
-        'Walk us through the last set where the phone went mad and the last regular who slipped past her infill window. We will tell you what to plug first.',
-    },
-  };
+    return {
+        slug: 'lash-lift-and-extensions',
+        industries: ['lash-extensions'],
+        systems: [
+            'crm-automation',
+            'smart-website-systems',
+            'reputation-review',
+            'local-seo-authority',
+        ],
+        topics: ['follow-up', 'booking-systems', 'review-generation'],
+        type: 'detail',
+        parentSlug: 'beauty-personal-care',
+        seo: {
+            title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
+            description:
+                'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+            keywords: [
+                'lash studio rebook system',
+                'lash refill nudge automation',
+                'lash extension client retention',
+                'lash studio reviews',
+                'lash refill near me seo',
+            ],
+            canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',
+        },
+        hero: {
+            ...heroData,
+        },
+        operatingPatterns: operatingPatternsData,
+        workflowExamples: workflowExamplesData,
+        systemLayers: systemLayersData,
+        explore: exploreData,
+        faq: faqData,
+        cta: {
+            title: 'Tell us where the cycle is breaking',
+            description:
+                'If clients are drifting at week three or four, walk us through your last month and we will show you where a single nudge would have kept the chair full.',
+        },
+    };
 }
 
-
-export const lashExtensionsIndustryPageData: IndustryPageData =
-  buildLashExtensionsIndustryPageData();
+export const lashExtensionsIndustryPageData: IndustryPageData = buildLashExtensionsIndustryPageData();

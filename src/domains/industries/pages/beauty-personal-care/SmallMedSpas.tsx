@@ -1,381 +1,242 @@
 import {
-  Calendar,
-  Clock3,
-  HeartPulse,
-  MessageSquare,
-  Search,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  Workflow,
+    CalendarCheck,
+    ClipboardList,
+    FileSearch,
+    MessageSquare,
+    PhoneCall,
+    Search,
+    ShieldCheck,
+    Sparkles,
+    Star,
+    UserCheck,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildSmallMedSpasIndustryPageData(): IndustryPageData {
-  const heroData = {
-    badge: 'For Med Spas',
-    title: 'A Client Wants a Consultation This Week. They Picked Whoever Replied First.',
-    description:
-      'Med spa enquiries are time-sensitive. The client is comparing a few clinics. The clinic that answers first usually gets the consultation.',
-    list: ['Slow replies', 'Lost consultations', 'No follow-up', 'Few reviews'],
-    cssPrefix: 'small-med-spas-hero',
-  };
+    const heroData = {
+        badge: 'For Small Med Spas',
+        title: 'She Filled In The Consultation Form On Tuesday Night. By Friday She Had Booked The Clinic That Replied On Wednesday.',
+        description:
+            'Med spa clients do not buy on impulse. They enquire, they compare, they wait. The clinic that calls them back the next morning — calmly, not pushy — is almost always the one that ends up doing the treatment.',
+        list: ['Cold enquiry', 'Slow callback', 'No follow-up', 'Plan dropped'],
+        cssPrefix: 'small-med-spas-hero',
+    };
 
-  const imageStripData = {
-    badge: 'How Clients Come In',
-    title: 'A client wants to know if you can help',
-    description:
-      'A treatment, a course, a follow-up. They want to know what you offer, what it costs, and that the clinic feels in control.',
-    items: [
-      {
-        title: 'New client enquiries',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing med spa enquiries',
-      },
-      {
-        title: 'Consultations and bookings',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing med spa consultations',
-      },
-      {
-        title: 'Treatment plans and follow-up',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing med spa treatment plans',
-      },
-      {
-        title: 'Reviews and referrals',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing med spa reviews',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'small-med-spas-image-strip',
-  };
-
-  const operatingPatternsData = {
-    badge: 'Where Clients Slip',
-    title: 'The clinic is full but the new clients are not all landing',
-    benefits: [
-      {
-        icon: HeartPulse,
-        title: 'Calls miss reception',
-        description: 'Reception is with a client. The phone rings out. The new enquiry books the next clinic.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: Calendar,
-        title: 'Booking turns into a back and forth',
-        description: 'A simple consultation takes too many messages before anything is on the diary.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Clock3,
-        title: 'Treatment plans go quiet',
-        description: 'A plan was discussed. It went home with the client. Nobody followed up.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: Sparkles,
-        title: 'Online you look smaller than the work you do',
-        description: 'Plenty of happy clients. Almost none ever wrote anything online.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
-
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every enquiry, consultation, and treatment plan',
-    description: 'Each piece does one job. Together they keep new clients from slipping through the gaps.',
-    featureCategories: [
-      {
-        title: 'Catch every call and form',
-        description: 'Calls, missed calls, web forms — all in one place with the client and the request noted.',
-        icon: MessageSquare,
-        features: [
-          'Missed calls texted back instantly',
-          'Web enquiries land with reception',
-          'Client and request captured up front',
-        ],
-      },
-      {
-        title: 'Get the consultation booked without phone tag',
-        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
-        icon: Calendar,
-        features: [
-          'Slots clients can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'Reception sees the day at a glance',
-        ],
-      },
-      {
-        title: 'Stop treatment plans going quiet',
-        description: 'Every plan gets a follow-up on a schedule, even when the chair is full.',
-        icon: Workflow,
-        features: [
-          'Plans followed up automatically',
-          'Open plans in one place',
-          'Past clients gently nudged back in',
-        ],
-      },
-      {
-        title: 'Turn happy clients into reviews',
-        description: 'A review request goes out at the right moment so the work shows up online.',
-        icon: ShieldCheck,
-        features: [
-          'Review requests after appointments',
-          'Asked when the client is happiest',
-          'More reviews where local people search',
-        ],
-      },
-      {
-        title: 'Show up when local people search',
-        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for a clinic.',
-        icon: Search,
-        features: [
-          'Found on Maps for the work you do',
-          'Service pages that match real searches',
-          'Local area coverage that is visible',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
-
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal week, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
+    const decisionChecklistData = {
+        badge: 'How A Med Spa Enquiry Actually Decides',
+        title: 'Three things she is quietly checking before she books',
+        description: 'She is not comparing prices. She is checking whether you feel safe, organised, and present.',
         items: [
-          'Reception is busy. The phone rings out. The new enquiry is lost.',
-          'A client wants a consultation. Three messages later, still no time set.',
-          'A treatment plan went home with the client last week. Nobody followed up.',
-          'You did beautiful work last month. They never got asked for a review.',
+            'A same-day, named reply with two suggested consult times',
+            'A short pre-consult intake that respects her time',
+            'A written plan within 24 hours of the consult, in her words',
+            'Recent, real reviews from completed treatment journeys',
+            'A Google profile that matches the work she actually wants',
+            'Practitioner credentials surfaced calmly, not buried',
         ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know reception will reply.',
-          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
-          'The plan gets a polite follow-up. You can see who is still deciding.',
-          'A review request goes out after the visit. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
+        columns: 2 as const,
+        backgroundColor: 'bg-base',
+        cssPrefix: 'small-med-spas-decision-checklist',
+    };
 
-  const pathwaysData = {
-    badge: 'Where Most Clinics Start',
-    title: 'Three stages, most clinics feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most clients.',
-    packages: [
-      {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when reception is busy and new client calls do not get answered.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
-        features: [
-          'Missed-call text-back so they know you will reply',
-          'One inbox for calls, forms, and web enquiries',
-          'Client and request captured before the conversation',
+    const operatingPatternsData = {
+        badge: 'Where Consults Become Bookings — Or Don\'t',
+        title: 'The treatment is not the sale. The follow-up is.',
+        benefits: [
+            {
+                icon: MessageSquare,
+                title: 'The form sat in an inbox until Wednesday',
+                description: 'By the time anyone replied, she had a Friday consult booked elsewhere. The form was fine. The reply was not.',
+                iconType: 'primary' as const,
+            },
+            {
+                icon: FileSearch,
+                title: 'The consult went well. Then nothing.',
+                description: 'No written plan, no follow-up at the right window. She liked the practitioner. She just did not feel chased — in the right way.',
+                iconType: 'secondary' as const,
+            },
+            {
+                icon: CalendarCheck,
+                title: 'The treatment plan stalled at session two',
+                description: 'Series-based treatments need scheduled rebook prompts. Without them, plans quietly become single sessions.',
+                iconType: 'accent' as const,
+            },
         ],
-      },
-      {
-        name: 'Get the consultation booked the same day',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a consultation.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
-        features: [
-          'Slots clients can pick themselves',
-          'Reminders the day before so chairs stay full',
-          'Reception sees the day at a glance',
-        ],
-        popular: true,
-      },
-      {
-        name: 'Keep treatment plans moving and turn visits into reviews',
-        description: 'For when the diary is fine but plans go quiet and reviews never get asked for.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if follow-up and reputation are the weak spots',
-        features: [
-          'Treatment plans followed up automatically',
-          'Past clients nudged back in',
-          'Review requests at the right moment',
-        ],
-      },
-    ],
-  };
+        columns: 3 as const,
+    };
 
-  const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on reception remembering.',
-    workflows: [
-      {
-        trigger: 'Reception is busy and a new client call rings out.',
-        actions: [
-          'They get a text inside a minute saying reception will reply',
-          'The text captures the client and the request',
-          'The lead is held instead of going to the next clinic',
+    const systemLayersData = {
+        badge: 'What We Put In Place',
+        title: 'Calm, fast, structured follow-up — from first enquiry to plan completion',
+        description: 'You stay focused on assessment and treatment. The bit that turns enquiry into a booked plan stops depending on someone remembering to email back.',
+        featureCategories: [
+            {
+                title: 'Same-day, named reply to every enquiry',
+                description: 'No web form sits past lunch. The first reply offers two consult times and feels like a real human, not a portal.',
+                icon: PhoneCall,
+                features: [
+                    'Same-day acknowledgement',
+                    'Two consult slots in the first reply',
+                    'Tone matched to the treatment area',
+                ],
+            },
+            {
+                title: 'Pre-consult intake, post-consult plan',
+                description: 'A short structured intake before the consult, and a written plan after. She sees you take it seriously.',
+                icon: ClipboardList,
+                features: [
+                    'Pre-consult intake form',
+                    'Written plan within 24 hours',
+                    'References her actual goals, not a template',
+                ],
+            },
+            {
+                title: 'Treatment plan rebooks, not loose ends',
+                description: 'Series-based treatments get scheduled rebook prompts at the right interval. Plans complete instead of stalling.',
+                icon: CalendarCheck,
+                features: [
+                    'Scheduled rebook prompts per plan',
+                    'Reminders before each session',
+                    'Pause and resume without losing the thread',
+                ],
+            },
+            {
+                title: 'Reviews from completed plans, not first sessions',
+                description: 'Review requests fire at the right window — when results are visible — not at session one when she is still nervous.',
+                icon: Star,
+                features: [
+                    'Outcome-based review timing',
+                    'Asked once, never twice',
+                    'Reviews that read like real journeys',
+                ],
+            },
+            {
+                title: 'Trust-led local presence',
+                description: 'A Google profile and pages that match the actual treatments, recent reviews, and practitioner credentials. Quiet confidence, not loud claims.',
+                icon: Search,
+                features: [
+                    'Found for the treatments you actually offer',
+                    'Practitioner-led trust signals',
+                    'Profile reflects the clinic, not a template',
+                ],
+            },
         ],
-      },
-      {
-        trigger: 'A client wants a consultation this week.',
-        actions: [
-          'They pick a slot from a link, no more text tag',
-          'A reminder goes out the day before',
-          'Reception sees who is coming in and why',
+        columns: 3 as const,
+    };
+
+    const exploreData = {
+        badge: 'Related',
+        description: 'The other parts that come up most often for small med spas.',
+        cards: [
+            {
+                icon: PhoneCall,
+                title: 'Smart Website Systems',
+                description: 'Same-day reply, two consult slots, written plan — without the inbox guilt.',
+                href: '/services/smart-website-systems',
+                gradient: 'purple',
+                iconBg: 'purple',
+            },
+            {
+                icon: CalendarCheck,
+                title: 'CRM & Treatment Plan Automation',
+                description: 'Series rebooks, follow-ups, and plan completion that does not stall at session two.',
+                href: '/services/crm-infrastructure-implementation',
+                gradient: 'teal',
+                iconBg: 'teal',
+            },
+            {
+                icon: Star,
+                title: 'Reputation & Review Systems',
+                description: 'Reviews from completed plans, where comparison clients are scrolling.',
+                href: '/services/reputation-review-systems',
+                gradient: 'amber',
+                iconBg: 'amber',
+            },
+            {
+                icon: Search,
+                title: 'Local Authority & SEO Systems',
+                description: 'Be the clinic that shows up — and reads as safe — for the treatments you actually offer.',
+                href: '/services/local-seo-authority',
+                gradient: 'blue',
+                iconBg: 'blue',
+            },
         ],
-      },
-      {
-        trigger: 'A treatment plan was discussed last week and has not been booked.',
-        actions: [
-          'A polite follow-up goes out automatically',
-          'You can see all the open plans in one place',
-          'If they say yes, the booking happens without another five messages',
+        backgroundColor: 'bg-alt',
+        columns: 2 as const,
+    };
+
+    const faqData = {
+        title: 'Things small med spas usually ask',
+        description: 'Honest answers about how this fits a clinic-led, considered-purchase day.',
+        faqs: [
+            {
+                question: 'We do not want to feel pushy. Will follow-up sound like sales?',
+                answer:
+                    'No. The whole point is calm. Same-day reply, structured plan, and one warm follow-up at the right moment. No discount chasing.',
+            },
+            {
+                question: 'Our practitioner does the consults. Who handles the admin?',
+                answer:
+                    'The system does the routine bits — acknowledgement, reminders, rebook prompts — so the practitioner only steps in for the parts that need them.',
+            },
+            {
+                question: 'Can it handle different treatment journeys?',
+                answer:
+                    'Yes. Single-session, three-session, and longer plans each get the right rebook cadence and review timing.',
+            },
+            {
+                question: 'What about clients who went quiet after a consult?',
+                answer:
+                    'A single, calm follow-up references the plan she discussed. It either reopens the conversation or respectfully ends it.',
+            },
+            {
+                question: 'Will this affect compliance or how we present treatments?',
+                answer:
+                    'No. Tone, claims, and copy stay aligned with what your practitioners are comfortable saying. We do not introduce claims.',
+            },
         ],
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'small-med-spas-workflow-examples',
-  };
+    };
 
-  const caseStudiesData = {
-    category: 'beauty-personal-care' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports beauty and personal care businesses in this category.',
-    limit: 2,
-  };
-
-  const exploreData = {
-    badge: 'Related',
-    description: 'The other parts of the system that come up most often for med spas.',
-    cards: [
-      {
-        icon: Workflow,
-        title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
-        href: '/services/smart-website-systems',
-        gradient: 'purple',
-        iconBg: 'purple',
-      },
-      {
-        icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support booking, reminders, and clearer next steps.',
-        href: '/services/crm-infrastructure-implementation',
-        gradient: 'teal',
-        iconBg: 'teal',
-      },
-      {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen clinic visibility and local trust.',
-        href: '/services/local-seo-authority',
-        gradient: 'blue',
-        iconBg: 'blue',
-      },
-      {
-        icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn appointments into reviews and proof.',
-        href: '/services/reputation-review-systems',
-        gradient: 'amber',
-        iconBg: 'amber',
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    columns: 2 as const,
-  };
-
-  const faqData = {
-    title: 'Things med spas usually ask',
-    description: 'Straight answers about how this fits into a busy clinic.',
-    faqs: [
-      {
-        question: 'Reception is already stretched. Will this make more work for them?',
-        answer:
-          'It does the opposite. Missed calls get answered by text on their own. Reminders fire by themselves. Reception sees a clearer day at a glance.',
-      },
-      {
-        question: 'Will clients feel like they are getting an automated response?',
-        answer:
-          'No. The messages are short and written like reception would actually text someone. The aim is to hold the lead until you can reply.',
-      },
-      {
-        question: 'Can it handle plans that need to be discussed in the chair?',
-        answer:
-          'Yes. The first reply confirms a consultation and the plan follows after the appointment.',
-      },
-      {
-        question: 'Do we have to chase reviews ourselves?',
-        answer:
-          'No. The request goes out on its own after the visit, when the client is happiest.',
-      },
-      {
-        question: 'What about plans sitting in old emails?',
-        answer:
-          'Those get worked in too. Many clinics find that reactivating older plans brings in real treatment value before any new marketing kicks in.',
-      },
-      {
-        question: 'Do we need a brand new website?',
-        answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
-      },
-    ],
-  };
-
-  return {
-    slug: 'small-med-spas',
-    industries: ['med-spa'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['booking-systems', 'client-reactivation', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'beauty-personal-care',
-    seo: {
-      title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
-      description:
-        'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-      keywords: [
-        'med spa website design',
-        'med spa booking system',
-        'med spa lead handling system',
-        'med spa seo services',
-        'med spa reputation management system',
-      ],
-      canonical: '/industries/beauty-personal-care/small-med-spas',
-    },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
-    operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
-    comparison: comparisonData,
-    pathways: pathwaysData,
-    workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us where clients are slipping',
-      description:
-        'If new client calls miss reception, treatment plans go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
-    },
-  };
+    return {
+        slug: 'small-med-spas',
+        industries: ['med-spa'],
+        systems: [
+            'smart-website-systems',
+            'crm-automation',
+            'reputation-review',
+            'local-seo-authority',
+        ],
+        topics: ['lead-response-time', 'follow-up', 'review-generation'],
+        type: 'detail',
+        parentSlug: 'beauty-personal-care',
+        seo: {
+            title: 'Small Med Spas — Calm Consult Follow-Up, Plan Completion | MindWP',
+            description:
+                'For small med spas where enquiries cool overnight and treatment plans stall at session two. We put same-day replies, written plans, scheduled rebooks, and outcome-based reviews in place.',
+            keywords: [
+                'med spa lead follow up',
+                'med spa consult conversion',
+                'med spa treatment plan rebook',
+                'med spa reviews',
+                'med spa local seo',
+            ],
+            canonical: '/industries/beauty-personal-care/small-med-spas',
+        },
+        hero: {
+            ...heroData,
+        },
+        operatingPatterns: operatingPatternsData,
+        decisionChecklist: decisionChecklistData,
+        systemLayers: systemLayersData,
+        explore: exploreData,
+        faq: faqData,
+        cta: {
+            title: 'Tell us where the consult goes quiet',
+            description:
+                'If enquiries cool before Wednesday or plans stall after session two, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
+        },
+    };
 }
 
 export const smallMedSpasIndustryPageData: IndustryPageData = buildSmallMedSpasIndustryPageData();

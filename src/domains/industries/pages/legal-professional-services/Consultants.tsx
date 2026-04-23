@@ -1,381 +1,258 @@
 import {
-  Briefcase,
-  Calendar,
-  Clock3,
-  LineChart,
-  MessageSquare,
-  Search,
-  ShieldCheck,
-  Star,
-  Workflow,
+    ArrowRightCircle,
+    BriefcaseBusiness,
+    Compass,
+    HelpCircle,
+    Layers,
+    Mail,
+    Search,
+    Sparkles,
+    Target,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildConsultantsIndustryPageData(): IndustryPageData {
-  const heroData = {
-    badge: 'For Consultants',
-    title: 'A Lead Wants to Talk This Week. They Picked Whoever Replied First.',
-    description:
-      'Consulting enquiries arrive between client work. The phone goes to voicemail. The proposal sits unread. The prospect signs with whoever followed up first.',
-    list: ['Slow replies', 'Quiet proposals', 'Lost prospects', 'Few reviews'],
-    cssPrefix: 'consultants-hero',
-  };
+    const heroData = {
+        badge: 'For Independent Consultants',
+        title: 'The Discovery Call Went Well. Then "Let Us Think About It." Then Nothing.',
+        description:
+            'Most consulting work is not lost on price. It is lost on clarity. The client liked you, agreed the problem mattered, and then could not explain to their team what they would actually be buying. The conversation just quietly stopped.',
+        list: ['Unclear scope', 'No next step', 'Internal stall', 'Slow drift'],
+        cssPrefix: 'consultants-hero',
+    };
 
-  const imageStripData = {
-    badge: 'How New Clients Come In',
-    title: 'A business wants to know if you can help',
-    description:
-      'A new project, a problem they want sorted, a referral. They want to know what you do, what it costs, and that you will reply.',
-    items: [
-      {
-        title: 'New enquiries',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing consulting enquiries',
-      },
-      {
-        title: 'Discovery calls',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing consulting discovery calls',
-      },
-      {
-        title: 'Proposals and engagements',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing consulting proposals',
-      },
-      {
-        title: 'Reviews and referrals',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing consulting reviews',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'consultants-image-strip',
-  };
+    const operatingPatternsData = {
+        badge: 'Where Engagements Stall',
+        title: 'They did not pick a competitor. They just could not pick anything at all.',
+        benefits: [
+            {
+                icon: HelpCircle,
+                title: '"What exactly do we get?" never got answered cleanly',
+                description: 'The call covered the problem. Nobody nailed the deliverable. Internally it sounds vague, so it dies.',
+                iconType: 'primary' as const,
+            },
+            {
+                icon: Compass,
+                title: 'No clear next step after the discovery call',
+                description: 'A "we will be in touch" closes the meeting and opens a void. Whoever defines the next move usually wins.',
+                iconType: 'secondary' as const,
+            },
+            {
+                icon: ArrowRightCircle,
+                title: 'It went quiet inside the buying committee',
+                description: 'A champion took it to a board, a partner, a CFO. With no clear summary, it lost momentum in someone else\'s meeting.',
+                iconType: 'accent' as const,
+            },
+        ],
+        columns: 3 as const,
+    };
 
-  const operatingPatternsData = {
-    badge: 'Where Prospects Slip',
-    title: 'The work is steady. The bit between enquiry and signed engagement is where it leaks.',
-    benefits: [
-      {
-        icon: Briefcase,
-        title: 'Calls miss while you are with clients',
-        description: 'You are in a session. The phone rings out. The prospect picks the next consultant.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: Calendar,
-        title: 'Discovery calls take days to arrange',
-        description: 'A simple thirty-minute call takes too many emails before anything is on the diary.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Clock3,
-        title: 'Proposals go quiet',
-        description: 'A proposal gets sent. The prospect thinks about it. Nobody follows up.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: LineChart,
-        title: 'Online you look smaller than the work you do',
-        description: 'Plenty of strong outcomes. Almost no reviews to show for them.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
+    const systemLayersData = {
+        badge: 'What We Put In Place',
+        title: 'Make the offer easy to repeat, the next step obvious, and the follow-up quietly automatic',
+        description: 'You keep delivering the work. The bit that used to depend on the client perfectly explaining you to their team stops being a coin flip.',
+        featureCategories: [
+            {
+                title: 'Make the offer easy to forward',
+                description: 'A clear, plain-English summary of what they get and why it is worth it — built to survive being passed around inside a buying committee.',
+                icon: Layers,
+                features: [
+                    'Scope written in client language, not consultant language',
+                    'Outcome stated up front, not buried',
+                    'Easy for a champion to forward without rewriting',
+                ],
+            },
+            {
+                title: 'Define the next step on every call',
+                description: 'Discovery does not end on "we will think about it." It ends on a specific, dated next move that lives somewhere both sides can see.',
+                icon: Target,
+                features: [
+                    'Standard "next step" template per call type',
+                    'Sent within an hour while the call is fresh',
+                    'Holds the conversation while they decide internally',
+                ],
+            },
+            {
+                title: 'Follow up the quiet ones gracefully',
+                description: 'Two short, written-like-you nudges over the weeks they are deciding internally. Calm, not chasing.',
+                icon: Mail,
+                features: [
+                    'Spaced follow-ups that survive a buying committee',
+                    'Stops the moment they reply or commit',
+                    'Different cadence for retainer vs project',
+                ],
+            },
+            {
+                title: 'Position for the work you want more of',
+                description: 'Pages, case studies, and search visibility lined up for the kind of brief you actually want, not generic consulting.',
+                icon: Search,
+                features: [
+                    'Found for the niche you actually serve',
+                    'Pages that read as a specialist, not a generalist',
+                    'Fewer enquiries that are not a fit',
+                ],
+            },
+            {
+                title: 'Turn finished engagements into proof',
+                description: 'A short, structured ask after delivery so testimonials and case studies stop being something you mean to do.',
+                icon: Sparkles,
+                features: [
+                    'Testimonial request at the right moment',
+                    'Light-touch case study capture',
+                    'Proof that does the qualifying for you',
+                ],
+            },
+        ],
+        columns: 3 as const,
+    };
 
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every enquiry, call, and proposal',
-    description: 'Each piece does one job. Together they keep prospects from slipping between client work.',
-    featureCategories: [
-      {
-        title: 'Catch every call and form',
-        description: 'Calls, missed calls, web forms — all in one place with the prospect and the request noted.',
-        icon: MessageSquare,
-        features: [
-          'Missed calls texted back instantly',
-          'Web enquiries sent to your inbox',
-          'Prospect and request captured up front',
+    const workflowExamplesData = {
+        badge: 'Real Moments',
+        title: 'The points where consulting deals usually decide themselves',
+        description: 'Small handoffs that decide whether the engagement happens or quietly dies in someone else\'s inbox.',
+        workflows: [
+            {
+                trigger: 'A discovery call just ended.',
+                actions: [
+                    'A short summary lands within the hour',
+                    'It states the outcome, the scope, and the next step in plain language',
+                    'It is forwardable as-is to a partner or board',
+                ],
+            },
+            {
+                trigger: 'A champion is taking it internal and has gone quiet.',
+                actions: [
+                    'A polite check-in lands the following week',
+                    'It offers to join a short call with the wider team',
+                    'It removes the burden of explaining you for them',
+                ],
+            },
+            {
+                trigger: 'An engagement just wrapped.',
+                actions: [
+                    'A structured testimonial ask goes out',
+                    'A light case-study capture is offered',
+                    'The next piece of work is opened without a sales feel',
+                ],
+            },
         ],
-      },
-      {
-        title: 'Get the discovery call booked without email tag',
-        description: 'A clear way to offer a slot, confirm it, and remind both sides the day before.',
-        icon: Calendar,
-        features: [
-          'Discovery slots prospects can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'You see the request before the call',
-        ],
-      },
-      {
-        title: 'Stop proposals going quiet',
-        description: 'Every proposal gets a follow-up on a schedule, even when you are deep in client work.',
-        icon: Workflow,
-        features: [
-          'Proposals chased automatically',
-          'Open proposals in one place',
-          'Old proposals warmed up instead of forgotten',
-        ],
-      },
-      {
-        title: 'Turn finished engagements into proof',
-        description: 'A review request goes out at the right moment so the work shows up online.',
-        icon: ShieldCheck,
-        features: [
-          'Review requests after engagements',
-          'Asked when the client is most positive',
-          'More reviews where prospects look',
-        ],
-      },
-      {
-        title: 'Show up when prospects search',
-        description: 'Service pages and Google profile lined up so you appear when someone looks for what you do.',
-        icon: Search,
-        features: [
-          'Found for the problems you solve',
-          'Service pages that match real searches',
-          'Local and niche coverage that is visible',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
+        backgroundColor: 'bg-base',
+        cssPrefix: 'consultants-workflow-examples',
+    };
 
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal week, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on you remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
-        items: [
-          'Phone rings while you are with a client. Goes to voicemail. Lost.',
-          'A prospect wants a call. Three emails later, still no time set.',
-          'Proposal sent on Monday. By Friday nobody has chased it.',
-          'You finished a great engagement last month. They never got asked for a review.',
+    const exploreData = {
+        badge: 'Related',
+        description: 'The other parts that come up most often for independent consultants.',
+        cards: [
+            {
+                icon: BriefcaseBusiness,
+                title: 'Smart Website Systems',
+                description: 'Pages that read as a specialist, not a generic consultant.',
+                href: '/services/smart-website-systems',
+                gradient: 'purple',
+                iconBg: 'purple',
+            },
+            {
+                icon: Mail,
+                title: 'CRM & Follow-up Automation',
+                description: 'Hold open conversations and nudge gracefully through buying committees.',
+                href: '/services/crm-infrastructure-implementation',
+                gradient: 'teal',
+                iconBg: 'teal',
+            },
+            {
+                icon: Search,
+                title: 'Authority & SEO Systems',
+                description: 'Be findable for the niche brief you actually want.',
+                href: '/services/local-seo-authority',
+                gradient: 'blue',
+                iconBg: 'blue',
+            },
+            {
+                icon: Sparkles,
+                title: 'Reputation & Proof Systems',
+                description: 'Capture testimonials and case studies before they slip away.',
+                href: '/services/reputation-review-systems',
+                gradient: 'amber',
+                iconBg: 'amber',
+            },
         ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know you will reply.',
-          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
-          'The proposal gets a polite chase the next morning. You can see who is waiting.',
-          'A review request goes out at the right moment. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
+        backgroundColor: 'bg-alt',
+        columns: 2 as const,
+    };
 
-  const pathwaysData = {
-    badge: 'Where Most Consultants Start',
-    title: 'Three stages, most consultants feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most prospects.',
-    packages: [
-      {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when you are in client work and quick enquiries sit unread.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
-        features: [
-          'Missed-call text-back so they know you will reply',
-          'One inbox for calls, forms, and web enquiries',
-          'Prospect and request noted before the conversation',
+    const faqData = {
+        title: 'Things consultants usually ask',
+        description: 'Honest answers about how this fits a relationship-led, longer-cycle practice.',
+        faqs: [
+            {
+                question: 'Will this make my work feel productised?',
+                answer:
+                    'Only the offer summary, and only enough that a busy buyer can repeat it. The actual delivery stays as bespoke as it has always been.',
+            },
+            {
+                question: 'My buying cycles are months long. Does that work?',
+                answer:
+                    'Yes. The follow-up cadence is built for buying committees, board sign-offs, and quiet quarters. It paces, it does not chase.',
+            },
+            {
+                question: 'What if I do not want to send templated follow-ups?',
+                answer:
+                    'They are written like you would write them. You can review or pause anything. The point is to stop missing the moment, not to remove your judgement.',
+            },
+            {
+                question: 'Will this help with referrals and past clients?',
+                answer:
+                    'Directly. A structured testimonial ask after delivery, plus a quiet door for the next piece of work, is where most independent consultants find unexpected revenue.',
+            },
+            {
+                question: 'Do I need a new website?',
+                answer:
+                    'Sometimes. Often the bigger lift is in the offer itself — making it easy for a buyer to repeat — before any redesign.',
+            },
         ],
-      },
-      {
-        name: 'Get the discovery call booked the same week',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a call.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
-        features: [
-          'Discovery slots prospects can pick themselves',
-          'Reminders the day before so calls actually happen',
-          'You see the request before the call',
-        ],
-        popular: true,
-      },
-      {
-        name: 'Keep proposals moving and turn engagements into reviews',
-        description: 'For when prospects come in fine but proposals go quiet and reviews never get asked for.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if follow-up and reputation are the weak spots',
-        features: [
-          'Proposals chased automatically',
-          'Past prospects nudged at the right moment',
-          'Review requests at the right moment',
-        ],
-      },
-    ],
-  };
+    };
 
-  const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on you remembering.',
-    workflows: [
-      {
-        trigger: 'You are with a client and a new enquiry call rings out.',
-        actions: [
-          'They get a text inside a minute saying you will reply',
-          'The text captures the prospect and the request',
-          'The lead is held instead of going to the next consultant',
+    return {
+        slug: 'consultants',
+        industries: ['consulting'],
+        systems: [
+            'smart-website-systems',
+            'crm-automation',
+            'reputation-review',
+            'local-seo-authority',
         ],
-      },
-      {
-        trigger: 'A prospect wants a discovery call this week.',
-        actions: [
-          'They pick a slot from a link, no more email tag',
-          'A reminder goes out the day before',
-          'You walk into the call with the request already noted',
-        ],
-      },
-      {
-        trigger: 'You sent a proposal a few days ago and have not heard back.',
-        actions: [
-          'A polite chase goes out automatically',
-          'Open proposals are visible in one place',
-          'If they say yes, the engagement starts without another five emails',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'consultants-workflow-examples',
-  };
-
-  const caseStudiesData = {
-    category: 'legal-professional-services' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports legal and professional services in this category.',
-    limit: 2,
-  };
-
-  const exploreData = {
-    badge: 'Related',
-    description: 'The other parts of the system that come up most often for consultants.',
-    cards: [
-      {
-        icon: Workflow,
-        title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
-        href: '/services/smart-website-systems',
-        gradient: 'purple',
-        iconBg: 'purple',
-      },
-      {
-        icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support discovery booking, reminders, and clearer next steps.',
-        href: '/services/crm-infrastructure-implementation',
-        gradient: 'teal',
-        iconBg: 'teal',
-      },
-      {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen consultant visibility and trust.',
-        href: '/services/local-seo-authority',
-        gradient: 'blue',
-        iconBg: 'blue',
-      },
-      {
-        icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn finished engagements into reviews and proof.',
-        href: '/services/reputation-review-systems',
-        gradient: 'amber',
-        iconBg: 'amber',
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    columns: 2 as const,
-  };
-
-  const faqData = {
-    title: 'Things consultants usually ask',
-    description: 'Straight answers about how this fits into solo or small consulting practices.',
-    faqs: [
-      {
-        question: 'I am in client work most of the day. How much extra work is this?',
-        answer:
-          'Almost none after setup. Missed calls get answered by text on their own. Proposal chasing goes out on a schedule. Reminders fire by themselves.',
-      },
-      {
-        question: 'Will prospects feel like they are getting an automated response?',
-        answer:
-          'No. The messages are short and written like you would actually reply. The aim is to hold the lead until you can speak to them.',
-      },
-      {
-        question: 'Can it handle prospects who need a discovery call before any proposal?',
-        answer:
-          'Yes. The first reply confirms a discovery call and the proposal follows after the call.',
-      },
-      {
-        question: 'Do I have to chase reviews myself?',
-        answer:
-          'No. The request goes out on its own at the right moment.',
-      },
-      {
-        question: 'What about proposals sitting in old emails?',
-        answer:
-          'Those get worked in too. Many consultants find that warming up old proposals brings in real fees before any new marketing kicks in.',
-      },
-      {
-        question: 'Do I need a brand new website?',
-        answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
-      },
-    ],
-  };
-
-  return {
-    slug: 'consultants',
-    industries: ['consulting'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['lead-qualification', 'crm-integration', 'pipeline-visibility'],
-    type: 'detail',
-    parentSlug: 'legal-professional-services',
-    seo: {
-      title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-      description:
-        'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-      keywords: [
-        'consulting website design',
-        'consulting booking system',
-        'consulting lead handling system',
-        'consulting seo services',
-        'consulting reputation management system',
-      ],
-      canonical: '/industries/legal-professional-services/consultants',
-    },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
-    operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
-    comparison: comparisonData,
-    pathways: pathwaysData,
-    workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us where prospects are slipping',
-      description:
-        'If calls go to voicemail in client work, proposals go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
-    },
-  };
+        topics: ['lead-qualification', 'follow-up', 'pipeline-visibility'],
+        type: 'detail',
+        parentSlug: 'legal-professional-services',
+        seo: {
+            title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
+            description:
+                'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
+            keywords: [
+                'consulting proposal follow-up',
+                'consulting buyer enablement',
+                'consulting crm',
+                'consulting lead conversion',
+                'consulting positioning system',
+            ],
+            canonical: '/industries/legal-professional-services/consultants',
+        },
+        hero: {
+            ...heroData,
+        },
+        operatingPatterns: operatingPatternsData,
+        systemLayers: systemLayersData,
+        workflowExamples: workflowExamplesData,
+        explore: exploreData,
+        faq: faqData,
+        cta: {
+            title: 'Tell us where the conversations stall',
+            description:
+                'If discovery calls go well but engagements rarely turn into signed work, walk us through the last few that went quiet and we will show you where the offer or the follow-up is actually breaking.',
+        },
+    };
 }
 
 export const consultantsIndustryPageData: IndustryPageData = buildConsultantsIndustryPageData();

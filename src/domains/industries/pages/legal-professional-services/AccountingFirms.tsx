@@ -1,381 +1,290 @@
 import {
-  Calculator,
-  Calendar,
-  Clock3,
-  FileText,
-  MessageSquare,
-  Search,
-  ShieldCheck,
-  Star,
-  Workflow,
+    Bell,
+    Calculator,
+    ClipboardCheck,
+    Eye,
+    FileText,
+    MessageCircle,
+    Search,
+    ShieldCheck,
+    Star,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAccountingFirmsIndustryPageData(): IndustryPageData {
-  const heroData = {
-    badge: 'For Accounting Firms',
-    title: 'A Business Owner Wants to Switch Accountants. They Picked Whoever Replied First.',
-    description:
-      'Accounting enquiries arrive in client meetings or at month end. The phone goes to voicemail. The proposal sits in the inbox. The prospect signs up with the firm that answered first.',
-    list: ['Slow replies', 'Quiet proposals', 'Lost prospects', 'Few reviews'],
-    cssPrefix: 'accounting-firms-hero',
-  };
+    const heroData = {
+        badge: 'For Accounting Firms',
+        title: 'The Proposal Was Sent Three Weeks Ago. Nobody Has Opened It Since.',
+        description:
+            'Most accounting firms do not lose business owners on the call. They lose them after the proposal lands. The owner reads it, puts it in a folder to "look at properly later", and quietly signs with whoever stayed in front of them.',
+        list: ['Sent-not-signed', 'No nudge', 'Compared quietly', 'Decision drift'],
+        cssPrefix: 'accounting-firms-hero',
+    };
 
-  const imageStripData = {
-    badge: 'How New Clients Come In',
-    title: 'A business owner wants to know if you can help',
-    description:
-      'A switch from another firm, a new business, a tax problem they want sorted. They want to know what you do, what it costs, and that you will reply.',
-    items: [
-      {
-        title: 'New client enquiries',
-        image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing accounting enquiries',
-      },
-      {
-        title: 'Discovery calls and meetings',
-        image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing accounting discovery calls',
-      },
-      {
-        title: 'Proposals and onboarding',
-        image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing accounting proposals',
-      },
-      {
-        title: 'Reviews and referrals',
-        image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing accounting reviews',
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'accounting-firms-image-strip',
-  };
+    const operatingPatternsData = {
+        badge: 'Where Proposals Die',
+        title: 'It is rarely a no. It is a maybe that nobody followed up.',
+        benefits: [
+            {
+                icon: FileText,
+                title: 'Sent on Tuesday. Forgotten by Friday.',
+                description:
+                    'The owner meant to read it on the train. Then payroll, a supplier issue, a bad week. The proposal sinks to the bottom of the inbox.',
+                iconType: 'primary' as const,
+            },
+            {
+                icon: Eye,
+                title: 'Two other firms sent something too',
+                description:
+                    'They are quietly comparing. Whoever stays present looks like the firm that actually wants the work.',
+                iconType: 'secondary' as const,
+            },
+            {
+                icon: Bell,
+                title: 'Nobody chased, because nobody had time',
+                description:
+                    'A polite check-in a week later would close half of these. It almost never gets sent.',
+                iconType: 'accent' as const,
+            },
+        ],
+        columns: 3 as const,
+    };
 
-  const operatingPatternsData = {
-    badge: 'Where Prospects Slip',
-    title: 'The work is steady. The bit between enquiry and signed engagement is where it leaks.',
-    benefits: [
-      {
-        icon: Calculator,
-        title: 'Calls miss the office',
-        description: 'Partners are in client meetings. The phone rings out. The prospect picks the next firm.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: Calendar,
-        title: 'Discovery calls take days to arrange',
-        description: 'A simple thirty-minute call takes too many emails before anything is on the diary.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Clock3,
-        title: 'Proposals go quiet',
-        description: 'A proposal gets sent. The prospect thinks about it. Nobody follows up.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: FileText,
-        title: 'Online you look smaller than the firm you run',
-        description: 'Plenty of long-standing clients. Almost no reviews to show for them.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
+    const comparisonData = {
+        badge: 'A Proposal, Two Outcomes',
+        title: 'Same firm. Same proposal. Two completely different close rates.',
+        description: 'The work is the same. What changes is whether anyone stays in the conversation after the document is sent.',
+        comparisons: [
+            {
+                type: 'before' as const,
+                title: 'How proposals usually go',
+                items: [
+                    'Discovery call on Monday. Proposal sent Tuesday.',
+                    'No reply by Friday. Nobody chases.',
+                    'Two weeks later, the prospect signs with someone else.',
+                    'You never find out which firm. Or why.',
+                ],
+            },
+            {
+                type: 'after' as const,
+                title: 'How they go with a quiet follow-up',
+                items: [
+                    'A short check-in lands the next week. Friendly, not pushy.',
+                    'A second nudge a week later if it stays quiet.',
+                    'You can see who has opened it, who is warm, who has gone cold.',
+                    'More signed engagements from the same number of proposals.',
+                ],
+            },
+        ],
+    };
 
-  const systemLayersData = {
-    badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every enquiry, call, and proposal',
-    description: 'Each piece does one job. Together they keep prospects from slipping between meetings.',
-    featureCategories: [
-      {
-        title: 'Catch every call and form',
-        description: 'Calls, missed calls, web forms — all in one place with the prospect and the request noted.',
-        icon: MessageSquare,
-        features: [
-          'Missed calls texted back instantly',
-          'Web enquiries land with the right partner',
-          'Prospect and request captured up front',
+    const workflowExamplesData = {
+        badge: 'Real Moments',
+        title: 'The points where a proposal usually decides itself',
+        description: 'Small handoffs that used to depend on a partner remembering at the right moment.',
+        workflows: [
+            {
+                trigger: 'A proposal has been sitting unopened for five days.',
+                actions: [
+                    'A polite, written-like-you check-in goes out',
+                    'It references the call, not the document',
+                    'It opens the door without pressure',
+                ],
+            },
+            {
+                trigger: 'The owner replied with a question and then went quiet.',
+                actions: [
+                    'The thread is held in one place, not lost in inboxes',
+                    'A second short nudge goes out the following week',
+                    'The partner sees who is warm before the next call block',
+                ],
+            },
+            {
+                trigger: 'The proposal stays quiet for a month.',
+                actions: [
+                    'A graceful close-out message goes out',
+                    'It leaves the door open for next year-end',
+                    'The lead is parked, not lost',
+                ],
+            },
         ],
-      },
-      {
-        title: 'Get the discovery call booked without email tag',
-        description: 'A clear way to offer a slot, confirm it, and remind both sides the day before.',
-        icon: Calendar,
-        features: [
-          'Discovery call slots prospects can pick themselves',
-          'Confirmations and reminders sent automatically',
-          'Partner sees the request before the call',
-        ],
-      },
-      {
-        title: 'Stop proposals going quiet',
-        description: 'Every proposal gets a follow-up on a schedule, even when the team is busy.',
-        icon: Workflow,
-        features: [
-          'Proposals chased automatically',
-          'Open proposals in one place',
-          'Old proposals warmed up instead of forgotten',
-        ],
-      },
-      {
-        title: 'Turn long-standing clients into proof',
-        description: 'A review request goes out at the right moment so the firm shows up online.',
-        icon: ShieldCheck,
-        features: [
-          'Review requests at the right moment',
-          'Asked when the client is most positive',
-          'More reviews where local businesses search',
-        ],
-      },
-      {
-        title: 'Show up when local businesses search',
-        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for an accountant.',
-        icon: Search,
-        features: [
-          'Found on Maps for the work you do',
-          'Service pages that match real searches',
-          'Local area coverage that is visible',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
+        backgroundColor: 'bg-base',
+        cssPrefix: 'accounting-firms-workflow-examples',
+    };
 
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal week, before and after',
-    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How it runs now',
-        items: [
-          'Phone rings while a partner is in a meeting. Goes to voicemail. Lost.',
-          'A prospect wants a call. Three emails later, still no time set.',
-          'Proposal sent on Monday. By Friday nobody has chased it.',
-          'You did great work for a client last quarter. They never got asked for a review.',
+    const systemLayersData = {
+        badge: 'What We Put In Place',
+        title: 'Quiet, scheduled follow-up so good prospects stop drifting after the proposal lands',
+        description: 'You stay in client meetings. The follow-up runs underneath, in a tone that fits a professional firm.',
+        featureCategories: [
+            {
+                title: 'See every open proposal in one place',
+                description: 'No more "did anyone follow up with that builder?" The pipeline lives somewhere everyone can see.',
+                icon: ClipboardCheck,
+                features: [
+                    'Open proposals visible at a glance',
+                    'Status tracked without spreadsheets',
+                    'Handoff between partners stops slipping',
+                ],
+            },
+            {
+                title: 'Nudge without nagging',
+                description: 'Two short, friendly check-ins spread across a couple of weeks. The moment they reply, it stops.',
+                icon: Bell,
+                features: [
+                    'Day 5 and day 12 follow-ups out of the box',
+                    'Tone matched to a professional firm',
+                    'Stops on reply or signature',
+                ],
+            },
+            {
+                title: 'Catch the enquiry before another firm does',
+                description: 'A same-hour acknowledgement so the owner stops emailing other accountants while they wait.',
+                icon: MessageCircle,
+                features: [
+                    'Instant acknowledgement on every enquiry',
+                    'Service area and need captured up front',
+                    'Holds the lead until a partner can call back',
+                ],
+            },
+            {
+                title: 'Turn signed clients into proof',
+                description: 'A review request after the first quarter, when the relief of switching is still fresh.',
+                icon: ShieldCheck,
+                features: [
+                    'Review request at the right moment',
+                    'Asked once, never again',
+                    'Reviews start to match the workload',
+                ],
+            },
+            {
+                title: 'Be findable for the work you actually want',
+                description: 'Pages and Google profile lined up for niche, sector, and area — not generic accountancy.',
+                icon: Search,
+                features: [
+                    'Pages for the work you want more of',
+                    'Found for sector + area searches',
+                    'Less time on enquiries that are not a fit',
+                ],
+            },
         ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How it runs after',
-        items: [
-          'Missed call gets a text back inside a minute. They know the firm will reply.',
-          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
-          'The proposal gets a polite chase the next morning. You can see who is waiting.',
-          'A review request goes out at the right moment. Reviews start stacking quietly.',
-        ],
-      },
-    ],
-  };
+        columns: 3 as const,
+    };
 
-  const pathwaysData = {
-    badge: 'Where Most Firms Start',
-    title: 'Three stages, most firms feel one more than the others',
-    description: 'You do not have to fix everything at once. Start with whatever is leaking the most prospects.',
-    packages: [
-      {
-        name: 'Stop calls and enquiries going missing',
-        description: 'For when partners are in meetings and quick enquiries sit unread.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if missed calls are the leak',
-        features: [
-          'Missed-call text-back so they know you will reply',
-          'One inbox for calls, forms, and web enquiries',
-          'Prospect and request noted before the conversation',
+    const exploreData = {
+        badge: 'Related',
+        description: 'The other parts that come up most often for accounting firms.',
+        cards: [
+            {
+                icon: Calculator,
+                title: 'CRM & Proposal Follow-up',
+                description: 'Hold open proposals, nudge at the right moment, stop the drift.',
+                href: '/services/crm-infrastructure-implementation',
+                gradient: 'teal',
+                iconBg: 'teal',
+            },
+            {
+                icon: MessageCircle,
+                title: 'Smart Website Systems',
+                description: 'Catch enquiries instantly so prospects stop emailing other firms.',
+                href: '/services/smart-website-systems',
+                gradient: 'purple',
+                iconBg: 'purple',
+            },
+            {
+                icon: Star,
+                title: 'Reputation & Review Systems',
+                description: 'Build the review base your firm has actually earned.',
+                href: '/services/reputation-review-systems',
+                gradient: 'amber',
+                iconBg: 'amber',
+            },
+            {
+                icon: Search,
+                title: 'Local Authority & SEO Systems',
+                description: 'Be the firm that shows up for the niche you actually want.',
+                href: '/services/local-seo-authority',
+                gradient: 'blue',
+                iconBg: 'blue',
+            },
         ],
-      },
-      {
-        name: 'Get the discovery call booked the same week',
-        description: 'Once enquiries are caught, this stage takes the friction out of confirming a call.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if booking is where it slows down',
-        features: [
-          'Discovery slots prospects can pick themselves',
-          'Reminders the day before so calls actually happen',
-          'Partner sees the request before they pick up',
-        ],
-        popular: true,
-      },
-      {
-        name: 'Keep proposals moving and turn clients into reviews',
-        description: 'For when prospects come in fine but proposals go quiet and reviews never get asked for.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if follow-up and reputation are the weak spots',
-        features: [
-          'Proposals chased automatically',
-          'Past prospects nudged at the right time of year',
-          'Review requests at the right moment',
-        ],
-      },
-    ],
-  };
+        backgroundColor: 'bg-alt',
+        columns: 2 as const,
+    };
 
-  const workflowExamplesData = {
-    badge: 'Real Situations',
-    title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on someone remembering.',
-    workflows: [
-      {
-        trigger: 'A partner is in a meeting and a prospect rings the office.',
-        actions: [
-          'They get a text inside a minute saying you will reply',
-          'The text captures the prospect and the request',
-          'The lead is held instead of going to the next firm',
+    const faqData = {
+        title: 'Things accounting firms usually ask',
+        description: 'Honest answers about how this fits a professional, deadline-driven practice.',
+        faqs: [
+            {
+                question: 'Will the follow-up feel pushy or salesy?',
+                answer:
+                    'No. Two short, polite check-ins across a couple of weeks. The tone is calm and partner-like, not marketing. The moment they reply, the follow-up stops.',
+            },
+            {
+                question: 'Will partners see what is going out under the firm name?',
+                answer:
+                    'Yes. The templates are agreed first and adjusted to fit the voice of the firm. Nothing goes out that the partners would not be comfortable signing.',
+            },
+            {
+                question: 'How is this different from what our practice management tool does?',
+                answer:
+                    'Practice management is built for the work after the engagement is signed. This sits in front of it, on the bit between proposal and signature.',
+            },
+            {
+                question: 'What about prospects who never had a proposal sent?',
+                answer:
+                    'Same logic. Enquiries get acknowledged the same hour and held until a partner can call. Most of the leak is in the gap, not the call itself.',
+            },
+            {
+                question: 'Do we need a new website?',
+                answer:
+                    'Usually not. We start with proposal follow-up and enquiry response, because that is where the closed-won numbers actually move.',
+            },
         ],
-      },
-      {
-        trigger: 'A prospect wants a discovery call this week.',
-        actions: [
-          'They pick a slot from a link, no more email tag',
-          'A reminder goes out the day before',
-          'The partner sees the request before the call',
+    };
+
+    return {
+        slug: 'accounting-firms',
+        industries: ['accounting'],
+        systems: [
+            'crm-automation',
+            'smart-website-systems',
+            'reputation-review',
+            'local-seo-authority',
         ],
-      },
-      {
-        trigger: 'You sent a proposal a few days ago and have not heard back.',
-        actions: [
-          'A polite chase goes out automatically',
-          'Open proposals are visible in one place',
-          'If they say yes, onboarding starts without another five emails',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-base',
-    cssPrefix: 'accounting-firms-workflow-examples',
-  };
-
-  const caseStudiesData = {
-    category: 'legal-professional-services' as const,
-    title: 'Related Case Studies',
-    description: 'Examples of how the system supports legal and professional services in this category.',
-    limit: 2,
-  };
-
-  const exploreData = {
-    badge: 'Related',
-    description: 'The other parts of the system that come up most often for accounting firms.',
-    cards: [
-      {
-        icon: Workflow,
-        title: 'Smart Website Systems',
-        description: 'The core layer that holds enquiry, booking, and follow-up together.',
-        href: '/services/smart-website-systems',
-        gradient: 'purple',
-        iconBg: 'purple',
-      },
-      {
-        icon: Calendar,
-        title: 'Booking & Scheduling System',
-        description: 'Support discovery booking, reminders, and clearer next steps.',
-        href: '/services/crm-infrastructure-implementation',
-        gradient: 'teal',
-        iconBg: 'teal',
-      },
-      {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description: 'Strengthen firm visibility and local trust.',
-        href: '/services/local-seo-authority',
-        gradient: 'blue',
-        iconBg: 'blue',
-      },
-      {
-        icon: Star,
-        title: 'Reputation & Review Systems',
-        description: 'Turn long-standing clients into reviews and proof.',
-        href: '/services/reputation-review-systems',
-        gradient: 'amber',
-        iconBg: 'amber',
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    columns: 2 as const,
-  };
-
-  const faqData = {
-    title: 'Things accounting firms usually ask',
-    description: 'Straight answers about how this fits into a partner-led firm.',
-    faqs: [
-      {
-        question: 'Partners are in meetings most of the day. Will this make more work for them?',
-        answer:
-          'It does the opposite. Missed calls get answered by text on their own. Proposal chasing goes out on a schedule. Reminders fire by themselves.',
-      },
-      {
-        question: 'Will prospects feel like they are getting an automated response?',
-        answer:
-          'No. The messages are short and written like the firm would actually reply. The aim is to hold the lead until a partner can speak to them.',
-      },
-      {
-        question: 'Can it handle prospects who need a discovery call before any proposal?',
-        answer:
-          'Yes. The first reply confirms a discovery call and the proposal follows after the call.',
-      },
-      {
-        question: 'Do we have to chase reviews ourselves?',
-        answer:
-          'No. The request goes out on its own at the right moment, after a piece of work the client is most positive about.',
-      },
-      {
-        question: 'What about proposals sitting in old emails?',
-        answer:
-          'Those get worked in too. Many firms find that warming up old proposals brings in real fees before any new marketing kicks in.',
-      },
-      {
-        question: 'Do we need a brand new website?',
-        answer:
-          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
-      },
-    ],
-  };
-
-  return {
-    slug: 'accounting-firms',
-    industries: ['accounting'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['lead-qualification', 'crm-integration', 'reputation-monitoring'],
-    type: 'detail',
-    parentSlug: 'legal-professional-services',
-    seo: {
-      title: 'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-      description:
-        'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-      keywords: [
-        'accounting firm website design',
-        'accounting firm booking system',
-        'accounting firm lead handling system',
-        'accounting firm seo services',
-        'accounting firm reputation management system',
-      ],
-      canonical: '/industries/legal-professional-services/accounting-firms',
-    },
-    hero: {
-      ...heroData,
-    },
-    imageStrip: imageStripData,
-    operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
-    comparison: comparisonData,
-    pathways: pathwaysData,
-    workflowExamples: workflowExamplesData,
-    caseStudies: caseStudiesData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us where prospects are slipping',
-      description:
-        'If calls go to voicemail in meetings, proposals go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
-    },
-  };
+        topics: ['follow-up', 'lead-qualification', 'review-generation'],
+        type: 'detail',
+        parentSlug: 'legal-professional-services',
+        seo: {
+            title: 'Accounting Firms — Stop Losing Owners In The Gap Between Proposal And Signature | MindWP',
+            description:
+                'For accounting firms where proposals get sent and then go quiet. We put quiet, scheduled follow-up, faster enquiry acknowledgement, and review prompts in place so good prospects stop drifting to whoever stayed in front of them.',
+            keywords: [
+                'accounting firm proposal follow-up',
+                'accounting firm crm',
+                'accounting firm lead handling',
+                'accounting firm reputation system',
+                'accounting firm local seo',
+            ],
+            canonical: '/industries/legal-professional-services/accounting-firms',
+        },
+        hero: {
+            ...heroData,
+        },
+        operatingPatterns: operatingPatternsData,
+        comparison: comparisonData,
+        workflowExamples: workflowExamplesData,
+        systemLayers: systemLayersData,
+        explore: exploreData,
+        faq: faqData,
+        cta: {
+            title: 'Tell us where the proposals are dying',
+            description:
+                'If discovery calls go well but proposals quietly stop converting, walk us through how the last few went and we will show you where the close rate is actually leaking.',
+        },
+    };
 }
 
 export const accountingFirmsIndustryPageData: IndustryPageData = buildAccountingFirmsIndustryPageData();

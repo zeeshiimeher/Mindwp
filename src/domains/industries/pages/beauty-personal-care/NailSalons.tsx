@@ -1,255 +1,252 @@
 import {
-  Calendar,
-  Compass,
-  DoorOpen,
-  Footprints,
-  Smartphone,
-  Star,
-  Wrench,
+    CheckCircle2,
+    Clock,
+    Hand,
+    MessageCircle,
+    MousePointerClick,
+    Search,
+    Sparkles,
+    Star,
+    Zap,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildNailSalonsIndustryPageData(): IndustryPageData {
-  const heroData = {
-    badge: 'For Nail Salons',
-    title: 'Saturday Lunchtime. Three Walk-Ins At The Door And Two Phones Going.',
-    description:
-      'Nail salons live in a constant tension between the walk-in at the door and the appointment in the chair. Saturday lunchtime, the front desk has three walk-ins, two phones going, and a regular due in seven minutes. Whoever the front desk had to put on hold or turn away came back to find someone else replied first.',
-    list: ['Walk-in chaos', 'Held-on calls', 'Lost regulars'],
-    cssPrefix: 'nail-salons-hero',
-  };
+    const heroData = {
+        badge: 'For Nail Salons',
+        title: 'She Tapped "Book Now" At 11:43. By 11:46 She Had Booked Somewhere Else.',
+        description:
+            'Nail clients do not wait. They want it done today, tomorrow morning, before the wedding. If your booking takes more than three taps or a phone call, they are already in the next salon\'s app.',
+        list: ['Booking friction', 'Phone-only', 'Three-tap rule', 'No reminder'],
+        cssPrefix: 'nail-salons-hero',
+    };
 
-  const comparisonData = {
-    badge: 'What Actually Changes',
-    title: 'A normal Saturday, before and after',
-    description:
-      'The chair work stays the same. The front desk stops being the bottleneck.',
-    comparisons: [
-      {
-        type: 'before' as const,
-        title: 'How Saturday runs now',
-        items: [
-          'Three walk-ins at the door, two phones going, regulars due any minute',
-          'Calls go on hold and customers hang up',
-          'A late-night DM from Friday is still unread',
-          'A regular who used to come every two weeks has not booked in six',
+    const comparisonData = {
+        badge: 'Three Taps Vs Three Days',
+        title: 'Same client. Two salons. The one that booked her in 30 seconds gets the loyalty.',
+        description: 'She is not loyal yet. She will be — but only to the salon that did not make her work for the appointment.',
+        comparisons: [
+            {
+                type: 'before' as const,
+                title: 'How most salons take a booking',
+                items: [
+                    'Instagram says "DM to book". She DMs. Nobody replies until evening.',
+                    'The website says "call us". She does not want to call.',
+                    'A walk-in turns up. The chair is full. Nobody offers to text her when one frees up.',
+                    'After the service, no rebook. No reminder. Hopes she remembers.',
+                ],
+            },
+            {
+                type: 'after' as const,
+                title: 'How it goes when booking is three taps',
+                items: [
+                    '"Book now" leads to a slot list, not a form. She picks one. Done.',
+                    'A reminder fires the morning of, with a tap-to-reschedule.',
+                    'A walk-in who could not be seated gets a text the moment a slot opens.',
+                    'A rebook nudge goes out at week three with her usual service.',
+                ],
+            },
         ],
-      },
-      {
-        type: 'after' as const,
-        title: 'How Saturday runs after',
-        items: [
-          'Walk-ins get attention because the phone is no longer hijacking the front desk',
-          'Missed calls get a warm text-back within a minute and lock a slot',
-          'Friday\u2019s late DM was answered by 9pm with a deposit link',
-          'A nudge fires when a regular drifts past her usual cycle',
+    };
+
+    const operatingPatternsData = {
+        badge: 'Where Bookings Slip In Seconds',
+        title: 'The friction is not in the nails. It is in the booking.',
+        benefits: [
+            {
+                icon: MousePointerClick,
+                title: '"DM to book" cost a same-day booking',
+                description: 'She did not want to negotiate. She wanted to tap, pick, and go on with her day.',
+                iconType: 'primary' as const,
+            },
+            {
+                icon: Hand,
+                title: 'Walk-ins came in, walked out',
+                description: 'No way to text her when a chair frees up. She tried two more salons on the same street.',
+                iconType: 'secondary' as const,
+            },
+            {
+                icon: Clock,
+                title: 'A repeat client never came back at three weeks',
+                description: 'No nudge, no reminder. By week four her nails were grown out and she had tried somewhere new.',
+                iconType: 'accent' as const,
+            },
         ],
-      },
-    ],
-  };
+        columns: 3 as const,
+    };
 
-  const operatingPatternsData = {
-    badge: 'Where The Saturday Bleeds',
-    title: 'Four moments most nail salons know by heart',
-    description:
-      'A handful of patterns show up in nearly every nail bar.',
-    benefits: [
-      {
-        icon: Footprints,
-        title: 'Three walk-ins at the door, two phones going',
-        description:
-          'The front desk has to triage in the gap between the door and the diary. The walk-ins win, the phones lose.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: DoorOpen,
-        title: 'A walk-in turned away because nothing was free',
-        description:
-          'No waitlist, no follow-up. She walked next door instead and never came back.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: Smartphone,
-        title: 'A late-night DM about Saturday',
-        description:
-          'Decided after 10pm, seen at 9 the next morning. By then she had asked two more salons.',
-        iconType: 'accent' as const,
-      },
-      {
-        icon: Star,
-        title: 'A wall of beautiful nails, almost no proof on Maps',
-        description:
-          'The Instagram is gorgeous. The Maps page looks like nobody recommends you.',
-        iconType: 'primary' as const,
-      },
-    ],
-    columns: 4 as const,
-  };
-
-  const pathwaysData = {
-    badge: 'Where Most Nail Salons Start',
-    title: 'You do not have to fix everything at once',
-    description:
-      'Most nail salons feel one of these three louder than the others. Pick the loudest leak.',
-    packages: [
-      {
-        name: 'Stop the front desk being the bottleneck',
-        description:
-          'For when Saturday lunchtime is three walk-ins and two phones at once.',
-        price: 'Stage 1',
-        priceDetail: 'Start here if Saturday chaos is the loudest leak',
-        features: [
-          'Warm text-back within a minute on every missed call',
-          'DMs answered with availability and a deposit link',
-          'Front desk free to look after the door',
+    const systemLayersData = {
+        badge: 'What We Put In Place',
+        title: 'Make booking a tap, make rebook a habit, fill the chair the moment it frees up',
+        description: 'You stay focused on the set. The friction that costs same-day bookings stops being part of the day.',
+        featureCategories: [
+            {
+                title: 'Three taps, not three messages',
+                description: 'Live availability on Instagram, on the site, and inline in the first reply. She picks a slot without typing.',
+                icon: Zap,
+                features: [
+                    'Live slot list in the first reply',
+                    'Bookable from Instagram and Google',
+                    'No phone call required',
+                ],
+            },
+            {
+                title: 'Fill cancellations the same hour',
+                description: 'When a slot opens, the right waiting client gets a tap-to-claim text. The chair stops sitting empty.',
+                icon: Sparkles,
+                features: [
+                    'Cancellation auto-fill list',
+                    'First-to-claim text-back',
+                    'Walk-ins logged for next-slot alerts',
+                ],
+            },
+            {
+                title: 'Rebook on a tap, not a memory',
+                description: 'A rebook nudge goes out at the right interval for the service — gel, acrylic, BIAB — with her usual time.',
+                icon: CheckCircle2,
+                features: [
+                    'Service-specific rebook timing',
+                    'One-tap rebook with her usual tech',
+                    'Stops the moment she books',
+                ],
+            },
+            {
+                title: 'Cut no-shows without sounding stern',
+                description: 'A morning-of confirm tap and an easy reschedule beats a stern policy any day.',
+                icon: MessageCircle,
+                features: [
+                    'Day-before reminder',
+                    'Morning-of confirm tap',
+                    'Reschedule link beats a no-show',
+                ],
+            },
+            {
+                title: 'Be findable when she searches "nails near me"',
+                description: 'Pages and Google profile lined up for service, vibe, and street, not generic.',
+                icon: Search,
+                features: [
+                    'Found for service + area',
+                    'Profile that matches the actual work',
+                    'More right-fit walk-ins',
+                ],
+            },
         ],
-      },
-      {
-        name: 'Catch the walk-in you had to turn away',
-        description:
-          'For when somebody walked in, nothing was free, and she walked next door instead.',
-        price: 'Stage 2',
-        priceDetail: 'Start here if turned-away walk-ins are the gap',
-        features: [
-          'Waitlist on a tap',
-          'Cancellations re-offered automatically',
-          'Walk-ins booked in for later in the day instead of lost',
+        columns: 3 as const,
+    };
+
+    const exploreData = {
+        badge: 'Related',
+        description: 'The other parts that come up most often for nail salons.',
+        cards: [
+            {
+                icon: Zap,
+                title: 'Smart Website Systems',
+                description: 'Live slots in the first reply. Booking in three taps.',
+                href: '/services/smart-website-systems',
+                gradient: 'purple',
+                iconBg: 'purple',
+            },
+            {
+                icon: CheckCircle2,
+                title: 'CRM & Rebook Automation',
+                description: 'Service-specific rebook nudges before she Googles somewhere new.',
+                href: '/services/crm-infrastructure-implementation',
+                gradient: 'teal',
+                iconBg: 'teal',
+            },
+            {
+                icon: Star,
+                title: 'Reputation & Review Systems',
+                description: 'Reviews from happy sets, where the next client is scrolling.',
+                href: '/services/reputation-review-systems',
+                gradient: 'amber',
+                iconBg: 'amber',
+            },
+            {
+                icon: Search,
+                title: 'Local Authority & SEO Systems',
+                description: 'Be the nail salon people find for the street, not generic search.',
+                href: '/services/local-seo-authority',
+                gradient: 'blue',
+                iconBg: 'blue',
+            },
         ],
-        popular: true,
-      },
-      {
-        name: 'Stop regulars drifting and get the proof on Maps',
-        description:
-          'For when regulars quietly stop coming and reviews never reflect the work.',
-        price: 'Stage 3',
-        priceDetail: 'Start here if retention and proof are the gap',
-        features: [
-          'Rebook nudges at the right interval per service',
-          'Review ask the day after a finished set',
-          'Local visibility that finally matches the work',
+        backgroundColor: 'bg-alt',
+        columns: 2 as const,
+    };
+
+    const faqData = {
+        title: 'Things nail salons usually ask',
+        description: 'Honest answers about how this fits a fast, walk-in-led day.',
+        faqs: [
+            {
+                question: 'I run a small team. Is this overkill?',
+                answer:
+                    'No. The point is to remove the typing — for clients and for you. Most owners save more time on DMs than the system takes to set up.',
+            },
+            {
+                question: 'Will clients still be able to DM us?',
+                answer:
+                    'Yes. The first DM reply offers slots. They tap, pick, and are booked. You only step in when you want to.',
+            },
+            {
+                question: 'How does this handle different services and durations?',
+                answer:
+                    'Slot length flexes by service. Gel, acrylic, BIAB, pedicure all get the right window automatically.',
+            },
+            {
+                question: 'What about no-shows?',
+                answer:
+                    'A morning-of confirm tap and an easy reschedule cut the bulk of them, without you having to police a deposit policy.',
+            },
+            {
+                question: 'Do we need a new website?',
+                answer:
+                    'Usually not. The biggest lift is in making booking three taps from Instagram and Google.',
+            },
         ],
-      },
-    ],
-  };
+    };
 
-  const exploreData = {
-    badge: 'Related',
-    description: 'The other parts of the system nail salons tend to lean on most.',
-    cards: [
-      {
-        icon: Wrench,
-        title: 'Smart Website Systems',
-        description: 'Holds enquiry, deposit and waitlist flow together through Saturday.',
-        href: '/services/smart-website-systems',
-        gradient: 'purple',
-        iconBg: 'purple',
-      },
-      {
-        icon: Calendar,
-        title: 'Booking & Waitlist',
-        description: 'Deposits, reminders and the waitlist on a tap.',
-        href: '/services/crm-infrastructure-implementation',
-        gradient: 'teal',
-        iconBg: 'teal',
-      },
-      {
-        icon: Compass,
-        title: 'Local Authority & SEO',
-        description: 'Visibility for "nails near me" the moment somebody searches.',
-        href: '/services/local-seo-authority',
-        gradient: 'blue',
-        iconBg: 'blue',
-      },
-      {
-        icon: Star,
-        title: 'Reputation & Reviews',
-        description: 'Turns finished sets into proof on Maps and search.',
-        href: '/services/reputation-review-systems',
-        gradient: 'amber',
-        iconBg: 'amber',
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    columns: 2 as const,
-  };
-
-  const faqData = {
-    title: 'What nail salon owners tend to ask first',
-    description: 'Direct, no hedging.',
-    faqs: [
-      {
-        question: 'Will the auto text-back annoy a walk-in customer ringing for an appointment?',
-        answer:
-          'No. The text reads like the front desk and gives availability up front. Most customers prefer it to being on hold.',
-      },
-      {
-        question: 'How does the waitlist work for a turned-away walk-in?',
-        answer:
-          'She gets a quick offer for later in the day or tomorrow with a deposit link. A lot of turned-away walk-ins come back the same week instead of going next door.',
-      },
-      {
-        question: 'Will it interrupt the techs at the chair?',
-        answer:
-          'No. It runs in the background. The team only sees the booking once it is locked.',
-      },
-      {
-        question: 'Can it actually reply at 11pm without sounding off?',
-        answer:
-          'Yes. The reply reads like the salon, gives availability, and offers a deposit link.',
-      },
-      {
-        question: 'When does the review request go out?',
-        answer:
-          'The day after a finished set, while she is still pleased. That is the moment with the highest yield.',
-      },
-      {
-        question: 'Do we need a brand new website?',
-        answer:
-          'Usually not. The bottleneck is what happens after the form is sent.',
-      },
-    ],
-  };
-
-  return {
-    slug: 'nail-salons',
-    industries: ['nail-salon'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['booking-systems', 'client-reactivation', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'beauty-personal-care',
-    seo: {
-      title: 'Nail Salons \u2014 Stop The Saturday Front-Desk Bottleneck | MindWP',
-      description:
-        'For nail salons whose Saturday lunchtime has three walk-ins and two phones at once. Text-back capture, walk-in waitlist, rebook nudges, reviews on Maps.',
-      keywords: [
-        'nail salon booking automation',
-        'nail salon walk-in waitlist',
-        'nail salon front desk system',
-        'nail salon client retention',
-        'nail salon review automation',
-      ],
-      canonical: '/industries/beauty-personal-care/nail-salons',
-    },
-    hero: { ...heroData },
-    comparison: comparisonData,
-    operatingPatterns: operatingPatternsData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about last Saturday lunchtime',
-      description:
-        'Walk us through last Saturday \u2014 how many walk-ins were turned away, how many calls went to hold. We will tell you what to plug first.',
-    },
-  };
+    return {
+        slug: 'nail-salons',
+        industries: ['nail-salon'],
+        systems: [
+            'smart-website-systems',
+            'crm-automation',
+            'reputation-review',
+            'local-seo-authority',
+        ],
+        topics: ['booking-systems', 'lead-response-time', 'review-generation'],
+        type: 'detail',
+        parentSlug: 'beauty-personal-care',
+        seo: {
+            title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
+            description:
+                'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+            keywords: [
+                'nail salon booking system',
+                'nail salon instagram booking',
+                'nail salon rebook automation',
+                'nail salon cancellation fill',
+                'nail salon local seo',
+            ],
+            canonical: '/industries/beauty-personal-care/nail-salons',
+        },
+        hero: {
+            ...heroData,
+        },
+        operatingPatterns: operatingPatternsData,
+        comparison: comparisonData,
+        systemLayers: systemLayersData,
+        explore: exploreData,
+        faq: faqData,
+        cta: {
+            title: 'Tell us where booking is leaking',
+            description:
+                'If "DM to book" is costing same-day chairs, walk us through a typical Saturday and we will show you where three-tap booking would catch the most.',
+        },
+    };
 }
 
-
-export const nailSalonsIndustryPageData: IndustryPageData =
-  buildNailSalonsIndustryPageData();
+export const nailSalonsIndustryPageData: IndustryPageData = buildNailSalonsIndustryPageData();
