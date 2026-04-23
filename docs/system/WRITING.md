@@ -183,6 +183,23 @@ Every key line should feel like:
 
 → "I've seen this happen"
 
+### Case Study Writing Mode (NEW)
+
+Case studies use observational proof mode.
+
+This means:
+
+- write with observational tone
+- keep imperfect realism visible
+- use natural phrasing over polished summary language
+- describe what happened, not what the system claimed
+
+Case studies must not use:
+
+- system language in the narrative
+- marketing tone
+- perfect transformation arcs
+
 ---
 
 ## 5. LANGUAGE RULES

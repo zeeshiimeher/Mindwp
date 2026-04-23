@@ -203,6 +203,7 @@ Disallowed graph owners include:
 - Blogs should naturally connect upward into resource or service-relevant content.
 - Resources should connect through systems and topics.
 - Case studies should connect to at least one industry and one system.
+- Case studies should reinforce the authority of connected service and industry nodes rather than act as discovery hubs.
 - Features should connect through their parent system.
 - Industry detail nodes should connect through industry plus system metadata.
 

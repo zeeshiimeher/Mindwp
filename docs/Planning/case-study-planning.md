@@ -104,6 +104,19 @@ NOT:
 ❌ problem → solution → result (clean model)
 
 --------------------------------------------------
+🧱 TEMPLATE USAGE RULE
+--------------------------------------------------
+
+Use 4–6 sections maximum.
+
+Rules:
+
+- do not use the full template by default
+- do not force a fixed section order
+- choose only the sections that make the case readable and believable
+- if a section adds polish instead of proof, remove it
+
+--------------------------------------------------
 📊 METRICS RULE (CRITICAL)
 --------------------------------------------------
 
@@ -118,6 +131,7 @@ NOT:
 - ranges
 - approximations
 - partial improvements
+- observable changes when numbers are weak
 
 Examples:
 
@@ -131,13 +145,17 @@ Examples:
 🧠 REALISM LAYER (MANDATORY)
 --------------------------------------------------
 
-Each case study MUST include at least 2:
+Each case study MUST include at least one of:
 
 - delay
+- inconsistency
+- human limitation
+
+Optional realism layers:
+
 - missed follow-up
-- inconsistent results
-- human behavior
 - partial adoption
+- uneven results
 
 Example:
 
@@ -153,6 +171,7 @@ Example:
 - solution implemented
 - conversion rate improved
 - workflow optimization
+- implementation language that reads like a report
 
 ✅ USE:
 
@@ -192,6 +211,87 @@ Each case study should belong to ONE dominant type:
 
 Each type must feel different.
 
+### 1. Missed Lead Recovery
+
+Focus:
+
+- missed calls
+- unanswered enquiries
+- first-response failure
+
+Allowed sections:
+
+- situation
+- what was going wrong
+- what changed
+- result
+- soft CTA
+
+### 2. Follow-Up Improvement
+
+Focus:
+
+- proposals left untouched
+- reminders never sent
+- delayed replies after first contact
+
+Allowed sections:
+
+- situation
+- friction
+- change
+- partial outcome
+- soft CTA
+
+### 3. Quote Conversion Improvement
+
+Focus:
+
+- estimates going quiet
+- longer decision windows
+- stalled mid-funnel conversations
+
+Allowed sections:
+
+- situation
+- what was going wrong
+- comparison moment
+- what changed
+- result
+- soft CTA
+
+### 4. Visibility / Enquiry Increase
+
+Focus:
+
+- better-fit local enquiries
+- clearer service discovery
+- more relevant inbound volume
+
+Allowed sections:
+
+- context
+- before
+- what changed
+- observed improvement
+- soft CTA
+
+### 5. Operations
+
+Focus:
+
+- handoff clarity
+- fewer missed details
+- steadier day-to-day handling
+
+Allowed sections:
+
+- context
+- operational problem
+- change
+- what improved
+- soft CTA
+
 --------------------------------------------------
 🏷 NAMING SYSTEM (UPDATE)
 --------------------------------------------------
@@ -206,6 +306,12 @@ hvac-winter-call-overflow
 roofing-quotes-not-followed-up
 
 → Situation-first naming
+
+Rules:
+
+- slug = situation-first
+- title = real moment
+- SEO title = clearer version of the same moment
 
 --------------------------------------------------
 📣 CTA RULE
@@ -232,23 +338,42 @@ If any FAIL → rewrite
 ⚙️ EXECUTION PLAN
 --------------------------------------------------
 
-STEP 1:
-Lock system rules (this doc)
+1. classify type
+2. rename
+3. choose sections
+4. rewrite
+5. validate realism
 
-STEP 2:
-Rename case studies (situation-based)
+### EXECUTION FLOW DETAIL
 
-STEP 3:
-Rewrite data (NOT template)
+#### 1. Classify Type
 
-STEP 4:
-Inject realism layer
+- choose one dominant case study type
+- confirm the main business moment being proven
 
-STEP 5:
-Reduce metric precision
+#### 2. Rename
 
-STEP 6:
-Final validation
+- rewrite slug around the situation
+- rewrite title around the observed moment
+- rewrite SEO title into a clearer search-safe version
+
+#### 3. Choose Sections
+
+- select 4–6 sections only
+- remove any section that reads like template filler
+- keep order flexible if the narrative reads better another way
+
+#### 4. Rewrite
+
+- rebuild the case around observed reality
+- keep language natural and non-report-like
+- keep metrics approximate unless the precision is genuinely defensible
+
+#### 5. Validate Realism
+
+- confirm at least one realism layer is visible
+- confirm the narrative does not read too cleanly
+- confirm the CTA stays soft and end-only
 
 --------------------------------------------------
 🏁 END STATE

@@ -74,6 +74,18 @@ Rules:
 - must transition toward system pages or contact
 - must not position as standalone services
 
+### Case Study Behavior (NEW)
+
+Case studies do not create a fourth public behavior type.
+They are proof surfaces inside the existing content model.
+
+Rules:
+- case studies are observational narratives
+- case studies are not sales pages
+- case studies are not system explainers
+- case studies must stay focused on what happened, what changed, and what improved
+- case studies must read like observed business reality, not polished campaign copy
+
 ---
 
 ## CANONICAL SYSTEM MAP

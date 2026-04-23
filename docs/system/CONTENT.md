@@ -76,7 +76,15 @@ If an industry page could apply to another industry with minimal changes → it 
 
 ### Case Study
 
-Case studies validate a system through implementation proof. They demonstrate structure, intervention, and outcome without becoming generic sales copy.
+Case studies validate a system through implementation proof.
+
+They own:
+
+- trust and validation
+- BOFU support through proof
+- narrative behavior rather than instructional behavior
+
+Case studies demonstrate what happened, what changed, and what improved without becoming generic sales copy.
 
 ---
 
@@ -272,6 +280,8 @@ Blog posts must not:
 ## CASE STUDY ARCHITECTURE
 
 Case studies are proof surfaces.
+
+Their behavior is narrative, not instructional.
 
 Each case study must make these elements legible:
 

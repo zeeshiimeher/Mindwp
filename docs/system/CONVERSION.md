@@ -108,6 +108,16 @@ Default page-intent mapping is owned by `src/lib/page/pageIdentity.ts`.
 This default may be narrowed by the page template, but it may not break page-level registry rules.
 This default may be narrowed by the page template, but it may not break registry rules.
 
+### Case Study CTA Rule (NEW)
+
+Case-study CTAs must stay subordinate to the narrative proof role.
+
+Rules:
+
+- CTA appears only at the end of the case study
+- CTA tone stays soft and observational
+- CTA must not interrupt the proof narrative with a pushy escalation
+
 ---
 
 ## CTA REGISTRY RULES (LOCKED)
