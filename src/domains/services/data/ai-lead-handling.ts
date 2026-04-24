@@ -95,6 +95,37 @@ export const aiLeadHandlingPage = {
                 },
             ],
         },
+        comparison: {
+            header: {
+                title: 'AI lead handling bolted on vs AI lead handling connected properly',
+                description:
+                    'The difference is not whether AI replies. The difference is whether the reply leads anywhere useful for the customer or your team.',
+            },
+            items: [
+                {
+                    type: 'before' as const,
+                    title: 'Bolted-on AI',
+                    items: [
+                        'The bot answers first questions, then the conversation stalls because no clear handoff exists.',
+                        'Website chat, calls, and follow-up all behave differently. The customer has to restart on each channel.',
+                        'The AI sounds active, but nothing gets logged properly. Your team still starts cold when they pick it up.',
+                        'Escalation rules are vague, so either the bot overreaches or it throws too much back to the team.',
+                        'Reporting shows activity, not outcomes. Nobody can tell whether faster response actually recovered revenue.',
+                    ],
+                },
+                {
+                    type: 'after' as const,
+                    title: 'Connected AI lead handling',
+                    items: [
+                        'AI answers, captures details, and moves the conversation into booking, CRM, or a named team handoff.',
+                        'Website chat, missed calls, and repeat questions follow one operating path instead of acting like separate tools.',
+                        'Your team receives the conversation with context attached, so nobody starts from zero.',
+                        'Escalation rules are deliberate. AI handles the repeatable front end and people handle the judgment calls.',
+                        'You can see which enquiries were recovered, where speed improved, and how much work stopped leaking away.',
+                    ],
+                },
+            ],
+        },
         processSection: {
             badge: 'How it fits',
             title: 'AI at the front. Your team where it matters.',
@@ -290,6 +321,46 @@ export const aiLeadHandlingPage = {
                     title: 'Nothing starts from zero',
                     description:
                         'Details captured, conversation logged, CRM updated. Whoever picks up the lead knows what happened before them.',
+                },
+            ],
+        },
+        proof: {
+            header: {
+                title: 'What changed when after-hours enquiries stopped waiting for the next morning',
+                description:
+                    'A service business was getting steady evening and weekend enquiries, but too many of them died before the team even saw the conversation. The issue was not demand. It was response speed and handoff clarity.',
+            },
+            cards: [
+                {
+                    title: 'Before: interest arrived when nobody was available',
+                    description:
+                        'Calls, chat questions, and booking enquiries came in outside working hours. Some people left a message. Most just moved on when they got silence.',
+                    points: [
+                        'Missed calls sat in the phone log until someone checked them later.',
+                        'Website chat captured interest but did not route the conversation into a reliable follow-up path.',
+                        'The team started the next morning without context on which enquiry was hottest or what the person needed.',
+                    ],
+                },
+                {
+                    title: 'What changed: AI handled the first step and routed the next one',
+                    description:
+                        'The first response was immediate, questions were handled within clear boundaries, and every conversation moved into booking, CRM, or a named escalation path instead of dying at the first contact.',
+                    points: [
+                        'After-hours calls triggered an immediate acknowledgement and detail capture.',
+                        'Website chat answered repeat questions and collected the context the team needed for the next step.',
+                        'Escalation rules pushed sensitive or high-value enquiries to the right person with the conversation history attached.',
+                    ],
+                    featured: true,
+                },
+                {
+                    title: 'After: more conversations recovered, fewer leads lost to delay',
+                    description:
+                        'The team still handled the real conversations. The difference was that those conversations arrived warm, visible, and structured instead of cold, delayed, or lost entirely.',
+                    points: [
+                        'Fewer missed-call leads disappeared before morning.',
+                        'The team could prioritise follow-up based on what the lead had already asked for.',
+                        'AI became a front-door response layer, not a gimmick sitting on top of the same broken process.',
+                    ],
                 },
             ],
         },

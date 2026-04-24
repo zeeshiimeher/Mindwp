@@ -1,7 +1,9 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
+  ServiceSpectrumCardsSection,
   StepCardsSplitSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
@@ -26,9 +28,11 @@ export function SystemMigrationPlatformConsolidationRenderer({
   const {
     foundation,
     migrationSignals,
+    comparison,
     riskAreas,
     consolidationTargets,
     processSection,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -83,6 +87,15 @@ export function SystemMigrationPlatformConsolidationRenderer({
             </div>
           </SectionWrapper>
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='system-migration-comparison'
+            />
+          )}
+
           <SectionWrapper className='system-migration-risks'>
             <SectionIntro
               badge={riskAreas.badge}
@@ -129,6 +142,16 @@ export function SystemMigrationPlatformConsolidationRenderer({
             steps={processSection.steps}
             cssPrefix='system-migration-process'
           />
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='system-migration-proof'
+              backgroundColor='bg-base'
+            />
+          )}
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

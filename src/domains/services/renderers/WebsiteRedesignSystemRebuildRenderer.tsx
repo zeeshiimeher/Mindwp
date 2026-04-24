@@ -1,7 +1,9 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
+  ServiceSpectrumCardsSection,
   StepCardsSplitSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
@@ -28,9 +30,11 @@ export function WebsiteRedesignSystemRebuildRenderer({
   const {
     foundation,
     structuralSignals,
+    comparison,
     rebuildScenarios,
     processSection,
     implementationLayers,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -86,6 +90,15 @@ export function WebsiteRedesignSystemRebuildRenderer({
             </div>
           </SectionWrapper>
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='website-redesign-rebuild-comparison'
+            />
+          )}
+
           <SectionWrapper className='website-redesign-rebuild-scenarios'>
             <SectionIntro
               badge={rebuildScenarios.badge}
@@ -138,6 +151,16 @@ export function WebsiteRedesignSystemRebuildRenderer({
               ))}
             </div>
           </SectionWrapper>
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='website-redesign-rebuild-proof'
+              backgroundColor='bg-alt'
+            />
+          )}
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

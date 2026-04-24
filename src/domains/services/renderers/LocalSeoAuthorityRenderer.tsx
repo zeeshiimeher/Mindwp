@@ -1,4 +1,5 @@
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -23,9 +24,11 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
   const {
     misconceptions,
     why,
+    comparison,
     integrations,
     processSection,
     scopeSection,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -78,6 +81,15 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             />
           )}
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='website-seo-comparison'
+            />
+          )}
+
           {integrations && (
             <ServiceSpectrumCardsSection
               badge={integrations.badge}
@@ -105,13 +117,25 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               badge={scopeSection.badge}
               title={scopeSection.title}
               description={scopeSection.description}
-              featureCategories={scopeSection.services.map(service => ({
-                title: service.title,
-                icon: service.icon,
-                features: service.items,
-              }))}
+              featureCategories={scopeSection.services.map(
+                (service: (typeof scopeSection.services)[number]) => ({
+                  title: service.title,
+                  icon: service.icon,
+                  features: service.items,
+                })
+              )}
               columns={3}
               cssPrefix='website-seo-services'
+            />
+          )}
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='website-seo-proof'
+              backgroundColor='bg-base'
             />
           )}
 

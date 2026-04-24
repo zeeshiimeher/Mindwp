@@ -1,7 +1,9 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
+  ServiceSpectrumCardsSection,
   StepCardsSplitSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
@@ -13,23 +15,36 @@ import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSo
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import type { ServicePageDataBySlug } from '@/domains/services/pageData';
+import type { ServicePageData } from '@/domains/services/types';
+
+type ConversionLayerSections = {
+  foundation: any;
+  funnelBreakpoints: any;
+  comparison?: any;
+  comparisonMetrics: any;
+  processSection: any;
+  funnelLevers: any;
+  proof?: any;
+  qualification: any;
+  faqSection: any;
+};
 
 interface ConversionLayerRendererProps {
-  data: ServicePageDataBySlug[
-  | 'conversion-layer'
-  | 'conversion-funnel-system-vs-landing-page-development'];
+  data: ServicePageData;
   slug: string;
 }
 
 export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, cta, inlineCta } = data;
+  const sections = data.sections as ConversionLayerSections;
   const {
     foundation,
     funnelBreakpoints,
+    comparison,
     comparisonMetrics,
     processSection,
     funnelLevers,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -77,7 +92,7 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
               cssPrefix='conversion-funnel-breakpoints-header'
             />
             <div className='l-grid l-gap-6 md:l-grid-3'>
-              {funnelBreakpoints.items.map(item => (
+              {funnelBreakpoints.items.map((item: (typeof funnelBreakpoints.items)[number]) => (
                 <ProblemSolutionSplitCard
                   key={item.title}
                   icon={item.icon}
@@ -91,6 +106,15 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
             </div>
           </SectionWrapper>
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='conversion-funnel-comparison'
+            />
+          )}
+
           <SectionWrapper className='conversion-funnel-metrics'>
             <SectionIntro
               badge={comparisonMetrics.badge}
@@ -99,7 +123,7 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
               cssPrefix='conversion-funnel-metrics-header'
             />
             <div className='l-grid l-gap-6'>
-              {comparisonMetrics.items.map(item => (
+              {comparisonMetrics.items.map((item: (typeof comparisonMetrics.items)[number]) => (
                 <BeforeAfterMetricCard
                   key={`${item.metric}-${item.improvement}`}
                   metric={item.metric}
@@ -134,7 +158,7 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
               cssPrefix='conversion-funnel-levers-header'
             />
             <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-3'>
-              {funnelLevers.items.map(item => (
+              {funnelLevers.items.map((item: (typeof funnelLevers.items)[number]) => (
                 <CenteredFeatureCard
                   key={item.title}
                   icon={item.icon}
@@ -145,6 +169,16 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
               ))}
             </div>
           </SectionWrapper>
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='conversion-funnel-proof'
+              backgroundColor='bg-base'
+            />
+          )}
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

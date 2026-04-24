@@ -141,6 +141,16 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
+          {data.sections.proof && (
+            <ServiceSpectrumCardsSection
+              title={data.sections.proof.header.title}
+              description={data.sections.proof.header.description}
+              cards={data.sections.proof.cards}
+              cssPrefix='smart-websites-proof'
+              backgroundColor='bg-alt'
+            />
+          )}
+
           {/* Strategic Bridge */}
           {data.sections.visibilityFoundations &&
             renderAlternatingSection(

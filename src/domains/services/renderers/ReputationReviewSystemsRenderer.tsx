@@ -1,4 +1,5 @@
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -26,9 +27,11 @@ export function ReputationReviewSystemsRenderer({
   const {
     foundation,
     reviewSystem,
+    comparison,
     positioning,
     processSection,
     capabilitySection,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -71,6 +74,15 @@ export function ReputationReviewSystemsRenderer({
             backgroundColor='bg-base'
           />
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='reputation-review-comparison'
+            />
+          )}
+
           <StackedFeatureListSection
             badge={positioning.badge}
             title={positioning.title}
@@ -104,6 +116,16 @@ export function ReputationReviewSystemsRenderer({
             columns={3}
             cssPrefix='reputation-review-capabilities'
           />
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='reputation-review-proof'
+              backgroundColor='bg-base'
+            />
+          )}
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

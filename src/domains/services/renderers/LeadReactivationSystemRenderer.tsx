@@ -1,8 +1,10 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
+  ServiceSpectrumCardsSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconListCard, ScenarioSolutionCard, SectionIntro } from '@/components/reusable/single';
@@ -27,9 +29,11 @@ export function LeadReactivationSystemRenderer({
   const {
     foundation,
     reactivationScenarios,
+    comparison,
     auditAreas,
     processSection,
     entryPoints,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -80,21 +84,32 @@ export function LeadReactivationSystemRenderer({
                 cssPrefix='lead-reactivation-scenarios-header'
               />
               <div className='l-grid l-gap-6 md:l-grid-3'>
-                {reactivationScenarios.items.map(item => (
-                  <ScenarioSolutionCard
-                    key={item.title}
-                    icon={item.icon}
-                    title={item.title}
-                    scenario={item.scenario}
-                    solution={item.solution}
-                    result={item.result}
-                    scenarioLabel={reactivationScenarios.scenarioLabel}
-                    solutionLabel={reactivationScenarios.solutionLabel}
-                    cssPrefix='lead-reactivation-scenario'
-                  />
-                ))}
+                {reactivationScenarios.items.map(
+                  (item: (typeof reactivationScenarios.items)[number]) => (
+                    <ScenarioSolutionCard
+                      key={item.title}
+                      icon={item.icon}
+                      title={item.title}
+                      scenario={item.scenario}
+                      solution={item.solution}
+                      result={item.result}
+                      scenarioLabel={reactivationScenarios.scenarioLabel}
+                      solutionLabel={reactivationScenarios.solutionLabel}
+                      cssPrefix='lead-reactivation-scenario'
+                    />
+                  )
+                )}
               </div>
             </SectionWrapper>
+          )}
+
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='lead-reactivation-comparison'
+            />
           )}
 
           <SectionWrapper className='lead-reactivation-audit'>
@@ -105,7 +120,7 @@ export function LeadReactivationSystemRenderer({
               cssPrefix='lead-reactivation-audit-header'
             />
             <div className='l-grid l-gap-6 md:l-grid-3'>
-              {auditAreas.items.map(item => (
+              {auditAreas.items.map((item: (typeof auditAreas.items)[number]) => (
                 <AuditChecklistCard
                   key={item.title}
                   icon={item.icon}
@@ -137,7 +152,7 @@ export function LeadReactivationSystemRenderer({
               cssPrefix='lead-reactivation-entry-points-header'
             />
             <div className='l-grid l-gap-6 md:l-grid-3'>
-              {entryPoints.columns.map(column => (
+              {entryPoints.columns.map((column: (typeof entryPoints.columns)[number]) => (
                 <IconListCard
                   key={column.title}
                   title={column.title}
@@ -148,6 +163,16 @@ export function LeadReactivationSystemRenderer({
               ))}
             </div>
           </SectionWrapper>
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='lead-reactivation-proof'
+              backgroundColor='bg-alt'
+            />
+          )}
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

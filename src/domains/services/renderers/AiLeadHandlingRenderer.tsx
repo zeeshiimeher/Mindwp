@@ -1,6 +1,7 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ChecklistCardsSection,
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -14,23 +15,40 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
+import type { ServicePageData } from '@/domains/services/types';
+
+type AiLeadHandlingSections = {
+  foundation: any;
+  featureCategoriesSection: any;
+  comparison?: any;
+  processSection: any;
+  workflowExamples: any;
+  useCasesSection: any;
+  positioning: any;
+  proof?: any;
+  checklistSection: any;
+  qualification: any;
+  faqSection: any;
+};
 
 interface AiLeadHandlingRendererProps {
-  data: ServicePageDataBySlug['ai-lead-handling'];
+  data: ServicePageData;
   slug: string;
 }
 
 export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererProps) {
-  const { hero, sections, cta } = data;
+  const { hero, cta } = data;
+  const sections = data.sections as AiLeadHandlingSections;
   const {
     foundation,
     featureCategoriesSection,
+    comparison,
     processSection,
     workflowExamples,
     useCasesSection,
     positioning,
+    proof,
     checklistSection,
     qualification,
     faqSection,
@@ -76,6 +94,15 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             backgroundColor='bg-base'
           />
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='ai-response-comparison'
+            />
+          )}
+
           <ProcessStepsSection
             badge={processSection.badge}
             title={processSection.title}
@@ -103,7 +130,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
               />
 
               <div className='l-grid l-gap-6 md:l-grid-2'>
-                {workflowExamples.items.map(workflow => (
+                {workflowExamples.items.map((workflow: (typeof workflowExamples.items)[number]) => (
                   <WorkflowStepCard
                     key={workflow.trigger}
                     trigger={workflow.trigger}
@@ -134,6 +161,16 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             cssPrefix='ai-response-positioning'
             backgroundColor='bg-base'
           />
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='ai-response-proof'
+              backgroundColor='bg-alt'
+            />
+          )}
 
           <ChecklistCardsSection
             badge={checklistSection.badge}
