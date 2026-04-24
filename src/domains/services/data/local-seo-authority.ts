@@ -6,15 +6,15 @@ import type { ServicePageData } from '../types';
 const slug = 'local-seo-authority';
 
 export const localSeoAuthorityPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
     description:
       'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
   }),
-    systems: ['local-seo-authority'],
-    topics: [
+  systems: ['local-seo-authority'],
+  topics: [
     'local-seo',
     'local-visibility',
     'google-business-profile',
@@ -22,9 +22,9 @@ export const localSeoAuthorityPage = {
     'authority-signals',
     'local-service-pages',
   ],
-    badge: "Local SEO Authority",
-    category: 'Visibility Systems',
-    hero: {
+  badge: "Local SEO Authority",
+  category: 'Visibility Systems',
+  hero: {
     badge: 'Get Found Locally',
     title: 'People Search Nearby. You Still Miss The Click.',
     description:
@@ -33,7 +33,7 @@ export const localSeoAuthorityPage = {
     backgroundColor: 'bg-gradient-surface-muted',
     list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
   },
-    sections: {
+  sections: {
     misconceptions: {
       badge: 'Why SEO has not worked before',
       title: 'Three assumptions that keep you invisible',
@@ -92,6 +92,37 @@ export const localSeoAuthorityPage = {
         },
       ],
     },
+    comparison: {
+      header: {
+        title: 'Off-the-shelf SEO vs local visibility that holds',
+        description:
+          'Most SEO focuses on rankings alone. We connect your website, Google profile, and listings into something Google can actually trust.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'What typical SEO looks like',
+          items: [
+            "Keywords crammed across a few generic sections. Google can't match anything specific to what someone's actually searching for.",
+            'Google Business Profile created once, never touched again. Losing eligibility for local pack results month by month.',
+            "Business name and phone number wrong or different in every directory. Google can't confirm you're a real business.",
+            "Monthly reports loaded with jargon. No visible change in actual enquiries. You're paying for activity with nothing to show.",
+            'SEO work completely disconnected from the website itself. Higher rankings still send people to a confusing experience.',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'What structured local work does instead',
+          items: [
+            'Each service has its own listing Google can rank for specific searches in your area.',
+            'Google Business Profile actively maintained. Your business stays eligible for the local pack where most clicks happen.',
+            'Details corrected and matched across every directory. Google sees one consistent business.',
+            'Monthly work tied to visible changes — updated content, stronger profiles, growing local presence.',
+            'SEO connected to website clarity. Better rankings also mean better conversion when people actually arrive.',
+          ],
+        },
+      ],
+    },
     integrations: {
       badge: 'How it all fits together',
       title: 'What actually changes when local SEO is working',
@@ -127,77 +158,6 @@ export const localSeoAuthorityPage = {
             'Each service page answers the search that triggered it',
             'Contact details right there — no hunting required',
             'The visit makes sense. The next step is obvious.',
-          ],
-        },
-      ],
-    },
-    comparison: {
-      header: {
-        title: 'Off-the-shelf SEO vs local visibility that holds',
-        description:
-          'Most SEO focuses on rankings alone. We connect your website, Google profile, and listings into something Google can actually trust.',
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'What typical SEO looks like',
-          items: [
-            "Keywords crammed across a few generic sections. Google can't match anything specific to what someone's actually searching for.",
-            'Google Business Profile created once, never touched again. Losing eligibility for local pack results month by month.',
-            "Business name and phone number wrong or different in every directory. Google can't confirm you're a real business.",
-            "Monthly reports loaded with jargon. No visible change in actual enquiries. You're paying for activity with nothing to show.",
-            'SEO work completely disconnected from the website itself. Higher rankings still send people to a confusing experience.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'What structured local work does instead',
-          items: [
-            'Each service has its own listing Google can rank for specific searches in your area.',
-            'Google Business Profile actively maintained. Your business stays eligible for the local pack where most clicks happen.',
-            'Details corrected and matched across every directory. Google sees one consistent business.',
-            'Monthly work tied to visible changes — updated content, stronger profiles, growing local presence.',
-            'SEO connected to website clarity. Better rankings also mean better conversion when people actually arrive.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What this looked like for a real business',
-        description:
-          "A dental practice was paying for ads but invisible in organic search. Here's what was going on and what shifted.",
-      },
-      cards: [
-        {
-          title: 'Before: paying for every click, invisible otherwise',
-          description:
-            'Everything on one listing. Google had nothing specific to rank. Details wrong in half the directories.',
-          points: [
-            "Cleanings, implants, emergency — all on one long listing. Someone searching for a specific treatment found the competitors who'd listed it separately.",
-            "Google Business Profile half-done. The practice wasn't showing up in the local pack for any of their core services.",
-            "Phone number different on three directories. Address slightly wrong on two others. Google couldn't tell which was right.",
-          ],
-        },
-        {
-          title: 'What we did: gave each treatment its own presence',
-          description:
-            'Separated every dental service out. Corrected the details everywhere. Got the Google profile finished and actively managed.',
-          points: [
-            'Each treatment on its own — cleanings, implants, emergency — written around how patients actually search for them.',
-            'Google Business Profile completed. Accurate hours, services, photos. The practice became eligible for local pack results.',
-            'Details fixed across every directory. Google started treating them as one verified business.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: organic search doing what ads used to',
-          description:
-            'Four months in, showing up for targeted dental terms. Organic enquiries growing. Ad spend dropping.',
-          points: [
-            'Individual treatments started ranking. Patients found what they needed without the practice paying for that click.',
-            'Organic volume climbed each month as more content indexed. Compounded. No extra spend.',
-            'Ad budget came down by a third. Organic was bringing in qualified patients who already knew what they wanted.',
           ],
         },
       ],
@@ -301,6 +261,46 @@ export const localSeoAuthorityPage = {
             'Adapting when Google changes how it ranks local businesses',
             'Updating when your services or priorities change',
             'Small improvements that compound over months',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looked like for a real business',
+        description:
+          "A dental practice was paying for ads but invisible in organic search. Here's what was going on and what shifted.",
+      },
+      cards: [
+        {
+          title: 'Before: paying for every click, invisible otherwise',
+          description:
+            'Everything on one listing. Google had nothing specific to rank. Details wrong in half the directories.',
+          points: [
+            "Cleanings, implants, emergency — all on one long listing. Someone searching for a specific treatment found the competitors who'd listed it separately.",
+            "Google Business Profile half-done. The practice wasn't showing up in the local pack for any of their core services.",
+            "Phone number different on three directories. Address slightly wrong on two others. Google couldn't tell which was right.",
+          ],
+        },
+        {
+          title: 'What we did: gave each treatment its own presence',
+          description:
+            'Separated every dental service out. Corrected the details everywhere. Got the Google profile finished and actively managed.',
+          points: [
+            'Each treatment on its own — cleanings, implants, emergency — written around how patients actually search for them.',
+            'Google Business Profile completed. Accurate hours, services, photos. The practice became eligible for local pack results.',
+            'Details fixed across every directory. Google started treating them as one verified business.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: organic search doing what ads used to',
+          description:
+            'Four months in, showing up for targeted dental terms. Organic enquiries growing. Ad spend dropping.',
+          points: [
+            'Individual treatments started ranking. Patients found what they needed without the practice paying for that click.',
+            'Organic volume climbed each month as more content indexed. Compounded. No extra spend.',
+            'Ad budget came down by a third. Organic was bringing in qualified patients who already knew what they wanted.',
           ],
         },
       ],
@@ -420,12 +420,12 @@ export const localSeoAuthorityPage = {
       ],
     },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Why am I not showing up?',
     description:
       "Drop your business name and postcode. We check how you appear on Google right now and what's holding you back.",
   },
-    cta: {
+  cta: {
     title: 'See why nearby customers are finding other businesses first',
     description:
       'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',

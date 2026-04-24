@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'lead-reactivation-system';
 
 export const leadReactivationSystemPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Lead Reactivation System for Service Businesses | MindWP',
     description:
       'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
   }),
-    systems: ['revenue-growth'],
-    topics: ['client-reactivation', 'follow-up'],
-    badge: 'Lead Reactivation System',
-    category: 'Lifecycle Recovery Systems',
-    hero: {
+  systems: ['revenue-growth'],
+  topics: ['client-reactivation', 'follow-up'],
+  badge: 'Lead Reactivation System',
+  category: 'Lifecycle Recovery Systems',
+  hero: {
     badge: 'Lead Reactivation System',
     title: 'They Enquired Once. Nobody Followed Up.',
     description:
@@ -36,7 +36,7 @@ export const leadReactivationSystemPage = {
     cssPrefix: 'lead-reactivation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'The neglected asset',
       title: "You don't need more leads. You need to work the ones you had.",
@@ -129,6 +129,37 @@ export const leadReactivationSystemPage = {
             'Time follow-up to natural repeat windows',
             'Send relevant return prompts',
             'Turn past relationships into repeat revenue',
+          ],
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Sporadic re-engagement vs structured reactivation',
+        description:
+          "Most businesses treat dormant leads as a forgotten backlog. Here's what that costs compared to working them properly.",
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Sporadic re-engagement',
+          items: [
+            'Old leads sit in the CRM with no prompt. Value depreciates silently every month.',
+            'Someone sends a batch email when things slow down. Nothing after. No sequence. No ownership.',
+            'Past customers, stalled quotes, and cold leads all get the same message. Response rates stay low because nothing feels relevant.',
+            'Nobody owns the responses that do come back. Replies create confusion instead of moving deals forward.',
+            'Recoverable revenue sitting there. The business keeps paying for new leads when existing value is right there.',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Reactivation that runs',
+          items: [
+            'Dormant contacts segmented by type, age, and likely intent. Each group gets the right message at the right time.',
+            'Follow-up timing and messaging tailored to each segment. Outreach feels relevant, not random or desperate.',
+            'Past customers get lifecycle-based prompts. Cold leads get a different approach. The message matches the relationship.',
+            'Every response routes to a named owner with a clear next step. Revived leads move forward immediately.',
+            'Reactivation becomes a measurable source of recovered revenue. Justifies itself in the numbers.',
           ],
         },
       ],
@@ -289,6 +320,45 @@ export const leadReactivationSystemPage = {
         },
       ],
     },
+    proof: {
+      header: {
+        title: 'A physiotherapy clinic that recovered revenue from its own database',
+        description:
+          "Two practitioners. Five years of patient records. Hundreds of past patients who completed treatment and never came back — not because they didn't need to, but because nobody reached out.",
+      },
+      cards: [
+        {
+          title: 'Before: years of records, no follow-up',
+          description:
+            'Over 400 past patients in their booking system. Some finished treatment. Others cancelled mid-way. A handful called but never booked. Sitting there.',
+          points: [
+            'Past patients who finished treatment were never contacted again. Recurring conditions. Nobody prompted them.',
+            'Cancelled patients sat in the system. Some stopped because of scheduling, not need.',
+          ],
+        },
+        {
+          title: 'What changed: three segments, three sequences',
+          description:
+            "Past patients were split into three groups: completed-treatment patients likely to need repeat care, lapsed patients who'd stopped mid-course, and old enquiries who'd never booked. Each group got a different message, different timing, and a direct booking link.",
+          points: [
+            'Completed-treatment patients received a check-in message timed to when their condition was likely to need attention again. Relevant and specific, not a generic newsletter.',
+            "Lapsed patients got a short follow-up acknowledging they'd stopped and offering a quick rebook. No pressure. Just a clear next step.",
+            'Old enquiries received a brief message referencing their original call, with availability and a booking link. Simple context restart.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: 28 rebookings in six weeks',
+          description:
+            'No advertising. No acquisition. Twenty-eight rebookings from people already in the system.',
+          points: [
+            "Completed-treatment patients made up the biggest share. Most said they'd been meaning to come back.",
+            'Seven lapsed patients rebooked. Two had gone to competitors but came back because the clinic reached out first.',
+            'Three old enquiries booked. Small. But zero cost.',
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is this the right fit?',
       description:
@@ -330,76 +400,6 @@ export const leadReactivationSystemPage = {
         },
       ],
     },
-    comparison: {
-      header: {
-        title: 'Sporadic re-engagement vs structured reactivation',
-        description:
-          "Most businesses treat dormant leads as a forgotten backlog. Here's what that costs compared to working them properly.",
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Sporadic re-engagement',
-          items: [
-            'Old leads sit in the CRM with no prompt. Value depreciates silently every month.',
-            'Someone sends a batch email when things slow down. Nothing after. No sequence. No ownership.',
-            'Past customers, stalled quotes, and cold leads all get the same message. Response rates stay low because nothing feels relevant.',
-            'Nobody owns the responses that do come back. Replies create confusion instead of moving deals forward.',
-            'Recoverable revenue sitting there. The business keeps paying for new leads when existing value is right there.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Reactivation that runs',
-          items: [
-            'Dormant contacts segmented by type, age, and likely intent. Each group gets the right message at the right time.',
-            'Follow-up timing and messaging tailored to each segment. Outreach feels relevant, not random or desperate.',
-            'Past customers get lifecycle-based prompts. Cold leads get a different approach. The message matches the relationship.',
-            'Every response routes to a named owner with a clear next step. Revived leads move forward immediately.',
-            'Reactivation becomes a measurable source of recovered revenue. Justifies itself in the numbers.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'A physiotherapy clinic that recovered revenue from its own database',
-        description:
-          "Two practitioners. Five years of patient records. Hundreds of past patients who completed treatment and never came back — not because they didn't need to, but because nobody reached out.",
-      },
-      cards: [
-        {
-          title: 'Before: years of records, no follow-up',
-          description:
-            'Over 400 past patients in their booking system. Some finished treatment. Others cancelled mid-way. A handful called but never booked. Sitting there.',
-          points: [
-            'Past patients who finished treatment were never contacted again. Recurring conditions. Nobody prompted them.',
-            'Cancelled patients sat in the system. Some stopped because of scheduling, not need.',
-          ],
-        },
-        {
-          title: 'What changed: three segments, three sequences',
-          description:
-            "Past patients were split into three groups: completed-treatment patients likely to need repeat care, lapsed patients who'd stopped mid-course, and old enquiries who'd never booked. Each group got a different message, different timing, and a direct booking link.",
-          points: [
-            'Completed-treatment patients received a check-in message timed to when their condition was likely to need attention again. Relevant and specific, not a generic newsletter.',
-            "Lapsed patients got a short follow-up acknowledging they'd stopped and offering a quick rebook. No pressure. Just a clear next step.",
-            'Old enquiries received a brief message referencing their original call, with availability and a booking link. Simple context restart.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: 28 rebookings in six weeks',
-          description:
-            'No advertising. No acquisition. Twenty-eight rebookings from people already in the system.',
-          points: [
-            "Completed-treatment patients made up the biggest share. Most said they'd been meaning to come back.",
-            'Seven lapsed patients rebooked. Two had gone to competitors but came back because the clinic reached out first.',
-            'Three old enquiries booked. Small. But zero cost.',
-          ],
-        },
-      ],
-    },
     faqSection: {
       badge: 'FAQ',
       title: 'Questions about lead reactivation',
@@ -430,11 +430,11 @@ export const leadReactivationSystemPage = {
       cssPrefix: 'lead-reactivation-faq',
     },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'What are you sitting on?',
     description: "Old leads, stalled quotes, past customers. What's worth pursuing. What isn't.",
   },
-    cta: {
+  cta: {
     title: "Find out what's recoverable in your own records",
     description: "Your old enquiries and past customers. What's still warm. How to work it.",
   }

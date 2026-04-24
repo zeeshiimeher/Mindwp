@@ -15,18 +15,18 @@ import type { ServicePageData } from '../types';
 const slug = 'conversion-layer';
 
 export const conversionLayerPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Conversion Layer for Service Businesses | MindWP',
     description:
       "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
   }),
-    systems: ['revenue-growth'],
-    topics: ['conversion-optimization', 'lead-capture', 'service-page-architecture'],
-    badge: 'Conversion Layer',
-    category: 'Conversion Systems',
-    hero: {
+  systems: ['revenue-growth'],
+  topics: ['conversion-optimization', 'lead-capture', 'service-page-architecture'],
+  badge: 'Conversion Layer',
+  category: 'Conversion Systems',
+  hero: {
     badge: 'Conversion Layer',
     title: "Interested. Couldn't Figure Out What To Do.",
     description:
@@ -35,7 +35,7 @@ export const conversionLayerPage = {
     cssPrefix: 'conversion-funnel-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'Where it breaks',
       title: "Attention is there. The path after isn't.",
@@ -94,6 +94,36 @@ export const conversionLayerPage = {
             "Form went through. No confirmation. No timeline. Nothing. They're wondering if it even worked.",
           solution:
             'Define what happens after submit. Confirmation, booking, or reply — the experience continues.',
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Random page tweaks vs structured conversion work',
+        description:
+          "Most businesses try to fix conversion by changing headlines or buttons in isolation. Here's what that looks like compared to fixing the actual path.",
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Random page tweaks',
+          items: [
+            'Headlines and CTAs changed on instinct. Feels productive. Conversion stays flat because nothing underneath changed.',
+            "Multiple services crammed onto one page with no decision path. The visitor has to piece together what's relevant. Most don't bother.",
+            'Form submissions land in an inbox with no follow-up plan. Even the leads that convert go cold waiting for a reply.',
+            'No visibility into where visitors drop off or why. The next round of changes is another guess aimed at the wrong section.',
+            'Every redesign starts from scratch. The business pays to rebuild instead of building on what already worked.',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Deliberate conversion work',
+          items: [
+            'Page follows a clear sequence: relevance, proof, action. The visitor knows what to do without figuring it out.',
+            'Each page focuses on one offer with one clear next step. Decision friction drops.',
+            'Enquiry follow-up connects into booking, CRM, or follow-up. What happens after the form is defined.',
+            'Drop-off points visible at each stage. You know exactly where to improve next.',
+          ],
         },
       ],
     },
@@ -208,6 +238,45 @@ export const conversionLayerPage = {
         },
       ],
     },
+    proof: {
+      header: {
+        title: 'A landscaping company that stopped losing visitors at the page',
+        description:
+          'Four-person crew. Good local rankings. Plenty of traffic. But the conversion rate was terrible. Visitors scrolled, read, and left — because the path from interest to enquiry was unclear.',
+      },
+      cards: [
+        {
+          title: 'Before: traffic but no enquiries',
+          description:
+            'The site ranked well for landscaping keywords. People landed. But service pages mixed paving, fencing, and garden design into one long scroll. Every CTA said the same thing.',
+          points: [
+            "Homeowner looking for patio work scrolled past fencing and turfing to find it. Most didn't.",
+            'Every page: same "Get in touch" button. No context. No reason to think clicking it would go anywhere useful.',
+          ],
+        },
+        {
+          title: 'What changed: one offer per page, clear next step',
+          description:
+            'Each service got its own page. Patio work had its own proof, photos, CTA. Fencing the same. Enquiry form fed into a booking step with confirmation and follow-up text.',
+          points: [
+            'Each page: one service, matched photos, matched proof.',
+            'CTAs matched the job: "Get a patio quote" not "Get in touch." Connected to what they just read.',
+            'Form submit triggered confirmation text and a callback within four hours. No silence after the click.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: same traffic, three times the enquiries',
+          description:
+            'No new spend. Same visitors. Enquiries tripled in two months. Visitors who previously left confused now had a path.',
+          points: [
+            'Enquiry rate from under 1% to just over 3%. Same traffic.',
+            'Reply time from two days to four hours. More of those enquiries turned into consultations because the gap between interest and response shrank.',
+            'Owner started tracking which pages converted best. Patio led. That shaped where marketing went next.',
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is this the right fit?',
       description:
@@ -278,82 +347,13 @@ export const conversionLayerPage = {
       ],
       cssPrefix: 'conversion-funnel-faq',
     },
-    comparison: {
-      header: {
-        title: 'Random page tweaks vs structured conversion work',
-        description:
-          "Most businesses try to fix conversion by changing headlines or buttons in isolation. Here's what that looks like compared to fixing the actual path.",
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Random page tweaks',
-          items: [
-            'Headlines and CTAs changed on instinct. Feels productive. Conversion stays flat because nothing underneath changed.',
-            "Multiple services crammed onto one page with no decision path. The visitor has to piece together what's relevant. Most don't bother.",
-            'Form submissions land in an inbox with no follow-up plan. Even the leads that convert go cold waiting for a reply.',
-            'No visibility into where visitors drop off or why. The next round of changes is another guess aimed at the wrong section.',
-            'Every redesign starts from scratch. The business pays to rebuild instead of building on what already worked.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Deliberate conversion work',
-          items: [
-            'Page follows a clear sequence: relevance, proof, action. The visitor knows what to do without figuring it out.',
-            'Each page focuses on one offer with one clear next step. Decision friction drops.',
-            'Enquiry follow-up connects into booking, CRM, or follow-up. What happens after the form is defined.',
-            'Drop-off points visible at each stage. You know exactly where to improve next.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'A landscaping company that stopped losing visitors at the page',
-        description:
-          'Four-person crew. Good local rankings. Plenty of traffic. But the conversion rate was terrible. Visitors scrolled, read, and left — because the path from interest to enquiry was unclear.',
-      },
-      cards: [
-        {
-          title: 'Before: traffic but no enquiries',
-          description:
-            'The site ranked well for landscaping keywords. People landed. But service pages mixed paving, fencing, and garden design into one long scroll. Every CTA said the same thing.',
-          points: [
-            "Homeowner looking for patio work scrolled past fencing and turfing to find it. Most didn't.",
-            'Every page: same "Get in touch" button. No context. No reason to think clicking it would go anywhere useful.',
-          ],
-        },
-        {
-          title: 'What changed: one offer per page, clear next step',
-          description:
-            'Each service got its own page. Patio work had its own proof, photos, CTA. Fencing the same. Enquiry form fed into a booking step with confirmation and follow-up text.',
-          points: [
-            'Each page: one service, matched photos, matched proof.',
-            'CTAs matched the job: "Get a patio quote" not "Get in touch." Connected to what they just read.',
-            'Form submit triggered confirmation text and a callback within four hours. No silence after the click.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: same traffic, three times the enquiries',
-          description:
-            'No new spend. Same visitors. Enquiries tripled in two months. Visitors who previously left confused now had a path.',
-          points: [
-            'Enquiry rate from under 1% to just over 3%. Same traffic.',
-            'Reply time from two days to four hours. More of those enquiries turned into consultations because the gap between interest and response shrank.',
-            'Owner started tracking which pages converted best. Patio led. That shaped where marketing went next.',
-          ],
-        },
-      ],
-    },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Want to see exactly where qualified intent stalls first?',
     description:
       'We map where the path breaks between page message, CTA fit, and follow-up so you can see which leak is structural, which is sequencing, and what should be fixed before anything else.',
   },
-    cta: {
+  cta: {
     title: 'Get a clear priority map for the conversion leaks that matter most',
     description:
       'We review the offer path, action step, and post-submit handoff so you leave knowing which leak is hurting revenue most, what to tighten first, and whether a fuller rebuild is actually necessary.',

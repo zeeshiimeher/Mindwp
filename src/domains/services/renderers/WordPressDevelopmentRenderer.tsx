@@ -1,4 +1,5 @@
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -23,9 +24,11 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
   const {
     foundation,
     implementationScope,
+    comparison,
     principles,
     processSection,
     capabilitySection,
+    proof,
     qualification,
     faqSection,
   } = sections;
@@ -68,6 +71,15 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             backgroundColor='bg-alt'
           />
 
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='wordpress-development-comparison'
+            />
+          )}
+
           <StackedFeatureListSection
             badge={principles.badge}
             title={principles.title}
@@ -97,6 +109,16 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             columns={3}
             cssPrefix='wordpress-development-capabilities'
           />
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='wordpress-development-proof'
+              backgroundColor='bg-alt'
+            />
+          )}
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

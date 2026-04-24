@@ -6,18 +6,18 @@ import type { ServicePageData } from '../types';
 const slug = 'system-migration-platform-consolidation';
 
 export const systemMigrationPlatformConsolidationPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
     description:
       'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
   }),
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure'],
-    badge: "Platform Migration",
-    category: 'Migration Pathway Services',
-    hero: {
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure'],
+  badge: "Platform Migration",
+  category: 'Migration Pathway Services',
+  hero: {
     badge: 'System Migration & Platform Consolidation',
     title: 'New Platform. Same Quiet Phone.',
     description:
@@ -26,7 +26,7 @@ export const systemMigrationPlatformConsolidationPage = {
     cssPrefix: 'system-migration-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: "Why you're looking at migration",
       title: 'The platform frustration is real. The fix might not be what you expect.',
@@ -86,6 +86,37 @@ export const systemMigrationPlatformConsolidationPage = {
           description:
             "Understandable. Confidence returns when the foundation is stable AND the business results follow. A clean migration alone doesn't produce either.",
           iconType: 'primary' as const,
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Platform swap vs. proper migration',
+        description:
+          'The difference between changing software and changing how the business actually works online.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Platform swap',
+          items: [
+            'Same pages on a new CMS — content moved over without rethinking what converts',
+            'Fewer tools but the same gaps in follow-up and enquiry handling',
+            'Migration focused on launch day — no plan for what happens after',
+            "SEO drops because redirects and structure weren't planned",
+            'Six months later, the new platform feels as neglected as the old one',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Proper migration',
+          items: [
+            'Pages rebuilt around how visitors actually find and contact you',
+            'CRM, forms, and follow-up connected as part of the move',
+            'The team trained and the system documented for long-term ownership',
+            'SEO preserved and strengthened through better page structure',
+            'A foundation the business can maintain, extend, and grow on',
+          ],
         },
       ],
     },
@@ -193,6 +224,46 @@ export const systemMigrationPlatformConsolidationPage = {
         },
       ],
     },
+    proof: {
+      header: {
+        title: 'What a proper migration actually changed',
+        description:
+          'A service business moved from Wix plus six disconnected tools to a connected WordPress foundation. The platform change was the smallest part of what improved.',
+      },
+      cards: [
+        {
+          title: 'Before: lots of tools, no enquiry system',
+          description:
+            'Website on Wix. Forms going to email. No CRM. No follow-up. Booking through a separate tool. Marketing through another. Every lead touched four systems before anyone responded.',
+          points: [
+            'Average response time to enquiries was over 24 hours — because nobody knew where leads were arriving',
+            'No way to see which marketing channels produced actual customers — because tracking was fragmented across tools',
+            'The team spent hours weekly on manual data entry between systems — because nothing was connected',
+          ],
+        },
+        {
+          title: 'What the migration actually built',
+          description:
+            "WordPress with forms, CRM, booking, and follow-up connected as one system. The migration wasn't just moving content — it was building the enquiry handling that never existed.",
+          points: [
+            'Every form submission routes to CRM with automatic follow-up — response time dropped from days to minutes',
+            'Booking, enquiries, and customer data visible in one place — the team stopped guessing and started seeing the full picture',
+            'Tools reduced from seven to three with clear ownership — maintenance time dropped, team confidence went up',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: a business that runs differently',
+          description:
+            'The new platform mattered less than what was built on it. The team owns the system, understands it, and can extend it without calling the developer for every change.',
+          points: [
+            'Enquiry-to-response time under 5 minutes — because automation handles the routing humans used to forget',
+            'Monthly enquiry volume visible and trackable — because every touchpoint feeds into one reporting system',
+            'The team makes changes independently — because the system was documented and designed for their ownership',
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is migration actually what you need?',
       description:
@@ -263,84 +334,13 @@ export const systemMigrationPlatformConsolidationPage = {
       ],
       cssPrefix: 'system-migration-faq',
     },
-    comparison: {
-      header: {
-        title: 'Platform swap vs. proper migration',
-        description:
-          'The difference between changing software and changing how the business actually works online.',
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Platform swap',
-          items: [
-            'Same pages on a new CMS — content moved over without rethinking what converts',
-            'Fewer tools but the same gaps in follow-up and enquiry handling',
-            'Migration focused on launch day — no plan for what happens after',
-            "SEO drops because redirects and structure weren't planned",
-            'Six months later, the new platform feels as neglected as the old one',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Proper migration',
-          items: [
-            'Pages rebuilt around how visitors actually find and contact you',
-            'CRM, forms, and follow-up connected as part of the move',
-            'The team trained and the system documented for long-term ownership',
-            'SEO preserved and strengthened through better page structure',
-            'A foundation the business can maintain, extend, and grow on',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What a proper migration actually changed',
-        description:
-          'A service business moved from Wix plus six disconnected tools to a connected WordPress foundation. The platform change was the smallest part of what improved.',
-      },
-      cards: [
-        {
-          title: 'Before: lots of tools, no enquiry system',
-          description:
-            'Website on Wix. Forms going to email. No CRM. No follow-up. Booking through a separate tool. Marketing through another. Every lead touched four systems before anyone responded.',
-          points: [
-            'Average response time to enquiries was over 24 hours — because nobody knew where leads were arriving',
-            'No way to see which marketing channels produced actual customers — because tracking was fragmented across tools',
-            'The team spent hours weekly on manual data entry between systems — because nothing was connected',
-          ],
-        },
-        {
-          title: 'What the migration actually built',
-          description:
-            "WordPress with forms, CRM, booking, and follow-up connected as one system. The migration wasn't just moving content — it was building the enquiry handling that never existed.",
-          points: [
-            'Every form submission routes to CRM with automatic follow-up — response time dropped from days to minutes',
-            'Booking, enquiries, and customer data visible in one place — the team stopped guessing and started seeing the full picture',
-            'Tools reduced from seven to three with clear ownership — maintenance time dropped, team confidence went up',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: a business that runs differently',
-          description:
-            'The new platform mattered less than what was built on it. The team owns the system, understands it, and can extend it without calling the developer for every change.',
-          points: [
-            'Enquiry-to-response time under 5 minutes — because automation handles the routing humans used to forget',
-            'Monthly enquiry volume visible and trackable — because every touchpoint feeds into one reporting system',
-            'The team makes changes independently — because the system was documented and designed for their ownership',
-          ],
-        },
-      ],
-    },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Thinking about moving platforms?',
     description:
       "Before you migrate, it's worth knowing whether the platform is the problem — or just the most visible symptom.",
   },
-    cta: {
+  cta: {
     title: 'Want to move platforms and actually fix things this time?',
     description:
       "Tell us what's frustrating you about the current setup. We'll tell you whether migration is the answer — and what else needs to change for the move to be worth it.",

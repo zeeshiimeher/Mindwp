@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'website-redesign-system-rebuild';
 
 export const websiteRedesignSystemRebuildPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
     description:
       'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
   }),
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure', 'service-page-architecture'],
-    badge: 'Website Redesign',
-    category: 'Structural Rebuild Services',
-    hero: {
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure', 'service-page-architecture'],
+  badge: 'Website Redesign',
+  category: 'Structural Rebuild Services',
+  hero: {
     badge: 'Website Redesign',
     title: "A New Look Won't Fix a Quiet Phone.",
     description:
@@ -36,7 +36,7 @@ export const websiteRedesignSystemRebuildPage = {
     cssPrefix: 'website-redesign-rebuild-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'Where the real problem is',
       title: "The website looks outdated. But the design isn't what's costing you work.",
@@ -94,6 +94,37 @@ export const websiteRedesignSystemRebuildPage = {
           title: "There's no follow-up after someone reaches out",
           description:
             'No confirmation, no reminder, no next step. Just silence until someone on the team remembers to check.',
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Visual redesign vs fixing what actually matters',
+        description:
+          "Most redesigns focus on how the site looks. Here's what that costs compared to fixing what the site does.",
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Visual redesign only',
+          items: [
+            'New colours and layout over the same broken structure. Looks fresh for a month, then the same problems return.',
+            "Services still bundled together. Visitors looking for one thing still can't find it.",
+            'Same generic contact form going to the same inbox nobody checks regularly.',
+            'No CRM, no tracking, no follow-up. Every lead still depends on someone remembering.',
+            "Same maintenance headaches within months because the foundation didn't change.",
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Redesign + rebuild around how the business works',
+          items: [
+            'Services listed individually. Visitors find what they came for and act.',
+            'Enquiries routed to the right person with context. Response in minutes, not days.',
+            'Follow-up runs automatically. Confirmations, reminders, and check-ins happen without anyone chasing.',
+            'CRM and tracking connected from day one. You can see where work comes from.',
+            'Foundation built for what comes next — SEO, reviews, automation all connect cleanly.',
+          ],
         },
       ],
     },
@@ -199,6 +230,46 @@ export const websiteRedesignSystemRebuildPage = {
         },
       ],
     },
+    proof: {
+      header: {
+        title: 'What happened when we fixed the right problem',
+        description:
+          "An electrical contractor wanted a redesign because the site looked dated. Enquiries were low. When we looked closer, the design wasn't the issue at all.",
+      },
+      cards: [
+        {
+          title: "Before: the site looked old, but that wasn't the problem",
+          description:
+            "Professional business, steady referrals, decent Google traffic. But the website wasn't converting any of it. The owner assumed it needed a facelift.",
+          points: [
+            'Every service on one page. Someone needing a specific thing had to scroll through everything.',
+            'Contact form went to a Gmail account. The team checked it when they remembered.',
+            'No tracking, no CRM, no automated follow-up. Leads went cold in the gap between enquiry and response.',
+          ],
+        },
+        {
+          title: 'What we actually fixed: enquiry handling, not colours',
+          description:
+            'Yes, the design got updated. But that was the smallest change. Services split out. Forms connected to CRM. Follow-up automated.',
+          points: [
+            'Each service got its own page. Visitors landed on what they needed and acted.',
+            'Enquiries went to the CRM with name, service, and number. The right person picked it up in minutes.',
+            'Confirmation went out immediately. Follow-up ran without the team doing anything.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: same visitors, completely different outcome',
+          description:
+            'The redesign looked good. But the results came from handling speed and service clarity — not from the new colours.',
+          points: [
+            'Enquiries tripled from the same traffic. People could finally find the service they needed.',
+            "Response time went from days to minutes. The CRM did what the inbox couldn't.",
+            'The business could see which channels brought real enquiries for the first time. Marketing spend stopped being a guess.',
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is a redesign what you actually need?',
       description: "Sometimes yes. But often the problem isn't the design. Here's how to tell.",
@@ -267,84 +338,13 @@ export const websiteRedesignSystemRebuildPage = {
       ],
       cssPrefix: 'website-redesign-rebuild-faq',
     },
-    comparison: {
-      header: {
-        title: 'Visual redesign vs fixing what actually matters',
-        description:
-          "Most redesigns focus on how the site looks. Here's what that costs compared to fixing what the site does.",
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Visual redesign only',
-          items: [
-            'New colours and layout over the same broken structure. Looks fresh for a month, then the same problems return.',
-            "Services still bundled together. Visitors looking for one thing still can't find it.",
-            'Same generic contact form going to the same inbox nobody checks regularly.',
-            'No CRM, no tracking, no follow-up. Every lead still depends on someone remembering.',
-            "Same maintenance headaches within months because the foundation didn't change.",
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Redesign + rebuild around how the business works',
-          items: [
-            'Services listed individually. Visitors find what they came for and act.',
-            'Enquiries routed to the right person with context. Response in minutes, not days.',
-            'Follow-up runs automatically. Confirmations, reminders, and check-ins happen without anyone chasing.',
-            'CRM and tracking connected from day one. You can see where work comes from.',
-            'Foundation built for what comes next — SEO, reviews, automation all connect cleanly.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What happened when we fixed the right problem',
-        description:
-          "An electrical contractor wanted a redesign because the site looked dated. Enquiries were low. When we looked closer, the design wasn't the issue at all.",
-      },
-      cards: [
-        {
-          title: "Before: the site looked old, but that wasn't the problem",
-          description:
-            "Professional business, steady referrals, decent Google traffic. But the website wasn't converting any of it. The owner assumed it needed a facelift.",
-          points: [
-            'Every service on one page. Someone needing a specific thing had to scroll through everything.',
-            'Contact form went to a Gmail account. The team checked it when they remembered.',
-            'No tracking, no CRM, no automated follow-up. Leads went cold in the gap between enquiry and response.',
-          ],
-        },
-        {
-          title: 'What we actually fixed: enquiry handling, not colours',
-          description:
-            'Yes, the design got updated. But that was the smallest change. Services split out. Forms connected to CRM. Follow-up automated.',
-          points: [
-            'Each service got its own page. Visitors landed on what they needed and acted.',
-            'Enquiries went to the CRM with name, service, and number. The right person picked it up in minutes.',
-            'Confirmation went out immediately. Follow-up ran without the team doing anything.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: same visitors, completely different outcome',
-          description:
-            'The redesign looked good. But the results came from handling speed and service clarity — not from the new colours.',
-          points: [
-            'Enquiries tripled from the same traffic. People could finally find the service they needed.',
-            "Response time went from days to minutes. The CRM did what the inbox couldn't.",
-            'The business could see which channels brought real enquiries for the first time. Marketing spend stopped being a guess.',
-          ],
-        },
-      ],
-    },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Not sure if a redesign will actually fix it?',
     description:
       "Send us your URL. We'll tell you whether the problem is the design, the structure, or what happens after someone visits.",
   },
-    cta: {
+  cta: {
     title: "Show us what's not working",
     description:
       "Drop your URL and tell us what you think the problem is. We'll come back with what's actually costing you enquiries.",

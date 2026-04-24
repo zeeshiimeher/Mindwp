@@ -6,18 +6,18 @@ import type { ServicePageData } from '../types';
 const slug = 'wordpress-development';
 
 export const wordpressDevelopmentPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'WordPress Development for Service Businesses | MindWP',
     description:
       "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
   }),
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure', 'systems-first-websites'],
-    badge: 'WordPress Development',
-    category: 'Implementation Services',
-    hero: {
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure', 'systems-first-websites'],
+  badge: 'WordPress Development',
+  category: 'Implementation Services',
+  hero: {
     badge: 'WordPress Development',
     title: 'The Build Is Solid. The Leads Still Disappear.',
     description:
@@ -26,7 +26,7 @@ export const wordpressDevelopmentPage = {
     cssPrefix: 'wordpress-development-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'Where the real problem sits',
       title: "Most WordPress sites are built well enough. They just don't do enough.",
@@ -88,6 +88,37 @@ export const wordpressDevelopmentPage = {
             'CRM-ready from day one',
             'SEO-supportive page structure',
             'Room to grow without rework',
+          ],
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Pages-first build vs enquiry-first build',
+        description:
+          "Most WordPress projects focus on pages, templates, and launch day. Here's what that costs compared to building around how the business actually gets work.",
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Pages-first build',
+          items: [
+            'Services lumped together on one page. Someone looking for one thing scrolls past everything else and leaves.',
+            'Contact form goes to a shared inbox. Whoever remembers to check it responds. Could be hours later.',
+            'No follow-up after someone enquires. The lead goes cold while the team handles other work.',
+            'No visibility into where visitors come from or what they do. Marketing spend is blind.',
+            "CRM, SEO, and automation need a complete rework because the build wasn't designed for them.",
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Enquiry-first build',
+          items: [
+            'Each service on its own page. Visitors find what they need and act.',
+            'Enquiries arrive with context. The right person picks up in minutes.',
+            'Follow-up goes out automatically. Confirmations, reminders, check-ins — without manual effort.',
+            'Tracking shows which channels bring real enquiries. Spend goes where it works.',
+            'CRM, local SEO, and reviews connect cleanly because the foundation was built for it.',
           ],
         },
       ],
@@ -206,6 +237,46 @@ export const wordpressDevelopmentPage = {
         },
       ],
     },
+    proof: {
+      header: {
+        title: 'What changed for a real business',
+        description:
+          "A trades company had a professional WordPress site. Traffic was decent. Enquiries were thin. The build wasn't the problem — but the site wasn't doing anything with the visitors it had.",
+      },
+      cards: [
+        {
+          title: 'Before: good site, quiet phone',
+          description:
+            'Clean WordPress build. Responsive. Fast. But all services on one page, form going to a generic inbox, and no follow-up at all.',
+          points: [
+            "All services bundled together. Visitors looking for one thing couldn't find it quickly and left.",
+            'Form submissions sat unread for hours. By the time someone replied, the customer had moved on.',
+            'No tracking. No idea which channels were bringing visitors or whether they converted.',
+          ],
+        },
+        {
+          title: 'What we changed: same WordPress, different outcome',
+          description:
+            'Services split into their own pages. Forms routed to the right person with context. Follow-up automated. CRM connected.',
+          points: [
+            'Each service got its own page written around what people actually search for.',
+            'Enquiries hit the CRM with name, number, and service interest. The right team member picked it up.',
+            'Confirmation went out in seconds. Follow-up ran on its own. Nothing depended on someone remembering.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: same traffic, actual work coming through',
+          description:
+            'Enquiries went up without extra marketing spend. The team stopped losing leads to slow responses and started converting the visitors who were already there.',
+          points: [
+            'Enquiry volume doubled from the same traffic. People could find the right service and act.',
+            'Response time dropped from hours to minutes. Automated routing beat manual inbox checking.',
+            "First time the business could see which channels produced real enquiries — and cut the ones that didn't.",
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is this the right fit?',
       description:
@@ -275,84 +346,13 @@ export const wordpressDevelopmentPage = {
       ],
       cssPrefix: 'wordpress-development-faq',
     },
-    comparison: {
-      header: {
-        title: 'Pages-first build vs enquiry-first build',
-        description:
-          "Most WordPress projects focus on pages, templates, and launch day. Here's what that costs compared to building around how the business actually gets work.",
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Pages-first build',
-          items: [
-            'Services lumped together on one page. Someone looking for one thing scrolls past everything else and leaves.',
-            'Contact form goes to a shared inbox. Whoever remembers to check it responds. Could be hours later.',
-            'No follow-up after someone enquires. The lead goes cold while the team handles other work.',
-            'No visibility into where visitors come from or what they do. Marketing spend is blind.',
-            "CRM, SEO, and automation need a complete rework because the build wasn't designed for them.",
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Enquiry-first build',
-          items: [
-            'Each service on its own page. Visitors find what they need and act.',
-            'Enquiries arrive with context. The right person picks up in minutes.',
-            'Follow-up goes out automatically. Confirmations, reminders, check-ins — without manual effort.',
-            'Tracking shows which channels bring real enquiries. Spend goes where it works.',
-            'CRM, local SEO, and reviews connect cleanly because the foundation was built for it.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What changed for a real business',
-        description:
-          "A trades company had a professional WordPress site. Traffic was decent. Enquiries were thin. The build wasn't the problem — but the site wasn't doing anything with the visitors it had.",
-      },
-      cards: [
-        {
-          title: 'Before: good site, quiet phone',
-          description:
-            'Clean WordPress build. Responsive. Fast. But all services on one page, form going to a generic inbox, and no follow-up at all.',
-          points: [
-            "All services bundled together. Visitors looking for one thing couldn't find it quickly and left.",
-            'Form submissions sat unread for hours. By the time someone replied, the customer had moved on.',
-            'No tracking. No idea which channels were bringing visitors or whether they converted.',
-          ],
-        },
-        {
-          title: 'What we changed: same WordPress, different outcome',
-          description:
-            'Services split into their own pages. Forms routed to the right person with context. Follow-up automated. CRM connected.',
-          points: [
-            'Each service got its own page written around what people actually search for.',
-            'Enquiries hit the CRM with name, number, and service interest. The right team member picked it up.',
-            'Confirmation went out in seconds. Follow-up ran on its own. Nothing depended on someone remembering.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: same traffic, actual work coming through',
-          description:
-            'Enquiries went up without extra marketing spend. The team stopped losing leads to slow responses and started converting the visitors who were already there.',
-          points: [
-            'Enquiry volume doubled from the same traffic. People could find the right service and act.',
-            'Response time dropped from hours to minutes. Automated routing beat manual inbox checking.',
-            "First time the business could see which channels produced real enquiries — and cut the ones that didn't.",
-          ],
-        },
-      ],
-    },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Not sure if the build is the real problem?',
     description:
       "Send us your URL. We'll show you where visitors are dropping off and whether it's a build issue or something deeper.",
   },
-    cta: {
+  cta: {
     title: "Show us what's not working",
     description:
       "Tell us about your site and how enquiries come in. We'll tell you what's costing you leads and what to fix first.",

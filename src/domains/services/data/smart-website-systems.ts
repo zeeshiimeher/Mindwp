@@ -60,31 +60,31 @@ const smartWebsitesFaqItems = [
 ];
 
 export const smartWebsiteSystemsPage = {
-    seo: buildServiceSeo({
+  seo: buildServiceSeo({
     slug: 'smart-website-systems',
     title: 'Smart Website Systems for Service Businesses | MindWP',
     description:
       'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
   }),
-    slug: 'smart-website-systems',
-    systems: ['smart-website-systems'],
-    topics: [
+  slug: 'smart-website-systems',
+  systems: ['smart-website-systems'],
+  topics: [
     'website-infrastructure',
     'lead-capture',
     'conversion-optimization',
     'crm-enabled-websites',
     'service-pages',
   ],
-    badge: 'Smart Websites',
-    category: 'Website That Works',
-    hero: {
+  badge: 'Smart Websites',
+  category: 'Website That Works',
+  hero: {
     badge: 'Smart Websites',
     title: 'Enquiries Arrive. Nobody Picks Them Up.',
     description:
       "Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They've already rung someone else.",
     list: ['Lost leads', 'No follow-up', 'No tracking'],
   },
-    sections: {
+  sections: {
     value: {
       header: {
         title: 'What slips through every week',
@@ -376,6 +376,40 @@ export const smartWebsiteSystemsPage = {
         },
       ],
     },
+    process: {
+      header: {
+        badge: 'How it works',
+        title: 'From first conversation to a site pulling its weight',
+        description:
+          "We don't begin with visuals. We start with how your business runs, where enquiries fall apart, and what the site actually needs to handle.",
+      },
+      steps: [
+        {
+          number: '1',
+          title: 'We learn how your business runs',
+          description:
+            'What you offer, how people find you, where things drop off, which tools you already use. Everything after this follows from what we learn here.',
+        },
+        {
+          number: '2',
+          title: 'We plan around your services and customers',
+          description:
+            'Which services need their own listing, what each one says, how someone moves from arriving to getting in touch. The build follows the business, not the other way round.',
+        },
+        {
+          number: '3',
+          title: 'We build it and connect everything',
+          description:
+            'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically. You can see where people come from and what they do.',
+        },
+        {
+          number: '4',
+          title: 'Handover and training',
+          description:
+            'Everything tested. Running. Your team gets documentation and a walkthrough. They handle content, check enquiries, manage updates from there.',
+        },
+      ],
+    },
     qualification: {
       header: {
         title: 'Is this the right fit?',
@@ -423,40 +457,6 @@ export const smartWebsiteSystemsPage = {
         },
       ],
     },
-    process: {
-      header: {
-        badge: 'How it works',
-        title: 'From first conversation to a site pulling its weight',
-        description:
-          "We don't begin with visuals. We start with how your business runs, where enquiries fall apart, and what the site actually needs to handle.",
-      },
-      steps: [
-        {
-          number: '1',
-          title: 'We learn how your business runs',
-          description:
-            'What you offer, how people find you, where things drop off, which tools you already use. Everything after this follows from what we learn here.',
-        },
-        {
-          number: '2',
-          title: 'We plan around your services and customers',
-          description:
-            'Which services need their own listing, what each one says, how someone moves from arriving to getting in touch. The build follows the business, not the other way round.',
-        },
-        {
-          number: '3',
-          title: 'We build it and connect everything',
-          description:
-            'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically. You can see where people come from and what they do.',
-        },
-        {
-          number: '4',
-          title: 'Handover and training',
-          description:
-            'Everything tested. Running. Your team gets documentation and a walkthrough. They handle content, check enquiries, manage updates from there.',
-        },
-      ],
-    },
     faq: {
       header: {
         title: 'What business owners ask before getting started',
@@ -465,12 +465,12 @@ export const smartWebsiteSystemsPage = {
       items: smartWebsitesFaqItems,
     },
   },
-    cta: {
+  cta: {
     title: "Show me what's broken",
     description:
       "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Not sure where your site is leaking enquiries?',
     description:
       'Send the link. We will show you where people stop, what is not being captured, and which fix matters first.',

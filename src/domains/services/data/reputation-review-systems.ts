@@ -6,15 +6,15 @@ import type { ServicePageData } from '../types';
 const slug = 'reputation-review-systems';
 
 export const reputationReviewSystemsPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Reputation & Review Management for Service Businesses | MindWP',
     description:
       "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
   }),
-    systems: ['reputation-review'],
-    topics: [
+  systems: ['reputation-review'],
+  topics: [
     'review-generation',
     'review-automation',
     'reputation-monitoring',
@@ -23,9 +23,9 @@ export const reputationReviewSystemsPage = {
     'feedback-loops',
     'negative-review-response',
   ],
-    badge: 'Reputation & Review Systems',
-    category: 'Trust Systems',
-    hero: {
+  badge: 'Reputation & Review Systems',
+  category: 'Trust Systems',
+  hero: {
     badge: 'Reputation & Reviews',
     title: 'Good Work. Hardly Any Proof.',
     description:
@@ -34,7 +34,7 @@ export const reputationReviewSystemsPage = {
     cssPrefix: 'reputation-review-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'Why your reviews are stuck',
       title: 'Not about asking more. About asking when it counts.',
@@ -103,6 +103,37 @@ export const reputationReviewSystemsPage = {
             'Recent jobs keep turning into recent reviews',
             'Older reviews stop being the whole story',
             'Prospects see a business that still delivers now',
+          ],
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Leaving it to chance vs managing it properly',
+        description:
+          "Most businesses rely on memory and good intentions. Here's what that looks like next to a business that actually manages its reputation.",
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Left to chance',
+          items: [
+            "Reviews requested when someone remembers. Weeks after the job. The customer's already forgotten the company name.",
+            'A one-star review appears. No warning. No chance to fix it first. Hundreds of prospects see it before anyone on the team does.',
+            "No idea what's being said across Google, directories, or social. Trust quietly eroding.",
+            "Public replies are sporadic or missing entirely. To a prospect, it looks like the business doesn't care.",
+            'No view of reputation health. Problems compound in silence until enquiries dry up.',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Managed deliberately',
+          items: [
+            'Requests go out at the right moment. Customers asked while satisfaction is highest. Reviews grow month over month.',
+            'Complaints caught and routed to the team before they go public. Problems resolved, not broadcast.',
+            'Google, directories, and platforms monitored regularly. Nothing surfaces without the team knowing.',
+            'Public replies consistent, professional, and timely. Prospects see a business that pays attention.',
+            'Trust visible. Review trends, response rates, and profile strength tracked.',
           ],
         },
       ],
@@ -208,6 +239,45 @@ export const reputationReviewSystemsPage = {
         },
       ],
     },
+    proof: {
+      header: {
+        title: 'What happened at an auto repair garage',
+        description:
+          'Good mechanics. Loyal regulars. Twelve Google reviews after four years in business. The shop down the road had ninety.',
+      },
+      cards: [
+        {
+          title: 'Before: great work, invisible online',
+          description:
+            'Hundreds of jobs a year. Customers came back. But the review profile was almost empty. Nobody ever asked. The occasional text went out when the owner remembered. Usually too late.',
+          points: [
+            'Twelve reviews in four years. Customers were happy. Just never bothered.',
+            'One bad review from a misunderstanding sat at the top. No reply. That was the first thing anyone saw.',
+          ],
+        },
+        {
+          title: 'What we set up: timed requests with complaint routing',
+          description:
+            'Review request sent after every completed job. Simple rating step — happy customers directed to Google, unhappy responses sent straight to the owner.',
+          points: [
+            "SMS request goes out the same day the car is picked up. That's when satisfaction peaks.",
+            'Negative feedback routed to the owner privately. Handled before it becomes permanent.',
+            'Google profile monitored. Public replies posted within the day.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: reviews growing, complaints caught',
+          description:
+            "Three months in, over fifty new reviews. The bad one was buried. Two complaints caught privately that would've gone public.",
+          points: [
+            'Fifty-odd new reviews. All real. All from that week\'s customers.',
+            "Two complaints caught privately. Would've been one-stars. Weren't.",
+            "Started getting calls from people they'd never spoken to. The profile was doing the work before anyone picked up the phone.",
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is this right for your business?',
       description:
@@ -249,76 +319,6 @@ export const reputationReviewSystemsPage = {
         },
       ],
     },
-    comparison: {
-      header: {
-        title: 'Leaving it to chance vs managing it properly',
-        description:
-          "Most businesses rely on memory and good intentions. Here's what that looks like next to a business that actually manages its reputation.",
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Left to chance',
-          items: [
-            "Reviews requested when someone remembers. Weeks after the job. The customer's already forgotten the company name.",
-            'A one-star review appears. No warning. No chance to fix it first. Hundreds of prospects see it before anyone on the team does.',
-            "No idea what's being said across Google, directories, or social. Trust quietly eroding.",
-            "Public replies are sporadic or missing entirely. To a prospect, it looks like the business doesn't care.",
-            'No view of reputation health. Problems compound in silence until enquiries dry up.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Managed deliberately',
-          items: [
-            'Requests go out at the right moment. Customers asked while satisfaction is highest. Reviews grow month over month.',
-            'Complaints caught and routed to the team before they go public. Problems resolved, not broadcast.',
-            'Google, directories, and platforms monitored regularly. Nothing surfaces without the team knowing.',
-            'Public replies consistent, professional, and timely. Prospects see a business that pays attention.',
-            'Trust visible. Review trends, response rates, and profile strength tracked.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What happened at an auto repair garage',
-        description:
-          'Good mechanics. Loyal regulars. Twelve Google reviews after four years in business. The shop down the road had ninety.',
-      },
-      cards: [
-        {
-          title: 'Before: great work, invisible online',
-          description:
-            'Hundreds of jobs a year. Customers came back. But the review profile was almost empty. Nobody ever asked. The occasional text went out when the owner remembered. Usually too late.',
-          points: [
-            'Twelve reviews in four years. Customers were happy. Just never bothered.',
-            'One bad review from a misunderstanding sat at the top. No reply. That was the first thing anyone saw.',
-          ],
-        },
-        {
-          title: 'What we set up: timed requests with complaint routing',
-          description:
-            'Review request sent after every completed job. Simple rating step — happy customers directed to Google, unhappy responses sent straight to the owner.',
-          points: [
-            "SMS request goes out the same day the car is picked up. That's when satisfaction peaks.",
-            'Negative feedback routed to the owner privately. Handled before it becomes permanent.',
-            'Google profile monitored. Public replies posted within the day.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: reviews growing, complaints caught',
-          description:
-            "Three months in, over fifty new reviews. The bad one was buried. Two complaints caught privately that would've gone public.",
-          points: [
-            "Fifty-odd new reviews. All real. All from that week's customers.",
-            "Two complaints caught privately. Would've been one-stars. Weren't.",
-            "Started getting calls from people they'd never spoken to. The profile was doing the work before anyone picked up the phone.",
-          ],
-        },
-      ],
-    },
     faqSection: {
       badge: 'FAQ',
       title: 'Questions about reputation and reviews',
@@ -348,11 +348,11 @@ export const reputationReviewSystemsPage = {
       cssPrefix: 'reputation-review-faq',
     },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'How do your reviews compare to the competition?',
     description: 'Your review profile vs theirs. Where trust is thin. What to fix first.',
   },
-    cta: {
+  cta: {
     title: 'See how you look next to your competitors',
     description:
       "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
