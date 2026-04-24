@@ -147,7 +147,7 @@ export interface ServicePageData<
 
   sections: TSections;
 
-  cta?: {
+  cta: {
     title: string;
     description: string;
   };

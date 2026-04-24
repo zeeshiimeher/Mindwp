@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
+import { resolveCtaLabel } from '@/config/ctaLabels';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
 import { SmartCTA } from '@/components/system/SmartCTA';
@@ -115,6 +116,16 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
     systemParam,
     sourceParam
   );
+  const primaryCtaLabel = resolveCtaLabel({
+    system: normalizedSystem,
+    pageType: 'page',
+    intent: 'entry',
+  });
+  const secondaryCtaLabel = resolveCtaLabel({
+    system: normalizedSystem,
+    pageType: 'page',
+    intent: 'diagnostic',
+  });
 
   const handleInputChange = (field: keyof typeof INITIAL_FORM_STATE, value: string) => {
     setFormState(current => ({
@@ -263,7 +274,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
       >
         <div className='contact-page-hero-container-1'>
           <div className='contact-page-hero-content text-center'>
-            <h1 className='contact-page-hero-heading-1'>Start a Conversation</h1>
+            <h1 className='contact-page-hero-heading-1'>{primaryCtaLabel}</h1>
             <p className='contact-page-hero-text-1 text-xl text-muted-foreground l-container l-container--narrow'>
               Tell us what you&apos;re trying to fix, improve, or build. We&apos;ll review it and reply
               with the right next step.
@@ -312,7 +323,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                     <p className='contact-page-form-text-1 mb-3 text-sm font-medium text-foreground'>
                       Tell us where things are slipping — calls, follow-up, visibility, anything that&apos;s costing you work. A real person reads it and replies within one working day.
                     </p>
-                    <h2 className='contact-page-form-heading-1 mb-6'>Discuss Your Project</h2>
+                    <h2 className='contact-page-form-heading-1 mb-6'>{secondaryCtaLabel}</h2>
 
                     <form onSubmit={handleSubmit} className='contact-page-form'>
                       <input type='hidden' name='system' value={normalizedSystem} />
@@ -518,7 +529,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         ) : (
                           <>
                             <Send className='btn__icon' />
-                            Start a Conversation
+                            {primaryCtaLabel}
                           </>
                         )}
                       </button>

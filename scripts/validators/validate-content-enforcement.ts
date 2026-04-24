@@ -450,48 +450,57 @@ function scanFaqPosition(): Issue[] {
 function scanButtonRule(): Issue[] {
     const issues: Issue[] = [];
 
-    const sourceChecks: Array<{ file: string; expected: string[]; issueType: string; message: string }> = [
-        {
-            file: 'src/components/system/SmartCTA.tsx',
-            expected: ['allowSecondaryCTA?: true;', 'const secondaryConfig = allowSecondaryCTA ? resolveSecondaryCta(pageTypeForHref, slug) : undefined;'],
-            issueType: 'missing_smartcta_guard',
-            message: 'SmartCTA must gate secondary CTA resolution behind allowSecondaryCTA.',
-        },
-        {
-            file: 'src/components/reusable/single/SectionIntro.tsx',
-            expected: ['allowSecondaryCTA?: true;', 'const showSecondaryAction = allowSecondaryCTA === true && isRenderableAction(secondaryAction);'],
-            issueType: 'missing_sectionintro_guard',
-            message: 'SectionIntro must gate secondary actions behind allowSecondaryCTA.',
-        },
-        {
-            file: 'src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx',
-            expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
-            issueType: 'missing_component_guard',
-            message: 'DarkSplitShowcaseSection must gate secondary actions behind allowSecondaryCTA.',
-        },
-        {
-            file: 'src/components/reusable/sections/core/NarrativeStatsSection.tsx',
-            expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
-            issueType: 'missing_component_guard',
-            message: 'NarrativeStatsSection must gate secondary actions behind allowSecondaryCTA.',
-        },
-        {
-            file: 'src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx',
-            expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
-            issueType: 'missing_component_guard',
-            message: 'TestimonialSpotlightSplitSection must gate secondary actions behind allowSecondaryCTA.',
-        },
-        {
-            file: 'src/components/reusable/sections/core/StackedFeatureListSection.tsx',
-            expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
-            issueType: 'missing_component_guard',
-            message: 'StackedFeatureListSection must gate secondary actions behind allowSecondaryCTA.',
-        },
-    ];
+    const sourceChecks: Array<{
+        file: string;
+        expected: string[];
+        forbidden?: string[];
+        issueType: string;
+        message: string;
+    }> = [
+            {
+                file: 'src/components/system/SmartCTA.tsx',
+                expected: ['allowSecondaryCTA?: true;', 'if (!isActionableButton(primaryButtonAction)) {'],
+                forbidden: ['resolveSecondaryCta(', 'secondaryAction && <Button'],
+                issueType: 'missing_smartcta_guard',
+                message: 'SmartCTA must not implicitly resolve or auto-render secondary CTA buttons.',
+            },
+            {
+                file: 'src/components/reusable/single/SectionIntro.tsx',
+                expected: ['allowSecondaryCTA?: true;', 'const showSecondaryAction = allowSecondaryCTA === true && isRenderableAction(secondaryAction);'],
+                issueType: 'missing_sectionintro_guard',
+                message: 'SectionIntro must gate secondary actions behind allowSecondaryCTA.',
+            },
+            {
+                file: 'src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx',
+                expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
+                issueType: 'missing_component_guard',
+                message: 'DarkSplitShowcaseSection must gate secondary actions behind allowSecondaryCTA.',
+            },
+            {
+                file: 'src/components/reusable/sections/core/NarrativeStatsSection.tsx',
+                expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
+                issueType: 'missing_component_guard',
+                message: 'NarrativeStatsSection must gate secondary actions behind allowSecondaryCTA.',
+            },
+            {
+                file: 'src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx',
+                expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
+                issueType: 'missing_component_guard',
+                message: 'TestimonialSpotlightSplitSection must gate secondary actions behind allowSecondaryCTA.',
+            },
+            {
+                file: 'src/components/reusable/sections/core/StackedFeatureListSection.tsx',
+                expected: ['allowSecondaryCTA?: true;', 'allowSecondaryCTA === true && secondaryAction'],
+                issueType: 'missing_component_guard',
+                message: 'StackedFeatureListSection must gate secondary actions behind allowSecondaryCTA.',
+            },
+        ];
 
     for (const check of sourceChecks) {
         const sourceText = fs.readFileSync(path.join(root, check.file), 'utf8');
-        if (!check.expected.every(needle => sourceText.includes(needle))) {
+        const missingExpected = !check.expected.every(needle => sourceText.includes(needle));
+        const hasForbidden = (check.forbidden ?? []).some(needle => sourceText.includes(needle));
+        if (missingExpected || hasForbidden) {
             pushIssue(issues, {
                 rule: 'button-rule',
                 domain: 'shared',

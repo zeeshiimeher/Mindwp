@@ -12,7 +12,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface LocalSeoAuthorityRendererProps {
   data: ServicePageDataBySlug['local-seo-authority'];
@@ -30,8 +29,8 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const ctaTitle = cta.title;
+  const ctaDescription = cta.description;
 
   return (
     <>

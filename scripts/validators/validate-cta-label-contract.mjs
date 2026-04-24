@@ -5,7 +5,6 @@ import path from 'node:path';
 
 import {
   APPROVED_CTA_LABELS,
-  CTA_LABEL_MAP,
   DEFAULT_CTA_LABEL,
   DEFAULT_TIER_CARD_CTA_LABEL,
   isApprovedCtaLabel,
@@ -35,6 +34,13 @@ const globalPrimaryCtaSurfaceChecks = [
   'src/global/Footer.tsx',
   'src/global/HeaderMobileMenuIsland.tsx',
 ];
+const allowedHardcodedLabelFiles = new Set([
+  'src/config/ctaLabels.ts',
+  'src/components/reusable/sections/core/TierCardsSection.tsx',
+  'src/lib/cta/primaryAction.ts',
+  'src/components/system/SmartCTA.tsx',
+  'src/app/dev/cta-label-contract/page.tsx',
+]);
 const repoSystemDirs = [
   'src/app',
   'src/components',
@@ -107,10 +113,24 @@ function main() {
     });
   }
 
-  if (!smartCtaSource.includes('resolveSecondaryCta(pageTypeForHref, slug)')) {
+  if (smartCtaSource.includes('resolveSecondaryCta(')) {
     issues.push({
-      code: 'missing_centralized_secondary_cta_usage',
-      message: 'SmartCTA secondary CTA policy must resolve from the shared CTA config.',
+      code: 'implicit_secondary_cta_present',
+      message: 'SmartCTA must not use implicit secondary CTA resolution.',
+    });
+  }
+
+  if (!smartCtaSource.includes('allowSecondaryCTA?: true;')) {
+    issues.push({
+      code: 'missing_allow_secondary_guard_prop',
+      message: 'SmartCTA must expose allowSecondaryCTA as an explicit opt-in.',
+    });
+  }
+
+  if (smartCtaSource.includes('secondaryAction && <Button')) {
+    issues.push({
+      code: 'implicit_secondary_button_rendering',
+      message: 'SmartCTA must not auto-render a secondary CTA button.',
     });
   }
 
@@ -162,16 +182,30 @@ function main() {
     }
   }
 
-  const mappedSystems = new Set(Object.keys(CTA_LABEL_MAP));
   const usedSystems = collectUsedCanonicalSystems();
-  const missingSystems = usedSystems.filter(system => !mappedSystems.has(system));
 
-  for (const system of missingSystems) {
-    issues.push({
-      code: 'missing_cta_label_map_entry',
-      message: `CTA_LABEL_MAP is missing a label for repo-used system "${system}".`,
-      system,
-    });
+  const buttonLabelPatterns = [
+    /label\s*=\s*['"](Start a Conversation|Discuss Your Project)['"]/g,
+    /buttonText\s*:\s*['"](Start a Conversation|Discuss Your Project)['"]/g,
+    />\s*(Start a Conversation|Discuss Your Project)\s*</g,
+  ];
+
+  for (const filePath of collectRepoFiles()) {
+    const relativePath = path.relative(root, filePath).replaceAll(path.sep, '/');
+    if (allowedHardcodedLabelFiles.has(relativePath)) {
+      continue;
+    }
+
+    const source = fs.readFileSync(filePath, 'utf8');
+    for (const pattern of buttonLabelPatterns) {
+      for (const match of source.matchAll(pattern)) {
+        issues.push({
+          code: 'hardcoded_cta_label',
+          message: `${relativePath} hardcodes approved CTA label "${match[1]}" outside the CTA system.`,
+          file: relativePath,
+        });
+      }
+    }
   }
 
   const report = {
@@ -180,7 +214,7 @@ function main() {
     issueCount: issues.length,
     warningCount: warnings.length,
     usedSystems,
-    mappedSystems: [...mappedSystems].sort(),
+    approvedLabels: [...APPROVED_CTA_LABELS],
     issues,
     warnings,
   };

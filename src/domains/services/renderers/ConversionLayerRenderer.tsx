@@ -14,7 +14,6 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface ConversionLayerRendererProps {
   data: ServicePageDataBySlug[
@@ -34,13 +33,14 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle =
-    inlineCta?.title ?? 'Want to see where your conversion path is leaking first?';
-  const inlineCtaDescription =
-    inlineCta?.description ??
-    'We can map the biggest drop-off points in your pages, enquiries, and handoff flow before you commit to a full rebuild.';
+  if (!inlineCta) {
+    throw new Error('ConversionLayerRenderer requires inlineCta content.');
+  }
+
+  const ctaTitle = cta.title;
+  const ctaDescription = cta.description;
+  const inlineCtaTitle = inlineCta.title;
+  const inlineCtaDescription = inlineCta.description;
 
   return (
     <>

@@ -12,7 +12,6 @@ import {
   type CtaTone,
   DEFAULT_CTA_LABEL,
   resolveCtaLabel,
-  resolveSecondaryCta,
 } from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 import { registerCTA, reportCTAError, unregisterCTA } from '@/lib/cta/ctaRegistry';
@@ -167,7 +166,6 @@ export function SmartCTA({
     intent: resolvedIntent,
     tone,
   });
-  const secondaryConfig = allowSecondaryCTA ? resolveSecondaryCta(pageTypeForHref, slug) : undefined;
 
   const primaryButtonAction: ButtonProps = {
     variant: primaryActionVariant,
@@ -179,28 +177,19 @@ export function SmartCTA({
       slug,
     }),
   };
-  const secondaryAction: ButtonProps | undefined = secondaryConfig
-    ? {
-      variant: 'outline-light',
-      label: secondaryConfig.label,
-      ...(secondaryButtonCssPrefix ? { cssPrefix: secondaryButtonCssPrefix } : {}),
-      href: secondaryConfig.href,
-    }
-    : undefined;
 
   if (mode === 'full' && resolvedTitle.trim().length === 0) {
     throw new Error('SmartCTA requires a non-empty title.');
   }
 
-  if (!isActionableButton(primaryButtonAction) && !isActionableButton(secondaryAction)) {
-    throw new Error('SmartCTA requires at least one actionable primary or secondary action.');
+  if (!isActionableButton(primaryButtonAction)) {
+    throw new Error('SmartCTA requires an actionable primary action.');
   }
 
   if (mode === 'actions-only') {
     return (
       <div className={cn('cta__actions', actionClassName)}>
         <Button {...primaryButtonAction} />
-        {secondaryAction && <Button {...{ variant: 'outline-light', ...secondaryAction }} />}
       </div>
     );
   }
@@ -233,7 +222,6 @@ export function SmartCTA({
 
       <div className='cta__actions'>
         <Button {...primaryButtonAction} />
-        {secondaryAction && <Button {...{ variant: 'outline-light', ...secondaryAction }} />}
       </div>
 
       {metaItems.length > 0 && (

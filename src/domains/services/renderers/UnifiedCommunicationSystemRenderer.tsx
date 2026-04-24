@@ -19,7 +19,6 @@ import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface UnifiedCommunicationSystemRendererProps {
   data: ServicePageDataBySlug['unified-communication-system'];
@@ -42,10 +41,14 @@ export function UnifiedCommunicationSystemRenderer({
     comparison,
     proof,
   } = sections;
-  const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  if (!inlineCta) {
+    throw new Error('UnifiedCommunicationSystemRenderer requires inlineCta content.');
+  }
+
+  const ctaTitle = cta.title;
+  const ctaDescription = cta.description;
+  const inlineCtaTitle = inlineCta.title;
+  const inlineCtaDescription = inlineCta.description;
 
   return (
     <>

@@ -10,7 +10,6 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface Divi5RendererProps {
   data: ServicePageDataBySlug['divi5'];
@@ -21,8 +20,8 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
   const { hero, sections, cta } = data;
   const { conversionSection, benefitsSection, featureSection, whySection, processSection } =
     sections;
-  const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const ctaTitle = cta.title;
+  const ctaDescription = cta.description;
 
   return (
     <>

@@ -131,108 +131,53 @@ export default function AIChatRenderer({ data }: AIChatRendererProps) {
           />
 
           {/* How It Works */}
-          <ErrorBoundary
-            fallback={
-              <SectionWrapper>
-                <div className='text-center'>
-                  <h2 className='text-2xl font-bold mb-4'>{process.fallbackTitle}</h2>
-                  <p className='text-muted-foreground'>{process.fallbackDescription}</p>
-                </div>
-              </SectionWrapper>
-            }
-          >
-            <FeatureProcessStepsSection
-              badge={process.badge}
-              title={process.title}
-              description={process.description}
-              steps={process.steps}
-              cssPrefix='ai-chat-process'
-            />
-          </ErrorBoundary>
+          <FeatureProcessStepsSection
+            badge={process.badge}
+            title={process.title}
+            description={process.description}
+            steps={process.steps}
+            cssPrefix='ai-chat-process'
+          />
 
           {/* Benefits */}
-          <ErrorBoundary
-            fallback={
-              <SectionWrapper>
-                <div className='text-center'>
-                  <h2 className='text-2xl font-bold mb-4'>{benefits.fallbackTitle}</h2>
-                  <p className='text-muted-foreground'>{benefits.fallbackDescription}</p>
-                </div>
-              </SectionWrapper>
-            }
-          >
-            <FeatureBenefitsSection
-              badge={benefits.badge}
-              title={benefits.title}
-              description={benefits.description}
-              benefits={benefits.items}
-              cssPrefix='ai-chat-benefits'
-              backgroundColor='bg-base'
-            />
-          </ErrorBoundary>
+          <FeatureBenefitsSection
+            badge={benefits.badge}
+            title={benefits.title}
+            description={benefits.description}
+            benefits={benefits.items}
+            cssPrefix='ai-chat-benefits'
+            backgroundColor='bg-base'
+          />
 
           {/* Real-World Use Cases */}
-          <ErrorBoundary
-            fallback={
-              <SectionWrapper>
-                <div className='text-center'>
-                  <h2 className='text-2xl font-bold mb-4'>{useCases.fallbackTitle}</h2>
-                  <p className='text-muted-foreground'>{useCases.fallbackDescription}</p>
-                </div>
-              </SectionWrapper>
-            }
-          >
-            <FeatureUseCasesSection
-              badge={useCases.badge}
-              title={useCases.title}
-              description={useCases.description}
-              useCases={useCases.items}
-              cssPrefix='ai-chat-use-cases'
-              scenarioLabel={useCases.scenarioLabel}
-              solutionLabel={useCases.solutionLabel}
-            />
-          </ErrorBoundary>
+          <FeatureUseCasesSection
+            badge={useCases.badge}
+            title={useCases.title}
+            description={useCases.description}
+            useCases={useCases.items}
+            cssPrefix='ai-chat-use-cases'
+            scenarioLabel={useCases.scenarioLabel}
+            solutionLabel={useCases.solutionLabel}
+          />
 
           {/* Features Breakdown */}
-          <ErrorBoundary
-            fallback={
-              <SectionWrapper>
-                <div className='text-center'>
-                  <h2 className='text-2xl font-bold mb-4'>{capabilities.fallbackTitle}</h2>
-                  <p className='text-muted-foreground'>{capabilities.fallbackDescription}</p>
-                </div>
-              </SectionWrapper>
-            }
-          >
-            <FeatureCapabilitiesSection
-              badge={capabilities.badge}
-              title={capabilities.title}
-              description={capabilities.description}
-              featureCategories={capabilities.featureCategories}
-              cssPrefix='ai-chat-features'
-              backgroundColor='bg-alt'
-            />
-          </ErrorBoundary>
+          <FeatureCapabilitiesSection
+            badge={capabilities.badge}
+            title={capabilities.title}
+            description={capabilities.description}
+            featureCategories={capabilities.featureCategories}
+            cssPrefix='ai-chat-features'
+            backgroundColor='bg-alt'
+          />
 
           {/* FAQ */}
-          <ErrorBoundary
-            fallback={
-              <SectionWrapper>
-                <div className='text-center'>
-                  <h2 className='text-2xl font-bold mb-4'>{faq.fallbackTitle}</h2>
-                  <p className='text-muted-foreground'>{faq.fallbackDescription}</p>
-                </div>
-              </SectionWrapper>
-            }
-          >
-            <FAQSection
-              badge={faq.badge}
-              title={faq.title}
-              description={faq.description}
-              faqs={faq.items}
-              cssPrefix='ai-chat-faq'
-            />
-          </ErrorBoundary>
+          <FAQSection
+            badge={faq.badge}
+            title={faq.title}
+            description={faq.description}
+            faqs={faq.items}
+            cssPrefix='ai-chat-faq'
+          />
 
           <SmartCTA
             system={primarySystem}

@@ -16,7 +16,6 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 import type { ServicePageSections } from '@/domains/services/types';
 
@@ -29,11 +28,14 @@ interface Props {
 
 export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   const optionalSections = data.sections as ServicePageSections;
-  const ctaTitle = data.cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const ctaDescription = data.cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = data.inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription =
-    data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  if (!data.inlineCta) {
+    throw new Error('SmartWebsiteSystemsRenderer requires inlineCta content.');
+  }
+
+  const ctaTitle = data.cta.title;
+  const ctaDescription = data.cta.description;
+  const inlineCtaTitle = data.inlineCta.title;
+  const inlineCtaDescription = data.inlineCta.description;
 
   return (
     <>

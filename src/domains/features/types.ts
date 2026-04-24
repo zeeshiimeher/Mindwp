@@ -18,8 +18,6 @@ type ProcessSection = {
   badge?: string;
   title: string;
   description?: string;
-  fallbackTitle?: string;
-  fallbackDescription?: string;
   steps: ProcessStep[];
 };
 
@@ -27,8 +25,6 @@ type IconBenefitCardsSection = {
   badge?: string;
   title: string;
   description?: string;
-  fallbackTitle?: string;
-  fallbackDescription?: string;
   items: ServiceBenefitItem[];
 };
 
@@ -36,8 +32,6 @@ type ScenarioCardsSection = {
   badge?: string;
   title: string;
   description?: string;
-  fallbackTitle?: string;
-  fallbackDescription?: string;
   scenarioLabel?: string;
   solutionLabel?: string;
   items: ScenarioSolutionCardProps[];
@@ -47,8 +41,6 @@ type CapabilitiesSection = {
   badge?: string;
   title: string;
   description?: string;
-  fallbackTitle?: string;
-  fallbackDescription?: string;
   featureCategories: FeatureCategory[];
   columns?: 2 | 3 | 4;
   variant?: 'default' | 'stacked';
@@ -58,8 +50,6 @@ type FAQSection = {
   badge?: string;
   title: string;
   description?: string;
-  fallbackTitle?: string;
-  fallbackDescription?: string;
   items: Array<{ question: string; answer: string }>;
 };
 

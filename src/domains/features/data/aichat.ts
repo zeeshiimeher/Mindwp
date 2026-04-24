@@ -54,17 +54,17 @@ const aiChatFaqItems = [
 const slug = 'aichat';
 
 export const aiChatData: FeaturePageData = {
-    slug,
-    seo: buildFeatureSeo({
+  slug,
+  seo: buildFeatureSeo({
     slug,
     title: 'AI Chat | Structured Website Conversation Layer',
     description:
       'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
   }),
-    systems: ['ai-lead-handling'],
-    topics: ['lead-response-time'],
-    category: 'Communication',
-    hero: {
+  systems: ['ai-lead-handling'],
+  topics: ['lead-response-time'],
+  category: 'Communication',
+  hero: {
     badge: 'Conversation Layer',
     title: 'Structured Website Chat Integrated into Your System',
     description:
@@ -76,10 +76,8 @@ export const aiChatData: FeaturePageData = {
       { value: 'Smart', label: 'Automation' },
     ],
   },
-    sections: {
+  sections: {
     process: {
-      fallbackTitle: 'How Website Chat Works',
-      fallbackDescription: 'Simple 4-step process for website chat',
       badge: 'How It Works',
       title: 'How Structured Chat Operates',
       description:
@@ -109,8 +107,6 @@ export const aiChatData: FeaturePageData = {
       ],
     },
     benefits: {
-      fallbackTitle: 'Chat Feature Benefits',
-      fallbackDescription: 'Consistent communication and organization',
       badge: 'Key Advantages',
       title: 'What Structured Chat Improves',
       description:
@@ -156,8 +152,6 @@ export const aiChatData: FeaturePageData = {
       ],
     },
     useCases: {
-      fallbackTitle: 'Chat in Everyday Use',
-      fallbackDescription: 'Examples of how chat supports daily operations',
       badge: 'Feature in Practice',
       title: 'Structured Chat Within Daily Operations',
       description:
@@ -189,8 +183,6 @@ export const aiChatData: FeaturePageData = {
       ],
     },
     capabilities: {
-      fallbackTitle: 'Chat Feature Overview',
-      fallbackDescription: 'Complete chat functionality breakdown',
       badge: "What's Included",
       title: 'Conversation Layer Overview',
       description: 'Breakdown of how chat functions within your structured website system.',
@@ -261,7 +253,7 @@ export const aiChatData: FeaturePageData = {
       ],
     },
   },
-    cta: {
+  cta: {
     title: 'Review Your Communication Structure',
     description:
       'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',

@@ -12,7 +12,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
 interface LeadReactivationSystemRendererProps {
@@ -34,8 +33,8 @@ export function LeadReactivationSystemRenderer({
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const ctaTitle = cta.title;
+  const ctaDescription = cta.description;
 
   return (
     <>

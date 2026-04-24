@@ -96,21 +96,21 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
     types.flatMap(t => nodeTypeBuckets.get(t) ?? []);
 
   const resolveNodeCopy = (node: ContentGraphNode) => {
-    const fallbackTitle = titleFromSlug(node.slug);
-    const fallbackDesc = FALLBACK_DESCRIPTION[node.type];
+    const derivedTitle = titleFromSlug(node.slug);
+    const defaultDescription = FALLBACK_DESCRIPTION[node.type];
 
     if (node.type === 'service') {
       const s = deps.getServiceBySlug(node.slug);
       return {
-        title: node.title ?? s?.badge ?? s?.title ?? fallbackTitle,
-        description: node.description ?? s?.description ?? fallbackDesc,
+        title: node.title ?? s?.badge ?? s?.title ?? derivedTitle,
+        description: node.description ?? s?.description ?? defaultDescription,
       };
     }
     if (node.type === 'feature') {
       const f = deps.features.find(x => x.slug === node.slug);
       return {
-        title: node.title ?? f?.title ?? fallbackTitle,
-        description: node.description ?? f?.description ?? fallbackDesc,
+        title: node.title ?? f?.title ?? derivedTitle,
+        description: node.description ?? f?.description ?? defaultDescription,
       };
     }
     if (node.type === 'industry-category' || node.type === 'industry-detail') {
@@ -118,35 +118,36 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
         node.type === 'industry-detail' && node.parent ? `${node.parent}/${node.slug}` : node.slug;
       const i = deps.industries[key];
       return {
-        title: node.title ?? i?.hero?.title ?? fallbackTitle,
+        title: node.title ?? i?.hero?.title ?? derivedTitle,
         description:
-          node.description ?? i?.seo?.description ?? i?.hero?.description ?? fallbackDesc,
+          node.description ?? i?.seo?.description ?? i?.hero?.description ?? defaultDescription,
       };
     }
     if (node.type === 'blog') {
       const b = blogSlugIndex.get(normalize(node.slug));
       return {
-        title: node.title ?? b?.title ?? fallbackTitle,
-        description: node.description ?? b?.seo.description ?? fallbackDesc,
+        title: node.title ?? b?.title ?? derivedTitle,
+        description: node.description ?? b?.seo.description ?? defaultDescription,
       };
     }
     if (node.type === 'resource') {
       const r = resourceSlugIndex.get(normalize(node.slug));
       return {
-        title: node.title ?? r?.title ?? fallbackTitle,
-        description: node.description ?? r?.description ?? r?.seo?.description ?? fallbackDesc,
+        title: node.title ?? r?.title ?? derivedTitle,
+        description:
+          node.description ?? r?.description ?? r?.seo?.description ?? defaultDescription,
       };
     }
     if (node.type === 'case-study') {
       const c = deps.caseStudies[node.slug];
       return {
-        title: node.title ?? c?.title ?? fallbackTitle,
-        description: node.description ?? c?.seo?.description ?? fallbackDesc,
+        title: node.title ?? c?.title ?? derivedTitle,
+        description: node.description ?? c?.seo?.description ?? defaultDescription,
       };
     }
     return {
-      title: node.title ?? fallbackTitle,
-      description: node.description ?? fallbackDesc,
+      title: node.title ?? derivedTitle,
+      description: node.description ?? defaultDescription,
     };
   };
 

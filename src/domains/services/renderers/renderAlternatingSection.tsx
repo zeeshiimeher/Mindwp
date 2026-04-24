@@ -96,7 +96,7 @@ export function renderAlternatingSection(
   fallback: ReactNode
 ) {
   if (!data) {
-    return fallback;
+    throw new Error('renderAlternatingSection requires section data.');
   }
 
   const items = normalizeAlternatingItems(data.alternatingItems);

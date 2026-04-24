@@ -155,10 +155,10 @@ const VALIDATOR_DEFINITIONS = [
         reportFile: 'badge-length-report.json',
     },
     {
-        name: 'validate-cta-label-contract',
+        name: 'validate-cta-labels',
         category: 'cta',
         command: 'npx',
-        args: ['tsx', 'scripts/validators/validate-cta-label-contract.mjs', '--report-json'],
+        args: ['tsx', 'scripts/validators/validate-cta-labels.mjs', '--report-json'],
         blocking: true,
         reportFile: 'cta-label-contract-report.json',
     },
@@ -520,7 +520,7 @@ export const systemManifest = {
     generatedMarkdownFiles: GENERATED_MARKDOWN_FILES,
     generatedCodeFiles: GENERATED_CODE_FILES,
     ctaReportValidators: [
-        'validate-cta-label-contract',
+        'validate-cta-labels',
         'validate-conversion-contract',
         'validate-cta-violations',
     ],

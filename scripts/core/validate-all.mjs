@@ -153,7 +153,7 @@ function buildCachedValidatorResult(validator, cachedReport) {
     reportFile: validator.reportFile,
     reportMissing: false,
     cached: true,
-    executionStatus: 'SKIPPED',
+    executionStatus: 'CACHED',
     reportStatus: cachedReport.reportStatus,
     reportGeneratedAt: cachedReport.generatedAt,
     stale:

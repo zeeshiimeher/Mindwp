@@ -1,5 +1,4 @@
 import {
-  CTA_LABEL_MAP,
   type CtaTone,
   DEFAULT_CTA_LABEL,
   resolveCtaLabel,
@@ -47,7 +46,7 @@ function resolvePrimaryCtaLabel({
   }
 
   if (resolvedSourceType === 'global') {
-    return CTA_LABEL_MAP[system] ?? DEFAULT_CTA_LABEL;
+    return DEFAULT_CTA_LABEL;
   }
 
   if (!pageType) {
