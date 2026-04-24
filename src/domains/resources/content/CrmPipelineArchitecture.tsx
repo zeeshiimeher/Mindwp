@@ -162,23 +162,23 @@ const finalCta = {
 };
 
 export const crmPipelineArchitecture: ResourceData = {
-  slug,
-  title: 'CRM Pipeline Architecture',
-  description:
-    'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
-  category: 'revenue-growth',
-  publishedAt: '2025-11-22',
-  systems: ['crm-automation'],
-  industries: [],
-  topics: ['pipeline-architecture', 'crm-visibility'],
-  primaryService: 'crm-automation',
-  seo: {
+    slug,
+    seo: {
     title: 'CRM Pipeline Architecture',
     description:
       'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
     canonical,
   },
-  sections: [
+    title: 'CRM Pipeline Architecture',
+    description:
+    'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+    category: 'revenue-growth',
+    publishedAt: '2025-11-22',
+    systems: ['crm-automation'],
+    industries: [],
+    topics: ['pipeline-architecture', 'crm-visibility'],
+    primaryService: 'crm-automation',
+    sections: [
     {
       type: 'hero',
       heading: 'CRM Pipeline Architecture',
@@ -247,5 +247,5 @@ export const crmPipelineArchitecture: ResourceData = {
       content: getRelatedResourcesContent('revenue-growth'),
       resources: getRelatedResources('revenue-growth', canonical),
     },
-  ],
+  ]
 };

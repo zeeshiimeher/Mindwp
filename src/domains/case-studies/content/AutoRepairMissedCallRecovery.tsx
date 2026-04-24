@@ -122,54 +122,54 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
   ];
 
   return {
-    slug: 'garage-morning-rush-missed-calls',
-    title: 'The phone kept ringing while the ramps were full',
-    industryCategory: 'automotive',
-    industryLabel: 'Automotive',
-    industries: ['auto-repair'],
-    systems: ['ai-lead-handling'],
-    topics: ['missed-calls', 'lead-response-time', 'lead-capture'],
-    publishDate: '2026-02-01',
-    client: 'Premier Auto Care',
-    location: 'Leicester, UK',
-    business: 'Premier Auto Care',
-    duration: '9 weeks',
-    completedDate: 'February 2026',
-    heroHeadline: 'The phone kept ringing while the ramps were full',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Follow-Up', 'Automotive'],
-    seo: {
-      title: 'Garage missed call case study: more enquiries recovered',
-      description:
-      'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
-      canonical: '/case-studies/garage-morning-rush-missed-calls',
-      openGraph: {
+      seo: {
         title: 'Garage missed call case study: more enquiries recovered',
         description:
-          'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been slipping away.',
+        'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
+        canonical: '/case-studies/garage-morning-rush-missed-calls',
+        openGraph: {
+          title: 'Garage missed call case study: more enquiries recovered',
+          description:
+            'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been slipping away.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Morning Pressure Point' },
-      problem: { challengeBadgeLabel: 'What Was Going Wrong' },
-      workflows: { workflowsBadgeLabel: 'What Changed' },
-      results: {
-        detailedResultsBadgeLabel: 'What Improved',
-        detailedResultsSectionTitle: 'What Changed Once Missed Calls Were Handled Better',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No pressure' },
-          { text: 'Useful for busy garages' },
-        ],
-      },
-    },
+      slug: 'garage-morning-rush-missed-calls',
+      title: 'The phone kept ringing while the ramps were full',
+      industryCategory: 'automotive',
+      industryLabel: 'Automotive',
+      industries: ['auto-repair'],
+      systems: ['ai-lead-handling'],
+      topics: ['missed-calls', 'lead-response-time', 'lead-capture'],
+      publishDate: '2026-02-01',
+      client: 'Premier Auto Care',
+      location: 'Leicester, UK',
+      business: 'Premier Auto Care',
+      duration: '9 weeks',
+      completedDate: 'February 2026',
+      heroHeadline: 'The phone kept ringing while the ramps were full',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Follow-Up', 'Automotive'],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Morning Pressure Point' },
+        problem: { challengeBadgeLabel: 'What Was Going Wrong' },
+        workflows: { workflowsBadgeLabel: 'What Changed' },
+        results: {
+          detailedResultsBadgeLabel: 'What Improved',
+          detailedResultsSectionTitle: 'What Changed Once Missed Calls Were Handled Better',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No pressure' },
+            { text: 'Useful for busy garages' },
+          ],
+        },
+      }
   };
 }
 

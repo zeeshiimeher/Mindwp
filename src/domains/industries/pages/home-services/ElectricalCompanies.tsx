@@ -288,35 +288,35 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-    slug: 'electrical-companies',
-    industries: ['electrical'],
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['missed-calls', 'lead-management', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'home-services',
-    seo: {
-      title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote | MindWP',
-      description:
-        'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
-      canonical: '/industries/home-services/electrical-companies',
-    },
-    hero: { ...heroData },
-    operatingPatterns: operatingPatternsData,
-    systemLayers: systemLayersData,
-    workflowExamples: workflowExamplesData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about last Sunday\u2019s fault call',
-      description:
-        'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
-    },
+      seo: {
+        title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote | MindWP',
+        description:
+          'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
+        canonical: '/industries/home-services/electrical-companies',
+      },
+      slug: 'electrical-companies',
+      industries: ['electrical'],
+      systems: [
+        'smart-website-systems',
+        'ai-lead-handling',
+        'local-seo-authority',
+        'reputation-review',
+      ],
+      topics: ['missed-calls', 'lead-management', 'review-generation'],
+      type: 'detail',
+      parentSlug: 'home-services',
+      hero: { ...heroData },
+      operatingPatterns: operatingPatternsData,
+      systemLayers: systemLayersData,
+      workflowExamples: workflowExamplesData,
+      pathways: pathwaysData,
+      explore: exploreData,
+      faq: faqData,
+      cta: {
+        title: 'Tell us about last Sunday\u2019s fault call',
+        description:
+          'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
+      }
   };
 }
 

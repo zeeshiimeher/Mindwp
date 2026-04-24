@@ -5,17 +5,17 @@ import { crmAutomationPage } from './crm-automation';
 const slug = 'website-crm-integration-vs-manual-lead-handling';
 
 export const websiteCrmIntegrationVsManualLeadHandlingPage = {
-  ...crmAutomationPage,
-  slug,
-  badge: 'CRM Setup for Service Businesses',
-  category: crmAutomationPage.category,
-  seo: buildServiceSeo({
+...crmAutomationPage,
+slug,
+seo: buildServiceSeo({
     slug,
     title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
     description:
       'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
   }),
-  hero: {
+badge: "CRM Setup",
+category: crmAutomationPage.category,
+hero: {
     ...crmAutomationPage.hero,
     badge: 'CRM Decision Page',
     title: 'Website CRM Integration vs Manual Lead Handling',
@@ -23,7 +23,7 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
       'If leads move from forms to inboxes to sticky notes before anyone follows up, the problem is not effort. It is infrastructure. This page shows the difference between keeping lead handling manual and turning the website into the front door of a controlled CRM system.',
     list: ['Manual handoffs', 'Lead loss', 'CRM visibility'],
   },
-  sections: {
+sections: {
     ...crmAutomationPage.sections,
     positioning: {
       ...crmAutomationPage.sections.positioning,
@@ -83,14 +83,14 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
     connection: crmAutomationPage.sections.connection,
     faqSection: crmAutomationPage.sections.faqSection,
   },
-  cta: {
+cta: {
     title: 'See where manual lead handling is still breaking revenue control',
     description:
       'We will map the website, call, inbox, and follow-up handoffs that are still manual, then show what a connected CRM system would stabilise first.',
   },
-  inlineCta: {
+inlineCta: {
     title: 'Map the CRM handoff gaps before more leads stall',
     description:
       'Identify where forms, calls, texts, and follow-up are still disconnected before more opportunities leak out of the pipeline.',
-  },
+  }
 } satisfies typeof crmAutomationPage;

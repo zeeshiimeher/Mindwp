@@ -108,23 +108,23 @@ const finalCta = {
 };
 
 export const missedCallRecoveryForAutoRepair: ResourceData = {
-  slug,
-  title: 'Missed Call Recovery for Auto Repair',
-  description:
-    'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
-  category: 'ai-lead-handling',
-  publishedAt: '2026-02-09',
-  systems: ['ai-lead-handling'],
-  industries: ['automotive'],
-  topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Missed Call Recovery for Auto Repair',
     description:
       'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
     canonical,
   },
-  sections: [
+    title: 'Missed Call Recovery for Auto Repair',
+    description:
+    'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+    category: 'ai-lead-handling',
+    publishedAt: '2026-02-09',
+    systems: ['ai-lead-handling'],
+    industries: ['automotive'],
+    topics: ['missed-calls'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Missed Call Recovery for Auto Repair',
@@ -180,5 +180,5 @@ export const missedCallRecoveryForAutoRepair: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

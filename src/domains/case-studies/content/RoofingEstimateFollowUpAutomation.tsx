@@ -149,55 +149,55 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
   ];
 
   return {
-    slug: 'roofing-quotes-not-being-followed-up',
-    title: 'Roofing quotes kept going quiet after they were sent out',
-    industryCategory: 'home-services',
-    industryLabel: 'Home Services',
-    industries: ['roofing'],
-    systems: ['revenue-growth'],
-    topics: ['follow-up', 'crm-pipeline', 'lead-management'],
-    publishDate: '2025-10-01',
-    client: 'Summit Roofing Solutions',
-    location: 'Leeds, UK',
-    business: 'Summit Roofing Solutions',
-    duration: '6 weeks',
-    completedDate: 'October 2025',
-    heroHeadline: 'Roofing quotes kept going quiet after they were sent out',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Estimate Follow-Up', 'CRM Pipeline', 'Roofing', 'Revenue Recovery', 'Automation'],
-    seo: {
-      title: 'Roofing quote follow-up case study: more estimates turning into jobs',
-      description:
-      'How a Leeds roofing company stopped leaving so many quotes untouched and recovered around GBP7k-GBP9k a month in work that had been drifting away.',
-      canonical: '/case-studies/roofing-quotes-not-being-followed-up',
-      openGraph: {
+      seo: {
         title: 'Roofing quote follow-up case study: more estimates turning into jobs',
         description:
-          'How a Leeds roofing company stopped leaving so many quotes untouched and kept more of that work alive.',
+        'How a Leeds roofing company stopped leaving so many quotes untouched and recovered around GBP7k-GBP9k a month in work that had been drifting away.',
+        canonical: '/case-studies/roofing-quotes-not-being-followed-up',
+        openGraph: {
+          title: 'Roofing quote follow-up case study: more estimates turning into jobs',
+          description:
+            'How a Leeds roofing company stopped leaving so many quotes untouched and kept more of that work alive.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Quote Follow-Up' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      workflows: { workflowsBadgeLabel: 'How It Ran' },
-      solution: { solutionBadgeLabel: 'What They Changed' },
-      results: {
-        detailedResultsBadgeLabel: 'What Improved',
-        detailedResultsSectionTitle: 'What Changed Once Quotes Stopped Being Left Alone',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No pressure' },
-          { text: 'Useful for quote-heavy trades' },
-        ],
-      },
-    },
+      slug: 'roofing-quotes-not-being-followed-up',
+      title: 'Roofing quotes kept going quiet after they were sent out',
+      industryCategory: 'home-services',
+      industryLabel: 'Home Services',
+      industries: ['roofing'],
+      systems: ['revenue-growth'],
+      topics: ['follow-up', 'crm-pipeline', 'lead-management'],
+      publishDate: '2025-10-01',
+      client: 'Summit Roofing Solutions',
+      location: 'Leeds, UK',
+      business: 'Summit Roofing Solutions',
+      duration: '6 weeks',
+      completedDate: 'October 2025',
+      heroHeadline: 'Roofing quotes kept going quiet after they were sent out',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Estimate Follow-Up', 'CRM Pipeline', 'Roofing', 'Revenue Recovery', 'Automation'],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Quote Follow-Up' },
+        problem: { challengeBadgeLabel: 'What Was Happening' },
+        workflows: { workflowsBadgeLabel: 'How It Ran' },
+        solution: { solutionBadgeLabel: 'What They Changed' },
+        results: {
+          detailedResultsBadgeLabel: 'What Improved',
+          detailedResultsSectionTitle: 'What Changed Once Quotes Stopped Being Left Alone',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No pressure' },
+            { text: 'Useful for quote-heavy trades' },
+          ],
+        },
+      }
   };
 }
 

@@ -70,6 +70,7 @@ export interface SplitHeroSectionProps {
     | 'system'
     | 'pageType'
     | 'slug'
+    | 'allowSecondaryCTA'
     | 'primaryActionVariant'
     | 'primaryButtonCssPrefix'
     | 'secondaryButtonCssPrefix'
@@ -195,6 +196,7 @@ export function SplitHeroSection({
                 slug={smartCta.slug}
                 intent='entry'
                 position='hero'
+                allowSecondaryCTA={smartCta.allowSecondaryCTA}
                 primaryActionVariant={smartCta.primaryActionVariant}
                 primaryButtonCssPrefix={cn(
                   `${BLOCK}__primary-cta`,

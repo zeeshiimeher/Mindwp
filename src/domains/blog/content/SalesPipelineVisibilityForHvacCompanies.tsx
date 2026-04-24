@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
-  slug: 'sales-pipeline-visibility-for-hvac-companies',
-  title: 'Sales Pipeline Visibility for HVAC Companies',
-  seo: {
+    seo: {
     title: 'Sales Pipeline Visibility for HVAC Companies',
     description:
       'Learn how sales pipeline visibility for HVAC companies uses CRM deal stages and tracking to forecast revenue and identify bottlenecks in the sales process.',
@@ -14,14 +12,16 @@ export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
         'Learn how sales pipeline visibility for HVAC companies uses CRM deal stages and tracking to forecast revenue and identify bottlenecks in the sales process.',
     },
   },
-  publishDate: '2025-12-05',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: ['hvac'],
-  systems: ['crm-automation'],
-  topics: ['pipeline-visibility'],
-  tags: ['HVAC', 'Sales Pipeline', 'CRM', 'Forecasting', 'Deal Tracking'],
-  sections: [
+    slug: 'sales-pipeline-visibility-for-hvac-companies',
+    title: 'Sales Pipeline Visibility for HVAC Companies',
+    publishDate: '2025-12-05',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: ['hvac'],
+    systems: ['crm-automation'],
+    topics: ['pipeline-visibility'],
+    tags: ['HVAC', 'Sales Pipeline', 'CRM', 'Forecasting', 'Deal Tracking'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
       content:
         "If your HVAC company cannot see where deals are stalled or forecast next month's revenue, pipeline visibility can change that. See how CRM systems work for service businesses.",
     },
-  ],
+  ]
 };

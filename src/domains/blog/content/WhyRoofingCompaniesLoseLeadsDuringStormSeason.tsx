@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
-  slug: 'why-roofing-companies-lose-leads-during-storm-season',
-  title: 'Why Roofing Companies Lose Leads During Storm Season',
-  seo: {
+    seo: {
     title: 'Why Roofing Companies Lose Leads During Storm Season',
     description:
       'Learn why roofing companies lose leads during storm season when enquiry volume overwhelms response capacity and how lead handling systems prevent it.',
@@ -14,14 +12,16 @@ export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
         'Learn why roofing companies lose leads during storm season when enquiry volume overwhelms response capacity and how lead handling systems prevent it.',
     },
   },
-  publishDate: '2025-03-24',
-  authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
-  industries: ['roofing'],
-  systems: ['ai-lead-handling'],
-  topics: ['lead-management'],
-  tags: ['Roofing', 'Storm Season', 'Lead Loss', 'Lead Response', 'Service Business'],
-  sections: [
+    slug: 'why-roofing-companies-lose-leads-during-storm-season',
+    title: 'Why Roofing Companies Lose Leads During Storm Season',
+    publishDate: '2025-03-24',
+    authorKey: 'EDITORIAL',
+    category: 'home-services-industry',
+    industries: ['roofing'],
+    systems: ['ai-lead-handling'],
+    topics: ['lead-management'],
+    tags: ['Roofing', 'Storm Season', 'Lead Loss', 'Lead Response', 'Service Business'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
       content:
         'If your roofing company loses leads during high-volume periods, automated lead handling can close the gap before the next surge. Explore how AI lead systems handle volume spikes.',
     },
-  ],
+  ]
 };

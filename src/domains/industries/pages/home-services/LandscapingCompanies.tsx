@@ -280,35 +280,35 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-    slug: 'landscaping-companies',
-    industries: ['landscaping'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['lead-management', 'client-reactivation', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'home-services',
-    seo: {
-      title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
-      description:
-        'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
-      canonical: '/industries/home-services/landscaping-companies',
-    },
-    hero: { ...heroData },
-    operatingPatterns: operatingPatternsData,
-    comparison: comparisonData,
-    systemLayers: systemLayersData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about the patio quote that went quiet',
-      description:
-        'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
-    },
+      seo: {
+        title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
+        description:
+          'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
+        canonical: '/industries/home-services/landscaping-companies',
+      },
+      slug: 'landscaping-companies',
+      industries: ['landscaping'],
+      systems: [
+        'smart-website-systems',
+        'crm-automation',
+        'local-seo-authority',
+        'reputation-review',
+      ],
+      topics: ['lead-management', 'client-reactivation', 'review-generation'],
+      type: 'detail',
+      parentSlug: 'home-services',
+      hero: { ...heroData },
+      operatingPatterns: operatingPatternsData,
+      comparison: comparisonData,
+      systemLayers: systemLayersData,
+      pathways: pathwaysData,
+      explore: exploreData,
+      faq: faqData,
+      cta: {
+        title: 'Tell us about the patio quote that went quiet',
+        description:
+          'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+      }
   };
 }
 

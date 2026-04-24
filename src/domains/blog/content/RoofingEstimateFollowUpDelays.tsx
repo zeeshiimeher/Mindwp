@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const roofingEstimateFollowUpDelays: BlogPostData = {
-  slug: 'roofing-estimate-follow-up-delays',
-  title: 'Roofing Estimate Follow Up Delays',
-  seo: {
+    seo: {
     title: 'Roofing Estimate Follow Up Delays and How to Fix Them',
     description:
       'Explore common roofing estimate follow up delays that cost jobs and learn how automated CRM sequences ensure every quote receives timely follow-up.',
@@ -14,14 +12,16 @@ export const roofingEstimateFollowUpDelays: BlogPostData = {
         'Explore common roofing estimate follow up delays that cost jobs and learn how automated CRM sequences ensure every quote receives timely follow-up.',
     },
   },
-  publishDate: '2025-05-19',
-  authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
-  industries: ['roofing'],
-  systems: ['ai-lead-handling', 'crm-automation'],
-  topics: ['follow-up'],
-  tags: ['Roofing', 'Estimate Follow Up', 'CRM', 'Quote Conversion', 'Automation'],
-  sections: [
+    slug: 'roofing-estimate-follow-up-delays',
+    title: 'Roofing Estimate Follow Up Delays',
+    publishDate: '2025-05-19',
+    authorKey: 'EDITORIAL',
+    category: 'home-services-industry',
+    industries: ['roofing'],
+    systems: ['ai-lead-handling', 'crm-automation'],
+    topics: ['follow-up'],
+    tags: ['Roofing', 'Estimate Follow Up', 'CRM', 'Quote Conversion', 'Automation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const roofingEstimateFollowUpDelays: BlogPostData = {
       content:
         'If your roofing quotes sit unanswered because nobody followed up, automated sequences can close that gap. See how CRM automation ensures every estimate gets attention.',
     },
-  ],
+  ]
 };

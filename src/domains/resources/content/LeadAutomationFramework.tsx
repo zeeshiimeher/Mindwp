@@ -162,23 +162,23 @@ const finalCta = {
 };
 
 export const leadAutomationFramework: ResourceData = {
-  slug,
-  title: 'Lead Automation Framework Guide',
-  description:
-    'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
-  category: 'ai-lead-handling',
-  publishedAt: '2025-12-01',
-  systems: ['ai-lead-handling'],
-  industries: [],
-  topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Lead Automation Framework Guide',
     description:
       'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
     canonical,
   },
-  sections: [
+    title: 'Lead Automation Framework Guide',
+    description:
+    'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
+    category: 'ai-lead-handling',
+    publishedAt: '2025-12-01',
+    systems: ['ai-lead-handling'],
+    industries: [],
+    topics: ['lead-management'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Lead Automation Framework for Service Businesses',
@@ -247,5 +247,5 @@ export const leadAutomationFramework: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

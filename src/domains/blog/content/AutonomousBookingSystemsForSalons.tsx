@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const autonomousBookingSystemsForSalons: BlogPostData = {
-  slug: 'autonomous-booking-systems-for-salons',
-  title: 'Autonomous Booking Systems for Salons',
-  seo: {
+    seo: {
     title: 'How Autonomous Booking Systems for Salons Work',
     description:
       'Explore how autonomous booking systems for salons use AI to handle scheduling, rescheduling, and waitlist management without manual intervention required.',
@@ -14,14 +12,16 @@ export const autonomousBookingSystemsForSalons: BlogPostData = {
         'Explore how autonomous booking systems for salons use AI to handle scheduling, rescheduling, and waitlist management without manual intervention required.',
     },
   },
-  publishDate: '2026-02-23',
-  authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
-  industries: ['salon'],
-  systems: ['smart-website-systems', 'crm-automation'],
-  topics: ['booking-automation'],
-  tags: ['Salon', 'Autonomous Booking', 'AI', 'Scheduling', 'Future Tech'],
-  sections: [
+    slug: 'autonomous-booking-systems-for-salons',
+    title: 'Autonomous Booking Systems for Salons',
+    publishDate: '2026-02-23',
+    authorKey: 'TECHNICAL',
+    category: 'future-local-business-tech',
+    industries: ['salon'],
+    systems: ['smart-website-systems', 'crm-automation'],
+    topics: ['booking-automation'],
+    tags: ['Salon', 'Autonomous Booking', 'AI', 'Scheduling', 'Future Tech'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const autonomousBookingSystemsForSalons: BlogPostData = {
       content:
         'If your salon team spends hours managing the diary manually, autonomous booking systems can handle it. See how booking infrastructure is evolving for service businesses.',
     },
-  ],
+  ]
 };

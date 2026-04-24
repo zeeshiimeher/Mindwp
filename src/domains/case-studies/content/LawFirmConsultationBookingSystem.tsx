@@ -150,61 +150,61 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
   ];
 
   return {
-    slug: 'law-firm-consultation-booking-system',
-    title: 'Law Firm Consultation Booking System',
-    industryCategory: 'professional-services',
-    industryLabel: 'Professional Services',
-    industries: ['law-firm'],
-    systems: ['smart-website-systems'],
-    topics: ['booking-automation', 'website-infrastructure'],
-    publishDate: '2026-04-01',
-    client: 'Carter & Marsh Solicitors',
-    location: 'Norwich, UK',
-    business: 'Carter & Marsh Solicitors',
-    duration: '12 weeks',
-    completedDate: 'April 2026',
-    heroHeadline:
-      'How a Law Firm Increased Consultation Bookings by 34% With Online Practice-Area Scheduling',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'Consultation Booking',
-      'Law Firm',
-      'Online Scheduling',
-      'CRM Integration',
-      'Professional Services',
-    ],
-    seo: {
-      title: 'Law Firm Booking System | 34% More Consultations',
-      description:
-      'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
-      canonical: '/case-studies/law-firm-consultation-booking-system',
-      openGraph: {
-        title: 'Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study',
+      seo: {
+        title: 'Law Firm Booking System | 34% More Consultations',
         description:
-          'How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling.',
+        'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
+        canonical: '/case-studies/law-firm-consultation-booking-system',
+        openGraph: {
+          title: 'Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study',
+          description:
+            'How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'System Implementation' },
-      problem: { challengeBadgeLabel: 'The Booking Problem' },
-      solution: { solutionBadgeLabel: 'System Architecture' },
-      results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Consultation Booking',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for law firms' },
-        ],
-      },
-    },
+      slug: 'law-firm-consultation-booking-system',
+      title: 'Law Firm Consultation Booking System',
+      industryCategory: 'professional-services',
+      industryLabel: 'Professional Services',
+      industries: ['law-firm'],
+      systems: ['smart-website-systems'],
+      topics: ['booking-automation', 'website-infrastructure'],
+      publishDate: '2026-04-01',
+      client: 'Carter & Marsh Solicitors',
+      location: 'Norwich, UK',
+      business: 'Carter & Marsh Solicitors',
+      duration: '12 weeks',
+      completedDate: 'April 2026',
+      heroHeadline:
+        'How a Law Firm Increased Consultation Bookings by 34% With Online Practice-Area Scheduling',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: [
+        'Consultation Booking',
+        'Law Firm',
+        'Online Scheduling',
+        'CRM Integration',
+        'Professional Services',
+      ],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'System Implementation' },
+        problem: { challengeBadgeLabel: 'The Booking Problem' },
+        solution: { solutionBadgeLabel: 'System Architecture' },
+        results: {
+          detailedResultsBadgeLabel: 'Measured Results',
+          detailedResultsSectionTitle: 'Before & After: Consultation Booking',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No contracts' },
+            { text: 'Built for law firms' },
+          ],
+        },
+      }
   };
 }
 

@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
-  slug: 'lead-qualification-framework-for-service-businesses',
-  title: 'Lead Qualification Framework for Service Businesses',
-  seo: {
+    seo: {
     title: 'Lead Qualification Framework for Service Businesses',
     description:
       'Explore the lead qualification framework for service businesses that scores and categorises enquiries so high-value leads receive priority response.',
@@ -14,20 +12,22 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
         'Explore the lead qualification framework for service businesses that scores and categorises enquiries so high-value leads receive priority response.',
     },
   },
-  publishDate: '2024-11-07',
-  authorKey: 'TECHNICAL',
-  category: 'ai-lead-handling',
-  industries: [],
-  systems: ['ai-lead-handling'],
-  topics: ['lead-qualification'],
-  tags: [
+    slug: 'lead-qualification-framework-for-service-businesses',
+    title: 'Lead Qualification Framework for Service Businesses',
+    publishDate: '2024-11-07',
+    authorKey: 'TECHNICAL',
+    category: 'ai-lead-handling',
+    industries: [],
+    systems: ['ai-lead-handling'],
+    topics: ['lead-qualification'],
+    tags: [
     'Lead Qualification',
     'Lead Scoring',
     'Service Business',
     'AI Lead Handling',
     'Enquiry Management',
   ],
-  sections: [
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -101,5 +101,5 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
       content:
         'If your team responds to every enquiry in the order it arrived regardless of value, qualification automation can help. See how AI lead handling scores and routes leads by priority.',
     },
-  ],
+  ]
 };

@@ -191,21 +191,21 @@ const finalCta = {
 };
 
 export const crmPipelineAutomation: ResourceData = {
-  slug,
-  title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-  description:
-    'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-  category: 'crm-automation',
-  publishedAt: '2026-02-05',
-  systems: ['crm-automation'],
-  topics: ['lead-management'],
-  seo: {
+    slug,
+    seo: {
     title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
     description:
       'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
     canonical,
   },
-  sections: [
+    title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
+    description:
+    'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
+    category: 'crm-automation',
+    publishedAt: '2026-02-05',
+    systems: ['crm-automation'],
+    topics: ['lead-management'],
+    sections: [
     {
       type: 'hero',
       heading: 'CRM Pipeline Automation: Never Drop a Lead Again',
@@ -317,5 +317,5 @@ export const crmPipelineAutomation: ResourceData = {
         { text: 'No lead left behind', icon: 'heart' },
       ],
     },
-  ],
+  ]
 };

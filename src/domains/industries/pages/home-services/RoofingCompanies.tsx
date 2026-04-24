@@ -281,35 +281,35 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-    slug: 'roofing-companies',
-    industries: ['roofing'],
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['lead-management', 'client-reactivation', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'home-services',
-    seo: {
-      title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
-      description:
-        'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-      canonical: '/industries/home-services/roofing-companies',
-    },
-    hero: { ...heroData },
-    operatingPatterns: operatingPatternsData,
-    comparison: comparisonData,
-    systemLayers: systemLayersData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about the last re-roof you lost in the silence',
-      description:
-        'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
-    },
+      seo: {
+        title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
+        description:
+          'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+        canonical: '/industries/home-services/roofing-companies',
+      },
+      slug: 'roofing-companies',
+      industries: ['roofing'],
+      systems: [
+        'smart-website-systems',
+        'crm-automation',
+        'local-seo-authority',
+        'reputation-review',
+      ],
+      topics: ['lead-management', 'client-reactivation', 'review-generation'],
+      type: 'detail',
+      parentSlug: 'home-services',
+      hero: { ...heroData },
+      operatingPatterns: operatingPatternsData,
+      comparison: comparisonData,
+      systemLayers: systemLayersData,
+      pathways: pathwaysData,
+      explore: exploreData,
+      faq: faqData,
+      cta: {
+        title: 'Tell us about the last re-roof you lost in the silence',
+        description:
+          'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+      }
   };
 }
 

@@ -19,7 +19,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'Real Estate & Property Services',
+        badge: "Property Services",
         title: 'Property Work Is Won In Minutes And Lost In Months. Both Halves Are Pipeline.',
         description:
             'Realtors, property managers, mortgage brokers, and inspectors all work on somebody else\'s timing. The first reply opens the conversation, the later follow-up keeps it moving, and most of the loss happens in the long stretch between those two points.',
@@ -245,49 +245,49 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'real-estate-property-services',
-        type: 'category',
-        category: 'real-estate-property-services',
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'local-seo-authority',
-            'reputation-review',
-        ],
-        topics: [
-            'lead-response-time',
-            'follow-up',
-            'pipeline-visibility',
-            'review-generation',
-        ],
-        industries: ['home-inspection', 'mortgage-broker', 'property-management', 'realtor'],
-        seo: {
-            title: 'Real Estate & Property Services — Win The First Minute, Hold The Pipeline | MindWP',
-            description:
-                'For realtors, property managers, mortgage brokers, and inspectors where the leak is in the first-response window and the long pipeline that follows. We put first-minute response, pipeline memory, and follow-up in place across the category.',
-            canonical: '/industries/real-estate-property-services',
-        },
-        hero: heroData,
-        operatingPatterns: operatingPatternsData,
-        decisionChecklist: decisionChecklistData,
-        spectrum: spectrumData,
-        systemLayers: systemLayersData,
-        detailRoutes: detailRoutesData,
-        explore: exploreData,
-        sectionControls: {
-            subIndustries: {
-                enabled: false,
+            seo: {
+                title: 'Real Estate & Property Services — Win The First Minute, Hold The Pipeline | MindWP',
+                description:
+                    'For realtors, property managers, mortgage brokers, and inspectors where the leak is in the first-response window and the long pipeline that follows. We put first-minute response, pipeline memory, and follow-up in place across the category.',
+                canonical: '/industries/real-estate-property-services',
             },
-            caseStudies: {
-                enabled: false,
+            slug: 'real-estate-property-services',
+            type: 'category',
+            category: 'real-estate-property-services',
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'local-seo-authority',
+                'reputation-review',
+            ],
+            topics: [
+                'lead-response-time',
+                'follow-up',
+                'pipeline-visibility',
+                'review-generation',
+            ],
+            industries: ['home-inspection', 'mortgage-broker', 'property-management', 'realtor'],
+            hero: heroData,
+            operatingPatterns: operatingPatternsData,
+            decisionChecklist: decisionChecklistData,
+            spectrum: spectrumData,
+            systemLayers: systemLayersData,
+            detailRoutes: detailRoutesData,
+            explore: exploreData,
+            sectionControls: {
+                subIndustries: {
+                    enabled: false,
+                },
+                caseStudies: {
+                    enabled: false,
+                },
             },
-        },
-        cta: {
-            title: 'Tell us where the pipeline is leaking',
-            description:
-                'If first responses slip, follow-up goes quiet, or old enquiries never get remembered at the right moment, walk us through the last few weeks and we will show you which window is costing the most work.',
-        },
-    };
+            cta: {
+                title: 'Tell us where the pipeline is leaking',
+                description:
+                    'If first responses slip, follow-up goes quiet, or old enquiries never get remembered at the right moment, walk us through the last few weeks and we will show you which window is costing the most work.',
+            }
+        };
 }
 
 export const realEstatePropertyServicesIndustryPageData: IndustryPageData =

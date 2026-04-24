@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const automotiveServiceReminderAutomation: ResourceData = {
-  slug,
-  title: 'Automotive Service Reminder Automation Framework',
-  description:
-    'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
-  category: 'crm-automation',
-  publishedAt: '2026-02-23',
-  systems: ['crm-automation'],
-  industries: ['automotive'],
-  topics: ['service-reminders'],
-  primaryService: 'crm-automation',
-  seo: {
+    slug,
+    seo: {
     title: 'Automotive Service Reminder Automation Framework',
     description:
       'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
     canonical,
   },
-  sections: [
+    title: 'Automotive Service Reminder Automation Framework',
+    description:
+    'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+    category: 'crm-automation',
+    publishedAt: '2026-02-23',
+    systems: ['crm-automation'],
+    industries: ['automotive'],
+    topics: ['service-reminders'],
+    primaryService: 'crm-automation',
+    sections: [
     {
       type: 'hero',
       heading: 'Automotive Service Reminder Automation',
@@ -181,5 +181,5 @@ export const automotiveServiceReminderAutomation: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ],
+  ]
 };

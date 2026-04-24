@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
-  slug: 'local-service-page-architecture-for-local-businesses',
-  title: 'Local Service Page Architecture for Local Businesses',
-  seo: {
+    seo: {
     title: 'Local Service Page Architecture for Local Businesses',
     description:
       'Learn how local service page architecture for local businesses creates location-specific landing pages that capture geo-targeted search traffic and convert it.',
@@ -14,14 +12,16 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
         'Learn how local service page architecture for local businesses creates location-specific landing pages that capture geo-targeted search traffic and convert it.',
     },
   },
-  publishDate: '2025-01-27',
-  authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
-  industries: [],
-  systems: ['local-seo-authority'],
-  topics: ['local-service-pages'],
-  tags: ['Local Service Pages', 'Local SEO', 'Landing Pages', 'Geo Targeting', 'Service Business'],
-  sections: [
+    slug: 'local-service-page-architecture-for-local-businesses',
+    title: 'Local Service Page Architecture for Local Businesses',
+    publishDate: '2025-01-27',
+    authorKey: 'TECHNICAL',
+    category: 'local-authority-seo',
+    industries: [],
+    systems: ['local-seo-authority'],
+    topics: ['local-service-pages'],
+    tags: ['Local Service Pages', 'Local SEO', 'Landing Pages', 'Geo Targeting', 'Service Business'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
       content:
         'If your service area spans multiple locations but your website has a single services page, local search traffic is going to competitors with local presence. See how location page architecture captures geo-targeted demand.',
     },
-  ],
+  ]
 };

@@ -6,18 +6,18 @@ import type { ServicePageData } from '../types';
 const slug = 'wordpress-development';
 
 export const wordpressDevelopmentPage = {
-  slug,
-  systems: ['smart-website-systems'],
-  topics: ['website-infrastructure', 'systems-first-websites'],
-  badge: 'WordPress Development',
-  category: 'Implementation Services',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'WordPress Development for Service Businesses | MindWP',
     description:
       "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
   }),
-  hero: {
+    systems: ['smart-website-systems'],
+    topics: ['website-infrastructure', 'systems-first-websites'],
+    badge: 'WordPress Development',
+    category: 'Implementation Services',
+    hero: {
     badge: 'WordPress Development',
     title: 'The Build Is Solid. The Leads Still Disappear.',
     description:
@@ -26,7 +26,7 @@ export const wordpressDevelopmentPage = {
     cssPrefix: 'wordpress-development-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'Where the real problem sits',
       title: "Most WordPress sites are built well enough. They just don't do enough.",
@@ -347,14 +347,14 @@ export const wordpressDevelopmentPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Not sure if the build is the real problem?',
     description:
       "Send us your URL. We'll show you where visitors are dropping off and whether it's a build issue or something deeper.",
   },
-  cta: {
+    cta: {
     title: "Show us what's not working",
     description:
       "Tell us about your site and how enquiries come in. We'll tell you what's costing you leads and what to fix first.",
-  },
+  }
 } satisfies ServicePageData;

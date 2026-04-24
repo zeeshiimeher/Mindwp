@@ -16,27 +16,27 @@ import type { ServicePageData } from '../types';
 const slug = 'lead-reactivation-system';
 
 export const leadReactivationSystemPage = {
-  slug,
-  systems: ['revenue-growth'],
-  topics: ['client-reactivation', 'follow-up'],
-  badge: 'Lead Reactivation System',
-  category: 'Lifecycle Recovery Systems',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'Lead Reactivation System for Service Businesses | MindWP',
     description:
       'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
   }),
-  hero: {
+    systems: ['revenue-growth'],
+    topics: ['client-reactivation', 'follow-up'],
+    badge: 'Lead Reactivation System',
+    category: 'Lifecycle Recovery Systems',
+    hero: {
     badge: 'Lead Reactivation System',
     title: 'They Enquired Once. Nobody Followed Up.',
     description:
       "Hundreds of old contacts. Stalled quotes. Past customers who never heard from you again. The leads are there. Nobody's working them.",
-    list: ['Forgotten', 'Unworked'],
+    list: ["Forgotten", "Unworked", "Stalled revenue"],
     cssPrefix: 'lead-reactivation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'The neglected asset',
       title: "You don't need more leads. You need to work the ones you had.",
@@ -430,12 +430,12 @@ export const leadReactivationSystemPage = {
       cssPrefix: 'lead-reactivation-faq',
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'What are you sitting on?',
     description: "Old leads, stalled quotes, past customers. What's worth pursuing. What isn't.",
   },
-  cta: {
+    cta: {
     title: "Find out what's recoverable in your own records",
     description: "Your old enquiries and past customers. What's still warm. How to work it.",
-  },
+  }
 } satisfies ServicePageData;

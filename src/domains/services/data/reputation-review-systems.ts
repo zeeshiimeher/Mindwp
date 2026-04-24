@@ -6,9 +6,15 @@ import type { ServicePageData } from '../types';
 const slug = 'reputation-review-systems';
 
 export const reputationReviewSystemsPage = {
-  slug,
-  systems: ['reputation-review'],
-  topics: [
+    slug,
+    seo: buildServiceSeo({
+    slug,
+    title: 'Reputation & Review Management for Service Businesses | MindWP',
+    description:
+      "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+  }),
+    systems: ['reputation-review'],
+    topics: [
     'review-generation',
     'review-automation',
     'reputation-monitoring',
@@ -17,24 +23,18 @@ export const reputationReviewSystemsPage = {
     'feedback-loops',
     'negative-review-response',
   ],
-  badge: 'Reputation & Review Systems',
-  category: 'Trust Systems',
-  seo: buildServiceSeo({
-    slug,
-    title: 'Reputation & Review Management for Service Businesses | MindWP',
-    description:
-      "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-  }),
-  hero: {
+    badge: 'Reputation & Review Systems',
+    category: 'Trust Systems',
+    hero: {
     badge: 'Reputation & Reviews',
     title: 'Good Work. Hardly Any Proof.',
     description:
       'You finished a quarter of solid work. Customers were happy. Only a few left a review. A less reliable competitor still looks safer online because their proof is easier to see.',
-    list: ['Happy. Silent.', 'Competitors look more trustworthy'],
+    list: ["Happy. Silent.", "Competitors look more trustworthy", "Trust stays invisible"],
     cssPrefix: 'reputation-review-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'Why your reviews are stuck',
       title: 'Not about asking more. About asking when it counts.',
@@ -348,13 +348,13 @@ export const reputationReviewSystemsPage = {
       cssPrefix: 'reputation-review-faq',
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'How do your reviews compare to the competition?',
     description: 'Your review profile vs theirs. Where trust is thin. What to fix first.',
   },
-  cta: {
+    cta: {
     title: 'See how you look next to your competitors',
     description:
       "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
-  },
+  }
 } satisfies ServicePageData;

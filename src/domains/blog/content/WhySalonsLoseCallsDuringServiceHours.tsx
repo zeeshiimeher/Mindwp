@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
-  slug: 'why-salons-lose-calls-during-service-hours',
-  title: 'Why Salons Lose Calls During Service Hours',
-  seo: {
+    seo: {
     title: 'Why Salons Lose Calls During Service Hours',
     description:
       'Discover why salons lose calls during service hours when stylists cannot answer phones and how automated systems capture every booking enquiry.',
@@ -14,14 +12,16 @@ export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
         'Discover why salons lose calls during service hours when stylists cannot answer phones and how automated systems capture every booking enquiry.',
     },
   },
-  publishDate: '2025-05-11',
-  authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['ai-lead-handling'],
-  topics: ['missed-calls'],
-  tags: ['Salon', 'Missed Calls', 'Booking', 'Service Hours', 'Call Handling'],
-  sections: [
+    slug: 'why-salons-lose-calls-during-service-hours',
+    title: 'Why Salons Lose Calls During Service Hours',
+    publishDate: '2025-05-11',
+    authorKey: 'EDITORIAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['ai-lead-handling'],
+    topics: ['missed-calls'],
+    tags: ['Salon', 'Missed Calls', 'Booking', 'Service Hours', 'Call Handling'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -106,5 +106,5 @@ export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
       content:
         'If your salon misses calls when the team is busy with clients, automated systems can ensure every caller gets a response. See how AI lead handling works for salons.',
     },
-  ],
+  ]
 };

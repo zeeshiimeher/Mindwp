@@ -221,37 +221,37 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'consultants',
-        industries: ['consulting'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['lead-qualification', 'follow-up', 'pipeline-visibility'],
-        type: 'detail',
-        parentSlug: 'legal-professional-services',
-        seo: {
-            title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
-            description:
-                'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
-            canonical: '/industries/legal-professional-services/consultants',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        systemLayers: systemLayersData,
-        workflowExamples: workflowExamplesData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the conversations stall',
-            description:
-                'If discovery calls go well but the prospect stops responding afterwards, walk us through the last few that went quiet and we will show you whether the offer, next step, or follow-up is where it is breaking down.',
-        },
-    };
+            seo: {
+                title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
+                description:
+                    'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
+                canonical: '/industries/legal-professional-services/consultants',
+            },
+            slug: 'consultants',
+            industries: ['consulting'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['lead-qualification', 'follow-up', 'pipeline-visibility'],
+            type: 'detail',
+            parentSlug: 'legal-professional-services',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            systemLayers: systemLayersData,
+            workflowExamples: workflowExamplesData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the conversations stall',
+                description:
+                    'If discovery calls go well but the prospect stops responding afterwards, walk us through the last few that went quiet and we will show you whether the offer, next step, or follow-up is where it is breaking down.',
+            }
+        };
 }
 
 export const consultantsIndustryPageData: IndustryPageData = buildConsultantsIndustryPageData();

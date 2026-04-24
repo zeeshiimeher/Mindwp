@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
-  slug: 'multi-channel-lead-capture-system-for-service-businesses',
-  title: 'Multi Channel Lead Capture System for Service Businesses',
-  seo: {
+    seo: {
     title: 'Multi Channel Lead Capture System for Service Businesses',
     description:
       'Learn how a multi channel lead capture system for service businesses unifies phone, web, and social enquiries into one pipeline for consistent follow-up.',
@@ -14,20 +12,22 @@ export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
         'Learn how a multi channel lead capture system for service businesses unifies phone, web, and social enquiries into one pipeline for consistent follow-up.',
     },
   },
-  publishDate: '2024-10-14',
-  authorKey: 'TECHNICAL',
-  category: 'ai-lead-handling',
-  industries: [],
-  systems: ['ai-lead-handling'],
-  topics: ['lead-capture'],
-  tags: [
+    slug: 'multi-channel-lead-capture-system-for-service-businesses',
+    title: 'Multi Channel Lead Capture System for Service Businesses',
+    publishDate: '2024-10-14',
+    authorKey: 'TECHNICAL',
+    category: 'ai-lead-handling',
+    industries: [],
+    systems: ['ai-lead-handling'],
+    topics: ['lead-capture'],
+    tags: [
     'Lead Capture',
     'Multi Channel',
     'Service Business',
     'AI Lead Handling',
     'Enquiry Management',
   ],
-  sections: [
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -117,5 +117,5 @@ export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
       content:
         'If enquiries arrive through multiple channels but your team only monitors some of them consistently, your capture system has gaps. See how AI-powered lead handling unifies every channel.',
     },
-  ],
+  ]
 };

@@ -167,23 +167,23 @@ const finalCta = {
 };
 
 export const reviewAutomationSetupGuideForSalons: ResourceData = {
-  slug,
-  title: 'Review Automation Setup Guide for Salons',
-  description:
-    'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
-  category: 'reputation-review',
-  publishedAt: '2026-04-06',
-  systems: ['reputation-review'],
-  industries: ['salon'],
-  topics: ['review-automation'],
-  primaryService: 'reputation-review',
-  seo: {
+    slug,
+    seo: {
     title: 'Review Automation Setup Guide for Salons',
     description:
       'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
     canonical,
   },
-  sections: [
+    title: 'Review Automation Setup Guide for Salons',
+    description:
+    'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+    category: 'reputation-review',
+    publishedAt: '2026-04-06',
+    systems: ['reputation-review'],
+    industries: ['salon'],
+    topics: ['review-automation'],
+    primaryService: 'reputation-review',
+    sections: [
     {
       type: 'hero',
       heading: 'Review Automation Setup Guide for Salons',
@@ -254,5 +254,5 @@ export const reviewAutomationSetupGuideForSalons: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ],
+  ]
 };

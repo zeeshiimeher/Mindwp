@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const missedCallRecoveryForRoofing: ResourceData = {
-  slug,
-  title: 'Missed Call Recovery for Roofing',
-  description:
-    'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
-  category: 'ai-lead-handling',
-  publishedAt: '2026-02-14',
-  systems: ['ai-lead-handling'],
-  industries: ['roofing'],
-  topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Missed Call Recovery for Roofing',
     description:
       'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
     canonical,
   },
-  sections: [
+    title: 'Missed Call Recovery for Roofing',
+    description:
+    'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+    category: 'ai-lead-handling',
+    publishedAt: '2026-02-14',
+    systems: ['ai-lead-handling'],
+    industries: ['roofing'],
+    topics: ['missed-calls'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Missed Call Recovery for Roofing',
@@ -181,5 +181,5 @@ export const missedCallRecoveryForRoofing: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

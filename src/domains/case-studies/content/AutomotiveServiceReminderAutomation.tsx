@@ -148,69 +148,69 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
   ];
 
   return {
-    slug: 'automotive-service-reminder-automation',
-    title: 'Automotive Service Reminder Automation',
-    industryCategory: 'automotive',
-    industryLabel: 'Automotive',
-    industries: ['auto-repair'],
-    systems: ['revenue-growth'],
-    topics: [
-      'client-reactivation',
-      'follow-up',
-      'service-reminders',
-      'customer-lifetime-value',
-      'lifetime-value',
-      'revenue-tracking',
-    ],
-    publishDate: '2026-02-15',
-    client: 'Midlands Motor Works',
-    location: 'Coventry, UK',
-    business: 'Midlands Motor Works',
-    duration: '14 weeks',
-    completedDate: 'February 2026',
-    heroHeadline:
-      'How a Garage Increased Client Retention From 48% to 72% With Automated Service Reminders',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'Service Reminders',
-      'Client Retention',
-      'Auto Repair',
-      'Revenue Recovery',
-      'CRM Automation',
-    ],
-    seo: {
-      title: 'Garage Retention System | 48% to 72% With Reminders',
-      description:
-      'How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.',
-      canonical: '/case-studies/automotive-service-reminder-automation',
-      openGraph: {
-        title: 'Why Garages Lose Repeat Customers | MindWP Case Study',
+      seo: {
+        title: 'Garage Retention System | 48% to 72% With Reminders',
         description:
-          'How a Coventry garage increased client retention from 48% to 72% with automated service reminders.',
+        'How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.',
+        canonical: '/case-studies/automotive-service-reminder-automation',
+        openGraph: {
+          title: 'Why Garages Lose Repeat Customers | MindWP Case Study',
+          description:
+            'How a Coventry garage increased client retention from 48% to 72% with automated service reminders.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Revenue Recovery' },
-      metrics: { resultsSectionTitle: 'Key Outcomes' },
-      problem: { challengeBadgeLabel: 'The Retention Problem' },
-      solution: { solutionBadgeLabel: 'System Architecture' },
-      results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Client Retention',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for garages' },
-        ],
-      },
-    },
+      slug: 'automotive-service-reminder-automation',
+      title: 'Automotive Service Reminder Automation',
+      industryCategory: 'automotive',
+      industryLabel: 'Automotive',
+      industries: ['auto-repair'],
+      systems: ['revenue-growth'],
+      topics: [
+        'client-reactivation',
+        'follow-up',
+        'service-reminders',
+        'customer-lifetime-value',
+        'lifetime-value',
+        'revenue-tracking',
+      ],
+      publishDate: '2026-02-15',
+      client: 'Midlands Motor Works',
+      location: 'Coventry, UK',
+      business: 'Midlands Motor Works',
+      duration: '14 weeks',
+      completedDate: 'February 2026',
+      heroHeadline:
+        'How a Garage Increased Client Retention From 48% to 72% With Automated Service Reminders',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: [
+        'Service Reminders',
+        'Client Retention',
+        'Auto Repair',
+        'Revenue Recovery',
+        'CRM Automation',
+      ],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Revenue Recovery' },
+        metrics: { resultsSectionTitle: 'Key Outcomes' },
+        problem: { challengeBadgeLabel: 'The Retention Problem' },
+        solution: { solutionBadgeLabel: 'System Architecture' },
+        results: {
+          detailedResultsBadgeLabel: 'Measured Results',
+          detailedResultsSectionTitle: 'Before & After: Client Retention',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No contracts' },
+            { text: 'Built for garages' },
+          ],
+        },
+      }
   };
 }
 

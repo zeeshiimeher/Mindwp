@@ -168,23 +168,23 @@ const finalCta = {
 };
 
 export const leadResponseOptimizationChecklistForHvacBusinesses: ResourceData = {
-  slug,
-  title: 'Lead Response Optimization Checklist for HVAC Businesses',
-  description:
-    'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-  category: 'crm-automation',
-  publishedAt: '2026-04-06',
-  systems: ['crm-automation'],
-  industries: ['hvac'],
-  topics: ['lead-response-time'],
-  primaryService: 'crm-automation',
-  seo: {
+    slug,
+    seo: {
     title: 'Lead Response Optimization Checklist for HVAC Businesses',
     description:
       'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
     canonical,
   },
-  sections: [
+    title: 'Lead Response Optimization Checklist for HVAC Businesses',
+    description:
+    'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+    category: 'crm-automation',
+    publishedAt: '2026-04-06',
+    systems: ['crm-automation'],
+    industries: ['hvac'],
+    topics: ['lead-response-time'],
+    primaryService: 'crm-automation',
+    sections: [
     {
       type: 'hero',
       heading: 'Lead Response Optimization Checklist for HVAC Businesses',
@@ -253,5 +253,5 @@ export const leadResponseOptimizationChecklistForHvacBusinesses: ResourceData = 
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ],
+  ]
 };

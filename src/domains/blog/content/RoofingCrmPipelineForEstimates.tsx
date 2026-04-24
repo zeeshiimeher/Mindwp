@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const roofingCrmPipelineForEstimates: BlogPostData = {
-  slug: 'roofing-crm-pipeline-for-estimates',
-  title: 'Roofing CRM Pipeline for Estimates',
-  seo: {
+    seo: {
     title: 'Roofing CRM Pipeline for Estimates Explained',
     description:
       'Learn how a roofing CRM pipeline for estimates structures the quoting process from site visit to accepted job so no estimate falls through the cracks.',
@@ -14,14 +12,16 @@ export const roofingCrmPipelineForEstimates: BlogPostData = {
         'Learn how a roofing CRM pipeline for estimates structures the quoting process from site visit to accepted job so no estimate falls through the cracks.',
     },
   },
-  publishDate: '2025-06-12',
-  authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
-  industries: ['roofing'],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
-  tags: ['Roofing', 'CRM Pipeline', 'Estimates', 'Quote Management', 'Automation'],
-  sections: [
+    slug: 'roofing-crm-pipeline-for-estimates',
+    title: 'Roofing CRM Pipeline for Estimates',
+    publishDate: '2025-06-12',
+    authorKey: 'TECHNICAL',
+    category: 'home-services-industry',
+    industries: ['roofing'],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline'],
+    tags: ['Roofing', 'CRM Pipeline', 'Estimates', 'Quote Management', 'Automation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const roofingCrmPipelineForEstimates: BlogPostData = {
       content:
         'If your roofing estimates sit in spreadsheets without structured follow-up, a CRM pipeline can change that. Explore how CRM automation manages the estimate-to-job workflow.',
     },
-  ],
+  ]
 };

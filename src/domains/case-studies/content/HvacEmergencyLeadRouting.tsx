@@ -129,54 +129,54 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
   ];
 
   return {
-    slug: 'hvac-after-hours-calls-going-cold',
-    title: 'Emergency calls kept coming in after the office had closed',
-    industryCategory: 'home-services',
-    industryLabel: 'Home Services',
-    industries: ['hvac'],
-    systems: ['ai-lead-handling'],
-    topics: ['missed-calls', 'emergency-handling', 'lead-routing'],
-    publishDate: '2025-11-01',
-    client: 'Thermal Comfort Services',
-    location: 'Manchester, UK',
-    business: 'Thermal Comfort Services',
-    duration: '6 weeks',
-    completedDate: 'November 2025',
-    heroHeadline: 'Emergency calls kept coming in after the office had closed',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Emergency Routing', 'After-Hours Leads', 'HVAC', 'Call Triage', 'Lead Recovery'],
-    seo: {
-      title: 'HVAC after-hours call case study: more emergency jobs captured',
-      description:
-      'How a Manchester HVAC company stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
-      canonical: '/case-studies/hvac-after-hours-calls-going-cold',
-      openGraph: {
+      seo: {
         title: 'HVAC after-hours call case study: more emergency jobs captured',
         description:
-          'How a Manchester HVAC company stopped losing so many evening emergency calls and kept more urgent work in play.',
+        'How a Manchester HVAC company stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
+        canonical: '/case-studies/hvac-after-hours-calls-going-cold',
+        openGraph: {
+          title: 'HVAC after-hours call case study: more emergency jobs captured',
+          description:
+            'How a Manchester HVAC company stopped losing so many evening emergency calls and kept more urgent work in play.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'After Hours' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      solution: { solutionBadgeLabel: 'What They Changed' },
-      results: {
-        detailedResultsBadgeLabel: 'What Improved',
-        detailedResultsSectionTitle: 'What Changed Once Evening Calls Were Handled Better',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No pressure' },
-          { text: 'Useful for after-hours teams' },
-        ],
-      },
-    },
+      slug: 'hvac-after-hours-calls-going-cold',
+      title: 'Emergency calls kept coming in after the office had closed',
+      industryCategory: 'home-services',
+      industryLabel: 'Home Services',
+      industries: ['hvac'],
+      systems: ['ai-lead-handling'],
+      topics: ['missed-calls', 'emergency-handling', 'lead-routing'],
+      publishDate: '2025-11-01',
+      client: 'Thermal Comfort Services',
+      location: 'Manchester, UK',
+      business: 'Thermal Comfort Services',
+      duration: '6 weeks',
+      completedDate: 'November 2025',
+      heroHeadline: 'Emergency calls kept coming in after the office had closed',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Emergency Routing', 'After-Hours Leads', 'HVAC', 'Call Triage', 'Lead Recovery'],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'After Hours' },
+        problem: { challengeBadgeLabel: 'What Was Happening' },
+        solution: { solutionBadgeLabel: 'What They Changed' },
+        results: {
+          detailedResultsBadgeLabel: 'What Improved',
+          detailedResultsSectionTitle: 'What Changed Once Evening Calls Were Handled Better',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No pressure' },
+            { text: 'Useful for after-hours teams' },
+          ],
+        },
+      }
   };
 }
 

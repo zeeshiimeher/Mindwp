@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const autoRepairLeadHandlingExample: ResourceData = {
-  slug,
-  title: 'Auto Repair Lead Handling Example',
-  description:
-    'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-  category: 'ai-lead-handling',
-  publishedAt: '2026-01-14',
-  systems: ['ai-lead-handling', 'smart-website-systems'],
-  industries: ['automotive'],
-  topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Auto Repair Lead Handling Example',
     description:
       'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
     canonical,
   },
-  sections: [
+    title: 'Auto Repair Lead Handling Example',
+    description:
+    'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+    category: 'ai-lead-handling',
+    publishedAt: '2026-01-14',
+    systems: ['ai-lead-handling', 'smart-website-systems'],
+    industries: ['automotive'],
+    topics: ['lead-management'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Auto Repair Lead Handling Example',
@@ -181,5 +181,5 @@ export const autoRepairLeadHandlingExample: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

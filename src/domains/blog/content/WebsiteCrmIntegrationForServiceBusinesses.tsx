@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
-  slug: 'website-crm-integration-for-service-businesses',
-  title: 'Website CRM Integration for Service Businesses',
-  seo: {
+    seo: {
     title: 'Website CRM Integration for Service Businesses',
     description:
       'Learn how website CRM integration for service businesses connects lead capture, pipeline management, and follow-up automation into one operational workflow.',
@@ -14,20 +12,22 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
         'Learn how website CRM integration for service businesses connects lead capture, pipeline management, and follow-up automation into one operational workflow.',
     },
   },
-  publishDate: '2024-08-05',
-  authorKey: 'TECHNICAL',
-  category: 'smart-website-systems',
-  industries: [],
-  systems: ['crm-automation'],
-  topics: ['crm-integration'],
-  tags: [
+    slug: 'website-crm-integration-for-service-businesses',
+    title: 'Website CRM Integration for Service Businesses',
+    publishDate: '2024-08-05',
+    authorKey: 'TECHNICAL',
+    category: 'smart-website-systems',
+    industries: [],
+    systems: ['crm-automation'],
+    topics: ['crm-integration'],
+    tags: [
     'CRM Integration',
     'Website CRM',
     'Service Business',
     'Lead Management',
     'Automation Workflow',
   ],
-  sections: [
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -139,5 +139,5 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
       content:
         'If manual lead handling is slowing response time and leaking revenue, crm-infrastructure-implementation gives you a structured system for capture, routing, and follow-up instead of another disconnected tool.',
     },
-  ],
+  ]
 };

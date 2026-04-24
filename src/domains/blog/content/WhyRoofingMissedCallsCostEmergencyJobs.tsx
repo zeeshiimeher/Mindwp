@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
-  slug: 'why-roofing-missed-calls-cost-emergency-jobs',
-  title: 'Why Roofing Missed Calls Cost Emergency Jobs',
-  seo: {
+    seo: {
     title: 'Why Roofing Missed Calls Cost Emergency Jobs',
     description:
       'Discover why roofing missed calls cost emergency jobs during storm events and how automated call recovery systems prevent lost repair revenue.',
@@ -14,14 +12,16 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
         'Discover why roofing missed calls cost emergency jobs during storm events and how automated call recovery systems prevent lost repair revenue.',
     },
   },
-  publishDate: '2025-04-17',
-  authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
-  industries: ['roofing'],
-  systems: ['ai-lead-handling'],
-  topics: ['missed-calls'],
-  tags: ['Roofing', 'Missed Calls', 'Emergency Jobs', 'Call Recovery', 'Lead Loss'],
-  sections: [
+    slug: 'why-roofing-missed-calls-cost-emergency-jobs',
+    title: 'Why Roofing Missed Calls Cost Emergency Jobs',
+    publishDate: '2025-04-17',
+    authorKey: 'EDITORIAL',
+    category: 'home-services-industry',
+    industries: ['roofing'],
+    systems: ['ai-lead-handling'],
+    topics: ['missed-calls'],
+    tags: ['Roofing', 'Missed Calls', 'Emergency Jobs', 'Call Recovery', 'Lead Loss'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
       content:
         'If your roofing company misses calls during storms, automated recovery ensures every emergency caller gets a response. See how AI lead systems capture high-value roofing leads.',
     },
-  ],
+  ]
 };

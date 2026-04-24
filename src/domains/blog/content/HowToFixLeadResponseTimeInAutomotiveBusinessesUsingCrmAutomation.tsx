@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: BlogPostData = {
-  slug: 'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
-  title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
-  seo: {
+    seo: {
     title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
     description:
       'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',
@@ -14,14 +12,16 @@ export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: B
         'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: ['automotive'],
-  systems: ['crm-automation'],
-  topics: ['lead-response-time'],
-  tags: ['Automotive', 'CRM Automation', 'Lead Response Time', 'Enquiry Management', 'System'],
-  sections: [
+    slug: 'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
+    title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
+    publishDate: '2026-04-06',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: ['automotive'],
+    systems: ['crm-automation'],
+    topics: ['lead-response-time'],
+    tags: ['Automotive', 'CRM Automation', 'Lead Response Time', 'Enquiry Management', 'System'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -107,5 +107,5 @@ export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: B
       content:
         'If your automotive business loses leads to slow response, CRM automation can close the gap. See how centralised intake and instant acknowledgement transform response time.',
     },
-  ],
+  ]
 };

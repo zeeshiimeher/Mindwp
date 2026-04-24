@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const salonCrmPipelineForClientRetention: BlogPostData = {
-  slug: 'salon-crm-pipeline-for-client-retention',
-  title: 'Salon CRM Pipeline for Client Retention',
-  seo: {
+    seo: {
     title: 'Salon CRM Pipeline for Client Retention Guide',
     description:
       'Learn how a salon CRM pipeline for client retention tracks every client from first enquiry through booking, rebooking, and lapse prevention.',
@@ -14,14 +12,16 @@ export const salonCrmPipelineForClientRetention: BlogPostData = {
         'Learn how a salon CRM pipeline for client retention tracks every client from first enquiry through booking, rebooking, and lapse prevention.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
-  tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Rebooking', 'Automation'],
-  sections: [
+    slug: 'salon-crm-pipeline-for-client-retention',
+    title: 'Salon CRM Pipeline for Client Retention',
+    publishDate: '2026-04-06',
+    authorKey: 'TECHNICAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline'],
+    tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Rebooking', 'Automation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -114,5 +114,5 @@ export const salonCrmPipelineForClientRetention: BlogPostData = {
       content:
         'If your salon measures success by new bookings rather than client retention, a CRM pipeline can shift the focus to long-term value. See how CRM automation structures the salon client lifecycle.',
     },
-  ],
+  ]
 };

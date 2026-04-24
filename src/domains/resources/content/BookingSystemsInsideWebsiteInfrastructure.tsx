@@ -162,23 +162,23 @@ const finalCta = {
 };
 
 export const bookingSystemsInsideWebsiteInfrastructure: ResourceData = {
-  slug,
-  title: 'Booking Systems Inside Website Infrastructure',
-  description:
-    'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-  category: 'smart-website-systems',
-  publishedAt: '2025-11-17',
-  systems: ['smart-website-systems'],
-  industries: [],
-  topics: ['booking-systems', 'booking-automation'],
-  primaryService: 'smart-website-systems',
-  seo: {
+    slug,
+    seo: {
     title: 'Booking Systems Inside Website Infrastructure',
     description:
       'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
     canonical,
   },
-  sections: [
+    title: 'Booking Systems Inside Website Infrastructure',
+    description:
+    'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+    category: 'smart-website-systems',
+    publishedAt: '2025-11-17',
+    systems: ['smart-website-systems'],
+    industries: [],
+    topics: ['booking-systems', 'booking-automation'],
+    primaryService: 'smart-website-systems',
+    sections: [
     {
       type: 'hero',
       heading: 'Booking Systems Inside Website Infrastructure',
@@ -247,5 +247,5 @@ export const bookingSystemsInsideWebsiteInfrastructure: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ],
+  ]
 };

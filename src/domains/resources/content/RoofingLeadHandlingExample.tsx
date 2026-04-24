@@ -108,23 +108,23 @@ const finalCta = {
 };
 
 export const roofingLeadHandlingExample: ResourceData = {
-  slug,
-  title: 'Roofing Lead Handling Example',
-  description:
-    'See how roofing companies implement AI-assisted lead handling systems that respond instantly, qualify by job type, and route emergency and quote leads to the right team members.',
-  category: 'ai-lead-handling',
-  publishedAt: '2026-01-19',
-  systems: ['ai-lead-handling'],
-  industries: ['roofing'],
-  topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Roofing Lead Handling Example',
     description:
       'See how roofing companies implement AI-assisted lead handling systems that respond instantly, qualify by job type, and route emergency and quote leads to the right team members.',
     canonical,
   },
-  sections: [
+    title: 'Roofing Lead Handling Example',
+    description:
+    'See how roofing companies implement AI-assisted lead handling systems that respond instantly, qualify by job type, and route emergency and quote leads to the right team members.',
+    category: 'ai-lead-handling',
+    publishedAt: '2026-01-19',
+    systems: ['ai-lead-handling'],
+    industries: ['roofing'],
+    topics: ['lead-management'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Roofing Lead Handling Example',
@@ -180,5 +180,5 @@ export const roofingLeadHandlingExample: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

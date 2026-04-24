@@ -218,37 +218,37 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'property-managers',
-        industries: ['property-management'],
-        systems: [
-            'crm-automation',
-            'smart-website-systems',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'lead-qualification', 'pipeline-visibility'],
-        type: 'detail',
-        parentSlug: 'real-estate-property-services',
-        seo: {
-            title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
-            description:
-                'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
-            canonical: '/industries/real-estate-property-services/property-managers',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the portfolio is leaking',
-            description:
-                'If landlords keep chasing for certainty or tenants are left waiting with no update, walk us through a normal month and we will show you which gap is costing the most doors.',
-        },
-    };
+            seo: {
+                title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
+                description:
+                    'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+                canonical: '/industries/real-estate-property-services/property-managers',
+            },
+            slug: 'property-managers',
+            industries: ['property-management'],
+            systems: [
+                'crm-automation',
+                'smart-website-systems',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'lead-qualification', 'pipeline-visibility'],
+            type: 'detail',
+            parentSlug: 'real-estate-property-services',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the portfolio is leaking',
+                description:
+                    'If landlords keep chasing for certainty or tenants are left waiting with no update, walk us through a normal month and we will show you which gap is costing the most doors.',
+            }
+        };
 }
 
 export const propertyManagersIndustryPageData: IndustryPageData = buildPropertyManagersIndustryPageData();

@@ -253,38 +253,38 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'accounting-firms',
-        industries: ['accounting'],
-        systems: [
-            'crm-automation',
-            'smart-website-systems',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'lead-qualification', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'legal-professional-services',
-        seo: {
-            title: 'Accounting Firms — Stop Losing Owners In The Gap Between Proposal And Signature | MindWP',
-            description:
-                'For accounting firms where proposals get sent and then go quiet. We put quiet, scheduled follow-up, faster enquiry acknowledgement, and review prompts in place so good prospects stop drifting to whoever stayed in front of them.',
-            canonical: '/industries/legal-professional-services/accounting-firms',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the proposals are dying',
-            description:
-                'If discovery calls go well but proposals sit in inboxes and never come back, walk us through the last few and we will show you where the decision is actually slipping away.',
-        },
-    };
+            seo: {
+                title: 'Accounting Firms — Stop Losing Owners In The Gap Between Proposal And Signature | MindWP',
+                description:
+                    'For accounting firms where proposals get sent and then go quiet. We put quiet, scheduled follow-up, faster enquiry acknowledgement, and review prompts in place so good prospects stop drifting to whoever stayed in front of them.',
+                canonical: '/industries/legal-professional-services/accounting-firms',
+            },
+            slug: 'accounting-firms',
+            industries: ['accounting'],
+            systems: [
+                'crm-automation',
+                'smart-website-systems',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'lead-qualification', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'legal-professional-services',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the proposals are dying',
+                description:
+                    'If discovery calls go well but proposals sit in inboxes and never come back, walk us through the last few and we will show you where the decision is actually slipping away.',
+            }
+        };
 }
 
 export const accountingFirmsIndustryPageData: IndustryPageData = buildAccountingFirmsIndustryPageData();

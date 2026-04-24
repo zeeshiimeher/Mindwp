@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
-  slug: 'why-salons-lose-clients-without-crm-pipeline',
-  title: 'Why Salons Lose Clients Without a CRM Pipeline',
-  seo: {
+    seo: {
     title: 'Why Salons Lose Clients Without a CRM Pipeline',
     description:
       'Salons lose clients without a CRM pipeline because enquiries go untracked, follow-ups are missed, and rebooking depends on the client remembering to call back.',
@@ -14,14 +12,16 @@ export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
         'Salons lose clients without a CRM pipeline because enquiries go untracked, follow-ups are missed, and rebooking depends on the client remembering to call back.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
-  tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Booking', 'Follow-Up'],
-  sections: [
+    slug: 'why-salons-lose-clients-without-crm-pipeline',
+    title: 'Why Salons Lose Clients Without a CRM Pipeline',
+    publishDate: '2026-04-06',
+    authorKey: 'TECHNICAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline'],
+    tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Booking', 'Follow-Up'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -81,5 +81,5 @@ export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
       content:
         'If your salon relies on clients remembering to rebook, you are losing revenue every week. See how CRM automation tracks every client relationship.',
     },
-  ],
+  ]
 };

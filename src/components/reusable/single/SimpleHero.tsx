@@ -57,6 +57,7 @@ export interface SimpleHeroProps {
     | 'system'
     | 'pageType'
     | 'slug'
+    | 'allowSecondaryCTA'
     | 'primaryActionVariant'
     | 'primaryButtonCssPrefix'
     | 'secondaryButtonCssPrefix'
@@ -121,6 +122,7 @@ export function SimpleHero({
             slug={smartCta.slug}
             intent='entry'
             position='hero'
+            allowSecondaryCTA={smartCta.allowSecondaryCTA}
             primaryActionVariant={smartCta.primaryActionVariant}
             primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
             secondaryButtonCssPrefix={smartCta.secondaryButtonCssPrefix}

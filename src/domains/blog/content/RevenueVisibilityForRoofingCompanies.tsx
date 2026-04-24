@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const revenueVisibilityForRoofingCompanies: BlogPostData = {
-  slug: 'revenue-visibility-for-roofing-companies',
-  title: 'Revenue Visibility for Roofing Companies',
-  seo: {
+    seo: {
     title: 'Revenue Visibility for Roofing Companies',
     description:
       'Discover how revenue visibility for roofing companies uses CRM pipeline tracking to connect every enquiry to completed jobs and measurable revenue outcomes.',
@@ -14,14 +12,16 @@ export const revenueVisibilityForRoofingCompanies: BlogPostData = {
         'Discover how revenue visibility for roofing companies uses CRM pipeline tracking to connect every enquiry to completed jobs and measurable revenue outcomes.',
     },
   },
-  publishDate: '2025-11-27',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: ['roofing'],
-  systems: ['crm-automation'],
-  topics: ['revenue-visibility'],
-  tags: ['Roofing', 'Revenue Visibility', 'CRM', 'Pipeline Tracking', 'Reporting'],
-  sections: [
+    slug: 'revenue-visibility-for-roofing-companies',
+    title: 'Revenue Visibility for Roofing Companies',
+    publishDate: '2025-11-27',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: ['roofing'],
+    systems: ['crm-automation'],
+    topics: ['revenue-visibility'],
+    tags: ['Roofing', 'Revenue Visibility', 'CRM', 'Pipeline Tracking', 'Reporting'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -98,5 +98,5 @@ export const revenueVisibilityForRoofingCompanies: BlogPostData = {
       content:
         "If your roofing company cannot trace revenue to its source or forecast next month's pipeline, CRM systems can fix that. See how revenue visibility works for service businesses.",
     },
-  ],
+  ]
 };

@@ -238,63 +238,63 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'beauty-personal-care',
-        industries: ['aesthetic-clinic', 'hair-salon', 'nail-salon', 'med-spa', 'lash-extensions'],
-        category: 'beauty-personal-care',
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['lead-response-time', 'follow-up', 'booking-systems', 'review-generation'],
-        type: 'category',
-        seo: {
-            title: 'Beauty & Appointment Businesses — Booking, Rebook, Retention | MindWP',
-            description:
-                'Salons, lash studios, med spas, and aesthetic clinics share the same loop — fastest reply, easiest booking, most remembered business. We put the systems in place that fix the loop where it actually breaks.',
-            canonical: '/industries/beauty-personal-care',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        decisionChecklist: decisionChecklistData,
-        spectrum: spectrumData,
-        systemLayers: systemLayersData,
-        detailRoutes: detailRoutesData,
-        explore: exploreData,
-        sectionControls: {
-            subIndustries: { enabled: false },
-            caseStudies: { enabled: false },
-        },
-        faq: {
-            title: 'Things owners ask before they pick a page',
-            description: 'A few common questions that come up before choosing the closest treatment page. These stay broad on purpose so you can decide where to go next quickly.',
-            faqs: [
-                {
-                    question: 'I run more than one of these — which page should I read?',
-                    answer:
-                        'Read the one closest to your highest-volume treatment. The patterns are shared, but the breaking points differ.',
-                },
-                {
-                    question: 'Is this only for owners with a team?',
-                    answer:
-                        'No. Solo lash techs, single-chair stylists, and small clinics feel the booking + rebook leak more, not less.',
-                },
-                {
-                    question: 'Will this replace our salon software?',
-                    answer:
-                        'No. It sits on top of your booking software and fills the bits it does not — first reply, cycle nudges, structured follow-up, reviews.',
-                },
+            seo: {
+                title: 'Beauty & Appointment Businesses — Booking, Rebook, Retention | MindWP',
+                description:
+                    'Salons, lash studios, med spas, and aesthetic clinics share the same loop — fastest reply, easiest booking, most remembered business. We put the systems in place that fix the loop where it actually breaks.',
+                canonical: '/industries/beauty-personal-care',
+            },
+            slug: 'beauty-personal-care',
+            industries: ['aesthetic-clinic', 'hair-salon', 'nail-salon', 'med-spa', 'lash-extensions'],
+            category: 'beauty-personal-care',
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
             ],
-        },
-        cta: {
-            title: 'Pick the page closest to your chair',
-            description:
-                'Each detail page below shows where the booking or return loop usually breaks for that treatment. Start with the one that sounds closest to the way your week actually runs.',
-        },
-    };
+            topics: ['lead-response-time', 'follow-up', 'booking-systems', 'review-generation'],
+            type: 'category',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            decisionChecklist: decisionChecklistData,
+            spectrum: spectrumData,
+            systemLayers: systemLayersData,
+            detailRoutes: detailRoutesData,
+            explore: exploreData,
+            sectionControls: {
+                subIndustries: { enabled: false },
+                caseStudies: { enabled: false },
+            },
+            faq: {
+                title: 'Things owners ask before they pick a page',
+                description: 'A few common questions that come up before choosing the closest treatment page. These stay broad on purpose so you can decide where to go next quickly.',
+                faqs: [
+                    {
+                        question: 'I run more than one of these — which page should I read?',
+                        answer:
+                            'Read the one closest to your highest-volume treatment. The patterns are shared, but the breaking points differ.',
+                    },
+                    {
+                        question: 'Is this only for owners with a team?',
+                        answer:
+                            'No. Solo lash techs, single-chair stylists, and small clinics feel the booking + rebook leak more, not less.',
+                    },
+                    {
+                        question: 'Will this replace our salon software?',
+                        answer:
+                            'No. It sits on top of your booking software and fills the bits it does not — first reply, cycle nudges, structured follow-up, reviews.',
+                    },
+                ],
+            },
+            cta: {
+                title: 'Pick the page closest to your chair',
+                description:
+                    'Each detail page below shows where the booking or return loop usually breaks for that treatment. Start with the one that sounds closest to the way your week actually runs.',
+            }
+        };
 }
 
 export const beautyPersonalCareIndustryPageData: IndustryPageData = buildBeautyPersonalCareIndustryPageData();

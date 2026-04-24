@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
-  slug: 'how-review-automation-improves-local-authority',
-  title: 'How Review Automation Improves Local Authority',
-  seo: {
+    seo: {
     title: 'How Review Automation Improves Local Authority',
     description:
       'Understand how review automation improves local authority by building consistent review velocity that strengthens search rankings and customer trust signals.',
@@ -14,14 +12,16 @@ export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
         'Understand how review automation improves local authority by building consistent review velocity that strengthens search rankings and customer trust signals.',
     },
   },
-  publishDate: '2024-12-01',
-  authorKey: 'EDITORIAL',
-  category: 'reputation-review',
-  industries: [],
-  systems: ['reputation-review'],
-  topics: ['review-automation'],
-  tags: ['Review Automation', 'Local Authority', 'Reputation', 'Local SEO', 'Trust Signals'],
-  sections: [
+    slug: 'how-review-automation-improves-local-authority',
+    title: 'How Review Automation Improves Local Authority',
+    publishDate: '2024-12-01',
+    authorKey: 'EDITORIAL',
+    category: 'reputation-review',
+    industries: [],
+    systems: ['reputation-review'],
+    topics: ['review-automation'],
+    tags: ['Review Automation', 'Local Authority', 'Reputation', 'Local SEO', 'Trust Signals'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -106,5 +106,5 @@ export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
       content:
         'If your review profile has gaps and your competitors have recent reviews, automation can close that authority gap. See how review systems build local authority consistently.',
     },
-  ],
+  ]
 };

@@ -173,36 +173,36 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'driving-schools',
-        industries: ['driving-school'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'local-seo-authority',
-            'reputation-review',
-        ],
-        topics: ['follow-up', 'booking-systems', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'local-appointment-businesses',
-        seo: {
-            title: 'Driving Schools — Turn "I\'ll Book Next Week" Into Booked Lessons | MindWP',
-            description:
-                'For driving schools where enquiries drift instead of booking. We put gentle, scheduled follow-up, easy booking, and review prompts in place so the soft maybes land.',
-            canonical: '/industries/local-appointment-businesses/driving-schools',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        systemLayers: systemLayersData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the diary leaks',
-            description:
-                'If learners ask about slots or test-date lessons but never seem to turn into a first booking, walk us through how a typical week runs and we will show you the first thing worth fixing.',
-        },
-    };
+            seo: {
+                title: 'Driving Schools — Turn "I\'ll Book Next Week" Into Booked Lessons | MindWP',
+                description:
+                    'For driving schools where enquiries drift instead of booking. We put gentle, scheduled follow-up, easy booking, and review prompts in place so the soft maybes land.',
+                canonical: '/industries/local-appointment-businesses/driving-schools',
+            },
+            slug: 'driving-schools',
+            industries: ['driving-school'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'local-seo-authority',
+                'reputation-review',
+            ],
+            topics: ['follow-up', 'booking-systems', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'local-appointment-businesses',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            systemLayers: systemLayersData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the diary leaks',
+                description:
+                    'If learners ask about slots or test-date lessons but never seem to turn into a first booking, walk us through how a typical week runs and we will show you the first thing worth fixing.',
+            }
+        };
 }
 
 export const drivingSchoolsIndustryPageData: IndustryPageData = buildDrivingSchoolsIndustryPageData();

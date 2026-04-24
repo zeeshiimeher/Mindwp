@@ -19,6 +19,7 @@ export interface NarrativeStatsSectionProps {
   narrativeParagraphs: string[];
   primaryAction?: ButtonProps;
   secondaryAction?: ButtonProps;
+  allowSecondaryCTA?: true;
   stats: NarrativeStatItem[];
   backgroundColor?: string;
   cssPrefix?: string;
@@ -33,6 +34,7 @@ export function NarrativeStatsSection({
   narrativeParagraphs,
   primaryAction,
   secondaryAction,
+  allowSecondaryCTA,
   stats,
   backgroundColor = '',
   cssPrefix = '',
@@ -59,7 +61,9 @@ export function NarrativeStatsSection({
             {(primaryAction || secondaryAction) && (
               <div className={`${BLOCK}__actions`}>
                 {primaryAction && <Button variant='secondary' {...primaryAction} />}
-                {secondaryAction && <Button variant='link' {...secondaryAction} />}
+                {allowSecondaryCTA === true && secondaryAction && (
+                  <Button variant='link' {...secondaryAction} />
+                )}
               </div>
             )}
           </div>

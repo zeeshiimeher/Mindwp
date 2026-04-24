@@ -5,17 +5,17 @@ import { conversionLayerPage } from './conversion-layer';
 const slug = 'conversion-funnel-system-vs-landing-page-development';
 
 export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
-  ...conversionLayerPage,
-  slug,
-  category: conversionLayerPage.category,
-  badge: 'Conversion Funnel System',
-  seo: buildServiceSeo({
+...conversionLayerPage,
+slug,
+seo: buildServiceSeo({
     slug,
     title: 'Conversion Funnel System vs Landing Page Development | MindWP',
     description:
       'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
   }),
-  hero: {
+category: conversionLayerPage.category,
+badge: 'Conversion Funnel System',
+hero: {
     ...conversionLayerPage.hero,
     badge: 'Conversion Funnel System',
     title: 'Conversion Funnel System vs Landing Page Development',
@@ -23,7 +23,7 @@ export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
       'A landing page can ship without fixing the revenue path around it. This page is for businesses deciding whether they need a single page delivered or the full path from click to follow-up rebuilt as one system.',
     list: ['Single page', 'Broken path', 'System decision'],
   },
-  sections: {
+sections: {
     ...conversionLayerPage.sections,
     funnelBreakpoints: conversionLayerPage.sections.funnelBreakpoints,
     foundation: {
@@ -78,9 +78,9 @@ export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
     },
     faqSection: conversionLayerPage.sections.faqSection,
   },
-  cta: {
+cta: {
     title: 'See whether the real need is a page build or a full funnel system',
     description:
       'We will map where attention drops, where the next-step mismatch begins, and whether page-only work would leave the commercial leak untouched.',
-  },
+  }
 } satisfies typeof conversionLayerPage;

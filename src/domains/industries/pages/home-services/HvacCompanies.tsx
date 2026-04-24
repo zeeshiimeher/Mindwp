@@ -316,36 +316,36 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-    slug: 'hvac-companies',
-    industries: ['hvac'],
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'crm-automation',
-      'local-seo-authority',
-    ],
-    topics: ['missed-calls', 'lead-management', 'client-reactivation'],
-    type: 'detail',
-    parentSlug: 'home-services',
-    seo: {
-      title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary | MindWP',
-      description:
-        'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-      canonical: '/industries/home-services/hvac-companies',
-    },
-    hero: { ...heroData },
-    operatingPatterns: operatingPatternsData,
-    comparison: comparisonData,
-    systemLayers: systemLayersData,
-    workflowExamples: workflowExamplesData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about the last cold morning',
-      description:
-        'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
-    },
+      seo: {
+        title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary | MindWP',
+        description:
+          'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+        canonical: '/industries/home-services/hvac-companies',
+      },
+      slug: 'hvac-companies',
+      industries: ['hvac'],
+      systems: [
+        'smart-website-systems',
+        'ai-lead-handling',
+        'crm-automation',
+        'local-seo-authority',
+      ],
+      topics: ['missed-calls', 'lead-management', 'client-reactivation'],
+      type: 'detail',
+      parentSlug: 'home-services',
+      hero: { ...heroData },
+      operatingPatterns: operatingPatternsData,
+      comparison: comparisonData,
+      systemLayers: systemLayersData,
+      workflowExamples: workflowExamplesData,
+      pathways: pathwaysData,
+      explore: exploreData,
+      faq: faqData,
+      cta: {
+        title: 'Tell us about the last cold morning',
+        description:
+          'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
+      }
   };
 }
 

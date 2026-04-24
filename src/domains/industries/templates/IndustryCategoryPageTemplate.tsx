@@ -20,7 +20,6 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import type { IndustryCategory } from '@/domains/industries/catalog';
-import { IndustrySubIndustriesSection } from '@/domains/industries/components';
 import {
   resolveIndustryCategoryDetailRoutes,
   resolveIndustryPathwaySection,
@@ -103,7 +102,6 @@ export function IndustryCategoryPageTemplate({
     slug,
     'industry-category'
   );
-  const showSubIndustries = sectionControls?.subIndustries?.enabled !== false && !detailRoutes;
   const resolvedDetailRoutes = resolveIndustryCategoryDetailRoutes(detailRoutes, category);
 
   return (
@@ -132,15 +130,7 @@ export function IndustryCategoryPageTemplate({
 
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
 
-          {resolvedDetailRoutes ? (
-            <RelatedCardsSection {...resolvedDetailRoutes} />
-          ) : showSubIndustries ? (
-            <IndustrySubIndustriesSection
-              category={category}
-              description={sectionControls?.subIndustries?.description}
-              cssPrefix={sectionControls?.subIndustries?.cssPrefix}
-            />
-          ) : null}
+          {resolvedDetailRoutes && <RelatedCardsSection {...resolvedDetailRoutes} />}
 
           {process && <IndustryProcessSection {...process} />}
 

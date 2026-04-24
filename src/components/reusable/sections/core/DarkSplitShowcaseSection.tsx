@@ -20,6 +20,7 @@ export interface DarkSplitShowcaseSectionProps {
   description?: string;
   headerPrimaryAction?: ButtonProps;
   headerSecondaryAction?: ButtonProps;
+  allowSecondaryCTA?: true;
   introHeading: string;
   introDescription: string;
   primaryAction?: ButtonProps;
@@ -34,6 +35,7 @@ export function DarkSplitShowcaseSection({
   description,
   headerPrimaryAction,
   headerSecondaryAction,
+  allowSecondaryCTA,
   introHeading,
   introDescription,
   primaryAction,
@@ -49,6 +51,7 @@ export function DarkSplitShowcaseSection({
         {...(description !== undefined && { description })}
         {...(headerPrimaryAction !== undefined && { primaryAction: headerPrimaryAction })}
         {...(headerSecondaryAction !== undefined && { secondaryAction: headerSecondaryAction })}
+        allowSecondaryCTA={allowSecondaryCTA}
         className={`${BLOCK}__header`}
       />
 
@@ -60,7 +63,9 @@ export function DarkSplitShowcaseSection({
         {(primaryAction || secondaryAction) && (
           <div className={`${BLOCK}__intro-actions`}>
             {primaryAction && <Button variant='white' {...primaryAction} />}
-            {secondaryAction && <Button variant='outline-light' {...secondaryAction} />}
+            {allowSecondaryCTA === true && secondaryAction && (
+              <Button variant='outline-light' {...secondaryAction} />
+            )}
           </div>
         )}
       </div>
@@ -84,7 +89,7 @@ export function DarkSplitShowcaseSection({
             {(panel.primaryAction || panel.secondaryAction) && (
               <div className={`${BLOCK}__panel-actions`}>
                 {panel.primaryAction && <Button variant='white' {...panel.primaryAction} />}
-                {panel.secondaryAction && (
+                {allowSecondaryCTA === true && panel.secondaryAction && (
                   <Button variant='outline-light' {...panel.secondaryAction} />
                 )}
               </div>

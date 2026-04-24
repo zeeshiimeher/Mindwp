@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const localVisibilityFramework: ResourceData = {
-  slug,
-  title: 'Local Visibility Framework',
-  description:
-    'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
-  category: 'local-seo-authority',
-  publishedAt: '2025-12-15',
-  systems: ['local-seo-authority'],
-  industries: [],
-  topics: ['local-visibility'],
-  primaryService: 'local-seo-authority',
-  seo: {
+    slug,
+    seo: {
     title: 'Local Visibility Framework',
     description:
       'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
     canonical,
   },
-  sections: [
+    title: 'Local Visibility Framework',
+    description:
+    'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
+    category: 'local-seo-authority',
+    publishedAt: '2025-12-15',
+    systems: ['local-seo-authority'],
+    industries: [],
+    topics: ['local-visibility'],
+    primaryService: 'local-seo-authority',
+    sections: [
     {
       type: 'hero',
       heading: 'Local Visibility Framework',
@@ -237,5 +237,5 @@ export const localVisibilityFramework: ResourceData = {
       content: getRelatedResourcesContent('local-seo-authority'),
       resources: getRelatedResources('local-seo-authority', canonical),
     },
-  ],
+  ]
 };

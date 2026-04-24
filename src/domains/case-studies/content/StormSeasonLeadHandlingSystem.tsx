@@ -121,55 +121,55 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
   ];
 
   return {
-    slug: 'roofing-storm-calls-overwhelmed-the-team',
-    title: 'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
-    industryCategory: 'home-services',
-    industryLabel: 'Home Services',
-    industries: ['roofing'],
-    systems: ['ai-lead-handling'],
-    topics: ['missed-calls', 'lead-response-time', 'lead-capture'],
-    publishDate: '2025-09-15',
-    client: 'Apex Roofing',
-    location: 'Birmingham, UK',
-    business: 'Apex Roofing',
-    duration: '5 weeks',
-    completedDate: 'September 2025',
-    heroHeadline:
-      'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Missed Call Recovery', 'Roofing', 'Storm Damage', 'Lead Handling', 'Home Services'],
-    seo: {
-      title: 'Roofing storm call case study: more missed calls recovered',
-      description:
-      'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
-      canonical: '/case-studies/roofing-storm-calls-overwhelmed-the-team',
-      openGraph: {
+      seo: {
         title: 'Roofing storm call case study: more missed calls recovered',
         description:
-          'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
+        'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
+        canonical: '/case-studies/roofing-storm-calls-overwhelmed-the-team',
+        openGraph: {
+          title: 'Roofing storm call case study: more missed calls recovered',
+          description:
+            'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Storm Week' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      workflows: { workflowsBadgeLabel: 'What Happened Next' },
-      results: {
-        detailedResultsBadgeLabel: 'What Changed',
-        detailedResultsSectionTitle: 'What Changed Once Storm Calls Were Caught Earlier',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No pressure' },
-          { text: 'Useful for storm-heavy trades' },
-        ],
-      },
-    },
+      slug: 'roofing-storm-calls-overwhelmed-the-team',
+      title: 'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
+      industryCategory: 'home-services',
+      industryLabel: 'Home Services',
+      industries: ['roofing'],
+      systems: ['ai-lead-handling'],
+      topics: ['missed-calls', 'lead-response-time', 'lead-capture'],
+      publishDate: '2025-09-15',
+      client: 'Apex Roofing',
+      location: 'Birmingham, UK',
+      business: 'Apex Roofing',
+      duration: '5 weeks',
+      completedDate: 'September 2025',
+      heroHeadline:
+        'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Missed Call Recovery', 'Roofing', 'Storm Damage', 'Lead Handling', 'Home Services'],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Storm Week' },
+        problem: { challengeBadgeLabel: 'What Was Happening' },
+        workflows: { workflowsBadgeLabel: 'What Happened Next' },
+        results: {
+          detailedResultsBadgeLabel: 'What Changed',
+          detailedResultsSectionTitle: 'What Changed Once Storm Calls Were Caught Earlier',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No pressure' },
+            { text: 'Useful for storm-heavy trades' },
+          ],
+        },
+      }
   };
 }
 

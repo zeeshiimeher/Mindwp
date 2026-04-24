@@ -14,7 +14,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'For Small Private Clinics',
+        badge: "Private Clinics",
         title: 'They Sent The Enquiry. Read Your Reply Twice. Still Did Not Book.',
         description:
             'Most private clinic enquiries do not disappear because the person was never interested. They hesitate, read the reply twice, check reviews, wait a few days, and often never book because the next step felt unclear and nobody followed up while the decision was still open.',
@@ -215,37 +215,37 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'small-private-clinics',
-        industries: ['private-clinic'],
-        systems: [
-            'smart-website-systems',
-            'reputation-review',
-            'crm-automation',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'review-generation', 'booking-systems'],
-        type: 'detail',
-        parentSlug: 'local-appointment-businesses',
-        seo: {
-            title: 'Small Private Clinics — Turn Hesitant Enquiries Into Booked Consultations | MindWP',
-            description:
-                'For small private clinics where enquiries are warm but never seem to book. We help reply in a way that reassures, build the trust signals patients quietly check, and hold the door open without pressure.',
-            canonical: '/industries/local-appointment-businesses/small-private-clinics',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where patients are hesitating',
-            description:
-                'If enquiries come in but the booking keeps getting delayed or quietly disappears, walk us through the patient journey and we will show you where the trust gap actually is.',
-        },
-    };
+            seo: {
+                title: 'Small Private Clinics — Turn Hesitant Enquiries Into Booked Consultations | MindWP',
+                description:
+                    'For small private clinics where enquiries are warm but never seem to book. We help reply in a way that reassures, build the trust signals patients quietly check, and hold the door open without pressure.',
+                canonical: '/industries/local-appointment-businesses/small-private-clinics',
+            },
+            slug: 'small-private-clinics',
+            industries: ['private-clinic'],
+            systems: [
+                'smart-website-systems',
+                'reputation-review',
+                'crm-automation',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'review-generation', 'booking-systems'],
+            type: 'detail',
+            parentSlug: 'local-appointment-businesses',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where patients are hesitating',
+                description:
+                    'If enquiries come in but the booking keeps getting delayed or quietly disappears, walk us through the patient journey and we will show you where the trust gap actually is.',
+            }
+        };
 }
 
 export const smallPrivateClinicsIndustryPageData: IndustryPageData = buildSmallPrivateClinicsIndustryPageData();

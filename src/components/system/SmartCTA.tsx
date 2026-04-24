@@ -25,16 +25,6 @@ import {
 } from '@/lib/page/pageIdentity';
 
 const BLOCK = 'cta-section';
-const ALLOW_SECONDARY_BY_PAGE_TYPE: Record<ContactSourceType, boolean> = {
-  blog: false,
-  'case-study': false,
-  feature: true,
-  global: false,
-  industry: true,
-  page: false,
-  resource: false,
-  service: false,
-};
 
 function hasRenderableText(value: ReactNode | undefined): boolean {
   if (value === null || value === undefined || typeof value === 'boolean') {
@@ -87,6 +77,7 @@ export interface SmartCTAProps {
   headingLevel?: 'h2' | 'h3';
   primaryActionVariant?: ButtonProps['variant'];
   tone?: CtaTone;
+  allowSecondaryCTA?: true;
   secondaryButtonCssPrefix?: string;
   metaItems?: Array<{ text: string }>;
   wrapper?: 'section' | 'none';
@@ -111,6 +102,7 @@ export function SmartCTA({
   headingLevel = 'h2',
   primaryActionVariant = 'white',
   tone = 'descriptive',
+  allowSecondaryCTA,
   secondaryButtonCssPrefix,
   metaItems = [],
   wrapper = 'section',
@@ -175,8 +167,7 @@ export function SmartCTA({
     intent: resolvedIntent,
     tone,
   });
-  const allowSecondary = ALLOW_SECONDARY_BY_PAGE_TYPE[pageTypeForHref];
-  const secondaryConfig = allowSecondary ? resolveSecondaryCta(pageTypeForHref, slug) : undefined;
+  const secondaryConfig = allowSecondaryCTA ? resolveSecondaryCta(pageTypeForHref, slug) : undefined;
 
   const primaryButtonAction: ButtonProps = {
     variant: primaryActionVariant,
@@ -209,6 +200,7 @@ export function SmartCTA({
     return (
       <div className={cn('cta__actions', actionClassName)}>
         <Button {...primaryButtonAction} />
+        {secondaryAction && <Button {...{ variant: 'outline-light', ...secondaryAction }} />}
       </div>
     );
   }

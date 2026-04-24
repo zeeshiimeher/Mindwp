@@ -22,7 +22,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildHomeServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'For Home Service Trades',
+    badge: "Home Services",
     title: 'Water’s On The Floor. They’re Dialling The Next Number While Yours Rings Out.',
     description:
       'In home services, the best enquiries usually land when something has already gone wrong and nobody is willing to wait around. The call gets missed, the callback comes too late, or the quote sits there untouched, and the job goes to the number that answered first.',
@@ -326,44 +326,44 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   return {
-    slug: 'home-services',
-    type: 'category',
-    category: 'home-services',
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
-    industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
-    seo: {
-      title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
-      description:
-        'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
-      canonical: '/industries/home-services',
-    },
-    hero: heroData,
-    imageStrip: imageStripData,
-    operatingPatterns: operatingPatternsData,
-    decisionChecklist: decisionChecklistData,
-    serviceEnvironments: serviceEnvironmentsData,
-    systemLayers: systemLayersData,
-    process: processData,
-    detailRoutes: detailRoutesData,
-    sectionControls: {
-      subIndustries: {
-        enabled: false,
+      seo: {
+        title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
+        description:
+          'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
+        canonical: '/industries/home-services',
       },
-      caseStudies: {
-        enabled: false,
+      slug: 'home-services',
+      type: 'category',
+      category: 'home-services',
+      systems: [
+        'smart-website-systems',
+        'ai-lead-handling',
+        'local-seo-authority',
+        'reputation-review',
+      ],
+      topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
+      industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
+      hero: heroData,
+      imageStrip: imageStripData,
+      operatingPatterns: operatingPatternsData,
+      decisionChecklist: decisionChecklistData,
+      serviceEnvironments: serviceEnvironmentsData,
+      systemLayers: systemLayersData,
+      process: processData,
+      detailRoutes: detailRoutesData,
+      sectionControls: {
+        subIndustries: {
+          enabled: false,
+        },
+        caseStudies: {
+          enabled: false,
+        },
       },
-    },
-    cta: {
-      title: 'Tell us where the work is bleeding out',
-      description:
-        'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
-    },
+      cta: {
+        title: 'Tell us where the work is bleeding out',
+        description:
+          'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
+      }
   };
 }
 

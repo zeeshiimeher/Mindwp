@@ -215,37 +215,37 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'dental-clinics',
-        industries: ['dental-clinic'],
-        systems: [
-            'crm-automation',
-            'smart-website-systems',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'review-generation', 'booking-systems'],
-        type: 'detail',
-        parentSlug: 'local-appointment-businesses',
-        seo: {
-            title: 'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients | MindWP',
-            description:
-                'For dental clinics where the recall list is long and treatment plans quietly stall. We put two-touch recall, plan follow-up, and warmer first replies in place so the chair fills from the patients you already have.',
-            canonical: '/industries/local-appointment-businesses/dental-clinics',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where treatment is dropping off',
-            description:
-                'If pain calls are being answered too slowly or routine treatment and recall keep slipping after the first conversation, walk us through how the month runs and we will show you the first thing worth fixing.',
-        },
-    };
+            seo: {
+                title: 'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients | MindWP',
+                description:
+                    'For dental clinics where the recall list is long and treatment plans quietly stall. We put two-touch recall, plan follow-up, and warmer first replies in place so the chair fills from the patients you already have.',
+                canonical: '/industries/local-appointment-businesses/dental-clinics',
+            },
+            slug: 'dental-clinics',
+            industries: ['dental-clinic'],
+            systems: [
+                'crm-automation',
+                'smart-website-systems',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'review-generation', 'booking-systems'],
+            type: 'detail',
+            parentSlug: 'local-appointment-businesses',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where treatment is dropping off',
+                description:
+                    'If pain calls are being answered too slowly or routine treatment and recall keep slipping after the first conversation, walk us through how the month runs and we will show you the first thing worth fixing.',
+            }
+        };
 }
 
 export const dentalClinicsIndustryPageData: IndustryPageData = buildDentalClinicsIndustryPageData();

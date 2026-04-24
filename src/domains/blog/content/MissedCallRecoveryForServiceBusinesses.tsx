@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
-  slug: 'missed-call-recovery-for-service-businesses',
-  title: 'Missed Call Recovery for Service Businesses',
-  seo: {
+    seo: {
     title: 'Missed Call Recovery for Service Businesses',
     description:
       'Learn how missed call recovery for service businesses uses automated follow-up to recapture lost enquiries and prevent revenue leaking through unanswered calls.',
@@ -14,14 +12,16 @@ export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
         'Learn how missed call recovery for service businesses uses automated follow-up to recapture lost enquiries and prevent revenue leaking through unanswered calls.',
     },
   },
-  publishDate: '2024-10-30',
-  authorKey: 'EDITORIAL',
-  category: 'ai-lead-handling',
-  industries: [],
-  systems: ['ai-lead-handling'],
-  topics: ['missed-calls'],
-  tags: ['Missed Calls', 'Call Recovery', 'Service Business', 'AI Lead Handling', 'Lead Recovery'],
-  sections: [
+    slug: 'missed-call-recovery-for-service-businesses',
+    title: 'Missed Call Recovery for Service Businesses',
+    publishDate: '2024-10-30',
+    authorKey: 'EDITORIAL',
+    category: 'ai-lead-handling',
+    industries: [],
+    systems: ['ai-lead-handling'],
+    topics: ['missed-calls'],
+    tags: ['Missed Calls', 'Call Recovery', 'Service Business', 'AI Lead Handling', 'Lead Recovery'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -95,5 +95,5 @@ export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
       content:
         'If you suspect your business misses calls during busy periods or after hours, automated recovery can turn those invisible losses into real opportunities. See how AI lead handling recovers missed calls.',
     },
-  ],
+  ]
 };

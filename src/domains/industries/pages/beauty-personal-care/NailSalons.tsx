@@ -211,37 +211,37 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'nail-salons',
-        industries: ['nail-salon'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['booking-systems', 'lead-response-time', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'beauty-personal-care',
-        seo: {
-            title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
-            description:
-                'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
-            canonical: '/industries/beauty-personal-care/nail-salons',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where booking is leaking',
-            description:
-                'If "DM to book" keeps costing same-day chairs or walk-ins drift off before the next opening, walk us through a typical Saturday and we will show you where easier booking would catch the most.',
-        },
-    };
+            seo: {
+                title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
+                description:
+                    'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+                canonical: '/industries/beauty-personal-care/nail-salons',
+            },
+            slug: 'nail-salons',
+            industries: ['nail-salon'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['booking-systems', 'lead-response-time', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'beauty-personal-care',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where booking is leaking',
+                description:
+                    'If "DM to book" keeps costing same-day chairs or walk-ins drift off before the next opening, walk us through a typical Saturday and we will show you where easier booking would catch the most.',
+            }
+        };
 }
 
 export const nailSalonsIndustryPageData: IndustryPageData = buildNailSalonsIndustryPageData();

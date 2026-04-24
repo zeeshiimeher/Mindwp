@@ -162,23 +162,23 @@ const finalCta = {
 };
 
 export const whatIsASystemsFirstWebsite: ResourceData = {
-  slug,
-  title: 'What Is a Systems-First Website?',
-  description:
-    'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
-  category: 'smart-website-systems',
-  publishedAt: '2025-11-01',
-  systems: ['smart-website-systems'],
-  industries: [],
-  topics: ['systems-first-websites'],
-  primaryService: 'smart-website-systems',
-  seo: {
+    slug,
+    seo: {
     title: 'What Is a Systems-First Website?',
     description:
       'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
     canonical,
   },
-  sections: [
+    title: 'What Is a Systems-First Website?',
+    description:
+    'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
+    category: 'smart-website-systems',
+    publishedAt: '2025-11-01',
+    systems: ['smart-website-systems'],
+    industries: [],
+    topics: ['systems-first-websites'],
+    primaryService: 'smart-website-systems',
+    sections: [
     {
       type: 'hero',
       heading: 'What Is a Systems-First Website?',
@@ -249,5 +249,5 @@ export const whatIsASystemsFirstWebsite: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ],
+  ]
 };

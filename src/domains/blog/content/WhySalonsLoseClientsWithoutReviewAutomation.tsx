@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
-  slug: 'why-salons-lose-clients-without-review-automation',
-  title: 'Why Salons Lose Clients Without Review Automation',
-  seo: {
+    seo: {
     title: 'Why Salons Lose Clients Without Review Automation',
     description:
       'Salons lose clients without review automation because happy visitors rarely post reviews unprompted, leaving the salon invisible to new customers online.',
@@ -14,14 +12,16 @@ export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
         'Salons lose clients without review automation because happy visitors rarely post reviews unprompted, leaving the salon invisible to new customers online.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['reputation-review'],
-  topics: ['review-automation'],
-  tags: ['Salon', 'Review Automation', 'Reputation', 'Client Acquisition', 'Online Reviews'],
-  sections: [
+    slug: 'why-salons-lose-clients-without-review-automation',
+    title: 'Why Salons Lose Clients Without Review Automation',
+    publishDate: '2026-04-06',
+    authorKey: 'EDITORIAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['reputation-review'],
+    topics: ['review-automation'],
+    tags: ['Salon', 'Review Automation', 'Reputation', 'Client Acquisition', 'Online Reviews'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -81,5 +81,5 @@ export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
       content:
         'If your salon depends on clients voluntarily leaving reviews, your reputation does not reflect the quality of your work. See how reputation automation closes the review gap.',
     },
-  ],
+  ]
 };

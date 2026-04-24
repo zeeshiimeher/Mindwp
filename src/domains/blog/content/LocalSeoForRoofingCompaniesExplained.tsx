@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const localSeoForRoofingCompaniesExplained: BlogPostData = {
-  slug: 'local-seo-for-roofing-companies-explained',
-  title: 'Local SEO for Roofing Companies Explained',
-  seo: {
+    seo: {
     title: 'Local SEO for Roofing Companies Explained',
     description:
       'Learn what local SEO for roofing companies explained in practical terms means for visibility, rankings, and attracting local repair enquiries.',
@@ -14,14 +12,16 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
         'Learn what local SEO for roofing companies explained in practical terms means for visibility, rankings, and attracting local repair enquiries.',
     },
   },
-  publishDate: '2025-09-24',
-  authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
-  industries: ['roofing'],
-  systems: ['local-seo-authority'],
-  topics: ['local-seo'],
-  tags: ['Roofing', 'Local SEO', 'Local Rankings', 'Visibility', 'Search'],
-  sections: [
+    slug: 'local-seo-for-roofing-companies-explained',
+    title: 'Local SEO for Roofing Companies Explained',
+    publishDate: '2025-09-24',
+    authorKey: 'EDITORIAL',
+    category: 'local-authority-seo',
+    industries: ['roofing'],
+    systems: ['local-seo-authority'],
+    topics: ['local-seo'],
+    tags: ['Roofing', 'Local SEO', 'Local Rankings', 'Visibility', 'Search'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
       content:
         'If your roofing company does not appear in local search results when homeowners need repairs, local SEO can change that. See how local authority systems build your visibility.',
     },
-  ],
+  ]
 };

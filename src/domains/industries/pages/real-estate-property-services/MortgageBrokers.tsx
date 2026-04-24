@@ -218,37 +218,37 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'mortgage-brokers',
-        industries: ['mortgage-broker'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['lead-response-time', 'follow-up', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'real-estate-property-services',
-        seo: {
-            title: 'Mortgage Brokers — Win The First Hour, Then The Remortgage | MindWP',
-            description:
-                'For mortgage brokers where weekend enquiries go to whoever replied first and remortgages are quietly lost to a portal. We put first-hour response, stage-aware case follow-up, and remortgage retention in place.',
-            canonical: '/industries/real-estate-property-services/mortgage-brokers',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the cases are going elsewhere',
-            description:
-                'If buyers needing same-day answers are ending up with another broker, or remortgages are quietly going to a portal later on, walk us through the last few cases and we will show you the first thing worth fixing.',
-        },
-    };
+            seo: {
+                title: 'Mortgage Brokers — Win The First Hour, Then The Remortgage | MindWP',
+                description:
+                    'For mortgage brokers where weekend enquiries go to whoever replied first and remortgages are quietly lost to a portal. We put first-hour response, stage-aware case follow-up, and remortgage retention in place.',
+                canonical: '/industries/real-estate-property-services/mortgage-brokers',
+            },
+            slug: 'mortgage-brokers',
+            industries: ['mortgage-broker'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['lead-response-time', 'follow-up', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'real-estate-property-services',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the cases are going elsewhere',
+                description:
+                    'If buyers needing same-day answers are ending up with another broker, or remortgages are quietly going to a portal later on, walk us through the last few cases and we will show you the first thing worth fixing.',
+            }
+        };
 }
 
 export const mortgageBrokersIndustryPageData: IndustryPageData = buildMortgageBrokersIndustryPageData();

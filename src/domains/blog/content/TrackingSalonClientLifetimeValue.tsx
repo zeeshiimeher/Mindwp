@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const trackingSalonClientLifetimeValue: BlogPostData = {
-  slug: 'tracking-salon-client-lifetime-value',
-  title: 'Tracking Salon Client Lifetime Value',
-  seo: {
+    seo: {
     title: 'Tracking Salon Client Lifetime Value in CRM',
     description:
       'Learn how tracking salon client lifetime value through CRM data reveals which clients generate the most revenue and where to focus retention efforts.',
@@ -14,14 +12,16 @@ export const trackingSalonClientLifetimeValue: BlogPostData = {
         'Learn how tracking salon client lifetime value through CRM data reveals which clients generate the most revenue and where to focus retention efforts.',
     },
   },
-  publishDate: '2025-07-22',
-  authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['crm-automation'],
-  topics: ['customer-lifetime-value'],
-  tags: ['Salon', 'Client Lifetime Value', 'CRM', 'Retention', 'Revenue'],
-  sections: [
+    slug: 'tracking-salon-client-lifetime-value',
+    title: 'Tracking Salon Client Lifetime Value',
+    publishDate: '2025-07-22',
+    authorKey: 'TECHNICAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['crm-automation'],
+    topics: ['customer-lifetime-value'],
+    tags: ['Salon', 'Client Lifetime Value', 'CRM', 'Retention', 'Revenue'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const trackingSalonClientLifetimeValue: BlogPostData = {
       content:
         'If you treat every salon client the same because you cannot see their lifetime value, CRM tracking can change that. Explore how CRM automation reveals your most valuable client relationships.',
     },
-  ],
+  ]
 };

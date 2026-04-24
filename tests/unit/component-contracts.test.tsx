@@ -70,6 +70,29 @@ describe('unit: reusable component contracts', () => {
     );
   });
 
+  test('SectionIntro only renders a secondary action when explicitly allowed', () => {
+    const secondaryAction = { label: 'Secondary', href: '/secondary' };
+
+    const { rerender } = render(
+      <SectionIntro title='Section title' secondaryAction={secondaryAction} />
+    );
+
+    expect(screen.queryByRole('link', { name: 'Secondary' })).toBeNull();
+
+    rerender(
+      <SectionIntro
+        title='Section title'
+        secondaryAction={secondaryAction}
+        allowSecondaryCTA
+      />
+    );
+
+    expect(screen.getByRole('link', { name: 'Secondary' })).toHaveAttribute(
+      'href',
+      '/secondary'
+    );
+  });
+
   test('TabbedFeatureCardsSection validates tabs and cards', () => {
     expect(() =>
       render(

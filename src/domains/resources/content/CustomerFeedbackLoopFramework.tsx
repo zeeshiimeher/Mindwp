@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const customerFeedbackLoopFramework: ResourceData = {
-  slug,
-  title: 'Customer Feedback Loop Framework',
-  description:
-    'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
-  category: 'reputation-review',
-  publishedAt: '2025-12-13',
-  systems: ['reputation-review'],
-  industries: [],
-  topics: ['customer-feedback', 'feedback-loops'],
-  primaryService: 'reputation-review',
-  seo: {
+    slug,
+    seo: {
     title: 'Customer Feedback Loop Framework',
     description:
       'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
     canonical,
   },
-  sections: [
+    title: 'Customer Feedback Loop Framework',
+    description:
+    'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+    category: 'reputation-review',
+    publishedAt: '2025-12-13',
+    systems: ['reputation-review'],
+    industries: [],
+    topics: ['customer-feedback', 'feedback-loops'],
+    primaryService: 'reputation-review',
+    sections: [
     {
       type: 'hero',
       heading: 'Customer Feedback Loop Framework',
@@ -237,5 +237,5 @@ export const customerFeedbackLoopFramework: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ],
+  ]
 };

@@ -93,6 +93,9 @@ export interface SectionIntroProps {
   /** Secondary call-to-action button configuration */
   secondaryAction?: ButtonProps;
 
+  /** Enables secondary CTA rendering when explicitly authored */
+  allowSecondaryCTA?: true;
+
   /** Whether to apply bottom margin. @default true */
   marginBottom?: boolean;
 }
@@ -107,6 +110,7 @@ export function SectionIntro({
   alignment = 'center',
   primaryAction,
   secondaryAction,
+  allowSecondaryCTA,
   marginBottom = true,
   className = '',
 }: SectionIntroProps) {
@@ -116,7 +120,7 @@ export function SectionIntro({
 
   const HeadingTag = headingLevel;
   const showPrimaryAction = isRenderableAction(primaryAction);
-  const showSecondaryAction = isRenderableAction(secondaryAction);
+  const showSecondaryAction = allowSecondaryCTA === true && isRenderableAction(secondaryAction);
 
   const rootClassName = [
     BLOCK,

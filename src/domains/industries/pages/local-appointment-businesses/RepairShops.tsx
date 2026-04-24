@@ -258,38 +258,38 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'repair-shops',
-        industries: ['repair-shop'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'local-seo-authority',
-            'reputation-review',
-        ],
-        topics: ['follow-up', 'review-generation', 'lead-response-time'],
-        type: 'detail',
-        parentSlug: 'local-appointment-businesses',
-        seo: {
-            title: 'Repair Shops — Stop Living Off Walk-Ins, Build A Repeat Work Base | MindWP',
-            description:
-                'For repair shops where the bench is busy but past jobs never come back. We put recall, easy booking, and review prompts in place so today fixes the year, not just the day.',
-            canonical: '/industries/local-appointment-businesses/repair-shops',
-        },
-        hero: {
-            ...heroData,
-        },
-        imageStrip: imageStripData,
-        operatingPatterns: operatingPatternsData,
-        systemLayers: systemLayersData,
-        workflowExamples: workflowExamplesData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the repeat work disappears',
-            description:
-                'If the bench stays busy but bookings still feel harder to pin down and past clients do not come back, walk us through how the month runs and we will show you the first thing worth fixing.',
-        },
-    };
+            seo: {
+                title: 'Repair Shops — Stop Living Off Walk-Ins, Build A Repeat Work Base | MindWP',
+                description:
+                    'For repair shops where the bench is busy but past jobs never come back. We put recall, easy booking, and review prompts in place so today fixes the year, not just the day.',
+                canonical: '/industries/local-appointment-businesses/repair-shops',
+            },
+            slug: 'repair-shops',
+            industries: ['repair-shop'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'local-seo-authority',
+                'reputation-review',
+            ],
+            topics: ['follow-up', 'review-generation', 'lead-response-time'],
+            type: 'detail',
+            parentSlug: 'local-appointment-businesses',
+            hero: {
+                ...heroData,
+            },
+            imageStrip: imageStripData,
+            operatingPatterns: operatingPatternsData,
+            systemLayers: systemLayersData,
+            workflowExamples: workflowExamplesData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the repeat work disappears',
+                description:
+                    'If the bench stays busy but bookings still feel harder to pin down and past clients do not come back, walk us through how the month runs and we will show you the first thing worth fixing.',
+            }
+        };
 }
 
 export const repairShopsIndustryPageData: IndustryPageData = buildRepairShopsIndustryPageData();

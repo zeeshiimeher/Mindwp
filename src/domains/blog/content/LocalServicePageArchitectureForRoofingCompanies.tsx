@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
-  slug: 'local-service-page-architecture-for-roofing-companies',
-  title: 'Local Service Page Architecture for Roofing Companies',
-  seo: {
+    seo: {
     title: 'Local Service Page Architecture for Roofing Companies',
     description:
       'Discover how local service page architecture for roofing companies creates location-specific landing pages that rank for area-based roofing searches.',
@@ -14,14 +12,16 @@ export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
         'Discover how local service page architecture for roofing companies creates location-specific landing pages that rank for area-based roofing searches.',
     },
   },
-  publishDate: '2025-12-21',
-  authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
-  industries: ['roofing'],
-  systems: ['local-seo-authority', 'smart-website-systems'],
-  topics: ['local-service-pages'],
-  tags: ['Roofing', 'Local Service Pages', 'SEO Architecture', 'Location Pages', 'Local Search'],
-  sections: [
+    slug: 'local-service-page-architecture-for-roofing-companies',
+    title: 'Local Service Page Architecture for Roofing Companies',
+    publishDate: '2025-12-21',
+    authorKey: 'TECHNICAL',
+    category: 'local-authority-seo',
+    industries: ['roofing'],
+    systems: ['local-seo-authority', 'smart-website-systems'],
+    topics: ['local-service-pages'],
+    tags: ['Roofing', 'Local Service Pages', 'SEO Architecture', 'Location Pages', 'Local Search'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -88,5 +88,5 @@ export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing company serves multiple areas but only has one generic service area page, local service page architecture can expand your reach. See how website systems support local visibility.',
     },
-  ],
+  ]
 };

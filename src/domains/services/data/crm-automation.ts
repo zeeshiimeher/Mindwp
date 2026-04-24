@@ -73,18 +73,18 @@ type CRMAutomationTransformationProof = {
 const slug = 'crm-infrastructure-implementation';
 
 export const crmAutomationPage = {
-  slug,
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
-  badge: 'CRM Setup for Service Businesses',
-  category: 'Lead & Follow-Up',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'CRM Setup for Service Businesses | MindWP',
     description:
       "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
   }),
-  hero: {
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
+    badge: "CRM Setup",
+    category: 'Lead & Follow-Up',
+    hero: {
     badge: 'CRM Setup for Service Businesses',
     title: 'Leads Come In. Then They Disappear.',
     description:
@@ -92,7 +92,7 @@ export const crmAutomationPage = {
     list: ['Leads scattered', 'Follow-up inconsistent', 'No visibility'],
     cssPrefix: 'crm-automation-hero',
   },
-  sections: {
+    sections: {
     positioning: {
       badge: 'The real problem',
       title: 'The first conversation usually goes well. Everything after that falls apart.',
@@ -922,17 +922,17 @@ export const crmAutomationPage = {
       cssPrefix: 'crm-automation-faq',
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Want to see which manual handoff is slowing pipeline movement first?',
     description:
       'We map the breakpoints across forms, calls, inboxes, and SMS so you can see where ownership fails, which delays matter most, and whether CRM setup is the next fix or not.',
   },
-  cta: {
+    cta: {
     title: 'Get a clear CRM priority map before you commit to a build',
     description:
       'Tell us how enquiries arrive, who owns follow-up, and where deals stall. You will leave with the highest-risk handoff gaps, the first automation priorities, and a clear view of whether CRM infrastructure is the right next move.',
   },
-  transformationProof: {
+    transformationProof: {
     before: {
       title: 'Before: leads everywhere, follow-up nowhere',
       points: [
@@ -959,5 +959,5 @@ export const crmAutomationPage = {
         'Full visibility into pipeline and workload — managers spotted bottlenecks before they cost deals',
       ],
     },
-  },
+  }
 } satisfies ServicePageData & CRMAutomationTransformationProof;

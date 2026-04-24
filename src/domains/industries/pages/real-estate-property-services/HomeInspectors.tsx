@@ -218,37 +218,37 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'home-inspectors',
-        industries: ['home-inspection'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['lead-response-time', 'booking-systems', 'follow-up'],
-        type: 'detail',
-        parentSlug: 'real-estate-property-services',
-        seo: {
-            title: 'Home Inspectors — Win The Booking Window, Keep The Referring Agent | MindWP',
-            description:
-                'For home inspectors where the booking window is short, agents need confirmation today, and silence after the report costs the next referral. We put same-hour availability, on-site missed-call handling, and status updates in place.',
-            canonical: '/industries/real-estate-property-services/home-inspectors',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the booking window is closing on you',
-            description:
-                'If agent enquiries are slipping before you can confirm a slot, or repeat agents are quietly calling somebody else next time, walk us through the last few weeks and we will show you where the calendar is actually slipping.',
-        },
-    };
+            seo: {
+                title: 'Home Inspectors — Win The Booking Window, Keep The Referring Agent | MindWP',
+                description:
+                    'For home inspectors where the booking window is short, agents need confirmation today, and silence after the report costs the next referral. We put same-hour availability, on-site missed-call handling, and status updates in place.',
+                canonical: '/industries/real-estate-property-services/home-inspectors',
+            },
+            slug: 'home-inspectors',
+            industries: ['home-inspection'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['lead-response-time', 'booking-systems', 'follow-up'],
+            type: 'detail',
+            parentSlug: 'real-estate-property-services',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the booking window is closing on you',
+                description:
+                    'If agent enquiries are slipping before you can confirm a slot, or repeat agents are quietly calling somebody else next time, walk us through the last few weeks and we will show you where the calendar is actually slipping.',
+            }
+        };
 }
 
 export const homeInspectorsIndustryPageData: IndustryPageData = buildHomeInspectorsIndustryPageData();

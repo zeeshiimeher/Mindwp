@@ -15,18 +15,18 @@ import type { ServicePageData } from '../types';
 const slug = 'conversion-layer';
 
 export const conversionLayerPage = {
-  slug,
-  systems: ['revenue-growth'],
-  topics: ['conversion-optimization', 'lead-capture', 'service-page-architecture'],
-  badge: 'Conversion Layer',
-  category: 'Conversion Systems',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'Conversion Layer for Service Businesses | MindWP',
     description:
       "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
   }),
-  hero: {
+    systems: ['revenue-growth'],
+    topics: ['conversion-optimization', 'lead-capture', 'service-page-architecture'],
+    badge: 'Conversion Layer',
+    category: 'Conversion Systems',
+    hero: {
     badge: 'Conversion Layer',
     title: "Interested. Couldn't Figure Out What To Do.",
     description:
@@ -35,7 +35,7 @@ export const conversionLayerPage = {
     cssPrefix: 'conversion-funnel-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'Where it breaks',
       title: "Attention is there. The path after isn't.",
@@ -348,14 +348,14 @@ export const conversionLayerPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Want to see exactly where qualified intent stalls first?',
     description:
       'We map where the path breaks between page message, CTA fit, and follow-up so you can see which leak is structural, which is sequencing, and what should be fixed before anything else.',
   },
-  cta: {
+    cta: {
     title: 'Get a clear priority map for the conversion leaks that matter most',
     description:
       'We review the offer path, action step, and post-submit handoff so you leave knowing which leak is hurting revenue most, what to tighten first, and whether a fuller rebuild is actually necessary.',
-  },
+  }
 } satisfies ServicePageData;

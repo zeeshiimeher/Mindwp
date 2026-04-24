@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const reputationMonitoringSystems: ResourceData = {
-  slug,
-  title: 'Reputation Monitoring Systems',
-  description:
-    'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-  category: 'reputation-review',
-  publishedAt: '2026-01-10',
-  systems: ['reputation-review'],
-  industries: [],
-  topics: ['reputation-monitoring'],
-  primaryService: 'reputation-review',
-  seo: {
+    slug,
+    seo: {
     title: 'Reputation Monitoring Systems',
     description:
       'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
     canonical,
   },
-  sections: [
+    title: 'Reputation Monitoring Systems',
+    description:
+    'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+    category: 'reputation-review',
+    publishedAt: '2026-01-10',
+    systems: ['reputation-review'],
+    industries: [],
+    topics: ['reputation-monitoring'],
+    primaryService: 'reputation-review',
+    sections: [
     {
       type: 'hero',
       heading: 'Reputation Monitoring Systems',
@@ -237,5 +237,5 @@ export const reputationMonitoringSystems: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ],
+  ]
 };

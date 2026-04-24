@@ -159,63 +159,63 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
   ];
 
   return {
-    slug: 'salon-review-generation-automation',
-    title: 'Salon Review Generation Automation',
-    industryCategory: 'beauty-personal-care',
-    industryLabel: 'Beauty & Personal Care',
-    industries: ['hair-salon'],
-    systems: ['reputation-review'],
-    topics: [
-      'review-generation',
-      'review-automation',
-      'feedback-loops',
-      'negative-review-response',
-      'reputation-monitoring',
-      'customer-feedback',
-      'negative-reviews',
-    ],
-    publishDate: '2026-01-15',
-    client: 'Halo Hair & Beauty',
-    location: 'Cardiff, UK',
-    business: 'Halo Hair & Beauty',
-    duration: '12 weeks',
-    completedDate: 'January 2026',
-    heroHeadline:
-      'How a Hair Salon Grew From 23 to 67 Google Reviews in 10 Weeks With Automated Requests',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Review Generation', 'Hair Salon', 'Google Reviews', 'Reputation System', 'Local SEO'],
-    seo: {
-      title: 'Salon Review Automation | 23 to 67 Google Reviews',
-      description:
-      'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.',
-      canonical: '/case-studies/salon-review-generation-automation',
-      openGraph: {
-        title: 'Why Salons Struggle to Get Reviews | MindWP Case Study',
+      seo: {
+        title: 'Salon Review Automation | 23 to 67 Google Reviews',
         description:
-          'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.',
+        'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.',
+        canonical: '/case-studies/salon-review-generation-automation',
+        openGraph: {
+          title: 'Why Salons Struggle to Get Reviews | MindWP Case Study',
+          description:
+            'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'System Implementation' },
-      problem: { challengeBadgeLabel: 'The Review Gap' },
-      solution: { solutionBadgeLabel: 'System Implementation' },
-      results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Review Profile Performance',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for salons' },
-        ],
-      },
-    },
+      slug: 'salon-review-generation-automation',
+      title: 'Salon Review Generation Automation',
+      industryCategory: 'beauty-personal-care',
+      industryLabel: 'Beauty & Personal Care',
+      industries: ['hair-salon'],
+      systems: ['reputation-review'],
+      topics: [
+        'review-generation',
+        'review-automation',
+        'feedback-loops',
+        'negative-review-response',
+        'reputation-monitoring',
+        'customer-feedback',
+        'negative-reviews',
+      ],
+      publishDate: '2026-01-15',
+      client: 'Halo Hair & Beauty',
+      location: 'Cardiff, UK',
+      business: 'Halo Hair & Beauty',
+      duration: '12 weeks',
+      completedDate: 'January 2026',
+      heroHeadline:
+        'How a Hair Salon Grew From 23 to 67 Google Reviews in 10 Weeks With Automated Requests',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Review Generation', 'Hair Salon', 'Google Reviews', 'Reputation System', 'Local SEO'],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'System Implementation' },
+        problem: { challengeBadgeLabel: 'The Review Gap' },
+        solution: { solutionBadgeLabel: 'System Implementation' },
+        results: {
+          detailedResultsBadgeLabel: 'Measured Results',
+          detailedResultsSectionTitle: 'Before & After: Review Profile Performance',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No contracts' },
+            { text: 'Built for salons' },
+          ],
+        },
+      }
   };
 }
 

@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const automotiveServiceRemindersExplained: BlogPostData = {
-  slug: 'automotive-service-reminders-explained',
-  title: 'Automotive Service Reminders Explained',
-  seo: {
+    seo: {
     title: 'Automotive Service Reminders Explained for Shops',
     description:
       'Learn how automotive service reminders explained through CRM automation help repair shops retain customers and increase repeat bookings reliably.',
@@ -14,14 +12,16 @@ export const automotiveServiceRemindersExplained: BlogPostData = {
         'Learn how automotive service reminders explained through CRM automation help repair shops retain customers and increase repeat bookings reliably.',
     },
   },
-  publishDate: '2025-06-04',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: ['automotive'],
-  systems: ['crm-automation'],
-  topics: ['service-reminders'],
-  tags: ['Automotive', 'Service Reminders', 'CRM', 'Customer Retention', 'Automation'],
-  sections: [
+    slug: 'automotive-service-reminders-explained',
+    title: 'Automotive Service Reminders Explained',
+    publishDate: '2025-06-04',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: ['automotive'],
+    systems: ['crm-automation'],
+    topics: ['service-reminders'],
+    tags: ['Automotive', 'Service Reminders', 'CRM', 'Customer Retention', 'Automation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -95,5 +95,5 @@ export const automotiveServiceRemindersExplained: BlogPostData = {
       content:
         'If your repair shop relies on customers remembering their own MOT and service dates, CRM-based reminders can bring them back automatically. Explore how CRM automation retains customers.',
     },
-  ],
+  ]
 };

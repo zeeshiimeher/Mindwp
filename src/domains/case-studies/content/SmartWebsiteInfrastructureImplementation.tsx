@@ -94,64 +94,64 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
   ];
 
   return {
-    slug: 'plumbing-website-looked-fine-but-underperformed',
-    title: 'The website was live. The phone still stayed quiet.',
-    industryCategory: 'home-services',
-    industryLabel: 'Home Services',
-    industries: ['hvac'],
-    systems: ['smart-website-systems', 'revenue-growth'],
-    topics: [
-      'website-infrastructure',
-      'systems-first-websites',
-      'conversion-optimization',
-      'conversion-tracking',
-    ],
-    publishDate: '2026-06-15',
-    client: 'Harwood Plumbing & Heating',
-    location: 'Leeds, UK',
-    business: 'Harwood Plumbing & Heating',
-    duration: '15 weeks',
-    completedDate: 'June 2026',
-    heroHeadline: 'The website was live. The phone still stayed quiet.',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'Website Rebuild',
-      'Plumbing',
-      'Lead Capture',
-      'Tracking',
-      'Home Services',
-    ],
-    seo: {
-      title: 'Plumbing website case study: more leads from the same traffic',
-      description:
-      'How a Leeds plumbing company turned a site that looked finished but underperformed into one that produced far more usable enquiries from the same traffic.',
-      canonical: '/case-studies/plumbing-website-looked-fine-but-underperformed',
-      openGraph: {
+      seo: {
         title: 'Plumbing website case study: more leads from the same traffic',
         description:
-          'How a Leeds plumbing company turned a site that looked finished but underperformed into one that produced far more usable enquiries from the same traffic.',
+        'How a Leeds plumbing company turned a site that looked finished but underperformed into one that produced far more usable enquiries from the same traffic.',
+        canonical: '/case-studies/plumbing-website-looked-fine-but-underperformed',
+        openGraph: {
+          title: 'Plumbing website case study: more leads from the same traffic',
+          description:
+            'How a Leeds plumbing company turned a site that looked finished but underperformed into one that produced far more usable enquiries from the same traffic.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Website Reality' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      results: {
-        detailedResultsBadgeLabel: 'What Changed',
-        detailedResultsSectionTitle: 'What Changed Once the Site Started Pulling Its Weight',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No pressure' },
-          { text: 'Useful for service sites' },
-        ],
-      },
-    },
+      slug: 'plumbing-website-looked-fine-but-underperformed',
+      title: 'The website was live. The phone still stayed quiet.',
+      industryCategory: 'home-services',
+      industryLabel: 'Home Services',
+      industries: ['hvac'],
+      systems: ['smart-website-systems', 'revenue-growth'],
+      topics: [
+        'website-infrastructure',
+        'systems-first-websites',
+        'conversion-optimization',
+        'conversion-tracking',
+      ],
+      publishDate: '2026-06-15',
+      client: 'Harwood Plumbing & Heating',
+      location: 'Leeds, UK',
+      business: 'Harwood Plumbing & Heating',
+      duration: '15 weeks',
+      completedDate: 'June 2026',
+      heroHeadline: 'The website was live. The phone still stayed quiet.',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: [
+        'Website Rebuild',
+        'Plumbing',
+        'Lead Capture',
+        'Tracking',
+        'Home Services',
+      ],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Website Reality' },
+        problem: { challengeBadgeLabel: 'What Was Happening' },
+        results: {
+          detailedResultsBadgeLabel: 'What Changed',
+          detailedResultsSectionTitle: 'What Changed Once the Site Started Pulling Its Weight',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No pressure' },
+            { text: 'Useful for service sites' },
+          ],
+        },
+      }
   };
 }
 

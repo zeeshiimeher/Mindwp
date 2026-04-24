@@ -17,7 +17,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'For Aesthetic & Cosmetic Clinics',
+        badge: "Aesthetic Clinics",
         title: 'She Sat Through The Consult, Took The Brochure Home, Talked To Her Sister, And Then Heard Nothing From You.',
         description:
             'High-ticket aesthetic decisions are rarely made in the consult room itself. They get made over the next few days at home, in the mirror, in messages with family, and in moments of doubt where a calm follow-up can either steady the decision or lose it completely.',
@@ -220,37 +220,37 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'aesthetic-cosmetic-clinics',
-        industries: ['aesthetic-clinic'],
-        systems: [
-            'crm-automation',
-            'smart-website-systems',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'lead-response-time', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'beauty-personal-care',
-        seo: {
-            title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
-            description:
-                'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
-            canonical: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the ten days go quiet',
-            description:
-                'If considered enquiries keep cooling between consult and decision, walk us through your last few weeks and we will show you where calm, named follow-up would have kept trust alive.',
-        },
-    };
+            seo: {
+                title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
+                description:
+                    'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+                canonical: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            },
+            slug: 'aesthetic-cosmetic-clinics',
+            industries: ['aesthetic-clinic'],
+            systems: [
+                'crm-automation',
+                'smart-website-systems',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'lead-response-time', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'beauty-personal-care',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the ten days go quiet',
+                description:
+                    'If considered enquiries keep cooling between consult and decision, walk us through your last few weeks and we will show you where calm, named follow-up would have kept trust alive.',
+            }
+        };
 }
 
 export const aestheticCosmeticClinicsIndustryPageData: IndustryPageData = buildAestheticCosmeticClinicsIndustryPageData();

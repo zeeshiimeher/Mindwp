@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
-  slug: 'website-design-that-supports-crm-systems',
-  title: 'Website Design That Supports CRM Systems',
-  seo: {
+    seo: {
     title: 'Website Design That Supports CRM Systems',
     description:
       'Explore how website design that supports CRM systems is built differently, with structured forms, automation-ready architecture, and pipeline-connected pages.',
@@ -14,14 +12,16 @@ export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
         'Explore how website design that supports CRM systems is built differently, with structured forms, automation-ready architecture, and pipeline-connected pages.',
     },
   },
-  publishDate: '2024-08-22',
-  authorKey: 'EDITORIAL',
-  category: 'smart-website-systems',
-  industries: [],
-  systems: ['smart-website-systems'],
-  topics: ['crm-enabled-websites'],
-  tags: ['CRM-Ready Design', 'Website Design', 'CRM Systems', 'Automation', 'System Architecture'],
-  sections: [
+    slug: 'website-design-that-supports-crm-systems',
+    title: 'Website Design That Supports CRM Systems',
+    publishDate: '2024-08-22',
+    authorKey: 'EDITORIAL',
+    category: 'smart-website-systems',
+    industries: [],
+    systems: ['smart-website-systems'],
+    topics: ['crm-enabled-websites'],
+    tags: ['CRM-Ready Design', 'Website Design', 'CRM Systems', 'Automation', 'System Architecture'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -113,5 +113,5 @@ export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
       content:
         'If your website and CRM are not sharing structured data, your lead handling is slower and less reliable than it could be. Explore how CRM-ready website design creates a connected operational workflow.',
     },
-  ],
+  ]
 };

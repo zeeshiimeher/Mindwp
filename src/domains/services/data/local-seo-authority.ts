@@ -6,9 +6,15 @@ import type { ServicePageData } from '../types';
 const slug = 'local-seo-authority';
 
 export const localSeoAuthorityPage = {
-  slug,
-  systems: ['local-seo-authority'],
-  topics: [
+    slug,
+    seo: buildServiceSeo({
+    slug,
+    title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+    description:
+      'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+  }),
+    systems: ['local-seo-authority'],
+    topics: [
     'local-seo',
     'local-visibility',
     'google-business-profile',
@@ -16,15 +22,9 @@ export const localSeoAuthorityPage = {
     'authority-signals',
     'local-service-pages',
   ],
-  badge: 'Local SEO for Service Businesses',
-  category: 'Visibility Systems',
-  seo: buildServiceSeo({
-    slug,
-    title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
-    description:
-      'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
-  }),
-  hero: {
+    badge: "Local SEO Authority",
+    category: 'Visibility Systems',
+    hero: {
     badge: 'Get Found Locally',
     title: 'People Search Nearby. You Still Miss The Click.',
     description:
@@ -33,7 +33,7 @@ export const localSeoAuthorityPage = {
     backgroundColor: 'bg-gradient-surface-muted',
     list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
   },
-  sections: {
+    sections: {
     misconceptions: {
       badge: 'Why SEO has not worked before',
       title: 'Three assumptions that keep you invisible',
@@ -420,14 +420,14 @@ export const localSeoAuthorityPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Why am I not showing up?',
     description:
       "Drop your business name and postcode. We check how you appear on Google right now and what's holding you back.",
   },
-  cta: {
+    cta: {
     title: 'See why nearby customers are finding other businesses first',
     description:
       'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
-  },
+  }
 } satisfies ServicePageData;

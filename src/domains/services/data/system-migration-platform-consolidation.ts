@@ -6,18 +6,18 @@ import type { ServicePageData } from '../types';
 const slug = 'system-migration-platform-consolidation';
 
 export const systemMigrationPlatformConsolidationPage = {
-  slug,
-  systems: ['smart-website-systems'],
-  topics: ['website-infrastructure'],
-  badge: 'System Migration & Platform Consolidation',
-  category: 'Migration Pathway Services',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
     description:
       'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
   }),
-  hero: {
+    systems: ['smart-website-systems'],
+    topics: ['website-infrastructure'],
+    badge: "Platform Migration",
+    category: 'Migration Pathway Services',
+    hero: {
     badge: 'System Migration & Platform Consolidation',
     title: 'New Platform. Same Quiet Phone.',
     description:
@@ -26,7 +26,7 @@ export const systemMigrationPlatformConsolidationPage = {
     cssPrefix: 'system-migration-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: "Why you're looking at migration",
       title: 'The platform frustration is real. The fix might not be what you expect.',
@@ -335,14 +335,14 @@ export const systemMigrationPlatformConsolidationPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Thinking about moving platforms?',
     description:
       "Before you migrate, it's worth knowing whether the platform is the problem — or just the most visible symptom.",
   },
-  cta: {
+    cta: {
     title: 'Want to move platforms and actually fix things this time?',
     description:
       "Tell us what's frustrating you about the current setup. We'll tell you whether migration is the answer — and what else needs to change for the move to be worth it.",
-  },
+  }
 } satisfies ServicePageData;

@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
-  slug: 'review-generation-system-for-local-businesses',
-  title: 'Review Generation System for Local Businesses',
-  seo: {
+    seo: {
     title: 'Review Generation System for Local Businesses',
     description:
       'Learn how a review generation system for local businesses automates post-service review requests to build reputation and strengthen local search authority.',
@@ -14,14 +12,16 @@ export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
         'Learn how a review generation system for local businesses automates post-service review requests to build reputation and strengthen local search authority.',
     },
   },
-  publishDate: '2024-11-23',
-  authorKey: 'TECHNICAL',
-  category: 'reputation-review',
-  industries: [],
-  systems: ['reputation-review'],
-  topics: ['review-generation'],
-  tags: ['Review Generation', 'Local Business', 'Reputation', 'Automation', 'Customer Reviews'],
-  sections: [
+    slug: 'review-generation-system-for-local-businesses',
+    title: 'Review Generation System for Local Businesses',
+    publishDate: '2024-11-23',
+    authorKey: 'TECHNICAL',
+    category: 'reputation-review',
+    industries: [],
+    systems: ['reputation-review'],
+    topics: ['review-generation'],
+    tags: ['Review Generation', 'Local Business', 'Reputation', 'Automation', 'Customer Reviews'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -93,5 +93,5 @@ export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
       content:
         'If your business delivers great work but your review profile does not reflect it, a systematic approach to generation can close the gap. Explore how automated review workflows turn completed jobs into public proof.',
     },
-  ],
+  ]
 };

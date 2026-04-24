@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
-  slug: 'customer-feedback-loop-framework-for-service-businesses',
-  title: 'Customer Feedback Loop Framework for Service Businesses',
-  seo: {
+    seo: {
     title: 'Customer Feedback Loop Framework for Service Businesses',
     description:
       'Explore the customer feedback loop framework for service businesses that captures post-service insights and routes them into operational improvement workflows.',
@@ -14,14 +12,16 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
         'Explore the customer feedback loop framework for service businesses that captures post-service insights and routes them into operational improvement workflows.',
     },
   },
-  publishDate: '2024-12-09',
-  authorKey: 'TECHNICAL',
-  category: 'reputation-review',
-  industries: [],
-  systems: ['reputation-review'],
-  topics: ['feedback-loops', 'customer-feedback'],
-  tags: ['Customer Feedback', 'Feedback Loop', 'Service Business', 'Service Quality', 'Reputation'],
-  sections: [
+    slug: 'customer-feedback-loop-framework-for-service-businesses',
+    title: 'Customer Feedback Loop Framework for Service Businesses',
+    publishDate: '2024-12-09',
+    authorKey: 'TECHNICAL',
+    category: 'reputation-review',
+    industries: [],
+    systems: ['reputation-review'],
+    topics: ['feedback-loops', 'customer-feedback'],
+    tags: ['Customer Feedback', 'Feedback Loop', 'Service Business', 'Service Quality', 'Reputation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
       content:
         'If your post-service feedback process is a verbal thumbs-up and nothing more, structured feedback loops can reveal what your customers actually think. Explore how automated feedback connects to review and improvement systems.',
     },
-  ],
+  ]
 };

@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
-  slug: 'why-hvac-companies-disappear-from-local-search',
-  title: 'Why HVAC Companies Disappear From Local Search Without Local Visibility',
-  seo: {
+    seo: {
     title: 'Why HVAC Companies Disappear From Local Search',
     description:
       'HVAC companies disappear from local search without local visibility because inconsistent profiles, few reviews, and weak signals push them below competitors.',
@@ -14,14 +12,16 @@ export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
         'HVAC companies disappear from local search without local visibility because inconsistent profiles, few reviews, and weak signals push them below competitors.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
-  industries: ['hvac'],
-  systems: ['reputation-review'],
-  topics: ['local-visibility'],
-  tags: ['HVAC', 'Local Visibility', 'Local Search', 'Google Rankings', 'Reputation'],
-  sections: [
+    slug: 'why-hvac-companies-disappear-from-local-search',
+    title: 'Why HVAC Companies Disappear From Local Search Without Local Visibility',
+    publishDate: '2026-04-06',
+    authorKey: 'EDITORIAL',
+    category: 'local-authority-seo',
+    industries: ['hvac'],
+    systems: ['reputation-review'],
+    topics: ['local-visibility'],
+    tags: ['HVAC', 'Local Visibility', 'Local Search', 'Google Rankings', 'Reputation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -81,5 +81,5 @@ export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
       content:
         'If your HVAC company does great work but does not appear in local search results, the problem is visibility — not reputation. See how reputation automation strengthens the signals that drive local rankings.',
     },
-  ],
+  ]
 };

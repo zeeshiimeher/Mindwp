@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyRealtorsLoseLeadsWithoutLocalVisibility: BlogPostData = {
-  slug: 'why-realtors-lose-leads-without-local-visibility',
-  title: 'Why Realtors Lose Leads Without Local Visibility',
-  seo: {
+    seo: {
     title: 'Why Realtors Lose Leads Without Local Visibility',
     description:
       'Realtors lose leads without local visibility because weak review profiles and inconsistent listings push them below competitors in local search results.',
@@ -14,14 +12,16 @@ export const whyRealtorsLoseLeadsWithoutLocalVisibility: BlogPostData = {
         'Realtors lose leads without local visibility because weak review profiles and inconsistent listings push them below competitors in local search results.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
-  industries: ['realtor'],
-  systems: ['reputation-review'],
-  topics: ['local-visibility'],
-  tags: ['Realtor', 'Local Visibility', 'Local Search', 'Reputation', 'Lead Generation'],
-  sections: [
+    slug: 'why-realtors-lose-leads-without-local-visibility',
+    title: 'Why Realtors Lose Leads Without Local Visibility',
+    publishDate: '2026-04-06',
+    authorKey: 'EDITORIAL',
+    category: 'local-authority-seo',
+    industries: ['realtor'],
+    systems: ['reputation-review'],
+    topics: ['local-visibility'],
+    tags: ['Realtor', 'Local Visibility', 'Local Search', 'Reputation', 'Lead Generation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -81,5 +81,5 @@ export const whyRealtorsLoseLeadsWithoutLocalVisibility: BlogPostData = {
       content:
         'If you are a successful realtor who does not appear in local search, the problem is not your reputation — it is your visibility system. See how reputation automation builds the signals that drive local rankings.',
     },
-  ],
+  ]
 };

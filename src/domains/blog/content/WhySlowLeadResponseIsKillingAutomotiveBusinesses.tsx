@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
-  slug: 'why-slow-lead-response-is-killing-automotive-businesses',
-  title: 'Why Slow Lead Response Is Killing Automotive Businesses',
-  seo: {
+    seo: {
     title: 'Why Slow Lead Response Is Killing Automotive Businesses',
     description:
       'Discover why slow lead response is killing automotive businesses and how delayed follow-up costs repair shops and garages their most valuable customer leads.',
@@ -14,14 +12,16 @@ export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
         'Discover why slow lead response is killing automotive businesses and how delayed follow-up costs repair shops and garages their most valuable customer leads.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'EDITORIAL',
-  category: 'crm-automation',
-  industries: ['automotive'],
-  systems: ['crm-automation'],
-  topics: ['lead-response-time'],
-  tags: ['Automotive', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Follow-Up'],
-  sections: [
+    slug: 'why-slow-lead-response-is-killing-automotive-businesses',
+    title: 'Why Slow Lead Response Is Killing Automotive Businesses',
+    publishDate: '2026-04-06',
+    authorKey: 'EDITORIAL',
+    category: 'crm-automation',
+    industries: ['automotive'],
+    systems: ['crm-automation'],
+    topics: ['lead-response-time'],
+    tags: ['Automotive', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Follow-Up'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
       content:
         'If your garage loses enquiries because the team is too busy to reply fast enough, CRM automation can close the gap. See how automated response systems capture leads that would otherwise disappear.',
     },
-  ],
+  ]
 };

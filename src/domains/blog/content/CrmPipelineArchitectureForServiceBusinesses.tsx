@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
-  slug: 'crm-pipeline-architecture-for-service-businesses',
-  title: 'CRM Pipeline Architecture for Service Businesses',
-  seo: {
+    seo: {
     title: 'CRM Pipeline Architecture for Service Businesses',
     description:
       'Explore the CRM pipeline architecture for service businesses that structures lead stages from first enquiry through to completed job and follow-up automation.',
@@ -14,20 +12,22 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
         'Explore the CRM pipeline architecture for service businesses that structures lead stages from first enquiry through to completed job and follow-up automation.',
     },
   },
-  publishDate: '2025-02-20',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: [],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline', 'pipeline-architecture'],
-  tags: [
+    slug: 'crm-pipeline-architecture-for-service-businesses',
+    title: 'CRM Pipeline Architecture for Service Businesses',
+    publishDate: '2025-02-20',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: [],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline', 'pipeline-architecture'],
+    tags: [
     'CRM Pipeline',
     'Service Business',
     'Pipeline Architecture',
     'Lead Management',
     'Automation',
   ],
-  sections: [
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -96,5 +96,5 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
       content:
         'If your CRM has leads in it but you cannot see where they sit in the sales process, pipeline architecture can fix that. Explore how CRM automation structures your lead-to-job workflow.',
     },
-  ],
+  ]
 };

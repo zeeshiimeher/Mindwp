@@ -109,23 +109,23 @@ const templates = [
 ];
 
 export const websiteCrmIntegrationExplained: ResourceData = {
-  slug,
-  title: 'Website + CRM Integration Explained',
-  description:
-    'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
-  category: 'smart-website-systems',
-  publishedAt: '2025-11-15',
-  systems: ['crm-automation'],
-  industries: [],
-  topics: ['crm-integration'],
-  primaryService: 'crm-infrastructure-implementation',
-  seo: {
+    slug,
+    seo: {
     title: 'Website + CRM Integration Explained',
     description:
       'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
     canonical,
   },
-  sections: [
+    title: 'Website + CRM Integration Explained',
+    description:
+    'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+    category: 'smart-website-systems',
+    publishedAt: '2025-11-15',
+    systems: ['crm-automation'],
+    industries: [],
+    topics: ['crm-integration'],
+    primaryService: 'crm-infrastructure-implementation',
+    sections: [
     {
       type: 'hero',
       heading: 'Website + CRM Integration Explained',
@@ -223,5 +223,5 @@ export const websiteCrmIntegrationExplained: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ],
+  ]
 };

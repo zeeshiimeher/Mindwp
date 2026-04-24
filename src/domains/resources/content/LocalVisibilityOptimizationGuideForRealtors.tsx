@@ -168,23 +168,23 @@ const finalCta = {
 };
 
 export const localVisibilityOptimizationGuideForRealtors: ResourceData = {
-  slug,
-  title: 'Local Visibility Optimization Guide for Realtors',
-  description:
-    'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
-  category: 'reputation-review',
-  publishedAt: '2026-04-06',
-  systems: ['reputation-review'],
-  industries: ['realtor'],
-  topics: ['local-visibility'],
-  primaryService: 'reputation-review',
-  seo: {
+    slug,
+    seo: {
     title: 'Local Visibility Optimization Guide for Realtors',
     description:
       'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
     canonical,
   },
-  sections: [
+    title: 'Local Visibility Optimization Guide for Realtors',
+    description:
+    'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+    category: 'reputation-review',
+    publishedAt: '2026-04-06',
+    systems: ['reputation-review'],
+    industries: ['realtor'],
+    topics: ['local-visibility'],
+    primaryService: 'reputation-review',
+    sections: [
     {
       type: 'hero',
       heading: 'Local Visibility Optimization Guide for Realtors',
@@ -255,5 +255,5 @@ export const localVisibilityOptimizationGuideForRealtors: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ],
+  ]
 };

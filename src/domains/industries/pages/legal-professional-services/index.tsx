@@ -290,50 +290,50 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'legal-professional-services',
-        type: 'category',
-        category: 'legal-professional-services',
-        systems: [
-            'crm-automation',
-            'smart-website-systems',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: [
-            'follow-up',
-            'lead-qualification',
-            'pipeline-visibility',
-            'review-generation',
-        ],
-        industries: ['accounting', 'consulting', 'law-firm'],
-        seo: {
-            title: 'Legal, Accounting & Consulting Practices — Stop Losing Work In The Quiet Middle | MindWP',
-            description:
-                'For law firms, accountants, and consultants where the leak is not in marketing but in the long, quiet middle — slow decisions, silent drop-offs, and rooms you are not in. We put the follow-up, clarity, and proof in place so the firm stays present while clients decide.',
-            canonical: '/industries/legal-professional-services',
-        },
-        hero: heroData,
-        operatingPatterns: operatingPatternsData,
-        decisionChecklist: decisionChecklistData,
-        spectrum: spectrumData,
-        systemLayers: systemLayersData,
-        process: processData,
-        detailRoutes: detailRoutesData,
-        explore: exploreData,
-        sectionControls: {
-            subIndustries: {
-                enabled: false,
+            seo: {
+                title: 'Legal, Accounting & Consulting Practices — Stop Losing Work In The Quiet Middle | MindWP',
+                description:
+                    'For law firms, accountants, and consultants where the leak is not in marketing but in the long, quiet middle — slow decisions, silent drop-offs, and rooms you are not in. We put the follow-up, clarity, and proof in place so the firm stays present while clients decide.',
+                canonical: '/industries/legal-professional-services',
             },
-            caseStudies: {
-                enabled: false,
+            slug: 'legal-professional-services',
+            type: 'category',
+            category: 'legal-professional-services',
+            systems: [
+                'crm-automation',
+                'smart-website-systems',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: [
+                'follow-up',
+                'lead-qualification',
+                'pipeline-visibility',
+                'review-generation',
+            ],
+            industries: ['accounting', 'consulting', 'law-firm'],
+            hero: heroData,
+            operatingPatterns: operatingPatternsData,
+            decisionChecklist: decisionChecklistData,
+            spectrum: spectrumData,
+            systemLayers: systemLayersData,
+            process: processData,
+            detailRoutes: detailRoutesData,
+            explore: exploreData,
+            sectionControls: {
+                subIndustries: {
+                    enabled: false,
+                },
+                caseStudies: {
+                    enabled: false,
+                },
             },
-        },
-        cta: {
-            title: 'Tell us where the practice quietly loses work',
-            description:
-                'If enquiries are acknowledged late, proposals sit untouched, or prospects quietly stop replying after a good first conversation, walk us through the last few that went quiet. We will show you where the leak actually sits.',
-        },
-    };
+            cta: {
+                title: 'Tell us where the practice quietly loses work',
+                description:
+                    'If enquiries are acknowledged late, proposals sit untouched, or prospects quietly stop replying after a good first conversation, walk us through the last few that went quiet. We will show you where the leak actually sits.',
+            }
+        };
 }
 
 export const legalProfessionalServicesIndustryPageData: IndustryPageData =

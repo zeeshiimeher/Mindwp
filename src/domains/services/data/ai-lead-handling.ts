@@ -6,25 +6,25 @@ import type { ServicePageData } from '../types';
 const slug = 'ai-lead-handling';
 
 export const aiLeadHandlingPage = {
-  slug,
-  systems: ['ai-lead-handling'],
-  topics: ['lead-response-time', 'missed-calls', 'lead-capture'],
-  badge: 'AI Lead Handling Systems',
-  category: 'AI Response Systems',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'AI Lead Handling for Service Businesses | MindWP',
     description:
       "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
   }),
-  hero: {
+    systems: ['ai-lead-handling'],
+    topics: ['lead-response-time', 'missed-calls', 'lead-capture'],
+    badge: "AI Lead Handling",
+    category: 'AI Response Systems',
+    hero: {
     badge: 'AI Lead Handling',
     title: 'The Enquiry Came In After Hours. Nobody Picked It Up.',
     description:
       'Someone sends a message at 7pm, asks a booking question on the site, or calls after the team has finished. By morning, the conversation has already moved to a business that replied faster.',
-    list: ['Slow replies', 'Dead by morning'],
+    list: ["Slow replies", "Dead by morning", "No handoff"],
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'The real problem',
       title: 'Add AI to a messy process and the mess just moves faster',
@@ -475,14 +475,14 @@ export const aiLeadHandlingPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'How slow is your first reply?',
     description:
       'Look at how calls, chat, and bookings are handled now. See where speed is costing you.',
   },
-  cta: {
+    cta: {
     title: 'Find out where speed is killing your pipeline',
     description:
       'How enquiries come in. How long they wait. Where faster response would change things.',
-  },
+  }
 } satisfies ServicePageData;

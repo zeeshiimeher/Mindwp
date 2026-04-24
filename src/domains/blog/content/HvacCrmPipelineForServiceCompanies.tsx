@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
-  slug: 'hvac-crm-pipeline-for-service-companies',
-  title: 'HVAC CRM Pipeline for Service Companies',
-  seo: {
+    seo: {
     title: 'HVAC CRM Pipeline for Service Companies Explained',
     description:
       'Discover how an HVAC CRM pipeline for service companies organises lead stages from enquiry through to completed job and automated follow-up.',
@@ -14,14 +12,16 @@ export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
         'Discover how an HVAC CRM pipeline for service companies organises lead stages from enquiry through to completed job and automated follow-up.',
     },
   },
-  publishDate: '2025-06-20',
-  authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
-  industries: ['hvac'],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
-  tags: ['HVAC', 'CRM Pipeline', 'Service Companies', 'Lead Management', 'Automation'],
-  sections: [
+    slug: 'hvac-crm-pipeline-for-service-companies',
+    title: 'HVAC CRM Pipeline for Service Companies',
+    publishDate: '2025-06-20',
+    authorKey: 'TECHNICAL',
+    category: 'home-services-industry',
+    industries: ['hvac'],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline'],
+    tags: ['HVAC', 'CRM Pipeline', 'Service Companies', 'Lead Management', 'Automation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -101,5 +101,5 @@ export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
       content:
         'If your HVAC CRM mixes emergencies, maintenance, and quotes in one pipeline, structured design can fix that. See how CRM automation organises HVAC service workflows.',
     },
-  ],
+  ]
 };

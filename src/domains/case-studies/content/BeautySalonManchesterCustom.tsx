@@ -199,46 +199,46 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
   ];
 
   return {
-    slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-    title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
-    industryCategory: 'beauty-personal-care',
-    industryLabel: 'Beauty & Personal Care',
-    industries: ['hair-salon'],
-    systems: ['local-seo-authority', 'smart-website-systems', 'reputation-review'],
-    topics: ['booking-automation', 'review-generation'],
-    publishDate: '2024-12-01',
-    client: 'The Glow Room Beauty Salon (Custom Demo)',
-    location: 'Manchester, UK',
-    business: 'The Glow Room Beauty Salon',
-    duration: '3 months',
-    completedDate: 'December 2024',
-    heroHeadline: 'Custom Beauty Salon Case Study - Template Flexibility Demo',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'Custom Template'],
-    seo: {
-      title: 'Custom Beauty Salon Case Study | Manchester',
-      description:
-      'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
-      canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
-      openGraph: {
-        title: 'Custom Beauty Salon Case Study with Flexible Labels | Manchester',
+      seo: {
+        title: 'Custom Beauty Salon Case Study | Manchester',
         description:
-          'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+        'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+        canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+        openGraph: {
+          title: 'Custom Beauty Salon Case Study with Flexible Labels | Manchester',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: heroOverrides,
-      problem: problemOverrides,
-      deliverables: deliverablesOverrides,
-      process: processOverrides,
-      results: resultsOverrides,
-      cta: ctaOverrides,
-    },
+      slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+      title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+      industryCategory: 'beauty-personal-care',
+      industryLabel: 'Beauty & Personal Care',
+      industries: ['hair-salon'],
+      systems: ['local-seo-authority', 'smart-website-systems', 'reputation-review'],
+      topics: ['booking-automation', 'review-generation'],
+      publishDate: '2024-12-01',
+      client: 'The Glow Room Beauty Salon (Custom Demo)',
+      location: 'Manchester, UK',
+      business: 'The Glow Room Beauty Salon',
+      duration: '3 months',
+      completedDate: 'December 2024',
+      heroHeadline: 'Custom Beauty Salon Case Study - Template Flexibility Demo',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'Custom Template'],
+      sections,
+      templateOverrides: {
+        hero: heroOverrides,
+        problem: problemOverrides,
+        deliverables: deliverablesOverrides,
+        process: processOverrides,
+        results: resultsOverrides,
+        cta: ctaOverrides,
+      }
   };
 }
 

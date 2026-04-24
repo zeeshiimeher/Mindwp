@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const reviewAutomationForSalons: BlogPostData = {
-  slug: 'review-automation-for-salons',
-  title: 'Review Automation for Salons',
-  seo: {
+    seo: {
     title: 'How Review Automation for Salons Builds Loyalty',
     description:
       'Explore how review automation for salons turns every completed appointment into a review opportunity that strengthens local visibility and client trust.',
@@ -14,14 +12,16 @@ export const reviewAutomationForSalons: BlogPostData = {
         'Explore how review automation for salons turns every completed appointment into a review opportunity that strengthens local visibility and client trust.',
     },
   },
-  publishDate: '2025-11-03',
-  authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['reputation-review'],
-  topics: ['review-automation'],
-  tags: ['Salon', 'Review Automation', 'Reputation', 'Client Trust', 'Loyalty'],
-  sections: [
+    slug: 'review-automation-for-salons',
+    title: 'Review Automation for Salons',
+    publishDate: '2025-11-03',
+    authorKey: 'TECHNICAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['reputation-review'],
+    topics: ['review-automation'],
+    tags: ['Salon', 'Review Automation', 'Reputation', 'Client Trust', 'Loyalty'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -85,5 +85,5 @@ export const reviewAutomationForSalons: BlogPostData = {
       content:
         'If your salon has happy clients but not enough Google reviews, automation can bridge the gap. See how review systems build lasting local visibility.',
     },
-  ],
+  ]
 };

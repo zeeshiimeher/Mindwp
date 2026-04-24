@@ -217,37 +217,37 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'tattoo-studios',
-        industries: ['tattoo-studio'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'booking-systems', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'local-appointment-businesses',
-        seo: {
-            title: 'Tattoo Studios — Stay In Their Head Until The Deposit Lands | MindWP',
-            description:
-                'For tattoo studios where DMs come in, conversations stall, and the deposit moment kills the chat. We help hold the enquiry, soften the deposit ask, and turn healed work into the next booking.',
-            canonical: '/industries/local-appointment-businesses/tattoo-studios',
-        },
-        hero: {
-            ...heroData,
-        },
-        imageStrip: imageStripData,
-        operatingPatterns: operatingPatternsData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the conversation goes quiet',
-            description:
-                'If DMs come in fine but slow replies or the deposit step keep cooling the booking off, walk us through how a typical enquiry runs and we will show you the first thing worth fixing.',
-        },
-    };
+            seo: {
+                title: 'Tattoo Studios — Stay In Their Head Until The Deposit Lands | MindWP',
+                description:
+                    'For tattoo studios where DMs come in, conversations stall, and the deposit moment kills the chat. We help hold the enquiry, soften the deposit ask, and turn healed work into the next booking.',
+                canonical: '/industries/local-appointment-businesses/tattoo-studios',
+            },
+            slug: 'tattoo-studios',
+            industries: ['tattoo-studio'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'booking-systems', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'local-appointment-businesses',
+            hero: {
+                ...heroData,
+            },
+            imageStrip: imageStripData,
+            operatingPatterns: operatingPatternsData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the conversation goes quiet',
+                description:
+                    'If DMs come in fine but slow replies or the deposit step keep cooling the booking off, walk us through how a typical enquiry runs and we will show you the first thing worth fixing.',
+            }
+        };
 }
 
 export const tattooStudiosIndustryPageData: IndustryPageData = buildTattooStudiosIndustryPageData();

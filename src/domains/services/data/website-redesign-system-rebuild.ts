@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'website-redesign-system-rebuild';
 
 export const websiteRedesignSystemRebuildPage = {
-  slug,
-  systems: ['smart-website-systems'],
-  topics: ['website-infrastructure', 'service-page-architecture'],
-  badge: 'Website Redesign',
-  category: 'Structural Rebuild Services',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
     description:
       'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
   }),
-  hero: {
+    systems: ['smart-website-systems'],
+    topics: ['website-infrastructure', 'service-page-architecture'],
+    badge: 'Website Redesign',
+    category: 'Structural Rebuild Services',
+    hero: {
     badge: 'Website Redesign',
     title: "A New Look Won't Fix a Quiet Phone.",
     description:
@@ -36,7 +36,7 @@ export const websiteRedesignSystemRebuildPage = {
     cssPrefix: 'website-redesign-rebuild-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'Where the real problem is',
       title: "The website looks outdated. But the design isn't what's costing you work.",
@@ -339,14 +339,14 @@ export const websiteRedesignSystemRebuildPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Not sure if a redesign will actually fix it?',
     description:
       "Send us your URL. We'll tell you whether the problem is the design, the structure, or what happens after someone visits.",
   },
-  cta: {
+    cta: {
     title: "Show us what's not working",
     description:
       "Drop your URL and tell us what you think the problem is. We'll come back with what's actually costing you enquiries.",
-  },
+  }
 } satisfies ServicePageData;

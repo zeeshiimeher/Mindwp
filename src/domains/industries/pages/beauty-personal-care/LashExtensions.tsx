@@ -15,7 +15,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLashExtensionsIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'For Lash Techs & Studios',
+        badge: "Lash Studios",
         title: 'Her Refill Was Due Three Weeks Ago. She Did Not Switch — She Just Got Tired Of Remembering.',
         description:
             'Lash work lives or dies on the refill cycle, and that cycle slips faster than people think. Miss the usual week-three or week-four moment, and the next booking often goes to whoever showed up in her feed or had a slot ready when she finally noticed the gap.',
@@ -218,37 +218,37 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'lash-lift-and-extensions',
-        industries: ['lash-extensions'],
-        systems: [
-            'crm-automation',
-            'smart-website-systems',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['follow-up', 'booking-systems', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'beauty-personal-care',
-        seo: {
-            title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
-            description:
-                'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
-            canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the cycle is breaking',
-            description:
-                'If clients are slipping at week three or four, or a missed refill keeps turning into a lost regular, walk us through your last month and we will show you where the cycle is actually breaking.',
-        },
-    };
+            seo: {
+                title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
+                description:
+                    'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+                canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            },
+            slug: 'lash-lift-and-extensions',
+            industries: ['lash-extensions'],
+            systems: [
+                'crm-automation',
+                'smart-website-systems',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['follow-up', 'booking-systems', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'beauty-personal-care',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the cycle is breaking',
+                description:
+                    'If clients are slipping at week three or four, or a missed refill keeps turning into a lost regular, walk us through your last month and we will show you where the cycle is actually breaking.',
+            }
+        };
 }
 
 export const lashExtensionsIndustryPageData: IndustryPageData = buildLashExtensionsIndustryPageData();

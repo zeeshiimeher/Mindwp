@@ -157,23 +157,23 @@ const finalCta = {
 };
 
 export const designingWebsitesThatSupportCrmSystems: ResourceData = {
-  slug,
-  title: 'Designing Websites That Support CRM Systems',
-  description:
-    'Learn how to design service business websites that natively support CRM integration with proper form architecture, data mapping, and pipeline-aligned page structure.',
-  category: 'smart-website-systems',
-  publishedAt: '2025-11-12',
-  systems: ['smart-website-systems'],
-  industries: [],
-  topics: ['crm-enabled-websites'],
-  primaryService: 'smart-website-systems',
-  seo: {
+    slug,
+    seo: {
     title: 'Designing Websites That Support CRM Systems',
     description:
       'Learn how to design service business websites that natively support CRM integration with proper form architecture, data mapping, and pipeline-aligned page structure.',
     canonical,
   },
-  sections: [
+    title: 'Designing Websites That Support CRM Systems',
+    description:
+    'Learn how to design service business websites that natively support CRM integration with proper form architecture, data mapping, and pipeline-aligned page structure.',
+    category: 'smart-website-systems',
+    publishedAt: '2025-11-12',
+    systems: ['smart-website-systems'],
+    industries: [],
+    topics: ['crm-enabled-websites'],
+    primaryService: 'smart-website-systems',
+    sections: [
     {
       type: 'hero',
       heading: 'Designing Websites That Support CRM Systems',
@@ -242,5 +242,5 @@ export const designingWebsitesThatSupportCrmSystems: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ],
+  ]
 };

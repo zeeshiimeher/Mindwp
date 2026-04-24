@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const salonLeadHandlingExample: ResourceData = {
-  slug,
-  title: 'Salon Lead Handling Example',
-  description:
-    'See how salons use automated lead handling to respond instantly across Instagram, phone, and web, convert inquiries into self-service bookings, and grow new client acquisition by 50%.',
-  category: 'ai-lead-handling',
-  publishedAt: '2026-01-21',
-  systems: ['ai-lead-handling'],
-  industries: ['salon'],
-  topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Salon Lead Handling Example',
     description:
       'See how salons use automated lead handling to respond instantly across Instagram, phone, and web, convert inquiries into self-service bookings, and grow new client acquisition by 50%.',
     canonical,
   },
-  sections: [
+    title: 'Salon Lead Handling Example',
+    description:
+    'See how salons use automated lead handling to respond instantly across Instagram, phone, and web, convert inquiries into self-service bookings, and grow new client acquisition by 50%.',
+    category: 'ai-lead-handling',
+    publishedAt: '2026-01-21',
+    systems: ['ai-lead-handling'],
+    industries: ['salon'],
+    topics: ['lead-management'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Salon Lead Handling Example',
@@ -181,5 +181,5 @@ export const salonLeadHandlingExample: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

@@ -54,17 +54,17 @@ const aiChatFaqItems = [
 const slug = 'aichat';
 
 export const aiChatData: FeaturePageData = {
-  slug,
-  systems: ['ai-lead-handling'],
-  topics: ['lead-response-time'],
-  category: 'Communication',
-  seo: buildFeatureSeo({
+    slug,
+    seo: buildFeatureSeo({
     slug,
     title: 'AI Chat | Structured Website Conversation Layer',
     description:
       'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
   }),
-  hero: {
+    systems: ['ai-lead-handling'],
+    topics: ['lead-response-time'],
+    category: 'Communication',
+    hero: {
     badge: 'Conversation Layer',
     title: 'Structured Website Chat Integrated into Your System',
     description:
@@ -76,7 +76,7 @@ export const aiChatData: FeaturePageData = {
       { value: 'Smart', label: 'Automation' },
     ],
   },
-  sections: {
+    sections: {
     process: {
       fallbackTitle: 'How Website Chat Works',
       fallbackDescription: 'Simple 4-step process for website chat',
@@ -261,9 +261,9 @@ export const aiChatData: FeaturePageData = {
       ],
     },
   },
-  cta: {
+    cta: {
     title: 'Review Your Communication Structure',
     description:
       'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',
-  },
+  }
 };

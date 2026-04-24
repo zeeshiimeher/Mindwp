@@ -288,35 +288,35 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-    slug: 'plumbing-companies',
-    industries: ['plumbing'],
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'local-seo-authority',
-      'reputation-review',
-    ],
-    topics: ['missed-calls', 'lead-management', 'review-generation'],
-    type: 'detail',
-    parentSlug: 'home-services',
-    seo: {
-      title: 'Plumbing Firms \u2014 Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
-      description:
-        'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
-      canonical: '/industries/home-services/plumbing-companies',
-    },
-    hero: { ...heroData },
-    operatingPatterns: operatingPatternsData,
-    workflowExamples: workflowExamplesData,
-    systemLayers: systemLayersData,
-    pathways: pathwaysData,
-    explore: exploreData,
-    faq: faqData,
-    cta: {
-      title: 'Tell us about last Tuesday\u2019s 7pm call',
-      description:
-        'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
-    },
+      seo: {
+        title: 'Plumbing Firms \u2014 Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
+        description:
+          'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+        canonical: '/industries/home-services/plumbing-companies',
+      },
+      slug: 'plumbing-companies',
+      industries: ['plumbing'],
+      systems: [
+        'smart-website-systems',
+        'ai-lead-handling',
+        'local-seo-authority',
+        'reputation-review',
+      ],
+      topics: ['missed-calls', 'lead-management', 'review-generation'],
+      type: 'detail',
+      parentSlug: 'home-services',
+      hero: { ...heroData },
+      operatingPatterns: operatingPatternsData,
+      workflowExamples: workflowExamplesData,
+      systemLayers: systemLayersData,
+      pathways: pathwaysData,
+      explore: exploreData,
+      faq: faqData,
+      cta: {
+        title: 'Tell us about last Tuesday\u2019s 7pm call',
+        description:
+          'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
+      }
   };
 }
 

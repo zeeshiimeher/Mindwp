@@ -15,7 +15,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildRealtorsIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'For Realtors & Estate Agents',
+        badge: "Realtors",
         title: 'You Were Mid-Viewing. Their Phone Rang Three Times. The Next Agent Picked Up On The First.',
         description:
             'Buyers and sellers do not sit on an enquiry for long, especially when they are halfway through comparing agents on a portal. A viewing request, missed call, or late reply can turn into a booked valuation or a different agent before you have even got back to the car.',
@@ -218,37 +218,37 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'realtors',
-        industries: ['realtor'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'local-seo-authority',
-            'reputation-review',
-        ],
-        topics: ['lead-response-time', 'follow-up', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'real-estate-property-services',
-        seo: {
-            title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
-            description:
-                'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
-            canonical: '/industries/real-estate-property-services/realtors',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the calls are going elsewhere',
-            description:
-                'If viewing requests cool off before you can ring back or old buyers never hear from you again when their timing changes, walk us through the last few enquiries and we will show you where the seven-minute window is being lost.',
-        },
-    };
+            seo: {
+                title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
+                description:
+                    'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
+                canonical: '/industries/real-estate-property-services/realtors',
+            },
+            slug: 'realtors',
+            industries: ['realtor'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'local-seo-authority',
+                'reputation-review',
+            ],
+            topics: ['lead-response-time', 'follow-up', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'real-estate-property-services',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the calls are going elsewhere',
+                description:
+                    'If viewing requests cool off before you can ring back or old buyers never hear from you again when their timing changes, walk us through the last few enquiries and we will show you where the seven-minute window is being lost.',
+            }
+        };
 }
 
 export const realtorsIndustryPageData: IndustryPageData = buildRealtorsIndustryPageData();

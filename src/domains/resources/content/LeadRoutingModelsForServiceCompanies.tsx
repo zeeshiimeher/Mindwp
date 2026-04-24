@@ -151,23 +151,23 @@ const finalCta = {
 };
 
 export const leadRoutingModelsForServiceCompanies: ResourceData = {
-  slug,
-  title: 'Lead Routing Models for Service Companies Guide',
-  description:
-    'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
-  category: 'ai-lead-handling',
-  publishedAt: '2025-12-08',
-  systems: ['ai-lead-handling'],
-  industries: [],
-  topics: ['lead-routing'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Lead Routing Models for Service Companies Guide',
     description:
       'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
     canonical,
   },
-  sections: [
+    title: 'Lead Routing Models for Service Companies Guide',
+    description:
+    'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
+    category: 'ai-lead-handling',
+    publishedAt: '2025-12-08',
+    systems: ['ai-lead-handling'],
+    industries: [],
+    topics: ['lead-routing'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Lead Routing Models for Service Companies',
@@ -236,5 +236,5 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

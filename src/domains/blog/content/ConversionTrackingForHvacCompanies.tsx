@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const conversionTrackingForHvacCompanies: BlogPostData = {
-  slug: 'conversion-tracking-for-hvac-companies',
-  title: 'Conversion Tracking for HVAC Companies',
-  seo: {
+    seo: {
     title: 'Conversion Tracking for HVAC Companies Explained',
     description:
       'Learn how conversion tracking for HVAC companies connects website visits and marketing campaigns to booked service calls and measurable revenue outcomes.',
@@ -14,14 +12,16 @@ export const conversionTrackingForHvacCompanies: BlogPostData = {
         'Learn how conversion tracking for HVAC companies connects website visits and marketing campaigns to booked service calls and measurable revenue outcomes.',
     },
   },
-  publishDate: '2025-12-29',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: ['hvac'],
-  systems: ['smart-website-systems', 'crm-automation'],
-  topics: ['conversion-tracking'],
-  tags: ['HVAC', 'Conversion Tracking', 'Attribution', 'Marketing Measurement', 'CRM'],
-  sections: [
+    slug: 'conversion-tracking-for-hvac-companies',
+    title: 'Conversion Tracking for HVAC Companies',
+    publishDate: '2025-12-29',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: ['hvac'],
+    systems: ['smart-website-systems', 'crm-automation'],
+    topics: ['conversion-tracking'],
+    tags: ['HVAC', 'Conversion Tracking', 'Attribution', 'Marketing Measurement', 'CRM'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const conversionTrackingForHvacCompanies: BlogPostData = {
       content:
         'If your HVAC company cannot trace leads to their marketing source or measure channel ROI, conversion tracking can fix that. See how website and CRM systems connect.',
     },
-  ],
+  ]
 };

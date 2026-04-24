@@ -176,61 +176,61 @@ function buildAppointmentReminderNoShowReduction(): CaseStudyData {
   ];
 
   return {
-    slug: 'appointment-reminder-no-show-reduction',
-    title: 'Dental Appointment Reminder & No-Show Reduction',
-    industryCategory: 'healthcare',
-    industryLabel: 'Healthcare',
-    industries: ['dental-clinic'],
-    systems: ['revenue-growth'],
-    topics: ['no-show-reduction', 'booking-automation'],
-    publishDate: '2026-05-15',
-    client: 'Elm Street Dental',
-    location: 'Northampton, UK',
-    business: 'Elm Street Dental',
-    duration: '12 weeks',
-    completedDate: 'May 2026',
-    heroHeadline: 'How a Dental Practice Cut No-Shows From 16% to 5% and Recovered £1,400 Per Week',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'No-Show Reduction',
-      'Appointment Reminders',
-      'Dental Practice',
-      'Waitlist Recovery',
-      'Healthcare',
-    ],
-    seo: {
-      title: 'Dental No-Show Reduction | 16% to 5% With Reminders',
-      description:
-      'How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and waitlist recovery.',
-      canonical: '/case-studies/appointment-reminder-no-show-reduction',
-      openGraph: {
-        title: 'Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study',
+      seo: {
+        title: 'Dental No-Show Reduction | 16% to 5% With Reminders',
         description:
-          'How a Northampton dental practice cut no-shows from 16% to 5% with automated reminders and waitlist recovery.',
+        'How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and waitlist recovery.',
+        canonical: '/case-studies/appointment-reminder-no-show-reduction',
+        openGraph: {
+          title: 'Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study',
+          description:
+            'How a Northampton dental practice cut no-shows from 16% to 5% with automated reminders and waitlist recovery.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Operational Problem' },
-      problem: { challengeBadgeLabel: 'The No-Show Problem' },
-      workflows: { workflowsBadgeLabel: 'Reminder Pipeline' },
-      solution: { solutionBadgeLabel: 'System Implementation' },
-      results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: No-Show Performance',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for dental practices' },
-        ],
-      },
-    },
+      slug: 'appointment-reminder-no-show-reduction',
+      title: 'Dental Appointment Reminder & No-Show Reduction',
+      industryCategory: 'healthcare',
+      industryLabel: 'Healthcare',
+      industries: ['dental-clinic'],
+      systems: ['revenue-growth'],
+      topics: ['no-show-reduction', 'booking-automation'],
+      publishDate: '2026-05-15',
+      client: 'Elm Street Dental',
+      location: 'Northampton, UK',
+      business: 'Elm Street Dental',
+      duration: '12 weeks',
+      completedDate: 'May 2026',
+      heroHeadline: 'How a Dental Practice Cut No-Shows From 16% to 5% and Recovered £1,400 Per Week',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: [
+        'No-Show Reduction',
+        'Appointment Reminders',
+        'Dental Practice',
+        'Waitlist Recovery',
+        'Healthcare',
+      ],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Operational Problem' },
+        problem: { challengeBadgeLabel: 'The No-Show Problem' },
+        workflows: { workflowsBadgeLabel: 'Reminder Pipeline' },
+        solution: { solutionBadgeLabel: 'System Implementation' },
+        results: {
+          detailedResultsBadgeLabel: 'Measured Results',
+          detailedResultsSectionTitle: 'Before & After: No-Show Performance',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No contracts' },
+            { text: 'Built for dental practices' },
+          ],
+        },
+      }
   };
 }
 

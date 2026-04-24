@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const trackingSalonClientLifetimeValue: ResourceData = {
-  slug,
-  title: 'Tracking Salon Client Lifetime Value',
-  description:
-    'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-  category: 'revenue-growth',
-  publishedAt: '2026-02-28',
-  systems: ['crm-automation', 'revenue-growth'],
-  industries: ['salon'],
-  topics: ['lifetime-value'],
-  primaryService: 'crm-automation',
-  seo: {
+    slug,
+    seo: {
     title: 'Tracking Salon Client Lifetime Value',
     description:
       'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
     canonical,
   },
-  sections: [
+    title: 'Tracking Salon Client Lifetime Value',
+    description:
+    'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+    category: 'revenue-growth',
+    publishedAt: '2026-02-28',
+    systems: ['crm-automation', 'revenue-growth'],
+    industries: ['salon'],
+    topics: ['lifetime-value'],
+    primaryService: 'crm-automation',
+    sections: [
     {
       type: 'hero',
       heading: 'Tracking Salon Client Lifetime Value',
@@ -181,5 +181,5 @@ export const trackingSalonClientLifetimeValue: ResourceData = {
       content: getRelatedResourcesContent('revenue-growth'),
       resources: getRelatedResources('revenue-growth', canonical),
     },
-  ],
+  ]
 };

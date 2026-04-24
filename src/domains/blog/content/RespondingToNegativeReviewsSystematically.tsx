@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const respondingToNegativeReviewsSystematically: BlogPostData = {
-  slug: 'responding-to-negative-reviews-systematically',
-  title: 'Responding to Negative Reviews Systematically',
-  seo: {
+    seo: {
     title: 'Responding to Negative Reviews Systematically',
     description:
       'Learn how responding to negative reviews systematically protects your reputation with structured workflows that turn complaints into recovery opportunities.',
@@ -14,20 +12,22 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
         'Learn how responding to negative reviews systematically protects your reputation with structured workflows that turn complaints into recovery opportunities.',
     },
   },
-  publishDate: '2024-12-17',
-  authorKey: 'EDITORIAL',
-  category: 'reputation-review',
-  industries: [],
-  systems: ['reputation-review'],
-  topics: ['negative-review-response'],
-  tags: [
+    slug: 'responding-to-negative-reviews-systematically',
+    title: 'Responding to Negative Reviews Systematically',
+    publishDate: '2024-12-17',
+    authorKey: 'EDITORIAL',
+    category: 'reputation-review',
+    industries: [],
+    systems: ['reputation-review'],
+    topics: ['negative-review-response'],
+    tags: [
     'Negative Reviews',
     'Review Response',
     'Reputation Management',
     'Service Recovery',
     'Customer Relations',
   ],
-  sections: [
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -106,5 +106,5 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
       content:
         'If negative reviews catch your team off guard and responses vary in quality and timing, a structured workflow can protect your reputation. See how review management systems handle responses consistently.',
     },
-  ],
+  ]
 };

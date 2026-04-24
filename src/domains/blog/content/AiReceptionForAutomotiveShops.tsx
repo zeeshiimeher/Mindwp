@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const aiReceptionForAutomotiveShops: BlogPostData = {
-  slug: 'ai-reception-for-automotive-shops',
-  title: 'AI Reception for Automotive Shops',
-  seo: {
+    seo: {
     title: 'AI Reception for Automotive Shops Explained',
     description:
       'Learn how AI reception for automotive shops uses automated answering and triage systems to handle calls, capture leads, and reduce missed booking opportunities.',
@@ -14,14 +12,16 @@ export const aiReceptionForAutomotiveShops: BlogPostData = {
         'Learn how AI reception for automotive shops uses automated answering and triage systems to handle calls, capture leads, and reduce missed booking opportunities.',
     },
   },
-  publishDate: '2026-02-15',
-  authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
-  industries: ['automotive'],
-  systems: ['ai-lead-handling'],
-  topics: ['lead-response-time'],
-  tags: ['Automotive', 'AI Reception', 'Automated Answering', 'Lead Capture', 'Future Tech'],
-  sections: [
+    slug: 'ai-reception-for-automotive-shops',
+    title: 'AI Reception for Automotive Shops',
+    publishDate: '2026-02-15',
+    authorKey: 'TECHNICAL',
+    category: 'future-local-business-tech',
+    industries: ['automotive'],
+    systems: ['ai-lead-handling'],
+    topics: ['lead-response-time'],
+    tags: ['Automotive', 'AI Reception', 'Automated Answering', 'Lead Capture', 'Future Tech'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -106,5 +106,5 @@ export const aiReceptionForAutomotiveShops: BlogPostData = {
       content:
         'If your auto repair shop misses calls during busy periods or after hours, AI reception can ensure those leads are captured. See how lead handling systems work.',
     },
-  ],
+  ]
 };

@@ -14,7 +14,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'For Small Law Firms',
+        badge: "Law Firms",
         title: 'They Started The Enquiry Form Twice. They Closed It Both Times.',
         description:
             'Most legal enquiries do not disappear because somebody made a fast decision. They disappear because the person hesitated, waited another week, delayed making contact, and only reached out when one firm finally felt safe enough to trust with something serious.',
@@ -246,38 +246,38 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'small-law-firms',
-        industries: ['law-firm'],
-        systems: [
-            'smart-website-systems',
-            'reputation-review',
-            'crm-automation',
-            'local-seo-authority',
-        ],
-        topics: ['lead-qualification', 'follow-up', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'legal-professional-services',
-        seo: {
-            title: 'Small Law Firms — Lower The Barrier To The First Call, Without Losing Trust | MindWP',
-            description:
-                'For small law firms where worried clients hesitate to reach out and half-typed enquiries quietly disappear. We help make the first step small, the first reply warm, and the consultation easy to book.',
-            canonical: '/industries/legal-professional-services/small-law-firms',
-        },
-        hero: {
-            ...heroData,
-        },
-        imageStrip: imageStripData,
-        operatingPatterns: operatingPatternsData,
-        comparison: comparisonData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where worried clients are dropping off',
-            description:
-                'If people start making contact but do not complete it, or if first replies feel too cold for a serious legal decision, walk us through the journey and we will show you where the door is actually closing.',
-        },
-    };
+            seo: {
+                title: 'Small Law Firms — Lower The Barrier To The First Call, Without Losing Trust | MindWP',
+                description:
+                    'For small law firms where worried clients hesitate to reach out and half-typed enquiries quietly disappear. We help make the first step small, the first reply warm, and the consultation easy to book.',
+                canonical: '/industries/legal-professional-services/small-law-firms',
+            },
+            slug: 'small-law-firms',
+            industries: ['law-firm'],
+            systems: [
+                'smart-website-systems',
+                'reputation-review',
+                'crm-automation',
+                'local-seo-authority',
+            ],
+            topics: ['lead-qualification', 'follow-up', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'legal-professional-services',
+            hero: {
+                ...heroData,
+            },
+            imageStrip: imageStripData,
+            operatingPatterns: operatingPatternsData,
+            comparison: comparisonData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where worried clients are dropping off',
+                description:
+                    'If people start making contact but do not complete it, or if first replies feel too cold for a serious legal decision, walk us through the journey and we will show you where the door is actually closing.',
+            }
+        };
 }
 
 export const smallLawFirmsIndustryPageData: IndustryPageData = buildSmallLawFirmsIndustryPageData();

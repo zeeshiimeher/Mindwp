@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const leadRoutingForHvacCompanies: BlogPostData = {
-  slug: 'lead-routing-for-hvac-companies',
-  title: 'Lead Routing for HVAC Companies',
-  seo: {
+    seo: {
     title: 'How Lead Routing for HVAC Companies Improves Response',
     description:
       'Explore how lead routing for HVAC companies ensures every enquiry reaches the right technician or team based on service type, location, and urgency level.',
@@ -14,14 +12,16 @@ export const leadRoutingForHvacCompanies: BlogPostData = {
         'Explore how lead routing for HVAC companies ensures every enquiry reaches the right technician or team based on service type, location, and urgency level.',
     },
   },
-  publishDate: '2026-01-22',
-  authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
-  industries: ['hvac'],
-  systems: ['ai-lead-handling'],
-  topics: ['lead-routing'],
-  tags: ['HVAC', 'Lead Routing', 'Dispatch', 'Response Time', 'AI Lead Handling'],
-  sections: [
+    slug: 'lead-routing-for-hvac-companies',
+    title: 'Lead Routing for HVAC Companies',
+    publishDate: '2026-01-22',
+    authorKey: 'TECHNICAL',
+    category: 'home-services-industry',
+    industries: ['hvac'],
+    systems: ['ai-lead-handling'],
+    topics: ['lead-routing'],
+    tags: ['HVAC', 'Lead Routing', 'Dispatch', 'Response Time', 'AI Lead Handling'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const leadRoutingForHvacCompanies: BlogPostData = {
       content:
         'If your HVAC enquiries go to a generic inbox or voicemail instead of the right team member, lead routing can fix that. See how lead handling systems work.',
     },
-  ],
+  ]
 };

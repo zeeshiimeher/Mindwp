@@ -103,23 +103,23 @@ const finalCta = {
 };
 
 export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
-  slug,
-  title: 'Service Business Follow-Up Automation Guide',
-  description:
-    'Learn how to build automated follow-up sequences triggered by CRM pipeline stages that ensure every lead receives consistent, timely communication.',
-  category: 'ai-lead-handling',
-  publishedAt: '2025-12-27',
-  systems: ['ai-lead-handling'],
-  industries: [],
-  topics: ['follow-up'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Service Business Follow-Up Automation Guide',
     description:
       'Learn how to build automated follow-up sequences triggered by CRM pipeline stages that ensure every lead receives consistent, timely communication.',
     canonical,
   },
-  sections: [
+    title: 'Service Business Follow-Up Automation Guide',
+    description:
+    'Learn how to build automated follow-up sequences triggered by CRM pipeline stages that ensure every lead receives consistent, timely communication.',
+    category: 'ai-lead-handling',
+    publishedAt: '2025-12-27',
+    systems: ['ai-lead-handling'],
+    industries: [],
+    topics: ['follow-up'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Service Business Follow-Up Automation Guide',
@@ -167,5 +167,5 @@ export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

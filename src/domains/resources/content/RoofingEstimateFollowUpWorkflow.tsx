@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const roofingEstimateFollowUpWorkflow: ResourceData = {
-  slug,
-  title: 'Roofing Estimate Follow-Up Workflow',
-  description:
-    'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
-  category: 'ai-lead-handling',
-  publishedAt: '2026-02-21',
-  systems: ['ai-lead-handling', 'crm-automation'],
-  industries: ['roofing'],
-  topics: ['follow-up'],
-  primaryService: 'ai-lead-handling',
-  seo: {
+    slug,
+    seo: {
     title: 'Roofing Estimate Follow-Up Workflow',
     description:
       'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
     canonical,
   },
-  sections: [
+    title: 'Roofing Estimate Follow-Up Workflow',
+    description:
+    'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+    category: 'ai-lead-handling',
+    publishedAt: '2026-02-21',
+    systems: ['ai-lead-handling', 'crm-automation'],
+    industries: ['roofing'],
+    topics: ['follow-up'],
+    primaryService: 'ai-lead-handling',
+    sections: [
     {
       type: 'hero',
       heading: 'Roofing Estimate Follow-Up Workflow',
@@ -181,5 +181,5 @@ export const roofingEstimateFollowUpWorkflow: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ],
+  ]
 };

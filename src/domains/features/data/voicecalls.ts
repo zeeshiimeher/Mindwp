@@ -71,14 +71,14 @@ const slug = 'voicecalls';
 
 export const voicecallsData: FeaturePageData = {
   slug,
-  systems: ['ai-lead-handling'],
-  topics: ['missed-calls', 'lead-response-time'],
   seo: buildFeatureSeo({
     slug,
     title: 'Voice Calls | AI-Powered Call Handling Layer',
     description:
       'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
   }),
+  systems: ['ai-lead-handling'],
+  topics: ['missed-calls', 'lead-response-time'],
   hero: {
     badge: 'AI-Powered Phone Assistant',
     title: 'AI phone assistant for consistent call handling',
@@ -277,6 +277,7 @@ export const voicecallsData: FeaturePageData = {
       ],
     },
     testimonial: {
+      title: 'What teams notice when calls stop slipping',
       quote:
         'We reduced missed calls and improved booking consistency. The AI handles routine enquiries while our team focuses on service delivery.',
       author: 'Dr. Sarah Mitchell',
@@ -288,5 +289,5 @@ export const voicecallsData: FeaturePageData = {
     title: 'Discuss AI voice call handling',
     description:
       'Tell us how calls are handled now. We will show you where voice AI can stop missed enquiries and tighten call routing.',
-  },
+  }
 };

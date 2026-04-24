@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
-  slug: 'why-plumbing-companies-lose-jobs-without-crm-pipeline',
-  title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
-  seo: {
+    seo: {
     title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
     description:
       'Discover why plumbing companies lose jobs without a CRM pipeline and how untracked leads, missed follow-ups, and poor visibility cost revenue every week.',
@@ -14,14 +12,16 @@ export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
         'Discover why plumbing companies lose jobs without a CRM pipeline and how untracked leads, missed follow-ups, and poor visibility cost revenue every week.',
     },
   },
-  publishDate: '2026-04-06',
-  authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
-  industries: ['plumbing'],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
-  tags: ['Plumbing', 'CRM Pipeline', 'Lost Jobs', 'Lead Tracking', 'Revenue Loss'],
-  sections: [
+    slug: 'why-plumbing-companies-lose-jobs-without-crm-pipeline',
+    title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
+    publishDate: '2026-04-06',
+    authorKey: 'EDITORIAL',
+    category: 'home-services-industry',
+    industries: ['plumbing'],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline'],
+    tags: ['Plumbing', 'CRM Pipeline', 'Lost Jobs', 'Lead Tracking', 'Revenue Loss'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
       content:
         'If your plumbing business sends quotes that never get followed up, a CRM pipeline can fix the leak. See how structured lead management captures revenue that currently disappears.',
     },
-  ],
+  ]
 };

@@ -60,31 +60,31 @@ const smartWebsitesFaqItems = [
 ];
 
 export const smartWebsiteSystemsPage = {
-  slug: 'smart-website-systems',
-  systems: ['smart-website-systems'],
-  topics: [
+    seo: buildServiceSeo({
+    slug: 'smart-website-systems',
+    title: 'Smart Website Systems for Service Businesses | MindWP',
+    description:
+      'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+  }),
+    slug: 'smart-website-systems',
+    systems: ['smart-website-systems'],
+    topics: [
     'website-infrastructure',
     'lead-capture',
     'conversion-optimization',
     'crm-enabled-websites',
     'service-pages',
   ],
-  badge: 'Smart Websites',
-  category: 'Website That Works',
-  seo: buildServiceSeo({
-    slug: 'smart-website-systems',
-    title: 'Smart Website Systems for Service Businesses | MindWP',
-    description:
-      'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-  }),
-  hero: {
+    badge: 'Smart Websites',
+    category: 'Website That Works',
+    hero: {
     badge: 'Smart Websites',
     title: 'Enquiries Arrive. Nobody Picks Them Up.',
     description:
       "Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They've already rung someone else.",
     list: ['Lost leads', 'No follow-up', 'No tracking'],
   },
-  sections: {
+    sections: {
     value: {
       header: {
         title: 'What slips through every week',
@@ -465,14 +465,14 @@ export const smartWebsiteSystemsPage = {
       items: smartWebsitesFaqItems,
     },
   },
-  cta: {
+    cta: {
     title: "Show me what's broken",
     description:
       "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Not sure where your site is leaking enquiries?',
     description:
       'Send the link. We will show you where people stop, what is not being captured, and which fix matters first.',
-  },
+  }
 } satisfies ServicePageData;

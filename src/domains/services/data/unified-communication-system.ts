@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'unified-communication-system';
 
 export const unifiedCommunicationSystemPage = {
-  slug,
-  systems: ['ai-lead-handling'],
-  topics: ['lead-routing', 'lead-management'],
-  badge: 'Unified Communication System',
-  category: 'Communication Routing Systems',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'Unified Communication System for Service Businesses | MindWP',
     description:
       'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
   }),
-  hero: {
+    systems: ['ai-lead-handling'],
+    topics: ['lead-routing', 'lead-management'],
+    badge: 'Unified Communication System',
+    category: 'Communication Routing Systems',
+    hero: {
     badge: 'Unified Communication System',
     title: "Five Channels. Three Inboxes. Nobody Knows What's Live.",
     description:
@@ -36,7 +36,7 @@ export const unifiedCommunicationSystemPage = {
     cssPrefix: 'unified-communication-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-  sections: {
+    sections: {
     foundation: {
       badge: 'The fragmentation problem',
       title: 'Not a channel problem. A routing problem.',
@@ -408,14 +408,14 @@ export const unifiedCommunicationSystemPage = {
       ],
     },
   },
-  inlineCta: {
+    inlineCta: {
     title: 'Which channel is dropping your live conversations?',
     description:
       'Fifteen minutes. Map your channels, see where context breaks, and identify where routing needs to change first.',
   },
-  cta: {
+    cta: {
     title: 'Find out where conversations are falling apart',
     description:
       'Quick list of how enquiries come in. Where the gaps are. What fixing the routing looks like.',
-  },
+  }
 } satisfies ServicePageData;

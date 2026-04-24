@@ -168,60 +168,60 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
   ];
 
   return {
-    slug: 'real-estate-inquiry-routing',
-    title: 'Real Estate Inquiry Routing',
-    industryCategory: 'real-estate',
-    industryLabel: 'Real Estate',
-    industries: ['realtor'],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-routing', 'lead-response-time', 'lead-capture'],
-    publishDate: '2026-03-01',
-    client: 'Pennington & Hart',
-    location: 'Brighton, UK',
-    business: 'Pennington & Hart',
-    duration: '12 weeks',
-    completedDate: 'March 2026',
-    heroHeadline:
-      'How an Estate Agency Cut Response Time From 8 Hours to 11 Minutes and Booked 38% More Viewings',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Lead Routing', 'Estate Agency', 'Property Enquiries', 'Response Time', 'Multi-Channel'],
-    seo: {
-      title: 'Estate Agent Lead Routing | 8 Hours to 11 Minutes',
-      description:
-      'How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.',
-      canonical: '/case-studies/real-estate-inquiry-routing',
-      openGraph: {
-        title: 'Why Estate Agents Lose Property Enquiries | MindWP Case Study',
+      seo: {
+        title: 'Estate Agent Lead Routing | 8 Hours to 11 Minutes',
         description:
-          'How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing.',
+        'How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.',
+        canonical: '/case-studies/real-estate-inquiry-routing',
+        openGraph: {
+          title: 'Why Estate Agents Lose Property Enquiries | MindWP Case Study',
+          description:
+            'How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing.',
+        },
       },
-    },
-    sections,
-    templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Operational Problem' },
-      problem: { challengeBadgeLabel: 'The Routing Problem' },
-      deliverables: { deliverablesBadgeLabel: 'Deliverables' },
-      process: {
-        implementationBadgeLabel: 'Implementation',
-        implementationSectionTitle: 'How the System Was Built',
-        implementationSectionSubtitle: 'From shared inbox to intelligent routing in 12 weeks',
-      },
-      results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Enquiry Handling',
-      },
-      cta: {
-        metaItems: [
-          { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for estate agents' },
-        ],
-      },
-    },
+      slug: 'real-estate-inquiry-routing',
+      title: 'Real Estate Inquiry Routing',
+      industryCategory: 'real-estate',
+      industryLabel: 'Real Estate',
+      industries: ['realtor'],
+      systems: ['ai-lead-handling'],
+      topics: ['lead-routing', 'lead-response-time', 'lead-capture'],
+      publishDate: '2026-03-01',
+      client: 'Pennington & Hart',
+      location: 'Brighton, UK',
+      business: 'Pennington & Hart',
+      duration: '12 weeks',
+      completedDate: 'March 2026',
+      heroHeadline:
+        'How an Estate Agency Cut Response Time From 8 Hours to 11 Minutes and Booked 38% More Viewings',
+      keyMetrics: keyMetrics.map(metric => ({
+        value: metric.value,
+        label: metric.label,
+        ...(metric.color ? { color: metric.color } : {}),
+      })),
+      tags: ['Lead Routing', 'Estate Agency', 'Property Enquiries', 'Response Time', 'Multi-Channel'],
+      sections,
+      templateOverrides: {
+        hero: { scenarioBadgeLabel: 'Operational Problem' },
+        problem: { challengeBadgeLabel: 'The Routing Problem' },
+        deliverables: { deliverablesBadgeLabel: 'Deliverables' },
+        process: {
+          implementationBadgeLabel: 'Implementation',
+          implementationSectionTitle: 'How the System Was Built',
+          implementationSectionSubtitle: 'From shared inbox to intelligent routing in 12 weeks',
+        },
+        results: {
+          detailedResultsBadgeLabel: 'Measured Results',
+          detailedResultsSectionTitle: 'Before & After: Enquiry Handling',
+        },
+        cta: {
+          metaItems: [
+            { text: 'Free 20-minute call' },
+            { text: 'No contracts' },
+            { text: 'Built for estate agents' },
+          ],
+        },
+      }
   };
 }
 

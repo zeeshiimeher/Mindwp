@@ -218,37 +218,37 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'hair-salons',
-        industries: ['hair-salon'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['lead-response-time', 'follow-up', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'beauty-personal-care',
-        seo: {
-            title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
-            description:
-                'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
-            canonical: '/industries/beauty-personal-care/hair-salons',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        workflowExamples: workflowExamplesData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the chair sits empty',
-            description:
-                'If Saturday DMs keep going cold or your old regulars are now missing for months at a time, walk us through a normal week and we will show you where the chair is actually losing bookings.',
-        },
-    };
+            seo: {
+                title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
+                description:
+                    'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+                canonical: '/industries/beauty-personal-care/hair-salons',
+            },
+            slug: 'hair-salons',
+            industries: ['hair-salon'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['lead-response-time', 'follow-up', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'beauty-personal-care',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            workflowExamples: workflowExamplesData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the chair sits empty',
+                description:
+                    'If Saturday DMs keep going cold or your old regulars are now missing for months at a time, walk us through a normal week and we will show you where the chair is actually losing bookings.',
+            }
+        };
 }
 
 export const hairSalonsIndustryPageData: IndustryPageData = buildHairSalonsIndustryPageData();

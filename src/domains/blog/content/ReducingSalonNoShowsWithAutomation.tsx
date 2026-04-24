@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const reducingSalonNoShowsWithAutomation: BlogPostData = {
-  slug: 'reducing-salon-no-shows-with-automation',
-  title: 'Reducing Salon No Shows With Automation',
-  seo: {
+    seo: {
     title: 'Reducing Salon No Shows With Automation Systems',
     description:
       'Learn how reducing salon no shows with automation through SMS reminders and confirmation workflows dramatically cuts missed appointments and revenue loss.',
@@ -14,14 +12,16 @@ export const reducingSalonNoShowsWithAutomation: BlogPostData = {
         'Learn how reducing salon no shows with automation through SMS reminders and confirmation workflows dramatically cuts missed appointments and revenue loss.',
     },
   },
-  publishDate: '2025-07-14',
-  authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
-  industries: ['salon'],
-  systems: ['crm-automation', 'ai-lead-handling'],
-  topics: ['no-show-reduction'],
-  tags: ['Salon', 'No Shows', 'Automation', 'SMS Reminders', 'Booking Reliability'],
-  sections: [
+    slug: 'reducing-salon-no-shows-with-automation',
+    title: 'Reducing Salon No Shows With Automation',
+    publishDate: '2025-07-14',
+    authorKey: 'TECHNICAL',
+    category: 'beauty-personal-care-industry',
+    industries: ['salon'],
+    systems: ['crm-automation', 'ai-lead-handling'],
+    topics: ['no-show-reduction'],
+    tags: ['Salon', 'No Shows', 'Automation', 'SMS Reminders', 'Booking Reliability'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const reducingSalonNoShowsWithAutomation: BlogPostData = {
       content:
         'If your salon loses revenue to forgotten appointments every week, automated reminders can bring that number down dramatically. See how CRM automation reduces no-shows.',
     },
-  ],
+  ]
 };

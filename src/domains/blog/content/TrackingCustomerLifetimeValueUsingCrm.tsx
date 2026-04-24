@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
-  slug: 'tracking-customer-lifetime-value-using-crm',
-  title: 'Tracking Customer Lifetime Value Using CRM',
-  seo: {
+    seo: {
     title: 'Tracking Customer Lifetime Value Using CRM',
     description:
       'Learn how tracking customer lifetime value using CRM reveals which customers generate the most revenue over time and how to focus retention efforts accordingly.',
@@ -14,14 +12,16 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
         'Learn how tracking customer lifetime value using CRM reveals which customers generate the most revenue over time and how to focus retention efforts accordingly.',
     },
   },
-  publishDate: '2025-03-08',
-  authorKey: 'EDITORIAL',
-  category: 'crm-automation',
-  industries: [],
-  systems: ['crm-automation'],
-  topics: ['customer-lifetime-value', 'lifetime-value'],
-  tags: ['Customer Lifetime Value', 'CRM', 'Service Business', 'Retention', 'Analytics'],
-  sections: [
+    slug: 'tracking-customer-lifetime-value-using-crm',
+    title: 'Tracking Customer Lifetime Value Using CRM',
+    publishDate: '2025-03-08',
+    authorKey: 'EDITORIAL',
+    category: 'crm-automation',
+    industries: [],
+    systems: ['crm-automation'],
+    topics: ['customer-lifetime-value', 'lifetime-value'],
+    tags: ['Customer Lifetime Value', 'CRM', 'Service Business', 'Retention', 'Analytics'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
       content:
         'If you evaluate customers by their first job and nothing more, you are missing the full picture. See how CRM automation tracks the lifetime value that drives your business forward.',
     },
-  ],
+  ]
 };

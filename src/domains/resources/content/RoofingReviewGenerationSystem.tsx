@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const roofingReviewGenerationSystem: ResourceData = {
-  slug,
-  title: 'Roofing Review Generation System',
-  description:
-    'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
-  category: 'reputation-review',
-  publishedAt: '2026-02-04',
-  systems: ['reputation-review'],
-  industries: ['roofing'],
-  topics: ['review-generation'],
-  primaryService: 'reputation-review',
-  seo: {
+    slug,
+    seo: {
     title: 'Roofing Review Generation System',
     description:
       'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
     canonical,
   },
-  sections: [
+    title: 'Roofing Review Generation System',
+    description:
+    'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
+    category: 'reputation-review',
+    publishedAt: '2026-02-04',
+    systems: ['reputation-review'],
+    industries: ['roofing'],
+    topics: ['review-generation'],
+    primaryService: 'reputation-review',
+    sections: [
     {
       type: 'hero',
       heading: 'Roofing Review Generation System',
@@ -181,5 +181,5 @@ export const roofingReviewGenerationSystem: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ],
+  ]
 };

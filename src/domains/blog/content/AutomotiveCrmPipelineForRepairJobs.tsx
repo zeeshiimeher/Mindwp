@@ -1,9 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
-  slug: 'automotive-crm-pipeline-for-repair-jobs',
-  title: 'Automotive CRM Pipeline for Repair Jobs',
-  seo: {
+    seo: {
     title: 'Automotive CRM Pipeline for Repair Jobs Explained',
     description:
       'Explore how an automotive CRM pipeline for repair jobs tracks each vehicle from booking through diagnosis, parts ordering, and job completion.',
@@ -14,14 +12,16 @@ export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
         'Explore how an automotive CRM pipeline for repair jobs tracks each vehicle from booking through diagnosis, parts ordering, and job completion.',
     },
   },
-  publishDate: '2025-06-28',
-  authorKey: 'TECHNICAL',
-  category: 'crm-automation',
-  industries: ['automotive'],
-  systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
-  tags: ['Automotive', 'CRM Pipeline', 'Repair Jobs', 'Workshop Management', 'Automation'],
-  sections: [
+    slug: 'automotive-crm-pipeline-for-repair-jobs',
+    title: 'Automotive CRM Pipeline for Repair Jobs',
+    publishDate: '2025-06-28',
+    authorKey: 'TECHNICAL',
+    category: 'crm-automation',
+    industries: ['automotive'],
+    systems: ['crm-automation'],
+    topics: ['crm-pipeline'],
+    tags: ['Automotive', 'CRM Pipeline', 'Repair Jobs', 'Workshop Management', 'Automation'],
+    sections: [
     {
       type: 'introduction',
       content: [
@@ -91,5 +91,5 @@ export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
       content:
         'If your repair shop tracks jobs on whiteboards and memory, a CRM pipeline can bring structure and visibility. See how CRM automation organises the repair workflow.',
     },
-  ],
+  ]
 };

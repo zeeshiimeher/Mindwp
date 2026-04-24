@@ -15,18 +15,18 @@ import type { ServicePageData } from '../types';
 const slug = 'ecommerce';
 
 export const woocommercePage = {
-  slug,
-  systems: ['smart-website-systems'],
-  topics: ['website-infrastructure'],
-  badge: 'E-commerce & WooCommerce',
-  category: 'Implementation Services',
-  seo: buildServiceSeo({
+    slug,
+    seo: buildServiceSeo({
     slug,
     title: 'WooCommerce & E-commerce Implementation | MindWP',
     description:
       "WooCommerce gets your products online. But products listed doesn't mean orders flowing. Here's what most stores miss between the catalog and the sale.",
   }),
-  hero: {
+    systems: ['smart-website-systems'],
+    topics: ['website-infrastructure'],
+    badge: 'E-commerce & WooCommerce',
+    category: 'Implementation Services',
+    hero: {
     badge: 'WooCommerce & E-commerce',
     title: "Products Are Listed. Orders Aren't Coming.",
     description:
@@ -34,7 +34,7 @@ export const woocommercePage = {
     list: ['Store live', 'Low orders', 'Abandoned carts'],
     cssPrefix: 'woocommerce-hero',
   },
-  sections: {
+    sections: {
     benefitsSection: {
       badge: 'What Actually Drives Sales',
       title: "A product catalog isn't a selling machine. What happens around it is.",
@@ -184,9 +184,9 @@ export const woocommercePage = {
       ],
     },
   },
-  cta: {
+    cta: {
     title: "Store live but sales aren't happening?",
     description:
       "Tell us what's not converting. We'll show you whether it's the store, the checkout, or what's missing around it.",
-  },
+  }
 } satisfies ServicePageData;

@@ -15,7 +15,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     const heroData = {
-        badge: 'For Small Med Spas',
+        badge: "Med Spas",
         title: 'She Filled In The Consultation Form On Tuesday Night. By Friday She Had Booked The Clinic That Replied On Wednesday.',
         description:
             'Med spa clients rarely book on impulse, but they do notice quickly when interest goes cold. If the enquiry sits too long, the consult happens with no clear next step, or the plan is never followed up calmly, the booking quietly falls away before treatment ever starts.',
@@ -201,37 +201,37 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     };
 
     return {
-        slug: 'small-med-spas',
-        industries: ['med-spa'],
-        systems: [
-            'smart-website-systems',
-            'crm-automation',
-            'reputation-review',
-            'local-seo-authority',
-        ],
-        topics: ['lead-response-time', 'follow-up', 'review-generation'],
-        type: 'detail',
-        parentSlug: 'beauty-personal-care',
-        seo: {
-            title: 'Small Med Spas — Calm Consult Follow-Up, Plan Completion | MindWP',
-            description:
-                'For small med spas where enquiries cool overnight and treatment plans stall at session two. We put same-day replies, written plans, scheduled rebooks, and outcome-based reviews in place.',
-            canonical: '/industries/beauty-personal-care/small-med-spas',
-        },
-        hero: {
-            ...heroData,
-        },
-        operatingPatterns: operatingPatternsData,
-        decisionChecklist: decisionChecklistData,
-        systemLayers: systemLayersData,
-        explore: exploreData,
-        faq: faqData,
-        cta: {
-            title: 'Tell us where the consult goes quiet',
-            description:
-                'If enquiries cool before anyone calls back or treatment plans keep fading after the consult, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
-        },
-    };
+            seo: {
+                title: 'Small Med Spas — Calm Consult Follow-Up, Plan Completion | MindWP',
+                description:
+                    'For small med spas where enquiries cool overnight and treatment plans stall at session two. We put same-day replies, written plans, scheduled rebooks, and outcome-based reviews in place.',
+                canonical: '/industries/beauty-personal-care/small-med-spas',
+            },
+            slug: 'small-med-spas',
+            industries: ['med-spa'],
+            systems: [
+                'smart-website-systems',
+                'crm-automation',
+                'reputation-review',
+                'local-seo-authority',
+            ],
+            topics: ['lead-response-time', 'follow-up', 'review-generation'],
+            type: 'detail',
+            parentSlug: 'beauty-personal-care',
+            hero: {
+                ...heroData,
+            },
+            operatingPatterns: operatingPatternsData,
+            decisionChecklist: decisionChecklistData,
+            systemLayers: systemLayersData,
+            explore: exploreData,
+            faq: faqData,
+            cta: {
+                title: 'Tell us where the consult goes quiet',
+                description:
+                    'If enquiries cool before anyone calls back or treatment plans keep fading after the consult, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
+            }
+        };
 }
 
 export const smallMedSpasIndustryPageData: IndustryPageData = buildSmallMedSpasIndustryPageData();
