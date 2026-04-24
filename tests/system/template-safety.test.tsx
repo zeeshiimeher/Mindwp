@@ -32,10 +32,6 @@ describe('template safety', () => {
         pageId={`blog:${post.slug}`}
         title={post.title}
         slug={post.slug}
-        metaTitle={post.metaTitle}
-        metaDescription={post.metaDescription}
-        primaryKeyword={post.primaryKeyword}
-        supportingKeywords={post.supportingKeywords}
         category={post.category}
         publishDate={post.publishDate}
         sections={[
@@ -89,7 +85,7 @@ describe('template safety', () => {
         pageId={`case-study:${caseStudy.slug}`}
         metadata={{
           slug: caseStudy.slug,
-          metaDescription: caseStudy.metaDescription,
+          seo: caseStudy.seo,
           industryCategory: caseStudy.industryCategory,
           industryLabel: caseStudy.industryLabel,
           systems: caseStudy.systems,

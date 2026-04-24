@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
   slug: 'building-revenue-visibility-through-crm-tracking',
   title: 'Building Revenue Visibility Through CRM Tracking',
-  metaTitle: 'Building Revenue Visibility Through CRM Tracking',
-  metaDescription:
-    'Learn how building revenue visibility through CRM tracking connects your pipeline data to real financial outcomes so you can see where revenue originates.',
   seo: {
     title: 'Building Revenue Visibility Through CRM Tracking',
     description:
       'Learn how building revenue visibility through CRM tracking connects your pipeline data to real financial outcomes so you can see where revenue originates.',
     canonical: '/blog/building-revenue-visibility-through-crm-tracking',
-    keywords: [
-      'building revenue visibility through crm tracking',
-      'crm revenue tracking',
-      'revenue attribution in crm',
-      'service business revenue visibility',
-    ],
     openGraph: {
       title: 'Building Revenue Visibility Through CRM Tracking',
       description:
@@ -29,12 +20,6 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
   industries: [],
   systems: ['crm-automation'],
   topics: ['revenue-visibility', 'revenue-tracking'],
-  primaryKeyword: 'building revenue visibility through crm tracking',
-  supportingKeywords: [
-    'crm revenue tracking',
-    'revenue attribution in crm',
-    'service business revenue visibility',
-  ],
   tags: ['Revenue Visibility', 'CRM Tracking', 'Service Business', 'Pipeline', 'Attribution'],
   sections: [
     {

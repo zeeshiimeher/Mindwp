@@ -69,12 +69,7 @@ export type BlogPostSection =
 export interface BlogPostData {
   slug: string;
   title: string;
-  metaTitle: string;
-  metaDescription: string;
   seo: SharedSeoData & {
-    title: string;
-    description: string;
-    canonical: string;
     openGraph?: OpenGraphData;
   };
   publishDate: string;
@@ -86,7 +81,5 @@ export interface BlogPostData {
   relatedServices?: string[];
   layoutType?: string;
   sections: BlogPostSection[];
-  primaryKeyword: string;
-  supportingKeywords: string[];
   tags: string[];
 }

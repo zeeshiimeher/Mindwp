@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'customer-feedback-loop-framework-for-service-businesses',
   title: 'Customer Feedback Loop Framework for Service Businesses',
-  metaTitle: 'Customer Feedback Loop Framework for Service Businesses',
-  metaDescription:
-    'Explore the customer feedback loop framework for service businesses that captures post-service insights and routes them into operational improvement workflows.',
   seo: {
     title: 'Customer Feedback Loop Framework for Service Businesses',
     description:
       'Explore the customer feedback loop framework for service businesses that captures post-service insights and routes them into operational improvement workflows.',
     canonical: '/blog/customer-feedback-loop-framework-for-service-businesses',
-    keywords: [
-      'customer feedback loop framework for service businesses',
-      'customer feedback system',
-      'post-service feedback workflow',
-      'service quality feedback loop',
-    ],
     openGraph: {
       title: 'Customer Feedback Loop Framework for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['reputation-review'],
   topics: ['feedback-loops', 'customer-feedback'],
-  primaryKeyword: 'customer feedback loop framework for service businesses',
-  supportingKeywords: [
-    'customer feedback system',
-    'post-service feedback workflow',
-    'service quality feedback loop',
-  ],
   tags: ['Customer Feedback', 'Feedback Loop', 'Service Business', 'Service Quality', 'Reputation'],
   sections: [
     {

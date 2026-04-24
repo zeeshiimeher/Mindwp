@@ -158,9 +158,6 @@ function buildSalonBookingAutomation(): CaseStudyData {
   return {
     slug: 'salon-booking-automation',
     title: 'Salon Booking Automation',
-    metaTitle: 'Salon Booking Automation | 68% Online Booking Adoption',
-    metaDescription:
-      'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
@@ -187,6 +184,9 @@ function buildSalonBookingAutomation(): CaseStudyData {
       'Beauty & Personal Care',
     ],
     seo: {
+      title: 'Salon Booking Automation | 68% Online Booking Adoption',
+      description:
+      'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
       canonical: '/case-studies/salon-booking-automation',
       openGraph: {
         title: 'Why Salon Booking Systems Break Down | MindWP Case Study',

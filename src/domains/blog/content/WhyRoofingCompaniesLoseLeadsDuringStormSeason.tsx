@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
   slug: 'why-roofing-companies-lose-leads-during-storm-season',
   title: 'Why Roofing Companies Lose Leads During Storm Season',
-  metaTitle: 'Why Roofing Companies Lose Leads During Storm Season',
-  metaDescription:
-    'Learn why roofing companies lose leads during storm season when enquiry volume overwhelms response capacity and how lead handling systems prevent it.',
   seo: {
     title: 'Why Roofing Companies Lose Leads During Storm Season',
     description:
       'Learn why roofing companies lose leads during storm season when enquiry volume overwhelms response capacity and how lead handling systems prevent it.',
     canonical: '/blog/why-roofing-companies-lose-leads-during-storm-season',
-    keywords: [
-      'why roofing companies lose leads during storm season',
-      'roofing lead response',
-      'storm season enquiries',
-      'roofing lead handling gaps',
-    ],
     openGraph: {
       title: 'Why Roofing Companies Lose Leads During Storm Season',
       description:
@@ -29,12 +20,6 @@ export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
   industries: ['roofing'],
   systems: ['ai-lead-handling'],
   topics: ['lead-management'],
-  primaryKeyword: 'why roofing companies lose leads during storm season',
-  supportingKeywords: [
-    'roofing lead response',
-    'storm season enquiries',
-    'roofing lead handling gaps',
-  ],
   tags: ['Roofing', 'Storm Season', 'Lead Loss', 'Lead Response', 'Service Business'],
   sections: [
     {

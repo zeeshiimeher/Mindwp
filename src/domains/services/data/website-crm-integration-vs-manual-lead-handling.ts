@@ -9,22 +9,11 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
   slug,
   badge: 'CRM Setup for Service Businesses',
   category: crmAutomationPage.category,
-  keywords: Array.from(
-    new Set([
-      ...crmAutomationPage.keywords,
-      'website crm integration vs manual lead handling',
-      'manual lead handling vs crm infrastructure',
-      'crm infrastructure decision page',
-    ])
-  ),
   seo: buildServiceSeo({
     slug,
     title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
     description:
       'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-    schemaName: 'Website CRM integration vs manual lead handling',
-    schemaDescription:
-      'A CRM decision page showing the operational difference between manual lead handling and integrated CRM infrastructure for service businesses.',
   }),
   hero: {
     ...crmAutomationPage.hero,

@@ -273,13 +273,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
             title: 'Repair Shops — Stop Living Off Walk-Ins, Build A Repeat Work Base | MindWP',
             description:
                 'For repair shops where the bench is busy but past jobs never come back. We put recall, easy booking, and review prompts in place so today fixes the year, not just the day.',
-            keywords: [
-                'repair shop recall system',
-                'repair shop booking system',
-                'repair shop crm',
-                'repair shop local seo',
-                'repair shop reputation system',
-            ],
             canonical: '/industries/local-appointment-businesses/repair-shops',
         },
         hero: {

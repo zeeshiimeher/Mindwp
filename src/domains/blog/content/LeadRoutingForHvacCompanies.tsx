@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadRoutingForHvacCompanies: BlogPostData = {
   slug: 'lead-routing-for-hvac-companies',
   title: 'Lead Routing for HVAC Companies',
-  metaTitle: 'How Lead Routing for HVAC Companies Improves Response',
-  metaDescription:
-    'Explore how lead routing for HVAC companies ensures every enquiry reaches the right technician or team based on service type, location, and urgency level.',
   seo: {
     title: 'How Lead Routing for HVAC Companies Improves Response',
     description:
       'Explore how lead routing for HVAC companies ensures every enquiry reaches the right technician or team based on service type, location, and urgency level.',
     canonical: '/blog/lead-routing-for-hvac-companies',
-    keywords: [
-      'lead routing for hvac companies',
-      'hvac lead routing',
-      'assign hvac enquiries',
-      'hvac dispatch lead routing',
-    ],
     openGraph: {
       title: 'How Lead Routing for HVAC Companies Improves Response',
       description:
@@ -29,8 +20,6 @@ export const leadRoutingForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['ai-lead-handling'],
   topics: ['lead-routing'],
-  primaryKeyword: 'lead routing for hvac companies',
-  supportingKeywords: ['hvac lead routing', 'assign hvac enquiries', 'hvac dispatch lead routing'],
   tags: ['HVAC', 'Lead Routing', 'Dispatch', 'Response Time', 'AI Lead Handling'],
   sections: [
     {

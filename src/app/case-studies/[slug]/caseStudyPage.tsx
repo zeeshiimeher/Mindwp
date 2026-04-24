@@ -7,6 +7,7 @@ import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -55,10 +56,11 @@ export async function CaseStudyDetailPage({ params }: { params: Promise<{ slug: 
   const { node, caseStudy } = resolved;
 
   const canonicalPath = node.path;
+  const resolvedMetadata = resolveMetadata(caseStudy, canonicalPath);
 
   const articleSchema = buildArticleSchema({
     headline: caseStudy.title,
-    description: caseStudy.metaDescription,
+    description: resolvedMetadata.description ?? caseStudy.seo.description,
     path: canonicalPath,
     datePublished: caseStudy.publishDate,
     dateModified: caseStudy.publishDate,

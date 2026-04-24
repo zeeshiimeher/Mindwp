@@ -9,7 +9,7 @@ export interface CaseStudyCardsSectionItem {
   industry: string;
   client: string;
   location: string;
-  metaDescription: string;
+  description: string;
   publishDate?: string;
 }
 
@@ -45,7 +45,7 @@ export function CaseStudyCardsSection({
               industry={study.industry}
               title={study.client}
               location={study.location}
-              description={study.metaDescription}
+              description={study.description}
               publishDate={study.publishDate}
               buttonVariant='outline'
               className={`industry-case-studies-card-${study.slug}`}

@@ -12776,7 +12776,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "description",
         "type": "string",
         "optional": false,
-        "description": "Short summary line in the card (e.g. heroHeadline or metaDescription)"
+        "description": "Short summary line in the card (e.g. heroHeadline or seo.description)"
       },
       {
         "name": "industry",

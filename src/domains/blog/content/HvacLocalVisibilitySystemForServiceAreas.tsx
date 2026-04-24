@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
   slug: 'hvac-local-visibility-system-for-service-areas',
   title: 'HVAC Local Visibility System for Service Areas',
-  metaTitle: 'HVAC Local Visibility System for Service Areas',
-  metaDescription:
-    'Learn how an HVAC local visibility system for service areas builds consistent review flow, citation accuracy, and local content that drives map pack rankings.',
   seo: {
     title: 'HVAC Local Visibility System for Service Areas',
     description:
       'Learn how an HVAC local visibility system for service areas builds consistent review flow, citation accuracy, and local content that drives map pack rankings.',
     canonical: '/blog/hvac-local-visibility-system-for-service-areas',
-    keywords: [
-      'hvac local visibility system',
-      'hvac service area rankings',
-      'hvac local seo system',
-      'hvac map pack strategy',
-    ],
     openGraph: {
       title: 'HVAC Local Visibility System for Service Areas',
       description:
@@ -29,12 +20,6 @@ export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
   industries: ['hvac'],
   systems: ['reputation-review'],
   topics: ['local-visibility'],
-  primaryKeyword: 'hvac local visibility system for service areas',
-  supportingKeywords: [
-    'hvac service area rankings',
-    'hvac local seo system',
-    'hvac map pack strategy',
-  ],
   tags: ['HVAC', 'Local Visibility', 'Service Areas', 'Local SEO', 'Map Pack'],
   sections: [
     {

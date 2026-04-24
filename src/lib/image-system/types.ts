@@ -110,7 +110,7 @@ export interface ImageHash {
 
 export interface ContentMetadata {
   title: string;
-  primaryKeyword: string;
+  summary: string;
   topics: string[];
   systems: string[];
   tags: string[];

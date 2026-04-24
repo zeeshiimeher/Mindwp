@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadResponseTimeForServiceBusinesses: BlogPostData = {
   slug: 'lead-response-time-for-service-businesses',
   title: 'Lead Response Time for Service Businesses',
-  metaTitle: 'Lead Response Time for Service Businesses',
-  metaDescription:
-    'Discover why lead response time for service businesses determines conversion rates and how automated systems close the gap between enquiry and first contact.',
   seo: {
     title: 'Lead Response Time for Service Businesses',
     description:
       'Discover why lead response time for service businesses determines conversion rates and how automated systems close the gap between enquiry and first contact.',
     canonical: '/blog/lead-response-time-for-service-businesses',
-    keywords: [
-      'lead response time for service businesses',
-      'fast lead response',
-      'response speed for enquiries',
-      'service lead response delays',
-    ],
     openGraph: {
       title: 'Lead Response Time for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const leadResponseTimeForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
-  primaryKeyword: 'lead response time for service businesses',
-  supportingKeywords: [
-    'fast lead response',
-    'response speed for enquiries',
-    'service lead response delays',
-  ],
   tags: [
     'Lead Response',
     'Service Business',

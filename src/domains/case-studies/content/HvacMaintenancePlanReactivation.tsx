@@ -157,9 +157,6 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
   return {
     slug: 'hvac-maintenance-plan-reactivation',
     title: 'HVAC Maintenance Plan Reactivation',
-    metaTitle: 'HVAC Maintenance Reactivation | 54% to 71% Renewals',
-    metaDescription:
-      'How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
@@ -186,6 +183,9 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
       'CRM Automation',
     ],
     seo: {
+      title: 'HVAC Maintenance Reactivation | 54% to 71% Renewals',
+      description:
+      'How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.',
       canonical: '/case-studies/hvac-maintenance-plan-reactivation',
       openGraph: {
         title: 'How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study',

@@ -1,7 +1,7 @@
 import { env } from '@/env';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 
 import { normalizePath } from '../seo/config';
-import { DEFAULT_OG_IMAGE_PATH } from '../seo/metadata';
 
 import { CANONICAL_INDUSTRIES, CANONICAL_SYSTEMS, CANONICAL_TOPICS } from './canonical';
 import { resolveConversionGoal } from './conversionGoals';
@@ -24,59 +24,18 @@ const canonicalIndustries = new Set<string>(CANONICAL_INDUSTRIES);
 const canonicalSystems = new Set<string>(CANONICAL_SYSTEMS);
 const canonicalTopics = new Set<string>(CANONICAL_TOPICS);
 
-function asRecord(value: unknown): Record<string, unknown> | null {
-  return value && typeof value === 'object' ? (value as Record<string, unknown>) : null;
-}
-
-function readString(value: unknown): string | undefined {
-  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
-}
-
 function getSeoSnapshot(source: Record<string, unknown>, path: string) {
-  const seo = asRecord(source.seo);
-  const hero = asRecord(source.hero);
-  const cta = asRecord(source.cta) ?? asRecord(asRecord(source.templateOverrides)?.cta);
-  const title =
-    readString(seo?.title) ??
-    readString(source.title) ??
-    readString(source.metaTitle) ??
-    readString(hero?.title);
-  const description =
-    readString(seo?.description) ??
-    readString(source.description) ??
-    readString(source.metaDescription) ??
-    readString(hero?.description);
-  const canonical = normalizePath(readString(seo?.canonical) ?? path);
-  const openGraph = asRecord(seo?.openGraph);
-  const robots = asRecord(source.robots);
+  const metadata = resolveMetadata(source, path);
 
   return {
-    title,
-    description,
-    canonical,
-    openGraph: {
-      title: readString(openGraph?.title) ?? title,
-      description: readString(openGraph?.description) ?? description,
-      url: normalizePath(readString(openGraph?.url) ?? canonical),
-      images: [DEFAULT_OG_IMAGE_PATH],
-    },
-    robots: {
-      index:
-        typeof robots?.index === 'boolean'
-          ? robots.index
-          : typeof robots?.noindex === 'boolean'
-            ? !robots.noindex
-            : true,
-      follow:
-        typeof robots?.follow === 'boolean'
-          ? robots.follow
-          : typeof robots?.nofollow === 'boolean'
-            ? !robots.nofollow
-            : true,
-    },
-    ...(seo ? { seo } : {}),
-    ...(hero ? { hero } : {}),
-    ...(cta ? { cta } : {}),
+    title: metadata.title,
+    description: metadata.description,
+    canonical: normalizePath(metadata.canonical),
+    openGraph: metadata.openGraph,
+    robots: metadata.robots,
+    ...(metadata.seo ? { seo: metadata.seo } : {}),
+    ...(metadata.hero ? { hero: metadata.hero } : {}),
+    ...(metadata.cta ? { cta: metadata.cta } : {}),
   };
 }
 
@@ -352,7 +311,7 @@ export function getStructuredContentGraph(): ContentGraph {
 export function getNodeBySlug(slug: string): ContentGraphNode | undefined {
   const graph = getStructuredContentGraph();
   if (graph.indexes?.ambiguousSlugs.has(slug)) {
-    return undefined;
+    throw new Error(`Ambiguous graph slug lookup attempted for "${slug}". Use a typed lookup instead.`);
   }
   return graph.indexes?.slugIndex[slug];
 }

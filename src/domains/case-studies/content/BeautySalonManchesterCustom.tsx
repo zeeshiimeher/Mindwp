@@ -201,9 +201,6 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
   return {
     slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
     title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
-    metaTitle: 'Custom Beauty Salon Case Study | Manchester',
-    metaDescription:
-      'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
@@ -223,6 +220,9 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
     })),
     tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'Custom Template'],
     seo: {
+      title: 'Custom Beauty Salon Case Study | Manchester',
+      description:
+      'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
       canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
       openGraph: {
         title: 'Custom Beauty Salon Case Study with Flexible Labels | Manchester',

@@ -76,13 +76,6 @@ export const crmAutomationPage = {
   slug,
   systems: ['crm-automation'],
   topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
-  keywords: [
-    'crm infrastructure implementation',
-    'crm setup for service business',
-    'lead routing crm system',
-    'service business crm workflow',
-    'enquiry handling in crm',
-  ],
   badge: 'CRM Setup for Service Businesses',
   category: 'Lead & Follow-Up',
   seo: buildServiceSeo({
@@ -90,9 +83,6 @@ export const crmAutomationPage = {
     title: 'CRM Setup for Service Businesses | MindWP',
     description:
       "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-    schemaName: 'CRM setup and lead tracking for service businesses',
-    schemaDescription:
-      'CRM implementation that captures every enquiry, automates follow-up, and gives service businesses clear visibility into their lead pipeline.',
   }),
   hero: {
     badge: 'CRM Setup for Service Businesses',

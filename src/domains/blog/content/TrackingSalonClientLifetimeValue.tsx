@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const trackingSalonClientLifetimeValue: BlogPostData = {
   slug: 'tracking-salon-client-lifetime-value',
   title: 'Tracking Salon Client Lifetime Value',
-  metaTitle: 'Tracking Salon Client Lifetime Value in CRM',
-  metaDescription:
-    'Learn how tracking salon client lifetime value through CRM data reveals which clients generate the most revenue and where to focus retention efforts.',
   seo: {
     title: 'Tracking Salon Client Lifetime Value in CRM',
     description:
       'Learn how tracking salon client lifetime value through CRM data reveals which clients generate the most revenue and where to focus retention efforts.',
     canonical: '/blog/tracking-salon-client-lifetime-value',
-    keywords: [
-      'tracking salon client lifetime value',
-      'salon client value tracking',
-      'salon crm revenue insights',
-      'repeat visit value in salons',
-    ],
     openGraph: {
       title: 'Tracking Salon Client Lifetime Value in CRM',
       description:
@@ -29,12 +20,6 @@ export const trackingSalonClientLifetimeValue: BlogPostData = {
   industries: ['salon'],
   systems: ['crm-automation'],
   topics: ['customer-lifetime-value'],
-  primaryKeyword: 'tracking salon client lifetime value',
-  supportingKeywords: [
-    'salon client value tracking',
-    'salon crm revenue insights',
-    'repeat visit value in salons',
-  ],
   tags: ['Salon', 'Client Lifetime Value', 'CRM', 'Retention', 'Revenue'],
   sections: [
     {

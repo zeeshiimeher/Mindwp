@@ -19,14 +19,6 @@ export const bricksBuilderPage = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  keywords: [
-    'bricks builder',
-    'bricks builder implementation',
-    'wordpress page builder',
-    'visual builder',
-    'custom breakpoints',
-    'performance',
-  ],
   badge: 'Bricks Builder',
   category: 'Implementation Services',
   seo: buildServiceSeo({
@@ -34,9 +26,6 @@ export const bricksBuilderPage = {
     title: 'Bricks Builder WordPress Development | MindWP',
     description:
       "Bricks Builder produces fast, clean WordPress sites. But clean code alone doesn't convert visitors into enquiries. Here's what to get right first.",
-    schemaName: 'Bricks Builder WordPress development',
-    schemaDescription:
-      'WordPress implementation using Bricks Builder as part of a structured website system that handles enquiries, follow-up, and lead routing.',
   }),
   hero: {
     badge: 'Bricks Builder',

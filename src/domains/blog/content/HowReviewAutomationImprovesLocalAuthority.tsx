@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
   slug: 'how-review-automation-improves-local-authority',
   title: 'How Review Automation Improves Local Authority',
-  metaTitle: 'How Review Automation Improves Local Authority',
-  metaDescription:
-    'Understand how review automation improves local authority by building consistent review velocity that strengthens search rankings and customer trust signals.',
   seo: {
     title: 'How Review Automation Improves Local Authority',
     description:
       'Understand how review automation improves local authority by building consistent review velocity that strengthens search rankings and customer trust signals.',
     canonical: '/blog/how-review-automation-improves-local-authority',
-    keywords: [
-      'how review automation improves local authority',
-      'review automation and seo',
-      'review velocity and local rankings',
-      'review systems for authority',
-    ],
     openGraph: {
       title: 'How Review Automation Improves Local Authority',
       description:
@@ -29,12 +20,6 @@ export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
   industries: [],
   systems: ['reputation-review'],
   topics: ['review-automation'],
-  primaryKeyword: 'how review automation improves local authority',
-  supportingKeywords: [
-    'review automation and seo',
-    'review velocity and local rankings',
-    'review systems for authority',
-  ],
   tags: ['Review Automation', 'Local Authority', 'Reputation', 'Local SEO', 'Trust Signals'],
   sections: [
     {

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
   slug: 'systems-first-website-for-hvac-companies',
   title: 'Systems First Website for HVAC Companies',
-  metaTitle: 'Systems First Website for HVAC Companies',
-  metaDescription:
-    'Learn how a systems first website for HVAC companies connects lead capture, automation, and CRM into infrastructure that generates service calls.',
   seo: {
     title: 'Systems First Website for HVAC Companies',
     description:
       'Learn how a systems first website for HVAC companies connects lead capture, automation, and CRM into infrastructure that generates service calls.',
     canonical: '/blog/systems-first-website-for-hvac-companies',
-    keywords: [
-      'systems first website for hvac companies',
-      'hvac systems first website',
-      'hvac website infrastructure',
-      'hvac website operations',
-    ],
     openGraph: {
       title: 'Systems First Website for HVAC Companies',
       description:
@@ -29,12 +20,6 @@ export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['smart-website-systems'],
   topics: ['systems-first-websites'],
-  primaryKeyword: 'systems first website for hvac companies',
-  supportingKeywords: [
-    'hvac systems first website',
-    'hvac website infrastructure',
-    'hvac website operations',
-  ],
   tags: ['HVAC', 'Systems First', 'Website Infrastructure', 'Lead Generation', 'Automation'],
   sections: [
     {

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
   slug: 'why-roofing-missed-calls-cost-emergency-jobs',
   title: 'Why Roofing Missed Calls Cost Emergency Jobs',
-  metaTitle: 'Why Roofing Missed Calls Cost Emergency Jobs',
-  metaDescription:
-    'Discover why roofing missed calls cost emergency jobs during storm events and how automated call recovery systems prevent lost repair revenue.',
   seo: {
     title: 'Why Roofing Missed Calls Cost Emergency Jobs',
     description:
       'Discover why roofing missed calls cost emergency jobs during storm events and how automated call recovery systems prevent lost repair revenue.',
     canonical: '/blog/why-roofing-missed-calls-cost-emergency-jobs',
-    keywords: [
-      'why roofing missed calls cost emergency jobs',
-      'roofing missed calls',
-      'storm repair missed enquiries',
-      'roofing call recovery',
-    ],
     openGraph: {
       title: 'Why Roofing Missed Calls Cost Emergency Jobs',
       description:
@@ -29,12 +20,6 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
   industries: ['roofing'],
   systems: ['ai-lead-handling'],
   topics: ['missed-calls'],
-  primaryKeyword: 'why roofing missed calls cost emergency jobs',
-  supportingKeywords: [
-    'roofing missed calls',
-    'storm repair missed enquiries',
-    'roofing call recovery',
-  ],
   tags: ['Roofing', 'Missed Calls', 'Emergency Jobs', 'Call Recovery', 'Lead Loss'],
   sections: [
     {

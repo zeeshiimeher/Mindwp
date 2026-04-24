@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
   slug: 'local-service-page-architecture-for-local-businesses',
   title: 'Local Service Page Architecture for Local Businesses',
-  metaTitle: 'Local Service Page Architecture for Local Businesses',
-  metaDescription:
-    'Learn how local service page architecture for local businesses creates location-specific landing pages that capture geo-targeted search traffic and convert it.',
   seo: {
     title: 'Local Service Page Architecture for Local Businesses',
     description:
       'Learn how local service page architecture for local businesses creates location-specific landing pages that capture geo-targeted search traffic and convert it.',
     canonical: '/blog/local-service-page-architecture-for-local-businesses',
-    keywords: [
-      'local service page architecture for local businesses',
-      'local service page structure',
-      'geo service page architecture',
-      'local page system design',
-    ],
     openGraph: {
       title: 'Local Service Page Architecture for Local Businesses',
       description:
@@ -29,12 +20,6 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
   industries: [],
   systems: ['local-seo-authority'],
   topics: ['local-service-pages'],
-  primaryKeyword: 'local service page architecture for local businesses',
-  supportingKeywords: [
-    'local service page structure',
-    'geo service page architecture',
-    'local page system design',
-  ],
   tags: ['Local Service Pages', 'Local SEO', 'Landing Pages', 'Geo Targeting', 'Service Business'],
   sections: [
     {

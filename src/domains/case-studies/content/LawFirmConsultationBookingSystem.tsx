@@ -152,9 +152,6 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
   return {
     slug: 'law-firm-consultation-booking-system',
     title: 'Law Firm Consultation Booking System',
-    metaTitle: 'Law Firm Booking System | 34% More Consultations',
-    metaDescription:
-      'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],
@@ -181,6 +178,9 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
       'Professional Services',
     ],
     seo: {
+      title: 'Law Firm Booking System | 34% More Consultations',
+      description:
+      'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
       canonical: '/case-studies/law-firm-consultation-booking-system',
       openGraph: {
         title: 'Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study',

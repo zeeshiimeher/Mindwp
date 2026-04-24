@@ -46,7 +46,11 @@ describe('CaseStudyTemplate', () => {
         pageId='case-study:test'
         metadata={{
           slug: 'test-case-study',
-          metaDescription: 'Test description',
+          seo: {
+            title: 'Test case study',
+            description: 'Test description',
+            canonical: '/case-studies/test-case-study',
+          },
           industryCategory: 'home-services',
           industryLabel: 'Home Services',
           systems: ['smart-website-systems'],
@@ -93,7 +97,11 @@ describe('CaseStudyTemplate', () => {
         pageId='case-study:test'
         metadata={{
           slug: 'test-case-study',
-          metaDescription: 'Test description',
+          seo: {
+            title: 'Test case study',
+            description: 'Test description',
+            canonical: '/case-studies/test-case-study',
+          },
           industryCategory: 'home-services',
           industryLabel: 'Home Services',
           systems: ['smart-website-systems'],

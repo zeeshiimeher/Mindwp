@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
   slug: 'why-slow-lead-response-is-killing-hvac-businesses',
   title: 'Why Slow Lead Response Is Killing HVAC Businesses',
-  metaTitle: 'Why Slow Lead Response Is Killing HVAC Businesses',
-  metaDescription:
-    'Learn why slow lead response is killing HVAC businesses and how delayed follow-up on heating and cooling enquiries sends urgent customers to competitors.',
   seo: {
     title: 'Why Slow Lead Response Is Killing HVAC Businesses',
     description:
       'Learn why slow lead response is killing HVAC businesses and how delayed follow-up on heating and cooling enquiries sends urgent customers to competitors.',
     canonical: '/blog/why-slow-lead-response-is-killing-hvac-businesses',
-    keywords: [
-      'slow lead response hvac',
-      'hvac lead response time',
-      'hvac lost leads delayed response',
-      'heating cooling enquiry follow-up',
-    ],
     openGraph: {
       title: 'Why Slow Lead Response Is Killing HVAC Businesses',
       description:
@@ -29,12 +20,6 @@ export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
   industries: ['hvac'],
   systems: ['crm-automation'],
   topics: ['lead-response-time'],
-  primaryKeyword: 'slow lead response is killing hvac businesses',
-  supportingKeywords: [
-    'hvac lead response time',
-    'hvac lost leads delayed response',
-    'heating cooling enquiry follow-up',
-  ],
   tags: ['HVAC', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Enquiry Management'],
   sections: [
     {

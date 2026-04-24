@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveReviewGenerationSystem: BlogPostData = {
   slug: 'automotive-review-generation-system',
   title: 'Automotive Review Generation System',
-  metaTitle: 'Automotive Review Generation System for Shops',
-  metaDescription:
-    'Learn how an automotive review generation system automates post-service review requests to build workshop reputation and attract new customers.',
   seo: {
     title: 'Automotive Review Generation System for Shops',
     description:
       'Learn how an automotive review generation system automates post-service review requests to build workshop reputation and attract new customers.',
     canonical: '/blog/automotive-review-generation-system',
-    keywords: [
-      'automotive review generation system',
-      'auto repair review requests',
-      'workshop review system',
-      'automotive google review workflow',
-    ],
     openGraph: {
       title: 'Automotive Review Generation System for Shops',
       description:
@@ -29,12 +20,6 @@ export const automotiveReviewGenerationSystem: BlogPostData = {
   industries: ['automotive'],
   systems: ['reputation-review'],
   topics: ['review-generation'],
-  primaryKeyword: 'automotive review generation system',
-  supportingKeywords: [
-    'auto repair review requests',
-    'workshop review system',
-    'automotive google review workflow',
-  ],
   tags: ['Automotive', 'Review Generation', 'Workshop Reputation', 'Google Reviews', 'Automation'],
   sections: [
     {

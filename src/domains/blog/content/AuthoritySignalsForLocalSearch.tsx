@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const authoritySignalsForLocalSearch: BlogPostData = {
   slug: 'authority-signals-for-local-search',
   title: 'Authority Signals for Local Search',
-  metaTitle: 'Authority Signals for Local Search Explained',
-  metaDescription:
-    'Learn how authority signals for local search build the trust and prominence that determine whether your business appears in competitive local search results.',
   seo: {
     title: 'Authority Signals for Local Search Explained',
     description:
       'Learn how authority signals for local search build the trust and prominence that determine whether your business appears in competitive local search results.',
     canonical: '/blog/authority-signals-for-local-search',
-    keywords: [
-      'authority signals for local search',
-      'local authority signals',
-      'trust signals for local rankings',
-      'authority building for local seo',
-    ],
     openGraph: {
       title: 'Authority Signals for Local Search Explained',
       description:
@@ -29,12 +20,6 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
   industries: [],
   systems: ['local-seo-authority'],
   topics: ['local-authority', 'authority-signals'],
-  primaryKeyword: 'authority signals for local search',
-  supportingKeywords: [
-    'local authority signals',
-    'trust signals for local rankings',
-    'authority building for local seo',
-  ],
   tags: ['Authority Signals', 'Local Search', 'Local SEO', 'Trust Factors', 'Search Rankings'],
   sections: [
     {

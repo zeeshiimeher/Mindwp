@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
   slug: 'hvac-crm-pipeline-for-service-companies',
   title: 'HVAC CRM Pipeline for Service Companies',
-  metaTitle: 'HVAC CRM Pipeline for Service Companies Explained',
-  metaDescription:
-    'Discover how an HVAC CRM pipeline for service companies organises lead stages from enquiry through to completed job and automated follow-up.',
   seo: {
     title: 'HVAC CRM Pipeline for Service Companies Explained',
     description:
       'Discover how an HVAC CRM pipeline for service companies organises lead stages from enquiry through to completed job and automated follow-up.',
     canonical: '/blog/hvac-crm-pipeline-for-service-companies',
-    keywords: [
-      'hvac crm pipeline for service companies',
-      'hvac crm stages',
-      'hvac sales pipeline',
-      'hvac pipeline workflow',
-    ],
     openGraph: {
       title: 'HVAC CRM Pipeline for Service Companies Explained',
       description:
@@ -29,8 +20,6 @@ export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'hvac crm pipeline for service companies',
-  supportingKeywords: ['hvac crm stages', 'hvac sales pipeline', 'hvac pipeline workflow'],
   tags: ['HVAC', 'CRM Pipeline', 'Service Companies', 'Lead Management', 'Automation'],
   sections: [
     {

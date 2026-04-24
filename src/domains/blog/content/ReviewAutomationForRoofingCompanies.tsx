@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForRoofingCompanies: BlogPostData = {
   slug: 'review-automation-for-roofing-companies',
   title: 'Review Automation for Roofing Companies',
-  metaTitle: 'Review Automation for Roofing Companies Guide',
-  metaDescription:
-    'Discover how review automation for roofing companies builds a steady flow of recent reviews that strengthen local rankings and attract more customers.',
   seo: {
     title: 'Review Automation for Roofing Companies Guide',
     description:
       'Discover how review automation for roofing companies builds a steady flow of recent reviews that strengthen local rankings and attract more customers.',
     canonical: '/blog/review-automation-for-roofing-companies',
-    keywords: [
-      'review automation for roofing companies',
-      'roofing review automation',
-      'contractor review follow up',
-      'automated reviews for roofers',
-    ],
     openGraph: {
       title: 'Review Automation for Roofing Companies Guide',
       description:
@@ -29,12 +20,6 @@ export const reviewAutomationForRoofingCompanies: BlogPostData = {
   industries: ['roofing'],
   systems: ['reputation-review'],
   topics: ['review-automation'],
-  primaryKeyword: 'review automation for roofing companies',
-  supportingKeywords: [
-    'roofing review automation',
-    'contractor review follow up',
-    'automated reviews for roofers',
-  ],
   tags: ['Roofing', 'Review Automation', 'Reputation', 'Local Rankings', 'Automation'],
   sections: [
     {

@@ -70,7 +70,7 @@ const RESOURCE_OPERATION_TERMS = [
 
 function extractIntentTerms(metadata: ContentMetadata): string[] {
   return [
-    metadata.primaryKeyword,
+    metadata.summary,
     metadata.title,
     ...metadata.topics,
     ...metadata.systems,
@@ -136,7 +136,7 @@ function scoreSubjectRelevance(
   }
 
   const searchTerms = [
-    metadata.primaryKeyword,
+    metadata.summary,
     ...metadata.topics,
     ...metadata.systems,
     ...metadata.tags,

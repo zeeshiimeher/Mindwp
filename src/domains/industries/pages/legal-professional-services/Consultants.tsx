@@ -236,13 +236,6 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
             title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
             description:
                 'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
-            keywords: [
-                'consulting proposal follow-up',
-                'consulting buyer enablement',
-                'consulting crm',
-                'consulting lead conversion',
-                'consulting positioning system',
-            ],
             canonical: '/industries/legal-professional-services/consultants',
         },
         hero: {

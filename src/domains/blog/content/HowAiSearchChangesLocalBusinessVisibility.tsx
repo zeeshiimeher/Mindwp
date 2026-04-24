@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
   slug: 'how-ai-search-changes-local-business-visibility',
   title: 'How AI Search Changes Local Business Visibility',
-  metaTitle: 'How AI Search Changes Local Business Visibility',
-  metaDescription:
-    'Explore how AI search changes local business visibility through generative results, conversational queries, and new discovery patterns for local services.',
   seo: {
     title: 'How AI Search Changes Local Business Visibility',
     description:
       'Explore how AI search changes local business visibility through generative results, conversational queries, and new discovery patterns for local services.',
     canonical: '/blog/how-ai-search-changes-local-business-visibility',
-    keywords: [
-      'how ai search changes local business visibility',
-      'ai search for local services',
-      'generative search visibility',
-      'future of local discovery',
-    ],
     openGraph: {
       title: 'How AI Search Changes Local Business Visibility',
       description:
@@ -29,12 +20,6 @@ export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
   industries: [],
   systems: ['local-seo-authority'],
   topics: ['local-authority', 'local-visibility'],
-  primaryKeyword: 'how ai search changes local business visibility',
-  supportingKeywords: [
-    'ai search for local services',
-    'generative search visibility',
-    'future of local discovery',
-  ],
   tags: ['AI Search', 'Local Visibility', 'Generative Search', 'Future Trends', 'Local SEO'],
   sections: [
     {

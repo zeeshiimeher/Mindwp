@@ -9,13 +9,6 @@ export const systemMigrationPlatformConsolidationPage = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  keywords: [
-    'website migration and platform consolidation',
-    'system migration service',
-    'platform rebuild for service business',
-    'website platform consolidation',
-    'migrate website to wordpress',
-  ],
   badge: 'System Migration & Platform Consolidation',
   category: 'Migration Pathway Services',
   seo: buildServiceSeo({
@@ -23,9 +16,6 @@ export const systemMigrationPlatformConsolidationPage = {
     title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
     description:
       'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-    schemaName: 'System migration and platform consolidation for service businesses',
-    schemaDescription:
-      'Migration and consolidation that moves your business onto a connected foundation where enquiries, follow-up, and visibility work together instead of running in fragments.',
   }),
   hero: {
     badge: 'System Migration & Platform Consolidation',

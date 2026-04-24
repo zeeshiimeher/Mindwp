@@ -9,22 +9,11 @@ export const servicePagesVsOneGenericServicesPage = {
   slug,
   badge: 'Smart Websites',
   category: smartWebsiteSystemsPage.category,
-  keywords: Array.from(
-    new Set([
-      ...smartWebsiteSystemsPage.keywords,
-      'service pages vs one generic services page',
-      'generic services page vs dedicated service pages',
-      'service page rebuild decision',
-    ])
-  ),
   seo: buildServiceSeo({
     slug,
     title: 'Service Pages vs One Generic Services Page | MindWP',
     description:
       'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
-    schemaName: 'Service pages vs one generic services page',
-    schemaDescription:
-      'A decision page comparing dedicated service pages against a single generic services page for service-business websites.',
   }),
   hero: {
     ...smartWebsiteSystemsPage.hero,

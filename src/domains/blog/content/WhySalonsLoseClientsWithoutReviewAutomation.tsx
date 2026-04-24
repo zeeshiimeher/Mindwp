@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
   slug: 'why-salons-lose-clients-without-review-automation',
   title: 'Why Salons Lose Clients Without Review Automation',
-  metaTitle: 'Why Salons Lose Clients Without Review Automation',
-  metaDescription:
-    'Salons lose clients without review automation because happy visitors rarely post reviews unprompted, leaving the salon invisible to new customers online.',
   seo: {
     title: 'Why Salons Lose Clients Without Review Automation',
     description:
       'Salons lose clients without review automation because happy visitors rarely post reviews unprompted, leaving the salon invisible to new customers online.',
     canonical: '/blog/why-salons-lose-clients-without-review-automation',
-    keywords: [
-      'salons lose clients without review automation',
-      'salon review problem',
-      'salon reputation gap',
-      'salon online reviews',
-    ],
     openGraph: {
       title: 'Why Salons Lose Clients Without Review Automation',
       description:
@@ -29,8 +20,6 @@ export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
   industries: ['salon'],
   systems: ['reputation-review'],
   topics: ['review-automation'],
-  primaryKeyword: 'salons lose clients without review automation',
-  supportingKeywords: ['salon review problem', 'salon reputation gap', 'salon online reviews'],
   tags: ['Salon', 'Review Automation', 'Reputation', 'Client Acquisition', 'Online Reviews'],
   sections: [
     {

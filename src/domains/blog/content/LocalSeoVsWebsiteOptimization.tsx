@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localSeoVsWebsiteOptimization: BlogPostData = {
   slug: 'local-seo-vs-website-optimization',
   title: 'Local SEO vs Website Optimization',
-  metaTitle: 'Local SEO vs Website Optimization Explained',
-  metaDescription:
-    'Understand the difference between local seo vs website optimization and why service businesses need both to capture and convert local traffic.',
   seo: {
     title: 'Local SEO vs Website Optimization Explained',
     description:
       'Understand the difference between local seo vs website optimization and why service businesses need both to capture and convert local traffic.',
     canonical: '/blog/local-seo-vs-website-optimization',
-    keywords: [
-      'local seo vs website optimization',
-      'local seo compared with website optimization',
-      'local visibility vs website conversion',
-      'search vs site structure',
-    ],
     openGraph: {
       title: 'Local SEO vs Website Optimization Explained',
       description:
@@ -29,12 +20,6 @@ export const localSeoVsWebsiteOptimization: BlogPostData = {
   industries: [],
   systems: ['local-seo-authority'],
   topics: ['local-seo'],
-  primaryKeyword: 'local seo vs website optimization',
-  supportingKeywords: [
-    'local seo compared with website optimization',
-    'local visibility vs website conversion',
-    'search vs site structure',
-  ],
   tags: [
     'Local SEO',
     'Website Optimization',

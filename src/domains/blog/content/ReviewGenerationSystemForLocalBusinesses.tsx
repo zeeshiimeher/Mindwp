@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
   slug: 'review-generation-system-for-local-businesses',
   title: 'Review Generation System for Local Businesses',
-  metaTitle: 'Review Generation System for Local Businesses',
-  metaDescription:
-    'Learn how a review generation system for local businesses automates post-service review requests to build reputation and strengthen local search authority.',
   seo: {
     title: 'Review Generation System for Local Businesses',
     description:
       'Learn how a review generation system for local businesses automates post-service review requests to build reputation and strengthen local search authority.',
     canonical: '/blog/review-generation-system-for-local-businesses',
-    keywords: [
-      'review generation system for local businesses',
-      'automated review requests',
-      'review workflow system',
-      'local business review generation',
-    ],
     openGraph: {
       title: 'Review Generation System for Local Businesses',
       description:
@@ -29,12 +20,6 @@ export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
   industries: [],
   systems: ['reputation-review'],
   topics: ['review-generation'],
-  primaryKeyword: 'review generation system for local businesses',
-  supportingKeywords: [
-    'automated review requests',
-    'review workflow system',
-    'local business review generation',
-  ],
   tags: ['Review Generation', 'Local Business', 'Reputation', 'Automation', 'Customer Reviews'],
   sections: [
     {

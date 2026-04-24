@@ -265,13 +265,6 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
             title: 'Real Estate & Property Services — Win The First Minute, Hold The Pipeline | MindWP',
             description:
                 'For realtors, property managers, mortgage brokers, and inspectors where the leak is in the first-response window and the long pipeline that follows. We put first-minute response, pipeline memory, and follow-up in place across the category.',
-            keywords: [
-                'real estate lead response system',
-                'property management crm',
-                'mortgage broker follow-up',
-                'home inspector booking system',
-                'real estate pipeline automation',
-            ],
             canonical: '/industries/real-estate-property-services',
         },
         hero: heroData,

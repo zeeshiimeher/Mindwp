@@ -34,7 +34,7 @@ export function BlogPostsListIsland({ posts, postsPerPage }: BlogPostsListIsland
 
               <h3 className='blog-landing__card-title'>{post.title}</h3>
 
-              <p className='blog-landing__card-description'>{post.metaDescription}</p>
+              <p className='blog-landing__card-description'>{post.seo.description}</p>
 
               <div className='blog-landing__card-meta'>
                 <Calendar aria-hidden='true' />

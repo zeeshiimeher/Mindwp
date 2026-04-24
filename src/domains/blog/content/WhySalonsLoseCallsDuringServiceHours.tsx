@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
   slug: 'why-salons-lose-calls-during-service-hours',
   title: 'Why Salons Lose Calls During Service Hours',
-  metaTitle: 'Why Salons Lose Calls During Service Hours',
-  metaDescription:
-    'Discover why salons lose calls during service hours when stylists cannot answer phones and how automated systems capture every booking enquiry.',
   seo: {
     title: 'Why Salons Lose Calls During Service Hours',
     description:
       'Discover why salons lose calls during service hours when stylists cannot answer phones and how automated systems capture every booking enquiry.',
     canonical: '/blog/why-salons-lose-calls-during-service-hours',
-    keywords: [
-      'why salons lose calls during service hours',
-      'salon missed calls',
-      'busy salon call handling',
-      'booking calls lost in service hours',
-    ],
     openGraph: {
       title: 'Why Salons Lose Calls During Service Hours',
       description:
@@ -29,12 +20,6 @@ export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
   industries: ['salon'],
   systems: ['ai-lead-handling'],
   topics: ['missed-calls'],
-  primaryKeyword: 'why salons lose calls during service hours',
-  supportingKeywords: [
-    'salon missed calls',
-    'busy salon call handling',
-    'booking calls lost in service hours',
-  ],
   tags: ['Salon', 'Missed Calls', 'Booking', 'Service Hours', 'Call Handling'],
   sections: [
     {

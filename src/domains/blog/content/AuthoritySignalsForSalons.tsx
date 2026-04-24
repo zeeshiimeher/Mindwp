@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const authoritySignalsForSalons: BlogPostData = {
   slug: 'authority-signals-for-salons',
   title: 'Authority Signals for Salons',
-  metaTitle: 'How Authority Signals for Salons Build Rankings',
-  metaDescription:
-    'Explore how authority signals for salons strengthen local search rankings through reviews, citations, and trust factors that build lasting visibility.',
   seo: {
     title: 'How Authority Signals for Salons Build Rankings',
     description:
       'Explore how authority signals for salons strengthen local search rankings through reviews, citations, and trust factors that build lasting visibility.',
     canonical: '/blog/authority-signals-for-salons',
-    keywords: [
-      'authority signals for salons',
-      'salon authority signals',
-      'salon local trust factors',
-      'beauty business ranking signals',
-    ],
     openGraph: {
       title: 'How Authority Signals for Salons Build Rankings',
       description:
@@ -29,12 +20,6 @@ export const authoritySignalsForSalons: BlogPostData = {
   industries: ['salon'],
   systems: ['local-seo-authority', 'reputation-review'],
   topics: ['local-authority'],
-  primaryKeyword: 'authority signals for salons',
-  supportingKeywords: [
-    'salon authority signals',
-    'salon local trust factors',
-    'beauty business ranking signals',
-  ],
   tags: ['Salon', 'Authority Signals', 'Local SEO', 'Rankings', 'Trust Factors'],
   sections: [
     {

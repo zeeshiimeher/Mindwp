@@ -109,7 +109,7 @@ After generating an image, open both files from `public/images/<domain>/<slug>/`
 
 - Accent bar: vertical gradient (accentLight → accentDark) with glow
 - Badge (if present): pill shape with category text centered
-- Label: keyword-derived uppercase text above title
+- Label: metadata-derived uppercase text above title
 - Icon (if present): 16×16 before label text
 - Variant shape: subtle content-type visual on right side
 

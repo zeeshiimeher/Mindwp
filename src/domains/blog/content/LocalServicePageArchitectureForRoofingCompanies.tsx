@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
   slug: 'local-service-page-architecture-for-roofing-companies',
   title: 'Local Service Page Architecture for Roofing Companies',
-  metaTitle: 'Local Service Page Architecture for Roofing Companies',
-  metaDescription:
-    'Discover how local service page architecture for roofing companies creates location-specific landing pages that rank for area-based roofing searches.',
   seo: {
     title: 'Local Service Page Architecture for Roofing Companies',
     description:
       'Discover how local service page architecture for roofing companies creates location-specific landing pages that rank for area-based roofing searches.',
     canonical: '/blog/local-service-page-architecture-for-roofing-companies',
-    keywords: [
-      'local service page architecture for roofing companies',
-      'roofing location pages',
-      'roofing service area pages',
-      'roofer local landing pages',
-    ],
     openGraph: {
       title: 'Local Service Page Architecture for Roofing Companies',
       description:
@@ -29,12 +20,6 @@ export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
   industries: ['roofing'],
   systems: ['local-seo-authority', 'smart-website-systems'],
   topics: ['local-service-pages'],
-  primaryKeyword: 'local service page architecture for roofing companies',
-  supportingKeywords: [
-    'roofing location pages',
-    'roofing service area pages',
-    'roofer local landing pages',
-  ],
   tags: ['Roofing', 'Local Service Pages', 'SEO Architecture', 'Location Pages', 'Local Search'],
   sections: [
     {

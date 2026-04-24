@@ -25,10 +25,6 @@ const contentGraphNodesPromise = getInitializedContentGraph().then(graph => {
   return { categoryNodes, detailNodes, categoryBySlug };
 });
 
-function isSchemaRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null;
-}
-
 const toLabelFromSlug = (value: string) =>
   value
     .replace(/[-/]+/g, ' ')
@@ -129,9 +125,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     ...(industry.type === 'detail' ? [{ name: detailName ?? categoryName, path: node.path }] : []),
   ];
 
-  const fallbackBreadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
-  const schemaFromSeo = industry.seo.schema?.breadcrumb;
-  const breadcrumbSchema = isSchemaRecord(schemaFromSeo) ? schemaFromSeo : fallbackBreadcrumbSchema;
+  const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
   return (
     <>

@@ -127,7 +127,7 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
       const b = blogSlugIndex.get(normalize(node.slug));
       return {
         title: node.title ?? b?.title ?? fallbackTitle,
-        description: node.description ?? b?.metaDescription ?? fallbackDesc,
+        description: node.description ?? b?.seo.description ?? fallbackDesc,
       };
     }
     if (node.type === 'resource') {
@@ -141,7 +141,7 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
       const c = deps.caseStudies[node.slug];
       return {
         title: node.title ?? c?.title ?? fallbackTitle,
-        description: node.description ?? c?.metaDescription ?? fallbackDesc,
+        description: node.description ?? c?.seo?.description ?? fallbackDesc,
       };
     }
     return {

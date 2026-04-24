@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const clientReactivationForSalons: BlogPostData = {
   slug: 'client-reactivation-for-salons',
   title: 'Client Reactivation for Salons',
-  metaTitle: 'How Client Reactivation for Salons Recovers Revenue',
-  metaDescription:
-    'Explore how client reactivation for salons uses CRM automation to identify lapsed clients and win them back with personalised re-engagement campaigns.',
   seo: {
     title: 'How Client Reactivation for Salons Recovers Revenue',
     description:
       'Explore how client reactivation for salons uses CRM automation to identify lapsed clients and win them back with personalised re-engagement campaigns.',
     canonical: '/blog/client-reactivation-for-salons',
-    keywords: [
-      'client reactivation for salons',
-      'salon reactivation campaigns',
-      'lapsed salon clients',
-      'salon win back workflow',
-    ],
     openGraph: {
       title: 'How Client Reactivation for Salons Recovers Revenue',
       description:
@@ -29,12 +20,6 @@ export const clientReactivationForSalons: BlogPostData = {
   industries: ['salon'],
   systems: ['crm-automation'],
   topics: ['client-reactivation'],
-  primaryKeyword: 'client reactivation for salons',
-  supportingKeywords: [
-    'salon reactivation campaigns',
-    'lapsed salon clients',
-    'salon win back workflow',
-  ],
   tags: ['Salon', 'Client Reactivation', 'CRM', 'Revenue Recovery', 'Re-Engagement'],
   sections: [
     {

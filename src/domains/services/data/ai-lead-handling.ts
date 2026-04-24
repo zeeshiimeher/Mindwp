@@ -9,13 +9,6 @@ export const aiLeadHandlingPage = {
   slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time', 'missed-calls', 'lead-capture'],
-  keywords: [
-    'ai lead response system',
-    'ai chatbot for service business',
-    'automated lead handling system',
-    'ai booking assistant for local business',
-    'missed call text back automation',
-  ],
   badge: 'AI Lead Handling Systems',
   category: 'AI Response Systems',
   seo: buildServiceSeo({
@@ -23,9 +16,6 @@ export const aiLeadHandlingPage = {
     title: 'AI Lead Handling for Service Businesses | MindWP',
     description:
       "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
-    schemaName: 'AI lead handling for service businesses',
-    schemaDescription:
-      'AI-powered first response covering website chat, call handling, booking support, and handoff into CRM for service businesses.',
   }),
   hero: {
     badge: 'AI Lead Handling',

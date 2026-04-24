@@ -71,7 +71,6 @@ export type HomepageData = {
   seo: {
     title: string;
     description: string;
-    keywords: string[];
     canonical: string;
     openGraph?: {
       title?: string;
@@ -211,13 +210,6 @@ export const homepageData: HomepageData = {
     title: 'MindWP — Stop Losing Enquiries. Catch Calls, Follow Up, Win More Work.',
     description:
       'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. MindWP puts the routing, follow-up, visibility, and proof in place so the work already coming in actually turns into work.',
-    keywords: [
-      'Smart Website Systems',
-      'website consultancy for service businesses',
-      'enquiry handling website architecture',
-      'systems-first website strategy',
-      'mindwp',
-    ],
     canonical: '/',
     schema: {
       organization: {

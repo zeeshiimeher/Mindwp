@@ -268,13 +268,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       title: 'Car Detailers \u2014 Stop Losing Saturday DMs To 6pm Reads | MindWP',
       description:
         'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-      keywords: [
-        'car detailing booking system',
-        'detailing instagram reply automation',
-        'car detailing repeat bookings',
-        'detailing review automation',
-        'car detailing local SEO',
-      ],
       canonical: '/industries/automotive-services/car-detailing',
     },
     hero: { ...heroData },

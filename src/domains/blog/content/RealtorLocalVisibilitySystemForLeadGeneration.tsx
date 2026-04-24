@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
   slug: 'realtor-local-visibility-system-for-lead-generation',
   title: 'Realtor Local Visibility System for Lead Generation',
-  metaTitle: 'Realtor Local Visibility System for Lead Generation',
-  metaDescription:
-    'Learn how a realtor local visibility system for lead generation builds review authority, citation consistency, and local signals that drive map pack rankings.',
   seo: {
     title: 'Realtor Local Visibility System for Lead Generation',
     description:
       'Learn how a realtor local visibility system for lead generation builds review authority, citation consistency, and local signals that drive map pack rankings.',
     canonical: '/blog/realtor-local-visibility-system-for-lead-generation',
-    keywords: [
-      'realtor local visibility system',
-      'realtor lead generation',
-      'real estate local seo',
-      'realtor map pack rankings',
-    ],
     openGraph: {
       title: 'Realtor Local Visibility System for Lead Generation',
       description:
@@ -29,12 +20,6 @@ export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
   industries: ['realtor'],
   systems: ['reputation-review'],
   topics: ['local-visibility'],
-  primaryKeyword: 'realtor local visibility system for lead generation',
-  supportingKeywords: [
-    'realtor lead generation',
-    'real estate local seo',
-    'realtor map pack rankings',
-  ],
   tags: ['Realtor', 'Local Visibility', 'Lead Generation', 'Local SEO', 'Reputation'],
   sections: [
     {

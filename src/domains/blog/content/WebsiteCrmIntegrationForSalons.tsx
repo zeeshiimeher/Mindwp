@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteCrmIntegrationForSalons: BlogPostData = {
   slug: 'website-crm-integration-for-salons',
   title: 'Website CRM Integration for Salons',
-  metaTitle: 'Website CRM Integration for Salons Explained',
-  metaDescription:
-    'Explore how website CRM integration for salons connects booking forms and enquiries directly to client records and automated follow-up workflows.',
   seo: {
     title: 'Website CRM Integration for Salons Explained',
     description:
       'Explore how website CRM integration for salons connects booking forms and enquiries directly to client records and automated follow-up workflows.',
     canonical: '/blog/website-crm-integration-for-salons',
-    keywords: [
-      'website crm integration for salons',
-      'salon crm integration',
-      'salon website to crm workflow',
-      'appointment crm capture',
-    ],
     openGraph: {
       title: 'Website CRM Integration for Salons Explained',
       description:
@@ -29,12 +20,6 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
   industries: ['salon'],
   systems: ['crm-automation'],
   topics: ['crm-integration'],
-  primaryKeyword: 'website crm integration for salons',
-  supportingKeywords: [
-    'salon crm integration',
-    'salon website to crm workflow',
-    'appointment crm capture',
-  ],
   tags: ['Salon', 'CRM Integration', 'Website', 'Booking', 'Automation'],
   sections: [
     {

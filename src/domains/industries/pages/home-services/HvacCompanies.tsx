@@ -331,13 +331,6 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary | MindWP',
       description:
         'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-      keywords: [
-        'hvac cold snap call handling',
-        'hvac dispatch routing',
-        'boiler install quote follow up',
-        'hvac annual service reminder',
-        'hvac local SEO',
-      ],
       canonical: '/industries/home-services/hvac-companies',
     },
     hero: { ...heroData },

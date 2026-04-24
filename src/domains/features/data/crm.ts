@@ -69,20 +69,11 @@ export const crmData: FeaturePageData = {
   slug,
   systems: ['revenue-growth'],
   topics: ['lead-management', 'crm-visibility'],
-  keywords: [
-    'crm for service businesses',
-    'contact management system',
-    'follow-up tracking',
-    'unified communications crm',
-  ],
   seo: buildFeatureSeo({
     slug,
     title: 'CRM | Structured Contact and Follow-Up Layer',
     description:
       'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
-    schemaName: 'CRM',
-    schemaDescription:
-      'Contact and pipeline management layer with unified communications, follow-up tracking, and team ownership for service businesses.',
   }),
   hero: {
     badge: 'CRM Layer',

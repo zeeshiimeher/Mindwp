@@ -180,9 +180,6 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
   return {
     slug: 'salon-no-show-reduction-system',
     title: 'Salon No-Show Reduction System',
-    metaTitle: 'Salon No-Show Reduction | 18% to 4% With Automation',
-    metaDescription:
-      'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
@@ -208,6 +205,9 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
       'Waitlist Recovery',
     ],
     seo: {
+      title: 'Salon No-Show Reduction | 18% to 4% With Automation',
+      description:
+      'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
       canonical: '/case-studies/salon-no-show-reduction-system',
       openGraph: {
         title: 'Why Salon Clients Miss Appointments | MindWP Case Study',

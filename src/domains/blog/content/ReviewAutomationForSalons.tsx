@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForSalons: BlogPostData = {
   slug: 'review-automation-for-salons',
   title: 'Review Automation for Salons',
-  metaTitle: 'How Review Automation for Salons Builds Loyalty',
-  metaDescription:
-    'Explore how review automation for salons turns every completed appointment into a review opportunity that strengthens local visibility and client trust.',
   seo: {
     title: 'How Review Automation for Salons Builds Loyalty',
     description:
       'Explore how review automation for salons turns every completed appointment into a review opportunity that strengthens local visibility and client trust.',
     canonical: '/blog/review-automation-for-salons',
-    keywords: [
-      'review automation for salons',
-      'salon review automation',
-      'beauty business review follow up',
-      'automated salon reviews',
-    ],
     openGraph: {
       title: 'How Review Automation for Salons Builds Loyalty',
       description:
@@ -29,12 +20,6 @@ export const reviewAutomationForSalons: BlogPostData = {
   industries: ['salon'],
   systems: ['reputation-review'],
   topics: ['review-automation'],
-  primaryKeyword: 'review automation for salons',
-  supportingKeywords: [
-    'salon review automation',
-    'beauty business review follow up',
-    'automated salon reviews',
-  ],
   tags: ['Salon', 'Review Automation', 'Reputation', 'Client Trust', 'Loyalty'],
   sections: [
     {

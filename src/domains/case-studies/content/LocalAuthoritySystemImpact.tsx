@@ -130,9 +130,6 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
   return {
     slug: 'electrician-not-showing-up-where-locals-search',
     title: 'They were doing the work. Google barely showed it.',
-    metaTitle: 'Electrician local visibility case study: found more often in Google Maps',
-    metaDescription:
-      'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -158,6 +155,9 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
     })),
     tags: ['Local SEO', 'Google Maps', 'Electrical', 'Review Growth', 'Home Services'],
     seo: {
+      title: 'Electrician local visibility case study: found more often in Google Maps',
+      description:
+      'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
       canonical: '/case-studies/electrician-not-showing-up-where-locals-search',
       openGraph: {
         title: 'Electrician local visibility case study: found more often in Google Maps',

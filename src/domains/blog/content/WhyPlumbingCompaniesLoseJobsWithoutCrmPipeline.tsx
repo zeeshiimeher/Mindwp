@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
   slug: 'why-plumbing-companies-lose-jobs-without-crm-pipeline',
   title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
-  metaTitle: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
-  metaDescription:
-    'Discover why plumbing companies lose jobs without a CRM pipeline and how untracked leads, missed follow-ups, and poor visibility cost revenue every week.',
   seo: {
     title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
     description:
       'Discover why plumbing companies lose jobs without a CRM pipeline and how untracked leads, missed follow-ups, and poor visibility cost revenue every week.',
     canonical: '/blog/why-plumbing-companies-lose-jobs-without-crm-pipeline',
-    keywords: [
-      'plumbing companies lose jobs without crm pipeline',
-      'plumbing lead tracking',
-      'plumbing business crm',
-      'plumber lost jobs pipeline',
-    ],
     openGraph: {
       title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
       description:
@@ -29,12 +20,6 @@ export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
   industries: ['plumbing'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'plumbing companies lose jobs without a crm pipeline',
-  supportingKeywords: [
-    'plumbing lead tracking',
-    'plumbing business crm',
-    'plumber lost jobs pipeline',
-  ],
   tags: ['Plumbing', 'CRM Pipeline', 'Lost Jobs', 'Lead Tracking', 'Revenue Loss'],
   sections: [
     {

@@ -1248,8 +1248,8 @@ function addPriority(priorities, routeIndex, raw) {
 function buildPriorities(validate) {
   const routeIndex = buildRouteIndex();
   const priorities = [];
-  const domainStructureReport =
-    unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
+  const sectionOrderReport =
+    unwrapReportData(readReportJson(root, 'section-order-consistency-report.json')) ?? {};
   const conversionReport =
     unwrapReportData(readReportJson(root, 'conversion-contract-report.json')) ?? {};
   const contentContractReport =
@@ -1265,13 +1265,13 @@ function buildPriorities(validate) {
       ? ctaViolationReport.issues
       : [];
 
-  for (const issue of domainStructureReport?.issues ?? []) {
+  for (const issue of sectionOrderReport?.issues ?? []) {
     addPriority(priorities, routeIndex, {
       type: 'contract',
       level: 'HIGH',
       message: issue?.message ?? 'Page contract issue detected.',
-      context: issue?.file,
-      source: 'validate-domain-structure',
+      context: issue?.slug,
+      source: 'validate-section-order-consistency',
     });
   }
 
@@ -1981,18 +1981,18 @@ function buildReportsSection(result, runStartedAt, timestamp) {
 }
 
 function buildSystemSection() {
-  const domainStructureReport =
-    unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
+  const sectionOrderReport =
+    unwrapReportData(readReportJson(root, 'section-order-consistency-report.json')) ?? {};
   const graphReport = unwrapReportData(readReportJson(root, 'graph-report.json')) ?? {};
   const authorityMap = unwrapReportData(readReportJson(root, 'authority-map.json')) ?? {};
-  const domainIssues = Array.isArray(domainStructureReport?.issues)
-    ? domainStructureReport.issues
+  const sectionOrderIssues = Array.isArray(sectionOrderReport?.issues)
+    ? sectionOrderReport.issues
     : [];
-  const featureIssues = domainIssues
-    .filter(issue => issue?.type === 'feature')
+  const featureIssues = sectionOrderIssues
+    .filter(issue => issue?.domain === 'feature')
     .map(issue => issue?.message ?? 'Feature contract issue.');
-  const serviceIssues = domainIssues
-    .filter(issue => issue?.type === 'service')
+  const serviceIssues = sectionOrderIssues
+    .filter(issue => issue?.domain === 'service')
     .map(issue => issue?.message ?? 'Service contract issue.');
   const cta = scanSmartCtaUsage();
   const graphErrors = Array.isArray(graphReport?.errors) ? graphReport.errors : [];
@@ -2004,7 +2004,7 @@ function buildSystemSection() {
       services: serviceIssues.length === 0 ? 'OK' : 'ISSUES',
       featureIssues,
       serviceIssues,
-      scanned: domainStructureReport?.scannedByType ?? {},
+      scanned: sectionOrderReport?.summary ?? {},
     },
     graph: {
       status:

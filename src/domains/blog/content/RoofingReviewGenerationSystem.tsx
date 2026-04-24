@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingReviewGenerationSystem: BlogPostData = {
   slug: 'roofing-review-generation-system',
   title: 'Roofing Review Generation System',
-  metaTitle: 'Roofing Review Generation System for Contractors',
-  metaDescription:
-    'Learn how a roofing review generation system automates post-job review requests to build local authority and attract more customers consistently.',
   seo: {
     title: 'Roofing Review Generation System for Contractors',
     description:
       'Learn how a roofing review generation system automates post-job review requests to build local authority and attract more customers consistently.',
     canonical: '/blog/roofing-review-generation-system',
-    keywords: [
-      'roofing review generation system',
-      'roofing review requests',
-      'contractor review automation',
-      'roofing google review workflow',
-    ],
     openGraph: {
       title: 'Roofing Review Generation System for Contractors',
       description:
@@ -29,12 +20,6 @@ export const roofingReviewGenerationSystem: BlogPostData = {
   industries: ['roofing'],
   systems: ['reputation-review'],
   topics: ['review-generation'],
-  primaryKeyword: 'roofing review generation system',
-  supportingKeywords: [
-    'roofing review requests',
-    'contractor review automation',
-    'roofing google review workflow',
-  ],
   tags: ['Roofing', 'Review Generation', 'Google Reviews', 'Local Authority', 'Automation'],
   sections: [
     {

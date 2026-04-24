@@ -10,7 +10,7 @@ import {
 } from '@/domains/services/config';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { resolveSEO } from '@/lib/seo/seoResolver';
-import { buildBreadcrumbSchema } from '@/lib/seo/schema';
+import { buildBreadcrumbSchema, buildServiceSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
 export const revalidate = false;
@@ -92,8 +92,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     permanentRedirect(canonicalPath);
   }
 
-  const schema = data.seo.schema;
-  const serviceSeoSchema = schema.service;
+  const serviceSeoSchema = buildServiceSchema({
+    name: data.seo.title,
+    description: data.seo.description,
+    path: canonicalPath,
+    areaServed: 'UK',
+  });
   const faqSeoSchema = buildFaqSchema(getServiceFaqs(data.sections));
 
   const breadcrumbSchema = buildBreadcrumbSchema([

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salonCrmPipelineForClientRetention: BlogPostData = {
   slug: 'salon-crm-pipeline-for-client-retention',
   title: 'Salon CRM Pipeline for Client Retention',
-  metaTitle: 'Salon CRM Pipeline for Client Retention Guide',
-  metaDescription:
-    'Learn how a salon CRM pipeline for client retention tracks every client from first enquiry through booking, rebooking, and lapse prevention.',
   seo: {
     title: 'Salon CRM Pipeline for Client Retention Guide',
     description:
       'Learn how a salon CRM pipeline for client retention tracks every client from first enquiry through booking, rebooking, and lapse prevention.',
     canonical: '/blog/salon-crm-pipeline-for-client-retention',
-    keywords: [
-      'salon crm pipeline for client retention',
-      'salon client pipeline',
-      'salon retention system',
-      'salon rebooking automation',
-    ],
     openGraph: {
       title: 'Salon CRM Pipeline for Client Retention Guide',
       description:
@@ -29,12 +20,6 @@ export const salonCrmPipelineForClientRetention: BlogPostData = {
   industries: ['salon'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'salon crm pipeline for client retention',
-  supportingKeywords: [
-    'salon client pipeline',
-    'salon retention system',
-    'salon rebooking automation',
-  ],
   tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Rebooking', 'Automation'],
   sections: [
     {

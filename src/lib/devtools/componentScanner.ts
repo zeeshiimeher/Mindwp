@@ -281,7 +281,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         industry: 'Auto Repair',
         client: 'Northside Auto Care',
         location: 'Manchester',
-        metaDescription: 'Missed-call recovery and callback automation for a busy repair shop.',
+        description: 'Missed-call recovery and callback automation for a busy repair shop.',
         publishDate: 'April 2026',
       },
       {
@@ -289,7 +289,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         industry: 'HVAC',
         client: 'Summit Heating & Air',
         location: 'Leeds',
-        metaDescription: 'Emergency lead routing with clearer ownership and faster response.',
+        description: 'Emergency lead routing with clearer ownership and faster response.',
         publishDate: 'March 2026',
       },
       {
@@ -297,7 +297,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         industry: 'Home Services',
         client: 'ClearFlow Services',
         location: 'Birmingham',
-        metaDescription: 'Pipeline visibility rebuild with routing, follow-up, and reporting.',
+        description: 'Pipeline visibility rebuild with routing, follow-up, and reporting.',
         publishDate: 'February 2026',
       },
     ],

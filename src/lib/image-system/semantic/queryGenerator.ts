@@ -238,7 +238,7 @@ const TOPIC_VISUALS: Record<string, string[]> = {
 function detectIndustry(metadata: ContentMetadata): string | null {
   const text = [
     metadata.title,
-    metadata.primaryKeyword,
+    metadata.summary,
     ...metadata.topics,
     ...metadata.systems,
     ...metadata.tags,
@@ -259,7 +259,7 @@ function detectIndustry(metadata: ContentMetadata): string | null {
 function findTopicVisuals(metadata: ContentMetadata): string[] {
   const text = [
     metadata.title,
-    metadata.primaryKeyword,
+    metadata.summary,
     ...metadata.topics,
     ...metadata.systems,
     ...metadata.tags,
@@ -449,7 +449,7 @@ function buildIntentQuery(
   parts.push(contextWords[0]);
 
   // Context from primary keyword
-  const kwWords = metadata.primaryKeyword
+  const kwWords = metadata.summary
     .replace(/-/g, ' ')
     .split(/\s+/)
     .filter(w => w.length > 3)
@@ -509,7 +509,7 @@ export function generateSemanticQueries(
     const industryLabel = industry ? industry.replace(/-/g, ' ') : 'service business';
     const resourceText = [
       metadata.title,
-      metadata.primaryKeyword,
+      metadata.summary,
       ...metadata.topics,
       ...metadata.tags,
     ]

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const multiChannelLeadCaptureForSalons: BlogPostData = {
   slug: 'multi-channel-lead-capture-for-salons',
   title: 'Multi Channel Lead Capture for Salons',
-  metaTitle: 'How Multi Channel Lead Capture for Salons Works',
-  metaDescription:
-    'Discover how multi channel lead capture for salons unifies Instagram, phone, website, and walk-in enquiries into one system that tracks every prospect.',
   seo: {
     title: 'How Multi Channel Lead Capture for Salons Works',
     description:
       'Discover how multi channel lead capture for salons unifies Instagram, phone, website, and walk-in enquiries into one system that tracks every prospect.',
     canonical: '/blog/multi-channel-lead-capture-for-salons',
-    keywords: [
-      'multi channel lead capture for salons',
-      'salon lead capture across instagram and phone',
-      'salon enquiry capture',
-      'omnichannel booking capture',
-    ],
     openGraph: {
       title: 'How Multi Channel Lead Capture for Salons Works',
       description:
@@ -29,12 +20,6 @@ export const multiChannelLeadCaptureForSalons: BlogPostData = {
   industries: ['salon'],
   systems: ['ai-lead-handling'],
   topics: ['lead-capture'],
-  primaryKeyword: 'multi channel lead capture for salons',
-  supportingKeywords: [
-    'salon lead capture across instagram and phone',
-    'salon enquiry capture',
-    'omnichannel booking capture',
-  ],
   tags: ['Salon', 'Lead Capture', 'Multi Channel', 'Instagram', 'Omnichannel'],
   sections: [
     {

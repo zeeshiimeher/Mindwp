@@ -1,14 +1,11 @@
 export type OpenGraphData = {
-  title: string;
-  description: string;
-  image?: string;
-  url?: string;
+  title?: string;
+  description?: string;
 };
 
 export type SharedSeoData = {
+  title: string;
+  description: string;
   canonical: string;
-  title?: string;
-  description?: string;
-  keywords?: string[];
   openGraph?: OpenGraphData;
 };

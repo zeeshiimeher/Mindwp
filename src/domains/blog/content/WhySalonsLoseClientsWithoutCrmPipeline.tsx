@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
   slug: 'why-salons-lose-clients-without-crm-pipeline',
   title: 'Why Salons Lose Clients Without a CRM Pipeline',
-  metaTitle: 'Why Salons Lose Clients Without a CRM Pipeline',
-  metaDescription:
-    'Salons lose clients without a CRM pipeline because enquiries go untracked, follow-ups are missed, and rebooking depends on the client remembering to call back.',
   seo: {
     title: 'Why Salons Lose Clients Without a CRM Pipeline',
     description:
       'Salons lose clients without a CRM pipeline because enquiries go untracked, follow-ups are missed, and rebooking depends on the client remembering to call back.',
     canonical: '/blog/why-salons-lose-clients-without-crm-pipeline',
-    keywords: [
-      'salons lose clients without a crm pipeline',
-      'salon client retention',
-      'salon crm pipeline',
-      'salon booking follow-up',
-    ],
     openGraph: {
       title: 'Why Salons Lose Clients Without a CRM Pipeline',
       description:
@@ -29,8 +20,6 @@ export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
   industries: ['salon'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'salons lose clients without a crm pipeline',
-  supportingKeywords: ['salon client retention', 'salon crm pipeline', 'salon booking follow-up'],
   tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Booking', 'Follow-Up'],
   sections: [
     {

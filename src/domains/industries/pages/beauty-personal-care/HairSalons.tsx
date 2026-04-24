@@ -233,13 +233,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
             title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
             description:
                 'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
-            keywords: [
-                'hair salon booking system',
-                'hair salon rebook automation',
-                'hair salon reputation system',
-                'hair salon local seo',
-                'hair salon dm response',
-            ],
             canonical: '/industries/beauty-personal-care/hair-salons',
         },
         hero: {

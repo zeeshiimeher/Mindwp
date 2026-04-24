@@ -57,21 +57,12 @@ export const aiChatData: FeaturePageData = {
   slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
-  keywords: [
-    'ai chat',
-    'website chat integration',
-    'crm chat system',
-    'structured website conversation',
-  ],
   category: 'Communication',
   seo: buildFeatureSeo({
     slug,
     title: 'AI Chat | Structured Website Conversation Layer',
     description:
       'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
-    schemaName: 'AI Chat',
-    schemaDescription:
-      'Website conversation layer with AI-powered visitor routing, appointment booking, and structured handoff to human agents.',
   }),
   hero: {
     badge: 'Conversation Layer',

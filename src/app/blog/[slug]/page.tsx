@@ -7,6 +7,7 @@ import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getImage } from '@/lib/image-system/resolver';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -68,10 +69,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   }
 
   const canonicalPath = blogNode.path;
+  const resolvedMetadata = resolveMetadata(post, canonicalPath);
   const authorName = BLOG_AUTHORS[post.authorKey]?.name;
   const articleSchema = buildArticleSchema({
     headline: post.title,
-    description: post.metaDescription,
+    description: resolvedMetadata.description ?? post.seo.description,
     path: canonicalPath,
     datePublished: post.publishDate,
     dateModified: post.publishDate,
@@ -96,10 +98,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         pageId={`blog:${post.slug}`}
         title={post.title}
         slug={post.slug}
-        metaTitle={post.metaTitle}
-        metaDescription={post.metaDescription}
-        primaryKeyword={post.primaryKeyword}
-        supportingKeywords={post.supportingKeywords}
         category={post.category}
         publishDate={post.publishDate}
         tags={post.tags}

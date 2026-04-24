@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveServiceRemindersExplained: BlogPostData = {
   slug: 'automotive-service-reminders-explained',
   title: 'Automotive Service Reminders Explained',
-  metaTitle: 'Automotive Service Reminders Explained for Shops',
-  metaDescription:
-    'Learn how automotive service reminders explained through CRM automation help repair shops retain customers and increase repeat bookings reliably.',
   seo: {
     title: 'Automotive Service Reminders Explained for Shops',
     description:
       'Learn how automotive service reminders explained through CRM automation help repair shops retain customers and increase repeat bookings reliably.',
     canonical: '/blog/automotive-service-reminders-explained',
-    keywords: [
-      'automotive service reminders explained',
-      'service reminder automation for auto shops',
-      'mot reminder systems',
-      'repair shop reactivation reminders',
-    ],
     openGraph: {
       title: 'Automotive Service Reminders Explained for Shops',
       description:
@@ -29,12 +20,6 @@ export const automotiveServiceRemindersExplained: BlogPostData = {
   industries: ['automotive'],
   systems: ['crm-automation'],
   topics: ['service-reminders'],
-  primaryKeyword: 'automotive service reminders explained',
-  supportingKeywords: [
-    'service reminder automation for auto shops',
-    'mot reminder systems',
-    'repair shop reactivation reminders',
-  ],
   tags: ['Automotive', 'Service Reminders', 'CRM', 'Customer Retention', 'Automation'],
   sections: [
     {

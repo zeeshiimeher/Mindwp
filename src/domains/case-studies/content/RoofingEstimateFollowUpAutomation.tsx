@@ -151,9 +151,6 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
   return {
     slug: 'roofing-quotes-not-being-followed-up',
     title: 'Roofing quotes kept going quiet after they were sent out',
-    metaTitle: 'Roofing quote follow-up case study: more estimates turning into jobs',
-    metaDescription:
-      'How a Leeds roofing company stopped leaving so many quotes untouched and recovered around GBP7k-GBP9k a month in work that had been drifting away.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -173,6 +170,9 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     })),
     tags: ['Estimate Follow-Up', 'CRM Pipeline', 'Roofing', 'Revenue Recovery', 'Automation'],
     seo: {
+      title: 'Roofing quote follow-up case study: more estimates turning into jobs',
+      description:
+      'How a Leeds roofing company stopped leaving so many quotes untouched and recovered around GBP7k-GBP9k a month in work that had been drifting away.',
       canonical: '/case-studies/roofing-quotes-not-being-followed-up',
       openGraph: {
         title: 'Roofing quote follow-up case study: more estimates turning into jobs',

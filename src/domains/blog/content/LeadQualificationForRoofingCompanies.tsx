@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadQualificationForRoofingCompanies: BlogPostData = {
   slug: 'lead-qualification-for-roofing-companies',
   title: 'Lead Qualification for Roofing Companies',
-  metaTitle: 'Lead Qualification for Roofing Companies',
-  metaDescription:
-    'Learn how lead qualification for roofing companies uses structured screening criteria to prioritise high-value enquiries and filter out poor-fit prospects.',
   seo: {
     title: 'Lead Qualification for Roofing Companies',
     description:
       'Learn how lead qualification for roofing companies uses structured screening criteria to prioritise high-value enquiries and filter out poor-fit prospects.',
     canonical: '/blog/lead-qualification-for-roofing-companies',
-    keywords: [
-      'lead qualification for roofing companies',
-      'roofing lead scoring',
-      'qualify roofing enquiries',
-      'roofing lead screening workflow',
-    ],
     openGraph: {
       title: 'Lead Qualification for Roofing Companies',
       description:
@@ -29,12 +20,6 @@ export const leadQualificationForRoofingCompanies: BlogPostData = {
   industries: ['roofing'],
   systems: ['ai-lead-handling'],
   topics: ['lead-qualification'],
-  primaryKeyword: 'lead qualification for roofing companies',
-  supportingKeywords: [
-    'roofing lead scoring',
-    'qualify roofing enquiries',
-    'roofing lead screening workflow',
-  ],
   tags: ['Roofing', 'Lead Qualification', 'Lead Scoring', 'Screening', 'AI Lead Handling'],
   sections: [
     {

@@ -8,23 +8,12 @@ export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
   ...conversionLayerPage,
   slug,
   category: conversionLayerPage.category,
-  keywords: Array.from(
-    new Set([
-      ...conversionLayerPage.keywords,
-      'conversion funnel system vs landing page development',
-      'landing page development vs conversion funnel system',
-      'conversion system decision page',
-    ])
-  ),
   badge: 'Conversion Funnel System',
   seo: buildServiceSeo({
     slug,
     title: 'Conversion Funnel System vs Landing Page Development | MindWP',
     description:
       'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
-    schemaName: 'Conversion funnel system vs landing page development',
-    schemaDescription:
-      'A BOFU conversion page showing why service businesses often need a full conversion funnel system instead of standalone landing-page development.',
   }),
   hero: {
     ...conversionLayerPage.hero,

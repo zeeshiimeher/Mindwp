@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
   slug: 'future-crm-visibility-for-hvac-companies',
   title: 'Future CRM Visibility for HVAC Companies',
-  metaTitle: 'Future CRM Visibility for HVAC Companies',
-  metaDescription:
-    'Learn how future crm visibility for HVAC companies will use predictive analytics and AI forecasting to anticipate demand and optimise pipeline management.',
   seo: {
     title: 'Future CRM Visibility for HVAC Companies',
     description:
       'Learn how future crm visibility for HVAC companies will use predictive analytics and AI forecasting to anticipate demand and optimise pipeline management.',
     canonical: '/blog/future-crm-visibility-for-hvac-companies',
-    keywords: [
-      'future crm visibility for hvac companies',
-      'predictive hvac crm',
-      'ai crm forecasting for hvac',
-      'future pipeline visibility',
-    ],
     openGraph: {
       title: 'Future CRM Visibility for HVAC Companies',
       description:
@@ -29,12 +20,6 @@ export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['crm-automation'],
   topics: ['crm-visibility'],
-  primaryKeyword: 'future crm visibility for hvac companies',
-  supportingKeywords: [
-    'predictive hvac crm',
-    'ai crm forecasting for hvac',
-    'future pipeline visibility',
-  ],
   tags: ['HVAC', 'CRM Visibility', 'Predictive Analytics', 'AI Forecasting', 'Future Tech'],
   sections: [
     {

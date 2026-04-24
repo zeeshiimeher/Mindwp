@@ -19,7 +19,7 @@ export interface CaseStudyCardProps {
 
   location: string;
 
-  /** Short summary line in the card (e.g. heroHeadline or metaDescription) */
+  /** Short summary line in the card (e.g. heroHeadline or seo.description) */
   description: string;
 
   /** Optional duration (renders with a clock icon in the header row) */

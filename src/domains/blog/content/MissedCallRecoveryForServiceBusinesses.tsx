@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
   slug: 'missed-call-recovery-for-service-businesses',
   title: 'Missed Call Recovery for Service Businesses',
-  metaTitle: 'Missed Call Recovery for Service Businesses',
-  metaDescription:
-    'Learn how missed call recovery for service businesses uses automated follow-up to recapture lost enquiries and prevent revenue leaking through unanswered calls.',
   seo: {
     title: 'Missed Call Recovery for Service Businesses',
     description:
       'Learn how missed call recovery for service businesses uses automated follow-up to recapture lost enquiries and prevent revenue leaking through unanswered calls.',
     canonical: '/blog/missed-call-recovery-for-service-businesses',
-    keywords: [
-      'missed call recovery for service businesses',
-      'missed calls automation',
-      'unanswered call recovery',
-      'service business call follow-up',
-    ],
     openGraph: {
       title: 'Missed Call Recovery for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['missed-calls'],
-  primaryKeyword: 'missed call recovery for service businesses',
-  supportingKeywords: [
-    'missed calls automation',
-    'unanswered call recovery',
-    'service business call follow-up',
-  ],
   tags: ['Missed Calls', 'Call Recovery', 'Service Business', 'AI Lead Handling', 'Lead Recovery'],
   sections: [
     {

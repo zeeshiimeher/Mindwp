@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
   slug: 'why-hvac-missed-calls-lose-after-hours-revenue',
   title: 'Why HVAC Missed Calls Lose After Hours Revenue',
-  metaTitle: 'Why HVAC Missed Calls Lose After Hours Revenue',
-  metaDescription:
-    'Learn why HVAC missed calls lose after hours revenue when emergency customers call outside business hours and nobody is available to book the job.',
   seo: {
     title: 'Why HVAC Missed Calls Lose After Hours Revenue',
     description:
       'Learn why HVAC missed calls lose after hours revenue when emergency customers call outside business hours and nobody is available to book the job.',
     canonical: '/blog/why-hvac-missed-calls-lose-after-hours-revenue',
-    keywords: [
-      'why hvac missed calls lose after hours revenue',
-      'hvac missed calls',
-      'after hours hvac response',
-      'emergency hvac call loss',
-    ],
     openGraph: {
       title: 'Why HVAC Missed Calls Lose After Hours Revenue',
       description:
@@ -29,12 +20,6 @@ export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
   industries: ['hvac'],
   systems: ['ai-lead-handling'],
   topics: ['missed-calls'],
-  primaryKeyword: 'why hvac missed calls lose after hours revenue',
-  supportingKeywords: [
-    'hvac missed calls',
-    'after hours hvac response',
-    'emergency hvac call loss',
-  ],
   tags: ['HVAC', 'Missed Calls', 'After Hours', 'Revenue Loss', 'Emergency Calls'],
   sections: [
     {

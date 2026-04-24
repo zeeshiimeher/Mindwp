@@ -106,7 +106,7 @@ function parseArgs(): CliArgs {
 type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies' | 'features' | 'services';
 type ContentMetadata = {
   title: string;
-  primaryKeyword: string;
+  summary: string;
   topics: string[];
   systems: string[];
   tags: string[];
@@ -142,14 +142,14 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
       const headingsMatches = [...content.matchAll(/heading:\s*['"]([^'"]+)['"]/g)];
       const title = exportTitleMatch?.[1] ?? headingsMatches[0]?.[1] ?? slug;
 
-      const keywordMatch = content.match(/primaryKeyword:\s*['"]([^'"]+)['"]/);
+      const seoDescriptionMatch = content.match(/seo:\s*\{[\s\S]*?description:\s*['"]([^'"]+)['"]/);
       const topicsMatch = content.match(/topics:\s*\[([\s\S]*?)\]/);
       const systemsMatch = content.match(/systems:\s*\[([\s\S]*?)\]/);
       const tagsMatch = content.match(/tags:\s*\[([\s\S]*?)\]/);
 
       return {
         title,
-        primaryKeyword: keywordMatch?.[1] ?? '',
+        summary: seoDescriptionMatch?.[1] ?? '',
         topics: extractArrayValues(topicsMatch?.[1] ?? ''),
         systems: extractArrayValues(systemsMatch?.[1] ?? ''),
         tags: extractArrayValues(tagsMatch?.[1] ?? ''),
@@ -222,7 +222,7 @@ async function loadIndustryMetadata(slug: string): Promise<ContentMetadata | nul
 
   return {
     title: industry.hero.title,
-    primaryKeyword: industry.seo.keywords[0] ?? industry.hero.title,
+    summary: industry.seo.description,
     topics: industry.topics ?? [],
     systems: industry.systems ?? [],
     tags: industry.industries ?? [],
@@ -266,14 +266,14 @@ async function loadContentMetadata(
     const headingsMatches = [...content.matchAll(/heading:\s*['"]([^'"]+)['"]/g)];
     const title = exportTitleMatch?.[1] ?? heroTitleMatch?.[1] ?? headingsMatches[0]?.[1] ?? slug;
 
-    const keywordMatch = content.match(/primaryKeyword:\s*['"]([^'"]+)['"]/);
+    const seoDescriptionMatch = content.match(/seo:\s*\{[\s\S]*?description:\s*['"]([^'"]+)['"]/);
     const topicsMatch = content.match(/topics:\s*\[([\s\S]*?)\]/);
     const systemsMatch = content.match(/systems:\s*\[([\s\S]*?)\]/);
     const tagsMatch = content.match(/tags:\s*\[([\s\S]*?)\]/);
 
     return {
       title,
-      primaryKeyword: keywordMatch?.[1] ?? '',
+      summary: seoDescriptionMatch?.[1] ?? '',
       topics: extractArrayValues(topicsMatch?.[1] ?? ''),
       systems: extractArrayValues(systemsMatch?.[1] ?? ''),
       tags: extractArrayValues(tagsMatch?.[1] ?? ''),
@@ -348,7 +348,7 @@ async function runTestMode(
   }
 
   logger.info(`📝 Title: ${metadata.title}`);
-  logger.info(`🔑 Primary Keyword: ${metadata.primaryKeyword}`);
+  logger.info(`🧾 Summary: ${metadata.summary || '(none)'}`);
   logger.info(`🏷️  Topics: ${metadata.topics.join(', ') || '(none)'}`);
   logger.info(`⚙️  Systems: ${metadata.systems.join(', ') || '(none)'}`);
   logger.info(`🏷️  Tags: ${metadata.tags.join(', ') || '(none)'}`);

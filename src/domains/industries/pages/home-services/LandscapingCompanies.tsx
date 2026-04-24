@@ -295,13 +295,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
       description:
         'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
-      keywords: [
-        'landscaper patio quote follow up',
-        'landscaper open quote board',
-        'landscaping repeat bookings',
-        'landscaping review automation',
-        'landscaper local SEO',
-      ],
       canonical: '/industries/home-services/landscaping-companies',
     },
     hero: { ...heroData },

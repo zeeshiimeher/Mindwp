@@ -96,9 +96,6 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
   return {
     slug: 'plumbing-website-looked-fine-but-underperformed',
     title: 'The website was live. The phone still stayed quiet.',
-    metaTitle: 'Plumbing website case study: more leads from the same traffic',
-    metaDescription:
-      'How a Leeds plumbing company turned a site that looked finished but underperformed into one that produced far more usable enquiries from the same traffic.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
@@ -129,6 +126,9 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
       'Home Services',
     ],
     seo: {
+      title: 'Plumbing website case study: more leads from the same traffic',
+      description:
+      'How a Leeds plumbing company turned a site that looked finished but underperformed into one that produced far more usable enquiries from the same traffic.',
       canonical: '/case-studies/plumbing-website-looked-fine-but-underperformed',
       openGraph: {
         title: 'Plumbing website case study: more leads from the same traffic',

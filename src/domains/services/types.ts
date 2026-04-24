@@ -126,7 +126,6 @@ export interface ServicePageData<
   TSections extends Record<string, unknown> = Record<string, unknown>,
 > {
   slug: string;
-  keywords: string[];
   badge: string;
   category: string;
   systems: string[];
@@ -134,21 +133,7 @@ export interface ServicePageData<
   industries?: string[];
   features?: string[];
 
-  seo: {
-    title: string;
-    description: string;
-    canonical: string;
-    openGraph?: {
-      title?: string;
-      description?: string;
-      images?: string[];
-      url?: string;
-      [key: string]: unknown;
-    };
-    schema: {
-      service: Record<string, unknown>;
-    };
-  };
+  seo: import('@/domains/shared/seo').SharedSeoData;
 
   hero: {
     badge?: string;

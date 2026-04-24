@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'lead-qualification-framework-for-service-businesses',
   title: 'Lead Qualification Framework for Service Businesses',
-  metaTitle: 'Lead Qualification Framework for Service Businesses',
-  metaDescription:
-    'Explore the lead qualification framework for service businesses that scores and categorises enquiries so high-value leads receive priority response.',
   seo: {
     title: 'Lead Qualification Framework for Service Businesses',
     description:
       'Explore the lead qualification framework for service businesses that scores and categorises enquiries so high-value leads receive priority response.',
     canonical: '/blog/lead-qualification-framework-for-service-businesses',
-    keywords: [
-      'lead qualification framework for service businesses',
-      'lead scoring for service businesses',
-      'enquiry qualification workflow',
-      'qualify service leads',
-    ],
     openGraph: {
       title: 'Lead Qualification Framework for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['lead-qualification'],
-  primaryKeyword: 'lead qualification framework for service businesses',
-  supportingKeywords: [
-    'lead scoring for service businesses',
-    'enquiry qualification workflow',
-    'qualify service leads',
-  ],
   tags: [
     'Lead Qualification',
     'Lead Scoring',

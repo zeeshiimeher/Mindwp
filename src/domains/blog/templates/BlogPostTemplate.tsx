@@ -30,7 +30,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import {
   type Author,
@@ -39,23 +38,18 @@ import {
   getCategoryMetadata,
 } from '@/domains/blog/api';
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
-import { BlogFooterCTA } from '@/domains/blog/ui/BlogFooterCTA';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
 import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
 import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { systemWarning } from '@/lib/system/runtimeWarnings';
+import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
 export interface BlogPostTemplateProps {
   pageId: string;
   // Meta
   title: string;
   slug: string;
-  metaTitle: string;
-  metaDescription: string;
-  primaryKeyword: string;
-  supportingKeywords: string[];
   category: BlogCategory;
   publishDate: string;
   readTime?: string;
@@ -249,8 +243,6 @@ export function BlogPostTemplate({
   pageId,
   title,
   slug,
-  metaTitle: _metaTitle,
-  metaDescription: _metaDescription,
   category,
   publishDate,
   readTime,
@@ -267,7 +259,6 @@ export function BlogPostTemplate({
   const effectiveAuthor = author || getAuthorForCategory(category);
 
   const faqItems: Array<{ question: string; answer: string }> = [];
-  let ctaSection: Extract<BlogPostSection, { type: 'cta' }> | undefined;
   const articleSections: BlogPostSection[] = [];
 
   for (const section of sections) {
@@ -277,15 +268,11 @@ export function BlogPostTemplate({
       continue;
     }
 
-    if (section.type === 'cta') {
-      ctaSection = section;
-    }
-
     articleSections.push(section);
   }
 
   if (sections.length < 5 && env.NODE_ENV === 'development') {
-    systemWarning(`BlogPostTemplate: ${slug} has fewer than 5 authored sections.`);
+    systemDevelopmentWarning(`BlogPostTemplate: ${slug} has fewer than 5 authored sections.`);
   }
 
   const faqSchema = buildFaqSchema(faqItems);
@@ -355,12 +342,12 @@ export function BlogPostTemplate({
   function safeRenderSection(section: unknown, index: number) {
     const type = getBlogSectionType(section);
     if (!type) {
-      systemWarning(`BlogPostTemplate: skipping section at index ${index} because type is invalid.`);
+      systemDevelopmentWarning(`BlogPostTemplate: skipping section at index ${index} because type is invalid.`);
       return null;
     }
 
     if (!validateRenderableBlogSection(section as BlogPostSection)) {
-      systemWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
+      systemDevelopmentWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
       return null;
     }
 
@@ -368,7 +355,7 @@ export function BlogPostTemplate({
       return renderSection(section as BlogPostSection, index);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      systemWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      systemDevelopmentWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
       return null;
     }
   }
@@ -673,10 +660,6 @@ export function BlogPostTemplate({
               </div>
             </div>
           </SectionWrapper>
-          {!ctaSection ? (
-            <BlogFooterCTA system={primarySystem} slug={slug} />
-          ) : null}
-
           {faqSchema && (
             <script
               id='faq-jsonld'
@@ -684,7 +667,6 @@ export function BlogPostTemplate({
               dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
           )}
-          <SmartRelatedSection pageId={`blog:${slug}`} pageType='blog' slug={slug} />
         </main>
       </div>
     </CTARegistryProvider>

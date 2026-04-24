@@ -3,19 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
   slug: 'what-is-a-systems-first-website-for-service-businesses',
   title: 'What Is a Systems-First Website for Service Businesses',
-  metaTitle: 'What Is a Systems-First Website for Services',
-  metaDescription:
-    'Understand what is a systems-first website and how this infrastructure-led approach helps service businesses capture, qualify, and route leads automatically.',
   seo: {
     title: 'What Is a Systems-First Website for Services',
     description:
       'Understand what is a systems-first website and how this infrastructure-led approach helps service businesses capture, qualify, and route leads automatically.',
     canonical: '/blog/what-is-a-systems-first-website-for-service-businesses',
-    keywords: [
-      'what is a systems-first website',
-      'systems first website meaning',
-      'systems first web design',
-    ],
     openGraph: {
       title: 'What Is a Systems-First Website for Services',
       description:
@@ -28,12 +20,6 @@ export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['systems-first-websites'],
-  primaryKeyword: 'what is a systems-first website',
-  supportingKeywords: [
-    'systems first website meaning',
-    'systems first web design',
-    'service business website systems',
-  ],
   tags: [
     'Systems-First',
     'Website Architecture',

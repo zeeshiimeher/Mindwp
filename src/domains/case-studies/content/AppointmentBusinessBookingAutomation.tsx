@@ -151,9 +151,6 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
   return {
     slug: 'appointment-business-booking-automation',
     title: 'Dental Practice Booking Automation',
-    metaTitle: 'Dental Booking Automation | 52% Online Booking Adoption',
-    metaDescription:
-      'How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.',
     industryCategory: 'healthcare',
     industryLabel: 'Healthcare',
     industries: ['dental-clinic'],
@@ -180,6 +177,9 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
       'Healthcare',
     ],
     seo: {
+      title: 'Dental Booking Automation | 52% Online Booking Adoption',
+      description:
+      'How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.',
       canonical: '/case-studies/appointment-business-booking-automation',
       openGraph: {
         title: 'Why Dental Practices Lose Patients | MindWP Case Study',

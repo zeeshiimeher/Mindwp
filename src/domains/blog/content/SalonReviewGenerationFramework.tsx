@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salonReviewGenerationFramework: BlogPostData = {
   slug: 'salon-review-generation-framework',
   title: 'Salon Review Generation Framework',
-  metaTitle: 'Salon Review Generation Framework for Businesses',
-  metaDescription:
-    'Discover the salon review generation framework that automates post-appointment review requests to build online reputation and attract new clients.',
   seo: {
     title: 'Salon Review Generation Framework for Businesses',
     description:
       'Discover the salon review generation framework that automates post-appointment review requests to build online reputation and attract new clients.',
     canonical: '/blog/salon-review-generation-framework',
-    keywords: [
-      'salon review generation framework',
-      'salon review requests',
-      'salon review system',
-      'beauty business review workflow',
-    ],
     openGraph: {
       title: 'Salon Review Generation Framework for Businesses',
       description:
@@ -29,12 +20,6 @@ export const salonReviewGenerationFramework: BlogPostData = {
   industries: ['salon'],
   systems: ['reputation-review'],
   topics: ['review-generation'],
-  primaryKeyword: 'salon review generation framework',
-  supportingKeywords: [
-    'salon review requests',
-    'salon review system',
-    'beauty business review workflow',
-  ],
   tags: ['Salon', 'Review Generation', 'Online Reputation', 'Google Reviews', 'Automation'],
   sections: [
     {

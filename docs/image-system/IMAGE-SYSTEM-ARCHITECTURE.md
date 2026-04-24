@@ -115,12 +115,13 @@ Fetch directive: `cache: 'no-store'` (prevents stale results).
 
 # 5. Semantic Query Generation
 
-The system generates contextual search queries from content metadata rather than relying on basic keyword searches.
+The system generates contextual search queries from content metadata rather than relying on shallow tag matching.
 
 Sources analyzed:
 
 - title
-- primaryKeyword
+- seo.title
+- seo.description
 - topics[]
 - systems[]
 - tags[]
@@ -138,6 +139,7 @@ topic-to-scene mapping
 domain style scenes
 ↓
 query ranking (keyword overlap scoring)
+query ranking (metadata overlap scoring)
 ↓
 same-score tier shuffling (time-based seed for variety)
 ```
@@ -183,7 +185,7 @@ Each candidate image is scored across 5 weighted factors:
 
 | Factor                | Weight | What it measures                                                       |
 | --------------------- | ------ | ---------------------------------------------------------------------- |
-| Subject Relevance     | 0.40   | Keyword matching: image tags/description vs content metadata           |
+| Subject Relevance     | 0.40   | Metadata matching: image tags/description vs page metadata             |
 | Visual Clarity        | 0.20   | Resolution, contrast, brightness range                                 |
 | Composition Quality   | 0.15   | Subject not centered, right-side subject preferred, landscape, no text |
 | Overlay Compatibility | 0.15   | Clean left zone, low center edge density, good contrast                |
@@ -237,7 +239,7 @@ Layer order (bottom to top):
 9. Accent bar — vertical gradient bar with glow
 10. Badge — category pill (e.g., "CASE STUDY")
 11. Icon — domain icon before label
-12. Label — keyword-derived uppercase text
+12. Label — metadata-derived uppercase text
 13. Title — dominant headline (1-2 lines, weight 900)
 
 ### 9.4 Layout Variants
@@ -409,7 +411,7 @@ After overlay generation, the pipeline samples the center region and verifies wh
 ### Safety Checks
 
 - License validation (editorial flags)
-- Brand/logo keyword detection
+- Brand/logo term detection
 - Unsafe content filtering
 
 ---

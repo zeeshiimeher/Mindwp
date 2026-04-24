@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
   slug: 'customer-feedback-loop-for-plumbing-companies',
   title: 'Customer Feedback Loop for Plumbing Companies',
-  metaTitle: 'Customer Feedback Loop for Plumbing Companies',
-  metaDescription:
-    'Learn how a customer feedback loop for plumbing companies captures service quality data after every job to improve operations and build local reputation.',
   seo: {
     title: 'Customer Feedback Loop for Plumbing Companies',
     description:
       'Learn how a customer feedback loop for plumbing companies captures service quality data after every job to improve operations and build local reputation.',
     canonical: '/blog/customer-feedback-loop-for-plumbing-companies',
-    keywords: [
-      'customer feedback loop for plumbing companies',
-      'plumbing customer feedback',
-      'plumber service feedback system',
-      'plumbing quality feedback workflow',
-    ],
     openGraph: {
       title: 'Customer Feedback Loop for Plumbing Companies',
       description:
@@ -29,12 +20,6 @@ export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
   industries: ['plumbing'],
   systems: ['reputation-review'],
   topics: ['feedback-loops'],
-  primaryKeyword: 'customer feedback loop for plumbing companies',
-  supportingKeywords: [
-    'plumbing customer feedback',
-    'plumber service feedback system',
-    'plumbing quality feedback workflow',
-  ],
   tags: ['Plumbing', 'Customer Feedback', 'Feedback Loop', 'Quality', 'Reputation'],
   sections: [
     {

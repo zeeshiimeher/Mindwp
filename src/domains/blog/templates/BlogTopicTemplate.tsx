@@ -59,7 +59,7 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
 
                         <h3 className='blog-category__card-title'>{post.title}</h3>
 
-                        <p className='blog-category__card-description'>{post.metaDescription}</p>
+                        <p className='blog-category__card-description'>{post.seo.description}</p>
 
                         <div className='blog-category__card-meta'>
                           <Calendar aria-hidden='true' />

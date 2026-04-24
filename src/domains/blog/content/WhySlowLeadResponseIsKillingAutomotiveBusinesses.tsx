@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
   slug: 'why-slow-lead-response-is-killing-automotive-businesses',
   title: 'Why Slow Lead Response Is Killing Automotive Businesses',
-  metaTitle: 'Why Slow Lead Response Is Killing Automotive Businesses',
-  metaDescription:
-    'Discover why slow lead response is killing automotive businesses and how delayed follow-up costs repair shops and garages their most valuable customer leads.',
   seo: {
     title: 'Why Slow Lead Response Is Killing Automotive Businesses',
     description:
       'Discover why slow lead response is killing automotive businesses and how delayed follow-up costs repair shops and garages their most valuable customer leads.',
     canonical: '/blog/why-slow-lead-response-is-killing-automotive-businesses',
-    keywords: [
-      'slow lead response automotive',
-      'automotive lead response time',
-      'auto repair slow follow-up',
-      'garage lost leads response delay',
-    ],
     openGraph: {
       title: 'Why Slow Lead Response Is Killing Automotive Businesses',
       description:
@@ -29,12 +20,6 @@ export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
   industries: ['automotive'],
   systems: ['crm-automation'],
   topics: ['lead-response-time'],
-  primaryKeyword: 'slow lead response is killing automotive businesses',
-  supportingKeywords: [
-    'automotive lead response time',
-    'auto repair slow follow-up',
-    'garage lost leads response delay',
-  ],
   tags: ['Automotive', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Follow-Up'],
   sections: [
     {

@@ -18,15 +18,6 @@ export const conversionLayerPage = {
   slug,
   systems: ['revenue-growth'],
   topics: ['conversion-optimization', 'lead-capture', 'service-page-architecture'],
-  keywords: [
-    'conversion layer for service business',
-    'service business funnel optimization',
-    'landing page development for service business',
-    'lead conversion workflow',
-    'conversion landing page system',
-    'service page conversion improvements',
-    'campaign landing page development',
-  ],
   badge: 'Conversion Layer',
   category: 'Conversion Systems',
   seo: buildServiceSeo({
@@ -34,9 +25,6 @@ export const conversionLayerPage = {
     title: 'Conversion Layer for Service Businesses | MindWP',
     description:
       "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
-    schemaName: 'Conversion layer for service businesses',
-    schemaDescription:
-      'Conversion-layer work covering offer clarity, decision-path structure, CTA alignment, and enquiry follow-up for service businesses losing visitors between interest and action.',
   }),
   hero: {
     badge: 'Conversion Layer',

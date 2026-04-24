@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const revenueVisibilityForRoofingCompanies: BlogPostData = {
   slug: 'revenue-visibility-for-roofing-companies',
   title: 'Revenue Visibility for Roofing Companies',
-  metaTitle: 'Revenue Visibility for Roofing Companies',
-  metaDescription:
-    'Discover how revenue visibility for roofing companies uses CRM pipeline tracking to connect every enquiry to completed jobs and measurable revenue outcomes.',
   seo: {
     title: 'Revenue Visibility for Roofing Companies',
     description:
       'Discover how revenue visibility for roofing companies uses CRM pipeline tracking to connect every enquiry to completed jobs and measurable revenue outcomes.',
     canonical: '/blog/revenue-visibility-for-roofing-companies',
-    keywords: [
-      'revenue visibility for roofing companies',
-      'roofing revenue tracking',
-      'roofer crm reporting',
-      'roofing pipeline revenue visibility',
-    ],
     openGraph: {
       title: 'Revenue Visibility for Roofing Companies',
       description:
@@ -29,12 +20,6 @@ export const revenueVisibilityForRoofingCompanies: BlogPostData = {
   industries: ['roofing'],
   systems: ['crm-automation'],
   topics: ['revenue-visibility'],
-  primaryKeyword: 'revenue visibility for roofing companies',
-  supportingKeywords: [
-    'roofing revenue tracking',
-    'roofer crm reporting',
-    'roofing pipeline revenue visibility',
-  ],
   tags: ['Roofing', 'Revenue Visibility', 'CRM', 'Pipeline Tracking', 'Reporting'],
   sections: [
     {

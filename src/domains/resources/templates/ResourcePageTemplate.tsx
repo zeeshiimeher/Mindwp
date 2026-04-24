@@ -32,7 +32,6 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -48,7 +47,7 @@ import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates'
 import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
 import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
-import { systemWarning } from '@/lib/system/runtimeWarnings';
+import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
 import type { ResourcePageTemplateSection } from './types';
 export type { ResourcePageTemplateSection } from './types';
@@ -254,10 +253,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   // Extract content from sections for rendering using organized utilities
   const heroData = extractHeroContent(props.sections, props.title, props.description);
   const sidebarCTAData = extractSidebarCTAContent(props.sections);
-  const hasAuthoredRelatedResources = props.sections.some(section => section.type === 'related-resources');
 
   if (props.sections.length < 5 && env.NODE_ENV === 'development') {
-    systemWarning(`ResourcePageTemplate: ${currentSlug} has fewer than 5 authored sections.`);
+    systemDevelopmentWarning(`ResourcePageTemplate: ${currentSlug} has fewer than 5 authored sections.`);
   }
 
   // Function to render a section based on its type
@@ -473,12 +471,12 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   function safeRenderSection(section: unknown, index: number) {
     const type = getResourceSectionType(section);
     if (!type) {
-      systemWarning(`ResourcePageTemplate: skipping section at index ${index} because type is invalid.`);
+      systemDevelopmentWarning(`ResourcePageTemplate: skipping section at index ${index} because type is invalid.`);
       return null;
     }
 
     if (!validateRenderableResourceSection(section as ResourcePageTemplateSection)) {
-      systemWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
+      systemDevelopmentWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
       return null;
     }
 
@@ -486,7 +484,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
       return renderSection(section as ResourcePageTemplateSection, index);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      systemWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      systemDevelopmentWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
       return null;
     }
   }
@@ -651,13 +649,6 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               separate the primary leak from the secondary ones before you commit to a build.
             </div>
           </div>
-          {!hasAuthoredRelatedResources ? (
-            <SmartRelatedSection
-              pageId={`resource:${currentSlug}`}
-              pageType='resource'
-              slug={currentSlug}
-            />
-          ) : null}
         </main>
       </div>
     </CTARegistryProvider>

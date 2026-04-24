@@ -296,13 +296,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
       description:
         'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-      keywords: [
-        'roofing re-roof quote follow up',
-        'roofing quote pipeline',
-        'roofing insurance claim handling',
-        'roofing review automation',
-        'roofer local SEO',
-      ],
       canonical: '/industries/home-services/roofing-companies',
     },
     hero: { ...heroData },

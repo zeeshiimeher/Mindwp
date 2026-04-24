@@ -233,13 +233,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
             title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
             description:
                 'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
-            keywords: [
-                'property manager landlord enquiry',
-                'tenant communication system',
-                'property management crm',
-                'landlord retention',
-                'property management local seo',
-            ],
             canonical: '/industries/real-estate-property-services/property-managers',
         },
         hero: {

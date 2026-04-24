@@ -9,13 +9,6 @@ export const missedCallRecoverySystemPage = {
   slug,
   systems: ['ai-lead-handling'],
   topics: ['missed-calls', 'lead-response-time'],
-  keywords: [
-    'missed call recovery system',
-    'missed call text back system',
-    'missed enquiry capture system',
-    'after-hours lead response system',
-    'automatic text back for missed calls',
-  ],
   badge: 'Missed Call Recovery System',
   category: 'Lead Protection Systems',
   seo: buildServiceSeo({
@@ -23,9 +16,6 @@ export const missedCallRecoverySystemPage = {
     title: 'Missed Call Recovery for Service Businesses | MindWP',
     description:
       'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
-    schemaName: 'Missed call recovery for service businesses',
-    schemaDescription:
-      'Missed call handling covering instant text-back, detail capture, and follow-up routing for service businesses losing jobs to unanswered phones.',
   }),
   hero: {
     badge: 'Missed Call Recovery',

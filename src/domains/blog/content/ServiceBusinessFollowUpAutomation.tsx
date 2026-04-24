@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const serviceBusinessFollowUpAutomation: BlogPostData = {
   slug: 'service-business-follow-up-automation',
   title: 'Service Business Follow Up Automation',
-  metaTitle: 'Service Business Follow Up Automation Guide',
-  metaDescription:
-    'Discover how service business follow up automation ensures no lead goes cold with timely sequences that nurture enquiries through to booked jobs automatically.',
   seo: {
     title: 'Service Business Follow Up Automation Guide',
     description:
       'Discover how service business follow up automation ensures no lead goes cold with timely sequences that nurture enquiries through to booked jobs automatically.',
     canonical: '/blog/service-business-follow-up-automation',
-    keywords: [
-      'service business follow up automation',
-      'follow up automation for leads',
-      'crm follow up workflow',
-      'service business nurture automation',
-    ],
     openGraph: {
       title: 'Service Business Follow Up Automation Guide',
       description:
@@ -29,12 +20,6 @@ export const serviceBusinessFollowUpAutomation: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['follow-up'],
-  primaryKeyword: 'service business follow up automation',
-  supportingKeywords: [
-    'follow up automation for leads',
-    'crm follow up workflow',
-    'service business nurture automation',
-  ],
   tags: ['Follow Up', 'Automation', 'Service Business', 'CRM', 'Lead Nurture'],
   sections: [
     {

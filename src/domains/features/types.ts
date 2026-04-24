@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import type { SharedSeoData } from '@/domains/shared/seo';
 
 import type {
   FeatureCategory,
@@ -131,21 +132,12 @@ type VisualFlowSection = {
 
 export type FeaturePageData = {
   slug: string;
-  keywords?: string[];
   badge?: string;
   category?: string;
   systems: string[];
   topics?: string[];
 
-  seo: {
-    title: string;
-    description: string;
-    canonical: string;
-    openGraph?: Record<string, unknown>;
-    schema: {
-      primary: Record<string, unknown>;
-    };
-  };
+  seo: SharedSeoData;
 
   hero: {
     badge: string;

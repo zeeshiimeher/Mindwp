@@ -177,9 +177,6 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
   return {
     slug: 'roofing-website-rebuild-with-crm',
     title: 'Roofing Website Rebuild With CRM',
-    metaTitle: 'Roofing Website Rebuild | 6 to 22 Weekly Leads',
-    metaDescription:
-      'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -213,6 +210,9 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
       'Conversion Optimisation',
     ],
     seo: {
+      title: 'Roofing Website Rebuild | 6 to 22 Weekly Leads',
+      description:
+      'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.',
       canonical: '/case-studies/roofing-website-rebuild-with-crm',
       openGraph: {
         title: 'Why Roofing Websites Fail to Convert Leads | MindWP Case Study',

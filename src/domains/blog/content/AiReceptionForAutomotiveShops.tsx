@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const aiReceptionForAutomotiveShops: BlogPostData = {
   slug: 'ai-reception-for-automotive-shops',
   title: 'AI Reception for Automotive Shops',
-  metaTitle: 'AI Reception for Automotive Shops Explained',
-  metaDescription:
-    'Learn how AI reception for automotive shops uses automated answering and triage systems to handle calls, capture leads, and reduce missed booking opportunities.',
   seo: {
     title: 'AI Reception for Automotive Shops Explained',
     description:
       'Learn how AI reception for automotive shops uses automated answering and triage systems to handle calls, capture leads, and reduce missed booking opportunities.',
     canonical: '/blog/ai-reception-for-automotive-shops',
-    keywords: [
-      'ai reception for automotive shops',
-      'automotive ai reception',
-      'repair shop ai answering',
-      'workshop ai response systems',
-    ],
     openGraph: {
       title: 'AI Reception for Automotive Shops Explained',
       description:
@@ -29,12 +20,6 @@ export const aiReceptionForAutomotiveShops: BlogPostData = {
   industries: ['automotive'],
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
-  primaryKeyword: 'ai reception for automotive shops',
-  supportingKeywords: [
-    'automotive ai reception',
-    'repair shop ai answering',
-    'workshop ai response systems',
-  ],
   tags: ['Automotive', 'AI Reception', 'Automated Answering', 'Lead Capture', 'Future Tech'],
   sections: [
     {

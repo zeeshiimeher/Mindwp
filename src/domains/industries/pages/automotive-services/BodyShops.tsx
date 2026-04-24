@@ -322,13 +322,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       title: 'Body Shops \u2014 Win The Photo Race After A Bump | MindWP',
       description:
         'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-      keywords: [
-        'body shop first reply time',
-        'body shop estimate follow up',
-        'body shop insurance workflow',
-        'body shop reputation management',
-        'collision repair lead handling',
-      ],
       canonical: '/industries/automotive-services/body-shops',
     },
     hero: { ...heroData },

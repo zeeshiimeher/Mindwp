@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'local-visibility-framework-for-service-businesses',
   title: 'Local Visibility Framework for Service Businesses',
-  metaTitle: 'Local Visibility Framework for Service Businesses',
-  metaDescription:
-    'Explore the local visibility framework for service businesses that connects search presence, listings, and review signals into one discovery system.',
   seo: {
     title: 'Local Visibility Framework for Service Businesses',
     description:
       'Explore the local visibility framework for service businesses that connects search presence, listings, and review signals into one discovery system.',
     canonical: '/blog/local-visibility-framework-for-service-businesses',
-    keywords: [
-      'local visibility framework for service businesses',
-      'local visibility system',
-      'visibility framework for service companies',
-      'local discovery workflow',
-    ],
     openGraph: {
       title: 'Local Visibility Framework for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['local-seo-authority'],
   topics: ['local-visibility'],
-  primaryKeyword: 'local visibility framework for service businesses',
-  supportingKeywords: [
-    'local visibility system',
-    'visibility framework for service companies',
-    'local discovery workflow',
-  ],
   tags: ['Local Visibility', 'Service Business', 'Local SEO', 'Discovery', 'Search Presence'],
   sections: [
     {

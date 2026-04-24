@@ -264,7 +264,7 @@ export async function processImage(
           metadata.title,
           brightness,
           design,
-          metadata.primaryKeyword,
+          metadata.topics[0] ?? metadata.systems[0] ?? metadata.title,
           Object.keys(tuneOverrides).length > 0 ? tuneOverrides : undefined
         );
 
@@ -354,7 +354,7 @@ export async function processImage(
       const overlayPath = getImageOutputPath(domain, slug, 'featured-overlay');
 
       // Generate SEO metadata
-      const seo = generateImageSeo(metadata.title, metadata.primaryKeyword, domain);
+      const seo = generateImageSeo(metadata.title, metadata.summary, domain);
       const exifMeta = buildExifMetadata(seo);
       logger.info(`[seo] Alt: "${seo.alt}"`);
       logger.info(`[seo] File: ${overlayPath}`);
@@ -421,7 +421,7 @@ export async function processImage(
 
       // Update learning systems
       updateContextMemory(
-        metadata.topics[0] ?? metadata.primaryKeyword,
+        metadata.topics[0] ?? metadata.systems[0] ?? metadata.title,
         semanticQuery.query,
         best.image.provider,
         best.relevanceScore
@@ -457,7 +457,7 @@ export async function processImage(
 
       // Update learning systems
       updateContextMemory(
-        metadata.topics[0] ?? metadata.primaryKeyword,
+        metadata.topics[0] ?? metadata.systems[0] ?? metadata.title,
         semanticQuery.query,
         best.image.provider,
         best.relevanceScore

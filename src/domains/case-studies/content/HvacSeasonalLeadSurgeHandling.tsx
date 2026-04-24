@@ -178,9 +178,6 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
   return {
     slug: 'hvac-seasonal-lead-surge-handling',
     title: 'HVAC Seasonal Lead Surge Handling',
-    metaTitle: 'HVAC Seasonal Lead Handling | 3x Call Capacity',
-    metaDescription:
-      'How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
@@ -207,6 +204,9 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
       'Queue Prioritisation',
     ],
     seo: {
+      title: 'HVAC Seasonal Lead Handling | 3x Call Capacity',
+      description:
+      'How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.',
       canonical: '/case-studies/hvac-seasonal-lead-surge-handling',
       openGraph: {
         title: 'Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study',

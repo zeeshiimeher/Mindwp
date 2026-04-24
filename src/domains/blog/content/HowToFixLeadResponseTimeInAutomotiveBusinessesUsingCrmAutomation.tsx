@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: BlogPostData = {
   slug: 'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
   title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
-  metaTitle: 'Fix Lead Response Time in Automotive Using CRM',
-  metaDescription:
-    'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',
   seo: {
     title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
     description:
       'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',
     canonical: '/blog/how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
-    keywords: [
-      'crm automation automotive lead response',
-      'fix lead response time auto repair',
-      'automotive crm lead management',
-      'garage enquiry automation',
-    ],
     openGraph: {
       title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
       description:
@@ -29,12 +20,6 @@ export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: B
   industries: ['automotive'],
   systems: ['crm-automation'],
   topics: ['lead-response-time'],
-  primaryKeyword: 'fix lead response time in automotive',
-  supportingKeywords: [
-    'crm automation automotive lead response',
-    'auto repair lead management',
-    'garage enquiry automation',
-  ],
   tags: ['Automotive', 'CRM Automation', 'Lead Response Time', 'Enquiry Management', 'System'],
   sections: [
     {

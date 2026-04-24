@@ -341,13 +341,6 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
       description:
         'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
-      keywords: [
-        'home services lead handling',
-        'trade business missed call recovery',
-        'plumbing hvac quote follow up',
-        'roofing storm enquiry system',
-        'local trade visibility system',
-      ],
       canonical: '/industries/home-services',
     },
     hero: heroData,

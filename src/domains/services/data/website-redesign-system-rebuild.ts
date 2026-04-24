@@ -19,13 +19,6 @@ export const websiteRedesignSystemRebuildPage = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure', 'service-page-architecture'],
-  keywords: [
-    'website redesign and rebuild',
-    'wordpress system rebuild',
-    'website restructuring service',
-    'website architecture redesign',
-    'service business website rebuild',
-  ],
   badge: 'Website Redesign',
   category: 'Structural Rebuild Services',
   seo: buildServiceSeo({
@@ -33,9 +26,6 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
     description:
       'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
-    schemaName: 'Website redesign and system rebuild for service businesses',
-    schemaDescription:
-      'A website redesign pathway that addresses the real problem — what the site does with visitors, not just how it looks.',
   }),
   hero: {
     badge: 'Website Redesign',

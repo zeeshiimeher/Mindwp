@@ -244,13 +244,6 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       title: 'Automotive Service Shops \u2014 Stop Losing Work At The Front Desk | MindWP',
       description:
         'For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.',
-      keywords: [
-        'automotive shop missed call recovery',
-        'auto repair estimate follow up',
-        'body shop photo response time',
-        'detailer booking system',
-        'mobile mechanic dispatch',
-      ],
       canonical: '/industries/automotive-services',
     },
     hero: heroData,

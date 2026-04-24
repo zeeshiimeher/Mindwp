@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
   slug: 'conversion-tracking-for-service-businesses-explained',
   title: 'Conversion Tracking for Service Businesses Explained',
-  metaTitle: 'Conversion Tracking for Service Businesses',
-  metaDescription:
-    'Learn how conversion tracking for service businesses connects website activity to enquiries and reveals which pages and channels drive revenue.',
   seo: {
     title: 'Conversion Tracking for Service Businesses',
     description:
       'Learn how conversion tracking for service businesses connects website activity to enquiries and reveals which pages and channels drive revenue.',
     canonical: '/blog/conversion-tracking-for-service-businesses-explained',
-    keywords: [
-      'conversion tracking for service businesses',
-      'crm conversion tracking',
-      'lead source attribution for services',
-      'website conversion measurement',
-    ],
     openGraph: {
       title: 'Conversion Tracking for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['conversion-tracking'],
-  primaryKeyword: 'conversion tracking for service businesses',
-  supportingKeywords: [
-    'crm conversion tracking',
-    'lead source attribution for services',
-    'website conversion measurement',
-  ],
   tags: [
     'Conversion Tracking',
     'Service Business',

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
   slug: 'why-auto-repair-shops-lose-phone-leads',
   title: 'Why Auto Repair Shops Lose Phone Leads',
-  metaTitle: 'Why Auto Repair Shops Lose Phone Leads Explained',
-  metaDescription:
-    'Explore why auto repair shops lose phone leads when calls go unanswered during busy hours and how structured call handling prevents lost bookings.',
   seo: {
     title: 'Why Auto Repair Shops Lose Phone Leads Explained',
     description:
       'Explore why auto repair shops lose phone leads when calls go unanswered during busy hours and how structured call handling prevents lost bookings.',
     canonical: '/blog/why-auto-repair-shops-lose-phone-leads',
-    keywords: [
-      'why auto repair shops lose phone leads',
-      'auto repair enquiry loss',
-      'repair shop lead response',
-      'missed repair calls',
-    ],
     openGraph: {
       title: 'Why Auto Repair Shops Lose Phone Leads Explained',
       description:
@@ -29,12 +20,6 @@ export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
   industries: ['automotive'],
   systems: ['ai-lead-handling'],
   topics: ['lead-management'],
-  primaryKeyword: 'why auto repair shops lose phone leads',
-  supportingKeywords: [
-    'auto repair enquiry loss',
-    'repair shop lead response',
-    'missed repair calls',
-  ],
   tags: ['Automotive', 'Phone Leads', 'Lead Loss', 'Call Handling', 'Repair Shop'],
   sections: [
     {

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localSeoForRoofingCompaniesExplained: BlogPostData = {
   slug: 'local-seo-for-roofing-companies-explained',
   title: 'Local SEO for Roofing Companies Explained',
-  metaTitle: 'Local SEO for Roofing Companies Explained',
-  metaDescription:
-    'Learn what local SEO for roofing companies explained in practical terms means for visibility, rankings, and attracting local repair enquiries.',
   seo: {
     title: 'Local SEO for Roofing Companies Explained',
     description:
       'Learn what local SEO for roofing companies explained in practical terms means for visibility, rankings, and attracting local repair enquiries.',
     canonical: '/blog/local-seo-for-roofing-companies-explained',
-    keywords: [
-      'local seo for roofing companies explained',
-      'roofing local seo',
-      'roofer local rankings',
-      'local visibility for roofers',
-    ],
     openGraph: {
       title: 'Local SEO for Roofing Companies Explained',
       description:
@@ -29,12 +20,6 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
   industries: ['roofing'],
   systems: ['local-seo-authority'],
   topics: ['local-seo'],
-  primaryKeyword: 'local seo for roofing companies explained',
-  supportingKeywords: [
-    'roofing local seo',
-    'roofer local rankings',
-    'local visibility for roofers',
-  ],
   tags: ['Roofing', 'Local SEO', 'Local Rankings', 'Visibility', 'Search'],
   sections: [
     {

@@ -77,18 +77,9 @@ export const workflowsData: FeaturePageData = {
     title: 'Workflows | Structured Automation Layer',
     description:
       'Structured workflow automation for follow-ups, reminders, and task routing with clear rules and full team visibility.',
-    schemaName: 'Workflows',
-    schemaDescription:
-      'Automation engine connecting forms, bookings, and pipeline stages to triggered actions like confirmations, reminders, and task assignments.',
   }),
   systems: ['revenue-growth'],
   topics: ['lead-management'],
-  keywords: [
-    'workflow automation',
-    'business process automation',
-    'follow-up automation',
-    'task routing system',
-  ],
   hero: {
     badge: 'Workflow Automation',
     title: 'Automate Follow-Ups Without Losing Control',

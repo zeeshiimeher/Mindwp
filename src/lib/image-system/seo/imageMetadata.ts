@@ -9,37 +9,26 @@ export interface ImageSeoMetadata {
   alt: string;
   title: string;
   description: string;
-  keywords: string[];
 }
 
 /** Generate SEO-optimized alt, title, and description for a featured image */
 export function generateImageSeo(
   postTitle: string,
-  primaryKeyword: string,
+  summary: string,
   domain: ContentDomain
 ): ImageSeoMetadata {
-  // Alt: {title} — {keyword} (with fallback when keyword is empty)
-  const kw = primaryKeyword?.replace(/-/g, ' ').trim();
-  const alt = kw ? `${postTitle} — ${kw}` : `${postTitle} illustration`;
+  const cleanSummary = summary.replace(/-/g, ' ').trim();
+  const alt = cleanSummary ? `${postTitle} — ${cleanSummary}` : `${postTitle} illustration`;
 
   // Title: {title} | Brand
   const title = `${postTitle} | ${BRAND_NAME}`;
 
   // Description: short contextual sentence
-  const description = `Featured image for ${postTitle} — a ${domain} article about ${primaryKeyword.replace(/-/g, ' ')}`;
+  const description = cleanSummary
+    ? `Featured image for ${postTitle} — ${cleanSummary}`
+    : `Featured image for ${postTitle} — a ${domain} page`;
 
-  // Keywords: primary keyword + domain + extracted words
-  const keywords = [
-    primaryKeyword.replace(/-/g, ' '),
-    domain,
-    ...postTitle
-      .toLowerCase()
-      .split(/\s+/)
-      .filter(w => w.length > 3)
-      .slice(0, 5),
-  ];
-
-  return { alt, title, description, keywords: [...new Set(keywords)] };
+  return { alt, title, description };
 }
 
 /** Build EXIF-compatible metadata object for Sharp's withMetadata() */

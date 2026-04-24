@@ -17,15 +17,6 @@ export const reputationReviewSystemsPage = {
     'feedback-loops',
     'negative-review-response',
   ],
-  keywords: [
-    'reputation management system for service businesses',
-    'online review management for contractors',
-    'review automation system',
-    'automated review request system',
-    'google review request automation',
-    'google review generation system',
-    'customer feedback automation system',
-  ],
   badge: 'Reputation & Review Systems',
   category: 'Trust Systems',
   seo: buildServiceSeo({
@@ -33,9 +24,6 @@ export const reputationReviewSystemsPage = {
     title: 'Reputation & Review Management for Service Businesses | MindWP',
     description:
       "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-    schemaName: 'Reputation and review management for service businesses',
-    schemaDescription:
-      'Review collection, feedback routing, and reputation monitoring for service businesses where trust directly affects whether people enquire.',
   }),
   hero: {
     badge: 'Reputation & Reviews',

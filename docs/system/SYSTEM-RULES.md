@@ -76,17 +76,16 @@ Do NOT:
 
 Blog validation rules:
 
-- `metaTitle`: 40–60 characters
-- `metaDescription`: 140–160 characters
-- `primaryKeyword` MUST appear as a substring in:
-  - `title`
-  - `metaTitle`
-  - `metaDescription`
+- `seo.title` is the primary metadata source and should stay concise and specific.
+- `seo.description` is the canonical summary and should stay clear, concrete, and non-duplicative.
+- `seo.canonical` must match the routed page path.
+- `seo.openGraph` may override title or description when sharing needs differ, but it must remain semantically aligned with `seo`.
 
 Important:
 
-- `primaryKeyword` must be a substring match (case-insensitive)
-- Avoid long keywords that break `metaTitle` limits
+- Metadata must come from `seo`; legacy metadata fields are invalid.
+- Schema builders must derive `name` and `description` from `seo.title` and `seo.description`.
+- Do not add keyword arrays or keyword-match rules to content validation.
 
 ---
 
@@ -243,7 +242,7 @@ Rules:
 Forbidden:
 
 - Components calling graph query functions.
-- Runtime relationship inference (e.g., keyword matching to derive links).
+- Runtime relationship inference (e.g., ad-hoc text matching to derive links).
 - Dynamic graph mutation or edge creation outside the canonical registry system.
 - `Math.random()` or non-deterministic behavior in graph resolution.
 

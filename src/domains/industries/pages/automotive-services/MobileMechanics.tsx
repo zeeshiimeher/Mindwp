@@ -306,13 +306,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       title: 'Mobile Mechanics \u2014 Stop Losing Calls From The Glovebox | MindWP',
       description:
         'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-      keywords: [
-        'mobile mechanic missed call recovery',
-        'mobile mechanic booking system',
-        'mobile mechanic service area',
-        'mobile mechanic quote follow up',
-        'mobile mechanic local SEO',
-      ],
       canonical: '/industries/automotive-services/mobile-mechanics',
     },
     hero: { ...heroData },

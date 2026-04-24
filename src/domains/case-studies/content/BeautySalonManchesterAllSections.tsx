@@ -174,9 +174,6 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
   return {
     slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
     title: 'Beauty Salon Case Study - All Sections Demo',
-    metaTitle: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
-    metaDescription:
-      'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
@@ -196,6 +193,9 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
     })),
     tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'All Sections Demo'],
     seo: {
+      title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
+      description:
+      'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
       canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
       openGraph: {
         title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',

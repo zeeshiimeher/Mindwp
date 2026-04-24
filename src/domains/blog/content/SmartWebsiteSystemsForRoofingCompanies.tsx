@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
   slug: 'smart-website-systems-for-roofing-companies',
   title: 'Smart Website Systems for Roofing Companies',
-  metaTitle: 'Smart Website Systems for Roofing Companies',
-  metaDescription:
-    'Discover how smart website systems for roofing companies connect lead capture, booking, and CRM into one infrastructure that drives more jobs.',
   seo: {
     title: 'Smart Website Systems for Roofing Companies',
     description:
       'Discover how smart website systems for roofing companies connect lead capture, booking, and CRM into one infrastructure that drives more jobs.',
     canonical: '/blog/smart-website-systems-for-roofing-companies',
-    keywords: [
-      'smart website systems for roofing companies',
-      'roofing website systems',
-      'roofing website infrastructure',
-      'roofer website operations',
-    ],
     openGraph: {
       title: 'Smart Website Systems for Roofing Companies',
       description:
@@ -29,12 +20,6 @@ export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
   industries: ['roofing'],
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  primaryKeyword: 'smart website systems for roofing companies',
-  supportingKeywords: [
-    'roofing website systems',
-    'roofing website infrastructure',
-    'roofer website operations',
-  ],
   tags: ['Roofing', 'Website Systems', 'Infrastructure', 'Lead Capture', 'CRM Integration'],
   sections: [
     {

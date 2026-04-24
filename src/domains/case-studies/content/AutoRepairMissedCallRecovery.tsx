@@ -124,9 +124,6 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
   return {
     slug: 'garage-morning-rush-missed-calls',
     title: 'The phone kept ringing while the ramps were full',
-    metaTitle: 'Garage missed call case study: more enquiries recovered',
-    metaDescription:
-      'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['auto-repair'],
@@ -146,6 +143,9 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     })),
     tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Follow-Up', 'Automotive'],
     seo: {
+      title: 'Garage missed call case study: more enquiries recovered',
+      description:
+      'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
       canonical: '/case-studies/garage-morning-rush-missed-calls',
       openGraph: {
         title: 'Garage missed call case study: more enquiries recovered',

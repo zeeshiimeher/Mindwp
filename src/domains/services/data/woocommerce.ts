@@ -18,14 +18,6 @@ export const woocommercePage = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  keywords: [
-    'ecommerce implementation',
-    'web shop implementation',
-    'ecommerce website',
-    'online store',
-    'woocommerce',
-    'payment gateway',
-  ],
   badge: 'E-commerce & WooCommerce',
   category: 'Implementation Services',
   seo: buildServiceSeo({
@@ -33,9 +25,6 @@ export const woocommercePage = {
     title: 'WooCommerce & E-commerce Implementation | MindWP',
     description:
       "WooCommerce gets your products online. But products listed doesn't mean orders flowing. Here's what most stores miss between the catalog and the sale.",
-    schemaName: 'E-commerce implementation on WordPress',
-    schemaDescription:
-      'WooCommerce implementation that connects product display to order handling, customer follow-up, and a website that works as a complete business tool.',
   }),
   hero: {
     badge: 'WooCommerce & E-commerce',

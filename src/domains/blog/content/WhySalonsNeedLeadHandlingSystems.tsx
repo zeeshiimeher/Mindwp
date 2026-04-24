@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
   slug: 'why-salons-need-lead-handling-systems',
   title: 'Why Salons Need Lead Handling Systems',
-  metaTitle: 'Why Salons Need Lead Handling Systems Explained',
-  metaDescription:
-    'Discover why salons need lead handling systems to capture booking enquiries that arrive when stylists are busy and front desks are unmanned.',
   seo: {
     title: 'Why Salons Need Lead Handling Systems Explained',
     description:
       'Discover why salons need lead handling systems to capture booking enquiries that arrive when stylists are busy and front desks are unmanned.',
     canonical: '/blog/why-salons-need-lead-handling-systems',
-    keywords: [
-      'why salons need lead handling systems',
-      'salon lead handling',
-      'salon enquiry workflow',
-      'salon booking lead system',
-    ],
     openGraph: {
       title: 'Why Salons Need Lead Handling Systems Explained',
       description:
@@ -29,12 +20,6 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
   industries: ['salon'],
   systems: ['ai-lead-handling'],
   topics: ['lead-management'],
-  primaryKeyword: 'why salons need lead handling systems',
-  supportingKeywords: [
-    'salon lead handling',
-    'salon enquiry workflow',
-    'salon booking lead system',
-  ],
   tags: ['Salon', 'Lead Handling', 'Booking System', 'Enquiry Management', 'Automation'],
   sections: [
     {

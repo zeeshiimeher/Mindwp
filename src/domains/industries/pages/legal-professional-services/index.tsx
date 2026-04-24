@@ -310,13 +310,6 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
             title: 'Legal, Accounting & Consulting Practices — Stop Losing Work In The Quiet Middle | MindWP',
             description:
                 'For law firms, accountants, and consultants where the leak is not in marketing but in the long, quiet middle — slow decisions, silent drop-offs, and rooms you are not in. We put the follow-up, clarity, and proof in place so the firm stays present while clients decide.',
-            keywords: [
-                'legal professional services follow-up system',
-                'professional services proposal follow-up',
-                'law firm consultation system',
-                'accounting firm crm',
-                'consulting buyer enablement',
-            ],
             canonical: '/industries/legal-professional-services',
         },
         hero: heroData,

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForHvacCompanies: BlogPostData = {
   slug: 'review-automation-for-hvac-companies',
   title: 'Review Automation for HVAC Companies',
-  metaTitle: 'Review Automation for HVAC Companies Explained',
-  metaDescription:
-    'Learn how review automation for HVAC companies generates consistent recent reviews from completed service calls to strengthen local search visibility.',
   seo: {
     title: 'Review Automation for HVAC Companies Explained',
     description:
       'Learn how review automation for HVAC companies generates consistent recent reviews from completed service calls to strengthen local search visibility.',
     canonical: '/blog/review-automation-for-hvac-companies',
-    keywords: [
-      'review automation for hvac companies',
-      'hvac review automation',
-      'technician review requests',
-      'automated hvac reviews',
-    ],
     openGraph: {
       title: 'Review Automation for HVAC Companies Explained',
       description:
@@ -29,12 +20,6 @@ export const reviewAutomationForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['reputation-review'],
   topics: ['review-automation'],
-  primaryKeyword: 'review automation for hvac companies',
-  supportingKeywords: [
-    'hvac review automation',
-    'technician review requests',
-    'automated hvac reviews',
-  ],
   tags: ['HVAC', 'Review Automation', 'Reputation', 'Local Visibility', 'Automation'],
   sections: [
     {

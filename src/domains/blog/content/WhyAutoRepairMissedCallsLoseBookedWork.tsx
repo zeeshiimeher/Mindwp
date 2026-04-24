@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
   slug: 'why-auto-repair-missed-calls-lose-booked-work',
   title: 'Why Auto Repair Missed Calls Lose Booked Work',
-  metaTitle: 'Why Auto Repair Missed Calls Lose Booked Work',
-  metaDescription:
-    'Learn why auto repair missed calls lose booked work when customers cannot reach your shop and how automated call recovery prevents lost revenue.',
   seo: {
     title: 'Why Auto Repair Missed Calls Lose Booked Work',
     description:
       'Learn why auto repair missed calls lose booked work when customers cannot reach your shop and how automated call recovery prevents lost revenue.',
     canonical: '/blog/why-auto-repair-missed-calls-lose-booked-work',
-    keywords: [
-      'why auto repair missed calls lose booked work',
-      'repair shop missed calls',
-      'auto repair callback workflow',
-      'lost jobs from missed calls',
-    ],
     openGraph: {
       title: 'Why Auto Repair Missed Calls Lose Booked Work',
       description:
@@ -29,12 +20,6 @@ export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
   industries: ['automotive'],
   systems: ['ai-lead-handling'],
   topics: ['missed-calls'],
-  primaryKeyword: 'why auto repair missed calls lose booked work',
-  supportingKeywords: [
-    'repair shop missed calls',
-    'auto repair callback workflow',
-    'lost jobs from missed calls',
-  ],
   tags: ['Automotive', 'Missed Calls', 'Booked Work', 'Call Recovery', 'Repair Shop'],
   sections: [
     {

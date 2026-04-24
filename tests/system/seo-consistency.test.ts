@@ -11,7 +11,9 @@ import * as resourceRoute from '@/app/resources/[slug]/page';
 import * as serviceRoute from '@/app/services/[...slug]/page';
 import sitemap from '@/app/sitemap';
 import { toAbsoluteUrl } from '@/lib/seo/config';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import type { ContentGraphNode } from '@/lib/content-graph/types';
+import { getExpectedCanonical, getSystemInvariantEntries } from '@/lib/system/invariants';
 
 import { getGraphNodes, initRuntime, toCatchAllParam } from './runtime';
 
@@ -123,6 +125,16 @@ describe('system invariant: metadata, canonicals, and sitemap stay consistent', 
 
       const openGraphUrl = toAbsolute(metadata.openGraph?.url);
       expect(openGraphUrl, `Missing openGraph.url for ${node.path}`).toBe(toAbsoluteUrl(node.path));
+    }
+  });
+
+  test('shared metadata resolver produces complete metadata for every publishable entry', () => {
+    for (const entry of getSystemInvariantEntries()) {
+      const metadata = resolveMetadata(entry.data, getExpectedCanonical(entry));
+
+      expect(metadata.title, `Missing resolved title for ${entry.domain}/${entry.slug}`).toBeTruthy();
+      expect(metadata.description, `Missing resolved description for ${entry.domain}/${entry.slug}`).toBeTruthy();
+      expect(metadata.canonical).toBe(getExpectedCanonical(entry));
     }
   });
 });

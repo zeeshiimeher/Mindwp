@@ -230,13 +230,6 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
             title: 'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients | MindWP',
             description:
                 'For dental clinics where the recall list is long and treatment plans quietly stall. We put two-touch recall, plan follow-up, and warmer first replies in place so the chair fills from the patients you already have.',
-            keywords: [
-                'dental clinic recall system',
-                'dental clinic treatment follow-up',
-                'dental clinic crm',
-                'dental clinic reputation management',
-                'dental clinic local seo',
-            ],
             canonical: '/industries/local-appointment-businesses/dental-clinics',
         },
         hero: {

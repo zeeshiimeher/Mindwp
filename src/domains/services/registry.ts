@@ -5,7 +5,6 @@ export interface ServiceMetadata {
   path: string;
   title: string;
   description: string;
-  keywords: string[];
   badge: string;
   category: string;
   systems: string[];
@@ -20,7 +19,6 @@ export const SERVICE_REGISTRY = Object.fromEntries(
       path: data.seo.canonical,
       title: data.seo.title,
       description: data.seo.description,
-      keywords: data.keywords,
       badge: data.badge,
       category: data.category,
       systems: data.systems,

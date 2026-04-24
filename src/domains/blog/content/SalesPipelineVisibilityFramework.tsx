@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salesPipelineVisibilityFramework: BlogPostData = {
   slug: 'sales-pipeline-visibility-framework',
   title: 'Sales Pipeline Visibility Framework',
-  metaTitle: 'Sales Pipeline Visibility Framework for Services',
-  metaDescription:
-    'Explore the sales pipeline visibility framework that gives service businesses real-time insight into deal progression, bottlenecks, and forecasted revenue.',
   seo: {
     title: 'Sales Pipeline Visibility Framework for Services',
     description:
       'Explore the sales pipeline visibility framework that gives service businesses real-time insight into deal progression, bottlenecks, and forecasted revenue.',
     canonical: '/blog/sales-pipeline-visibility-framework',
-    keywords: [
-      'sales pipeline visibility framework',
-      'pipeline visibility in crm',
-      'deal visibility framework',
-      'service sales pipeline tracking',
-    ],
     openGraph: {
       title: 'Sales Pipeline Visibility Framework for Services',
       description:
@@ -29,12 +20,6 @@ export const salesPipelineVisibilityFramework: BlogPostData = {
   industries: [],
   systems: ['crm-automation'],
   topics: ['pipeline-visibility'],
-  primaryKeyword: 'sales pipeline visibility framework',
-  supportingKeywords: [
-    'pipeline visibility in crm',
-    'deal visibility framework',
-    'service sales pipeline tracking',
-  ],
   tags: ['Pipeline Visibility', 'Sales Pipeline', 'CRM', 'Service Business', 'Forecasting'],
   sections: [
     {

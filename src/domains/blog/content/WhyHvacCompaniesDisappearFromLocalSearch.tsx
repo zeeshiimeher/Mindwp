@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
   slug: 'why-hvac-companies-disappear-from-local-search',
   title: 'Why HVAC Companies Disappear From Local Search Without Local Visibility',
-  metaTitle: 'Why HVAC Companies Disappear From Local Search',
-  metaDescription:
-    'HVAC companies disappear from local search without local visibility because inconsistent profiles, few reviews, and weak signals push them below competitors.',
   seo: {
     title: 'Why HVAC Companies Disappear From Local Search',
     description:
       'HVAC companies disappear from local search without local visibility because inconsistent profiles, few reviews, and weak signals push them below competitors.',
     canonical: '/blog/why-hvac-companies-disappear-from-local-search',
-    keywords: [
-      'hvac companies disappear from local search',
-      'hvac local visibility',
-      'hvac local seo problem',
-      'hvac google rankings',
-    ],
     openGraph: {
       title: 'Why HVAC Companies Disappear From Local Search',
       description:
@@ -29,8 +20,6 @@ export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
   industries: ['hvac'],
   systems: ['reputation-review'],
   topics: ['local-visibility'],
-  primaryKeyword: 'hvac companies disappear from local search',
-  supportingKeywords: ['hvac local visibility', 'hvac local seo problem', 'hvac google rankings'],
   tags: ['HVAC', 'Local Visibility', 'Local Search', 'Google Rankings', 'Reputation'],
   sections: [
     {

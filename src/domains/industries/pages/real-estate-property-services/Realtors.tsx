@@ -233,13 +233,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
             title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
             description:
                 'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
-            keywords: [
-                'estate agent lead response',
-                'realtor crm pipeline',
-                'estate agent reputation system',
-                'realtor local seo',
-                'estate agent missed call follow-up',
-            ],
             canonical: '/industries/real-estate-property-services/realtors',
         },
         hero: {

@@ -337,13 +337,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       title: 'Auto Repair Shops \u2014 Stop Losing Brake Jobs To Voicemail | MindWP',
       description:
         'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-      keywords: [
-        'auto repair missed call recovery',
-        'mechanic estimate follow up',
-        'auto repair MOT reminders',
-        'repair shop review generation',
-        'auto repair booking system',
-      ],
       canonical: '/industries/automotive-services/auto-repair',
     },
     hero: { ...heroData },

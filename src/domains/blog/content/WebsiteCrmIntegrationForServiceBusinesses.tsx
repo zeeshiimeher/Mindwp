@@ -3,19 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
   slug: 'website-crm-integration-for-service-businesses',
   title: 'Website CRM Integration for Service Businesses',
-  metaTitle: 'Website CRM Integration for Service Businesses',
-  metaDescription:
-    'Learn how website CRM integration for service businesses connects lead capture, pipeline management, and follow-up automation into one operational workflow.',
   seo: {
     title: 'Website CRM Integration for Service Businesses',
     description:
       'Learn how website CRM integration for service businesses connects lead capture, pipeline management, and follow-up automation into one operational workflow.',
     canonical: '/blog/website-crm-integration-for-service-businesses',
-    keywords: [
-      'website crm integration for service businesses',
-      'crm website integration',
-      'website to crm workflow',
-    ],
     openGraph: {
       title: 'Website CRM Integration for Service Businesses',
       description:
@@ -28,12 +20,6 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['crm-automation'],
   topics: ['crm-integration'],
-  primaryKeyword: 'website crm integration for service businesses',
-  supportingKeywords: [
-    'crm website integration',
-    'website to crm workflow',
-    'service business crm forms',
-  ],
   tags: [
     'CRM Integration',
     'Website CRM',

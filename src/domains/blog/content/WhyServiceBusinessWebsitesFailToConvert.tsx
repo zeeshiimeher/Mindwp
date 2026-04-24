@@ -3,19 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
   slug: 'why-service-business-websites-fail-to-convert',
   title: 'Why Service Business Websites Fail to Convert',
-  metaTitle: 'Why Service Business Websites Fail to Convert',
-  metaDescription:
-    'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
   seo: {
     title: 'Why Service Business Websites Fail to Convert',
     description:
       'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
     canonical: '/blog/why-service-business-websites-fail-to-convert',
-    keywords: [
-      'why service business websites fail to convert',
-      'website conversion problems',
-      'service website lead loss',
-    ],
     openGraph: {
       title: 'Why Service Business Websites Fail to Convert',
       description:
@@ -28,12 +20,6 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['conversion-optimization'],
-  primaryKeyword: 'why service business websites fail to convert',
-  supportingKeywords: [
-    'website conversion problems',
-    'service website lead loss',
-    'low converting service websites',
-  ],
   tags: [
     'Website Conversion',
     'Service Business',

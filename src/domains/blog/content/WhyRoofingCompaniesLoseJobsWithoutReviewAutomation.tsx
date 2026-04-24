@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = {
   slug: 'why-roofing-companies-lose-jobs-without-review-automation',
   title: 'Why Roofing Companies Lose Jobs Without Review Automation',
-  metaTitle: 'Why Roofing Companies Lose Jobs Without Review Automation',
-  metaDescription:
-    'Roofing companies lose jobs without review automation because satisfied customers forget to post reviews, leaving competitors with more social proof to win.',
   seo: {
     title: 'Why Roofing Companies Lose Jobs Without Review Automation',
     description:
       'Roofing companies lose jobs without review automation because satisfied customers forget to post reviews, leaving competitors with more social proof to win.',
     canonical: '/blog/why-roofing-companies-lose-jobs-without-review-automation',
-    keywords: [
-      'roofing companies lose jobs without review automation',
-      'roofing review problem',
-      'roofer reviews missing',
-      'roofing reputation gap',
-    ],
     openGraph: {
       title: 'Why Roofing Companies Lose Jobs Without Review Automation',
       description:
@@ -29,12 +20,6 @@ export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = 
   industries: ['roofing'],
   systems: ['reputation-review'],
   topics: ['review-automation'],
-  primaryKeyword: 'roofing companies lose jobs without review automation',
-  supportingKeywords: [
-    'roofing review problem',
-    'roofer reviews missing',
-    'roofing reputation gap',
-  ],
   tags: ['Roofing', 'Review Automation', 'Reputation', 'Lost Jobs', 'Social Proof'],
   sections: [
     {

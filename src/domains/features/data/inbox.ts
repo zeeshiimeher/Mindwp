@@ -72,20 +72,11 @@ export const inboxData: FeaturePageData = {
   slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
-  keywords: [
-    'unified inbox',
-    'multi-channel messaging',
-    'centralised customer communication',
-    'team inbox for businesses',
-  ],
   seo: buildFeatureSeo({
     slug,
     title: 'Inbox | Unified Customer Communication Layer',
     description:
       'Unified inbox layer for email, SMS, social messages, and calls in one organized system for faster response and better team coordination.',
-    schemaName: 'Inbox',
-    schemaDescription:
-      'Centralised message hub combining email, SMS, social channels, and calls into one view for faster team response and coordination.',
   }),
   hero: {
     badge: 'Feature Spotlight',

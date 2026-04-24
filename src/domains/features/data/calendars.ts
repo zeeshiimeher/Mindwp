@@ -56,20 +56,11 @@ export const calendarsData: FeaturePageData = {
   slug,
   systems: ['smart-website-systems', 'revenue-growth'],
   topics: ['booking-automation'],
-  keywords: [
-    'online booking system',
-    'appointment scheduling',
-    'booking confirmation automation',
-    'staff calendar management',
-  ],
   seo: buildFeatureSeo({
     slug,
     title: 'Calendars | Structured Online Booking Layer',
     description:
       'Structured online booking integrated into your website system with confirmations, reminders, staff scheduling, and calendar management.',
-    schemaName: 'Calendars',
-    schemaDescription:
-      'Online booking layer with automated confirmations, reminders, staff calendar sync, and appointment management for service businesses.',
   }),
   hero: {
     badge: 'Booking Layer',

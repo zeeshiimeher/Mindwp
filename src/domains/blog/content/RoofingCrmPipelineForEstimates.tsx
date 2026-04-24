@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingCrmPipelineForEstimates: BlogPostData = {
   slug: 'roofing-crm-pipeline-for-estimates',
   title: 'Roofing CRM Pipeline for Estimates',
-  metaTitle: 'Roofing CRM Pipeline for Estimates Explained',
-  metaDescription:
-    'Learn how a roofing CRM pipeline for estimates structures the quoting process from site visit to accepted job so no estimate falls through the cracks.',
   seo: {
     title: 'Roofing CRM Pipeline for Estimates Explained',
     description:
       'Learn how a roofing CRM pipeline for estimates structures the quoting process from site visit to accepted job so no estimate falls through the cracks.',
     canonical: '/blog/roofing-crm-pipeline-for-estimates',
-    keywords: [
-      'roofing crm pipeline for estimates',
-      'roofing crm stages',
-      'roofing estimate pipeline',
-      'crm workflow for roofers',
-    ],
     openGraph: {
       title: 'Roofing CRM Pipeline for Estimates Explained',
       description:
@@ -29,12 +20,6 @@ export const roofingCrmPipelineForEstimates: BlogPostData = {
   industries: ['roofing'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'roofing crm pipeline for estimates',
-  supportingKeywords: [
-    'roofing crm stages',
-    'roofing estimate pipeline',
-    'crm workflow for roofers',
-  ],
   tags: ['Roofing', 'CRM Pipeline', 'Estimates', 'Quote Management', 'Automation'],
   sections: [
     {

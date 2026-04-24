@@ -47,7 +47,7 @@ type HomepageCaseStudy = {
   industryLabel: string;
   client: string;
   location: string;
-  metaDescription: string;
+  description: string;
   publishDate: string;
 };
 
@@ -994,7 +994,7 @@ function CaseStudiesSection({ featuredCaseStudies }: { featuredCaseStudies: Home
               industry={study.industryLabel}
               title={study.client}
               location={study.location}
-              description={study.metaDescription}
+              description={study.description}
               publishDate={study.publishDate}
               buttonVariant='outline'
               className={`implementation-results-card-${index + 1}`}

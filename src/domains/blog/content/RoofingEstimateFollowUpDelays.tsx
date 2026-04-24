@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingEstimateFollowUpDelays: BlogPostData = {
   slug: 'roofing-estimate-follow-up-delays',
   title: 'Roofing Estimate Follow Up Delays',
-  metaTitle: 'Roofing Estimate Follow Up Delays and How to Fix Them',
-  metaDescription:
-    'Explore common roofing estimate follow up delays that cost jobs and learn how automated CRM sequences ensure every quote receives timely follow-up.',
   seo: {
     title: 'Roofing Estimate Follow Up Delays and How to Fix Them',
     description:
       'Explore common roofing estimate follow up delays that cost jobs and learn how automated CRM sequences ensure every quote receives timely follow-up.',
     canonical: '/blog/roofing-estimate-follow-up-delays',
-    keywords: [
-      'roofing estimate follow up delays',
-      'roofing quote follow up',
-      'estimate delays in roofing',
-      'roofing sales follow-up gaps',
-    ],
     openGraph: {
       title: 'Roofing Estimate Follow Up Delays and How to Fix Them',
       description:
@@ -29,12 +20,6 @@ export const roofingEstimateFollowUpDelays: BlogPostData = {
   industries: ['roofing'],
   systems: ['ai-lead-handling', 'crm-automation'],
   topics: ['follow-up'],
-  primaryKeyword: 'roofing estimate follow up delays',
-  supportingKeywords: [
-    'roofing quote follow up',
-    'estimate delays in roofing',
-    'roofing sales follow-up gaps',
-  ],
   tags: ['Roofing', 'Estimate Follow Up', 'CRM', 'Quote Conversion', 'Automation'],
   sections: [
     {

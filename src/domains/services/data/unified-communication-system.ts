@@ -19,13 +19,6 @@ export const unifiedCommunicationSystemPage = {
   slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-routing', 'lead-management'],
-  keywords: [
-    'unified communication system',
-    'lead routing communication system',
-    'multi-channel enquiry handling',
-    'business communication workflow',
-    'centralised enquiry handling system',
-  ],
   badge: 'Unified Communication System',
   category: 'Communication Routing Systems',
   seo: buildServiceSeo({
@@ -33,9 +26,6 @@ export const unifiedCommunicationSystemPage = {
     title: 'Unified Communication System for Service Businesses | MindWP',
     description:
       'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
-    schemaName: 'Unified communication system for service businesses',
-    schemaDescription:
-      'Communication routing covering calls, forms, chat, email, and message handoff with clear ownership and follow-up for service businesses losing conversations across channels.',
   }),
   hero: {
     badge: 'Unified Communication System',

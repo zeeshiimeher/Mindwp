@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const autonomousBookingSystemsForSalons: BlogPostData = {
   slug: 'autonomous-booking-systems-for-salons',
   title: 'Autonomous Booking Systems for Salons',
-  metaTitle: 'How Autonomous Booking Systems for Salons Work',
-  metaDescription:
-    'Explore how autonomous booking systems for salons use AI to handle scheduling, rescheduling, and waitlist management without manual intervention required.',
   seo: {
     title: 'How Autonomous Booking Systems for Salons Work',
     description:
       'Explore how autonomous booking systems for salons use AI to handle scheduling, rescheduling, and waitlist management without manual intervention required.',
     canonical: '/blog/autonomous-booking-systems-for-salons',
-    keywords: [
-      'autonomous booking systems for salons',
-      'salon ai booking',
-      'autonomous scheduling for salons',
-      'ai-assisted appointment booking',
-    ],
     openGraph: {
       title: 'How Autonomous Booking Systems for Salons Work',
       description:
@@ -29,12 +20,6 @@ export const autonomousBookingSystemsForSalons: BlogPostData = {
   industries: ['salon'],
   systems: ['smart-website-systems', 'crm-automation'],
   topics: ['booking-automation'],
-  primaryKeyword: 'autonomous booking systems for salons',
-  supportingKeywords: [
-    'salon ai booking',
-    'autonomous scheduling for salons',
-    'ai-assisted appointment booking',
-  ],
   tags: ['Salon', 'Autonomous Booking', 'AI', 'Scheduling', 'Future Tech'],
   sections: [
     {

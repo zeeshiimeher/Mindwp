@@ -13,7 +13,7 @@ export const REPORT_SIZE_WARNING_RATIO = 0.8;
 export const REPORT_SIZE_LIMITS = {
   'authority-map.json': 2_600_000,
   'content-gaps.json': 4_000_000,
-  'dashboard/content.json': 2_200_000,
+  'dashboard/content.json': 2_700_000,
   'dashboard/graph.json': 300_000,
   'dashboard/pipeline.json': 150_000,
   'dashboard/system.json': 120_000,

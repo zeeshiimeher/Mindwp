@@ -303,13 +303,6 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote | MindWP',
       description:
         'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
-      keywords: [
-        'electrician fault call recovery',
-        'EV charger quote follow up',
-        'consumer unit upgrade quote',
-        'electrician review automation',
-        'electrician local SEO',
-      ],
       canonical: '/industries/home-services/electrical-companies',
     },
     hero: { ...heroData },

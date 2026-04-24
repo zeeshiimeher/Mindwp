@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const googleBusinessProfileSystemArchitecture: BlogPostData = {
   slug: 'google-business-profile-system-architecture',
   title: 'Google Business Profile System Architecture',
-  metaTitle: 'Google Business Profile System Architecture',
-  metaDescription:
-    'Understand how google business profile system architecture transforms your listing from a static presence into an active lead generation and visibility engine.',
   seo: {
     title: 'Google Business Profile System Architecture',
     description:
       'Understand how google business profile system architecture transforms your listing from a static presence into an active lead generation and visibility engine.',
     canonical: '/blog/google-business-profile-system-architecture',
-    keywords: [
-      'google business profile system architecture',
-      'google business profile workflow',
-      'gbp optimization system',
-      'local profile architecture',
-    ],
     openGraph: {
       title: 'Google Business Profile System Architecture',
       description:
@@ -29,12 +20,6 @@ export const googleBusinessProfileSystemArchitecture: BlogPostData = {
   industries: [],
   systems: ['local-seo-authority'],
   topics: ['google-business-profile'],
-  primaryKeyword: 'google business profile system architecture',
-  supportingKeywords: [
-    'google business profile workflow',
-    'gbp optimization system',
-    'local profile architecture',
-  ],
   tags: [
     'Google Business Profile',
     'Local SEO',

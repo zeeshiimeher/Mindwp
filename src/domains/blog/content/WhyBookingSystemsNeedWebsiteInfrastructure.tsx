@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
   slug: 'why-booking-systems-need-website-infrastructure',
   title: 'Why Booking Systems Need Website Infrastructure',
-  metaTitle: 'Why Booking Systems Need Website Infrastructure',
-  metaDescription:
-    'Discover why booking systems need website infrastructure to function reliably, with connected forms, CRM pipelines, and automated confirmations.',
   seo: {
     title: 'Why Booking Systems Need Website Infrastructure',
     description:
       'Discover why booking systems need website infrastructure to function reliably, with connected forms, CRM pipelines, and automated confirmations.',
     canonical: '/blog/why-booking-systems-need-website-infrastructure',
-    keywords: [
-      'booking systems need website infrastructure',
-      'booking infrastructure',
-      'booking system website integration',
-      'service booking architecture',
-    ],
     openGraph: {
       title: 'Why Booking Systems Need Website Infrastructure',
       description:
@@ -29,12 +20,6 @@ export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['booking-systems'],
-  primaryKeyword: 'booking systems need website infrastructure',
-  supportingKeywords: [
-    'booking infrastructure',
-    'booking system website integration',
-    'service booking architecture',
-  ],
   tags: [
     'Booking Systems',
     'Website Infrastructure',

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
   slug: 'sales-pipeline-visibility-for-hvac-companies',
   title: 'Sales Pipeline Visibility for HVAC Companies',
-  metaTitle: 'Sales Pipeline Visibility for HVAC Companies',
-  metaDescription:
-    'Learn how sales pipeline visibility for HVAC companies uses CRM deal stages and tracking to forecast revenue and identify bottlenecks in the sales process.',
   seo: {
     title: 'Sales Pipeline Visibility for HVAC Companies',
     description:
       'Learn how sales pipeline visibility for HVAC companies uses CRM deal stages and tracking to forecast revenue and identify bottlenecks in the sales process.',
     canonical: '/blog/sales-pipeline-visibility-for-hvac-companies',
-    keywords: [
-      'sales pipeline visibility for hvac companies',
-      'hvac pipeline visibility',
-      'hvac deal tracking',
-      'hvac crm forecasting',
-    ],
     openGraph: {
       title: 'Sales Pipeline Visibility for HVAC Companies',
       description:
@@ -29,8 +20,6 @@ export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['crm-automation'],
   topics: ['pipeline-visibility'],
-  primaryKeyword: 'sales pipeline visibility for hvac companies',
-  supportingKeywords: ['hvac pipeline visibility', 'hvac deal tracking', 'hvac crm forecasting'],
   tags: ['HVAC', 'Sales Pipeline', 'CRM', 'Forecasting', 'Deal Tracking'],
   sections: [
     {

@@ -233,13 +233,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
             title: 'Mortgage Brokers — Win The First Hour, Then The Remortgage | MindWP',
             description:
                 'For mortgage brokers where weekend enquiries go to whoever replied first and remortgages are quietly lost to a portal. We put first-hour response, stage-aware case follow-up, and remortgage retention in place.',
-            keywords: [
-                'mortgage broker lead response',
-                'mortgage broker case follow-up',
-                'mortgage broker crm',
-                'remortgage retention system',
-                'mortgage broker local seo',
-            ],
             canonical: '/industries/real-estate-property-services/mortgage-brokers',
         },
         hero: {

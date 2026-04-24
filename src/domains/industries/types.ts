@@ -67,15 +67,11 @@ type IndustryCategorySectionControls = {
 export type IndustrySeoData = {
   title: string;
   description: string;
-  keywords: string[];
   canonical: string;
   openGraph?: {
     title?: string;
     description?: string;
     images?: string[];
-  };
-  schema?: {
-    breadcrumb?: unknown;
   };
 };
 

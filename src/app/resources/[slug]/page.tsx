@@ -9,6 +9,7 @@ import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -76,9 +77,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { node, resource } = resolved;
 
   const canonicalPath = node.path;
+  const resolvedMetadata = resolveMetadata(resource, canonicalPath);
   const articleSchema = buildArticleSchema({
     headline: resource.title,
-    description: resource.description,
+    description: resolvedMetadata.description ?? resource.description,
     path: canonicalPath,
     datePublished: resource.publishedAt,
     dateModified: resource.updatedAt ?? resource.publishedAt,

@@ -261,13 +261,6 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
             title: 'Small Law Firms — Lower The Barrier To The First Call, Without Losing Trust | MindWP',
             description:
                 'For small law firms where worried clients hesitate to reach out and half-typed enquiries quietly disappear. We help make the first step small, the first reply warm, and the consultation easy to book.',
-            keywords: [
-                'small law firm enquiry follow-up',
-                'law firm consultation booking',
-                'law firm reputation system',
-                'law firm crm',
-                'law firm local seo',
-            ],
             canonical: '/industries/legal-professional-services/small-law-firms',
         },
         hero: {

@@ -25,7 +25,7 @@ function toWebPath(filePath: string) {
 
 function getImageIndexKeys(domain: string, slug: string) {
   const normalizedDomain = domain.replace(/^\/+|\/+$/g, '');
-  return [`${normalizedDomain}/${slug}`, slug];
+  return [`${normalizedDomain}/${slug}`];
 }
 
 function resolveIndexedImage(slug: string, domain: string, type: ImageType) {

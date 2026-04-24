@@ -15,8 +15,6 @@ export interface CaseStudyMetricPreview {
 export interface CaseStudyData {
   slug: string;
   title: string;
-  metaTitle: string;
-  metaDescription: string;
 
   industryCategory: string;
   industryLabel: string;
@@ -35,10 +33,9 @@ export interface CaseStudyData {
   keyMetrics: CaseStudyMetricPreview[];
   tags: string[];
 
-  seo: {
-    canonical: string;
-    openGraph: OpenGraphData;
-  } & SharedSeoData;
+  seo: SharedSeoData & {
+    openGraph?: OpenGraphData;
+  };
 
   sections: CaseStudySection[];
 
@@ -93,7 +90,7 @@ export interface CaseStudyData {
 export type CaseStudyTemplateMetadata = Pick<
   CaseStudyData,
   | 'slug'
-  | 'metaDescription'
+  | 'seo'
   | 'industryCategory'
   | 'industryLabel'
   | 'systems'

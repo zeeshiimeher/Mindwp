@@ -226,13 +226,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
             title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
             description:
                 'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
-            keywords: [
-                'nail salon booking system',
-                'nail salon instagram booking',
-                'nail salon rebook automation',
-                'nail salon cancellation fill',
-                'nail salon local seo',
-            ],
             canonical: '/industries/beauty-personal-care/nail-salons',
         },
         hero: {

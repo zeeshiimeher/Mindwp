@@ -14,6 +14,7 @@ import { getResourceRenderedSectionTypes } from '@/domains/resources/templates/R
 import { SERVICE_DOMAIN_REGISTRY } from '@/domains/services/pageData';
 import type { ServicePageData } from '@/domains/services/types';
 import { getImage } from '@/lib/image-system/resolver';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
 
 import type { ContentGraphNode } from '../content-graph/types';
@@ -67,81 +68,69 @@ function createFinding(
   };
 }
 
+function createEntry<TData extends SystemEntryData>(
+  domain: SystemInvariantDomain,
+  id: string,
+  data: TData,
+  imageDomain: string,
+  canonicalFallback: string,
+  slugOverride?: string
+): SystemInvariantEntry {
+  const metadata = resolveMetadata(data, canonicalFallback);
+  const source = data as Record<string, unknown>;
+
+  return {
+    domain,
+    id,
+    slug: slugOverride ?? String(source.slug ?? ''),
+    title: metadata.title ?? '',
+    canonical: metadata.canonical,
+    seo: metadata.seo ?? {},
+    sections: source.sections,
+    cta: source.cta,
+    data,
+    imageDomain,
+  };
+}
+
 export function getSystemInvariantEntries(): SystemInvariantEntry[] {
-  const services = Object.values(SERVICE_DOMAIN_REGISTRY).map(entry => ({
-    domain: 'service' as const,
-    id: entry.id,
-    slug: entry.slug,
-    title: entry.data.seo.title,
-    canonical: entry.data.seo.canonical,
-    seo: entry.data.seo,
-    sections: entry.data.sections,
-    cta: entry.data.cta,
-    data: entry.data,
-    imageDomain: 'services',
-  }));
+  const services = Object.values(SERVICE_DOMAIN_REGISTRY).map(entry =>
+    createEntry('service', entry.id, entry.data, 'services', `/services/${entry.slug}`, entry.slug)
+  );
 
-  const features = Object.values(FEATURE_DOMAIN_REGISTRY).map(entry => ({
-    domain: 'feature' as const,
-    id: entry.id,
-    slug: entry.slug,
-    title: entry.data.seo.title,
-    canonical: entry.data.seo.canonical,
-    seo: entry.data.seo,
-    sections: entry.data.sections,
-    cta: entry.data.cta,
-    data: entry.data,
-    imageDomain: 'features',
-  }));
+  const features = Object.values(FEATURE_DOMAIN_REGISTRY).map(entry =>
+    createEntry('feature', entry.id, entry.data, 'features', `/features/${entry.slug}`, entry.slug)
+  );
 
-  const industries = Object.values(INDUSTRY_REGISTRY).map(entry => ({
-    domain: (entry.type === 'detail' ? 'industry-detail' : 'industry-category') as const,
-    id: `${entry.type === 'detail' ? 'industry-detail' : 'industry-category'}:${entry.slug}`,
-    slug: entry.slug,
-    title: entry.seo.title ?? entry.hero.title,
-    canonical: entry.seo.canonical,
-    seo: entry.seo,
-    sections: entry.sections ?? [],
-    cta: entry.cta,
-    data: entry,
-    imageDomain: 'industries',
-  }));
+  const industries = Object.values(INDUSTRY_REGISTRY).map(entry =>
+    createEntry(
+      (entry.type === 'detail' ? 'industry-detail' : 'industry-category') as const,
+      `${entry.type === 'detail' ? 'industry-detail' : 'industry-category'}:${entry.slug}`,
+      entry,
+      'industries',
+      entry.type === 'detail' ? `/industries/${entry.parentSlug}/${entry.slug}` : `/industries/${entry.slug}`,
+      entry.slug
+    )
+  );
 
-  const blogPosts = Object.values(BLOG_POSTS).map(entry => ({
-    domain: 'blog' as const,
-    id: `blog:${entry.slug}`,
-    slug: entry.slug,
-    title: entry.title,
-    canonical: entry.seo.canonical,
-    seo: entry.seo,
-    sections: entry.sections,
-    data: entry,
-    imageDomain: 'blog',
-  }));
+  const blogPosts = Object.values(BLOG_POSTS).map(entry =>
+    createEntry('blog', `blog:${entry.slug}`, entry, 'blog', `/blog/${entry.slug}`, entry.slug)
+  );
 
-  const resources = Object.values(RESOURCE_REGISTRY).map(entry => ({
-    domain: 'resource' as const,
-    id: `resource:${entry.slug}`,
-    slug: entry.slug,
-    title: entry.title,
-    canonical: entry.seo.canonical,
-    seo: entry.seo,
-    sections: entry.sections,
-    data: entry,
-    imageDomain: 'resources',
-  }));
+  const resources = Object.values(RESOURCE_REGISTRY).map(entry =>
+    createEntry('resource', `resource:${entry.slug}`, entry, 'resources', `/resources/${entry.slug}`, entry.slug)
+  );
 
-  const caseStudies = Object.values(CASE_STUDY_REGISTRY).map(entry => ({
-    domain: 'case-study' as const,
-    id: `case-study:${entry.slug}`,
-    slug: entry.slug,
-    title: entry.title,
-    canonical: entry.seo.canonical,
-    seo: entry.seo,
-    sections: entry.sections,
-    data: entry,
-    imageDomain: 'case-studies',
-  }));
+  const caseStudies = Object.values(CASE_STUDY_REGISTRY).map(entry =>
+    createEntry(
+      'case-study',
+      `case-study:${entry.slug}`,
+      entry,
+      'case-studies',
+      `/case-studies/${entry.slug}`,
+      entry.slug
+    )
+  );
 
   return [...services, ...features, ...industries, ...blogPosts, ...resources, ...caseStudies];
 }
@@ -257,11 +246,36 @@ export function collectSystemInvariantFindings(graphNodes: ContentGraphNode[]) {
   }
 
   for (const entry of entries) {
+    const resolvedMetadata = resolveMetadata(entry.data, getExpectedCanonical(entry));
+
     if (!entry.slug || !entry.title || !entry.seo) {
       issues.push(
         createFinding(
           'registry_incomplete',
           `${entry.domain}/${entry.slug || entry.id} is missing required registry fields (slug, title, seo).`,
+          entry
+        )
+      );
+    }
+
+    if (!resolvedMetadata.title || !resolvedMetadata.description || !resolvedMetadata.canonical) {
+      issues.push(
+        createFinding(
+          'metadata_incomplete',
+          `${entry.domain}/${entry.slug} is missing resolved metadata fields (title, description, canonical).`,
+          entry
+        )
+      );
+    }
+
+    if (
+      (entry.domain === 'blog' || entry.domain === 'resource' || entry.domain === 'case-study') &&
+      !getAuthoredSectionTypes(entry).includes('cta')
+    ) {
+      issues.push(
+        createFinding(
+          'missing_cta',
+          `${entry.domain}/${entry.slug} is missing an authored CTA section.`,
           entry
         )
       );
@@ -317,6 +331,19 @@ export function collectSystemInvariantFindings(graphNodes: ContentGraphNode[]) {
           createFinding(
             'silent_section_drop',
             `${entry.domain}/${entry.slug} contains authored sections that are not rendered: ${missingRenderedTypes.join(', ')}.`,
+            entry
+          )
+        );
+      }
+
+      const unexpectedRenderedTypes = renderedSectionTypes.filter(
+        (type, index) => authoredSectionTypes[index] !== type
+      );
+      if (unexpectedRenderedTypes.length > 0) {
+        issues.push(
+          createFinding(
+            'unexpected_rendered_sections',
+            `${entry.domain}/${entry.slug} renders unexpected section types or injected sections: ${unexpectedRenderedTypes.join(', ')}.`,
             entry
           )
         );

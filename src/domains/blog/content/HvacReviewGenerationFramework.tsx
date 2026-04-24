@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacReviewGenerationFramework: BlogPostData = {
   slug: 'hvac-review-generation-framework',
   title: 'HVAC Review Generation Framework',
-  metaTitle: 'HVAC Review Generation Framework for Companies',
-  metaDescription:
-    'Explore the HVAC review generation framework that automates review requests after service calls to build trust and improve local search visibility.',
   seo: {
     title: 'HVAC Review Generation Framework for Companies',
     description:
       'Explore the HVAC review generation framework that automates review requests after service calls to build trust and improve local search visibility.',
     canonical: '/blog/hvac-review-generation-framework',
-    keywords: [
-      'hvac review generation framework',
-      'hvac review requests',
-      'hvac customer review system',
-      'hvac review workflow',
-    ],
     openGraph: {
       title: 'HVAC Review Generation Framework for Companies',
       description:
@@ -29,12 +20,6 @@ export const hvacReviewGenerationFramework: BlogPostData = {
   industries: ['hvac'],
   systems: ['reputation-review'],
   topics: ['review-generation'],
-  primaryKeyword: 'hvac review generation framework',
-  supportingKeywords: [
-    'hvac review requests',
-    'hvac customer review system',
-    'hvac review workflow',
-  ],
   tags: ['HVAC', 'Review Generation', 'Customer Reviews', 'Local Authority', 'Automation'],
   sections: [
     {

@@ -151,9 +151,6 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
   return {
     slug: 'crm-pipeline-visibility-transformation',
     title: 'CRM Pipeline Visibility Transformation',
-    metaTitle: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
-    metaDescription:
-      'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -190,6 +187,9 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
       'System Implementation',
     ],
     seo: {
+      title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
+      description:
+      'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
       canonical: '/case-studies/crm-pipeline-visibility-transformation',
       openGraph: {
         title: 'Why Service Businesses Can\u2019t See Their Pipeline | MindWP Case Study',

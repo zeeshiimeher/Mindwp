@@ -58,7 +58,7 @@ export function resolveOverlayVariant(
 
   const allText = [
     metadata.title,
-    metadata.primaryKeyword,
+    metadata.summary,
     ...metadata.topics,
     ...metadata.tags,
     ...metadata.systems,
@@ -96,7 +96,7 @@ const ICON_RULES: Array<{ keywords: string[]; icon: string }> = [
 
 /** Resolve a single inline SVG icon path from content metadata, or null */
 export function resolveIcon(metadata: ContentMetadata): string | null {
-  const allText = [metadata.title, metadata.primaryKeyword, ...metadata.topics, ...metadata.tags]
+  const allText = [metadata.title, metadata.summary, ...metadata.topics, ...metadata.tags]
     .join(' ')
     .toLowerCase();
 
@@ -222,7 +222,7 @@ export function resolveVisualMode(
 export function resolveIllustrationVariant(metadata: ContentMetadata): IllustrationVariant {
   const text = [
     metadata.title,
-    metadata.primaryKeyword,
+    metadata.summary,
     ...metadata.topics,
     ...metadata.tags,
     ...metadata.systems,

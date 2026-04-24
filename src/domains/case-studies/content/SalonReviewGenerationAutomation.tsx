@@ -161,9 +161,6 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
   return {
     slug: 'salon-review-generation-automation',
     title: 'Salon Review Generation Automation',
-    metaTitle: 'Salon Review Automation | 23 to 67 Google Reviews',
-    metaDescription:
-      'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
@@ -192,6 +189,9 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
     })),
     tags: ['Review Generation', 'Hair Salon', 'Google Reviews', 'Reputation System', 'Local SEO'],
     seo: {
+      title: 'Salon Review Automation | 23 to 67 Google Reviews',
+      description:
+      'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.',
       canonical: '/case-studies/salon-review-generation-automation',
       openGraph: {
         title: 'Why Salons Struggle to Get Reviews | MindWP Case Study',

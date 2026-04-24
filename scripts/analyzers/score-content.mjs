@@ -41,12 +41,12 @@ const DOMAINS = [
   { label: 'features', dirs: ['src/domains/features/data'], exts: ['.ts'] },
   {
     label: 'blog',
-    dirs: ['src/domains/blog/data', 'src/domains/blog/content'],
+    dirs: ['src/domains/blog/content'],
     exts: ['.ts', '.tsx'],
   },
   {
     label: 'resources',
-    dirs: ['src/domains/resources/data', 'src/domains/resources/content'],
+    dirs: ['src/domains/resources/content'],
     exts: ['.ts', '.tsx'],
   },
   {
@@ -109,6 +109,7 @@ const BANNED_PATTERNS = BANNED_PHRASES.map(
 );
 
 const WEAK_TITLE_MIN = 12;
+const WEAK_SEO_DESCRIPTION_MIN = 50;
 
 function extractFieldValues(text, fieldName) {
   const values = [];
@@ -238,13 +239,11 @@ function scoreFile(filePath, label) {
   const hypeCount = countPatternMatches(content, HYPE_PATTERNS);
   const bannedPhraseCount = countPatternMatches(content, BANNED_PATTERNS);
   const headings = [...extractFieldValues(text, 'heading'), ...extractFieldValues(text, 'title')];
-  const metaTitles = [
-    ...extractFieldValues(text, 'metaTitle'),
+  const seoTitles = [
     ...extractSeoFieldValues(text, 'title'),
     ...extractSeoFactoryFieldValues(text, 'title'),
   ];
-  const metaDescriptions = [
-    ...extractFieldValues(text, 'metaDescription'),
+  const seoDescriptions = [
     ...extractSeoFieldValues(text, 'description'),
     ...extractSeoFactoryFieldValues(text, 'description'),
   ];
@@ -256,6 +255,10 @@ function scoreFile(filePath, label) {
     ...extractFieldValues(text, 'content'),
   ].filter(value => value.length > 0 && value.length < 20).length;
   const weakTitleCount = headings.filter(value => value.length < WEAK_TITLE_MIN).length;
+  const weakSeoTitleCount = seoTitles.filter(value => value.length < WEAK_TITLE_MIN).length;
+  const weakSeoDescriptionCount = seoDescriptions.filter(
+    value => value.length < WEAK_SEO_DESCRIPTION_MIN
+  ).length;
   const candidatePhrases = extractCandidatePhrases(content);
 
   // CTA detection
@@ -273,8 +276,10 @@ function scoreFile(filePath, label) {
   if (veryShortSectionCount > 0) flags.push('very-short-sections');
   if (emptyArrayCount > 0) flags.push('empty-arrays');
   if (weakTitleCount > 0) flags.push('weak-titles');
-  if (metaTitles.length === 0) flags.push('missing-meta-title');
-  if (metaDescriptions.length === 0) flags.push('missing-meta-description');
+  if (seoTitles.length === 0) flags.push('missing-seo-title');
+  if (seoDescriptions.length === 0) flags.push('missing-seo-description');
+  if (weakSeoTitleCount > 0) flags.push('weak-seo-title');
+  if (weakSeoDescriptionCount > 0) flags.push('weak-seo-description');
 
   return {
     file: path.relative(root, filePath),
@@ -289,8 +294,10 @@ function scoreFile(filePath, label) {
     emptyArrayCount,
     veryShortSectionCount,
     weakTitleCount,
-    missingMetaTitle: metaTitles.length === 0,
-    missingMetaDescription: metaDescriptions.length === 0,
+    missingSeoTitle: seoTitles.length === 0,
+    missingSeoDescription: seoDescriptions.length === 0,
+    weakSeoTitleCount,
+    weakSeoDescriptionCount,
     hasCta,
     ctaLabelApproved,
     flags,
@@ -337,8 +344,10 @@ function main() {
     filesWithVeryShortSections: scores.filter(s => s.veryShortSectionCount > 0).length,
     filesWithEmptyArrays: scores.filter(s => s.emptyArrayCount > 0).length,
     filesWithWeakTitles: scores.filter(s => s.weakTitleCount > 0).length,
-    filesMissingMetaTitle: scores.filter(s => s.missingMetaTitle).length,
-    filesMissingMetaDescription: scores.filter(s => s.missingMetaDescription).length,
+    filesMissingSeoTitle: scores.filter(s => s.missingSeoTitle).length,
+    filesMissingSeoDescription: scores.filter(s => s.missingSeoDescription).length,
+    filesWithWeakSeoTitles: scores.filter(s => s.weakSeoTitleCount > 0).length,
+    filesWithWeakSeoDescriptions: scores.filter(s => s.weakSeoDescriptionCount > 0).length,
     filesWithRepeatedHeadings: scores.filter(s => s.flags.includes('repeated-headings')).length,
     filesWithRepeatedPhrases: scores.filter(s => s.flags.includes('repeated-phrases')).length,
     filesWithFlags: scores.filter(s => s.flags.length > 0).length,

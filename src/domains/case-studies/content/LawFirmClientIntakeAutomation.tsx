@@ -124,9 +124,6 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
   return {
     slug: 'law-firm-intake-stalled-after-first-enquiry',
     title: 'The enquiry came in. Then the paperwork slowed everything down.',
-    metaTitle: 'Law firm intake case study: faster enquiry-to-intake handling',
-    metaDescription:
-      'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],
@@ -146,6 +143,9 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
     })),
     tags: ['Client Intake', 'Law Firm', 'Document Collection', 'Follow-Up', 'Professional Services'],
     seo: {
+      title: 'Law firm intake case study: faster enquiry-to-intake handling',
+      description:
+      'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
       canonical: '/case-studies/law-firm-intake-stalled-after-first-enquiry',
       openGraph: {
         title: 'Law firm intake case study: faster enquiry-to-intake handling',

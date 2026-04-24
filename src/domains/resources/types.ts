@@ -31,16 +31,8 @@ export interface ResourceData {
   systems: string[];
   topics: string[];
   primaryService?: string;
-  seo: {
-    title: string;
-    description: string;
-    canonical: string;
+  seo: SharedSeoData & {
     openGraph?: OpenGraphData;
-  } & SharedSeoData;
-  schema?: {
-    type: 'Article' | 'Guide' | 'HowTo';
-    headline?: string;
-    description?: string;
   };
   sections: ResourceSection[];
 }

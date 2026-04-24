@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
   slug: 'tracking-customer-lifetime-value-using-crm',
   title: 'Tracking Customer Lifetime Value Using CRM',
-  metaTitle: 'Tracking Customer Lifetime Value Using CRM',
-  metaDescription:
-    'Learn how tracking customer lifetime value using CRM reveals which customers generate the most revenue over time and how to focus retention efforts accordingly.',
   seo: {
     title: 'Tracking Customer Lifetime Value Using CRM',
     description:
       'Learn how tracking customer lifetime value using CRM reveals which customers generate the most revenue over time and how to focus retention efforts accordingly.',
     canonical: '/blog/tracking-customer-lifetime-value-using-crm',
-    keywords: [
-      'tracking customer lifetime value using crm',
-      'crm lifetime value tracking',
-      'customer value analytics in crm',
-      'service business clv tracking',
-    ],
     openGraph: {
       title: 'Tracking Customer Lifetime Value Using CRM',
       description:
@@ -29,12 +20,6 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
   industries: [],
   systems: ['crm-automation'],
   topics: ['customer-lifetime-value', 'lifetime-value'],
-  primaryKeyword: 'tracking customer lifetime value using crm',
-  supportingKeywords: [
-    'crm lifetime value tracking',
-    'customer value analytics in crm',
-    'service business clv tracking',
-  ],
   tags: ['Customer Lifetime Value', 'CRM', 'Service Business', 'Retention', 'Analytics'],
   sections: [
     {

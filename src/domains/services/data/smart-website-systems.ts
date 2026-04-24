@@ -69,13 +69,6 @@ export const smartWebsiteSystemsPage = {
     'crm-enabled-websites',
     'service-pages',
   ],
-  keywords: [
-    'smart website systems',
-    'wordpress business website',
-    'organised business website',
-    'service business website',
-    'website with crm integration',
-  ],
   badge: 'Smart Websites',
   category: 'Website That Works',
   seo: buildServiceSeo({
@@ -83,9 +76,6 @@ export const smartWebsiteSystemsPage = {
     title: 'Smart Website Systems for Service Businesses | MindWP',
     description:
       'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-    schemaName: 'Smart website systems for service businesses',
-    schemaDescription:
-      'A website system that turns visitors into tracked enquiries — with dedicated service pages, CRM integration, automated follow-up, and measurable conversion paths.',
   }),
   hero: {
     badge: 'Smart Websites',

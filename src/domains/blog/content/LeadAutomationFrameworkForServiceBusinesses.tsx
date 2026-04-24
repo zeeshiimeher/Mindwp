@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'lead-automation-framework-for-service-businesses',
   title: 'Lead Automation Framework for Service Businesses',
-  metaTitle: 'Lead Automation Framework for Service Businesses',
-  metaDescription:
-    'Explore the lead automation framework for service businesses that connects enquiry capture, qualification, and routing into one operational system.',
   seo: {
     title: 'Lead Automation Framework for Service Businesses',
     description:
       'Explore the lead automation framework for service businesses that connects enquiry capture, qualification, and routing into one operational system.',
     canonical: '/blog/lead-automation-framework-for-service-businesses',
-    keywords: [
-      'lead automation framework for service businesses',
-      'service business lead automation',
-      'lead handling automation',
-      'automated enquiry systems',
-    ],
     openGraph: {
       title: 'Lead Automation Framework for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['lead-management'],
-  primaryKeyword: 'lead automation framework for service businesses',
-  supportingKeywords: [
-    'service business lead automation',
-    'lead handling automation',
-    'automated enquiry systems',
-  ],
   tags: [
     'Lead Automation',
     'Service Business',

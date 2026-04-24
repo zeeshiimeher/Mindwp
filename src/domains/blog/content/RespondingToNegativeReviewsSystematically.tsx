@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const respondingToNegativeReviewsSystematically: BlogPostData = {
   slug: 'responding-to-negative-reviews-systematically',
   title: 'Responding to Negative Reviews Systematically',
-  metaTitle: 'Responding to Negative Reviews Systematically',
-  metaDescription:
-    'Learn how responding to negative reviews systematically protects your reputation with structured workflows that turn complaints into recovery opportunities.',
   seo: {
     title: 'Responding to Negative Reviews Systematically',
     description:
       'Learn how responding to negative reviews systematically protects your reputation with structured workflows that turn complaints into recovery opportunities.',
     canonical: '/blog/responding-to-negative-reviews-systematically',
-    keywords: [
-      'responding to negative reviews systematically',
-      'negative review response process',
-      'review damage control workflow',
-      'reply to bad reviews system',
-    ],
     openGraph: {
       title: 'Responding to Negative Reviews Systematically',
       description:
@@ -29,12 +20,6 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
   industries: [],
   systems: ['reputation-review'],
   topics: ['negative-review-response'],
-  primaryKeyword: 'responding to negative reviews systematically',
-  supportingKeywords: [
-    'negative review response process',
-    'review damage control workflow',
-    'reply to bad reviews system',
-  ],
   tags: [
     'Negative Reviews',
     'Review Response',

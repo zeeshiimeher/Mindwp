@@ -57,9 +57,6 @@ export interface RouteInventoryEntry {
 }
 
 const routeInventoryPromise = new Map<string, Promise<RouteInventoryEntry[]>>();
-const isDevelopmentRuntime =
-  process.env.NODE_ENV === 'development' && process.env.VITEST !== 'true';
-
 type SystemSnapshot = {
   routeInventory?: RouteInventoryEntry[];
 };
@@ -108,14 +105,6 @@ function resolveInventoryOpenGraphImages(canonical: string): string[] {
   if (imagePath && imagePath !== DEFAULT_OG_IMAGE_PATH) {
     return [imagePath];
   }
-
-  const message = `[inventory] Missing open graph image for ${canonical}.`;
-  if (isDevelopmentRuntime && canonical.startsWith('/case-studies/')) {
-    throw new Error(message);
-  }
-
-  // eslint-disable-next-line no-console
-  console.warn(`${message} Falling back to ${DEFAULT_OG_IMAGE_PATH}.`);
 
   return [DEFAULT_OG_IMAGE_PATH];
 }

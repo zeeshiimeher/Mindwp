@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
   slug: 'hvac-emergency-call-handling-mistakes',
   title: 'HVAC Emergency Call Handling Mistakes',
-  metaTitle: 'HVAC Emergency Call Handling Mistakes to Avoid',
-  metaDescription:
-    'Learn about common hvac emergency call handling mistakes that delay response times and how structured triage workflows prevent dispatch errors.',
   seo: {
     title: 'HVAC Emergency Call Handling Mistakes to Avoid',
     description:
       'Learn about common hvac emergency call handling mistakes that delay response times and how structured triage workflows prevent dispatch errors.',
     canonical: '/blog/hvac-emergency-call-handling-mistakes',
-    keywords: [
-      'hvac emergency call handling mistakes',
-      'hvac emergency dispatch errors',
-      'emergency call workflow',
-      'after hours hvac triage',
-    ],
     openGraph: {
       title: 'HVAC Emergency Call Handling Mistakes to Avoid',
       description:
@@ -29,12 +20,6 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
   industries: ['hvac'],
   systems: ['ai-lead-handling', 'crm-automation'],
   topics: ['emergency-handling'],
-  primaryKeyword: 'hvac emergency call handling mistakes',
-  supportingKeywords: [
-    'hvac emergency dispatch errors',
-    'emergency call workflow',
-    'after hours hvac triage',
-  ],
   tags: ['HVAC', 'Emergency Calls', 'Call Handling', 'Dispatch', 'Triage'],
   sections: [
     {

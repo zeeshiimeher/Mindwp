@@ -370,13 +370,6 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       title: 'Appointment-Based Local Businesses — Stop Losing Enquiries, Bookings & Deposits | MindWP',
       description:
         'For dental practices, private clinics, driving schools, repair shops, and tattoo studios where enquiries go unanswered, bookings take ten messages, and no-shows kill the day rate. We put the system in place that catches them.',
-      keywords: [
-        'local appointment business website systems',
-        'appointment booking system',
-        'local service lead handling',
-        'booking follow up system',
-        'local appointment business infrastructure',
-      ],
       canonical: '/industries/local-appointment-businesses',
     },
     hero: heroData,

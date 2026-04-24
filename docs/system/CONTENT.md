@@ -187,13 +187,13 @@ Do not invent parallel identifiers, parallel page roles, or parallel relationshi
 
 ---
 
-## KEYWORD ARCHITECTURE CORE RULES (LOCKED)
+## INTENT ARCHITECTURE CORE RULES (LOCKED)
 
 - One page owns one primary intent.
 - Topics represent problem spaces, not titles.
 - Metadata supports authority and routing; it does not exist as decorative SEO tagging.
 - Multiple pages may share a topic only when their search intents differ materially.
-- Keyword targeting must respect the page-type hierarchy instead of overriding it.
+- Search intent targeting must respect the page-type hierarchy instead of overriding it.
 
 ---
 
@@ -334,7 +334,7 @@ Case studies may support service conversion, but the case study itself remains a
 | Concern                                         | Primary Owner                    | Enforced By                                       |
 | ----------------------------------------------- | -------------------------------- | ------------------------------------------------- |
 | Metadata completeness and canonical identifiers | Domain data and registries       | `validate-content-contract.mjs`                   |
-| Route and page structure                        | Domain route and page surfaces   | `validate-domain-structure.mjs`                   |
+| Route and page structure                        | Section order and authored flow  | `validate-section-order-consistency.mjs`         |
 | Graph integrity                                 | Content model and graph registry | `validate-graph.ts`                               |
 | Related-content duplication                     | Related-content system           | `validate-related-duplication.ts`                 |
 | Internal link and docs hygiene                  | Content and docs surfaces        | `validate-internal-links.ts`, `validate-docs.mjs` |

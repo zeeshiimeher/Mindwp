@@ -232,13 +232,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
             title: 'Tattoo Studios — Stay In Their Head Until The Deposit Lands | MindWP',
             description:
                 'For tattoo studios where DMs come in, conversations stall, and the deposit moment kills the chat. We help hold the enquiry, soften the deposit ask, and turn healed work into the next booking.',
-            keywords: [
-                'tattoo studio enquiry follow-up',
-                'tattoo studio booking deposit',
-                'tattoo studio crm',
-                'tattoo studio reputation system',
-                'tattoo studio local seo',
-            ],
             canonical: '/industries/local-appointment-businesses/tattoo-studios',
         },
         hero: {

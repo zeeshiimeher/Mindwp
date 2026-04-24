@@ -188,13 +188,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
             title: 'Driving Schools — Turn "I\'ll Book Next Week" Into Booked Lessons | MindWP',
             description:
                 'For driving schools where enquiries drift instead of booking. We put gentle, scheduled follow-up, easy booking, and review prompts in place so the soft maybes land.',
-            keywords: [
-                'driving school enquiry follow-up',
-                'driving school booking system',
-                'driving school lead nurture',
-                'driving school local seo',
-                'driving school reputation system',
-            ],
             canonical: '/industries/local-appointment-businesses/driving-schools',
         },
         hero: {

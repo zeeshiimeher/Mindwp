@@ -268,13 +268,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
             title: 'Accounting Firms — Stop Losing Owners In The Gap Between Proposal And Signature | MindWP',
             description:
                 'For accounting firms where proposals get sent and then go quiet. We put quiet, scheduled follow-up, faster enquiry acknowledgement, and review prompts in place so good prospects stop drifting to whoever stayed in front of them.',
-            keywords: [
-                'accounting firm proposal follow-up',
-                'accounting firm crm',
-                'accounting firm lead handling',
-                'accounting firm reputation system',
-                'accounting firm local seo',
-            ],
             canonical: '/industries/legal-professional-services/accounting-firms',
         },
         hero: {

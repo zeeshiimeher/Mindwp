@@ -233,13 +233,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
             title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
             description:
                 'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
-            keywords: [
-                'lash studio rebook system',
-                'lash refill nudge automation',
-                'lash extension client retention',
-                'lash studio reviews',
-                'lash refill near me seo',
-            ],
             canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',
         },
         hero: {

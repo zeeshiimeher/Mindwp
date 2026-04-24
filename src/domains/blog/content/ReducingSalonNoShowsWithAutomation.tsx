@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reducingSalonNoShowsWithAutomation: BlogPostData = {
   slug: 'reducing-salon-no-shows-with-automation',
   title: 'Reducing Salon No Shows With Automation',
-  metaTitle: 'Reducing Salon No Shows With Automation Systems',
-  metaDescription:
-    'Learn how reducing salon no shows with automation through SMS reminders and confirmation workflows dramatically cuts missed appointments and revenue loss.',
   seo: {
     title: 'Reducing Salon No Shows With Automation Systems',
     description:
       'Learn how reducing salon no shows with automation through SMS reminders and confirmation workflows dramatically cuts missed appointments and revenue loss.',
     canonical: '/blog/reducing-salon-no-shows-with-automation',
-    keywords: [
-      'reducing salon no shows with automation',
-      'salon reminder automation',
-      'reduce appointment no shows',
-      'salon booking reliability',
-    ],
     openGraph: {
       title: 'Reducing Salon No Shows With Automation Systems',
       description:
@@ -29,12 +20,6 @@ export const reducingSalonNoShowsWithAutomation: BlogPostData = {
   industries: ['salon'],
   systems: ['crm-automation', 'ai-lead-handling'],
   topics: ['no-show-reduction'],
-  primaryKeyword: 'reducing salon no shows with automation',
-  supportingKeywords: [
-    'salon reminder automation',
-    'reduce appointment no shows',
-    'salon booking reliability',
-  ],
   tags: ['Salon', 'No Shows', 'Automation', 'SMS Reminders', 'Booking Reliability'],
   sections: [
     {

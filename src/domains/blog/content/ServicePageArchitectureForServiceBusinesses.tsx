@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
   slug: 'service-page-architecture-for-service-businesses',
   title: 'Service Page Architecture for Service Businesses',
-  metaTitle: 'Service Page Architecture for Service Businesses',
-  metaDescription:
-    'Learn how service page architecture for service businesses structures landing pages to capture enquiries, qualify leads, and connect to operational workflows.',
   seo: {
     title: 'Service Page Architecture for Service Businesses',
     description:
       'Learn how service page architecture for service businesses structures landing pages to capture enquiries, qualify leads, and connect to operational workflows.',
     canonical: '/blog/service-page-architecture-for-service-businesses',
-    keywords: [
-      'service page architecture for service businesses',
-      'service page structure',
-      'service page conversion architecture',
-      'service page system design',
-    ],
     openGraph: {
       title: 'Service Page Architecture for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['service-page-architecture', 'service-pages'],
-  primaryKeyword: 'service page architecture for service businesses',
-  supportingKeywords: [
-    'service page structure',
-    'service page conversion architecture',
-    'service page system design',
-  ],
   tags: ['Service Pages', 'Website Architecture', 'Lead Capture', 'Conversion', 'Service Business'],
   sections: [
     {

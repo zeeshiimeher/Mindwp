@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
   slug: 'automotive-crm-pipeline-for-repair-jobs',
   title: 'Automotive CRM Pipeline for Repair Jobs',
-  metaTitle: 'Automotive CRM Pipeline for Repair Jobs Explained',
-  metaDescription:
-    'Explore how an automotive CRM pipeline for repair jobs tracks each vehicle from booking through diagnosis, parts ordering, and job completion.',
   seo: {
     title: 'Automotive CRM Pipeline for Repair Jobs Explained',
     description:
       'Explore how an automotive CRM pipeline for repair jobs tracks each vehicle from booking through diagnosis, parts ordering, and job completion.',
     canonical: '/blog/automotive-crm-pipeline-for-repair-jobs',
-    keywords: [
-      'automotive crm pipeline for repair jobs',
-      'auto repair crm stages',
-      'repair job pipeline',
-      'workshop crm workflow',
-    ],
     openGraph: {
       title: 'Automotive CRM Pipeline for Repair Jobs Explained',
       description:
@@ -29,8 +20,6 @@ export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
   industries: ['automotive'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'automotive crm pipeline for repair jobs',
-  supportingKeywords: ['auto repair crm stages', 'repair job pipeline', 'workshop crm workflow'],
   tags: ['Automotive', 'CRM Pipeline', 'Repair Jobs', 'Workshop Management', 'Automation'],
   sections: [
     {

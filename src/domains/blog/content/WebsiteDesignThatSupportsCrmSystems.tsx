@@ -3,19 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
   slug: 'website-design-that-supports-crm-systems',
   title: 'Website Design That Supports CRM Systems',
-  metaTitle: 'Website Design That Supports CRM Systems',
-  metaDescription:
-    'Explore how website design that supports CRM systems is built differently, with structured forms, automation-ready architecture, and pipeline-connected pages.',
   seo: {
     title: 'Website Design That Supports CRM Systems',
     description:
       'Explore how website design that supports CRM systems is built differently, with structured forms, automation-ready architecture, and pipeline-connected pages.',
     canonical: '/blog/website-design-that-supports-crm-systems',
-    keywords: [
-      'website design that supports crm systems',
-      'crm-ready website design',
-      'websites that support automation',
-    ],
     openGraph: {
       title: 'Website Design That Supports CRM Systems',
       description:
@@ -28,12 +20,6 @@ export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['crm-enabled-websites'],
-  primaryKeyword: 'website design that supports crm systems',
-  supportingKeywords: [
-    'crm-ready website design',
-    'websites that support automation',
-    'crm-connected website structure',
-  ],
   tags: ['CRM-Ready Design', 'Website Design', 'CRM Systems', 'Automation', 'System Architecture'],
   sections: [
     {

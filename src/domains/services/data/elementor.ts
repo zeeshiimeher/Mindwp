@@ -19,14 +19,6 @@ export const elementorPage = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  keywords: [
-    'elementor pro',
-    'elementor implementation',
-    'wordpress page builder',
-    'theme builder',
-    'popup builder',
-    'design system',
-  ],
   badge: 'Elementor',
   category: 'Implementation Services',
   seo: buildServiceSeo({
@@ -34,9 +26,6 @@ export const elementorPage = {
     title: 'Elementor WordPress Development | MindWP',
     description:
       "Elementor gives you visual control and flexible editing. But pixel-perfect pages don't bring in work on their own. Here's what most Elementor sites are missing.",
-    schemaName: 'Elementor WordPress development',
-    schemaDescription:
-      'WordPress implementation using Elementor as part of a structured website system that handles enquiries, follow-up, and lead routing.',
   }),
   hero: {
     badge: 'Elementor',

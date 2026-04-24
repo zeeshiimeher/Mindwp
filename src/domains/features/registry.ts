@@ -98,7 +98,7 @@ const FEATURE_DATA = Object.values(FEATURE_DOMAIN_REGISTRY).map(entry => entry.d
 export const FEATURE_REGISTRY: FeatureMetadata[] = FEATURE_DATA.map(data => ({
   slug: data.slug,
   path: data.seo.canonical,
-  title: data.seo.schema?.primary?.name?.toString() ?? data.hero.badge,
+  title: data.seo.title,
   description: data.seo.description,
   icon: FEATURE_DOMAIN_REGISTRY[data.slug as FeatureSlug].icon,
   systems: data.systems,

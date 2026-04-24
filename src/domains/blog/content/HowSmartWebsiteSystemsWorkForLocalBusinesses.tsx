@@ -3,19 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howSmartWebsiteSystemsWorkForLocalBusinesses: BlogPostData = {
   slug: 'how-smart-website-systems-work-for-local-businesses',
   title: 'How Smart Website Systems Work for Local Businesses',
-  metaTitle: 'How Smart Website Systems Work for Businesses',
-  metaDescription:
-    'Learn how smart website systems work to automate lead capture, routing, and response for local service businesses using connected infrastructure.',
   seo: {
     title: 'How Smart Website Systems Work for Businesses',
     description:
       'Learn how smart website systems work to automate lead capture, routing, and response for local service businesses using connected infrastructure.',
     canonical: '/blog/how-smart-website-systems-work-for-local-businesses',
-    keywords: [
-      'how smart website systems work',
-      'smart website systems',
-      'website operations system',
-    ],
     openGraph: {
       title: 'How Smart Website Systems Work for Businesses',
       description:
@@ -28,12 +20,6 @@ export const howSmartWebsiteSystemsWorkForLocalBusinesses: BlogPostData = {
   industries: [],
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  primaryKeyword: 'how smart website systems work',
-  supportingKeywords: [
-    'smart website systems',
-    'website operations system',
-    'service business website infrastructure',
-  ],
   tags: [
     'Smart Website Systems',
     'Website Infrastructure',

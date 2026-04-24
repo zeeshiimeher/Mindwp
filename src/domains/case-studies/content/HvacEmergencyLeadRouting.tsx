@@ -131,9 +131,6 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
   return {
     slug: 'hvac-after-hours-calls-going-cold',
     title: 'Emergency calls kept coming in after the office had closed',
-    metaTitle: 'HVAC after-hours call case study: more emergency jobs captured',
-    metaDescription:
-      'How a Manchester HVAC company stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
@@ -153,6 +150,9 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     })),
     tags: ['Emergency Routing', 'After-Hours Leads', 'HVAC', 'Call Triage', 'Lead Recovery'],
     seo: {
+      title: 'HVAC after-hours call case study: more emergency jobs captured',
+      description:
+      'How a Manchester HVAC company stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
       canonical: '/case-studies/hvac-after-hours-calls-going-cold',
       openGraph: {
         title: 'HVAC after-hours call case study: more emergency jobs captured',

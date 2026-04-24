@@ -9,14 +9,6 @@ export const divi5Page = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  keywords: [
-    'divi 5',
-    'divi implementation',
-    'visual page builder',
-    'wordpress themes',
-    'drag and drop',
-    'website builder',
-  ],
   badge: 'Divi Builder',
   category: 'Implementation Services',
   seo: buildServiceSeo({
@@ -24,9 +16,6 @@ export const divi5Page = {
     title: 'Divi WordPress Development | MindWP',
     description:
       "Divi gives your team flexible editing and visual control. But editing freedom doesn't fix a website that isn't bringing in work. Here's what to look at first.",
-    schemaName: 'Divi WordPress development',
-    schemaDescription:
-      'WordPress implementation using Divi Builder as part of a structured website system that handles enquiries, follow-up, and lead routing.',
   }),
   hero: {
     badge: 'Divi Builder',

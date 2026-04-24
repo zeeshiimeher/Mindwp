@@ -230,13 +230,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
             title: 'Small Private Clinics — Turn Hesitant Enquiries Into Booked Consultations | MindWP',
             description:
                 'For small private clinics where enquiries are warm but never seem to book. We help reply in a way that reassures, build the trust signals patients quietly check, and hold the door open without pressure.',
-            keywords: [
-                'private clinic enquiry follow-up',
-                'private clinic booking system',
-                'private clinic reputation management',
-                'private clinic local seo',
-                'private clinic patient acquisition',
-            ],
             canonical: '/industries/local-appointment-businesses/small-private-clinics',
         },
         hero: {

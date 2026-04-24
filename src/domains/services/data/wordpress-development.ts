@@ -9,13 +9,6 @@ export const wordpressDevelopmentPage = {
   slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure', 'systems-first-websites'],
-  keywords: [
-    'wordpress website development for service business',
-    'custom wordpress website implementation',
-    'structured wordpress website',
-    'business website development on wordpress',
-    'web shop development on wordpress',
-  ],
   badge: 'WordPress Development',
   category: 'Implementation Services',
   seo: buildServiceSeo({
@@ -23,9 +16,6 @@ export const wordpressDevelopmentPage = {
     title: 'WordPress Development for Service Businesses | MindWP',
     description:
       "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
-    schemaName: 'WordPress website development for service businesses',
-    schemaDescription:
-      'WordPress implementation focused on turning visitors into handled enquiries — with clear service pages, proper routing, and automated follow-up.',
   }),
   hero: {
     badge: 'WordPress Development',

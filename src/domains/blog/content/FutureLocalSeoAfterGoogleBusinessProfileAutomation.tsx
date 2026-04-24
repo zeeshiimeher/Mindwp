@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = {
   slug: 'future-local-seo-after-google-business-profile-automation',
   title: 'Future Local SEO After Google Business Profile Automation',
-  metaTitle: 'Future Local SEO After Google Business Profile Automation',
-  metaDescription:
-    'Explore how future local seo after google business profile automation reshapes rankings as AI handles listing updates, reviews, and content automatically.',
   seo: {
     title: 'Future Local SEO After Google Business Profile Automation',
     description:
       'Explore how future local seo after google business profile automation reshapes rankings as AI handles listing updates, reviews, and content automatically.',
     canonical: '/blog/future-local-seo-after-google-business-profile-automation',
-    keywords: [
-      'future local seo after google business profile automation',
-      'automated gbp workflows',
-      'ai local search changes',
-      'future of google business profile',
-    ],
     openGraph: {
       title: 'Future Local SEO After Google Business Profile Automation',
       description:
@@ -29,12 +20,6 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
   industries: ['plumbing'],
   systems: ['local-seo-authority'],
   topics: ['google-business-profile'],
-  primaryKeyword: 'future local seo after google business profile automation',
-  supportingKeywords: [
-    'automated gbp workflows',
-    'ai local search changes',
-    'future of google business profile',
-  ],
   tags: ['Local SEO', 'Google Business Profile', 'Automation', 'AI', 'Future Trends'],
   sections: [
     {

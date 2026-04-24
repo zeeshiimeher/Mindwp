@@ -7,7 +7,7 @@ import type { ContentMetadata } from '../types';
 export function extractBlogMetadata(post: {
   title: string;
   slug: string;
-  primaryKeyword: string;
+  seo: { description: string };
   topics: string[];
   systems: string[];
   tags: string[];
@@ -21,7 +21,7 @@ export function extractBlogMetadata(post: {
 
   return {
     title: post.title,
-    primaryKeyword: post.primaryKeyword,
+    summary: post.seo.description,
     topics: post.topics,
     systems: post.systems,
     tags: post.tags,
@@ -34,7 +34,8 @@ export function extractBlogMetadata(post: {
 export function extractResourceMetadata(resource: {
   title: string;
   slug: string;
-  primaryKeyword?: string;
+  description?: string;
+  seo?: { description?: string };
   topics?: string[];
   systems?: string[];
   tags?: string[];
@@ -48,7 +49,7 @@ export function extractResourceMetadata(resource: {
 
   return {
     title: resource.title,
-    primaryKeyword: resource.primaryKeyword ?? '',
+    summary: resource.seo?.description ?? resource.description ?? '',
     topics: resource.topics ?? [],
     systems: resource.systems ?? [],
     tags: resource.tags ?? [],
@@ -61,7 +62,7 @@ export function extractResourceMetadata(resource: {
 export function extractCaseStudyMetadata(caseStudy: {
   title: string;
   slug: string;
-  seo?: { keywords?: string[] };
+  seo: { description: string };
   tags?: string[];
   sections?: Array<{ type: string; heading?: string }>;
 }): ContentMetadata {
@@ -73,7 +74,7 @@ export function extractCaseStudyMetadata(caseStudy: {
 
   return {
     title: caseStudy.title,
-    primaryKeyword: caseStudy.seo?.keywords?.[0] ?? '',
+    summary: caseStudy.seo.description,
     topics: [],
     systems: [],
     tags: caseStudy.tags ?? [],

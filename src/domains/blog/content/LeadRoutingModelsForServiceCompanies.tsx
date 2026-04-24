@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadRoutingModelsForServiceCompanies: BlogPostData = {
   slug: 'lead-routing-models-for-service-companies',
   title: 'Lead Routing Models for Service Companies',
-  metaTitle: 'Lead Routing Models for Service Companies',
-  metaDescription:
-    'Understand how lead routing models for service companies assign enquiries to the right team member based on service type, location, and urgency automatically.',
   seo: {
     title: 'Lead Routing Models for Service Companies',
     description:
       'Understand how lead routing models for service companies assign enquiries to the right team member based on service type, location, and urgency automatically.',
     canonical: '/blog/lead-routing-models-for-service-companies',
-    keywords: [
-      'lead routing models for service companies',
-      'lead routing workflow',
-      'routing enquiries by service',
-      'lead assignment models',
-    ],
     openGraph: {
       title: 'Lead Routing Models for Service Companies',
       description:
@@ -29,12 +20,6 @@ export const leadRoutingModelsForServiceCompanies: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['lead-routing'],
-  primaryKeyword: 'lead routing models for service companies',
-  supportingKeywords: [
-    'lead routing workflow',
-    'routing enquiries by service',
-    'lead assignment models',
-  ],
   tags: [
     'Lead Routing',
     'Service Business',

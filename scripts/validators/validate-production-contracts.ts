@@ -45,7 +45,6 @@ const serviceRegistryEntrySchema = z
     path: z.string(),
     title: z.string(),
     description: z.string(),
-    keywords: z.array(z.string()),
     badge: z.string(),
     category: z.string(),
     systems: z.array(z.string()),

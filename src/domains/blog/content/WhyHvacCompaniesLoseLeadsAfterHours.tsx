@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
   slug: 'why-hvac-companies-lose-leads-after-hours',
   title: 'Why HVAC Companies Lose Leads After Hours',
-  metaTitle: 'Why HVAC Companies Lose Leads After Hours',
-  metaDescription:
-    'Discover why HVAC companies lose leads after hours when emergency enquiries go unanswered and how automated response systems recover missed revenue.',
   seo: {
     title: 'Why HVAC Companies Lose Leads After Hours',
     description:
       'Discover why HVAC companies lose leads after hours when emergency enquiries go unanswered and how automated response systems recover missed revenue.',
     canonical: '/blog/why-hvac-companies-lose-leads-after-hours',
-    keywords: [
-      'why hvac companies lose leads after hours',
-      'hvac after hours leads',
-      'emergency hvac lead response',
-      'hvac enquiry loss',
-    ],
     openGraph: {
       title: 'Why HVAC Companies Lose Leads After Hours',
       description:
@@ -29,12 +20,6 @@ export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
   industries: ['hvac'],
   systems: ['ai-lead-handling'],
   topics: ['lead-management'],
-  primaryKeyword: 'why hvac companies lose leads after hours',
-  supportingKeywords: [
-    'hvac after hours leads',
-    'emergency hvac lead response',
-    'hvac enquiry loss',
-  ],
   tags: ['HVAC', 'After Hours', 'Lead Loss', 'Emergency Response', 'Lead Handling'],
   sections: [
     {

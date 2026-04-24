@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const conversionTrackingForHvacCompanies: BlogPostData = {
   slug: 'conversion-tracking-for-hvac-companies',
   title: 'Conversion Tracking for HVAC Companies',
-  metaTitle: 'Conversion Tracking for HVAC Companies Explained',
-  metaDescription:
-    'Learn how conversion tracking for HVAC companies connects website visits and marketing campaigns to booked service calls and measurable revenue outcomes.',
   seo: {
     title: 'Conversion Tracking for HVAC Companies Explained',
     description:
       'Learn how conversion tracking for HVAC companies connects website visits and marketing campaigns to booked service calls and measurable revenue outcomes.',
     canonical: '/blog/conversion-tracking-for-hvac-companies',
-    keywords: [
-      'conversion tracking for hvac companies',
-      'hvac conversion tracking',
-      'hvac lead attribution',
-      'hvac marketing measurement',
-    ],
     openGraph: {
       title: 'Conversion Tracking for HVAC Companies Explained',
       description:
@@ -29,12 +20,6 @@ export const conversionTrackingForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['smart-website-systems', 'crm-automation'],
   topics: ['conversion-tracking'],
-  primaryKeyword: 'conversion tracking for hvac companies',
-  supportingKeywords: [
-    'hvac conversion tracking',
-    'hvac lead attribution',
-    'hvac marketing measurement',
-  ],
   tags: ['HVAC', 'Conversion Tracking', 'Attribution', 'Marketing Measurement', 'CRM'],
   sections: [
     {

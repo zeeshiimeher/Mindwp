@@ -23,7 +23,7 @@ import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { env } from '@/env';
-import { systemWarning } from '@/lib/system/runtimeWarnings';
+import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
 import type { CaseStudyMetadata } from './types';
 
@@ -169,9 +169,7 @@ const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']
 ]);
 
 function warnCaseStudyTemplate(message: string) {
-  if (env.NODE_ENV === 'development') {
-    systemWarning(`CaseStudyTemplate: ${message}`);
-  }
+  systemDevelopmentWarning(`CaseStudyTemplate: ${message}`);
 }
 
 function getSectionType(section: unknown) {
@@ -236,7 +234,7 @@ function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
   }
 
   if (missing.length > 0 && env.NODE_ENV === 'development') {
-    systemWarning(`CaseStudyTemplate: Missing required sections: ${missing.join(', ')}`);
+    systemDevelopmentWarning(`CaseStudyTemplate: Missing required sections: ${missing.join(', ')}`);
   }
 
   return missing;
@@ -364,7 +362,7 @@ export function CaseStudyTemplate({
   warnForSectionQuality(resolvedSections);
 
   if (resolvedSections.length < 4 && env.NODE_ENV === 'development') {
-    systemWarning(`CaseStudyTemplate: ${metadata.slug} has fewer than 4 authored sections.`);
+    systemDevelopmentWarning(`CaseStudyTemplate: ${metadata.slug} has fewer than 4 authored sections.`);
   }
 
   if (missingSections.length > 0 && env.NODE_ENV === 'development') {

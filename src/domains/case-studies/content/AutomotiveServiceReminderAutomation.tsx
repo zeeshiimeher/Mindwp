@@ -150,9 +150,6 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
   return {
     slug: 'automotive-service-reminder-automation',
     title: 'Automotive Service Reminder Automation',
-    metaTitle: 'Garage Retention System | 48% to 72% With Reminders',
-    metaDescription:
-      'How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.',
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['auto-repair'],
@@ -186,6 +183,9 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
       'CRM Automation',
     ],
     seo: {
+      title: 'Garage Retention System | 48% to 72% With Reminders',
+      description:
+      'How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.',
       canonical: '/case-studies/automotive-service-reminder-automation',
       openGraph: {
         title: 'Why Garages Lose Repeat Customers | MindWP Case Study',

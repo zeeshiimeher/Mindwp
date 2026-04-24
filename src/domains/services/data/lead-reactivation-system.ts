@@ -19,13 +19,6 @@ export const leadReactivationSystemPage = {
   slug,
   systems: ['revenue-growth'],
   topics: ['client-reactivation', 'follow-up'],
-  keywords: [
-    'lead reactivation system',
-    'old lead follow-up automation',
-    'cold lead recovery system',
-    'customer reactivation workflow',
-    'dormant lead re-engagement system',
-  ],
   badge: 'Lead Reactivation System',
   category: 'Lifecycle Recovery Systems',
   seo: buildServiceSeo({
@@ -33,9 +26,6 @@ export const leadReactivationSystemPage = {
     title: 'Lead Reactivation System for Service Businesses | MindWP',
     description:
       'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
-    schemaName: 'Lead reactivation system for service businesses',
-    schemaDescription:
-      'Lead reactivation covering dormant lead segmentation, timed follow-up sequences, re-engagement messaging, and response routing for service businesses with unused pipeline.',
   }),
   hero: {
     badge: 'Lead Reactivation System',

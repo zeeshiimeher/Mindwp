@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const negativeReviewsForAutoRepairShops: BlogPostData = {
   slug: 'negative-reviews-for-auto-repair-shops',
   title: 'Negative Reviews for Auto Repair Shops',
-  metaTitle: 'Managing Negative Reviews for Auto Repair Shops',
-  metaDescription:
-    'Discover how negative reviews for auto repair shops can be managed with systematic response frameworks that protect reputation and rebuild customer trust.',
   seo: {
     title: 'Managing Negative Reviews for Auto Repair Shops',
     description:
       'Discover how negative reviews for auto repair shops can be managed with systematic response frameworks that protect reputation and rebuild customer trust.',
     canonical: '/blog/negative-reviews-for-auto-repair-shops',
-    keywords: [
-      'negative reviews for auto repair shops',
-      'auto repair bad reviews',
-      'repair shop review responses',
-      'workshop reputation recovery',
-    ],
     openGraph: {
       title: 'Managing Negative Reviews for Auto Repair Shops',
       description:
@@ -29,12 +20,6 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
   industries: ['automotive'],
   systems: ['reputation-review'],
   topics: ['negative-review-response', 'negative-reviews'],
-  primaryKeyword: 'negative reviews for auto repair shops',
-  supportingKeywords: [
-    'auto repair bad reviews',
-    'repair shop review responses',
-    'workshop reputation recovery',
-  ],
   tags: ['Automotive', 'Negative Reviews', 'Reputation', 'Response Framework', 'Recovery'],
   sections: [
     {

@@ -88,7 +88,7 @@ export interface GraphRegistryInput {
 export interface IndexableBlogPost {
   slug: string;
   title: string;
-  metaDescription: string;
+  seo: { description: string };
   topics: string[];
   systems: string[];
   industries: string[];
@@ -134,7 +134,7 @@ export interface ResolverIndexes {
 export interface ResolverDependencies {
   caseStudies: Record<
     string,
-    { slug: string; title: string; metaDescription?: string; industries?: string[] }
+    { slug: string; title: string; seo?: { description?: string }; industries?: string[] }
   >;
   features: Array<{ slug: string; title: string; description?: string; systems?: string[] }>;
   industries: Record<

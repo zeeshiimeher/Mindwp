@@ -80,13 +80,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const featureSeo = getFeatureDataBySlug(resolved.slug).seo;
   const featureData = getFeatureDataBySlug(resolved.slug);
 
-  const featureSchema =
-    featureSeo?.schema?.primary ??
-    buildSoftwareApplicationSchema({
-      name: formatFeatureTitle(resolved.featureNode.slug),
-      description: featureSeo?.description ?? '',
-      path: resolved.featureNode.path,
-    });
+  const featureSchema = buildSoftwareApplicationSchema({
+    name: featureSeo.title || formatFeatureTitle(resolved.featureNode.slug),
+    description: featureSeo.description,
+    path: resolved.featureNode.path,
+  });
   const faqSchema = buildFaqSchema(featureData.sections?.faq?.items);
 
   const breadcrumbSchema = buildBreadcrumbSchema([

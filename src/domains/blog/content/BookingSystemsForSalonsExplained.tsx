@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const bookingSystemsForSalonsExplained: BlogPostData = {
   slug: 'booking-systems-for-salons-explained',
   title: 'Booking Systems for Salons Explained',
-  metaTitle: 'Booking Systems for Salons Explained in Detail',
-  metaDescription:
-    'Discover how booking systems for salons explained as integrated infrastructure connect online scheduling to CRM, payments, and automated client workflows.',
   seo: {
     title: 'Booking Systems for Salons Explained in Detail',
     description:
       'Discover how booking systems for salons explained as integrated infrastructure connect online scheduling to CRM, payments, and automated client workflows.',
     canonical: '/blog/booking-systems-for-salons-explained',
-    keywords: [
-      'booking systems for salons explained',
-      'salon booking system architecture',
-      'appointment booking flow for salons',
-      'salon scheduling infrastructure',
-    ],
     openGraph: {
       title: 'Booking Systems for Salons Explained in Detail',
       description:
@@ -29,12 +20,6 @@ export const bookingSystemsForSalonsExplained: BlogPostData = {
   industries: ['salon'],
   systems: ['smart-website-systems', 'crm-automation'],
   topics: ['booking-systems'],
-  primaryKeyword: 'booking systems for salons explained',
-  supportingKeywords: [
-    'salon booking system architecture',
-    'appointment booking flow for salons',
-    'salon scheduling infrastructure',
-  ],
   tags: ['Salon', 'Booking Systems', 'Scheduling', 'CRM', 'Infrastructure'],
   sections: [
     {

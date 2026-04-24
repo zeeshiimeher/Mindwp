@@ -123,9 +123,6 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
   return {
     slug: 'roofing-storm-calls-overwhelmed-the-team',
     title: 'The storm had passed by Sunday night. Monday still started with a wall of voicemails.',
-    metaTitle: 'Roofing storm call case study: more missed calls recovered',
-    metaDescription:
-      'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
@@ -146,6 +143,9 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
     })),
     tags: ['Missed Call Recovery', 'Roofing', 'Storm Damage', 'Lead Handling', 'Home Services'],
     seo: {
+      title: 'Roofing storm call case study: more missed calls recovered',
+      description:
+      'How a Birmingham roofing contractor held onto more storm-week enquiries when Monday mornings started with a wall of missed calls.',
       canonical: '/case-studies/roofing-storm-calls-overwhelmed-the-team',
       openGraph: {
         title: 'Roofing storm call case study: more missed calls recovered',

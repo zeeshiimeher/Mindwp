@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const googleBusinessProfileForHvacCompanies: BlogPostData = {
   slug: 'google-business-profile-for-hvac-companies',
   title: 'Google Business Profile for HVAC Companies',
-  metaTitle: 'Google Business Profile for HVAC Companies',
-  metaDescription:
-    'Learn how optimising your google business profile for HVAC companies improves local visibility, map rankings, and emergency service discovery.',
   seo: {
     title: 'Google Business Profile for HVAC Companies',
     description:
       'Learn how optimising your google business profile for HVAC companies improves local visibility, map rankings, and emergency service discovery.',
     canonical: '/blog/google-business-profile-for-hvac-companies',
-    keywords: [
-      'google business profile for hvac companies',
-      'hvac google business profile',
-      'hvac maps visibility',
-      'hvac local profile optimization',
-    ],
     openGraph: {
       title: 'Google Business Profile for HVAC Companies',
       description:
@@ -29,12 +20,6 @@ export const googleBusinessProfileForHvacCompanies: BlogPostData = {
   industries: ['hvac'],
   systems: ['local-seo-authority'],
   topics: ['google-business-profile'],
-  primaryKeyword: 'google business profile for hvac companies',
-  supportingKeywords: [
-    'hvac google business profile',
-    'hvac maps visibility',
-    'hvac local profile optimization',
-  ],
   tags: ['HVAC', 'Google Business Profile', 'Local SEO', 'Map Rankings', 'Visibility'],
   sections: [
     {

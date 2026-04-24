@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const plumbingCrmPipelineForJobManagement: BlogPostData = {
   slug: 'plumbing-crm-pipeline-for-job-management',
   title: 'Plumbing CRM Pipeline for Job Management',
-  metaTitle: 'Plumbing CRM Pipeline for Job Management Guide',
-  metaDescription:
-    'Learn how a plumbing CRM pipeline for job management tracks every lead from first enquiry through quoting, scheduling, completion, and follow-up.',
   seo: {
     title: 'Plumbing CRM Pipeline for Job Management Guide',
     description:
       'Learn how a plumbing CRM pipeline for job management tracks every lead from first enquiry through quoting, scheduling, completion, and follow-up.',
     canonical: '/blog/plumbing-crm-pipeline-for-job-management',
-    keywords: [
-      'plumbing crm pipeline for job management',
-      'plumbing lead pipeline',
-      'plumber crm workflow',
-      'plumbing job tracking system',
-    ],
     openGraph: {
       title: 'Plumbing CRM Pipeline for Job Management Guide',
       description:
@@ -29,12 +20,6 @@ export const plumbingCrmPipelineForJobManagement: BlogPostData = {
   industries: ['plumbing'],
   systems: ['crm-automation'],
   topics: ['crm-pipeline'],
-  primaryKeyword: 'plumbing crm pipeline for job management',
-  supportingKeywords: [
-    'plumbing lead pipeline',
-    'plumber crm workflow',
-    'plumbing job tracking system',
-  ],
   tags: ['Plumbing', 'CRM Pipeline', 'Job Management', 'Lead Tracking', 'Automation'],
   sections: [
     {

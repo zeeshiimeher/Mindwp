@@ -16,13 +16,6 @@ export const localSeoAuthorityPage = {
     'authority-signals',
     'local-service-pages',
   ],
-  keywords: [
-    'local seo for service businesses',
-    'local seo system for contractors',
-    'google business profile optimization service',
-    'local visibility system',
-    'seo for home service companies',
-  ],
   badge: 'Local SEO for Service Businesses',
   category: 'Visibility Systems',
   seo: buildServiceSeo({
@@ -30,9 +23,6 @@ export const localSeoAuthorityPage = {
     title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
     description:
       'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
-    schemaName: 'Local SEO services for service businesses',
-    schemaDescription:
-      'Ongoing local SEO that keeps your business appearing in local search — through website improvements, Google Business Profile management, and consistent local presence.',
   }),
   hero: {
     badge: 'Get Found Locally',

@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
   slug: 'multi-channel-lead-capture-system-for-service-businesses',
   title: 'Multi Channel Lead Capture System for Service Businesses',
-  metaTitle: 'Multi Channel Lead Capture System for Service Businesses',
-  metaDescription:
-    'Learn how a multi channel lead capture system for service businesses unifies phone, web, and social enquiries into one pipeline for consistent follow-up.',
   seo: {
     title: 'Multi Channel Lead Capture System for Service Businesses',
     description:
       'Learn how a multi channel lead capture system for service businesses unifies phone, web, and social enquiries into one pipeline for consistent follow-up.',
     canonical: '/blog/multi-channel-lead-capture-system-for-service-businesses',
-    keywords: [
-      'multi channel lead capture system for service businesses',
-      'lead capture across phone and web',
-      'unified lead capture',
-      'omnichannel enquiry capture',
-    ],
     openGraph: {
       title: 'Multi Channel Lead Capture System for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['ai-lead-handling'],
   topics: ['lead-capture'],
-  primaryKeyword: 'multi channel lead capture system for service businesses',
-  supportingKeywords: [
-    'lead capture across phone and web',
-    'unified lead capture',
-    'omnichannel enquiry capture',
-  ],
   tags: [
     'Lead Capture',
     'Multi Channel',

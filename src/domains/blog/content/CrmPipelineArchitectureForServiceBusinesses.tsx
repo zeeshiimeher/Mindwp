@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
   slug: 'crm-pipeline-architecture-for-service-businesses',
   title: 'CRM Pipeline Architecture for Service Businesses',
-  metaTitle: 'CRM Pipeline Architecture for Service Businesses',
-  metaDescription:
-    'Explore the CRM pipeline architecture for service businesses that structures lead stages from first enquiry through to completed job and follow-up automation.',
   seo: {
     title: 'CRM Pipeline Architecture for Service Businesses',
     description:
       'Explore the CRM pipeline architecture for service businesses that structures lead stages from first enquiry through to completed job and follow-up automation.',
     canonical: '/blog/crm-pipeline-architecture-for-service-businesses',
-    keywords: [
-      'crm pipeline architecture for service businesses',
-      'service business crm stages',
-      'pipeline architecture workflow',
-      'crm stages for leads',
-    ],
     openGraph: {
       title: 'CRM Pipeline Architecture for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['crm-automation'],
   topics: ['crm-pipeline', 'pipeline-architecture'],
-  primaryKeyword: 'crm pipeline architecture for service businesses',
-  supportingKeywords: [
-    'service business crm stages',
-    'pipeline architecture workflow',
-    'crm stages for leads',
-  ],
   tags: [
     'CRM Pipeline',
     'Service Business',

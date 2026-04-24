@@ -3,20 +3,11 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
   slug: 'reputation-monitoring-systems-for-service-businesses',
   title: 'Reputation Monitoring Systems for Service Businesses',
-  metaTitle: 'Reputation Monitoring Systems for Service Businesses',
-  metaDescription:
-    'Learn how reputation monitoring systems for service businesses track reviews and sentiment across platforms to protect and improve your profile.',
   seo: {
     title: 'Reputation Monitoring Systems for Service Businesses',
     description:
       'Learn how reputation monitoring systems for service businesses track reviews and sentiment across platforms to protect and improve your profile.',
     canonical: '/blog/reputation-monitoring-systems-for-service-businesses',
-    keywords: [
-      'reputation monitoring systems for service businesses',
-      'review monitoring workflow',
-      'reputation alerts for service businesses',
-      'reputation tracking system',
-    ],
     openGraph: {
       title: 'Reputation Monitoring Systems for Service Businesses',
       description:
@@ -29,12 +20,6 @@ export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
   industries: [],
   systems: ['reputation-review'],
   topics: ['reputation-monitoring'],
-  primaryKeyword: 'reputation monitoring systems for service businesses',
-  supportingKeywords: [
-    'review monitoring workflow',
-    'reputation alerts for service businesses',
-    'reputation tracking system',
-  ],
   tags: [
     'Reputation Monitoring',
     'Review Tracking',
