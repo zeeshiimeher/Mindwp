@@ -1,5 +1,6 @@
 import { Calendar, CheckCircle2 } from 'lucide-react';
 
+import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -74,7 +75,7 @@ interface CalendarsRendererProps {
 
 export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
   const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq } = sections;
+  const { process, benefits, useCases, capabilities, faq, explore } = sections;
   const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   return (
@@ -144,6 +145,15 @@ export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
             description={faq.description}
             faqs={faq.items}
             cssPrefix='calendars-faq'
+          />
+
+          <ExploreCardsSection
+            badge={explore.badge}
+            title={explore.title}
+            description={explore.description}
+            cards={explore.cards}
+            cssPrefix='calendars-explore'
+            backgroundColor='bg-alt'
           />
 
           <SmartCTA

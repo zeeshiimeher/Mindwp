@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'unified-communication-system';
 
 export const unifiedCommunicationSystemPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Unified Communication System for Service Businesses | MindWP',
     description:
       'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
   }),
-    systems: ['ai-lead-handling'],
-    topics: ['lead-routing', 'lead-management'],
-    badge: 'Unified Communication System',
-    category: 'Communication Routing Systems',
-    hero: {
+  systems: ['ai-lead-handling'],
+  topics: ['lead-routing', 'lead-management'],
+  badge: 'Unified Communication System',
+  category: 'Communication Routing Systems',
+  hero: {
     badge: 'Unified Communication System',
     title: "Five Channels. Three Inboxes. Nobody Knows What's Live.",
     description:
@@ -36,7 +36,7 @@ export const unifiedCommunicationSystemPage = {
     cssPrefix: 'unified-communication-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'The fragmentation problem',
       title: 'Not a channel problem. A routing problem.',
@@ -262,6 +262,76 @@ export const unifiedCommunicationSystemPage = {
         },
       ],
     },
+    comparison: {
+      header: {
+        title: 'Inbox chaos vs routing that works',
+        description:
+          "Most businesses add channels without fixing what's behind them. Here's what that costs.",
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Inbox chaos',
+          items: [
+            'Calls, forms, chat, and emails land in different places with no shared view. High-intent enquiries sit unseen.',
+            'Nobody knows who should reply. Conversations stall until someone decides to act, and by then the prospect has moved on.',
+            'The same enquiry gets answered twice or not at all. The team wastes effort or loses the lead entirely.',
+            'Context lost every time the conversation moves to a different channel. The customer repeats themselves and trust drops.',
+            'Follow-up depends on who happens to check first. Response quality changes with every shift.',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Routing that works',
+          items: [
+            'All channels route into one shared view with clear ownership. Every message has a visible path to the right person.',
+            'Each conversation has a named owner and a defined next step. Nothing sits unowned or unanswered.',
+            'Duplicate handling reduced by matching contacts across channels. The team responds once, not three times.',
+            'Context carries forward between channels. The customer does not repeat themselves. The team picks up where it left off.',
+            'Follow-up runs on routing rules. Response consistency stops depending on who checks their inbox first.',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'An electrical contractor that stopped losing conversations between channels',
+        description:
+          'Six-person team. Three vans on the road. Enquiries coming through calls, website forms, WhatsApp, and email. Nobody had the full picture.',
+      },
+      cards: [
+        {
+          title: 'Before: five channels, no routing',
+          description:
+            "Calls went to the office phone. Forms to Gmail. WhatsApp to the owner's personal phone. Emails to whoever the customer last spoke to. No idea what was live.",
+          points: [
+            'Office manager handled calls. No visibility of WhatsApp or form leads. Jobs booked from calls while form enquiries waited days.',
+            "WhatsApp sat on the owner's phone. Busy weeks, threads went cold. Same customer calling, emailing, messaging \u2014 treated as three separate people.",
+          ],
+        },
+        {
+          title: 'What changed: one shared routing layer across all channels',
+          description:
+            'Every inbound message now routes into one view. Named owner. Defined next step. One queue instead of five. Same approach whether it started as a missed call, a form, or a WhatsApp message.',
+          points: [
+            'Calls, forms, WhatsApp, and email feed into a single intake view. The office manager sees everything, not just phone calls.',
+            'Each conversation is assigned to one person. The owner stops being the default handler for every WhatsApp thread.',
+            'Contact matching links messages from the same person across channels. One customer, one thread, one response.',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: fewer missed conversations, faster follow-up',
+          description:
+            'First month, missed conversations dropped. Response times improved. The owner got his evenings back because WhatsApp had a route.',
+          points: [
+            'Missed conversations roughly halved. Nothing changed except every message had a visible owner.',
+            'First-response time from over a day to under four hours. Routing was the bottleneck. Not capacity.',
+            'Owner off WhatsApp. Two team members managing all channels from one view. Urgent jobs escalated.',
+          ],
+        },
+      ],
+    },
     qualification: {
       title: 'Is this the right fit?',
       description:
@@ -337,83 +407,13 @@ export const unifiedCommunicationSystemPage = {
       ],
       cssPrefix: 'unified-communication-faq',
     },
-    comparison: {
-      header: {
-        title: 'Inbox chaos vs routing that works',
-        description:
-          "Most businesses add channels without fixing what's behind them. Here's what that costs.",
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Inbox chaos',
-          items: [
-            'Calls, forms, chat, and emails land in different places with no shared view. High-intent enquiries sit unseen.',
-            'Nobody knows who should reply. Conversations stall until someone decides to act, and by then the prospect has moved on.',
-            'The same enquiry gets answered twice or not at all. The team wastes effort or loses the lead entirely.',
-            'Context lost every time the conversation moves to a different channel. The customer repeats themselves and trust drops.',
-            'Follow-up depends on who happens to check first. Response quality changes with every shift.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Routing that works',
-          items: [
-            'All channels route into one shared view with clear ownership. Every message has a visible path to the right person.',
-            'Each conversation has a named owner and a defined next step. Nothing sits unowned or unanswered.',
-            'Duplicate handling reduced by matching contacts across channels. The team responds once, not three times.',
-            'Context carries forward between channels. The customer does not repeat themselves. The team picks up where it left off.',
-            'Follow-up runs on routing rules. Response consistency stops depending on who checks their inbox first.',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'An electrical contractor that stopped losing conversations between channels',
-        description:
-          'Six-person team. Three vans on the road. Enquiries coming through calls, website forms, WhatsApp, and email. Nobody had the full picture.',
-      },
-      cards: [
-        {
-          title: 'Before: five channels, no routing',
-          description:
-            "Calls went to the office phone. Forms to Gmail. WhatsApp to the owner's personal phone. Emails to whoever the customer last spoke to. No idea what was live.",
-          points: [
-            'Office manager handled calls. No visibility of WhatsApp or form leads. Jobs booked from calls while form enquiries waited days.',
-            "WhatsApp sat on the owner's phone. Busy weeks, threads went cold. Same customer calling, emailing, messaging \u2014 treated as three separate people.",
-          ],
-        },
-        {
-          title: 'What changed: one shared routing layer across all channels',
-          description:
-            'Every inbound message now routes into one view. Named owner. Defined next step. One queue instead of five. Same approach whether it started as a missed call, a form, or a WhatsApp message.',
-          points: [
-            'Calls, forms, WhatsApp, and email feed into a single intake view. The office manager sees everything, not just phone calls.',
-            'Each conversation is assigned to one person. The owner stops being the default handler for every WhatsApp thread.',
-            'Contact matching links messages from the same person across channels. One customer, one thread, one response.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: fewer missed conversations, faster follow-up',
-          description:
-            'First month, missed conversations dropped. Response times improved. The owner got his evenings back because WhatsApp had a route.',
-          points: [
-            'Missed conversations roughly halved. Nothing changed except every message had a visible owner.',
-            'First-response time from over a day to under four hours. Routing was the bottleneck. Not capacity.',
-            'Owner off WhatsApp. Two team members managing all channels from one view. Urgent jobs escalated.',
-          ],
-        },
-      ],
-    },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Which channel is dropping your live conversations?',
     description:
       'Fifteen minutes. Map your channels, see where context breaks, and identify where routing needs to change first.',
   },
-    cta: {
+  cta: {
     title: 'Find out where conversations are falling apart',
     description:
       'Quick list of how enquiries come in. Where the gaps are. What fixing the routing looks like.',

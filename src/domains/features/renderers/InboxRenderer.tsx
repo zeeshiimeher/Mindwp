@@ -1,7 +1,9 @@
 import { Inbox as InboxIcon, Mail, MessageSquare } from 'lucide-react';
 
+import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
   FeatureBenefitsSection,
+  FeatureCapabilitiesSection,
   FeatureHeroSection,
   FeatureIconCardsSection,
   FeaturePainPointsSection,
@@ -22,7 +24,7 @@ interface InboxRendererProps {
 
 export default function InboxRenderer({ data }: InboxRendererProps) {
   const { hero, sections, cta } = data;
-  const { process, benefits, useCases, faq } = sections;
+  const { process, benefits, useCases, faq, explore, capabilities } = sections;
   const channels = sections.channels;
   const painPoints = sections.painPoints;
   const primarySystem = data.systems[0] ?? 'smart-website-systems';
@@ -87,14 +89,6 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
             ]}
           />
 
-          <FeatureIconCardsSection
-            badge={channels.badge}
-            title={channels.title}
-            description={channels.description}
-            items={channels.items}
-            cssPrefix='channels-section'
-          />
-
           <FeatureProcessStepsSection
             badge={process.badge}
             title={process.title}
@@ -113,14 +107,6 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
             cssPrefix='inbox-benefits'
           />
 
-          <FeaturePainPointsSection
-            badge={painPoints.badge}
-            title={painPoints.title}
-            painPoints={painPoints.items}
-            cssPrefix='inbox-pain-points'
-            backgroundColor='bg-alt'
-          />
-
           <FeatureUseCasesSection
             badge={useCases.badge}
             title={useCases.title}
@@ -134,6 +120,42 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
             description={faq.description}
             faqs={faq.items}
             cssPrefix='inbox-faq'
+            backgroundColor='bg-base'
+          />
+
+          <ExploreCardsSection
+            badge={explore.badge}
+            title={explore.title}
+            description={explore.description}
+            cards={explore.cards}
+            cssPrefix='inbox-explore'
+            backgroundColor='bg-alt'
+          />
+
+          <FeatureIconCardsSection
+            badge={channels.badge}
+            title={channels.title}
+            description={channels.description}
+            items={channels.items}
+            cssPrefix='channels-section'
+          />
+
+          <FeaturePainPointsSection
+            badge={painPoints.badge}
+            title={painPoints.title}
+            painPoints={painPoints.items}
+            cssPrefix='inbox-pain-points'
+            backgroundColor='bg-alt'
+          />
+
+          <FeatureCapabilitiesSection
+            badge={capabilities.badge}
+            title={capabilities.title}
+            description={capabilities.description}
+            featureCategories={capabilities.featureCategories}
+            cssPrefix='inbox-capabilities'
+            columns={capabilities.columns}
+            variant={capabilities.variant}
             backgroundColor='bg-base'
           />
 

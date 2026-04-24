@@ -1,6 +1,7 @@
 import { CheckCircle2, MessageSquare, Users } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -101,7 +102,7 @@ interface AIChatRendererProps {
 
 export default function AIChatRenderer({ data }: AIChatRendererProps) {
   const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq } = sections;
+  const { process, benefits, useCases, capabilities, faq, explore } = sections;
   const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   return (
@@ -177,6 +178,15 @@ export default function AIChatRenderer({ data }: AIChatRendererProps) {
             description={faq.description}
             faqs={faq.items}
             cssPrefix='ai-chat-faq'
+          />
+
+          <ExploreCardsSection
+            badge={explore.badge}
+            title={explore.title}
+            description={explore.description}
+            cards={explore.cards}
+            cssPrefix='ai-chat-explore'
+            backgroundColor='bg-base'
           />
 
           <SmartCTA

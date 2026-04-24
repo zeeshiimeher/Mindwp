@@ -5,17 +5,17 @@ import { crmAutomationPage } from './crm-automation';
 const slug = 'website-crm-integration-vs-manual-lead-handling';
 
 export const websiteCrmIntegrationVsManualLeadHandlingPage = {
-...crmAutomationPage,
-slug,
-seo: buildServiceSeo({
+  ...crmAutomationPage,
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
     description:
       'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
   }),
-badge: "CRM Setup",
-category: crmAutomationPage.category,
-hero: {
+  badge: "CRM Setup",
+  category: crmAutomationPage.category,
+  hero: {
     ...crmAutomationPage.hero,
     badge: 'CRM Decision Page',
     title: 'Website CRM Integration vs Manual Lead Handling',
@@ -23,7 +23,7 @@ hero: {
       'If leads move from forms to inboxes to sticky notes before anyone follows up, the problem is not effort. It is infrastructure. This page shows the difference between keeping lead handling manual and turning the website into the front door of a controlled CRM system.',
     list: ['Manual handoffs', 'Lead loss', 'CRM visibility'],
   },
-sections: {
+  sections: {
     ...crmAutomationPage.sections,
     positioning: {
       ...crmAutomationPage.sections.positioning,
@@ -32,10 +32,6 @@ sections: {
       description:
         'Website forms, calls, texts, and chat messages do not fail because your team does not care. They fail because every handoff depends on someone noticing, remembering, and acting fast enough.',
     },
-    useCasesSection: crmAutomationPage.sections.useCasesSection,
-    featuresSection: crmAutomationPage.sections.featuresSection,
-    workflowsSection: crmAutomationPage.sections.workflowsSection,
-    governance: crmAutomationPage.sections.governance,
     comparison: {
       ...crmAutomationPage.sections.comparison,
       header: {
@@ -74,21 +70,25 @@ sections: {
           'The website rebuild mattered because the enquiry path changed with it. Before vs after only made sense once the CRM handoff was part of the same system.',
       },
     },
+    useCasesSection: crmAutomationPage.sections.useCasesSection,
+    featuresSection: crmAutomationPage.sections.featuresSection,
+    workflowsSection: crmAutomationPage.sections.workflowsSection,
+    governance: crmAutomationPage.sections.governance,
+    connection: crmAutomationPage.sections.connection,
     qualification: {
       ...crmAutomationPage.sections.qualification,
       title: 'Decision section: when CRM infrastructure is the right move',
       description:
         'Choose infrastructure when demand exists, enquiries arrive from multiple channels, and the business can no longer afford lead handling to depend on memory and inbox habits.',
     },
-    connection: crmAutomationPage.sections.connection,
     faqSection: crmAutomationPage.sections.faqSection,
   },
-cta: {
+  cta: {
     title: 'See where manual lead handling is still breaking revenue control',
     description:
       'We will map the website, call, inbox, and follow-up handoffs that are still manual, then show what a connected CRM system would stabilise first.',
   },
-inlineCta: {
+  inlineCta: {
     title: 'Map the CRM handoff gaps before more leads stall',
     description:
       'Identify where forms, calls, texts, and follow-up are still disconnected before more opportunities leak out of the pipeline.',

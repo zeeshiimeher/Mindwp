@@ -45,7 +45,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'ai-lead-handling': {
       services: [
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -53,7 +53,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -65,7 +65,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'bricks-builder': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -73,7 +73,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -81,7 +81,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -93,7 +93,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'conversion-funnel-system-vs-landing-page-development': {
       services: [
         {
-          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          title: 'Lead Reactivation System',
           description:
             'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
@@ -101,7 +101,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Layer for Service Businesses | MindWP',
+          title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
@@ -113,7 +113,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'conversion-layer': {
       services: [
         {
-          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          title: 'Lead Reactivation System',
           description:
             'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
@@ -121,7 +121,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          title: 'Conversion Funnel System',
           description:
             'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
           slug: 'conversion-funnel-system-vs-landing-page-development',
@@ -133,7 +133,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-infrastructure-implementation': {
       services: [
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -145,7 +145,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     divi5: {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -153,7 +153,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -161,7 +161,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -173,7 +173,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     ecommerce: {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -181,7 +181,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -189,7 +189,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -201,7 +201,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     elementor: {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -209,7 +209,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -217,7 +217,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -229,7 +229,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-reactivation-system': {
       services: [
         {
-          title: 'Conversion Layer for Service Businesses | MindWP',
+          title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
@@ -237,7 +237,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          title: 'Conversion Funnel System',
           description:
             'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
           slug: 'conversion-funnel-system-vs-landing-page-development',
@@ -252,7 +252,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-system': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -260,7 +260,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -275,7 +275,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'service-pages-vs-one-generic-services-page': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -283,7 +283,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -291,7 +291,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -303,7 +303,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'smart-website-systems': {
       services: [
         {
-          title: 'Service Pages vs One Generic Services Page | MindWP',
+          title: 'Smart Websites',
           description:
             'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
           slug: 'service-pages-vs-one-generic-services-page',
@@ -311,7 +311,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -319,7 +319,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -331,7 +331,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'system-migration-platform-consolidation': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -339,7 +339,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page | MindWP',
+          title: 'Smart Websites',
           description:
             'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
           slug: 'service-pages-vs-one-generic-services-page',
@@ -347,7 +347,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -359,7 +359,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'unified-communication-system': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -367,7 +367,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -379,7 +379,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-crm-integration-vs-manual-lead-handling': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -391,7 +391,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-redesign-system-rebuild': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -399,7 +399,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page | MindWP',
+          title: 'Smart Websites',
           description:
             'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
           slug: 'service-pages-vs-one-generic-services-page',
@@ -407,7 +407,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -419,7 +419,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'wordpress-development': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -427,7 +427,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -435,7 +435,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -449,7 +449,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     aichat: {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -457,7 +457,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -465,7 +465,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -477,7 +477,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     calendars: {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -485,7 +485,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Layer for Service Businesses | MindWP',
+          title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
@@ -493,7 +493,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          title: 'Conversion Funnel System',
           description:
             'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
           slug: 'conversion-funnel-system-vs-landing-page-development',
@@ -505,7 +505,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     crm: {
       services: [
         {
-          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          title: 'Lead Reactivation System',
           description:
             'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
@@ -513,7 +513,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Layer for Service Businesses | MindWP',
+          title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
@@ -521,7 +521,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          title: 'Conversion Funnel System',
           description:
             'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
           slug: 'conversion-funnel-system-vs-landing-page-development',
@@ -533,7 +533,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     inbox: {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -541,7 +541,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -549,7 +549,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -561,7 +561,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     reputation: {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -569,7 +569,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Local SEO Authority',
           description:
             'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
@@ -581,7 +581,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     voicecalls: {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -589,7 +589,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -597,7 +597,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -609,7 +609,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     workflows: {
       services: [
         {
-          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          title: 'Lead Reactivation System',
           description:
             'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
@@ -617,7 +617,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Layer for Service Businesses | MindWP',
+          title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
@@ -625,7 +625,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          title: 'Conversion Funnel System',
           description:
             'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
           slug: 'conversion-funnel-system-vs-landing-page-development',
@@ -639,7 +639,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'accounting-firms': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -647,7 +647,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -655,7 +655,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -665,7 +665,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -673,7 +673,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -681,7 +681,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
@@ -699,83 +699,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Website + CRM Integration Explained',
+          title: 'HVAC Review Generation Framework',
           description:
-            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
-          slug: 'website-crm-integration-explained',
-          path: '/resources/website-crm-integration-explained',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Reputation Monitoring Systems',
-          description:
-            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-          slug: 'reputation-monitoring-systems',
-          path: '/resources/reputation-monitoring-systems',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'aesthetic-cosmetic-clinics': {
-      services: [
-        {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
-          description:
-            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'CRM Setup for Service Businesses | MindWP',
-          description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
-          description:
-            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
-          nodeType: 'service',
-        },
-      ],
-      caseStudies: [
-        {
-          title: 'Beauty Salon Case Study - All Sections Demo',
-          description:
-            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
-          description:
-            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'CRM Pipeline Visibility Transformation',
-          description:
-            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
-          slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-studies/crm-pipeline-visibility-transformation',
-          nodeType: 'case-study',
-        },
-      ],
-      resources: [
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
           nodeType: 'resource',
         },
         {
@@ -786,20 +714,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
       ],
     },
-    'auto-repair': {
+    'aesthetic-cosmetic-clinics': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -807,7 +727,87 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Smart Websites',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Platform Migration',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study | Manchester',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrician local visibility case study: found more often in Google Maps',
+          description:
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'auto-repair': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -815,7 +815,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -825,7 +825,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -833,7 +833,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -841,11 +841,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Auto Repair Missed Call Recovery',
+          title: 'Garage missed call case study: more enquiries recovered',
           description:
-            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
-          slug: 'auto-repair-missed-call-recovery',
-          path: '/case-studies/auto-repair-missed-call-recovery',
+            'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
+          slug: 'garage-morning-rush-missed-calls',
+          path: '/case-studies/garage-morning-rush-missed-calls',
           nodeType: 'case-study',
         },
       ],
@@ -879,7 +879,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'automotive-services': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -887,7 +887,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -895,7 +895,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -905,7 +905,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -913,7 +913,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -921,11 +921,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Auto Repair Missed Call Recovery',
+          title: 'Garage missed call case study: more enquiries recovered',
           description:
-            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
-          slug: 'auto-repair-missed-call-recovery',
-          path: '/case-studies/auto-repair-missed-call-recovery',
+            'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
+          slug: 'garage-morning-rush-missed-calls',
+          path: '/case-studies/garage-morning-rush-missed-calls',
           nodeType: 'case-study',
         },
       ],
@@ -959,7 +959,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'beauty-personal-care': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -967,7 +967,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -975,7 +975,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -985,7 +985,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -993,7 +993,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1001,7 +1001,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Salon Booking Automation',
+          title: 'Salon Booking Automation | 68% Online Booking Adoption',
           description:
             'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
           slug: 'salon-booking-automation',
@@ -1039,7 +1039,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'body-shops': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1047,7 +1047,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -1055,7 +1055,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -1065,7 +1065,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1073,7 +1073,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1081,11 +1081,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Auto Repair Missed Call Recovery',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
-          slug: 'auto-repair-missed-call-recovery',
-          path: '/case-studies/auto-repair-missed-call-recovery',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -1119,7 +1119,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'car-detailing': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1127,7 +1127,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -1135,7 +1135,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -1145,7 +1145,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1153,7 +1153,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1161,11 +1161,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -1199,7 +1199,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     consultants: {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -1207,7 +1207,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -1215,7 +1215,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -1225,7 +1225,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1233,7 +1233,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1241,7 +1241,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
@@ -1251,19 +1251,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
           title: 'Local Service Page Architecture',
           description:
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
           slug: 'local-service-page-architecture',
           path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Website + CRM Integration Explained',
-          description:
-            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
-          slug: 'website-crm-integration-explained',
-          path: '/resources/website-crm-integration-explained',
           nodeType: 'resource',
         },
         {
@@ -1279,7 +1279,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'dental-clinics': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1287,25 +1287,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
-            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
-            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1313,7 +1313,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1321,23 +1321,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Auto Repair Missed Call Recovery',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
-          slug: 'auto-repair-missed-call-recovery',
-          path: '/case-studies/auto-repair-missed-call-recovery',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
       resources: [
-        {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
         {
           title: 'Local Service Page Architecture',
           description:
@@ -1354,12 +1346,20 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
       ],
     },
     'driving-schools': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1367,7 +1367,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -1375,7 +1375,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -1385,7 +1385,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1393,7 +1393,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1401,11 +1401,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -1439,7 +1439,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'electrical-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1447,15 +1447,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -1465,7 +1465,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1473,7 +1473,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1481,11 +1481,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -1519,7 +1519,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hair-salons': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1527,7 +1527,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -1535,7 +1535,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -1545,7 +1545,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1553,7 +1553,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1561,11 +1561,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Salon No-Show Reduction System',
+          title: 'Salon Review Automation | 23 to 67 Google Reviews',
           description:
-            'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
-          slug: 'salon-no-show-reduction-system',
-          path: '/case-studies/salon-no-show-reduction-system',
+            'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.',
+          slug: 'salon-review-generation-automation',
+          path: '/case-studies/salon-review-generation-automation',
           nodeType: 'case-study',
         },
       ],
@@ -1579,11 +1579,91 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'home-inspectors': {
+      services: [
+        {
+          title: 'Smart Websites',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'Platform Migration',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study | Manchester',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon Booking Automation | 68% Online Booking Adoption',
+          description:
+            'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
+          slug: 'salon-booking-automation',
+          path: '/case-studies/salon-booking-automation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
           nodeType: 'resource',
         },
         {
@@ -1596,90 +1676,10 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'home-inspectors': {
-      services: [
-        {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
-          description:
-            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
-          description:
-            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Unified Communication System for Service Businesses | MindWP',
-          description:
-            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
-          nodeType: 'service',
-        },
-      ],
-      caseStudies: [
-        {
-          title: 'Beauty Salon Case Study - All Sections Demo',
-          description:
-            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
-          description:
-            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Auto Repair Missed Call Recovery',
-          description:
-            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
-          slug: 'auto-repair-missed-call-recovery',
-          path: '/case-studies/auto-repair-missed-call-recovery',
-          nodeType: 'case-study',
-        },
-      ],
-      resources: [
-        {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-      ],
-    },
     'home-services': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1687,7 +1687,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -1695,7 +1695,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -1705,7 +1705,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1713,7 +1713,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1721,11 +1721,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'HVAC Emergency Lead Routing',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
-          slug: 'hvac-emergency-lead-routing',
-          path: '/case-studies/hvac-emergency-lead-routing',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -1759,15 +1759,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
-          description:
-            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -1775,17 +1767,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1793,7 +1793,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1801,11 +1801,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'HVAC Emergency Lead Routing',
+          title: 'HVAC after-hours call case study: more emergency jobs captured',
           description:
-            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
-          slug: 'hvac-emergency-lead-routing',
-          path: '/case-studies/hvac-emergency-lead-routing',
+            'How a Manchester HVAC company stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
+          slug: 'hvac-after-hours-calls-going-cold',
+          path: '/case-studies/hvac-after-hours-calls-going-cold',
           nodeType: 'case-study',
         },
       ],
@@ -1827,11 +1827,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Lead Handling Example',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -1839,7 +1839,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'landscaping-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1847,7 +1847,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -1855,17 +1855,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Platform Migration',
           description:
-            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1873,7 +1873,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1881,11 +1881,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -1919,7 +1919,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lash-lift-and-extensions': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -1927,7 +1927,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -1935,7 +1935,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -1945,7 +1945,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -1953,7 +1953,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -1961,11 +1961,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Salon No-Show Reduction System',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
-          slug: 'salon-no-show-reduction-system',
-          path: '/case-studies/salon-no-show-reduction-system',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -1999,7 +1999,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'legal-professional-services': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2007,7 +2007,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -2015,7 +2015,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -2025,7 +2025,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2033,7 +2033,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2041,7 +2041,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
@@ -2059,19 +2059,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Sales Pipeline Visibility Framework',
+          title: 'HVAC Review Generation Framework',
           description:
-            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-          slug: 'sales-pipeline-visibility-framework',
-          path: '/resources/sales-pipeline-visibility-framework',
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
           nodeType: 'resource',
         },
         {
-          title: 'Reputation Monitoring Systems',
+          title: 'Automotive Review Generation System',
           description:
-            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-          slug: 'reputation-monitoring-systems',
-          path: '/resources/reputation-monitoring-systems',
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2079,7 +2079,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-appointment-businesses': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2087,7 +2087,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -2095,7 +2095,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -2105,7 +2105,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2113,7 +2113,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2121,11 +2121,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -2159,7 +2159,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'mobile-mechanics': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2167,7 +2167,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -2175,7 +2175,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -2185,7 +2185,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2193,7 +2193,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2201,11 +2201,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Auto Repair Missed Call Recovery',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
-          slug: 'auto-repair-missed-call-recovery',
-          path: '/case-studies/auto-repair-missed-call-recovery',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -2239,7 +2239,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'mortgage-brokers': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -2247,25 +2255,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
-          description:
-            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2273,7 +2273,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2281,11 +2281,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
-          slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-studies/crm-pipeline-visibility-transformation',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -2299,19 +2299,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'CRM Pipeline Setup Guide for Salons',
+          title: 'HVAC Review Generation Framework',
           description:
-            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
-          slug: 'crm-pipeline-setup-guide-for-salons',
-          path: '/resources/crm-pipeline-setup-guide-for-salons',
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
           nodeType: 'resource',
         },
         {
-          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          title: 'Automotive Review Generation System',
           description:
-            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
-          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
-          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2319,7 +2319,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'nail-salons': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2327,7 +2327,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -2335,7 +2335,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -2345,7 +2345,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2353,7 +2353,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2361,11 +2361,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Salon No-Show Reduction System',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
-          slug: 'salon-no-show-reduction-system',
-          path: '/case-studies/salon-no-show-reduction-system',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -2399,7 +2399,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'plumbing-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2407,25 +2407,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2433,7 +2433,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2441,11 +2441,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'HVAC Emergency Lead Routing',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
-          slug: 'hvac-emergency-lead-routing',
-          path: '/case-studies/hvac-emergency-lead-routing',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -2467,11 +2467,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Customer Feedback Loop Framework',
+          title: 'Automotive Review Generation System',
           description:
-            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
-          slug: 'customer-feedback-loop-framework',
-          path: '/resources/customer-feedback-loop-framework',
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2479,7 +2479,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'property-managers': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -2487,7 +2487,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -2495,7 +2495,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -2505,7 +2505,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2513,7 +2513,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2521,7 +2521,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
@@ -2531,6 +2531,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
           title: 'Local Service Page Architecture',
           description:
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
@@ -2539,19 +2547,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'CRM Pipeline Setup Guide for Salons',
+          title: 'Sales Pipeline Visibility Framework',
           description:
-            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
-          slug: 'crm-pipeline-setup-guide-for-salons',
-          path: '/resources/crm-pipeline-setup-guide-for-salons',
-          nodeType: 'resource',
-        },
-        {
-          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
-          description:
-            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
-          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
-          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
+          slug: 'sales-pipeline-visibility-framework',
+          path: '/resources/sales-pipeline-visibility-framework',
           nodeType: 'resource',
         },
       ],
@@ -2559,7 +2559,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'real-estate-property-services': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2567,25 +2567,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'Platform Migration',
           description:
-            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2593,7 +2593,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2601,7 +2601,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
@@ -2639,87 +2639,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     realtors: {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
-          description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
-          description:
-            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
-          description:
-            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
-          nodeType: 'service',
-        },
-      ],
-      caseStudies: [
-        {
-          title: 'Beauty Salon Case Study - All Sections Demo',
-          description:
-            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
-          description:
-            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'CRM Pipeline Visibility Transformation',
-          description:
-            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
-          slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-studies/crm-pipeline-visibility-transformation',
-          nodeType: 'case-study',
-        },
-      ],
-      resources: [
-        {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Visibility Optimization Guide for Realtors',
-          description:
-            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
-          slug: 'local-visibility-optimization-guide-for-realtors',
-          path: '/resources/local-visibility-optimization-guide-for-realtors',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'repair-shops': {
-      services: [
-        {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2727,7 +2647,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -2735,7 +2655,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -2745,7 +2665,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2753,7 +2673,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2761,11 +2681,91 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'repair-shops': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Websites',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Platform Migration',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study | Manchester',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrician local visibility case study: found more often in Google Maps',
+          description:
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -2799,7 +2799,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2807,25 +2807,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
-            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
-            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2833,7 +2833,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2841,11 +2841,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2867,11 +2867,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Missed Call Recovery for Roofing',
+          title: 'Roofing Review Generation System',
           description:
-            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
-          slug: 'missed-call-recovery-for-roofing',
-          path: '/resources/missed-call-recovery-for-roofing',
+            'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
+          slug: 'roofing-review-generation-system',
+          path: '/resources/roofing-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2879,7 +2879,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-law-firms': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2887,7 +2887,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -2895,7 +2895,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -2905,7 +2905,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2913,7 +2913,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -2921,7 +2921,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
@@ -2939,19 +2939,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          title: 'HVAC Review Generation Framework',
           description:
-            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
-          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
           nodeType: 'resource',
         },
         {
-          title: 'Reputation Monitoring Systems',
+          title: 'Automotive Review Generation System',
           description:
-            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-          slug: 'reputation-monitoring-systems',
-          path: '/resources/reputation-monitoring-systems',
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2959,7 +2959,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-med-spas': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -2967,7 +2967,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -2975,7 +2975,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -2985,7 +2985,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -2993,7 +2993,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -3001,11 +3001,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -3019,6 +3019,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
@@ -3026,20 +3034,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
       ],
     },
     'small-private-clinics': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -3047,7 +3047,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -3055,7 +3055,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -3065,7 +3065,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -3073,7 +3073,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -3081,11 +3081,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -3119,7 +3119,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tattoo-studios': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -3127,7 +3127,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -3135,7 +3135,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -3145,7 +3145,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Beauty Salon Case Study - All Sections Demo',
+          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
@@ -3153,7 +3153,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          title: 'Custom Beauty Salon Case Study | Manchester',
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
@@ -3161,11 +3161,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Electrician local visibility case study: found more often in Google Maps',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+          slug: 'electrician-not-showing-up-where-locals-search',
+          path: '/case-studies/electrician-not-showing-up-where-locals-search',
           nodeType: 'case-study',
         },
       ],
@@ -3229,15 +3229,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -3283,7 +3283,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -3337,7 +3337,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -3389,27 +3389,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -3445,7 +3445,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -3497,11 +3497,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -3510,14 +3518,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -3551,27 +3551,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -3605,6 +3605,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
+          description:
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
@@ -3613,19 +3621,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
+          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
           description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
-          description:
-            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
+            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
       ],
@@ -3659,11 +3659,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -3672,14 +3680,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -3713,27 +3713,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
-          description:
-            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -3767,27 +3767,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
-          description:
-            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -3821,11 +3821,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -3834,14 +3842,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -3877,7 +3877,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -3929,27 +3929,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -3983,9 +3983,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
+          description:
+            'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -3996,14 +4004,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -4039,7 +4039,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4053,11 +4053,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4091,11 +4091,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -4104,14 +4112,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -4145,9 +4145,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
+          description:
+            'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4158,14 +4166,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -4199,9 +4199,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -4209,7 +4209,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4255,7 +4255,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4309,17 +4309,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -4328,6 +4320,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4363,7 +4363,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4417,7 +4417,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4443,19 +4443,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': {
       resources: [
         {
-          title: 'Automotive CRM Pipeline for Repair Jobs',
-          description:
-            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-          slug: 'automotive-crm-pipeline-for-repair-jobs',
-          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
-          nodeType: 'resource',
-        },
-        {
           title: 'Lead Response Optimization Checklist for HVAC Businesses',
           description:
             'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
           slug: 'lead-response-optimization-checklist-for-hvac-businesses',
           path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
           nodeType: 'resource',
         },
         {
@@ -4469,27 +4469,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
           description:
-            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'repair-shops',
-          path: '/industries/local-appointment-businesses/repair-shops',
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
           description:
-            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -4505,14 +4505,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
-          description:
-            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
-          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
-          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC CRM Pipeline Structure',
           description:
             'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
@@ -4520,30 +4512,38 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/hvac-crm-pipeline-structure',
           nodeType: 'resource',
         },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4577,9 +4577,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -4587,17 +4587,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4631,27 +4631,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4685,17 +4685,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -4706,6 +4698,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4739,25 +4739,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -4793,19 +4793,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
@@ -4849,15 +4849,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -4903,15 +4903,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -4955,9 +4955,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -4965,7 +4965,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5011,15 +5011,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -5063,19 +5063,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -5119,7 +5119,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5173,7 +5173,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5187,11 +5187,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5225,27 +5225,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
-          description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
+          description:
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5281,17 +5281,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -5300,6 +5292,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5333,25 +5333,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -5389,15 +5389,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -5443,15 +5443,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -5497,7 +5497,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5549,27 +5549,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5605,17 +5605,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -5624,6 +5616,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title:
+            'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
+          description:
+            'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -5657,27 +5658,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5713,26 +5714,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title:
-            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5768,7 +5768,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5820,11 +5820,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -5833,14 +5841,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -5874,17 +5874,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -5895,6 +5887,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5928,19 +5928,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -5984,7 +5984,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -6038,7 +6038,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -6090,27 +6090,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -6144,11 +6144,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -6160,11 +6160,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
           description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
+            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -6198,19 +6198,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -6252,27 +6252,28 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title:
+            'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
+            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
+          description:
+            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
       ],
@@ -6306,27 +6307,28 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title:
+            'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
+            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
+          description:
+            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
       ],
@@ -6360,27 +6362,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -6416,7 +6418,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -6468,11 +6470,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
+          description:
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
@@ -6481,14 +6491,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
-          description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -6524,7 +6526,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -6576,19 +6578,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -6630,9 +6632,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -6640,7 +6642,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -6684,11 +6686,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -6697,14 +6707,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -6738,11 +6740,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -6751,14 +6761,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -6792,28 +6794,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title:
-            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -6847,28 +6848,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title:
-            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -6904,7 +6904,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -6958,7 +6958,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7010,25 +7010,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7064,25 +7064,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7118,6 +7118,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
+          description:
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
@@ -7126,19 +7134,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
+          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
           description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
-          description:
-            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
+            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
       ],
@@ -7172,27 +7172,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7226,25 +7226,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7280,9 +7280,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -7290,15 +7290,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7334,27 +7334,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7390,17 +7390,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -7409,6 +7401,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title:
+            'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
+          description:
+            'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -7442,19 +7443,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -7496,25 +7497,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7550,25 +7551,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7604,25 +7605,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7658,27 +7659,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7714,7 +7715,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7766,25 +7767,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7822,7 +7823,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7848,19 +7849,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'why-slow-lead-response-is-killing-automotive-businesses': {
       resources: [
         {
-          title: 'Automotive CRM Pipeline for Repair Jobs',
-          description:
-            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-          slug: 'automotive-crm-pipeline-for-repair-jobs',
-          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
-          nodeType: 'resource',
-        },
-        {
           title: 'Lead Response Optimization Checklist for HVAC Businesses',
           description:
             'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
           slug: 'lead-response-optimization-checklist-for-hvac-businesses',
           path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
           nodeType: 'resource',
         },
         {
@@ -7874,27 +7875,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
           description:
-            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'repair-shops',
-          path: '/industries/local-appointment-businesses/repair-shops',
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
           description:
-            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7928,27 +7929,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
           description:
-            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'repair-shops',
-          path: '/industries/local-appointment-businesses/repair-shops',
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
           description:
-            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7958,7 +7959,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'authority-signals-for-local-search': {
       services: [
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Local SEO Authority',
           description:
             'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
@@ -7970,7 +7971,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -7996,7 +7997,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-repair-lead-handling-example': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -8004,7 +8005,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -8012,7 +8013,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -8022,25 +8023,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -8050,7 +8051,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-reply-funnel': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -8058,7 +8059,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -8066,7 +8067,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -8078,15 +8079,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -8104,7 +8105,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'automotive-crm-pipeline-for-repair-jobs': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8112,7 +8113,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8122,11 +8123,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -8137,20 +8146,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'automotive-review-generation-system': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -8162,7 +8163,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8188,7 +8189,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'automotive-service-reminder-automation': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8196,7 +8197,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8206,11 +8207,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -8221,20 +8230,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'booking-systems-inside-website-infrastructure': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -8242,7 +8243,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -8250,7 +8251,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -8260,11 +8261,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
@@ -8276,11 +8277,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
+          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
           description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
       ],
@@ -8288,7 +8289,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'building-revenue-visibility-through-crm-tracking': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8296,7 +8297,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8306,11 +8307,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -8319,14 +8328,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -8334,7 +8335,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'client-reactivation-systems': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8342,7 +8343,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8352,6 +8353,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
@@ -8359,28 +8376,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
-          description:
-            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'conversion-architecture-for-service-websites': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -8388,7 +8389,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page | MindWP',
+          title: 'Smart Websites',
           description:
             'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
           slug: 'service-pages-vs-one-generic-services-page',
@@ -8396,7 +8397,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -8408,7 +8409,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8434,7 +8435,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'conversion-tracking-for-service-businesses': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -8442,7 +8443,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -8450,7 +8451,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -8462,7 +8463,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8488,7 +8489,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-pipeline-architecture': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8496,7 +8497,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8506,11 +8507,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -8519,14 +8528,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -8534,7 +8535,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-pipeline-automation': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8542,7 +8543,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8552,11 +8553,65 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscapers — Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
+          description:
+            'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-setup-guide-for-plumbing-businesses': {
+      services: [
+        {
+          title: 'CRM Setup',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -8567,66 +8622,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
-      ],
-    },
-    'crm-pipeline-setup-guide-for-plumbing-businesses': {
-      services: [
-        {
-          title: 'CRM Setup for Service Businesses | MindWP',
-          description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
-          description:
-            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
-          nodeType: 'service',
-        },
-      ],
-      industries: [
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
-          description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
-          description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'crm-pipeline-setup-guide-for-salons': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8634,7 +8635,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8644,27 +8645,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -8672,7 +8673,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'customer-feedback-loop-framework': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -8684,7 +8685,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8698,11 +8699,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -8710,7 +8711,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'designing-websites-that-support-crm-systems': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -8718,7 +8719,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page | MindWP',
+          title: 'Smart Websites',
           description:
             'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
           slug: 'service-pages-vs-one-generic-services-page',
@@ -8726,7 +8727,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -8738,7 +8739,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8764,7 +8765,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'google-business-profile-system-architecture': {
       services: [
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Local SEO Authority',
           description:
             'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
@@ -8776,7 +8777,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8802,7 +8803,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'how-review-automation-improves-local-authority': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -8814,7 +8815,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8840,7 +8841,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'how-smart-website-systems-work': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -8848,7 +8849,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -8856,7 +8857,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -8868,7 +8869,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -8894,7 +8895,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-crm-pipeline-structure': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8902,7 +8903,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -8912,11 +8913,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -8927,20 +8936,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'hvac-emergency-call-handling-system': {
       services: [
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -8948,7 +8949,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -8956,7 +8957,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -8966,9 +8967,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -8976,99 +8977,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
-          nodeType: 'industry-detail',
-        },
-      ],
-    },
-    'hvac-lead-handling-example': {
-      services: [
-        {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
-          description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
-          description:
-            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Unified Communication System for Service Businesses | MindWP',
-          description:
-            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
-          nodeType: 'service',
-        },
-      ],
-      industries: [
-        {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
-          description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
-          description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-      ],
-    },
-    'hvac-review-generation-framework': {
-      services: [
-        {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
-          description:
-            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-      ],
-      industries: [
-        {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9083,10 +8992,10 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'lead-automation-framework': {
+    'hvac-lead-handling-example': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9094,7 +9003,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9102,7 +9011,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9112,25 +9021,117 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-review-generation-framework': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
+          description:
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-automation-framework': {
+      services: [
+        {
+          title: 'AI Lead Handling',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
+          description:
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9140,7 +9141,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-qualification-framework': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9148,7 +9149,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9156,7 +9157,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9168,15 +9169,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9194,7 +9195,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-response-optimization-checklist-for-hvac-businesses': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -9202,7 +9203,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -9212,27 +9213,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
           description:
-            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'repair-shops',
-          path: '/industries/local-appointment-businesses/repair-shops',
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
           description:
-            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9240,7 +9241,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-response-time-framework': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9248,7 +9249,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9256,7 +9257,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9268,15 +9269,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9294,7 +9295,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-routing-models-for-service-companies': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9302,7 +9303,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9310,7 +9311,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9322,15 +9323,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9348,7 +9349,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-seo-vs-website-optimization': {
       services: [
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Local SEO Authority',
           description:
             'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
@@ -9360,7 +9361,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9386,7 +9387,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-service-page-architecture': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -9394,7 +9395,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page | MindWP',
+          title: 'Smart Websites',
           description:
             'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
           slug: 'service-pages-vs-one-generic-services-page',
@@ -9402,7 +9403,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Local SEO Authority',
           description:
             'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
@@ -9414,7 +9415,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -9428,11 +9429,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9440,7 +9441,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-visibility-framework': {
       services: [
         {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          title: 'Local SEO Authority',
           description:
             'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
@@ -9452,17 +9453,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -9471,6 +9464,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9478,45 +9479,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-visibility-optimization-guide-for-hvac-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
-          description:
-            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-      ],
-      industries: [
-        {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
-          nodeType: 'industry-detail',
-        },
-      ],
-    },
-    'local-visibility-optimization-guide-for-realtors': {
-      services: [
-        {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -9528,17 +9491,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
-          description:
-            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -9549,12 +9504,59 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
+        {
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
+          description:
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-visibility-optimization-guide-for-realtors': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
+          description:
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title:
+            'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
+          description:
+            'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
       ],
     },
     'missed-call-recovery-for-auto-repair': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9562,7 +9564,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9570,7 +9572,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9580,25 +9582,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9608,7 +9610,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-hvac': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9616,7 +9618,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9624,7 +9626,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9634,9 +9636,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -9644,15 +9646,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9662,7 +9664,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-roofing': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9670,7 +9672,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9678,7 +9680,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9688,25 +9690,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9716,7 +9718,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-salons': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9724,7 +9726,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9732,7 +9734,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9742,25 +9744,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9770,7 +9772,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-system': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9778,7 +9780,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9788,25 +9790,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9816,7 +9818,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'multi-channel-lead-capture-systems': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -9824,7 +9826,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9832,7 +9834,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9844,15 +9846,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9870,7 +9872,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'reducing-salon-no-shows-with-automation': {
       services: [
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -9878,7 +9880,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -9886,7 +9888,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -9896,27 +9898,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9924,7 +9926,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'reputation-monitoring-systems': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -9936,26 +9938,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title:
-            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9963,7 +9964,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'responding-to-negative-reviews-systematically': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -9975,7 +9976,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10001,7 +10002,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-automation-setup-guide-for-roofing-companies': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -10011,19 +10012,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -10039,7 +10040,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-automation-setup-guide-for-salons': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -10051,7 +10052,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10077,7 +10078,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-generation-system': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -10089,7 +10090,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10115,7 +10116,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-crm-pipeline-structure': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -10123,7 +10124,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -10133,11 +10134,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -10148,20 +10157,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'roofing-estimate-follow-up-workflow': {
       services: [
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -10169,7 +10170,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -10177,7 +10178,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -10187,11 +10188,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -10203,11 +10204,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
           description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
+            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -10215,7 +10216,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-lead-handling-example': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -10223,7 +10224,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -10231,7 +10232,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -10241,25 +10242,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -10269,7 +10270,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-review-generation-system': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -10279,19 +10280,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -10307,7 +10308,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'sales-pipeline-visibility-framework': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -10315,7 +10316,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -10325,27 +10326,28 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
+          title:
+            'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
           description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
+            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
+          description:
+            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
       ],
@@ -10353,7 +10355,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-lead-handling-example': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -10361,7 +10363,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -10369,7 +10371,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -10379,25 +10381,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -10407,7 +10409,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-review-generation-framework': {
       services: [
         {
-          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          title: 'Reputation & Review Systems',
           description:
             "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
@@ -10419,7 +10421,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10445,7 +10447,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'service-business-follow-up-automation-guide': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses | MindWP',
+          title: 'AI Lead Handling',
           description:
             "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
@@ -10453,7 +10455,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          title: 'Missed Call Recovery',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
@@ -10461,7 +10463,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses | MindWP',
+          title: 'Unified Communication System',
           description:
             'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
@@ -10471,11 +10473,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
+          description:
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
@@ -10486,20 +10496,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
-          description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'service-page-architecture-that-converts': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -10507,7 +10509,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          title: 'Website Redesign',
           description:
             'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
@@ -10515,7 +10517,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -10527,7 +10529,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10553,7 +10555,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tracking-customer-lifetime-value-using-crm': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -10561,7 +10563,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -10571,11 +10573,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -10586,20 +10596,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'tracking-salon-client-lifetime-value': {
       services: [
         {
-          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          title: 'Lead Reactivation System',
           description:
             'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
@@ -10607,7 +10609,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Layer for Service Businesses | MindWP',
+          title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
@@ -10615,7 +10617,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          title: 'Conversion Funnel System',
           description:
             'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
           slug: 'conversion-funnel-system-vs-landing-page-development',
@@ -10625,11 +10627,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -10640,20 +10650,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
-          description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'website-crm-integration-explained': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'CRM Setup',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
@@ -10661,7 +10663,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'CRM Setup',
           description:
             'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
@@ -10671,6 +10673,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
+          description:
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
             'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
@@ -10678,29 +10696,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
-        {
-          title:
-            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
-          nodeType: 'industry-detail',
-        },
       ],
     },
     'what-is-a-systems-first-website': {
       services: [
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Smart Websites',
           description:
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
@@ -10708,7 +10709,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Development for Service Businesses | MindWP',
+          title: 'WordPress Development',
           description:
             "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
           slug: 'wordpress-development',
@@ -10716,7 +10717,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Platform Migration',
           description:
             'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
@@ -10728,7 +10729,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -10756,27 +10757,28 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'appointment-business-booking-automation': {
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
+          title:
+            'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients | MindWP',
           description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'For dental clinics where the recall list is long and treatment plans quietly stall. We put two-touch recall, plan follow-up, and warmer first replies in place so the chair fills from the patients you already have.',
+          slug: 'dental-clinics',
+          path: '/industries/local-appointment-businesses/dental-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -10820,20 +10822,250 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'auto-repair-missed-call-recovery': {
+    'automotive-service-reminder-automation': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'beauty-salon-online-booking-local-seo-manchester-all-sections': {
       industries: [
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
+          description:
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'beauty-salon-online-booking-local-seo-manchester-custom': {
+      industries: [
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
+          description:
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
+          description:
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'crm-pipeline-visibility-transformation': {
+      industries: [
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title:
+            'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
+          description:
+            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
+          description:
+            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Roofing CRM Pipeline Structure',
+          description:
+            'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
+          slug: 'roofing-crm-pipeline-structure',
+          path: '/resources/roofing-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Architecture',
+          description:
+            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+          slug: 'crm-pipeline-architecture',
+          path: '/resources/crm-pipeline-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
+          description:
+            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
+          slug: 'building-revenue-visibility-through-crm-tracking',
+          path: '/resources/building-revenue-visibility-through-crm-tracking',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'electrician-not-showing-up-where-locals-search': {
+      industries: [
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
+          description:
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
+          description:
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Visibility Framework',
+          description:
+            'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
+          slug: 'local-visibility-framework',
+          path: '/resources/local-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'garage-morning-rush-missed-calls': {
+      industries: [
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
+          description:
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -10874,187 +11106,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'automotive-service-reminder-automation': {
-      industries: [],
-      resources: [
-        {
-          title: 'Tracking Salon Client Lifetime Value',
-          description:
-            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-          slug: 'tracking-salon-client-lifetime-value',
-          path: '/resources/tracking-salon-client-lifetime-value',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'beauty-salon-online-booking-local-seo-manchester-all-sections': {
+    'hvac-after-hours-calls-going-cold': {
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
-          description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
-          description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
-          nodeType: 'industry-detail',
-        },
-      ],
-      resources: [
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'beauty-salon-online-booking-local-seo-manchester-custom': {
-      industries: [
-        {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
-          description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
-          description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
-          description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
-          nodeType: 'industry-detail',
-        },
-      ],
-      resources: [
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'crm-pipeline-visibility-transformation': {
-      industries: [
-        {
-          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
-          description:
-            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'mortgage-brokers',
-          path: '/industries/real-estate-property-services/mortgage-brokers',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
-          description:
-            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
-          description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
-          nodeType: 'industry-detail',
-        },
-      ],
-      resources: [
-        {
-          title: 'Roofing CRM Pipeline Structure',
-          description:
-            'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
-          slug: 'roofing-crm-pipeline-structure',
-          path: '/resources/roofing-crm-pipeline-structure',
-          nodeType: 'resource',
-        },
-        {
-          title: 'CRM Pipeline Architecture',
-          description:
-            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
-          slug: 'crm-pipeline-architecture',
-          path: '/resources/crm-pipeline-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Building Revenue Visibility Through CRM Tracking Guide',
-          description:
-            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
-          slug: 'building-revenue-visibility-through-crm-tracking',
-          path: '/resources/building-revenue-visibility-through-crm-tracking',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'hvac-emergency-lead-routing': {
-      industries: [
-        {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -11062,15 +11119,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -11119,9 +11176,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-seasonal-lead-surge-handling': {
       industries: [
         {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
@@ -11129,7 +11186,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -11170,43 +11227,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'law-firm-client-intake-automation': {
-      industries: [],
-      resources: [
-        {
-          title: 'Tracking Salon Client Lifetime Value',
-          description:
-            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-          slug: 'tracking-salon-client-lifetime-value',
-          path: '/resources/tracking-salon-client-lifetime-value',
-          nodeType: 'resource',
-        },
-      ],
-    },
     'law-firm-consultation-booking-system': {
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
+          title:
+            'Small Law Firms — Lower The Barrier To The First Call, Without Losing Trust | MindWP',
           description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'For small law firms where worried clients hesitate to reach out and half-typed enquiries quietly disappear. We help make the first step small, the first reply warm, and the consultation easy to book.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
       ],
@@ -11237,20 +11282,33 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'local-authority-system-impact': {
+    'law-firm-intake-stalled-after-first-enquiry': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'plumbing-website-looked-fine-but-underperformed': {
       industries: [
         {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
+          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary | MindWP',
           description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
@@ -11266,27 +11324,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Visibility Framework',
+          title: 'How Smart Website Systems Work',
           description:
-            'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
-          slug: 'local-visibility-framework',
-          path: '/resources/local-visibility-framework',
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
           nodeType: 'resource',
         },
         {
-          title: 'Google Business Profile System Architecture Guide',
+          title: 'Conversion Architecture for Service Websites',
           description:
-            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
-          slug: 'google-business-profile-system-architecture',
-          path: '/resources/google-business-profile-system-architecture',
+            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+          slug: 'conversion-architecture-for-service-websites',
+          path: '/resources/conversion-architecture-for-service-websites',
           nodeType: 'resource',
         },
         {
-          title: 'Local SEO vs Website Optimisation',
+          title: 'Conversion Tracking for Service Businesses Guide',
           description:
-            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
-          slug: 'local-seo-vs-website-optimization',
-          path: '/resources/local-seo-vs-website-optimization',
+            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
+          slug: 'conversion-tracking-for-service-businesses',
+          path: '/resources/conversion-tracking-for-service-businesses',
           nodeType: 'resource',
         },
       ],
@@ -11296,15 +11354,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
           description:
-            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -11358,7 +11416,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'roofing-estimate-follow-up-automation': {
+    'roofing-quotes-not-being-followed-up': {
       industries: [],
       resources: [
         {
@@ -11371,31 +11429,84 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'roofing-storm-calls-overwhelmed-the-team': {
+      industries: [
+        {
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
+          description:
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox | MindWP',
+          description:
+            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
+          description:
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
     'roofing-website-rebuild-with-crm': {
       industries: [
         {
-          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title:
-            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
+          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
           description:
-            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -11429,11 +11540,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-booking-automation': {
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
@@ -11445,11 +11556,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
+          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
           description:
-            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
       ],
@@ -11483,27 +11594,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-no-show-reduction-system': {
       industries: [
         {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
+          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting | MindWP',
           description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
+          description:
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
+          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads | MindWP',
           description:
-            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
-          description:
-            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -11539,17 +11650,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
-          description:
-            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
@@ -11558,6 +11661,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
+          description:
+            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
       ],
@@ -11584,114 +11695,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
           slug: 'responding-to-negative-reviews-systematically',
           path: '/resources/responding-to-negative-reviews-systematically',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'smart-website-infrastructure-implementation': {
-      industries: [
-        {
-          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
-          description:
-            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-      ],
-      resources: [
-        {
-          title: 'How Smart Website Systems Work',
-          description:
-            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
-          slug: 'how-smart-website-systems-work',
-          path: '/resources/how-smart-website-systems-work',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Conversion Architecture for Service Websites',
-          description:
-            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
-          slug: 'conversion-architecture-for-service-websites',
-          path: '/resources/conversion-architecture-for-service-websites',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Conversion Tracking for Service Businesses Guide',
-          description:
-            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
-          slug: 'conversion-tracking-for-service-businesses',
-          path: '/resources/conversion-tracking-for-service-businesses',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'storm-season-lead-handling-system': {
-      industries: [
-        {
-          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
-          description:
-            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail | MindWP',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT customers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump | MindWP',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-      ],
-      resources: [
-        {
-          title: 'Missed Call Recovery for Roofing',
-          description:
-            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
-          slug: 'missed-call-recovery-for-roofing',
-          path: '/resources/missed-call-recovery-for-roofing',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
-          description:
-            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
-          slug: 'auto-reply-funnel',
-          path: '/resources/auto-reply-funnel',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Lead Response Time Framework',
-          description:
-            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
-          slug: 'lead-response-time-framework',
-          path: '/resources/lead-response-time-framework',
           nodeType: 'resource',
         },
       ],
@@ -12465,10 +12468,6 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
-  'auto-repair-missed-call-recovery': {
-    conversionGoal: 'consultation',
-    conversionPriority: 70,
-  },
   'beauty-salon-online-booking-local-seo-manchester-all-sections': {
     conversionGoal: 'consultation',
     conversionPriority: 70,
@@ -12481,7 +12480,15 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
-  'hvac-emergency-lead-routing': {
+  'electrician-not-showing-up-where-locals-search': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'garage-morning-rush-missed-calls': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'hvac-after-hours-calls-going-cold': {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
@@ -12493,15 +12500,15 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
-  'law-firm-client-intake-automation': {
-    conversionGoal: 'consultation',
-    conversionPriority: 70,
-  },
   'law-firm-consultation-booking-system': {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
-  'local-authority-system-impact': {
+  'law-firm-intake-stalled-after-first-enquiry': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'plumbing-website-looked-fine-but-underperformed': {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
@@ -12513,7 +12520,11 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
-  'roofing-estimate-follow-up-automation': {
+  'roofing-quotes-not-being-followed-up': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'roofing-storm-calls-overwhelmed-the-team': {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },
@@ -12530,14 +12541,6 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 70,
   },
   'salon-review-generation-automation': {
-    conversionGoal: 'consultation',
-    conversionPriority: 70,
-  },
-  'smart-website-infrastructure-implementation': {
-    conversionGoal: 'consultation',
-    conversionPriority: 70,
-  },
-  'storm-season-lead-handling-system': {
     conversionGoal: 'consultation',
     conversionPriority: 70,
   },

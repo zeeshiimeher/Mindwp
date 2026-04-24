@@ -1,5 +1,6 @@
 import { Inbox, Mail, MessageSquare, Phone, Users } from 'lucide-react';
 
+import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -23,7 +24,7 @@ interface CRMRendererProps {
 
 export default function CRMRenderer({ data }: CRMRendererProps) {
   const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq } = sections;
+  const { process, benefits, useCases, capabilities, faq, explore } = sections;
   const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   const heroVisual = (
@@ -150,6 +151,15 @@ export default function CRMRenderer({ data }: CRMRendererProps) {
           />
 
           <FAQSection badge={faq.badge} title={faq.title} faqs={faq.items} cssPrefix='crm-faq' />
+
+          <ExploreCardsSection
+            badge={explore.badge}
+            title={explore.title}
+            description={explore.description}
+            cards={explore.cards}
+            cssPrefix='crm-explore'
+            backgroundColor='bg-alt'
+          />
 
           <SmartCTA
             system={primarySystem}

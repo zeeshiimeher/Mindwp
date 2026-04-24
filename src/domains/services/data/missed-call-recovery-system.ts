@@ -6,18 +6,18 @@ import type { ServicePageData } from '../types';
 const slug = 'missed-call-recovery-system';
 
 export const missedCallRecoverySystemPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Missed Call Recovery for Service Businesses | MindWP',
     description:
       'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
   }),
-    systems: ['ai-lead-handling'],
-    topics: ['missed-calls', 'lead-response-time'],
-    badge: "Missed Call Recovery",
-    category: 'Lead Protection Systems',
-    hero: {
+  systems: ['ai-lead-handling'],
+  topics: ['missed-calls', 'lead-response-time'],
+  badge: "Missed Call Recovery",
+  category: 'Lead Protection Systems',
+  hero: {
     badge: 'Missed Call Recovery',
     title: 'The Phone Rang. Nobody Was Free.',
     description:
@@ -26,7 +26,7 @@ export const missedCallRecoverySystemPage = {
     cssPrefix: 'missed-call-recovery-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
-    sections: {
+  sections: {
     foundation: {
       badge: 'What actually happens',
       title: "A missed call isn't a missed call. It's a job that went somewhere else.",
@@ -78,6 +78,85 @@ export const missedCallRecoverySystemPage = {
         iconType: 'secondary' as const,
       },
     ],
+    comparison: {
+      header: {
+        title: 'What happens without recovery vs with it',
+        description:
+          'Most businesses treat missed calls as bad luck. The difference is whether those callers come back or not.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'No recovery in place',
+          items: [
+            'Caller gets silence. Rings the next one. Gone before anyone knows they tried.',
+            'After-hours calls vanish. Monday morning — nothing. No names, no numbers.',
+            'Callbacks happen when someone remembers. Hours later. Sometimes days. Cold by then.',
+            'No way to know how many calls were missed or what they were worth.',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Recovery running',
+          items: [
+            'Text goes out within seconds. Caller knows they were heard.',
+            'After-hours calls caught and queued. First job next morning.',
+            'Name, number, what they need — captured. Callback starts warm.',
+            "Every missed call tracked. You see what came back and what didn't.",
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What changed for a plumbing company',
+        description:
+          'Three-man operation. Busy. Phone ringing constantly. Nobody free to pick it up half the time.',
+      },
+      cards: [
+        {
+          title: 'Before: ringing out, every day',
+          description:
+            'Fifteen to twenty missed calls a week. All three on jobs. Phone ringing in the van, on the counter, in a pocket nobody could reach.',
+          points: [
+            "Voicemail. Most didn't leave a message. Tried the next plumber.",
+            'Weekend emergencies — burst pipes, boilers — gone before Monday. Someone else already there.',
+            "The owner knew he was losing work. Couldn't say how much. Just a feeling.",
+          ],
+        },
+        {
+          title: 'What we set up: text-back with detail capture',
+          description:
+            'Every missed call triggered a text within seconds. Caller could reply with what they needed. Details landed in a queue the team checked between jobs.',
+          points: [
+            'Missed call fires a text. Caller knows the business exists.',
+            'Reply captures the job — leak, boiler, blocked drain — and urgency. Queue fills itself.',
+            'Team sees the callback queue in priority order instead of working from memory.',
+          ],
+          featured: true,
+        },
+        {
+          title: "After: jobs recovered that would've gone elsewhere",
+          description:
+            "First month, eleven jobs came back that would've gone. Three were emergencies. Rest were quotes that converted within a week.",
+          points: [
+            'Eleven jobs. Three emergencies. The rest were quote requests that actually closed.',
+            'Weekends stopped being a black hole. Monday had a list.',
+            'Owner could finally see what was coming in, what was missed, and what happened after. First time he had that.',
+          ],
+        },
+        {
+          title: 'What changed operationally after that first month',
+          description:
+            'The team stopped treating missed calls like bad luck and started working from a visible queue with urgency and callback context attached.',
+          points: [
+            'Callback priority became obvious instead of whoever remembered first.',
+            'Urgent work surfaced separately from routine quote requests.',
+            'Recovered call value became measurable instead of a guess.',
+          ],
+        },
+      ],
+    },
     workflowExamples: {
       badge: 'What recovery looks like',
       title: 'Three situations. What happens when calls get caught.',
@@ -212,85 +291,6 @@ export const missedCallRecoverySystemPage = {
         },
       ],
     },
-    comparison: {
-      header: {
-        title: 'What happens without recovery vs with it',
-        description:
-          'Most businesses treat missed calls as bad luck. The difference is whether those callers come back or not.',
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'No recovery in place',
-          items: [
-            'Caller gets silence. Rings the next one. Gone before anyone knows they tried.',
-            'After-hours calls vanish. Monday morning — nothing. No names, no numbers.',
-            'Callbacks happen when someone remembers. Hours later. Sometimes days. Cold by then.',
-            'No way to know how many calls were missed or what they were worth.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Recovery running',
-          items: [
-            'Text goes out within seconds. Caller knows they were heard.',
-            'After-hours calls caught and queued. First job next morning.',
-            'Name, number, what they need — captured. Callback starts warm.',
-            "Every missed call tracked. You see what came back and what didn't.",
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What changed for a plumbing company',
-        description:
-          'Three-man operation. Busy. Phone ringing constantly. Nobody free to pick it up half the time.',
-      },
-      cards: [
-        {
-          title: 'Before: ringing out, every day',
-          description:
-            'Fifteen to twenty missed calls a week. All three on jobs. Phone ringing in the van, on the counter, in a pocket nobody could reach.',
-          points: [
-            "Voicemail. Most didn't leave a message. Tried the next plumber.",
-            'Weekend emergencies — burst pipes, boilers — gone before Monday. Someone else already there.',
-            "The owner knew he was losing work. Couldn't say how much. Just a feeling.",
-          ],
-        },
-        {
-          title: 'What we set up: text-back with detail capture',
-          description:
-            'Every missed call triggered a text within seconds. Caller could reply with what they needed. Details landed in a queue the team checked between jobs.',
-          points: [
-            'Missed call fires a text. Caller knows the business exists.',
-            'Reply captures the job — leak, boiler, blocked drain — and urgency. Queue fills itself.',
-            'Team sees the callback queue in priority order instead of working from memory.',
-          ],
-          featured: true,
-        },
-        {
-          title: "After: jobs recovered that would've gone elsewhere",
-          description:
-            "First month, eleven jobs came back that would've gone. Three were emergencies. Rest were quotes that converted within a week.",
-          points: [
-            'Eleven jobs. Three emergencies. The rest were quote requests that actually closed.',
-            'Weekends stopped being a black hole. Monday had a list.',
-            'Owner could finally see what was coming in, what was missed, and what happened after. First time he had that.',
-          ],
-        },
-        {
-          title: 'What changed operationally after that first month',
-          description:
-            'The team stopped treating missed calls like bad luck and started working from a visible queue with urgency and callback context attached.',
-          points: [
-            'Callback priority became obvious instead of whoever remembered first.',
-            'Urgent work surfaced separately from routine quote requests.',
-            'Recovered call value became measurable instead of a guess.',
-          ],
-        },
-      ],
-    },
     faqSection: {
       badge: 'FAQ',
       title: 'Questions about missed call recovery',
@@ -320,12 +320,12 @@ export const missedCallRecoverySystemPage = {
       cssPrefix: 'missed-call-recovery-faq',
     },
   },
-    inlineCta: {
+  inlineCta: {
     title: 'Want to see where missed-call leakage is actually happening first?',
     description:
       'We look at when calls are missed, what callers hear back, and which enquiries are most likely to disappear before someone follows up so you can see where recovery needs to start.',
   },
-    cta: {
+  cta: {
     title: 'Get a clear missed-call recovery priority before you change the stack',
     description:
       'We review current call handling, response delay, and after-hours gaps so you leave with the highest-risk missed-call points, the first recovery fixes to make, and whether a larger communication system is actually needed.',

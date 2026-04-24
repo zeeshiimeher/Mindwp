@@ -52,4 +52,18 @@ describe('system simulation: system full coverage', () => {
             )
         ).toBe(false);
     });
+
+    test('latest validation snapshot only uses pass, fail, or cached execution states', () => {
+        const validationResults = readJson('reports/validation-results.json');
+
+        for (const validator of validationResults.data.validators as Array<{
+            executionStatus?: string;
+            reportMissing?: boolean;
+            reportFile?: string;
+        }>) {
+            expect(['PASS', 'FAIL', 'CACHED']).toContain(validator.executionStatus);
+            expect(validator.reportMissing).toBe(false);
+            expect(typeof validator.reportFile).toBe('string');
+        }
+    });
 });

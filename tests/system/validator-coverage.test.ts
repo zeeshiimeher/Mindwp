@@ -38,4 +38,27 @@ describe('system simulation: validator coverage', () => {
             expect(validatorNames.has(name), `Missing CTA validator ${name}`).toBe(true);
         }
     });
+
+    test('render alignment and system topic integrity stay as blocking manifest validators', () => {
+        const validators = getValidatorDefinitions();
+        const validatorMap = new Map(validators.map(validator => [validator.name, validator]));
+
+        expect(validatorMap.get('validate-render-alignment')).toMatchObject({
+            blocking: true,
+            reportFile: 'render-alignment-report.json',
+        });
+        expect(validatorMap.get('validate-render-alignment')?.args).toContain('--report-json');
+
+        expect(validatorMap.get('validate-system-topic-integrity')).toMatchObject({
+            blocking: true,
+            reportFile: 'system-topic-integrity-report.json',
+        });
+        expect(validatorMap.get('validate-system-topic-integrity')?.args).toContain('--report-json');
+    });
+
+    test('validator report files remain unique across the full manifest', () => {
+        const reportFiles = getValidatorDefinitions().map(validator => validator.reportFile);
+
+        expect(new Set(reportFiles).size).toBe(reportFiles.length);
+    });
 });

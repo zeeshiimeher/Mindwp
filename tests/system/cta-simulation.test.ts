@@ -50,10 +50,31 @@ describe('system simulation: CTA lock', () => {
         expect(APPROVED_CTA_LABELS).toContain(action.label);
     });
 
+    test('primary CTA resolution fails loud when page identity is incomplete', () => {
+        expect(() =>
+            resolvePrimaryCtaAction({
+                system: 'smart-website-systems',
+                slug: 'smart-website-systems',
+            } as never)
+        ).toThrow('resolvePrimaryCtaAction requires pageType or sourceType.');
+    });
+
+    test('global primary CTA stays on the default approved label even for comparison intent', () => {
+        const action = resolveGlobalPrimaryCtaAction({
+            pageType: 'feature',
+            intent: 'comparison',
+        });
+
+        expect(action.label).toBe('Start a Conversation');
+        expect(APPROVED_CTA_LABELS).toContain(action.label);
+        expect(action.href.startsWith('/contact')).toBe(true);
+    });
+
     test('SmartCTA does not contain implicit secondary CTA resolution', () => {
         const source = fs.readFileSync(smartCtaPath, 'utf8');
 
         expect(source.includes('resolveSecondaryCta(')).toBe(false);
         expect(source.includes('secondaryAction && <Button')).toBe(false);
+        expect(source.includes('Discuss Your Project')).toBe(false);
     });
 });

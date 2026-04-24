@@ -15,9 +15,9 @@ interface ExploreCardItem {
   description: string;
   href: string;
   /** Preferred: a named variant (e.g. "blue", "purple"). */
-  gradient: string;
+  gradient?: string;
   /** Preferred: a named variant (e.g. "blue", "purple"). */
-  iconBg: string;
+  iconBg?: string;
 }
 
 interface ExploreCardsSectionProps {

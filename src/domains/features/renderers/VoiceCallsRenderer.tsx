@@ -1,6 +1,7 @@
 import { BrainCircuit, CheckCircle2, Phone, PhoneCall } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -23,7 +24,7 @@ interface VoiceCallsRendererProps {
 
 export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
   const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq } = sections;
+  const { process, benefits, useCases, capabilities, faq, explore } = sections;
   const testimonial = sections.testimonial;
   const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
@@ -143,6 +144,15 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
             description={faq.description}
             faqs={faq.items}
             cssPrefix='voice-ai-faq'
+          />
+
+          <ExploreCardsSection
+            badge={explore.badge}
+            title={explore.title}
+            description={explore.description}
+            cards={explore.cards}
+            cssPrefix='voice-ai-explore'
+            backgroundColor='bg-base'
           />
 
           <SectionWrapper className='voice-ai-testimonial' background='bg-gradient-surface-muted'>

@@ -1,6 +1,7 @@
 import { Star, TrendingUp } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -83,7 +84,7 @@ interface ReputationRendererProps {
 
 export default function ReputationRenderer({ data }: ReputationRendererProps) {
   const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq } = sections;
+  const { process, benefits, useCases, capabilities, faq, explore } = sections;
   const primarySystem = data.systems[0] ?? 'smart-website-systems';
   const testimonials = sections.testimonials;
 
@@ -152,6 +153,23 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
             backgroundColor='bg-base'
           />
 
+          <FAQSection
+            badge={faq.badge}
+            title={faq.title}
+            description={faq.description}
+            faqs={faq.items}
+            cssPrefix='reputation-faq'
+          />
+
+          <ExploreCardsSection
+            badge={explore.badge}
+            title={explore.title}
+            description={explore.description}
+            cards={explore.cards}
+            cssPrefix='reputation-explore'
+            backgroundColor='bg-alt'
+          />
+
           <SectionWrapper>
             <div className='text-center mb-12'>
               <Badge variant='primary' cssPrefix='mb-4'>
@@ -174,14 +192,6 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
               ))}
             </div>
           </SectionWrapper>
-
-          <FAQSection
-            badge={faq.badge}
-            title={faq.title}
-            description={faq.description}
-            faqs={faq.items}
-            cssPrefix='reputation-faq'
-          />
 
           <SmartCTA
             system={primarySystem}

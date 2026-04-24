@@ -643,7 +643,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Contact.tsx",
     "representativePageUrl": "/contact",
-    "usageCount": 51,
+    "usageCount": 50,
     "composedComponents": [],
     "props": [
       {
@@ -781,7 +781,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
     "representativePageUrl": "/resources/[slug]",
-    "usageCount": 70,
+    "usageCount": 71,
     "composedComponents": [],
     "props": [
       {
@@ -13314,7 +13314,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "results",
-        "type": "{ metric: string; before: string; after: string; improvement: string; description: string; }[]",
+        "type": "{ metric?: string; before?: string; after?: string; improvement?: string; title?: string; description: string; }[]",
         "optional": false,
         "description": ""
       }
@@ -13835,6 +13835,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "allowSecondaryCTA",
+        "type": "true | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "badge",
         "type": "string | undefined",
         "optional": true,
@@ -14119,7 +14125,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/industries/[...slug]/page.tsx",
     "representativePageUrl": "/industries/[...slug]",
-    "usageCount": 2,
+    "usageCount": 9,
     "composedComponents": [],
     "props": [
       {
@@ -14341,7 +14347,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/features/[...slug]/page.tsx",
     "representativePageUrl": "/features/[...slug]",
-    "usageCount": 6,
+    "usageCount": 7,
     "composedComponents": [],
     "props": [
       {
@@ -14706,7 +14712,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
         "optional": false,
         "description": "SmartCTA ownership context for page hero CTAs"
       },
@@ -15697,9 +15703,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/industries/IndustryCaseStudiesSection.tsx",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "",
-    "representativePageUrl": "/",
-    "usageCount": 0,
+    "representativeUsageFilePath": "src/app/industries/[...slug]/page.tsx",
+    "representativePageUrl": "/industries/[...slug]",
+    "usageCount": 2,
     "composedComponents": [
       "CaseStudyCardsSection",
       "CaseStudyCardsSectionItem"
@@ -16018,9 +16024,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/industries/IndustryExploreSection.tsx",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/domains/industries/components/IndustrySubIndustriesSection.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 1,
+    "representativeUsageFilePath": "src/app/industries/[...slug]/page.tsx",
+    "representativePageUrl": "/industries/[...slug]",
+    "usageCount": 2,
     "composedComponents": [],
     "props": [
       {
@@ -16127,7 +16133,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
         "optional": true,
         "description": "SmartCTA ownership context for page hero CTAs"
       }
@@ -16423,6 +16429,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
+        "description": ""
+      },
+      {
+        "name": "allowSecondaryCTA",
+        "type": "true | undefined",
+        "optional": true,
         "description": ""
       },
       {
@@ -16782,6 +16794,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
+        "description": ""
+      },
+      {
+        "name": "allowSecondaryCTA",
+        "type": "true | undefined",
+        "optional": true,
         "description": ""
       },
       {
@@ -17233,9 +17251,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/service/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/app/systems/[slug]/page.tsx",
-    "representativePageUrl": "/systems/[slug]",
-    "usageCount": 4,
+    "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
+    "representativePageUrl": "/resources/[slug]",
+    "usageCount": 5,
     "composedComponents": [],
     "props": [
       {
@@ -18021,6 +18039,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Text alignment for the header content."
       },
       {
+        "name": "allowSecondaryCTA",
+        "type": "true | undefined",
+        "optional": true,
+        "description": "Enables secondary CTA rendering when explicitly authored"
+      },
+      {
         "name": "badge",
         "type": "string | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | undefined",
         "optional": true,
@@ -18211,7 +18235,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "smartCta",
-        "type": "Pick<import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/system/SmartCTA\").SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
+        "type": "Pick<import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/system/SmartCTA\").SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
         "optional": true,
         "description": "SmartCTA ownership context for page hero CTAs"
       }
@@ -18383,7 +18407,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
         "optional": true,
         "description": "SmartCTA ownership context for page hero CTAs"
       }
@@ -18460,7 +18484,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
         "optional": false,
         "description": "SmartCTA ownership context for page hero CTAs"
       },
@@ -18545,6 +18569,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
+        "description": ""
+      },
+      {
+        "name": "allowSecondaryCTA",
+        "type": "true | undefined",
+        "optional": true,
         "description": ""
       },
       {
@@ -18907,6 +18937,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
+        "description": ""
+      },
+      {
+        "name": "allowSecondaryCTA",
+        "type": "true | undefined",
+        "optional": true,
         "description": ""
       },
       {
