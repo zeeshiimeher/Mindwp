@@ -56,6 +56,7 @@ const renderCategoryWithDefaultTemplate = (data: IndustryCategoryPageData) => (
     explore={data.explore}
     detailRoutes={data.detailRoutes}
     sectionControls={data.sectionControls}
+    faq={data.faq}
     cta={data.cta}
   />
 );
@@ -68,6 +69,7 @@ const renderDetailWithDefaultTemplate = (data: IndustryDetailPageData) => (
     challenges={data.challenges}
     operatingPatterns={data.operatingPatterns}
     imageStrip={data.imageStrip}
+    decisionChecklist={data.decisionChecklist}
     solutions={data.solutions}
     systemLayers={data.systemLayers}
     comparison={data.comparison}

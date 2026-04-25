@@ -1,16 +1,11 @@
-import React from 'react';
-
-import type { SmartCTAProps } from '@/components/system/SmartCTA';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import type { PrimaryCTASectionProps } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 
 /**
- * Domain wrapper for SmartCTA that keeps service page composition naming consistent.
+ * Domain wrapper for PrimaryCTASection that keeps service page composition naming consistent.
  */
 export type ServiceCTASectionProps = Pick<
-  SmartCTAProps,
-  | 'system'
-  | 'pageType'
-  | 'slug'
+  PrimaryCTASectionProps,
   | 'title'
   | 'description'
   | 'metaItems'
@@ -19,37 +14,8 @@ export type ServiceCTASectionProps = Pick<
   | 'headingLevel'
   | 'wrapper'
   | 'includeContainer'
-> & {
-  system: string;
-  slug: string;
-};
+>;
 
-export function ServiceCTASection({
-  system,
-  pageType,
-  slug,
-  title,
-  description,
-  metaItems,
-  cssPrefix,
-  backgroundColor,
-  headingLevel,
-  wrapper,
-  includeContainer,
-}: ServiceCTASectionProps) {
-  return (
-    <SmartCTA
-      system={system}
-      pageType={pageType}
-      slug={slug}
-      title={title}
-      description={description}
-      metaItems={metaItems}
-      cssPrefix={cssPrefix}
-      backgroundColor={backgroundColor}
-      headingLevel={headingLevel}
-      wrapper={wrapper}
-      includeContainer={includeContainer}
-    />
-  );
+export function ServiceCTASection(props: ServiceCTASectionProps) {
+  return <PrimaryCTASection {...props} />;
 }

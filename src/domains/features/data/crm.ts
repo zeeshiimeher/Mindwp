@@ -66,16 +66,16 @@ const crmFaqItems = [
 const slug = 'crm';
 
 export const crmData: FeaturePageData = {
-    slug,
-    seo: buildFeatureSeo({
+  slug,
+  seo: buildFeatureSeo({
     slug,
     title: 'CRM | Structured Contact and Follow-Up Layer',
     description:
       'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
   }),
-    systems: ['revenue-growth'],
-    topics: ['lead-management', 'crm-visibility'],
-    hero: {
+  systems: ['revenue-growth'],
+  topics: ['lead-management', 'crm-visibility'],
+  hero: {
     badge: 'CRM Layer',
     title: 'Structured CRM Integrated into Your System',
     description:
@@ -87,7 +87,7 @@ export const crmData: FeaturePageData = {
       { value: 'Team', label: 'Collaboration' },
     ],
   },
-    sections: {
+  sections: {
     process: {
       badge: 'Simple Process',
       title: 'How Structured CRM Operates',
@@ -271,9 +271,9 @@ export const crmData: FeaturePageData = {
       ],
     },
   },
-    cta: {
+  cta: {
     title: 'Review Your Contact and Follow-Up Structure',
     description:
       'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
-  }
+  },
 };

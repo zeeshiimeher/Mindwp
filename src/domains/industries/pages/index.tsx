@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -93,12 +93,7 @@ export default function IndustriesLanding() {
             If one of these categories matches how the business actually runs, the next step is to
             map that operating model to the service system that removes the real bottleneck.
           </div>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='industries'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title='Need help identifying which operating-system fix matters most for your industry?'
             description='Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.'
             primaryActionVariant='white'

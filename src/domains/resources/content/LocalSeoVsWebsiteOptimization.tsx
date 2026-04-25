@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const localSeoVsWebsiteOptimization: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Local SEO vs Website Optimisation',
     description:
       'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
     canonical,
   },
-    title: 'Local SEO vs Website Optimisation',
-    description:
+  title: 'Local SEO vs Website Optimisation',
+  description:
     'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
-    category: 'local-seo-authority',
-    publishedAt: '2026-01-12',
-    systems: ['local-seo-authority'],
-    industries: [],
-    topics: ['local-seo'],
-    primaryService: 'local-seo-authority',
-    sections: [
+  category: 'local-seo-authority',
+  publishedAt: '2026-01-12',
+  systems: ['local-seo-authority'],
+  industries: [],
+  topics: ['local-seo'],
+  primaryService: 'local-seo-authority',
+  sections: [
     {
       type: 'hero',
       heading: 'Local SEO vs Website Optimisation',
@@ -237,5 +237,5 @@ export const localSeoVsWebsiteOptimization: ResourceData = {
       content: getRelatedResourcesContent('local-seo-authority'),
       resources: getRelatedResources('local-seo-authority', canonical),
     },
-  ]
+  ],
 };

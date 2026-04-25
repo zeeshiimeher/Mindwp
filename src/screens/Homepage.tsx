@@ -24,8 +24,9 @@ import {
   ProblemSolutionSplitCard,
   SectionIntro,
 } from '@/components/reusable/single';
+import { HeroActions } from '@/components/system/HeroActions';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { homepageData } from '@/domains/home/data/homepage';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { PortfolioSection as ImplementationExamplesSection } from '@/screens/home/sections/PortfolioSection';
@@ -159,16 +160,7 @@ function HeroSection() {
           </div>
 
           <div className='hero-section-cta'>
-            <SmartCTA
-              system='smart-website-systems'
-              pageType='page'
-              slug='home'
-              intent='entry'
-              position='hero'
-              mode='actions-only'
-              primaryActionVariant='white'
-              tone='short'
-            />
+            <HeroActions allowSecondaryAction primaryActionVariant='white' />
           </div>
 
           <div className='hero-section-value-props'>
@@ -267,7 +259,10 @@ function SmartWebsiteFrameworkSection() {
                 const Icon = step.icon;
 
                 return (
-                  <div key={`${step.title}-${step.subtitle}`} className='framework-section-journey-step'>
+                  <div
+                    key={`${step.title}-${step.subtitle}`}
+                    className='framework-section-journey-step'
+                  >
                     <div className='framework-section-journey-step-row'>
                       <div className='framework-section-journey-step-index'>
                         <span className='framework-section-journey-step-index-text'>
@@ -278,8 +273,9 @@ function SmartWebsiteFrameworkSection() {
                       <div className='framework-section-journey-step-card'>
                         <div className='framework-section-journey-step-content'>
                           <div
-                            className={`framework-section-journey-step-icon ${getVariantStyles(step.iconType).icon.combined
-                              }`}
+                            className={`framework-section-journey-step-icon ${
+                              getVariantStyles(step.iconType).icon.combined
+                            }`}
                           >
                             <Icon className='framework-section-journey-step-icon-svg' />
                           </div>
@@ -305,23 +301,6 @@ function SmartWebsiteFrameworkSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className='cta-container'>
-        <SmartCTA
-          system='smart-website-systems'
-          pageType='page'
-          slug='home'
-          intent='diagnostic'
-          position='pre-mid'
-          title={smartWebsiteFrameworkData.cta.title}
-          description={smartWebsiteFrameworkData.cta.description}
-          headingLevel='h3'
-          primaryActionVariant='white'
-          backgroundColor='bg-gradient-primary'
-          wrapper='none'
-          includeContainer={false}
-        />
       </div>
     </div>
   );
@@ -363,23 +342,6 @@ function ClientJourneySection() {
               );
             })}
           </div>
-        </div>
-
-        <div className='cta-container'>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='home'
-            intent='comparison'
-            position='mid'
-            title={clientJourneyData.cta.title}
-            description={clientJourneyData.cta.description}
-            headingLevel='h3'
-            primaryActionVariant='white'
-            backgroundColor='cta--primary bg-gradient-primary'
-            wrapper='none'
-            includeContainer={false}
-          />
         </div>
       </div>
     </div>
@@ -625,7 +587,10 @@ function VisibilityVisual({ stats }: { stats: { label: string; value: string }[]
           </circle>
         </g>
         {[0, 1, 2].map(visibilityRow => (
-          <g key={`visibility-row-${visibilityRow}`} transform={`translate(172 ${84 + visibilityRow * 20})`}>
+          <g
+            key={`visibility-row-${visibilityRow}`}
+            transform={`translate(172 ${84 + visibilityRow * 20})`}
+          >
             <rect width='84' height='12' rx='6' fill='rgba(255,255,255,0.88)' />
             <rect
               x='10'
@@ -1045,7 +1010,7 @@ function VisibilityAlignmentSection() {
       />
 
       <div className='seo-growth-timeline-grid'>
-        {visibilityTimelineData.items.map((phase, index) => (
+        {visibilityTimelineData.items.map((phase, _index) => (
           <FeatureChecklistCard
             key={`${phase.phase}-${phase.title}`}
             title={phase.title}
@@ -1071,12 +1036,7 @@ function FooterCTASection() {
   const ctaData = homepageData.cta;
 
   return (
-    <SmartCTA
-      system='smart-website-systems'
-      pageType='page'
-      slug='home'
-      intent='conversion'
-      position='footer'
+    <PrimaryCTASection
       title={ctaData.footer.title}
       description={ctaData.footer.description}
       primaryActionVariant='white'

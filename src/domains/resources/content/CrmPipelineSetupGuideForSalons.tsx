@@ -168,23 +168,23 @@ const finalCta = {
 };
 
 export const crmPipelineSetupGuideForSalons: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'CRM Pipeline Setup Guide for Salons',
     description:
       'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
     canonical,
   },
-    title: 'CRM Pipeline Setup Guide for Salons',
-    description:
+  title: 'CRM Pipeline Setup Guide for Salons',
+  description:
     'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
-    category: 'crm-automation',
-    publishedAt: '2026-04-06',
-    systems: ['crm-automation'],
-    industries: ['salon'],
-    topics: ['crm-pipeline'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'crm-automation',
+  publishedAt: '2026-04-06',
+  systems: ['crm-automation'],
+  industries: ['salon'],
+  topics: ['crm-pipeline'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'CRM Pipeline Setup Guide for Salons',
@@ -255,5 +255,5 @@ export const crmPipelineSetupGuideForSalons: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ]
+  ],
 };

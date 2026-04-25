@@ -2,14 +2,13 @@ import { Check } from 'lucide-react';
 
 import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
+import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import type { SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
-import { resolveTierCardCtaLabel } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
-import { toContactSourceType } from '@/lib/page/pageIdentity';
+import { getPrimaryCTA } from '@/lib/cta/primaryAction';
+import { type PageType, toContactSourceType } from '@/lib/page/pageIdentity';
 
 const BLOCK = 'c-tier-cards-section';
 
@@ -30,17 +29,17 @@ export interface TierCardsSectionProps {
   title?: string;
   description?: string;
   packages: PackageItem[];
-  smartCta?: {
-    system: NonNullable<SmartCTAProps['system']>;
-    pageType: NonNullable<SmartCTAProps['pageType']>;
-    slug: NonNullable<SmartCTAProps['slug']>;
+  heroActions?: {
+    system: string;
+    pageType: PageType;
+    slug: string;
   };
   cssPrefix?: string;
   backgroundColor?: string;
 }
 
 function buildPackageHref(
-  smartCta: NonNullable<TierCardsSectionProps['smartCta']>,
+  heroActions: NonNullable<TierCardsSectionProps['heroActions']>,
   pkg: PackageItem
 ) {
   if (pkg.buttonHref) {
@@ -48,20 +47,24 @@ function buildPackageHref(
   }
 
   return buildContactHref({
-    system: smartCta.system,
-    sourceType: toContactSourceType(smartCta.pageType),
-    slug: smartCta.slug,
+    system: heroActions.system,
+    sourceType: toContactSourceType(heroActions.pageType),
+    slug: heroActions.slug,
   });
 }
 
 function buildPackageLabel(pkg: PackageItem) {
-  return resolveTierCardCtaLabel(pkg.buttonHref, pkg.buttonText);
+  if (pkg.buttonHref) {
+    return pkg.buttonText?.trim() || 'View Package';
+  }
+
+  return getPrimaryCTA();
 }
 
 function resolvePrimaryActionVariant(
   variant: string | undefined,
   popular: boolean | undefined
-): SmartCTAProps['primaryActionVariant'] {
+): ButtonProps['variant'] {
   if (
     variant === 'primary' ||
     variant === 'outline' ||
@@ -81,7 +84,7 @@ export function TierCardsSection({
   title,
   description,
   packages,
-  smartCta,
+  heroActions,
   cssPrefix = '',
   backgroundColor = '',
 }: TierCardsSectionProps) {
@@ -132,9 +135,9 @@ export function TierCardsSection({
                 ))}
               </ul>
 
-              {smartCta ? (
+              {heroActions ? (
                 <Button
-                  href={buildPackageHref(smartCta, pkg)}
+                  href={buildPackageHref(heroActions, pkg)}
                   variant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
                   label={buildPackageLabel(pkg)}
                   cssPrefix='btn-block'

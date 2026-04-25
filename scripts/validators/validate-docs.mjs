@@ -20,11 +20,8 @@ const WORKSPACE_ROOT = process.cwd();
 
 function resolveDocsDir() {
   const candidates = [
+    path.join(WORKSPACE_ROOT, 'docs'),
     path.join(WORKSPACE_ROOT, 'src', 'internal', 'docs'),
-    path.join(WORKSPACE_ROOT, 'Mindwp-Docs'),
-    path.join(WORKSPACE_ROOT, 'MindWP-Docs'),
-    path.join(WORKSPACE_ROOT, '..', 'Mindwp-Docs'),
-    path.join(WORKSPACE_ROOT, '..', 'MindWP-Docs'),
   ];
 
   for (const candidate of candidates) {

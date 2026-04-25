@@ -36,16 +36,8 @@ export type PageEnforcement = {
   registerInlineLinkUsage: (sourcePageType: PageType) => void;
 };
 
-function isDevelopment() {
-  return process.env.NODE_ENV !== 'production';
-}
-
 export function reportPageEnforcementError(error: Error) {
-  if (isDevelopment()) {
-    throw error;
-  }
-
-  globalThis.reportError?.(error);
+  throw error;
 }
 
 function createPageEnforcement(

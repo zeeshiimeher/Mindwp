@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const reviewAutomationForHvacCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Review Automation for HVAC Companies Explained',
     description:
       'Learn how review automation for HVAC companies generates consistent recent reviews from completed service calls to strengthen local search visibility.',
@@ -12,16 +12,16 @@ export const reviewAutomationForHvacCompanies: BlogPostData = {
         'Learn how review automation for HVAC companies generates consistent recent reviews from completed service calls to strengthen local search visibility.',
     },
   },
-    slug: 'review-automation-for-hvac-companies',
-    title: 'Review Automation for HVAC Companies',
-    publishDate: '2025-10-26',
-    authorKey: 'TECHNICAL',
-    category: 'reputation-review',
-    industries: ['hvac'],
-    systems: ['reputation-review'],
-    topics: ['review-automation'],
-    tags: ['HVAC', 'Review Automation', 'Reputation', 'Local Visibility', 'Automation'],
-    sections: [
+  slug: 'review-automation-for-hvac-companies',
+  title: 'Review Automation for HVAC Companies',
+  publishDate: '2025-10-26',
+  authorKey: 'TECHNICAL',
+  category: 'reputation-review',
+  industries: ['hvac'],
+  systems: ['reputation-review'],
+  topics: ['review-automation'],
+  tags: ['HVAC', 'Review Automation', 'Reputation', 'Local Visibility', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const reviewAutomationForHvacCompanies: BlogPostData = {
       content:
         'If your HVAC company misses review opportunities after completed service calls, automation can capture them consistently. See how review systems build local authority.',
     },
-  ]
+  ],
 };

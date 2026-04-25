@@ -1,12 +1,4 @@
-import {
-  Compass,
-  Inbox,
-  Instagram,
-  MessageCircle,
-  RefreshCcw,
-  Star,
-  Wrench,
-} from 'lucide-react';
+import { Compass, Inbox, Instagram, MessageCircle, RefreshCcw, Star, Wrench } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
 
@@ -253,35 +245,35 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Car Detailers \u2014 Stop Losing Saturday DMs To 6pm Reads | MindWP',
-        description:
-          'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-        canonical: '/industries/automotive-services/car-detailing',
-      },
-      slug: 'car-detailing',
-      industries: ['car-detailing'],
-      systems: [
-        'smart-website-systems',
-        'crm-automation',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['booking-systems', 'client-reactivation', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'automotive-services',
-      hero: { ...heroData },
-      comparison: comparisonData,
-      operatingPatterns: operatingPatternsData,
-      pathways: pathwaysData,
-      workflowExamples: workflowExamplesData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about last weekend\u2019s DMs',
-        description:
-          'Walk us through the messages that landed Saturday and never turned into a slot. We will tell you which gap to close first.',
-      }
+    seo: {
+      title: 'Car Detailers \u2014 Stop Losing Saturday DMs To 6pm Reads | MindWP',
+      description:
+        'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+      canonical: '/industries/automotive-services/car-detailing',
+    },
+    slug: 'car-detailing',
+    industries: ['car-detailing'],
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['booking-systems', 'client-reactivation', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'automotive-services',
+    hero: { ...heroData },
+    comparison: comparisonData,
+    operatingPatterns: operatingPatternsData,
+    pathways: pathwaysData,
+    workflowExamples: workflowExamplesData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about last weekend\u2019s DMs',
+      description:
+        'Walk us through the messages that landed Saturday and never turned into a slot. We will tell you which gap to close first.',
+    },
   };
 }
 

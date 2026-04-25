@@ -49,7 +49,7 @@ describe('unit: reusable component contracts', () => {
             buttonHref: '/services',
           },
         ]}
-        smartCta={{
+        heroActions={{
           system: 'smart-website-systems',
           pageType: 'service',
           slug: 'smart-website-systems',

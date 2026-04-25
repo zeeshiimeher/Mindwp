@@ -21,11 +21,11 @@ type ViolationEntry = {
 };
 
 function fixHintForViolation(violation: string) {
-  if (violation.includes('Route files must not render SmartCTA directly')) {
-    return 'Move SmartCTA ownership into a page adapter, template, or renderer outside src/app.';
+  if (violation.includes('Route files must not render PrimaryCTASection directly')) {
+    return 'Move PrimaryCTASection ownership into a page adapter, template, or renderer outside src/app.';
   }
 
-  if (violation.includes('Domain data files must not render SmartCTA directly')) {
+  if (violation.includes('Domain data files must not render PrimaryCTASection directly')) {
     return 'Keep domain data declarative and move CTA rendering into a template or renderer.';
   }
 
@@ -57,11 +57,11 @@ export function formatViolationReport(report: ViolationEntry[]) {
 
 function isForbiddenCtaOwner(relativePath: string) {
   if (relativePath.startsWith('src/app/') && !relativePath.startsWith('src/app/dev/')) {
-    return 'Route files must not render SmartCTA directly. Own CTA intent and position in page adapters or renderers.';
+    return 'Route files must not render PrimaryCTASection directly. Own CTA intent and position in page adapters or renderers.';
   }
 
   if (/^src\/domains\/[^/]+\/data\//.test(relativePath)) {
-    return 'Domain data files must not render SmartCTA directly. Keep CTA ownership in templates or renderers.';
+    return 'Domain data files must not render PrimaryCTASection directly. Keep CTA ownership in templates or renderers.';
   }
 
   return null;
@@ -87,8 +87,8 @@ async function collectTsxFiles(dirPath: string): Promise<string[]> {
   return files.flat();
 }
 
-function extractSmartCtaBlocks(content: string) {
-  return content.match(/<SmartCTA\b[\s\S]*?\/>/g) ?? [];
+function extractPrimaryCtaBlocks(content: string) {
+  return content.match(/<PrimaryCTASection\b[\s\S]*?\/>/g) ?? [];
 }
 
 export async function runCtaViolationScan() {
@@ -98,14 +98,14 @@ export async function runCtaViolationScan() {
   for (const filePath of files) {
     const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
     if (
-      relativePath === 'src/components/system/SmartCTA.tsx' ||
+      relativePath === 'src/components/system/PrimaryCTASection.tsx' ||
       relativePath.startsWith('src/components/')
     ) {
       continue;
     }
 
     const content = await fs.readFile(filePath, 'utf8');
-    const blocks = extractSmartCtaBlocks(content);
+    const blocks = extractPrimaryCtaBlocks(content);
     if (blocks.length === 0) {
       continue;
     }

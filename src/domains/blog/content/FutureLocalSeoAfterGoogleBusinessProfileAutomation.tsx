@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Future Local SEO After Google Business Profile Automation',
     description:
       'Explore how future local seo after google business profile automation reshapes rankings as AI handles listing updates, reviews, and content automatically.',
@@ -12,16 +12,16 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
         'Explore how future local seo after google business profile automation reshapes rankings as AI handles listing updates, reviews, and content automatically.',
     },
   },
-    slug: 'future-local-seo-after-google-business-profile-automation',
-    title: 'Future Local SEO After Google Business Profile Automation',
-    publishDate: '2026-03-03',
-    authorKey: 'TECHNICAL',
-    category: 'future-local-business-tech',
-    industries: ['plumbing'],
-    systems: ['local-seo-authority'],
-    topics: ['google-business-profile'],
-    tags: ['Local SEO', 'Google Business Profile', 'Automation', 'AI', 'Future Trends'],
-    sections: [
+  slug: 'future-local-seo-after-google-business-profile-automation',
+  title: 'Future Local SEO After Google Business Profile Automation',
+  publishDate: '2026-03-03',
+  authorKey: 'TECHNICAL',
+  category: 'future-local-business-tech',
+  industries: ['plumbing'],
+  systems: ['local-seo-authority'],
+  topics: ['google-business-profile'],
+  tags: ['Local SEO', 'Google Business Profile', 'Automation', 'AI', 'Future Trends'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -86,5 +86,5 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
       content:
         'If your business relies on manual GBP management for local visibility, automation is coming for everyone. See how local authority systems prepare you for the future.',
     },
-  ]
+  ],
 };

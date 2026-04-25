@@ -135,12 +135,7 @@ function scoreSubjectRelevance(
     return 0;
   }
 
-  const searchTerms = [
-    metadata.summary,
-    ...metadata.topics,
-    ...metadata.systems,
-    ...metadata.tags,
-  ]
+  const searchTerms = [metadata.summary, ...metadata.topics, ...metadata.systems, ...metadata.tags]
     .map(t => t.toLowerCase())
     .filter(Boolean);
 

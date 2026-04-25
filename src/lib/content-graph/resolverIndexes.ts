@@ -42,14 +42,22 @@ const addNodeToTypeSlugIndex = (
   slug: string,
   node: ContentGraphNode
 ) => {
+  const normalizedSlug = normalizeKey(slug);
   const existingTypeIndex = index.get(type);
 
   if (existingTypeIndex) {
-    existingTypeIndex.set(normalizeKey(slug), node);
+    const existingNode = existingTypeIndex.get(normalizedSlug);
+    if (existingNode) {
+      throw new Error(
+        `Resolver index collision for ${type}:${normalizedSlug}. Existing ${existingNode.id}, incoming ${node.id}.`
+      );
+    }
+
+    existingTypeIndex.set(normalizedSlug, node);
     return;
   }
 
-  index.set(type, new Map([[normalizeKey(slug), node]]));
+  index.set(type, new Map([[normalizedSlug, node]]));
 };
 
 const addNodeToReverseRelationIndex = (

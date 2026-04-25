@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Customer Feedback Loop for Plumbing Companies',
     description:
       'Learn how a customer feedback loop for plumbing companies captures service quality data after every job to improve operations and build local reputation.',
@@ -12,16 +12,16 @@ export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
         'Learn how a customer feedback loop for plumbing companies captures service quality data after every job to improve operations and build local reputation.',
     },
   },
-    slug: 'customer-feedback-loop-for-plumbing-companies',
-    title: 'Customer Feedback Loop for Plumbing Companies',
-    publishDate: '2025-11-19',
-    authorKey: 'TECHNICAL',
-    category: 'home-services-industry',
-    industries: ['plumbing'],
-    systems: ['reputation-review'],
-    topics: ['feedback-loops'],
-    tags: ['Plumbing', 'Customer Feedback', 'Feedback Loop', 'Quality', 'Reputation'],
-    sections: [
+  slug: 'customer-feedback-loop-for-plumbing-companies',
+  title: 'Customer Feedback Loop for Plumbing Companies',
+  publishDate: '2025-11-19',
+  authorKey: 'TECHNICAL',
+  category: 'home-services-industry',
+  industries: ['plumbing'],
+  systems: ['reputation-review'],
+  topics: ['feedback-loops'],
+  tags: ['Plumbing', 'Customer Feedback', 'Feedback Loop', 'Quality', 'Reputation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
       content:
         'If your plumbing company only hears about problems through public reviews, a feedback loop can change that. See how reputation systems capture and act on customer feedback.',
     },
-  ]
+  ],
 };

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
-    seo: {
+  seo: {
     title: 'What Is a Systems-First Website for Services',
     description:
       'Understand what is a systems-first website and how this infrastructure-led approach helps service businesses capture, qualify, and route leads automatically.',
@@ -12,22 +12,22 @@ export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
         'Understand what is a systems-first website and how this infrastructure-led approach helps service businesses capture, qualify, and route leads automatically.',
     },
   },
-    slug: 'what-is-a-systems-first-website-for-service-businesses',
-    title: 'What Is a Systems-First Website for Service Businesses',
-    publishDate: '2024-07-03',
-    authorKey: 'EDITORIAL',
-    category: 'smart-website-systems',
-    industries: [],
-    systems: ['smart-website-systems'],
-    topics: ['systems-first-websites'],
-    tags: [
+  slug: 'what-is-a-systems-first-website-for-service-businesses',
+  title: 'What Is a Systems-First Website for Service Businesses',
+  publishDate: '2024-07-03',
+  authorKey: 'EDITORIAL',
+  category: 'smart-website-systems',
+  industries: [],
+  systems: ['smart-website-systems'],
+  topics: ['systems-first-websites'],
+  tags: [
     'Systems-First',
     'Website Architecture',
     'Service Business',
     'Digital Infrastructure',
     'Website Design',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -113,5 +113,5 @@ export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
       content:
         'If your current website looks good but underperforms on lead generation, the issue may be structural. Learn how a systems-first approach builds conversion into the foundation.',
     },
-  ]
+  ],
 };

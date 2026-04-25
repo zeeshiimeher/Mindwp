@@ -23,6 +23,9 @@ const BLOCK = 'testimonial-card';
  * ```
  */
 export interface TestimonialCardProps {
+  /** Optional title shown above the quote */
+  title?: string;
+
   /** The testimonial quote text */
   quote: string;
 
@@ -40,6 +43,7 @@ export interface TestimonialCardProps {
 }
 
 export function TestimonialCard({
+  title,
   quote,
   author,
   business,
@@ -48,6 +52,8 @@ export function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <Card className={cn(BLOCK, className)}>
+      {title ? <h3 className={`${BLOCK}__title`}>{title}</h3> : null}
+
       {/* Star Rating */}
       <div className={`${BLOCK}__stars`}>
         {Array.from({ length: 5 }, (_, starValue) => starValue + 1).map(starValue => (

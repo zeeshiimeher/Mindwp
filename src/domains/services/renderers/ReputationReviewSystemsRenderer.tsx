@@ -11,7 +11,7 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface ReputationReviewSystemsRendererProps {
@@ -21,7 +21,7 @@ interface ReputationReviewSystemsRendererProps {
 
 export function ReputationReviewSystemsRenderer({
   data,
-  slug,
+  slug: _slug,
 }: ReputationReviewSystemsRendererProps) {
   const { hero, sections, cta } = data;
   const {
@@ -46,10 +46,7 @@ export function ReputationReviewSystemsRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -150,10 +147,7 @@ export function ReputationReviewSystemsRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

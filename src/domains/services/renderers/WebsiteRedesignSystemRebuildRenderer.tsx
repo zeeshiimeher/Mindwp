@@ -14,7 +14,7 @@ import { HighlightCard } from '@/components/reusable/single/HighlightCard';
 import { ScenarioSolutionCard } from '@/components/reusable/single/ScenarioSolutionCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface WebsiteRedesignSystemRebuildRendererProps {
@@ -24,7 +24,7 @@ interface WebsiteRedesignSystemRebuildRendererProps {
 
 export function WebsiteRedesignSystemRebuildRenderer({
   data,
-  slug,
+  slug: _slug,
 }: WebsiteRedesignSystemRebuildRendererProps) {
   const { hero, sections, cta } = data;
   const {
@@ -49,10 +49,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -185,10 +182,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

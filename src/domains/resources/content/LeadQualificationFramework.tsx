@@ -157,23 +157,23 @@ const finalCta = {
 };
 
 export const leadQualificationFramework: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Lead Qualification Framework',
     description:
       'Learn how to build a lead qualification framework that scores and prioritises leads automatically so your team focuses on the highest-value opportunities.',
     canonical,
   },
-    title: 'Lead Qualification Framework',
-    description:
+  title: 'Lead Qualification Framework',
+  description:
     'Learn how to build a lead qualification framework that scores and prioritises leads automatically so your team focuses on the highest-value opportunities.',
-    category: 'ai-lead-handling',
-    publishedAt: '2025-12-03',
-    systems: ['ai-lead-handling'],
-    industries: [],
-    topics: ['lead-qualification'],
-    primaryService: 'ai-lead-handling',
-    sections: [
+  category: 'ai-lead-handling',
+  publishedAt: '2025-12-03',
+  systems: ['ai-lead-handling'],
+  industries: [],
+  topics: ['lead-qualification'],
+  primaryService: 'ai-lead-handling',
+  sections: [
     {
       type: 'hero',
       heading: 'Lead Qualification Framework',
@@ -242,5 +242,5 @@ export const leadQualificationFramework: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ]
+  ],
 };

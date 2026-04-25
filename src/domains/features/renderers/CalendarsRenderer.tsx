@@ -12,7 +12,7 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
 
@@ -76,7 +76,6 @@ interface CalendarsRendererProps {
 export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
   const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq, explore } = sections;
-  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   return (
     <>
@@ -88,10 +87,7 @@ export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            smartCta={{
-              system: primarySystem,
-              pageType: 'feature',
-              slug: data.slug,
+            heroActions={{
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -156,10 +152,7 @@ export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
             backgroundColor='bg-alt'
           />
 
-          <SmartCTA
-            system={primarySystem}
-            pageType='feature'
-            slug={data.slug}
+          <PrimaryCTASection
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

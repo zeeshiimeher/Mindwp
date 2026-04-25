@@ -34,7 +34,7 @@ These are the lowest reusable layout controls.
 
 These own cross-page behavior rather than just presentation.
 
-- `SmartCTA`: page-level CTA rendering and contextual contact routing
+- `PrimaryCTASection`: page-level CTA rendering and contextual contact routing
 - `PageEnforcement` surfaces: page identity, CTA registry, related-content enforcement
 - `SmartRelatedSection`: graph-aware related-content output
 - `JsonLd`: schema output at the route layer
@@ -90,7 +90,7 @@ These wrappers should stay thin and should not reimplement shared core behavior.
 
 Canonical shape:
 
-`SectionWrapper -> SectionIntro -> SmartCTA -> optional bullets`
+`SectionWrapper -> SectionIntro -> PrimaryCTASection -> optional bullets`
 
 Primary owners:
 
@@ -151,7 +151,7 @@ The smallest useful mental model is:
 
 1. `SectionWrapper` controls shell and spacing.
 2. `SectionIntro` controls heading hierarchy.
-3. `SmartCTA` controls CTA behavior.
+3. `PrimaryCTASection` controls CTA behavior.
 4. A small set of section families control most service-page structure.
 5. Domain wrappers assemble those sections into page-specific narratives.
 
@@ -265,7 +265,7 @@ Effect:
 
 Pattern:
 
-`ComparisonSection` -> `ServiceSpectrumCardsSection` or proof-style card block -> inline `SmartCTA`
+`ComparisonSection` -> `ServiceSpectrumCardsSection` or proof-style card block -> inline `PrimaryCTASection`
 
 Common in:
 
@@ -283,7 +283,7 @@ Effect:
 
 Pattern:
 
-`DualToneChecklistComparisonSection` or equivalent qualification block -> `FAQSection` -> final `SmartCTA`
+`DualToneChecklistComparisonSection` or equivalent qualification block -> `FAQSection` -> final `PrimaryCTASection`
 
 Common in:
 
@@ -460,7 +460,7 @@ Preview status:
 
 ## 5.4 Preview Weaknesses
 
-- `SmartCTA` is a major live component in service renderers but is not part of preview coverage
+- `PrimaryCTASection` is a major live component in service renderers but is not part of preview coverage
 - `SectionWrapper` and `CardGrid` control much of the system’s actual layout behavior but are not previewed directly
 - renderer-level custom sections built from `SectionWrapper` + `SectionIntro` + mapped cards are not represented as first-class preview artifacts
 - preview shows component capability, not renderer sequencing

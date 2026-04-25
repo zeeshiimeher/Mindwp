@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Auto Repair Missed Calls Lose Booked Work',
     description:
       'Learn why auto repair missed calls lose booked work when customers cannot reach your shop and how automated call recovery prevents lost revenue.',
@@ -12,16 +12,16 @@ export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
         'Learn why auto repair missed calls lose booked work when customers cannot reach your shop and how automated call recovery prevents lost revenue.',
     },
   },
-    slug: 'why-auto-repair-missed-calls-lose-booked-work',
-    title: 'Why Auto Repair Missed Calls Lose Booked Work',
-    publishDate: '2025-05-03',
-    authorKey: 'EDITORIAL',
-    category: 'ai-lead-handling',
-    industries: ['automotive'],
-    systems: ['ai-lead-handling'],
-    topics: ['missed-calls'],
-    tags: ['Automotive', 'Missed Calls', 'Booked Work', 'Call Recovery', 'Repair Shop'],
-    sections: [
+  slug: 'why-auto-repair-missed-calls-lose-booked-work',
+  title: 'Why Auto Repair Missed Calls Lose Booked Work',
+  publishDate: '2025-05-03',
+  authorKey: 'EDITORIAL',
+  category: 'ai-lead-handling',
+  industries: ['automotive'],
+  systems: ['ai-lead-handling'],
+  topics: ['missed-calls'],
+  tags: ['Automotive', 'Missed Calls', 'Booked Work', 'Call Recovery', 'Repair Shop'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
       content:
         'If your repair shop misses calls when the team is busy, automated recovery can capture those bookings. Explore how AI lead handling prevents lost work.',
     },
-  ]
+  ],
 };

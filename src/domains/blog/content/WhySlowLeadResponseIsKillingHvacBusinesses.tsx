@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Slow Lead Response Is Killing HVAC Businesses',
     description:
       'Learn why slow lead response is killing HVAC businesses and how delayed follow-up on heating and cooling enquiries sends urgent customers to competitors.',
@@ -12,16 +12,16 @@ export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
         'Learn why slow lead response is killing HVAC businesses and how delayed follow-up on heating and cooling enquiries sends urgent customers to competitors.',
     },
   },
-    slug: 'why-slow-lead-response-is-killing-hvac-businesses',
-    title: 'Why Slow Lead Response Is Killing HVAC Businesses',
-    publishDate: '2026-04-06',
-    authorKey: 'EDITORIAL',
-    category: 'crm-automation',
-    industries: ['hvac'],
-    systems: ['crm-automation'],
-    topics: ['lead-response-time'],
-    tags: ['HVAC', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Enquiry Management'],
-    sections: [
+  slug: 'why-slow-lead-response-is-killing-hvac-businesses',
+  title: 'Why Slow Lead Response Is Killing HVAC Businesses',
+  publishDate: '2026-04-06',
+  authorKey: 'EDITORIAL',
+  category: 'crm-automation',
+  industries: ['hvac'],
+  systems: ['crm-automation'],
+  topics: ['lead-response-time'],
+  tags: ['HVAC', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Enquiry Management'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
       content:
         'If your HVAC business loses enquiries because the team cannot respond fast enough during busy periods, CRM automation can close the gap. See how automated response and routing capture leads that would otherwise go to competitors.',
     },
-  ]
+  ],
 };

@@ -1,35 +1,26 @@
-import { assertRouteOwnershipEntries } from '../../../config/routeOwnership';
 import type { Metadata } from 'next';
 import fs from 'node:fs';
-import path from 'node:path';
 
 import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_CATEGORY_REGISTRY } from '@/domains/resources/categoryRegistry';
-import {
-  resolveIndexingPolicy,
-  type IndexingClassification,
-  type IndexingPolicyKind,
-  type IndexingPolicySource,
-} from '../../../config/indexingPolicy';
 import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
-import type { ContentGraphNode, ContentNodeType } from '@/lib/content-graph/types';
+import type { ContentGraphNode } from '@/lib/content-graph/types';
 import { getImage } from '@/lib/image-system/resolver';
 import { normalizePath } from '@/lib/seo/config';
 import { getMetadataBase, SITE_NAME, toAbsoluteUrl } from '@/lib/seo/config';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
 import { STATIC_ROUTE_DEFINITIONS } from '@/lib/site/staticPages';
 
-type InventoryKind =
-  | ContentNodeType
-  | 'static'
-  | 'blog-category'
-  | 'resource-category'
-  | 'blog-topic'
-  | 'topic-hub'
-  | 'system-hub';
+import {
+  type IndexingClassification,
+  type IndexingPolicyKind,
+  type IndexingPolicySource,
+  resolveIndexingPolicy,
+} from '../../../config/indexingPolicy';
+import { assertRouteOwnershipEntries } from '../../../config/routeOwnership';
 
 export interface RouteInventoryEntry {
   key: string;
@@ -118,12 +109,12 @@ function normalizeOpenGraph(
   const value =
     openGraph && typeof openGraph === 'object'
       ? (openGraph as {
-        title?: string;
-        description?: string;
-        url?: string;
-        image?: string;
-        images?: string[];
-      })
+          title?: string;
+          description?: string;
+          url?: string;
+          image?: string;
+          images?: string[];
+        })
       : {};
 
   const explicitImages =
@@ -138,7 +129,7 @@ function normalizeOpenGraph(
     url: normalizePath(value.url ?? canonical),
     images:
       explicitImages.length === 0 ||
-        (onlyUsesDefaultImage && inferredImages[0] !== DEFAULT_OG_IMAGE_PATH)
+      (onlyUsesDefaultImage && inferredImages[0] !== DEFAULT_OG_IMAGE_PATH)
         ? inferredImages
         : explicitImages,
   };

@@ -11,6 +11,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { createLogger } from '../../lib/logger/index.mjs';
 import { loadVocabularyRules } from '../lib/contract-validator-helpers.mjs';
 
 const args = new Set(process.argv.slice(2));
@@ -18,6 +19,7 @@ const shouldReportJson = args.has('--report-json');
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'vocabulary-report.json');
+const logger = createLogger({ label: 'validate-vocabulary', mode: 'summary', rootDir: root });
 
 const vocabularyRules = loadVocabularyRules(root);
 const ALL_BANNED = [...vocabularyRules.bannedVocabulary, ...vocabularyRules.antiHypeVocabulary];
@@ -81,21 +83,14 @@ function main() {
   }
 
   if (shouldReportJson) {
-    fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(
-      reportPath,
-      JSON.stringify(
-        {
-          generatedAt: new Date().toISOString(),
-          passed: issues.length === 0,
-          scannedFiles,
-          issueCount: issues.length,
-          issues,
-        },
-        null,
-        2
-      )
-    );
+    logger.writeReport(reportPath, {
+      generatedAt: new Date().toISOString(),
+      passed: issues.length === 0,
+      scannedFiles,
+      issueCount: issues.length,
+      issues,
+      sourceCommand: 'node scripts/validators/validate-vocabulary.mjs --report-json',
+    });
   }
 
   if (issues.length === 0) {

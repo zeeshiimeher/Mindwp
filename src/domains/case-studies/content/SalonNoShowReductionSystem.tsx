@@ -178,61 +178,61 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'Salon No-Show Reduction | 18% to 4% With Automation',
-        description:
+    seo: {
+      title: 'Salon No-Show Reduction | 18% to 4% With Automation',
+      description:
         'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
-        canonical: '/case-studies/salon-no-show-reduction-system',
-        openGraph: {
-          title: 'Why Salon Clients Miss Appointments | MindWP Case Study',
-          description:
-            'How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week.',
-        },
+      canonical: '/case-studies/salon-no-show-reduction-system',
+      openGraph: {
+        title: 'Why Salon Clients Miss Appointments | MindWP Case Study',
+        description:
+          'How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week.',
       },
-      slug: 'salon-no-show-reduction-system',
-      title: 'Salon No-Show Reduction System',
-      industryCategory: 'beauty-personal-care',
-      industryLabel: 'Beauty & Personal Care',
-      industries: ['hair-salon'],
-      systems: ['crm-automation', 'revenue-growth'],
-      topics: ['no-show-reduction', 'booking-automation'],
-      publishDate: '2026-01-01',
-      client: 'Bloom & Co Hair',
-      location: 'Edinburgh, UK',
-      business: 'Bloom & Co Hair',
-      duration: '7 weeks',
-      completedDate: 'January 2026',
-      heroHeadline: 'How a Hair Salon Reduced No-Shows From 18% to 4% and Recovered £870 Per Week',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'No-Show Reduction',
-        'Appointment Reminders',
-        'Hair Salon',
-        'CRM Automation',
-        'Waitlist Recovery',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'Operational Problem' },
-        problem: { challengeBadgeLabel: 'The No-Show Problem' },
-        workflows: { workflowsBadgeLabel: 'Reminder Workflow' },
-        solution: { solutionBadgeLabel: 'System Implementation' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: No-Show Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for salons' },
-          ],
-        },
-      }
+    },
+    slug: 'salon-no-show-reduction-system',
+    title: 'Salon No-Show Reduction System',
+    industryCategory: 'beauty-personal-care',
+    industryLabel: 'Beauty & Personal Care',
+    industries: ['hair-salon'],
+    systems: ['crm-automation', 'revenue-growth'],
+    topics: ['no-show-reduction', 'booking-automation'],
+    publishDate: '2026-01-01',
+    client: 'Bloom & Co Hair',
+    location: 'Edinburgh, UK',
+    business: 'Bloom & Co Hair',
+    duration: '7 weeks',
+    completedDate: 'January 2026',
+    heroHeadline: 'How a Hair Salon Reduced No-Shows From 18% to 4% and Recovered £870 Per Week',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'No-Show Reduction',
+      'Appointment Reminders',
+      'Hair Salon',
+      'CRM Automation',
+      'Waitlist Recovery',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'Operational Problem' },
+      problem: { challengeBadgeLabel: 'The No-Show Problem' },
+      workflows: { workflowsBadgeLabel: 'Reminder Workflow' },
+      solution: { solutionBadgeLabel: 'System Implementation' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: No-Show Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for salons' },
+        ],
+      },
+    },
   };
 }
 

@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const hvacEmergencyCallHandlingSystem: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'HVAC Emergency Call Handling System',
     description:
       'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
     canonical,
   },
-    title: 'HVAC Emergency Call Handling System',
-    description:
+  title: 'HVAC Emergency Call Handling System',
+  description:
     'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
-    category: 'ai-lead-handling',
-    publishedAt: '2026-02-18',
-    systems: ['ai-lead-handling', 'crm-automation'],
-    industries: ['hvac'],
-    topics: ['emergency-handling'],
-    primaryService: 'ai-lead-handling',
-    sections: [
+  category: 'ai-lead-handling',
+  publishedAt: '2026-02-18',
+  systems: ['ai-lead-handling', 'crm-automation'],
+  industries: ['hvac'],
+  topics: ['emergency-handling'],
+  primaryService: 'ai-lead-handling',
+  sections: [
     {
       type: 'hero',
       heading: 'HVAC Emergency Call Handling System',
@@ -181,5 +181,5 @@ export const hvacEmergencyCallHandlingSystem: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ]
+  ],
 };

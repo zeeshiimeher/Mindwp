@@ -1592,47 +1592,47 @@ const NAMESPACE_CATALOG: Array<{
   importPath: string;
   namespace: Record<string, unknown>;
 }> = [
-    {
-      category: 'components',
-      importPath: '@/components/reusable/single',
-      namespace: ComponentsSingle,
-    },
-    {
-      category: 'core-sections',
-      importPath: '@/components/reusable/sections/core',
-      namespace: SectionsCore,
-    },
-    {
-      category: 'feature-sections',
-      importPath: '@/components/reusable/sections/features',
-      namespace: SectionsFeatures,
-    },
-    {
-      category: 'resource-sections',
-      importPath: '@/components/reusable/sections/resources',
-      namespace: SectionsResources,
-    },
-    {
-      category: 'blog-sections',
-      importPath: '@/components/reusable/sections/blog',
-      namespace: SectionsBlog,
-    },
-    {
-      category: 'case-study-sections',
-      importPath: '@/components/reusable/sections/case-studies',
-      namespace: SectionsCaseStudies,
-    },
-    {
-      category: 'service-sections',
-      importPath: '@/components/reusable/sections/service',
-      namespace: SectionsService,
-    },
-    {
-      category: 'industry-sections',
-      importPath: '@/components/reusable/sections/industries',
-      namespace: SectionsIndustries,
-    },
-  ];
+  {
+    category: 'components',
+    importPath: '@/components/reusable/single',
+    namespace: ComponentsSingle,
+  },
+  {
+    category: 'core-sections',
+    importPath: '@/components/reusable/sections/core',
+    namespace: SectionsCore,
+  },
+  {
+    category: 'feature-sections',
+    importPath: '@/components/reusable/sections/features',
+    namespace: SectionsFeatures,
+  },
+  {
+    category: 'resource-sections',
+    importPath: '@/components/reusable/sections/resources',
+    namespace: SectionsResources,
+  },
+  {
+    category: 'blog-sections',
+    importPath: '@/components/reusable/sections/blog',
+    namespace: SectionsBlog,
+  },
+  {
+    category: 'case-study-sections',
+    importPath: '@/components/reusable/sections/case-studies',
+    namespace: SectionsCaseStudies,
+  },
+  {
+    category: 'service-sections',
+    importPath: '@/components/reusable/sections/service',
+    namespace: SectionsService,
+  },
+  {
+    category: 'industry-sections',
+    importPath: '@/components/reusable/sections/industries',
+    namespace: SectionsIndustries,
+  },
+];
 
 const isComponentName = (name: string) => /^[A-Z]/.test(name);
 

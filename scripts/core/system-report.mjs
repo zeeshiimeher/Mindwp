@@ -17,9 +17,9 @@ import {
   parseSystemReportContract,
 } from '../lib/system-contract-schemas.mjs';
 
-import { getReportFiles, getValidatorDefinitions } from './system-manifest.mjs';
-import { buildAndValidateDashboardData, DASHBOARD_REPORT_FILES } from './dashboard-data.mjs';
+import { buildAndValidateDashboardData } from './dashboard-data.mjs';
 import { validateReportFile } from './report-schema-validator.mjs';
+import { getReportFiles, getValidatorDefinitions } from './system-manifest.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const reportsDir = path.join(root, 'reports');
@@ -149,7 +149,10 @@ const validatorReportSourceByFile = new Map(
   ])
 );
 const validatorCommandByName = new Map(
-  getValidatorDefinitions().map(validator => [validator.name, [validator.command, ...validator.args].join(' ')])
+  getValidatorDefinitions().map(validator => [
+    validator.name,
+    [validator.command, ...validator.args].join(' '),
+  ])
 );
 const validatorReportFileByName = new Map(
   getValidatorDefinitions().map(validator => [validator.name, validator.reportFile])
@@ -157,8 +160,8 @@ const validatorReportFileByName = new Map(
 
 const reportSourceByFile = new Map([
   ['authority-map.json', 'node --import tsx/esm scripts/generators/generate-authority-map.ts'],
-  ['validation-report.json', 'node scripts/core/validate-all.mjs --report-json'],
-  ['validation-results.json', 'node scripts/core/validate-all.mjs --report-json'],
+  ['validation-report.json', 'node scripts/core/validate-all.mjs --report-json --force'],
+  ['validation-results.json', 'node scripts/core/validate-all.mjs --report-json --force'],
   ['graph-derived-summary.json', 'node --import tsx/esm scripts/analyzers/inspect-graph.ts'],
   [
     'topic-authority-scores.json',
@@ -234,19 +237,19 @@ function writeJson(filePath, data) {
   const payload =
     filePath.endsWith('.json') && !data?.meta?.generatedFile && !data?.generatedFile
       ? attachGeneratedJsonMetadata(data, {
-        generatedBy:
-          path.basename(filePath) === 'client-dashboard.json' ? 'system-report' : sourceCommand,
-        source:
-          path.basename(filePath) === 'client-dashboard.json'
-            ? 'system dashboard inputs'
-            : sourceCommand,
-        generatedAt:
-          typeof data?.generatedAt === 'string'
-            ? data.generatedAt
-            : typeof data?.timestamp === 'string'
-              ? data.timestamp
-              : new Date().toISOString(),
-      })
+          generatedBy:
+            path.basename(filePath) === 'client-dashboard.json' ? 'system-report' : sourceCommand,
+          source:
+            path.basename(filePath) === 'client-dashboard.json'
+              ? 'system dashboard inputs'
+              : sourceCommand,
+          generatedAt:
+            typeof data?.generatedAt === 'string'
+              ? data.generatedAt
+              : typeof data?.timestamp === 'string'
+                ? data.timestamp
+                : new Date().toISOString(),
+        })
       : data;
   fs.writeFileSync(filePath, JSON.stringify(payload, null, 2) + '\n');
 
@@ -507,37 +510,6 @@ function assertLockedExecution() {
   }
 }
 
-function sanitizeSnapshotTimestamp(timestamp) {
-  return timestamp.replaceAll(':', '-').replaceAll('.', '-');
-}
-
-function listSnapshotFiles() {
-  if (!fs.existsSync(snapshotDir)) {
-    return [];
-  }
-
-  return fs
-    .readdirSync(snapshotDir)
-    .filter(
-      fileName => fileName.endsWith('.json') && fileName !== path.basename(snapshotSummaryPath)
-    )
-    .sort();
-}
-
-function readPreviousSnapshotReport() {
-  const latestFileName = 'system-report-current.json';
-  const latestPath = path.join(snapshotDir, latestFileName);
-
-  if (!fs.existsSync(latestPath)) {
-    return null;
-  }
-
-  return {
-    fileName: latestFileName,
-    report: readJsonFile(latestPath),
-  };
-}
-
 function validateFrozenOutputs(report, clientDashboard) {
   try {
     return {
@@ -593,20 +565,23 @@ function stabilizeRuntimeMetrics(value) {
     return value;
   }
 
-  return Object.entries(value).reduce((output, [key, entry]) => {
-    if (key === 'durationMs' || key === 'duration') {
-      output[key] = 0;
-      return output;
-    }
+  return Object.entries(value).reduce(
+    (output, [key, entry]) => {
+      if (key === 'durationMs' || key === 'duration') {
+        output[key] = 0;
+        return output;
+      }
 
-    if (key === 'timestamp' || key === 'generatedAt' || key === 'time') {
-      output[key] = 'stable';
-      return output;
-    }
+      if (key === 'timestamp' || key === 'generatedAt' || key === 'time') {
+        output[key] = 'stable';
+        return output;
+      }
 
-    output[key] = stabilizeRuntimeMetrics(entry);
-    return output;
-  }, Array.isArray(value) ? [] : {});
+      output[key] = stabilizeRuntimeMetrics(entry);
+      return output;
+    },
+    Array.isArray(value) ? [] : {}
+  );
 }
 
 function parseJsonText(raw) {
@@ -675,8 +650,10 @@ function findValidatorFailure(failuresByValidator, validatorName) {
   return failuresByValidator.get(validatorName)?.output ?? '';
 }
 
+const ANSI_ESCAPE_SEQUENCE = new RegExp(`${String.fromCharCode(27)}\\[[0-9;]*m`, 'g');
+
 function stripAnsi(value) {
-  return String(value).replace(/\u001B\[[0-9;]*m/g, '');
+  return String(value).replace(ANSI_ESCAPE_SEQUENCE, '');
 }
 
 function normalizeFailureText(value) {
@@ -747,7 +724,13 @@ function dedupeFailures(entries) {
   const seen = new Set();
 
   return entries.filter(entry => {
-    const key = [entry.file, entry.reason, entry.fixSuggestion, entry.expected, entry.received].join('::');
+    const key = [
+      entry.file,
+      entry.reason,
+      entry.fixSuggestion,
+      entry.expected,
+      entry.received,
+    ].join('::');
     if (seen.has(key)) {
       return false;
     }
@@ -765,11 +748,17 @@ function readValidatorIssueEntries(validatorName) {
 
   const report = readReportJson(root, reportFile);
   const data = unwrapReportData(report) ?? report ?? {};
-  const issues = Array.isArray(data?.issues) ? data.issues : Array.isArray(report?.issues) ? report.issues : [];
+  const issues = Array.isArray(data?.issues)
+    ? data.issues
+    : Array.isArray(report?.issues)
+      ? report.issues
+      : [];
 
   return issues
     .map(issue => {
-      const file = issue?.file ? extractRelativePath(issue.file) ?? issue.file : `validator:${validatorName}`;
+      const file = issue?.file
+        ? (extractRelativePath(issue.file) ?? issue.file)
+        : `validator:${validatorName}`;
       const line = typeof issue?.line === 'number' ? issue.line : null;
       const code = typeof issue?.code === 'string' ? issue.code : null;
       const message = typeof issue?.message === 'string' ? issue.message : null;
@@ -885,7 +874,10 @@ function buildRuntimeFailureDiagnostics(report, vitestReport = null) {
       createFailureEntry({
         file: `reports/${fileName}`,
         reason: 'Required report file is missing.',
-        fixSuggestion: reportSourceByFile.get(fileName) ?? validatorReportSourceByFile.get(fileName) ?? 'node --import tsx/esm scripts/analyzers/export-reports.mjs',
+        fixSuggestion:
+          reportSourceByFile.get(fileName) ??
+          validatorReportSourceByFile.get(fileName) ??
+          'node --import tsx/esm scripts/analyzers/export-reports.mjs',
       })
     );
   }
@@ -895,7 +887,10 @@ function buildRuntimeFailureDiagnostics(report, vitestReport = null) {
       createFailureEntry({
         file: `reports/${fileName}`,
         reason: 'Report file is stale.',
-        fixSuggestion: reportSourceByFile.get(fileName) ?? validatorReportSourceByFile.get(fileName) ?? 'node --import tsx/esm scripts/analyzers/export-reports.mjs',
+        fixSuggestion:
+          reportSourceByFile.get(fileName) ??
+          validatorReportSourceByFile.get(fileName) ??
+          'node --import tsx/esm scripts/analyzers/export-reports.mjs',
       })
     );
   }
@@ -981,10 +976,14 @@ function printActionSection(report, diagnostics) {
 
   if (!hasFailures) {
     process.stdout.write('- No blocking issues detected.\n');
-    process.stdout.write('- Next step: continue with your normal workflow or rerun the build if you need a fresh production artifact.\n');
+    process.stdout.write(
+      '- Next step: continue with your normal workflow or rerun the build if you need a fresh production artifact.\n'
+    );
   } else {
     process.stdout.write('- Run the targeted command(s) below in order.\n');
-    process.stdout.write('- Re-run system:full after the targeted fix so validators, tests, and reports stay in sync.\n');
+    process.stdout.write(
+      '- Re-run system:full after the targeted fix so validators, tests, and reports stay in sync.\n'
+    );
   }
 
   for (const command of commands) {
@@ -992,15 +991,19 @@ function printActionSection(report, diagnostics) {
   }
 
   if (report.reports.stale.length > 0 || report.reports.missing.length > 0) {
-    process.stdout.write('- Warning: report outputs are out of sync; refresh the affected generators before trusting downstream dashboards.\n');
+    process.stdout.write(
+      '- Warning: report outputs are out of sync; refresh the affected generators before trusting downstream dashboards.\n'
+    );
   }
 
   if (hasFailures && isGitWorkspaceDirty()) {
-    process.stdout.write('- Warning: the workspace is dirty; confirm generated report or snapshot changes are intentional before committing them.\n');
+    process.stdout.write(
+      '- Warning: the workspace is dirty; confirm generated report or snapshot changes are intentional before committing them.\n'
+    );
   }
 }
 
-function scanSmartCtaUsage() {
+function scanPrimaryCtaUsage() {
   const srcRoot = path.join(root, 'src');
   const violationsPath = path.join(reportsDir, 'cta-violation-scan.json');
   const conversionReportPath = path.join(reportsDir, 'conversion-contract-report.json');
@@ -1028,7 +1031,7 @@ function scanSmartCtaUsage() {
 
       const relativePath = normalizePath(path.relative(root, absolutePath));
       if (
-        relativePath === 'src/components/system/SmartCTA.tsx' ||
+        relativePath === 'src/components/system/PrimaryCTASection.tsx' ||
         relativePath.startsWith('src/components/')
       ) {
         continue;
@@ -1044,7 +1047,7 @@ function scanSmartCtaUsage() {
 
   const total = files.reduce((count, filePath) => {
     const content = fs.readFileSync(filePath, 'utf8');
-    const matches = content.match(/<SmartCTA\b[\s\S]*?\/>/g) ?? [];
+    const matches = content.match(/<PrimaryCTASection\b[\s\S]*?\/>/g) ?? [];
     return count + matches.length;
   }, 0);
 
@@ -1633,10 +1636,10 @@ function summarizeVitestReport(report, fallbackDuration) {
         typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
           ? Math.max(0, item.endTime - item.startTime)
           : Math.round(
-            assertions.reduce((sum, assertion) => {
-              return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
-            }, 0)
-          );
+              assertions.reduce((sum, assertion) => {
+                return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
+              }, 0)
+            );
 
       return {
         file,
@@ -1672,6 +1675,15 @@ function summarizeVitestReport(report, fallbackDuration) {
 function buildValidationSection(result, validationReport) {
   const validationData = unwrapReportData(validationReport);
   const validators = validationData?.validators ?? [];
+  const expectedValidators = getValidatorDefinitions();
+  const expectedNames = new Set(expectedValidators.map(validator => validator.name));
+  const actualNames = new Set(validators.map(validator => validator.name));
+  const missingValidators = expectedValidators
+    .map(validator => validator.name)
+    .filter(name => !actualNames.has(name));
+  const unexpectedValidators = validators
+    .map(validator => validator.name)
+    .filter(name => !expectedNames.has(name));
   const total = validationData?.total ?? {};
   const failuresByValidator = new Map(
     (validationData?.errors ?? [])
@@ -1684,6 +1696,28 @@ function buildValidationSection(result, validationReport) {
   const advisoryFailures = validators.filter(
     validator => validator.status === 'fail' && !validator.blocking
   );
+
+  if (validators.length !== expectedValidators.length || missingValidators.length > 0) {
+    throw new Error(
+      `Validator coverage incomplete. Expected ${expectedValidators.length} validators, received ${validators.length}. Missing: ${missingValidators.join(', ') || 'none'}.`
+    );
+  }
+
+  if (unexpectedValidators.length > 0) {
+    throw new Error(
+      `Validator coverage drift detected. Unexpected validators: ${unexpectedValidators.join(', ')}.`
+    );
+  }
+
+  const skippedValidators = validators.filter(
+    validator => validator.executionStatus === 'SKIPPED' || validator.reportMissing === true
+  );
+
+  if (skippedValidators.length > 0) {
+    throw new Error(
+      `Validator coverage incomplete. Skipped validators: ${skippedValidators.map(validator => validator.name).join(', ')}.`
+    );
+  }
 
   const errors = blockingFailures.map(validator => {
     const failure = failuresByValidator.get(validator.name);
@@ -1717,7 +1751,7 @@ function buildValidationSection(result, validationReport) {
 
   return {
     status: blockingFailed === 0 ? 'PASS' : 'FAIL',
-    command: 'node scripts/core/validate-all.mjs --report-json',
+    command: 'node scripts/core/validate-all.mjs --report-json --force',
     durationMs: result.durationMs,
     total: total.total ?? validators.length,
     errors,
@@ -1931,12 +1965,16 @@ function buildReportsSection(result, runStartedAt, timestamp) {
     })
     .sort((left, right) => left.file.path.localeCompare(right.file.path));
   const trackedFiles = allFiles.filter(entry => {
-    const relativeReportPath = path.relative(reportsDir, path.join(root, entry.file.path)).replaceAll('\\', '/');
+    const relativeReportPath = path
+      .relative(reportsDir, path.join(root, entry.file.path))
+      .replaceAll('\\', '/');
     return requiredReportFiles.has(relativeReportPath);
   });
 
   const availableFileNames = new Set(
-    trackedFiles.map(entry => path.relative(reportsDir, path.join(root, entry.file.path)).replaceAll('\\', '/'))
+    trackedFiles.map(entry =>
+      path.relative(reportsDir, path.join(root, entry.file.path)).replaceAll('\\', '/')
+    )
   );
   const missing = [...requiredReportFiles].filter(fileName => !availableFileNames.has(fileName));
   const stale = trackedFiles
@@ -1948,7 +1986,9 @@ function buildReportsSection(result, runStartedAt, timestamp) {
       const relativeReportPath = path
         .relative(reportsDir, path.join(root, entry.file.path))
         .replaceAll('\\', '/');
-      const inputPaths = reportInputPathsByFile.get(entry.file.name) ?? reportInputPathsByFile.get(relativeReportPath);
+      const inputPaths =
+        reportInputPathsByFile.get(entry.file.name) ??
+        reportInputPathsByFile.get(relativeReportPath);
       if (!inputPaths) {
         return true;
       }
@@ -1994,7 +2034,7 @@ function buildSystemSection() {
   const serviceIssues = sectionOrderIssues
     .filter(issue => issue?.domain === 'service')
     .map(issue => issue?.message ?? 'Service contract issue.');
-  const cta = scanSmartCtaUsage();
+  const cta = scanPrimaryCtaUsage();
   const graphErrors = Array.isArray(graphReport?.errors) ? graphReport.errors : [];
   const graphWarnings = Array.isArray(graphReport?.warnings) ? graphReport.warnings : [];
 
@@ -2009,7 +2049,7 @@ function buildSystemSection() {
     graph: {
       status:
         (graphReport?.errorCount ?? graphErrors.length) === 0 &&
-          (graphReport?.summary?.orphanNodes ?? 0) === 0
+        (graphReport?.summary?.orphanNodes ?? 0) === 0
           ? 'OK'
           : 'ISSUES',
       nodes: Array.isArray(authorityMap?.nodes) ? authorityMap.nodes.length : 0,
@@ -2053,6 +2093,7 @@ function main() {
   const validateResult = runCommand(binaries.node, [
     'scripts/core/validate-all.mjs',
     '--report-json',
+    '--force',
   ]);
   const validationReport = readReportJson(root, 'validation-results.json');
   const validate = buildValidationSection(validateResult, validationReport);
@@ -2063,17 +2104,17 @@ function main() {
   const tests = skipTests
     ? buildSkippedTestsSection()
     : (() => {
-      const testsResult = runCommand(binaries.npm, [
-        'run',
-        'test',
-        '--',
-        '--run',
-        '--reporter=json',
-        `--outputFile=${vitestOutputPath}`,
-      ]);
-      const vitestReport = readJsonFile(vitestOutputPath);
-      return buildTestsSection(testsResult, vitestReport);
-    })();
+        const testsResult = runCommand(binaries.npm, [
+          'run',
+          'test',
+          '--',
+          '--run',
+          '--reporter=json',
+          `--outputFile=${vitestOutputPath}`,
+        ]);
+        const vitestReport = readJsonFile(vitestOutputPath);
+        return buildTestsSection(testsResult, vitestReport);
+      })();
   const vitestReport = skipTests ? null : readJsonFile(vitestOutputPath);
 
   const e2eResult = includeE2E
@@ -2169,9 +2210,9 @@ function main() {
   stabilizedReport.reports.fileCount = stabilizedReport.reports.files.length;
   stabilizedReport.reports.status =
     stabilizedReport.reports.errors.length === 0 &&
-      stabilizedReport.reports.files.length > 0 &&
-      stabilizedReport.reports.missing.length === 0 &&
-      stabilizedReport.reports.stale.length === 0
+    stabilizedReport.reports.files.length > 0 &&
+    stabilizedReport.reports.missing.length === 0 &&
+    stabilizedReport.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   stabilizedReport.status = buildOverallStatus(stabilizedReport);
@@ -2203,9 +2244,9 @@ function main() {
   );
   validatedOutputs.report.reports.status =
     validatedOutputs.report.reports.errors.length === 0 &&
-      validatedOutputs.report.reports.files.length > 0 &&
-      validatedOutputs.report.reports.missing.length === 0 &&
-      validatedOutputs.report.reports.stale.length === 0
+    validatedOutputs.report.reports.files.length > 0 &&
+    validatedOutputs.report.reports.missing.length === 0 &&
+    validatedOutputs.report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   validatedOutputs.report.status = buildOverallStatus(validatedOutputs.report);

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const reviewAutomationForRoofingCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Review Automation for Roofing Companies Guide',
     description:
       'Discover how review automation for roofing companies builds a steady flow of recent reviews that strengthen local rankings and attract more customers.',
@@ -12,16 +12,16 @@ export const reviewAutomationForRoofingCompanies: BlogPostData = {
         'Discover how review automation for roofing companies builds a steady flow of recent reviews that strengthen local rankings and attract more customers.',
     },
   },
-    slug: 'review-automation-for-roofing-companies',
-    title: 'Review Automation for Roofing Companies',
-    publishDate: '2025-10-18',
-    authorKey: 'TECHNICAL',
-    category: 'reputation-review',
-    industries: ['roofing'],
-    systems: ['reputation-review'],
-    topics: ['review-automation'],
-    tags: ['Roofing', 'Review Automation', 'Reputation', 'Local Rankings', 'Automation'],
-    sections: [
+  slug: 'review-automation-for-roofing-companies',
+  title: 'Review Automation for Roofing Companies',
+  publishDate: '2025-10-18',
+  authorKey: 'TECHNICAL',
+  category: 'reputation-review',
+  industries: ['roofing'],
+  systems: ['reputation-review'],
+  topics: ['review-automation'],
+  tags: ['Roofing', 'Review Automation', 'Reputation', 'Local Rankings', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -98,5 +98,5 @@ export const reviewAutomationForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing company relies on customers remembering to leave reviews, automation can close that gap. See how review systems build your local reputation.',
     },
-  ]
+  ],
 };

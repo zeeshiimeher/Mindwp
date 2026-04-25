@@ -643,7 +643,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Contact.tsx",
     "representativePageUrl": "/contact",
-    "usageCount": 50,
+    "usageCount": 52,
     "composedComponents": [],
     "props": [
       {
@@ -12905,13 +12905,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "slug",
+        "name": "description",
         "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "system",
+        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -12924,12 +12924,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "description",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -12949,18 +12943,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "pageType",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/lib/page/pageIdentity\").PageType | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string | undefined",
         "optional": true,
         "description": ""
       },
@@ -13645,7 +13627,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 4,
+    "usageCount": 12,
     "composedComponents": [],
     "props": [
       {
@@ -13674,7 +13656,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cta",
-        "type": "SmartCTAProps | undefined",
+        "type": "PrimaryCTASectionProps | undefined",
         "optional": true,
         "description": ""
       },
@@ -14185,7 +14167,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
     "representativePageUrl": "/resources/[slug]",
-    "usageCount": 24,
+    "usageCount": 25,
     "composedComponents": [],
     "props": [
       {
@@ -14615,13 +14597,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "slug",
+        "name": "description",
         "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "system",
+        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -14634,12 +14616,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "description",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -14659,18 +14635,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "pageType",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/lib/page/pageIdentity\").PageType | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string | undefined",
         "optional": true,
         "description": ""
       },
@@ -14711,10 +14675,10 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Descriptive text explaining the feature value proposition"
       },
       {
-        "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
+        "name": "heroActions",
+        "type": "Pick<HeroActionsProps, \"allowSecondaryAction\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\">",
         "optional": false,
-        "description": "SmartCTA ownership context for page hero CTAs"
+        "description": "Hero action button context for page hero actions"
       },
       {
         "name": "title",
@@ -14916,7 +14880,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cta",
-        "type": "SmartCTAProps | undefined",
+        "type": "PrimaryCTASectionProps | undefined",
         "optional": true,
         "description": ""
       },
@@ -15834,7 +15798,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/industries/[...slug]/page.tsx",
     "representativePageUrl": "/industries/[...slug]",
-    "usageCount": 1,
+    "usageCount": 2,
     "composedComponents": [],
     "props": [
       {
@@ -15923,7 +15887,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cta",
-        "type": "SmartCTAProps | undefined",
+        "type": "PrimaryCTASectionProps | undefined",
         "optional": true,
         "description": ""
       },
@@ -15952,13 +15916,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "slug",
+        "name": "description",
         "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "system",
+        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -15971,12 +15935,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "description",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -15996,18 +15954,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "pageType",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/lib/page/pageIdentity\").PageType | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string | undefined",
         "optional": true,
         "description": ""
       },
@@ -16126,16 +16072,16 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Optional heading tag for title semantics."
       },
       {
+        "name": "heroActions",
+        "type": "Pick<HeroActionsProps, \"allowSecondaryAction\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\"> | undefined",
+        "optional": true,
+        "description": "Hero action button context for page hero actions"
+      },
+      {
         "name": "list",
         "type": "string[] | undefined",
         "optional": true,
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
-      },
-      {
-        "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
-        "optional": true,
-        "description": "SmartCTA ownership context for page hero CTAs"
       }
     ]
   },
@@ -16264,8 +16210,8 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "smartCta",
-        "type": "{ system: NonNullable<SmartCTAProps[\"system\"]>; pageType: NonNullable<SmartCTAProps[\"pageType\"]>; slug: NonNullable<SmartCTAProps[\"slug\"]>; } | undefined",
+        "name": "heroActions",
+        "type": "{ system: string; pageType: PageType; slug: string; } | undefined",
         "optional": true,
         "description": ""
       },
@@ -16318,8 +16264,8 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "smartCta",
-        "type": "{ system: NonNullable<SmartCTAProps[\"system\"]>; pageType: NonNullable<SmartCTAProps[\"pageType\"]>; slug: NonNullable<SmartCTAProps[\"slug\"]>; } | undefined",
+        "name": "heroActions",
+        "type": "{ system: string; pageType: PageType; slug: string; } | undefined",
         "optional": true,
         "description": ""
       },
@@ -16373,7 +16319,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cta",
-        "type": "SmartCTAProps | undefined",
+        "type": "PrimaryCTASectionProps | undefined",
         "optional": true,
         "description": ""
       },
@@ -17222,7 +17168,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cta",
-        "type": "SmartCTAProps | undefined",
+        "type": "PrimaryCTASectionProps | undefined",
         "optional": true,
         "description": ""
       },
@@ -18111,13 +18057,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "slug",
+        "name": "description",
         "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "system",
+        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -18130,12 +18076,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "description",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -18155,18 +18095,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "pageType",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/lib/page/pageIdentity\").PageType | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string | undefined",
         "optional": true,
         "description": ""
       },
@@ -18228,16 +18156,16 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Optional heading tag for title semantics."
       },
       {
+        "name": "heroActions",
+        "type": "Pick<import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/system/HeroActions\").HeroActionsProps, \"allowSecondaryAction\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\"> | undefined",
+        "optional": true,
+        "description": "Hero action button context for page hero actions"
+      },
+      {
         "name": "list",
         "type": "string[] | undefined",
         "optional": true,
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
-      },
-      {
-        "name": "smartCta",
-        "type": "Pick<import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/system/SmartCTA\").SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
-        "optional": true,
-        "description": "SmartCTA ownership context for page hero CTAs"
       }
     ]
   },
@@ -18248,7 +18176,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 10,
+    "usageCount": 19,
     "composedComponents": [
       "Button",
       "ButtonProps",
@@ -18400,16 +18328,16 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Optional heading tag for title semantics."
       },
       {
+        "name": "heroActions",
+        "type": "Pick<HeroActionsProps, \"allowSecondaryAction\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\"> | undefined",
+        "optional": true,
+        "description": "Hero action button context for page hero actions"
+      },
+      {
         "name": "list",
         "type": "string[] | undefined",
         "optional": true,
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
-      },
-      {
-        "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
-        "optional": true,
-        "description": "SmartCTA ownership context for page hero CTAs"
       }
     ]
   },
@@ -18483,10 +18411,10 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Descriptive text explaining the feature value proposition"
       },
       {
-        "name": "smartCta",
-        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"allowSecondaryCTA\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
+        "name": "heroActions",
+        "type": "Pick<HeroActionsProps, \"allowSecondaryAction\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\">",
         "optional": false,
-        "description": "SmartCTA ownership context for page hero CTAs"
+        "description": "Hero action button context for page hero actions"
       },
       {
         "name": "title",
@@ -18897,6 +18825,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "number | undefined",
         "optional": true,
         "description": "Star rating (1-5)"
+      },
+      {
+        "name": "title",
+        "type": "string | undefined",
+        "optional": true,
+        "description": "Optional title shown above the quote"
       }
     ]
   },
@@ -18994,6 +18928,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [
       "Badge",
       "Button",
+      "ButtonProps",
       "Card",
       "SectionIntro"
     ],
@@ -19029,8 +18964,8 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "smartCta",
-        "type": "{ system: NonNullable<SmartCTAProps[\"system\"]>; pageType: NonNullable<SmartCTAProps[\"pageType\"]>; slug: NonNullable<SmartCTAProps[\"slug\"]>; } | undefined",
+        "name": "heroActions",
+        "type": "{ system: string; pageType: PageType; slug: string; } | undefined",
         "optional": true,
         "description": ""
       },

@@ -474,5 +474,5 @@ export const smartWebsiteSystemsPage = {
     title: 'Not sure where your site is leaking enquiries?',
     description:
       'Send the link. We will show you where people stop, what is not being captured, and which fix matters first.',
-  }
+  },
 } satisfies ServicePageData;

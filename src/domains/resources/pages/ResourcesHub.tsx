@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
 
@@ -148,12 +148,7 @@ export function ResourcesHub({
             If one of these guides names the bottleneck clearly, the next step is to map it to the
             service system that removes the manual handoff behind it.
           </div>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='resources'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title='Need help turning the right diagnosis into an operating system?'
             description='Tell us where the manual gap still lives, and we will show you which service path closes it with clearer ownership, faster follow-up, and less patchwork.'
             primaryActionVariant='white'

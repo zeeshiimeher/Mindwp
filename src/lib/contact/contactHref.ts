@@ -30,7 +30,10 @@ function trimContactValue(value?: string | null) {
   return value?.trim() ?? '';
 }
 
-export function normalizeContactContext(system?: string | null, source?: string | null): ContactContext {
+export function normalizeContactContext(
+  system?: string | null,
+  source?: string | null
+): ContactContext {
   return {
     system: trimContactValue(system) || DEFAULT_CONTACT_SYSTEM,
     source: trimContactValue(source) || DEFAULT_CONTACT_SOURCE,

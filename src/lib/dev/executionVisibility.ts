@@ -1,13 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { readJsonFile } from './reportJson';
 import {
   getDashboardReportFiles,
   getReportFiles,
   getRequiredCommands,
   getValidatorDefinitions,
 } from '../../../scripts/core/system-manifest.mjs';
+
+import { readJsonFile } from './reportJson';
 
 export type ScriptIntent = 'system' | 'content' | 'design' | 'build' | 'audit' | 'debug';
 export type ScriptGroup = 'daily' | 'occasional' | 'advanced';
@@ -90,7 +91,9 @@ const scriptHistoryPath = path.join(reportsDir, 'script-history.json');
 
 const reportGroupOrder: ReportGroup[] = ['system', 'content', 'audit', 'debug'];
 const scriptGroupOrder: ScriptGroup[] = ['daily', 'occasional', 'advanced'];
-const dashboardReportNames = new Set(getDashboardReportFiles().map(filePath => path.basename(filePath)));
+const dashboardReportNames = new Set(
+  getDashboardReportFiles().map(filePath => path.basename(filePath))
+);
 const durableReportNames = new Set(getReportFiles().map(filePath => path.basename(filePath)));
 
 function compareScriptGroups(left: ScriptGroup, right: ScriptGroup): number {
@@ -152,10 +155,10 @@ export function loadScriptRegistry(): ScriptRegistryEntry[] {
     id: command.name,
     name: command.name,
     category: 'core' as const,
-    intent: command.name === 'build' ? 'build' as const : 'system' as const,
+    intent: command.name === 'build' ? ('build' as const) : ('system' as const),
     group: 'daily' as const,
     priority: index + 1,
-    estimatedTime: command.name === 'system:quick' ? 'fast' as const : 'medium' as const,
+    estimatedTime: command.name === 'system:quick' ? ('fast' as const) : ('medium' as const),
     path: 'package.json',
     description: command.description,
     type: 'runner' as const,
@@ -165,16 +168,16 @@ export function loadScriptRegistry(): ScriptRegistryEntry[] {
   const validators = getValidatorDefinitions().map((validator, index) => ({
     id: validator.name,
     name: validator.name,
-    category: validator.category === 'core' ? 'core' as const : 'validators' as const,
+    category: validator.category === 'core' ? ('core' as const) : ('validators' as const),
     intent:
       validator.category === 'seo' || validator.category === 'content'
-        ? 'content' as const
+        ? ('content' as const)
         : validator.category === 'structure'
-          ? 'design' as const
-          : 'system' as const,
-    group: validator.blocking === false ? 'occasional' as const : 'daily' as const,
+          ? ('design' as const)
+          : ('system' as const),
+    group: validator.blocking === false ? ('occasional' as const) : ('daily' as const),
     priority: index + 10,
-    estimatedTime: validator.blocking === false ? 'medium' as const : 'fast' as const,
+    estimatedTime: validator.blocking === false ? ('medium' as const) : ('fast' as const),
     path: [validator.command, ...validator.args].join(' '),
     description: `Run ${validator.name}.`,
     type: 'validator' as const,

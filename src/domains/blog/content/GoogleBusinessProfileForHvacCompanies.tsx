@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const googleBusinessProfileForHvacCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Google Business Profile for HVAC Companies',
     description:
       'Learn how optimising your google business profile for HVAC companies improves local visibility, map rankings, and emergency service discovery.',
@@ -12,16 +12,16 @@ export const googleBusinessProfileForHvacCompanies: BlogPostData = {
         'Learn how optimising your google business profile for HVAC companies improves local visibility, map rankings, and emergency service discovery.',
     },
   },
-    slug: 'google-business-profile-for-hvac-companies',
-    title: 'Google Business Profile for HVAC Companies',
-    publishDate: '2025-10-02',
-    authorKey: 'TECHNICAL',
-    category: 'local-authority-seo',
-    industries: ['hvac'],
-    systems: ['local-seo-authority'],
-    topics: ['google-business-profile'],
-    tags: ['HVAC', 'Google Business Profile', 'Local SEO', 'Map Rankings', 'Visibility'],
-    sections: [
+  slug: 'google-business-profile-for-hvac-companies',
+  title: 'Google Business Profile for HVAC Companies',
+  publishDate: '2025-10-02',
+  authorKey: 'TECHNICAL',
+  category: 'local-authority-seo',
+  industries: ['hvac'],
+  systems: ['local-seo-authority'],
+  topics: ['google-business-profile'],
+  tags: ['HVAC', 'Google Business Profile', 'Local SEO', 'Map Rankings', 'Visibility'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -97,5 +97,5 @@ export const googleBusinessProfileForHvacCompanies: BlogPostData = {
       content:
         'If your Google Business Profile is incomplete or your HVAC company rarely appears in local map results, optimisation can change that. See how local authority systems build your visibility.',
     },
-  ]
+  ],
 };

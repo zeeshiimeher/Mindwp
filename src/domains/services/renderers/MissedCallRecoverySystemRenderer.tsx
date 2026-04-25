@@ -12,7 +12,7 @@ import { IconTextCard, SectionIntro, WorkflowStepCard } from '@/components/reusa
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface MissedCallRecoverySystemRendererProps {
@@ -22,7 +22,7 @@ interface MissedCallRecoverySystemRendererProps {
 
 export function MissedCallRecoverySystemRenderer({
   data,
-  slug,
+  slug: _slug,
 }: MissedCallRecoverySystemRendererProps) {
   const { hero, sections, cta, inlineCta } = data;
   const {
@@ -54,10 +54,7 @@ export function MissedCallRecoverySystemRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -155,11 +152,6 @@ export function MissedCallRecoverySystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             cta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              slug,
-              pageType: 'service',
-              intent: 'diagnostic',
-              position: 'mid',
               title: inlineCtaTitle,
               description: inlineCtaDescription,
               primaryActionVariant: 'primary',
@@ -200,12 +192,7 @@ export function MissedCallRecoverySystemRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

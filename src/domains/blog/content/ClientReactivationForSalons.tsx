@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const clientReactivationForSalons: BlogPostData = {
-    seo: {
+  seo: {
     title: 'How Client Reactivation for Salons Recovers Revenue',
     description:
       'Explore how client reactivation for salons uses CRM automation to identify lapsed clients and win them back with personalised re-engagement campaigns.',
@@ -12,16 +12,16 @@ export const clientReactivationForSalons: BlogPostData = {
         'Explore how client reactivation for salons uses CRM automation to identify lapsed clients and win them back with personalised re-engagement campaigns.',
     },
   },
-    slug: 'client-reactivation-for-salons',
-    title: 'Client Reactivation for Salons',
-    publishDate: '2025-12-13',
-    authorKey: 'TECHNICAL',
-    category: 'beauty-personal-care-industry',
-    industries: ['salon'],
-    systems: ['crm-automation'],
-    topics: ['client-reactivation'],
-    tags: ['Salon', 'Client Reactivation', 'CRM', 'Revenue Recovery', 'Re-Engagement'],
-    sections: [
+  slug: 'client-reactivation-for-salons',
+  title: 'Client Reactivation for Salons',
+  publishDate: '2025-12-13',
+  authorKey: 'TECHNICAL',
+  category: 'beauty-personal-care-industry',
+  industries: ['salon'],
+  systems: ['crm-automation'],
+  topics: ['client-reactivation'],
+  tags: ['Salon', 'Client Reactivation', 'CRM', 'Revenue Recovery', 'Re-Engagement'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -84,5 +84,5 @@ export const clientReactivationForSalons: BlogPostData = {
       content:
         'If your salon has hundreds of lapsed clients sitting untouched in your booking system, reactivation campaigns can recover them. See how CRM automation works for service businesses.',
     },
-  ]
+  ],
 };

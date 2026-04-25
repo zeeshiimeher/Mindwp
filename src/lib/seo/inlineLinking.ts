@@ -33,6 +33,7 @@ export interface ExtractInternalLinksOptions {
   excludePaths?: string[];
   tracker?: InlineLinkTracker;
   validateEntry?: (entry: LinkMapEntry) => InlineLinkValidationResult;
+  bestEffort?: true;
 }
 
 export interface LinkMapInput {
@@ -193,6 +194,10 @@ export function extractInternalLinks(
 
     const validation = options.validateEntry?.(entry);
     if (validation && !validation.valid) {
+      if (options.bestEffort !== true) {
+        throw new Error(`Inline link validation failed for ${entry.path}: ${validation.reason}`);
+      }
+
       recordInlineLinkEvent(options.tracker, {
         keyword: entry.keyword,
         path: entry.path,

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Auto Repair Shops Lose Phone Leads Explained',
     description:
       'Explore why auto repair shops lose phone leads when calls go unanswered during busy hours and how structured call handling prevents lost bookings.',
@@ -12,16 +12,16 @@ export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
         'Explore why auto repair shops lose phone leads when calls go unanswered during busy hours and how structured call handling prevents lost bookings.',
     },
   },
-    slug: 'why-auto-repair-shops-lose-phone-leads',
-    title: 'Why Auto Repair Shops Lose Phone Leads',
-    publishDate: '2025-04-09',
-    authorKey: 'EDITORIAL',
-    category: 'ai-lead-handling',
-    industries: ['automotive'],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-management'],
-    tags: ['Automotive', 'Phone Leads', 'Lead Loss', 'Call Handling', 'Repair Shop'],
-    sections: [
+  slug: 'why-auto-repair-shops-lose-phone-leads',
+  title: 'Why Auto Repair Shops Lose Phone Leads',
+  publishDate: '2025-04-09',
+  authorKey: 'EDITORIAL',
+  category: 'ai-lead-handling',
+  industries: ['automotive'],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-management'],
+  tags: ['Automotive', 'Phone Leads', 'Lead Loss', 'Call Handling', 'Repair Shop'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
       content:
         'If your repair shop misses calls when the team is busy, automated lead handling can ensure every enquiry gets a response. Explore how AI systems capture phone leads.',
     },
-  ]
+  ],
 };

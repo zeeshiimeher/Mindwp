@@ -3,7 +3,7 @@ import React from 'react';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
+import { HeroActions, type HeroActionsProps } from '@/components/system/HeroActions';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'feature-hero';
@@ -64,16 +64,10 @@ export interface SplitHeroSectionProps {
     label: string;
   }>;
 
-  /** SmartCTA ownership context for page hero CTAs */
-  smartCta: Pick<
-    SmartCTAProps,
-    | 'system'
-    | 'pageType'
-    | 'slug'
-    | 'allowSecondaryCTA'
-    | 'primaryActionVariant'
-    | 'primaryButtonCssPrefix'
-    | 'secondaryButtonCssPrefix'
+  /** Hero action button context for page hero actions */
+  heroActions: Pick<
+    HeroActionsProps,
+    'allowSecondaryAction' | 'primaryActionVariant' | 'primaryButtonCssPrefix'
   >;
 
   /**
@@ -116,7 +110,7 @@ export function SplitHeroSection({
   headingTag = 'h1',
   description,
   stats,
-  smartCta,
+  heroActions,
   visualContent,
   cssPrefix = '',
   backgroundColor = '',
@@ -138,8 +132,8 @@ export function SplitHeroSection({
     return `${BLOCK}__decoration--lg`;
   };
 
-  if (!smartCta) {
-    throw new Error('SplitHeroSection requires smartCta for CTA rendering.');
+  if (!heroActions) {
+    throw new Error('SplitHeroSection requires heroActions for hero action rendering.');
   }
 
   return (
@@ -190,24 +184,14 @@ export function SplitHeroSection({
             )}
 
             <div className={`${BLOCK}__buttons`}>
-              <SmartCTA
-                system={smartCta.system}
-                pageType={smartCta.pageType}
-                slug={smartCta.slug}
-                intent='entry'
-                position='hero'
-                allowSecondaryCTA={smartCta.allowSecondaryCTA}
-                primaryActionVariant={smartCta.primaryActionVariant}
+              <HeroActions
+                allowSecondaryAction={heroActions.allowSecondaryAction}
+                primaryActionVariant={heroActions.primaryActionVariant}
                 primaryButtonCssPrefix={cn(
                   `${BLOCK}__primary-cta`,
-                  smartCta.primaryButtonCssPrefix
+                  heroActions.primaryButtonCssPrefix
                 )}
-                secondaryButtonCssPrefix={cn(
-                  `${BLOCK}__secondary-cta`,
-                  smartCta.secondaryButtonCssPrefix
-                )}
-                mode='actions-only'
-                actionClassName='feature-hero__buttons-smart'
+                className='feature-hero__buttons-smart'
               />
             </div>
           </div>

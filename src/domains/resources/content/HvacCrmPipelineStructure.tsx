@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const hvacCrmPipelineStructure: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'HVAC CRM Pipeline Structure',
     description:
       'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
     canonical,
   },
-    title: 'HVAC CRM Pipeline Structure',
-    description:
+  title: 'HVAC CRM Pipeline Structure',
+  description:
     'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
-    category: 'crm-automation',
-    publishedAt: '2026-01-26',
-    systems: ['crm-automation'],
-    industries: ['hvac'],
-    topics: ['pipeline-architecture'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'crm-automation',
+  publishedAt: '2026-01-26',
+  systems: ['crm-automation'],
+  industries: ['hvac'],
+  topics: ['pipeline-architecture'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'HVAC CRM Pipeline Structure',
@@ -181,5 +181,5 @@ export const hvacCrmPipelineStructure: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ]
+  ],
 };

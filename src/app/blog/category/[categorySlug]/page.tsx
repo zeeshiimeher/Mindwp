@@ -5,8 +5,8 @@ import JsonLd from '@/components/system/JsonLd';
 import { blogPosts, getAllCategorySlugs, getCategoryBySlug } from '@/domains/blog/api';
 import { BlogCategoryTemplate } from '@/domains/blog/templates/BlogCategoryTemplate';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamicParams = false;
 export const revalidate = false;
@@ -32,7 +32,11 @@ export async function generateMetadata({
     return {};
   }
 
-  return resolveSEO({ path: `/blog/category/${category.slug}`, type: 'blog-category', slug: category.slug });
+  return resolveSEO({
+    path: `/blog/category/${category.slug}`,
+    type: 'blog-category',
+    slug: category.slug,
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {

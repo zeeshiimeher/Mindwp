@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Booking Systems Need Website Infrastructure',
     description:
       'Discover why booking systems need website infrastructure to function reliably, with connected forms, CRM pipelines, and automated confirmations.',
@@ -12,22 +12,22 @@ export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
         'Discover why booking systems need website infrastructure to function reliably, with connected forms, CRM pipelines, and automated confirmations.',
     },
   },
-    slug: 'why-booking-systems-need-website-infrastructure',
-    title: 'Why Booking Systems Need Website Infrastructure',
-    publishDate: '2024-09-20',
-    authorKey: 'EDITORIAL',
-    category: 'smart-website-systems',
-    industries: [],
-    systems: ['smart-website-systems'],
-    topics: ['booking-systems'],
-    tags: [
+  slug: 'why-booking-systems-need-website-infrastructure',
+  title: 'Why Booking Systems Need Website Infrastructure',
+  publishDate: '2024-09-20',
+  authorKey: 'EDITORIAL',
+  category: 'smart-website-systems',
+  industries: [],
+  systems: ['smart-website-systems'],
+  topics: ['booking-systems'],
+  tags: [
     'Booking Systems',
     'Website Infrastructure',
     'Service Business',
     'Automation',
     'CRM Integration',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -95,5 +95,5 @@ export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
       content:
         'If your booking widget creates more admin work than it saves, the infrastructure underneath it needs attention. Explore how systems-first websites support booking workflows end to end.',
     },
-  ]
+  ],
 };

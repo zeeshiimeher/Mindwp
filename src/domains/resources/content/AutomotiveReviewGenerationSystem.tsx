@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const automotiveReviewGenerationSystem: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Automotive Review Generation System',
     description:
       'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
     canonical,
   },
-    title: 'Automotive Review Generation System',
-    description:
+  title: 'Automotive Review Generation System',
+  description:
     'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-    category: 'reputation-review',
-    publishedAt: '2026-01-31',
-    systems: ['reputation-review'],
-    industries: ['automotive'],
-    topics: ['review-generation'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2026-01-31',
+  systems: ['reputation-review'],
+  industries: ['automotive'],
+  topics: ['review-generation'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'Automotive Review Generation System',
@@ -181,5 +181,5 @@ export const automotiveReviewGenerationSystem: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'bricks-builder';
 
 export const bricksBuilderPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Bricks Builder WordPress Development | MindWP',
     description:
       "Bricks Builder produces fast, clean WordPress sites. But clean code alone doesn't convert visitors into enquiries. Here's what to get right first.",
   }),
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure'],
-    badge: 'Bricks Builder',
-    category: 'Implementation Services',
-    hero: {
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure'],
+  badge: 'Bricks Builder',
+  category: 'Implementation Services',
+  hero: {
     badge: 'Bricks Builder',
     title: 'Your Site Loads Fast. Nobody Gets In Touch.',
     description:
@@ -36,7 +36,7 @@ export const bricksBuilderPage = {
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
-    sections: {
+  sections: {
     conversionSection: {
       title: 'We build with Bricks. The builder was never the real problem.',
       description1:
@@ -239,9 +239,9 @@ export const bricksBuilderPage = {
       ],
     },
   },
-    cta: {
+  cta: {
     title: 'Not sure if the builder is your actual problem?',
     description:
       "Tell us what's happening with your website visitors — or what isn't. We'll tell you whether it's a build issue or something the site itself can't fix.",
-  }
+  },
 } satisfies ServicePageData;

@@ -14,7 +14,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -26,7 +26,10 @@ const ReviewsVisual = () => (
         <h4 className='text-sm mb-3'>Recent Reviews</h4>
         <div className='l-row l-row-center l-gap-2 mb-2'>
           {Array.from({ length: 5 }, (_, starValue) => starValue + 1).map(starValue => (
-            <Star key={`review-summary-star-${starValue}`} className='w-6 h-6 fill-yellow-400 text-yellow-400' />
+            <Star
+              key={`review-summary-star-${starValue}`}
+              className='w-6 h-6 fill-yellow-400 text-yellow-400'
+            />
           ))}
         </div>
         <div className='text-2xl text-primary'>4.9</div>
@@ -55,12 +58,14 @@ const ReviewsVisual = () => (
             <div className='l-row l-items-center l-row-between mb-2'>
               <div className='text-sm'>{review.name}</div>
               <div className='l-row l-gap-2'>
-                {Array.from({ length: review.stars }, (_, starValue) => starValue + 1).map(starValue => (
-                  <Star
-                    key={`${review.name}-star-${starValue}`}
-                    className={`${getVariantStyles('warning').icon.text} fill-current`}
-                  />
-                ))}
+                {Array.from({ length: review.stars }, (_, starValue) => starValue + 1).map(
+                  starValue => (
+                    <Star
+                      key={`${review.name}-star-${starValue}`}
+                      className={`${getVariantStyles('warning').icon.text} fill-current`}
+                    />
+                  )
+                )}
               </div>
             </div>
             <p className='text-xs text-muted-foreground'>{review.text}</p>
@@ -85,11 +90,10 @@ interface ReputationRendererProps {
 export default function ReputationRenderer({ data }: ReputationRendererProps) {
   const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq, explore } = sections;
-  const primarySystem = data.systems[0] ?? 'smart-website-systems';
   const testimonials = sections.testimonials;
 
   if (!testimonials) {
-    return null;
+    throw new Error('Missing section data');
   }
 
   return (
@@ -102,10 +106,7 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            smartCta={{
-              system: primarySystem,
-              pageType: 'feature',
-              slug: data.slug,
+            heroActions={{
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -193,10 +194,7 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
             </div>
           </SectionWrapper>
 
-          <SmartCTA
-            system={primarySystem}
-            pageType='feature'
-            slug={data.slug}
+          <PrimaryCTASection
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

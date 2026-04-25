@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
-    seo: {
+  seo: {
     title: 'How AI Search Changes Local Business Visibility',
     description:
       'Explore how AI search changes local business visibility through generative results, conversational queries, and new discovery patterns for local services.',
@@ -12,16 +12,16 @@ export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
         'Explore how AI search changes local business visibility through generative results, conversational queries, and new discovery patterns for local services.',
     },
   },
-    slug: 'how-ai-search-changes-local-business-visibility',
-    title: 'How AI Search Changes Local Business Visibility',
-    publishDate: '2026-02-07',
-    authorKey: 'TECHNICAL',
-    category: 'future-local-business-tech',
-    industries: [],
-    systems: ['local-seo-authority'],
-    topics: ['local-authority', 'local-visibility'],
-    tags: ['AI Search', 'Local Visibility', 'Generative Search', 'Future Trends', 'Local SEO'],
-    sections: [
+  slug: 'how-ai-search-changes-local-business-visibility',
+  title: 'How AI Search Changes Local Business Visibility',
+  publishDate: '2026-02-07',
+  authorKey: 'TECHNICAL',
+  category: 'future-local-business-tech',
+  industries: [],
+  systems: ['local-seo-authority'],
+  topics: ['local-authority', 'local-visibility'],
+  tags: ['AI Search', 'Local Visibility', 'Generative Search', 'Future Trends', 'Local SEO'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
       content:
         'If your local business relies on traditional search rankings alone, AI-driven discovery will change the game. See how local authority systems build visibility for the future.',
     },
-  ]
+  ],
 };

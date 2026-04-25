@@ -7,16 +7,17 @@ import { systemManifest } from '@/system/manifest';
 import {
   assertDashboardBundle,
   assertPipelineCoverage,
+  type ReportLike,
   validateReportShape,
 } from '../helpers/reportAssertions';
 
 const root = process.cwd();
 
-function readJson(fileName: string) {
-  return JSON.parse(fs.readFileSync(path.join(root, 'reports', fileName), 'utf8'));
+function readJson(fileName: string): ReportLike {
+  return JSON.parse(fs.readFileSync(path.join(root, 'reports', fileName), 'utf8')) as ReportLike;
 }
 
-function assertDeterministicStructure(report: Record<string, unknown>) {
+function assertDeterministicStructure(report: ReportLike) {
   if ('meta' in report && 'summary' in report && 'data' in report && 'issues' in report) {
     const normalized = validateReportShape(report);
 

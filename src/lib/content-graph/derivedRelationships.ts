@@ -184,10 +184,38 @@ export interface DerivedEdgeSummary {
   total: number;
 }
 
+export interface DerivedRelationshipDiagnostics {
+  summaries: DerivedEdgeSummary[];
+  orphanedNodes: Array<{
+    nodeId: string;
+    slug: string;
+    type: ContentNodeType;
+  }>;
+}
+
+export function findOrphanedNodes(allNodes: ContentGraphNode[]) {
+  return allNodes
+    .filter(node => {
+      const totalEdges =
+        (node.relatesTo?.length ?? 0) +
+        (node.supports?.length ?? 0) +
+        (node.validates?.length ?? 0);
+
+      return totalEdges === 0;
+    })
+    .map(node => ({
+      nodeId: node.id,
+      slug: node.slug,
+      type: node.type,
+    }));
+}
+
 /**
  * Log derived edge counts for all nodes in the graph.
  */
-export function logDerivedEdgeSummary(allNodes: ContentGraphNode[]): DerivedEdgeSummary[] {
+export function logDerivedEdgeSummary(
+  allNodes: ContentGraphNode[]
+): DerivedRelationshipDiagnostics {
   const summaries: DerivedEdgeSummary[] = [];
 
   for (const node of allNodes) {
@@ -209,9 +237,10 @@ export function logDerivedEdgeSummary(allNodes: ContentGraphNode[]): DerivedEdge
 
   const totalAll = summaries.reduce((sum, s) => sum + s.total, 0);
   const nodesWithEdges = summaries.length;
+  const orphanedNodes = findOrphanedNodes(allNodes);
 
   if (!logger.isDebug()) {
-    return summaries;
+    return { summaries, orphanedNodes };
   }
 
   logger.printTotals({ nodesWithEdges, totalEdges: totalAll });
@@ -227,5 +256,9 @@ export function logDerivedEdgeSummary(allNodes: ContentGraphNode[]): DerivedEdge
     });
   }
 
-  return summaries;
+  if (orphanedNodes.length > 0) {
+    logger.printDebug('orphaned-nodes', orphanedNodes);
+  }
+
+  return { summaries, orphanedNodes };
 }

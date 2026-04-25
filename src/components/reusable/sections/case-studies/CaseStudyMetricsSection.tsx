@@ -28,7 +28,10 @@ export function CaseStudyMetricsSection({
             const Icon = caseStudyIcons[metric.icon];
             const accentClass = metric.color || 'case-study-detail-metrics__accent';
             return (
-              <Card key={`${metric.label}-${metric.value}`} className='case-study-detail-metrics__card'>
+              <Card
+                key={`${metric.label}-${metric.value}`}
+                className='case-study-detail-metrics__card'
+              >
                 {Icon ? (
                   <Icon className={`case-study-detail-metrics__icon ${accentClass}`} />
                 ) : null}

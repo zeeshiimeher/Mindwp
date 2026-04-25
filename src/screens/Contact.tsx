@@ -1,18 +1,20 @@
+/* eslint-disable no-console */
+
 'use client';
 
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
-import { resolveCtaLabel } from '@/config/ctaLabels';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { normalizeContactContext } from '@/lib/contact/contactHref';
+import { getPrimaryCTA, getSecondaryCTA } from '@/lib/cta/primaryAction';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 declare global {
@@ -116,16 +118,8 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
     systemParam,
     sourceParam
   );
-  const primaryCtaLabel = resolveCtaLabel({
-    system: normalizedSystem,
-    pageType: 'page',
-    intent: 'entry',
-  });
-  const secondaryCtaLabel = resolveCtaLabel({
-    system: normalizedSystem,
-    pageType: 'page',
-    intent: 'diagnostic',
-  });
+  const primaryCtaLabel = getPrimaryCTA();
+  const secondaryCtaLabel = getSecondaryCTA(true);
 
   const handleInputChange = (field: keyof typeof INITIAL_FORM_STATE, value: string) => {
     setFormState(current => ({
@@ -201,7 +195,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
       setFormState(INITIAL_FORM_STATE);
       setCaptchaToken('');
       setSuccessMessage(
-        'Your request has been analyzed and routed to the right specialist. We\'ll respond with next steps within 24 hours.'
+        "Your request has been analyzed and routed to the right specialist. We'll respond with next steps within 24 hours."
       );
       setSubmitted(true);
     } catch (error) {
@@ -249,8 +243,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
     },
     {
       question: 'What happens after I send a message?',
-      answer:
-        'We review the context, route it correctly, and reply with the clearest next step.',
+      answer: 'We review the context, route it correctly, and reply with the clearest next step.',
     },
     {
       question: 'What information should I prepare?',
@@ -276,8 +269,8 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
           <div className='contact-page-hero-content text-center'>
             <h1 className='contact-page-hero-heading-1'>{primaryCtaLabel}</h1>
             <p className='contact-page-hero-text-1 text-xl text-muted-foreground l-container l-container--narrow'>
-              Tell us what you&apos;re trying to fix, improve, or build. We&apos;ll review it and reply
-              with the right next step.
+              Tell us what you&apos;re trying to fix, improve, or build. We&apos;ll review it and
+              reply with the right next step.
             </p>
           </div>
         </div>
@@ -300,7 +293,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                     </h2>
                     <p className='contact-page-success-text text-muted-foreground'>
                       {successMessage ||
-                        'A real person reads every enquiry. We\'ll come back with the right next step — not a generic reply, not a sales call.'}
+                        "A real person reads every enquiry. We'll come back with the right next step — not a generic reply, not a sales call."}
                     </p>
                     <div className='contact-page-success-actions'>
                       <Button
@@ -321,7 +314,9 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                 ) : (
                   <>
                     <p className='contact-page-form-text-1 mb-3 text-sm font-medium text-foreground'>
-                      Tell us where things are slipping — calls, follow-up, visibility, anything that&apos;s costing you work. A real person reads it and replies within one working day.
+                      Tell us where things are slipping — calls, follow-up, visibility, anything
+                      that&apos;s costing you work. A real person reads it and replies within one
+                      working day.
                     </p>
                     <h2 className='contact-page-form-heading-1 mb-6'>{secondaryCtaLabel}</h2>
 
@@ -385,7 +380,9 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                             name='businessType'
                             required
                             value={formState.businessType}
-                            onChange={event => handleInputChange('businessType', event.target.value)}
+                            onChange={event =>
+                              handleInputChange('businessType', event.target.value)
+                            }
                             className='contact-page-form-input-3 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background'
                           >
                             <option value=''>Select business type</option>
@@ -427,7 +424,9 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                             name='revenueRange'
                             required
                             value={formState.revenueRange}
-                            onChange={event => handleInputChange('revenueRange', event.target.value)}
+                            onChange={event =>
+                              handleInputChange('revenueRange', event.target.value)
+                            }
                             className='contact-page-form-input-5 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background'
                           >
                             <option value=''>Select revenue range</option>
@@ -538,8 +537,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         ✔ No spam
                         <br />
                         ✔ Personal response
-                        <br />
-                        ✔ Reply within 24 hours
+                        <br />✔ Reply within 24 hours
                       </p>
 
                       <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
@@ -607,7 +605,10 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                 <h3 className='contact-page-faq-heading-1 mb-6'>Quick Questions?</h3>
                 <div className='contact-page-faq-list'>
                   {faqs.map((faq, index) => (
-                    <div key={`${faq.question}-${index}`} className={`contact-page-faq-item-${index + 1}`}>
+                    <div
+                      key={`${faq.question}-${index}`}
+                      className={`contact-page-faq-item-${index + 1}`}
+                    >
                       <h4 className={`contact-page-faq-question-${index + 1} font-semibold mb-2`}>
                         {faq.question}
                       </h4>
@@ -635,23 +636,12 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
 
       {/* Alternative CTA */}
       <SectionWrapper className='cta footer-cta' padding='none'>
-        <div>
-          <div className='cta__panel'>
-            <h2 className='cta-heading'>Need to talk through the right next step?</h2>
-            <p className='cta__text'>
-              If the problem is clear but the right move is not, start the conversation and we&apos;ll
-              help you scope it properly.
-            </p>
-            <div className='cta__actions'>
-              <SmartCTA
-                system='smart-website-systems'
-                pageType='page'
-                slug='contact'
-                mode='actions-only'
-              />
-            </div>
-          </div>
-        </div>
+        <PrimaryCTASection
+          title='Need to talk through the right next step?'
+          description="If the problem is clear but the right move is not, start the conversation and we'll help you scope it properly."
+          wrapper='none'
+          includeContainer={false}
+        />
       </SectionWrapper>
     </div>
   );

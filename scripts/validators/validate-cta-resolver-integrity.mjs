@@ -3,16 +3,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { createLogger } from '../../lib/logger/index.mjs';
+
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 const root = process.cwd();
 const targetPath = path.join(root, 'src', 'lib', 'cta', 'primaryAction.ts');
 const reportPath = path.join(root, 'reports', 'cta-resolver-integrity-report.json');
+const logger = createLogger({ label: 'validate-cta-resolver-integrity', mode: 'summary', rootDir: root });
 
 const ALLOWED_FUNCTION_EXPORTS = new Set([
-  'resolvePrimaryCtaAction',
-  'resolveGlobalPrimaryCtaAction',
-  'resolveGlobalPrimaryCtaLinks',
+  'getPrimaryCTA',
+  'getSecondaryCTA',
+  'buildPrimaryCtaAction',
+  'buildGlobalPrimaryCtaAction',
+  'buildGlobalPrimaryCtaLinks',
 ]);
 
 function lineNumberForIndex(text, index) {
@@ -84,8 +89,7 @@ function main() {
   };
 
   if (shouldReportJson) {
-    fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
+    logger.writeReport(reportPath, report);
   }
 
   if (issues.length === 0) {

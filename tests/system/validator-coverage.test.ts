@@ -10,12 +10,13 @@ import {
 } from '../../scripts/core/system-manifest.mjs';
 
 describe('system simulation: validator coverage', () => {
-    test('validator names stay unique and include the CTA label lock', () => {
+    test('validator names stay unique and include the CTA contract lock', () => {
         const validators = getValidatorDefinitions();
         const validatorNames = validators.map(validator => validator.name);
 
         expect(new Set(validatorNames).size).toBe(validatorNames.length);
         expect(validatorNames).toContain('validate-cta-labels');
+        expect(validatorNames).toContain('validate-primary-cta');
         expect(validatorNames).not.toContain('validate-cta-label-contract');
     });
 

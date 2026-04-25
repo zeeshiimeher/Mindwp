@@ -157,23 +157,23 @@ const finalCta = {
 };
 
 export const authoritySignalsForLocalSearch: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Authority Signals for Local Search',
     description:
       'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
     canonical,
   },
-    title: 'Authority Signals for Local Search',
-    description:
+  title: 'Authority Signals for Local Search',
+  description:
     'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
-    category: 'local-seo-authority',
-    publishedAt: '2026-01-07',
-    systems: ['local-seo-authority'],
-    industries: [],
-    topics: ['authority-signals'],
-    primaryService: 'local-seo-authority',
-    sections: [
+  category: 'local-seo-authority',
+  publishedAt: '2026-01-07',
+  systems: ['local-seo-authority'],
+  industries: [],
+  topics: ['authority-signals'],
+  primaryService: 'local-seo-authority',
+  sections: [
     {
       type: 'hero',
       heading: 'Authority Signals for Local Search',
@@ -242,5 +242,5 @@ export const authoritySignalsForLocalSearch: ResourceData = {
       content: getRelatedResourcesContent('local-seo-authority'),
       resources: getRelatedResources('local-seo-authority', canonical),
     },
-  ]
+  ],
 };

@@ -10,8 +10,8 @@ import type { ResourceSection } from '@/domains/resources/types';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { resolveMetadata } from '@/lib/seo/resolveMetadata';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Salons Need Lead Handling Systems Explained',
     description:
       'Discover why salons need lead handling systems to capture booking enquiries that arrive when stylists are busy and front desks are unmanned.',
@@ -12,16 +12,16 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
         'Discover why salons need lead handling systems to capture booking enquiries that arrive when stylists are busy and front desks are unmanned.',
     },
   },
-    slug: 'why-salons-need-lead-handling-systems',
-    title: 'Why Salons Need Lead Handling Systems',
-    publishDate: '2025-07-06',
-    authorKey: 'EDITORIAL',
-    category: 'beauty-personal-care-industry',
-    industries: ['salon'],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-management'],
-    tags: ['Salon', 'Lead Handling', 'Booking System', 'Enquiry Management', 'Automation'],
-    sections: [
+  slug: 'why-salons-need-lead-handling-systems',
+  title: 'Why Salons Need Lead Handling Systems',
+  publishDate: '2025-07-06',
+  authorKey: 'EDITORIAL',
+  category: 'beauty-personal-care-industry',
+  industries: ['salon'],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-management'],
+  tags: ['Salon', 'Lead Handling', 'Booking System', 'Enquiry Management', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
       content:
         'If your salon loses bookings because enquiries go unanswered during busy hours, a lead handling system can fix that. See how AI lead handling works for salons.',
     },
-  ]
+  ],
 };

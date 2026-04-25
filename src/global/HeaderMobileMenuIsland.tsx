@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-import { resolveGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
+import { buildGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
 
 type HeaderMobileMenuIslandProps = {
   navLinks: Array<{ label: string; to: string }>;
@@ -11,7 +11,7 @@ type HeaderMobileMenuIslandProps = {
 
 export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { primaryAction } = resolveGlobalPrimaryCtaLinks();
+  const { primaryAction } = buildGlobalPrimaryCtaLinks();
 
   return (
     <>

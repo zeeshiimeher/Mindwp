@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why HVAC Companies Lose Leads After Hours',
     description:
       'Discover why HVAC companies lose leads after hours when emergency enquiries go unanswered and how automated response systems recover missed revenue.',
@@ -12,16 +12,16 @@ export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
         'Discover why HVAC companies lose leads after hours when emergency enquiries go unanswered and how automated response systems recover missed revenue.',
     },
   },
-    slug: 'why-hvac-companies-lose-leads-after-hours',
-    title: 'Why HVAC Companies Lose Leads After Hours',
-    publishDate: '2025-04-01',
-    authorKey: 'EDITORIAL',
-    category: 'home-services-industry',
-    industries: ['hvac'],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-management'],
-    tags: ['HVAC', 'After Hours', 'Lead Loss', 'Emergency Response', 'Lead Handling'],
-    sections: [
+  slug: 'why-hvac-companies-lose-leads-after-hours',
+  title: 'Why HVAC Companies Lose Leads After Hours',
+  publishDate: '2025-04-01',
+  authorKey: 'EDITORIAL',
+  category: 'home-services-industry',
+  industries: ['hvac'],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-management'],
+  tags: ['HVAC', 'After Hours', 'Lead Loss', 'Emergency Response', 'Lead Handling'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -106,5 +106,5 @@ export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
       content:
         'If your HVAC company misses calls every evening and weekend, automated lead handling can ensure those enquiries are captured and responded to. See how AI systems handle after-hours leads.',
     },
-  ]
+  ],
 };

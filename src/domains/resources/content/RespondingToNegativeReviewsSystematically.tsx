@@ -112,23 +112,23 @@ const finalCta = {
 };
 
 export const respondingToNegativeReviewsSystematically: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Responding to Negative Reviews Systematically Guide',
     description:
       'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
     canonical,
   },
-    title: 'Responding to Negative Reviews Systematically Guide',
-    description:
+  title: 'Responding to Negative Reviews Systematically Guide',
+  description:
     'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
-    category: 'reputation-review',
-    publishedAt: '2026-01-05',
-    systems: ['reputation-review'],
-    industries: [],
-    topics: ['negative-reviews', 'negative-review-response'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2026-01-05',
+  systems: ['reputation-review'],
+  industries: [],
+  topics: ['negative-reviews', 'negative-review-response'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'Responding to Negative Reviews Systematically',
@@ -182,5 +182,5 @@ export const respondingToNegativeReviewsSystematically: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

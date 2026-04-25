@@ -44,7 +44,7 @@ export function ExploreCardsSection({
 }: ExploreCardsSectionProps) {
   const normalizeVariant = (value: string | undefined) => (value || '').toLowerCase().trim();
 
-  const getGradientVariant = (gradient: string) => {
+  const getGradientVariant = (gradient: string | undefined) => {
     const normalized = normalizeVariant(gradient);
     if (normalized === 'blue' || normalized.includes('blue')) return 'blue';
     if (normalized === 'teal' || normalized.includes('teal')) return 'teal';
@@ -54,7 +54,7 @@ export function ExploreCardsSection({
     return 'default';
   };
 
-  const getIconVariant = (iconBg: string) => {
+  const getIconVariant = (iconBg: string | undefined) => {
     const normalized = normalizeVariant(iconBg);
     if (normalized === 'blue' || normalized.includes('blue')) return 'blue';
     if (normalized === 'teal' || normalized.includes('teal')) return 'teal';

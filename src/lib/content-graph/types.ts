@@ -50,6 +50,20 @@ export interface ContentGraphNode {
   conversionPriority?: number;
 }
 
+export type ValidatedPublishableNode = Omit<
+  ContentGraphNode,
+  'title' | 'description' | 'canonical' | 'openGraph' | 'robots'
+> & {
+  title: string;
+  description: string;
+  canonical: string;
+  openGraph: Partial<OpenGraphData> & { images: string[]; url?: string };
+  robots: {
+    index: boolean;
+    follow: boolean;
+  };
+};
+
 export interface ContentGraphIndexes {
   industries: Map<string, ContentGraphNode[]>;
   systems: Map<string, ContentGraphNode[]>;

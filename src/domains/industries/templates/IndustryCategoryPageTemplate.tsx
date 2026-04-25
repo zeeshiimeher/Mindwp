@@ -3,9 +3,9 @@ import React from 'react';
 import { ImageAccordionStripSection } from '@/components/reusable/sections/core/ImageAccordionStripSection';
 import { RelatedCardsSection } from '@/components/reusable/sections/core/RelatedCardsSection';
 import {
+  IndustryCaseStudiesSection,
   IndustryChallengesSection,
   IndustryChecklistSection,
-  IndustryCaseStudiesSection,
   IndustryComparisonSection,
   IndustryExploreSection,
   IndustryHeroSection,
@@ -18,7 +18,11 @@ import {
   IndustrySpectrumSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
+import { FAQSection } from '@/components/reusable/single/FAQSection';
+import {
+  PrimaryCTASection,
+  type PrimaryCTASectionProps,
+} from '@/components/system/PrimaryCTASection';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import {
   resolveIndustryCategoryDetailRoutes,
@@ -45,6 +49,7 @@ export type IndustryCategoryPageTemplateProps = {
   explore?: Omit<React.ComponentProps<typeof IndustryExploreSection>, 'title'>;
   caseStudies?: React.ComponentProps<typeof IndustryCaseStudiesSection>;
   detailRoutes?: React.ComponentProps<typeof RelatedCardsSection>;
+  faq?: React.ComponentProps<typeof FAQSection>;
   sectionControls?: {
     subIndustries?: {
       enabled?: boolean;
@@ -56,7 +61,7 @@ export type IndustryCategoryPageTemplateProps = {
     };
   };
   cta: Pick<
-    SmartCTAProps,
+    PrimaryCTASectionProps,
     | 'title'
     | 'description'
     | 'metaItems'
@@ -66,7 +71,7 @@ export type IndustryCategoryPageTemplateProps = {
     | 'wrapper'
     | 'includeContainer'
   > & {
-    primaryAction?: { variant?: SmartCTAProps['primaryActionVariant'] };
+    primaryAction?: { variant?: PrimaryCTASectionProps['primaryActionVariant'] };
   };
 };
 
@@ -89,7 +94,8 @@ export function IndustryCategoryPageTemplate({
   pathways,
   explore,
   detailRoutes,
-  sectionControls,
+  faq,
+  sectionControls: _sectionControls,
   caseStudies,
   cta,
 }: IndustryCategoryPageTemplateProps) {
@@ -110,10 +116,7 @@ export function IndustryCategoryPageTemplate({
         <main role='main'>
           <IndustryHeroSection
             {...hero}
-            smartCta={{
-              system,
-              pageType: 'industry-category',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
           />
@@ -142,10 +145,9 @@ export function IndustryCategoryPageTemplate({
 
           {caseStudies && <IndustryCaseStudiesSection {...caseStudies} />}
 
-          <SmartCTA
-            system={system}
-            pageType='industry-category'
-            slug={slug}
+          {faq && <FAQSection {...faq} />}
+
+          <PrimaryCTASection
             title={cta.title}
             description={cta.description}
             metaItems={cta.metaItems}

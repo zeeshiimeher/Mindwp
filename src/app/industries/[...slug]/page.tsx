@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import JsonLd from '@/components/system/JsonLd';
 import { getIndustryDataByPath, renderIndustryPageByPath } from '@/domains/industries/config';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 

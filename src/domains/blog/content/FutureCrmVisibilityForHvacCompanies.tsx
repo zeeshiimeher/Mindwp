@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Future CRM Visibility for HVAC Companies',
     description:
       'Learn how future crm visibility for HVAC companies will use predictive analytics and AI forecasting to anticipate demand and optimise pipeline management.',
@@ -12,16 +12,16 @@ export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
         'Learn how future crm visibility for HVAC companies will use predictive analytics and AI forecasting to anticipate demand and optimise pipeline management.',
     },
   },
-    slug: 'future-crm-visibility-for-hvac-companies',
-    title: 'Future CRM Visibility for HVAC Companies',
-    publishDate: '2026-03-11',
-    authorKey: 'TECHNICAL',
-    category: 'future-local-business-tech',
-    industries: ['hvac'],
-    systems: ['crm-automation'],
-    topics: ['crm-visibility'],
-    tags: ['HVAC', 'CRM Visibility', 'Predictive Analytics', 'AI Forecasting', 'Future Tech'],
-    sections: [
+  slug: 'future-crm-visibility-for-hvac-companies',
+  title: 'Future CRM Visibility for HVAC Companies',
+  publishDate: '2026-03-11',
+  authorKey: 'TECHNICAL',
+  category: 'future-local-business-tech',
+  industries: ['hvac'],
+  systems: ['crm-automation'],
+  topics: ['crm-visibility'],
+  tags: ['HVAC', 'CRM Visibility', 'Predictive Analytics', 'AI Forecasting', 'Future Tech'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -95,5 +95,5 @@ export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
       content:
         "If your HVAC company's CRM only shows what happened yesterday, predictive visibility can show what is coming tomorrow. See how CRM systems are evolving for service businesses.",
     },
-  ]
+  ],
 };

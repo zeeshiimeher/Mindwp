@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import { z } from 'zod';
 
-import { attachGeneratedJsonMetadata, createGeneratedJsonMetadata } from '../lib/generated-file-metadata.mjs';
+import { createGeneratedJsonMetadata } from '../lib/generated-file-metadata.mjs';
 
 export const REPORT_SCHEMA_VERSION = '1.0';
 export const MAX_REPORT_SIZE = 2_000_000;
@@ -124,10 +124,10 @@ function coerceMeta(candidate) {
     : isRecord(candidate?._generated)
       ? candidate._generated
       : createGeneratedJsonMetadata({
-        payload: candidate,
-        source,
-        type: 'report',
-      });
+          payload: candidate,
+          source,
+          type: 'report',
+        });
   const generatedAt = generatedMetadata.hash;
 
   return {
@@ -237,11 +237,24 @@ export function buildValidatedReport({
     sourceCommand,
   };
 
+  const canonicalReport = toCanonicalReport(baseReport);
+  const generatedMetadata = createGeneratedJsonMetadata({
+    payload: canonicalReport,
+    source: sourceCommand,
+    type: 'report',
+  });
+
   return validateReportEnvelope(
-    attachGeneratedJsonMetadata(baseReport, {
-      source: sourceCommand,
-      type: 'report',
-    }),
+    {
+      ...canonicalReport,
+      generatedAt: generatedMetadata.hash,
+      _generated: generatedMetadata,
+      meta: {
+        ...canonicalReport.meta,
+        generatedAt: generatedMetadata.hash,
+        _generated: generatedMetadata,
+      },
+    },
     name
   );
 }

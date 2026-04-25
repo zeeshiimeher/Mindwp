@@ -13,8 +13,8 @@ import { fileURLToPath } from 'node:url';
 import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingConfig.mjs';
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { getCtaReportValidatorNames } from '../core/system-manifest.mjs';
 import { validateReportFile } from '../core/report-schema-validator.mjs';
+import { getCtaReportValidatorNames } from '../core/system-manifest.mjs';
 import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
 import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
@@ -240,7 +240,7 @@ function writeSkippedReport(fileName, name, reason) {
   );
 }
 
-function createPipelineStep({ name, status, durationMs, outputs, skipped = false, reason }) {
+function createPipelineStep({ name, status, outputs, skipped = false, reason }) {
   return {
     name,
     status,
@@ -274,19 +274,6 @@ function canReuseOutput(fileName, sourceCommand = EXPORT_SOURCE_COMMAND) {
 
 function getStepOutputs(step) {
   return step.reportFiles ?? (step.syntheticReportFile ? [step.syntheticReportFile] : []);
-}
-
-function validateExistingStepOutputs(step) {
-  for (const fileName of step.reportFiles ?? []) {
-    const filePath = path.join(REPORTS_DIR, fileName);
-    if (!fs.existsSync(filePath)) {
-      throw new Error(`${step.name} output missing: ${fileName}. Run npm run generate:core first.`);
-    }
-
-    if (fileName.endsWith('.json')) {
-      validateReportFile(filePath, fileName);
-    }
-  }
 }
 
 function canUseCachedStep(step) {
@@ -594,8 +581,7 @@ function buildPipelineReport(generatorResults, analyzerResults, exportDurationMs
     : [];
   const failedCount =
     validatorEntries.filter(entry => entry.status === 'FAIL').length + missing.length;
-  const warningCount =
-    warnValidators.length + staleReports.length + sizeWarnings.length;
+  const warningCount = warnValidators.length + staleReports.length + sizeWarnings.length;
   const validationStatus =
     validationResults?.status === 'FAIL'
       ? 'FAIL'

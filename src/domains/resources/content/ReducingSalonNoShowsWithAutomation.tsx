@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const reducingSalonNoShowsWithAutomation: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Reducing Salon No-Shows with Automation',
     description:
       'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
     canonical,
   },
-    title: 'Reducing Salon No-Shows with Automation',
-    description:
+  title: 'Reducing Salon No-Shows with Automation',
+  description:
     'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
-    category: 'crm-automation',
-    publishedAt: '2026-02-25',
-    systems: ['crm-automation', 'ai-lead-handling'],
-    industries: ['salon'],
-    topics: ['no-show-reduction'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'crm-automation',
+  publishedAt: '2026-02-25',
+  systems: ['crm-automation', 'ai-lead-handling'],
+  industries: ['salon'],
+  topics: ['no-show-reduction'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'Reducing Salon No-Shows with Automation',
@@ -181,5 +181,5 @@ export const reducingSalonNoShowsWithAutomation: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ]
+  ],
 };

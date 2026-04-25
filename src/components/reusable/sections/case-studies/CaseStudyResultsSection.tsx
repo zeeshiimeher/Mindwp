@@ -1,6 +1,6 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { Card } from '@/components/reusable/single/Card';
 import { BeforeAfterMetricCard, SectionIntro } from '@/components/reusable/single';
+import { Card } from '@/components/reusable/single/Card';
 
 const DEFAULT_LABELS = {
   metric: 'Metric',
@@ -22,7 +22,14 @@ export interface CaseStudyResultsSectionProps {
   }[];
 }
 
-function hasComparisonFields(result: CaseStudyResultsSectionProps['results'][number]) {
+function hasComparisonFields(
+  result: CaseStudyResultsSectionProps['results'][number]
+): result is CaseStudyResultsSectionProps['results'][number] & {
+  metric: string;
+  before: string;
+  after: string;
+  improvement: string;
+} {
   return Boolean(result.metric && result.before && result.after && result.improvement);
 }
 

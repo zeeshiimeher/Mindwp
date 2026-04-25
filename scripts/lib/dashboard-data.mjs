@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { getDashboardReportFiles, getReportFiles } from '../core/system-manifest.mjs';
+
 import { attachGeneratedJsonMetadata } from './generated-file-metadata.mjs';
 import { readJsonFile } from './report-json.mjs';
 import { createReportSchema, unwrapReportData } from './report-schema.mjs';
@@ -19,9 +20,9 @@ function writeJson(filePath, data) {
   const payload =
     filePath.endsWith('.json') && !data?._generated
       ? attachGeneratedJsonMetadata(data, {
-        source: 'dashboard-data',
-        type: 'dashboard',
-      })
+          source: 'dashboard-data',
+          type: 'dashboard',
+        })
       : data;
   fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 }
@@ -70,11 +71,11 @@ function summarizeValidationError(error) {
   const output =
     typeof error?.output === 'string'
       ? error.output
-        .split('\n')
-        .map(line => line.trim())
-        .filter(Boolean)
-        .slice(0, 3)
-        .join(' | ')
+          .split('\n')
+          .map(line => line.trim())
+          .filter(Boolean)
+          .slice(0, 3)
+          .join(' | ')
       : null;
 
   return {
@@ -98,7 +99,7 @@ function summarizeIssue(issue) {
   };
 }
 
-function resolveGeneratedTimestamp(report, filePath) {
+function resolveGeneratedTimestamp(report, _filePath) {
   if (typeof report?._generated?.hash === 'string') {
     return report._generated.hash;
   }
@@ -152,8 +153,10 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const pipelineData = unwrapReportData(pipelineReport) ?? {};
   const envValidationReport = readReport(root, 'env-validation-report.json') ?? {};
   const envValidationData = unwrapReportData(envValidationReport) ?? {};
-  const snapshotPayload = readJsonFile(path.join(root, 'reports', '.system-full', 'system-snapshot.json')) ?? {};
-  const snapshotSummary = readJsonFile(path.join(root, 'reports', 'system-snapshots', 'latest-summary.json')) ?? {};
+  const snapshotPayload =
+    readJsonFile(path.join(root, 'reports', '.system-full', 'system-snapshot.json')) ?? {};
+  const snapshotSummary =
+    readJsonFile(path.join(root, 'reports', 'system-snapshots', 'latest-summary.json')) ?? {};
   const validationSnapshot = buildValidationSnapshot(validationResults);
 
   const validators = Array.isArray(validationData.validators) ? validationData.validators : [];
@@ -213,12 +216,12 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const pipelineSteps = Array.isArray(pipelineData.steps) ? pipelineData.steps : [];
   const analyzerCoverage = Array.isArray(pipelineData.analyzers)
     ? pipelineData.analyzers.map(analyzer => ({
-      name: analyzer.name,
-      status: toUpperStatus(analyzer.status, 'PASS'),
-      outputs: analyzer.outputs ?? [],
-      skipped: analyzer.skipped === true,
-      durationMs: analyzer.durationMs ?? 0,
-    }))
+        name: analyzer.name,
+        status: toUpperStatus(analyzer.status, 'PASS'),
+        outputs: analyzer.outputs ?? [],
+        skipped: analyzer.skipped === true,
+        durationMs: analyzer.durationMs ?? 0,
+      }))
     : [];
   const integrityStrip = {
     reportsStatus: toUpperStatus(systemReport?.reports?.status ?? systemHealth?.status, 'PASS'),
@@ -243,8 +246,12 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const durableReports = getReportFiles().map(fileName => {
     const absolutePath = path.join(root, 'reports', fileName);
     const report = readJsonFile(absolutePath);
-    const staleEntries = Array.isArray(systemReport?.reports?.stale) ? systemReport.reports.stale : [];
-    const missingEntries = Array.isArray(systemReport?.reports?.missing) ? systemReport.reports.missing : [];
+    const staleEntries = Array.isArray(systemReport?.reports?.stale)
+      ? systemReport.reports.stale
+      : [];
+    const missingEntries = Array.isArray(systemReport?.reports?.missing)
+      ? systemReport.reports.missing
+      : [];
 
     return {
       fileName,
@@ -261,7 +268,9 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
     hash: snapshotPayload?._generated?.hash ?? null,
     lastBuilt: snapshotPayload?._generated?.hash ?? snapshotPayload?.generatedAt ?? null,
     sourceConsistency:
-      Boolean(snapshotPayload?.graph) && Boolean(snapshotPayload?.routeInventory) && systemHealthData?.drift !== true,
+      Boolean(snapshotPayload?.graph) &&
+      Boolean(snapshotPayload?.routeInventory) &&
+      systemHealthData?.drift !== true,
     latestSummary: snapshotSummary?.currentSnapshot ?? null,
   };
   const envStatus = {
@@ -304,31 +313,31 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const warningsPanel = {
     validators: Array.isArray(warningSource.validators)
       ? warningSource.validators.map(item => ({
-        name: item.name,
-        detail: item.reportFile ?? 'validator warning',
-        status: toUpperStatus(item.status, 'WARN'),
-      }))
+          name: item.name,
+          detail: item.reportFile ?? 'validator warning',
+          status: toUpperStatus(item.status, 'WARN'),
+        }))
       : [],
     skippedAnalyzers: Array.isArray(warningSource.skippedAnalyzers)
       ? warningSource.skippedAnalyzers.map(item => ({
-        name: item.name,
-        detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
-        status: 'SKIPPED',
-      }))
+          name: item.name,
+          detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
+          status: 'SKIPPED',
+        }))
       : [],
     sizeWarnings: Array.isArray(warningSource.sizeWarnings)
       ? warningSource.sizeWarnings.map(item => ({
-        name: item.label,
-        detail: `${item.size} / ${item.warnAt} bytes`,
-        status: 'WARN',
-      }))
+          name: item.label,
+          detail: `${item.size} / ${item.warnAt} bytes`,
+          status: 'WARN',
+        }))
       : [],
     staleReports: Array.isArray(warningSource.staleReports)
       ? warningSource.staleReports.map(item => ({
-        name: item.name,
-        detail: item.reportFile ?? 'stale report reused',
-        status: 'WARN',
-      }))
+          name: item.name,
+          detail: item.reportFile ?? 'stale report reused',
+          status: 'WARN',
+        }))
       : [],
   };
 

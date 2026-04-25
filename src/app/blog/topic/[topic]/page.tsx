@@ -10,8 +10,8 @@ import {
 } from '@/domains/blog/api';
 import { BlogTopicTemplate } from '@/domains/blog/templates/BlogTopicTemplate';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamicParams = false;
 export const revalidate = false;

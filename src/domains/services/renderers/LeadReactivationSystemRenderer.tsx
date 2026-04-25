@@ -12,7 +12,7 @@ import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistC
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
@@ -23,7 +23,7 @@ interface LeadReactivationSystemRendererProps {
 
 export function LeadReactivationSystemRenderer({
   data,
-  slug,
+  slug: _slug,
 }: LeadReactivationSystemRendererProps) {
   const { hero, sections, cta } = data;
   const {
@@ -48,10 +48,7 @@ export function LeadReactivationSystemRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -197,10 +194,7 @@ export function LeadReactivationSystemRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

@@ -356,5 +356,5 @@ export const wordpressDevelopmentPage = {
     title: "Show us what's not working",
     description:
       "Tell us about your site and how enquiries come in. We'll tell you what's costing you leads and what to fix first.",
-  }
+  },
 } satisfies ServicePageData;

@@ -126,23 +126,23 @@ const finalCta = {
 };
 
 export const missedCallRecoverySystem: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Missed Call Recovery System for Service Businesses',
     description:
       'Learn how to build a missed call recovery system that automatically follows up with every unanswered caller via SMS and callback scheduling to recapture lost revenue.',
     canonical,
   },
-    title: 'Missed Call Recovery System for Service Businesses',
-    description:
+  title: 'Missed Call Recovery System for Service Businesses',
+  description:
     'Learn how to build a missed call recovery system that automatically follows up with every unanswered caller via SMS and callback scheduling to recapture lost revenue.',
-    category: 'ai-lead-handling',
-    publishedAt: '2025-11-26',
-    systems: ['ai-lead-handling'],
-    industries: [],
-    topics: ['missed-calls'],
-    primaryService: 'ai-lead-handling',
-    sections: [
+  category: 'ai-lead-handling',
+  publishedAt: '2025-11-26',
+  systems: ['ai-lead-handling'],
+  industries: [],
+  topics: ['missed-calls'],
+  primaryService: 'ai-lead-handling',
+  sections: [
     {
       type: 'hero',
       heading: 'Missed Call Recovery System for Service Businesses',
@@ -196,5 +196,5 @@ export const missedCallRecoverySystem: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ]
+  ],
 };

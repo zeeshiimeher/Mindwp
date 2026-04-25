@@ -155,62 +155,62 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'HVAC Maintenance Reactivation | 54% to 71% Renewals',
-        description:
+    seo: {
+      title: 'HVAC Maintenance Reactivation | 54% to 71% Renewals',
+      description:
         'How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.',
-        canonical: '/case-studies/hvac-maintenance-plan-reactivation',
-        openGraph: {
-          title: 'How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study',
-          description:
-            'How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.',
-        },
+      canonical: '/case-studies/hvac-maintenance-plan-reactivation',
+      openGraph: {
+        title: 'How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study',
+        description:
+          'How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.',
       },
-      slug: 'hvac-maintenance-plan-reactivation',
-      title: 'HVAC Maintenance Plan Reactivation',
-      industryCategory: 'home-services',
-      industryLabel: 'Home Services',
-      industries: ['hvac'],
-      systems: ['revenue-growth'],
-      topics: ['client-reactivation', 'crm-pipeline', 'revenue-tracking'],
-      publishDate: '2025-12-01',
-      client: 'ProHeat Engineering',
-      location: 'Sheffield, UK',
-      business: 'ProHeat Engineering',
-      duration: '9 weeks',
-      completedDate: 'December 2025',
-      heroHeadline:
-        'How an HVAC Company Reactivated 73 Lapsed Maintenance Customers and Recovered £4,800/Month',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'Maintenance Plans',
-        'Customer Reactivation',
-        'HVAC',
-        'Revenue Recovery',
-        'CRM Automation',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'Revenue Recovery' },
-        metrics: { resultsSectionTitle: 'Key Outcomes' },
-        problem: { challengeBadgeLabel: 'The Revenue Leak' },
-        solution: { solutionBadgeLabel: 'System Implementation' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Maintenance Revenue Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for HVAC' },
-          ],
-        },
-      }
+    },
+    slug: 'hvac-maintenance-plan-reactivation',
+    title: 'HVAC Maintenance Plan Reactivation',
+    industryCategory: 'home-services',
+    industryLabel: 'Home Services',
+    industries: ['hvac'],
+    systems: ['revenue-growth'],
+    topics: ['client-reactivation', 'crm-pipeline', 'revenue-tracking'],
+    publishDate: '2025-12-01',
+    client: 'ProHeat Engineering',
+    location: 'Sheffield, UK',
+    business: 'ProHeat Engineering',
+    duration: '9 weeks',
+    completedDate: 'December 2025',
+    heroHeadline:
+      'How an HVAC Company Reactivated 73 Lapsed Maintenance Customers and Recovered £4,800/Month',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'Maintenance Plans',
+      'Customer Reactivation',
+      'HVAC',
+      'Revenue Recovery',
+      'CRM Automation',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'Revenue Recovery' },
+      metrics: { resultsSectionTitle: 'Key Outcomes' },
+      problem: { challengeBadgeLabel: 'The Revenue Leak' },
+      solution: { solutionBadgeLabel: 'System Implementation' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Maintenance Revenue Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for HVAC' },
+        ],
+      },
+    },
   };
 }
 

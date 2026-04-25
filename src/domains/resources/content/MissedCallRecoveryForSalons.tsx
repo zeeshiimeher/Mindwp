@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const missedCallRecoveryForSalons: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Missed Call Recovery for Salons',
     description:
       'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
     canonical,
   },
-    title: 'Missed Call Recovery for Salons',
-    description:
+  title: 'Missed Call Recovery for Salons',
+  description:
     'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
-    category: 'ai-lead-handling',
-    publishedAt: '2026-02-16',
-    systems: ['ai-lead-handling'],
-    industries: ['salon'],
-    topics: ['missed-calls'],
-    primaryService: 'ai-lead-handling',
-    sections: [
+  category: 'ai-lead-handling',
+  publishedAt: '2026-02-16',
+  systems: ['ai-lead-handling'],
+  industries: ['salon'],
+  topics: ['missed-calls'],
+  primaryService: 'ai-lead-handling',
+  sections: [
     {
       type: 'hero',
       heading: 'Missed Call Recovery for Salons',
@@ -181,5 +181,5 @@ export const missedCallRecoveryForSalons: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ]
+  ],
 };

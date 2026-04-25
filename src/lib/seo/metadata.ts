@@ -19,11 +19,9 @@ export function buildDefaultRootMetadata(): Metadata {
     openGraph: {
       siteName: SITE_NAME,
       type: 'website',
-      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
-      images: [DEFAULT_OG_IMAGE_PATH],
     },
   };
 }

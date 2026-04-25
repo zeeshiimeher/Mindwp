@@ -128,60 +128,60 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
   ];
 
   return {
-      seo: {
+    seo: {
+      title: 'Electrician local visibility case study: found more often in Google Maps',
+      description:
+        'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
+      canonical: '/case-studies/electrician-not-showing-up-where-locals-search',
+      openGraph: {
         title: 'Electrician local visibility case study: found more often in Google Maps',
         description:
-        'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
-        canonical: '/case-studies/electrician-not-showing-up-where-locals-search',
-        openGraph: {
-          title: 'Electrician local visibility case study: found more often in Google Maps',
-          description:
-            'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
-        },
+          'How an Oxford electrician started showing up far more often in local search and relied less on ads to keep enquiries moving.',
       },
-      slug: 'electrician-not-showing-up-where-locals-search',
-      title: 'They were doing the work. Google barely showed it.',
-      industryCategory: 'home-services',
-      industryLabel: 'Home Services',
-      industries: ['roofing'],
-      systems: ['local-seo-authority'],
-      topics: [
-        'local-seo',
-        'local-visibility',
-        'google-business-profile',
-        'review-generation',
-        'local-authority',
-      ],
-      publishDate: '2026-07-01',
-      client: 'Brookfield Electrical',
-      location: 'Oxford, UK',
-      business: 'Brookfield Electrical',
-      duration: '21 weeks',
-      completedDate: 'July 2026',
-      heroHeadline: 'They were doing the work. Google barely showed it.',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: ['Local SEO', 'Google Maps', 'Electrical', 'Review Growth', 'Home Services'],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'Local Search' },
-        problem: { challengeBadgeLabel: 'What Was Happening' },
-        solution: { solutionBadgeLabel: 'What Changed' },
-        results: {
-          detailedResultsBadgeLabel: 'What Changed',
-          detailedResultsSectionTitle: 'What Changed Once Local Trust Started Showing Up Properly',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No pressure' },
-            { text: 'Useful for local trades' },
-          ],
-        },
-      }
+    },
+    slug: 'electrician-not-showing-up-where-locals-search',
+    title: 'They were doing the work. Google barely showed it.',
+    industryCategory: 'home-services',
+    industryLabel: 'Home Services',
+    industries: ['roofing'],
+    systems: ['local-seo-authority'],
+    topics: [
+      'local-seo',
+      'local-visibility',
+      'google-business-profile',
+      'review-generation',
+      'local-authority',
+    ],
+    publishDate: '2026-07-01',
+    client: 'Brookfield Electrical',
+    location: 'Oxford, UK',
+    business: 'Brookfield Electrical',
+    duration: '21 weeks',
+    completedDate: 'July 2026',
+    heroHeadline: 'They were doing the work. Google barely showed it.',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: ['Local SEO', 'Google Maps', 'Electrical', 'Review Growth', 'Home Services'],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'Local Search' },
+      problem: { challengeBadgeLabel: 'What Was Happening' },
+      solution: { solutionBadgeLabel: 'What Changed' },
+      results: {
+        detailedResultsBadgeLabel: 'What Changed',
+        detailedResultsSectionTitle: 'What Changed Once Local Trust Started Showing Up Properly',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No pressure' },
+          { text: 'Useful for local trades' },
+        ],
+      },
+    },
   };
 }
 

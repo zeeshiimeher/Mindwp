@@ -168,23 +168,23 @@ const finalCta = {
 };
 
 export const reviewAutomationSetupGuideForRoofingCompanies: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Review Automation Setup Guide for Roofing Companies',
     description:
       'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
     canonical,
   },
-    title: 'Review Automation Setup Guide for Roofing Companies',
-    description:
+  title: 'Review Automation Setup Guide for Roofing Companies',
+  description:
     'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
-    category: 'reputation-review',
-    publishedAt: '2026-04-06',
-    systems: ['reputation-review'],
-    industries: ['roofing'],
-    topics: ['review-automation'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2026-04-06',
+  systems: ['reputation-review'],
+  industries: ['roofing'],
+  topics: ['review-automation'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'Review Automation Setup Guide for Roofing Companies',
@@ -255,5 +255,5 @@ export const reviewAutomationSetupGuideForRoofingCompanies: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

@@ -47,6 +47,36 @@ type ServiceDomainEntry<TData extends ServicePageData = ServicePageData> = {
   renderer: ServiceRenderer<TData>;
 };
 
+type ServiceDomainRegistry = {
+  'smart-website-systems': ServiceDomainEntry<typeof smartWebsiteSystemsPage>;
+  'conversion-layer': ServiceDomainEntry<typeof conversionLayerPage>;
+  'conversion-funnel-system-vs-landing-page-development': ServiceDomainEntry<
+    typeof conversionFunnelSystemVsLandingPageDevelopmentPage
+  >;
+  'system-migration-platform-consolidation': ServiceDomainEntry<
+    typeof systemMigrationPlatformConsolidationPage
+  >;
+  'website-redesign-system-rebuild': ServiceDomainEntry<typeof websiteRedesignSystemRebuildPage>;
+  'lead-reactivation-system': ServiceDomainEntry<typeof leadReactivationSystemPage>;
+  'missed-call-recovery-system': ServiceDomainEntry<typeof missedCallRecoverySystemPage>;
+  'unified-communication-system': ServiceDomainEntry<typeof unifiedCommunicationSystemPage>;
+  'local-seo-authority': ServiceDomainEntry<typeof localSeoAuthorityPage>;
+  'reputation-review-systems': ServiceDomainEntry<typeof reputationReviewSystemsPage>;
+  'crm-infrastructure-implementation': ServiceDomainEntry<typeof crmAutomationPage>;
+  'website-crm-integration-vs-manual-lead-handling': ServiceDomainEntry<
+    typeof websiteCrmIntegrationVsManualLeadHandlingPage
+  >;
+  'ai-lead-handling': ServiceDomainEntry<typeof aiLeadHandlingPage>;
+  'service-pages-vs-one-generic-services-page': ServiceDomainEntry<
+    typeof servicePagesVsOneGenericServicesPage
+  >;
+  'wordpress-development': ServiceDomainEntry<typeof wordpressDevelopmentPage>;
+  ecommerce: ServiceDomainEntry<typeof woocommercePage>;
+  divi5: ServiceDomainEntry<typeof divi5Page>;
+  'bricks-builder': ServiceDomainEntry<typeof bricksBuilderPage>;
+  elementor: ServiceDomainEntry<typeof elementorPage>;
+};
+
 const createServiceEntry = <TData extends ServicePageData>(
   slug: string,
   data: TData,
@@ -58,7 +88,7 @@ const createServiceEntry = <TData extends ServicePageData>(
   renderer,
 });
 
-export const SERVICE_DOMAIN_REGISTRY = {
+export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
   'smart-website-systems': createServiceEntry(
     'smart-website-systems',
     smartWebsiteSystemsPage,
@@ -140,13 +170,13 @@ export const SERVICE_DOMAIN_REGISTRY = {
   elementor: createServiceEntry('elementor', elementorPage, ElementorRenderer),
 } as const;
 
-export const SERVICE_PAGE_DATA_BY_SLUG = {
-  ...Object.fromEntries(
-    Object.entries(SERVICE_DOMAIN_REGISTRY).map(([slug, entry]) => [slug, entry.data])
-  ),
-} as const satisfies Record<string, ServicePageData>;
+export type ServicePageDataBySlug = {
+  [K in keyof ServiceDomainRegistry]: ServiceDomainRegistry[K]['data'];
+};
 
-export type ServicePageDataBySlug = typeof SERVICE_PAGE_DATA_BY_SLUG;
+export const SERVICE_PAGE_DATA_BY_SLUG = Object.fromEntries(
+  Object.entries(SERVICE_DOMAIN_REGISTRY).map(([slug, entry]) => [slug, entry.data])
+) as ServicePageDataBySlug;
 
 export const getServicePageDataBySlug = (slug: string): ServicePageData | undefined => {
   return SERVICE_PAGE_DATA_BY_SLUG[slug as keyof ServicePageDataBySlug];

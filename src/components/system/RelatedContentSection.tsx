@@ -9,7 +9,7 @@ type RelatedContentSectionProps = {
 export default function RelatedContentSection({ content }: RelatedContentSectionProps) {
   if (content.groups.length === 0) {
     if (!content.emptyState) {
-      return null;
+      throw new Error('Related content section requires groups or an explicit empty state.');
     }
 
     return (

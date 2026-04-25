@@ -65,10 +65,11 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || '.next',
   outputFileTracingExcludes: {
     '/*': [
+      'artifacts/**/*',
       'scripts/**/*',
       'reports/**/*',
       '_workspace/**/*',
-      'Mindwp-Docs/**/*',
+      'docs/**/*',
       'system/**/*',
     ],
   },

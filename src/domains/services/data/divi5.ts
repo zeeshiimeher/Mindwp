@@ -6,18 +6,18 @@ import type { ServicePageData } from '../types';
 const slug = 'divi5';
 
 export const divi5Page = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Divi WordPress Development | MindWP',
     description:
       "Divi gives your team flexible editing and visual control. But editing freedom doesn't fix a website that isn't bringing in work. Here's what to look at first.",
   }),
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure'],
-    badge: 'Divi Builder',
-    category: 'Implementation Services',
-    hero: {
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure'],
+  badge: 'Divi Builder',
+  category: 'Implementation Services',
+  hero: {
     badge: 'Divi Builder',
     title: "Your Team Can Edit Everything. Enquiries Still Don't Come.",
     description:
@@ -26,7 +26,7 @@ export const divi5Page = {
     cssPrefix: 'divi5-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
-    sections: {
+  sections: {
     conversionSection: {
       title: "We build with Divi. But the builder isn't what needs fixing.",
       description1:
@@ -266,9 +266,9 @@ export const divi5Page = {
       ],
     },
   },
-    cta: {
+  cta: {
     title: "Not sure if the builder is what's holding you back?",
     description:
       "Tell us what your site isn't doing. We'll work out whether it's a build problem or something the builder can't solve.",
-  }
+  },
 } satisfies ServicePageData;

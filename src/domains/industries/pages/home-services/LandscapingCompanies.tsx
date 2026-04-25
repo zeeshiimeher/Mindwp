@@ -3,7 +3,6 @@ import {
   Clock,
   Compass,
   Eye,
-  Flower2,
   Hourglass,
   Repeat,
   Sprout,
@@ -16,7 +15,8 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Landscapers',
-    title: 'Patio Quote Sent In April. Decision In June. Six Other Landscapers Got A Look In Between.',
+    title:
+      'Patio Quote Sent In April. Decision In June. Six Other Landscapers Got A Look In Between.',
     description:
       'Landscaping decisions usually take weeks, not one phone call. The first warm weekend fills the inbox fast, then the homeowner slows down, compares ideas, waits for the weather to settle, and the quote often goes to whoever stayed in touch while everyone else let it drift into summer.',
     list: ['Slow decisions', 'Spring backlogs', 'Drifting quotes'],
@@ -65,7 +65,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     badge: 'A Six-Week Decision',
     title: 'A spring quote, before and after',
     description:
-      'Same gardens and same crew, but a very different outcome once somebody actually holds the quote through the slow middle. What changes is whether you stay in the homeowner\'s head while they take their time deciding.',
+      "Same gardens and same crew, but a very different outcome once somebody actually holds the quote through the slow middle. What changes is whether you stay in the homeowner's head while they take their time deciding.",
     comparisons: [
       {
         type: 'before' as const,
@@ -203,12 +203,14 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'These are the supporting services landscapers tend to lean on most once they can see where spring demand, slow decisions, and lapsed regulars are slipping. Each one helps hold follow-up, visibility, proof, or reactivation together a bit better.',
+    description:
+      'These are the supporting services landscapers tend to lean on most once they can see where spring demand, slow decisions, and lapsed regulars are slipping. Each one helps hold follow-up, visibility, proof, or reactivation together a bit better.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Helps enquiry, survey, and quote handling stay connected through the spring surge instead of fading apart once the inbox starts filling.',
+        description:
+          'Helps enquiry, survey, and quote handling stay connected through the spring surge instead of fading apart once the inbox starts filling.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -216,15 +218,17 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'CRM Automation',
-        description: 'Keeps the open quote board, the friendly check-ins, and the lapsed-regular nudges moving without somebody having to remember every one by hand.',
-        href: '/services/crm-automation',
+        description:
+          'Keeps the open quote board, the friendly check-ins, and the lapsed-regular nudges moving without somebody having to remember every one by hand.',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Helps you stay visible when the first warm weekend hits and homeowners start searching for patios, gardens, and regular maintenance again.',
+        description:
+          'Helps you stay visible when the first warm weekend hits and homeowners start searching for patios, gardens, and regular maintenance again.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -232,7 +236,8 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished patios and refits into proof on Maps and search, so the next homeowner comparing ideas sees real work that still feels fresh.',
+        description:
+          'Turns finished patios and refits into proof on Maps and search, so the next homeowner comparing ideas sees real work that still feels fresh.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -244,7 +249,8 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What landscapers ask first',
-    description: 'Straight answers about slower patio decisions, spring demand, and how to stop good quotes drifting across the season.',
+    description:
+      'Straight answers about slower patio decisions, spring demand, and how to stop good quotes drifting across the season.',
     faqs: [
       {
         question: 'Most of our patio quotes go quiet for a month. Will a chase actually help?',
@@ -280,38 +286,37 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
-        description:
-          'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
-        canonical: '/industries/home-services/landscaping-companies',
-      },
-      slug: 'landscaping-companies',
-      industries: ['landscaping'],
-      systems: [
-        'smart-website-systems',
-        'crm-automation',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['lead-management', 'client-reactivation', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'home-services',
-      hero: { ...heroData },
-      operatingPatterns: operatingPatternsData,
-      comparison: comparisonData,
-      systemLayers: systemLayersData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about the patio quote that went quiet',
-        description:
-          'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
-      }
+    seo: {
+      title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
+      description:
+        'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
+      canonical: '/industries/home-services/landscaping-companies',
+    },
+    slug: 'landscaping-companies',
+    industries: ['landscaping'],
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'client-reactivation', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'home-services',
+    hero: { ...heroData },
+    operatingPatterns: operatingPatternsData,
+    comparison: comparisonData,
+    systemLayers: systemLayersData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about the patio quote that went quiet',
+      description:
+        'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+    },
   };
 }
-
 
 export const landscapingCompaniesIndustryPageData: IndustryPageData =
   buildLandscapingCompaniesIndustryPageData();

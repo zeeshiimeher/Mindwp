@@ -7,14 +7,14 @@
 
 ## USE THIS DOC
 
-Use this doc for `SmartCTA`, page adapters, CTA placement, contact URLs, and the `/contact` flow.
+Use this doc for `PrimaryCTASection`, page adapters, CTA placement, contact URLs, and the `/contact` flow.
 
 ---
 
 ## SYSTEM GUARANTEES
 
 - `/contact` is the only form entry route.
-- CTA panels render through `SmartCTA`.
+- CTA panels render through `PrimaryCTASection`.
 - CTA labels resolve through `src/config/ctaLabels.ts`.
 - Contact URLs resolve through `src/lib/contact/contactHref.ts`.
 - Page-level CTA rules enforce intent, position, and panel count through the CTA registry.
@@ -34,9 +34,9 @@ Templates and page adapters own:
 - CTA position
 - page-scoped registry setup through `CTARegistryProvider`
 
-### SmartCTA Ownership
+### PrimaryCTASection Ownership
 
-`SmartCTA` owns:
+`PrimaryCTASection` owns:
 
 - CTA rendering
 - label resolution
@@ -152,9 +152,9 @@ Rules:
 
 ## CONTACT FLOW
 
-1. A page renders `SmartCTA` with canonical `system`, `slug`, `pageId`, and `pageType` context.
-2. `SmartCTA` resolves the CTA label.
-3. `SmartCTA` generates the contextual `/contact` href.
+1. A page renders `PrimaryCTASection` with canonical `system`, `slug`, `pageId`, and `pageType` context.
+2. `PrimaryCTASection` resolves the CTA label.
+3. `PrimaryCTASection` generates the contextual `/contact` href.
 4. `/contact` reads `system` and `source` from the URL.
 5. The form preserves that context through render, validation, retry, and submission.
 6. Submission passes complete conversion context onward.
@@ -168,8 +168,8 @@ If `system` or `source` is invalid or missing, the conversion contract fails.
 
 - Alternate form entry routes.
 - Hardcoded `/contact?system=...&source=...` strings in production content or templates.
-- Route files rendering `SmartCTA` directly.
-- Domain data files rendering `SmartCTA` directly.
+- Route files rendering `PrimaryCTASection` directly.
+- Domain data files rendering `PrimaryCTASection` directly.
 - Inline conversion CTAs.
 - Multiple conversion CTAs on one page.
 - Silent fallback when contact context is invalid.

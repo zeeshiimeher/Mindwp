@@ -195,7 +195,11 @@ async function main() {
   const forwardedArgs = rest[0] === '--' ? rest.slice(1) : rest;
   const requestedPort = getRequestedPort(forwardedArgs);
   const defaultedArgs =
-    command === 'start' && requestedPort !== 3000 && !forwardedArgs.some(arg => ['-p', '--port'].includes(arg) || arg.startsWith('-p=') || arg.startsWith('--port='))
+    command === 'start' &&
+    requestedPort !== 3000 &&
+    !forwardedArgs.some(
+      arg => ['-p', '--port'].includes(arg) || arg.startsWith('-p=') || arg.startsWith('--port=')
+    )
       ? [...forwardedArgs, '-p', String(requestedPort)]
       : forwardedArgs;
   const resolvedArgs = command === 'dev' ? await resolveDevArgs(defaultedArgs) : defaultedArgs;

@@ -28,8 +28,9 @@ import { Button } from '@/components/reusable/single/Button';
 import { Callout } from '@/components/reusable/single/Callout';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { ActionButtons } from '@/components/system/ActionButtons';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import {
   type Author,
@@ -211,8 +212,8 @@ export function validateRenderableBlogSection(section: BlogPostSection) {
     case 'content':
       return Boolean(
         section.heading &&
-          (typeof section.content === 'string' ||
-            (Array.isArray(section.content) && section.content.length > 0))
+        (typeof section.content === 'string' ||
+          (Array.isArray(section.content) && section.content.length > 0))
       );
     case 'callout':
       return Boolean(section.callout);
@@ -249,7 +250,6 @@ export function BlogPostTemplate({
   author,
   sections,
   tags = [],
-  systems = [],
   featuredImage,
 }: BlogPostTemplateProps) {
   // Calculate read time from content
@@ -288,7 +288,6 @@ export function BlogPostTemplate({
     ],
   };
 
-  const primarySystem = systems[0] ?? 'smart-website-systems';
   const currentPath = `/blog/${slug}`;
   const inlineLinkTracker = createInlineLinkTracker({
     pagePath: currentPath,
@@ -302,10 +301,10 @@ export function BlogPostTemplate({
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(text, {
-          excludePaths: [currentPath],
-          sourcePath: currentPath,
-          tracker: inlineLinkTracker,
-        })
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
         : [{ type: 'text' as const, value: text }];
 
     let linkedInParagraph = false;
@@ -342,12 +341,16 @@ export function BlogPostTemplate({
   function safeRenderSection(section: unknown, index: number) {
     const type = getBlogSectionType(section);
     if (!type) {
-      systemDevelopmentWarning(`BlogPostTemplate: skipping section at index ${index} because type is invalid.`);
+      systemDevelopmentWarning(
+        `BlogPostTemplate: skipping section at index ${index} because type is invalid.`
+      );
       return null;
     }
 
     if (!validateRenderableBlogSection(section as BlogPostSection)) {
-      systemDevelopmentWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
+      systemDevelopmentWarning(
+        `BlogPostTemplate: skipping ${type} section at index ${index} because its shape is invalid.`
+      );
       return null;
     }
 
@@ -355,7 +358,9 @@ export function BlogPostTemplate({
       return renderSection(section as BlogPostSection, index);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      systemDevelopmentWarning(`BlogPostTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      systemDevelopmentWarning(
+        `BlogPostTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`
+      );
       return null;
     }
   }
@@ -424,13 +429,8 @@ export function BlogPostTemplate({
 
       case 'cta':
         return (
-          <SmartCTA
+          <PrimaryCTASection
             key={`cta-${index}`}
-            system={systems?.[0] ?? 'smart-website-systems'}
-            pageType='blog'
-            slug={slug}
-            intent='conversion'
-            position='footer'
             title={section.heading}
             description={section.content}
             cssPrefix='blog-cta'
@@ -518,12 +518,12 @@ export function BlogPostTemplate({
             className='blog-hero'
             {...(featuredImage
               ? {
-                style: {
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                },
-              }
+                  style: {
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  },
+                }
               : {})}
           >
             <div className='l-stack l-stack--loose blog-post__hero'>
@@ -599,15 +599,10 @@ export function BlogPostTemplate({
                   <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
                   <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
 
-                  <SmartCTA
-                    system={primarySystem}
-                    pageType='blog'
-                    slug={slug}
-                    intent='diagnostic'
-                    position='sidebar'
-                    mode='actions-only'
+                  <ActionButtons
+                    allowSecondaryAction
                     primaryButtonCssPrefix='btn-block'
-                    actionClassName='blog-post__sidebar-actions'
+                    className='blog-post__sidebar-actions'
                   />
 
                   <div className='blog-post__sidebar-features'>
@@ -617,7 +612,7 @@ export function BlogPostTemplate({
                           text: string;
                           icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
                         },
-                        index: number
+                        _index: number
                       ) => {
                         const getIcon = (iconType?: string) => {
                           switch (iconType) {

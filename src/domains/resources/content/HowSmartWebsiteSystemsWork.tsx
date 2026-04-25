@@ -157,23 +157,23 @@ const finalCta = {
 };
 
 export const howSmartWebsiteSystemsWork: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'How Smart Website Systems Work',
     description:
       'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
     canonical,
   },
-    title: 'How Smart Website Systems Work',
-    description:
+  title: 'How Smart Website Systems Work',
+  description:
     'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
-    category: 'smart-website-systems',
-    publishedAt: '2025-11-03',
-    systems: ['smart-website-systems'],
-    industries: [],
-    topics: ['website-infrastructure'],
-    primaryService: 'smart-website-systems',
-    sections: [
+  category: 'smart-website-systems',
+  publishedAt: '2025-11-03',
+  systems: ['smart-website-systems'],
+  industries: [],
+  topics: ['website-infrastructure'],
+  primaryService: 'smart-website-systems',
+  sections: [
     {
       type: 'hero',
       heading: 'How Smart Website Systems Work',
@@ -244,5 +244,5 @@ export const howSmartWebsiteSystemsWork: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ]
+  ],
 };

@@ -82,5 +82,5 @@ export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
     title: 'See whether the real need is a page build or a full funnel system',
     description:
       'We will map where attention drops, where the next-step mismatch begins, and whether page-only work would leave the commercial leak untouched.',
-  }
+  },
 } satisfies typeof conversionLayerPage;

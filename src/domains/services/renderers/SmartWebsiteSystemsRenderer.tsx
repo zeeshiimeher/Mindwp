@@ -14,19 +14,19 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 import type { ServicePageSections } from '@/domains/services/types';
 
 interface Props {
   data: ServicePageDataBySlug[
-  | 'smart-website-systems'
-  | 'service-pages-vs-one-generic-services-page'];
+    | 'smart-website-systems'
+    | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 
-export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
+export default function SmartWebsiteSystemsRenderer({ data, slug: _slug }: Props) {
   const optionalSections = data.sections as ServicePageSections;
   if (!data.inlineCta) {
     throw new Error('SmartWebsiteSystemsRenderer requires inlineCta content.');
@@ -46,10 +46,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             badge={data.hero.badge}
             title={data.hero.title}
             description={data.hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={data.hero.list}
@@ -85,11 +82,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               description={data.sections.comparison.header.description}
               comparisons={data.sections.comparison.items}
               cta={{
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-                pageType: 'service',
-                intent: 'diagnostic',
-                position: 'mid',
                 title: inlineCtaTitle,
                 description: inlineCtaDescription,
                 primaryActionVariant: 'white',
@@ -278,12 +270,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

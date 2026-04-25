@@ -69,16 +69,16 @@ const inboxFaqItems = [
 const slug = 'inbox';
 
 export const inboxData: FeaturePageData = {
-    slug,
-    seo: buildFeatureSeo({
+  slug,
+  seo: buildFeatureSeo({
     slug,
     title: 'Inbox | Unified Customer Communication Layer',
     description:
       'Unified inbox layer for email, SMS, social messages, and calls in one organized system for faster response and better team coordination.',
   }),
-    systems: ['ai-lead-handling'],
-    topics: ['lead-response-time'],
-    hero: {
+  systems: ['ai-lead-handling'],
+  topics: ['lead-response-time'],
+  hero: {
     badge: 'Feature Spotlight',
     title: 'One Inbox for Every Customer Conversation',
     description:
@@ -90,7 +90,7 @@ export const inboxData: FeaturePageData = {
       { value: 'Fast', label: 'Replies' },
     ],
   },
-    sections: {
+  sections: {
     process: {
       badge: 'Simple Setup',
       title: 'How the Unified Inbox Works',
@@ -330,9 +330,9 @@ export const inboxData: FeaturePageData = {
       variant: 'stacked' as const,
     },
   },
-    cta: {
+  cta: {
     title: 'Ready to Bring All Conversations into One Inbox?',
     description:
       'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
-  }
+  },
 };

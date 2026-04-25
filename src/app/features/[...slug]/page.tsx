@@ -9,8 +9,8 @@ import {
 } from '@/domains/features/config';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 

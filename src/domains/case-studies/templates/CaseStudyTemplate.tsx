@@ -20,8 +20,8 @@ import {
 import { TestimonialCard } from '@/components/reusable/single';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
-import { SmartCTA } from '@/components/system/SmartCTA';
 import { env } from '@/env';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
@@ -29,110 +29,110 @@ import type { CaseStudyMetadata } from './types';
 
 export type CaseStudyTemplateSection =
   | {
-    type: 'hero';
-    introHtml: React.ReactNode;
-  }
+      type: 'hero';
+      introHtml: React.ReactNode;
+    }
   | {
-    type: 'metrics';
-    keyMetrics: Array<{ value: string; label: string; color?: string }>;
-  }
+      type: 'metrics';
+      keyMetrics: Array<{ value: string; label: string; color?: string }>;
+    }
   | {
-    type: 'problem';
-    problemHeading?: string;
-    problemDescription?: string[];
-    painPoints?: string[];
-  }
+      type: 'problem';
+      problemHeading?: string;
+      problemDescription?: string[];
+      painPoints?: string[];
+    }
   | {
-    type: 'solution';
-    solutionHeading?: string;
-    solutionDescription?: string;
-    whatWeDid?: {
+      type: 'solution';
+      solutionHeading?: string;
+      solutionDescription?: string;
+      whatWeDid?: {
+        title: string;
+        description: string;
+        icon: string;
+      }[];
+    }
+  | {
+      type: 'process';
+      howWeDidIt?: {
+        phase: string;
+        title: string;
+        description: string;
+        duration: string;
+      }[];
+    }
+  | {
+      type: 'features';
+      featuresUsed?: {
+        category: string;
+        features: string[];
+      }[];
+    }
+  | {
+      type: 'results';
+      results: {
+        metric?: string;
+        before?: string;
+        after?: string;
+        improvement?: string;
+        title?: string;
+        description: string;
+      }[];
+    }
+  | {
+      type: 'testimonial';
+      testimonial?: {
+        quote: string;
+        author: string;
+        role: string;
+      };
+    }
+  | {
+      type: 'investment';
+      investment?: {
+        setup: string;
+        monthly: string;
+        roi?: string;
+      };
+    }
+  | {
+      type: 'business-impact';
+      badge?: string;
       title: string;
-      description: string;
-      icon: string;
-    }[];
-  }
+      description?: string;
+      impacts: string[];
+    }
   | {
-    type: 'process';
-    howWeDidIt?: {
-      phase: string;
+      type: 'deliverables';
+      badge?: string;
       title: string;
-      description: string;
-      duration: string;
-    }[];
-  }
+      description?: string;
+      items: string[];
+      columns?: 2 | 3 | 4;
+    }
   | {
-    type: 'features';
-    featuresUsed?: {
-      category: string;
-      features: string[];
-    }[];
-  }
+      type: 'workflows';
+      badge?: string;
+      title: string;
+      description?: string;
+      workflows: Array<{ trigger: string; actions: string[] }>;
+    }
   | {
-    type: 'results';
-    results: {
-      metric?: string;
-      before?: string;
-      after?: string;
-      improvement?: string;
+      type: 'faq';
+      badge?: string;
       title?: string;
-      description: string;
-    }[];
-  }
+      description?: string;
+      items: Array<{ question: string; answer: string }>;
+    }
   | {
-    type: 'testimonial';
-    testimonial?: {
-      quote: string;
-      author: string;
-      role: string;
+      type: 'more';
+    }
+  | {
+      type: 'cta';
+      heading: string;
+      body: string;
+      metaItems?: { text: string }[];
     };
-  }
-  | {
-    type: 'investment';
-    investment?: {
-      setup: string;
-      monthly: string;
-      roi?: string;
-    };
-  }
-  | {
-    type: 'business-impact';
-    badge?: string;
-    title: string;
-    description?: string;
-    impacts: string[];
-  }
-  | {
-    type: 'deliverables';
-    badge?: string;
-    title: string;
-    description?: string;
-    items: string[];
-    columns?: 2 | 3 | 4;
-  }
-  | {
-    type: 'workflows';
-    badge?: string;
-    title: string;
-    description?: string;
-    workflows: Array<{ trigger: string; actions: string[] }>;
-  }
-  | {
-    type: 'faq';
-    badge?: string;
-    title?: string;
-    description?: string;
-    items: Array<{ question: string; answer: string }>;
-  }
-  | {
-    type: 'more';
-  }
-  | {
-    type: 'cta';
-    heading: string;
-    body: string;
-    metaItems?: { text: string }[];
-  };
 
 const nonDuplicateSectionTypes = new Set([
   'hero',
@@ -199,9 +199,13 @@ function validateRenderableSection(section: CaseStudyTemplateSection) {
     case 'cta':
       return true;
     case 'problem':
-      return Boolean(section.problemHeading && section.problemDescription?.length && section.painPoints?.length);
+      return Boolean(
+        section.problemHeading && section.problemDescription?.length && section.painPoints?.length
+      );
     case 'solution':
-      return Boolean(section.solutionHeading && section.solutionDescription && section.whatWeDid?.length);
+      return Boolean(
+        section.solutionHeading && section.solutionDescription && section.whatWeDid?.length
+      );
     case 'process':
       return isSectionArray(section.howWeDidIt);
     case 'features':
@@ -362,7 +366,9 @@ export function CaseStudyTemplate({
   warnForSectionQuality(resolvedSections);
 
   if (resolvedSections.length < 4 && env.NODE_ENV === 'development') {
-    systemDevelopmentWarning(`CaseStudyTemplate: ${metadata.slug} has fewer than 4 authored sections.`);
+    systemDevelopmentWarning(
+      `CaseStudyTemplate: ${metadata.slug} has fewer than 4 authored sections.`
+    );
   }
 
   if (missingSections.length > 0 && env.NODE_ENV === 'development') {
@@ -605,13 +611,8 @@ export function CaseStudyTemplate({
 
       case 'cta':
         return (
-          <SmartCTA
+          <PrimaryCTASection
             key={`cta-${index}`}
-            system={metadata.systems[0] ?? 'smart-website-systems'}
-            pageType='case-study'
-            slug={metadata.slug}
-            intent='diagnostic'
-            position='footer'
             title={section.heading}
             description={section.body}
             metaItems={section.metaItems ?? resolvedCtaMetaItems}
@@ -642,7 +643,9 @@ export function CaseStudyTemplate({
     }
 
     if (!validateRenderableSection(section as CaseStudyTemplateSection)) {
-      warnCaseStudyTemplate(`Skipping ${type} section at index ${index} because its shape is invalid.`);
+      warnCaseStudyTemplate(
+        `Skipping ${type} section at index ${index} because its shape is invalid.`
+      );
       return null;
     }
 
@@ -650,7 +653,9 @@ export function CaseStudyTemplate({
       return renderSection(section as CaseStudyTemplateSection, index);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      warnCaseStudyTemplate(`Skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      warnCaseStudyTemplate(
+        `Skipping ${type} section at index ${index} because rendering failed: ${message}`
+      );
       return null;
     }
   }

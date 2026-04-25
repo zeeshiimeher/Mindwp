@@ -40,7 +40,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
         icon: ClipboardList,
         title: 'Open quotes living in three different folders',
         description:
-          'One quote is in email, one is written on the back of a survey sheet, and one is still in somebody\'s phone notes. Nobody can scan the live list in ten seconds, so too many of them never get touched again once the week gets busy.',
+          "One quote is in email, one is written on the back of a survey sheet, and one is still in somebody's phone notes. Nobody can scan the live list in ten seconds, so too many of them never get touched again once the week gets busy.",
         iconType: 'primary' as const,
       },
       {
@@ -52,7 +52,8 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       },
       {
         icon: Phone,
-        title: 'Storm-morning calls overflow, but most of the lost work is in the quiet that follows',
+        title:
+          'Storm-morning calls overflow, but most of the lost work is in the quiet that follows',
         description:
           'A windy night can flood the line, but that is not usually where the biggest money disappears. More often it is the re-roof quote from a fortnight ago that nobody warmed back up while the homeowner kept comparing in silence.',
         iconType: 'accent' as const,
@@ -121,7 +122,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Pull insurance jobs out of paperwork limbo',
         description:
-          'Photos, adjuster paperwork, and the homeowner\'s messages all stay attached to the address instead of living on somebody\'s personal phone. That keeps the claim moving and makes the timeline feel steadier from their side as well.',
+          "Photos, adjuster paperwork, and the homeowner's messages all stay attached to the address instead of living on somebody's personal phone. That keeps the claim moving and makes the timeline feel steadier from their side as well.",
         icon: FileSearch,
         features: [
           'Photos and paperwork in one place per job',
@@ -188,8 +189,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       },
       {
         name: 'Get the reputation onto the map',
-        description:
-          'For when the work is good and the Google profile does not show it.',
+        description: 'For when the work is good and the Google profile does not show it.',
         price: 'Stage 3',
         priceDetail: 'Start here if the review count is the embarrassment',
         features: [
@@ -203,12 +203,14 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'These are the supporting services roofing firms tend to lean on most once they can see where longer decisions, insurance jobs, and open quotes are slipping. Each one supports follow-up, proof, or visibility from a different angle.',
+    description:
+      'These are the supporting services roofing firms tend to lean on most once they can see where longer decisions, insurance jobs, and open quotes are slipping. Each one supports follow-up, proof, or visibility from a different angle.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Helps enquiry, survey, and quote handling stay connected through the long decision cycle instead of fading out after the survey is done.',
+        description:
+          'Helps enquiry, survey, and quote handling stay connected through the long decision cycle instead of fading out after the survey is done.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -216,15 +218,17 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'CRM Automation',
-        description: 'Keeps the open quote board clear and sends the friendly check-ins that stop re-roof decisions drifting into silence.',
-        href: '/services/crm-automation',
+        description:
+          'Keeps the open quote board clear and sends the friendly check-ins that stop re-roof decisions drifting into silence.',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Helps you stay visible for the local roofing searches that matter, whether the trigger is storm damage or a slower planned re-roof.',
+        description:
+          'Helps you stay visible for the local roofing searches that matter, whether the trigger is storm damage or a slower planned re-roof.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -232,7 +236,8 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished re-roofs into proof on Maps and search, so the next homeowner comparing three firms sees real jobs that feel current.',
+        description:
+          'Turns finished re-roofs into proof on Maps and search, so the next homeowner comparing three firms sees real jobs that feel current.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -281,35 +286,35 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
-        description:
-          'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-        canonical: '/industries/home-services/roofing-companies',
-      },
-      slug: 'roofing-companies',
-      industries: ['roofing'],
-      systems: [
-        'smart-website-systems',
-        'crm-automation',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['lead-management', 'client-reactivation', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'home-services',
-      hero: { ...heroData },
-      operatingPatterns: operatingPatternsData,
-      comparison: comparisonData,
-      systemLayers: systemLayersData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about the last re-roof you lost in the silence',
-        description:
-          'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
-      }
+    seo: {
+      title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
+      description:
+        'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+      canonical: '/industries/home-services/roofing-companies',
+    },
+    slug: 'roofing-companies',
+    industries: ['roofing'],
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'client-reactivation', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'home-services',
+    hero: { ...heroData },
+    operatingPatterns: operatingPatternsData,
+    comparison: comparisonData,
+    systemLayers: systemLayersData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about the last re-roof you lost in the silence',
+      description:
+        'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+    },
   };
 }
 

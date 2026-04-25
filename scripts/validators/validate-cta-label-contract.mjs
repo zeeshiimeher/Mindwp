@@ -5,11 +5,11 @@ import path from 'node:path';
 
 import {
   APPROVED_CTA_LABELS,
-  DEFAULT_CTA_LABEL,
-  DEFAULT_TIER_CARD_CTA_LABEL,
+  buildGlobalPrimaryCtaAction,
+  getPrimaryCTA,
+  getSecondaryCTA,
   isApprovedCtaLabel,
-  resolveCtaLabel,
-} from '../../src/config/ctaLabels.ts';
+} from '../../src/lib/cta/primaryAction.ts';
 import { CANONICAL_SYSTEMS } from '../../src/lib/content-graph/canonical.ts';
 import { listFilesRecursive } from '../lib/validator-helpers.mjs';
 
@@ -18,7 +18,7 @@ const shouldReportJson = args.has('--report-json');
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'cta-label-contract-report.json');
-const smartCtaPath = path.join(root, 'src', 'components', 'system', 'SmartCTA.tsx');
+const primaryCtaSectionPath = path.join(root, 'src', 'components', 'system', 'PrimaryCTASection.tsx');
 const tierCardsPath = path.join(
   root,
   'src',
@@ -35,10 +35,9 @@ const globalPrimaryCtaSurfaceChecks = [
   'src/global/HeaderMobileMenuIsland.tsx',
 ];
 const allowedHardcodedLabelFiles = new Set([
-  'src/config/ctaLabels.ts',
   'src/components/reusable/sections/core/TierCardsSection.tsx',
   'src/lib/cta/primaryAction.ts',
-  'src/components/system/SmartCTA.tsx',
+  'src/components/system/PrimaryCTASection.tsx',
   'src/app/dev/cta-label-contract/page.tsx',
 ]);
 const repoSystemDirs = [
@@ -81,72 +80,61 @@ function main() {
   const issues = [];
   const warnings = [];
 
-  if (resolveCtaLabel('unknown-system') !== DEFAULT_CTA_LABEL) {
+  if (getPrimaryCTA() !== 'Start a Conversation') {
     issues.push({
       code: 'invalid_unknown_system_fallback',
-      message: 'resolveCtaLabel("unknown-system") must return the safe fallback label.',
+      message: 'getPrimaryCTA() must return the locked primary CTA label.',
     });
   }
 
-  if (resolveCtaLabel('') !== DEFAULT_CTA_LABEL) {
+  if (getSecondaryCTA(true) !== 'Discuss Your Project') {
     issues.push({
       code: 'invalid_empty_system_fallback',
-      message: 'resolveCtaLabel("") must return the safe fallback label.',
+      message: 'getSecondaryCTA(true) must return the locked secondary CTA label.',
     });
   }
 
-  const smartCtaSource = fs.readFileSync(smartCtaPath, 'utf8');
-  if (!smartCtaSource.includes("const resolvedSystem = system ?? 'smart-website-systems'")) {
+  const primaryCtaSectionSource = fs.readFileSync(primaryCtaSectionPath, 'utf8');
+  if (primaryCtaSectionSource.includes('resolveCtaLabel(')) {
     issues.push({
-      code: 'missing_resolved_system_guard',
-      message: 'SmartCTA must normalize system through a single resolvedSystem variable.',
+      code: 'cta_label_resolver_still_present',
+      message: 'PrimaryCTASection must not use resolveCtaLabel.',
     });
   }
 
-  if (
-    !smartCtaSource.includes('resolveCtaLabel({') ||
-    !smartCtaSource.includes('system: resolvedSystem')
-  ) {
+  if (primaryCtaSectionSource.includes('return null')) {
     issues.push({
-      code: 'missing_resolver_label_usage',
-      message: 'SmartCTA must resolve CTA labels from the normalized resolvedSystem value.',
+      code: 'smart_cta_return_null',
+      message: 'PrimaryCTASection must not return null for CTA contract failures.',
     });
   }
 
-  if (smartCtaSource.includes('resolveSecondaryCta(')) {
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires title and description')) {
     issues.push({
-      code: 'implicit_secondary_cta_present',
-      message: 'SmartCTA must not use implicit secondary CTA resolution.',
+      code: 'missing_cta_required_guard',
+      message: 'PrimaryCTASection must throw when title or description is missing.',
     });
   }
 
-  if (!smartCtaSource.includes('allowSecondaryCTA?: true;')) {
+  if (!primaryCtaSectionSource.includes('allowSecondaryCTA?: true;')) {
     issues.push({
       code: 'missing_allow_secondary_guard_prop',
-      message: 'SmartCTA must expose allowSecondaryCTA as an explicit opt-in.',
+      message: 'PrimaryCTASection must expose allowSecondaryCTA as an explicit opt-in.',
     });
   }
 
-  if (smartCtaSource.includes('secondaryAction && <Button')) {
+  if (!primaryCtaSectionSource.includes('getSecondaryCTA(allowSecondaryCTA)')) {
     issues.push({
-      code: 'implicit_secondary_button_rendering',
-      message: 'SmartCTA must not auto-render a secondary CTA button.',
+      code: 'missing_secondary_cta_gate',
+      message: 'PrimaryCTASection must gate the secondary CTA through allowSecondaryCTA.',
     });
   }
 
   const tierCardsSource = fs.readFileSync(tierCardsPath, 'utf8');
-  if (!tierCardsSource.includes('resolveTierCardCtaLabel')) {
+  if (!tierCardsSource.includes('getPrimaryCTA')) {
     issues.push({
       code: 'missing_tier_card_label_resolver',
-      message: 'TierCardsSection must resolve contact CTA labels from the shared CTA config.',
-    });
-  }
-
-  if (!isApprovedCtaLabel(DEFAULT_TIER_CARD_CTA_LABEL)) {
-    issues.push({
-      code: 'invalid_tier_card_default_label',
-      message:
-        'Tier card default CTA label must be included in the shared approved CTA label list.',
+      message: 'TierCardsSection must use the locked primary CTA label for contact actions.',
     });
   }
 
@@ -158,14 +146,11 @@ function main() {
     });
   }
 
-  if (
-    !smartCtaSource.includes('system: resolvedSystem') ||
-    !smartCtaSource.includes('sourceType: pageType')
-  ) {
+  if (!primaryCtaSectionSource.includes("system: 'smart-website-systems'")) {
     issues.push({
-      code: 'missing_resolved_system_href_usage',
+      code: 'missing_locked_contact_system_usage',
       message:
-        'SmartCTA href generation must use resolvedSystem with sourceType and slug when building contact hrefs.',
+        'PrimaryCTASection href generation must use the locked contact system when building contact hrefs.',
     });
   }
 
@@ -215,6 +200,7 @@ function main() {
     warningCount: warnings.length,
     usedSystems,
     approvedLabels: [...APPROVED_CTA_LABELS],
+    globalPrimaryAction: buildGlobalPrimaryCtaAction(),
     issues,
     warnings,
   };

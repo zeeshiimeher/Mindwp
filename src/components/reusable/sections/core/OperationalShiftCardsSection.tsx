@@ -42,7 +42,10 @@ export function OperationalShiftCardsSection({
 
       <div className='l-grid l-gap-6 md:l-grid-3'>
         {painPoints.map(point => (
-          <Card key={`${point.before}-${point.after}`} className={cn(`${BLOCK}__card`, 'card-base h-full p-6')}>
+          <Card
+            key={`${point.before}-${point.after}`}
+            className={cn(`${BLOCK}__card`, 'card-base h-full p-6')}
+          >
             <div className={`${BLOCK}__panels l-stack l-gap-4`}>
               <div className='l-stack l-gap-3'>
                 <div className={`${BLOCK}__state ${BLOCK}__state--before`}>

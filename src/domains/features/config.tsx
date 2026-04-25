@@ -14,9 +14,14 @@ const createFeatureEntry = <TData extends FeaturePageData>(
 ): FeatureEntry<TData> => ({ page });
 
 export const FEATURE_ENTRY_BY_SLUG = Object.fromEntries(
-  Object.entries(FEATURE_DOMAIN_REGISTRY).map(([slug, entry]) => [slug, createFeatureEntry(entry.page)])
+  Object.entries(FEATURE_DOMAIN_REGISTRY).map(([slug, entry]) => [
+    slug,
+    createFeatureEntry(entry.page),
+  ])
 ) as {
-  [K in keyof typeof FEATURE_DOMAIN_REGISTRY]: FeatureEntry<(typeof FEATURE_DOMAIN_REGISTRY)[K]['data']>;
+  [K in keyof typeof FEATURE_DOMAIN_REGISTRY]: FeatureEntry<
+    (typeof FEATURE_DOMAIN_REGISTRY)[K]['data']
+  >;
 };
 
 export type FeatureSlug = keyof typeof FEATURE_ENTRY_BY_SLUG;

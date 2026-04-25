@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
-    seo: {
+  seo: {
     title: 'HVAC Local Visibility System for Service Areas',
     description:
       'Learn how an HVAC local visibility system for service areas builds consistent review flow, citation accuracy, and local content that drives map pack rankings.',
@@ -12,16 +12,16 @@ export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
         'Learn how an HVAC local visibility system for service areas builds consistent review flow, citation accuracy, and local content that drives map pack rankings.',
     },
   },
-    slug: 'hvac-local-visibility-system-for-service-areas',
-    title: 'HVAC Local Visibility System for Service Areas',
-    publishDate: '2026-04-06',
-    authorKey: 'TECHNICAL',
-    category: 'local-authority-seo',
-    industries: ['hvac'],
-    systems: ['reputation-review'],
-    topics: ['local-visibility'],
-    tags: ['HVAC', 'Local Visibility', 'Service Areas', 'Local SEO', 'Map Pack'],
-    sections: [
+  slug: 'hvac-local-visibility-system-for-service-areas',
+  title: 'HVAC Local Visibility System for Service Areas',
+  publishDate: '2026-04-06',
+  authorKey: 'TECHNICAL',
+  category: 'local-authority-seo',
+  industries: ['hvac'],
+  systems: ['reputation-review'],
+  topics: ['local-visibility'],
+  tags: ['HVAC', 'Local Visibility', 'Service Areas', 'Local SEO', 'Map Pack'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -96,5 +96,5 @@ export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
       content:
         'If your HVAC company relies on word of mouth for local discovery, a visibility system can put your business in front of every homeowner searching for heating and cooling services in your area.',
     },
-  ]
+  ],
 };

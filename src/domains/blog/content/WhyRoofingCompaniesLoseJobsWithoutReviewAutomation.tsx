@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Roofing Companies Lose Jobs Without Review Automation',
     description:
       'Roofing companies lose jobs without review automation because satisfied customers forget to post reviews, leaving competitors with more social proof to win.',
@@ -12,16 +12,16 @@ export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = 
         'Roofing companies lose jobs without review automation because satisfied customers forget to post reviews, leaving competitors with more social proof to win.',
     },
   },
-    slug: 'why-roofing-companies-lose-jobs-without-review-automation',
-    title: 'Why Roofing Companies Lose Jobs Without Review Automation',
-    publishDate: '2026-04-06',
-    authorKey: 'EDITORIAL',
-    category: 'reputation-review',
-    industries: ['roofing'],
-    systems: ['reputation-review'],
-    topics: ['review-automation'],
-    tags: ['Roofing', 'Review Automation', 'Reputation', 'Lost Jobs', 'Social Proof'],
-    sections: [
+  slug: 'why-roofing-companies-lose-jobs-without-review-automation',
+  title: 'Why Roofing Companies Lose Jobs Without Review Automation',
+  publishDate: '2026-04-06',
+  authorKey: 'EDITORIAL',
+  category: 'reputation-review',
+  industries: ['roofing'],
+  systems: ['reputation-review'],
+  topics: ['review-automation'],
+  tags: ['Roofing', 'Review Automation', 'Reputation', 'Lost Jobs', 'Social Proof'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -81,5 +81,5 @@ export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = 
       content:
         'If your roofing company relies on customers remembering to leave reviews, you are losing enquiries to competitors with better social proof. See how reputation automation fixes the review gap.',
     },
-  ]
+  ],
 };

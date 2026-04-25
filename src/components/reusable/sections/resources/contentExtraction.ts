@@ -1,7 +1,8 @@
 import type { ResourcePageTemplateSection } from '@/domains/resources/templates/types';
 import {
-  resolveGlobalPrimaryCtaAction,
-  resolveGlobalPrimaryCtaLinks,
+  buildGlobalPrimaryCtaAction,
+  buildGlobalPrimaryCtaLinks,
+  getSecondaryCTA,
 } from '@/lib/cta/primaryAction';
 
 type ProblemSection = Extract<ResourcePageTemplateSection, { type: 'problem' }>;
@@ -137,14 +138,14 @@ const CONTENT_INDEX = {
   TERTIARY: 2,
 } as const;
 
-const DEFAULT_GLOBAL_PRIMARY_CTA = resolveGlobalPrimaryCtaAction();
-const DEFAULT_GLOBAL_PRIMARY_CTA_LINKS = resolveGlobalPrimaryCtaLinks();
+const DEFAULT_GLOBAL_PRIMARY_CTA = buildGlobalPrimaryCtaAction();
+const DEFAULT_GLOBAL_PRIMARY_CTA_LINKS = buildGlobalPrimaryCtaLinks();
 
 const DEFAULTS = {
   CTA_HEADING: 'Ready to Get Started?',
   CTA_CONTENT: 'Transform your business with our proven solutions. Get expert help today.',
   CTA_PRIMARY_BUTTON: DEFAULT_GLOBAL_PRIMARY_CTA.label,
-  CTA_SECONDARY_BUTTON: 'Discuss Your Project',
+  CTA_SECONDARY_BUTTON: getSecondaryCTA(true) ?? 'Discuss Your Project',
   CTA_FEATURES: [
     { text: 'Call us anytime', icon: 'phone' as const },
     { text: '100% Money-Back Guarantee', icon: 'shield' as const },

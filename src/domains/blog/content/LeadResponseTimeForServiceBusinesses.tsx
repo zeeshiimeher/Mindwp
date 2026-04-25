@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const leadResponseTimeForServiceBusinesses: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Lead Response Time for Service Businesses',
     description:
       'Discover why lead response time for service businesses determines conversion rates and how automated systems close the gap between enquiry and first contact.',
@@ -12,22 +12,22 @@ export const leadResponseTimeForServiceBusinesses: BlogPostData = {
         'Discover why lead response time for service businesses determines conversion rates and how automated systems close the gap between enquiry and first contact.',
     },
   },
-    slug: 'lead-response-time-for-service-businesses',
-    title: 'Lead Response Time for Service Businesses',
-    publishDate: '2024-10-06',
-    authorKey: 'EDITORIAL',
-    category: 'ai-lead-handling',
-    industries: [],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-response-time'],
-    tags: [
+  slug: 'lead-response-time-for-service-businesses',
+  title: 'Lead Response Time for Service Businesses',
+  publishDate: '2024-10-06',
+  authorKey: 'EDITORIAL',
+  category: 'ai-lead-handling',
+  industries: [],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-response-time'],
+  tags: [
     'Lead Response',
     'Service Business',
     'AI Lead Handling',
     'Response Speed',
     'Lead Conversion',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -116,5 +116,5 @@ export const leadResponseTimeForServiceBusinesses: BlogPostData = {
       content:
         'If your leads wait hours for a response while competitors reply in minutes, the gap is costing you revenue. See how AI-powered lead handling reduces response time to seconds.',
     },
-  ]
+  ],
 };

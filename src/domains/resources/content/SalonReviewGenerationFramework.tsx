@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const salonReviewGenerationFramework: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Salon Review Generation Framework',
     description:
       'See how salons automate review collection with photo prompts, stylist-specific personalisation, and post-appointment timing to build the Google review profile that drives booking decisions.',
     canonical,
   },
-    title: 'Salon Review Generation Framework',
-    description:
+  title: 'Salon Review Generation Framework',
+  description:
     'See how salons automate review collection with photo prompts, stylist-specific personalisation, and post-appointment timing to build the Google review profile that drives booking decisions.',
-    category: 'reputation-review',
-    publishedAt: '2026-02-07',
-    systems: ['reputation-review'],
-    industries: ['salon'],
-    topics: ['review-generation'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2026-02-07',
+  systems: ['reputation-review'],
+  industries: ['salon'],
+  topics: ['review-generation'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'Salon Review Generation Framework',
@@ -181,5 +181,5 @@ export const salonReviewGenerationFramework: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

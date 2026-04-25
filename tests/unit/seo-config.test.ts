@@ -37,15 +37,15 @@ describe('unit: seo config helpers', () => {
         includeSearch: true,
       })
     ).toBe('/blog/post?ref=nav');
-    expect(
+    expect(() =>
       normalizeInternalTarget('mailto:hello@mindwp.com', {
         baseOrigin: 'https://mindwp.com',
       })
-    ).toBeNull();
-    expect(
+    ).toThrow('Invalid internal URL');
+    expect(() =>
       normalizeInternalTarget('https://external.example/blog/post', {
         baseOrigin: 'https://mindwp.com',
       })
-    ).toBeNull();
+    ).toThrow('Invalid internal URL');
   });
 });

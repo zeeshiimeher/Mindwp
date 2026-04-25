@@ -1,7 +1,6 @@
 import {
   AlertOctagon,
   CalendarClock,
-  CarFront,
   ClipboardList,
   Compass,
   GanttChartSquare,
@@ -16,7 +15,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAutoRepairIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: "Auto Repair",
+    badge: 'Auto Repair',
     title: 'The Brake Job Rang at 9:42. The Bay Was Full. The Driver Booked Down the Road.',
     description:
       'Most repair shops are not losing work because the wrench work is wrong. They lose it in the half hour after a missed call, in the estimate that still has not been chased by the next morning, and in the MOT reminder nobody sent when the bay got busy again.',
@@ -315,43 +314,42 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       },
       {
         question: 'Do we need a brand new website?',
-        answer:
-          'Usually not. Most of the gap lives after the form is sent, not before it.',
+        answer: 'Usually not. Most of the gap lives after the form is sent, not before it.',
       },
     ],
   };
 
   return {
-      seo: {
-        title: 'Auto Repair Shops \u2014 Stop Losing Brake Jobs To Voicemail | MindWP',
-        description:
-          'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-        canonical: '/industries/automotive-services/auto-repair',
-      },
-      slug: 'auto-repair',
-      industries: ['auto-repair'],
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['missed-calls', 'lead-management', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'automotive-services',
-      hero: { ...heroData },
-      operatingPatterns: operatingPatternsData,
-      comparison: comparisonData,
-      systemLayers: systemLayersData,
-      workflowExamples: workflowExamplesData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us where the brake job got lost',
-        description:
-          'Walk us through last Tuesday \u2014 the missed call, the dead estimate, the regular who never came back. We will tell you which gap to close first.',
-      }
+    seo: {
+      title: 'Auto Repair Shops \u2014 Stop Losing Brake Jobs To Voicemail | MindWP',
+      description:
+        'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+      canonical: '/industries/automotive-services/auto-repair',
+    },
+    slug: 'auto-repair',
+    industries: ['auto-repair'],
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['missed-calls', 'lead-management', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'automotive-services',
+    hero: { ...heroData },
+    operatingPatterns: operatingPatternsData,
+    comparison: comparisonData,
+    systemLayers: systemLayersData,
+    workflowExamples: workflowExamplesData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us where the brake job got lost',
+      description:
+        'Walk us through last Tuesday \u2014 the missed call, the dead estimate, the regular who never came back. We will tell you which gap to close first.',
+    },
   };
 }
 

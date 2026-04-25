@@ -149,72 +149,72 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
-        description:
+    seo: {
+      title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
+      description:
         'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
-        canonical: '/case-studies/crm-pipeline-visibility-transformation',
-        openGraph: {
-          title: 'Why Service Businesses Can\u2019t See Their Pipeline | MindWP Case Study',
-          description:
-            'How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.',
-        },
+      canonical: '/case-studies/crm-pipeline-visibility-transformation',
+      openGraph: {
+        title: 'Why Service Businesses Can\u2019t See Their Pipeline | MindWP Case Study',
+        description:
+          'How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.',
       },
-      slug: 'crm-pipeline-visibility-transformation',
-      title: 'CRM Pipeline Visibility Transformation',
-      industryCategory: 'home-services',
-      industryLabel: 'Home Services',
-      industries: ['roofing'],
-      systems: ['crm-automation', 'revenue-growth'],
-      topics: [
-        'crm-pipeline',
-        'pipeline-architecture',
-        'lead-management',
-        'lead-qualification',
-        'pipeline-visibility',
-        'conversion-tracking',
-        'revenue-visibility',
-        'revenue-tracking',
-        'crm-visibility',
-      ],
-      publishDate: '2026-06-01',
-      client: 'Greenway Property Maintenance',
-      location: 'Southampton, UK',
-      business: 'Greenway Property Maintenance',
-      duration: '12 weeks',
-      completedDate: 'June 2026',
-      heroHeadline:
-        'How a Property Maintenance Company Went From Zero Pipeline Visibility to Tracking Every Lead',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'CRM Pipeline',
-        'Pipeline Visibility',
-        'Quote Follow-Up',
-        'Revenue Recovery',
-        'System Implementation',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'System Implementation' },
-        metrics: { resultsSectionTitle: 'Key Outcomes' },
-        problem: { challengeBadgeLabel: 'The Visibility Problem' },
-        solution: { solutionBadgeLabel: 'System Architecture' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Pipeline Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Works for any service business' },
-          ],
-        },
-      }
+    },
+    slug: 'crm-pipeline-visibility-transformation',
+    title: 'CRM Pipeline Visibility Transformation',
+    industryCategory: 'home-services',
+    industryLabel: 'Home Services',
+    industries: ['roofing'],
+    systems: ['crm-automation', 'revenue-growth'],
+    topics: [
+      'crm-pipeline',
+      'pipeline-architecture',
+      'lead-management',
+      'lead-qualification',
+      'pipeline-visibility',
+      'conversion-tracking',
+      'revenue-visibility',
+      'revenue-tracking',
+      'crm-visibility',
+    ],
+    publishDate: '2026-06-01',
+    client: 'Greenway Property Maintenance',
+    location: 'Southampton, UK',
+    business: 'Greenway Property Maintenance',
+    duration: '12 weeks',
+    completedDate: 'June 2026',
+    heroHeadline:
+      'How a Property Maintenance Company Went From Zero Pipeline Visibility to Tracking Every Lead',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'CRM Pipeline',
+      'Pipeline Visibility',
+      'Quote Follow-Up',
+      'Revenue Recovery',
+      'System Implementation',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'System Implementation' },
+      metrics: { resultsSectionTitle: 'Key Outcomes' },
+      problem: { challengeBadgeLabel: 'The Visibility Problem' },
+      solution: { solutionBadgeLabel: 'System Architecture' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Pipeline Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Works for any service business' },
+        ],
+      },
+    },
   };
 }
 

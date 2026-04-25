@@ -12,7 +12,16 @@ export async function generateMetadata() {
 
 export default function Home() {
   const { schema } = homepageData.seo;
-  const featuredCaseStudies = getCaseStudiesTemplateMetadata().slice(0, 3);
+  const featuredCaseStudies = getCaseStudiesTemplateMetadata()
+    .slice(0, 3)
+    .map(study => ({
+      slug: study.slug,
+      industryLabel: study.industryLabel,
+      client: study.client,
+      location: study.location,
+      description: study.heroHeadline,
+      publishDate: study.publishDate,
+    }));
 
   return (
     <>

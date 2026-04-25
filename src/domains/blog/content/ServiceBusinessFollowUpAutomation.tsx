@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const serviceBusinessFollowUpAutomation: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Service Business Follow Up Automation Guide',
     description:
       'Discover how service business follow up automation ensures no lead goes cold with timely sequences that nurture enquiries through to booked jobs automatically.',
@@ -12,16 +12,16 @@ export const serviceBusinessFollowUpAutomation: BlogPostData = {
         'Discover how service business follow up automation ensures no lead goes cold with timely sequences that nurture enquiries through to booked jobs automatically.',
     },
   },
-    slug: 'service-business-follow-up-automation',
-    title: 'Service Business Follow Up Automation',
-    publishDate: '2024-11-15',
-    authorKey: 'TECHNICAL',
-    category: 'crm-automation',
-    industries: [],
-    systems: ['ai-lead-handling'],
-    topics: ['follow-up'],
-    tags: ['Follow Up', 'Automation', 'Service Business', 'CRM', 'Lead Nurture'],
-    sections: [
+  slug: 'service-business-follow-up-automation',
+  title: 'Service Business Follow Up Automation',
+  publishDate: '2024-11-15',
+  authorKey: 'TECHNICAL',
+  category: 'crm-automation',
+  industries: [],
+  systems: ['ai-lead-handling'],
+  topics: ['follow-up'],
+  tags: ['Follow Up', 'Automation', 'Service Business', 'CRM', 'Lead Nurture'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -110,5 +110,5 @@ export const serviceBusinessFollowUpAutomation: BlogPostData = {
       content:
         'If leads go quiet after receiving a quote and nobody follows up consistently, automation can close that gap. See how CRM-connected follow-up keeps your pipeline moving.',
     },
-  ]
+  ],
 };

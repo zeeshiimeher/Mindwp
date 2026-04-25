@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Lead Automation Framework for Service Businesses',
     description:
       'Explore the lead automation framework for service businesses that connects enquiry capture, qualification, and routing into one operational system.',
@@ -12,22 +12,22 @@ export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
         'Explore the lead automation framework for service businesses that connects enquiry capture, qualification, and routing into one operational system.',
     },
   },
-    slug: 'lead-automation-framework-for-service-businesses',
-    title: 'Lead Automation Framework for Service Businesses',
-    publishDate: '2024-09-28',
-    authorKey: 'TECHNICAL',
-    category: 'ai-lead-handling',
-    industries: [],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-management'],
-    tags: [
+  slug: 'lead-automation-framework-for-service-businesses',
+  title: 'Lead Automation Framework for Service Businesses',
+  publishDate: '2024-09-28',
+  authorKey: 'TECHNICAL',
+  category: 'ai-lead-handling',
+  industries: [],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-management'],
+  tags: [
     'Lead Automation',
     'Service Business',
     'AI Lead Handling',
     'Enquiry Management',
     'Workflow Automation',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -91,5 +91,5 @@ export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
       content:
         'If enquiries sit in inboxes while potential customers move to competitors, your lead handling needs automation. See how AI-powered lead automation handles the critical window between enquiry and response.',
     },
-  ]
+  ],
 };

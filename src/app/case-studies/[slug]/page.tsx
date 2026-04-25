@@ -4,8 +4,8 @@ import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import {
   CaseStudyDetailPage,
-  resolveCaseStudy,
   generateCaseStudyStaticParams,
+  resolveCaseStudy,
 } from './caseStudyPage';
 
 export const dynamicParams = false;

@@ -17,8 +17,9 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: "Appointment Businesses",
-    title: 'They Enquired With Three Of You On Sunday Night. Whoever Replied First With A Slot Got The Booking.',
+    badge: 'Appointment Businesses',
+    title:
+      'They Enquired With Three Of You On Sunday Night. Whoever Replied First With A Slot Got The Booking.',
     description:
       'Dental practices, private clinics, driving schools, repair shops, and tattoo studios rarely lose bookings because of the work itself. They lose them when the reply comes late, the availability is not clear, the booking takes too long, or nobody follows up after the first enquiry goes quiet.',
     list: ['Late replies', 'Unclear slots', 'No follow-up'],
@@ -27,7 +28,8 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
 
   const imageStripData = {
     badge: 'How Booking Decisions Happen',
-    title: 'You’re mid-appointment. Three enquiries piled up. Two had already taken another slot by the time you looked.',
+    title:
+      'You’re mid-appointment. Three enquiries piled up. Two had already taken another slot by the time you looked.',
     description:
       'Evenings, Sunday nights, lunch breaks, school holidays. The person booking usually wants two things quickly: a rough price and a real slot. If either one stays vague for too long, the booking drifts before anyone notices.',
     items: [
@@ -58,7 +60,8 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
 
   const operatingPatternsData = {
     badge: 'Where The Diary Slips',
-    title: 'You’re with a patient, a learner, or a client. The phone’s ringing. They’re booking somebody else.',
+    title:
+      'You’re with a patient, a learner, or a client. The phone’s ringing. They’re booking somebody else.',
     description:
       'The same handful of leaks show up across nearly every appointment-based business. They usually happen before the appointment even exists properly in the diary.',
     benefits: [
@@ -349,51 +352,52 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Appointment-Based Local Businesses — Stop Losing Enquiries, Bookings & Deposits | MindWP',
-        description:
-          'For dental practices, private clinics, driving schools, repair shops, and tattoo studios where enquiries go unanswered, bookings take ten messages, and no-shows kill the day rate. We put the system in place that catches them.',
-        canonical: '/industries/local-appointment-businesses',
+    seo: {
+      title:
+        'Appointment-Based Local Businesses — Stop Losing Enquiries, Bookings & Deposits | MindWP',
+      description:
+        'For dental practices, private clinics, driving schools, repair shops, and tattoo studios where enquiries go unanswered, bookings take ten messages, and no-shows kill the day rate. We put the system in place that catches them.',
+      canonical: '/industries/local-appointment-businesses',
+    },
+    slug: 'local-appointment-businesses',
+    type: 'category',
+    category: 'local-appointment-businesses',
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['booking-systems', 'follow-up', 'review-generation', 'lead-response-time'],
+    industries: [
+      'dental-clinic',
+      'driving-school',
+      'repair-shop',
+      'private-clinic',
+      'tattoo-studio',
+    ],
+    hero: heroData,
+    imageStrip: imageStripData,
+    operatingPatterns: operatingPatternsData,
+    spectrum: spectrumData,
+    decisionChecklist: decisionChecklistData,
+    serviceEnvironments: serviceEnvironmentsData,
+    systemLayers: systemLayersData,
+    process: processData,
+    detailRoutes: detailRoutesData,
+    sectionControls: {
+      subIndustries: {
+        enabled: false,
       },
-      slug: 'local-appointment-businesses',
-      type: 'category',
-      category: 'local-appointment-businesses',
-      systems: [
-        'smart-website-systems',
-        'crm-automation',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['booking-systems', 'follow-up', 'review-generation', 'lead-response-time'],
-      industries: [
-        'dental-clinic',
-        'driving-school',
-        'repair-shop',
-        'private-clinic',
-        'tattoo-studio',
-      ],
-      hero: heroData,
-      imageStrip: imageStripData,
-      operatingPatterns: operatingPatternsData,
-      spectrum: spectrumData,
-      decisionChecklist: decisionChecklistData,
-      serviceEnvironments: serviceEnvironmentsData,
-      systemLayers: systemLayersData,
-      process: processData,
-      detailRoutes: detailRoutesData,
-      sectionControls: {
-        subIndustries: {
-          enabled: false,
-        },
-        caseStudies: {
-          enabled: false,
-        },
+      caseStudies: {
+        enabled: false,
       },
-      cta: {
-        title: 'Tell us where the diary is leaking',
-        description:
-          'If enquiries are answered too late, booking takes too many messages, or follow-up on the maybe pile never really happens, walk us through how the business runs and we’ll show you the first thing worth fixing.',
-      }
+    },
+    cta: {
+      title: 'Tell us where the diary is leaking',
+      description:
+        'If enquiries are answered too late, booking takes too many messages, or follow-up on the maybe pile never really happens, walk us through how the business runs and we’ll show you the first thing worth fixing.',
+    },
   };
 }
 

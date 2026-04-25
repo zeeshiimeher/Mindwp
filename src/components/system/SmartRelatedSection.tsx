@@ -22,6 +22,14 @@ interface SmartRelatedSectionProps {
   sectionType?: string;
 }
 
+const REQUIRED_RELATED_CONTENT_PAGE_TYPES = new Set<PageType>([
+  'service',
+  'feature',
+  'industry-detail',
+  'industry-category',
+  'case-study',
+]);
+
 export function SmartRelatedSection({
   pageId,
   pageType,
@@ -49,6 +57,10 @@ export function SmartRelatedSection({
     slug,
     nodeType,
   });
+
+  if (REQUIRED_RELATED_CONTENT_PAGE_TYPES.has(pageType) && content.groups.length === 0) {
+    throw new Error('Related content required');
+  }
 
   return (
     <SmartRelatedSectionClient

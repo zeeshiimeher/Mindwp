@@ -175,74 +175,74 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'Roofing Website Rebuild | 6 to 22 Weekly Leads',
-        description:
+    seo: {
+      title: 'Roofing Website Rebuild | 6 to 22 Weekly Leads',
+      description:
         'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.',
-        canonical: '/case-studies/roofing-website-rebuild-with-crm',
-        openGraph: {
-          title: 'Why Roofing Websites Fail to Convert Leads | MindWP Case Study',
-          description:
-            'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.',
-        },
+      canonical: '/case-studies/roofing-website-rebuild-with-crm',
+      openGraph: {
+        title: 'Why Roofing Websites Fail to Convert Leads | MindWP Case Study',
+        description:
+          'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.',
       },
-      slug: 'roofing-website-rebuild-with-crm',
-      title: 'Roofing Website Rebuild With CRM',
-      industryCategory: 'home-services',
-      industryLabel: 'Home Services',
-      industries: ['roofing'],
-      systems: ['smart-website-systems'],
-      topics: [
-        'website-infrastructure',
-        'systems-first-websites',
-        'service-pages',
-        'local-service-pages',
-        'crm-integration',
-        'conversion-optimization',
-      ],
-      publishDate: '2025-10-15',
-      client: 'Crestline Roofing',
-      location: 'Bristol, UK',
-      business: 'Crestline Roofing',
-      duration: '7 weeks',
-      completedDate: 'October 2025',
-      heroHeadline:
-        'How a Roofing Contractor Went From 6 to 22 Weekly Leads With a Systems-First Website Rebuild',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'Website Rebuild',
-        'Smart Website Systems',
-        'CRM Integration',
-        'Roofing',
-        'Conversion Optimisation',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'System Implementation' },
-        problem: { challengeBadgeLabel: 'The Conversion Problem' },
-        deliverables: { deliverablesBadgeLabel: 'Deliverables' },
-        process: {
-          implementationBadgeLabel: 'Implementation',
-          implementationSectionTitle: 'How the System Was Built',
-          implementationSectionSubtitle:
-            'A 7-week rebuild covering audit, architecture, build, and launch',
-        },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Website Conversion Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for trades' },
-          ],
-        },
-      }
+    },
+    slug: 'roofing-website-rebuild-with-crm',
+    title: 'Roofing Website Rebuild With CRM',
+    industryCategory: 'home-services',
+    industryLabel: 'Home Services',
+    industries: ['roofing'],
+    systems: ['smart-website-systems'],
+    topics: [
+      'website-infrastructure',
+      'systems-first-websites',
+      'service-pages',
+      'local-service-pages',
+      'crm-integration',
+      'conversion-optimization',
+    ],
+    publishDate: '2025-10-15',
+    client: 'Crestline Roofing',
+    location: 'Bristol, UK',
+    business: 'Crestline Roofing',
+    duration: '7 weeks',
+    completedDate: 'October 2025',
+    heroHeadline:
+      'How a Roofing Contractor Went From 6 to 22 Weekly Leads With a Systems-First Website Rebuild',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'Website Rebuild',
+      'Smart Website Systems',
+      'CRM Integration',
+      'Roofing',
+      'Conversion Optimisation',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'System Implementation' },
+      problem: { challengeBadgeLabel: 'The Conversion Problem' },
+      deliverables: { deliverablesBadgeLabel: 'Deliverables' },
+      process: {
+        implementationBadgeLabel: 'Implementation',
+        implementationSectionTitle: 'How the System Was Built',
+        implementationSectionSubtitle:
+          'A 7-week rebuild covering audit, architecture, build, and launch',
+      },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Website Conversion Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for trades' },
+        ],
+      },
+    },
   };
 }
 

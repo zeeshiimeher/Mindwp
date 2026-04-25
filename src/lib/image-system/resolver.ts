@@ -2,8 +2,8 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 import imageIndex from '@/lib/image-system/data/imageIndex.json';
-import { warnOrThrow } from '@/lib/system/runtimeWarnings';
 import { DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
+import { warnOrThrow } from '@/lib/system/runtimeWarnings';
 
 type ImageType = 'featured-clean' | 'featured-overlay' | 'inline-1';
 
@@ -17,6 +17,7 @@ type ImageIndexRecord = Record<
 >;
 
 const runtimeImageIndex = imageIndex as ImageIndexRecord;
+const SHOULD_LOG = false;
 
 function toWebPath(filePath: string) {
   const normalized = filePath.replace(/^public\//, '');
@@ -48,7 +49,9 @@ function resolveFileBackedImage(webPath: string) {
 
 function handleMissingImage(slug: string, domain: string, type: ImageType) {
   const message = `[image-system] Missing ${type} image for ${domain}/${slug}.`;
-  warnOrThrow(`${message} Falling back to ${DEFAULT_OG_IMAGE_PATH}.`);
+  if (SHOULD_LOG) {
+    warnOrThrow(`${message} Falling back to ${DEFAULT_OG_IMAGE_PATH}.`);
+  }
 
   return DEFAULT_OG_IMAGE_PATH;
 }

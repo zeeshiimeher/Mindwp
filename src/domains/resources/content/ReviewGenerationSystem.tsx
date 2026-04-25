@@ -122,23 +122,23 @@ const finalCta = {
 };
 
 export const reviewGenerationSystem: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Review Generation System',
     description:
       'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
     canonical,
   },
-    title: 'Review Generation System',
-    description:
+  title: 'Review Generation System',
+  description:
     'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-    category: 'reputation-review',
-    publishedAt: '2025-11-24',
-    systems: ['reputation-review'],
-    industries: [],
-    topics: ['review-generation'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2025-11-24',
+  systems: ['reputation-review'],
+  industries: [],
+  topics: ['review-generation'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'Review Generation System',
@@ -192,5 +192,5 @@ export const reviewGenerationSystem: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const roofingCrmPipelineStructure: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Roofing CRM Pipeline Structure',
     description:
       'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
     canonical,
   },
-    title: 'Roofing CRM Pipeline Structure',
-    description:
+  title: 'Roofing CRM Pipeline Structure',
+  description:
     'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
-    category: 'crm-automation',
-    publishedAt: '2026-01-28',
-    systems: ['crm-automation'],
-    industries: ['roofing'],
-    topics: ['pipeline-architecture'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'crm-automation',
+  publishedAt: '2026-01-28',
+  systems: ['crm-automation'],
+  industries: ['roofing'],
+  topics: ['pipeline-architecture'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'Roofing CRM Pipeline Structure',
@@ -181,5 +181,5 @@ export const roofingCrmPipelineStructure: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ]
+  ],
 };

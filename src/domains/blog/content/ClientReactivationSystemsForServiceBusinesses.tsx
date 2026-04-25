@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Client Reactivation Systems for Service Businesses',
     description:
       'Discover how client reactivation systems for service businesses re-engage lapsed customers through automated campaigns that recover dormant revenue streams.',
@@ -12,16 +12,16 @@ export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
         'Discover how client reactivation systems for service businesses re-engage lapsed customers through automated campaigns that recover dormant revenue streams.',
     },
   },
-    slug: 'client-reactivation-systems-for-service-businesses',
-    title: 'Client Reactivation Systems for Service Businesses',
-    publishDate: '2025-02-28',
-    authorKey: 'EDITORIAL',
-    category: 'crm-automation',
-    industries: [],
-    systems: ['crm-automation'],
-    topics: ['client-reactivation'],
-    tags: ['Client Reactivation', 'CRM', 'Service Business', 'Win Back', 'Customer Retention'],
-    sections: [
+  slug: 'client-reactivation-systems-for-service-businesses',
+  title: 'Client Reactivation Systems for Service Businesses',
+  publishDate: '2025-02-28',
+  authorKey: 'EDITORIAL',
+  category: 'crm-automation',
+  industries: [],
+  systems: ['crm-automation'],
+  topics: ['client-reactivation'],
+  tags: ['Client Reactivation', 'CRM', 'Service Business', 'Win Back', 'Customer Retention'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -100,5 +100,5 @@ export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
       content:
         'If your CRM contains hundreds of past customers who never returned, automated reactivation can recover that dormant revenue. See how CRM systems bring customers back.',
     },
-  ]
+  ],
 };

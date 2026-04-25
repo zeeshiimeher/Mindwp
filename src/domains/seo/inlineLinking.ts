@@ -61,6 +61,7 @@ export function extractInternalLinks(
 
   return _extract(text, getLinkMap(), {
     ...normalizedOptions,
+    bestEffort: true,
     validateEntry: entry => {
       if (!sourcePath) {
         return {

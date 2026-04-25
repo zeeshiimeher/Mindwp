@@ -35,8 +35,20 @@ type SoftwareApplicationSchemaInput = {
   operatingSystem?: string;
 };
 
+function assertSchemaShape(schema: Record<string, unknown>) {
+  if (typeof schema['@context'] !== 'string' || schema['@context'].trim().length === 0) {
+    throw new Error('Invalid schema: missing @context');
+  }
+
+  if (typeof schema['@type'] !== 'string' || schema['@type'].trim().length === 0) {
+    throw new Error('Invalid schema: missing @type');
+  }
+
+  return schema;
+}
+
 export function buildBreadcrumbSchema(items: BreadcrumbItemInput[]) {
-  return {
+  return assertSchemaShape({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: items.map((item, index) => ({
@@ -45,7 +57,7 @@ export function buildBreadcrumbSchema(items: BreadcrumbItemInput[]) {
       name: item.name,
       item: toAbsoluteUrl(item.path),
     })),
-  };
+  });
 }
 
 export function buildArticleSchema({
@@ -59,7 +71,7 @@ export function buildArticleSchema({
 }: ArticleSchemaInput) {
   const absoluteUrl = toAbsoluteUrl(path);
 
-  return {
+  return assertSchemaShape({
     '@context': 'https://schema.org',
     '@type': type,
     headline,
@@ -80,11 +92,11 @@ export function buildArticleSchema({
       '@type': 'WebPage',
       '@id': absoluteUrl,
     },
-  };
+  });
 }
 
 export function buildServiceSchema({ name, description, path, areaServed }: ServiceSchemaInput) {
-  return {
+  return assertSchemaShape({
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
@@ -96,11 +108,12 @@ export function buildServiceSchema({ name, description, path, areaServed }: Serv
       url: SITE_ORIGIN,
     },
     ...(areaServed ? { areaServed } : {}),
-  };
+  });
 }
 
 export function buildFAQSchema({ questions }: FAQSchemaInput) {
-  return buildFaqSchemaFromItems(questions);
+  const schema = buildFaqSchemaFromItems(questions);
+  return schema ? assertSchemaShape(schema) : schema;
 }
 
 export function buildSoftwareApplicationSchema({
@@ -110,7 +123,7 @@ export function buildSoftwareApplicationSchema({
   applicationCategory = 'BusinessApplication',
   operatingSystem = 'Web Browser',
 }: SoftwareApplicationSchemaInput) {
-  return {
+  return assertSchemaShape({
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name,
@@ -123,5 +136,5 @@ export function buildSoftwareApplicationSchema({
       name: SITE_NAME,
       url: SITE_ORIGIN,
     },
-  };
+  });
 }

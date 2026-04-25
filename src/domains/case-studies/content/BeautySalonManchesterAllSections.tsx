@@ -172,54 +172,54 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
   ];
 
   return {
-      seo: {
+    seo: {
+      title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
+      description:
+        'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+      canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+      openGraph: {
         title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
         description:
-        'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
-        canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
-        openGraph: {
-          title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
-          description:
-            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
-        },
+          'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
       },
-      slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-      title: 'Beauty Salon Case Study - All Sections Demo',
-      industryCategory: 'beauty-personal-care',
-      industryLabel: 'Beauty & Personal Care',
-      industries: ['hair-salon'],
-      systems: ['local-seo-authority', 'smart-website-systems', 'reputation-review'],
-      topics: ['booking-automation', 'review-generation'],
-      publishDate: '2024-12-01',
-      client: 'The Glow Room Beauty Salon (All Sections Demo)',
-      location: 'Manchester, UK',
-      business: 'The Glow Room Beauty Salon',
-      duration: '3 months',
-      completedDate: 'December 2024',
-      heroHeadline: 'Beauty Salon Case Study - All Sections Demo',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'All Sections Demo'],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'Full Template Scenario' },
-        problem: { challengeBadgeLabel: 'The Challenge' },
-        solution: { solutionBadgeLabel: 'The Solution' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: '20-minute discovery call' },
-            { text: 'Actionable system roadmap' },
-            { text: 'No long-term contract required' },
-          ],
-        },
-      }
+    },
+    slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+    title: 'Beauty Salon Case Study - All Sections Demo',
+    industryCategory: 'beauty-personal-care',
+    industryLabel: 'Beauty & Personal Care',
+    industries: ['hair-salon'],
+    systems: ['local-seo-authority', 'smart-website-systems', 'reputation-review'],
+    topics: ['booking-automation', 'review-generation'],
+    publishDate: '2024-12-01',
+    client: 'The Glow Room Beauty Salon (All Sections Demo)',
+    location: 'Manchester, UK',
+    business: 'The Glow Room Beauty Salon',
+    duration: '3 months',
+    completedDate: 'December 2024',
+    heroHeadline: 'Beauty Salon Case Study - All Sections Demo',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'All Sections Demo'],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'Full Template Scenario' },
+      problem: { challengeBadgeLabel: 'The Challenge' },
+      solution: { solutionBadgeLabel: 'The Solution' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: '20-minute discovery call' },
+          { text: 'Actionable system roadmap' },
+          { text: 'No long-term contract required' },
+        ],
+      },
+    },
   };
 }
 

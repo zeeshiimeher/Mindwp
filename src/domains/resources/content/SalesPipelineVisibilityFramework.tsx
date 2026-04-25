@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const salesPipelineVisibilityFramework: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Sales Pipeline Visibility Framework',
     description:
       'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
     canonical,
   },
-    title: 'Sales Pipeline Visibility Framework',
-    description:
+  title: 'Sales Pipeline Visibility Framework',
+  description:
     'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-    category: 'revenue-growth',
-    publishedAt: '2025-12-10',
-    systems: ['crm-automation'],
-    industries: [],
-    topics: ['pipeline-visibility'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'revenue-growth',
+  publishedAt: '2025-12-10',
+  systems: ['crm-automation'],
+  industries: [],
+  topics: ['pipeline-visibility'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'Sales Pipeline Visibility Framework',
@@ -239,5 +239,5 @@ export const salesPipelineVisibilityFramework: ResourceData = {
       content: getRelatedResourcesContent('revenue-growth'),
       resources: getRelatedResources('revenue-growth', canonical),
     },
-  ]
+  ],
 };

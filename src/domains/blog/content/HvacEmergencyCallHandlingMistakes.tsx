@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
-    seo: {
+  seo: {
     title: 'HVAC Emergency Call Handling Mistakes to Avoid',
     description:
       'Learn about common hvac emergency call handling mistakes that delay response times and how structured triage workflows prevent dispatch errors.',
@@ -12,16 +12,16 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
         'Learn about common hvac emergency call handling mistakes that delay response times and how structured triage workflows prevent dispatch errors.',
     },
   },
-    slug: 'hvac-emergency-call-handling-mistakes',
-    title: 'HVAC Emergency Call Handling Mistakes',
-    publishDate: '2025-05-27',
-    authorKey: 'EDITORIAL',
-    category: 'home-services-industry',
-    industries: ['hvac'],
-    systems: ['ai-lead-handling', 'crm-automation'],
-    topics: ['emergency-handling'],
-    tags: ['HVAC', 'Emergency Calls', 'Call Handling', 'Dispatch', 'Triage'],
-    sections: [
+  slug: 'hvac-emergency-call-handling-mistakes',
+  title: 'HVAC Emergency Call Handling Mistakes',
+  publishDate: '2025-05-27',
+  authorKey: 'EDITORIAL',
+  category: 'home-services-industry',
+  industries: ['hvac'],
+  systems: ['ai-lead-handling', 'crm-automation'],
+  topics: ['emergency-handling'],
+  tags: ['HVAC', 'Emergency Calls', 'Call Handling', 'Dispatch', 'Triage'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -96,5 +96,5 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
       content:
         'If your HVAC company treats every call the same regardless of urgency, structured triage can ensure emergency customers get the fastest response. See how AI lead handling manages emergency workflows.',
     },
-  ]
+  ],
 };

@@ -43,6 +43,8 @@ const normalize = (value: string) => value.trim().toLowerCase();
 
 const errors: string[] = [];
 const warnings: string[] = [];
+const slugOwners = new Map<string, string[]>();
+const pathOwners = new Map<string, string[]>();
 
 const uniqueValues = (values: string[] | undefined) =>
   Array.from(new Set((values ?? []).map(normalize).filter(value => value.length > 0)));
@@ -204,6 +206,12 @@ const printMessages = (label: string, items: string[]) => {
 };
 
 for (const node of nodes) {
+  const slugKey = `${node.type}:${normalize(node.slug)}`;
+  const pathKey = normalize(node.path);
+
+  slugOwners.set(slugKey, [...(slugOwners.get(slugKey) ?? []), node.id]);
+  pathOwners.set(pathKey, [...(pathOwners.get(pathKey) ?? []), node.id]);
+
   // SR5 — Type integrity: every node.type MUST be in ContentNodeType
   if (!VALID_CONTENT_NODE_TYPES.has(node.type)) {
     errors.push(
@@ -250,6 +258,18 @@ for (const node of nodes) {
   }
 }
 
+for (const [slugKey, ownerIds] of slugOwners.entries()) {
+  if (ownerIds.length > 1) {
+    errors.push(`duplicate slug: ${slugKey} owned by ${ownerIds.join(', ')}`);
+  }
+}
+
+for (const [pathKey, ownerIds] of pathOwners.entries()) {
+  if (ownerIds.length > 1) {
+    errors.push(`duplicate path: ${pathKey} owned by ${ownerIds.join(', ')}`);
+  }
+}
+
 const blogNodes = nodes.filter(node => node.type === 'blog');
 const resourceNodes = nodes.filter(node => node.type === 'resource');
 const caseStudyNodes = nodes.filter(node => node.type === 'case-study');
@@ -291,6 +311,12 @@ const flatNodes = Object.values(getContentGraph());
 const nodeIndex = new Map<string, ContentGraphNode>();
 for (const n of flatNodes) {
   nodeIndex.set(n.id, n);
+}
+
+for (const node of nodes) {
+  if (!nodeIndex.has(node.id)) {
+    errors.push(`${describeNode(node)} missing registry entry in flat content graph`);
+  }
 }
 
 let relatesToCount = 0;

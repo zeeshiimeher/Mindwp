@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
@@ -21,10 +23,10 @@ function requireConfiguredValue(value: string | undefined, variableName: string)
 
 const mailConfig = SERVICES.mail.enabled
   ? {
-    client: new Resend(requireConfiguredValue(env.RESEND_API_KEY, 'RESEND_API_KEY')),
-    contactEmail: requireConfiguredValue(env.CONTACT_EMAIL, 'CONTACT_EMAIL'),
-    contactFromEmail: requireConfiguredValue(env.CONTACT_FROM_EMAIL, 'CONTACT_FROM_EMAIL'),
-  }
+      client: new Resend(requireConfiguredValue(env.RESEND_API_KEY, 'RESEND_API_KEY')),
+      contactEmail: requireConfiguredValue(env.CONTACT_EMAIL, 'CONTACT_EMAIL'),
+      contactFromEmail: requireConfiguredValue(env.CONTACT_FROM_EMAIL, 'CONTACT_FROM_EMAIL'),
+    }
   : null;
 const turnstileSecretKey = SERVICES.captcha.enabled
   ? requireConfiguredValue(env.TURNSTILE_SECRET_KEY, 'TURNSTILE_SECRET_KEY')
@@ -113,14 +115,14 @@ function getRoutedEmail(system: string) {
 
 function getPriorityMessage(priority: 'high' | 'medium' | 'low') {
   if (priority === 'high') {
-    return 'We\'re prioritizing your request and will respond shortly.';
+    return "We're prioritizing your request and will respond shortly.";
   }
 
   if (priority === 'medium') {
     return 'Our team is reviewing your request.';
   }
 
-  return 'We\'ll get back to you within 24 hours.';
+  return "We'll get back to you within 24 hours.";
 }
 
 function getFollowUpMessage(priority: 'high' | 'medium' | 'low') {
@@ -368,14 +370,9 @@ export async function POST(request: Request) {
       ip,
     });
 
-    return createErrorResponse(
-      'Too many requests, try again later',
-      429,
-      submissionId,
-      {
-        'Retry-After': String(rateLimit.retryAfterSeconds),
-      }
-    );
+    return createErrorResponse('Too many requests, try again later', 429, submissionId, {
+      'Retry-After': String(rateLimit.retryAfterSeconds),
+    });
   }
 
   if (SERVICES.captcha.enabled) {
@@ -453,12 +450,12 @@ Metadata:
 
 Thanks for reaching out.
 
-We\'ve received your request regarding:
+We've received your request regarding:
 ${system}
 
 ${priorityMessage}
 
-We\'ll review your request and get back to you soon.
+We'll review your request and get back to you soon.
 
 If your request is urgent, feel free to reply to this email.
 

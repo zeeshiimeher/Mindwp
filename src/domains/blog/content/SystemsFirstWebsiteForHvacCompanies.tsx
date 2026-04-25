@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Systems First Website for HVAC Companies',
     description:
       'Learn how a systems first website for HVAC companies connects lead capture, automation, and CRM into infrastructure that generates service calls.',
@@ -12,16 +12,16 @@ export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
         'Learn how a systems first website for HVAC companies connects lead capture, automation, and CRM into infrastructure that generates service calls.',
     },
   },
-    slug: 'systems-first-website-for-hvac-companies',
-    title: 'Systems First Website for HVAC Companies',
-    publishDate: '2025-09-08',
-    authorKey: 'TECHNICAL',
-    category: 'home-services-industry',
-    industries: ['hvac'],
-    systems: ['smart-website-systems'],
-    topics: ['systems-first-websites'],
-    tags: ['HVAC', 'Systems First', 'Website Infrastructure', 'Lead Generation', 'Automation'],
-    sections: [
+  slug: 'systems-first-website-for-hvac-companies',
+  title: 'Systems First Website for HVAC Companies',
+  publishDate: '2025-09-08',
+  authorKey: 'TECHNICAL',
+  category: 'home-services-industry',
+  industries: ['hvac'],
+  systems: ['smart-website-systems'],
+  topics: ['systems-first-websites'],
+  tags: ['HVAC', 'Systems First', 'Website Infrastructure', 'Lead Generation', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -111,5 +111,5 @@ export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
       content:
         'If your HVAC website looks professional but does not actively capture and route leads, a systems-first approach can fix that. See how smart website infrastructure works.',
     },
-  ]
+  ],
 };

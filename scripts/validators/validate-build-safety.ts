@@ -24,10 +24,10 @@ function main() {
         issues.push({ area: 'scripts/runners/build-safe.mjs', message: 'safe build runner is missing' });
     } else {
         const runner = fs.readFileSync(buildRunnerPath, 'utf8');
-        if (!runner.includes("'npm', ['run', '-s', 'system:full']")) {
+        if (!/command:\s*'npm'[\s\S]*?args:\s*\['run',\s*'-s',\s*'system:full'\]/.test(runner)) {
             issues.push({ area: 'scripts/runners/build-safe.mjs', message: 'safe build runner must execute system:full first' });
         }
-        if (!runner.includes("'scripts/runners/run-next.mjs', 'build'")) {
+        if (!/args:\s*\['scripts\/runners\/run-next\.mjs',\s*'build'\]/.test(runner)) {
             issues.push({ area: 'scripts/runners/build-safe.mjs', message: 'safe build runner must execute the Next build after validation' });
         }
     }

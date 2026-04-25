@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Reputation Monitoring Systems for Service Businesses',
     description:
       'Learn how reputation monitoring systems for service businesses track reviews and sentiment across platforms to protect and improve your profile.',
@@ -12,22 +12,22 @@ export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
         'Learn how reputation monitoring systems for service businesses track reviews and sentiment across platforms to protect and improve your profile.',
     },
   },
-    slug: 'reputation-monitoring-systems-for-service-businesses',
-    title: 'Reputation Monitoring Systems for Service Businesses',
-    publishDate: '2024-12-25',
-    authorKey: 'TECHNICAL',
-    category: 'reputation-review',
-    industries: [],
-    systems: ['reputation-review'],
-    topics: ['reputation-monitoring'],
-    tags: [
+  slug: 'reputation-monitoring-systems-for-service-businesses',
+  title: 'Reputation Monitoring Systems for Service Businesses',
+  publishDate: '2024-12-25',
+  authorKey: 'TECHNICAL',
+  category: 'reputation-review',
+  industries: [],
+  systems: ['reputation-review'],
+  topics: ['reputation-monitoring'],
+  tags: [
     'Reputation Monitoring',
     'Review Tracking',
     'Service Business',
     'Reputation Management',
     'Alerts',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -116,5 +116,5 @@ export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
       content:
         'If reviews appear on your profiles without your knowledge and responses happen days later, monitoring automation can close that gap. See how reputation systems keep you informed.',
     },
-  ]
+  ],
 };

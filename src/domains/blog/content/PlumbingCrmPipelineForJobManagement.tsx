@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const plumbingCrmPipelineForJobManagement: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Plumbing CRM Pipeline for Job Management Guide',
     description:
       'Learn how a plumbing CRM pipeline for job management tracks every lead from first enquiry through quoting, scheduling, completion, and follow-up.',
@@ -12,16 +12,16 @@ export const plumbingCrmPipelineForJobManagement: BlogPostData = {
         'Learn how a plumbing CRM pipeline for job management tracks every lead from first enquiry through quoting, scheduling, completion, and follow-up.',
     },
   },
-    slug: 'plumbing-crm-pipeline-for-job-management',
-    title: 'Plumbing CRM Pipeline for Job Management',
-    publishDate: '2026-04-06',
-    authorKey: 'TECHNICAL',
-    category: 'home-services-industry',
-    industries: ['plumbing'],
-    systems: ['crm-automation'],
-    topics: ['crm-pipeline'],
-    tags: ['Plumbing', 'CRM Pipeline', 'Job Management', 'Lead Tracking', 'Automation'],
-    sections: [
+  slug: 'plumbing-crm-pipeline-for-job-management',
+  title: 'Plumbing CRM Pipeline for Job Management',
+  publishDate: '2026-04-06',
+  authorKey: 'TECHNICAL',
+  category: 'home-services-industry',
+  industries: ['plumbing'],
+  systems: ['crm-automation'],
+  topics: ['crm-pipeline'],
+  tags: ['Plumbing', 'CRM Pipeline', 'Job Management', 'Lead Tracking', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -109,5 +109,5 @@ export const plumbingCrmPipelineForJobManagement: BlogPostData = {
       content:
         'If your plumbing business tracks jobs on notepads and memory, a CRM pipeline can bring structure and visibility. See how CRM automation organises the plumbing workflow.',
     },
-  ]
+  ],
 };

@@ -1,8 +1,7 @@
 import { Facebook, Linkedin, Mail, Youtube } from 'lucide-react';
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
-import { resolveCtaLabel } from '@/config/ctaLabels';
-import { resolveGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
+import { buildGlobalPrimaryCtaLinks, getSecondaryCTA } from '@/lib/cta/primaryAction';
 
 import { Logo } from './Logo';
 
@@ -21,12 +20,8 @@ function InternalLink({ href, children, ...props }: InternalLinkProps) {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { primaryAction } = resolveGlobalPrimaryCtaLinks();
-  const secondaryActionLabel = resolveCtaLabel({
-    system: 'smart-website-systems',
-    pageType: 'page',
-    intent: 'diagnostic',
-  });
+  const { primaryAction } = buildGlobalPrimaryCtaLinks();
+  const secondaryActionLabel = getSecondaryCTA(true);
 
   const utilityLinks = [
     { label: 'Privacy Policy', href: '/privacy' },

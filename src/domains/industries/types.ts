@@ -18,7 +18,7 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import type { FAQSection } from '@/components/reusable/single/FAQSection';
-import type { SmartCTAProps } from '@/components/system/SmartCTA';
+import type { PrimaryCTASectionProps } from '@/components/system/PrimaryCTASection';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import type { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 
@@ -39,7 +39,7 @@ type IndustryExploreProps = Omit<ComponentProps<typeof IndustryExploreSection>, 
 type IndustryCaseStudiesProps = ComponentProps<typeof IndustryCaseStudiesSection>;
 type IndustryFaqProps = ComponentProps<typeof FAQSection>;
 type IndustryCtaProps = Pick<
-  SmartCTAProps,
+  PrimaryCTASectionProps,
   | 'title'
   | 'description'
   | 'metaItems'
@@ -49,7 +49,7 @@ type IndustryCtaProps = Pick<
   | 'wrapper'
   | 'includeContainer'
 > & {
-  primaryAction?: { variant?: SmartCTAProps['primaryActionVariant'] };
+  primaryAction?: { variant?: PrimaryCTASectionProps['primaryActionVariant'] };
 };
 type IndustryWorkflowExamplesProps = ComponentProps<typeof IndustryWorkflowExamplesSection>;
 
@@ -113,7 +113,7 @@ export type IndustryCategoryPageData = IndustryPageDataBase & {
   sectionControls?: IndustryCategorySectionControls;
   parentSlug?: undefined;
   caseStudies?: undefined;
-  faq?: undefined;
+  faq?: IndustryFaqProps;
 };
 
 export type IndustryDetailPageData = IndustryPageDataBase & {
@@ -122,6 +122,7 @@ export type IndustryDetailPageData = IndustryPageDataBase & {
   challenges?: IndustryChallengesProps;
   operatingPatterns?: IndustryOperatingPatternsProps;
   imageStrip?: IndustryImageStripProps;
+  decisionChecklist?: IndustryChecklistProps;
   solutions?: IndustrySolutionsProps;
   systemLayers?: IndustrySolutionsProps;
   comparison?: IndustryComparisonProps;

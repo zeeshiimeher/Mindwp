@@ -4,7 +4,7 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 
 export function CaseStudiesPage() {
@@ -109,12 +109,7 @@ export function CaseStudiesPage() {
             If the before-and-after pattern in one of these examples feels familiar, the next step
             is to test whether the same system change would remove the friction in your business.
           </div>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='case-studies'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title='Want to know which system change would produce this kind of lift for you?'
             description="Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business."
             primaryActionVariant='white'

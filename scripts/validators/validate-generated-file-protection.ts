@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { createLogger } from '../../lib/logger/index.mjs';
 import {
     createGeneratedJsonMetadata,
     getGeneratedCodeFiles,
@@ -12,6 +13,7 @@ import { createReportSchema } from '../lib/report-schema.mjs';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'generated-file-protection-report.json');
+const logger = createLogger({ label: 'validate-generated-file-protection', mode: 'summary', rootDir: root });
 
 function hasGeneratedJsonProtection(payload: unknown) {
     if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
@@ -57,7 +59,7 @@ function main() {
             .map(file => path.join(root, 'reports', file)),
         path.join(root, 'reports', '.system-full', 'system-snapshot.json'),
         path.join(root, 'reports', 'system-snapshots', 'latest-summary.json'),
-    ];
+    ].filter(filePath => filePath !== reportPath);
 
     for (const filePath of jsonFiles) {
         if (!fs.existsSync(filePath)) {
@@ -125,8 +127,7 @@ function main() {
         sourceCommand: 'node --import tsx/esm scripts/validators/validate-generated-file-protection.ts',
     });
 
-    fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+    logger.writeReport(reportPath, report);
 
     if (issues.length > 0) {
         process.exitCode = 1;

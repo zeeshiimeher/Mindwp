@@ -150,8 +150,8 @@ function parseAntiHypeWords(docText) {
 }
 
 export function loadVocabularyRules(root = process.cwd()) {
-  const foundationPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM.md');
-  const text = fs.readFileSync(foundationPath, 'utf8');
+  const writingPath = path.join(root, 'docs', 'system', 'WRITING.md');
+  const text = fs.readFileSync(writingPath, 'utf8');
 
   return {
     bannedVocabulary: parseBannedVocabularyTable(text),

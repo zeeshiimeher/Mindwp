@@ -307,36 +307,36 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Body Shops \u2014 Win The Photo Race After A Bump | MindWP',
-        description:
-          'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-        canonical: '/industries/automotive-services/body-shops',
-      },
-      slug: 'body-shops',
-      industries: ['body-shop'],
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['lead-response-time', 'follow-up', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'automotive-services',
-      hero: { ...heroData },
-      imageStrip: imageStripData,
-      operatingPatterns: operatingPatternsData,
-      systemLayers: systemLayersData,
-      workflowExamples: workflowExamplesData,
-      comparison: comparisonData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about Tuesday\u2019s photo',
-        description:
-          'Walk us through the last enquiry that arrived as a photo and never got booked. We will tell you what went wrong and what to plug first.',
-      }
+    seo: {
+      title: 'Body Shops \u2014 Win The Photo Race After A Bump | MindWP',
+      description:
+        'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+      canonical: '/industries/automotive-services/body-shops',
+    },
+    slug: 'body-shops',
+    industries: ['body-shop'],
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-response-time', 'follow-up', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'automotive-services',
+    hero: { ...heroData },
+    imageStrip: imageStripData,
+    operatingPatterns: operatingPatternsData,
+    systemLayers: systemLayersData,
+    workflowExamples: workflowExamplesData,
+    comparison: comparisonData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about Tuesday\u2019s photo',
+      description:
+        'Walk us through the last enquiry that arrived as a photo and never got booked. We will tell you what went wrong and what to plug first.',
+    },
   };
 }
 

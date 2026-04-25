@@ -157,23 +157,23 @@ const finalCta = {
 };
 
 export const multiChannelLeadCaptureSystems: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Multi-Channel Lead Capture Systems',
     description:
       'Learn how to build a multi-channel lead capture system that routes phone, web, chat, and social leads to one CRM pipeline with consistent tracking and follow-up.',
     canonical,
   },
-    title: 'Multi-Channel Lead Capture Systems',
-    description:
+  title: 'Multi-Channel Lead Capture Systems',
+  description:
     'Learn how to build a multi-channel lead capture system that routes phone, web, chat, and social leads to one CRM pipeline with consistent tracking and follow-up.',
-    category: 'ai-lead-handling',
-    publishedAt: '2025-12-20',
-    systems: ['ai-lead-handling'],
-    industries: [],
-    topics: ['lead-capture'],
-    primaryService: 'ai-lead-handling',
-    sections: [
+  category: 'ai-lead-handling',
+  publishedAt: '2025-12-20',
+  systems: ['ai-lead-handling'],
+  industries: [],
+  topics: ['lead-capture'],
+  primaryService: 'ai-lead-handling',
+  sections: [
     {
       type: 'hero',
       heading: 'Multi-Channel Lead Capture Systems',
@@ -242,5 +242,5 @@ export const multiChannelLeadCaptureSystems: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ]
+  ],
 };

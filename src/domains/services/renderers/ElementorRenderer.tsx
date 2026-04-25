@@ -8,7 +8,7 @@ import {
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface ElementorRendererProps {
@@ -16,7 +16,7 @@ interface ElementorRendererProps {
   slug: string;
 }
 
-export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
+export function ElementorRenderer({ data, slug: _slug }: ElementorRendererProps) {
   const { hero, sections, cta } = data;
   const { conversionSection, benefitsSection, whySection, processSection, featureSection } =
     sections;
@@ -31,10 +31,7 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             cssPrefix={hero.cssPrefix}
@@ -90,10 +87,7 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
             cssPrefix={featureSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

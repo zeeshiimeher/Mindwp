@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const authoritySignalsForLocalSearch: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Authority Signals for Local Search Explained',
     description:
       'Learn how authority signals for local search build the trust and prominence that determine whether your business appears in competitive local search results.',
@@ -12,16 +12,16 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
         'Learn how authority signals for local search build the trust and prominence that determine whether your business appears in competitive local search results.',
     },
   },
-    slug: 'authority-signals-for-local-search',
-    title: 'Authority Signals for Local Search',
-    publishDate: '2025-02-04',
-    authorKey: 'EDITORIAL',
-    category: 'local-authority-seo',
-    industries: [],
-    systems: ['local-seo-authority'],
-    topics: ['local-authority', 'authority-signals'],
-    tags: ['Authority Signals', 'Local Search', 'Local SEO', 'Trust Factors', 'Search Rankings'],
-    sections: [
+  slug: 'authority-signals-for-local-search',
+  title: 'Authority Signals for Local Search',
+  publishDate: '2025-02-04',
+  authorKey: 'EDITORIAL',
+  category: 'local-authority-seo',
+  industries: [],
+  systems: ['local-seo-authority'],
+  topics: ['local-authority', 'authority-signals'],
+  tags: ['Authority Signals', 'Local Search', 'Local SEO', 'Trust Factors', 'Search Rankings'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -111,5 +111,5 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
       content:
         'If competitors consistently outrank you in local search despite similar service quality, the authority gap needs systematic attention. See how local authority systems build the signals that matter.',
     },
-  ]
+  ],
 };

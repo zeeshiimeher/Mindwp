@@ -82,7 +82,7 @@ export const crmAutomationPage = {
   }),
   systems: ['crm-automation'],
   topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
-  badge: "CRM Setup",
+  badge: 'CRM Setup',
   category: 'Lead & Follow-Up',
   hero: {
     badge: 'CRM Setup for Service Businesses',
@@ -959,5 +959,5 @@ export const crmAutomationPage = {
         'Full visibility into pipeline and workload — managers spotted bottlenecks before they cost deals',
       ],
     },
-  }
+  },
 } satisfies ServicePageData & CRMAutomationTransformationProof;

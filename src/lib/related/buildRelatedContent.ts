@@ -91,7 +91,10 @@ function buildMixedItems(nodeType: ContentNodeType, related: RelatedContent) {
 
   switch (nodeType) {
     case 'service':
-      appendUniqueItems(selected, services, 3);
+      appendUniqueItems(selected, services, 1);
+      appendUniqueItems(selected, resources, 1);
+      appendUniqueItems(selected, industries, MAX_ITEMS - selected.length);
+      appendUniqueItems(selected, services, MAX_ITEMS - selected.length);
       break;
     case 'feature':
       appendUniqueItems(selected, services, 1);

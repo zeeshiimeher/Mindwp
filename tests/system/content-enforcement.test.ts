@@ -17,15 +17,47 @@ const rules = [
 
 describe('system: content enforcement validators stay green', () => {
     for (const rule of rules) {
-        test(`${rule} passes`, () => {
+        test(
+            `${rule} passes`,
+            {
+                timeout: 20_000,
+            },
+            () => {
+                expect(() => {
+                    execFileSync(
+                        'node',
+                        [
+                            '--import',
+                            'tsx/esm',
+                            'scripts/validators/validate-content-enforcement.ts',
+                            `--rule=${rule}`,
+                            '--report-json',
+                        ],
+                        {
+                            cwd: rootDir,
+                            stdio: 'pipe',
+                        }
+                    );
+                }).not.toThrow();
+            }
+        );
+    }
+});
+
+describe('system: CTA contract validator stays green', () => {
+    test(
+        'validate-primary-cta passes',
+        {
+            timeout: 20_000,
+        },
+        () => {
             expect(() => {
                 execFileSync(
                     'node',
                     [
                         '--import',
                         'tsx/esm',
-                        'scripts/validators/validate-content-enforcement.ts',
-                        `--rule=${rule}`,
+                        'scripts/validators/validate-primary-cta.ts',
                         '--report-json',
                     ],
                     {
@@ -34,6 +66,6 @@ describe('system: content enforcement validators stay green', () => {
                     }
                 );
             }).not.toThrow();
-        });
-    }
+        }
+    );
 });

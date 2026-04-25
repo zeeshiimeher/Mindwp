@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why Service Business Websites Fail to Convert',
     description:
       'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
@@ -12,22 +12,22 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
         'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
     },
   },
-    slug: 'why-service-business-websites-fail-to-convert',
-    title: 'Why Service Business Websites Fail to Convert',
-    publishDate: '2024-06-12',
-    authorKey: 'EDITORIAL',
-    category: 'smart-website-systems',
-    industries: [],
-    systems: ['smart-website-systems'],
-    topics: ['conversion-optimization'],
-    tags: [
+  slug: 'why-service-business-websites-fail-to-convert',
+  title: 'Why Service Business Websites Fail to Convert',
+  publishDate: '2024-06-12',
+  authorKey: 'EDITORIAL',
+  category: 'smart-website-systems',
+  industries: [],
+  systems: ['smart-website-systems'],
+  topics: ['conversion-optimization'],
+  tags: [
     'Website Conversion',
     'Service Business',
     'Systems-First',
     'Lead Capture',
     'Website Infrastructure',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -112,5 +112,5 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
       content:
         'If your website receives traffic but does not generate consistent enquiries, the problem is likely operational. Explore how systems-first website architecture builds conversion into the infrastructure.',
     },
-  ]
+  ],
 };

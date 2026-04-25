@@ -1,6 +1,7 @@
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { HeroActions } from '@/components/system/HeroActions';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 
 export function About() {
@@ -20,12 +21,7 @@ export function About() {
             MindWP was built on a simple observation: many service businesses invest in websites
             that look modern but fail to support how the business actually operates.
           </p>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='about'
-            mode='actions-only'
-          />
+          <HeroActions allowSecondaryAction />
         </div>
       </SectionWrapper>
 
@@ -96,26 +92,14 @@ export function About() {
 
       {/* Final CTA */}
       <SectionWrapper className='footer-cta cta' padding='none'>
-        <div>
-          <div className='cta__panel cta__content bg-gradient-primary'>
-            <h2 className='cta-heading'>If this approach resonates, let’s talk.</h2>
-            <p className='cta__text'>
-              We work best with service businesses that value structure, clarity, and deliberate
-              implementation.
-            </p>
-            <div className='cta__actions'>
-              <SmartCTA
-                system='smart-website-systems'
-                pageType='page'
-                slug='about'
-                intent='conversion'
-                position='footer'
-                mode='actions-only'
-                primaryActionVariant='white'
-              />
-            </div>
-          </div>
-        </div>
+        <PrimaryCTASection
+          title="If this approach resonates, let's talk."
+          description='We work best with service businesses that value structure, clarity, and deliberate implementation.'
+          primaryActionVariant='white'
+          backgroundColor='bg-gradient-primary'
+          wrapper='none'
+          includeContainer={false}
+        />
       </SectionWrapper>
     </div>
   );

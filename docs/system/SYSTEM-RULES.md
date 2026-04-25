@@ -202,13 +202,13 @@ Forbidden:
 
 ---
 
-## 9. SmartCTA Mandate
+## 9. PrimaryCTASection Mandate
 
-`SmartCTA` is the system CTA component for primary page-level CTA panels. Deterministic contact routing is governed by [./CONVERSION.md](./CONVERSION.md) and enforced through `src/lib/contact/contactHref.ts`.
+`PrimaryCTASection` is the system CTA component for primary page-level CTA panels. Deterministic contact routing is governed by [./CONVERSION.md](./CONVERSION.md) and enforced through `src/lib/contact/contactHref.ts`.
 
 Rules:
 
-- Primary page CTA panels should render through `SmartCTA`.
+- Primary page CTA panels should render through `PrimaryCTASection`.
 - CTA routing and label rules must follow [./CONVERSION.md](./CONVERSION.md).
 - Any CTA that routes to contact must preserve canonical `system` plus normalized `source` context.
 
@@ -318,3 +318,14 @@ If two pages feel similar → rewrite one.
 | Skipping validation after a change         | Run the narrow validator/test needed, then rerun `system:full` when the change affects reports or system state |
 | Manually editing generated images          | Regenerate with `--force` flag                                                                                 |
 | Reusing industry content patterns           | Rewrite with industry-specific problems and situations                                                         |
+
+## Deploy Gate Rule (NEW)
+
+Production release MUST go through:
+
+npm run deploy
+
+Direct platform deploy commands are not allowed.
+
+Reason:
+Ensures validation, snapshot, and audit integrity.

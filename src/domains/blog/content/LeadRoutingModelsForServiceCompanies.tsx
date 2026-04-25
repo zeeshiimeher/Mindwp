@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const leadRoutingModelsForServiceCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Lead Routing Models for Service Companies',
     description:
       'Understand how lead routing models for service companies assign enquiries to the right team member based on service type, location, and urgency automatically.',
@@ -12,22 +12,22 @@ export const leadRoutingModelsForServiceCompanies: BlogPostData = {
         'Understand how lead routing models for service companies assign enquiries to the right team member based on service type, location, and urgency automatically.',
     },
   },
-    slug: 'lead-routing-models-for-service-companies',
-    title: 'Lead Routing Models for Service Companies',
-    publishDate: '2024-10-22',
-    authorKey: 'TECHNICAL',
-    category: 'ai-lead-handling',
-    industries: [],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-routing'],
-    tags: [
+  slug: 'lead-routing-models-for-service-companies',
+  title: 'Lead Routing Models for Service Companies',
+  publishDate: '2024-10-22',
+  authorKey: 'TECHNICAL',
+  category: 'ai-lead-handling',
+  industries: [],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-routing'],
+  tags: [
     'Lead Routing',
     'Service Business',
     'AI Lead Handling',
     'Workflow Automation',
     'Team Assignment',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -96,5 +96,5 @@ export const leadRoutingModelsForServiceCompanies: BlogPostData = {
       content:
         'If your leads sit in a shared inbox waiting for someone to read and assign them, routing automation can eliminate that delay. See how AI lead handling routes enquiries instantly.',
     },
-  ]
+  ],
 };

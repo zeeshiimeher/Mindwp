@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const leadQualificationForRoofingCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Lead Qualification for Roofing Companies',
     description:
       'Learn how lead qualification for roofing companies uses structured screening criteria to prioritise high-value enquiries and filter out poor-fit prospects.',
@@ -12,16 +12,16 @@ export const leadQualificationForRoofingCompanies: BlogPostData = {
         'Learn how lead qualification for roofing companies uses structured screening criteria to prioritise high-value enquiries and filter out poor-fit prospects.',
     },
   },
-    slug: 'lead-qualification-for-roofing-companies',
-    title: 'Lead Qualification for Roofing Companies',
-    publishDate: '2026-01-14',
-    authorKey: 'TECHNICAL',
-    category: 'home-services-industry',
-    industries: ['roofing'],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-qualification'],
-    tags: ['Roofing', 'Lead Qualification', 'Lead Scoring', 'Screening', 'AI Lead Handling'],
-    sections: [
+  slug: 'lead-qualification-for-roofing-companies',
+  title: 'Lead Qualification for Roofing Companies',
+  publishDate: '2026-01-14',
+  authorKey: 'TECHNICAL',
+  category: 'home-services-industry',
+  industries: ['roofing'],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-qualification'],
+  tags: ['Roofing', 'Lead Qualification', 'Lead Scoring', 'Screening', 'AI Lead Handling'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const leadQualificationForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing estimators spend too much time on leads that never convert, qualification systems can fix that. See how lead handling works for service businesses.',
     },
-  ]
+  ],
 };

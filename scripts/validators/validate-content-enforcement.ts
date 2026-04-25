@@ -458,11 +458,11 @@ function scanButtonRule(): Issue[] {
         message: string;
     }> = [
             {
-                file: 'src/components/system/SmartCTA.tsx',
+                file: 'src/components/system/PrimaryCTASection.tsx',
                 expected: ['allowSecondaryCTA?: true;', 'if (!isActionableButton(primaryButtonAction)) {'],
                 forbidden: ['resolveSecondaryCta(', 'secondaryAction && <Button'],
-                issueType: 'missing_smartcta_guard',
-                message: 'SmartCTA must not implicitly resolve or auto-render secondary CTA buttons.',
+                issueType: 'missing_primary_cta_guard',
+                message: 'PrimaryCTASection must not implicitly resolve or auto-render secondary CTA buttons.',
             },
             {
                 file: 'src/components/reusable/single/SectionIntro.tsx',

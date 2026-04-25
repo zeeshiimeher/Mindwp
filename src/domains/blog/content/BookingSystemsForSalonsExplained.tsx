@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const bookingSystemsForSalonsExplained: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Booking Systems for Salons Explained in Detail',
     description:
       'Discover how booking systems for salons explained as integrated infrastructure connect online scheduling to CRM, payments, and automated client workflows.',
@@ -12,16 +12,16 @@ export const bookingSystemsForSalonsExplained: BlogPostData = {
         'Discover how booking systems for salons explained as integrated infrastructure connect online scheduling to CRM, payments, and automated client workflows.',
     },
   },
-    slug: 'booking-systems-for-salons-explained',
-    title: 'Booking Systems for Salons Explained',
-    publishDate: '2026-01-06',
-    authorKey: 'TECHNICAL',
-    category: 'beauty-personal-care-industry',
-    industries: ['salon'],
-    systems: ['smart-website-systems', 'crm-automation'],
-    topics: ['booking-systems'],
-    tags: ['Salon', 'Booking Systems', 'Scheduling', 'CRM', 'Infrastructure'],
-    sections: [
+  slug: 'booking-systems-for-salons-explained',
+  title: 'Booking Systems for Salons Explained',
+  publishDate: '2026-01-06',
+  authorKey: 'TECHNICAL',
+  category: 'beauty-personal-care-industry',
+  industries: ['salon'],
+  systems: ['smart-website-systems', 'crm-automation'],
+  topics: ['booking-systems'],
+  tags: ['Salon', 'Booking Systems', 'Scheduling', 'CRM', 'Infrastructure'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -112,5 +112,5 @@ export const bookingSystemsForSalonsExplained: BlogPostData = {
       content:
         'If your salon booking system captures appointments but does not connect to CRM, automation, or follow-up, an integrated approach can transform it. See how booking infrastructure works.',
     },
-  ]
+  ],
 };

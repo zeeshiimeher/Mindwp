@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Smart Website Systems for Roofing Companies',
     description:
       'Discover how smart website systems for roofing companies connect lead capture, booking, and CRM into one infrastructure that drives more jobs.',
@@ -12,16 +12,16 @@ export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
         'Discover how smart website systems for roofing companies connect lead capture, booking, and CRM into one infrastructure that drives more jobs.',
     },
   },
-    slug: 'smart-website-systems-for-roofing-companies',
-    title: 'Smart Website Systems for Roofing Companies',
-    publishDate: '2025-08-31',
-    authorKey: 'TECHNICAL',
-    category: 'home-services-industry',
-    industries: ['roofing'],
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure'],
-    tags: ['Roofing', 'Website Systems', 'Infrastructure', 'Lead Capture', 'CRM Integration'],
-    sections: [
+  slug: 'smart-website-systems-for-roofing-companies',
+  title: 'Smart Website Systems for Roofing Companies',
+  publishDate: '2025-08-31',
+  authorKey: 'TECHNICAL',
+  category: 'home-services-industry',
+  industries: ['roofing'],
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure'],
+  tags: ['Roofing', 'Website Systems', 'Infrastructure', 'Lead Capture', 'CRM Integration'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -80,5 +80,5 @@ export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing website looks good but does not actively generate and manage leads, smart systems can change that. See how website infrastructure works for service businesses.',
     },
-  ]
+  ],
 };

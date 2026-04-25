@@ -16,7 +16,7 @@ If you are new to the repo, read this file for the mental model, then read `../o
 ## SYSTEM LAYERS
 
 ```text
-Governance -> Domain data and registries -> Graph and resolver -> Routes and templates -> CTA/contact -> Validators -> Reports and dashboard
+Governance -> Domain data and registries -> Graph and resolver -> Routes and templates -> CTA/contact -> Validators -> Reports -> Snapshot -> Deploy -> Dashboard
 ```
 
 ## PAGE BEHAVIOR (ENFORCED)
@@ -50,7 +50,7 @@ If a page is written with the wrong behavior → it is invalid even if technical
 
 ### CTA and Contact
 
-- `src/components/system/SmartCTA.tsx`
+- `src/components/system/PrimaryCTASection.tsx`
 - `src/lib/cta/ctaRegistry.ts`
 - `src/lib/contact/contactHref.ts`
 - `/contact` as the single conversion endpoint
@@ -62,6 +62,16 @@ If a page is written with the wrong behavior → it is invalid even if technical
 - generated report artifacts in `reports/**`
 - operator visibility through `/dev/system-dashboard`
 
+### Deploy and Snapshot (Control Extension)
+
+- `scripts/deploy/**`
+- predeploy validation gate (`system:quick` + `system:full`)
+- snapshot generation via `build-system-snapshot.mjs`
+- deploy report output in `artifacts/**`
+
+This layer extends the control-plane by introducing a validated release step.
+It does not change runtime behavior — it freezes and records system state at deploy time.
+
 ---
 
 ## HUMAN WORKING MODEL
@@ -69,7 +79,7 @@ If a page is written with the wrong behavior → it is invalid even if technical
 Think about MindWP in two lanes:
 
 1. Runtime lane: domain registries, graph initialization, routes, templates, CTA behavior, and the contact flow.
-2. Control-plane lane: validators, analyzers, report writers, and dashboard readers.
+2. Control-plane lane: validators, analyzers, report writers, snapshot generation, deploy gating, and dashboard readers.
 
 Human rule: the runtime lane produces behavior, and the control-plane lane confirms that behavior. The dashboard only reads the control-plane outputs.
 
@@ -85,10 +95,12 @@ Behavior rule: runtime produces behavior, and validators confirm alignment again
 4. App routes resolve canonical params into the correct page or template surface.
 5. Publishable nodes render through shared runtime owners.
 6. Page adapters create page identity and CTA enforcement scope.
-7. `SmartCTA` generates the correct CTA behavior and `/contact` context.
+7. `PrimaryCTASection` generates the correct CTA behavior and `/contact` context.
 8. Validators and reports confirm that runtime behavior still matches the contracts.
-9. The dashboard reads frozen report outputs for operator visibility.
-10. Page content respects the governing docs.
+9. Snapshot generation freezes the validated system state.
+10. Deploy pipeline records artifacts and enforces release gating.
+11. The dashboard reads frozen report outputs for operator visibility.
+12. Page content respects the governing docs.
 
 ---
 
@@ -103,6 +115,7 @@ Behavior rule: runtime produces behavior, and validators confirm alignment again
 - The full refresh path is `npm run system:full`, not a manual side path.
 - `npm run system:quick` is a safe operator check, not a replacement for the full source-of-truth run.
 - Page content must stay aligned with the governing docs.
+- Production release must go through `npm run deploy` to ensure validation, snapshot, and audit integrity.
 
 ---
 
@@ -126,13 +139,15 @@ All runtime content must satisfy all three layers.
 | Content model             | `src/domains/contentModel.ts`                |
 | Graph initialization      | `src/domains/init/ensureGraphInitialized.ts` |
 | Publishable runtime       | `src/lib/content-graph/publishable.tsx`      |
-| CTA rendering             | `src/components/system/SmartCTA.tsx`         |
+| CTA rendering             | `src/components/system/PrimaryCTASection.tsx`         |
 | CTA registry              | `src/lib/cta/ctaRegistry.ts`                 |
 | Contact URL generation    | `src/lib/contact/contactHref.ts`             |
 | Validator orchestration   | `scripts/core/validate-all.mjs`              |
 | Workflow authority        | `docs/ops/WORKFLOW.md`                       |
 | Audit authority           | `docs/ops/AUDIT.md`                          |
 | Internal observability    | `/dev/system-dashboard`                      |
+| Deploy and snapshot layer | `scripts/deploy/**`, `artifacts/**` |
+
 
 ---
 

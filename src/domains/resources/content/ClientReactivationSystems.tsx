@@ -111,23 +111,23 @@ const finalCta = {
 };
 
 export const clientReactivationSystems: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Client Reactivation Systems',
     description:
       'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
     canonical,
   },
-    title: 'Client Reactivation Systems',
-    description:
+  title: 'Client Reactivation Systems',
+  description:
     'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
-    category: 'revenue-growth',
-    publishedAt: '2025-11-29',
-    systems: ['crm-automation'],
-    industries: [],
-    topics: ['client-reactivation'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'revenue-growth',
+  publishedAt: '2025-11-29',
+  systems: ['crm-automation'],
+  industries: [],
+  topics: ['client-reactivation'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'Client Reactivation Systems',
@@ -185,5 +185,5 @@ export const clientReactivationSystems: ResourceData = {
       content: getRelatedResourcesContent('revenue-growth'),
       resources: getRelatedResources('revenue-growth', canonical),
     },
-  ]
+  ],
 };

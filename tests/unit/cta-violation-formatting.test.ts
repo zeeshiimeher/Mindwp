@@ -10,7 +10,7 @@ describe('unit: CTA violation failure formatting', () => {
       {
         page: 'src/app/example/page.tsx',
         violations: [
-          'Route files must not render SmartCTA directly. Own CTA intent and position in page adapters or renderers.',
+          'Route files must not render PrimaryCTASection directly. Own CTA intent and position in page adapters or renderers.',
         ],
       },
       {
@@ -20,9 +20,9 @@ describe('unit: CTA violation failure formatting', () => {
     ]);
 
     expect(output).toContain('src/app/example/page.tsx');
-    expect(output).toContain('cause: Route files must not render SmartCTA directly.');
+    expect(output).toContain('cause: Route files must not render PrimaryCTASection directly.');
     expect(output).toContain(
-      'fix: Move SmartCTA ownership into a page adapter, template, or renderer outside src/app.'
+      'fix: Move PrimaryCTASection ownership into a page adapter, template, or renderer outside src/app.'
     );
     expect(output).toContain('src/domains/example/data/page.tsx');
     expect(output).toContain('cause: Inline conversion CTA detected at mid');

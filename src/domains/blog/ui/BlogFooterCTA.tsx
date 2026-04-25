@@ -1,7 +1,5 @@
-import { CheckCircle2 } from 'lucide-react';
-
 import { SectionWrapper } from '@/components/reusable/primitives';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 
 interface BlogFooterCTAProps {
   system: string;
@@ -12,8 +10,8 @@ interface BlogFooterCTAProps {
 }
 
 export function BlogFooterCTA({
-  system,
-  slug,
+  system: _system,
+  slug: _slug,
   title = 'Get the best-fit service path behind the issue you just read about',
   description = 'We will turn the problem behind this article into a concrete next-step decision so you know the likely bottleneck, the right service path, and what would need fixing first.',
   features = [
@@ -24,30 +22,15 @@ export function BlogFooterCTA({
 }: BlogFooterCTAProps) {
   return (
     <SectionWrapper className='footer-cta cta' padding='none'>
-      <div className='cta__panel cta__content bg-gradient-primary'>
-        <h2 className='cta-heading'>{title}</h2>
-
-        <p className='cta__text'>{description}</p>
-
-        <SmartCTA
-          system={system}
-          pageType='blog'
-          slug={slug}
-          intent='conversion'
-          position='footer'
-          primaryActionVariant='white'
-          mode='actions-only'
-        />
-
-        <div className='cta__meta'>
-          {features.map(feature => (
-            <div key={feature} className='cta__meta-item'>
-              <CheckCircle2 className='cta__icon' />
-              <span>{feature}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <PrimaryCTASection
+        title={title}
+        description={description}
+        primaryActionVariant='white'
+        backgroundColor='bg-gradient-primary'
+        metaItems={features.map(feature => ({ text: feature }))}
+        wrapper='none'
+        includeContainer={false}
+      />
     </SectionWrapper>
   );
 }

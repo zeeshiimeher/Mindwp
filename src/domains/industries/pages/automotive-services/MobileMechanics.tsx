@@ -291,35 +291,35 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Mobile Mechanics \u2014 Stop Losing Calls From The Glovebox | MindWP',
-        description:
-          'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-        canonical: '/industries/automotive-services/mobile-mechanics',
-      },
-      slug: 'mobile-mechanics',
-      industries: ['mobile-mechanic'],
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['missed-calls', 'lead-management', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'automotive-services',
-      hero: { ...heroData },
-      workflowExamples: workflowExamplesData,
-      operatingPatterns: operatingPatternsData,
-      systemLayers: systemLayersData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about today\u2019s missed calls',
-        description:
-          'Walk us through the calls that hit voicemail and the postcodes that wasted the day. We will tell you what to plug first.',
-      }
+    seo: {
+      title: 'Mobile Mechanics \u2014 Stop Losing Calls From The Glovebox | MindWP',
+      description:
+        'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+      canonical: '/industries/automotive-services/mobile-mechanics',
+    },
+    slug: 'mobile-mechanics',
+    industries: ['mobile-mechanic'],
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['missed-calls', 'lead-management', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'automotive-services',
+    hero: { ...heroData },
+    workflowExamples: workflowExamplesData,
+    operatingPatterns: operatingPatternsData,
+    systemLayers: systemLayersData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about today\u2019s missed calls',
+      description:
+        'Walk us through the calls that hit voicemail and the postcodes that wasted the day. We will tell you what to plug first.',
+    },
   };
 }
 

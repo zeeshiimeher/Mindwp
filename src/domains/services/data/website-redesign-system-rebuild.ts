@@ -348,5 +348,5 @@ export const websiteRedesignSystemRebuildPage = {
     title: "Show us what's not working",
     description:
       "Drop your URL and tell us what you think the problem is. We'll come back with what's actually costing you enquiries.",
-  }
+  },
 } satisfies ServicePageData;

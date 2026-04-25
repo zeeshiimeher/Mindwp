@@ -17,7 +17,7 @@ import path from 'node:path';
 import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { isApprovedCtaLabel } from '../../src/config/ctaLabels.ts';
+import { isApprovedCtaLabel } from '../../src/lib/cta/primaryAction.ts';
 import { createReportSchema } from '../lib/report-schema.mjs';
 
 const root = process.cwd();

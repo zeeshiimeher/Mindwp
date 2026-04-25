@@ -15,17 +15,17 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface CRMAutomationRendererProps {
   data: ServicePageDataBySlug[
-  | 'crm-infrastructure-implementation'
-  | 'website-crm-integration-vs-manual-lead-handling'];
+    | 'crm-infrastructure-implementation'
+    | 'website-crm-integration-vs-manual-lead-handling'];
   slug: string;
 }
 
-export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps) {
+export function CRMAutomationRenderer({ data, slug: _slug }: CRMAutomationRendererProps) {
   const { hero, sections, cta, inlineCta } = data;
   const {
     positioning,
@@ -57,10 +57,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -83,11 +80,6 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
                 description={comparison.header.description}
                 comparisons={comparison.items}
                 cta={{
-                  system: data.systems?.[0] ?? 'smart-website-systems',
-                  slug,
-                  pageType: 'service',
-                  intent: 'diagnostic',
-                  position: 'mid',
                   title: inlineCtaTitle,
                   description: inlineCtaDescription,
                   primaryActionVariant: 'primary',
@@ -243,12 +235,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             />
           )}
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

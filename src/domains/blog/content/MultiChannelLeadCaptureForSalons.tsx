@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const multiChannelLeadCaptureForSalons: BlogPostData = {
-    seo: {
+  seo: {
     title: 'How Multi Channel Lead Capture for Salons Works',
     description:
       'Discover how multi channel lead capture for salons unifies Instagram, phone, website, and walk-in enquiries into one system that tracks every prospect.',
@@ -12,16 +12,16 @@ export const multiChannelLeadCaptureForSalons: BlogPostData = {
         'Discover how multi channel lead capture for salons unifies Instagram, phone, website, and walk-in enquiries into one system that tracks every prospect.',
     },
   },
-    slug: 'multi-channel-lead-capture-for-salons',
-    title: 'Multi Channel Lead Capture for Salons',
-    publishDate: '2026-01-30',
-    authorKey: 'TECHNICAL',
-    category: 'beauty-personal-care-industry',
-    industries: ['salon'],
-    systems: ['ai-lead-handling'],
-    topics: ['lead-capture'],
-    tags: ['Salon', 'Lead Capture', 'Multi Channel', 'Instagram', 'Omnichannel'],
-    sections: [
+  slug: 'multi-channel-lead-capture-for-salons',
+  title: 'Multi Channel Lead Capture for Salons',
+  publishDate: '2026-01-30',
+  authorKey: 'TECHNICAL',
+  category: 'beauty-personal-care-industry',
+  industries: ['salon'],
+  systems: ['ai-lead-handling'],
+  topics: ['lead-capture'],
+  tags: ['Salon', 'Lead Capture', 'Multi Channel', 'Instagram', 'Omnichannel'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -89,5 +89,5 @@ export const multiChannelLeadCaptureForSalons: BlogPostData = {
       content:
         'If your salon loses potential clients because enquiries arrive across too many channels, unified capture can fix that. See how lead handling systems work for service businesses.',
     },
-  ]
+  ],
 };

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const googleBusinessProfileSystemArchitecture: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Google Business Profile System Architecture',
     description:
       'Understand how google business profile system architecture transforms your listing from a static presence into an active lead generation and visibility engine.',
@@ -12,22 +12,22 @@ export const googleBusinessProfileSystemArchitecture: BlogPostData = {
         'Understand how google business profile system architecture transforms your listing from a static presence into an active lead generation and visibility engine.',
     },
   },
-    slug: 'google-business-profile-system-architecture',
-    title: 'Google Business Profile System Architecture',
-    publishDate: '2025-01-19',
-    authorKey: 'TECHNICAL',
-    category: 'local-authority-seo',
-    industries: [],
-    systems: ['local-seo-authority'],
-    topics: ['google-business-profile'],
-    tags: [
+  slug: 'google-business-profile-system-architecture',
+  title: 'Google Business Profile System Architecture',
+  publishDate: '2025-01-19',
+  authorKey: 'TECHNICAL',
+  category: 'local-authority-seo',
+  industries: [],
+  systems: ['local-seo-authority'],
+  topics: ['google-business-profile'],
+  tags: [
     'Google Business Profile',
     'Local SEO',
     'System Architecture',
     'Local Visibility',
     'Service Business',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -95,5 +95,5 @@ export const googleBusinessProfileSystemArchitecture: BlogPostData = {
       content:
         'If your Google Business Profile was set up once and never maintained, it is underperforming. See how systematic profile management builds sustained local visibility.',
     },
-  ]
+  ],
 };

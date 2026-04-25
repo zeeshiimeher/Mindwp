@@ -5,7 +5,6 @@ import {
   CircuitBoard,
   Compass,
   Flame,
-  Inbox,
   ListChecks,
   PhoneOff,
   Star,
@@ -211,12 +210,14 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'These are the supporting services electrical firms tend to lean on most once they can see where calls and quotes are slipping. Each one helps hold response, visibility, or proof together a bit better.',
+    description:
+      'These are the supporting services electrical firms tend to lean on most once they can see where calls and quotes are slipping. Each one helps hold response, visibility, or proof together a bit better.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Helps enquiry, survey, and quote handling stay connected so fault calls and bigger installs do not drift apart.',
+        description:
+          'Helps enquiry, survey, and quote handling stay connected so fault calls and bigger installs do not drift apart.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -224,7 +225,8 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: PhoneOff,
         title: 'AI Lead Handling',
-        description: 'Catches fault calls before the next number is dialled, especially when the board is tripping and nobody wants to wait around.',
+        description:
+          'Catches fault calls before the next number is dialled, especially when the board is tripping and nobody wants to wait around.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -232,7 +234,8 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Helps you stay visible for "electrician near me" at the exact moment a board trips or the power goes out in the evening.',
+        description:
+          'Helps you stay visible for "electrician near me" at the exact moment a board trips or the power goes out in the evening.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -240,7 +243,8 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns commissioned installs and fault fixes into proof on Maps and search, so the next caller sees work that feels current and real.',
+        description:
+          'Turns commissioned installs and fault fixes into proof on Maps and search, so the next caller sees work that feels current and real.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -252,7 +256,8 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What sparkies ask first',
-    description: 'Straight answers about fault calls, bigger installs, and what actually helps when the phone goes after hours.',
+    description:
+      'Straight answers about fault calls, bigger installs, and what actually helps when the phone goes after hours.',
     faqs: [
       {
         question: 'Most fault calls come after six. Will this actually help then?',
@@ -276,8 +281,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       },
       {
         question: 'When does the review request go out without being awkward?',
-        answer:
-          'The day after commissioning, while the lights still feel new.',
+        answer: 'The day after commissioning, while the lights still feel new.',
       },
       {
         question: 'Do we need a brand new website?',
@@ -288,38 +292,37 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote | MindWP',
-        description:
-          'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
-        canonical: '/industries/home-services/electrical-companies',
-      },
-      slug: 'electrical-companies',
-      industries: ['electrical'],
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['missed-calls', 'lead-management', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'home-services',
-      hero: { ...heroData },
-      operatingPatterns: operatingPatternsData,
-      systemLayers: systemLayersData,
-      workflowExamples: workflowExamplesData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about last Sunday\u2019s fault call',
-        description:
-          'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
-      }
+    seo: {
+      title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote | MindWP',
+      description:
+        'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
+      canonical: '/industries/home-services/electrical-companies',
+    },
+    slug: 'electrical-companies',
+    industries: ['electrical'],
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['missed-calls', 'lead-management', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'home-services',
+    hero: { ...heroData },
+    operatingPatterns: operatingPatternsData,
+    systemLayers: systemLayersData,
+    workflowExamples: workflowExamplesData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about last Sunday\u2019s fault call',
+      description:
+        'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
+    },
   };
 }
-
 
 export const electricalCompaniesIndustryPageData: IndustryPageData =
   buildElectricalCompaniesIndustryPageData();

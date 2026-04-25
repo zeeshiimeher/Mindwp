@@ -1,21 +1,19 @@
 import { BLOG_POSTS } from '@/domains/blog/registry';
-import type { BlogPostData } from '@/domains/blog/types';
 import { getBlogRenderedSectionTypes } from '@/domains/blog/templates/BlogPostTemplate';
+import type { BlogPostData } from '@/domains/blog/types';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
-import type { CaseStudyData } from '@/domains/case-studies/types';
 import { getCaseStudyRenderedSectionTypes } from '@/domains/case-studies/templates/CaseStudyTemplate';
+import type { CaseStudyData } from '@/domains/case-studies/types';
 import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/registry';
 import type { FeaturePageData } from '@/domains/features/types';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import type { IndustryPageData } from '@/domains/industries/types';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
-import type { ResourceData, ResourceSection } from '@/domains/resources/types';
 import { getResourceRenderedSectionTypes } from '@/domains/resources/templates/ResourcePageTemplate';
+import type { ResourceData, ResourceSection } from '@/domains/resources/types';
 import { SERVICE_DOMAIN_REGISTRY } from '@/domains/services/pageData';
 import type { ServicePageData } from '@/domains/services/types';
-import { getImage } from '@/lib/image-system/resolver';
 import { resolveMetadata } from '@/lib/seo/resolveMetadata';
-import { DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
 
 import type { ContentGraphNode } from '../content-graph/types';
 
@@ -102,23 +100,35 @@ export function getSystemInvariantEntries(): SystemInvariantEntry[] {
     createEntry('feature', entry.id, entry.data, 'features', `/features/${entry.slug}`, entry.slug)
   );
 
-  const industries = Object.values(INDUSTRY_REGISTRY).map(entry =>
-    createEntry(
-      (entry.type === 'detail' ? 'industry-detail' : 'industry-category') as const,
-      `${entry.type === 'detail' ? 'industry-detail' : 'industry-category'}:${entry.slug}`,
+  const industries = Object.values(INDUSTRY_REGISTRY).map(entry => {
+    const industryDomain: 'industry-detail' | 'industry-category' =
+      entry.type === 'detail' ? 'industry-detail' : 'industry-category';
+
+    return createEntry(
+      industryDomain,
+      `${industryDomain}:${entry.slug}`,
       entry,
       'industries',
-      entry.type === 'detail' ? `/industries/${entry.parentSlug}/${entry.slug}` : `/industries/${entry.slug}`,
+      entry.type === 'detail'
+        ? `/industries/${entry.parentSlug}/${entry.slug}`
+        : `/industries/${entry.slug}`,
       entry.slug
-    )
-  );
+    );
+  });
 
   const blogPosts = Object.values(BLOG_POSTS).map(entry =>
     createEntry('blog', `blog:${entry.slug}`, entry, 'blog', `/blog/${entry.slug}`, entry.slug)
   );
 
   const resources = Object.values(RESOURCE_REGISTRY).map(entry =>
-    createEntry('resource', `resource:${entry.slug}`, entry, 'resources', `/resources/${entry.slug}`, entry.slug)
+    createEntry(
+      'resource',
+      `resource:${entry.slug}`,
+      entry,
+      'resources',
+      `/resources/${entry.slug}`,
+      entry.slug
+    )
   );
 
   const caseStudies = Object.values(CASE_STUDY_REGISTRY).map(entry =>
@@ -185,7 +195,9 @@ export function getRenderedSectionTypes(entry: SystemInvariantEntry) {
   }
 
   if (entry.domain === 'resource') {
-    return getResourceRenderedSectionTypes((entry.data as ResourceData).sections as ResourceSection[]);
+    return getResourceRenderedSectionTypes(
+      (entry.data as ResourceData).sections as ResourceSection[]
+    );
   }
 
   if (entry.domain === 'case-study') {
@@ -238,7 +250,9 @@ export function collectSystemInvariantFindings(graphNodes: ContentGraphNode[]) {
   const graphIdSet = new Set<string>();
   for (const node of graphNodes) {
     if (graphIdSet.has(node.id)) {
-      issues.push(createFinding('duplicate_graph_id', `Duplicate graph node id detected: ${node.id}.`));
+      issues.push(
+        createFinding('duplicate_graph_id', `Duplicate graph node id detected: ${node.id}.`)
+      );
       continue;
     }
 
@@ -287,7 +301,9 @@ export function collectSystemInvariantFindings(graphNodes: ContentGraphNode[]) {
         typeof entry.data === 'object' &&
         'slug' in entry.data &&
         'seo' in entry.data &&
-        ('sections' in entry.data || entry.domain === 'industry-category' || entry.domain === 'industry-detail')
+        ('sections' in entry.data ||
+          entry.domain === 'industry-category' ||
+          entry.domain === 'industry-detail')
       )
     ) {
       issues.push(
@@ -381,7 +397,6 @@ export function collectSystemInvariantFindings(graphNodes: ContentGraphNode[]) {
         )
       );
     }
-
   }
 
   const entryIds = new Set(entries.map(entry => entry.id));

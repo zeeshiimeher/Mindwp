@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ComparisonSection,
@@ -14,7 +16,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSolutionSplitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageData } from '@/domains/services/types';
 
 type ConversionLayerSections = {
@@ -34,7 +36,7 @@ interface ConversionLayerRendererProps {
   slug: string;
 }
 
-export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererProps) {
+export function ConversionLayerRenderer({ data, slug: _slug }: ConversionLayerRendererProps) {
   const { hero, cta, inlineCta } = data;
   const sections = data.sections as ConversionLayerSections;
   const {
@@ -54,9 +56,6 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
 
   const ctaTitle = cta.title;
   const ctaDescription = cta.description;
-  const inlineCtaTitle = inlineCta.title;
-  const inlineCtaDescription = inlineCta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -65,10 +64,7 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -194,19 +190,6 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
             cssPrefix='conversion-funnel-qualification'
             backgroundColor='bg-alt'
           />
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='diagnostic'
-            position='mid'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-            backgroundColor='bg-alt'
-          />
-
           <FAQSection
             badge={faqSection.badge}
             title={faqSection.title}
@@ -215,10 +198,7 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

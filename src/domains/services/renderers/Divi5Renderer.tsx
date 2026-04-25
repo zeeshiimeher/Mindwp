@@ -8,7 +8,7 @@ import {
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface Divi5RendererProps {
@@ -16,7 +16,7 @@ interface Divi5RendererProps {
   slug: string;
 }
 
-export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
+export function Divi5Renderer({ data, slug: _slug }: Divi5RendererProps) {
   const { hero, sections, cta } = data;
   const { conversionSection, benefitsSection, featureSection, whySection, processSection } =
     sections;
@@ -31,10 +31,7 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             cssPrefix={hero.cssPrefix}
@@ -88,10 +85,7 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
             cssPrefix={processSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

@@ -1,18 +1,13 @@
-import {
-  type CtaTone,
-  DEFAULT_CTA_LABEL,
-  resolveCtaLabel,
-} from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
-import { type CTAIntent, type PageType, toContactSourceType } from '@/lib/page/pageIdentity';
 
-type ResolvePrimaryCtaActionOptions = {
+export const PRIMARY_CTA_LABEL = 'Start a Conversation';
+export const SECONDARY_CTA_LABEL = 'Discuss Your Project';
+export const APPROVED_CTA_LABELS = [PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL] as const;
+
+type PrimaryCtaActionOptions = {
   system: string;
   slug: string;
-  pageType?: PageType;
-  sourceType?: ContactSourceType;
-  intent?: CTAIntent;
-  tone?: CtaTone;
+  sourceType: ContactSourceType;
   baseHref?: string;
 };
 
@@ -22,75 +17,61 @@ export type PrimaryCtaAction = {
   sourceType: ContactSourceType;
 };
 
-type ResolveGlobalPrimaryCtaOptions = Partial<
-  Omit<ResolvePrimaryCtaActionOptions, 'system' | 'sourceType'>
->;
+type GlobalPrimaryCtaOptions = {
+  baseHref?: string;
+};
 
-const GLOBAL_PRIMARY_CTA_DEFAULTS = {
+const GLOBAL_PRIMARY_CTA_DEFAULTS: Required<
+  Pick<PrimaryCtaActionOptions, 'system' | 'sourceType' | 'slug'>
+> = {
   system: 'smart-website-systems',
   sourceType: 'global',
   slug: 'navigation',
-} as const satisfies Pick<ResolvePrimaryCtaActionOptions, 'system' | 'sourceType' | 'slug'>;
+};
 
-function resolvePrimaryCtaLabel({
-  system,
-  pageType,
-  sourceType,
-  intent,
-  tone = 'descriptive',
-}: ResolvePrimaryCtaActionOptions): string {
-  const resolvedSourceType = sourceType ?? (pageType ? toContactSourceType(pageType) : undefined);
-
-  if (!resolvedSourceType) {
-    throw new Error('resolvePrimaryCtaAction requires pageType or sourceType.');
-  }
-
-  if (resolvedSourceType === 'global') {
-    return DEFAULT_CTA_LABEL;
-  }
-
-  if (!pageType) {
-    throw new Error('resolvePrimaryCtaAction requires pageType for non-global CTA labels.');
-  }
-
-  return resolveCtaLabel({
-    system,
-    pageType,
-    intent,
-    tone,
-  });
+export function getPrimaryCTA() {
+  return PRIMARY_CTA_LABEL;
 }
 
-export function resolvePrimaryCtaAction(options: ResolvePrimaryCtaActionOptions): PrimaryCtaAction {
-  const sourceType =
-    options.sourceType ?? (options.pageType ? toContactSourceType(options.pageType) : undefined);
+export function getSecondaryCTA(allow?: boolean) {
+  if (!allow) {
+    return undefined;
+  }
 
-  if (!sourceType) {
-    throw new Error('resolvePrimaryCtaAction requires pageType or sourceType.');
+  return SECONDARY_CTA_LABEL;
+}
+
+export function isApprovedCtaLabel(label: string): boolean {
+  return (APPROVED_CTA_LABELS as readonly string[]).includes(label.trim());
+}
+
+export function buildPrimaryCtaAction(options: PrimaryCtaActionOptions): PrimaryCtaAction {
+  if (!options.system.trim() || !options.slug.trim()) {
+    throw new Error('buildPrimaryCtaAction requires system and slug.');
   }
 
   return {
-    label: resolvePrimaryCtaLabel(options),
+    label: getPrimaryCTA(),
     href: buildContactHref({
-      baseHref: options.baseHref,
       system: options.system,
-      sourceType,
+      sourceType: options.sourceType,
       slug: options.slug,
+      baseHref: options.baseHref,
     }),
-    sourceType,
+    sourceType: options.sourceType,
   };
 }
 
-export function resolveGlobalPrimaryCtaAction(
-  options: ResolveGlobalPrimaryCtaOptions = {}
+export function buildGlobalPrimaryCtaAction(
+  options: GlobalPrimaryCtaOptions = {}
 ): PrimaryCtaAction {
-  return resolvePrimaryCtaAction({
+  return buildPrimaryCtaAction({
     ...GLOBAL_PRIMARY_CTA_DEFAULTS,
     ...options,
   });
 }
 
-export function resolveGlobalPrimaryCtaLinks(options: ResolveGlobalPrimaryCtaOptions = {}) {
+export function buildGlobalPrimaryCtaLinks(options: GlobalPrimaryCtaOptions = {}) {
   const resolvedOptions = {
     ...GLOBAL_PRIMARY_CTA_DEFAULTS,
     ...options,
@@ -98,6 +79,6 @@ export function resolveGlobalPrimaryCtaLinks(options: ResolveGlobalPrimaryCtaOpt
 
   return {
     contactHref: buildContactHref(resolvedOptions),
-    primaryAction: resolvePrimaryCtaAction(resolvedOptions),
+    primaryAction: buildPrimaryCtaAction(resolvedOptions),
   };
 }

@@ -257,5 +257,5 @@ export const aiChatData: FeaturePageData = {
     title: 'Review Your Communication Structure',
     description:
       'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',
-  }
+  },
 };

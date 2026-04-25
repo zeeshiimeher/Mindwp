@@ -13,7 +13,7 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
     description:
       'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
   }),
-  badge: "CRM Setup",
+  badge: 'CRM Setup',
   category: crmAutomationPage.category,
   hero: {
     ...crmAutomationPage.hero,
@@ -92,5 +92,5 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
     title: 'Map the CRM handoff gaps before more leads stall',
     description:
       'Identify where forms, calls, texts, and follow-up are still disconnected before more opportunities leak out of the pipeline.',
-  }
+  },
 } satisfies typeof crmAutomationPage;

@@ -7,7 +7,7 @@ import {
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface WooCommerceRendererProps {
@@ -15,7 +15,7 @@ interface WooCommerceRendererProps {
   slug: string;
 }
 
-export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
+export function WooCommerceRenderer({ data, slug: _slug }: WooCommerceRendererProps) {
   const { hero, sections, cta } = data;
   const { benefitsSection, bridge, whySection, featureSection } = sections;
   const ctaTitle = cta.title;
@@ -29,10 +29,7 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -76,10 +73,7 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
             backgroundColor='bg-alt'
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

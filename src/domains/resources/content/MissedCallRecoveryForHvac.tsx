@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const missedCallRecoveryForHvac: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Missed Call Recovery for HVAC',
     description:
       'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
     canonical,
   },
-    title: 'Missed Call Recovery for HVAC',
-    description:
+  title: 'Missed Call Recovery for HVAC',
+  description:
     'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
-    category: 'ai-lead-handling',
-    publishedAt: '2026-02-11',
-    systems: ['ai-lead-handling'],
-    industries: ['hvac'],
-    topics: ['missed-calls'],
-    primaryService: 'ai-lead-handling',
-    sections: [
+  category: 'ai-lead-handling',
+  publishedAt: '2026-02-11',
+  systems: ['ai-lead-handling'],
+  industries: ['hvac'],
+  topics: ['missed-calls'],
+  primaryService: 'ai-lead-handling',
+  sections: [
     {
       type: 'hero',
       heading: 'Missed Call Recovery for HVAC',
@@ -181,5 +181,5 @@ export const missedCallRecoveryForHvac: ResourceData = {
       content: getRelatedResourcesContent('ai-lead-handling'),
       resources: getRelatedResources('ai-lead-handling', canonical),
     },
-  ]
+  ],
 };

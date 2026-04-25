@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const websiteCrmIntegrationForSalons: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Website CRM Integration for Salons Explained',
     description:
       'Explore how website CRM integration for salons connects booking forms and enquiries directly to client records and automated follow-up workflows.',
@@ -12,16 +12,16 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
         'Explore how website CRM integration for salons connects booking forms and enquiries directly to client records and automated follow-up workflows.',
     },
   },
-    slug: 'website-crm-integration-for-salons',
-    title: 'Website CRM Integration for Salons',
-    publishDate: '2025-09-16',
-    authorKey: 'EDITORIAL',
-    category: 'beauty-personal-care-industry',
-    industries: ['salon'],
-    systems: ['crm-automation'],
-    topics: ['crm-integration'],
-    tags: ['Salon', 'CRM Integration', 'Website', 'Booking', 'Automation'],
-    sections: [
+  slug: 'website-crm-integration-for-salons',
+  title: 'Website CRM Integration for Salons',
+  publishDate: '2025-09-16',
+  authorKey: 'EDITORIAL',
+  category: 'beauty-personal-care-industry',
+  industries: ['salon'],
+  systems: ['crm-automation'],
+  topics: ['crm-integration'],
+  tags: ['Salon', 'CRM Integration', 'Website', 'Booking', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -123,5 +123,5 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
       content:
         'If your salon website, bookings, and follow-up still operate as separate systems, crm-infrastructure-implementation gives you one structured workflow for capture, client history, reminders, and reactivation.',
     },
-  ]
+  ],
 };

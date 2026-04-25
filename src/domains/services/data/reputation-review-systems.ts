@@ -30,7 +30,7 @@ export const reputationReviewSystemsPage = {
     title: 'Good Work. Hardly Any Proof.',
     description:
       'You finished a quarter of solid work. Customers were happy. Only a few left a review. A less reliable competitor still looks safer online because their proof is easier to see.',
-    list: ["Happy. Silent.", "Competitors look more trustworthy", "Trust stays invisible"],
+    list: ['Happy. Silent.', 'Competitors look more trustworthy', 'Trust stays invisible'],
     cssPrefix: 'reputation-review-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
@@ -271,7 +271,7 @@ export const reputationReviewSystemsPage = {
           description:
             "Three months in, over fifty new reviews. The bad one was buried. Two complaints caught privately that would've gone public.",
           points: [
-            'Fifty-odd new reviews. All real. All from that week\'s customers.',
+            "Fifty-odd new reviews. All real. All from that week's customers.",
             "Two complaints caught privately. Would've been one-stars. Weren't.",
             "Started getting calls from people they'd never spoken to. The profile was doing the work before anyone picked up the phone.",
           ],
@@ -356,5 +356,5 @@ export const reputationReviewSystemsPage = {
     title: 'See how you look next to your competitors',
     description:
       "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
-  }
+  },
 } satisfies ServicePageData;

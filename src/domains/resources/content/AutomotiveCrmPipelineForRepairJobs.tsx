@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const automotiveCrmPipelineForRepairJobs: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Automotive CRM Pipeline for Repair Jobs',
     description:
       'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
     canonical,
   },
-    title: 'Automotive CRM Pipeline for Repair Jobs',
-    description:
+  title: 'Automotive CRM Pipeline for Repair Jobs',
+  description:
     'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-    category: 'crm-automation',
-    publishedAt: '2026-01-24',
-    systems: ['crm-automation'],
-    industries: ['automotive'],
-    topics: ['pipeline-architecture'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'crm-automation',
+  publishedAt: '2026-01-24',
+  systems: ['crm-automation'],
+  industries: ['automotive'],
+  topics: ['pipeline-architecture'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'Automotive CRM Pipeline for Repair Jobs',
@@ -181,5 +181,5 @@ export const automotiveCrmPipelineForRepairJobs: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ]
+  ],
 };

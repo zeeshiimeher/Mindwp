@@ -507,12 +507,7 @@ export function generateSemanticQueries(
 
   if (domain === 'resources') {
     const industryLabel = industry ? industry.replace(/-/g, ' ') : 'service business';
-    const resourceText = [
-      metadata.title,
-      metadata.summary,
-      ...metadata.topics,
-      ...metadata.tags,
-    ]
+    const resourceText = [metadata.title, metadata.summary, ...metadata.topics, ...metadata.tags]
       .join(' ')
       .toLowerCase();
     candidates.push(

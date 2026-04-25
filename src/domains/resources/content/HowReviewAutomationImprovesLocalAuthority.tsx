@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'How Review Automation Improves Local Authority Guide',
     description:
       'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
     canonical,
   },
-    title: 'How Review Automation Improves Local Authority Guide',
-    description:
+  title: 'How Review Automation Improves Local Authority Guide',
+  description:
     'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
-    category: 'reputation-review',
-    publishedAt: '2025-12-17',
-    systems: ['reputation-review'],
-    industries: [],
-    topics: ['review-automation', 'local-authority'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2025-12-17',
+  systems: ['reputation-review'],
+  industries: [],
+  topics: ['review-automation', 'local-authority'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'How Review Automation Improves Local Authority',
@@ -237,5 +237,5 @@ export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

@@ -30,8 +30,10 @@ import { ResourceTakeawaysSection } from '@/components/reusable/sections/resourc
 import { ResourceTemplatesSection } from '@/components/reusable/sections/resources/ResourceTemplatesSection';
 import { Badge } from '@/components/reusable/single/Badge';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
+import { ActionButtons } from '@/components/system/ActionButtons';
+import { HeroActions } from '@/components/system/HeroActions';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -178,14 +180,14 @@ export function getResourceRenderedSectionTypes(sections: ResourcePageTemplateSe
   return renderedTypes.concat(
     sections
       .filter(section => section.type !== 'hero' && section.type !== 'sidebar-cta')
-    .filter(validateRenderableResourceSection)
-    .map(section => section.type)
+      .filter(validateRenderableResourceSection)
+      .map(section => section.type)
   );
 }
 
 export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   // Validate required sections
-  const missingSections = validateRequiredSections(props.sections);
+  validateRequiredSections(props.sections);
 
   // Derive category label from category prop
   const categoryMeta = categories.find(cat => cat.id === props.category);
@@ -198,7 +200,6 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const dateLabel = isUpdated ? 'Updated' : 'Published';
   const currentSlug = props.currentSlug;
 
-  const primarySystem = props.systems?.[0] ?? 'smart-website-systems';
   const currentPath = props.url;
   const inlineLinkTracker = createInlineLinkTracker({
     pagePath: currentPath,
@@ -213,10 +214,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(paragraph, {
-          excludePaths: [currentPath],
-          sourcePath: currentPath,
-          tracker: inlineLinkTracker,
-        })
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
         : [{ type: 'text' as const, value: paragraph }];
 
     let linkedInParagraph = false;
@@ -255,7 +256,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const sidebarCTAData = extractSidebarCTAContent(props.sections);
 
   if (props.sections.length < 5 && env.NODE_ENV === 'development') {
-    systemDevelopmentWarning(`ResourcePageTemplate: ${currentSlug} has fewer than 5 authored sections.`);
+    systemDevelopmentWarning(
+      `ResourcePageTemplate: ${currentSlug} has fewer than 5 authored sections.`
+    );
   }
 
   // Function to render a section based on its type
@@ -431,12 +434,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 most.
               </div>
             </div>
-            <SmartCTA
-              system={primarySystem}
-              pageType='resource'
-              slug={currentSlug}
-              intent='conversion'
-              position='footer'
+            <PrimaryCTASection
               title={ctaData.heading}
               description={ctaData.content}
               metaItems={ctaData.features?.map(f => ({ text: f.text }))}
@@ -471,12 +469,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   function safeRenderSection(section: unknown, index: number) {
     const type = getResourceSectionType(section);
     if (!type) {
-      systemDevelopmentWarning(`ResourcePageTemplate: skipping section at index ${index} because type is invalid.`);
+      systemDevelopmentWarning(
+        `ResourcePageTemplate: skipping section at index ${index} because type is invalid.`
+      );
       return null;
     }
 
     if (!validateRenderableResourceSection(section as ResourcePageTemplateSection)) {
-      systemDevelopmentWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because its shape is invalid.`);
+      systemDevelopmentWarning(
+        `ResourcePageTemplate: skipping ${type} section at index ${index} because its shape is invalid.`
+      );
       return null;
     }
 
@@ -484,7 +486,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
       return renderSection(section as ResourcePageTemplateSection, index);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      systemDevelopmentWarning(`ResourcePageTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`);
+      systemDevelopmentWarning(
+        `ResourcePageTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`
+      );
       return null;
     }
   }
@@ -556,14 +560,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               </div>
 
               <div className='resource-page__hero-cta'>
-                <SmartCTA
-                  system={primarySystem}
-                  pageType='resource'
-                  slug={currentSlug}
-                  intent='entry'
-                  position='hero'
-                  mode='actions-only'
-                />
+                <HeroActions allowSecondaryAction />
               </div>
             </div>
           </SectionWrapper>
@@ -584,15 +581,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                   <p className='resource-page__sidebar-text'>{sidebarCTAData.content}</p>
 
                   <div className='resource-page__sidebar-actions'>
-                    <SmartCTA
-                      system={primarySystem}
-                      pageType='resource'
-                      slug={currentSlug}
-                      intent='diagnostic'
-                      position='sidebar'
-                      mode='actions-only'
+                    <ActionButtons
+                      allowSecondaryAction
                       primaryButtonCssPrefix='btn-block'
-                      actionClassName='resource-page__sidebar-actions'
+                      className='resource-page__sidebar-actions'
                     />
                   </div>
 
@@ -603,7 +595,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                           text: string;
                           icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
                         },
-                        index: number
+                        _index: number
                       ) => {
                         const getIcon = (iconType?: string) => {
                           switch (iconType) {

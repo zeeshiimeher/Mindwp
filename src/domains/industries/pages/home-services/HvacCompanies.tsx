@@ -55,7 +55,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         icon: Thermometer,
         title: 'A boiler swap quote went out before the surge and never got chased',
         description:
-          'Four grand is sitting in a homeowner\'s inbox while the cold week eats the whole office alive. By the time things calm down enough to remember it, another firm has already kept the conversation moving and booked the install.',
+          "Four grand is sitting in a homeowner's inbox while the cold week eats the whole office alive. By the time things calm down enough to remember it, another firm has already kept the conversation moving and booked the install.",
         iconType: 'accent' as const,
       },
     ],
@@ -239,12 +239,14 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'These are the supporting services HVAC firms tend to lean on most once they can see where the weather spikes are breaking the handling. Each one supports response, routing, visibility, or proof from a different angle.',
+    description:
+      'These are the supporting services HVAC firms tend to lean on most once they can see where the weather spikes are breaking the handling. Each one supports response, routing, visibility, or proof from a different angle.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Helps enquiry, survey, and quote handling stay connected through a cold snap or heatwave instead of splitting apart under the volume.',
+        description:
+          'Helps enquiry, survey, and quote handling stay connected through a cold snap or heatwave instead of splitting apart under the volume.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -252,7 +254,8 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: PhoneOff,
         title: 'AI Lead Handling',
-        description: 'Catches no-heat calls before they hit the next firm in the list, especially on the mornings when too many of them land at once.',
+        description:
+          'Catches no-heat calls before they hit the next firm in the list, especially on the mornings when too many of them land at once.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -260,7 +263,8 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Helps you stay visible for "boiler engineer near me" or cooling breakdown searches the morning the heating or AC gives out.',
+        description:
+          'Helps you stay visible for "boiler engineer near me" or cooling breakdown searches the morning the heating or AC gives out.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -268,7 +272,8 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns commissioned installs and relief-call fixes into proof on Maps and search, so the next homeowner sees recent work they can trust.',
+        description:
+          'Turns commissioned installs and relief-call fixes into proof on Maps and search, so the next homeowner sees recent work they can trust.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -280,10 +285,12 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'What HVAC firms ask first',
-    description: 'Straight answers about cold-snap overload, dispatch pressure, and how to hold more of the surge without adding chaos.',
+    description:
+      'Straight answers about cold-snap overload, dispatch pressure, and how to hold more of the surge without adding chaos.',
     faqs: [
       {
-        question: 'A cold-snap morning is chaos. Will this actually keep up with twenty calls in an hour?',
+        question:
+          'A cold-snap morning is chaos. Will this actually keep up with twenty calls in an hour?',
         answer:
           'That is the moment it is built for. Every missed call gets a text inside a minute, and no-heat enquiries surface above the routine ones automatically. The dispatcher stops triaging by panic.',
       },
@@ -293,7 +300,8 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
           'Yes. Each enquiry lands with the postcode and the symptom tagged, so the dispatcher can see who is nearest instead of guessing. It will not replace a dispatcher \u2014 it gives them a clean picture.',
       },
       {
-        question: 'We send a lot of install quotes after a survey. Can it chase those without sounding pushy?',
+        question:
+          'We send a lot of install quotes after a survey. Can it chase those without sounding pushy?',
         answer:
           'Yes. A short, friendly check-in fires a few days after the quote, and again a week or so later. Most homeowners appreciate the nudge because the weather spike usually pushed the decision down their list too.',
       },
@@ -316,39 +324,32 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary | MindWP',
-        description:
-          'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-        canonical: '/industries/home-services/hvac-companies',
-      },
-      slug: 'hvac-companies',
-      industries: ['hvac'],
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'crm-automation',
-        'local-seo-authority',
-      ],
-      topics: ['missed-calls', 'lead-management', 'client-reactivation'],
-      type: 'detail',
-      parentSlug: 'home-services',
-      hero: { ...heroData },
-      operatingPatterns: operatingPatternsData,
-      comparison: comparisonData,
-      systemLayers: systemLayersData,
-      workflowExamples: workflowExamplesData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about the last cold morning',
-        description:
-          'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
-      }
+    seo: {
+      title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary | MindWP',
+      description:
+        'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+      canonical: '/industries/home-services/hvac-companies',
+    },
+    slug: 'hvac-companies',
+    industries: ['hvac'],
+    systems: ['smart-website-systems', 'ai-lead-handling', 'crm-automation', 'local-seo-authority'],
+    topics: ['missed-calls', 'lead-management', 'client-reactivation'],
+    type: 'detail',
+    parentSlug: 'home-services',
+    hero: { ...heroData },
+    operatingPatterns: operatingPatternsData,
+    comparison: comparisonData,
+    systemLayers: systemLayersData,
+    workflowExamples: workflowExamplesData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about the last cold morning',
+      description:
+        'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
+    },
   };
 }
 
-
-export const hvacCompaniesIndustryPageData: IndustryPageData =
-  buildHvacCompaniesIndustryPageData();
+export const hvacCompaniesIndustryPageData: IndustryPageData = buildHvacCompaniesIndustryPageData();

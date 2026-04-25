@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Conversion Tracking for Service Businesses',
     description:
       'Learn how conversion tracking for service businesses connects website activity to enquiries and reveals which pages and channels drive revenue.',
@@ -12,22 +12,22 @@ export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
         'Learn how conversion tracking for service businesses connects website activity to enquiries and reveals which pages and channels drive revenue.',
     },
   },
-    slug: 'conversion-tracking-for-service-businesses-explained',
-    title: 'Conversion Tracking for Service Businesses Explained',
-    publishDate: '2024-09-12',
-    authorKey: 'TECHNICAL',
-    category: 'smart-website-systems',
-    industries: [],
-    systems: ['smart-website-systems'],
-    topics: ['conversion-tracking'],
-    tags: [
+  slug: 'conversion-tracking-for-service-businesses-explained',
+  title: 'Conversion Tracking for Service Businesses Explained',
+  publishDate: '2024-09-12',
+  authorKey: 'TECHNICAL',
+  category: 'smart-website-systems',
+  industries: [],
+  systems: ['smart-website-systems'],
+  topics: ['conversion-tracking'],
+  tags: [
     'Conversion Tracking',
     'Service Business',
     'Lead Attribution',
     'Analytics',
     'Website Systems',
   ],
-    sections: [
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -112,5 +112,5 @@ export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
       content:
         'If you spend on marketing but cannot connect that spending to specific leads and revenue, your tracking infrastructure needs attention. See how conversion tracking fits into a systems-first website.',
     },
-  ]
+  ],
 };

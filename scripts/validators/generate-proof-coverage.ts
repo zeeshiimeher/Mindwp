@@ -19,6 +19,14 @@ type ProofCoverageEntry = {
   reason: string;
 };
 
+type ProofCoverageServiceSource = {
+  data: {
+    seo: {
+      canonical: string;
+    };
+  };
+};
+
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'proof-coverage.json');
 const sourceCommand = 'npx tsx scripts/validators/generate-proof-coverage.ts';
@@ -81,8 +89,12 @@ function detectProofSignals(text: string) {
   return { hasProof: false, reason: 'no proof signals detected' };
 }
 
+const serviceEntries = Object.values(
+  SERVICE_ENTRY_BY_SLUG_WITH_ALIASES as Record<string, ProofCoverageServiceSource>
+);
+
 const datasets: Array<{ page: string; data: unknown }> = [
-  ...Object.values(SERVICE_ENTRY_BY_SLUG_WITH_ALIASES).map(entry => ({
+  ...serviceEntries.map(entry => ({
     page: entry.data.seo.canonical,
     data: entry.data,
   })),

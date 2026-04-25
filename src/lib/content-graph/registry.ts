@@ -17,6 +17,7 @@ import type {
   GraphRegistryInput,
   MetadataCarrier,
 } from './types';
+import { validateContentGraph } from './validate';
 
 const BUILDER_SERVICE_SLUGS = new Set(['']);
 
@@ -44,7 +45,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
     if (!canonicalIndustries.has(industry)) {
       throw new Error(
         `Non-canonical industry identifier "${industry}" on node "${nodeId}". ` +
-        `Allowed: ${[...canonicalIndustries].join(', ')}`
+          `Allowed: ${[...canonicalIndustries].join(', ')}`
       );
     }
   }
@@ -52,7 +53,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
     if (!canonicalSystems.has(system)) {
       throw new Error(
         `Non-canonical system identifier "${system}" on node "${nodeId}". ` +
-        `Allowed: ${[...canonicalSystems].join(', ')}`
+          `Allowed: ${[...canonicalSystems].join(', ')}`
       );
     }
   }
@@ -60,7 +61,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
     if (!canonicalTopics.has(topic)) {
       throw new Error(
         `Non-canonical topic identifier "${topic}" on node "${nodeId}". ` +
-        `Allowed: ${[...canonicalTopics].join(', ')}`
+          `Allowed: ${[...canonicalTopics].join(', ')}`
       );
     }
   }
@@ -142,6 +143,7 @@ export function buildContentGraph(
       slug: service.slug,
       type: 'service',
       path: service.path,
+      ...(service.slug === 'smart-website-systems' ? { coreFramework: true } : {}),
       ...seoSnapshot,
       ...getConversionSnapshot('service'),
       systems: [service.slug],
@@ -261,6 +263,8 @@ export function buildContentGraph(
     applyDerivedRelationships(node, derived);
   }
 
+  validateContentGraph(graph);
+
   return graph;
 }
 
@@ -289,7 +293,9 @@ export function initContentGraph(registries: GraphRegistryInput): void {
 
 export function initContentGraphFromSnapshot(graph: ContentGraph): void {
   if (_contentGraph || _structuredContentGraph) {
-    throw new Error('Content graph already initialized. Do not call initContentGraphFromSnapshot() twice.');
+    throw new Error(
+      'Content graph already initialized. Do not call initContentGraphFromSnapshot() twice.'
+    );
   }
 
   _structuredContentGraph = graph;
@@ -311,7 +317,9 @@ export function getStructuredContentGraph(): ContentGraph {
 export function getNodeBySlug(slug: string): ContentGraphNode | undefined {
   const graph = getStructuredContentGraph();
   if (graph.indexes?.ambiguousSlugs.has(slug)) {
-    throw new Error(`Ambiguous graph slug lookup attempted for "${slug}". Use a typed lookup instead.`);
+    throw new Error(
+      `Ambiguous graph slug lookup attempted for "${slug}". Use a typed lookup instead.`
+    );
   }
   return graph.indexes?.slugIndex[slug];
 }

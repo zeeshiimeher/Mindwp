@@ -370,6 +370,8 @@ export function getRelatedContent(slug: string, type: ContentNodeType): RelatedC
       return {
         ...emptyRelated(),
         services: buildRelatedSlot(sourceNode, mapResult.services, ['service']),
+        resources: buildRelatedSlot(sourceNode, mapResult.resources, ['resource']),
+        industries: buildRelatedSlot(sourceNode, mapResult.industries, ['industry-detail']),
       };
     case 'feature':
       return {

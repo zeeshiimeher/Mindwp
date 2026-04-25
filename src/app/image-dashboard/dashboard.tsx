@@ -253,7 +253,10 @@ export default function ImageDashboard() {
                 </thead>
                 <tbody>
                   {recent.map(entry => (
-                    <tr key={`${entry.slug}-${entry.layout}-${entry.iteration ?? 'current'}`} className='border-b border-zinc-800/50 hover:bg-zinc-800/30'>
+                    <tr
+                      key={`${entry.slug}-${entry.layout}-${entry.iteration ?? 'current'}`}
+                      className='border-b border-zinc-800/50 hover:bg-zinc-800/30'
+                    >
                       <td className='py-2 pr-4 text-zinc-200 max-w-[200px] truncate'>
                         {entry.slug}
                       </td>

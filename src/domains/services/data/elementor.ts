@@ -16,18 +16,18 @@ import type { ServicePageData } from '../types';
 const slug = 'elementor';
 
 export const elementorPage = {
-    slug,
-    seo: buildServiceSeo({
+  slug,
+  seo: buildServiceSeo({
     slug,
     title: 'Elementor WordPress Development | MindWP',
     description:
       "Elementor gives you visual control and flexible editing. But pixel-perfect pages don't bring in work on their own. Here's what most Elementor sites are missing.",
   }),
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure'],
-    badge: 'Elementor',
-    category: 'Implementation Services',
-    hero: {
+  systems: ['smart-website-systems'],
+  topics: ['website-infrastructure'],
+  badge: 'Elementor',
+  category: 'Implementation Services',
+  hero: {
     badge: 'Elementor',
     title: "The Design Looks Great. The Phone Doesn't Ring.",
     description:
@@ -36,7 +36,7 @@ export const elementorPage = {
     cssPrefix: 'elementor-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
-    sections: {
+  sections: {
     conversionSection: {
       title: "We build with Elementor. But the builder isn't what's holding you back.",
       description1:
@@ -239,9 +239,9 @@ export const elementorPage = {
       cssPrefix: 'elementor-features',
     },
   },
-    cta: {
+  cta: {
     title: 'Not sure if the design is your actual problem?',
     description:
       "Tell us what's happening — or not happening — when people visit your site. We'll figure out whether it's a build issue or something deeper.",
-  }
+  },
 } satisfies ServicePageData;

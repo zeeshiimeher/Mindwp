@@ -157,23 +157,23 @@ const finalCta = {
 };
 
 export const servicePageArchitectureThatConverts: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Service Page Architecture That Converts',
     description:
       'Learn how to architect service pages that guide visitors through decision paths with search-intent matching, multi-path CTAs, and CRM-connected forms.',
     canonical,
   },
-    title: 'Service Page Architecture That Converts',
-    description:
+  title: 'Service Page Architecture That Converts',
+  description:
     'Learn how to architect service pages that guide visitors through decision paths with search-intent matching, multi-path CTAs, and CRM-connected forms.',
-    category: 'smart-website-systems',
-    publishedAt: '2025-11-08',
-    systems: ['smart-website-systems'],
-    industries: [],
-    topics: ['service-page-architecture'],
-    primaryService: 'smart-website-systems',
-    sections: [
+  category: 'smart-website-systems',
+  publishedAt: '2025-11-08',
+  systems: ['smart-website-systems'],
+  industries: [],
+  topics: ['service-page-architecture'],
+  primaryService: 'smart-website-systems',
+  sections: [
     {
       type: 'hero',
       heading: 'Service Page Architecture That Converts',
@@ -242,5 +242,5 @@ export const servicePageArchitectureThatConverts: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ]
+  ],
 };

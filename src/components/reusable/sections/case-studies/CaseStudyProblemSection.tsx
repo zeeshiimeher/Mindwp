@@ -8,11 +8,11 @@ export interface CaseStudyProblemSectionProps {
   painPoints: Array<
     | string
     | {
-      before?: string;
-      after?: string;
-      title?: string;
-      description?: string;
-    }
+        before?: string;
+        after?: string;
+        title?: string;
+        description?: string;
+      }
   >;
 }
 
@@ -20,11 +20,11 @@ function normalizePainPoint(
   painPoint:
     | string
     | {
-      before?: string;
-      after?: string;
-      title?: string;
-      description?: string;
-    }
+        before?: string;
+        after?: string;
+        title?: string;
+        description?: string;
+      }
 ): string {
   if (typeof painPoint === 'string') return painPoint;
 

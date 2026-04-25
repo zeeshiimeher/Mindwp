@@ -289,5 +289,5 @@ export const voicecallsData: FeaturePageData = {
     title: 'Discuss AI voice call handling',
     description:
       'Tell us how calls are handled now. We will show you where voice AI can stop missed enquiries and tighten call routing.',
-  }
+  },
 };

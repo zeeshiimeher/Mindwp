@@ -14,7 +14,7 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
 
@@ -27,10 +27,9 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
   const { process, benefits, useCases, faq, explore, capabilities } = sections;
   const channels = sections.channels;
   const painPoints = sections.painPoints;
-  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   if (!channels || !painPoints) {
-    return null;
+    throw new Error('Missing section data');
   }
 
   return (
@@ -43,10 +42,7 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            smartCta={{
-              system: primarySystem,
-              pageType: 'feature',
-              slug: data.slug,
+            heroActions={{
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -159,10 +155,7 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
             backgroundColor='bg-base'
           />
 
-          <SmartCTA
-            system={primarySystem}
-            pageType='feature'
-            slug={data.slug}
+          <PrimaryCTASection
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

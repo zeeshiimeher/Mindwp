@@ -9,24 +9,26 @@ type ServiceEntry<TData> = {
   render: (data: TData, slug: string) => ReactElement;
 };
 
+type ServiceDataSlug = keyof typeof SERVICE_DOMAIN_REGISTRY & keyof ServicePageDataBySlug & string;
+type AnyServiceEntry = ServiceEntry<ServicePageDataBySlug[keyof ServicePageDataBySlug]>;
+
 const createServiceEntry = <TData,>(
   data: TData,
   render: (data: TData, slug: string) => ReactElement
 ): ServiceEntry<TData> => ({ data, render });
 
 function renderServiceEntry(slug: ServiceSlug): ReactElement {
-  const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug];
-  const render = entry.render as (data: typeof entry.data, slug: string) => ReactElement;
+  const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug] as AnyServiceEntry;
 
   return (
     <CTARegistryProvider pageId={`service:${slug}`} pageType='service'>
-      {render(entry.data, slug)}
+      {entry.render(entry.data, slug)}
       <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
     </CTARegistryProvider>
   );
 }
 
-function getServiceDataOrThrow<TSlug extends keyof ServicePageDataBySlug>(
+function getServiceDataOrThrow<TSlug extends ServiceDataSlug>(
   slug: TSlug
 ): ServicePageDataBySlug[TSlug] {
   const data = SERVICE_DOMAIN_REGISTRY[slug].data;
@@ -38,14 +40,23 @@ function getServiceDataOrThrow<TSlug extends keyof ServicePageDataBySlug>(
   return data as ServicePageDataBySlug[TSlug];
 }
 
-export const SERVICE_ENTRY_BY_SLUG = Object.fromEntries(
-  Object.entries(SERVICE_DOMAIN_REGISTRY).map(([slug, entry]) => [
+function buildServiceEntry<TSlug extends ServiceDataSlug>(slug: TSlug) {
+  const entry = SERVICE_DOMAIN_REGISTRY[slug];
+  const Renderer = entry.renderer as (props: {
+    data: ServicePageDataBySlug[TSlug];
+    slug: string;
+  }) => ReactElement;
+
+  return [
     slug,
-    createServiceEntry(getServiceDataOrThrow(slug as keyof ServicePageDataBySlug), (data, serviceSlug) => {
-      const Renderer = entry.renderer;
+    createServiceEntry(getServiceDataOrThrow(slug), (data, serviceSlug) => {
       return <Renderer data={data} slug={serviceSlug} />;
     }),
-  ])
+  ] as const;
+}
+
+export const SERVICE_ENTRY_BY_SLUG = Object.fromEntries(
+  (Object.keys(SERVICE_DOMAIN_REGISTRY) as ServiceDataSlug[]).map(slug => buildServiceEntry(slug))
 ) as {
   [K in keyof typeof SERVICE_DOMAIN_REGISTRY]: ServiceEntry<ServicePageDataBySlug[K]>;
 };
@@ -64,7 +75,7 @@ export const isServiceSlug = (slug: string): slug is ServiceSlug => {
 };
 
 export const getServiceDataBySlug = (slug: ServiceSlug) => {
-  return SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug].data;
+  return (SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug] as AnyServiceEntry).data;
 };
 
 export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {

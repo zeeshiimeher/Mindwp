@@ -149,61 +149,61 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'Dental Booking Automation | 52% Online Booking Adoption',
-        description:
+    seo: {
+      title: 'Dental Booking Automation | 52% Online Booking Adoption',
+      description:
         'How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.',
-        canonical: '/case-studies/appointment-business-booking-automation',
-        openGraph: {
-          title: 'Why Dental Practices Lose Patients | MindWP Case Study',
-          description:
-            'How a Swindon dental practice moved to 52% online booking and increased appointments by 28%.',
-        },
+      canonical: '/case-studies/appointment-business-booking-automation',
+      openGraph: {
+        title: 'Why Dental Practices Lose Patients | MindWP Case Study',
+        description:
+          'How a Swindon dental practice moved to 52% online booking and increased appointments by 28%.',
       },
-      slug: 'appointment-business-booking-automation',
-      title: 'Dental Practice Booking Automation',
-      industryCategory: 'healthcare',
-      industryLabel: 'Healthcare',
-      industries: ['dental-clinic'],
-      systems: ['smart-website-systems'],
-      topics: ['booking-automation', 'website-infrastructure'],
-      publishDate: '2026-05-01',
-      client: 'Parkside Dental Practice',
-      location: 'Swindon, UK',
-      business: 'Parkside Dental Practice',
-      duration: '12 weeks',
-      completedDate: 'May 2026',
-      heroHeadline:
-        'How a Dental Practice Achieved 52% Online Booking and Increased Appointments by 28%',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'Booking Automation',
-        'Dental Practice',
-        'Online Scheduling',
-        'CRM Integration',
-        'Healthcare',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'System Implementation' },
-        problem: { challengeBadgeLabel: 'The Booking Problem' },
-        solution: { solutionBadgeLabel: 'System Architecture' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Booking Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for dental practices' },
-          ],
-        },
-      }
+    },
+    slug: 'appointment-business-booking-automation',
+    title: 'Dental Practice Booking Automation',
+    industryCategory: 'healthcare',
+    industryLabel: 'Healthcare',
+    industries: ['dental-clinic'],
+    systems: ['smart-website-systems'],
+    topics: ['booking-automation', 'website-infrastructure'],
+    publishDate: '2026-05-01',
+    client: 'Parkside Dental Practice',
+    location: 'Swindon, UK',
+    business: 'Parkside Dental Practice',
+    duration: '12 weeks',
+    completedDate: 'May 2026',
+    heroHeadline:
+      'How a Dental Practice Achieved 52% Online Booking and Increased Appointments by 28%',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'Booking Automation',
+      'Dental Practice',
+      'Online Scheduling',
+      'CRM Integration',
+      'Healthcare',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'System Implementation' },
+      problem: { challengeBadgeLabel: 'The Booking Problem' },
+      solution: { solutionBadgeLabel: 'System Architecture' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Booking Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for dental practices' },
+        ],
+      },
+    },
   };
 }
 

@@ -5,8 +5,11 @@ import Script from 'next/script';
 import { Footer } from '@/global/Footer';
 import { Header } from '@/global/Header';
 import { resolveSEO } from '@/lib/seo/seoResolver';
+import { registerGlobalErrorHandlers } from '@/lib/system/logger';
 
 import '@/index.css';
+
+registerGlobalErrorHandlers();
 
 const inter = Inter({
   subsets: ['latin'],

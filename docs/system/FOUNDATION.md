@@ -161,7 +161,7 @@ Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.
 ### CTA Ownership
 
 - Page adapters and templates own page identity, CTA intent, and CTA position.
-- `SmartCTA` owns CTA rendering.
+- `PrimaryCTASection` owns CTA rendering.
 - `buildContactHref()` owns contextual contact URL generation.
 - Route files and data files do not own CTA intent.
 

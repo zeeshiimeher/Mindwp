@@ -35,31 +35,9 @@ const RELATION_PRIORITY = {
   reverseValidates: 70,
 } as const;
 
-const FALLBACK_DESCRIPTION: Record<ContentNodeType, string> = {
-  service:
-    'Explore how this related service supports your wider system structure and growth goals.',
-  'industry-category':
-    'See how this industry context aligns with service structure, visibility, and enquiry handling.',
-  'industry-detail':
-    'See how this industry context aligns with service structure, visibility, and enquiry handling.',
-  feature:
-    'Review this related feature to understand how it supports your workflow and operational clarity.',
-  blog: 'Read this related insight for practical guidance and system-focused implementation ideas.',
-  resource:
-    'Use this related resource to plan and apply the next implementation step with confidence.',
-  'case-study':
-    'Review this related case study to see how these systems perform in real business scenarios.',
-};
-
 // ─── Internal Helpers ────────────────────────────────────────────────────────
 
 const normalize = (v: string) => v.trim().toLowerCase();
-
-const titleFromSlug = (slug: string) =>
-  slug
-    .replace(/[-/]+/g, ' ')
-    .trim()
-    .replace(/\b\w/g, c => c.toUpperCase());
 
 const resolverCache = new Map<string, ResolverSlotResult>();
 
@@ -96,59 +74,50 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
     types.flatMap(t => nodeTypeBuckets.get(t) ?? []);
 
   const resolveNodeCopy = (node: ContentGraphNode) => {
-    const derivedTitle = titleFromSlug(node.slug);
-    const defaultDescription = FALLBACK_DESCRIPTION[node.type];
+    const requireAuthorityCopy = (title?: string, description?: string) => {
+      if (!title || !description) {
+        throw new Error('Authority node missing content');
+      }
+
+      return { title, description };
+    };
 
     if (node.type === 'service') {
       const s = deps.getServiceBySlug(node.slug);
-      return {
-        title: node.title ?? s?.badge ?? s?.title ?? derivedTitle,
-        description: node.description ?? s?.description ?? defaultDescription,
-      };
+      return requireAuthorityCopy(
+        node.title ?? s?.badge ?? s?.title,
+        node.description ?? s?.description
+      );
     }
     if (node.type === 'feature') {
       const f = deps.features.find(x => x.slug === node.slug);
-      return {
-        title: node.title ?? f?.title ?? derivedTitle,
-        description: node.description ?? f?.description ?? defaultDescription,
-      };
+      return requireAuthorityCopy(node.title ?? f?.title, node.description ?? f?.description);
     }
     if (node.type === 'industry-category' || node.type === 'industry-detail') {
       const key =
         node.type === 'industry-detail' && node.parent ? `${node.parent}/${node.slug}` : node.slug;
       const i = deps.industries[key];
-      return {
-        title: node.title ?? i?.hero?.title ?? derivedTitle,
-        description:
-          node.description ?? i?.seo?.description ?? i?.hero?.description ?? defaultDescription,
-      };
+      return requireAuthorityCopy(
+        node.title ?? i?.hero?.title,
+        node.description ?? i?.seo?.description ?? i?.hero?.description
+      );
     }
     if (node.type === 'blog') {
       const b = blogSlugIndex.get(normalize(node.slug));
-      return {
-        title: node.title ?? b?.title ?? derivedTitle,
-        description: node.description ?? b?.seo.description ?? defaultDescription,
-      };
+      return requireAuthorityCopy(node.title ?? b?.title, node.description ?? b?.seo.description);
     }
     if (node.type === 'resource') {
       const r = resourceSlugIndex.get(normalize(node.slug));
-      return {
-        title: node.title ?? r?.title ?? derivedTitle,
-        description:
-          node.description ?? r?.description ?? r?.seo?.description ?? defaultDescription,
-      };
+      return requireAuthorityCopy(
+        node.title ?? r?.title,
+        node.description ?? r?.description ?? r?.seo?.description
+      );
     }
     if (node.type === 'case-study') {
       const c = deps.caseStudies[node.slug];
-      return {
-        title: node.title ?? c?.title ?? derivedTitle,
-        description: node.description ?? c?.seo?.description ?? defaultDescription,
-      };
+      return requireAuthorityCopy(node.title ?? c?.title, node.description ?? c?.seo?.description);
     }
-    return {
-      title: node.title ?? derivedTitle,
-      description: node.description ?? defaultDescription,
-    };
+    return requireAuthorityCopy(node.title, node.description);
   };
 
   const toAuthorityItem = (node: ContentGraphNode): AuthorityItem => {

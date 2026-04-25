@@ -44,8 +44,25 @@ async function main() {
 
     if (graph) {
         const nodes = graph.nodes.filter(node => publishableTypes.has(node.type));
-        const orphanTopics = CANONICAL_TOPICS.filter(topic => !graph.indexes.topics.get(topic)?.length);
-        const orphanSystems = CANONICAL_SYSTEMS.filter(system => !graph.indexes.systems.get(system)?.length);
+        const topicCounts = new Map();
+        const systemCounts = new Map();
+
+        for (const node of nodes) {
+            for (const topic of node.topics ?? []) {
+                topicCounts.set(topic, (topicCounts.get(topic) ?? 0) + 1);
+            }
+
+            for (const system of node.systems ?? []) {
+                systemCounts.set(system, (systemCounts.get(system) ?? 0) + 1);
+            }
+        }
+
+        const orphanTopics = CANONICAL_TOPICS.filter(
+            topic => (topicCounts.get(topic) ?? 0) === 0
+        );
+        const orphanSystems = CANONICAL_SYSTEMS.filter(
+            system => (systemCounts.get(system) ?? 0) === 0
+        );
         const mismatchedNodes = nodes.filter(
             node => ((node.topics?.length ?? 0) === 0) !== ((node.systems?.length ?? 0) === 0)
         );

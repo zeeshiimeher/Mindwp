@@ -30,7 +30,10 @@ function readString(value: unknown): string | undefined {
   return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
 }
 
-export function resolveMetadata(pageData: unknown, fallbackCanonical: string): ResolvedPageMetadata {
+export function resolveMetadata(
+  pageData: unknown,
+  fallbackCanonical: string
+): ResolvedPageMetadata {
   const source = asRecord(pageData) ?? {};
   const seo = asRecord(source.seo);
   const hero = asRecord(source.hero);
@@ -38,9 +41,16 @@ export function resolveMetadata(pageData: unknown, fallbackCanonical: string): R
   const cta = asRecord(source.cta) ?? asRecord(templateOverrides?.cta);
   const robots = asRecord(source.robots);
   const openGraph = asRecord(seo?.openGraph);
-  const title = readString(seo?.title);
-  const description = readString(seo?.description);
-  const canonical = normalizePath(readString(seo?.canonical) ?? fallbackCanonical);
+  const title = readString(seo?.title) ?? readString(source.title);
+  const description = readString(seo?.description) ?? readString(source.description);
+  const canonicalValue =
+    readString(seo?.canonical) ?? readString(source.canonical) ?? readString(source.path);
+
+  if (!title || !description || !canonicalValue) {
+    throw new Error('Invalid SEO metadata');
+  }
+
+  const canonical = normalizePath(canonicalValue ?? fallbackCanonical);
 
   return {
     title,

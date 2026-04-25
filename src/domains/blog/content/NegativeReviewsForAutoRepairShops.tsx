@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const negativeReviewsForAutoRepairShops: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Managing Negative Reviews for Auto Repair Shops',
     description:
       'Discover how negative reviews for auto repair shops can be managed with systematic response frameworks that protect reputation and rebuild customer trust.',
@@ -12,16 +12,16 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
         'Discover how negative reviews for auto repair shops can be managed with systematic response frameworks that protect reputation and rebuild customer trust.',
     },
   },
-    slug: 'negative-reviews-for-auto-repair-shops',
-    title: 'Negative Reviews for Auto Repair Shops',
-    publishDate: '2025-11-11',
-    authorKey: 'EDITORIAL',
-    category: 'reputation-review',
-    industries: ['automotive'],
-    systems: ['reputation-review'],
-    topics: ['negative-review-response', 'negative-reviews'],
-    tags: ['Automotive', 'Negative Reviews', 'Reputation', 'Response Framework', 'Recovery'],
-    sections: [
+  slug: 'negative-reviews-for-auto-repair-shops',
+  title: 'Negative Reviews for Auto Repair Shops',
+  publishDate: '2025-11-11',
+  authorKey: 'EDITORIAL',
+  category: 'reputation-review',
+  industries: ['automotive'],
+  systems: ['reputation-review'],
+  topics: ['negative-review-response', 'negative-reviews'],
+  tags: ['Automotive', 'Negative Reviews', 'Reputation', 'Response Framework', 'Recovery'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -95,5 +95,5 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
       content:
         'If your auto repair shop receives negative reviews and lacks a response strategy, a systematic framework can protect your reputation. See how review management systems work.',
     },
-  ]
+  ],
 };

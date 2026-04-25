@@ -22,7 +22,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildHomeServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: "Home Services",
+    badge: 'Home Services',
     title: 'Water’s On The Floor. They’re Dialling The Next Number While Yours Rings Out.',
     description:
       'In home services, the best enquiries usually land when something has already gone wrong and nobody is willing to wait around. The call gets missed, the callback comes too late, or the quote sits there untouched, and the job goes to the number that answered first.',
@@ -133,7 +133,8 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'Catch the panic call. Close the big-ticket quote. Stop driving to postcodes that don’t pay.',
+    title:
+      'Catch the panic call. Close the big-ticket quote. Stop driving to postcodes that don’t pay.',
     description:
       'Each piece handles one part of the leak. Together they help the work keep moving while the team stays on the tools instead of trying to remember who still needs a call back.',
     featureCategories: [
@@ -209,7 +210,8 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
 
   const serviceEnvironmentsData = {
     badge: 'How You Actually Run',
-    title: 'A solo van, an office-and-vans crew, and a multi-trade outfit don’t leak in the same place',
+    title:
+      'A solo van, an office-and-vans crew, and a multi-trade outfit don’t leak in the same place',
     description:
       'Different setups create different kinds of pressure once the calls start coming in. The thing that helps a one-van plumber is not usually the same thing that helps a busier office-and-field operation hold callbacks and quotes together.',
     features: [
@@ -244,7 +246,8 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
 
   const processData = {
     badge: 'How A Conversation Usually Goes',
-    title: 'From “we’re losing work” to “we’ve stopped losing work” — without rebuilding the business',
+    title:
+      'From “we’re losing work” to “we’ve stopped losing work” — without rebuilding the business',
     description:
       'Nothing dramatic and no big reset. We look at how calls, callbacks, quotes, and follow-up actually run now, then put the missing pieces in where they relieve the most pressure first.',
     steps: [
@@ -326,44 +329,44 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
-        description:
-          'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
-        canonical: '/industries/home-services',
+    seo: {
+      title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
+      description:
+        'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
+      canonical: '/industries/home-services',
+    },
+    slug: 'home-services',
+    type: 'category',
+    category: 'home-services',
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
+    industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
+    hero: heroData,
+    imageStrip: imageStripData,
+    operatingPatterns: operatingPatternsData,
+    decisionChecklist: decisionChecklistData,
+    serviceEnvironments: serviceEnvironmentsData,
+    systemLayers: systemLayersData,
+    process: processData,
+    detailRoutes: detailRoutesData,
+    sectionControls: {
+      subIndustries: {
+        enabled: false,
       },
-      slug: 'home-services',
-      type: 'category',
-      category: 'home-services',
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
-      industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
-      hero: heroData,
-      imageStrip: imageStripData,
-      operatingPatterns: operatingPatternsData,
-      decisionChecklist: decisionChecklistData,
-      serviceEnvironments: serviceEnvironmentsData,
-      systemLayers: systemLayersData,
-      process: processData,
-      detailRoutes: detailRoutesData,
-      sectionControls: {
-        subIndustries: {
-          enabled: false,
-        },
-        caseStudies: {
-          enabled: false,
-        },
+      caseStudies: {
+        enabled: false,
       },
-      cta: {
-        title: 'Tell us where the work is bleeding out',
-        description:
-          'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
-      }
+    },
+    cta: {
+      title: 'Tell us where the work is bleeding out',
+      description:
+        'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
+    },
   };
 }
 

@@ -1,6 +1,6 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
+import { HeroActions, type HeroActionsProps } from '@/components/system/HeroActions';
 import { cn } from '@/components/ui/utils';
 
 import { BulletList } from './BulletList';
@@ -51,16 +51,10 @@ export interface SimpleHeroProps {
   /** Descriptive text explaining the service value proposition */
   description: string;
 
-  /** SmartCTA ownership context for page hero CTAs */
-  smartCta?: Pick<
-    SmartCTAProps,
-    | 'system'
-    | 'pageType'
-    | 'slug'
-    | 'allowSecondaryCTA'
-    | 'primaryActionVariant'
-    | 'primaryButtonCssPrefix'
-    | 'secondaryButtonCssPrefix'
+  /** Hero action button context for page hero actions */
+  heroActions?: Pick<
+    HeroActionsProps,
+    'allowSecondaryAction' | 'primaryActionVariant' | 'primaryButtonCssPrefix'
   >;
 
   /**
@@ -91,7 +85,7 @@ export function SimpleHero({
   title,
   headingTag = 'h1',
   description,
-  smartCta,
+  heroActions,
   cssPrefix = '',
   backgroundColor = '',
   list,
@@ -115,18 +109,11 @@ export function SimpleHero({
           marginBottom={false}
         />
 
-        {smartCta ? (
-          <SmartCTA
-            system={smartCta.system}
-            pageType={smartCta.pageType}
-            slug={smartCta.slug}
-            intent='entry'
-            position='hero'
-            allowSecondaryCTA={smartCta.allowSecondaryCTA}
-            primaryActionVariant={smartCta.primaryActionVariant}
-            primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
-            secondaryButtonCssPrefix={smartCta.secondaryButtonCssPrefix}
-            mode='actions-only'
+        {heroActions ? (
+          <HeroActions
+            allowSecondaryAction={heroActions.allowSecondaryAction}
+            primaryActionVariant={heroActions.primaryActionVariant}
+            primaryButtonCssPrefix={heroActions.primaryButtonCssPrefix}
           />
         ) : null}
 

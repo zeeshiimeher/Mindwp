@@ -6,8 +6,8 @@ import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { categories, getCategoryColors, resources } from '@/domains/resources/api';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamicParams = false;
 export const revalidate = false;
@@ -33,7 +33,11 @@ export async function generateMetadata({
     return {};
   }
 
-  return resolveSEO({ path: `/resources/category/${category.slug}`, type: 'resource-category', slug: category.slug });
+  return resolveSEO({
+    path: `/resources/category/${category.slug}`,
+    type: 'resource-category',
+    slug: category.slug,
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {

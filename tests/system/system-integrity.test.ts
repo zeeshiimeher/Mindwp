@@ -1,0 +1,90 @@
+// @vitest-environment node
+
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+
+import { describe, expect, test } from 'vitest';
+
+import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
+import { getSystemInvariantEntries } from '@/lib/system/invariants';
+import { resolveMetadata } from '@/lib/seo/resolveMetadata';
+
+import { getValidatorDefinitions } from '@/../scripts/core/system-manifest.mjs';
+
+const workspaceRoot = path.resolve(import.meta.dirname, '..', '..');
+const auditPath = path.join(workspaceRoot, 'docs/Planning/audit3.md');
+const integrityTargets = [
+    'src/components/system/PrimaryCTASection.tsx',
+    'src/components/system/RelatedContentSection.tsx',
+    'src/lib/seo/schema.ts',
+    'src/lib/seo/inlineLinking.ts',
+    'src/lib/content-graph/publishable.tsx',
+    'scripts/core/system-report.mjs',
+] as const;
+
+describe('system invariant: closure lock', () => {
+    test('audit appendix contains no PARTIAL statuses and deferred items are explicit', () => {
+        const audit = readFileSync(auditPath, 'utf8');
+
+        expect(audit.includes('FINAL STATUS: PARTIAL')).toBe(false);
+
+        const deferredBlocks = [...audit.matchAll(
+            /^FILE:\s+(.+?)\s*$\nFINAL STATUS:\s+DEFERRED\nENFORCED VIA:\s+(.+?)\nREASON:\s+([\s\S]+?)\nTRIGGER TO ENFORCE:\s+([\s\S]+?)\nRISK:\s+(.+?)$/gm
+        )];
+
+        expect(deferredBlocks.length).toBeGreaterThan(0);
+    });
+
+    test('critical closure files do not carry fallback markers or TODOs', () => {
+        for (const relativePath of integrityTargets) {
+            const source = readFileSync(path.join(workspaceRoot, relativePath), 'utf8');
+            expect(source.includes('TODO')).toBe(false);
+            expect(source.includes('fallbackTitle')).toBe(false);
+            expect(source.includes('fallbackDescription')).toBe(false);
+        }
+    });
+
+    test('required renderers do not silently return null', () => {
+        const primaryCta = readFileSync(
+            path.join(workspaceRoot, 'src/components/system/PrimaryCTASection.tsx'),
+            'utf8'
+        );
+        const relatedContent = readFileSync(
+            path.join(workspaceRoot, 'src/components/system/RelatedContentSection.tsx'),
+            'utf8'
+        );
+
+        expect(primaryCta.includes('return null')).toBe(false);
+        expect(relatedContent.includes('return null;')).toBe(false);
+    });
+
+    test('system invariants still resolve required SEO metadata for publishable entries', () => {
+        for (const entry of getSystemInvariantEntries()) {
+            const metadata = resolveMetadata(entry.data, entry.canonical);
+
+            expect(metadata.title?.trim().length, `Missing title for ${entry.id}`).toBeGreaterThan(0);
+            expect(metadata.description?.trim().length, `Missing description for ${entry.id}`).toBeGreaterThan(0);
+            expect(metadata.canonical).toBe(entry.canonical);
+        }
+    });
+
+    test('content graph stays duplicate-free', async () => {
+        const graph = await getInitializedContentGraph();
+        const nodes = Object.values(graph);
+        const ids = nodes.map(node => node.id);
+        const paths = nodes.map(node => node.path);
+
+        expect(new Set(ids).size).toBe(ids.length);
+        expect(new Set(paths).size).toBe(paths.length);
+    });
+
+    test('system report locks validator coverage against the manifest', () => {
+        const source = readFileSync(
+            path.join(workspaceRoot, 'scripts/core/system-report.mjs'),
+            'utf8'
+        );
+
+        expect(source.includes('Validator coverage incomplete.')).toBe(true);
+        expect(getValidatorDefinitions().length).toBeGreaterThan(0);
+    });
+});

@@ -71,7 +71,7 @@ export const normalizeInternalTarget = (
   const trimmed = href.trim();
 
   if (!trimmed || /^(mailto:|tel:|javascript:|#)/i.test(trimmed)) {
-    return null;
+    throw new Error('Invalid internal URL');
   }
 
   let url: URL;
@@ -79,11 +79,11 @@ export const normalizeInternalTarget = (
   try {
     url = new URL(trimmed, new URL(currentPath, baseOrigin));
   } catch {
-    return null;
+    throw new Error('Invalid internal URL');
   }
 
   if (url.origin !== new URL(baseOrigin).origin) {
-    return null;
+    throw new Error('Invalid internal URL');
   }
 
   const normalizedPath = normalizePath(url.pathname);

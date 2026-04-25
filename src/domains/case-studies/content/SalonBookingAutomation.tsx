@@ -156,61 +156,61 @@ function buildSalonBookingAutomation(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'Salon Booking Automation | 68% Online Booking Adoption',
-        description:
+    seo: {
+      title: 'Salon Booking Automation | 68% Online Booking Adoption',
+      description:
         'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
-        canonical: '/case-studies/salon-booking-automation',
-        openGraph: {
-          title: 'Why Salon Booking Systems Break Down | MindWP Case Study',
-          description:
-            'How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks.',
-        },
+      canonical: '/case-studies/salon-booking-automation',
+      openGraph: {
+        title: 'Why Salon Booking Systems Break Down | MindWP Case Study',
+        description:
+          'How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks.',
       },
-      slug: 'salon-booking-automation',
-      title: 'Salon Booking Automation',
-      industryCategory: 'beauty-personal-care',
-      industryLabel: 'Beauty & Personal Care',
-      industries: ['hair-salon'],
-      systems: ['smart-website-systems'],
-      topics: ['booking-automation', 'booking-systems'],
-      publishDate: '2025-12-15',
-      client: 'Velvet Hair Studio',
-      location: 'Liverpool, UK',
-      business: 'Velvet Hair Studio',
-      duration: '4 weeks',
-      completedDate: 'December 2025',
-      heroHeadline:
-        'How a Hair Salon Shifted to 68% Online Booking and Unlocked After-Hours Appointments',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'Booking Automation',
-        'Hair Salon',
-        'Online Booking',
-        'CRM Integration',
-        'Beauty & Personal Care',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'System Implementation' },
-        problem: { challengeBadgeLabel: 'The Booking Problem' },
-        solution: { solutionBadgeLabel: 'System Architecture' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Booking Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for salons' },
-          ],
-        },
-      }
+    },
+    slug: 'salon-booking-automation',
+    title: 'Salon Booking Automation',
+    industryCategory: 'beauty-personal-care',
+    industryLabel: 'Beauty & Personal Care',
+    industries: ['hair-salon'],
+    systems: ['smart-website-systems'],
+    topics: ['booking-automation', 'booking-systems'],
+    publishDate: '2025-12-15',
+    client: 'Velvet Hair Studio',
+    location: 'Liverpool, UK',
+    business: 'Velvet Hair Studio',
+    duration: '4 weeks',
+    completedDate: 'December 2025',
+    heroHeadline:
+      'How a Hair Salon Shifted to 68% Online Booking and Unlocked After-Hours Appointments',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'Booking Automation',
+      'Hair Salon',
+      'Online Booking',
+      'CRM Integration',
+      'Beauty & Personal Care',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'System Implementation' },
+      problem: { challengeBadgeLabel: 'The Booking Problem' },
+      solution: { solutionBadgeLabel: 'System Architecture' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Booking Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for salons' },
+        ],
+      },
+    },
   };
 }
 

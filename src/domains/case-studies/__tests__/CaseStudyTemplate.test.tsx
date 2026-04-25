@@ -29,10 +29,8 @@ vi.mock('@/components/system/PageEnforcement', () => ({
   CTARegistryProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
-vi.mock('@/components/system/SmartCTA', () => ({
-  SmartCTA: ({ position, title }: { position: string; title: string }) => (
-    <div data-testid='smart-cta'>{`${position}:${title}`}</div>
-  ),
+vi.mock('@/components/system/PrimaryCTASection', () => ({
+  PrimaryCTASection: ({ title }: { title: string }) => <div data-testid='smart-cta'>{title}</div>,
 }));
 
 vi.mock('@/components/system/SmartRelatedSection', () => ({
@@ -68,7 +66,15 @@ describe('CaseStudyTemplate', () => {
           { type: 'hero', introHtml: <>Intro</> },
           {
             type: 'results',
-            results: [{ metric: 'Replies', before: 'Low', after: 'Higher', improvement: 'Up', description: 'Desc' }],
+            results: [
+              {
+                metric: 'Replies',
+                before: 'Low',
+                after: 'Higher',
+                improvement: 'Up',
+                description: 'Desc',
+              },
+            ],
           },
           {
             type: 'problem',
@@ -86,7 +92,7 @@ describe('CaseStudyTemplate', () => {
 
     const ctas = screen.getAllByTestId('smart-cta');
     expect(ctas).toHaveLength(1);
-    expect(ctas[0]).toHaveTextContent('footer:Footer CTA');
+    expect(ctas[0]).toHaveTextContent('Footer CTA');
   });
 
   it('warns and skips invalid section shapes without crashing', () => {

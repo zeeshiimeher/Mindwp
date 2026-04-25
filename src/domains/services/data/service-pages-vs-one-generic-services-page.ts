@@ -98,5 +98,5 @@ export const servicePagesVsOneGenericServicesPage = {
     title: 'Compare where generic page structure hides demand',
     description:
       'See what changes when each service gets its own intent, proof, and next step instead of competing inside one mixed page.',
-  }
+  },
 } satisfies typeof smartWebsiteSystemsPage;

@@ -8,11 +8,7 @@ export function getServiceCanonicalPath(slug: string) {
   return `/services/${slug}`;
 }
 
-export function buildServiceSeo({
-  slug,
-  title,
-  description,
-}: BuildServiceSeoInput) {
+export function buildServiceSeo({ slug, title, description }: BuildServiceSeoInput) {
   const canonical = getServiceCanonicalPath(slug);
 
   return {

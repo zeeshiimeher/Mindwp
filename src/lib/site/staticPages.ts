@@ -222,7 +222,8 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     path: '/dev/cta-label-contract',
     name: 'CTA Label Contract',
     title: 'CTA Label Contract',
-    description: 'Internal SmartCTA contract surface for deterministic label and href validation.',
+    description:
+      'Internal PrimaryCTASection contract surface for deterministic label and href validation.',
     showOnHumanSitemap: false,
   },
   {
@@ -244,9 +245,10 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
   },
 ];
 
-export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = ALL_STATIC_ROUTE_DEFINITIONS.filter(
-  route => getIsSystemEnabled() || !INTERNAL_STATIC_ROUTE_PATHS.has(route.path)
-);
+export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] =
+  ALL_STATIC_ROUTE_DEFINITIONS.filter(
+    route => getIsSystemEnabled() || !INTERNAL_STATIC_ROUTE_PATHS.has(route.path)
+  );
 
 export const STATIC_PAGES: StaticPage[] = STATIC_ROUTE_DEFINITIONS.map(route => ({
   name: route.name,

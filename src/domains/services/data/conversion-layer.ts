@@ -357,5 +357,5 @@ export const conversionLayerPage = {
     title: 'Get a clear priority map for the conversion leaks that matter most',
     description:
       'We review the offer path, action step, and post-submit handoff so you leave knowing which leak is hurting revenue most, what to tighten first, and whether a fuller rebuild is actually necessary.',
-  }
+  },
 } satisfies ServicePageData;

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const roofingReviewGenerationSystem: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Roofing Review Generation System for Contractors',
     description:
       'Learn how a roofing review generation system automates post-job review requests to build local authority and attract more customers consistently.',
@@ -12,16 +12,16 @@ export const roofingReviewGenerationSystem: BlogPostData = {
         'Learn how a roofing review generation system automates post-job review requests to build local authority and attract more customers consistently.',
     },
   },
-    slug: 'roofing-review-generation-system',
-    title: 'Roofing Review Generation System',
-    publishDate: '2025-07-30',
-    authorKey: 'TECHNICAL',
-    category: 'home-services-industry',
-    industries: ['roofing'],
-    systems: ['reputation-review'],
-    topics: ['review-generation'],
-    tags: ['Roofing', 'Review Generation', 'Google Reviews', 'Local Authority', 'Automation'],
-    sections: [
+  slug: 'roofing-review-generation-system',
+  title: 'Roofing Review Generation System',
+  publishDate: '2025-07-30',
+  authorKey: 'TECHNICAL',
+  category: 'home-services-industry',
+  industries: ['roofing'],
+  systems: ['reputation-review'],
+  topics: ['review-generation'],
+  tags: ['Roofing', 'Review Generation', 'Google Reviews', 'Local Authority', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -98,5 +98,5 @@ export const roofingReviewGenerationSystem: BlogPostData = {
       content:
         'If your roofing company completes great work but has few reviews to show for it, an automated system can fix that. See how reputation systems generate reviews consistently.',
     },
-  ]
+  ],
 };

@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Realtor Local Visibility System for Lead Generation',
     description:
       'Learn how a realtor local visibility system for lead generation builds review authority, citation consistency, and local signals that drive map pack rankings.',
@@ -12,16 +12,16 @@ export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
         'Learn how a realtor local visibility system for lead generation builds review authority, citation consistency, and local signals that drive map pack rankings.',
     },
   },
-    slug: 'realtor-local-visibility-system-for-lead-generation',
-    title: 'Realtor Local Visibility System for Lead Generation',
-    publishDate: '2026-04-06',
-    authorKey: 'TECHNICAL',
-    category: 'local-authority-seo',
-    industries: ['realtor'],
-    systems: ['reputation-review'],
-    topics: ['local-visibility'],
-    tags: ['Realtor', 'Local Visibility', 'Lead Generation', 'Local SEO', 'Reputation'],
-    sections: [
+  slug: 'realtor-local-visibility-system-for-lead-generation',
+  title: 'Realtor Local Visibility System for Lead Generation',
+  publishDate: '2026-04-06',
+  authorKey: 'TECHNICAL',
+  category: 'local-authority-seo',
+  industries: ['realtor'],
+  systems: ['reputation-review'],
+  topics: ['local-visibility'],
+  tags: ['Realtor', 'Local Visibility', 'Lead Generation', 'Local SEO', 'Reputation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -96,5 +96,5 @@ export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
       content:
         'If your real estate business depends entirely on referrals for growth, a local visibility system can open a second acquisition channel. See how reputation automation builds the signals that put realtors in front of searching buyers and sellers.',
     },
-  ]
+  ],
 };

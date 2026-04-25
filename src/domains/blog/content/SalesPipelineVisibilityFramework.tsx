@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const salesPipelineVisibilityFramework: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Sales Pipeline Visibility Framework for Services',
     description:
       'Explore the sales pipeline visibility framework that gives service businesses real-time insight into deal progression, bottlenecks, and forecasted revenue.',
@@ -12,16 +12,16 @@ export const salesPipelineVisibilityFramework: BlogPostData = {
         'Explore the sales pipeline visibility framework that gives service businesses real-time insight into deal progression, bottlenecks, and forecasted revenue.',
     },
   },
-    slug: 'sales-pipeline-visibility-framework',
-    title: 'Sales Pipeline Visibility Framework',
-    publishDate: '2025-03-16',
-    authorKey: 'TECHNICAL',
-    category: 'crm-automation',
-    industries: [],
-    systems: ['crm-automation'],
-    topics: ['pipeline-visibility'],
-    tags: ['Pipeline Visibility', 'Sales Pipeline', 'CRM', 'Service Business', 'Forecasting'],
-    sections: [
+  slug: 'sales-pipeline-visibility-framework',
+  title: 'Sales Pipeline Visibility Framework',
+  publishDate: '2025-03-16',
+  authorKey: 'TECHNICAL',
+  category: 'crm-automation',
+  industries: [],
+  systems: ['crm-automation'],
+  topics: ['pipeline-visibility'],
+  tags: ['Pipeline Visibility', 'Sales Pipeline', 'CRM', 'Service Business', 'Forecasting'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -106,5 +106,5 @@ export const salesPipelineVisibilityFramework: BlogPostData = {
       content:
         'If you cannot see the current state of every deal in your sales process without asking your team, pipeline visibility can fix that. Explore how CRM automation provides the dashboard view you need.',
     },
-  ]
+  ],
 };

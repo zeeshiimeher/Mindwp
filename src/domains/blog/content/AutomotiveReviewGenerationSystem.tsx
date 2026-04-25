@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const automotiveReviewGenerationSystem: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Automotive Review Generation System for Shops',
     description:
       'Learn how an automotive review generation system automates post-service review requests to build workshop reputation and attract new customers.',
@@ -12,16 +12,16 @@ export const automotiveReviewGenerationSystem: BlogPostData = {
         'Learn how an automotive review generation system automates post-service review requests to build workshop reputation and attract new customers.',
     },
   },
-    slug: 'automotive-review-generation-system',
-    title: 'Automotive Review Generation System',
-    publishDate: '2025-08-23',
-    authorKey: 'TECHNICAL',
-    category: 'reputation-review',
-    industries: ['automotive'],
-    systems: ['reputation-review'],
-    topics: ['review-generation'],
-    tags: ['Automotive', 'Review Generation', 'Workshop Reputation', 'Google Reviews', 'Automation'],
-    sections: [
+  slug: 'automotive-review-generation-system',
+  title: 'Automotive Review Generation System',
+  publishDate: '2025-08-23',
+  authorKey: 'TECHNICAL',
+  category: 'reputation-review',
+  industries: ['automotive'],
+  systems: ['reputation-review'],
+  topics: ['review-generation'],
+  tags: ['Automotive', 'Review Generation', 'Workshop Reputation', 'Google Reviews', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -87,5 +87,5 @@ export const automotiveReviewGenerationSystem: BlogPostData = {
       content:
         'If your repair shop does honest work but has few reviews to prove it, an automated system can change that. See how reputation systems generate reviews consistently.',
     },
-  ]
+  ],
 };

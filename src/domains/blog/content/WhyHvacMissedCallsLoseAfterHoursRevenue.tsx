@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Why HVAC Missed Calls Lose After Hours Revenue',
     description:
       'Learn why HVAC missed calls lose after hours revenue when emergency customers call outside business hours and nobody is available to book the job.',
@@ -12,16 +12,16 @@ export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
         'Learn why HVAC missed calls lose after hours revenue when emergency customers call outside business hours and nobody is available to book the job.',
     },
   },
-    slug: 'why-hvac-missed-calls-lose-after-hours-revenue',
-    title: 'Why HVAC Missed Calls Lose After Hours Revenue',
-    publishDate: '2025-04-25',
-    authorKey: 'EDITORIAL',
-    category: 'home-services-industry',
-    industries: ['hvac'],
-    systems: ['ai-lead-handling'],
-    topics: ['missed-calls'],
-    tags: ['HVAC', 'Missed Calls', 'After Hours', 'Revenue Loss', 'Emergency Calls'],
-    sections: [
+  slug: 'why-hvac-missed-calls-lose-after-hours-revenue',
+  title: 'Why HVAC Missed Calls Lose After Hours Revenue',
+  publishDate: '2025-04-25',
+  authorKey: 'EDITORIAL',
+  category: 'home-services-industry',
+  industries: ['hvac'],
+  systems: ['ai-lead-handling'],
+  topics: ['missed-calls'],
+  tags: ['HVAC', 'Missed Calls', 'After Hours', 'Revenue Loss', 'Emergency Calls'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -94,5 +94,5 @@ export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
       content:
         'If your HVAC company loses emergency calls every evening and weekend, automated systems can capture that revenue. See how AI lead handling responds when your team cannot.',
     },
-  ]
+  ],
 };

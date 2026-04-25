@@ -8,7 +8,7 @@ import resourcePage from '@/app/resources/[slug]/page';
 import servicePage from '@/app/services/[...slug]/page';
 import { resetPageEnforcementSnapshots } from '@/components/system/PageEnforcement';
 
-import type { ContentGraphNode, ContentNodeType } from './types';
+import type { ContentGraphNode, ContentNodeType, ValidatedPublishableNode } from './types';
 
 export const PUBLISHABLE_NODE_TYPES = [
   'service',
@@ -28,38 +28,76 @@ export function toCatchAllParam(path: string, prefix: string): string[] {
   return path.replace(prefix, '').split('/').filter(Boolean);
 }
 
+function assertPublishableNode(
+  node: ContentGraphNode,
+  markup: string
+): asserts node is ValidatedPublishableNode {
+  if (!node.title?.trim() || !node.description?.trim() || !node.canonical?.trim()) {
+    throw new Error(`Publishable node missing SEO metadata for ${node.id}`);
+  }
+
+  if (!node.openGraph?.images || node.openGraph.images.length === 0) {
+    throw new Error(`Publishable node missing Open Graph images for ${node.id}`);
+  }
+
+  if (!node.robots) {
+    throw new Error(`Publishable node missing robots metadata for ${node.id}`);
+  }
+
+  if (!markup.includes('primary-cta-section__panel')) {
+    throw new Error(`Publishable node must register exactly one PrimaryCTASection for ${node.id}`);
+  }
+
+  if (markup.trim().length === 0) {
+    throw new Error(`Publishable render returned empty markup for ${node.id}`);
+  }
+}
+
 export async function renderPublishableNode(node: ContentGraphNode) {
   resetPageEnforcementSnapshots();
 
+  let markup: string;
+
   switch (node.type) {
     case 'service':
-      return renderToStaticMarkup(
+      markup = renderToStaticMarkup(
         await servicePage({
           params: Promise.resolve({ slug: toCatchAllParam(node.path, '/services/') }),
         })
       );
+      break;
     case 'feature':
-      return renderToStaticMarkup(
+      markup = renderToStaticMarkup(
         await featurePage({
           params: Promise.resolve({ slug: toCatchAllParam(node.path, '/features/') }),
         })
       );
+      break;
     case 'industry-category':
     case 'industry-detail':
-      return renderToStaticMarkup(
+      markup = renderToStaticMarkup(
         await industryPage({
           params: Promise.resolve({ slug: toCatchAllParam(node.path, '/industries/') }),
         })
       );
+      break;
     case 'blog':
-      return renderToStaticMarkup(await blogPage({ params: Promise.resolve({ slug: node.slug }) }));
+      markup = renderToStaticMarkup(
+        await blogPage({ params: Promise.resolve({ slug: node.slug }) })
+      );
+      break;
     case 'resource':
-      return renderToStaticMarkup(
+      markup = renderToStaticMarkup(
         await resourcePage({ params: Promise.resolve({ slug: node.slug }) })
       );
+      break;
     case 'case-study':
-      return renderToStaticMarkup(
+      markup = renderToStaticMarkup(
         await caseStudyPage({ params: Promise.resolve({ slug: node.slug }) })
       );
+      break;
   }
+
+  assertPublishableNode(node, markup);
+  return markup;
 }

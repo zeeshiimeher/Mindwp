@@ -5,6 +5,7 @@ import { ServiceSpectrumCardsSection } from '@/components/reusable/sections/core
 import {
   IndustryCaseStudiesSection,
   IndustryChallengesSection,
+  IndustryChecklistSection,
   IndustryComparisonSection,
   IndustryHeroSection,
   IndustryOperatingPatternsSection,
@@ -15,7 +16,10 @@ import {
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
+import {
+  PrimaryCTASection,
+  type PrimaryCTASectionProps,
+} from '@/components/system/PrimaryCTASection';
 import { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
 
@@ -28,6 +32,7 @@ export type IndustryDetailPageTemplateProps = {
   challenges?: React.ComponentProps<typeof IndustryChallengesSection>;
   operatingPatterns?: React.ComponentProps<typeof IndustryOperatingPatternsSection>;
   imageStrip?: React.ComponentProps<typeof ImageAccordionStripSection>;
+  decisionChecklist?: React.ComponentProps<typeof IndustryChecklistSection>;
   solutions?: React.ComponentProps<typeof IndustrySolutionsSection>;
   systemLayers?: React.ComponentProps<typeof IndustrySolutionsSection>;
 
@@ -41,7 +46,7 @@ export type IndustryDetailPageTemplateProps = {
 
   faq: React.ComponentProps<typeof FAQSection>;
   cta: Pick<
-    SmartCTAProps,
+    PrimaryCTASectionProps,
     | 'title'
     | 'description'
     | 'metaItems'
@@ -51,7 +56,7 @@ export type IndustryDetailPageTemplateProps = {
     | 'wrapper'
     | 'includeContainer'
   > & {
-    primaryAction?: { variant?: SmartCTAProps['primaryActionVariant'] };
+    primaryAction?: { variant?: PrimaryCTASectionProps['primaryActionVariant'] };
   };
 };
 
@@ -62,6 +67,7 @@ export function IndustryDetailPageTemplate({
   challenges,
   operatingPatterns,
   imageStrip,
+  decisionChecklist,
   solutions,
   systemLayers,
   comparison,
@@ -104,10 +110,7 @@ export function IndustryDetailPageTemplate({
         <main role='main'>
           <IndustryHeroSection
             {...hero}
-            smartCta={{
-              system,
-              pageType: 'industry-detail',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
           />
@@ -117,6 +120,7 @@ export function IndustryDetailPageTemplate({
           {challengeSection && <IndustryOperatingPatternsSection {...challengeSection} />}
 
           {comparison && <IndustryComparisonSection {...comparison} />}
+          {decisionChecklist && <IndustryChecklistSection {...decisionChecklist} />}
           {resolvedDetailJourneySection && (
             <ServiceSpectrumCardsSection {...resolvedDetailJourneySection} />
           )}
@@ -125,10 +129,7 @@ export function IndustryDetailPageTemplate({
           {explore && <IndustryExploreSection title='Explore Related Systems' {...explore} />}
           {caseStudies && <IndustryCaseStudiesSection {...caseStudies} />}
           <FAQSection {...faq} />
-          <SmartCTA
-            system={system}
-            pageType='industry-detail'
-            slug={slug}
+          <PrimaryCTASection
             title={cta.title}
             description={cta.description}
             metaItems={cta.metaItems}

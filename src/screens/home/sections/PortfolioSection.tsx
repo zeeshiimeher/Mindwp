@@ -3,7 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { ActionButtons } from '@/components/system/ActionButtons';
 
 const BLOCK = 'portfolio-section';
 
@@ -86,7 +86,10 @@ export function PortfolioSection() {
 
         <div className={`${BLOCK}__grid`}>
           {portfolioItems.map(item => (
-            <div key={item.title} className={`${BLOCK}__card ${BLOCK}__card--${item.visualVariant}`}>
+            <div
+              key={item.title}
+              className={`${BLOCK}__card ${BLOCK}__card--${item.visualVariant}`}
+            >
               <div className={`${BLOCK}__bg`} aria-hidden='true' />
 
               <div className={`${BLOCK}__content ${BLOCK}__content-stack`}>
@@ -116,12 +119,7 @@ export function PortfolioSection() {
 
         <div className={`${BLOCK}__bottom`}>
           <p className={`${BLOCK}__prompt`}>Want to see your business here?</p>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='home'
-            mode='actions-only'
-          />
+          <ActionButtons allowSecondaryAction />
         </div>
       </div>
     </SectionWrapper>

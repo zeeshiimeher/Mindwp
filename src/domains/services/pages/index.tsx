@@ -15,7 +15,7 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -293,12 +293,7 @@ export function ServicesLanding() {
             If one of these service paths already matches the bottleneck you are seeing, the next
             step is to pressure-test that diagnosis before you invest in the wrong build.
           </div>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='services'
-            intent='conversion'
-            position='footer'
+          <PrimaryCTASection
             title='Need help identifying the right system build first?'
             description='Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.'
             primaryActionVariant='white'

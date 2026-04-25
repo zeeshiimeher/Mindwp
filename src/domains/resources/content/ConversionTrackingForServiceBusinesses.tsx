@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const conversionTrackingForServiceBusinesses: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Conversion Tracking for Service Businesses Guide',
     description:
       'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
     canonical,
   },
-    title: 'Conversion Tracking for Service Businesses Guide',
-    description:
+  title: 'Conversion Tracking for Service Businesses Guide',
+  description:
     'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
-    category: 'smart-website-systems',
-    publishedAt: '2025-12-29',
-    systems: ['smart-website-systems'],
-    industries: [],
-    topics: ['conversion-tracking'],
-    primaryService: 'smart-website-systems',
-    sections: [
+  category: 'smart-website-systems',
+  publishedAt: '2025-12-29',
+  systems: ['smart-website-systems'],
+  industries: [],
+  topics: ['conversion-tracking'],
+  primaryService: 'smart-website-systems',
+  sections: [
     {
       type: 'hero',
       heading: 'Conversion Tracking for Service Businesses',
@@ -178,5 +178,5 @@ export const conversionTrackingForServiceBusinesses: ResourceData = {
       content: getRelatedResourcesContent('smart-website-systems'),
       resources: getRelatedResources('smart-website-systems', canonical),
     },
-  ]
+  ],
 };

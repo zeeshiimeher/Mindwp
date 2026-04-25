@@ -69,16 +69,16 @@ const reputationFaqItems = [
 const slug = 'reputation';
 
 export const reputationData: FeaturePageData = {
-    slug,
-    seo: buildFeatureSeo({
+  slug,
+  seo: buildFeatureSeo({
     slug,
     title: 'Reputation | Structured Review Management Layer',
     description:
       'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
   }),
-    systems: ['reputation-review', 'local-seo-authority'],
-    topics: ['review-generation', 'negative-review-response'],
-    hero: {
+  systems: ['reputation-review', 'local-seo-authority'],
+  topics: ['review-generation', 'negative-review-response'],
+  hero: {
     badge: 'Reputation Management',
     title: 'Structured review management for consistent trust',
     description:
@@ -90,7 +90,7 @@ export const reputationData: FeaturePageData = {
       { value: 'Auto', label: 'Review Requests' },
     ],
   },
-    sections: {
+  sections: {
     process: {
       badge: 'Simple Process',
       title: 'How structured review management works',
@@ -302,9 +302,9 @@ export const reputationData: FeaturePageData = {
       ],
     },
   },
-    cta: {
+  cta: {
     title: 'Discuss structured review management',
     description:
       'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
-  }
+  },
 };

@@ -22,7 +22,7 @@ export const localSeoAuthorityPage = {
     'authority-signals',
     'local-service-pages',
   ],
-  badge: "Local SEO Authority",
+  badge: 'Local SEO Authority',
   category: 'Visibility Systems',
   hero: {
     badge: 'Get Found Locally',
@@ -429,5 +429,5 @@ export const localSeoAuthorityPage = {
     title: 'See why nearby customers are finding other businesses first',
     description:
       'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
-  }
+  },
 } satisfies ServicePageData;

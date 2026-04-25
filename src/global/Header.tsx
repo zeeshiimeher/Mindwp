@@ -1,7 +1,7 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { getPrimaryNavigationEntries } from '@/lib/content-quality/inventory';
-import { resolveGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
+import { buildGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
 
 import { HeaderMobileMenuIsland } from './HeaderMobileMenuIsland';
 import { Logo } from './Logo';
@@ -28,7 +28,7 @@ const PRIMARY_NAV_PATHS = [
 ] as const;
 
 export async function Header() {
-  const { primaryAction } = resolveGlobalPrimaryCtaLinks();
+  const { primaryAction } = buildGlobalPrimaryCtaLinks();
   const inventoryEntries = await getPrimaryNavigationEntries(PRIMARY_NAV_PATHS);
   const navLinks = inventoryEntries.map(entry => ({
     label: entry.title.replace(/^MindWP\s+/i, ''),

@@ -8,22 +8,12 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { useCTARegistry, usePageIdentity } from '@/components/system/PageEnforcement';
 import { cn } from '@/components/ui/utils';
-import {
-  type CtaTone,
-  DEFAULT_CTA_LABEL,
-  resolveCtaLabel,
-} from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
-import { registerCTA, reportCTAError, unregisterCTA } from '@/lib/cta/ctaRegistry';
-import {
-  buildPageId,
-  type CTAIntent,
-  type CTAPosition,
-  type PageType,
-  toContactSourceType,
-} from '@/lib/page/pageIdentity';
+import { registerCTA, unregisterCTA } from '@/lib/cta/ctaRegistry';
+import { getPrimaryCTA, getSecondaryCTA } from '@/lib/cta/primaryAction';
+import { toContactSourceType } from '@/lib/page/pageIdentity';
 
-const BLOCK = 'cta-section';
+const BLOCK = 'primary-cta-section';
 
 function hasRenderableText(value: ReactNode | undefined): boolean {
   if (value === null || value === undefined || typeof value === 'boolean') {
@@ -54,20 +44,12 @@ function isActionableButton(action?: ButtonProps): boolean {
   );
 }
 
-export interface SmartCTAProps {
-  system: string;
-  slug: string;
-  pageId?: string;
-  pageType?: PageType;
-  intent?: CTAIntent;
-  position?: CTAPosition;
-  mode?: 'full' | 'actions-only';
+export interface PrimaryCTASectionProps {
+  title: string;
+  description: string;
   backgroundColor?: string;
   cssPrefix?: string;
-  actionClassName?: string;
   primaryButtonCssPrefix?: string;
-  title?: string;
-  description?: string;
   badge?: {
     text: string;
     icon?: ReactNode;
@@ -75,130 +57,101 @@ export interface SmartCTAProps {
   };
   headingLevel?: 'h2' | 'h3';
   primaryActionVariant?: ButtonProps['variant'];
-  tone?: CtaTone;
   allowSecondaryCTA?: true;
-  secondaryButtonCssPrefix?: string;
   metaItems?: Array<{ text: string }>;
   wrapper?: 'section' | 'none';
   includeContainer?: boolean;
 }
 
-export function SmartCTA({
-  system,
-  slug,
-  pageId,
-  pageType: pageTypeProp,
-  intent,
-  position,
-  mode = 'full',
+export function PrimaryCTASection({
   backgroundColor = '',
   cssPrefix = '',
-  actionClassName = '',
   primaryButtonCssPrefix,
   title,
   description,
   badge,
   headingLevel = 'h2',
   primaryActionVariant = 'white',
-  tone = 'descriptive',
   allowSecondaryCTA,
-  secondaryButtonCssPrefix,
   metaItems = [],
   wrapper = 'section',
   includeContainer = true,
-}: SmartCTAProps) {
+}: PrimaryCTASectionProps) {
   const instanceId = useId();
   const pageIdentity = usePageIdentity();
   const activeRegistry = useCTARegistry();
-  const resolvedSystem = system ?? 'smart-website-systems';
-  const resolvedTitle = title ?? DEFAULT_CTA_LABEL;
-  const resolvedPageType = pageTypeProp ?? pageIdentity?.pageType;
-  const resolvedPageId =
-    pageId ??
-    pageIdentity?.pageId ??
-    (resolvedPageType ? buildPageId(resolvedPageType, slug) : undefined);
-  const resolvedIntent = intent ?? (mode === 'actions-only' ? 'entry' : 'conversion');
-  const resolvedPosition = position ?? (mode === 'actions-only' ? 'hero' : 'footer');
 
-  if (!resolvedSystem || !resolvedPageId || !resolvedPageType || !slug) {
-    throw new Error('SmartCTA requires system, slug, page identity, CTA intent, and CTA position.');
+  if (!title.trim() || !description.trim()) {
+    throw new Error('PrimaryCTASection requires title and description');
   }
 
   if (!pageIdentity || !activeRegistry) {
-    throw new Error('SmartCTA requires CTARegistryProvider at the template level.');
+    throw new Error('PrimaryCTASection requires CTARegistryProvider at the template level.');
   }
-
-  if (
-    pageIdentity &&
-    ((pageId && pageId !== pageIdentity.pageId) ||
-      (pageTypeProp && pageTypeProp !== pageIdentity.pageType))
-  ) {
-    throw new Error('SmartCTA page identity props must match the active CTARegistryProvider.');
-  }
-
-  const pageTypeForHref: ContactSourceType = toContactSourceType(resolvedPageType);
-  const pageType = pageTypeForHref;
   const registry = activeRegistry;
+  const slug = pageIdentity.pageId.split(':').slice(1).join(':').trim();
+
+  if (!slug) {
+    throw new Error('PrimaryCTASection requires a page identity slug.');
+  }
+
+  const pageTypeForHref: ContactSourceType = toContactSourceType(pageIdentity.pageType);
+  const primaryLabel = getPrimaryCTA();
+  const secondaryLabel = getSecondaryCTA(allowSecondaryCTA);
+
+  if (!allowSecondaryCTA && secondaryLabel) {
+    throw new Error('Secondary CTA requires allowSecondaryCTA: true');
+  }
 
   useEffect(() => {
+    registerCTA(registry, {
+      instanceId,
+      pageId: pageIdentity.pageId,
+      pageType: pageIdentity.pageType,
+      intent: 'conversion',
+      position: 'footer',
+    });
+
     return () => {
       unregisterCTA(registry, instanceId);
     };
-  }, [instanceId, registry]);
-
-  try {
-    registerCTA(registry, {
-      instanceId,
-      pageId: resolvedPageId,
-      pageType: resolvedPageType,
-      intent: resolvedIntent,
-      position: resolvedPosition,
-    });
-  } catch (error) {
-    const handledError = error instanceof Error ? error : new Error('CTA registration failed.');
-    reportCTAError(handledError);
-    return null;
-  }
-
-  const label = resolveCtaLabel({
-    system: resolvedSystem,
-    pageType: resolvedPageType,
-    intent: resolvedIntent,
-    tone,
-  });
+  }, [instanceId, pageIdentity.pageId, pageIdentity.pageType, registry]);
 
   const primaryButtonAction: ButtonProps = {
     variant: primaryActionVariant,
-    label,
+    label: primaryLabel,
     ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
     href: buildContactHref({
-      system: resolvedSystem,
-      sourceType: pageType,
+      system: 'smart-website-systems',
+      sourceType: pageTypeForHref,
       slug,
     }),
   };
 
-  if (mode === 'full' && resolvedTitle.trim().length === 0) {
-    throw new Error('SmartCTA requires a non-empty title.');
-  }
+  const secondaryButtonAction: ButtonProps | undefined = secondaryLabel
+    ? {
+        variant: 'outline',
+        label: secondaryLabel,
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: pageTypeForHref,
+          slug,
+        }),
+      }
+    : undefined;
 
   if (!isActionableButton(primaryButtonAction)) {
-    throw new Error('SmartCTA requires an actionable primary action.');
+    throw new Error('PrimaryCTASection requires an actionable primary action.');
   }
 
-  if (mode === 'actions-only') {
-    return (
-      <div className={cn('cta__actions', actionClassName)}>
-        <Button {...primaryButtonAction} />
-      </div>
-    );
+  if (secondaryButtonAction && !allowSecondaryCTA) {
+    throw new Error('Secondary CTA requires allowSecondaryCTA: true');
   }
 
   const HeadingTag = headingLevel;
-  const rootClassName = cn(BLOCK, 'cta', cssPrefix);
+  const rootClassName = cn(BLOCK, cssPrefix);
   const panelClassName = cn(
-    'cta__panel',
-    'cta__content',
+    `${BLOCK}__panel`,
     backgroundColor,
     wrapper === 'none' && !includeContainer ? rootClassName : ''
   );
@@ -215,13 +168,14 @@ export function SmartCTA({
       )}
 
       <div className='cta__animate-in'>
-        <HeadingTag className='cta-heading'>{resolvedTitle}</HeadingTag>
+        <HeadingTag className='cta-heading'>{title}</HeadingTag>
       </div>
 
       {description && <p className='cta__text'>{description}</p>}
 
-      <div className='cta__actions'>
+      <div className={`${BLOCK}__actions`}>
         <Button {...primaryButtonAction} />
+        {secondaryButtonAction ? <Button {...secondaryButtonAction} /> : null}
       </div>
 
       {metaItems.length > 0 && (

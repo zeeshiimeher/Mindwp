@@ -109,23 +109,23 @@ const finalCta = {
 };
 
 export const hvacReviewGenerationFramework: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'HVAC Review Generation Framework',
     description:
       'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
     canonical,
   },
-    title: 'HVAC Review Generation Framework',
-    description:
+  title: 'HVAC Review Generation Framework',
+  description:
     'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-    category: 'reputation-review',
-    publishedAt: '2026-02-02',
-    systems: ['reputation-review'],
-    industries: ['hvac'],
-    topics: ['review-generation'],
-    primaryService: 'reputation-review',
-    sections: [
+  category: 'reputation-review',
+  publishedAt: '2026-02-02',
+  systems: ['reputation-review'],
+  industries: ['hvac'],
+  topics: ['review-generation'],
+  primaryService: 'reputation-review',
+  sections: [
     {
       type: 'hero',
       heading: 'HVAC Review Generation Framework',
@@ -181,5 +181,5 @@ export const hvacReviewGenerationFramework: ResourceData = {
       content: getRelatedResourcesContent('reputation-review'),
       resources: getRelatedResources('reputation-review', canonical),
     },
-  ]
+  ],
 };

@@ -15,14 +15,14 @@ export const missedCallRecoverySystemPage = {
   }),
   systems: ['ai-lead-handling'],
   topics: ['missed-calls', 'lead-response-time'],
-  badge: "Missed Call Recovery",
+  badge: 'Missed Call Recovery',
   category: 'Lead Protection Systems',
   hero: {
     badge: 'Missed Call Recovery',
     title: 'The Phone Rang. Nobody Was Free.',
     description:
       'Mid-job. On another call. Driving. The person calling needed something done. Got voicemail. Tried the next name on Google. That one picked up.',
-    list: ["Gone", "No record", "No callback"],
+    list: ['Gone', 'No record', 'No callback'],
     cssPrefix: 'missed-call-recovery-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
@@ -329,5 +329,5 @@ export const missedCallRecoverySystemPage = {
     title: 'Get a clear missed-call recovery priority before you change the stack',
     description:
       'We review current call handling, response delay, and after-hours gaps so you leave with the highest-risk missed-call points, the first recovery fixes to make, and whether a larger communication system is actually needed.',
-  }
+  },
 } satisfies ServicePageData;

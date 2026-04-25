@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ChecklistCardsSection,
@@ -14,7 +16,7 @@ import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 import type { ServicePageData } from '@/domains/services/types';
 
@@ -37,7 +39,7 @@ interface AiLeadHandlingRendererProps {
   slug: string;
 }
 
-export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererProps) {
+export function AiLeadHandlingRenderer({ data, slug: _slug }: AiLeadHandlingRendererProps) {
   const { hero, cta } = data;
   const sections = data.sections as AiLeadHandlingSections;
   const {
@@ -65,10 +67,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             badge={hero.badge ?? data.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             list={hero.list}
@@ -203,10 +202,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             faqs={faqSection.faqs}
             cssPrefix='ai-response-faq'
           />
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

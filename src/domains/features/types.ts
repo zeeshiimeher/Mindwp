@@ -1,5 +1,4 @@
 import type { LucideIcon } from 'lucide-react';
-import type { SharedSeoData } from '@/domains/shared/seo';
 
 import type {
   FeatureCategory,
@@ -7,6 +6,7 @@ import type {
   ScenarioSolutionCardProps,
   ServiceBenefitItem,
 } from '@/components/reusable/single';
+import type { SharedSeoData } from '@/domains/shared/seo';
 import type { VariantType } from '@/lib/ui/variantStyles';
 
 type StatItem = {
@@ -101,6 +101,7 @@ type TestimonialsSection = {
 };
 
 type TestimonialSection = {
+  title?: string;
   quote: string;
   author: string;
   business: string;

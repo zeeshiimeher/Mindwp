@@ -15,7 +15,7 @@ export const systemMigrationPlatformConsolidationPage = {
   }),
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
-  badge: "Platform Migration",
+  badge: 'Platform Migration',
   category: 'Migration Pathway Services',
   hero: {
     badge: 'System Migration & Platform Consolidation',
@@ -344,5 +344,5 @@ export const systemMigrationPlatformConsolidationPage = {
     title: 'Want to move platforms and actually fix things this time?',
     description:
       "Tell us what's frustrating you about the current setup. We'll tell you whether migration is the answer — and what else needs to change for the move to be worth it.",
-  }
+  },
 } satisfies ServicePageData;

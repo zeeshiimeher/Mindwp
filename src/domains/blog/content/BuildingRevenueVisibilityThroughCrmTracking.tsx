@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
-    seo: {
+  seo: {
     title: 'Building Revenue Visibility Through CRM Tracking',
     description:
       'Learn how building revenue visibility through CRM tracking connects your pipeline data to real financial outcomes so you can see where revenue originates.',
@@ -12,16 +12,16 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
         'Learn how building revenue visibility through CRM tracking connects your pipeline data to real financial outcomes so you can see where revenue originates.',
     },
   },
-    slug: 'building-revenue-visibility-through-crm-tracking',
-    title: 'Building Revenue Visibility Through CRM Tracking',
-    publishDate: '2025-02-12',
-    authorKey: 'TECHNICAL',
-    category: 'crm-automation',
-    industries: [],
-    systems: ['crm-automation'],
-    topics: ['revenue-visibility', 'revenue-tracking'],
-    tags: ['Revenue Visibility', 'CRM Tracking', 'Service Business', 'Pipeline', 'Attribution'],
-    sections: [
+  slug: 'building-revenue-visibility-through-crm-tracking',
+  title: 'Building Revenue Visibility Through CRM Tracking',
+  publishDate: '2025-02-12',
+  authorKey: 'TECHNICAL',
+  category: 'crm-automation',
+  industries: [],
+  systems: ['crm-automation'],
+  topics: ['revenue-visibility', 'revenue-tracking'],
+  tags: ['Revenue Visibility', 'CRM Tracking', 'Service Business', 'Pipeline', 'Attribution'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -111,5 +111,5 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
       content:
         'If you know your total revenue but cannot trace it to specific channels, services, or campaigns, CRM-based tracking can close that gap. Explore how CRM automation builds revenue visibility.',
     },
-  ]
+  ],
 };

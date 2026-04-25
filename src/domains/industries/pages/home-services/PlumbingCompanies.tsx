@@ -117,7 +117,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         title: 'Pull every channel into one queue overnight',
         description:
-          'Calls, forms, texts, and WhatsApps from the evening all land in one place and get tagged by urgency instead of by channel. That makes the first hour of the morning less like a search mission through yesterday\'s messages.',
+          "Calls, forms, texts, and WhatsApps from the evening all land in one place and get tagged by urgency instead of by channel. That makes the first hour of the morning less like a search mission through yesterday's messages.",
         icon: Inbox,
         features: [
           'One queue across calls, forms, texts and WhatsApp',
@@ -195,8 +195,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       },
       {
         name: 'Get the reputation onto the map',
-        description:
-          'For when the work is good and the Google profile does not show it.',
+        description: 'For when the work is good and the Google profile does not show it.',
         price: 'Stage 3',
         priceDetail: 'Start here if the review count is the embarrassment',
         features: [
@@ -210,12 +209,14 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const exploreData = {
     badge: 'Related',
-    description: 'These are the supporting services plumbing firms tend to lean on most once they can see where evening calls, leak jobs, and refit quotes are slipping. Each one helps hold response, follow-up, proof, or visibility together a bit better.',
+    description:
+      'These are the supporting services plumbing firms tend to lean on most once they can see where evening calls, leak jobs, and refit quotes are slipping. Each one helps hold response, follow-up, proof, or visibility together a bit better.',
     cards: [
       {
         icon: Wrench,
         title: 'Smart Website Systems',
-        description: 'Helps enquiry, dispatch, and quote handling stay connected through a busy week instead of splitting between calls, texts, and office memory.',
+        description:
+          'Helps enquiry, dispatch, and quote handling stay connected through a busy week instead of splitting between calls, texts, and office memory.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -223,7 +224,8 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: PhoneOff,
         title: 'AI Lead Handling',
-        description: 'Catches after-hours bursts and leak calls before the next number is dialled while the homeowner is still standing in the problem.',
+        description:
+          'Catches after-hours bursts and leak calls before the next number is dialled while the homeowner is still standing in the problem.',
         href: '/services/ai-lead-handling',
         gradient: 'teal',
         iconBg: 'teal',
@@ -231,7 +233,8 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Compass,
         title: 'Local Authority & SEO',
-        description: 'Helps you stay visible for "emergency plumber near me" the moment the stopcock comes out and someone realises this is not waiting until tomorrow.',
+        description:
+          'Helps you stay visible for "emergency plumber near me" the moment the stopcock comes out and someone realises this is not waiting until tomorrow.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -239,7 +242,8 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Reviews',
-        description: 'Turns finished fixes into proof on Maps and search, so the next homeowner sees recent jobs that feel close to their own situation.',
+        description:
+          'Turns finished fixes into proof on Maps and search, so the next homeowner sees recent jobs that feel close to their own situation.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -281,42 +285,41 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       },
       {
         question: 'When does the review request go out without being awkward?',
-        answer:
-          'The day after the fix, while the kitchen is dry and the relief is fresh.',
+        answer: 'The day after the fix, while the kitchen is dry and the relief is fresh.',
       },
     ],
   };
 
   return {
-      seo: {
-        title: 'Plumbing Firms \u2014 Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
-        description:
-          'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
-        canonical: '/industries/home-services/plumbing-companies',
-      },
-      slug: 'plumbing-companies',
-      industries: ['plumbing'],
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['missed-calls', 'lead-management', 'review-generation'],
-      type: 'detail',
-      parentSlug: 'home-services',
-      hero: { ...heroData },
-      operatingPatterns: operatingPatternsData,
-      workflowExamples: workflowExamplesData,
-      systemLayers: systemLayersData,
-      pathways: pathwaysData,
-      explore: exploreData,
-      faq: faqData,
-      cta: {
-        title: 'Tell us about last Tuesday\u2019s 7pm call',
-        description:
-          'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
-      }
+    seo: {
+      title: 'Plumbing Firms \u2014 Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
+      description:
+        'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+      canonical: '/industries/home-services/plumbing-companies',
+    },
+    slug: 'plumbing-companies',
+    industries: ['plumbing'],
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['missed-calls', 'lead-management', 'review-generation'],
+    type: 'detail',
+    parentSlug: 'home-services',
+    hero: { ...heroData },
+    operatingPatterns: operatingPatternsData,
+    workflowExamples: workflowExamplesData,
+    systemLayers: systemLayersData,
+    pathways: pathwaysData,
+    explore: exploreData,
+    faq: faqData,
+    cta: {
+      title: 'Tell us about last Tuesday\u2019s 7pm call',
+      description:
+        'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
+    },
   };
 }
 

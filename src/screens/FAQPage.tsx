@@ -3,7 +3,7 @@ import { Mail, Phone } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import {
   Accordion,
   AccordionContent,
@@ -134,8 +134,8 @@ export function FAQPage() {
               </Badge>
               <h1>Frequently Asked Questions</h1>
               <p className='text-muted-foreground text-lg l-container l-container--narrow'>
-                Got questions? We&apos;ve got answers. If you need more context, start a conversation
-                and we&apos;ll help.
+                Got questions? We&apos;ve got answers. If you need more context, start a
+                conversation and we&apos;ll help.
               </p>
             </div>
           </div>
@@ -156,7 +156,10 @@ export function FAQPage() {
               <TabsContent value='general'>
                 <Accordion type='single' collapsible className='w-full'>
                   {faqCategories.general.map(faq => (
-                    <AccordionItem key={`general-${faq.question}`} value={`general-${faq.question}`}>
+                    <AccordionItem
+                      key={`general-${faq.question}`}
+                      value={`general-${faq.question}`}
+                    >
                       <AccordionTrigger className='text-left'>{faq.question}</AccordionTrigger>
                       <AccordionContent className='text-muted-foreground'>
                         {faq.answer}
@@ -195,7 +198,10 @@ export function FAQPage() {
               <TabsContent value='pricing'>
                 <Accordion type='single' collapsible className='w-full'>
                   {faqCategories.pricing.map(faq => (
-                    <AccordionItem key={`pricing-${faq.question}`} value={`pricing-${faq.question}`}>
+                    <AccordionItem
+                      key={`pricing-${faq.question}`}
+                      value={`pricing-${faq.question}`}
+                    >
                       <AccordionTrigger className='text-left'>{faq.question}</AccordionTrigger>
                       <AccordionContent className='text-muted-foreground'>
                         {faq.answer}
@@ -230,8 +236,8 @@ export function FAQPage() {
             <Card className='p-8 md:p-12 text-center'>
               <h2 className='mb-4'>Still Have Questions?</h2>
               <p className='text-muted-foreground mb-8'>
-                If the FAQ doesn&apos;t cover your situation, discuss your project and we&apos;ll point you
-                to the right next step.
+                If the FAQ doesn&apos;t cover your situation, discuss your project and we&apos;ll
+                point you to the right next step.
               </p>
               <div className='faq-page__contact-actions'>
                 <Button
@@ -255,24 +261,14 @@ export function FAQPage() {
 
         {/* CTA */}
         <SectionWrapper className='footer-cta cta' padding='none'>
-          <div>
-            <div className='cta__panel cta__content bg-gradient-primary'>
-              <h2 className='cta-heading'>Ready to Get Started?</h2>
-              <p className='cta__text'>
-                If you want clarity on the right system, start a conversation and we&apos;ll help you
-                map the right next move.
-              </p>
-              <div className='cta__actions'>
-                <SmartCTA
-                  system='smart-website-systems'
-                  pageType='page'
-                  slug='faq'
-                  mode='actions-only'
-                  primaryActionVariant='white'
-                />
-              </div>
-            </div>
-          </div>
+          <PrimaryCTASection
+            title='Ready to Get Started?'
+            description="If you want clarity on the right system, start a conversation and we'll help you map the right next move."
+            primaryActionVariant='white'
+            backgroundColor='bg-gradient-primary'
+            wrapper='none'
+            includeContainer={false}
+          />
         </SectionWrapper>
       </main>
     </div>

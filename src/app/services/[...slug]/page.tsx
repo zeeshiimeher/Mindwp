@@ -9,8 +9,8 @@ import {
   renderServicePageBySlug,
 } from '@/domains/services/config';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema, buildServiceSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamicParams = false;
 export const revalidate = false;

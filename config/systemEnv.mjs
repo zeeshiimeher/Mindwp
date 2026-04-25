@@ -1,13 +1,14 @@
 import '../scripts/setup-env.mjs';
 
-import { buildSystemRawEnv, systemEnvSchema } from './env.schema.shared.mjs';
 import { ensureSetupEnvNodeOptions } from '../scripts/setup-env.mjs';
+
+import { buildSystemRawEnv, systemEnvSchema } from './env.schema.shared.mjs';
 
 export function readSystemEnv(source = process.env) {
   return systemEnvSchema.parse(buildSystemRawEnv(source));
 }
 
-export const systemEnv = new Proxy(/** @type {ReturnType<typeof readSystemEnv>} */({}), {
+export const systemEnv = new Proxy(/** @type {ReturnType<typeof readSystemEnv>} */ ({}), {
   get(_target, prop) {
     return readSystemEnv()[prop];
   },

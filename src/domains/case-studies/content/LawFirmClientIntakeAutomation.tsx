@@ -6,9 +6,9 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
   const heroIntroHtml = (
     <>
       The enquiry came in. Then the paperwork slowed everything down. Whitfield Legal in Plymouth
-      was hearing from the right people, but too many of those early enquiries got stuck in the
-      same place: forms to send, documents to chase, and long silences while the client wondered
-      whether another firm might move faster.
+      was hearing from the right people, but too many of those early enquiries got stuck in the same
+      place: forms to send, documents to chase, and long silences while the client wondered whether
+      another firm might move faster.
     </>
   );
 
@@ -122,58 +122,64 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
   ];
 
   return {
-      seo: {
+    seo: {
+      title: 'Law firm intake case study: faster enquiry-to-intake handling',
+      description:
+        'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
+      canonical: '/case-studies/law-firm-intake-stalled-after-first-enquiry',
+      openGraph: {
         title: 'Law firm intake case study: faster enquiry-to-intake handling',
         description:
-        'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
-        canonical: '/case-studies/law-firm-intake-stalled-after-first-enquiry',
-        openGraph: {
-          title: 'Law firm intake case study: faster enquiry-to-intake handling',
-          description:
-            'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
-        },
+          'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
       },
-      slug: 'law-firm-intake-stalled-after-first-enquiry',
-      title: 'The enquiry came in. Then the paperwork slowed everything down.',
-      industryCategory: 'professional-services',
-      industryLabel: 'Professional Services',
-      industries: ['law-firm'],
-      systems: ['revenue-growth'],
-      topics: ['lead-management', 'crm-pipeline', 'follow-up'],
-      publishDate: '2026-04-15',
-      client: 'Whitfield Legal',
-      location: 'Plymouth, UK',
-      business: 'Whitfield Legal',
-      duration: '12 weeks',
-      completedDate: 'April 2026',
-      heroHeadline: 'The enquiry came in. Then the paperwork slowed everything down.',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: ['Client Intake', 'Law Firm', 'Document Collection', 'Follow-Up', 'Professional Services'],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'First Enquiry' },
-        problem: { challengeBadgeLabel: 'What Was Happening' },
-        process: {
-          implementationBadgeLabel: 'How It Started Working Differently',
-          implementationSectionTitle: 'How It Started Working Differently',
-          implementationSectionSubtitle: 'A tighter front end without the same manual drag',
-        },
-        results: {
-          detailedResultsBadgeLabel: 'What Changed',
-          detailedResultsSectionTitle: 'What Changed Once Intake Stopped Dragging So Long',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No pressure' },
-            { text: 'Useful for law firms' },
-          ],
-        },
-      }
+    },
+    slug: 'law-firm-intake-stalled-after-first-enquiry',
+    title: 'The enquiry came in. Then the paperwork slowed everything down.',
+    industryCategory: 'professional-services',
+    industryLabel: 'Professional Services',
+    industries: ['law-firm'],
+    systems: ['revenue-growth'],
+    topics: ['lead-management', 'crm-pipeline', 'follow-up'],
+    publishDate: '2026-04-15',
+    client: 'Whitfield Legal',
+    location: 'Plymouth, UK',
+    business: 'Whitfield Legal',
+    duration: '12 weeks',
+    completedDate: 'April 2026',
+    heroHeadline: 'The enquiry came in. Then the paperwork slowed everything down.',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'Client Intake',
+      'Law Firm',
+      'Document Collection',
+      'Follow-Up',
+      'Professional Services',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'First Enquiry' },
+      problem: { challengeBadgeLabel: 'What Was Happening' },
+      process: {
+        implementationBadgeLabel: 'How It Started Working Differently',
+        implementationSectionTitle: 'How It Started Working Differently',
+        implementationSectionSubtitle: 'A tighter front end without the same manual drag',
+      },
+      results: {
+        detailedResultsBadgeLabel: 'What Changed',
+        detailedResultsSectionTitle: 'What Changed Once Intake Stopped Dragging So Long',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No pressure' },
+          { text: 'Useful for law firms' },
+        ],
+      },
+    },
   };
 }
 

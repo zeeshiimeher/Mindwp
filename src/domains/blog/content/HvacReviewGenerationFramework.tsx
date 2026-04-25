@@ -1,7 +1,7 @@
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const hvacReviewGenerationFramework: BlogPostData = {
-    seo: {
+  seo: {
     title: 'HVAC Review Generation Framework for Companies',
     description:
       'Explore the HVAC review generation framework that automates review requests after service calls to build trust and improve local search visibility.',
@@ -12,16 +12,16 @@ export const hvacReviewGenerationFramework: BlogPostData = {
         'Explore the HVAC review generation framework that automates review requests after service calls to build trust and improve local search visibility.',
     },
   },
-    slug: 'hvac-review-generation-framework',
-    title: 'HVAC Review Generation Framework',
-    publishDate: '2025-08-07',
-    authorKey: 'EDITORIAL',
-    category: 'home-services-industry',
-    industries: ['hvac'],
-    systems: ['reputation-review'],
-    topics: ['review-generation'],
-    tags: ['HVAC', 'Review Generation', 'Customer Reviews', 'Local Authority', 'Automation'],
-    sections: [
+  slug: 'hvac-review-generation-framework',
+  title: 'HVAC Review Generation Framework',
+  publishDate: '2025-08-07',
+  authorKey: 'EDITORIAL',
+  category: 'home-services-industry',
+  industries: ['hvac'],
+  systems: ['reputation-review'],
+  topics: ['review-generation'],
+  tags: ['HVAC', 'Review Generation', 'Customer Reviews', 'Local Authority', 'Automation'],
+  sections: [
     {
       type: 'introduction',
       content: [
@@ -88,5 +88,5 @@ export const hvacReviewGenerationFramework: BlogPostData = {
       content:
         'If your HVAC company completes hundreds of service calls but has few reviews, a review framework can change that. See how reputation systems automate the process.',
     },
-  ]
+  ],
 };

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
+import type { ReactNode } from 'react';
 
 import { readClientDashboardReport } from '@/lib/dashboard/client-dashboard';
 import { resolveSEO } from '@/lib/seo/seoResolver';
@@ -124,10 +124,11 @@ function DashboardLinkButton({
   return (
     <Link
       href={href}
-      className={`rounded-2xl border px-4 py-3 text-sm font-bold transition ${active
-        ? 'border-slate-950 bg-slate-950 text-white shadow-md'
-        : 'border-slate-300 bg-white/90 text-slate-800 hover:border-slate-400'
-        }`}
+      className={`rounded-2xl border px-4 py-3 text-sm font-bold transition ${
+        active
+          ? 'border-slate-950 bg-slate-950 text-white shadow-md'
+          : 'border-slate-300 bg-white/90 text-slate-800 hover:border-slate-400'
+      }`}
     >
       {label}
     </Link>

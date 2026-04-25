@@ -13,7 +13,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -26,10 +26,9 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
   const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq, explore } = sections;
   const testimonial = sections.testimonial;
-  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   if (!testimonial) {
-    return null;
+    throw new Error('Missing section data');
   }
 
   return (
@@ -42,10 +41,7 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            smartCta={{
-              system: primarySystem,
-              pageType: 'feature',
-              slug: data.slug,
+            heroActions={{
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -157,6 +153,7 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
 
           <SectionWrapper className='voice-ai-testimonial' background='bg-gradient-surface-muted'>
             <TestimonialCard
+              title={testimonial.title}
               quote={testimonial.quote}
               author={testimonial.author}
               business={testimonial.business}
@@ -165,10 +162,7 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
             />
           </SectionWrapper>
 
-          <SmartCTA
-            system={primarySystem}
-            pageType='feature'
-            slug={data.slug}
+          <PrimaryCTASection
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

@@ -152,23 +152,23 @@ const finalCta = {
 };
 
 export const localServicePageArchitecture: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Local Service Page Architecture',
     description:
       'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
     canonical,
   },
-    title: 'Local Service Page Architecture',
-    description:
+  title: 'Local Service Page Architecture',
+  description:
     'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-    category: 'local-seo-authority',
-    publishedAt: '2025-11-10',
-    systems: ['local-seo-authority', 'smart-website-systems'],
-    industries: [],
-    topics: ['service-pages', 'local-service-pages'],
-    primaryService: 'local-seo-authority',
-    sections: [
+  category: 'local-seo-authority',
+  publishedAt: '2025-11-10',
+  systems: ['local-seo-authority', 'smart-website-systems'],
+  industries: [],
+  topics: ['service-pages', 'local-service-pages'],
+  primaryService: 'local-seo-authority',
+  sections: [
     {
       type: 'hero',
       heading: 'Local Service Page Architecture',
@@ -239,5 +239,5 @@ export const localServicePageArchitecture: ResourceData = {
       content: getRelatedResourcesContent('local-seo-authority'),
       resources: getRelatedResources('local-seo-authority', canonical),
     },
-  ]
+  ],
 };

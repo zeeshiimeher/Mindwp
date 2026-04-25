@@ -6,7 +6,9 @@ import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'c-image-accordion-strip-section';
-const Image = ('default' in NextImage ? NextImage.default : NextImage) as typeof import('next/image').default;
+const Image = (
+  'default' in NextImage ? NextImage.default : NextImage
+) as typeof import('next/image').default;
 
 interface ImageAccordionItem {
   title: string;

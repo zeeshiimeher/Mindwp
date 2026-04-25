@@ -32,7 +32,7 @@ export const leadReactivationSystemPage = {
     title: 'They Enquired Once. Nobody Followed Up.',
     description:
       "Hundreds of old contacts. Stalled quotes. Past customers who never heard from you again. The leads are there. Nobody's working them.",
-    list: ["Forgotten", "Unworked", "Stalled revenue"],
+    list: ['Forgotten', 'Unworked', 'Stalled revenue'],
     cssPrefix: 'lead-reactivation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
@@ -437,5 +437,5 @@ export const leadReactivationSystemPage = {
   cta: {
     title: "Find out what's recoverable in your own records",
     description: "Your old enquiries and past customers. What's still warm. How to work it.",
-  }
+  },
 } satisfies ServicePageData;

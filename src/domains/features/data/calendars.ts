@@ -53,16 +53,16 @@ const calendarsFaqItems = [
 const slug = 'calendars';
 
 export const calendarsData: FeaturePageData = {
-    slug,
-    seo: buildFeatureSeo({
+  slug,
+  seo: buildFeatureSeo({
     slug,
     title: 'Calendars | Structured Online Booking Layer',
     description:
       'Structured online booking integrated into your website system with confirmations, reminders, staff scheduling, and calendar management.',
   }),
-    systems: ['smart-website-systems', 'revenue-growth'],
-    topics: ['booking-automation'],
-    hero: {
+  systems: ['smart-website-systems', 'revenue-growth'],
+  topics: ['booking-automation'],
+  hero: {
     badge: 'Booking Layer',
     title: 'Structured Online Booking Integrated into Your System',
     description:
@@ -74,7 +74,7 @@ export const calendarsData: FeaturePageData = {
       { value: 'Integrated', label: 'Features' },
     ],
   },
-    sections: {
+  sections: {
     process: {
       badge: 'Simple Process',
       title: 'How Structured Booking Operates',
@@ -255,7 +255,7 @@ export const calendarsData: FeaturePageData = {
       ],
     },
   },
-    cta: {
+  cta: {
     title: 'Review Your Booking Structure',
     description:
       'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
@@ -264,5 +264,5 @@ export const calendarsData: FeaturePageData = {
       { text: 'Customer notifications' },
       { text: 'Calendar integration' },
     ],
-  }
+  },
 };

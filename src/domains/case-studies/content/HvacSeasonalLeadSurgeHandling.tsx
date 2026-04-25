@@ -176,67 +176,67 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'HVAC Seasonal Lead Handling | 3x Call Capacity',
-        description:
+    seo: {
+      title: 'HVAC Seasonal Lead Handling | 3x Call Capacity',
+      description:
         'How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.',
-        canonical: '/case-studies/hvac-seasonal-lead-surge-handling',
-        openGraph: {
-          title: 'Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study',
-          description:
-            'How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.',
-        },
+      canonical: '/case-studies/hvac-seasonal-lead-surge-handling',
+      openGraph: {
+        title: 'Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study',
+        description:
+          'How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.',
       },
-      slug: 'hvac-seasonal-lead-surge-handling',
-      title: 'HVAC Seasonal Lead Surge Handling',
-      industryCategory: 'home-services',
-      industryLabel: 'Home Services',
-      industries: ['hvac'],
-      systems: ['ai-lead-handling'],
-      topics: ['missed-calls', 'lead-capture', 'lead-response-time'],
-      publishDate: '2025-11-15',
-      client: 'AirFlow Mechanical',
-      location: 'Nottingham, UK',
-      business: 'AirFlow Mechanical',
-      duration: '5 weeks',
-      completedDate: 'November 2025',
-      heroHeadline:
-        'How an HVAC Contractor Handled 3\u00d7 Call Volume During Seasonal Surges Without Hiring Extra Staff',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: [
-        'Seasonal Surges',
-        'Overflow Management',
-        'HVAC',
-        'Lead Capture',
-        'Queue Prioritisation',
-      ],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'Operational Problem' },
-        problem: { challengeBadgeLabel: 'The Capacity Problem' },
-        deliverables: { deliverablesBadgeLabel: 'Deliverables' },
-        process: {
-          implementationBadgeLabel: 'Implementation',
-          implementationSectionTitle: 'How the System Was Built',
-          implementationSectionSubtitle:
-            'A 5-week rollout covering analysis, setup, and simulated testing',
-        },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Seasonal Surge Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for HVAC' },
-          ],
-        },
-      }
+    },
+    slug: 'hvac-seasonal-lead-surge-handling',
+    title: 'HVAC Seasonal Lead Surge Handling',
+    industryCategory: 'home-services',
+    industryLabel: 'Home Services',
+    industries: ['hvac'],
+    systems: ['ai-lead-handling'],
+    topics: ['missed-calls', 'lead-capture', 'lead-response-time'],
+    publishDate: '2025-11-15',
+    client: 'AirFlow Mechanical',
+    location: 'Nottingham, UK',
+    business: 'AirFlow Mechanical',
+    duration: '5 weeks',
+    completedDate: 'November 2025',
+    heroHeadline:
+      'How an HVAC Contractor Handled 3\u00d7 Call Volume During Seasonal Surges Without Hiring Extra Staff',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: [
+      'Seasonal Surges',
+      'Overflow Management',
+      'HVAC',
+      'Lead Capture',
+      'Queue Prioritisation',
+    ],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'Operational Problem' },
+      problem: { challengeBadgeLabel: 'The Capacity Problem' },
+      deliverables: { deliverablesBadgeLabel: 'Deliverables' },
+      process: {
+        implementationBadgeLabel: 'Implementation',
+        implementationSectionTitle: 'How the System Was Built',
+        implementationSectionSubtitle:
+          'A 5-week rollout covering analysis, setup, and simulated testing',
+      },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Seasonal Surge Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for HVAC' },
+        ],
+      },
+    },
   };
 }
 

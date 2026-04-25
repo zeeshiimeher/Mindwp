@@ -8,7 +8,7 @@ import {
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface BricksBuilderRendererProps {
@@ -16,7 +16,7 @@ interface BricksBuilderRendererProps {
   slug: string;
 }
 
-export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps) {
+export function BricksBuilderRenderer({ data, slug: _slug }: BricksBuilderRendererProps) {
   const { hero, sections, cta } = data;
   const { conversionSection, benefitsSection, whySection, processSection, featureSection } =
     sections;
@@ -31,10 +31,7 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            smartCta={{
-              system: data.systems?.[0] ?? 'smart-website-systems',
-              pageType: 'service',
-              slug,
+            heroActions={{
               primaryActionVariant: 'primary',
             }}
             cssPrefix={hero.cssPrefix}
@@ -90,10 +87,7 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
             cssPrefix={featureSection.cssPrefix}
           />
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
+          <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

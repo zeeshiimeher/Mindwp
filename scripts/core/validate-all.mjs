@@ -21,9 +21,9 @@ import { createLogger } from '../../lib/logger/index.mjs';
 import { getLatestInputMtime } from '../lib/execution-cache.mjs';
 import { readReportJson } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
-import { validators } from './validator-manifest.mjs';
 
 import { evaluateReportSize, validateReportFile } from './report-schema-validator.mjs';
+import { validators } from './validator-manifest.mjs';
 
 const rawArgs = stripLoggingModeArgs(process.argv.slice(2));
 const args = new Set(rawArgs);
@@ -33,12 +33,12 @@ const skipSnapshotBuild = args.has('--skip-snapshot-build');
 const onlyArg = rawArgs.find(arg => arg.startsWith('--only='));
 const selectedValidatorNames = onlyArg
   ? new Set(
-    onlyArg
-      .split('=')[1]
-      .split(',')
-      .map(value => value.trim())
-      .filter(Boolean)
-  )
+      onlyArg
+        .split('=')[1]
+        .split(',')
+        .map(value => value.trim())
+        .filter(Boolean)
+    )
   : null;
 
 const root = process.cwd();
@@ -63,16 +63,19 @@ function getReportAbsolutePath(fileName) {
 }
 
 function buildSystemSnapshotArtifact() {
-  execFileSync(process.execPath, ['--import', 'tsx/esm', 'scripts/core/build-system-snapshot.mjs'], {
-    cwd: root,
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    timeout: 120_000,
-    env: {
-      ...process.env,
-      SYSTEM_SNAPSHOT_PATH: snapshotPath,
-    },
-  });
+  execFileSync(
+    process.execPath,
+    ['--import', 'tsx/esm', 'scripts/core/build-system-snapshot.mjs'],
+    {
+      cwd: root,
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      timeout: 120_000,
+      env: {
+        ...process.env,
+      },
+    }
+  );
 
   return snapshotPath;
 }
@@ -114,12 +117,8 @@ function getCachedReportState(validator) {
   fs.writeFileSync(reportPath, `${JSON.stringify(normalized, null, 2)}\n`, 'utf8');
   validateReportFile(reportPath, validator.reportFile);
 
-  const generatedAtTimestamp = Date.parse(normalized.generatedAt);
   const reportMtimeMs = fs.statSync(reportPath).mtimeMs;
-  if (
-    Number.isFinite(reportMtimeMs) &&
-    Date.now() - reportMtimeMs > staleReportThresholdMs
-  ) {
+  if (Number.isFinite(reportMtimeMs) && Date.now() - reportMtimeMs > staleReportThresholdMs) {
     return null;
   }
 
@@ -156,8 +155,7 @@ function buildCachedValidatorResult(validator, cachedReport) {
     executionStatus: 'CACHED',
     reportStatus: cachedReport.reportStatus,
     reportGeneratedAt: cachedReport.generatedAt,
-    stale:
-      Number.isFinite(generatedAtTimestamp) && false,
+    stale: Number.isFinite(generatedAtTimestamp) && false,
   };
 }
 
@@ -513,7 +511,9 @@ async function main() {
     logger.printSummary('force mode -> validators will rerun even when reports already exist');
   }
   if (selectedValidatorNames) {
-    logger.printSummary(`validator subset -> ${activeValidators.map(validator => validator.name).join(', ')}`);
+    logger.printSummary(
+      `validator subset -> ${activeValidators.map(validator => validator.name).join(', ')}`
+    );
   }
   if (skipSnapshotBuild) {
     logger.printSummary('snapshot build skipped for this run');
@@ -564,7 +564,9 @@ async function main() {
   const resultByName = new Map(
     [...blockingResults, ...advisoryResults].map(result => [result.name, result])
   );
-  const results = activeValidators.map(validator => resultByName.get(validator.name)).filter(Boolean);
+  const results = activeValidators
+    .map(validator => resultByName.get(validator.name))
+    .filter(Boolean);
 
   const report = buildReport(results);
 
@@ -580,11 +582,11 @@ async function main() {
       report.issues.map(failure => {
         const excerpt = failure.output
           ? failure.output
-            .split('\n')
-            .map(line => line.trim())
-            .filter(Boolean)
-            .slice(0, logger.isVerbose() ? 8 : 1)
-            .join(' | ')
+              .split('\n')
+              .map(line => line.trim())
+              .filter(Boolean)
+              .slice(0, logger.isVerbose() ? 8 : 1)
+              .join(' | ')
           : 'no output captured';
         return `${failure.validator} (${failure.blocking ? 'blocking' : 'advisory'}): ${excerpt}`;
       }),

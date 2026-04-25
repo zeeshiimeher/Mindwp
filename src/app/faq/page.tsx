@@ -1,7 +1,7 @@
 import JsonLd from '@/components/system/JsonLd';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildFAQSchema } from '@/lib/seo/schema';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import { FAQPage } from '@/screens/FAQPage';
 
 export const dynamic = 'force-static';

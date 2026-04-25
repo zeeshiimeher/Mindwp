@@ -5,7 +5,7 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -83,12 +83,7 @@ export function FeaturesLanding() {
             </SectionWrapper>
 
             {/* CTA Section */}
-            <SmartCTA
-              system='smart-website-systems'
-              pageType='page'
-              slug='features'
-              intent='conversion'
-              position='footer'
+            <PrimaryCTASection
               title='Need help matching the right feature to the real problem?'
               description='Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
               primaryActionVariant='white'

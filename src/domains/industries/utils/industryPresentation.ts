@@ -57,7 +57,7 @@ export function resolveIndustryPathwaySection(
 
   return {
     ...section,
-    smartCta: {
+    heroActions: {
       system,
       pageType,
       slug,

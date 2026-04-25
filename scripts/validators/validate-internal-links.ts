@@ -70,9 +70,15 @@ async function collectSourceFiles(dirPath: string): Promise<string[]> {
 }
 
 function normalizeAuthoredTarget(href: string): string | null {
-  const target = normalizeInternalTarget(href, {
-    baseOrigin: INTERNAL_LINK_BASE_ORIGIN,
-  });
+  let target: string | null;
+
+  try {
+    target = normalizeInternalTarget(href, {
+      baseOrigin: INTERNAL_LINK_BASE_ORIGIN,
+    });
+  } catch {
+    return '__INVALID_INTERNAL_URL__';
+  }
 
   if (
     !target ||
@@ -247,8 +253,7 @@ const report = createReportSchema({
   sourceCommand,
 });
 
-await fs.mkdir(path.dirname(reportPath), { recursive: true });
-await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+logger.writeReport(reportPath, report);
 
 if (violations.length > 0) {
   logger.printErrors(

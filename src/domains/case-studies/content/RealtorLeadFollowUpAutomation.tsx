@@ -148,56 +148,56 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
   ];
 
   return {
-      seo: {
-        title: 'Estate Agent Follow-Up | 22% to 41% Conversion',
-        description:
+    seo: {
+      title: 'Estate Agent Follow-Up | 22% to 41% Conversion',
+      description:
         'How a Bath estate agency increased enquiry-to-viewing conversion from 22% to 41% and recovered £14,000 per quarter using automated CRM follow-up sequences.',
-        canonical: '/case-studies/realtor-lead-follow-up-automation',
-        openGraph: {
-          title: 'Why Estate Agents Lose Buyers | MindWP Case Study',
-          description:
-            'How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up.',
-        },
+      canonical: '/case-studies/realtor-lead-follow-up-automation',
+      openGraph: {
+        title: 'Why Estate Agents Lose Buyers | MindWP Case Study',
+        description:
+          'How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up.',
       },
-      slug: 'realtor-lead-follow-up-automation',
-      title: 'Realtor Lead Follow-Up Automation',
-      industryCategory: 'real-estate',
-      industryLabel: 'Real Estate',
-      industries: ['realtor'],
-      systems: ['revenue-growth'],
-      topics: ['follow-up', 'crm-pipeline', 'lead-management'],
-      publishDate: '2026-03-15',
-      client: 'Ashford Residential',
-      location: 'Bath, UK',
-      business: 'Ashford Residential',
-      duration: '13 weeks',
-      completedDate: 'March 2026',
-      heroHeadline:
-        'How an Estate Agency Nearly Doubled Viewing Bookings With Automated Follow-Up Sequences',
-      keyMetrics: keyMetrics.map(metric => ({
-        value: metric.value,
-        label: metric.label,
-        ...(metric.color ? { color: metric.color } : {}),
-      })),
-      tags: ['Lead Follow-Up', 'Estate Agency', 'CRM Pipeline', 'Revenue Recovery', 'Real Estate'],
-      sections,
-      templateOverrides: {
-        hero: { scenarioBadgeLabel: 'Revenue Recovery' },
-        metrics: { resultsSectionTitle: 'Key Outcomes' },
-        problem: { challengeBadgeLabel: 'The Follow-Up Gap' },
-        solution: { solutionBadgeLabel: 'System Architecture' },
-        results: {
-          detailedResultsBadgeLabel: 'Measured Results',
-          detailedResultsSectionTitle: 'Before & After: Follow-Up Performance',
-        },
-        cta: {
-          metaItems: [
-            { text: 'Free 20-minute call' },
-            { text: 'No contracts' },
-            { text: 'Built for estate agents' },
-          ],
-        },
-      }
+    },
+    slug: 'realtor-lead-follow-up-automation',
+    title: 'Realtor Lead Follow-Up Automation',
+    industryCategory: 'real-estate',
+    industryLabel: 'Real Estate',
+    industries: ['realtor'],
+    systems: ['revenue-growth'],
+    topics: ['follow-up', 'crm-pipeline', 'lead-management'],
+    publishDate: '2026-03-15',
+    client: 'Ashford Residential',
+    location: 'Bath, UK',
+    business: 'Ashford Residential',
+    duration: '13 weeks',
+    completedDate: 'March 2026',
+    heroHeadline:
+      'How an Estate Agency Nearly Doubled Viewing Bookings With Automated Follow-Up Sequences',
+    keyMetrics: keyMetrics.map(metric => ({
+      value: metric.value,
+      label: metric.label,
+      ...(metric.color ? { color: metric.color } : {}),
+    })),
+    tags: ['Lead Follow-Up', 'Estate Agency', 'CRM Pipeline', 'Revenue Recovery', 'Real Estate'],
+    sections,
+    templateOverrides: {
+      hero: { scenarioBadgeLabel: 'Revenue Recovery' },
+      metrics: { resultsSectionTitle: 'Key Outcomes' },
+      problem: { challengeBadgeLabel: 'The Follow-Up Gap' },
+      solution: { solutionBadgeLabel: 'System Architecture' },
+      results: {
+        detailedResultsBadgeLabel: 'Measured Results',
+        detailedResultsSectionTitle: 'Before & After: Follow-Up Performance',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No contracts' },
+          { text: 'Built for estate agents' },
+        ],
+      },
+    },
   };
 }
 

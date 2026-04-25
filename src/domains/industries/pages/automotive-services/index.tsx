@@ -16,7 +16,7 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: "Automotive Services",
+    badge: 'Automotive Services',
     title: 'The Bays Stay Booked. The Front Desk Is What Loses Work.',
     description:
       'In most automotive businesses, the workmanship is not the problem. The leak shows up around the job: a phone ringing while everyone is busy, an estimate still sitting there the next morning, a driver giving the work to the shop that replied first.',
@@ -229,39 +229,39 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   return {
-      seo: {
-        title: 'Automotive Service Shops \u2014 Stop Losing Work At The Front Desk | MindWP',
-        description:
-          'For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.',
-        canonical: '/industries/automotive-services',
-      },
-      slug: 'automotive-services',
-      type: 'category',
-      category: 'automotive-services',
-      systems: [
-        'smart-website-systems',
-        'ai-lead-handling',
-        'local-seo-authority',
-        'reputation-review',
-      ],
-      topics: ['lead-management', 'missed-calls', 'review-generation', 'booking-systems'],
-      industries: ['auto-repair', 'body-shop', 'car-detailing', 'mobile-mechanic'],
-      hero: heroData,
-      operatingPatterns: operatingPatternsData,
-      spectrum: spectrumData,
-      serviceEnvironments: serviceEnvironmentsData,
-      decisionChecklist: decisionChecklistData,
-      process: processData,
-      detailRoutes: detailRoutesData,
-      sectionControls: {
-        subIndustries: { enabled: false },
-        caseStudies: { enabled: false },
-      },
-      cta: {
-        title: 'Show us where the work is leaving',
-        description:
-          'Walk us through a normal week at the shop. We will tell you the one leak worth fixing first and what it would take to plug it.',
-      }
+    seo: {
+      title: 'Automotive Service Shops \u2014 Stop Losing Work At The Front Desk | MindWP',
+      description:
+        'For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.',
+      canonical: '/industries/automotive-services',
+    },
+    slug: 'automotive-services',
+    type: 'category',
+    category: 'automotive-services',
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'missed-calls', 'review-generation', 'booking-systems'],
+    industries: ['auto-repair', 'body-shop', 'car-detailing', 'mobile-mechanic'],
+    hero: heroData,
+    operatingPatterns: operatingPatternsData,
+    spectrum: spectrumData,
+    serviceEnvironments: serviceEnvironmentsData,
+    decisionChecklist: decisionChecklistData,
+    process: processData,
+    detailRoutes: detailRoutesData,
+    sectionControls: {
+      subIndustries: { enabled: false },
+      caseStudies: { enabled: false },
+    },
+    cta: {
+      title: 'Show us where the work is leaving',
+      description:
+        'Walk us through a normal week at the shop. We will tell you the one leak worth fixing first and what it would take to plug it.',
+    },
   };
 }
 

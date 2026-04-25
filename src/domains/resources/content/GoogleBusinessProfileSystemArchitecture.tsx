@@ -131,23 +131,23 @@ const finalCta = {
 };
 
 export const googleBusinessProfileSystemArchitecture: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'Google Business Profile System Architecture Guide',
     description:
       'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
     canonical,
   },
-    title: 'Google Business Profile System Architecture Guide',
-    description:
+  title: 'Google Business Profile System Architecture Guide',
+  description:
     'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
-    category: 'local-seo-authority',
-    publishedAt: '2025-11-19',
-    systems: ['local-seo-authority'],
-    industries: [],
-    topics: ['google-business-profile'],
-    primaryService: 'local-seo-authority',
-    sections: [
+  category: 'local-seo-authority',
+  publishedAt: '2025-11-19',
+  systems: ['local-seo-authority'],
+  industries: [],
+  topics: ['google-business-profile'],
+  primaryService: 'local-seo-authority',
+  sections: [
     {
       type: 'hero',
       heading: 'Google Business Profile System Architecture',
@@ -205,5 +205,5 @@ export const googleBusinessProfileSystemArchitecture: ResourceData = {
       content: getRelatedResourcesContent('local-seo-authority'),
       resources: getRelatedResources('local-seo-authority', canonical),
     },
-  ]
+  ],
 };

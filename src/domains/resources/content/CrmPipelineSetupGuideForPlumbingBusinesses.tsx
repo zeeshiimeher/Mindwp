@@ -168,23 +168,23 @@ const finalCta = {
 };
 
 export const crmPipelineSetupGuideForPlumbingBusinesses: ResourceData = {
-    slug,
-    seo: {
+  slug,
+  seo: {
     title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
     description:
       'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
     canonical,
   },
-    title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
-    description:
+  title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+  description:
     'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
-    category: 'crm-automation',
-    publishedAt: '2026-04-06',
-    systems: ['crm-automation'],
-    industries: ['plumbing'],
-    topics: ['crm-pipeline'],
-    primaryService: 'crm-automation',
-    sections: [
+  category: 'crm-automation',
+  publishedAt: '2026-04-06',
+  systems: ['crm-automation'],
+  industries: ['plumbing'],
+  topics: ['crm-pipeline'],
+  primaryService: 'crm-automation',
+  sections: [
     {
       type: 'hero',
       heading: 'CRM Pipeline Setup Guide for Plumbing Businesses',
@@ -253,5 +253,5 @@ export const crmPipelineSetupGuideForPlumbingBusinesses: ResourceData = {
       content: getRelatedResourcesContent('crm-automation'),
       resources: getRelatedResources('crm-automation', canonical),
     },
-  ]
+  ],
 };

@@ -75,7 +75,80 @@ If style hurts clarity → ignore the style rule.
 ### Output Shape Control
 
 Do NOT increase total word count significantly, add new sections during polish, or expand sections beyond original density. If a rewrite becomes longer → compress before final output.
+## 2.1 EXECUTION GUARDRAILS (AUTHORITY PROTECTION — CRITICAL)
 
+These rules override standard rewrite behavior.
+
+### DO NOT REWRITE — LOCKED AUTHORITY PAGES
+
+The following pages are considered high-authority assets:
+
+- Homepage (`/`)
+- Smart Website Systems page
+- Strong industry pages (HVAC, etc.)
+
+ALLOWED:
+- Minor clarity improvements
+- Internal linking fixes
+- CTA alignment
+
+NOT ALLOWED:
+- Full rewrites
+- Tone changes
+- Structural changes
+- Section rewrites without clear issue
+
+If no issue exists → DO NOTHING.
+
+---
+
+### CASE STUDIES — ISOLATED SYSTEM
+
+Case studies are NOT part of standard rewrite execution.
+
+RULES:
+- Do NOT rewrite case studies during normal execution
+- Only modify inside case-study planning system
+- Maintain narrative + observational tone
+
+Default:
+→ SKIP case studies
+
+---
+
+### REWRITE SCOPE CONTROL
+
+AI must NOT behave as a rewriting engine.
+
+MANDATORY FLOW:
+
+1. Read full page
+2. Identify weak sections ONLY
+3. Apply targeted fixes
+
+If no clear issue:
+→ DO NOTHING
+
+If AI rewrites entire page without justification:
+→ FAIL
+
+---
+
+### HYBRID EXECUTION MODEL (MANDATORY)
+
+Content work must follow two phases:
+
+PHASE 1 — ANALYSIS
+- Identify issues
+- Define what needs fixing
+- DO NOT rewrite
+
+PHASE 2 — EXECUTION
+- Apply ONLY defined changes
+- Preserve strong sections
+
+Goal:
+Fix content without damaging authority
 ---
 
 ## 3. REWRITE DECISIONS
@@ -90,6 +163,19 @@ Do NOT increase total word count significantly, add new sections during polish, 
 | DELETE   | Repetitive, adds nothing         | Remove               |
 
 Not everything should be rewritten. Strong lines must be preserved.
+### System Safety Override (NEW)
+
+Even when FULL REWRITE is triggered:
+
+- DO NOT rewrite entire page by default
+- Rewrite ONLY the broken section
+
+Full-page rewrite allowed ONLY IF:
+- Page is structurally broken
+- Messaging fails across ALL sections
+
+Otherwise:
+→ section-level rewrite ONLY
 
 ### Rewrite Modes
 
@@ -222,6 +308,19 @@ Case studies should avoid exposing system structure.
 system, workflow, pipeline, infrastructure, optimization, leverage, streamline, seamless, robust, scalable, solution, empower, cutting-edge, powerful, comprehensive, holistic, touchpoint, onboarding, ecosystem, actionable insights
 
 Also banned: our CRM, our system, our platform, ensures, enables, effectively, empowers, facilitates
+
+### Vocabulary Discipline (Wave 4.5 Lock)
+
+| Removed | Replace With | Reason |
+| slow | delayed | Prefer precise operational wording. |
+| seamless | structured | Avoid inflated product language. |
+| frictionless | clear | Prefer observable outcomes over hype. |
+---
+
+Anti-hype language discipline: Avoid words such as: revolutionary, game-changing, cutting-edge, world-class, best-in-class.
+
+AI sales guardrail:
+Use calm, concrete language and describe actual system behavior instead of hype claims.
 
 ### Preferred Replacements
 
@@ -807,6 +906,20 @@ When rewriting, follow this order:
 8. Section rules check (§10–§14)
 9. Run validation checklist (§20)
 10. Final polish + output (§21)
+
+### Authority Protection Check (FINAL STEP — REQUIRED)
+
+Before final output:
+
+- Did we rewrite something that was already strong?
+- Did we replace instead of improve?
+- Did tone become generic or AI-clean?
+
+If YES:
+→ revert and apply targeted fix only
+
+Goal:
+Preserve authority while improving clarity
 
 ### Bulk Execution (Multi-Page)
 
