@@ -79,10 +79,10 @@ export const reputationData: FeaturePageData = {
   systems: ['reputation-review', 'local-seo-authority'],
   topics: ['review-generation', 'negative-review-response'],
   hero: {
-    badge: 'Reputation Management',
-    title: 'Structured review management for consistent trust',
+    badge: 'Part of Reputation & Review Systems',
+    title: 'Review request and response layer for service businesses',
     description:
-      'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
+      'Most reviews are missed because nobody asks at the right moment. This layer is part of the Reputation & Review Systems service — it asks every customer at the moment trust is highest, routes responses to the right person, and keeps your visible rating consistent across the platforms buyers actually check.',
     stats: [
       { value: '10x', label: 'More Reviews' },
       { value: '4.8+', label: 'Avg. Star Rating' },

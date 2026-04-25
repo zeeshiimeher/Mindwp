@@ -20,7 +20,6 @@ async function getRoutesToCrawl() {
     '/case-studies',
     '/contact',
     '/cookies',
-    '/faq',
     '/features',
     '/industries',
     '/privacy',

@@ -11,7 +11,7 @@ export async function generateMetadata() {
 
 export default function AboutPage() {
   return (
-    <CTARegistryProvider pageId='page:about' pageType='page'>
+    <CTARegistryProvider pageId='page:about' pageType='page' primarySystem='smart-website-systems'>
       <About />
     </CTARegistryProvider>
   );

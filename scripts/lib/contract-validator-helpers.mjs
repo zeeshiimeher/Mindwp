@@ -150,7 +150,16 @@ function parseAntiHypeWords(docText) {
 }
 
 export function loadVocabularyRules(root = process.cwd()) {
-  const writingPath = path.join(root, 'docs', 'system', 'WRITING.md');
+  const candidatePaths = [
+    path.join(root, 'docs', 'core', 'WRITING.md'),
+    path.join(root, 'docs', 'system', 'WRITING.md'),
+  ];
+  const writingPath = candidatePaths.find(candidate => fs.existsSync(candidate));
+  if (!writingPath) {
+    throw new Error(
+      `loadVocabularyRules: WRITING.md not found. Checked: ${candidatePaths.join(', ')}`
+    );
+  }
   const text = fs.readFileSync(writingPath, 'utf8');
 
   return {

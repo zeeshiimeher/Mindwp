@@ -70,7 +70,6 @@ test('critical routes load and are not 404', async ({ page }) => {
     '/',
     '/about',
     '/contact',
-    '/faq',
     '/privacy',
     '/terms',
     '/cookies',

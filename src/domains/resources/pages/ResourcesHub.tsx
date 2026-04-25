@@ -55,7 +55,11 @@ export function ResourcesHub({
   const hubData = RESOURCE_HUB_DATA;
 
   return (
-    <CTARegistryProvider pageId='page:resources' pageType='page'>
+    <CTARegistryProvider
+      pageId='page:resources'
+      pageType='page'
+      primarySystem='smart-website-systems'
+    >
       <div className='resources-hub'>
         <main>
           {/* Hero Section */}

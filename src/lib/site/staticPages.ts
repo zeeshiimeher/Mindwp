@@ -52,7 +52,7 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'About Us',
     title: 'About MindWP',
     description:
-      'Learn how MindWP designs systems-first digital infrastructure for service businesses.',
+      'MindWP fixes the gap between an enquiry and a paying customer for service businesses — websites, follow-up, visibility, and proof, joined up so good leads stop slipping through.',
   },
   {
     key: 'static:blog',
@@ -79,28 +79,12 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
       'Tell us where things are slipping — missed calls, slow follow-up, leads going cold. We read every message and reply with the right next step within one working day.',
   },
   {
-    key: 'static:conversation',
-    path: '/conversation',
-    name: 'Start a Conversation',
-    title: 'Start a Conversation',
-    description:
-      'Redirect entrypoint into the canonical MindWP contact flow with preserved system and source context.',
-  },
-  {
     key: 'static:cookies',
     path: '/cookies',
     name: 'Cookie Policy',
     title: 'Cookie Policy',
     description: 'Read the MindWP cookie policy and understand how site data is used.',
     showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:faq',
-    path: '/faq',
-    name: 'FAQ',
-    title: 'MindWP FAQ',
-    description:
-      'Answers to common questions about systems-first websites, CRM automation, and implementation.',
   },
   {
     key: 'static:features',
@@ -116,7 +100,7 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'Industries Overview',
     title: 'MindWP Industries',
     description:
-      'Industry-specific infrastructure for roofing, HVAC, salons, clinics, legal, automotive, and more.',
+      'Industry pages for service businesses — roofing, HVAC, salons, clinics, legal, automotive — focused on the calls, follow-ups, and bookings that actually decide revenue.',
   },
   {
     key: 'static:privacy',

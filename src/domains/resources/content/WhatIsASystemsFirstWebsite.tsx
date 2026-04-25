@@ -156,9 +156,9 @@ const faqs = [
 ];
 
 const finalCta = {
-  title: 'Build a Website Designed Around Your Business Systems',
+  title: 'Where this gets built and owned',
   description:
-    'Our systems-first approach connects CRM, booking, follow-up, and pipeline tracking into your website architecture from day one. Stop bolting on integrations and start with infrastructure.',
+    'Frameworks help you see the gap. The Smart Website Systems service is where the gap actually gets closed: capture, CRM, booking, and follow-up wired together with one team accountable for the result. See what is in scope before you commit.',
 };
 
 export const whatIsASystemsFirstWebsite: ResourceData = {

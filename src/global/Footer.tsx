@@ -117,11 +117,6 @@ export function Footer() {
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/faq' className='footer__link'>
-                  FAQ
-                </InternalLink>
-              </li>
-              <li className='footer__item'>
                 <a href={primaryAction.href} className='footer__cta'>
                   {secondaryActionLabel}
                 </a>

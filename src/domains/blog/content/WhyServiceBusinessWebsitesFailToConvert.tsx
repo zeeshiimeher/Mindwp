@@ -4,12 +4,12 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
   seo: {
     title: 'Why Service Business Websites Fail to Convert',
     description:
-      'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
+      'Why service business websites fail to convert: missed calls, slow follow-up, weak proof, and routing that drops leads — and where each one actually breaks.',
     canonical: '/blog/why-service-business-websites-fail-to-convert',
     openGraph: {
       title: 'Why Service Business Websites Fail to Convert',
       description:
-        'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
+        'Why service business websites fail to convert: missed calls, slow follow-up, weak proof, and routing that drops leads — and where each one actually breaks.',
     },
   },
   slug: 'why-service-business-websites-fail-to-convert',
@@ -108,9 +108,9 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
     },
     {
       type: 'cta',
-      heading: 'Fix Your Website Conversion Infrastructure',
+      heading: 'Where the conversion actually breaks',
       content:
-        'If your website receives traffic but does not generate consistent enquiries, the problem is likely operational. Explore how systems-first website architecture builds conversion into the infrastructure.',
+        'When a service business website gets traffic but few enquiries, the failure is almost never visual. It is in capture, routing, and reply. The Smart Website Systems service is where those three are rebuilt as one. See if it matches what your business is actually losing.',
     },
   ],
 };

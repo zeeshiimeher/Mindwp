@@ -1,4 +1,4 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
@@ -7,84 +7,56 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     <>
       Thermal Comfort Services handles emergency heating and cooling work across Manchester. The
       calls that mattered most often came after the office had shut. A boiler failed in the evening.
-      A unit gave up during a hot spell. Someone got home from work and realised it could not wait
-      until tomorrow. Too many of those calls were hitting voicemail and going cold before anybody
-      could do anything useful with them.
+      A unit gave up during a hot spell. Someone got home from work, realised it could not wait, and
+      dialled. A lot of those calls hit voicemail and went cold before the morning.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'After-hours calls kept in play',
-      value: 'Most of them',
-      icon: 'ShieldCheck',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Evening reply speed',
-      value: 'Same evening for urgent jobs',
-      icon: 'Clock',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Voicemail dead ends',
-      value: 'Far fewer',
-      icon: 'PhoneOff',
-      color: 'case-study-accent--purple',
-    },
-    {
-      label: 'Emergency work kept',
-      value: 'Around GBP5k-GBP7k a month',
-      icon: 'TrendingUp',
-      color: 'case-study-accent--amber',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'Emergency calls kept coming in after the office had closed',
+    problemHeading: 'Emergency calls were coming in. Most were missed',
     problemDescription: [
-      'The office shut, but the urgent work did not. Evening breakdown calls were common, especially when the weather turned sharp one way or the other.',
-      'Voicemail was not really a handoff. It was mostly a delay. Some people left a message. Plenty did not. A few tried again. Others moved on before the team even knew they had called.',
+      'The office shut at five. The urgent work did not. Evening breakdown calls were common, especially when the weather turned sharp one way or the other.',
+      'Voicemail was not really a handoff. Some people left a message. Plenty did not. A few tried again. Others moved on before anyone in the team even knew they had called.',
     ],
     painPoints: [
       'Urgent calls peaked when the office was already closed',
       'Voicemail was doing very little to hold those enquiries',
-      'The team could not see clearly how many evening calls were being lost',
-      'On-call capacity existed, but it was not connected to the call at the right moment',
+      'On-call engineers had capacity but were not connected to the call at the right moment',
       'Not every issue needed the same response, but everything arrived the same way',
+      'The team could not see clearly how many evening calls were being lost',
     ],
   };
 
-  const solutionSection: CaseStudyTemplateSection = {
-    type: 'solution',
-    solutionHeading: 'They changed what happened the moment an evening call was missed',
-    solutionDescription:
-      'Instead of leaving the caller at a dead end, the business put a simple evening handoff in place. Urgent jobs could be picked up quickly, and the rest could wait until the next morning without disappearing.',
-    whatWeDid: [
+  const workflowsSection: CaseStudyTemplateSection = {
+    type: 'workflows',
+    title: 'What now happens after the office shuts',
+    description:
+      'The office still shuts at five. The handoff after that just stopped being a black hole.',
+    workflows: [
       {
-        title: 'Evening call detection',
-        description:
-          'Calls outside office hours were treated differently instead of being dumped into the same generic voicemail.',
-        icon: 'Phone',
+        trigger: 'A call comes in after the office has closed',
+        actions: [
+          'The caller hears a short, calm message instead of a generic voicemail',
+          'A friendly text goes out within seconds asking what has gone wrong',
+          'The caller can reply quickly without having to leave a long message',
+        ],
       },
       {
-        title: 'A short text back to the caller',
-        description:
-          'People got a quick message asking what had gone wrong, which made it easier to tell what was urgent and what could wait.',
-        icon: 'MessageSquare',
+        trigger: 'The reply suggests a real emergency',
+        actions: [
+          'The details land with the on-call engineer while the job still matters',
+          'The engineer can ring back from the road, already knowing what the situation is',
+          'The customer hears from a person, not a recording, within a sensible window',
+        ],
       },
       {
-        title: 'Clearer handoff to the on-call engineer',
-        description:
-          'If it looked urgent, the details reached the on-call engineer while the job still mattered.',
-        icon: 'MapPin',
-      },
-      {
-        title: 'A proper record of what came in',
-        description:
-          'The team could finally see evening call volume instead of guessing from memory and scraps of voicemail.',
-        icon: 'Database',
+        trigger: 'The reply suggests the issue can wait until morning',
+        actions: [
+          'The caller is told they have been seen and roughly when the office will be back in touch',
+          'The enquiry is queued for first thing, with the context already attached',
+          'No one wakes up an engineer for something that did not need it, and no caller is left wondering',
+        ],
       },
     ],
   };
@@ -93,22 +65,22 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     type: 'results',
     results: [
       {
-        title: 'Far fewer evening calls disappeared straight away',
-        improvement: 'Most urgent callers were kept in play instead of being left at voicemail',
+        title: 'Far fewer evening calls vanished straight away',
+        improvement: 'Most urgent callers stayed in play instead of being left at voicemail',
         description:
-          'The biggest change was not that every caller converted. It was that far fewer of them vanished in the first minute. The business had a real chance to respond while the problem was still urgent.',
+          'The biggest change was not that every caller converted. It was that far fewer of them disappeared in the first minute. The business had a real chance to respond while the problem was still urgent.',
       },
       {
-        title: 'Urgent jobs were being picked up the same evening',
+        title: 'Urgent jobs got picked up the same evening',
         improvement: 'Quick enough to matter',
         description:
           'When the issue was clearly urgent, the team could move on it that night instead of waiting until the office reopened. Not every caller answered the text back, but enough did to change the shape of the evening work.',
       },
       {
-        title: 'The recovered work showed up in the month, not just in theory',
-        improvement: 'Around GBP5k-GBP7k a month stayed in reach',
+        title: 'The recovered work showed up in the month',
+        improvement: 'Real revenue that had been quietly handed away before',
         description:
-          'It was not perfect every week. Some callers still dropped off, and some issues turned out not to be real emergencies. But the business was keeping work it had been handing away before.',
+          'It was not perfect every week. Some callers still dropped off, and some issues turned out not to be real emergencies. But the business was keeping work it had been losing for years.',
       },
     ],
   };
@@ -116,13 +88,13 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
     heading: 'Do evening emergency calls keep going cold?',
-    body: 'Book a free 20-minute call and we can look at what happens after your office shuts and where urgent calls are dropping away.',
+    body: 'Book a free 20-minute call. We can look at what happens after your office shuts and where urgent calls are dropping away.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    solutionSection,
+    workflowsSection,
     resultsSection,
     { type: 'more' },
     ctaSection,
@@ -132,16 +104,16 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     seo: {
       title: 'HVAC after-hours call case study: more emergency jobs captured',
       description:
-        'How a Manchester HVAC company stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
+        'How a Manchester heating and cooling business stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
       canonical: '/case-studies/hvac-after-hours-calls-going-cold',
       openGraph: {
         title: 'HVAC after-hours call case study: more emergency jobs captured',
         description:
-          'How a Manchester HVAC company stopped losing so many evening emergency calls and kept more urgent work in play.',
+          'How a Manchester heating and cooling business stopped losing evening emergency calls.',
       },
     },
     slug: 'hvac-after-hours-calls-going-cold',
-    title: 'Emergency calls kept coming in after the office had closed',
+    title: 'Emergency calls were coming in. Most were missed',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
@@ -153,21 +125,16 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     business: 'Thermal Comfort Services',
     duration: '6 weeks',
     completedDate: 'November 2025',
-    heroHeadline: 'Emergency calls kept coming in after the office had closed',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Emergency Routing', 'After-Hours Leads', 'HVAC', 'Call Triage', 'Lead Recovery'],
+    heroHeadline: 'Emergency calls were coming in. Most were missed',
+    keyMetrics: [],
+    tags: ['HVAC', 'After-Hours', 'Emergency Routing', 'Missed Calls'],
     sections,
     templateOverrides: {
       hero: { scenarioBadgeLabel: 'After Hours' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      solution: { solutionBadgeLabel: 'What They Changed' },
+      problem: { challengeBadgeLabel: 'What was happening' },
       results: {
-        detailedResultsBadgeLabel: 'What Improved',
-        detailedResultsSectionTitle: 'What Changed Once Evening Calls Were Handled Better',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once evening calls were handled properly',
       },
       cta: {
         metaItems: [

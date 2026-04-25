@@ -64,12 +64,13 @@ export function ActionButtons({
   }
 
   const pageTypeForHref: ContactSourceType = toContactSourceType(pageIdentity.pageType);
+  const primarySystem = pageIdentity.primarySystem ?? 'smart-website-systems';
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,
     label: getPrimaryCTA(),
     ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
     href: buildContactHref({
-      system: 'smart-website-systems',
+      system: primarySystem,
       sourceType: pageTypeForHref,
       slug,
     }),
@@ -81,7 +82,7 @@ export function ActionButtons({
         variant: 'outline',
         label: secondaryActionLabel,
         href: buildContactHref({
-          system: 'smart-website-systems',
+          system: primarySystem,
           sourceType: pageTypeForHref,
           slug,
         }),

@@ -11,7 +11,11 @@ export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
 
   return (
-    <CTARegistryProvider pageId='page:case-studies' pageType='page'>
+    <CTARegistryProvider
+      pageId='page:case-studies'
+      pageType='page'
+      primarySystem='smart-website-systems'
+    >
       <div className='min-h-screen'>
         <main>
           {/* Hero */}

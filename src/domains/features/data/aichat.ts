@@ -65,10 +65,10 @@ export const aiChatData: FeaturePageData = {
   topics: ['lead-response-time'],
   category: 'Communication',
   hero: {
-    badge: 'Conversation Layer',
-    title: 'Structured Website Chat Integrated into Your System',
+    badge: 'Part of AI Lead Handling',
+    title: 'Visitors leave when nobody answers in the moment',
     description:
-      'This conversation layer helps visitors ask questions, request services, and book appointments through a clear flow. AI supports routing and first response while your team stays in control of the important conversations.',
+      'When a question goes unanswered for hours, the visit ends and the lead picks the next firm. AI chat sits inside AI Lead Handling so first responses happen in the moment, routing reaches the right person, and your team only steps in for conversations that matter.',
     stats: [
       { value: '24/7', label: 'Available' },
       { value: 'Instant', label: 'Responses' },

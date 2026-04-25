@@ -295,6 +295,14 @@ const VALIDATOR_DEFINITIONS = [
     reportFile: 'graph-report.json',
   },
   {
+    name: 'validate-authority-concentration',
+    category: 'graph',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-authority-concentration.ts', '--report-json'],
+    blocking: true,
+    reportFile: 'authority-concentration-report.json',
+  },
+  {
     name: 'validate-internal-links',
     category: 'seo',
     command: 'npx',
@@ -487,6 +495,7 @@ const DASHBOARD_REPORT_FILES = [
 ];
 
 const PRIMARY_REPORT_FILES = [
+  'authority-concentration-report.json',
   'authority-map.json',
   'check-generated-report.json',
   'client-dashboard.json',

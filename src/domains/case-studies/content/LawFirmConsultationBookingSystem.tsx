@@ -1,97 +1,62 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildLawFirmConsultationBookingSystem(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Carter & Marsh Solicitors is a four-solicitor high-street law firm in Norwich covering family
-      law, conveyancing, and wills and probate. The firm operated with a single receptionist who
-      managed incoming calls, client check-ins, file administration, and diary scheduling using a
-      paper appointment book. The website listed practice areas and contact details but had no
-      booking capability. Every consultation required a phone call during office hours. Monday
-      mornings and the days following bank holidays produced the heaviest call volumes. During those
-      periods, the phone lines were consistently engaged, and prospective clients who could not get
-      through {'\u2014'} often dealing with urgent family or property matters {'\u2014'} moved on to
-      other firms without leaving a voicemail.
+      Mercer Legal is a boutique family-law practice in Edinburgh. Most new matters started with a
+      free 20-minute consultation. The diary was usually full a week or two ahead, which on the
+      surface looked like a healthy pipeline of new business. The reality on a Monday morning was a
+      lot of empty meeting rooms and a lot of unanswered follow-ups.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Online Bookings',
-      value: '58%',
-      icon: 'Calendar',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Phone Time Saved',
-      value: '12hr/wk',
-      icon: 'PhoneOff',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Consultations',
-      value: '+34%',
-      icon: 'TrendingUp',
-      color: 'case-study-accent--amber',
-    },
-    {
-      label: 'After-Hours Bookings',
-      value: '27%',
-      icon: 'Moon',
-      color: 'case-study-accent--purple',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: Phone-Only Consultation Booking With No Online Alternative',
+    problemHeading: 'Consultations were booked. Most didn\u2019t turn into clients',
     problemDescription: [
-      'Carter & Marsh received an average of 28 consultation enquiries per week across family law, conveyancing, and probate. Every enquiry required a phone call to the office during business hours. The receptionist managed these calls alongside client check-ins, file handling, and diary updates. There was no backup during her absences, and the paper diary could only be accessed at the front desk.',
-      'Call logs showed 6 to 8 calls per day going to voicemail during peak periods \u2014 Monday mornings and days following bank holidays. Prospective clients seeking legal advice, often in time-sensitive or stressful situations, rarely left voicemails and did not call back. Even when calls were answered, each booking required 5 to 7 minutes as the receptionist manually cross-referenced solicitor availability in the paper diary. The website offered no alternative booking path.',
+      'Family-law enquiries are heavy. People book the call when something has just happened, then spend the next ten days second-guessing whether to actually have the conversation. By the day of the appointment, a lot of them had quietly cooled off.',
+      'When the call did happen, the next step was a paid scoping meeting. That step often did not survive the gap between the consultation ending and the first follow-up. The same pattern was repeating most weeks: a busy diary, a quiet revenue line.',
     ],
     painPoints: [
-      '6\u20138 calls per day went to voicemail during peak periods',
-      'No online booking \u2014 100% phone-dependent for consultations',
-      'Paper diary accessible only by the receptionist at the front desk',
-      'Booking each consultation took 5\u20137 minutes of phone time',
-      'Prospective clients in distress unlikely to leave voicemails or call back',
-      'Monday mornings and post-holiday periods created severe backlogs',
-      'Website listed services but provided no scheduling capability',
+      'Long gaps between booking and the consultation cooled people off',
+      'No real preparation went out before the call, so it started cold',
+      'After the call, the follow-up was inconsistent and often slow',
+      'Clients felt they had explained everything, then heard nothing',
+      'Solicitors had no view of which consultations were still warm',
     ],
   };
 
-  const solutionSection: CaseStudyTemplateSection = {
-    type: 'solution',
-    solutionHeading:
-      'The System: Practice-Area Booking With Solicitor Availability and CRM Records',
-    solutionDescription:
-      'An online booking system was added to the firm\u2019s WordPress website, allowing prospective clients to select a practice area, view available consultation slots, and book directly. Each booking created a client record in the CRM with the matter type, contact details, and a pre-consultation summary.',
-    whatWeDid: [
+  const workflowsSection: CaseStudyTemplateSection = {
+    type: 'workflows',
+    title: 'What started happening around each consultation',
+    description:
+      'The first call was already strong. The work was in the days before and the days after \u2014 where most of the drop-off was happening. Each consultation now had a calm sequence sitting around it.',
+    workflows: [
       {
-        title: 'Practice-Area Booking Paths',
-        description:
-          'Built separate booking flows for family law, conveyancing, and wills & probate. Each path displayed the relevant solicitor\u2019s available consultation slots with appropriate durations.',
-        icon: 'Calendar',
+        trigger: 'Consultation is booked through the website or by reception',
+        actions: [
+          'A short prep message goes out a few days before the call',
+          'It explains what to bring, what will be discussed, and what the next step looks like',
+          'The client is told who they will be speaking with and roughly how long the call will last',
+        ],
       },
       {
-        title: 'Solicitor Calendar Sync',
-        description:
-          'Connected each solicitor\u2019s calendar to the booking system so availability updated in real time, preventing conflicts with existing client meetings and court commitments.',
-        icon: 'RefreshCw',
+        trigger: 'It is the day before the consultation',
+        actions: [
+          'A measured reminder goes out giving the client the option to confirm or move the slot',
+          'If they confirm, the diary is marked accordingly so reception is not chasing',
+          'If they need to move it, they can do so without ringing in and queuing on the line',
+        ],
       },
       {
-        title: 'Pre-Consultation Intake Form',
-        description:
-          'Added a brief intake form to the booking flow capturing the client\u2019s name, matter type, and short description \u2014 giving the solicitor context before the meeting without requiring a phone call.',
-        icon: 'FileText',
-      },
-      {
-        title: 'CRM Record and Automated Confirmation',
-        description:
-          'Every booking created a client record in GoHighLevel CRM and triggered automatic email and SMS confirmation with consultation time, office location, and what to bring.',
-        icon: 'CheckCircle',
+        trigger: 'Consultation has just finished',
+        actions: [
+          'The client receives a short, plain English note that evening or the following morning',
+          'It summarises what was discussed and what the next step would look like',
+          'A few days later a measured nudge goes out to anyone still thinking, with no pressure',
+        ],
       },
     ],
   };
@@ -100,50 +65,37 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'Online Booking Adoption',
-        before: '0% \u2014 all consultations arranged by phone',
-        after: '58% of consultations booked online within 8 weeks',
-        improvement: 'Primary booking channel established',
+        title: 'Fewer empty meeting rooms on a Monday',
+        improvement:
+          'Clients turned up for the call they had booked instead of quietly disappearing',
         description:
-          'Prospective clients \u2014 particularly those dealing with family law matters \u2014 preferred booking online at a time that suited them rather than calling during office hours.',
+          'The reminders and the prep message did most of the work. People stopped feeling like they were going into something blind, and the no-show rate on consultations eased noticeably.',
       },
       {
-        metric: 'Receptionist Phone Time',
-        before: '~16 hours/week spent on consultation booking calls',
-        after: '~4 hours/week \u2014 only phone-preference clients',
-        improvement: '12 hours/week saved',
+        title: 'More consultations turning into instructed work',
+        improvement: 'A meaningful lift in the call-to-client conversion',
         description:
-          'The receptionist reclaimed 12 hours per week for client-facing duties, file administration, and supporting solicitors directly.',
+          'The summary the same evening was the part that mattered most. Clients had the next step in their inbox before doubt set in, and a fair few moved forward who would have drifted away under the old pattern.',
       },
       {
-        metric: 'Weekly Consultation Volume',
-        before: 'Average 21 consultations per week',
-        after: 'Average 28 consultations per week',
-        improvement: '+34% increase',
+        title: 'Solicitors stopped writing off the in-between days',
+        improvement: 'The week between the call and the next decision stopped feeling like a gap',
         description:
-          'After-hours booking access and reduced phone friction meant more prospective clients completed the booking process instead of abandoning it.',
-      },
-      {
-        metric: 'After-Hours Bookings',
-        before: '0% \u2014 no booking available outside office hours',
-        after: '27% of online bookings placed outside office hours',
-        improvement: 'New booking window unlocked',
-        description:
-          'Over a quarter of consultations were booked in the evening or early morning \u2014 times when the office was closed and these clients would previously have been lost.',
+          'It was not every consultation, and family law will always have people who decide it is not the right time. But the people who were ready stopped getting lost in the silence.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Losing Consultation Enquiries to Engaged Phone Lines?',
-    body: 'Book a free 20-minute call to discuss how a practice-area booking system could capture consultations you\u2019re currently missing.',
+    heading: 'Lots of consultations, not enough instructions?',
+    body: 'Book a free 20-minute call. We can look at where your consultations are losing momentum and how to keep more of them moving forward.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    solutionSection,
+    workflowsSection,
     resultsSection,
     { type: 'more' },
     ctaSection,
@@ -151,57 +103,45 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
 
   return {
     seo: {
-      title: 'Law Firm Booking System | 34% More Consultations',
+      title: 'Law firm consultation case study: more calls becoming clients',
       description:
-        'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
-      canonical: '/case-studies/law-firm-consultation-booking-system',
+        'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
+      canonical: '/case-studies/law-firm-consultations-not-becoming-clients',
       openGraph: {
-        title: 'Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study',
+        title: 'Law firm consultation case study: more calls becoming clients',
         description:
-          'How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling.',
+          'How an Edinburgh family-law firm tightened what happened around each free consultation.',
       },
     },
-    slug: 'law-firm-consultation-booking-system',
-    title: 'Law Firm Consultation Booking System',
+    slug: 'law-firm-consultations-not-becoming-clients',
+    title: 'Consultations were booked. Most didn\u2019t turn into clients',
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],
     systems: ['smart-website-systems'],
-    topics: ['booking-automation', 'website-infrastructure'],
-    publishDate: '2026-04-01',
-    client: 'Carter & Marsh Solicitors',
-    location: 'Norwich, UK',
-    business: 'Carter & Marsh Solicitors',
-    duration: '12 weeks',
-    completedDate: 'April 2026',
-    heroHeadline:
-      'How a Law Firm Increased Consultation Bookings by 34% With Online Practice-Area Scheduling',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'Consultation Booking',
-      'Law Firm',
-      'Online Scheduling',
-      'CRM Integration',
-      'Professional Services',
-    ],
+    topics: ['booking-systems', 'follow-up', 'conversion-optimization'],
+    publishDate: '2026-02-10',
+    client: 'Mercer Legal',
+    location: 'Edinburgh, UK',
+    business: 'Mercer Legal',
+    duration: '8 weeks',
+    completedDate: 'February 2026',
+    heroHeadline: 'Consultations were booked. Most didn\u2019t turn into clients',
+    keyMetrics: [],
+    tags: ['Law Firm', 'Consultations', 'Family Law', 'Client Conversion'],
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'System Implementation' },
-      problem: { challengeBadgeLabel: 'The Booking Problem' },
-      solution: { solutionBadgeLabel: 'System Architecture' },
+      hero: { scenarioBadgeLabel: 'Consultation Conversion' },
+      problem: { challengeBadgeLabel: 'What was happening' },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Consultation Booking',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once the gap around the call was filled',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for law firms' },
+          { text: 'No pressure' },
+          { text: 'Useful for boutique law firms' },
         ],
       },
     },

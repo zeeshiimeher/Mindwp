@@ -146,11 +146,16 @@ function main() {
     });
   }
 
-  if (!primaryCtaSectionSource.includes("system: 'smart-website-systems'")) {
+  if (
+    !primaryCtaSectionSource.includes(
+      "pageIdentity.primarySystem ?? 'smart-website-systems'"
+    ) ||
+    !primaryCtaSectionSource.includes('system: primarySystem')
+  ) {
     issues.push({
       code: 'missing_locked_contact_system_usage',
       message:
-        'PrimaryCTASection href generation must use the locked contact system when building contact hrefs.',
+        "PrimaryCTASection href generation must derive system from pageIdentity.primarySystem with the 'smart-website-systems' fallback.",
     });
   }
 

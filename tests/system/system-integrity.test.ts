@@ -12,7 +12,6 @@ import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { getValidatorDefinitions } from '@/../scripts/core/system-manifest.mjs';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..', '..');
-const auditPath = path.join(workspaceRoot, 'docs/Planning/audit3.md');
 const integrityTargets = [
     'src/components/system/PrimaryCTASection.tsx',
     'src/components/system/RelatedContentSection.tsx',
@@ -23,18 +22,6 @@ const integrityTargets = [
 ] as const;
 
 describe('system invariant: closure lock', () => {
-    test('audit appendix contains no PARTIAL statuses and deferred items are explicit', () => {
-        const audit = readFileSync(auditPath, 'utf8');
-
-        expect(audit.includes('FINAL STATUS: PARTIAL')).toBe(false);
-
-        const deferredBlocks = [...audit.matchAll(
-            /^FILE:\s+(.+?)\s*$\nFINAL STATUS:\s+DEFERRED\nENFORCED VIA:\s+(.+?)\nREASON:\s+([\s\S]+?)\nTRIGGER TO ENFORCE:\s+([\s\S]+?)\nRISK:\s+(.+?)$/gm
-        )];
-
-        expect(deferredBlocks.length).toBeGreaterThan(0);
-    });
-
     test('critical closure files do not carry fallback markers or TODOs', () => {
         for (const relativePath of integrityTargets) {
             const source = readFileSync(path.join(workspaceRoot, relativePath), 'utf8');

@@ -1,124 +1,63 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildSalonNoShowReductionSystem(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Bloom & Co Hair is a four-chair salon in Edinburgh, running five days a week with a mix of
-      regular clients and new walk-in bookings. The salon had been experiencing a persistent no-show
-      rate of around 18% — roughly 14 missed appointments per week. No-shows disrupted daily
-      scheduling, left chairs empty during peak hours, and cost the business an estimated £1,100 per
-      week in lost revenue. There was no reminder system in place — clients booked and the salon
-      hoped they showed up.
+      Lumina Hair Studio is a busy independent salon in Brighton with five stylists and a small
+      colour bar. From the outside the diary looked the way every salon owner wants. Most days
+      stacked from late morning into the evening. The numbers told a quieter story \u2014 plenty of
+      those booked slots ended up sitting empty.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'No-Show Rate',
-      value: '4%',
-      icon: 'UserCheck',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Recovered Slots',
-      value: '11/week',
-      icon: 'CalendarCheck',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Revenue Saved',
-      value: '£870/wk',
-      icon: 'PoundSterling',
-      color: 'case-study-accent--amber',
-    },
-    {
-      label: 'Confirmation Rate',
-      value: '89%',
-      icon: 'CheckCircle2',
-      color: 'case-study-accent--purple',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: Clients Booking and Not Showing Up',
+    problemHeading: 'Bookings were full. Chairs were still empty',
     problemDescription: [
-      'Bloom & Co averaged 78 appointments per week. Of those, roughly 14 resulted in no-shows — clients who booked but didn\u2019t arrive and didn\u2019t cancel. The salon had no automated reminders, no confirmation requests, and no cancellation mechanism that triggered in advance.',
-      'No-shows clustered on Saturdays and Monday mornings. Saturday no-shows were particularly costly because the salon operated at full capacity and had no time to fill empty slots. Monday morning no-shows often came from the previous week\u2019s bookings where clients had forgotten across the weekend. Empty chairs during peak hours meant stylists stood idle while the salon lost revenue it could not recover.',
+      'A no-show on a Tuesday afternoon was annoying. A no-show on a Saturday cost real money. The colour appointments were the worst, because they took the longest slot and were almost impossible to refill at short notice.',
+      'The team was sending the same generic reminder the day before, and most no-shows were people who had simply forgotten or fallen out of the routine. By the time anyone realised they were not coming, the chair had already been empty for half an hour.',
     ],
     painPoints: [
-      '18% no-show rate — 14 missed appointments per week',
-      'No appointment reminders sent to clients after booking',
-      'Saturday no-shows unfillable due to fully booked schedules',
-      'Monday morning no-shows from bookings made the previous week',
-      'Estimated £1,100/week in lost revenue from empty chairs',
-      'Stylists frustrated by idle time during peak-hour gaps',
-      'No advance cancellation process to free up slots for waitlisted clients',
+      'No-shows clustered on the busiest days and the longest appointments',
+      'A single reminder the day before was not enough for clients with full lives',
+      'Late cancellations gave reception no time to refill the slot',
+      'The waiting list lived on a clipboard nobody had time to phone through',
+      'Stylists were being paid for time they were not actually cutting hair',
     ],
   };
 
-  const solutionSection: CaseStudyTemplateSection = {
-    type: 'solution',
-    solutionHeading: 'The System: Multi-Touch Reminder Sequences With Cancellation Recovery',
-    solutionDescription:
-      'The implementation built an automated reminder pipeline that confirmed each appointment at multiple intervals and triggered a cancellation-recovery workflow when clients cancelled in advance — turning potential no-shows into reallocated slots.',
-    whatWeDid: [
+  const processSection: CaseStudyTemplateSection = {
+    type: 'process',
+    howWeDidIt: [
       {
-        title: 'Booking Confirmation Message',
+        phase: 'Week 1',
+        title: 'Spent a morning on the front desk',
         description:
-          'Sent an immediate SMS and email confirmation at the moment of booking, establishing the appointment in the client\u2019s schedule.',
-        icon: 'CheckCircle',
+          'Watched what actually happened around no-shows. Where the gaps formed. What the team tried to do when a chair went empty. Most of the lost time happened in the same two-hour window most weeks.',
+        duration: '3 days',
       },
       {
-        title: '48-Hour Advance Reminder',
+        phase: 'Week 2',
+        title: 'Wrote the reminders in the receptionist\u2019s voice',
         description:
-          'Triggered a reminder 48 hours before the appointment with a one-tap confirmation button and an easy cancellation link.',
-        icon: 'Bell',
+          'Drafted a softer reminder a few days out and a confirmation the night before. Read them out loud with the team to make sure nothing sounded like a chain salon\u2019s text blast.',
+        duration: '4 days',
       },
       {
-        title: 'Same-Day Morning Reminder',
+        phase: 'Week 3',
+        title: 'Turned the clipboard into a real waiting list',
         description:
-          'Sent a final reminder at 8 AM on the day of the appointment with the time, stylist name, and salon address.',
-        icon: 'Clock',
+          'Pulled the regulars who often asked about Saturdays into one short list. Set it up so that when a slot opened, the right small group of people heard about it within a few minutes, not a few hours.',
+        duration: '1 week',
       },
       {
-        title: 'Cancellation Recovery Workflow',
+        phase: 'Weeks 4\u20136',
+        title: 'Watched it run on real bookings and tweaked the timing',
         description:
-          'When clients cancelled via the reminder link, the slot was instantly released and a waitlisted client received an automated offer to fill it.',
-        icon: 'RefreshCw',
-      },
-      {
-        title: 'No-Show Tracking & Tagging',
-        description:
-          'Clients who no-showed were tagged in the CRM. Repeat no-shows triggered a deposit requirement for future bookings.',
-        icon: 'AlertTriangle',
-      },
-    ],
-  };
-
-  const workflowsSection: CaseStudyTemplateSection = {
-    type: 'workflows',
-    badge: 'Reminder Workflow',
-    title: 'Appointment Confirmation & Recovery Flow',
-    description: 'The automated sequence from booking through to show-up or cancellation recovery.',
-    workflows: [
-      {
-        trigger: 'Client books an appointment (online or phone)',
-        actions: [
-          'Instant SMS + email booking confirmation sent',
-          'Reminder scheduled for 48 hours before appointment',
-          'Same-day 8 AM reminder scheduled',
-        ],
-      },
-      {
-        trigger: 'Client taps "Cancel" on 48-hour reminder',
-        actions: [
-          'Appointment cancelled and slot released',
-          'Waitlisted clients receive SMS with available slot offer',
-          'First waitlisted client to respond gets the slot automatically',
-        ],
+          'A few of the long-standing regulars found the early reminder a bit much, so we softened the wording for repeat clients. The colour appointments needed an extra confirmation step on top of everything else.',
+        duration: '3 weeks',
       },
     ],
   };
@@ -127,109 +66,96 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'No-Show Rate',
-        before: '18% — 14 no-shows per week out of 78 appointments',
-        after: '4% — 3 no-shows per week out of 82 appointments',
-        improvement: '78% reduction',
+        title: 'Empty chairs stopped being a quiet weekly story',
+        improvement: 'Noticeably fewer no-shows on the longer, higher-value appointments',
         description:
-          'The multi-touch reminder sequence dramatically reduced forgotten appointments. Most clients confirmed via the 48-hour reminder, and those who couldn\u2019t make it cancelled with enough time to fill the slot.',
+          'The reminders did most of the work. People who would have forgotten the appointment now confirmed earlier, and the ones who needed to move it did so before the day instead of on the day.',
       },
       {
-        metric: 'Recovered Appointment Slots',
-        before: 'No advance cancellation process — no-shows created unfillable gaps',
-        after: '11 previously-lost slots recovered per week through cancellation waitlisting',
-        improvement: '11 slots/week saved',
+        title: 'Cancelled slots actually got filled',
+        improvement: 'Same-day refills started becoming normal',
         description:
-          'The cancellation link in reminders encouraged clients to cancel early rather than simply not showing up. Waitlisted clients filled most of those released slots.',
+          'The waiting list went from a clipboard nobody used to a small group of clients who often replied within minutes when something came free.',
       },
       {
-        metric: 'Weekly Revenue Saved',
-        before: '£1,100/week lost to no-shows',
-        after: '£230/week lost (3 remaining no-shows)',
-        improvement: '£870/week recovered',
+        title: 'The week\u2019s takings stopped fluctuating so wildly',
+        improvement: 'Less of a gap between what the diary promised and what the till saw',
         description:
-          'Reducing no-shows from 14 to 3 per week, combined with the waitlist filling cancelled slots, recovered an estimated £870 per week in otherwise-lost revenue.',
-      },
-      {
-        metric: 'Reminder Confirmation Rate',
-        before: 'No reminders sent — 0% confirmation',
-        after: '89% of clients confirmed via the 48-hour reminder',
-        improvement: '89% active confirmation',
-        description:
-          'The one-tap confirmation gave the salon confidence that booked clients were actually coming. Unconfirmed appointments were flagged for proactive follow-up.',
+          'The colour bar in particular calmed down. Saturdays still got some last-minute changes, but the lost slots stopped being treated as inevitable.',
       },
     ],
   };
 
+  const testimonialSection: CaseStudyTemplateSection = {
+    type: 'testimonial',
+    testimonial: {
+      quote:
+        'Honestly, the change was just having someone else feeling responsible for the empty chair. The reminders did half of it, the waiting list did the rest, and the team stopped dreading Saturdays.',
+      author: 'Aisha Patel',
+      role: 'Owner, Lumina Hair Studio',
+    },
+  };
+
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Tired of Empty Chairs From No-Shows?',
-    body: 'Book a free 20-minute call and we\u2019ll show you how an automated reminder and recovery system could reduce no-shows and recover lost revenue for your salon.',
+    heading: 'Diary looks full but the chair keeps emptying?',
+    body: 'Book a free 20-minute call. We can look at where your no-shows are clustering and how to keep more of those slots actually paid for.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    workflowsSection,
-    solutionSection,
+    processSection,
     resultsSection,
+    testimonialSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
     seo: {
-      title: 'Salon No-Show Reduction | 18% to 4% With Automation',
+      title: 'Salon no-show case study: fewer empty chairs, calmer weeks',
       description:
-        'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
-      canonical: '/case-studies/salon-no-show-reduction-system',
+        'How a Brighton hair salon stopped losing so many slots to no-shows and started actually filling the cancellations that did happen.',
+      canonical: '/case-studies/salon-bookings-full-chairs-empty',
       openGraph: {
-        title: 'Why Salon Clients Miss Appointments | MindWP Case Study',
-        description:
-          'How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week.',
+        title: 'Salon no-show case study: fewer empty chairs, calmer weeks',
+        description: 'How a Brighton hair salon stopped losing so many slots to no-shows.',
       },
     },
-    slug: 'salon-no-show-reduction-system',
-    title: 'Salon No-Show Reduction System',
+    slug: 'salon-bookings-full-chairs-empty',
+    title: 'Bookings were full. Chairs were still empty',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
-    systems: ['crm-automation', 'revenue-growth'],
-    topics: ['no-show-reduction', 'booking-automation'],
-    publishDate: '2026-01-01',
-    client: 'Bloom & Co Hair',
-    location: 'Edinburgh, UK',
-    business: 'Bloom & Co Hair',
-    duration: '7 weeks',
+    systems: ['revenue-growth'],
+    topics: ['no-show-reduction', 'service-reminders', 'booking-systems'],
+    publishDate: '2026-01-25',
+    client: 'Lumina Hair Studio',
+    location: 'Brighton, UK',
+    business: 'Lumina Hair Studio',
+    duration: '6 weeks',
     completedDate: 'January 2026',
-    heroHeadline: 'How a Hair Salon Reduced No-Shows From 18% to 4% and Recovered £870 Per Week',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'No-Show Reduction',
-      'Appointment Reminders',
-      'Hair Salon',
-      'CRM Automation',
-      'Waitlist Recovery',
-    ],
+    heroHeadline: 'Bookings were full. Chairs were still empty',
+    keyMetrics: [],
+    tags: ['Salon', 'No-Shows', 'Reminders', 'Hair Salon'],
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Operational Problem' },
-      problem: { challengeBadgeLabel: 'The No-Show Problem' },
-      workflows: { workflowsBadgeLabel: 'Reminder Workflow' },
-      solution: { solutionBadgeLabel: 'System Implementation' },
+      hero: { scenarioBadgeLabel: 'No-Shows' },
+      problem: { challengeBadgeLabel: 'What was happening' },
+      process: {
+        implementationBadgeLabel: 'How it actually went',
+        implementationSectionTitle: 'How the no-show fix came together',
+      },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: No-Show Performance',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once empty chairs stopped being normal',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for salons' },
+          { text: 'No pressure' },
+          { text: 'Useful for busy salons' },
         ],
       },
     },

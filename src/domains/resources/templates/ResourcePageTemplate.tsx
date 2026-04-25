@@ -498,7 +498,11 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   );
 
   return (
-    <CTARegistryProvider pageId={props.pageId} pageType='resource'>
+    <CTARegistryProvider
+      pageId={props.pageId}
+      pageType='resource'
+      primarySystem={props.systems?.[0] ?? 'smart-website-systems'}
+    >
       <div className='resource-page'>
         <main className='resource-page__main'>
           {/* 1. HERO SECTION */}

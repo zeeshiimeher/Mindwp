@@ -47,9 +47,14 @@ export const getFeaturePageBySlug = (slug: FeatureSlug) => {
 export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
   const FeaturePage = getFeaturePageBySlug(slug);
   const data = getFeatureDataBySlug(slug);
+  const primarySystem = data.systems?.[0] ?? 'smart-website-systems';
 
   return (
-    <CTARegistryProvider pageId={`feature:${slug}`} pageType='feature'>
+    <CTARegistryProvider
+      pageId={`feature:${slug}`}
+      pageType='feature'
+      primarySystem={primarySystem}
+    >
       <FeaturePage data={data} />
       <SmartRelatedSection pageId={`feature:${slug}`} pageType='feature' slug={slug} />
     </CTARegistryProvider>

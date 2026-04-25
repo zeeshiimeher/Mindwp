@@ -1,82 +1,59 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildAutoRepairMissedCallRecovery(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Premier Auto Care is a busy independent garage in Leicester. Most mornings start the same way:
-      MOT drop-offs, keys changing hands, somebody asking for a quick look at a warning light, and
-      the phone going again while the front desk is already tied up. That was the point where new
-      enquiries kept slipping away. Not because the team did not care. They just could not pick up
-      every time.
+      Premier Auto Care is a busy independent garage in Leicester. Mornings ran the same way most
+      days. MOTs being dropped off at the counter. Keys handed across. Someone already half under a
+      bonnet. And the phone, of course, going while every pair of hands was already on a car.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Missed callers reached later',
-      value: 'Most of them',
-      icon: 'Phone',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'First reply speed',
-      value: 'Much quicker',
-      icon: 'Clock',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Extra booked work',
-      value: 'Around 8-10 jobs a week',
-      icon: 'UserPlus',
-      color: 'case-study-accent--purple',
-    },
-    {
-      label: 'Recovered revenue',
-      value: 'Around GBP3k-GBP4k a month',
-      icon: 'TrendingUp',
-      color: 'case-study-accent--amber',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The phone kept ringing while the ramps were full',
+    problemHeading: 'The phone kept ringing while they were under the hood',
     problemDescription: [
-      'The garage was strongest in the first two hours of the day and weakest at answering the phone in those same two hours. Cars were arriving, people wanted updates, and the front desk had one pair of hands.',
-      'Some callers rang back. Plenty did not. A few left voicemails, but those often sat there until later on. By then the urgent ones had usually tried somewhere else.',
+      'On paper the diary looked fine. In practice, the loudest hours of the day were also the hours nobody could pick up. A few callers tried again later. Most just moved on.',
+      'Voicemails got listened to once the front desk had a breather. By then the urgent ones had usually already rung the next garage on the list.',
     ],
     painPoints: [
-      'Morning drop-off was the main pressure point',
-      'Missed calls were common, but nobody could see the full picture',
-      'Voicemails were checked late when the desk calmed down',
-      'Breakdown and urgent repair callers moved on quickly',
-      'The team relied on memory more than a proper callback list',
+      'Drop-off hours doubled as the busiest call window',
+      'Voicemail felt like a dead end to anyone who needed help that day',
+      'Nobody actually knew how many callers they were losing',
+      'Urgent jobs and routine MOT bookings hit the same silence',
     ],
   };
 
   const workflowsSection: CaseStudyTemplateSection = {
     type: 'workflows',
-    badge: 'What Changed',
-    title: 'Missed calls stopped disappearing into the morning rush',
+    title: 'What started happening when the phone went unanswered',
     description:
-      'Instead of a missed call turning into guesswork later, the garage had a simple way to respond while the desk was still busy.',
+      'They stopped letting missed calls disappear into the morning rush. A small handoff sat behind every call so the garage could still recover the conversation.',
     workflows: [
       {
-        trigger: 'A caller rang and nobody could answer',
+        trigger: 'Caller rings during a busy ramp hour and nobody picks up',
         actions: [
-          'A short text went out straight away saying the garage had seen the call',
-          'The missed call landed in one place instead of being left to memory',
-          'If the caller texted back with something urgent, it was easier to spot fast',
+          'A short text goes back to the caller saying the garage saw the call',
+          'The caller can text back what the issue is or when they need it in',
+          'The missed call lands in one shared callback list with the context attached',
         ],
       },
       {
-        trigger: 'The desk finally had breathing room',
+        trigger: 'Caller mentions a breakdown, warning light, or urgent fault',
         actions: [
-          'The callback list was already there, in order, with context',
-          'Staff could work through it without digging through voicemails',
-          'A few callers still needed a second try, but far fewer were lost completely',
+          'The front desk sees it flagged at the top of the callback list',
+          'Whoever is free rings them back first, before the routine bookings',
+          'If they are still on the road, the garage can fit them in the same morning',
+        ],
+      },
+      {
+        trigger: 'Morning rush settles down around half past ten',
+        actions: [
+          'The team works through the callback list in order',
+          'Every caller has been at least acknowledged, no more starting from voicemail',
+          'Anything that still feels off goes on a follow-up note for the next day',
         ],
       },
     ],
@@ -86,30 +63,30 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     type: 'results',
     results: [
       {
-        title: 'More missed callers actually came back into the conversation',
-        improvement: 'Most of the ones they would have lost before were at least reached properly',
+        title: 'Missed callers stopped going completely silent',
+        improvement: 'Most of the people they would have lost were at least reached',
         description:
-          'The biggest shift was simple: a missed call no longer meant silence. People got a quick acknowledgement, and the garage had a real callback trail instead of hoping someone remembered later.',
+          'A missed call no longer meant the caller heard nothing back. The garage had a real chance to save the conversation while the job still mattered.',
       },
       {
-        title: 'Replies happened sooner, while the job was still live',
-        improvement: 'Faster enough to matter',
+        title: 'Replies happened while the job was still live',
+        improvement: 'Quick enough to matter that morning',
         description:
-          'They were getting back to people much quicker than before. Not instantly every single time, but usually fast enough that the enquiry was still warm and worth saving.',
+          'They were getting back to people much sooner than before. Not in seconds every time, but usually fast enough that the caller had not yet rung somewhere else.',
       },
       {
-        title: 'The extra work was noticeable without feeling exaggerated',
-        improvement: 'Around GBP3k-GBP4k a month in recovered jobs',
+        title: 'The recovered work showed up in the diary',
+        improvement: 'Around eight to ten extra jobs in a normal week',
         description:
-          'It was not a perfect line upward every week. Some callers still never replied. But enough did that the recovered work was obvious in the workshop diary and in the month-end numbers.',
+          'Some callers still never replied. Some texts came back about issues that turned out not to be urgent. But enough work came back that it was obvious in the workshop diary and at the end of the month.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Missing calls during the busy part of the day?',
-    body: 'Book a free 20-minute call and we can look at what happens when your phone rings at the wrong moment and how to stop those enquiries going cold.',
+    heading: 'Missing calls during the busiest part of the day?',
+    body: 'Book a free 20-minute call. We can look at what happens when your phone rings at the wrong moment and where those callers are going.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
@@ -125,16 +102,16 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     seo: {
       title: 'Garage missed call case study: more enquiries recovered',
       description:
-        'How a Leicester garage stopped losing so many callers during the morning rush and recovered around GBP3k-GBP4k a month in work that had been slipping away.',
+        'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been quietly slipping away.',
       canonical: '/case-studies/garage-morning-rush-missed-calls',
       openGraph: {
         title: 'Garage missed call case study: more enquiries recovered',
         description:
-          'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been slipping away.',
+          'How a Leicester garage stopped losing so many callers during the morning rush.',
       },
     },
     slug: 'garage-morning-rush-missed-calls',
-    title: 'The phone kept ringing while the ramps were full',
+    title: 'The phone kept ringing while they were under the hood',
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['auto-repair'],
@@ -146,21 +123,16 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     business: 'Premier Auto Care',
     duration: '9 weeks',
     completedDate: 'February 2026',
-    heroHeadline: 'The phone kept ringing while the ramps were full',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Follow-Up', 'Automotive'],
+    heroHeadline: 'The phone kept ringing while they were under the hood',
+    keyMetrics: [],
+    tags: ['Missed Calls', 'Auto Repair', 'Lead Recovery', 'Garage', 'Morning Rush'],
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'Morning Pressure Point' },
-      problem: { challengeBadgeLabel: 'What Was Going Wrong' },
-      workflows: { workflowsBadgeLabel: 'What Changed' },
+      hero: { scenarioBadgeLabel: 'Morning Rush' },
+      problem: { challengeBadgeLabel: 'What was happening' },
       results: {
-        detailedResultsBadgeLabel: 'What Improved',
-        detailedResultsSectionTitle: 'What Changed Once Missed Calls Were Handled Better',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once missed calls were handled properly',
       },
       cta: {
         metaItems: [

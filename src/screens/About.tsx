@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 export function About() {
   return (
     <div className='about-page'>
-      {/* Hero Section */}
+      {/* SECTION 1 — REALITY (OPENING) */}
       <SectionWrapper
         className='about-page-hero'
         background='bg-gradient-to-b from-blue-50 to-white'
@@ -16,85 +16,94 @@ export function About() {
           <Badge variant='secondary' context='hero'>
             About MindWP
           </Badge>
-          <h1 className='mb-6'>Why MindWP Exists</h1>
+          <h1 className='mb-6'>The work is already coming in. It just keeps slipping out.</h1>
           <p className='text-xl text-muted-foreground mb-8'>
-            MindWP was built on a simple observation: many service businesses invest in websites
-            that look modern but fail to support how the business actually operates.
+            A roofer misses three calls during a job and never hears back from any of them. A salon
+            owner sees a no-show on the morning before payroll. A law firm watches a qualified
+            enquiry sit in someone&rsquo;s inbox until the prospect signs with the next firm. None
+            of this looks like a marketing problem from the inside. It looks like a busy week.
           </p>
           <HeroActions allowSecondaryAction />
         </div>
       </SectionWrapper>
 
-      {/* Industry Problem */}
+      {/* SECTION 2 — WHAT WE ACTUALLY DO */}
       <SectionWrapper>
         <div className='max-w-3xl'>
-          <h2 className='mb-6'>The Problem We Saw</h2>
+          <h2 className='mb-6'>What we actually do</h2>
           <p className='text-muted-foreground mb-4'>
-            Too often, websites are treated as visual projects rather than operational tools.
-            Traffic is pursued without structure. Forms exist without routing logic. Follow-up is
-            inconsistent. Visibility efforts operate in isolation.
+            We fix what breaks between an enquiry and a paying customer. The phone that rings while
+            you&rsquo;re on a roof. The form that arrives at 9pm and gets read on Monday. The quote
+            that gets sent and never followed up. The five-star job that never asked for a review.
           </p>
           <p className='text-muted-foreground'>
-            The result is unnecessary manual work, missed enquiries, and fragmented systems that
-            require constant patching instead of deliberate design.
+            None of that is a website problem on its own, and none of it is an SEO problem on its
+            own. We treat it as one connected job: the website, the routing, the follow-up, the
+            visibility, the proof.
           </p>
         </div>
       </SectionWrapper>
 
-      {/* Our Approach */}
+      {/* SECTION 3 — HOW WE THINK (DIFFERENTIATION) */}
       <SectionWrapper background='bg-base'>
         <div className='max-w-3xl'>
-          <h2 className='mb-6'>Our Approach</h2>
+          <h2 className='mb-6'>How we think about this</h2>
           <p className='text-muted-foreground mb-4'>
-            We approach websites as digital infrastructure. A Smart Website is not a collection of
-            pages — it is a connected system aligned to how a business receives, assigns, and
-            handles enquiries day to day.
+            Most agencies sell one piece of the problem. A website. A pack of leads. A new tool. The
+            piece works. The business still leaks money in the same places it did before, because
+            the gap was never the piece — it was the seam between pieces.
           </p>
           <p className='text-muted-foreground'>
-            Visibility, structure, workflows, and tracking are considered together. Nothing is
-            implemented in isolation. Every layer supports operational clarity and long-term
-            reliability.
+            We work the whole flow: how a customer finds you, what they hit when they land, where
+            their enquiry actually ends up, who replies and how fast, and what happens after the
+            job. Strong businesses are built when those steps stop dropping each other.
           </p>
         </div>
       </SectionWrapper>
 
-      {/* What We Don’t Do */}
+      {/* SECTION 4 — WHO THIS IS FOR */}
       <SectionWrapper>
         <div className='max-w-3xl'>
-          <h2 className='mb-6'>What We Don’t Do</h2>
+          <h2 className='mb-6'>Who this is for</h2>
           <Card className='p-8'>
             <ul className='about-page__dont-list text-foreground'>
-              <li>We don’t sell hype or promise rapid growth.</li>
-              <li>We don’t position AI or automation as shortcuts.</li>
-              <li>We don’t build websites based solely on design trends.</li>
-              <li>We don’t implement tools without structural alignment.</li>
-              <li>We don’t take projects that lack operational clarity.</li>
+              <li>Service businesses where the work is real and the demand is already there.</li>
+              <li>
+                Operators who know exactly which calls and follow-ups are slipping, and want it
+                fixed.
+              </li>
+              <li>Owners who want fewer dropped enquiries, not a louder marketing campaign.</li>
+              <li>
+                Teams that have outgrown the &ldquo;build a site and hope&rdquo; stage and need
+                something that runs reliably.
+              </li>
             </ul>
           </Card>
         </div>
       </SectionWrapper>
 
-      {/* How We Work */}
+      {/* SECTION 5 — WHO THIS IS NOT FOR */}
       <SectionWrapper background='bg-alt'>
         <div className='max-w-3xl'>
-          <h2 className='mb-6'>How We Work</h2>
-          <p className='text-muted-foreground mb-4'>
-            Every engagement begins with review and alignment. We look at how your website supports
-            visibility, how enquiries are received, how responsibilities are assigned, and how
-            follow-up is managed.
-          </p>
-          <p className='text-muted-foreground'>
-            From there, we implement structured improvements through Smart Website infrastructure
-            and supporting system layers. The objective is clarity — not complexity.
-          </p>
+          <h2 className='mb-6'>Who this is not for</h2>
+          <Card className='p-8'>
+            <ul className='about-page__dont-list text-foreground'>
+              <li>Anyone shopping for the cheapest template website.</li>
+              <li>DIY operators who just need login access to another tool to try.</li>
+              <li>Buyers who want a single SaaS product to install and walk away from.</li>
+              <li>
+                Businesses that haven&rsquo;t yet figured out what they sell or who they sell it to.
+              </li>
+            </ul>
+          </Card>
         </div>
       </SectionWrapper>
 
-      {/* Final CTA */}
+      {/* SECTION 6 — CTA → Smart Website Systems */}
       <SectionWrapper className='footer-cta cta' padding='none'>
         <PrimaryCTASection
-          title="If this approach resonates, let's talk."
-          description='We work best with service businesses that value structure, clarity, and deliberate implementation.'
+          title="Ready to stop losing the work that's already coming in?"
+          description='See how Smart Website Systems closes the gap between an enquiry and a paying customer for service businesses.'
           primaryActionVariant='white'
           backgroundColor='bg-gradient-primary'
           wrapper='none'

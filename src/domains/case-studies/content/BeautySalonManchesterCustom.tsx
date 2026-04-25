@@ -1,243 +1,167 @@
-import {
-  type CaseStudyContent,
-  type CaseStudyTemplateSection,
-} from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildBeautySalonManchesterCustom(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      The Glow Room is a small independent beauty salon in Manchester city centre. Despite having a
-      loyal client base, the business was difficult to find through Google search and Maps when
-      people searched for local beauty services. Appointments were handled manually by phone during
-      opening hours, leading to frequent interruptions during treatments, missed enquiries outside
-      business hours, and a growing amount of time spent managing reminders and follow-ups.
+      Velvet &amp; Co. is a busy hair and beauty salon in the Northern Quarter of Manchester. A
+      strong base of regular clients, two full-time stylists, and a steady weekly diary. The owner
+      kept noticing the same thing month after month. Takings were respectable. They were also
+      almost identical to last year. Nothing was going wrong. Nothing was actually moving forward
+      either.
     </>
   );
 
-  const heroOverrides = {
-    scenarioBadgeLabel: 'Custom Implementation Scenario',
-  };
-
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Local Visibility',
-      value: 'Improved',
-      icon: 'MapPin',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Booking Consistency',
-      value: 'More stable',
-      icon: 'TrendingUp',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Missed Appointments',
-      value: 'Reduced',
-      icon: 'CheckCircle2',
-      color: 'case-study-accent--purple',
-    },
-    {
-      label: 'Client Feedback',
-      value: 'More recent',
-      icon: 'Star',
-      color: 'case-study-accent--amber',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Challenge: Limited Online Visibility and Manual Scheduling',
+    problemHeading: 'They had steady clients. Growth had completely stalled',
     problemDescription: [
-      'The Glow Room is a small independent beauty salon in Manchester city centre. Despite having a loyal client base, the business was difficult to find through Google search and Maps when people searched for local beauty services.',
-      'Appointments were handled manually by phone during opening hours. This led to frequent interruptions during treatments, missed enquiries outside business hours, and a growing amount of time spent managing reminders and follow-ups.',
+      'The salon was busy on the days you would expect. Saturday was always full. Tuesday was always quiet. New clients trickled in, mostly through word of mouth. Older clients drifted out at about the same pace. The numbers held flat.',
+      'There was no obvious thing to fix. The work was good. The space looked nice. The team was friendly. But the things that might actually grow the salon, getting new clients to rebook, filling quiet days, bringing back people who had stopped coming, were happening by chance, if at all.',
     ],
     painPoints: [
-      'Low visibility in Google Maps for local beauty searches',
-      'A small number of reviews compared to nearby competitors',
-      'Phone calls interrupting treatments throughout the day',
-      'Missed enquiries outside normal opening hours',
-      'Manual appointment management consuming valuable time',
-      'No automated reminders or follow-up system',
+      'New clients rarely rebooked after their first visit',
+      'Quiet days stayed quiet because nothing was filling them',
+      'Past clients who had drifted away were never being contacted',
+      'Reviews and word of mouth were the only growth lever in play',
+      'The owner could feel the plateau but had no time to fix it personally',
     ],
-  };
-
-  const problemOverrides = {
-    challengeBadgeLabel: 'The Beauty Salon Challenge',
-  };
-
-  const deliverablesSection: CaseStudyTemplateSection = {
-    type: 'deliverables',
-    badge: 'Deliverables',
-    title: 'What Was Built',
-    description:
-      'A comprehensive digital transformation combining website, CRM automation, and local SEO to replace manual processes.',
-    items: [
-      'Professional WordPress website with integrated booking system',
-      'GoHighLevel CRM with automated scheduling and reminders',
-      'Google Maps and local search visibility optimisation',
-      'Automated review collection and response system',
-      'Online payment integration and client portal',
-      'SMS notifications and email campaign automation',
-    ],
-    columns: 2,
-  };
-
-  const deliverablesOverrides = {
-    deliverablesBadgeLabel: 'What Was Delivered',
   };
 
   const processSection: CaseStudyTemplateSection = {
     type: 'process',
     howWeDidIt: [
       {
-        phase: 'Phase 1',
-        title: 'Discovery & Planning',
-        description: 'Analyzed current processes and identified automation opportunities',
-        duration: '1 week',
+        phase: 'Week 1',
+        title: 'A proper look at the diary',
+        description:
+          'Two of us sat with the owner for an afternoon and looked at the last six months of bookings. New clients, rebookings, gaps, drifted regulars. The picture made the leaks obvious.',
+        duration: 'Half a day on site',
       },
       {
-        phase: 'Phase 2',
-        title: 'Website & CRM Setup',
-        description: 'Built WordPress site and configured GoHighLevel automation',
-        duration: '2 weeks',
+        phase: 'Weeks 2-3',
+        title: 'The first-visit nudge',
+        description:
+          'A calm, warm message went out a few days after every new client\u2019s first visit, with a soft suggestion to book the next one before life got in the way. That alone shifted the rebook rate.',
+        duration: 'Two weeks to land',
       },
       {
-        phase: 'Phase 3',
-        title: 'Local SEO Implementation',
-        description: 'Optimized Google My Business and local search presence',
-        duration: '1 week',
+        phase: 'Weeks 4-5',
+        title: 'Filling the midweek gap',
+        description:
+          'When the diary genuinely needed it, regulars who lived locally got a small midweek nudge. Not constant. Just enough that Tuesdays and Wednesdays stopped feeling like dead time.',
+        duration: 'A fortnight of tuning',
       },
       {
-        phase: 'Phase 4',
-        title: 'Testing & Launch',
-        description: 'Comprehensive testing and client training',
-        duration: '1 week',
+        phase: 'Weeks 6-7',
+        title: 'Reaching the drifted ones',
+        description:
+          'Anyone who had not been in for a few months got a single friendly message. No guilt-trip. Just a reminder the salon was there. A surprising number of them booked back in.',
+        duration: 'Two weeks',
+      },
+      {
+        phase: 'Week 8',
+        title: 'A monthly view for the owner',
+        description:
+          'A short monthly summary showed who had rebooked, who had drifted, and which days were filling early or late. The picture replaced the guesswork.',
+        duration: 'A few hours to set up',
       },
     ],
   };
 
-  const processOverrides = {
-    implementationBadgeLabel: 'Project Timeline',
-    implementationSectionTitle: 'How We Transformed Their Business',
-    implementationSectionSubtitle: '4-week implementation with measurable results',
+  const testimonialSection: CaseStudyTemplateSection = {
+    type: 'testimonial',
+    testimonial: {
+      quote:
+        'I\u2019d been telling myself for two years that we were doing fine. We were, but we weren\u2019t actually growing. Now my Tuesdays look different, new clients keep coming back, and I stopped feeling guilty about the drifted ones because they were getting reached anyway. It just feels like a salon that\u2019s alive again.',
+      author: 'Saskia Brennan',
+      role: 'Owner, Velvet & Co.',
+    },
   };
 
   const resultsSection: CaseStudyTemplateSection = {
     type: 'results',
     results: [
       {
-        metric: 'Online Bookings',
-        before: '0%',
-        after: '85%',
-        improvement: '+85%',
-        description: 'Shifted from phone-only to mostly online bookings',
+        title: 'New clients started becoming regulars',
+        improvement: 'A clear lift in first-visit rebookings',
+        description:
+          'The single biggest change was the rebook rate after a first appointment. The same number of new clients walked in. More of them turned into people the salon would see again.',
       },
       {
-        metric: 'Google Maps Visibility',
-        before: 'Page 3-5',
-        after: 'Page 1',
-        improvement: 'Top 3 results',
-        description: 'Improved local search ranking significantly',
+        title: 'Midweek days stopped feeling like dead time',
+        improvement: 'Tuesdays and Wednesdays held a meaningfully better fill',
+        description:
+          'The quiet days never became Saturday, and they were not meant to. They just stopped being almost empty. That extra middle-of-the-week chair time was pure additional revenue without any extra cost.',
       },
       {
-        metric: 'Client Reviews',
-        before: '12 reviews',
-        after: '47 reviews',
-        improvement: '+292%',
-        description: 'Automated review collection increased social proof',
-      },
-      {
-        metric: 'Time Saved Weekly',
-        before: '8 hours',
-        after: '2 hours',
-        improvement: '75% reduction',
-        description: 'Administrative time reduced dramatically',
-      },
-      {
-        metric: 'Missed Appointments',
-        before: '15%',
-        after: '3%',
-        improvement: '80% reduction',
-        description: 'Automated reminders improved reliability',
+        title: 'The plateau actually lifted',
+        improvement: 'Steady, repeatable growth instead of flat months',
+        description:
+          'The salon stopped looking the same as last year. The owner felt it in the diary before she saw it in the bank account, but both numbers eventually moved. Growth went from accidental to repeatable.',
       },
     ],
   };
 
-  const resultsOverrides = {
-    detailedResultsBadgeLabel: 'Complete Before/After Analysis',
-    detailedResultsSectionTitle: 'Measurable Results & ROI',
-  };
-
-  const ctaHeading = 'Want Results Like The Glow Room Beauty Salon?';
-  const ctaBody =
-    "Book a free 20-minute strategy call and we'll show you exactly how we can help your beauty & personal care business get more leads, save time, and grow revenue—with WordPress, GoHighLevel automation, and smart local SEO.";
-
-  const ctaOverrides = {
-    metaItems: [
-      { text: 'Free 20-minute strategy call' },
-      { text: 'Custom beauty salon solutions' },
-      { text: 'No long-term contracts' },
-      { text: 'Results within 30 days' },
-    ],
+  const ctaSection: CaseStudyTemplateSection = {
+    type: 'cta',
+    heading: 'Salon doing fine but stuck on a plateau?',
+    body: 'Book a free 20-minute call. We can look at where the small leaks are in your salon\u2019s month and what is most worth fixing first.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    deliverablesSection,
     processSection,
+    testimonialSection,
     resultsSection,
     { type: 'more' },
-    {
-      type: 'cta',
-      heading: ctaHeading,
-      body: ctaBody,
-    },
+    ctaSection,
   ];
 
   return {
     seo: {
-      title: 'Custom Beauty Salon Case Study | Manchester',
+      title: 'Manchester salon case study: lifting a steady salon out of a plateau',
       description:
-        'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
-      canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+        'How a busy Manchester salon stopped repeating last year\u2019s numbers and started seeing real, repeatable growth without working any harder.',
+      canonical: '/case-studies/manchester-salon-steady-clients-growth-stalled',
       openGraph: {
-        title: 'Custom Beauty Salon Case Study with Flexible Labels | Manchester',
-        description:
-          'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+        title: 'Manchester salon case study: lifting a steady salon out of a plateau',
+        description: 'How a busy Manchester salon stopped repeating last year\u2019s numbers.',
       },
     },
-    slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-    title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+    slug: 'manchester-salon-steady-clients-growth-stalled',
+    title: 'They had steady clients. Growth had completely stalled',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
-    systems: ['local-seo-authority', 'smart-website-systems', 'reputation-review'],
-    topics: ['booking-automation', 'review-generation'],
-    publishDate: '2024-12-01',
-    client: 'The Glow Room Beauty Salon (Custom Demo)',
+    systems: ['revenue-growth'],
+    topics: ['customer-lifetime-value', 'booking-systems', 'client-reactivation'],
+    publishDate: '2025-12-20',
+    client: 'Velvet & Co.',
     location: 'Manchester, UK',
-    business: 'The Glow Room Beauty Salon',
-    duration: '3 months',
-    completedDate: 'December 2024',
-    heroHeadline: 'Custom Beauty Salon Case Study - Template Flexibility Demo',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'Custom Template'],
+    business: 'Velvet & Co.',
+    duration: '8 weeks',
+    completedDate: 'December 2025',
+    heroHeadline: 'They had steady clients. Growth had completely stalled',
+    keyMetrics: [],
+    tags: ['Salon', 'Retention', 'Rebooking', 'Manchester'],
     sections,
     templateOverrides: {
-      hero: heroOverrides,
-      problem: problemOverrides,
-      deliverables: deliverablesOverrides,
-      process: processOverrides,
-      results: resultsOverrides,
-      cta: ctaOverrides,
+      hero: { scenarioBadgeLabel: 'Plateau' },
+      problem: { challengeBadgeLabel: 'What was happening' },
+      results: {
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once the small leaks were closed',
+      },
+      cta: {
+        metaItems: [
+          { text: 'Free 20-minute call' },
+          { text: 'No pressure' },
+          { text: 'Useful for established salons' },
+        ],
+      },
     },
   };
 }

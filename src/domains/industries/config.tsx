@@ -148,10 +148,12 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
       render: () => {
         const renderCategory =
           CATEGORY_RENDERER_OVERRIDES_BY_SLUG.get(data.slug) ?? renderCategoryWithDefaultTemplate;
+        const primarySystem = data.systems?.[0] ?? 'smart-website-systems';
         return (
           <CTARegistryProvider
             pageId={`industry-category:${data.slug}`}
             pageType='industry-category'
+            primarySystem={primarySystem}
           >
             {renderCategory(data)}
             <SmartRelatedSection
@@ -173,8 +175,13 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
     render: () => {
       const renderDetail =
         DETAIL_RENDERER_OVERRIDES_BY_PATH.get(path) ?? renderDetailWithDefaultTemplate;
+      const primarySystem = data.systems?.[0] ?? 'smart-website-systems';
       return (
-        <CTARegistryProvider pageId={`industry-detail:${data.slug}`} pageType='industry-detail'>
+        <CTARegistryProvider
+          pageId={`industry-detail:${data.slug}`}
+          pageType='industry-detail'
+          primarySystem={primarySystem}
+        >
           {renderDetail(data)}
           <SmartRelatedSection
             pageId={`industry-detail:${data.slug}`}

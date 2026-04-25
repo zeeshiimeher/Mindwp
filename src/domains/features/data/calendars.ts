@@ -63,10 +63,10 @@ export const calendarsData: FeaturePageData = {
   systems: ['smart-website-systems', 'revenue-growth'],
   topics: ['booking-automation'],
   hero: {
-    badge: 'Booking Layer',
-    title: 'Structured Online Booking Integrated into Your System',
+    badge: 'Part of Smart Website Systems',
+    title: 'Enquiries that turn into bookings without a back-and-forth',
     description:
-      'This booking layer lets clients schedule appointments through a clear flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
+      'When a visitor has to email to ask for a slot, most of them never do. Calendars sit inside Smart Website Systems so the booking happens on the page, the confirmations and reminders run themselves, and the team calendar stays in sync with the work coming in.',
     stats: [
       { value: 'Online', label: 'Booking' },
       { value: 'Automated', label: 'Reminders' },

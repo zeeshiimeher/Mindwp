@@ -620,14 +620,6 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                     </div>
                   ))}
                 </div>
-                <div className='mt-6'>
-                  <Button
-                    href='/faq'
-                    variant='outline'
-                    label='View All FAQs'
-                    cssPrefix='btn-block'
-                  />
-                </div>
               </Card>
             </div>
           </div>

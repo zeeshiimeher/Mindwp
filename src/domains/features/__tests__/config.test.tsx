@@ -81,10 +81,11 @@ describe('features config and registry', () => {
 
     expect(getPageEnforcementSnapshots()).toContainEqual(
       expect.objectContaining({
-        pageIdentity: {
+        pageIdentity: expect.objectContaining({
           pageId: 'feature:crm',
           pageType: 'feature',
-        },
+          primarySystem: 'crm-automation',
+        }),
       })
     );
   });

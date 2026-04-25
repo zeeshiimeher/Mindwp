@@ -65,15 +65,7 @@ const INDEXABLE_CLASSIFICATIONS = new Set<IndexingClassification>([
   'system',
 ]);
 
-const MARKETING_PATHS = new Set([
-  '/',
-  '/about',
-  '/contact',
-  '/cookies',
-  '/faq',
-  '/privacy',
-  '/terms',
-]);
+const MARKETING_PATHS = new Set(['/', '/about', '/contact', '/cookies', '/privacy', '/terms']);
 
 const CLASSIFIED_STATIC_PATHS = new Map<string, IndexingClassification>([
   ['/blog', 'blog'],
@@ -82,7 +74,6 @@ const CLASSIFIED_STATIC_PATHS = new Map<string, IndexingClassification>([
   ['/industries', 'industries'],
   ['/resources', 'resources'],
   ['/services', 'services'],
-  ['/conversation', 'utility'],
   ['/dashboard', 'utility'],
   ['/system-dashboard', 'dev'],
   ['/components', 'dev'],

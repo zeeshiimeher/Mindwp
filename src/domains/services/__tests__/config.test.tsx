@@ -185,10 +185,11 @@ describe('services config slugs', () => {
 
     expect(getPageEnforcementSnapshots()).toContainEqual(
       expect.objectContaining({
-        pageIdentity: {
+        pageIdentity: expect.objectContaining({
           pageId: 'service:conversion-layer',
           pageType: 'service',
-        },
+          primarySystem: 'revenue-growth',
+        }),
       })
     );
   });

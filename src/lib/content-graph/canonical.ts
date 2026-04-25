@@ -7,6 +7,34 @@ export const CANONICAL_SYSTEMS = [
   'revenue-growth',
 ] as const;
 
+export type CanonicalSystem = (typeof CANONICAL_SYSTEMS)[number];
+
+/**
+ * Authority role each canonical system plays in the conversion engine.
+ *
+ * - core      Smart Website Systems is the gravity hub. May connect to all.
+ * - entry     Local SEO Authority is the entry lane. Connects core + trust.
+ * - operation CRM Automation is the operating layer. Connects core + response.
+ * - trust     Reputation/Review is the trust layer. Connects core + entry.
+ * - response  AI Lead Handling is the response layer. Connects core + operation.
+ * - growth    Revenue Growth is the upsell/recovery layer. Connects core + operation.
+ *
+ * Used by:
+ * - scripts/validators/validate-authority-concentration.mjs
+ * - reports/authority-map.json reader UIs
+ */
+export const SYSTEM_TYPES: Record<
+  CanonicalSystem,
+  'core' | 'entry' | 'operation' | 'trust' | 'response' | 'growth'
+> = {
+  'smart-website-systems': 'core',
+  'local-seo-authority': 'entry',
+  'crm-automation': 'operation',
+  'reputation-review': 'trust',
+  'ai-lead-handling': 'response',
+  'revenue-growth': 'growth',
+};
+
 export const CANONICAL_INDUSTRIES = [
   'accounting',
   'aesthetic-clinic',

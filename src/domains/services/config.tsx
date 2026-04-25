@@ -19,9 +19,15 @@ const createServiceEntry = <TData,>(
 
 function renderServiceEntry(slug: ServiceSlug): ReactElement {
   const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug] as AnyServiceEntry;
+  const primarySystem =
+    (entry.data as { systems?: string[] }).systems?.[0] ?? 'smart-website-systems';
 
   return (
-    <CTARegistryProvider pageId={`service:${slug}`} pageType='service'>
+    <CTARegistryProvider
+      pageId={`service:${slug}`}
+      pageType='service'
+      primarySystem={primarySystem}
+    >
       {entry.render(entry.data, slug)}
       <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
     </CTARegistryProvider>

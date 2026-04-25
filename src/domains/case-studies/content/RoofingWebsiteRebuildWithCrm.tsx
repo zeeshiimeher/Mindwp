@@ -1,113 +1,62 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Crestline Roofing is a family-run residential roofing contractor based in Bristol, operating
-      across the South West. The business had a five-year-old WordPress website that functioned as a
-      static brochure — three pages, no lead forms beyond a basic contact page, and no connection to
-      any CRM or scheduling tool. Despite running paid ads and receiving steady organic traffic, the
-      website averaged just 6 lead enquiries per week. The team knew traffic was arriving but had no
-      way to convert or track it effectively.
+      Allerton Roofing covers Manchester and the towns north of the city. The website looked tidy.
+      Photos of recent jobs, a list of services, a contact form, a phone number across the top. From
+      a homeowner\u2019s point of view it looked like a perfectly reasonable roofer. From the
+      office\u2019s point of view it was almost completely silent.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Weekly Leads',
-      value: '22',
-      icon: 'Users',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Form Completion',
-      value: '7.8%',
-      icon: 'FileCheck',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Lead-to-CRM',
-      value: 'Instant',
-      icon: 'Zap',
-      color: 'case-study-accent--purple',
-    },
-    {
-      label: 'Mobile Conversion',
-      value: '6.2%',
-      icon: 'Smartphone',
-      color: 'case-study-accent--amber',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: A Website That Attracted Traffic but Captured Almost Nothing',
+    problemHeading: 'The website looked fine. The work still wasn\u2019t flowing',
     problemDescription: [
-      'Crestline Roofing\u2019s website received around 320 visits per week — a reasonable volume for a regional roofing contractor. But the site had a single generic contact page with a name-and-email form, no service-specific landing pages, and no connection to any backend system.',
-      '72% of traffic arrived on mobile devices, but the site\u2019s layout was not built for mobile conversion. Buttons were small, load times exceeded 5 seconds, and the contact form required scrolling past three paragraphs of text. Leads that did submit the form arrived in a shared Gmail inbox with no tracking or follow-up process.',
+      'Traffic was actually decent. People were searching for a roofer, finding the site, looking around for a minute and leaving without doing anything. The phone occasionally rang, the form occasionally pinged, but the volume did not match the number of visitors.',
+      'There was nothing obviously wrong with the site. There was just nothing on it that helped a worried homeowner work out whether to call this roofer or the next one in the search results. The pages described the work; they did not help anyone make a decision.',
     ],
     painPoints: [
-      '320 weekly visitors but only 6 lead enquiries — a 1.9% form completion rate',
-      'Single generic contact form with no service-specific context',
-      '72% mobile traffic but poor mobile layout and 5+ second load times',
-      'No CRM integration — leads arrived in a shared Gmail inbox',
-      'No lead source tracking to measure which channels produced enquiries',
-      'Paid ad spend generating clicks with no measurable conversion funnel',
-      'No automated response — leads waited hours or days for a reply',
+      'Visitors landed, scrolled, and left without making contact',
+      'The contact form felt like a generic ask with no context',
+      'Service pages described what was offered but not how the company worked',
+      'No clear next step on any of the pages a homeowner actually landed on',
+      'Enquiries that did come in had no proper home behind the scenes',
     ],
   };
 
-  const deliverablesSection: CaseStudyTemplateSection = {
-    type: 'deliverables',
-    badge: 'Deliverables',
-    title: 'What Was Built',
-    description:
-      'A systems-first website rebuild designed to capture and route leads, not just display information.',
-    items: [
-      'WordPress rebuild with mobile-first responsive design',
-      'Service-specific landing pages (repairs, replacements, inspections, insurance)',
-      'Inline lead capture forms on every service page',
-      'GoHighLevel CRM integration with instant lead routing',
-      'Automated email confirmation and SMS response on form submission',
-      'Lead source tracking across organic, paid, and direct channels',
-      'Page speed optimisation targeting sub-2-second mobile load',
-      'Google Analytics 4 conversion tracking setup',
-    ],
-    columns: 2,
-  };
-
-  const processSection: CaseStudyTemplateSection = {
-    type: 'process',
-    howWeDidIt: [
+  const solutionSection: CaseStudyTemplateSection = {
+    type: 'solution',
+    solutionHeading: 'The site started doing a job, not just sitting there looking right',
+    solutionDescription:
+      'Instead of treating the website as a brochure, it was rebuilt around the questions a worried homeowner actually asks before they pick up the phone, and the answers were carried into a tidy place behind the scenes.',
+    whatWeDid: [
       {
-        phase: 'Phase 1',
-        title: 'Conversion Audit',
+        title: 'Pages built around the homeowner\u2019s question',
         description:
-          'Analysed the existing site\u2019s traffic patterns, form completion rates, mobile experience, and lead handling process. Identified 72% mobile traffic and 1.9% form rate as the critical bottlenecks.',
-        duration: '1 week',
+          'Each main page started with the situation the homeowner was probably in (a leak, a missing tile, an old roof) instead of the company\u2019s history.',
+        icon: 'FileText',
       },
       {
-        phase: 'Phase 2',
-        title: 'Architecture & CRM Design',
+        title: 'A clear next step on every page',
         description:
-          'Designed the new site structure with service-specific pages and mapped the form-to-CRM pipeline. Built GoHighLevel pipelines for each service type.',
-        duration: '1 week',
+          'Visitors never had to scroll back up to work out what to do. Each page made the next move obvious, whether that was a call, a survey request, or a question form.',
+        icon: 'ArrowRight',
       },
       {
-        phase: 'Phase 3',
-        title: 'WordPress Build & Integration',
+        title: 'Forms that asked the right things',
         description:
-          'Built the new WordPress site with mobile-first templates, inline forms on every service page, and CRM integration. Optimised page speed to sub-2-second targets.',
-        duration: '3 weeks',
+          'The contact form asked just enough to make the first reply useful, instead of being a single empty box.',
+        icon: 'ListChecks',
       },
       {
-        phase: 'Phase 4',
-        title: 'Testing, Migration & Launch',
+        title: 'A proper home for new enquiries',
         description:
-          'Ran form-to-CRM integration tests, migrated content with 301 redirects, configured conversion tracking, and launched with a 2-week monitoring period.',
-        duration: '2 weeks',
+          'Once a form was filled in, the lead landed somewhere the team actually looked at, with the context already attached.',
+        icon: 'Inbox',
       },
     ],
   };
@@ -116,130 +65,112 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
     type: 'results',
     results: [
       {
-        metric: 'Weekly Lead Volume',
-        before: '6 leads per week from 320 visits',
-        after: '22 leads per week from 340 visits',
-        improvement: '267% increase',
+        title: 'The same traffic started turning into actual enquiries',
+        improvement:
+          'A clear lift in calls and forms from a website that was visited by the same kind of homeowner as before',
         description:
-          'The same traffic volume produced nearly 4\u00d7 more leads once service-specific pages and contextual forms replaced the generic contact page.',
+          'Nothing changed about who was finding the site. What changed was what happened once they were there. The pages started giving a worried homeowner enough to act on instead of leaving them to interpret.',
       },
       {
-        metric: 'Form Completion Rate',
-        before: '1.9% across all visitors',
-        after: '7.8% on service-specific pages',
-        improvement: '+5.9 percentage points',
+        title: 'Enquiries felt warmer when they arrived',
+        improvement: 'Less back-and-forth before the first useful conversation',
         description:
-          'Contextual forms that matched the visitor\u2019s intent (repairs, replacements, inspections) dramatically outperformed the generic contact form.',
+          'Because the form asked the right things, the team was no longer chasing basics. The first phone call could be about the actual job instead of trying to extract the postcode and the kind of property.',
       },
       {
-        metric: 'Lead-to-CRM Time',
-        before: 'Manual entry from Gmail — average 4 hours',
-        after: 'Instant CRM creation on form submission',
-        improvement: 'Eliminated manual delay',
+        title: 'Nothing got lost behind the scenes anymore',
+        improvement: 'Every enquiry had a home, every reply had a record',
         description:
-          'Every lead was logged in the CRM pipeline within seconds of submission with full source attribution and service type tagging.',
+          'The website was finally connected to the way the business actually worked. The owner could see what had come in, what had been replied to, and what was still waiting on a response.',
+      },
+    ],
+  };
+
+  const faqSection: CaseStudyTemplateSection = {
+    type: 'faq',
+    title: 'A few questions the owner asked us along the way',
+    items: [
+      {
+        question: 'Will this drop us in the search results while you\u2019re changing things?',
+        answer:
+          'There was a short, normal dip the week of launch. Within a couple of weeks the rebuilt pages were ranking at least as well as the old ones, and most of the service pages climbed because they were now actually answering search questions properly.',
       },
       {
-        metric: 'Mobile Conversion Rate',
-        before: '1.4% on mobile devices',
-        after: '6.2% on mobile devices',
-        improvement: '+4.8 percentage points',
-        description:
-          'Mobile-first design with faster load times and tap-friendly forms unlocked the 72% of traffic that was previously bouncing without converting.',
+        question: 'Do we have to learn a whole new piece of software?',
+        answer:
+          'No. The new enquiry inbox uses the same email account the office already checks. The only new thing is a short list view that shows what is open and what has been replied to. Most of the team picked it up in an afternoon.',
       },
       {
-        metric: 'Paid Ad Efficiency',
-        before: 'No conversion tracking — cost-per-lead unknown',
-        after: 'Cost-per-lead visible by campaign, service type, and device',
-        improvement: 'Full attribution clarity',
-        description:
-          'For the first time, the business could see which paid campaigns produced actual leads and adjust spend based on real conversion data.',
+        question: 'What happens if a homeowner phones instead of using the form?',
+        answer:
+          'Phone calls are still phone calls. We just made sure the team can quickly add the call to the same enquiry list afterwards, so a phoned-in lead is treated the same as a form-filled one and does not get forgotten.',
+      },
+      {
+        question: 'How will I know it\u2019s actually working?',
+        answer:
+          'There is a small monthly summary that shows how many enquiries came in, how many got a reply, and how many turned into surveys. No vanity metrics. Just enough to see whether the website is pulling its weight.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Is Your Website Converting Traffic Into Leads?',
-    body: 'Book a free 20-minute call and we\u2019ll review your website\u2019s conversion performance and show you what a systems-first rebuild could look like for your roofing business.',
+    heading: 'Website looks fine but the phone still doesn\u2019t ring?',
+    body: 'Book a free 20-minute call. We can look at what your website is actually doing for you and where good visitors are quietly leaving without acting.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    deliverablesSection,
-    processSection,
+    solutionSection,
     resultsSection,
+    faqSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
     seo: {
-      title: 'Roofing Website Rebuild | 6 to 22 Weekly Leads',
+      title: 'Roofing website case study: more enquiries from the same traffic',
       description:
-        'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.',
-      canonical: '/case-studies/roofing-website-rebuild-with-crm',
+        'How a Manchester roofing company turned a tidy but quiet website into one that actually helped homeowners make a decision and pick up the phone.',
+      canonical: '/case-studies/roofing-website-looked-fine-work-not-flowing',
       openGraph: {
-        title: 'Why Roofing Websites Fail to Convert Leads | MindWP Case Study',
+        title: 'Roofing website case study: more enquiries from the same traffic',
         description:
-          'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.',
+          'How a Manchester roofing company turned a tidy but quiet website into one that actually helped homeowners make a decision.',
       },
     },
-    slug: 'roofing-website-rebuild-with-crm',
-    title: 'Roofing Website Rebuild With CRM',
+    slug: 'roofing-website-looked-fine-work-not-flowing',
+    title: 'The website looked fine. The work still wasn\u2019t flowing',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
     systems: ['smart-website-systems'],
-    topics: [
-      'website-infrastructure',
-      'systems-first-websites',
-      'service-pages',
-      'local-service-pages',
-      'crm-integration',
-      'conversion-optimization',
-    ],
-    publishDate: '2025-10-15',
-    client: 'Crestline Roofing',
-    location: 'Bristol, UK',
-    business: 'Crestline Roofing',
-    duration: '7 weeks',
-    completedDate: 'October 2025',
-    heroHeadline:
-      'How a Roofing Contractor Went From 6 to 22 Weekly Leads With a Systems-First Website Rebuild',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'Website Rebuild',
-      'Smart Website Systems',
-      'CRM Integration',
-      'Roofing',
-      'Conversion Optimisation',
-    ],
+    topics: ['conversion-optimization', 'lead-capture', 'crm-enabled-websites'],
+    publishDate: '2026-01-30',
+    client: 'Allerton Roofing',
+    location: 'Manchester, UK',
+    business: 'Allerton Roofing',
+    duration: '12 weeks',
+    completedDate: 'January 2026',
+    heroHeadline: 'The website looked fine. The work still wasn\u2019t flowing',
+    keyMetrics: [],
+    tags: ['Roofing', 'Website Rebuild', 'Lead Capture', 'Trade Business'],
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'System Implementation' },
-      problem: { challengeBadgeLabel: 'The Conversion Problem' },
-      deliverables: { deliverablesBadgeLabel: 'Deliverables' },
-      process: {
-        implementationBadgeLabel: 'Implementation',
-        implementationSectionTitle: 'How the System Was Built',
-        implementationSectionSubtitle:
-          'A 7-week rebuild covering audit, architecture, build, and launch',
-      },
+      hero: { scenarioBadgeLabel: 'Website Conversion' },
+      problem: { challengeBadgeLabel: 'What was happening' },
+      solution: { solutionBadgeLabel: 'What changed' },
       results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Website Conversion Performance',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once the website did a real job',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Built for trades' },
+          { text: 'No pressure' },
+          { text: 'Useful for trade businesses' },
         ],
       },
     },

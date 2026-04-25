@@ -79,10 +79,10 @@ export const inboxData: FeaturePageData = {
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
   hero: {
-    badge: 'Feature Spotlight',
-    title: 'One Inbox for Every Customer Conversation',
+    badge: 'Part of AI Lead Handling',
+    title: 'Unified inbox so the first reply never sits unread',
     description:
-      'Email, SMS, Facebook, Instagram, and chat — all in one place. Respond faster, stay organized, and never miss a customer message again.',
+      'When messages arrive across email, SMS, Facebook, Instagram, and web chat, the slowest channel sets your reputation. This inbox is part of the AI Lead Handling service — every conversation lands in one place, ownership is clear, and the first reply stops depending on who happens to check which app.',
     stats: [
       { value: 'All', label: 'Channels' },
       { value: 'One', label: 'Inbox' },

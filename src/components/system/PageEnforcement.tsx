@@ -74,16 +74,28 @@ export function getPageEnforcementSnapshots(): PageEnforcementSnapshot[] {
 type CTARegistryProviderProps = {
   pageId: string;
   pageType: PageType;
+  /**
+   * Canonical primary system for the page (e.g. 'local-seo-authority').
+   * Falls back to 'smart-website-systems' for legacy/static surfaces that
+   * have not adopted page-level system attribution yet.
+   */
+  primarySystem?: string;
   children: ReactNode;
 };
 
-export function CTARegistryProvider({ pageId, pageType, children }: CTARegistryProviderProps) {
+export function CTARegistryProvider({
+  pageId,
+  pageType,
+  primarySystem,
+  children,
+}: CTARegistryProviderProps) {
   const pageIdentity = useMemo<PageIdentity>(
     () => ({
       pageId,
       pageType,
+      primarySystem: primarySystem ?? 'smart-website-systems',
     }),
-    [pageId, pageType]
+    [pageId, pageType, primarySystem]
   );
   const ctaRegistry = useMemo(() => createCTARegistry(pageIdentity), [pageIdentity]);
   const relatedRegistry = useMemo(() => createRelatedContentRegistry(pageIdentity), [pageIdentity]);

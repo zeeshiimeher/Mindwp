@@ -78,13 +78,13 @@ export const workflowsData: FeaturePageData = {
     description:
       'Structured workflow automation for follow-ups, reminders, and task routing with clear rules and full team visibility.',
   }),
-  systems: ['revenue-growth'],
+  systems: ['crm-automation'],
   topics: ['lead-management'],
   hero: {
-    badge: 'Workflow Automation',
-    title: 'Automate Follow-Ups Without Losing Control',
+    badge: 'Part of CRM Automation',
+    title: 'Workflow layer that keeps follow-up from slipping',
     description:
-      'Workflows connect your forms, bookings, and pipeline stages to automatic actions. Send confirmations, reminders, and task notifications—while keeping full visibility and control.',
+      'Manual follow-up depends on the team remembering. Workflows are part of the CRM Automation service — they turn confirmations, reminders, and task handoffs into rules that run on every enquiry, every booking, every quote, without anyone having to chase.',
     stats: [
       { value: 'Auto', label: 'Follow-Ups' },
       { value: 'Clear', label: 'Rules' },

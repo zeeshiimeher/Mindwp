@@ -94,9 +94,9 @@ export const howSmartWebsiteSystemsWorkForLocalBusinesses: BlogPostData = {
     },
     {
       type: 'cta',
-      heading: 'See How Smart Website Systems Connect',
+      heading: 'Stop letting enquiries fall through the gaps',
       content:
-        'If your website captures leads but the follow-up process is manual and inconsistent, your infrastructure has gaps. Explore how smart website systems create connected operational workflows.',
+        'If your forms, calls, and follow-up are still held together by inboxes and memory, the leak is in the connections — not the design. The Smart Website Systems service is the place where these connections get built and owned. See what it covers and what it should fix first.',
     },
   ],
 };

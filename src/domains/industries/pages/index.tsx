@@ -54,20 +54,25 @@ export default function IndustriesLanding() {
   };
 
   return (
-    <CTARegistryProvider pageId='page:industries' pageType='page'>
+    <CTARegistryProvider
+      pageId='page:industries'
+      pageType='page'
+      primarySystem='smart-website-systems'
+    >
       <div className='min-h-screen'>
         <main>
           {/* Hero */}
           <SectionWrapper background='bg-gradient-to-b from-muted/50 to-background'>
             <div className='text-center l-stack l-stack--loose'>
               <Badge variant='secondary' context='section'>
-                Industry Navigation
+                Industry authority
               </Badge>
-              <h1>Industry Systems Built Around How The Work Actually Runs</h1>
+              <h1>The same enquiries get lost. The same revenue leaks. By industry.</h1>
               <p className='text-muted-foreground text-lg l-max-w-3xl l-mx-auto'>
-                Explore the live industry categories where MindWP has mapped the website, lead
-                handling, follow-up, and proof system into a clearer operating model. Each route
-                leads into category-specific detail pages instead of generic service summaries.
+                Missed calls in HVAC, dead web enquiries in roofing, no-show salon clients, stalled
+                legal proposals, untracked real estate referrals. Every category below is organised
+                around the operating moments where service businesses lose money and trust, and the
+                system pattern that closes them.
               </p>
             </div>
           </SectionWrapper>
@@ -76,10 +81,11 @@ export default function IndustriesLanding() {
           <SectionWrapper background='bg-background'>
             <div className='l-stack l-stack--loose'>
               <div className='l-stack'>
-                <h2>Browse The Current Industry Front Doors</h2>
+                <h2>Find your operating reality</h2>
                 <p className='text-muted-foreground'>
-                  Each category groups the active sub-industries and shows the supporting system
-                  patterns that matter most in that operating environment.
+                  Each category opens with the live failures that category sees every week, the
+                  active sub-industries, and the supporting system patterns that close those
+                  failures.
                 </p>
               </div>
               <div className='l-grid l-gap-8 md:grid-cols-2 xl:grid-cols-2'>

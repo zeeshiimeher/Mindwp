@@ -80,10 +80,10 @@ export const voicecallsData: FeaturePageData = {
   systems: ['ai-lead-handling'],
   topics: ['missed-calls', 'lead-response-time'],
   hero: {
-    badge: 'AI-Powered Phone Assistant',
-    title: 'AI phone assistant for consistent call handling',
+    badge: 'Part of AI Lead Handling',
+    title: 'Calls that ring out are jobs you never knew you lost',
     description:
-      'An AI phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly during business hours or after hours.',
+      'Every missed call during a job, after hours, or on a busy morning is an enquiry that goes to the next business in the search results. Voice handling sits inside AI Lead Handling so the call gets answered, the booking gets taken, and the message gets to the right person without needing a receptionist on every shift.',
     stats: [
       { value: '100%', label: 'Call Answer Rate' },
       { value: '24/7', label: 'Availability' },

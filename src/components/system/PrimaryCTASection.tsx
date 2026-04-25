@@ -96,6 +96,7 @@ export function PrimaryCTASection({
   }
 
   const pageTypeForHref: ContactSourceType = toContactSourceType(pageIdentity.pageType);
+  const primarySystem = pageIdentity.primarySystem ?? 'smart-website-systems';
   const primaryLabel = getPrimaryCTA();
   const secondaryLabel = getSecondaryCTA(allowSecondaryCTA);
 
@@ -122,7 +123,7 @@ export function PrimaryCTASection({
     label: primaryLabel,
     ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
     href: buildContactHref({
-      system: 'smart-website-systems',
+      system: primarySystem,
       sourceType: pageTypeForHref,
       slug,
     }),
@@ -133,7 +134,7 @@ export function PrimaryCTASection({
         variant: 'outline',
         label: secondaryLabel,
         href: buildContactHref({
-          system: 'smart-website-systems',
+          system: primarySystem,
           sourceType: pageTypeForHref,
           slug,
         }),

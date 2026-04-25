@@ -1,83 +1,62 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildLawFirmClientIntakeAutomation(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      The enquiry came in. Then the paperwork slowed everything down. Whitfield Legal in Plymouth
-      was hearing from the right people, but too many of those early enquiries got stuck in the same
-      place: forms to send, documents to chase, and long silences while the client wondered whether
-      another firm might move faster.
+      Halewood &amp; Partners is a small high-street firm in Liverpool handling family, employment,
+      and conveyancing matters. New enquiries came in steadily through the website and the phone.
+      The difficulty lay in the gap between someone reaching out and that enquiry actually becoming
+      a file on a fee earner\u2019s desk.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Intake time',
-      value: 'Much shorter',
-      icon: 'Clock',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Completed intakes',
-      value: 'A lot more of them',
-      icon: 'CheckCircle2',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Admin drag',
-      value: 'Far less',
-      icon: 'Timer',
-      color: 'case-study-accent--amber',
-    },
-    {
-      label: 'Enquiries reaching consultation',
-      value: 'Noticeably more',
-      icon: 'TrendingUp',
-      color: 'case-study-accent--purple',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The first delay was happening before the legal work had even begun',
+    problemHeading: 'Potential clients were reaching out. Most never became cases',
     problemDescription: [
-      'Every new enquiry kicked off the same pattern: a call, a follow-up email, missing paperwork, another chase, then more waiting. None of it was dramatic on its own. Together, it slowed the whole front end of the firm down.',
-      'That mattered because prospective clients were often speaking to more than one firm. If one practice made the early steps feel easier and faster, it usually stayed ahead. Whitfield also had the human issue that never fully goes away: some clients still uploaded documents late even after the process improved.',
+      'A reception form would arrive. A short call would follow. The client was told someone would be in touch about next steps. The email about ID, the form to fill in, the conflict check, the engagement letter \u2014 each of those sat in a different place, waiting for somebody to pick them up.',
+      'By the time the firm got back in touch properly, days had passed. Some clients had already instructed another solicitor. The ones who stayed often felt nothing had happened since the first conversation.',
     ],
     painPoints: [
-      'Early intake steps stretched over several days instead of staying close to the first enquiry',
-      'Clients were left waiting while the firm chased missing details and documents',
-      'Too much repetitive admin was pulling legal staff into non-billable work',
-      'Prospective clients were comparing response speed across multiple firms',
-      'Late document uploads still created occasional drag even after the process tightened',
+      'The first enquiry felt promising, then went quiet for days',
+      'ID, conflict checks, and engagement paperwork were scattered',
+      'Nobody had a single view of where each new matter was sitting',
+      'Reception was chasing clients for documents from a sticky note',
+      'Clients heard nothing concrete between the first call and the first appointment',
     ],
   };
 
-  const processSection: CaseStudyTemplateSection = {
-    type: 'process',
-    howWeDidIt: [
+  const solutionSection: CaseStudyTemplateSection = {
+    type: 'solution',
+    solutionHeading: 'They tightened the days between enquiry and instruction',
+    solutionDescription:
+      'Rather than rely on a fee earner remembering to push each new enquiry forward, the firm gave intake its own clear sequence so nothing sat in nobody\u2019s inbox.',
+    whatWeDid: [
       {
-        phase: 'Step 1',
-        title: 'The first response carried the next step with it',
+        title: 'A clear next-step message after the first call',
         description:
-          'New enquiries were given a clearer route straight away instead of waiting for a series of manual back-and-forth messages.',
-        duration: 'Early stage',
+          'New clients received a short, plain English message the same day setting out what was needed and what would happen next.',
+        icon: 'MessageSquare',
       },
       {
-        phase: 'Step 2',
-        title: 'Document collection stopped depending on somebody remembering to chase',
+        title: 'One place to track every new matter',
         description:
-          'Clients were nudged toward the missing pieces with clearer prompts so the intake did not stall the moment one item failed to arrive.',
-        duration: 'Middle stage',
+          'Each enquiry sat on a single intake list with its stage, the person responsible, and what was waiting on the client.',
+        icon: 'ClipboardList',
       },
       {
-        phase: 'Step 3',
-        title: 'Solicitors received a tidier handoff once the essentials were there',
+        title: 'Document requests that did not get forgotten',
         description:
-          'That meant legal review started from a better-prepared file instead of another round of admin cleanup.',
-        duration: 'Review stage',
+          'ID, proof of address, and any matter-specific documents were requested through one tidy link instead of three separate emails.',
+        icon: 'FileText',
+      },
+      {
+        title: 'A measured nudge for missing pieces',
+        description:
+          'If a client had not sent something back after a few days, a short reminder went out before the matter went cold.',
+        icon: 'Bell',
       },
     ],
   };
@@ -86,97 +65,112 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
     type: 'results',
     results: [
       {
-        title: 'Intake moved closer to the first enquiry instead of drifting across the week',
-        improvement: 'Clients reached a consultation-ready stage much sooner',
+        title: 'New enquiries stopped going quiet',
+        improvement:
+          'A meaningful share of first-call clients ended up actually instructing the firm',
         description:
-          'The early steps no longer relied so heavily on repeated manual chasing, which cut down the lag between first contact and a usable file.',
+          'The first 48 hours stopped feeling like a gap. Clients knew what was happening, what was needed from them, and roughly when they would next hear back.',
       },
       {
-        title: 'More clients stayed with the process long enough to finish it',
-        improvement: 'Fewer promising enquiries fell away halfway through',
+        title: 'Reception got their day back',
+        improvement: 'Less manual chasing of documents and signatures',
         description:
-          'Clearer updates and less silence helped. Some clients still moved slowly with documents, but far fewer simply disappeared because the intake felt stalled or uncertain.',
+          'The intake list told them what was outstanding instead of them digging through inboxes. The chasing that did need a human voice was much shorter and more focused.',
       },
       {
-        title: 'Legal staff spent less time pushing paperwork uphill',
-        improvement: 'More time returned to actual case work',
+        title: 'Fee earners started with a tidier file',
+        improvement: 'First appointments began with the basics already in place',
         description:
-          'That changed the feel of the week inside the firm. The front end was still not friction-free, but it was no longer swallowing so much valuable time before a matter had even properly started.',
+          'When a matter reached a solicitor, the ID was checked, the conflict search was done, and the file note had a clear summary of what the client wanted. The first meeting was about the legal work, not the admin.',
+      },
+    ],
+  };
+
+  const faqSection: CaseStudyTemplateSection = {
+    type: 'faq',
+    title: 'Questions the partners asked us before we started',
+    items: [
+      {
+        question: 'Will any of this affect how solicitors actually run a matter?',
+        answer:
+          'No. The change sits before a matter reaches a fee earner. Once a file is opened, the way the solicitor handles it is unchanged. The intake layer just makes sure the file arrives ready, with ID checked and conflict cleared.',
+      },
+      {
+        question: 'How is client confidentiality protected when documents come in this way?',
+        answer:
+          'Document uploads sit behind a secure link tied to the matter, not over plain email. Only the people assigned to that file can see what has been sent. The firm kept full control of where data lives and how long it stays.',
+      },
+      {
+        question: 'What about clients who prefer to hand things in at the office?',
+        answer:
+          'They still can. The intake list simply records that the documents arrived another way and marks them complete. Nothing forces a client down a single route. The aim is fewer dropped pieces, not fewer choices.',
+      },
+      {
+        question: 'Did this require any change to the practice management software?',
+        answer:
+          'No core changes. The new intake step lives alongside the existing case management setup and feeds the matter through once it is ready. The firm did not have to migrate anything to make it work.',
       },
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Do enquiries slow down before the matter even starts?',
-    body: 'Book a free 20-minute call and we can look at where your intake drags, where clients go quiet, and what would make the first steps easier to complete.',
+    heading: 'New enquiries stalling between the first call and the first meeting?',
+    body: 'Book a free 20-minute call. We can look at where your intake is leaking and how to turn more first calls into instructed matters.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    processSection,
+    solutionSection,
     resultsSection,
+    faqSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
     seo: {
-      title: 'Law firm intake case study: faster enquiry-to-intake handling',
+      title: 'Law firm intake case study: more enquiries becoming clients',
       description:
-        'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
+        'How a Liverpool law firm tightened the days between an enquiry and an instructed matter, and stopped losing clients in the gap.',
       canonical: '/case-studies/law-firm-intake-stalled-after-first-enquiry',
       openGraph: {
-        title: 'Law firm intake case study: faster enquiry-to-intake handling',
+        title: 'Law firm intake case study: more enquiries becoming clients',
         description:
-          'How a Plymouth law firm shortened the drag between first enquiry and a consultation-ready file while reducing the admin load on the team.',
+          'How a Liverpool law firm tightened the days between an enquiry and an instructed matter.',
       },
     },
     slug: 'law-firm-intake-stalled-after-first-enquiry',
-    title: 'The enquiry came in. Then the paperwork slowed everything down.',
+    title: 'Potential clients were reaching out. Most never became cases',
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],
     systems: ['revenue-growth'],
-    topics: ['lead-management', 'crm-pipeline', 'follow-up'],
-    publishDate: '2026-04-15',
-    client: 'Whitfield Legal',
-    location: 'Plymouth, UK',
-    business: 'Whitfield Legal',
-    duration: '12 weeks',
-    completedDate: 'April 2026',
-    heroHeadline: 'The enquiry came in. Then the paperwork slowed everything down.',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'Client Intake',
-      'Law Firm',
-      'Document Collection',
-      'Follow-Up',
-      'Professional Services',
-    ],
+    topics: ['lead-qualification', 'follow-up', 'lead-management'],
+    publishDate: '2026-03-01',
+    client: 'Halewood & Partners',
+    location: 'Liverpool, UK',
+    business: 'Halewood & Partners',
+    duration: '11 weeks',
+    completedDate: 'March 2026',
+    heroHeadline: 'Potential clients were reaching out. Most never became cases',
+    keyMetrics: [],
+    tags: ['Law Firm', 'Client Intake', 'Professional Services'],
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'First Enquiry' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      process: {
-        implementationBadgeLabel: 'How It Started Working Differently',
-        implementationSectionTitle: 'How It Started Working Differently',
-        implementationSectionSubtitle: 'A tighter front end without the same manual drag',
-      },
+      hero: { scenarioBadgeLabel: 'Client Intake' },
+      problem: { challengeBadgeLabel: 'What was happening' },
+      solution: { solutionBadgeLabel: 'What changed' },
       results: {
-        detailedResultsBadgeLabel: 'What Changed',
-        detailedResultsSectionTitle: 'What Changed Once Intake Stopped Dragging So Long',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once intake was tightened up',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No pressure' },
-          { text: 'Useful for law firms' },
+          { text: 'Useful for small law firms' },
         ],
       },
     },

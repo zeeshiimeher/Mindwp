@@ -1,109 +1,63 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Summit Roofing Solutions in Leeds was sending plenty of quotes. That was not the hard part.
-      The problem started after that. Some homeowners opened the quote and went quiet. Some meant to
-      call back and never did. Some were still thinking it over while the team had already moved on
-      to the next job. Too much of the quote book was being left to chance.
+      Northwood Roofing covers Sheffield and the villages around it. The estimating side of the
+      business worked hard. Surveys were getting done. Quotes were going out the same week. What
+      kept slipping was everything that happened after the quote landed in the customer\u2019s
+      inbox.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Quotes properly followed up',
-      value: 'Most of them',
-      icon: 'Receipt',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'First follow-up timing',
-      value: 'A lot sooner',
-      icon: 'CheckCircle2',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Recovered work',
-      value: 'Around GBP7k-GBP9k a month',
-      icon: 'PoundSterling',
-      color: 'case-study-accent--amber',
-    },
-    {
-      label: 'Quote visibility',
-      value: 'Much clearer',
-      icon: 'BarChart3',
-      color: 'case-study-accent--purple',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'Roofing quotes kept going quiet after they were sent out',
+    problemHeading: 'They were sending quotes. Nobody was following them up',
     problemDescription: [
-      'Quotes were being sent, but the next step depended too much on who remembered to call and when they happened to get around to it.',
-      'Some homeowners needed a nudge. Some needed a second explanation. Some insurance jobs moved on a different rhythm entirely. Instead, too many quotes sat there until they were cold.',
+      'A homeowner asks for a price. The quote goes out. Then nothing. The lead either books or quietly disappears, and most of them quietly disappeared.',
+      'The team was busy with the next survey, the next visit, the next emergency. Going back through old quotes to see who had not replied was the kind of job that always got pushed to tomorrow.',
     ],
     painPoints: [
-      'Too many quotes had no proper follow-up at all',
-      'The first call often happened later than it should have',
-      'Different quote types were being treated the same way',
-      'Nobody had a clear view of what was still live and what had already gone',
-      'The team was relying on memory, notes, and good intentions',
+      'Quotes went out and were treated as done',
+      'Nobody was checking in a few days later to see if there were questions',
+      'Old quotes lived in email threads that were hard to dig back out',
+      'Customers comparing two or three roofers usually picked whoever stayed in touch',
+      'Nobody could see how many quotes were still alive at any one time',
     ],
   };
 
-  const workflowsSection: CaseStudyTemplateSection = {
-    type: 'workflows',
-    badge: 'How It Ran',
-    title: 'Follow-up stopped depending on who remembered',
-    description:
-      'The aim was not to flood people with messages. It was to stop good quotes from being forgotten.',
-    workflows: [
+  const processSection: CaseStudyTemplateSection = {
+    type: 'process',
+    howWeDidIt: [
       {
-        trigger: 'A new quote went out',
-        actions: [
-          'The quote was marked properly instead of disappearing into the week',
-          'A first check-in was lined up much earlier than before',
-          'The team could see what still needed attention without hunting through notes',
-        ],
-      },
-      {
-        trigger: 'The homeowner stayed quiet',
-        actions: [
-          'A later nudge went out instead of leaving the quote untouched',
-          'Insurance jobs could be handled a bit differently where needed',
-          'Some quotes still needed a manual call because not every job followed the same pattern',
-        ],
-      },
-    ],
-  };
-
-  const solutionSection: CaseStudyTemplateSection = {
-    type: 'solution',
-    solutionHeading: 'They gave every quote a clearer next step',
-    solutionDescription:
-      'The team put a cleaner handoff in place after a quote was sent. That meant earlier follow-up, clearer status, and less guesswork about what still had a chance of turning into a job.',
-    whatWeDid: [
-      {
-        title: 'Quotes were tracked properly',
+        phase: 'Week 1',
+        title: 'Sat with the surveyor for a morning',
         description:
-          "Each quote had a clear status instead of being left in somebody's inbox or notebook.",
-        icon: 'GitBranch',
+          'Watched how quotes actually went out. Where they got stored. Who, if anyone, looked at them again. Most of the friction came from there being no obvious next step after the email was sent.',
+        duration: '3 days',
       },
       {
-        title: 'The first follow-up happened sooner',
+        phase: 'Week 2',
+        title: 'Drafted a follow-up rhythm in plain language',
         description:
-          'The team did not wait nearly as long to check back in, which kept more homeowners engaged while the quote was still being considered.',
-        icon: 'Timer',
+          'Wrote three short messages with the office manager, in her voice, so the check-ins did not sound like marketing. Two days later, then a week later, then a friendlier nudge for the bigger jobs.',
+        duration: '4 days',
       },
       {
-        title: 'Different quote types were treated differently',
+        phase: 'Week 3',
+        title: 'Built a single live-quotes view',
         description:
-          'Insurance work and standard roofing jobs were no longer forced into one identical follow-up pattern.',
-        icon: 'Tags',
+          'Pulled every active quote into one place so the team could see, at a glance, which ones were still warm, which had gone quiet, and which were getting close to being too old to chase.',
+        duration: '1 week',
+      },
+      {
+        phase: 'Weeks 4\u20136',
+        title: 'Ran it on real quotes and tightened the timing',
+        description:
+          'The first version sent the second message too early for some jobs. We slid it back a few days and added a tiny escalation that flagged larger quotes for a real phone call before the lead went cold.',
+        duration: '3 weeks',
       },
     ],
   };
@@ -112,89 +66,97 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     type: 'results',
     results: [
       {
-        title: 'A lot more quotes got proper attention before they went stale',
-        improvement: 'Most quotes were no longer being left alone after day one',
+        title: 'More of those quotes actually turned into conversations',
+        improvement: 'Customers started replying who would not have replied before',
         description:
-          'The main win was consistency. People were hearing back while they were still comparing options instead of a week later when the moment had passed.',
+          'A lot of the people who had gone quiet were not really gone. They had questions, or they were comparing prices, or life had got in the way. A second message brought a meaningful number of them back.',
       },
       {
-        title: 'Earlier follow-up helped more quotes turn into real conversations',
-        improvement: 'Enough to make the close rate move properly',
+        title: 'Fewer quotes ended in silence',
+        improvement: 'The follow-up was happening every time, not when someone remembered',
         description:
-          'Not every homeowner replied to the first nudge. Some still needed a manual call. But the team was seeing more replies, more back-and-forth, and more jobs that would have gone quiet before.',
+          'The team stopped relying on memory to chase. Every quote got at least the same calm sequence, which evened out the months when the surveyor was too busy to look back.',
       },
       {
-        title: 'The recovered work was meaningful without being perfectly neat',
-        improvement: 'Around GBP7k-GBP9k a month stayed in reach',
+        title: 'A noticeable lift in jobs from quotes already sent',
+        improvement: 'Real money that had been quietly leaking',
         description:
-          'It was not the same every month and it was not down to one message. Some categories still needed a different touch. Even so, the change was clear enough in the jobs won and in the quotes that stopped drifting out of view.',
+          'It was not every quote and it was not overnight. Over a couple of months the recovered work was clearly there in the diary, mostly from quotes the old way of working would have written off.',
       },
     ],
   };
 
+  const testimonialSection: CaseStudyTemplateSection = {
+    type: 'testimonial',
+    testimonial: {
+      quote:
+        'Half of those follow-ups end up being a five-minute reply where the customer just had one question. We were leaving that money on the table for years.',
+      author: 'Daniel Hughes',
+      role: 'Owner, Northwood Roofing',
+    },
+  };
+
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Do too many quotes go quiet after they are sent?',
-    body: 'Book a free 20-minute call and we can look at where your quote follow-up is slipping and what would make it easier to keep more of those jobs alive.',
+    heading: 'Sending quotes that go quiet?',
+    body: 'Book a free 20-minute call. We can look at where your quotes are dropping off and how to bring those conversations back without anyone having to remember.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
-    workflowsSection,
-    solutionSection,
+    processSection,
     resultsSection,
+    testimonialSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
     seo: {
-      title: 'Roofing quote follow-up case study: more estimates turning into jobs',
+      title: 'Roofing quote follow-up case study: more estimates becoming jobs',
       description:
-        'How a Leeds roofing company stopped leaving so many quotes untouched and recovered around GBP7k-GBP9k a month in work that had been drifting away.',
+        'How a Sheffield roofing company stopped letting quotes go cold and started winning more of the jobs that had already been priced.',
       canonical: '/case-studies/roofing-quotes-not-being-followed-up',
       openGraph: {
-        title: 'Roofing quote follow-up case study: more estimates turning into jobs',
+        title: 'Roofing quote follow-up case study: more estimates becoming jobs',
         description:
-          'How a Leeds roofing company stopped leaving so many quotes untouched and kept more of that work alive.',
+          'How a Sheffield roofing company stopped letting quotes go cold and started winning more of the jobs already priced.',
       },
     },
     slug: 'roofing-quotes-not-being-followed-up',
-    title: 'Roofing quotes kept going quiet after they were sent out',
+    title: 'They were sending quotes. Nobody was following them up',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
     systems: ['revenue-growth'],
-    topics: ['follow-up', 'crm-pipeline', 'lead-management'],
-    publishDate: '2025-10-01',
-    client: 'Summit Roofing Solutions',
-    location: 'Leeds, UK',
-    business: 'Summit Roofing Solutions',
-    duration: '6 weeks',
-    completedDate: 'October 2025',
-    heroHeadline: 'Roofing quotes kept going quiet after they were sent out',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: ['Estimate Follow-Up', 'CRM Pipeline', 'Roofing', 'Revenue Recovery', 'Automation'],
+    topics: ['follow-up', 'conversion-optimization', 'lead-management'],
+    publishDate: '2026-01-20',
+    client: 'Northwood Roofing',
+    location: 'Sheffield, UK',
+    business: 'Northwood Roofing',
+    duration: '8 weeks',
+    completedDate: 'January 2026',
+    heroHeadline: 'They were sending quotes. Nobody was following them up',
+    keyMetrics: [],
+    tags: ['Roofing', 'Quote Follow-Up', 'Estimates'],
     sections,
     templateOverrides: {
       hero: { scenarioBadgeLabel: 'Quote Follow-Up' },
-      problem: { challengeBadgeLabel: 'What Was Happening' },
-      workflows: { workflowsBadgeLabel: 'How It Ran' },
-      solution: { solutionBadgeLabel: 'What They Changed' },
+      problem: { challengeBadgeLabel: 'What was happening' },
+      process: {
+        implementationBadgeLabel: 'How it actually went',
+        implementationSectionTitle: 'How the follow-up rhythm came together',
+      },
       results: {
-        detailedResultsBadgeLabel: 'What Improved',
-        detailedResultsSectionTitle: 'What Changed Once Quotes Stopped Being Left Alone',
+        detailedResultsBadgeLabel: 'What improved',
+        detailedResultsSectionTitle: 'What changed once quotes were followed up properly',
       },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No pressure' },
-          { text: 'Useful for quote-heavy trades' },
+          { text: 'Useful for trade businesses' },
         ],
       },
     },

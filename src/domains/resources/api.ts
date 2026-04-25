@@ -27,11 +27,6 @@ type ResourcesHubData = {
     loadMoreLabel: string;
     comingSoonText: string;
   };
-  faqPreview: {
-    title: string;
-    description: string;
-    action: { label: string; href: string };
-  };
   cta: {
     title: string;
     description: string;
@@ -70,12 +65,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     loadMoreLabel: 'Load more resources',
     comingSoonText:
       'More guides are being added for automation, review generation, response handling, and conversion control.',
-  },
-  faqPreview: {
-    title: 'Have Questions?',
-    description:
-      'Browse our comprehensive FAQ section for quick answers to common questions about Smart Websites, SEO, automation, and more.',
-    action: { label: 'Browse FAQ', href: '/faq' },
   },
   cta: {
     title: 'Ready to turn the right diagnosis into a working system?',

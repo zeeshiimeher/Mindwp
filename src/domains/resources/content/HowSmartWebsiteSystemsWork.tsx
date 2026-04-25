@@ -151,9 +151,9 @@ const faqs = [
 ];
 
 const finalCta = {
-  title: 'Build a Website That Runs Your Front Office',
+  title: 'Where this gets built and owned',
   description:
-    'Our Smart Website Systems connect every customer touchpoint — forms, bookings, follow-ups, and CRM — into one automated infrastructure. Stop treating your website as a brochure.',
+    'Reading about it is one thing. The Smart Website Systems service is the commercial scope where forms, CRM, booking, and follow-up are wired together as one running system, with one team responsible for it. See what is in scope and what is not before you decide.',
 };
 
 export const howSmartWebsiteSystemsWork: ResourceData = {

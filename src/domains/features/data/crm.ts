@@ -73,13 +73,13 @@ export const crmData: FeaturePageData = {
     description:
       'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
   }),
-  systems: ['revenue-growth'],
+  systems: ['crm-automation'],
   topics: ['lead-management', 'crm-visibility'],
   hero: {
-    badge: 'CRM Layer',
-    title: 'Structured CRM Integrated into Your System',
+    badge: 'Part of CRM Automation',
+    title: 'CRM contact and follow-up layer for your service business',
     description:
-      'This CRM layer organizes contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team can work from one governed system.',
+      'When enquiries scatter across email, phone, and chat, follow-up slips and revenue leaks. This CRM layer is part of the CRM Automation service — it captures every enquiry, holds the contact history in one place, and makes follow-up the default rather than a chase.',
     stats: [
       { value: 'Unified', label: 'Inbox' },
       { value: 'Complete', label: 'Profiles' },

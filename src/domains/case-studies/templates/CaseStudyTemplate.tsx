@@ -373,7 +373,11 @@ export function CaseStudyTemplate({
 
   if (missingSections.length > 0 && env.NODE_ENV === 'development') {
     return (
-      <CTARegistryProvider pageId={pageId} pageType='case-study'>
+      <CTARegistryProvider
+        pageId={pageId}
+        pageType='case-study'
+        primarySystem={metadata.systems?.[0] ?? 'smart-website-systems'}
+      >
         <div className='case-study-detail'>
           <main className='l-section'>
             <div className='l-container'>
@@ -661,7 +665,11 @@ export function CaseStudyTemplate({
   }
 
   return (
-    <CTARegistryProvider pageId={pageId} pageType='case-study'>
+    <CTARegistryProvider
+      pageId={pageId}
+      pageType='case-study'
+      primarySystem={metadata.systems?.[0] ?? 'smart-website-systems'}
+    >
       <div className='case-study-detail'>
         {resolvedSections.map((section, index) => safeRender(section, index))}
       </div>

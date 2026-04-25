@@ -307,7 +307,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 39,
+    "usageCount": 38,
     "composedComponents": [],
     "props": [
       {
@@ -641,9 +641,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Contact.tsx",
-    "representativePageUrl": "/contact",
-    "usageCount": 52,
+    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
+    "representativePageUrl": "/services/[...slug]",
+    "usageCount": 49,
     "composedComponents": [],
     "props": [
       {

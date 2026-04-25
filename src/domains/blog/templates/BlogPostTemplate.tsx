@@ -250,6 +250,7 @@ export function BlogPostTemplate({
   author,
   sections,
   tags = [],
+  systems,
   featuredImage,
 }: BlogPostTemplateProps) {
   // Calculate read time from content
@@ -508,9 +509,10 @@ export function BlogPostTemplate({
   const categoryMeta = getCategoryMetadata(category);
   const categoryColors = getCategoryColors(category);
   const categoryLabel = categoryMeta?.name ?? category;
+  const primarySystem = systems?.[0] ?? 'smart-website-systems';
 
   return (
-    <CTARegistryProvider pageId={pageId} pageType='blog'>
+    <CTARegistryProvider pageId={pageId} pageType='blog' primarySystem={primarySystem}>
       <div className='min-h-screen'>
         <main>
           {/* HERO */}

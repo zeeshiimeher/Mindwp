@@ -1,217 +1,128 @@
-import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 
 import type { CaseStudyData } from '../types';
 
 function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
   const heroIntroHtml = (
     <>
-      Greenway Property Maintenance is a multi-service property company in Southampton offering
-      landscaping, cleaning, and handyman services to residential and commercial clients. The
-      business had grown to 12 staff across three service teams, each managed by a team leader.
-      Despite steady enquiry volumes — around 60 per week — the owner had no visibility into how
-      many of those enquiries became quotes, how many quotes converted to jobs, or which service
-      lines were most profitable. Leads were tracked in a mix of text messages, email threads, and
-      handwritten notes. The owner described running the business as &quot;flying blind.&quot;
+      Carter Roofing &amp; Cladding is a small commercial trade business in Birmingham. Enquiries
+      came in from the website, the phone, the foreman\u2019s mobile, three different email
+      addresses, and the occasional WhatsApp. Plenty of leads. The trouble was working out where any
+      one of them actually was on a given day.
     </>
   );
 
-  const keyMetrics: CaseStudyContent['keyMetrics'] = [
-    {
-      label: 'Pipeline Visibility',
-      value: '0% → 100%',
-      icon: 'BarChart3',
-      color: 'case-study-accent--success',
-    },
-    {
-      label: 'Close Rate',
-      value: '21% → 34%',
-      icon: 'TrendingUp',
-      color: 'case-study-accent--primary',
-    },
-    {
-      label: 'Revenue Clarity',
-      value: '£18k found',
-      icon: 'PoundSterling',
-      color: 'case-study-accent--amber',
-    },
-    {
-      label: 'Follow-Up Rate',
-      value: '23% → 91%',
-      icon: 'MailCheck',
-      color: 'case-study-accent--purple',
-    },
-  ];
-
   const problemSection: CaseStudyTemplateSection = {
     type: 'problem',
-    problemHeading: 'The Problem: No Visibility Into the Sales Pipeline',
+    problemHeading: 'They had leads everywhere. No one knew what was happening',
     problemDescription: [
-      'Greenway Property Maintenance had no centralised system for tracking leads, quotes, or conversions. Each team leader managed their own enquiries via personal phone messages and notes. When the owner asked about pipeline health — how many active quotes were outstanding, which clients hadn\u2019t been followed up, or what the conversion rate was by service line — nobody could answer.',
-      'Quotes were sent by email from individual team leaders with no logging or tracking. Follow-up was inconsistent: some quotes received a call back within a day, others were never chased. The owner estimated that the business was leaving £15,000\u2013£20,000 per month in unconverted quotes, but had no data to verify or address the problem. Revenue forecasting was impossible, and staffing decisions were made on gut feeling rather than demand data.',
+      'A property manager would ring asking what had happened to a quote from three weeks ago. Nobody could find the email easily. The lad who did the survey was on a roof. The owner had a vague memory of the job but not the number. Half the time the answer was, leave it with us, we\u2019ll find out.',
+      'When the office sat down to look at it properly, the picture was worse than expected. Big quotes had been sent and never followed up. Smaller jobs had been promised on the phone and forgotten. Nobody was sure what the real value of live work was at any moment.',
     ],
     painPoints: [
-      'Zero visibility into active leads, outstanding quotes, or conversion rates',
-      'Leads tracked in text messages, emails, and handwritten notes across 3 teams',
-      'No centralised quote logging — quotes sent from individual email accounts',
-      'Follow-up rate estimated at 23% — most quotes never chased',
-      'Estimated £15k\u2013£20k/month in unconverted quotes',
-      'Revenue forecasting impossible without pipeline data',
-      'Staffing and resource decisions based on gut feeling, not demand',
+      'Enquiries lived in inboxes, mobiles, WhatsApp, and the back of someone\u2019s head',
+      'Nobody had one view of every live opportunity',
+      'Big quotes were going cold without anyone realising',
+      'Property managers chasing updates got vague answers',
+      'It was impossible to tell which months were really strong and which only looked it',
     ],
   };
 
   const solutionSection: CaseStudyTemplateSection = {
     type: 'solution',
-    solutionHeading:
-      'The System: Centralised CRM Pipeline With Stage Tracking and Follow-Up Automation',
+    solutionHeading: 'They put every lead in one place and gave each one a clear stage',
     solutionDescription:
-      'The solution built a single source of truth for every lead, quote, and job across all three service lines — giving the owner real-time pipeline visibility and ensuring every quote received structured follow-up.',
+      'Rather than trying to remember everything, the team gave each enquiry a single home with a single status, so the picture of live work was never further than a glance away.',
     whatWeDid: [
       {
-        title: 'Unified Lead Intake',
+        title: 'One inbox for new enquiries',
         description:
-          'Consolidated all enquiry channels (website, phone, Google Business Profile) into GoHighLevel CRM so every lead was captured in one place with source and service type tagging.',
+          'Whether the lead came from the website, the phone, or a forwarded email, it landed in the same place with the same first response.',
+        icon: 'Inbox',
+      },
+      {
+        title: 'A clear stage for every job',
+        description:
+          'Each opportunity moved through a small set of stages: new, surveyed, quoted, chasing, won, lost. Nothing was allowed to live in the gaps.',
         icon: 'Layers',
       },
       {
-        title: 'Pipeline Stage Tracking',
+        title: 'A short morning view for the owner',
         description:
-          'Built a 6-stage pipeline — New Lead, Qualified, Quote Sent, Follow-Up Due, Job Won, Job Lost — visible to all team leaders and the business owner in real time.',
-        icon: 'GitBranch',
-      },
-      {
-        title: 'Automated Quote Follow-Up',
-        description:
-          'Configured automated follow-up sequences triggered when quotes moved to "Follow-Up Due" stage: a check-in at 48 hours, a value-add message at 5 days, and a final prompt at 10 days.',
-        icon: 'Mail',
-      },
-      {
-        title: 'Pipeline Reporting Dashboard',
-        description:
-          'Created weekly and monthly reports showing leads by source, quotes by service line, conversion rates by stage, and revenue pipeline value.',
-        icon: 'BarChart3',
+          'A simple list each morning showed what was new, what had gone quiet, and what needed a chase, without scrolling through six months of email.',
+        icon: 'Eye',
       },
     ],
   };
 
-  const resultsSection: CaseStudyTemplateSection = {
-    type: 'results',
-    results: [
-      {
-        metric: 'Pipeline Visibility',
-        before: 'Zero — leads tracked across text messages, emails, and notes',
-        after: '100% of leads, quotes, and jobs visible in a single pipeline',
-        improvement: 'Complete visibility achieved',
-        description:
-          'For the first time, the owner could see every active opportunity across all three service lines, with stage progression and follow-up status visible in real time.',
-      },
-      {
-        metric: 'Quote Close Rate',
-        before: '21% — most quotes sent without follow-up',
-        after: '34% — automated follow-up converted previously-lost quotes',
-        improvement: '+62% relative increase',
-        description:
-          'The 3-step automated follow-up sequence re-engaged prospects at the critical decision points. Many clients who hadn\u2019t responded simply needed a prompt.',
-      },
-      {
-        metric: 'Revenue Identified',
-        before: 'Unknown pipeline value — no quote tracking',
-        after: '£18,000/month in recoverable pipeline value identified in the first quarter',
-        improvement: '£18k/month pipeline visibility',
-        description:
-          'Once all quotes were logged and tracked, the system revealed the actual scale of the unconverted pipeline — £18,000/month in outstanding quotes that had previously been invisible.',
-      },
-      {
-        metric: 'Quote Follow-Up Rate',
-        before: '23% — most quotes never received a follow-up',
-        after: '91% — automated sequences ensured consistent multi-touch follow-up',
-        improvement: '+68 percentage points',
-        description:
-          'Removing follow-up from manual team-leader workflows and automating it meant almost every quote received the full 3-step follow-up sequence.',
-      },
+  const businessImpactSection: CaseStudyTemplateSection = {
+    type: 'business-impact',
+    title: 'What this changed for how the business actually ran',
+    description:
+      'The technical change was small. The change in how the office and the directors lived with the business was bigger than anyone expected.',
+    impacts: [
+      'Property managers got real answers on the first call instead of a promised callback',
+      'Quotes that would have gone cold quietly came back into the conversation',
+      'A meaningful chunk of monthly revenue got recovered from work that was already half-priced',
+      'The owner could look at one screen and roughly know what was on the table this month',
+      'Decisions about hiring, ordering, and chasing stopped being made on gut feel',
+      'The reputation of being slow to respond started to ease without the team trying to fix it',
     ],
   };
 
   const ctaSection: CaseStudyTemplateSection = {
     type: 'cta',
-    heading: 'Running Your Business Without Pipeline Visibility?',
-    body: 'Book a free 20-minute call and we\u2019ll show you how a CRM pipeline could give you real-time visibility into every lead, quote, and job across your business.',
+    heading: 'Leads scattered across inboxes, mobiles, and notepads?',
+    body: 'Book a free 20-minute call. We can look at what your live work actually looks like and where you are losing visibility on it.',
   };
 
   const sections: CaseStudyTemplateSection[] = [
     { type: 'hero', introHtml: heroIntroHtml },
-    { type: 'metrics', keyMetrics },
     problemSection,
     solutionSection,
-    resultsSection,
+    businessImpactSection,
     { type: 'more' },
     ctaSection,
   ];
 
   return {
     seo: {
-      title: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
+      title: 'Trade business case study: one view of every live job',
       description:
-        'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
-      canonical: '/case-studies/crm-pipeline-visibility-transformation',
+        'How a Birmingham roofing and cladding business stopped losing track of leads, quotes, and chases scattered across inboxes, phones and memory.',
+      canonical: '/case-studies/leads-everywhere-no-one-knew-what-was-happening',
       openGraph: {
-        title: 'Why Service Businesses Can\u2019t See Their Pipeline | MindWP Case Study',
+        title: 'Trade business case study: one view of every live job',
         description:
-          'How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.',
+          'How a Birmingham roofing and cladding business stopped losing track of leads.',
       },
     },
-    slug: 'crm-pipeline-visibility-transformation',
-    title: 'CRM Pipeline Visibility Transformation',
+    slug: 'leads-everywhere-no-one-knew-what-was-happening',
+    title: 'They had leads everywhere. No one knew what was happening',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['crm-automation', 'revenue-growth'],
-    topics: [
-      'crm-pipeline',
-      'pipeline-architecture',
-      'lead-management',
-      'lead-qualification',
-      'pipeline-visibility',
-      'conversion-tracking',
-      'revenue-visibility',
-      'revenue-tracking',
-      'crm-visibility',
-    ],
-    publishDate: '2026-06-01',
-    client: 'Greenway Property Maintenance',
-    location: 'Southampton, UK',
-    business: 'Greenway Property Maintenance',
-    duration: '12 weeks',
-    completedDate: 'June 2026',
-    heroHeadline:
-      'How a Property Maintenance Company Went From Zero Pipeline Visibility to Tracking Every Lead',
-    keyMetrics: keyMetrics.map(metric => ({
-      value: metric.value,
-      label: metric.label,
-      ...(metric.color ? { color: metric.color } : {}),
-    })),
-    tags: [
-      'CRM Pipeline',
-      'Pipeline Visibility',
-      'Quote Follow-Up',
-      'Revenue Recovery',
-      'System Implementation',
-    ],
+    systems: ['revenue-growth'],
+    topics: ['crm-visibility', 'pipeline-visibility', 'crm-pipeline'],
+    publishDate: '2026-02-12',
+    client: 'Carter Roofing & Cladding',
+    location: 'Birmingham, UK',
+    business: 'Carter Roofing & Cladding',
+    duration: '9 weeks',
+    completedDate: 'February 2026',
+    heroHeadline: 'They had leads everywhere. No one knew what was happening',
+    keyMetrics: [],
+    tags: ['Lead Tracking', 'Trade Business', 'Visibility', 'Quote Follow-Up'],
     sections,
     templateOverrides: {
-      hero: { scenarioBadgeLabel: 'System Implementation' },
-      metrics: { resultsSectionTitle: 'Key Outcomes' },
-      problem: { challengeBadgeLabel: 'The Visibility Problem' },
-      solution: { solutionBadgeLabel: 'System Architecture' },
-      results: {
-        detailedResultsBadgeLabel: 'Measured Results',
-        detailedResultsSectionTitle: 'Before & After: Pipeline Performance',
-      },
+      hero: { scenarioBadgeLabel: 'Lead Visibility' },
+      problem: { challengeBadgeLabel: 'What was happening' },
+      solution: { solutionBadgeLabel: 'What changed' },
       cta: {
         metaItems: [
           { text: 'Free 20-minute call' },
-          { text: 'No contracts' },
-          { text: 'Works for any service business' },
+          { text: 'No pressure' },
+          { text: 'Useful for trade businesses' },
         ],
       },
     },

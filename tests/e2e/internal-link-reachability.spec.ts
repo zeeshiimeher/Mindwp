@@ -66,7 +66,6 @@ async function getPublishedRoutes() {
     '/case-studies',
     '/contact',
     '/cookies',
-    '/faq',
     '/features',
     '/industries',
     '/privacy',

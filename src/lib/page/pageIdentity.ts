@@ -17,6 +17,13 @@ export type CTAPosition = 'hero' | 'pre-mid' | 'mid' | 'sidebar' | 'footer';
 export type PageIdentity = {
   pageId: string;
   pageType: PageType;
+  /**
+   * Canonical primary system for the page. Used by shared CTA components to
+   * route the contact URL `system=` parameter so conversion attribution
+   * matches the page's actual ownership instead of always defaulting to
+   * `smart-website-systems`.
+   */
+  primarySystem?: string;
 };
 
 export function buildPageId(pageType: PageType, slug: string) {
