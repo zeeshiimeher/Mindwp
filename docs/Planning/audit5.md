@@ -1416,7 +1416,7 @@ Executed after the read-only "Final System Hardening" audit. Each task below add
 - `tests/system/system-integrity.test.ts`: removed the `audit3.md` PARTIAL/DEFERRED block test; kept the closure-file integrity, renderer-null, SEO-metadata, content-graph-uniqueness and validator-coverage tests.
 
 ### Phase 2 — Validator + Report Cleanup
-- `scripts/lib/contract-validator-helpers.mjs`: `loadVocabularyRules` now resolves WRITING.md from `docs/core/WRITING.md` first and falls back to `docs/system/WRITING.md`. Restores `validate-vocabulary` after the docs/system/ → docs/core/ migration.
+- `scripts/lib/contract-validator-helpers.mjs`: `loadVocabularyRules` now resolves WRITING.md from `docs/core/WRITING.md` first and falls back to `docs/core/WRITING.md`. Restores `validate-vocabulary` after the docs/core/ → docs/core/ migration.
 
 ### Phase 6 — Routing + Dead Path Cleanup
 - `src/components/system/SmartCTA.tsx`: deleted. Component had zero importers anywhere in `src/`, was triggering `validate-primary-cta` (custom CTA wrapper UI banned), `validator:lint`, and `check-generated` because it produced stale generated component-doc entries.

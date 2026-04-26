@@ -2,12 +2,37 @@
 
 > Source of truth for content hierarchy, page roles, metadata rules, authority rules, and editorial boundaries.
 > If this file conflicts with [./FOUNDATION.md](./FOUNDATION.md), fix the conflict immediately.
+> This document controls page roles and content behavior only. Identity, positioning, service hierarchy, and page-behavior definitions still come from [./FOUNDATION.md](./FOUNDATION.md).
 
 ---
 
 ## USE THIS DOC
 
-Use this doc for service, feature, blog, resource, industry, case-study, and landing-page content.
+Use this doc when deciding what a page is allowed to do.
+
+This document answers:
+
+- what role each page type owns
+- what funnel role each page type can support
+- what metadata each page type needs
+- where each page type should route next
+- what each page type must not absorb from another page type
+
+---
+
+## CONTENT DECISION ORDER
+
+Before writing, editing, or adding content, decide in this order:
+
+1. Confirm the page type.
+2. Confirm the behavior type from [./FOUNDATION.md](./FOUNDATION.md): landing, system, or entry.
+3. Confirm the funnel role.
+4. Confirm the primary search intent.
+5. Confirm required metadata.
+6. Confirm CTA behavior from [./CONVERSION.md](./CONVERSION.md).
+7. Confirm related-content behavior from [./GRAPH.md](./GRAPH.md).
+
+Do not write copy until these are clear.
 
 ---
 
@@ -16,13 +41,15 @@ Use this doc for service, feature, blog, resource, industry, case-study, and lan
 - Every routed content surface belongs to one canonical page type.
 - Every content node uses canonical metadata from the system, topic, and industry registries.
 - Funnel roles are fixed by page type.
-- BOFU conversion structure belongs to service pages; other page types escalate upward, not sideways.
+- BOFU conversion structure belongs to service pages.
+- Other page types escalate upward; they do not absorb service-page behavior.
 - Related content is graph-derived and slot-limited.
 - Metadata, page role, CTA role, and related-content behavior must agree.
+- Structural validation does not prove authority, specificity, or conversion strength.
 
 ---
 
-## UNIFIED CONTENT HIERARCHY (CANONICAL DEFINITION)
+## UNIFIED CONTENT HIERARCHY
 
 | Page Type         | Primary Role                      | Funnel Role                 | Required Metadata           | Primary Outcome                               |
 | ----------------- | --------------------------------- | --------------------------- | --------------------------- | --------------------------------------------- |
@@ -30,8 +57,8 @@ Use this doc for service, feature, blog, resource, industry, case-study, and lan
 | Feature           | Capability page                   | MOFU                        | `systems[]`                 | explain one system capability in context      |
 | Industry Detail   | Vertical application page         | late MOFU / controlled BOFU | `systems[]`, `industries[]` | show how the system applies to one vertical   |
 | Industry Category | Taxonomy and navigation page      | MOFU                        | `systems[]`                 | group industry detail pathways                |
-| Blog              | Problem discovery page            | TOFU / MOFU                 | `systems[]`, `topics[]`     | teach one problem or tradeoff                 |
-| Resource          | Framework and implementation page | MOFU                        | `systems[]`, `topics[]`     | explain one system, framework, or method      |
+| Blog              | Problem discovery page            | TOFU / MOFU                 | `systems[]`, `topics[]`     | diagnose one problem, pattern, or tradeoff    |
+| Resource          | Framework and implementation page | MOFU                        | `systems[]`, `topics[]`     | explain one framework, comparison, or method  |
 | Case Study        | Proof page                        | MOFU / proof support        | `systems[]`, `industries[]` | validate the system with implementation proof |
 | Page              | Generic structural page           | context-specific            | page-owned identity         | support navigation or non-domain surfaces     |
 
@@ -39,84 +66,79 @@ Source of truth for canonical identifiers: `src/lib/content-graph/canonical.ts`.
 
 ---
 
-## CONTENT TYPE DEFINITIONS & ROLES
+## CONTENT TYPE ROLES
 
 ### Service
 
-Service pages own decision support, conversion framing, implementation scope, and the strongest CTA escalation.
+Service pages own BOFU decision support, conversion framing, implementation scope, and the strongest CTA escalation.
+
+They are the only page type allowed to carry the full decision/conversion structure.
 
 ### Feature
 
-Feature pages explain one capability as part of a parent system. A feature does not become a parallel system.
+Feature pages explain one capability inside a parent system.
+
+They support understanding, but they do not become parallel systems or strategic pillars.
 
 ### Blog
 
-Blog pages teach one problem, pattern, or tradeoff. They create discovery and route upward into service or resource pages.
+Blog pages diagnose one problem, pattern, misconception, or tradeoff.
+
+They create discovery and route upward into resource, case-study, or service pages.
+
+A blog post should help the reader recognise the problem more clearly. It must not become a disguised service page, a resource with lighter wording, or a shallow SEO variation.
 
 ### Resource
 
-Resource pages explain frameworks, architectures, comparisons, and implementation logic. They clarify how the system works without replacing service-page decision support.
+Resource pages explain frameworks, architectures, comparisons, checklists, and implementation logic.
 
-### Industry
+They clarify how the system works without replacing service-page decision support.
 
-Industry pages translate the system into a vertical context. They do not become isolated sales narratives detached from the canonical services.
+A resource should feel useful as a decision-support asset. It must not read like a generic blog post with a stronger title.
 
-### Industry Behavior Enforcement (NEW — CRITICAL)
+### Industry Detail
 
-Industry detail pages must follow the landing-page behavior defined in [./FOUNDATION.md](./FOUNDATION.md).
+Industry detail pages translate the system into one vertical context.
 
-They must:
+They must follow landing-page behavior from [./FOUNDATION.md](./FOUNDATION.md): recognition first, explanation second.
 
-- lead with recognition first
-- reflect real situations the business recognises
-- stay specific to the industry's dominant problems
-- avoid reusable structure or phrasing
+They must reflect real situations, dominant problems, timing, urgency, customer behavior, and trust concerns specific to that industry.
 
-If an industry page could apply to another industry with minimal changes → it is invalid.
+If an industry page could apply to another industry with minimal changes, it is invalid.
+
+### Industry Category
+
+Industry category pages group related industry pathways.
+
+They support navigation and vertical discovery. They must not become generic service pages or broad educational hubs.
 
 ### Case Study
 
 Case studies validate a system through implementation proof.
 
-They own:
+They own trust, validation, BOFU support through proof, and narrative behavior rather than instructional behavior.
 
-- trust and validation
-- BOFU support through proof
-- narrative behavior rather than instructional behavior
+Case studies must show what was broken, what changed, and what improved. They should earn trust through specificity: constraints, implementation decisions, operational changes, tradeoffs, or visible outcomes where available.
 
-Case studies demonstrate what happened, what changed, and what improved without becoming generic sales copy.
+The renderer must support missing sections, reordered sections, varied combinations, and uneven but believable narrative structure.
 
-Case studies do not require a fixed section set.
-
-Sections are flexible and narrative-driven.
-
-The renderer must support:
-- missing sections
-- reordered sections
-- varied combinations
 ---
 
-## FUNNEL ROLE SEPARATION (LOCKED)
+## FUNNEL ROLE SEPARATION
 
-- Blog pages own TOFU and early MOFU.
-- Resource pages own MOFU explanation and framework clarity.
-- Industry pages own late MOFU and controlled BOFU transition.
+- Blog pages own problem recognition and early discovery.
+- Resource pages own framework clarity and decision support before service selection.
+- Industry pages own vertical recognition and controlled BOFU transition.
 - Service pages own BOFU decision support and direct service conversion.
-- Case studies supply proof and validation; they do not replace service pages.
+- Case studies own proof and validation; they support service pages but do not replace them.
 
 If a page absorbs the funnel role of another page type, it has drifted and must be corrected.
 
-### Behavior Alignment Requirement (NEW)
-
-Funnel role alone is not sufficient.
-
-Each page must also match its behavior type as defined in [./FOUNDATION.md](./FOUNDATION.md).
-
-If funnel role and behavior conflict → behavior must be corrected.
+Funnel role alone is not sufficient. Each page must also match its behavior type from [./FOUNDATION.md](./FOUNDATION.md).
 
 ---
 
-## BOFU CONTENT ISOLATION RULE (LOCKED)
+## BOFU ISOLATION RULE
 
 BOFU sections are limited to service pages.
 
@@ -127,11 +149,12 @@ The following structures belong to the BOFU layer:
 - direct service conversion proof blocks
 - strongest CTA escalation
 
-Blog and resource pages may educate, compare, explain, and route upward. They must not absorb BOFU service structure.
+Blog and resource pages may educate, compare, explain, and route upward.
+They must not absorb BOFU service structure.
 
 ---
 
-## TIER 1 PAGE HIERARCHY RULE (LOCKED)
+## TIER 1 PAGE HIERARCHY RULE
 
 Public content hierarchy must preserve Smart Website gravity.
 
@@ -151,43 +174,33 @@ The services landing page may curate these layers deliberately, but it may not f
 - Service pages target decision-ready commercial intent.
 - Feature pages target capability and solution-comparison intent.
 - Industry pages target vertical applicability and context-specific commercial intent.
-- Blog pages target informational and problem-aware intent.
-- Resource pages target framework, comparison, and implementation intent.
+- Blog pages target informational, problem-aware, misconception, and tradeoff intent.
+- Resource pages target framework, comparison, checklist, architecture, and implementation intent.
 - Case studies target proof intent.
 
 One page owns one primary search intent. Do not merge multiple intent classes into one page.
 
-### Intent + Behavior Alignment (NEW)
-
 Search intent must align with page behavior.
-
-Examples:
-
-- Industry pages: commercial + situational recognition
-- Service pages: decision-ready intent
-- Blog pages: informational problem intent
-- Resource pages: framework and comparison intent
-
-If intent and behavior diverge → the page loses clarity and must be corrected.
+If intent and behavior diverge, the page loses clarity and must be corrected.
 
 ---
 
-## CONTENT SYSTEM INTEGRITY RULE (LOCKED)
+## CONTENT SYSTEM INTEGRITY
 
-Content integrity depends on four aligned contracts:
+Content integrity depends on aligned contracts:
 
-1. The page type matches the page role.
-2. The metadata matches the page subject.
-3. The CTA behavior matches the page role.
+1. Page type matches page role.
+2. Metadata matches page subject.
+3. CTA behavior matches page role.
 4. Related content resolves from metadata rather than editorial shortcuts.
-
-5. The page behavior (landing, system, entry) matches its role and positioning.
+5. Page behavior matches its role and positioning.
+6. Content supports authority instead of only satisfying structure.
 
 Do not invent parallel identifiers, parallel page roles, or parallel relationship systems.
 
 ---
 
-## INTENT ARCHITECTURE CORE RULES (LOCKED)
+## INTENT ARCHITECTURE CORE RULES
 
 - One page owns one primary intent.
 - Topics represent problem spaces, not titles.
@@ -197,78 +210,48 @@ Do not invent parallel identifiers, parallel page roles, or parallel relationshi
 
 ---
 
-## CONTENT FLOW & RELATIONSHIPS
+## CONTENT FLOW AND RELATIONSHIPS
 
 The canonical content path is:
 
+```text
 domain data -> registry -> content model -> graph -> resolver -> route -> page -> CTA -> validator
+```
 
-Relationship generation and ranking are defined in [./GRAPH.md](./GRAPH.md).
+Relationship generation, ranking, and authority handling are defined in [./GRAPH.md](./GRAPH.md).
 
-### Behavior + Conversion Integrity (NEW)
-
-Content flow must preserve not only structure, but meaning:
+Content flow must preserve meaning, not just structure:
 
 - routing must support conversion progression
 - related content must not break page intent or funnel role
-
-Graph relationship logic and authority handling are owned by [./GRAPH.md](./GRAPH.md).
-
----
-
-## AUTHORITY RESOLUTION SYSTEM (LOCKED)
-
-Authority resolution is graph-owned.
-
-Rules:
-
-- Content declares `systems[]`, `topics[]`, and `industries[]` where required.
-- Relationship derivation and ranking are defined in [./GRAPH.md](./GRAPH.md).
-- Only graph-valid candidates may enter the related-content display surface.
+- only graph-valid candidates may enter related-content display
 
 Manual presentation helpers do not own related-content truth.
 
 ---
 
-## RELATED CONTENT SLOT SYSTEM (LOCKED)
+## RELATED CONTENT SLOT SYSTEM
 
 - Each eligible page gets one related-content zone.
 - The zone shows at most three items.
 - The zone is fed by graph-ranked candidates, not ad hoc editorial lists.
 - Inline editorial links may support the narrative, but they do not replace the related-content system.
 
-### Behavior-Safe Related Content (NEW)
-
 Related content must respect page behavior:
 
-- Landing pages must not surface unrelated educational chains
-- Blog pages must not loop into shallow discovery cycles
-- Service pages must prioritize conversion-relevant content
+- Landing pages must not surface unrelated educational chains.
+- Blog pages must not loop into shallow discovery cycles.
+- Service pages must prioritize conversion-relevant content.
+- Case studies must route toward the service, industry, or system context they prove.
+- Resources must not trap readers in endless educational loops.
 
-If related content weakens user progression → it must be removed or reordered.
-
----
-
-## POSITIONING RULE FOR RESOURCES
-
-Resources explain system logic, architecture, comparisons, and implementation patterns.
-
-Resources must:
-
-- clarify how the system works
-- reduce ambiguity
-- support MOFU understanding
-- route upward when direct service action is appropriate
-
-Resources must not:
-
-- behave like direct sales pages
-- absorb BOFU failure or decision structures
-- replace service pages as the conversion owner
+If related content weakens user progression, remove or reorder it.
 
 ---
 
-## BLOG WRITING STANDARD (LOCKED)
+## PAGE-TYPE WRITING STANDARDS
+
+### Blog
 
 Blog posts must:
 
@@ -276,20 +259,33 @@ Blog posts must:
 - use simple operational language
 - stay specific and non-hyped
 - connect the problem back to one canonical system
+- make the reader recognise a problem before introducing the system angle
 
 Blog posts must not:
 
 - behave like sales pages
 - promise outcomes they do not own
 - flatten multiple topics into one vague article
+- duplicate a resource page with lighter wording
+- exist only to capture a keyword variation
 
----
+### Resource
 
-## CASE STUDY ARCHITECTURE
+Resources must:
 
-Case studies are proof surfaces.
+- clarify how the system works
+- reduce ambiguity
+- support MOFU understanding
+- route upward when direct service action is appropriate
+- provide a usable framework, comparison, checklist, architecture, or implementation lens
 
-Their behavior is narrative, not instructional.
+Resources must not:
+
+- behave like direct sales pages
+- absorb BOFU failure or decision structures
+- replace service pages as the conversion owner
+
+### Case Study
 
 Each case study must make these elements legible:
 
@@ -298,6 +294,7 @@ Each case study must make these elements legible:
 - implemented system
 - handoff or workflow change
 - measurable or observable outcome
+- constraint, tradeoff, or decision where available
 
 Case studies may support service conversion, but the case study itself remains a proof asset rather than the primary BOFU decision page.
 
@@ -312,6 +309,7 @@ Case studies may support service conversion, but the case study itself remains a
 3. Match the funnel role to the page type.
 4. Keep CTA behavior inside the conversion contract.
 5. Validate metadata, structure, and graph integrity.
+6. Confirm the page adds authority, proof, clarity, or conversion progression. If it only adds volume, do not add it.
 
 ### Add a Service or Feature Page
 
@@ -334,11 +332,14 @@ Case studies may support service conversion, but the case study itself remains a
 | Concern                                         | Primary Owner                    | Enforced By                                       |
 | ----------------------------------------------- | -------------------------------- | ------------------------------------------------- |
 | Metadata completeness and canonical identifiers | Domain data and registries       | `validate-content-contract.mjs`                   |
-| Route and page structure                        | Section order and authored flow  | `validate-section-order-consistency.mjs`         |
+| Route and page structure                        | Section order and authored flow  | `validate-section-order-consistency.mjs`          |
 | Graph integrity                                 | Content model and graph registry | `validate-graph.ts`                               |
 | Related-content duplication                     | Related-content system           | `validate-related-duplication.ts`                 |
 | Internal link and docs hygiene                  | Content and docs surfaces        | `validate-internal-links.ts`, `validate-docs.mjs` |
-| Behavior and positioning alignment              | Content layer and page type       | System rules + validators (behavior-aware checks) |
+| Behavior and positioning alignment              | Content layer and page type      | System rules + validators                         |
+
+Automated enforcement confirms contracts and structure.
+Manual review still owns authority strength, specificity, page differentiation, and conversion clarity.
 
 ---
 
@@ -347,3 +348,4 @@ Case studies may support service conversion, but the case study itself remains a
 - Identity and system hierarchy: [./FOUNDATION.md](./FOUNDATION.md)
 - Graph and resolver mechanics: [./GRAPH.md](./GRAPH.md)
 - CTA and contact contracts: [./CONVERSION.md](./CONVERSION.md)
+- Public writing style and rewrite rules: [./WRITING.md](./WRITING.md)

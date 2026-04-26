@@ -20,7 +20,7 @@ function getSourceBaseDir() {
   });
 }
 
-const DOC_RELATIVE_CANDIDATES = [['docs/system/GLOBAL-COMPONENTS-CATALOG.md']];
+const DOC_RELATIVE_CANDIDATES = [['docs/core/GLOBAL-COMPONENTS-CATALOG.md']];
 
 const START = '<!-- AUTO-GENERATED:GLOBAL-INVENTORY:START -->';
 const END = '<!-- AUTO-GENERATED:GLOBAL-INVENTORY:END -->';
@@ -210,7 +210,7 @@ async function main() {
 
   if (docFiles.length === 0) {
     throw new Error(
-      'Could not locate documentation file for global inventory at docs/system/GLOBAL-COMPONENTS-CATALOG.md. Run the script from the repo root or create the file first.'
+      'Could not locate documentation file for global inventory at docs/core/GLOBAL-COMPONENTS-CATALOG.md. Run the script from the repo root or create the file first.'
     );
   }
 

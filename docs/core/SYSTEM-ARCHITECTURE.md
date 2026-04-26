@@ -2,33 +2,28 @@
 
 > High-level architecture map for the live repo surface.
 > Shows how the main layers fit together and which runtime owners matter.
+> Orientation only. Does not override `FOUNDATION.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`, or `WRITING.md`.
 
 ---
 
 ## USE THIS DOC
 
-Use this doc for the shortest architecture map across governance, domain data, graph, presentation, validation, and reports.
+Use this doc for the shortest architecture map across governance, domain data, graph, presentation, validation, reports, deploy, dashboard, and manual review.
 
-If you are new to the repo, read this file for the mental model, then read `../ops/WORKFLOW.md` for the day-to-day command path.
+For positioning, writing, CTA behavior, content roles, or graph-scoring decisions, use the governing docs instead.
 
 ---
 
 ## SYSTEM LAYERS
 
 ```text
-Governance -> Domain data and registries -> Graph and resolver -> Routes and templates -> CTA/contact -> Validators -> Reports -> Snapshot -> Deploy -> Dashboard
+Governance -> Domain data and registries -> Graph and resolver -> Routes and templates -> CTA/contact -> Validators -> Reports -> Snapshot -> Deploy -> Dashboard -> Manual authority review
 ```
-
-## PAGE BEHAVIOR (ENFORCED)
-
-All pages must follow the behavior model defined in [./FOUNDATION.md](./FOUNDATION.md).
-
-If a page is written with the wrong behavior → it is invalid even if technically correct.
 
 ### Governance
 
-- `FOUNDATION.md`
-- supporting core contracts in `CONTENT.md`, `GRAPH.md`, and `CONVERSION.md`
+- `FOUNDATION.md` is root authority.
+- `WRITING.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`, and `SYSTEM-RULES.md` are scoped governing docs.
 
 ### Domain Data and Registries
 
@@ -40,7 +35,7 @@ If a page is written with the wrong behavior → it is invalid even if technical
 
 - graph initialization through `src/domains/init/ensureGraphInitialized.ts`
 - publishable and graph runtime under `src/lib/content-graph/**`
-- related-content and authority resolution from metadata overlap
+- related-content and authority resolution from metadata overlap, behavior safety, and progression logic
 
 ### Routes and Templates
 
@@ -62,72 +57,69 @@ If a page is written with the wrong behavior → it is invalid even if technical
 - generated report artifacts in `reports/**`
 - operator visibility through `/dev/system-dashboard`
 
-### Deploy and Snapshot (Control Extension)
+Validators protect structure. They do not replace manual authority review.
+
+### Deploy and Snapshot
 
 - `scripts/deploy/**`
 - predeploy validation gate (`system:quick` + `system:full`)
 - snapshot generation via `build-system-snapshot.mjs`
 - deploy report output in `artifacts/**`
 
-This layer extends the control-plane by introducing a validated release step.
-It does not change runtime behavior — it freezes and records system state at deploy time.
+This layer freezes and records system state at deploy time. It does not change runtime behavior.
+
+### Manual Authority Review
+
+Manual review checks authority, specificity, proof quality, CTA timing, and conversion clarity on important service, industry, case-study, homepage, and CTA surfaces before launch.
+
+This is human judgment. Validators do not replace it.
 
 ---
 
 ## HUMAN WORKING MODEL
 
-Think about MindWP in two lanes:
+MindWP operates in two lanes:
 
-1. Runtime lane: domain registries, graph initialization, routes, templates, CTA behavior, and the contact flow.
-2. Control-plane lane: validators, analyzers, report writers, snapshot generation, deploy gating, and dashboard readers.
+1. **Runtime lane:** domain registries, graph initialization, routes, templates, CTA behavior, and contact flow.
+2. **Control-plane lane:** validators, analyzers, reports, snapshots, deploy gates, and dashboard readers.
 
-Human rule: the runtime lane produces behavior, and the control-plane lane confirms that behavior. The dashboard only reads the control-plane outputs.
-
-Behavior rule: runtime produces behavior, and validators confirm alignment against the governing docs.
+Runtime produces behavior.
+Control-plane confirms structural alignment.
+Manual review confirms authority quality where automation cannot judge it.
 
 ---
 
 ## FULL SYSTEM FLOW
 
 1. Domain-owned content and registries declare canonical metadata.
-2. The content model collects those registries into one runtime input surface.
-3. Graph initialization builds the structured graph and resolver indexes.
+2. The content model collects registries into one runtime input surface.
+3. Graph initialization builds graph and resolver indexes.
 4. App routes resolve canonical params into the correct page or template surface.
 5. Publishable nodes render through shared runtime owners.
 6. Page adapters create page identity and CTA enforcement scope.
-7. `PrimaryCTASection` generates the correct CTA behavior and `/contact` context.
-8. Validators and reports confirm that runtime behavior still matches the contracts.
-9. Snapshot generation freezes the validated system state.
+7. `PrimaryCTASection` generates CTA behavior and `/contact` context.
+8. Validators and reports confirm structural contracts.
+9. Snapshot generation freezes validated system state.
 10. Deploy pipeline records artifacts and enforces release gating.
-11. The dashboard reads frozen report outputs for operator visibility.
-12. Page content respects the governing docs.
+11. Dashboard reads frozen report outputs for operator visibility.
+12. Manual review checks authority and conversion quality where automation cannot.
+13. Page content respects governing docs.
 
 ---
 
 ## ARCHITECTURAL RULES
 
 - Governing docs describe expected behavior; code must match them.
+- This architecture document explains ownership; it does not create authority above governing docs.
 - One content item gets one canonical route.
 - Components render content; they do not become graph or report engines.
 - Runtime code does not become a dashboard computation layer.
 - Dashboards read reports; they do not define system truth.
 - Generated files and report artifacts are not edited manually.
-- The full refresh path is `npm run system:full`, not a manual side path.
-- `npm run system:quick` is a safe operator check, not a replacement for the full source-of-truth run.
-- Page content must stay aligned with the governing docs.
-- Production release must go through `npm run deploy` to ensure validation, snapshot, and audit integrity.
-
----
-
-## POSITIONING + WRITING INTEGRATION
-
-Architecture depends on clear document ownership:
-
-- [./FOUNDATION.md](./FOUNDATION.md) owns positioning and page behavior
-- [./WRITING.md](./WRITING.md) owns tone and language
-- [./SYSTEM-RULES.md](./SYSTEM-RULES.md) owns enforcement and validation constraints
-
-All runtime content must satisfy all three layers.
+- The full refresh path is `npm run system:full`.
+- `npm run system:quick` is a safe operator check, not a replacement for the full run.
+- Passing validators does not prove positioning strength, persuasion, or authority quality.
+- Production release must go through `npm run deploy`.
 
 ---
 
@@ -135,19 +127,19 @@ All runtime content must satisfy all three layers.
 
 | Concern                   | Primary Owner                                |
 | ------------------------- | -------------------------------------------- |
-| Identity and hierarchy    | `docs/system/FOUNDATION.md`                  |
+| Governing docs            | `docs/core/*`                                |
 | Content model             | `src/domains/contentModel.ts`                |
 | Graph initialization      | `src/domains/init/ensureGraphInitialized.ts` |
 | Publishable runtime       | `src/lib/content-graph/publishable.tsx`      |
-| CTA rendering             | `src/components/system/PrimaryCTASection.tsx`         |
+| CTA rendering             | `src/components/system/PrimaryCTASection.tsx` |
 | CTA registry              | `src/lib/cta/ctaRegistry.ts`                 |
 | Contact URL generation    | `src/lib/contact/contactHref.ts`             |
 | Validator orchestration   | `scripts/core/validate-all.mjs`              |
 | Workflow authority        | `docs/ops/WORKFLOW.md`                       |
 | Audit authority           | `docs/ops/AUDIT.md`                          |
 | Internal observability    | `/dev/system-dashboard`                      |
-| Deploy and snapshot layer | `scripts/deploy/**`, `artifacts/**` |
-
+| Deploy and snapshot layer | `scripts/deploy/**`, `artifacts/**`          |
+| Manual authority review   | Human review guided by `docs/core/*`         |
 
 ---
 
@@ -156,11 +148,12 @@ All runtime content must satisfy all three layers.
 Read in this order:
 
 1. `FOUNDATION.md`
-2. `CONTENT.md`
-3. `GRAPH.md`
+2. `WRITING.md`
+3. `CONTENT.md`
 4. `CONVERSION.md`
-5. `../ops/AUDIT.md`
-6. `../ops/WORKFLOW.md`
-7. `SYSTEM-RULES.md`
+5. `GRAPH.md`
+6. `SYSTEM-RULES.md`
+7. `../ops/AUDIT.md`
+8. `../ops/WORKFLOW.md`
 
-This ensures behavior, positioning, and execution constraints are always applied after architectural understanding.
+This follows the authority order defined in `FOUNDATION.md` while keeping this file as the short architecture orientation map.

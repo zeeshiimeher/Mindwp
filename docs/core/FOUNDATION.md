@@ -2,12 +2,39 @@
 
 > Root authority for identity, service hierarchy, vocabulary, positioning, and boundary rules.
 > If any other document conflicts with this file, fix the conflict immediately.
+> This document wins over every other strategy, content, conversion, graph, design, and workflow document.
 
 ---
 
 ## USE THIS DOC
 
-Read this first in any new session. It defines what MindWP is, which systems exist, how they relate, and which language is allowed.
+Read this first in any new session before editing strategy, content, page data, CTAs, routes, graph relationships, or public-facing copy.
+
+This document defines:
+
+- what MindWP is and is not
+- which systems exist
+- how those systems relate
+- which language is allowed
+- which positioning boundaries must not be crossed
+
+---
+
+## DOC AUTHORITY ORDER
+
+When documents conflict, follow this order:
+
+1. `FOUNDATION.md` — identity, positioning, service hierarchy, vocabulary, boundaries.
+2. `WRITING.md` — voice, phrasing, rewrite rules, banned language.
+3. `CONTENT.md` — page roles, funnel roles, content behavior.
+4. `CONVERSION.md` — CTA intent, CTA placement, contact routing, conversion rules.
+5. `GRAPH.md` — metadata, relationships, authority routing, content graph behavior.
+6. `DESIGN.md` — visual rules, CSS constraints, component styling behavior.
+7. `ops/*` — setup, workflow, audit, operational process.
+8. `ui/*` — component usage, component mapping, future UI proposals.
+
+If a lower-priority document conflicts with a higher-priority document, update the lower-priority document.
+Do not reinterpret this document to fit another document.
 
 ---
 
@@ -31,59 +58,84 @@ MindWP does not position itself as:
 - a tool reseller
 - a SaaS product
 
-The commercial posture is calm, clear, and operational. MindWP sells structure before scale and infrastructure before growth.
+The commercial posture is calm, clear, and operational.
+MindWP sells structure before scale and infrastructure before growth.
 
-## PAGE BEHAVIOR MODEL (NEW — CRITICAL)
+---
 
-All public pages fall into one of three behavior types. This is a positioning and writing constraint, not a routing change.
+## PAGE BEHAVIOR MODEL
 
-### 1) Landing Pages (Primary for Industries and BOFU)
+All public pages fall into one of three behavior types.
+This is a positioning and writing constraint, not a routing change.
 
-Purpose:
-- recognition in seconds
-- direct relevance to a real situation
-- immediate path to contact
+A page must not mix behavior types.
 
-Rules:
-- do not teach or explain systems
-- do not read like guides or blogs
-- must reflect real-world situations the reader recognises
-- must lead naturally to contact without friction
+- A landing page must not drift into a guide.
+- A system page must not become a tool explanation.
+- An entry page must not position itself as the final offer.
 
-Outcome:
-- the reader thinks “this is exactly what happens in my business”
+### 1) Landing Pages
 
-### 2) System Pages (Service / BOFU)
+Primary use: industry pages and controlled BOFU pages.
 
 Purpose:
-- explain how the system changes outcomes
-- connect structure → result without technical detail
+
+- create recognition in seconds
+- reflect a real business situation
+- lead naturally to contact
 
 Rules:
+
+- lead with the reader's situation, not MindWP's service
+- do not teach broad concepts first
+- do not read like guides, blogs, or SEO articles
+- do not introduce tools before the problem is recognised
+- make the reader think: “this is exactly what happens in my business”
+
+### 2) System Pages
+
+Primary use: service and BOFU system pages.
+
+Purpose:
+
+- explain how structure changes business outcomes
+- connect problem → system → result without unnecessary technical detail
+
+Rules:
+
 - remain outcome-first
-- do not become tool explanations
+- explain structure only when it clarifies the business result
+- do not become tool explanations or implementation tutorials
 - do not expand into adjacent systems beyond bridge rules
 
-### 3) Entry Pages (SEO / Topics / Resources)
+### 3) Entry Pages
+
+Primary use: SEO, topic, blog, and resource pages.
 
 Purpose:
-- capture intent and route into the correct system
+
+- capture intent
+- clarify the problem
+- route into the correct system or next decision
 
 Rules:
+
 - may educate lightly
-- must transition toward system pages or contact
+- diagnose before explaining
 - must not position as standalone services
+- must not exist as content for content's sake
 
-### Case Study Behavior (NEW)
+### Case Studies
 
-Case studies do not create a fourth public behavior type.
-They are proof surfaces inside the existing content model.
+Case studies are proof surfaces inside the existing content model.
+They do not create a fourth behavior type.
 
 Rules:
+
 - case studies are observational narratives
-- case studies are not sales pages
-- case studies are not system explainers
-- case studies must stay focused on what happened, what changed, and what improved
+- case studies are not sales pages or system explainers
+- case studies focus on what was broken, what changed, and what improved
+- case studies should include specificity signals where available: constraint, decision, implementation choice, operational change, or visible outcome
 - case studies must read like observed business reality, not polished campaign copy
 
 ---
@@ -107,9 +159,9 @@ Source of truth: `src/lib/content-graph/canonical.ts`.
 
 ## SERVICE HIERARCHY RULES
 
-### Smart Website Gravity Rule (LOCKED)
+### Smart Website Gravity Rule
 
-`smart-website-systems` is the structural flagship. It is the conceptual center of the public service hierarchy.
+`smart-website-systems` is the structural flagship and conceptual center of the public service hierarchy.
 
 All other Tier 1 systems:
 
@@ -117,7 +169,7 @@ All other Tier 1 systems:
 - may sell independently when user intent is direct
 - must not displace Smart Website as the dominant public service frame
 
-### Tier Hierarchy Rule (LOCKED)
+### Tier Hierarchy Rule
 
 The public service model has three layers:
 
@@ -125,20 +177,23 @@ The public service model has three layers:
 - Tier 2: specialized modules
 - Tier 3: implementation pathways
 
-Tier 3 pages support execution and acquisition. They do not become strategic pillars.
+Tier 3 pages support execution and acquisition.
+They do not become strategic pillars.
 
-### Local SEO Exception (LOCKED)
+### Local SEO Exception
 
-`local-seo-authority` may lead when visitor intent is explicitly SEO-led. This is a controlled acquisition exception, not a second flagship.
+`local-seo-authority` may lead when visitor intent is explicitly SEO-led.
+This is a controlled acquisition exception, not a second flagship.
 
 ---
 
-## SYSTEM CONTRACT (MANDATORY)
+## SYSTEM CONTRACT
 
 1. Every public page resolves to one page type and one page identity.
 2. Every page belongs to one primary system and may declare supporting metadata.
-3. Every page must respect its behavior type and the corresponding writing rules.
-4. Validators and reports must confirm alignment with the canonical model.
+3. Every page respects its behavior type and writing rules.
+4. Validators and reports confirm structural alignment with the canonical model.
+5. Passing validators does not automatically confirm positioning strength, persuasion, or authority quality.
 
 Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md), [./GRAPH.md](./GRAPH.md), and [./CONVERSION.md](./CONVERSION.md).
 
@@ -173,21 +228,21 @@ Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.
 
 ---
 
-## BRIDGE RULES (LOCKED)
+## BRIDGE RULES
 
-When one page needs to reference an adjacent system, it may do so only as handoff context.
+When one page references an adjacent system, it may do so only as handoff context.
 
 Rules:
 
-- A bridge sentence explains the handoff, not the adjacent system in full.
-- A bridge sentence stays subordinate to the owning page narrative.
-- A bridge sentence must return immediately to the owning system.
-- A bridge sentence must not change the page's primary system or funnel role.
+- explain the handoff, not the adjacent system in full
+- keep the bridge subordinate to the owning page narrative
+- return immediately to the owning system
+- never change the page's primary system or funnel role
 
 Example:
 
-- A Smart Website page may mention that lead handling continues in CRM after enquiry capture.
-- The same page must not turn into a CRM workflow page.
+A Smart Website page may mention that lead handling continues in CRM after enquiry capture.
+The same page must not turn into a CRM workflow page.
 
 ---
 
@@ -195,7 +250,7 @@ Example:
 
 ### Smart Website Language
 
-Use terms such as:
+Use:
 
 - website structure
 - enquiry capture
@@ -203,7 +258,7 @@ Use terms such as:
 - page flow
 - clarity
 
-Avoid terms such as:
+Avoid:
 
 - rankings
 - pipeline
@@ -212,14 +267,14 @@ Avoid terms such as:
 
 ### Local SEO Language
 
-Use terms such as:
+Use:
 
 - visibility
 - local discovery
 - Google Business Profile
 - authority signals
 
-Avoid terms such as:
+Avoid:
 
 - conversion guarantee
 - CRM workflow
@@ -227,7 +282,7 @@ Avoid terms such as:
 
 ### AI Lead Handling and CRM Language
 
-Use terms such as:
+Use:
 
 - response
 - routing
@@ -235,7 +290,7 @@ Use terms such as:
 - follow-up
 - pipeline visibility
 
-Avoid terms such as:
+Avoid:
 
 - page design
 - rankings
@@ -243,22 +298,22 @@ Avoid terms such as:
 
 ### Reputation Language
 
-Use terms such as:
+Use:
 
 - review generation
 - trust signals
 - response handling
 - feedback routing
 
-Avoid terms such as:
+Avoid:
 
 - traffic acquisition
 - page structure
 - pipeline management
 
-### CROSS-SYSTEM LANGUAGE GUARD (NEW)
+### Cross-System Language Guard
 
-Language must not blur system boundaries or collapse positioning into generic “web design”.
+Language must not blur system boundaries or collapse positioning into generic web design.
 
 Never introduce:
 
@@ -266,13 +321,9 @@ Never introduce:
 - mixed system terminology in one explanation
 - wording that makes all systems sound the same
 
-Each system must remain:
+Each system must remain distinct in role, responsibility, and vocabulary.
 
-- distinct in role
-- clear in responsibility
-- consistent in vocabulary
-
-If a sentence could apply to multiple systems → it is too vague.
+If a sentence could apply to multiple systems, or makes MindWP sound like a normal web design provider, it is off-position and must be rewritten.
 
 ---
 
@@ -294,11 +345,11 @@ MindWP copy must not use phrases such as:
 - dominate competitors
 - explosive growth
 
-### EXPERIENCE-LED POSITIONING (NEW)
+### Experience-Led Positioning
 
 MindWP must be described through what the business experiences changing, not what is built.
 
-Always prioritise:
+Prioritise:
 
 - what goes wrong today
 - what improves after implementation
@@ -318,58 +369,39 @@ Correct direction:
 - “Follow-up happens without chasing.”
 - “Nothing gets missed or delayed.”
 
-If copy starts describing what is built instead of what changes → rewrite.
+If copy starts describing what is built instead of what changes, rewrite it.
 
----
-### POSITIONING ENFORCEMENT (CRITICAL)
+### Positioning Enforcement
 
-The business MUST NOT be described as:
+The business must not be described as:
 
 - web design service
 - custom website provider
 - agency building websites
 - redesign service
 
-Even partially.
+Wrong:
 
-#### WRONG EXAMPLES (REJECT)
+- “Custom websites for service businesses”
+- “We build websites that convert”
+- “Professional website design with automation”
 
-❌ "Custom websites for service businesses"  
-❌ "We build websites that convert"  
-❌ "Professional website design with automation"
+Right direction:
 
-#### CORRECT DIRECTION
+- “Leads come in. Nobody follows up.”
+- “People reach out. It goes nowhere.”
+- “Enquiries are missed, delayed, or forgotten.”
 
-✅ "Leads come in. Nobody follows up."  
-✅ "People reach out. It goes nowhere."  
-✅ "Enquiries are missed, delayed, or forgotten."
+### Landing Page Positioning Lock
 
-#### RULE
+Landing pages, especially industry pages, must lead with:
 
-If the sentence starts describing what we build instead of what goes wrong or what changes → IT IS WRONG.
-
-### LANDING PAGE POSITIONING LOCK (NEW)
-
-On landing pages (especially industry pages):
-
-- lead with situations, not services
-- lead with problems, not deliverables
-- lead with recognition, not explanation
-
-Do NOT:
-
-- open with what MindWP builds
-- describe features before context
-- introduce systems before the problem is clear
-
-Correct flow:
-
-1. what is happening (real situation)
+1. what is happening
 2. what is going wrong
 3. what changes
 4. how it is handled differently
 
-If the opening sounds like a service description → rewrite immediately.
+Do not open with services, features, tools, or systems before the problem is clear.
 
 ---
 
@@ -385,6 +417,8 @@ If the opening sounds like a service description → rewrite immediately.
 - Content that can be copied between industries with minimal changes.
 - Educational or blog-style introductions on landing pages.
 - Language that positions MindWP primarily as a website builder.
+- Copy that passes structural validation but weakens authority, specificity, or conversion clarity.
+- Case studies that sound generic, invented, over-polished, or disconnected from real operational change.
 
 ---
 

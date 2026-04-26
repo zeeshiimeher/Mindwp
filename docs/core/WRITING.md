@@ -1,18 +1,38 @@
 # WRITING PLAYBOOK — MindWP
 
-> Single authority for all public-facing content.
-> Read top → down. Follow without deviation.
+> Single authority for public-facing language.
+> This document controls wording, rhythm, rewrite behavior, and public copy.
+> Positioning, service hierarchy, and page behavior still come from `FOUNDATION.md`.
 
-### Document Map
+---
 
-| §1–3   | Context, AI contract, rewrite decisions                             |
-| ------ | ------------------------------------------------------------------- |
-| §4–6   | Core rules, language, voice                                         |
-| §7–9   | Connectors, rhythm, observation/L5                                  |
-| §10–14 | Section rules, hero, comparison, proof, other sections              |
-| §15–16 | Industry rules, cross-page rules                                    |
-| §17–18 | Rewrite method, visual language                                     |
-| §19–24 | Content types, validation, polish, page intent, workflow, execution |
+## USE THIS DOC
+
+Use this doc when writing, rewriting, polishing, or auditing public-facing copy.
+
+It does not decide:
+
+- what MindWP is
+- which service owns the page
+- which CTA belongs on the page
+- which graph relationships are valid
+
+Those decisions come from the governing docs.
+
+---
+
+## NON-NEGOTIABLE WRITING RULES
+
+1. Start with what the reader is experiencing, not what MindWP offers.
+2. Write in FLOW → HANDLING → RESULT, never PAGES → DESIGN → FEATURES.
+3. Preserve strong lines. Do not rewrite authority assets just because they can be improved.
+4. Fix weak sections only. Full-page rewrites are rare.
+5. Every important line must describe something visible, audible, measurable, or recognisable.
+6. Avoid builder, agency, SaaS, and hype language.
+7. Case studies must sound observed, not polished.
+8. Industry pages must feel specific to that industry, not reusable.
+9. CTAs must feel like the next natural step, not a pitch.
+10. If writing makes MindWP sound like a normal web design provider, rewrite it.
 
 ---
 
@@ -20,135 +40,77 @@
 
 Before writing anything, lock this:
 
-Follow positioning rules defined in [./FOUNDATION.md](./FOUNDATION.md).
+- Follow [./FOUNDATION.md](./FOUNDATION.md).
+- If this file conflicts with `FOUNDATION.md`, follow `FOUNDATION.md`.
+- Writing direction is FLOW → HANDLING → RESULT.
+- Never default to PAGES → DESIGN → FEATURES.
 
-**Writing direction:** FLOW → HANDLING → RESULT
-**Never:** PAGES → DESIGN → FEATURES
+Writing controls language and execution. System ownership stays in the governing docs.
 
-**Boundary:** Writing controls language and execution. System ownership stays in the governing docs.
-
-### INDUSTRY LANDING PAGE CONTEXT (NEW — CRITICAL)
-
-Follow landing-page behavior defined in [./FOUNDATION.md](./FOUNDATION.md).
-
-This means:
-
-- User must relate in seconds
-- Content must feel like “this happens in my business”
-- No teaching, explaining, or SEO-style openings
-
-WRONG:
-"In this guide, we explore how businesses can improve lead handling"
-
-CORRECT:
-"The phone rang. You were already on a job. They didn’t leave a message."
-
-Each industry page must reflect:
-
-- how that specific business loses work
-- what goes wrong in real situations
-- what actually happens day-to-day
-
-If content feels reusable across industries → it is wrong.
 ---
 
 ## 2. AI EXECUTION CONTRACT
 
-**DO NOT:** change meaning, add new ideas, add fluff, expand, rewrite blindly, overuse patterns.
-**MUST:** preserve intent, preserve strong lines, improve clarity not creativity, reduce not expand, maintain natural unevenness.
+### Default Behavior
 
-**Output:** final content only. No explanations. No commentary.
+Do not change meaning, add new ideas, add fluff, expand blindly, or rewrite just to sound better.
 
-**Meaning rule:** meaning stays. Expression may change completely during FULL REWRITE.
+Do preserve intent, preserve strong lines, improve clarity, reduce where possible, and keep natural unevenness.
 
-**Priority when rules conflict:**
+### Output Rules
 
-1. Clarity — reader understands instantly
-2. Reality — feels true, not constructed
-3. Flow — reads naturally
-4. Style rules — connectors, rhythm, etc.
+- Content-generation tasks: final content only. No explanations.
+- Audit/planning tasks: explain the issue first, then define the change. Do not rewrite until execution is requested.
 
-If style hurts clarity → ignore the style rule.
+### Rewrite Scope
 
-**If output feels** too structured, too symmetrical, too polished → REJECT and rewrite.
+AI must behave like an editor protecting authority, not a rewriting engine.
 
-### Output Shape Control
+Flow:
 
-Do NOT increase total word count significantly, add new sections during polish, or expand sections beyond original density. If a rewrite becomes longer → compress before final output.
-## 2.1 EXECUTION GUARDRAILS (AUTHORITY PROTECTION — CRITICAL)
+1. Read the full page.
+2. Identify weak sections only.
+3. Apply targeted fixes.
+4. If no clear issue exists, do nothing.
 
-These rules override standard rewrite behavior.
+Full-page rewrite is allowed only when the page is structurally broken or messaging fails across all major sections.
 
-### DO NOT REWRITE — LOCKED AUTHORITY PAGES
+### Protected Authority Pages
 
-The following pages are considered high-authority assets:
+These pages are high-authority assets:
 
 - Homepage (`/`)
 - Smart Website Systems page
-- Strong industry pages (HVAC, etc.)
+- Strong industry pages
 
-ALLOWED:
-- Minor clarity improvements
-- Internal linking fixes
+Allowed:
+
+- minor clarity improvements
+- internal linking fixes
 - CTA alignment
 
-NOT ALLOWED:
-- Full rewrites
-- Tone changes
-- Structural changes
-- Section rewrites without clear issue
+Not allowed without clear issue:
 
-If no issue exists → DO NOTHING.
+- full rewrites
+- tone changes
+- structural changes
+- section rewrites
 
----
+### Case Study Isolation
 
-### CASE STUDIES — ISOLATED SYSTEM
+Case studies are not part of normal rewrite execution.
 
-Case studies are NOT part of standard rewrite execution.
+Default: skip case studies unless the task is specifically case-study planning or case-study editing.
 
-RULES:
-- Do NOT rewrite case studies during normal execution
-- Only modify inside case-study planning system
-- Maintain narrative + observational tone
+### Priority When Rules Conflict
 
-Default:
-→ SKIP case studies
+1. Clarity — reader understands instantly.
+2. Reality — copy feels true, not constructed.
+3. Flow — copy reads naturally.
+4. Style — rhythm, connector, and polish rules.
 
----
+If style hurts clarity, ignore the style rule.
 
-### REWRITE SCOPE CONTROL
-
-AI must NOT behave as a rewriting engine.
-
-MANDATORY FLOW:
-
-1. Read full page
-2. Identify weak sections ONLY
-3. Apply targeted fixes
-
-If no clear issue:
-→ DO NOTHING
-
-If AI rewrites entire page without justification:
-→ FAIL
-
----
-
-### HYBRID EXECUTION MODEL (MANDATORY)
-
-Content work must follow two phases:
-
-PHASE 1 — ANALYSIS
-- Identify issues
-- Define what needs fixing
-- DO NOT rewrite
-
-PHASE 2 — EXECUTION
-- Apply ONLY defined changes
-- Preserve strong sections
-
-Goal:
-Fix content without damaging authority
 ---
 
 ## 3. REWRITE DECISIONS
@@ -157,66 +119,74 @@ Fix content without damaging authority
 
 | Decision | When                             | Action               |
 | -------- | -------------------------------- | -------------------- |
-| KEEP     | Clear, visual, natural           | Don't touch          |
+| KEEP     | Clear, visual, natural           | Do not touch         |
 | POLISH   | Slightly wordy, minor issue      | Light edit only      |
 | REWRITE  | Vague, abstract, hard to picture | Apply rewrite method |
 | DELETE   | Repetitive, adds nothing         | Remove               |
-
-Not everything should be rewritten. Strong lines must be preserved.
-### System Safety Override (NEW)
-
-Even when FULL REWRITE is triggered:
-
-- DO NOT rewrite entire page by default
-- Rewrite ONLY the broken section
-
-Full-page rewrite allowed ONLY IF:
-- Page is structurally broken
-- Messaging fails across ALL sections
-
-Otherwise:
-→ section-level rewrite ONLY
 
 ### Rewrite Modes
 
 | Mode                      | When                                | What                                  |
 | ------------------------- | ----------------------------------- | ------------------------------------- |
 | Light Polish              | Content is clear, only minor issues | Fix clarity, keep structure           |
-| Clarity Rewrite (DEFAULT) | Sentences need clarity              | Rewrite sentences, keep ideas         |
-| Level 5 Upgrade           | High-impact sections                | Apply signature style, control rhythm |
-| Full Rewrite (RARE)       | Content is broken                   | Rebuild from scratch                  |
+| Clarity Rewrite           | Sentences need clarity              | Rewrite sentences, keep ideas         |
+| Level 5 Upgrade           | High-impact sections                | Apply observational style and rhythm  |
+| Full Rewrite              | Content is broken                   | Rebuild approved scope from scratch   |
 
-If mode not specified → default to Clarity Rewrite.
+Default mode: Clarity Rewrite.
 
 ### Full Rewrite Trigger
 
-Use FULL REWRITE if content shows ANY of: repeated patterns, connector overuse, builder language, generic phrasing, structural similarity across sections, sections that feel interchangeable, weak phrasing.
+Use full rewrite only when the approved page or section is structurally broken.
 
-If in doubt → FULL REWRITE. Do NOT polish broken structure.
+Triggers may include:
 
-**Full rewrite execution:** ignore original phrasing, structure, wording, tone, flow. Extract core meaning only. Rebuild from scratch using: problem → scenario → outcome.
+- repeated patterns across most of the section
+- heavy builder language
+- generic phrasing throughout
+- interchangeable sections
+- weak framing that cannot be fixed with sentence-level edits
 
-**Input contamination rule:** existing content is context only — NOT a writing reference. Do NOT reuse sentence structures, phrasing, or paragraph flow. Extract meaning → discard original language → rebuild. If output resembles original → FAIL.
+If the issue is local, rewrite the broken section only.
+If the issue is sentence-level, polish or clarity-rewrite the sentence only.
+If in doubt, protect existing authority and apply the smallest effective fix.
+
+### Contamination Rule
+
+Existing content is context only, not a writing reference.
+
+During full rewrite inside the approved scope:
+
+- extract the meaning
+- discard the old phrasing
+- rebuild using problem → scenario → outcome
+
+If the output resembles the original sentence structure, rewrite again.
 
 ---
 
-## 4. CORE WRITING RULES
+## 4. CORE STYLE
 
-Write like plain English from a clear human operator.
+Write like a clear human operator.
 
-### Signature Style
+The voice is:
 
-- Observational, not persuasive
-- Operational, not descriptive
-- Grounded, not conceptual
-- Slightly imperfect, not polished
+- observational, not persuasive
+- operational, not decorative
+- grounded, not conceptual
+- slightly imperfect, not polished
 
-❌ "We help businesses optimize their processes"
-✅ "Leads come in. Nobody follows up."
+Bad:
 
-If content sounds like marketing, SaaS, or agency copy → rewrite.
+> We help businesses optimize their processes.
 
-### Before Writing, Answer:
+Good:
+
+> Leads come in. Nobody follows up.
+
+If content sounds like marketing, SaaS, or agency copy, rewrite it.
+
+### Before Writing, Answer
 
 1. What is the reader's actual problem right now?
 2. What changes if we solve it?
@@ -224,103 +194,36 @@ If content sounds like marketing, SaaS, or agency copy → rewrite.
 
 ### Key Rules
 
-- **Outcome-first:** start with what changes, not what we do
-- **Visual:** every important line creates a picture. If they can't picture it → rewrite
-- **No jargon:** if a customer wouldn't say it, don't write it
-- **No hype:** promise only what can be believed
-- **One idea per sentence** when possible
-- **Real situations, not features:** describe what happens in someone's day
-- **Scannability:** no paragraph longer than 3 lines. Mix lengths. Avoid dense blocks.
+- Outcome first: start with what changes, not what we do.
+- Visual: every important line creates a picture.
+- Plain English: if a customer would not say it, do not write it.
+- No hype: promise only what can be believed.
+- One idea per sentence where possible.
+- Real situations before features.
+- Specificity before smoothness.
+- No paragraph longer than three lines.
 
 ### Simplicity Override
 
-If a sentence sounds clever, designed, or written → simplify it.
-Best writing feels obvious, direct, like speech.
-If it feels impressive → it is wrong.
+If a sentence sounds clever, designed, or impressive, simplify it.
 
-### Sentence Patterns That Work
-
-- **"When [trigger], [what happens]"** → When someone fills in a form, their details go straight into your CRM.
-- **"You [benefit] without [old pain]"** → You get follow-ups going out without anyone having to remember.
-- **"Instead of [old way], [new reality]"** → Instead of copying names from emails into spreadsheets, details go where they need to go.
-- **"Right now [pain]. After this, [relief]."** → Right now, leads sit in different inboxes. After setup, every lead lands in one place.
-- **"[Real scenario]. [What changes]."** → A customer calls while you're on another job. Their details are captured and the right person gets notified.
-
-### Ownership Rule
-
-We set things up — then it belongs to them. Use "your", not "our".
-
-❌ "Our CRM tracks every lead." → ✅ "Your CRM tracks every lead."
-❌ "Our system handles follow-ups." → ✅ "Follow-up emails go out on their own."
-
-### Landing Page Override (HIGH PRIORITY)
-
-When writing landing pages (especially industry pages):
-
-- Speed > completeness
-- Recognition > explanation
-- Specific > general
-
-Reader should NOT need to think.
-
-If they need to interpret → rewrite.
-
-Every key line should feel like:
-
-→ "I've seen this happen"
-
-### Case Study Writing Mode (NEW)
-
-Case studies use observational proof mode.
-
-This means:
-
-- write with observational tone
-- keep imperfect realism visible
-- use natural phrasing over polished summary language
-- describe what happened, not what the system claimed
-
-Case studies must not use:
-
-- system language in the narrative
-- marketing tone
-- perfect transformation arcs
-
-Case Study Section Naming Rule
-Case studies should avoid exposing system structure.
-
-❌ Avoid:
-- solution
-- implementation
-- system
-
-✅ Prefer:
-- what changed
-- what happened next
-- how it started working differently
+Best writing feels obvious.
 
 ---
 
 ## 5. LANGUAGE RULES
 
-### Banned Words (replace every time)
+### Banned Words
 
-system, workflow, pipeline, infrastructure, optimization, leverage, streamline, seamless, robust, scalable, solution, empower, cutting-edge, powerful, comprehensive, holistic, touchpoint, onboarding, ecosystem, actionable insights
+Replace these unless technical clarity requires them:
 
-Also banned: our CRM, our system, our platform, ensures, enables, effectively, empowers, facilitates
+workflow, pipeline, infrastructure, optimization, leverage, streamline, seamless, robust, scalable, solution, empower, cutting-edge, powerful, comprehensive, holistic, touchpoint, onboarding, ecosystem, actionable insights
 
-### Vocabulary Discipline (Wave 4.5 Lock)
+Also avoid:
 
-| Removed | Replace With | Reason |
-| slow | delayed | Prefer precise operational wording. |
-| seamless | structured | Avoid inflated product language. |
-| frictionless | clear | Prefer observable outcomes over hype. |
----
+our CRM, our system, our platform, ensures, enables, effectively, empowers, facilitates
 
-Anti-hype language discipline: Avoid words such as: revolutionary, game-changing, cutting-edge, world-class, best-in-class.
-
-AI sales guardrail:
-Use calm, concrete language and describe actual system behavior instead of hype claims.
+Exception: `system` is allowed for the named offer `Smart Website Systems`, internal architecture, metadata, validation, routing, or when removing it makes the sentence less clear.
 
 ### Preferred Replacements
 
@@ -339,29 +242,39 @@ Use calm, concrete language and describe actual system behavior instead of hype 
 
 ### Anti-Builder Rule
 
-"page/pages" repeated 3+ times in a section → FAIL
+If a section repeats “page/pages” three or more times, rewrite it.
 
-Replace builder framing with: FLOW → ACTION → HANDLING → RESULT
+Replace builder framing with:
 
-Test: if a designer would say it → rewrite. If a business owner would say it → pass.
+FLOW → ACTION → HANDLING → RESULT
+
+Test:
+
+- if a designer would say it, rewrite
+- if a business owner would say it, keep
 
 ### System Language
 
-"system" is required in metadata/routing/conversion logic. In content, avoid it unless clarity requires it.
+`System` is part of MindWP's positioning, but it must not become filler language.
 
-❌ "Our system handles leads"
-✅ "Leads get handled properly"
+Bad:
 
-### Generic Phrase Kill List (NEW)
+> Our system handles leads.
 
-These phrases must ALWAYS be removed or rewritten:
+Good:
 
-- "they chose someone else"
-- "they went elsewhere"
-- "you lose customers"
-- "missed opportunities"
+> Leads get handled properly.
 
-Replace with REAL outcomes:
+### Generic Phrase Kill List
+
+Always remove or rewrite:
+
+- they chose someone else
+- they went elsewhere
+- you lose customers
+- missed opportunities
+
+Replace with real outcomes:
 
 - missed call
 - late reply
@@ -369,599 +282,473 @@ Replace with REAL outcomes:
 - no response
 - unanswered enquiry
 
-If language feels summarised → expand into a situation.
+If language feels summarised, turn it into a situation.
 
 ---
 
 ## 6. VOICE
 
-Position **7** on 1-10 scale. Slightly direct. Confident, not arrogant. Warm, not desperate.
+Tone is 7/10: direct, warm, confident, not arrogant.
 
-❌ Soft: "We'd be happy to take a look and see if improvements could potentially be made."
-❌ Corporate: "Our team leverages industry-leading methodologies."
-❌ Aggressive: "Your website is broken and costing you thousands."
-✅ Correct: "Send us your website. We'll tell you what's working and what isn't."
+Bad:
 
-**Rules:**
+> We'd be happy to take a look and see if improvements could potentially be made.
 
-- Always "we" and "you" — never "the team" or "the client"
-- Never hedge. State facts, not opinions.
-- Match the reader's vocabulary
-- End sentences firmly. No "...and more"
-- Use contractions: don't, can't, it's, you're, we'll
+Bad:
 
----
+> Our team leverages industry-leading methodologies.
 
-## 7. CONNECTOR LAW
+Good:
 
-**Hard limits per section:**
+> Send us your website. We'll tell you what's working and what isn't.
 
-- "— so" → max 1
-- "which means" → max 1
-- "as a result" → max 1
-- bare "so" mid-sentence → max 2
+Rules:
 
-**Priority order for cause → effect:**
-
-1. Implied consequence (no connector — preferred)
-2. Split sentence
-3. Embedded cause
-4. "which means"
-5. "as a result"
-6. "— so" (last resort)
-
-If obvious → remove the connector entirely. Reader is not stupid.
-
-❌ "Leads sit in inboxes — so nobody follows up."
-✅ "Leads sit in inboxes. Nobody follows up."
-
-**Suppression rule:** if the reader can infer the outcome → don't explain it.
-**Pattern fatigue:** even correct patterns fail if repeated. Same structure 5+ times → rewrite.
+- use “we” and “you”
+- never hedge
+- state facts, not opinions
+- match the reader's vocabulary
+- use contractions
+- end firmly, no “and more”
 
 ---
 
-## 8. RHYTHM + STRUCTURE
+## 7. CONNECTORS AND RHYTHM
 
-### Sentence Rhythm
+### Connector Limits Per Section
 
-Mix: short + medium, direct + descriptive, with connector + without.
+- `— so`: max 1
+- `which means`: max 1
+- `as a result`: max 1
+- bare `so` mid-sentence: max 2
 
-Each section needs: 1 short high-impact line, 2–3 medium lines. Avoid equal lengths.
+If the reader can infer the outcome, remove the connector.
 
-Each section must include at least one ultra-short sentence (2–5 words): "Nobody notices." "That's the problem."
+Bad:
 
-### Bullet Rules
+> Leads sit in inboxes — so nobody follows up.
 
-- Mix structures and lengths
-- Max 1 "— so" per list, max 1 "which means"
-- At least 1 implied bullet, at least 1 split sentence
-- Max 5 bullets per section
-- 2 bullets saying similar thing → merge. 3 → collapse to 1.
-- If all bullets have same length/structure → rewrite
+Good:
 
-### Asymmetry
+> Leads sit in inboxes. Nobody follows up.
 
-If writing has equal sentence lengths, balanced bullets, clean symmetry → it is wrong. Break it.
+### Rhythm Rules
 
-### Content Density
+- Mix short and medium sentences.
+- Avoid equal sentence lengths.
+- Avoid perfectly balanced bullets.
+- Each section needs at least one short high-impact line.
+- Same structure five or more times means rewrite.
 
-Per section: max 3 core ideas, max 5 bullets, max 1 idea per bullet.
+### Density Rules
 
-- 2 bullets = same idea → merge
-- 3 bullets = same idea → collapse to 1
+- Max three core ideas per section.
+- Max five bullets per section.
+- One idea per bullet.
+- If two bullets say the same thing, merge them.
+- If one idea appears twice on a page, keep the strongest version.
 
-**Global:** one idea appears only once per page. If repeated across sections → keep strongest, delete rest.
+### Description Length
+
+Section descriptions must be complete thoughts.
+
+They should be:
+
+- long enough to be clear
+- usually two to three sentences max
+- short when the surrounding section already carries meaning
+- expanded only when the short version feels incomplete
+
+Do not pad descriptions just to satisfy length.
 
 ---
 
-### Description Length Rule (NEW — STRICT)
+## 8. OBSERVATION SYSTEM
 
-All section descriptions must be:
+Writing should feel observed, not constructed.
 
-- 2 lines minimum
-- 2–3 sentences max
-- must add clarity
+Before writing a section, ask:
 
-❌ BAD:
-Short 6–10 word lines
+> What would I notice if I watched this business for one day?
 
-✅ GOOD:
-Two-line descriptions that clearly explain what is happening
+Write that.
 
-Descriptions must be complete thoughts, not fragments.
-
-If a description feels incomplete → expand it.
-
-## 9. OBSERVATION SYSTEM (LEVEL 5)
-
-Writing should feel observed, not constructed. Not explained. Not persuasive. Not formatted.
-
-**Before writing a section, ask:** "What would I notice if I watched this business for 1 day?"
-
-Then write THAT.
-
-### Observation Depth
+### Observation Levels
 
 | Level | Type                                              |
 | ----- | ------------------------------------------------- |
-| L1    | Abstract ("lead management issues")               |
-| L2    | Slightly concrete ("leads get missed")            |
-| L3    | Scenario ("leads sit in inboxes")                 |
-| L4    | Specific ("emails, WhatsApp, forms all separate") |
-| L5    | Observed reality (step-by-step what happens)      |
+| L1    | Abstract: lead management issues                  |
+| L2    | Slightly concrete: leads get missed               |
+| L3    | Scenario: leads sit in inboxes                    |
+| L4    | Specific: emails, WhatsApp, forms all separate    |
+| L5    | Observed reality: step-by-step what happens       |
 
-All core sections: L4 minimum. Hero, Problem, Proof: L5.
+Use L4 minimum for core sections.
+Use L5 for hero, problem, proof, and comparison.
 
-### Too-Smart Filter
-
-If it sounds insightful instead of obvious → rewrite.
-Reader should think "that's exactly what happens" — NOT "clever way to say it."
-
-### Level 5 Application
-
-Use for: Hero, Problem, Proof, Comparison.
-Do NOT force into: FAQ, definitions, technical clarity, instructions.
-If Level 5 hurts clarity → revert.
+If L5 hurts clarity, revert.
 
 ---
 
-## 10. SECTION RULES
+## 9. SECTION RULES
 
 ### Page Flow
 
-Every page: Recognition → Friction → Clarity → Trust → Action
+Every page should move through:
 
-### Section Style Lock
+Recognition → Friction → Clarity → Trust → Action
 
-| Section       | Behavior                 | Energy           | Must NOT Do             |
-| ------------- | ------------------------ | ---------------- | ----------------------- |
-| HERO          | Observational            | Recognition      | Explain, teach, justify |
-| PROBLEM       | Real situations          | Tension          | Offer solutions         |
-| COMPARISON    | Contrast clarity         | Clarity          | Tell stories            |
-| OUTCOME       | Calm certainty           | Quiet confidence | Explain how             |
-| PROCESS       | Clear, instructional     | Calm             | Persuade                |
-| PROOF         | Observed, slightly messy | Realism          | Generalize, summarize   |
-| QUALIFICATION | Direct, filtering        | Transparency     | Sell                    |
+### Section Behavior
 
-Each section must FEEL different from the previous one. If it says the same thing differently → rewrite. If tone feels the same across 2+ sections → rewrite the page.
+| Section       | Behavior                 | Must Not Do             |
+| ------------- | ------------------------ | ----------------------- |
+| Hero          | Observational            | Explain, teach, justify |
+| Problem       | Real situations          | Offer solutions         |
+| Comparison    | Contrast clarity         | Tell stories            |
+| Outcome       | Calm certainty           | Explain how             |
+| Process       | Clear, instructional     | Persuade                |
+| Proof         | Observed, slightly messy | Generalize, summarize   |
+| Qualification | Direct, filtering        | Sell                    |
 
-### Cross-Section Check
+Each section must feel different from the previous one.
+If two sections say the same thing differently, rewrite or delete one.
 
-If same idea appears in multiple sections → keep strongest version only. Each section introduces NEW information.
+### Hero
 
----
+Hero must feel like recognition, not explanation.
 
-## 11. HERO SYSTEM
+Rules:
 
-- **Badge:** 2–5 words
-- **Title:** one sentence, 4–8 words (max 10)
-- **Description:** current reality — what's going wrong
-- **List:** 3–4 items, 1–2 words each (max 3)
+- badge: 2–5 words
+- title: one sentence, 4–10 words
+- description: current reality, what is going wrong
+- list: 3–4 items, 1–3 words each
 
-**Hero must:** feel like recognition, not explanation. Be instantly scannable. No cause-effect chains. No abstract nouns (visibility, growth, performance, optimization).
+Hero must not describe the service, use feature language, or open with “We build...”
 
-**Hero must NOT:** describe the service, use feature language, open with "We build..." or "Our solution..."
+### Industry Hero
 
-### Hero Type System (one per page, no repeats)
+Industry hero must describe a real moment with physical or time-based context.
 
-1. Loss — "Leads come in. Some get missed."
-2. Visibility — "People search. You don't show up."
-3. Confusion — "Customers don't know what you do."
-4. Delay — "People reach out. Nobody responds quickly."
-5. Leakage — "Work is there. You're not capturing it."
-6. Waste — "You're paying for leads you don't convert."
+Bad:
 
-If hero can fit another page → it is wrong. If two heroes feel similar → rewrite one.
+> Leads are missed.
 
-### Hero Title Anti-Patterns
+Good:
 
-❌ "[Service] that does X, Y, Z"
-❌ "[Service] for [audience]"
-❌ Feature-stacked titles
+> The phone rang while you were under a car. They didn’t leave a message.
 
-✅ "People visit your site. Then nothing happens."
-✅ "Your competitors show up. You don't."
+### Comparison
 
-### Industry Hero Enforcement (NEW)
+Before = broken reality.
+After = different operating state.
 
-For industry pages specifically:
+Before and after must not mirror each other structurally.
 
-Hero MUST:
+### Proof
 
-- describe a real moment
-- include physical or time-based context
-- feel like something that already happened
+Proof should include:
 
-❌ BAD:
-"Leads are missed"
+1. messy reality
+2. structural change
+3. observable outcome
 
-✅ GOOD:
-"The phone rang while you were under a car. They didn’t leave a message."
-
-Hero must NOT:
-
-- be abstract
-- be reusable across industries
-- sound like marketing copy
-
----
-
-## 12. COMPARISON RULES
-
-Before = broken reality (reactive, unclear, human-dependent, messy)
-After = operational clarity (controlled, visible, assigned, predictable)
-
-AFTER is NOT a cleaner version of BEFORE — it is a different operating state.
-
-Before and After must NOT mirror each other structurally. If structure matches → rewrite.
-
----
-
-## 13. PROOF RULES
-
-Structure: 1 messy reality line + 1 structural change line + 1 outcome line. If more → compress.
-
-Must feel observed, not narrated. Slightly messy, not clean. Must include at least one imperfection.
-
-Each service page must use a different business context. Same example across pages = FAIL.
-
----
-
-## 14. OTHER SECTIONS
-
-### Problem
-
-Use before/after pairs. "Before" = real specific situation. 3 pairs.
-
-### Outcome
-
-Lead with results, not methods. Each card answers "What will I see?"
-
-### Process
-
-3–5 numbered steps. Plain English. Step 1 = understanding their business. No technical how.
-
-### What's Included
-
-Plain English, real things, not categories. Avoid feature names.
-
-### Qualification
-
-"Great fit" = situations, not customer types. "Not the right fit" = honest, never dismissive.
-
-### FAQ
-
-Real questions in reader's voice. Direct answers — start with yes, no, or the key point. No hedging. 5–10 per page.
+It must feel observed, not polished.
 
 ### CTA
 
-Feel like a conversation, not a pitch. Tell them what happens next. No urgency tactics. Must feel like continuation of the page.
+CTA should feel like a conversation, not a pitch.
 
-### SEO
-
-Title: core service + main benefit. Description: describe the change, not the service. Under 160 chars. No hype.
+Tell them what happens next. No urgency tactics.
 
 ---
 
-## 15. INDUSTRY RULES
+## 10. INDUSTRY AND CROSS-PAGE RULES
 
-**Service pages:** industry-agnostic by default. Use generic service business language (calls, forms, jobs, customers). NOT "roofing business" or "plumbing company."
+### Industry Pages
 
-**Industry pages:** fully industry-specific.
+Industry pages must be fully industry-specific.
 
-**Proofs:** may include industries, but each page uses a different one. Industry is supporting detail, not positioning.
+Specificity means real working conditions, enquiry patterns, timing, urgency, customer behaviour, and trust concerns.
+It does not mean adding the industry name into generic copy.
 
-If a reader thinks "this is only for roofers" → FAIL.
+If content feels reusable across industries, it is wrong.
 
-Graph metadata may include `industries[]` for resolution — content must NOT surface them unless the page is explicitly industry-specific.
-
----
-
-## 16. CROSS-PAGE RULES
-
-- No reused sentence structures, phrasing patterns, or hero logic across pages
-- If a phrase appears 3+ times across pages → rewrite all but the strongest
-- If two pages feel interchangeable → rewrite one
-
-Track recent structural choices when writing multiple pages. If similarity > 60% → rewrite.
-
-Content must align with graph metadata, conversion system, and page intent. Mismatch → rewrite.
-
-### Entry Page Rule
-
-Even SEO/entry pages must reflect system thinking, NOT sound like standalone services, and naturally lead to core systems. If a page can exist independently → FAIL.
-
-### Industry Differentiation Rule (NEW)
-
-Each industry MUST differ in:
+Each industry must differ in:
 
 - dominant pain
 - urgency level
 - decision speed
 - emotional tone
 
-Examples:
+### Service Pages
 
-- Automotive → urgency + missed calls  
-- Home services → surge + overload  
-- Beauty → repeat visits + availability  
-- Legal → trust + delay  
-- Real estate → pipeline + timing  
+Service pages are industry-agnostic by default.
 
-If two pages feel similar → rewrite one completely.
+Use generic service-business language: calls, forms, jobs, customers.
+Do not make a service page sound like it is only for one industry.
 
----
+### Cross-Page Rules
 
-## 17. REWRITE METHOD (4 STEPS)
+- No reused sentence structures, phrasing patterns, or hero logic across pages.
+- If a phrase appears three or more times across pages, rewrite all but the strongest.
+- If two pages feel interchangeable, rewrite one around real business conditions.
+- Content must align with graph metadata, conversion system, and page intent.
 
-**Step 1 — Spot the vague word.** Flag adjectives that describe nothing (strong, robust), verbs that hide action (optimize, leverage), nouns that aren't real (solution, pipeline).
+### Entry Pages
 
-**Step 2 — Ask "what actually happens?"** Answer literally: what changes in someone's day?
+Entry pages must reflect system thinking.
 
-**Step 3 — Turn it into a scene.** Put a real person in a real situation.
-
-**Step 4 — Cut it down.** One idea per sentence. Remove what you don't need.
-
-If a sentence survives all 4 steps unchanged → it was already good.
-
-### Worked Example
-
-❌ "Our comprehensive solution streamlines your lead management process."
-
-→ What happens? When a lead comes in, it goes to the right person. Follow-up goes out without anyone remembering.
-
-✅ "When someone gets in touch, their details land in your CRM and the right person is notified. A confirmation email goes out — nobody sends it."
+They must not sound like standalone services.
+They should naturally lead to core systems.
 
 ---
 
-## 18. VISUAL LANGUAGE
+## 11. CASE STUDY WRITING
 
-Ask: "What would this literally look like if I was watching?" Describe that scene.
+Case studies use observational proof mode.
 
-❌ "Automated lead capture and routing"
-✅ "Someone fills in your form. Their name, number, and message land in your CRM. The right person gets a notification."
+Rules:
 
-❌ "Smart follow-up automation"
-✅ "Someone books a call? Confirmation email. Haven't heard back in two days? Reminder goes out. Your team doesn't touch it."
+- describe what happened, not what the system claimed
+- keep imperfect realism visible
+- use natural phrasing over polished summary language
+- avoid perfect transformation arcs
+- include constraints, tradeoffs, and ordinary operational changes where available
 
-**Over-conversion warning:** not every sentence needs to be visual. Only convert key lines, decision lines, proof, problem statements. Support lines stay simple.
+Case studies should avoid exposing system structure in section names.
+
+Avoid:
+
+- solution
+- implementation
+- system
+
+Prefer:
+
+- what changed
+- what happened next
+- how it started working differently
+
+Default: do not rewrite case studies unless case-study work is explicitly requested.
 
 ---
 
-## 19. CONTENT TYPES
+## 12. REWRITE METHOD
+
+1. Spot the vague word.
+2. Ask: what actually happens?
+3. Turn it into a scene.
+4. Cut it down.
+
+Example:
+
+Bad:
+
+> Our comprehensive solution streamlines your lead management process.
+
+Better:
+
+> When someone gets in touch, their details land in your CRM and the right person is notified. A confirmation email goes out. Nobody sends it manually.
+
+If a sentence survives all four steps unchanged, it was already good.
+
+---
+
+## 13. CONTENT TYPES
 
 ### Blog Posts
 
-Open with a real situation. Explain what's going wrong in their day. Show what better looks like. End with low-pressure next step. No "In this article..." or "Let's dive in..."
+Open with a real situation. Explain what is going wrong in the reader's day. Show what better looks like. End with a low-pressure next step.
 
-### Case Studies
-
-Who they are (one sentence). What was going wrong (real situation). What we did (like telling a friend). What changed (specific, measurable). Use the client's language.
-
-### Feature Pages
-
-One capability, one situation, one fix. More direct, less narrative. Must feel like "a specific fix" not "a full solution."
+Do not open with “In this article...” or “Let's dive in...”
 
 ### Resource Pages
 
-Answer one question. Write for someone who's never heard the term. Include real examples.
+Answer one question. Use real examples. Help someone understand the decision, framework, checklist, architecture, or implementation logic.
+
+### Feature Pages
+
+One capability, one situation, one fix.
+
+A feature page must feel like a specific fix, not a full offer.
+
+### Case Studies
+
+One sentence on who they are.
+Then what was going wrong.
+Then what changed.
+Use the client's language where possible.
 
 ---
 
-## 20. VALIDATION CHECKLIST
+## 14. VALIDATION CHECKLIST
 
-Run after every write/rewrite. All must pass.
+Run after every meaningful write or rewrite.
 
 ### Clarity
 
-- [ ] Non-technical business owner understands every sentence
-- [ ] Key lines describe something visible, audible, or measurable
-- [ ] No sentence says nothing
-- [ ] No sentence exceeds 25 words unless telling a story
+- [ ] A non-technical business owner understands every sentence.
+- [ ] Key lines describe something visible, audible, or measurable.
+- [ ] No sentence says nothing.
+- [ ] No sentence exceeds 25 words unless telling a story.
 
 ### Language
 
-- [ ] Zero banned words (§5) unless required by system-language rule
-- [ ] No SaaS-style feature lists
+- [ ] No banned words unless allowed by the system-language rule.
+- [ ] No SaaS-style feature lists.
+- [ ] No builder framing.
+- [ ] No hype or unsupported superlatives.
 
 ### AI Detection
 
-- [ ] No "In today's..." or "Whether you're..."
-- [ ] No "It's important to note" or "This allows you to"
-- [ ] No "ensures that", "enables businesses to", "effectively manage"
-- [ ] No three-part escalating adjective lists
-- [ ] No opening with definitions ("A CRM is a tool that...")
-- [ ] No conclusions restating the introduction
-- [ ] Paragraph and sentence lengths vary
-
-### Human Signals (what PASSES the filter)
-
-- [ ] Uneven sentence lengths (long → short → medium → very short)
-- [ ] Specific details: tool names (WordPress, Google Business Profile), real timeframes ("same day", "within minutes")
-- [ ] Asymmetry in bullet lengths (one is 8 words, the next is 20)
-- [ ] Real opinions: "we don't do this", "that doesn't work"
-- [ ] Casual phrasing: "sort it out", "the boring stuff", "get it right"
-
-### 3-Second Test
-
-Read any sentence. Count to 3. Can you remember what it said? If yes → concrete enough. If no → vague, rewrite.
-
-### Believability
-
-- [ ] No guaranteed results
-- [ ] No unsupported superlatives
-- [ ] A sceptical reader accepts every statement
-
-### Voice
-
-- [ ] Tone at 7/10 (direct, warm)
-- [ ] Uses "we" and "you"
-- [ ] Uses contractions consistently
-- [ ] No hedging
-- [ ] Sounds like speaking, not writing
+- [ ] No “In today's...” or “Whether you're...” openings.
+- [ ] No “It's important to note” or “This allows you to”.
+- [ ] No “ensures that”, “enables businesses to”, or “effectively manage”.
+- [ ] No definition-style openings.
+- [ ] No conclusions restating the introduction.
+- [ ] Sentence and paragraph lengths vary.
 
 ### Structure
 
-- [ ] Opens with reader's problem, not our service
-- [ ] Outcomes before methods
-- [ ] CTA feels like conversation
-- [ ] FAQ in reader's voice
-
-### Connectors
-
-- [ ] Hard limits respected (§7)
-- [ ] At least 40% sentences have no connector
-- [ ] No repeated connector weakens a section
+- [ ] Opens with the reader's problem, not MindWP's service.
+- [ ] Outcomes come before methods.
+- [ ] CTA feels like a conversation.
+- [ ] FAQ uses the reader's voice.
+- [ ] Page reflects one primary system.
 
 ### Builder Check
 
-- [ ] Does not sound like building websites
-- [ ] Does not mention pages excessively
-- [ ] Does not feel like a design service
+- [ ] Does not sound like building websites.
+- [ ] Does not mention pages excessively.
+- [ ] Does not feel like a design service.
+- [ ] Does not make MindWP sound like a normal WordPress/Elementor provider.
 
 ### Signature Feel
 
-- [ ] Read 10 lines. Feels natural, not patterned.
-- [ ] Read out loud. Sounds like speaking.
+- [ ] Read 10 lines. It feels natural, not patterned.
+- [ ] Read out loud. It sounds like speaking.
 - [ ] A business owner could say it.
 
 ---
 
-## 21. FINAL POLISH
+## 15. FINAL POLISH
 
 After writing:
 
-1. Remove 20–30% of sentences where meaning holds
-2. Remove 30% of connectors
-3. Break 2–3 sentences into shorter lines
-4. Add 1–2 micro-sentences
-5. Scan for repetition
+1. Remove any sentence where meaning holds without it.
+2. Remove unnecessary connectors.
+3. Break long sentences only where rhythm or clarity improves.
+4. Add micro-sentences only if the section needs impact or relief.
+5. Scan for repetition.
 
-If content still feels patterned → rewrite.
+Delete any sentence that repeats a previous idea, explains an obvious outcome, adds no new information, or feels like filler.
 
-**Sentence kill rule:** delete any sentence that repeats a previous idea, explains an obvious outcome, adds no new information, or feels like filler. When unsure → delete.
-
-### Common Mistakes (Quick Reference)
-
-| Mistake                                                   | Fix                                            |
-| --------------------------------------------------------- | ---------------------------------------------- |
-| Vague phrases ("sets you up well", "strong foundation")   | Replace with WHAT actually happens             |
-| AI-clean sentences (grammatically perfect, feels sterile) | Ask "how would I say this to a mate?"          |
-| Feature-first writing ("We integrate your CRM...")        | Flip: result first, method second or omit      |
-| Over-explaining (40 words where 12 work)                  | "Can I say this in half the words?"            |
-| SaaS marketing ("Platform", "Features include...")        | Talk like a tradesperson who works on websites |
+When unsure, delete.
 
 ---
 
-## 22. PAGE INTENT REFERENCE
+## 16. PAGE INTENT REFERENCE
 
 ### Smart Website
 
-Problem: "My website looks fine but doesn't bring in business."
-Angle: The website isn't ugly — it's not doing anything. No clear next steps. No follow-up.
+Problem: “My website looks fine but doesn't bring in business.”
+Angle: the website is not ugly; it is not doing enough. No clear next steps. No follow-up.
 
 ### CRM
 
-Problem: "Leads come in but some disappear. Nobody knows who's handling what."
-Angle: First conversation goes fine. Everything after falls apart.
+Problem: “Leads come in but some disappear. Nobody knows who's handling what.”
+Angle: first conversation goes fine. Everything after falls apart.
 
 ### Local SEO
 
-Problem: "People search for what I do. They find my competitors."
-Angle: Website doesn't explain what you do or where. Fix the website first — then SEO works.
+Problem: “People search for what I do. They find my competitors.”
+Angle: the website does not explain what you do or where. Fix the website first, then SEO works.
 
 ### Reputation
 
-Problem: "We do great work but our Google reviews don't show it."
-Angle: Work is already good. Missing piece: asking at the right time.
+Problem: “We do great work but our Google reviews don't show it.”
+Angle: work is already good. The missing piece is asking at the right time.
 
-Each page must clearly reflect ONE primary system. If a reader can't tell what the page is about → FAIL.
-
----
-
-## 23. NEW CONTENT WORKFLOW
-
-1. Define the problem (one sentence — what's going wrong)
-2. Define the outcome (one sentence — what their day looks like after)
-3. Write three real scenarios (everyday situations where the problem shows up)
-4. Write the change for each scenario
-5. Run the rewrite method (§17) on every sentence
-6. Run the validation checklist (§20)
-
-If full-rewrite triggers during this → ignore original phrasing, rebuild from scratch.
+Each page must clearly reflect one primary system.
+If a reader cannot tell what the page is about, rewrite it.
 
 ---
 
-## 24. EXECUTION SEQUENCE
+## 17. NEW CONTENT WORKFLOW
 
-When rewriting, follow this order:
+1. Define the problem in one sentence.
+2. Define the outcome in one sentence.
+3. Write three real scenarios where the problem appears.
+4. Write what changes in each scenario.
+5. Run the rewrite method.
+6. Run the validation checklist.
 
-1. Lock context (§1)
-2. Choose rewrite mode (§3)
-3. Check full-rewrite triggers (§3)
-4. Apply contamination rule (§3)
-5. Rewrite content (§17, §18)
-6. Anti-builder check (§5)
-7. Connector audit (§7)
-8. Section rules check (§10–§14)
-9. Run validation checklist (§20)
-10. Final polish + output (§21)
+Do not add content that only increases volume.
 
-### Authority Protection Check (FINAL STEP — REQUIRED)
+---
 
-Before final output:
+## 18. EXECUTION SEQUENCE
 
-- Did we rewrite something that was already strong?
+When rewriting:
+
+1. Lock context.
+2. Choose rewrite mode.
+3. Check rewrite scope.
+4. Apply the contamination rule.
+5. Rewrite only the approved scope.
+6. Run anti-builder check.
+7. Run connector and repetition audit.
+8. Run validation checklist.
+9. Final polish.
+
+### Authority Protection Check
+
+Before final output, ask:
+
+- Did we rewrite something already strong?
 - Did we replace instead of improve?
 - Did tone become generic or AI-clean?
 
-If YES:
-→ revert and apply targeted fix only
+If yes, revert and apply a targeted fix only.
 
-Goal:
-Preserve authority while improving clarity
-
-### Bulk Execution (Multi-Page)
+### Bulk Execution
 
 When processing multiple pages:
 
-- Work section by section, NOT entire file at once
-- Execution order: Hero → Problem → Comparison → Proof → remaining sections
-- After each section: run connector audit + duplication check + density filter
-- Do NOT over-engineer low-impact sections (FAQ, Included = L3 is fine)
+- Work section by section.
+- Start with hero, problem, comparison, proof, then remaining sections.
+- After each section, check connectors, duplication, and density.
+- Do not over-engineer low-impact sections.
 
-### AI WRITE SAFETY (NEW — CRITICAL)
+### Edit Safety
 
-When AI is editing files:
+When AI edits full content files:
 
-- NEVER append content
-- ALWAYS overwrite entire file cleanly
-- DO NOT partially merge sections
-- DO NOT reuse old content blocks
+- never append duplicate content
+- overwrite the approved scope cleanly
+- do not partially merge unrelated sections
+- do not reuse old content blocks inside a full rewrite
 
-Editor Safety:
-
-- Assume file may already be open
-- Replace content top → bottom
-- Avoid duplication bugs
-
-If duplicate content appears → rewrite file cleanly.
+If duplicate content appears, rewrite the file cleanly.
 
 ---
 
-## QUICK REFERENCE — THE 6 QUESTIONS
+## QUICK REFERENCE — SIX QUESTIONS
 
-1. What's the reader's situation right now?
+1. What is the reader's situation right now?
 2. What changes after?
 3. Can they picture it?
 4. Would a real person say this?
 5. Is this believable?
 6. Is anything vague?
 
-If every section passes → content is ready.
+If every section passes, the content is ready.
 
 ---
 
-## SYSTEM-LEVEL RULES (REFERENCE)
+## SYSTEM-LEVEL REFERENCE
 
-Service definitions, boundaries, terminology, and system consistency → [./FOUNDATION.md](./FOUNDATION.md)
+Service definitions, boundaries, terminology, and system consistency live in [./FOUNDATION.md](./FOUNDATION.md).
+
+Final rule: protect authority first, improve language second.
