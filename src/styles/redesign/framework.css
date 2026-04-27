@@ -1,0 +1,496 @@
+/*
+ * Redesign framework primitives — internal prototype only.
+ *
+ * Scope: every selector is prefixed with `.rd-` and is only meaningful
+ * inside an `.rd-shell` root. This file is the *layout/motion* layer of
+ * the prototype design system. Visual/component styling lives alongside
+ * each prototype (e.g. smart-website.css).
+ *
+ * NEVER import this from production code. NEVER touch global CSS to
+ * accommodate it. The prototype route is the only consumer.
+ */
+
+/* ---------- Tokens ---------- */
+.rd-shell {
+    /* Layout widths */
+    --rd-page-max: 1440px;
+    --rd-wide-max: 1320px;
+    --rd-content-max: 1180px;
+    --rd-text-max: 720px;
+
+    /* Section spacing */
+    --rd-section-py: clamp(4.5rem, 9vw, 8rem);
+    --rd-section-px: clamp(1.25rem, 4vw, 2.5rem);
+
+    /* Gaps */
+    --rd-gap-sm: 0.75rem;
+    --rd-gap-md: 1.25rem;
+    --rd-gap-lg: 2rem;
+    --rd-gap-xl: 3rem;
+
+    /* Radii */
+    --rd-radius-sm: 8px;
+    --rd-radius-md: 14px;
+    --rd-radius-lg: 22px;
+    --rd-radius-xl: 28px;
+
+    /* Shadows */
+    --rd-shadow-card: 0 12px 32px -22px rgba(7, 17, 31, 0.45);
+    --rd-shadow-panel: 0 24px 60px -34px rgba(7, 17, 31, 0.55);
+    --rd-shadow-hero: 0 40px 80px -40px rgba(7, 17, 31, 0.7);
+
+    /* Motion */
+    --rd-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --rd-dur-fast: 180ms;
+    --rd-dur-base: 320ms;
+    --rd-dur-slow: 600ms;
+
+    box-sizing: border-box;
+}
+
+.rd-shell *,
+.rd-shell *::before,
+.rd-shell *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Containers ---------- */
+.rd-container {
+    width: 100%;
+    max-width: var(--rd-content-max);
+    margin-inline: auto;
+    padding-inline: var(--rd-section-px);
+}
+
+.rd-container--wide {
+    max-width: var(--rd-wide-max);
+}
+
+.rd-container--page {
+    max-width: var(--rd-page-max);
+}
+
+.rd-container--content {
+    max-width: var(--rd-text-max);
+}
+
+/* ---------- Sections ---------- */
+.rd-section {
+    padding-block: var(--rd-section-py);
+    position: relative;
+    overflow: hidden;
+}
+
+.rd-section--soft,
+.rd-section--dark,
+.rd-section--blue,
+.rd-section--final,
+.rd-section--diagnostic {
+    /* surface treatments are provided by the consuming prototype */
+}
+
+.rd-section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ---------- Section heads ---------- */
+.rd-section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: flex-start;
+}
+
+.rd-section-head--center {
+    align-items: center;
+    text-align: center;
+}
+
+.rd-section-head--split {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 860px) {
+    .rd-section-head--split {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 2rem;
+    }
+
+    .rd-section-head--split>.rd-section-description {
+        max-width: 38ch;
+    }
+}
+
+.rd-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: rgba(63, 156, 175, 0.08);
+    color: var(--rd-sws-teal, currentColor);
+}
+
+.rd-section--dark .rd-section-kicker,
+.rd-section--blue .rd-section-kicker,
+.rd-section--final .rd-section-kicker {
+    color: var(--rd-sws-cyan, currentColor);
+    background: rgba(141, 216, 232, 0.08);
+}
+
+.rd-section-title {
+    font-family: 'Sora', 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.9rem, 3vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    max-width: 22ch;
+    margin: 0;
+}
+
+.rd-section-head--center .rd-section-title {
+    margin-inline: auto;
+}
+
+.rd-section-description {
+    font-size: 1.125rem;
+    line-height: 1.55;
+    max-width: 60ch;
+    margin: 0;
+}
+
+.rd-section-head--center .rd-section-description {
+    margin-inline: auto;
+}
+
+/* ---------- Layout primitives ---------- */
+.rd-grid {
+    display: grid;
+    gap: var(--rd-gap-md);
+}
+
+.rd-grid--2 {
+    grid-template-columns: 1fr;
+}
+
+.rd-grid--3 {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+    .rd-grid--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 960px) {
+    .rd-grid--3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.rd-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: center;
+}
+
+@media (min-width: 960px) {
+    .rd-split {
+        grid-template-columns: 1.05fr 1fr;
+    }
+
+    .rd-split--reverse {
+        grid-template-columns: 1fr 1.05fr;
+    }
+}
+
+.rd-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rd-gap-md);
+}
+
+.rd-stack--lg {
+    gap: var(--rd-gap-lg);
+}
+
+.rd-stack--sm {
+    gap: var(--rd-gap-sm);
+}
+
+.rd-panel {
+    border-radius: var(--rd-radius-lg);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    box-shadow: var(--rd-shadow-panel);
+}
+
+.rd-card {
+    border-radius: var(--rd-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--rd-shadow-card);
+}
+
+/* ---------- Buttons ---------- */
+.rd-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--rd-radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition:
+        transform var(--rd-dur-fast) var(--rd-ease),
+        background var(--rd-dur-fast) var(--rd-ease),
+        border-color var(--rd-dur-fast) var(--rd-ease),
+        box-shadow var(--rd-dur-fast) var(--rd-ease);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.rd-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* ---------- Status dots ---------- */
+.rd-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.rd-dot--good {
+    background: var(--rd-sws-good, #2f9b73);
+    box-shadow: 0 0 0 4px rgba(47, 155, 115, 0.18);
+}
+
+.rd-dot--risk {
+    background: var(--rd-sws-risk, #c95050);
+    box-shadow: 0 0 0 4px rgba(201, 80, 80, 0.18);
+}
+
+.rd-dot--warn {
+    background: var(--rd-sws-warn, #d89b28);
+    box-shadow: 0 0 0 4px rgba(216, 155, 40, 0.18);
+}
+
+.rd-dot--neutral {
+    background: var(--rd-sws-cyan, #8dd8e8);
+    box-shadow: 0 0 0 4px rgba(141, 216, 232, 0.18);
+}
+
+/* ---------- Motion utilities ---------- */
+@keyframes rd-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rd-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rd-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+@keyframes rd-line-reveal {
+    from {
+        stroke-dashoffset: 100;
+        opacity: 0;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes rd-float-subtle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes rd-glow-in {
+    from {
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(141, 216, 232, 0);
+    }
+
+    to {
+        opacity: 1;
+        box-shadow: 0 0 60px -10px rgba(141, 216, 232, 0.35);
+    }
+}
+
+@keyframes rd-line-grow {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes rd-glow-breathe {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.rd-reveal {
+    animation: rd-fade-in var(--rd-dur-slow) var(--rd-ease) both;
+}
+
+.rd-reveal-up {
+    animation: rd-fade-up var(--rd-dur-slow) var(--rd-ease) both;
+}
+
+.rd-stagger>* {
+    animation: rd-fade-up var(--rd-dur-slow) var(--rd-ease) both;
+}
+
+.rd-stagger>*:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.rd-stagger>*:nth-child(2) {
+    animation-delay: 80ms;
+}
+
+.rd-stagger>*:nth-child(3) {
+    animation-delay: 160ms;
+}
+
+.rd-stagger>*:nth-child(4) {
+    animation-delay: 240ms;
+}
+
+.rd-stagger>*:nth-child(5) {
+    animation-delay: 320ms;
+}
+
+.rd-stagger>*:nth-child(6) {
+    animation-delay: 400ms;
+}
+
+.rd-stagger>*:nth-child(7) {
+    animation-delay: 480ms;
+}
+
+.rd-stagger>*:nth-child(8) {
+    animation-delay: 560ms;
+}
+
+.rd-hover-lift {
+    transition:
+        transform var(--rd-dur-base) var(--rd-ease),
+        box-shadow var(--rd-dur-base) var(--rd-ease),
+        border-color var(--rd-dur-base) var(--rd-ease);
+}
+
+.rd-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--rd-shadow-panel);
+}
+
+.rd-line-reveal path,
+.rd-line-reveal line,
+.rd-line-reveal polyline {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: rd-line-reveal 1100ms var(--rd-ease) 200ms both;
+}
+
+.rd-pulse {
+    animation: rd-pulse 2.4s ease-in-out infinite;
+}
+
+.rd-float-subtle {
+    animation: rd-float-subtle 6s ease-in-out infinite;
+}
+
+.rd-glow-in {
+    animation: rd-glow-in 900ms var(--rd-ease) both;
+}
+
+.rd-line-grow {
+    transform-origin: left center;
+    animation: rd-line-grow 900ms var(--rd-ease) 200ms both;
+}
+
+.rd-glow-breathe {
+    animation: rd-glow-breathe 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rd-reveal,
+    .rd-reveal-up,
+    .rd-stagger>*,
+    .rd-line-reveal path,
+    .rd-line-reveal line,
+    .rd-line-reveal polyline,
+    .rd-pulse,
+    .rd-float-subtle,
+    .rd-glow-in,
+    .rd-line-grow,
+    .rd-glow-breathe {
+        animation: none !important;
+    }
+
+    .rd-hover-lift {
+        transition: none;
+    }
+}
