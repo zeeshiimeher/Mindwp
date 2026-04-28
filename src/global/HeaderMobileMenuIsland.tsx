@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import { buildGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
@@ -10,40 +10,55 @@ type HeaderMobileMenuIslandProps = {
 };
 
 export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const { primaryAction } = buildGlobalPrimaryCtaLinks();
+
+  // Close on Escape, and lock body scroll when open.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
 
   return (
     <>
       <button
-        className='header-mobile-toggle md:hidden p-2 rounded-lg transition-colors'
-        onClick={() => setMobileMenuOpen(open => !open)}
-        aria-label='Toggle menu'
+        type='button'
+        className='header__mobile-toggle'
+        onClick={() => setOpen(value => !value)}
+        aria-expanded={open}
+        aria-controls='header-mobile-panel'
+        aria-label={open ? 'Close menu' : 'Open menu'}
       >
-        {mobileMenuOpen ? (
-          <X className='icon-text-primary' />
-        ) : (
-          <Menu className='icon-text-primary' />
-        )}
+        {open ? <X aria-hidden='true' /> : <Menu aria-hidden='true' />}
       </button>
 
-      {mobileMenuOpen && (
-        <div className='header-mobile-menu md:hidden py-4 border-t'>
-          <nav className='header-mobile-nav l-row flex-col'>
-            {navLinks.map((link, index) => (
+      {open && (
+        <div id='header-mobile-panel' className='header__mobile-panel'>
+          <nav className='header__mobile-nav' aria-label='Mobile primary'>
+            {navLinks.map(link => (
               <a
                 key={link.label}
                 href={link.to}
-                className={`header-mobile-link header-mobile-link-${index + 1} py-2 transition-colors`}
-                onClick={() => setMobileMenuOpen(false)}
+                className='header__mobile-link'
+                onClick={() => setOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <div className='header-mobile-cta l-row flex-col l-gap-3 pt-4 border-t'>
+            <div className='header__mobile-cta'>
               <a
                 href={primaryAction.href}
-                className='btn btn-primary btn-small btn-block header-mobile-button-1'
+                className='rd-btn rd-btn--primary'
+                onClick={() => setOpen(false)}
               >
                 {primaryAction.label}
               </a>

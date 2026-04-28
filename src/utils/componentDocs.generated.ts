@@ -641,8 +641,8 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
-    "representativePageUrl": "/services/[...slug]",
+    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativePageUrl": "/",
     "usageCount": 49,
     "composedComponents": [],
     "props": [
@@ -13417,7 +13417,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 3,
+    "usageCount": 2,
     "composedComponents": [],
     "props": [
       {
@@ -13627,7 +13627,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 12,
+    "usageCount": 10,
     "composedComponents": [],
     "props": [
       {
@@ -14053,7 +14053,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 11,
+    "usageCount": 9,
     "composedComponents": [],
     "props": [
       {
@@ -14167,7 +14167,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
     "representativePageUrl": "/resources/[slug]",
-    "usageCount": 25,
+    "usageCount": 23,
     "composedComponents": [],
     "props": [
       {
@@ -14521,7 +14521,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 10,
+    "usageCount": 9,
     "composedComponents": [],
     "props": [
       {
@@ -15163,9 +15163,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
-    "representativePageUrl": "/services/[...slug]",
-    "usageCount": 8,
+    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativePageUrl": "/",
+    "usageCount": 4,
     "composedComponents": [],
     "props": [
       {
@@ -16972,7 +16972,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 10,
+    "usageCount": 9,
     "composedComponents": [],
     "props": [
       {
@@ -17133,7 +17133,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 12,
+    "usageCount": 10,
     "composedComponents": [],
     "props": [
       {
@@ -17199,7 +17199,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
     "representativePageUrl": "/resources/[slug]",
-    "usageCount": 5,
+    "usageCount": 4,
     "composedComponents": [],
     "props": [
       {
@@ -17969,7 +17969,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 89,
+    "usageCount": 85,
     "composedComponents": [],
     "props": [
       {
@@ -18113,7 +18113,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 16,
+    "usageCount": 14,
     "composedComponents": [
       "SimpleHero",
       "SimpleHeroProps"
@@ -18176,7 +18176,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 19,
+    "usageCount": 15,
     "composedComponents": [
       "Button",
       "ButtonProps",
@@ -18467,7 +18467,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
     "representativePageUrl": "/services/[...slug]",
-    "usageCount": 5,
+    "usageCount": 3,
     "composedComponents": [
       "Button",
       "ButtonProps",
@@ -18711,9 +18711,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/service/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
-    "representativePageUrl": "/services/[...slug]",
-    "usageCount": 1,
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
     "composedComponents": [],
     "props": [
       {

@@ -1,5 +1,5 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { RelatedCardsSection } from '@/components/reusable/sections/core/RelatedCardsSection';
+import { RelatedContentSection as ProductionRelatedContentSection } from '@/components/sections';
 import type { RelatedContentOutput } from '@/lib/related/buildRelatedContent';
 
 type RelatedContentSectionProps = {
@@ -25,16 +25,21 @@ export default function RelatedContentSection({ content }: RelatedContentSection
   return (
     <>
       {content.groups.map(group => (
-        <RelatedCardsSection
+        <ProductionRelatedContentSection
           key={group.label}
-          title={group.label}
-          {...(group.description ? { description: group.description } : {})}
-          items={group.items.map(item => ({
+          variant='progression'
+          tone='soft'
+          heading={{
+            kicker: 'Related',
+            title: group.label,
+            ...(group.description ? { description: group.description } : {}),
+          }}
+          items={group.items.map((item, index) => ({
+            id: `${group.label}-${index}`,
             title: item.title,
-            desc: item.description ?? '',
             href: item.href,
+            ...(item.description ? { summary: item.description } : {}),
           }))}
-          showArrows
         />
       ))}
     </>

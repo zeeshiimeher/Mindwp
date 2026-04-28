@@ -1,106 +1,286 @@
 # Design Planning Execution
 
-> Redesign execution backlog.
-> Decisions and tasks only. No commentary, no strategy essays.
-> Update this file only when the user explicitly says `autopatch`.
+> Priority-based redesign migration plan.
+> Copilot/agent must execute one phase at a time.
+> Do not skip phases. Do not jump to page redesign before the CSS system is rebuilt.
 
 ---
 
-## Operating Rule
+## Status Snapshot
 
-- Do not edit implementation files from this doc directly.
-- Use this doc to store redesign decisions, execution tasks, and constraints.
-- Discuss decisions in chat first.
-- Add or update this doc only after decisions are clear.
-- If a future message does not include `autopatch`, do not modify this file.
+- Phase 1.1 (CSS rebuild) — DONE
+- Phase 2 (foundation/framework/primitives) — DONE
+- Phase 3 (components.css system) — DONE
+- Phase 4 (reusable redesign components) — DONE
+- Phase 5 (Smart Website live page migration) — DONE
+- Phase 6 (Local SEO planning + variant inventory) — DONE
+- Phase 7 (Local SEO live page migration) — DONE
+- Phase 8 (Related content rewire — global progression variant) — DONE
+- Phase 9 (cleanup + validation) — PENDING (only remaining work)
 
----
-
-## Current Redesign Mode
-
-- Redesign is parallel, not replacement.
-- `/services/smart-website-systems` stays untouched.
-- `/dev/redesign/smart-website-systems` is the prototype route.
-- Old global CSS files stay untouched for now.
-- Prototype components and CSS stay isolated until approved.
-- Approved patterns will later be extracted into reusable production components.
+system:full → 47/47 PASS · tests PASS · 0 warnings · 81 reports
+Live verification: `/services/smart-website-systems` and `/services/local-seo-authority` return HTTP 200 with new sections/* family rendered.
 
 ---
 
-## Global Design System Tasks
+## Remaining Work — Phase 9 Cleanup
 
-### Token Usage
+Pending tasks (in priority order):
 
-- Replace hardcoded colors inside redesign components with tokens.
-- Inline styles are allowed only when values use CSS variables or tokens.
-- Avoid direct hex, rgba, magic px values, and one-off visual values inside JSX.
-- CSS may define tokens, but components must consume tokens.
-- Gradients must use approved gradient tokens from `docs/ui/REDESIGN-GUIDE.md`.
-- Functional colors must carry meaning only: risk, fixed, warning, status, before/after.
-
-### Required Token Areas
-
-Create or standardize redesign tokens for:
-
-- colors
-- gradients
-- spacing
-- container widths
-- radius
-- shadows
-- borders
-- motion duration
-- motion easing
-- section padding
-- card padding
-- grid gaps
+1. Remove prototype CSS files under `src/styles/redesign/*` once confirmed unused.
+2. Archive or delete prototype-only components in `src/components/redesign/*` that are no longer mounted by any live renderer.
+3. Audit old CSS dependencies — grep for legacy `rd-*` prototype-only classes; remove dead selectors.
+4. Delete legacy compatibility styles for components migrated to `sections/*`.
+5. Remove unused class names from `components.css` (e.g. orphaned `before-after` bridge styles after bridge removal).
+6. Remove hardcoded prototype content fixtures used by replaced components.
+7. Re-run typecheck, lint, build, and `system:full` after each removal to keep validators green.
+8. Confirm CTA contract, graph ownership, route ownership, and accessibility remain intact.
 
 ---
 
-## Layout Framework Tasks
+## Operating Rules
 
-### Base Layout Ownership
+- Execute one phase at a time.
+- Do not run broad refactors unless the current phase explicitly requires it.
+- Do not change service positioning.
+- Do not expand content volume.
+- Domain data files should mostly stay as they are.
+- Renderers/templates may change to use new reusable redesign components.
+- CTA contracts, graph ownership, route ownership, validators, accessibility, and mobile usability must remain intact.
 
-- `rd-section` owns default section padding and section rhythm.
-- `rd-container` owns default width and inline padding.
-- Default container should be wide enough for premium layouts.
-- Components must not manually recreate container logic.
-- Section-level spacing should come from framework classes and tokens.
-- `rd-section` should not decide visual background by semantic meaning.
-- Background decisions should come from background utility classes.
-- Avoid classes like `rd-section--diagnostic` for reusable background behavior.
+---
 
-### Container Decisions
+## Final Design Principle
 
-Default target widths:
+MindWP should not look like it builds websites.
+
+It should look like it understands how service businesses lose, handle, follow up, and convert leads.
+
+---
+
+## Redesign Direction
+
+Direction: **Premium Operational**
+
+Target feeling:
+
+- premium
+- calm
+- structured
+- operational
+- trustworthy
+- system-led
+- human enough for service-business owners
+
+Reference blend:
+
+```text
+Stripe confidence
++ Linear precision
++ service-business realism
++ MindWP operational language
+```
+
+Avoid:
+
+- generic agency look
+- flat static HTML look
+- SaaS-template look
+- flashy startup look
+- page-builder portfolio look
+- blog/content-farm look
+
+---
+
+# PHASE 1 — Official CSS System Rebuild ✅ DONE
+
+## Goal
+
+Back up the old CSS, then empty/recreate the official CSS files as the new long-term redesign system.
+
+Do this before page migration.
+
+## Files
+
+Official CSS ownership stays here:
+
+- `src/index.css`
+- `src/styles/foundation.css`
+- `src/styles/framework.css`
+- `src/styles/primitives.css`
+- `src/styles/components.css`
+
+Temporary prototype CSS must not become the long-term system:
+
+- `src/styles/redesign/framework.css`
+- `src/styles/redesign/smart-website.css`
+
+## Required Action
+
+1. Back up old CSS.
+2. Rewrite official files as new system.
+3. Do not preserve legacy CSS inside official files unless absolutely required to keep build/layout functional.
+4. If compatibility is needed, isolate it in a clearly marked temporary section or separate legacy backup folder.
+5. Do not edit React components, renderers, routes, or data files in Phase 1.
+
+## `src/index.css`
+
+index.css = imports only.
+body/root base belongs in foundation.css or framework.css.
+
+Allowed:
+
+- CSS imports
+- global base wiring
+- required Tailwind import order if the project still depends on it
+- minimal root/body setup if needed
+
+Not allowed:
+
+- large component styles
+- section styles
+- page-specific styles
+
+Important:
+
+- Preserve Tailwind/import order if validators or build depend on it.
+- Document any import-order risk before changing.
+
+## `src/styles/foundation.css`
+
+Owns tokens only.
+
+Must define a simple, memorable token system:
+
+- simple base color tokens such as `--primary`, `--secondary`, `--accent`, `--surface`, `--ink`, and other readable project tokens
+- semantic color tokens
+- foreground/on-background tokens
+- gradient tokens
+- spacing tokens
+- container width tokens
+- typography tokens
+- radius tokens
+- shadow tokens
+- border tokens
+- motion duration tokens
+- motion easing tokens
+- z-index tokens
+- breakpoint tokens or documented breakpoint values
+
+Required container tokens:
 
 ```css
 --rd-page-max: 1440px;
---rd-wide-max: 1320px;
 --rd-content-max: 1180px;
 --rd-text-max: 720px;
 ```
 
-Required container variants:
+Required breakpoint direction:
 
-- `rd-container`
-- `rd-container--wide`
-- `rd-container--content`
-- `rd-container--text`
+```css
+/* desktop/default: up to 1440px max container */
+/* medium: 980px */
+/* tablet: 767px */
+/* mobile: 480px */
+```
 
-### Section Variants
+Color rules:
 
-Required section classes:
+- Base color tokens should stay simple, readable, and reusable.
+- Example direction: `--primary: #07111f;`, `--secondary: ...;`, `--accent: ...;`, `--surface: ...;`, `--ink: ...;`.
+- Do not make every main token an OKLCH expression if a simple token name with a stable color value is clearer.
+- Use the simple base tokens repo-wide instead of hardcoded hex values inside components.
+- Use OKLCH and `color-mix(in oklch, ...)` to derive gradients, glow effects, tint effects, overlays, and transparency from the base tokens.
+- Gradients must reference base color tokens or derived tokens, not hardcoded color literals.
+- Avoid raw hex/rgb/rgba in final component CSS after base tokens exist.
+- Define semantic foreground tokens for light, soft, dark, and gradient contexts.
+
+Primary palette decision:
+
+- Use the current Executive Navy / Cyan direction as the main MindWP palette.
+- Main base tokens:
+  - `--primary: #07111f;`
+  - `--secondary: #173b63;`
+  - `--accent: #3f9caf;`
+  - `--accent-soft: #8dd8e8;`
+- This is the default brand palette for Smart Website, CRM, and system/operations sections.
+
+Secondary palette rule:
+
+- Additional service palettes are allowed, but they must stay short.
+- Each secondary palette should use maximum 3–4 base tokens.
+- Do not create large separate color systems per service.
+- Secondary palettes should act as accents, not full brand replacements.
+
+Approved short secondary palettes:
+
+```css
+/* Local SEO / trust signals */
+--local-primary: #071915;
+--local-secondary: #12372f;
+--local-accent: #2f9b73;
+--local-accent-soft: #9be7c7;
+
+/* Automation / AI / workflow */
+--automation-primary: #100f2e;
+--automation-secondary: #26306a;
+--automation-accent: #2fb8b8;
+--automation-accent-soft: #a4f1ef;
+
+/* Proof / case studies / premium authority */
+--proof-primary: #111827;
+--proof-secondary: #2f3645;
+--proof-accent: #c89b3c;
+--proof-accent-soft: #f1d99a;
+```
+
+Rules:
+
+- Gradients and glows may use these short palettes through `color-mix(in oklch, ...)`.
+- Service accents should support the page mood without making pages feel like separate brands.
+
+Gradient roles:
+
+- hero gradient
+- dark panel gradient
+- blue/system gradient
+- compare/before-after gradient
+- CTA gradient
+- surface gradient
+- soft surface gradient
+- glow gradient
+- Keep gradients simple, but each gradient should be meaningfully different, not just an angle change.
+
+Token model example:
+
+```css
+:root {
+  --primary: #07111f;
+  --secondary: #173b63;
+  --accent: #3f9caf;
+  --surface: #ffffff;
+  --surface-soft: #f6f8fb;
+  --ink: #07111f;
+
+  --primary-glow: color-mix(in oklch, var(--accent) 35%, transparent);
+  --gradient-hero:
+    radial-gradient(circle at 20% 20%, var(--primary-glow), transparent 28%),
+    linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+```
+
+## `src/styles/framework.css`
+
+Owns layout and utilities.
+
+Must define:
 
 - `rd-section`
 - `rd-section--compact`
-- `rd-section--standard`
 - `rd-section--spacious`
-
-### Layout Primitives
-
-Required primitives:
-
+- `rd-container`
+- `rd-container--content`
+- `rd-container--text`
 - `rd-grid`
 - `rd-grid--2`
 - `rd-grid--3`
@@ -108,133 +288,57 @@ Required primitives:
 - `rd-stack`
 - `rd-cluster`
 - `rd-panel`
-- `rd-card`
-
----
-
-## Class Naming Decisions
-
-### Reusable Component Naming
-
-Use general reusable component names for production-ready patterns.
-
-Approved section component names:
-
-- `HeroSplitSection`
-- `IssueCardsSection`
-- `BeforeAfterSection`
-- `LayerStackSection`
-- `ProcessStepsSection`
-- `ProofStorySection`
-- `FitCheckSection`
-- `AccordionFAQSection`
-- `CTASection`
+- text-measure utilities
+- background utilities
+- foreground/contrast utilities
+- section header system
+- motion utilities
+- responsive layout helpers
 
 Rules:
 
-- Do not use page-specific names for reusable section components.
-- Avoid names like `DiagnosticLeakageSection`, `SmartWebsiteHero`, `SmartWebsiteSystemPanel`, or `SWS*` for reusable components.
-- Page-specific wrappers may keep page-specific names.
-- Reusable components must describe layout/pattern, not page topic.
-- Component names must stay understandable in live code and browser inspection.
-
-### Framework + Component Pattern
-
-Use framework classes for shared layout behavior and BEM-style component classes for component internals.
-
-Preferred pattern:
-
-```html
-<section class="rd-section service-hero bg-gradient-hero">
-  <div class="rd-container rd-container--wide">
-    <div class="service-hero__grid">
-      <div class="service-hero__copy"></div>
-      <div class="service-hero__visual"></div>
-    </div>
-  </div>
-</section>
-```
-
-Rules:
-
-- Use `rd-*` for redesign framework primitives and utilities.
-- Use component-specific BEM classes for component internals.
-- Avoid deep one-off class names that cannot be reused.
-- Avoid old-style random page-scoped classes for reusable components.
-- Avoid `<header>` wrappers for internal section headings unless semantic need is clear.
-- Use `div.rd-section-head` for internal section heading blocks.
-
-Component BEM prefixes should match the approved component names:
-
-| Component | BEM Prefix |
-| --------- | ---------- |
-| `HeroSplitSection` | `hero-split__*` |
-| `IssueCardsSection` | `issue-cards__*` |
-| `BeforeAfterSection` | `before-after__*` |
-| `LayerStackSection` | `layer-stack__*` |
-| `ProcessStepsSection` | `process-steps__*` |
-| `ProofStorySection` | `proof-story__*` |
-| `FitCheckSection` | `fit-check__*` |
-| `AccordionFAQSection` | `accordion-faq__*` |
-| `CTASection` | `cta-section__*` |
-
----
-
-## Utility Class Tasks
-
-Create controlled utilities for:
-
-- background gradients
-- surface backgrounds
-- grid layouts
-- flex alignment
-- stack gaps
-- text width
-- card elevation
-- reveal motion
-- hover lift
-- connector lines
-- status dots
+- `rd-section` owns spacing/rhythm only.
+- `rd-container` owns width and inline padding.
+- Default `rd-container` must use `--rd-page-max: 1440px` as the normal section container max width.
+- Do not create or rely on `rd-container--wide`.
+- Normal section containers should use `rd-container` only.
+- Use smaller container variants such as `rd-container--content` or `rd-container--text` only when a section intentionally needs narrower reading width.
+- Prefer default framework classes first; avoid width modifier classes unless a narrower container is required.
+- Background decisions come from utilities, not semantic section classes.
+- Avoid semantic background classes such as `rd-section--diagnostic`.
+- Avoid global hard max-width on section titles/descriptions.
+- Section title/description width should be controlled by section-head variants or text-measure utilities.
 
 Required background utilities:
 
+- `bg-body`
 - `bg-surface`
 - `bg-surface-soft`
-- `bg-body`
 - `bg-dark`
 - `bg-gradient-hero`
 - `bg-gradient-blue`
 - `bg-gradient-compare`
 - `bg-gradient-cta`
+- `bg-gradient-cta-2`
+- `bg-gradient-cta-3`
+- `bg-gradient-cta-4`
 
-Required text-width utilities:
+Required foreground utilities:
 
-- `text-measure-sm`
-- `text-measure-md`
-- `text-measure-lg`
+- `text-on-light`
+- `text-on-dark`
+- `text-on-soft`
+- `text-muted-light`
+- `text-muted-dark`
 
-Rules:
+Background/foreground rule:
 
-- Utilities must use tokens only.
-- Utilities must not introduce one-off colors or spacing values.
-- Utilities must not replace component structure.
+- Background utilities must set readable default foreground colors.
+- Light backgrounds default to dark text.
+- Dark and dark-gradient backgrounds default to light text.
+- Components inherit section foreground unless intentionally creating a nested surface.
 
-Background utility rules:
-
-- Use background utilities to control section background rhythm.
-- `rd-section` should provide spacing and structure only.
-- Semantic section names should not own global background decisions.
-- Default section rhythm can use body background with no extra background utility.
-- Dark footer remains the default footer direction.
-- If the footer is dark, the section immediately before it should usually be light/soft or contain only a contained dark panel, not a full dark section.
-
----
-
-## Section Header System
-
-Create a consistent section header system.
-
-Required classes:
+Section header system:
 
 - `rd-section-head`
 - `rd-section-head--left`
@@ -244,326 +348,784 @@ Required classes:
 - `rd-section-title`
 - `rd-section-description`
 
-Required kicker variants:
+Section header rules:
 
-- `rd-kicker`
-- `rd-kicker--risk`
-- `rd-kicker--good`
-- `rd-kicker--neutral`
-- `rd-kicker--dark`
+- Use `div.rd-section-head`, not internal `<header>` wrappers, unless semantic need is clear.
+- Kicker must not stretch full width.
+- Titles/descriptions inherit section foreground context.
+- Avoid forced title max-width for now.
+
+## `src/styles/primitives.css`
+
+Owns reusable UI primitives.
+
+Must define:
+
+- buttons
+- links
+- cards
+- panels
+- badges/kickers
+- status dots
+- icon tiles
+- forms
+- accordion primitive
+- focus states
+- default hover states
+
+Button rules:
+
+- Primary hover must not jump to cyan by default.
+- Primary on dark: white background, dark text, subtle soft-white hover.
+- Primary on light: navy background, white text, deeper navy hover.
+- Accent/cyan only when intentionally selected.
+- Buttons define their own contrast behavior and do not depend on parent section text color.
+- Header CTA uses the same button system.
+
+Global hover rules:
+
+- Hover states must be subtle and tokenized.
+- No random color jumps.
+- Hover lift must be controlled and consistent.
+- Respect reduced-motion preferences.
+
+## `src/styles/components.css`
+
+Owns reusable component and section styles.
+
+Phase 1 scope:
+
+- In Phase 1, add only safe shell styles and shared placeholders in `components.css`.
+- Full component-specific styling happens in Phase 3 and Phase 4.
+
+Must eventually include:
+
+- header styles
+- footer styles
+- `hero-split__*`
+- `grid-cards__*`
+- `before-after__*`
+- `layer-stack__*`
+- `process-steps__*`
+- `proof-story__*`
+- `image-story__*`
+- `fit-check__*`
+- `accordion-faq__*`
+- `cta-section__*`
+- `related-content__*`
+- `scope-section__*`
+
+BEM rule:
+
+- Keep BEM prefixes short and readable.
+- Use `rd-*` only for framework/utilities.
+- Use component BEM for component internals.
+- Avoid page-specific class names in extracted components.
+
+## Motion System
+
+Phase 1 defines shared motion utilities only. Component-specific animation application happens in Phase 3 and Phase 4.
+
+Required utilities:
+
+- `rd-animate-section`
+- `rd-animate-fade`
+- `rd-animate-up`
+- `rd-animate-stagger`
+- `rd-animate-line`
+- `rd-animate-float`
+- `rd-animate-pulse`
+- `rd-animate-glow`
+- `rd-animate-panel`
+- `rd-animate-list`
 
 Rules:
 
-- Section headers must control alignment, max width, spacing, and dark/light variants.
-- Eyebrow/kicker must not stretch full width unless explicitly intended.
-- Section descriptions should use `--rd-text-max` or a controlled text-width utility.
-- Section heading structure should be consistent across prototype sections.
-- Do not set a global `max-width` on `rd-section-title`.
-- Control heading width through `rd-section-head` variants or text-measure utilities.
-- Default section heading alignment should be left aligned unless a page pattern needs center or split alignment.
-
----
-
-## Motion System Tasks
-
-Create reusable CSS motion utilities.
-
-Required classes:
-
-- `rd-reveal`
-- `rd-reveal-up`
-- `rd-hover-lift`
-- `rd-line-reveal`
-- `rd-pulse`
-- `rd-float-subtle`
-- `rd-glow-breathe`
-
-Apply motion to:
-
-- hero visual panel
-- hero status rows
-- diagnostic cards
-- before/after connector
-- system layer cards
-- process steps
-- proof cards
-- FAQ accordion
-- final CTA panel/checklist
-
-Rules:
-
+- Section-level class should trigger child reveal/stagger behavior where practical.
+- Use CSS/SVG/JSX animation first.
 - Respect `prefers-reduced-motion`.
-- Motion must be calm and useful.
-- Avoid bouncy, playful, spinning, or distracting animation.
-- Motion should make the system feel active and understandable.
+- No bouncy/playful motion.
+- No animation that delays reading.
+
+Hero visual animation direction:
+
+- Should feel like lightweight Lottie-style motion.
+- Animate rows, status pills, connector lines, glow, panel float, progress/status changes.
+- Do not add a Lottie dependency unless explicitly approved later.
+- No fake product screenshots.
+
+## Phase 1 Exit Criteria
+
+- Official CSS files exist with new ownership structure.
+- Old CSS is backed up.
+- Temporary prototype CSS is no longer the source of design truth.
+- Header/footer can be migrated next without depending on old CSS concepts.
+- Build/type/lint risks are documented before proceeding.
+- Phase 1 validation checks are run or explicitly reported as unsafe to run.
+- Phase 1 scope stays limited to CSS ownership, tokens, framework, primitives, safe component shells, and motion utilities.
+- Do not start Phase 2 until Phase 1 is fully verified.
+
+## Phase 1 Validation
+
+Run if safe:
+
+- typecheck
+- lint
+- build only if safe
+
 
 ---
 
-## Button System Tasks
+# PHASE 2 — Header and Footer Redesign ✅ DONE
 
-Button behavior must be tokenized and consistent.
+## Goal
 
-Rules:
+Recreate header and footer using the new official CSS system.
 
-- Primary button hover must not jump to cyan by default.
-- Primary button on dark background: white background, dark text, subtle warm/soft-white hover.
-- Primary button on light background: navy background, white text, deeper navy hover.
-- Accent/cyan button treatment is allowed only when intentionally selected.
-- Button colors, borders, shadows, and hover states must use tokens.
-- Avoid one-off button styles inside sections.
+They appear on every page, so migrate them before service pages.
+
+## Files to Inspect
+
+- `src/global/Header.tsx`
+- `src/global/HeaderMobileMenuIsland.tsx`
+- `src/global/Footer.tsx`
+- CTA/contact helper usage
+- nav/link config usage
+
+## Header Requirements
+
+- Premium but not heavy.
+- Works on dark hero pages and light pages.
+- Supports desktop nav.
+- Supports mobile nav.
+- Mobile menu must open/close reliably.
+- Header CTA must follow new button primitives.
+- CTA contract must stay intact.
+- Focus states and keyboard behavior must remain accessible.
+- Do not rely on legacy `l-*` helpers or old `btn` styling after migration.
+
+## Footer Requirements
+
+- Footer is dark by default.
+- Footer must use new tokens, spacing, layout, link states, and responsive rules.
+- Footer should not feel like an old legacy block under redesigned pages.
+- Use a four-column structure similar to the current footer.
+- Footer should support:
+  - service navigation
+  - trust links
+  - contact path
+  - brand positioning
+  - resource links
+  - legal links
+- The section directly above footer should usually be light/soft or use a contained dark panel only.
+
+## Phase 2 Exit Criteria
+
+- Header and footer use new CSS system.
+- Desktop nav works.
+- Mobile nav works.
+- Header CTA works and preserves contract.
+- Footer is dark and visually aligned with Premium Operational direction.
+- No production route or graph behavior changed.
+- Run the phase validation checks and make it clean pass.
+- Once phase 2 verified move to phase 3 automatically.
+---
+
+# PHASE 3 — Core Component Family Setup ✅ DONE
+
+## Goal
+
+Create the reusable production component families before migrating live pages.
+
+Phase 3 may inspect existing Smart Website prototype components, but only as references for extraction.
+Phase 3 owns target naming, shared props, base variants, reusable CSS, and production component file structure.
+Phase 3 must create production-ready component shells or extracted components; it must not keep prototype components as the long-term implementation.
+Phase 4 applies those production components to the Smart Website context and refines the weak variants.
+Do not create one-off page-only components unless absolutely necessary.
+
+## Prototype to Production Mapping
+
+- `ServiceHeroOperational` -> `HeroSplitSection`
+- `DiagnosticLeakageSection` -> `GridCardsSection`
+- `BeforeAfterSystemPanel` -> `BeforeAfterSection`
+- `SystemLayerStack` -> `LayerStackSection`
+- `OperationalFlowTimeline` -> `ProcessStepsSection`
+- `ProofNarrativePanel` -> `ProofStorySection`
+- `FitCheckPanel` -> `FitCheckSection`
+- `PrototypeFAQ` -> `AccordionFAQSection`
+- `PrototypeCTA` -> `CTASection`
+
+Mapping rule:
+
+- This mapping is for extraction/reference only.
+- Do not keep both prototype and production component families long term.
+- Prototype components can be renamed, merged, replaced, or deleted after production components are created.
+- Production components should live outside the prototype-only redesign folder.
+
+## Target Component Families
+
+- `HeroSplitSection`
+- `GridCardsSection`
+- `BeforeAfterSection`
+- `LayerStackSection`
+- `ProcessStepsSection`
+- `ProofStorySection`
+- `ImageStorySection`
+- `FitCheckSection`
+- `AccordionFAQSection`
+- `CTASection`
+- `RelatedContentSection`
+- `ScopeSection`
+
+These are target production names, not necessarily current file names.
+Existing prototype components may be renamed, merged, or replaced during extraction.
+
+Important:
+
+- `GridCardsSection` is the reusable grid/card section family.
+- It replaces the confusing diagnostic-only naming.
+- It must be designed well enough to reuse across service, industry, proof, and signal sections.
+- It is not only for the Smart Website diagnostic section.
+
+## General Component Rules
+
+- Important text comes from data/props.
+- No hardcoded marketing text in reusable components.
+- Hero mockup rows come from props/data.
+- CTA support bullets come from props/data.
+- Image content and alt text come from props/data.
+- Diagnostic labels and layer names come from props or controlled config.
+- No content expansion during redesign.
+- Small copy tightening only when layout requires it.
+- Keep class names short, readable, and BEM-style.
+- Reusable components describe layout/pattern, not page topic.
+- Grid/card sections should use `GridCardsSection`, not page-specific diagnostic component names.
+- A weak card grid should be fixed by improving `GridCardsSection` variants, not by creating another one-off cards component.
+- `GridCardsSection` and `ProcessStepsSection` must remain visually distinct.
+- Do not make grid cards look like process step cards.
+- `GridCardsSection` should feel like grouped cards, diagnostic tiles, feature cards, or signal boards.
+- `ProcessStepsSection` should feel like ordered movement, timeline, sequence, cycle, or staged progression.
+
+## Component Variant Rule
+
+- Components need variants so pages do not look identical.
+- Do not build every variant immediately.
+- Build only the variants needed by Smart Website and Local SEO first.
+- Add more variants later after the system proves stable.
+
+## Initial Variants Needed
+
+### `HeroSplitSection`
+
+- Smart Website: `operations`
+- Local SEO: `visibility`
+
+### `GridCardsSection`
+
+- Purpose: reusable premium card-grid section.
+- Smart Website: `diagnostic-grid`
+- Local SEO: `signal-board`
+- General reuse: `feature-grid`
+
+Design separation:
+
+- Do not reuse the same card treatment as `ProcessStepsSection`.
+- Avoid step numbers as the dominant visual unless the variant explicitly needs ordering.
+- Use card identity through icon tile, status label, risk/signal treatment, grouped card spacing, and stronger card surface.
+- `diagnostic-grid` should look like diagnostic/issue tiles, not timeline steps.
+- `signal-board` should look like trust/visibility signal cards, not process stages.
+
+Variant direction:
+
+- `diagnostic-grid`: problem/risk cards with strong hierarchy, status treatment, and optional connector/flow detail.
+- `signal-board`: visibility/trust signal cards for Local SEO and similar authority sections.
+- `feature-grid`: neutral reusable cards for features, scope, supporting points, or grouped explanations.
+
+### `BeforeAfterSection`
+
+- Smart Website: `split-panel`
+- Local SEO: `scorecard`
+
+Design preservation:
+
+- Keep the current `BeforeAfterSystemPanel` visual direction as close as possible.
+- This section is already one of the strongest Smart Website prototype sections.
+- Preserve the dark split-panel feel, before/after contrast, central bridge/connector, and strong panel hierarchy.
+- Improve only what is needed for tokenization, responsiveness, accessibility, reduced dots, and reusable variants.
+- Do not flatten it into a generic comparison card grid.
+- Do not redesign it into a simple table.
+- `BeforeAfterSection` should remain visually distinct from `GridCardsSection`, `ProcessStepsSection`, and `LayerStackSection`.
+
+### `LayerStackSection`
+
+- Smart Website: `interactive-stack`
+- Local SEO: `signal-map`
+
+### `ProcessStepsSection`
+
+- Smart Website: `timeline`
+- Local SEO: `cycle`
+
+Design preservation:
+
+- Keep the new process component design as close as possible to the approved prototype direction.
+- Improve only what is needed for tokens, responsiveness, accessibility, and reusable variants.
+- Process cards may use step numbers, connector lines, timeline/cycle motion, and staged progression.
+- Do not let `GridCardsSection` copy this visual language.
+
+### `ScopeSection`
+
+- Smart Website: `layered-list` if needed
+- Local SEO: `service-map`
+
+### `ProofStorySection`
+
+- Smart Website: `before-change-after`
+- Local SEO: `metric-story`
+
+### `ImageStorySection`
+
+- Smart Website: `operational-photo` or `visual-panel`
+- Local SEO: `split-evidence` only if useful
+
+### `FitCheckSection`
+
+- Smart Website: `two-column`
+- Local SEO: `decision-cards`
+
+Design preservation:
+
+- Keep the current `FitCheckPanel` visual direction as close as possible.
+- This section already works well as a qualification block.
+- Preserve the strong-fit / not-fit contrast.
+- Preserve the two-column decision structure for Smart Website.
+- Improve only what is needed for tokenization, spacing, responsiveness, accessibility, and reusable variants.
+- Do not redesign it into generic cards.
+- Do not make it look like `GridCardsSection`.
+- `FitCheckSection` should remain a clear decision/qualification component.
+
+### `AccordionFAQSection`
+
+- `single-column` first
+- controlled accordion
+- one open item at a time
+- closed content fully hidden
+
+### `CTASection`
+
+- Smart Website final CTA: `soft-panel`
+- Local SEO final CTA: `split-card`
+
+### `RelatedContentSection`
+
+- service pages: `progression`
+
+## Phase 3 Exit Criteria
+
+- Core reusable components exist or are clearly mapped.
+- Component CSS lives in official `components.css`.
+- Primitives live in `primitives.css`.
+- Framework utilities live in `framework.css`.
+- Important content is data-driven.
+- Animations use shared utilities.
+- Run the phase validation checks and make it clean pass.
+- once phase 3 varified automatically move to next phase.
 
 ---
 
-## Gradient and Color Token Tasks
+# PHASE 4 — Smart Website Component Improvements ✅ DONE
 
-Redesign colors and gradients must become token-driven.
+## Goal
 
-Rules:
+Apply and refine the Phase 3 production components in the Smart Website context before migrating the live page.
 
-- Define redesign color tokens using OKLCH where practical.
-- Gradients must reference color tokens instead of raw hex/rgb/rgba values.
-- Use `color-mix(in oklch, ...)` for transparent glow and tint effects where practical.
-- Do not hardcode raw gradient colors inside component CSS after tokens exist.
-- Decorative glow should live in CSS pseudo-elements when possible.
-- Hero atmosphere/glow should be owned by the hero section class, not extra decorative HTML.
+Phase 4 may use the existing Smart Website prototype only as a visual/content reference.
+Phase 4 must not continue building inside prototype-only components if a production component family already exists.
+Phase 4 must not invent a second component system.
+If a Smart Website section is weak, improve the reusable production component variant that owns that pattern.
 
----
+## Current Prototype Facts
 
-## Content/Data Rules
+- Prototype route: `/dev/redesign/smart-website-systems`.
+- Prototype route file: `src/app/dev/redesign/smart-website-systems/page.tsx`.
+- Prototype page component: `src/components/redesign/smart-website/SmartWebsitePrototypePage.tsx`.
+- Prototype CSS: `src/styles/redesign/framework.css` and `src/styles/redesign/smart-website.css`.
+- Current prototype has no image-led reality section.
+- Current prototype has no related-content section.
+- Current prototype naming is page-specific and not extraction-ready.
+- Current prototype CSS contains raw colors and semantic background classes.
+- Current prototype route hardcodes mockup rows, CTA checklist items, and labels.
+- Prototype components are references only after Phase 3 begins extraction.
+- Do not treat prototype component names as approved production names.
 
-- Important text must come from data or props.
-- Avoid hardcoded marketing/content strings inside reusable components.
-- Components may contain structural labels only when unavoidable.
-- Hero mockup rows should come from props/data.
-- CTA support bullets should come from props/data.
-- Diagnostic labels should come from props/data or a controlled config.
-- Layer names should come from props/data or a controlled config.
-- Do not expand content volume during redesign.
-- Small copy tightening is allowed only when required by visual layout.
-- Components should not contain default marketing text unless explicitly approved.
-- Structural placeholder text should be avoided where real data/props can be passed.
+## Smart Website Section Tasks
 
----
+### Hero
 
-## Hero Family Decisions
-
-Do not force one hero component across all page types.
-
-Hero families:
-
-- Homepage hero: one-column authority hero, no required right visual.
-- Service hero: two-column hero with operational visual.
-- Industry hero: situation-first hero with industry-specific visual.
-- Case-study hero: proof/narrative hero.
-- Resource/blog hero: clean readable hero with minimal visual weight.
-
-Service hero variation:
-
-- Service pages may share the same hero framework.
-- Service pages should not all use the exact same visual style.
-- Variation may come from gradient role, right-side visual type, status rows, system diagram, layer stack, or proof card.
-
-Smart Website prototype hero decisions:
-
-- Keep two-column hero direction.
-- Badge must not stretch full width.
-- Keep only one chip/meta group unless both groups serve distinct meaning.
-- Hero visual should be animated with subtle row/status movement.
-- Hero visual must remain schematic, not fake product screenshot.
-
----
-
-## Page Rhythm Decisions
-
-Service-page preferred rhythm:
-
-```text
-Dark hero
-Light or body-background issue section
-Dark/blue comparison section
-Light interactive system section
-Dark process or proof section
-Light fit/FAQ section
-Light/soft final CTA
-Dark footer
-```
-
-Rules:
-
-- Avoid dark CTA directly before dark footer unless there is a clear separator or light wrapper.
-- Final CTA before footer should usually be light/soft with a strong contained panel.
-- Do not make every section visually heavy.
-- Alternate section weight through background utilities, spacing, panels, and interaction.
-- Section backgrounds should support page rhythm, not decorate randomly.
-
----
-
-## Smart Website Prototype Section Tasks
-
-### Section 1 — Hero
-
-- Keep direction.
+- Keep two-column operations direction.
 - Fix full-width badge.
-- Remove or merge duplicate chip/meta groups.
-- Animate visual rows/status pills/glow/panel movement.
-- Ensure visual content comes from props/data.
-- Move decorative glow/background atmosphere to CSS pseudo-elements where possible.
-- Use `HeroSplitSection` naming for reusable hero pattern planning.
+- Remove duplicate chip/meta groups.
+- Visual content comes from props/data.
+- Decorative glow should be CSS pseudo-element/background.
+- Hero visual should have lightweight Lottie-style motion through CSS/SVG/JSX.
 
-### Section 2 — Where It Leaks
+### Where It Leaks
 
-- Current card-grid direction is not approved.
-- Do not keep simple white diagnostic cards as the final pattern.
-- Preferred redesign direction: leak timeline or diagnostic board.
-- Option A: leak timeline showing `Search → Page → Form → Inbox → Follow-up → Booking`.
-- Option B: diagnostic board showing how a lead gets lost through disconnected steps.
-- Use 3-column grid only if the cards are redesigned into strong premium diagnostic tiles.
-- Six items should not display as a weak generic card grid.
-- Reduce repeated `Leak point` labels.
-- Add stagger reveal, hover lift, and meaningful connector/flow treatment.
-- Improve hierarchy, spacing, and icon/status treatment.
-- Use `IssueCardsSection` naming for reusable issue-card pattern planning.
+- Use `GridCardsSection` with `diagnostic-grid` variant.
+- Current simple/weak card-grid direction is not approved.
+- Redesign into a premium reusable grid-card pattern, not a one-off diagnostic component.
+- Cards need stronger hierarchy, icon/status treatment, spacing, hover state, and motion.
+- Six items should display cleanly as a balanced grid on desktop.
+- Optional connector/flow detail is allowed if it improves the diagnostic story.
+- Use motion utilities for stagger/reveal.
 
-### Section 3 — Broken vs Fixed
+### Image-Led Reality
+
+- Add one section after Where It Leaks and before Broken vs Fixed.
+- Use `ImageStorySection`.
+- Purpose: make missed-enquiry problem feel real and human.
+- Use operational photo or designed visual panel.
+- Avoid generic stock images.
+- Copy/image/alt come from data/props.
+
+### Broken vs Fixed
 
 - Keep direction.
 - Reduce excessive dots.
-- Dots should carry meaning, not appear on every tiny element.
-- Keep strong dark comparison panel.
-- Improve connector/transition animation.
-- Use `BeforeAfterSection` naming for reusable comparison pattern planning.
+- Improve connector and transition animation.
+- Preserve the current `BeforeAfterSystemPanel` visual design direction as much as possible.
+- Tokenize and clean it, but do not visually restart this section.
+- Keep the dark split-panel comparison and connector/bridge treatment.
 
-### Section 4 — System Layers
+### System Layers
 
-- Current accordion/list direction is not approved.
-- Do not keep left mockup plus long numbered list as final pattern.
-- Do not make this section look like the hero visual.
-- Redesign as an interactive layer explorer.
-- Left or top area should show the five system layers visually:
+- Current accordion-card list is not approved as final.
+- Redesign as interactive layer explorer.
+- Five layers:
   - Visibility
   - Capture
   - Routing
   - Follow-up
   - Proof
-- Right or detail area should update based on the active layer.
-- Each active layer should show:
-  - what it handles
-  - what breaks without it
-  - included items
-  - visible outcome
-- Only one layer should be active/open at a time.
-- Mobile version may become an accordion, but closed content must be hidden.
-- Add active-layer animation, connector movement, or step-through interaction.
-- Visual style must differ from hero and must feel like infrastructure, not a simple FAQ.
-- Use `LayerStackSection` naming for reusable layered-system pattern planning.
+- One active/open layer at a time.
+- Detail area updates from active layer.
+- Closed content hidden.
+- Visual style must differ from hero.
 
-### Section 5 — How It Works
+### How It Works
 
-- Keep section.
+- Keep.
 - Add connector animation and step reveal.
-- Apply minor polish only.
-- Use `ProcessStepsSection` naming for reusable process pattern planning.
 
-### Section 6 — Real Outcome
+### Real Outcome
 
-- Keep section with polish.
-- Make it read visually as Before → What changed → After.
-- Strengthen the center card.
-- Reduce dense text feeling where possible without changing meaning.
-- Add subtle connector/transition.
-- Use `ProofStorySection` naming for reusable proof/story pattern planning.
+- Present visually as Before -> What changed -> After.
+- Strengthen center card.
+- Reduce dense text feeling.
 
-### Section 7 — Fit Check
+### Fit Check
 
-- Keep section.
-- Minor polish only.
-- Use `FitCheckSection` naming for reusable fit-check pattern planning.
+- Keep with minor polish.
+- Preserve the current `FitCheckPanel` design direction as much as possible.
+- Keep the two-column fit/not-fit structure for Smart Website.
+- Tokenize and polish it, but do not visually restart this section.
 
-### Section 8 — FAQ
+### FAQ
 
-- Convert to controlled accordion.
-- Only one item open at a time.
-- First item may be open by default, or all closed by default.
-- Closed item content must be fully hidden.
-- Current behavior where closed content remains visible is a bug.
-- Add smooth open/close animation.
-- Avoid uncontrolled `details` if it allows multiple open items or visible closed content.
-- Use `AccordionFAQSection` naming for reusable FAQ pattern planning.
+- Controlled accordion.
+- One open item at a time.
+- Closed content fully hidden.
 
-### Section 9 — Final CTA
+### Final CTA
 
-- Current full-dark final CTA direction is not approved when footer remains dark.
-- Footer should stay dark by default.
-- Final CTA before dark footer should usually be light/soft with a strong contained panel.
-- Preferred direction: light/soft section with CTA copy on one side and operational checklist/status card on the other.
-- Avoid dark section directly touching dark footer unless there is a clear rhythm reason.
-- Improve spacing, authority, and right-side checklist panel.
-- Add subtle motion/glow/checklist animation.
-- CTA support bullets must come from props/data.
-- Use `CTASection` naming for reusable CTA pattern planning.
+- Not full dark before dark footer.
+- Use light/soft section with strong contained panel.
+- Support bullets come from props/data.
 
----
+### Related Content
 
-## Page-Level Tasks
+- Create/improve `RelatedContentSection` during the Smart Website phase.
+- Candidates remain graph-owned.
+- Redesign presentation only.
+- Do not manually hardcode related-content lists.
+- Use the `progression` variant for Smart Website service-page context.
+- Related section should feel like guided next steps, not generic cards.
 
-### Homepage
 
-- Not redesigned yet.
-- Plan only for now.
-- Homepage hero may be one-column without right visual.
-- Homepage should feel like primary authority surface.
-- Do not reuse service hero blindly.
+## Phase 4 Exit Criteria
 
-### Service Pages
-
-- Smart Website prototype is the first service-page visual test.
-- Service pages may share framework primitives.
-- Service pages should vary visuals by system and intent.
-- Do not use the exact same hero visual for every service page.
-
-### Industry Pages
-
-- Not redesigned yet.
-- Must remain situation-first and industry-specific.
-- Should not copy service-page layout blindly.
-
-### Case Studies
-
-- Not redesigned yet.
-- Must feel proof-led and believable.
-- Should not use sales-page hero structure.
-
-### Resource/Blog Pages
-
-- Not redesigned yet.
-- Should stay readable and lighter than service pages.
-- Should use the design system without over-design.
+- Smart Website reusable components are improved.
+- Weak diagnostic/card-grid section is replaced by `GridCardsSection` with the approved `diagnostic-grid` variant.
+- System layers are redesigned.
+- Image-led reality section exists.
+- `RelatedContentSection` progression variant is created or improved without manual related lists.
+- Prototype-only page-specific naming is removed from extracted components.
+- Run the phase validation checks and make it clean pass.
+- once phase 3 varified automatically move to next phase.
 
 ---
 
-## Extraction Rules
+# PHASE 5 — Smart Website Live Page Migration ✅ DONE
 
-Do not extract prototype components into production until:
+## Goal
 
-- Smart Website prototype section direction is approved.
-- Framework primitives are stable.
-- Token usage is clean.
-- Hardcoded content is removed from reusable components.
-- Animations are systemized.
-- Section patterns are reusable beyond one page.
+Update the real Smart Website page to use the new CSS system and reusable redesign components.
+
+## Files to Inspect
+
+- `src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx`
+- `src/domains/services/data/smart-website-systems.ts`
+- `src/domains/services/pages/smart-website-systems/index.tsx`
+- CTA/contact helper usage
+- related-content resolver/component usage
+
+## Requirements
+
+- Keep domain data mostly unchanged.
+- Replace old renderer section stack with reusable redesign components.
+- Keep CTA contract intact.
+- Add the redesigned `RelatedContentSection` if graph resolver supports service-page related output.
+- Do not manually hardcode related content lists.
+- Do not move route ownership.
+- Do not change production slug.
+- After renderer migration, audit TypeScript types and validator expectations before changing data shape.
+- If reusable components require adapter props, prefer adapter functions over changing domain data structures.
+- Do not weaken validators to make the new renderer pass.
+- Update validators only if they encode old structural assumptions that are no longer valid and the new rule preserves the same contract.
+- Any validator/type update must be narrow, documented, and contract-preserving.
+
+## Types and Validator Audit
+
+Run this audit after replacing the live renderer section stack:
+
+- TypeScript prop compatibility for all new reusable components.
+- Domain data adapter types.
+- CTA contract validators.
+- Graph/related-content validators.
+- Route ownership validators.
+- SEO metadata validators.
+- Internal link validators.
+- Accessibility-sensitive markup checks.
+- Content quality validators that may expect old section structure.
+
+Rules:
+
+- Prefer adapting renderer data to component props.
+- Avoid changing service data shape unless absolutely necessary.
+- Do not modify validators just because class names or DOM shape changed.
+- Validator changes are allowed only when they preserve or strengthen the original contract.
+- If a validator blocks because it expects old component names instead of contract behavior, update the validator narrowly and document the reason.
+
+## Phase 5 Exit Criteria
+
+- `/services/smart-website-systems` uses new design system.
+- Page uses reusable components, not prototype-only components.
+- Page includes redesigned related content presentation if graph output is available.
 - Build and validators are clean.
+- Type and validator audit is complete.
+- Any type/validator updates are narrow, documented, and contract-preserving.
+- Process-step design remains visually distinct from grid-card design.
+- Test the Page visualy using playwright.
+- imporve design and css.
+- once phase 5 varified automatically move to next phase.
 
 ---
 
-## Validation Expectations
+# PHASE 6 — Local SEO Component Planning and Variants ✅ DONE
 
-After redesign changes, run safe checks:
+## Goal
+
+Return to Local SEO after Smart Website proves the system.
+
+Local SEO should reuse component families but feel visually different.
+
+## Files to Inspect
+
+- `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx`
+- `src/domains/services/data/local-seo-authority.ts`
+- `src/domains/services/pages/local-seo-authority/index.tsx`
+
+## Local SEO Direction
+
+Local SEO should feel like:
+
+- local visibility
+- Google trust signals
+- listing consistency
+- service-area authority
+- review strength
+- search presence
+
+Color direction:
+
+- Use the main MindWP palette as the base.
+- Local SEO may use the short local trust palette as accent tokens only:
+  - `--local-primary`
+  - `--local-secondary`
+  - `--local-accent`
+  - `--local-accent-soft`
+- Do not make Local SEO feel like a separate brand.
+
+Do not reuse Smart Website enquiry-feed/operations visuals.
+
+## Local SEO Visual Motifs
+
+- search result cards
+- map pin/status
+- Google profile panel
+- listing consistency board
+- signal strength bars
+- local authority map
+- visibility cycle
+
+## Local SEO Mapping
+
+- Hero -> `HeroSplitSection` with `visibility` variant
+- Three assumptions -> `GridCardsSection` with `signal-board` variant
+- We start with your website -> `LayerStackSection` or `ScopeSection` with `signal-map` direction
+- Off-the-shelf SEO comparison -> `BeforeAfterSection` with `scorecard` variant
+- What changes when SEO works -> `LayerStackSection` with `signal-map` variant
+- What happens after we start -> `ProcessStepsSection` with `cycle` variant
+- What we handle -> `ScopeSection` with `service-map` variant
+- Real business proof -> `ProofStorySection` with `metric-story` variant
+- Is this right fit -> `FitCheckSection` with `decision-cards` variant
+- FAQ -> `AccordionFAQSection` with `single-column` variant
+- CTA -> `CTASection` with `split-card` variant
+- Related -> `RelatedContentSection` with `progression` variant
+
+## Unique Local SEO Patterns
+
+Prefer variants first.
+
+Possible unique patterns:
+
+- `LocalSignalMapSection` as a variant/pattern inside `LayerStackSection` signal-map
+- `VisibilityScorecardSection` as a variant/pattern inside `BeforeAfterSection` scorecard
+
+Create a separate unique component only if behavior/layout is genuinely different.
+
+## Phase 6 Exit Criteria
+
+- Local SEO required variants are defined.
+- Data gaps are identified.
+- No Smart Website-specific visuals are reused blindly.
+- start the dev server on 3001 test everything and fix.
+- once phase 6 varified automatically move to next phase.
+
+---
+
+# PHASE 7 — Local SEO Live Page Migration ✅ DONE
+
+## Goal
+
+Update the real Local SEO page using the new component variants.
+
+## Requirements
+
+- Keep domain data mostly unchanged.
+- Keep route and slug unchanged.
+- Use visibility/signal variants.
+- Keep CTA contract intact.
+- Add related content presentation if graph resolver supports it.
+- Do not manually hardcode related content lists.
+
+## Phase 7 Exit Criteria
+
+- `/services/local-seo-authority` uses new design system.
+- Page feels visually distinct from Smart Website.
+- Build and validators are clean.
+- start the dev server on 3001 test everything and fix.
+- Test the Page visualy.
+- imporve design and css of components.
+- once phase 5 varified automatically move to next phase.
+
+---
+
+# PHASE 8 — Related Content Expansion and Cleanup ✅ DONE
+
+## Goal
+
+Finalize related-content presentation after Smart Website and Local SEO migrations.
+Read and understand how the current related section is working.
+
+Smart Website can create the first redesigned `RelatedContentSection` during Phase 4/5.
+Phase 8 is for expansion, cleanup, and cross-page consistency.
+
+## Current Facts
+
+- Smart Website and Local SEO live renderers currently do not mount related content.
+- Related content is graph-derived.
+- Current presentation is generic card grouping.
+
+## Requirements
+
+- Preserve graph ownership.
+- No manual related lists.
+- Reuse the redesigned `RelatedContentSection` from Smart Website work.
+- Expand support across service, industry, resource, blog, and case-study cards.
+- Ensure the section adapts by page type and funnel role.
+- Avoid generic three-card styling.
+- Service pages should use progression framing.
+
+## Variants
+
+- `progression`
+- `cards`
+- `grouped`
+
+Preferred service-page framing:
+
+```text
+Understand -> Compare -> Act
+```
+
+## Phase 8 Exit Criteria
+
+- Related presentation is consistent across migrated page types.
+- Graph ownership preserved.
+- Smart Website and Local SEO can render related content without manual lists.
+- Related component does not visually overpower CTA or proof sections.
+- Test the Page visualy using playwright.
+- imporve design and css.
+- once phase 8 varified automatically move to next phase.
+
+---
+
+# PHASE 9 — Cleanup and Validation ⏳ PENDING
+
+## Cleanup Tasks
+
+- Remove prototype CSS after production migration.
+- Remove or archive prototype-only components after reusable components replace them.
+- Audit old CSS dependencies.
+- Delete legacy compatibility styles .
+- Remove unused classes.
+- Remove hardcoded prototype content.
+
+## Validation
+
+Run safe checks:
 
 - typecheck
 - lint
 - build if safe
-- targeted validators that previously flagged issues
+- targeted validators already part of the redesign path
+- `system:full` only when production migration is ready for full validation
 
-Do not modify validators to make prototype pass.
-Do not weaken production contracts.
-Do not touch live service route until prototype is approved.
+Rules:
+
+- Do not modify validators to make redesign pass.
+- Do not weaken CTA contracts.
+- Do not weaken graph contracts.
+- Do not weaken route ownership.
+- Do not weaken accessibility.
+
+## Final Exit Criteria
+
+- Official CSS system owns the redesign.
+- Header and footer are migrated.
+- Smart Website is migrated.
+- Local SEO is migrated.
+- Related content presentation is redesigned.
+- Prototype CSS is removed.
+- Build and validators are clean.

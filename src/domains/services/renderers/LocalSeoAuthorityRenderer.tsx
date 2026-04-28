@@ -1,26 +1,56 @@
-import {
-  ComparisonSection,
-  DualToneChecklistComparisonSection,
-  FeatureChecklistCardsSection,
-  ProblemCardsSection,
-  ProcessStepsSection,
-  ServiceSpectrumCardsSection,
-  StackedFeatureListSection,
-} from '@/components/reusable/sections';
-import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
+import {
+  AccordionFAQSection,
+  BeforeAfterSection,
+  CTASection,
+  FitCheckSection,
+  GridCardsSection,
+  type HeroSplitMetric,
+  HeroSplitSection,
+  LayerStackSection,
+  ProcessStepsSection,
+  ProofStorySection,
+  type SectionIconKey,
+} from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
+import { buildContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface LocalSeoAuthorityRendererProps {
   data: ServicePageDataBySlug['local-seo-authority'];
   slug: string;
 }
 
-export function LocalSeoAuthorityRenderer({ data, slug: _slug }: LocalSeoAuthorityRendererProps) {
-  const { hero, sections, cta } = data;
+const HERO_VISIBILITY_ROWS: readonly HeroSplitMetric[] = [
+  { label: 'Map pack · "near me"', value: 'Visible', status: 'good', iconKey: 'map-pin' },
+  { label: 'Service: emergency', value: 'Indexed', status: 'good', iconKey: 'search' },
+  { label: 'Citations match', value: '12 / 12', status: 'good', iconKey: 'shield' },
+  { label: 'Reviews this month', value: '+8', status: 'good', iconKey: 'sparkles' },
+];
+
+const MISCONCEPTION_ICON_KEYS: readonly SectionIconKey[] = ['alert', 'eye', 'clock'];
+
+const APPROACH_ICON_KEYS: readonly SectionIconKey[] = ['workflow', 'map-pin', 'repeat', 'shield'];
+
+const INTEGRATION_ICON_KEYS: readonly SectionIconKey[] = ['search', 'shield', 'route'];
+
+const PROCESS_ICON_KEYS: readonly SectionIconKey[] = ['eye', 'map-pin', 'repeat', 'trending'];
+
+const SCOPE_ICON_KEYS: readonly SectionIconKey[] = [
+  'database',
+  'clipboard',
+  'shield',
+  'route',
+  'line-chart',
+  'workflow',
+];
+
+const PROOF_ICON_KEYS: readonly SectionIconKey[] = ['minus', 'sparkles', 'check'];
+
+export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRendererProps) {
+  const { hero, sections, cta, inlineCta } = data;
   const {
     misconceptions,
     why,
@@ -32,144 +62,275 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: LocalSeoAuthori
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
+
+  const contactHref = buildContactHref({
+    system: slug,
+    sourceType: 'page',
+    slug,
+  });
 
   return (
-    <>
-      <ErrorBoundary fallback={<GenericErrorFallback />}>
-        <main role='main'>
-          {/* Hero Section */}
-          <ServiceHeroSection
-            badge={hero.badge}
-            title={hero.title}
-            description={hero.description}
-            heroActions={{
-              primaryActionVariant: 'primary',
+    <ErrorBoundary fallback={<GenericErrorFallback />}>
+      <main role='main'>
+        {/* Hero — visibility variant */}
+        <HeroSplitSection
+          variant='visibility'
+          kicker={hero.badge}
+          heading={{ title: hero.title, description: hero.description }}
+          chips={hero.list}
+          actions={[
+            { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
+            { label: SECONDARY_CTA_LABEL, href: contactHref },
+          ]}
+          visual={{
+            brand: 'mindwp · local visibility',
+            title: 'Search presence snapshot',
+            subtitle: 'Last 30 days · postcode area',
+            rows: HERO_VISIBILITY_ROWS,
+            footerPrimary: 'citations match · profile live',
+            footerSecondary: 'rank stable',
+          }}
+        />
+
+        {/* Three assumptions — signal-board grid */}
+        {misconceptions && (
+          <GridCardsSection
+            variant='signal-board'
+            tone='soft'
+            columns={3}
+            heading={{
+              kicker: misconceptions.badge,
+              title: misconceptions.title,
+              description: misconceptions.description,
             }}
-            cssPrefix={hero.cssPrefix}
-            backgroundColor={hero.backgroundColor}
-            list={hero.list}
+            items={misconceptions.painPoints.map((point, index) => ({
+              id: `misconception-${index}`,
+              iconKey: MISCONCEPTION_ICON_KEYS[index % MISCONCEPTION_ICON_KEYS.length],
+              badge: misconceptions.currentStateLabel,
+              title: point.before,
+              description: point.after,
+              status: 'risk' as const,
+            }))}
           />
+        )}
 
-          {misconceptions && (
-            <ProblemCardsSection
-              badge={misconceptions.badge}
-              title={misconceptions.title}
-              description={misconceptions.description}
-              painPoints={misconceptions.painPoints}
-              currentStateLabel={misconceptions.currentStateLabel}
-              structuredStateLabel={misconceptions.structuredStateLabel}
-              cssPrefix='website-seo-misconceptions'
-            />
-          )}
-
-          {why && (
-            <StackedFeatureListSection
-              badge={why.badge}
-              title={why.title}
-              description={why.description}
-              features={why.features}
-              tagline={why.tagline}
-              narrativeTitle={why.narrativeTitle}
-              narrativeParagraphs={why.narrativeParagraphs}
-              cssPrefix='website-seo-why'
-              backgroundColor='bg-base'
-            />
-          )}
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='website-seo-comparison'
-            />
-          )}
-
-          {integrations && (
-            <ServiceSpectrumCardsSection
-              badge={integrations.badge}
-              title={integrations.title}
-              description={integrations.description}
-              cards={integrations.cards}
-              cssPrefix='website-seo-integrations'
-            />
-          )}
-
-          {processSection && (
-            <ProcessStepsSection
-              badge={processSection.badge}
-              title={processSection.title}
-              description={processSection.description}
-              steps={processSection.steps}
-              columns={4}
-              cssPrefix='website-seo-process'
-              backgroundColor='bg-base'
-            />
-          )}
-
-          {scopeSection && (
-            <FeatureChecklistCardsSection
-              badge={scopeSection.badge}
-              title={scopeSection.title}
-              description={scopeSection.description}
-              featureCategories={scopeSection.services.map(
-                (service: (typeof scopeSection.services)[number]) => ({
-                  title: service.title,
-                  icon: service.icon,
-                  features: service.items,
-                })
-              )}
-              columns={3}
-              cssPrefix='website-seo-services'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='website-seo-proof'
-              backgroundColor='bg-base'
-            />
-          )}
-
-          {qualification && (
-            <DualToneChecklistComparisonSection
-              title={qualification.title}
-              description={qualification.description}
-              leftColumn={{
-                title: qualification.strongFitTitle,
-                items: qualification.strongFitItems,
-              }}
-              rightColumn={{
-                title: qualification.notDesignedTitle,
-                items: qualification.notDesignedItems,
-              }}
-              cssPrefix='website-seo-qualification'
-              backgroundColor='bg-alt'
-            />
-          )}
-
-          {/* FAQ Section */}
-          <FAQSection
-            badge={faqSection.badge}
-            title={faqSection.title}
-            description={faqSection.description}
-            faqs={faqSection.faqs}
-            cssPrefix={faqSection.cssPrefix}
+        {/* We start with your website — layer-stack signal-map */}
+        {why && (
+          <LayerStackSection
+            variant='signal-map'
+            heading={{
+              kicker: why.badge,
+              title: why.title,
+              description: why.description,
+            }}
+            layers={why.features.map((feature, index) => ({
+              key: `approach-${index}`,
+              index: String(index + 1).padStart(2, '0'),
+              iconKey: APPROACH_ICON_KEYS[index % APPROACH_ICON_KEYS.length],
+              title: feature.title,
+              meta: why.tagline,
+              summary: feature.description,
+            }))}
           />
+        )}
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            primaryActionVariant='white'
+        {/* Off-the-shelf SEO comparison — scorecard before/after */}
+        {comparison &&
+          (() => {
+            const before = comparison.items.find(item => item.type === 'before');
+            const after = comparison.items.find(item => item.type === 'after');
+            if (!before || !after) return null;
+            return (
+              <BeforeAfterSection
+                variant='scorecard'
+                heading={{
+                  kicker: 'Scorecard',
+                  title: comparison.header.title,
+                  description: comparison.header.description,
+                }}
+                before={{
+                  label: 'Off-the-shelf SEO',
+                  title: before.title,
+                  items: before.items,
+                }}
+                after={{
+                  label: 'Structured local',
+                  title: after.title,
+                  items: after.items,
+                }}
+              />
+            );
+          })()}
+
+        {/* What changes when SEO works — layer-stack signal-map */}
+        {integrations && (
+          <LayerStackSection
+            variant='signal-map'
+            heading={{
+              kicker: integrations.badge,
+              title: integrations.title,
+              description: integrations.description,
+            }}
+            layers={integrations.cards.map((card, index) => ({
+              key: `integration-${index}`,
+              index: String(index + 1).padStart(2, '0'),
+              iconKey: INTEGRATION_ICON_KEYS[index % INTEGRATION_ICON_KEYS.length],
+              title: card.title,
+              summary: card.description,
+              bullets: card.points,
+            }))}
           />
-        </main>
-      </ErrorBoundary>
-    </>
+        )}
+
+        {/* What happens after we start — process steps */}
+        {processSection && (
+          <ProcessStepsSection
+            variant='timeline'
+            tone='light'
+            heading={{
+              kicker: processSection.badge ?? 'How we work',
+              title: processSection.title,
+              description: processSection.description,
+            }}
+            steps={processSection.steps.map((step, index) => ({
+              index: step.number,
+              title: step.title,
+              description: step.description,
+              iconKey: PROCESS_ICON_KEYS[index % PROCESS_ICON_KEYS.length],
+            }))}
+          />
+        )}
+
+        {/* What we handle — grid cards (scope) */}
+        {scopeSection && (
+          <GridCardsSection
+            variant='feature-grid'
+            tone='soft'
+            columns={3}
+            heading={{
+              kicker: scopeSection.badge,
+              title: scopeSection.title,
+              description: scopeSection.description,
+            }}
+            items={scopeSection.services.map((service, index) => ({
+              id: `scope-${index}`,
+              iconKey: SCOPE_ICON_KEYS[index % SCOPE_ICON_KEYS.length],
+              title: service.title,
+              description: service.items.slice(0, 2).join(' · '),
+            }))}
+          />
+        )}
+
+        {/* Real business proof */}
+        {proof &&
+          (() => {
+            const before = proof.cards[0];
+            const change = proof.cards[1];
+            const after = proof.cards[2];
+            if (!before || !change || !after) return null;
+            return (
+              <ProofStorySection
+                variant='before-change-after'
+                tone='light'
+                heading={{
+                  kicker: 'Real outcome',
+                  title: proof.header.title,
+                  description: proof.header.description,
+                }}
+                before={{
+                  label: 'Before',
+                  title: before.title,
+                  body: before.description,
+                  iconKey: PROOF_ICON_KEYS[0],
+                }}
+                change={{
+                  label: 'What changed',
+                  title: change.title,
+                  body: change.description,
+                  iconKey: PROOF_ICON_KEYS[1],
+                }}
+                after={{
+                  label: 'After',
+                  title: after.title,
+                  body: after.description,
+                  iconKey: PROOF_ICON_KEYS[2],
+                }}
+              />
+            );
+          })()}
+
+        {/* Qualification — fit check decision cards */}
+        {qualification && (
+          <FitCheckSection
+            variant='two-column'
+            tone='soft'
+            heading={{
+              kicker: 'Fit check',
+              title: qualification.title,
+              description: qualification.description,
+            }}
+            good={{
+              label: 'Strong fit',
+              title: qualification.strongFitTitle,
+              items: qualification.strongFitItems.map(item => ({
+                text: item.title,
+                note: item.description,
+              })),
+            }}
+            not={{
+              label: 'Probably not the right fit',
+              title: qualification.notDesignedTitle,
+              items: qualification.notDesignedItems.map(item => ({
+                text: item.title,
+                note: item.description,
+              })),
+            }}
+          />
+        )}
+
+        {/* FAQ */}
+        {faqSection && (
+          <AccordionFAQSection
+            variant='single-column'
+            tone='light'
+            heading={{
+              kicker: faqSection.badge,
+              title: faqSection.title,
+              description: faqSection.description,
+            }}
+            items={faqSection.faqs.map((faq, index) => ({
+              id: `local-seo-faq-${index}`,
+              question: faq.question,
+              answer: faq.answer,
+            }))}
+          />
+        )}
+
+        {/* Inline CTA */}
+        {inlineCta && (
+          <CTASection
+            variant='soft-panel'
+            tone='soft'
+            heading={{
+              kicker: 'Quick check',
+              title: inlineCta.title,
+              description: inlineCta.description,
+            }}
+            actions={[
+              { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
+              { label: SECONDARY_CTA_LABEL, href: contactHref },
+            ]}
+            microCopy='No commitment · we send a plain-English snapshot back'
+          />
+        )}
+
+        <PrimaryCTASection
+          title={cta.title}
+          description={cta.description}
+          primaryActionVariant='white'
+        />
+      </main>
+    </ErrorBoundary>
   );
 }
 

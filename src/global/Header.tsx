@@ -36,38 +36,27 @@ export async function Header() {
   }));
 
   return (
-    <header className='header sticky top-0 z-50 bg-white border-b shadow-sm'>
-      <div className='header-container l-container'>
-        <div className='header-content l-row l-items-center l-justify-between h-16'>
-          {/* Logo */}
-          <div className='header-logo l-row l-items-center'>
-            <InternalLink href='/' className='header-logo-link hover:opacity-80 transition-opacity'>
-              <Logo />
+    <header className='header'>
+      <div className='rd-container header__inner'>
+        <InternalLink href='/' className='header__brand' aria-label='MindWP home'>
+          <Logo />
+        </InternalLink>
+
+        <nav className='header__nav' aria-label='Primary'>
+          {navLinks.map(link => (
+            <InternalLink key={link.label} href={link.to} className='header__nav-link'>
+              {link.label}
             </InternalLink>
-          </div>
+          ))}
+        </nav>
 
-          {/* Desktop Navigation */}
-          <nav className='header-nav md:l-row hidden l-items-center l-gap-8'>
-            {navLinks.map((link, index) => (
-              <InternalLink
-                key={link.label}
-                href={link.to}
-                className={`link-primary header-nav-link header-nav-link-${index + 1} transition-colors`}
-              >
-                {link.label}
-              </InternalLink>
-            ))}
-          </nav>
-
-          {/* Primary CTA */}
-          <nav className='header-nav md:l-row hidden l-items-center l-gap-6'>
-            <a href={primaryAction.href} className='btn btn-primary btn-small header-button-2'>
-              {primaryAction.label}
-            </a>
-          </nav>
-
-          <HeaderMobileMenuIsland navLinks={navLinks} />
+        <div className='header__actions'>
+          <a href={primaryAction.href} className='rd-btn rd-btn--primary rd-btn--sm'>
+            {primaryAction.label}
+          </a>
         </div>
+
+        <HeaderMobileMenuIsland navLinks={navLinks} />
       </div>
     </header>
   );

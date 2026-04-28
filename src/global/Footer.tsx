@@ -31,11 +31,9 @@ export function Footer() {
   ];
 
   return (
-    <footer className='footer footer--primary'>
-      <div className='footer__container'>
-        {/* Main Footer Content */}
+    <footer className='footer'>
+      <div className='rd-container'>
         <div className='footer__grid'>
-          {/* Brand Column */}
           <div className='footer__column footer__column--brand'>
             <Logo variant='footer' />
             <p className='footer__description'>
@@ -45,8 +43,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Services Column */}
-          <div className='footer__column footer__column--services'>
+          <div className='footer__column'>
             <h4 className='footer__heading'>Services</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
@@ -75,8 +72,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company Column */}
-          <div className='footer__column footer__column--company'>
+          <div className='footer__column'>
             <h4 className='footer__heading'>Company</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
@@ -102,8 +98,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources Column */}
-          <div className='footer__column footer__column--resources'>
+          <div className='footer__column'>
             <h4 className='footer__heading'>Resources</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
@@ -127,7 +122,6 @@ export function Footer() {
 
         <div className='footer__separator' />
 
-        {/* Utility Links */}
         <div className='footer__utility-links'>
           {utilityLinks.map((link, index) => (
             <span key={link.label} className='footer__utility-item'>
@@ -141,10 +135,8 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Row - Copyright & Social */}
         <div className='footer__bottom'>
           <p className='footer__copyright'>© {currentYear} MindWP. All rights reserved.</p>
-          {/* Social links are intentionally hidden until accounts are ready */}
           <div className='footer__social footer__social--hidden'>
             <button className='footer__social-link' disabled>
               <Facebook className='footer__social-icon' />

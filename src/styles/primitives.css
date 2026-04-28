@@ -1,268 +1,412 @@
-/* =========================================================
-   Global CSS Primitives (semantic, site-wide)
-   Rules:
-   - Homepage is source of truth
-   ========================================================= */
+/*
+ * PRIMITIVES — small, reusable UI atoms.
+ *
+ * Owns: buttons, links, cards, panels, badges/kickers, status dots,
+ * icon tiles, forms, accordion primitive, focus/hover states.
+ *
+ * Hover rules are STRICT and tokenized:
+ *   - btn-primary on dark surface: white bg, dark text, soft-white hover.
+ *   - btn-primary on light surface: navy bg, white text, deeper navy hover.
+ *   - No "cyan jump" on hover by default.
+ *
+ * All transitions respect prefers-reduced-motion.
+ *
+ * See docs/Planning/audit7.md PHASE 1 for ownership rules.
+ */
 
-@layer properties {
-  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
-    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-    *,
-    :before,
-    :after,
-    ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
-      --tw-rotate-x: rotateX(0);
-      --tw-rotate-y: rotateY(0);
-      --tw-rotate-z: rotateZ(0);
-      --tw-skew-x: skewX(0);
-      --tw-skew-y: skewY(0);
-      --tw-space-y-reverse: 0;
-      --tw-divide-y-reverse: 0;
-      --tw-border-style: solid;
-      --tw-gradient-position: initial;
-      --tw-gradient-from: #0000;
-      --tw-gradient-via: #0000;
-      --tw-gradient-to: #0000;
-      --tw-gradient-stops: initial;
-      --tw-gradient-via-stops: initial;
-      --tw-gradient-from-position: 0%;
-      --tw-gradient-via-position: 50%;
-      --tw-gradient-to-position: 100%;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
-      --tw-blur: initial;
-      --tw-brightness: initial;
-      --tw-contrast: initial;
-      --tw-grayscale: initial;
-      --tw-hue-rotate: initial;
-      --tw-invert: initial;
-      --tw-opacity: initial;
-      --tw-saturate: initial;
-      --tw-sepia: initial;
-      --tw-drop-shadow: initial;
-      --tw-drop-shadow-color: initial;
-      --tw-drop-shadow-alpha: 100%;
-      --tw-drop-shadow-size: initial;
-      --tw-backdrop-blur: initial;
-      --tw-backdrop-brightness: initial;
-      --tw-backdrop-contrast: initial;
-      --tw-backdrop-grayscale: initial;
-      --tw-backdrop-hue-rotate: initial;
-      --tw-backdrop-invert: initial;
-      --tw-backdrop-opacity: initial;
-      --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
-      --tw-duration: initial;
-      --tw-ease: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
-    }
-  }
+/* ---------- Focus ---------- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    border-radius: var(--radius-sm);
 }
 
-@layer base {
-  *,
-  :after,
-  :before,
-  ::backdrop {
-    box-sizing: border-box;
-    border: 0 solid;
-    margin: 0;
-    padding: 0;
-  }
+/* ---------- Links ---------- */
+.rd-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in oklch, var(--accent) 35%, transparent);
+    transition: color var(--dur-fast) var(--ease-out),
+        border-color var(--dur-fast) var(--ease-out);
+}
 
-  html,
-  :host {
-    -webkit-text-size-adjust: 100%;
-    tab-size: 4;
-    line-height: 1.5;
-    font-family: var(
-      --default-font-family,
-      ui-sans-serif,
-      system-ui,
-      sans-serif,
-      'Apple Color Emoji',
-      'Segoe UI Emoji',
-      'Segoe UI Symbol',
-      'Noto Color Emoji'
-    );
-    font-feature-settings: var(--default-font-feature-settings, normal);
-    font-variation-settings: var(--default-font-variation-settings, normal);
-    -webkit-tap-highlight-color: transparent;
-  }
+.rd-link:hover {
+    color: color-mix(in oklch, var(--accent) 75%, var(--primary));
+    border-bottom-color: currentColor;
+}
 
-  body {
-    font-size: var(--font-base);
-    font-weight: var(--font-weight-normal);
-    color: var(--c-text-muted);
-    line-height: var(--line-height-prose);
-  }
+.bg-dark .rd-link,
+.bg-gradient-hero .rd-link,
+.bg-gradient-blue .rd-link,
+.bg-gradient-compare .rd-link,
+.bg-gradient-cta .rd-link {
+    color: var(--accent-soft);
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: inherit;
-    font-weight: inherit;
-    color: var(--c-text);
-  }
+.bg-dark .rd-link:hover,
+.bg-gradient-hero .rd-link:hover,
+.bg-gradient-blue .rd-link:hover,
+.bg-gradient-compare .rd-link:hover,
+.bg-gradient-cta .rd-link:hover {
+    color: var(--surface);
+}
 
-  button,
-  input,
-  select,
-  optgroup,
-  textarea {
-    font: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    letter-spacing: inherit;
+/* ---------- Buttons ---------- */
+.rd-btn {
+    --btn-bg: var(--primary);
+    --btn-fg: var(--surface);
+    --btn-bg-hover: color-mix(in oklch, var(--primary) 88%, black);
+    --btn-border: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    line-height: 1;
+    letter-spacing: 0.01em;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 1px solid var(--btn-border);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease-out),
+        color var(--dur-fast) var(--ease-out),
+        border-color var(--dur-fast) var(--ease-out),
+        transform var(--dur-fast) var(--ease-out);
+}
+
+.rd-btn:hover {
+    background: var(--btn-bg-hover);
+}
+
+.rd-btn:active {
+    transform: translateY(1px);
+}
+
+.rd-btn--lg {
+    padding: 1rem 1.85rem;
+    font-size: var(--text-base);
+}
+
+.rd-btn--sm {
+    padding: 0.6rem 1.1rem;
+    font-size: var(--text-xs);
+}
+
+/* primary on light: navy bg, white text, deeper navy on hover */
+.rd-btn--primary {
+    --btn-bg: var(--primary);
+    --btn-fg: var(--surface);
+    --btn-bg-hover: color-mix(in oklch, var(--primary) 80%, black);
+}
+
+/* primary on dark: invert — white bg, dark text, soft-white on hover */
+.bg-dark .rd-btn--primary,
+.bg-gradient-hero .rd-btn--primary,
+.bg-gradient-blue .rd-btn--primary,
+.bg-gradient-compare .rd-btn--primary,
+.bg-gradient-cta .rd-btn--primary,
+.bg-gradient-cta-4 .rd-btn--primary {
+    --btn-bg: var(--surface);
+    --btn-fg: var(--primary);
+    --btn-bg-hover: color-mix(in oklch, var(--surface) 88%, var(--accent-soft));
+}
+
+.rd-btn--secondary {
+    --btn-bg: transparent;
+    --btn-fg: var(--primary);
+    --btn-bg-hover: color-mix(in oklch, var(--primary) 6%, transparent);
+    --btn-border: color-mix(in oklch, var(--primary) 22%, transparent);
+}
+
+.bg-dark .rd-btn--secondary,
+.bg-gradient-hero .rd-btn--secondary,
+.bg-gradient-blue .rd-btn--secondary,
+.bg-gradient-compare .rd-btn--secondary,
+.bg-gradient-cta .rd-btn--secondary,
+.bg-gradient-cta-4 .rd-btn--secondary {
+    --btn-bg: transparent;
+    --btn-fg: var(--surface);
+    --btn-bg-hover: color-mix(in oklch, var(--surface) 12%, transparent);
+    --btn-border: color-mix(in oklch, var(--surface) 35%, transparent);
+}
+
+.rd-btn--ghost {
+    --btn-bg: transparent;
+    --btn-fg: currentColor;
+    --btn-bg-hover: color-mix(in oklch, currentColor 8%, transparent);
+    --btn-border: transparent;
+}
+
+.rd-btn[disabled],
+.rd-btn[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* ---------- Cards ---------- */
+.rd-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: clamp(1.25rem, 2vw, 1.75rem);
+    background: var(--surface);
+    border: var(--border-1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--dur-fast) var(--ease-out),
+        box-shadow var(--dur-fast) var(--ease-out),
+        border-color var(--dur-fast) var(--ease-out);
+}
+
+.rd-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-panel);
+    border-color: var(--border-strong);
+}
+
+.bg-dark .rd-card,
+.bg-gradient-hero .rd-card,
+.bg-gradient-blue .rd-card,
+.bg-gradient-compare .rd-card,
+.bg-gradient-cta .rd-card {
+    background: color-mix(in oklch, var(--surface) 6%, transparent);
+    border-color: var(--border-on-dark);
     color: inherit;
-    opacity: 1;
-    background-color: #0000;
-    border-radius: 0;
-  }
+    backdrop-filter: blur(8px);
+}
 
-  button,
-  input:where([type='button'], [type='reset'], [type='submit']) {
-    appearance: button;
-  }
+/* ---------- Panels (heavier than cards) ---------- */
+.rd-panel-light {
+    background: var(--surface);
+    border: var(--border-1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-panel);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
 
-  * {
-    border-color: var(--c-border-alpha);
-    outline-color: var(--ring);
-  }
+.rd-panel-dark {
+    background: var(--gradient-dark);
+    color: var(--fg-on-dark-strong);
+    border: var(--border-1-dark);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hero);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
 
-  @supports (color: color-mix(in lab, red, red)) {
-    * {
-      outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+/* ---------- Badges / kickers (small label primitive) ---------- */
+.rd-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-meta);
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    background: var(--accent-tint-08);
+    color: var(--accent);
+    border: 1px solid color-mix(in oklch, var(--accent) 25%, transparent);
+}
+
+.rd-badge--soft {
+    background: var(--surface-muted);
+    color: var(--ink-muted);
+    border-color: var(--border-light);
+}
+
+.rd-badge--good {
+    background: color-mix(in oklch, var(--status-good) 14%, transparent);
+    color: var(--status-good);
+    border-color: color-mix(in oklch, var(--status-good) 35%, transparent);
+}
+
+.rd-badge--risk {
+    background: color-mix(in oklch, var(--status-risk) 14%, transparent);
+    color: var(--status-risk);
+    border-color: color-mix(in oklch, var(--status-risk) 35%, transparent);
+}
+
+/* ---------- Status dots ---------- */
+.rd-dot {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: var(--radius-pill);
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.rd-dot--good {
+    color: var(--status-good);
+}
+
+.rd-dot--risk {
+    color: var(--status-risk);
+}
+
+.rd-dot--warn {
+    color: var(--status-warn);
+}
+
+.rd-dot--info {
+    color: var(--accent);
+}
+
+/* ---------- Icon tiles ---------- */
+.rd-icon-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: var(--radius-md);
+    background: var(--accent-tint-14);
+    color: var(--accent);
+    border: 1px solid color-mix(in oklch, var(--accent) 25%, transparent);
+}
+
+.bg-dark .rd-icon-tile,
+.bg-gradient-hero .rd-icon-tile,
+.bg-gradient-blue .rd-icon-tile,
+.bg-gradient-compare .rd-icon-tile,
+.bg-gradient-cta .rd-icon-tile {
+    background: var(--accent-soft-tint-22);
+    color: var(--accent-soft);
+    border-color: var(--border-on-dark);
+}
+
+.rd-icon-tile--lg {
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+.rd-icon-tile--sm {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+/* ---------- Forms ---------- */
+.rd-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.rd-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.rd-input,
+.rd-textarea,
+.rd-select {
+    width: 100%;
+    padding: 0.75rem 0.95rem;
+    border: var(--border-1-strong);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    transition: border-color var(--dur-fast) var(--ease-out),
+        box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.rd-input:focus,
+.rd-textarea:focus,
+.rd-select:focus {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-focus);
+    outline: none;
+}
+
+.rd-textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+/* ---------- Accordion primitive ---------- */
+.rd-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.rd-accordion__item {
+    border: var(--border-1);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    overflow: hidden;
+    transition: border-color var(--dur-fast) var(--ease-out),
+        box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.rd-accordion__item[data-state="open"] {
+    border-color: color-mix(in oklch, var(--accent) 35%, transparent);
+    box-shadow: var(--shadow-card);
+}
+
+.rd-accordion__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: var(--text-base);
+}
+
+.rd-accordion__trigger:hover {
+    background: color-mix(in oklch, var(--accent) 4%, transparent);
+}
+
+.rd-accordion__icon {
+    flex-shrink: 0;
+    transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.rd-accordion__item[data-state="open"] .rd-accordion__icon {
+    transform: rotate(180deg);
+}
+
+.rd-accordion__content {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--ink-muted);
+    line-height: var(--leading-relaxed);
+}
+
+.rd-accordion__item[data-state="closed"] .rd-accordion__content {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rd-card,
+    .rd-btn,
+    .rd-link,
+    .rd-input,
+    .rd-textarea,
+    .rd-select,
+    .rd-accordion__item,
+    .rd-accordion__icon {
+        transition: none !important;
     }
-  }
 
-  html {
-    font-size: var(--font-size);
-  }
-
-  h1 {
-    font-size: var(--font-5xl);
-    font-weight: var(--font-weight-semibold);
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-
-  h2 {
-    font-size: var(--font-4xl);
-    font-weight: var(--font-weight-semibold);
-    letter-spacing: -0.015em;
-    line-height: 1.25;
-  }
-
-  h3 {
-    font-size: var(--font-2xl);
-    font-weight: var(--font-weight-semibold);
-    line-height: 1.35;
-  }
-
-  h4 {
-    font-size: var(--font-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-normal);
-  }
-
-  h5 {
-    font-size: var(--font-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-normal);
-  }
-
-  h6 {
-    font-size: var(--font-base);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-normal);
-  }
-
-  label:not([class*='text-']),
-  button:not([class*='text-']) {
-    font-size: var(--font-base);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-normal);
-  }
-
-  input:not([class*='text-']) {
-    font-size: var(--font-base);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
-  }
+    .rd-card:hover {
+        transform: none;
+    }
 }
-
-/* === TAILWIND BRIDGE (migrated from globals) === */
-
-/* Theme Integration for Tailwind v4 */
-@theme inline {
-  --color-background: var(--c-bg);
-  --color-foreground: var(--c-dark);
-  --color-card: var(--c-surface);
-  --color-card-foreground: var(--c-dark);
-  --color-primary: var(--c-primary);
-  --color-primary-foreground: var(--c-text-inverse);
-  --color-secondary: var(--c-dark);
-  --color-secondary-foreground: var(--c-text-inverse);
-  --color-muted: var(--c-bg);
-  --color-muted-foreground: var(--c-text-muted);
-  --color-accent: var(--c-accent);
-  --color-accent-foreground: var(--c-text-inverse);
-  --color-destructive: var(--c-primary);
-  --color-destructive-foreground: var(--c-text-inverse);
-  --color-border: var(--c-border-alpha);
-  --color-input: var(--input);
-  --color-input-background: var(--input-background);
-  --color-ring: var(--ring);
-
-  /* Tailwind v4 foundation tokens (keep defaults enabled) */
-  --spacing: 0.25rem;
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
-  --breakpoint-2xl: 96rem;
-
-  --radius: 0.625rem;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
-
-/* ==============================================
-   BASE STYLES
-   ============================================== */
-
-/* ==============================================
-   TYPOGRAPHY - AUTOMATIC SIZING
-   Only applies when Tailwind text-* classes are NOT present
-   ============================================== */
-
-/* === BASE + UTILITIES (migrated from design-system) === */
-
-/* Component-level styling has moved to src/styles/components.css */

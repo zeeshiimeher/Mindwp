@@ -4,6 +4,7 @@ import Script from 'next/script';
 
 import { Footer } from '@/global/Footer';
 import { Header } from '@/global/Header';
+import { RevealMotion } from '@/global/RevealMotion';
 import { resolveSEO } from '@/lib/seo/seoResolver';
 import { registerGlobalErrorHandlers } from '@/lib/system/logger';
 
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <RevealMotion />
         <Script
           src='https://www.googletagmanager.com/gtag/js?id=G-XXXX'
           strategy='afterInteractive'

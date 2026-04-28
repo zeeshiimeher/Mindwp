@@ -1,0 +1,380 @@
+/* ==========================================================================
+   Foundation Tokens (Canonical Runtime Truth)
+
+   Token Selection Guide (Style-Guide Contract)
+   1) Use semantic --c-* tokens in components/pages first.
+   2) Use --brand-* only to define semantic tokens, never directly in UI.
+   3) Keep alias chains shallow (semantic → brand, one hop max).
+   4) Add component helper tokens only when reused by multiple components.
+   ========================================================================== */
+
+:root,
+:host {
+  /* =====================================================================
+     §1  SPACING SCALE
+     ===================================================================== */
+  --space-half: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+
+  /* =====================================================================
+     §2  TYPOGRAPHY SCALE
+     ===================================================================== */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.563rem;
+  --font-3xl: 1.953rem;
+  --font-4xl: 2.441rem;
+  --font-5xl: 3.052rem;
+
+  --font-size: 16px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-ui: 1.55;
+  --line-height-prose: 1.6;
+  --line-height-prose-relaxed: 1.7;
+  --line-height-quote: 1.625;
+
+  /* =====================================================================
+     §3  LAYOUT / RADIUS / SHADOW
+     ===================================================================== */
+  --max-width: 1366px;
+  --site-padding-y: var(--space-9);
+  --site-padding-x: var(--space-7);
+
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-hover: 0 4px 12px rgb(0 0 0 / 0.1);
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --blur-3xl: 64px;
+
+  /* =====================================================================
+     §4  RAW PALETTE (oklch base colors — never reference in components)
+     ===================================================================== */
+  --color-red-50: oklch(0.971 0.013 17.38);
+  --color-red-100: oklch(0.936 0.032 17.717);
+  --color-red-200: oklch(0.885 0.062 18.334);
+  --color-red-500: oklch(0.637 0.237 25.331);
+  --color-red-600: oklch(0.577 0.245 27.325);
+  --color-red-700: oklch(0.505 0.213 27.518);
+  --color-amber-500: oklch(0.769 0.188 70.08);
+  --color-yellow-50: oklch(0.987 0.026 102.212);
+  --color-yellow-200: oklch(0.945 0.129 101.54);
+  --color-yellow-500: oklch(0.795 0.184 86.047);
+  --color-green-500: oklch(0.723 0.219 149.579);
+  --color-green-600: oklch(0.627 0.194 149.214);
+  --color-emerald-500: oklch(0.696 0.17 162.48);
+  --color-teal-500: oklch(0.704 0.14 182.503);
+  --color-cyan-500: oklch(0.715 0.143 215.221);
+  --color-blue-500: oklch(0.623 0.214 259.815);
+  --color-blue-600: oklch(0.546 0.245 262.881);
+  --color-indigo-500: oklch(0.585 0.233 277.117);
+  --color-purple-500: oklch(0.627 0.265 303.9);
+  --color-purple-600: oklch(0.558 0.288 302.321);
+  --color-pink-500: oklch(0.656 0.241 354.308);
+  --color-rose-500: oklch(0.645 0.246 16.439);
+  --color-slate-500: oklch(0.554 0.046 257.417);
+  --color-gray-300: oklch(0.872 0.01 258.338);
+  --color-gray-500: oklch(0.551 0.027 264.364);
+  --color-zinc-500: oklch(0.552 0.016 285.938);
+
+  /* =====================================================================
+     §5  BRAND PRIMITIVES (source hex values)
+     ===================================================================== */
+  --brand-primary: #0a1628;
+  --brand-secondary: #2e5c8a;
+  --brand-accent: #4a9ab2;
+  --brand-primary-mid: #1b2845;
+
+  --brand-neutral-700: #3d4b5c;
+  --brand-neutral-200: #e5e7eb;
+  --brand-white: #ffffff;
+
+  --brand-primary-light: #60a5fa;
+
+  --brand-dark: #0a0a0a;
+  --brand-grey: #f8fafc;
+  --brand-grey-light: #f1f5f9;
+  --brand-blue-lightest: #eff6ff;
+  --brand-accent-lightest: #f0fdfa;
+  --brand-accent-lighter: #ccfbf1;
+  --brand-yellow-star: #fbbf24;
+
+  /* =====================================================================
+     §6  BRAND SHADES (derived from §5)
+     ===================================================================== */
+  --brand-primary-90: color-mix(in srgb, var(--brand-primary) 90%, transparent);
+  --brand-primary-30: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  --brand-primary-10: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+  --brand-secondary-10: color-mix(in srgb, var(--brand-secondary) 10%, transparent);
+  --brand-secondary-30: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  --brand-dark-90: color-mix(in srgb, var(--brand-dark) 90%, transparent);
+  --brand-dark-30: color-mix(in srgb, var(--brand-dark) 30%, transparent);
+  --brand-dark-10: color-mix(in srgb, var(--brand-dark) 10%, transparent);
+  --brand-accent-10: color-mix(in srgb, var(--brand-accent) 10%, transparent);
+  --brand-accent-90: color-mix(in srgb, var(--brand-accent) 90%, transparent);
+
+  --brand-white-90: color-mix(in srgb, var(--brand-white) 90%, transparent);
+  --brand-white-80: color-mix(in srgb, var(--brand-white) 80%, transparent);
+  --brand-white-70: color-mix(in srgb, var(--brand-white) 70%, transparent);
+  --brand-white-60: color-mix(in srgb, var(--brand-white) 60%, transparent);
+  --brand-white-30: color-mix(in srgb, var(--brand-white) 30%, transparent);
+  --brand-white-15: color-mix(in srgb, var(--brand-white) 15%, transparent);
+  --brand-white-10: color-mix(in srgb, var(--brand-white) 10%, transparent);
+  --shadow-ink-25: color-mix(in srgb, var(--brand-dark) 25%, transparent);
+  --border-default: #0000001a;
+  --border-light: #0000000d;
+
+  --brand-logo-ring: var(--color-gray-300);
+
+  /* =====================================================================
+     §7  SEMANTIC UI TOKENS (main system — use these in components)
+     ===================================================================== */
+
+  /* Backgrounds */
+  --c-bg: var(--brand-grey); /* #f8fafc — page background */
+  --c-bg-alt: var(--brand-grey-light); /* #f1f5f9 — alternating section bg */
+  --c-surface: var(--brand-white); /* #fff — cards, elevated */
+
+  /* Text */
+  --c-text: var(--brand-primary); /* #0A1628 — headings */
+  --c-text-muted: var(--brand-neutral-700); /* #3D4B5C — body */
+  --c-text-inverse: var(--brand-white); /* #fff — on dark bg */
+
+  /* Brand colors (semantic) */
+  --c-primary: var(--brand-primary);
+  --c-secondary: var(--brand-secondary);
+  --c-accent: var(--brand-accent);
+
+  /* Borders */
+  --c-border: var(--brand-neutral-200);
+  --c-border-alpha: var(--border-default);
+
+  /* Dark */
+  --c-dark: var(--brand-dark); /* #0a0a0a — near-black */
+
+  /* Status */
+  --c-success: var(--color-green-600);
+  --c-success-soft: var(--brand-accent);
+  --c-success-bg: var(--brand-accent-10);
+  --c-success-500: var(--color-green-500);
+  --c-warning: var(--brand-dark); /* near-black: text-on-yellow in callouts */
+  --c-warning-bg: var(--brand-dark-10);
+  --c-warning-50: var(--color-yellow-50);
+  --c-warning-200: var(--color-yellow-200);
+  --c-warning-500: var(--color-yellow-500);
+  --c-danger: var(--color-red-600);
+  --c-danger-bg: var(--color-red-50);
+  --c-danger-100: var(--color-red-100);
+  --c-danger-200: var(--color-red-200);
+  --c-danger-500: var(--color-red-500);
+  --c-danger-700: var(--color-red-700);
+  --c-info-bg: var(--brand-primary-10);
+
+  /* Accent extensions */
+  --c-accent-blue: var(--brand-primary-light); /* #60a5fa */
+  --c-star: var(--brand-yellow-star); /* #fbbf24 */
+
+  /* Inputs / Focus */
+  --input: transparent;
+  --input-background: var(--brand-grey-light);
+  --ring: var(--brand-primary);
+  --focus-ring-color: color-mix(in oklab, var(--ring) 35%, transparent);
+  --focus-ring-shadow: 0 0 0 3px var(--focus-ring-color);
+
+  /* Inverse (white-alpha scale) */
+  --color-inverse-100: var(--brand-white);
+  --color-inverse-90: var(--brand-white-90);
+  --color-inverse-80: var(--brand-white-80);
+  --color-inverse-70: var(--brand-white-70);
+  --color-inverse-60: var(--brand-white-60);
+  --color-inverse-30: var(--brand-white-30);
+  --color-inverse-15: var(--brand-white-15);
+  --color-inverse-10: var(--brand-white-10);
+
+  /* Surface accents */
+  --color-surface-accent-blue: var(--brand-blue-lightest);
+  --color-surface-accent: var(--brand-accent-lightest);
+  --color-surface-accent-strong: var(--brand-accent-lighter);
+  --color-surface-strong-90: var(--brand-dark-90);
+  --color-surface-strong-30: var(--brand-dark-30);
+
+  /* Action / accent shades */
+  --color-accent-secondary-30: var(--brand-secondary-30);
+  --color-accent-warning-90: var(--brand-dark-90);
+  --color-action-primary-90: var(--brand-primary-90);
+  --color-action-primary-30: var(--brand-primary-30);
+
+  /* Shadcn-style sidebar tokens */
+  --sidebar-border: 214.3 31.8% 91.4%;
+  --sidebar-accent: 210 40% 96.1%;
+
+  /* =====================================================================
+     §8  ICON TOKENS (bg / text per icon type)
+     ===================================================================== */
+  --icon-text-primary: var(--brand-primary);
+  --icon-bg-primary: var(--brand-primary-10);
+  --icon-text-secondary: var(--brand-secondary);
+  --icon-bg-secondary: var(--brand-secondary-10);
+  --icon-text-accent: var(--brand-accent);
+  --icon-bg-accent: var(--brand-accent-10);
+  --icon-text-success: var(--brand-accent); /* alias: success ≡ accent (semantic) */
+  --icon-bg-success: var(--brand-accent-10); /* alias: success ≡ accent (semantic) */
+  --icon-text-warning: var(--color-amber-500); /* FIXED: real amber, was near-black */
+  --icon-bg-warning: color-mix(
+    in srgb,
+    var(--color-amber-500) 10%,
+    transparent
+  ); /* FIXED: real amber tint */
+  --icon-text-info: var(--brand-secondary); /* alias: info ≡ secondary (semantic) */
+  --icon-bg-info: var(--brand-secondary-10); /* alias: info ≡ secondary (semantic) */
+  --icon-text-neutral: var(--brand-dark);
+  --icon-bg-neutral: var(--brand-dark-10);
+
+  /* =====================================================================
+     §8b VARIANT TOKENS (reuse icon tokens for badge/card/text accents)
+     ===================================================================== */
+  --variant-text-primary: var(--brand-primary);
+  --variant-text-secondary: var(--brand-secondary);
+  --variant-text-accent: var(--brand-accent);
+  --variant-text-success: var(--brand-accent); /* alias: success ≡ accent (semantic) */
+  --variant-text-warning: var(--color-amber-500); /* FIXED: real amber, was near-black */
+  --variant-text-info: var(--brand-secondary); /* alias: info ≡ secondary (semantic) */
+  --variant-text-neutral: var(--brand-dark);
+
+  --variant-border-primary: var(--brand-primary-10);
+  --variant-border-secondary: var(--brand-secondary-10);
+  --variant-border-accent: var(--brand-accent-10);
+  --variant-border-success: var(--brand-accent-10); /* alias: success ≡ accent (semantic) */
+  --variant-border-warning: color-mix(
+    in srgb,
+    var(--color-amber-500) 30%,
+    transparent
+  ); /* FIXED: real amber border */
+  --variant-border-info: var(--brand-secondary-10); /* alias: info ≡ secondary (semantic) */
+  --variant-border-neutral: var(--brand-dark-10);
+
+  /* =====================================================================
+     §9  GRADIENT TOKENS
+     ===================================================================== */
+
+  /* ---- Core gradients (max 8 — use ONLY these in components) ---- */
+  --gradient-primary: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--brand-secondary) 0%,
+    var(--brand-primary) 100%
+  );
+  --gradient-accent: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-secondary) 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    var(--brand-primary),
+    var(--brand-primary-mid),
+    var(--brand-secondary)
+  );
+  --gradient-dark: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-dark) 100%);
+  --gradient-surface-soft: linear-gradient(135deg, var(--c-bg-alt) 0%, var(--c-surface) 100%);
+  --gradient-surface-muted: linear-gradient(
+    135deg,
+    var(--brand-grey) 0%,
+    var(--brand-blue-lightest) 100%
+  );
+
+  /* Gradient endpoint tokens (for gradient icon fills) */
+  --gradient-primary-from: var(--brand-primary);
+  --gradient-primary-to: var(--brand-secondary);
+  --gradient-secondary-from: var(--brand-secondary);
+  --gradient-secondary-to: var(--brand-primary);
+  --gradient-accent-from: var(--brand-accent);
+  --gradient-accent-to: var(--brand-secondary);
+
+  --gradient-hero-fade: linear-gradient(
+    to bottom,
+    color-mix(
+      in oklab,
+      var(--gradient-hero-fade-start, var(--c-bg)) var(--gradient-hero-fade-strength, 50%),
+      transparent
+    ),
+    var(--c-bg)
+  );
+
+  /* =====================================================================
+     §10  COMPONENT RHYTHM
+     ===================================================================== */
+  --card-padding: var(--space-6);
+}
+
+@media (width >= 992px) and (width <= 1180px) {
+  :root,
+  :host {
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.188rem;
+    --font-2xl: 1.438rem;
+    --font-3xl: 1.75rem;
+    --font-4xl: 2.188rem;
+    --font-5xl: 2.75rem;
+  }
+}
+
+@media (width >= 769px) and (width <= 991px) {
+  :root,
+  :host {
+    --font-xs: 0.75rem;
+    --font-sm: 0.813rem;
+    --font-base: 0.938rem;
+    --font-lg: 1.063rem;
+    --font-xl: 1.125rem;
+    --font-2xl: 1.313rem;
+    --font-3xl: 1.625rem;
+    --font-4xl: 2rem;
+    --font-5xl: 2.5rem;
+  }
+}
+
+@media (width >= 360px) and (width <= 768px) {
+  :root,
+  :host {
+    --font-xs: 0.688rem;
+    --font-sm: 0.813rem;
+    --font-base: 0.938rem;
+    --font-lg: 1rem;
+    --font-xl: 1.125rem;
+    --font-2xl: 1.25rem;
+    --font-3xl: 1.5rem;
+    --font-4xl: 1.875rem;
+    --font-5xl: 2.25rem;
+  }
+}
