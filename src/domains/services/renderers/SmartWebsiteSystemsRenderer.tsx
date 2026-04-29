@@ -101,10 +101,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             kicker={data.hero.badge}
             heading={{ title: data.hero.title, description: data.hero.description }}
             chips={data.hero.list}
-            actions={[
-              { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
-              { label: SECONDARY_CTA_LABEL, href: contactHref },
-            ]}
+            actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
             visual={{
               brand: 'mindwp · operations',
               title: 'Live enquiry feed',

@@ -80,8 +80,7 @@ export function HeroSplitSection({
           {chips && chips.length > 0 ? (
             <ul className='hero-split__chips rd-animate-stagger'>
               {chips.map(chip => (
-                <li key={chip} className='hero-split__chip'>
-                  <span className='rd-dot rd-dot--info' aria-hidden='true' />
+                <li key={chip} className='hero-split__chip rd-dot--info'>
                   <span>{chip}</span>
                 </li>
               ))}
@@ -95,8 +94,8 @@ export function HeroSplitSection({
                 href={action.href}
                 className={
                   action.primary
-                    ? 'rd-btn rd-btn--primary rd-btn--lg'
-                    : 'rd-btn rd-btn--secondary rd-btn--lg'
+                    ? 'rd-btn rd-btn--white'
+                    : 'rd-btn rd-btn--secondary'
                 }
               >
                 {action.label}

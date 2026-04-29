@@ -61,8 +61,8 @@ export function CTASection({
                   href={action.href}
                   className={
                     action.primary
-                      ? 'rd-btn rd-btn--primary rd-btn--lg'
-                      : 'rd-btn rd-btn--secondary rd-btn--lg'
+                      ? 'rd-btn rd-btn--primary'
+                      : 'rd-btn rd-btn--secondary'
                   }
                 >
                   {action.label}

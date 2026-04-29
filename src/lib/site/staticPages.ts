@@ -34,7 +34,6 @@ const INTERNAL_STATIC_ROUTE_PATHS = new Set([
   '/dashboard',
   '/dev/authority-dashboard',
   '/dev/cta-label-contract',
-  '/dev/redesign/smart-website-systems',
   '/image-dashboard',
 ]);
 
@@ -209,15 +208,6 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'CTA Label Contract',
     description:
       'Internal PrimaryCTASection contract surface for deterministic label and href validation.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:redesign-smart-website-systems',
-    path: '/dev/redesign/smart-website-systems',
-    name: 'Smart Website Systems Redesign Prototype',
-    title: 'Smart Website Systems Redesign Prototype',
-    description:
-      'Internal visual redesign prototype for the Smart Website Systems service page. Not part of public navigation, sitemap, or production content.',
     showOnHumanSitemap: false,
   },
   {

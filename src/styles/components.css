@@ -692,14 +692,12 @@
 /* ---------- Hero split — content + visual panel ---------- */
 .hero-split__title {
     font-family: var(--font-display);
-    font-size: var(--text-hero);
     line-height: var(--leading-tight);
     letter-spacing: -0.015em;
     margin: var(--space-md) 0 var(--space-md);
 }
 
 .hero-split__description {
-    font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
     margin: 0 0 var(--space-lg);
     max-width: 56ch;
@@ -724,7 +722,7 @@
     font-size: var(--text-xs);
     font-weight: 500;
     border-radius: var(--radius-pill);
-    background: color-mix(in oklch, var(--surface) 12%, transparent);
+    background: transparent;
     border: var(--border-1-dark);
 }
 
@@ -887,17 +885,31 @@
 }
 
 .grid-cards__title {
-    font-size: var(--text-lg);
     font-weight: 600;
-    margin: 0 0 var(--space-xs);
     color: var(--ink);
 }
 
 .grid-cards__description {
-    font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
     margin: 0;
+}
+
+/* Stacked badge list for signal-board variant (small, muted labels) */
+.grid-cards__badge-list {
+    margin: var(--space-sm) 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+}
+
+.grid-cards__badge-list-item {
+    font-size: var(--text-xs);
+    color: var(--fg-on-light-muted);
+    background: transparent;
+    padding: 0;
 }
 
 .grid-cards__item--good {
@@ -949,7 +961,6 @@
 }
 
 .before-after__title {
-    font-size: var(--text-xl);
     font-weight: 600;
     margin: 0;
     color: var(--fg-on-dark-strong);
@@ -1163,13 +1174,11 @@
 }
 
 .process-steps__title {
-    font-size: var(--text-xl);
     font-weight: 600;
     margin: 0;
 }
 
 .process-steps__description {
-    font-size: var(--text-md);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
     margin: 0;
@@ -1330,7 +1339,6 @@
 
 .image-story__title {
     font-family: var(--font-display);
-    font-size: var(--text-3xl);
     line-height: var(--leading-tight);
     letter-spacing: -0.01em;
     margin: var(--space-sm) 0 var(--space-md);
@@ -1448,7 +1456,6 @@
 }
 
 .fit-check__title {
-    font-size: var(--text-xl);
     font-weight: 600;
     margin: 0;
     color: var(--ink);
@@ -1509,14 +1516,12 @@
 /* ---------- CTA section — real visuals ---------- */
 .cta-section__title {
     font-family: var(--font-display);
-    font-size: var(--text-3xl);
     line-height: var(--leading-tight);
     margin: var(--space-sm) 0 var(--space-md);
     color: var(--ink);
 }
 
 .cta-section__description {
-    font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
     margin: 0 0 var(--space-md);
@@ -1675,6 +1680,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 /* ===========================================================================
  * Local SEO variant overrides — re-tint to local trust palette (green)
  * Applied to hero-split--visibility, layer-stack--signal-map,
@@ -1698,8 +1704,8 @@
 
 .layer-stack--signal-map .layer-stack__index {
     background: linear-gradient(135deg,
-        color-mix(in oklch, var(--local-accent) 18%, transparent) 0%,
-        color-mix(in oklch, var(--local-accent-soft) 22%, transparent) 100%);
+            color-mix(in oklch, var(--local-accent) 18%, transparent) 0%,
+            color-mix(in oklch, var(--local-accent-soft) 22%, transparent) 100%);
     color: var(--local-primary);
 }
 

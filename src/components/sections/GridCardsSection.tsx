@@ -75,11 +75,22 @@ export function GridCardsSection({
                     <Icon size={20} />
                   </span>
                 ) : null}
-                {item.badge ? <span className='grid-cards__badge'>{item.badge}</span> : null}
               </div>
               <h3 className='grid-cards__title'>{item.title}</h3>
               {item.description ? (
                 <p className='grid-cards__description'>{item.description}</p>
+              ) : null}
+              {variant === 'signal-board' && item.badge ? (
+                <ul className='grid-cards__badge-list'>
+                  {item.badge
+                    .split(/\s*[,;|]\s*|\n/)
+                    .filter(Boolean)
+                    .map((b, i) => (
+                      <li key={i} className='grid-cards__badge-list-item'>
+                        {b}
+                      </li>
+                    ))}
+                </ul>
               ) : null}
             </li>
           );

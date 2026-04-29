@@ -51,7 +51,7 @@ export async function Header() {
         </nav>
 
         <div className='header__actions'>
-          <a href={primaryAction.href} className='rd-btn rd-btn--primary rd-btn--sm'>
+          <a href={primaryAction.href} className='rd-btn rd-btn--primary'>
             {primaryAction.label}
           </a>
         </div>

@@ -1,3 +1,22 @@
+/* HeroSplitSection chip dot using ::before */
+.hero-split__chip.rd-dot--info {
+    position: relative;
+    padding-left: 1.7em;
+}
+
+.hero-split__chip.rd-dot--info::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: var(--radius-pill);
+    background: var(--accent);
+}
+
 /*
  * PRIMITIVES — small, reusable UI atoms.
  *
@@ -106,35 +125,52 @@
 }
 
 /* primary on dark: invert — white bg, dark text, soft-white on hover */
-.bg-dark .rd-btn--primary,
-.bg-gradient-hero .rd-btn--primary,
-.bg-gradient-blue .rd-btn--primary,
-.bg-gradient-compare .rd-btn--primary,
-.bg-gradient-cta .rd-btn--primary,
-.bg-gradient-cta-4 .rd-btn--primary {
-    --btn-bg: var(--surface);
-    --btn-fg: var(--primary);
-    --btn-bg-hover: color-mix(in oklch, var(--surface) 88%, var(--accent-soft));
-}
+
+
 
 .rd-btn--secondary {
     --btn-bg: transparent;
-    --btn-fg: var(--primary);
-    --btn-bg-hover: color-mix(in oklch, var(--primary) 6%, transparent);
-    --btn-border: color-mix(in oklch, var(--primary) 22%, transparent);
+    --btn-fg: var(--surface);
+    /* white text */
+    --btn-border: var(--surface);
+    /* white border */
+    --btn-bg-hover: var(--surface);
+    /* reverse: white bg on hover */
+    --btn-fg-hover: var(--primary);
+    /* navy text on hover */
+    --btn-border-hover: var(--primary);
+    /* navy border on hover */
 }
 
-.bg-dark .rd-btn--secondary,
-.bg-gradient-hero .rd-btn--secondary,
-.bg-gradient-blue .rd-btn--secondary,
-.bg-gradient-compare .rd-btn--secondary,
-.bg-gradient-cta .rd-btn--secondary,
-.bg-gradient-cta-4 .rd-btn--secondary {
-    --btn-bg: transparent;
-    --btn-fg: var(--surface);
-    --btn-bg-hover: color-mix(in oklch, var(--surface) 12%, transparent);
-    --btn-border: color-mix(in oklch, var(--surface) 35%, transparent);
+.rd-btn--secondary:hover,
+.rd-btn--secondary:focus {
+    background: var(--btn-bg-hover);
+    color: var(--btn-fg-hover);
+    border-color: var(--btn-border-hover);
 }
+
+/* White button: white bg, navy text, navy border, subtle shadow/hover */
+
+.rd-btn--white {
+    --btn-bg: var(--surface);
+    --btn-fg: var(--primary);
+    --btn-border: var(--primary);
+    --btn-bg-hover: var(--primary);
+    /* navy bg on hover */
+    --btn-fg-hover: var(--surface);
+    /* white text on hover */
+    --btn-border-hover: var(--surface);
+    /* white border on hover */
+    box-shadow: 0 1px 4px 0 color-mix(in oklch, var(--primary) 10%, transparent);
+}
+
+.rd-btn--white:hover,
+.rd-btn--white:focus {
+    background: var(--btn-bg-hover);
+    color: var(--btn-fg-hover);
+    border-color: var(--btn-border-hover);
+}
+
 
 .rd-btn--ghost {
     --btn-bg: transparent;
