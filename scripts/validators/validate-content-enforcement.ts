@@ -507,11 +507,16 @@ function scanButtonRule(): Issue[] {
   }> = [
       {
         file: 'src/components/sections/PrimaryCTASection.tsx',
-        expected: ['allowSecondaryCTA?: true;', 'if (!isActionableButton(primaryButtonAction)) {'],
-        forbidden: ['resolveSecondaryCta(', 'secondaryAction && <Button'],
+        expected: [
+          'throw new Error(\'PrimaryCTASection requires heading.title\');',
+          'throw new Error(\'PrimaryCTASection requires heading.description\');',
+          'throw new Error(\'PrimaryCTASection requires actions\');',
+          'throw new Error(\'PrimaryCTASection must have exactly one CTA\');',
+        ],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction && <Button', 'ctaList'],
         issueType: 'missing_primary_cta_guard',
         message:
-          'PrimaryCTASection must not implicitly resolve or auto-render secondary CTA buttons.',
+          'PrimaryCTASection must enforce the strict heading/actions single-CTA contract with no secondary or list logic.',
       },
       {
         file: 'src/components/reusable/single/SectionIntro.tsx',

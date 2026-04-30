@@ -1,4 +1,4 @@
-import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
+import { buildContactHref, type ContactSourceType } from '../contact/contactHref.ts';
 
 export const PRIMARY_CTA_LABEL = 'Start a Conversation';
 export const SECONDARY_CTA_LABEL = 'Discuss Your Project';

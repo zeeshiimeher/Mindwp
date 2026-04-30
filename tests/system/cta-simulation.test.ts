@@ -18,7 +18,7 @@ import {
 } from '@/../scripts/validators/validate-primary-cta';
 
 const root = process.cwd();
-const primaryCtaSectionPath = path.join(root, 'src', 'components', 'system', 'PrimaryCTASection.tsx');
+const primaryCtaSectionPath = path.join(root, 'src', 'components', 'sections', 'PrimaryCTASection.tsx');
 
 describe('system simulation: CTA lock', () => {
     test('shared CTA helpers only emit approved labels', () => {

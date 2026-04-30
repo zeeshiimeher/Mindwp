@@ -19,16 +19,13 @@ import {
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import {
-  PrimaryCTASection,
-  type PrimaryCTASectionProps,
-} from '@/components/sections/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import {
   resolveIndustryCategoryDetailRoutes,
   resolveIndustryPathwaySection,
 } from '@/domains/industries/utils/industryPresentation';
-import { buildContactHref } from '@/lib/contact/buildContactHref';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 export type IndustryCategoryPageTemplateProps = {
   slug: string;
@@ -143,8 +140,8 @@ export function IndustryCategoryPageTemplate({
 
           <PrimaryCTASection
             heading={{
-              title: cta.heading?.title ?? '',
-              description: cta.heading?.description ?? '',
+              title: cta.heading.title,
+              description: cta.heading.description,
             }}
             actions={[
               {

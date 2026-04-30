@@ -18,7 +18,6 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import type { FAQSection } from '@/components/reusable/single/FAQSection';
-import type { PrimaryCTASectionProps } from '@/components/sections/PrimaryCTASection';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import type { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 
@@ -40,8 +39,12 @@ type IndustryCaseStudiesProps = ComponentProps<typeof IndustryCaseStudiesSection
 type IndustryFaqProps = ComponentProps<typeof FAQSection>;
 import type { SectionHeading } from '@/components/sections/types';
 
-type IndustryCtaProps = {
-  heading: SectionHeading;
+export type IndustryCtaProps = {
+  heading: {
+    title: string;
+    description: string;
+  };
+  actions: { label: string; href: string }[];
 };
 type IndustryWorkflowExamplesProps = ComponentProps<typeof IndustryWorkflowExamplesSection>;
 

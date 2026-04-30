@@ -14,7 +14,7 @@ import { getValidatorDefinitions } from '@/../scripts/core/system-manifest.mjs';
 const workspaceRoot = path.resolve(import.meta.dirname, '..', '..');
 const integrityTargets = [
     'src/components/sections/PrimaryCTASection.tsx',
-    'src/components/system/RelatedContentSection.tsx',
+    'src/components/sections/RelatedContentSection.tsx',
     'src/lib/seo/schema.ts',
     'src/lib/seo/inlineLinking.ts',
     'src/lib/content-graph/publishable.tsx',
@@ -37,7 +37,7 @@ describe('system invariant: closure lock', () => {
             'utf8'
         );
         const relatedContent = readFileSync(
-            path.join(workspaceRoot, 'src/components/system/RelatedContentSection.tsx'),
+            path.join(workspaceRoot, 'src/components/sections/RelatedContentSection.tsx'),
             'utf8'
         );
 

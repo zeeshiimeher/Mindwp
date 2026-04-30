@@ -3,9 +3,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { buildRouteInventory } from '@/lib/content-quality/inventory';
-import { toAbsoluteUrl } from '@/lib/seo/config';
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
+import { toAbsoluteUrl } from '../../src/lib/seo/config';
+import { resolveSEO } from '../../src/lib/seo/seoResolver';
 
 type ValidationFailure = {
   code: string;

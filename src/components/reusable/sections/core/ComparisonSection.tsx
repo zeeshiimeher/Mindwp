@@ -3,10 +3,6 @@ import { Check, X } from 'lucide-react';
 import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { ChecklistRow, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
-import {
-  PrimaryCTASection,
-  type PrimaryCTASectionProps,
-} from '@/components/sections/PrimaryCTASection';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'c-comparison-section';

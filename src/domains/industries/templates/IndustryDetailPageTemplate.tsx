@@ -16,13 +16,10 @@ import {
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import {
-  PrimaryCTASection,
-  type PrimaryCTASectionProps,
-} from '@/components/sections/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
-import { buildContactHref } from '@/lib/contact/buildContactHref';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { IndustryExploreSectionProps } from '../components/IndustryExploreSection';
 
@@ -84,18 +81,18 @@ export function IndustryDetailPageTemplate({
   );
   const resolvedDetailJourneySection = resolvedPathwaySection
     ? {
-        badge: resolvedPathwaySection.badge,
-        title: resolvedPathwaySection.title ?? '',
-        description: resolvedPathwaySection.description,
-        backgroundColor: resolvedPathwaySection.backgroundColor,
-        cssPrefix: resolvedPathwaySection.cssPrefix,
-        cards: resolvedPathwaySection.packages.map(pkg => ({
-          title: pkg.name,
-          description: `${pkg.price} — ${pkg.description}`,
-          points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
-          featured: pkg.popular,
-        })),
-      }
+      badge: resolvedPathwaySection.badge,
+      title: resolvedPathwaySection.title ?? '',
+      description: resolvedPathwaySection.description,
+      backgroundColor: resolvedPathwaySection.backgroundColor,
+      cssPrefix: resolvedPathwaySection.cssPrefix,
+      cards: resolvedPathwaySection.packages.map(pkg => ({
+        title: pkg.name,
+        description: `${pkg.price} — ${pkg.description}`,
+        points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
+        featured: pkg.popular,
+      })),
+    }
     : undefined;
 
   return (
@@ -125,8 +122,8 @@ export function IndustryDetailPageTemplate({
           <FAQSection {...faq} />
           <PrimaryCTASection
             heading={{
-              title: cta.heading?.title ?? '',
-              description: cta.heading?.description ?? '',
+              title: cta.heading.title,
+              description: cta.heading.description,
             }}
             actions={[
               {

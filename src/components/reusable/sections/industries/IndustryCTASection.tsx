@@ -1,7 +1,4 @@
-import {
-  PrimaryCTASection,
-  type PrimaryCTASectionProps,
-} from '@/components/sections/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 /**
@@ -10,20 +7,21 @@ import { buildContactHref } from '@/lib/contact/contactHref';
  */
 
 export interface IndustryPrimaryCTASectionProps {
-  title: string;
-  description: string;
+  heading: {
+    title: string;
+    description: string;
+  };
   slug: string;
 }
 
-export function IndustryPrimaryCTASection({
-  title,
-  description,
-  slug,
-}: IndustryPrimaryCTASectionProps) {
+export function IndustryPrimaryCTASection({ heading, slug }: IndustryPrimaryCTASectionProps) {
+  if (!heading.title || !heading.description) {
+    throw new Error('IndustryPrimaryCTASection: heading.title and heading.description are required');
+  }
   // Use the industry slug for both system and slug as fallback
   return (
     <PrimaryCTASection
-      heading={{ title, description }}
+      heading={heading}
       actions={[
         {
           label: 'Get Started',

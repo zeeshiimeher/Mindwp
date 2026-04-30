@@ -15,6 +15,7 @@ export interface RelatedContentItem {
   title: string;
   summary?: string;
   href: string;
+  description: string;
   cta?: string;
 }
 

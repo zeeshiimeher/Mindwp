@@ -10,7 +10,7 @@ import {
   getInitializedContentGraph,
 } from '@/domains/init/ensureGraphInitialized';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
-import { createCTARegistry, getCTARegistrySnapshot } from '@/lib/cta/ctaRegistry';
+import { createCTARegistry, getCTARegistrySnapshot } from '../../src/lib/cta/ctaRegistry';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';

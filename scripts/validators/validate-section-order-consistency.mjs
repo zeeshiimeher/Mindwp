@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getStructuredContentGraph } from '@/lib/content-graph/registry';
-import { collectSystemInvariantFindings } from '@/lib/system/invariants';
+import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
+import { collectSystemInvariantFindings } from '../../src/lib/system/invariants';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';

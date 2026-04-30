@@ -303,10 +303,10 @@ export function BlogPostTemplate({
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(text, {
-            excludePaths: [currentPath],
-            sourcePath: currentPath,
-            tracker: inlineLinkTracker,
-          })
+          excludePaths: [currentPath],
+          sourcePath: currentPath,
+          tracker: inlineLinkTracker,
+        })
         : [{ type: 'text' as const, value: text }];
 
     let linkedInParagraph = false;
@@ -433,7 +433,10 @@ export function BlogPostTemplate({
         return (
           <PrimaryCTASection
             key={`cta-${index}`}
-            heading={{ title: section.heading, description: section.content }}
+            heading={{
+              title: section.heading,
+              description: section.content
+            }}
             actions={[
               {
                 label: 'Get Started',
@@ -524,12 +527,12 @@ export function BlogPostTemplate({
             className='blog-hero'
             {...(featuredImage
               ? {
-                  style: {
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  },
-                }
+                style: {
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                },
+              }
               : {})}
           >
             <div className='l-stack l-stack--loose blog-post__hero'>

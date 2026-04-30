@@ -203,8 +203,7 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: AiLeadHandlingRend
             cssPrefix='ai-response-faq'
           />
           <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
+            heading={{ title: ctaTitle, description: ctaDescription }}
             actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>

@@ -1,9 +1,15 @@
 import { Check } from 'lucide-react';
 
 import { SectionShell } from './SectionShell';
-import type { SectionDensity, SectionHeading, SectionLink, SectionTone } from './types';
+import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
 export type PrimaryCTASectionVariant = 'soft-panel' | 'split-card';
+
+type PrimaryCTAAction = {
+  label: string;
+  href: string;
+  primary: true;
+};
 
 export interface PrimaryCTASectionProps {
   variant?: PrimaryCTASectionVariant;
@@ -13,12 +19,9 @@ export interface PrimaryCTASectionProps {
   shellTone?: SectionTone;
   density?: SectionDensity;
   heading: SectionHeading;
-  /** Primary CTA buttons only. */
-  actions: readonly SectionLink[];
+  actions: [PrimaryCTAAction];
   /** Optional bullet list of trust supports rendered with the CTA. */
   supports?: readonly string[];
-  /** Optional list of CTA microcopy lines. */
-  ctaList?: string[];
 }
 
 /**
@@ -39,63 +42,70 @@ export function PrimaryCTASection({
   heading,
   actions,
   supports,
-  ctaList,
 }: PrimaryCTASectionProps) {
-  // Guard: must have title and description
-  if (!heading?.title || !heading?.description)
-    throw new Error('PrimaryCTASection requires heading.title and heading.description');
-  // Guard: must have at least one action
-  if (!actions?.length) throw new Error('PrimaryCTASection requires at least one action');
+  if (!heading || typeof heading !== 'object') {
+    throw new Error('PrimaryCTASection requires heading');
+  }
+
+  if (!heading.title || typeof heading.title !== 'string') {
+    throw new Error('PrimaryCTASection requires heading.title');
+  }
+
+  if (!heading.description || typeof heading.description !== 'string') {
+    throw new Error('PrimaryCTASection requires heading.description');
+  }
+
+  if (!Array.isArray(actions)) {
+    throw new Error('PrimaryCTASection requires actions');
+  }
+
+  if (actions.length !== 1) {
+    throw new Error('PrimaryCTASection must have exactly one CTA');
+  }
+
+  const action = actions[0];
+
+  if (!action || !action.label || !action.href || action.primary !== true) {
+    throw new Error('PrimaryCTASection requires one primary CTA action');
+  }
 
   return (
-    <SectionShell
-      tone={tone}
-      density={density}
-      sectionClassName={`cta-section cta-section--${variant}`}
-      bare
-    >
-      <div className='cta-section__inner'>
-        <div className={`cta-section__shell rd-animate-panel cta-section__shell--${shellTone}`}>
-          <div className='cta-section__body'>
-            {heading.kicker ? <span className='rd-section-kicker'>{heading.kicker}</span> : null}
-            <h2 className='cta-section__title'>{heading.title}</h2>
-            <p className='cta-section__description'>{heading.description}</p>
+    <section data-testid="smart-cta">
+      <SectionShell
+        tone={tone}
+        density={density}
+        sectionClassName={`cta-section cta-section--${variant}`}
+        bare
+      >
+        <div className='cta-section__inner'>
+          <div className={`cta-section__shell rd-animate-panel cta-section__shell--${shellTone}`}>
+            <div className='cta-section__body'>
+              {heading.kicker ? <span className='rd-section-kicker'>{heading.kicker}</span> : null}
+              <h2 className='cta-section__title'>{heading.title}</h2>
+              <p className='cta-section__description'>{heading.description}</p>
 
-            <div className='cta-section__buttons'>
-              {actions.map((action, index) => (
-                <a
-                  key={`${action.label}-${index}`}
-                  href={action.href}
-                  className={'rd-btn rd-btn--primary'}
-                >
+              <div className='cta-section__buttons'>
+                <a href={action.href} className='rd-btn rd-btn--primary'>
                   {action.label}
                 </a>
-              ))}
+              </div>
             </div>
 
-            {ctaList && ctaList.length > 0 ? (
-              <ul className='cta-section__list'>
-                {ctaList.map((line, i) => (
-                  <li key={i}>{line}</li>
+            {supports && supports.length > 0 ? (
+              <ul className='cta-section__supports rd-animate-stagger'>
+                {supports.map((support, index) => (
+                  <li key={`${support}-${index}`} className='cta-section__support'>
+                    <span className='cta-section__support-icon' aria-hidden='true'>
+                      <Check size={14} strokeWidth={3} />
+                    </span>
+                    <span>{support}</span>
+                  </li>
                 ))}
               </ul>
             ) : null}
           </div>
-
-          {supports && supports.length > 0 ? (
-            <ul className='cta-section__supports rd-animate-stagger'>
-              {supports.map((support, index) => (
-                <li key={`${support}-${index}`} className='cta-section__support'>
-                  <span className='cta-section__support-icon' aria-hidden='true'>
-                    <Check size={14} strokeWidth={3} />
-                  </span>
-                  <span>{support}</span>
-                </li>
-              ))}
-            </ul>
-          ) : null}
         </div>
-      </div>
-    </SectionShell>
+      </SectionShell>
+    </section>
   );
 }

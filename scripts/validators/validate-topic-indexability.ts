@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { buildRouteInventory, buildSitemapRoutePaths } from '@/lib/content-quality/inventory';
+import { buildRouteInventory, buildSitemapRoutePaths } from '../../src/lib/content-quality/inventory';
 
 import {
   getApprovedPublicTopics,

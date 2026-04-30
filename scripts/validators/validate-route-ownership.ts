@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { buildRouteInventory } from '@/lib/content-quality/inventory';
+import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
 
 import { assertRouteOwnershipEntries } from '../../config/routeOwnership';
 

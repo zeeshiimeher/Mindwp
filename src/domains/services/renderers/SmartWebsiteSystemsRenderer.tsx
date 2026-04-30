@@ -21,8 +21,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface Props {
   data: ServicePageDataBySlug[
-    | 'smart-website-systems'
-    | 'service-pages-vs-one-generic-services-page'];
+  | 'smart-website-systems'
+  | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 
@@ -116,7 +116,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'Where it leaks',
                 title: data.sections.value.header.title,
-                description: data.sections.value.header.description,
+                description: data.sections.value.header.description ?? '',
               }}
               items={data.sections.value.items.map((block, index) => ({
                 title: block.title,
@@ -137,7 +137,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                   heading={{
                     kicker: 'Broken vs fixed',
                     title: data.sections.comparison.header.title,
-                    description: data.sections.comparison.header.description,
+                    description: data.sections.comparison.header.description ?? '',
                   }}
                   before={{
                     label: 'Today',
@@ -161,7 +161,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: "What's in scope",
                 title: data.sections.included.header.title,
-                description: data.sections.included.header.description,
+                description: data.sections.included.header.description ?? '',
               }}
               items={data.sections.included.items.map((item, index) => ({
                 id: `included-${index}`,
@@ -181,7 +181,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'Built for',
                 title: data.sections.types.header.title,
-                description: data.sections.types.header.description,
+                description: data.sections.types.header.description ?? '',
               }}
               items={data.sections.types.items.map((type, index) => ({
                 id: `type-${index}`,
@@ -199,7 +199,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'System layers',
                 title: data.sections.coreLayer.header.title,
-                description: data.sections.coreLayer.header.description,
+                description: data.sections.coreLayer.header.description ?? '',
               }}
               layers={data.sections.coreLayer.cards.map((card, index) => ({
                 key: `layer-${index}`,
@@ -225,7 +225,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                   heading={{
                     kicker: 'Real outcome',
                     title: data.sections.proof.header.title,
-                    description: data.sections.proof.header.description,
+                    description: data.sections.proof.header.description ?? '',
                   }}
                   before={{
                     label: 'Before',
@@ -257,7 +257,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'Compounding effect',
                 title: data.sections.visibilityFoundations.header.title,
-                description: data.sections.visibilityFoundations.header.description,
+                description: data.sections.visibilityFoundations.header.description ?? '',
               }}
               body={data.sections.visibilityFoundations.narrativeParagraphs?.[0]}
               bullets={data.sections.visibilityFoundations.items.map(item => item.title)}
@@ -286,7 +286,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'By business size',
                 title: optionalSections.businessSizes.header.title,
-                description: optionalSections.businessSizes.header.description,
+                description: optionalSections.businessSizes.header.description ?? '',
               }}
               items={optionalSections.businessSizes.items.map((size, index) => ({
                 id: `size-${index}`,
@@ -306,7 +306,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: data.sections.process.header.badge ?? 'How it works',
                 title: data.sections.process.header.title,
-                description: data.sections.process.header.description,
+                description: data.sections.process.header.description ?? '',
               }}
               steps={data.sections.process.steps.map((step, index) => ({
                 index: step.number,
@@ -326,7 +326,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'Common concerns',
                 title: optionalSections.concerns.header.title,
-                description: optionalSections.concerns.header.description,
+                description: optionalSections.concerns.header.description ?? '',
               }}
               items={optionalSections.concerns.items.map((item, index) => ({
                 id: `concern-${index}`,
@@ -346,7 +346,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'Stack',
                 title: optionalSections.technologies.header.title,
-                description: optionalSections.technologies.header.description,
+                description: optionalSections.technologies.header.description ?? '',
               }}
               items={optionalSections.technologies.items.map((tech, index) => ({
                 id: `tech-${index}`,
@@ -365,7 +365,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'Fit check',
                 title: optionalSections.qualification.header.title,
-                description: optionalSections.qualification.header.description,
+                description: optionalSections.qualification.header.description ?? '',
               }}
               good={{
                 label: 'Strong fit',
@@ -394,7 +394,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               heading={{
                 kicker: 'FAQ',
                 title: data.sections.faq.header.title,
-                description: data.sections.faq.header.description,
+                description: data.sections.faq.header.description ?? '',
               }}
               items={data.sections.faq.items.map((item, index) => ({
                 id: `smart-websites-faq-${index}`,
@@ -407,12 +407,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           <PrimaryCTASection
             variant='soft-panel'
             heading={{
-              kicker: ctaKicker,
-              title: ctaTitle,
-              description: ctaDescription,
+              kicker: ctaKicker ?? '',
+              title: ctaTitle || 'Get Started',
+              description: ctaDescription || 'Contact us to learn more about Smart Website Systems.'
             }}
             actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
-            ctaList={Array.isArray((data.cta as any)?.ctaList) ? (data.cta as any).ctaList : []}
+            ctaList={(data.cta as { ctaList?: string[] })?.ctaList ?? []}
           />
         </main>
       </ErrorBoundary>

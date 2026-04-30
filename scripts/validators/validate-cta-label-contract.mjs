@@ -22,7 +22,7 @@ const primaryCtaSectionPath = path.join(
   root,
   'src',
   'components',
-  'system',
+  'sections',
   'PrimaryCTASection.tsx'
 );
 const tierCardsPath = path.join(

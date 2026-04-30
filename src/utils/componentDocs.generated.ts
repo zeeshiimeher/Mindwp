@@ -13151,19 +13151,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "description",
-        "type": "string",
+        "name": "heading",
+        "type": "{ title: string; description: string; }",
         "optional": false,
         "description": ""
       },
       {
         "name": "slug",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -14753,19 +14747,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "description",
-        "type": "string",
+        "name": "heading",
+        "type": "{ title: string; description: string; }",
         "optional": false,
         "description": ""
       },
       {
         "name": "slug",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -16150,19 +16138,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "description",
-        "type": "string",
+        "name": "heading",
+        "type": "{ title: string; description: string; }",
         "optional": false,
         "description": ""
       },
       {
         "name": "slug",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""
@@ -18000,19 +17982,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "description",
-        "type": "string",
+        "name": "heading",
+        "type": "{ title: string; description: string; }",
         "optional": false,
         "description": ""
       },
       {
         "name": "slug",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
         "type": "string",
         "optional": false,
         "description": ""

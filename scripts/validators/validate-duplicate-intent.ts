@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { buildRouteInventory, type RouteInventoryEntry } from '@/lib/content-quality/inventory';
+import { buildRouteInventory, type RouteInventoryEntry } from '../../src/lib/content-quality/inventory';
 
 type ValidationFailure = {
   code: string;

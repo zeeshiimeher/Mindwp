@@ -294,11 +294,7 @@ export function ServicesLanding() {
             step is to pressure-test that diagnosis before you invest in the wrong build.
           </div>
           <PrimaryCTASection
-            heading={{
-              title: 'Need help identifying the right system build first?',
-              description:
-                'Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.',
-            }}
+            heading={servicesData.cta.heading}
             actions={[
               {
                 label: 'Get Started',

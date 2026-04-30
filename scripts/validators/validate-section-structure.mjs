@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
-import { resolveContentRules } from '@/lib/config/contentRules';
+import { resolveContentRules } from '../../src/lib/config/contentRules';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';

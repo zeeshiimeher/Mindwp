@@ -324,7 +324,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               primary: true,
             },
           ]}
-          ctaList={Array.isArray((data.cta as any)?.ctaList) ? (data.cta as any).ctaList : []}
+          ctaList={(cta as { ctaList?: string[] })?.ctaList ?? []}
         />
       </main>
     </ErrorBoundary>

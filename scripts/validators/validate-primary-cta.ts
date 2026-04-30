@@ -3,8 +3,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { APPROVED_CTA_LABELS } from '../../src/lib/cta/primaryAction.ts';
 import { listFilesRecursive } from '../lib/validator-helpers.mjs';
+
+const APPROVED_CTA_LABELS = ['Start a Conversation', 'Discuss Your Project'] as const;
 
 type Issue = {
   severity: 'error';
@@ -74,6 +75,40 @@ function extractCtaBlocks(source: string) {
   return { primary };
 }
 
+function hasHeadingTitle(snippet: string) {
+  return /heading\s*=\s*\{[\s\S]*?title\s*:/.test(snippet);
+}
+
+function hasHeadingDescription(snippet: string) {
+  return /heading\s*=\s*\{[\s\S]*?description\s*:/.test(snippet);
+}
+
+function getInlineActionsExpression(snippet: string) {
+  const match = snippet.match(/actions\s*=\s*\{\s*(\[[\s\S]*?\])\s*\}/);
+  return match?.[1];
+}
+
+function hasExplicitMultipleInlineActions(snippet: string) {
+  const expression = getInlineActionsExpression(snippet);
+
+  if (!expression) {
+    return false;
+  }
+
+  const primaryMatches = expression.match(/primary\s*:\s*true/g) ?? [];
+  return primaryMatches.length !== 1;
+}
+
+function hasInlinePrimaryMarker(snippet: string) {
+  const expression = getInlineActionsExpression(snippet);
+
+  if (!expression) {
+    return true;
+  }
+
+  return /primary\s*:\s*true/.test(expression);
+}
+
 
 export function scanPrimaryCtaUsageFile(relativePath: string, source: string): Issue[] {
   const issues: Issue[] = [];
@@ -114,24 +149,51 @@ export function scanPrimaryCtaUsageFile(relativePath: string, source: string): I
       });
     }
 
-    // Only enforce title/description/legacy prop checks for PrimaryCTASection
+    // Only enforce heading/actions/legacy prop checks for PrimaryCTASection
     if (/PrimaryCTASection/.test(snippet)) {
-      if (!usesSpread && !/\btitle\s*=/.test(snippet)) {
+      if (!usesSpread && !hasHeadingTitle(snippet)) {
         issues.push({
           severity: 'error',
           code: 'missing_cta_title',
           file: relativePath,
           line,
-          message: 'Every PrimaryCTASection usage must provide a title prop.',
+          message: 'Every PrimaryCTASection usage must provide heading.title.',
         });
       }
-      if (!usesSpread && !/\bdescription\s*=/.test(snippet)) {
+      if (!usesSpread && !hasHeadingDescription(snippet)) {
         issues.push({
           severity: 'error',
           code: 'missing_cta_description',
           file: relativePath,
           line,
-          message: 'Every PrimaryCTASection usage must provide a description prop.',
+          message: 'Every PrimaryCTASection usage must provide heading.description.',
+        });
+      }
+      if (!usesSpread && !/\bactions\s*=/.test(snippet)) {
+        issues.push({
+          severity: 'error',
+          code: 'missing_cta_actions',
+          file: relativePath,
+          line,
+          message: 'Every PrimaryCTASection usage must provide actions.',
+        });
+      }
+      if (!usesSpread && /\bactions\s*=/.test(snippet) && !hasInlinePrimaryMarker(snippet)) {
+        issues.push({
+          severity: 'error',
+          code: 'invalid_cta_actions',
+          file: relativePath,
+          line,
+          message: 'PrimaryCTASection inline actions must mark the CTA as primary: true.',
+        });
+      }
+      if (!usesSpread && hasExplicitMultipleInlineActions(snippet)) {
+        issues.push({
+          severity: 'error',
+          code: 'invalid_cta_actions',
+          file: relativePath,
+          line,
+          message: 'PrimaryCTASection must have exactly one CTA.',
         });
       }
       for (const legacyProp of [
@@ -207,22 +269,31 @@ export function scanDataFile(relativePath: string, source: string): Issue[] {
   for (const block of ctaBlocks) {
     const snippet = block[0];
     const line = lineOfIndex(source, block.index ?? 0);
-    if (!/\btitle\s*:/.test(snippet)) {
+    if (!/\bheading\s*:/.test(snippet) || !/title\s*:/.test(snippet)) {
       issues.push({
         severity: 'error',
         code: 'invalid_cta_data_shape',
         file: relativePath,
         line,
-        message: 'CTA data blocks must include a title field.',
+        message: 'CTA data blocks must include heading.title.',
       });
     }
-    if (!/\bdescription\s*:/.test(snippet)) {
+    if (!/\bheading\s*:/.test(snippet) || !/description\s*:/.test(snippet)) {
       issues.push({
         severity: 'error',
         code: 'invalid_cta_data_shape',
         file: relativePath,
         line,
-        message: 'CTA data blocks must include a description field.',
+        message: 'CTA data blocks must include heading.description.',
+      });
+    }
+    if (!/\bactions\s*:/.test(snippet) || !/primary\s*:\s*true/.test(snippet)) {
+      issues.push({
+        severity: 'error',
+        code: 'invalid_cta_data_shape',
+        file: relativePath,
+        line,
+        message: 'CTA data blocks must include exactly one primary action.',
       });
     }
   }
@@ -238,13 +309,43 @@ export function validateCorePrimaryCtaSources(
 ): Issue[] {
   const issues: Issue[] = [];
 
-  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires title and description')) {
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires heading.title')) {
     issues.push({
       severity: 'error',
       code: 'missing_required_cta_guard',
       file: relativePrimaryCtaSectionPath,
       line: 1,
-      message: 'PrimaryCTASection must throw when title or description is missing.',
+      message: 'PrimaryCTASection must throw when heading.title is missing.',
+    });
+  }
+
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires heading.description')) {
+    issues.push({
+      severity: 'error',
+      code: 'missing_required_cta_guard',
+      file: relativePrimaryCtaSectionPath,
+      line: 1,
+      message: 'PrimaryCTASection must throw when heading.description is missing.',
+    });
+  }
+
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires actions')) {
+    issues.push({
+      severity: 'error',
+      code: 'missing_required_cta_guard',
+      file: relativePrimaryCtaSectionPath,
+      line: 1,
+      message: 'PrimaryCTASection must throw when actions is missing.',
+    });
+  }
+
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection must have exactly one CTA')) {
+    issues.push({
+      severity: 'error',
+      code: 'missing_required_cta_guard',
+      file: relativePrimaryCtaSectionPath,
+      line: 1,
+      message: 'PrimaryCTASection must fail loud when actions.length !== 1.',
     });
   }
 
@@ -258,25 +359,13 @@ export function validateCorePrimaryCtaSources(
     });
   }
 
-  if (!primaryCtaSectionSource.includes('allowSecondaryCTA?: true;')) {
+  if (primaryCtaSectionSource.includes('allowSecondaryCTA')) {
     issues.push({
       severity: 'error',
-      code: 'secondary_cta_flag_not_explicit',
+      code: 'secondary_cta_not_allowed',
       file: relativePrimaryCtaSectionPath,
       line: 1,
-      message:
-        'PrimaryCTASection secondary actions must remain an explicit allowSecondaryCTA opt-in.',
-    });
-  }
-
-  if (!primaryCtaSectionSource.includes('Secondary CTA requires allowSecondaryCTA: true')) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_secondary_guard',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message:
-        'PrimaryCTASection must fail loud when a secondary CTA is attempted without allowSecondaryCTA.',
+      message: 'PrimaryCTASection must not contain allowSecondaryCTA logic.',
     });
   }
 

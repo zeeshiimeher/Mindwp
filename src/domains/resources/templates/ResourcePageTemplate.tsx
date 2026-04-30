@@ -214,10 +214,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(paragraph, {
-            excludePaths: [currentPath],
-            sourcePath: currentPath,
-            tracker: inlineLinkTracker,
-          })
+          excludePaths: [currentPath],
+          sourcePath: currentPath,
+          tracker: inlineLinkTracker,
+        })
         : [{ type: 'text' as const, value: paragraph }];
 
     let linkedInParagraph = false;
@@ -425,7 +425,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
 
       case 'cta': {
         const ctaData = extractCTAContent(section);
-        return ctaData.heading ? (
+        return (
           <div key={`cta-${index}`} className='resource-page__cta'>
             <div className='l-container'>
               <div className='text-sm text-muted-foreground l-max-w-3xl pb-3'>
@@ -448,7 +448,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               ]}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'related-resources': {

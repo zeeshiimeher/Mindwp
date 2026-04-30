@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
-import { getStructuredContentGraph } from '@/lib/content-graph/registry';
+import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
+import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';

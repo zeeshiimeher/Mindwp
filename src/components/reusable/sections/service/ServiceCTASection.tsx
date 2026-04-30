@@ -1,4 +1,3 @@
-import type { PrimaryCTASectionProps } from '@/components/sections/PrimaryCTASection';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
@@ -7,21 +6,22 @@ import { buildContactHref } from '@/lib/contact/contactHref';
  */
 
 export interface ServicePrimaryCTASectionProps {
-  title: string;
-  description: string;
+  heading: {
+    title: string;
+    description: string;
+  };
   slug: string;
 }
 
-export function ServicePrimaryCTASection({
-  title,
-  description,
-  slug,
-}: ServicePrimaryCTASectionProps) {
+export function ServicePrimaryCTASection({ heading, slug }: ServicePrimaryCTASectionProps) {
+  if (!heading.title || !heading.description) {
+    throw new Error('ServicePrimaryCTASection: heading.title and heading.description are required');
+  }
   // Fallback to canonical system and provided slug
   const system = 'smart-website-systems';
   return (
     <PrimaryCTASection
-      heading={{ title, description }}
+      heading={heading}
       actions={[
         {
           label: 'Get Started',

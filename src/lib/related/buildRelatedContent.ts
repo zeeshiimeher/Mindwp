@@ -153,11 +153,11 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
       groups: [
         {
           label: meta.title,
-          description: meta.description,
+          description: meta.description || '',
           items: items.map(item => ({
             title: item.title,
             href: item.path,
-            description: item.description,
+            description: item.description || '',
           })),
         },
       ],

@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getStructuredContentGraph } from '@/lib/content-graph/registry';
-import { buildRouteInventory } from '@/lib/content-quality/inventory';
+import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
+import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
 
 import { getApprovedPublicTopics } from '../../config/indexingPolicy';
 import { attachGeneratedJsonMetadata } from '../lib/generated-file-metadata.mjs';

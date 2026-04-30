@@ -5,17 +5,16 @@ import { buildContactHref } from '@/lib/contact/contactHref';
 interface BlogFooterCTAProps {
   system: string;
   slug: string;
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   features?: string[];
 }
-
 export function BlogFooterCTA({
   system: _system,
   slug: _slug,
-  title = 'Get the best-fit service path behind the issue you just read about',
-  description = 'We will turn the problem behind this article into a concrete next-step decision so you know the likely bottleneck, the right service path, and what would need fixing first.',
-  features = [
+  title,
+  description,
+  features: _features = [
     'Best-fit system path',
     'First-fix priority',
     'Built around service-business operations',
@@ -24,7 +23,10 @@ export function BlogFooterCTA({
   return (
     <SectionWrapper className='footer-cta cta' padding='none'>
       <PrimaryCTASection
-        heading={{ title, description }}
+        heading={{
+          title,
+          description
+        }}
         actions={[
           {
             label: 'Get Started',

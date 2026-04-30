@@ -1,10 +1,6 @@
 import { CardGrid, SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { type ProcessStep, ProcessStepCard, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
-import {
-  PrimaryCTASection,
-  type PrimaryCTASectionProps,
-} from '@/components/sections/PrimaryCTASection';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'c-process-steps-section';

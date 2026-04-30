@@ -153,11 +153,7 @@ export function ResourcesHub({
             service system that removes the manual handoff behind it.
           </div>
           <PrimaryCTASection
-            heading={{
-              title: 'Need help turning the right diagnosis into an operating system?',
-              description:
-                'Tell us where the manual gap still lives, and we will show you which service path closes it with clearer ownership, faster follow-up, and less patchwork.',
-            }}
+            heading={hubData.cta.heading}
             actions={[
               {
                 label: 'Get Started',
