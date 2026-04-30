@@ -104,10 +104,7 @@ export function About() {
         <PrimaryCTASection
           title="Ready to stop losing the work that's already coming in?"
           description='See how Smart Website Systems closes the gap between an enquiry and a paying customer for service businesses.'
-          primaryActionVariant='white'
-          backgroundColor='bg-gradient-primary'
-          wrapper='none'
-          includeContainer={false}
+          actions={[{ label: 'Get Started', href: '/contact' }]}
         />
       </SectionWrapper>
     </div>

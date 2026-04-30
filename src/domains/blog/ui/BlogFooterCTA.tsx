@@ -25,11 +25,7 @@ export function BlogFooterCTA({
       <PrimaryCTASection
         title={title}
         description={description}
-        primaryActionVariant='white'
-        backgroundColor='bg-gradient-primary'
-        metaItems={features.map(feature => ({ text: feature }))}
-        wrapper='none'
-        includeContainer={false}
+        actions={[{ label: 'Get Started', href: '/contact' }]}
       />
     </SectionWrapper>
   );

@@ -432,10 +432,8 @@ export function BlogPostTemplate({
         return (
           <PrimaryCTASection
             key={`cta-${index}`}
-            title={section.heading}
-            description={section.content}
-            cssPrefix='blog-cta'
-            backgroundColor='blog-surface--muted'
+            heading={{ title: section.heading, description: section.content }}
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         );
 

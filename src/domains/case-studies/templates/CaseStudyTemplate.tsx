@@ -619,8 +619,7 @@ export function CaseStudyTemplate({
             key={`cta-${index}`}
             title={section.heading}
             description={section.body}
-            metaItems={section.metaItems ?? resolvedCtaMetaItems}
-            backgroundColor='bg-gradient-primary'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         );
 

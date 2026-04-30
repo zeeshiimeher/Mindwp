@@ -102,9 +102,7 @@ export default function IndustriesLanding() {
           <PrimaryCTASection
             title='Need help identifying which operating-system fix matters most for your industry?'
             description='Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.'
-            primaryActionVariant='white'
-            cssPrefix='footer-cta'
-            backgroundColor='bg-gradient-primary'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </div>

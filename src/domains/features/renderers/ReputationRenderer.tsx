@@ -197,7 +197,7 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
           <PrimaryCTASection
             title={cta.title}
             description={cta.description}
-            primaryActionVariant='white'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

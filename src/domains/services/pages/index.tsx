@@ -296,9 +296,7 @@ export function ServicesLanding() {
           <PrimaryCTASection
             title='Need help identifying the right system build first?'
             description='Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.'
-            primaryActionVariant='white'
-            cssPrefix='footer-cta'
-            backgroundColor='bg-gradient-primary'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </CTARegistryProvider>
       </ErrorBoundary>

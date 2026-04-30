@@ -86,9 +86,7 @@ export function FeaturesLanding() {
             <PrimaryCTASection
               title='Need help matching the right feature to the real problem?'
               description='Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
-              primaryActionVariant='white'
-              cssPrefix='footer-cta'
-              backgroundColor='bg-gradient-primary'
+              actions={[{ label: 'Get Started', href: '/contact' }]}
             />
           </main>
         </CTARegistryProvider>

@@ -13151,51 +13151,21 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "backgroundColor",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "unknown",
+        "name": "slug",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
         "name": "title",
-        "type": "unknown",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "wrapper",
-        "type": "unknown",
-        "optional": false,
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
         "description": ""
       }
     ]
@@ -13653,12 +13623,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
-      },
-      {
-        "name": "cta",
-        "type": "PrimaryCTASectionProps | undefined",
-        "optional": true,
-        "description": ""
       },
       {
         "name": "description",
@@ -14789,51 +14753,21 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "backgroundColor",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "unknown",
+        "name": "slug",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
         "name": "title",
-        "type": "unknown",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "wrapper",
-        "type": "unknown",
-        "optional": false,
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
         "description": ""
       }
     ]
@@ -14877,12 +14811,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
-      },
-      {
-        "name": "cta",
-        "type": "PrimaryCTASectionProps | undefined",
-        "optional": true,
-        "description": ""
       },
       {
         "name": "description",
@@ -15886,12 +15814,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Additional class(es) for the root element (additive only)."
       },
       {
-        "name": "cta",
-        "type": "PrimaryCTASectionProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
@@ -16228,51 +16150,21 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "backgroundColor",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "unknown",
+        "name": "slug",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
         "name": "title",
-        "type": "unknown",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "wrapper",
-        "type": "unknown",
-        "optional": false,
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
         "description": ""
       }
     ]
@@ -16316,12 +16208,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
-      },
-      {
-        "name": "cta",
-        "type": "PrimaryCTASectionProps | undefined",
-        "optional": true,
-        "description": ""
       },
       {
         "name": "description",
@@ -17165,12 +17051,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
-      },
-      {
-        "name": "cta",
-        "type": "PrimaryCTASectionProps | undefined",
-        "optional": true,
-        "description": ""
       },
       {
         "name": "description",
@@ -18120,51 +18000,21 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
-        "name": "backgroundColor",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "unknown",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "unknown",
+        "name": "slug",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
         "name": "title",
-        "type": "unknown",
+        "type": "string",
         "optional": false,
         "description": ""
       },
       {
-        "name": "wrapper",
-        "type": "unknown",
-        "optional": false,
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
         "description": ""
       }
     ]

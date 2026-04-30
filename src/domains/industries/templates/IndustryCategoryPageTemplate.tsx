@@ -150,13 +150,7 @@ export function IndustryCategoryPageTemplate({
           <PrimaryCTASection
             title={cta.title}
             description={cta.description}
-            metaItems={cta.metaItems}
-            cssPrefix={cta.cssPrefix}
-            backgroundColor={cta.backgroundColor}
-            headingLevel={cta.headingLevel}
-            wrapper={cta.wrapper}
-            includeContainer={cta.includeContainer}
-            primaryActionVariant={cta.primaryAction?.variant}
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

@@ -114,16 +114,11 @@ export function CaseStudiesPage() {
             is to test whether the same system change would remove the friction in your business.
           </div>
           <PrimaryCTASection
-            title='Want to know which system change would produce this kind of lift for you?'
-            description="Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business."
-            primaryActionVariant='white'
-            metaItems={[
-              { text: 'Honest advice' },
-              { text: 'No long-term contracts' },
-              { text: 'Built for small businesses' },
-            ]}
-            cssPrefix='case-studies-cta'
-            backgroundColor='bg-gradient-primary'
+            heading={{
+              title: 'Want to know which system change would produce this kind of lift for you?',
+              description: "Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business."
+            }}
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </div>

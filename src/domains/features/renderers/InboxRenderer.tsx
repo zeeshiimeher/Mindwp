@@ -158,7 +158,7 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
           <PrimaryCTASection
             title={cta.title}
             description={cta.description}
-            primaryActionVariant='white'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

@@ -174,9 +174,8 @@ export function SystemMigrationPlatformConsolidationRenderer({
           />
 
           <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            primaryActionVariant='white'
+            heading={{ title: ctaTitle, description: ctaDescription }}
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

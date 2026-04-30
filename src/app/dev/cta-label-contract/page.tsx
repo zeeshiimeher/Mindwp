@@ -41,6 +41,7 @@ export default function CtaLabelContractPage() {
               <PrimaryCTASection
                 title={`Contract case: ${testCase.slug}`}
                 description='Deterministic PrimaryCTASection contract validation.'
+                actions={[{ label: 'Get Started', href: '/contact' }]}
               />
             </div>
           </CTARegistryProvider>

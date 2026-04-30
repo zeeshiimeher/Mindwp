@@ -205,7 +205,7 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: AiLeadHandlingRend
           <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryActionVariant='white'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

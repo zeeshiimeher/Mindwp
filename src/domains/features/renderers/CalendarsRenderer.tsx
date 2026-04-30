@@ -155,9 +155,7 @@ export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
           <PrimaryCTASection
             title={cta.title}
             description={cta.description}
-            primaryActionVariant='white'
-            metaItems={cta.metaItems}
-            cssPrefix='calendars-cta'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

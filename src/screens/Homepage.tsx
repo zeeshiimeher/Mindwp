@@ -1038,10 +1038,7 @@ function FooterPrimaryCTASection() {
     <PrimaryCTASection
       title={ctaData.footer.title}
       description={ctaData.footer.description}
-      primaryActionVariant='white'
-      metaItems={ctaData.footer.metaItems}
-      cssPrefix='footer-cta'
-      backgroundColor='bg-gradient-primary'
+      actions={[{ label: 'Get Started', href: '/contact' }]}
     />
   );
 }

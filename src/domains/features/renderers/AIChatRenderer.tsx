@@ -186,7 +186,7 @@ export default function AIChatRenderer({ data }: AIChatRendererProps) {
           <PrimaryCTASection
             title={cta.title}
             description={cta.description}
-            primaryActionVariant='white'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

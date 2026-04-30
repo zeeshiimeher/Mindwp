@@ -155,9 +155,7 @@ export default function WorkflowsRenderer({ data }: WorkflowsRendererProps) {
           <PrimaryCTASection
             title={cta.title}
             description={cta.description}
-            primaryActionVariant='white'
-            cssPrefix='workflows-cta'
-            backgroundColor='bg-gradient-secondary'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

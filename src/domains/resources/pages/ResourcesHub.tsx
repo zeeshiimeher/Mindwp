@@ -155,9 +155,7 @@ export function ResourcesHub({
           <PrimaryCTASection
             title='Need help turning the right diagnosis into an operating system?'
             description='Tell us where the manual gap still lives, and we will show you which service path closes it with clearer ownership, faster follow-up, and less patchwork.'
-            primaryActionVariant='white'
-            cssPrefix='footer-cta'
-            backgroundColor='bg-gradient-primary'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </div>

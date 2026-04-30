@@ -19,7 +19,6 @@ export interface ProcessStepsSectionProps {
   title?: string;
   description?: string;
   steps: ProcessStep[];
-  cta?: PrimaryCTASectionProps;
   columns?: 2 | 3 | 4;
   /** Additional class(es) for the root element (additive only). */
   cssPrefix?: string;
@@ -33,7 +32,6 @@ export function ProcessStepsSection({
   title,
   description,
   steps,
-  cta,
   columns = 4,
   cssPrefix = '',
   backgroundColor = '',
@@ -68,11 +66,7 @@ export function ProcessStepsSection({
             ))}
           </CardGrid>
 
-          {cta ? (
-            <div className={`${BLOCK}__cta l-mt-8`}>
-              <PrimaryCTASection {...cta} wrapper='none' includeContainer={false} />
-            </div>
-          ) : null}
+
         </>
       ) : isTimelineLayout ? (
         <SplitLayout breakpoint='lg' ratio='50/70' gap={8}>
@@ -98,11 +92,7 @@ export function ProcessStepsSection({
               </Card>
             ))}
 
-            {cta ? (
-              <div className={`${BLOCK}__cta`}>
-                <PrimaryCTASection {...cta} wrapper='none' includeContainer={false} />
-              </div>
-            ) : null}
+
           </div>
         </SplitLayout>
       ) : null}

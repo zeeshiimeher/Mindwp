@@ -437,7 +437,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             <PrimaryCTASection
               title={ctaData.heading}
               description={ctaData.content}
-              metaItems={ctaData.features?.map(f => ({ text: f.text }))}
+              actions={[{ label: 'Get Started', href: '/contact' }]}
             />
           </div>
         ) : null;

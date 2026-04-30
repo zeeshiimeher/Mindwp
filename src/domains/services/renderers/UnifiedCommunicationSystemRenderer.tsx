@@ -235,7 +235,7 @@ export function UnifiedCommunicationSystemRenderer({
           <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryActionVariant='white'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>

@@ -90,7 +90,7 @@ export function BricksBuilderRenderer({ data, slug: _slug }: BricksBuilderRender
           <PrimaryCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryActionVariant='white'
+            actions={[{ label: 'Get Started', href: '/contact' }]}
           />
         </main>
       </ErrorBoundary>
