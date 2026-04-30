@@ -5,9 +5,9 @@ import path from 'node:path';
 
 import { resolveConversionGoal } from '../../src/lib/content-graph/conversionGoals.ts';
 import {
+  buildTsProject,
   getAdvisoryMetadataKeys,
   getBlockingMetadataKeys,
-  buildTsProject,
   getPrimarySystem,
   loadCanonicalSets,
   loadStructuredGraphNodes,

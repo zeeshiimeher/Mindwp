@@ -8,7 +8,7 @@ import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';

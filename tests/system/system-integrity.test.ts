@@ -13,7 +13,7 @@ import { getValidatorDefinitions } from '@/../scripts/core/system-manifest.mjs';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..', '..');
 const integrityTargets = [
-    'src/components/system/PrimaryCTASection.tsx',
+    'src/components/sections/PrimaryCTASection.tsx',
     'src/components/system/RelatedContentSection.tsx',
     'src/lib/seo/schema.ts',
     'src/lib/seo/inlineLinking.ts',
@@ -33,7 +33,7 @@ describe('system invariant: closure lock', () => {
 
     test('required renderers do not silently return null', () => {
         const primaryCta = readFileSync(
-            path.join(workspaceRoot, 'src/components/system/PrimaryCTASection.tsx'),
+            path.join(workspaceRoot, 'src/components/sections/PrimaryCTASection.tsx'),
             'utf8'
         );
         const relatedContent = readFileSync(

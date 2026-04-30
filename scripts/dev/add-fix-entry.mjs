@@ -18,8 +18,8 @@
  *     [--notes "Optional notes"]
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const LOG_PATH = resolve(process.cwd(), 'reports/fix-log.json');

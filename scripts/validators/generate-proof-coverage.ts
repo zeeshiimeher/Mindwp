@@ -1,16 +1,16 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
-import { createLogger } from '../../lib/logger/index.mjs';
-
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/generatedRegistry';
 import { SERVICE_ENTRY_BY_SLUG_WITH_ALIASES } from '@/domains/services/config';
+
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { createReportSchema } from '../../lib/reports/reportSchema';
 
 type ProofCoverageEntry = {

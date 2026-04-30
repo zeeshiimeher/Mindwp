@@ -1,8 +1,8 @@
+import { spawn, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { spawn, spawnSync } from 'node:child_process';
 
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 

@@ -14,7 +14,7 @@ import { HighlightCard } from '@/components/reusable/single/HighlightCard';
 import { ScenarioSolutionCard } from '@/components/reusable/single/ScenarioSolutionCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface WebsiteRedesignSystemRebuildRendererProps {

@@ -18,7 +18,7 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import type { FAQSection } from '@/components/reusable/single/FAQSection';
-import type { PrimaryCTASectionProps } from '@/components/system/PrimaryCTASection';
+import type { PrimaryCTASectionProps } from '@/components/sections/PrimaryCTASection';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import type { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 

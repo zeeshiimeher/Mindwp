@@ -12,7 +12,7 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
 

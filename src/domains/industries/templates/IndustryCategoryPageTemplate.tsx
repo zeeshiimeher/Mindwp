@@ -22,7 +22,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import {
   PrimaryCTASection,
   type PrimaryCTASectionProps,
-} from '@/components/system/PrimaryCTASection';
+} from '@/components/sections/PrimaryCTASection';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import {
   resolveIndustryCategoryDetailRoutes,

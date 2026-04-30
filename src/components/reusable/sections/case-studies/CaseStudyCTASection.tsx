@@ -1,13 +1,13 @@
 import {
   PrimaryCTASection,
   type PrimaryCTASectionProps,
-} from '@/components/system/PrimaryCTASection';
+} from '@/components/sections/PrimaryCTASection';
 
 /**
  * Domain wrapper for PrimaryCTASection with the existing case-study CTA prop shape.
  * Keeps case-study page composition naming consistent.
  */
-export type CaseStudyCTASectionProps = Pick<
+export type CaseStudyPrimaryCTASectionProps = Pick<
   PrimaryCTASectionProps,
   | 'title'
   | 'description'
@@ -19,6 +19,6 @@ export type CaseStudyCTASectionProps = Pick<
   | 'includeContainer'
 >;
 
-export function CaseStudyCTASection(props: CaseStudyCTASectionProps) {
+export function CaseStudyPrimaryCTASection(props: CaseStudyPrimaryCTASectionProps) {
   return <PrimaryCTASection {...props} />;
 }

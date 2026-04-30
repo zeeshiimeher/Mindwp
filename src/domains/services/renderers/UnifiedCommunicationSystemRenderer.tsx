@@ -17,7 +17,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface UnifiedCommunicationSystemRendererProps {

@@ -98,7 +98,7 @@ export async function runCtaViolationScan() {
   for (const filePath of files) {
     const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
     if (
-      relativePath === 'src/components/system/PrimaryCTASection.tsx' ||
+      relativePath === 'src/components/sections/PrimaryCTASection.tsx' ||
       relativePath.startsWith('src/components/')
     ) {
       continue;

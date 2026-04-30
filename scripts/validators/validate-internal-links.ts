@@ -11,18 +11,18 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { env } from '../../src/env';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
-import { resolveContentRules, type ContentRulePageType } from '../../src/lib/config/contentRules';
-import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
-import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
-import { buildRelatedContent } from '../../src/lib/related/buildRelatedContent';
-import { getRelatedContent } from '../../src/lib/graph/query';
-import type { ContentNodeType } from '../../src/lib/content-graph/types';
-import { normalizeInternalTarget } from '../../src/lib/seo/config';
 import { createReportSchema } from '../../lib/reports/reportSchema';
+import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
+import { env } from '../../src/env';
+import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
+import { type ContentRulePageType, resolveContentRules } from '../../src/lib/config/contentRules';
+import type { ContentNodeType } from '../../src/lib/content-graph/types';
+import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
+import { getRelatedContent } from '../../src/lib/graph/query';
+import { buildRelatedContent } from '../../src/lib/related/buildRelatedContent';
+import { normalizeInternalTarget } from '../../src/lib/seo/config';
 
 const SOURCE_SCAN_ROOTS = ['src/app', 'src/components', 'src/domains', 'src/screens'];
 const AUTHORED_HREF_PATTERN = /(?:href\s*:\s*|href=)(['"])(\/[^'"\s}]*)\1/g;

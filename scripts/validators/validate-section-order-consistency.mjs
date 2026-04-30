@@ -3,13 +3,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
-import { createLogger } from '../../lib/logger/index.mjs';
-
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import { collectSystemInvariantFindings } from '@/lib/system/invariants';
+
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 
 const args = new Set(process.argv.slice(2));
 const root = process.cwd();
@@ -40,9 +40,13 @@ async function main() {
     entryCount: entries.length,
     issueCount: sectionOrderIssues.length,
     summary: {
-      renderOrderConsistency: sectionOrderIssues.filter(issue => issue.code === 'render_order_mismatch').length === 0,
-      noSilentDrops: sectionOrderIssues.filter(issue => issue.code === 'silent_section_drop').length === 0,
-      noInjectedSections: sectionOrderIssues.filter(issue => issue.code === 'unexpected_rendered_sections').length === 0,
+      renderOrderConsistency:
+        sectionOrderIssues.filter(issue => issue.code === 'render_order_mismatch').length === 0,
+      noSilentDrops:
+        sectionOrderIssues.filter(issue => issue.code === 'silent_section_drop').length === 0,
+      noInjectedSections:
+        sectionOrderIssues.filter(issue => issue.code === 'unexpected_rendered_sections').length ===
+        0,
       ctaPresence: sectionOrderIssues.filter(issue => issue.code === 'missing_cta').length === 0,
     },
     issues: sectionOrderIssues,
@@ -56,7 +60,11 @@ async function main() {
   }
 
   if (sectionOrderIssues.length > 0) {
-    logger.printErrors(sectionOrderIssues.map(issue => issue.message), 'violations', 20);
+    logger.printErrors(
+      sectionOrderIssues.map(issue => issue.message),
+      'violations',
+      20
+    );
     process.exit(1);
   }
 

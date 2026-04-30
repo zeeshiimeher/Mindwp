@@ -7,13 +7,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv, withSystemEnvOverrides } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv, withSystemEnvOverrides } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { createReportSchema } from '../../lib/reports/reportSchema';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { computeAuthorityScores } from '../../src/lib/authority/authorityScore';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
-import { createReportSchema } from '../../lib/reports/reportSchema';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'graph-derived-summary.json');

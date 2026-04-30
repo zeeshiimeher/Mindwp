@@ -1,10 +1,10 @@
-import type { PrimaryCTASectionProps } from '@/components/system/PrimaryCTASection';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import type { PrimaryCTASectionProps } from '@/components/sections/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 
 /**
  * Domain wrapper for PrimaryCTASection that keeps service page composition naming consistent.
  */
-export type ServiceCTASectionProps = Pick<
+export type ServicePrimaryCTASectionProps = Pick<
   PrimaryCTASectionProps,
   | 'title'
   | 'description'
@@ -16,6 +16,6 @@ export type ServiceCTASectionProps = Pick<
   | 'includeContainer'
 >;
 
-export function ServiceCTASection(props: ServiceCTASectionProps) {
+export function ServicePrimaryCTASection(props: ServicePrimaryCTASectionProps) {
   return <PrimaryCTASection {...props} />;
 }

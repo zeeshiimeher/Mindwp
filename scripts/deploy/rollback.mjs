@@ -10,7 +10,7 @@ const snapshotPath = path.join(artifactsDir, 'system-snapshot.json');
 const rollbackSnapshotPath = path.join(artifactsDir, 'last-snapshot.json');
 
 if (!fs.existsSync(rollbackSnapshotPath)) {
-    throw new Error('No rollback snapshot found at artifacts/last-snapshot.json');
+  throw new Error('No rollback snapshot found at artifacts/last-snapshot.json');
 }
 
 fs.mkdirSync(artifactsDir, { recursive: true });

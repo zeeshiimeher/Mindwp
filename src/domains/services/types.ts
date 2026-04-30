@@ -148,11 +148,16 @@ export interface ServicePageData<
   sections: TSections;
 
   cta: {
+    kicker: string;
     title: string;
     description: string;
+    ctaList?: string[];
   };
+
   inlineCta?: {
+    kicker: string;
     title: string;
     description: string;
+    ctaList?: string[];
   };
 }

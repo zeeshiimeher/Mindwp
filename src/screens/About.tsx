@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { HeroActions } from '@/components/system/HeroActions';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 
 export function About() {

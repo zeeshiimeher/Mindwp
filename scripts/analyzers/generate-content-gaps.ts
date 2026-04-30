@@ -1,10 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '../../src/lib/content-graph/types';
@@ -15,6 +14,7 @@ import {
   type ValidationStatus,
 } from '../../src/lib/content-quality/topicAuthority';
 import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';
+import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 
 const logger = createLogger({
   label: 'content-gaps',
@@ -55,11 +55,11 @@ function buildAuthorityScore(snapshot: {
 }): number {
   return Math.round(
     Math.min(snapshot.blogCount, 1) * 30 +
-    Math.min(snapshot.resourceCount, 1) * 15 +
-    Math.min(snapshot.serviceCount, 1) * 15 +
-    Math.min(snapshot.featureCount, 1) * 10 +
-    Math.min(snapshot.industryCount, 1) * 10 +
-    Math.min(snapshot.caseStudyCount, 1) * 20
+      Math.min(snapshot.resourceCount, 1) * 15 +
+      Math.min(snapshot.serviceCount, 1) * 15 +
+      Math.min(snapshot.featureCount, 1) * 10 +
+      Math.min(snapshot.industryCount, 1) * 10 +
+      Math.min(snapshot.caseStudyCount, 1) * 20
   );
 }
 
@@ -78,11 +78,11 @@ function buildValidationGaps(nodes: ContentGraphNode[]) {
 
       const score = Math.round(
         Math.min(snapshot.blogCount, 1) * 30 +
-        Math.min(snapshot.resourceCount, 1) * 15 +
-        Math.min(snapshot.serviceCount, 1) * 15 +
-        Math.min(snapshot.featureCount, 1) * 10 +
-        Math.min(snapshot.industryCount, 1) * 10 +
-        Math.min(snapshot.caseStudyCount, 1) * 20
+          Math.min(snapshot.resourceCount, 1) * 15 +
+          Math.min(snapshot.serviceCount, 1) * 15 +
+          Math.min(snapshot.featureCount, 1) * 10 +
+          Math.min(snapshot.industryCount, 1) * 10 +
+          Math.min(snapshot.caseStudyCount, 1) * 20
       );
 
       const missing = [

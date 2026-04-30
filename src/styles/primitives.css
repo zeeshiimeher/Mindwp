@@ -55,7 +55,7 @@
 }
 
 .bg-dark .rd-link,
-.bg-gradient-hero .rd-link,
+.bg-gradient-base .rd-link,
 .bg-gradient-blue .rd-link,
 .bg-gradient-compare .rd-link,
 .bg-gradient-cta .rd-link {
@@ -63,7 +63,7 @@
 }
 
 .bg-dark .rd-link:hover,
-.bg-gradient-hero .rd-link:hover,
+.bg-gradient-base .rd-link:hover,
 .bg-gradient-blue .rd-link:hover,
 .bg-gradient-compare .rd-link:hover,
 .bg-gradient-cta .rd-link:hover {
@@ -114,7 +114,7 @@
 
 .rd-btn--sm {
     padding: 0.6rem 1.1rem;
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
 }
 
 /* primary on light: navy bg, white text, deeper navy on hover */
@@ -207,7 +207,7 @@
 }
 
 .bg-dark .rd-card,
-.bg-gradient-hero .rd-card,
+.bg-gradient-base .rd-card,
 .bg-gradient-blue .rd-card,
 .bg-gradient-compare .rd-card,
 .bg-gradient-cta .rd-card {
@@ -241,7 +241,7 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.3rem 0.7rem;
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: var(--tracking-meta);
     text-transform: uppercase;
@@ -309,7 +309,7 @@
 }
 
 .bg-dark .rd-icon-tile,
-.bg-gradient-hero .rd-icon-tile,
+.bg-gradient-base .rd-icon-tile,
 .bg-gradient-blue .rd-icon-tile,
 .bg-gradient-compare .rd-icon-tile,
 .bg-gradient-cta .rd-icon-tile {

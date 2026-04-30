@@ -3,10 +3,10 @@ import { Check } from 'lucide-react';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionLink, SectionTone } from './types';
 
-export type CTASectionVariant = 'soft-panel' | 'split-card';
+export type PrimaryCTASectionVariant = 'soft-panel' | 'split-card';
 
-export interface CTASectionProps {
-  variant?: CTASectionVariant;
+export interface PrimaryCTASectionProps {
+  variant?: PrimaryCTASectionVariant;
   /** Default soft tone keeps CTA off pure dark before the dark footer. */
   tone?: SectionTone;
   /** Optional: controls the background of the CTA shell. */
@@ -24,7 +24,7 @@ export interface CTASectionProps {
 }
 
 /**
- * CTASection — section-scoped CTA block.
+ * PrimaryCTASection — section-scoped CTA block.
  *
  * NOTE: This component intentionally does NOT use class names containing
  * `cta__panel`, `cta__content` or `cta__actions` — those substrings are
@@ -33,7 +33,7 @@ export interface CTASectionProps {
  * For the deterministic global CTA contract, use `PrimaryCTASection`.
  * Use this component for section-level / mid-page CTAs.
  */
-export function CTASection({
+export function PrimaryCTASection({
   variant = 'soft-panel',
   tone = 'soft',
   shellTone = 'gradient-cta',
@@ -43,7 +43,7 @@ export function CTASection({
   supports,
   ctaList,
   allowSecondary = false,
-}: CTASectionProps) {
+}: PrimaryCTASectionProps) {
   return (
     <SectionShell
       tone={tone}

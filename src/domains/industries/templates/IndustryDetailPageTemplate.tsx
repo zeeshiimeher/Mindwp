@@ -19,7 +19,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import {
   PrimaryCTASection,
   type PrimaryCTASectionProps,
-} from '@/components/system/PrimaryCTASection';
+} from '@/components/sections/PrimaryCTASection';
 import { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
 
@@ -90,18 +90,18 @@ export function IndustryDetailPageTemplate({
   );
   const resolvedDetailJourneySection = resolvedPathwaySection
     ? {
-        badge: resolvedPathwaySection.badge,
-        title: resolvedPathwaySection.title ?? '',
-        description: resolvedPathwaySection.description,
-        backgroundColor: resolvedPathwaySection.backgroundColor,
-        cssPrefix: resolvedPathwaySection.cssPrefix,
-        cards: resolvedPathwaySection.packages.map(pkg => ({
-          title: pkg.name,
-          description: `${pkg.price} — ${pkg.description}`,
-          points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
-          featured: pkg.popular,
-        })),
-      }
+      badge: resolvedPathwaySection.badge,
+      title: resolvedPathwaySection.title ?? '',
+      description: resolvedPathwaySection.description,
+      backgroundColor: resolvedPathwaySection.backgroundColor,
+      cssPrefix: resolvedPathwaySection.cssPrefix,
+      cards: resolvedPathwaySection.packages.map(pkg => ({
+        title: pkg.name,
+        description: `${pkg.price} — ${pkg.description}`,
+        points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
+        featured: pkg.popular,
+      })),
+    }
     : undefined;
 
   return (

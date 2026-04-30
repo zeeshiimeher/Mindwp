@@ -15,13 +15,13 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface CRMAutomationRendererProps {
   data: ServicePageDataBySlug[
-    | 'crm-infrastructure-implementation'
-    | 'website-crm-integration-vs-manual-lead-handling'];
+  | 'crm-infrastructure-implementation'
+  | 'website-crm-integration-vs-manual-lead-handling'];
   slug: string;
 }
 

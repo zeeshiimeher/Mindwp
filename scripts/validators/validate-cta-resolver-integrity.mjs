@@ -10,7 +10,11 @@ const shouldReportJson = args.has('--report-json');
 const root = process.cwd();
 const targetPath = path.join(root, 'src', 'lib', 'cta', 'primaryAction.ts');
 const reportPath = path.join(root, 'reports', 'cta-resolver-integrity-report.json');
-const logger = createLogger({ label: 'validate-cta-resolver-integrity', mode: 'summary', rootDir: root });
+const logger = createLogger({
+  label: 'validate-cta-resolver-integrity',
+  mode: 'summary',
+  rootDir: root,
+});
 
 const ALLOWED_FUNCTION_EXPORTS = new Set([
   'getPrimaryCTA',

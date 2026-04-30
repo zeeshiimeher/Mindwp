@@ -19,9 +19,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { createReportSchema } from '../../lib/reports/reportSchema';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { computeAuthorityScores } from '../../src/lib/authority/authorityScore';
 import {
@@ -32,7 +33,6 @@ import {
 import { buildGraphIndexes, getContentGraph } from '../../src/lib/content-graph/registry';
 import { getResolverIndexes } from '../../src/lib/content-graph/resolverIndexes';
 import type { ContentGraphNode, ContentNodeType } from '../../src/lib/content-graph/types';
-import { createReportSchema } from '../../lib/reports/reportSchema';
 
 const root = path.resolve(import.meta.dirname, '../..');
 const logger = createLogger({

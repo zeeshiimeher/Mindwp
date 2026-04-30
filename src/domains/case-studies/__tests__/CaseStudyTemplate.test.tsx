@@ -29,7 +29,7 @@ vi.mock('@/components/system/PageEnforcement', () => ({
   CTARegistryProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
-vi.mock('@/components/system/PrimaryCTASection', () => ({
+vi.mock('@/components/sections/PrimaryCTASection', () => ({
   PrimaryCTASection: ({ title }: { title: string }) => <div data-testid='smart-cta'>{title}</div>,
 }));
 

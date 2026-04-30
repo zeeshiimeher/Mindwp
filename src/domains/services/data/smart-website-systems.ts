@@ -198,7 +198,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Service businesses',
           description:
             'Tradespeople, consultants, agencies — services listed individually, contact paths clear, every enquiry captured and routed.',
-          keywords: 'Listed services • Direct contact • Tracked leads',
+          points: ['Listed services', 'Direct contact', 'Tracked leads'],
           iconType: 'primary' as const,
         },
         {
@@ -206,7 +206,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Online shops',
           description:
             'Products shown, checkout functioning, orders logged. Find it, buy it, done.',
-          keywords: 'Products • Checkout • Orders',
+          points: ['Products', 'Checkout', 'Orders'],
           iconType: 'primary' as const,
         },
         {
@@ -214,7 +214,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Appointment-based businesses',
           description:
             'Salons, clinics, coaches — customers book a slot without calling. Reminders go out automatically. No-shows drop.',
-          keywords: 'Booking • Reminders • Availability',
+          points: ['Booking', 'Reminders', 'Availability'],
           iconType: 'primary' as const,
         },
         {
@@ -222,7 +222,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Single-offer campaigns',
           description:
             'One service. One action. One number to track. Built for a specific offer that needs a direct outcome.',
-          keywords: 'Single offer • Clear action • Tracked result',
+          points: ['Single offer', 'Clear action', 'Tracked result'],
           iconType: 'primary' as const,
         },
       ],
@@ -335,7 +335,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Ad spend starts paying for itself',
           description:
             'Traffic you already pay for starts converting. People find what they came for and get in touch. Follow-up runs before it goes cold.',
-          keywords: 'Less waste • Real return • Measurable',
+          points: ['Less waste', 'Real return', 'Measurable'],
           iconType: 'primary' as const,
         },
         {
@@ -343,7 +343,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Your team stops chasing and starts delivering',
           description:
             'Enquiries show up with context attached. Follow-up is handled. Your team focuses on the actual work — not on checking inboxes.',
-          keywords: 'Less admin • Quicker response • Better focus',
+          points: ['Less admin', 'Quicker response', 'Better focus'],
           iconType: 'primary' as const,
         },
         {
@@ -351,7 +351,7 @@ export const smartWebsiteSystemsPage = {
           title: 'Search traffic has somewhere to land',
           description:
             'When what you offer is listed properly, Google can match you to people looking for it. The site becomes the thing every other channel points to.',
-          keywords: 'Organic traffic • Local search • Foundation',
+          points: ['Organic traffic', 'Local search', 'Foundation'],
           iconType: 'primary' as const,
         },
       ],
@@ -466,13 +466,10 @@ export const smartWebsiteSystemsPage = {
     },
   },
   cta: {
+    kicker: 'Final step',
     title: "Show me what's broken",
     description:
       "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
-  },
-  inlineCta: {
-    title: 'Not sure where your site is leaking enquiries?',
-    description:
-      'Send the link. We will show you where people stop, what is not being captured, and which fix matters first.',
+    ctaList: ['No commitment', '20-minute call', 'plain-English next steps'],
   },
 } satisfies ServicePageData;

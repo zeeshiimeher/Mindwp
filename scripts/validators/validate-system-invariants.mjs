@@ -4,13 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
-import { createLogger } from '../../lib/logger/index.mjs';
-
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import { collectSystemInvariantFindings } from '@/lib/system/invariants';
+
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 
 const args = new Set(process.argv.slice(2));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -37,11 +37,21 @@ async function main() {
     summary: {
       uniqueSlugs: issues.filter(issue => issue.code === 'duplicate_slug').length === 0,
       uniqueIds:
-        issues.filter(issue => issue.code === 'duplicate_id' || issue.code === 'duplicate_graph_id').length === 0,
-      canonicalConsistency: issues.filter(issue => issue.code === 'canonical_mismatch').length === 0,
-      renderOrderConsistency: issues.filter(issue => issue.code === 'render_order_mismatch').length === 0,
+        issues.filter(issue => issue.code === 'duplicate_id' || issue.code === 'duplicate_graph_id')
+          .length === 0,
+      canonicalConsistency:
+        issues.filter(issue => issue.code === 'canonical_mismatch').length === 0,
+      renderOrderConsistency:
+        issues.filter(issue => issue.code === 'render_order_mismatch').length === 0,
       graphAlignment:
-        issues.filter(issue => ['missing_graph_node', 'graph_slug_mismatch', 'graph_path_mismatch', 'orphan_graph_node'].includes(issue.code)).length === 0,
+        issues.filter(issue =>
+          [
+            'missing_graph_node',
+            'graph_slug_mismatch',
+            'graph_path_mismatch',
+            'orphan_graph_node',
+          ].includes(issue.code)
+        ).length === 0,
     },
     issues,
     warnings,
@@ -55,11 +65,19 @@ async function main() {
   }
 
   if (warnings.length > 0) {
-    logger.printErrors(warnings.map(warning => warning.message), 'warnings', 20);
+    logger.printErrors(
+      warnings.map(warning => warning.message),
+      'warnings',
+      20
+    );
   }
 
   if (issues.length > 0) {
-    logger.printErrors(issues.map(issue => issue.message), 'violations', 20);
+    logger.printErrors(
+      issues.map(issue => issue.message),
+      'violations',
+      20
+    );
     process.exit(1);
   }
 

@@ -1,5 +1,5 @@
 import { SectionWrapper } from '@/components/reusable/primitives';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 
 interface BlogFooterCTAProps {
   system: string;

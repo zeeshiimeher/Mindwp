@@ -1,11 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
-
 import { getContentGraph, getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import { overlapCount, scoreRelationship } from '../../src/lib/content-graph/scoring';
 import type { ContentGraphNode } from '../../src/lib/content-graph/types';

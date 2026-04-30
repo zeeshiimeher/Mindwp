@@ -6,7 +6,7 @@ import { Card } from '@/components/reusable/single/Card';
 import {
   PrimaryCTASection,
   type PrimaryCTASectionProps,
-} from '@/components/system/PrimaryCTASection';
+} from '@/components/sections/PrimaryCTASection';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'c-comparison-section';

@@ -45,7 +45,7 @@ Governance -> Domain data and registries -> Graph and resolver -> Routes and tem
 
 ### CTA and Contact
 
-- `src/components/system/PrimaryCTASection.tsx`
+- `src/components/sections/PrimaryCTASection.tsx`
 - `src/lib/cta/ctaRegistry.ts`
 - `src/lib/contact/contactHref.ts`
 - `/contact` as the single conversion endpoint
@@ -131,7 +131,7 @@ Manual review confirms authority quality where automation cannot judge it.
 | Content model             | `src/domains/contentModel.ts`                |
 | Graph initialization      | `src/domains/init/ensureGraphInitialized.ts` |
 | Publishable runtime       | `src/lib/content-graph/publishable.tsx`      |
-| CTA rendering             | `src/components/system/PrimaryCTASection.tsx` |
+| CTA rendering             | `src/components/sections/PrimaryCTASection.tsx` |
 | CTA registry              | `src/lib/cta/ctaRegistry.ts`                 |
 | Contact URL generation    | `src/lib/contact/contactHref.ts`             |
 | Validator orchestration   | `scripts/core/validate-all.mjs`              |

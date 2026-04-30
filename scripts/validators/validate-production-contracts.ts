@@ -2,19 +2,19 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-
-import { systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
-import { createLogger } from '../../lib/logger/index.mjs';
 import { z } from 'zod';
 
+import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import {
   ensureGraphInitialized,
   getInitializedContentGraph,
 } from '@/domains/init/ensureGraphInitialized';
-import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { createCTARegistry, getCTARegistrySnapshot } from '@/lib/cta/ctaRegistry';
+
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');

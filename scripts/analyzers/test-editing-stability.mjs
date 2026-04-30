@@ -10,9 +10,9 @@
  * All injected content is reverted automatically after each test.
  */
 
+import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
 
 const root = process.cwd();
 

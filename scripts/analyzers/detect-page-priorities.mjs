@@ -16,8 +16,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';
 import { resolveConversionPriorityTier } from '../../src/lib/content-graph/conversionGoals.ts';

@@ -420,14 +420,11 @@ export const localSeoAuthorityPage = {
       ],
     },
   },
-  inlineCta: {
-    title: 'Why am I not showing up?',
-    description:
-      "Drop your business name and postcode. We check how you appear on Google right now and what's holding you back.",
-  },
   cta: {
+    kicker: 'Final step',
     title: 'See why nearby customers are finding other businesses first',
     description:
       'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
+    ctaList: ['No commitment', 'Plain-English snapshot', 'No sales pressure'],
   },
 } satisfies ServicePageData;

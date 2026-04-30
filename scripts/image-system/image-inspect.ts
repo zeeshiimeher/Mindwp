@@ -3,9 +3,9 @@
 // ─── Image Inspector ────────────────────────────────────────────────
 // Analyzes generated images for overlay quality, contrast, and title fit
 
-import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
+import sharp from 'sharp';
 
 import { createLogger } from '../../lib/logger/index.mjs';
 

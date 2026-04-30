@@ -21,8 +21,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { isApprovedCtaLabel } from '../../src/lib/cta/primaryAction.ts';
 import { createReportSchema } from '../lib/report-schema.mjs';
@@ -156,7 +156,11 @@ function extractSeoFactoryFieldValues(text, fieldName) {
 }
 
 function normalizeComparableText(value) {
-  return value.toLowerCase().replace(/[^a-z0-9\s]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function extractCandidatePhrases(content) {
@@ -182,9 +186,7 @@ function buildCrossFileDuplicates(scores, selector) {
   }
 
   return new Set(
-    [...buckets.entries()]
-      .filter(([, files]) => new Set(files).size > 1)
-      .map(([value]) => value)
+    [...buckets.entries()].filter(([, files]) => new Set(files).size > 1).map(([value]) => value)
   );
 }
 
@@ -318,7 +320,10 @@ function main() {
   }
 
   const duplicateHeadingSet = buildCrossFileDuplicates(scores, score => score.headings ?? []);
-  const duplicatePhraseSet = buildCrossFileDuplicates(scores, score => score.candidatePhrases ?? []);
+  const duplicatePhraseSet = buildCrossFileDuplicates(
+    scores,
+    score => score.candidatePhrases ?? []
+  );
 
   for (const score of scores) {
     const hasRepeatedHeading = (score.headings ?? []).some(heading =>

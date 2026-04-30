@@ -1,21 +1,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { createReportSchema } from '../lib/report-schema.mjs';
-import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
-import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';
 import {
   buildTopicValidationSnapshots,
   type TopicClassification,
   type ValidationRequirement,
   type ValidationStatus,
 } from '../../src/lib/content-quality/topicAuthority';
+import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';
+import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
+import { createReportSchema } from '../lib/report-schema.mjs';
 
 const WEIGHTS = {
   blog: 30,
@@ -133,11 +133,11 @@ function partialScore(count: number, threshold: number, weight: number): number 
 function scoreTopic(topic: TopicScore): number {
   return Math.round(
     partialScore(topic.blogCount, FULL_THRESHOLDS.blog, WEIGHTS.blog) +
-    partialScore(topic.resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource) +
-    partialScore(topic.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
-    partialScore(topic.featureCount, FULL_THRESHOLDS.feature, WEIGHTS.feature) +
-    partialScore(topic.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
-    partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy)
+      partialScore(topic.resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource) +
+      partialScore(topic.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
+      partialScore(topic.featureCount, FULL_THRESHOLDS.feature, WEIGHTS.feature) +
+      partialScore(topic.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
+      partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy)
   );
 }
 

@@ -1,7 +1,6 @@
+import { chromium } from '@playwright/test';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-
-import { chromium } from '@playwright/test';
 
 import { systemEnv } from '../../config/systemEnv.mjs';
 

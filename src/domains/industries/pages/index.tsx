@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
 import { getVariantStyles } from '@/lib/ui/variantStyles';

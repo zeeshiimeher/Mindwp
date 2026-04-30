@@ -10,7 +10,7 @@
 
 export * from './AccordionFAQSection';
 export * from './BeforeAfterSection';
-export * from './CTASection';
+export * from './PrimaryCTASection';
 export * from './FitCheckSection';
 export * from './GridCardsSection';
 export * from './HeroSplitSection';

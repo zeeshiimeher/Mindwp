@@ -3,13 +3,13 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
-import { createLogger } from '../../lib/logger/index.mjs';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { resolveContentRules } from '@/lib/config/contentRules';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { loadPagesByType } from '../lib/content-validation-helpers.mjs';
 
 const args = new Set(process.argv.slice(2));
@@ -58,7 +58,13 @@ function validateServicePages(pages) {
     }
 
     if (sections.value) {
-      requireCount('service', page.slug, 'value.items', sections.value.items, serviceRules.valueItemsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'value.items',
+        sections.value.items,
+        serviceRules.valueItemsMin
+      );
     }
 
     if (sections.coreLayer) {
@@ -82,7 +88,13 @@ function validateServicePages(pages) {
     }
 
     if (sections.types) {
-      requireCount('service', page.slug, 'types.items', sections.types.items, serviceRules.typesItemsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'types.items',
+        sections.types.items,
+        serviceRules.typesItemsMin
+      );
     }
 
     if (sections.included) {
@@ -279,35 +291,101 @@ function validateResourcePages(resources) {
     for (const section of resource.sections) {
       switch (section.type) {
         case 'takeaways':
-          requireCount('resource', resource.slug, 'takeaways.items', section.items, resourceRules.takeawaysItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'takeaways.items',
+            section.items,
+            resourceRules.takeawaysItemsMin
+          );
           break;
         case 'problem':
-          requireCount('resource', resource.slug, 'problem.items', section.items, resourceRules.problemItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'problem.items',
+            section.items,
+            resourceRules.problemItemsMin
+          );
           break;
         case 'business-costs':
-          requireCount('resource', resource.slug, 'business-costs.items', section.items, resourceRules.businessCostsItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'business-costs.items',
+            section.items,
+            resourceRules.businessCostsItemsMin
+          );
           break;
         case 'diy':
-          requireCount('resource', resource.slug, 'diy.steps', section.steps, resourceRules.diyStepsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'diy.steps',
+            section.steps,
+            resourceRules.diyStepsMin
+          );
           break;
         case 'solution-cards':
-          requireCount('resource', resource.slug, 'solution-cards.solutions', section.solutions, resourceRules.solutionCardsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'solution-cards.solutions',
+            section.solutions,
+            resourceRules.solutionCardsMin
+          );
           break;
         case 'templates':
-          requireCount('resource', resource.slug, 'templates.items', section.items, resourceRules.templatesItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'templates.items',
+            section.items,
+            resourceRules.templatesItemsMin
+          );
           break;
         case 'checklist':
-          requireCount('resource', resource.slug, 'checklist.items', section.items, resourceRules.checklistItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'checklist.items',
+            section.items,
+            resourceRules.checklistItemsMin
+          );
           break;
         case 'faq':
-          requireCount('resource', resource.slug, 'faq.items', section.items, resourceRules.faqItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'faq.items',
+            section.items,
+            resourceRules.faqItemsMin
+          );
           break;
         case 'comparison':
-          requireCount('resource', resource.slug, 'comparison.before.items', section.before?.items, resourceRules.comparisonBeforeItemsMin);
-          requireCount('resource', resource.slug, 'comparison.after.items', section.after?.items, resourceRules.comparisonAfterItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'comparison.before.items',
+            section.before?.items,
+            resourceRules.comparisonBeforeItemsMin
+          );
+          requireCount(
+            'resource',
+            resource.slug,
+            'comparison.after.items',
+            section.after?.items,
+            resourceRules.comparisonAfterItemsMin
+          );
           break;
         case 'related-resources':
-          requireCount('resource', resource.slug, 'related-resources.resources', section.resources, resourceRules.relatedResourcesMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'related-resources.resources',
+            section.resources,
+            resourceRules.relatedResourcesMin
+          );
           break;
         default:
           break;
@@ -318,33 +396,82 @@ function validateResourcePages(resources) {
 
 function validateCaseStudies(caseStudies) {
   for (const caseStudy of caseStudies) {
-    const caseStudyRules = resolveContentRules('case-study', caseStudy.slug).sectionStructure.caseStudy;
+    const caseStudyRules = resolveContentRules('case-study', caseStudy.slug).sectionStructure
+      .caseStudy;
 
     for (const section of caseStudy.sections) {
       switch (section.type) {
         case 'metrics':
-          requireCount('case-study', caseStudy.slug, 'metrics.keyMetrics', section.keyMetrics, caseStudyRules.metricsKeyMetricsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'metrics.keyMetrics',
+            section.keyMetrics,
+            caseStudyRules.metricsKeyMetricsMin
+          );
           break;
         case 'problem':
-          requireCount('case-study', caseStudy.slug, 'problem.painPoints', section.painPoints, caseStudyRules.problemPainPointsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'problem.painPoints',
+            section.painPoints,
+            caseStudyRules.problemPainPointsMin
+          );
           break;
         case 'solution':
-          requireCount('case-study', caseStudy.slug, 'solution.whatWeDid', section.whatWeDid, caseStudyRules.solutionWhatWeDidMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'solution.whatWeDid',
+            section.whatWeDid,
+            caseStudyRules.solutionWhatWeDidMin
+          );
           break;
         case 'process':
-          requireCount('case-study', caseStudy.slug, 'process.howWeDidIt', section.howWeDidIt, caseStudyRules.processHowWeDidItMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'process.howWeDidIt',
+            section.howWeDidIt,
+            caseStudyRules.processHowWeDidItMin
+          );
           break;
         case 'features':
-          requireCount('case-study', caseStudy.slug, 'features.featuresUsed', section.featuresUsed, caseStudyRules.featuresUsedMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'features.featuresUsed',
+            section.featuresUsed,
+            caseStudyRules.featuresUsedMin
+          );
           break;
         case 'results':
-          requireCount('case-study', caseStudy.slug, 'results.results', section.results, caseStudyRules.resultsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'results.results',
+            section.results,
+            caseStudyRules.resultsMin
+          );
           break;
         case 'deliverables':
-          requireCount('case-study', caseStudy.slug, 'deliverables.items', section.items, caseStudyRules.deliverablesItemsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'deliverables.items',
+            section.items,
+            caseStudyRules.deliverablesItemsMin
+          );
           break;
         case 'workflows':
-          requireCount('case-study', caseStudy.slug, 'workflows.workflows', section.workflows, caseStudyRules.workflowsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'workflows.workflows',
+            section.workflows,
+            caseStudyRules.workflowsMin
+          );
           for (const [index, workflow] of (section.workflows ?? []).entries()) {
             requireCount(
               'case-study',
@@ -356,7 +483,13 @@ function validateCaseStudies(caseStudies) {
           }
           break;
         case 'faq':
-          requireCount('case-study', caseStudy.slug, 'faq.items', section.items, caseStudyRules.faqItemsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'faq.items',
+            section.items,
+            caseStudyRules.faqItemsMin
+          );
           break;
         default:
           break;

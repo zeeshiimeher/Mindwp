@@ -30,7 +30,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { ActionButtons } from '@/components/system/ActionButtons';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import {
   type Author,
@@ -302,10 +302,10 @@ export function BlogPostTemplate({
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(text, {
-            excludePaths: [currentPath],
-            sourcePath: currentPath,
-            tracker: inlineLinkTracker,
-          })
+          excludePaths: [currentPath],
+          sourcePath: currentPath,
+          tracker: inlineLinkTracker,
+        })
         : [{ type: 'text' as const, value: text }];
 
     let linkedInParagraph = false;
@@ -520,12 +520,12 @@ export function BlogPostTemplate({
             className='blog-hero'
             {...(featuredImage
               ? {
-                  style: {
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  },
-                }
+                style: {
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                },
+              }
               : {})}
           >
             <div className='l-stack l-stack--loose blog-post__hero'>

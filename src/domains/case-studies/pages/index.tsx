@@ -4,7 +4,7 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 
 export function CaseStudiesPage() {

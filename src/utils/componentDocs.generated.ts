@@ -643,7 +643,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 49,
+    "usageCount": 47,
     "composedComponents": [],
     "props": [
       {
@@ -12894,66 +12894,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
-  "CaseStudyCTASection": {
-    "name": "CaseStudyCTASection",
-    "filePath": "src/components/reusable/sections/case-studies/CaseStudyCTASection.tsx",
-    "summary": "",
-    "description": "",
-    "representativeUsageFilePath": "",
-    "representativePageUrl": "/",
-    "usageCount": 0,
-    "composedComponents": [],
-    "props": [
-      {
-        "name": "description",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "backgroundColor",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "\"h2\" | \"h3\" | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "boolean | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "wrapper",
-        "type": "\"none\" | \"section\" | undefined",
-        "optional": true,
-        "description": ""
-      }
-    ]
-  },
   "CaseStudyDeliverablesSection": {
     "name": "CaseStudyDeliverablesSection",
     "filePath": "src/components/reusable/sections/case-studies/index.ts",
@@ -13195,6 +13135,66 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "studies",
         "type": "CaseStudyTemplateMetadata[]",
+        "optional": false,
+        "description": ""
+      }
+    ]
+  },
+  "CaseStudyPrimaryCTASection": {
+    "name": "CaseStudyPrimaryCTASection",
+    "filePath": "src/components/reusable/sections/case-studies/CaseStudyCTASection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "backgroundColor",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "headingLevel",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "includeContainer",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "metaItems",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "wrapper",
+        "type": "unknown",
         "optional": false,
         "description": ""
       }
@@ -14586,66 +14586,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
-  "FeatureCTASection": {
-    "name": "FeatureCTASection",
-    "filePath": "src/components/reusable/sections/features/FeatureCTASection.tsx",
-    "summary": "",
-    "description": "",
-    "representativeUsageFilePath": "",
-    "representativePageUrl": "/",
-    "usageCount": 0,
-    "composedComponents": [],
-    "props": [
-      {
-        "name": "description",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "backgroundColor",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "\"h2\" | \"h3\" | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "boolean | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "wrapper",
-        "type": "\"none\" | \"section\" | undefined",
-        "optional": true,
-        "description": ""
-      }
-    ]
-  },
   "FeatureHeroSection": {
     "name": "FeatureHeroSection",
     "filePath": "src/components/reusable/sections/features/index.ts",
@@ -14834,6 +14774,66 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "structuredStateLabel",
         "type": "string | undefined",
         "optional": true,
+        "description": ""
+      }
+    ]
+  },
+  "FeaturePrimaryCTASection": {
+    "name": "FeaturePrimaryCTASection",
+    "filePath": "src/components/reusable/sections/features/FeatureCTASection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "backgroundColor",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "headingLevel",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "includeContainer",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "metaItems",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "wrapper",
+        "type": "unknown",
+        "optional": false,
         "description": ""
       }
     ]
@@ -15241,12 +15241,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Color theme for the icon background and text"
       },
       {
-        "name": "keywords",
-        "type": "string | undefined",
-        "optional": true,
-        "description": "Optional keywords or additional information displayed below description"
-      },
-      {
         "name": "linkColor",
         "type": "\"primary\" | \"secondary\" | undefined",
         "optional": true,
@@ -15257,6 +15251,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "\"link\" | \"button\" | undefined",
         "optional": true,
         "description": "Link style variant - \"button\" shows CTA button, \"link\" shows footer link like LinkCard"
+      },
+      {
+        "name": "points",
+        "type": "string[] | undefined",
+        "optional": true,
+        "description": "Optional points or additional information displayed below description"
       },
       {
         "name": "showArrow",
@@ -15905,66 +15905,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
-  "IndustryCTASection": {
-    "name": "IndustryCTASection",
-    "filePath": "src/components/reusable/sections/industries/IndustryCTASection.tsx",
-    "summary": "",
-    "description": "",
-    "representativeUsageFilePath": "",
-    "representativePageUrl": "/",
-    "usageCount": 0,
-    "composedComponents": [],
-    "props": [
-      {
-        "name": "description",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "backgroundColor",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "\"h2\" | \"h3\" | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "boolean | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "wrapper",
-        "type": "\"none\" | \"section\" | undefined",
-        "optional": true,
-        "description": ""
-      }
-    ]
-  },
   "IndustryExploreSection": {
     "name": "IndustryExploreSection",
     "filePath": "src/components/reusable/sections/industries/IndustryExploreSection.tsx",
@@ -16273,6 +16213,66 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string | undefined",
         "optional": true,
+        "description": ""
+      }
+    ]
+  },
+  "IndustryPrimaryCTASection": {
+    "name": "IndustryPrimaryCTASection",
+    "filePath": "src/components/reusable/sections/industries/IndustryCTASection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "backgroundColor",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "headingLevel",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "includeContainer",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "metaItems",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "wrapper",
+        "type": "unknown",
+        "optional": false,
         "description": ""
       }
     ]
@@ -18046,66 +18046,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
-  "ServiceCTASection": {
-    "name": "ServiceCTASection",
-    "filePath": "src/components/reusable/sections/service/ServiceCTASection.tsx",
-    "summary": "",
-    "description": "",
-    "representativeUsageFilePath": "",
-    "representativePageUrl": "/",
-    "usageCount": 0,
-    "composedComponents": [],
-    "props": [
-      {
-        "name": "description",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string",
-        "optional": false,
-        "description": ""
-      },
-      {
-        "name": "backgroundColor",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "cssPrefix",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "headingLevel",
-        "type": "\"h2\" | \"h3\" | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "includeContainer",
-        "type": "boolean | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "metaItems",
-        "type": "{ text: string; }[] | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "wrapper",
-        "type": "\"none\" | \"section\" | undefined",
-        "optional": true,
-        "description": ""
-      }
-    ]
-  },
   "ServiceHeroSection": {
     "name": "ServiceHeroSection",
     "filePath": "src/components/reusable/sections/service/ServiceHeroSection.tsx",
@@ -18166,6 +18106,66 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string[] | undefined",
         "optional": true,
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
+      }
+    ]
+  },
+  "ServicePrimaryCTASection": {
+    "name": "ServicePrimaryCTASection",
+    "filePath": "src/components/reusable/sections/service/ServiceCTASection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "backgroundColor",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "headingLevel",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "includeContainer",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "metaItems",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "wrapper",
+        "type": "unknown",
+        "optional": false,
+        "description": ""
       }
     ]
   },

@@ -92,11 +92,7 @@ export function HeroSplitSection({
               <a
                 key={action.label}
                 href={action.href}
-                className={
-                  action.primary
-                    ? 'rd-btn rd-btn--white'
-                    : 'rd-btn rd-btn--secondary'
-                }
+                className={action.primary ? 'rd-btn rd-btn--white' : 'rd-btn rd-btn--secondary'}
               >
                 {action.label}
               </a>

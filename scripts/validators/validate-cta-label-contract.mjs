@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { CANONICAL_SYSTEMS } from '../../src/lib/content-graph/canonical.ts';
 import {
   APPROVED_CTA_LABELS,
   buildGlobalPrimaryCtaAction,
@@ -10,7 +11,6 @@ import {
   getSecondaryCTA,
   isApprovedCtaLabel,
 } from '../../src/lib/cta/primaryAction.ts';
-import { CANONICAL_SYSTEMS } from '../../src/lib/content-graph/canonical.ts';
 import { listFilesRecursive } from '../lib/validator-helpers.mjs';
 
 const args = new Set(process.argv.slice(2));
@@ -18,7 +18,13 @@ const shouldReportJson = args.has('--report-json');
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'cta-label-contract-report.json');
-const primaryCtaSectionPath = path.join(root, 'src', 'components', 'system', 'PrimaryCTASection.tsx');
+const primaryCtaSectionPath = path.join(
+  root,
+  'src',
+  'components',
+  'system',
+  'PrimaryCTASection.tsx'
+);
 const tierCardsPath = path.join(
   root,
   'src',
@@ -37,7 +43,7 @@ const globalPrimaryCtaSurfaceChecks = [
 const allowedHardcodedLabelFiles = new Set([
   'src/components/reusable/sections/core/TierCardsSection.tsx',
   'src/lib/cta/primaryAction.ts',
-  'src/components/system/PrimaryCTASection.tsx',
+  'src/components/sections/PrimaryCTASection.tsx',
   'src/app/dev/cta-label-contract/page.tsx',
 ]);
 const repoSystemDirs = [
@@ -147,9 +153,7 @@ function main() {
   }
 
   if (
-    !primaryCtaSectionSource.includes(
-      "pageIdentity.primarySystem ?? 'smart-website-systems'"
-    ) ||
+    !primaryCtaSectionSource.includes("pageIdentity.primarySystem ?? 'smart-website-systems'") ||
     !primaryCtaSectionSource.includes('system: primarySystem')
   ) {
     issues.push({

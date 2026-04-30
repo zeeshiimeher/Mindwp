@@ -2,7 +2,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  CTASection,
+  PrimaryCTASection,
   FitCheckSection,
   GridCardsSection,
   type HeroSplitMetric,
@@ -13,10 +13,9 @@ import {
   type SectionIconKey,
 } from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface LocalSeoAuthorityRendererProps {
   data: ServicePageDataBySlug['local-seo-authority'];
@@ -50,7 +49,10 @@ const SCOPE_ICON_KEYS: readonly SectionIconKey[] = [
 const PROOF_ICON_KEYS: readonly SectionIconKey[] = ['minus', 'sparkles', 'check'];
 
 export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
+  const ctaKicker = 'kicker' in data.cta ? data.cta.kicker : undefined;
+  const ctaTitle = cta?.title;
+  const ctaDescription = cta?.description;
   const {
     misconceptions,
     why,
@@ -80,7 +82,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           chips={hero.list}
           actions={[
             { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
-            { label: SECONDARY_CTA_LABEL, href: contactHref },
           ]}
           visual={{
             brand: 'mindwp · local visibility',
@@ -306,28 +307,16 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           />
         )}
 
-        {/* Inline CTA */}
-        {inlineCta && (
-          <CTASection
-            variant='soft-panel'
-            tone='soft'
-            heading={{
-              kicker: 'Quick check',
-              title: inlineCta.title,
-              description: inlineCta.description,
-            }}
-            actions={[
-              { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
-              { label: SECONDARY_CTA_LABEL, href: contactHref },
-            ]}
-            microCopy='No commitment · we send a plain-English snapshot back'
-          />
-        )}
-
         <PrimaryCTASection
-          title={cta.title}
-          description={cta.description}
-          primaryActionVariant='white'
+          variant='soft-panel'
+          tone='soft'
+          heading={{
+            kicker: ctaKicker,
+            title: ctaTitle,
+            description: ctaDescription,
+          }}
+          actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
+          ctaList={Array.isArray((data.cta as any)?.ctaList) ? (data.cta as any).ctaList : []}
         />
       </main>
     </ErrorBoundary>

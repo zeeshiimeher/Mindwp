@@ -81,7 +81,10 @@ export function GridCardsSection({
                 <p className='grid-cards__description'>{item.description}</p>
               ) : null}
               {variant === 'signal-board' && item.badge ? (
-                <ul className='grid-cards__badge-list'>
+                <ul
+                  className='grid-cards__badge-list'
+                  data-badge-count={item.badge.split(/\s*[,;|]\s*|\n/).filter(Boolean).length}
+                >
                   {item.badge
                     .split(/\s*[,;|]\s*|\n/)
                     .filter(Boolean)

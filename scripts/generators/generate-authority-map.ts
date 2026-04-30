@@ -7,10 +7,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import prettier from 'prettier';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { buildGeneratedCodeNotice } from '../lib/generated-file-metadata.mjs';
 import { ensureGraphInitialized, getResolver } from '../../src/domains/init/ensureGraphInitialized';
 import { sortByAuthority } from '../../src/lib/authority/authorityScore';
 import type { AuthorityItem } from '../../src/lib/authority/resolver';
@@ -21,6 +20,7 @@ import {
   buildServiceValidationSnapshots,
   buildTopicValidationSnapshots,
 } from '../../src/lib/content-quality/topicAuthority';
+import { buildGeneratedCodeNotice } from '../lib/generated-file-metadata.mjs';
 
 const root = process.cwd();
 const OUTPUT_DIR = path.join(root, 'src', 'lib', 'authority', 'generated');

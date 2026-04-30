@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { getPrimaryCTA, getSecondaryCTA } from '@/lib/cta/primaryAction';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 

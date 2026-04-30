@@ -10,7 +10,7 @@ import { CaseStudyTemplate } from '@/domains/case-studies/templates/CaseStudyTem
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 
-vi.mock('@/components/system/PrimaryCTASection', () => ({
+vi.mock('@/components/sections/PrimaryCTASection', () => ({
   PrimaryCTASection: ({ title }: { title?: string }) => <div data-testid='smart-cta'>{title ?? 'cta'}</div>,
 }));
 

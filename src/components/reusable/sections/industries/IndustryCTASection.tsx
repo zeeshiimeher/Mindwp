@@ -1,13 +1,13 @@
 import {
   PrimaryCTASection,
   type PrimaryCTASectionProps,
-} from '@/components/system/PrimaryCTASection';
+} from '@/components/sections/PrimaryCTASection';
 
 /**
  * Domain wrapper for PrimaryCTASection with the existing industry CTA prop shape.
  * Keeps industry page composition naming consistent.
  */
-export type IndustryCTASectionProps = Pick<
+export type IndustryPrimaryCTASectionProps = Pick<
   PrimaryCTASectionProps,
   | 'title'
   | 'description'
@@ -19,6 +19,6 @@ export type IndustryCTASectionProps = Pick<
   | 'includeContainer'
 >;
 
-export function IndustryCTASection(props: IndustryCTASectionProps) {
+export function IndustryPrimaryCTASection(props: IndustryPrimaryCTASectionProps) {
   return <PrimaryCTASection {...props} />;
 }

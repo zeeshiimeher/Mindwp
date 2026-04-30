@@ -1,13 +1,13 @@
 import {
   PrimaryCTASection,
   type PrimaryCTASectionProps,
-} from '@/components/system/PrimaryCTASection';
+} from '@/components/sections/PrimaryCTASection';
 
 /**
  * Domain wrapper that preserves the existing feature CTA prop shape while routing
  * rendering through PrimaryCTASection.
  */
-export type FeatureCTASectionProps = Pick<
+export type FeaturePrimaryCTASectionProps = Pick<
   PrimaryCTASectionProps,
   | 'title'
   | 'description'
@@ -19,6 +19,6 @@ export type FeatureCTASectionProps = Pick<
   | 'includeContainer'
 >;
 
-export function FeatureCTASection(props: FeatureCTASectionProps) {
+export function FeaturePrimaryCTASection(props: FeaturePrimaryCTASectionProps) {
   return <PrimaryCTASection {...props} />;
 }

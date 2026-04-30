@@ -2,7 +2,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  CTASection,
+  PrimaryCTASection,
   FitCheckSection,
   GridCardsSection,
   type HeroSplitMetric,
@@ -14,16 +14,15 @@ import {
   type SectionIconKey,
 } from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import type { ServicePageSections } from '@/domains/services/types';
 import { buildContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface Props {
   data: ServicePageDataBySlug[
-    | 'smart-website-systems'
-    | 'service-pages-vs-one-generic-services-page'];
+  | 'smart-website-systems'
+  | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 
@@ -77,14 +76,10 @@ const TECH_ICON_KEYS: readonly SectionIconKey[] = [
 
 export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   const optionalSections = data.sections as ServicePageSections;
-  if (!data.inlineCta) {
-    throw new Error('SmartWebsiteSystemsRenderer requires inlineCta content.');
-  }
 
+  const ctaKicker = 'kicker' in data.cta ? data.cta.kicker : undefined;
   const ctaTitle = data.cta.title;
   const ctaDescription = data.cta.description;
-  const inlineCtaTitle = data.inlineCta.title;
-  const inlineCtaDescription = data.inlineCta.description;
   const contactHref = buildContactHref({
     system: slug,
     sourceType: 'page',
@@ -193,7 +188,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 iconKey: TYPE_ICON_KEYS[index % TYPE_ICON_KEYS.length],
                 title: type.title,
                 description: type.description,
-                badge: type.keywords,
+                badge: Array.isArray(type.points) ? type.points.join(', ') : undefined,
               }))}
             />
           )}
@@ -409,26 +404,15 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
-          <CTASection
-            variant='soft-panel'
-            tone='soft'
-            heading={{
-              kicker: 'Final step',
-              title: inlineCtaTitle,
-              description: inlineCtaDescription,
-            }}
-            actions={[
-              { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
-              { label: SECONDARY_CTA_LABEL, href: contactHref },
-            ]}
-            microCopy='No commitment · 20-minute call · plain-English next steps'
-          />
-
           <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            primaryActionVariant='white'
-            cssPrefix='smart-websites-cta'
+            variant='soft-panel'
+            heading={{
+              kicker: ctaKicker,
+              title: ctaTitle,
+              description: ctaDescription,
+            }}
+            actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
+            ctaList={Array.isArray((data.cta as any)?.ctaList) ? (data.cta as any).ctaList : []}
           />
         </main>
       </ErrorBoundary>

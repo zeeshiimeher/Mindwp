@@ -64,10 +64,10 @@ export interface ServiceBenefitItem {
   iconType?: VariantType;
 
   /**
-   * Optional keywords or additional information displayed below description
-   * Rendered with a border-top separator in smaller text
+   * Optional points or additional information displayed below description
+   * Rendered as a bullet/stacked list in smaller text
    */
-  keywords?: string;
+  points?: string[];
 
   /**
    * Optional benefit statement displayed prominently above description
@@ -89,8 +89,8 @@ interface IconBenefitCardProps {
   /** Color theme for the icon background and text */
   iconType?: VariantType;
 
-  /** Optional keywords or additional information displayed below description */
-  keywords?: string;
+  /** Optional points or additional information displayed below description */
+  points?: string[];
 
   /** Optional benefit statement displayed prominently above description */
   benefit?: string;
@@ -166,7 +166,7 @@ export function IconBenefitCard({
   title,
   description,
   iconType = 'primary',
-  keywords,
+  points,
   benefit,
   variant = 'centered',
   cssPrefix = '',
@@ -276,7 +276,13 @@ export function IconBenefitCard({
               </div>
             )}
             <p className={`${BLOCK}__desc`}>{description}</p>
-            {keywords && <div className={`${BLOCK}__keywords`}>{keywords}</div>}
+            {points && points.length > 0 && (
+              <ul className={`${BLOCK}__points`}>
+                {points.map((point, idx) => (
+                  <li key={idx}>{point}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       ) : (
@@ -307,7 +313,13 @@ export function IconBenefitCard({
             </div>
           )}
           <p className={`${BLOCK}__desc`}>{description}</p>
-          {keywords && <div className={`${BLOCK}__keywords`}>{keywords}</div>}
+          {points && points.length > 0 && (
+            <ul className={`${BLOCK}__points`}>
+              {points.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
+          )}
         </>
       )}
       {renderButton()}

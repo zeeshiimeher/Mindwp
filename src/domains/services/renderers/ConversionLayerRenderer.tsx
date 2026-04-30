@@ -16,7 +16,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSolutionSplitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import type { ServicePageData } from '@/domains/services/types';
 
 type ConversionLayerSections = {

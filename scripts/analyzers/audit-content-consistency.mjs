@@ -14,8 +14,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { isApprovedCtaLabel } from '../../src/lib/cta/primaryAction.ts';
 import { createReportSchema } from '../lib/report-schema.mjs';

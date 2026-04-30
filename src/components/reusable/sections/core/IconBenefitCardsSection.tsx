@@ -71,6 +71,7 @@ export function IconBenefitCardsSection({
               title={benefit.title}
               description={benefit.description}
               iconType={benefit.iconType}
+              points={benefit.points}
               {...(benefit.href !== undefined && { href: benefit.href })}
               {...(benefit.buttonText !== undefined && { buttonText: benefit.buttonText })}
               {...(benefit.buttonVariant !== undefined && { buttonVariant: benefit.buttonVariant })}

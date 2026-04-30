@@ -4,9 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { BLOG_POSTS } from '../../src/domains/blog/registry';
+import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { RESOURCE_REGISTRY } from '../../src/domains/resources/registry';
 import { resolveContentRules } from '../../src/lib/config/contentRules';
-import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import { buildRouteInventory, getInventoryMetadata } from '../../src/lib/content-quality/inventory';
 import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';

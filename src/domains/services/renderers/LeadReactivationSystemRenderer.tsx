@@ -12,7 +12,7 @@ import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistC
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { PrimaryCTASection } from '@/components/system/PrimaryCTASection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
