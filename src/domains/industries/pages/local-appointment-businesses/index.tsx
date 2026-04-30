@@ -394,9 +394,10 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Tell us where the diary is leaking',
-      description:
-        'If enquiries are answered too late, booking takes too many messages, or follow-up on the maybe pile never really happens, walk us through how the business runs and we’ll show you the first thing worth fixing.',
+      heading: {
+        title: 'Tell us where the diary is leaking',
+        description: 'If enquiries are answered too late, booking takes too many messages, or follow-up on the maybe pile never really happens, walk us through how the business runs and we’ll show you the first thing worth fixing.'
+      }
     },
   };
 }

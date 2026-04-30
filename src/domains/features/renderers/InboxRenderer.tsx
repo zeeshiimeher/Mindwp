@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { Inbox as InboxIcon, Mail, MessageSquare } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -156,9 +157,8 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
           />
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.title, description: cta.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'feature', slug: 'inbox' }) }]}
           />
         </main>
       </ErrorBoundary>

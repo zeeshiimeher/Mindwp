@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { Calendar, CheckCircle2 } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -153,9 +154,8 @@ export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
           />
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.title, description: cta.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'feature', slug: 'calendars' }) }]}
           />
         </main>
       </ErrorBoundary>

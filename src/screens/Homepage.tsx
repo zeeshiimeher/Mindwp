@@ -1036,9 +1036,8 @@ function FooterPrimaryCTASection() {
 
   return (
     <PrimaryCTASection
-      title={ctaData.footer.title}
-      description={ctaData.footer.description}
-      actions={[{ label: 'Get Started', href: '/contact' }]}
+      heading={{ title: ctaData.footer.title, description: ctaData.footer.description }}
+      actions={[{ label: 'Get Started', href: buildContactHref({ system: 'homepage', sourceType: 'homepage', slug: 'homepage-footer' }) }]}
     />
   );
 }

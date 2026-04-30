@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { Inbox, Mail, MessageSquare, Phone, Users } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -157,9 +158,8 @@ export default function CRMRenderer({ data }: CRMRendererProps) {
           />
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.title, description: cta.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'crm-automation', sourceType: 'feature', slug: 'crm' }) }]}
           />
         </main>
       </ErrorBoundary>

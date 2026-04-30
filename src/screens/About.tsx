@@ -102,9 +102,11 @@ export function About() {
       {/* SECTION 6 — CTA → Smart Website Systems */}
       <SectionWrapper className='footer-cta cta' padding='none'>
         <PrimaryCTASection
-          title="Ready to stop losing the work that's already coming in?"
-          description='See how Smart Website Systems closes the gap between an enquiry and a paying customer for service businesses.'
-          actions={[{ label: 'Get Started', href: '/contact' }]}
+          heading={{
+            title: "Ready to stop losing the work that's already coming in?",
+            description: 'See how Smart Website Systems closes the gap between an enquiry and a paying customer for service businesses.'
+          }}
+          actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'about', slug: 'about-footer' }) }]}
         />
       </SectionWrapper>
     </div>

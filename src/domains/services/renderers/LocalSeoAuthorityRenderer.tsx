@@ -315,7 +315,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             title: ctaTitle,
             description: ctaDescription,
           }}
-          actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
+          actions={[{ label: PRIMARY_CTA_LABEL, href: buildContactHref({ system: 'local-seo-authority', sourceType: 'service', slug: 'local-seo-footer' }), primary: true }]}
           ctaList={Array.isArray((data.cta as any)?.ctaList) ? (data.cta as any).ctaList : []}
         />
       </main>

@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { ArrowRight } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
@@ -84,9 +85,11 @@ export function FeaturesLanding() {
 
             {/* CTA Section */}
             <PrimaryCTASection
-              title='Need help matching the right feature to the real problem?'
-              description='Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
-              actions={[{ label: 'Get Started', href: '/contact' }]}
+              heading={{
+                title: 'Need help matching the right feature to the real problem?',
+                description: 'Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
+              }}
+              actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'feature', slug: 'feature-help' }) }]}
             />
           </main>
         </CTARegistryProvider>

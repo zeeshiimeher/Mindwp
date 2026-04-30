@@ -1,3 +1,4 @@
+import { buildContactHref } from '../../../lib/contact/contactHref';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ContentCardsGridSection,
@@ -75,7 +76,7 @@ export function WooCommerceRenderer({ data, slug: _slug }: WooCommerceRendererPr
 
           <PrimaryCTASection
             heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'woocommerce', sourceType: 'service', slug: 'woocommerce-footer' }) }]}
           />
         </main>
       </ErrorBoundary>

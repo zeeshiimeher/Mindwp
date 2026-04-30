@@ -294,9 +294,11 @@ export function ServicesLanding() {
             step is to pressure-test that diagnosis before you invest in the wrong build.
           </div>
           <PrimaryCTASection
-            title='Need help identifying the right system build first?'
-            description='Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.'
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{
+              title: 'Need help identifying the right system build first?',
+              description: 'Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.'
+            }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'service', slug: 'service-help' }) }]}
           />
         </CTARegistryProvider>
       </ErrorBoundary>

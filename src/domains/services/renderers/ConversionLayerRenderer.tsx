@@ -1,3 +1,4 @@
+import { buildContactHref } from '../../../lib/contact/contactHref';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
@@ -200,7 +201,7 @@ export function ConversionLayerRenderer({ data, slug: _slug }: ConversionLayerRe
 
           <PrimaryCTASection
             heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'conversion-layer', sourceType: 'service', slug: 'conversion-layer-footer' }) }]}
           />
         </main>
       </ErrorBoundary>

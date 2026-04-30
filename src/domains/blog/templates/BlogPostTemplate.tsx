@@ -1,3 +1,4 @@
+import { buildContactHref } from '../../../lib/contact/contactHref';
 /* Blog-post UI template.
   Renders from provided props only; routing, slug lookup, and registries stay outside this file. */
 
@@ -433,7 +434,7 @@ export function BlogPostTemplate({
           <PrimaryCTASection
             key={`cta-${index}`}
             heading={{ title: section.heading, description: section.content }}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'blog', sourceType: 'blog', slug: 'blog-footer' }) }]}
           />
         );
 

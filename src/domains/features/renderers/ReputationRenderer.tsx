@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { Star, TrendingUp } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
@@ -195,9 +196,8 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
           </SectionWrapper>
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.title, description: cta.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'reputation-review', sourceType: 'feature', slug: 'reputation' }) }]}
           />
         </main>
       </ErrorBoundary>

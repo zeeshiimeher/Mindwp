@@ -10,7 +10,7 @@ import { buildContactHref } from '@/lib/contact/contactHref';
  */
 export interface IndustryPrimaryCTASectionProps {
   title: string;
-  description?: string;
+  description: string;
   slug: string;
 }
 

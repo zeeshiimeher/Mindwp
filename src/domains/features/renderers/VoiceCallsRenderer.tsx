@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { BrainCircuit, CheckCircle2, Phone, PhoneCall } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
@@ -163,9 +164,8 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
           </SectionWrapper>
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.title, description: cta.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'voicecalls' }) }]}
           />
         </main>
       </ErrorBoundary>

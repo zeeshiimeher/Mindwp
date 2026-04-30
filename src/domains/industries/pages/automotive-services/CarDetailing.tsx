@@ -270,9 +270,10 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about last weekend\u2019s DMs',
-      description:
-        'Walk us through the messages that landed Saturday and never turned into a slot. We will tell you which gap to close first.',
+      heading: {
+        title: 'Tell us about last weekend\u2019s DMs',
+        description: 'Walk us through the messages that landed Saturday and never turned into a slot. We will tell you which gap to close first.'
+      }
     },
   };
 }

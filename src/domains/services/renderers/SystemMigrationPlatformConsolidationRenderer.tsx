@@ -1,3 +1,4 @@
+import { buildContactHref } from '../../../lib/contact/contactHref';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ComparisonSection,
@@ -175,7 +176,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
 
           <PrimaryCTASection
             heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'system-migration', sourceType: 'service', slug: 'system-migration-footer' }) }]}
           />
         </main>
       </ErrorBoundary>

@@ -100,9 +100,11 @@ export default function IndustriesLanding() {
             map that operating model to the service system that removes the real bottleneck.
           </div>
           <PrimaryCTASection
-            title='Need help identifying which operating-system fix matters most for your industry?'
-            description='Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.'
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{
+              title: 'Need help identifying which operating-system fix matters most for your industry?',
+              description: 'Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.'
+            }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'industry', sourceType: 'industry', slug: 'industry-help' }) }]}
           />
         </main>
       </div>

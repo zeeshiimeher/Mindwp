@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { CheckCircle2, MessageSquare, Users } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -184,9 +185,8 @@ export default function AIChatRenderer({ data }: AIChatRendererProps) {
           />
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.title, description: cta.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'aichat' }) }]}
           />
         </main>
       </ErrorBoundary>

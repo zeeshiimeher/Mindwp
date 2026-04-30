@@ -1,3 +1,4 @@
+import { buildContactHref } from '@/lib/contact/contactHref';
 // Case-study template renderer only (props in, JSX out).
 // No routing, fetching, or data lookups.
 
@@ -617,9 +618,8 @@ export function CaseStudyTemplate({
         return (
           <PrimaryCTASection
             key={`cta-${index}`}
-            title={section.heading}
-            description={section.body}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: section.heading, description: section.body }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'case-study', sourceType: 'case-study', slug: 'case-study-footer' }) }]}
           />
         );
 

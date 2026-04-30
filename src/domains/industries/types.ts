@@ -38,18 +38,10 @@ type IndustryDetailRoutesProps = ComponentProps<typeof RelatedCardsSection>;
 type IndustryExploreProps = Omit<ComponentProps<typeof IndustryExploreSection>, 'title'>;
 type IndustryCaseStudiesProps = ComponentProps<typeof IndustryCaseStudiesSection>;
 type IndustryFaqProps = ComponentProps<typeof FAQSection>;
-type IndustryCtaProps = Pick<
-  PrimaryCTASectionProps,
-  | 'title'
-  | 'description'
-  | 'metaItems'
-  | 'cssPrefix'
-  | 'backgroundColor'
-  | 'headingLevel'
-  | 'wrapper'
-  | 'includeContainer'
-> & {
-  primaryAction?: { variant?: PrimaryCTASectionProps['primaryActionVariant'] };
+import type { SectionHeading } from '@/components/sections/types';
+
+type IndustryCtaProps = {
+  heading: SectionHeading;
 };
 type IndustryWorkflowExamplesProps = ComponentProps<typeof IndustryWorkflowExamplesSection>;
 

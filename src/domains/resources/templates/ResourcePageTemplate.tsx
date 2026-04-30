@@ -435,9 +435,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               </div>
             </div>
             <PrimaryCTASection
-              title={ctaData.heading}
-              description={ctaData.content}
-              actions={[{ label: 'Get Started', href: '/contact' }]}
+              heading={{ title: ctaData.heading, description: ctaData.content }}
+              actions={[{ label: 'Get Started', href: buildContactHref({ system: 'resource', sourceType: 'resource', slug: 'resource-footer' }) }]}
             />
           </div>
         ) : null;

@@ -60,18 +60,11 @@ export type IndustryCategoryPageTemplateProps = {
       enabled?: boolean;
     };
   };
-  cta: Pick<
-    PrimaryCTASectionProps,
-    | 'title'
-    | 'description'
-    | 'metaItems'
-    | 'cssPrefix'
-    | 'backgroundColor'
-    | 'headingLevel'
-    | 'wrapper'
-    | 'includeContainer'
-  > & {
-    primaryAction?: { variant?: PrimaryCTASectionProps['primaryActionVariant'] };
+  cta: {
+    heading: {
+      title: string;
+      description: string;
+    };
   };
 };
 
@@ -148,9 +141,8 @@ export function IndustryCategoryPageTemplate({
           {faq && <FAQSection {...faq} />}
 
           <PrimaryCTASection
-            title={cta.title}
-            description={cta.description}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
+            heading={{ title: cta.heading.title, description: cta.heading.description }}
+            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'industry', sourceType: 'industry', slug: 'category' }) }]}
           />
         </main>
       </ErrorBoundary>

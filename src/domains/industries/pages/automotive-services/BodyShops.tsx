@@ -333,9 +333,10 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about Tuesday\u2019s photo',
-      description:
-        'Walk us through the last enquiry that arrived as a photo and never got booked. We will tell you what went wrong and what to plug first.',
+      heading: {
+        title: 'Tell us about Tuesday\u2019s photo',
+        description: 'Walk us through the last enquiry that arrived as a photo and never got booked. We will tell you what went wrong and what to plug first.'
+      }
     },
   };
 }
