@@ -1,7 +1,5 @@
-import { buildContactHref } from '../../../lib/contact/contactHref';
 /* Blog-post UI template.
   Renders from provided props only; routing, slug lookup, and registries stay outside this file. */
-
 import { Fragment, type ReactNode } from 'react';
 import {
   ArrowLeft,
@@ -29,9 +27,9 @@ import { Button } from '@/components/reusable/single/Button';
 import { Callout } from '@/components/reusable/single/Callout';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { ActionButtons } from '@/components/system/ActionButtons';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { Card } from '@/components/ui/card';
 import {
   type Author,
@@ -46,6 +44,8 @@ import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
+
+import { buildContactHref } from '../../../lib/contact/contactHref';
 
 export interface BlogPostTemplateProps {
   pageId: string;
@@ -303,10 +303,10 @@ export function BlogPostTemplate({
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(text, {
-          excludePaths: [currentPath],
-          sourcePath: currentPath,
-          tracker: inlineLinkTracker,
-        })
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
         : [{ type: 'text' as const, value: text }];
 
     let linkedInParagraph = false;
@@ -434,7 +434,12 @@ export function BlogPostTemplate({
           <PrimaryCTASection
             key={`cta-${index}`}
             heading={{ title: section.heading, description: section.content }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'blog', sourceType: 'blog', slug: 'blog-footer' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({ system: 'blog', sourceType: 'blog', slug: 'blog-footer' }),
+              },
+            ]}
           />
         );
 
@@ -519,12 +524,12 @@ export function BlogPostTemplate({
             className='blog-hero'
             {...(featuredImage
               ? {
-                style: {
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                },
-              }
+                  style: {
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  },
+                }
               : {})}
           >
             <div className='l-stack l-stack--loose blog-post__hero'>

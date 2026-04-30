@@ -1,4 +1,3 @@
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { Star, TrendingUp } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
@@ -14,10 +13,11 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
@@ -197,7 +197,16 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
 
           <PrimaryCTASection
             heading={{ title: cta.title, description: cta.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'reputation-review', sourceType: 'feature', slug: 'reputation' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'reputation-review',
+                  sourceType: 'feature',
+                  slug: 'reputation',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

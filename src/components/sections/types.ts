@@ -21,7 +21,7 @@ export interface SectionHeading {
   /** Heading text. */
   title: string;
   /** Supporting paragraph. */
-  description?: string;
+  description: string;
 }
 
 export interface SectionLink {

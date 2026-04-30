@@ -1,14 +1,14 @@
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { ArrowRight } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 // Features overview landing
@@ -87,9 +87,19 @@ export function FeaturesLanding() {
             <PrimaryCTASection
               heading={{
                 title: 'Need help matching the right feature to the real problem?',
-                description: 'Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
+                description:
+                  'Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.',
               }}
-              actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'feature', slug: 'feature-help' }) }]}
+              actions={[
+                {
+                  label: 'Get Started',
+                  href: buildContactHref({
+                    system: 'smart-website-systems',
+                    sourceType: 'feature',
+                    slug: 'feature-help',
+                  }),
+                },
+              ]}
             />
           </main>
         </CTARegistryProvider>

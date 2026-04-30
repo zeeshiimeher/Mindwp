@@ -14,8 +14,8 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { Card } from '@/components/ui/card';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -296,9 +296,19 @@ export function ServicesLanding() {
           <PrimaryCTASection
             heading={{
               title: 'Need help identifying the right system build first?',
-              description: 'Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.'
+              description:
+                'Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.',
             }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'service', slug: 'service-help' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'smart-website-systems',
+                  sourceType: 'service',
+                  slug: 'service-help',
+                }),
+              },
+            ]}
           />
         </CTARegistryProvider>
       </ErrorBoundary>

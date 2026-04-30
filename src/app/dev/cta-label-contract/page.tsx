@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { getPrimaryCTA, getSecondaryCTA } from '@/lib/cta/primaryAction';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
@@ -42,9 +42,18 @@ export default function CtaLabelContractPage() {
               <PrimaryCTASection
                 heading={{
                   title: `Contract case: ${testCase.slug}`,
-                  description: 'Deterministic PrimaryCTASection contract validation.'
+                  description: 'Deterministic PrimaryCTASection contract validation.',
                 }}
-                actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'service', slug: testCase.slug }) }]}
+                actions={[
+                  {
+                    label: 'Get Started',
+                    href: buildContactHref({
+                      system: 'smart-website-systems',
+                      sourceType: 'service',
+                      slug: testCase.slug,
+                    }),
+                  },
+                ]}
               />
             </div>
           </CTARegistryProvider>

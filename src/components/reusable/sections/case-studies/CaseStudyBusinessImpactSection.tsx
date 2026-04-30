@@ -8,7 +8,7 @@ const BLOCK = 'case-study-detail-business-impact';
 export interface CaseStudyBusinessImpactSectionProps {
   badge?: string;
   title: string;
-  description?: string;
+  description: string;
   impacts: string[];
 }
 
@@ -23,7 +23,7 @@ export function CaseStudyBusinessImpactSection({
       <SectionIntro
         {...(badge !== undefined && { badge })}
         title={title}
-        {...(description !== undefined && { description })}
+        description={description}
         className={`${BLOCK}__header`}
       />
 

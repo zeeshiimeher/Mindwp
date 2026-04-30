@@ -365,8 +365,9 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     cta: {
       heading: {
         title: 'Tell us where the work is bleeding out',
-        description: 'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.'
-      }
+        description:
+          'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
+      },
     },
   };
 }

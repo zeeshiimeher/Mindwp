@@ -260,8 +260,9 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     cta: {
       heading: {
         title: 'Show us where the work is leaving',
-        description: 'Walk us through a normal week at the shop. We will tell you the one leak worth fixing first and what it would take to plug it.'
-      }
+        description:
+          'Walk us through a normal week at the shop. We will tell you the one leak worth fixing first and what it would take to plug it.',
+      },
     },
   };
 }

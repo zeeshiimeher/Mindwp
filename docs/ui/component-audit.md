@@ -457,6 +457,146 @@ Ensure every section follows a strict, predictable pipeline with zero hidden log
 
 ---
 
+# 📦 DETAILED TASK — SECTION MIGRATION (REPEAT FOR EACH PAGE)
+
+This is the exact workflow to migrate pages from old system → new components.
+
+## STEP 1 — Identify Section
+
+- Open page renderer
+- Identify section purpose (hero, features, proof, faq, etc.)
+- Map it to closest new component in `/components/sections`
+
+---
+
+## STEP 2 — Match Component + Variant
+
+- Select correct component
+- Select correct variant (based on existing usage patterns)
+- DO NOT create new component unless absolutely required
+- Prefer adding variant over creating new component
+
+---
+
+## CTA PLACEMENT RULE (MANDATORY)
+
+- Each page MUST have ONLY ONE main CTA section
+- This CTA MUST be placed at the bottom of the page
+- Use `CTASection` with correct variant (typically `primary` or `soft-panel`)
+
+DO NOT:
+- add multiple CTA sections randomly
+- place CTA in middle unless explicitly required
+
+---
+
+## INLINE CTA (EXCEPTION CASE)
+
+- Inline CTA is allowed ONLY when:
+  - content requires interruption (e.g. long explanation, proof section)
+  - it improves clarity or flow
+
+- Inline CTA MUST:
+  - use a softer variant (e.g. `soft-panel`)
+  - NOT replace the main bottom CTA
+
+- Inline CTA usage should remain minimal and intentional
+
+---
+
+## STEP 3 — Define Data Contract
+
+- Check required props for component
+- Ensure data follows:
+
+```
+{
+  id: string,
+  heading: { title: string },
+  ...
+}
+```
+
+- Add missing `id` fields
+- Normalize structure (arrays, objects)
+
+---
+
+## STEP 4 — Validate Data
+
+- Ensure required fields exist:
+  - heading.title
+  - items length
+  - image src (if applicable)
+
+- Remove invalid or incomplete entries
+- DO NOT fix inside component
+
+---
+
+## STEP 5 — Update Renderer
+
+Replace old component:
+
+❌
+```
+<OldComponent data={...} />
+```
+
+✅
+```
+const data = validateSection(rawData)
+if (!data) return null
+
+<NewSection {...data} />
+```
+
+---
+
+## STEP 6 — Apply Component Rules
+
+- Fix keys
+- Add guards
+- Remove logic leakage
+- Ensure `id` exists on all items
+
+---
+
+## STEP 7 — Visual + Functional Check
+
+- Layout renders correctly
+- No empty sections
+- No console errors
+- CTA works correctly
+
+---
+
+## STEP 8 — Remove Old Usage
+
+- Remove old component import
+- Remove unused styles / props
+- Ensure no dependency remains
+
+---
+
+## STEP 9 — Commit Clean State
+
+- Page fully uses new system
+- No mixed components (old + new)
+- Renderer is clean and minimal
+
+---
+
+## OUTPUT EXPECTATION
+
+Each migrated page should:
+
+- Use ONLY new `/components/sections`
+- Pass validation layer
+- Have clean data → renderer → component flow
+
+---
+
 # 🧠 MINDSET
 
 You are not improving visuals.

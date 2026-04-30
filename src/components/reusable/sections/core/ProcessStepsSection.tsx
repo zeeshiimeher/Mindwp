@@ -65,8 +65,6 @@ export function ProcessStepsSection({
               />
             ))}
           </CardGrid>
-
-
         </>
       ) : isTimelineLayout ? (
         <SplitLayout breakpoint='lg' ratio='50/70' gap={8}>
@@ -91,8 +89,6 @@ export function ProcessStepsSection({
                 <p className={`${BLOCK}__rail-step-description`}>{step.description}</p>
               </Card>
             ))}
-
-
           </div>
         </SplitLayout>
       ) : null}

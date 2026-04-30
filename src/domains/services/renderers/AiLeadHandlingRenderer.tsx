@@ -15,8 +15,8 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 import type { ServicePageData } from '@/domains/services/types';
 

@@ -13,7 +13,7 @@ export interface CaseStudyWorkflow {
 export interface CaseStudyWorkflowsSectionProps {
   badge?: string;
   title: string;
-  description?: string;
+  description: string;
   workflows: CaseStudyWorkflow[];
 }
 
@@ -28,7 +28,7 @@ export function CaseStudyWorkflowsSection({
       <SectionIntro
         {...(badge !== undefined && { badge })}
         title={title}
-        {...(description !== undefined && { description })}
+        description={description}
         className={`${BLOCK}__header`}
       />
 

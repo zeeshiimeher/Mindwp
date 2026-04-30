@@ -10,8 +10,8 @@ import {
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
 interface WordPressDevelopmentRendererProps {

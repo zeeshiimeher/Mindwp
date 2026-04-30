@@ -28,6 +28,7 @@ import {
   resolveIndustryCategoryDetailRoutes,
   resolveIndustryPathwaySection,
 } from '@/domains/industries/utils/industryPresentation';
+import { buildContactHref } from '@/lib/contact/buildContactHref';
 
 export type IndustryCategoryPageTemplateProps = {
   slug: string;
@@ -141,8 +142,20 @@ export function IndustryCategoryPageTemplate({
           {faq && <FAQSection {...faq} />}
 
           <PrimaryCTASection
-            heading={{ title: cta.heading.title, description: cta.heading.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'industry', sourceType: 'industry', slug: 'category' }) }]}
+            heading={{
+              title: cta.heading?.title ?? '',
+              description: cta.heading?.description ?? '',
+            }}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'industry',
+                  sourceType: 'industry',
+                  slug: 'category',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

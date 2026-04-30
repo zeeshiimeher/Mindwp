@@ -1,4 +1,3 @@
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { BrainCircuit, CheckCircle2, Phone, PhoneCall } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
@@ -13,10 +12,11 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 interface VoiceCallsRendererProps {
@@ -165,7 +165,16 @@ export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
 
           <PrimaryCTASection
             heading={{ title: cta.title, description: cta.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'voicecalls' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'ai-lead-handling',
+                  sourceType: 'feature',
+                  slug: 'voicecalls',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

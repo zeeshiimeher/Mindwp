@@ -1,4 +1,3 @@
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { Workflow } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -11,10 +10,11 @@ import {
 } from '@/components/reusable/sections/features';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 const WorkflowVisual = ({ data }: { data: FeaturePageData }) => {
   const flow = data.sections.visualFlow;
@@ -155,7 +155,16 @@ export default function WorkflowsRenderer({ data }: WorkflowsRendererProps) {
 
           <PrimaryCTASection
             heading={{ title: cta.title, description: cta.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'crm-automation', sourceType: 'feature', slug: 'workflows' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'crm-automation',
+                  sourceType: 'feature',
+                  slug: 'workflows',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

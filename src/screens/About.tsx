@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { HeroActions } from '@/components/system/HeroActions';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { HeroActions } from '@/components/system/HeroActions';
 import { Card } from '@/components/ui/card';
 
 export function About() {
@@ -104,9 +104,19 @@ export function About() {
         <PrimaryCTASection
           heading={{
             title: "Ready to stop losing the work that's already coming in?",
-            description: 'See how Smart Website Systems closes the gap between an enquiry and a paying customer for service businesses.'
+            description:
+              'See how Smart Website Systems closes the gap between an enquiry and a paying customer for service businesses.',
           }}
-          actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'about', slug: 'about-footer' }) }]}
+          actions={[
+            {
+              label: 'Get Started',
+              href: buildContactHref({
+                system: 'smart-website-systems',
+                sourceType: 'about',
+                slug: 'about-footer',
+              }),
+            },
+          ]}
         />
       </SectionWrapper>
     </div>

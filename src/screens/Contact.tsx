@@ -631,9 +631,19 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
         <PrimaryCTASection
           heading={{
             title: 'Need to talk through the right next step?',
-            description: "If the problem is clear but the right move is not, start the conversation and we'll help you scope it properly."
+            description:
+              "If the problem is clear but the right move is not, start the conversation and we'll help you scope it properly.",
           }}
-          actions={[{ label: 'Get Started', href: buildContactHref({ system: 'contact', sourceType: 'contact', slug: 'contact-footer' }) }]}
+          actions={[
+            {
+              label: 'Get Started',
+              href: buildContactHref({
+                system: 'contact',
+                sourceType: 'contact',
+                slug: 'contact-footer',
+              }),
+            },
+          ]}
         />
       </SectionWrapper>
     </div>

@@ -1,4 +1,3 @@
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { Inbox as InboxIcon, Mail, MessageSquare } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -14,10 +13,11 @@ import {
 import { Badge } from '@/components/reusable/single/Badge';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 interface InboxRendererProps {
   data: FeaturePageData;
@@ -158,7 +158,16 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
 
           <PrimaryCTASection
             heading={{ title: cta.title, description: cta.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'feature', slug: 'inbox' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'smart-website-systems',
+                  sourceType: 'feature',
+                  slug: 'inbox',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

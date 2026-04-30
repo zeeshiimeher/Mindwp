@@ -1,4 +1,3 @@
-
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -26,7 +25,12 @@ export function BlogFooterCTA({
     <SectionWrapper className='footer-cta cta' padding='none'>
       <PrimaryCTASection
         heading={{ title, description }}
-        actions={[{ label: 'Get Started', href: buildContactHref({ system: _system, sourceType: 'blog', slug: _slug }) }]}
+        actions={[
+          {
+            label: 'Get Started',
+            href: buildContactHref({ system: _system, sourceType: 'blog', slug: _slug }),
+          },
+        ]}
       />
     </SectionWrapper>
   );

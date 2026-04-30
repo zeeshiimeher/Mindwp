@@ -237,19 +237,19 @@ function writeJson(filePath, data) {
   const payload =
     filePath.endsWith('.json') && !data?.meta?.generatedFile && !data?.generatedFile
       ? attachGeneratedJsonMetadata(data, {
-        generatedBy:
-          path.basename(filePath) === 'client-dashboard.json' ? 'system-report' : sourceCommand,
-        source:
-          path.basename(filePath) === 'client-dashboard.json'
-            ? 'system dashboard inputs'
-            : sourceCommand,
-        generatedAt:
-          typeof data?.generatedAt === 'string'
-            ? data.generatedAt
-            : typeof data?.timestamp === 'string'
-              ? data.timestamp
-              : new Date().toISOString(),
-      })
+          generatedBy:
+            path.basename(filePath) === 'client-dashboard.json' ? 'system-report' : sourceCommand,
+          source:
+            path.basename(filePath) === 'client-dashboard.json'
+              ? 'system dashboard inputs'
+              : sourceCommand,
+          generatedAt:
+            typeof data?.generatedAt === 'string'
+              ? data.generatedAt
+              : typeof data?.timestamp === 'string'
+                ? data.timestamp
+                : new Date().toISOString(),
+        })
       : data;
   fs.writeFileSync(filePath, JSON.stringify(payload, null, 2) + '\n');
 
@@ -1636,10 +1636,10 @@ function summarizeVitestReport(report, fallbackDuration) {
         typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
           ? Math.max(0, item.endTime - item.startTime)
           : Math.round(
-            assertions.reduce((sum, assertion) => {
-              return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
-            }, 0)
-          );
+              assertions.reduce((sum, assertion) => {
+                return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
+              }, 0)
+            );
 
       return {
         file,
@@ -2049,7 +2049,7 @@ function buildSystemSection() {
     graph: {
       status:
         (graphReport?.errorCount ?? graphErrors.length) === 0 &&
-          (graphReport?.summary?.orphanNodes ?? 0) === 0
+        (graphReport?.summary?.orphanNodes ?? 0) === 0
           ? 'OK'
           : 'ISSUES',
       nodes: Array.isArray(authorityMap?.nodes) ? authorityMap.nodes.length : 0,
@@ -2104,17 +2104,17 @@ function main() {
   const tests = skipTests
     ? buildSkippedTestsSection()
     : (() => {
-      const testsResult = runCommand(binaries.npm, [
-        'run',
-        'test',
-        '--',
-        '--run',
-        '--reporter=json',
-        `--outputFile=${vitestOutputPath}`,
-      ]);
-      const vitestReport = readJsonFile(vitestOutputPath);
-      return buildTestsSection(testsResult, vitestReport);
-    })();
+        const testsResult = runCommand(binaries.npm, [
+          'run',
+          'test',
+          '--',
+          '--run',
+          '--reporter=json',
+          `--outputFile=${vitestOutputPath}`,
+        ]);
+        const vitestReport = readJsonFile(vitestOutputPath);
+        return buildTestsSection(testsResult, vitestReport);
+      })();
   const vitestReport = skipTests ? null : readJsonFile(vitestOutputPath);
 
   const e2eResult = includeE2E
@@ -2210,9 +2210,9 @@ function main() {
   stabilizedReport.reports.fileCount = stabilizedReport.reports.files.length;
   stabilizedReport.reports.status =
     stabilizedReport.reports.errors.length === 0 &&
-      stabilizedReport.reports.files.length > 0 &&
-      stabilizedReport.reports.missing.length === 0 &&
-      stabilizedReport.reports.stale.length === 0
+    stabilizedReport.reports.files.length > 0 &&
+    stabilizedReport.reports.missing.length === 0 &&
+    stabilizedReport.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   stabilizedReport.status = buildOverallStatus(stabilizedReport);
@@ -2244,9 +2244,9 @@ function main() {
   );
   validatedOutputs.report.reports.status =
     validatedOutputs.report.reports.errors.length === 0 &&
-      validatedOutputs.report.reports.files.length > 0 &&
-      validatedOutputs.report.reports.missing.length === 0 &&
-      validatedOutputs.report.reports.stale.length === 0
+    validatedOutputs.report.reports.files.length > 0 &&
+    validatedOutputs.report.reports.missing.length === 0 &&
+    validatedOutputs.report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   validatedOutputs.report.status = buildOverallStatus(validatedOutputs.report);

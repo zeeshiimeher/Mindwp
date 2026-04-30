@@ -1,4 +1,3 @@
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { Inbox, Mail, MessageSquare, Phone, Users } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
@@ -13,10 +12,11 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 interface CRMRendererProps {
@@ -159,7 +159,16 @@ export default function CRMRenderer({ data }: CRMRendererProps) {
 
           <PrimaryCTASection
             heading={{ title: cta.title, description: cta.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'crm-automation', sourceType: 'feature', slug: 'crm' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'crm-automation',
+                  sourceType: 'feature',
+                  slug: 'crm',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

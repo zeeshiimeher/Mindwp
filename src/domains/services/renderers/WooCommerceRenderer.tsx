@@ -1,4 +1,3 @@
-import { buildContactHref } from '../../../lib/contact/contactHref';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ContentCardsGridSection,
@@ -7,9 +6,11 @@ import {
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
+
+import { buildContactHref } from '../../../lib/contact/contactHref';
 
 interface WooCommerceRendererProps {
   data: ServicePageDataBySlug['ecommerce'];
@@ -76,7 +77,16 @@ export function WooCommerceRenderer({ data, slug: _slug }: WooCommerceRendererPr
 
           <PrimaryCTASection
             heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'woocommerce', sourceType: 'service', slug: 'woocommerce-footer' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'woocommerce',
+                  sourceType: 'service',
+                  slug: 'woocommerce-footer',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

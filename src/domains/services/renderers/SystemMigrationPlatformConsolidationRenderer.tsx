@@ -1,4 +1,3 @@
-import { buildContactHref } from '../../../lib/contact/contactHref';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ComparisonSection,
@@ -12,9 +11,11 @@ import { IconTextCard, LinkCard, SectionIntro } from '@/components/reusable/sing
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
+
+import { buildContactHref } from '../../../lib/contact/contactHref';
 
 interface SystemMigrationPlatformConsolidationRendererProps {
   data: ServicePageDataBySlug['system-migration-platform-consolidation'];
@@ -176,7 +177,16 @@ export function SystemMigrationPlatformConsolidationRenderer({
 
           <PrimaryCTASection
             heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'system-migration', sourceType: 'service', slug: 'system-migration-footer' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'system-migration',
+                  sourceType: 'service',
+                  slug: 'system-migration-footer',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

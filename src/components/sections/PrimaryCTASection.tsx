@@ -13,14 +13,12 @@ export interface PrimaryCTASectionProps {
   shellTone?: SectionTone;
   density?: SectionDensity;
   heading: SectionHeading;
-  /** Primary + (optional) secondary CTA buttons. */
+  /** Primary CTA buttons only. */
   actions: readonly SectionLink[];
   /** Optional bullet list of trust supports rendered with the CTA. */
   supports?: readonly string[];
   /** Optional list of CTA microcopy lines. */
   ctaList?: string[];
-  /** Explicitly allow secondary button rendering. */
-  allowSecondary?: boolean;
 }
 
 /**
@@ -42,8 +40,13 @@ export function PrimaryCTASection({
   actions,
   supports,
   ctaList,
-  allowSecondary = false,
 }: PrimaryCTASectionProps) {
+  // Guard: must have title and description
+  if (!heading?.title || !heading?.description)
+    throw new Error('PrimaryCTASection requires heading.title and heading.description');
+  // Guard: must have at least one action
+  if (!actions?.length) throw new Error('PrimaryCTASection requires at least one action');
+
   return (
     <SectionShell
       tone={tone}
@@ -56,24 +59,18 @@ export function PrimaryCTASection({
           <div className='cta-section__body'>
             {heading.kicker ? <span className='rd-section-kicker'>{heading.kicker}</span> : null}
             <h2 className='cta-section__title'>{heading.title}</h2>
-            {heading.description ? (
-              <p className='cta-section__description'>{heading.description}</p>
-            ) : null}
+            <p className='cta-section__description'>{heading.description}</p>
 
             <div className='cta-section__buttons'>
-              {actions
-                .filter(action => action.primary || allowSecondary)
-                .map(action => (
-                  <a
-                    key={action.label}
-                    href={action.href}
-                    className={
-                      action.primary ? 'rd-btn rd-btn--primary' : 'rd-btn rd-btn--secondary'
-                    }
-                  >
-                    {action.label}
-                  </a>
-                ))}
+              {actions.map((action, index) => (
+                <a
+                  key={`${action.label}-${index}`}
+                  href={action.href}
+                  className={'rd-btn rd-btn--primary'}
+                >
+                  {action.label}
+                </a>
+              ))}
             </div>
 
             {ctaList && ctaList.length > 0 ? (
@@ -87,8 +84,8 @@ export function PrimaryCTASection({
 
           {supports && supports.length > 0 ? (
             <ul className='cta-section__supports rd-animate-stagger'>
-              {supports.map(support => (
-                <li key={support} className='cta-section__support'>
+              {supports.map((support, index) => (
+                <li key={`${support}-${index}`} className='cta-section__support'>
                   <span className='cta-section__support-icon' aria-hidden='true'>
                     <Check size={14} strokeWidth={3} />
                   </span>

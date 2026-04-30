@@ -2,12 +2,12 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  PrimaryCTASection,
   FitCheckSection,
   GridCardsSection,
   type HeroSplitMetric,
   HeroSplitSection,
   LayerStackSection,
+  PrimaryCTASection,
   ProcessStepsSection,
   ProofStorySection,
   type SectionIconKey,
@@ -80,9 +80,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           kicker={hero.badge}
           heading={{ title: hero.title, description: hero.description }}
           chips={hero.list}
-          actions={[
-            { label: PRIMARY_CTA_LABEL, href: contactHref, primary: true },
-          ]}
+          actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
           visual={{
             brand: 'mindwp · local visibility',
             title: 'Search presence snapshot',
@@ -315,7 +313,17 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             title: ctaTitle,
             description: ctaDescription,
           }}
-          actions={[{ label: PRIMARY_CTA_LABEL, href: buildContactHref({ system: 'local-seo-authority', sourceType: 'service', slug: 'local-seo-footer' }), primary: true }]}
+          actions={[
+            {
+              label: PRIMARY_CTA_LABEL,
+              href: buildContactHref({
+                system: 'local-seo-authority',
+                sourceType: 'service',
+                slug: 'local-seo-footer',
+              }),
+              primary: true,
+            },
+          ]}
           ctaList={Array.isArray((data.cta as any)?.ctaList) ? (data.cta as any).ctaList : []}
         />
       </main>

@@ -348,8 +348,9 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     cta: {
       heading: {
         title: 'Tell us where the brake job got lost',
-        description: 'Walk us through last Tuesday \u2014 the missed call, the dead estimate, the regular who never came back. We will tell you which gap to close first.'
-      }
+        description:
+          'Walk us through last Tuesday \u2014 the missed call, the dead estimate, the regular who never came back. We will tell you which gap to close first.',
+      },
     },
   };
 }

@@ -2,8 +2,8 @@ import { ArrowRight } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -101,10 +101,21 @@ export default function IndustriesLanding() {
           </div>
           <PrimaryCTASection
             heading={{
-              title: 'Need help identifying which operating-system fix matters most for your industry?',
-              description: 'Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.'
+              title:
+                'Need help identifying which operating-system fix matters most for your industry?',
+              description:
+                'Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.',
             }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'industry', sourceType: 'industry', slug: 'industry-help' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'industry',
+                  sourceType: 'industry',
+                  slug: 'industry-help',
+                }),
+              },
+            ]}
           />
         </main>
       </div>

@@ -1,12 +1,13 @@
-import { buildContactHref } from '../../../lib/contact/contactHref';
 import { Clock, TrendingUp } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
+
+import { buildContactHref } from '../../../lib/contact/contactHref';
 
 export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
@@ -117,9 +118,19 @@ export function CaseStudiesPage() {
           <PrimaryCTASection
             heading={{
               title: 'Want to know which system change would produce this kind of lift for you?',
-              description: "Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business."
+              description:
+                "Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business.",
             }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'smart-website-systems', sourceType: 'case-study', slug: 'case-study-help' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'smart-website-systems',
+                  sourceType: 'case-study',
+                  slug: 'case-study-help',
+                }),
+              },
+            ]}
           />
         </main>
       </div>

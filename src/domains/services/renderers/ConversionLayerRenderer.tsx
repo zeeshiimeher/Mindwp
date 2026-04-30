@@ -1,6 +1,4 @@
-import { buildContactHref } from '../../../lib/contact/contactHref';
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ComparisonSection,
@@ -16,9 +14,11 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSolutionSplitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageData } from '@/domains/services/types';
+
+import { buildContactHref } from '../../../lib/contact/contactHref';
 
 type ConversionLayerSections = {
   foundation: any;
@@ -201,7 +201,16 @@ export function ConversionLayerRenderer({ data, slug: _slug }: ConversionLayerRe
 
           <PrimaryCTASection
             heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'conversion-layer', sourceType: 'service', slug: 'conversion-layer-footer' }) }]}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'conversion-layer',
+                  sourceType: 'service',
+                  slug: 'conversion-layer-footer',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>

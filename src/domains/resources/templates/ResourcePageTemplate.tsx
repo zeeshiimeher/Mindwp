@@ -30,10 +30,10 @@ import { ResourceTakeawaysSection } from '@/components/reusable/sections/resourc
 import { ResourceTemplatesSection } from '@/components/reusable/sections/resources/ResourceTemplatesSection';
 import { Badge } from '@/components/reusable/single/Badge';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { ActionButtons } from '@/components/system/ActionButtons';
 import { HeroActions } from '@/components/system/HeroActions';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -214,10 +214,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(paragraph, {
-          excludePaths: [currentPath],
-          sourcePath: currentPath,
-          tracker: inlineLinkTracker,
-        })
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
         : [{ type: 'text' as const, value: paragraph }];
 
     let linkedInParagraph = false;
@@ -436,7 +436,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             </div>
             <PrimaryCTASection
               heading={{ title: ctaData.heading, description: ctaData.content }}
-              actions={[{ label: 'Get Started', href: buildContactHref({ system: 'resource', sourceType: 'resource', slug: 'resource-footer' }) }]}
+              actions={[
+                {
+                  label: 'Get Started',
+                  href: buildContactHref({
+                    system: 'resource',
+                    sourceType: 'resource',
+                    slug: 'resource-footer',
+                  }),
+                },
+              ]}
             />
           </div>
         ) : null;

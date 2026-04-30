@@ -335,8 +335,9 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     cta: {
       heading: {
         title: 'Tell us where the practice quietly loses work',
-        description: 'If enquiries are acknowledged late, proposals sit untouched, or prospects quietly stop replying after a good first conversation, walk us through the last few that went quiet. We will show you where the leak actually sits.'
-      }
+        description:
+          'If enquiries are acknowledged late, proposals sit untouched, or prospects quietly stop replying after a good first conversation, walk us through the last few that went quiet. We will show you where the leak actually sits.',
+      },
     },
   };
 }

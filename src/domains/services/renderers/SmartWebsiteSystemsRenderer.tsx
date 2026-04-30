@@ -2,13 +2,13 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  PrimaryCTASection,
   FitCheckSection,
   GridCardsSection,
   type HeroSplitMetric,
   HeroSplitSection,
   ImageStorySection,
   LayerStackSection,
+  PrimaryCTASection,
   ProcessStepsSection,
   ProofStorySection,
   type SectionIconKey,
@@ -21,8 +21,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface Props {
   data: ServicePageDataBySlug[
-  | 'smart-website-systems'
-  | 'service-pages-vs-one-generic-services-page'];
+    | 'smart-website-systems'
+    | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 

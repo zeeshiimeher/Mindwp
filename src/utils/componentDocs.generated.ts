@@ -12737,6 +12737,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "impacts",
         "type": "string[]",
         "optional": false,
@@ -12750,12 +12756,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "badge",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "description",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -13151,6 +13151,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "slug",
         "type": "string",
         "optional": false,
@@ -13160,12 +13166,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "string | undefined",
-        "optional": true,
         "description": ""
       }
     ]
@@ -13319,6 +13319,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "title",
         "type": "string",
         "optional": false,
@@ -13332,12 +13338,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "badge",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "description",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -14753,6 +14753,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "slug",
         "type": "string",
         "optional": false,
@@ -14762,12 +14768,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "string | undefined",
-        "optional": true,
         "description": ""
       }
     ]
@@ -18000,6 +18000,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "composedComponents": [],
     "props": [
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "slug",
         "type": "string",
         "optional": false,
@@ -18009,12 +18015,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "name": "title",
         "type": "string",
         "optional": false,
-        "description": ""
-      },
-      {
-        "name": "description",
-        "type": "string | undefined",
-        "optional": true,
         "description": ""
       }
     ]

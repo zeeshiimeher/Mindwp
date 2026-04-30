@@ -24,9 +24,9 @@ import {
   ProblemSolutionSplitCard,
   SectionIntro,
 } from '@/components/reusable/single';
+import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { HeroActions } from '@/components/system/HeroActions';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { homepageData } from '@/domains/home/data/homepage';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { PortfolioSection as ImplementationExamplesSection } from '@/screens/home/sections/PortfolioSection';
@@ -273,8 +273,9 @@ function SmartWebsiteFrameworkSection() {
                       <div className='framework-section-journey-step-card'>
                         <div className='framework-section-journey-step-content'>
                           <div
-                            className={`framework-section-journey-step-icon ${getVariantStyles(step.iconType).icon.combined
-                              }`}
+                            className={`framework-section-journey-step-icon ${
+                              getVariantStyles(step.iconType).icon.combined
+                            }`}
                           >
                             <Icon className='framework-section-journey-step-icon-svg' />
                           </div>
@@ -1037,7 +1038,16 @@ function FooterPrimaryCTASection() {
   return (
     <PrimaryCTASection
       heading={{ title: ctaData.footer.title, description: ctaData.footer.description }}
-      actions={[{ label: 'Get Started', href: buildContactHref({ system: 'homepage', sourceType: 'homepage', slug: 'homepage-footer' }) }]}
+      actions={[
+        {
+          label: 'Get Started',
+          href: buildContactHref({
+            system: 'homepage',
+            sourceType: 'homepage',
+            slug: 'homepage-footer',
+          }),
+        },
+      ]}
     />
   );
 }

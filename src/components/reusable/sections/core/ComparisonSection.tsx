@@ -111,8 +111,6 @@ export function ComparisonSection({
             );
           })}
         </CardGrid>
-
-
       </div>
     </SectionWrapper>
   );

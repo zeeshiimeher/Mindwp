@@ -22,6 +22,7 @@ import {
 } from '@/components/sections/PrimaryCTASection';
 import { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
+import { buildContactHref } from '@/lib/contact/buildContactHref';
 
 import type { IndustryExploreSectionProps } from '../components/IndustryExploreSection';
 
@@ -83,18 +84,18 @@ export function IndustryDetailPageTemplate({
   );
   const resolvedDetailJourneySection = resolvedPathwaySection
     ? {
-      badge: resolvedPathwaySection.badge,
-      title: resolvedPathwaySection.title ?? '',
-      description: resolvedPathwaySection.description,
-      backgroundColor: resolvedPathwaySection.backgroundColor,
-      cssPrefix: resolvedPathwaySection.cssPrefix,
-      cards: resolvedPathwaySection.packages.map(pkg => ({
-        title: pkg.name,
-        description: `${pkg.price} — ${pkg.description}`,
-        points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
-        featured: pkg.popular,
-      })),
-    }
+        badge: resolvedPathwaySection.badge,
+        title: resolvedPathwaySection.title ?? '',
+        description: resolvedPathwaySection.description,
+        backgroundColor: resolvedPathwaySection.backgroundColor,
+        cssPrefix: resolvedPathwaySection.cssPrefix,
+        cards: resolvedPathwaySection.packages.map(pkg => ({
+          title: pkg.name,
+          description: `${pkg.price} — ${pkg.description}`,
+          points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
+          featured: pkg.popular,
+        })),
+      }
     : undefined;
 
   return (
@@ -123,8 +124,20 @@ export function IndustryDetailPageTemplate({
           {caseStudies && <IndustryCaseStudiesSection {...caseStudies} />}
           <FAQSection {...faq} />
           <PrimaryCTASection
-            heading={{ title: cta.heading.title, description: cta.heading.description }}
-            actions={[{ label: 'Get Started', href: buildContactHref({ system: 'industry', sourceType: 'industry', slug: 'detail' }) }]}
+            heading={{
+              title: cta.heading?.title ?? '',
+              description: cta.heading?.description ?? '',
+            }}
+            actions={[
+              {
+                label: 'Get Started',
+                href: buildContactHref({
+                  system: 'industry',
+                  sourceType: 'industry',
+                  slug: 'detail',
+                }),
+              },
+            ]}
           />
         </main>
       </ErrorBoundary>
