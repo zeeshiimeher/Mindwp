@@ -353,8 +353,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title:
-        'Appointment-Based Local Businesses — Stop Losing Enquiries, Bookings & Deposits | MindWP',
+      title: 'Appointment-Based Local Businesses — Stop Losing Enquiries, Bookings & Deposits',
       description:
         'For dental practices, private clinics, driving schools, repair shops, and tattoo studios where enquiries go unanswered, bookings take ten messages, and no-shows kill the day rate. We put the system in place that catches them.',
       canonical: '/industries/local-appointment-businesses',

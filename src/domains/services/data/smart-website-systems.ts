@@ -62,7 +62,7 @@ const smartWebsitesFaqItems = [
 export const smartWebsiteSystemsPage = {
   seo: buildServiceSeo({
     slug: 'smart-website-systems',
-    title: 'Smart Website Systems for Service Businesses | MindWP',
+    title: 'Smart Website Systems for Service Businesses',
     description:
       'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
   }),
@@ -84,7 +84,7 @@ export const smartWebsiteSystemsPage = {
       "Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They've already rung someone else.",
     list: ['Lost leads', 'No follow-up', 'No tracking'],
     visual: {
-      brand: 'mindwp · operations',
+      brand: 'operations',
       title: 'Live enquiry feed',
       subtitle: 'Last 24 hours · auto-routed',
       rows: [

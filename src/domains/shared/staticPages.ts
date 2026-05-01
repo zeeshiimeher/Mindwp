@@ -16,6 +16,7 @@ export type StaticRouteDefinition = {
 
 export const INTERNAL_STATIC_ROUTE_PATHS = new Set([
   '/components',
+  '/dev/component-system',
   '/dev/system-dashboard',
   '/system-dashboard',
   '/dev/system-dashboard/reports/system-report',
@@ -32,23 +33,23 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     key: 'static:home',
     path: '/',
     name: 'Homepage',
-    title: 'MindWP',
+    title: 'Stop Losing Enquiries. Catch Calls, Follow Up, Win More Work.',
     description:
-      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. MindWP puts the routing, follow-up, and visibility in place so the work already coming in actually turns into work.',
+      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. The routing, follow-up, and visibility are structured so the work already coming in actually turns into work.',
   },
   {
     key: 'static:about',
     path: '/about',
     name: 'About Us',
-    title: 'About MindWP',
+    title: 'About The System',
     description:
-      'MindWP fixes the gap between an enquiry and a paying customer for service businesses — websites, follow-up, visibility, and proof, joined up so good leads stop slipping through.',
+      'This system fixes the gap between an enquiry and a paying customer for service businesses — websites, follow-up, visibility, and proof, joined up so good leads stop slipping through.',
   },
   {
     key: 'static:blog',
     path: '/blog',
     name: 'Blog',
-    title: 'MindWP Blog',
+    title: 'Blog',
     description:
       'Technical insights on websites, CRM automation, local authority, and revenue systems for service businesses.',
   },
@@ -56,7 +57,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     key: 'static:case-studies',
     path: '/case-studies',
     name: 'Case Studies',
-    title: 'MindWP Case Studies',
+    title: 'Case Studies',
     description:
       'Proof-of-results case studies showing how service businesses improve visibility, lead handling, and revenue systems.',
   },
@@ -64,7 +65,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     key: 'static:contact',
     path: '/contact',
     name: 'Start a Conversation',
-    title: 'Contact MindWP',
+    title: 'Contact',
     description:
       'Tell us where things are slipping — missed calls, slow follow-up, leads going cold. We read every message and reply with the right next step within one working day.',
   },
@@ -73,14 +74,14 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     path: '/cookies',
     name: 'Cookie Policy',
     title: 'Cookie Policy',
-    description: 'Read the MindWP cookie policy and understand how site data is used.',
+    description: 'Read the cookie policy and understand how site data is used.',
     showOnHumanSitemap: false,
   },
   {
     key: 'static:features',
     path: '/features',
     name: 'Features Overview',
-    title: 'MindWP Features',
+    title: 'Features',
     description:
       'Explore the structured feature layers that support lead handling, CRM, booking, and reputation systems.',
   },
@@ -88,7 +89,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     key: 'static:industries',
     path: '/industries',
     name: 'Industries Overview',
-    title: 'MindWP Industries',
+    title: 'Industries',
     description:
       'Industry pages for service businesses — roofing, HVAC, salons, clinics, legal, automotive — focused on the calls, follow-ups, and bookings that actually decide revenue.',
   },
@@ -97,13 +98,14 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     path: '/privacy',
     name: 'Privacy Policy',
     title: 'Privacy Policy',
-    description: 'Read the MindWP privacy policy and data handling commitments.',
+    description:
+      'Read the privacy policy to understand what data is collected, how it is handled, and the commitments in place to protect it.',
   },
   {
     key: 'static:resources',
     path: '/resources',
     name: 'Resources',
-    title: 'MindWP Resources',
+    title: 'Resources',
     description:
       'Guides and frameworks for websites, CRM automation, revenue visibility, and local authority systems.',
   },
@@ -111,7 +113,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     key: 'static:services',
     path: '/services',
     name: 'Services Overview',
-    title: 'MindWP Services',
+    title: 'Services',
     description:
       'Structured services for smart websites, automation, CRM, reputation, and growth systems.',
   },
@@ -120,7 +122,8 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     path: '/terms',
     name: 'Terms',
     title: 'Terms of Service',
-    description: 'Read the MindWP terms of service and engagement expectations.',
+    description:
+      'Read the terms of service covering engagement expectations, delivery boundaries, and the responsibilities attached to using this site.',
     showOnHumanSitemap: false,
   },
   {
@@ -129,6 +132,15 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Components Reference',
     title: 'Components Reference',
     description: 'Internal component reference for the production design system.',
+    showOnHumanSitemap: false,
+  },
+  {
+    key: 'static:component-system-visualizer',
+    path: '/dev/component-system',
+    name: 'Component System Visualizer',
+    title: 'Component System Visualizer',
+    description:
+      'Internal visual registry for deterministic section components, variants, and anchor-data rendering checks.',
     showOnHumanSitemap: false,
   },
   {
@@ -214,7 +226,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     path: '/sitemap.xml',
     name: 'Sitemap XML',
     title: 'Sitemap XML',
-    description: 'Machine-readable sitemap for the canonical MindWP route inventory.',
+    description: 'Machine-readable sitemap for the canonical route inventory.',
     includeInRouteInventory: false,
   },
 ];

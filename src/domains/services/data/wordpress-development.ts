@@ -9,7 +9,7 @@ export const wordpressDevelopmentPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'WordPress Development for Service Businesses | MindWP',
+    title: 'WordPress Development for Service Businesses',
     description:
       "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
   }),

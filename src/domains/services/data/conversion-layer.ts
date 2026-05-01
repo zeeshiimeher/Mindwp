@@ -18,7 +18,7 @@ export const conversionLayerPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Conversion Layer for Service Businesses | MindWP',
+    title: 'Conversion Layer for Service Businesses',
     description:
       "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
   }),

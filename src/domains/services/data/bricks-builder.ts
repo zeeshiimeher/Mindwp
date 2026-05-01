@@ -19,7 +19,7 @@ export const bricksBuilderPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Bricks Builder WordPress Development | MindWP',
+    title: 'Bricks Builder WordPress Development',
     description:
       "Bricks Builder produces fast, clean WordPress sites. But clean code alone doesn't convert visitors into enquiries. Here's what to get right first.",
   }),

@@ -42,7 +42,7 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
       heading: 'The Quality Threshold',
       quote:
         'The difference between a valuable local service page and a thin doorway page is substance. A quality location page provides genuine value to someone in that area — local proof, specific availability, and relevant context that a generic page cannot offer.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

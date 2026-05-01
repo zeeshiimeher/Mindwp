@@ -55,6 +55,10 @@ function collectRouteModuleFiles(currentPath: string, files: string[] = []): str
 function validateRouteSourceText(filePath: string, sourceText: string): ValidationFailure[] {
   const failures: ValidationFailure[] = [];
   const modulePath = toWorkspacePath(filePath);
+  const usesResolver = /from\s+['"]@\/lib\/seo\/seoResolver['"]/.test(sourceText);
+  const usesBuilder =
+    /from\s+['"]@\/lib\/seo\/seo['"]/.test(sourceText) &&
+    /from\s+['"]@\/lib\/seo\/resolveMetadata['"]/.test(sourceText);
 
   if (/export\s+const\s+metadata\b/.test(sourceText)) {
     failures.push({
@@ -71,17 +75,20 @@ function validateRouteSourceText(filePath: string, sourceText: string): Validati
   }
 
   if (/generateMetadata\s*\(/.test(sourceText)) {
-    if (!/from\s+['"]@\/lib\/seo\/seoResolver['"]/.test(sourceText)) {
+    if (!usesResolver && !usesBuilder) {
       failures.push({
-        code: 'missing-resolver-import',
-        message: `${modulePath} defines generateMetadata without importing resolveSEO from the shared resolver.`,
+        code: 'missing-seo-import',
+        message: `${modulePath} defines generateMetadata without importing the shared SEO resolver or builder path.`,
       });
     }
 
-    if (!/return\s+resolveSEO\s*\(/.test(sourceText)) {
+    const returnsResolver = /return\s+resolveSEO\s*\(/.test(sourceText);
+    const returnsBuilder = /return\s+buildSEO\s*\(/.test(sourceText);
+
+    if (!returnsResolver && !returnsBuilder) {
       failures.push({
         code: 'metadata-not-from-resolver',
-        message: `${modulePath} defines generateMetadata without returning resolveSEO(...).`,
+        message: `${modulePath} defines generateMetadata without returning resolveSEO(...) or buildSEO(...).`,
       });
     }
   }
@@ -268,6 +275,23 @@ async function main() {
     failures.push({
       code: 'simulation-valid-route-failed',
       message: `Valid route simulation failed unexpectedly: ${validRouteSimulation.map(failure => failure.code).join(', ')}.`,
+    });
+  }
+
+  const validBuilderSimulation = validateRouteSourceText(
+    path.join(appRoot, 'simulated-builder-page.tsx'),
+    [
+      "import { extractSEOInput } from '@/lib/seo/resolveMetadata';",
+      "import { buildSEO } from '@/lib/seo/seo';",
+      'export async function generateMetadata() {',
+      "  return buildSEO(extractSEOInput({ seo: { title: 'Title', description: 'Description', canonical: '/test' } }, '/test'), '/test');",
+      '}',
+    ].join('\n')
+  );
+  if (validBuilderSimulation.length > 0) {
+    failures.push({
+      code: 'simulation-valid-builder-route-failed',
+      message: `Builder route simulation failed unexpectedly: ${validBuilderSimulation.map(failure => failure.code).join(', ')}.`,
     });
   }
 

@@ -19,7 +19,7 @@ export const leadReactivationSystemPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Lead Reactivation System for Service Businesses | MindWP',
+    title: 'Lead Reactivation System for Service Businesses',
     description:
       'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
   }),

@@ -263,8 +263,7 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title:
-        'Accounting Firms — Stop Losing Owners In The Gap Between Proposal And Signature | MindWP',
+      title: 'Accounting Firms — Stop Losing Owners In The Gap Between Proposal And Signature',
       description:
         'For accounting firms where proposals get sent and then go quiet. We put quiet, scheduled follow-up, faster enquiry acknowledgement, and review prompts in place so good prospects stop drifting to whoever stayed in front of them.',
       canonical: '/industries/legal-professional-services/accounting-firms',

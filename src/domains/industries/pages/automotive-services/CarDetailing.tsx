@@ -246,7 +246,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Car Detailers \u2014 Stop Losing Saturday DMs To 6pm Reads | MindWP',
+      title: 'Car Detailers \u2014 Stop Losing Saturday DMs To 6pm Reads',
       description:
         'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
       canonical: '/industries/automotive-services/car-detailing',

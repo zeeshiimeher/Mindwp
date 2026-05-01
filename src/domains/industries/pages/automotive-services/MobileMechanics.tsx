@@ -292,7 +292,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Mobile Mechanics \u2014 Stop Losing Calls From The Glovebox | MindWP',
+      title: 'Mobile Mechanics \u2014 Stop Losing Calls From The Glovebox',
       description:
         'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
       canonical: '/industries/automotive-services/mobile-mechanics',

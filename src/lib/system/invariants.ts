@@ -6,6 +6,7 @@ import { getCaseStudyRenderedSectionTypes } from '@/domains/case-studies/templat
 import type { CaseStudyData } from '@/domains/case-studies/types';
 import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/registry';
 import type { FeaturePageData } from '@/domains/features/types';
+import { INDUSTRY_CATALOG } from '@/domains/industries/catalog';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import type { IndustryPageData } from '@/domains/industries/types';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
@@ -257,6 +258,42 @@ export function collectSystemInvariantFindings(graphNodes: ContentGraphNode[]) {
     }
 
     graphIdSet.add(node.id);
+  }
+
+  const crossDomainSlugs = new Map<string, Set<SystemInvariantDomain>>();
+  for (const entry of entries) {
+    const owners = crossDomainSlugs.get(entry.slug) ?? new Set<SystemInvariantDomain>();
+    owners.add(entry.domain);
+    crossDomainSlugs.set(entry.slug, owners);
+  }
+
+  for (const [slug, owners] of crossDomainSlugs) {
+    if (owners.size <= 1) {
+      continue;
+    }
+
+    warnings.push(
+      createFinding(
+        'duplicate_slug_cross_domain',
+        `Cross-domain duplicate slug ${slug} is allowed only through typed domain lookups (${[...owners].join(', ')}).`
+      )
+    );
+  }
+
+  for (const entry of INDUSTRY_CATALOG) {
+    const expectedHref =
+      entry.slug === entry.category
+        ? `/industries/${entry.slug}`
+        : `/industries/${entry.category}/${entry.slug}`;
+
+    if (entry.href !== expectedHref) {
+      issues.push(
+        createFinding(
+          'industry_catalog_href_mismatch',
+          `Industry catalog href mismatch for ${entry.slug}. Expected ${expectedHref} but found ${entry.href}.`
+        )
+      );
+    }
   }
 
   for (const entry of entries) {

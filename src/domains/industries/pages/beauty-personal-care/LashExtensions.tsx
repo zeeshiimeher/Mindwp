@@ -234,7 +234,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs | MindWP',
+      title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs',
       description:
         'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
       canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',

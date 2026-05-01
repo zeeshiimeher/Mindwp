@@ -42,7 +42,7 @@ export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
       heading: 'The Hidden Revenue Pool',
       quote:
         'The most overlooked revenue opportunity in any service business is the customer database it already owns. Reactivation does not require new lead generation — it requires re-engaging people who have already chosen you once.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

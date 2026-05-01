@@ -196,7 +196,7 @@ export const autoReplyFunnel: ResourceData = {
       type: 'solution-cards',
       heading: 'Make It Automatic (So It Stays Fixed)',
       content: [
-        'The MindWP Difference',
+        'The System Difference',
         'Our Smart Website platform combines all these solutions into one automated system. Set it up once, and it works 24/7 without you lifting a finger.',
       ],
       benefit: automation.benefit,

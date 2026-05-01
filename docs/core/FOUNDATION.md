@@ -30,7 +30,7 @@ When documents conflict, follow this order:
 4. `CONVERSION.md` — CTA intent, CTA placement, contact routing, conversion rules.
 5. `GRAPH.md` — metadata, relationships, authority routing, content graph behavior.
 6. `DESIGN.md` — visual rules, CSS constraints, component styling behavior.
-7. `ops/*` — setup, workflow, audit, operational process.
+7. `ops/*` — setup, workflow, and operational process.
 8. `ui/*` — component usage, component mapping, future UI proposals.
 
 If a lower-priority document conflicts with a higher-priority document, update the lower-priority document.
@@ -428,4 +428,4 @@ Do not open with services, features, tools, or systems before the problem is cle
 - Graph ontology and resolver rules: [./GRAPH.md](./GRAPH.md)
 - CTA and contact contracts: [./CONVERSION.md](./CONVERSION.md)
 - Workflow and setup: [../ops/WORKFLOW.md](../ops/WORKFLOW.md)
-- Audit and enforcement model: [../ops/AUDIT.md](../ops/AUDIT.md)
+- Validator and workflow model: [./SYSTEM-RULES.md](./SYSTEM-RULES.md), [../ops/WORKFLOW.md](../ops/WORKFLOW.md)

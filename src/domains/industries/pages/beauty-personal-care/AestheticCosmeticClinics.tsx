@@ -234,7 +234,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion | MindWP',
+      title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
       description:
         'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
       canonical: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',

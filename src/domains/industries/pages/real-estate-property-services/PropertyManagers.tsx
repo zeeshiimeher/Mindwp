@@ -237,7 +237,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months | MindWP',
+      title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months',
       description:
         'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
       canonical: '/industries/real-estate-property-services/property-managers',

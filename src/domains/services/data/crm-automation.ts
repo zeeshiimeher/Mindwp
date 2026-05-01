@@ -76,7 +76,7 @@ export const crmAutomationPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'CRM Setup for Service Businesses | MindWP',
+    title: 'CRM Setup for Service Businesses',
     description:
       "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
   }),

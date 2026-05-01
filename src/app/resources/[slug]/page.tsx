@@ -9,9 +9,9 @@ import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { resolveMetadata } from '@/lib/seo/resolveMetadata';
+import { extractSEOInput, resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { buildSEO } from '@/lib/seo/seo';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 
@@ -64,7 +64,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return resolveSEO({ path: resolved.node.path, type: 'resource', slug });
+  return buildSEO(extractSEOInput(resolved.resource, resolved.node.path), resolved.node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

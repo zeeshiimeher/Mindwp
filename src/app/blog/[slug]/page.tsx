@@ -7,9 +7,9 @@ import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getImage } from '@/lib/image-system/resolver';
-import { resolveMetadata } from '@/lib/seo/resolveMetadata';
+import { extractSEOInput, resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { buildSEO } from '@/lib/seo/seo';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 
@@ -53,7 +53,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return resolveSEO({ path: blogNode.path, type: 'blog', slug });
+  return buildSEO(extractSEOInput(post, blogNode.path), blogNode.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

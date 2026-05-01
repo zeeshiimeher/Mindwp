@@ -3,6 +3,7 @@
 import { describe, expect, test } from 'vitest';
 
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { resolveOGImagePathForRoute } from '@/lib/seo/og/contract';
 import { resolveSEO } from '@/lib/seo/seoResolver';
 import { env } from '@/env';
 
@@ -44,7 +45,7 @@ describe('integration: inventory metadata', () => {
     expect(metadata.robots).toEqual({ index: true, follow: true });
   });
 
-  test('uses page-specific open graph images when a publishable route image exists', async () => {
+  test('uses deterministic API-backed open graph images for publishable routes', async () => {
     const serviceMetadata = await getInventoryMetadata('/services/smart-website-systems');
     const resourceMetadata = await getInventoryMetadata(
       '/resources/hvac-review-generation-framework'
@@ -53,9 +54,11 @@ describe('integration: inventory metadata', () => {
     const serviceImage = getFirstOpenGraphImage(serviceMetadata.openGraph?.images);
     const resourceImage = getFirstOpenGraphImage(resourceMetadata.openGraph?.images);
 
-    expect(toImageUrl(serviceImage)).toBe('/images/services/smart-website-systems.webp');
+    expect(toImageUrl(serviceImage)).toBe(
+      resolveOGImagePathForRoute('/services/smart-website-systems')
+    );
     expect(toImageUrl(resourceImage)).toBe(
-      '/images/resources/hvac-review-generation-framework.webp'
+      resolveOGImagePathForRoute('/resources/hvac-review-generation-framework')
     );
   });
 

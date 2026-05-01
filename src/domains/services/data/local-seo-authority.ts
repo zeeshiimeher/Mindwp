@@ -9,7 +9,7 @@ export const localSeoAuthorityPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+    title: 'Local SEO for Service Businesses | Show Up When Customers Search',
     description:
       'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
   }),
@@ -33,7 +33,7 @@ export const localSeoAuthorityPage = {
     backgroundColor: 'bg-gradient-surface-muted',
     list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
     visual: {
-      brand: 'mindwp · local visibility',
+      brand: 'local visibility',
       title: 'Search presence snapshot',
       subtitle: 'Last 30 days · postcode area',
       rows: [

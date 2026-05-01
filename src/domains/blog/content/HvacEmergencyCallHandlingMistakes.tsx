@@ -42,7 +42,7 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
       heading: 'The Cost of Getting It Wrong',
       quote:
         'An HVAC emergency is not a sales opportunity — it is a trust test. How you handle the call determines whether the customer stays with you for years or tells everyone you let them down when it mattered most.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

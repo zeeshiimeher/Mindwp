@@ -32,6 +32,18 @@ for (const filePath of uiRoots.flatMap(listFiles).filter(file => file.endsWith('
   const lines = fs.readFileSync(filePath, 'utf8').split('\n');
 
   lines.forEach((line, index) => {
+    const trimmedLine = line.trim();
+
+    if (
+      trimmedLine.length === 0 ||
+      trimmedLine.startsWith('//') ||
+      trimmedLine.startsWith('/*') ||
+      trimmedLine.startsWith('*') ||
+      trimmedLine.startsWith('*/')
+    ) {
+      return;
+    }
+
     if (/\b(Math\.random|localStorage|sessionStorage)\b/.test(line)) {
       pushViolation(
         relativePath,
@@ -56,6 +68,78 @@ for (const filePath of uiRoots.flatMap(listFiles).filter(file => file.endsWith('
         index + 1,
         'UI_GRAPH_IMPORT',
         'Production UI components must not import runtime content-graph modules.'
+      );
+    }
+
+    if (/from\s+['"]@\/lib\/seo\/(seo|resolveMetadata)['"]/.test(line)) {
+      pushViolation(
+        relativePath,
+        index + 1,
+        'UI_SEO_IMPORT',
+        'Production UI and renderer modules must not import SEO composition helpers.'
+      );
+    }
+
+    if (/\bSITE_NAME\b|\bbuildSEO\b|\bopenGraph\b|\bcanonical\s*:/.test(line)) {
+      pushViolation(
+        relativePath,
+        index + 1,
+        'UI_SEO_LOGIC',
+        'Production UI components must not define or compose SEO metadata directly.'
+      );
+    }
+
+    if (
+      /(title|seo|meta|heading)/i.test(line) &&
+      (/\+\s*['"][^'"]*\|[^'"]*['"]/.test(line) ||
+        /['"][^'"]*\|[^'"]*['"]\s*\+/.test(line) ||
+        /`[^`]*\$\{[^}]+\}[^`]*\|[^`]*`/.test(line) ||
+        /`[^`]*\|[^`]*\$\{[^}]+\}[^`]*`/.test(line))
+    ) {
+      pushViolation(
+        relativePath,
+        index + 1,
+        'UI_TITLE_COMPOSITION',
+        'Production UI components must not compose branded or SEO titles inline.'
+      );
+    }
+  });
+}
+
+const rendererRoots = [path.join(root, 'src', 'domains')];
+
+for (const filePath of rendererRoots.flatMap(listFiles).filter(file => /Renderer\.tsx$/.test(file))) {
+  const relativePath = path.relative(root, filePath).replaceAll(path.sep, '/');
+  const lines = fs.readFileSync(filePath, 'utf8').split('\n');
+
+  lines.forEach((line, index) => {
+    const trimmedLine = line.trim();
+
+    if (
+      trimmedLine.length === 0 ||
+      trimmedLine.startsWith('//') ||
+      trimmedLine.startsWith('/*') ||
+      trimmedLine.startsWith('*') ||
+      trimmedLine.startsWith('*/')
+    ) {
+      return;
+    }
+
+    if (/from\s+['"]@\/lib\/seo\/(seo|resolveMetadata)['"]/.test(line)) {
+      pushViolation(
+        relativePath,
+        index + 1,
+        'RENDERER_SEO_IMPORT',
+        'Renderers must not import SEO composition helpers.'
+      );
+    }
+
+    if (/\bSITE_NAME\b|\bbuildSEO\b|\bopenGraph\b|\bcanonical\s*:/.test(line)) {
+      pushViolation(
+        relativePath,
+        index + 1,
+        'RENDERER_SEO_LOGIC',
+        'Renderers must not define or compose SEO metadata directly.'
       );
     }
   });

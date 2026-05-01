@@ -42,7 +42,7 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
       heading: 'The Salon Paradox',
       quote:
         'The busier a salon gets, the worse its lead handling becomes. Success at service delivery directly undermines the ability to capture new business. This is not a staffing problem — it is a systems problem.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

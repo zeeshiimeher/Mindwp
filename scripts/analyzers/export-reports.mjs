@@ -14,7 +14,11 @@ import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingCo
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { validateReportFile } from '../core/report-schema-validator.mjs';
-import { getCtaReportValidatorNames } from '../core/system-manifest.mjs';
+import {
+  getCtaReportValidatorNames,
+  getReportFiles,
+  getTransientReportFiles,
+} from '../core/system-manifest.mjs';
 import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
 import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
@@ -422,14 +426,47 @@ function buildTopicInsights() {
   logger.printSummary(`report -> ${logger.relativePath(filePath)}`);
 }
 
+function getManagedTopLevelReportNames() {
+  const durableFiles = getReportFiles().filter(fileName => !fileName.includes('/'));
+  const transientFiles = getTransientReportFiles().filter(fileName => !fileName.includes('/'));
+
+  return [...new Set([...durableFiles, ...transientFiles, 'system-snapshots'])].sort(
+    (left, right) => left.localeCompare(right)
+  );
+}
+
+function pruneUnexpectedTopLevelReports() {
+  const managedNames = new Set(getManagedTopLevelReportNames());
+
+  for (const entry of fs.readdirSync(REPORTS_DIR, { withFileTypes: true })) {
+    if (entry.name.startsWith('.')) {
+      continue;
+    }
+
+    if (managedNames.has(entry.name)) {
+      continue;
+    }
+
+    if (entry.isDirectory()) {
+      continue;
+    }
+
+    if (!/\.(json|md)$/i.test(entry.name)) {
+      continue;
+    }
+
+    fs.rmSync(path.join(REPORTS_DIR, entry.name), { force: true });
+    logger.printSummary(`removed unmanaged report -> reports/${entry.name}`);
+  }
+}
+
 function buildClientReport() {
   const validationResults = readReportData('validation-results.json');
   const contentQuality = readReportData('content-quality-report.json');
   const graphReport = readReportData('graph-report.json');
-  const reportNames = fs
-    .readdirSync(REPORTS_DIR)
-    .filter(name => !name.startsWith('.'))
-    .sort();
+  const reportNames = getManagedTopLevelReportNames().filter(name =>
+    fs.existsSync(path.join(REPORTS_DIR, name))
+  );
 
   const totalPages = validationResults?.seo?.pagesAnalyzed ?? 0;
   const issueCount = contentQuality?.issueCount ?? 0;
@@ -681,6 +718,8 @@ async function exportClient() {
   const exportStartedAt = Date.now();
   const generatorResults = [];
   const analyzerResults = [];
+
+  pruneUnexpectedTopLevelReports();
 
   for (const step of generatorSteps) {
     runPipelineStep(step, generatorResults, 'generator');

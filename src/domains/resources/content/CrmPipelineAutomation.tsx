@@ -187,7 +187,7 @@ const faqs = [
 const finalCta = {
   title: 'Want This Built for You?',
   description:
-    'MindWP sets up your CRM pipeline, automations, and templates so leads are followed up consistently and bookings increase without more admin.',
+    'The system sets up your CRM pipeline, automations, and templates so leads are followed up consistently and bookings increase without more admin.',
 };
 
 export const crmPipelineAutomation: ResourceData = {
@@ -309,7 +309,7 @@ export const crmPipelineAutomation: ResourceData = {
       type: 'sidebar-cta',
       heading: 'Get a Follow-Up System That Runs Itself',
       content: [
-        'If you want this implemented end-to-end, we can build it inside your MindWP setup.',
+        'If you want this implemented end-to-end, we can build it inside your operating setup.',
       ],
       features: [
         { text: 'Fast setup', icon: 'star' },

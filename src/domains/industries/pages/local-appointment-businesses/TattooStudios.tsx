@@ -229,7 +229,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Tattoo Studios — Stay In Their Head Until The Deposit Lands | MindWP',
+      title: 'Tattoo Studios — Stay In Their Head Until The Deposit Lands',
       description:
         'For tattoo studios where DMs come in, conversations stall, and the deposit moment kills the chat. We help hold the enquiry, soften the deposit ask, and turn healed work into the next booking.',
       canonical: '/industries/local-appointment-businesses/tattoo-studios',

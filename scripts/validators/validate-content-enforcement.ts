@@ -5,6 +5,11 @@ import path from 'node:path';
 import { Node, type ObjectLiteralExpression, Project, type SourceFile, SyntaxKind } from 'ts-morph';
 
 import { createLogger } from '../../lib/logger/index.mjs';
+import {
+  getSystemInvariantEntries,
+  type SystemInvariantDomain,
+} from '../../src/lib/system/invariants';
+import { resolveMetadata } from '../../src/lib/seo/resolveMetadata';
 import { normalizeRawReport } from '../lib/report-schema.mjs';
 
 type RuleName =
@@ -15,7 +20,11 @@ type RuleName =
   | 'button-rule'
   | 'badge-length'
   | 'no-hardcoded-content'
-  | 'variant-required-data';
+  | 'variant-required-data'
+  | 'no-brand-in-content'
+  | 'no-manual-canonical'
+  | 'missing-seo-title'
+  | 'og-fallback-integrity';
 
 type Issue = {
   rule: RuleName;
@@ -47,6 +56,10 @@ const REPORT_FILE_BY_RULE: Record<RuleName, string> = {
   'badge-length': 'badge-length-report.json',
   'no-hardcoded-content': 'no-hardcoded-content-report.json',
   'variant-required-data': 'variant-required-data-report.json',
+  'no-brand-in-content': 'no-brand-in-content-report.json',
+  'no-manual-canonical': 'no-manual-canonical-report.json',
+  'missing-seo-title': 'missing-seo-title-report.json',
+  'og-fallback-integrity': 'og-fallback-integrity-report.json',
 };
 
 const SOURCE_COMMAND_BY_RULE: Record<RuleName, string> = {
@@ -66,6 +79,14 @@ const SOURCE_COMMAND_BY_RULE: Record<RuleName, string> = {
     'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=no-hardcoded-content',
   'variant-required-data':
     'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=variant-required-data',
+  'no-brand-in-content':
+    'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=no-brand-in-content',
+  'no-manual-canonical':
+    'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=no-manual-canonical',
+  'missing-seo-title':
+    'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=missing-seo-title',
+  'og-fallback-integrity':
+    'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=og-fallback-integrity',
 };
 
 const DATA_GLOBS = {
@@ -76,6 +97,26 @@ const DATA_GLOBS = {
   resources: 'src/domains/resources/content/*.{ts,tsx}',
   'case-studies': 'src/domains/case-studies/content/*.{ts,tsx}',
 } as const;
+
+const BRAND_LITERAL_PATTERN = /\bMindWP\b|\|\s*MindWP/;
+const BRAND_SCAN_GLOBS = [
+  'src/domains/**/*.{ts,tsx}',
+  'src/lib/site/**/*.{ts,tsx}',
+];
+const BRAND_SCAN_EXCLUDES = ['/src/lib/seo/', '/config/'];
+const MANUAL_CANONICAL_ALLOWLIST = new Set([
+  'src/domains/blog/content',
+  'src/domains/resources/content',
+  'src/domains/resources/api.ts',
+  'src/domains/resources/data/resources.ts',
+  'src/domains/resources/utils/index.ts',
+  'src/domains/services/data',
+  'src/domains/features/data',
+  'src/domains/case-studies/content',
+  'src/domains/industries/pages',
+  'src/domains/shared/staticPages.ts',
+  'src/domains/home/data/homepage.ts',
+]);
 
 function toRelative(filePath: string) {
   return path.relative(root, filePath).replace(/\\/g, '/');
@@ -1185,6 +1226,153 @@ function scanVariantRequiredData(): Issue[] {
   return issues;
 }
 
+function scanNoBrandInContent(): Issue[] {
+  const issues: Issue[] = [];
+
+  for (const sourceFile of project.getSourceFiles(BRAND_SCAN_GLOBS)) {
+    const relativePath = toRelative(sourceFile.getFilePath());
+    if (BRAND_SCAN_EXCLUDES.some(fragment => sourceFile.getFilePath().includes(fragment))) {
+      continue;
+    }
+
+    for (const node of sourceFile.getDescendants()) {
+      if (!Node.isStringLiteral(node) && !Node.isNoSubstitutionTemplateLiteral(node)) {
+        continue;
+      }
+
+      const value = getLiteralText(node);
+      if (!value || !BRAND_LITERAL_PATTERN.test(value)) {
+        continue;
+      }
+
+      pushIssue(issues, {
+        rule: 'no-brand-in-content',
+        domain: relativePath.split('/')[1] ?? 'shared',
+        file: relativePath,
+        issueType: 'brand_literal_in_content',
+        message: `${relativePath} contains branded content literal ${JSON.stringify(value)}.`,
+      });
+    }
+  }
+
+  return issues;
+}
+
+function scanNoManualCanonical(): Issue[] {
+  const issues: Issue[] = [];
+  const candidateFiles = project.getSourceFiles([
+    'src/domains/**/*.{ts,tsx}',
+    'src/lib/site/**/*.{ts,tsx}',
+  ]);
+
+  for (const sourceFile of candidateFiles) {
+    const relativePath = toRelative(sourceFile.getFilePath());
+    if (
+      relativePath.includes('src/lib/seo/') ||
+      relativePath.startsWith('config/') ||
+      relativePath.includes('/__tests__/') ||
+      relativePath.endsWith('/seo.ts')
+    ) {
+      continue;
+    }
+
+    const canonicalProperties = sourceFile
+      .getDescendantsOfKind(SyntaxKind.PropertyAssignment)
+      .filter(property => property.getName() === 'canonical');
+
+    if (canonicalProperties.length === 0) {
+      continue;
+    }
+
+    if ([...MANUAL_CANONICAL_ALLOWLIST].some(prefix => relativePath.startsWith(prefix))) {
+      continue;
+    }
+
+    pushIssue(issues, {
+      rule: 'no-manual-canonical',
+      domain: relativePath.split('/')[1] ?? 'shared',
+      file: relativePath,
+      issueType: 'manual_canonical_detected',
+      message: `${relativePath} defines a manual canonical outside the temporary migration allowlist.`,
+    });
+  }
+
+  return issues;
+}
+
+function scanMissingSeoTitle(): Issue[] {
+  const issues: Issue[] = [];
+
+  const domainByInvariantDomain: Partial<Record<SystemInvariantDomain, string>> = {
+    service: 'services',
+    feature: 'features',
+    'industry-category': 'industries',
+    'industry-detail': 'industries',
+    blog: 'blog',
+    resource: 'resources',
+    'case-study': 'case-studies',
+  };
+
+  for (const entry of getSystemInvariantEntries()) {
+    const seoTitle = typeof entry.seo.title === 'string' ? entry.seo.title.trim() : '';
+
+    if (seoTitle.length > 0) {
+      continue;
+    }
+
+    pushIssue(issues, {
+      rule: 'missing-seo-title',
+      domain: domainByInvariantDomain[entry.domain] ?? entry.domain,
+      file: `${entry.domain}:${entry.slug}`,
+      issueType: 'missing_seo_title',
+      message: `${entry.domain}/${entry.slug} is missing seo.title.`,
+      slug: entry.slug,
+    });
+  }
+
+  return issues;
+}
+
+function scanOgFallbackIntegrity(): Issue[] {
+  const issues: Issue[] = [];
+
+  for (const entry of getSystemInvariantEntries()) {
+    const metadata = resolveMetadata(entry.data, entry.canonical);
+    const seo = metadata.seo ?? {};
+    const openGraph =
+      seo && typeof seo === 'object' && seo.openGraph && typeof seo.openGraph === 'object'
+        ? (seo.openGraph as Record<string, unknown>)
+        : null;
+    const hasOgTitleOverride = typeof openGraph?.title === 'string' && openGraph.title.trim().length > 0;
+    const hasOgDescriptionOverride =
+      typeof openGraph?.description === 'string' && openGraph.description.trim().length > 0;
+
+    if (!hasOgTitleOverride && metadata.openGraph.title !== metadata.title) {
+      pushIssue(issues, {
+        rule: 'og-fallback-integrity',
+        domain: entry.domain,
+        file: `${entry.domain}:${entry.slug}`,
+        issueType: 'og_title_fallback_mismatch',
+        message: `${entry.domain}/${entry.slug} must inherit openGraph.title from the resolved title when no override is authored.`,
+        slug: entry.slug,
+      });
+    }
+
+    if (!hasOgDescriptionOverride && metadata.openGraph.description !== metadata.description) {
+      pushIssue(issues, {
+        rule: 'og-fallback-integrity',
+        domain: entry.domain,
+        file: `${entry.domain}:${entry.slug}`,
+        issueType: 'og_description_fallback_mismatch',
+        message: `${entry.domain}/${entry.slug} must inherit openGraph.description from the resolved description when no override is authored.`,
+        slug: entry.slug,
+      });
+    }
+  }
+
+  return issues;
+}
+
 function collectIssues(activeRule: RuleName): Issue[] {
   switch (activeRule) {
     case 'hero-list-length':
@@ -1203,6 +1391,14 @@ function collectIssues(activeRule: RuleName): Issue[] {
       return scanNoHardcodedContent();
     case 'variant-required-data':
       return scanVariantRequiredData();
+    case 'no-brand-in-content':
+      return scanNoBrandInContent();
+    case 'no-manual-canonical':
+      return scanNoManualCanonical();
+    case 'missing-seo-title':
+      return scanMissingSeoTitle();
+    case 'og-fallback-integrity':
+      return scanOgFallbackIntegrity();
     default:
       throw new Error(`Unsupported rule: ${activeRule}`);
   }

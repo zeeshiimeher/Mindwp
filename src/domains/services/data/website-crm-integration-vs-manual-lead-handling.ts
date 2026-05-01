@@ -9,7 +9,7 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+    title: 'Website CRM Integration vs Manual Lead Handling',
     description:
       'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
   }),

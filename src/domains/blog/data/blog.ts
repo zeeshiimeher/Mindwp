@@ -27,25 +27,25 @@ export type BlogCategoryMetadata = {
 export const BLOG_AUTHORS: Record<string, Author> = {
   DEFAULT: {
     key: 'DEFAULT',
-    name: 'MindWP Team',
+    name: 'Editorial Team',
     role: 'WordPress & AI Specialists',
     initials: 'MW',
   },
   EDITORIAL: {
     key: 'EDITORIAL',
-    name: 'MindWP Team',
+    name: 'Editorial Team',
     role: 'WordPress & AI Specialists',
     initials: 'MW',
   },
   TECHNICAL: {
     key: 'TECHNICAL',
-    name: 'MindWP Team',
+    name: 'Editorial Team',
     role: 'WordPress & AI Specialists',
     initials: 'MW',
   },
   INDUSTRY: {
     key: 'INDUSTRY',
-    name: 'MindWP Team',
+    name: 'Editorial Team',
     role: 'WordPress & AI Specialists',
     initials: 'MW',
   },

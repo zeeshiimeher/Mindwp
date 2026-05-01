@@ -18,7 +18,7 @@ export const woocommercePage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'WooCommerce & E-commerce Implementation | MindWP',
+    title: 'WooCommerce & E-commerce Implementation',
     description:
       "WooCommerce gets your products online. But products listed doesn't mean orders flowing. Here's what most stores miss between the catalog and the sale.",
   }),

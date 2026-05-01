@@ -34,7 +34,7 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
       heading: 'The Automation Levelling Effect',
       quote:
         'When Google Business Profile management required manual effort, the businesses willing to invest that effort were rewarded with visibility. When AI automates that effort for everyone, the competitive advantage shifts to factors that cannot be automated — genuine customer experience, real project quality, and authentic community relationships.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

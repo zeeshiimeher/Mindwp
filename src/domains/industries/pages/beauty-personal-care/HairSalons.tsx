@@ -235,7 +235,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars | MindWP',
+      title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars',
       description:
         'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
       canonical: '/industries/beauty-personal-care/hair-salons',

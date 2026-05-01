@@ -235,7 +235,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Mortgage Brokers — Win The First Hour, Then The Remortgage | MindWP',
+      title: 'Mortgage Brokers — Win The First Hour, Then The Remortgage',
       description:
         'For mortgage brokers where weekend enquiries go to whoever replied first and remortgages are quietly lost to a portal. We put first-hour response, stage-aware case follow-up, and remortgage retention in place.',
       canonical: '/industries/real-estate-property-services/mortgage-brokers',

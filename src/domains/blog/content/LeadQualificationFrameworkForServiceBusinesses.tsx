@@ -48,7 +48,7 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
       heading: 'The Prioritisation Problem',
       quote:
         'Treating every lead equally does not mean treating every lead fairly. It means treating your best opportunities with the same urgency as spam. Qualification gives your team permission to focus where it matters.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

@@ -34,7 +34,7 @@ export const leadRoutingForHvacCompanies: BlogPostData = {
       heading: 'Why Routing Matters More Than Speed',
       quote:
         'Responding quickly to an HVAC enquiry is important. But responding quickly with the wrong person is almost as bad as not responding at all. A receptionist who cannot answer technical questions, or a technician who cannot discuss pricing — speed without routing creates a poor customer experience.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

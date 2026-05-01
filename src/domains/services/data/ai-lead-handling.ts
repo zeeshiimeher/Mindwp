@@ -9,7 +9,7 @@ export const aiLeadHandlingPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'AI Lead Handling for Service Businesses | MindWP',
+    title: 'AI Lead Handling for Service Businesses',
     description:
       "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
   }),

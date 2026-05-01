@@ -287,7 +287,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back | MindWP',
+      title: 'Landscapers \u2014 Stop Patio Quotes Drifting, Bring Regulars Back',
       description:
         'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
       canonical: '/industries/home-services/landscaping-companies',

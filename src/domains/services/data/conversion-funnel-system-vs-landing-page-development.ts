@@ -9,7 +9,7 @@ export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+    title: 'Conversion Funnel System vs Landing Page Development',
     description:
       'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
   }),

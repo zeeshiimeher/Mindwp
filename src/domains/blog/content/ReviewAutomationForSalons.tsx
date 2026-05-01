@@ -34,7 +34,7 @@ export const reviewAutomationForSalons: BlogPostData = {
       heading: 'The Review Paradox for Salons',
       quote:
         'Salon clients are among the happiest customers in any service industry — they leave feeling transformed. Yet salons consistently underperform on Google reviews because they rely on clients remembering to review instead of making it effortless in the moment.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

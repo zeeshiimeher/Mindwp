@@ -42,7 +42,7 @@ export const salonReviewGenerationFramework: BlogPostData = {
       heading: 'The Review Gap',
       quote:
         "The gap between a salon's actual quality and its perceived quality is almost entirely determined by its review profile. A great salon with few reviews looks average. An average salon with many reviews looks established. Reviews are the bridge between reality and reputation.",
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

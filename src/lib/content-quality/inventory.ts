@@ -8,9 +8,9 @@ import { RESOURCE_CATEGORY_REGISTRY } from '@/domains/resources/categoryRegistry
 import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode } from '@/lib/content-graph/types';
-import { getImage } from '@/lib/image-system/resolver';
 import { normalizePath } from '@/lib/seo/config';
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
+import { DEFAULT_OG_IMAGE } from '@/lib/seo/metadata';
+import { resolveOGEntityFromPath, resolveOGImagePathForRoute } from '@/lib/seo/og/contract';
 import { buildSEO } from '@/lib/seo/seo';
 import { STATIC_ROUTE_DEFINITIONS } from '@/lib/site/staticPages';
 
@@ -70,36 +70,6 @@ function readSnapshotInventory(): RouteInventoryEntry[] | null {
   }
 }
 
-function resolveInventoryOpenGraphImages(canonical: string): string[] {
-  const segments = normalizePath(canonical).split('/').filter(Boolean);
-  if (segments.length < 2) {
-    return [DEFAULT_OG_IMAGE_PATH];
-  }
-
-  const [rootSegment] = segments;
-  const assetDirectoryByCanonicalRoot: Partial<Record<string, string>> = {
-    blog: 'blog',
-    'case-studies': 'case-studies',
-    features: 'features',
-    industries: 'industries',
-    resources: 'resources',
-    services: 'services',
-  };
-
-  const assetDirectory = rootSegment ? assetDirectoryByCanonicalRoot[rootSegment] : null;
-  const assetSlug = segments.at(-1);
-  if (!assetDirectory || !assetSlug) {
-    return [DEFAULT_OG_IMAGE_PATH];
-  }
-
-  const imagePath = getImage(assetSlug, assetDirectory, 'featured-overlay');
-  if (imagePath && imagePath !== DEFAULT_OG_IMAGE_PATH) {
-    return [imagePath];
-  }
-
-  return [DEFAULT_OG_IMAGE_PATH];
-}
-
 function normalizeOpenGraph(
   openGraph: unknown,
   title: string,
@@ -109,29 +79,21 @@ function normalizeOpenGraph(
   const value =
     openGraph && typeof openGraph === 'object'
       ? (openGraph as {
-          title?: string;
-          description?: string;
-          url?: string;
-          image?: string;
-          images?: string[];
-        })
+        title?: string;
+        description?: string;
+        url?: string;
+        image?: string;
+        images?: string[];
+      })
       : {};
 
-  const explicitImages =
-    value.images && value.images.length > 0 ? value.images : value.image ? [value.image] : [];
-  const inferredImages = resolveInventoryOpenGraphImages(canonical);
-  const onlyUsesDefaultImage =
-    explicitImages.length > 0 && explicitImages.every(image => image === DEFAULT_OG_IMAGE_PATH);
+  const inferredImages = [resolveOGImagePathForRoute(canonical)];
 
   return {
     title: value.title ?? title,
     description: value.description ?? description,
     url: normalizePath(value.url ?? canonical),
-    images:
-      explicitImages.length === 0 ||
-      (onlyUsesDefaultImage && inferredImages[0] !== DEFAULT_OG_IMAGE_PATH)
-        ? inferredImages
-        : explicitImages,
+    images: inferredImages,
   };
 }
 
@@ -308,6 +270,7 @@ export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
       ogTitle: entry.openGraph.title,
       ogDescription: entry.openGraph.description,
       image: entry.openGraph.images[0] ?? DEFAULT_OG_IMAGE.url,
+      ogEntity: resolveOGEntityFromPath(entry.path),
       noIndex: !(entry.robots.index && entry.robots.follow),
     },
     entry.path

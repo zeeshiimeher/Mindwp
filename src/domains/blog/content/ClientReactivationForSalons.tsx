@@ -34,7 +34,7 @@ export const clientReactivationForSalons: BlogPostData = {
       heading: 'The Hidden Revenue in Your Client List',
       quote:
         'Acquiring a new salon client costs five to seven times more than reactivating a lapsed one. Yet most salons spend their marketing budget on new client acquisition while hundreds of former clients sit untouched in their booking system — each representing potential revenue that costs almost nothing to recover.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

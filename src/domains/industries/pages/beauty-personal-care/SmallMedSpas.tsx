@@ -216,7 +216,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Small Med Spas — Calm Consult Follow-Up, Plan Completion | MindWP',
+      title: 'Small Med Spas — Calm Consult Follow-Up, Plan Completion',
       description:
         'For small med spas where enquiries cool overnight and treatment plans stall at session two. We put same-day replies, written plans, scheduled rebooks, and outcome-based reviews in place.',
       canonical: '/industries/beauty-personal-care/small-med-spas',

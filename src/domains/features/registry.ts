@@ -65,48 +65,23 @@ const FEATURE_ICON_BY_SLUG: Record<FeatureSlug, LucideIcon> = {
   crm: Database,
 };
 
-const createFeatureEntry = <TSlug extends FeatureSlug>(
-  slug: TSlug,
-  data: FeaturePageData,
-  page: FeaturePageComponent,
-  icon: LucideIcon
-) =>
+const createFeatureEntry = (data: FeaturePageData, page: FeaturePageComponent, icon: LucideIcon) =>
   ({
-    id: `feature:${slug}`,
-    slug,
+    id: `feature:${data.slug}`,
+    slug: data.slug,
     data,
     page,
     icon,
   }) satisfies FeatureDomainEntry;
 
 export const FEATURE_DOMAIN_REGISTRY = {
-  voicecalls: createFeatureEntry(
-    'voicecalls',
-    voicecallsData,
-    VoiceCallsPage,
-    FEATURE_ICON_BY_SLUG.voicecalls
-  ),
-  aichat: createFeatureEntry('aichat', aiChatData, AIChatPage, FEATURE_ICON_BY_SLUG.aichat),
-  reputation: createFeatureEntry(
-    'reputation',
-    reputationData,
-    ReputationPage,
-    FEATURE_ICON_BY_SLUG.reputation
-  ),
-  inbox: createFeatureEntry('inbox', inboxData, InboxPage, FEATURE_ICON_BY_SLUG.inbox),
-  workflows: createFeatureEntry(
-    'workflows',
-    workflowsData,
-    WorkflowsPage,
-    FEATURE_ICON_BY_SLUG.workflows
-  ),
-  calendars: createFeatureEntry(
-    'calendars',
-    calendarsData,
-    CalendarsPage,
-    FEATURE_ICON_BY_SLUG.calendars
-  ),
-  crm: createFeatureEntry('crm', crmData, CRMPage, FEATURE_ICON_BY_SLUG.crm),
+  voicecalls: createFeatureEntry(voicecallsData, VoiceCallsPage, FEATURE_ICON_BY_SLUG.voicecalls),
+  aichat: createFeatureEntry(aiChatData, AIChatPage, FEATURE_ICON_BY_SLUG.aichat),
+  reputation: createFeatureEntry(reputationData, ReputationPage, FEATURE_ICON_BY_SLUG.reputation),
+  inbox: createFeatureEntry(inboxData, InboxPage, FEATURE_ICON_BY_SLUG.inbox),
+  workflows: createFeatureEntry(workflowsData, WorkflowsPage, FEATURE_ICON_BY_SLUG.workflows),
+  calendars: createFeatureEntry(calendarsData, CalendarsPage, FEATURE_ICON_BY_SLUG.calendars),
+  crm: createFeatureEntry(crmData, CRMPage, FEATURE_ICON_BY_SLUG.crm),
 } as const satisfies Record<FeatureSlug, FeatureDomainEntry>;
 
 export const FEATURE_PAGE_DATA_BY_SLUG = Object.fromEntries(

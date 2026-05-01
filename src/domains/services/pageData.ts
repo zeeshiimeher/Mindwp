@@ -78,96 +78,65 @@ type ServiceDomainRegistry = {
 };
 
 const createServiceEntry = <TData extends ServicePageData>(
-  slug: string,
   data: TData,
   renderer: ServiceRenderer<TData>
 ): ServiceDomainEntry<TData> => ({
-  id: `service:${slug}`,
-  slug,
+  id: `service:${data.slug}`,
+  slug: data.slug,
   data,
   renderer,
 });
 
 export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
-  'smart-website-systems': createServiceEntry(
-    'smart-website-systems',
-    smartWebsiteSystemsPage,
-    SmartWebsiteSystemsRenderer
-  ),
-  'conversion-layer': createServiceEntry(
-    'conversion-layer',
-    conversionLayerPage,
-    ConversionLayerRenderer
-  ),
+  'smart-website-systems': createServiceEntry(smartWebsiteSystemsPage, SmartWebsiteSystemsRenderer),
+  'conversion-layer': createServiceEntry(conversionLayerPage, ConversionLayerRenderer),
   'conversion-funnel-system-vs-landing-page-development': createServiceEntry(
-    'conversion-funnel-system-vs-landing-page-development',
     conversionFunnelSystemVsLandingPageDevelopmentPage,
     ConversionLayerRenderer
   ),
   'system-migration-platform-consolidation': createServiceEntry(
-    'system-migration-platform-consolidation',
     systemMigrationPlatformConsolidationPage,
     SystemMigrationPlatformConsolidationRenderer
   ),
   'website-redesign-system-rebuild': createServiceEntry(
-    'website-redesign-system-rebuild',
     websiteRedesignSystemRebuildPage,
     WebsiteRedesignSystemRebuildRenderer
   ),
   'lead-reactivation-system': createServiceEntry(
-    'lead-reactivation-system',
     leadReactivationSystemPage,
     LeadReactivationSystemRenderer
   ),
   'missed-call-recovery-system': createServiceEntry(
-    'missed-call-recovery-system',
     missedCallRecoverySystemPage,
     MissedCallRecoverySystemRenderer
   ),
   'unified-communication-system': createServiceEntry(
-    'unified-communication-system',
     unifiedCommunicationSystemPage,
     UnifiedCommunicationSystemRenderer
   ),
-  'local-seo-authority': createServiceEntry(
-    'local-seo-authority',
-    localSeoAuthorityPage,
-    LocalSeoAuthorityRenderer
-  ),
+  'local-seo-authority': createServiceEntry(localSeoAuthorityPage, LocalSeoAuthorityRenderer),
   'reputation-review-systems': createServiceEntry(
-    'reputation-review-systems',
     reputationReviewSystemsPage,
     ReputationReviewSystemsRenderer
   ),
-  'crm-infrastructure-implementation': createServiceEntry(
-    'crm-infrastructure-implementation',
-    crmAutomationPage,
-    CRMAutomationRenderer
-  ),
+  'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, CRMAutomationRenderer),
   'website-crm-integration-vs-manual-lead-handling': createServiceEntry(
-    'website-crm-integration-vs-manual-lead-handling',
     websiteCrmIntegrationVsManualLeadHandlingPage,
     CRMAutomationRenderer
   ),
-  'ai-lead-handling': createServiceEntry(
-    'ai-lead-handling',
-    aiLeadHandlingPage,
-    AiLeadHandlingRenderer
-  ),
+  'ai-lead-handling': createServiceEntry(aiLeadHandlingPage, AiLeadHandlingRenderer),
   'service-pages-vs-one-generic-services-page': createServiceEntry(
-    'service-pages-vs-one-generic-services-page',
     servicePagesVsOneGenericServicesPage,
     SmartWebsiteSystemsRenderer
   ),
   'wordpress-development': createServiceEntry(
-    'wordpress-development',
     wordpressDevelopmentPage,
     WordPressDevelopmentRenderer
   ),
-  ecommerce: createServiceEntry('ecommerce', woocommercePage, WooCommerceRenderer),
-  divi5: createServiceEntry('divi5', divi5Page, Divi5Renderer),
-  'bricks-builder': createServiceEntry('bricks-builder', bricksBuilderPage, BricksBuilderRenderer),
-  elementor: createServiceEntry('elementor', elementorPage, ElementorRenderer),
+  ecommerce: createServiceEntry(woocommercePage, WooCommerceRenderer),
+  divi5: createServiceEntry(divi5Page, Divi5Renderer),
+  'bricks-builder': createServiceEntry(bricksBuilderPage, BricksBuilderRenderer),
+  elementor: createServiceEntry(elementorPage, ElementorRenderer),
 } as const;
 
 export type ServicePageDataBySlug = {

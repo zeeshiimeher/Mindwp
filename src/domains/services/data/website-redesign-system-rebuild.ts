@@ -19,7 +19,7 @@ export const websiteRedesignSystemRebuildPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+    title: 'Website Redesign & Rebuild for Service Businesses',
     description:
       'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
   }),

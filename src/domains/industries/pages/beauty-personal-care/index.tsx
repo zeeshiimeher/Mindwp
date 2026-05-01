@@ -265,7 +265,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Beauty & Appointment Businesses — Booking, Rebook, Retention | MindWP',
+      title: 'Beauty & Appointment Businesses — Booking, Rebook, Retention',
       description:
         'Salons, lash studios, med spas, and aesthetic clinics share the same loop — fastest reply, easiest booking, most remembered business. We put the systems in place that fix the loop where it actually breaks.',
       canonical: '/industries/beauty-personal-care',

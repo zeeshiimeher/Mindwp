@@ -9,8 +9,9 @@ import {
 } from '@/domains/features/config';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { extractSEOInput } from '@/lib/seo/resolveMetadata';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { buildSEO } from '@/lib/seo/seo';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 
@@ -61,7 +62,10 @@ export async function generateMetadata({
   const resolved = await resolveFeature(slug);
   if (!resolved) return {};
 
-  return resolveSEO({ path: resolved.featureNode.path, type: 'feature', slug: resolved.slug });
+  return buildSEO(
+    extractSEOInput(getFeatureDataBySlug(resolved.slug), resolved.featureNode.path),
+    resolved.featureNode.path
+  );
 }
 
 const formatFeatureTitle = (slug: string) =>

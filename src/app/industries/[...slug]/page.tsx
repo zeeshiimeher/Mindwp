@@ -4,8 +4,9 @@ import { notFound } from 'next/navigation';
 import JsonLd from '@/components/system/JsonLd';
 import { getIndustryDataByPath, renderIndustryPageByPath } from '@/domains/industries/config';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
+import { extractSEOInput } from '@/lib/seo/resolveMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { buildSEO } from '@/lib/seo/seo';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 
@@ -90,9 +91,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const resolved = await resolveIndustry(slug);
   if (!resolved) return {};
-  const { node } = resolved;
+  const { node, industry } = resolved;
 
-  return resolveSEO({ path: node.path, type: 'industry', slug: node.slug });
+  return buildSEO(extractSEOInput(industry, node.path), node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

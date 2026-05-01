@@ -9,7 +9,7 @@ export const missedCallRecoverySystemPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Missed Call Recovery for Service Businesses | MindWP',
+    title: 'Missed Call Recovery Automation for Service Businesses',
     description:
       'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
   }),

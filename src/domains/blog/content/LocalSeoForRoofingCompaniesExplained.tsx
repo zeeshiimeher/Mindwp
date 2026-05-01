@@ -42,7 +42,7 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
       heading: 'The Visibility Problem',
       quote:
         'Most roofing companies are not competing on quality of work. They are competing on visibility. The companies that appear in local search results get the calls. The companies that do not appear do not get considered — regardless of how good their work is.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

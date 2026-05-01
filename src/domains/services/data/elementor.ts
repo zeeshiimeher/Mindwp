@@ -19,7 +19,7 @@ export const elementorPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Elementor WordPress Development | MindWP',
+    title: 'Elementor WordPress Development',
     description:
       "Elementor gives you visual control and flexible editing. But pixel-perfect pages don't bring in work on their own. Here's what most Elementor sites are missing.",
   }),

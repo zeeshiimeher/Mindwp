@@ -1,5 +1,7 @@
 import { normalizePath } from '@/lib/seo/config';
 import { DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
+import { resolveOGEntityFromPath, resolveOGImagePathForRoute } from '@/lib/seo/og/contract';
+import type { SEOInput } from '@/lib/seo/seo';
 
 type ResolvedMetadataRecord = Record<string, unknown>;
 
@@ -20,6 +22,10 @@ export type ResolvedPageMetadata = {
   seo?: ResolvedMetadataRecord;
   hero?: ResolvedMetadataRecord;
   cta?: ResolvedMetadataRecord;
+};
+
+export type ResolvedSEOInput = SEOInput & {
+  canonical: string;
 };
 
 function asRecord(value: unknown): ResolvedMetadataRecord | null {
@@ -60,7 +66,7 @@ export function resolveMetadata(
       title: readString(openGraph?.title) ?? title,
       description: readString(openGraph?.description) ?? description,
       url: normalizePath(readString(openGraph?.url) ?? canonical),
-      images: [DEFAULT_OG_IMAGE_PATH],
+      images: [resolveOGImagePathForRoute(canonical)],
     },
     robots: {
       index:
@@ -79,5 +85,24 @@ export function resolveMetadata(
     ...(seo ? { seo } : {}),
     ...(hero ? { hero } : {}),
     ...(cta ? { cta } : {}),
+  };
+}
+
+export function extractSEOInput(pageData: unknown, fallbackCanonical: string): ResolvedSEOInput {
+  const metadata = resolveMetadata(pageData, fallbackCanonical);
+
+  if (!metadata.title || !metadata.description) {
+    throw new Error('Invalid SEO metadata');
+  }
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    canonical: metadata.canonical,
+    ogTitle: metadata.openGraph.title,
+    ogDescription: metadata.openGraph.description,
+    image: metadata.openGraph.images[0] ?? DEFAULT_OG_IMAGE_PATH,
+    ogEntity: resolveOGEntityFromPath(metadata.canonical),
+    noIndex: !(metadata.robots.index && metadata.robots.follow),
   };
 }

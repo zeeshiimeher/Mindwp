@@ -321,7 +321,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Auto Repair Shops \u2014 Stop Losing Brake Jobs To Voicemail | MindWP',
+      title: 'Auto Repair Shops \u2014 Stop Losing Brake Jobs To Voicemail',
       description:
         'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
       canonical: '/industries/automotive-services/auto-repair',

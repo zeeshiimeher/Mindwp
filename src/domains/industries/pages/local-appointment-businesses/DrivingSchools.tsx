@@ -181,7 +181,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Driving Schools — Turn "I\'ll Book Next Week" Into Booked Lessons | MindWP',
+      title: 'Driving Schools — Turn "I\'ll Book Next Week" Into Booked Lessons',
       description:
         'For driving schools where enquiries drift instead of booking. We put gentle, scheduled follow-up, easy booking, and review prompts in place so the soft maybes land.',
       canonical: '/industries/local-appointment-businesses/driving-schools',

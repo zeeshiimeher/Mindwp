@@ -260,7 +260,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Small Law Firms — Lower The Barrier To The First Call, Without Losing Trust | MindWP',
+      title: 'Small Law Firms — Lower The Barrier To The First Call, Without Losing Trust',
       description:
         'For small law firms where worried clients hesitate to reach out and half-typed enquiries quietly disappear. We help make the first step small, the first reply warm, and the consultation easy to book.',
       canonical: '/industries/legal-professional-services/small-law-firms',

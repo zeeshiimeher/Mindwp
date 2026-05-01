@@ -10,7 +10,7 @@ export const servicePagesVsOneGenericServicesPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Service Pages vs One Generic Services Page | MindWP',
+    title: 'Service Pages vs One Generic Services Page',
     description:
       'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
   }),

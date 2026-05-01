@@ -367,4 +367,4 @@ Consumers must not bypass these constraints.
 - Identity and system boundaries: [./FOUNDATION.md](./FOUNDATION.md)
 - CTA and contact context: [./CONVERSION.md](./CONVERSION.md)
 - Public writing style and related-content language: [./WRITING.md](./WRITING.md)
-- Control plane and validation: [../ops/AUDIT.md](../ops/AUDIT.md)
+- Control plane and validation: `scripts/core/system-manifest.mjs`, `scripts/validators/*`, and [../ops/WORKFLOW.md](../ops/WORKFLOW.md)

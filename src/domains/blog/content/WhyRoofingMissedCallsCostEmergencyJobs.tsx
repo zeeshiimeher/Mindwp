@@ -42,7 +42,7 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
       heading: 'The Cost of Silence',
       quote:
         'Every missed call during a storm represents a customer in genuine distress choosing your competitor — not because they are better, but because they answered. The cost is not just the job. It is the relationship, the review, and every referral that follows.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

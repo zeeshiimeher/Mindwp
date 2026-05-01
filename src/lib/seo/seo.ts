@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getMetadataBase, normalizePath, toAbsoluteUrl } from '@/lib/seo/config';
+import { type OGEntityDescriptor, resolveOGImagePathForRoute } from '@/lib/seo/og/contract';
 
 export type SEOInput = {
   title: string;
@@ -10,6 +11,7 @@ export type SEOInput = {
   canonical?: string;
   ogTitle?: string;
   ogDescription?: string;
+  ogEntity?: OGEntityDescriptor | null;
   includeBrand?: boolean;
   titleVariant?: 'default' | 'short' | 'long';
 };
@@ -24,7 +26,7 @@ export const SEO_CONFIG = {
     short: '{title}',
     long: '{title} — {tagline} | {site}',
   },
-  defaultOG: '/og/default.png',
+  defaultOG: '/api/og?path=%2F',
 } as const;
 
 function interpolateTemplate(
@@ -81,7 +83,12 @@ export function buildSEO(input: SEOInput, routePath: string): Metadata {
   const description = input.description;
   const ogTitle = input.ogTitle ?? title;
   const ogDescription = input.ogDescription ?? description;
-  const image = input.image ?? SEO_CONFIG.defaultOG;
+  const image =
+    input.ogEntity != null
+      ? input.ogEntity
+        ? `/api/og?type=${input.ogEntity.type}&slug=${encodeURIComponent(input.ogEntity.slug)}`
+        : resolveOGImagePathForRoute(canonicalPath)
+      : (input.image ?? resolveOGImagePathForRoute(canonicalPath));
   const robots = resolveRobots(input.noIndex);
 
   return {

@@ -287,7 +287,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting | MindWP',
+      title: 'Roofing Companies \u2014 Stop Re-Roof Quotes Drifting',
       description:
         'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
       canonical: '/industries/home-services/roofing-companies',

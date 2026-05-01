@@ -271,7 +271,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Real Estate & Property Services — Win The First Minute, Hold The Pipeline | MindWP',
+      title: 'Real Estate & Property Services — Win The First Minute, Hold The Pipeline',
       description:
         'For realtors, property managers, mortgage brokers, and inspectors where the leak is in the first-response window and the long pipeline that follows. We put first-minute response, pipeline memory, and follow-up in place across the category.',
       canonical: '/industries/real-estate-property-services',

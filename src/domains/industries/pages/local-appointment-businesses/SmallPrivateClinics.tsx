@@ -227,7 +227,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Small Private Clinics — Turn Hesitant Enquiries Into Booked Consultations | MindWP',
+      title: 'Small Private Clinics — Turn Hesitant Enquiries Into Booked Consultations',
       description:
         'For small private clinics where enquiries are warm but never seem to book. We help reply in a way that reassures, build the trust signals patients quietly check, and hold the door open without pressure.',
       canonical: '/industries/local-appointment-businesses/small-private-clinics',

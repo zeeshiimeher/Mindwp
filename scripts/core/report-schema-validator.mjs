@@ -5,7 +5,7 @@ import { createGeneratedJsonMetadata } from '../lib/generated-file-metadata.mjs'
 
 export const REPORT_SCHEMA_VERSION = '1.0';
 export const MAX_REPORT_SIZE = 2_000_000;
-export const MAX_REPORT_ARRAY_ITEMS = 50;
+export const MAX_REPORT_ARRAY_ITEMS = 100;
 export const MAX_REPORT_OBJECT_KEYS = 40;
 export const MAX_REPORT_STRING_LENGTH = 4_000;
 export const MAX_REPORT_DEPTH = 8;

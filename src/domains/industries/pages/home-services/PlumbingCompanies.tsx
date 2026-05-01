@@ -292,7 +292,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Plumbing Firms \u2014 Catch The 7pm Burst, Close The Bathroom Quote | MindWP',
+      title: 'Plumbing Firms \u2014 Catch The 7pm Burst, Close The Bathroom Quote',
       description:
         'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
       canonical: '/industries/home-services/plumbing-companies',

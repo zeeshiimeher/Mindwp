@@ -9,7 +9,7 @@ export const reputationReviewSystemsPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Reputation & Review Management for Service Businesses | MindWP',
+    title: 'Reputation & Review Management for Service Businesses',
     description:
       "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
   }),

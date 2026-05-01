@@ -325,7 +325,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary | MindWP',
+      title: 'HVAC Firms \u2014 Survive The Surge Week, Refill The Service Diary',
       description:
         'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
       canonical: '/industries/home-services/hvac-companies',

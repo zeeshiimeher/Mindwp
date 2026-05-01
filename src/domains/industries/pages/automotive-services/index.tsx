@@ -230,7 +230,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Automotive Service Shops \u2014 Stop Losing Work At The Front Desk | MindWP',
+      title: 'Automotive Service Shops \u2014 Stop Losing Work At The Front Desk',
       description:
         'For repair shops, body shops, detailers and mobile mechanics where the bays stay booked but the front desk loses calls, estimates, and reviews. Plug the leak that is actually costing you work.',
       canonical: '/industries/automotive-services',

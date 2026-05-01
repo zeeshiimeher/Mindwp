@@ -1,145 +1,199 @@
 # SYSTEM ARCHITECTURE — MindWP
 
-> High-level architecture map for the live repo surface.
-> Shows how the main layers fit together and which runtime owners matter.
-> Orientation only. Does not override `FOUNDATION.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`, or `WRITING.md`.
+> High-level architecture map for the live repo.
+> This document shows ownership and flow.
+> It does not override `FOUNDATION.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`, `DESIGN.md`, or `WRITING.md`.
 
 ---
 
 ## USE THIS DOC
 
-Use this doc for the shortest architecture map across governance, domain data, graph, presentation, validation, reports, deploy, dashboard, and manual review.
+Use this doc for the shortest accurate map of:
 
-For positioning, writing, CTA behavior, content roles, or graph-scoring decisions, use the governing docs instead.
+- runtime ownership
+- metadata ownership
+- Open Graph ownership
+- styling ownership
+- validation and report flow
+- build and deploy gating
+
+Use the governing docs for positioning, writing, CTA behavior, graph rules, and content behavior.
 
 ---
 
-## SYSTEM LAYERS
+## SYSTEM FLOW
 
 ```text
-Governance -> Domain data and registries -> Graph and resolver -> Routes and templates -> CTA/contact -> Validators -> Reports -> Snapshot -> Deploy -> Dashboard -> Manual authority review
+Domain content -> Canonical registry -> Route inventory -> SEO -> OG -> Metadata -> Page render
 ```
+
+Control-plane flow:
+
+```text
+Repo state -> validate-all -> reports -> export-reports -> system-report -> build-safe -> production build
+```
+
+The runtime lane produces site behavior.
+The control plane validates structure and records system state.
+
+---
+
+## RUNTIME LAYERS
 
 ### Governance
 
-- `FOUNDATION.md` is root authority.
-- `WRITING.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`, and `SYSTEM-RULES.md` are scoped governing docs.
+- `docs/core/*`
+- `FOUNDATION.md` is root authority
+- scoped governing docs define identity, writing, content, conversion, graph, design, and enforcement
 
-### Domain Data and Registries
+### Domain and Registry Layer
 
 - `src/domains/**`
-- canonical identifiers from the content-graph registry layer
-- content-model aggregation in `src/domains/contentModel.ts`
+- canonical identifiers from `src/lib/content-graph/canonical.ts`
+- graph bootstrap via `src/domains/init/ensureGraphInitialized.ts`
 
-### Graph and Resolver
+This layer owns raw domain content and canonical identifiers.
 
-- graph initialization through `src/domains/init/ensureGraphInitialized.ts`
-- publishable and graph runtime under `src/lib/content-graph/**`
-- related-content and authority resolution from metadata overlap, behavior safety, and progression logic
+### Identity and Inventory Layer
 
-### Routes and Templates
+- `src/lib/content-quality/inventory.ts`
+- `config/routeOwnership.ts`
+- `config/indexingPolicy.ts`
 
-- canonical app routes under `src/app/**`
-- page and template surfaces that resolve page identity and page type
-- shared publishable runtime for routed node rendering
+This layer owns:
 
-### CTA and Contact
+- canonical route metadata
+- route path normalization
+- robots output
+- Open Graph URL ownership
+- route-to-kind alignment
 
-- `src/components/sections/PrimaryCTASection.tsx`
-- `src/lib/cta/ctaRegistry.ts`
-- `src/lib/contact/contactHref.ts`
-- `/contact` as the single conversion endpoint
+### SEO Layer
 
-### Validation and Reports
+- `src/lib/seo/resolveMetadata.ts`
+- `src/lib/seo/seo.ts`
+- `src/lib/seo/seoResolver.ts`
+
+This layer owns:
+
+- title composition
+- description composition
+- canonical URL output
+- brand composition in metadata
+- final metadata structure handed to routes
+
+### OG Layer
+
+- `src/lib/seo/og/contract.ts`
+- `src/lib/seo/og/render.ts`
+- `src/app/api/og/route.ts`
+
+This layer owns:
+
+- route-to-OG entity mapping
+- layout selection
+- deterministic OG URL generation
+- API-backed image rendering
+
+### Page and Component Layer
+
+- `src/app/**`
+- `src/components/sections/*`
+
+Pages resolve content and metadata.
+Components render prepared props only.
+
+### Design Layer
+
+- `src/styles/foundation.css`
+- `src/styles/framework.css`
+- `src/styles/primitives.css`
+- `src/styles/components.css`
+
+This is the only live CSS system.
+
+---
+
+## CONTROL-PLANE LAYERS
+
+### Validation Entry
 
 - `scripts/core/validate-all.mjs`
-- manifest-driven control-plane execution
-- generated report artifacts in `reports/**`
-- operator visibility through `/dev/system-dashboard`
+- validator definitions from `scripts/core/system-manifest.mjs`
+- validator implementations in `scripts/validators/*`
 
-Validators protect structure. They do not replace manual authority review.
+This layer owns repo-wide validation and report generation.
 
-### Deploy and Snapshot
+### Generated-Source Integrity
 
+- `scripts/core/check-generated.mjs`
+- generator-owned source outputs such as registries and authority map
+
+Generated source drift is validated, not silently ignored.
+
+### Report Export and Derived Analysis
+
+- `scripts/analyzers/export-reports.mjs`
+- manifest-owned report outputs under `reports/**`
+
+This layer owns derived report artifacts and report normalization.
+
+### System Summary and Dashboard Inputs
+
+- `scripts/core/system-report.mjs`
+- `scripts/core/dashboard-data.mjs`
+- `reports/system-report.json`
+- `reports/client-dashboard.json`
+
+This layer summarizes the full run and prepares operator-facing outputs.
+
+### Build Gate
+
+- `scripts/runners/build-safe.mjs`
+- `package.json` build script
+
+Build runs through the full validation gate first. It should validate the same repo state that standalone `validate-all` and `system:full` validate.
+
+### Snapshot and Deploy
+
+- `scripts/core/build-system-snapshot.mjs`
 - `scripts/deploy/**`
-- predeploy validation gate (`system:quick` + `system:full`)
-- snapshot generation via `build-system-snapshot.mjs`
-- deploy report output in `artifacts/**`
+- `artifacts/**`
 
-This layer freezes and records system state at deploy time. It does not change runtime behavior.
-
-### Manual Authority Review
-
-Manual review checks authority, specificity, proof quality, CTA timing, and conversion clarity on important service, industry, case-study, homepage, and CTA surfaces before launch.
-
-This is human judgment. Validators do not replace it.
-
----
-
-## HUMAN WORKING MODEL
-
-MindWP operates in two lanes:
-
-1. **Runtime lane:** domain registries, graph initialization, routes, templates, CTA behavior, and contact flow.
-2. **Control-plane lane:** validators, analyzers, reports, snapshots, deploy gates, and dashboard readers.
-
-Runtime produces behavior.
-Control-plane confirms structural alignment.
-Manual review confirms authority quality where automation cannot judge it.
-
----
-
-## FULL SYSTEM FLOW
-
-1. Domain-owned content and registries declare canonical metadata.
-2. The content model collects registries into one runtime input surface.
-3. Graph initialization builds graph and resolver indexes.
-4. App routes resolve canonical params into the correct page or template surface.
-5. Publishable nodes render through shared runtime owners.
-6. Page adapters create page identity and CTA enforcement scope.
-7. `PrimaryCTASection` generates CTA behavior and `/contact` context.
-8. Validators and reports confirm structural contracts.
-9. Snapshot generation freezes validated system state.
-10. Deploy pipeline records artifacts and enforces release gating.
-11. Dashboard reads frozen report outputs for operator visibility.
-12. Manual review checks authority and conversion quality where automation cannot.
-13. Page content respects governing docs.
-
----
-
-## ARCHITECTURAL RULES
-
-- Governing docs describe expected behavior; code must match them.
-- This architecture document explains ownership; it does not create authority above governing docs.
-- One content item gets one canonical route.
-- Components render content; they do not become graph or report engines.
-- Runtime code does not become a dashboard computation layer.
-- Dashboards read reports; they do not define system truth.
-- Generated files and report artifacts are not edited manually.
-- The full refresh path is `npm run system:full`.
-- `npm run system:quick` is a safe operator check, not a replacement for the full run.
-- Passing validators does not prove positioning strength, persuasion, or authority quality.
-- Production release must go through `npm run deploy`.
+This layer records validated state and gates release.
 
 ---
 
 ## KEY OWNERS
 
-| Concern                   | Primary Owner                                |
-| ------------------------- | -------------------------------------------- |
-| Governing docs            | `docs/core/*`                                |
-| Content model             | `src/domains/contentModel.ts`                |
-| Graph initialization      | `src/domains/init/ensureGraphInitialized.ts` |
-| Publishable runtime       | `src/lib/content-graph/publishable.tsx`      |
-| CTA rendering             | `src/components/sections/PrimaryCTASection.tsx` |
-| CTA registry              | `src/lib/cta/ctaRegistry.ts`                 |
-| Contact URL generation    | `src/lib/contact/contactHref.ts`             |
-| Validator orchestration   | `scripts/core/validate-all.mjs`              |
-| Workflow authority        | `docs/ops/WORKFLOW.md`                       |
-| Audit authority           | `docs/ops/AUDIT.md`                          |
-| Internal observability    | `/dev/system-dashboard`                      |
-| Deploy and snapshot layer | `scripts/deploy/**`, `artifacts/**`          |
-| Manual authority review   | Human review guided by `docs/core/*`         |
+| Concern | Primary Owner |
+| --- | --- |
+| Canonical identifiers | `src/lib/content-graph/canonical.ts` |
+| Route metadata source | `src/lib/content-quality/inventory.ts` |
+| Metadata normalization | `src/lib/seo/resolveMetadata.ts` |
+| SEO composition | `src/lib/seo/seo.ts` |
+| OG mapping and URL contract | `src/lib/seo/og/contract.ts` |
+| OG image rendering | `src/app/api/og/route.ts` and `src/lib/seo/og/render.ts` |
+| Section renderers | `src/components/sections/*` |
+| CSS system | `src/styles/foundation.css`, `framework.css`, `primitives.css`, `components.css` |
+| Validator ownership | `scripts/core/system-manifest.mjs` |
+| Validator execution | `scripts/core/validate-all.mjs` |
+| Report export | `scripts/analyzers/export-reports.mjs` |
+| System summary | `scripts/core/system-report.mjs` |
+| Workflow authority | `docs/ops/WORKFLOW.md` |
+
+---
+
+## ARCHITECTURAL RULES
+
+- Code is the source of truth.
+- Inventory is the single source of truth for route metadata.
+- SEO ownership stays in the SEO layer.
+- OG ownership stays in the OG layer and API route.
+- Components render; they do not own metadata, graph logic, or styling systems.
+- The four-layer CSS stack is the only live design system.
+- Validators and manifest-owned reports define structural status.
+- Generated files and reports are never hand-maintained as an alternative to fixing generators or validators.
 
 ---
 
@@ -152,8 +206,8 @@ Read in this order:
 3. `CONTENT.md`
 4. `CONVERSION.md`
 5. `GRAPH.md`
-6. `SYSTEM-RULES.md`
-7. `../ops/AUDIT.md`
+6. `DESIGN.md`
+7. `SYSTEM-RULES.md`
 8. `../ops/WORKFLOW.md`
 
-This follows the authority order defined in `FOUNDATION.md` while keeping this file as the short architecture orientation map.
+This file stays subordinate to the governing docs and exists only as the short architecture map.

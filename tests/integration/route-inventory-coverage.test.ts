@@ -7,8 +7,8 @@ import { describe, expect, test } from 'vitest';
 
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { buildRouteInventory } from '@/lib/content-quality/inventory';
-import { getImage } from '@/lib/image-system/resolver';
 import { buildRoutePathFromSegments } from '@/lib/seo/config';
+import { resolveOGImagePathForRoute } from '@/lib/seo/og/contract';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 const INTERNAL_STATIC_ROUTE_PREFIXES = ['/dev/'];
@@ -75,7 +75,7 @@ describe('integration: route inventory coverage', () => {
     expect(staticAppRoutes.every(routePath => inventoryPaths.has(routePath))).toBe(true);
   });
 
-  test('inventory uses resolved case-study assets for case-study open graph images', async () => {
+  test('inventory uses deterministic API-backed case-study open graph images', async () => {
     const inventory = await buildRouteInventory();
 
     for (const caseStudy of Object.values(CASE_STUDY_REGISTRY)) {
@@ -83,7 +83,7 @@ describe('integration: route inventory coverage', () => {
 
       expect(entry, `Missing route inventory entry for ${caseStudy.slug}`).toBeDefined();
       expect(entry?.openGraph.images).toEqual([
-        getImage(caseStudy.slug, 'case-studies', 'featured-overlay'),
+        resolveOGImagePathForRoute(caseStudy.seo.canonical),
       ]);
     }
   });

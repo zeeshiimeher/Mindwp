@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { extractSEOInput } from '@/lib/seo/resolveMetadata';
+import { buildSEO } from '@/lib/seo/seo';
 
 import {
   CaseStudyDetailPage,
@@ -25,7 +26,7 @@ export async function generateMetadata({
   const resolved = await resolveCaseStudy(slug);
   if (!resolved) return {};
 
-  return resolveSEO({ path: resolved.node.path, type: 'case-study', slug });
+  return buildSEO(extractSEOInput(resolved.caseStudy, resolved.node.path), resolved.node.path);
 }
 
 export default async function Page(props: { params: Promise<{ slug: string }> }) {

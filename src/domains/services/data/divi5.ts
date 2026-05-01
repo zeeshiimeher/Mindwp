@@ -9,7 +9,7 @@ export const divi5Page = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Divi WordPress Development | MindWP',
+    title: 'Divi WordPress Development',
     description:
       "Divi gives your team flexible editing and visual control. But editing freedom doesn't fix a website that isn't bringing in work. Here's what to look at first.",
   }),

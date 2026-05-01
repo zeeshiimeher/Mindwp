@@ -308,7 +308,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Body Shops \u2014 Win The Photo Race After A Bump | MindWP',
+      title: 'Body Shops \u2014 Win The Photo Race After A Bump',
       description:
         'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
       canonical: '/industries/automotive-services/body-shops',

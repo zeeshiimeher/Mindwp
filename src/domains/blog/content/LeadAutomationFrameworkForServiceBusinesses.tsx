@@ -48,7 +48,7 @@ export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
       heading: 'The Speed Imperative',
       quote:
         'The single most important variable in lead conversion for service businesses is response speed. Every hour of delay reduces the probability of converting an enquiry into a booked job.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

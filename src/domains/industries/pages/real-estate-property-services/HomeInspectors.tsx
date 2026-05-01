@@ -234,7 +234,7 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Home Inspectors — Win The Booking Window, Keep The Referring Agent | MindWP',
+      title: 'Home Inspectors — Win The Booking Window, Keep The Referring Agent',
       description:
         'For home inspectors where the booking window is short, agents need confirmation today, and silence after the report costs the next referral. We put same-hour availability, on-site missed-call handling, and status updates in place.',
       canonical: '/industries/real-estate-property-services/home-inspectors',

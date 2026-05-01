@@ -19,7 +19,7 @@ export const unifiedCommunicationSystemPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'Unified Communication System for Service Businesses | MindWP',
+    title: 'Unified Communication System for Service Businesses',
     description:
       'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
   }),

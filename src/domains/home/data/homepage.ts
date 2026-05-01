@@ -214,9 +214,9 @@ export type HomepageData = {
 
 export const homepageData: HomepageData = {
   seo: {
-    title: 'MindWP — Stop Losing Enquiries. Catch Calls, Follow Up, Win More Work.',
+    title: 'Stop Losing Enquiries. Catch Calls, Follow Up, Win More Work.',
     description:
-      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. MindWP puts the routing, follow-up, visibility, and proof in place so the work already coming in actually turns into work.',
+      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. The routing, follow-up, visibility, and proof are put in place so the work already coming in actually turns into work.',
     canonical: '/',
     schema: {
       organization: {

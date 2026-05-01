@@ -299,8 +299,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title:
-        'Legal, Accounting & Consulting Practices — Stop Losing Work In The Quiet Middle | MindWP',
+      title: 'Legal, Accounting & Consulting Practices — Stop Losing Work In The Quiet Middle',
       description:
         'For law firms, accountants, and consultants where the leak is not in marketing but in the long, quiet middle — slow decisions, silent drop-offs, and rooms you are not in. We put the follow-up, clarity, and proof in place so the firm stays present while clients decide.',
       canonical: '/industries/legal-professional-services',

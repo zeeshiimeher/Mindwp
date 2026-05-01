@@ -228,7 +228,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients | MindWP',
+      title: 'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients',
       description:
         'For dental clinics where the recall list is long and treatment plans quietly stall. We put two-touch recall, plan follow-up, and warmer first replies in place so the chair fills from the patients you already have.',
       canonical: '/industries/local-appointment-businesses/dental-clinics',

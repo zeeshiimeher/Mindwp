@@ -235,8 +235,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title:
-        'Independent Consultants — Stop Losing Engagements To "Let Us Think About It" | MindWP',
+      title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It"',
       description:
         'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
       canonical: '/industries/legal-professional-services/consultants',

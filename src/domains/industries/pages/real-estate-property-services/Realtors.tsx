@@ -236,7 +236,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline | MindWP',
+      title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline',
       description:
         'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
       canonical: '/industries/real-estate-property-services/realtors',

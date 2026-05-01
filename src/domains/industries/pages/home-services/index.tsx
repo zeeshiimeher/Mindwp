@@ -330,7 +330,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
+      title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote',
       description:
         'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
       canonical: '/industries/home-services',

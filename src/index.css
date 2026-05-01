@@ -5,7 +5,7 @@
  *   1. _legacy/_compat: TEMPORARY pre-Phase-1 CSS, kept so production
  *      routes continue rendering until phases 2/5/7/9 migrate them.
  *      Loaded FIRST so the new design-system tokens (next) override any
- *      shared `:root` values. Removed entirely in PHASE 9.
+ *      shared `:root` values. ll be removed later dont edit/update legacy css files.
  *   2. foundation: tokens (canonical — must override legacy `:root`).
  *   3. framework:  layout/utilities (consumes tokens).
  *   4. primitives: UI atoms (consumes tokens + utility classes).

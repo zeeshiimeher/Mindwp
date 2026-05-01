@@ -32,6 +32,15 @@ const MANIFEST_VALIDATOR_ALIASES: Record<string, string[]> = {
     'validate-badge-length',
     'validate-no-hardcoded-content',
     'validate-variant-required-data',
+    'validate-no-brand-in-content',
+    'validate-no-manual-canonical',
+    'validate-missing-seo-title',
+    'validate-og-fallback-integrity',
+  ],
+  'validate-og-image-rules': [
+    'validate-og-image-required',
+    'validate-no-manual-og-image',
+    'validate-og-input-valid',
   ],
   'validate-cta-label-contract': ['validate-cta-labels'],
 };
@@ -122,8 +131,8 @@ function main() {
     'lint',
   ]);
   const manifestReportFiles = getReportFiles().sort((left, right) => left.localeCompare(right));
-  const transientReportFiles = [...getTransientReportFiles(), 'domain-structure-report.json'].sort(
-    (left, right) => left.localeCompare(right)
+  const transientReportFiles = getTransientReportFiles().sort((left, right) =>
+    left.localeCompare(right)
   );
   const actualReportFiles = fs.existsSync(reportsDir)
     ? [...listReportFiles(reportsDir), 'system-manifest-integrity-report.json'].sort(

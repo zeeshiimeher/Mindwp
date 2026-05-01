@@ -293,7 +293,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   return {
     seo: {
-      title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote | MindWP',
+      title: 'Electrical Firms \u2014 Catch The Fault Call, Close The EV Quote',
       description:
         'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
       canonical: '/industries/home-services/electrical-companies',

@@ -48,7 +48,7 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
       heading: 'The Response Is the Reputation',
       quote:
         'Prospective customers do not judge a business solely on its worst review. They judge it on how the business responded. A thoughtful reply to a negative review often builds more trust than the review itself destroys.',
-      attribution: 'MindWP Editorial',
+      attribution: 'Editorial Team',
     },
     {
       type: 'content',

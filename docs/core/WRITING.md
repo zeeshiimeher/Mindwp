@@ -751,4 +751,21 @@ If every section passes, the content is ready.
 
 Service definitions, boundaries, terminology, and system consistency live in [./FOUNDATION.md](./FOUNDATION.md).
 
+---
+
+## SEO + SYSTEM ALIGNMENT RULES
+
+Writing must respect system ownership.
+
+Rules:
+
+- SEO title and UI title are allowed to differ when the SEO layer requires it.
+- Do not duplicate the same claim in both content and SEO just to restate it.
+- Do not inject brand language into content just because the SEO layer composes the brand in metadata.
+- Open Graph messaging should inherit from SEO unless the SEO layer explicitly overrides it.
+- Public writing must not fight the metadata system, route inventory, or canonical identity model.
+- If a line only exists to satisfy metadata, it does not belong in body copy.
+- No brand-in-content drift where the live system expects neutral content and brand composition in the SEO layer.
+- Writing must stay compatible with system constraints around identity, SEO, OG, CTA, and page behavior.
+
 Final rule: protect authority first, improve language second.

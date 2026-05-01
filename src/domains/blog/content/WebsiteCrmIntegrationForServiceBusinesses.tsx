@@ -48,7 +48,7 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
       heading: 'The Core Problem With Disconnected Systems',
       quote:
         'When your website and your CRM exist as separate systems with no connection between them, every lead requires manual effort to transfer, classify, and track. That manual effort is where leads get lost.',
-      attribution: 'MindWP Systems Architecture',
+      attribution: 'Systems Architecture',
     },
     {
       type: 'content',

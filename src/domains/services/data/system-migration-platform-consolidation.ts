@@ -9,7 +9,7 @@ export const systemMigrationPlatformConsolidationPage = {
   slug,
   seo: buildServiceSeo({
     slug,
-    title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+    title: 'System Migration & Platform Consolidation for Service Businesses',
     description:
       'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
   }),
