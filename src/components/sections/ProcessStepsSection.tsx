@@ -48,6 +48,10 @@ export function ProcessStepsSection({
     ) {
       throw new Error('[ProcessStepsSection] Invalid data');
     }
+
+    if (step.outcome !== undefined && step.outcome.trim().length === 0) {
+      throw new Error('[ProcessStepsSection] Invalid data');
+    }
   }
 
   return (

@@ -37,6 +37,7 @@ export default function CtaLabelContractPage() {
             key={testCase.testId}
             pageId={`service:${testCase.slug}`}
             pageType='service'
+            primarySystem='smart-website-systems'
           >
             <div data-testid={testCase.testId}>
               <PrimaryCTASection

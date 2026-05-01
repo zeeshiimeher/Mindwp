@@ -13,6 +13,8 @@ const rules = [
     'faq-position',
     'button-rule',
     'badge-length',
+    'no-hardcoded-content',
+    'variant-required-data',
 ] as const;
 
 describe('system: content enforcement validators stay green', () => {

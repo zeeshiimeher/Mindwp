@@ -13,7 +13,9 @@ type RuleName =
   | 'seo-position'
   | 'faq-position'
   | 'button-rule'
-  | 'badge-length';
+  | 'badge-length'
+  | 'no-hardcoded-content'
+  | 'variant-required-data';
 
 type Issue = {
   rule: RuleName;
@@ -43,6 +45,8 @@ const REPORT_FILE_BY_RULE: Record<RuleName, string> = {
   'faq-position': 'faq-position-report.json',
   'button-rule': 'button-rule-report.json',
   'badge-length': 'badge-length-report.json',
+  'no-hardcoded-content': 'no-hardcoded-content-report.json',
+  'variant-required-data': 'variant-required-data-report.json',
 };
 
 const SOURCE_COMMAND_BY_RULE: Record<RuleName, string> = {
@@ -58,6 +62,10 @@ const SOURCE_COMMAND_BY_RULE: Record<RuleName, string> = {
     'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=button-rule',
   'badge-length':
     'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=badge-length',
+  'no-hardcoded-content':
+    'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=no-hardcoded-content',
+  'variant-required-data':
+    'node --import tsx/esm scripts/validators/validate-content-enforcement.ts --rule=variant-required-data',
 };
 
 const DATA_GLOBS = {
@@ -219,6 +227,188 @@ function getObjectPropertyNames(objectLiteral: ObjectLiteralExpression) {
     .getProperties()
     .filter(Node.isPropertyAssignment)
     .map(property => property.getName());
+}
+
+function getLiteralText(node: Node) {
+  if (Node.isStringLiteral(node) || Node.isNoSubstitutionTemplateLiteral(node)) {
+    return node.getLiteralText();
+  }
+
+  return undefined;
+}
+
+function getEnclosingPropertyName(node: Node) {
+  return node.getFirstAncestorByKind(SyntaxKind.PropertyAssignment)?.getName();
+}
+
+function getEnclosingJsxAttributeName(node: Node) {
+  return node.getFirstAncestorByKind(SyntaxKind.JsxAttribute)?.getNameNode().getText();
+}
+
+function getEnclosingVariableName(node: Node) {
+  return node.getFirstAncestorByKind(SyntaxKind.VariableDeclaration)?.getName();
+}
+
+function getEnclosingParameterName(node: Node) {
+  return node.getFirstAncestorByKind(SyntaxKind.Parameter)?.getName();
+}
+
+function getEnclosingBindingElementName(node: Node) {
+  return node.getFirstAncestorByKind(SyntaxKind.BindingElement)?.getName();
+}
+
+function getEnclosingCallName(node: Node) {
+  const callExpression = node.getFirstAncestorByKind(SyntaxKind.CallExpression);
+  if (callExpression) {
+    return callExpression.getExpression().getText();
+  }
+
+  const newExpression = node.getFirstAncestorByKind(SyntaxKind.NewExpression);
+  return newExpression?.getExpression().getText();
+}
+
+const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
+  'align',
+  'aria-controls',
+  'aria-hidden',
+  'aria-labelledby',
+  'className',
+  'containerClassName',
+  'decoding',
+  'data-state',
+  'data-testid',
+  'density',
+  'href',
+  'iconKey',
+  'id',
+  'loading',
+  'role',
+  'sectionClassName',
+  'shellTone',
+  'sourceType',
+  'src',
+  'status',
+  'tone',
+  'type',
+  'variant',
+]);
+
+const ALLOWED_HARDCODED_CONTENT_CALLS = new Set([
+  'Error',
+  'requireHeadingDescription',
+  'requireNonEmptyValue',
+]);
+
+const ALLOWED_HARDCODED_CONTENT_PARAMETER_NAMES = new Set([
+  'align',
+  'density',
+  'kind',
+  'tone',
+  'variant',
+]);
+
+const ALLOWED_HARDCODED_CONTENT_VALUES = new Set([
+  'after',
+  'async',
+  'before',
+  'change',
+  'default',
+  'good',
+  'lazy',
+  'light',
+  'not',
+  'soft',
+  'spacious',
+  'use client',
+]);
+
+function isAllowedHardcodedContentLiteral(node: Node) {
+  const value = getLiteralText(node);
+  if (!value || value.trim().length === 0) {
+    return true;
+  }
+
+  if (node.getFirstAncestorByKind(SyntaxKind.ImportDeclaration)) {
+    return true;
+  }
+
+  if (node.getFirstAncestorByKind(SyntaxKind.ExportDeclaration)) {
+    return true;
+  }
+
+  if (node.getFirstAncestorByKind(SyntaxKind.LiteralType)) {
+    return true;
+  }
+
+  const propertyName = getEnclosingPropertyName(node);
+  const jsxAttributeName = getEnclosingJsxAttributeName(node);
+  if (
+    (propertyName && ALLOWED_HARDCODED_CONTENT_PROPS.has(propertyName)) ||
+    (jsxAttributeName && ALLOWED_HARDCODED_CONTENT_PROPS.has(jsxAttributeName))
+  ) {
+    return true;
+  }
+
+  const variableName = getEnclosingVariableName(node);
+  if (variableName && /(_ICON_KEYS|_CLASS|_DOT)$/.test(variableName)) {
+    return true;
+  }
+
+  const parameterName = getEnclosingParameterName(node);
+  if (parameterName && ALLOWED_HARDCODED_CONTENT_PARAMETER_NAMES.has(parameterName)) {
+    return true;
+  }
+
+  const bindingElementName = getEnclosingBindingElementName(node);
+  if (bindingElementName && ALLOWED_HARDCODED_CONTENT_PARAMETER_NAMES.has(bindingElementName)) {
+    return true;
+  }
+
+  const callName = getEnclosingCallName(node);
+  if (callName && ALLOWED_HARDCODED_CONTENT_CALLS.has(callName)) {
+    return true;
+  }
+
+  if (ALLOWED_HARDCODED_CONTENT_VALUES.has(value)) {
+    return true;
+  }
+
+  if (value.includes('Invalid data')) {
+    return true;
+  }
+
+  if (/^(rd|bg|cta|hero|image|grid|layer|process|proof|fit|accordion|related|scope)-[a-z0-9-]+$/.test(value)) {
+    return true;
+  }
+
+  if (/^[a-z0-9]+(?:-[a-z0-9]+)+$/.test(value)) {
+    return true;
+  }
+
+  const parentNode = node.getParent();
+  if (
+    parentNode &&
+    Node.isBinaryExpression(parentNode) &&
+    ['===', '!=='].includes(parentNode.getOperatorToken().getText()) &&
+    (parentNode.getLeft().getText().startsWith('typeof ') ||
+      parentNode.getRight().getText().startsWith('typeof '))
+  ) {
+    return true;
+  }
+
+  if (/^[0-9.]+$/.test(value)) {
+    return true;
+  }
+
+  if (value.startsWith('@/') || value.startsWith('./') || value.startsWith('../')) {
+    return true;
+  }
+
+  if (value.startsWith('/') && !value.includes(' ')) {
+    return true;
+  }
+
+  return false;
 }
 
 function pushIssue(issues: Issue[], issue: Issue) {
@@ -576,6 +766,115 @@ function scanButtonRule(): Issue[] {
         message: 'RelatedContentSection must require a heading and must not apply CTA label fallback logic.',
       },
       {
+        file: 'src/components/system/SmartRelatedSectionClient.tsx',
+        expected: [
+          "throw new Error('[SmartRelatedSectionClient] Invalid data');",
+          'cta: RELATED_CONTENT_CTA_LABEL',
+        ],
+        forbidden: ['return null', 'emptyState', "'Read more'"],
+        issueType: 'invalid_smart_related_system_contract',
+        message: 'SmartRelatedSectionClient must fail loud and must not inject hardcoded CTA or empty-state fallbacks.',
+      },
+      {
+        file: 'src/components/system/RetryButtonIsland.tsx',
+        expected: ['label: string;'],
+        forbidden: ["label = 'Refresh Page'"],
+        issueType: 'invalid_retry_button_contract',
+        message: 'RetryButtonIsland must require its label instead of applying hardcoded fallback copy.',
+      },
+      {
+        file: 'src/components/system/GenericErrorFallback.tsx',
+        expected: ['GENERIC_ERROR_FALLBACK_CONTENT.title', 'GENERIC_ERROR_FALLBACK_CONTENT.description'],
+        forbidden: ["Something went wrong", 'Please try refreshing'],
+        issueType: 'invalid_generic_error_fallback_contract',
+        message: 'GenericErrorFallback must read user-facing copy from the data layer.',
+      },
+      {
+        file: 'src/components/system/GraphAwareSidebar.tsx',
+        expected: ["throw new Error('[GraphAwareSidebar] Invalid data');"],
+        forbidden: ['return null'],
+        issueType: 'invalid_graph_sidebar_contract',
+        message: 'GraphAwareSidebar must fail loud instead of silently skipping rendering.',
+      },
+      {
+        file: 'src/components/system/ClusterPageLayout.tsx',
+        expected: [
+          'sections: ClusterPageSection[];',
+          "throw new Error('[ClusterPageLayout] Invalid data');",
+        ],
+        forbidden: ['getTopicCluster', 'getSystemCluster', 'getContentByIndustry', 'return null'],
+        issueType: 'invalid_cluster_page_layout_contract',
+        message: 'ClusterPageLayout must be a pure renderer with no fetching, grouping, or silent skips.',
+      },
+      {
+        file: 'src/lib/related/buildRelatedContent.ts',
+        expected: [
+          "throw new Error('buildRelatedContent requires an explicit page slug and supported page type.');",
+          'throw new Error(`No related content available for ${nodeType}:${slug}.`);',
+        ],
+        forbidden: ['emptyState'],
+        issueType: 'invalid_build_related_content_contract',
+        message: 'buildRelatedContent must fail loud and must not inject fallback empty-state content.',
+      },
+      {
+        file: 'src/lib/contact/contactHref.ts',
+        expected: [
+          "throw new Error('normalizeContactContext requires explicit system and source values.');",
+        ],
+        forbidden: ['DEFAULT_CONTACT_SYSTEM', 'DEFAULT_CONTACT_SOURCE', 'unknown-system', 'direct-visit'],
+        issueType: 'invalid_contact_href_contract',
+        message: 'Contact href helpers must require explicit contact attribution instead of injecting defaults.',
+      },
+      {
+        file: 'src/components/system/ActionButtons.tsx',
+        expected: ["throw new Error('ActionButtons requires an explicit primarySystem.');"],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_action_buttons_contract',
+        message: 'ActionButtons must require an explicit primarySystem and must not apply ownership defaults.',
+      },
+      {
+        file: 'src/components/system/PageEnforcement.tsx',
+        expected: ['primarySystem: string;'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_page_enforcement_contract',
+        message: 'CTARegistryProvider must require an explicit primarySystem.',
+      },
+      {
+        file: 'src/domains/services/config.tsx',
+        expected: ['throw new Error(`Service config requires systems[0] for ${slug}.`);'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_service_config_contract',
+        message: 'Service config must require systems[0] instead of defaulting ownership.',
+      },
+      {
+        file: 'src/domains/features/config.tsx',
+        expected: ['throw new Error(`Feature config requires systems[0] for ${slug}.`);'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_feature_config_contract',
+        message: 'Feature config must require systems[0] instead of defaulting ownership.',
+      },
+      {
+        file: 'src/domains/industries/config.tsx',
+        expected: ['throw new Error(`Industry config requires systems[0] for ${data.slug}.`);'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_industry_config_contract',
+        message: 'Industry config must require systems[0] instead of defaulting ownership.',
+      },
+      {
+        file: 'src/lib/schema/buildFaqSchema.ts',
+        expected: ["throw new Error('buildFaqSchema requires question and answer for every FAQ item.');"],
+        forbidden: ['?? faq.q', '?? faq.a'],
+        issueType: 'invalid_faq_schema_contract',
+        message: 'buildFaqSchema must only support the current question/answer shape.',
+      },
+      {
+        file: 'src/lib/site/staticPages.ts',
+        expected: ['STATIC_ROUTE_CONTENT.filter(', "from '@/domains/shared/staticPages'"],
+        forbidden: ['const ALL_STATIC_ROUTE_DEFINITIONS'],
+        issueType: 'invalid_static_pages_boundary',
+        message: 'staticPages lib module must not own authored route content.',
+      },
+      {
         file: 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx',
         expected: [
           'function requireHeadingDescription(description: string | undefined, section: string)',
@@ -736,6 +1035,156 @@ function scanBadgeLength(): Issue[] {
   return issues;
 }
 
+function scanNoHardcodedContent(): Issue[] {
+  const issues: Issue[] = [];
+  const targets = [
+    ...project.getSourceFiles('src/components/sections/*.tsx'),
+    project.getSourceFile('src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx') ??
+    project.addSourceFileAtPath(
+      path.join(root, 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx')
+    ),
+    project.getSourceFile('src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx') ??
+    project.addSourceFileAtPath(
+      path.join(root, 'src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx')
+    ),
+  ];
+
+  const seen = new Set<string>();
+
+  for (const sourceFile of targets) {
+    for (const node of sourceFile.getDescendants()) {
+      if (!Node.isStringLiteral(node) && !Node.isNoSubstitutionTemplateLiteral(node)) {
+        continue;
+      }
+
+      if (isAllowedHardcodedContentLiteral(node)) {
+        continue;
+      }
+
+      const value = getLiteralText(node);
+      if (!value) {
+        continue;
+      }
+
+      const key = `${toRelative(sourceFile.getFilePath())}:${node.getStartLineNumber()}:${value}`;
+      if (seen.has(key)) {
+        continue;
+      }
+      seen.add(key);
+
+      pushIssue(issues, {
+        rule: 'no-hardcoded-content',
+        domain: sourceFile.getFilePath().includes('/renderers/') ? 'services' : 'shared',
+        file: toRelative(sourceFile.getFilePath()),
+        issueType: 'hardcoded_content_literal',
+        message: `${toRelative(sourceFile.getFilePath())} contains hardcoded content literal ${JSON.stringify(value)}.`,
+      });
+    }
+  }
+
+  return issues;
+}
+
+function scanVariantRequiredData(): Issue[] {
+  const issues: Issue[] = [];
+
+  const sourceChecks: Array<{
+    file: string;
+    expected: string[];
+    issueType: string;
+    message: string;
+  }> = [
+      {
+        file: 'src/components/sections/HeroSplitSection.tsx',
+        expected: [
+          "actions[0].label.trim().length === 0 || actions[0].href.trim().length === 0",
+          "row.label.trim().length === 0 || row.value.trim().length === 0",
+          "visual.footerPrimary !== undefined && visual.footerPrimary.trim().length === 0",
+        ],
+        issueType: 'hero_split_missing_required_variant_guards',
+        message: 'HeroSplitSection must validate the authored action, row, and footer fields it renders.',
+      },
+      {
+        file: 'src/components/sections/GridCardsSection.tsx',
+        expected: ['!item.id || item.id.trim().length === 0 || item.title.trim().length === 0', 'key={item.id}'],
+        issueType: 'grid_cards_missing_required_variant_guards',
+        message: 'GridCardsSection must require explicit item ids and fail loud instead of generating fallback keys.',
+      },
+      {
+        file: 'src/components/sections/LayerStackSection.tsx',
+        expected: [
+          "layer.meta !== undefined && layer.meta.trim().length === 0",
+          "layer.bullets?.some(bullet => bullet.trim().length === 0)",
+          'aria-label={heading.title}',
+        ],
+        issueType: 'layer_stack_missing_required_variant_guards',
+        message: 'LayerStackSection must validate rendered meta and bullets and derive its aria label from data.',
+      },
+      {
+        file: 'src/components/sections/ProcessStepsSection.tsx',
+        expected: ["step.outcome !== undefined && step.outcome.trim().length === 0"],
+        issueType: 'process_steps_missing_required_variant_guards',
+        message: 'ProcessStepsSection must validate authored outcome copy when it is rendered.',
+      },
+      {
+        file: 'src/components/sections/ImageStorySection.tsx',
+        expected: [
+          "body !== undefined && body.trim().length === 0",
+          "caption !== undefined && caption.trim().length === 0",
+          'highlights?.some(',
+        ],
+        issueType: 'image_story_missing_required_variant_guards',
+        message: 'ImageStorySection must validate the authored body, caption, bullets, and highlights it renders.',
+      },
+      {
+        file: 'src/components/sections/BeforeAfterSection.tsx',
+        expected: [
+          'before.items.some(item => item.trim().length === 0)',
+          'after.items.some(item => item.trim().length === 0)',
+        ],
+        issueType: 'before_after_missing_required_variant_guards',
+        message: 'BeforeAfterSection must validate every authored comparison item it renders.',
+      },
+      {
+        file: 'src/components/sections/ProofStorySection.tsx',
+        expected: [
+          "column.metric !== undefined && column.metric.trim().length === 0",
+          "column.metricCaption !== undefined && column.metricCaption.trim().length === 0",
+          "attribution !== undefined && attribution.trim().length === 0",
+        ],
+        issueType: 'proof_story_missing_required_variant_guards',
+        message: 'ProofStorySection must validate all authored optional proof fields before rendering them.',
+      },
+      {
+        file: 'src/components/sections/FitCheckSection.tsx',
+        expected: ["item.note !== undefined && item.note.trim().length === 0"],
+        issueType: 'fit_check_missing_required_variant_guards',
+        message: 'FitCheckSection must validate authored note copy before rendering it.',
+      },
+      {
+        file: 'src/components/sections/AccordionFAQSection.tsx',
+        expected: ['defaultOpenId !== undefined && !items.some(item => item.id === defaultOpenId)'],
+        issueType: 'accordion_faq_missing_required_variant_guards',
+        message: 'AccordionFAQSection must validate defaultOpenId against authored FAQ ids.',
+      },
+    ];
+
+  for (const check of sourceChecks) {
+    const sourceText = fs.readFileSync(path.join(root, check.file), 'utf8');
+    if (!check.expected.every(needle => sourceText.includes(needle))) {
+      pushIssue(issues, {
+        rule: 'variant-required-data',
+        domain: 'shared',
+        file: check.file,
+        issueType: check.issueType,
+        message: check.message,
+      });
+    }
+  }
+
+  return issues;
+}
+
 function collectIssues(activeRule: RuleName): Issue[] {
   switch (activeRule) {
     case 'hero-list-length':
@@ -750,6 +1199,10 @@ function collectIssues(activeRule: RuleName): Issue[] {
       return scanButtonRule();
     case 'badge-length':
       return scanBadgeLength();
+    case 'no-hardcoded-content':
+      return scanNoHardcodedContent();
+    case 'variant-required-data':
+      return scanVariantRequiredData();
     default:
       throw new Error(`Unsupported rule: ${activeRule}`);
   }

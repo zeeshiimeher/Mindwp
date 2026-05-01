@@ -2,7 +2,6 @@ import { z } from 'zod';
 
 export const nodeEnv = z.enum(['development', 'production', 'test']);
 export const booleanFlag = z.enum(['true', 'false']);
-export const debugFlag = z.enum(['0', '1']);
 
 export function readOptionalValue(value) {
   if (value == null || value === '' || value === 'undefined') {
@@ -14,11 +13,6 @@ export function readOptionalValue(value) {
 
 export function readFlag(value, fallback = 'false') {
   return readOptionalValue(value) ?? fallback;
-}
-
-export function readDebugFlag(value) {
-  const nextValue = readOptionalValue(value);
-  return nextValue === '1' ? '1' : '0';
 }
 
 const optionalString = z.preprocess(
@@ -53,7 +47,6 @@ export const sharedEnvSchema = z.object({
   PROFILE_GRAPH: booleanFlag.default('false'),
   ENABLE_MAIL_SERVICE: booleanFlag.default('true'),
   ENABLE_CAPTCHA_SERVICE: booleanFlag.default('true'),
-  NEXT_PUBLIC_DEBUG_INLINE_LINKS: debugFlag.default('0'),
   NEXT_PUBLIC_SITE_URL: optionalUrl,
   NEXT_PUBLIC_SITE_ORIGIN: optionalUrl,
   NEXT_PUBLIC_APP_URL: optionalUrl,
@@ -98,7 +91,6 @@ export function buildRuntimeRawEnv(source = process.env) {
     PROFILE_GRAPH: readFlag(source.PROFILE_GRAPH),
     ENABLE_MAIL_SERVICE: readFlag(source.ENABLE_MAIL_SERVICE, 'true'),
     ENABLE_CAPTCHA_SERVICE: readFlag(source.ENABLE_CAPTCHA_SERVICE, 'true'),
-    NEXT_PUBLIC_DEBUG_INLINE_LINKS: readDebugFlag(source.NEXT_PUBLIC_DEBUG_INLINE_LINKS),
     NEXT_PUBLIC_SITE_URL: readOptionalValue(source.NEXT_PUBLIC_SITE_URL),
     NEXT_PUBLIC_SITE_ORIGIN: readOptionalValue(source.NEXT_PUBLIC_SITE_ORIGIN),
     NEXT_PUBLIC_APP_URL: readOptionalValue(source.NEXT_PUBLIC_APP_URL),

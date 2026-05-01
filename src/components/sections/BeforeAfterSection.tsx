@@ -40,6 +40,13 @@ export function BeforeAfterSection({
     throw new Error('[BeforeAfterSection] Invalid data');
   }
 
+  if (
+    before.items.some(item => item.trim().length === 0) ||
+    after.items.some(item => item.trim().length === 0)
+  ) {
+    throw new Error('[BeforeAfterSection] Invalid data');
+  }
+
   return (
     <SectionShell
       tone='gradient-blue'

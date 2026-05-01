@@ -47,7 +47,11 @@ export const getFeaturePageBySlug = (slug: FeatureSlug) => {
 export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
   const FeaturePage = getFeaturePageBySlug(slug);
   const data = getFeatureDataBySlug(slug);
-  const primarySystem = data.systems?.[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems?.[0];
+
+  if (!primarySystem) {
+    throw new Error(`Feature config requires systems[0] for ${slug}.`);
+  }
 
   return (
     <CTARegistryProvider

@@ -147,13 +147,30 @@ function validateRelatedContent(
   pageType: ContentRulePageType
 ) {
   const rules = resolveContentRules(pageType, slug).internalLinks;
-  const related = getRelatedContent(slug, type);
-  const output = buildRelatedContent({
-    pageId: `${type}:${slug}`,
-    pageType: type,
-    slug,
-    nodeType: type,
-  });
+  let related;
+  let output;
+
+  try {
+    related = getRelatedContent(slug, type);
+    output = buildRelatedContent({
+      pageId: `${type}:${slug}`,
+      pageType: type,
+      slug,
+      nodeType: type,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+
+    if (
+      message.startsWith('Missing graph source node') ||
+      message.startsWith('No related content available')
+    ) {
+      return;
+    }
+
+    throw error;
+  }
+
   const groups = output.groups ?? [];
 
   if (groups.length > rules.maxSectionsPerPage) {

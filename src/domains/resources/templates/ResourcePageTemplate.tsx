@@ -46,10 +46,7 @@ import { Card } from '@/components/ui/card';
 import { categories } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
-import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
-import { env } from '@/env';
 import { buildContactHref } from '@/lib/contact/contactHref';
-import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
 import type { ResourcePageTemplateSection } from './types';
@@ -192,69 +189,31 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const freshnessBadge = isRecentIsoDate(lastChanged, 60) ? (isUpdated ? 'Updated' : 'New') : null;
   const dateLabel = isUpdated ? 'Updated' : 'Published';
   const currentSlug = props.currentSlug;
+  const primarySystem = props.systems?.[0];
 
-  const currentPath = props.url;
-  const inlineLinkTracker = createInlineLinkTracker({
-    pagePath: currentPath,
-    debug: env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
-  });
-  let remainingInlineLinks = 5;
+  if (!primarySystem) {
+    throw new Error(`ResourcePageTemplate requires systems[0] for ${props.currentSlug}.`);
+  }
 
-  enforceInlineLinkUsage({ pageId: props.pageId, pageType: 'resource' }, 'resource');
-
-  function renderLinkedParagraph(paragraph: string, index: number, className: string) {
+  function renderParagraph(paragraph: string, index: number, className: string) {
     const key = `${currentSlug}-inline-${index}`;
-    const segments =
-      remainingInlineLinks > 0
-        ? extractInternalLinks(paragraph, {
-            excludePaths: [currentPath],
-            sourcePath: currentPath,
-            tracker: inlineLinkTracker,
-          })
-        : [{ type: 'text' as const, value: paragraph }];
-
-    let linkedInParagraph = false;
 
     return (
       <p key={key} className={className}>
-        {segments.map((segment, segmentIndex) => {
-          if (segment.type === 'text') {
-            return <span key={`${key}-text-${segmentIndex}`}>{segment.value}</span>;
-          }
-
-          if (linkedInParagraph || remainingInlineLinks <= 0) {
-            return <span key={`${key}-plain-${segmentIndex}`}>{segment.value}</span>;
-          }
-
-          linkedInParagraph = true;
-          remainingInlineLinks -= 1;
-
-          return (
-            <a
-              key={`${key}-link-${segmentIndex}`}
-              href={segment.href}
-              className='link-primary'
-              title={segment.title}
-            >
-              {segment.value}
-            </a>
-          );
-        })}
+        {paragraph}
       </p>
     );
   }
 
-  // Extract content from sections for rendering using organized utilities
   const heroData = extractHeroContent(props.sections, props.title, props.description);
   const sidebarCTAData = extractSidebarCTAContent(props.sections);
 
-  if (props.sections.length < 5 && env.NODE_ENV === 'development') {
+  if (props.sections.length < 5 && process.env.NODE_ENV === 'development') {
     systemDevelopmentWarning(
       `ResourcePageTemplate: ${currentSlug} has fewer than 5 authored sections.`
     );
   }
 
-  // Function to render a section based on its type
   function renderSection(section: ResourcePageTemplateSection, index: number) {
     switch (section.type) {
       case 'takeaways': {
@@ -287,7 +246,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               description={problemData.description}
               causes={problemData.causes}
               causesHeading={problemData.causesHeading}
-              renderParagraph={renderLinkedParagraph}
+              renderParagraph={renderParagraph}
             />
           </div>
         );
@@ -385,7 +344,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               content={comparisonData.description}
               before={comparisonData.before}
               after={comparisonData.after}
-              renderParagraph={renderLinkedParagraph}
+              renderParagraph={renderParagraph}
             />
           </div>
         );
@@ -525,11 +484,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   );
 
   return (
-    <CTARegistryProvider
-      pageId={props.pageId}
-      pageType='resource'
-      primarySystem={props.systems?.[0] ?? 'smart-website-systems'}
-    >
+    <CTARegistryProvider pageId={props.pageId} pageType='resource' primarySystem={primarySystem}>
       <div className='resource-page'>
         <main className='resource-page__main'>
           {/* 1. HERO SECTION */}

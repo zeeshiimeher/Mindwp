@@ -13,7 +13,11 @@ export default function ContactClientPage({
   initialSource,
 }: ContactClientPageProps) {
   return (
-    <CTARegistryProvider pageId='page:contact' pageType='page'>
+    <CTARegistryProvider
+      pageId='page:contact'
+      pageType='page'
+      primarySystem='smart-website-systems'
+    >
       <Contact initialSystem={initialSystem} initialSource={initialSource} />
     </CTARegistryProvider>
   );

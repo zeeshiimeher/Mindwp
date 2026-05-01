@@ -4,7 +4,6 @@ import {
   BeforeAfterSection,
   FitCheckSection,
   GridCardsSection,
-  type HeroSplitMetric,
   HeroSplitSection,
   ImageStorySection,
   LayerStackSection,
@@ -25,13 +24,6 @@ interface Props {
     | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
-
-const HERO_MOCKUP_ROWS: readonly HeroSplitMetric[] = [
-  { label: 'Roof repair · Mark T.', value: 'Assigned', status: 'good' },
-  { label: 'Quote request · Sara P.', value: 'Follow-up', status: 'warn' },
-  { label: 'Booking · Lina R.', value: 'Confirmed', status: 'good' },
-  { label: 'Old enquiry · Tom W.', value: 'Lost', status: 'risk' },
-];
 
 const VALUE_ICON_KEYS: readonly SectionIconKey[] = [
   'alert',
@@ -115,14 +107,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             heading={{ title: hero.title, description: hero.description }}
             chips={hero.list}
             actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
-            visual={{
-              brand: 'mindwp · operations',
-              title: 'Live enquiry feed',
-              subtitle: 'Last 24 hours · auto-routed',
-              rows: HERO_MOCKUP_ROWS,
-              footerPrimary: 'auto-assigned · CRM logged',
-              footerSecondary: 'uptime 99.98%',
-            }}
+            visual={hero.visual}
           />
 
           {/* Value Blocks */}
@@ -132,11 +117,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               tone='soft'
               columns={3}
               heading={{
-                kicker: 'Where it leaks',
+                kicker: value.header.badge,
                 title: value.header.title,
                 description: requireHeadingDescription(value.header.description, 'value section'),
               }}
               items={value.items.map((block, index) => ({
+                id: `value-${index}`,
                 title: block.title,
                 description: block.description,
                 iconKey: VALUE_ICON_KEYS[index % VALUE_ICON_KEYS.length],
@@ -156,7 +142,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 <BeforeAfterSection
                   variant='split-panel'
                   heading={{
-                    kicker: 'Broken vs fixed',
+                    kicker: comparison.header.badge,
                     title: comparison.header.title,
                     description: requireHeadingDescription(
                       comparison.header.description,
@@ -164,12 +150,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     ),
                   }}
                   before={{
-                    label: 'Today',
+                    label: comparison.beforeLabel,
                     title: before.title,
                     items: before.items,
                   }}
                   after={{
-                    label: 'Connected',
+                    label: comparison.afterLabel,
                     title: after.title,
                     items: after.items,
                   }}
@@ -183,7 +169,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               tone='light'
               columns={2}
               heading={{
-                kicker: "What's in scope",
+                kicker: included.header.badge,
                 title: included.header.title,
                 description: requireHeadingDescription(
                   included.header.description,
@@ -206,7 +192,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               tone='soft'
               columns={4}
               heading={{
-                kicker: 'Built for',
+                kicker: types.header.badge,
                 title: types.header.title,
                 description: requireHeadingDescription(types.header.description, 'types section'),
               }}
@@ -223,7 +209,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             <LayerStackSection
               variant='interactive-stack'
               heading={{
-                kicker: 'System layers',
+                kicker: coreLayer.header.badge,
                 title: coreLayer.header.title,
                 description: requireHeadingDescription(
                   coreLayer.header.description,
@@ -255,7 +241,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                   variant='before-change-after'
                   tone='soft'
                   heading={{
-                    kicker: 'Real outcome',
+                    kicker: proof.header.badge,
                     title: proof.header.title,
                     description: requireHeadingDescription(
                       proof.header.description,
@@ -263,19 +249,19 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     ),
                   }}
                   before={{
-                    label: 'Before',
+                    label: proof.beforeLabel,
                     title: before.title,
                     body: before.description,
                     iconKey: PROOF_ICON_KEYS[0],
                   }}
                   change={{
-                    label: 'What changed',
+                    label: proof.changeLabel,
                     title: change.title,
                     body: change.description,
                     iconKey: PROOF_ICON_KEYS[1],
                   }}
                   after={{
-                    label: 'After',
+                    label: proof.afterLabel,
                     title: after.title,
                     body: after.description,
                     iconKey: PROOF_ICON_KEYS[2],
@@ -290,7 +276,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               variant='operational-photo'
               tone='light'
               heading={{
-                kicker: 'Compounding effect',
+                kicker: visibilityFoundations.header.badge,
                 title: visibilityFoundations.header.title,
                 description: requireHeadingDescription(
                   visibilityFoundations.header.description,
@@ -298,20 +284,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 ),
               }}
               body={requireNonEmptyValue(
-                visibilityFoundations.narrativeParagraphs?.[0],
+                visibilityFoundations.body,
                 'visibility foundations section'
               )}
-              bullets={visibilityFoundations.items.map(item => item.title)}
-              highlights={visibilityFoundations.alternatingItems.slice(0, 3).map(item => ({
-                label: item.title,
-                value: requireNonEmptyValue(item.points?.[0], 'visibility foundations section'),
-              }))}
-              image={{
-                src: '/images/services/smart-website-systems.webp',
-                alt: 'Operations dashboard view of a smart website system',
-                width: 960,
-                height: 720,
-              }}
+              bullets={visibilityFoundations.bullets}
+              highlights={visibilityFoundations.highlights}
+              image={visibilityFoundations.image}
               caption={visibilityFoundations.tagline}
             />
           )}
@@ -323,7 +301,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               tone='light'
               columns={3}
               heading={{
-                kicker: 'By business size',
+                kicker: businessSizes.header.badge,
                 title: businessSizes.header.title,
                 description: requireHeadingDescription(
                   businessSizes.header.description,
@@ -346,7 +324,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               variant='timeline'
               tone='light'
               heading={{
-                kicker: process.header.badge ?? 'How it works',
+                kicker: process.header.badge,
                 title: process.header.title,
                 description: requireHeadingDescription(
                   process.header.description,
@@ -369,7 +347,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               tone='soft'
               columns={2}
               heading={{
-                kicker: 'Common concerns',
+                kicker: concerns.header.badge,
                 title: concerns.header.title,
                 description: requireHeadingDescription(
                   concerns.header.description,
@@ -392,7 +370,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               tone='light'
               columns={3}
               heading={{
-                kicker: 'Stack',
+                kicker: technologies.header.badge,
                 title: technologies.header.title,
                 description: requireHeadingDescription(
                   technologies.header.description,
@@ -414,7 +392,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               variant='two-column'
               tone='light'
               heading={{
-                kicker: 'Fit check',
+                kicker: qualification.header.badge,
                 title: qualification.header.title,
                 description: requireHeadingDescription(
                   qualification.header.description,
@@ -422,7 +400,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 ),
               }}
               good={{
-                label: 'Strong fit',
+                label: qualification.strongFitLabel,
                 title: qualification.strongFitTitle,
                 items: qualification.strongFit.map(item => ({
                   text: item.title,
@@ -430,7 +408,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 })),
               }}
               not={{
-                label: 'Probably not for you',
+                label: qualification.notForLabelText,
                 title: qualification.notForTitle,
                 items: qualification.notFor.map(item => ({
                   text: item.title,
@@ -446,7 +424,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               variant='single-column'
               tone='soft'
               heading={{
-                kicker: 'FAQ',
+                kicker: faq.header.badge,
                 title: faq.header.title,
                 description: requireHeadingDescription(faq.header.description, 'faq section'),
               }}

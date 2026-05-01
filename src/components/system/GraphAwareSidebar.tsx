@@ -13,9 +13,13 @@ interface GraphAwareSidebarProps {
 
 export function GraphAwareSidebar({ title, items, sectionType }: GraphAwareSidebarProps) {
   const behavior = sectionType ? SECTION_BEHAVIOR[sectionType] : undefined;
-  if (behavior && !behavior.allowLinks) return null;
+  if (behavior?.allowLinks === false) {
+    throw new Error('[GraphAwareSidebar] Invalid data');
+  }
 
-  if (items.length === 0) return null;
+  if (items.length === 0) {
+    throw new Error('[GraphAwareSidebar] Invalid data');
+  }
 
   return (
     <div className='graph-sidebar'>

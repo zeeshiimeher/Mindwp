@@ -59,11 +59,15 @@ export function GridCardsSection({
   }
 
   for (const item of items) {
-    if (item.title.trim().length === 0) {
+    if (!item.id || item.id.trim().length === 0 || item.title.trim().length === 0) {
       throw new Error('[GridCardsSection] Invalid data');
     }
 
     if (item.description !== undefined && item.description.trim().length === 0) {
+      throw new Error('[GridCardsSection] Invalid data');
+    }
+
+    if (item.badge !== undefined && item.badge.trim().length === 0) {
       throw new Error('[GridCardsSection] Invalid data');
     }
   }
@@ -76,11 +80,11 @@ export function GridCardsSection({
       sectionClassName={`grid-cards grid-cards--${variant}`}
     >
       <ul className={`grid-cards__list ${COLUMN_CLASS[columns]} rd-animate-stagger`}>
-        {items.map((item, index) => {
+        {items.map(item => {
           const Icon = resolveSectionIcon(item.iconKey);
           return (
             <li
-              key={item.id ?? `${item.title}-${index}`}
+              key={item.id}
               className={`grid-cards__item rd-card ${item.status ? STATUS_CLASS[item.status] : ''}`}
             >
               <div className='grid-cards__head'>

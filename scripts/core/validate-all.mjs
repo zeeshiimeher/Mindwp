@@ -92,6 +92,21 @@ function getSyntheticValidatorInputPaths(validator) {
     ];
   }
 
+  if (validator.name === 'lint') {
+    return [
+      path.join(root, 'src'),
+      path.join(root, 'config'),
+      path.join(root, 'lib'),
+      path.join(root, 'eslint.config.js'),
+      path.join(root, 'package.json'),
+      path.join(root, 'scripts', 'core'),
+      path.join(root, 'scripts', 'runners'),
+      path.join(root, 'scripts', 'lib'),
+      path.join(root, 'scripts', 'analyzers', 'export-reports.mjs'),
+      path.join(root, 'scripts', 'validators', 'validate-system-manifest-integrity.ts'),
+    ];
+  }
+
   return [];
 }
 

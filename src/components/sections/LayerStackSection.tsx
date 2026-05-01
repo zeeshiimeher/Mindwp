@@ -51,6 +51,14 @@ export function LayerStackSection({
     ) {
       throw new Error('[LayerStackSection] Invalid data');
     }
+
+    if (layer.meta !== undefined && layer.meta.trim().length === 0) {
+      throw new Error('[LayerStackSection] Invalid data');
+    }
+
+    if (layer.bullets?.some(bullet => bullet.trim().length === 0)) {
+      throw new Error('[LayerStackSection] Invalid data');
+    }
   }
 
   return (
@@ -60,7 +68,7 @@ export function LayerStackSection({
       heading={heading}
       sectionClassName={`layer-stack layer-stack--${variant}`}
     >
-      <ol className='layer-stack__cards rd-animate-stagger' aria-label='System layers'>
+      <ol className='layer-stack__cards rd-animate-stagger' aria-label={heading.title}>
         {layers.map(layer => {
           const Icon = resolveSectionIcon(layer.iconKey);
           return (

@@ -148,7 +148,7 @@ describe('integration: contact API', () => {
     );
   });
 
-  test('normalizes missing and unknown contact context without blocking delivery', async () => {
+  test('rejects missing contact context and accepts explicit invalid-looking values', async () => {
     const { POST } = await loadContactRoute({
       captchaEnabled: false,
     });
@@ -165,13 +165,10 @@ describe('integration: contact API', () => {
       })
     );
 
-    expect(missingContextResponse.status).toBe(200);
-    await expect(missingContextResponse.json()).resolves.toEqual(
-      expect.objectContaining({
-        success: true,
-        message: 'Message sent successfully',
-      })
-    );
+    expect(missingContextResponse.status).toBe(400);
+    await expect(missingContextResponse.json()).resolves.toMatchObject({
+      success: false,
+    });
 
     const invalidContextResponse = await POST(
       new Request('https://mindwp.local/api/contact', {

@@ -30,6 +30,8 @@ const MANIFEST_VALIDATOR_ALIASES: Record<string, string[]> = {
     'validate-faq-position',
     'validate-button-rule',
     'validate-badge-length',
+    'validate-no-hardcoded-content',
+    'validate-variant-required-data',
   ],
   'validate-cta-label-contract': ['validate-cta-labels'],
 };

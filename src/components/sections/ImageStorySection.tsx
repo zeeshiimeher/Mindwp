@@ -50,6 +50,26 @@ export function ImageStorySection({
     throw new Error('[ImageStorySection] Invalid data');
   }
 
+  if (body !== undefined && body.trim().length === 0) {
+    throw new Error('[ImageStorySection] Invalid data');
+  }
+
+  if (caption !== undefined && caption.trim().length === 0) {
+    throw new Error('[ImageStorySection] Invalid data');
+  }
+
+  if (bullets?.some(item => item.trim().length === 0)) {
+    throw new Error('[ImageStorySection] Invalid data');
+  }
+
+  if (
+    highlights?.some(
+      highlight => highlight.label.trim().length === 0 || highlight.value.trim().length === 0
+    )
+  ) {
+    throw new Error('[ImageStorySection] Invalid data');
+  }
+
   return (
     <SectionShell
       tone={tone}

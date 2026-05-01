@@ -192,7 +192,11 @@ export function ServicesLanding() {
           </div>
         }
       >
-        <CTARegistryProvider pageId='page:services' pageType='page'>
+        <CTARegistryProvider
+          pageId='page:services'
+          pageType='page'
+          primarySystem='smart-website-systems'
+        >
           <main role='main'>
             {/* Hero Section */}
             <SectionWrapper

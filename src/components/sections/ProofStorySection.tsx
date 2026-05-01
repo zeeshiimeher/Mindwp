@@ -50,6 +50,18 @@ export function ProofStorySection({
     ) {
       throw new Error('[ProofStorySection] Invalid data');
     }
+
+    if (column.metric !== undefined && column.metric.trim().length === 0) {
+      throw new Error('[ProofStorySection] Invalid data');
+    }
+
+    if (column.metricCaption !== undefined && column.metricCaption.trim().length === 0) {
+      throw new Error('[ProofStorySection] Invalid data');
+    }
+  }
+
+  if (attribution !== undefined && attribution.trim().length === 0) {
+    throw new Error('[ProofStorySection] Invalid data');
   }
 
   return (

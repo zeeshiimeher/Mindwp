@@ -80,11 +80,33 @@ export function HeroSplitSection({
     throw new Error('[HeroSplitSection] Invalid data');
   }
 
+  if (actions[0].label.trim().length === 0 || actions[0].href.trim().length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
   if (visual.title.trim().length === 0 || visual.subtitle.trim().length === 0) {
     throw new Error('[HeroSplitSection] Invalid data');
   }
 
+  if (visual.brand !== undefined && visual.brand.trim().length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
   if (visual.rows.length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
+  for (const row of visual.rows) {
+    if (row.label.trim().length === 0 || row.value.trim().length === 0) {
+      throw new Error('[HeroSplitSection] Invalid data');
+    }
+  }
+
+  if (visual.footerPrimary !== undefined && visual.footerPrimary.trim().length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
+  if (visual.footerSecondary !== undefined && visual.footerSecondary.trim().length === 0) {
     throw new Error('[HeroSplitSection] Invalid data');
   }
 
@@ -160,7 +182,7 @@ export function HeroSplitSection({
               })}
             </ul>
 
-            {(visual.footerPrimary ?? visual.footerSecondary) ? (
+            {visual.footerPrimary !== undefined || visual.footerSecondary !== undefined ? (
               <div className='hero-split__panel-footer'>
                 {visual.footerPrimary ? <span>{visual.footerPrimary}</span> : null}
                 {visual.footerSecondary ? <span>{visual.footerSecondary}</span> : null}

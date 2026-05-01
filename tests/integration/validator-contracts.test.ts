@@ -20,10 +20,6 @@ const conversionValidatorPath = path.join(
   'scripts/validators/validate-conversion-contract.mjs'
 );
 const internalLinksValidatorPath = path.join(root, 'scripts/validators/validate-internal-links.ts');
-const inlineLinkMisuseValidatorPath = path.join(
-  root,
-  'scripts/validators/validate-inline-link-misuse.ts'
-);
 
 const tempDirs: string[] = [];
 
@@ -229,68 +225,4 @@ describe('integration: validator contracts', () => {
     expect(passingResult.status ?? 0).toBe(0);
   }, 15000);
 
-  test('inline-link misuse validator requires the mirrored runtime helper contract on allowed templates', () => {
-    const failingWorkspace = createWorkspace();
-    writePackageJson(failingWorkspace);
-    writeFile(
-      failingWorkspace,
-      'src/domains/blog/templates/BlogPostTemplate.tsx',
-      [
-        "import { createInlineLinkTracker } from '@/lib/seo/inlineLinking';",
-        '',
-        'export function BlogPostTemplate() {',
-        "  createInlineLinkTracker({ pagePath: '/blog/example' });",
-        '  return null;',
-        '}',
-      ].join('\n')
-    );
-
-    const failingResult = spawnSync(process.execPath, [tsxCliPath, inlineLinkMisuseValidatorPath], {
-      cwd: failingWorkspace,
-      encoding: 'utf8',
-      env: {
-        ...process.env,
-        NODE_ENV: 'test',
-        NEXT_PUBLIC_SITE_URL: 'https://mindwp.com',
-        BASE_URL: 'http://127.0.0.1:3009',
-        COMPONENT_CAPTURE_BASE_URL: 'http://127.0.0.1:3001/components',
-      },
-    });
-
-    expect(failingResult.status).toBe(1);
-    expect(`${failingResult.stdout}\n${failingResult.stderr}`).toContain(
-      'Missing required inline-link enforcement contract'
-    );
-
-    const passingWorkspace = createWorkspace();
-    writePackageJson(passingWorkspace);
-    writeFile(
-      passingWorkspace,
-      'src/domains/blog/templates/BlogPostTemplate.tsx',
-      [
-        "import { createInlineLinkTracker } from '@/lib/seo/inlineLinking';",
-        "import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';",
-        '',
-        'export function BlogPostTemplate({ pageId }: { pageId: string }) {',
-        "  createInlineLinkTracker({ pagePath: '/blog/example' });",
-        "  enforceInlineLinkUsage({ pageId, pageType: 'blog' }, 'blog');",
-        '  return null;',
-        '}',
-      ].join('\n')
-    );
-
-    const passingResult = spawnSync(process.execPath, [tsxCliPath, inlineLinkMisuseValidatorPath], {
-      cwd: passingWorkspace,
-      encoding: 'utf8',
-      env: {
-        ...process.env,
-        NODE_ENV: 'test',
-        NEXT_PUBLIC_SITE_URL: 'https://mindwp.com',
-        BASE_URL: 'http://127.0.0.1:3009',
-        COMPONENT_CAPTURE_BASE_URL: 'http://127.0.0.1:3001/components',
-      },
-    });
-
-    expect(passingResult.status ?? 0).toBe(0);
-  }, 20000);
 });

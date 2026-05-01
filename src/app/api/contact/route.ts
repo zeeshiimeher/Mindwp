@@ -311,16 +311,41 @@ export async function POST(request: Request) {
   const name = body.name?.trim();
   const email = body.email?.trim();
   const message = body.message?.trim();
-  const businessType = normalizeLeadField(body.businessType, BUSINESS_TYPE_VALUES);
-  const primaryGoal = normalizeLeadField(body.primaryGoal, PRIMARY_GOAL_VALUES);
-  const revenueRange = normalizeLeadField(body.revenueRange, REVENUE_RANGE_VALUES);
-  const timeline = normalizeLeadField(body.timeline, TIMELINE_VALUES);
-  const { system, source } = normalizeContactContext(body.system, body.source);
   const website = body.website?.trim();
   const captchaToken = body.captchaToken?.trim();
   const userAgent = request.headers.get('user-agent')?.trim() || 'unknown';
   const ip = getClientAddress(request);
   const timestamp = new Date().toISOString();
+  const businessType = normalizeLeadField(body.businessType, BUSINESS_TYPE_VALUES);
+  const primaryGoal = normalizeLeadField(body.primaryGoal, PRIMARY_GOAL_VALUES);
+  const revenueRange = normalizeLeadField(body.revenueRange, REVENUE_RANGE_VALUES);
+  const timeline = normalizeLeadField(body.timeline, TIMELINE_VALUES);
+
+  if (website) {
+    return createErrorResponse('Spam detected.', 400, submissionId);
+  }
+
+  if (!name || !email || !message) {
+    return createErrorResponse('Missing fields', 400, submissionId);
+  }
+
+  if (!isValidContactEmail(email)) {
+    return createErrorResponse('Invalid email address.', 400, submissionId);
+  }
+
+  let system: string;
+  let source: string;
+
+  try {
+    ({ system, source } = normalizeContactContext(body.system, body.source));
+  } catch (error) {
+    return createErrorResponse(
+      error instanceof Error ? error.message : 'Invalid contact context.',
+      400,
+      submissionId
+    );
+  }
+
   const { priority } = classifyLead({
     system,
     message: message ?? '',
@@ -348,18 +373,6 @@ export async function POST(request: Request) {
     userAgent,
     ip,
   });
-
-  if (website) {
-    return createErrorResponse('Spam detected.', 400, submissionId);
-  }
-
-  if (!name || !email || !message) {
-    return createErrorResponse('Missing fields', 400, submissionId);
-  }
-
-  if (!isValidContactEmail(email)) {
-    return createErrorResponse('Invalid email address.', 400, submissionId);
-  }
 
   const rateLimit = checkRateLimit(request);
   if (!rateLimit.allowed) {

@@ -62,7 +62,7 @@ export default function Homepage({
 
   return (
     <ErrorBoundary>
-      <CTARegistryProvider pageId='page:home' pageType='page'>
+      <CTARegistryProvider pageId='page:home' pageType='page' primarySystem='smart-website-systems'>
         <div className='home-page'>
           <main>
             <section id='hero' className='hero-section hero-section--homepage l-section'>

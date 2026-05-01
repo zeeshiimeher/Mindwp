@@ -83,10 +83,24 @@ export const smartWebsiteSystemsPage = {
     description:
       "Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They've already rung someone else.",
     list: ['Lost leads', 'No follow-up', 'No tracking'],
+    visual: {
+      brand: 'mindwp · operations',
+      title: 'Live enquiry feed',
+      subtitle: 'Last 24 hours · auto-routed',
+      rows: [
+        { label: 'Roof repair · Mark T.', value: 'Assigned', status: 'good' as const },
+        { label: 'Quote request · Sara P.', value: 'Follow-up', status: 'warn' as const },
+        { label: 'Booking · Lina R.', value: 'Confirmed', status: 'good' as const },
+        { label: 'Old enquiry · Tom W.', value: 'Lost', status: 'risk' as const },
+      ],
+      footerPrimary: 'auto-assigned · CRM logged',
+      footerSecondary: 'uptime 99.98%',
+    },
   },
   sections: {
     value: {
       header: {
+        badge: 'Where it leaks',
         title: 'What slips through every week',
         description:
           'People reach out. Messages land in the wrong place. Your team misses some of them completely, and the rest get answered later than they should.',
@@ -138,10 +152,13 @@ export const smartWebsiteSystemsPage = {
     },
     comparison: {
       header: {
+        badge: 'Broken vs fixed',
         title: 'The difference between a site that exists and one that earns',
         description:
           "Having something online isn't the bar. The question is whether anything happens after someone shows up.",
       },
+      beforeLabel: 'Today',
+      afterLabel: 'Connected',
       items: [
         {
           type: 'before' as const,
@@ -169,6 +186,7 @@ export const smartWebsiteSystemsPage = {
     },
     included: {
       header: {
+        badge: "What's in scope",
         title: "What's in the build — scope and delivery",
         description: 'Not a pick-and-choose list. Everything here is standard.',
       },
@@ -188,6 +206,7 @@ export const smartWebsiteSystemsPage = {
     },
     types: {
       header: {
+        badge: 'Built for',
         title: 'Built for businesses where the first contact matters',
         description:
           'If your work starts when someone calls, books, or fills in a form — that moment has to go right. Everything after depends on it.',
@@ -229,6 +248,7 @@ export const smartWebsiteSystemsPage = {
     },
     coreLayer: {
       header: {
+        badge: 'System layers',
         title: 'From visitor to handled enquiry',
         description:
           'Someone arrives. Sees what they need. Reaches out. Your team has it. Nothing drops between.',
@@ -279,10 +299,14 @@ export const smartWebsiteSystemsPage = {
     },
     proof: {
       header: {
+        badge: 'Real outcome',
         title: 'What changed for a real business',
         description:
           "A veterinary clinic had a decent-looking site and regular traffic. Barely any of it converted into actual bookings. Here's what we found.",
       },
+      beforeLabel: 'Before',
+      changeLabel: 'What changed',
+      afterLabel: 'After',
       cards: [
         {
           title: 'Before: visitors coming in, almost nothing coming out',
@@ -319,16 +343,34 @@ export const smartWebsiteSystemsPage = {
     },
     visibilityFoundations: {
       header: {
+        badge: 'Compounding effect',
         title: 'What changes when the site actually works',
         description:
           'Not about how it looks. About what happens when every interested person can reach you and your team sees it straight away.',
       },
       tagline: 'Get the site right. Everything after it starts working.',
       narrativeTitle: "Why your ads and social media aren't paying off yet",
+      body: "You're running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn't catching what arrives.",
       narrativeParagraphs: [
         "You're running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn't catching what arrives.",
         "When services are clear and contact is obvious, those same visitors turn into work. Follow-up runs itself. What you're already spending starts earning back.",
       ],
+      bullets: [
+        'Ad spend starts paying for itself',
+        'Your team stops chasing and starts delivering',
+        'Search traffic has somewhere to land',
+      ],
+      highlights: [
+        { label: 'Ad spend pays for itself', value: 'Less waste' },
+        { label: 'Less chasing, more delivering', value: 'Less admin' },
+        { label: 'Search picks up', value: 'Organic traffic' },
+      ],
+      image: {
+        src: '/images/services/smart-website-systems.webp',
+        alt: 'Operations dashboard view of a smart website system',
+        width: 960,
+        height: 720,
+      },
       items: [
         {
           icon: TrendingUp,
@@ -412,9 +454,12 @@ export const smartWebsiteSystemsPage = {
     },
     qualification: {
       header: {
+        badge: 'Fit check',
         title: 'Is this the right fit?',
         description: "This solves a specific kind of problem. Here's how to tell if yours matches.",
       },
+      strongFitLabel: 'Strong fit',
+      notForLabelText: 'Probably not for you',
       strongFitTitle: 'This is a strong fit if',
       notForTitle: "This probably isn't for you if",
       strongFit: [
@@ -459,6 +504,7 @@ export const smartWebsiteSystemsPage = {
     },
     faq: {
       header: {
+        badge: 'FAQ',
         title: 'What business owners ask before getting started',
         description: 'Direct answers. No jargon.',
       },

@@ -51,6 +51,10 @@ export function FitCheckSection({
     if (column.items.length === 0 || column.items.some(item => item.text.trim().length === 0)) {
       throw new Error('[FitCheckSection] Invalid data');
     }
+
+    if (column.items.some(item => item.note !== undefined && item.note.trim().length === 0)) {
+      throw new Error('[FitCheckSection] Invalid data');
+    }
   }
 
   return (

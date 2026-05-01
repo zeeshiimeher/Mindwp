@@ -204,6 +204,7 @@ async function main() {
     const ctaRegistry = createCTARegistry({
       pageId: 'service:contract-freeze',
       pageType: 'service',
+      primarySystem: 'smart-website-systems',
     });
     const snapshot = getCTARegistrySnapshot(ctaRegistry);
     ctaSnapshotSchema.parse(snapshot);

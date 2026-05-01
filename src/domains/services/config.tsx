@@ -19,8 +19,11 @@ const createServiceEntry = <TData,>(
 
 function renderServiceEntry(slug: ServiceSlug): ReactElement {
   const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug] as AnyServiceEntry;
-  const primarySystem =
-    (entry.data as { systems?: string[] }).systems?.[0] ?? 'smart-website-systems';
+  const primarySystem = (entry.data as { systems?: string[] }).systems?.[0];
+
+  if (!primarySystem) {
+    throw new Error(`Service config requires systems[0] for ${slug}.`);
+  }
 
   return (
     <CTARegistryProvider

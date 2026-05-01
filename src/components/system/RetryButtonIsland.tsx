@@ -2,13 +2,13 @@
 
 type RetryButtonIslandProps = {
   className?: string;
-  label?: string;
+  label: string;
   type?: 'button' | 'submit' | 'reset';
 };
 
 export function RetryButtonIsland({
   className = 'btn btn-primary',
-  label = 'Refresh Page',
+  label,
   type = 'button',
 }: RetryButtonIslandProps) {
   return (

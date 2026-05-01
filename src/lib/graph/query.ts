@@ -14,7 +14,7 @@ import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
  * Rules:
  * - All lookups use the precomputed authority map (zero runtime cost)
  * - Cluster queries scan the full graph by metadata field
- * - Returns safe empty defaults when no data exists
+ * - Throws when required graph data is missing
  *
  * Consumers: SmartRelatedSection, GraphAwareSidebar, ClusterPageLayout
  */
@@ -52,21 +52,6 @@ export interface ClusterResult {
   nodes: ContentGraphNode[];
 }
 
-export interface InlineLinkValidationResult {
-  valid: boolean;
-  score: number;
-  relationType: RelatedContentItem['relationType'];
-  reason:
-    | 'valid'
-    | 'source-not-found'
-    | 'target-not-found'
-    | 'self-link'
-    | 'score<=0'
-    | 'no-relationship';
-}
-
-// --- Safe Defaults ---──
-
 function emptyRelated(): RelatedContent {
   return {
     services: [],
@@ -77,16 +62,8 @@ function emptyRelated(): RelatedContent {
   };
 }
 
-function emptyCluster(key: string): ClusterResult {
-  return { key, nodes: [] };
-}
-
-function getContentGraphSafe() {
-  try {
-    return getContentGraph();
-  } catch {
-    return null;
-  }
+function getContentGraphStrict() {
+  return getContentGraph();
 }
 
 const RELATIONSHIP_PRIORITY = {
@@ -186,40 +163,14 @@ function compareRelatedItems(left: RelatedContentItem, right: RelatedContentItem
   return left.slug.localeCompare(right.slug);
 }
 
-function toAuthorityRelatedItems(
-  authorityItems: AuthorityMapItem[] | undefined
-): RelatedContentItem[] {
-  return (authorityItems ?? []).map(item => ({
-    ...item,
-    score: 1,
-    relationType: 'unscored',
-    primarySystemMatch: false,
-  }));
-}
-
 function resolveSourceNode(slug: string, type: ContentNodeType) {
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return null;
-  }
+  const graph = getContentGraphStrict();
 
   return Object.values(graph).find(node => node.slug === slug && node.type === type) ?? null;
 }
 
-function resolveNodeByPath(path: string) {
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return null;
-  }
-
-  return Object.values(graph).find(node => node.path === path) ?? null;
-}
-
 function resolveNodeFromAuthorityItem(item: AuthorityMapItem) {
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return null;
-  }
+  const graph = getContentGraphStrict();
 
   return (
     Object.values(graph).find(node => node.path === item.path || node.slug === item.slug) ?? null
@@ -229,24 +180,23 @@ function resolveNodeFromAuthorityItem(item: AuthorityMapItem) {
 function toRelatedItem(
   sourceNode: ContentGraphNode,
   candidateNode: ContentGraphNode
-): RelatedContentItem | null {
-  if (
-    candidateNode.slug === sourceNode.slug ||
-    candidateNode.path === sourceNode.path ||
-    !candidateNode.title ||
-    !candidateNode.path
-  ) {
-    return null;
+): RelatedContentItem {
+  if (!candidateNode.title || !candidateNode.path || !candidateNode.description) {
+    throw new Error(
+      `Related content candidate is missing required fields for ${candidateNode.id}.`
+    );
   }
 
   const score = scoreCandidate(sourceNode, candidateNode);
   if (score <= 0) {
-    return null;
+    throw new Error(
+      `Related content candidate ${candidateNode.id} has no qualifying relationship.`
+    );
   }
 
   return {
     title: candidateNode.title,
-    description: candidateNode.description ?? '',
+    description: candidateNode.description,
     slug: candidateNode.slug,
     path: candidateNode.path,
     nodeType: candidateNode.type,
@@ -262,10 +212,7 @@ function buildRelatedSlot(
   allowedTypes: ContentNodeType[],
   candidateFilter?: (node: ContentGraphNode) => boolean
 ) {
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return toAuthorityRelatedItems(authorityItems);
-  }
+  const graph = getContentGraphStrict();
 
   const graphNodes = Object.values(graph);
   const candidateNodes: ContentGraphNode[] = [];
@@ -299,22 +246,15 @@ function buildRelatedSlot(
   }
 
   return candidateNodes
+    .filter(candidateNode => {
+      if (candidateNode.slug === sourceNode.slug || candidateNode.path === sourceNode.path) {
+        return false;
+      }
+
+      return scoreCandidate(sourceNode, candidateNode) > 0;
+    })
     .map(candidateNode => toRelatedItem(sourceNode, candidateNode))
-    .filter((item): item is RelatedContentItem => item !== null)
     .sort(compareRelatedItems);
-}
-
-function buildFallbackRelatedContent(slug: string, type: ContentNodeType): RelatedContent {
-  const mapResult = fromAuthorityMap(slug, type) ?? {};
-
-  return {
-    ...emptyRelated(),
-    services: toAuthorityRelatedItems(mapResult.services),
-    resources: toAuthorityRelatedItems(mapResult.resources),
-    blog: toAuthorityRelatedItems(mapResult.blog),
-    caseStudies: toAuthorityRelatedItems(mapResult.caseStudies),
-    industries: toAuthorityRelatedItems(mapResult.industries),
-  };
 }
 
 // --- Authority Map Lookup (precomputed at build time) ---
@@ -360,7 +300,7 @@ function fromAuthorityMap(slug: string, type: ContentNodeType): RelatedAuthority
 export function getRelatedContent(slug: string, type: ContentNodeType): RelatedContent {
   const sourceNode = resolveSourceNode(slug, type);
   if (!sourceNode) {
-    return buildFallbackRelatedContent(slug, type);
+    throw new Error(`Missing graph source node for ${type}:${slug}.`);
   }
 
   const mapResult = fromAuthorityMap(slug, type) ?? {};
@@ -418,82 +358,25 @@ export function getRelatedContent(slug: string, type: ContentNodeType): RelatedC
   }
 }
 
-export function validateInlineLinkTarget(
-  sourcePath: string,
-  targetPath: string
-): InlineLinkValidationResult {
-  const sourceNode = resolveNodeByPath(sourcePath);
-  if (!sourceNode) {
-    return {
-      valid: false,
-      score: 0,
-      relationType: 'unscored',
-      reason: 'source-not-found',
-    };
-  }
-
-  const targetNode = resolveNodeByPath(targetPath);
-  if (!targetNode) {
-    return {
-      valid: false,
-      score: 0,
-      relationType: 'unscored',
-      reason: 'target-not-found',
-    };
-  }
-
-  if (sourceNode.path === targetNode.path || sourceNode.slug === targetNode.slug) {
-    return {
-      valid: false,
-      score: 0,
-      relationType: 'unscored',
-      reason: 'self-link',
-    };
-  }
-
-  const score = scoreCandidate(sourceNode, targetNode);
-  if (score <= 0) {
-    return {
-      valid: false,
-      score,
-      relationType: 'unscored',
-      reason: 'score<=0',
-    };
-  }
-
-  const relationType = resolveRelationshipType(sourceNode, targetNode);
-  if (relationType === 'unscored') {
-    return {
-      valid: false,
-      score,
-      relationType,
-      reason: 'no-relationship',
-    };
-  }
-
-  return {
-    valid: true,
-    score,
-    relationType,
-    reason: 'valid',
-  };
-}
-
 /**
  * Get all content nodes matching a given topic.
  */
 export function getTopicCluster(topic: string): ClusterResult {
   const normalized = topic.trim().toLowerCase();
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return emptyCluster(topic);
+  const graph = getContentGraphStrict();
+  if (normalized.length === 0) {
+    throw new Error('getTopicCluster requires a topic slug.');
   }
 
   const nodes = Object.values(graph).filter(node =>
     node.topics?.some(t => t.trim().toLowerCase() === normalized)
   );
 
-  return nodes.length > 0 ? { key: topic, nodes } : emptyCluster(topic);
+  if (nodes.length === 0) {
+    throw new Error(`No topic cluster content found for ${topic}.`);
+  }
+
+  return { key: topic, nodes };
 }
 
 /**
@@ -501,16 +384,20 @@ export function getTopicCluster(topic: string): ClusterResult {
  */
 export function getSystemCluster(system: string): ClusterResult {
   const normalized = system.trim().toLowerCase();
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return emptyCluster(system);
+  const graph = getContentGraphStrict();
+  if (normalized.length === 0) {
+    throw new Error('getSystemCluster requires a system slug.');
   }
 
   const nodes = Object.values(graph).filter(node =>
     node.systems?.some(s => s.trim().toLowerCase() === normalized)
   );
 
-  return nodes.length > 0 ? { key: system, nodes } : emptyCluster(system);
+  if (nodes.length === 0) {
+    throw new Error(`No system cluster content found for ${system}.`);
+  }
+
+  return { key: system, nodes };
 }
 
 /**
@@ -518,14 +405,18 @@ export function getSystemCluster(system: string): ClusterResult {
  */
 export function getContentByIndustry(industry: string): ClusterResult {
   const normalized = industry.trim().toLowerCase();
-  const graph = getContentGraphSafe();
-  if (!graph) {
-    return emptyCluster(industry);
+  const graph = getContentGraphStrict();
+  if (normalized.length === 0) {
+    throw new Error('getContentByIndustry requires an industry slug.');
   }
 
   const nodes = Object.values(graph).filter(node =>
     node.industries?.some(i => i.trim().toLowerCase() === normalized)
   );
 
-  return nodes.length > 0 ? { key: industry, nodes } : emptyCluster(industry);
+  if (nodes.length === 0) {
+    throw new Error(`No industry cluster content found for ${industry}.`);
+  }
+
+  return { key: industry, nodes };
 }

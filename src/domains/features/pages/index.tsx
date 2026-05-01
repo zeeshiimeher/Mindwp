@@ -30,7 +30,11 @@ export function FeaturesLanding() {
           </div>
         }
       >
-        <CTARegistryProvider pageId='page:features' pageType='page'>
+        <CTARegistryProvider
+          pageId='page:features'
+          pageType='page'
+          primarySystem='smart-website-systems'
+        >
           <main>
             {/* Hero Section */}
             <SectionWrapper

@@ -23,7 +23,7 @@ export type PageIdentity = {
    * matches the page's actual ownership instead of always defaulting to
    * `smart-website-systems`.
    */
-  primarySystem?: string;
+  primarySystem: string;
 };
 
 export function buildPageId(pageType: PageType, slug: string) {

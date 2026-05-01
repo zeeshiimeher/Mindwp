@@ -32,6 +32,39 @@ export const localSeoAuthorityPage = {
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
     list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
+    visual: {
+      brand: 'mindwp · local visibility',
+      title: 'Search presence snapshot',
+      subtitle: 'Last 30 days · postcode area',
+      rows: [
+        {
+          label: 'Map pack · near me',
+          value: 'Visible',
+          status: 'good' as const,
+          iconKey: 'map-pin' as const,
+        },
+        {
+          label: 'Service: emergency',
+          value: 'Indexed',
+          status: 'good' as const,
+          iconKey: 'search' as const,
+        },
+        {
+          label: 'Citations match',
+          value: '12 / 12',
+          status: 'good' as const,
+          iconKey: 'shield' as const,
+        },
+        {
+          label: 'Reviews this month',
+          value: '+8',
+          status: 'good' as const,
+          iconKey: 'sparkles' as const,
+        },
+      ],
+      footerPrimary: 'citations match · profile live',
+      footerSecondary: 'rank stable',
+    },
   },
   sections: {
     misconceptions: {
@@ -94,10 +127,13 @@ export const localSeoAuthorityPage = {
     },
     comparison: {
       header: {
+        badge: 'Scorecard',
         title: 'Off-the-shelf SEO vs local visibility that holds',
         description:
           'Most SEO focuses on rankings alone. We connect your website, Google profile, and listings into something Google can actually trust.',
       },
+      beforeLabel: 'Off-the-shelf SEO',
+      afterLabel: 'Structured local',
       items: [
         {
           type: 'before' as const,
@@ -203,6 +239,7 @@ export const localSeoAuthorityPage = {
         {
           icon: Code,
           title: 'Getting Your Website Right for Google',
+          summary: 'Organising the site, improving mobile performance, and keeping indexing clear.',
           items: [
             'Organising your site so Google can read and index it properly',
             'Making sure it loads quickly and works on mobile',
@@ -214,6 +251,8 @@ export const localSeoAuthorityPage = {
         {
           icon: FileText,
           title: 'Making Each Listing Clear and Useful',
+          summary:
+            'Writing service content that matches local search and gives people a clear next step.',
           items: [
             'Writing content for each service that explains what you do and where you do it',
             'Titles and descriptions matching what people search for',
@@ -225,6 +264,8 @@ export const localSeoAuthorityPage = {
         {
           icon: Link2,
           title: 'Building Your Local Reputation Online',
+          summary:
+            'Keeping your profile, directories, and reviews consistent everywhere Google checks.',
           items: [
             'Setting up and managing your Google Business Profile',
             'Matching your details across all directories',
@@ -236,6 +277,7 @@ export const localSeoAuthorityPage = {
         {
           icon: Layers,
           title: 'Planning Content That Brings Customers In',
+          summary: 'Mapping service and location content around the searches people actually make.',
           items: [
             'Creating a listing for each service and location you cover',
             'Writing FAQs and supporting content around real searches',
@@ -246,6 +288,8 @@ export const localSeoAuthorityPage = {
         {
           icon: LineChart,
           title: 'Reporting in Plain English',
+          summary:
+            'Showing search performance, local movement, and competitor shifts without jargon.',
           items: [
             'Monitoring your Google Search Console results',
             'Tracking how your visibility shifts over time',
@@ -256,6 +300,8 @@ export const localSeoAuthorityPage = {
         {
           icon: Settings,
           title: 'Continuous Improvement',
+          summary:
+            'Reviewing the setup regularly and adjusting whenever Google or the business changes.',
           items: [
             'Regular reviews of content and technical health',
             'Adapting when Google changes how it ranks local businesses',
@@ -267,10 +313,14 @@ export const localSeoAuthorityPage = {
     },
     proof: {
       header: {
+        badge: 'Real outcome',
         title: 'What this looked like for a real business',
         description:
           "A dental practice was paying for ads but invisible in organic search. Here's what was going on and what shifted.",
       },
+      beforeLabel: 'Before',
+      changeLabel: 'What changed',
+      afterLabel: 'After',
       cards: [
         {
           title: 'Before: paying for every click, invisible otherwise',
@@ -306,9 +356,12 @@ export const localSeoAuthorityPage = {
       ],
     },
     qualification: {
+      badge: 'Fit check',
       title: 'Is this right for your business?',
       description:
         'Built for established service businesses that want local customers finding them online — and are willing to commit to the time it takes.',
+      strongFitLabel: 'Strong fit',
+      notDesignedLabel: 'Probably not the right fit',
       strongFitTitle: 'Strong fit if',
       strongFitItems: [
         {

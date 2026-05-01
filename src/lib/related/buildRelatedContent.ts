@@ -19,10 +19,6 @@ export type RelatedContentGroup = {
 
 export type RelatedContentOutput = {
   groups: RelatedContentGroup[];
-  emptyState?: {
-    title: string;
-    description: string;
-  };
 };
 
 export type BuildRelatedContentOptions = {
@@ -53,7 +49,7 @@ function resolveNodeType(pageType: PageType, nodeType?: ContentNodeType): Conten
   }
 
   if (pageType === 'page') {
-    return null;
+    throw new Error('buildRelatedContent does not support generic page identities.');
   }
 
   return pageType;
@@ -143,13 +139,7 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
   const slug = options.slug ?? extractSlugFromPageId(options.pageId);
 
   if (!nodeType || !slug || options.pageType === 'page') {
-    return {
-      groups: [],
-      emptyState: {
-        title: 'No related content configured',
-        description: 'This page does not participate in the shared related-content system.',
-      },
-    };
+    throw new Error('buildRelatedContent requires an explicit page slug and supported page type.');
   }
 
   const related = getRelatedContent(slug, nodeType);
@@ -172,11 +162,5 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
     };
   }
 
-  return {
-    groups: [],
-    emptyState: {
-      title: 'No related content available',
-      description: 'This page is eligible for related content, but no qualifying items were found.',
-    },
-  };
+  throw new Error(`No related content available for ${nodeType}:${slug}.`);
 }

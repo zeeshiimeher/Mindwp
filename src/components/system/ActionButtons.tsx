@@ -64,7 +64,11 @@ export function ActionButtons({
   }
 
   const pageTypeForHref: ContactSourceType = toContactSourceType(pageIdentity.pageType);
-  const primarySystem = pageIdentity.primarySystem ?? 'smart-website-systems';
+  if (!pageIdentity.primarySystem) {
+    throw new Error('ActionButtons requires an explicit primarySystem.');
+  }
+
+  const primarySystem = pageIdentity.primarySystem;
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,
     label: getPrimaryCTA(),

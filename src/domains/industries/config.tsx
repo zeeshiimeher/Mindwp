@@ -35,53 +35,69 @@ export type IndustryEntry = IndustryCategoryEntry | IndustryDetailEntry;
 const CATEGORY_RENDERER_OVERRIDES_BY_SLUG = new Map<string, CategoryRenderer>();
 const DETAIL_RENDERER_OVERRIDES_BY_PATH = new Map<string, DetailRenderer>();
 
-const renderCategoryWithDefaultTemplate = (data: IndustryCategoryPageData) => (
-  <IndustryCategoryPageTemplate
-    slug={data.slug}
-    system={data.systems?.[0] ?? 'smart-website-systems'}
-    category={data.category}
-    hero={data.hero}
-    challenges={data.challenges}
-    operatingPatterns={data.operatingPatterns}
-    imageStrip={data.imageStrip}
-    spectrum={data.spectrum}
-    decisionChecklist={data.decisionChecklist}
-    serviceEnvironments={data.serviceEnvironments}
-    solutions={data.solutions}
-    systemLayers={data.systemLayers}
-    process={data.process}
-    comparison={data.comparison}
-    packages={data.packages}
-    pathways={data.pathways}
-    explore={data.explore}
-    detailRoutes={data.detailRoutes}
-    sectionControls={data.sectionControls}
-    faq={data.faq}
-    cta={data.cta}
-  />
-);
+const renderCategoryWithDefaultTemplate = (data: IndustryCategoryPageData) => {
+  const system = data.systems?.[0];
 
-const renderDetailWithDefaultTemplate = (data: IndustryDetailPageData) => (
-  <IndustryDetailPageTemplate
-    slug={data.slug}
-    system={data.systems?.[0] ?? 'smart-website-systems'}
-    hero={data.hero}
-    challenges={data.challenges}
-    operatingPatterns={data.operatingPatterns}
-    imageStrip={data.imageStrip}
-    decisionChecklist={data.decisionChecklist}
-    solutions={data.solutions}
-    systemLayers={data.systemLayers}
-    comparison={data.comparison}
-    packages={data.packages}
-    pathways={data.pathways}
-    workflowExamples={data.workflowExamples}
-    caseStudies={data.caseStudies}
-    explore={data.explore}
-    faq={data.faq}
-    cta={data.cta}
-  />
-);
+  if (!system) {
+    throw new Error(`Industry config requires systems[0] for ${data.slug}.`);
+  }
+
+  return (
+    <IndustryCategoryPageTemplate
+      slug={data.slug}
+      system={system}
+      category={data.category}
+      hero={data.hero}
+      challenges={data.challenges}
+      operatingPatterns={data.operatingPatterns}
+      imageStrip={data.imageStrip}
+      spectrum={data.spectrum}
+      decisionChecklist={data.decisionChecklist}
+      serviceEnvironments={data.serviceEnvironments}
+      solutions={data.solutions}
+      systemLayers={data.systemLayers}
+      process={data.process}
+      comparison={data.comparison}
+      packages={data.packages}
+      pathways={data.pathways}
+      explore={data.explore}
+      detailRoutes={data.detailRoutes}
+      sectionControls={data.sectionControls}
+      faq={data.faq}
+      cta={data.cta}
+    />
+  );
+};
+
+const renderDetailWithDefaultTemplate = (data: IndustryDetailPageData) => {
+  const system = data.systems?.[0];
+
+  if (!system) {
+    throw new Error(`Industry config requires systems[0] for ${data.slug}.`);
+  }
+
+  return (
+    <IndustryDetailPageTemplate
+      slug={data.slug}
+      system={system}
+      hero={data.hero}
+      challenges={data.challenges}
+      operatingPatterns={data.operatingPatterns}
+      imageStrip={data.imageStrip}
+      decisionChecklist={data.decisionChecklist}
+      solutions={data.solutions}
+      systemLayers={data.systemLayers}
+      comparison={data.comparison}
+      packages={data.packages}
+      pathways={data.pathways}
+      workflowExamples={data.workflowExamples}
+      caseStudies={data.caseStudies}
+      explore={data.explore}
+      faq={data.faq}
+      cta={data.cta}
+    />
+  );
+};
 
 const getCategoryDataBySlug = (slug: string) => {
   return Object.values(INDUSTRY_REGISTRY).find(
@@ -148,7 +164,10 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
       render: () => {
         const renderCategory =
           CATEGORY_RENDERER_OVERRIDES_BY_SLUG.get(data.slug) ?? renderCategoryWithDefaultTemplate;
-        const primarySystem = data.systems?.[0] ?? 'smart-website-systems';
+        const primarySystem = data.systems?.[0];
+        if (!primarySystem) {
+          throw new Error(`Industry config requires systems[0] for ${data.slug}.`);
+        }
         return (
           <CTARegistryProvider
             pageId={`industry-category:${data.slug}`}
@@ -175,7 +194,10 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
     render: () => {
       const renderDetail =
         DETAIL_RENDERER_OVERRIDES_BY_PATH.get(path) ?? renderDetailWithDefaultTemplate;
-      const primarySystem = data.systems?.[0] ?? 'smart-website-systems';
+      const primarySystem = data.systems?.[0];
+      if (!primarySystem) {
+        throw new Error(`Industry config requires systems[0] for ${data.slug}.`);
+      }
       return (
         <CTARegistryProvider
           pageId={`industry-detail:${data.slug}`}
@@ -210,7 +232,11 @@ export const getIndustryDataByPath = (path: string) => getIndustryEntryByPath(pa
 
 export const renderIndustryPageByPath = (path: string) => {
   const entry = getIndustryEntryByPath(path);
-  return entry ? entry.render() : null;
+  if (!entry) {
+    throw new Error(`Missing industry entry for path "${path}".`);
+  }
+
+  return entry.render();
 };
 
 export const getIndustryEntryPaths = () => Object.keys(INDUSTRY_ENTRY_BY_PATH);

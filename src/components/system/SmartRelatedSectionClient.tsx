@@ -4,6 +4,7 @@ import { useEffect, useId } from 'react';
 
 import { RelatedContentSection } from '@/components/sections/RelatedContentSection';
 import { SECTION_BEHAVIOR } from '@/config/section-intelligence';
+import { RELATED_CONTENT_CTA_LABEL } from '@/domains/shared/systemUiContent';
 import type { PageType } from '@/lib/page/pageIdentity';
 import type { RelatedContentOutput } from '@/lib/related/buildRelatedContent';
 import {
@@ -34,27 +35,26 @@ export function SmartRelatedSectionClient({
     throw new Error('SmartRelatedSection requires CTARegistryProvider at the template level.');
   }
 
-  useEffect(() => {
-    if (behavior?.allowLinks === false) {
-      return;
-    }
+  if (behavior?.allowLinks === false) {
+    throw new Error('[SmartRelatedSectionClient] Invalid data');
+  }
 
+  useEffect(() => {
     try {
       registerRelatedContentZone(registry, pageId, zoneId);
     } catch (error) {
       reportPageEnforcementError(
         error instanceof Error ? error : new Error('Related content registration failed.')
       );
-      return;
     }
 
     return () => {
       unregisterRelatedContentZone(registry, pageId, zoneId);
     };
-  }, [behavior?.allowLinks, pageId, registry, zoneId]);
+  }, [pageId, registry, zoneId]);
 
-  if (behavior && !behavior.allowLinks) {
-    return null;
+  if (content.groups.length === 0) {
+    throw new Error('[SmartRelatedSectionClient] Invalid data');
   }
 
   const items = content.groups.flatMap((group, groupIndex) =>
@@ -63,27 +63,20 @@ export function SmartRelatedSectionClient({
       step: group.label,
       title: item.title,
       description: item.description,
-      cta: 'Read more',
+      cta: RELATED_CONTENT_CTA_LABEL,
       href: item.href,
     }))
   );
 
   const firstGroup = content.groups[0];
-  const heading = firstGroup
-    ? {
-        title: firstGroup.label,
-        description: firstGroup.description,
-      }
-    : content.emptyState
-      ? {
-          title: content.emptyState.title,
-          description: content.emptyState.description,
-        }
-      : undefined;
-
-  if (!heading) {
-    throw new Error('SmartRelatedSection requires a heading from related content or empty state.');
+  if (!firstGroup) {
+    throw new Error('[SmartRelatedSectionClient] Invalid data');
   }
+
+  const heading = {
+    title: firstGroup.label,
+    description: firstGroup.description,
+  };
 
   return <RelatedContentSection heading={heading} items={items} />;
 }

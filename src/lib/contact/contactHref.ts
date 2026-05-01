@@ -1,8 +1,6 @@
 import { CANONICAL_SYSTEMS } from '@/lib/content-graph/canonical';
 
 export const CONTACT_PATH = '/contact';
-export const DEFAULT_CONTACT_SYSTEM = 'unknown-system';
-export const DEFAULT_CONTACT_SOURCE = 'direct-visit';
 
 const canonicalSystemSet = new Set<string>(CANONICAL_SYSTEMS);
 const CONTACT_SOURCE_TYPES = [
@@ -34,9 +32,16 @@ export function normalizeContactContext(
   system?: string | null,
   source?: string | null
 ): ContactContext {
+  const normalizedSystem = trimContactValue(system);
+  const normalizedSource = trimContactValue(source);
+
+  if (!normalizedSystem || !normalizedSource) {
+    throw new Error('normalizeContactContext requires explicit system and source values.');
+  }
+
   return {
-    system: trimContactValue(system) || DEFAULT_CONTACT_SYSTEM,
-    source: trimContactValue(source) || DEFAULT_CONTACT_SOURCE,
+    system: normalizedSystem,
+    source: normalizedSource,
   };
 }
 

@@ -16,7 +16,6 @@ const integrityTargets = [
     'src/components/sections/PrimaryCTASection.tsx',
     'src/components/sections/RelatedContentSection.tsx',
     'src/lib/seo/schema.ts',
-    'src/lib/seo/inlineLinking.ts',
     'src/lib/content-graph/publishable.tsx',
     'scripts/core/system-report.mjs',
 ] as const;
@@ -66,10 +65,7 @@ describe('system invariant: closure lock', () => {
     });
 
     test('system report locks validator coverage against the manifest', () => {
-        const source = readFileSync(
-            path.join(workspaceRoot, 'scripts/core/system-report.mjs'),
-            'utf8'
-        );
+        const source = readFileSync(path.join(workspaceRoot, 'scripts/core/system-report.mjs'), 'utf8');
 
         expect(source.includes('Validator coverage incomplete.')).toBe(true);
         expect(getValidatorDefinitions().length).toBeGreaterThan(0);

@@ -53,6 +53,10 @@ export function AccordionFAQSection({
     }
   }
 
+  if (defaultOpenId !== undefined && !items.some(item => item.id === defaultOpenId)) {
+    throw new Error('[AccordionFAQSection] Invalid data');
+  }
+
   const [openId, setOpenId] = useState<string | null>(defaultOpenId ?? null);
 
   return (

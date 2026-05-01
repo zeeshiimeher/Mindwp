@@ -10,8 +10,8 @@ import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode } from '@/lib/content-graph/types';
 import { getImage } from '@/lib/image-system/resolver';
 import { normalizePath } from '@/lib/seo/config';
-import { getMetadataBase, SITE_NAME, toAbsoluteUrl } from '@/lib/seo/config';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
+import { buildSEO } from '@/lib/seo/seo';
 import { STATIC_ROUTE_DEFINITIONS } from '@/lib/site/staticPages';
 
 import {
@@ -300,30 +300,30 @@ export async function getInventoryEntry(path: string) {
 }
 
 export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
-  const title = entry.path === '/' ? { absolute: entry.title } : entry.title;
-  const openGraphImages = entry.openGraph.images.map(image => ({
-    ...DEFAULT_OG_IMAGE,
-    url: image,
-  }));
+  const metadata = buildSEO(
+    {
+      title: entry.title,
+      description: entry.description,
+      canonical: entry.canonical,
+      ogTitle: entry.openGraph.title,
+      ogDescription: entry.openGraph.description,
+      image: entry.openGraph.images[0] ?? DEFAULT_OG_IMAGE.url,
+      noIndex: !(entry.robots.index && entry.robots.follow),
+    },
+    entry.path
+  );
 
   return {
-    metadataBase: getMetadataBase(),
-    title,
-    description: entry.description,
-    alternates: {
-      canonical: toAbsoluteUrl(entry.canonical),
-    },
+    ...metadata,
     openGraph: {
-      title: entry.openGraph.title,
-      description: entry.openGraph.description,
-      url: toAbsoluteUrl(entry.openGraph.url),
-      siteName: SITE_NAME,
-      images: openGraphImages,
+      ...metadata.openGraph,
+      images: entry.openGraph.images.map(image => ({
+        ...DEFAULT_OG_IMAGE,
+        url: image,
+      })),
     },
     twitter: {
-      card: 'summary_large_image',
-      title: entry.openGraph.title,
-      description: entry.openGraph.description,
+      ...metadata.twitter,
       images: entry.openGraph.images,
     },
     robots: {

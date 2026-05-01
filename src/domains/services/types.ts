@@ -85,7 +85,19 @@ export interface ServicePageSections {
     header: SectionIntro;
     tagline?: string;
     narrativeTitle: string;
+    body: string;
     narrativeParagraphs: string[];
+    bullets: string[];
+    highlights: {
+      label: string;
+      value: string;
+    }[];
+    image: {
+      src: string;
+      alt: string;
+      width?: number;
+      height?: number;
+    };
     items: IconCardItem[];
     alternatingItems: {
       title: string;

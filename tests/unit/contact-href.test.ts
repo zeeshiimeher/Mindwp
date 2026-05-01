@@ -6,8 +6,6 @@ import {
   buildContactHref,
   buildGlobalContactHref,
   CONTACT_PATH,
-  DEFAULT_CONTACT_SOURCE,
-  DEFAULT_CONTACT_SYSTEM,
   isCanonicalContactSystem,
   isGlobalNavigationContactContext,
   isValidContactContext,
@@ -61,11 +59,10 @@ describe('unit: contact href helpers', () => {
     expect(isValidContactContext('', 'page/home')).toBe(false);
   });
 
-  test('normalizes missing contact context to safe defaults', () => {
-    expect(normalizeContactContext('', '')).toEqual({
-      system: DEFAULT_CONTACT_SYSTEM,
-      source: DEFAULT_CONTACT_SOURCE,
-    });
+  test('requires explicit contact context values', () => {
+    expect(() => normalizeContactContext('', '')).toThrow(
+      /normalizeContactContext requires explicit system and source values/
+    );
   });
 
   test('builds and recognizes the global navigation contact context', () => {

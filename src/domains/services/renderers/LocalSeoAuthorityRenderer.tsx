@@ -4,7 +4,6 @@ import {
   BeforeAfterSection,
   FitCheckSection,
   GridCardsSection,
-  type HeroSplitMetric,
   HeroSplitSection,
   LayerStackSection,
   PrimaryCTASection,
@@ -21,13 +20,6 @@ interface LocalSeoAuthorityRendererProps {
   data: ServicePageDataBySlug['local-seo-authority'];
   slug: string;
 }
-
-const HERO_VISIBILITY_ROWS: readonly HeroSplitMetric[] = [
-  { label: 'Map pack · "near me"', value: 'Visible', status: 'good', iconKey: 'map-pin' },
-  { label: 'Service: emergency', value: 'Indexed', status: 'good', iconKey: 'search' },
-  { label: 'Citations match', value: '12 / 12', status: 'good', iconKey: 'shield' },
-  { label: 'Reviews this month', value: '+8', status: 'good', iconKey: 'sparkles' },
-];
 
 const MISCONCEPTION_ICON_KEYS: readonly SectionIconKey[] = ['alert', 'eye', 'clock'];
 
@@ -86,14 +78,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           heading={{ title: hero.title, description: hero.description }}
           chips={hero.list}
           actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
-          visual={{
-            brand: 'mindwp · local visibility',
-            title: 'Search presence snapshot',
-            subtitle: 'Last 30 days · postcode area',
-            rows: HERO_VISIBILITY_ROWS,
-            footerPrimary: 'citations match · profile live',
-            footerSecondary: 'rank stable',
-          }}
+          visual={hero.visual}
         />
 
         {/* Three assumptions — signal-board grid */}
@@ -154,7 +139,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               <BeforeAfterSection
                 variant='scorecard'
                 heading={{
-                  kicker: 'Scorecard',
+                  kicker: comparison.header.badge,
                   title: comparison.header.title,
                   description: requireHeadingDescription(
                     comparison.header.description,
@@ -162,12 +147,12 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                   ),
                 }}
                 before={{
-                  label: 'Off-the-shelf SEO',
+                  label: comparison.beforeLabel,
                   title: before.title,
                   items: before.items,
                 }}
                 after={{
-                  label: 'Structured local',
+                  label: comparison.afterLabel,
                   title: after.title,
                   items: after.items,
                 }}
@@ -204,7 +189,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             variant='timeline'
             tone='light'
             heading={{
-              kicker: processSection.badge ?? 'How we work',
+              kicker: processSection.badge,
               title: processSection.title,
               description: requireHeadingDescription(processSection.description, 'process section'),
             }}
@@ -232,7 +217,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               id: `scope-${index}`,
               iconKey: SCOPE_ICON_KEYS[index % SCOPE_ICON_KEYS.length],
               title: service.title,
-              description: service.items.slice(0, 2).join(' · '),
+              description: service.summary,
             }))}
           />
         )}
@@ -252,24 +237,24 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 variant='before-change-after'
                 tone='light'
                 heading={{
-                  kicker: 'Real outcome',
+                  kicker: proof.header.badge,
                   title: proof.header.title,
                   description: requireHeadingDescription(proof.header.description, 'proof section'),
                 }}
                 before={{
-                  label: 'Before',
+                  label: proof.beforeLabel,
                   title: before.title,
                   body: before.description,
                   iconKey: PROOF_ICON_KEYS[0],
                 }}
                 change={{
-                  label: 'What changed',
+                  label: proof.changeLabel,
                   title: change.title,
                   body: change.description,
                   iconKey: PROOF_ICON_KEYS[1],
                 }}
                 after={{
-                  label: 'After',
+                  label: proof.afterLabel,
                   title: after.title,
                   body: after.description,
                   iconKey: PROOF_ICON_KEYS[2],
@@ -284,7 +269,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             variant='two-column'
             tone='soft'
             heading={{
-              kicker: 'Fit check',
+              kicker: qualification.badge,
               title: qualification.title,
               description: requireHeadingDescription(
                 qualification.description,
@@ -292,7 +277,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               ),
             }}
             good={{
-              label: 'Strong fit',
+              label: qualification.strongFitLabel,
               title: qualification.strongFitTitle,
               items: qualification.strongFitItems.map(item => ({
                 text: item.title,
@@ -300,7 +285,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               })),
             }}
             not={{
-              label: 'Probably not the right fit',
+              label: qualification.notDesignedLabel,
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems.map(item => ({
                 text: item.title,

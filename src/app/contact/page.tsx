@@ -15,11 +15,8 @@ export async function generateMetadata() {
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
   const resolvedSearchParams = await searchParams;
+  const initialSystem = resolvedSearchParams.system ?? 'smart-website-systems';
+  const initialSource = resolvedSearchParams.source ?? 'page/contact';
 
-  return (
-    <ContactClientPage
-      initialSystem={resolvedSearchParams.system}
-      initialSource={resolvedSearchParams.source}
-    />
-  );
+  return <ContactClientPage initialSystem={initialSystem} initialSource={initialSource} />;
 }

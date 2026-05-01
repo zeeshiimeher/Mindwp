@@ -1,6 +1,5 @@
 /* Blog-post UI template.
   Renders from provided props only; routing, slug lookup, and registries stay outside this file. */
-import { Fragment, type ReactNode } from 'react';
 import {
   ArrowLeft,
   Award,
@@ -13,6 +12,7 @@ import {
   Star,
   User,
 } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
@@ -39,9 +39,6 @@ import {
 } from '@/domains/blog/api';
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
-import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
-import { env } from '@/env';
-import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
@@ -283,7 +280,7 @@ export function BlogPostTemplate({
     articleSections.push(section);
   }
 
-  if (sections.length < 5 && env.NODE_ENV === 'development') {
+  if (sections.length < 5 && process.env.NODE_ENV === 'development') {
     systemDevelopmentWarning(`BlogPostTemplate: ${slug} has fewer than 5 authored sections.`);
   }
 
@@ -300,52 +297,16 @@ export function BlogPostTemplate({
     ],
   };
 
-  const currentPath = `/blog/${slug}`;
-  const inlineLinkTracker = createInlineLinkTracker({
-    pagePath: currentPath,
-    debug: env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
-  });
-  let remainingInlineLinks = 5;
+  const primarySystem = systems?.[0];
 
-  enforceInlineLinkUsage({ pageId, pageType: 'blog' }, 'blog');
+  if (!primarySystem) {
+    throw new Error(`BlogPostTemplate requires systems[0] for ${slug}.`);
+  }
 
-  function renderLinkedParagraph(text: string, key: string, className?: string): ReactNode {
-    const segments =
-      remainingInlineLinks > 0
-        ? extractInternalLinks(text, {
-            excludePaths: [currentPath],
-            sourcePath: currentPath,
-            tracker: inlineLinkTracker,
-          })
-        : [{ type: 'text' as const, value: text }];
-
-    let linkedInParagraph = false;
-
+  function renderParagraph(text: string, key: string, className?: string): ReactNode {
     return (
       <p key={key} className={className}>
-        {segments.map((segment, segmentIndex) => {
-          if (segment.type === 'text') {
-            return <Fragment key={`${key}-text-${segmentIndex}`}>{segment.value}</Fragment>;
-          }
-
-          if (linkedInParagraph || remainingInlineLinks <= 0) {
-            return <Fragment key={`${key}-plain-${segmentIndex}`}>{segment.value}</Fragment>;
-          }
-
-          linkedInParagraph = true;
-          remainingInlineLinks -= 1;
-
-          return (
-            <a
-              key={`${key}-link-${segmentIndex}`}
-              href={segment.href}
-              className='link-primary'
-              title={segment.title}
-            >
-              {segment.value}
-            </a>
-          );
-        })}
+        {text}
       </p>
     );
   }
@@ -360,7 +321,7 @@ export function BlogPostTemplate({
 
         return (
           <div key={`introduction-${index}`} className='blog-post__intro'>
-            {section.content.map((para, i) => renderLinkedParagraph(para, `intro-${i}`))}
+            {section.content.map((para, i) => renderParagraph(para, `intro-${i}`))}
           </div>
         );
 
@@ -383,8 +344,8 @@ export function BlogPostTemplate({
 
             {section.content &&
               (typeof section.content === 'string'
-                ? renderLinkedParagraph(section.content, `content-${index}`)
-                : section.content.map((p, j) => renderLinkedParagraph(p, `content-${index}-${j}`)))}
+                ? renderParagraph(section.content, `content-${index}`)
+                : section.content.map((p, j) => renderParagraph(p, `content-${index}-${j}`)))}
 
             {section.list && section.list.length > 0 && (
               <ul className='blog-post__list'>
@@ -530,7 +491,6 @@ export function BlogPostTemplate({
   const categoryMeta = getCategoryMetadata(category);
   const categoryColors = getCategoryColors(category);
   const categoryLabel = categoryMeta?.name ?? category;
-  const primarySystem = systems?.[0] ?? 'smart-website-systems';
 
   return (
     <CTARegistryProvider pageId={pageId} pageType='blog' primarySystem={primarySystem}>
