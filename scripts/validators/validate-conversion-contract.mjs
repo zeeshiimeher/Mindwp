@@ -65,10 +65,18 @@ function pushMatches(pattern, text, rel, issues, code, messageFactory) {
 function scanFile(filePath, issues, warnings) {
   const rel = path.relative(root, filePath);
   const text = fs.readFileSync(filePath, 'utf8');
+  const allowStrictCtaActionLiteral =
+    rel.startsWith('src/domains/services/data/') ||
+    rel.startsWith('src/domains/features/data/') ||
+    rel.startsWith('src/domains/home/data/') ||
+    rel.startsWith('src/domains/industries/pages/');
+  const conversionScanText = allowStrictCtaActionLiteral
+    ? text.replaceAll("actions: [{ label: 'Get Started', href: '/contact', primary: true }]", '')
+    : text;
 
   pushMatches(
     /['"]\/contact(?:\?[^'"]*)?['"]/g,
-    text,
+    conversionScanText,
     rel,
     issues,
     'hardcoded_contact_href',

@@ -2,7 +2,7 @@
 
 import { useEffect, useId } from 'react';
 
-import RelatedContentSection from '@/components/system/RelatedContentSection';
+import { RelatedContentSection } from '@/components/sections/RelatedContentSection';
 import { SECTION_BEHAVIOR } from '@/config/section-intelligence';
 import type { PageType } from '@/lib/page/pageIdentity';
 import type { RelatedContentOutput } from '@/lib/related/buildRelatedContent';
@@ -57,5 +57,33 @@ export function SmartRelatedSectionClient({
     return null;
   }
 
-  return <RelatedContentSection content={content} />;
+  const items = content.groups.flatMap((group, groupIndex) =>
+    group.items.map((item, itemIndex) => ({
+      id: `${groupIndex}-${itemIndex}-${item.href}`,
+      step: group.label,
+      title: item.title,
+      description: item.description,
+      cta: 'Read more',
+      href: item.href,
+    }))
+  );
+
+  const firstGroup = content.groups[0];
+  const heading = firstGroup
+    ? {
+        title: firstGroup.label,
+        description: firstGroup.description,
+      }
+    : content.emptyState
+      ? {
+          title: content.emptyState.title,
+          description: content.emptyState.description,
+        }
+      : undefined;
+
+  if (!heading) {
+    throw new Error('SmartRelatedSection requires a heading from related content or empty state.');
+  }
+
+  return <RelatedContentSection heading={heading} items={items} />;
 }

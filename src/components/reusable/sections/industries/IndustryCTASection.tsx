@@ -16,7 +16,9 @@ export interface IndustryPrimaryCTASectionProps {
 
 export function IndustryPrimaryCTASection({ heading, slug }: IndustryPrimaryCTASectionProps) {
   if (!heading.title || !heading.description) {
-    throw new Error('IndustryPrimaryCTASection: heading.title and heading.description are required');
+    throw new Error(
+      'IndustryPrimaryCTASection: heading.title and heading.description are required'
+    );
   }
   // Use the industry slug for both system and slug as fallback
   return (
@@ -26,6 +28,7 @@ export function IndustryPrimaryCTASection({ heading, slug }: IndustryPrimaryCTAS
         {
           label: 'Get Started',
           href: buildContactHref({ system: slug, sourceType: 'industry', slug }),
+          primary: true,
         },
       ]}
     />

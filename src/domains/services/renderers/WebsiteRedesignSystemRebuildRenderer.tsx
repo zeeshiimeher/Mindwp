@@ -38,9 +38,6 @@ export function WebsiteRedesignSystemRebuildRenderer({
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -182,11 +179,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

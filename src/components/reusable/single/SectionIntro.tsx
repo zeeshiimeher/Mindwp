@@ -90,12 +90,6 @@ export interface SectionIntroProps {
   /** Primary call-to-action button configuration */
   primaryAction?: ButtonProps;
 
-  /** Secondary call-to-action button configuration */
-  secondaryAction?: ButtonProps;
-
-  /** Enables secondary CTA rendering when explicitly authored */
-  allowSecondaryCTA?: true;
-
   /** Whether to apply bottom margin. @default true */
   marginBottom?: boolean;
 }
@@ -109,8 +103,6 @@ export function SectionIntro({
   cssPrefix = '',
   alignment = 'center',
   primaryAction,
-  secondaryAction,
-  allowSecondaryCTA,
   marginBottom = true,
   className = '',
 }: SectionIntroProps) {
@@ -118,9 +110,12 @@ export function SectionIntro({
     throw new Error('SectionIntro requires a non-empty title.');
   }
 
+  if (description !== undefined && description.trim().length === 0) {
+    throw new Error('SectionIntro requires a non-empty description.');
+  }
+
   const HeadingTag = headingLevel;
   const showPrimaryAction = isRenderableAction(primaryAction);
-  const showSecondaryAction = allowSecondaryCTA === true && isRenderableAction(secondaryAction);
 
   const rootClassName = [
     BLOCK,
@@ -158,16 +153,11 @@ export function SectionIntro({
         </p>
       )}
 
-      {(showPrimaryAction || showSecondaryAction) && (
+      {showPrimaryAction && (
         <div className={`${BLOCK}__actions`}>
           {showPrimaryAction && primaryAction && (
             <div className={`${BLOCK}__primary-action`}>
               <Button {...{ variant: 'primary', ...primaryAction }} />
-            </div>
-          )}
-          {showSecondaryAction && secondaryAction && (
-            <div className={`${BLOCK}__secondary-action`}>
-              <Button {...{ variant: 'outline', ...secondaryAction }} />
             </div>
           )}
         </div>

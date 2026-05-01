@@ -2,7 +2,7 @@ import type { LucideIcon } from 'lucide-react';
 
 import { resolveSectionIcon, type SectionIconKey } from './icons';
 import { SectionShell } from './SectionShell';
-import type { SectionDensity, SectionHeading, SectionLink, SectionTone } from './types';
+import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
 export type HeroSplitVariant = 'operations' | 'visibility';
 
@@ -17,11 +17,17 @@ export interface HeroSplitVisual {
   /** Optional title bar (e.g. brand / dashboard label). */
   brand?: string;
   /** Title displayed inside the visual panel. */
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   rows: ReadonlyArray<HeroSplitMetric>;
   footerPrimary?: string;
   footerSecondary?: string;
+}
+
+export interface HeroSplitAction {
+  label: string;
+  href: string;
+  primary: true;
 }
 
 export interface HeroSplitSectionProps {
@@ -33,8 +39,8 @@ export interface HeroSplitSectionProps {
   heading: SectionHeading;
   /** Inline status chips below the description. */
   chips?: readonly string[];
-  /** Primary + (optional) secondary actions. */
-  actions: readonly SectionLink[];
+  /** Single primary action only. */
+  actions: [HeroSplitAction];
   /** Right-column visual data (operational status mockup). */
   visual: HeroSplitVisual;
 }
@@ -62,6 +68,26 @@ export function HeroSplitSection({
   actions,
   visual,
 }: HeroSplitSectionProps) {
+  if (heading.title.trim().length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
+  if (heading.description.trim().length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
+  if (actions.length !== 1 || actions[0].primary !== true) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
+  if (visual.title.trim().length === 0 || visual.subtitle.trim().length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
+  if (visual.rows.length === 0) {
+    throw new Error('[HeroSplitSection] Invalid data');
+  }
+
   return (
     <SectionShell
       tone={tone}
@@ -73,9 +99,7 @@ export function HeroSplitSection({
         <div className='hero-split__content rd-animate-up'>
           {kicker ? <span className='rd-section-kicker'>{kicker}</span> : null}
           <h1 className='hero-split__title'>{heading.title}</h1>
-          {heading.description ? (
-            <p className='hero-split__description'>{heading.description}</p>
-          ) : null}
+          <p className='hero-split__description'>{heading.description}</p>
 
           {chips && chips.length > 0 ? (
             <ul className='hero-split__chips rd-animate-stagger'>
@@ -89,11 +113,7 @@ export function HeroSplitSection({
 
           <div className='hero-split__actions'>
             {actions.map(action => (
-              <a
-                key={action.label}
-                href={action.href}
-                className={action.primary ? 'rd-btn rd-btn--white' : 'rd-btn rd-btn--secondary'}
-              >
+              <a key={action.label} href={action.href} className='rd-btn rd-btn--white'>
                 {action.label}
               </a>
             ))}
@@ -113,10 +133,8 @@ export function HeroSplitSection({
               </div>
             ) : null}
 
-            {visual.title ? <div className='hero-split__panel-title'>{visual.title}</div> : null}
-            {visual.subtitle ? (
-              <div className='hero-split__panel-subtitle'>{visual.subtitle}</div>
-            ) : null}
+            <div className='hero-split__panel-title'>{visual.title}</div>
+            <div className='hero-split__panel-subtitle'>{visual.subtitle}</div>
 
             <ul className='hero-split__panel-list rd-animate-stagger'>
               {visual.rows.map(row => {

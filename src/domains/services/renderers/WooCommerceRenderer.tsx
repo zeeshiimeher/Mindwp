@@ -10,8 +10,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
-import { buildContactHref } from '../../../lib/contact/contactHref';
-
 interface WooCommerceRendererProps {
   data: ServicePageDataBySlug['ecommerce'];
   slug: string;
@@ -20,9 +18,6 @@ interface WooCommerceRendererProps {
 export function WooCommerceRenderer({ data, slug: _slug }: WooCommerceRendererProps) {
   const { hero, sections, cta } = data;
   const { benefitsSection, bridge, whySection, featureSection } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -75,19 +70,7 @@ export function WooCommerceRenderer({ data, slug: _slug }: WooCommerceRendererPr
             backgroundColor='bg-alt'
           />
 
-          <PrimaryCTASection
-            heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'woocommerce',
-                  sourceType: 'service',
-                  slug: 'woocommerce-footer',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

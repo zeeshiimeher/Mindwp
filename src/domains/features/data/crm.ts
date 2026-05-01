@@ -272,8 +272,11 @@ export const crmData: FeaturePageData = {
     },
   },
   cta: {
-    title: 'Review Your Contact and Follow-Up Structure',
-    description:
-      'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
+    heading: {
+      title: 'Review Your Contact and Follow-Up Structure',
+      description:
+        'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 };

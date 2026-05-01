@@ -42,6 +42,14 @@ export function ImageStorySection({
   image,
   caption,
 }: ImageStorySectionProps) {
+  if (heading.title.trim().length === 0 || heading.description.trim().length === 0) {
+    throw new Error('[ImageStorySection] Invalid data');
+  }
+
+  if (image.src.trim().length === 0 || image.alt.trim().length === 0) {
+    throw new Error('[ImageStorySection] Invalid data');
+  }
+
   return (
     <SectionShell
       tone={tone}
@@ -67,7 +75,7 @@ export function ImageStorySection({
         <div className='image-story__content rd-animate-up'>
           {heading.kicker ? <span className='rd-section-kicker'>{heading.kicker}</span> : null}
           <h2 className='image-story__title'>{heading.title}</h2>
-          {heading.description ? <p className='image-story__lede'>{heading.description}</p> : null}
+          <p className='image-story__lede'>{heading.description}</p>
           {body ? <p className='image-story__body'>{body}</p> : null}
 
           {bullets && bullets.length > 0 ? (

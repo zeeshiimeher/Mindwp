@@ -87,6 +87,11 @@ export interface ServicePageSections {
     narrativeTitle: string;
     narrativeParagraphs: string[];
     items: IconCardItem[];
+    alternatingItems: {
+      title: string;
+      description: string;
+      points: string[];
+    }[];
   };
 
   technologies?: {
@@ -148,16 +153,11 @@ export interface ServicePageData<
   sections: TSections;
 
   cta: {
-    kicker: string;
-    title: string;
-    description: string;
-    ctaList?: string[];
-  };
-
-  inlineCta?: {
-    kicker: string;
-    title: string;
-    description: string;
-    ctaList?: string[];
+    heading: {
+      title: string;
+      description: string;
+      kicker?: string;
+    };
+    actions: [{ label: string; href: string; primary: true }];
   };
 }

@@ -26,7 +26,7 @@ interface CRMAutomationRendererProps {
 }
 
 export function CRMAutomationRenderer({ data, slug: _slug }: CRMAutomationRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     positioning,
     useCasesSection,
@@ -39,15 +39,6 @@ export function CRMAutomationRenderer({ data, slug: _slug }: CRMAutomationRender
     proof,
     faqSection,
   } = sections;
-  if (!inlineCta) {
-    throw new Error('CRMAutomationRenderer requires inlineCta content.');
-  }
-
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-  const inlineCtaTitle = inlineCta.title;
-  const inlineCtaDescription = inlineCta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -79,11 +70,6 @@ export function CRMAutomationRenderer({ data, slug: _slug }: CRMAutomationRender
                 title={comparison.header.title}
                 description={comparison.header.description}
                 comparisons={comparison.items}
-                cta={{
-                  title: inlineCtaTitle,
-                  description: inlineCtaDescription,
-                  primaryActionVariant: 'primary',
-                }}
                 cssPrefix='crm-automation-comparison'
                 backgroundColor='bg-alt'
               />
@@ -235,11 +221,7 @@ export function CRMAutomationRenderer({ data, slug: _slug }: CRMAutomationRender
             />
           )}
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

@@ -338,6 +338,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
         description:
           'Walk us through the last enquiry that arrived as a photo and never got booked. We will tell you what went wrong and what to plug first.',
       },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

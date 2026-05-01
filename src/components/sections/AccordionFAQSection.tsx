@@ -39,6 +39,20 @@ export function AccordionFAQSection({
   items,
   defaultOpenId,
 }: AccordionFAQSectionProps) {
+  if (items.length === 0) {
+    throw new Error('[AccordionFAQSection] Invalid data');
+  }
+
+  for (const item of items) {
+    if (
+      item.id.trim().length === 0 ||
+      item.question.trim().length === 0 ||
+      item.answer.trim().length === 0
+    ) {
+      throw new Error('[AccordionFAQSection] Invalid data');
+    }
+  }
+
   const [openId, setOpenId] = useState<string | null>(defaultOpenId ?? null);
 
   return (

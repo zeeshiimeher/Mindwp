@@ -348,14 +348,12 @@ export const conversionLayerPage = {
       cssPrefix: 'conversion-funnel-faq',
     },
   },
-  inlineCta: {
-    title: 'Want to see exactly where qualified intent stalls first?',
-    description:
-      'We map where the path breaks between page message, CTA fit, and follow-up so you can see which leak is structural, which is sequencing, and what should be fixed before anything else.',
-  },
   cta: {
-    title: 'Get a clear priority map for the conversion leaks that matter most',
-    description:
-      'We review the offer path, action step, and post-submit handoff so you leave knowing which leak is hurting revenue most, what to tighten first, and whether a fuller rebuild is actually necessary.',
+    heading: {
+      title: 'Get a clear priority map for the conversion leaks that matter most',
+      description:
+        'We review the offer path, action step, and post-submit handoff so you leave knowing which leak is hurting revenue most, what to tighten first, and whether a fuller rebuild is actually necessary.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

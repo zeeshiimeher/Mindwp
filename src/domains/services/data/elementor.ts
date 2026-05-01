@@ -240,8 +240,11 @@ export const elementorPage = {
     },
   },
   cta: {
-    title: 'Not sure if the design is your actual problem?',
-    description:
-      "Tell us what's happening — or not happening — when people visit your site. We'll figure out whether it's a build issue or something deeper.",
+    heading: {
+      title: 'Not sure if the design is your actual problem?',
+      description:
+        "Tell us what's happening — or not happening — when people visit your site. We'll figure out whether it's a build issue or something deeper.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

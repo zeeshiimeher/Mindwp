@@ -430,12 +430,11 @@ export const leadReactivationSystemPage = {
       cssPrefix: 'lead-reactivation-faq',
     },
   },
-  inlineCta: {
-    title: 'What are you sitting on?',
-    description: "Old leads, stalled quotes, past customers. What's worth pursuing. What isn't.",
-  },
   cta: {
-    title: "Find out what's recoverable in your own records",
-    description: "Your old enquiries and past customers. What's still warm. How to work it.",
+    heading: {
+      title: "Find out what's recoverable in your own records",
+      description: "Your old enquiries and past customers. What's still warm. How to work it.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

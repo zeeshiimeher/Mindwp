@@ -1,12 +1,12 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { BLOG_POSTS } from '@/domains/blog/registry';
-import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
-import { FEATURE_REGISTRY } from '@/domains/features/registry';
-import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
-import { RESOURCE_REGISTRY } from '@/domains/resources/generatedRegistry';
-import { SERVICE_ENTRY_BY_SLUG_WITH_ALIASES } from '@/domains/services/config';
+import { BLOG_POSTS } from '../../src/domains/blog/registry.ts';
+import { CASE_STUDY_REGISTRY } from '../../src/domains/case-studies/registry.ts';
+import { FEATURE_REGISTRY } from '../../src/domains/features/registry.ts';
+import { INDUSTRY_REGISTRY } from '../../src/domains/industries/registry.ts';
+import { RESOURCE_REGISTRY } from '../../src/domains/resources/generatedRegistry.ts';
+import { SERVICE_ENTRY_BY_SLUG_WITH_ALIASES } from '../../src/domains/services/config.tsx';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';

@@ -20,8 +20,6 @@ export function BricksBuilderRenderer({ data, slug: _slug }: BricksBuilderRender
   const { hero, sections, cta } = data;
   const { conversionSection, benefitsSection, whySection, processSection, featureSection } =
     sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
 
   return (
     <>
@@ -87,11 +85,7 @@ export function BricksBuilderRenderer({ data, slug: _slug }: BricksBuilderRender
             cssPrefix={featureSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

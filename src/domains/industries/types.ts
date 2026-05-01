@@ -37,14 +37,14 @@ type IndustryDetailRoutesProps = ComponentProps<typeof RelatedCardsSection>;
 type IndustryExploreProps = Omit<ComponentProps<typeof IndustryExploreSection>, 'title'>;
 type IndustryCaseStudiesProps = ComponentProps<typeof IndustryCaseStudiesSection>;
 type IndustryFaqProps = ComponentProps<typeof FAQSection>;
-import type { SectionHeading } from '@/components/sections/types';
 
 export type IndustryCtaProps = {
   heading: {
     title: string;
     description: string;
+    kicker?: string;
   };
-  actions: { label: string; href: string }[];
+  actions: [{ label: string; href: string; primary: true }];
 };
 type IndustryWorkflowExamplesProps = ComponentProps<typeof IndustryWorkflowExamplesSection>;
 

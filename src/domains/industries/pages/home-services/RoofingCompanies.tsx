@@ -311,9 +311,12 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about the last re-roof you lost in the silence',
-      description:
-        'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+      heading: {
+        title: 'Tell us about the last re-roof you lost in the silence',
+        description:
+          'Walk us through a recent re-roof quote that went quiet, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

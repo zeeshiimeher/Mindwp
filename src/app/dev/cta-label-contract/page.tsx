@@ -52,6 +52,7 @@ export default function CtaLabelContractPage() {
                       sourceType: 'service',
                       slug: testCase.slug,
                     }),
+                    primary: true,
                   },
                 ]}
               />

@@ -152,8 +152,11 @@ export type FeaturePageData = {
   };
 
   cta: {
-    title: string;
-    description: string;
-    metaItems?: Array<{ text: string; icon?: unknown; label?: string }>;
+    heading: {
+      title: string;
+      description: string;
+      kicker?: string;
+    };
+    actions: [{ label: string; href: string; primary: true }];
   };
 };

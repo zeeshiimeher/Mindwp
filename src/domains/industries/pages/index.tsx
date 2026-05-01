@@ -6,6 +6,7 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function IndustriesLanding() {
@@ -114,6 +115,7 @@ export default function IndustriesLanding() {
                   sourceType: 'industry',
                   slug: 'industry-help',
                 }),
+                primary: true,
               },
             ]}
           />

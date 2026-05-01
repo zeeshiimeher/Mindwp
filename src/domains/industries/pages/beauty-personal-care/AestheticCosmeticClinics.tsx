@@ -259,9 +259,12 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the ten days go quiet',
-      description:
-        'If considered enquiries keep cooling between consult and decision, walk us through your last few weeks and we will show you where calm, named follow-up would have kept trust alive.',
+      heading: {
+        title: 'Tell us where the ten days go quiet',
+        description:
+          'If considered enquiries keep cooling between consult and decision, walk us through your last few weeks and we will show you where calm, named follow-up would have kept trust alive.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

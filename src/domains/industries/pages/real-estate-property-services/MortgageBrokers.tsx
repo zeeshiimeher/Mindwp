@@ -260,9 +260,12 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the cases are going elsewhere',
-      description:
-        'If buyers needing same-day answers are ending up with another broker, or remortgages are quietly going to a portal later on, walk us through the last few cases and we will show you the first thing worth fixing.',
+      heading: {
+        title: 'Tell us where the cases are going elsewhere',
+        description:
+          'If buyers needing same-day answers are ending up with another broker, or remortgages are quietly going to a portal later on, walk us through the last few cases and we will show you the first thing worth fixing.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

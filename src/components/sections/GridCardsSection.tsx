@@ -54,6 +54,20 @@ export function GridCardsSection({
   heading,
   items,
 }: GridCardsSectionProps) {
+  if (items.length === 0) {
+    throw new Error('[GridCardsSection] Invalid data');
+  }
+
+  for (const item of items) {
+    if (item.title.trim().length === 0) {
+      throw new Error('[GridCardsSection] Invalid data');
+    }
+
+    if (item.description !== undefined && item.description.trim().length === 0) {
+      throw new Error('[GridCardsSection] Invalid data');
+    }
+  }
+
   return (
     <SectionShell
       tone={tone}

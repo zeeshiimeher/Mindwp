@@ -267,8 +267,11 @@ export const divi5Page = {
     },
   },
   cta: {
-    title: "Not sure if the builder is what's holding you back?",
-    description:
-      "Tell us what your site isn't doing. We'll work out whether it's a build problem or something the builder can't solve.",
+    heading: {
+      title: "Not sure if the builder is what's holding you back?",
+      description:
+        "Tell us what your site isn't doing. We'll work out whether it's a build problem or something the builder can't solve.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

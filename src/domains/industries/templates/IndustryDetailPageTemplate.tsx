@@ -19,7 +19,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { IndustryExploreSectionProps } from '../components/IndustryExploreSection';
 
@@ -47,7 +46,9 @@ export type IndustryDetailPageTemplateProps = {
     heading: {
       title: string;
       description: string;
+      kicker?: string;
     };
+    actions: [{ label: string; href: string; primary: true }];
   };
 };
 
@@ -79,10 +80,29 @@ export function IndustryDetailPageTemplate({
     slug,
     'industry-detail'
   );
-  const resolvedDetailJourneySection = resolvedPathwaySection
-    ? {
+
+  if (resolvedPathwaySection && !resolvedPathwaySection.title) {
+    throw new Error(
+      'IndustryDetailPageTemplate requires pathways.title when pathways are provided.'
+    );
+  }
+
+  let resolvedDetailJourneySection:
+    | React.ComponentProps<typeof ServiceSpectrumCardsSection>
+    | undefined;
+
+  if (resolvedPathwaySection) {
+    const resolvedPathwayTitle = resolvedPathwaySection.title;
+
+    if (!resolvedPathwayTitle) {
+      throw new Error(
+        'IndustryDetailPageTemplate requires pathways.title when pathways are provided.'
+      );
+    }
+
+    resolvedDetailJourneySection = {
       badge: resolvedPathwaySection.badge,
-      title: resolvedPathwaySection.title ?? '',
+      title: resolvedPathwayTitle,
       description: resolvedPathwaySection.description,
       backgroundColor: resolvedPathwaySection.backgroundColor,
       cssPrefix: resolvedPathwaySection.cssPrefix,
@@ -92,8 +112,8 @@ export function IndustryDetailPageTemplate({
         points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
         featured: pkg.popular,
       })),
-    }
-    : undefined;
+    };
+  }
 
   return (
     <>
@@ -120,22 +140,7 @@ export function IndustryDetailPageTemplate({
           {explore && <IndustryExploreSection title='Explore Related Systems' {...explore} />}
           {caseStudies && <IndustryCaseStudiesSection {...caseStudies} />}
           <FAQSection {...faq} />
-          <PrimaryCTASection
-            heading={{
-              title: cta.heading.title,
-              description: cta.heading.description,
-            }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'industry',
-                  sourceType: 'industry',
-                  slug: 'detail',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

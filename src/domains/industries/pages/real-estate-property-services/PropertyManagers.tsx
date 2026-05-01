@@ -262,9 +262,12 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the portfolio is leaking',
-      description:
-        'If landlords keep chasing for certainty or tenants are left waiting with no update, walk us through a normal month and we will show you which gap is costing the most doors.',
+      heading: {
+        title: 'Tell us where the portfolio is leaking',
+        description:
+          'If landlords keep chasing for certainty or tenants are left waiting with no update, walk us through a normal month and we will show you which gap is costing the most doors.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

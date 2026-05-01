@@ -99,7 +99,7 @@ function extractRendererOrder(rendererFilePath) {
       continue;
     }
 
-    if (initializer.getText() === 'sections') {
+    if (initializer.getText() === 'sections' || initializer.getText() === 'optionalSections') {
       const nameNode = declaration.getNameNode();
       if (nameNode.getKind() !== SyntaxKind.ObjectBindingPattern) {
         continue;

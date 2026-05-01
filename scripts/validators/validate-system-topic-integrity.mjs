@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';
 import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 

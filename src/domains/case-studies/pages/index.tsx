@@ -118,7 +118,8 @@ export function CaseStudiesPage() {
           <PrimaryCTASection
             heading={{
               title: 'Want to know which system change would produce this kind of lift for you?',
-              description: "Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business."
+              description:
+                "Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business.",
             }}
             actions={[
               {
@@ -128,6 +129,7 @@ export function CaseStudiesPage() {
                   sourceType: 'case-study',
                   slug: 'case-study-help',
                 }),
+                primary: true,
               },
             ]}
           />

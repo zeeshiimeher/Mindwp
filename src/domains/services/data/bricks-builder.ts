@@ -240,8 +240,11 @@ export const bricksBuilderPage = {
     },
   },
   cta: {
-    title: 'Not sure if the builder is your actual problem?',
-    description:
-      "Tell us what's happening with your website visitors — or what isn't. We'll tell you whether it's a build issue or something the site itself can't fix.",
+    heading: {
+      title: 'Not sure if the builder is your actual problem?',
+      description:
+        "Tell us what's happening with your website visitors — or what isn't. We'll tell you whether it's a build issue or something the site itself can't fix.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

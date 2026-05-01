@@ -85,12 +85,6 @@ export interface RelatedCardsSectionProps {
     href?: string;
     onClick?: () => void;
   };
-  secondaryAction?: {
-    label?: string;
-    text?: string;
-    href?: string;
-    onClick?: () => void;
-  };
   items: RelatedCardItem[];
   backgroundColor?: string;
   /** Additional class(es) for the root element (additive only). */
@@ -112,7 +106,6 @@ export function RelatedCardsSection({
   title,
   description,
   primaryAction,
-  secondaryAction,
   items,
   backgroundColor = '',
   cssPrefix = '',
@@ -182,7 +175,6 @@ export function RelatedCardsSection({
         {...(description !== undefined && { description })}
         className={`${activeBlock}__header`}
         {...(primaryAction !== undefined && { primaryAction })}
-        {...(secondaryAction !== undefined && { secondaryAction })}
       />
       {isStyle1 ? (
         <CardGrid columns={1} gap={6} mode='controlled' className='lg:l-grid-3'>

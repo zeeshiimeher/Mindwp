@@ -259,9 +259,12 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the booking window is closing on you',
-      description:
-        'If agent enquiries are slipping before you can confirm a slot, or repeat agents are quietly calling somebody else next time, walk us through the last few weeks and we will show you where the calendar is actually slipping.',
+      heading: {
+        title: 'Tell us where the booking window is closing on you',
+        description:
+          'If agent enquiries are slipping before you can confirm a slot, or repeat agents are quietly calling somebody else next time, walk us through the last few weeks and we will show you where the calendar is actually slipping.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

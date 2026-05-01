@@ -34,6 +34,16 @@ export function ScopeSection({
   heading,
   groups,
 }: ScopeSectionProps) {
+  if (groups.length === 0) {
+    throw new Error('[ScopeSection] Invalid data');
+  }
+
+  for (const group of groups) {
+    if (group.label.trim().length === 0 || group.items.length === 0) {
+      throw new Error('[ScopeSection] Invalid data');
+    }
+  }
+
   return (
     <SectionShell
       tone={tone}

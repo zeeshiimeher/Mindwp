@@ -35,9 +35,6 @@ export function WordPressDevelopmentRenderer({
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -143,11 +140,7 @@ export function WordPressDevelopmentRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

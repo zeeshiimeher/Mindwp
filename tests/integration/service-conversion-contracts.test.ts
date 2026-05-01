@@ -26,21 +26,14 @@ describe('integration: service conversion contracts', () => {
         true
       );
 
-      expect(isNonEmptyString(data.cta?.title), `${slug} must define cta.title`).toBe(true);
-      expect(isNonEmptyString(data.cta?.description), `${slug} must define cta.description`).toBe(
-        true
-      );
-
-      if (data.inlineCta) {
-        expect(
-          isNonEmptyString(data.inlineCta.title),
-          `${slug} inlineCta.title must be non-empty`
-        ).toBe(true);
-        expect(
-          isNonEmptyString(data.inlineCta.description),
-          `${slug} inlineCta.description must be non-empty`
-        ).toBe(true);
-      }
+      expect(
+        isNonEmptyString(data.cta?.heading?.title),
+        `${slug} must define cta.heading.title`
+      ).toBe(true);
+      expect(
+        isNonEmptyString(data.cta?.heading?.description),
+        `${slug} must define cta.heading.description`
+      ).toBe(true);
 
       if (qualification) {
         const strongFitItems = asArray(qualification.strongFitItems ?? qualification.strongFit);
@@ -63,7 +56,7 @@ describe('integration: service conversion contracts', () => {
         ).toBe(true);
         expect(
           isNonEmptyString(qualification.notDesignedTitle) ||
-            isNonEmptyString(qualification.notForTitle),
+          isNonEmptyString(qualification.notForTitle),
           `${slug} qualification must define a non-empty not-fit title`
         ).toBe(true);
         expect(

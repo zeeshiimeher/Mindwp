@@ -41,6 +41,18 @@ export function FitCheckSection({
   good,
   not,
 }: FitCheckSectionProps) {
+  const columns = [good, not];
+
+  for (const column of columns) {
+    if (column.label.trim().length === 0 || column.title.trim().length === 0) {
+      throw new Error('[FitCheckSection] Invalid data');
+    }
+
+    if (column.items.length === 0 || column.items.some(item => item.text.trim().length === 0)) {
+      throw new Error('[FitCheckSection] Invalid data');
+    }
+  }
+
   return (
     <SectionShell
       tone={tone}

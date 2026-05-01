@@ -339,14 +339,12 @@ export const websiteRedesignSystemRebuildPage = {
       cssPrefix: 'website-redesign-rebuild-faq',
     },
   },
-  inlineCta: {
-    title: 'Not sure if a redesign will actually fix it?',
-    description:
-      "Send us your URL. We'll tell you whether the problem is the design, the structure, or what happens after someone visits.",
-  },
   cta: {
-    title: "Show us what's not working",
-    description:
-      "Drop your URL and tell us what you think the problem is. We'll come back with what's actually costing you enquiries.",
+    heading: {
+      title: "Show us what's not working",
+      description:
+        "Drop your URL and tell us what you think the problem is. We'll come back with what's actually costing you enquiries.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

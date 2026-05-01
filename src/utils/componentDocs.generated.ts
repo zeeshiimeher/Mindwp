@@ -287,12 +287,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "secondaryAction",
-        "type": "{ label?: string; text?: string; href?: string; onClick?: () => void; } | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "showArrows",
         "type": "boolean | undefined",
         "optional": true,
@@ -643,7 +637,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 47,
+    "usageCount": 41,
     "composedComponents": [],
     "props": [
       {
@@ -13601,6 +13595,18 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
@@ -13617,18 +13623,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
-      },
-      {
-        "name": "description",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
       }
     ]
   },
@@ -13775,12 +13769,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "allowSecondaryCTA",
-        "type": "true | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "badge",
         "type": "string | undefined",
         "optional": true,
@@ -13805,19 +13793,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "headerSecondaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": ""
@@ -15784,6 +15760,18 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "description",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
@@ -15800,18 +15788,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
-      },
-      {
-        "name": "description",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
       }
     ]
   },
@@ -16246,12 +16222,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "allowSecondaryCTA",
-        "type": "true | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
@@ -16283,12 +16253,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": ""
@@ -16611,12 +16575,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "allowSecondaryCTA",
-        "type": "true | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
@@ -16642,12 +16600,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": ""
@@ -17108,12 +17060,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "{ label?: string; text?: string; href?: string; onClick?: () => void; } | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "{ label?: string; text?: string; href?: string; onClick?: () => void; } | undefined",
         "optional": true,
         "description": ""
@@ -17847,12 +17793,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Text alignment for the header content."
       },
       {
-        "name": "allowSecondaryCTA",
-        "type": "true | undefined",
-        "optional": true,
-        "description": "Enables secondary CTA rendering when explicitly authored"
-      },
-      {
         "name": "badge",
         "type": "string | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | undefined",
         "optional": true,
@@ -17899,12 +17839,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Secondary call-to-action button configuration"
       }
     ]
   },
@@ -18326,12 +18260,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "allowSecondaryCTA",
-        "type": "true | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
@@ -18363,12 +18291,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": ""
@@ -18445,12 +18367,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": ""
@@ -18700,12 +18616,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "allowSecondaryCTA",
-        "type": "true | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
@@ -18731,12 +18641,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
-        "name": "secondaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
         "description": ""

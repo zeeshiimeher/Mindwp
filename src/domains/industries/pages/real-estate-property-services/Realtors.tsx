@@ -261,9 +261,12 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the calls are going elsewhere',
-      description:
-        'If viewing requests cool off before you can ring back or old buyers never hear from you again when their timing changes, walk us through the last few enquiries and we will show you where the seven-minute window is being lost.',
+      heading: {
+        title: 'Tell us where the calls are going elsewhere',
+        description:
+          'If viewing requests cool off before you can ring back or old buyers never hear from you again when their timing changes, walk us through the last few enquiries and we will show you where the seven-minute window is being lost.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

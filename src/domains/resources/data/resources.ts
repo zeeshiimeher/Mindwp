@@ -28,8 +28,11 @@ type ResourcesHubData = {
     comingSoonText: string;
   };
   cta: {
-    title: string;
-    description: string;
+    heading: {
+      title: string;
+      description: string;
+      kicker?: string;
+    };
   };
 };
 
@@ -65,9 +68,11 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     comingSoonText: 'More guides coming soon on automation, reviews, and website performance',
   },
   cta: {
-    title: 'Ready to Apply the Right System?',
-    description:
-      'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
+    heading: {
+      title: 'Ready to Apply the Right System?',
+      description:
+        'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
+    },
   },
 };
 

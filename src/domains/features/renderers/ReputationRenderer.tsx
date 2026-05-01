@@ -17,7 +17,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
@@ -195,19 +194,7 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
             </div>
           </SectionWrapper>
 
-          <PrimaryCTASection
-            heading={{ title: cta.title, description: cta.description }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'reputation-review',
-                  sourceType: 'feature',
-                  slug: 'reputation',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

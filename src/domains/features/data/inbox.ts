@@ -331,8 +331,11 @@ export const inboxData: FeaturePageData = {
     },
   },
   cta: {
-    title: 'Ready to Bring All Conversations into One Inbox?',
-    description:
-      'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
+    heading: {
+      title: 'Ready to Bring All Conversations into One Inbox?',
+      description:
+        'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 };

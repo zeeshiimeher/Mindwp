@@ -347,14 +347,12 @@ export const wordpressDevelopmentPage = {
       cssPrefix: 'wordpress-development-faq',
     },
   },
-  inlineCta: {
-    title: 'Not sure if the build is the real problem?',
-    description:
-      "Send us your URL. We'll show you where visitors are dropping off and whether it's a build issue or something deeper.",
-  },
   cta: {
-    title: "Show us what's not working",
-    description:
-      "Tell us about your site and how enquiries come in. We'll tell you what's costing you leads and what to fix first.",
+    heading: {
+      title: "Show us what's not working",
+      description:
+        "Tell us about your site and how enquiries come in. We'll tell you what's costing you leads and what to fix first.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

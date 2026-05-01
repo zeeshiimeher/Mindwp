@@ -260,9 +260,12 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the chair sits empty',
-      description:
-        'If Saturday DMs keep going cold or your old regulars are now missing for months at a time, walk us through a normal week and we will show you where the chair is actually losing bookings.',
+      heading: {
+        title: 'Tell us where the chair sits empty',
+        description:
+          'If Saturday DMs keep going cold or your old regulars are now missing for months at a time, walk us through a normal week and we will show you where the chair is actually losing bookings.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

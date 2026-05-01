@@ -70,7 +70,7 @@ export function PrimaryCTASection({
   }
 
   return (
-    <section data-testid="smart-cta">
+    <section data-testid='smart-cta'>
       <SectionShell
         tone={tone}
         density={density}

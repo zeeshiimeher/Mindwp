@@ -29,7 +29,7 @@ export function UnifiedCommunicationSystemRenderer({
   data,
   slug: _slug,
 }: UnifiedCommunicationSystemRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     channelSignals,
@@ -41,15 +41,6 @@ export function UnifiedCommunicationSystemRenderer({
     comparison,
     proof,
   } = sections;
-  if (!inlineCta) {
-    throw new Error('UnifiedCommunicationSystemRenderer requires inlineCta content.');
-  }
-
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-  const inlineCtaTitle = inlineCta.title;
-  const inlineCtaDescription = inlineCta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -191,11 +182,6 @@ export function UnifiedCommunicationSystemRenderer({
               title={comparison.header.title}
               description={comparison.header.description}
               comparisons={comparison.items}
-              cta={{
-                title: inlineCtaTitle,
-                description: inlineCtaDescription,
-                primaryActionVariant: 'primary',
-              }}
               cssPrefix='unified-communication-comparison'
             />
           )}
@@ -232,11 +218,7 @@ export function UnifiedCommunicationSystemRenderer({
             backgroundColor='bg-alt'
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

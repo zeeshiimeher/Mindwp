@@ -368,6 +368,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
         description:
           'If calls are being missed, callbacks are happening too late, or bigger quotes are sitting there with no follow-up, walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
       },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

@@ -316,9 +316,12 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about today\u2019s missed calls',
-      description:
-        'Walk us through the calls that hit voicemail and the postcodes that wasted the day. We will tell you what to plug first.',
+      heading: {
+        title: 'Tell us about today\u2019s missed calls',
+        description:
+          'Walk us through the calls that hit voicemail and the postcodes that wasted the day. We will tell you what to plug first.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

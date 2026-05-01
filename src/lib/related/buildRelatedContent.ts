@@ -9,11 +9,11 @@ import type { PageType } from '@/lib/page/pageIdentity';
 
 export type RelatedContentGroup = {
   label: string;
-  description?: string;
+  description: string;
   items: Array<{
     title: string;
     href: string;
-    description?: string;
+    description: string;
   }>;
 };
 
@@ -33,6 +33,14 @@ export type BuildRelatedContentOptions = {
 };
 
 const MAX_ITEMS = 3;
+
+function requireDescription(value: string | undefined, context: string) {
+  if (!value) {
+    throw new Error(`Missing description for ${context}.`);
+  }
+
+  return value;
+}
 
 function extractSlugFromPageId(pageId: string) {
   const parts = pageId.split(':');
@@ -153,11 +161,11 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
       groups: [
         {
           label: meta.title,
-          description: meta.description || '',
+          description: requireDescription(meta.description, `related content meta for ${nodeType}`),
           items: items.map(item => ({
             title: item.title,
             href: item.path,
-            description: item.description || '',
+            description: requireDescription(item.description, `related content item ${item.path}`),
           })),
         },
       ],

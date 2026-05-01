@@ -311,9 +311,12 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about the patio quote that went quiet',
-      description:
-        'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+      heading: {
+        title: 'Tell us about the patio quote that went quiet',
+        description:
+          'Walk us through a recent refit or patio quote that drifted, when it went out, and when anyone last followed it up. We will tell you what to sort first.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

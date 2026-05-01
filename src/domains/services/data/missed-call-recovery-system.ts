@@ -320,14 +320,12 @@ export const missedCallRecoverySystemPage = {
       cssPrefix: 'missed-call-recovery-faq',
     },
   },
-  inlineCta: {
-    title: 'Want to see where missed-call leakage is actually happening first?',
-    description:
-      'We look at when calls are missed, what callers hear back, and which enquiries are most likely to disappear before someone follows up so you can see where recovery needs to start.',
-  },
   cta: {
-    title: 'Get a clear missed-call recovery priority before you change the stack',
-    description:
-      'We review current call handling, response delay, and after-hours gaps so you leave with the highest-risk missed-call points, the first recovery fixes to make, and whether a larger communication system is actually needed.',
+    heading: {
+      title: 'Get a clear missed-call recovery priority before you change the stack',
+      description:
+        'We review current call handling, response delay, and after-hours gaps so you leave with the highest-risk missed-call points, the first recovery fixes to make, and whether a larger communication system is actually needed.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

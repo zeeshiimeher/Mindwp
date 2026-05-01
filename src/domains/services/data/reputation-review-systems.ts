@@ -348,13 +348,12 @@ export const reputationReviewSystemsPage = {
       cssPrefix: 'reputation-review-faq',
     },
   },
-  inlineCta: {
-    title: 'How do your reviews compare to the competition?',
-    description: 'Your review profile vs theirs. Where trust is thin. What to fix first.',
-  },
   cta: {
-    title: 'See how you look next to your competitors',
-    description:
-      "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
+    heading: {
+      title: 'See how you look next to your competitors',
+      description:
+        "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

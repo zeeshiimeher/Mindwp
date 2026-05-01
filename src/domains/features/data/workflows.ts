@@ -304,8 +304,11 @@ export const workflowsData: FeaturePageData = {
     },
   },
   cta: {
-    title: 'Ready to Automate Your Follow-Ups?',
-    description:
-      'We will map the triggers, rules, and follow-up steps that fit your real operation so leads, bookings, and internal tasks keep moving without manual chasing.',
+    heading: {
+      title: 'Ready to Automate Your Follow-Ups?',
+      description:
+        'We will map the triggers, rules, and follow-up steps that fit your real operation so leads, bookings, and internal tasks keep moving without manual chasing.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 };

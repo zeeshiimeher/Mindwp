@@ -16,7 +16,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 interface CRMRendererProps {
@@ -157,19 +156,7 @@ export default function CRMRenderer({ data }: CRMRendererProps) {
             backgroundColor='bg-alt'
           />
 
-          <PrimaryCTASection
-            heading={{ title: cta.title, description: cta.description }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'crm-automation',
-                  sourceType: 'feature',
-                  slug: 'crm',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

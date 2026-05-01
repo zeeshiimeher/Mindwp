@@ -241,9 +241,12 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the consult goes quiet',
-      description:
-        'If enquiries cool before anyone calls back or treatment plans keep fading after the consult, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
+      heading: {
+        title: 'Tell us where the consult goes quiet',
+        description:
+          'If enquiries cool before anyone calls back or treatment plans keep fading after the consult, walk us through a recent month and we will show you where calm follow-up would have closed the loop.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

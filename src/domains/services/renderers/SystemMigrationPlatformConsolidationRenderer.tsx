@@ -15,8 +15,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
-import { buildContactHref } from '../../../lib/contact/contactHref';
-
 interface SystemMigrationPlatformConsolidationRendererProps {
   data: ServicePageDataBySlug['system-migration-platform-consolidation'];
   slug: string;
@@ -38,9 +36,6 @@ export function SystemMigrationPlatformConsolidationRenderer({
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -175,19 +170,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'system-migration',
-                  sourceType: 'service',
-                  slug: 'system-migration-footer',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

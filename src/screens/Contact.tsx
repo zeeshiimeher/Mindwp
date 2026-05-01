@@ -13,7 +13,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { normalizeContactContext } from '@/lib/contact/contactHref';
+import { buildContactHref, normalizeContactContext } from '@/lib/contact/contactHref';
 import { getPrimaryCTA, getSecondaryCTA } from '@/lib/cta/primaryAction';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -639,9 +639,10 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
               label: 'Get Started',
               href: buildContactHref({
                 system: 'contact',
-                sourceType: 'contact',
+                sourceType: 'page',
                 slug: 'contact-footer',
               }),
+              primary: true,
             },
           ]}
         />

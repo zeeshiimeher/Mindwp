@@ -28,8 +28,11 @@ type ResourcesHubData = {
     comingSoonText: string;
   };
   cta: {
-    title: string;
-    description: string;
+    heading: {
+      title: string;
+      description: string;
+      kicker?: string;
+    };
   };
 };
 
@@ -67,9 +70,11 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
       'More guides are being added for automation, review generation, response handling, and conversion control.',
   },
   cta: {
-    title: 'Ready to turn the right diagnosis into a working system?',
-    description:
-      'These guides isolate the bottleneck. We will show you which service path fixes it without adding more manual work or disconnected tools.',
+    heading: {
+      title: 'Ready to turn the right diagnosis into a working system?',
+      description:
+        'These guides isolate the bottleneck. We will show you which service path fixes it without adding more manual work or disconnected tools.',
+    },
   },
 };
 

@@ -115,24 +115,24 @@ function main() {
     });
   }
 
-  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires title and description')) {
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires heading.title')) {
     issues.push({
       code: 'missing_cta_required_guard',
-      message: 'PrimaryCTASection must throw when title or description is missing.',
+      message: 'PrimaryCTASection must throw when heading.title is missing.',
     });
   }
 
-  if (!primaryCtaSectionSource.includes('allowSecondaryCTA?: true;')) {
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires heading.description')) {
     issues.push({
-      code: 'missing_allow_secondary_guard_prop',
-      message: 'PrimaryCTASection must expose allowSecondaryCTA as an explicit opt-in.',
+      code: 'missing_cta_required_guard',
+      message: 'PrimaryCTASection must throw when heading.description is missing.',
     });
   }
 
-  if (!primaryCtaSectionSource.includes('getSecondaryCTA(allowSecondaryCTA)')) {
+  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires actions')) {
     issues.push({
-      code: 'missing_secondary_cta_gate',
-      message: 'PrimaryCTASection must gate the secondary CTA through allowSecondaryCTA.',
+      code: 'missing_cta_required_guard',
+      message: 'PrimaryCTASection must throw when actions is missing.',
     });
   }
 
@@ -152,14 +152,10 @@ function main() {
     });
   }
 
-  if (
-    !primaryCtaSectionSource.includes("pageIdentity.primarySystem ?? 'smart-website-systems'") ||
-    !primaryCtaSectionSource.includes('system: primarySystem')
-  ) {
+  if (primaryCtaSectionSource.includes('allowSecondaryCTA')) {
     issues.push({
-      code: 'missing_locked_contact_system_usage',
-      message:
-        "PrimaryCTASection href generation must derive system from pageIdentity.primarySystem with the 'smart-website-systems' fallback.",
+      code: 'secondary_cta_not_allowed',
+      message: 'PrimaryCTASection must not expose allowSecondaryCTA or secondary CTA logic.',
     });
   }
 

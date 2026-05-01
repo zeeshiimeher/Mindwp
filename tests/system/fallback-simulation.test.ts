@@ -11,7 +11,7 @@ describe('system simulation: fallback purge', () => {
     test('missing CTA fails validation', () => {
         const issues = scanPrimaryCtaUsageFile(
             'src/screens/fallback-fixture.tsx',
-            `<PrimaryCTASection description='Missing title' />`
+            `<PrimaryCTASection actions={[{ label: 'Go', href: '/contact', primary: true }]} />`
         );
 
         expect(issues.some(issue => issue.code === 'missing_cta_title')).toBe(true);
@@ -47,8 +47,11 @@ describe('system simulation: fallback purge', () => {
                 explore: { badge: 'Explore', title: 'Explore', description: 'Description', cards: [] },
             },
             cta: {
-                title: 'CTA',
-                description: 'CTA description',
+                heading: {
+                    title: 'CTA',
+                    description: 'CTA description',
+                },
+                actions: [{ label: 'Get Started', href: '/contact', primary: true }],
             },
         };
 

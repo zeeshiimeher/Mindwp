@@ -81,8 +81,6 @@ export interface ContentRules {
       heroDescriptionRequired: boolean;
       ctaTitleRequired: boolean;
       ctaDescriptionRequired: boolean;
-      inlineCtaTitleRequired: boolean;
-      inlineCtaDescriptionRequired: boolean;
     };
     feature: {
       heroTitleRequired: boolean;
@@ -191,8 +189,6 @@ const DEFAULT_CONTENT_RULES: ContentRules = {
       heroDescriptionRequired: true,
       ctaTitleRequired: true,
       ctaDescriptionRequired: true,
-      inlineCtaTitleRequired: true,
-      inlineCtaDescriptionRequired: true,
     },
     feature: {
       heroTitleRequired: true,

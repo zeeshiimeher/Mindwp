@@ -18,8 +18,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageData } from '@/domains/services/types';
 
-import { buildContactHref } from '../../../lib/contact/contactHref';
-
 type ConversionLayerSections = {
   foundation: any;
   funnelBreakpoints: any;
@@ -38,7 +36,7 @@ interface ConversionLayerRendererProps {
 }
 
 export function ConversionLayerRenderer({ data, slug: _slug }: ConversionLayerRendererProps) {
-  const { hero, cta, inlineCta } = data;
+  const { hero, cta } = data;
   const sections = data.sections as ConversionLayerSections;
   const {
     foundation,
@@ -51,12 +49,6 @@ export function ConversionLayerRenderer({ data, slug: _slug }: ConversionLayerRe
     qualification,
     faqSection,
   } = sections;
-  if (!inlineCta) {
-    throw new Error('ConversionLayerRenderer requires inlineCta content.');
-  }
-
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -199,19 +191,7 @@ export function ConversionLayerRenderer({ data, slug: _slug }: ConversionLayerRe
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'conversion-layer',
-                  sourceType: 'service',
-                  slug: 'conversion-layer-footer',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

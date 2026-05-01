@@ -17,7 +17,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 interface InboxRendererProps {
   data: FeaturePageData;
@@ -156,19 +155,7 @@ export default function InboxRenderer({ data }: InboxRendererProps) {
             backgroundColor='bg-base'
           />
 
-          <PrimaryCTASection
-            heading={{ title: cta.title, description: cta.description }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'smart-website-systems',
-                  sourceType: 'feature',
-                  slug: 'inbox',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

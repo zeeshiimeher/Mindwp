@@ -205,9 +205,12 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     systemLayers: systemLayersData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the diary leaks',
-      description:
-        'If learners ask about slots or test-date lessons but never seem to turn into a first booking, walk us through how a typical week runs and we will show you the first thing worth fixing.',
+      heading: {
+        title: 'Tell us where the diary leaks',
+        description:
+          'If learners ask about slots or test-date lessons but never seem to turn into a first booking, walk us through how a typical week runs and we will show you the first thing worth fixing.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

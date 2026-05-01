@@ -18,6 +18,7 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { Card } from '@/components/ui/card';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const FEATURED_SERVICE_SLUG = 'smart-website-systems' as const;
@@ -294,15 +295,20 @@ export function ServicesLanding() {
             step is to pressure-test that diagnosis before you invest in the wrong build.
           </div>
           <PrimaryCTASection
-            heading={servicesData.cta.heading}
+            heading={{
+              title: 'Need help choosing the service path that actually fixes the bottleneck?',
+              description:
+                'Tell us what is breaking across visibility, response speed, follow-up, or conversion, and we will point you to the service path that fixes the first commercial leak without overbuilding.',
+            }}
             actions={[
               {
                 label: 'Get Started',
                 href: buildContactHref({
                   system: 'smart-website-systems',
-                  sourceType: 'service',
+                  sourceType: 'page',
                   slug: 'service-help',
                 }),
+                primary: true,
               },
             ]}
           />

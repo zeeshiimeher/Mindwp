@@ -26,6 +26,7 @@ export function ServicePrimaryCTASection({ heading, slug }: ServicePrimaryCTASec
         {
           label: 'Get Started',
           href: buildContactHref({ system, sourceType: 'service', slug }),
+          primary: true,
         },
       ]}
     />

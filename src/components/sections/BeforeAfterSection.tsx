@@ -29,6 +29,17 @@ export function BeforeAfterSection({
   before,
   after,
 }: BeforeAfterSectionProps) {
+  if (
+    before.label.trim().length === 0 ||
+    before.title.trim().length === 0 ||
+    before.items.length === 0 ||
+    after.label.trim().length === 0 ||
+    after.title.trim().length === 0 ||
+    after.items.length === 0
+  ) {
+    throw new Error('[BeforeAfterSection] Invalid data');
+  }
+
   return (
     <SectionShell
       tone='gradient-blue'

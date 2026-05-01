@@ -290,9 +290,12 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the proposals are dying',
-      description:
-        'If discovery calls go well but proposals sit in inboxes and never come back, walk us through the last few and we will show you where the decision is actually slipping away.',
+      heading: {
+        title: 'Tell us where the proposals are dying',
+        description:
+          'If discovery calls go well but proposals sit in inboxes and never come back, walk us through the last few and we will show you where the decision is actually slipping away.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

@@ -253,9 +253,12 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where booking is leaking',
-      description:
-        'If "DM to book" keeps costing same-day chairs or walk-ins drift off before the next opening, walk us through a typical Saturday and we will show you where easier booking would catch the most.',
+      heading: {
+        title: 'Tell us where booking is leaking',
+        description:
+          'If "DM to book" keeps costing same-day chairs or walk-ins drift off before the next opening, walk us through a typical Saturday and we will show you where easier booking would catch the most.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

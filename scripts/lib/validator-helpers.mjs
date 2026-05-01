@@ -412,7 +412,10 @@ export function findLegacyImportIssues(appSrcPath, legacyPattern, replacementPat
 
   for (const filePath of files) {
     const text = fs.readFileSync(filePath, 'utf8');
-    if (!text.includes(legacyPattern) && !text.includes(`src/lib/${legacyPattern.replace('src/lib/', '')}`))
+    if (
+      !text.includes(legacyPattern) &&
+      !text.includes(`src/lib/${legacyPattern.replace('src/lib/', '')}`)
+    )
       continue;
 
     issues.push({

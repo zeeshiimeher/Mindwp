@@ -21,8 +21,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface Props {
   data: ServicePageDataBySlug[
-  | 'smart-website-systems'
-  | 'service-pages-vs-one-generic-services-page'];
+    | 'smart-website-systems'
+    | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 
@@ -74,12 +74,30 @@ const TECH_ICON_KEYS: readonly SectionIconKey[] = [
   'zap',
 ];
 
-export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
-  const optionalSections = data.sections as ServicePageSections;
+function requireHeadingDescription(description: string | undefined, section: string) {
+  if (!description || description.trim().length === 0) {
+    throw new Error(`[${section}] Invalid data`);
+  }
 
-  const ctaKicker = 'kicker' in data.cta ? data.cta.kicker : undefined;
-  const ctaTitle = data.cta.title;
-  const ctaDescription = data.cta.description;
+  return description;
+}
+
+function requireNonEmptyValue(value: string | undefined, section: string) {
+  if (!value || value.trim().length === 0) {
+    throw new Error(`[${section}] Invalid data`);
+  }
+
+  return value;
+}
+
+export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
+  const { hero } = data;
+  const sections = data.sections;
+  const optionalSections = sections as Partial<ServicePageSections>;
+  const { value, comparison, included, types, coreLayer, proof, process, qualification, faq } =
+    sections;
+  const { visibilityFoundations, businessSizes, concerns, technologies } = optionalSections;
+
   const contactHref = buildContactHref({
     system: slug,
     sourceType: 'page',
@@ -93,9 +111,9 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* Hero Section */}
           <HeroSplitSection
             variant='operations'
-            kicker={data.hero.badge}
-            heading={{ title: data.hero.title, description: data.hero.description }}
-            chips={data.hero.list}
+            kicker={hero.badge}
+            heading={{ title: hero.title, description: hero.description }}
+            chips={hero.list}
             actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
             visual={{
               brand: 'mindwp · operations',
@@ -108,17 +126,17 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           />
 
           {/* Value Blocks */}
-          {data.sections.value && (
+          {value && (
             <GridCardsSection
               variant='diagnostic-grid'
               tone='soft'
               columns={3}
               heading={{
                 kicker: 'Where it leaks',
-                title: data.sections.value.header.title,
-                description: data.sections.value.header.description ?? '',
+                title: value.header.title,
+                description: requireHeadingDescription(value.header.description, 'value section'),
               }}
-              items={data.sections.value.items.map((block, index) => ({
+              items={value.items.map((block, index) => ({
                 title: block.title,
                 description: block.description,
                 iconKey: VALUE_ICON_KEYS[index % VALUE_ICON_KEYS.length],
@@ -126,18 +144,24 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
           {/* Before/After Comparison */}
-          {data.sections.comparison &&
+          {comparison &&
             (() => {
-              const before = data.sections.comparison.items.find(item => item.type === 'before');
-              const after = data.sections.comparison.items.find(item => item.type === 'after');
-              if (!before || !after) return null;
+              const before = comparison.items.find(item => item.type === 'before');
+              const after = comparison.items.find(item => item.type === 'after');
+              if (!before || !after) {
+                throw new Error('[comparison section] Invalid data');
+              }
+
               return (
                 <BeforeAfterSection
                   variant='split-panel'
                   heading={{
                     kicker: 'Broken vs fixed',
-                    title: data.sections.comparison.header.title,
-                    description: data.sections.comparison.header.description ?? '',
+                    title: comparison.header.title,
+                    description: requireHeadingDescription(
+                      comparison.header.description,
+                      'comparison section'
+                    ),
                   }}
                   before={{
                     label: 'Today',
@@ -153,17 +177,20 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               );
             })()}
           {/* What's Included */}
-          {data.sections.included && (
+          {included && (
             <GridCardsSection
               variant='feature-grid'
               tone='light'
               columns={2}
               heading={{
                 kicker: "What's in scope",
-                title: data.sections.included.header.title,
-                description: data.sections.included.header.description ?? '',
+                title: included.header.title,
+                description: requireHeadingDescription(
+                  included.header.description,
+                  'included section'
+                ),
               }}
-              items={data.sections.included.items.map((item, index) => ({
+              items={included.items.map((item, index) => ({
                 id: `included-${index}`,
                 iconKey: 'check-circle' as SectionIconKey,
                 title: item,
@@ -173,35 +200,37 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           {/* Implementation Types */}
-          {data.sections.types && (
+          {types && (
             <GridCardsSection
               variant='signal-board'
               tone='soft'
               columns={4}
               heading={{
                 kicker: 'Built for',
-                title: data.sections.types.header.title,
-                description: data.sections.types.header.description ?? '',
+                title: types.header.title,
+                description: requireHeadingDescription(types.header.description, 'types section'),
               }}
-              items={data.sections.types.items.map((type, index) => ({
+              items={types.items.map((type, index) => ({
                 id: `type-${index}`,
                 iconKey: TYPE_ICON_KEYS[index % TYPE_ICON_KEYS.length],
                 title: type.title,
                 description: type.description,
-                badge: Array.isArray(type.points) ? type.points.join(', ') : undefined,
               }))}
             />
           )}
 
-          {data.sections.coreLayer && (
+          {coreLayer && (
             <LayerStackSection
               variant='interactive-stack'
               heading={{
                 kicker: 'System layers',
-                title: data.sections.coreLayer.header.title,
-                description: data.sections.coreLayer.header.description ?? '',
+                title: coreLayer.header.title,
+                description: requireHeadingDescription(
+                  coreLayer.header.description,
+                  'core layer section'
+                ),
               }}
-              layers={data.sections.coreLayer.cards.map((card, index) => ({
+              layers={coreLayer.cards.map((card, index) => ({
                 key: `layer-${index}`,
                 index: String(index + 1).padStart(2, '0'),
                 iconKey: LAYER_ICON_KEYS[index % LAYER_ICON_KEYS.length],
@@ -212,20 +241,26 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
-          {data.sections.proof &&
+          {proof &&
             (() => {
-              const before = data.sections.proof.cards[0];
-              const change = data.sections.proof.cards[1];
-              const after = data.sections.proof.cards[2];
-              if (!before || !change || !after) return null;
+              const before = proof.cards[0];
+              const change = proof.cards[1];
+              const after = proof.cards[2];
+              if (!before || !change || !after) {
+                throw new Error('[proof section] Invalid data');
+              }
+
               return (
                 <ProofStorySection
                   variant='before-change-after'
                   tone='soft'
                   heading={{
                     kicker: 'Real outcome',
-                    title: data.sections.proof.header.title,
-                    description: data.sections.proof.header.description ?? '',
+                    title: proof.header.title,
+                    description: requireHeadingDescription(
+                      proof.header.description,
+                      'proof section'
+                    ),
                   }}
                   before={{
                     label: 'Before',
@@ -250,45 +285,52 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             })()}
 
           {/* Strategic Bridge */}
-          {data.sections.visibilityFoundations && (
+          {visibilityFoundations && (
             <ImageStorySection
               variant='operational-photo'
               tone='light'
               heading={{
                 kicker: 'Compounding effect',
-                title: data.sections.visibilityFoundations.header.title,
-                description: data.sections.visibilityFoundations.header.description ?? '',
+                title: visibilityFoundations.header.title,
+                description: requireHeadingDescription(
+                  visibilityFoundations.header.description,
+                  'visibility foundations section'
+                ),
               }}
-              body={data.sections.visibilityFoundations.narrativeParagraphs?.[0]}
-              bullets={data.sections.visibilityFoundations.items.map(item => item.title)}
-              highlights={data.sections.visibilityFoundations.alternatingItems
-                .slice(0, 3)
-                .map(item => ({
-                  label: item.title,
-                  value: item.points?.[0] ?? '',
-                }))}
+              body={requireNonEmptyValue(
+                visibilityFoundations.narrativeParagraphs?.[0],
+                'visibility foundations section'
+              )}
+              bullets={visibilityFoundations.items.map(item => item.title)}
+              highlights={visibilityFoundations.alternatingItems.slice(0, 3).map(item => ({
+                label: item.title,
+                value: requireNonEmptyValue(item.points?.[0], 'visibility foundations section'),
+              }))}
               image={{
                 src: '/images/services/smart-website-systems.webp',
                 alt: 'Operations dashboard view of a smart website system',
                 width: 960,
                 height: 720,
               }}
-              caption={data.sections.visibilityFoundations.tagline}
+              caption={visibilityFoundations.tagline}
             />
           )}
 
           {/* NEW: Benefits by Business Size */}
-          {optionalSections.businessSizes && (
+          {businessSizes && (
             <GridCardsSection
               variant='feature-grid'
               tone='light'
               columns={3}
               heading={{
                 kicker: 'By business size',
-                title: optionalSections.businessSizes.header.title,
-                description: optionalSections.businessSizes.header.description ?? '',
+                title: businessSizes.header.title,
+                description: requireHeadingDescription(
+                  businessSizes.header.description,
+                  'business sizes section'
+                ),
               }}
-              items={optionalSections.businessSizes.items.map((size, index) => ({
+              items={businessSizes.items.map((size, index) => ({
                 id: `size-${index}`,
                 iconKey: SIZE_ICON_KEYS[index % SIZE_ICON_KEYS.length],
                 title: size.title,
@@ -299,16 +341,19 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           {/* How It Works */}
-          {data.sections.process && (
+          {process && (
             <ProcessStepsSection
               variant='timeline'
               tone='light'
               heading={{
-                kicker: data.sections.process.header.badge ?? 'How it works',
-                title: data.sections.process.header.title,
-                description: data.sections.process.header.description ?? '',
+                kicker: process.header.badge ?? 'How it works',
+                title: process.header.title,
+                description: requireHeadingDescription(
+                  process.header.description,
+                  'process section'
+                ),
               }}
-              steps={data.sections.process.steps.map((step, index) => ({
+              steps={process.steps.map((step, index) => ({
                 index: step.number,
                 title: step.title,
                 description: step.description,
@@ -318,17 +363,20 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           {/* NEW: Common Concerns Addressed */}
-          {optionalSections.concerns && (
+          {concerns && (
             <GridCardsSection
               variant='diagnostic-grid'
               tone='soft'
               columns={2}
               heading={{
                 kicker: 'Common concerns',
-                title: optionalSections.concerns.header.title,
-                description: optionalSections.concerns.header.description ?? '',
+                title: concerns.header.title,
+                description: requireHeadingDescription(
+                  concerns.header.description,
+                  'concerns section'
+                ),
               }}
-              items={optionalSections.concerns.items.map((item, index) => ({
+              items={concerns.items.map((item, index) => ({
                 id: `concern-${index}`,
                 iconKey: CONCERN_ICON_KEYS[index % CONCERN_ICON_KEYS.length],
                 title: item.title,
@@ -338,17 +386,20 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           {/* Technologies Used */}
-          {optionalSections.technologies && (
+          {technologies && (
             <GridCardsSection
               variant='signal-board'
               tone='light'
               columns={3}
               heading={{
                 kicker: 'Stack',
-                title: optionalSections.technologies.header.title,
-                description: optionalSections.technologies.header.description ?? '',
+                title: technologies.header.title,
+                description: requireHeadingDescription(
+                  technologies.header.description,
+                  'technologies section'
+                ),
               }}
-              items={optionalSections.technologies.items.map((tech, index) => ({
+              items={technologies.items.map((tech, index) => ({
                 id: `tech-${index}`,
                 iconKey: TECH_ICON_KEYS[index % TECH_ICON_KEYS.length],
                 title: tech.name,
@@ -358,27 +409,30 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           {/* Qualification Section */}
-          {optionalSections.qualification && (
+          {qualification && (
             <FitCheckSection
               variant='two-column'
               tone='light'
               heading={{
                 kicker: 'Fit check',
-                title: optionalSections.qualification.header.title,
-                description: optionalSections.qualification.header.description ?? '',
+                title: qualification.header.title,
+                description: requireHeadingDescription(
+                  qualification.header.description,
+                  'qualification section'
+                ),
               }}
               good={{
                 label: 'Strong fit',
-                title: optionalSections.qualification.strongFitTitle,
-                items: optionalSections.qualification.strongFit.map(item => ({
+                title: qualification.strongFitTitle,
+                items: qualification.strongFit.map(item => ({
                   text: item.title,
                   note: item.description,
                 })),
               }}
               not={{
                 label: 'Probably not for you',
-                title: optionalSections.qualification.notForTitle,
-                items: optionalSections.qualification.notFor.map(item => ({
+                title: qualification.notForTitle,
+                items: qualification.notFor.map(item => ({
                   text: item.title,
                   note: item.description,
                 })),
@@ -387,16 +441,16 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           {/* FAQ Section */}
-          {data.sections.faq && (
+          {faq && (
             <AccordionFAQSection
               variant='single-column'
               tone='soft'
               heading={{
                 kicker: 'FAQ',
-                title: data.sections.faq.header.title,
-                description: data.sections.faq.header.description ?? '',
+                title: faq.header.title,
+                description: requireHeadingDescription(faq.header.description, 'faq section'),
               }}
-              items={data.sections.faq.items.map((item, index) => ({
+              items={faq.items.map((item, index) => ({
                 id: `smart-websites-faq-${index}`,
                 question: item.question,
                 answer: item.answer,
@@ -406,13 +460,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           <PrimaryCTASection
             variant='soft-panel'
-            heading={{
-              kicker: ctaKicker ?? '',
-              title: ctaTitle || 'Get Started',
-              description: ctaDescription || 'Contact us to learn more about Smart Website Systems.'
-            }}
-            actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }]}
-            ctaList={(data.cta as { ctaList?: string[] })?.ctaList ?? []}
+            heading={data.cta.heading}
+            actions={data.cta.actions}
           />
         </main>
       </ErrorBoundary>

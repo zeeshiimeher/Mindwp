@@ -35,9 +35,6 @@ export function ReputationReviewSystemsRenderer({
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -147,11 +144,7 @@ export function ReputationReviewSystemsRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

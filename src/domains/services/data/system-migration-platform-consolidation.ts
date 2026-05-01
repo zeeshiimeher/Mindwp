@@ -335,14 +335,12 @@ export const systemMigrationPlatformConsolidationPage = {
       cssPrefix: 'system-migration-faq',
     },
   },
-  inlineCta: {
-    title: 'Thinking about moving platforms?',
-    description:
-      "Before you migrate, it's worth knowing whether the platform is the problem — or just the most visible symptom.",
-  },
   cta: {
-    title: 'Want to move platforms and actually fix things this time?',
-    description:
-      "Tell us what's frustrating you about the current setup. We'll tell you whether migration is the answer — and what else needs to change for the move to be worth it.",
+    heading: {
+      title: 'Want to move platforms and actually fix things this time?',
+      description:
+        "Tell us what's frustrating you about the current setup. We'll tell you whether migration is the answer — and what else needs to change for the move to be worth it.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

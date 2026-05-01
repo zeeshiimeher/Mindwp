@@ -345,9 +345,12 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about the last cold morning',
-      description:
-        'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
+      heading: {
+        title: 'Tell us about the last cold morning',
+        description:
+          'Walk us through the last weather spike, how many calls came in at once, and where the callbacks or vans fell behind. We will tell you what to sort first.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

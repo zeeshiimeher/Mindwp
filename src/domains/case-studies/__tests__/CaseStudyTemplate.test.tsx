@@ -30,7 +30,9 @@ vi.mock('@/components/system/PageEnforcement', () => ({
 }));
 
 vi.mock('@/components/sections/PrimaryCTASection', () => ({
-  PrimaryCTASection: ({ title }: { title: string }) => <div data-testid='smart-cta'>{title}</div>,
+  PrimaryCTASection: ({ heading }: { heading: { title: string } }) => (
+    <div data-testid='smart-cta'>{heading.title}</div>
+  ),
 }));
 
 vi.mock('@/components/system/SmartRelatedSection', () => ({
@@ -95,42 +97,38 @@ describe('CaseStudyTemplate', () => {
     expect(ctas[0]).toHaveTextContent('Footer CTA');
   });
 
-  it('warns and skips invalid section shapes without crashing', () => {
-    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
-
-    render(
-      <CaseStudyTemplate
-        pageId='case-study:test'
-        metadata={{
-          slug: 'test-case-study',
-          seo: {
-            title: 'Test case study',
-            description: 'Test description',
-            canonical: '/case-studies/test-case-study',
-          },
-          industryCategory: 'home-services',
-          industryLabel: 'Home Services',
-          systems: ['smart-website-systems'],
-          publishDate: '2026-01-01',
-          client: 'Client',
-          location: 'Leeds, UK',
-          business: 'Business',
-          duration: '6 weeks',
-          completedDate: 'January 2026',
-          heroHeadline: 'Headline',
-          keyMetrics: [],
-          tags: [],
-        }}
-        sections={[
-          { type: 'hero', introHtml: <>Intro</> },
-          { type: 'problem', problemHeading: 'Problem' } as never,
-          { type: 'cta', heading: 'Footer CTA', body: 'Footer body' },
-        ]}
-      />
-    );
-
-    expect(screen.getAllByTestId('smart-cta')).toHaveLength(1);
-    expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
+  it('throws on invalid section shapes instead of skipping them', () => {
+    expect(() =>
+      render(
+        <CaseStudyTemplate
+          pageId='case-study:test'
+          metadata={{
+            slug: 'test-case-study',
+            seo: {
+              title: 'Test case study',
+              description: 'Test description',
+              canonical: '/case-studies/test-case-study',
+            },
+            industryCategory: 'home-services',
+            industryLabel: 'Home Services',
+            systems: ['smart-website-systems'],
+            publishDate: '2026-01-01',
+            client: 'Client',
+            location: 'Leeds, UK',
+            business: 'Business',
+            duration: '6 weeks',
+            completedDate: 'January 2026',
+            heroHeadline: 'Headline',
+            keyMetrics: [],
+            tags: [],
+          }}
+          sections={[
+            { type: 'hero', introHtml: <>Intro</> },
+            { type: 'problem', problemHeading: 'Problem' } as never,
+            { type: 'cta', heading: 'Footer CTA', body: 'Footer body' },
+          ]}
+        />
+      )
+    ).toThrow('CaseStudyTemplate requires a valid problem section shape.');
   });
 });

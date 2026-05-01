@@ -317,9 +317,12 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       ],
     },
     cta: {
-      title: 'Pick the page closest to your chair',
-      description:
-        'Each detail page below shows where the booking or return loop usually breaks for that treatment. Start with the one that sounds closest to the way your week actually runs.',
+      heading: {
+        title: 'Pick the page closest to your chair',
+        description:
+          'Each detail page below shows where the booking or return loop usually breaks for that treatment. Start with the one that sounds closest to the way your week actually runs.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

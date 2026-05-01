@@ -303,9 +303,12 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Tell us where the pipeline is leaking',
-      description:
-        'If first responses slip, follow-up goes quiet, or old enquiries never get remembered at the right moment, walk us through the last few weeks and we will show you which window is costing the most work.',
+      heading: {
+        title: 'Tell us where the pipeline is leaking',
+        description:
+          'If first responses slip, follow-up goes quiet, or old enquiries never get remembered at the right moment, walk us through the last few weeks and we will show you which window is costing the most work.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

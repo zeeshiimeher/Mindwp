@@ -27,8 +27,6 @@ export interface TestimonialSpotlightSplitSectionProps {
   narrativeTitle: string;
   narrativeParagraphs: string[];
   primaryAction?: ButtonProps;
-  secondaryAction?: ButtonProps;
-  allowSecondaryCTA?: true;
   testimonial: TestimonialContent;
   backgroundColor?: string;
   cssPrefix?: string;
@@ -41,8 +39,6 @@ export function TestimonialSpotlightSplitSection({
   narrativeTitle,
   narrativeParagraphs,
   primaryAction,
-  secondaryAction,
-  allowSecondaryCTA,
   testimonial,
   backgroundColor = '',
   cssPrefix = '',
@@ -91,12 +87,9 @@ export function TestimonialSpotlightSplitSection({
               ))}
             </div>
 
-            {(primaryAction || secondaryAction) && (
+            {primaryAction && (
               <div className={`${BLOCK}__actions`}>
                 {primaryAction && <Button variant='primary' {...primaryAction} />}
-                {allowSecondaryCTA === true && secondaryAction && (
-                  <Button variant='secondary' {...secondaryAction} />
-                )}
               </div>
             )}
           </div>

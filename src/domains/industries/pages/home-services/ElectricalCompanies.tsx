@@ -317,9 +317,12 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about last Sunday\u2019s fault call',
-      description:
-        'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
+      heading: {
+        title: 'Tell us about last Sunday\u2019s fault call',
+        description:
+          'Walk us through the last night-time fault call that hit voicemail and the EV or consumer-unit quote that then went quiet. We will tell you what to sort first.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

@@ -15,8 +15,8 @@ interface ComparisonItem {
 
 interface ComparisonSectionProps {
   badge?: string;
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   comparisons: ComparisonItem[];
   /** Additional class(es) for the root element (additive only). */
   cssPrefix?: string;
@@ -27,28 +27,45 @@ export function ComparisonSection({
   badge,
   title,
   description,
-  comparisons = [],
+  comparisons,
   cssPrefix = '',
   backgroundColor = '',
 }: ComparisonSectionProps) {
-  const safeComparisons = Array.isArray(comparisons) ? comparisons : [];
+  if (title.trim().length === 0) {
+    throw new Error('ComparisonSection requires a non-empty title.');
+  }
+
+  if (description.trim().length === 0) {
+    throw new Error('ComparisonSection requires a non-empty description.');
+  }
+
+  if (!Array.isArray(comparisons) || comparisons.length === 0) {
+    throw new Error('ComparisonSection requires at least one comparison item.');
+  }
 
   return (
     <SectionWrapper container='none' background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__container l-container`}>
-        {(badge || title || description) && (
-          <SectionIntro
-            {...(badge !== undefined && { badge })}
-            title={title || ''}
-            {...(description !== undefined && { description })}
-            className={`${BLOCK}__header`}
-          />
-        )}
+        <SectionIntro
+          {...(badge !== undefined && { badge })}
+          title={title}
+          description={description}
+          className={`${BLOCK}__header`}
+        />
         <CardGrid columns={2} gap={8} mode='controlled'>
-          {safeComparisons.map(comparison => {
+          {comparisons.map(comparison => {
             const isBefore = comparison?.type === 'before';
-            const comparisonTitle = comparison?.title ?? '';
-            const items = Array.isArray(comparison?.items) ? comparison.items : [];
+            const comparisonTitle = comparison?.title;
+            const items = comparison?.items;
+
+            if (!comparisonTitle || comparisonTitle.trim().length === 0) {
+              throw new Error('ComparisonSection requires each comparison item to have a title.');
+            }
+
+            if (!Array.isArray(items) || items.length === 0) {
+              throw new Error('ComparisonSection requires each comparison item to have items.');
+            }
+
             return (
               <Card
                 key={comparisonTitle}

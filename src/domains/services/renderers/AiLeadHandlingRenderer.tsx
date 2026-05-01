@@ -55,8 +55,6 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: AiLeadHandlingRend
     qualification,
     faqSection,
   } = sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
   const heroCssPrefix = (hero as { cssPrefix?: string }).cssPrefix;
 
   return (
@@ -202,10 +200,7 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: AiLeadHandlingRend
             faqs={faqSection.faqs}
             cssPrefix='ai-response-faq'
           />
-          <PrimaryCTASection
-            heading={{ title: ctaTitle, description: ctaDescription }}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

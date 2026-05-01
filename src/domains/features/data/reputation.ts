@@ -303,8 +303,11 @@ export const reputationData: FeaturePageData = {
     },
   },
   cta: {
-    title: 'Discuss structured review management',
-    description:
-      'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
+    heading: {
+      title: 'Discuss structured review management',
+      description:
+        'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 };

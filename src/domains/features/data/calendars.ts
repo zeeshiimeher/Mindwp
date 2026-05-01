@@ -256,13 +256,11 @@ export const calendarsData: FeaturePageData = {
     },
   },
   cta: {
-    title: 'Review Your Booking Structure',
-    description:
-      'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
-    metaItems: [
-      { text: 'Automated booking system' },
-      { text: 'Customer notifications' },
-      { text: 'Calendar integration' },
-    ],
+    heading: {
+      title: 'Review Your Booking Structure',
+      description:
+        'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 };

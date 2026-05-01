@@ -1035,19 +1035,5 @@ function VisibilityAlignmentSection() {
 function FooterPrimaryCTASection() {
   const ctaData = homepageData.cta;
 
-  return (
-    <PrimaryCTASection
-      heading={{ title: ctaData.footer.title, description: ctaData.footer.description }}
-      actions={[
-        {
-          label: 'Get Started',
-          href: buildContactHref({
-            system: 'homepage',
-            sourceType: 'homepage',
-            slug: 'homepage-footer',
-          }),
-        },
-      ]}
-    />
-  );
+  return <PrimaryCTASection heading={ctaData.footer.heading} actions={ctaData.footer.actions} />;
 }

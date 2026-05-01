@@ -15,7 +15,6 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import type { FeaturePageData } from '@/domains/features/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 const BookingVisual = () => (
   <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -153,19 +152,7 @@ export default function CalendarsRenderer({ data }: CalendarsRendererProps) {
             backgroundColor='bg-alt'
           />
 
-          <PrimaryCTASection
-            heading={{ title: cta.title, description: cta.description }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'smart-website-systems',
-                  sourceType: 'feature',
-                  slug: 'calendars',
-                }),
-              },
-            ]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

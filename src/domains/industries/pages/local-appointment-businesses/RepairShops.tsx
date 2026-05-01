@@ -298,9 +298,12 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the repeat work disappears',
-      description:
-        'If the bench stays busy but bookings still feel harder to pin down and past clients do not come back, walk us through how the month runs and we will show you the first thing worth fixing.',
+      heading: {
+        title: 'Tell us where the repeat work disappears',
+        description:
+          'If the bench stays busy but bookings still feel harder to pin down and past clients do not come back, walk us through how the month runs and we will show you the first thing worth fixing.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

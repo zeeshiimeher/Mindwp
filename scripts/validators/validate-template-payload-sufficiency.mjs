@@ -4,9 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { BLOG_POSTS } from '@/domains/blog/registry';
-import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
-import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
+import { BLOG_POSTS } from '../../src/domains/blog/registry.ts';
+import { CASE_STUDY_REGISTRY } from '../../src/domains/case-studies/registry.ts';
+import { RESOURCE_REGISTRY } from '../../src/domains/resources/registry.ts';
 import { resolveContentRules } from '../../src/lib/config/contentRules';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
@@ -52,31 +52,18 @@ function validateServicePages(pages) {
 
     if (page.cta) {
       if (
-        (serviceRules.ctaTitleRequired && !hasText(page.cta.title)) ||
-        (serviceRules.ctaDescriptionRequired && !hasText(page.cta.description))
+        (serviceRules.ctaTitleRequired && !hasText(page.cta.heading?.title)) ||
+        (serviceRules.ctaDescriptionRequired && !hasText(page.cta.heading?.description))
       ) {
         pushViolation(
           'service',
           page.slug,
           'cta-copy-incomplete',
-          'CTA block requires title and description.'
+          'CTA block requires heading.title and heading.description.'
         );
       }
     }
 
-    if (page.inlineCta) {
-      if (
-        (serviceRules.inlineCtaTitleRequired && !hasText(page.inlineCta.title)) ||
-        (serviceRules.inlineCtaDescriptionRequired && !hasText(page.inlineCta.description))
-      ) {
-        pushViolation(
-          'service',
-          page.slug,
-          'inline-cta-copy-incomplete',
-          'Inline CTA requires title and description.'
-        );
-      }
-    }
   }
 }
 
@@ -109,14 +96,14 @@ function validateFeaturePages(pages) {
     }
 
     if (
-      (featureRules.ctaTitleRequired && !hasText(page.cta?.title)) ||
-      (featureRules.ctaDescriptionRequired && !hasText(page.cta?.description))
+      (featureRules.ctaTitleRequired && !hasText(page.cta?.heading?.title)) ||
+      (featureRules.ctaDescriptionRequired && !hasText(page.cta?.heading?.description))
     ) {
       pushViolation(
         'feature',
         page.slug,
         'cta-copy-incomplete',
-        'Feature CTA requires title and description.'
+        'Feature CTA requires heading.title and heading.description.'
       );
     }
   }
@@ -275,14 +262,14 @@ function validateIndustryPages(pages) {
     }
 
     if (
-      (industryRules.ctaTitleRequired && !hasText(page.cta?.title)) ||
-      (industryRules.ctaDescriptionRequired && !hasText(page.cta?.description))
+      (industryRules.ctaTitleRequired && !hasText(page.cta?.heading?.title)) ||
+      (industryRules.ctaDescriptionRequired && !hasText(page.cta?.heading?.description))
     ) {
       pushViolation(
         'industry',
         page.slug,
         'cta-copy-incomplete',
-        'Industry CTA requires title and description.'
+        'Industry CTA requires heading.title and heading.description.'
       );
     }
 

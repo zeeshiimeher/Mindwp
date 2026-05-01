@@ -42,6 +42,16 @@ export function ProofStorySection({
   after,
   attribution,
 }: ProofStorySectionProps) {
+  for (const column of [before, change, after]) {
+    if (
+      column.label.trim().length === 0 ||
+      column.title.trim().length === 0 ||
+      column.body.trim().length === 0
+    ) {
+      throw new Error('[ProofStorySection] Invalid data');
+    }
+  }
+
   return (
     <SectionShell
       tone={tone}

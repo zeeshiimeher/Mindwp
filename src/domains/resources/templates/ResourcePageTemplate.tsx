@@ -48,6 +48,7 @@ import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
 import { env } from '@/env';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
@@ -117,16 +118,8 @@ function validateRequiredSections(sections: ResourcePageTemplateSection[]) {
   }
 
   if (missingSections.length > 0) {
-    if (env.NODE_ENV === 'development') {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `ResourcePageTemplate: Missing required sections: ${missingSections.join(', ')}`
-      );
-    }
-    // In production, we'll render with what we have but warn in dev
-    return missingSections;
+    throw new Error(`ResourcePageTemplate requires sections: ${missingSections.join(', ')}.`);
   }
-  return [];
 }
 
 function getResourceSectionType(section: unknown) {
@@ -214,10 +207,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(paragraph, {
-          excludePaths: [currentPath],
-          sourcePath: currentPath,
-          tracker: inlineLinkTracker,
-        })
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
         : [{ type: 'text' as const, value: paragraph }];
 
     let linkedInParagraph = false;
@@ -266,7 +259,11 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     switch (section.type) {
       case 'takeaways': {
         const takeawaysData = extractTakeawaysContent(section);
-        return takeawaysData.heading && takeawaysData.items.length > 0 ? (
+        if (!takeawaysData.heading || takeawaysData.items.length === 0) {
+          throw new Error(`ResourcePageTemplate requires takeaways content at index ${index}.`);
+        }
+
+        return (
           <div key={`takeaways-${index}`} id='resource-takeaways'>
             <ResourceTakeawaysSection
               heading={takeawaysData.heading}
@@ -274,12 +271,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               items={takeawaysData.items}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'problem': {
         const problemData = extractProblemContent(section);
-        return problemData.heading && problemData.description.length > 0 ? (
+        if (!problemData.heading || problemData.description.length === 0) {
+          throw new Error(`ResourcePageTemplate requires problem content at index ${index}.`);
+        }
+
+        return (
           <div key={`problem-${index}`} id='resource-problem'>
             <ResourceProblemSection
               heading={problemData.heading}
@@ -289,12 +290,18 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               renderParagraph={renderLinkedParagraph}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'business-costs': {
         const businessCostsData = extractBusinessCostsContent(section);
-        return businessCostsData.heading && businessCostsData.items.length > 0 ? (
+        if (!businessCostsData.heading || businessCostsData.items.length === 0) {
+          throw new Error(
+            `ResourcePageTemplate requires business-costs content at index ${index}.`
+          );
+        }
+
+        return (
           <div key={`business-costs-${index}`} id='resource-business-costs'>
             <ResourceBusinessCostsSection
               heading={businessCostsData.heading}
@@ -302,12 +309,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               items={businessCostsData.items}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'diy': {
         const diyData = extractDIYContent(section);
-        return diyData.heading && diyData.steps.length > 0 ? (
+        if (!diyData.heading || diyData.steps.length === 0) {
+          throw new Error(`ResourcePageTemplate requires diy content at index ${index}.`);
+        }
+
+        return (
           <div key={`diy-${index}`} id='resource-diy'>
             <ResourceDIYSection
               heading={diyData.heading}
@@ -317,12 +328,18 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               proTip={diyData.proTip}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'solution-cards': {
         const automationData = extractAutomationContent(section);
-        return automationData.heading && automationData.solutions.length > 0 ? (
+        if (!automationData.heading || automationData.solutions.length === 0) {
+          throw new Error(
+            `ResourcePageTemplate requires solution-cards content at index ${index}.`
+          );
+        }
+
+        return (
           <div key={`solution-cards-${index}`} id='resource-solution-cards'>
             <ResourceSolutionsSection
               heading={automationData.heading}
@@ -332,12 +349,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               differenceContent={automationData.differenceContent}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'case': {
         const caseData = extractCaseContent(section);
-        return caseData.heading && caseData.caseExample?.businessType ? (
+        if (!caseData.heading || !caseData.caseExample?.businessType) {
+          throw new Error(`ResourcePageTemplate requires case content at index ${index}.`);
+        }
+
+        return (
           <div key={`case-${index}`} id='resource-case'>
             <ResourceCaseSection
               heading={caseData.heading}
@@ -348,12 +369,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               resultHeading={caseData.resultHeading}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'comparison': {
         const comparisonData = extractComparisonContent(section);
-        return comparisonData.heading && comparisonData.before && comparisonData.after ? (
+        if (!comparisonData.heading || !comparisonData.before || !comparisonData.after) {
+          throw new Error(`ResourcePageTemplate requires comparison content at index ${index}.`);
+        }
+
+        return (
           <div key={`comparison-${index}`} id='resource-comparison'>
             <ResourceComparisonSection
               heading={comparisonData.heading}
@@ -363,12 +388,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               renderParagraph={renderLinkedParagraph}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'templates': {
         const templatesData = extractTemplatesContent(section);
-        return templatesData.heading && templatesData.items.length > 0 ? (
+        if (!templatesData.heading || templatesData.items.length === 0) {
+          throw new Error(`ResourcePageTemplate requires templates content at index ${index}.`);
+        }
+
+        return (
           <div key={`templates-${index}`} id='resource-templates'>
             <ResourceTemplatesSection
               heading={templatesData.heading}
@@ -376,12 +405,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               items={templatesData.items}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'checklist': {
         const checklistData = extractChecklistContent(section);
-        return checklistData.heading && checklistData.items.length > 0 ? (
+        if (!checklistData.heading || checklistData.items.length === 0) {
+          throw new Error(`ResourcePageTemplate requires checklist content at index ${index}.`);
+        }
+
+        return (
           <div key={`checklist-${index}`} id='resource-checklist'>
             <ResourceChecklistSection
               heading={checklistData.heading}
@@ -390,7 +423,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               columns={checklistData.columns}
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'faq': {
@@ -409,7 +442,11 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             });
           }
         }
-        return faqData.heading && faqs.length > 0 ? (
+        if (!faqData.heading || faqs.length === 0) {
+          throw new Error(`ResourcePageTemplate requires faq content at index ${index}.`);
+        }
+
+        return (
           <div key={`faq-${index}`} id='resource-faq'>
             <FAQSection
               title={faqData.heading}
@@ -420,7 +457,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               displayMode='accordion'
             />
           </div>
-        ) : null;
+        );
       }
 
       case 'cta': {
@@ -444,6 +481,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                     sourceType: 'resource',
                     slug: 'resource-footer',
                   }),
+                  primary: true,
                 },
               ]}
             />
@@ -453,11 +491,17 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
 
       case 'related-resources': {
         const relatedData = extractRelatedResourcesContent(section);
-        return relatedData.resources.length > 0 ? (
+        if (!relatedData.heading || relatedData.resources.length === 0) {
+          throw new Error(
+            `ResourcePageTemplate requires related-resources content at index ${index}.`
+          );
+        }
+
+        return (
           <RelatedCardsSection
             key={`related-resources-${index}`}
             badge={relatedData.badge}
-            title={relatedData.heading || 'Related Resources'}
+            title={relatedData.heading}
             description={relatedData.subheading}
             items={relatedData.resources.map(resource => ({
               title: resource.title,
@@ -466,38 +510,13 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             }))}
             cssPrefix='resource-related-resources'
           />
-        ) : null;
+        );
       }
 
       default:
-        return null;
-    }
-  }
-
-  function safeRenderSection(section: unknown, index: number) {
-    const type = getResourceSectionType(section);
-    if (!type) {
-      systemDevelopmentWarning(
-        `ResourcePageTemplate: skipping section at index ${index} because type is invalid.`
-      );
-      return null;
-    }
-
-    if (!validateRenderableResourceSection(section as ResourcePageTemplateSection)) {
-      systemDevelopmentWarning(
-        `ResourcePageTemplate: skipping ${type} section at index ${index} because its shape is invalid.`
-      );
-      return null;
-    }
-
-    try {
-      return renderSection(section as ResourcePageTemplateSection, index);
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      systemDevelopmentWarning(
-        `ResourcePageTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`
-      );
-      return null;
+        throw new Error(
+          `ResourcePageTemplate does not support section type ${(section as ResourcePageTemplateSection).type}.`
+        );
     }
   }
 
@@ -583,7 +602,22 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               {/* Main Content Column */}
               <div className='resource-page__stack'>
                 {/* Render sections dynamically in the order they appear, excluding full-width sections */}
-                {mainSections.map((section, index) => safeRenderSection(section, index))}
+                {mainSections.map((section, index) => {
+                  if (!validateRenderableResourceSection(section)) {
+                    const type = getResourceSectionType(section);
+                    if (!type) {
+                      throw new Error(
+                        `ResourcePageTemplate requires a valid section type at index ${index}.`
+                      );
+                    }
+
+                    throw new Error(
+                      `ResourcePageTemplate requires a valid ${type} section shape at index ${index}.`
+                    );
+                  }
+
+                  return renderSection(section, index);
+                })}
               </div>
 
               {/* Sidebar (always on for canonical template to match the standard layout) */}

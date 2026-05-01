@@ -27,6 +27,7 @@ export function FeaturePrimaryCTASection({ heading, slug }: FeaturePrimaryCTASec
         {
           label: 'Get Started',
           href: buildContactHref({ system, sourceType: 'feature', slug }),
+          primary: true,
         },
       ]}
     />

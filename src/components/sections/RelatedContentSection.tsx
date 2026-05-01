@@ -16,14 +16,14 @@ export interface RelatedContentItem {
   summary?: string;
   href: string;
   description: string;
-  cta?: string;
+  cta: string;
 }
 
 export interface RelatedContentSectionProps {
   variant?: RelatedContentVariant;
   tone?: SectionTone;
   density?: SectionDensity;
-  heading?: SectionHeading;
+  heading: SectionHeading;
   /** Already-resolved candidates from the graph. UI does NOT fetch. */
   items: readonly RelatedContentItem[];
 }
@@ -42,7 +42,21 @@ export function RelatedContentSection({
   heading,
   items,
 }: RelatedContentSectionProps) {
-  if (items.length === 0) return null;
+  if (items.length === 0) {
+    throw new Error('RelatedContentSection requires groups or an explicit empty state.');
+  }
+
+  for (const item of items) {
+    if (
+      item.id.trim().length === 0 ||
+      item.title.trim().length === 0 ||
+      item.description.trim().length === 0 ||
+      item.cta.trim().length === 0 ||
+      item.href.trim().length === 0
+    ) {
+      throw new Error('[RelatedContentSection] Invalid data');
+    }
+  }
 
   return (
     <SectionShell
@@ -73,7 +87,7 @@ export function RelatedContentSection({
                   {item.summary ? <p className='related-content__summary'>{item.summary}</p> : null}
                 </div>
                 <span className='related-content__cta'>
-                  <span>{item.cta ?? 'Read more'}</span>
+                  <span>{item.cta}</span>
                   <ArrowRight size={14} aria-hidden='true' />
                 </span>
               </a>

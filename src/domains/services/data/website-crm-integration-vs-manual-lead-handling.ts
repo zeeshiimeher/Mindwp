@@ -84,13 +84,11 @@ export const websiteCrmIntegrationVsManualLeadHandlingPage = {
     faqSection: crmAutomationPage.sections.faqSection,
   },
   cta: {
-    title: 'See where manual lead handling is still breaking revenue control',
-    description:
-      'We will map the website, call, inbox, and follow-up handoffs that are still manual, then show what a connected CRM system would stabilise first.',
-  },
-  inlineCta: {
-    title: 'Map the CRM handoff gaps before more leads stall',
-    description:
-      'Identify where forms, calls, texts, and follow-up are still disconnected before more opportunities leak out of the pipeline.',
+    heading: {
+      title: 'See where manual lead handling is still breaking revenue control',
+      description:
+        'We will map the website, call, inbox, and follow-up handoffs that are still manual, then show what a connected CRM system would stabilise first.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies typeof crmAutomationPage;

@@ -58,6 +58,16 @@ export function SectionShell({
   children,
   ...rest
 }: SectionShellProps) {
+  if (heading) {
+    if (heading.title.trim().length === 0) {
+      throw new Error('SectionShell requires heading.title when heading is provided.');
+    }
+
+    if (heading.description.trim().length === 0) {
+      throw new Error('SectionShell requires heading.description when heading is provided.');
+    }
+  }
+
   const sectionClasses = [
     'rd-section',
     DENSITY_CLASS[density],
@@ -75,7 +85,7 @@ export function SectionShell({
     <div className={`rd-section-head ${ALIGN_CLASS[align]}`}>
       {heading.kicker ? <span className='rd-section-kicker'>{heading.kicker}</span> : null}
       <h2 className='rd-section-title'>{heading.title}</h2>
-      {heading.description ? <p className='rd-section-description'>{heading.description}</p> : null}
+      <p className='rd-section-description'>{heading.description}</p>
       {headingTrailing}
     </div>
   ) : null;

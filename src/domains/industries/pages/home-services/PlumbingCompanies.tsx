@@ -316,9 +316,12 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us about last Tuesday\u2019s 7pm call',
-      description:
-        'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
+      heading: {
+        title: 'Tell us about last Tuesday\u2019s 7pm call',
+        description:
+          'Walk us through the last after-hours leak or burst call that hit voicemail and we will tell you what to sort first.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

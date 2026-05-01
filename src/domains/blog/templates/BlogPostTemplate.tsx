@@ -241,6 +241,16 @@ export function getBlogRenderedSectionTypes(sections: BlogPostSection[]) {
   return sections.filter(validateRenderableBlogSection).map(section => section.type);
 }
 
+function getInvalidBlogSectionMessage(section: unknown, index: number) {
+  const type = getBlogSectionType(section);
+
+  if (!type) {
+    return `BlogPostTemplate requires a valid section type at index ${index}.`;
+  }
+
+  return `BlogPostTemplate requires a valid ${type} section shape at index ${index}.`;
+}
+
 export function BlogPostTemplate({
   pageId,
   title,
@@ -303,10 +313,10 @@ export function BlogPostTemplate({
     const segments =
       remainingInlineLinks > 0
         ? extractInternalLinks(text, {
-          excludePaths: [currentPath],
-          sourcePath: currentPath,
-          tracker: inlineLinkTracker,
-        })
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
         : [{ type: 'text' as const, value: text }];
 
     let linkedInParagraph = false;
@@ -340,42 +350,19 @@ export function BlogPostTemplate({
     );
   }
 
-  function safeRenderSection(section: unknown, index: number) {
-    const type = getBlogSectionType(section);
-    if (!type) {
-      systemDevelopmentWarning(
-        `BlogPostTemplate: skipping section at index ${index} because type is invalid.`
-      );
-      return null;
-    }
-
-    if (!validateRenderableBlogSection(section as BlogPostSection)) {
-      systemDevelopmentWarning(
-        `BlogPostTemplate: skipping ${type} section at index ${index} because its shape is invalid.`
-      );
-      return null;
-    }
-
-    try {
-      return renderSection(section as BlogPostSection, index);
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      systemDevelopmentWarning(
-        `BlogPostTemplate: skipping ${type} section at index ${index} because rendering failed: ${message}`
-      );
-      return null;
-    }
-  }
-
   // Function to render a section based on its type
   function renderSection(section: BlogPostSection, index: number) {
     switch (section.type) {
       case 'introduction':
-        return section.content && section.content.length > 0 ? (
+        if (!section.content || section.content.length === 0) {
+          throw new Error(`BlogPostTemplate requires introduction.content at index ${index}.`);
+        }
+
+        return (
           <div key={`introduction-${index}`} className='blog-post__intro'>
             {section.content.map((para, i) => renderLinkedParagraph(para, `intro-${i}`))}
           </div>
-        ) : null;
+        );
 
       case 'content':
         return (
@@ -435,49 +422,66 @@ export function BlogPostTemplate({
             key={`cta-${index}`}
             heading={{
               title: section.heading,
-              description: section.content
+              description: section.content,
             }}
             actions={[
               {
                 label: 'Get Started',
                 href: buildContactHref({ system: 'blog', sourceType: 'blog', slug: 'blog-footer' }),
+                primary: true,
               },
             ]}
           />
         );
 
       case 'takeaways':
-        return section.items && section.items.length > 0 ? (
+        if (!section.items || section.items.length === 0) {
+          throw new Error(`BlogPostTemplate requires takeaways.items at index ${index}.`);
+        }
+
+        return (
           <BlogTakeawaysSection
             key={`takeaways-${index}`}
             heading={section.heading}
             content={section.content}
             items={section.items}
           />
-        ) : null;
+        );
 
       case 'quote':
-        return section.quote ? (
+        if (!section.quote) {
+          throw new Error(`BlogPostTemplate requires quote.quote at index ${index}.`);
+        }
+
+        return (
           <BlogQuoteSection
             key={`quote-${index}`}
             heading={section.heading}
             quote={section.quote}
             attribution={section.attribution}
           />
-        ) : null;
+        );
 
       case 'steps':
-        return section.steps && section.steps.length > 0 ? (
+        if (!section.steps || section.steps.length === 0) {
+          throw new Error(`BlogPostTemplate requires steps.steps at index ${index}.`);
+        }
+
+        return (
           <BlogStepsSection
             key={`steps-${index}`}
             heading={section.heading}
             content={section.content}
             steps={section.steps}
           />
-        ) : null;
+        );
 
       case 'checklist':
-        return section.items && section.items.length > 0 ? (
+        if (!section.items || section.items.length === 0) {
+          throw new Error(`BlogPostTemplate requires checklist.items at index ${index}.`);
+        }
+
+        return (
           <BlogChecklistSection
             key={`checklist-${index}`}
             heading={section.heading}
@@ -485,10 +489,14 @@ export function BlogPostTemplate({
             items={section.items}
             columns={section.columns}
           />
-        ) : null;
+        );
 
       case 'image':
-        return section.src && section.alt ? (
+        if (!section.src || !section.alt) {
+          throw new Error(`BlogPostTemplate requires image.src and image.alt at index ${index}.`);
+        }
+
+        return (
           <BlogImageSection
             key={`image-${index}`}
             heading={section.heading}
@@ -496,10 +504,14 @@ export function BlogPostTemplate({
             alt={section.alt}
             caption={section.caption}
           />
-        ) : null;
+        );
 
       case 'faq':
-        return section.items && section.items.length > 0 ? (
+        if (!section.items || section.items.length === 0) {
+          throw new Error(`BlogPostTemplate requires faq.items at index ${index}.`);
+        }
+
+        return (
           <FAQSection
             key={`faq-${index}`}
             title='Frequently Asked Questions'
@@ -507,10 +519,12 @@ export function BlogPostTemplate({
             cssPrefix='blog-post__faq'
             variant='compact'
           />
-        ) : null;
+        );
 
       default:
-        return null;
+        throw new Error(
+          `BlogPostTemplate does not support section type ${(section as BlogPostSection).type}.`
+        );
     }
   }
   const categoryMeta = getCategoryMetadata(category);
@@ -527,12 +541,12 @@ export function BlogPostTemplate({
             className='blog-hero'
             {...(featuredImage
               ? {
-                style: {
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                },
-              }
+                  style: {
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  },
+                }
               : {})}
           >
             <div className='l-stack l-stack--loose blog-post__hero'>
@@ -587,7 +601,13 @@ export function BlogPostTemplate({
               {/* Main Content Column */}
               <div className='blog-post__stack'>
                 {/* Render sections dynamically */}
-                {articleSections.map((section, index) => safeRenderSection(section, index))}
+                {articleSections.map((section, index) => {
+                  if (!validateRenderableBlogSection(section)) {
+                    throw new Error(getInvalidBlogSectionMessage(section, index));
+                  }
+
+                  return renderSection(section, index);
+                })}
 
                 {tags.length > 0 && (
                   <div className='blog-post__tags'>

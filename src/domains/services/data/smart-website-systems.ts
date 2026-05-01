@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 
 import { buildServiceSeo } from '../seo';
-import { normalizeCTA } from './normalizeCTA';
 import type { ServicePageData } from '../types';
 
 const smartWebsitesFaqItems = [
@@ -466,11 +465,13 @@ export const smartWebsiteSystemsPage = {
       items: smartWebsitesFaqItems,
     },
   },
-  cta: normalizeCTA({
-    kicker: 'Final step',
-    title: "Show me what's broken",
-    description:
-      "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
-    ctaList: ['No commitment', '20-minute call', 'plain-English next steps'],
-  }),
+  cta: {
+    heading: {
+      kicker: 'Final step',
+      title: "Show me what's broken",
+      description:
+        "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+  },
 } satisfies ServicePageData;

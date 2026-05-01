@@ -67,28 +67,31 @@ describe('system simulation: CTA lock', () => {
         expect(action.href.startsWith('/contact')).toBe(true);
     });
 
-    test('PrimaryCTASection contains the locked secondary CTA gate and no legacy resolver', () => {
+    test('PrimaryCTASection contains the strict single-CTA guard and no secondary CTA logic', () => {
         const source = fs.readFileSync(primaryCtaSectionPath, 'utf8');
 
         expect(source.includes('resolveCtaLabel(')).toBe(false);
         expect(source.includes('return null')).toBe(false);
-        expect(source.includes('getSecondaryCTA(allowSecondaryCTA)')).toBe(true);
+        expect(source.includes('allowSecondaryCTA')).toBe(false);
+        expect(source.includes("data-testid='smart-cta'"))
+            .toBe(true);
     });
 
     test('validator rejects PrimaryCTASection usages missing required content props', () => {
         const issues = scanPrimaryCtaUsageFile(
             'fixture.tsx',
-            `<PrimaryCTASection description='Missing title' />\n<PrimaryCTASection title='Missing description' />`
+            `<PrimaryCTASection actions={[{ label: 'Go', href: '/contact', primary: true }]} />\n<PrimaryCTASection heading={{ title: 'Missing description' }} actions={[{ label: 'Go', href: '/contact', primary: true }]} />\n<PrimaryCTASection heading={{ title: 'Missing actions', description: 'Body copy' }} />`
         );
 
         expect(issues.some(issue => issue.code === 'missing_cta_title')).toBe(true);
         expect(issues.some(issue => issue.code === 'missing_cta_description')).toBe(true);
+        expect(issues.some(issue => issue.code === 'missing_cta_actions')).toBe(true);
     });
 
     test('validator rejects more than one full CTA block in a file', () => {
         const issues = scanPrimaryCtaUsageFile(
             'src/screens/fixture.tsx',
-            `<PrimaryCTASection title='One' description='First' />\n<PrimaryCTASection title='Two' description='Second' />`
+            `<PrimaryCTASection heading={{ title: 'One', description: 'First' }} actions={[{ label: 'Go', href: '/contact', primary: true }]} />\n<PrimaryCTASection heading={{ title: 'Two', description: 'Second' }} actions={[{ label: 'Go', href: '/contact', primary: true }]} />`
         );
 
         expect(issues.some(issue => issue.code === 'invalid_primary_cta_count')).toBe(true);
@@ -97,7 +100,7 @@ describe('system simulation: CTA lock', () => {
     test('validator rejects actions-only mode on PrimaryCTASection', () => {
         const issues = scanPrimaryCtaUsageFile(
             'src/screens/fixture.tsx',
-            `<PrimaryCTASection title='One' description='First' mode='actions-only' />`
+            `<PrimaryCTASection heading={{ title: 'One', description: 'First' }} actions={[{ label: 'Go', href: '/contact', primary: true }]} mode='actions-only' />`
         );
 
         expect(issues.some(issue => issue.code === 'primary_cta_section_cannot_be_actions_only')).toBe(true);
@@ -121,8 +124,6 @@ describe('system simulation: CTA lock', () => {
         );
 
         expect(issues.some(issue => issue.code === 'missing_required_cta_guard')).toBe(true);
-        expect(issues.some(issue => issue.code === 'secondary_cta_flag_not_explicit')).toBe(true);
-        expect(issues.some(issue => issue.code === 'missing_secondary_guard')).toBe(true);
         expect(issues.some(issue => issue.code === 'missing_approved_label')).toBe(true);
     });
 });

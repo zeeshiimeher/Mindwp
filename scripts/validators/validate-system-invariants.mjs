@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import { collectSystemInvariantFindings } from '../../src/lib/system/invariants';
 

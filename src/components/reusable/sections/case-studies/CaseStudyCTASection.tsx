@@ -16,7 +16,9 @@ export interface CaseStudyPrimaryCTASectionProps {
 
 export function CaseStudyPrimaryCTASection({ heading, slug }: CaseStudyPrimaryCTASectionProps) {
   if (!heading.title || !heading.description) {
-    throw new Error('CaseStudyPrimaryCTASection: heading.title and heading.description are required');
+    throw new Error(
+      'CaseStudyPrimaryCTASection: heading.title and heading.description are required'
+    );
   }
   const caseStudy = CASE_STUDY_REGISTRY[slug];
   const system = caseStudy?.systems?.[0] ?? 'smart-website-systems';
@@ -27,6 +29,7 @@ export function CaseStudyPrimaryCTASection({ heading, slug }: CaseStudyPrimaryCT
         {
           label: 'Get Started',
           href: buildContactHref({ system, sourceType: 'case-study', slug }),
+          primary: true,
         },
       ]}
     />

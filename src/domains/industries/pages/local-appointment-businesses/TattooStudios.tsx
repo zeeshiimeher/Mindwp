@@ -254,9 +254,12 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the conversation goes quiet',
-      description:
-        'If DMs come in fine but slow replies or the deposit step keep cooling the booking off, walk us through how a typical enquiry runs and we will show you the first thing worth fixing.',
+      heading: {
+        title: 'Tell us where the conversation goes quiet',
+        description:
+          'If DMs come in fine but slow replies or the deposit step keep cooling the booking off, walk us through how a typical enquiry runs and we will show you the first thing worth fixing.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

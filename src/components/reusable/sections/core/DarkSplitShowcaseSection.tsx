@@ -11,7 +11,6 @@ interface DarkShowcasePanel {
   description: string;
   checklist: string[];
   primaryAction?: ButtonProps;
-  secondaryAction?: ButtonProps;
 }
 
 export interface DarkSplitShowcaseSectionProps {
@@ -19,12 +18,9 @@ export interface DarkSplitShowcaseSectionProps {
   title: string;
   description?: string;
   headerPrimaryAction?: ButtonProps;
-  headerSecondaryAction?: ButtonProps;
-  allowSecondaryCTA?: true;
   introHeading: string;
   introDescription: string;
   primaryAction?: ButtonProps;
-  secondaryAction?: ButtonProps;
   panels: [DarkShowcasePanel, DarkShowcasePanel];
   cssPrefix?: string;
 }
@@ -34,12 +30,9 @@ export function DarkSplitShowcaseSection({
   title,
   description,
   headerPrimaryAction,
-  headerSecondaryAction,
-  allowSecondaryCTA,
   introHeading,
   introDescription,
   primaryAction,
-  secondaryAction,
   panels,
   cssPrefix = '',
 }: DarkSplitShowcaseSectionProps) {
@@ -50,8 +43,6 @@ export function DarkSplitShowcaseSection({
         title={title}
         {...(description !== undefined && { description })}
         {...(headerPrimaryAction !== undefined && { primaryAction: headerPrimaryAction })}
-        {...(headerSecondaryAction !== undefined && { secondaryAction: headerSecondaryAction })}
-        allowSecondaryCTA={allowSecondaryCTA}
         className={`${BLOCK}__header`}
       />
 
@@ -60,12 +51,9 @@ export function DarkSplitShowcaseSection({
           <h3 className={`${BLOCK}__intro-title`}>{introHeading}</h3>
           <p className={`${BLOCK}__intro-description`}>{introDescription}</p>
         </div>
-        {(primaryAction || secondaryAction) && (
+        {primaryAction && (
           <div className={`${BLOCK}__intro-actions`}>
             {primaryAction && <Button variant='white' {...primaryAction} />}
-            {allowSecondaryCTA === true && secondaryAction && (
-              <Button variant='outline-light' {...secondaryAction} />
-            )}
           </div>
         )}
       </div>
@@ -86,12 +74,9 @@ export function DarkSplitShowcaseSection({
               ))}
             </ul>
 
-            {(panel.primaryAction || panel.secondaryAction) && (
+            {panel.primaryAction && (
               <div className={`${BLOCK}__panel-actions`}>
                 {panel.primaryAction && <Button variant='white' {...panel.primaryAction} />}
-                {allowSecondaryCTA === true && panel.secondaryAction && (
-                  <Button variant='outline-light' {...panel.secondaryAction} />
-                )}
               </div>
             )}
           </Card>

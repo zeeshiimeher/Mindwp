@@ -24,7 +24,7 @@ export function MissedCallRecoverySystemRenderer({
   data,
   slug: _slug,
 }: MissedCallRecoverySystemRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     signalSection,
@@ -37,15 +37,6 @@ export function MissedCallRecoverySystemRenderer({
     comparison,
     proof,
   } = sections;
-  if (!inlineCta) {
-    throw new Error('MissedCallRecoverySystemRenderer requires inlineCta content.');
-  }
-
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
-  const inlineCtaTitle = inlineCta.title;
-  const inlineCtaDescription = inlineCta.description;
-
   return (
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
@@ -151,11 +142,6 @@ export function MissedCallRecoverySystemRenderer({
             title={processSection.title}
             description={processSection.description}
             steps={processSection.steps}
-            cta={{
-              title: inlineCtaTitle,
-              description: inlineCtaDescription,
-              primaryActionVariant: 'primary',
-            }}
             columns={4}
             cssPrefix='missed-call-recovery-process'
             backgroundColor='bg-alt'
@@ -192,11 +178,7 @@ export function MissedCallRecoverySystemRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

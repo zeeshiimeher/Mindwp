@@ -32,8 +32,12 @@ type TitleDescriptionItem = {
 };
 
 type SectionCta = {
-  title: string;
-  description: string;
+  heading: {
+    title: string;
+    description: string;
+    kicker?: string;
+  };
+  actions: [{ label: string; href: string; primary: true }];
 };
 
 type VisualStat = {
@@ -198,9 +202,12 @@ export type HomepageData = {
 
   cta: {
     footer: {
-      title: string;
-      description: string;
-      metaItems: Array<{ text: string }>;
+      heading: {
+        title: string;
+        description: string;
+        kicker?: string;
+      };
+      actions: [{ label: string; href: string; primary: true }];
     };
   };
 };
@@ -313,9 +320,12 @@ export const homepageData: HomepageData = {
     ],
     journeyNote: "These aren't separate problems. They're connected.",
     cta: {
-      title: 'Something here feel familiar?',
-      description:
-        "Tell us what keeps slipping: calls, enquiries, follow-up, visibility, or proof. We'll map the first breakpoints and show what needs fixing first.",
+      heading: {
+        title: 'Something here feel familiar?',
+        description:
+          "Tell us what keeps slipping: calls, enquiries, follow-up, visibility, or proof. We'll map the first breakpoints and show what needs fixing first.",
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   },
   implementationSection: {
@@ -396,9 +406,12 @@ export const homepageData: HomepageData = {
       },
     ],
     cta: {
-      title: 'Where are your enquiries dropping?',
-      description:
-        'Walk us through how leads arrive, where they stall, and what the team is juggling now. You will leave with a clearer picture of the gaps before any build starts.',
+      heading: {
+        title: 'Where are your enquiries dropping?',
+        description:
+          'Walk us through how leads arrive, where they stall, and what the team is juggling now. You will leave with a clearer picture of the gaps before any build starts.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   },
   systemCapabilities: {
@@ -778,13 +791,21 @@ export const homepageData: HomepageData = {
   },
   cta: {
     footer: {
-      title: "Something here hit close. Find where it's breaking.",
-      description:
-        'We can map what needs building first, whether you are fixing years of patchwork or setting the foundation properly from day one. Calls, follow-up, visibility, and proof all get reviewed together.',
-      metaItems: [
-        { text: 'Free diagnostic' },
-        { text: 'No commitment' },
-        { text: 'Honest assessment' },
+      heading: {
+        title: "Something here hit close. Find where it's breaking.",
+        description:
+          'We can map what needs building first, whether you are fixing years of patchwork or setting the foundation properly from day one. Calls, follow-up, visibility, and proof all get reviewed together.',
+      },
+      actions: [
+        {
+          label: 'Get Started',
+          href: buildContactHref({
+            system: 'homepage',
+            sourceType: 'page',
+            slug: 'homepage-footer',
+          }),
+          primary: true,
+        },
       ],
     },
   },

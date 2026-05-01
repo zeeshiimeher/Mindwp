@@ -275,6 +275,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         description:
           'Walk us through the messages that landed Saturday and never turned into a slot. We will tell you which gap to close first.',
       },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

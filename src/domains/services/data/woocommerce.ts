@@ -185,8 +185,11 @@ export const woocommercePage = {
     },
   },
   cta: {
-    title: "Store live but sales aren't happening?",
-    description:
-      "Tell us what's not converting. We'll show you whether it's the store, the checkout, or what's missing around it.",
+    heading: {
+      title: "Store live but sales aren't happening?",
+      description:
+        "Tell us what's not converting. We'll show you whether it's the store, the checkout, or what's missing around it.",
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

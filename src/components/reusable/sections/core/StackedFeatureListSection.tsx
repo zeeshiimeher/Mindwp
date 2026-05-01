@@ -23,8 +23,6 @@ export interface StackedFeatureListSectionProps {
   narrativeTitle: string;
   narrativeParagraphs: string[];
   primaryAction?: ButtonProps;
-  secondaryAction?: ButtonProps;
-  allowSecondaryCTA?: true;
   variant?: 'icon' | 'media';
   backgroundColor?: string;
   cssPrefix?: string;
@@ -44,8 +42,6 @@ export function StackedFeatureListSection({
   narrativeTitle,
   narrativeParagraphs,
   primaryAction,
-  secondaryAction,
-  allowSecondaryCTA,
   variant = 'icon',
   backgroundColor = '',
   cssPrefix = '',
@@ -96,12 +92,9 @@ export function StackedFeatureListSection({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            {(primaryAction || secondaryAction) && (
+            {primaryAction && (
               <div className={`${BLOCK}__actions`}>
                 {primaryAction && <Button variant='primary' {...primaryAction} />}
-                {allowSecondaryCTA === true && secondaryAction && (
-                  <Button variant='link' {...secondaryAction} />
-                )}
               </div>
             )}
           </div>
@@ -116,12 +109,9 @@ export function StackedFeatureListSection({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            {(primaryAction || secondaryAction) && (
+            {primaryAction && (
               <div className={`${BLOCK}__actions`}>
                 {primaryAction && <Button variant='primary' {...primaryAction} />}
-                {allowSecondaryCTA === true && secondaryAction && (
-                  <Button variant='link' {...secondaryAction} />
-                )}
               </div>
             )}
           </div>

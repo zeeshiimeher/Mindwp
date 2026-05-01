@@ -263,6 +263,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
         description:
           'Walk us through a normal week at the shop. We will tell you the one leak worth fixing first and what it would take to plug it.',
       },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

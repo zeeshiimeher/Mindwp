@@ -408,14 +408,12 @@ export const unifiedCommunicationSystemPage = {
       cssPrefix: 'unified-communication-faq',
     },
   },
-  inlineCta: {
-    title: 'Which channel is dropping your live conversations?',
-    description:
-      'Fifteen minutes. Map your channels, see where context breaks, and identify where routing needs to change first.',
-  },
   cta: {
-    title: 'Find out where conversations are falling apart',
-    description:
-      'Quick list of how enquiries come in. Where the gaps are. What fixing the routing looks like.',
+    heading: {
+      title: 'Find out where conversations are falling apart',
+      description:
+        'Quick list of how enquiries come in. Where the gaps are. What fixing the routing looks like.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

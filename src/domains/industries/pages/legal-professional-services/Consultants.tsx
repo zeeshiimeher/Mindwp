@@ -261,9 +261,12 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the conversations stall',
-      description:
-        'If discovery calls go well but the prospect stops responding afterwards, walk us through the last few that went quiet and we will show you whether the offer, next step, or follow-up is where it is breaking down.',
+      heading: {
+        title: 'Tell us where the conversations stall',
+        description:
+          'If discovery calls go well but the prospect stops responding afterwards, walk us through the last few that went quiet and we will show you whether the offer, next step, or follow-up is where it is breaking down.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

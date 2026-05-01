@@ -338,6 +338,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         description:
           'If enquiries are acknowledged late, proposals sit untouched, or prospects quietly stop replying after a good first conversation, walk us through the last few that went quiet. We will show you where the leak actually sits.',
       },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

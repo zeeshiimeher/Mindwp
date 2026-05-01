@@ -259,9 +259,12 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the cycle is breaking',
-      description:
-        'If clients are slipping at week three or four, or a missed refill keeps turning into a lost regular, walk us through your last month and we will show you where the cycle is actually breaking.',
+      heading: {
+        title: 'Tell us where the cycle is breaking',
+        description:
+          'If clients are slipping at week three or four, or a missed refill keeps turning into a lost regular, walk us through your last month and we will show you where the cycle is actually breaking.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

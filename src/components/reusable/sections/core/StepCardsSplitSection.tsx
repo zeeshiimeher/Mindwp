@@ -16,7 +16,6 @@ export interface StepCardsSplitSectionProps {
   title: string;
   description?: string;
   primaryAction?: ButtonProps;
-  secondaryAction?: ButtonProps;
   steps: StepCardsSplitItem[];
   backgroundColor?: string;
   cssPrefix?: string;
@@ -27,7 +26,6 @@ export function StepCardsSplitSection({
   title,
   description,
   primaryAction,
-  secondaryAction,
   steps,
   backgroundColor = '',
   cssPrefix = '',
@@ -40,7 +38,6 @@ export function StepCardsSplitSection({
           title={title}
           {...(description !== undefined && { description })}
           {...(primaryAction !== undefined && { primaryAction })}
-          {...(secondaryAction !== undefined && { secondaryAction })}
           className={`${BLOCK}__header`}
         />
 

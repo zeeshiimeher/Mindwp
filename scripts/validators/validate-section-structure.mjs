@@ -3,8 +3,8 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
-import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
+import { CASE_STUDY_REGISTRY } from '../../src/domains/case-studies/registry.ts';
+import { RESOURCE_REGISTRY } from '../../src/domains/resources/registry.ts';
 import { resolveContentRules } from '../../src/lib/config/contentRules';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';

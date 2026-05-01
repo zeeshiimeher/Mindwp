@@ -25,12 +25,13 @@ export function BlogFooterCTA({
       <PrimaryCTASection
         heading={{
           title,
-          description
+          description,
         }}
         actions={[
           {
             label: 'Get Started',
             href: buildContactHref({ system: _system, sourceType: 'blog', slug: _slug }),
+            primary: true,
           },
         ]}
       />

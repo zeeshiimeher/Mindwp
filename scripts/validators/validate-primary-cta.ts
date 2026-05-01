@@ -76,11 +76,48 @@ function extractCtaBlocks(source: string) {
 }
 
 function hasHeadingTitle(snippet: string) {
-  return /heading\s*=\s*\{[\s\S]*?title\s*:/.test(snippet);
+  const inlineHeading = getInlineHeadingExpression(snippet);
+  return inlineHeading ? /\btitle\s*:|\btitle\b(?=\s*[},])/.test(inlineHeading) : false;
 }
 
 function hasHeadingDescription(snippet: string) {
-  return /heading\s*=\s*\{[\s\S]*?description\s*:/.test(snippet);
+  const inlineHeading = getInlineHeadingExpression(snippet);
+  return inlineHeading
+    ? /\bdescription\s*:|\bdescription\b(?=\s*[},])/.test(inlineHeading)
+    : false;
+}
+
+function hasHeadingProp(snippet: string) {
+  return /\bheading\s*=/.test(snippet);
+}
+
+function hasInlineHeadingObject(snippet: string) {
+  return /heading\s*=\s*\{\s*\{/.test(snippet);
+}
+
+function getInlineHeadingExpression(snippet: string) {
+  const match = snippet.match(/heading\s*=\s*\{\s*(\{[\s\S]*?\})\s*\}/);
+  return match?.[1];
+}
+
+function extractBalancedObject(source: string, openBraceIndex: number) {
+  let depth = 0;
+
+  for (let index = openBraceIndex; index < source.length; index += 1) {
+    const char = source[index];
+
+    if (char === '{') {
+      depth += 1;
+    } else if (char === '}') {
+      depth -= 1;
+
+      if (depth === 0) {
+        return source.slice(openBraceIndex, index + 1);
+      }
+    }
+  }
+
+  return source.slice(openBraceIndex);
 }
 
 function getInlineActionsExpression(snippet: string) {
@@ -96,7 +133,7 @@ function hasExplicitMultipleInlineActions(snippet: string) {
   }
 
   const primaryMatches = expression.match(/primary\s*:\s*true/g) ?? [];
-  return primaryMatches.length !== 1;
+  return primaryMatches.length > 1;
 }
 
 function hasInlinePrimaryMarker(snippet: string) {
@@ -151,22 +188,31 @@ export function scanPrimaryCtaUsageFile(relativePath: string, source: string): I
 
     // Only enforce heading/actions/legacy prop checks for PrimaryCTASection
     if (/PrimaryCTASection/.test(snippet)) {
-      if (!usesSpread && !hasHeadingTitle(snippet)) {
+      if (!usesSpread && !hasHeadingProp(snippet)) {
         issues.push({
           severity: 'error',
           code: 'missing_cta_title',
           file: relativePath,
           line,
-          message: 'Every PrimaryCTASection usage must provide heading.title.',
+          message: 'Every PrimaryCTASection usage must provide heading.',
         });
       }
-      if (!usesSpread && !hasHeadingDescription(snippet)) {
+      if (!usesSpread && hasInlineHeadingObject(snippet) && !hasHeadingTitle(snippet)) {
+        issues.push({
+          severity: 'error',
+          code: 'missing_cta_title',
+          file: relativePath,
+          line,
+          message: 'Every inline PrimaryCTASection heading must provide title.',
+        });
+      }
+      if (!usesSpread && hasInlineHeadingObject(snippet) && !hasHeadingDescription(snippet)) {
         issues.push({
           severity: 'error',
           code: 'missing_cta_description',
           file: relativePath,
           line,
-          message: 'Every PrimaryCTASection usage must provide heading.description.',
+          message: 'Every inline PrimaryCTASection heading must provide description.',
         });
       }
       if (!usesSpread && !/\bactions\s*=/.test(snippet)) {
@@ -264,10 +310,13 @@ export function scanDataFile(relativePath: string, source: string): Issue[] {
     }
   }
 
-  const ctaBlocks = [...source.matchAll(/\bcta\s*:\s*\{[\s\S]*?\n\s*\}/g)];
+  const ctaBlocks = [...source.matchAll(/\bcta\s*:\s*\{/g)];
 
   for (const block of ctaBlocks) {
-    const snippet = block[0];
+    const blockIndex = block.index ?? 0;
+    const openBraceIndex = source.indexOf('{', blockIndex);
+    const snippet =
+      openBraceIndex >= 0 ? extractBalancedObject(source, openBraceIndex) : source.slice(blockIndex);
     const line = lineOfIndex(source, block.index ?? 0);
     if (!/\bheading\s*:/.test(snippet) || !/title\s*:/.test(snippet)) {
       issues.push({
@@ -294,6 +343,16 @@ export function scanDataFile(relativePath: string, source: string): Issue[] {
         file: relativePath,
         line,
         message: 'CTA data blocks must include exactly one primary action.',
+      });
+    }
+    const primaryMatches = snippet.match(/primary\s*:\s*true/g) ?? [];
+    if (primaryMatches.length > 1) {
+      issues.push({
+        severity: 'error',
+        code: 'invalid_cta_data_shape',
+        file: relativePath,
+        line,
+        message: 'CTA data blocks must not define multiple primary actions.',
       });
     }
   }

@@ -1,5 +1,6 @@
 import { buildServiceSeo } from '../seo';
-import { normalizeCTA } from './normalizeCTA';
+import type { ServicePageData } from '../types';
+
 import { smartWebsiteSystemsPage } from './smart-website-systems';
 
 const slug = 'service-pages-vs-one-generic-services-page';
@@ -89,9 +90,12 @@ export const servicePagesVsOneGenericServicesPage = {
     },
     faq: smartWebsiteSystemsPage.sections.faq,
   },
-  cta: normalizeCTA({
-    title: 'See which service pages carry the highest commercial risk first',
-    description:
-      'We will map the services currently buried on one generic page, show which ones need their own search and conversion path, and scope the rebuild around that priority.',
-  }),
-} satisfies typeof smartWebsiteSystemsPage;
+  cta: {
+    heading: {
+      title: 'See which service pages carry the highest commercial risk first',
+      description:
+        'We will map the services currently buried on one generic page, show which ones need their own search and conversion path, and scope the rebuild around that priority.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+  },
+} satisfies ServicePageData;

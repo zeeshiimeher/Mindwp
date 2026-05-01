@@ -476,14 +476,12 @@ export const aiLeadHandlingPage = {
       ],
     },
   },
-  inlineCta: {
-    title: 'How slow is your first reply?',
-    description:
-      'Look at how calls, chat, and bookings are handled now. See where speed is costing you.',
-  },
   cta: {
-    title: 'Find out where speed is killing your pipeline',
-    description:
-      'How enquiries come in. How long they wait. Where faster response would change things.',
+    heading: {
+      title: 'Find out where speed is killing your pipeline',
+      description:
+        'How enquiries come in. How long they wait. Where faster response would change things.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;

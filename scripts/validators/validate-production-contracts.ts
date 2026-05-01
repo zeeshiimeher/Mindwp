@@ -4,12 +4,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
 
-import { FEATURE_REGISTRY } from '@/domains/features/registry';
+import { FEATURE_REGISTRY } from '../../src/domains/features/registry.ts';
 import {
   ensureGraphInitialized,
   getInitializedContentGraph,
-} from '@/domains/init/ensureGraphInitialized';
-import { SERVICE_REGISTRY } from '@/domains/services/registry';
+} from '../../src/domains/init/ensureGraphInitialized.ts';
+import { SERVICE_REGISTRY } from '../../src/domains/services/registry.ts';
 import { createCTARegistry, getCTARegistrySnapshot } from '../../src/lib/cta/ctaRegistry';
 
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';

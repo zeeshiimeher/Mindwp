@@ -252,9 +252,12 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where patients are hesitating',
-      description:
-        'If enquiries come in but the booking keeps getting delayed or quietly disappears, walk us through the patient journey and we will show you where the trust gap actually is.',
+      heading: {
+        title: 'Tell us where patients are hesitating',
+        description:
+          'If enquiries come in but the booking keeps getting delayed or quietly disappears, walk us through the patient journey and we will show you where the trust gap actually is.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

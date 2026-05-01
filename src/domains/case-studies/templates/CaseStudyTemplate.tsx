@@ -29,110 +29,110 @@ import type { CaseStudyMetadata } from './types';
 
 export type CaseStudyTemplateSection =
   | {
-    type: 'hero';
-    introHtml: React.ReactNode;
-  }
+      type: 'hero';
+      introHtml: React.ReactNode;
+    }
   | {
-    type: 'metrics';
-    keyMetrics: Array<{ value: string; label: string; color?: string }>;
-  }
+      type: 'metrics';
+      keyMetrics: Array<{ value: string; label: string; color?: string }>;
+    }
   | {
-    type: 'problem';
-    problemHeading?: string;
-    problemDescription?: string[];
-    painPoints?: string[];
-  }
+      type: 'problem';
+      problemHeading?: string;
+      problemDescription?: string[];
+      painPoints?: string[];
+    }
   | {
-    type: 'solution';
-    solutionHeading?: string;
-    solutionDescription?: string;
-    whatWeDid?: {
+      type: 'solution';
+      solutionHeading?: string;
+      solutionDescription?: string;
+      whatWeDid?: {
+        title: string;
+        description: string;
+        icon: string;
+      }[];
+    }
+  | {
+      type: 'process';
+      howWeDidIt?: {
+        phase: string;
+        title: string;
+        description: string;
+        duration: string;
+      }[];
+    }
+  | {
+      type: 'features';
+      featuresUsed?: {
+        category: string;
+        features: string[];
+      }[];
+    }
+  | {
+      type: 'results';
+      results: {
+        metric?: string;
+        before?: string;
+        after?: string;
+        improvement?: string;
+        title?: string;
+        description: string;
+      }[];
+    }
+  | {
+      type: 'testimonial';
+      testimonial?: {
+        quote: string;
+        author: string;
+        role: string;
+      };
+    }
+  | {
+      type: 'investment';
+      investment?: {
+        setup: string;
+        monthly: string;
+        roi?: string;
+      };
+    }
+  | {
+      type: 'business-impact';
+      badge?: string;
       title: string;
-      description: string;
-      icon: string;
-    }[];
-  }
+      description?: string;
+      impacts: string[];
+    }
   | {
-    type: 'process';
-    howWeDidIt?: {
-      phase: string;
+      type: 'deliverables';
+      badge?: string;
       title: string;
-      description: string;
-      duration: string;
-    }[];
-  }
+      description?: string;
+      items: string[];
+      columns?: 2 | 3 | 4;
+    }
   | {
-    type: 'features';
-    featuresUsed?: {
-      category: string;
-      features: string[];
-    }[];
-  }
+      type: 'workflows';
+      badge?: string;
+      title: string;
+      description?: string;
+      workflows: Array<{ trigger: string; actions: string[] }>;
+    }
   | {
-    type: 'results';
-    results: {
-      metric?: string;
-      before?: string;
-      after?: string;
-      improvement?: string;
+      type: 'faq';
+      badge?: string;
       title?: string;
-      description: string;
-    }[];
-  }
+      description?: string;
+      items: Array<{ question: string; answer: string }>;
+    }
   | {
-    type: 'testimonial';
-    testimonial?: {
-      quote: string;
-      author: string;
-      role: string;
+      type: 'more';
+    }
+  | {
+      type: 'cta';
+      heading: string;
+      body: string;
+      metaItems?: { text: string }[];
     };
-  }
-  | {
-    type: 'investment';
-    investment?: {
-      setup: string;
-      monthly: string;
-      roi?: string;
-    };
-  }
-  | {
-    type: 'business-impact';
-    badge?: string;
-    title: string;
-    description?: string;
-    impacts: string[];
-  }
-  | {
-    type: 'deliverables';
-    badge?: string;
-    title: string;
-    description?: string;
-    items: string[];
-    columns?: 2 | 3 | 4;
-  }
-  | {
-    type: 'workflows';
-    badge?: string;
-    title: string;
-    description?: string;
-    workflows: Array<{ trigger: string; actions: string[] }>;
-  }
-  | {
-    type: 'faq';
-    badge?: string;
-    title?: string;
-    description?: string;
-    items: Array<{ question: string; answer: string }>;
-  }
-  | {
-    type: 'more';
-  }
-  | {
-    type: 'cta';
-    heading: string;
-    body: string;
-    metaItems?: { text: string }[];
-  };
 
 const nonDuplicateSectionTypes = new Set([
   'hero',
@@ -167,10 +167,6 @@ const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']
   'more',
   'cta',
 ]);
-
-function warnCaseStudyTemplate(message: string) {
-  systemDevelopmentWarning(`CaseStudyTemplate: ${message}`);
-}
 
 function getSectionType(section: unknown) {
   if (!section || typeof section !== 'object' || !('type' in section)) {
@@ -237,30 +233,25 @@ function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
     }
   }
 
-  if (missing.length > 0 && env.NODE_ENV === 'development') {
-    systemDevelopmentWarning(`CaseStudyTemplate: Missing required sections: ${missing.join(', ')}`);
-  }
-
   return missing;
 }
 
-function warnForSectionQuality(sections: CaseStudyTemplateSection[]) {
+function validateSectionQuality(sections: CaseStudyTemplateSection[]) {
   const seen = new Set<string>();
 
   for (const section of sections) {
     const type = getSectionType(section);
     if (!type) {
-      warnCaseStudyTemplate('Encountered section without a valid type.');
-      continue;
+      throw new Error('CaseStudyTemplate requires every section to define a valid type.');
     }
 
     if (nonDuplicateSectionTypes.has(type) && seen.has(type)) {
-      warnCaseStudyTemplate(`Duplicate ${type} section encountered.`);
+      throw new Error(`CaseStudyTemplate does not allow duplicate ${type} sections.`);
     }
     seen.add(type);
 
     if (!validateRenderableSection(section)) {
-      warnCaseStudyTemplate(`Skipping invalid ${type} section shape.`);
+      throw new Error(`CaseStudyTemplate requires a valid ${type} section shape.`);
     }
   }
 }
@@ -358,7 +349,7 @@ export function CaseStudyTemplate({
   );
 
   const missingSections = validateRequiredSections(resolvedSections);
-  warnForSectionQuality(resolvedSections);
+  validateSectionQuality(resolvedSections);
 
   if (resolvedSections.length < 4 && env.NODE_ENV === 'development') {
     systemDevelopmentWarning(
@@ -366,36 +357,8 @@ export function CaseStudyTemplate({
     );
   }
 
-  if (missingSections.length > 0 && env.NODE_ENV === 'development') {
-    return (
-      <CTARegistryProvider
-        pageId={pageId}
-        pageType='case-study'
-        primarySystem={metadata.systems?.[0] ?? 'smart-website-systems'}
-      >
-        <div className='case-study-detail'>
-          <main className='l-section'>
-            <div className='l-container'>
-              <div className='resource-page__dev-error'>
-                <h2 className='resource-page__dev-error-title'>
-                  Case Study Template Configuration Error
-                </h2>
-                <p className='resource-page__dev-error-text'>
-                  This case study is missing required sections. Please add:
-                </p>
-                <ul className='resource-page__dev-error-list'>
-                  {missingSections.map(section => (
-                    <li key={section} className='capitalize'>
-                      {section.replace('-', ' ')} section
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </main>
-        </div>
-      </CTARegistryProvider>
-    );
+  if (missingSections.length > 0) {
+    throw new Error(`CaseStudyTemplate requires sections: ${missingSections.join(', ')}.`);
   }
 
   function renderSection(section: CaseStudyTemplateSection, index: number) {
@@ -456,7 +419,7 @@ export function CaseStudyTemplate({
 
       case 'problem':
         if (!section.problemHeading || !section.problemDescription || !section.painPoints) {
-          return null;
+          throw new Error(`CaseStudyTemplate requires problem content at index ${index}.`);
         }
 
         return (
@@ -471,7 +434,7 @@ export function CaseStudyTemplate({
 
       case 'solution':
         if (!section.solutionHeading || !section.solutionDescription || !section.whatWeDid) {
-          return null;
+          throw new Error(`CaseStudyTemplate requires solution content at index ${index}.`);
         }
 
         return (
@@ -486,7 +449,7 @@ export function CaseStudyTemplate({
 
       case 'process':
         if (!section.howWeDidIt) {
-          return null;
+          throw new Error(`CaseStudyTemplate requires process content at index ${index}.`);
         }
 
         return (
@@ -501,7 +464,7 @@ export function CaseStudyTemplate({
 
       case 'features':
         if (!section.featuresUsed) {
-          return null;
+          throw new Error(`CaseStudyTemplate requires features content at index ${index}.`);
         }
 
         return (
@@ -526,7 +489,7 @@ export function CaseStudyTemplate({
 
       case 'testimonial':
         if (!section.testimonial) {
-          return null;
+          throw new Error(`CaseStudyTemplate requires testimonial content at index ${index}.`);
         }
 
         return (
@@ -548,7 +511,7 @@ export function CaseStudyTemplate({
 
       case 'investment':
         if (!section.investment) {
-          return null;
+          throw new Error(`CaseStudyTemplate requires investment content at index ${index}.`);
         }
 
         return (
@@ -562,12 +525,18 @@ export function CaseStudyTemplate({
         );
 
       case 'business-impact':
+        if (!section.description) {
+          throw new Error(
+            `CaseStudyTemplate requires business-impact.description at index ${index}.`
+          );
+        }
+
         return (
           <CaseStudyBusinessImpactSection
             key={`business-impact-${index}`}
             {...(section.badge !== undefined && { badge: section.badge })}
             title={section.title}
-            description={section.description ?? ''}
+            description={section.description}
             impacts={section.impacts}
           />
         );
@@ -585,12 +554,16 @@ export function CaseStudyTemplate({
         );
 
       case 'workflows':
+        if (!section.description) {
+          throw new Error(`CaseStudyTemplate requires workflows.description at index ${index}.`);
+        }
+
         return (
           <CaseStudyWorkflowsSection
             key={`workflows-${index}`}
             {...(section.badge !== undefined && { badge: section.badge })}
             title={section.title}
-            description={section.description ?? ''}
+            description={section.description}
             workflows={section.workflows}
           />
         );
@@ -614,7 +587,7 @@ export function CaseStudyTemplate({
             key={`cta-${index}`}
             heading={{
               title: section.heading,
-              description: section.body
+              description: section.body,
             }}
             actions={[
               {
@@ -624,6 +597,7 @@ export function CaseStudyTemplate({
                   sourceType: 'case-study',
                   slug: 'case-study-footer',
                 }),
+                primary: true,
               },
             ]}
           />
@@ -640,32 +614,9 @@ export function CaseStudyTemplate({
         );
 
       default:
-        return null;
-    }
-  }
-
-  function safeRender(section: unknown, index: number) {
-    const type = getSectionType(section);
-    if (!type) {
-      warnCaseStudyTemplate(`Skipping section at index ${index} because it has no valid type.`);
-      return null;
-    }
-
-    if (!validateRenderableSection(section as CaseStudyTemplateSection)) {
-      warnCaseStudyTemplate(
-        `Skipping ${type} section at index ${index} because its shape is invalid.`
-      );
-      return null;
-    }
-
-    try {
-      return renderSection(section as CaseStudyTemplateSection, index);
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      warnCaseStudyTemplate(
-        `Skipping ${type} section at index ${index} because rendering failed: ${message}`
-      );
-      return null;
+        throw new Error(
+          `CaseStudyTemplate does not support section type ${(section as CaseStudyTemplateSection).type}.`
+        );
     }
   }
 
@@ -676,7 +627,7 @@ export function CaseStudyTemplate({
       primarySystem={metadata.systems?.[0] ?? 'smart-website-systems'}
     >
       <div className='case-study-detail'>
-        {resolvedSections.map((section, index) => safeRender(section, index))}
+        {resolvedSections.map((section, index) => renderSection(section, index))}
       </div>
     </CTARegistryProvider>
   );

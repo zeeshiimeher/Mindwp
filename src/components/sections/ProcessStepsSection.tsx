@@ -36,6 +36,20 @@ export function ProcessStepsSection({
   heading,
   steps,
 }: ProcessStepsSectionProps) {
+  if (steps.length === 0) {
+    throw new Error('[ProcessStepsSection] Invalid data');
+  }
+
+  for (const step of steps) {
+    if (
+      step.index.trim().length === 0 ||
+      step.title.trim().length === 0 ||
+      step.description.trim().length === 0
+    ) {
+      throw new Error('[ProcessStepsSection] Invalid data');
+    }
+  }
+
   return (
     <SectionShell
       tone={tone}

@@ -286,9 +286,12 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where worried clients are dropping off',
-      description:
-        'If people start making contact but do not complete it, or if first replies feel too cold for a serious legal decision, walk us through the journey and we will show you where the door is actually closing.',
+      heading: {
+        title: 'Tell us where worried clients are dropping off',
+        description:
+          'If people start making contact but do not complete it, or if first replies feel too cold for a serious legal decision, walk us through the journey and we will show you where the door is actually closing.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

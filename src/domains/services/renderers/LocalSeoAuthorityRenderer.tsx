@@ -48,11 +48,16 @@ const SCOPE_ICON_KEYS: readonly SectionIconKey[] = [
 
 const PROOF_ICON_KEYS: readonly SectionIconKey[] = ['minus', 'sparkles', 'check'];
 
+function requireHeadingDescription(description: string | undefined, section: string) {
+  if (!description || description.trim().length === 0) {
+    throw new Error(`[${section}] Invalid data`);
+  }
+
+  return description;
+}
+
 export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRendererProps) {
-  const { hero, sections, cta } = data;
-  const ctaKicker = 'kicker' in data.cta ? data.cta.kicker : undefined;
-  const ctaTitle = cta?.title;
-  const ctaDescription = cta?.description;
+  const { hero, sections } = data;
   const {
     misconceptions,
     why,
@@ -100,7 +105,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: misconceptions.badge,
               title: misconceptions.title,
-              description: misconceptions.description,
+              description: requireHeadingDescription(
+                misconceptions.description,
+                'misconceptions section'
+              ),
             }}
             items={misconceptions.painPoints.map((point, index) => ({
               id: `misconception-${index}`,
@@ -120,7 +128,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: why.badge,
               title: why.title,
-              description: why.description,
+              description: requireHeadingDescription(why.description, 'why section'),
             }}
             layers={why.features.map((feature, index) => ({
               key: `approach-${index}`,
@@ -138,14 +146,20 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           (() => {
             const before = comparison.items.find(item => item.type === 'before');
             const after = comparison.items.find(item => item.type === 'after');
-            if (!before || !after) return null;
+            if (!before || !after) {
+              throw new Error('[comparison section] Invalid data');
+            }
+
             return (
               <BeforeAfterSection
                 variant='scorecard'
                 heading={{
                   kicker: 'Scorecard',
                   title: comparison.header.title,
-                  description: comparison.header.description,
+                  description: requireHeadingDescription(
+                    comparison.header.description,
+                    'comparison section'
+                  ),
                 }}
                 before={{
                   label: 'Off-the-shelf SEO',
@@ -168,7 +182,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: integrations.badge,
               title: integrations.title,
-              description: integrations.description,
+              description: requireHeadingDescription(
+                integrations.description,
+                'integrations section'
+              ),
             }}
             layers={integrations.cards.map((card, index) => ({
               key: `integration-${index}`,
@@ -189,7 +206,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: processSection.badge ?? 'How we work',
               title: processSection.title,
-              description: processSection.description,
+              description: requireHeadingDescription(processSection.description, 'process section'),
             }}
             steps={processSection.steps.map((step, index) => ({
               index: step.number,
@@ -209,7 +226,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: scopeSection.badge,
               title: scopeSection.title,
-              description: scopeSection.description,
+              description: requireHeadingDescription(scopeSection.description, 'scope section'),
             }}
             items={scopeSection.services.map((service, index) => ({
               id: `scope-${index}`,
@@ -226,7 +243,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             const before = proof.cards[0];
             const change = proof.cards[1];
             const after = proof.cards[2];
-            if (!before || !change || !after) return null;
+            if (!before || !change || !after) {
+              throw new Error('[proof section] Invalid data');
+            }
+
             return (
               <ProofStorySection
                 variant='before-change-after'
@@ -234,7 +254,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 heading={{
                   kicker: 'Real outcome',
                   title: proof.header.title,
-                  description: proof.header.description,
+                  description: requireHeadingDescription(proof.header.description, 'proof section'),
                 }}
                 before={{
                   label: 'Before',
@@ -266,7 +286,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: 'Fit check',
               title: qualification.title,
-              description: qualification.description,
+              description: requireHeadingDescription(
+                qualification.description,
+                'qualification section'
+              ),
             }}
             good={{
               label: 'Strong fit',
@@ -295,7 +318,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             heading={{
               kicker: faqSection.badge,
               title: faqSection.title,
-              description: faqSection.description,
+              description: requireHeadingDescription(faqSection.description, 'faq section'),
             }}
             items={faqSection.faqs.map((faq, index) => ({
               id: `local-seo-faq-${index}`,
@@ -307,24 +330,8 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
 
         <PrimaryCTASection
           variant='soft-panel'
-          tone='soft'
-          heading={{
-            kicker: ctaKicker,
-            title: ctaTitle,
-            description: ctaDescription,
-          }}
-          actions={[
-            {
-              label: PRIMARY_CTA_LABEL,
-              href: buildContactHref({
-                system: 'local-seo-authority',
-                sourceType: 'service',
-                slug: 'local-seo-footer',
-              }),
-              primary: true,
-            },
-          ]}
-          ctaList={(cta as { ctaList?: string[] })?.ctaList ?? []}
+          heading={data.cta.heading}
+          actions={data.cta.actions}
         />
       </main>
     </ErrorBoundary>

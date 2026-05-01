@@ -7,6 +7,7 @@ import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { ResourcesGuidesIsland } from './ResourcesGuidesIsland';
 
@@ -162,6 +163,7 @@ export function ResourcesHub({
                   sourceType: 'resource',
                   slug: 'resource-help',
                 }),
+                primary: true,
               },
             ]}
           />

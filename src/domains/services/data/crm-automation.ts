@@ -922,15 +922,13 @@ export const crmAutomationPage = {
       cssPrefix: 'crm-automation-faq',
     },
   },
-  inlineCta: {
-    title: 'Want to see which manual handoff is slowing pipeline movement first?',
-    description:
-      'We map the breakpoints across forms, calls, inboxes, and SMS so you can see where ownership fails, which delays matter most, and whether CRM setup is the next fix or not.',
-  },
   cta: {
-    title: 'Get a clear CRM priority map before you commit to a build',
-    description:
-      'Tell us how enquiries arrive, who owns follow-up, and where deals stall. You will leave with the highest-risk handoff gaps, the first automation priorities, and a clear view of whether CRM infrastructure is the right next move.',
+    heading: {
+      title: 'Get a clear CRM priority map before you commit to a build',
+      description:
+        'Tell us how enquiries arrive, who owns follow-up, and where deals stall. You will leave with the highest-risk handoff gaps, the first automation priorities, and a clear view of whether CRM infrastructure is the right next move.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
   transformationProof: {
     before: {

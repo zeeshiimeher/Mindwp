@@ -38,7 +38,20 @@ export function LayerStackSection({
   heading,
   layers,
 }: LayerStackSectionProps) {
-  if (!layers.length) return null;
+  if (layers.length === 0) {
+    throw new Error('[LayerStackSection] Invalid data');
+  }
+
+  for (const layer of layers) {
+    if (
+      layer.key.trim().length === 0 ||
+      layer.index.trim().length === 0 ||
+      layer.title.trim().length === 0 ||
+      layer.summary.trim().length === 0
+    ) {
+      throw new Error('[LayerStackSection] Invalid data');
+    }
+  }
 
   return (
     <SectionShell

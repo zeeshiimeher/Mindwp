@@ -87,7 +87,8 @@ export function FeaturesLanding() {
             <PrimaryCTASection
               heading={{
                 title: 'Need help matching the right feature to the real problem?',
-                description: 'Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
+                description:
+                  'Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.',
               }}
               actions={[
                 {
@@ -97,6 +98,7 @@ export function FeaturesLanding() {
                     sourceType: 'feature',
                     slug: 'feature-help',
                   }),
+                  primary: true,
                 },
               ]}
             />

@@ -20,8 +20,6 @@ export function Divi5Renderer({ data, slug: _slug }: Divi5RendererProps) {
   const { hero, sections, cta } = data;
   const { conversionSection, benefitsSection, featureSection, whySection, processSection } =
     sections;
-  const ctaTitle = cta.title;
-  const ctaDescription = cta.description;
 
   return (
     <>
@@ -85,11 +83,7 @@ export function Divi5Renderer({ data, slug: _slug }: Divi5RendererProps) {
             cssPrefix={processSection.cssPrefix}
           />
 
-          <PrimaryCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            actions={[{ label: 'Get Started', href: '/contact' }]}
-          />
+          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
         </main>
       </ErrorBoundary>
     </>

@@ -44,7 +44,9 @@ function assertPublishableNode(
     throw new Error(`Publishable node missing robots metadata for ${node.id}`);
   }
 
-  if (!markup.includes('primary-cta-section__panel')) {
+  const primaryCtaMatches = markup.match(/data-testid="smart-cta"/g) ?? [];
+
+  if (primaryCtaMatches.length !== 1) {
     throw new Error(`Publishable node must register exactly one PrimaryCTASection for ${node.id}`);
   }
 

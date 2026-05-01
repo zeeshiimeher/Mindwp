@@ -253,9 +253,12 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where treatment is dropping off',
-      description:
-        'If pain calls are being answered too slowly or routine treatment and recall keep slipping after the first conversation, walk us through how the month runs and we will show you the first thing worth fixing.',
+      heading: {
+        title: 'Tell us where treatment is dropping off',
+        description:
+          'If pain calls are being answered too slowly or routine treatment and recall keep slipping after the first conversation, walk us through how the month runs and we will show you the first thing worth fixing.',
+      },
+      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     },
   };
 }

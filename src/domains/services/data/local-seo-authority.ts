@@ -1,7 +1,6 @@
 import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
 
 import { buildServiceSeo } from '../seo';
-import { normalizeCTA } from './normalizeCTA';
 import type { ServicePageData } from '../types';
 
 const slug = 'local-seo-authority';
@@ -421,11 +420,13 @@ export const localSeoAuthorityPage = {
       ],
     },
   },
-  cta: normalizeCTA({
-    kicker: 'Final step',
-    title: 'See why nearby customers are finding other businesses first',
-    description:
-      'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
-    ctaList: ['No commitment', 'Plain-English snapshot', 'No sales pressure'],
-  }),
+  cta: {
+    heading: {
+      kicker: 'Final step',
+      title: 'See why nearby customers are finding other businesses first',
+      description:
+        'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
+    },
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+  },
 } satisfies ServicePageData;

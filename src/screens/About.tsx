@@ -3,6 +3,7 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { HeroActions } from '@/components/system/HeroActions';
 import { Card } from '@/components/ui/card';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 export function About() {
   return (
@@ -112,9 +113,10 @@ export function About() {
               label: 'Get Started',
               href: buildContactHref({
                 system: 'smart-website-systems',
-                sourceType: 'about',
+                sourceType: 'page',
                 slug: 'about-footer',
               }),
+              primary: true,
             },
           ]}
         />
