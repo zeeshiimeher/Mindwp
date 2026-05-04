@@ -2,6 +2,11 @@
 
 This file is a **generated export inventory** for reusable UI components.
 
+This file is generated inventory for existing global/reusable exports.
+It is not component redesign authority.
+`src/components/reusable` is a legacy/retirement zone during the current system refactor.
+New section-system authority comes from [../ui/system-xray.md](../ui/system-xray.md) and `src/components/sections`.
+
 - Do not hand-edit inside the `AUTO-GENERATED` block.
 
 ## Auto-generated inventory

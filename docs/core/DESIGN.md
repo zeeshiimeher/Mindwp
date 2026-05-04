@@ -18,6 +18,8 @@ Use this doc when working on:
 
 Do not use this doc to change page identity, metadata, CTA logic, graph logic, or content behavior.
 
+For the active full-system/component refactor, use [../ui/system-xray.md](../ui/system-xray.md) as the operating guide under the authority of FOUNDATION, CONTENT, CONVERSION, GRAPH, DESIGN, and SYSTEM-RULES.
+
 ---
 
 ## LIVE DESIGN SYSTEM
@@ -240,3 +242,199 @@ These are the active design truths:
 - components render with shared styling layers instead of local style systems
 
 Anything outside that model is drift.
+---
+
+## 10. UI SYSTEM + COMPONENT ARCHITECTURE ALIGNMENT
+
+This system does NOT treat components as isolated UI blocks.
+
+Components are:
+→ system surfaces  
+→ content structures  
+→ conversion carriers  
+
+They must align with:
+- FOUNDATION (business + positioning)
+- CONTENT (page behavior)
+- CONVERSION (intent + flow)
+- GRAPH (relationships)
+
+---
+
+### COMPONENT DESIGN RULES (SYSTEM LEVEL)
+
+- Components must reflect real content structure (not generic layouts)
+- Components must not be created for visual variation only
+- Components must support deterministic rendering (no randomness, no guessing)
+- Components must map to real page sections and narrative flow
+- Components must preserve page-type behavior (landing, system, entry)
+
+---
+
+### UI QUALITY RULES (MANDATORY)
+
+Every component must enforce:
+
+Visual Hierarchy
+- clear primary → secondary → tertiary structure
+- scannable layout (no flat blocks)
+
+Layout Behavior
+- avoid repetitive grids as default
+- allow asymmetry where it improves clarity
+- control density (compact / medium / spacious)
+
+Interaction Layer
+- subtle hover states allowed
+- no decorative or unnecessary animation
+- interaction must improve understanding, not distract
+
+Attention Control
+- first visible element must be intentional
+- reading flow must guide progression
+
+---
+---
+
+### INTERACTION AS SYSTEM BEHAVIOR (CRITICAL)
+
+Interaction is NOT decoration.
+
+Interaction is part of how the component communicates meaning.
+
+Rules:
+
+- Interaction must reinforce structure, not distract from it
+- Interaction must help the user understand relationships (flow, grouping, priority)
+- Interaction must be predictable and consistent across components
+
+Valid interaction patterns:
+
+- hover focus (highlighting one item within a group)
+- progressive disclosure (FAQ, expandable details)
+- emphasis shift (focus moves between items)
+- subtle state feedback (active, selected, highlighted)
+
+Invalid interaction patterns:
+
+- decorative animation with no meaning
+- delayed or staged reveals for visual effect
+- motion that competes with content hierarchy
+
+If interaction does not improve clarity, it must not exist.
+
+---
+
+### COMPONENT QUALITY BAR (ANTI-GENERIC RULE)
+
+The system must actively reject generic UI patterns.
+
+Not allowed:
+
+- repeated card grids as default layout
+- flat sections with no hierarchy
+- identical cards with equal visual weight
+- template-style SaaS sections reused across pages
+- components that do not change scanning behavior
+
+Required:
+
+- clear hierarchy (primary → secondary → supporting)
+- intentional layout differences between sections
+- controlled asymmetry where it improves clarity
+- visible grouping based on meaning (not spacing only)
+- variation driven by structure, not styling
+
+---
+
+### SCANNING BEHAVIOR RULE
+
+Every component must define how it is scanned.
+
+Examples:
+
+- Grid → peer scanning (no dependency)
+- Stack → top-to-bottom dependency
+- Timeline → directional progression
+- Map → group → item → detail
+
+Rule:
+
+If scanning order is unclear, the component is incorrectly designed.
+
+---
+
+### STRUCTURE OVER STYLE RULE
+
+Design decisions must prioritize structure over styling.
+
+- Layout, grouping, and hierarchy come first
+- Color, spacing, and typography support structure
+- Styling must never be used to fake structural differences
+
+If a difference can be removed without changing meaning,
+it is not a structural difference.
+
+### COMPONENT VS SECTION RULE
+
+In MindWP:
+
+Section = content intent + narrative role  
+Component = structural + visual system to render that section  
+
+Rules:
+- Do not design components without section intent
+- Do not design sections without component mapping
+- Component system must follow page flow (not arbitrary placement)
+
+---
+
+### VARIANT RULE (STRICT)
+
+Variants are structural differences, not styling changes.
+
+A valid variant must change at least one of:
+- layout structure (grid vs stack vs split)
+- content grouping
+- data requirement
+- semantic meaning
+
+Invalid variants:
+- color-only changes
+- spacing-only changes
+- naming-only differences
+
+---
+
+### DATA ALIGNMENT RULE
+
+Components must respect real data.
+
+Rules:
+- Read existing data before adding new props
+- Do not invent props without need
+- Prefer extending existing data structures over creating new ones
+- Content richness must come from real data, not UI placeholders
+
+---
+
+### SYSTEM CONSISTENCY RULE
+
+The UI system must:
+
+- scale across all page types
+- prevent visual repetition across pages
+- support controlled uniqueness per page
+- remain predictable for developers
+
+---
+
+### FINAL PRINCIPLE
+
+This is NOT a component library.
+
+This is:
+→ a deterministic UI system driven by content, business logic, and conversion flow
+
+Any component that does not support this must be removed or redesigned.
+

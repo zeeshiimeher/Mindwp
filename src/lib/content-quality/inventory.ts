@@ -79,12 +79,12 @@ function normalizeOpenGraph(
   const value =
     openGraph && typeof openGraph === 'object'
       ? (openGraph as {
-        title?: string;
-        description?: string;
-        url?: string;
-        image?: string;
-        images?: string[];
-      })
+          title?: string;
+          description?: string;
+          url?: string;
+          image?: string;
+          images?: string[];
+        })
       : {};
 
   const inferredImages = [resolveOGImagePathForRoute(canonical)];

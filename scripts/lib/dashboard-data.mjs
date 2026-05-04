@@ -20,9 +20,9 @@ function writeJson(filePath, data) {
   const payload =
     filePath.endsWith('.json') && !data?._generated
       ? attachGeneratedJsonMetadata(data, {
-        source: 'dashboard-data',
-        type: 'dashboard',
-      })
+          source: 'dashboard-data',
+          type: 'dashboard',
+        })
       : data;
   fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 }
@@ -71,11 +71,11 @@ function summarizeValidationError(error) {
   const output =
     typeof error?.output === 'string'
       ? error.output
-        .split('\n')
-        .map(line => line.trim())
-        .filter(Boolean)
-        .slice(0, 3)
-        .join(' | ')
+          .split('\n')
+          .map(line => line.trim())
+          .filter(Boolean)
+          .slice(0, 3)
+          .join(' | ')
       : null;
 
   return {
@@ -216,12 +216,12 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const pipelineSteps = Array.isArray(pipelineData.steps) ? pipelineData.steps : [];
   const analyzerCoverage = Array.isArray(pipelineData.analyzers)
     ? pipelineData.analyzers.map(analyzer => ({
-      name: analyzer.name,
-      status: toUpperStatus(analyzer.status, 'PASS'),
-      outputs: analyzer.outputs ?? [],
-      skipped: analyzer.skipped === true,
-      durationMs: analyzer.durationMs ?? 0,
-    }))
+        name: analyzer.name,
+        status: toUpperStatus(analyzer.status, 'PASS'),
+        outputs: analyzer.outputs ?? [],
+        skipped: analyzer.skipped === true,
+        durationMs: analyzer.durationMs ?? 0,
+      }))
     : [];
   const integrityStrip = {
     reportsStatus: toUpperStatus(systemReport?.reports?.status ?? systemHealth?.status, 'PASS'),
@@ -313,31 +313,31 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const warningsPanel = {
     validators: Array.isArray(warningSource.validators)
       ? warningSource.validators.map(item => ({
-        name: item.name,
-        detail: item.reportFile ?? 'validator warning',
-        status: toUpperStatus(item.status, 'WARN'),
-      }))
+          name: item.name,
+          detail: item.reportFile ?? 'validator warning',
+          status: toUpperStatus(item.status, 'WARN'),
+        }))
       : [],
     skippedAnalyzers: Array.isArray(warningSource.skippedAnalyzers)
       ? warningSource.skippedAnalyzers.map(item => ({
-        name: item.name,
-        detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
-        status: 'SKIPPED',
-      }))
+          name: item.name,
+          detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
+          status: 'SKIPPED',
+        }))
       : [],
     sizeWarnings: Array.isArray(warningSource.sizeWarnings)
       ? warningSource.sizeWarnings.map(item => ({
-        name: item.label,
-        detail: `${item.size} / ${item.warnAt} bytes`,
-        status: 'WARN',
-      }))
+          name: item.label,
+          detail: `${item.size} / ${item.warnAt} bytes`,
+          status: 'WARN',
+        }))
       : [],
     staleReports: Array.isArray(warningSource.staleReports)
       ? warningSource.staleReports.map(item => ({
-        name: item.name,
-        detail: item.reportFile ?? 'stale report reused',
-        status: 'WARN',
-      }))
+          name: item.name,
+          detail: item.reportFile ?? 'stale report reused',
+          status: 'WARN',
+        }))
       : [],
   };
 

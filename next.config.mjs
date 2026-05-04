@@ -19,7 +19,7 @@ const CONTENT_SECURITY_POLICY = [
   "img-src 'self' data: blob: https://images.unsplash.com https://images.pexels.com https://pixabay.com",
   "manifest-src 'self'",
   "object-src 'none'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://challenges.cloudflare.com",
   "style-src 'self' 'unsafe-inline'",
   "worker-src 'self' blob:",
   'upgrade-insecure-requests',
