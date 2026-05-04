@@ -1,18 +1,19 @@
 
 
-# MindWP System Refactor — Execution Blueprint
+# MindWP Full System Refactor
 
 Date: 2026-05-04
 
-Status: Execution-ready. This document is the single planning and execution authority for the MindWP full-system refactor. All component contracts, page mappings, variant rules, execution phases, and Copilot execution rules live here.
+Status: Approved planning blueprint. This file defines the decided business, system, UI, component, variant, and migration direction for the MindWP full-system refactor. It is planning authority for future implementation, not permission to execute runtime changes automatically.
 
-Authority posture:
+Planning posture:
 
-- This document reflects the current state of the codebase after Phase 0 Safe Alignment completion.
-- Component blocks are the source of truth for implementation, validation, and tests.
-- Higher-level governance lives in FOUNDATION, CONTENT, CONVERSION, GRAPH, DESIGN, SYSTEM-RULES, and WORKFLOW.
-- When docs and code conflict, verify code then update docs deliberately.
-- Implementation starts only through a scoped execution task. Future implementation must inspect current code before editing files.
+- Preserve detailed component-by-component guidance
+- Merge useful detail from legacy audit documents
+- Decisions inside this document are approved planning direction unless explicitly marked Deprecated
+- Keep higher-level governance in FOUNDATION, CONTENT, CONVERSION, GRAPH, DESIGN, SYSTEM-RULES, and WORKFLOW
+- Treat code as the source of truth when docs and code conflict
+- Use this file as the operating guide for future scoped system refactor work
 
 ---
 
@@ -203,6 +204,70 @@ It is NOT allowed to:
 - flatten domains into one template
 
 ---
+### Phase 0 Safe Alignment Before Phase 1
+
+Phase 0 is safe alignment work. It is allowed to make small runtime cleanup edits, but it is NOT the full component redesign and it must NOT create new components.
+
+Phase 0 safe alignment tasks:
+
+1. Remove or rewrite public GoHighLevel mention in Smart Website data.
+2. Rename `FitCheckSection` to `QualificationSection` where safe.
+3. Update imports, exports, renderers, and direct validator/test references caused by the rename.
+4. Replace anchor `FitCheckSection` / `two-column` usage with `QualificationSection` / `fit-filter` where safe.
+5. Clean deprecated anchor variant names only where the existing component can still render without creating a missing component.
+6. Identify GridCardsSection `signal-board` usages without badge/status data and either safely switch them to `feature-grid` or defer them to Phase 1.
+7. Update `system-xray.md` with Phase 0 completion status and Phase 1 deferrals after the safe alignment work.
+
+Phase 0 rule:
+
+- Phase 0 may clean existing naming, imports, exports, direct references, and safe deprecated variant usage.
+- Phase 0 may remove public GoHighLevel mentions from public-facing data.
+- Phase 0 must not create new approved components.
+- Phase 0 must not add new top-third anchor content.
+- Phase 0 must not fully migrate Smart Website or Local SEO to the final approved mapping if that requires missing components.
+- Phase 0 must not invent staged leaks, handoffs, criteria rows, signal states, metrics, proof, testimonials, guarantees, or capabilities.
+
+Phase 0 execution boundary:
+
+Allowed in Phase 0:
+
+- public GoHighLevel cleanup
+- `FitCheckSection` -> `QualificationSection` rename
+- direct imports/exports/usages cleanup caused by the rename
+- direct validators/tests reference cleanup caused by the rename
+- safe deprecated variant cleanup where existing components already support the approved replacement
+- docs update to record Phase 0 completion and Phase 1 deferrals
+
+Not allowed in Phase 0:
+
+- creating `JourneyLeakMapSection`
+- creating `ServiceBridgeSection`
+- creating `CriteriaComparisonSection`
+- creating `AuthoritySignalMapSection`
+- creating any other missing approved component
+- adding new staged leak content
+- adding new system handoff content
+- adding new criteria comparison rows
+- adding new signal-family/state content
+- full anchor renderer migration to missing components
+- supporting service page migration
+- validator/test redesign
+
+Phase 1 deferred work:
+
+1. Lock user-approved content for Smart Website `JourneyLeakMapSection`.
+2. Lock user-approved content for Smart Website `ServiceBridgeSection`.
+3. Decide whether Smart Website `sections.types` becomes true capability content or is replaced/removed.
+4. Decide keep/merge/remove for Smart Website extra legacy sections: `businessSizes`, `concerns`, `technologies`.
+5. Lock user-approved content for Local SEO `CriteriaComparisonSection`.
+6. Decide whether Local SEO `sections.why` and `sections.integrations` merge into one `AuthoritySignalMapSection` or remain separate content sources.
+7. Create missing anchor-specific components after content decisions are locked.
+8. Migrate Smart Website and Local SEO renderers to the final approved mapping.
+9. Align validators and tests only after runtime contracts exist.
+
+Final rule:
+If Phase 0 work requires a missing component, new top-third content, or deeper renderer redesign, stop and defer it to Phase 1 instead of forcing it.
+
 
 # 3. Pattern System
 
@@ -821,81 +886,233 @@ This page must make the “system vs page” decision clear. It must not start w
 Supporting service final rule:
 If a supporting service page changes its parent system ownership, invents a new component, or changes mapped section order without an explicit remapping decision, it is not aligned with the approved planning system.
 
-## 3.5C Current Runtime Reality (Smart Website + Local SEO)
+## 3.5C Anchor Data + Section Contract Reality Check
 
-This section captures the current state of the two anchor renderers after Phase 0 Safe Alignment. Use this as the starting point for Phase 1 execution.
+Purpose:
 
-Runtime files:
+- Capture the current repo reality for Smart Website Systems and Local SEO Authority before implementation.
+- Separate direct mapping, light reshape, moderate reshape, and user-approved content gaps.
+- Prevent Copilot from inventing props, sections, claims, metrics, or filler copy when current data does not support the approved mapping.
+- Define Phase 0 work before Phase 1 component implementation begins.
 
-- `src/domains/services/data/smart-website-systems.ts`
-- `src/domains/services/data/local-seo-authority.ts`
-- `src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx`
-- `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx`
+Reality scope:
 
-### Smart Website Systems — Current Runtime
+- Planning authority: `docs/ui/system-xray.md`
+- Runtime surfaces checked:
+  - `src/domains/services/data/smart-website-systems.ts`
+  - `src/domains/services/data/local-seo-authority.ts`
+  - `src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx`
+  - `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx`
+  - `src/components/sections`
 
-| Approved Component | Current Runtime | Status |
-|---|---|---|
-| HeroSplitSection visualType `system-feed` | HeroSplitSection variant `operations` | Phase 1: add visualType prop, migrate |
-| JourneyLeakMapSection | Not present | Phase 1: create component, add content |
-| BeforeAfterSection `split-panel` | BeforeAfterSection `split-panel` | ✅ Aligned |
-| ServiceBridgeSection | Not present | Phase 1: create component, add content |
-| ScopeSection `grouped-scope` or `service-map` | GridCardsSection | Phase 1: migrate scope data |
-| GridCardsSection `feature-grid` | GridCardsSection `feature-grid` | ✅ Aligned (types/technologies) |
-| LayerStackSection `stack` | LayerStackSection `interactive-stack` | Phase 1: add stack variant, migrate |
-| ProofStorySection `before-change-after` | ProofStorySection | ✅ Aligned |
-| ImageStorySection `evidence-photo` or `system-visual` | ImageStorySection `operational-photo` | Phase 1: add new variants, migrate |
-| ProcessStepsSection `timeline` | ProcessStepsSection | ✅ Aligned |
-| QualificationSection `fit-filter` | QualificationSection `fit-filter` | ✅ Aligned |
-| AccordionFAQSection `single-column` | AccordionFAQSection | ✅ Aligned |
-| PrimaryCTASection `soft-panel` | PrimaryCTASection | ✅ Aligned |
+Repo reality summary:
 
-Smart Website content gaps requiring user-approved content before Phase 1 execution:
+- The approved new anchor components do not exist yet in `src/components/sections`.
+- Both anchor renderers still use legacy component names or deprecated variant names.
+- Smart Website and Local SEO data is strong enough for many direct maps and light reshapes.
+- Some approved top-third sections require new user-approved content because current data does not honestly express the approved pattern.
+- Validators and tests should not be aligned until component and data contracts are real in runtime.
 
-- JourneyLeakMapSection: staged leak-path content (stages, leak, impact, handled)
-- ServiceBridgeSection: handoff content (from/to/handoff/boundary for each bridge)
+### Smart Website Systems Reality
 
-Smart Website data decisions pending for Phase 1:
+| Approved Position | Approved Component | Current Runtime | Current Data Source | Data Fit | Content Risk | Decision |
+|---|---|---|---|---|---|---|
+| Recognition | HeroSplitSection visualType `system-feed` | HeroSplitSection variant `operations` | `data.hero` | Direct Map | Low | Rename variant concept to visualType; no new content needed |
+| Diagnosis | JourneyLeakMapSection | GridCardsSection | `sections.value` | New User-Approved Content Needed | High | Current data is peer symptoms, not staged leak map |
+| Comparison | BeforeAfterSection `split-panel` | BeforeAfterSection | `sections.comparison` | Direct Map | Low | Keep content, align variant naming |
+| System Handoff | ServiceBridgeSection | Not Present | None | New User-Approved Content Needed | High | Needs explicit from/to/handoff/boundary content |
+| Scope | ScopeSection `grouped-scope` or `service-map` | GridCardsSection | `sections.included` | Moderate Reshape | Medium | Existing inclusions need grouping/areas/outcomes |
+| Capability | GridCardsSection `feature-grid` | GridCardsSection | `sections.types` | New User-Approved Content Needed | High | Current types are audience/use-case framing, not peer capabilities |
+| System Layers | LayerStackSection `stack` | LayerStackSection `interactive-stack` | `sections.coreLayer` | Light Reshape | Low | Keep meaning, clean deprecated naming |
+| Proof | ProofStorySection `before-change-after` | ProofStorySection | `sections.proof` | Direct Map | Low | No metric proof unless real metric data exists |
+| Visual Evidence | ImageStorySection `evidence-photo` or `system-visual` | ImageStorySection `operational-photo` | `sections.visibilityFoundations` | Light Reshape | Medium | Existing content usable; visual proof role must be clarified |
+| Process | ProcessStepsSection `timeline` | ProcessStepsSection | `sections.process` | Direct Map | Low | Keep content |
+| Qualification | QualificationSection `fit-filter` | FitCheckSection `two-column` | `sections.qualification` | Direct Map | Low | Rename/migrate only |
+| FAQ | AccordionFAQSection `single-column` | AccordionFAQSection | `sections.faq` | Direct Map | Low | Keep content |
+| CTA | PrimaryCTASection `soft-panel` | PrimaryCTASection | `data.cta` | Direct Map | Low | Keep content |
 
-- `sections.types`: decide if this becomes true peer capability content for `feature-grid` or is removed
-- `sections.businessSizes`: keep, merge, or remove
-- `sections.concerns`: keep, merge, or remove
-- `sections.technologies`: currently mapped to `feature-grid` (aligned); decide if retained
+Smart Website content gaps requiring user approval:
 
-### Local SEO Authority — Current Runtime
+- JourneyLeakMapSection staged leak-path content.
+- ServiceBridgeSection handoff content.
+- Capability section if `sections.types` should be replaced by true peer capabilities.
 
-| Approved Component | Current Runtime | Status |
-|---|---|---|
-| HeroSplitSection visualType `signal-grid` | HeroSplitSection variant `visibility` | Phase 1: add visualType prop, migrate |
-| CriteriaComparisonSection | Not present | Phase 1: create component, add content |
-| AuthoritySignalMapSection | LayerStackSection `signal-map` | Phase 1: create component, migrate content |
-| BeforeAfterSection `split-panel` | BeforeAfterSection `split-panel` | ✅ Aligned |
-| GridCardsSection `signal-board` | GridCardsSection `signal-board` (misconceptions) | ✅ Aligned — badge/status data present |
-| ScopeSection `grouped-scope` or `service-map` | GridCardsSection `feature-grid` | Phase 1: migrate scope data |
-| ProcessStepsSection `timeline` | ProcessStepsSection | ✅ Aligned |
-| ProofStorySection `before-change-after` | ProofStorySection | ✅ Aligned |
-| QualificationSection `fit-filter` | QualificationSection `fit-filter` | ✅ Aligned |
-| AccordionFAQSection `single-column` | AccordionFAQSection | ✅ Aligned |
-| PrimaryCTASection `soft-panel` | PrimaryCTASection | ✅ Aligned |
+Smart Website safe reshape opportunities:
 
-Local SEO content gaps requiring user-approved content before Phase 1 execution:
+- Hero visualType cleanup.
+- Comparison direct map.
+- Scope grouping from included content.
+- LayerStackSection naming cleanup.
+- ImageStorySection naming/role cleanup.
+- QualificationSection rename from FitCheckSection.
+- FAQ and CTA remain structurally aligned.
 
-- CriteriaComparisonSection: criteria rows comparing SEO package thinking vs authority system thinking
-- AuthoritySignalMapSection: signal families and state structure (may derive from `sections.why` + `sections.integrations` if meaning supports it)
+Smart Website extra legacy sections needing keep/merge/remove decision:
 
-Local SEO data decisions pending for Phase 1:
+- `sections.businessSizes`
+- `sections.concerns`
+- `sections.technologies`
 
-- `sections.integrations`: decide if this merges into `AuthoritySignalMapSection` or remains as a separate section
+### Local SEO Authority Reality
 
-### GoHighLevel Public Mention Rule
+| Approved Position | Approved Component | Current Runtime | Current Data Source | Data Fit | Content Risk | Decision |
+|---|---|---|---|---|---|---|
+| Recognition | HeroSplitSection visualType `signal-grid` | HeroSplitSection variant `visibility` | `data.hero` | Light/Moderate Reshape | Low/Medium | Move from deprecated hero variant to visualType; regroup if needed |
+| Criteria Comparison | CriteriaComparisonSection | Not Present | None | New User-Approved Content Needed | High | Needs explicit criteria rows for package thinking vs authority system thinking |
+| Signal Map | AuthoritySignalMapSection | LayerStackSection `signal-map` | `sections.why`, possibly `sections.integrations` | Moderate Reshape | Medium | Meaning exists, but families/states are not explicit |
+| Comparison | BeforeAfterSection `split-panel` | BeforeAfterSection `scorecard` | `sections.comparison` | Direct Map | Low | Keep data, remove deprecated scorecard naming |
+| Diagnosis | GridCardsSection `signal-board` | GridCardsSection `signal-board` | `sections.misconceptions` | Direct Map | Low | Current badge/status data materially supports signal-board |
+| Scope | ScopeSection `grouped-scope` or `service-map` | GridCardsSection `feature-grid` | `sections.scopeSection` | Light Reshape | Medium | Current service list can likely map to service-map |
+| Process | ProcessStepsSection `timeline` | ProcessStepsSection | `sections.processSection` | Direct Map | Low | Keep content |
+| Proof | ProofStorySection `before-change-after` | ProofStorySection | `sections.proof` | Direct Map | Low | No metric proof unless real metric data exists |
+| Qualification | QualificationSection `fit-filter` | FitCheckSection `two-column` | `sections.qualification` | Direct Map | Low | Rename/migrate only |
+| FAQ | AccordionFAQSection `single-column` | AccordionFAQSection | `sections.faqSection` | Direct Map | Low | Keep content |
+| CTA | PrimaryCTASection `soft-panel` | PrimaryCTASection | `data.cta` | Direct Map | Low | Keep content |
 
+Local SEO content gaps requiring user approval:
+
+- CriteriaComparisonSection criteria rows.
+- AuthoritySignalMapSection family/state structure if it cannot be honestly derived from `sections.why` and `sections.integrations`.
+
+Local SEO safe reshape opportunities:
+
+- Hero visualType cleanup.
+- Comparison scorecard cleanup into split-panel.
+- Scope reshape into ScopeSection.
+- QualificationSection rename from FitCheckSection.
+- Process, FAQ, proof, and CTA remain structurally aligned.
+
+Local SEO extra legacy section needing keep/merge/remove decision:
+
+- `sections.integrations` as a second signal-like section.
+
+### Public Copy Risk
+
+Rule:
 GoHighLevel must not be mentioned publicly.
 
-- Completed: Public GoHighLevel mention removed from `smart-website-systems.ts` FAQ.
-- Rule going forward: Any data, content, or renderer referencing GoHighLevel publicly must be replaced with neutral platform-agnostic language (CRM platform, lead handling system, follow-up system, automation layer).
-- Do not remove legitimate public platform mentions such as WordPress, Google, Google Business Profile, Google Search Console, or Google Ads.
+Known current risk:
 
-## 3.6 Component Selection Heuristics (Reference)
+- `src/domains/services/data/smart-website-systems.ts`
+  - `smartWebsitesFaqItems`
+  - FAQ question: `Do we need a specific CRM?`
+  - Answer mentions GoHighLevel.
+
+Decision:
+
+- Future scoped cleanup must remove public GoHighLevel mention.
+- Replacement wording should use generic white-label language such as CRM platform, lead handling system, follow-up system, or automation layer depending on context.
+- Do not remove legitimate public platform mentions such as WordPress, Google, Google Business Profile, Google Search Console, or Google Ads unless a separate content decision requires it.
+
+### Phase 0 Safe Alignment Status
+
+Date: 2026-05-04
+
+GoHighLevel cleanup:
+
+- Completed.
+- Public GoHighLevel mention removed from `src/domains/services/data/smart-website-systems.ts` FAQ answer.
+- Replaced with: "CRM platform" neutral wording.
+
+FitCheckSection → QualificationSection migration:
+
+- Completed.
+- `src/components/sections/FitCheckSection.tsx` renamed to `src/components/sections/QualificationSection.tsx`.
+- All exported types renamed: `FitCheckVariant` → `QualificationVariant`, `FitCheckItem` → `QualificationItem`, `FitCheckColumn` → `QualificationColumn`, `FitCheckSectionProps` → `QualificationSectionProps`.
+- Default variant updated: `'two-column'` → `'fit-filter'`.
+- Error messages inside the component updated from `[FitCheckSection]` to `[QualificationSection]`.
+- `src/components/sections/index.ts` barrel updated.
+- `src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx` updated: import, JSX component name, and variant `two-column` → `fit-filter`.
+- `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx` updated: import, JSX component name, and variant `two-column` → `fit-filter`.
+- `scripts/validators/validate-content-enforcement.ts` file path reference updated to `QualificationSection.tsx` and message updated.
+
+Deprecated anchor variant cleanup:
+
+- BeforeAfterSection `scorecard` → `split-panel` completed in `LocalSeoAuthorityRenderer.tsx`.
+- GridCardsSection `signal-board` → `feature-grid` completed for Smart Website `types` section (no badge/status data present).
+- GridCardsSection `signal-board` → `feature-grid` completed for Smart Website `technologies` section (no badge/status data present).
+- HeroSplitSection `operations` / `visibility`: deferred to Phase 1. Component only supports `'operations' | 'visibility'`; no `visualType` prop exists yet.
+- LayerStackSection `interactive-stack` / `signal-map`: deferred to Phase 1. Component only supports `'interactive-stack' | 'signal-map'`; `'stack'` does not exist yet.
+- ImageStorySection `operational-photo`: deferred to Phase 1. Component only supports `'operational-photo' | 'visual-panel' | 'split-evidence'`; `'evidence-photo'` and `'system-visual'` do not exist yet.
+
+No new components created in Phase 0.
+
+Missing approved components deferred to Phase 1:
+- `JourneyLeakMapSection`
+- `ServiceBridgeSection`
+- `CriteriaComparisonSection`
+- `AuthoritySignalMapSection`
+- `DecisionFrameworkSection`
+- `MetricProofSection`
+- `ObjectionResolutionSection`
+- `CriteriaComparisonSection`
+- `ReviewTrustLoopSection`
+- `OpportunityRecoveryMapSection`
+- `ScenarioMapSection`
+- `CapabilityMatrixSection`
+- `CaseStudyNarrativeSection`
+- `ResponseRoutingMapSection`
+- `PipelineVisibilityMapSection`
+
+Content decisions deferred to Phase 1 planning:
+- Smart Website `sections.types` → capability content decision
+- Smart Website `sections.businessSizes`, `sections.concerns`, `sections.technologies` → keep/merge/remove
+- Smart Website `JourneyLeakMapSection` staged leak-path content
+- Smart Website `ServiceBridgeSection` handoff content
+- Local SEO `CriteriaComparisonSection` criteria rows
+- Local SEO `AuthoritySignalMapSection` source merge decision
+
+### Phase 1 Deferred Work
+
+1. Create `JourneyLeakMapSection` after Smart Website staged leak content is locked.
+2. Create `ServiceBridgeSection` after Smart Website handoff content is locked.
+3. Create `CriteriaComparisonSection` after Local SEO criteria content is locked.
+4. Create `AuthoritySignalMapSection` after Local SEO signal source merge decision is made.
+5. Lock user-approved content for Smart Website `JourneyLeakMapSection`.
+6. Lock user-approved content for Smart Website `ServiceBridgeSection`.
+7. Decide whether Smart Website `sections.types` becomes true capability content or is replaced/removed.
+8. Decide keep/merge/remove for Smart Website extra legacy sections: `businessSizes`, `concerns`, `technologies`.
+9. Lock user-approved content for Local SEO `CriteriaComparisonSection`.
+10. Decide whether Local SEO `sections.why` and `sections.integrations` merge into one `AuthoritySignalMapSection` or remain separate content sources.
+11. Add `visualType` prop to `HeroSplitSection` and migrate anchor renderers from `'operations'` / `'visibility'` to approved `visualType` values.
+12. Add `'stack'` variant to `LayerStackSection` and migrate anchor renderers from `'interactive-stack'` / `'signal-map'`.
+13. Add `'evidence-photo'` or `'system-visual'` variant to `ImageStorySection` and migrate anchor renderer from `'operational-photo'`.
+14. Migrate Smart Website and Local SEO renderers to the final approved mapping using the new components.
+15. Align validators and tests only after runtime contracts exist.
+
+
+## 3.6 System Usage Reality (Reference)
+
+Purpose:
+- capture real usage vs system rules
+- highlight common misuse patterns
+- guide migration decisions
+
+Known Misuse Patterns:
+
+- GridCardsSection used for:
+  - grouped scope → should be ScopeSection
+  - signal mapping → should be AuthoritySignalMapSection
+
+- LayerStackSection used for:
+  - signal relationships → wrong component
+
+- ProcessStepsSection used for:
+  - non-linear explanation → should be DecisionFrameworkSection
+
+- BeforeAfterSection:
+  - scorecard used without real criteria → invalid
+
+- ProofStorySection:
+  - metric-only usage → invalid
+
+Rule:
+
+If real usage conflicts with component definition:
+→ component definition MUST win
+→ usage must be corrected
+
+## 3.7 Component Selection Heuristics (Reference)
 
 Use:
 
@@ -933,7 +1150,7 @@ If unsure:
 → check pattern first
 → NOT component
 
-# 4. Visual System
+# 4. Visual System (Phase X Authority)
 
 This section defines the ONLY allowed visual system across all components.
 
@@ -1583,7 +1800,7 @@ Color should help the reader understand state, hierarchy, and decision movement.
 
 ---
 
-# 5. Component System
+# 5. Component System (APPROVED PLANNING AUTHORITY)
 
 This is the MOST IMPORTANT section.
 
@@ -3474,6 +3691,67 @@ Revenue Growth:
 If top-third is weak:
 → page fails regardless of lower sections
 
+
+## 5.6 2026-05-01 Audit Extraction
+
+Status: Approved extraction from the 2026-05-01 GPT-5.5 component audit. Use this as planning and future execution guidance, while still verifying exact current code before editing files.
+
+Useful decisions carried forward:
+
+- QualificationSection replaces FitCheckSection.
+- Variants must be structural, not cosmetic.
+- GridCardsSection must not absorb every mid-page pattern.
+- Tier-1 pages need unique top-third structural patterns.
+- Smart Website needs a leakage-map pattern.
+- Local SEO needs an authority-signal-map pattern.
+- ScopeSection should own grouped scope, not GridCardsSection.
+- RelatedContentSection should only render graph-owned resolved candidates.
+- `/dev/component-system` should be used as the visual execution and QA surface.
+
+Variant reality check:
+
+- HeroSplitSection uses `visualType`, not hero variants.
+- GridCardsSection keeps `diagnostic-grid`, `feature-grid`, and `signal-board`; `signal-board` is valid only when badge/status data is structurally used.
+- ScenarioMapSection keeps `primary-scenario` and `environment-map`; `scenario-grid` and `use-case-grid` are deprecated patterns.
+- CaseStudyNarrativeSection keeps `narrative-flow` and `proof-breakdown`; generic story/card variants are not approved.
+- DecisionFrameworkSection keeps `principle-steps` and `checklist-framework`; `FrameworkStepsSection` is deprecated naming and process/checklist UI variants are not approved.
+- ScopeSection keeps `grouped-scope` and `service-map`; feature-grid-like usage is deprecated.
+- ImageStorySection keeps `evidence-photo` and `system-visual`; `operational-photo`, `visual-panel`, and `split-evidence` are deprecated names.
+- `scorecard` is deprecated unless BeforeAfterSection gains real metric/card criteria structure.
+- `decision-cards` is deprecated.
+- `cycle` is deprecated.
+- `metric-story` is deprecated.
+- `split-card` is deprecated unless PrimaryCTASection gives supports/actions a structurally separate region.
+- `signal-map` inside LayerStackSection is deprecated.
+
+Component responsibility boundaries:
+
+- GridCardsSection = independent peer cards only.
+- LayerStackSection = ordered layered explanation.
+- ProcessStepsSection = linear process flow.
+- ScopeSection = grouped inclusion/scope lists.
+- ProofStorySection = before/change/after proof.
+- QualificationSection = fit / not-fit filtering.
+- RelatedContentSection = resolved graph candidates only.
+
+Duplication risks:
+
+- GridCardsSection, ScopeSection, and LayerStackSection overlap unless their data contracts are strict.
+- BeforeAfterSection and QualificationSection can look visually similar, but comparison and qualification are different section intents.
+- ProcessStepsSection and LayerStackSection both use ordered sequences, but ProcessStepsSection owns flow while LayerStackSection owns always-visible layers.
+- GridCardsSection becomes too generic if it absorbs diagnostics, features, scope, concerns, technologies, and misconceptions without stricter rules.
+
+Dev visualizer planning guidance:
+
+- Route: `/dev/component-system`.
+- Dev-gated only.
+- Render every production section component and every approved variant.
+- Use real Smart Website and Local SEO data where possible.
+- Do not introduce fake marketing copy.
+- Labels must be mechanical.
+- Keep DOM flat: label, component, repeated.
+- Separate Approved and Deprecated/fake variants visually.
+
 # 6. System Rules
 
 ## 6.1 Global Rules
@@ -4115,7 +4393,7 @@ If something feels “too strict”:
 → interpret intent
 → NOT abandon system
 
-# 7. Validation System
+# 7. Validation System (Future Implementation Layer)
 
 
 ## 7.1 Validator Source of Truth (STRICT)
@@ -4246,275 +4524,60 @@ NEVER:
 
 ---
 
-# 8. Execution Phases
+# 8. Phases (Reference Only)
 
-Execution runs in exactly two phases. Each task executes one at a time: read required files → state intended edits → apply edits → run check → report → move to next task.
+## 8.1 Phase 3 — Audit
+## 8.2 Phase 4 — Cleanup
+## 8.3 Phase 6 — Improvements
 
-No task may be skipped or reordered without an explicit decision. No new components, variants, or data may be invented during execution — existing data and approved patterns drive all decisions.
+NOTE:
+These are NOT authority layers.
 
-Content writing during execution phases is allowed only after:
+# 9. Implementation Gap Backlog
 
-1. Reading current page data
-2. Reading `WRITING.md`
-3. Reading `CONTENT.md`
-4. Preserving existing page meaning
-5. Avoiding fake metrics, proof, testimonials, guarantees, or vendor claims
-6. Avoiding public GoHighLevel mention
-7. Keeping tone operational, specific, and non-hype
+Backlog / verify against current code before executing.
 
----
+Purpose:
+- Track real-world implementation gaps
+- Ensure system and code remain aligned
 
-## 8.1 Phase 1 — Anchor Component System Execution
+Rules:
 
-Goal: Build missing anchor components, migrate Smart Website and Local SEO renderers to approved mappings, and align the dev visualizer and validators.
+- This section is informational only
+- verify each item against current code before acting
+- Validators must NOT read this
+- backlog notes are not guaranteed current truth
 
-Tasks execute in this order:
+Example tracking:
 
-### Task 1: HeroSplitSection — Add visualType, migrate anchor renderers
+- LayerStackSection:
+  - CSS class mismatch (`layer-stack__index` vs `layer-stack__card-index`)
 
-- Add `visualType` prop to `HeroSplitSection` (replacing variant `operations` / `visibility`)
-- Approved visualType values: `system-feed` | `signal-grid`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace variant `operations` → `visualType='system-feed'`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace variant `visibility` → `visualType='signal-grid'`
-- Update dev visualizer
-- Run system check
+- GridCardsSection:
+  - `signal-board` requires badge/status but not enforced in code
 
-### Task 2: LayerStackSection — Add stack variant, migrate anchor renderers
+- GridCardsSection:
+  - `.grid-cards--signal-board .grid-card[data-status='risk']` does not match JSX class `grid-cards__item`, and no `data-status` is emitted
 
-- Add `stack` variant to `LayerStackSection`
-- `signal-map` and `interactive-stack` are deprecated
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace `interactive-stack` → `stack`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace `signal-map` → migrate to `AuthoritySignalMapSection` (see Task 9)
-- Update dev visualizer
-- Run system check
+- ScopeSection:
+  - blank item strings should be validated and rejected
 
-### Task 3: ImageStorySection — Add evidence-photo / system-visual variants, migrate Smart Website
+- RelatedContentSection:
+  - error references `groups` instead of `items`
 
-- Add `evidence-photo` variant: contextual or real-world visual evidence
-- Add `system-visual` variant: structured screenshot, system view, or diagram-like evidence
-- Deprecate `operational-photo`, `visual-panel`, `split-evidence`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace `operational-photo` → `evidence-photo` or `system-visual`
-- Update dev visualizer
-- Run system check
+- QualificationSection:
+  - verify remaining FitCheck naming, imports, validators, and tests before executing any migration
 
-### Task 4: JourneyLeakMapSection — Create component, add content, migrate Smart Website §2
-
-- Create `JourneyLeakMapSection` component with approved data contract
-- Lock user-approved content: stages (3–5), each with leak, impact, optional handled/metric/status
-- Add data to `smart-website-systems.ts`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: add JourneyLeakMapSection as Section 2
-- Update dev visualizer
-- Run system check
-
-### Task 5: ServiceBridgeSection — Create component, add content, migrate Smart Website §4
-
-- Create `ServiceBridgeSection` component with approved data contract
-- Lock user-approved content: bridges (2–4), each with from/to/handoff/boundary
-- Add data to `smart-website-systems.ts`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: add ServiceBridgeSection as Section 4
-- Update dev visualizer
-- Run system check
-
-### Task 6: ScopeSection — Migrate anchor renderers
-
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace GridCardsSection for scope → ScopeSection `grouped-scope` or `service-map`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace GridCardsSection for scope → ScopeSection
-- Reshape data in both data files as needed (group existing inclusions into areas/outcomes)
-- Update dev visualizer
-- Run system check
-
-### Task 7: Smart Website — Capability / legacy section decision
-
-- Read `sections.types`, `sections.businessSizes`, `sections.concerns`, `sections.technologies` in current data
-- Decide: keep GridCardsSection `feature-grid` for `types` if it is honest independent peer capability content — or remove/replace
-- Decide keep, merge, or remove for `businessSizes`, `concerns`, `technologies`
-- Apply decision in renderer and data
-- Run system check
-
-### Task 8: CriteriaComparisonSection — Create component, add Local SEO content, migrate Local SEO §2
-
-- Create `CriteriaComparisonSection` component with approved data contract
-- Lock user-approved content: criteria rows (3–6), each with label/currentApproach/systemApproach/decisionSignal
-- Content framing: SEO package thinking vs authority system thinking
-- Add data to `local-seo-authority.ts`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: add CriteriaComparisonSection as Section 2
-- Update dev visualizer
-- Run system check
-
-### Task 9: AuthoritySignalMapSection — Create component, merge why + integrations, migrate Local SEO §3
-
-- Create `AuthoritySignalMapSection` component with approved data contract
-- Decide if `sections.why` and `sections.integrations` merge into one `AuthoritySignalMapSection` or if meaning is insufficient to express approved signal families/states
-- Lock user-approved content: families (2–4), each with signals (2–4) each with label/state
-- Add data to `local-seo-authority.ts`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace `LayerStackSection signal-map` → `AuthoritySignalMapSection`
-- Update dev visualizer
-- Run system check
-
-### Task 10: Final anchor renderer migration — Smart Website and Local SEO to approved section order
-
-Smart Website final section order:
-
-1. HeroSplitSection visualType `system-feed`
-2. JourneyLeakMapSection
-3. BeforeAfterSection `split-panel`
-4. ServiceBridgeSection
-5. ScopeSection
-6. GridCardsSection `feature-grid` only for honest capabilities (if retained from Task 7)
-7. LayerStackSection `stack`
-8. ProofStorySection `before-change-after`
-9. ImageStorySection `evidence-photo` or `system-visual`
-10. ProcessStepsSection `timeline`
-11. QualificationSection `fit-filter`
-12. AccordionFAQSection `single-column`
-13. PrimaryCTASection `soft-panel`
-
-Local SEO final section order:
-
-1. HeroSplitSection visualType `signal-grid`
-2. CriteriaComparisonSection
-3. AuthoritySignalMapSection
-4. BeforeAfterSection `split-panel`
-5. GridCardsSection `signal-board` for misconceptions only when badge/status data is structurally present
-6. ScopeSection
-7. ProcessStepsSection `timeline`
-8. ProofStorySection `before-change-after`
-9. QualificationSection `fit-filter`
-10. AccordionFAQSection `single-column`
-11. PrimaryCTASection `soft-panel`
-
-Apply final renderer reorder, verify no orphan sections remain, run system check.
-
-### Task 11: Dev visualizer update
-
-- Update `/dev/component-system` (route: `src/app/dev/component-system/page.tsx`)
-- Render every production section component and every approved variant
-- Use real Smart Website and Local SEO data where possible
-- No fake marketing copy
-- Labels must be mechanical
-- Keep DOM flat: label → component → repeated
-- Separate Approved and Deprecated/fake variants visually
-
-### Task 12: Anchor validator and test alignment
-
-- Align validators to match real runtime component contracts after Tasks 1–11
-- Align tests only after runtime contracts are stable
-- Do not update validators before component contracts exist in code
-
-### Task 13: Phase 1 checks
-
-- Run `npm run system:full`
-- Confirm 56/56 validators pass
-- Confirm build is clean
-- Confirm no deprecated variants remain in anchor renderers
-- Confirm dev visualizer reflects all new components
-
----
-
-## 8.2 Phase 2 — Supporting Pages, Remaining Tier-1, Visual Hardening
-
-Goal: Migrate remaining Tier-1 pages, build remaining approved components, migrate all supporting service pages, harden validators and tests, and apply visual system hardening.
-
-Tasks execute in this order:
-
-### Task 1: Remaining Tier-1 page migration
-
-Pages: AI Lead Handling, CRM Automation, Reputation Review, Revenue Growth
-
-For each page:
-- Read current renderer and data
-- Read approved Tier-1 mapping from §3.5A
-- Apply migration following approved section order
-- Use only components that exist in runtime at time of execution
-- If a required component is missing, create it in the same task before migrating
-- Run system check after each page
-
-### Task 2: Remaining approved components
-
-Create these components (not yet built):
-
-- `ResponseRoutingMapSection` (AI Lead Handling unique component)
-- `PipelineVisibilityMapSection` (CRM Automation unique component)
-- `ReviewTrustLoopSection` (Reputation Review unique component)
-- `OpportunityRecoveryMapSection` (Revenue Growth unique component)
-- `ScenarioMapSection` (variants: primary-scenario, environment-map)
-- `CapabilityMatrixSection` (variant: matrix)
-- `CaseStudyNarrativeSection` (variants: narrative-flow, proof-breakdown)
-- `DecisionFrameworkSection` (variants: principle-steps, checklist-framework)
-- `MetricProofSection`
-- `ObjectionResolutionSection`
-
-For each component: create component file, add to barrel export, add to dev visualizer, align data contract with approved component block.
-
-### Task 3: Supporting service page migration
-
-Pages (12):
-- WordPress Development
-- Elementor / Bricks Builder / Divi 5
-- WooCommerce / Ecommerce
-- Website Redesign System Rebuild
-- System Migration / Platform Consolidation
-- Service Pages vs One Generic Services Page
-- Unified Communication System
-- Missed Call Recovery System
-- Lead Reactivation System
-- Website CRM Integration vs Manual Lead Handling
-- Conversion Layer
-- Conversion Funnel System vs Landing Page Development
-
-For each page: read current renderer and data, read approved supporting service mapping from §3.5B, apply migration, run system check.
-
-### Task 4: Validator and test hardening
-
-- Review all validators against approved component blocks (Section 5)
-- Update validators that reference outdated component names or contracts
-- Align tests with validator changes
-- Run `npm run system:full` after all changes
-
-### Task 5: Visual system hardening
-
-- Audit all pages for visual system compliance against §4 rules
-- Check: no repeated equal card grids in top-third, no decorative visuals, no inline styles
-- Fix violations found
-- Run system check
-
-### Task 6: Compatibility cleanup
-
-- Remove any remaining references to deprecated component names: FitCheckSection, FrameworkStepsSection
-- Remove any remaining deprecated variant usage: scorecard, decision-cards, two-column, cycle, metric-story, split-card, signal-map, interactive-stack, operational-photo, visual-panel, split-evidence, operations/visibility as variants
-- Confirm no fallback or legacy support code remains
-
-### Task 7: Phase 2 checks
-
-- Run `npm run system:full`
-- Confirm all validators pass
-- Confirm build is clean
-- Confirm dev visualizer reflects all components
-- Confirm no deprecated variants remain in any renderer
-- Confirm all Tier-1 and supporting service page renderers match approved mappings
-
----
-
-# 9. Implementation Gap Tracking
-
-This section tracks known code / contract mismatches. Verify each item against current code before acting. Validators must NOT read this section.
-
-Known gaps (verify before executing):
-
-- LayerStackSection: CSS class mismatch (`layer-stack__index` vs `layer-stack__card-index`)
-- GridCardsSection: `signal-board` requires badge/status data — not currently enforced in code
-- GridCardsSection: `.grid-cards--signal-board .grid-card[data-status='risk']` does not match JSX class `grid-cards__item`; no `data-status` emitted
-- ScopeSection: blank item strings should be validated and rejected
-- RelatedContentSection: error references `groups` instead of `items`
-- PrimaryCTASection: any CTASection rename is a parked future migration only — keep current CTA ownership
+- PrimaryCTASection:
+  - keep current CTA ownership; any CTASection rename is a parked future migration only
 
 If mismatch exists:
-→ fix in code
-→ this document remains authority
+→ must be fixed in code
+→ system-xray remains authority
 
 ---
 
-# 10. Execution Reference Appendices
+# 10. Future Execution Appendices
 
 ## 10.1 Execution Checklist
 
@@ -4571,6 +4634,8 @@ Use these rules to reduce drift during future Copilot planning and scoped execut
 - understand MindWP business positioning before touching UI
 - do not solve design problems by adding generic cards
 - ask for a scoped execution task before changing runtime files
+- Phase 0 Safe Alignment must not create new components or new top-third content
+- if a Phase 0 cleanup requires a missing component, defer it to Phase 1
 - explain why a component change is needed before making broad changes
 - prefer the smallest valid change that improves pattern integrity
 - do not invent new data fields unless justified by pattern, UI clarity, and business meaning
@@ -4585,9 +4650,6 @@ Use these rules to reduce drift during future Copilot planning and scoped execut
 - avoid decorative, animation-first, or novelty-first output
 - do not let a summary section replace detailed component guidance
 - when docs and code conflict, verify code and then update docs deliberately
-- execute Phase 1 tasks in the defined order, one at a time
-- read current page data and authority docs before writing any new content
-- do not invent content to satisfy component contracts — report the gap instead
 
 Operating principle:
 
@@ -4614,7 +4676,7 @@ Data/content changes:
 ## 10.4 Migration Strategy
 
 - migrate components one by one during scoped execution tasks
-- Phase 1 handles new component creation and anchor renderer migration; Phase 2 handles remaining Tier-1 and supporting page migration
+- Phase 0 handles safe legacy alignment only; Phase 1 handles new component creation and anchor renderer migration
 - verify against real data
 - update contracts
 - align validators and tests after contract changes, not before

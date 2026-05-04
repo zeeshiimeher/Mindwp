@@ -2,13 +2,13 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  FitCheckSection,
   GridCardsSection,
   HeroSplitSection,
   LayerStackSection,
   PrimaryCTASection,
   ProcessStepsSection,
   ProofStorySection,
+  QualificationSection,
   type SectionIconKey,
 } from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
@@ -137,7 +137,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
 
             return (
               <BeforeAfterSection
-                variant='scorecard'
+                variant='split-panel'
                 heading={{
                   kicker: comparison.header.badge,
                   title: comparison.header.title,
@@ -265,8 +265,8 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
 
         {/* Qualification — fit check decision cards */}
         {qualification && (
-          <FitCheckSection
-            variant='two-column'
+          <QualificationSection
+            variant='fit-filter'
             tone='soft'
             heading={{
               kicker: qualification.badge,

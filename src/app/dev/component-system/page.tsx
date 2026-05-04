@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  FitCheckSection,
   GridCardsSection,
   HeroSplitSection,
   ImageStorySection,
@@ -11,6 +10,7 @@ import {
   PrimaryCTASection,
   ProcessStepsSection,
   ProofStorySection,
+  QualificationSection,
   RelatedContentSection,
   ScopeSection,
   type SectionIconKey,
@@ -454,11 +454,11 @@ export default function ComponentSystemVisualizerPage() {
         }))}
       />
 
-      <FitCheckSection
-        variant='two-column'
+      <QualificationSection
+        variant='fit-filter'
         tone='light'
         heading={{
-          kicker: label('FitCheckSection', 'two-column'),
+          kicker: label('QualificationSection', 'fit-filter'),
           title: smart.sections.qualification.header.title,
           description: requireDescription(
             smart.sections.qualification.header.description,
@@ -483,11 +483,11 @@ export default function ComponentSystemVisualizerPage() {
         }}
       />
 
-      <FitCheckSection
+      <QualificationSection
         variant='decision-cards'
         tone='soft'
         heading={{
-          kicker: label('FitCheckSection', 'decision-cards'),
+          kicker: label('QualificationSection', 'decision-cards'),
           title: local.sections.qualification.title,
           description: requireDescription(
             local.sections.qualification.description,

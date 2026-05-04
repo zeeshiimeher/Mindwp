@@ -30,7 +30,7 @@ const smartWebsitesFaqItems = [
   {
     question: 'Do we need a specific CRM?',
     answer:
-      'No, but we usually recommend building this around GoHighLevel because it keeps enquiries, follow-up, and reporting in one place. If you already have a setup that works, we can connect that instead.',
+      'No. We build this around whatever CRM platform fits your workflow — enquiries, follow-up, and reporting all in one place. If you already have a setup that works, we can connect that instead.',
   },
   {
     question: 'Will local people actually find us on Google?',

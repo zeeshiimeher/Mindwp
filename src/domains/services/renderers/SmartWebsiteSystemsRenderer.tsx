@@ -2,7 +2,6 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
-  FitCheckSection,
   GridCardsSection,
   HeroSplitSection,
   ImageStorySection,
@@ -10,6 +9,7 @@ import {
   PrimaryCTASection,
   ProcessStepsSection,
   ProofStorySection,
+  QualificationSection,
   type SectionIconKey,
 } from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
@@ -188,7 +188,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* Implementation Types */}
           {types && (
             <GridCardsSection
-              variant='signal-board'
+              variant='feature-grid'
               tone='soft'
               columns={4}
               heading={{
@@ -366,7 +366,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* Technologies Used */}
           {technologies && (
             <GridCardsSection
-              variant='signal-board'
+              variant='feature-grid'
               tone='light'
               columns={3}
               heading={{
@@ -388,8 +388,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* Qualification Section */}
           {qualification && (
-            <FitCheckSection
-              variant='two-column'
+            <QualificationSection
+              variant='fit-filter'
               tone='light'
               heading={{
                 kicker: qualification.header.badge,

@@ -1197,10 +1197,10 @@ function scanVariantRequiredData(): Issue[] {
         message: 'ProofStorySection must validate all authored optional proof fields before rendering them.',
       },
       {
-        file: 'src/components/sections/FitCheckSection.tsx',
+        file: 'src/components/sections/QualificationSection.tsx',
         expected: ["item.note !== undefined && item.note.trim().length === 0"],
         issueType: 'fit_check_missing_required_variant_guards',
-        message: 'FitCheckSection must validate authored note copy before rendering it.',
+        message: 'QualificationSection must validate authored note copy before rendering it.',
       },
       {
         file: 'src/components/sections/AccordionFAQSection.tsx',

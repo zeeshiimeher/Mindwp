@@ -3,57 +3,57 @@ import { Check, X } from 'lucide-react';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type FitCheckVariant = 'two-column' | 'decision-cards';
+export type QualificationVariant = 'fit-filter' | 'decision-cards';
 
-export interface FitCheckItem {
+export interface QualificationItem {
   text: string;
   /** Optional short follow-up note rendered under the line. */
   note?: string;
 }
 
-export interface FitCheckColumn {
+export interface QualificationColumn {
   label: string;
   title: string;
-  items: readonly FitCheckItem[];
+  items: readonly QualificationItem[];
 }
 
-export interface FitCheckSectionProps {
-  variant?: FitCheckVariant;
+export interface QualificationSectionProps {
+  variant?: QualificationVariant;
   tone?: SectionTone;
   density?: SectionDensity;
   heading: SectionHeading;
-  good: FitCheckColumn;
-  not: FitCheckColumn;
+  good: QualificationColumn;
+  not: QualificationColumn;
 }
 
 /**
- * FitCheckSection — fit / not-fit decision cards.
+ * QualificationSection — fit / not-fit decision cards.
  *
  * Preserves the visual direction of prototype `FitCheckPanel`: two
  * balanced columns, "good" left and "not" right, marker icons on every
  * row.
  */
-export function FitCheckSection({
-  variant = 'two-column',
+export function QualificationSection({
+  variant = 'fit-filter',
   tone = 'soft',
   density = 'default',
   heading,
   good,
   not,
-}: FitCheckSectionProps) {
+}: QualificationSectionProps) {
   const columns = [good, not];
 
   for (const column of columns) {
     if (column.label.trim().length === 0 || column.title.trim().length === 0) {
-      throw new Error('[FitCheckSection] Invalid data');
+      throw new Error('[QualificationSection] Invalid data');
     }
 
     if (column.items.length === 0 || column.items.some(item => item.text.trim().length === 0)) {
-      throw new Error('[FitCheckSection] Invalid data');
+      throw new Error('[QualificationSection] Invalid data');
     }
 
     if (column.items.some(item => item.note !== undefined && item.note.trim().length === 0)) {
-      throw new Error('[FitCheckSection] Invalid data');
+      throw new Error('[QualificationSection] Invalid data');
     }
   }
 
@@ -73,7 +73,7 @@ export function FitCheckSection({
   );
 }
 
-function FitColumn({ column, kind }: { column: FitCheckColumn; kind: 'good' | 'not' }) {
+function FitColumn({ column, kind }: { column: QualificationColumn; kind: 'good' | 'not' }) {
   const Icon = kind === 'good' ? Check : X;
   return (
     <article className={`fit-check__column fit-check__column--${kind} rd-animate-up`}>

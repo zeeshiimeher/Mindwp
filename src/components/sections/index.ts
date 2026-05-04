@@ -10,7 +10,6 @@
 
 export * from './AccordionFAQSection';
 export * from './BeforeAfterSection';
-export * from './FitCheckSection';
 export * from './GridCardsSection';
 export * from './HeroSplitSection';
 export type { SectionIconKey } from './icons';
@@ -20,6 +19,7 @@ export * from './LayerStackSection';
 export * from './PrimaryCTASection';
 export * from './ProcessStepsSection';
 export * from './ProofStorySection';
+export * from './QualificationSection';
 export * from './RelatedContentSection';
 export * from './ScopeSection';
 export type {
