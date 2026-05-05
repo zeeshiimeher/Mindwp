@@ -3,7 +3,7 @@ import { Check, Minus } from 'lucide-react';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading } from './types';
 
-export type BeforeAfterVariant = 'split-panel' | 'scorecard';
+export type BeforeAfterVariant = 'split-panel';
 
 export interface BeforeAfterColumn {
   label: string;

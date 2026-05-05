@@ -225,6 +225,17 @@ our CRM, our system, our platform, ensures, enables, effectively, empowers, faci
 
 Exception: `system` is allowed for the named offer `Smart Website Systems`, internal architecture, metadata, validation, routing, or when removing it makes the sentence less clear.
 
+### Scope of Language Rules
+
+The banned and discouraged words above apply to public-facing copy only.
+
+They are not forbidden in:
+- internal documents and planning discussions
+- code comments and architecture language
+- component contracts, validator names, and technical naming
+
+Words like "workflow", "pipeline", and "infrastructure" are useful in technical and internal contexts. Public copy should avoid them unless they are the clearest and most precise term available.
+
 ### Preferred Replacements
 
 | Instead of                     | Write                               |
@@ -247,7 +258,27 @@ If a section repeats “page/pages” three or more times, rewrite it.
 Replace builder framing with:
 
 FLOW → ACTION → HANDLING → RESULT
+### Numbers and Ranges
 
+"No fake metrics" does not mean no numbers.
+
+Numbers, ranges, and percentages may appear in public copy when they are:
+- sourced benchmarks
+- industry ranges used for diagnostic illustration
+- operational estimates that clarify scale without implying a guaranteed outcome
+
+Not allowed:
+- invented client results ("we achieved X%")
+- guaranteed outcome claims
+- fabricated case-study proof
+- unsupported ranking or revenue claims
+
+When using a number, the writing must make the type clear:
+- sourced benchmark: attribute the source or clearly frame as an industry estimate
+- illustrative diagnostic range: frame as "typically", "commonly", or "often"
+- real measured result: only where genuinely measured and attributable
+
+If it is not real measured proof, do not present it as proof.
 Test:
 
 - if a designer would say it, rewrite
@@ -310,7 +341,13 @@ Rules:
 - match the reader's vocabulary
 - use contractions
 - end firmly, no “and more”
+### Market Language
 
+Do not over-lock copy to a specific country or region unless the content or user prompt explicitly requires it.
+
+Preserve the market language and examples already present in the content.
+Avoid generic US SaaS or product-launch tone.
+Do not force regional language where it is not already present.
 ---
 
 ## 7. CONNECTORS AND RHYTHM
@@ -572,6 +609,10 @@ Answer one question. Use real examples. Help someone understand the decision, fr
 One capability, one situation, one fix.
 
 A feature page must feel like a specific fix, not a full offer.
+
+Feature pages may use more capability-specific language than Tier-1 service pages, because they explain one function inside a larger system. Allowed: capability labels, feature and function descriptions, integration context, technical clarity, status and state language, and configuration-style explanation when relevant.
+
+The risk is SaaS drift, not capability clarity. Feature pages must still avoid generic SaaS landing-page tone, tool-reseller framing, unsupported compliance claims, irrelevant pricing claims, and filler words like "powerful", "seamless", or "robust". The feature must not be presented as the whole offer.
 
 ### Case Studies
 

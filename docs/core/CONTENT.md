@@ -80,6 +80,10 @@ Feature pages explain one capability inside a parent system.
 
 They support understanding, but they do not become parallel systems or strategic pillars.
 
+Feature pages may use more capability-specific language than Tier-1 service pages. Allowed on feature pages: capability labels, feature and function descriptions, integration context, technical clarity, status and state language, and configuration-style explanation when relevant.
+
+The risk on feature pages is SaaS drift, not capability clarity. Feature pages must still avoid generic SaaS landing-page tone, tool-reseller framing, unsupported compliance claims, irrelevant pricing claims, and filler words ("powerful", "seamless", "robust"). A feature page must not present itself as the whole offer.
+
 ### Blog
 
 Blog pages diagnose one problem, pattern, misconception, or tradeoff.
@@ -117,6 +121,17 @@ They support navigation and vertical discovery. They must not become generic ser
 Case studies validate a system through implementation proof.
 
 They own trust, validation, BOFU support through proof, and narrative behavior rather than instructional behavior.
+
+Every case study page must clearly represent what kind of evidence it contains. Use one of these types at the content level:
+
+- **Real Case Study**: real client work, real attribution, directional or measured results. May use "we helped" language and testimonial-adjacent proof.
+- **Scenario Study**: realistic operational scenario that explains how a system works. Must not imply real client proof.
+- **System Example**: demonstrates a system's operational logic through a plausible illustrative example. Must not imply real attribution.
+- **Operational Breakdown**: explains what happened operationally without attributing to a named client.
+
+Only a Real Case Study may imply measured outcomes, real attribution, or "we helped this client" language.
+
+Scenario Studies, System Examples, and Operational Breakdowns may use realistic operational storytelling but must not present fictional examples as real client work, invent before/after results, or fabricate attribution.
 
 Case studies must show what was broken, what changed, and what improved. They should earn trust through specificity: constraints, implementation decisions, operational changes, tradeoffs, or visible outcomes where available.
 

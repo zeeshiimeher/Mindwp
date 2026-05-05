@@ -138,6 +138,16 @@ Intent must follow page behavior:
 - entry pages usually diagnose or route before asking for direct contact
 - case studies prove first, ask later
 
+### Hero Actions
+
+Hero sections may include a primary action or routing link.
+
+Hero actions are not conversion CTAs. They support recognition and initial routing — helping the reader move to the right context or next step.
+
+Hero actions do not replace `PrimaryCTASection`. `PrimaryCTASection` owns the main page-level conversion CTA and must render in its correct position within the page flow.
+
+Do not interpret the rule against premature conversion as "no action in the hero". The restriction is on conversion escalation before sufficient recognition or proof, not on routing and recognition actions.
+
 ### Case Study CTA
 
 Case-study CTAs must stay subordinate to the proof narrative.

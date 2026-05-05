@@ -4,7 +4,12 @@ import { resolveSectionIcon, type SectionIconKey } from './icons';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type HeroSplitVariant = 'operations' | 'visibility';
+/**
+ * Approved visual type for HeroSplitSection.
+ * - system-feed: operational enquiry feed (Smart Website Systems)
+ * - signal-grid: authority signal grid (Local SEO Authority)
+ */
+export type HeroVisualType = 'system-feed' | 'signal-grid';
 
 export interface HeroSplitMetric {
   label: string;
@@ -31,7 +36,8 @@ export interface HeroSplitAction {
 }
 
 export interface HeroSplitSectionProps {
-  variant?: HeroSplitVariant;
+  /** Approved visual type. Determines right-column visual rendering intent. */
+  visualType?: HeroVisualType;
   tone?: SectionTone;
   density?: SectionDensity;
   /** Pinned eyebrow chip above the H1. */
@@ -59,7 +65,7 @@ const STATUS_DOT: Record<NonNullable<HeroSplitMetric['status']>, string> = {
  * data-driven; decorative glow is a CSS pseudo-element.
  */
 export function HeroSplitSection({
-  variant = 'operations',
+  visualType = 'system-feed',
   tone = 'gradient-blue',
   density = 'spacious',
   kicker,
@@ -114,7 +120,7 @@ export function HeroSplitSection({
     <SectionShell
       tone={tone}
       density={density}
-      sectionClassName={`hero-split hero-split--${variant}`}
+      sectionClassName={`hero-split hero-split--${visualType}`}
       bare
     >
       <div className='hero-split__inner'>

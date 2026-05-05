@@ -2,7 +2,7 @@ import { resolveSectionIcon, type SectionIconKey } from './icons';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type ProcessStepsVariant = 'timeline' | 'cycle';
+export type ProcessStepsVariant = 'timeline';
 
 export interface ProcessStep {
   /** Position label (e.g. "01"). */

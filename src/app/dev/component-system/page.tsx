@@ -2,10 +2,13 @@ import { notFound } from 'next/navigation';
 
 import {
   AccordionFAQSection,
+  AuthoritySignalMapSection,
   BeforeAfterSection,
+  CriteriaComparisonSection,
   GridCardsSection,
   HeroSplitSection,
   ImageStorySection,
+  JourneyLeakMapSection,
   LayerStackSection,
   PrimaryCTASection,
   ProcessStepsSection,
@@ -14,13 +17,13 @@ import {
   RelatedContentSection,
   ScopeSection,
   type SectionIconKey,
+  ServiceBridgeSection,
 } from '@/components/sections';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { resolveSEO } from '@/lib/seo/seoResolver';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
-const ComponentVisualizerCTASection = PrimaryCTASection;
 
 export async function generateMetadata() {
   return resolveSEO({ path: '/dev/component-system', type: 'static', slug: 'component-system' });
@@ -113,8 +116,8 @@ export default function ComponentSystemVisualizerPage() {
   return (
     <main role='main'>
       <HeroSplitSection
-        variant='operations'
-        kicker={label('HeroSplitSection', 'operations')}
+        visualType='system-feed'
+        kicker={label('HeroSplitSection', 'system-feed')}
         heading={{ title: smart.hero.title, description: smart.hero.description }}
         chips={smart.hero.list}
         actions={[smart.cta.actions[0]]}
@@ -122,8 +125,8 @@ export default function ComponentSystemVisualizerPage() {
       />
 
       <HeroSplitSection
-        variant='visibility'
-        kicker={label('HeroSplitSection', 'visibility')}
+        visualType='signal-grid'
+        kicker={label('HeroSplitSection', 'signal-grid')}
         heading={{ title: local.hero.title, description: local.hero.description }}
         chips={local.hero.list}
         actions={[local.cta.actions[0]]}
@@ -211,32 +214,10 @@ export default function ComponentSystemVisualizerPage() {
         }}
       />
 
-      <BeforeAfterSection
-        variant='scorecard'
-        heading={{
-          kicker: label('BeforeAfterSection', 'scorecard'),
-          title: local.sections.comparison.header.title,
-          description: requireDescription(
-            local.sections.comparison.header.description,
-            'local comparison'
-          ),
-        }}
-        before={{
-          label: local.sections.comparison.beforeLabel,
-          title: localBefore.title,
-          items: localBefore.items,
-        }}
-        after={{
-          label: local.sections.comparison.afterLabel,
-          title: localAfter.title,
-          items: localAfter.items,
-        }}
-      />
-
       <LayerStackSection
-        variant='interactive-stack'
+        variant='stack'
         heading={{
-          kicker: label('LayerStackSection', 'interactive-stack'),
+          kicker: label('LayerStackSection', 'stack'),
           title: smart.sections.coreLayer.header.title,
           description: requireDescription(
             smart.sections.coreLayer.header.description,
@@ -253,23 +234,6 @@ export default function ComponentSystemVisualizerPage() {
         }))}
       />
 
-      <LayerStackSection
-        variant='signal-map'
-        heading={{
-          kicker: label('LayerStackSection', 'signal-map'),
-          title: local.sections.why.title,
-          description: requireDescription(local.sections.why.description, 'local why'),
-        }}
-        layers={local.sections.why.features.map((feature, index) => ({
-          key: `local-why-${index}`,
-          index: String(index + 1).padStart(2, '0'),
-          iconKey: LAYER_ICON_KEYS[index % LAYER_ICON_KEYS.length],
-          title: feature.title,
-          meta: local.sections.why.tagline,
-          summary: feature.description,
-        }))}
-      />
-
       <ProcessStepsSection
         variant='timeline'
         tone='light'
@@ -282,25 +246,6 @@ export default function ComponentSystemVisualizerPage() {
           ),
         }}
         steps={smart.sections.process.steps.map((step, index) => ({
-          index: step.number,
-          iconKey: PROCESS_ICON_KEYS[index % PROCESS_ICON_KEYS.length],
-          title: step.title,
-          description: step.description,
-        }))}
-      />
-
-      <ProcessStepsSection
-        variant='cycle'
-        tone='soft'
-        heading={{
-          kicker: label('ProcessStepsSection', 'cycle'),
-          title: local.sections.processSection.title,
-          description: requireDescription(
-            local.sections.processSection.description,
-            'local process'
-          ),
-        }}
-        steps={local.sections.processSection.steps.map((step, index) => ({
           index: step.number,
           iconKey: PROCESS_ICON_KEYS[index % PROCESS_ICON_KEYS.length],
           title: step.title,
@@ -336,39 +281,11 @@ export default function ComponentSystemVisualizerPage() {
         }}
       />
 
-      <ProofStorySection
-        variant='metric-story'
-        tone='light'
-        heading={{
-          kicker: label('ProofStorySection', 'metric-story'),
-          title: local.sections.proof.header.title,
-          description: requireDescription(local.sections.proof.header.description, 'local proof'),
-        }}
-        before={{
-          label: local.sections.proof.beforeLabel,
-          title: localProofColumn(0).title,
-          body: localProofColumn(0).description,
-          iconKey: PROOF_ICON_KEYS[0],
-        }}
-        change={{
-          label: local.sections.proof.changeLabel,
-          title: localProofColumn(1).title,
-          body: localProofColumn(1).description,
-          iconKey: PROOF_ICON_KEYS[1],
-        }}
-        after={{
-          label: local.sections.proof.afterLabel,
-          title: localProofColumn(2).title,
-          body: localProofColumn(2).description,
-          iconKey: PROOF_ICON_KEYS[2],
-        }}
-      />
-
       <ImageStorySection
-        variant='operational-photo'
+        variant='evidence-photo'
         tone='light'
         heading={{
-          kicker: label('ImageStorySection', 'operational-photo'),
+          kicker: label('ImageStorySection', 'evidence-photo'),
           title: smart.sections.visibilityFoundations.header.title,
           description: requireDescription(
             smart.sections.visibilityFoundations.header.description,
@@ -383,33 +300,14 @@ export default function ComponentSystemVisualizerPage() {
       />
 
       <ImageStorySection
-        variant='visual-panel'
+        variant='system-visual'
         tone='soft'
-        reverse
         heading={{
-          kicker: label('ImageStorySection', 'visual-panel'),
+          kicker: label('ImageStorySection', 'system-visual'),
           title: smart.sections.visibilityFoundations.header.title,
           description: requireDescription(
             smart.sections.visibilityFoundations.header.description,
-            'smart visibility foundations visual'
-          ),
-        }}
-        body={smart.sections.visibilityFoundations.body}
-        bullets={smart.sections.visibilityFoundations.bullets}
-        highlights={smart.sections.visibilityFoundations.highlights}
-        image={smart.sections.visibilityFoundations.image}
-        caption={smart.sections.visibilityFoundations.tagline}
-      />
-
-      <ImageStorySection
-        variant='split-evidence'
-        tone='light'
-        heading={{
-          kicker: label('ImageStorySection', 'split-evidence'),
-          title: smart.sections.visibilityFoundations.header.title,
-          description: requireDescription(
-            smart.sections.visibilityFoundations.header.description,
-            'smart visibility foundations evidence'
+            'smart visibility system-visual'
           ),
         }}
         body={smart.sections.visibilityFoundations.body}
@@ -420,10 +318,10 @@ export default function ComponentSystemVisualizerPage() {
       />
 
       <ScopeSection
-        variant='layered-list'
+        variant='grouped-scope'
         tone='light'
         heading={{
-          kicker: label('ScopeSection', 'layered-list'),
+          kicker: label('ScopeSection', 'grouped-scope'),
           title: local.sections.scopeSection.title,
           description: requireDescription(local.sections.scopeSection.description, 'local scope'),
         }}
@@ -483,35 +381,6 @@ export default function ComponentSystemVisualizerPage() {
         }}
       />
 
-      <QualificationSection
-        variant='decision-cards'
-        tone='soft'
-        heading={{
-          kicker: label('QualificationSection', 'decision-cards'),
-          title: local.sections.qualification.title,
-          description: requireDescription(
-            local.sections.qualification.description,
-            'local qualification'
-          ),
-        }}
-        good={{
-          label: local.sections.qualification.strongFitLabel,
-          title: local.sections.qualification.strongFitTitle,
-          items: local.sections.qualification.strongFitItems.map(item => ({
-            text: item.title,
-            note: item.description,
-          })),
-        }}
-        not={{
-          label: local.sections.qualification.notDesignedLabel,
-          title: local.sections.qualification.notDesignedTitle,
-          items: local.sections.qualification.notDesignedItems.map(item => ({
-            text: item.title,
-            note: item.description,
-          })),
-        }}
-      />
-
       <AccordionFAQSection
         variant='single-column'
         tone='soft'
@@ -559,6 +428,50 @@ export default function ComponentSystemVisualizerPage() {
         ]}
       />
 
+      <JourneyLeakMapSection
+        tone='light'
+        heading={{
+          kicker: label('JourneyLeakMapSection', 'single pattern'),
+          title: smart.sections.journeyLeakMap.header.title,
+          description: smart.sections.journeyLeakMap.header.description,
+        }}
+        stages={smart.sections.journeyLeakMap.stages}
+      />
+
+      <ServiceBridgeSection
+        tone='soft'
+        heading={{
+          kicker: label('ServiceBridgeSection', 'single pattern'),
+          title: smart.sections.serviceBridge.header.title,
+          description: smart.sections.serviceBridge.header.description,
+        }}
+        bridges={smart.sections.serviceBridge.bridges}
+      />
+
+      <CriteriaComparisonSection
+        tone='light'
+        heading={{
+          kicker: label('CriteriaComparisonSection', 'single pattern'),
+          title: 'SEO package thinking vs. authority system thinking',
+          description:
+            'Why the typical SEO approach and the authority system approach are not equivalent — across five decision criteria.',
+        }}
+        leftLabel='Package approach'
+        rightLabel='Authority system'
+        criteria={local.sections.comparisonCriteria}
+      />
+
+      <AuthoritySignalMapSection
+        tone='soft'
+        heading={{
+          kicker: label('AuthoritySignalMapSection', 'single pattern'),
+          title: 'Where the authority signals are weak or missing',
+          description:
+            'The four signal families that determine local visibility — and the typical state before the system is in place.',
+        }}
+        families={local.sections.authoritySignalFamilies}
+      />
+
       <PrimaryCTASection
         variant='soft-panel'
         heading={{
@@ -570,16 +483,6 @@ export default function ComponentSystemVisualizerPage() {
         supports={smart.hero.list}
       />
 
-      <ComponentVisualizerCTASection
-        variant='split-card'
-        heading={{
-          kicker: label('PrimaryCTASection', 'split-card'),
-          title: local.cta.heading.title,
-          description: local.cta.heading.description,
-        }}
-        actions={local.cta.actions}
-        supports={local.hero.list}
-      />
     </main>
   );
 }

@@ -2,7 +2,7 @@ import { resolveSectionIcon, type SectionIconKey } from './icons';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type ScopeSectionVariant = 'layered-list' | 'service-map';
+export type ScopeSectionVariant = 'grouped-scope' | 'service-map';
 
 export interface ScopeGroup {
   /** Group label (e.g. "Included", "Foundation"). */
@@ -28,7 +28,7 @@ export interface ScopeSectionProps {
  * number of groups; each group renders its own header + bullet list.
  */
 export function ScopeSection({
-  variant = 'layered-list',
+  variant = 'grouped-scope',
   tone = 'light',
   density = 'default',
   heading,
@@ -41,6 +41,10 @@ export function ScopeSection({
   for (const group of groups) {
     if (group.label.trim().length === 0 || group.items.length === 0) {
       throw new Error('[ScopeSection] Invalid data');
+    }
+
+    if (group.items.some(item => item.trim().length === 0)) {
+      throw new Error('[ScopeSection] Invalid data: blank item string');
     }
   }
 

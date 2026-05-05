@@ -2,7 +2,8 @@ import { resolveSectionIcon, type SectionIconKey } from './icons';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading } from './types';
 
-export type LayerStackVariant = 'interactive-stack' | 'signal-map';
+/** Approved variant for LayerStackSection. */
+export type LayerStackVariant = 'stack';
 
 export interface LayerStackLayer {
   key: string;
@@ -33,7 +34,7 @@ export interface LayerStackSectionProps {
  * at once for scannability.
  */
 export function LayerStackSection({
-  variant = 'interactive-stack',
+  variant = 'stack',
   density = 'default',
   heading,
   layers,

@@ -1,7 +1,12 @@
 import { SectionShell } from './SectionShell';
 import type { MediaSource, SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type ImageStoryVariant = 'operational-photo' | 'visual-panel' | 'split-evidence';
+/**
+ * Approved variants for ImageStorySection.
+ * - evidence-photo: contextual or real-world operational photo evidence
+ * - system-visual: structured screenshot, system view, or diagram
+ */
+export type ImageStoryVariant = 'evidence-photo' | 'system-visual';
 
 export interface ImageStoryHighlight {
   label: string;
@@ -31,7 +36,7 @@ export interface ImageStorySectionProps {
  * supply meaningful operational photos or designed visual panels.
  */
 export function ImageStorySection({
-  variant = 'operational-photo',
+  variant = 'evidence-photo',
   tone = 'light',
   density = 'default',
   reverse = false,

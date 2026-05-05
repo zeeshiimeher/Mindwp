@@ -3,7 +3,7 @@ import { Check, X } from 'lucide-react';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type QualificationVariant = 'fit-filter' | 'decision-cards';
+export type QualificationVariant = 'fit-filter';
 
 export interface QualificationItem {
   text: string;

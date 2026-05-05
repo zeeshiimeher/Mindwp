@@ -67,6 +67,150 @@ export const localSeoAuthorityPage = {
     },
   },
   sections: {
+    comparisonCriteria: [
+      {
+        id: 'scope',
+        label: 'Scope of work',
+        currentApproach:
+          'Buy a package: keyword research, some page edits, a few directory listings. Work stops when the package ends.',
+        systemApproach:
+          'Ongoing work across website, Google profile, citations, and content. Adjusts when the business or search landscape changes.',
+        decisionSignal:
+          'A one-off package cannot maintain the consistency Google needs to keep trusting your business.',
+      },
+      {
+        id: 'starting-point',
+        label: 'Starting point',
+        currentApproach:
+          'Push traffic to whatever site exists. Assume more clicks will produce more enquiries.',
+        systemApproach:
+          'Fix the website first. Services clearly listed, mobile working, contact details correct. Then build outward.',
+        decisionSignal:
+          'If the site cannot convert a visitor into an enquiry, traffic spend is wasted regardless of how much traffic arrives.',
+      },
+      {
+        id: 'timeline',
+        label: 'Results timeline',
+        currentApproach:
+          'Ranked in 30 days. Quick wins from shortcuts — exact-match keywords, spun content, bulk directory submissions.',
+        systemApproach:
+          'Steady monthly work that compounds. First results in weeks for low-competition terms. Stronger visibility builds over months.',
+        decisionSignal:
+          'Shortcuts get penalised when Google updates. Businesses that relied on them lose everything overnight. Foundations survive.',
+      },
+      {
+        id: 'what-it-tracks',
+        label: 'What it measures',
+        currentApproach:
+          'Keyword ranking position. Traffic volume. Monthly report showing green arrows.',
+        systemApproach:
+          'Where enquiries came from. Which service pages produced contact. Profile views linked to real calls.',
+        decisionSignal:
+          'A ranking position does not pay anyone. Visibility only matters when it produces actual enquiries from qualified people.',
+      },
+      {
+        id: 'ongoing-work',
+        label: 'What happens after setup',
+        currentApproach:
+          'Work mostly front-loaded. Profile created, listings submitted, report sent. Monthly check-ins if the package includes them.',
+        systemApproach:
+          'New service pages when the business adds services. Profile actively managed. Content reviewed as searches shift.',
+        decisionSignal:
+          'Local visibility slips without active maintenance. Google trust erodes when profile content goes stale or citations drift.',
+      },
+    ],
+    authoritySignalFamilies: [
+      {
+        id: 'website-foundation',
+        title: 'Website foundation',
+        signals: [
+          {
+            id: 'service-pages',
+            label: 'Individual service pages',
+            state: 'missing' as const,
+            note: 'Services grouped on one page. Google has nothing specific to rank for individual searches.',
+          },
+          {
+            id: 'mobile-performance',
+            label: 'Mobile performance',
+            state: 'weak' as const,
+            note: 'Site technically works on mobile but load time and layout cause drop-off.',
+          },
+          {
+            id: 'technical-signals',
+            label: 'Meta, structured data, sitemaps',
+            state: 'weak' as const,
+            note: 'Basic meta present. Structured data missing. Sitemap not submitted.',
+          },
+        ],
+      },
+      {
+        id: 'google-profile',
+        title: 'Google Business Profile',
+        signals: [
+          {
+            id: 'profile-completeness',
+            label: 'Profile completeness',
+            state: 'weak' as const,
+            note: 'Profile exists. Hours, photos, and service list incomplete.',
+          },
+          {
+            id: 'profile-activity',
+            label: 'Active management',
+            state: 'missing' as const,
+            note: 'Last update more than three months ago. No posts, no review responses.',
+          },
+          {
+            id: 'reviews',
+            label: 'Review volume and recency',
+            state: 'weak' as const,
+            note: 'A handful of reviews from years ago. Nothing recent for Google to weight.',
+          },
+        ],
+      },
+      {
+        id: 'citation-consistency',
+        title: 'Citations and directories',
+        signals: [
+          {
+            id: 'details-match',
+            label: 'Consistent details across directories',
+            state: 'missing' as const,
+            note: 'Name, address, and phone differ across at least three directories. Google cannot verify.',
+          },
+          {
+            id: 'coverage',
+            label: 'Directory coverage for the service area',
+            state: 'weak' as const,
+            note: 'Listed on generic national directories. Few local or industry-specific citations.',
+          },
+        ],
+      },
+      {
+        id: 'content-coverage',
+        title: 'Content coverage',
+        signals: [
+          {
+            id: 'search-intent-match',
+            label: 'Pages match actual search queries',
+            state: 'missing' as const,
+            note: 'Page titles use internal service names, not the words customers type.',
+          },
+          {
+            id: 'location-signals',
+            label: 'Location signals on service pages',
+            state: 'missing' as const,
+            note: 'Service pages do not mention the area served. Google cannot confirm local relevance.',
+          },
+          {
+            id: 'supporting-content',
+            label: 'FAQ and supporting content',
+            state: 'missing' as const,
+            note: 'No FAQ, no location-specific content, nothing to capture long-tail searches.',
+          },
+        ],
+      },
+    ],
     misconceptions: {
       badge: 'Why SEO has not worked before',
       title: 'Three assumptions that keep you invisible',
@@ -311,6 +455,83 @@ export const localSeoAuthorityPage = {
         },
       ],
     },
+    scopeGroups: [
+      {
+        label: 'Website foundations',
+        description:
+          'Organising the site, improving mobile performance, and keeping indexing clear',
+        iconKey: 'workflow' as const,
+        items: [
+          'Organising your site so Google can read and index it properly',
+          'Making sure it loads quickly and works on mobile',
+          'Adding the technical tags Google looks for behind the scenes',
+          'Setting up sitemaps and making sure indexing is correct',
+          'Keeping the site secure and stable',
+        ],
+      },
+      {
+        label: 'Service listings',
+        description:
+          'Writing service content that matches local search and gives people a clear next step',
+        iconKey: 'clipboard' as const,
+        items: [
+          'Writing content for each service that explains what you do and where you do it',
+          'Titles and descriptions matching what people search for',
+          'Easy to scan. Easy to act on.',
+          'Related services linking to each other so visitors stay longer',
+          'Making sure images load fast and are labelled correctly',
+        ],
+      },
+      {
+        label: 'Local reputation',
+        description:
+          'Keeping your profile, directories, and reviews consistent everywhere Google checks',
+        iconKey: 'shield' as const,
+        items: [
+          'Setting up and managing your Google Business Profile',
+          'Matching your details across all directories',
+          'Helping you collect more reviews and respond to them',
+          'Getting your business referenced on local and relevant sites',
+          'Building mentions where they matter for your area',
+        ],
+      },
+      {
+        label: 'Content planning',
+        description:
+          'Mapping service and location content around the searches people actually make',
+        iconKey: 'database' as const,
+        items: [
+          'Creating a listing for each service and location you cover',
+          'Writing FAQs and supporting content around real searches',
+          'Planning topics based on what customers actually look for',
+          'Updating service, area, and business details whenever the business changes',
+        ],
+      },
+      {
+        label: 'Reporting',
+        description:
+          'Showing search performance, local movement, and competitor shifts without jargon',
+        iconKey: 'line-chart' as const,
+        items: [
+          'Monitoring your Google Search Console results',
+          'Tracking how your visibility shifts over time',
+          'Watching what competitors are doing locally',
+          'Giving you updates you can actually understand',
+        ],
+      },
+      {
+        label: 'Continuous improvement',
+        description:
+          'Reviewing the setup regularly and adjusting whenever Google or the business changes',
+        iconKey: 'repeat' as const,
+        items: [
+          'Regular reviews of content and technical health',
+          'Adapting when Google changes how it ranks local businesses',
+          'Updating when your services or priorities change',
+          'Small improvements that compound over months',
+        ],
+      },
+    ],
     proof: {
       header: {
         badge: 'Real outcome',

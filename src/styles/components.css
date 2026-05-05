@@ -495,6 +495,8 @@
 }
 
 /* ---------- Image story — placeholder shell ---------- */
+/* Approved variants: image-story--evidence-photo, image-story--system-visual */
+/* Deprecated variants: image-story--operational-photo, image-story--visual-panel, image-story--split-evidence */
 .image-story {
     position: relative;
 }
@@ -1068,6 +1070,8 @@
 }
 
 /* ---------- Layer stack — always-expanded cards ---------- */
+/* Approved variant: layer-stack--stack */
+/* Deprecated variants: layer-stack--interactive-stack (same structure), layer-stack--signal-map (use AuthoritySignalMapSection) */
 .layer-stack__cards {
     list-style: none;
     padding: 0;
@@ -1771,28 +1775,544 @@
     }
 }
 
+/* ---------- Journey Leak Map — lifecycle leak diagnosis ---------- */
+/* Phase 1 component. No variants. Smart Website Systems anchor. */
+.journey-leak__stages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.journey-leak__stage {
+    display: grid;
+    grid-template-columns: minmax(7rem, 9rem) 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--surface);
+    border: var(--border-1);
+    border-radius: var(--radius-md);
+    border-left: 3px solid color-mix(in oklch, var(--accent) 40%, transparent);
+}
+
+.journey-leak__stage--critical {
+    border-left-color: var(--status-risk);
+}
+
+.journey-leak__stage--warning {
+    border-left-color: var(--status-warn);
+}
+
+.journey-leak__stage--stable {
+    border-left-color: var(--status-good);
+}
+
+.journey-leak__stage-marker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-top: var(--space-2xs);
+}
+
+.journey-leak__stage-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: var(--tracking-meta);
+}
+
+.journey-leak__stage-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--ink-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-meta);
+}
+
+.journey-leak__stage-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.journey-leak__stage-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: var(--leading-snug);
+}
+
+.journey-leak__stage-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0;
+}
+
+.journey-leak__field {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: var(--space-sm);
+    align-items: baseline;
+}
+
+.journey-leak__field-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-meta);
+    color: var(--ink-muted);
+}
+
+.journey-leak__field--leak .journey-leak__field-label {
+    color: var(--status-risk);
+}
+
+.journey-leak__field--handled .journey-leak__field-label {
+    color: var(--status-good);
+}
+
+.journey-leak__field-value {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--ink-secondary);
+    margin: 0;
+}
+
+.journey-leak__stage-metric {
+    font-size: var(--text-xs);
+    color: var(--ink-muted);
+    margin: 0;
+    font-style: italic;
+}
+
+.journey-leak__footnote {
+    margin-top: var(--space-lg);
+    font-size: var(--text-sm);
+    color: var(--ink-muted);
+    line-height: var(--leading-relaxed);
+}
+
+@media (max-width: 639px) {
+    .journey-leak__stage {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-leak__stage-marker {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ---------- Authority Signal Map — grouped signal families with state ---------- */
+/* Phase 1 component. No variants. Local SEO Authority anchor. */
+.authority-signal-map__families {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.authority-signal-map__family {
+    background: var(--surface);
+    border: var(--border-1);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.authority-signal-map__family-title {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-meta);
+    color: var(--ink-muted);
+    margin: 0;
+    padding-bottom: var(--space-sm);
+    border-bottom: var(--border-1);
+}
+
+.authority-signal-map__signals {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.authority-signal-map__signal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid color-mix(in oklch, var(--ink-muted) 10%, transparent);
+}
+
+.authority-signal-map__signal:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.authority-signal-map__signal-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.authority-signal-map__dot {
+    flex-shrink: 0;
+}
+
+.authority-signal-map__signal-label {
+    flex: 1;
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+    color: var(--ink-primary);
+}
+
+.authority-signal-map__state-badge {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-meta);
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.authority-signal-map__signal--strong .authority-signal-map__state-badge {
+    color: var(--status-good);
+    background: color-mix(in oklch, var(--status-good) 10%, transparent);
+}
+
+.authority-signal-map__signal--weak .authority-signal-map__state-badge {
+    color: var(--status-warn);
+    background: color-mix(in oklch, var(--status-warn) 10%, transparent);
+}
+
+.authority-signal-map__signal--missing .authority-signal-map__state-badge {
+    color: var(--status-risk);
+    background: color-mix(in oklch, var(--status-risk) 10%, transparent);
+}
+
+/* Dim weak/missing signal labels slightly to direct attention to state */
+.authority-signal-map__signal--weak .authority-signal-map__signal-label {
+    color: var(--ink-secondary);
+}
+
+.authority-signal-map__signal--missing .authority-signal-map__signal-label {
+    color: var(--ink-muted);
+}
+
+.authority-signal-map__signal-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding-left: calc(var(--space-sm) + 0.625rem);
+    /* align with label after dot */
+}
+
+.authority-signal-map__metric {
+    font-size: var(--text-xs);
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.authority-signal-map__note {
+    font-size: var(--text-xs);
+    color: var(--ink-muted);
+    line-height: var(--leading-relaxed);
+}
+
+/* ---------- Criteria Comparison — approach vs approach decision grid ---------- */
+/* Phase 1 component. No variants. Local SEO Authority anchor. */
+.criteria-comparison__table {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: var(--border-1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.criteria-comparison__header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+    gap: 0;
+    background: var(--surface-muted);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.criteria-comparison__col-label,
+.criteria-comparison__col-current,
+.criteria-comparison__col-system,
+.criteria-comparison__col-signal {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-meta);
+    color: var(--ink-muted);
+    padding: var(--space-xs) var(--space-sm);
+}
+
+.criteria-comparison__col-system {
+    color: var(--accent);
+}
+
+.criteria-comparison__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+    gap: 0;
+    border-top: var(--border-1);
+}
+
+.criteria-comparison__row:hover {
+    background: color-mix(in oklch, var(--accent) 3%, transparent);
+}
+
+.criteria-comparison__criterion,
+.criteria-comparison__cell {
+    padding: var(--space-md) var(--space-sm);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.criteria-comparison__criterion {
+    padding-left: var(--space-md);
+}
+
+.criteria-comparison__criterion-label {
+    font-weight: 700;
+    color: var(--ink-primary);
+}
+
+.criteria-comparison__cell--current {
+    color: var(--ink-muted);
+    background: color-mix(in oklch, var(--surface-muted) 40%, transparent);
+}
+
+.criteria-comparison__cell--system {
+    color: var(--ink-secondary);
+    background: color-mix(in oklch, var(--accent) 5%, transparent);
+    font-weight: 500;
+}
+
+.criteria-comparison__cell--signal {
+    color: var(--ink-muted);
+    font-size: var(--text-xs);
+    border-left: 2px solid color-mix(in oklch, var(--accent) 30%, transparent);
+    padding-left: var(--space-md);
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 767px) {
+    .criteria-comparison__header {
+        display: none;
+    }
+
+    .criteria-comparison__row {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: var(--space-md);
+        border-top: var(--border-1);
+    }
+
+    .criteria-comparison__criterion {
+        padding: 0 0 var(--space-sm) 0;
+    }
+
+    .criteria-comparison__cell {
+        padding: var(--space-sm) 0;
+        border-top: 1px solid color-mix(in oklch, var(--ink-muted) 15%, transparent);
+    }
+
+    .criteria-comparison__cell--current::before {
+        content: 'Current: ';
+        font-size: var(--text-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-meta);
+        color: var(--ink-muted);
+        display: block;
+        margin-bottom: var(--space-2xs);
+    }
+
+    .criteria-comparison__cell--system::before {
+        content: 'System: ';
+        font-size: var(--text-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-meta);
+        color: var(--accent);
+        display: block;
+        margin-bottom: var(--space-2xs);
+    }
+
+    .criteria-comparison__cell--signal::before {
+        content: 'Why it matters: ';
+        font-size: var(--text-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-meta);
+        color: var(--ink-muted);
+        display: block;
+        margin-bottom: var(--space-2xs);
+    }
+
+    .criteria-comparison__cell--signal {
+        border-left: none;
+        border-top: 2px solid color-mix(in oklch, var(--accent) 30%, transparent);
+        padding-left: 0;
+    }
+}
+
+/* ---------- Service Bridge — controlled system handoff ---------- */
+/* Phase 1 component. No variants. Smart Website Systems anchor. */
+.service-bridge__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.service-bridge__item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--surface);
+    border: var(--border-1);
+    border-radius: var(--radius-md);
+}
+
+.service-bridge__index-col {
+    padding-top: var(--space-2xs);
+}
+
+.service-bridge__index {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: var(--tracking-meta);
+}
+
+.service-bridge__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.service-bridge__flow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.service-bridge__system {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: var(--tracking-meta);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.service-bridge__system--from {
+    background: color-mix(in oklch, var(--accent) 10%, transparent);
+    color: var(--accent);
+    border: 1px solid color-mix(in oklch, var(--accent) 25%, transparent);
+}
+
+.service-bridge__system--to {
+    background: color-mix(in oklch, var(--secondary) 8%, transparent);
+    color: var(--secondary);
+    border: 1px solid color-mix(in oklch, var(--secondary) 20%, transparent);
+}
+
+.service-bridge__arrow {
+    color: var(--ink-muted);
+    font-size: var(--text-sm);
+}
+
+.service-bridge__fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0;
+}
+
+.service-bridge__field {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: var(--space-sm);
+    align-items: baseline;
+}
+
+.service-bridge__field-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-meta);
+    color: var(--ink-muted);
+}
+
+.service-bridge__field--boundary .service-bridge__field-label {
+    color: var(--ink-muted);
+}
+
+.service-bridge__field-value {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--ink-secondary);
+    margin: 0;
+}
+
+@media (max-width: 639px) {
+    .service-bridge__item {
+        grid-template-columns: 1fr;
+    }
+
+    .service-bridge__index-col {
+        display: none;
+    }
+}
+
 /* ===========================================================================
  * Local SEO variant overrides — re-tint to local trust palette (green)
- * Applied to hero-split--visibility, layer-stack--signal-map,
+ * Applied to hero-split--signal-grid, layer-stack--signal-map,
  * before-after--scorecard, grid-cards--signal-board (when scoped to local)
  * ========================================================================= */
-.hero-split--visibility {
+
+/* hero-split--system-feed: Smart Website Systems visual (default look — no token overrides needed) */
+
+/* hero-split--signal-grid: Local SEO Authority visual — re-tints to local trust palette */
+.hero-split--signal-grid {
     --primary: var(--local-primary);
     --secondary: var(--local-secondary);
     --accent: var(--local-accent);
     --accent-soft: var(--local-accent-soft);
 }
 
-.hero-split--visibility .hero-split__panel {
+.hero-split--signal-grid .hero-split__panel {
     border-color: color-mix(in oklch, var(--local-accent-soft) 30%, transparent);
 }
 
-.hero-split--visibility .rd-dot--good {
+.hero-split--signal-grid .rd-dot--good {
     background: var(--local-accent);
     box-shadow: 0 0 0 4px color-mix(in oklch, var(--local-accent) 18%, transparent);
 }
 
-.layer-stack--signal-map .layer-stack__index {
+.layer-stack--signal-map .layer-stack__card-index {
     background: linear-gradient(135deg,
             color-mix(in oklch, var(--local-accent) 18%, transparent) 0%,
             color-mix(in oklch, var(--local-accent-soft) 22%, transparent) 100%);
@@ -1808,6 +2328,6 @@
     background: color-mix(in oklch, var(--local-accent-soft) 8%, var(--surface));
 }
 
-.grid-cards--signal-board .grid-card[data-status='risk'] {
+.grid-cards--signal-board .grid-cards__item--risk {
     border-left: 3px solid var(--status-risk);
 }

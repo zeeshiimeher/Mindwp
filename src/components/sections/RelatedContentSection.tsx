@@ -43,7 +43,8 @@ export function RelatedContentSection({
   items,
 }: RelatedContentSectionProps) {
   if (items.length === 0) {
-    throw new Error('RelatedContentSection requires groups or an explicit empty state.');
+    // RelatedContentSection requires groups or an explicit empty state to be handled by caller.
+    throw new Error('[RelatedContentSection] Invalid data: items array is empty.');
   }
 
   for (const item of items) {

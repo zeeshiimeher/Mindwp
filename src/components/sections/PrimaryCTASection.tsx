@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type PrimaryCTASectionVariant = 'soft-panel' | 'split-card';
+export type PrimaryCTASectionVariant = 'soft-panel';
 
 type PrimaryCTAAction = {
   label: string;

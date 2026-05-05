@@ -20,8 +20,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface Props {
   data: ServicePageDataBySlug[
-    | 'smart-website-systems'
-    | 'service-pages-vs-one-generic-services-page'];
+  | 'smart-website-systems'
+  | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 
@@ -102,7 +102,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
         <main role='main'>
           {/* Hero Section */}
           <HeroSplitSection
-            variant='operations'
+            visualType='system-feed'
             kicker={hero.badge}
             heading={{ title: hero.title, description: hero.description }}
             chips={hero.list}
@@ -207,7 +207,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {coreLayer && (
             <LayerStackSection
-              variant='interactive-stack'
+              variant='stack'
               heading={{
                 kicker: coreLayer.header.badge,
                 title: coreLayer.header.title,
@@ -273,7 +273,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* Strategic Bridge */}
           {visibilityFoundations && (
             <ImageStorySection
-              variant='operational-photo'
+              variant='evidence-photo'
               tone='light'
               heading={{
                 kicker: visibilityFoundations.header.badge,

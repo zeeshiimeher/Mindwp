@@ -2,7 +2,7 @@ import { resolveSectionIcon, type SectionIconKey } from './icons';
 import { SectionShell } from './SectionShell';
 import type { SectionDensity, SectionHeading, SectionTone } from './types';
 
-export type ProofStoryVariant = 'before-change-after' | 'metric-story';
+export type ProofStoryVariant = 'before-change-after';
 
 export interface ProofStoryColumn {
   label: string;

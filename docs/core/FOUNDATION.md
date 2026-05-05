@@ -61,6 +61,22 @@ MindWP does not position itself as:
 The commercial posture is calm, clear, and operational.
 MindWP sells structure before scale and infrastructure before growth.
 
+### Marketing-Adjacent Outcomes
+
+MindWP is not a generic marketing agency. Campaign management, ad spend, generic retainers, and decorative design are not the offer.
+
+However, MindWP systems directly drive marketing-adjacent business outcomes:
+
+- acquisition quality
+- local visibility
+- enquiry conversion
+- follow-up reliability
+- reputation trust
+- revenue recovery
+
+Do not avoid these outcomes in copy.
+Support them through system and infrastructure framing, not campaign-style or agency positioning.
+
 ---
 
 ## PAGE BEHAVIOR MODEL

@@ -2,13 +2,50 @@
 
 # MindWP System Refactor — Execution Blueprint
 
-Date: 2026-05-04
+Date: 2026-05-05
 
-Status: Execution-ready. This document is the single planning and execution authority for the MindWP full-system refactor. All component contracts, page mappings, variant rules, execution phases, and Copilot execution rules live here.
+Status: Phase 1 — COMPLETE. Phase 2 — NOT STARTED.
+
+---
+
+## Current Execution Status
+
+### Phase 1 — Anchor Component System Execution
+
+| Task | Description | Status |
+|---|---|---|
+| 1 | HeroSplitSection: remove variant, add visualType (`system-feed` / `signal-grid`) | ✅ Complete |
+| 2 | LayerStackSection: single approved variant `stack` only | ✅ Complete |
+| 3 | ImageStorySection: approved variants `evidence-photo` / `system-visual` only | ✅ Complete |
+| 4 | JourneyLeakMapSection: component created, contract enforced, CSS added, data added | ✅ Complete |
+| 5 | ServiceBridgeSection: component created, contract enforced, CSS added, data added | ✅ Complete |
+| 6 | ScopeSection: anchor scope data prepared for both Smart Website and Local SEO | ✅ Complete |
+| 7 | Smart Website capability decision: `types`/`technologies` retained as `feature-grid`; `businessSizes`/`concerns` absent/omitted | ✅ Complete |
+| 8 | CriteriaComparisonSection: component created, contract enforced, CSS added, data added | ✅ Complete |
+| 9 | AuthoritySignalMapSection: component created, contract enforced, CSS added, data added | ✅ Complete |
+| 10 | Type + Contract Alignment: all Phase 1 components compile with explicit props, no `any` | ✅ Complete |
+| 11 | Dev Component System Preview: all Phase 1 components previewed at `/dev/component-system` | ✅ Complete |
+| 12 | Validator + Test Alignment: 56/56 validators pass, 19 contract tests pass | ✅ Complete |
+| — | Backward compat removed: all deprecated variant types cleaned from all components | ✅ Complete |
+| — | Production renderers updated to approved variant names | ✅ Complete |
+
+Build: clean. TypeScript: clean. Validators: 56/56. Tests: 19/19.
+
+### Phase 2 — Production Renderer Migration + Remaining Pages
+
+| Task | Description | Status |
+|---|---|---|
+| 1 | Smart Website Systems renderer migration to approved section order | ❌ Pending |
+| 2 | Local SEO Authority renderer migration to approved section order | ❌ Pending |
+| 3 | Remaining Tier-1 page migration: AI Lead Handling, CRM Automation, Reputation Review, Revenue Growth | ❌ Pending |
+| 4 | Remaining approved components: ResponseRoutingMapSection, PipelineVisibilityMapSection, ReviewTrustLoopSection, OpportunityRecoveryMapSection, ScenarioMapSection, CapabilityMatrixSection, CaseStudyNarrativeSection, DecisionFrameworkSection, MetricProofSection, ObjectionResolutionSection | ❌ Pending |
+| 5 | Supporting service page migration (12 pages) | ❌ Pending |
+| 6 | Validator and test hardening for Phase 2 migrations | ❌ Pending |
+| 7 | Visual system hardening across all pages | ❌ Pending |
+
+---
 
 Authority posture:
-
-- This document reflects the current state of the codebase after Phase 0 Safe Alignment completion.
 - Component blocks are the source of truth for implementation, validation, and tests.
 - Higher-level governance lives in FOUNDATION, CONTENT, CONVERSION, GRAPH, DESIGN, SYSTEM-RULES, and WORKFLOW.
 - When docs and code conflict, verify code then update docs deliberately.
@@ -63,7 +100,7 @@ Meaning:
 - Components = render surfaces (not logic owners)
 - Data-driven UI
 - Existing data is the first content source
-- Data may be lightly reshaped when an approved mapping requires it, but new substantive content needs user approval
+- Data may be reshaped when an approved pattern/component requires it, but new content must preserve existing business meaning and follow WRITING.md, CONTENT.md, and current page data
 - Deterministic structure
 - No decorative abstraction
 
@@ -102,6 +139,7 @@ Approach:
 - Shape data to match the component
 - Prefer existing data before adding new data
 - Report content gaps instead of inventing copy, proof, metrics, or claims
+- When execution requires new section content, first read WRITING.md, CONTENT.md, and the relevant page data, then write only operational, specific, non-hype content that preserves existing meaning
 - Apply rules without over-restricting implementation
 
 Important:
@@ -329,7 +367,7 @@ Anchor data reality rule:
 - Existing Smart Website and Local SEO data is good enough for many direct maps and light reshapes.
 - Do not add new data just to satisfy imagined props.
 - If the approved mapping needs meaning that does not exist in current data, mark it as a content gap.
-- New top-third components may require user-approved content only where current data cannot honestly express the approved pattern.
+- New top-third components may require execution-ready content where current data cannot directly express the approved pattern; Copilot may write that content only after reading WRITING.md, CONTENT.md, and the relevant page data.
 - MetricProofSection must not be used on anchor pages unless real metric source data exists.
 
 
@@ -823,7 +861,7 @@ If a supporting service page changes its parent system ownership, invents a new 
 
 ## 3.5C Current Runtime Reality (Smart Website + Local SEO)
 
-This section captures the current state of the two anchor renderers after Phase 0 Safe Alignment. Use this as the starting point for Phase 1 execution.
+This section captures the current state of the two anchor renderers after Phase 0 Safe Alignment. Use this as the starting point for Phase 1 component and preview readiness work, then Phase 2 anchor renderer migration.
 
 Runtime files:
 
@@ -834,58 +872,77 @@ Runtime files:
 
 ### Smart Website Systems — Current Runtime
 
-| Approved Component | Current Runtime | Status |
+| Approved Component | Phase 1 State | Phase 2 Required |
 |---|---|---|
-| HeroSplitSection visualType `system-feed` | HeroSplitSection variant `operations` | Phase 1: add visualType prop, migrate |
-| JourneyLeakMapSection | Not present | Phase 1: create component, add content |
-| BeforeAfterSection `split-panel` | BeforeAfterSection `split-panel` | ✅ Aligned |
-| ServiceBridgeSection | Not present | Phase 1: create component, add content |
-| ScopeSection `grouped-scope` or `service-map` | GridCardsSection | Phase 1: migrate scope data |
-| GridCardsSection `feature-grid` | GridCardsSection `feature-grid` | ✅ Aligned (types/technologies) |
-| LayerStackSection `stack` | LayerStackSection `interactive-stack` | Phase 1: add stack variant, migrate |
-| ProofStorySection `before-change-after` | ProofStorySection | ✅ Aligned |
-| ImageStorySection `evidence-photo` or `system-visual` | ImageStorySection `operational-photo` | Phase 1: add new variants, migrate |
-| ProcessStepsSection `timeline` | ProcessStepsSection | ✅ Aligned |
-| QualificationSection `fit-filter` | QualificationSection `fit-filter` | ✅ Aligned |
-| AccordionFAQSection `single-column` | AccordionFAQSection | ✅ Aligned |
-| PrimaryCTASection `soft-panel` | PrimaryCTASection | ✅ Aligned |
+| HeroSplitSection `visualType='system-feed'` | ✅ Component updated. Production renderer still uses old section order. | Renderer migration |
+| JourneyLeakMapSection | ✅ Component created. Data added. Dev preview ready. | Renderer migration |
+| BeforeAfterSection `split-panel` | ✅ Aligned | — |
+| ServiceBridgeSection | ✅ Component created. Data added. Dev preview ready. | Renderer migration |
+| ScopeSection `grouped-scope` or `service-map` | ✅ Scope data added. Dev preview ready. | Renderer migration (replace GridCardsSection in renderer) |
+| GridCardsSection `feature-grid` | ✅ Aligned (types/technologies retained) | — |
+| LayerStackSection `stack` | ✅ Component updated to `stack` only. Production renderer updated. | — |
+| ProofStorySection `before-change-after` | ✅ Aligned | — |
+| ImageStorySection `evidence-photo` or `system-visual` | ✅ Component updated. Production renderer updated to `evidence-photo`. | — |
+| ProcessStepsSection `timeline` | ✅ Aligned | — |
+| QualificationSection `fit-filter` | ✅ Aligned | — |
+| AccordionFAQSection `single-column` | ✅ Aligned | — |
+| PrimaryCTASection `soft-panel` | ✅ Aligned | — |
 
-Smart Website content gaps requiring user-approved content before Phase 1 execution:
+Smart Website execution-ready content: complete (journeyLeakMap, serviceBridge data added).
 
-- JourneyLeakMapSection: staged leak-path content (stages, leak, impact, handled)
-- ServiceBridgeSection: handoff content (from/to/handoff/boundary for each bridge)
-
-Smart Website data decisions pending for Phase 1:
-
-- `sections.types`: decide if this becomes true peer capability content for `feature-grid` or is removed
-- `sections.businessSizes`: keep, merge, or remove
-- `sections.concerns`: keep, merge, or remove
-- `sections.technologies`: currently mapped to `feature-grid` (aligned); decide if retained
+Smart Website data decisions: complete (types/technologies as feature-grid; businessSizes/concerns absent).
 
 ### Local SEO Authority — Current Runtime
 
-| Approved Component | Current Runtime | Status |
+| Approved Component | Phase 1 State | Phase 2 Required |
 |---|---|---|
-| HeroSplitSection visualType `signal-grid` | HeroSplitSection variant `visibility` | Phase 1: add visualType prop, migrate |
-| CriteriaComparisonSection | Not present | Phase 1: create component, add content |
-| AuthoritySignalMapSection | LayerStackSection `signal-map` | Phase 1: create component, migrate content |
-| BeforeAfterSection `split-panel` | BeforeAfterSection `split-panel` | ✅ Aligned |
-| GridCardsSection `signal-board` | GridCardsSection `signal-board` (misconceptions) | ✅ Aligned — badge/status data present |
-| ScopeSection `grouped-scope` or `service-map` | GridCardsSection `feature-grid` | Phase 1: migrate scope data |
-| ProcessStepsSection `timeline` | ProcessStepsSection | ✅ Aligned |
-| ProofStorySection `before-change-after` | ProofStorySection | ✅ Aligned |
-| QualificationSection `fit-filter` | QualificationSection `fit-filter` | ✅ Aligned |
-| AccordionFAQSection `single-column` | AccordionFAQSection | ✅ Aligned |
-| PrimaryCTASection `soft-panel` | PrimaryCTASection | ✅ Aligned |
+| HeroSplitSection `visualType='signal-grid'` | ✅ Component updated. Production renderer updated. | Renderer section-order migration |
+| CriteriaComparisonSection | ✅ Component created. Data added. Dev preview ready. | Renderer migration |
+| AuthoritySignalMapSection | ✅ Component created. Data added. Dev preview ready. | Renderer migration (replace LayerStackSection in renderer) |
+| BeforeAfterSection `split-panel` | ✅ Aligned | — |
+| GridCardsSection `signal-board` | ✅ Aligned (misconceptions section) | — |
+| ScopeSection `grouped-scope` or `service-map` | ✅ Scope data added. Dev preview ready. | Renderer migration (replace GridCardsSection in renderer) |
+| ProcessStepsSection `timeline` | ✅ Aligned | — |
+| ProofStorySection `before-change-after` | ✅ Aligned | — |
+| QualificationSection `fit-filter` | ✅ Aligned | — |
+| AccordionFAQSection `single-column` | ✅ Aligned | — |
+| PrimaryCTASection `soft-panel` | ✅ Aligned | — |
 
-Local SEO content gaps requiring user-approved content before Phase 1 execution:
+Local SEO execution-ready content: complete (comparisonCriteria, authoritySignalFamilies data added).
 
-- CriteriaComparisonSection: criteria rows comparing SEO package thinking vs authority system thinking
-- AuthoritySignalMapSection: signal families and state structure (may derive from `sections.why` + `sections.integrations` if meaning supports it)
+Local SEO data decisions: complete (`sections.integrations` data retained separately; signal families use independent authoritySignalFamilies structure).
 
-Local SEO data decisions pending for Phase 1:
+### Phase 1 Content Writing Boundary
 
-- `sections.integrations`: decide if this merges into `AuthoritySignalMapSection` or remains as a separate section
+Phase 1 may create or reshape section content required by the approved anchor component contracts.
+
+Before writing or reshaping content, Copilot must read:
+
+- `docs/core/WRITING.md`
+- `docs/core/CONTENT.md`
+- the relevant page data file
+- the target component authority block in this document
+
+Allowed:
+
+- turn existing meaning into clearer section fields
+- write operational stage labels, handoff labels, criteria labels, or signal labels when required by the approved component contract
+- write short explanatory copy that preserves the page's existing business meaning
+- remove or merge weak repeated sections when they damage the approved page flow
+
+Not allowed:
+
+- fake metrics
+- fake proof
+- testimonials or attribution without source
+- guarantees
+- ranking promises
+- unsupported service capabilities
+- public GoHighLevel mention
+- generic SaaS or agency filler copy
+
+Final rule:
+Phase 1 content writing exists to express the approved system clearly, not to create new marketing claims.
 
 ### GoHighLevel Public Mention Rule
 
@@ -3879,7 +3936,7 @@ Allowed:
 Not allowed:
 
 - writing new sales claims to fill a component
-- inventing staged leaks or handoffs without user approval
+- inventing staged leaks or handoffs beyond current page meaning or without following WRITING.md, CONTENT.md, current page data, and the component authority block
 - inventing metric proof
 - inventing testimonials or attribution
 - adding visual-only props that do not express meaning
@@ -4266,61 +4323,64 @@ Content writing during execution phases is allowed only after:
 
 ## 8.1 Phase 1 — Anchor Component System Execution
 
-Goal: Build missing anchor components, migrate Smart Website and Local SEO renderers to approved mappings, and align the dev visualizer and validators.
+Phase 1 is the full anchor system refactor phase. It builds and upgrades the approved component contracts, data shapes, CSS/UI support, exports, dev preview route, and initial validator/test alignment needed to make the anchor component system real.
+
+Phase 1 does not migrate production service renderers/pages to the final mapping. Production renderer migration begins in Phase 2.
+
+Phase 1 scope:
+
+- build or upgrade approved component contracts
+- align component types, shared types, exports, and execution-ready data shapes required by those contracts
+- prepare visual and CSS support for those components
+- update `/dev/component-system` as the preview and QA surface
+- align validators and tests for Phase 1 component contracts after those contracts exist in runtime and preview
+- do not migrate production service renderers or pages
+- production renderer and page migration begins in Phase 2
 
 Tasks execute in this order:
 
-### Task 1: HeroSplitSection — Add visualType, migrate anchor renderers
+### Task 1: HeroSplitSection — Add visualType and prepare anchor preview support
 
 - Add `visualType` prop to `HeroSplitSection` (replacing variant `operations` / `visibility`)
 - Approved visualType values: `system-feed` | `signal-grid`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace variant `operations` → `visualType='system-feed'`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace variant `visibility` → `visualType='signal-grid'`
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `system-feed` and `signal-grid`
 - Run system check
 
-### Task 2: LayerStackSection — Add stack variant, migrate anchor renderers
+### Task 2: LayerStackSection — Add stack variant and prepare anchor preview support
 
 - Add `stack` variant to `LayerStackSection`
 - `signal-map` and `interactive-stack` are deprecated
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace `interactive-stack` → `stack`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace `signal-map` → migrate to `AuthoritySignalMapSection` (see Task 9)
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `stack`
 - Run system check
 
-### Task 3: ImageStorySection — Add evidence-photo / system-visual variants, migrate Smart Website
+### Task 3: ImageStorySection — Add evidence-photo / system-visual variants and prepare preview support
 
 - Add `evidence-photo` variant: contextual or real-world visual evidence
 - Add `system-visual` variant: structured screenshot, system view, or diagram-like evidence
 - Deprecate `operational-photo`, `visual-panel`, `split-evidence`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace `operational-photo` → `evidence-photo` or `system-visual`
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `evidence-photo` and `system-visual`
 - Run system check
 
-### Task 4: JourneyLeakMapSection — Create component, add content, migrate Smart Website §2
+### Task 4: JourneyLeakMapSection — Create component and prepare preview content
 
 - Create `JourneyLeakMapSection` component with approved data contract
-- Lock user-approved content: stages (3–5), each with leak, impact, optional handled/metric/status
+- Prepare execution-ready content: stages (3–5), each with leak, impact, optional handled/metric/status
 - Add data to `smart-website-systems.ts`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: add JourneyLeakMapSection as Section 2
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `JourneyLeakMapSection`
 - Run system check
 
-### Task 5: ServiceBridgeSection — Create component, add content, migrate Smart Website §4
+### Task 5: ServiceBridgeSection — Create component and prepare preview content
 
 - Create `ServiceBridgeSection` component with approved data contract
-- Lock user-approved content: bridges (2–4), each with from/to/handoff/boundary
+- Prepare execution-ready content: bridges (2–4), each with from/to/handoff/boundary
 - Add data to `smart-website-systems.ts`
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: add ServiceBridgeSection as Section 4
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `ServiceBridgeSection`
 - Run system check
 
-### Task 6: ScopeSection — Migrate anchor renderers
+### Task 6: ScopeSection — Prepare anchor scope data for preview
 
-- Migrate `SmartWebsiteSystemsRenderer.tsx`: replace GridCardsSection for scope → ScopeSection `grouped-scope` or `service-map`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace GridCardsSection for scope → ScopeSection
-- Reshape data in both data files as needed (group existing inclusions into areas/outcomes)
-- Update dev visualizer
+- Reshape anchor data in both data files as needed so ScopeSection preview can show grouped inclusions or service areas honestly
+- Update `/dev/component-system` preview coverage for ScopeSection
 - Run system check
 
 ### Task 7: Smart Website — Capability / legacy section decision
@@ -4328,30 +4388,119 @@ Tasks execute in this order:
 - Read `sections.types`, `sections.businessSizes`, `sections.concerns`, `sections.technologies` in current data
 - Decide: keep GridCardsSection `feature-grid` for `types` if it is honest independent peer capability content — or remove/replace
 - Decide keep, merge, or remove for `businessSizes`, `concerns`, `technologies`
-- Apply decision in renderer and data
+- Apply decision in preview-facing data and dev component preview coverage
 - Run system check
 
-### Task 8: CriteriaComparisonSection — Create component, add Local SEO content, migrate Local SEO §2
+### Task 8: CriteriaComparisonSection — Create component and prepare preview content
 
 - Create `CriteriaComparisonSection` component with approved data contract
-- Lock user-approved content: criteria rows (3–6), each with label/currentApproach/systemApproach/decisionSignal
+- Prepare execution-ready content: criteria rows (3–6), each with label/currentApproach/systemApproach/decisionSignal
 - Content framing: SEO package thinking vs authority system thinking
 - Add data to `local-seo-authority.ts`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: add CriteriaComparisonSection as Section 2
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `CriteriaComparisonSection`
 - Run system check
 
-### Task 9: AuthoritySignalMapSection — Create component, merge why + integrations, migrate Local SEO §3
+### Task 9: AuthoritySignalMapSection — Create component, merge why + integrations, and prepare preview content
 
 - Create `AuthoritySignalMapSection` component with approved data contract
 - Decide if `sections.why` and `sections.integrations` merge into one `AuthoritySignalMapSection` or if meaning is insufficient to express approved signal families/states
-- Lock user-approved content: families (2–4), each with signals (2–4) each with label/state
+- Prepare execution-ready content: families (2–4), each with signals (2–4) each with label/state
 - Add data to `local-seo-authority.ts`
-- Migrate `LocalSeoAuthorityRenderer.tsx`: replace `LayerStackSection signal-map` → `AuthoritySignalMapSection`
-- Update dev visualizer
+- Update `/dev/component-system` preview coverage for `AuthoritySignalMapSection`
 - Run system check
 
-### Task 10: Final anchor renderer migration — Smart Website and Local SEO to approved section order
+### Phase 1 Task — Type + Contract Alignment
+
+Purpose:
+- Keep component props, exported types, shared types, data shapes, and dev-preview adapters aligned as Phase 1 components are created or upgraded.
+- Prevent component implementation from drifting into untyped or renderer-only contracts.
+
+Rules:
+- Every new or changed prop must be represented in the component's TypeScript contract.
+- Export component prop/item types only when another file needs them.
+- Keep types local to the component when they are component-specific.
+- Move types into shared `types.ts` only when multiple approved components share the same shape.
+- Renderer/data adapter types must match the prepared props passed into components.
+- Do not add broad shared types just to avoid local typing.
+- Do not hide contract decisions in `any`, loose records, or untyped mapping helpers.
+- Do not make validators enforce a contract before the runtime component and dev preview exist.
+
+Acceptance criteria:
+- New Phase 1 components compile with explicit prop/item types.
+- Updated components expose only the types that are actually reused.
+- `/dev/component-system` examples use the same data shapes as the component contracts.
+- No new `any` or loose catch-all props are introduced for Phase 1 component contracts.
+
+### Phase 1 Final Task — Dev Component System Preview
+
+- Update `/dev/component-system` (route: `src/app/dev/component-system/page.tsx`)
+- Preview all Phase 1 anchor component contracts and approved variants or controls needed before production renderer migration
+- Use real Smart Website and Local SEO data where possible
+- No fake marketing copy
+- Labels must be mechanical
+- Keep DOM flat: label → component → repeated
+- Separate Approved and Deprecated/fake variants visually
+- Clarify through the preview that production renderer migration is deferred to Phase 2
+
+### Phase 1 Task — Validator + Test Alignment
+
+Purpose:
+- Align validators and tests with the real Phase 1 component contracts after the components and `/dev/component-system` preview exist.
+- Use validators to protect the new system without forcing imaginary contracts before implementation.
+
+Rules:
+- Validator/test updates happen after runtime component contracts and dev preview examples exist.
+- Update validators only for Phase 1 contracts that are actually implemented.
+- Remove validator expectations for deprecated anchor variants where the replacement exists.
+- Add validation for new Phase 1 component contracts where practical.
+- Validate that public data does not mention GoHighLevel.
+- Validate that MetricProofSection is not used without real metric data if MetricProofSection is implemented or previewed.
+- Do not redesign the entire validator/test system in Phase 1 unless a Phase 1 contract requires it.
+- Do not make validators enforce Phase 2 page migrations before those migrations happen.
+
+Acceptance criteria:
+- Validators/tests reflect the Phase 1 component system that actually exists.
+- Build/check commands pass or report only unrelated pre-existing issues.
+- Validators support Copilot alignment instead of fighting runtime reality.
+
+### Task 12: Phase 1 checks
+
+- Run `npm run system:full`
+- Confirm 56/56 validators pass
+- Confirm build is clean
+- Phase 1 approved components and controls are implemented or upgraded enough to preview in `/dev/component-system`
+- `/dev/component-system` previews all Phase 1 anchor components and approved variants/controls needed before production renderer migration
+- Production renderer migration is explicitly deferred to Phase 2
+- Phase 1 component contracts, exported types, and dev-preview data shapes are aligned
+- Validators/tests are updated only for Phase 1 contracts that exist in runtime
+- No validator enforces Phase 2 production renderer migration before Phase 2 begins
+
+---
+
+## 8.2 Phase 2 — Supporting Pages, Remaining Tier-1, Visual Hardening
+
+Goal: Migrate Smart Website Systems and Local SEO Authority production renderers to the approved anchor mapping after Phase 1 component and preview stability, then migrate remaining Tier-1 pages and supporting service pages, harden validators and tests, and apply visual system hardening.
+
+Tasks execute in this order:
+
+### Phase 2 Task — Anchor Renderer Migration
+
+Purpose:
+- Migrate Smart Website Systems and Local SEO Authority from current production renderer structure to the approved component mapping after Phase 1 components and `/dev/component-system` preview are stable.
+- Keep production page migration separate from component creation so UI contracts can be reviewed first.
+
+Scope:
+- Smart Website Systems renderer migration
+- Local SEO Authority renderer migration
+- approved anchor data reshaping required by the mapped components
+- removal of anchor-only deprecated component/variant usage after replacements exist
+
+Rules:
+- Do not start anchor renderer migration until Phase 1 component contracts and `/dev/component-system` preview are stable.
+- Use existing data as the first source.
+- Write or reshape content only under the writing/content rules in this document and core docs.
+- Do not invent metrics, proof, testimonials, guarantees, rankings, or unsupported claims.
+- Do not place RelatedContentSection before PrimaryCTASection.
 
 Smart Website final section order:
 
@@ -4384,38 +4533,6 @@ Local SEO final section order:
 11. PrimaryCTASection `soft-panel`
 
 Apply final renderer reorder, verify no orphan sections remain, run system check.
-
-### Task 11: Dev visualizer update
-
-- Update `/dev/component-system` (route: `src/app/dev/component-system/page.tsx`)
-- Render every production section component and every approved variant
-- Use real Smart Website and Local SEO data where possible
-- No fake marketing copy
-- Labels must be mechanical
-- Keep DOM flat: label → component → repeated
-- Separate Approved and Deprecated/fake variants visually
-
-### Task 12: Anchor validator and test alignment
-
-- Align validators to match real runtime component contracts after Tasks 1–11
-- Align tests only after runtime contracts are stable
-- Do not update validators before component contracts exist in code
-
-### Task 13: Phase 1 checks
-
-- Run `npm run system:full`
-- Confirm 56/56 validators pass
-- Confirm build is clean
-- Confirm no deprecated variants remain in anchor renderers
-- Confirm dev visualizer reflects all new components
-
----
-
-## 8.2 Phase 2 — Supporting Pages, Remaining Tier-1, Visual Hardening
-
-Goal: Migrate remaining Tier-1 pages, build remaining approved components, migrate all supporting service pages, harden validators and tests, and apply visual system hardening.
-
-Tasks execute in this order:
 
 ### Task 1: Remaining Tier-1 page migration
 
@@ -4466,9 +4583,10 @@ For each page: read current renderer and data, read approved supporting service 
 
 ### Task 4: Validator and test hardening
 
-- Review all validators against approved component blocks (Section 5)
-- Update validators that reference outdated component names or contracts
-- Align tests with validator changes
+- Phase 2 may harden validators/tests for production renderer and supporting page migrations, but Phase 1 owns validator/test alignment for the Phase 1 component contracts it creates or upgrades.
+- Review validators and tests that need additional hardening after anchor renderer migration and supporting page migration are stable.
+- Update validators that reference outdated component names or contracts introduced by production renderer and supporting page migration.
+- Align tests with those later migration changes.
 - Run `npm run system:full` after all changes
 
 ### Task 5: Visual system hardening
@@ -4490,6 +4608,8 @@ For each page: read current renderer and data, read approved supporting service 
 - Confirm all validators pass
 - Confirm build is clean
 - Confirm dev visualizer reflects all components
+- Smart Website Systems and Local SEO Authority production renderers follow the approved anchor mapping
+- Remaining Tier-1 and supporting page migrations happen only after anchor renderer migration is stable
 - Confirm no deprecated variants remain in any renderer
 - Confirm all Tier-1 and supporting service page renderers match approved mappings
 
@@ -4597,29 +4717,17 @@ Operating principle:
 - clear success condition
 - minimal hard restrictions outside real ownership boundaries
 
-## 10.3 Model Usage Guidance
 
-Use model choice based on decision weight.
-
-- GPT-5.4: default for mechanical edits, docs cleanup, and small scoped code changes
-- GPT-5.5 / Sonnet: pattern decisions, component contracts, and page mapping decisions
-- Opus: large architecture decisions, conflicting system logic, validator redesign, and major refactor planning
-
-Data/content changes:
-- GPT-5.4 may handle direct mapping and obvious light reshaping.
-- GPT-5.5 / Sonnet should handle data-contract reshaping when section meaning is present but not structured.
-- Opus or user review is required when new substantive content decisions are needed.
-- Proof, metrics, testimonials, results, or guarantees require real source data and explicit user approval regardless of model.
-
-## 10.4 Migration Strategy
+## 10.3 Migration Strategy
 
 - migrate components one by one during scoped execution tasks
-- Phase 1 handles new component creation and anchor renderer migration; Phase 2 handles remaining Tier-1 and supporting page migration
+- Phase 1 handles component creation, component upgrades, visual support, and `/dev/component-system` preview readiness; Phase 2 begins production renderer migration with the Smart Website and Local SEO anchors before remaining Tier-1 and supporting page migration
 - verify against real data
 - update contracts
 - align validators and tests after contract changes, not before
 - keep higher-level governance docs intact
 - do not treat backlog notes as implementation truth until verified against current code
+- run system:full and build after each phase and make sure they both are clean.
 
 ---
 

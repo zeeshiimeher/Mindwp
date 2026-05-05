@@ -73,7 +73,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
       <main role='main'>
         {/* Hero — visibility variant */}
         <HeroSplitSection
-          variant='visibility'
+          visualType='signal-grid'
           kicker={hero.badge}
           heading={{ title: hero.title, description: hero.description }}
           chips={hero.list}
@@ -106,10 +106,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           />
         )}
 
-        {/* We start with your website — layer-stack signal-map */}
+        {/* We start with your website — layer-stack */}
         {why && (
           <LayerStackSection
-            variant='signal-map'
+            variant='stack'
             heading={{
               kicker: why.badge,
               title: why.title,
@@ -160,10 +160,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             );
           })()}
 
-        {/* What changes when SEO works — layer-stack signal-map */}
+        {/* What changes when SEO works — layer-stack */}
         {integrations && (
           <LayerStackSection
-            variant='signal-map'
+            variant='stack'
             heading={{
               kicker: integrations.badge,
               title: integrations.title,

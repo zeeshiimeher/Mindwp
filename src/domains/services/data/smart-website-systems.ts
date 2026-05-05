@@ -510,6 +510,144 @@ export const smartWebsiteSystemsPage = {
       },
       items: smartWebsitesFaqItems,
     },
+    journeyLeakMap: {
+      header: {
+        kicker: 'Where it breaks',
+        title: 'Where enquiries leak out of your business',
+        description:
+          'Five points in the enquiry path where leads disappear — before your team ever has a chance to respond.',
+      },
+      stages: [
+        {
+          id: 'discovery',
+          label: 'Discovery',
+          title: 'They find you — then give up',
+          leak: 'Services are grouped under one page. Someone looking for one specific thing has to sift through everything else.',
+          impact:
+            'Visitors leave without enquiring because they cannot quickly find what they came for.',
+          handled:
+            'Each service gets its own page, written the way people search for it. The right visitor finds the right page.',
+          status: 'critical' as const,
+        },
+        {
+          id: 'enquiry',
+          label: 'Enquiry',
+          title: 'The message lands in the wrong place',
+          leak: 'Contact forms feed into a shared inbox that nobody owns. On mobile, buttons are too small and forms break halfway through.',
+          impact:
+            'Enquiries pile up unread. Visitors on phones abandon the form before completing it.',
+          handled:
+            'Enquiry routes directly to the right person with name, number, and service already attached.',
+          status: 'critical' as const,
+        },
+        {
+          id: 'response',
+          label: 'Response',
+          title: 'Hours pass before anyone replies',
+          leak: 'No automatic notification when an enquiry arrives. Whoever checks the inbox that day handles it — if they remember.',
+          impact:
+            'The business that responds first usually gets the work. A slow reply often means the job has already gone.',
+          handled:
+            'An automated confirmation goes out immediately. The enquiry is logged in the CRM with a notification to the right person.',
+          status: 'critical' as const,
+        },
+        {
+          id: 'follow-up',
+          label: 'Follow-up',
+          title: 'Nobody chases — so the lead goes cold',
+          leak: 'No follow-up sequence. Your team is mid-job. Checking back on every outstanding enquiry depends on memory.',
+          impact:
+            'Warm leads go cold without a reply. Work that was available disappears without your team knowing.',
+          handled:
+            'Follow-up runs automatically until there is a response. Your team delivers the work — the system handles the chasing.',
+          status: 'warning' as const,
+        },
+        {
+          id: 'visibility',
+          label: 'Visibility',
+          title: 'Marketing spend cannot be measured or justified',
+          leak: 'Ads, social, and directories run separately. Nothing connects a click to an actual enquiry or a piece of work won.',
+          impact:
+            'Spend continues without evidence of return. Channels that are not working are kept on.',
+          handled:
+            'Tracking shows where each enquiry came from. Channels that produce real work are visible. Ones that do not are too.',
+          status: 'warning' as const,
+        },
+      ],
+    },
+    serviceBridge: {
+      header: {
+        kicker: 'Connected systems',
+        title: 'What the website hands off — and to what',
+        description:
+          'A Smart Website captures the enquiry. What happens after depends on the systems connected to it.',
+      },
+      bridges: [
+        {
+          id: 'lead-handling',
+          from: 'Smart Website Systems',
+          to: 'AI Lead Handling',
+          handoff:
+            'The website captures the enquiry and routes it. AI Lead Handling takes the first response — confirming receipt, qualifying intent, and keeping the conversation moving before your team picks it up.',
+          boundary:
+            'Smart Website Systems owns the capture and routing. AI Lead Handling owns the initial response and conversation logic that follows.',
+        },
+        {
+          id: 'crm-automation',
+          from: 'Smart Website Systems',
+          to: 'CRM Automation',
+          handoff:
+            'Every enquiry that enters through the website goes straight into the CRM with name, number, service, and source attached. CRM Automation owns the workflow, assignment, follow-up sequence, and reporting from that point.',
+          boundary:
+            'Smart Website Systems owns the entry point. CRM Automation owns the pipeline, task management, and ongoing communication.',
+        },
+        {
+          id: 'local-seo',
+          from: 'Smart Website Systems',
+          to: 'Local SEO Authority',
+          handoff:
+            'The service pages built into the Smart Website System give Local SEO Authority a structured foundation to work from — individual pages, clear service intent, and the content signals that local search depends on.',
+          boundary:
+            'Smart Website Systems owns the page structure and on-page content. Local SEO Authority owns the citation, profile, and authority-building work that makes those pages discoverable.',
+        },
+      ],
+    },
+    scopeGroups: [
+      {
+        label: 'Build',
+        description: 'What is built as part of the initial project',
+        iconKey: 'database' as const,
+        items: [
+          'WordPress build shaped around your services and how customers search for them',
+          'Individual service pages written for the searches people nearby actually make',
+          'Enquiry forms capturing name, number, and service — routed to the right person',
+          'Mobile tested and working across phones, tablets, and desktops',
+          'SSL, daily backups, and security monitoring from day one',
+        ],
+      },
+      {
+        label: 'Connected',
+        description: 'Systems connected during the build',
+        iconKey: 'workflow' as const,
+        items: [
+          'CRM or booking tool connected from day one — every lead logged on arrival',
+          'Automated confirmation sent immediately when an enquiry lands',
+          'Follow-up sequence running without anyone on your team having to remember',
+          'Tracking showing where visitors come from and what they do',
+          'Every enquiry path tested end to end before launch',
+        ],
+      },
+      {
+        label: 'Handover',
+        description: 'What you receive at the end of the project',
+        iconKey: 'clipboard' as const,
+        items: [
+          'Full documentation for content, CRM, and follow-up management',
+          'Hands-on walkthrough for your team',
+          'Your team manages content, checks leads, and handles updates independently from there',
+        ],
+      },
+    ],
   },
   cta: {
     heading: {
