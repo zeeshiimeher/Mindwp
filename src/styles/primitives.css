@@ -46,10 +46,10 @@
    ══════════════════════════════════════════════════════ */
 
 .rd-btn {
-    --_btn-bg:           var(--mw-color-dark);
-    --_btn-fg:           var(--mw-color-white);
-    --_btn-bg-hover:     var(--mw-color-dark-hover);
-    --_btn-border:       transparent;
+    --_btn-bg: var(--mw-color-dark);
+    --_btn-fg: var(--mw-color-white);
+    --_btn-bg-hover: var(--mw-color-dark-hover);
+    --_btn-border: transparent;
     --_btn-border-hover: transparent;
 
     display: inline-flex;
@@ -87,17 +87,17 @@
 
 /* Primary — dark bg, white text */
 .rd-btn--primary {
-    --_btn-bg:       var(--mw-color-dark);
-    --_btn-fg:       var(--mw-color-white);
+    --_btn-bg: var(--mw-color-dark);
+    --_btn-fg: var(--mw-color-white);
     --_btn-bg-hover: var(--mw-color-dark-hover);
     font-weight: 600;
 }
 
 /* White — white bg, dark text (hero primary button) */
 .rd-btn--white {
-    --_btn-bg:   var(--mw-color-white);
-    --_btn-fg:   var(--mw-color-dark);
-    font-size:   var(--mw-text-body-sm);
+    --_btn-bg: var(--mw-color-white);
+    --_btn-fg: var(--mw-color-dark);
+    font-size: var(--mw-text-body-sm);
     font-weight: 600;
     padding: var(--mw-space-4) var(--mw-space-7);
 }
@@ -108,8 +108,8 @@
 
 /* Ghost text link — underline variant */
 .rd-btn--ghost {
-    --_btn-bg:   transparent;
-    --_btn-fg:   var(--mw-text-on-dark);
+    --_btn-bg: transparent;
+    --_btn-fg: var(--mw-text-on-dark);
     border-radius: 0;
     padding-inline: 0;
     padding-block: var(--mw-space-1);
@@ -123,10 +123,10 @@
 
 /* Secondary — transparent with border */
 .rd-btn--secondary {
-    --_btn-bg:           transparent;
-    --_btn-fg:           var(--mw-color-white);
-    --_btn-border:       var(--mw-color-white);
-    --_btn-bg-hover:     var(--mw-color-white);
+    --_btn-bg: transparent;
+    --_btn-fg: var(--mw-color-white);
+    --_btn-border: var(--mw-color-white);
+    --_btn-bg-hover: var(--mw-color-white);
     --_btn-border-hover: var(--mw-color-white);
 }
 
@@ -152,9 +152,25 @@
     pointer-events: none;
 }
 
+/* Signal dot accent — Figma: 6px cyan dot with glow, appended after label */
+.rd-btn__dot {
+    display: inline-block;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-cyan);
+    box-shadow: var(--mw-glow-cyan);
+    flex-shrink: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .rd-btn { transition: none; }
-    .rd-btn:active { transform: none; }
+    .rd-btn {
+        transition: none;
+    }
+
+    .rd-btn:active {
+        transform: none;
+    }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -297,18 +313,52 @@
     height: 0.5rem;
 }
 
-.rd-dot--cyan   { color: var(--mw-signal-cyan);   box-shadow: var(--mw-glow-cyan); }
-.rd-dot--teal   { color: var(--mw-signal-teal);   box-shadow: var(--mw-glow-teal); }
-.rd-dot--green  { color: var(--mw-signal-green);  box-shadow: var(--mw-glow-green); }
-.rd-dot--amber  { color: var(--mw-signal-amber);  box-shadow: var(--mw-glow-amber); }
-.rd-dot--red    { color: var(--mw-signal-red);    box-shadow: var(--mw-glow-red); }
-.rd-dot--purple { color: var(--mw-signal-purple); box-shadow: var(--mw-glow-purple); }
+.rd-dot--cyan {
+    color: var(--mw-signal-cyan);
+    box-shadow: var(--mw-glow-cyan);
+}
+
+.rd-dot--teal {
+    color: var(--mw-signal-teal);
+    box-shadow: var(--mw-glow-teal);
+}
+
+.rd-dot--green {
+    color: var(--mw-signal-green);
+    box-shadow: var(--mw-glow-green);
+}
+
+.rd-dot--amber {
+    color: var(--mw-signal-amber);
+    box-shadow: var(--mw-glow-amber);
+}
+
+.rd-dot--red {
+    color: var(--mw-signal-red);
+    box-shadow: var(--mw-glow-red);
+}
+
+.rd-dot--purple {
+    color: var(--mw-signal-purple);
+    box-shadow: var(--mw-glow-purple);
+}
 
 /* Legacy aliases for existing section components */
-.rd-dot--good { color: var(--mw-signal-green); }
-.rd-dot--risk { color: var(--mw-signal-red); }
-.rd-dot--warn { color: var(--mw-signal-amber); }
-.rd-dot--info { color: var(--mw-signal-cyan); }
+.rd-dot--good {
+    color: var(--mw-signal-green);
+}
+
+.rd-dot--risk {
+    color: var(--mw-signal-red);
+}
+
+.rd-dot--warn {
+    color: var(--mw-signal-amber);
+}
+
+.rd-dot--info {
+    color: var(--mw-signal-cyan);
+}
 
 .rd-dot--live {
     animation: mw-pulse-dot 2s ease-in-out infinite;
@@ -463,6 +513,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .rd-card,
     .rd-btn,
     .rd-link,

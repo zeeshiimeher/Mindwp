@@ -8,7 +8,7 @@ import { useEffect } from 'react';
  * Contract:
  *   - Without JS, content stays fully visible (CSS hides nothing by default).
  *   - On mount, sets `data-js-motion` on <html>, which arms the hidden
- *     pre-state in framework.css.
+ *     pre-state in layout.css.
  *   - Observes any element with an `rd-animate-*` class and toggles
  *     `is-visible` when it enters the viewport. Once revealed, it stays
  *     revealed (single-fire) so animations never restart.

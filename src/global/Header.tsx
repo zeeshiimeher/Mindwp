@@ -53,6 +53,7 @@ export async function Header() {
         <div className='header__actions'>
           <a href={primaryAction.href} className='rd-btn rd-btn--primary'>
             {primaryAction.label}
+            <span className='rd-btn__dot' aria-hidden='true' />
           </a>
         </div>
 

@@ -61,6 +61,7 @@ export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps
                 onClick={() => setOpen(false)}
               >
                 {primaryAction.label}
+                <span className='rd-btn__dot' aria-hidden='true' />
               </a>
             </div>
           </nav>

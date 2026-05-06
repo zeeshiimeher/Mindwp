@@ -44,29 +44,36 @@ export function Footer() {
           </div>
 
           <div className='footer__column'>
-            <h4 className='footer__heading'>Services</h4>
+            <h4 className='footer__heading'>Systems</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
-                <InternalLink href='/services/smart-website-systems' className='footer__link'>
-                  Smart Websites
+                <InternalLink href='/systems/smart-website-systems' className='footer__link'>
+                  Smart Website Systems
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/services/local-seo-authority' className='footer__link'>
-                  Website SEO
+                <InternalLink href='/systems/local-seo-authority' className='footer__link'>
+                  Local SEO Authority
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink
-                  href='/services/crm-infrastructure-implementation'
-                  className='footer__link'
-                >
-                  CRM Infrastructure
+                <InternalLink href='/systems/ai-lead-handling' className='footer__link'>
+                  AI Lead Handling
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/services/ai-lead-handling' className='footer__link'>
-                  AI Chat
+                <InternalLink href='/systems/crm-automation' className='footer__link'>
+                  CRM &amp; Automation
+                </InternalLink>
+              </li>
+              <li className='footer__item'>
+                <InternalLink href='/systems/reputation-review' className='footer__link'>
+                  Reputation &amp; Reviews
+                </InternalLink>
+              </li>
+              <li className='footer__item'>
+                <InternalLink href='/systems/revenue-growth' className='footer__link'>
+                  Revenue Growth
                 </InternalLink>
               </li>
             </ul>
@@ -136,7 +143,13 @@ export function Footer() {
         </div>
 
         <div className='footer__bottom'>
-          <p className='footer__copyright'>© {currentYear} MindWP. All rights reserved.</p>
+          <p className='footer__copyright'>
+            © {currentYear} MindWP. Connected systems for service businesses.
+          </p>
+          <span className='footer__status'>
+            <span className='footer__status-dot' aria-hidden='true' />
+            All systems operational
+          </span>
           <div className='footer__social footer__social--hidden'>
             <button className='footer__social-link' disabled>
               <Facebook className='footer__social-icon' />

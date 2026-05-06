@@ -63,9 +63,11 @@
 
 .header__nav-link {
     position: relative;
-    font-size: var(--mw-text-label);    /* 13.5px — Figma */
+    font-size: var(--mw-text-label);
+    /* 13.5px — Figma */
     font-weight: 500;
-    color: var(--mw-text-secondary);    /* #4C5E6F — Figma default */
+    color: var(--mw-text-secondary);
+    /* #4C5E6F — Figma default */
     text-decoration: none;
     padding-block: var(--mw-space-1);
     letter-spacing: 0;
@@ -75,7 +77,8 @@
 }
 
 .header__nav-link:hover {
-    color: var(--mw-text-primary);      /* #08111F — Figma hover */
+    color: var(--mw-text-primary);
+    /* #08111F — Figma hover */
     font-weight: 600;
 }
 
@@ -157,6 +160,7 @@
 
 /* Breakpoint — reveal desktop nav and actions */
 @media (min-width: 980px) {
+
     .header__nav,
     .header__actions {
         display: inline-flex;
@@ -169,6 +173,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .header,
     .header__nav-link,
     .header__mobile-toggle,
@@ -323,6 +328,26 @@
     margin: 0;
 }
 
+/* Status indicator — Figma: cyan dot + "All systems operational" */
+.footer__status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mw-space-1-5);
+    font-size: var(--mw-text-body-sm);
+    color: var(--mw-text-on-dark-muted);
+}
+
+.footer__status-dot {
+    display: inline-block;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-cyan);
+    box-shadow: var(--mw-glow-cyan);
+    animation: mw-pulse-dot 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
 .footer__social {
     display: flex;
     gap: var(--mw-space-2);
@@ -368,6 +393,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .footer__link,
     .footer__utility-link,
     .footer__social-link {
