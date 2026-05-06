@@ -24,11 +24,11 @@ const VARIANT_LABELS: Record<StatusTone, string> = {
 export function StatusBadge({ variant, label, accent, className }: StatusBadgeProps) {
   return (
     <span
-      className={['rd-status-badge', className].filter(Boolean).join(' ')}
+      className={['mw-status-badge', className].filter(Boolean).join(' ')}
       data-variant={variant}
       data-accent={accent}
     >
-      <span className='rd-status-badge__dot' aria-hidden='true' />
+      <span className='mw-status-badge__dot' aria-hidden='true' />
       {label ?? VARIANT_LABELS[variant]}
     </span>
   );

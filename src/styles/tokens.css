@@ -371,6 +371,31 @@
     --brand-white-80: color-mix(in srgb, #ffffff 80%, transparent);
     --brand-white-70: color-mix(in srgb, #ffffff 70%, transparent);
 
+    /* White alpha utility tokens — for rgba overlays in home.css and component surfaces.
+       Use var(--mw-white-XX) in production CSS instead of raw rgba(255,255,255,X). */
+    --mw-white-02: rgba(255, 255, 255, 0.02);
+    --mw-white-03: rgba(255, 255, 255, 0.03);
+    --mw-white-04: rgba(255, 255, 255, 0.04);
+    --mw-white-05: rgba(255, 255, 255, 0.05);
+    --mw-white-06: rgba(255, 255, 255, 0.06);
+    --mw-white-08: rgba(255, 255, 255, 0.08);
+    --mw-white-10: rgba(255, 255, 255, 0.1);
+    --mw-white-12: rgba(255, 255, 255, 0.12);
+    --mw-white-15: rgba(255, 255, 255, 0.15);
+    --mw-white-25: rgba(255, 255, 255, 0.25);
+    --mw-white-30: rgba(255, 255, 255, 0.3);
+    --mw-white-35: rgba(255, 255, 255, 0.35);
+    --mw-white-40: rgba(255, 255, 255, 0.4);
+    --mw-white-45: rgba(255, 255, 255, 0.45);
+    --mw-white-50: rgba(255, 255, 255, 0.5);
+    --mw-white-55: rgba(255, 255, 255, 0.55);
+    --mw-white-60: rgba(255, 255, 255, 0.6);
+    --mw-white-65: rgba(255, 255, 255, 0.65);
+    --mw-white-70: rgba(255, 255, 255, 0.7);
+    --mw-white-75: rgba(255, 255, 255, 0.75);
+    --mw-white-80: rgba(255, 255, 255, 0.8);
+    --mw-white-85: rgba(255, 255, 255, 0.85);
+
     /* ══════════════════════════════════════════════════════
        14. SHADCN / RADIX UI COMPAT SHIMS
        Consumed by src/components/ui/ (third-party lib).

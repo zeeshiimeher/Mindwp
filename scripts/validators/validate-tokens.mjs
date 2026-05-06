@@ -10,6 +10,9 @@
  *   2. TOKEN_FONT_SIZE — hardcoded font-size values that should use --mw-* tokens.
  *   3. TOKEN_RAW_HEX  — raw hex colour codes (#xxx or #xxxxxx) in property values
  *                       outside of tokens.css. Only tokens.css may have raw hex.
+ *   4. TOKEN_RAW_COLOR — raw rgba() values in property values outside of tokens.css.
+ *                        All rgba values must be defined as --mw-* tokens and
+ *                        referenced via var(--mw-*).
  *
  * Allowed exceptions:
  *   - 0 / 0px (reset values)
@@ -178,6 +181,18 @@ function scanFile(absPath) {
         line: i + 1,
         rule: 'TOKEN_RAW_HEX',
         message: `Raw hex colour in \`${prop}: ${value}\` — reference a --mw-* token via var() instead.`,
+      });
+    }
+
+    // ── Check 4: raw rgba() colour ───────────────────────────────────────
+    // rgba() values in production CSS bypass the token system.
+    // All rgba values must be defined in tokens.css and referenced via var(--mw-*)
+    if (/rgba\s*\(/.test(value)) {
+      violations.push({
+        file: rel,
+        line: i + 1,
+        rule: 'TOKEN_RAW_COLOR',
+        message: `Raw rgba() colour in \`${prop}: ${value}\` — define in tokens.css and reference via var(--mw-*) instead.`,
       });
     }
   }

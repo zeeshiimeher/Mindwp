@@ -1,6 +1,6 @@
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
-import type { AccentKey } from '@/types/ui';
+import type { AccentKey, StatusTone } from '@/types/ui';
 
 export type { AccentKey };
 
@@ -58,16 +58,19 @@ export type HomeIconKey =
   | 'follow-up-sequence'
   | 'service-page-structure'
   | 'review-flow'
-  | 'crm-routing';
+  | 'crm-routing'
+  // System stack cards
+  | 'system-website'
+  | 'system-local-seo'
+  | 'system-ai'
+  | 'system-crm'
+  | 'system-review'
+  | 'system-revenue';
 
 export type HomepageData = {
   seo: {
-    title: string;
-    description: string;
-    canonical: string;
     schema: {
       organization: Record<string, unknown>;
-      website?: Record<string, unknown>;
     };
   };
 
@@ -82,10 +85,11 @@ export type HomepageData = {
     signals: Array<{
       label: string;
       note: string;
-      status: 'unowned' | 'leaking';
+      status: Extract<StatusTone, 'unowned' | 'leaking'>;
       iconKey: HomeIconKey;
     }>;
     signalSummary: { leaking: string; unowned: string; pulling: string };
+    signalCountLabel: string;
   };
 
   leakDiagnosis: {
@@ -103,6 +107,7 @@ export type HomepageData = {
     description: string;
     surfaceTitle: string;
     surfaceNote: string;
+    surfaceIconKey: HomeIconKey;
     middleLayers: Array<{ label: string; iconKey: HomeIconKey }>;
     foundationTitle: string;
     foundationNote: string;
@@ -121,6 +126,7 @@ export type HomepageData = {
       handles: string;
       accent: AccentKey;
       href: string;
+      iconKey: HomeIconKey;
     }>;
     footerNote: string;
     footerAction: { label: string; href: string };
@@ -137,14 +143,14 @@ export type HomepageData = {
     heading: string;
     description: string;
     strongFit: string[];
-    notFit: string[];
+    poorFit: string[];
   };
 
   clientShift: {
     heading: string;
     description: string;
-    before: { label: string; bullets: string[] };
-    after: { label: string; bullets: string[] };
+    before: { label: string; bullets: string[]; stateLabel: string };
+    after: { label: string; bullets: string[]; stateLabel: string };
     scatterItems: string[];
     shifts: Array<{ title: string; before: string; after: string; iconKey: HomeIconKey }>;
   };
@@ -166,6 +172,7 @@ export type HomepageData = {
     heading: string;
     headingMuted: string;
     description: string;
+    layerStatus: string;
     layers: Array<{ title: string; note: string; accent: AccentKey; iconKey: HomeIconKey }>;
     foundation: { title: string };
   };
@@ -209,7 +216,6 @@ export type HomepageData = {
     heading: string;
     description: string;
     boardLabel: string;
-    boardCount: string;
     implementationPatterns: Array<{
       title: string;
       desc: string;
@@ -239,10 +245,6 @@ export type HomepageData = {
 
 export const homepageData: HomepageData = {
   seo: {
-    title: 'Stop Losing Enquiries. Catch Calls, Follow Up, Win More Work.',
-    description:
-      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. The routing, follow-up, visibility, and proof are put in place so the work already coming in actually turns into work.',
-    canonical: '/',
     schema: {
       organization: {
         '@context': 'https://schema.org',
@@ -322,6 +324,7 @@ export const homepageData: HomepageData = {
       unowned: '5 unowned',
       pulling: 'Pulled toward system',
     },
+    signalCountLabel: 'UNOWNED',
   },
 
   leakDiagnosis: {
@@ -384,6 +387,7 @@ export const homepageData: HomepageData = {
       'A website alone does not fix missed calls, slow replies, scattered forms, or invisible follow-up. But it is often the first place those problems show up.',
     surfaceTitle: 'Visible website',
     surfaceNote: 'What the visitor sees',
+    surfaceIconKey: 'system-website',
     middleLayers: [
       { label: 'Capture', iconKey: 'capture' },
       { label: 'Routing', iconKey: 'routing' },
@@ -410,6 +414,7 @@ export const homepageData: HomepageData = {
         handles: 'Visitors, service questions, enquiry capture',
         accent: 'cyan',
         href: '/systems/smart-website-systems',
+        iconKey: 'system-website',
       },
       {
         name: 'Local SEO Authority',
@@ -418,6 +423,7 @@ export const homepageData: HomepageData = {
         handles: 'Search presence, map coverage, signal trust',
         accent: 'teal',
         href: '/systems/local-seo-authority',
+        iconKey: 'system-local-seo',
       },
       {
         name: 'AI Lead Handling',
@@ -426,6 +432,7 @@ export const homepageData: HomepageData = {
         handles: 'Calls, forms, DMs, after hours',
         accent: 'green',
         href: '/systems/ai-lead-handling',
+        iconKey: 'system-ai',
       },
       {
         name: 'CRM & Automation',
@@ -434,6 +441,7 @@ export const homepageData: HomepageData = {
         handles: 'Quotes, follow-up, ownership, status',
         accent: 'amber',
         href: '/systems/crm-automation',
+        iconKey: 'system-crm',
       },
       {
         name: 'Reputation & Review',
@@ -442,14 +450,16 @@ export const homepageData: HomepageData = {
         handles: 'Review requests, timing, response',
         accent: 'purple',
         href: '/systems/reputation-review',
+        iconKey: 'system-review',
       },
       {
         name: 'Revenue Growth',
         role: 'Improvement layer',
         roleNote: 'What works gets stronger',
         handles: 'Spend, return, repeat work, decisions',
-        accent: 'cyan',
+        accent: 'red',
         href: '/systems/revenue-growth',
+        iconKey: 'system-revenue',
       },
     ],
     footerNote: 'Most businesses already have parts of this. The work is connecting them.',
@@ -503,7 +513,7 @@ export const homepageData: HomepageData = {
       'Marketing has been tried before',
       'The business needs something that runs',
     ],
-    notFit: [
+    poorFit: [
       'Quick visual refresh',
       'Price-only comparison',
       'Feature checklist',
@@ -517,6 +527,7 @@ export const homepageData: HomepageData = {
       'Not a sales pitch. The difference between a business that catches everything and one that does not.',
     before: {
       label: 'Before',
+      stateLabel: 'scattered',
       bullets: [
         '3 separate inboxes',
         'Missed calls, no record',
@@ -526,6 +537,7 @@ export const homepageData: HomepageData = {
     },
     after: {
       label: 'After',
+      stateLabel: 'controlled',
       bullets: [
         '1 capture surface',
         'Every call logged',
@@ -612,6 +624,7 @@ export const homepageData: HomepageData = {
     description:
       'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, and lead recovery. Connected. Running.',
     foundation: { title: 'Smart Website / Business Infrastructure' },
+    layerStatus: 'Active',
     layers: [
       {
         title: 'Visibility Layer',
@@ -780,7 +793,6 @@ export const homepageData: HomepageData = {
     description:
       'Not every business needs the same build. The system is shaped around where work is leaking.',
     boardLabel: 'Implementation patterns — selected',
-    boardCount: '05 patterns shown',
     implementationPatterns: [
       {
         title: 'Missed call recovery flow',

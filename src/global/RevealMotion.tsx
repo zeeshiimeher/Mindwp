@@ -9,7 +9,7 @@ import { useEffect } from 'react';
  *   - Without JS, content stays fully visible (CSS hides nothing by default).
  *   - On mount, sets `data-js-motion` on <html>, which arms the hidden
  *     pre-state in layout.css.
- *   - Observes any element with an `rd-animate-*` class and toggles
+ *   - Observes any element with an `mw-animate-*` class and toggles
  *     `is-visible` when it enters the viewport. Once revealed, it stays
  *     revealed (single-fire) so animations never restart.
  *   - Respects prefers-reduced-motion: still sets `data-js-motion` so the
@@ -19,13 +19,13 @@ import { useEffect } from 'react';
  */
 
 const TARGET_SELECTOR = [
-  '.rd-animate-section',
-  '.rd-animate-list',
-  '.rd-animate-stagger',
-  '.rd-animate-fade',
-  '.rd-animate-up',
-  '.rd-animate-panel',
-  '.rd-animate-line',
+  '.mw-animate-section',
+  '.mw-animate-list',
+  '.mw-animate-stagger',
+  '.mw-animate-fade',
+  '.mw-animate-up',
+  '.mw-animate-panel',
+  '.mw-animate-line',
 ].join(',');
 
 export function RevealMotion(): null {

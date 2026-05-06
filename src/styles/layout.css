@@ -1,7 +1,7 @@
 /*
  * LAYOUT — containers, grids, section rhythm, background utilities.
  *
- * Owns: rd-container, rd-section, rd-grid, rd-split, rd-stack, rd-cluster,
+ * Owns: mw-container, rd-section, rd-grid, rd-split, rd-stack, rd-cluster,
  * rd-panel shell, background context classes, foreground utilities,
  * section header system, motion utilities.
  *
@@ -14,17 +14,17 @@
    ══════════════════════════════════════════════════════ */
 
 /*
- * rd-container — 1240px inner content width, centred, responsive horizontal padding.
+ * mw-container — 1240px inner content width, centred, responsive horizontal padding.
  * Matches Figma: max-w-[1240px] mx-auto px-8
  */
-.rd-container {
+.mw-container {
     width: 100%;
     max-width: var(--mw-container-max);
     margin-inline: auto;
     padding-inline: var(--mw-space-inline);
 }
 
-.rd-container--text {
+.mw-container--text {
     max-width: var(--mw-container-text);
 }
 
@@ -400,7 +400,7 @@
     }
 }
 
-.rd-animate-section {
+.mw-animate-section {
     animation: mw-fade-in var(--mw-dur-base) var(--mw-ease-out) both;
 }
 
@@ -413,114 +413,114 @@
    ══════════════════════════════════════════════════════ */
 
 /* Pre-states — only active when JS motion is armed */
-[data-js-motion] .rd-animate-fade,
-[data-js-motion] .rd-animate-up,
-[data-js-motion] .rd-animate-panel,
-[data-js-motion] .rd-animate-section,
-[data-js-motion] .rd-animate-list,
-[data-js-motion] .rd-animate-stagger>* {
+[data-js-motion] .mw-animate-fade,
+[data-js-motion] .mw-animate-up,
+[data-js-motion] .mw-animate-panel,
+[data-js-motion] .mw-animate-section,
+[data-js-motion] .mw-animate-list,
+[data-js-motion] .mw-animate-stagger>* {
     opacity: 0;
     transition:
         opacity var(--mw-dur-slow) var(--mw-ease-out),
         transform var(--mw-dur-slow) var(--mw-ease-out);
 }
 
-[data-js-motion] .rd-animate-up,
-[data-js-motion] .rd-animate-section,
-[data-js-motion] .rd-animate-list {
+[data-js-motion] .mw-animate-up,
+[data-js-motion] .mw-animate-section,
+[data-js-motion] .mw-animate-list {
     transform: translateY(1.25rem);
 }
 
-[data-js-motion] .rd-animate-panel {
+[data-js-motion] .mw-animate-panel {
     transform: translateY(0.75rem);
 }
 
-[data-js-motion] .rd-animate-stagger>* {
+[data-js-motion] .mw-animate-stagger>* {
     transform: translateY(0.75rem);
 }
 
 /* SVG line — hidden before reveal */
-[data-js-motion] .rd-animate-line path,
-[data-js-motion] .rd-animate-line line,
-[data-js-motion] .rd-animate-line polyline {
+[data-js-motion] .mw-animate-line path,
+[data-js-motion] .mw-animate-line line,
+[data-js-motion] .mw-animate-line polyline {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
     transition: stroke-dashoffset var(--mw-dur-slow) var(--mw-ease-out);
 }
 
 /* Revealed states */
-[data-js-motion] .rd-animate-fade.is-visible,
-[data-js-motion] .rd-animate-up.is-visible,
-[data-js-motion] .rd-animate-panel.is-visible,
-[data-js-motion] .rd-animate-section.is-visible,
-[data-js-motion] .rd-animate-list.is-visible,
-[data-js-motion] .rd-animate-stagger.is-visible>* {
+[data-js-motion] .mw-animate-fade.is-visible,
+[data-js-motion] .mw-animate-up.is-visible,
+[data-js-motion] .mw-animate-panel.is-visible,
+[data-js-motion] .mw-animate-section.is-visible,
+[data-js-motion] .mw-animate-list.is-visible,
+[data-js-motion] .mw-animate-stagger.is-visible>* {
     opacity: 1;
     transform: translateY(0);
 }
 
-[data-js-motion] .rd-animate-line.is-visible path,
-[data-js-motion] .rd-animate-line.is-visible line,
-[data-js-motion] .rd-animate-line.is-visible polyline {
+[data-js-motion] .mw-animate-line.is-visible path,
+[data-js-motion] .mw-animate-line.is-visible line,
+[data-js-motion] .mw-animate-line.is-visible polyline {
     stroke-dashoffset: 0;
 }
 
 /* Stagger delays — first 8 children */
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(1) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(1) {
     transition-delay: 0ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(2) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(2) {
     transition-delay: 60ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(3) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(3) {
     transition-delay: 120ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(4) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(4) {
     transition-delay: 180ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(5) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(5) {
     transition-delay: 240ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(6) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(6) {
     transition-delay: 300ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(7) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(7) {
     transition-delay: 360ms;
 }
 
-[data-js-motion] .rd-animate-stagger.is-visible>*:nth-child(8) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(8) {
     transition-delay: 420ms;
 }
 
 /* Reduced motion — force-reveal everything immediately */
 @media (prefers-reduced-motion: reduce) {
 
-    [data-js-motion] .rd-animate-fade,
-    [data-js-motion] .rd-animate-up,
-    [data-js-motion] .rd-animate-panel,
-    [data-js-motion] .rd-animate-section,
-    [data-js-motion] .rd-animate-list,
-    [data-js-motion] .rd-animate-stagger>*,
-    [data-js-motion] .rd-animate-fade.is-visible,
-    [data-js-motion] .rd-animate-up.is-visible,
-    [data-js-motion] .rd-animate-panel.is-visible,
-    [data-js-motion] .rd-animate-section.is-visible,
-    [data-js-motion] .rd-animate-list.is-visible,
-    [data-js-motion] .rd-animate-stagger.is-visible>* {
+    [data-js-motion] .mw-animate-fade,
+    [data-js-motion] .mw-animate-up,
+    [data-js-motion] .mw-animate-panel,
+    [data-js-motion] .mw-animate-section,
+    [data-js-motion] .mw-animate-list,
+    [data-js-motion] .mw-animate-stagger>*,
+    [data-js-motion] .mw-animate-fade.is-visible,
+    [data-js-motion] .mw-animate-up.is-visible,
+    [data-js-motion] .mw-animate-panel.is-visible,
+    [data-js-motion] .mw-animate-section.is-visible,
+    [data-js-motion] .mw-animate-list.is-visible,
+    [data-js-motion] .mw-animate-stagger.is-visible>* {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
     }
 
-    [data-js-motion] .rd-animate-line path,
-    [data-js-motion] .rd-animate-line line,
-    [data-js-motion] .rd-animate-line polyline {
+    [data-js-motion] .mw-animate-line path,
+    [data-js-motion] .mw-animate-line line,
+    [data-js-motion] .mw-animate-line polyline {
         stroke-dasharray: none;
         stroke-dashoffset: 0 !important;
         transition: none !important;

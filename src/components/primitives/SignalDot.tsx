@@ -13,7 +13,7 @@ interface SignalDotProps {
 export function SignalDot({ accent, className }: SignalDotProps) {
   return (
     <span
-      className={['rd-signal-dot', className].filter(Boolean).join(' ')}
+      className={['mw-signal-dot', className].filter(Boolean).join(' ')}
       data-accent={accent}
       aria-hidden='true'
     />

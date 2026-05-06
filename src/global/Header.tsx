@@ -1,23 +1,9 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
-
 import { getPrimaryNavigationEntries } from '@/lib/content-quality/inventory';
 import { buildGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
 
 import { HeaderMobileMenuIsland } from './HeaderMobileMenuIsland';
+import { InternalLink } from './InternalLink';
 import { Logo } from './Logo';
-
-type InternalLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
-  href: string;
-  children: ReactNode;
-};
-
-function InternalLink({ href, children, ...props }: InternalLinkProps) {
-  return (
-    <a href={href} {...props}>
-      {children}
-    </a>
-  );
-}
 
 const PRIMARY_NAV_PATHS = [
   '/services',
@@ -37,7 +23,7 @@ export async function Header() {
 
   return (
     <header className='header'>
-      <div className='rd-container header__inner'>
+      <div className='mw-container header__inner'>
         <InternalLink href='/' className='header__brand' aria-label='MindWP home'>
           <Logo />
         </InternalLink>
@@ -51,9 +37,9 @@ export async function Header() {
         </nav>
 
         <div className='header__actions'>
-          <a href={primaryAction.href} className='rd-btn rd-btn--primary'>
+          <a href={primaryAction.href} className='mw-btn mw-btn--primary'>
             {primaryAction.label}
-            <span className='rd-btn__dot' aria-hidden='true' />
+            <span className='mw-btn__dot' aria-hidden='true' />
           </a>
         </div>
 

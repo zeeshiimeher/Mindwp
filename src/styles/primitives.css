@@ -45,7 +45,7 @@
    BUTTONS
    ══════════════════════════════════════════════════════ */
 
-.rd-btn {
+.mw-btn {
     --_btn-bg: var(--mw-color-dark);
     --_btn-fg: var(--mw-color-white);
     --_btn-bg-hover: var(--mw-color-dark-hover);
@@ -76,17 +76,17 @@
         transform var(--mw-dur-fast) var(--mw-ease-out);
 }
 
-.rd-btn:hover {
+.mw-btn:hover {
     background: var(--_btn-bg-hover);
     border-color: var(--_btn-border-hover);
 }
 
-.rd-btn:active {
+.mw-btn:active {
     transform: translateY(1px);
 }
 
 /* Primary — dark bg, white text */
-.rd-btn--primary {
+.mw-btn--primary {
     --_btn-bg: var(--mw-color-dark);
     --_btn-fg: var(--mw-color-white);
     --_btn-bg-hover: var(--mw-color-dark-hover);
@@ -94,7 +94,7 @@
 }
 
 /* White — white bg, dark text (hero primary button) */
-.rd-btn--white {
+.mw-btn--white {
     --_btn-bg: var(--mw-color-white);
     --_btn-fg: var(--mw-color-dark);
     font-size: var(--mw-text-body-sm);
@@ -102,12 +102,12 @@
     padding: var(--mw-space-4) var(--mw-space-7);
 }
 
-.rd-btn--white:hover {
+.mw-btn--white:hover {
     background: var(--mw-color-border-hover);
 }
 
 /* Ghost text link — underline variant */
-.rd-btn--ghost {
+.mw-btn--ghost {
     --_btn-bg: transparent;
     --_btn-fg: var(--mw-text-on-dark);
     border-radius: 0;
@@ -116,13 +116,13 @@
     border-bottom: 1px solid var(--mw-border-dark);
 }
 
-.rd-btn--ghost:hover {
+.mw-btn--ghost:hover {
     background: transparent;
     color: var(--mw-text-on-dark-strong);
 }
 
 /* Secondary — transparent with border */
-.rd-btn--secondary {
+.mw-btn--secondary {
     --_btn-bg: transparent;
     --_btn-fg: var(--mw-color-white);
     --_btn-border: var(--mw-color-white);
@@ -130,30 +130,30 @@
     --_btn-border-hover: var(--mw-color-white);
 }
 
-.rd-btn--secondary:hover {
+.mw-btn--secondary:hover {
     color: var(--mw-color-dark);
 }
 
 /* Size variants */
-.rd-btn--lg {
+.mw-btn--lg {
     padding: var(--mw-space-4) var(--mw-space-8);
     font-size: var(--mw-text-body-sm);
 }
 
-.rd-btn--sm {
+.mw-btn--sm {
     padding: var(--mw-space-2) var(--mw-space-4);
     font-size: var(--mw-text-label-sm);
 }
 
 /* Disabled */
-.rd-btn[disabled],
-.rd-btn[aria-disabled="true"] {
+.mw-btn[disabled],
+.mw-btn[aria-disabled="true"] {
     opacity: 0.5;
     pointer-events: none;
 }
 
 /* Signal dot accent — Figma: 6px cyan dot with glow, appended after label */
-.rd-btn__dot {
+.mw-btn__dot {
     display: inline-block;
     width: 0.375rem;
     height: 0.375rem;
@@ -164,11 +164,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .rd-btn {
+    .mw-btn {
         transition: none;
     }
 
-    .rd-btn:active {
+    .mw-btn:active {
         transform: none;
     }
 }
@@ -232,7 +232,7 @@
    ══════════════════════════════════════════════════════ */
 
 /* Eyebrow / kicker style. Used by rd-section-kicker via typography.css.
-   See rd-signal-dot + rd-status-badge (new system) below for signal badges. */
+   See mw-signal-dot + mw-status-badge (new system) below for signal badges. */
 
 /* ══════════════════════════════════════════════════════
    SIGNAL DOTS
@@ -459,7 +459,7 @@
 @media (prefers-reduced-motion: reduce) {
 
     .rd-card,
-    .rd-btn,
+    .mw-btn,
     .rd-link,
     .rd-input,
     .rd-textarea,
@@ -479,7 +479,7 @@
    Used in status rows, badges, eyebrows, footers.
    ══════════════════════════════════════════════════════ */
 
-.rd-signal-dot {
+.mw-signal-dot {
     display: inline-block;
     width: var(--mw-space-1-5);
     height: var(--mw-space-1-5);
@@ -488,23 +488,23 @@
     flex-shrink: 0;
 }
 
-.rd-signal-dot[data-accent='teal'] {
+.mw-signal-dot[data-accent='teal'] {
     background-color: var(--mw-signal-teal);
 }
 
-.rd-signal-dot[data-accent='green'] {
+.mw-signal-dot[data-accent='green'] {
     background-color: var(--mw-signal-green);
 }
 
-.rd-signal-dot[data-accent='amber'] {
+.mw-signal-dot[data-accent='amber'] {
     background-color: var(--mw-signal-amber);
 }
 
-.rd-signal-dot[data-accent='red'] {
+.mw-signal-dot[data-accent='red'] {
     background-color: var(--mw-signal-red);
 }
 
-.rd-signal-dot[data-accent='purple'] {
+.mw-signal-dot[data-accent='purple'] {
     background-color: var(--mw-signal-purple);
 }
 
@@ -513,7 +513,7 @@
    Variants: active, unowned, leaking, handled, scattered, controlled
    ══════════════════════════════════════════════════════ */
 
-.rd-status-badge {
+.mw-status-badge {
     display: inline-flex;
     align-items: center;
     gap: var(--mw-space-1);
@@ -524,7 +524,7 @@
     color: var(--mw-text-secondary);
 }
 
-.rd-status-badge__dot {
+.mw-status-badge__dot {
     display: inline-block;
     width: var(--mw-space-1-5);
     height: var(--mw-space-1-5);
@@ -533,38 +533,38 @@
     background-color: var(--mw-signal-cyan);
 }
 
-.rd-status-badge[data-variant='active'] .rd-status-badge__dot {
+.mw-status-badge[data-variant='active'] .mw-status-badge__dot {
     background-color: var(--mw-signal-green);
 }
 
-.rd-status-badge[data-variant='active'] {
+.mw-status-badge[data-variant='active'] {
     color: var(--mw-signal-green);
 }
 
-.rd-status-badge[data-variant='leaking'] .rd-status-badge__dot,
-.rd-status-badge[data-variant='scattered'] .rd-status-badge__dot {
+.mw-status-badge[data-variant='leaking'] .mw-status-badge__dot,
+.mw-status-badge[data-variant='scattered'] .mw-status-badge__dot {
     background-color: var(--mw-signal-red);
 }
 
-.rd-status-badge[data-variant='leaking'],
-.rd-status-badge[data-variant='scattered'] {
+.mw-status-badge[data-variant='leaking'],
+.mw-status-badge[data-variant='scattered'] {
     color: var(--mw-signal-red);
 }
 
-.rd-status-badge[data-variant='unowned'] .rd-status-badge__dot {
+.mw-status-badge[data-variant='unowned'] .mw-status-badge__dot {
     background-color: var(--mw-signal-amber);
 }
 
-.rd-status-badge[data-variant='unowned'] {
+.mw-status-badge[data-variant='unowned'] {
     color: var(--mw-signal-amber);
 }
 
-.rd-status-badge[data-variant='handled'] .rd-status-badge__dot,
-.rd-status-badge[data-variant='controlled'] .rd-status-badge__dot {
+.mw-status-badge[data-variant='handled'] .mw-status-badge__dot,
+.mw-status-badge[data-variant='controlled'] .mw-status-badge__dot {
     background-color: var(--mw-signal-teal);
 }
 
-.rd-status-badge[data-variant='handled'],
-.rd-status-badge[data-variant='controlled'] {
+.mw-status-badge[data-variant='handled'],
+.mw-status-badge[data-variant='controlled'] {
     color: var(--mw-signal-teal);
 }

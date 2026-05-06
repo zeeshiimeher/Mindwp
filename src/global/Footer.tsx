@@ -1,22 +1,7 @@
-import { Facebook, Linkedin, Mail, Youtube } from 'lucide-react';
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
-
 import { buildGlobalPrimaryCtaLinks, getSecondaryCTA } from '@/lib/cta/primaryAction';
 
+import { InternalLink } from './InternalLink';
 import { Logo } from './Logo';
-
-type InternalLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
-  href: string;
-  children: ReactNode;
-};
-
-function InternalLink({ href, children, ...props }: InternalLinkProps) {
-  return (
-    <a href={href} {...props}>
-      {children}
-    </a>
-  );
-}
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,7 +17,7 @@ export function Footer() {
 
   return (
     <footer className='footer'>
-      <div className='rd-container'>
+      <div className='mw-container'>
         <div className='footer__grid'>
           <div className='footer__column footer__column--brand'>
             <Logo variant='footer' />
@@ -150,24 +135,6 @@ export function Footer() {
             <span className='footer__status-dot' aria-hidden='true' />
             All systems operational
           </span>
-          <div className='footer__social footer__social--hidden'>
-            <button className='footer__social-link' disabled>
-              <Facebook className='footer__social-icon' />
-              <span>Facebook</span>
-            </button>
-            <button className='footer__social-link' disabled>
-              <Linkedin className='footer__social-icon' />
-              <span>LinkedIn</span>
-            </button>
-            <button className='footer__social-link' disabled>
-              <Youtube className='footer__social-icon' />
-              <span>YouTube</span>
-            </button>
-            <button className='footer__social-link' disabled>
-              <Mail className='footer__social-icon' />
-              <span>Email</span>
-            </button>
-          </div>
         </div>
       </div>
     </footer>

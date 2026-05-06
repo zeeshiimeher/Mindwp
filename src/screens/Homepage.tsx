@@ -87,6 +87,13 @@ const HOME_ICON_MAP: Record<HomeIconKey, LucideIcon> = {
   professional: Briefcase,
   appointment: MapPin,
   'multi-service': Building2,
+  // System stack cards
+  'system-website': Globe,
+  'system-local-seo': MapPin,
+  'system-ai': Zap,
+  'system-crm': Route,
+  'system-review': Star,
+  'system-revenue': TrendingUp,
   // Implementation patterns
   'missed-call-recovery': PhoneIncoming,
   'follow-up-sequence': Repeat,
@@ -95,40 +102,25 @@ const HOME_ICON_MAP: Record<HomeIconKey, LucideIcon> = {
   'crm-routing': Route,
 };
 
-type HomepageCaseStudy = {
-  slug: string;
-  industryLabel: string;
-  client: string;
-  location: string;
-  description: string;
-  publishDate: string;
-};
-
-export default function Homepage({
-  featuredCaseStudies: _featuredCaseStudies,
-}: {
-  featuredCaseStudies: HomepageCaseStudy[];
-}) {
+export default function Homepage() {
   return (
     <CTARegistryProvider pageId='page:home' pageType='page' primarySystem='smart-website-systems'>
       <div className='home-page'>
-        <main>
-          <HeroSection />
-          <LeakDiagnosisSection />
-          <FoundationSection />
-          <SystemStackSection />
-          <PutInPlaceSection />
-          <FitFoundationsSection />
-          <ClientShiftSection />
-          <PressurePointsSection />
-          <StructureLayersSection />
-          <IndustriesSection />
-          <AlignmentSection />
-          <ProofStorySection />
-          <ImplementationExamplesSection />
-          <FAQSection />
-          <CTASection />
-        </main>
+        <HeroSection />
+        <LeakDiagnosisSection />
+        <FoundationSection />
+        <SystemStackSection />
+        <PutInPlaceSection />
+        <FitFoundationsSection />
+        <ClientShiftSection />
+        <PressurePointsSection />
+        <StructureLayersSection />
+        <IndustriesSection />
+        <AlignmentSection />
+        <ProofStorySection />
+        <ImplementationExamplesSection />
+        <FAQSection />
+        <CTASection />
       </div>
     </CTARegistryProvider>
   );
@@ -144,7 +136,7 @@ function HeroSection() {
   return (
     <section className='home-hero' id='hero'>
       <div className='home-hero__texture' aria-hidden='true' />
-      <div className='home-hero__inner rd-container'>
+      <div className='home-hero__inner mw-container'>
         <div className='home-hero__copy'>
           <div className='home-hero__eyebrow'>
             <span className='home-hero__eyebrow-dot' aria-hidden='true' />
@@ -160,7 +152,7 @@ function HeroSection() {
           <p className='home-hero__description'>{hero.description}</p>
 
           <div className='home-hero__actions'>
-            <a href={hero.primaryAction.href} className='rd-btn rd-btn--white'>
+            <a href={hero.primaryAction.href} className='mw-btn mw-btn--white'>
               {hero.primaryAction.label}
               <ArrowRight size={16} aria-hidden='true' />
             </a>
@@ -199,7 +191,7 @@ function SignalSurface() {
           <div className='home-signal__subtitle'>What your business looks like today</div>
         </div>
         <div className='home-signal__count'>
-          <div className='home-signal__count-label'>UNOWNED</div>
+          <div className='home-signal__count-label'>{hero.signalCountLabel}</div>
           <div className='home-signal__count-value'>07</div>
         </div>
       </div>
@@ -219,7 +211,7 @@ function SignalSurface() {
               </span>
               <span className='home-signal__row-badge'>
                 <span className='home-signal__row-badge-dot' aria-hidden='true' />
-                UNOWNED
+                {signal.status.toUpperCase()}
               </span>
             </div>
           );
@@ -247,8 +239,8 @@ function LeakDiagnosisSection() {
 
   return (
     <section className='home-leak' id='leak'>
-      <div className='home-leak__inner rd-container'>
-        <div className='home-leak__header rd-animate-up'>
+      <div className='home-leak__inner mw-container'>
+        <div className='home-leak__header mw-animate-up'>
           <div className='home-leak__intro'>
             <div className='home-eyebrow'>{leakDiagnosis.eyebrow}</div>
             <h2 className='home-h2'>
@@ -260,7 +252,7 @@ function LeakDiagnosisSection() {
           <p className='home-leak__description'>{leakDiagnosis.description}</p>
         </div>
 
-        <div className='home-leak__path rd-animate-stagger'>
+        <div className='home-leak__path mw-animate-stagger'>
           {leakDiagnosis.flowStages.map(item => {
             const Icon = HOME_ICON_MAP[item.iconKey];
             return (
@@ -291,8 +283,8 @@ function FoundationSection() {
 
   return (
     <section className='home-foundation'>
-      <div className='home-foundation__inner rd-container'>
-        <div className='home-foundation__copy rd-animate-up'>
+      <div className='home-foundation__inner mw-container'>
+        <div className='home-foundation__copy mw-animate-up'>
           <div className='home-eyebrow home-eyebrow--teal'>{foundation.eyebrow}</div>
           <h2 className='home-h2'>
             {foundation.heading}
@@ -302,12 +294,15 @@ function FoundationSection() {
           <p className='home-foundation__description'>{foundation.description}</p>
         </div>
 
-        <div className='home-foundation__visual rd-animate-panel'>
+        <div className='home-foundation__visual mw-animate-panel'>
           <div className='home-foundation__diagram'>
             {/* Surface card */}
             <div className='home-foundation__surface'>
               <div className='home-foundation__surface-icon' aria-hidden='true'>
-                <Globe size={18} />
+                {(() => {
+                  const SurfaceIcon = HOME_ICON_MAP[foundation.surfaceIconKey];
+                  return <SurfaceIcon size={18} />;
+                })()}
               </div>
               <div className='home-foundation__surface-body'>
                 <div className='home-foundation__surface-label'>SURFACE</div>
@@ -363,8 +358,8 @@ function SystemStackSection() {
 
   return (
     <section className='home-system-stack'>
-      <div className='home-system-stack__inner rd-container'>
-        <div className='home-system-stack__header rd-animate-up'>
+      <div className='home-system-stack__inner mw-container'>
+        <div className='home-system-stack__header mw-animate-up'>
           <div className='home-system-stack__intro'>
             <div className='home-eyebrow'>{systemStack.eyebrow}</div>
             <h2 className='home-h2'>
@@ -376,32 +371,35 @@ function SystemStackSection() {
           <p className='home-system-stack__description'>{systemStack.description}</p>
         </div>
 
-        <div className='home-system-stack__grid rd-animate-stagger'>
-          {systemStack.systems.map((system, i) => (
-            <a
-              key={system.name}
-              href={system.href}
-              className='home-system-card'
-              data-accent={system.accent}
-            >
-              <div className='home-system-card__top'>
-                <div className='home-system-card__icon' aria-hidden='true'>
-                  <Globe size={18} />
+        <div className='home-system-stack__grid mw-animate-stagger'>
+          {systemStack.systems.map((system, i) => {
+            const SystemIcon = HOME_ICON_MAP[system.iconKey];
+            return (
+              <a
+                key={system.name}
+                href={system.href}
+                className='home-system-card'
+                data-accent={system.accent}
+              >
+                <div className='home-system-card__top'>
+                  <div className='home-system-card__icon' aria-hidden='true'>
+                    <SystemIcon size={18} />
+                  </div>
+                  <span className='home-system-card__index'>0{i + 1}</span>
                 </div>
-                <span className='home-system-card__index'>0{i + 1}</span>
-              </div>
-              <div className='home-system-card__name'>{system.name}</div>
-              <div className='home-system-card__role'>
-                {system.role}
-                {' · '}
-                <span className='home-system-card__role-note'>{system.roleNote}</span>
-              </div>
-              <div className='home-system-card__divider' aria-hidden='true' />
-              <div className='home-system-card__handles-label'>What it handles</div>
-              <div className='home-system-card__handles'>{system.handles}</div>
-              <div className='home-system-card__line' aria-hidden='true' />
-            </a>
-          ))}
+                <div className='home-system-card__name'>{system.name}</div>
+                <div className='home-system-card__role'>
+                  {system.role}
+                  {' · '}
+                  <span className='home-system-card__role-note'>{system.roleNote}</span>
+                </div>
+                <div className='home-system-card__divider' aria-hidden='true' />
+                <div className='home-system-card__handles-label'>What it handles</div>
+                <div className='home-system-card__handles'>{system.handles}</div>
+                <div className='home-system-card__line' aria-hidden='true' />
+              </a>
+            );
+          })}
         </div>
 
         <div className='home-system-stack__footer'>
@@ -425,14 +423,14 @@ function PutInPlaceSection() {
 
   return (
     <section className='home-workbench'>
-      <div className='home-workbench__inner rd-container'>
-        <div className='home-workbench__intro rd-animate-up'>
+      <div className='home-workbench__inner mw-container'>
+        <div className='home-workbench__intro mw-animate-up'>
           <div className='home-eyebrow'>{putInPlace.eyebrow}</div>
           <h2 className='home-h2'>{putInPlace.heading}</h2>
           <p className='home-workbench__description'>{putInPlace.description}</p>
         </div>
 
-        <div className='home-workbench__card rd-animate-panel'>
+        <div className='home-workbench__card mw-animate-panel'>
           <div className='home-workbench__card-header'>
             <div className='home-workbench__card-dots' aria-hidden='true'>
               <span />
@@ -474,13 +472,13 @@ function FitFoundationsSection() {
 
   return (
     <section className='home-fit'>
-      <div className='home-fit__inner rd-container'>
-        <div className='home-fit__intro rd-animate-up'>
+      <div className='home-fit__inner mw-container'>
+        <div className='home-fit__intro mw-animate-up'>
           <h2 className='home-h2'>{fitFoundations.heading}</h2>
           <p className='home-fit__description'>{fitFoundations.description}</p>
         </div>
 
-        <div className='home-fit__cards rd-animate-stagger'>
+        <div className='home-fit__cards mw-animate-stagger'>
           <div className='home-fit__card home-fit__card--yes'>
             <div className='home-fit__card-badge home-fit__card-badge--yes'>
               <span className='home-fit__card-badge-icon' aria-hidden='true'>
@@ -506,7 +504,7 @@ function FitFoundationsSection() {
               <span>Probably not right</span>
             </div>
             <ul className='home-fit__list'>
-              {fitFoundations.notFit.map(item => (
+              {fitFoundations.poorFit.map(item => (
                 <li key={item} className='home-fit__item home-fit__item--no'>
                   <span className='home-fit__item-dot' aria-hidden='true' />
                   <span>{item}</span>
@@ -529,8 +527,8 @@ function ClientShiftSection() {
 
   return (
     <section className='home-shift'>
-      <div className='home-shift__inner rd-container'>
-        <div className='home-shift__intro rd-animate-up'>
+      <div className='home-shift__inner mw-container'>
+        <div className='home-shift__intro mw-animate-up'>
           <h2 className='home-h2 home-h2--on-dark'>{clientShift.heading}</h2>
           <p className='home-shift__description'>{clientShift.description}</p>
         </div>
@@ -544,7 +542,7 @@ function ClientShiftSection() {
               </span>
               <span className='home-shift__panel-badge home-shift__panel-badge--before'>
                 <span className='home-shift__panel-badge-dot' aria-hidden='true' />
-                scattered
+                {clientShift.before.stateLabel}
               </span>
             </div>
             <div className='home-shift__scatter' aria-hidden='true'>
@@ -569,10 +567,10 @@ function ClientShiftSection() {
               </span>
               <span className='home-shift__panel-badge home-shift__panel-badge--after'>
                 <span className='home-shift__panel-badge-dot' aria-hidden='true' />
-                controlled
+                {clientShift.after.stateLabel}
               </span>
             </div>
-            <div className='home-shift__rows rd-animate-stagger'>
+            <div className='home-shift__rows mw-animate-stagger'>
               {clientShift.shifts.map(shift => {
                 const Icon = HOME_ICON_MAP[shift.iconKey];
                 return (
@@ -612,14 +610,14 @@ function PressurePointsSection() {
 
   return (
     <section className='home-pressure'>
-      <div className='home-pressure__inner rd-container'>
-        <div className='home-pressure__intro rd-animate-up'>
+      <div className='home-pressure__inner mw-container'>
+        <div className='home-pressure__intro mw-animate-up'>
           <div className='home-eyebrow home-eyebrow--on-dark'>{pressurePoints.eyebrow}</div>
           <h2 className='home-h2 home-h2--on-dark'>{pressurePoints.heading}</h2>
           <p className='home-pressure__description'>{pressurePoints.description}</p>
         </div>
 
-        <div className='home-pressure__grid rd-animate-stagger'>
+        <div className='home-pressure__grid mw-animate-stagger'>
           {pressurePoints.points.map(point => {
             const Icon = HOME_ICON_MAP[point.iconKey];
             return (
@@ -651,8 +649,8 @@ function StructureLayersSection() {
 
   return (
     <section className='home-structure'>
-      <div className='home-structure__inner rd-container'>
-        <div className='home-structure__copy rd-animate-up'>
+      <div className='home-structure__inner mw-container'>
+        <div className='home-structure__copy mw-animate-up'>
           <h2 className='home-h2'>
             {structureLayers.heading}
             <br />
@@ -661,7 +659,7 @@ function StructureLayersSection() {
           <p className='home-structure__description'>{structureLayers.description}</p>
         </div>
 
-        <div className='home-structure__layers rd-animate-stagger'>
+        <div className='home-structure__layers mw-animate-stagger'>
           {structureLayers.layers.map((layer, i) => {
             const Icon = HOME_ICON_MAP[layer.iconKey];
             return (
@@ -678,7 +676,7 @@ function StructureLayersSection() {
                 </div>
                 <div className='home-structure__layer-status'>
                   <span className='home-structure__layer-status-dot' aria-hidden='true' />
-                  Active
+                  {structureLayers.layerStatus}
                 </div>
               </div>
             );
@@ -709,8 +707,8 @@ function IndustriesSection() {
 
   return (
     <section className='home-industries'>
-      <div className='home-industries__inner rd-container'>
-        <div className='home-industries__header rd-animate-up'>
+      <div className='home-industries__inner mw-container'>
+        <div className='home-industries__header mw-animate-up'>
           <div className='home-industries__intro'>
             <div className='home-eyebrow'>{industries.eyebrow}</div>
             <h2 className='home-h2'>
@@ -722,7 +720,7 @@ function IndustriesSection() {
           <p className='home-industries__description'>{industries.description}</p>
         </div>
 
-        <div className='home-industries__grid rd-animate-stagger'>
+        <div className='home-industries__grid mw-animate-stagger'>
           {industries.scenarios.map((scenario, i) => {
             const Icon = HOME_ICON_MAP[scenario.iconKey];
             return (
@@ -783,8 +781,8 @@ function AlignmentSection() {
 
   return (
     <section className='home-alignment'>
-      <div className='home-alignment__inner rd-container'>
-        <div className='home-alignment__intro rd-animate-up'>
+      <div className='home-alignment__inner mw-container'>
+        <div className='home-alignment__intro mw-animate-up'>
           <div className='home-eyebrow'>{alignment.eyebrow}</div>
           <h2 className='home-h2'>
             {alignment.heading}
@@ -794,7 +792,7 @@ function AlignmentSection() {
           <p className='home-alignment__description'>{alignment.description}</p>
         </div>
 
-        <div className='home-alignment__arc-card rd-animate-panel'>
+        <div className='home-alignment__arc-card mw-animate-panel'>
           <svg
             className='home-alignment__arc-svg'
             viewBox='0 0 1200 480'
@@ -804,14 +802,14 @@ function AlignmentSection() {
           >
             <defs>
               <linearGradient id='mw-arc-stroke' x1='0' x2='1' y1='0' y2='0'>
-                <stop offset='0%' stopColor='#E76F6F' stopOpacity='0.5' />
-                <stop offset='40%' stopColor='#F4B740' stopOpacity='0.5' />
-                <stop offset='80%' stopColor='#35C7D8' stopOpacity='0.7' />
-                <stop offset='100%' stopColor='#14B8A6' stopOpacity='0.9' />
+                <stop offset='0%' stopColor='var(--mw-signal-red)' stopOpacity='0.5' />
+                <stop offset='40%' stopColor='var(--mw-signal-amber)' stopOpacity='0.5' />
+                <stop offset='80%' stopColor='var(--mw-signal-cyan)' stopOpacity='0.7' />
+                <stop offset='100%' stopColor='var(--mw-signal-teal)' stopOpacity='0.9' />
               </linearGradient>
               <linearGradient id='mw-arc-fill' x1='0' x2='0' y1='0' y2='1'>
-                <stop offset='0%' stopColor='#35C7D8' stopOpacity='0.18' />
-                <stop offset='100%' stopColor='#35C7D8' stopOpacity='0' />
+                <stop offset='0%' stopColor='var(--mw-signal-cyan)' stopOpacity='0.18' />
+                <stop offset='100%' stopColor='var(--mw-signal-cyan)' stopOpacity='0' />
               </linearGradient>
             </defs>
             <path
@@ -826,12 +824,8 @@ function AlignmentSection() {
           </svg>
 
           <div className='home-alignment__stages'>
-            {alignment.stages.map((stage, i) => (
-              <div
-                key={stage.num}
-                className='home-alignment__stage'
-                data-offset={String((alignment.stages.length - 1 - i) * 18)}
-              >
+            {alignment.stages.map((stage, _i) => (
+              <div key={stage.num} className='home-alignment__stage'>
                 <div className='home-alignment__stage-card'>
                   <div className='home-alignment__stage-top'>
                     <span className='home-alignment__stage-num'>{stage.num}</span>
@@ -858,8 +852,8 @@ function ProofStorySection() {
 
   return (
     <section className='home-proof'>
-      <div className='home-proof__inner rd-container'>
-        <div className='home-proof__intro rd-animate-up'>
+      <div className='home-proof__inner mw-container'>
+        <div className='home-proof__intro mw-animate-up'>
           <h2 className='home-h2'>
             {proofStory.heading}
             <br />
@@ -868,7 +862,7 @@ function ProofStorySection() {
           <p className='home-proof__description'>{proofStory.description}</p>
         </div>
 
-        <div className='home-proof__cards rd-animate-stagger'>
+        <div className='home-proof__cards mw-animate-stagger'>
           <div className='home-proof__card home-proof__card--before'>
             <span className='home-proof__card-label home-proof__card-label--before'>
               {proofStory.before.label}
@@ -941,14 +935,14 @@ function ImplementationExamplesSection() {
 
   return (
     <section className='home-examples'>
-      <div className='home-examples__inner rd-container'>
-        <div className='home-examples__intro rd-animate-up'>
+      <div className='home-examples__inner mw-container'>
+        <div className='home-examples__intro mw-animate-up'>
           <div className='home-eyebrow'>{implementationExamples.eyebrow}</div>
           <h2 className='home-h2'>{implementationExamples.heading}</h2>
           <p className='home-examples__description'>{implementationExamples.description}</p>
         </div>
 
-        <div className='home-examples__board rd-animate-panel'>
+        <div className='home-examples__board mw-animate-panel'>
           <div className='home-examples__board-header'>
             <div className='home-examples__board-header-left'>
               <span className='home-examples__board-dot' aria-hidden='true' />
@@ -956,10 +950,12 @@ function ImplementationExamplesSection() {
                 {implementationExamples.boardLabel}
               </span>
             </div>
-            <span className='home-examples__board-count'>{implementationExamples.boardCount}</span>
+            <span className='home-examples__board-count'>
+              {implementationExamples.implementationPatterns.length} patterns shown
+            </span>
           </div>
 
-          <div className='home-examples__grid rd-animate-stagger'>
+          <div className='home-examples__grid mw-animate-stagger'>
             {implementationExamples.implementationPatterns.map((pattern, i) => {
               const Icon = HOME_ICON_MAP[pattern.iconKey];
               const isLast = i === implementationExamples.implementationPatterns.length - 1;
@@ -1015,12 +1011,12 @@ function FAQSection() {
 
   return (
     <section className='home-faq'>
-      <div className='home-faq__inner rd-container'>
-        <div className='home-faq__heading-col rd-animate-up'>
+      <div className='home-faq__inner mw-container'>
+        <div className='home-faq__heading-col mw-animate-up'>
           <h2 className='home-h2'>{faq.heading}</h2>
           <p className='home-faq__description'>{faq.description}</p>
         </div>
-        <div className='home-faq__items rd-animate-list'>
+        <div className='home-faq__items mw-animate-list'>
           {faq.items.map((item, i) => (
             <details key={item.question} className='home-faq__item' open={i === 0}>
               <summary className='home-faq__question'>
@@ -1045,11 +1041,11 @@ function CTASection() {
 
   return (
     <section className='home-cta' id='cta'>
-      <div className='home-cta__inner rd-container'>
+      <div className='home-cta__inner mw-container'>
         <div className='home-cta__wrap'>
           <div className='home-cta__texture' aria-hidden='true' />
           <div className='home-cta__layout'>
-            <div className='home-cta__copy rd-animate-up'>
+            <div className='home-cta__copy mw-animate-up'>
               <div className='home-cta__eyebrow'>
                 <span className='home-cta__eyebrow-dot' aria-hidden='true' />
                 <span>{cta.eyebrow}</span>
@@ -1060,13 +1056,15 @@ function CTASection() {
                 <span className='home-cta__heading--muted'>{cta.heading.muted}</span>
               </h2>
               <p className='home-cta__description'>{cta.heading.description}</p>
-              <a href={cta.actions[0].href} className='home-cta__action rd-btn rd-btn--white'>
-                {cta.actions[0].label}
-                <ArrowRight size={16} aria-hidden='true' />
-              </a>
+              {cta.actions[0] && (
+                <a href={cta.actions[0].href} className='home-cta__action mw-btn mw-btn--white'>
+                  {cta.actions[0].label}
+                  <ArrowRight size={16} aria-hidden='true' />
+                </a>
+              )}
             </div>
 
-            <div className='home-cta__expectations rd-animate-panel'>
+            <div className='home-cta__expectations mw-animate-panel'>
               <div className='home-cta__expectations-label'>What we look at</div>
               <div className='home-cta__expectations-list'>
                 {cta.expectations.map(item => (

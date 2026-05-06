@@ -57,11 +57,11 @@ export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps
             <div className='header__mobile-cta'>
               <a
                 href={primaryAction.href}
-                className='rd-btn rd-btn--primary'
+                className='mw-btn mw-btn--primary'
                 onClick={() => setOpen(false)}
               >
                 {primaryAction.label}
-                <span className='rd-btn__dot' aria-hidden='true' />
+                <span className='mw-btn__dot' aria-hidden='true' />
               </a>
             </div>
           </nav>
