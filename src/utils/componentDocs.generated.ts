@@ -299,9 +299,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 38,
+    "representativeUsageFilePath": "src/app/resources/category/[categorySlug]/page.tsx",
+    "representativePageUrl": "/resources/category/[categorySlug]",
+    "usageCount": 34,
     "composedComponents": [],
     "props": [
       {
@@ -635,9 +635,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 41,
+    "representativeUsageFilePath": "src/app/resources/page.tsx",
+    "representativePageUrl": "/resources",
+    "usageCount": 39,
     "composedComponents": [],
     "props": [
       {
@@ -12761,9 +12761,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 4,
+    "representativeUsageFilePath": "src/app/case-studies/page.tsx",
+    "representativePageUrl": "/case-studies",
+    "usageCount": 3,
     "composedComponents": [],
     "props": [
       {
@@ -13477,7 +13477,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
     "representativePageUrl": "/resources/[slug]",
-    "usageCount": 8,
+    "usageCount": 7,
     "composedComponents": [],
     "props": [
       {
@@ -13871,9 +13871,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativeUsageFilePath": "",
     "representativePageUrl": "/",
-    "usageCount": 1,
+    "usageCount": 0,
     "composedComponents": [],
     "props": [
       {
@@ -14101,7 +14101,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
     "representativePageUrl": "/resources/[slug]",
-    "usageCount": 23,
+    "usageCount": 22,
     "composedComponents": [],
     "props": [
       {
@@ -14333,9 +14333,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativeUsageFilePath": "src/components/reusable/sections/core/FeatureChecklistCardsSection.tsx",
     "representativePageUrl": "/",
-    "usageCount": 2,
+    "usageCount": 1,
     "composedComponents": [],
     "props": [
       {
@@ -15055,9 +15055,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativeUsageFilePath": "src/components/reusable/sections/core/IconBenefitCardsSection.tsx",
     "representativePageUrl": "/",
-    "usageCount": 4,
+    "usageCount": 2,
     "composedComponents": [],
     "props": [
       {
@@ -15169,9 +15169,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/service/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 5,
+    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
+    "representativePageUrl": "/services/[...slug]",
+    "usageCount": 4,
     "composedComponents": [],
     "props": [
       {
@@ -15349,9 +15349,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativeUsageFilePath": "",
     "representativePageUrl": "/",
-    "usageCount": 1,
+    "usageCount": 0,
     "composedComponents": [],
     "props": [
       {
@@ -16850,9 +16850,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/ProblemSolutionSplitCard.tsx",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 2,
+    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
+    "representativePageUrl": "/services/[...slug]",
+    "usageCount": 1,
     "composedComponents": [
       "Badge",
       "Card"
@@ -16951,9 +16951,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/service/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 10,
+    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
+    "representativePageUrl": "/services/[...slug]",
+    "usageCount": 9,
     "composedComponents": [],
     "props": [
       {
@@ -17775,9 +17775,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/service/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
-    "usageCount": 85,
+    "representativeUsageFilePath": "src/app/services/[...slug]/page.tsx",
+    "representativePageUrl": "/services/[...slug]",
+    "usageCount": 76,
     "composedComponents": [],
     "props": [
       {

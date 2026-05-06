@@ -1,86 +1,14 @@
-import type { LucideIcon } from 'lucide-react';
-import {
-  Calendar,
-  Check,
-  Database,
-  Globe,
-  Layers,
-  Scissors,
-  Search,
-  ShieldCheck,
-  SlidersHorizontal,
-  Users,
-  Workflow,
-  Wrench,
-} from 'lucide-react';
-
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
 
-type IconTone = 'primary' | 'secondary' | 'accent';
-
-type JourneyStep = {
-  icon: LucideIcon;
-  title: string;
-  subtitle: string;
-  iconType: IconTone;
-};
-
-type TitleDescriptionItem = {
-  title: string;
-  description: string;
-};
-
-type SectionCta = {
-  heading: {
-    title: string;
-    description: string;
-    kicker?: string;
-  };
-  actions: [{ label: string; href: string; primary: true }];
-};
-
-type VisualStat = {
-  label: string;
-  value: string;
-};
-
-type CapabilityVisual = {
-  stats: VisualStat[];
-  gradientFrom: string;
-  gradientTo: string;
-};
-
-type InfrastructureProblem = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  solution: string;
-  impact: string;
-};
-
-type SystemCapabilityComponent = {
-  id: string;
-  visualId: string;
-  icon: LucideIcon;
-  title: string;
-  subline?: string;
-  description: string;
-  outcome?: string;
-  benefits: string[];
-  visual: CapabilityVisual;
-};
+// Accent key type — maps to CSS [data-accent] attribute values resolved to tokens in home.css
+export type AccentKey = 'cyan' | 'teal' | 'green' | 'amber' | 'red' | 'purple';
 
 export type HomepageData = {
   seo: {
     title: string;
     description: string;
     canonical: string;
-    openGraph?: {
-      title?: string;
-      description?: string;
-      url?: string;
-    };
     schema: {
       organization: Record<string, unknown>;
       website?: Record<string, unknown>;
@@ -88,127 +16,145 @@ export type HomepageData = {
   };
 
   hero: {
-    badge: string;
-    title: string;
+    eyebrow: string;
+    heading: string;
+    headingMuted: string;
     description: string;
-    valueProps: [string, string, string];
-    primaryAction: {
-      label: string;
+    primaryAction: { label: string; href: string };
+    secondaryAction: { label: string; href: string };
+    chips: Array<{ label: string; accent: AccentKey }>;
+    signals: Array<{ label: string; note: string; status: 'unowned' | 'leaking' }>;
+    signalSummary: { leaking: string; unowned: string; pulling: string };
+  };
+
+  leakDiagnosis: {
+    eyebrow: string;
+    heading: string;
+    headingMuted: string;
+    description: string;
+    path: Array<{ stage: string; title: string; note: string }>;
+  };
+
+  foundation: {
+    eyebrow: string;
+    heading: string;
+    headingMuted: string;
+    description: string;
+    middleLayers: Array<{ label: string }>;
+    connectedNote: string;
+  };
+
+  systemStack: {
+    eyebrow: string;
+    heading: string;
+    headingMuted: string;
+    description: string;
+    systems: Array<{
+      name: string;
+      role: string;
+      roleNote: string;
+      handles: string;
+      accent: AccentKey;
       href: string;
-    };
-  };
-
-  infrastructureGaps: {
-    badge: string;
-    title: string;
-    description: string;
-    problems: InfrastructureProblem[];
-  };
-
-  smartWebsiteFramework: {
-    badge: string;
-    title: string;
-    description: string;
-    journeyTitle: string;
-    principles: Array<{ icon: LucideIcon; title: string; description: string }>;
-    journeySteps: JourneyStep[];
-    journeyNote: string;
-    cta: SectionCta;
-  };
-
-  implementationSection: {
-    title: string;
-    description: string;
-    steps: Array<{ number: string; title: string; description: string }>;
-  };
-
-  clientJourney: {
-    badge: string;
-    title: string;
-    description: string;
-    steps: Array<{
-      number: string;
-      icon: LucideIcon;
-      title: string;
-      subtitle: string;
-      description: string;
-      highlights: string[];
-      iconType: IconTone;
     }>;
-    cta: SectionCta;
+    footerNote: string;
+    footerAction: { label: string; href: string };
   };
 
-  systemCapabilities: {
-    title: string;
+  putInPlace: {
+    eyebrow: string;
+    heading: string;
     description: string;
-    visualMetaLabel: string;
-    tabsAriaLabel: string;
-    defaultComponentId: string;
-    components: SystemCapabilityComponent[];
+    steps: Array<{ title: string; body: string; state: string }>;
   };
 
-  infrastructureLayers: {
-    title: string;
+  fitFoundations: {
+    heading: string;
     description: string;
-    trustFoundations: {
-      title: string;
-      description: string;
-      strongFitBadge: string;
-      strongFitTitle: string;
-      strongFitItems: TitleDescriptionItem[];
-      notDesignedBadge: string;
-      notDesignedTitle: string;
-      notDesignedItems: TitleDescriptionItem[];
-    };
-    foundation: {
-      badge: string;
-      title: string;
-      description: string;
-      checklist: string[];
-    };
-    layers: Array<{ title: string; description: string }>;
+    strongFit: string[];
+    notFit: string[];
+  };
+
+  clientShift: {
+    heading: string;
+    description: string;
+    before: { label: string; bullets: string[] };
+    after: { label: string; bullets: string[] };
+    shifts: Array<{ title: string; before: string; after: string }>;
+  };
+
+  pressurePoints: {
+    eyebrow: string;
+    heading: string;
+    description: string;
+    points: Array<{ title: string; flow: string; handledBy: string; accent: AccentKey }>;
+  };
+
+  structureLayers: {
+    heading: string;
+    headingMuted: string;
+    description: string;
+    layers: Array<{ title: string; note: string; accent: AccentKey }>;
   };
 
   industries: {
-    title: string;
+    eyebrow: string;
+    heading: string;
+    headingMuted: string;
     description: string;
-    items: Array<{ icon: LucideIcon; title: string; description: string; href: string }>;
-  };
-
-  visibilityTimeline: {
-    badge: string;
-    title: string;
-    description: string;
-    items: Array<{
-      phase: string;
-      title: string;
-      icon: LucideIcon;
-      items: string[];
+    scenarios: Array<{
+      name: string;
+      leak: string;
+      needs: string[];
+      href: string;
+      accent: AccentKey;
     }>;
-    note: string;
   };
 
-  caseStudies: {
-    title: string;
+  alignment: {
+    eyebrow: string;
+    heading: string;
+    headingMuted: string;
     description: string;
+    stages: Array<{ num: string; title: string; note: string; weight: number }>;
+  };
+
+  proofStory: {
+    heading: string;
+    headingMuted: string;
+    description: string;
+    before: { label: string; title: string; bullets: string[] };
+    change: { label: string; title: string; bullets: string[] };
+    after: { label: string; title: string; bullets: string[] };
     quote: string;
-    quoteAuthor: string;
+    quoteAttribution: string;
+  };
+
+  implementationExamples: {
+    eyebrow: string;
+    heading: string;
+    description: string;
+    boardLabel: string;
+    boardCount: string;
+    patterns: Array<{ title: string; desc: string; flow: string[] }>;
   };
 
   faq: {
-    title: string;
+    heading: string;
+    description: string;
     items: Array<{ question: string; answer: string }>;
   };
 
   cta: {
-    footer: {
-      heading: {
-        title: string;
-        description: string;
-        kicker?: string;
-      };
-      actions: [{ label: string; href: string; primary: true }];
+    eyebrow: string;
+    heading: {
+      title: string;
+      muted: string;
+      description: string;
     };
+    actions: Array<{ label: string; href: string; primary: true }>;
+    expectations: Array<{ num: string; text: string }>;
+    footer: { noSell: string; tone: string };
   };
 };
 
@@ -228,585 +174,540 @@ export const homepageData: HomepageData = {
       },
     },
   },
+
   hero: {
-    badge: 'For Service Businesses',
-    title: 'Leads Come In. Most of Them Never Turn Into Work.',
+    eyebrow: 'For Service Businesses',
+    heading: 'Work Comes In.',
+    headingMuted: 'Too Much Slips Away.',
     description:
-      'Calls go to voicemail. Enquiries sit in an inbox until tomorrow. Quotes get sent and never chased. The work is already there — most of it just slips through before anyone notices. We put the system in place that catches it.',
-    valueProps: ['Missed calls', 'Dead enquiries', 'Invisible online'],
+      'People find you online. They call, fill in forms, ask for quotes, check reviews, and compare your services. Some of that turns into work. Too much disappears between the first click and the next step.',
     primaryAction: {
-      label: "What's actually going wrong?",
+      label: 'Start a Conversation',
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'global',
         slug: 'home',
       }),
     },
-  },
-  infrastructureGaps: {
-    badge: "What's Actually Happening",
-    title: 'The business is working. The business is also leaking.',
-    description:
-      'Not a dramatic failure. Not a crisis. Just a steady drip of missed opportunities and invisible damage. Compounding every week.',
-    problems: [
-      {
-        icon: Search,
-        title: 'Nobody can find you when they need you',
-        description:
-          "Someone nearby needs exactly what you do. They search. You don't show up. The competitor with a worse service gets the call.",
-        solution: 'Local visibility from day one. The right searches reach you.',
-        impact: 'Invisible locally',
-      },
-      {
-        icon: Workflow,
-        title: "The phone rings. The team's on a job.",
-        description:
-          'Three missed calls by lunchtime. You find out when you check your phone at 6pm. Two already booked someone else.',
-        solution: 'Every missed call caught, logged, and chased. Before they ring someone else.',
-        impact: 'Calls lost daily',
-      },
-      {
-        icon: SlidersHorizontal,
-        title: 'Messages in five different places. Nobody tracking them.',
-        description:
-          "Facebook DMs, voicemails, form submissions, texts. Some get answered. Some don't. Nobody knows which is which.",
-        solution: 'One place. Clear ownership. Follow-up.',
-        impact: 'Scattered and slow',
-      },
+    secondaryAction: {
+      label: 'See where work is slipping',
+      href: '#leak',
+    },
+    chips: [
+      { label: 'Visibility', accent: 'cyan' },
+      { label: 'Enquiries', accent: 'teal' },
+      { label: 'Follow-up', accent: 'amber' },
+      { label: 'Proof', accent: 'green' },
     ],
-  },
-  smartWebsiteFramework: {
-    badge: 'Sound Familiar?',
-    title: 'What the business looks like before the system is set up properly',
-    description:
-      'These are the recurring breakpoints that show up when the website, lead handling, follow-up, and proof layers were never designed to work together.',
-    journeyTitle: 'Where it starts to break',
-    principles: [
-      {
-        icon: Check,
-        title: 'Tuesday. Four missed calls. Nobody knew.',
-        description:
-          'Busy morning. Calls stacked up. By the time someone looked, two were already gone.',
-      },
-      {
-        icon: Search,
-        title: 'Someone visits the site, scrolls, leaves',
-        description:
-          "Can't tell what you do. Can't figure out the next step. Interested and gone in thirty seconds.",
-      },
-      {
-        icon: Database,
-        title: 'Old enquiries. No follow-up. Just sitting there.',
-        description: 'Quotes from months ago. Good customers who never heard from you again.',
-      },
-      {
-        icon: SlidersHorizontal,
-        title: 'Happy customers. Twelve reviews. Competitor has eighty.',
-        description: 'Good work. No asks. No proof.',
-      },
-      {
-        icon: Wrench,
-        title: 'Replies take hours. Sometimes a day.',
-        description: 'Nobody dropped the ball. The message sat there.',
-      },
+    signals: [
+      { label: 'Local search', note: 'Postcode N6 — page 3', status: 'unowned' },
+      { label: 'Service page visit', note: 'Bathrooms — 02:14 dwell', status: 'unowned' },
+      { label: 'Form enquiry', note: 'Sat 09:14 — unread', status: 'unowned' },
+      { label: 'Missed call', note: '11:42 — no callback', status: 'leaking' },
+      { label: 'Quote request', note: '£4,200 — day 6', status: 'unowned' },
+      { label: 'Review opportunity', note: 'Job done — not asked', status: 'unowned' },
+      { label: 'Follow-up due', note: 'Today — nobody owns it', status: 'leaking' },
     ],
-    journeySteps: [
-      { icon: Search, title: 'Invisible', subtitle: 'Locally', iconType: 'primary' },
-      { icon: Globe, title: 'Site Visit', subtitle: 'Then Gone', iconType: 'accent' },
-      { icon: Workflow, title: 'Missed Calls', subtitle: 'Every Week', iconType: 'secondary' },
-      { icon: Database, title: 'Dead Leads', subtitle: 'In the CRM', iconType: 'primary' },
-      { icon: Calendar, title: 'Slow Reply', subtitle: 'Too Late', iconType: 'secondary' },
-      { icon: ShieldCheck, title: 'No Proof', subtitle: 'Online', iconType: 'accent' },
-    ],
-    journeyNote: "These aren't separate problems. They're connected.",
-    cta: {
-      heading: {
-        title: 'Something here feel familiar?',
-        description:
-          "Tell us what keeps slipping: calls, enquiries, follow-up, visibility, or proof. We'll map the first breakpoints and show what needs fixing first.",
-      },
-      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    signalSummary: {
+      leaking: '2 leaking',
+      unowned: '5 unowned',
+      pulling: 'Pulled toward system',
     },
   },
-  implementationSection: {
-    title: 'What gets put in place so enquiries stop slipping.',
+
+  leakDiagnosis: {
+    eyebrow: 'What is actually happening',
+    heading: 'The business is working.',
+    headingMuted: 'The system around it is leaking.',
     description:
-      'We start with how the business actually runs, then put the routing, follow-up, visibility, and proof layers in place in the order that makes the whole thing usable on a busy day.',
-    steps: [
+      'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
+    path: [
       {
-        number: '01',
-        title: 'We look at what you have',
-        description: 'How calls come in. Where leads go. What happens after. Obvious fast.',
+        stage: 'Visibility',
+        title: 'Local visibility incomplete',
+        note: 'Found by some, missed by many',
       },
       {
-        number: '02',
-        title: 'We show you where it leaks',
-        description: "No pitch deck. A short, honest rundown of what's falling apart.",
+        stage: 'Website',
+        title: 'Service pages do not answer the right question',
+        note: 'Visitor leaves before deciding',
       },
       {
-        number: '03',
-        title: 'The leaks that cost money. Those get fixed first.',
-        description:
-          "Missed calls. Dead leads. Pages nobody finds. Damage that's already happening.",
+        stage: 'Enquiry',
+        title: 'Enquiries land in the wrong place',
+        note: 'Form, DM, voicemail, inbox',
+      },
+      { stage: 'Response', title: 'First response is slow', note: 'Lead cools before contact' },
+      { stage: 'Follow-up', title: 'Follow-up depends on memory', note: 'Old quotes go quiet' },
+      {
+        stage: 'Proof',
+        title: 'Reviews not requested at the right time',
+        note: 'Job done, proof never captured',
       },
       {
-        number: '04',
-        title: 'It runs. You stop thinking about it.',
-        description:
-          "Not a project that needs managing. Enquiries, follow-up, visibility — keeps going while everyone's out on jobs.",
+        stage: 'Repeat',
+        title: 'Marketing spend hard to connect to real work',
+        note: 'No loop back to revenue',
       },
     ],
   },
-  clientJourney: {
-    badge: 'The Shift',
-    title: 'What changes when things stop slipping',
+
+  foundation: {
+    eyebrow: 'Foundation',
+    heading: 'The website is the surface.',
+    headingMuted: 'The structure underneath is what catches the work.',
     description:
-      "Not a sales pitch. The difference between a business that catches everything and one that doesn't.",
-    steps: [
+      'A website alone does not fix missed calls, slow replies, scattered forms, or invisible follow-up. But it is often the first place those problems show up.',
+    middleLayers: [
+      { label: 'Capture' },
+      { label: 'Routing' },
+      { label: 'Follow-up' },
+      { label: 'Tracking' },
+      { label: 'Proof' },
+    ],
+    connectedNote: "These aren't separate problems. They're connected.",
+  },
+
+  systemStack: {
+    eyebrow: 'The handling system',
+    heading: 'Six layers.',
+    headingMuted: 'One operating system for the business.',
+    description:
+      'Each layer handles a part of the path. Together they hold the work from first search to repeat job. No layer depends on someone remembering.',
+    systems: [
       {
-        number: '01',
-        icon: Layers,
-        title: 'Enquiries arrive in one place',
-        subtitle: 'Not scattered across five apps',
-        description:
-          'Calls, forms, messages. All captured. Nothing hidden. One place to check instead of hunting through inboxes.',
-        highlights: [
-          'Every channel feeding into one record',
-          'Nothing missed because someone forgot to check',
-          'Clear trail for every enquiry',
-        ],
-        iconType: 'primary',
+        name: 'Smart Website System',
+        role: 'The operating surface',
+        roleNote: 'Where work lands and routes',
+        handles: 'Visitors, service questions, enquiry capture',
+        accent: 'cyan',
+        href: '/systems/smart-website-systems',
       },
       {
-        number: '02',
-        icon: Database,
-        title: 'Nothing gets lost in the handoff',
-        subtitle: 'Assigned. Tracked. Followed up.',
-        description: 'Leads go to the right person. You can see where things stand. No more limbo.',
-        highlights: [
-          'Routed to the right person without asking',
-          'You can see where every lead stands',
-          'No more guessing who handled what',
-        ],
-        iconType: 'secondary',
+        name: 'Local SEO Authority',
+        role: 'Visibility layer',
+        roleNote: 'Found across the area you serve',
+        handles: 'Search presence, map coverage, signal trust',
+        accent: 'teal',
+        href: '/systems/local-seo-authority',
       },
       {
-        number: '03',
-        icon: Workflow,
-        title: 'Follow-up happens on schedule',
-        subtitle: 'Not when someone remembers',
-        description:
-          'Reminders fire. Responses go out. The gap between enquiry and reply shrinks from days to minutes.',
-        highlights: [
-          'Timed follow-up instead of manual chasing',
-          "Replies that don't depend on who's working",
-          'Leads that used to go cold get caught',
-        ],
-        iconType: 'accent',
+        name: 'AI Lead Handling',
+        role: 'Response layer',
+        roleNote: 'First contact, every time',
+        handles: 'Calls, forms, DMs, after hours',
+        accent: 'green',
+        href: '/systems/ai-lead-handling',
+      },
+      {
+        name: 'CRM & Automation',
+        role: 'Memory layer',
+        roleNote: 'Nothing depends on someone remembering',
+        handles: 'Quotes, follow-up, ownership, status',
+        accent: 'amber',
+        href: '/systems/crm-automation',
+      },
+      {
+        name: 'Reputation & Review',
+        role: 'Proof layer',
+        roleNote: 'Good work shows up in public',
+        handles: 'Review requests, timing, response',
+        accent: 'purple',
+        href: '/systems/reputation-review',
+      },
+      {
+        name: 'Revenue Growth',
+        role: 'Improvement layer',
+        roleNote: 'What works gets stronger',
+        handles: 'Spend, return, repeat work, decisions',
+        accent: 'cyan',
+        href: '/systems/revenue-growth',
       },
     ],
-    cta: {
-      heading: {
-        title: 'Where are your enquiries dropping?',
-        description:
-          'Walk us through how leads arrive, where they stall, and what the team is juggling now. You will leave with a clearer picture of the gaps before any build starts.',
-      },
-      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    footerNote: 'Most businesses already have parts of this. The work is connecting them.',
+    footerAction: {
+      label: 'See where your stack is incomplete',
+      href: buildContactHref({ system: 'smart-website-systems', sourceType: 'page', slug: 'home' }),
     },
   },
-  systemCapabilities: {
-    title: 'Where service businesses break',
+
+  putInPlace: {
+    eyebrow: 'What we put in place',
+    heading: 'The leaks that cost money get fixed first.',
     description:
-      'Five pressure points. Each one leaks money quietly. Most businesses have at least three.',
-    visualMetaLabel: 'Breakage point overview',
-    tabsAriaLabel: 'Business pressure points',
-    defaultComponentId: 'calls',
-    components: [
+      'We start with how the business actually runs. How calls come in. Where leads go. What happens after. Then routing, follow-up, visibility, and proof get put in place in the order that makes the business easier to run.',
+    steps: [
       {
-        id: 'calls',
-        visualId: 'calls',
-        icon: Layers,
-        title: 'Missed Calls',
-        subline: 'Ringing out during every job.',
-        description:
-          "The phone goes while everyone's on site. Four rings. Voicemail. By the time someone checks, they've called the next name on the list.",
-        outcome: "Calls get caught. Logged. Chased. Even when nobody's free.",
-        benefits: [
-          'Answered or not, it gets logged',
-          'Missed calls trigger a follow-up',
-          'Team sees who called and when',
-          'No more checking voicemail at 6pm',
-        ],
-        visual: {
-          stats: [
-            { label: 'Calls caught', value: 'All' },
-            { label: 'Follow-up', value: 'Triggered' },
-            { label: 'Response gap', value: 'Minutes' },
-            { label: 'Visibility', value: 'Full' },
-          ],
-          gradientFrom: 'var(--gradient-accent-from)',
-          gradientTo: 'var(--gradient-accent-to)',
-        },
+        title: 'Inspect what exists',
+        body: 'How calls come in. Where leads go. What happens after.',
+        state: 'Mapped',
       },
       {
-        id: 'leads',
-        visualId: 'leads',
-        icon: Database,
-        title: 'Dead Leads',
-        subline: 'Hundreds of names. Nothing happening.',
-        description:
-          "A hundred names sitting in a spreadsheet. Old quotes, past customers, half-finished conversations. Nobody's opened it in weeks.",
-        outcome: 'Some of those old leads start replying. Past customers hear from you.',
-        benefits: [
-          'Dormant leads flagged and woken up',
-          'Past customers contacted at the right time',
-          'Old quotes get chased',
-          'Revenue from work you already earned',
-        ],
-        visual: {
-          stats: [
-            { label: 'Lead status', value: 'Known' },
-            { label: 'Re-engagement', value: 'Timed' },
-            { label: 'Past customers', value: 'Active' },
-            { label: 'Lead flow', value: 'Visible' },
-          ],
-          gradientFrom: 'var(--gradient-secondary-from)',
-          gradientTo: 'var(--gradient-secondary-to)',
-        },
+        title: 'Locate leakage',
+        body: 'Where work escapes — in time, in inbox, in handoff.',
+        state: 'Located',
       },
       {
-        id: 'visibility',
-        visualId: 'visibility',
-        icon: Workflow,
-        title: 'Invisible Online',
-        subline: "They search. You don't show up.",
-        description:
-          "Someone types in exactly what you do. Three competitors come up. You're nowhere. Not because they're better. Because they showed up.",
-        outcome: 'The right searches find you. Maps. Results. Locally.',
-        benefits: [
-          'Pages structured for the searches that matter',
-          'Local presence set up. Not guessed at.',
-          'Service areas showing up where they should',
-          'Fewer calls going to your competitors',
-        ],
-        visual: {
-          stats: [
-            { label: 'Local reach', value: 'Visible' },
-            { label: 'Search match', value: 'Aligned' },
-            { label: 'Pages', value: 'Done right' },
-            { label: 'Discovery', value: 'Active' },
-          ],
-          gradientFrom: 'var(--gradient-accent-from)',
-          gradientTo: 'var(--gradient-accent-to)',
-        },
+        title: 'Fix money leaks first',
+        body: 'Routing, follow-up, visibility, proof — in priority order.',
+        state: 'Stabilising',
       },
       {
-        id: 'replies',
-        visualId: 'replies',
-        icon: Calendar,
-        title: 'Slow Replies',
-        subline: 'Six hours. Sometimes longer.',
-        description:
-          'An enquiry arrives at 10am. Someone sees it at 4pm. By then the customer has moved on. Not because anyone forgot. Because nothing flagged it.',
-        outcome: 'Enquiries get a reply. Fast. Follow-up stops depending on memory.',
-        benefits: [
-          'Enquiries get a reply. Not six hours later.',
-          'Right person gets the alert',
-          'You see how long replies take',
-          'That six-hour gap starts shrinking.',
-        ],
-        visual: {
-          stats: [
-            { label: 'First contact', value: 'Instant' },
-            { label: 'Team alert', value: 'Immediate' },
-            { label: 'Follow-up', value: 'Scheduled' },
-            { label: 'Response gap', value: 'Shrinking' },
-          ],
-          gradientFrom: 'var(--color-accent-warning)',
-          gradientTo: 'var(--color-accent-warning-90)',
-        },
-      },
-      {
-        id: 'proof',
-        visualId: 'proof',
-        icon: ShieldCheck,
-        title: 'No Proof Online',
-        subline: 'Five-star work. Barely any proof.',
-        description:
-          'Happy customers. But online? Nothing. They leave without saying a word. Competitors with worse service have five times the reviews.',
-        outcome: 'Reviews start showing up. Without anyone chasing.',
-        benefits: [
-          'Review requests after every job',
-          "Asked when they're happiest",
-          'Proof visible where people search',
-          'Reputation catching up to the work',
-        ],
-        visual: {
-          stats: [
-            { label: 'Review flow', value: 'Ongoing' },
-            { label: 'Timing', value: 'Post-job' },
-            { label: 'Visibility', value: 'Search' },
-            { label: 'Growth', value: 'Steady' },
-          ],
-          gradientFrom: 'var(--gradient-secondary-from)',
-          gradientTo: 'var(--gradient-secondary-to)',
-        },
+        title: 'Keep it running',
+        body: 'Quietly. Without constant attention from the owner.',
+        state: 'Live',
       },
     ],
   },
-  infrastructureLayers: {
-    title: "It's not a website project. It's infrastructure.",
+
+  fitFoundations: {
+    heading: 'This works best when there is already real demand.',
     description:
-      'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, lead recovery. Connected. Running.',
-    foundation: {
-      badge: 'Foundation',
-      title: 'Business Infrastructure',
-      description:
-        "Everything needed to catch and keep the work that's already coming in. Matched to how you run.",
-      checklist: [
-        'Calls caught and chased without asking',
-        'Enquiries reaching the right person. First time.',
-        'Past leads contacted on a schedule',
-        'Reviews requested at the right moment',
-        'Visibility where your customers search',
+      'Best for established service businesses — or serious new setups — where calls, enquiries, follow-up, visibility, and proof need to work together from day one.',
+    strongFit: [
+      'Jobs are worth real money',
+      'Enquiries come in but get lost',
+      'Everyone is busy doing the actual work',
+      'Marketing has been tried before',
+      'The business needs something that runs',
+    ],
+    notFit: [
+      'Quick visual refresh',
+      'Price-only comparison',
+      'Feature checklist',
+      'Short-term campaign experiment',
+    ],
+  },
+
+  clientShift: {
+    heading: 'What changes when things stop slipping',
+    description:
+      'Not a sales pitch. The difference between a business that catches everything and one that does not.',
+    before: {
+      label: 'Before',
+      bullets: [
+        '3 separate inboxes',
+        'Missed calls, no record',
+        'Quotes sent, never chased',
+        'Reviews only by accident',
       ],
     },
+    after: {
+      label: 'After',
+      bullets: [
+        '1 capture surface',
+        'Every call logged',
+        'Follow-up on schedule',
+        'Reviews consistently captured',
+      ],
+    },
+    shifts: [
+      { title: 'Enquiries arrive in one place', before: '3 inboxes', after: '1 surface' },
+      { title: 'Nothing gets lost in the handoff', before: 'Manual relay', after: 'Routed' },
+      { title: 'Follow-up happens on schedule', before: 'When remembered', after: 'On time' },
+    ],
+  },
+
+  pressurePoints: {
+    eyebrow: 'Where it breaks',
+    heading: 'Six ways work escapes.',
+    description: 'Each one handled by a layer of the system.',
+    points: [
+      {
+        title: 'Cannot be found locally',
+        flow: 'Someone searches in the area. A competitor shows up first. The right business is on page two.',
+        handledBy: 'Local SEO Authority',
+        accent: 'teal',
+      },
+      {
+        title: 'Website does not answer the right question',
+        flow: 'Visitor lands. Reads a paragraph. Cannot tell if this is the right team. Closes the tab.',
+        handledBy: 'Smart Website System',
+        accent: 'cyan',
+      },
+      {
+        title: 'Enquiries land in scattered places',
+        flow: 'Form to one inbox. Call to a phone. DM somewhere else. Nobody owns the full picture.',
+        handledBy: 'AI Lead Handling',
+        accent: 'green',
+      },
+      {
+        title: 'Follow-up depends on memory',
+        flow: 'Quote sent Tuesday. Nobody chases on Friday. Two weeks later it is gone.',
+        handledBy: 'CRM & Automation',
+        accent: 'amber',
+      },
+      {
+        title: 'Good work does not become proof',
+        flow: 'Job done. Client happy. Review never requested. Competitor has eighty, you have twelve.',
+        handledBy: 'Reputation & Review',
+        accent: 'purple',
+      },
+      {
+        title: 'Spend cannot be traced to real work',
+        flow: 'Marketing running. Leads coming in. No clear line from spend to job to revenue.',
+        handledBy: 'Revenue Growth',
+        accent: 'cyan',
+      },
+    ],
+  },
+
+  structureLayers: {
+    heading: 'It is not a website project.',
+    headingMuted: 'It is infrastructure.',
+    description:
+      'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, and lead recovery. Connected. Running.',
     layers: [
       {
         title: 'Visibility Layer',
-        description:
-          'Local search, maps, service pages. People find you when they need what you do.',
+        note: 'Local search, map presence, structured service pages',
+        accent: 'cyan',
       },
+      { title: 'Capture Layer', note: 'Calls, forms, DMs — all into one surface', accent: 'teal' },
+      { title: 'Response Layer', note: 'First reply within minutes, every time', accent: 'green' },
+      { title: 'Follow-Up Layer', note: 'Quote chasing, reminders, ownership', accent: 'amber' },
+      { title: 'Proof Layer', note: 'Reviews requested at the right moment', accent: 'purple' },
       {
-        title: 'Capture Layer',
-        description: 'Forms, calls, bookings. Caught and logged. Nothing lost between channels.',
-      },
-      {
-        title: 'Follow-Up Layer',
-        description:
-          'Instant replies, team alerts, timed reminders. The gap between enquiry and reply closes on its own.',
-      },
-      {
-        title: 'Proof Layer',
-        description:
-          'Review requests, reputation tracking. Evidence that shows up while everyone works.',
+        title: 'Improvement Layer',
+        note: 'What works gets reinforced. Spend tied to real work.',
+        accent: 'cyan',
       },
     ],
-    trustFoundations: {
-      title: 'This works for established businesses and serious new setups.',
-      description:
-        'Best when there is real demand already, or when you want the website, CRM, routing, and follow-up set up properly from day one instead of patching it later.',
-      strongFitBadge: 'Strong Fit',
-      strongFitTitle: 'This works well when:',
-      strongFitItems: [
-        {
-          title: 'Jobs are worth real money',
-          description: 'Hundreds per job. Repeat work. Real customer value.',
-        },
-        {
-          title: 'Enquiries come in but get lost',
-          description: "The demand is there. What happens to them isn't.",
-        },
-        {
-          title: 'Everyone is busy doing the actual work',
-          description: 'No time to chase leads, check voicemails, or send review requests.',
-        },
-        {
-          title: "You've tried marketing before",
-          description: "Spent money on ads or SEO. Got traffic. Didn't convert enough of it.",
-        },
-        {
-          title: 'You want something that runs, not another project',
-          description: 'Set up once. Keeps going.',
-        },
-      ],
-      notDesignedBadge: 'Not The Right Fit',
-      notDesignedTitle: 'Probably not right if:',
-      notDesignedItems: [
-        {
-          title: 'You need a quick visual refresh',
-          description: 'A brochure redesign without operational change.',
-        },
-        {
-          title: "You're comparing on price alone",
-          description: 'Lowest cost matters more than what gets built.',
-        },
-        {
-          title: 'You want a feature checklist',
-          description: 'Tools for the sake of tools. Not connected to anything.',
-        },
-        {
-          title: "You're testing short-term campaigns",
-          description: 'Quick experiments rather than something built to last.',
-        },
-        {
-          title: 'You are still testing the offer itself',
-          description:
-            'If the service, market, or delivery model is still undefined, the first step is clarifying the offer before building full infrastructure around it.',
-        },
+  },
+
+  industries: {
+    eyebrow: 'Where this fits',
+    heading: 'Five businesses.',
+    headingMuted: 'Same shape of leak.',
+    description:
+      'The names change. The pattern does not. Work comes in. Some of it lands. Most of the rest depends on someone remembering — until a system holds it instead.',
+    scenarios: [
+      {
+        name: 'Trades & Home Services',
+        leak: 'Calls ring out while the team is on the tools. Quotes get sent and never chased.',
+        needs: ['Response handling', 'Quote follow-up', 'Local visibility'],
+        href: '/industries/home-services',
+        accent: 'amber',
+      },
+      {
+        name: 'Beauty & Personal Care',
+        leak: 'Bookings collide with back-to-back appointments. No-shows go unrecovered. Reviews stay private.',
+        needs: ['Booking capture', 'Reminder flow', 'Review capture'],
+        href: '/industries/beauty-personal-care',
+        accent: 'red',
+      },
+      {
+        name: 'Professional Services',
+        leak: 'Consultation requests sit in an inbox. Decisions get delayed. The wrong fits take up the calendar.',
+        needs: ['Enquiry triage', 'Sequenced follow-up', 'Authority signal'],
+        href: '/industries/legal-professional-services',
+        accent: 'cyan',
+      },
+      {
+        name: 'Appointment-Based Local',
+        leak: 'Local search position slips. Reviews are not asked at the right time. Repeat work depends on memory.',
+        needs: ['Local SEO', 'Review timing', 'CRM memory'],
+        href: '/industries/local-appointment-businesses',
+        accent: 'teal',
+      },
+      {
+        name: 'Local Multi-Service Businesses',
+        leak: 'Multiple services. One website. Visitors cannot tell which service fits them.',
+        needs: ['Service architecture', 'Routing logic', 'Spend-to-work loop'],
+        href: '/industries/automotive-services',
+        accent: 'purple',
+      },
+    ],
+  },
+
+  alignment: {
+    eyebrow: 'What changes over time',
+    heading: 'It does not all happen at once.',
+    headingMuted: 'That is the point.',
+    description: 'The urgent stuff gets fixed first. Then the rest catches up. Then it compounds.',
+    stages: [
+      {
+        num: '01',
+        title: 'Stop the bleeding',
+        note: 'Recover the obvious losses. Calls, replies, lost enquiries.',
+        weight: 25,
+      },
+      {
+        num: '02',
+        title: 'Get the groundwork in',
+        note: 'Routing, follow-up, capture surfaces, structured pages.',
+        weight: 50,
+      },
+      {
+        num: '03',
+        title: 'Start compounding',
+        note: 'Visibility, proof, repeat enquiries — building on each other.',
+        weight: 78,
+      },
+      {
+        num: '04',
+        title: 'Runs without you',
+        note: 'Operates quietly. Owner attention only when it matters.',
+        weight: 100,
+      },
+    ],
+  },
+
+  proofStory: {
+    heading: 'One business.',
+    headingMuted: 'Before and after.',
+    description: 'Not a portfolio. What changed when things stopped slipping through.',
+    before: {
+      label: 'Before',
+      title: 'Basic website, scattered ops',
+      bullets: [
+        'Calls missed during the day',
+        'Enquiries spread across 3 inboxes',
+        'Quotes sent — never followed up',
+        'Reviews collected by accident',
       ],
     },
-  },
-  industries: {
-    title: 'Made for businesses that do the work',
-    description:
-      "Trades. Services. Professionals. Businesses where everyone's out doing the job. Enquiries pile up. Calls ring out. Customers slip away.",
-    items: [
-      {
-        icon: Scissors,
-        title: 'Beauty & Personal Care',
-        description:
-          'Bookings scattered across Instagram DMs and phone calls. No-shows nobody chased. Reviews that never got requested.',
-        href: '/industries/beauty-personal-care',
-      },
-      {
-        icon: Wrench,
-        title: 'Trades & Home Services',
-        description:
-          "Van's out. Phone's ringing. Quotes sent last month still sitting there. Half the leads came from a Google listing that hasn't been touched in years.",
-        href: '/industries/home-services',
-      },
-      {
-        icon: Users,
-        title: 'Professional Services',
-        description:
-          "Consultations booked by email chains. Follow-up that depends on someone remembering. A website that doesn't match the work.",
-        href: '/industries/legal-professional-services',
-      },
-      {
-        icon: Calendar,
-        title: 'Local & Appointment-Based',
-        description:
-          "Clinics, repair shops, studios. Steady demand. Booking friction. Review counts that don't match the customer satisfaction.",
-        href: '/industries/local-appointment-businesses',
-      },
-    ],
-  },
-  visibilityTimeline: {
-    badge: 'What Changes Over Time',
-    title: "It doesn't all happen at once. That's the point.",
-    description: 'The urgent stuff gets fixed first. Then the rest catches up. Then it compounds.',
-    items: [
-      {
-        phase: 'Week 1-2',
-        title: 'Stop the bleeding',
-        icon: Layers,
-        items: [
-          'Missed calls caught and followed up',
-          'Enquiries going to the right person. Nothing in limbo.',
-          'Obvious visibility problems fixed',
-          'Leads visible in one place',
-        ],
-      },
-      {
-        phase: 'Month 1-2',
-        title: 'Get the groundwork in',
-        icon: Search,
-        items: [
-          'Service pages matched to searches people run',
-          'Local presence sorted across maps and listings',
-          'Review requests going out after completed jobs',
-          'Follow-up running without reminders',
-        ],
-      },
-      {
-        phase: 'Month 3-6',
-        title: 'Start compounding',
-        icon: Workflow,
-        items: [
-          'Search visibility climbing for the terms that matter',
-          'Review count growing steadily',
-          'Old leads coming back and converting',
-          'Response times down. Conversion rate up.',
-        ],
-      },
-      {
-        phase: 'Ongoing',
-        title: 'Runs without you',
-        icon: ShieldCheck,
-        items: [
-          'Monthly reviews instead of reactive scrambles',
-          'Shifts when you do',
-          'Proof building. Visibility climbing. Leads moving.',
-          'Everyone does the work. The rest runs.',
-        ],
-      },
-    ],
-    note: "Every business starts somewhere different. We figure out what's leaking first and work from there.",
-  },
-  caseStudies: {
-    title: 'One business. Before and after.',
-    description: 'Not a portfolio. What changed when things stopped slipping through.',
+    change: {
+      label: 'System change',
+      title: 'Connected operating layer',
+      bullets: [
+        'Single capture surface',
+        'Routing + follow-up automation',
+        'Local visibility groundwork',
+        'Review request flow on completion',
+      ],
+    },
+    after: {
+      label: 'After',
+      title: 'Runs without constant attention',
+      bullets: [
+        'Enquiries land in one place',
+        'Routing handled automatically',
+        'Follow-up happens on schedule',
+        'Reviews coming in steadily',
+      ],
+    },
     quote:
       'We moved from a basic website to something connected. Enquiries land in the right place, follow-up is clearer. The business runs easier now.',
-    quoteAuthor: '\u2014 Lisa Chen, Pawfect Mobile Grooming, Birmingham',
+    quoteAttribution: 'Owner — established service business',
   },
+
+  implementationExamples: {
+    eyebrow: 'Architecture sample board',
+    heading: 'What implementation can look like',
+    description:
+      'Not every business needs the same build. The system is shaped around where work is leaking.',
+    boardLabel: 'Implementation patterns — selected',
+    boardCount: '05 patterns shown',
+    patterns: [
+      {
+        title: 'Missed call recovery flow',
+        desc: 'Inbound voicemail triggers an SMS reply, logs the enquiry, and routes it into the queue.',
+        flow: ['Voicemail', 'SMS reply', 'Enquiry log', 'Queue'],
+      },
+      {
+        title: 'Lead follow-up sequence',
+        desc: 'Quote sent → 24h check-in → 3d nudge → 7d close-out. On schedule, not by memory.',
+        flow: ['Quote', '+24h', '+3d', '+7d'],
+      },
+      {
+        title: 'Service page structure',
+        desc: 'Service clarity, area coverage, structured capture surface — built so search and humans both understand.',
+        flow: ['Clarity', 'Coverage', 'Capture'],
+      },
+      {
+        title: 'Review request flow',
+        desc: 'Job marked complete → review request → reminder → review surfaced where it earns trust.',
+        flow: ['Done', 'Request', 'Remind', 'Display'],
+      },
+      {
+        title: 'CRM routing',
+        desc: 'All channels — call, form, DM, email — into one record. Owner sees the queue, not the chaos.',
+        flow: ['Channel', 'Record', 'Queue'],
+      },
+    ],
+  },
+
   faq: {
-    title: 'Straight answers',
+    heading: 'Straight answers',
+    description: 'Practical questions, answered without spin.',
     items: [
       {
         question: 'What do you build?',
         answer:
-          'What happens underneath a website. Enquiries. Follow-up. Visibility. Proof collection. Connected. For service businesses that already have the work.',
+          'Operating systems for service businesses — Smart Websites, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation, Revenue Growth. Connected, not standalone.',
       },
       {
         question: 'How is this different from getting a new website?',
         answer:
-          'A website is a page people land on. This catches calls, routes enquiries, chases follow-up, and gets you reviews. The website is one piece.',
+          'A website is a surface. We build the underlying capture, routing, follow-up, visibility, and proof layers — so the surface actually catches the work.',
       },
       {
         question: 'We already have a website. Can you work with that?',
         answer:
-          'Usually. We look at what you have. Sometimes the site is fine and everything around it is broken.',
+          'Often yes. We start by inspecting what exists, locate where it leaks, and put the missing layers in place around it.',
       },
       {
         question: 'Is SEO included?',
-        answer: 'Baked into the site. Ongoing SEO when it makes sense.',
+        answer:
+          'Local SEO Authority is one of the systems. It is not a bolt-on — it is part of the visibility layer.',
       },
       {
         question: 'What about missed calls and follow-up?',
         answer:
-          'Missed calls get caught and chased. Enquiries get routed. Reminders fire on schedule. Nobody remembers. It runs.',
+          'Handled by the Capture and Follow-Up layers. Missed call recovery flows, routed enquiries, sequenced replies.',
       },
       {
         question: 'What kind of businesses is this for?',
         answer:
-          'Established service businesses are the main fit, but we also work with serious new businesses that want the website, CRM, routing, and follow-up set up properly from day one.',
+          'Established service businesses, or serious new setups, where jobs are worth real money and demand already exists.',
       },
       {
         question: 'How long before we see results?',
-        answer: 'Missed calls and follow-up? Weeks. Visibility and reviews? Months. It compounds.',
+        answer:
+          'Stop the bleeding in weeks. Groundwork in months. Compounding takes longer — that is the point.',
       },
       {
-        question: 'Do you do ongoing work or is it a one-off?',
+        question: 'Do you do ongoing work?',
         answer:
-          'Either way. Everything keeps running. Ongoing means we keep tightening as the business shifts.',
+          'Yes. Infrastructure needs maintenance, observation, and tuning. We can run it or hand it over.',
       },
       {
         question: 'How do we start?',
         answer:
-          "We look at how enquiries come in right now. Where calls go. What happens to leads. Then come back with what's leaking.",
+          'Start a conversation. We map where work is leaking and what to put in place first.',
       },
     ],
   },
+
   cta: {
-    footer: {
-      heading: {
-        title: "Something here hit close. Find where it's breaking.",
-        description:
-          'We can map what needs building first, whether you are fixing years of patchwork or setting the foundation properly from day one. Calls, follow-up, visibility, and proof all get reviewed together.',
+    eyebrow: 'Decision Panel',
+    heading: {
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
+      description:
+        'We can map what needs building first, whether you are fixing years of patchwork or setting the foundation properly from day one.',
+    },
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'home',
+        }),
+        primary: true,
       },
-      actions: [
-        {
-          label: 'Get Started',
-          href: buildContactHref({
-            system: 'homepage',
-            sourceType: 'page',
-            slug: 'homepage-footer',
-          }),
-          primary: true,
-        },
-      ],
+    ],
+    expectations: [
+      { num: '01', text: 'Where work is coming in today' },
+      { num: '02', text: 'What is being held — and what is not' },
+      { num: '03', text: 'Which layer to put in place first' },
+      { num: '04', text: 'What it would mean for revenue' },
+    ],
+    footer: {
+      noSell: 'No hard sell.',
+      tone: 'Calm conversation',
     },
   },
 };
