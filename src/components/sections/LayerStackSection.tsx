@@ -74,29 +74,35 @@ export function LayerStackSection({
           const Icon = resolveSectionIcon(layer.iconKey);
           return (
             <li key={layer.key} className='layer-stack__card rd-animate-up'>
-              <header className='layer-stack__card-head'>
-                <span className='layer-stack__card-index'>{layer.index}</span>
-                {Icon ? (
-                  <span className='rd-icon-tile rd-icon-tile--lg' aria-hidden='true'>
-                    <Icon size={22} />
+              <div className='layer-stack__card-content'>
+                <header className='layer-stack__card-head'>
+                  <span className='layer-stack__card-index' aria-hidden='true'>
+                    {layer.index}
                   </span>
+                  {Icon ? (
+                    <span className='rd-icon-tile rd-icon-tile--sm' aria-hidden='true'>
+                      <Icon size={16} />
+                    </span>
+                  ) : null}
+                  <div className='layer-stack__card-text'>
+                    <h3 className='layer-stack__card-title'>{layer.title}</h3>
+                    {layer.meta ? (
+                      <span className='layer-stack__card-meta'>{layer.meta}</span>
+                    ) : null}
+                  </div>
+                </header>
+                <p className='layer-stack__card-summary'>{layer.summary}</p>
+                {layer.bullets && layer.bullets.length > 0 ? (
+                  <ul className='layer-stack__card-bullets'>
+                    {layer.bullets.map(bullet => (
+                      <li key={bullet} className='layer-stack__card-bullet'>
+                        <span className='rd-dot rd-dot--info' aria-hidden='true' />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 ) : null}
-                <div className='layer-stack__card-text'>
-                  <h3 className='layer-stack__card-title'>{layer.title}</h3>
-                  {layer.meta ? <span className='layer-stack__card-meta'>{layer.meta}</span> : null}
-                </div>
-              </header>
-              <p className='layer-stack__card-summary'>{layer.summary}</p>
-              {layer.bullets && layer.bullets.length > 0 ? (
-                <ul className='layer-stack__card-bullets'>
-                  {layer.bullets.map(bullet => (
-                    <li key={bullet} className='layer-stack__card-bullet'>
-                      <span className='rd-dot rd-dot--info' aria-hidden='true' />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+              </div>
             </li>
           );
         })}

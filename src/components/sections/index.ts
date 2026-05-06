@@ -11,6 +11,7 @@
 export * from './AccordionFAQSection';
 export * from './AuthoritySignalMapSection';
 export * from './BeforeAfterSection';
+export * from './CompoundingSignalsSection';
 export * from './CriteriaComparisonSection';
 export * from './GridCardsSection';
 export type { HeroVisualType } from './HeroSplitSection';
@@ -20,6 +21,8 @@ export { resolveSectionIcon, SECTION_ICONS } from './icons';
 export * from './ImageStorySection';
 export * from './JourneyLeakMapSection';
 export * from './LayerStackSection';
+export * from './LeakBoardSection';
+export * from './OperatingBuildSection';
 export * from './PrimaryCTASection';
 export * from './ProcessStepsSection';
 export * from './ProofStorySection';

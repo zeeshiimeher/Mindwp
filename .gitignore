@@ -39,6 +39,7 @@ test-results/
 playwright-report/
 __workspace/
 _workspace/
+_tmp
 
 # Coverage
 coverage/

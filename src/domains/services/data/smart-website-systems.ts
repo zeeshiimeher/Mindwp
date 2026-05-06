@@ -1,17 +1,4 @@
-import {
-  AlertTriangle,
-  BarChart3,
-  Briefcase,
-  Building2,
-  Calendar,
-  MessageSquare,
-  Search,
-  Smartphone,
-  Store,
-  TrendingUp,
-  Users,
-  Zap,
-} from 'lucide-react';
+import { Briefcase, Building2, Calendar, Store } from 'lucide-react';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -98,58 +85,6 @@ export const smartWebsiteSystemsPage = {
     },
   },
   sections: {
-    value: {
-      header: {
-        badge: 'Where it leaks',
-        title: 'What slips through every week',
-        description:
-          'People reach out. Messages land in the wrong place. Your team misses some of them completely, and the rest get answered later than they should.',
-      },
-      items: [
-        {
-          icon: AlertTriangle,
-          title: 'Messages pile up where nobody looks',
-          description:
-            "A lead comes through on Thursday afternoon. It sits in a shared inbox over the weekend. Monday rolls around and they've already hired someone else.",
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Search,
-          title: "People searching for one thing can't find it",
-          description:
-            "All your services sit under a single heading. Someone who needs one specific thing has to sift through everything. They won't. They'll try the next business that makes it obvious.",
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Smartphone,
-          title: 'Mobile visitors hit a wall',
-          description:
-            'Buttons too small to tap. Forms that reload halfway through. The majority of people trying to reach you are on their phone. Most of them quit.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Zap,
-          title: 'New enquiries disappear on busy days',
-          description:
-            "Your team is mid-job. A lead arrives. Someone says they'll get to it. Nobody does. That person already called the next number on their list.",
-          iconType: 'primary' as const,
-        },
-        {
-          icon: BarChart3,
-          title: "You're spending money but can't see what works",
-          description:
-            "Ads running in one place. Social posts in another. A directory listing somewhere. You can't point to which one brought in a single real enquiry last month.",
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Users,
-          title: 'Ready buyers vanish quietly',
-          description:
-            'Wanted what you offer. Arrived, looked around, left. Nobody on your team ever knew they existed.',
-          iconType: 'primary' as const,
-        },
-      ],
-    },
     comparison: {
       header: {
         badge: 'Broken vs fixed',
@@ -341,116 +276,96 @@ export const smartWebsiteSystemsPage = {
         },
       ],
     },
-    visibilityFoundations: {
+    compoundingSignals: {
       header: {
-        badge: 'Compounding effect',
+        kicker: 'Compounding effect',
         title: 'What changes when the site actually works',
         description:
           'Not about how it looks. About what happens when every interested person can reach you and your team sees it straight away.',
       },
-      tagline: 'Get the site right. Everything after it starts working.',
-      narrativeTitle: "Why your ads and social media aren't paying off yet",
-      body: "You're running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn't catching what arrives.",
-      narrativeParagraphs: [
-        "You're running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn't catching what arrives.",
-        "When services are clear and contact is obvious, those same visitors turn into work. Follow-up runs itself. What you're already spending starts earning back.",
-      ],
-      bullets: [
-        'Ad spend starts paying for itself',
-        'Your team stops chasing and starts delivering',
-        'Search traffic has somewhere to land',
-      ],
-      highlights: [
-        { label: 'Ad spend pays for itself', value: 'Less waste' },
-        { label: 'Less chasing, more delivering', value: 'Less admin' },
-        { label: 'Search picks up', value: 'Organic traffic' },
-      ],
-      image: {
-        src: '/images/services/smart-website-systems.webp',
-        alt: 'Operations dashboard view of a smart website system',
-        width: 960,
-        height: 720,
+      liveSignal: {
+        title: 'Enquiry received — routed automatically',
+        rows: [
+          { label: 'Source', value: 'Google Search', status: 'active' as const },
+          { label: 'Service', value: 'Roof repair', status: 'active' as const },
+          { label: 'Assigned to', value: 'Mark T.', status: 'active' as const },
+          { label: 'Follow-up', value: 'Scheduled', status: 'active' as const },
+          { label: 'Response sent', value: '2 min ago', status: 'clear' as const },
+        ],
       },
-      items: [
-        {
-          icon: TrendingUp,
-          title: 'Ad spend starts paying for itself',
-          description:
-            'Traffic you already pay for starts converting. People find what they came for and get in touch. Follow-up runs before it goes cold.',
-          points: ['Less waste', 'Real return', 'Measurable'],
-          iconType: 'primary' as const,
-        },
-        {
-          icon: MessageSquare,
-          title: 'Your team stops chasing and starts delivering',
-          description:
-            'Enquiries show up with context attached. Follow-up is handled. Your team focuses on the actual work — not on checking inboxes.',
-          points: ['Less admin', 'Quicker response', 'Better focus'],
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Search,
-          title: 'Search traffic has somewhere to land',
-          description:
-            'When what you offer is listed properly, Google can match you to people looking for it. The site becomes the thing every other channel points to.',
-          points: ['Organic traffic', 'Local search', 'Foundation'],
-          iconType: 'primary' as const,
-        },
-      ],
-      alternatingItems: [
+      signals: [
         {
           title: 'Ad spend pays for itself',
-          description:
-            'Traffic you already pay for starts converting. People find what they came for and get in touch. Follow-up runs before it goes cold.',
-          points: ['Less waste', 'Real return', 'Measurable'],
+          before: 'Traffic clicks through. Nothing gets captured. The spend continues without evidence of return.',
+          after: 'People find what they came for and get in touch. Follow-up runs before it goes cold. Spend that works is visible.',
         },
         {
           title: 'Less chasing, more delivering',
-          description:
-            'Enquiries arrive with context. Follow-up is handled. Your team spends time on real work, not inbox checking.',
-          points: ['Less admin', 'Quicker response', 'Better focus'],
+          before: 'Enquiries live in an inbox. Your team checks it when they remember. Leads go cold between jobs.',
+          after: 'Enquiries arrive with context attached. Follow-up is handled. Your team focuses on the actual work.',
         },
         {
-          title: 'Search picks up',
-          description:
-            'When what you offer is listed properly, Google can match you to local queries. The site becomes the thing everything else points to.',
-          points: ['Organic traffic', 'Local search', 'Foundation'],
+          title: 'Search traffic has somewhere to land',
+          before: 'One page covers everything. Nobody searching for a specific service finds a specific answer.',
+          after: 'Each service has its own page. Google can match it to the search. The site becomes where everything else points.',
+        },
+        {
+          title: 'Your team can see what happened',
+          before: 'No record of who enquired, which channel sent them, or what happened after. Gut feeling is all you have.',
+          after: 'Every enquiry tracked from source to outcome. Channels that produce real work are visible. Ones that do not are too.',
         },
       ],
+      summary: {
+        before: 'Visits disappear into separate places — email, social messages, missed calls — with nothing connecting them.',
+        after: 'Every enquiry has a source, an owner, and a next step. Your team sees it the moment it arrives.',
+      },
     },
-    process: {
+    operatingBuild: {
       header: {
-        badge: 'How it works',
+        kicker: 'How it works',
         title: 'From first conversation to a site pulling its weight',
         description:
-          "We don't begin with visuals. We start with how your business runs, where enquiries fall apart, and what the site actually needs to handle.",
+          "We start with how your business runs — not with colours or layouts. The build follows what we learn.",
       },
-      steps: [
+      inputs: [
+        'Incoming calls and missed calls',
+        'Contact forms and booking requests',
+        'Existing pages and service listings',
+        'CRM and follow-up gaps',
+        'Channels you already use to get found',
+      ],
+      stages: [
         {
-          number: '1',
-          title: 'We learn how your business runs',
-          description:
-            'What you offer, how people find you, where things drop off, which tools you already use. Everything after this follows from what we learn here.',
+          title: 'Map how leads arrive',
+          description: 'We trace every path an enquiry takes — from where people find you to where the message ends up. We identify what is leaking before anything is built.',
+          outputs: ['Enquiry flow mapped', 'Leak points identified', 'CRM gaps flagged'],
         },
         {
-          number: '2',
-          title: 'We plan around your services and customers',
-          description:
-            'Which services need their own listing, what each one says, how someone moves from arriving to getting in touch. The build follows the business, not the other way round.',
+          title: 'Structure pages around real services',
+          description: 'Each service gets its own page, written the way people search for it. The architecture follows the business, not a template.',
+          outputs: ['Service pages planned', 'Content aligned to search intent', 'Clear next actions on every page'],
         },
         {
-          number: '3',
-          title: 'We build it and connect everything',
-          description:
-            'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically. You can see where people come from and what they do.',
+          title: 'Connect enquiry handling',
+          description: 'Forms feed directly into your CRM. Confirmations go out automatically. The right person is notified the moment an enquiry arrives.',
+          outputs: ['CRM connected', 'Auto-confirmation live', 'Routing configured'],
         },
         {
-          number: '4',
-          title: 'Handover and training',
-          description:
-            'Everything tested. Running. Your team gets documentation and a walkthrough. They handle content, check enquiries, manage updates from there.',
+          title: 'Hand over to your team',
+          description: 'Everything tested end to end. Your team gets documentation and a walkthrough. They run it independently from there.',
+          outputs: ['Full documentation', 'Team walkthrough', 'Independent from day one'],
         },
       ],
+      finalState: {
+        title: 'What is working after the build',
+        items: [
+          'Clear service pages — visitors find what they came for',
+          'Every enquiry captured with name, number, and service',
+          'Leads assigned and confirmed automatically',
+          'Follow-up running without anyone having to remember',
+          'Tracking showing which channels produce real work',
+        ],
+      },
     },
     qualification: {
       header: {
@@ -510,70 +425,62 @@ export const smartWebsiteSystemsPage = {
       },
       items: smartWebsitesFaqItems,
     },
-    journeyLeakMap: {
+    leakBoard: {
       header: {
         kicker: 'Where it breaks',
         title: 'Where enquiries leak out of your business',
         description:
-          'Five points in the enquiry path where leads disappear — before your team ever has a chance to respond.',
+          'Five points where leads disappear — before your team ever has a chance to respond.',
       },
-      stages: [
+      primaryLeak: {
+        label: 'Response',
+        title: 'Hours pass before anyone replies',
+        situation:
+          'A form lands in a shared inbox. Nobody owns it. Whoever checks it that day replies — if they remember. By then the caller has already rung someone else.',
+        cost: 'The business that responds first usually gets the work. A slow reply does not lose the enquiry in your mind — it was already gone before you noticed.',
+        handledState:
+          'An automated confirmation goes out immediately. The enquiry is logged with a notification to the right person. Your team picks it up in minutes, not hours.',
+      },
+      leaks: [
         {
-          id: 'discovery',
           label: 'Discovery',
-          title: 'They find you — then give up',
-          leak: 'Services are grouped under one page. Someone looking for one specific thing has to sift through everything else.',
-          impact:
-            'Visitors leave without enquiring because they cannot quickly find what they came for.',
-          handled:
-            'Each service gets its own page, written the way people search for it. The right visitor finds the right page.',
-          status: 'critical' as const,
+          title: 'They cannot find the one thing they need',
+          situation:
+            'All services are grouped under one heading. A visitor looking for a specific thing has to sift through everything else. Most do not.',
+          cost: 'Visitors leave without enquiring because they cannot quickly identify what they came for.',
+          handledState:
+            'Each service has its own page, written the way people search for it. The right visitor lands directly.',
         },
         {
-          id: 'enquiry',
-          label: 'Enquiry',
-          title: 'The message lands in the wrong place',
-          leak: 'Contact forms feed into a shared inbox that nobody owns. On mobile, buttons are too small and forms break halfway through.',
-          impact:
-            'Enquiries pile up unread. Visitors on phones abandon the form before completing it.',
-          handled:
+          label: 'Capture',
+          title: 'The message goes to the wrong place',
+          situation:
+            'Forms feed into a shared email. On mobile, buttons are too small and forms break. Enquiries pile up unread.',
+          cost: 'Visitors on phones abandon the form before completing it. The lead never arrives.',
+          handledState:
             'Enquiry routes directly to the right person with name, number, and service already attached.',
-          status: 'critical' as const,
         },
         {
-          id: 'response',
-          label: 'Response',
-          title: 'Hours pass before anyone replies',
-          leak: 'No automatic notification when an enquiry arrives. Whoever checks the inbox that day handles it — if they remember.',
-          impact:
-            'The business that responds first usually gets the work. A slow reply often means the job has already gone.',
-          handled:
-            'An automated confirmation goes out immediately. The enquiry is logged in the CRM with a notification to the right person.',
-          status: 'critical' as const,
-        },
-        {
-          id: 'follow-up',
           label: 'Follow-up',
           title: 'Nobody chases — so the lead goes cold',
-          leak: 'No follow-up sequence. Your team is mid-job. Checking back on every outstanding enquiry depends on memory.',
-          impact:
-            'Warm leads go cold without a reply. Work that was available disappears without your team knowing.',
-          handled:
+          situation:
+            'No follow-up sequence. Your team is mid-job. Checking back on outstanding enquiries depends on memory.',
+          cost: 'Warm leads go cold without a reply. Work that was available disappears without your team knowing.',
+          handledState:
             'Follow-up runs automatically until there is a response. Your team delivers the work — the system handles the chasing.',
-          status: 'warning' as const,
         },
         {
-          id: 'visibility',
           label: 'Visibility',
-          title: 'Marketing spend cannot be measured or justified',
-          leak: 'Ads, social, and directories run separately. Nothing connects a click to an actual enquiry or a piece of work won.',
-          impact:
-            'Spend continues without evidence of return. Channels that are not working are kept on.',
-          handled:
+          title: 'Marketing spend cannot be measured',
+          situation:
+            'Ads, social, and directories run separately. Nothing connects a click to an actual enquiry or a piece of work won.',
+          cost: 'Spend continues without evidence of return. Channels that are not working are kept on.',
+          handledState:
             'Tracking shows where each enquiry came from. Channels that produce real work are visible. Ones that do not are too.',
-          status: 'warning' as const,
         },
       ],
+      summary:
+        'These are not design problems. They are handling problems. The fix is not a better-looking website — it is a website that holds what arrives.',
     },
     serviceBridge: {
       header: {
@@ -611,6 +518,11 @@ export const smartWebsiteSystemsPage = {
             'Smart Website Systems owns the page structure and on-page content. Local SEO Authority owns the citation, profile, and authority-building work that makes those pages discoverable.',
         },
       ],
+    },
+    scopeGroupsHeading: {
+      kicker: 'What is included',
+      title: 'Everything in scope from day one',
+      description: 'Not a pick-and-choose list. Every project covers all of this.',
     },
     scopeGroups: [
       {

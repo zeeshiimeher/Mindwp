@@ -22,13 +22,22 @@ export interface ServiceBridgeSectionProps {
   bridges: readonly ServiceBridge[];
 }
 
+const SOURCE_LABEL_DOT = 'Entry point';
+const SOURCE_CAPTION_DOT = 'Captures the enquiry';
+const SOURCE_OWNERSHIP_DOT =
+  'Owns the website structure, page clarity, and entry point.';
+const CARD_META_DOT = 'Connected system';
+const HANDOFF_LABEL_DOT = 'Handoff';
+const BOUNDARY_LABEL_DOT = 'Boundary';
+const BOARD_NOTE_DOT =
+  'The website is the entry point. Connected systems decide what happens after.'
+
 /**
- * ServiceBridgeSection — controlled system handoff context.
+ * ServiceBridgeSection — handoff map showing system ownership boundaries.
  *
- * Shows how the current system connects to adjacent systems without
- * changing page ownership or becoming a service catalog.
- * Each bridge shows the from/to relationship, what transfers, and
- * what the owning page does not cover.
+ * Left: the owning source system as the stable entry point.
+ * Right: adjacent systems that take ownership after the handoff.
+ * Each bridge card shows what transfers and what the source does not own.
  *
  * Phase 1 component. No variants — single approved pattern.
  */
@@ -60,42 +69,48 @@ export function ServiceBridgeSection({
 
   return (
     <SectionShell tone={tone} density={density} heading={heading} sectionClassName='service-bridge'>
-      <ol className='service-bridge__list rd-animate-stagger' aria-label={heading.title}>
-        {bridges.map((bridge, index) => (
-          <li key={bridge.id} className='service-bridge__item rd-animate-up'>
-            <div className='service-bridge__index-col'>
-              <span className='service-bridge__index' aria-hidden='true'>
-                {String(index + 1).padStart(2, '0')}
-              </span>
-            </div>
+      <div className='service-bridge__board'>
+        {/* Source system — stable entry point */}
+        <aside className='service-bridge__source'>
+          <p className='service-bridge__source-label'>{SOURCE_LABEL_DOT}</p>
+          <h3 className='service-bridge__source-name'>{bridges[0].from}</h3>
+          <p className='service-bridge__source-caption'>{SOURCE_CAPTION_DOT}</p>
+          <p className='service-bridge__source-ownership'>{SOURCE_OWNERSHIP_DOT}</p>
+          {/* Connection diagram — fan-out from source to connected systems */}
+          <div className='service-bridge__source-visual' aria-hidden='true'>
+            <svg className='service-bridge__flow-diagram' viewBox='0 0 160 80' xmlns='http://www.w3.org/2000/svg'>
+              <circle cx='16' cy='40' r='6' className='service-bridge__flow-node' />
+              <line x1='22' y1='40' x2='138' y2='16' className='service-bridge__flow-line' />
+              <line x1='22' y1='40' x2='138' y2='40' className='service-bridge__flow-line' />
+              <line x1='22' y1='40' x2='138' y2='64' className='service-bridge__flow-line' />
+              <circle cx='144' cy='16' r='4' className='service-bridge__flow-target' />
+              <circle cx='144' cy='40' r='4' className='service-bridge__flow-target' />
+              <circle cx='144' cy='64' r='4' className='service-bridge__flow-target' />
+            </svg>
+          </div>
+        </aside>
 
-            <div className='service-bridge__content'>
-              <div className='service-bridge__flow' aria-label={`${bridge.from} to ${bridge.to}`}>
-                <span className='service-bridge__system service-bridge__system--from'>
-                  {bridge.from}
-                </span>
-                <span className='service-bridge__arrow' aria-hidden='true'>
-                  →
-                </span>
-                <span className='service-bridge__system service-bridge__system--to'>
-                  {bridge.to}
-                </span>
-              </div>
-
-              <dl className='service-bridge__fields'>
-                <div className='service-bridge__field'>
-                  <dt className='service-bridge__field-label'>Handoff</dt>
-                  <dd className='service-bridge__field-value'>{bridge.handoff}</dd>
+        {/* Connected systems — stacked bridge cards */}
+        <ul className='service-bridge__connections rd-animate-stagger'>
+          {bridges.map(bridge => (
+            <li key={bridge.id} className='service-bridge__card rd-animate-up'>
+              <p className='service-bridge__card-meta'>{CARD_META_DOT}</p>
+              <h4 className='service-bridge__card-name'>{bridge.to}</h4>
+              <dl className='service-bridge__card-fields'>
+                <div className='service-bridge__card-field'>
+                  <dt className='service-bridge__card-field-label'>{HANDOFF_LABEL_DOT}</dt>
+                  <dd className='service-bridge__card-field-value'>{bridge.handoff}</dd>
                 </div>
-                <div className='service-bridge__field service-bridge__field--boundary'>
-                  <dt className='service-bridge__field-label'>Boundary</dt>
-                  <dd className='service-bridge__field-value'>{bridge.boundary}</dd>
+                <div className='service-bridge__card-field service-bridge__card-field--boundary'>
+                  <dt className='service-bridge__card-field-label'>{BOUNDARY_LABEL_DOT}</dt>
+                  <dd className='service-bridge__card-field-value'>{bridge.boundary}</dd>
                 </div>
               </dl>
-            </div>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className='service-bridge__note'>{BOARD_NOTE_DOT}</p>
     </SectionShell>
   );
 }

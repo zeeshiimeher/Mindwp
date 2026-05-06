@@ -8,7 +8,6 @@ import {
   GridCardsSection,
   HeroSplitSection,
   ImageStorySection,
-  JourneyLeakMapSection,
   LayerStackSection,
   PrimaryCTASection,
   ProcessStepsSection,
@@ -24,19 +23,9 @@ import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-s
 import { resolveSEO } from '@/lib/seo/seoResolver';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
-
 export async function generateMetadata() {
   return resolveSEO({ path: '/dev/component-system', type: 'static', slug: 'component-system' });
 }
-
-const SMART_VALUE_ICON_KEYS: readonly SectionIconKey[] = [
-  'alert',
-  'inbox',
-  'phone',
-  'clock',
-  'message',
-  'eye',
-];
 
 const LOCAL_MISCONCEPTION_ICON_KEYS: readonly SectionIconKey[] = ['alert', 'eye', 'clock'];
 const LAYER_ICON_KEYS: readonly SectionIconKey[] = ['target', 'search', 'route', 'repeat'];
@@ -134,23 +123,6 @@ export default function ComponentSystemVisualizerPage() {
       />
 
       <GridCardsSection
-        variant='diagnostic-grid'
-        tone='soft'
-        columns={3}
-        heading={{
-          kicker: label('GridCardsSection', 'diagnostic-grid'),
-          title: smart.sections.value.header.title,
-          description: requireDescription(smart.sections.value.header.description, 'smart value'),
-        }}
-        items={smart.sections.value.items.map((item, index) => ({
-          id: `smart-value-${index}`,
-          iconKey: SMART_VALUE_ICON_KEYS[index % SMART_VALUE_ICON_KEYS.length],
-          title: item.title,
-          description: item.description,
-        }))}
-      />
-
-      <GridCardsSection
         variant='signal-board'
         tone='soft'
         columns={3}
@@ -239,18 +211,15 @@ export default function ComponentSystemVisualizerPage() {
         tone='light'
         heading={{
           kicker: label('ProcessStepsSection', 'timeline'),
-          title: smart.sections.process.header.title,
-          description: requireDescription(
-            smart.sections.process.header.description,
-            'smart process'
-          ),
+          title: 'How it works',
+          description: 'From first conversation to a site that earns its place.',
         }}
-        steps={smart.sections.process.steps.map((step, index) => ({
-          index: step.number,
-          iconKey: PROCESS_ICON_KEYS[index % PROCESS_ICON_KEYS.length],
-          title: step.title,
-          description: step.description,
-        }))}
+        steps={[
+          { index: '01', iconKey: 'compass' as const, title: 'We learn how your business runs', description: 'What you offer, how people find you, where things drop off.' },
+          { index: '02', iconKey: 'workflow' as const, title: 'We plan around your services', description: 'Which services need their own listing and how someone moves from arriving to enquiring.' },
+          { index: '03', iconKey: 'check-circle' as const, title: 'We build it and connect everything', description: 'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically.' },
+          { index: '04', iconKey: 'trending' as const, title: 'Handover and training', description: 'Everything tested. Your team handles content, checks leads, and manages updates independently.' },
+        ]}
       />
 
       <ProofStorySection
@@ -286,17 +255,18 @@ export default function ComponentSystemVisualizerPage() {
         tone='light'
         heading={{
           kicker: label('ImageStorySection', 'evidence-photo'),
-          title: smart.sections.visibilityFoundations.header.title,
-          description: requireDescription(
-            smart.sections.visibilityFoundations.header.description,
-            'smart visibility foundations'
-          ),
+          title: 'What changes when the site actually works',
+          description: 'Not about how it looks. About what happens when every interested person can reach you.',
         }}
-        body={smart.sections.visibilityFoundations.body}
-        bullets={smart.sections.visibilityFoundations.bullets}
-        highlights={smart.sections.visibilityFoundations.highlights}
-        image={smart.sections.visibilityFoundations.image}
-        caption={smart.sections.visibilityFoundations.tagline}
+        body="You're running ads. Posting on social. People click through — nothing happens. The site isn't catching what arrives."
+        bullets={['Ad spend starts paying for itself', 'Your team stops chasing and starts delivering', 'Search traffic has somewhere to land']}
+        highlights={[
+          { label: 'Ad spend pays for itself', value: 'Less waste' },
+          { label: 'Less chasing, more delivering', value: 'Less admin' },
+          { label: 'Search picks up', value: 'Organic traffic' },
+        ]}
+        image={{ src: '/images/services/smart-website-systems.webp', alt: 'Operations dashboard view of a smart website system', width: 960, height: 720 }}
+        caption='Get the site right. Everything after it starts working.'
       />
 
       <ImageStorySection
@@ -304,17 +274,18 @@ export default function ComponentSystemVisualizerPage() {
         tone='soft'
         heading={{
           kicker: label('ImageStorySection', 'system-visual'),
-          title: smart.sections.visibilityFoundations.header.title,
-          description: requireDescription(
-            smart.sections.visibilityFoundations.header.description,
-            'smart visibility system-visual'
-          ),
+          title: 'What changes when the site actually works',
+          description: 'Not about how it looks. About what happens when every interested person can reach you.',
         }}
-        body={smart.sections.visibilityFoundations.body}
-        bullets={smart.sections.visibilityFoundations.bullets}
-        highlights={smart.sections.visibilityFoundations.highlights}
-        image={smart.sections.visibilityFoundations.image}
-        caption={smart.sections.visibilityFoundations.tagline}
+        body="You're running ads. Posting on social. People click through — nothing happens. The site isn't catching what arrives."
+        bullets={['Ad spend starts paying for itself', 'Your team stops chasing and starts delivering', 'Search traffic has somewhere to land']}
+        highlights={[
+          { label: 'Ad spend pays for itself', value: 'Less waste' },
+          { label: 'Less chasing, more delivering', value: 'Less admin' },
+          { label: 'Search picks up', value: 'Organic traffic' },
+        ]}
+        image={{ src: '/images/services/smart-website-systems.webp', alt: 'Operations dashboard view of a smart website system', width: 960, height: 720 }}
+        caption='Get the site right. Everything after it starts working.'
       />
 
       <ScopeSection
@@ -428,16 +399,6 @@ export default function ComponentSystemVisualizerPage() {
         ]}
       />
 
-      <JourneyLeakMapSection
-        tone='light'
-        heading={{
-          kicker: label('JourneyLeakMapSection', 'single pattern'),
-          title: smart.sections.journeyLeakMap.header.title,
-          description: smart.sections.journeyLeakMap.header.description,
-        }}
-        stages={smart.sections.journeyLeakMap.stages}
-      />
-
       <ServiceBridgeSection
         tone='soft'
         heading={{
@@ -482,7 +443,6 @@ export default function ComponentSystemVisualizerPage() {
         actions={smart.cta.actions}
         supports={smart.hero.list}
       />
-
     </main>
   );
 }

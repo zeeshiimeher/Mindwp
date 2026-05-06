@@ -47,6 +47,16 @@ const STATE_DOT_CLASS: Record<SignalState, string> = {
 
 const VALID_SIGNAL_STATES_DOT: readonly SignalState[] = ['strong', 'weak', 'missing'];
 
+// Priority order: worst first. Variable ends in _CLASS so string values are allowed.
+const FAMILY_STATE_CLASS: Record<SignalState, string> = {
+  missing: 'authority-signal-map__family--has-missing',
+  weak: 'authority-signal-map__family--has-weak',
+  strong: 'authority-signal-map__family--all-strong',
+};
+
+// Priority order for worst-state detection (missing > weak > strong).
+const FAMILY_STATE_PRIORITY_DOT: readonly SignalState[] = ['missing', 'weak', 'strong'];
+
 /**
  * AuthoritySignalMapSection — show how visibility, authority, and trust signals connect.
  *
@@ -104,51 +114,60 @@ export function AuthoritySignalMapSection({
       sectionClassName='authority-signal-map'
     >
       <div className='authority-signal-map__families'>
-        {families.map(family => (
-          <div key={family.id} className='authority-signal-map__family'>
-            <h3 className='authority-signal-map__family-title'>{family.title}</h3>
+        {families.map(family => {
+          const worstState = FAMILY_STATE_PRIORITY_DOT.find(state =>
+            state === FAMILY_STATE_PRIORITY_DOT[2]
+              ? family.signals.every(s => s.state === state)
+              : family.signals.some(s => s.state === state)
+          );
+          const familyStateClass = worstState ? FAMILY_STATE_CLASS[worstState] : '';
 
-            <ul className='authority-signal-map__signals' aria-label={`${family.title} signals`}>
-              {family.signals.map(signal => {
-                const stateClass = STATE_DOT_CLASS[signal.state];
-                const stateLabel = STATE_LABEL_DOT[signal.state];
-                const hasMeta = signal.metric || signal.note;
+          return (
+            <div key={family.id} className={`authority-signal-map__family ${familyStateClass}`}>
+              <h3 className='authority-signal-map__family-title'>{family.title}</h3>
 
-                return (
-                  <li
-                    key={signal.id}
-                    className={`authority-signal-map__signal authority-signal-map__signal--${signal.state}`}
-                  >
-                    <div className='authority-signal-map__signal-row'>
-                      <span
-                        className={`authority-signal-map__dot ${stateClass}`}
-                        aria-hidden='true'
-                      />
-                      <span className='authority-signal-map__signal-label'>{signal.label}</span>
-                      <span
-                        className='authority-signal-map__state-badge'
-                        aria-label={`State: ${stateLabel}`}
-                      >
-                        {stateLabel}
-                      </span>
-                    </div>
+              <ul className='authority-signal-map__signals' aria-label={`${family.title} signals`}>
+                {family.signals.map(signal => {
+                  const stateClass = STATE_DOT_CLASS[signal.state];
+                  const stateLabel = STATE_LABEL_DOT[signal.state];
+                  const hasMeta = signal.metric || signal.note;
 
-                    {hasMeta && (
-                      <div className='authority-signal-map__signal-meta'>
-                        {signal.metric && (
-                          <span className='authority-signal-map__metric'>{signal.metric}</span>
-                        )}
-                        {signal.note && (
-                          <span className='authority-signal-map__note'>{signal.note}</span>
-                        )}
+                  return (
+                    <li
+                      key={signal.id}
+                      className={`authority-signal-map__signal authority-signal-map__signal--${signal.state}`}
+                    >
+                      <div className='authority-signal-map__signal-row'>
+                        <span
+                          className={`authority-signal-map__dot ${stateClass}`}
+                          aria-hidden='true'
+                        />
+                        <span className='authority-signal-map__signal-label'>{signal.label}</span>
+                        <span
+                          className='authority-signal-map__state-badge'
+                          aria-label={`State: ${stateLabel}`}
+                        >
+                          {stateLabel}
+                        </span>
                       </div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
+
+                      {hasMeta && (
+                        <div className='authority-signal-map__signal-meta'>
+                          {signal.metric && (
+                            <span className='authority-signal-map__metric'>{signal.metric}</span>
+                          )}
+                          {signal.note && (
+                            <span className='authority-signal-map__note'>{signal.note}</span>
+                          )}
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
       </div>
     </SectionShell>
   );

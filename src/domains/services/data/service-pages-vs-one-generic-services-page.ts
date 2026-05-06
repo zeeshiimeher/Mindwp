@@ -26,15 +26,6 @@ export const servicePagesVsOneGenericServicesPage = {
   },
   sections: {
     ...smartWebsiteSystemsPage.sections,
-    value: {
-      ...smartWebsiteSystemsPage.sections.value,
-      header: {
-        ...smartWebsiteSystemsPage.sections.value.header,
-        title: 'What one generic services page keeps hiding',
-        description:
-          'A broad page can mention everything you do without helping Google rank it or helping visitors identify the one service they actually need.',
-      },
-    },
     comparison: {
       ...smartWebsiteSystemsPage.sections.comparison,
       header: {
@@ -73,14 +64,6 @@ export const servicePagesVsOneGenericServicesPage = {
     },
     types: smartWebsiteSystemsPage.sections.types,
     coreLayer: smartWebsiteSystemsPage.sections.coreLayer,
-    visibilityFoundations: smartWebsiteSystemsPage.sections.visibilityFoundations,
-    process: {
-      ...smartWebsiteSystemsPage.sections.process,
-      header: {
-        ...smartWebsiteSystemsPage.sections.process.header,
-        title: 'How the rebuild turns one broad page into a service system',
-      },
-    },
     qualification: {
       ...smartWebsiteSystemsPage.sections.qualification,
       header: {

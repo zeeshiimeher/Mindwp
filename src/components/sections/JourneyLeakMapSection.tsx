@@ -31,13 +31,7 @@ export interface JourneyLeakMapSectionProps {
   footnote?: SectionFootnote;
 }
 
-const STATUS_BADGE_CLASS: Record<LeakStatus, string> = {
-  critical: 'rd-badge rd-badge--risk',
-  warning: 'rd-badge',
-  stable: 'rd-badge rd-badge--good',
-};
-
-const STATUS_STAGE_CLASS: Record<LeakStatus, string> = {
+const STATUS_STAGE_CLASS_DOT: Record<LeakStatus, string> = {
   critical: 'journey-leak__stage--critical',
   warning: 'journey-leak__stage--warning',
   stable: 'journey-leak__stage--stable',
@@ -94,31 +88,27 @@ export function JourneyLeakMapSection({
         {stages.map((stage, index) => (
           <li
             key={stage.id}
-            className={`journey-leak__stage rd-animate-up${stage.status ? ` ${STATUS_STAGE_CLASS[stage.status]}` : ''}`}
+            className={`journey-leak__stage${stage.status ? ` ${STATUS_STAGE_CLASS_DOT[stage.status]}` : ''}`}
           >
-            <div className='journey-leak__stage-marker'>
-              <span className='journey-leak__stage-number' aria-hidden='true'>
+            {/* Left rail: number + vertical connector */}
+            <div className='journey-leak__stage-marker' aria-hidden='true'>
+              <span className='journey-leak__stage-number'>
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <span className='journey-leak__stage-label'>{stage.label}</span>
-              {stage.status ? (
-                <span className={STATUS_BADGE_CLASS[stage.status]} aria-label={stage.status}>
-                  {stage.status}
-                </span>
-              ) : null}
+              <span className='journey-leak__stage-connector' />
             </div>
 
-            <div className='journey-leak__stage-body'>
-              <h3 className='journey-leak__stage-title'>{stage.title}</h3>
+            {/* Right: diagnosis card */}
+            <div className='journey-leak__stage-body rd-animate-up'>
+              <div className='journey-leak__stage-head'>
+                <span className='journey-leak__stage-tag'>{stage.label}</span>
+                <h3 className='journey-leak__stage-title'>{stage.title}</h3>
+              </div>
 
               <dl className='journey-leak__stage-fields'>
                 <div className='journey-leak__field journey-leak__field--leak'>
                   <dt className='journey-leak__field-label'>Leak</dt>
                   <dd className='journey-leak__field-value'>{stage.leak}</dd>
-                </div>
-                <div className='journey-leak__field journey-leak__field--impact'>
-                  <dt className='journey-leak__field-label'>Impact</dt>
-                  <dd className='journey-leak__field-value'>{stage.impact}</dd>
                 </div>
                 {stage.handled ? (
                   <div className='journey-leak__field journey-leak__field--handled'>
@@ -126,9 +116,15 @@ export function JourneyLeakMapSection({
                     <dd className='journey-leak__field-value'>{stage.handled}</dd>
                   </div>
                 ) : null}
+                <div className='journey-leak__field journey-leak__field--impact'>
+                  <dt className='journey-leak__field-label'>Impact</dt>
+                  <dd className='journey-leak__field-value'>{stage.impact}</dd>
+                </div>
               </dl>
 
-              {stage.metric ? <p className='journey-leak__stage-metric'>{stage.metric}</p> : null}
+              {stage.metric ? (
+                <p className='journey-leak__stage-metric'>{stage.metric}</p>
+              ) : null}
             </div>
           </li>
         ))}

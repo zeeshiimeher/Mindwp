@@ -67,6 +67,14 @@ export const localSeoAuthorityPage = {
     },
   },
   sections: {
+    comparisonCriteriaHeader: {
+      kicker: 'Approach comparison',
+      title: 'Package SEO vs local authority system',
+      description:
+        'Five decisions that separate businesses that get found from businesses that stay invisible.',
+      leftLabel: 'Package SEO',
+      rightLabel: 'Authority system',
+    },
     comparisonCriteria: [
       {
         id: 'scope',
@@ -119,6 +127,12 @@ export const localSeoAuthorityPage = {
           'Local visibility slips without active maintenance. Google trust erodes when profile content goes stale or citations drift.',
       },
     ],
+    authoritySignalFamiliesHeader: {
+      kicker: 'Signal audit',
+      title: 'Where your local visibility stands right now',
+      description:
+        'Four areas Google checks to decide whether to show your business. Most local businesses have gaps in all four.',
+    },
     authoritySignalFamilies: [
       {
         id: 'website-foundation',

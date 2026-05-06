@@ -1,14 +1,16 @@
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
+  AuthoritySignalMapSection,
   BeforeAfterSection,
+  CriteriaComparisonSection,
   GridCardsSection,
   HeroSplitSection,
-  LayerStackSection,
   PrimaryCTASection,
   ProcessStepsSection,
   ProofStorySection,
   QualificationSection,
+  ScopeSection,
   type SectionIconKey,
 } from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
@@ -22,10 +24,6 @@ interface LocalSeoAuthorityRendererProps {
 }
 
 const MISCONCEPTION_ICON_KEYS: readonly SectionIconKey[] = ['alert', 'eye', 'clock'];
-
-const APPROACH_ICON_KEYS: readonly SectionIconKey[] = ['workflow', 'map-pin', 'repeat', 'shield'];
-
-const INTEGRATION_ICON_KEYS: readonly SectionIconKey[] = ['search', 'shield', 'route'];
 
 const PROCESS_ICON_KEYS: readonly SectionIconKey[] = ['eye', 'map-pin', 'repeat', 'trending'];
 
@@ -48,19 +46,30 @@ function requireHeadingDescription(description: string | undefined, section: str
   return description;
 }
 
+function requireNonEmptyValue(value: string | undefined, section: string) {
+  if (!value || value.trim().length === 0) {
+    throw new Error(`[${section}] Invalid data`);
+  }
+
+  return value;
+}
+
 export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRendererProps) {
   const { hero, sections } = data;
   const {
+    comparisonCriteria,
+    authoritySignalFamilies,
     misconceptions,
-    why,
     comparison,
-    integrations,
     processSection,
     scopeSection,
     proof,
     qualification,
     faqSection,
   } = sections;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const sectionsExtra = sections as Record<string, any>;
+  const { comparisonCriteriaHeader, authoritySignalFamiliesHeader } = sectionsExtra;
 
   const contactHref = buildContactHref({
     system: slug,
@@ -71,7 +80,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
   return (
     <ErrorBoundary fallback={<GenericErrorFallback />}>
       <main role='main'>
-        {/* Hero — visibility variant */}
+        {/* 1. Hero — signal-grid visual */}
         <HeroSplitSection
           visualType='signal-grid'
           kicker={hero.badge}
@@ -81,52 +90,47 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           visual={hero.visual}
         />
 
-        {/* Three assumptions — signal-board grid */}
-        {misconceptions && (
-          <GridCardsSection
-            variant='signal-board'
-            tone='soft'
-            columns={3}
+        {/* 2. Criteria comparison — package thinking vs system approach */}
+        {comparisonCriteria && comparisonCriteria.length >= 3 && (
+          <CriteriaComparisonSection
+            tone='light'
             heading={{
-              kicker: misconceptions.badge,
-              title: misconceptions.title,
+              kicker: comparisonCriteriaHeader?.kicker,
+              title: requireNonEmptyValue(
+                comparisonCriteriaHeader?.title,
+                'criteria comparison section'
+              ),
               description: requireHeadingDescription(
-                misconceptions.description,
-                'misconceptions section'
+                comparisonCriteriaHeader?.description,
+                'criteria comparison section'
               ),
             }}
-            items={misconceptions.painPoints.map((point, index) => ({
-              id: `misconception-${index}`,
-              iconKey: MISCONCEPTION_ICON_KEYS[index % MISCONCEPTION_ICON_KEYS.length],
-              badge: misconceptions.currentStateLabel,
-              title: point.before,
-              description: point.after,
-              status: 'risk' as const,
-            }))}
+            criteria={comparisonCriteria}
+            leftLabel={comparisonCriteriaHeader?.leftLabel}
+            rightLabel={comparisonCriteriaHeader?.rightLabel}
           />
         )}
 
-        {/* We start with your website — layer-stack */}
-        {why && (
-          <LayerStackSection
-            variant='stack'
+        {/* 3. Authority signal map — 4 signal families with state */}
+        {authoritySignalFamilies && authoritySignalFamilies.length >= 2 && (
+          <AuthoritySignalMapSection
+            tone='soft'
             heading={{
-              kicker: why.badge,
-              title: why.title,
-              description: requireHeadingDescription(why.description, 'why section'),
+              kicker: authoritySignalFamiliesHeader?.kicker,
+              title: requireNonEmptyValue(
+                authoritySignalFamiliesHeader?.title,
+                'authority signal families section'
+              ),
+              description: requireHeadingDescription(
+                authoritySignalFamiliesHeader?.description,
+                'authority signal families section'
+              ),
             }}
-            layers={why.features.map((feature, index) => ({
-              key: `approach-${index}`,
-              index: String(index + 1).padStart(2, '0'),
-              iconKey: APPROACH_ICON_KEYS[index % APPROACH_ICON_KEYS.length],
-              title: feature.title,
-              meta: why.tagline,
-              summary: feature.description,
-            }))}
+            families={authoritySignalFamilies}
           />
         )}
 
-        {/* Off-the-shelf SEO comparison — scorecard before/after */}
+        {/* 4. Before / after — off-the-shelf SEO vs structured local */}
         {comparison &&
           (() => {
             const before = comparison.items.find(item => item.type === 'before');
@@ -160,34 +164,55 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             );
           })()}
 
-        {/* What changes when SEO works — layer-stack */}
-        {integrations && (
-          <LayerStackSection
-            variant='stack'
+        {/* 5. Three assumptions — signal-board grid */}
+        {misconceptions && (
+          <GridCardsSection
+            variant='signal-board'
+            tone='soft'
+            columns={3}
             heading={{
-              kicker: integrations.badge,
-              title: integrations.title,
+              kicker: misconceptions.badge,
+              title: misconceptions.title,
               description: requireHeadingDescription(
-                integrations.description,
-                'integrations section'
+                misconceptions.description,
+                'misconceptions section'
               ),
             }}
-            layers={integrations.cards.map((card, index) => ({
-              key: `integration-${index}`,
-              index: String(index + 1).padStart(2, '0'),
-              iconKey: INTEGRATION_ICON_KEYS[index % INTEGRATION_ICON_KEYS.length],
-              title: card.title,
-              summary: card.description,
-              bullets: card.points,
+            items={misconceptions.painPoints.map((point, index) => ({
+              id: `misconception-${index}`,
+              iconKey: MISCONCEPTION_ICON_KEYS[index % MISCONCEPTION_ICON_KEYS.length],
+              badge: misconceptions.currentStateLabel,
+              title: point.before,
+              description: point.after,
+              status: 'risk' as const,
             }))}
           />
         )}
 
-        {/* What happens after we start — process steps */}
+        {/* 6. Scope — service map (what we handle) */}
+        {scopeSection && (
+          <ScopeSection
+            variant='service-map'
+            tone='light'
+            heading={{
+              kicker: scopeSection.badge,
+              title: scopeSection.title,
+              description: requireHeadingDescription(scopeSection.description, 'scope section'),
+            }}
+            groups={scopeSection.services.map((service, index) => ({
+              label: service.title,
+              description: service.summary,
+              iconKey: SCOPE_ICON_KEYS[index % SCOPE_ICON_KEYS.length],
+              items: service.items ?? [],
+            }))}
+          />
+        )}
+
+        {/* 7. Process — what happens after we start */}
         {processSection && (
           <ProcessStepsSection
             variant='timeline'
-            tone='light'
+            tone='soft'
             heading={{
               kicker: processSection.badge,
               title: processSection.title,
@@ -202,27 +227,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           />
         )}
 
-        {/* What we handle — grid cards (scope) */}
-        {scopeSection && (
-          <GridCardsSection
-            variant='feature-grid'
-            tone='soft'
-            columns={3}
-            heading={{
-              kicker: scopeSection.badge,
-              title: scopeSection.title,
-              description: requireHeadingDescription(scopeSection.description, 'scope section'),
-            }}
-            items={scopeSection.services.map((service, index) => ({
-              id: `scope-${index}`,
-              iconKey: SCOPE_ICON_KEYS[index % SCOPE_ICON_KEYS.length],
-              title: service.title,
-              description: service.summary,
-            }))}
-          />
-        )}
-
-        {/* Real business proof */}
+        {/* 8. Proof story — before / change / after with evidence points */}
         {proof &&
           (() => {
             const before = proof.cards[0];
@@ -246,24 +251,27 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                   title: before.title,
                   body: before.description,
                   iconKey: PROOF_ICON_KEYS[0],
+                  bullets: (before as { points?: readonly string[] }).points,
                 }}
                 change={{
                   label: proof.changeLabel,
                   title: change.title,
                   body: change.description,
                   iconKey: PROOF_ICON_KEYS[1],
+                  bullets: (change as { points?: readonly string[] }).points,
                 }}
                 after={{
                   label: proof.afterLabel,
                   title: after.title,
                   body: after.description,
                   iconKey: PROOF_ICON_KEYS[2],
+                  bullets: (after as { points?: readonly string[] }).points,
                 }}
               />
             );
           })()}
 
-        {/* Qualification — fit check decision cards */}
+        {/* 9. Qualification — fit check */}
         {qualification && (
           <QualificationSection
             variant='fit-filter'
@@ -295,7 +303,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           />
         )}
 
-        {/* FAQ */}
+        {/* 10. FAQ */}
         {faqSection && (
           <AccordionFAQSection
             variant='single-column'
@@ -313,6 +321,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
           />
         )}
 
+        {/* 11. CTA */}
         <PrimaryCTASection
           variant='soft-panel'
           heading={data.cta.heading}

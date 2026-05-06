@@ -315,6 +315,8 @@ const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
   'aria-labelledby',
   'className',
   'containerClassName',
+  'cx',
+  'cy',
   'decoding',
   'data-state',
   'data-testid',
@@ -323,6 +325,7 @@ const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
   'iconKey',
   'id',
   'loading',
+  'r',
   'role',
   'sectionClassName',
   'shellTone',
@@ -332,6 +335,12 @@ const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
   'tone',
   'type',
   'variant',
+  'viewBox',
+  'x1',
+  'x2',
+  'xmlns',
+  'y1',
+  'y2',
 ]);
 
 const ALLOWED_HARDCODED_CONTENT_CALLS = new Set([

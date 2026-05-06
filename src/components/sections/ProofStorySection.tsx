@@ -12,6 +12,8 @@ export interface ProofStoryColumn {
   /** Optional metric to feature on the column (e.g. "+34%"). */
   metric?: string;
   metricCaption?: string;
+  /** Optional evidence points rendered as mini evidence rows. */
+  bullets?: readonly string[];
 }
 
 export interface ProofStorySectionProps {
@@ -58,6 +60,10 @@ export function ProofStorySection({
     if (column.metricCaption !== undefined && column.metricCaption.trim().length === 0) {
       throw new Error('[ProofStorySection] Invalid data');
     }
+
+    if (column.bullets?.some(b => b.trim().length === 0)) {
+      throw new Error('[ProofStorySection] Invalid data');
+    }
   }
 
   if (attribution !== undefined && attribution.trim().length === 0) {
@@ -102,6 +108,16 @@ function ProofColumn({
       </header>
       <h3 className='proof-story__col-title'>{column.title}</h3>
       <p className='proof-story__col-body'>{column.body}</p>
+      {column.bullets && column.bullets.length > 0 ? (
+        <ul className='proof-story__col-bullets'>
+          {column.bullets.map(bullet => (
+            <li key={bullet} className='proof-story__col-bullet'>
+              <span className='rd-dot rd-dot--info' aria-hidden='true' />
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
       {column.metric ? (
         <p className='proof-story__metric'>
           <span className='proof-story__metric-value'>{column.metric}</span>

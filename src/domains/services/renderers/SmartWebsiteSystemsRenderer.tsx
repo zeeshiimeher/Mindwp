@@ -2,19 +2,21 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import {
   AccordionFAQSection,
   BeforeAfterSection,
+  CompoundingSignalsSection,
   GridCardsSection,
   HeroSplitSection,
-  ImageStorySection,
   LayerStackSection,
+  LeakBoardSection,
+  OperatingBuildSection,
   PrimaryCTASection,
-  ProcessStepsSection,
   ProofStorySection,
   QualificationSection,
+  ScopeSection,
   type SectionIconKey,
+  ServiceBridgeSection,
 } from '@/components/sections';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import type { ServicePageSections } from '@/domains/services/types';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
@@ -25,46 +27,11 @@ interface Props {
   slug: string;
 }
 
-const VALUE_ICON_KEYS: readonly SectionIconKey[] = [
-  'alert',
-  'inbox',
-  'phone',
-  'clock',
-  'message',
-  'eye',
-];
-
 const PROOF_ICON_KEYS: readonly SectionIconKey[] = ['minus', 'sparkles', 'check'];
-
-const FLOW_ICON_KEYS: readonly SectionIconKey[] = [
-  'compass',
-  'workflow',
-  'check-circle',
-  'trending',
-];
 
 const LAYER_ICON_KEYS: readonly SectionIconKey[] = ['target', 'search', 'route', 'repeat'];
 
 const TYPE_ICON_KEYS: readonly SectionIconKey[] = ['building', 'database', 'clock', 'target'];
-
-const SIZE_ICON_KEYS: readonly SectionIconKey[] = ['users', 'building', 'trending'];
-
-const CONCERN_ICON_KEYS: readonly SectionIconKey[] = [
-  'shield',
-  'eye',
-  'sparkles',
-  'check-circle',
-  'message',
-];
-
-const TECH_ICON_KEYS: readonly SectionIconKey[] = [
-  'database',
-  'workflow',
-  'shield',
-  'line-chart',
-  'sparkles',
-  'zap',
-];
 
 function requireHeadingDescription(description: string | undefined, section: string) {
   if (!description || description.trim().length === 0) {
@@ -85,10 +52,17 @@ function requireNonEmptyValue(value: string | undefined, section: string) {
 export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   const { hero } = data;
   const sections = data.sections;
-  const optionalSections = sections as Partial<ServicePageSections>;
-  const { value, comparison, included, types, coreLayer, proof, process, qualification, faq } =
-    sections;
-  const { visibilityFoundations, businessSizes, concerns, technologies } = optionalSections;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const sectionsAny = sections as Record<string, any>;
+  const { comparison, types, coreLayer, proof, qualification, faq } = sections;
+  const {
+    leakBoard,
+    serviceBridge,
+    scopeGroups,
+    scopeGroupsHeading,
+    compoundingSignals,
+    operatingBuild,
+  } = sectionsAny;
 
   const contactHref = buildContactHref({
     system: slug,
@@ -100,7 +74,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
     <>
       <ErrorBoundary fallback={<GenericErrorFallback />}>
         <main role='main'>
-          {/* Hero Section */}
+          {/* 1. Hero */}
           <HeroSplitSection
             visualType='system-feed'
             kicker={hero.badge}
@@ -110,26 +84,25 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             visual={hero.visual}
           />
 
-          {/* Value Blocks */}
-          {value && (
-            <GridCardsSection
-              variant='diagnostic-grid'
+          {/* 2. Where enquiries leak — diagnostic board */}
+          {leakBoard && (
+            <LeakBoardSection
               tone='soft'
-              columns={3}
               heading={{
-                kicker: value.header.badge,
-                title: value.header.title,
-                description: requireHeadingDescription(value.header.description, 'value section'),
+                kicker: leakBoard.header.kicker,
+                title: leakBoard.header.title,
+                description: requireHeadingDescription(
+                  leakBoard.header.description,
+                  'leak board section'
+                ),
               }}
-              items={value.items.map((block, index) => ({
-                id: `value-${index}`,
-                title: block.title,
-                description: block.description,
-                iconKey: VALUE_ICON_KEYS[index % VALUE_ICON_KEYS.length],
-              }))}
+              primaryLeak={leakBoard.primaryLeak}
+              leaks={leakBoard.leaks}
+              summary={leakBoard.summary}
             />
           )}
-          {/* Before/After Comparison */}
+
+          {/* 3. Before / After comparison */}
           {comparison &&
             (() => {
               const before = comparison.items.find(item => item.type === 'before');
@@ -162,34 +135,57 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 />
               );
             })()}
-          {/* What's Included */}
-          {included && (
-            <GridCardsSection
-              variant='feature-grid'
+
+          {/* 4. Service bridge — what the site hands off */}
+          {serviceBridge && (
+            <ServiceBridgeSection
               tone='light'
-              columns={2}
               heading={{
-                kicker: included.header.badge,
-                title: included.header.title,
+                kicker: serviceBridge.header.kicker,
+                title: serviceBridge.header.title,
                 description: requireHeadingDescription(
-                  included.header.description,
-                  'included section'
+                  serviceBridge.header.description,
+                  'service bridge section'
                 ),
               }}
-              items={included.items.map((item, index) => ({
-                id: `included-${index}`,
-                iconKey: 'check-circle' as SectionIconKey,
-                title: item,
-                status: 'good' as const,
-              }))}
+              bridges={serviceBridge.bridges}
             />
           )}
 
-          {/* Implementation Types */}
+          {/* 5. Scope — what is built */}
+          {scopeGroups && scopeGroups.length > 0 && (
+            <ScopeSection
+              variant='grouped-scope'
+              tone='soft'
+              heading={{
+                kicker: scopeGroupsHeading?.kicker,
+                title: requireNonEmptyValue(scopeGroupsHeading?.title, 'scope groups section'),
+                description: requireHeadingDescription(
+                  scopeGroupsHeading?.description,
+                  'scope groups section'
+                ),
+              }}
+              groups={scopeGroups.map(
+                (group: {
+                  label: string;
+                  description?: string;
+                  iconKey?: string;
+                  items: readonly string[];
+                }) => ({
+                  label: group.label,
+                  description: group.description,
+                  iconKey: group.iconKey,
+                  items: group.items as string[],
+                })
+              )}
+            />
+          )}
+
+          {/* 6. Implementation types — feature-grid with numbered cards */}
           {types && (
             <GridCardsSection
               variant='feature-grid'
-              tone='soft'
+              tone='light'
               columns={4}
               heading={{
                 kicker: types.header.badge,
@@ -201,10 +197,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 iconKey: TYPE_ICON_KEYS[index % TYPE_ICON_KEYS.length],
                 title: type.title,
                 description: type.description,
+                bullets: (type as { points?: readonly string[] }).points,
               }))}
             />
           )}
 
+          {/* 7. System layers — vertical pipeline */}
           {coreLayer && (
             <LayerStackSection
               variant='stack'
@@ -222,11 +220,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 iconKey: LAYER_ICON_KEYS[index % LAYER_ICON_KEYS.length],
                 title: card.title,
                 summary: card.description,
-                bullets: card.points,
+                bullets: (card as { points?: readonly string[] }).points,
               }))}
             />
           )}
 
+          {/* 8. Proof story — before / change / after */}
           {proof &&
             (() => {
               const before = proof.cards[0];
@@ -253,140 +252,63 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     title: before.title,
                     body: before.description,
                     iconKey: PROOF_ICON_KEYS[0],
+                    bullets: (before as { points?: readonly string[] }).points,
                   }}
                   change={{
                     label: proof.changeLabel,
                     title: change.title,
                     body: change.description,
                     iconKey: PROOF_ICON_KEYS[1],
+                    bullets: (change as { points?: readonly string[] }).points,
                   }}
                   after={{
                     label: proof.afterLabel,
                     title: after.title,
                     body: after.description,
                     iconKey: PROOF_ICON_KEYS[2],
+                    bullets: (after as { points?: readonly string[] }).points,
                   }}
                 />
               );
             })()}
 
-          {/* Strategic Bridge */}
-          {visibilityFoundations && (
-            <ImageStorySection
-              variant='evidence-photo'
+          {/* 9. Compounding signals — what changes when the site works */}
+          {compoundingSignals && (
+            <CompoundingSignalsSection
               tone='light'
               heading={{
-                kicker: visibilityFoundations.header.badge,
-                title: visibilityFoundations.header.title,
+                kicker: compoundingSignals.header.kicker,
+                title: compoundingSignals.header.title,
                 description: requireHeadingDescription(
-                  visibilityFoundations.header.description,
-                  'visibility foundations section'
+                  compoundingSignals.header.description,
+                  'compounding signals section'
                 ),
               }}
-              body={requireNonEmptyValue(
-                visibilityFoundations.body,
-                'visibility foundations section'
-              )}
-              bullets={visibilityFoundations.bullets}
-              highlights={visibilityFoundations.highlights}
-              image={visibilityFoundations.image}
-              caption={visibilityFoundations.tagline}
+              liveSignal={compoundingSignals.liveSignal}
+              signals={compoundingSignals.signals}
+              summary={compoundingSignals.summary}
             />
           )}
 
-          {/* NEW: Benefits by Business Size */}
-          {businessSizes && (
-            <GridCardsSection
-              variant='feature-grid'
-              tone='light'
-              columns={3}
-              heading={{
-                kicker: businessSizes.header.badge,
-                title: businessSizes.header.title,
-                description: requireHeadingDescription(
-                  businessSizes.header.description,
-                  'business sizes section'
-                ),
-              }}
-              items={businessSizes.items.map((size, index) => ({
-                id: `size-${index}`,
-                iconKey: SIZE_ICON_KEYS[index % SIZE_ICON_KEYS.length],
-                title: size.title,
-                description: size.description,
-                badge: size.benefit,
-              }))}
-            />
-          )}
-
-          {/* How It Works */}
-          {process && (
-            <ProcessStepsSection
-              variant='timeline'
-              tone='light'
-              heading={{
-                kicker: process.header.badge,
-                title: process.header.title,
-                description: requireHeadingDescription(
-                  process.header.description,
-                  'process section'
-                ),
-              }}
-              steps={process.steps.map((step, index) => ({
-                index: step.number,
-                title: step.title,
-                description: step.description,
-                iconKey: FLOW_ICON_KEYS[index % FLOW_ICON_KEYS.length],
-              }))}
-            />
-          )}
-
-          {/* NEW: Common Concerns Addressed */}
-          {concerns && (
-            <GridCardsSection
-              variant='diagnostic-grid'
+          {/* 10. Operating build — workbench layout */}
+          {operatingBuild && (
+            <OperatingBuildSection
               tone='soft'
-              columns={2}
               heading={{
-                kicker: concerns.header.badge,
-                title: concerns.header.title,
+                kicker: operatingBuild.header.kicker,
+                title: operatingBuild.header.title,
                 description: requireHeadingDescription(
-                  concerns.header.description,
-                  'concerns section'
+                  operatingBuild.header.description,
+                  'operating build section'
                 ),
               }}
-              items={concerns.items.map((item, index) => ({
-                id: `concern-${index}`,
-                iconKey: CONCERN_ICON_KEYS[index % CONCERN_ICON_KEYS.length],
-                title: item.title,
-                description: item.description,
-              }))}
+              inputs={operatingBuild.inputs}
+              stages={operatingBuild.stages}
+              finalState={operatingBuild.finalState}
             />
           )}
 
-          {/* Technologies Used */}
-          {technologies && (
-            <GridCardsSection
-              variant='feature-grid'
-              tone='light'
-              columns={3}
-              heading={{
-                kicker: technologies.header.badge,
-                title: technologies.header.title,
-                description: requireHeadingDescription(
-                  technologies.header.description,
-                  'technologies section'
-                ),
-              }}
-              items={technologies.items.map((tech, index) => ({
-                id: `tech-${index}`,
-                iconKey: TECH_ICON_KEYS[index % TECH_ICON_KEYS.length],
-                title: tech.name,
-                description: tech.description,
-              }))}
-            />
-          )}
-
-          {/* Qualification Section */}
+          {/* 11. Qualification — fit check */}
           {qualification && (
             <QualificationSection
               variant='fit-filter'
@@ -418,7 +340,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
-          {/* FAQ Section */}
+          {/* 12. FAQ */}
           {faq && (
             <AccordionFAQSection
               variant='single-column'
@@ -436,6 +358,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
+          {/* 13. CTA */}
           <PrimaryCTASection
             variant='soft-panel'
             heading={data.cta.heading}
