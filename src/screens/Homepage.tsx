@@ -41,6 +41,7 @@ import { homepageData } from '@/domains/home/data/homepage';
 const SIGNAL_ICONS: LucideIcon[] = [Search, FileText, Inbox, PhoneOff, ClipboardList, Star, Clock];
 const LEAK_ICONS: LucideIcon[] = [Search, FileText, Inbox, Clock, Globe, Star, Repeat];
 const FOUNDATION_ICONS: LucideIcon[] = [Inbox, GitBranch, Repeat, BarChart3, Star];
+const SHIFT_ICONS: LucideIcon[] = [Inbox, GitBranch, Clock];
 const PUT_IN_PLACE_ICONS: LucideIcon[] = [ScanSearch, Crosshair, Wrench, Activity];
 const PRESSURE_ICONS: LucideIcon[] = [EyeOff, FileText, Inbox, Clock, Star, TrendingDown];
 const STRUCTURE_ICONS: LucideIcon[] = [Eye, Inbox, Zap, Repeat, Star, TrendingUp];
@@ -256,25 +257,48 @@ function FoundationSection() {
 
         <div className='home-foundation__visual'>
           <div className='home-foundation__diagram'>
+            {/* Surface card */}
             <div className='home-foundation__surface'>
-              <Globe size={18} aria-hidden='true' />
-              <span>Website surface</span>
+              <div className='home-foundation__surface-icon' aria-hidden='true'>
+                <Globe size={18} />
+              </div>
+              <div className='home-foundation__surface-body'>
+                <div className='home-foundation__surface-label'>SURFACE</div>
+                <div className='home-foundation__surface-title'>{foundation.surfaceTitle}</div>
+              </div>
+              <div className='home-foundation__surface-note'>{foundation.surfaceNote}</div>
             </div>
+
             <div className='home-foundation__connector' aria-hidden='true' />
-            <div className='home-foundation__layers'>
-              {foundation.middleLayers.map((layer, i) => {
-                const Icon = FOUNDATION_ICONS[i % FOUNDATION_ICONS.length];
-                return (
-                  <div key={layer.label} className='home-foundation__layer'>
-                    <Icon size={14} aria-hidden='true' />
-                    <span>{layer.label}</span>
-                  </div>
-                );
-              })}
+
+            {/* Under panel */}
+            <div className='home-foundation__under'>
+              <div className='home-foundation__under-label'>WHAT RUNS UNDERNEATH</div>
+              <div className='home-foundation__layers'>
+                {foundation.middleLayers.map((layer, i) => {
+                  const Icon = FOUNDATION_ICONS[i % FOUNDATION_ICONS.length];
+                  return (
+                    <div key={layer.label} className='home-foundation__layer'>
+                      <div className='home-foundation__layer-icon' aria-hidden='true'>
+                        <Icon size={14} />
+                      </div>
+                      <span>{layer.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div className='home-foundation__note'>
-              <Check size={14} aria-hidden='true' />
-              <span>{foundation.connectedNote}</span>
+
+            <div className='home-foundation__connector' aria-hidden='true' />
+
+            {/* Foundation base card */}
+            <div className='home-foundation__base'>
+              <div className='home-foundation__base-dot' aria-hidden='true' />
+              <div className='home-foundation__base-body'>
+                <div className='home-foundation__base-label'>FOUNDATION</div>
+                <div className='home-foundation__base-title'>{foundation.foundationTitle}</div>
+              </div>
+              <div className='home-foundation__base-note'>{foundation.foundationNote}</div>
             </div>
           </div>
         </div>
@@ -411,12 +435,16 @@ function FitFoundationsSection() {
 
         <div className='home-fit__cards'>
           <div className='home-fit__card home-fit__card--yes'>
-            <div className='home-fit__card-badge home-fit__card-badge--yes'>Strong fit</div>
-            <h3 className='home-fit__card-title'>This works well for you</h3>
+            <div className='home-fit__card-badge home-fit__card-badge--yes'>
+              <span className='home-fit__card-badge-icon' aria-hidden='true'>
+                <Check size={13} />
+              </span>
+              <span>Strong fit</span>
+            </div>
             <ul className='home-fit__list'>
               {fitFoundations.strongFit.map(item => (
                 <li key={item} className='home-fit__item home-fit__item--yes'>
-                  <Check size={14} aria-hidden='true' />
+                  <span className='home-fit__item-dot' aria-hidden='true' />
                   <span>{item}</span>
                 </li>
               ))}
@@ -424,12 +452,16 @@ function FitFoundationsSection() {
           </div>
 
           <div className='home-fit__card home-fit__card--no'>
-            <div className='home-fit__card-badge home-fit__card-badge--no'>Not designed for</div>
-            <h3 className='home-fit__card-title'>This is not the right fit</h3>
+            <div className='home-fit__card-badge home-fit__card-badge--no'>
+              <span className='home-fit__card-badge-icon' aria-hidden='true'>
+                <Minus size={13} />
+              </span>
+              <span>Probably not right</span>
+            </div>
             <ul className='home-fit__list'>
               {fitFoundations.notFit.map(item => (
                 <li key={item} className='home-fit__item home-fit__item--no'>
-                  <Minus size={14} aria-hidden='true' />
+                  <span className='home-fit__item-dot' aria-hidden='true' />
                   <span>{item}</span>
                 </li>
               ))}
@@ -450,7 +482,6 @@ function ClientShiftSection() {
 
   return (
     <section className='home-shift'>
-      <div className='home-shift__texture' aria-hidden='true' />
       <div className='home-shift__inner rd-container'>
         <div className='home-shift__intro'>
           <h2 className='home-h2 home-h2--on-dark'>{clientShift.heading}</h2>
@@ -458,45 +489,66 @@ function ClientShiftSection() {
         </div>
 
         <div className='home-shift__layout'>
+          {/* BEFORE — scattered items panel */}
           <div className='home-shift__before'>
-            <div className='home-shift__panel-label home-shift__panel-label--before'>
-              {clientShift.before.label}
+            <div className='home-shift__panel-header'>
+              <span className='home-shift__panel-label home-shift__panel-label--before'>
+                {clientShift.before.label}
+              </span>
+              <span className='home-shift__panel-badge home-shift__panel-badge--before'>
+                <span className='home-shift__panel-badge-dot' aria-hidden='true' />
+                scattered
+              </span>
             </div>
-            <ul className='home-shift__list'>
-              {clientShift.before.bullets.map(bullet => (
-                <li key={bullet} className='home-shift__list-item home-shift__list-item--before'>
-                  <span className='home-shift__dot home-shift__dot--before' aria-hidden='true' />
-                  {bullet}
-                </li>
+            <div className='home-shift__scatter' aria-hidden='true'>
+              {clientShift.scatterItems.map(item => (
+                <span key={item} className='home-shift__scatter-item'>
+                  {item}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className='home-shift__shifts'>
-            {clientShift.shifts.map(shift => (
-              <div key={shift.title} className='home-shift__row'>
-                <div className='home-shift__row-title'>{shift.title}</div>
-                <div className='home-shift__row-compare'>
-                  <span className='home-shift__row-before'>{shift.before}</span>
-                  <ArrowRight size={14} className='home-shift__row-arrow' aria-hidden='true' />
-                  <span className='home-shift__row-after'>{shift.after}</span>
-                </div>
-              </div>
-            ))}
+          {/* SYSTEM connector */}
+          <div className='home-shift__system' aria-hidden='true'>
+            <span className='home-shift__system-label'>SYSTEM</span>
           </div>
 
+          {/* AFTER — structured rows */}
           <div className='home-shift__after'>
-            <div className='home-shift__panel-label home-shift__panel-label--after'>
-              {clientShift.after.label}
+            <div className='home-shift__panel-header'>
+              <span className='home-shift__panel-label home-shift__panel-label--after'>
+                {clientShift.after.label}
+              </span>
+              <span className='home-shift__panel-badge home-shift__panel-badge--after'>
+                <span className='home-shift__panel-badge-dot' aria-hidden='true' />
+                controlled
+              </span>
             </div>
-            <ul className='home-shift__list'>
-              {clientShift.after.bullets.map(bullet => (
-                <li key={bullet} className='home-shift__list-item home-shift__list-item--after'>
-                  <span className='home-shift__dot home-shift__dot--after' aria-hidden='true' />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
+            <div className='home-shift__rows'>
+              {clientShift.shifts.map((shift, i) => {
+                const Icon = SHIFT_ICONS[i % SHIFT_ICONS.length];
+                return (
+                  <div key={shift.title} className='home-shift__row'>
+                    <div className='home-shift__row-icon' aria-hidden='true'>
+                      <Icon size={16} />
+                    </div>
+                    <div className='home-shift__row-copy'>
+                      <div className='home-shift__row-title'>{shift.title}</div>
+                      <div className='home-shift__row-compare'>
+                        <span className='home-shift__row-before'>{shift.before}</span>
+                        <ArrowRight
+                          size={12}
+                          className='home-shift__row-arrow'
+                          aria-hidden='true'
+                        />
+                        <span className='home-shift__row-after'>{shift.after}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -571,12 +623,30 @@ function StructureLayersSection() {
                   <Icon size={16} />
                 </div>
                 <div className='home-structure__layer-copy'>
-                  <div className='home-structure__layer-title'>{layer.title}</div>
+                  <div className='home-structure__layer-title'>
+                    <span className='home-structure__layer-index'>L{i + 1}</span>
+                    {layer.title}
+                  </div>
                   <div className='home-structure__layer-note'>{layer.note}</div>
+                </div>
+                <div className='home-structure__layer-status'>
+                  <span className='home-structure__layer-status-dot' aria-hidden='true' />
+                  Active
                 </div>
               </div>
             );
           })}
+
+          {/* Foundation anchor card */}
+          <div className='home-structure__foundation'>
+            <div className='home-structure__foundation-dot' aria-hidden='true' />
+            <div className='home-structure__foundation-copy'>
+              <div className='home-structure__foundation-label'>FOUNDATION</div>
+              <div className='home-structure__foundation-title'>
+                {structureLayers.foundation.title}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -40,7 +40,11 @@ export type HomepageData = {
     heading: string;
     headingMuted: string;
     description: string;
+    surfaceTitle: string;
+    surfaceNote: string;
     middleLayers: Array<{ label: string }>;
+    foundationTitle: string;
+    foundationNote: string;
     connectedNote: string;
   };
 
@@ -80,6 +84,7 @@ export type HomepageData = {
     description: string;
     before: { label: string; bullets: string[] };
     after: { label: string; bullets: string[] };
+    scatterItems: string[];
     shifts: Array<{ title: string; before: string; after: string }>;
   };
 
@@ -95,6 +100,7 @@ export type HomepageData = {
     headingMuted: string;
     description: string;
     layers: Array<{ title: string; note: string; accent: AccentKey }>;
+    foundation: { title: string };
   };
 
   industries: {
@@ -258,6 +264,8 @@ export const homepageData: HomepageData = {
     headingMuted: 'The structure underneath is what catches the work.',
     description:
       'A website alone does not fix missed calls, slow replies, scattered forms, or invisible follow-up. But it is often the first place those problems show up.',
+    surfaceTitle: 'Visible website',
+    surfaceNote: 'What the visitor sees',
     middleLayers: [
       { label: 'Capture' },
       { label: 'Routing' },
@@ -265,6 +273,8 @@ export const homepageData: HomepageData = {
       { label: 'Tracking' },
       { label: 'Proof' },
     ],
+    foundationTitle: 'Smart Website Systems',
+    foundationNote: 'The working business structure',
     connectedNote: "These aren't separate problems. They're connected.",
   },
 
@@ -401,6 +411,7 @@ export const homepageData: HomepageData = {
         'Reviews consistently captured',
       ],
     },
+    scatterItems: ['Voicemail', 'Form', 'DM', 'Email', 'Quote PDF', 'Spreadsheet'],
     shifts: [
       { title: 'Enquiries arrive in one place', before: '3 inboxes', after: '1 surface' },
       { title: 'Nothing gets lost in the handoff', before: 'Manual relay', after: 'Routed' },
@@ -457,6 +468,7 @@ export const homepageData: HomepageData = {
     headingMuted: 'It is infrastructure.',
     description:
       'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, and lead recovery. Connected. Running.',
+    foundation: { title: 'Smart Website / Business Infrastructure' },
     layers: [
       {
         title: 'Visibility Layer',
