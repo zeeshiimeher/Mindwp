@@ -57,39 +57,6 @@ function requireDescription(description: string | undefined, section: string) {
   return description;
 }
 
-function findComparisonItem(
-  comparison: typeof smartWebsiteSystemsPage.sections.comparison,
-  type: 'before' | 'after'
-) {
-  const item = comparison.items.find(candidate => candidate.type === type);
-
-  if (!item) {
-    throw new Error(`[component visualizer:comparison:${type}] Invalid data`);
-  }
-
-  return item;
-}
-
-function smartProofColumn(index: 0 | 1 | 2) {
-  const card = smartWebsiteSystemsPage.sections.proof.cards[index];
-
-  if (!card) {
-    throw new Error('[component visualizer:smart proof] Invalid data');
-  }
-
-  return card;
-}
-
-function localProofColumn(index: 0 | 1 | 2) {
-  const card = localSeoAuthorityPage.sections.proof.cards[index];
-
-  if (!card) {
-    throw new Error('[component visualizer:local proof] Invalid data');
-  }
-
-  return card;
-}
-
 export default function ComponentSystemVisualizerPage() {
   if (!getIsSystemEnabled()) {
     notFound();
@@ -97,10 +64,9 @@ export default function ComponentSystemVisualizerPage() {
 
   const smart = smartWebsiteSystemsPage;
   const local = localSeoAuthorityPage;
-  const smartBefore = findComparisonItem(smart.sections.comparison, 'before');
-  const smartAfter = findComparisonItem(smart.sections.comparison, 'after');
-  const localBefore = findComparisonItem(local.sections.comparison, 'before');
-  const localAfter = findComparisonItem(local.sections.comparison, 'after');
+  const localBefore = local.sections.comparison.items.find(c => c.type === 'before')!;
+  const localAfter = local.sections.comparison.items.find(c => c.type === 'after')!;
+  const localProofCard = (index: 0 | 1 | 2) => local.sections.proof.cards[index]!;
 
   return (
     <main role='main'>
@@ -150,17 +116,17 @@ export default function ComponentSystemVisualizerPage() {
         columns={2}
         heading={{
           kicker: label('GridCardsSection', 'feature-grid'),
-          title: smart.sections.included.header.title,
+          title: smart.sections.environmentRoster.header.title,
           description: requireDescription(
-            smart.sections.included.header.description,
-            'smart included'
+            smart.sections.environmentRoster.header.description,
+            'smart environment roster'
           ),
         }}
-        items={smart.sections.included.items.map((item, index) => ({
-          id: `smart-included-${index}`,
+        items={smart.sections.environmentRoster.rows.map((row, index) => ({
+          id: `smart-env-${index}`,
           iconKey: 'check-circle' as const,
-          title: item,
-          status: 'good' as const,
+          title: row.name,
+          description: row.operationalNeed,
         }))}
       />
 
@@ -168,21 +134,21 @@ export default function ComponentSystemVisualizerPage() {
         variant='split-panel'
         heading={{
           kicker: label('BeforeAfterSection', 'split-panel'),
-          title: smart.sections.comparison.header.title,
+          title: local.sections.comparison.header.title,
           description: requireDescription(
-            smart.sections.comparison.header.description,
-            'smart comparison'
+            local.sections.comparison.header.description,
+            'local comparison'
           ),
         }}
         before={{
-          label: smart.sections.comparison.beforeLabel,
-          title: smartBefore.title,
-          items: smartBefore.items,
+          label: local.sections.comparison.beforeLabel,
+          title: localBefore.title,
+          items: localBefore.items,
         }}
         after={{
-          label: smart.sections.comparison.afterLabel,
-          title: smartAfter.title,
-          items: smartAfter.items,
+          label: local.sections.comparison.afterLabel,
+          title: localAfter.title,
+          items: localAfter.items,
         }}
       />
 
@@ -190,19 +156,19 @@ export default function ComponentSystemVisualizerPage() {
         variant='stack'
         heading={{
           kicker: label('LayerStackSection', 'stack'),
-          title: smart.sections.coreLayer.header.title,
+          title: smart.sections.handledPath.header.title,
           description: requireDescription(
-            smart.sections.coreLayer.header.description,
-            'smart core layer'
+            smart.sections.handledPath.header.description,
+            'smart handled path'
           ),
         }}
-        layers={smart.sections.coreLayer.cards.map((card, index) => ({
+        layers={smart.sections.handledPath.stages.map((stage, index) => ({
           key: `smart-layer-${index}`,
           index: String(index + 1).padStart(2, '0'),
           iconKey: LAYER_ICON_KEYS[index % LAYER_ICON_KEYS.length],
-          title: card.title,
-          summary: card.description,
-          bullets: card.points,
+          title: stage.name,
+          summary: stage.description,
+          bullets: stage.proofPoints,
         }))}
       />
 
@@ -215,10 +181,33 @@ export default function ComponentSystemVisualizerPage() {
           description: 'From first conversation to a site that earns its place.',
         }}
         steps={[
-          { index: '01', iconKey: 'compass' as const, title: 'We learn how your business runs', description: 'What you offer, how people find you, where things drop off.' },
-          { index: '02', iconKey: 'workflow' as const, title: 'We plan around your services', description: 'Which services need their own listing and how someone moves from arriving to enquiring.' },
-          { index: '03', iconKey: 'check-circle' as const, title: 'We build it and connect everything', description: 'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically.' },
-          { index: '04', iconKey: 'trending' as const, title: 'Handover and training', description: 'Everything tested. Your team handles content, checks leads, and manages updates independently.' },
+          {
+            index: '01',
+            iconKey: 'compass' as const,
+            title: 'We learn how your business runs',
+            description: 'What you offer, how people find you, where things drop off.',
+          },
+          {
+            index: '02',
+            iconKey: 'workflow' as const,
+            title: 'We plan around your services',
+            description:
+              'Which services need their own listing and how someone moves from arriving to enquiring.',
+          },
+          {
+            index: '03',
+            iconKey: 'check-circle' as const,
+            title: 'We build it and connect everything',
+            description:
+              'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically.',
+          },
+          {
+            index: '04',
+            iconKey: 'trending' as const,
+            title: 'Handover and training',
+            description:
+              'Everything tested. Your team handles content, checks leads, and manages updates independently.',
+          },
         ]}
       />
 
@@ -227,25 +216,25 @@ export default function ComponentSystemVisualizerPage() {
         tone='soft'
         heading={{
           kicker: label('ProofStorySection', 'before-change-after'),
-          title: smart.sections.proof.header.title,
-          description: requireDescription(smart.sections.proof.header.description, 'smart proof'),
+          title: local.sections.proof.header.title,
+          description: requireDescription(local.sections.proof.header.description, 'local proof'),
         }}
         before={{
-          label: smart.sections.proof.beforeLabel,
-          title: smartProofColumn(0).title,
-          body: smartProofColumn(0).description,
+          label: local.sections.proof.beforeLabel,
+          title: localProofCard(0).title,
+          body: localProofCard(0).description,
           iconKey: PROOF_ICON_KEYS[0],
         }}
         change={{
-          label: smart.sections.proof.changeLabel,
-          title: smartProofColumn(1).title,
-          body: smartProofColumn(1).description,
+          label: local.sections.proof.changeLabel,
+          title: localProofCard(1).title,
+          body: localProofCard(1).description,
           iconKey: PROOF_ICON_KEYS[1],
         }}
         after={{
-          label: smart.sections.proof.afterLabel,
-          title: smartProofColumn(2).title,
-          body: smartProofColumn(2).description,
+          label: local.sections.proof.afterLabel,
+          title: localProofCard(2).title,
+          body: localProofCard(2).description,
           iconKey: PROOF_ICON_KEYS[2],
         }}
       />
@@ -256,16 +245,26 @@ export default function ComponentSystemVisualizerPage() {
         heading={{
           kicker: label('ImageStorySection', 'evidence-photo'),
           title: 'What changes when the site actually works',
-          description: 'Not about how it looks. About what happens when every interested person can reach you.',
+          description:
+            'Not about how it looks. About what happens when every interested person can reach you.',
         }}
         body="You're running ads. Posting on social. People click through — nothing happens. The site isn't catching what arrives."
-        bullets={['Ad spend starts paying for itself', 'Your team stops chasing and starts delivering', 'Search traffic has somewhere to land']}
+        bullets={[
+          'Ad spend starts paying for itself',
+          'Your team stops chasing and starts delivering',
+          'Search traffic has somewhere to land',
+        ]}
         highlights={[
           { label: 'Ad spend pays for itself', value: 'Less waste' },
           { label: 'Less chasing, more delivering', value: 'Less admin' },
           { label: 'Search picks up', value: 'Organic traffic' },
         ]}
-        image={{ src: '/images/services/smart-website-systems.webp', alt: 'Operations dashboard view of a smart website system', width: 960, height: 720 }}
+        image={{
+          src: '/images/services/smart-website-systems.webp',
+          alt: 'Operations dashboard view of a smart website system',
+          width: 960,
+          height: 720,
+        }}
         caption='Get the site right. Everything after it starts working.'
       />
 
@@ -275,16 +274,26 @@ export default function ComponentSystemVisualizerPage() {
         heading={{
           kicker: label('ImageStorySection', 'system-visual'),
           title: 'What changes when the site actually works',
-          description: 'Not about how it looks. About what happens when every interested person can reach you.',
+          description:
+            'Not about how it looks. About what happens when every interested person can reach you.',
         }}
         body="You're running ads. Posting on social. People click through — nothing happens. The site isn't catching what arrives."
-        bullets={['Ad spend starts paying for itself', 'Your team stops chasing and starts delivering', 'Search traffic has somewhere to land']}
+        bullets={[
+          'Ad spend starts paying for itself',
+          'Your team stops chasing and starts delivering',
+          'Search traffic has somewhere to land',
+        ]}
         highlights={[
           { label: 'Ad spend pays for itself', value: 'Less waste' },
           { label: 'Less chasing, more delivering', value: 'Less admin' },
           { label: 'Search picks up', value: 'Organic traffic' },
         ]}
-        image={{ src: '/images/services/smart-website-systems.webp', alt: 'Operations dashboard view of a smart website system', width: 960, height: 720 }}
+        image={{
+          src: '/images/services/smart-website-systems.webp',
+          alt: 'Operations dashboard view of a smart website system',
+          width: 960,
+          height: 720,
+        }}
         caption='Get the site right. Everything after it starts working.'
       />
 
@@ -328,24 +337,24 @@ export default function ComponentSystemVisualizerPage() {
         tone='light'
         heading={{
           kicker: label('QualificationSection', 'fit-filter'),
-          title: smart.sections.qualification.header.title,
+          title: smart.sections.fitFilter.header.title,
           description: requireDescription(
-            smart.sections.qualification.header.description,
-            'smart qualification'
+            smart.sections.fitFilter.header.description,
+            'smart fit filter'
           ),
         }}
         good={{
-          label: smart.sections.qualification.strongFitLabel,
-          title: smart.sections.qualification.strongFitTitle,
-          items: smart.sections.qualification.strongFit.map(item => ({
+          label: smart.sections.fitFilter.strongFit.label,
+          title: smart.sections.fitFilter.strongFit.title,
+          items: smart.sections.fitFilter.strongFit.scenarios.map(item => ({
             text: item.title,
             note: item.description,
           })),
         }}
         not={{
-          label: smart.sections.qualification.notForLabelText,
-          title: smart.sections.qualification.notForTitle,
-          items: smart.sections.qualification.notFor.map(item => ({
+          label: smart.sections.fitFilter.notFit.label,
+          title: smart.sections.fitFilter.notFit.title,
+          items: smart.sections.fitFilter.notFit.scenarios.map(item => ({
             text: item.title,
             note: item.description,
           })),
@@ -403,10 +412,33 @@ export default function ComponentSystemVisualizerPage() {
         tone='soft'
         heading={{
           kicker: label('ServiceBridgeSection', 'single pattern'),
-          title: smart.sections.serviceBridge.header.title,
-          description: smart.sections.serviceBridge.header.description,
+          title: 'How the smart website system connects to other systems',
+          description:
+            'Smart Website Systems owns lead capture and qualification. Every other system depends on it working reliably.',
         }}
-        bridges={smart.sections.serviceBridge.bridges}
+        bridges={[
+          {
+            id: 'ai-lead-handling',
+            from: 'Smart Website Systems',
+            to: 'AI Lead Handling',
+            handoff: 'Qualified leads routed instantly — no voicemail, no delay.',
+            boundary: 'Smart Website Systems captures. AI Lead Handling responds and qualifies.',
+          },
+          {
+            id: 'crm-automation',
+            from: 'Smart Website Systems',
+            to: 'CRM Automation',
+            handoff: 'Every form submission enters the pipeline with full context.',
+            boundary: 'Smart Website Systems feeds. CRM Automation owns follow-up.',
+          },
+          {
+            id: 'local-seo-authority',
+            from: 'Smart Website Systems',
+            to: 'Local SEO Authority',
+            handoff: 'Service pages signal intent to search. Rankings build on structural clarity.',
+            boundary: 'Smart Website Systems structures. Local SEO Authority amplifies.',
+          },
+        ]}
       />
 
       <CriteriaComparisonSection

@@ -1,5 +1,3 @@
-import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -251,38 +249,6 @@ export const localSeoAuthorityPage = {
       ],
     },
 
-    why: {
-      badge: 'Our approach',
-      title: 'We start with your website, then build outward',
-      description:
-        "Local SEO isn't a one-off project. It's regular work on your website and how your business shows up. Customers keep finding you because the foundations hold.",
-      tagline: 'Your website comes first',
-      narrativeTitle: 'Why the website has to be right before anything else',
-      narrativeParagraphs: [
-        "If your website doesn't clearly explain what you offer, where you operate, and how to get in touch — driving more people to it just wastes money. They'll leave.",
-        'We fix that first. Services clearly laid out, mobile working properly, Google profile matching the site. Then we keep pushing it forward month after month.',
-      ],
-      features: [
-        {
-          icon: Settings,
-          title: 'Sort out the website foundations',
-          description:
-            'How your site loads, how it works on mobile, how Google reads it — all reviewed and corrected. The basics have to be right first.',
-        },
-        {
-          icon: Globe,
-          title: 'Get your details right everywhere',
-          description:
-            'Name, address, phone, and services matched across Google, directories, and your website. Google treats your business as one verified entity.',
-        },
-        {
-          icon: Workflow,
-          title: 'Keep building month after month',
-          description:
-            "Every month we review what's working, fix what isn't, and push your business higher. Visibility compounds instead of stalling.",
-        },
-      ],
-    },
     comparison: {
       header: {
         badge: 'Scorecard',
@@ -313,45 +279,6 @@ export const localSeoAuthorityPage = {
             'Details corrected and matched across every directory. Google sees one consistent business.',
             'Monthly work tied to visible changes — updated content, stronger profiles, growing local presence.',
             'SEO connected to website clarity. Better rankings also mean better conversion when people actually arrive.',
-          ],
-        },
-      ],
-    },
-    integrations: {
-      badge: 'How it all fits together',
-      title: 'What actually changes when local SEO is working',
-      description:
-        "Showing up on Google isn't about stuffing keywords. Your website has to be clear, your Google profile accurate, your details the same everywhere. When those line up, Google trusts you enough to show your business.",
-      cards: [
-        {
-          title: 'Your website answers the question someone just typed',
-          description:
-            'They search for what you do. They land on your site. In seconds they can tell what you offer, where, and how to reach you.',
-          points: [
-            'Each service on its own listing. Google indexes and ranks them individually.',
-            'Contact details right there — nobody has to hunt for a phone number',
-            "Works on mobile. That's where most local searchers are.",
-          ],
-          featured: true,
-        },
-        {
-          title: 'What Google finds about you actually matches reality',
-          description:
-            'Your profile, directories, reviews, and service pages all carry the same current business details, service list, and contact information.',
-          points: [
-            'Google Business Profile complete and actively managed. Eligible for local pack results.',
-            "Same details in every directory. Google can verify you're real.",
-            'Services and areas listed clearly. Google matches you to the right searches.',
-          ],
-        },
-        {
-          title: 'Every listing leads somewhere useful',
-          description:
-            'Showing up means nothing if the page behind it is vague. Each result leads to a clear, relevant listing with a way to act.',
-          points: [
-            'Each service page answers the search that triggered it',
-            'Contact details right there — no hunting required',
-            'The visit makes sense. The next step is obvious.',
           ],
         },
       ],
@@ -395,7 +322,7 @@ export const localSeoAuthorityPage = {
         "The exact scope depends on where your business is starting from. Here's what we cover.",
       services: [
         {
-          icon: Code,
+          iconKey: 'code' as const,
           title: 'Getting Your Website Right for Google',
           summary: 'Organising the site, improving mobile performance, and keeping indexing clear.',
           items: [
@@ -407,7 +334,7 @@ export const localSeoAuthorityPage = {
           ],
         },
         {
-          icon: FileText,
+          iconKey: 'file-text' as const,
           title: 'Making Each Listing Clear and Useful',
           summary:
             'Writing service content that matches local search and gives people a clear next step.',
@@ -420,7 +347,7 @@ export const localSeoAuthorityPage = {
           ],
         },
         {
-          icon: Link2,
+          iconKey: 'link' as const,
           title: 'Building Your Local Reputation Online',
           summary:
             'Keeping your profile, directories, and reviews consistent everywhere Google checks.',
@@ -433,7 +360,7 @@ export const localSeoAuthorityPage = {
           ],
         },
         {
-          icon: Layers,
+          iconKey: 'layers' as const,
           title: 'Planning Content That Brings Customers In',
           summary: 'Mapping service and location content around the searches people actually make.',
           items: [
@@ -444,7 +371,7 @@ export const localSeoAuthorityPage = {
           ],
         },
         {
-          icon: LineChart,
+          iconKey: 'line-chart' as const,
           title: 'Reporting in Plain English',
           summary:
             'Showing search performance, local movement, and competitor shifts without jargon.',
@@ -456,7 +383,7 @@ export const localSeoAuthorityPage = {
           ],
         },
         {
-          icon: Settings,
+          iconKey: 'settings' as const,
           title: 'Continuous Improvement',
           summary:
             'Reviewing the setup regularly and adjusting whenever Google or the business changes.',
@@ -469,83 +396,6 @@ export const localSeoAuthorityPage = {
         },
       ],
     },
-    scopeGroups: [
-      {
-        label: 'Website foundations',
-        description:
-          'Organising the site, improving mobile performance, and keeping indexing clear',
-        iconKey: 'workflow' as const,
-        items: [
-          'Organising your site so Google can read and index it properly',
-          'Making sure it loads quickly and works on mobile',
-          'Adding the technical tags Google looks for behind the scenes',
-          'Setting up sitemaps and making sure indexing is correct',
-          'Keeping the site secure and stable',
-        ],
-      },
-      {
-        label: 'Service listings',
-        description:
-          'Writing service content that matches local search and gives people a clear next step',
-        iconKey: 'clipboard' as const,
-        items: [
-          'Writing content for each service that explains what you do and where you do it',
-          'Titles and descriptions matching what people search for',
-          'Easy to scan. Easy to act on.',
-          'Related services linking to each other so visitors stay longer',
-          'Making sure images load fast and are labelled correctly',
-        ],
-      },
-      {
-        label: 'Local reputation',
-        description:
-          'Keeping your profile, directories, and reviews consistent everywhere Google checks',
-        iconKey: 'shield' as const,
-        items: [
-          'Setting up and managing your Google Business Profile',
-          'Matching your details across all directories',
-          'Helping you collect more reviews and respond to them',
-          'Getting your business referenced on local and relevant sites',
-          'Building mentions where they matter for your area',
-        ],
-      },
-      {
-        label: 'Content planning',
-        description:
-          'Mapping service and location content around the searches people actually make',
-        iconKey: 'database' as const,
-        items: [
-          'Creating a listing for each service and location you cover',
-          'Writing FAQs and supporting content around real searches',
-          'Planning topics based on what customers actually look for',
-          'Updating service, area, and business details whenever the business changes',
-        ],
-      },
-      {
-        label: 'Reporting',
-        description:
-          'Showing search performance, local movement, and competitor shifts without jargon',
-        iconKey: 'line-chart' as const,
-        items: [
-          'Monitoring your Google Search Console results',
-          'Tracking how your visibility shifts over time',
-          'Watching what competitors are doing locally',
-          'Giving you updates you can actually understand',
-        ],
-      },
-      {
-        label: 'Continuous improvement',
-        description:
-          'Reviewing the setup regularly and adjusting whenever Google or the business changes',
-        iconKey: 'repeat' as const,
-        items: [
-          'Regular reviews of content and technical health',
-          'Adapting when Google changes how it ranks local businesses',
-          'Updating when your services or priorities change',
-          'Small improvements that compound over months',
-        ],
-      },
-    ],
     proof: {
       header: {
         badge: 'Real outcome',

@@ -26,6 +26,7 @@ export const servicePagesVsOneGenericServicesPage = {
   },
   sections: {
     ...smartWebsiteSystemsPage.sections,
+    // Override comparison with decision-framing for this page
     comparison: {
       ...smartWebsiteSystemsPage.sections.comparison,
       header: {
@@ -34,44 +35,51 @@ export const servicePagesVsOneGenericServicesPage = {
         description:
           'This is the structural difference between saying you offer everything and giving each service its own page, proof, and next step.',
       },
-      items: [
-        {
-          type: 'before',
-          title: 'One generic services page',
-          items: [
-            'Every service shares the same headline, same supporting copy, and same CTA, so relevance stays vague for both search engines and buyers.',
-            'Someone looking for one specific service has to scan a long mixed page before deciding whether you even do what they need.',
-            'Traffic lands, but attribution stays muddy because no page clearly owns that service intent or conversion path.',
-          ],
-        },
-        {
-          type: 'after',
-          title: 'Dedicated service pages',
-          items: [
-            'Each service owns its own search intent, commercial framing, proof, and CTA, so relevance is obvious without extra interpretation.',
-            'Visitors land on a page that matches the job they were already searching for, which reduces hesitation and speeds up contact.',
-            'The business can see which service pages drive enquiries, which offers convert, and where to strengthen proof next.',
-          ],
-        },
-      ],
-    },
-    included: {
-      ...smartWebsiteSystemsPage.sections.included,
-      header: {
-        ...smartWebsiteSystemsPage.sections.included.header,
-        title: 'What a real service-page rebuild includes',
+      leftState: {
+        label: 'One generic page',
+        title: 'One generic services page',
+        groups: [
+          {
+            label: 'Relevance',
+            text: 'Every service shares the same headline, same supporting copy, and same CTA, so relevance stays vague for both search engines and buyers.',
+          },
+          {
+            label: 'Discovery',
+            text: 'Someone looking for one specific service has to scan a long mixed page before deciding whether you even do what they need.',
+          },
+          {
+            label: 'Attribution',
+            text: 'Traffic lands, but attribution stays muddy because no page clearly owns that service intent or conversion path.',
+          },
+        ],
+      },
+      rightState: {
+        label: 'Dedicated pages',
+        title: 'Dedicated service pages',
+        groups: [
+          {
+            label: 'Relevance',
+            text: 'Each service owns its own search intent, commercial framing, proof, and CTA, so relevance is obvious without extra interpretation.',
+          },
+          {
+            label: 'Discovery',
+            text: 'Visitors land on a page that matches the job they were already searching for, which reduces hesitation and speeds up contact.',
+          },
+          {
+            label: 'Attribution',
+            text: 'The business can see which service pages drive enquiries, which offers convert, and where to strengthen proof next.',
+          },
+        ],
       },
     },
-    types: smartWebsiteSystemsPage.sections.types,
-    coreLayer: smartWebsiteSystemsPage.sections.coreLayer,
-    qualification: {
-      ...smartWebsiteSystemsPage.sections.qualification,
+    // Override fitFilter header for decision context
+    fitFilter: {
+      ...smartWebsiteSystemsPage.sections.fitFilter,
       header: {
-        ...smartWebsiteSystemsPage.sections.qualification.header,
+        ...smartWebsiteSystemsPage.sections.fitFilter.header,
         title: 'Decision section: when a generic services page is no longer enough',
       },
     },
-    faq: smartWebsiteSystemsPage.sections.faq,
   },
   cta: {
     heading: {
@@ -82,3 +90,4 @@ export const servicePagesVsOneGenericServicesPage = {
     actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;
+

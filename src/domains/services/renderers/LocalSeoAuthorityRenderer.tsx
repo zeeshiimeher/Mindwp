@@ -4,15 +4,13 @@ import {
   AuthoritySignalMapSection,
   BeforeAfterSection,
   CriteriaComparisonSection,
-  GridCardsSection,
   HeroSplitSection,
   PrimaryCTASection,
-  ProcessStepsSection,
   ProofStorySection,
   QualificationSection,
-  ScopeSection,
   type SectionIconKey,
 } from '@/components/sections';
+import { SectionShell } from '@/components/sections/SectionShell';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -22,19 +20,6 @@ interface LocalSeoAuthorityRendererProps {
   data: ServicePageDataBySlug['local-seo-authority'];
   slug: string;
 }
-
-const MISCONCEPTION_ICON_KEYS: readonly SectionIconKey[] = ['alert', 'eye', 'clock'];
-
-const PROCESS_ICON_KEYS: readonly SectionIconKey[] = ['eye', 'map-pin', 'repeat', 'trending'];
-
-const SCOPE_ICON_KEYS: readonly SectionIconKey[] = [
-  'database',
-  'clipboard',
-  'shield',
-  'route',
-  'line-chart',
-  'workflow',
-];
 
 const PROOF_ICON_KEYS: readonly SectionIconKey[] = ['minus', 'sparkles', 'check'];
 
@@ -56,9 +41,13 @@ function requireNonEmptyValue(value: string | undefined, section: string) {
 
 export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRendererProps) {
   const { hero, sections } = data;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const s = sections as Record<string, any>;
   const {
     comparisonCriteria,
+    comparisonCriteriaHeader,
     authoritySignalFamilies,
+    authoritySignalFamiliesHeader,
     misconceptions,
     comparison,
     processSection,
@@ -66,10 +55,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
     proof,
     qualification,
     faqSection,
-  } = sections;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sectionsExtra = sections as Record<string, any>;
-  const { comparisonCriteriaHeader, authoritySignalFamiliesHeader } = sectionsExtra;
+  } = s;
 
   const contactHref = buildContactHref({
     system: slug,
@@ -133,8 +119,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
         {/* 4. Before / after — off-the-shelf SEO vs structured local */}
         {comparison &&
           (() => {
-            const before = comparison.items.find(item => item.type === 'before');
-            const after = comparison.items.find(item => item.type === 'after');
+            const before = comparison.items.find(
+              (item: { type: string }) => item.type === 'before'
+            );
+            const after = comparison.items.find((item: { type: string }) => item.type === 'after');
             if (!before || !after) {
               throw new Error('[comparison section] Invalid data');
             }
@@ -164,12 +152,10 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             );
           })()}
 
-        {/* 5. Three assumptions — signal-board grid */}
+        {/* 5. Assumptions — what people believe vs what actually holds */}
         {misconceptions && (
-          <GridCardsSection
-            variant='signal-board'
+          <SectionShell
             tone='soft'
-            columns={3}
             heading={{
               kicker: misconceptions.badge,
               title: misconceptions.title,
@@ -178,53 +164,82 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 'misconceptions section'
               ),
             }}
-            items={misconceptions.painPoints.map((point, index) => ({
-              id: `misconception-${index}`,
-              iconKey: MISCONCEPTION_ICON_KEYS[index % MISCONCEPTION_ICON_KEYS.length],
-              badge: misconceptions.currentStateLabel,
-              title: point.before,
-              description: point.after,
-              status: 'risk' as const,
-            }))}
-          />
+            sectionClassName='lsa-assumptions'
+          >
+            <dl className='lsa-assumptions__list rd-animate-stagger'>
+              {misconceptions.painPoints.map(
+                (point: { before: string; after: string }, index: number) => (
+                  <div key={index} className='lsa-assumptions__item rd-animate-up'>
+                    <dt className='lsa-assumptions__assumption'>{point.before}</dt>
+                    <dd className='lsa-assumptions__reality'>{point.after}</dd>
+                  </div>
+                )
+              )}
+            </dl>
+          </SectionShell>
         )}
 
-        {/* 6. Scope — service map (what we handle) */}
+        {/* 6. Local visibility coverage — what we handle */}
         {scopeSection && (
-          <ScopeSection
-            variant='service-map'
+          <SectionShell
             tone='light'
             heading={{
               kicker: scopeSection.badge,
               title: scopeSection.title,
               description: requireHeadingDescription(scopeSection.description, 'scope section'),
             }}
-            groups={scopeSection.services.map((service, index) => ({
-              label: service.title,
-              description: service.summary,
-              iconKey: SCOPE_ICON_KEYS[index % SCOPE_ICON_KEYS.length],
-              items: service.items ?? [],
-            }))}
-          />
+            sectionClassName='lsa-coverage'
+          >
+            <ul className='lsa-coverage__areas rd-animate-stagger'>
+              {scopeSection.services.map(
+                (area: { title: string; summary?: string; items: readonly string[] }) => (
+                  <li key={area.title} className='lsa-coverage__area rd-animate-up'>
+                    <div className='lsa-coverage__area-head'>
+                      <h3 className='lsa-coverage__area-title'>{area.title}</h3>
+                      {area.summary && <p className='lsa-coverage__area-summary'>{area.summary}</p>}
+                    </div>
+                    <ul className='lsa-coverage__area-items'>
+                      {area.items.map((item: string) => (
+                        <li key={item} className='lsa-coverage__area-item'>
+                          <span className='rd-dot rd-dot--info' aria-hidden='true' />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                )
+              )}
+            </ul>
+          </SectionShell>
         )}
 
-        {/* 7. Process — what happens after we start */}
+        {/* 7. Recurring cycle — what happens after we start */}
         {processSection && (
-          <ProcessStepsSection
-            variant='timeline'
+          <SectionShell
             tone='soft'
             heading={{
               kicker: processSection.badge,
               title: processSection.title,
               description: requireHeadingDescription(processSection.description, 'process section'),
             }}
-            steps={processSection.steps.map((step, index) => ({
-              index: step.number,
-              title: step.title,
-              description: step.description,
-              iconKey: PROCESS_ICON_KEYS[index % PROCESS_ICON_KEYS.length],
-            }))}
-          />
+            sectionClassName='lsa-cycle'
+          >
+            <ol className='lsa-cycle__phases rd-animate-stagger'>
+              {processSection.steps.map(
+                (step: { number: string; title: string; description: string }) => (
+                  <li key={step.number} className='lsa-cycle__phase rd-animate-up'>
+                    <div className='lsa-cycle__phase-index' aria-hidden='true'>
+                      <span>{step.number}</span>
+                    </div>
+                    <div className='lsa-cycle__phase-content'>
+                      <h3 className='lsa-cycle__phase-title'>{step.title}</h3>
+                      <p className='lsa-cycle__phase-desc'>{step.description}</p>
+                    </div>
+                  </li>
+                )
+              )}
+            </ol>
+          </SectionShell>
         )}
 
         {/* 8. Proof story — before / change / after with evidence points */}
@@ -287,18 +302,22 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             good={{
               label: qualification.strongFitLabel,
               title: qualification.strongFitTitle,
-              items: qualification.strongFitItems.map(item => ({
-                text: item.title,
-                note: item.description,
-              })),
+              items: qualification.strongFitItems.map(
+                (item: { title: string; description: string }) => ({
+                  text: item.title,
+                  note: item.description,
+                })
+              ),
             }}
             not={{
               label: qualification.notDesignedLabel,
               title: qualification.notDesignedTitle,
-              items: qualification.notDesignedItems.map(item => ({
-                text: item.title,
-                note: item.description,
-              })),
+              items: qualification.notDesignedItems.map(
+                (item: { title: string; description: string }) => ({
+                  text: item.title,
+                  note: item.description,
+                })
+              ),
             }}
           />
         )}
@@ -313,11 +332,13 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               title: faqSection.title,
               description: requireHeadingDescription(faqSection.description, 'faq section'),
             }}
-            items={faqSection.faqs.map((faq, index) => ({
-              id: `local-seo-faq-${index}`,
-              question: faq.question,
-              answer: faq.answer,
-            }))}
+            items={faqSection.faqs.map(
+              (faq: { question: string; answer: string }, index: number) => ({
+                id: `local-seo-faq-${index}`,
+                question: faq.question,
+                answer: faq.answer,
+              })
+            )}
           />
         )}
 
