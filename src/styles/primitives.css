@@ -231,64 +231,8 @@
    BADGES / EYEBROWS
    ══════════════════════════════════════════════════════ */
 
-.rd-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--mw-space-1-5);
-    padding: var(--mw-space-1-5) var(--mw-space-3);
-    font-size: var(--mw-text-eyebrow);
-    font-weight: 700;
-    letter-spacing: var(--mw-tracking-eyebrow);
-    text-transform: uppercase;
-    border-radius: var(--mw-radius-pill);
-    background: var(--mw-signal-cyan-10);
-    color: var(--mw-signal-cyan);
-    border: 1px solid var(--mw-signal-cyan-30);
-    line-height: 1;
-}
-
-.rd-badge--dark {
-    background: var(--mw-bg-dark-panel);
-    color: var(--mw-text-on-dark);
-    border-color: var(--mw-border-panel);
-}
-
-.rd-badge--soft {
-    background: var(--mw-bg-mist);
-    color: var(--mw-text-secondary);
-    border-color: var(--mw-border-light);
-}
-
-.rd-badge--good {
-    background: var(--mw-signal-green-10);
-    color: var(--mw-signal-green);
-    border-color: var(--mw-signal-green-30);
-}
-
-.rd-badge--risk {
-    background: var(--mw-signal-red-10);
-    color: var(--mw-signal-red);
-    border-color: var(--mw-signal-red-30);
-}
-
-.rd-badge--warn {
-    background: var(--mw-signal-amber-10);
-    color: var(--mw-signal-amber);
-    border-color: var(--mw-signal-amber-25);
-}
-
-.mw-status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--mw-space-1);
-    padding: var(--mw-space-0-5) var(--mw-space-1-5);
-    border-radius: var(--mw-radius-xs);
-    font-size: var(--mw-text-micro);
-    font-weight: 700;
-    letter-spacing: var(--mw-tracking-micro);
-    text-transform: uppercase;
-    line-height: 1;
-}
+/* Eyebrow / kicker style. Used by rd-section-kicker via typography.css.
+   See rd-signal-dot + rd-status-badge (new system) below for signal badges. */
 
 /* ══════════════════════════════════════════════════════
    SIGNAL DOTS
@@ -296,21 +240,21 @@
 
 .rd-dot {
     display: inline-block;
-    width: 0.375rem;
-    height: 0.375rem;
+    width: var(--mw-space-1-5);
+    height: var(--mw-space-1-5);
     border-radius: var(--mw-radius-pill);
     background: currentColor;
     flex-shrink: 0;
 }
 
 .rd-dot--sm {
-    width: 0.25rem;
-    height: 0.25rem;
+    width: var(--mw-space-1);
+    height: var(--mw-space-1);
 }
 
 .rd-dot--lg {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: var(--mw-space-2);
+    height: var(--mw-space-2);
 }
 
 .rd-dot--cyan {
@@ -343,7 +287,7 @@
     box-shadow: var(--mw-glow-purple);
 }
 
-/* Legacy aliases for existing section components */
+/* Expected fallout — delete when SmartWebsiteSystems + LocalSeoAuthority renderers are rebuilt */
 .rd-dot--good {
     color: var(--mw-signal-green);
 }

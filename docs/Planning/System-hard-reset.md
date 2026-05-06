@@ -13,15 +13,17 @@
 - This is not backward compatibility work.
 - The old UI/component/CSS/data structure does not need to survive.
 - The current app is not production-live, so temporary broken UI is acceptable.
-- Figma Make is the visual source of truth.
-- MindWP repo is the system/business source of truth.
-- Final frontend should match Figma Make design as closely as possible.
-- Target visual match: 99%.
-- Do not reinterpret Figma design.
+- **The Homepage is the current working base.** It is the visual and structural reference for all new pages.
+- Figma Make is the visual reference for pages not yet built. It is a guide, not a mandate.
+- Do not chase Figma pixel-perfection. Build to the MindWP system and content rules.
+- Do not reinterpret Figma design into generic cards or templates.
 - Do not simplify custom sections into generic cards.
 - Do not let old components, old CSS, old data shapes, or old validators pull the rebuild backward.
 - We can ignore dev/ fully, so dont preserve any legacy or backward compatability due to these.
 - we can ignore/delete component library and component system so dont preserve any legacy or backward compatability due to these.
+- **Dependency direction:** shared types/primitives → used by pages; domain/page data → never imported by shared primitives.
+- **Fallout is expected.** Old renderers and templates losing styling during rebuild is acceptable. Do not preserve old CSS for backward compat.
+- **Component strategy:** sections stay custom and page-local until they are genuinely needed by a second page.
 ---
 
 ## 1. What Must Be Preserved
@@ -1196,3 +1198,101 @@ Existing tokens used for new rules:
 - Homepage rebuild (remove l-section/l-container gravity, implement new page component structure)
 - Smart Website service page rebuild
 - `_legacy/` deletion once all consumers migrated
+
+---
+
+## Milestone 3 — Completion Report
+
+> Committed: `6b10018` + `ac75eeb` | Branch: `ui-hard-reset`
+
+### Scope
+
+Full Homepage rebuild: server renderer, homepage data contract, page CSS, plus visual rebuild pass (radial glow bg shapes, hero visual, CTA).
+
+### Files Changed
+
+- `src/screens/Homepage.tsx` — full rebuild. 15 custom page-local sections. No `l-section`, `l-container`, `btn-primary`. Token-based CSS only.
+- `src/domains/home/data/homepage.ts` — new typed data contract. `HomepageData` type. Singleton `homepageData` export.
+- `src/styles/pages/home.css` — ~2600 lines. All homepage BEM classes. Token-compliant (0 violations). Hero and CTA have `::before`/`::after` radial glow shapes.
+
+### Section Order (15 custom sections, all page-local)
+
+HeroSection → LeakDiagnosisSection → FoundationSection → SystemStackSection → PutInPlaceSection → FitFoundationsSection → ClientShiftSection → PressurePointsSection → StructureLayersSection → IndustriesSection → AlignmentSection → ProofStorySection → ImplementationExamplesSection → FAQSection → CTASection
+
+### Checks
+
+- Token validator: clean
+- system:full: 56/56, 0 warnings
+- npx next build: clean, zero errors
+
+---
+
+## Milestone 3A — Completion Report (Hardening Pass 1)
+
+> Committed: `7515dae` | Branch: `ui-hard-reset`
+
+### Scope
+
+Homepage system hardening: icon map typed with `HomeIconKey`, reveal motion wired on all 14 non-hero sections, field renames for semantic clarity, copy fixes, `SignalDot` and `StatusBadge` primitives added.
+
+### Files Changed
+
+- `src/domains/home/data/homepage.ts` — `HomeIconKey` union type; `iconKey` on all 9 data arrays; `flowStages` (was `path`); `zones` (was `steps`); `implementationPatterns` (was `patterns`); copy fixes.
+- `src/screens/Homepage.tsx` — `HOME_ICON_MAP: Record<HomeIconKey, LucideIcon>`; `rd-animate-*` classes wired on all 14 non-hero sections; field name usage updated.
+- `src/components/primitives/SignalDot.tsx` — created.
+- `src/components/primitives/StatusBadge.tsx` — created.
+- `src/styles/primitives.css` — `.rd-signal-dot` and `.rd-status-badge` added.
+
+### Checks
+
+- system:full: 56/56, 0 warnings
+- npx next build: clean, zero errors
+
+---
+
+## Milestone 3B — Completion Report (Base System Hardening)
+
+> Branch: `ui-hard-reset`
+
+### Scope
+
+Architecture and dependency cleanup: shared UI type extraction, dead CSS removal, dot size tokenisation, index.css comment update, doc section-0 strategy correction.
+
+### Files Changed
+
+- `src/types/ui.ts` — created. `AccentKey` and `StatusTone` defined here as shared UI types. Correct dependency root.
+- `src/domains/home/data/homepage.ts` — removed local `AccentKey` definition; now imports from `@/types/ui` and re-exports.
+- `src/components/primitives/SignalDot.tsx` — import fixed: `AccentKey` from `@/types/ui` (was `@/domains/home/data/homepage`).
+- `src/components/primitives/StatusBadge.tsx` — import fixed: `AccentKey` + `StatusTone` from `@/types/ui`; local `StatusVariant` alias removed.
+- `src/styles/primitives.css` — dead `.rd-badge` family and `.mw-status-badge` removed; `.rd-dot` raw rem sizes replaced with `--mw-space-*` tokens; "Legacy aliases" comment updated to "Expected fallout — delete when SWS/LSA renderers are rebuilt".
+- `src/index.css` — layer-6 comment corrected (removed "grid-cards" stale reference).
+- `docs/Planning/System-hard-reset.md` — Section 0 updated: Homepage is working base, Figma is guide not mandate, dependency direction rule added, fallout rule added, component strategy rule added. Milestone 3/3A/3B reports added.
+
+### Dependency Direction Rule (established this milestone)
+
+```
+src/types/ui        → imported by: primitives, domain data
+domain/page data    → imported by: renderers (screens/)
+renderers           → never import from: other renderers or other domain data
+```
+
+Shared primitives (`src/components/primitives/`) must never import from `src/domains/*/`.
+
+### Checks
+
+- system:full: 56/56, 0 warnings (expected)
+- npx next build: clean
+
+### Expected Remaining Fallout
+
+- `.rd-dot--good/risk/warn/info` still in primitives.css — used by SWS + LSA old renderers. Delete when those renderers are rebuilt.
+- `.bg-gradient-base/blue/compare` still in layout.css — used by `SectionShell` → `RelatedContentSection`, `CriteriaComparisonSection`, `BeforeAfterSection`. Delete when those old section components are rebuilt.
+- `l-section`, `l-container`, `btn-primary`, `btn-outline` still in `_legacy/` — used by old page templates and screens scheduled for rebuild.
+- `hero-split`, `grid-cards` in components.css — used by `HeroSplitSection.tsx`, `GridCardsSection.tsx` (old section components, still referenced by SWS/LSA renderers and dev routes).
+
+### Next Milestone Candidates
+
+- Smart Website Systems renderer rebuild (Milestone 4)
+- Local SEO Authority renderer rebuild (Milestone 5)
+- `_legacy/` deletion (unblocked once SWS/LSA renderers no longer need it)
+

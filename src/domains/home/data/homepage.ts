@@ -1,8 +1,8 @@
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
+import type { AccentKey } from '@/types/ui';
 
-// Accent key type — maps to CSS [data-accent] attribute values resolved to tokens in home.css
-export type AccentKey = 'cyan' | 'teal' | 'green' | 'amber' | 'red' | 'purple';
+export type { AccentKey };
 
 // Icon key type — semantic identifiers mapped to Lucide icons in the renderer
 export type HomeIconKey =

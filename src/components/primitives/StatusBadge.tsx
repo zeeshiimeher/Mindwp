@@ -1,15 +1,13 @@
-import type { AccentKey } from '@/domains/home/data/homepage';
-
-type StatusVariant = 'active' | 'unowned' | 'leaking' | 'handled' | 'scattered' | 'controlled';
+import type { AccentKey, StatusTone } from '@/types/ui';
 
 interface StatusBadgeProps {
-  variant: StatusVariant;
+  variant: StatusTone;
   label?: string;
   accent?: AccentKey;
   className?: string;
 }
 
-const VARIANT_LABELS: Record<StatusVariant, string> = {
+const VARIANT_LABELS: Record<StatusTone, string> = {
   active: 'Active',
   unowned: 'Unowned',
   leaking: 'Leaking',

@@ -1,4 +1,4 @@
-import type { AccentKey } from '@/domains/home/data/homepage';
+import type { AccentKey } from '@/types/ui';
 
 interface SignalDotProps {
   accent?: AccentKey;

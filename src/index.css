@@ -7,7 +7,7 @@
  *   3. typography — type scale defaults
  *   4. layout    — containers, grids, section rhythm, bg utilities
  *   5. primitives — UI atoms (buttons, badges, cards, forms)
- *   6. components — component shells (header, footer, hero, grid-cards)
+ *   6. components — component shells (header, footer, hero-split)
  *   7. Tailwind layers last — utility classes must win when used
  */
 
