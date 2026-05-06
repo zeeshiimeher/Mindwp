@@ -81,6 +81,12 @@
     border-color: var(--_btn-border-hover);
 }
 
+.mw-btn:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: var(--mw-shadow-focus);
+}
+
 .mw-btn:active {
     transform: translateY(1px);
 }
