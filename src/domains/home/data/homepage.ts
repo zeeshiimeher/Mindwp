@@ -4,6 +4,62 @@ import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
 // Accent key type — maps to CSS [data-accent] attribute values resolved to tokens in home.css
 export type AccentKey = 'cyan' | 'teal' | 'green' | 'amber' | 'red' | 'purple';
 
+// Icon key type — semantic identifiers mapped to Lucide icons in the renderer
+export type HomeIconKey =
+  // Signal surface
+  | 'local-search'
+  | 'service-page'
+  | 'form-enquiry'
+  | 'missed-call'
+  | 'quote'
+  | 'review-opportunity'
+  | 'follow-up-due'
+  // Flow stages (leak diagnosis)
+  | 'visibility'
+  | 'website'
+  | 'enquiry'
+  | 'response'
+  | 'follow-up'
+  | 'proof'
+  | 'repeat-loop'
+  // Foundation layers
+  | 'capture'
+  | 'routing'
+  | 'tracking'
+  // Put in place zones
+  | 'inspect'
+  | 'locate'
+  | 'fix'
+  | 'keep'
+  // Client shift
+  | 'handoff'
+  | 'schedule'
+  // Pressure points
+  | 'local-seo'
+  | 'service-clarity'
+  | 'scatter-enquiry'
+  | 'follow-up-memory'
+  | 'revenue-trace'
+  // Structure layers
+  | 'visibility-layer'
+  | 'capture-layer'
+  | 'response-layer'
+  | 'follow-up-layer'
+  | 'proof-layer'
+  | 'improvement-layer'
+  // Industries
+  | 'trades'
+  | 'beauty'
+  | 'professional'
+  | 'appointment'
+  | 'multi-service'
+  // Implementation patterns
+  | 'missed-call-recovery'
+  | 'follow-up-sequence'
+  | 'service-page-structure'
+  | 'review-flow'
+  | 'crm-routing';
+
 export type HomepageData = {
   seo: {
     title: string;
@@ -23,7 +79,12 @@ export type HomepageData = {
     primaryAction: { label: string; href: string };
     secondaryAction: { label: string; href: string };
     chips: Array<{ label: string; accent: AccentKey }>;
-    signals: Array<{ label: string; note: string; status: 'unowned' | 'leaking' }>;
+    signals: Array<{
+      label: string;
+      note: string;
+      status: 'unowned' | 'leaking';
+      iconKey: HomeIconKey;
+    }>;
     signalSummary: { leaking: string; unowned: string; pulling: string };
   };
 
@@ -32,7 +93,7 @@ export type HomepageData = {
     heading: string;
     headingMuted: string;
     description: string;
-    path: Array<{ stage: string; title: string; note: string }>;
+    flowStages: Array<{ stage: string; title: string; note: string; iconKey: HomeIconKey }>;
   };
 
   foundation: {
@@ -42,7 +103,7 @@ export type HomepageData = {
     description: string;
     surfaceTitle: string;
     surfaceNote: string;
-    middleLayers: Array<{ label: string }>;
+    middleLayers: Array<{ label: string; iconKey: HomeIconKey }>;
     foundationTitle: string;
     foundationNote: string;
     connectedNote: string;
@@ -69,7 +130,7 @@ export type HomepageData = {
     eyebrow: string;
     heading: string;
     description: string;
-    steps: Array<{ title: string; body: string; state: string }>;
+    zones: Array<{ title: string; body: string; state: string; iconKey: HomeIconKey }>;
   };
 
   fitFoundations: {
@@ -85,21 +146,27 @@ export type HomepageData = {
     before: { label: string; bullets: string[] };
     after: { label: string; bullets: string[] };
     scatterItems: string[];
-    shifts: Array<{ title: string; before: string; after: string }>;
+    shifts: Array<{ title: string; before: string; after: string; iconKey: HomeIconKey }>;
   };
 
   pressurePoints: {
     eyebrow: string;
     heading: string;
     description: string;
-    points: Array<{ title: string; flow: string; handledBy: string; accent: AccentKey }>;
+    points: Array<{
+      title: string;
+      flow: string;
+      handledBy: string;
+      accent: AccentKey;
+      iconKey: HomeIconKey;
+    }>;
   };
 
   structureLayers: {
     heading: string;
     headingMuted: string;
     description: string;
-    layers: Array<{ title: string; note: string; accent: AccentKey }>;
+    layers: Array<{ title: string; note: string; accent: AccentKey; iconKey: HomeIconKey }>;
     foundation: { title: string };
   };
 
@@ -114,6 +181,7 @@ export type HomepageData = {
       needs: string[];
       href: string;
       accent: AccentKey;
+      iconKey: HomeIconKey;
     }>;
   };
 
@@ -142,7 +210,12 @@ export type HomepageData = {
     description: string;
     boardLabel: string;
     boardCount: string;
-    patterns: Array<{ title: string; desc: string; flow: string[] }>;
+    implementationPatterns: Array<{
+      title: string;
+      desc: string;
+      flow: string[];
+      iconKey: HomeIconKey;
+    }>;
   };
 
   faq: {
@@ -206,13 +279,43 @@ export const homepageData: HomepageData = {
       { label: 'Proof', accent: 'green' },
     ],
     signals: [
-      { label: 'Local search', note: 'Postcode N6 — page 3', status: 'unowned' },
-      { label: 'Service page visit', note: 'Bathrooms — 02:14 dwell', status: 'unowned' },
-      { label: 'Form enquiry', note: 'Sat 09:14 — unread', status: 'unowned' },
-      { label: 'Missed call', note: '11:42 — no callback', status: 'leaking' },
-      { label: 'Quote request', note: '£4,200 — day 6', status: 'unowned' },
-      { label: 'Review opportunity', note: 'Job done — not asked', status: 'unowned' },
-      { label: 'Follow-up due', note: 'Today — nobody owns it', status: 'leaking' },
+      {
+        label: 'Local search',
+        note: 'Postcode N6 — page 3',
+        status: 'unowned',
+        iconKey: 'local-search',
+      },
+      {
+        label: 'Service page visit',
+        note: 'Bathrooms — 02:14 dwell',
+        status: 'unowned',
+        iconKey: 'service-page',
+      },
+      {
+        label: 'Form enquiry',
+        note: 'Sat 09:14 — unread',
+        status: 'unowned',
+        iconKey: 'form-enquiry',
+      },
+      {
+        label: 'Missed call',
+        note: '11:42 — no callback',
+        status: 'leaking',
+        iconKey: 'missed-call',
+      },
+      { label: 'Quote request', note: '£4,200 — day 6', status: 'unowned', iconKey: 'quote' },
+      {
+        label: 'Review opportunity',
+        note: 'Job done — not asked',
+        status: 'unowned',
+        iconKey: 'review-opportunity',
+      },
+      {
+        label: 'Follow-up due',
+        note: 'Today — nobody owns it',
+        status: 'leaking',
+        iconKey: 'follow-up-due',
+      },
     ],
     signalSummary: {
       leaking: '2 leaking',
@@ -227,33 +330,48 @@ export const homepageData: HomepageData = {
     headingMuted: 'The system around it is leaking.',
     description:
       'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
-    path: [
+    flowStages: [
       {
         stage: 'Visibility',
         title: 'Local visibility incomplete',
         note: 'Found by some, missed by many',
+        iconKey: 'visibility',
       },
       {
         stage: 'Website',
         title: 'Service pages do not answer the right question',
         note: 'Visitor leaves before deciding',
+        iconKey: 'website',
       },
       {
         stage: 'Enquiry',
         title: 'Enquiries land in the wrong place',
         note: 'Form, DM, voicemail, inbox',
+        iconKey: 'enquiry',
       },
-      { stage: 'Response', title: 'First response is slow', note: 'Lead cools before contact' },
-      { stage: 'Follow-up', title: 'Follow-up depends on memory', note: 'Old quotes go quiet' },
+      {
+        stage: 'Response',
+        title: 'First response is slow',
+        note: 'Lead cools before contact',
+        iconKey: 'response',
+      },
+      {
+        stage: 'Follow-up',
+        title: 'Follow-up depends on memory',
+        note: 'Old quotes go quiet',
+        iconKey: 'follow-up',
+      },
       {
         stage: 'Proof',
         title: 'Reviews not requested at the right time',
         note: 'Job done, proof never captured',
+        iconKey: 'proof',
       },
       {
         stage: 'Repeat',
         title: 'Marketing spend hard to connect to real work',
         note: 'No loop back to revenue',
+        iconKey: 'repeat-loop',
       },
     ],
   },
@@ -267,11 +385,11 @@ export const homepageData: HomepageData = {
     surfaceTitle: 'Visible website',
     surfaceNote: 'What the visitor sees',
     middleLayers: [
-      { label: 'Capture' },
-      { label: 'Routing' },
-      { label: 'Follow-up' },
-      { label: 'Tracking' },
-      { label: 'Proof' },
+      { label: 'Capture', iconKey: 'capture' },
+      { label: 'Routing', iconKey: 'routing' },
+      { label: 'Follow-up', iconKey: 'follow-up' },
+      { label: 'Tracking', iconKey: 'tracking' },
+      { label: 'Proof', iconKey: 'proof' },
     ],
     foundationTitle: 'Smart Website Systems',
     foundationNote: 'The working business structure',
@@ -281,7 +399,7 @@ export const homepageData: HomepageData = {
   systemStack: {
     eyebrow: 'The handling system',
     heading: 'Six layers.',
-    headingMuted: 'One operating system for the business.',
+    headingMuted: 'One connected flow.',
     description:
       'Each layer handles a part of the path. Together they hold the work from first search to repeat job. No layer depends on someone remembering.',
     systems: [
@@ -346,26 +464,30 @@ export const homepageData: HomepageData = {
     heading: 'The leaks that cost money get fixed first.',
     description:
       'We start with how the business actually runs. How calls come in. Where leads go. What happens after. Then routing, follow-up, visibility, and proof get put in place in the order that makes the business easier to run.',
-    steps: [
+    zones: [
       {
         title: 'Inspect what exists',
         body: 'How calls come in. Where leads go. What happens after.',
         state: 'Mapped',
+        iconKey: 'inspect',
       },
       {
         title: 'Locate leakage',
         body: 'Where work escapes — in time, in inbox, in handoff.',
         state: 'Located',
+        iconKey: 'locate',
       },
       {
         title: 'Fix money leaks first',
         body: 'Routing, follow-up, visibility, proof — in priority order.',
         state: 'Stabilising',
+        iconKey: 'fix',
       },
       {
         title: 'Keep it running',
         body: 'Quietly. Without constant attention from the owner.',
         state: 'Live',
+        iconKey: 'keep',
       },
     ],
   },
@@ -413,9 +535,24 @@ export const homepageData: HomepageData = {
     },
     scatterItems: ['Voicemail', 'Form', 'DM', 'Email', 'Quote PDF', 'Spreadsheet'],
     shifts: [
-      { title: 'Enquiries arrive in one place', before: '3 inboxes', after: '1 surface' },
-      { title: 'Nothing gets lost in the handoff', before: 'Manual relay', after: 'Routed' },
-      { title: 'Follow-up happens on schedule', before: 'When remembered', after: 'On time' },
+      {
+        title: 'Enquiries arrive in one place',
+        before: '3 inboxes',
+        after: '1 surface',
+        iconKey: 'capture',
+      },
+      {
+        title: 'Nothing gets lost in the handoff',
+        before: 'Manual relay',
+        after: 'Routed',
+        iconKey: 'handoff',
+      },
+      {
+        title: 'Follow-up happens on schedule',
+        before: 'When remembered',
+        after: 'On time',
+        iconKey: 'schedule',
+      },
     ],
   },
 
@@ -429,43 +566,49 @@ export const homepageData: HomepageData = {
         flow: 'Someone searches in the area. A competitor shows up first. The right business is on page two.',
         handledBy: 'Local SEO Authority',
         accent: 'teal',
+        iconKey: 'local-seo',
       },
       {
         title: 'Website does not answer the right question',
         flow: 'Visitor lands. Reads a paragraph. Cannot tell if this is the right team. Closes the tab.',
         handledBy: 'Smart Website System',
         accent: 'cyan',
+        iconKey: 'service-clarity',
       },
       {
         title: 'Enquiries land in scattered places',
         flow: 'Form to one inbox. Call to a phone. DM somewhere else. Nobody owns the full picture.',
         handledBy: 'AI Lead Handling',
         accent: 'green',
+        iconKey: 'scatter-enquiry',
       },
       {
         title: 'Follow-up depends on memory',
         flow: 'Quote sent Tuesday. Nobody chases on Friday. Two weeks later it is gone.',
         handledBy: 'CRM & Automation',
         accent: 'amber',
+        iconKey: 'follow-up-memory',
       },
       {
         title: 'Good work does not become proof',
         flow: 'Job done. Client happy. Review never requested. Competitor has eighty, you have twelve.',
         handledBy: 'Reputation & Review',
         accent: 'purple',
+        iconKey: 'proof',
       },
       {
         title: 'Spend cannot be traced to real work',
         flow: 'Marketing running. Leads coming in. No clear line from spend to job to revenue.',
         handledBy: 'Revenue Growth',
         accent: 'cyan',
+        iconKey: 'revenue-trace',
       },
     ],
   },
 
   structureLayers: {
     heading: 'It is not a website project.',
-    headingMuted: 'It is infrastructure.',
+    headingMuted: 'It is what catches the work.',
     description:
       'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, and lead recovery. Connected. Running.',
     foundation: { title: 'Smart Website / Business Infrastructure' },
@@ -474,15 +617,37 @@ export const homepageData: HomepageData = {
         title: 'Visibility Layer',
         note: 'Local search, map presence, structured service pages',
         accent: 'cyan',
+        iconKey: 'visibility-layer',
       },
-      { title: 'Capture Layer', note: 'Calls, forms, DMs — all into one surface', accent: 'teal' },
-      { title: 'Response Layer', note: 'First reply within minutes, every time', accent: 'green' },
-      { title: 'Follow-Up Layer', note: 'Quote chasing, reminders, ownership', accent: 'amber' },
-      { title: 'Proof Layer', note: 'Reviews requested at the right moment', accent: 'purple' },
+      {
+        title: 'Capture Layer',
+        note: 'Calls, forms, DMs — all into one surface',
+        accent: 'teal',
+        iconKey: 'capture-layer',
+      },
+      {
+        title: 'Response Layer',
+        note: 'First reply within minutes, every time',
+        accent: 'green',
+        iconKey: 'response-layer',
+      },
+      {
+        title: 'Follow-Up Layer',
+        note: 'Quote chasing, reminders, ownership',
+        accent: 'amber',
+        iconKey: 'follow-up-layer',
+      },
+      {
+        title: 'Proof Layer',
+        note: 'Reviews requested at the right moment',
+        accent: 'purple',
+        iconKey: 'proof-layer',
+      },
       {
         title: 'Improvement Layer',
         note: 'What works gets reinforced. Spend tied to real work.',
         accent: 'cyan',
+        iconKey: 'improvement-layer',
       },
     ],
   },
@@ -500,6 +665,7 @@ export const homepageData: HomepageData = {
         needs: ['Response handling', 'Quote follow-up', 'Local visibility'],
         href: '/industries/home-services',
         accent: 'amber',
+        iconKey: 'trades',
       },
       {
         name: 'Beauty & Personal Care',
@@ -507,6 +673,7 @@ export const homepageData: HomepageData = {
         needs: ['Booking capture', 'Reminder flow', 'Review capture'],
         href: '/industries/beauty-personal-care',
         accent: 'red',
+        iconKey: 'beauty',
       },
       {
         name: 'Professional Services',
@@ -514,6 +681,7 @@ export const homepageData: HomepageData = {
         needs: ['Enquiry triage', 'Sequenced follow-up', 'Authority signal'],
         href: '/industries/legal-professional-services',
         accent: 'cyan',
+        iconKey: 'professional',
       },
       {
         name: 'Appointment-Based Local',
@@ -521,6 +689,7 @@ export const homepageData: HomepageData = {
         needs: ['Local SEO', 'Review timing', 'CRM memory'],
         href: '/industries/local-appointment-businesses',
         accent: 'teal',
+        iconKey: 'appointment',
       },
       {
         name: 'Local Multi-Service Businesses',
@@ -528,6 +697,7 @@ export const homepageData: HomepageData = {
         needs: ['Service architecture', 'Routing logic', 'Spend-to-work loop'],
         href: '/industries/automotive-services',
         accent: 'purple',
+        iconKey: 'multi-service',
       },
     ],
   },
@@ -559,7 +729,7 @@ export const homepageData: HomepageData = {
       {
         num: '04',
         title: 'Runs without you',
-        note: 'Operates quietly. Owner attention only when it matters.',
+        note: 'Runs quietly. Owner attention only when it matters.',
         weight: 100,
       },
     ],
@@ -581,7 +751,7 @@ export const homepageData: HomepageData = {
     },
     change: {
       label: 'System change',
-      title: 'Connected operating layer',
+      title: 'What changed',
       bullets: [
         'Single capture surface',
         'Routing + follow-up automation',
@@ -611,31 +781,36 @@ export const homepageData: HomepageData = {
       'Not every business needs the same build. The system is shaped around where work is leaking.',
     boardLabel: 'Implementation patterns — selected',
     boardCount: '05 patterns shown',
-    patterns: [
+    implementationPatterns: [
       {
         title: 'Missed call recovery flow',
         desc: 'Inbound voicemail triggers an SMS reply, logs the enquiry, and routes it into the queue.',
         flow: ['Voicemail', 'SMS reply', 'Enquiry log', 'Queue'],
+        iconKey: 'missed-call-recovery',
       },
       {
         title: 'Lead follow-up sequence',
         desc: 'Quote sent → 24h check-in → 3d nudge → 7d close-out. On schedule, not by memory.',
         flow: ['Quote', '+24h', '+3d', '+7d'],
+        iconKey: 'follow-up-sequence',
       },
       {
         title: 'Service page structure',
         desc: 'Service clarity, area coverage, structured capture surface — built so search and humans both understand.',
         flow: ['Clarity', 'Coverage', 'Capture'],
+        iconKey: 'service-page-structure',
       },
       {
         title: 'Review request flow',
         desc: 'Job marked complete → review request → reminder → review surfaced where it earns trust.',
         flow: ['Done', 'Request', 'Remind', 'Display'],
+        iconKey: 'review-flow',
       },
       {
         title: 'CRM routing',
         desc: 'All channels — call, form, DM, email — into one record. Owner sees the queue, not the chaos.',
         flow: ['Channel', 'Record', 'Queue'],
+        iconKey: 'crm-routing',
       },
     ],
   },
@@ -647,7 +822,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What do you build?',
         answer:
-          'Operating systems for service businesses — Smart Websites, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation, Revenue Growth. Connected, not standalone.',
+          'Connected business systems for service businesses — Smart Websites, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation, Revenue Growth. Connected, not standalone.',
       },
       {
         question: 'How is this different from getting a new website?',
@@ -693,7 +868,7 @@ export const homepageData: HomepageData = {
   },
 
   cta: {
-    eyebrow: 'Decision Panel',
+    eyebrow: 'Start Here',
     heading: {
       title: 'Something here hit close.',
       muted: 'Find where it is breaking.',
@@ -714,7 +889,7 @@ export const homepageData: HomepageData = {
     expectations: [
       { num: '01', text: 'Where work is coming in today' },
       { num: '02', text: 'What is being held — and what is not' },
-      { num: '03', text: 'Which layer to put in place first' },
+      { num: '03', text: 'What to fix first' },
       { num: '04', text: 'What it would mean for revenue' },
     ],
     footer: {

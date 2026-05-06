@@ -35,18 +35,65 @@ import {
 } from 'lucide-react';
 
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
+import type { HomeIconKey } from '@/domains/home/data/homepage';
 import { homepageData } from '@/domains/home/data/homepage';
 
-// Icon maps for data-driven sections (index matches data array order)
-const SIGNAL_ICONS: LucideIcon[] = [Search, FileText, Inbox, PhoneOff, ClipboardList, Star, Clock];
-const LEAK_ICONS: LucideIcon[] = [Search, FileText, Inbox, Clock, Globe, Star, Repeat];
-const FOUNDATION_ICONS: LucideIcon[] = [Inbox, GitBranch, Repeat, BarChart3, Star];
-const SHIFT_ICONS: LucideIcon[] = [Inbox, GitBranch, Clock];
-const PUT_IN_PLACE_ICONS: LucideIcon[] = [ScanSearch, Crosshair, Wrench, Activity];
-const PRESSURE_ICONS: LucideIcon[] = [EyeOff, FileText, Inbox, Clock, Star, TrendingDown];
-const STRUCTURE_ICONS: LucideIcon[] = [Eye, Inbox, Zap, Repeat, Star, TrendingUp];
-const INDUSTRY_ICONS: LucideIcon[] = [Hammer, Scissors, Briefcase, MapPin, Building2];
-const EXAMPLE_ICONS: LucideIcon[] = [PhoneIncoming, Repeat, LayoutGrid, Star, Route];
+// Semantic icon map — keyed by HomeIconKey, replaces fragile index-based arrays
+const HOME_ICON_MAP: Record<HomeIconKey, LucideIcon> = {
+  // Signal surface
+  'local-search': Search,
+  'service-page': FileText,
+  'form-enquiry': Inbox,
+  'missed-call': PhoneOff,
+  quote: ClipboardList,
+  'review-opportunity': Star,
+  'follow-up-due': Clock,
+  // Flow stages (leak diagnosis)
+  visibility: Search,
+  website: FileText,
+  enquiry: Inbox,
+  response: Clock,
+  'follow-up': Repeat,
+  proof: Star,
+  'repeat-loop': Repeat,
+  // Foundation layers
+  capture: Inbox,
+  routing: GitBranch,
+  tracking: BarChart3,
+  // Put in place zones
+  inspect: ScanSearch,
+  locate: Crosshair,
+  fix: Wrench,
+  keep: Activity,
+  // Client shift
+  handoff: GitBranch,
+  schedule: Clock,
+  // Pressure points
+  'local-seo': EyeOff,
+  'service-clarity': FileText,
+  'scatter-enquiry': Inbox,
+  'follow-up-memory': Clock,
+  'revenue-trace': TrendingDown,
+  // Structure layers
+  'visibility-layer': Eye,
+  'capture-layer': Inbox,
+  'response-layer': Zap,
+  'follow-up-layer': Repeat,
+  'proof-layer': Star,
+  'improvement-layer': TrendingUp,
+  // Industries
+  trades: Hammer,
+  beauty: Scissors,
+  professional: Briefcase,
+  appointment: MapPin,
+  'multi-service': Building2,
+  // Implementation patterns
+  'missed-call-recovery': PhoneIncoming,
+  'follow-up-sequence': Repeat,
+  'service-page-structure': LayoutGrid,
+  'review-flow': Star,
+  'crm-routing': Route,
+};
 
 type HomepageCaseStudy = {
   slug: string;
@@ -159,7 +206,7 @@ function SignalSurface() {
 
       <div className='home-signal__rows'>
         {hero.signals.map((signal, i) => {
-          const Icon = SIGNAL_ICONS[i % SIGNAL_ICONS.length];
+          const Icon = HOME_ICON_MAP[signal.iconKey];
           return (
             <div key={signal.label} className='home-signal__row' data-status={signal.status}>
               <span className='home-signal__row-index'>{String(i + 1).padStart(2, '0')}</span>
@@ -201,7 +248,7 @@ function LeakDiagnosisSection() {
   return (
     <section className='home-leak' id='leak'>
       <div className='home-leak__inner rd-container'>
-        <div className='home-leak__header'>
+        <div className='home-leak__header rd-animate-up'>
           <div className='home-leak__intro'>
             <div className='home-eyebrow'>{leakDiagnosis.eyebrow}</div>
             <h2 className='home-h2'>
@@ -213,9 +260,9 @@ function LeakDiagnosisSection() {
           <p className='home-leak__description'>{leakDiagnosis.description}</p>
         </div>
 
-        <div className='home-leak__path'>
-          {leakDiagnosis.path.map((item, i) => {
-            const Icon = LEAK_ICONS[i % LEAK_ICONS.length];
+        <div className='home-leak__path rd-animate-stagger'>
+          {leakDiagnosis.flowStages.map(item => {
+            const Icon = HOME_ICON_MAP[item.iconKey];
             return (
               <div key={item.stage} className='home-leak__step'>
                 <div className='home-leak__step-icon' aria-hidden='true'>
@@ -245,7 +292,7 @@ function FoundationSection() {
   return (
     <section className='home-foundation'>
       <div className='home-foundation__inner rd-container'>
-        <div className='home-foundation__copy'>
+        <div className='home-foundation__copy rd-animate-up'>
           <div className='home-eyebrow home-eyebrow--teal'>{foundation.eyebrow}</div>
           <h2 className='home-h2'>
             {foundation.heading}
@@ -255,7 +302,7 @@ function FoundationSection() {
           <p className='home-foundation__description'>{foundation.description}</p>
         </div>
 
-        <div className='home-foundation__visual'>
+        <div className='home-foundation__visual rd-animate-panel'>
           <div className='home-foundation__diagram'>
             {/* Surface card */}
             <div className='home-foundation__surface'>
@@ -275,8 +322,8 @@ function FoundationSection() {
             <div className='home-foundation__under'>
               <div className='home-foundation__under-label'>WHAT RUNS UNDERNEATH</div>
               <div className='home-foundation__layers'>
-                {foundation.middleLayers.map((layer, i) => {
-                  const Icon = FOUNDATION_ICONS[i % FOUNDATION_ICONS.length];
+                {foundation.middleLayers.map(layer => {
+                  const Icon = HOME_ICON_MAP[layer.iconKey];
                   return (
                     <div key={layer.label} className='home-foundation__layer'>
                       <div className='home-foundation__layer-icon' aria-hidden='true'>
@@ -317,7 +364,7 @@ function SystemStackSection() {
   return (
     <section className='home-system-stack'>
       <div className='home-system-stack__inner rd-container'>
-        <div className='home-system-stack__header'>
+        <div className='home-system-stack__header rd-animate-up'>
           <div className='home-system-stack__intro'>
             <div className='home-eyebrow'>{systemStack.eyebrow}</div>
             <h2 className='home-h2'>
@@ -329,7 +376,7 @@ function SystemStackSection() {
           <p className='home-system-stack__description'>{systemStack.description}</p>
         </div>
 
-        <div className='home-system-stack__grid'>
+        <div className='home-system-stack__grid rd-animate-stagger'>
           {systemStack.systems.map((system, i) => (
             <a
               key={system.name}
@@ -379,13 +426,13 @@ function PutInPlaceSection() {
   return (
     <section className='home-workbench'>
       <div className='home-workbench__inner rd-container'>
-        <div className='home-workbench__intro'>
+        <div className='home-workbench__intro rd-animate-up'>
           <div className='home-eyebrow'>{putInPlace.eyebrow}</div>
           <h2 className='home-h2'>{putInPlace.heading}</h2>
           <p className='home-workbench__description'>{putInPlace.description}</p>
         </div>
 
-        <div className='home-workbench__card'>
+        <div className='home-workbench__card rd-animate-panel'>
           <div className='home-workbench__card-header'>
             <div className='home-workbench__card-dots' aria-hidden='true'>
               <span />
@@ -396,8 +443,8 @@ function PutInPlaceSection() {
           </div>
 
           <div className='home-workbench__steps'>
-            {putInPlace.steps.map((step, i) => {
-              const Icon = PUT_IN_PLACE_ICONS[i % PUT_IN_PLACE_ICONS.length];
+            {putInPlace.zones.map(step => {
+              const Icon = HOME_ICON_MAP[step.iconKey];
               return (
                 <div key={step.title} className='home-workbench__step'>
                   <div className='home-workbench__step-icon' aria-hidden='true'>
@@ -428,12 +475,12 @@ function FitFoundationsSection() {
   return (
     <section className='home-fit'>
       <div className='home-fit__inner rd-container'>
-        <div className='home-fit__intro'>
+        <div className='home-fit__intro rd-animate-up'>
           <h2 className='home-h2'>{fitFoundations.heading}</h2>
           <p className='home-fit__description'>{fitFoundations.description}</p>
         </div>
 
-        <div className='home-fit__cards'>
+        <div className='home-fit__cards rd-animate-stagger'>
           <div className='home-fit__card home-fit__card--yes'>
             <div className='home-fit__card-badge home-fit__card-badge--yes'>
               <span className='home-fit__card-badge-icon' aria-hidden='true'>
@@ -483,7 +530,7 @@ function ClientShiftSection() {
   return (
     <section className='home-shift'>
       <div className='home-shift__inner rd-container'>
-        <div className='home-shift__intro'>
+        <div className='home-shift__intro rd-animate-up'>
           <h2 className='home-h2 home-h2--on-dark'>{clientShift.heading}</h2>
           <p className='home-shift__description'>{clientShift.description}</p>
         </div>
@@ -525,9 +572,9 @@ function ClientShiftSection() {
                 controlled
               </span>
             </div>
-            <div className='home-shift__rows'>
-              {clientShift.shifts.map((shift, i) => {
-                const Icon = SHIFT_ICONS[i % SHIFT_ICONS.length];
+            <div className='home-shift__rows rd-animate-stagger'>
+              {clientShift.shifts.map(shift => {
+                const Icon = HOME_ICON_MAP[shift.iconKey];
                 return (
                   <div key={shift.title} className='home-shift__row'>
                     <div className='home-shift__row-icon' aria-hidden='true'>
@@ -566,15 +613,15 @@ function PressurePointsSection() {
   return (
     <section className='home-pressure'>
       <div className='home-pressure__inner rd-container'>
-        <div className='home-pressure__intro'>
+        <div className='home-pressure__intro rd-animate-up'>
           <div className='home-eyebrow home-eyebrow--on-dark'>{pressurePoints.eyebrow}</div>
           <h2 className='home-h2 home-h2--on-dark'>{pressurePoints.heading}</h2>
           <p className='home-pressure__description'>{pressurePoints.description}</p>
         </div>
 
-        <div className='home-pressure__grid'>
-          {pressurePoints.points.map((point, i) => {
-            const Icon = PRESSURE_ICONS[i % PRESSURE_ICONS.length];
+        <div className='home-pressure__grid rd-animate-stagger'>
+          {pressurePoints.points.map(point => {
+            const Icon = HOME_ICON_MAP[point.iconKey];
             return (
               <div key={point.title} className='home-pressure__point' data-accent={point.accent}>
                 <div className='home-pressure__point-icon' aria-hidden='true'>
@@ -605,7 +652,7 @@ function StructureLayersSection() {
   return (
     <section className='home-structure'>
       <div className='home-structure__inner rd-container'>
-        <div className='home-structure__copy'>
+        <div className='home-structure__copy rd-animate-up'>
           <h2 className='home-h2'>
             {structureLayers.heading}
             <br />
@@ -614,9 +661,9 @@ function StructureLayersSection() {
           <p className='home-structure__description'>{structureLayers.description}</p>
         </div>
 
-        <div className='home-structure__layers'>
+        <div className='home-structure__layers rd-animate-stagger'>
           {structureLayers.layers.map((layer, i) => {
-            const Icon = STRUCTURE_ICONS[i % STRUCTURE_ICONS.length];
+            const Icon = HOME_ICON_MAP[layer.iconKey];
             return (
               <div key={layer.title} className='home-structure__layer' data-accent={layer.accent}>
                 <div className='home-structure__layer-icon' aria-hidden='true'>
@@ -663,7 +710,7 @@ function IndustriesSection() {
   return (
     <section className='home-industries'>
       <div className='home-industries__inner rd-container'>
-        <div className='home-industries__header'>
+        <div className='home-industries__header rd-animate-up'>
           <div className='home-industries__intro'>
             <div className='home-eyebrow'>{industries.eyebrow}</div>
             <h2 className='home-h2'>
@@ -675,9 +722,9 @@ function IndustriesSection() {
           <p className='home-industries__description'>{industries.description}</p>
         </div>
 
-        <div className='home-industries__grid'>
+        <div className='home-industries__grid rd-animate-stagger'>
           {industries.scenarios.map((scenario, i) => {
-            const Icon = INDUSTRY_ICONS[i % INDUSTRY_ICONS.length];
+            const Icon = HOME_ICON_MAP[scenario.iconKey];
             return (
               <a
                 key={scenario.name}
@@ -737,7 +784,7 @@ function AlignmentSection() {
   return (
     <section className='home-alignment'>
       <div className='home-alignment__inner rd-container'>
-        <div className='home-alignment__intro'>
+        <div className='home-alignment__intro rd-animate-up'>
           <div className='home-eyebrow'>{alignment.eyebrow}</div>
           <h2 className='home-h2'>
             {alignment.heading}
@@ -747,7 +794,7 @@ function AlignmentSection() {
           <p className='home-alignment__description'>{alignment.description}</p>
         </div>
 
-        <div className='home-alignment__arc-card'>
+        <div className='home-alignment__arc-card rd-animate-panel'>
           <svg
             className='home-alignment__arc-svg'
             viewBox='0 0 1200 480'
@@ -812,7 +859,7 @@ function ProofStorySection() {
   return (
     <section className='home-proof'>
       <div className='home-proof__inner rd-container'>
-        <div className='home-proof__intro'>
+        <div className='home-proof__intro rd-animate-up'>
           <h2 className='home-h2'>
             {proofStory.heading}
             <br />
@@ -821,7 +868,7 @@ function ProofStorySection() {
           <p className='home-proof__description'>{proofStory.description}</p>
         </div>
 
-        <div className='home-proof__cards'>
+        <div className='home-proof__cards rd-animate-stagger'>
           <div className='home-proof__card home-proof__card--before'>
             <span className='home-proof__card-label home-proof__card-label--before'>
               {proofStory.before.label}
@@ -895,13 +942,13 @@ function ImplementationExamplesSection() {
   return (
     <section className='home-examples'>
       <div className='home-examples__inner rd-container'>
-        <div className='home-examples__intro'>
+        <div className='home-examples__intro rd-animate-up'>
           <div className='home-eyebrow'>{implementationExamples.eyebrow}</div>
           <h2 className='home-h2'>{implementationExamples.heading}</h2>
           <p className='home-examples__description'>{implementationExamples.description}</p>
         </div>
 
-        <div className='home-examples__board'>
+        <div className='home-examples__board rd-animate-panel'>
           <div className='home-examples__board-header'>
             <div className='home-examples__board-header-left'>
               <span className='home-examples__board-dot' aria-hidden='true' />
@@ -912,10 +959,10 @@ function ImplementationExamplesSection() {
             <span className='home-examples__board-count'>{implementationExamples.boardCount}</span>
           </div>
 
-          <div className='home-examples__grid'>
-            {implementationExamples.patterns.map((pattern, i) => {
-              const Icon = EXAMPLE_ICONS[i % EXAMPLE_ICONS.length];
-              const isLast = i === implementationExamples.patterns.length - 1;
+          <div className='home-examples__grid rd-animate-stagger'>
+            {implementationExamples.implementationPatterns.map((pattern, i) => {
+              const Icon = HOME_ICON_MAP[pattern.iconKey];
+              const isLast = i === implementationExamples.implementationPatterns.length - 1;
               return (
                 <div
                   key={pattern.title}
@@ -969,11 +1016,11 @@ function FAQSection() {
   return (
     <section className='home-faq'>
       <div className='home-faq__inner rd-container'>
-        <div className='home-faq__heading-col'>
+        <div className='home-faq__heading-col rd-animate-up'>
           <h2 className='home-h2'>{faq.heading}</h2>
           <p className='home-faq__description'>{faq.description}</p>
         </div>
-        <div className='home-faq__items'>
+        <div className='home-faq__items rd-animate-list'>
           {faq.items.map((item, i) => (
             <details key={item.question} className='home-faq__item' open={i === 0}>
               <summary className='home-faq__question'>
@@ -1002,7 +1049,7 @@ function CTASection() {
         <div className='home-cta__wrap'>
           <div className='home-cta__texture' aria-hidden='true' />
           <div className='home-cta__layout'>
-            <div className='home-cta__copy'>
+            <div className='home-cta__copy rd-animate-up'>
               <div className='home-cta__eyebrow'>
                 <span className='home-cta__eyebrow-dot' aria-hidden='true' />
                 <span>{cta.eyebrow}</span>
@@ -1019,7 +1066,7 @@ function CTASection() {
               </a>
             </div>
 
-            <div className='home-cta__expectations'>
+            <div className='home-cta__expectations rd-animate-panel'>
               <div className='home-cta__expectations-label'>What we look at</div>
               <div className='home-cta__expectations-list'>
                 {cta.expectations.map(item => (

@@ -529,3 +529,98 @@
         transform: none;
     }
 }
+
+/* ══════════════════════════════════════════════════════
+   SIGNAL DOT — small colored accent dot, always decorative
+   Used in status rows, badges, eyebrows, footers.
+   ══════════════════════════════════════════════════════ */
+
+.rd-signal-dot {
+    display: inline-block;
+    width: var(--mw-space-1-5);
+    height: var(--mw-space-1-5);
+    border-radius: var(--mw-radius-pill);
+    background-color: var(--mw-signal-cyan);
+    flex-shrink: 0;
+}
+
+.rd-signal-dot[data-accent='teal'] {
+    background-color: var(--mw-signal-teal);
+}
+
+.rd-signal-dot[data-accent='green'] {
+    background-color: var(--mw-signal-green);
+}
+
+.rd-signal-dot[data-accent='amber'] {
+    background-color: var(--mw-signal-amber);
+}
+
+.rd-signal-dot[data-accent='red'] {
+    background-color: var(--mw-signal-red);
+}
+
+.rd-signal-dot[data-accent='purple'] {
+    background-color: var(--mw-signal-purple);
+}
+
+/* ══════════════════════════════════════════════════════
+   STATUS BADGE — dot + label, signals operational state
+   Variants: active, unowned, leaking, handled, scattered, controlled
+   ══════════════════════════════════════════════════════ */
+
+.rd-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mw-space-1);
+    font-size: var(--mw-text-micro);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--mw-text-secondary);
+}
+
+.rd-status-badge__dot {
+    display: inline-block;
+    width: var(--mw-space-1-5);
+    height: var(--mw-space-1-5);
+    border-radius: var(--mw-radius-pill);
+    flex-shrink: 0;
+    background-color: var(--mw-signal-cyan);
+}
+
+.rd-status-badge[data-variant='active'] .rd-status-badge__dot {
+    background-color: var(--mw-signal-green);
+}
+
+.rd-status-badge[data-variant='active'] {
+    color: var(--mw-signal-green);
+}
+
+.rd-status-badge[data-variant='leaking'] .rd-status-badge__dot,
+.rd-status-badge[data-variant='scattered'] .rd-status-badge__dot {
+    background-color: var(--mw-signal-red);
+}
+
+.rd-status-badge[data-variant='leaking'],
+.rd-status-badge[data-variant='scattered'] {
+    color: var(--mw-signal-red);
+}
+
+.rd-status-badge[data-variant='unowned'] .rd-status-badge__dot {
+    background-color: var(--mw-signal-amber);
+}
+
+.rd-status-badge[data-variant='unowned'] {
+    color: var(--mw-signal-amber);
+}
+
+.rd-status-badge[data-variant='handled'] .rd-status-badge__dot,
+.rd-status-badge[data-variant='controlled'] .rd-status-badge__dot {
+    background-color: var(--mw-signal-teal);
+}
+
+.rd-status-badge[data-variant='handled'],
+.rd-status-badge[data-variant='controlled'] {
+    color: var(--mw-signal-teal);
+}
