@@ -1,0 +1,149 @@
+/*
+ * TYPOGRAPHY — font loading and type defaults.
+ *
+ * Font: Inter loaded via Next.js (next/font/google) in the app layout.
+ * This file only provides type-scale utilities and heading defaults.
+ * All values use var(--mw-*) tokens from tokens.css.
+ */
+
+/* ---------- Heading size defaults ---------- */
+
+h1 {
+    font-size: var(--mw-text-h1);
+}
+
+h2 {
+    font-size: var(--mw-text-h2);
+}
+
+h3 {
+    font-size: var(--mw-text-h3);
+}
+
+h4 {
+    font-size: var(--mw-text-body-lg);
+}
+
+h5 {
+    font-size: var(--mw-text-body);
+}
+
+h6 {
+    font-size: var(--mw-text-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: var(--mw-tracking-eyebrow);
+    font-weight: 600;
+}
+
+/* ---------- Type-scale utility classes ---------- */
+
+.mw-text-hero {
+    font-size: var(--mw-text-hero);
+    line-height: var(--mw-leading-tight);
+    letter-spacing: var(--mw-tracking-hero);
+}
+
+.mw-text-h1 {
+    font-size: var(--mw-text-h1);
+    line-height: var(--mw-leading-tight);
+    letter-spacing: var(--mw-tracking-heading);
+}
+
+.mw-text-h2 {
+    font-size: var(--mw-text-h2);
+    line-height: var(--mw-leading-snug);
+    letter-spacing: var(--mw-tracking-heading);
+}
+
+.mw-text-h3 {
+    font-size: var(--mw-text-h3);
+    line-height: var(--mw-leading-heading);
+}
+
+.mw-text-body-lg {
+    font-size: var(--mw-text-body-lg);
+    line-height: var(--mw-leading-body);
+}
+
+.mw-text-body {
+    font-size: var(--mw-text-body);
+    line-height: var(--mw-leading-body);
+}
+
+.mw-text-body-sm {
+    font-size: var(--mw-text-body-sm);
+    line-height: var(--mw-leading-relaxed);
+}
+
+.mw-text-label {
+    font-size: var(--mw-text-label);
+    line-height: var(--mw-leading-body);
+}
+
+.mw-text-eyebrow {
+    font-size: var(--mw-text-eyebrow);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--mw-tracking-eyebrow);
+    line-height: 1;
+}
+
+/* ---------- Font weight utilities ---------- */
+
+.mw-weight-400 {
+    font-weight: 400;
+}
+
+.mw-weight-500 {
+    font-weight: 500;
+}
+
+.mw-weight-600 {
+    font-weight: 600;
+}
+
+.mw-weight-700 {
+    font-weight: 700;
+}
+
+.mw-weight-800 {
+    font-weight: 800;
+}
+
+/* ---------- Text colour utilities ---------- */
+
+.mw-text-primary {
+    color: var(--mw-text-primary);
+}
+
+.mw-text-secondary {
+    color: var(--mw-text-secondary);
+}
+
+.mw-text-subtle {
+    color: var(--mw-text-subtle);
+}
+
+.mw-text-on-dark {
+    color: var(--mw-text-on-dark);
+}
+
+.mw-text-on-dark-muted {
+    color: var(--mw-text-on-dark-muted);
+}
+
+.mw-text-signal-cyan {
+    color: var(--mw-signal-cyan);
+}
+
+.mw-text-signal-amber {
+    color: var(--mw-signal-amber);
+}
+
+.mw-text-signal-red {
+    color: var(--mw-signal-red);
+}
+
+.mw-text-signal-green {
+    color: var(--mw-signal-green);
+}

@@ -1,28 +1,20 @@
 /*
- * INDEX — global wiring only.
+ * INDEX — global CSS entry point.
  *
- * Order matters:
- *   1. _legacy/_compat: TEMPORARY pre-Phase-1 CSS, kept so production
- *      routes continue rendering until phases 2/5/7/9 migrate them.
- *      Loaded FIRST so the new design-system tokens (next) override any
- *      shared `:root` values. ll be removed later dont edit/update legacy css files.
- *   2. foundation: tokens (canonical — must override legacy `:root`).
- *   3. framework:  layout/utilities (consumes tokens).
- *   4. primitives: UI atoms (consumes tokens + utility classes).
- *   5. components: production component shells (depends on all above).
- *   6. Tailwind layers stay last so utility classes always win when used.
- *
- * IMPORT-ORDER RISK: Tailwind's `@tailwind utilities;` must remain last;
- * the legacy compat block must remain first. Reordering will either let
- * legacy tokens shadow the new system or let Tailwind's reset clobber
- * design-system primitives.
+ * Import order (must not be changed):
+ *   1. tokens    — design token source of truth (only file with raw values)
+ *   2. reset     — minimal browser normalisation
+ *   3. typography — type scale defaults
+ *   4. layout    — containers, grids, section rhythm, bg utilities
+ *   5. primitives — UI atoms (buttons, badges, cards, forms)
+ *   6. components — component shells (header, footer, hero, grid-cards)
+ *   7. Tailwind layers last — utility classes must win when used
  */
 
-/* TEMPORARY — remove in PHASE 9 once live routes are migrated. */
-@import './styles/_legacy/_compat.css';
-
-@import './styles/foundation.css';
-@import './styles/framework.css';
+@import './styles/tokens.css';
+@import './styles/reset.css';
+@import './styles/typography.css';
+@import './styles/layout.css';
 @import './styles/primitives.css';
 @import './styles/components.css';
 

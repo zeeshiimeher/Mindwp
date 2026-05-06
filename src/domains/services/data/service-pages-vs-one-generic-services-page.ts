@@ -90,4 +90,3 @@ export const servicePagesVsOneGenericServicesPage = {
     actions: [{ label: 'Get Started', href: '/contact', primary: true }],
   },
 } satisfies ServicePageData;
-

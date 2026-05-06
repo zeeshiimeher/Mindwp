@@ -29,12 +29,6 @@ export async function generateMetadata() {
 
 const LOCAL_MISCONCEPTION_ICON_KEYS: readonly SectionIconKey[] = ['alert', 'eye', 'clock'];
 const LAYER_ICON_KEYS: readonly SectionIconKey[] = ['target', 'search', 'route', 'repeat'];
-const PROCESS_ICON_KEYS: readonly SectionIconKey[] = [
-  'compass',
-  'workflow',
-  'check-circle',
-  'trending',
-];
 const PROOF_ICON_KEYS: readonly SectionIconKey[] = ['minus', 'sparkles', 'check'];
 const SCOPE_ICON_KEYS: readonly SectionIconKey[] = [
   'database',
@@ -64,9 +58,14 @@ export default function ComponentSystemVisualizerPage() {
 
   const smart = smartWebsiteSystemsPage;
   const local = localSeoAuthorityPage;
-  const localBefore = local.sections.comparison.items.find(c => c.type === 'before')!;
-  const localAfter = local.sections.comparison.items.find(c => c.type === 'after')!;
-  const localProofCard = (index: 0 | 1 | 2) => local.sections.proof.cards[index]!;
+  const localBefore =
+    local.sections.comparison.items.find(c => c.type === 'before') ??
+    local.sections.comparison.items[0];
+  const localAfter =
+    local.sections.comparison.items.find(c => c.type === 'after') ??
+    local.sections.comparison.items[1];
+  const localProofCard = (index: 0 | 1 | 2) =>
+    local.sections.proof.cards[index] ?? local.sections.proof.cards[0];
 
   return (
     <main role='main'>

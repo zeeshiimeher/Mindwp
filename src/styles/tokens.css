@@ -1,0 +1,413 @@
+/*
+ * TOKENS — design token source of truth.
+ *
+ * ONLY this file may contain raw values (hex, px, rem, rgba, numbers).
+ * All other CSS files must reference tokens via var(--mw-*).
+ *
+ * Token layers:
+ *   1.  Raw brand palette (dark scale, ink scale, surfaces)
+ *   2.  Signal colors + tints
+ *   3.  Semantic surface + text + border tokens
+ *   4.  Font families
+ *   5.  Type scale + leading + tracking
+ *   6.  Spacing scale
+ *   7.  Layout (containers, section rhythm, hero padding)
+ *   8.  Radii
+ *   9.  Shadows + glow effects
+ *   10. Motion
+ *   11. Z-index
+ *   12. Gradients
+ *   13. Brand identity bridge tokens (used by Logo SVG — do not rename)
+ *   14. Shadcn / Radix UI compat shims (consumed by src/components/ui/)
+ */
+
+:root {
+
+    /* ══════════════════════════════════════════════════════
+       1. RAW BRAND PALETTE
+       ══════════════════════════════════════════════════════ */
+
+    /* Dark scale — navy/teal brand palette */
+    --mw-color-dark: #061323;
+    /* deepest navy — primary bg */
+    --mw-color-dark-mid: #071629;
+    /* dark mid — hero via colour */
+    --mw-color-dark-alt: #081827;
+    /* lighter dark — used on some feature pages */
+    --mw-color-dark-secondary: #103E5A;
+    /* blue-teal dark — gradient end */
+    --mw-color-dark-hover: #0E2740;
+    /* hover state on dark bg */
+
+    /* Ink scale — light surface text */
+    --mw-color-ink: #08111F;
+    /* primary text on white */
+    --mw-color-ink-muted: #4C5E6F;
+    /* secondary text */
+    --mw-color-ink-subtle: #6F8190;
+    /* tertiary / label text */
+
+    /* Surfaces */
+    --mw-color-white: #ffffff;
+    --mw-color-surface-mist: #F6FAFC;
+    /* light section background */
+    --mw-color-border-light: #E6EEF3;
+    /* light surface border */
+    --mw-color-border-hover: #EEF3F6;
+    /* separator / hover tint */
+
+    /* ══════════════════════════════════════════════════════
+       2. SIGNAL COLORS + TINTS
+       ══════════════════════════════════════════════════════ */
+
+    /* Core signals */
+    --mw-signal-cyan: #35C7D8;
+    /* primary active / CTA accent */
+    --mw-signal-teal: #14B8A6;
+    /* secondary / local SEO */
+    --mw-signal-green: #21B985;
+    /* success / good state */
+    --mw-signal-amber: #F4B740;
+    /* warning / follow-up */
+    --mw-signal-red: #E76F6F;
+    /* risk / lost / error */
+    --mw-signal-purple: #9B7DE0;
+    /* proof / reviews */
+
+    /* Signal tints — for panel backgrounds and bordered badges */
+    --mw-signal-cyan-8: color-mix(in oklch, #35C7D8 8%, transparent);
+    --mw-signal-cyan-10: color-mix(in oklch, #35C7D8 10%, transparent);
+    --mw-signal-cyan-14: color-mix(in oklch, #35C7D8 14%, transparent);
+    --mw-signal-cyan-20: color-mix(in oklch, #35C7D8 20%, transparent);
+    --mw-signal-cyan-30: color-mix(in oklch, #35C7D8 30%, transparent);
+    --mw-signal-teal-10: color-mix(in oklch, #14B8A6 10%, transparent);
+    --mw-signal-teal-30: color-mix(in oklch, #14B8A6 30%, transparent);
+    --mw-signal-green-10: color-mix(in oklch, #21B985 10%, transparent);
+    --mw-signal-green-30: color-mix(in oklch, #21B985 30%, transparent);
+    --mw-signal-amber-10: color-mix(in oklch, #F4B740 10%, transparent);
+    --mw-signal-amber-25: color-mix(in oklch, #F4B740 25%, transparent);
+    --mw-signal-amber-30: color-mix(in oklch, #F4B740 30%, transparent);
+    --mw-signal-red-10: color-mix(in oklch, #E76F6F 10%, transparent);
+    --mw-signal-red-25: color-mix(in oklch, #E76F6F 25%, transparent);
+    --mw-signal-red-30: color-mix(in oklch, #E76F6F 30%, transparent);
+    --mw-signal-purple-10: color-mix(in oklch, #9B7DE0 10%, transparent);
+    --mw-signal-purple-30: color-mix(in oklch, #9B7DE0 30%, transparent);
+
+    /* ══════════════════════════════════════════════════════
+       3. SEMANTIC SURFACE / TEXT / BORDER TOKENS
+       ══════════════════════════════════════════════════════ */
+
+    /* Backgrounds */
+    --mw-bg-page: var(--mw-color-white);
+    --mw-bg-mist: var(--mw-color-surface-mist);
+    --mw-bg-dark: var(--mw-color-dark);
+    --mw-bg-dark-panel: rgba(255, 255, 255, 0.04);
+    --mw-bg-dark-panel-hover: rgba(255, 255, 255, 0.06);
+
+    /* Text — light surfaces */
+    --mw-text-primary: var(--mw-color-ink);
+    --mw-text-secondary: var(--mw-color-ink-muted);
+    --mw-text-subtle: var(--mw-color-ink-subtle);
+
+    /* Text — dark surfaces */
+    --mw-text-on-dark: rgba(255, 255, 255, 0.85);
+    --mw-text-on-dark-muted: rgba(255, 255, 255, 0.55);
+    --mw-text-on-dark-dim: rgba(255, 255, 255, 0.35);
+    --mw-text-on-dark-strong: var(--mw-color-white);
+
+    /* Borders */
+    --mw-border-light: var(--mw-color-border-light);
+    --mw-border-subtle: rgba(8, 17, 31, 0.08);
+    --mw-border-dark: rgba(255, 255, 255, 0.08);
+    --mw-border-panel: rgba(255, 255, 255, 0.10);
+    --mw-border-signal: color-mix(in oklch, #35C7D8 30%, transparent);
+
+    /* Semantic signal aliases */
+    --mw-signal-active: var(--mw-signal-cyan);
+    --mw-signal-warn: var(--mw-signal-amber);
+    --mw-signal-risk: var(--mw-signal-red);
+    --mw-signal-success: var(--mw-signal-green);
+    --mw-signal-proof: var(--mw-signal-purple);
+
+    /* ══════════════════════════════════════════════════════
+       4. FONT FAMILIES
+       ══════════════════════════════════════════════════════ */
+
+    --mw-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mw-font-mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
+
+    /* ══════════════════════════════════════════════════════
+       5. TYPE SCALE
+       ══════════════════════════════════════════════════════ */
+
+    /* Fluid hero / page headings */
+    --mw-text-hero: clamp(3rem, 6.4vw, 4.875rem);
+    /* 48–78px  — main hero h1 */
+    --mw-text-h1: clamp(3rem, 5.5vw, 4rem);
+    /* 48–64px  — page h1 */
+    --mw-text-h1-sm: clamp(2.25rem, 4vw, 3.375rem);
+    /* 36–54px  — resource/blog h1 */
+    --mw-text-h2: clamp(2rem, 3.5vw, 3.25rem);
+    /* 32–52px  — section h2 */
+    --mw-text-h2-sm: clamp(1.75rem, 2.8vw, 2.5rem);
+    /* 28–40px  — sub-section h2 */
+    --mw-text-h3: clamp(1.375rem, 2vw, 2rem);
+    /* 22–32px  — h3 */
+
+    /* Fixed body / UI sizes */
+    --mw-text-body-lg: 1.125rem;
+    /* 18px — large body / hero description */
+    --mw-text-body: 1.0625rem;
+    /* 17px — standard body */
+    --mw-text-body-sm: 0.875rem;
+    /* 14px — small body / footer copy */
+    --mw-text-label: 0.84375rem;
+    /* 13.5px — nav links, button labels */
+    --mw-text-label-sm: 0.8125rem;
+    /* 13px — card labels */
+    --mw-text-eyebrow: 0.65625rem;
+    /* 10.5px — section eyebrow / kicker */
+    --mw-text-micro: 0.625rem;
+    /* 10px — column headings / micro labels */
+    --mw-text-base: 1rem;
+    /* 16px — body default */
+
+    /* Line heights */
+    --mw-leading-tight: 1.02;
+    --mw-leading-heading: 1.05;
+    --mw-leading-snug: 1.1;
+    --mw-leading-body: 1.6;
+    --mw-leading-relaxed: 1.65;
+
+    /* Letter spacing */
+    --mw-tracking-hero: -0.035em;
+    --mw-tracking-heading: -0.03em;
+    --mw-tracking-tight: -0.01em;
+    --mw-tracking-eyebrow: 0.16em;
+    --mw-tracking-label: 0.14em;
+    --mw-tracking-micro: 0.10em;
+
+    /* ══════════════════════════════════════════════════════
+       6. SPACING SCALE
+       ══════════════════════════════════════════════════════ */
+
+    --mw-space-px: 1px;
+    --mw-space-0-5: 0.125rem;
+    /*  2px */
+    --mw-space-1: 0.25rem;
+    /*  4px */
+    --mw-space-1-5: 0.375rem;
+    /*  6px */
+    --mw-space-2: 0.5rem;
+    /*  8px */
+    --mw-space-2-5: 0.625rem;
+    /* 10px */
+    --mw-space-3: 0.75rem;
+    /* 12px */
+    --mw-space-3-5: 0.875rem;
+    /* 14px */
+    --mw-space-4: 1rem;
+    /* 16px */
+    --mw-space-5: 1.25rem;
+    /* 20px */
+    --mw-space-6: 1.5rem;
+    /* 24px */
+    --mw-space-7: 1.75rem;
+    /* 28px */
+    --mw-space-8: 2rem;
+    /* 32px */
+    --mw-space-9: 2.25rem;
+    /* 36px */
+    --mw-space-10: 2.5rem;
+    /* 40px */
+    --mw-space-11: 2.75rem;
+    /* 44px */
+    --mw-space-12: 3rem;
+    /* 48px */
+    --mw-space-14: 3.5rem;
+    /* 56px */
+    --mw-space-16: 4rem;
+    /* 64px */
+    --mw-space-20: 5rem;
+    /* 80px */
+    --mw-space-24: 6rem;
+    /* 96px */
+    --mw-space-28: 7rem;
+    /* 112px */
+    --mw-space-32: 8rem;
+    /* 128px */
+
+    /* ══════════════════════════════════════════════════════
+       7. LAYOUT — containers, section rhythm, hero padding
+       ══════════════════════════════════════════════════════ */
+
+    /* Frame max — outer page boundary (1440px) */
+    --mw-frame-max: 1440px;
+
+    /* Inner content container — matches Figma max-w-[1240px] */
+    --mw-container-max: 1240px;
+
+    /* Narrow content container for long-form text pages */
+    --mw-container-text: 820px;
+
+    /* Responsive horizontal padding — matches Figma px-8 at desktop */
+    --mw-space-inline: clamp(1.25rem, 3vw, 2rem);
+
+    /* Section vertical rhythm */
+    --mw-section-block: clamp(4rem, 7vw, 7rem);
+    /* py-28 ≈ 112px */
+    --mw-section-compact: clamp(3rem, 5vw, 6rem);
+    --mw-section-spacious: clamp(5rem, 9vw, 9rem);
+
+    /* Hero vertical padding */
+    --mw-hero-block-top: clamp(4rem, 6vw, 6rem);
+    /* pt-24 ≈ 96px */
+    --mw-hero-block-bottom: clamp(5rem, 8vw, 8rem);
+    /* pb-32 ≈ 128px */
+
+    /* Column gap for multi-column grids */
+    --mw-gap-cols: clamp(1.5rem, 2.5vw, 2.5rem);
+
+    /* ══════════════════════════════════════════════════════
+       8. RADII
+       ══════════════════════════════════════════════════════ */
+
+    --mw-radius-xs: 4px;
+    --mw-radius-sm: 6px;
+    --mw-radius-md: 8px;
+    /* rounded-md */
+    --mw-radius-lg: 12px;
+    /* rounded-xl */
+    --mw-radius-panel: 16px;
+    /* rounded-2xl — main panel radius */
+    --mw-radius-xl: 20px;
+    /* large panel */
+    --mw-radius-pill: 9999px;
+    /* rounded-full */
+
+    /* ══════════════════════════════════════════════════════
+       9. SHADOWS + GLOW EFFECTS
+       ══════════════════════════════════════════════════════ */
+
+    --mw-shadow-soft: 0 4px 30px rgba(8, 17, 31, 0.04);
+    /* section card */
+    --mw-shadow-card: 0 8px 24px rgba(8, 17, 31, 0.06);
+    --mw-shadow-panel: 0 16px 48px rgba(8, 17, 31, 0.10);
+    --mw-shadow-heavy: 0 32px 80px rgba(8, 17, 31, 0.18);
+    --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, #35C7D8 35%, transparent);
+
+    /* Signal glow — for animated dots and status indicators */
+    --mw-glow-cyan: 0 0 8px #35C7D8;
+    --mw-glow-teal: 0 0 8px #14B8A6;
+    --mw-glow-green: 0 0 8px #21B985;
+    --mw-glow-amber: 0 0 6px #F4B740;
+    --mw-glow-red: 0 0 6px #E76F6F;
+    --mw-glow-purple: 0 0 8px #9B7DE0;
+
+    /* ══════════════════════════════════════════════════════
+       10. MOTION
+       ══════════════════════════════════════════════════════ */
+
+    --mw-dur-fast: 150ms;
+    --mw-dur-base: 250ms;
+    --mw-dur-slow: 500ms;
+    --mw-ease-out: cubic-bezier(0.2, 0, 0, 1);
+    --mw-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+    /* ══════════════════════════════════════════════════════
+       11. Z-INDEX
+       ══════════════════════════════════════════════════════ */
+
+    --mw-z-base: 1;
+    --mw-z-raised: 5;
+    --mw-z-sticky: 50;
+    --mw-z-overlay: 100;
+    --mw-z-modal: 200;
+    --mw-z-toast: 300;
+
+    /* ══════════════════════════════════════════════════════
+       12. GRADIENTS
+       ══════════════════════════════════════════════════════ */
+
+    /* Dark hero gradient — Figma: from-[#061323] via-[#071629] to-[#103E5A] */
+    --mw-gradient-hero:
+        radial-gradient(ellipse at 15% 20%, color-mix(in oklch, #35C7D8 16%, transparent), transparent 45%),
+        radial-gradient(ellipse at 95% 90%, color-mix(in oklch, #14B8A6 12%, transparent), transparent 50%),
+        linear-gradient(135deg, #061323 0%, #103E5A 100%);
+
+    /* Subtle dot-grid texture overlay — apply at opacity ~0.035 */
+    --mw-gradient-grid-texture:
+        linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
+
+    /* CTA section gradient */
+    --mw-gradient-cta:
+        radial-gradient(circle at 20% 20%, color-mix(in oklch, #35C7D8 14%, transparent), transparent 30%),
+        linear-gradient(135deg, #061323 0%, #103E5A 100%);
+
+    /* Light mist gradient (light section transitions) */
+    --mw-gradient-mist:
+        linear-gradient(180deg, #ffffff 0%, #F6FAFC 100%);
+
+    /* ══════════════════════════════════════════════════════
+       13. BRAND IDENTITY BRIDGE TOKENS
+       Used by Logo SVG components (src/global/logos/).
+       Do not rename — SVG files reference these by name.
+       ══════════════════════════════════════════════════════ */
+
+    --brand-primary: #061323;
+    --brand-secondary: #103E5A;
+    --brand-primary-mid: #1b2845;
+    --brand-white: #ffffff;
+    --brand-logo-ring: color-mix(in oklch, #35C7D8 18%, #061323);
+
+    /* Opacity variants used by logo SVG paths */
+    --brand-primary-90: color-mix(in srgb, #061323 90%, transparent);
+    --brand-primary-30: color-mix(in srgb, #061323 30%, transparent);
+    --brand-primary-10: color-mix(in srgb, #061323 10%, transparent);
+    --brand-secondary-10: color-mix(in srgb, #103E5A 10%, transparent);
+    --brand-secondary-30: color-mix(in srgb, #103E5A 30%, transparent);
+    --brand-white-90: color-mix(in srgb, #ffffff 90%, transparent);
+    --brand-white-80: color-mix(in srgb, #ffffff 80%, transparent);
+    --brand-white-70: color-mix(in srgb, #ffffff 70%, transparent);
+
+    /* ══════════════════════════════════════════════════════
+       14. SHADCN / RADIX UI COMPAT SHIMS
+       Consumed by src/components/ui/ (third-party lib).
+       Do NOT use these in production MindWP CSS.
+       Do NOT rename — lib components reference them directly.
+       ══════════════════════════════════════════════════════ */
+
+    --background: #ffffff;
+    --foreground: oklch(0.145 0 0);
+    --card: #ffffff;
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: #030213;
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.95 0.0058 264.53);
+    --secondary-foreground: #030213;
+    --muted: #ececf0;
+    --muted-foreground: #717182;
+    --accent: #e9ebef;
+    --accent-foreground: #030213;
+    --destructive: #d4183d;
+    --destructive-foreground: #ffffff;
+    --border: rgba(0, 0, 0, 0.1);
+    --input: transparent;
+    --input-background: #f3f3f5;
+    --switch-background: #cbced4;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --ring: oklch(0.708 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: #030213;
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}

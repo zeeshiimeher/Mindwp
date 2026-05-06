@@ -24,13 +24,12 @@ export interface ServiceBridgeSectionProps {
 
 const SOURCE_LABEL_DOT = 'Entry point';
 const SOURCE_CAPTION_DOT = 'Captures the enquiry';
-const SOURCE_OWNERSHIP_DOT =
-  'Owns the website structure, page clarity, and entry point.';
+const SOURCE_OWNERSHIP_DOT = 'Owns the website structure, page clarity, and entry point.';
 const CARD_META_DOT = 'Connected system';
 const HANDOFF_LABEL_DOT = 'Handoff';
 const BOUNDARY_LABEL_DOT = 'Boundary';
 const BOARD_NOTE_DOT =
-  'The website is the entry point. Connected systems decide what happens after.'
+  'The website is the entry point. Connected systems decide what happens after.';
 
 /**
  * ServiceBridgeSection — handoff map showing system ownership boundaries.
@@ -78,7 +77,11 @@ export function ServiceBridgeSection({
           <p className='service-bridge__source-ownership'>{SOURCE_OWNERSHIP_DOT}</p>
           {/* Connection diagram — fan-out from source to connected systems */}
           <div className='service-bridge__source-visual' aria-hidden='true'>
-            <svg className='service-bridge__flow-diagram' viewBox='0 0 160 80' xmlns='http://www.w3.org/2000/svg'>
+            <svg
+              className='service-bridge__flow-diagram'
+              viewBox='0 0 160 80'
+              xmlns='http://www.w3.org/2000/svg'
+            >
               <circle cx='16' cy='40' r='6' className='service-bridge__flow-node' />
               <line x1='22' y1='40' x2='138' y2='16' className='service-bridge__flow-line' />
               <line x1='22' y1='40' x2='138' y2='40' className='service-bridge__flow-line' />

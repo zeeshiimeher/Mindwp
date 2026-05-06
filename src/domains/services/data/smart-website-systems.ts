@@ -523,7 +523,7 @@ export const smartWebsiteSystemsPage = {
         kicker: 'How it works',
         title: 'From first conversation to a site pulling its weight',
         description:
-          "We start with how your business runs — not with colours or layouts. The build follows what we learn.",
+          'We start with how your business runs — not with colours or layouts. The build follows what we learn.',
       },
       projectInputs: [
         'Incoming calls and missed calls',

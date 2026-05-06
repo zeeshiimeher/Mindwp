@@ -122,9 +122,7 @@ export function JourneyLeakMapSection({
                 </div>
               </dl>
 
-              {stage.metric ? (
-                <p className='journey-leak__stage-metric'>{stage.metric}</p>
-              ) : null}
+              {stage.metric ? <p className='journey-leak__stage-metric'>{stage.metric}</p> : null}
             </div>
           </li>
         ))}

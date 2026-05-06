@@ -1,0 +1,419 @@
+/*
+ * LAYOUT — containers, grids, section rhythm, background utilities.
+ *
+ * Owns: rd-container, rd-section, rd-grid, rd-split, rd-stack, rd-cluster,
+ * rd-panel shell, background context classes, foreground utilities,
+ * section header system, motion utilities.
+ *
+ * No component-specific styles. No buttons. No cards.
+ * All values use var(--mw-*) tokens from tokens.css.
+ */
+
+/* ══════════════════════════════════════════════════════
+   CONTAINERS
+   ══════════════════════════════════════════════════════ */
+
+/*
+ * rd-container — 1240px inner content width, centred, responsive horizontal padding.
+ * Matches Figma: max-w-[1240px] mx-auto px-8
+ */
+.rd-container {
+    width: 100%;
+    max-width: var(--mw-container-max);
+    margin-inline: auto;
+    padding-inline: var(--mw-space-inline);
+}
+
+.rd-container--text {
+    max-width: var(--mw-container-text);
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTIONS — vertical rhythm
+   ══════════════════════════════════════════════════════ */
+
+.rd-section {
+    padding-block: var(--mw-section-block);
+    position: relative;
+    overflow: hidden;
+}
+
+.rd-section--compact {
+    padding-block: var(--mw-section-compact);
+}
+
+.rd-section--spacious {
+    padding-block: var(--mw-section-spacious);
+}
+
+.rd-section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* ══════════════════════════════════════════════════════
+   GRIDS
+   ══════════════════════════════════════════════════════ */
+
+.rd-grid {
+    display: grid;
+    gap: var(--mw-gap-cols);
+}
+
+.rd-grid--2 {
+    grid-template-columns: 1fr;
+}
+
+.rd-grid--3 {
+    grid-template-columns: 1fr;
+}
+
+.rd-grid--4 {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .rd-grid--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rd-grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 980px) {
+    .rd-grid--3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .rd-grid--4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 12-column CSS grid base — mirrors Figma grid-cols-12 */
+.rd-grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--mw-gap-cols);
+}
+
+/* ══════════════════════════════════════════════════════
+   SPLIT — two-column content + visual layouts
+   ══════════════════════════════════════════════════════ */
+
+.rd-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-gap-cols);
+    align-items: center;
+}
+
+@media (min-width: 980px) {
+    .rd-split {
+        grid-template-columns: 1.1fr 1fr;
+    }
+
+    .rd-split--reverse {
+        grid-template-columns: 1fr 1.1fr;
+    }
+
+    /* 7/5 split — mirrors Figma col-span-7 + col-span-5 */
+    .rd-split--7-5 {
+        grid-template-columns: 7fr 5fr;
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   STACK + CLUSTER — flex layout utilities
+   ══════════════════════════════════════════════════════ */
+
+.rd-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-4);
+}
+
+.rd-stack--xs {
+    gap: var(--mw-space-1);
+}
+
+.rd-stack--sm {
+    gap: var(--mw-space-2);
+}
+
+.rd-stack--md {
+    gap: var(--mw-space-4);
+}
+
+.rd-stack--lg {
+    gap: var(--mw-space-6);
+}
+
+.rd-stack--xl {
+    gap: var(--mw-space-8);
+}
+
+.rd-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mw-space-2);
+    align-items: center;
+}
+
+.rd-cluster--sm {
+    gap: var(--mw-space-1-5);
+}
+
+.rd-cluster--lg {
+    gap: var(--mw-space-4);
+}
+
+/* ══════════════════════════════════════════════════════
+   PANEL SHELL — spacing-only structural wrapper
+   ══════════════════════════════════════════════════════ */
+
+.rd-panel {
+    border-radius: var(--mw-radius-panel);
+    padding: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+/* ══════════════════════════════════════════════════════
+   MEASURE — text width constraints
+   ══════════════════════════════════════════════════════ */
+
+.rd-measure-narrow {
+    max-width: 38ch;
+}
+
+.rd-measure {
+    max-width: 60ch;
+}
+
+.rd-measure-wide {
+    max-width: 72ch;
+}
+
+/* ══════════════════════════════════════════════════════
+   BACKGROUND CONTEXT CLASSES
+   Sets background + establishes readable foreground context.
+   Used by SectionShell tone prop.
+   ══════════════════════════════════════════════════════ */
+
+.bg-body {
+    background: var(--mw-bg-page);
+    color: var(--mw-text-primary);
+}
+
+.bg-surface-soft {
+    background: var(--mw-bg-mist);
+    color: var(--mw-text-primary);
+}
+
+.bg-dark {
+    background: var(--mw-bg-dark);
+    color: var(--mw-text-on-dark-strong);
+}
+
+.bg-gradient-hero {
+    background: var(--mw-gradient-hero);
+    color: var(--mw-text-on-dark-strong);
+}
+
+/* alias for legacy class name used in existing section components */
+.bg-gradient-base {
+    background: var(--mw-gradient-hero);
+    color: var(--mw-text-on-dark-strong);
+}
+
+.bg-gradient-blue {
+    background: var(--mw-gradient-hero);
+    color: var(--mw-text-on-dark-strong);
+}
+
+.bg-gradient-compare {
+    background: var(--mw-gradient-cta);
+    color: var(--mw-text-on-dark-strong);
+}
+
+.bg-gradient-cta {
+    background: var(--mw-gradient-cta);
+    color: var(--mw-text-on-dark-strong);
+}
+
+/* ══════════════════════════════════════════════════════
+   FOREGROUND UTILITIES
+   ══════════════════════════════════════════════════════ */
+
+.text-on-light {
+    color: var(--mw-text-primary);
+}
+
+.text-on-dark {
+    color: var(--mw-text-on-dark-strong);
+}
+
+.text-on-soft {
+    color: var(--mw-text-primary);
+}
+
+.text-muted-light {
+    color: var(--mw-text-secondary);
+}
+
+.text-muted-dark {
+    color: var(--mw-text-on-dark-muted);
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION HEADER SYSTEM
+   Used by SectionShell heading prop.
+   ══════════════════════════════════════════════════════ */
+
+.rd-section-head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-3);
+    align-items: flex-start;
+}
+
+.rd-section-head--left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.rd-section-head--center {
+    align-items: center;
+    text-align: center;
+}
+
+.rd-section-head--split {
+    flex-direction: column;
+    gap: var(--mw-space-4);
+}
+
+@media (min-width: 860px) {
+    .rd-section-head--split {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: var(--mw-space-8);
+    }
+}
+
+/* Eyebrow / kicker pill */
+.rd-section-kicker {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: var(--mw-space-2);
+    font-size: var(--mw-text-eyebrow);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--mw-tracking-eyebrow);
+    padding: var(--mw-space-1-5) var(--mw-space-3);
+    border: 1px solid currentColor;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-cyan-8);
+    color: var(--mw-signal-cyan);
+}
+
+.rd-section-head--center .rd-section-kicker {
+    align-self: center;
+}
+
+/* Kicker on dark backgrounds */
+.bg-dark .rd-section-kicker,
+.bg-gradient-hero .rd-section-kicker,
+.bg-gradient-base .rd-section-kicker,
+.bg-gradient-blue .rd-section-kicker,
+.bg-gradient-compare .rd-section-kicker,
+.bg-gradient-cta .rd-section-kicker {
+    background: var(--mw-signal-cyan-10);
+    color: var(--mw-signal-cyan);
+    border-color: var(--mw-signal-cyan-30);
+}
+
+.rd-section-title {
+    font-family: var(--mw-font-sans);
+    font-weight: 700;
+    font-size: var(--mw-text-h2);
+    line-height: var(--mw-leading-snug);
+    letter-spacing: var(--mw-tracking-heading);
+    margin: 0;
+    color: inherit;
+}
+
+.rd-section-head--center .rd-section-title {
+    margin-inline: auto;
+}
+
+.rd-section-description {
+    font-size: var(--mw-text-body);
+    line-height: var(--mw-leading-body);
+    margin: 0;
+    color: inherit;
+    opacity: 0.92;
+}
+
+.rd-section-head--center .rd-section-description {
+    margin-inline: auto;
+}
+
+/* ══════════════════════════════════════════════════════
+   MOTION UTILITIES
+   ══════════════════════════════════════════════════════ */
+
+@keyframes mw-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mw-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mw-pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.rd-animate-section {
+    animation: mw-fade-in var(--mw-dur-base) var(--mw-ease-out) both;
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION DIVIDER
+   ══════════════════════════════════════════════════════ */
+
+.rd-divider {
+    height: 1px;
+    background: var(--mw-border-light);
+    margin-block: var(--mw-space-8);
+}
+
+.rd-divider--dark {
+    background: var(--mw-border-dark);
+}
