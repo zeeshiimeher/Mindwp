@@ -1000,3 +1000,109 @@ CSS must follow tokens.
 Validators must protect the new system, not the old UI.
 
 ```
+---
+
+## MILESTONE 1 — CSS Foundation Cleanup: COMPLETE
+
+**Date:** 2026-05-07
+**Branch:** ui-hard-reset
+**Commit:** e1a1651
+
+### Audit Summary
+
+**Branch at start:** `redesign/smart-website-prototype` with uncommitted CSS foundation work.
+Switched to new `ui-hard-reset` branch carrying all uncommitted changes.
+
+**CSS entry point (src/index.css):**
+Clean. Imports 6-layer new stack only (tokens → reset → typography → layout → primitives → components). No legacy imports.
+
+**CSS files in src/styles/ at audit:**
+
+| File | Status |
+|---|---|
+| tokens.css | NEW — master token source, raw values allowed |
+| reset.css | NEW — browser normalisation via var(--mw-*) |
+| typography.css | NEW — type scale utility classes |
+| layout.css | NEW — containers, grids, section rhythm |
+| primitives.css | UPDATED — UI atoms, all var(--mw-*) |
+| components.css | UPDATED — component shells, all var(--mw-*) |
+| foundation.css | ORPHAN — not imported by new index.css → DELETED |
+| framework.css | ORPHAN — not imported by new index.css → DELETED |
+| sws-visual-prototype.css | ORPHAN — dev route deleted → DELETED |
+| _legacy/ | ISOLATED — not imported by new stack, skipped by validator. Kept: old pages still use l-section, l-container, btn-primary classes. Expected fallout. |
+
+**CSS compatibility traces (Step 3):**
+
+A. Active runtime refs in old components/screens (expected hard-reset fallout, not fixed in this milestone):
+- `l-section`, `l-container` — Homepage.tsx, ResourcePageTemplate.tsx, BlogPostTemplate.tsx, Contact.tsx, ComponentLibrary.tsx, several app pages. Defined only in `_legacy/components.legacy.css`.
+- `btn-primary`, `btn-outline` — Contact.tsx, RetryButtonIsland.tsx, ErrorBoundary.tsx. Defined only in `_legacy/components.legacy.css`.
+
+B. CSS-only dead selectors (in new primitives.css, confirmed correct):
+- `rd-dot--good`, `rd-dot--risk`, `rd-dot--warn`, `rd-dot--info` — defined in new primitives.css. Used by SmartWebsiteSystemsRenderer.tsx, LocalSeoAuthorityRenderer.tsx. OK.
+
+C. Animation classes (rd-animate-fade, is-visible):
+- Were in orphaned framework.css. RevealMotion.tsx comment references it.
+- layout.css has `.rd-animate-section` keyframe shell but not the full is-visible/data-js-motion pattern.
+- Expected fallout. RevealMotion animations non-functional until layout.css extended.
+
+D. Validator references cleaned:
+- validate-tokens.mjs SKIP_FILES: removed foundation.css, framework.css, sws-visual-prototype.css (all deleted).
+
+**Dev routes (Step 4):**
+
+| Route | Status |
+|---|---|
+| /dev/sws-visual-prototype | DELETED — route files removed, CSS deleted |
+| /dev/component-system | KEPT — still present, no old-only CSS imports |
+| /dev/cta-label-contract | KEPT — referenced by validators |
+| /dev/authority-dashboard | KEPT — active |
+| /dev/system-dashboard | KEPT — active, referenced in route-inventory test |
+
+**Component gravity (Step 5):**
+
+| Folder | Status |
+|---|---|
+| src/components/reusable/ | EXISTS — contains IconBenefitCard using btn-primary/btn-outline. Scheduled for rebuild. Not deleted this milestone. |
+| src/components/sections/ | EXISTS — PrimaryCTASection, RelatedContentSection, SectionShell, others. Must stay for now. |
+| src/components/routing/ | ACTIVE |
+| src/components/system/ | ACTIVE — RetryButtonIsland uses btn-primary |
+| src/components/ui/ | ACTIVE |
+
+### Files Changed
+
+- `src/index.css` — updated to 6-layer import stack
+- `src/styles/tokens.css` — created
+- `src/styles/reset.css` — created
+- `src/styles/typography.css` — created
+- `src/styles/layout.css` — created
+- `src/styles/primitives.css` — replaced
+- `src/styles/components.css` — replaced
+- `scripts/validators/validate-tokens.mjs` — updated SKIP_FILES
+- `src/app/dev/component-system/page.tsx` — lint fixed
+
+### Files Deleted
+
+- `src/styles/foundation.css` — orphaned old CSS
+- `src/styles/framework.css` — orphaned old CSS
+- `src/styles/sws-visual-prototype.css` — orphaned prototype CSS
+- `src/app/dev/sws-visual-prototype/layout.tsx` — dead dev route
+- `src/app/dev/sws-visual-prototype/page.tsx` — dead dev route
+
+### Checks
+
+- Token validator: **✓ 5 files scanned, clean**
+- system:full: **56/56, 0 warnings**
+- npx next build: **clean, zero errors**
+
+### Expected Remaining Fallout
+
+- Old screens (Homepage.tsx, Contact.tsx, ResourcePageTemplate.tsx, BlogPostTemplate.tsx) still use `l-section`, `l-container`, `btn-primary`, `btn-outline` — only defined in `_legacy/`. These will lose styling once `_legacy/` is deleted. Scheduled for rebuild in later milestones.
+- RevealMotion animations (`rd-animate-fade`, `is-visible`) were in orphaned framework.css — non-functional now. layout.css needs extension when motion system is rebuilt.
+- `src/components/reusable/` uses `btn-primary`/`btn-outline` — scheduled for rebuild.
+
+### Next Milestone Candidates
+
+- Header/Footer rebuild (new primitives, no legacy classes)
+- Homepage rebuild (remove l-section/l-container gravity)
+- RevealMotion animation system in layout.css
+- _legacy/ deletion once all consumers migrated
