@@ -1106,3 +1106,93 @@ D. Validator references cleaned:
 - Homepage rebuild (remove l-section/l-container gravity)
 - RevealMotion animation system in layout.css
 - _legacy/ deletion once all consumers migrated
+
+---
+
+## Milestone 2 — Completion Report
+
+> Committed: `1dcaaef` | Branch: `ui-hard-reset`
+
+### Scope
+
+Header/Footer + Layout/Motion Foundation rebuild. Full audit of production Header/Footer against Figma Make design, then restyled to match. RevealMotion motion system restored (was broken after framework.css deletion in Milestone 1).
+
+### Figma Audit Findings
+
+**Header (Figma Make):**
+- White/85 glass backdrop, `max-w-[1240px]`, `h-[76px]`
+- Nav at 13.5px/500 weight
+- CTA: "Start a Conversation" pill button with cyan dot (`bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]`)
+
+**Footer (Figma Make):**
+- Background `#061323` (matches `--mw-bg-dark-deep` token)
+- 12-col grid: brand col-span-5, 3 link columns each col-span-2
+- Services column has all 6 canonical systems
+- Bottom bar: copyright + "Connected systems for service businesses." + cyan dot + "All systems operational"
+
+### Files Changed
+
+- `src/global/Header.tsx` — CTA dot indicator (`rd-btn__dot`) added to desktop CTA button
+- `src/global/HeaderMobileMenuIsland.tsx` — CTA dot added to mobile CTA button
+- `src/global/Footer.tsx` — Services column replaced with all 6 canonical systems at `/systems/` routes; heading renamed "Systems"; footer bottom updated with status indicator
+- `src/global/RevealMotion.tsx` — stale comment updated (framework.css → layout.css)
+- `src/styles/primitives.css` — `.rd-btn__dot` rule added
+- `src/styles/components.css` — `.footer__status` + `.footer__status-dot` rules added
+- `src/styles/layout.css` — full RevealMotion `data-js-motion` + `is-visible` system added (replaces broken framework.css system)
+
+### Tokens Used (no new tokens added)
+
+Existing tokens used for new rules:
+- `--mw-signal-cyan` / `--mw-glow-cyan` — cyan dot and status dot
+- `--mw-space-1-5` — gap in status span
+- `--mw-radius-pill` — dot border radius
+- `--mw-text-body-sm` / `--mw-text-on-dark-muted` — status text
+- `--mw-dur-slow` / `--mw-ease-out` — motion transitions
+
+### Header Changes
+
+- Desktop and mobile CTA button now has `<span class="rd-btn__dot">` — a 6px cyan dot with glow, positioned before or after the label text
+- No structural changes to nav or logo
+
+### Footer Changes
+
+- "Services" column renamed to "Systems"
+- All 6 canonical systems listed with correct `/systems/[slug]` routes:
+  - Smart Website Systems, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth
+- Footer bottom bar: `footer__copyright` now reads "© {year} MindWP. Connected systems for service businesses."
+- New `footer__status` span with pulsing cyan dot and "All systems operational" text
+- Utility links (Privacy, Terms, Cookies, Sitemap) retained — required for real site, absent from Figma prototype
+
+### Motion / Layout Changes
+
+- `layout.css`: complete `data-js-motion` + `is-visible` RevealMotion system added
+  - Pre-states for: `rd-animate-fade`, `rd-animate-up`, `rd-animate-panel`, `rd-animate-section`, `rd-animate-list`, `rd-animate-stagger`, `rd-animate-line`
+  - Visible states with `var(--mw-dur-slow)` / `var(--mw-ease-out)` transitions
+  - Stagger delays for 8 children (0ms → 420ms in 60ms steps)
+  - `prefers-reduced-motion` override: force-reveal all animated elements
+- Fixes the broken RevealMotion island (was looking for CSS in deleted framework.css)
+
+### Legacy Gravity Search Results
+
+- `header__` / `footer__` BEM classes outside global/: **none found**
+- `btn-primary` / `btn-outline` in global/: **none found**
+- `framework.css` / `foundation.css` references in global/: **none found** (only stale comment in RevealMotion.tsx — fixed)
+
+### Checks
+
+- Token validator: **✓ 5 files scanned, clean**
+- system:full: **56/56, 0 warnings**
+- npx next build: **clean, zero errors**
+
+### Expected Remaining Fallout
+
+- Old screens (Homepage.tsx, Contact.tsx, ResourcePageTemplate.tsx, BlogPostTemplate.tsx) still use `l-section`, `l-container`, `btn-primary`, `btn-outline` — only defined in `_legacy/`. These will lose styling once `_legacy/` is deleted. Scheduled for rebuild in later milestones.
+- `src/components/reusable/single/IconBenefitCard.tsx` uses `btn-primary`/`btn-outline`.
+- `src/components/system/RetryButtonIsland.tsx` uses `btn btn-primary`.
+- `_legacy/` folder kept — 6 `.legacy.css` files not yet deleted. Will be removed once all consumers are rebuilt.
+
+### Next Milestone Candidates
+
+- Homepage rebuild (remove l-section/l-container gravity, implement new page component structure)
+- Smart Website service page rebuild
+- `_legacy/` deletion once all consumers migrated
