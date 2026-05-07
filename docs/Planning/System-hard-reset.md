@@ -1377,4 +1377,35 @@ Local SEO Authority page (`/services/local-seo-authority`) — same polish pass 
 
 - `npm run system:quick` — ✓ 33/33 blocking validators passing
 - `npx next build` — ✓ Compiled successfully
-- `npx next build`
+
+---
+
+## Milestone 5.1 — Local SEO Authority Polish Pass
+
+**Commit:** ui-hard-reset: polish local seo authority
+**Status:** Complete
+
+### What changed
+
+- `src/styles/tokens.css` — added 5 new tokens: `--mw-signal-teal-surface`, `--mw-shadow-float`, `--mw-radius-2xl`, `--mw-radius-3xl`, `--mw-signal-teal-18`
+- `src/styles/pages/local-seo.css` — fixed 33 raw rgba/px violations; added SVG ring classes (`lsa-coverage-map__ring-*`); visual polish: decision board divider bands; visibility cycle 2×2 dark grid; `fill: none` moved to CSS
+- `src/domains/services/data/local-seo-authority.ts` — renamed 9 section `heading:` keys to `header:` to match shared convention and satisfy heading-hierarchy validator; `relatedSystems.heading` string converted to `header: { title }` object; `primary: true as const` corrected to `primary: true` to match conversion-contract validator allowlist; `relatedSystems.heading` text updated to `"What connects to local visibility"`
+- `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx` — all 35 `.heading.` section accesses renamed to `.header.`; `relatedSystems.header.title` render updated; SVG raw stroke/fill attributes moved to CSS classes; `data-testid="smart-cta"` added to `LSACTASection` outer element to satisfy publishable assertion
+- `src/domains/services/config.tsx` — added `SLUGS_WITH_OWN_RELATED` set; conditional skip of global `SmartRelatedSection` for LSA to prevent duplicate related block
+
+### Issues resolved
+
+- Token violations (33 raw rgba/px) in local-seo.css — all fixed
+- Heading hierarchy validator — `heading:` → `header:` rename in 9 sections
+- No-hardcoded-content validator — SVG inline rgba moved to CSS; `fill='none'` moved to CSS
+- Conversion contract validator — `primary: true as const` corrected; `relatedSystems.header.title` in renderer
+- Template rendering test — `data-testid="smart-cta"` added to `LSACTASection`
+- Duplicate related services block — fixed via `SLUGS_WITH_OWN_RELATED` in config.tsx
+
+### Checks
+
+- `node scripts/validators/validate-tokens.mjs` — ✓ 8 files scanned, 0 violations
+- `npm run system:full` — ✓ 55/56 validators passing (1 pre-existing lint error in unmodified dev page)
+- `npx next build` — ✓ Compiled successfully (no errors)
+- `npx vitest run tests/integration/template-rendering.test.ts` — ✓ passed
+- `npx vitest run tests/system/content-enforcement.test.ts` — ✓ passed

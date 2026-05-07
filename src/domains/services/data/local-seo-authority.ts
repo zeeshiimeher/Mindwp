@@ -50,7 +50,7 @@ export const localSeoAuthorityPage = {
 
   sections: {
     authorityDecision: {
-      heading: {
+      header: {
         kicker: 'Authority decision board',
         title: 'Package SEO vs local authority system',
         description:
@@ -65,16 +65,32 @@ export const localSeoAuthorityPage = {
         note: 'Builds signals Google can verify.',
       },
       criteria: [
-        { name: 'Scope of work', left: 'Tasks billed each month', right: 'Trust signals being built' },
-        { name: 'Starting point', left: 'Templated audit', right: 'What Google currently believes' },
+        {
+          name: 'Scope of work',
+          left: 'Tasks billed each month',
+          right: 'Trust signals being built',
+        },
+        {
+          name: 'Starting point',
+          left: 'Templated audit',
+          right: 'What Google currently believes',
+        },
         { name: 'Results timeline', left: 'Promised in weeks', right: 'Earned over months' },
-        { name: 'What it measures', left: 'Activity reports', right: 'Visibility, intent, conversion' },
-        { name: 'What happens after setup', left: 'Repeat tasks', right: 'Maintained signal layer' },
+        {
+          name: 'What it measures',
+          left: 'Activity reports',
+          right: 'Visibility, intent, conversion',
+        },
+        {
+          name: 'What happens after setup',
+          left: 'Repeat tasks',
+          right: 'Maintained signal layer',
+        },
       ],
     },
 
     signalAudit: {
-      heading: {
+      header: {
         kicker: 'Local presence board',
         title: 'Where your local visibility stands right now',
         description:
@@ -130,7 +146,7 @@ export const localSeoAuthorityPage = {
     },
 
     structuredComparison: {
-      heading: {
+      header: {
         kicker: 'Scorecard',
         title: 'Off-the-shelf SEO vs local visibility that holds',
         description:
@@ -163,7 +179,7 @@ export const localSeoAuthorityPage = {
     },
 
     assumptions: {
-      heading: {
+      header: {
         kicker: 'Why SEO has not worked before',
         title: 'Three assumptions that keep you invisible',
         description:
@@ -189,7 +205,7 @@ export const localSeoAuthorityPage = {
     },
 
     coverageMap: {
-      heading: {
+      header: {
         kicker: 'What is included',
         title: 'What we handle for your local visibility',
         description:
@@ -211,7 +227,7 @@ export const localSeoAuthorityPage = {
     },
 
     visibilityCycle: {
-      heading: {
+      header: {
         kicker: 'After we start',
         title: 'What happens after we start',
         description:
@@ -229,7 +245,7 @@ export const localSeoAuthorityPage = {
     },
 
     proofStory: {
-      heading: {
+      header: {
         kicker: 'Scenario study',
         title: 'What this looked like for a real business',
         description:
@@ -250,8 +266,16 @@ export const localSeoAuthorityPage = {
         label: 'What changed',
         title: 'Clearer service visibility. Less dependence on paid clicks for every enquiry.',
         items: [
-          { iconKey: 'file-text' as const, label: 'Service pages', note: 'Treatments separated, intent matched' },
-          { iconKey: 'building' as const, label: 'Google profile', note: 'Categories, services, posts complete' },
+          {
+            iconKey: 'file-text' as const,
+            label: 'Service pages',
+            note: 'Treatments separated, intent matched',
+          },
+          {
+            iconKey: 'building' as const,
+            label: 'Google profile',
+            note: 'Categories, services, posts complete',
+          },
           { iconKey: 'map-pin' as const, label: 'Citations', note: 'Directory details aligned' },
           { iconKey: 'search' as const, label: 'Local content', note: 'Area context published' },
         ],
@@ -260,7 +284,7 @@ export const localSeoAuthorityPage = {
     },
 
     fitFilter: {
-      heading: {
+      header: {
         kicker: 'Fit check',
         title: 'Is this right for your business?',
         description:
@@ -311,7 +335,7 @@ export const localSeoAuthorityPage = {
     },
 
     faq: {
-      heading: {
+      header: {
         kicker: 'Common questions',
         title: 'What business owners ask about local SEO',
       },
@@ -386,7 +410,7 @@ export const localSeoAuthorityPage = {
     },
 
     relatedSystems: {
-      heading: 'Related Services',
+      header: { title: 'What connects to local visibility' },
       description: 'Local visibility works better when the business foundation around it is clear.',
       systems: [
         {
@@ -418,7 +442,7 @@ export const localSeoAuthorityPage = {
       description:
         'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true as const }],
+    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
     expectations: [
       { num: '01', text: 'Signal audit \u2014 what Google currently sees' },
       { num: '02', text: 'Trust gaps \u2014 what it cannot verify' },

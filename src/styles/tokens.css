@@ -81,6 +81,7 @@
     --mw-signal-cyan-20: color-mix(in oklch, #35C7D8 20%, transparent);
     --mw-signal-cyan-30: color-mix(in oklch, #35C7D8 30%, transparent);
     --mw-signal-teal-10: color-mix(in oklch, #14B8A6 10%, transparent);
+    --mw-signal-teal-18: color-mix(in oklch, #14B8A6 18%, transparent);
     --mw-signal-teal-30: color-mix(in oklch, #14B8A6 30%, transparent);
     --mw-signal-green-10: color-mix(in oklch, #21B985 10%, transparent);
     --mw-signal-green-30: color-mix(in oklch, #21B985 30%, transparent);
@@ -92,6 +93,9 @@
     --mw-signal-red-30: color-mix(in oklch, #E76F6F 30%, transparent);
     --mw-signal-purple-10: color-mix(in oklch, #9B7DE0 10%, transparent);
     --mw-signal-purple-30: color-mix(in oklch, #9B7DE0 30%, transparent);
+
+    /* Semantic surface tint — for authority/connected panel gradients on light surfaces */
+    --mw-signal-teal-surface: rgba(223, 248, 243, 0.4);
 
     /* ══════════════════════════════════════════════════════
        3. SEMANTIC SURFACE / TEXT / BORDER TOKENS
@@ -282,6 +286,10 @@
     /* rounded-2xl — main panel radius */
     --mw-radius-xl: 20px;
     /* large panel */
+    --mw-radius-2xl: 24px;
+    /* extra-large card/container */
+    --mw-radius-3xl: 32px;
+    /* jumbo container */
     --mw-radius-pill: 9999px;
     /* rounded-full */
 
@@ -294,6 +302,7 @@
     --mw-shadow-card: 0 8px 24px rgba(8, 17, 31, 0.06);
     --mw-shadow-panel: 0 16px 48px rgba(8, 17, 31, 0.10);
     --mw-shadow-heavy: 0 32px 80px rgba(8, 17, 31, 0.18);
+    --mw-shadow-float: 0 12px 40px rgba(8, 17, 31, 0.08);
     --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, #35C7D8 35%, transparent);
 
     /* Signal glow — for animated dots and status indicators */

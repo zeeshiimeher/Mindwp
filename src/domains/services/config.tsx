@@ -4,6 +4,13 @@ import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { SERVICE_DOMAIN_REGISTRY, type ServicePageDataBySlug } from '@/domains/services/pageData';
 
+/**
+ * Rebuilt service pages that include their own page-specific related section.
+ * These pages must NOT receive the global SmartRelatedSection injection to avoid
+ * showing two related-content blocks.
+ */
+const SLUGS_WITH_OWN_RELATED = new Set<string>(['local-seo-authority']);
+
 type ServiceEntry<TData> = {
   data: TData;
   render: (data: TData, slug: string) => ReactElement;
@@ -32,7 +39,9 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
       primarySystem={primarySystem}
     >
       {entry.render(entry.data, slug)}
-      <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
+      {!SLUGS_WITH_OWN_RELATED.has(slug) && (
+        <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
+      )}
     </CTARegistryProvider>
   );
 }
