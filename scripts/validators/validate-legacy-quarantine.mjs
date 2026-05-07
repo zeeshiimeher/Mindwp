@@ -55,6 +55,8 @@ const FORBIDDEN_CLASS_PATTERNS = [
     { pattern: /className=['"]scope__/, label: "old 'scope__' class" },
     { pattern: /className=['"]process-steps/, label: "old 'process-steps' class" },
     { pattern: /className=['"]layer-stack/, label: "old 'layer-stack' class" },
+    { pattern: /className=['"]lsa-related/, label: "old 'lsa-related' class (use mw-related-section)" },
+    { pattern: /className=['"]related-content__/, label: "old 'related-content__' class (use mw-related-section__)" },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────

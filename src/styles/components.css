@@ -578,6 +578,166 @@
 }
 
 /* ══════════════════════════════════════════════════════
+   RELATED SECTION — global wrapper-owned related content
+   src/components/navigation/RelatedSection.tsx
+   Variants: standard | rail | compact
+   ══════════════════════════════════════════════════════ */
+
+.mw-related-section {
+    background: var(--mw-bg-mist);
+    padding-block: var(--mw-section-block);
+}
+
+.mw-related-section__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-14);
+}
+
+.mw-related-section__header {
+    max-width: 56ch;
+}
+
+.mw-related-section__title {
+    font-size: var(--mw-text-4xl);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--mw-text-primary);
+    margin: 0;
+}
+
+.mw-related-section__description {
+    margin-top: var(--mw-space-5);
+    font-size: var(--mw-text-base);
+    line-height: 1.65;
+    color: var(--mw-text-secondary);
+    margin-bottom: 0;
+}
+
+.mw-related-section__rail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-5);
+}
+
+@media (min-width: 768px) {
+    .mw-related-section__rail {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.mw-related-section__item {
+    display: block;
+    border-radius: var(--mw-radius-xl);
+    background: var(--mw-bg-page);
+    border: 1px solid var(--mw-border-light);
+    padding: var(--mw-space-7);
+    text-decoration: none;
+    transition: box-shadow var(--mw-dur-fast) var(--mw-ease-out);
+}
+
+.mw-related-section__item:hover {
+    box-shadow: var(--mw-shadow-float);
+}
+
+.mw-related-section__item-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--mw-space-5);
+}
+
+.mw-related-section__label {
+    display: inline-block;
+    padding: var(--mw-space-1) var(--mw-space-2);
+    border-radius: var(--mw-radius-sm);
+    background: var(--mw-signal-green-10);
+    color: var(--mw-color-dark-hover);
+    font-size: var(--mw-text-xs);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.mw-related-section__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mw-signal-teal);
+    box-shadow: 0 0 8px var(--mw-signal-teal);
+    flex-shrink: 0;
+}
+
+.mw-related-section__item-title {
+    font-size: var(--mw-text-lg);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--mw-text-primary);
+    margin-bottom: var(--mw-space-3);
+}
+
+.mw-related-section__connect-label {
+    font-size: var(--mw-text-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mw-text-subtle);
+    margin-top: var(--mw-space-3);
+    margin-bottom: var(--mw-space-1-5);
+}
+
+.mw-related-section__reason {
+    font-size: var(--mw-text-sm);
+    line-height: 1.55;
+    color: var(--mw-text-secondary);
+    margin-bottom: var(--mw-space-5);
+}
+
+.mw-related-section__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mw-space-1-5);
+    font-size: var(--mw-text-sm);
+    font-weight: 600;
+    color: var(--mw-text-primary);
+    text-decoration: none;
+}
+
+/* Compact variant — list style */
+.mw-related-section--compact .mw-related-section__rail {
+    grid-template-columns: 1fr;
+}
+
+.mw-related-section--compact .mw-related-section__item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--mw-space-4);
+    padding: var(--mw-space-5) var(--mw-space-6);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--mw-border-light);
+    border-bottom: none;
+}
+
+.mw-related-section--compact .mw-related-section__item:last-child {
+    border-bottom: 1px solid var(--mw-border-light);
+}
+
+.mw-related-section--compact .mw-related-section__item-bar {
+    display: none;
+}
+
+.mw-related-section--compact .mw-related-section__connect-label,
+.mw-related-section--compact .mw-related-section__reason,
+.mw-related-section--compact .mw-related-section__dot {
+    display: none;
+}
+
+/* ══════════════════════════════════════════════════════
    DECISION PANEL — shared final conversion section
    src/components/conversion/DecisionPanel.tsx
    ══════════════════════════════════════════════════════ */

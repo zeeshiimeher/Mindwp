@@ -2,6 +2,7 @@
 // No routing, fetching, or data lookups.
 import React from 'react';
 
+import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   CaseStudyBusinessImpactSection,
@@ -20,7 +21,6 @@ import { TestimonialCard } from '@/components/reusable/single';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { env } from '@/env';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
@@ -605,7 +605,7 @@ export function CaseStudyTemplate({
 
       case 'more':
         return (
-          <SmartRelatedSection
+          <RelatedSection
             key={`more-${index}`}
             pageId={pageId}
             pageType='case-study'

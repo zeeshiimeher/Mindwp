@@ -16,8 +16,8 @@ vi.mock('@/components/sections/PrimaryCTASection', () => ({
   ),
 }));
 
-vi.mock('@/components/system/SmartRelatedSection', () => ({
-  SmartRelatedSection: () => <div data-testid='smart-related'>related</div>,
+vi.mock('@/components/navigation/RelatedSection', () => ({
+  RelatedSection: () => <div data-testid='related-section'>related</div>,
 }));
 
 vi.mock('@/domains/blog/ui/BlogPostShareIsland', () => ({

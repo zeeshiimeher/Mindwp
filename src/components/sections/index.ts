@@ -1,17 +1,16 @@
 /**
  * Quarantined section components.
  *
- * Only PrimaryCTASection and RelatedContentSection remain.
- * These are kept while unrebuilt pages still import them.
+ * Only PrimaryCTASection remains while unrebuilt pages still import it.
+ * RelatedContentSection and SmartRelatedSection* replaced by RelatedSection
+ * (src/components/navigation/RelatedSection.tsx) in Milestone 6F.
  * See docs/Planning/Legacy-dependency-map.md for deletion gates.
  *
  * Do NOT import from this module in rebuilt/new-system files.
  */
 
 export * from './PrimaryCTASection';
-export * from './RelatedContentSection';
 export type {
-  BulletItem,
   MediaSource,
   SectionAlign,
   SectionDensity,

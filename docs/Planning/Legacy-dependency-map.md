@@ -1,6 +1,7 @@
 # Legacy Dependency Map
 
 > Created: Milestone 6E. Updated as pages are rebuilt.
+> Last updated: Milestone 6F (global RelatedSection rebuilt; SmartRelatedSection*, RelatedContentSection, icons.ts deleted).
 
 ## Status
 
@@ -26,11 +27,9 @@ Quarantine is enforced by `scripts/validators/validate-legacy-quarantine.mjs`.
 | Old file / pattern | Current consumers | Route / domain | Status | Delete condition |
 |---|---|---|---|---|
 | `src/components/sections/PrimaryCTASection.tsx` | About.tsx, Contact.tsx, BlogPostTemplate, BlogFooterCTA, CaseStudyTemplate, CaseStudy/index, Features pages + 7 renderers, Industries templates + pages, Resources hub/template, Services pages + 14 old renderers, dev/cta-label-contract | all unrebuilt domains + About/Contact | Quarantine delete-later | When all consuming pages are rebuilt and no longer import it |
-| `src/components/sections/RelatedContentSection.tsx` | SmartRelatedSectionClient.tsx (system component) | Global (smart related content system) | Quarantine delete-later | When SmartRelatedSectionClient is rebuilt to use new-system component |
-| `src/components/sections/SectionShell.tsx` | PrimaryCTASection.tsx, RelatedContentSection.tsx (and 17 deleted section files) | Internal to sections/ only | Quarantine delete-later | When PrimaryCTASection and RelatedContentSection are deleted |
-| `src/components/sections/icons.ts` | RelatedContentSection.tsx internally | Internal to sections/ | Quarantine delete-later | Same as RelatedContentSection |
-| `src/components/sections/types.ts` | PrimaryCTASection.tsx, RelatedContentSection.tsx, SectionShell.tsx internally | Internal to sections/ | Quarantine delete-later | Same as PrimaryCTASection and RelatedContentSection |
-| `src/components/sections/index.ts` | Barrel (trimmed — 17 zero-import sections removed in 6E) | Internal | Quarantine delete-later | When PrimaryCTASection and RelatedContentSection are deleted |
+| `src/components/sections/SectionShell.tsx` | PrimaryCTASection.tsx (and 17 deleted section files) | Internal to sections/ only | Quarantine delete-later | When PrimaryCTASection is deleted |
+| `src/components/sections/types.ts` | PrimaryCTASection.tsx, SectionShell.tsx internally | Internal to sections/ | Quarantine delete-later | Same as PrimaryCTASection |
+| `src/components/sections/index.ts` | Barrel (trimmed — only PrimaryCTASection + types) | Internal | Quarantine delete-later | When PrimaryCTASection is deleted |
 | `src/components/reusable/` (entire folder) | Blog templates/UI, Resources templates/pages, Case-study template, Features renderers (7), Industries templates, Services old renderers (14+), About, Contact, dev dashboards, ClusterPageLayout, ActionButtons | All unrebuilt domains + shared system components | Quarantine delete-later | When all consuming pages/components are rebuilt |
 
 ---
@@ -107,9 +106,14 @@ The following are unrebuilt service renderers still importing from reusable/sect
 
 ### System Components (shared infrastructure)
 These are in `src/components/system/` and use old imports internally:
-- `SmartRelatedSectionClient.tsx` — imports RelatedContentSection (the primary dependency blocker)
 - `ClusterPageLayout.tsx` — imports RelatedCardsSection from reusable/sections/core
 - `ActionButtons.tsx` — imports Button from reusable/single (old Button, not new-system component)
+
+**Deleted in 6F** (no longer in quarantine):
+- `SmartRelatedSection.tsx` — replaced by `src/components/navigation/RelatedSection.tsx`
+- `SmartRelatedSectionClient.tsx` — deleted with SmartRelatedSection chain
+- `src/components/sections/RelatedContentSection.tsx` — deleted
+- `src/components/sections/icons.ts` — deleted
 
 ### Dev Pages (internal only)
 - `src/app/dev/system-dashboard/OperatorDashboard.tsx` — SectionWrapper from reusable
@@ -122,7 +126,12 @@ These are in `src/components/system/` and use old imports internally:
 
 ### Gate: Delete the 17 zero-import `src/components/sections/` orphans
 - **Already deleted in 6E** — AccordionFAQSection, AuthoritySignalMapSection, BeforeAfterSection, CompoundingSignalsSection, CriteriaComparisonSection, GridCardsSection, HeroSplitSection, ImageStorySection, JourneyLeakMapSection, LayerStackSection, LeakBoardSection, OperatingBuildSection, ProcessStepsSection, ProofStorySection, QualificationSection, ScopeSection, ServiceBridgeSection
-- `src/components/sections/index.ts` trimmed to export only: PrimaryCTASection, RelatedContentSection, SectionShell, icons, types
+- `src/components/sections/index.ts` trimmed to export only: PrimaryCTASection + types
+
+### Gate: Delete RelatedContentSection (+ SmartRelatedSection chain)
+- **Already completed in 6F** — RelatedContentSection.tsx, SmartRelatedSection.tsx, SmartRelatedSectionClient.tsx, icons.ts all deleted.
+- New-system replacement: `src/components/navigation/RelatedSection.tsx`
+- LSA lsa-related page-owned section removed; global injection handles all service + feature + industry + case-study pages.
 
 ### Gate: Delete PrimaryCTASection
 **Condition**: All of the following are rebuilt to use DecisionPanel:
@@ -134,14 +143,10 @@ These are in `src/components/system/` and use old imports internally:
 - All case-study templates/pages
 - All old service renderers (14)
 - dev/cta-label-contract page removed or updated
-**Then also delete**: SectionShell.tsx, types.ts (if no longer needed by RelatedContentSection)
-
-### Gate: Delete RelatedContentSection
-**Condition**: SmartRelatedSectionClient.tsx is rebuilt to use a new-system related content component.
-**Then also delete**: icons.ts (if only used by deleted sections and RelatedContentSection)
+**Then also delete**: SectionShell.tsx, types.ts
 
 ### Gate: Delete entire `src/components/sections/` folder
-**Condition**: Both PrimaryCTASection and RelatedContentSection deletion gates are met.
+**Condition**: PrimaryCTASection deletion gate is met (RelatedContentSection already deleted in 6F).
 
 ### Gate: Delete `src/components/reusable/`
 **Condition**: All of the following domains are rebuilt with new-system components:
@@ -152,7 +157,6 @@ These are in `src/components/system/` and use old imports internally:
 - All industry templates/pages
 - All old service renderers
 - About.tsx and Contact.tsx
-- SmartRelatedSectionClient.tsx (RelatedCardsSection dependency)
 - ClusterPageLayout.tsx (RelatedCardsSection dependency)
 - ActionButtons.tsx (Button dependency)
 - Dev dashboard pages (SectionWrapper dependency)

@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
+import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import { IndustryCategoryPageTemplate } from '@/domains/industries/templates/IndustryCategoryPageTemplate';
 import { IndustryDetailPageTemplate } from '@/domains/industries/templates/IndustryDetailPageTemplate';
@@ -175,7 +175,7 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
             primarySystem={primarySystem}
           >
             {renderCategory(data)}
-            <SmartRelatedSection
+            <RelatedSection
               pageId={`industry-category:${data.slug}`}
               pageType='industry-category'
               slug={data.slug}
@@ -204,7 +204,7 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
           primarySystem={primarySystem}
         >
           {renderDetail(data)}
-          <SmartRelatedSection
+          <RelatedSection
             pageId={`industry-detail:${data.slug}`}
             pageType='industry-detail'
             slug={data.slug}

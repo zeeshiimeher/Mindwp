@@ -1,7 +1,5 @@
 import type { ReactNode } from 'react';
 
-import type { SectionIconKey } from './icons';
-
 /**
  * Shared types used across the production section component family.
  *
@@ -29,11 +27,6 @@ export interface SectionLink {
   href: string;
   /** When true the link should render as the primary action button. */
   primary?: boolean;
-}
-
-export interface BulletItem {
-  text: string;
-  iconKey?: SectionIconKey;
 }
 
 export interface MediaSource {

@@ -408,31 +408,6 @@ export const localSeoAuthorityPage = {
         },
       ],
     },
-
-    relatedSystems: {
-      header: { title: 'What connects to local visibility' },
-      description: 'Local visibility works better when the business foundation around it is clear.',
-      systems: [
-        {
-          tag: 'Connected system',
-          title: 'Smart Website Systems',
-          note: 'Service pages and enquiry paths give local visibility work somewhere useful to land.',
-          href: '/services/smart-website-systems',
-        },
-        {
-          tag: 'Connected system',
-          title: 'Reputation & Review Systems',
-          note: 'Reviews strengthen trust signals and help local decision-making.',
-          href: '/services/reputation-review-systems',
-        },
-        {
-          tag: 'Resource',
-          title: 'Service Pages vs One Generic Services Page',
-          note: 'Clear service structure helps Google match the right search to the right page.',
-          href: '/services/service-pages-vs-one-generic-services-page',
-        },
-      ],
-    },
   },
 
   cta: {

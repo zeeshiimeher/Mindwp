@@ -2,7 +2,7 @@
  * UI Intelligence Config
  *
  * Pure config for graph-powered UI components.
- * No logic — just lookup tables consumed by SmartRelatedSection, PrimaryCTASection,
+ * No logic — just lookup tables consumed by RelatedSection, PrimaryCTASection,
  * and ClusterPageLayout.
  *
  * Rules:

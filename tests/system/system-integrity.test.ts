@@ -14,7 +14,7 @@ import { getValidatorDefinitions } from '@/../scripts/core/system-manifest.mjs';
 const workspaceRoot = path.resolve(import.meta.dirname, '..', '..');
 const integrityTargets = [
     'src/components/sections/PrimaryCTASection.tsx',
-    'src/components/sections/RelatedContentSection.tsx',
+    'src/components/navigation/RelatedSection.tsx',
     'src/lib/seo/schema.ts',
     'src/lib/content-graph/publishable.tsx',
     'scripts/core/system-report.mjs',
@@ -35,13 +35,13 @@ describe('system invariant: closure lock', () => {
             path.join(workspaceRoot, 'src/components/sections/PrimaryCTASection.tsx'),
             'utf8'
         );
-        const relatedContent = readFileSync(
-            path.join(workspaceRoot, 'src/components/sections/RelatedContentSection.tsx'),
+        const relatedSection = readFileSync(
+            path.join(workspaceRoot, 'src/components/navigation/RelatedSection.tsx'),
             'utf8'
         );
 
         expect(primaryCta.includes('return null')).toBe(false);
-        expect(relatedContent.includes('return null;')).toBe(false);
+        expect(relatedSection.includes('return null;')).toBe(false);
     });
 
     test('system invariants still resolve required SEO metadata for publishable entries', () => {

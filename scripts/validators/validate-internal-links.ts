@@ -2,7 +2,7 @@
  * Internal Link Validator
  *
  * Validates two link layers before build:
- *   - SmartRelatedSection link limits and duplicate targets
+ *   - RelatedSection link limits and duplicate targets
  *   - Authored internal href literals against the published route inventory
  *
  * Usage: npx tsx scripts/validators/validate-internal-links.ts

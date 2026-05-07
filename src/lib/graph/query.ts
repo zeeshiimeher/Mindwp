@@ -16,7 +16,7 @@ import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
  * - Cluster queries scan the full graph by metadata field
  * - Throws when required graph data is missing
  *
- * Consumers: SmartRelatedSection, GraphAwareSidebar, ClusterPageLayout
+ * Consumers: RelatedSection, GraphAwareSidebar, ClusterPageLayout
  */
 
 // Re-export for consumers (single import point)

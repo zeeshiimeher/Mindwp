@@ -1795,3 +1795,60 @@ After 6B enforced SectionFrame and DecisionPanel across section content, 6C comp
 ### Results
 - `system:full` — [run after this change, see checks]
 - `npx next build` — [see checks]
+
+---
+
+## Milestone 6F — Rebuild Global Related Section
+
+### What Changed
+
+**Global `RelatedSection` created:**
+- `src/components/navigation/RelatedSection.tsx` — single server component replacing the old SmartRelatedSection → SmartRelatedSectionClient → RelatedContentSection chain
+- Props: `{ pageId, pageType, slug?, nodeType?, variant?: 'standard' | 'rail' | 'compact' }`
+- Throws on missing data (no silent null fallbacks)
+- CSS: `mw-related-section*` block added to `src/styles/components.css` (LSA card design direction; 3-col grid for standard, list for compact)
+
+**LSA page-owned related section removed:**
+- `lsa-related` JSX block removed from `LocalSeoAuthorityRenderer.tsx`
+- `relatedSystems` data block removed from `src/domains/services/data/local-seo-authority.ts`
+- `14. RELATED SYSTEMS` CSS section removed from `src/styles/services/local-seo.css` (~110 lines)
+- `relatedSection: { enabled: false }` removed from LSA registry entry in `pageData.ts` — LSA now uses global injection
+
+**Config injection updated:**
+- `src/domains/services/config.tsx` — imports RelatedSection, passes `variant` from registry options
+- `src/domains/features/config.tsx` — imports RelatedSection
+- `src/domains/industries/config.tsx` — imports RelatedSection
+- `src/domains/case-studies/templates/CaseStudyTemplate.tsx` — imports RelatedSection
+
+**Deleted files:**
+- `src/components/system/SmartRelatedSection.tsx`
+- `src/components/system/SmartRelatedSectionClient.tsx`
+- `src/components/sections/RelatedContentSection.tsx`
+- `src/components/sections/icons.ts`
+
+**Updated files:**
+- `src/components/sections/types.ts` — removed `BulletItem` interface and `SectionIconKey` import (only consumers were icons.ts/RelatedContentSection)
+- `src/components/sections/index.ts` — removed RelatedContentSection export and BulletItem from types re-export
+- `src/domains/services/pageData.ts` — removed `RelatedContentMode` type; added `variant` option to `relatedSection`
+- Validators: `validate-related-duplication.ts`, `validate-content-enforcement.ts`, `validate-legacy-quarantine.mjs`
+- Tests: `system-integrity.test.ts`, `audit-coverage.test.ts`, `template-safety.test.tsx`, `services/config.test.tsx`, `features/config.test.tsx`, `CaseStudyTemplate.test.tsx`
+- Docs: `Legacy-dependency-map.md` updated
+
+### Quarantine Keep (still needed after 6F)
+- `src/components/sections/PrimaryCTASection.tsx` — ~40 consumers across all unrebuilt domains
+- `src/components/sections/SectionShell.tsx` — internal dependency of PrimaryCTASection
+- `src/components/sections/types.ts` — internal dependency of PrimaryCTASection/SectionShell
+- `src/components/sections/index.ts` — barrel (now only PrimaryCTASection + types)
+- `src/components/reusable/` — all unrebuilt page domains
+
+### Related Config Model (after 6F)
+```ts
+relatedSection?: {
+  enabled?: boolean;       // default true — set false to suppress
+  variant?: 'standard' | 'rail' | 'compact';  // default 'standard'
+}
+```
+
+### Results
+- `system:full` — [see Step 12 checks]
+- `npx next build` — [see Step 12 checks]

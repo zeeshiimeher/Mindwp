@@ -785,26 +785,15 @@ function scanButtonRule(): Issue[] {
           'SectionShell must require and always render heading.description when heading is provided.',
       },
       {
-        file: 'src/components/sections/RelatedContentSection.tsx',
+        file: 'src/components/navigation/RelatedSection.tsx',
         expected: [
-          'heading: SectionHeading;',
-          "throw new Error('[RelatedContentSection] Invalid data');",
-        ],
-        forbidden: ["item.cta ?? 'Read more'"],
-        issueType: 'invalid_related_content_contract',
-        message:
-          'RelatedContentSection must require a heading and must not apply CTA label fallback logic.',
-      },
-      {
-        file: 'src/components/system/SmartRelatedSectionClient.tsx',
-        expected: [
-          "throw new Error('[SmartRelatedSectionClient] Invalid data');",
-          'cta: RELATED_CONTENT_CTA_LABEL',
+          "throw new Error('[RelatedSection] No related content available.');",
+          "throw new Error('[RelatedSection] Invalid data');",
         ],
         forbidden: ['return null', 'emptyState', "'Read more'"],
-        issueType: 'invalid_smart_related_system_contract',
+        issueType: 'invalid_related_section_contract',
         message:
-          'SmartRelatedSectionClient must fail loud and must not inject hardcoded CTA or empty-state fallbacks.',
+          'RelatedSection must fail loud on missing data and must not inject hardcoded fallback copy.',
       },
       {
         file: 'src/components/system/RetryButtonIsland.tsx',

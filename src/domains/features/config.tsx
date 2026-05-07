@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react';
 
+import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { FEATURE_DOMAIN_REGISTRY, getFeaturePageDataBySlug } from '@/domains/features/registry';
 import type { FeaturePageData } from '@/domains/features/types';
 
@@ -60,7 +60,7 @@ export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
       primarySystem={primarySystem}
     >
       <FeaturePage data={data} />
-      <SmartRelatedSection pageId={`feature:${slug}`} pageType='feature' slug={slug} />
+      <RelatedSection pageId={`feature:${slug}`} pageType='feature' slug={slug} />
     </CTARegistryProvider>
   );
 };

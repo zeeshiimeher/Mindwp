@@ -23,7 +23,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 // LocalSeoAuthorityRenderer
 // Sections: hero · authorityDecision · signalAudit · structuredComparison ·
 //           assumptions · coverageMap · visibilityCycle · proofStory ·
-//           fitFilter · faq · cta · relatedSystems
+//           fitFilter · faq · cta
+// Related: injected globally by services/config.tsx (RelatedSection)
 //
 // CSS: src/styles/services/local-seo.css (lsa-* classes)
 // =============================================================================
@@ -45,7 +46,6 @@ const ARIA_CYCLE_DOT = 'Visibility cycle';
 const ARIA_PROOF_DOT = 'Proof story';
 const ARIA_FIT_FILTER_DOT = 'Fit filter';
 const ARIA_FAQ_DOT = 'Frequently asked questions';
-const ARIA_RELATED_DOT = 'Related services';
 
 // -- Icon map -----------------------------------------------------------------
 
@@ -86,7 +86,6 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
     proofStory,
     fitFilter,
     faq,
-    relatedSystems,
   } = sections;
 
   const contactHref = buildContactHref({
@@ -697,36 +696,6 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
         actions={data.cta.actions}
         expectations={data.cta.expectations}
       />
-
-      {/* -- RELATED SYSTEMS ------------------------------------------------- */}
-      <section className='lsa-related' aria-label={ARIA_RELATED_DOT}>
-        <div className='mw-container'>
-          <div className='lsa-related__header'>
-            <h2 className='lsa-related__heading'>{relatedSystems.header.title}</h2>
-            <p className='lsa-related__description'>{relatedSystems.description}</p>
-          </div>
-
-          <div className='lsa-related__grid mw-animate-up'>
-            {relatedSystems.systems.map(
-              (sys: { tag: string; title: string; note: string; href: string }) => (
-                <a key={sys.href} href={sys.href} className='lsa-related__card'>
-                  <div className='lsa-related__card-bar'>
-                    <span className='lsa-related__card-tag'>{sys.tag}</span>
-                    <span className='lsa-related__card-dot' aria-hidden='true' />
-                  </div>
-                  <div className='lsa-related__card-title'>{sys.title}</div>
-                  <div className='lsa-related__card-connect-label'>Connection</div>
-                  <div className='lsa-related__card-note'>{sys.note}</div>
-                  <span className='lsa-related__card-cta'>
-                    View system
-                    <ArrowRight size={14} aria-hidden='true' />
-                  </span>
-                </a>
-              )
-            )}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

@@ -35,8 +35,8 @@ vi.mock('@/components/sections/PrimaryCTASection', () => ({
   ),
 }));
 
-vi.mock('@/components/system/SmartRelatedSection', () => ({
-  SmartRelatedSection: () => <div>related-section</div>,
+vi.mock('@/components/navigation/RelatedSection', () => ({
+  RelatedSection: () => <div>related-section</div>,
 }));
 
 describe('CaseStudyTemplate', () => {

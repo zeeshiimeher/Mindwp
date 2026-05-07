@@ -76,7 +76,7 @@ const files = await collectTsxFiles(srcRoot);
 for (const filePath of files) {
   const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
   if (
-    relativePath === 'src/components/system/SmartRelatedSection.tsx' ||
+    relativePath === 'src/components/navigation/RelatedSection.tsx' ||
     relativePath.startsWith('src/components/') ||
     relativePath.endsWith('/config.tsx')
   ) {
@@ -84,13 +84,13 @@ for (const filePath of files) {
   }
 
   const content = await fs.readFile(filePath, 'utf8');
-  const matches = content.match(/<SmartRelatedSection\b/g) ?? [];
+  const matches = content.match(/<RelatedSection\b/g) ?? [];
   const repeatedIconRows = collectRepeatedIconRows(content);
 
   if (matches.length > 1) {
     report.push({
       page: relativePath,
-      violations: [`Detected ${matches.length} SmartRelatedSection renders in one file`],
+      violations: [`Detected ${matches.length} RelatedSection renders in one file`],
     });
   }
 

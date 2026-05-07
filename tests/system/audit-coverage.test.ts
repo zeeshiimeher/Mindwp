@@ -19,8 +19,8 @@ describe('system invariant: enforcement anchors', () => {
                 expected: 'JsonLd requires a non-empty @context.',
             },
             {
-                filePath: 'src/components/sections/RelatedContentSection.tsx',
-                expected: 'requires groups or an explicit empty state',
+                filePath: 'src/components/navigation/RelatedSection.tsx',
+                expected: '[RelatedSection] No related content available.',
             },
             {
                 filePath: 'src/lib/seo/seoResolver.ts',

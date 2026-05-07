@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
+import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { SERVICE_DOMAIN_REGISTRY, type ServicePageDataBySlug } from '@/domains/services/pageData';
 
 type ServiceEntry<TData> = {
@@ -27,6 +27,7 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
 
   const registryEntry = SERVICE_DOMAIN_REGISTRY[slug as keyof typeof SERVICE_DOMAIN_REGISTRY];
   const relatedEnabled = registryEntry?.options?.relatedSection?.enabled ?? true;
+  const relatedVariant = registryEntry?.options?.relatedSection?.variant ?? 'standard';
 
   return (
     <CTARegistryProvider
@@ -36,7 +37,12 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
     >
       {entry.render(entry.data, slug)}
       {relatedEnabled && (
-        <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
+        <RelatedSection
+          pageId={`service:${slug}`}
+          pageType='service'
+          slug={slug}
+          variant={relatedVariant}
+        />
       )}
     </CTARegistryProvider>
   );

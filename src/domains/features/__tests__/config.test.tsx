@@ -3,10 +3,8 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-vi.mock('@/components/system/SmartRelatedSection', () => ({
-  SmartRelatedSection: ({ slug }: { slug?: string }) => (
-    <div data-testid='related-section'>{slug}</div>
-  ),
+vi.mock('@/components/navigation/RelatedSection', () => ({
+  RelatedSection: ({ slug }: { slug?: string }) => <div data-testid='related-section'>{slug}</div>,
 }));
 
 vi.mock('@/domains/features/pages/voicecalls', () => ({ default: () => null }));
