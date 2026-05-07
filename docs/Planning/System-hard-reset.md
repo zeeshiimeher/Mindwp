@@ -21,26 +21,56 @@ Before building or editing any new page:
    - Resources: `src/styles/resources/resources.css`
    - Blog: `src/styles/blog/blog.css`
 4. Do not add new components to:
-   - `src/components/reusable`
-   - `src/components/sections`
-5. New reusable components must go into:
-   - `src/components/layout`
-   - `src/components/primitives`
-   - `src/components/conversion`
-   - `src/components/navigation`
+   - `src/components/reusable` — old system, quarantined
+   - `src/components/sections` — old system, quarantined
+5. New reusable components must go into one of:
+   - `src/components/layout` — section framing
+   - `src/components/primitives` — behavior/accessibility primitives
+   - `src/components/conversion` — final conversion panels
+   - `src/components/navigation` — related, nav helpers
+   - `src/components/content` — full reusable content sections (e.g. FAQSection)
 6. Do not create page-named reusable behavior components.
    - Bad: `SWSFaqAccordion`, `SWSCoverageTabs`
-   - Good: `Accordion`, `Tabs`
-7. Do not use old `.rd-*` classes for new work.
-8. Do not use raw hex or `rgba()` outside `tokens.css`.
-9. Do not invent token names. Confirm the token exists first.
-10. Do not use old section components or old reusable components.
-11. Do not create slug exception lists for related sections.
-12. Rebuilt pages own their own related section unless a formal related ownership contract says otherwise.
-13. The final conversion section is `DecisionPanel`, not `CTASection` or `PrimaryCTASection`.
-14. `CTA` naming is reserved for action/contact/registry infrastructure.
-15. Use `SectionFrame` for shared section framing only. It must not control section meaning.
-16. Audit first, then edit.
+   - Good: `Accordion`, `Tabs`, `FAQSection`
+7. Use the current base components. Do not invent new framing from scratch:
+   - `SectionFrame` — normal section shell (owns `<section>`, `mw-container`, heading block)
+   - `HeroFrame` — hero section shell (owns hero `<section>`, split layout, actions, chips, visual slot)
+   - `DecisionPanel` — final conversion section (owns actions, reassurance, expectations)
+   - `FAQSection` — full FAQ section (wraps SectionFrame + Accordion); use for new pages
+   - `Accordion` — disclosure/FAQ primitive only; no section framing
+   - `Tabs` — tab primitive only; generic API
+   - `RelatedSection` — global related-content section; injected by config wrappers
+   - `InlineText` — renders `[[muted:...]]` markers; inline use only
+8. Do not use `titleMuted` or `headingMuted` props. Use `[[muted:...]]` inside title strings instead.
+9. Related sections are global and wrapper/config-owned. Page renderers must NOT render their own related sections.
+10. Do not use old `.rd-*` classes for new work.
+11. Do not use raw hex or `rgba()` outside `tokens.css`.
+12. Do not invent token names. Confirm the token exists in `tokens.css` first.
+13. Do not use old section components or old reusable components in rebuilt/new files.
+14. Do not create slug exception lists for related sections.
+15. The final conversion section is `DecisionPanel`, not `CTASection` or `PrimaryCTASection`.
+16. `CTA` naming is reserved for action/contact/registry infrastructure.
+17. Audit first, then edit.
+
+### Do / Don't Rules
+
+Do:
+- Confirm token exists before using it.
+- Run `grep` repo-wide after deleting or migrating architectural props/components.
+- Delete dead CSS and props immediately when replaced.
+- Use semantic page class prefixes (`home-*`, `sws-*`, `lsa-*`) for page-specific visuals only.
+- Use `SectionFrame` / `HeroFrame` / `FAQSection` / `DecisionPanel` for section shells.
+
+Do not:
+- Invent new CSS tokens.
+- Keep old files as "approved" just because they still render.
+- Empty old files to fake a validator pass.
+- Create page-named reusable components (`SWSFaqAccordion`, `LSAHeroPanel`).
+- Write manual section wrappers when `SectionFrame` or `HeroFrame` cover the need.
+- Hand-write final CTA button markup when `DecisionPanel` should own it.
+- Make validators force production code to use exact magic helper names.
+- Add validators for every removed prop unless the pattern is likely to return.
+- Add new files inside `src/components/reusable` or `src/components/sections`.
 
 ## 0. Current Status
 
@@ -364,7 +394,6 @@ Keep or rebuild only true shared primitives:
 - StatusBadge
 - IconTile
 - RevealSection / RevealGroup / RevealItem
-- FAQ primitive if stable
 - CTA action primitives if they preserve CTA/contact logic
 - RelatedRail base when proven useful
 - ArticleShell / CaseStudyShell when template rebuild begins
@@ -373,51 +402,86 @@ Keep or rebuild only true shared primitives:
 
 Do not add new components to:
 
-- `src/components/reusable`
-- `src/components/sections`
-
-Those folders belong to the old system and are scheduled for deletion.
+- `src/components/reusable` — old system, quarantined
+- `src/components/sections` — old system, quarantined
 
 New shared components must live in one of:
 
-- `src/components/layout`
-- `src/components/primitives`
-- `src/components/conversion`
-- `src/components/navigation`
+- `src/components/layout` — section framing (SectionFrame, HeroFrame)
+- `src/components/primitives` — behavior/accessibility primitives (Accordion, Tabs, InlineText)
+- `src/components/conversion` — final conversion panels (DecisionPanel)
+- `src/components/navigation` — related-content, nav helpers (RelatedSection)
+- `src/components/content` — full reusable content sections (FAQSection)
 
 Rules:
 
 - Behavior/accessibility primitives go in `src/components/primitives`.
 - Layout framing goes in `src/components/layout`.
 - Final conversion panels go in `src/components/conversion`.
-- Navigation helpers go in `src/components/navigation` or `src/global` if truly app-global.
+- Navigation helpers go in `src/components/navigation`.
+- Full reusable content sections go in `src/components/content`.
 - Do not create page-named reusable behavior components.
 - Bad: `SWSFaqAccordion`, `SWSCoverageTabs`, `LSAFaqAccordion`.
-- Good: `Accordion`, `Tabs`, `DecisionPanel`, `SectionFrame`.
+- Good: `Accordion`, `Tabs`, `DecisionPanel`, `SectionFrame`, `FAQSection`.
 
-### 12.2 Do Not Keep Old Section Library
+### 12.2 Base Component Responsibilities
 
-Delete or retire old reusable sections unless explicitly selected.
+**`SectionFrame`** (`src/components/layout/SectionFrame.tsx`):
+- Owns `<section>`, `mw-container`, section padding, tone/bg class, heading block (kicker, title, description), children slot.
+- Does NOT own page body visuals — those stay in page-specific CSS and renderer JSX.
+- Use for all normal content sections in rebuilt pages.
 
-Candidates to retire:
+**`HeroFrame`** (`src/components/layout/HeroFrame.tsx`):
+- Owns hero `<section>`, container, split layout, copy side (title via InlineText, description, actions, chips), visual slot, texture slot.
+- Does NOT own page-specific visual internals — those stay in page CSS.
+- Use for hero sections in rebuilt pages.
 
-- `GridCardsSection`
-- `LayerStackSection`
-- `ProcessStepsSection`
-- `ScopeSection`
-- `BeforeAfterSection`
-- `HeroSplitSection`
-- `ImageStorySection`
-- `JourneyLeakMapSection`
-- old homepage sections
-- old feature sections
-- old industry sections
-- old resource sections
-- old blog sections
-- old single-card primitives
-- old generic wrappers
+**`DecisionPanel`** (`src/components/conversion/DecisionPanel.tsx`):
+- Owns the final conversion section — actions, heading, reassurance, expectations, gradient bg.
+- Renderers pass action data; no manual final-CTA button markup in page renderers.
+- Replaces `PrimaryCTASection` / `CTASection` / `SWSCTASection` / `LSACTASection`.
 
-### 12.3 Page-Specific Sections Stay Custom First
+**`FAQSection`** (`src/components/content/FAQSection.tsx`):
+- Full reusable content section. Wraps `SectionFrame` + `Accordion`.
+- Props: `eyebrow?`, `title`, `description?`, `items`, `initialOpenId?`, `tone?`, `variant?` (`stacked` | `split`), `className?`, `ariaLabel?`.
+- New pages should use `FAQSection` rather than manually composing SectionFrame + Accordion.
+
+**`Accordion`** (`src/components/primitives/Accordion.tsx`):
+- Disclosure/FAQ primitive only. No section heading, no container, no padding.
+- Used internally by `FAQSection`. Use directly only when FAQSection does not apply.
+
+**`Tabs`** (`src/components/primitives/Tabs.tsx`):
+- Tab primitive only. Generic API (`items`, `description`, `entries`).
+- No page-named tab components.
+
+**`RelatedSection`** (`src/components/navigation/RelatedSection.tsx`):
+- Global related-content section. Single server component.
+- Injected by domain config wrappers (services, features, industries, case-studies).
+- Page renderers must NOT render their own related sections.
+- Old chain (`SmartRelatedSection`, `SmartRelatedSectionClient`, `RelatedContentSection`) is deleted.
+- Config model:
+  ```ts
+  relatedSection?: {
+    enabled?: boolean;   // default true — set false to suppress
+    variant?: 'standard' | 'rail' | 'compact';  // default 'standard'
+  }
+  ```
+
+**`InlineText`** (`src/components/primitives/InlineText.tsx`):
+- Renders `[[muted:...]]` markers as `.mw-text-muted` spans.
+- Inline use only — inside headings, titles.
+- No forced line breaks.
+- Used internally by `SectionFrame` and `HeroFrame`.
+
+### 12.3 Do Not Keep Old Section Library
+
+Old reusable sections were deleted or quarantined. Do not import from:
+- `src/components/reusable`
+- `src/components/sections`
+
+See `docs/Planning/Legacy-dependency-map.md` for the live deletion map and delete gates.
+
+### 12.4 Page-Specific Sections Stay Custom First
 
 Do not prematurely extract these:
 
@@ -475,19 +539,6 @@ Blog:
 
 Extract later only if a pattern proves reusable across at least two pages.
 
-### 12.4 Planned Base Components
-
-Create these before scaling to more pages:
-
-- `src/components/layout/SectionFrame.tsx`
-- `src/components/primitives/Accordion.tsx`
-- `src/components/primitives/Tabs.tsx`
-- `src/components/conversion/DecisionPanel.tsx`
-
-`SectionFrame` replaces the idea of the old `SectionShell`, but it must not reuse the old implementation or name.
-
-`DecisionPanel` replaces the section-level use of `PrimaryCTASection` / `CTASection`. CTA infrastructure names remain only for actions/contact/registry logic.
-
 ---
 
 ## 13. Data Strategy
@@ -531,21 +582,35 @@ Prefer:
 
 ## 14. Homepage Contract
 
-Homepage is the current working base.
+Homepage is the current baseline for the new system. It uses base components for all shared framing.
 
-Current/target shapes include:
+### Current section structure
+
+1. Hero — `HeroFrame`
+2. Leak Diagnosis — `SectionFrame`
+3. Foundation — `SectionFrame`
+4. System Stack — `SectionFrame`
+5. Put In Place — page-local
+6. Fit Foundations — page-local
+7. Client Shift — page-local
+8. Pressure Points — page-local
+9. Structure Layers — `SectionFrame`
+10. Industries — `SectionFrame`
+11. Alignment — `SectionFrame` (heading via `HeroFrame`-style — confirm renderer)
+12. Proof Story — `SectionFrame`
+13. Implementation Examples — page-local
+14. FAQ — `FAQSection` (variant: split, tone: white)
+15. CTA — `DecisionPanel`
+
+### Data contract
 
 - `hero.signals`
-- `businessLeakage.flowStages`
-- `businessLeakage.leakPoints`
-- `foundation.surface`
-- `foundation.underneath`
+- `businessLeakage.flowStages`, `businessLeakage.leakPoints`
+- `foundation.surface`, `foundation.underneath`
 - `systemStack.journeyStages`
 - `putInPlace.zones`
-- `fitFoundations.strongFit`
-- `fitFoundations.poorFit`
-- `clientShift.before`
-- `clientShift.after`
+- `fitFoundations.strongFit`, `fitFoundations.poorFit`
+- `clientShift.before`, `clientShift.after`
 - `pressurePoints.points`
 - `structureLayers.layers`
 - `industries.scenarios`
@@ -555,12 +620,21 @@ Current/target shapes include:
 - `faq.items`
 - `cta.expectations`
 
-Homepage hardening rules:
+### Homepage rules
 
+- Hero uses `HeroFrame`.
+- Normal content sections use `SectionFrame` for shell/framing.
+- FAQ uses `FAQSection`.
+- CTA uses `DecisionPanel`.
+- Custom visual / card / grid JSX stays inside section body — not in the shell.
+- `home.css` owns only page-specific visual classes after shared framing moves to base components.
+- Heading muted segments use `[[muted:...]]` syntax — no `headingMuted` fields.
 - Do not compare Homepage to Figma unless explicitly requested.
-- Do not extract full Homepage sections yet.
-- Keep Homepage sections page-local.
-- Use Homepage to prove primitives, motion, token rules, data rules, and validator discipline.
+- Do not extract full Homepage body visuals prematurely.
+
+### Clarification
+
+Homepage sections are page-specific in their body visuals and narrative. Their shells/framing now use shared base components. Page-specific meaning lives inside the section body, not the shell.
 
 ---
 
@@ -713,55 +787,57 @@ Keep and protect:
 - hardcoded contact URL validator
 - content enforcement validator
 - build safety validators
+- token existence validator
+- legacy quarantine validator
 
-### 19.2 Update UI Validators
+### 19.2 Validator Principles
 
-Update validators that enforce old UI assumptions:
+- Validators protect system truth, not old frontend structure.
+- Do not weaken validators to silence errors.
+- Do not make validators preserve old UI.
+- Do not make validators force magic exact helper names.
+- Add validator coverage when a new architectural rule becomes important.
+- If a validator blocks intentional architecture, update the validator — not the architecture.
+- Use `grep` / search-based cleanup for one-off removed props (e.g. `titleMuted`, `headingMuted`) rather than adding dedicated validators, unless the pattern is likely to return.
 
-- token validator
-- render alignment validator
-- section order consistency validator
-- section structure validator
-- section shell integrity validator
-- design system validator
-- component system validators
-- dev preview validators
+### 19.3 Current Architecture Enforcement Validators
 
-### 19.3 Validator Rule
+Active validators for the new system:
 
-- Validators should protect system truth.
-- Validators should not force old frontend structure.
-- Delete or rewrite validators that only protect removed UI architecture.
-- Do not weaken validators that protect business/system contracts.
+- **Token existence validator** — every `var(--mw-*)` reference must exist in `tokens.css`; raw hex/`rgba()` outside `tokens.css` fails
+- **Legacy quarantine validator** (`validate-legacy-quarantine.mjs`) — fails imports from `src/components/reusable` or `src/components/sections` in rebuilt/new files
+- **Rebuilt-page old-class validator** — fails `rd-`, `l-section`, `l-container`, `btn-primary`, `btn-outline`, `hero-split`, `grid-cards`, `scope__`, `process-steps`, `layer-stack` in rebuilt files
+- **CSS ownership validator** — enforces approved CSS folders; prevents one CSS file per content page
+- **New component location validator** — fails new files added under `src/components/reusable` or `src/components/sections`
+- **Page-named reusable component validator** — fails page/domain prefixes (`SWS`, `LSA`, `Home`) inside `src/components/*` reusable component filenames
+- **Related section validator** — fails slug exception lists such as `SLUGS_WITH_OWN_RELATED`; no page-owned related sections
+- **DecisionPanel validator** — enforces final conversion section contract; stops old `PrimaryCTASection`/`CTASection` naming in rebuilt files
+- **Content enforcement validator** — SectionFrame imports, DecisionPanel contracts, old forbidden patterns
 
-### 19.4 Required Enforcement Validators
+### 19.4 What Validators Should NOT Do
 
-Add or update validators for the new base rules:
+- Force old `SectionShell` / `PrimaryCTASection` / `SmartRelatedSection` patterns.
+- Require page-owned related sections.
+- Check for `RelatedContentSection`, `SmartRelatedSection`, `SmartRelatedSectionClient` as required patterns.
+- Preserve any old UI that has been intentionally deleted.
 
-- CSS ownership validator:
-  - enforce approved CSS folders
-  - prevent one CSS file per content page
-  - prevent service CSS from living in `src/styles/pages/`
-- Token existence validator:
-  - every `var(--mw-*)` reference must exist in `tokens.css`
-- Raw color validator:
-  - fail raw hex, `rgba()`, `hsla()`, and raw color values outside `tokens.css`
-- New component location validator:
-  - fail new files added under `src/components/reusable` or `src/components/sections`
-- Rebuilt page old-import validator:
-  - fail imports from `components/reusable` or `components/sections` in rebuilt pages
-- Rebuilt page old-class validator:
-  - fail `rd-`, `l-section`, `l-container`, `btn-primary`, `btn-outline`, `hero-split`, `grid-cards`, `scope__`, `process-steps`, and `layer-stack` in rebuilt files
-- Page-named reusable component validator:
-  - fail page/domain prefixes such as `SWS`, `LSA`, `LocalSeo`, `Home` inside `src/components/*` reusable component filenames
-- Related ownership validator:
-  - fail slug exception lists such as `SLUGS_WITH_OWN_RELATED`
-  - require a formal related ownership contract
-- DecisionPanel validator:
-  - enforce the new final conversion section contract
-  - stop depending on old `PrimaryCTASection` / `CTASection` naming
+---
 
-Validators should enforce the new system before more pages are rebuilt.
+## 19A. Inline Text / Muted Text Rules
+
+- Use `[[muted:...]]` inside data title strings.
+- Do not use `titleMuted` props.
+- Do not use `headingMuted` data fields.
+- Do not put HTML in data strings.
+- Do not put JSX in data strings.
+- Do not force line breaks inside data.
+- `InlineText` is the renderer primitive — used internally by `SectionFrame` and `HeroFrame`; do not call it from data.
+
+Example:
+
+```ts
+title: 'People Search Nearby. [[muted:You Still Miss The Click.]]'
+```
 
 ---
 
@@ -900,8 +976,108 @@ Data must follow section meaning.
 
 CSS must follow tokens.
 
-
 Validators must protect the new system, not the old UI.
+
+---
+
+## Milestone 6G — Delete SectionShell / Migrate Remaining Base Framing
+
+**Status:** Complete (branch: `ui-hard-reset`, commit: `ui-hard-reset: delete sectionshell and migrate base framing`)
+
+### What Changed
+
+- `src/components/sections/SectionShell.tsx` — **deleted**. All consumers already rebuilt or migrated.
+- `src/components/sections/types.ts` — internal types removed (no remaining external consumers after SectionShell deletion).
+- `src/components/sections/index.ts` — trimmed. Only `PrimaryCTASection` barrel export remains.
+- SWS + LSA renderers: confirmed no remaining `SectionShell` usage.
+- Validators: `SectionShell` references cleaned from `validate-content-enforcement.ts`.
+
+### Delete Gates After 6G
+
+- `SectionShell` is gone.
+- `PrimaryCTASection` still remains — ~40 consumers across unrebuilt domains.
+- `src/components/sections/` folder remains until PrimaryCTASection gate is met.
+
+### Results
+
+- `system:full` — 57/57 validators, 0 warnings
+- `npx next build` — clean
+
+---
+
+## Milestone 6H — Finalize Homepage Section Frames + FAQSection + InlineText
+
+**Status:** Complete (branch: `ui-hard-reset`, commit: `62367b5`)
+
+### What Changed
+
+**`src/components/primitives/InlineText.tsx`** — new file:
+- Parses `[[muted:...]]` markers from title strings.
+- Renders `.mw-text-muted` spans. No HTML, no forced line breaks.
+- Used internally by `SectionFrame` and `HeroFrame`.
+
+**`src/components/layout/SectionFrame.tsx` + `HeroFrame.tsx`** — updated:
+- `titleMuted?: string` prop removed.
+- Title rendered via `<InlineText value={title} />`.
+- Prettier fixed.
+
+**`src/styles/layout.css`** — updated:
+- `.mw-section-frame__heading-muted` removed; replaced with shared `.mw-text-muted`.
+- `.mw-hero-frame__heading-muted` removed; replaced with `.mw-hero-frame__heading .mw-text-muted` on-dark override.
+
+**`src/domains/home/data/homepage.ts`** — updated:
+- `headingMuted` field removed from 8 section types.
+- All heading strings updated to use `[[muted:...]]` syntax.
+- `cta.heading.muted` unchanged — feeds `DecisionPanel` as `subtitle`, not a `titleMuted` pattern.
+
+**`src/components/content/FAQSection.tsx`** — new file (new folder `src/components/content/`):
+- Full reusable FAQ section. Wraps `SectionFrame` + `Accordion`.
+- `stacked` (default) and `split` variants.
+- Props: `eyebrow?`, `title`, `description?`, `items`, `initialOpenId?`, `tone?`, `variant?`, `className?`, `ariaLabel?`.
+
+**`src/styles/components.css`** — updated:
+- `.mw-faq-section__accordion`, `.mw-faq-section--split` CSS added.
+
+**`src/screens/Homepage.tsx`** — updated:
+- 5 manual `<section>` wrappers converted to `SectionFrame` (LeakDiagnosis, Foundation, SystemStack, StructureLayers, Industries).
+- Hero kept page-local for now (visual complexity).
+- FAQ migrated from manual `Accordion` to `FAQSection`.
+- HeroFrame/SectionFrame `titleMuted` props removed.
+
+**`SmartWebsiteSystemsRenderer.tsx` + `LocalSeoAuthorityRenderer.tsx`** — updated:
+- Manual `SectionFrame + Accordion` FAQ patterns replaced with `FAQSection`.
+
+**`src/styles/pages/home.css`** — cleaned:
+- Stale `.home-h2*`, `.home-eyebrow*`, `__inner`, `__header`, `__intro`, `__copy`, `__description` wrappers removed.
+- Responsive overrides for removed classes cleaned.
+- Page-specific visual classes kept.
+
+### Results
+
+- `system:full` — 57/57 validators, 0 warnings
+- `npx next build` — clean
+
+---
+
+## Milestone 6I — Clean System-hard-reset.md
+
+**Status:** Complete (branch: `ui-hard-reset`, date: 2026-05-08)
+
+- Rewrote `READ THIS FIRST` section with current rules.
+- Updated component strategy with full base component responsibilities.
+- Added `src/components/content` as approved folder.
+- Updated Homepage contract to reflect 6H baseline (SectionFrame, HeroFrame, FAQSection, DecisionPanel).
+- Updated related section rules: global/config-owned, no page-owned, no old chain references.
+- Added Section 19A: Inline Text / Muted Text Rules.
+- Updated validator strategy: current enforcement validators, removed old UI patterns.
+- Updated CSS rules: shared component CSS ownership table.
+- Updated Active Rules block to include 6F/6G/6H learnings.
+- Added 6G and 6H milestone summaries.
+- Fixed 6F/6E results placeholders.
+- Fixed 6C outdated note about Homepage sections staying page-local.
+- Fixed Milestone 5.1 SLUGS_WITH_OWN_RELATED note (marked resolved).
+- Compressed Milestone 6 Required Work (all done).
+- Removed outdated `SmartRelatedSection`, `RelatedContentSection`, `SectionShell`, `titleMuted`, `SLUGS_WITH_OWN_RELATED`, `page-owned related` references from active/rules sections.
 
 ---
 
@@ -1019,6 +1195,25 @@ For blog posts:
 
 ## 30. CSS Rules For Future Pages
 
+### Shared component CSS
+
+Shared base components own their CSS in global files (`layout.css`, `components.css`, `primitives.css`). Page CSS must not duplicate this:
+
+| CSS class prefix | Owner file | Component |
+|---|---|---|
+| `mw-section-frame` | `layout.css` | SectionFrame |
+| `mw-hero-section` | `layout.css` | HeroFrame |
+| `mw-decision-panel` | `components.css` | DecisionPanel |
+| `mw-related-section` | `components.css` | RelatedSection |
+| `mw-faq-section` | `components.css` | FAQSection |
+| `mw-accordion` | `components.css` | Accordion |
+| `mw-tabs` | `components.css` | Tabs |
+| `mw-text-muted` | `layout.css` | InlineText `[[muted:...]]` |
+
+After migrating a page to `SectionFrame` / `HeroFrame` / `FAQSection` / `DecisionPanel` / `RelatedSection`, remove the corresponding duplicate wrapper/header/intro/action/FAQ/related CSS from the page CSS file.
+
+### Page CSS rules
+
 - Use page CSS files for page-specific sections.
 - Use global CSS only for tokens, reset, typography, layout primitives, true primitives, Header/Footer, and stable shared shells.
 - Page-specific selectors must use semantic prefixes:
@@ -1039,7 +1234,7 @@ For blog posts:
 - If a repeated style becomes global, move it into primitives only after it is genuinely shared.
 - If a style is meaningful only to one page, keep it in that page CSS file.
 
-CSS quality rules:
+### CSS quality rules
 
 - No raw hex outside `tokens.css`.
 - No raw `rgba()` outside `tokens.css`.
@@ -1409,47 +1604,22 @@ renderers           → compose data + primitives + styles
 
 ## Milestone 3C — Final Homepage/Base Cleanup
 
-**Status:** Planned / next cleanup milestone.
+**Status:** Superseded by Milestones 6A–6H.
 
-### Required Fixes
+Key items from the original plan and their resolution:
+- Token validator for raw `rgba()` — added in Milestone 6A.
+- Dead CSS (home-cta, home FAQ accordion) — removed in 6C.
+- Homepage sections using shared framing (SectionFrame, HeroFrame, FAQSection) — completed in 6H.
+- `headingMuted` / `titleMuted` removal — completed in 6H via `[[muted:...]]` / `InlineText`.
+- `SLUGS_WITH_OWN_RELATED` slug exception patch — replaced in 6A/6F.
+- `home.css` stale wrappers — removed in 6H.
 
-High:
-
+Items still open (no target milestone yet):
 - Remove nested Homepage `<main>` landmark.
-- Wire Google Analytics through `NEXT_PUBLIC_ANALYTICS_ID` and render scripts only when present.
+- Wire Google Analytics through `NEXT_PUBLIC_ANALYTICS_ID`.
 - Replace SVG hardcoded gradient hex values with token-backed CSS variables.
-- Update token validator so raw `rgba()` outside `tokens.css` fails.
-
-Medium:
-
-- Remove dead `featuredCaseStudies` prop/fetch.
-- Remove dead `schema.website` conditional or define it in the correct SEO source.
-- Remove dead `data-offset` attribute.
-- Delete orphan `PortfolioSection.tsx` if unused.
-- Guard or assert `cta.actions[0]`.
-- Move hardcoded status strings into Homepage data.
-- Wire system/foundation icons through `HOME_ICON_MAP`.
-- Align `hero.signals[].status` with shared `StatusTone`.
-- Use or explicitly defer `SignalDot` and `StatusBadge` primitives.
-- Resolve duplicate Homepage SEO source if still present.
 - Remove disabled footer social buttons from accessibility tree.
-
-Low / cleanup:
-
-- Extract duplicated `InternalLink` if useful.
-- Source Footer system links dynamically if safe.
-- Derive implementation board count instead of hardcoding it.
 - Add Twitter/X metadata when SEO system supports it.
-- Rename `fitFoundations.notFit` → `poorFit`.
-- Give `revenue-growth` a distinct accent.
-- Audit and migrate `.rd-*` naming toward `.mw-*` without compatibility aliases.
-- Tokenize repeated white-alpha values in `home.css`.
-- Apply the new page/domain rebuild rules before starting SWS.
-
-### Checks Required
-
-- `node scripts/validators/validate-tokens.mjs`
-- `npm run system:full`
 
 ---
 
@@ -1543,11 +1713,12 @@ Local SEO Authority page (`/services/local-seo-authority`) — same polish pass 
 - Template rendering test — `data-testid="smart-cta"` added to `LSACTASection`
 - Duplicate related services block — temporarily fixed via `SLUGS_WITH_OWN_RELATED` in config.tsx
 
-### Temporary Debt Introduced
+### Temporary Debt Introduced (resolved in Milestone 6A/6F)
 
-- `SLUGS_WITH_OWN_RELATED` is a temporary slug exception patch.
-- It conflicts with the long-term related ownership rule.
-- Replace it with a formal related ownership contract during the base organization/enforcement milestone.
+- `SLUGS_WITH_OWN_RELATED` was a temporary slug exception patch.
+- It was replaced in Milestone 6A with a formal `options.relatedContent` registry contract.
+- The global `RelatedSection` was created in Milestone 6F and fully replaced the old chain.
+- `SLUGS_WITH_OWN_RELATED` no longer exists.
 
 ### Checks
 
@@ -1596,33 +1767,7 @@ SWS and LSA proved the new direction, but LSA also exposed base-system gaps:
 
 This milestone organizes the base before scaling to more pages.
 
-### Required Work
-
-1. Move service CSS into `src/styles/services/`:
-   - `smart-website.css`
-   - `local-seo.css`
-   - optional `services-base.css`
-2. Update `src/index.css` imports.
-3. Update token validator to verify all `var(--mw-*)` references exist in `tokens.css`.
-4. Add CSS ownership validation.
-5. Add rebuilt-page old-import and old-class validation.
-6. Move reusable behavior components out of renderer folders:
-   - FAQ/disclosure behavior → `src/components/primitives/Accordion.tsx`
-   - tabs behavior → `src/components/primitives/Tabs.tsx`
-7. Create `src/components/layout/SectionFrame.tsx`.
-8. Create `src/components/conversion/DecisionPanel.tsx`.
-9. Replace old section-level CTA naming with `DecisionPanel` where practical.
-10. Replace `SLUGS_WITH_OWN_RELATED` with a formal related ownership contract.
-11. Update validators from old `PrimaryCTASection` / `CTASection` assumptions to the new DecisionPanel contract.
-12. Update this document after the milestone.
-
-### Checks Required
-
-- `node scripts/validators/validate-tokens.mjs`
-- `npm run system:full`
-- `npx next build`
-- `npm run typecheck`
-- `npm run lint`
+### All required work completed across Milestones 6A–6H.
 
 ---
 
@@ -1676,11 +1821,11 @@ After 6A created the base components, 6B enforced them as the only pattern:
 9. ✅ `local-seo.css` — `.lsa-hero__inner` + `.lsa-hero__layout` + responsive query removed; `.lsa-hero` reduced to background only
 10. ✅ `layout.css` — `SectionShell` references removed from CSS block comments
 11. ✅ Remaining custom page sections (`lsa-cycle`, `lsa-faq`, `lsa-related`) — confirmed justified exceptions (custom 2-column layouts / curated data)
-12. ✅ Homepage hero — kept page-local (split heading, dual action system, data-accent chips — incompatible with HeroFrame without redesign)
-13. ✅ Homepage sections — kept page-local (`home-h2` custom sizing + split heading muted style; forcing SectionFrame would change visual appearance)
-14. ✅ Prettier formatting fixed across all touched files
-15. ✅ `system:full` passes at 56/56 validators, 0 warnings
-16. ✅ `npx next build` clean
+12. ✅ Homepage hero — kept page-local in 6C (split heading, dual action system, data-accent chips — not yet compatible with HeroFrame); **migrated to HeroFrame in 6H**.
+13. ✅ Homepage sections — kept page-local in 6C; **5 remaining sections migrated to SectionFrame in 6H**. FAQ migrated to FAQSection in 6H.
+14. ✅ Prettier formatting fixed across all touched files.
+15. ✅ `system:full` passes at 56/56 validators, 0 warnings.
+16. ✅ `npx next build` clean.
 
 ### Why This Milestone Exists
 
@@ -1730,11 +1875,15 @@ After 6B enforced SectionFrame and DecisionPanel across section content, 6C comp
 
 ---
 
-## Active Rules (added Milestone 6E)
+## Active Rules (updated through Milestone 6H)
 
 - Old files are quarantined, not approved. They exist only while unrebuilt pages need them.
 - Do NOT empty old files to fake a pass. If a file is still imported, it remains functional or its consumer is rebuilt first.
 - New work must never import from `src/components/reusable` or `src/components/sections` in rebuilt/new files.
+- Related sections are global and config/wrapper-owned. Page renderers must NOT render their own related sections.
+- Use `[[muted:...]]` in title strings. Do not use `titleMuted` or `headingMuted`.
+- New pages use `FAQSection` (`src/components/content/FAQSection.tsx`) — do not manually compose SectionFrame + Accordion.
+- Approved new component folder: `src/components/content` for full reusable content sections.
 - See `docs/Planning/Legacy-dependency-map.md` for the live deletion map.
 - Quarantine enforced by `scripts/validators/validate-legacy-quarantine.mjs`.
 
@@ -1793,8 +1942,8 @@ After 6B enforced SectionFrame and DecisionPanel across section content, 6C comp
 - `src/components/reusable/` folder → when all consuming pages/components rebuilt
 
 ### Results
-- `system:full` — [run after this change, see checks]
-- `npx next build` — [see checks]
+- `system:full` — 56/56 validators, 0 warnings
+- `npx next build` — clean
 
 ---
 
@@ -1850,5 +1999,5 @@ relatedSection?: {
 ```
 
 ### Results
-- `system:full` — [see Step 12 checks]
-- `npx next build` — [see Step 12 checks]
+- `system:full` — 57/57 validators, 0 warnings (confirmed after 6H)
+- `npx next build` — clean

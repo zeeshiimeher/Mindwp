@@ -1,7 +1,7 @@
 # Legacy Dependency Map
 
 > Created: Milestone 6E. Updated as pages are rebuilt.
-> Last updated: Milestone 6F (global RelatedSection rebuilt; SmartRelatedSection*, RelatedContentSection, icons.ts deleted).
+> Last updated: Milestone 6H (Homepage SectionFrame/FAQSection/InlineText migration complete; SectionShell deleted in 6G).
 
 ## Status
 
@@ -27,8 +27,8 @@ Quarantine is enforced by `scripts/validators/validate-legacy-quarantine.mjs`.
 | Old file / pattern | Current consumers | Route / domain | Status | Delete condition |
 |---|---|---|---|---|
 | `src/components/sections/PrimaryCTASection.tsx` | About.tsx, Contact.tsx, BlogPostTemplate, BlogFooterCTA, CaseStudyTemplate, CaseStudy/index, Features pages + 7 renderers, Industries templates + pages, Resources hub/template, Services pages + 14 old renderers, dev/cta-label-contract | all unrebuilt domains + About/Contact | Quarantine delete-later | When all consuming pages are rebuilt and no longer import it |
-| `src/components/sections/SectionShell.tsx` | PrimaryCTASection.tsx (and 17 deleted section files) | Internal to sections/ only | Quarantine delete-later | When PrimaryCTASection is deleted |
-| `src/components/sections/types.ts` | PrimaryCTASection.tsx, SectionShell.tsx internally | Internal to sections/ | Quarantine delete-later | Same as PrimaryCTASection |
+| `src/components/sections/SectionShell.tsx` | **Deleted in Milestone 6G** | — | Deleted | — |
+| `src/components/sections/types.ts` | PrimaryCTASection.tsx internally | Internal to sections/ | Quarantine delete-later | Same as PrimaryCTASection |
 | `src/components/sections/index.ts` | Barrel (trimmed — only PrimaryCTASection + types) | Internal | Quarantine delete-later | When PrimaryCTASection is deleted |
 | `src/components/reusable/` (entire folder) | Blog templates/UI, Resources templates/pages, Case-study template, Features renderers (7), Industries templates, Services old renderers (14+), About, Contact, dev dashboards, ClusterPageLayout, ActionButtons | All unrebuilt domains + shared system components | Quarantine delete-later | When all consuming pages/components are rebuilt |
 
