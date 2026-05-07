@@ -70,9 +70,11 @@ function collectFiles(relativeDirs: string[]) {
 
 
 function extractCtaBlocks(source: string) {
-  // Match only PrimaryCTASection (self-closing or with children)
+  // Match PrimaryCTASection (self-closing or with children)
   const primary = [...source.matchAll(/<PrimaryCTASection\b[\s\S]*?\/>/g)];
-  return { primary };
+  // Match DecisionPanel (self-closing or open tag) — rebuilt page contract
+  const decisionPanel = [...source.matchAll(/<DecisionPanel\b[\s\S]*?(?:\/>|>)/g)];
+  return { primary, decisionPanel };
 }
 
 function hasHeadingTitle(snippet: string) {
@@ -150,11 +152,11 @@ function hasInlinePrimaryMarker(snippet: string) {
 export function scanPrimaryCtaUsageFile(relativePath: string, source: string): Issue[] {
   const issues: Issue[] = [];
 
-  const { primary } = extractCtaBlocks(source);
-  const allBlocks = [...primary];
+  const { primary, decisionPanel } = extractCtaBlocks(source);
+  const allBlocks = [...primary, ...decisionPanel];
   const fullBlocks = allBlocks.filter(match => !/mode\s*=\s*['"]actions-only['"]/.test(match[0]));
 
-  // Accept exactly one PrimaryCTASection per page
+  // Accept exactly one PrimaryCTASection or DecisionPanel per page
   if (
     allBlocks.length > 0 &&
     fullBlocks.length !== 1 &&
@@ -165,7 +167,7 @@ export function scanPrimaryCtaUsageFile(relativePath: string, source: string): I
       code: 'invalid_primary_cta_count',
       file: relativePath,
       line: lineOfIndex(source, allBlocks[0]?.index ?? 0),
-      message: 'Exactly ONE PrimaryCTASection required per page.',
+      message: 'Exactly ONE PrimaryCTASection or DecisionPanel required per page.',
     });
   }
 

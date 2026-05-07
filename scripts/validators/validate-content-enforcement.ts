@@ -313,6 +313,7 @@ const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
   'aria-controls',
   'aria-hidden',
   'aria-labelledby',
+  'chipDotVariant',
   'className',
   'containerClassName',
   'cx',
@@ -346,6 +347,7 @@ const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
 const ALLOWED_HARDCODED_CONTENT_CALLS = new Set([
   'Error',
   'requireHeadingDescription',
+  'requireHeadingTitle',
   'requireNonEmptyValue',
 ]);
 
@@ -759,6 +761,17 @@ function scanButtonRule(): Issue[] {
           'PrimaryCTASection must enforce the strict heading/actions single-CTA contract with no secondary or list logic.',
       },
       {
+        file: 'src/components/conversion/DecisionPanel.tsx',
+        expected: [
+          "throw new Error('[DecisionPanel] requires heading.title');",
+          "throw new Error('[DecisionPanel] requires at least one primary action');",
+          "data-testid={dataTestId}",
+        ],
+        forbidden: [],
+        issueType: 'missing_decision_panel_contract',
+        message: 'DecisionPanel must enforce heading.title + actions guards and expose data-testid.',
+      },
+      {
         file: 'src/components/sections/SectionShell.tsx',
         expected: [
           'throw new Error(\'SectionShell requires heading.title when heading is provided.\');',
@@ -935,7 +948,7 @@ function scanButtonRule(): Issue[] {
         ],
         forbidden: ['return null', "?? ''", "|| ''"],
         issueType: 'invalid_anchor_renderer_contract',
-        message: 'SmartWebsiteSystemsRenderer must stay fail-loud and use the locked PrimaryCTASection contract.',
+        message: 'SmartWebsiteSystemsRenderer must stay fail-loud and use the DecisionPanel contract (heading={data.cta.heading} actions={data.cta.actions}).',
       },
       {
         file: 'src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx',
@@ -948,7 +961,7 @@ function scanButtonRule(): Issue[] {
         ],
         forbidden: ['return null', "?? ''", "|| ''"],
         issueType: 'invalid_anchor_renderer_contract',
-        message: 'LocalSeoAuthorityRenderer must stay fail-loud and use the locked inline LSACTASection contract.',
+        message: 'LocalSeoAuthorityRenderer must stay fail-loud and use the DecisionPanel contract (heading={data.cta.heading} actions={data.cta.actions}).',
       },
       {
         file: 'src/components/reusable/single/SectionIntro.tsx',

@@ -5,13 +5,51 @@
 
 ---
 
+# READ THIS FIRST — Active Build Rules
+
+Before building or editing any new page:
+
+1. Read this document first.
+2. Do not create one CSS file per content page.
+3. Use the approved CSS ownership model:
+   - Homepage: `src/styles/pages/home.css`
+   - Flagship service pages: `src/styles/services/[service].css`
+   - Shared service styles: `src/styles/services/services-base.css`
+   - Feature pages: `src/styles/features/features-base.css`
+   - Industry pages: `src/styles/industries/category.css` and `src/styles/industries/detail.css`
+   - Case studies: `src/styles/case-studies/case-study.css`
+   - Resources: `src/styles/resources/resources.css`
+   - Blog: `src/styles/blog/blog.css`
+4. Do not add new components to:
+   - `src/components/reusable`
+   - `src/components/sections`
+5. New reusable components must go into:
+   - `src/components/layout`
+   - `src/components/primitives`
+   - `src/components/conversion`
+   - `src/components/navigation`
+6. Do not create page-named reusable behavior components.
+   - Bad: `SWSFaqAccordion`, `SWSCoverageTabs`
+   - Good: `Accordion`, `Tabs`
+7. Do not use old `.rd-*` classes for new work.
+8. Do not use raw hex or `rgba()` outside `tokens.css`.
+9. Do not invent token names. Confirm the token exists first.
+10. Do not use old section components or old reusable components.
+11. Do not create slug exception lists for related sections.
+12. Rebuilt pages own their own related section unless a formal related ownership contract says otherwise.
+13. The final conversion section is `DecisionPanel`, not `CTASection` or `PrimaryCTASection`.
+14. `CTA` naming is reserved for action/contact/registry infrastructure.
+15. Use `SectionFrame` for shared section framing only. It must not control section meaning.
+16. Audit first, then edit.
+
 ## 0. Current Status
 
 - Active branch: `ui-hard-reset`.
 - Homepage is now the working base for the new system.
 - Figma Make remains a visual reference for pages not yet rebuilt, but Homepage hardening is no longer a Figma-parity task.
 - Header/Footer, token CSS foundation, Homepage renderer/data/CSS, shared UI types, and first primitive cleanup passes are complete.
-- Next major build target after final base cleanup: Smart Website Systems.
+- Smart Website Systems and Local SEO Authority have been rebuilt.
+- Current priority before building more pages: base organization and enforcement cleanup.
 
 ---
 
@@ -146,14 +184,30 @@ src/styles/
   layout.css
   primitives.css
   components.css
+
   pages/
     home.css
+
+  services/
+    services-base.css
     smart-website.css
     local-seo.css
-    features.css
-    industries.css
+
+  features/
+    features-base.css
+
+  industries/
+    industries-base.css
+    category.css
+    detail.css
+
+  case-studies/
     case-study.css
-    resource.css
+
+  resources/
+    resources.css
+
+  blog/
     blog.css
 ```
 
@@ -164,6 +218,15 @@ Rules:
 - Do not import legacy CSS.
 - `tokens.css` is the only raw-value source.
 - Page-specific CSS can be large if it preserves page meaning.
+- Do not create one CSS file per content page.
+- Flagship service pages may have dedicated CSS under `src/styles/services/`.
+- Template/content pages must use domain/template CSS files.
+- Service-specific CSS belongs in `src/styles/services/`, not `src/styles/pages/`.
+- Feature-specific CSS belongs in `src/styles/features/`.
+- Industry CSS belongs in `src/styles/industries/`.
+- Case study CSS belongs in `src/styles/case-studies/`.
+- Resource CSS belongs in `src/styles/resources/`.
+- Blog CSS belongs in `src/styles/blog/`.
 - Global CSS must not become a dumping ground for page-specific sections.
 
 ---
@@ -239,6 +302,9 @@ Pattern tokens:
 - Allow raw values only inside `tokens.css`.
 - Require `var(--mw-...)` in normal CSS where tokenized values are expected.
 - Raw hex and raw `rgba()` outside `tokens.css` should fail.
+- Every `var(--mw-*)` reference in normal CSS must point to a token that exists in `tokens.css`.
+- Missing token references must fail validation.
+- Do not invent token names during page builds.
 - Keep valid exemptions such as:
   - `0`
   - `auto`
@@ -302,6 +368,32 @@ Keep or rebuild only true shared primitives:
 - CTA action primitives if they preserve CTA/contact logic
 - RelatedRail base when proven useful
 - ArticleShell / CaseStudyShell when template rebuild begins
+
+### 12.1A New Component Folders
+
+Do not add new components to:
+
+- `src/components/reusable`
+- `src/components/sections`
+
+Those folders belong to the old system and are scheduled for deletion.
+
+New shared components must live in one of:
+
+- `src/components/layout`
+- `src/components/primitives`
+- `src/components/conversion`
+- `src/components/navigation`
+
+Rules:
+
+- Behavior/accessibility primitives go in `src/components/primitives`.
+- Layout framing goes in `src/components/layout`.
+- Final conversion panels go in `src/components/conversion`.
+- Navigation helpers go in `src/components/navigation` or `src/global` if truly app-global.
+- Do not create page-named reusable behavior components.
+- Bad: `SWSFaqAccordion`, `SWSCoverageTabs`, `LSAFaqAccordion`.
+- Good: `Accordion`, `Tabs`, `DecisionPanel`, `SectionFrame`.
 
 ### 12.2 Do Not Keep Old Section Library
 
@@ -382,6 +474,19 @@ Blog:
 - `blog-situation-map`
 
 Extract later only if a pattern proves reusable across at least two pages.
+
+### 12.4 Planned Base Components
+
+Create these before scaling to more pages:
+
+- `src/components/layout/SectionFrame.tsx`
+- `src/components/primitives/Accordion.tsx`
+- `src/components/primitives/Tabs.tsx`
+- `src/components/conversion/DecisionPanel.tsx`
+
+`SectionFrame` replaces the idea of the old `SectionShell`, but it must not reuse the old implementation or name.
+
+`DecisionPanel` replaces the section-level use of `PrimaryCTASection` / `CTASection`. CTA infrastructure names remain only for actions/contact/registry logic.
 
 ---
 
@@ -629,6 +734,35 @@ Update validators that enforce old UI assumptions:
 - Delete or rewrite validators that only protect removed UI architecture.
 - Do not weaken validators that protect business/system contracts.
 
+### 19.4 Required Enforcement Validators
+
+Add or update validators for the new base rules:
+
+- CSS ownership validator:
+  - enforce approved CSS folders
+  - prevent one CSS file per content page
+  - prevent service CSS from living in `src/styles/pages/`
+- Token existence validator:
+  - every `var(--mw-*)` reference must exist in `tokens.css`
+- Raw color validator:
+  - fail raw hex, `rgba()`, `hsla()`, and raw color values outside `tokens.css`
+- New component location validator:
+  - fail new files added under `src/components/reusable` or `src/components/sections`
+- Rebuilt page old-import validator:
+  - fail imports from `components/reusable` or `components/sections` in rebuilt pages
+- Rebuilt page old-class validator:
+  - fail `rd-`, `l-section`, `l-container`, `btn-primary`, `btn-outline`, `hero-split`, `grid-cards`, `scope__`, `process-steps`, and `layer-stack` in rebuilt files
+- Page-named reusable component validator:
+  - fail page/domain prefixes such as `SWS`, `LSA`, `LocalSeo`, `Home` inside `src/components/*` reusable component filenames
+- Related ownership validator:
+  - fail slug exception lists such as `SLUGS_WITH_OWN_RELATED`
+  - require a formal related ownership contract
+- DecisionPanel validator:
+  - enforce the new final conversion section contract
+  - stop depending on old `PrimaryCTASection` / `CTASection` naming
+
+Validators should enforce the new system before more pages are rebuilt.
+
 ---
 
 ## 20. Test Strategy
@@ -665,21 +799,22 @@ Update validators that enforce old UI assumptions:
 3. Homepage/Base final cleanup.
 4. Smart Website Systems.
 5. Local SEO Authority.
-6. AI Lead Handling feature.
-7. Reputation feature.
-8. Industry category.
-9. Landscaping industry detail.
-10. Fitness case study.
-11. Resource post.
-12. Blog post.
-13. Remaining services/features.
-14. Remaining industries.
-15. Remaining resources/blogs/case studies.
-16. Per-domain cleanup after each rebuild.
-17. Legacy/component cleanup after consumers are gone.
-18. Validator/test rewrite for new contracts.
-19. Final accessibility/SEO/performance QA.
-20. Final visual QA.
+6. Base organization/enforcement cleanup.
+7. AI Lead Handling feature.
+8. Reputation feature.
+9. Industry category.
+10. Landscaping industry detail.
+11. Fitness case study.
+12. Resource post/template.
+13. Blog post/template.
+14. Remaining services/features.
+15. Remaining industries.
+16. Remaining resources/blogs/case studies.
+17. Per-domain cleanup after each rebuild.
+18. Legacy/component cleanup after consumers are gone.
+19. Validator/test rewrite for new contracts.
+20. Final accessibility/SEO/performance QA.
+21. Final visual QA.
 
 ---
 
@@ -725,6 +860,12 @@ For Homepage hardening:
 
 The hard reset is done when:
 
+- CSS files follow the approved domain ownership model
+- all `var(--mw-*)` references resolve to real tokens
+- no page-named reusable behavior components remain
+- no slug exception lists for related content remain
+- rebuilt pages use `DecisionPanel` or the approved final conversion contract
+- shared section framing uses `SectionFrame`, not old `SectionShell`
 - no legacy CSS is imported
 - no `_compat.css`
 - no `styles/_legacy`
@@ -1316,7 +1457,7 @@ Low / cleanup:
 
 **Status:** Complete  
 **Branch:** `ui-hard-reset`  
-**Commits:** `7f54646` (first pass) + uncommitted fixes (second pass)
+**Commits:** `7f54646` (first pass) + follow-up fixes (second pass)
 
 ### What Was Done
 
@@ -1400,7 +1541,13 @@ Local SEO Authority page (`/services/local-seo-authority`) — same polish pass 
 - No-hardcoded-content validator — SVG inline rgba moved to CSS; `fill='none'` moved to CSS
 - Conversion contract validator — `primary: true as const` corrected; `relatedSystems.header.title` in renderer
 - Template rendering test — `data-testid="smart-cta"` added to `LSACTASection`
-- Duplicate related services block — fixed via `SLUGS_WITH_OWN_RELATED` in config.tsx
+- Duplicate related services block — temporarily fixed via `SLUGS_WITH_OWN_RELATED` in config.tsx
+
+### Temporary Debt Introduced
+
+- `SLUGS_WITH_OWN_RELATED` is a temporary slug exception patch.
+- It conflicts with the long-term related ownership rule.
+- Replace it with a formal related ownership contract during the base organization/enforcement milestone.
 
 ### Checks
 
@@ -1409,3 +1556,70 @@ Local SEO Authority page (`/services/local-seo-authority`) — same polish pass 
 - `npx next build` — ✓ Compiled successfully (no errors)
 - `npx vitest run tests/integration/template-rendering.test.ts` — ✓ passed
 - `npx vitest run tests/system/content-enforcement.test.ts` — ✓ passed
+
+---
+
+## Milestone 6 — Base Organization / Enforcement Cleanup
+
+**Status:** Complete (branch: `ui-hard-reset`, Steps 1–15 done)
+
+### Completed Work
+
+1. ✅ Moved service CSS into `src/styles/services/` (`smart-website.css`, `local-seo.css`)
+2. ✅ Updated `src/index.css` imports from `pages/` → `services/`
+3. ✅ Added 10 missing token definitions to `tokens.css`
+4. ✅ Replaced `SLUGS_WITH_OWN_RELATED` patch with formal `options.relatedContent` registry contract
+5. ✅ Created `src/components/primitives/Accordion.tsx` — replaces `SWSFaqAccordion`
+6. ✅ Created `src/components/primitives/Tabs.tsx` — replaces `SWSCoverageTabs`
+7. ✅ Created `src/components/layout/SectionFrame.tsx` — replaces `sws-head`/`lsa-section__header` patterns
+8. ✅ Created `src/components/layout/HeroFrame.tsx` — replaces `sws-hero__copy`/`lsa-hero__copy` patterns
+9. ✅ Created `src/components/conversion/DecisionPanel.tsx` — replaces `SWSCTASection`, `LSACTASection`, homepage `CTASection`
+10. ✅ Migrated SWS, LSA, Homepage CTAs to `DecisionPanel`
+11. ✅ Migrated SWS + LSA section headers to `SectionFrame`
+12. ✅ Migrated SWS + LSA heroes to `HeroFrame`
+13. ✅ Migrated SWS + LSA FAQs to `Accordion`
+14. ✅ Migrated SWS coverage tabs to `Tabs`
+15. ✅ Removed replaced CSS blocks (sws-head, sws-accordion, sws-cta, sws-ctabs, lsa-section__header, lsa-hero__ copy-side, lsa-cta)
+16. ✅ Updated `validate-content-enforcement.ts` messages + added `DecisionPanel` contract check
+17. ✅ Updated `validate-primary-cta.ts` to also scan `<DecisionPanel` instances
+
+### Why This Milestone Exists
+
+SWS and LSA proved the new direction, but LSA also exposed base-system gaps:
+
+- Copilot invented token names that did not exist.
+- Service CSS was still being created under `src/styles/pages/` instead of a domain folder.
+- Page-named behavior components were created inside renderer folders.
+- Related content duplication was fixed with a slug exception patch.
+- Final conversion sections still use confusing CTA naming.
+- Old `PrimaryCTASection` / `SectionShell` validator assumptions remain.
+
+This milestone organizes the base before scaling to more pages.
+
+### Required Work
+
+1. Move service CSS into `src/styles/services/`:
+   - `smart-website.css`
+   - `local-seo.css`
+   - optional `services-base.css`
+2. Update `src/index.css` imports.
+3. Update token validator to verify all `var(--mw-*)` references exist in `tokens.css`.
+4. Add CSS ownership validation.
+5. Add rebuilt-page old-import and old-class validation.
+6. Move reusable behavior components out of renderer folders:
+   - FAQ/disclosure behavior → `src/components/primitives/Accordion.tsx`
+   - tabs behavior → `src/components/primitives/Tabs.tsx`
+7. Create `src/components/layout/SectionFrame.tsx`.
+8. Create `src/components/conversion/DecisionPanel.tsx`.
+9. Replace old section-level CTA naming with `DecisionPanel` where practical.
+10. Replace `SLUGS_WITH_OWN_RELATED` with a formal related ownership contract.
+11. Update validators from old `PrimaryCTASection` / `CTASection` assumptions to the new DecisionPanel contract.
+12. Update this document after the milestone.
+
+### Checks Required
+
+- `node scripts/validators/validate-tokens.mjs`
+- `npm run system:full`
+- `npx next build`
+- `npm run typecheck`
+- `npm run lint`

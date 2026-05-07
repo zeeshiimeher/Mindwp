@@ -11,11 +11,13 @@ import {
   X,
 } from 'lucide-react';
 
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import { Accordion } from '@/components/primitives/Accordion';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-import SWSFaqAccordion from './SWSFaqAccordion';
 
 // =============================================================================
 // LocalSeoAuthorityRenderer -- clean Tier-1 renderer (ui-hard-reset)
@@ -23,7 +25,7 @@ import SWSFaqAccordion from './SWSFaqAccordion';
 //           assumptions . coverageMap . visibilityCycle . proofStory .
 //           fitFilter . faq . cta . relatedSystems
 //
-// CSS: src/styles/pages/local-seo.css (lsa-* classes)
+// CSS: src/styles/services/local-seo.css (lsa-* classes)
 // Base: mw-container, mw-btn, mw-animate-up from layout/primitives
 // No rd-* classes. No PrimaryCTASection. No SectionShell. No ErrorBoundary.
 // =============================================================================
@@ -45,10 +47,7 @@ const ARIA_CYCLE_DOT = 'Visibility cycle';
 const ARIA_PROOF_DOT = 'Proof story';
 const ARIA_FIT_FILTER_DOT = 'Fit filter';
 const ARIA_FAQ_DOT = 'Frequently asked questions';
-const ARIA_CTA_DOT = 'Get started';
 const ARIA_RELATED_DOT = 'Related services';
-
-const PANEL_LABEL_DOT = 'What we check';
 
 // -- Icon map -----------------------------------------------------------------
 
@@ -72,64 +71,6 @@ function requireHeadingDescription(description: string | undefined, section: str
     throw new Error(`[${section}] Invalid data`);
   }
   return description;
-}
-
-// -- CTA sub-component (satisfies heading/actions validator contract) ---------
-
-type LSACTAHeading = { kicker?: string; title: string; description: string };
-type LSACTAExpectation = { num: string; text: string };
-type LSACTAAction = { label: string; href: string; primary: true };
-
-function LSACTASection({
-  heading,
-  actions,
-  expectations,
-}: {
-  heading: LSACTAHeading;
-  actions: readonly LSACTAAction[];
-  expectations?: readonly LSACTAExpectation[];
-}) {
-  const action = actions[0];
-  if (!action) throw new Error('[cta section] Invalid data');
-  return (
-    <section className='lsa-section lsa-cta' aria-label={ARIA_CTA_DOT} data-testid='smart-cta'>
-      <div className='mw-container'>
-        <div className='lsa-cta__wrap'>
-          <div className='lsa-cta__texture' aria-hidden='true' />
-          <div className='lsa-cta__layout'>
-            <div className='lsa-cta__copy mw-animate-up'>
-              {heading.kicker && (
-                <div className='lsa-section__eyebrow'>
-                  <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                  <span>{heading.kicker}</span>
-                </div>
-              )}
-              <h2 className='lsa-cta__heading'>{heading.title}</h2>
-              <p className='lsa-cta__description'>{heading.description}</p>
-              <a href={action.href} className='lsa-cta__action mw-btn mw-btn--white'>
-                {action.label}
-                <ArrowRight size={16} aria-hidden='true' />
-              </a>
-            </div>
-
-            {expectations && expectations.length > 0 && (
-              <div className='lsa-cta__expectations mw-animate-panel'>
-                <div className='lsa-cta__expectations-label'>{PANEL_LABEL_DOT}</div>
-                <div className='lsa-cta__expectations-list'>
-                  {expectations.map(item => (
-                    <div key={item.num} className='lsa-cta__expectation'>
-                      <span className='lsa-cta__expectation-num'>{item.num}</span>
-                      <span className='lsa-cta__expectation-text'>{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
 }
 
 // -- Main renderer ------------------------------------------------------------
@@ -173,35 +114,21 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
         <div className='lsa-hero__texture' aria-hidden='true' />
         <div className='lsa-hero__inner mw-container'>
           <div className='lsa-hero__layout'>
-            <div className='lsa-hero__copy mw-animate-up'>
-              {hero.badge && (
-                <div className='lsa-hero__badge'>
-                  <span className='lsa-hero__badge-dot' aria-hidden='true' />
-                  <span className='lsa-hero__badge-label'>{hero.badge}</span>
+            <HeroFrame
+              badge={hero.badge}
+              title={hero.title}
+              description={hero.description}
+              actions={
+                <div className='lsa-hero__action'>
+                  <a href={contactHref} className='mw-btn mw-btn--white'>
+                    {PRIMARY_CTA_LABEL}
+                    <ArrowRight size={16} aria-hidden='true' />
+                  </a>
                 </div>
-              )}
-              <h1 className='lsa-hero__heading'>{hero.title}</h1>
-              <p className='lsa-hero__description'>{hero.description}</p>
-              <div className='lsa-hero__action'>
-                <a href={contactHref} className='mw-btn mw-btn--white'>
-                  {PRIMARY_CTA_LABEL}
-                  <ArrowRight size={16} aria-hidden='true' />
-                </a>
-              </div>
-              {hero.list && hero.list.length > 0 && (
-                <div className='lsa-hero__chips'>
-                  {hero.list.map((item: string) => (
-                    <div key={item} className='lsa-hero__chip'>
-                      <span
-                        className='lsa-hero__chip-dot lsa-hero__chip-dot--warn'
-                        aria-hidden='true'
-                      />
-                      <span className='lsa-hero__chip-label'>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+              }
+              chips={hero.list && hero.list.length > 0 ? (hero.list as string[]) : undefined}
+              chipDotVariant='warn'
+            />
 
             <div className='lsa-hero__panel mw-animate-panel'>
               <div className='lsa-presence'>
@@ -269,21 +196,17 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- AUTHORITY DECISION BOARD ---------------------------------------- */}
       <section className='lsa-section lsa-decision' aria-label={ARIA_DECISION_DOT}>
         <div className='mw-container'>
-          <div className='lsa-decision__header lsa-section__header'>
-            {authorityDecision.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{authorityDecision.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{authorityDecision.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(
+          <SectionFrame
+            className='lsa-decision__header'
+            heading={{
+              kicker: authorityDecision.header.kicker,
+              title: authorityDecision.header.title,
+              description: requireHeadingDescription(
                 authorityDecision.header.description,
                 'authority decision'
-              )}
-            </p>
-          </div>
+              ),
+            }}
+          />
 
           <div className='lsa-decision__board mw-animate-up'>
             <div className='lsa-decision__cols'>
@@ -337,18 +260,17 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
         aria-label={ARIA_SIGNAL_AUDIT_DOT}
       >
         <div className='mw-container'>
-          <div className='lsa-signal-audit__header lsa-section__header'>
-            {signalAudit.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{signalAudit.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{signalAudit.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(signalAudit.header.description, 'signal audit')}
-            </p>
-          </div>
+          <SectionFrame
+            className='lsa-signal-audit__header'
+            heading={{
+              kicker: signalAudit.header.kicker,
+              title: signalAudit.header.title,
+              description: requireHeadingDescription(
+                signalAudit.header.description,
+                'signal audit'
+              ),
+            }}
+          />
 
           <div className='lsa-signal-audit__board mw-animate-up'>
             <div className='lsa-signal-audit__bar'>
@@ -477,21 +399,17 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- STRUCTURED COMPARISON ------------------------------------------- */}
       <section className='lsa-section lsa-comparison' aria-label={ARIA_COMPARISON_DOT}>
         <div className='mw-container'>
-          <div className='lsa-comparison__header lsa-section__header'>
-            {structuredComparison.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{structuredComparison.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{structuredComparison.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(
+          <SectionFrame
+            className='lsa-comparison__header'
+            heading={{
+              kicker: structuredComparison.header.kicker,
+              title: structuredComparison.header.title,
+              description: requireHeadingDescription(
                 structuredComparison.header.description,
                 'structured comparison'
-              )}
-            </p>
-          </div>
+              ),
+            }}
+          />
 
           <div className='lsa-comparison__split mw-animate-up'>
             <div className='lsa-comparison__panel lsa-comparison__panel--disconnected'>
@@ -552,18 +470,14 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
         aria-label={ARIA_ASSUMPTIONS_DOT}
       >
         <div className='mw-container'>
-          <div className='lsa-assumptions__header lsa-section__header'>
-            {assumptions.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{assumptions.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{assumptions.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(assumptions.header.description, 'assumptions')}
-            </p>
-          </div>
+          <SectionFrame
+            className='lsa-assumptions__header'
+            heading={{
+              kicker: assumptions.header.kicker,
+              title: assumptions.header.title,
+              description: requireHeadingDescription(assumptions.header.description, 'assumptions'),
+            }}
+          />
 
           <div className='lsa-assumptions__list mw-animate-up'>
             {assumptions.myths.map((entry: { myth: string; reality: string }) => (
@@ -595,18 +509,17 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- COVERAGE MAP ---------------------------------------------------- */}
       <section className='lsa-section lsa-coverage-map' aria-label={ARIA_COVERAGE_MAP_DOT}>
         <div className='mw-container'>
-          <div className='lsa-coverage-map__header lsa-section__header'>
-            {coverageMap.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{coverageMap.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{coverageMap.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(coverageMap.header.description, 'coverage map')}
-            </p>
-          </div>
+          <SectionFrame
+            className='lsa-coverage-map__header'
+            heading={{
+              kicker: coverageMap.header.kicker,
+              title: coverageMap.header.title,
+              description: requireHeadingDescription(
+                coverageMap.header.description,
+                'coverage map'
+              ),
+            }}
+          />
 
           <div className='lsa-coverage-map__panel mw-animate-up'>
             <div className='lsa-coverage-map__texture' aria-hidden='true' />
@@ -690,18 +603,14 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- PROOF STORY ----------------------------------------------------- */}
       <section className='lsa-section lsa-proof' aria-label={ARIA_PROOF_DOT}>
         <div className='mw-container'>
-          <div className='lsa-proof__header lsa-section__header'>
-            {proofStory.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{proofStory.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{proofStory.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(proofStory.header.description, 'proof story')}
-            </p>
-          </div>
+          <SectionFrame
+            className='lsa-proof__header'
+            heading={{
+              kicker: proofStory.header.kicker,
+              title: proofStory.header.title,
+              description: requireHeadingDescription(proofStory.header.description, 'proof story'),
+            }}
+          />
 
           <div className='lsa-proof__card mw-animate-up'>
             <div className='lsa-proof__context'>
@@ -760,18 +669,14 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
         aria-label={ARIA_FIT_FILTER_DOT}
       >
         <div className='mw-container'>
-          <div className='lsa-fit-filter__header lsa-section__header'>
-            {fitFilter.header.kicker && (
-              <div className='lsa-section__eyebrow'>
-                <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
-                <span>{fitFilter.header.kicker}</span>
-              </div>
-            )}
-            <h2 className='lsa-section__heading'>{fitFilter.header.title}</h2>
-            <p className='lsa-section__description'>
-              {requireHeadingDescription(fitFilter.header.description, 'fit filter')}
-            </p>
-          </div>
+          <SectionFrame
+            className='lsa-fit-filter__header'
+            heading={{
+              kicker: fitFilter.header.kicker,
+              title: fitFilter.header.title,
+              description: requireHeadingDescription(fitFilter.header.description, 'fit filter'),
+            }}
+          />
 
           <div className='lsa-fit-filter__split mw-animate-up'>
             <div className='lsa-fit-filter__panel lsa-fit-filter__panel--strong'>
@@ -813,22 +718,23 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
           <div className='lsa-faq__layout'>
             <div className='lsa-faq__copy mw-animate-up'>
               {faq.header.kicker && (
-                <div className='lsa-section__eyebrow'>
-                  <span className='lsa-section__eyebrow-dot' aria-hidden='true' />
+                <div className='mw-section-frame__eyebrow'>
+                  <span className='mw-section-frame__eyebrow-dot' aria-hidden='true' />
                   <span>{faq.header.kicker}</span>
                 </div>
               )}
               <h2 className='lsa-faq__heading'>{faq.header.title}</h2>
             </div>
             <div className='lsa-faq__accordion mw-animate-panel'>
-              <SWSFaqAccordion items={faq.items} />
+              <Accordion items={faq.items} />
             </div>
           </div>
         </div>
       </section>
 
       {/* -- CTA ------------------------------------------------------------- */}
-      <LSACTASection
+      <DecisionPanel
+        className='mw-decision-panel--mist'
         heading={data.cta.heading}
         actions={data.cta.actions}
         expectations={data.cta.expectations}

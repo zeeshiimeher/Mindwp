@@ -76,7 +76,14 @@ export default function ComponentSystemVisualizerPage() {
         heading={{ title: local.hero.title, description: local.hero.description }}
         chips={local.hero.list}
         actions={[local.cta.actions[0]]}
-        visual={{ title: 'Local Presence', subtitle: 'Signal audit', rows: [{ label: 'Map pack', value: 'Missing', status: 'risk' as const }, { label: 'Citations', value: '62%', status: 'warn' as const }] }}
+        visual={{
+          title: 'Local Presence',
+          subtitle: 'Signal audit',
+          rows: [
+            { label: 'Map pack', value: 'Missing', status: 'risk' as const },
+            { label: 'Citations', value: '62%', status: 'warn' as const },
+          ],
+        }}
       />
 
       <GridCardsSection
@@ -89,9 +96,30 @@ export default function ComponentSystemVisualizerPage() {
           description: 'Three signal failures that keep businesses hidden in local search.',
         }}
         items={[
-          { id: 'lsa-mc-0', iconKey: 'alert' as const, badge: 'Current state', title: 'Profile incomplete', description: 'Services and hours missing from Google Business Profile.', status: 'risk' as const },
-          { id: 'lsa-mc-1', iconKey: 'eye' as const, badge: 'Current state', title: 'Citations inconsistent', description: 'Name, address and phone number varies across directories.', status: 'risk' as const },
-          { id: 'lsa-mc-2', iconKey: 'clock' as const, badge: 'Current state', title: 'No review activity', description: 'No new reviews in the last 90 days.', status: 'risk' as const },
+          {
+            id: 'lsa-mc-0',
+            iconKey: 'alert' as const,
+            badge: 'Current state',
+            title: 'Profile incomplete',
+            description: 'Services and hours missing from Google Business Profile.',
+            status: 'risk' as const,
+          },
+          {
+            id: 'lsa-mc-1',
+            iconKey: 'eye' as const,
+            badge: 'Current state',
+            title: 'Citations inconsistent',
+            description: 'Name, address and phone number varies across directories.',
+            status: 'risk' as const,
+          },
+          {
+            id: 'lsa-mc-2',
+            iconKey: 'clock' as const,
+            badge: 'Current state',
+            title: 'No review activity',
+            description: 'No new reviews in the last 90 days.',
+            status: 'risk' as const,
+          },
         ]}
       />
 
@@ -120,17 +148,26 @@ export default function ComponentSystemVisualizerPage() {
         heading={{
           kicker: label('BeforeAfterSection', 'split-panel'),
           title: 'Package SEO vs local authority system',
-          description: 'The difference between buying activity and building signals Google can verify.',
+          description:
+            'The difference between buying activity and building signals Google can verify.',
         }}
         before={{
           label: 'Package SEO',
           title: 'Activity without compounding',
-          items: ['Monthly reports on work done', 'No signal consistency checks', 'Rankings drift when activity stops'],
+          items: [
+            'Monthly reports on work done',
+            'No signal consistency checks',
+            'Rankings drift when activity stops',
+          ],
         }}
         after={{
           label: 'Authority system',
           title: 'Signals that compound',
-          items: ['Verified citations across directories', 'Review cadence built in', 'Rank stability through consistent signals'],
+          items: [
+            'Verified citations across directories',
+            'Review cadence built in',
+            'Rank stability through consistent signals',
+          ],
         }}
       />
 
@@ -199,7 +236,8 @@ export default function ComponentSystemVisualizerPage() {
         heading={{
           kicker: label('ProofStorySection', 'before-change-after'),
           title: 'Plumbing company — North London',
-          description: 'Scenario study showing how local signal work shifted map pack visibility over four months.',
+          description:
+            'Scenario study showing how local signal work shifted map pack visibility over four months.',
         }}
         before={{
           label: 'Before',
@@ -288,10 +326,30 @@ export default function ComponentSystemVisualizerPage() {
           description: 'Eight signal families — from profile to citation to content coverage.',
         }}
         groups={[
-          { label: 'Google Business Profile', description: 'Complete, verified, active.', iconKey: 'database' as const, items: ['All services listed', 'Hours and area correct', 'Posts active'] },
-          { label: 'Citation consistency', description: 'Name, address and phone standardised across directories.', iconKey: 'clipboard' as const, items: ['40+ directories checked', 'Inconsistencies corrected', 'Ongoing monitoring'] },
-          { label: 'Review signals', description: 'Recent, relevant, replied to.', iconKey: 'shield' as const, items: ['Review request process', 'Negative routing', 'Response templates'] },
-          { label: 'Service page coverage', description: 'Each service indexed and linked.', iconKey: 'route' as const, items: ['Service pages built', 'Local schema added', 'Internal linking correct'] },
+          {
+            label: 'Google Business Profile',
+            description: 'Complete, verified, active.',
+            iconKey: 'database' as const,
+            items: ['All services listed', 'Hours and area correct', 'Posts active'],
+          },
+          {
+            label: 'Citation consistency',
+            description: 'Name, address and phone standardised across directories.',
+            iconKey: 'clipboard' as const,
+            items: ['40+ directories checked', 'Inconsistencies corrected', 'Ongoing monitoring'],
+          },
+          {
+            label: 'Review signals',
+            description: 'Recent, relevant, replied to.',
+            iconKey: 'shield' as const,
+            items: ['Review request process', 'Negative routing', 'Response templates'],
+          },
+          {
+            label: 'Service page coverage',
+            description: 'Each service indexed and linked.',
+            iconKey: 'route' as const,
+            items: ['Service pages built', 'Local schema added', 'Internal linking correct'],
+          },
         ]}
       />
 
@@ -304,10 +362,30 @@ export default function ComponentSystemVisualizerPage() {
           description: 'Eight signal families — from profile to citation to content coverage.',
         }}
         groups={[
-          { label: 'Google Business Profile', description: 'Complete, verified, active.', iconKey: 'database' as const, items: ['All services listed', 'Hours and area correct', 'Posts active'] },
-          { label: 'Citation consistency', description: 'Name, address and phone standardised across directories.', iconKey: 'clipboard' as const, items: ['40+ directories checked', 'Inconsistencies corrected', 'Ongoing monitoring'] },
-          { label: 'Review signals', description: 'Recent, relevant, replied to.', iconKey: 'shield' as const, items: ['Review request process', 'Negative routing', 'Response templates'] },
-          { label: 'Service page coverage', description: 'Each service indexed and linked.', iconKey: 'route' as const, items: ['Service pages built', 'Local schema added', 'Internal linking correct'] },
+          {
+            label: 'Google Business Profile',
+            description: 'Complete, verified, active.',
+            iconKey: 'database' as const,
+            items: ['All services listed', 'Hours and area correct', 'Posts active'],
+          },
+          {
+            label: 'Citation consistency',
+            description: 'Name, address and phone standardised across directories.',
+            iconKey: 'clipboard' as const,
+            items: ['40+ directories checked', 'Inconsistencies corrected', 'Ongoing monitoring'],
+          },
+          {
+            label: 'Review signals',
+            description: 'Recent, relevant, replied to.',
+            iconKey: 'shield' as const,
+            items: ['Review request process', 'Negative routing', 'Response templates'],
+          },
+          {
+            label: 'Service page coverage',
+            description: 'Each service indexed and linked.',
+            iconKey: 'route' as const,
+            items: ['Service pages built', 'Local schema added', 'Internal linking correct'],
+          },
         ]}
       />
 
@@ -431,11 +509,41 @@ export default function ComponentSystemVisualizerPage() {
         leftLabel='Package approach'
         rightLabel='Authority system'
         criteria={[
-          { id: 'lsa-cc-1', label: 'Signal type', currentApproach: 'Activity reported (links built, posts written)', systemApproach: 'Signals Google can independently verify', decisionSignal: 'Verified signals compound. Reported activity does not.' },
-          { id: 'lsa-cc-2', label: 'Ranking stability', currentApproach: 'Drops when activity pauses', systemApproach: 'Holds because underlying signals remain', decisionSignal: 'Stability requires signals, not continuous spend.' },
-          { id: 'lsa-cc-3', label: 'Citation consistency', currentApproach: 'Rarely checked or corrected', systemApproach: 'Audited and standardised across directories', decisionSignal: 'Inconsistent citations directly suppress local rankings.' },
-          { id: 'lsa-cc-4', label: 'Review signals', currentApproach: 'Not part of typical package', systemApproach: 'Review cadence built into the system', decisionSignal: 'Review recency is a direct local ranking factor.' },
-          { id: 'lsa-cc-5', label: 'Profile completeness', currentApproach: 'Set up once, rarely maintained', systemApproach: 'Monitored and updated as services change', decisionSignal: 'Google rewards profiles that stay accurate and complete.' },
+          {
+            id: 'lsa-cc-1',
+            label: 'Signal type',
+            currentApproach: 'Activity reported (links built, posts written)',
+            systemApproach: 'Signals Google can independently verify',
+            decisionSignal: 'Verified signals compound. Reported activity does not.',
+          },
+          {
+            id: 'lsa-cc-2',
+            label: 'Ranking stability',
+            currentApproach: 'Drops when activity pauses',
+            systemApproach: 'Holds because underlying signals remain',
+            decisionSignal: 'Stability requires signals, not continuous spend.',
+          },
+          {
+            id: 'lsa-cc-3',
+            label: 'Citation consistency',
+            currentApproach: 'Rarely checked or corrected',
+            systemApproach: 'Audited and standardised across directories',
+            decisionSignal: 'Inconsistent citations directly suppress local rankings.',
+          },
+          {
+            id: 'lsa-cc-4',
+            label: 'Review signals',
+            currentApproach: 'Not part of typical package',
+            systemApproach: 'Review cadence built into the system',
+            decisionSignal: 'Review recency is a direct local ranking factor.',
+          },
+          {
+            id: 'lsa-cc-5',
+            label: 'Profile completeness',
+            currentApproach: 'Set up once, rarely maintained',
+            systemApproach: 'Monitored and updated as services change',
+            decisionSignal: 'Google rewards profiles that stay accurate and complete.',
+          },
         ]}
       />
 
@@ -448,10 +556,75 @@ export default function ComponentSystemVisualizerPage() {
             'The four signal families that determine local visibility — and the typical state before the system is in place.',
         }}
         families={[
-          { id: 'lsa-sf-1', title: 'Website foundation', signals: [{ id: 'lsa-s-1', label: 'Service pages indexed', state: 'weak' as const, note: 'Only 2 of 7 services have dedicated pages.' }, { id: 'lsa-s-2', label: 'Local schema markup', state: 'missing' as const, note: 'No structured data present.' }, { id: 'lsa-s-3', label: 'Page load speed', state: 'weak' as const }] },
-          { id: 'lsa-sf-2', title: 'Google Business Profile', signals: [{ id: 'lsa-s-4', label: 'Profile completeness', state: 'weak' as const, note: 'Services section incomplete.' }, { id: 'lsa-s-5', label: 'Review recency', state: 'missing' as const, note: 'No reviews in last 90 days.' }, { id: 'lsa-s-6', label: 'Post activity', state: 'missing' as const }] },
-          { id: 'lsa-sf-3', title: 'Citation signals', signals: [{ id: 'lsa-s-7', label: 'NAP consistency', state: 'weak' as const, note: 'Phone number varies across 12 directories.' }, { id: 'lsa-s-8', label: 'Directory coverage', state: 'weak' as const, metric: '18 of 40' }] },
-          { id: 'lsa-sf-4', title: 'Content coverage', signals: [{ id: 'lsa-s-9', label: 'Service area pages', state: 'missing' as const }, { id: 'lsa-s-10', label: 'Location-specific content', state: 'missing' as const, note: 'No suburb or area pages.' }] },
+          {
+            id: 'lsa-sf-1',
+            title: 'Website foundation',
+            signals: [
+              {
+                id: 'lsa-s-1',
+                label: 'Service pages indexed',
+                state: 'weak' as const,
+                note: 'Only 2 of 7 services have dedicated pages.',
+              },
+              {
+                id: 'lsa-s-2',
+                label: 'Local schema markup',
+                state: 'missing' as const,
+                note: 'No structured data present.',
+              },
+              { id: 'lsa-s-3', label: 'Page load speed', state: 'weak' as const },
+            ],
+          },
+          {
+            id: 'lsa-sf-2',
+            title: 'Google Business Profile',
+            signals: [
+              {
+                id: 'lsa-s-4',
+                label: 'Profile completeness',
+                state: 'weak' as const,
+                note: 'Services section incomplete.',
+              },
+              {
+                id: 'lsa-s-5',
+                label: 'Review recency',
+                state: 'missing' as const,
+                note: 'No reviews in last 90 days.',
+              },
+              { id: 'lsa-s-6', label: 'Post activity', state: 'missing' as const },
+            ],
+          },
+          {
+            id: 'lsa-sf-3',
+            title: 'Citation signals',
+            signals: [
+              {
+                id: 'lsa-s-7',
+                label: 'NAP consistency',
+                state: 'weak' as const,
+                note: 'Phone number varies across 12 directories.',
+              },
+              {
+                id: 'lsa-s-8',
+                label: 'Directory coverage',
+                state: 'weak' as const,
+                metric: '18 of 40',
+              },
+            ],
+          },
+          {
+            id: 'lsa-sf-4',
+            title: 'Content coverage',
+            signals: [
+              { id: 'lsa-s-9', label: 'Service area pages', state: 'missing' as const },
+              {
+                id: 'lsa-s-10',
+                label: 'Location-specific content',
+                state: 'missing' as const,
+                note: 'No suburb or area pages.',
+              },
+            ],
+          },
         ]}
       />
 

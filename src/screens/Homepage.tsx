@@ -34,6 +34,7 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import type { HomeIconKey } from '@/domains/home/data/homepage';
 import { homepageData } from '@/domains/home/data/homepage';
@@ -1040,51 +1041,16 @@ function CTASection() {
   const { cta } = homepageData;
 
   return (
-    <section className='home-cta' id='cta'>
-      <div className='home-cta__inner mw-container'>
-        <div className='home-cta__wrap'>
-          <div className='home-cta__texture' aria-hidden='true' />
-          <div className='home-cta__layout'>
-            <div className='home-cta__copy mw-animate-up'>
-              <div className='home-cta__eyebrow'>
-                <span className='home-cta__eyebrow-dot' aria-hidden='true' />
-                <span>{cta.eyebrow}</span>
-              </div>
-              <h2 className='home-cta__heading'>
-                {cta.heading.title}
-                <br />
-                <span className='home-cta__heading--muted'>{cta.heading.muted}</span>
-              </h2>
-              <p className='home-cta__description'>{cta.heading.description}</p>
-              {cta.actions[0] && (
-                <a href={cta.actions[0].href} className='home-cta__action mw-btn mw-btn--white'>
-                  {cta.actions[0].label}
-                  <ArrowRight size={16} aria-hidden='true' />
-                </a>
-              )}
-            </div>
-
-            <div className='home-cta__expectations mw-animate-panel'>
-              <div className='home-cta__expectations-label'>What we look at</div>
-              <div className='home-cta__expectations-list'>
-                {cta.expectations.map(item => (
-                  <div key={item.num} className='home-cta__expectation'>
-                    <span className='home-cta__expectation-num'>{item.num}</span>
-                    <span className='home-cta__expectation-text'>{item.text}</span>
-                  </div>
-                ))}
-              </div>
-              <div className='home-cta__expectations-footer'>
-                <span>{cta.footer.noSell}</span>
-                <span className='home-cta__expectations-tone'>
-                  <span className='home-cta__expectations-tone-dot' aria-hidden='true' />
-                  {cta.footer.tone}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <DecisionPanel
+      heading={{
+        kicker: cta.eyebrow,
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      footer={cta.footer}
+    />
   );
 }

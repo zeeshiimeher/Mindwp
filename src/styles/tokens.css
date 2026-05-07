@@ -176,6 +176,26 @@
     --mw-text-base: 1rem;
     /* 16px — body default */
 
+    /* Utility text scale — mirrors common size names */
+    --mw-text-xs: 0.75rem;
+    /* 12px */
+    --mw-text-sm: 0.875rem;
+    /* 14px */
+    --mw-text-lg: 1.125rem;
+    /* 18px */
+    --mw-text-xl: 1.25rem;
+    /* 20px */
+    --mw-text-2xl: 1.5rem;
+    /* 24px */
+    --mw-text-3xl: 1.875rem;
+    /* 30px */
+    --mw-text-4xl: 2.25rem;
+    /* 36px */
+    --mw-text-5xl: 3rem;
+    /* 48px */
+    --mw-text-6xl: 3.75rem;
+    /* 60px */
+
     /* Line heights */
     --mw-leading-tight: 1.02;
     --mw-leading-heading: 1.05;
@@ -240,6 +260,10 @@
     /* 112px */
     --mw-space-32: 8rem;
     /* 128px */
+
+    /* Semantic content spacing */
+    --mw-space-content-lg: 2.5rem;
+    /* 40px — standard gap between section header and section content */
 
     /* ══════════════════════════════════════════════════════
        7. LAYOUT — containers, section rhythm, hero padding

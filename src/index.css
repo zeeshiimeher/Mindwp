@@ -18,8 +18,8 @@
 @import './styles/primitives.css';
 @import './styles/components.css';
 @import './styles/pages/home.css';
-@import './styles/pages/smart-website.css';
-@import './styles/pages/local-seo.css';
+@import './styles/services/smart-website.css';
+@import './styles/services/local-seo.css';
 
 @tailwind base;
 @tailwind components;

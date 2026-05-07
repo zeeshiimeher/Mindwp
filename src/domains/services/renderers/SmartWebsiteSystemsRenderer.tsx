@@ -1,11 +1,13 @@
-import { ArrowRight } from 'lucide-react';
+import { Eye, Layers, Mail, PackageOpen, Shield } from 'lucide-react';
 
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import { Accordion } from '@/components/primitives/Accordion';
+import { Tabs } from '@/components/primitives/Tabs';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-import SWSCoverageTabs from './SWSCoverageTabs';
-import SWSFaqAccordion from './SWSFaqAccordion';
 
 // =============================================================================
 // SmartWebsiteSystemsRenderer — clean Tier-1 renderer (ui-hard-reset)
@@ -13,15 +15,15 @@ import SWSFaqAccordion from './SWSFaqAccordion';
 //           environmentRoster · handledPath · proofStory · compoundingSignals ·
 //           buildBoard · fitFilter · faq · cta
 //
-// CSS: src/styles/pages/smart-website.css (sws-* classes)
+// CSS: src/styles/services/smart-website.css (sws-* classes)
 // Base: mw-container, mw-btn, mw-animate-up from layout/primitives
 // No rd-* classes. No components/sections imports. No ErrorBoundary.
 // =============================================================================
 
 interface Props {
   data: ServicePageDataBySlug[
-    | 'smart-website-systems'
-    | 'service-pages-vs-one-generic-services-page'];
+  | 'smart-website-systems'
+  | 'service-pages-vs-one-generic-services-page'];
   slug: string;
 }
 
@@ -39,7 +41,6 @@ const ARIA_COMPOUNDING_DOT = 'Compounding signals';
 const ARIA_BUILD_BOARD_DOT = 'Build board';
 const ARIA_FIT_FILTER_DOT = 'Fit filter';
 const ARIA_FAQ_DOT = 'Frequently asked questions';
-const ARIA_CTA_DOT = 'Get started';
 
 const LEAK_SITUATION_DOT = 'Situation';
 const LEAK_COST_DOT = 'Cost';
@@ -68,10 +69,18 @@ const BUILD_INPUTS_DOT = 'Project inputs';
 const BUILD_OUTPUTS_DOT = 'Outputs';
 const BUILD_FINAL_DOT = 'Working state';
 const HANDOFF_STATUS_LABEL_DOT = 'On capture';
-const CTA_DATA_TESTID_DOT = 'smart-cta';
-const CTA_PANEL_LABEL_DOT = 'What we check';
 const CTA_EXPECTATIONS_KEY_DOT = 'expectations';
 const CTA_FOOTER_KEY_DOT = 'footer';
+
+const COVERAGE_ICON_KEYS: Record<string, React.ReactNode> = {
+  Structure: <Layers size={16} />,
+  'Capture & Routing': <Mail size={16} />,
+  Visibility: <Eye size={16} />,
+  Protection: <Shield size={16} />,
+  Handover: <PackageOpen size={16} />,
+};
+
+const COVERAGE_TITLE_DOT = 'Coverage blueprint — Smart Website System';
 
 // ── CSS class constants (end in _CLASS — allowed by hardcoded-content validator) ──
 
@@ -88,82 +97,20 @@ function requireHeadingDescription(description: string | undefined, section: str
   return description;
 }
 
+function requireHeadingTitle(title: string | undefined, section: string) {
+  if (!title || title.trim().length === 0) {
+    throw new Error(`[${section}] Invalid data`);
+  }
+  return title;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SectionsMap = Record<string, any>;
 
-// ── CTA sub-component (satisfies heading/actions validator contract) ─────────
+// ── CTA local types (for data access — data contract stays as data.cta.*) ───
 
-type CTAHeading = { kicker?: string; title: string; description: string };
 type CTAExpectation = { num: string; text: string };
 type CTAFooter = { noSell: string; tone: string };
-type CTAAction = { label: string; href: string; primary: true };
-
-function SWSCTASection({
-  heading,
-  actions,
-  expectations,
-  footer,
-}: {
-  heading: CTAHeading;
-  actions: readonly CTAAction[];
-  expectations?: readonly CTAExpectation[];
-  footer?: CTAFooter;
-}) {
-  const action = actions[0];
-  if (!action) throw new Error('[cta section] Invalid data');
-  return (
-    <section
-      className='sws-section sws-cta'
-      aria-label={ARIA_CTA_DOT}
-      data-testid={CTA_DATA_TESTID_DOT}
-    >
-      <div className='sws-cta__inner mw-container'>
-        <div className='sws-cta__wrap'>
-          <div className='sws-cta__texture' aria-hidden='true' />
-          <div className='sws-cta__layout'>
-            <div className='sws-cta__copy mw-animate-up'>
-              {heading.kicker && (
-                <div className='sws-cta__eyebrow'>
-                  <span className='sws-cta__eyebrow-dot' aria-hidden='true' />
-                  <span>{heading.kicker}</span>
-                </div>
-              )}
-              <h2 className='sws-cta__heading'>{heading.title}</h2>
-              <p className='sws-cta__description'>{heading.description}</p>
-              <a href={action.href} className='sws-cta__action mw-btn mw-btn--white'>
-                {action.label}
-                <ArrowRight size={16} aria-hidden='true' />
-              </a>
-            </div>
-
-            {expectations && expectations.length > 0 && (
-              <div className='sws-cta__expectations mw-animate-panel'>
-                <div className='sws-cta__expectations-label'>{CTA_PANEL_LABEL_DOT}</div>
-                <div className='sws-cta__expectations-list'>
-                  {expectations.map(item => (
-                    <div key={item.num} className='sws-cta__expectation'>
-                      <span className='sws-cta__expectation-num'>{item.num}</span>
-                      <span className='sws-cta__expectation-text'>{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-                {footer && (
-                  <div className='sws-cta__expectations-footer'>
-                    <span>{footer.noSell}</span>
-                    <span className='sws-cta__expectations-tone'>
-                      <span className='sws-cta__expectations-tone-dot' aria-hidden='true' />
-                      {footer.tone}
-                    </span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ── Main renderer ────────────────────────────────────────────────────────────
 
@@ -195,29 +142,18 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
       {/* 1. Hero */}
       <section className='sws-hero'>
         <div className='sws-hero__inner mw-container'>
-          <div className='sws-hero__copy mw-animate-up'>
-            <div className='sws-hero__eyebrow'>
-              <span className='sws-hero__eyebrow-dot' aria-hidden={true} />
-              <span className='sws-hero__eyebrow-text'>{hero.badge}</span>
-            </div>
-            <h1 className='sws-hero__heading'>{hero.title}</h1>
-            <p className='sws-hero__description'>{hero.description}</p>
-            <div className='sws-hero__actions'>
+          <HeroFrame
+            badge={hero.badge}
+            title={hero.title}
+            description={hero.description}
+            actions={
               <a href={contactHref} className='mw-btn mw-btn--white'>
                 {PRIMARY_CTA_LABEL}
               </a>
-            </div>
-            {Array.isArray(hero.list) && hero.list.length > 0 && (
-              <div className='sws-hero__chips'>
-                {(hero.list as string[]).map(chip => (
-                  <span key={chip} className='sws-hero__chip'>
-                    <span className='sws-dot sws-dot--subtle' aria-hidden={true} />
-                    {chip}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
+            }
+            chips={Array.isArray(hero.list) ? (hero.list as string[]) : undefined}
+            chipDotVariant='subtle'
+          />
           {hero.visual && (
             <div className='sws-hero__feed' aria-hidden={true}>
               <div className='sws-hero__feed-header'>
@@ -270,11 +206,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-leak-map' aria-label={ARIA_LEAK_MAP_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {leakMap.header?.kicker && <p className='sws-kicker'>{leakMap.header.kicker}</p>}
-                  <h2 className='sws-h2'>{leakMap.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: leakMap.header?.kicker,
+                    title: requireHeadingTitle(leakMap.header?.title, 'leak map section'),
+                    description: desc,
+                  }}
+                />
                 {Array.isArray(leakMap.stages) && leakMap.stages.length > 0 && (
                   <div className='sws-leak-map__stage-strip'>
                     {(leakMap.stages as string[]).map((stage: string) => (
@@ -344,13 +282,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-comparison' aria-label={ARIA_COMPARISON_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {comparison.header?.kicker && (
-                    <p className='sws-kicker'>{comparison.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{comparison.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: comparison.header?.kicker,
+                    title: requireHeadingTitle(comparison.header?.title, 'comparison section'),
+                    description: desc,
+                  }}
+                />
                 <div className='sws-comparison__panels mw-animate-section'>
                   <div className='sws-comparison__panel sws-comparison__panel--left'>
                     <p className='sws-comparison__state-label'>{comparison.leftState.label}</p>
@@ -403,13 +341,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-handoff' aria-label={ARIA_HANDOFF_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {handoffBoard.header?.kicker && (
-                    <p className='sws-kicker'>{handoffBoard.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{handoffBoard.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: handoffBoard.header?.kicker,
+                    title: requireHeadingTitle(handoffBoard.header?.title, 'handoff board section'),
+                    description: desc,
+                  }}
+                />
                 <div className='sws-handoff__shell mw-animate-section'>
                   <div className='sws-handoff__board'>
                     <aside className='sws-handoff__source'>
@@ -487,22 +425,26 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-coverage-ledger' aria-label={ARIA_COVERAGE_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {coverageLedger.header?.kicker && (
-                    <p className='sws-kicker'>{coverageLedger.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{coverageLedger.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: coverageLedger.header?.kicker,
+                    title: requireHeadingTitle(coverageLedger.header?.title, 'coverage ledger section'),
+                    description: desc,
+                  }}
+                />
                 <div className='mw-animate-section'>
-                  <SWSCoverageTabs
-                    bands={
+                  <Tabs
+                    barTitle={COVERAGE_TITLE_DOT}
+                    bands={(
                       coverageLedger.bands as {
                         name: string;
                         purpose: string;
                         includedItems: string[];
                       }[]
-                    }
+                    ).map(b => ({
+                      ...b,
+                      icon: COVERAGE_ICON_KEYS[b.name] ?? <Layers size={16} />,
+                    }))}
                   />
                 </div>
                 {coverageLedger.closingStatement && (
@@ -526,13 +468,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               aria-label={ARIA_ENVIRONMENT_DOT}
             >
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {environmentRoster.header?.kicker && (
-                    <p className='sws-kicker'>{environmentRoster.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{environmentRoster.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: environmentRoster.header?.kicker,
+                    title: requireHeadingTitle(environmentRoster.header?.title, 'environment roster section'),
+                    description: desc,
+                  }}
+                />
                 <div
                   className='sws-environment-roster__shell mw-animate-section'
                   role='table'
@@ -604,13 +546,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-handled-path' aria-label={ARIA_HANDLED_PATH_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {handledPath.header?.kicker && (
-                    <p className='sws-kicker'>{handledPath.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{handledPath.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: handledPath.header?.kicker,
+                    title: requireHeadingTitle(handledPath.header?.title, 'handled path section'),
+                    description: desc,
+                  }}
+                />
                 <ol className='sws-handled-path__stages mw-animate-stagger'>
                   {(
                     handledPath.stages as {
@@ -671,13 +613,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-proof-story' aria-label={ARIA_PROOF_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {proofStory.header?.kicker && (
-                    <p className='sws-kicker'>{proofStory.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{proofStory.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: proofStory.header?.kicker,
+                    title: requireHeadingTitle(proofStory.header?.title, 'proof section'),
+                    description: desc,
+                  }}
+                />
                 <div className='sws-proof-story__layout mw-animate-section'>
                   <aside className='sws-proof-story__context'>
                     <p className='sws-proof-story__context-label'>{PROOF_CONTEXT_DOT}</p>
@@ -771,13 +713,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-compounding' aria-label={ARIA_COMPOUNDING_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {compoundingSignals.header?.kicker && (
-                    <p className='sws-kicker'>{compoundingSignals.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{compoundingSignals.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: compoundingSignals.header?.kicker,
+                    title: requireHeadingTitle(compoundingSignals.header?.title, 'compounding signals section'),
+                    description: desc,
+                  }}
+                />
                 <div className='sws-compounding__board mw-animate-section'>
                   {liveSignal && (
                     <div className='sws-compounding__signal'>
@@ -842,13 +784,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-build-board' aria-label={ARIA_BUILD_BOARD_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {buildBoard.header?.kicker && (
-                    <p className='sws-kicker'>{buildBoard.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{buildBoard.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: buildBoard.header?.kicker,
+                    title: requireHeadingTitle(buildBoard.header?.title, 'build board section'),
+                    description: desc,
+                  }}
+                />
                 <div className='sws-build-board__layout mw-animate-section'>
                   {Array.isArray(buildBoard.projectInputs) && (
                     <div className='sws-build-board__inputs'>
@@ -930,13 +872,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           return (
             <section className='sws-section sws-fit-filter' aria-label={ARIA_FIT_FILTER_DOT}>
               <div className='mw-container'>
-                <header className='sws-head mw-animate-up'>
-                  {fitFilter.header?.kicker && (
-                    <p className='sws-kicker'>{fitFilter.header.kicker}</p>
-                  )}
-                  <h2 className='sws-h2'>{fitFilter.header?.title}</h2>
-                  <p className='sws-lead'>{desc}</p>
-                </header>
+                <SectionFrame
+                  heading={{
+                    kicker: fitFilter.header?.kicker,
+                    title: requireHeadingTitle(fitFilter.header?.title, 'fit filter section'),
+                    description: desc,
+                  }}
+                />
                 <div className='sws-fit-filter__panels mw-animate-section'>
                   <div className='sws-fit-filter__panel sws-fit-filter__panel--strong'>
                     <p className='sws-fit-filter__panel-label'>{fitFilter.strongFit?.label}</p>
@@ -982,18 +924,18 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
       {faq && (
         <section className='sws-section sws-faq' aria-label={ARIA_FAQ_DOT}>
           <div className='mw-container'>
-            <header className='sws-head mw-animate-up'>
-              {faq.header.badge && <p className='sws-kicker'>{faq.header.badge}</p>}
-              <h2 className='sws-h2'>{faq.header.title}</h2>
-              <p className='sws-lead'>
-                {requireHeadingDescription(faq.header.description, 'faq section')}
-              </p>
-            </header>
+            <SectionFrame
+              heading={{
+                kicker: faq.header.badge,
+                title: faq.header.title,
+                description: requireHeadingDescription(faq.header.description, 'faq section'),
+              }}
+            />
             <div className='sws-faq__list mw-animate-section'>
-              <SWSFaqAccordion
+              <Accordion
                 items={faq.items.map(
                   (item: { question: string; answer: string }, index: number) => ({
-                    id: `sws-faq-${index}`,
+                    id: `mw-faq-${index}`,
                     question: item.question,
                     answer: item.answer,
                   })
@@ -1005,7 +947,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
       )}
 
       {/* 13. CTA */}
-      <SWSCTASection
+      <DecisionPanel
         heading={data.cta.heading}
         actions={data.cta.actions}
         expectations={

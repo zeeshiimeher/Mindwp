@@ -40,12 +40,19 @@ type ServiceRenderer<TData extends ServicePageData = ServicePageData> = (props: 
   slug: string;
 }) => React.JSX.Element;
 
+type RelatedContentMode = 'page-owned' | 'global-injected' | 'none';
+
 type ServiceDomainEntry<TData extends ServicePageData = ServicePageData> = {
   id: string;
   slug: string;
   data: TData;
   renderer: ServiceRenderer<TData>;
+  options?: {
+    relatedContent?: RelatedContentMode;
+  };
 };
+
+export type { RelatedContentMode };
 
 type ServiceDomainRegistry = {
   'smart-website-systems': ServiceDomainEntry<typeof smartWebsiteSystemsPage>;
@@ -79,12 +86,14 @@ type ServiceDomainRegistry = {
 
 const createServiceEntry = <TData extends ServicePageData>(
   data: TData,
-  renderer: ServiceRenderer<TData>
+  renderer: ServiceRenderer<TData>,
+  options?: ServiceDomainEntry['options']
 ): ServiceDomainEntry<TData> => ({
   id: `service:${data.slug}`,
   slug: data.slug,
   data,
   renderer,
+  options,
 });
 
 export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
@@ -114,7 +123,9 @@ export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
     unifiedCommunicationSystemPage,
     UnifiedCommunicationSystemRenderer
   ),
-  'local-seo-authority': createServiceEntry(localSeoAuthorityPage, LocalSeoAuthorityRenderer),
+  'local-seo-authority': createServiceEntry(localSeoAuthorityPage, LocalSeoAuthorityRenderer, {
+    relatedContent: 'page-owned',
+  }),
   'reputation-review-systems': createServiceEntry(
     reputationReviewSystemsPage,
     ReputationReviewSystemsRenderer

@@ -540,3 +540,159 @@
 .rd-divider--dark {
     background: var(--mw-border-dark);
 }
+
+/* ══════════════════════════════════════════════════════
+   SECTION FRAME — shared section header block
+   src/components/layout/SectionFrame.tsx
+   ══════════════════════════════════════════════════════ */
+
+.mw-section-frame__header {
+    margin-bottom: var(--mw-space-content-lg);
+}
+
+.mw-section-frame__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mw-space-2);
+    font-size: var(--mw-text-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mw-text-subtle);
+    margin-bottom: var(--mw-space-5);
+}
+
+.mw-section-frame__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-teal);
+    flex-shrink: 0;
+}
+
+.mw-section-frame__heading {
+    font-size: var(--mw-text-4xl);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--mw-text-primary);
+    margin: 0;
+}
+
+.mw-section-frame__description {
+    margin-top: var(--mw-space-5);
+    font-size: var(--mw-text-base);
+    line-height: 1.65;
+    color: var(--mw-text-secondary);
+    max-width: 56ch;
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO FRAME — shared hero copy-side block
+   src/components/layout/HeroFrame.tsx
+   ══════════════════════════════════════════════════════ */
+
+.mw-hero-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-hero-frame__badge {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: var(--mw-space-2);
+    padding: var(--mw-space-1-5) var(--mw-space-3);
+    border-radius: var(--mw-radius-pill);
+    border: 1px solid var(--mw-signal-cyan-30);
+    background: var(--mw-signal-cyan-10);
+    margin-bottom: var(--mw-space-8);
+}
+
+.mw-hero-frame__badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-cyan);
+    box-shadow: var(--mw-glow-cyan);
+    flex-shrink: 0;
+}
+
+.mw-hero-frame__badge-label {
+    font-size: var(--mw-text-eyebrow);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--mw-tracking-eyebrow);
+    color: var(--mw-signal-cyan);
+}
+
+.mw-hero-frame__heading {
+    font-family: var(--mw-font-sans);
+    font-weight: 700;
+    font-size: var(--mw-text-hero);
+    line-height: var(--mw-leading-tight);
+    letter-spacing: var(--mw-tracking-hero);
+    color: var(--mw-text-on-dark-strong);
+    margin: 0 0 var(--mw-space-8);
+}
+
+.mw-hero-frame__description {
+    font-size: var(--mw-text-body-lg);
+    line-height: var(--mw-leading-body);
+    color: var(--mw-text-on-dark-muted);
+    margin: 0 0 var(--mw-space-10);
+    max-width: 54ch;
+}
+
+.mw-hero-frame__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--mw-space-6);
+    flex-wrap: wrap;
+    margin-bottom: var(--mw-space-12);
+}
+
+.mw-hero-frame__chips {
+    display: flex;
+    align-items: center;
+    gap: var(--mw-space-2);
+    flex-wrap: wrap;
+}
+
+.mw-hero-frame__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mw-space-2);
+    padding: var(--mw-space-2) var(--mw-space-3-5);
+    border-radius: var(--mw-radius-pill);
+    border: 1px solid var(--mw-border-panel);
+    background: var(--mw-white-03);
+    font-size: var(--mw-text-label-sm);
+    font-weight: 500;
+    color: var(--mw-white-80);
+}
+
+.mw-hero-frame__chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--mw-radius-pill);
+    flex-shrink: 0;
+}
+
+.mw-hero-frame__chip--subtle .mw-hero-frame__chip-dot {
+    background: var(--mw-white-45);
+}
+
+.mw-hero-frame__chip--warn .mw-hero-frame__chip-dot {
+    background: var(--mw-signal-amber);
+    box-shadow: 0 0 8px var(--mw-signal-amber);
+}
+
+.mw-hero-frame__chip--risk .mw-hero-frame__chip-dot {
+    background: var(--mw-signal-red);
+    box-shadow: 0 0 8px var(--mw-signal-red);
+}
+
+.mw-hero-frame__chip--neutral .mw-hero-frame__chip-dot {
+    background: var(--mw-text-on-dark-dim);
+}
