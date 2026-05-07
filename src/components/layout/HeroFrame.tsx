@@ -4,6 +4,9 @@ import type React from 'react';
 
 type HeroFrameChipDotVariant = 'subtle' | 'warn' | 'risk' | 'neutral';
 
+/** Rich chip with a per-chip accent colour, or a plain string (uses chipDotVariant). */
+export type HeroFrameChip = string | { label: string; accent?: string };
+
 export type HeroFrameAction = {
   label: string;
   href: string;
@@ -14,9 +17,11 @@ export type HeroFrameAction = {
 export type HeroFrameProps = {
   badge?: string;
   title: string;
+  /** Optional muted sub-line rendered on a new line inside the h1. */
+  titleMuted?: string;
   description: string;
   actions: readonly HeroFrameAction[];
-  chips?: readonly string[];
+  chips?: readonly HeroFrameChip[];
   chipDotVariant?: HeroFrameChipDotVariant;
   /** Right-side visual panel — page-local content, rendered in mw-hero-section__visual slot. */
   visual?: React.ReactNode;
@@ -43,6 +48,7 @@ export type HeroFrameProps = {
 export function HeroFrame({
   badge,
   title,
+  titleMuted,
   description,
   actions,
   chips,
@@ -71,7 +77,15 @@ export function HeroFrame({
                 <span className='mw-hero-frame__badge-label'>{badge}</span>
               </div>
             )}
-            <h1 className='mw-hero-frame__heading'>{title}</h1>
+            <h1 className='mw-hero-frame__heading'>
+              {title}
+              {titleMuted && (
+                <>
+                  <br />
+                  <span className='mw-hero-frame__heading-muted'>{titleMuted}</span>
+                </>
+              )}
+            </h1>
             <p className='mw-hero-frame__description'>{description}</p>
             <div className='mw-hero-frame__actions'>
               {actions.map(action => (
@@ -87,15 +101,20 @@ export function HeroFrame({
             </div>
             {chips && chips.length > 0 && (
               <div className='mw-hero-frame__chips'>
-                {chips.map(chip => (
-                  <div
-                    key={chip}
-                    className={`mw-hero-frame__chip mw-hero-frame__chip--${chipDotVariant}`}
-                  >
-                    <span className='mw-hero-frame__chip-dot' aria-hidden='true' />
-                    <span className='mw-hero-frame__chip-label'>{chip}</span>
-                  </div>
-                ))}
+                {chips.map((chip, i) => {
+                  const label = typeof chip === 'string' ? chip : chip.label;
+                  const variant =
+                    typeof chip === 'string' ? chipDotVariant : (chip.accent ?? chipDotVariant);
+                  return (
+                    <div
+                      key={label + String(i)}
+                      className={`mw-hero-frame__chip mw-hero-frame__chip--${variant}`}
+                    >
+                      <span className='mw-hero-frame__chip-dot' aria-hidden='true' />
+                      <span className='mw-hero-frame__chip-label'>{label}</span>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>

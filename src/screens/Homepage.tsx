@@ -35,6 +35,8 @@ import {
 } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { Accordion } from '@/components/primitives/Accordion';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import type { HomeIconKey } from '@/domains/home/data/homepage';
@@ -136,49 +138,31 @@ function HeroSection() {
   const { hero } = homepageData;
 
   return (
-    <section className='home-hero' id='hero'>
-      <div className='home-hero__texture' aria-hidden='true' />
-      <div className='home-hero__inner mw-container'>
-        <div className='home-hero__copy'>
-          <div className='home-hero__eyebrow'>
-            <span className='home-hero__eyebrow-dot' aria-hidden='true' />
-            <span>{hero.eyebrow}</span>
-          </div>
-
-          <h1 className='home-hero__heading'>
-            {hero.heading}
-            <br />
-            <span className='home-hero__heading--muted'>{hero.headingMuted}</span>
-          </h1>
-
-          <p className='home-hero__description'>{hero.description}</p>
-
-          <div className='home-hero__actions'>
-            <a href={hero.primaryAction.href} className='mw-btn mw-btn--white'>
-              {hero.primaryAction.label}
-              <ArrowRight size={16} aria-hidden='true' />
-            </a>
-            <a href={hero.secondaryAction.href} className='home-hero__secondary-action'>
-              {hero.secondaryAction.label}
-              <ArrowRight size={14} aria-hidden='true' />
-            </a>
-          </div>
-
-          <div className='home-hero__chips'>
-            {hero.chips.map(chip => (
-              <span key={chip.label} className='home-hero__chip' data-accent={chip.accent}>
-                <span className='home-hero__chip-dot' aria-hidden='true' />
-                {chip.label}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className='home-hero__signal'>
-          <SignalSurface />
-        </div>
-      </div>
-    </section>
+    <HeroFrame
+      className='home-hero'
+      ariaLabel='Page hero'
+      badge={hero.eyebrow}
+      title={hero.heading}
+      titleMuted={hero.headingMuted}
+      description={hero.description}
+      actions={[
+        {
+          label: hero.primaryAction.label,
+          href: hero.primaryAction.href,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+        {
+          label: hero.secondaryAction.label,
+          href: hero.secondaryAction.href,
+          variant: 'ghost',
+          icon: <ArrowRight size={14} aria-hidden='true' />,
+        },
+      ]}
+      chips={hero.chips.map(c => ({ label: c.label, accent: c.accent }))}
+      texture={<div className='home-hero__texture' aria-hidden='true' />}
+      visual={<SignalSurface />}
+    />
   );
 }
 
@@ -424,44 +408,44 @@ function PutInPlaceSection() {
   const { putInPlace } = homepageData;
 
   return (
-    <section className='home-workbench'>
-      <div className='home-workbench__inner mw-container'>
-        <div className='home-workbench__intro mw-animate-up'>
-          <div className='home-eyebrow'>{putInPlace.eyebrow}</div>
-          <h2 className='home-h2'>{putInPlace.heading}</h2>
-          <p className='home-workbench__description'>{putInPlace.description}</p>
+    <SectionFrame
+      heading={{
+        kicker: putInPlace.eyebrow,
+        title: putInPlace.heading,
+        description: putInPlace.description,
+      }}
+      className='home-workbench'
+      ariaLabel='Put in place'
+    >
+      <div className='home-workbench__card mw-animate-panel'>
+        <div className='home-workbench__card-header'>
+          <div className='home-workbench__card-dots' aria-hidden='true'>
+            <span />
+            <span />
+            <span />
+          </div>
+          <span className='home-workbench__card-title'>How it gets put in place</span>
         </div>
 
-        <div className='home-workbench__card mw-animate-panel'>
-          <div className='home-workbench__card-header'>
-            <div className='home-workbench__card-dots' aria-hidden='true'>
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className='home-workbench__card-title'>How it gets put in place</span>
-          </div>
-
-          <div className='home-workbench__steps'>
-            {putInPlace.zones.map(step => {
-              const Icon = HOME_ICON_MAP[step.iconKey];
-              return (
-                <div key={step.title} className='home-workbench__step'>
-                  <div className='home-workbench__step-icon' aria-hidden='true'>
-                    <Icon size={16} />
-                  </div>
-                  <div className='home-workbench__step-copy'>
-                    <div className='home-workbench__step-title'>{step.title}</div>
-                    <div className='home-workbench__step-body'>{step.body}</div>
-                  </div>
-                  <div className='home-workbench__step-state'>{step.state}</div>
+        <div className='home-workbench__steps'>
+          {putInPlace.zones.map(step => {
+            const Icon = HOME_ICON_MAP[step.iconKey];
+            return (
+              <div key={step.title} className='home-workbench__step'>
+                <div className='home-workbench__step-icon' aria-hidden='true'>
+                  <Icon size={16} />
                 </div>
-              );
-            })}
-          </div>
+                <div className='home-workbench__step-copy'>
+                  <div className='home-workbench__step-title'>{step.title}</div>
+                  <div className='home-workbench__step-body'>{step.body}</div>
+                </div>
+                <div className='home-workbench__step-state'>{step.state}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -473,50 +457,48 @@ function FitFoundationsSection() {
   const { fitFoundations } = homepageData;
 
   return (
-    <section className='home-fit'>
-      <div className='home-fit__inner mw-container'>
-        <div className='home-fit__intro mw-animate-up'>
-          <h2 className='home-h2'>{fitFoundations.heading}</h2>
-          <p className='home-fit__description'>{fitFoundations.description}</p>
+    <SectionFrame
+      heading={{ title: fitFoundations.heading, description: fitFoundations.description }}
+      className='home-fit'
+      tone='white'
+      ariaLabel='Fit foundations'
+    >
+      <div className='home-fit__cards mw-animate-stagger'>
+        <div className='home-fit__card home-fit__card--yes'>
+          <div className='home-fit__card-badge home-fit__card-badge--yes'>
+            <span className='home-fit__card-badge-icon' aria-hidden='true'>
+              <Check size={13} />
+            </span>
+            <span>Strong fit</span>
+          </div>
+          <ul className='home-fit__list'>
+            {fitFoundations.strongFit.map(item => (
+              <li key={item} className='home-fit__item home-fit__item--yes'>
+                <span className='home-fit__item-dot' aria-hidden='true' />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className='home-fit__cards mw-animate-stagger'>
-          <div className='home-fit__card home-fit__card--yes'>
-            <div className='home-fit__card-badge home-fit__card-badge--yes'>
-              <span className='home-fit__card-badge-icon' aria-hidden='true'>
-                <Check size={13} />
-              </span>
-              <span>Strong fit</span>
-            </div>
-            <ul className='home-fit__list'>
-              {fitFoundations.strongFit.map(item => (
-                <li key={item} className='home-fit__item home-fit__item--yes'>
-                  <span className='home-fit__item-dot' aria-hidden='true' />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+        <div className='home-fit__card home-fit__card--no'>
+          <div className='home-fit__card-badge home-fit__card-badge--no'>
+            <span className='home-fit__card-badge-icon' aria-hidden='true'>
+              <Minus size={13} />
+            </span>
+            <span>Probably not right</span>
           </div>
-
-          <div className='home-fit__card home-fit__card--no'>
-            <div className='home-fit__card-badge home-fit__card-badge--no'>
-              <span className='home-fit__card-badge-icon' aria-hidden='true'>
-                <Minus size={13} />
-              </span>
-              <span>Probably not right</span>
-            </div>
-            <ul className='home-fit__list'>
-              {fitFoundations.poorFit.map(item => (
-                <li key={item} className='home-fit__item home-fit__item--no'>
-                  <span className='home-fit__item-dot' aria-hidden='true' />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className='home-fit__list'>
+            {fitFoundations.poorFit.map(item => (
+              <li key={item} className='home-fit__item home-fit__item--no'>
+                <span className='home-fit__item-dot' aria-hidden='true' />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -528,78 +510,71 @@ function ClientShiftSection() {
   const { clientShift } = homepageData;
 
   return (
-    <section className='home-shift'>
-      <div className='home-shift__inner mw-container'>
-        <div className='home-shift__intro mw-animate-up'>
-          <h2 className='home-h2 home-h2--on-dark'>{clientShift.heading}</h2>
-          <p className='home-shift__description'>{clientShift.description}</p>
+    <SectionFrame
+      heading={{ title: clientShift.heading, description: clientShift.description }}
+      className='home-shift'
+      ariaLabel='Client shift'
+    >
+      <div className='home-shift__layout'>
+        {/* BEFORE — scattered items panel */}
+        <div className='home-shift__before'>
+          <div className='home-shift__panel-header'>
+            <span className='home-shift__panel-label home-shift__panel-label--before'>
+              {clientShift.before.label}
+            </span>
+            <span className='home-shift__panel-badge home-shift__panel-badge--before'>
+              <span className='home-shift__panel-badge-dot' aria-hidden='true' />
+              {clientShift.before.stateLabel}
+            </span>
+          </div>
+          <div className='home-shift__scatter' aria-hidden='true'>
+            {clientShift.scatterItems.map(item => (
+              <span key={item} className='home-shift__scatter-item'>
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className='home-shift__layout'>
-          {/* BEFORE — scattered items panel */}
-          <div className='home-shift__before'>
-            <div className='home-shift__panel-header'>
-              <span className='home-shift__panel-label home-shift__panel-label--before'>
-                {clientShift.before.label}
-              </span>
-              <span className='home-shift__panel-badge home-shift__panel-badge--before'>
-                <span className='home-shift__panel-badge-dot' aria-hidden='true' />
-                {clientShift.before.stateLabel}
-              </span>
-            </div>
-            <div className='home-shift__scatter' aria-hidden='true'>
-              {clientShift.scatterItems.map(item => (
-                <span key={item} className='home-shift__scatter-item'>
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
+        {/* SYSTEM connector */}
+        <div className='home-shift__system' aria-hidden='true'>
+          <span className='home-shift__system-label'>SYSTEM</span>
+        </div>
 
-          {/* SYSTEM connector */}
-          <div className='home-shift__system' aria-hidden='true'>
-            <span className='home-shift__system-label'>SYSTEM</span>
+        {/* AFTER — structured rows */}
+        <div className='home-shift__after'>
+          <div className='home-shift__panel-header'>
+            <span className='home-shift__panel-label home-shift__panel-label--after'>
+              {clientShift.after.label}
+            </span>
+            <span className='home-shift__panel-badge home-shift__panel-badge--after'>
+              <span className='home-shift__panel-badge-dot' aria-hidden='true' />
+              {clientShift.after.stateLabel}
+            </span>
           </div>
-
-          {/* AFTER — structured rows */}
-          <div className='home-shift__after'>
-            <div className='home-shift__panel-header'>
-              <span className='home-shift__panel-label home-shift__panel-label--after'>
-                {clientShift.after.label}
-              </span>
-              <span className='home-shift__panel-badge home-shift__panel-badge--after'>
-                <span className='home-shift__panel-badge-dot' aria-hidden='true' />
-                {clientShift.after.stateLabel}
-              </span>
-            </div>
-            <div className='home-shift__rows mw-animate-stagger'>
-              {clientShift.shifts.map(shift => {
-                const Icon = HOME_ICON_MAP[shift.iconKey];
-                return (
-                  <div key={shift.title} className='home-shift__row'>
-                    <div className='home-shift__row-icon' aria-hidden='true'>
-                      <Icon size={16} />
-                    </div>
-                    <div className='home-shift__row-copy'>
-                      <div className='home-shift__row-title'>{shift.title}</div>
-                      <div className='home-shift__row-compare'>
-                        <span className='home-shift__row-before'>{shift.before}</span>
-                        <ArrowRight
-                          size={12}
-                          className='home-shift__row-arrow'
-                          aria-hidden='true'
-                        />
-                        <span className='home-shift__row-after'>{shift.after}</span>
-                      </div>
+          <div className='home-shift__rows mw-animate-stagger'>
+            {clientShift.shifts.map(shift => {
+              const Icon = HOME_ICON_MAP[shift.iconKey];
+              return (
+                <div key={shift.title} className='home-shift__row'>
+                  <div className='home-shift__row-icon' aria-hidden='true'>
+                    <Icon size={16} />
+                  </div>
+                  <div className='home-shift__row-copy'>
+                    <div className='home-shift__row-title'>{shift.title}</div>
+                    <div className='home-shift__row-compare'>
+                      <span className='home-shift__row-before'>{shift.before}</span>
+                      <ArrowRight size={12} className='home-shift__row-arrow' aria-hidden='true' />
+                      <span className='home-shift__row-after'>{shift.after}</span>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -611,34 +586,34 @@ function PressurePointsSection() {
   const { pressurePoints } = homepageData;
 
   return (
-    <section className='home-pressure'>
-      <div className='home-pressure__inner mw-container'>
-        <div className='home-pressure__intro mw-animate-up'>
-          <div className='home-eyebrow home-eyebrow--on-dark'>{pressurePoints.eyebrow}</div>
-          <h2 className='home-h2 home-h2--on-dark'>{pressurePoints.heading}</h2>
-          <p className='home-pressure__description'>{pressurePoints.description}</p>
-        </div>
-
-        <div className='home-pressure__grid mw-animate-stagger'>
-          {pressurePoints.points.map(point => {
-            const Icon = HOME_ICON_MAP[point.iconKey];
-            return (
-              <div key={point.title} className='home-pressure__point' data-accent={point.accent}>
-                <div className='home-pressure__point-icon' aria-hidden='true'>
-                  <Icon size={18} />
-                </div>
-                <h3 className='home-pressure__point-title'>{point.title}</h3>
-                <p className='home-pressure__point-flow'>{point.flow}</p>
-                <div className='home-pressure__point-handled'>
-                  <span className='home-pressure__point-handled-label'>Handled by</span>
-                  <span className='home-pressure__point-handled-value'>{point.handledBy}</span>
-                </div>
+    <SectionFrame
+      heading={{
+        kicker: pressurePoints.eyebrow,
+        title: pressurePoints.heading,
+        description: pressurePoints.description,
+      }}
+      className='home-pressure'
+      ariaLabel='Pressure points'
+    >
+      <div className='home-pressure__grid mw-animate-stagger'>
+        {pressurePoints.points.map(point => {
+          const Icon = HOME_ICON_MAP[point.iconKey];
+          return (
+            <div key={point.title} className='home-pressure__point' data-accent={point.accent}>
+              <div className='home-pressure__point-icon' aria-hidden='true'>
+                <Icon size={18} />
               </div>
-            );
-          })}
-        </div>
+              <h3 className='home-pressure__point-title'>{point.title}</h3>
+              <p className='home-pressure__point-flow'>{point.flow}</p>
+              <div className='home-pressure__point-handled'>
+                <span className='home-pressure__point-handled-label'>Handled by</span>
+                <span className='home-pressure__point-handled-value'>{point.handledBy}</span>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -782,66 +757,64 @@ function AlignmentSection() {
   const { alignment } = homepageData;
 
   return (
-    <section className='home-alignment'>
-      <div className='home-alignment__inner mw-container'>
-        <div className='home-alignment__intro mw-animate-up'>
-          <div className='home-eyebrow'>{alignment.eyebrow}</div>
-          <h2 className='home-h2'>
-            {alignment.heading}
-            <br />
-            <span className='home-h2__muted'>{alignment.headingMuted}</span>
-          </h2>
-          <p className='home-alignment__description'>{alignment.description}</p>
-        </div>
+    <SectionFrame
+      heading={{
+        kicker: alignment.eyebrow,
+        title: alignment.heading,
+        description: alignment.description,
+      }}
+      titleMuted={alignment.headingMuted}
+      className='home-alignment'
+      tone='white'
+      ariaLabel='Visibility alignment'
+    >
+      <div className='home-alignment__arc-card mw-animate-panel'>
+        <svg
+          className='home-alignment__arc-svg'
+          viewBox='0 0 1200 480'
+          preserveAspectRatio='none'
+          fill='none'
+          aria-hidden='true'
+        >
+          <defs>
+            <linearGradient id='mw-arc-stroke' x1='0' x2='1' y1='0' y2='0'>
+              <stop offset='0%' stopColor='var(--mw-signal-red)' stopOpacity='0.5' />
+              <stop offset='40%' stopColor='var(--mw-signal-amber)' stopOpacity='0.5' />
+              <stop offset='80%' stopColor='var(--mw-signal-cyan)' stopOpacity='0.7' />
+              <stop offset='100%' stopColor='var(--mw-signal-teal)' stopOpacity='0.9' />
+            </linearGradient>
+            <linearGradient id='mw-arc-fill' x1='0' x2='0' y1='0' y2='1'>
+              <stop offset='0%' stopColor='var(--mw-signal-cyan)' stopOpacity='0.18' />
+              <stop offset='100%' stopColor='var(--mw-signal-cyan)' stopOpacity='0' />
+            </linearGradient>
+          </defs>
+          <path
+            d='M 60 380 C 280 360, 400 320, 600 240 S 1000 80, 1140 60 L 1140 460 L 60 460 Z'
+            fill='url(#mw-arc-fill)'
+          />
+          <path
+            d='M 60 380 C 280 360, 400 320, 600 240 S 1000 80, 1140 60'
+            stroke='url(#mw-arc-stroke)'
+            strokeWidth='2.5'
+          />
+        </svg>
 
-        <div className='home-alignment__arc-card mw-animate-panel'>
-          <svg
-            className='home-alignment__arc-svg'
-            viewBox='0 0 1200 480'
-            preserveAspectRatio='none'
-            fill='none'
-            aria-hidden='true'
-          >
-            <defs>
-              <linearGradient id='mw-arc-stroke' x1='0' x2='1' y1='0' y2='0'>
-                <stop offset='0%' stopColor='var(--mw-signal-red)' stopOpacity='0.5' />
-                <stop offset='40%' stopColor='var(--mw-signal-amber)' stopOpacity='0.5' />
-                <stop offset='80%' stopColor='var(--mw-signal-cyan)' stopOpacity='0.7' />
-                <stop offset='100%' stopColor='var(--mw-signal-teal)' stopOpacity='0.9' />
-              </linearGradient>
-              <linearGradient id='mw-arc-fill' x1='0' x2='0' y1='0' y2='1'>
-                <stop offset='0%' stopColor='var(--mw-signal-cyan)' stopOpacity='0.18' />
-                <stop offset='100%' stopColor='var(--mw-signal-cyan)' stopOpacity='0' />
-              </linearGradient>
-            </defs>
-            <path
-              d='M 60 380 C 280 360, 400 320, 600 240 S 1000 80, 1140 60 L 1140 460 L 60 460 Z'
-              fill='url(#mw-arc-fill)'
-            />
-            <path
-              d='M 60 380 C 280 360, 400 320, 600 240 S 1000 80, 1140 60'
-              stroke='url(#mw-arc-stroke)'
-              strokeWidth='2.5'
-            />
-          </svg>
-
-          <div className='home-alignment__stages'>
-            {alignment.stages.map((stage, _i) => (
-              <div key={stage.num} className='home-alignment__stage'>
-                <div className='home-alignment__stage-card'>
-                  <div className='home-alignment__stage-top'>
-                    <span className='home-alignment__stage-num'>{stage.num}</span>
-                    <span className='home-alignment__stage-weight'>{stage.weight}%</span>
-                  </div>
-                  <div className='home-alignment__stage-title'>{stage.title}</div>
-                  <div className='home-alignment__stage-note'>{stage.note}</div>
+        <div className='home-alignment__stages'>
+          {alignment.stages.map((stage, _i) => (
+            <div key={stage.num} className='home-alignment__stage'>
+              <div className='home-alignment__stage-card'>
+                <div className='home-alignment__stage-top'>
+                  <span className='home-alignment__stage-num'>{stage.num}</span>
+                  <span className='home-alignment__stage-weight'>{stage.weight}%</span>
                 </div>
+                <div className='home-alignment__stage-title'>{stage.title}</div>
+                <div className='home-alignment__stage-note'>{stage.note}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -853,78 +826,73 @@ function ProofStorySection() {
   const { proofStory } = homepageData;
 
   return (
-    <section className='home-proof'>
-      <div className='home-proof__inner mw-container'>
-        <div className='home-proof__intro mw-animate-up'>
-          <h2 className='home-h2'>
-            {proofStory.heading}
-            <br />
-            <span className='home-h2__muted'>{proofStory.headingMuted}</span>
-          </h2>
-          <p className='home-proof__description'>{proofStory.description}</p>
+    <SectionFrame
+      heading={{ title: proofStory.heading, description: proofStory.description }}
+      titleMuted={proofStory.headingMuted}
+      className='home-proof'
+      tone='mist'
+      ariaLabel='Proof story'
+    >
+      <div className='home-proof__cards mw-animate-stagger'>
+        <div className='home-proof__card home-proof__card--before'>
+          <span className='home-proof__card-label home-proof__card-label--before'>
+            {proofStory.before.label}
+          </span>
+          <div className='home-proof__card-title'>{proofStory.before.title}</div>
+          <ul className='home-proof__bullets'>
+            {proofStory.before.bullets.map(bullet => (
+              <li key={bullet} className='home-proof__bullet home-proof__bullet--before'>
+                <span className='home-proof__bullet-dot' aria-hidden='true' />
+                {bullet}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className='home-proof__cards mw-animate-stagger'>
-          <div className='home-proof__card home-proof__card--before'>
-            <span className='home-proof__card-label home-proof__card-label--before'>
-              {proofStory.before.label}
-            </span>
-            <div className='home-proof__card-title'>{proofStory.before.title}</div>
-            <ul className='home-proof__bullets'>
-              {proofStory.before.bullets.map(bullet => (
-                <li key={bullet} className='home-proof__bullet home-proof__bullet--before'>
-                  <span className='home-proof__bullet-dot' aria-hidden='true' />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className='home-proof__card home-proof__card--change'>
-            <span className='home-proof__card-label home-proof__card-label--change'>
-              {proofStory.change.label}
-            </span>
-            <div className='home-proof__card-title'>{proofStory.change.title}</div>
-            <ul className='home-proof__bullets'>
-              {proofStory.change.bullets.map(bullet => (
-                <li key={bullet} className='home-proof__bullet home-proof__bullet--change'>
-                  <span className='home-proof__bullet-dot' aria-hidden='true' />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className='home-proof__card home-proof__card--after'>
-            <span className='home-proof__card-label home-proof__card-label--after'>
-              {proofStory.after.label}
-            </span>
-            <div className='home-proof__card-title'>{proofStory.after.title}</div>
-            <ul className='home-proof__bullets'>
-              {proofStory.after.bullets.map(bullet => (
-                <li key={bullet} className='home-proof__bullet home-proof__bullet--after'>
-                  <span className='home-proof__bullet-dot' aria-hidden='true' />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className='home-proof__card home-proof__card--change'>
+          <span className='home-proof__card-label home-proof__card-label--change'>
+            {proofStory.change.label}
+          </span>
+          <div className='home-proof__card-title'>{proofStory.change.title}</div>
+          <ul className='home-proof__bullets'>
+            {proofStory.change.bullets.map(bullet => (
+              <li key={bullet} className='home-proof__bullet home-proof__bullet--change'>
+                <span className='home-proof__bullet-dot' aria-hidden='true' />
+                {bullet}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className='home-proof__quote-block'>
-          <div className='home-proof__quote-icon' aria-hidden='true'>
-            <Quote size={20} />
-          </div>
-          <div>
-            <p className='home-proof__quote-text'>&ldquo;{proofStory.quote}&rdquo;</p>
-            <div className='home-proof__quote-attribution'>
-              <span className='home-proof__quote-avatar' aria-hidden='true' />
-              {proofStory.quoteAttribution}
-            </div>
+        <div className='home-proof__card home-proof__card--after'>
+          <span className='home-proof__card-label home-proof__card-label--after'>
+            {proofStory.after.label}
+          </span>
+          <div className='home-proof__card-title'>{proofStory.after.title}</div>
+          <ul className='home-proof__bullets'>
+            {proofStory.after.bullets.map(bullet => (
+              <li key={bullet} className='home-proof__bullet home-proof__bullet--after'>
+                <span className='home-proof__bullet-dot' aria-hidden='true' />
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className='home-proof__quote-block'>
+        <div className='home-proof__quote-icon' aria-hidden='true'>
+          <Quote size={20} />
+        </div>
+        <div>
+          <p className='home-proof__quote-text'>&ldquo;{proofStory.quote}&rdquo;</p>
+          <div className='home-proof__quote-attribution'>
+            <span className='home-proof__quote-avatar' aria-hidden='true' />
+            {proofStory.quoteAttribution}
           </div>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -936,71 +904,70 @@ function ImplementationExamplesSection() {
   const { implementationExamples } = homepageData;
 
   return (
-    <section className='home-examples'>
-      <div className='home-examples__inner mw-container'>
-        <div className='home-examples__intro mw-animate-up'>
-          <div className='home-eyebrow'>{implementationExamples.eyebrow}</div>
-          <h2 className='home-h2'>{implementationExamples.heading}</h2>
-          <p className='home-examples__description'>{implementationExamples.description}</p>
+    <SectionFrame
+      heading={{
+        kicker: implementationExamples.eyebrow,
+        title: implementationExamples.heading,
+        description: implementationExamples.description,
+      }}
+      className='home-examples'
+      tone='white'
+      ariaLabel='Implementation examples'
+    >
+      <div className='home-examples__board mw-animate-panel'>
+        <div className='home-examples__board-header'>
+          <div className='home-examples__board-header-left'>
+            <span className='home-examples__board-dot' aria-hidden='true' />
+            <span className='home-examples__board-label'>{implementationExamples.boardLabel}</span>
+          </div>
+          <span className='home-examples__board-count'>
+            {implementationExamples.implementationPatterns.length} patterns shown
+          </span>
         </div>
 
-        <div className='home-examples__board mw-animate-panel'>
-          <div className='home-examples__board-header'>
-            <div className='home-examples__board-header-left'>
-              <span className='home-examples__board-dot' aria-hidden='true' />
-              <span className='home-examples__board-label'>
-                {implementationExamples.boardLabel}
-              </span>
-            </div>
-            <span className='home-examples__board-count'>
-              {implementationExamples.implementationPatterns.length} patterns shown
-            </span>
-          </div>
-
-          <div className='home-examples__grid mw-animate-stagger'>
-            {implementationExamples.implementationPatterns.map((pattern, i) => {
-              const Icon = HOME_ICON_MAP[pattern.iconKey];
-              const isLast = i === implementationExamples.implementationPatterns.length - 1;
-              return (
-                <div
-                  key={pattern.title}
-                  className='home-example-cell'
-                  data-wide={isLast ? 'true' : undefined}
-                >
-                  <div className='home-example-cell__top'>
-                    <div className='home-example-cell__icon-wrap'>
-                      <div className='home-example-cell__icon' aria-hidden='true'>
-                        <Icon size={18} />
-                      </div>
-                      <span className='home-example-cell__index'>Pattern 0{i + 1}</span>
+        <div className='home-examples__grid mw-animate-stagger'>
+          {implementationExamples.implementationPatterns.map((pattern, i) => {
+            const Icon = HOME_ICON_MAP[pattern.iconKey];
+            const isLast = i === implementationExamples.implementationPatterns.length - 1;
+            return (
+              <div
+                key={pattern.title}
+                className='home-example-cell'
+                data-wide={isLast ? 'true' : undefined}
+              >
+                <div className='home-example-cell__top'>
+                  <div className='home-example-cell__icon-wrap'>
+                    <div className='home-example-cell__icon' aria-hidden='true'>
+                      <Icon size={18} />
                     </div>
-                  </div>
-                  <div className='home-example-cell__title'>{pattern.title}</div>
-                  <p className='home-example-cell__desc'>{pattern.desc}</p>
-                  <div className='home-example-cell__flow'>
-                    {pattern.flow.map((step, j) => (
-                      <span key={step} className='home-example-cell__flow-items'>
-                        <span
-                          className='home-example-cell__flow-step'
-                          data-last={j === pattern.flow.length - 1 ? 'true' : undefined}
-                        >
-                          {step}
-                        </span>
-                        {j < pattern.flow.length - 1 && (
-                          <span className='home-example-cell__flow-arrow' aria-hidden='true'>
-                            →
-                          </span>
-                        )}
-                      </span>
-                    ))}
+                    <span className='home-example-cell__index'>Pattern 0{i + 1}</span>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+                <div className='home-example-cell__title'>{pattern.title}</div>
+                <p className='home-example-cell__desc'>{pattern.desc}</p>
+                <div className='home-example-cell__flow'>
+                  {pattern.flow.map((step, j) => (
+                    <span key={step} className='home-example-cell__flow-items'>
+                      <span
+                        className='home-example-cell__flow-step'
+                        data-last={j === pattern.flow.length - 1 ? 'true' : undefined}
+                      >
+                        {step}
+                      </span>
+                      {j < pattern.flow.length - 1 && (
+                        <span className='home-example-cell__flow-arrow' aria-hidden='true'>
+                          →
+                        </span>
+                      )}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 

@@ -1,7 +1,33 @@
 import { Check } from 'lucide-react';
 
-import { SectionShell } from './SectionShell';
-import type { SectionDensity, SectionHeading, SectionTone } from './types';
+// ── Types (inlined from deleted ./types and ./SectionShell) ──────────────────
+
+type SectionTone = 'light' | 'soft' | 'dark' | 'gradient-blue' | 'gradient-cta';
+type SectionDensity = 'default' | 'compact' | 'spacious';
+
+interface SectionHeading {
+  kicker?: string;
+  title: string;
+  description: string;
+}
+
+// ── Lookup maps (from deleted SectionShell) ───────────────────────────────────
+
+const TONE_CLASS: Record<SectionTone, string> = {
+  light: 'bg-body',
+  soft: 'bg-surface-soft',
+  dark: 'bg-dark',
+  'gradient-blue': 'bg-gradient-blue',
+  'gradient-cta': 'bg-gradient-cta',
+};
+
+const DENSITY_CLASS: Record<SectionDensity, string> = {
+  default: '',
+  compact: 'rd-section--compact',
+  spacious: 'rd-section--spacious',
+};
+
+// ── PrimaryCTASection ─────────────────────────────────────────────────────────
 
 export type PrimaryCTASectionVariant = 'soft-panel';
 
@@ -69,14 +95,19 @@ export function PrimaryCTASection({
     throw new Error('PrimaryCTASection requires one primary CTA action');
   }
 
+  const sectionClasses = [
+    'rd-section',
+    DENSITY_CLASS[density],
+    TONE_CLASS[tone],
+    'rd-animate-section',
+    `cta-section cta-section--${variant}`,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <section data-testid='smart-cta'>
-      <SectionShell
-        tone={tone}
-        density={density}
-        sectionClassName={`cta-section cta-section--${variant}`}
-        bare
-      >
+    <section className={sectionClasses} data-testid='smart-cta'>
+      <div className='rd-container'>
         <div className='cta-section__inner'>
           <div className={`cta-section__shell rd-animate-panel cta-section__shell--${shellTone}`}>
             <div className='cta-section__body'>
@@ -105,7 +136,7 @@ export function PrimaryCTASection({
             ) : null}
           </div>
         </div>
-      </SectionShell>
+      </div>
     </section>
   );
 }

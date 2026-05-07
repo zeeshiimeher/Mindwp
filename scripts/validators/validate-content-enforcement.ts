@@ -773,18 +773,6 @@ function scanButtonRule(): Issue[] {
         message: 'DecisionPanel must enforce heading.title + actions guards and expose data-testid.',
       },
       {
-        file: 'src/components/sections/SectionShell.tsx',
-        expected: [
-          "throw new Error('SectionShell requires heading.title when heading is provided.');",
-          "throw new Error('SectionShell requires heading.description when heading is provided.');",
-          "<p className='rd-section-description'>{heading.description}</p>",
-        ],
-        forbidden: ['heading.description ?'],
-        issueType: 'missing_section_shell_guard',
-        message:
-          'SectionShell must require and always render heading.description when heading is provided.',
-      },
-      {
         file: 'src/components/navigation/RelatedSection.tsx',
         expected: [
           "throw new Error('[RelatedSection] No related content available.');",

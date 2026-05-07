@@ -10,6 +10,8 @@ type SectionFrameHeading = {
 
 export type SectionFrameProps = {
   heading: SectionFrameHeading;
+  /** Optional muted sub-line rendered on a new line inside the h2. */
+  titleMuted?: string;
   tone?: SectionFrameTone;
   ariaLabel?: string;
   className?: string;
@@ -18,7 +20,14 @@ export type SectionFrameProps = {
 
 // -- Component ----------------------------------------------------------------
 
-export function SectionFrame({ heading, tone, ariaLabel, className, children }: SectionFrameProps) {
+export function SectionFrame({
+  heading,
+  titleMuted,
+  tone,
+  ariaLabel,
+  className,
+  children,
+}: SectionFrameProps) {
   if (!heading.title) {
     throw new Error('[SectionFrame] requires heading.title');
   }
@@ -41,7 +50,15 @@ export function SectionFrame({ heading, tone, ariaLabel, className, children }: 
               <span>{heading.kicker}</span>
             </div>
           )}
-          <h2 className='mw-section-frame__heading'>{heading.title}</h2>
+          <h2 className='mw-section-frame__heading'>
+            {heading.title}
+            {titleMuted && (
+              <>
+                <br />
+                <span className='mw-section-frame__heading-muted'>{titleMuted}</span>
+              </>
+            )}
+          </h2>
           {heading.description && (
             <p className='mw-section-frame__description'>{heading.description}</p>
           )}

@@ -562,6 +562,23 @@
     background: var(--mw-bg-dark);
 }
 
+/* Dark tone text overrides */
+.mw-section-frame--dark .mw-section-frame__heading {
+    color: var(--mw-color-white);
+}
+
+.mw-section-frame--dark .mw-section-frame__heading-muted {
+    color: var(--mw-white-50);
+}
+
+.mw-section-frame--dark .mw-section-frame__description {
+    color: var(--mw-white-60);
+}
+
+.mw-section-frame--dark .mw-section-frame__eyebrow {
+    color: var(--mw-white-45);
+}
+
 .mw-section-frame__header {
     margin-bottom: var(--mw-space-content-lg);
 }
@@ -593,6 +610,10 @@
     letter-spacing: -0.03em;
     color: var(--mw-text-primary);
     margin: 0;
+}
+
+.mw-section-frame__heading-muted {
+    color: var(--mw-text-secondary);
 }
 
 .mw-section-frame__description {
@@ -677,6 +698,10 @@
     margin: 0 0 var(--mw-space-8);
 }
 
+.mw-hero-frame__heading-muted {
+    color: var(--mw-text-on-dark-muted);
+}
+
 .mw-hero-frame__description {
     font-size: var(--mw-text-body-lg);
     line-height: var(--mw-leading-body);
@@ -736,4 +761,25 @@
 
 .mw-hero-frame__chip--neutral .mw-hero-frame__chip-dot {
     background: var(--mw-text-on-dark-dim);
+}
+
+/* Extended accent variants for per-chip colouring */
+.mw-hero-frame__chip--cyan .mw-hero-frame__chip-dot {
+    background: var(--mw-signal-cyan);
+    box-shadow: 0 0 8px var(--mw-signal-cyan);
+}
+
+.mw-hero-frame__chip--teal .mw-hero-frame__chip-dot {
+    background: var(--mw-signal-teal);
+    box-shadow: 0 0 8px var(--mw-signal-teal);
+}
+
+.mw-hero-frame__chip--green .mw-hero-frame__chip-dot {
+    background: var(--mw-signal-green);
+    box-shadow: 0 0 8px var(--mw-signal-green);
+}
+
+.mw-hero-frame__chip--amber .mw-hero-frame__chip-dot {
+    background: var(--mw-signal-amber);
+    box-shadow: 0 0 8px var(--mw-signal-amber);
 }
