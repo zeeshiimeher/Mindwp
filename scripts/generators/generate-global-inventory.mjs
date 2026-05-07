@@ -1,8 +1,29 @@
+/**
+ * QUARANTINE — generate-global-inventory.mjs
+ *
+ * REMOVED from active pipeline (Milestone 6K control-plane cleanup).
+ * This script depends on src/components/reusable/ which is quarantined.
+ * It must NOT be called from predev, generate:dev, generate:all, or validate:docs.
+ *
+ * Manual/forensic use only:
+ *   node scripts/generators/generate-global-inventory.mjs --manual
+ *
+ * Delete gate: when src/components/reusable/ is fully deleted.
+ */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { createLogger } from '../../lib/logger/index.mjs';
+
+if (!process.argv.includes('--manual')) {
+  console.error(
+    '[generate-global-inventory] QUARANTINE: this script is removed from the active pipeline.\n' +
+    'Run with --manual flag if you need a forensic inventory snapshot.\n' +
+    'See docs/Planning/Legacy-dependency-map.md for context.'
+  );
+  process.exit(1);
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

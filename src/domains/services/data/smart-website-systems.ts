@@ -1,3 +1,6 @@
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -645,7 +648,16 @@ export const smartWebsiteSystemsPage = {
       description:
         "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: PRIMARY_CTA_LABEL,
+        href: buildServiceContactHref({
+          system: 'smart-website-systems',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
     expectations: [
       { num: '01', text: 'Where your enquiries are coming from' },
       { num: '02', text: 'What the page is failing to capture' },

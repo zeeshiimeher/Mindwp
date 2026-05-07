@@ -160,3 +160,20 @@ These are in `src/components/system/` and use old imports internally:
 - ClusterPageLayout.tsx (RelatedCardsSection dependency)
 - ActionButtons.tsx (Button dependency)
 - Dev dashboard pages (SectionWrapper dependency)
+
+---
+
+## Milestone 6K Quarantine Entries
+
+### CaseStudyTemplate.tsx — RelatedSection direct import (Quarantine)
+- **File**: `src/domains/case-studies/templates/CaseStudyTemplate.tsx`
+- **Issue**: Template imports and renders `RelatedSection` directly inside a `section.type === 'more'` branch, instead of having RelatedSection injected by a config wrapper.
+- **Why allowed**: The pattern is data-driven (section data controls whether related is shown), but template-owned, not config-owned. Full case-study config/wrapper migration is out of Milestone 6K scope.
+- **Validator exception**: Listed in `APPROVED_RELATED_OWNERS` in `scripts/validators/validate-related-duplication.ts`.
+- **Delete gate**: When CaseStudyTemplate is rebuilt with a config/wrapper pattern (`src/domains/case-studies/config.tsx`) that handles RelatedSection injection globally.
+
+### generate-global-inventory.mjs — Quarantine guard added
+- **File**: `scripts/generators/generate-global-inventory.mjs`
+- **Status**: Quarantine guard added in Milestone 6K. Script exits with error unless invoked with `--manual`.
+- **Why**: The generator scanned `src/components/reusable/` and updated `GLOBAL-COMPONENTS-CATALOG.md`, which was removed from all active pipeline commands (`predev`, `generate:all`, `validate:docs`) in 6K.
+- **Delete gate**: When `src/components/reusable/` is deleted (same as the reusable folder gate above).

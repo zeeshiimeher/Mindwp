@@ -2001,3 +2001,19 @@ relatedSection?: {
 ### Results
 - `system:full` — 57/57 validators, 0 warnings (confirmed after 6H)
 - `npx next build` — clean
+
+---
+
+## Milestone 6K — Control Plane Cleanup + New-System Enforcement
+
+**Status:** Complete (branch: `ui-hard-reset`, date: 2026-05-09)
+
+- **Global inventory removed from active pipeline**: `generate:dev`, `generate:all`, `predev`, and `validate:docs` no longer call `generate-global-inventory.mjs`. Script now exits with error unless invoked with `--manual`. `docs/core/GLOBAL-COMPONENTS-CATALOG.md` marked as quarantine snapshot.
+- **CTA/DecisionPanel contract reset**: SWS and LSA data files now use `buildServiceContactHref()` + `PRIMARY_CTA_LABEL` (no bare `/contact`). `validateCorePrimaryCtaSources()` removed from `validate-primary-cta.ts` (was enforcing PrimaryCTASection source shape). `scanHardcodedApprovedLabels` function restored after accidental removal.
+- **Related ownership reset**: `validate-related-duplication.ts` now enforces that non-config, non-approved files must not import or render `RelatedSection` directly. Config wrappers (`src/domains/{slug}/config.tsx`) and approved quarantine entries are exempt. `CaseStudyTemplate.tsx` quarantined as delete-later (data-driven but template-owned).
+- **Legacy quarantine validator updated**: Added `src/components/content` to `NEW_SYSTEM_DIRS`. Added forbidden text patterns: `PrimaryCTASection`, `SectionShell`, `RelatedContentSection`, `titleMuted`, `headingMuted`. Added quarantine freeze comment for `src/components/reusable` and `src/components/sections`.
+- **Design system validator**: Removed `scanCtaViolations()` and helpers (`isFooterCTAIntent`, `extractSections`) that enforced old `footer-cta`/`cta__panel` patterns. `DecisionPanel` uses `mw-decision-panel` and proper contact hrefs.
+- **Content enforcement validator**: Removed `PrimaryCTASection.tsx` entry from `scanButtonRule()` source checks. Removed 5 quarantined reusable component checks (`SectionIntro`, `DarkSplitShowcaseSection`, `NarrativeStatsSection`, `TestimonialSpotlightSplitSection`, `StackedFeatureListSection`). Removed `src/components/sections/*.tsx` from `scanNoHardcodedContent` targets.
+- **Test suite reset**: `cta-simulation.test.ts` — removed `validateCorePrimaryCtaSources` import and PrimaryCTASection tests; added DecisionPanel contract test. `system-integrity.test.ts` — replaced `PrimaryCTASection.tsx` with `DecisionPanel.tsx` in integrity targets and null-return test.
+- **LSA SectionFrame audit**: One raw `<section>` in `LocalSeoAuthorityRenderer.tsx` (`lsa-cycle`) confirmed intentional — heading embedded in grid layout, not compatible with SectionFrame's required standalone heading block. Comment added.
+- **Legacy-dependency-map.md**: Added 6K quarantine entries for `CaseStudyTemplate.tsx` RelatedSection pattern and `generate-global-inventory.mjs` quarantine guard.

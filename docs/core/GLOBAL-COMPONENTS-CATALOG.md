@@ -1,8 +1,12 @@
-# Global Components Catalog (Legacy Reusable Inventory)
+# Global Components Catalog (Legacy Reusable Inventory — QUARANTINE)
 
-> **⚠ QUARANTINE WARNING — Do not use for new work.**
+> **⚠ QUARANTINE — Removed from active pipeline. Not live component authority.**
 >
-> This file is a generated inventory of `src/components/reusable` — a quarantine/delete-later folder.
+> Milestone 6K: `generate-global-inventory` has been removed from `predev`, `generate:dev`,
+> `generate:all`, and `validate:docs`. This file is no longer auto-generated in the active pipeline.
+> It exists as a forensic snapshot only.
+>
+> This file is a legacy inventory of `src/components/reusable` — a quarantine/delete-later folder.
 > Components listed here are NOT approved architecture for new or rebuilt pages.
 > They exist only to keep unrebuilt old pages rendering while the hard reset continues.
 >

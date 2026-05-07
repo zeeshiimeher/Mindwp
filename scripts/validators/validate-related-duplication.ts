@@ -73,24 +73,44 @@ function collectRepeatedIconRows(content: string): RepeatedIconRowSignature[] {
 const report: ViolationEntry[] = [];
 const files = await collectTsxFiles(srcRoot);
 
+// Files approved to import/render RelatedSection.
+// QUARANTINE: CaseStudyTemplate.tsx still imports RelatedSection directly via
+// section-type 'more' pattern. Delete gate: when rebuilt with config/wrapper injection.
+// See docs/Planning/Legacy-dependency-map.md.
+const APPROVED_RELATED_OWNERS = [
+  'src/components/navigation/RelatedSection.tsx',
+  // quarantine delete-later
+  'src/domains/case-studies/templates/CaseStudyTemplate.tsx',
+];
+
+function isApprovedRelatedOwner(relativePath: string) {
+  if (APPROVED_RELATED_OWNERS.includes(relativePath)) return true;
+  // config wrapper pattern: src/domains/*/config.tsx
+  if (/^src\/domains\/[^/]+\/config\.tsx$/.test(relativePath)) return true;
+  return false;
+}
+
 for (const filePath of files) {
   const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
   if (
-    relativePath === 'src/components/navigation/RelatedSection.tsx' ||
     relativePath.startsWith('src/components/') ||
-    relativePath.endsWith('/config.tsx')
+    isApprovedRelatedOwner(relativePath)
   ) {
     continue;
   }
 
   const content = await fs.readFile(filePath, 'utf8');
   const matches = content.match(/<RelatedSection\b/g) ?? [];
+  const hasImport = /from\s+['"]@\/components\/navigation\/RelatedSection['"]/.test(content);
   const repeatedIconRows = collectRepeatedIconRows(content);
 
-  if (matches.length > 1) {
+  // Enforce: non-approved files must not import or render RelatedSection directly
+  if (matches.length > 0 || hasImport) {
     report.push({
       page: relativePath,
-      violations: [`Detected ${matches.length} RelatedSection renders in one file`],
+      violations: [
+        `Page renderer or template imports/renders RelatedSection directly. RelatedSection must be injected by config wrapper (src/domains/{slug}/config.tsx), not by page templates or renderers.`,
+      ],
     });
   }
 

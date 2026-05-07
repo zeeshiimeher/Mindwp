@@ -113,7 +113,7 @@ type CTAFooter = { noSell: string; tone: string };
 
 // ── Main renderer ────────────────────────────────────────────────────────────
 
-export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
+export default function SmartWebsiteSystemsRenderer({ data, slug: _slug }: Props) {
   const { hero } = data;
   const sections = data.sections as SectionsMap;
   const {
@@ -131,9 +131,9 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   } = sections;
 
   const contactHref = buildContactHref({
-    system: slug,
+    system: data.slug,
     sourceType: 'page',
-    slug,
+    slug: data.slug,
   });
 
   return (

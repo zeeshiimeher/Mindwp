@@ -541,12 +541,6 @@ function scanHeadingHierarchy(): Issue[] {
         issueType: 'hero_not_h1',
         message: 'CaseStudyHeroSection must default hero headingTag to h1.',
       },
-      {
-        file: 'src/components/reusable/single/SectionIntro.tsx',
-        needle: "headingLevel = 'h2'",
-        issueType: 'section_not_h2',
-        message: 'SectionIntro must default section headings to h2.',
-      },
     ];
 
   for (const check of sourceChecks) {
@@ -749,19 +743,6 @@ function scanButtonRule(): Issue[] {
     message: string;
   }> = [
       {
-        file: 'src/components/sections/PrimaryCTASection.tsx',
-        expected: [
-          "throw new Error('PrimaryCTASection requires heading.title');",
-          "throw new Error('PrimaryCTASection requires heading.description');",
-          "throw new Error('PrimaryCTASection requires actions');",
-          "throw new Error('PrimaryCTASection must have exactly one CTA');",
-        ],
-        forbidden: ['allowSecondaryCTA', 'secondaryAction && <Button', 'ctaList'],
-        issueType: 'missing_primary_cta_guard',
-        message:
-          'PrimaryCTASection must enforce the strict heading/actions single-CTA contract with no secondary or list logic.',
-      },
-      {
         file: 'src/components/conversion/DecisionPanel.tsx',
         expected: [
           "throw new Error('[DecisionPanel] requires heading.title');",
@@ -939,41 +920,6 @@ function scanButtonRule(): Issue[] {
         message:
           'LocalSeoAuthorityRenderer must import SectionFrame, stay fail-loud, and use the DecisionPanel contract.',
       },
-      {
-        file: 'src/components/reusable/single/SectionIntro.tsx',
-        expected: [],
-        forbidden: ['allowSecondaryCTA', 'secondaryAction', 'showSecondaryAction'],
-        issueType: 'invalid_sectionintro_secondary_logic',
-        message: 'SectionIntro must not expose secondary CTA logic.',
-      },
-      {
-        file: 'src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx',
-        expected: [],
-        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-        issueType: 'invalid_component_secondary_logic',
-        message: 'DarkSplitShowcaseSection must not expose secondary CTA logic.',
-      },
-      {
-        file: 'src/components/reusable/sections/core/NarrativeStatsSection.tsx',
-        expected: [],
-        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-        issueType: 'invalid_component_secondary_logic',
-        message: 'NarrativeStatsSection must not expose secondary CTA logic.',
-      },
-      {
-        file: 'src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx',
-        expected: [],
-        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-        issueType: 'invalid_component_secondary_logic',
-        message: 'TestimonialSpotlightSplitSection must not expose secondary CTA logic.',
-      },
-      {
-        file: 'src/components/reusable/sections/core/StackedFeatureListSection.tsx',
-        expected: [],
-        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-        issueType: 'invalid_component_secondary_logic',
-        message: 'StackedFeatureListSection must not expose secondary CTA logic.',
-      },
     ];
 
   for (const check of sourceChecks) {
@@ -1077,7 +1023,6 @@ function scanBadgeLength(): Issue[] {
 function scanNoHardcodedContent(): Issue[] {
   const issues: Issue[] = [];
   const targets = [
-    ...project.getSourceFiles('src/components/sections/*.tsx'),
     project.getSourceFile('src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx') ??
     project.addSourceFileAtPath(
       path.join(root, 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx')

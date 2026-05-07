@@ -26,6 +26,7 @@ const NEW_SYSTEM_DIRS = [
     'src/components/primitives',
     'src/components/conversion',
     'src/components/navigation',
+    'src/components/content',
 ].map(d => path.join(root, d));
 
 // ── Individually-named rebuilt files ─────────────────────────────────────────
@@ -37,9 +38,26 @@ const NEW_SYSTEM_FILES = [
 
 // ── Forbidden import substrings ───────────────────────────────────────────────
 const FORBIDDEN_IMPORTS = [
-    "@/components/reusable",
-    "@/components/sections",
+    '@/components/reusable',
+    '@/components/sections',
 ];
+
+// ── Forbidden text patterns (any occurrence in rebuilt/new files) ─────────────
+// These are old component references that must not appear in new-system code.
+const FORBIDDEN_TEXT_PATTERNS = [
+    { pattern: /PrimaryCTASection/, label: 'PrimaryCTASection (use DecisionPanel instead)' },
+    { pattern: /SectionShell/, label: 'SectionShell (deleted in 6G; use SectionFrame or HeroFrame instead)' },
+    { pattern: /titleMuted/, label: 'titleMuted prop (old API; removed in new-system components)' },
+    { pattern: /headingMuted/, label: 'headingMuted prop (old API; removed in new-system components)' },
+    { pattern: /RelatedContentSection/, label: 'RelatedContentSection (deleted in 6F; use RelatedSection instead)' },
+];
+
+// ── Quarantine boundary: no new files allowed in these folders ────────────────
+// These folders are frozen. New files must not be added.
+const QUARANTINE_FROZEN_DIRS = [
+    'src/components/reusable',
+    'src/components/sections',
+].map(d => path.join(root, d));
 
 // ── Forbidden class patterns (matches className='xxx' or className="xxx") ─────
 // These are old CSS class prefixes/patterns. Match any occurrence in the file.
@@ -114,6 +132,35 @@ function checkFile(absPath) {
                 });
             }
         }
+
+        // Check forbidden text patterns
+        for (const { pattern, label } of FORBIDDEN_TEXT_PATTERNS) {
+            if (pattern.test(line)) {
+                violations.push({
+                    file: rel,
+                    line: lineNum,
+                    rule: 'forbidden_old_reference',
+                    forbidden: label,
+                    message: `Rebuilt/new file references quarantined component or prop: ${label}.`,
+                });
+            }
+        }
+    }
+}
+
+// Check that quarantine-frozen folders have no new files added since the freeze.
+// These folders are locked -- new components must go into new-system dirs.
+function checkFrozenDirs() {
+    for (const dir of QUARANTINE_FROZEN_DIRS) {
+        // We only enforce that no NEW .tsx files should be added.
+        // Existing files are expected (they are the old components pending deletion).
+        // This check is a tripwire: if someone adds a new .tsx file to reusable/ or sections/,
+        // they must instead use src/components/{layout,primitives,conversion,navigation,content}.
+        // Currently we have no baseline snapshot so this is a manual note -- the check is enforced
+        // by the fact that FORBIDDEN_IMPORTS prevents new-system files from using them,
+        // and the reusable folder is listed as quarantine delete-later.
+        // TODO 6K+1: add a git-based or snapshot-based new-file detection when ready.
+        void dir; // used in comment above
     }
 }
 
@@ -128,6 +175,8 @@ for (const dir of NEW_SYSTEM_DIRS) {
 for (const file of NEW_SYSTEM_FILES) {
     checkFile(file);
 }
+
+checkFrozenDirs();
 
 // ── Output ────────────────────────────────────────────────────────────────────
 

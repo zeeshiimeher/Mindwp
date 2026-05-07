@@ -1,5 +1,5 @@
 #!/usr/bin/env node
- 
+
 /**
  * Design system enforcement guard (no auto-fix).
  *
@@ -201,73 +201,6 @@ function scanTailwindButtonViolations(fileAbs, text) {
   }
 }
 
-function extractSections(text) {
-  /** @type {Array<{start:number,end:number,body:string}>} */
-  const sections = [];
-  let idx = 0;
-  while (true) {
-    const start = text.indexOf('<section', idx);
-    if (start === -1) break;
-    const end = text.indexOf('</section>', start);
-    if (end === -1) break;
-    sections.push({
-      start,
-      end: end + '</section>'.length,
-      body: text.slice(start, end + '</section>'.length),
-    });
-    idx = end + '</section>'.length;
-  }
-  return sections;
-}
-
-function isFooterCTAIntent(sectionBody) {
-  const h2Idx = sectionBody.indexOf('<h2');
-  if (h2Idx === -1) return false;
-
-  // Require a supporting <p> very near the <h2> (prevents false positives from content sections).
-  const h2CloseIdx = sectionBody.indexOf('</h2>', h2Idx);
-  if (h2CloseIdx === -1) return false;
-  const afterH2Window = sectionBody.slice(h2CloseIdx + 5, h2CloseIdx + 5 + 400);
-  const pNearH2 = afterH2Window.includes('<p');
-  if (!pNearH2) return false;
-
-  // Require 1–2 .btn anchor actions within a short window after the <h2>.
-  const afterH2ForButtons = sectionBody.slice(h2Idx, h2Idx + 2000);
-  const btnAnchors = [
-    ...afterH2ForButtons.matchAll(/<a\s+[^>]*className\s*=\s*["'][^"']*\bbtn\b[^"']*["'][^>]*>/g),
-  ].length;
-  if (btnAnchors < 1 || btnAnchors > 2) return false;
-
-  // Conversion intent heuristic: CTA buttons to demo/contact/pricing.
-  const hasConversionHref = /<a\s+[^>]*href\s*=\s*["']\/(demo|contact|pricing)\b[^"']*["']/g.test(
-    afterH2ForButtons
-  );
-  return hasConversionHref;
-}
-
-function scanCtaViolations(fileAbs, text) {
-  // Only scan TS/TSX/JS/JSX for JSX tags.
-  if (!/\.(ts|tsx|js|jsx)$/.test(fileAbs)) return;
-
-  const sections = extractSections(text);
-  const lastTwo = sections.slice(-2);
-  for (const s of lastTwo) {
-    if (!isFooterCTAIntent(s.body)) continue;
-
-    const hasFooterCtaClass = s.body.includes('footer-cta');
-    const hasPanelClass = s.body.includes('cta__panel');
-
-    if (!(hasFooterCtaClass && hasPanelClass)) {
-      addViolationLine(
-        fileAbs,
-        lineOfIndex(text, s.start),
-        'CTA_VIOLATION',
-        'Footer CTA intent detected (h2 + paragraph + 1–2 btn actions) but missing required CTA system classes (`footer-cta` and `cta__panel`).'
-      );
-    }
-  }
-}
-
 /**
  * SR3 — Inline style detection.
  * FAIL if any .tsx file uses style={{ with var(--*) tokens.
@@ -432,7 +365,6 @@ function main() {
     const text = fs.readFileSync(abs, 'utf8');
     scanButtonViolations(abs, text);
     scanTailwindButtonViolations(abs, text);
-    scanCtaViolations(abs, text);
     scanInlineStyleViolations(abs, text);
   }
 

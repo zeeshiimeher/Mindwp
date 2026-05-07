@@ -13,7 +13,7 @@ import { getValidatorDefinitions } from '@/../scripts/core/system-manifest.mjs';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..', '..');
 const integrityTargets = [
-    'src/components/sections/PrimaryCTASection.tsx',
+    'src/components/conversion/DecisionPanel.tsx',
     'src/components/navigation/RelatedSection.tsx',
     'src/lib/seo/schema.ts',
     'src/lib/content-graph/publishable.tsx',
@@ -31,8 +31,8 @@ describe('system invariant: closure lock', () => {
     });
 
     test('required renderers do not silently return null', () => {
-        const primaryCta = readFileSync(
-            path.join(workspaceRoot, 'src/components/sections/PrimaryCTASection.tsx'),
+        const decisionPanel = readFileSync(
+            path.join(workspaceRoot, 'src/components/conversion/DecisionPanel.tsx'),
             'utf8'
         );
         const relatedSection = readFileSync(
@@ -40,7 +40,7 @@ describe('system invariant: closure lock', () => {
             'utf8'
         );
 
-        expect(primaryCta.includes('return null')).toBe(false);
+        expect(decisionPanel.includes('return null')).toBe(false);
         expect(relatedSection.includes('return null;')).toBe(false);
     });
 

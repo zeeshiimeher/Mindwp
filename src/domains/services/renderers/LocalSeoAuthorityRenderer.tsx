@@ -535,6 +535,8 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       </SectionFrame>
 
       {/* -- VISIBILITY CYCLE ------------------------------------------------ */}
+      {/* Raw <section>: heading is embedded inside lsa-cycle__layout grid, not a standalone header. */}
+      {/* SectionFrame requires an extracted heading block -- not compatible with this layout. */}
       <section className='lsa-cycle' aria-label={ARIA_CYCLE_DOT}>
         <div className='mw-container'>
           <div className='lsa-cycle__layout'>

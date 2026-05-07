@@ -14,11 +14,9 @@ import {
 } from '@/lib/cta/primaryAction';
 import {
     scanPrimaryCtaUsageFile,
-    validateCorePrimaryCtaSources,
 } from '@/../scripts/validators/validate-primary-cta';
 
 const root = process.cwd();
-const primaryCtaSectionPath = path.join(root, 'src', 'components', 'sections', 'PrimaryCTASection.tsx');
 
 describe('system simulation: CTA lock', () => {
     test('shared CTA helpers only emit approved labels', () => {
@@ -67,16 +65,6 @@ describe('system simulation: CTA lock', () => {
         expect(action.href.startsWith('/contact')).toBe(true);
     });
 
-    test('PrimaryCTASection contains the strict single-CTA guard and no secondary CTA logic', () => {
-        const source = fs.readFileSync(primaryCtaSectionPath, 'utf8');
-
-        expect(source.includes('resolveCtaLabel(')).toBe(false);
-        expect(source.includes('return null')).toBe(false);
-        expect(source.includes('allowSecondaryCTA')).toBe(false);
-        expect(source.includes("data-testid='smart-cta'"))
-            .toBe(true);
-    });
-
     test('validator rejects PrimaryCTASection usages missing required content props', () => {
         const issues = scanPrimaryCtaUsageFile(
             'fixture.tsx',
@@ -115,15 +103,13 @@ describe('system simulation: CTA lock', () => {
         expect(issues.some(issue => issue.code === 'hardcoded_cta_label')).toBe(true);
     });
 
-    test('core contract validation fails if PrimaryCTASection loses its hard guards', () => {
-        const issues = validateCorePrimaryCtaSources(
-            'export interface PrimaryCTASectionProps {}',
-            "export const PRIMARY_CTA_LABEL = 'Start a Conversation';",
-            'PrimaryCTASection.tsx',
-            'primaryAction.ts'
-        );
+    test('DecisionPanel enforces heading.title + primary actions contract', () => {
+        const decisionPanelPath = path.join(root, 'src', 'components', 'conversion', 'DecisionPanel.tsx');
+        const source = fs.readFileSync(decisionPanelPath, 'utf8');
 
-        expect(issues.some(issue => issue.code === 'missing_required_cta_guard')).toBe(true);
-        expect(issues.some(issue => issue.code === 'missing_approved_label')).toBe(true);
+        expect(source.includes("[DecisionPanel] requires heading.title")).toBe(true);
+        expect(source.includes("[DecisionPanel] requires at least one primary action")).toBe(true);
+        expect(source.includes('data-testid')).toBe(true);
+        expect(source.includes('return null')).toBe(false);
     });
 });

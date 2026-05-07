@@ -31,7 +31,6 @@ const DATA_DIRS = [
 const FULL_CTA_COUNT_SURFACE_PATTERNS = ['/renderers/', '/templates/', '/pages/', 'src/screens/'];
 
 const allowedHardcodedLabelFiles = new Set([
-  'src/components/sections/PrimaryCTASection.tsx',
   'src/lib/cta/primaryAction.ts',
   'scripts/validators/validate-primary-cta.ts',
   'scripts/validators/validate-cta-label-contract.mjs',
@@ -362,89 +361,6 @@ export function scanDataFile(relativePath: string, source: string): Issue[] {
   return issues;
 }
 
-export function validateCorePrimaryCtaSources(
-  primaryCtaSectionSource: string,
-  primaryActionSource: string,
-  relativePrimaryCtaSectionPath: string,
-  relativePrimaryActionPath: string
-): Issue[] {
-  const issues: Issue[] = [];
-
-  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires heading.title')) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_required_cta_guard',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message: 'PrimaryCTASection must throw when heading.title is missing.',
-    });
-  }
-
-  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires heading.description')) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_required_cta_guard',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message: 'PrimaryCTASection must throw when heading.description is missing.',
-    });
-  }
-
-  if (!primaryCtaSectionSource.includes('PrimaryCTASection requires actions')) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_required_cta_guard',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message: 'PrimaryCTASection must throw when actions is missing.',
-    });
-  }
-
-  if (!primaryCtaSectionSource.includes('PrimaryCTASection must have exactly one CTA')) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_required_cta_guard',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message: 'PrimaryCTASection must fail loud when actions.length !== 1.',
-    });
-  }
-
-  if (primaryCtaSectionSource.includes('return null')) {
-    issues.push({
-      severity: 'error',
-      code: 'smart_cta_returns_null',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message: 'PrimaryCTASection must not return null.',
-    });
-  }
-
-  if (primaryCtaSectionSource.includes('allowSecondaryCTA')) {
-    issues.push({
-      severity: 'error',
-      code: 'secondary_cta_not_allowed',
-      file: relativePrimaryCtaSectionPath,
-      line: 1,
-      message: 'PrimaryCTASection must not contain allowSecondaryCTA logic.',
-    });
-  }
-
-  for (const label of APPROVED_CTA_LABELS) {
-    if (!primaryActionSource.includes(label)) {
-      issues.push({
-        severity: 'error',
-        code: 'missing_approved_label',
-        file: relativePrimaryActionPath,
-        line: 1,
-        message: `primaryAction.ts must export the approved CTA label "${label}".`,
-      });
-    }
-  }
-
-  return issues;
-}
-
 function scanHardcodedApprovedLabels(relativePath: string, source: string): Issue[] {
   if (allowedHardcodedLabelFiles.has(relativePath)) {
     return [];
@@ -478,19 +394,6 @@ export function collectCtaContractIssues() {
   const issues: Issue[] = [];
   const codeFiles = collectFiles(CTA_SOURCE_DIRS);
   const dataFiles = collectFiles(DATA_DIRS);
-  const primaryCtaSectionPath = path.join(root, 'src/components/sections/PrimaryCTASection.tsx');
-  const primaryActionPath = path.join(root, 'src/lib/cta/primaryAction.ts');
-  const primaryCtaSectionSource = fs.readFileSync(primaryCtaSectionPath, 'utf8');
-  const primaryActionSource = fs.readFileSync(primaryActionPath, 'utf8');
-
-  issues.push(
-    ...validateCorePrimaryCtaSources(
-      primaryCtaSectionSource,
-      primaryActionSource,
-      'src/components/sections/PrimaryCTASection.tsx',
-      'src/lib/cta/primaryAction.ts'
-    )
-  );
 
   for (const filePath of codeFiles) {
     const relativePath = normalizeRelative(filePath);

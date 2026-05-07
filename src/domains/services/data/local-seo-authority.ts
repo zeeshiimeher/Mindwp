@@ -1,3 +1,6 @@
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -417,7 +420,16 @@ export const localSeoAuthorityPage = {
       description:
         'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: PRIMARY_CTA_LABEL,
+        href: buildServiceContactHref({
+          system: 'local-seo-authority',
+          slug: 'local-seo-authority',
+        }),
+        primary: true,
+      },
+    ],
     expectations: [
       { num: '01', text: 'Signal audit \u2014 what Google currently sees' },
       { num: '02', text: 'Trust gaps \u2014 what it cannot verify' },
