@@ -34,11 +34,10 @@
 
 .lsa-hero {
     background: var(--mw-gradient-hero);
-    padding-block-start: var(--mw-hero-block-top);
-    padding-block-end: var(--mw-hero-block-bottom);
-    position: relative;
-    overflow: hidden;
 }
+
+/* mw-hero-section owns: padding-block, position:relative, overflow:hidden */
+/* mw-hero-section__inner owns: grid layout, gap, align-items */
 
 .lsa-hero__texture {
     position: absolute;
@@ -49,26 +48,8 @@
     pointer-events: none;
 }
 
-.lsa-hero__inner {
-    position: relative;
-    z-index: 1;
-}
-
-.lsa-hero__layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--mw-space-12);
-    align-items: center;
-}
-
-@media (min-width: 1024px) {
-    .lsa-hero__layout {
-        grid-template-columns: 7fr 5fr;
-    }
-}
-
-/* lsa-hero__ copy-side removed — replaced by mw-hero-frame* in layout.css */
-/* Note: lsa-hero__action kept as actions slot wrapper in HeroFrame */
+/* lsa-hero__inner and lsa-hero__layout removed — mw-hero-section__inner owns grid layout */
+/* lsa-hero__ copy-side removed — mw-hero-frame* in layout.css owns copy content */
 
 /* ══════════════════════════════════════════════════════
    3. PRESENCE SURFACE (hero panel)

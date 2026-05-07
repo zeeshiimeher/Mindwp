@@ -1656,3 +1656,36 @@ After 6A created the base components, 6B enforced them as the only pattern:
 - Validators updated to enforce the new contracts
 - Migration comments cleaned (production code must not contain dev scaffolding notes)
 - All remaining legacy props removed from SmartRelatedSection
+
+---
+
+## Milestone 6C — Complete Base Component Enforcement Across Homepage / SWS / LSA
+
+**Status:** Complete (branch: `ui-hard-reset`, commit: `ui-hard-reset: complete base component enforcement`)
+
+### Completed Work
+
+1. ✅ `Accordion` — added `initialOpenId?: string` prop for pre-expanding first item
+2. ✅ `Homepage` FAQ section — migrated from `<details>/<summary>` to `<Accordion>` with `initialOpenId='home-faq-0'`
+3. ✅ `home.css` — dead FAQ accordion CSS removed (`home-faq__item/question/answer/icon`); entire orphaned `home-cta` block removed (~188 lines; CTASection already rendered DecisionPanel directly since 6B)
+4. ✅ `HeroFrame` — rewritten to own full hero section: `<section>`, `mw-container`, `mw-hero-section__inner` split layout, visual slot (`right panel`), texture slot (`absolute overlay`)
+5. ✅ `layout.css` — added `mw-hero-section` + `mw-hero-section__inner` CSS (padding, grid, responsive)
+6. ✅ `SmartWebsiteSystemsRenderer` hero — migrated from manual `<section>/<div>/<HeroFrame>` stack to single `<HeroFrame>` full-section call with `visual` slot
+7. ✅ `LocalSeoAuthorityRenderer` hero — migrated from manual `<section>/<inner>/<layout>/<HeroFrame>` stack to single `<HeroFrame>` full-section call with `texture` + `visual` slots
+8. ✅ `smart-website.css` — `.sws-hero__inner` + responsive query removed (owned by `mw-hero-section__inner`); `.sws-hero` reduced to background only
+9. ✅ `local-seo.css` — `.lsa-hero__inner` + `.lsa-hero__layout` + responsive query removed; `.lsa-hero` reduced to background only
+10. ✅ `layout.css` — `SectionShell` references removed from CSS block comments
+11. ✅ Remaining custom page sections (`lsa-cycle`, `lsa-faq`, `lsa-related`) — confirmed justified exceptions (custom 2-column layouts / curated data)
+12. ✅ Homepage hero — kept page-local (split heading, dual action system, data-accent chips — incompatible with HeroFrame without redesign)
+13. ✅ Homepage sections — kept page-local (`home-h2` custom sizing + split heading muted style; forcing SectionFrame would change visual appearance)
+14. ✅ Prettier formatting fixed across all touched files
+15. ✅ `system:full` passes at 56/56 validators, 0 warnings
+16. ✅ `npx next build` clean
+
+### Why This Milestone Exists
+
+After 6B enforced SectionFrame and DecisionPanel across section content, 6C completes base component ownership:
+- HeroFrame now owns the full hero section element — renderers no longer manually compose `<section>` + container + split layout
+- Dead CSS (orphaned home FAQ, orphaned home-cta) removed
+- Homepage FAQ delegates to Accordion primitive
+- CSS duplication removed: sws/lsa hero wrapper properties deleted now that mw-hero-section owns them

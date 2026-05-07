@@ -35,6 +35,7 @@ import {
 } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { Accordion } from '@/components/primitives/Accordion';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import type { HomeIconKey } from '@/domains/home/data/homepage';
 import { homepageData } from '@/domains/home/data/homepage';
@@ -1009,6 +1010,11 @@ function ImplementationExamplesSection() {
 
 function FAQSection() {
   const { faq } = homepageData;
+  const faqItems = faq.items.map((item: { question: string; answer: string }, i: number) => ({
+    id: `home-faq-${i}`,
+    question: item.question,
+    answer: item.answer,
+  }));
 
   return (
     <section className='home-faq'>
@@ -1017,16 +1023,8 @@ function FAQSection() {
           <h2 className='home-h2'>{faq.heading}</h2>
           <p className='home-faq__description'>{faq.description}</p>
         </div>
-        <div className='home-faq__items mw-animate-list'>
-          {faq.items.map((item, i) => (
-            <details key={item.question} className='home-faq__item' open={i === 0}>
-              <summary className='home-faq__question'>
-                <span>{item.question}</span>
-                <span className='home-faq__question-icon' aria-hidden='true' />
-              </summary>
-              <div className='home-faq__answer'>{item.answer}</div>
-            </details>
-          ))}
+        <div className='home-faq__items'>
+          <Accordion items={faqItems} initialOpenId='home-faq-0' className='mw-animate-list' />
         </div>
       </div>
     </section>

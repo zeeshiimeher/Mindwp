@@ -108,88 +108,85 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
   return (
     <>
       {/* -- HERO ------------------------------------------------------------ */}
-      <section className='lsa-hero' aria-label={ARIA_HERO_DOT}>
-        <div className='lsa-hero__texture' aria-hidden='true' />
-        <div className='lsa-hero__inner mw-container'>
-          <div className='lsa-hero__layout'>
-            <HeroFrame
-              badge={hero.badge}
-              title={hero.title}
-              description={hero.description}
-              actions={[
-                {
-                  label: PRIMARY_CTA_LABEL,
-                  href: contactHref,
-                  variant: 'white',
-                  icon: <ArrowRight size={16} aria-hidden='true' />,
-                },
-              ]}
-              chips={hero.list && hero.list.length > 0 ? (hero.list as string[]) : undefined}
-              chipDotVariant='warn'
-            />
-
-            <div className='lsa-hero__panel mw-animate-panel'>
-              <div className='lsa-presence'>
-                <div className='lsa-presence__header'>
-                  <div>
-                    <div className='lsa-presence__label'>{hero.presenceSurface.title}</div>
-                    <div className='lsa-presence__area'>{hero.presenceSurface.area}</div>
-                  </div>
-                  <div className='lsa-presence__state'>
-                    <span className='lsa-presence__state-dot' aria-hidden='true' />
-                    <span>{hero.presenceSurface.overallState}</span>
-                  </div>
+      <HeroFrame
+        className='lsa-hero'
+        ariaLabel={ARIA_HERO_DOT}
+        texture={<div className='lsa-hero__texture' aria-hidden='true' />}
+        badge={hero.badge}
+        title={hero.title}
+        description={hero.description}
+        actions={[
+          {
+            label: PRIMARY_CTA_LABEL,
+            href: contactHref,
+            variant: 'white',
+            icon: <ArrowRight size={16} aria-hidden='true' />,
+          },
+        ]}
+        chips={hero.list && hero.list.length > 0 ? (hero.list as string[]) : undefined}
+        chipDotVariant='warn'
+        visual={
+          <div className='lsa-hero__panel mw-animate-panel'>
+            <div className='lsa-presence'>
+              <div className='lsa-presence__header'>
+                <div>
+                  <div className='lsa-presence__label'>{hero.presenceSurface.title}</div>
+                  <div className='lsa-presence__area'>{hero.presenceSurface.area}</div>
                 </div>
+                <div className='lsa-presence__state'>
+                  <span className='lsa-presence__state-dot' aria-hidden='true' />
+                  <span>{hero.presenceSurface.overallState}</span>
+                </div>
+              </div>
 
-                <div className='lsa-presence__pack'>
-                  <div className='lsa-presence__pack-header'>
-                    <span className='lsa-presence__pack-label'>
-                      {hero.presenceSurface.mapPack.label}
-                    </span>
-                    <span className='lsa-presence__pack-state'>
-                      {hero.presenceSurface.mapPack.overallState}
-                    </span>
-                  </div>
-                  <div className='lsa-presence__pack-grid'>
-                    {hero.presenceSurface.mapPack.competitors.map((name: string, i: number) => (
-                      <div key={name} className='lsa-presence__competitor'>
-                        <div className='lsa-presence__competitor-pos'>
-                          <span className='lsa-presence__competitor-dot' aria-hidden='true' />
-                          <span className='lsa-presence__competitor-rank'>#{i + 1}</span>
-                        </div>
-                        <div className='lsa-presence__competitor-name'>{name}</div>
+              <div className='lsa-presence__pack'>
+                <div className='lsa-presence__pack-header'>
+                  <span className='lsa-presence__pack-label'>
+                    {hero.presenceSurface.mapPack.label}
+                  </span>
+                  <span className='lsa-presence__pack-state'>
+                    {hero.presenceSurface.mapPack.overallState}
+                  </span>
+                </div>
+                <div className='lsa-presence__pack-grid'>
+                  {hero.presenceSurface.mapPack.competitors.map((name: string, i: number) => (
+                    <div key={name} className='lsa-presence__competitor'>
+                      <div className='lsa-presence__competitor-pos'>
+                        <span className='lsa-presence__competitor-dot' aria-hidden='true' />
+                        <span className='lsa-presence__competitor-rank'>#{i + 1}</span>
                       </div>
-                    ))}
-                  </div>
-                  <div className='lsa-presence__you'>
-                    <span className='lsa-presence__you-dot' aria-hidden='true' />
-                    <span className='lsa-presence__you-label'>
-                      {hero.presenceSurface.mapPack.youLabel}
-                    </span>
-                  </div>
+                      <div className='lsa-presence__competitor-name'>{name}</div>
+                    </div>
+                  ))}
                 </div>
+                <div className='lsa-presence__you'>
+                  <span className='lsa-presence__you-dot' aria-hidden='true' />
+                  <span className='lsa-presence__you-label'>
+                    {hero.presenceSurface.mapPack.youLabel}
+                  </span>
+                </div>
+              </div>
 
-                <div className='lsa-presence__signals'>
-                  {hero.presenceSurface.signals.map(
-                    (sig: { label: string; value: string; state: string }) => (
-                      <div key={sig.label} className='lsa-presence__signal'>
-                        <div className='lsa-presence__signal-label'>{sig.label}</div>
-                        <div className='lsa-presence__signal-row'>
-                          <span className='lsa-presence__signal-value'>{sig.value}</span>
-                          <span
-                            className={`lsa-presence__signal-dot lsa-presence__signal-dot--${sig.state}`}
-                            aria-hidden='true'
-                          />
-                        </div>
+              <div className='lsa-presence__signals'>
+                {hero.presenceSurface.signals.map(
+                  (sig: { label: string; value: string; state: string }) => (
+                    <div key={sig.label} className='lsa-presence__signal'>
+                      <div className='lsa-presence__signal-label'>{sig.label}</div>
+                      <div className='lsa-presence__signal-row'>
+                        <span className='lsa-presence__signal-value'>{sig.value}</span>
+                        <span
+                          className={`lsa-presence__signal-dot lsa-presence__signal-dot--${sig.state}`}
+                          aria-hidden='true'
+                        />
                       </div>
-                    )
-                  )}
-                </div>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* -- AUTHORITY DECISION BOARD ---------------------------------------- */}
       <SectionFrame

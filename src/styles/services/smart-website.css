@@ -82,27 +82,13 @@
 
 .sws-hero {
     background: var(--mw-gradient-hero);
-    padding-block-start: var(--mw-hero-block-top);
-    padding-block-end: var(--mw-hero-block-bottom);
-    position: relative;
-    overflow: hidden;
 }
 
-.sws-hero__inner {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--mw-gap-cols);
-    align-items: center;
-}
-
-@media (min-width: 980px) {
-    .sws-hero__inner {
-        grid-template-columns: 7fr 5fr;
-    }
-}
+/* mw-hero-section owns: padding-block, position:relative, overflow:hidden */
+/* mw-hero-section__inner owns: grid layout, gap, align-items */
 
 /* ── Hero copy ── */
-/* sws-hero__eyebrow/heading/description/actions/chips/chip removed — replaced by mw-hero-frame* in layout.css */
+/* mw-hero-frame* in layout.css owns: copy-side content */
 
 /* ── Hero feed panel ── */
 .sws-hero__feed {

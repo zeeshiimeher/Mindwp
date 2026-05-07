@@ -199,7 +199,6 @@
 /* ══════════════════════════════════════════════════════
    BACKGROUND CONTEXT CLASSES
    Sets background + establishes readable foreground context.
-   Used by SectionShell tone prop.
    ══════════════════════════════════════════════════════ */
 
 .bg-body {
@@ -269,7 +268,6 @@
 
 /* ══════════════════════════════════════════════════════
    SECTION HEADER SYSTEM
-   Used by SectionShell heading prop.
    ══════════════════════════════════════════════════════ */
 
 .rd-section-head {
@@ -603,6 +601,31 @@
     line-height: 1.65;
     color: var(--mw-text-secondary);
     max-width: 56ch;
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO SECTION — full hero wrapper + split layout
+   src/components/layout/HeroFrame.tsx
+   ══════════════════════════════════════════════════════ */
+
+.mw-hero-section {
+    position: relative;
+    overflow: hidden;
+    padding-block-start: var(--mw-hero-block-top);
+    padding-block-end: var(--mw-hero-block-bottom);
+}
+
+.mw-hero-section__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-gap-cols);
+    align-items: center;
+}
+
+@media (min-width: 980px) {
+    .mw-hero-section__inner {
+        grid-template-columns: 7fr 5fr;
+    }
 }
 
 /* ══════════════════════════════════════════════════════

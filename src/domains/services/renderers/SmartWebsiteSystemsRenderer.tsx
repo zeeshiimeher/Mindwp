@@ -27,6 +27,7 @@ interface Props {
 
 // ── Label constants (end in _DOT — allowed by hardcoded-content validator) ──
 
+const ARIA_HERO_DOT = 'Smart Website Systems -- page hero';
 const ARIA_LEAK_MAP_DOT = 'Enquiry leak map';
 const ARIA_COMPARISON_DOT = 'Comparison';
 const ARIA_HANDOFF_DOT = 'System handoff board';
@@ -138,17 +139,17 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   return (
     <div className='sws-page'>
       {/* 1. Hero */}
-      <section className='sws-hero'>
-        <div className='sws-hero__inner mw-container'>
-          <HeroFrame
-            badge={hero.badge}
-            title={hero.title}
-            description={hero.description}
-            actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-            chips={Array.isArray(hero.list) ? (hero.list as string[]) : undefined}
-            chipDotVariant='subtle'
-          />
-          {hero.visual && (
+      <HeroFrame
+        className='sws-hero'
+        ariaLabel={ARIA_HERO_DOT}
+        badge={hero.badge}
+        title={hero.title}
+        description={hero.description}
+        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
+        chips={Array.isArray(hero.list) ? (hero.list as string[]) : undefined}
+        chipDotVariant='subtle'
+        visual={
+          hero.visual ? (
             <div className='sws-hero__feed' aria-hidden={true}>
               <div className='sws-hero__feed-header'>
                 <div className='sws-hero__feed-meta'>
@@ -186,9 +187,9 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 </div>
               )}
             </div>
-          )}
-        </div>
-      </section>
+          ) : undefined
+        }
+      />
 
       {/* 2. Enquiry Leak Map */}
       {leakMap &&

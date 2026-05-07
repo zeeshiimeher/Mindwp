@@ -13,6 +13,7 @@ export type AccordionItem = {
 
 export type AccordionProps = {
   items: readonly AccordionItem[];
+  initialOpenId?: string;
   className?: string;
 };
 
@@ -26,8 +27,8 @@ export type AccordionProps = {
  * - No sws-* or lsa-* imports.
  * - Uses mw-accordion* CSS from primitives.css.
  */
-export function Accordion({ items, className }: AccordionProps) {
-  const [openId, setOpenId] = useState<string | null>(null);
+export function Accordion({ items, initialOpenId, className }: AccordionProps) {
+  const [openId, setOpenId] = useState<string | null>(initialOpenId ?? null);
 
   return (
     <div className={`mw-accordion${className ? ` ${className}` : ''}`} role='list'>
