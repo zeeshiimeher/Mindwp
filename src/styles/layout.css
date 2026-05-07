@@ -542,9 +542,27 @@
 }
 
 /* ══════════════════════════════════════════════════════
-   SECTION FRAME — shared section header block
+   SECTION FRAME — full section wrapper
    src/components/layout/SectionFrame.tsx
    ══════════════════════════════════════════════════════ */
+
+.mw-section-frame {
+    padding-block: var(--mw-section-block);
+    position: relative;
+    overflow: hidden;
+}
+
+.mw-section-frame--mist {
+    background: var(--mw-bg-mist);
+}
+
+.mw-section-frame--white {
+    background: var(--mw-bg-page);
+}
+
+.mw-section-frame--dark {
+    background: var(--mw-bg-dark);
+}
 
 .mw-section-frame__header {
     margin-bottom: var(--mw-space-content-lg);

@@ -2,11 +2,18 @@
 
 type HeroFrameChipDotVariant = 'subtle' | 'warn' | 'risk' | 'neutral';
 
+export type HeroFrameAction = {
+  label: string;
+  href: string;
+  variant?: 'white' | 'primary' | 'ghost';
+  icon?: React.ReactNode;
+};
+
 export type HeroFrameProps = {
   badge?: string;
   title: string;
   description: string;
-  actions: React.ReactNode;
+  actions: readonly HeroFrameAction[];
   chips?: readonly string[];
   chipDotVariant?: HeroFrameChipDotVariant;
   className?: string;
@@ -23,7 +30,6 @@ export type HeroFrameProps = {
  * Rules:
  * - No page-specific classes.
  * - No hardcoded contact URLs.
- * - No old SectionShell, rd-* imports.
  * - Right-side visual panels remain page-local — NOT passed as children.
  */
 export function HeroFrame({
@@ -49,7 +55,18 @@ export function HeroFrame({
       )}
       <h1 className='mw-hero-frame__heading'>{title}</h1>
       <p className='mw-hero-frame__description'>{description}</p>
-      <div className='mw-hero-frame__actions'>{actions}</div>
+      <div className='mw-hero-frame__actions'>
+        {actions.map(action => (
+          <a
+            key={action.href}
+            href={action.href}
+            className={`mw-btn mw-btn--${action.variant ?? 'primary'}`}
+          >
+            {action.label}
+            {action.icon}
+          </a>
+        ))}
+      </div>
       {chips && chips.length > 0 && (
         <div className='mw-hero-frame__chips'>
           {chips.map(chip => (

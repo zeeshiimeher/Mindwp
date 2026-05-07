@@ -34,13 +34,7 @@
    SHARED SECTION RHYTHM
    ══════════════════════════════════════════════════════ */
 
-.sws-section {
-    padding-block: var(--mw-section-block);
-    position: relative;
-    overflow: hidden;
-}
-
-/* sws-head / sws-kicker / sws-h2 / sws-lead removed — replaced by mw-section-frame* in layout.css */
+/* sws-section / sws-head / sws-kicker / sws-h2 / sws-lead removed — replaced by mw-section-frame* in layout.css */
 
 /* ══════════════════════════════════════════════════════
    SIGNAL DOTS — sws-specific variants

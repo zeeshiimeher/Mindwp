@@ -16,7 +16,6 @@ export type StaticRouteDefinition = {
 
 export const INTERNAL_STATIC_ROUTE_PATHS = new Set([
   '/components',
-  '/dev/component-system',
   '/dev/system-dashboard',
   '/system-dashboard',
   '/dev/system-dashboard/reports/system-report',
@@ -132,15 +131,6 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Components Reference',
     title: 'Components Reference',
     description: 'Internal component reference for the production design system.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:component-system-visualizer',
-    path: '/dev/component-system',
-    name: 'Component System Visualizer',
-    title: 'Component System Visualizer',
-    description:
-      'Internal visual registry for deterministic section components, variants, and anchor-data rendering checks.',
     showOnHumanSitemap: false,
   },
   {

@@ -48,7 +48,7 @@ type ServiceDomainEntry<TData extends ServicePageData = ServicePageData> = {
   data: TData;
   renderer: ServiceRenderer<TData>;
   options?: {
-    relatedContent?: RelatedContentMode;
+    relatedSection?: { enabled?: boolean };
   };
 };
 
@@ -124,7 +124,7 @@ export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
     UnifiedCommunicationSystemRenderer
   ),
   'local-seo-authority': createServiceEntry(localSeoAuthorityPage, LocalSeoAuthorityRenderer, {
-    relatedContent: 'page-owned',
+    relatedSection: { enabled: false },
   }),
   'reputation-review-systems': createServiceEntry(
     reputationReviewSystemsPage,

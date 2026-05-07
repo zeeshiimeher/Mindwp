@@ -8,17 +8,6 @@ interface SmartRelatedSectionProps {
   pageType?: PageType;
   slug?: string;
   nodeType?: ContentNodeType;
-  categorySlug?: string;
-  systems?: string[];
-  industries?: string[];
-  includeCaseStudies?: boolean;
-  includeServices?: boolean;
-  items?: unknown;
-  groups?: unknown;
-  manualContent?: unknown;
-  manualItems?: unknown;
-  manualList?: unknown;
-  /** Section type — controls behavior via section-intelligence rules */
   sectionType?: string;
 }
 
@@ -35,16 +24,6 @@ export function SmartRelatedSection({
   pageType,
   slug,
   nodeType,
-  categorySlug: _categorySlug,
-  systems: _systems,
-  industries: _industries,
-  includeCaseStudies: _includeCaseStudies,
-  includeServices: _includeServices,
-  items: _items,
-  groups: _groups,
-  manualContent: _manualContent,
-  manualItems: _manualItems,
-  manualList: _manualList,
   sectionType,
 }: SmartRelatedSectionProps) {
   if (!pageId || !pageType) {

@@ -179,7 +179,6 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
               pageId={`industry-category:${data.slug}`}
               pageType='industry-category'
               slug={data.slug}
-              includeCaseStudies={false}
             />
           </CTARegistryProvider>
         );

@@ -1623,3 +1623,36 @@ This milestone organizes the base before scaling to more pages.
 - `npx next build`
 - `npm run typecheck`
 - `npm run lint`
+
+---
+
+## Milestone 6B — Enforce Base Components + Remove Old Component System Gravity
+
+**Status:** Complete (branch: `ui-hard-reset`, commit: `ui-hard-reset: enforce base components`)
+
+### Completed Work
+
+1. ✅ `SectionFrame` rewritten as full section wrapper — owns `<section>`, `mw-container`, padding, tone/bg, heading block, children
+2. ✅ `HeroFrame` actions changed from `React.ReactNode` to typed array (`HeroFrameAction[]`) with internal `<a>` rendering
+3. ✅ `DecisionPanel` cleaned — `variant` replaces `primary: true`, `reassurance` replaces `footer`, `expectationsLabel` added, aria-hidden fixed
+4. ✅ `Accordion` JSDoc migration comment removed
+5. ✅ `Tabs` rewritten to generic API — `items/description/entries` replaces `bands/purpose/includedItems`; `TabsBand` type removed
+6. ✅ `SmartRelatedSection` legacy props removed — `categorySlug`, `systems`, `industries`, `includeCaseStudies`, `includeServices`, `items`, `groups`, `manualContent`, `manualItems`, `manualList`
+7. ✅ `SmartWebsiteSystemsRenderer` fully migrated — all 12 content sections use `SectionFrame`, CTA uses `DecisionPanel`, hero uses `HeroFrame`
+8. ✅ `LocalSeoAuthorityRenderer` fully migrated — all applicable sections use `SectionFrame`, CTA uses `DecisionPanel`, hero uses `HeroFrame`
+9. ✅ `validate-content-enforcement.ts` updated — SectionFrame import check, DecisionPanel contract check, forbidden old patterns (`rd-`, `l-section`)
+10. ✅ `/dev/component-system` route deleted — `page.tsx` removed, `INTERNAL_STATIC_ROUTE_PATHS` updated, `STATIC_ROUTE_CONTENT` entry removed
+11. ✅ Migration comments removed from all renderer headers and base component JSDoc
+12. ✅ `lsa-hero` fixed — removed orphaned `lsa-section` class (CSS rule already deleted); `lsa-hero` has own `padding-block`
+13. ✅ Prettier formatting fixed across all touched files
+14. ✅ `system:full` passes at 56/56 validators, 0 warnings
+15. ✅ `npx next build` clean
+
+### Why This Milestone Exists
+
+After 6A created the base components, 6B enforced them as the only pattern:
+- Old section wrapper patterns (`sws-section`, `lsa-section`) removed from CSS and renderer
+- Old component-system dev route removed (no more gravity toward old system)
+- Validators updated to enforce the new contracts
+- Migration comments cleaned (production code must not contain dev scaffolding notes)
+- All remaining legacy props removed from SmartRelatedSection

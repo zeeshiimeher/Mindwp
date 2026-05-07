@@ -7,69 +7,66 @@ import { SignalDot } from './SignalDot';
 
 // -- Types --------------------------------------------------------------------
 
-export type TabsBand = {
+export type TabItem = {
   name: string;
-  purpose: string;
-  includedItems: string[];
+  description: string;
+  entries: string[];
   icon?: React.ReactNode;
 };
 
 export type TabsProps = {
-  bands: readonly TabsBand[];
+  items: readonly TabItem[];
   barTitle: string;
-  areaLabel?: string;
-  areasSuffix?: string;
-  includedLabel?: string;
+  itemLabel?: string;
+  countSuffix?: string;
+  entriesLabel?: string;
   className?: string;
 };
 
 // -- Constants ----------------------------------------------------------------
 
-const DEFAULT_AREA_LABEL = 'Coverage Area';
-const DEFAULT_AREAS_SUFFIX = 'areas in scope';
-const DEFAULT_INCLUDED_LABEL = 'Included';
+const DEFAULT_ITEM_LABEL = 'Coverage Area';
+const DEFAULT_COUNT_SUFFIX = 'areas in scope';
+const DEFAULT_ENTRIES_LABEL = 'Included';
 
 // -- Component ----------------------------------------------------------------
 
 /**
- * Tabs — generic coverage/feature tabs primitive.
- *
- * Replaces SWSCoverageTabs. barTitle is now a required prop.
- * Band icons are passed as React nodes in each band item.
+ * Tabs — generic tabbed panel primitive.
  *
  * Rules:
  * - No page-specific classes.
- * - No sws-* classes.
+ * - No sws-* or lsa-* imports.
  * - Uses mw-tabs* CSS from primitives.css.
  */
 export function Tabs({
-  bands,
+  items,
   barTitle,
-  areaLabel = DEFAULT_AREA_LABEL,
-  areasSuffix = DEFAULT_AREAS_SUFFIX,
-  includedLabel = DEFAULT_INCLUDED_LABEL,
+  itemLabel = DEFAULT_ITEM_LABEL,
+  countSuffix = DEFAULT_COUNT_SUFFIX,
+  entriesLabel = DEFAULT_ENTRIES_LABEL,
   className,
 }: TabsProps) {
   const [active, setActive] = useState(0);
-  const band = bands[active];
-  const total = String(bands.length).padStart(2, '0');
+  const item = items[active];
+  const total = String(items.length).padStart(2, '0');
   const current = String(active + 1).padStart(2, '0');
 
-  if (!band) return null;
+  if (!item) return null;
 
   return (
     <div className={`mw-tabs${className ? ` ${className}` : ''}`}>
       <div className='mw-tabs__bar'>
         <span className='mw-tabs__bar-title'>{barTitle}</span>
         <span className='mw-tabs__bar-count' aria-hidden={true}>
-          {current} / {total} {areasSuffix}
+          {current} / {total} {countSuffix}
         </span>
       </div>
       <div className='mw-tabs__layout'>
-        <aside className='mw-tabs__sidebar' role='tablist' aria-label='Coverage areas'>
-          {bands.map((b, i) => (
+        <aside className='mw-tabs__sidebar' role='tablist' aria-label='Tabs'>
+          {items.map((t, i) => (
             <button
-              key={b.name}
+              key={t.name}
               id={`mw-tabs-tab-${i}`}
               className={`mw-tabs__tab${i === active ? ' mw-tabs__tab--active' : ''}`}
               role='tab'
@@ -78,11 +75,11 @@ export function Tabs({
               onClick={() => setActive(i)}
             >
               <span className='mw-tabs__tab-icon' aria-hidden={true}>
-                {b.icon ?? <Layers size={16} />}
+                {t.icon ?? <Layers size={16} />}
               </span>
               <span className='mw-tabs__tab-body'>
-                <span className='mw-tabs__tab-name'>{b.name}</span>
-                <span className='mw-tabs__tab-desc'>{b.purpose}</span>
+                <span className='mw-tabs__tab-name'>{t.name}</span>
+                <span className='mw-tabs__tab-desc'>{t.description}</span>
               </span>
               <span className='mw-tabs__tab-num' aria-hidden={true}>
                 {String(i + 1).padStart(2, '0')}
@@ -98,18 +95,18 @@ export function Tabs({
           aria-live='polite'
         >
           <p className='mw-tabs__area-label'>
-            {areaLabel} · {current}
+            {itemLabel} · {current}
           </p>
-          <h3 className='mw-tabs__panel-name'>{band.name}</h3>
-          <p className='mw-tabs__panel-purpose'>{band.purpose}</p>
+          <h3 className='mw-tabs__panel-name'>{item.name}</h3>
+          <p className='mw-tabs__panel-purpose'>{item.description}</p>
           <p className='mw-tabs__col-label' aria-hidden={true}>
-            {includedLabel}
+            {entriesLabel}
           </p>
           <ul className='mw-tabs__items'>
-            {band.includedItems.map(item => (
-              <li key={item} className='mw-tabs__item'>
+            {item.entries.map(entry => (
+              <li key={entry} className='mw-tabs__item'>
                 <SignalDot accent='green' />
-                <span>{item}</span>
+                <span>{entry}</span>
               </li>
             ))}
           </ul>

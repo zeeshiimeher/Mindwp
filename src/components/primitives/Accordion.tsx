@@ -21,9 +21,6 @@ export type AccordionProps = {
 /**
  * Accordion — generic FAQ accordion primitive.
  *
- * Replaces SWSFaqAccordion. Used by SmartWebsiteSystemsRenderer
- * and LocalSeoAuthorityRenderer.
- *
  * Rules:
  * - No page-specific classes.
  * - No sws-* or lsa-* imports.

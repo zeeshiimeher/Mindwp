@@ -1050,7 +1050,7 @@ function CTASection() {
       }}
       actions={cta.actions}
       expectations={cta.expectations}
-      footer={cta.footer}
+      reassurance={cta.footer}
     />
   );
 }

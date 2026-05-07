@@ -1,5 +1,7 @@
 // -- Types --------------------------------------------------------------------
 
+type SectionFrameTone = 'mist' | 'white' | 'dark';
+
 type SectionFrameHeading = {
   kicker?: string;
   title: string;
@@ -8,42 +10,44 @@ type SectionFrameHeading = {
 
 export type SectionFrameProps = {
   heading: SectionFrameHeading;
+  tone?: SectionFrameTone;
+  ariaLabel?: string;
   className?: string;
+  children?: React.ReactNode;
 };
 
 // -- Component ----------------------------------------------------------------
 
-/**
- * SectionFrame — shared section header block.
- *
- * Replaces inline sws-head/sws-kicker/sws-h2/sws-lead (SWS) and
- * lsa-section__header/eyebrow/heading/description (LSA) patterns.
- *
- * Renders only the header block — not the outer <section> or mw-container.
- * Place inside the page section's mw-container alongside section content.
- *
- * Rules:
- * - No page-specific classes.
- * - No hardcoded colours or values.
- * - No rd-* or old SectionShell imports.
- */
-export function SectionFrame({ heading, className }: SectionFrameProps) {
+export function SectionFrame({ heading, tone, ariaLabel, className, children }: SectionFrameProps) {
   if (!heading.title) {
     throw new Error('[SectionFrame] requires heading.title');
   }
 
+  const sectionClass = [
+    'mw-section-frame',
+    tone ? `mw-section-frame--${tone}` : null,
+    className ?? null,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <header className={`mw-section-frame__header mw-animate-up${className ? ` ${className}` : ''}`}>
-      {heading.kicker && (
-        <div className='mw-section-frame__eyebrow'>
-          <span className='mw-section-frame__eyebrow-dot' aria-hidden='true' />
-          <span>{heading.kicker}</span>
+    <section className={sectionClass} aria-label={ariaLabel}>
+      <div className='mw-container'>
+        <div className='mw-section-frame__header mw-animate-up'>
+          {heading.kicker && (
+            <div className='mw-section-frame__eyebrow'>
+              <span className='mw-section-frame__eyebrow-dot' aria-hidden={true} />
+              <span>{heading.kicker}</span>
+            </div>
+          )}
+          <h2 className='mw-section-frame__heading'>{heading.title}</h2>
+          {heading.description && (
+            <p className='mw-section-frame__description'>{heading.description}</p>
+          )}
         </div>
-      )}
-      <h2 className='mw-section-frame__heading'>{heading.title}</h2>
-      {heading.description && (
-        <p className='mw-section-frame__description'>{heading.description}</p>
-      )}
-    </header>
+        {children}
+      </div>
+    </section>
   );
 }

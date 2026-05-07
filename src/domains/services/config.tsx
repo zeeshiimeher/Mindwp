@@ -26,7 +26,7 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
   }
 
   const registryEntry = SERVICE_DOMAIN_REGISTRY[slug as keyof typeof SERVICE_DOMAIN_REGISTRY];
-  const relatedContent = registryEntry?.options?.relatedContent ?? 'global-injected';
+  const relatedEnabled = registryEntry?.options?.relatedSection?.enabled ?? true;
 
   return (
     <CTARegistryProvider
@@ -35,7 +35,7 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
       primarySystem={primarySystem}
     >
       {entry.render(entry.data, slug)}
-      {relatedContent !== 'page-owned' && relatedContent !== 'none' && (
+      {relatedEnabled && (
         <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
       )}
     </CTARegistryProvider>

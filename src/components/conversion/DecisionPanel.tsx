@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 type DecisionPanelAction = {
   label: string;
   href: string;
-  primary: true;
+  variant?: 'primary' | 'white' | 'ghost';
 };
 
 type DecisionPanelExpectation = {
@@ -24,7 +24,8 @@ export type DecisionPanelProps = {
   heading: DecisionPanelHeading;
   actions: readonly DecisionPanelAction[];
   expectations?: readonly DecisionPanelExpectation[];
-  footer?: {
+  expectationsLabel?: string;
+  reassurance?: {
     noSell?: string;
     tone?: string;
   };
@@ -37,20 +38,14 @@ export type DecisionPanelProps = {
 /**
  * DecisionPanel — shared final conversion section.
  *
- * Replaces inline SWSCTASection, LSACTASection, and eventually PrimaryCTASection.
  * Owns data-testid='smart-cta' (required by publishable contract).
- *
- * Rules:
- * - No old SectionShell, rd-* classes, or old reusable imports.
- * - No hardcoded contact URLs.
- * - No page-specific copy.
- * - Fail loud on missing primary action.
  */
 export function DecisionPanel({
   heading,
   actions,
   expectations,
-  footer,
+  expectationsLabel = 'What to expect',
+  reassurance,
   className,
   dataTestId = 'smart-cta',
 }: DecisionPanelProps) {
@@ -92,7 +87,10 @@ export function DecisionPanel({
               {heading.description && (
                 <p className='mw-decision-panel__description'>{heading.description}</p>
               )}
-              <a href={action.href} className='mw-decision-panel__action mw-btn mw-btn--white'>
+              <a
+                href={action.href}
+                className={`mw-decision-panel__action mw-btn mw-btn--${action.variant ?? 'white'}`}
+              >
                 {action.label}
                 <ArrowRight size={16} aria-hidden='true' />
               </a>
@@ -100,7 +98,7 @@ export function DecisionPanel({
 
             {expectations && expectations.length > 0 && (
               <div className='mw-decision-panel__expectations mw-animate-panel'>
-                <div className='mw-decision-panel__expectations-label'>What to expect</div>
+                <div className='mw-decision-panel__expectations-label'>{expectationsLabel}</div>
                 <div className='mw-decision-panel__expectations-list'>
                   {expectations.map((item, i) => (
                     <div key={item.num ?? String(i)} className='mw-decision-panel__expectation'>
@@ -111,13 +109,13 @@ export function DecisionPanel({
                     </div>
                   ))}
                 </div>
-                {footer && (footer.noSell || footer.tone) && (
+                {reassurance && (reassurance.noSell || reassurance.tone) && (
                   <div className='mw-decision-panel__footer'>
-                    {footer.noSell && <span>{footer.noSell}</span>}
-                    {footer.tone && (
+                    {reassurance.noSell && <span>{reassurance.noSell}</span>}
+                    {reassurance.tone && (
                       <span className='mw-decision-panel__footer-tone'>
-                        <span className='mw-decision-panel__footer-tone-dot' aria-hidden='true' />
-                        {footer.tone}
+                        <span className='mw-decision-panel__footer-tone-dot' aria-hidden={true} />
+                        {reassurance.tone}
                       </span>
                     )}
                   </div>
