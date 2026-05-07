@@ -18,6 +18,7 @@
 @import './styles/primitives.css';
 @import './styles/components.css';
 @import './styles/pages/home.css';
+@import './styles/pages/smart-website.css';
 
 @tailwind base;
 @tailwind components;
