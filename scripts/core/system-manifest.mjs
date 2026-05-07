@@ -413,6 +413,14 @@ const VALIDATOR_DEFINITIONS = [
     reportFile: 'ui-purity-report.json',
   },
   {
+    name: 'validate-legacy-quarantine',
+    category: 'structure',
+    command: 'node',
+    args: ['scripts/validators/validate-legacy-quarantine.mjs', '--report-json'],
+    blocking: true,
+    reportFile: 'legacy-quarantine-report.json',
+  },
+  {
     name: 'validate-graph',
     category: 'graph',
     command: 'npx',
@@ -667,6 +675,7 @@ const PRIMARY_REPORT_FILES = [
   'indexing-policy-report.json',
   'inline-style-report.json',
   'internal-links-report.json',
+  'legacy-quarantine-report.json',
   'lint-report.json',
   'missing-seo-title-report.json',
   'no-brand-in-content-report.json',

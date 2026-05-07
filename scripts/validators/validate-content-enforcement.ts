@@ -748,296 +748,256 @@ function scanButtonRule(): Issue[] {
     issueType: string;
     message: string;
   }> = [
-    {
-      file: 'src/components/sections/PrimaryCTASection.tsx',
-      expected: [
-        "throw new Error('PrimaryCTASection requires heading.title');",
-        "throw new Error('PrimaryCTASection requires heading.description');",
-        "throw new Error('PrimaryCTASection requires actions');",
-        "throw new Error('PrimaryCTASection must have exactly one CTA');",
-      ],
-      forbidden: ['allowSecondaryCTA', 'secondaryAction && <Button', 'ctaList'],
-      issueType: 'missing_primary_cta_guard',
-      message:
-        'PrimaryCTASection must enforce the strict heading/actions single-CTA contract with no secondary or list logic.',
-    },
-    {
-      file: 'src/components/conversion/DecisionPanel.tsx',
-      expected: [
-        "throw new Error('[DecisionPanel] requires heading.title');",
-        "throw new Error('[DecisionPanel] requires at least one primary action');",
-        'data-testid={dataTestId}',
-      ],
-      forbidden: [],
-      issueType: 'missing_decision_panel_contract',
-      message: 'DecisionPanel must enforce heading.title + actions guards and expose data-testid.',
-    },
-    {
-      file: 'src/components/sections/SectionShell.tsx',
-      expected: [
-        "throw new Error('SectionShell requires heading.title when heading is provided.');",
-        "throw new Error('SectionShell requires heading.description when heading is provided.');",
-        "<p className='rd-section-description'>{heading.description}</p>",
-      ],
-      forbidden: ['heading.description ?'],
-      issueType: 'missing_section_shell_guard',
-      message:
-        'SectionShell must require and always render heading.description when heading is provided.',
-    },
-    {
-      file: 'src/components/sections/HeroSplitSection.tsx',
-      expected: [
-        "throw new Error('[HeroSplitSection] Invalid data');",
-        "<p className='hero-split__description'>{heading.description}</p>",
-      ],
-      forbidden: ['heading.description ?', 'rd-btn--secondary'],
-      issueType: 'invalid_hero_split_contract',
-      message:
-        'HeroSplitSection must require heading copy and only render a single primary action.',
-    },
-    {
-      file: 'src/components/sections/ImageStorySection.tsx',
-      expected: [
-        "throw new Error('[ImageStorySection] Invalid data');",
-        "<p className='image-story__lede'>{heading.description}</p>",
-      ],
-      forbidden: ['heading.description ?'],
-      issueType: 'invalid_image_story_contract',
-      message: 'ImageStorySection must require and always render heading.description.',
-    },
-    {
-      file: 'src/components/sections/LayerStackSection.tsx',
-      expected: ["throw new Error('[LayerStackSection] Invalid data');"],
-      forbidden: ['return null'],
-      issueType: 'invalid_layer_stack_contract',
-      message: 'LayerStackSection must fail loud instead of returning null.',
-    },
-    {
-      file: 'src/components/sections/GridCardsSection.tsx',
-      expected: ["throw new Error('[GridCardsSection] Invalid data');"],
-      issueType: 'invalid_grid_cards_contract',
-      message: 'GridCardsSection must fail loud on invalid item data.',
-    },
-    {
-      file: 'src/components/sections/ProcessStepsSection.tsx',
-      expected: ["throw new Error('[ProcessStepsSection] Invalid data');"],
-      issueType: 'invalid_process_steps_contract',
-      message: 'ProcessStepsSection must fail loud on invalid step data.',
-    },
-    {
-      file: 'src/components/sections/RelatedContentSection.tsx',
-      expected: [
-        'heading: SectionHeading;',
-        "throw new Error('[RelatedContentSection] Invalid data');",
-      ],
-      forbidden: ["item.cta ?? 'Read more'"],
-      issueType: 'invalid_related_content_contract',
-      message:
-        'RelatedContentSection must require a heading and must not apply CTA label fallback logic.',
-    },
-    {
-      file: 'src/components/system/SmartRelatedSectionClient.tsx',
-      expected: [
-        "throw new Error('[SmartRelatedSectionClient] Invalid data');",
-        'cta: RELATED_CONTENT_CTA_LABEL',
-      ],
-      forbidden: ['return null', 'emptyState', "'Read more'"],
-      issueType: 'invalid_smart_related_system_contract',
-      message:
-        'SmartRelatedSectionClient must fail loud and must not inject hardcoded CTA or empty-state fallbacks.',
-    },
-    {
-      file: 'src/components/system/RetryButtonIsland.tsx',
-      expected: ['label: string;'],
-      forbidden: ["label = 'Refresh Page'"],
-      issueType: 'invalid_retry_button_contract',
-      message:
-        'RetryButtonIsland must require its label instead of applying hardcoded fallback copy.',
-    },
-    {
-      file: 'src/components/system/GenericErrorFallback.tsx',
-      expected: [
-        'GENERIC_ERROR_FALLBACK_CONTENT.title',
-        'GENERIC_ERROR_FALLBACK_CONTENT.description',
-      ],
-      forbidden: ['Something went wrong', 'Please try refreshing'],
-      issueType: 'invalid_generic_error_fallback_contract',
-      message: 'GenericErrorFallback must read user-facing copy from the data layer.',
-    },
-    {
-      file: 'src/components/system/GraphAwareSidebar.tsx',
-      expected: ["throw new Error('[GraphAwareSidebar] Invalid data');"],
-      forbidden: ['return null'],
-      issueType: 'invalid_graph_sidebar_contract',
-      message: 'GraphAwareSidebar must fail loud instead of silently skipping rendering.',
-    },
-    {
-      file: 'src/components/system/ClusterPageLayout.tsx',
-      expected: [
-        'sections: ClusterPageSection[];',
-        "throw new Error('[ClusterPageLayout] Invalid data');",
-      ],
-      forbidden: ['getTopicCluster', 'getSystemCluster', 'getContentByIndustry', 'return null'],
-      issueType: 'invalid_cluster_page_layout_contract',
-      message:
-        'ClusterPageLayout must be a pure renderer with no fetching, grouping, or silent skips.',
-    },
-    {
-      file: 'src/lib/related/buildRelatedContent.ts',
-      expected: [
-        "throw new Error('buildRelatedContent requires an explicit page slug and supported page type.');",
-        'throw new Error(`No related content available for ${nodeType}:${slug}.`);',
-      ],
-      forbidden: ['emptyState'],
-      issueType: 'invalid_build_related_content_contract',
-      message:
-        'buildRelatedContent must fail loud and must not inject fallback empty-state content.',
-    },
-    {
-      file: 'src/lib/contact/contactHref.ts',
-      expected: [
-        "throw new Error('normalizeContactContext requires explicit system and source values.');",
-      ],
-      forbidden: [
-        'DEFAULT_CONTACT_SYSTEM',
-        'DEFAULT_CONTACT_SOURCE',
-        'unknown-system',
-        'direct-visit',
-      ],
-      issueType: 'invalid_contact_href_contract',
-      message:
-        'Contact href helpers must require explicit contact attribution instead of injecting defaults.',
-    },
-    {
-      file: 'src/components/system/ActionButtons.tsx',
-      expected: ["throw new Error('ActionButtons requires an explicit primarySystem.');"],
-      forbidden: ["?? 'smart-website-systems'"],
-      issueType: 'invalid_action_buttons_contract',
-      message:
-        'ActionButtons must require an explicit primarySystem and must not apply ownership defaults.',
-    },
-    {
-      file: 'src/components/system/PageEnforcement.tsx',
-      expected: ['primarySystem: string;'],
-      forbidden: ["?? 'smart-website-systems'"],
-      issueType: 'invalid_page_enforcement_contract',
-      message: 'CTARegistryProvider must require an explicit primarySystem.',
-    },
-    {
-      file: 'src/domains/services/config.tsx',
-      expected: ['throw new Error(`Service config requires systems[0] for ${slug}.`);'],
-      forbidden: ["?? 'smart-website-systems'"],
-      issueType: 'invalid_service_config_contract',
-      message: 'Service config must require systems[0] instead of defaulting ownership.',
-    },
-    {
-      file: 'src/domains/features/config.tsx',
-      expected: ['throw new Error(`Feature config requires systems[0] for ${slug}.`);'],
-      forbidden: ["?? 'smart-website-systems'"],
-      issueType: 'invalid_feature_config_contract',
-      message: 'Feature config must require systems[0] instead of defaulting ownership.',
-    },
-    {
-      file: 'src/domains/industries/config.tsx',
-      expected: ['throw new Error(`Industry config requires systems[0] for ${data.slug}.`);'],
-      forbidden: ["?? 'smart-website-systems'"],
-      issueType: 'invalid_industry_config_contract',
-      message: 'Industry config must require systems[0] instead of defaulting ownership.',
-    },
-    {
-      file: 'src/lib/schema/buildFaqSchema.ts',
-      expected: [
-        "throw new Error('buildFaqSchema requires question and answer for every FAQ item.');",
-      ],
-      forbidden: ['?? faq.q', '?? faq.a'],
-      issueType: 'invalid_faq_schema_contract',
-      message: 'buildFaqSchema must only support the current question/answer shape.',
-    },
-    {
-      file: 'src/lib/site/staticPages.ts',
-      expected: ['STATIC_ROUTE_CONTENT.filter(', "from '@/domains/shared/staticPages'"],
-      forbidden: ['const ALL_STATIC_ROUTE_DEFINITIONS'],
-      issueType: 'invalid_static_pages_boundary',
-      message: 'staticPages lib module must not own authored route content.',
-    },
-    {
-      file: 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx',
-      expected: [
-        "from '@/components/layout/SectionFrame'",
-        "throw new Error('[comparison section] Invalid data');",
-        "throw new Error('[proof section] Invalid data');",
-        'heading={data.cta.heading}',
-        'actions={data.cta.actions}',
-      ],
-      forbidden: [
-        "from '@/components/sections/",
-        'return null',
-        "?? ''",
-        "|| ''",
-        "className='rd-",
-        "className='l-section",
-      ],
-      issueType: 'invalid_anchor_renderer_contract',
-      message:
-        'SmartWebsiteSystemsRenderer must import SectionFrame, stay fail-loud, and use the DecisionPanel contract.',
-    },
-    {
-      file: 'src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx',
-      expected: [
-        "from '@/components/layout/SectionFrame'",
-        "throw new Error('[comparison section] Invalid data');",
-        "throw new Error('[proof section] Invalid data');",
-        'heading={data.cta.heading}',
-        'actions={data.cta.actions}',
-      ],
-      forbidden: [
-        "from '@/components/sections/",
-        'return null',
-        "?? ''",
-        "|| ''",
-        "className='rd-",
-        "className='l-section",
-      ],
-      issueType: 'invalid_anchor_renderer_contract',
-      message:
-        'LocalSeoAuthorityRenderer must import SectionFrame, stay fail-loud, and use the DecisionPanel contract.',
-    },
-    {
-      file: 'src/components/reusable/single/SectionIntro.tsx',
-      expected: [],
-      forbidden: ['allowSecondaryCTA', 'secondaryAction', 'showSecondaryAction'],
-      issueType: 'invalid_sectionintro_secondary_logic',
-      message: 'SectionIntro must not expose secondary CTA logic.',
-    },
-    {
-      file: 'src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx',
-      expected: [],
-      forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-      issueType: 'invalid_component_secondary_logic',
-      message: 'DarkSplitShowcaseSection must not expose secondary CTA logic.',
-    },
-    {
-      file: 'src/components/reusable/sections/core/NarrativeStatsSection.tsx',
-      expected: [],
-      forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-      issueType: 'invalid_component_secondary_logic',
-      message: 'NarrativeStatsSection must not expose secondary CTA logic.',
-    },
-    {
-      file: 'src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx',
-      expected: [],
-      forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-      issueType: 'invalid_component_secondary_logic',
-      message: 'TestimonialSpotlightSplitSection must not expose secondary CTA logic.',
-    },
-    {
-      file: 'src/components/reusable/sections/core/StackedFeatureListSection.tsx',
-      expected: [],
-      forbidden: ['allowSecondaryCTA', 'secondaryAction'],
-      issueType: 'invalid_component_secondary_logic',
-      message: 'StackedFeatureListSection must not expose secondary CTA logic.',
-    },
-  ];
+      {
+        file: 'src/components/sections/PrimaryCTASection.tsx',
+        expected: [
+          "throw new Error('PrimaryCTASection requires heading.title');",
+          "throw new Error('PrimaryCTASection requires heading.description');",
+          "throw new Error('PrimaryCTASection requires actions');",
+          "throw new Error('PrimaryCTASection must have exactly one CTA');",
+        ],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction && <Button', 'ctaList'],
+        issueType: 'missing_primary_cta_guard',
+        message:
+          'PrimaryCTASection must enforce the strict heading/actions single-CTA contract with no secondary or list logic.',
+      },
+      {
+        file: 'src/components/conversion/DecisionPanel.tsx',
+        expected: [
+          "throw new Error('[DecisionPanel] requires heading.title');",
+          "throw new Error('[DecisionPanel] requires at least one primary action');",
+          'data-testid={dataTestId}',
+        ],
+        forbidden: [],
+        issueType: 'missing_decision_panel_contract',
+        message: 'DecisionPanel must enforce heading.title + actions guards and expose data-testid.',
+      },
+      {
+        file: 'src/components/sections/SectionShell.tsx',
+        expected: [
+          "throw new Error('SectionShell requires heading.title when heading is provided.');",
+          "throw new Error('SectionShell requires heading.description when heading is provided.');",
+          "<p className='rd-section-description'>{heading.description}</p>",
+        ],
+        forbidden: ['heading.description ?'],
+        issueType: 'missing_section_shell_guard',
+        message:
+          'SectionShell must require and always render heading.description when heading is provided.',
+      },
+      {
+        file: 'src/components/sections/RelatedContentSection.tsx',
+        expected: [
+          'heading: SectionHeading;',
+          "throw new Error('[RelatedContentSection] Invalid data');",
+        ],
+        forbidden: ["item.cta ?? 'Read more'"],
+        issueType: 'invalid_related_content_contract',
+        message:
+          'RelatedContentSection must require a heading and must not apply CTA label fallback logic.',
+      },
+      {
+        file: 'src/components/system/SmartRelatedSectionClient.tsx',
+        expected: [
+          "throw new Error('[SmartRelatedSectionClient] Invalid data');",
+          'cta: RELATED_CONTENT_CTA_LABEL',
+        ],
+        forbidden: ['return null', 'emptyState', "'Read more'"],
+        issueType: 'invalid_smart_related_system_contract',
+        message:
+          'SmartRelatedSectionClient must fail loud and must not inject hardcoded CTA or empty-state fallbacks.',
+      },
+      {
+        file: 'src/components/system/RetryButtonIsland.tsx',
+        expected: ['label: string;'],
+        forbidden: ["label = 'Refresh Page'"],
+        issueType: 'invalid_retry_button_contract',
+        message:
+          'RetryButtonIsland must require its label instead of applying hardcoded fallback copy.',
+      },
+      {
+        file: 'src/components/system/GenericErrorFallback.tsx',
+        expected: [
+          'GENERIC_ERROR_FALLBACK_CONTENT.title',
+          'GENERIC_ERROR_FALLBACK_CONTENT.description',
+        ],
+        forbidden: ['Something went wrong', 'Please try refreshing'],
+        issueType: 'invalid_generic_error_fallback_contract',
+        message: 'GenericErrorFallback must read user-facing copy from the data layer.',
+      },
+      {
+        file: 'src/components/system/GraphAwareSidebar.tsx',
+        expected: ["throw new Error('[GraphAwareSidebar] Invalid data');"],
+        forbidden: ['return null'],
+        issueType: 'invalid_graph_sidebar_contract',
+        message: 'GraphAwareSidebar must fail loud instead of silently skipping rendering.',
+      },
+      {
+        file: 'src/components/system/ClusterPageLayout.tsx',
+        expected: [
+          'sections: ClusterPageSection[];',
+          "throw new Error('[ClusterPageLayout] Invalid data');",
+        ],
+        forbidden: ['getTopicCluster', 'getSystemCluster', 'getContentByIndustry', 'return null'],
+        issueType: 'invalid_cluster_page_layout_contract',
+        message:
+          'ClusterPageLayout must be a pure renderer with no fetching, grouping, or silent skips.',
+      },
+      {
+        file: 'src/lib/related/buildRelatedContent.ts',
+        expected: [
+          "throw new Error('buildRelatedContent requires an explicit page slug and supported page type.');",
+          'throw new Error(`No related content available for ${nodeType}:${slug}.`);',
+        ],
+        forbidden: ['emptyState'],
+        issueType: 'invalid_build_related_content_contract',
+        message:
+          'buildRelatedContent must fail loud and must not inject fallback empty-state content.',
+      },
+      {
+        file: 'src/lib/contact/contactHref.ts',
+        expected: [
+          "throw new Error('normalizeContactContext requires explicit system and source values.');",
+        ],
+        forbidden: [
+          'DEFAULT_CONTACT_SYSTEM',
+          'DEFAULT_CONTACT_SOURCE',
+          'unknown-system',
+          'direct-visit',
+        ],
+        issueType: 'invalid_contact_href_contract',
+        message:
+          'Contact href helpers must require explicit contact attribution instead of injecting defaults.',
+      },
+      {
+        file: 'src/components/system/ActionButtons.tsx',
+        expected: ["throw new Error('ActionButtons requires an explicit primarySystem.');"],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_action_buttons_contract',
+        message:
+          'ActionButtons must require an explicit primarySystem and must not apply ownership defaults.',
+      },
+      {
+        file: 'src/components/system/PageEnforcement.tsx',
+        expected: ['primarySystem: string;'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_page_enforcement_contract',
+        message: 'CTARegistryProvider must require an explicit primarySystem.',
+      },
+      {
+        file: 'src/domains/services/config.tsx',
+        expected: ['throw new Error(`Service config requires systems[0] for ${slug}.`);'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_service_config_contract',
+        message: 'Service config must require systems[0] instead of defaulting ownership.',
+      },
+      {
+        file: 'src/domains/features/config.tsx',
+        expected: ['throw new Error(`Feature config requires systems[0] for ${slug}.`);'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_feature_config_contract',
+        message: 'Feature config must require systems[0] instead of defaulting ownership.',
+      },
+      {
+        file: 'src/domains/industries/config.tsx',
+        expected: ['throw new Error(`Industry config requires systems[0] for ${data.slug}.`);'],
+        forbidden: ["?? 'smart-website-systems'"],
+        issueType: 'invalid_industry_config_contract',
+        message: 'Industry config must require systems[0] instead of defaulting ownership.',
+      },
+      {
+        file: 'src/lib/schema/buildFaqSchema.ts',
+        expected: [
+          "throw new Error('buildFaqSchema requires question and answer for every FAQ item.');",
+        ],
+        forbidden: ['?? faq.q', '?? faq.a'],
+        issueType: 'invalid_faq_schema_contract',
+        message: 'buildFaqSchema must only support the current question/answer shape.',
+      },
+      {
+        file: 'src/lib/site/staticPages.ts',
+        expected: ['STATIC_ROUTE_CONTENT.filter(', "from '@/domains/shared/staticPages'"],
+        forbidden: ['const ALL_STATIC_ROUTE_DEFINITIONS'],
+        issueType: 'invalid_static_pages_boundary',
+        message: 'staticPages lib module must not own authored route content.',
+      },
+      {
+        file: 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx',
+        expected: [
+          "from '@/components/layout/SectionFrame'",
+          "throw new Error('[comparison section] Invalid data');",
+          "throw new Error('[proof section] Invalid data');",
+          'heading={data.cta.heading}',
+          'actions={data.cta.actions}',
+        ],
+        forbidden: [
+          "from '@/components/sections/",
+          'return null',
+          "?? ''",
+          "|| ''",
+          "className='rd-",
+          "className='l-section",
+        ],
+        issueType: 'invalid_anchor_renderer_contract',
+        message:
+          'SmartWebsiteSystemsRenderer must import SectionFrame, stay fail-loud, and use the DecisionPanel contract.',
+      },
+      {
+        file: 'src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx',
+        expected: [
+          "from '@/components/layout/SectionFrame'",
+          "throw new Error('[comparison section] Invalid data');",
+          "throw new Error('[proof section] Invalid data');",
+          'heading={data.cta.heading}',
+          'actions={data.cta.actions}',
+        ],
+        forbidden: [
+          "from '@/components/sections/",
+          'return null',
+          "?? ''",
+          "|| ''",
+          "className='rd-",
+          "className='l-section",
+        ],
+        issueType: 'invalid_anchor_renderer_contract',
+        message:
+          'LocalSeoAuthorityRenderer must import SectionFrame, stay fail-loud, and use the DecisionPanel contract.',
+      },
+      {
+        file: 'src/components/reusable/single/SectionIntro.tsx',
+        expected: [],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction', 'showSecondaryAction'],
+        issueType: 'invalid_sectionintro_secondary_logic',
+        message: 'SectionIntro must not expose secondary CTA logic.',
+      },
+      {
+        file: 'src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx',
+        expected: [],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
+        issueType: 'invalid_component_secondary_logic',
+        message: 'DarkSplitShowcaseSection must not expose secondary CTA logic.',
+      },
+      {
+        file: 'src/components/reusable/sections/core/NarrativeStatsSection.tsx',
+        expected: [],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
+        issueType: 'invalid_component_secondary_logic',
+        message: 'NarrativeStatsSection must not expose secondary CTA logic.',
+      },
+      {
+        file: 'src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx',
+        expected: [],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
+        issueType: 'invalid_component_secondary_logic',
+        message: 'TestimonialSpotlightSplitSection must not expose secondary CTA logic.',
+      },
+      {
+        file: 'src/components/reusable/sections/core/StackedFeatureListSection.tsx',
+        expected: [],
+        forbidden: ['allowSecondaryCTA', 'secondaryAction'],
+        issueType: 'invalid_component_secondary_logic',
+        message: 'StackedFeatureListSection must not expose secondary CTA logic.',
+      },
+    ];
 
   for (const check of sourceChecks) {
     const sourceText = fs.readFileSync(path.join(root, check.file), 'utf8');
@@ -1142,13 +1102,13 @@ function scanNoHardcodedContent(): Issue[] {
   const targets = [
     ...project.getSourceFiles('src/components/sections/*.tsx'),
     project.getSourceFile('src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx') ??
-      project.addSourceFileAtPath(
-        path.join(root, 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx')
-      ),
+    project.addSourceFileAtPath(
+      path.join(root, 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx')
+    ),
     project.getSourceFile('src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx') ??
-      project.addSourceFileAtPath(
-        path.join(root, 'src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx')
-      ),
+    project.addSourceFileAtPath(
+      path.join(root, 'src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx')
+    ),
   ];
 
   const seen = new Set<string>();
@@ -1196,88 +1156,7 @@ function scanVariantRequiredData(): Issue[] {
     issueType: string;
     message: string;
   }> = [
-    {
-      file: 'src/components/sections/HeroSplitSection.tsx',
-      expected: [
-        'actions[0].label.trim().length === 0 || actions[0].href.trim().length === 0',
-        'row.label.trim().length === 0 || row.value.trim().length === 0',
-        'visual.footerPrimary !== undefined && visual.footerPrimary.trim().length === 0',
-      ],
-      issueType: 'hero_split_missing_required_variant_guards',
-      message:
-        'HeroSplitSection must validate the authored action, row, and footer fields it renders.',
-    },
-    {
-      file: 'src/components/sections/GridCardsSection.tsx',
-      expected: [
-        '!item.id || item.id.trim().length === 0 || item.title.trim().length === 0',
-        'key={item.id}',
-      ],
-      issueType: 'grid_cards_missing_required_variant_guards',
-      message:
-        'GridCardsSection must require explicit item ids and fail loud instead of generating fallback keys.',
-    },
-    {
-      file: 'src/components/sections/LayerStackSection.tsx',
-      expected: [
-        'layer.meta !== undefined && layer.meta.trim().length === 0',
-        'layer.bullets?.some(bullet => bullet.trim().length === 0)',
-        'aria-label={heading.title}',
-      ],
-      issueType: 'layer_stack_missing_required_variant_guards',
-      message:
-        'LayerStackSection must validate rendered meta and bullets and derive its aria label from data.',
-    },
-    {
-      file: 'src/components/sections/ProcessStepsSection.tsx',
-      expected: ['step.outcome !== undefined && step.outcome.trim().length === 0'],
-      issueType: 'process_steps_missing_required_variant_guards',
-      message: 'ProcessStepsSection must validate authored outcome copy when it is rendered.',
-    },
-    {
-      file: 'src/components/sections/ImageStorySection.tsx',
-      expected: [
-        'body !== undefined && body.trim().length === 0',
-        'caption !== undefined && caption.trim().length === 0',
-        'highlights?.some(',
-      ],
-      issueType: 'image_story_missing_required_variant_guards',
-      message:
-        'ImageStorySection must validate the authored body, caption, bullets, and highlights it renders.',
-    },
-    {
-      file: 'src/components/sections/BeforeAfterSection.tsx',
-      expected: [
-        'before.items.some(item => item.trim().length === 0)',
-        'after.items.some(item => item.trim().length === 0)',
-      ],
-      issueType: 'before_after_missing_required_variant_guards',
-      message: 'BeforeAfterSection must validate every authored comparison item it renders.',
-    },
-    {
-      file: 'src/components/sections/ProofStorySection.tsx',
-      expected: [
-        'column.metric !== undefined && column.metric.trim().length === 0',
-        'column.metricCaption !== undefined && column.metricCaption.trim().length === 0',
-        'attribution !== undefined && attribution.trim().length === 0',
-      ],
-      issueType: 'proof_story_missing_required_variant_guards',
-      message:
-        'ProofStorySection must validate all authored optional proof fields before rendering them.',
-    },
-    {
-      file: 'src/components/sections/QualificationSection.tsx',
-      expected: ['item.note !== undefined && item.note.trim().length === 0'],
-      issueType: 'fit_check_missing_required_variant_guards',
-      message: 'QualificationSection must validate authored note copy before rendering it.',
-    },
-    {
-      file: 'src/components/sections/AccordionFAQSection.tsx',
-      expected: ['defaultOpenId !== undefined && !items.some(item => item.id === defaultOpenId)'],
-      issueType: 'accordion_faq_missing_required_variant_guards',
-      message: 'AccordionFAQSection must validate defaultOpenId against authored FAQ ids.',
-    },
-  ];
+    ];
 
   for (const check of sourceChecks) {
     const sourceText = fs.readFileSync(path.join(root, check.file), 'utf8');

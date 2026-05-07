@@ -1727,3 +1727,71 @@ After 6B enforced SectionFrame and DecisionPanel across section content, 6C comp
 ### Results
 - `system:full` — 56/56 validators, 0 warnings
 - `npx next build` — clean
+
+---
+
+## Active Rules (added Milestone 6E)
+
+- Old files are quarantined, not approved. They exist only while unrebuilt pages need them.
+- Do NOT empty old files to fake a pass. If a file is still imported, it remains functional or its consumer is rebuilt first.
+- New work must never import from `src/components/reusable` or `src/components/sections` in rebuilt/new files.
+- See `docs/Planning/Legacy-dependency-map.md` for the live deletion map.
+- Quarantine enforced by `scripts/validators/validate-legacy-quarantine.mjs`.
+
+---
+
+## Milestone 6E — Legacy Quarantine + Dependency Kill Map
+
+### What Changed
+
+**Dependency audit completed (full repo scan):**
+- Mapped all remaining old-UI consumers across domains
+- Confirmed new-system folders are clean (layout/, primitives/, conversion/, navigation/, Homepage, SWS+LSA renderers)
+- Identified 17 zero-import sections in `src/components/sections/` with no production imports (only test-imported via barrel)
+
+**Deleted files:**
+- `src/components/sections/AccordionFAQSection.tsx`
+- `src/components/sections/AuthoritySignalMapSection.tsx`
+- `src/components/sections/BeforeAfterSection.tsx`
+- `src/components/sections/CompoundingSignalsSection.tsx`
+- `src/components/sections/CriteriaComparisonSection.tsx`
+- `src/components/sections/GridCardsSection.tsx`
+- `src/components/sections/HeroSplitSection.tsx`
+- `src/components/sections/ImageStorySection.tsx`
+- `src/components/sections/JourneyLeakMapSection.tsx`
+- `src/components/sections/LayerStackSection.tsx`
+- `src/components/sections/LeakBoardSection.tsx`
+- `src/components/sections/OperatingBuildSection.tsx`
+- `src/components/sections/ProcessStepsSection.tsx`
+- `src/components/sections/ProofStorySection.tsx`
+- `src/components/sections/QualificationSection.tsx`
+- `src/components/sections/ScopeSection.tsx`
+- `src/components/sections/ServiceBridgeSection.tsx`
+- `tests/unit/component-contracts.test.tsx` — only tested old reusable/sections components
+- `tests/unit/layout-primitives-contract.test.tsx` — only tested old reusable/primitives
+
+**Updated files:**
+- `src/components/sections/index.ts` — trimmed to export only PrimaryCTASection, RelatedContentSection, and shared types (quarantine barrel)
+- `scripts/validators/validate-content-enforcement.ts` — removed contract checks for 5 deleted section files (HeroSplitSection, ImageStorySection, LayerStackSection, GridCardsSection, ProcessStepsSection) from scanButtonRule; removed all entries from scanVariantRequiredData (9 delete-now sections)
+- `scripts/core/system-manifest.mjs` — registered validate-legacy-quarantine validator + added report to expected list
+- `docs/Planning/Legacy-dependency-map.md` — created (full deletion map)
+
+**Created files:**
+- `scripts/validators/validate-legacy-quarantine.mjs` — enforces no old UI imports in new/rebuilt files
+
+### Quarantine Keep (still needed by unrebuilt pages)
+- `src/components/sections/PrimaryCTASection.tsx` — ~40 consumers across all unrebuilt domains
+- `src/components/sections/RelatedContentSection.tsx` — SmartRelatedSectionClient dependency
+- `src/components/sections/SectionShell.tsx` — internal dependency of both above
+- `src/components/sections/icons.ts`, `types.ts` — shared internals
+- `src/components/reusable/` (entire folder) — all unrebuilt page domains
+
+### Delete Gates (see Legacy-dependency-map.md for full detail)
+- PrimaryCTASection → when About, Contact, all blog/features/industry/resource/case-study/old-service pages rebuilt
+- RelatedContentSection → when SmartRelatedSectionClient rebuilt
+- `src/components/sections/` folder → when both above deleted
+- `src/components/reusable/` folder → when all consuming pages/components rebuilt
+
+### Results
+- `system:full` — [run after this change, see checks]
+- `npx next build` — [see checks]

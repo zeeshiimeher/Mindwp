@@ -1,35 +1,15 @@
 /**
- * Production section component family.
+ * Quarantined section components.
  *
- * Single barrel export for renderers and page wrappers. All components
- * are data-driven (no hardcoded marketing copy) and use the new design
- * system in src/styles/{foundation,framework,primitives,components}.css.
+ * Only PrimaryCTASection and RelatedContentSection remain.
+ * These are kept while unrebuilt pages still import them.
+ * See docs/Planning/Legacy-dependency-map.md for deletion gates.
  *
- * See docs/Planning/audit7.md PHASE 3.
+ * Do NOT import from this module in rebuilt/new-system files.
  */
 
-export * from './AccordionFAQSection';
-export * from './AuthoritySignalMapSection';
-export * from './BeforeAfterSection';
-export * from './CompoundingSignalsSection';
-export * from './CriteriaComparisonSection';
-export * from './GridCardsSection';
-export type { HeroVisualType } from './HeroSplitSection';
-export * from './HeroSplitSection';
-export type { SectionIconKey } from './icons';
-export { resolveSectionIcon, SECTION_ICONS } from './icons';
-export * from './ImageStorySection';
-export * from './JourneyLeakMapSection';
-export * from './LayerStackSection';
-export * from './LeakBoardSection';
-export * from './OperatingBuildSection';
 export * from './PrimaryCTASection';
-export * from './ProcessStepsSection';
-export * from './ProofStorySection';
-export * from './QualificationSection';
 export * from './RelatedContentSection';
-export * from './ScopeSection';
-export * from './ServiceBridgeSection';
 export type {
   BulletItem,
   MediaSource,
