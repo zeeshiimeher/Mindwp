@@ -1,3 +1,5 @@
+import { InlineText } from '@/components/primitives/InlineText';
+
 // -- Types --------------------------------------------------------------------
 
 type SectionFrameTone = 'mist' | 'white' | 'dark';
@@ -10,8 +12,6 @@ type SectionFrameHeading = {
 
 export type SectionFrameProps = {
   heading: SectionFrameHeading;
-  /** Optional muted sub-line rendered on a new line inside the h2. */
-  titleMuted?: string;
   tone?: SectionFrameTone;
   ariaLabel?: string;
   className?: string;
@@ -20,14 +20,13 @@ export type SectionFrameProps = {
 
 // -- Component ----------------------------------------------------------------
 
-export function SectionFrame({
-  heading,
-  titleMuted,
-  tone,
-  ariaLabel,
-  className,
-  children,
-}: SectionFrameProps) {
+/**
+ * SectionFrame — standard section wrapper.
+ *
+ * Owns: <section>, mw-container, heading block (kicker, h2, description), tone.
+ * Use [[muted:...]] inline syntax in heading.title for muted segments.
+ */
+export function SectionFrame({ heading, tone, ariaLabel, className, children }: SectionFrameProps) {
   if (!heading.title) {
     throw new Error('[SectionFrame] requires heading.title');
   }
@@ -51,13 +50,7 @@ export function SectionFrame({
             </div>
           )}
           <h2 className='mw-section-frame__heading'>
-            {heading.title}
-            {titleMuted && (
-              <>
-                <br />
-                <span className='mw-section-frame__heading-muted'>{titleMuted}</span>
-              </>
-            )}
+            <InlineText value={heading.title} />
           </h2>
           {heading.description && (
             <p className='mw-section-frame__description'>{heading.description}</p>

@@ -1,5 +1,7 @@
 import type React from 'react';
 
+import { InlineText } from '@/components/primitives/InlineText';
+
 // -- Types --------------------------------------------------------------------
 
 type HeroFrameChipDotVariant = 'subtle' | 'warn' | 'risk' | 'neutral';
@@ -17,8 +19,6 @@ export type HeroFrameAction = {
 export type HeroFrameProps = {
   badge?: string;
   title: string;
-  /** Optional muted sub-line rendered on a new line inside the h1. */
-  titleMuted?: string;
   description: string;
   actions: readonly HeroFrameAction[];
   chips?: readonly HeroFrameChip[];
@@ -44,11 +44,11 @@ export type HeroFrameProps = {
  * - No hardcoded contact URLs.
  * - Right-side visual content is page-local — passed via visual prop.
  * - Texture overlays (e.g. grid patterns) are passed via texture prop.
+ * - Use [[muted:...]] inline syntax in title for muted segments.
  */
 export function HeroFrame({
   badge,
   title,
-  titleMuted,
   description,
   actions,
   chips,
@@ -78,13 +78,7 @@ export function HeroFrame({
               </div>
             )}
             <h1 className='mw-hero-frame__heading'>
-              {title}
-              {titleMuted && (
-                <>
-                  <br />
-                  <span className='mw-hero-frame__heading-muted'>{titleMuted}</span>
-                </>
-              )}
+              <InlineText value={title} />
             </h1>
             <p className='mw-hero-frame__description'>{description}</p>
             <div className='mw-hero-frame__actions'>

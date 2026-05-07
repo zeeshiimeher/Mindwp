@@ -1,9 +1,9 @@
 import { Eye, Layers, Mail, PackageOpen, Shield } from 'lucide-react';
 
+import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
-import { Accordion } from '@/components/primitives/Accordion';
 import { Tabs } from '@/components/primitives/Tabs';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -908,25 +908,18 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
       {/* 12. FAQ */}
       {faq && (
-        <SectionFrame
+        <FAQSection
+          eyebrow={faq.header.badge}
+          title={faq.header.title}
+          description={requireHeadingDescription(faq.header.description, 'faq section')}
+          items={faq.items.map((item: { question: string; answer: string }, index: number) => ({
+            id: `mw-faq-${index}`,
+            question: item.question,
+            answer: item.answer,
+          }))}
           className='sws-faq'
           ariaLabel={ARIA_FAQ_DOT}
-          heading={{
-            kicker: faq.header.badge,
-            title: faq.header.title,
-            description: requireHeadingDescription(faq.header.description, 'faq section'),
-          }}
-        >
-          <div className='sws-faq__list mw-animate-section'>
-            <Accordion
-              items={faq.items.map((item: { question: string; answer: string }, index: number) => ({
-                id: `mw-faq-${index}`,
-                question: item.question,
-                answer: item.answer,
-              }))}
-            />
-          </div>
-        </SectionFrame>
+        />
       )}
 
       {/* 13. CTA */}

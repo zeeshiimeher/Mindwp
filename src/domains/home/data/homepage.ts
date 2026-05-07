@@ -77,7 +77,6 @@ export type HomepageData = {
   hero: {
     eyebrow: string;
     heading: string;
-    headingMuted: string;
     description: string;
     primaryAction: { label: string; href: string };
     secondaryAction: { label: string; href: string };
@@ -95,7 +94,6 @@ export type HomepageData = {
   leakDiagnosis: {
     eyebrow: string;
     heading: string;
-    headingMuted: string;
     description: string;
     flowStages: Array<{ stage: string; title: string; note: string; iconKey: HomeIconKey }>;
   };
@@ -103,7 +101,6 @@ export type HomepageData = {
   foundation: {
     eyebrow: string;
     heading: string;
-    headingMuted: string;
     description: string;
     surfaceTitle: string;
     surfaceNote: string;
@@ -117,7 +114,6 @@ export type HomepageData = {
   systemStack: {
     eyebrow: string;
     heading: string;
-    headingMuted: string;
     description: string;
     systems: Array<{
       name: string;
@@ -170,7 +166,6 @@ export type HomepageData = {
 
   structureLayers: {
     heading: string;
-    headingMuted: string;
     description: string;
     layerStatus: string;
     layers: Array<{ title: string; note: string; accent: AccentKey; iconKey: HomeIconKey }>;
@@ -180,7 +175,6 @@ export type HomepageData = {
   industries: {
     eyebrow: string;
     heading: string;
-    headingMuted: string;
     description: string;
     scenarios: Array<{
       name: string;
@@ -195,14 +189,12 @@ export type HomepageData = {
   alignment: {
     eyebrow: string;
     heading: string;
-    headingMuted: string;
     description: string;
     stages: Array<{ num: string; title: string; note: string; weight: number }>;
   };
 
   proofStory: {
     heading: string;
-    headingMuted: string;
     description: string;
     before: { label: string; title: string; bullets: string[] };
     change: { label: string; title: string; bullets: string[] };
@@ -258,8 +250,7 @@ export const homepageData: HomepageData = {
 
   hero: {
     eyebrow: 'For Service Businesses',
-    heading: 'Work Comes In.',
-    headingMuted: 'Too Much Slips Away.',
+    heading: 'Work Comes In. [[muted:Too Much Slips Away.]]',
     description:
       'People find you online. They call, fill in forms, ask for quotes, check reviews, and compare your services. Some of that turns into work. Too much disappears between the first click and the next step.',
     primaryAction: {
@@ -329,8 +320,7 @@ export const homepageData: HomepageData = {
 
   leakDiagnosis: {
     eyebrow: 'What is actually happening',
-    heading: 'The business is working.',
-    headingMuted: 'The system around it is leaking.',
+    heading: 'The business is working. [[muted:The system around it is leaking.]]',
     description:
       'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
     flowStages: [
@@ -381,8 +371,8 @@ export const homepageData: HomepageData = {
 
   foundation: {
     eyebrow: 'Foundation',
-    heading: 'The website is the surface.',
-    headingMuted: 'The structure underneath is what catches the work.',
+    heading:
+      'The website is the surface. [[muted:The structure underneath is what catches the work.]]',
     description:
       'A website alone does not fix missed calls, slow replies, scattered forms, or invisible follow-up. But it is often the first place those problems show up.',
     surfaceTitle: 'Visible website',
@@ -402,8 +392,7 @@ export const homepageData: HomepageData = {
 
   systemStack: {
     eyebrow: 'The handling system',
-    heading: 'Six layers.',
-    headingMuted: 'One connected flow.',
+    heading: 'Six layers. [[muted:One connected flow.]]',
     description:
       'Each layer handles a part of the path. Together they hold the work from first search to repeat job. No layer depends on someone remembering.',
     systems: [
@@ -619,8 +608,7 @@ export const homepageData: HomepageData = {
   },
 
   structureLayers: {
-    heading: 'It is not a website project.',
-    headingMuted: 'It is what catches the work.',
+    heading: 'It is not a website project. [[muted:It is what catches the work.]]',
     description:
       'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, and lead recovery. Connected. Running.',
     foundation: { title: 'Smart Website / Business Infrastructure' },
@@ -667,8 +655,7 @@ export const homepageData: HomepageData = {
 
   industries: {
     eyebrow: 'Where this fits',
-    heading: 'Five businesses.',
-    headingMuted: 'Same shape of leak.',
+    heading: 'Five businesses. [[muted:Same shape of leak.]]',
     description:
       'The names change. The pattern does not. Work comes in. Some of it lands. Most of the rest depends on someone remembering — until a system holds it instead.',
     scenarios: [
@@ -717,8 +704,7 @@ export const homepageData: HomepageData = {
 
   alignment: {
     eyebrow: 'What changes over time',
-    heading: 'It does not all happen at once.',
-    headingMuted: 'That is the point.',
+    heading: 'It does not all happen at once. [[muted:That is the point.]]',
     description: 'The urgent stuff gets fixed first. Then the rest catches up. Then it compounds.',
     stages: [
       {
@@ -749,8 +735,7 @@ export const homepageData: HomepageData = {
   },
 
   proofStory: {
-    heading: 'One business.',
-    headingMuted: 'Before and after.',
+    heading: 'One business. [[muted:Before and after.]]',
     description: 'Not a portfolio. What changed when things stopped slipping through.',
     before: {
       label: 'Before',

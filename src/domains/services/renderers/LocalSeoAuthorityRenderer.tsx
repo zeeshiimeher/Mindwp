@@ -11,10 +11,10 @@ import {
   X,
 } from 'lucide-react';
 
+import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
-import { Accordion } from '@/components/primitives/Accordion';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -670,24 +670,14 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       </SectionFrame>
 
       {/* -- FAQ ------------------------------------------------------------- */}
-      <section className='lsa-faq' aria-label={ARIA_FAQ_DOT}>
-        <div className='mw-container'>
-          <div className='lsa-faq__layout'>
-            <div className='lsa-faq__copy mw-animate-up'>
-              {faq.header.kicker && (
-                <div className='mw-section-frame__eyebrow'>
-                  <span className='mw-section-frame__eyebrow-dot' aria-hidden='true' />
-                  <span>{faq.header.kicker}</span>
-                </div>
-              )}
-              <h2 className='lsa-faq__heading'>{faq.header.title}</h2>
-            </div>
-            <div className='lsa-faq__accordion mw-animate-panel'>
-              <Accordion items={faq.items} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        eyebrow={faq.header.kicker}
+        title={faq.header.title}
+        items={faq.items}
+        className='lsa-faq'
+        ariaLabel={ARIA_FAQ_DOT}
+        variant='split'
+      />
 
       {/* -- CTA ------------------------------------------------------------- */}
       <DecisionPanel

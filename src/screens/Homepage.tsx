@@ -34,10 +34,10 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { FAQSection as FAQSectionComponent } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
-import { Accordion } from '@/components/primitives/Accordion';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import type { HomeIconKey } from '@/domains/home/data/homepage';
 import { homepageData } from '@/domains/home/data/homepage';
@@ -143,7 +143,6 @@ function HeroSection() {
       ariaLabel='Page hero'
       badge={hero.eyebrow}
       title={hero.heading}
-      titleMuted={hero.headingMuted}
       description={hero.description}
       actions={[
         {
@@ -224,39 +223,33 @@ function LeakDiagnosisSection() {
   const { leakDiagnosis } = homepageData;
 
   return (
-    <section className='home-leak' id='leak'>
-      <div className='home-leak__inner mw-container'>
-        <div className='home-leak__header mw-animate-up'>
-          <div className='home-leak__intro'>
-            <div className='home-eyebrow'>{leakDiagnosis.eyebrow}</div>
-            <h2 className='home-h2'>
-              {leakDiagnosis.heading}
-              <br />
-              <span className='home-h2__muted'>{leakDiagnosis.headingMuted}</span>
-            </h2>
-          </div>
-          <p className='home-leak__description'>{leakDiagnosis.description}</p>
-        </div>
-
-        <div className='home-leak__path mw-animate-stagger'>
-          {leakDiagnosis.flowStages.map(item => {
-            const Icon = HOME_ICON_MAP[item.iconKey];
-            return (
-              <div key={item.stage} className='home-leak__step'>
-                <div className='home-leak__step-icon' aria-hidden='true'>
-                  <Icon size={16} />
-                </div>
-                <div className='home-leak__step-copy'>
-                  <div className='home-leak__step-stage'>{item.stage}</div>
-                  <div className='home-leak__step-title'>{item.title}</div>
-                  <div className='home-leak__step-note'>{item.note}</div>
-                </div>
+    <SectionFrame
+      heading={{
+        kicker: leakDiagnosis.eyebrow,
+        title: leakDiagnosis.heading,
+        description: leakDiagnosis.description,
+      }}
+      className='home-leak'
+      ariaLabel='Leak diagnosis'
+    >
+      <div className='home-leak__path mw-animate-stagger'>
+        {leakDiagnosis.flowStages.map(item => {
+          const Icon = HOME_ICON_MAP[item.iconKey];
+          return (
+            <div key={item.stage} className='home-leak__step'>
+              <div className='home-leak__step-icon' aria-hidden='true'>
+                <Icon size={16} />
               </div>
-            );
-          })}
-        </div>
+              <div className='home-leak__step-copy'>
+                <div className='home-leak__step-stage'>{item.stage}</div>
+                <div className='home-leak__step-title'>{item.title}</div>
+                <div className='home-leak__step-note'>{item.note}</div>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -268,70 +261,66 @@ function FoundationSection() {
   const { foundation } = homepageData;
 
   return (
-    <section className='home-foundation'>
-      <div className='home-foundation__inner mw-container'>
-        <div className='home-foundation__copy mw-animate-up'>
-          <div className='home-eyebrow home-eyebrow--teal'>{foundation.eyebrow}</div>
-          <h2 className='home-h2'>
-            {foundation.heading}
-            <br />
-            <span className='home-h2__muted'>{foundation.headingMuted}</span>
-          </h2>
-          <p className='home-foundation__description'>{foundation.description}</p>
-        </div>
-
-        <div className='home-foundation__visual mw-animate-panel'>
-          <div className='home-foundation__diagram'>
-            {/* Surface card */}
-            <div className='home-foundation__surface'>
-              <div className='home-foundation__surface-icon' aria-hidden='true'>
-                {(() => {
-                  const SurfaceIcon = HOME_ICON_MAP[foundation.surfaceIconKey];
-                  return <SurfaceIcon size={18} />;
-                })()}
-              </div>
-              <div className='home-foundation__surface-body'>
-                <div className='home-foundation__surface-label'>SURFACE</div>
-                <div className='home-foundation__surface-title'>{foundation.surfaceTitle}</div>
-              </div>
-              <div className='home-foundation__surface-note'>{foundation.surfaceNote}</div>
+    <SectionFrame
+      heading={{
+        kicker: foundation.eyebrow,
+        title: foundation.heading,
+        description: foundation.description,
+      }}
+      className='home-foundation'
+      ariaLabel='Foundation'
+    >
+      <div className='home-foundation__visual mw-animate-panel'>
+        <div className='home-foundation__diagram'>
+          {/* Surface card */}
+          <div className='home-foundation__surface'>
+            <div className='home-foundation__surface-icon' aria-hidden='true'>
+              {(() => {
+                const SurfaceIcon = HOME_ICON_MAP[foundation.surfaceIconKey];
+                return <SurfaceIcon size={18} />;
+              })()}
             </div>
+            <div className='home-foundation__surface-body'>
+              <div className='home-foundation__surface-label'>SURFACE</div>
+              <div className='home-foundation__surface-title'>{foundation.surfaceTitle}</div>
+            </div>
+            <div className='home-foundation__surface-note'>{foundation.surfaceNote}</div>
+          </div>
 
-            <div className='home-foundation__connector' aria-hidden='true' />
+          <div className='home-foundation__connector' aria-hidden='true' />
 
-            {/* Under panel */}
-            <div className='home-foundation__under'>
-              <div className='home-foundation__under-label'>WHAT RUNS UNDERNEATH</div>
-              <div className='home-foundation__layers'>
-                {foundation.middleLayers.map(layer => {
-                  const Icon = HOME_ICON_MAP[layer.iconKey];
-                  return (
-                    <div key={layer.label} className='home-foundation__layer'>
-                      <div className='home-foundation__layer-icon' aria-hidden='true'>
-                        <Icon size={14} />
-                      </div>
-                      <span>{layer.label}</span>
+          {/* Under panel */}
+          <div className='home-foundation__under'>
+            <div className='home-foundation__under-label'>WHAT RUNS UNDERNEATH</div>
+            <div className='home-foundation__layers'>
+              {foundation.middleLayers.map(layer => {
+                const Icon = HOME_ICON_MAP[layer.iconKey];
+                return (
+                  <div key={layer.label} className='home-foundation__layer'>
+                    <div className='home-foundation__layer-icon' aria-hidden='true'>
+                      <Icon size={14} />
                     </div>
-                  );
-                })}
-              </div>
+                    <span>{layer.label}</span>
+                  </div>
+                );
+              })}
             </div>
+          </div>
 
-            <div className='home-foundation__connector' aria-hidden='true' />
+          <div className='home-foundation__connector' aria-hidden='true' />
 
-            {/* Foundation base card */}
-            <div className='home-foundation__base'>
-              <div className='home-foundation__base-dot' aria-hidden='true' />
-              <div className='home-foundation__base-body'>
-                <div className='home-foundation__base-label'>FOUNDATION</div>
-                <div className='home-foundation__base-title'>{foundation.foundationTitle}</div>
-              </div>
-              <div className='home-foundation__base-note'>{foundation.foundationNote}</div>
+          {/* Foundation base card */}
+          <div className='home-foundation__base'>
+            <div className='home-foundation__base-dot' aria-hidden='true' />
+            <div className='home-foundation__base-body'>
+              <div className='home-foundation__base-label'>FOUNDATION</div>
+              <div className='home-foundation__base-title'>{foundation.foundationTitle}</div>
             </div>
+            <div className='home-foundation__base-note'>{foundation.foundationNote}</div>
           </div>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -343,60 +332,54 @@ function SystemStackSection() {
   const { systemStack } = homepageData;
 
   return (
-    <section className='home-system-stack'>
-      <div className='home-system-stack__inner mw-container'>
-        <div className='home-system-stack__header mw-animate-up'>
-          <div className='home-system-stack__intro'>
-            <div className='home-eyebrow'>{systemStack.eyebrow}</div>
-            <h2 className='home-h2'>
-              {systemStack.heading}
-              <br />
-              <span className='home-h2__muted'>{systemStack.headingMuted}</span>
-            </h2>
-          </div>
-          <p className='home-system-stack__description'>{systemStack.description}</p>
-        </div>
-
-        <div className='home-system-stack__grid mw-animate-stagger'>
-          {systemStack.systems.map((system, i) => {
-            const SystemIcon = HOME_ICON_MAP[system.iconKey];
-            return (
-              <a
-                key={system.name}
-                href={system.href}
-                className='home-system-card'
-                data-accent={system.accent}
-              >
-                <div className='home-system-card__top'>
-                  <div className='home-system-card__icon' aria-hidden='true'>
-                    <SystemIcon size={18} />
-                  </div>
-                  <span className='home-system-card__index'>0{i + 1}</span>
+    <SectionFrame
+      heading={{
+        kicker: systemStack.eyebrow,
+        title: systemStack.heading,
+        description: systemStack.description,
+      }}
+      className='home-system-stack'
+      ariaLabel='System stack'
+    >
+      <div className='home-system-stack__grid mw-animate-stagger'>
+        {systemStack.systems.map((system, i) => {
+          const SystemIcon = HOME_ICON_MAP[system.iconKey];
+          return (
+            <a
+              key={system.name}
+              href={system.href}
+              className='home-system-card'
+              data-accent={system.accent}
+            >
+              <div className='home-system-card__top'>
+                <div className='home-system-card__icon' aria-hidden='true'>
+                  <SystemIcon size={18} />
                 </div>
-                <div className='home-system-card__name'>{system.name}</div>
-                <div className='home-system-card__role'>
-                  {system.role}
-                  {' · '}
-                  <span className='home-system-card__role-note'>{system.roleNote}</span>
-                </div>
-                <div className='home-system-card__divider' aria-hidden='true' />
-                <div className='home-system-card__handles-label'>What it handles</div>
-                <div className='home-system-card__handles'>{system.handles}</div>
-                <div className='home-system-card__line' aria-hidden='true' />
-              </a>
-            );
-          })}
-        </div>
-
-        <div className='home-system-stack__footer'>
-          <p className='home-system-stack__footer-note'>{systemStack.footerNote}</p>
-          <a href={systemStack.footerAction.href} className='home-system-stack__footer-action'>
-            {systemStack.footerAction.label}
-            <ArrowRight size={14} aria-hidden='true' />
-          </a>
-        </div>
+                <span className='home-system-card__index'>0{i + 1}</span>
+              </div>
+              <div className='home-system-card__name'>{system.name}</div>
+              <div className='home-system-card__role'>
+                {system.role}
+                {' · '}
+                <span className='home-system-card__role-note'>{system.roleNote}</span>
+              </div>
+              <div className='home-system-card__divider' aria-hidden='true' />
+              <div className='home-system-card__handles-label'>What it handles</div>
+              <div className='home-system-card__handles'>{system.handles}</div>
+              <div className='home-system-card__line' aria-hidden='true' />
+            </a>
+          );
+        })}
       </div>
-    </section>
+
+      <div className='home-system-stack__footer'>
+        <p className='home-system-stack__footer-note'>{systemStack.footerNote}</p>
+        <a href={systemStack.footerAction.href} className='home-system-stack__footer-action'>
+          {systemStack.footerAction.label}
+          <ArrowRight size={14} aria-hidden='true' />
+        </a>
+      </div>
+    </SectionFrame>
   );
 }
 
@@ -625,53 +608,49 @@ function StructureLayersSection() {
   const { structureLayers } = homepageData;
 
   return (
-    <section className='home-structure'>
-      <div className='home-structure__inner mw-container'>
-        <div className='home-structure__copy mw-animate-up'>
-          <h2 className='home-h2'>
-            {structureLayers.heading}
-            <br />
-            <span className='home-h2__muted'>{structureLayers.headingMuted}</span>
-          </h2>
-          <p className='home-structure__description'>{structureLayers.description}</p>
-        </div>
-
-        <div className='home-structure__layers mw-animate-stagger'>
-          {structureLayers.layers.map((layer, i) => {
-            const Icon = HOME_ICON_MAP[layer.iconKey];
-            return (
-              <div key={layer.title} className='home-structure__layer' data-accent={layer.accent}>
-                <div className='home-structure__layer-icon' aria-hidden='true'>
-                  <Icon size={16} />
-                </div>
-                <div className='home-structure__layer-copy'>
-                  <div className='home-structure__layer-title'>
-                    <span className='home-structure__layer-index'>L{i + 1}</span>
-                    {layer.title}
-                  </div>
-                  <div className='home-structure__layer-note'>{layer.note}</div>
-                </div>
-                <div className='home-structure__layer-status'>
-                  <span className='home-structure__layer-status-dot' aria-hidden='true' />
-                  {structureLayers.layerStatus}
-                </div>
+    <SectionFrame
+      heading={{
+        title: structureLayers.heading,
+        description: structureLayers.description,
+      }}
+      className='home-structure'
+      ariaLabel='Structure layers'
+    >
+      <div className='home-structure__layers mw-animate-stagger'>
+        {structureLayers.layers.map((layer, i) => {
+          const Icon = HOME_ICON_MAP[layer.iconKey];
+          return (
+            <div key={layer.title} className='home-structure__layer' data-accent={layer.accent}>
+              <div className='home-structure__layer-icon' aria-hidden='true'>
+                <Icon size={16} />
               </div>
-            );
-          })}
-
-          {/* Foundation anchor card */}
-          <div className='home-structure__foundation'>
-            <div className='home-structure__foundation-dot' aria-hidden='true' />
-            <div className='home-structure__foundation-copy'>
-              <div className='home-structure__foundation-label'>FOUNDATION</div>
-              <div className='home-structure__foundation-title'>
-                {structureLayers.foundation.title}
+              <div className='home-structure__layer-copy'>
+                <div className='home-structure__layer-title'>
+                  <span className='home-structure__layer-index'>L{i + 1}</span>
+                  {layer.title}
+                </div>
+                <div className='home-structure__layer-note'>{layer.note}</div>
               </div>
+              <div className='home-structure__layer-status'>
+                <span className='home-structure__layer-status-dot' aria-hidden='true' />
+                {structureLayers.layerStatus}
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Foundation anchor card */}
+        <div className='home-structure__foundation'>
+          <div className='home-structure__foundation-dot' aria-hidden='true' />
+          <div className='home-structure__foundation-copy'>
+            <div className='home-structure__foundation-label'>FOUNDATION</div>
+            <div className='home-structure__foundation-title'>
+              {structureLayers.foundation.title}
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -683,69 +662,61 @@ function IndustriesSection() {
   const { industries } = homepageData;
 
   return (
-    <section className='home-industries'>
-      <div className='home-industries__inner mw-container'>
-        <div className='home-industries__header mw-animate-up'>
-          <div className='home-industries__intro'>
-            <div className='home-eyebrow'>{industries.eyebrow}</div>
-            <h2 className='home-h2'>
-              {industries.heading}
-              <br />
-              <span className='home-h2__muted'>{industries.headingMuted}</span>
-            </h2>
-          </div>
-          <p className='home-industries__description'>{industries.description}</p>
-        </div>
-
-        <div className='home-industries__grid mw-animate-stagger'>
-          {industries.scenarios.map((scenario, i) => {
-            const Icon = HOME_ICON_MAP[scenario.iconKey];
-            return (
-              <a
-                key={scenario.name}
-                href={scenario.href}
-                className='home-industry-card'
-                data-accent={scenario.accent}
-                data-wide={i === industries.scenarios.length - 1 ? 'true' : undefined}
-              >
-                <div className='home-industry-card__top'>
-                  <div className='home-industry-card__icon-wrap'>
-                    <div className='home-industry-card__icon' aria-hidden='true'>
-                      <Icon size={18} />
-                    </div>
-                    <span className='home-industry-card__name'>{scenario.name}</span>
+    <SectionFrame
+      heading={{
+        kicker: industries.eyebrow,
+        title: industries.heading,
+        description: industries.description,
+      }}
+      className='home-industries'
+      ariaLabel='Industries'
+    >
+      <div className='home-industries__grid mw-animate-stagger'>
+        {industries.scenarios.map((scenario, i) => {
+          const Icon = HOME_ICON_MAP[scenario.iconKey];
+          return (
+            <a
+              key={scenario.name}
+              href={scenario.href}
+              className='home-industry-card'
+              data-accent={scenario.accent}
+              data-wide={i === industries.scenarios.length - 1 ? 'true' : undefined}
+            >
+              <div className='home-industry-card__top'>
+                <div className='home-industry-card__icon-wrap'>
+                  <div className='home-industry-card__icon' aria-hidden='true'>
+                    <Icon size={18} />
                   </div>
-                  <span className='home-industry-card__index'>
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+                  <span className='home-industry-card__name'>{scenario.name}</span>
                 </div>
+                <span className='home-industry-card__index'>{String(i + 1).padStart(2, '0')}</span>
+              </div>
 
-                <div className='home-industry-card__body'>
-                  <div className='home-industry-card__leak-label'>Where it leaks</div>
-                  <p className='home-industry-card__leak'>{scenario.leak}</p>
-                </div>
+              <div className='home-industry-card__body'>
+                <div className='home-industry-card__leak-label'>Where it leaks</div>
+                <p className='home-industry-card__leak'>{scenario.leak}</p>
+              </div>
 
-                <div className='home-industry-card__needs'>
-                  <div className='home-industry-card__needs-label'>What it needs</div>
-                  <div className='home-industry-card__tags'>
-                    {scenario.needs.map(need => (
-                      <span
-                        key={need}
-                        className='home-industry-card__tag'
-                        data-accent={scenario.accent}
-                      >
-                        <span className='home-industry-card__tag-dot' aria-hidden='true' />
-                        {need}
-                      </span>
-                    ))}
-                  </div>
+              <div className='home-industry-card__needs'>
+                <div className='home-industry-card__needs-label'>What it needs</div>
+                <div className='home-industry-card__tags'>
+                  {scenario.needs.map(need => (
+                    <span
+                      key={need}
+                      className='home-industry-card__tag'
+                      data-accent={scenario.accent}
+                    >
+                      <span className='home-industry-card__tag-dot' aria-hidden='true' />
+                      {need}
+                    </span>
+                  ))}
                 </div>
-              </a>
-            );
-          })}
-        </div>
+              </div>
+            </a>
+          );
+        })}
       </div>
-    </section>
+    </SectionFrame>
   );
 }
 
@@ -763,7 +734,6 @@ function AlignmentSection() {
         title: alignment.heading,
         description: alignment.description,
       }}
-      titleMuted={alignment.headingMuted}
       className='home-alignment'
       tone='white'
       ariaLabel='Visibility alignment'
@@ -828,7 +798,6 @@ function ProofStorySection() {
   return (
     <SectionFrame
       heading={{ title: proofStory.heading, description: proofStory.description }}
-      titleMuted={proofStory.headingMuted}
       className='home-proof'
       tone='mist'
       ariaLabel='Proof story'
@@ -972,7 +941,7 @@ function ImplementationExamplesSection() {
 }
 
 // ============================================================
-// FAQ — uses <details>/<summary> for zero-JS accordion
+// FAQ
 // ============================================================
 
 function FAQSection() {
@@ -984,17 +953,16 @@ function FAQSection() {
   }));
 
   return (
-    <section className='home-faq'>
-      <div className='home-faq__inner mw-container'>
-        <div className='home-faq__heading-col mw-animate-up'>
-          <h2 className='home-h2'>{faq.heading}</h2>
-          <p className='home-faq__description'>{faq.description}</p>
-        </div>
-        <div className='home-faq__items'>
-          <Accordion items={faqItems} initialOpenId='home-faq-0' className='mw-animate-list' />
-        </div>
-      </div>
-    </section>
+    <FAQSectionComponent
+      title={faq.heading}
+      description={faq.description}
+      items={faqItems}
+      initialOpenId='home-faq-0'
+      tone='white'
+      variant='split'
+      ariaLabel='Homepage FAQ'
+      className='home-faq'
+    />
   );
 }
 
