@@ -56,7 +56,6 @@ async function assertNotFoundIsAbsent(page: import('@playwright/test').Page) {
 }
 
 test('critical routes load and are not 404', async ({ page }) => {
-  const includeComponentsRoute = process.env.COMPONENT_LIBRARY_ENABLED === 'true';
   const pageErrors: string[] = [];
 
   page.on('pageerror', err => {
@@ -86,21 +85,12 @@ test('critical routes load and are not 404', async ({ page }) => {
     `/case-studies/${caseStudySlug}`,
   ];
 
-  if (includeComponentsRoute) {
-    routes.splice(5, 0, '/components');
-  }
-
   for (const route of routes) {
     await test.step(route, async () => {
       pageErrors.length = 0;
 
       await page.goto(route, { waitUntil: 'domcontentloaded' });
       await assertNotFoundIsAbsent(page);
-
-      if (route === '/components') {
-        await expect(page.locator('text=Failed to render:')).toHaveCount(0);
-        await expect(page.locator('text=Failed to load')).toHaveCount(0);
-      }
 
       expect(pageErrors, `JS runtime errors on ${route}`).toEqual([]);
     });

@@ -15,7 +15,6 @@ export type StaticRouteDefinition = {
 };
 
 export const INTERNAL_STATIC_ROUTE_PATHS = new Set([
-  '/components',
   '/dev/system-dashboard',
   '/system-dashboard',
   '/dev/system-dashboard/reports/system-report',
@@ -123,14 +122,6 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     title: 'Terms of Service',
     description:
       'Read the terms of service covering engagement expectations, delivery boundaries, and the responsibilities attached to using this site.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:components',
-    path: '/components',
-    name: 'Components Reference',
-    title: 'Components Reference',
-    description: 'Internal component reference for the production design system.',
     showOnHumanSitemap: false,
   },
   {

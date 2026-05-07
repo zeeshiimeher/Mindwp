@@ -4,7 +4,6 @@ const allowedStatuses = ['PASS', 'FAIL', 'WARN', 'SKIPPED'] as const;
 const volatileOrigins = [
   process.env.NEXT_PUBLIC_SITE_URL,
   process.env.BASE_URL,
-  process.env.COMPONENT_CAPTURE_BASE_URL,
 ].filter(
   (value): value is string => typeof value === 'string' && value.length > 0 && value.includes('://')
 );

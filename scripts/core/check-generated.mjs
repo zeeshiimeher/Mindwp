@@ -1,20 +1,14 @@
 import { readFileSync } from 'node:fs';
-import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
 
 import { createLogger } from '../../lib/logger/index.mjs';
 import { buildAuthorityMapArtifacts } from '../generators/generate-authority-map.ts';
 import { buildContentRegistryOutputs } from '../generators/generate-content-registries.mjs';
 
-const require = createRequire(import.meta.url);
-const { buildComponentDocsOutput } = require('../generators/generate-component-docs.cjs');
-
 const root = process.cwd();
 const logger = createLogger({ label: 'check-generated', mode: 'summary', rootDir: root });
-const COMPONENT_DOCS_REL = 'src/utils/componentDocs.generated.ts';
 
 const REQUIRED_GENERATED_FILES = [
-  COMPONENT_DOCS_REL,
   'src/domains/blog/registry.ts',
   'src/domains/resources/generatedRegistry.ts',
   'src/domains/case-studies/registry.ts',
@@ -24,9 +18,6 @@ const GENERATED_FILES = [...REQUIRED_GENERATED_FILES];
 
 async function main() {
   const expectedByFile = new Map();
-
-  const componentDocs = await buildComponentDocsOutput();
-  expectedByFile.set(COMPONENT_DOCS_REL, componentDocs.content);
 
   for (const output of buildContentRegistryOutputs()) {
     const relativePath = output.filePath.replace(`${root}/`, '');

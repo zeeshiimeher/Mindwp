@@ -13,7 +13,6 @@ import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 const INTERNAL_STATIC_ROUTE_PREFIXES = ['/dev/'];
 const INTERNAL_STATIC_ROUTE_PATHS = new Set([
-  '/components',
   '/dashboard',
   '/image-dashboard',
   '/system-dashboard',

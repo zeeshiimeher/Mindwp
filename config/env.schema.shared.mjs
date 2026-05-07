@@ -43,7 +43,6 @@ export const sharedEnvSchema = z.object({
   CI: optionalString,
   SYSTEM_ENABLED: booleanFlag.default('false'),
   ENABLE_DEV_DASHBOARD: booleanFlag.default('false'),
-  COMPONENT_LIBRARY_ENABLED: booleanFlag.default('false'),
   PROFILE_GRAPH: booleanFlag.default('false'),
   ENABLE_MAIL_SERVICE: booleanFlag.default('true'),
   ENABLE_CAPTCHA_SERVICE: booleanFlag.default('true'),
@@ -76,7 +75,6 @@ export const systemEnvSchema = sharedEnvSchema.extend({
   VISUAL_AUDIT_DIST_DIR: z.string().default('.next-audit'),
   VISUAL_AUDIT_BASE_URL: optionalUrl,
   BASE_URL: z.string().url().default('http://127.0.0.1:3009'),
-  COMPONENT_CAPTURE_BASE_URL: z.string().url().default('http://127.0.0.1:3001/components'),
   NEXT_DIST_DIR: z.string().default('.next'),
 });
 
@@ -87,7 +85,6 @@ export function buildRuntimeRawEnv(source = process.env) {
     CI: readOptionalValue(source.CI),
     SYSTEM_ENABLED: readFlag(source.SYSTEM_ENABLED),
     ENABLE_DEV_DASHBOARD: readFlag(source.ENABLE_DEV_DASHBOARD),
-    COMPONENT_LIBRARY_ENABLED: readFlag(source.COMPONENT_LIBRARY_ENABLED),
     PROFILE_GRAPH: readFlag(source.PROFILE_GRAPH),
     ENABLE_MAIL_SERVICE: readFlag(source.ENABLE_MAIL_SERVICE, 'true'),
     ENABLE_CAPTCHA_SERVICE: readFlag(source.ENABLE_CAPTCHA_SERVICE, 'true'),
@@ -123,8 +120,6 @@ export function buildSystemRawEnv(source = process.env) {
     VISUAL_AUDIT_DIST_DIR: readOptionalValue(source.VISUAL_AUDIT_DIST_DIR) ?? '.next-audit',
     VISUAL_AUDIT_BASE_URL: readOptionalValue(source.VISUAL_AUDIT_BASE_URL),
     BASE_URL: readOptionalValue(source.BASE_URL) ?? 'http://127.0.0.1:3009',
-    COMPONENT_CAPTURE_BASE_URL:
-      readOptionalValue(source.COMPONENT_CAPTURE_BASE_URL) ?? 'http://127.0.0.1:3001/components',
     NEXT_DIST_DIR: readOptionalValue(source.NEXT_DIST_DIR) ?? '.next',
   };
 }

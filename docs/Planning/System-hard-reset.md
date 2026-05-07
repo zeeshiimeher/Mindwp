@@ -1689,3 +1689,41 @@ After 6B enforced SectionFrame and DecisionPanel across section content, 6C comp
 - Dead CSS (orphaned home FAQ, orphaned home-cta) removed
 - Homepage FAQ delegates to Accordion primitive
 - CSS duplication removed: sws/lsa hero wrapper properties deleted now that mw-hero-section owns them
+
+---
+
+## Milestone 6D — Remove Old Component System Gravity
+
+### What Changed
+
+**Deleted files:**
+- `src/app/components/` — ComponentLibrary Next.js route (`page.tsx` + `components-client-page.tsx`)
+- `src/screens/ComponentLibrary.tsx` — Old component library screen
+- `src/utils/componentDocs.generated.ts` — Auto-generated component docs (src/utils/ now empty, removed)
+- `src/lib/devtools/componentScanner.ts` — Scanner that imported componentDocs (src/lib/devtools/ now empty, removed)
+- `scripts/generators/generate-component-docs.cjs` — Generator for component docs
+- `scripts/dev/capture-component-preview.mjs` — Playwright-based capture script
+- `tests/visual/components-library.spec.ts` — Visual test for /components route (dead)
+- `tests/visual/core-sections.visual.spec.ts` — Visual test using component-library CSS selectors (dead)
+
+**Updated config/scripts:**
+- `package.json` — removed `generate:component-docs` script; `generate:core` now starts with `generate:content-registries` (no component-docs step)
+- `scripts/core/check-generated.mjs` — removed componentDocs dependency; now checks only content registries + authority map
+- `config/env.schema.shared.mjs` — removed `COMPONENT_LIBRARY_ENABLED` and `COMPONENT_CAPTURE_BASE_URL` env vars
+
+**Updated route registration:**
+- `src/domains/shared/staticPages.ts` — removed `/components` from `INTERNAL_STATIC_ROUTE_PATHS` + `STATIC_ROUTE_CONTENT`
+- `src/proxy.ts` — removed `/components` from `PROTECTED_EXACT_PATHS` + `config.matcher`
+
+**Updated tests:**
+- `tests/smoke/routes.smoke.spec.ts` — removed `COMPONENT_LIBRARY_ENABLED` conditional + `/components`-specific assertions
+- `tests/integration/route-inventory-coverage.test.ts` — removed `/components` from local `INTERNAL_STATIC_ROUTE_PATHS`
+- `tests/helpers/reportAssertions.ts` — removed `COMPONENT_CAPTURE_BASE_URL` from volatile origins
+
+### Still Delete Later (active imports, not yet rebuilt)
+- `src/components/reusable/` — 248 imports from old feature/blog/resource/industry/case-study renderers
+- `src/components/sections/` — Used by old renderers + active validator contracts (PrimaryCTASection, SectionShell)
+
+### Results
+- `system:full` — 56/56 validators, 0 warnings
+- `npx next build` — clean

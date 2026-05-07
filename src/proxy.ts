@@ -3,12 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 const PROTECTED_PREFIXES = ['/dev/'];
-const PROTECTED_EXACT_PATHS = new Set([
-  '/dashboard',
-  '/system-dashboard',
-  '/image-dashboard',
-  '/components',
-]);
+const PROTECTED_EXACT_PATHS = new Set(['/dashboard', '/system-dashboard', '/image-dashboard']);
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -28,5 +23,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard', '/system-dashboard', '/image-dashboard', '/components', '/dev/:path*'],
+  matcher: ['/dashboard', '/system-dashboard', '/image-dashboard', '/dev/:path*'],
 };
