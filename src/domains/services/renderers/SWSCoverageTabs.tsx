@@ -33,7 +33,7 @@ export default function SWSCoverageTabs({ bands }: { bands: Band[] }) {
       <div className='sws-ctabs__bar'>
         <span className='sws-ctabs__bar-title'>{BAR_TITLE_DOT}</span>
         <span className='sws-ctabs__bar-count' aria-hidden={true}>
-          {total} / {total} {AREAS_SUFFIX_DOT}
+          {current} / {total} {AREAS_SUFFIX_DOT}
         </span>
       </div>
       <div className='sws-ctabs__layout'>
@@ -41,6 +41,7 @@ export default function SWSCoverageTabs({ bands }: { bands: Band[] }) {
           {bands.map((b, i) => (
             <button
               key={b.name}
+              id={`sws-ctabs-tab-${i}`}
               className={`sws-ctabs__tab${i === active ? ' sws-ctabs__tab--active' : ''}`}
               role='tab'
               aria-selected={i === active}
@@ -60,7 +61,13 @@ export default function SWSCoverageTabs({ bands }: { bands: Band[] }) {
             </button>
           ))}
         </aside>
-        <div id='sws-ctabs-panel' className='sws-ctabs__panel' role='tabpanel' aria-live='polite'>
+        <div
+          id='sws-ctabs-panel'
+          className='sws-ctabs__panel'
+          role='tabpanel'
+          aria-labelledby={`sws-ctabs-tab-${active}`}
+          aria-live='polite'
+        >
           <p className='sws-ctabs__area-label'>
             {COVERAGE_AREA_PREFIX_DOT} · {current}
           </p>

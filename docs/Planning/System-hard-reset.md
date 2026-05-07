@@ -1309,4 +1309,50 @@ Low / cleanup:
 
 - `node scripts/validators/validate-tokens.mjs`
 - `npm run system:full`
+
+---
+
+## Milestone 4 — Smart Website Systems Polish Pass
+
+**Status:** Complete  
+**Branch:** `ui-hard-reset`  
+**Commits:** `7f54646` (first pass) + uncommitted fixes (second pass)
+
+### What Was Done
+
+**Sections polished (first pass — committed `7f54646`):**
+- **Leak Map** — secondary leaks changed from equal-weight cards to stacked bordered row list; stage label left, content right (2-col inner grid)
+- **Environment Roster** — added `scenario` field to data contract and renderer; displays as full-width note row below each environment entry
+- **Handled Path** — routing stage (emphasis:true) now spans full width at desktop, breaking the 4-equal-column grid; proof points on lead stage render in horizontal row
+- **Proof Story** — context panel changed to dark gradient (gradient-hero); acts rendered as a connected narrative strip with dividers instead of 3 equal white panels
+
+**Fixes (second pass — this commit):**
+- **Coverage Tabs bar count bug** — was `{total} / {total}` (static); fixed to `{current} / {total}` (updates on tab change)
+- **Coverage Tabs ARIA** — added `id` to each tab button (`sws-ctabs-tab-${i}`); added `aria-labelledby` on panel div referencing active tab
+- **CSS** — removed 4 empty selectors; removed duplicate CTA section comment block
+
+### Old SWS Gravity Search
+
+Clean. No legacy patterns found:
+- No `rd-*` classes in markup or CSS
+- No `components/sections` or `components/reusable` imports
+- No old data field keys: `leakBoard`, `serviceBridge`, `operatingBuild`, `coreLayer`, `scopeGroups`
+- No legacy tokens, hardcoded hex/rgba, or inline styles
+- `includedItems` is legitimate (Coverage Ledger tab data)
+
+### Sections Kept As-Is (deliberate)
+
+- **Build Board** — 4 numbered sequential stages with clear step narrative; grid structure justified by sequential process
+- **Fit Filter** — two panels (strong fit / not fit) is deliberate binary comparison, not equal-weight card grid
+- **No RelatedContentSection** — not present on SWS page; condition in prompt ("if present and generic") does not apply
+
+### Checks
+
+- `node scripts/validators/validate-tokens.mjs` — ✓ pass (7 files scanned)
+- `npm run system:full` — ✓ 56/56 validators passing, tests pass
+- `npx next build` — ✓ Compiled successfully; 360/360 static pages
+
+### Next Milestone Candidate
+
+Local SEO Authority page (`/services/local-seo-authority`) — same polish pass approach.
 - `npx next build`
