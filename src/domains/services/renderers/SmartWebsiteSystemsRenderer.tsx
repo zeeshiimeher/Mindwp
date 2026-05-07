@@ -31,7 +31,6 @@ const ARIA_LEAK_MAP_DOT = 'Enquiry leak map';
 const ARIA_COMPARISON_DOT = 'Comparison';
 const ARIA_HANDOFF_DOT = 'System handoff board';
 const ARIA_COVERAGE_DOT = 'Operating coverage ledger';
-const ARIA_COVERAGE_LEGEND_DOT = 'Coverage legend';
 const ARIA_ENVIRONMENT_DOT = 'Business environment fit';
 const ARIA_ENVIRONMENT_TABLE_DOT = 'Business environments';
 const ARIA_HANDLED_PATH_DOT = 'Handled enquiry path';
@@ -49,7 +48,6 @@ const HANDOFF_SOURCE_LABEL_DOT = 'Entry point';
 const HANDOFF_CONNECTED_DOT = 'Hands off to';
 const HANDOFF_HANDOFF_DOT = 'Handoff';
 const HANDOFF_BOUNDARY_DOT = 'Boundary';
-const COVERAGE_INCLUDED_DOT = 'Included';
 const SIGNAL_BADGE_DOT = 'Live signal';
 const SIGNAL_STATUS_CHAIN_DOT = 'Captured · Routed · Confirmed';
 const SIGNAL_ROW_SERVICE_DOT = 'Service';
@@ -59,6 +57,7 @@ const ROSTER_COL_ENV_DOT = 'Environment';
 const ROSTER_COL_TRIGGERS_DOT = 'How enquiry starts';
 const ROSTER_COL_NEED_DOT = 'What the site must handle';
 const ROSTER_COL_SIGNALS_DOT = 'Signal tags';
+const ROSTER_SCENARIO_DOT = 'Scenario';
 const PROOF_CONTEXT_DOT = 'Business context';
 const PROOF_CONSTRAINT_DOT = 'Constraint';
 const PROOF_TYPE_DOT = 'Proof type';
@@ -551,6 +550,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                       enquiryTriggers: string;
                       operationalNeed: string;
                       outcomeSignals: string[];
+                      scenario?: string;
                     }[]
                   ).map((row, index) => (
                     <div key={row.name} className='sws-environment-roster__row' role='row'>
@@ -578,6 +578,14 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                           ))}
                         </ul>
                       </div>
+                      {row.scenario && (
+                        <div className='sws-environment-roster__scenario-row' role='cell'>
+                          <p className='sws-environment-roster__scenario-label'>
+                            {ROSTER_SCENARIO_DOT}
+                          </p>
+                          <p className='sws-environment-roster__scenario-text'>{row.scenario}</p>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
