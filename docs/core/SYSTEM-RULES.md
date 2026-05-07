@@ -160,19 +160,25 @@ Forbidden:
 The only live CSS system is:
 
 ```text
-foundation.css -> framework.css -> primitives.css -> components.css
+tokens.css -> reset.css -> typography.css -> layout.css -> primitives.css -> components.css -> domain/page CSS
 ```
 
 Rules:
 
-- tokens live in `src/styles/foundation.css`
-- layout and shell rules live in `src/styles/framework.css`
-- reusable atoms live in `src/styles/primitives.css`
-- production shells live in `src/styles/components.css`
+- tokens live in `src/styles/tokens.css` using `--mw-*` namespace
+- layout and shared section frames live in `src/styles/layout.css` (`SectionFrame`, `HeroFrame`, `mw-container`)
+- reusable atoms live in `src/styles/primitives.css` (`Accordion`, `Tabs`, buttons, badges)
+- production component shells live in `src/styles/components.css` (`DecisionPanel`, `RelatedSection`, `FAQSection`, Header, Footer)
+- page-specific visual bodies live in domain/page CSS (`src/styles/pages/*`, `src/styles/services/*`)
 - no inline production styling
 - no parallel page-level styling systems
+- no raw hex or `rgba()` outside `tokens.css`
+- new components go in `layout/`, `primitives/`, `conversion/`, `navigation/`, or `content/` folders
+- `src/components/reusable` and `src/components/sections` are quarantine/delete-later; do not import from them in rebuilt or new files
 
 Legacy CSS under `src/styles/_legacy` is not active design authority.
+
+> **Legacy note:** `foundation.css`, `framework.css`, and the `rd-*` class system are from the old architecture. They remain only as quarantine fallout for unrebuilt pages. They are not active design authority.
 
 ---
 
@@ -190,7 +196,8 @@ Examples of generator-owned source outputs include:
 
 - content registries
 - authority map source
-- generated component docs source
+
+> **Note:** The generated component docs source (`componentDocs.generated.ts`) was removed in Milestone 6D when the component library route was deleted. It is no longer a generated output.
 
 ---
 
@@ -248,7 +255,10 @@ These rules are non-negotiable:
 3. SEO lives in the SEO layer.
 4. OG output lives in the deterministic API-backed OG system.
 5. Components render only.
-6. The four-layer CSS stack is the only live design system.
+6. The six-layer CSS stack is the only live design system: `tokens.css -> reset.css -> typography.css -> layout.css -> primitives.css -> components.css -> domain/page CSS`.
 7. Generated-source drift fails validation.
 8. Validators and reports are manifest-owned.
+9. `src/components/reusable` and `src/components/sections` are quarantine/delete-later. New components go in `layout/`, `primitives/`, `conversion/`, `navigation/`, or `content/`.
+10. `DecisionPanel` owns CTA rendering in rebuilt/new pages. `PrimaryCTASection` is quarantine/delete-later.
+11. `RelatedSection` owns global related-content display. No page-owned related sections. No slug exception lists.
 9. Build, `validate-all`, and `system:full` must stay aligned.

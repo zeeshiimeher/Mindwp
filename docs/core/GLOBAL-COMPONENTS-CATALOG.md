@@ -1,13 +1,34 @@
-# Global Components Catalog (Generated Inventory)
+# Global Components Catalog (Legacy Reusable Inventory)
 
-This file is a **generated export inventory** for reusable UI components.
+> **⚠ QUARANTINE WARNING — Do not use for new work.**
+>
+> This file is a generated inventory of `src/components/reusable` — a quarantine/delete-later folder.
+> Components listed here are NOT approved architecture for new or rebuilt pages.
+> They exist only to keep unrebuilt old pages rendering while the hard reset continues.
+>
+> For current component architecture, see:
+> - [../Planning/System-hard-reset.md](../Planning/System-hard-reset.md) — active build rules and component strategy
+> - [../Planning/Legacy-dependency-map.md](../Planning/Legacy-dependency-map.md) — live deletion map and delete gates
+>
+> **Current approved component folders:**
+> - `src/components/layout/` — SectionFrame, HeroFrame
+> - `src/components/primitives/` — Accordion, Tabs, InlineText, SignalDot, StatusBadge
+> - `src/components/conversion/` — DecisionPanel
+> - `src/components/navigation/` — RelatedSection
+> - `src/components/content/` — FAQSection
+> - `src/global/` — Header, Footer, Logo
+>
+> `src/components/reusable` and `src/components/sections` will be deleted when all consuming pages are rebuilt.
 
-This file is generated inventory for existing global/reusable exports.
-It is not component redesign authority.
-`src/components/reusable` is a legacy/retirement zone during the current system refactor.
-New section-system authority comes from [../ui/system-xray.md](../ui/system-xray.md) and `src/components/sections`.
+---
 
-- Do not hand-edit inside the `AUTO-GENERATED` block.
+This file is a **generated export inventory** for legacy reusable UI components.
+
+Do not hand-edit inside the `AUTO-GENERATED` block.
+
+Run `npm run -s generate:global-inventory` to regenerate (reads quarantine folder — for tracking purposes only, not for new work reference).
+
+---
 
 ## Auto-generated inventory
 

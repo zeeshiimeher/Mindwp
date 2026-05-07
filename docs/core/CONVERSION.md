@@ -40,7 +40,8 @@ Do not write or hardcode CTA copy before this is clear.
 ## SYSTEM GUARANTEES
 
 - `/contact` is the only form entry route.
-- CTA panels render through `PrimaryCTASection`.
+- CTA panels render through `DecisionPanel` in rebuilt/new pages.
+- `PrimaryCTASection` is quarantine/delete-later only — used by unrebuilt old pages, not a current architecture pattern.
 - CTA labels resolve through `src/config/ctaLabels.ts`.
 - Contact URLs resolve through `src/lib/contact/contactHref.ts`.
 - Page-level CTA rules enforce intent, position, and panel count through the CTA registry.
@@ -62,14 +63,19 @@ Templates and page adapters own:
 - CTA position
 - page-scoped registry setup through `CTARegistryProvider`
 
-### PrimaryCTASection
+### DecisionPanel (current architecture)
 
-`PrimaryCTASection` owns:
+`DecisionPanel` owns CTA rendering, label resolution, contact URL generation, and CTA registration in rebuilt/new pages.
 
-- CTA rendering
-- label resolution
-- contact URL generation
-- CTA registration against the active page registry
+It receives action data from the renderer — no manual final-CTA button markup in page renderers.
+
+File: `src/components/conversion/DecisionPanel.tsx`
+
+### PrimaryCTASection (quarantine — old pages only)
+
+`PrimaryCTASection` is a quarantine/delete-later component used only by unrebuilt old pages.
+
+Do not import `PrimaryCTASection` in rebuilt or new files. It will be deleted once all consumers are rebuilt.
 
 ### Contact Builder
 
@@ -144,7 +150,7 @@ Hero sections may include a primary action or routing link.
 
 Hero actions are not conversion CTAs. They support recognition and initial routing — helping the reader move to the right context or next step.
 
-Hero actions do not replace `PrimaryCTASection`. `PrimaryCTASection` owns the main page-level conversion CTA and must render in its correct position within the page flow.
+Hero actions do not replace `DecisionPanel`. `DecisionPanel` owns the main page-level conversion CTA and must render in its correct position within the page flow.
 
 Do not interpret the rule against premature conversion as "no action in the hero". The restriction is on conversion escalation before sufficient recognition or proof, not on routing and recognition actions.
 
@@ -195,9 +201,9 @@ Rules:
 
 ## CONTACT FLOW
 
-1. A page renders `PrimaryCTASection` with canonical `system`, `slug`, `pageId`, and `pageType` context.
-2. `PrimaryCTASection` resolves the CTA label.
-3. `PrimaryCTASection` generates the contextual `/contact` href.
+1. A page renders `DecisionPanel` with canonical `system`, `slug`, `pageId`, and `pageType` context.
+2. `DecisionPanel` resolves the CTA label.
+3. `DecisionPanel` generates the contextual `/contact` href.
 4. `/contact` reads `system` and `source` from the URL.
 5. The form preserves that context through render, validation, retry, and submission.
 6. Submission passes complete conversion context onward.
@@ -210,11 +216,13 @@ If `system` or `source` is invalid or missing, the conversion contract fails.
 
 - Alternate form entry routes.
 - Hardcoded `/contact?system=...&source=...` strings in production content or templates.
-- Route files rendering `PrimaryCTASection` directly.
-- Domain data files rendering `PrimaryCTASection` directly.
+- Route files rendering `DecisionPanel` or `PrimaryCTASection` directly.
+- Domain data files rendering `DecisionPanel` or `PrimaryCTASection` directly.
 - Inline conversion CTAs.
 - Multiple conversion CTAs on one page.
 - Silent fallback when contact context is invalid.
+- Manual final conversion button markup in rebuilt pages where `DecisionPanel` applies.
+- New imports of `PrimaryCTASection` in rebuilt or new files.
 - CTA copy that makes MindWP sound like a normal website builder, agency, SaaS tool, or template provider.
 - CTAs that ask for conversion before the page has created enough recognition, clarity, or proof.
 - CTA changes made only to improve click volume while weakening authority or trust.

@@ -232,7 +232,7 @@ Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.
 ### CTA Ownership
 
 - Page adapters and templates own page identity, CTA intent, and CTA position.
-- `PrimaryCTASection` owns CTA rendering.
+- `DecisionPanel` owns CTA rendering in rebuilt/new pages. `PrimaryCTASection` is quarantine/delete-later (used only by unrebuilt old pages; do not import in new or rebuilt files).
 - `buildContactHref()` owns contextual contact URL generation.
 - Route files and data files do not own CTA intent.
 

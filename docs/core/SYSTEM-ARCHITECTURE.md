@@ -98,17 +98,29 @@ This layer owns:
 ### Page and Component Layer
 
 - `src/app/**`
-- `src/components/sections/*`
+- `src/components/layout/*` — SectionFrame, HeroFrame
+- `src/components/primitives/*` — Accordion, Tabs, InlineText, SignalDot, StatusBadge
+- `src/components/conversion/*` — DecisionPanel
+- `src/components/navigation/*` — RelatedSection
+- `src/components/content/*` — FAQSection
+- `src/global/*` — Header, Footer, Logo
+- page/domain renderers compose these components with domain data
+
+> **Quarantine:** `src/components/reusable` and `src/components/sections` are quarantine/delete-later. They exist only to keep unrebuilt old pages rendering. Do not import from them in rebuilt or new files. See `docs/Planning/Legacy-dependency-map.md`.
 
 Pages resolve content and metadata.
 Components render prepared props only.
 
 ### Design Layer
 
-- `src/styles/foundation.css`
-- `src/styles/framework.css`
-- `src/styles/primitives.css`
-- `src/styles/components.css`
+- `src/styles/tokens.css` — all raw values; `--mw-*` token namespace
+- `src/styles/reset.css`
+- `src/styles/typography.css`
+- `src/styles/layout.css` — SectionFrame, HeroFrame, mw-container, motion
+- `src/styles/primitives.css` — Accordion, Tabs, buttons, badges
+- `src/styles/components.css` — DecisionPanel, RelatedSection, FAQSection, Header, Footer
+- `src/styles/pages/*` — page-specific visual bodies (home.css)
+- `src/styles/services/*` — service page visual bodies (smart-website.css, local-seo.css)
 
 This is the only live CSS system.
 
@@ -174,8 +186,12 @@ This layer records validated state and gates release.
 | SEO composition | `src/lib/seo/seo.ts` |
 | OG mapping and URL contract | `src/lib/seo/og/contract.ts` |
 | OG image rendering | `src/app/api/og/route.ts` and `src/lib/seo/og/render.ts` |
-| Section renderers | `src/components/sections/*` |
-| CSS system | `src/styles/foundation.css`, `framework.css`, `primitives.css`, `components.css` |
+| Section frames | `src/components/layout/SectionFrame.tsx` |
+| Hero frames | `src/components/layout/HeroFrame.tsx` |
+| Final conversion section | `src/components/conversion/DecisionPanel.tsx` |
+| Global related-content | `src/components/navigation/RelatedSection.tsx` |
+| FAQ sections | `src/components/content/FAQSection.tsx` |
+| CSS system | `src/styles/tokens.css`, `layout.css`, `primitives.css`, `components.css` |
 | Validator ownership | `scripts/core/system-manifest.mjs` |
 | Validator execution | `scripts/core/validate-all.mjs` |
 | Report export | `scripts/analyzers/export-reports.mjs` |
@@ -191,9 +207,10 @@ This layer records validated state and gates release.
 - SEO ownership stays in the SEO layer.
 - OG ownership stays in the OG layer and API route.
 - Components render; they do not own metadata, graph logic, or styling systems.
-- The four-layer CSS stack is the only live design system.
+- The six-layer CSS stack is the only live design system: `tokens.css -> reset.css -> typography.css -> layout.css -> primitives.css -> components.css -> domain/page CSS`.
 - Validators and manifest-owned reports define structural status.
 - Generated files and reports are never hand-maintained as an alternative to fixing generators or validators.
+- `src/components/reusable` and `src/components/sections` are quarantine/delete-later only. New components go into `layout/`, `primitives/`, `conversion/`, `navigation/`, or `content/`.
 
 ---
 

@@ -250,9 +250,18 @@ Disallowed graph owners include:
 - one related-content zone per eligible page
 - maximum of three displayed items
 - stricter per-page-type exposure rules
-- `SmartRelatedSection` is the related-content display owner
+- `RelatedSection` is the global related-content display owner — injected by config/wrapper, not page renderers
 
 The graph decides what is valid. The UI decides what is shown.
+
+> **Architecture note:** `RelatedSection` (`src/components/navigation/RelatedSection.tsx`) replaced the old `SmartRelatedSection` → `SmartRelatedSectionClient` → `RelatedContentSection` chain in Milestone 6F. Page renderers must not render their own related sections. Config model:
+> ```ts
+> relatedSection?: {
+>   enabled?: boolean;   // default true
+>   variant?: 'standard' | 'rail' | 'compact';  // default 'standard'
+> }
+> ```
+> `SmartRelatedSection`, `SmartRelatedSectionClient`, and `RelatedContentSection` are deleted. `SLUGS_WITH_OWN_RELATED` slug exception lists are forbidden.
 
 ### Behavior-Safe Output
 
