@@ -1355,4 +1355,26 @@ Clean. No legacy patterns found:
 ### Next Milestone Candidate
 
 Local SEO Authority page (`/services/local-seo-authority`) — same polish pass approach.
+
+---
+
+## Milestone 5 — Local SEO Authority Rebuild
+
+**Commit:** ui-hard-reset: rebuild local seo authority
+**Status:** Complete
+
+### What changed
+
+- `src/domains/services/data/local-seo-authority.ts` — full rewrite with new semantic contract: `hero.presenceSurface` (map pack simulation panel), `sections.authorityDecision` (criteria board), `signalAudit` (four signal families with checks), `structuredComparison`, `assumptions`, `coverageMap` (8 zones), `visibilityCycle` (4 phases), `proofStory` (scenario study), `fitFilter`, `faq` (11 items), `relatedSystems`
+- `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx` — full rewrite; named export; no ErrorBoundary, SectionShell, PrimaryCTASection, rd-*; inline `LSACTASection`; `_DOT` aria constants; `requireHeadingDescription` helper; `buildContactHref` with `sourceType: 'service'`
+- `src/styles/pages/local-seo.css` — new page CSS (lsa-* classes only, mw-* tokens only, no raw hex)
+- `src/index.css` — added `@import './styles/pages/local-seo.css'`
+- `scripts/validators/validate-content-enforcement.ts` — updated LSA validator message to reflect inline LSACTASection contract
+- `src/domains/services/pages/local-seo-authority/index.tsx` — updated to named import
+- `src/app/dev/component-system/page.tsx` — updated all dead LSA section references to inline stubs (old sections removed in data rewrite)
+
+### Checks
+
+- `npm run system:quick` — ✓ 33/33 blocking validators passing
+- `npx next build` — ✓ Compiled successfully
 - `npx next build`

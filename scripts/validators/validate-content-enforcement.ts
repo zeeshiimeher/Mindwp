@@ -948,7 +948,7 @@ function scanButtonRule(): Issue[] {
         ],
         forbidden: ['return null', "?? ''", "|| ''"],
         issueType: 'invalid_anchor_renderer_contract',
-        message: 'LocalSeoAuthorityRenderer must stay fail-loud and use the locked PrimaryCTASection contract.',
+        message: 'LocalSeoAuthorityRenderer must stay fail-loud and use the locked inline LSACTASection contract.',
       },
       {
         file: 'src/components/reusable/single/SectionIntro.tsx',
