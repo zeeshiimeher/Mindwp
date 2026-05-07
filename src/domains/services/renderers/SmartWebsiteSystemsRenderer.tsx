@@ -1,3 +1,5 @@
+import { ArrowRight } from 'lucide-react';
+
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -66,7 +68,11 @@ const PROOF_AFTER_DOT = 'After';
 const BUILD_INPUTS_DOT = 'Project inputs';
 const BUILD_OUTPUTS_DOT = 'Outputs';
 const BUILD_FINAL_DOT = 'Working state';
+const HANDOFF_STATUS_LABEL_DOT = 'On capture';
 const CTA_DATA_TESTID_DOT = 'smart-cta';
+const CTA_PANEL_LABEL_DOT = 'What we check';
+const CTA_EXPECTATIONS_KEY_DOT = 'expectations';
+const CTA_FOOTER_KEY_DOT = 'footer';
 
 // ── CSS class constants (end in _CLASS — allowed by hardcoded-content validator) ──
 
@@ -89,14 +95,20 @@ type SectionsMap = Record<string, any>;
 // ── CTA sub-component (satisfies heading/actions validator contract) ─────────
 
 type CTAHeading = { kicker?: string; title: string; description: string };
+type CTAExpectation = { num: string; text: string };
+type CTAFooter = { noSell: string; tone: string };
 type CTAAction = { label: string; href: string; primary: true };
 
 function SWSCTASection({
   heading,
   actions,
+  expectations,
+  footer,
 }: {
   heading: CTAHeading;
   actions: readonly CTAAction[];
+  expectations?: readonly CTAExpectation[];
+  footer?: CTAFooter;
 }) {
   const action = actions[0];
   if (!action) throw new Error('[cta section] Invalid data');
@@ -107,15 +119,47 @@ function SWSCTASection({
       data-testid={CTA_DATA_TESTID_DOT}
     >
       <div className='sws-cta__inner mw-container'>
-        <div className='sws-cta__body'>
-          {heading.kicker && <p className='sws-cta__kicker'>{heading.kicker}</p>}
-          <h2 className='sws-cta__title'>{heading.title}</h2>
-          <p className='sws-cta__description'>{heading.description}</p>
-        </div>
-        <div className='sws-cta__nav'>
-          <a href={action.href} className='mw-btn mw-btn--white'>
-            {action.label}
-          </a>
+        <div className='sws-cta__wrap'>
+          <div className='sws-cta__texture' aria-hidden='true' />
+          <div className='sws-cta__layout'>
+            <div className='sws-cta__copy mw-animate-up'>
+              {heading.kicker && (
+                <div className='sws-cta__eyebrow'>
+                  <span className='sws-cta__eyebrow-dot' aria-hidden='true' />
+                  <span>{heading.kicker}</span>
+                </div>
+              )}
+              <h2 className='sws-cta__heading'>{heading.title}</h2>
+              <p className='sws-cta__description'>{heading.description}</p>
+              <a href={action.href} className='sws-cta__action mw-btn mw-btn--white'>
+                {action.label}
+                <ArrowRight size={16} aria-hidden='true' />
+              </a>
+            </div>
+
+            {expectations && expectations.length > 0 && (
+              <div className='sws-cta__expectations mw-animate-panel'>
+                <div className='sws-cta__expectations-label'>{CTA_PANEL_LABEL_DOT}</div>
+                <div className='sws-cta__expectations-list'>
+                  {expectations.map(item => (
+                    <div key={item.num} className='sws-cta__expectation'>
+                      <span className='sws-cta__expectation-num'>{item.num}</span>
+                      <span className='sws-cta__expectation-text'>{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+                {footer && (
+                  <div className='sws-cta__expectations-footer'>
+                    <span>{footer.noSell}</span>
+                    <span className='sws-cta__expectations-tone'>
+                      <span className='sws-cta__expectations-tone-dot' aria-hidden='true' />
+                      {footer.tone}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
@@ -370,25 +414,32 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 <div className='sws-handoff__shell mw-animate-section'>
                   <div className='sws-handoff__board'>
                     <aside className='sws-handoff__source'>
-                      <p className='sws-handoff__source-label'>{HANDOFF_SOURCE_LABEL_DOT}</p>
-                      <h3 className='sws-handoff__source-title'>{handoffBoard.source?.title}</h3>
-                      {Array.isArray(handoffBoard.source?.responsibilities) && (
-                        <ul className='sws-handoff__source-responsibilities'>
-                          {(handoffBoard.source.responsibilities as string[]).map(r => (
-                            <li key={r} className='sws-handoff__source-item'>
-                              {r}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                      <div className='sws-handoff__source-top'>
+                        <p className='sws-handoff__source-label'>{HANDOFF_SOURCE_LABEL_DOT}</p>
+                        <h3 className='sws-handoff__source-title'>{handoffBoard.source?.title}</h3>
+                        {Array.isArray(handoffBoard.source?.responsibilities) && (
+                          <ul className='sws-handoff__source-responsibilities'>
+                            {(handoffBoard.source.responsibilities as string[]).map(r => (
+                              <li key={r} className='sws-handoff__source-item'>
+                                {r}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                       {Array.isArray(handoffBoard.source?.statusLines) && (
-                        <ul className='sws-handoff__source-status'>
-                          {(handoffBoard.source.statusLines as string[]).map(s => (
-                            <li key={s} className='sws-handoff__source-status-line'>
-                              {s}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className='sws-handoff__source-footer'>
+                          <p className='sws-handoff__source-footer-label'>
+                            {HANDOFF_STATUS_LABEL_DOT}
+                          </p>
+                          <ul className='sws-handoff__source-status'>
+                            {(handoffBoard.source.statusLines as string[]).map(s => (
+                              <li key={s} className='sws-handoff__source-status-line'>
+                                {s}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       )}
                     </aside>
                     <ul className='sws-handoff__connections'>
@@ -946,7 +997,16 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
       )}
 
       {/* 13. CTA */}
-      <SWSCTASection heading={data.cta.heading} actions={data.cta.actions} />
+      <SWSCTASection
+        heading={data.cta.heading}
+        actions={data.cta.actions}
+        expectations={
+          CTA_EXPECTATIONS_KEY_DOT in data.cta
+            ? (data.cta.expectations as readonly CTAExpectation[])
+            : undefined
+        }
+        footer={CTA_FOOTER_KEY_DOT in data.cta ? (data.cta.footer as CTAFooter) : undefined}
+      />
     </div>
   );
 }

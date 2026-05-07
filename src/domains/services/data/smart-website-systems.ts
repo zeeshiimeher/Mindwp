@@ -646,5 +646,15 @@ export const smartWebsiteSystemsPage = {
         "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
     },
     actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
 } satisfies ServicePageData;

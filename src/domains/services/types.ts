@@ -171,5 +171,7 @@ export interface ServicePageData<
       kicker?: string;
     };
     actions: [{ label: string; href: string; primary: true }];
+    expectations?: Array<{ num: string; text: string }>;
+    footer?: { noSell: string; tone: string };
   };
 }
