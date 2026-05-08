@@ -1,463 +1,483 @@
-# DESIGN — MindWP
+# MindWP Design System
 
-> Source of truth for the live UI system.
-> This document describes the production CSS architecture and styling ownership model.
+> Long-term stable reference for the MindWP visual and design system.
+> This document defines active design rules, CSS ownership, component responsibilities, and visual principles that survive after the hard reset is complete.
+>
+> `docs/Planning/System-hard-reset.md` is the temporary operating manual for the active reset process. That document will be retired once the rebuild is done.
+> This document (`DESIGN.md`) is the permanent design authority going forward.
+>
 > If this doc conflicts with live code under `src/styles/*`, code wins and this doc must be updated.
 
 ---
 
-## USE THIS DOC
+## 1. Purpose
 
-Use this doc when working on:
+This document answers:
 
-- design tokens
-- layout and section shells
-- reusable UI primitives
-- component styling boundaries
-- visual consistency rules
+- What is the current CSS stack and who owns what?
+- What are the active base components and their design responsibilities?
+- What visual language and patterns should MindWP pages use?
+- What are the hard design rules that must not be violated?
 
-Do not use this doc to change page identity, metadata, CTA logic, graph logic, or content behavior.
+Use this doc when:
 
-For the active full-system/component refactor, see [../Planning/System-hard-reset.md](../Planning/System-hard-reset.md) and [../Planning/Legacy-dependency-map.md](../Planning/Legacy-dependency-map.md).
+- working on design tokens, layout, or section shells
+- adding or updating CSS for components or pages
+- building new page sections or primitives
+- checking visual/design rules for a rebuilt page
+
+Do not use this doc to change content behavior, metadata, CTA routing logic, or data contracts.
 
 ---
 
-## LIVE DESIGN SYSTEM
+## 2. Design Philosophy
 
-MindWP uses a layered CSS system.
+MindWP design should feel: **operational, precise, calm, conversion-focused**.
 
-```text
-tokens.css -> reset.css -> typography.css -> layout.css -> primitives.css -> components.css -> domain/page CSS
+Every design decision should read like infrastructure, not a brochure.
+
+**Aim for:**
+- system-first — surfaces feel like dashboards and operational panels, not landing pages
+- clear before clever — hierarchy and meaning before visual interest
+- quiet authority — typographically strong, not decorative
+- premium but grounded — not generic SaaS, not template agency
+- purposeful contrast — dark surfaces signal depth and ownership, not aesthetics
+
+**Avoid:**
+- generic agency look (random card grids, testimonial carousels, stock-photo hero)
+- SaaS dashboard cosplay (fake charts, decorative progress bars, pointless status badges)
+- over-designed process diagrams that obscure rather than clarify
+- hype or flash — animation, gradients, or motion used for visual effect without meaning
+- feature dumping — listing capabilities without context
+
+The design exists to support the reader's decision, not to impress or signal effort.
+
+---
+
+## 3. Visual Language
+
+MindWP pages use a consistent family of visual structures. These are not mandated section templates — they are the visual vocabulary that creates coherence.
+
+**Structured surfaces:**
+Signal boards, operational panels, enquiry feeds, status maps — surfaces that look like they are doing something. Dark backgrounds with structured data layouts.
+
+**Signal boards and state displays:**
+Items with `SignalDot` / `StatusBadge` states. Active, risk, warning, muted. Color is never the only signal — it is always paired with a label or shape.
+
+**Connected flows and journey rails:**
+Sequential stages, process steps, and cause/effect chains. Directional layout (left-to-right or top-to-bottom). Stage labels, outcomes, and routing logic made visible.
+
+**Ownership boundary panels:**
+Before/after, comparison, scope, or fit-filter layouts. Two-panel structures that define what's in and what's out.
+
+**Quiet gradients and dark depth:**
+Dark surfaces use restrained gradient depth, not decorative color. Gradients signal hierarchy, not decoration.
+
+**Restrained motion:**
+Motion supports comprehension — reveals, fades, panel transitions. Nothing spins, bounces, or plays for effect.
+
+**High readability:**
+Long lines break. Muted text supports primary text. Heading hierarchy is always clear.
+
+---
+
+## 4. CSS Stack
+
+Current stack in import order:
+
+```txt
+tokens.css      → raw values only; all --mw-* token definitions
+reset.css       → browser reset
+typography.css  → global type scale
+layout.css      → containers, SectionFrame, HeroFrame, motion utilities
+primitives.css  → buttons, badges, Accordion, Tabs, signal/status atoms
+components.css  → Header, Footer, DecisionPanel, RelatedSection, FAQSection
+page/domain CSS → page-specific visual bodies only
 ```
 
-That order is the design system.
+**Layer ownership rule:**
 
-Rules:
-
-- Design is system-driven, not page-driven.
-- Visual values enter through tokens first.
-- Layout and shared section frames come from the layout layer.
-- Reusable UI atoms come from the primitive layer.
-- Production shells live in the component layer.
-- Page-specific visual bodies live in domain/page CSS.
-- JSX should consume styles, not invent styling systems.
-
----
-
-## 1. TOKEN LAYER
-
-Owner: `src/styles/tokens.css`
-
-This layer is the only raw-value source. All tokens use the `--mw-*` namespace.
-
-Current live token groups include:
-
-- color tokens such as `--mw-color-*`
-- surface and foreground tokens such as `--mw-text-primary`, `--mw-text-secondary`, `--mw-text-muted`, `--mw-surface-*`
-- spacing tokens such as `--mw-space-*`
-- width tokens such as `--mw-page-max`, `--mw-container-max`, `--mw-content-max`, `--mw-text-max`
-- typography tokens such as `--mw-font-*`, `--mw-text-*`, `--mw-leading-*`
-- signal tokens such as `--mw-signal-*`, `--mw-risk-*`
-- radii, shadows, borders, easing, duration, z-index, and breakpoint tokens
-
-Rules:
-
-- No component selectors belong here.
-- No layout patterns belong here.
-- No buttons, cards, nav, hero, or footer rules belong here.
-- All normal CSS files must reference tokens via `var(--mw-*)` — no raw hex or `rgba()` outside this file.
-- Do not invent token names. Confirm the token exists before consuming it.
-- If a new visual value is needed, add the token here before consuming it elsewhere.
-
----
-
-## 2. LAYOUT LAYER
-
-Owner: `src/styles/layout.css`
-
-This layer owns layout rhythm, shared containers, base component CSS, reveal motion, and shared inline text utilities.
-
-Current live layout classes include:
-
-- `mw-container` — shared page width constraint
-- `mw-section-frame` and `mw-section-frame__*` — owned by `SectionFrame` component
-- `mw-hero-section` and `mw-hero-section__*` — owned by `HeroFrame` component
-- `mw-text-muted` — shared inline muted text; produced by `InlineText [[muted:...]]`
-- reveal motion classes (`mw-reveal-*`)
-
-Rules:
-
-- Shared vertical rhythm comes from `SectionFrame` and `HeroFrame` components via `layout.css`.
-- Shared page width comes from `mw-container`.
-- Section shells must use `SectionFrame` for normal sections and `HeroFrame` for hero sections.
-- Do not reinvent container or section wrapper patterns outside this layer.
-
-> **Legacy note:** `rd-section`, `rd-container`, `rd-grid`, `rd-split`, `rd-stack`, `rd-section-inner`, and the `framework.css` file are from the old system. They are quarantine/delete-later fallout used only by unrebuilt old pages. Do not use them for new or rebuilt pages.
-
----
-
-## 3. PRIMITIVES LAYER
-
-Owner: `src/styles/primitives.css`
-
-This layer owns small reusable UI atoms and their interaction states.
-
-Current live primitive classes include:
-
-- `mw-btn`, `mw-btn--*` variants — button primitives
-- `mw-badge`, `mw-badge--*` — badge/eyebrow primitives
-- `mw-accordion` and `mw-accordion__*` — owned by `Accordion` component
-- `mw-tabs` and `mw-tabs__*` — owned by `Tabs` component
-- focus-visible behavior and tokenized hover states
-
-Rules:
-
-- Buttons, links, badges, disclosure primitives, and low-level panels belong here.
-- Hover and focus behavior must stay token-driven.
-- Primitive states should be shared, not re-authored inside components.
-- A component may compose primitives, but it should not replace them with a new local styling system.
-
-Forbidden:
-
-- `btn-primary`, `btn-outline`, `btn-outline-light` as active system primitives — these are quarantine/legacy
-- `rd-btn`, `rd-card`, `rd-panel-*` as active primitives — these are quarantine/legacy
-- component-local button systems
-- one-off card systems for ordinary reusable surfaces
-
----
-
-## 4. COMPONENT LAYER
-
-Owner: `src/styles/components.css`
-
-This layer owns production component shells and composed shared component styling.
-
-Current live ownership includes:
-
-- header shell
-- footer shell
-- navigation states
-- mobile nav panel styling
-- `mw-decision-panel` and `mw-decision-panel__*` — owned by `DecisionPanel`
-- `mw-related-section` and `mw-related-section__*` — owned by `RelatedSection`
-- `mw-faq-section` and `mw-faq-section__*` — owned by `FAQSection`
-
-Shared component CSS namespace summary:
-
-| CSS class prefix | Component |
+| Layer | Contains |
 |---|---|
-| `mw-section-frame` | `SectionFrame` (layout.css) |
-| `mw-hero-section` | `HeroFrame` (layout.css) |
-| `mw-decision-panel` | `DecisionPanel` (components.css) |
-| `mw-related-section` | `RelatedSection` (components.css) |
-| `mw-faq-section` | `FAQSection` (components.css) |
-| `mw-accordion` | `Accordion` (primitives.css) |
-| `mw-tabs` | `Tabs` (primitives.css) |
-| `mw-text-muted` | `InlineText [[muted:...]]` (layout.css) |
+| `tokens.css` | all `--mw-*` definitions; raw values only |
+| `reset.css` | browser reset; nothing custom |
+| `typography.css` | font stack, scale, line heights |
+| `layout.css` | `mw-container`, `SectionFrame`, `HeroFrame`, motion classes |
+| `primitives.css` | buttons, badges, Accordion, Tabs, signal/status primitives |
+| `components.css` | DecisionPanel, RelatedSection, FAQSection, Header, Footer |
+| page/domain CSS | page visual classes only |
 
-Rules:
-
-- Component styling belongs in CSS, not JSX condition trees.
-- Components consume tokens, layout, and primitives.
-- Components may compose layout and primitives, but they do not define a parallel design system.
-- Section renderers should stay presentational and use shared CSS layers.
-
-Forbidden:
-
-- inline production styling
-- ad-hoc width, spacing, and color logic inside component files
-- metadata, graph, or inventory logic mixed into style ownership
-- duplicating shared component CSS in page CSS files
+The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 
 ---
 
-## 5. SECTION COMPOSITION MODEL
+## 5. Token Rules
 
-The default section pattern for new/rebuilt pages is:
+**Namespace:** All tokens use `--mw-*`. No exceptions.
 
-1. `SectionFrame` for normal content section shells (owns `<section>`, `mw-container`, heading block, padding, tone)
-2. `HeroFrame` for hero section shells (owns `<section>`, split layout, actions, chips, visual slot)
-3. `FAQSection` for FAQ sections (wraps `SectionFrame` + `Accordion`)
-4. `DecisionPanel` for final conversion sections
-5. `RelatedSection` injected globally by config wrappers — not by page renderers
-6. Page-specific visual JSX and CSS inside section body
+**Raw values** (raw hex, `rgba()`, hardcoded px sizes) belong only inside `tokens.css`. Every other CSS file must reference tokens via `var(--mw-*)`.
 
-For inline muted text in headings: use `[[muted:...]]` syntax in data strings. `InlineText` renders the marker. Do not use `titleMuted` or `headingMuted` props.
+**Token groups:**
 
-Rules:
+- color: `--mw-color-*`
+- text/foreground: `--mw-text-primary`, `--mw-text-muted`, `--mw-text-on-dark`, etc.
+- surface: `--mw-surface-*`
+- spacing: `--mw-space-*`
+- typography scale: `--mw-text-hero`, `--mw-text-h1`, `--mw-text-h2`, `--mw-text-body`, `--mw-text-label`
+- font families: `--mw-font-sans` (Inter), `--mw-font-mono` (JetBrains Mono)
+- line heights: `--mw-leading-tight`, `--mw-leading-heading`, `--mw-leading-body`, `--mw-leading-relaxed`
+- width: `--mw-page-max`, `--mw-container-max`, `--mw-content-max`, `--mw-text-max`
+- radius: `--mw-radius-*`
+- shadow: `--mw-shadow-*`
+- signal: `--mw-signal-*`, `--mw-risk-*`
+- gradient: `--mw-gradient-*`
+- motion: easing and duration tokens
+- z-index and breakpoint tokens
 
-- Use base components before inventing new wrappers.
-- Keep width and rhythm consistent across routes.
-- Keep visual exceptions narrow and intentional.
-- Repeated structures should become shared CSS, not repeated local markup hacks.
-- Page CSS files own only page-specific visual bodies — not section shells.
-
-> **Legacy note:** The old pattern using `rd-section`, `rd-container`, `rd-section-inner` remains in unrebuilt old pages as quarantine fallout. Do not use it for new or rebuilt pages.
-
----
-
-## 6. TYPOGRAPHY AND CONTRAST
-
-The live typography system is token-based.
-
-Current foundations:
-
-- `--font-sans` for product UI copy
-- `--font-display` for stronger display treatment
-- `--font-mono` for code and machine-style surfaces
-- `--text-*` and `--leading-*` tokens for scale and rhythm
-
-Rules:
-
-- Use typography tokens instead of hardcoded font sizes.
-- Use foreground tokens and `bg-*` utilities so contrast stays system-owned.
-- A dark surface must also carry the correct dark-surface foreground handling.
-- Typography hierarchy should come from the token scale, not page-local exceptions.
+**Rules:**
+- Do not invent token names. Confirm the token exists in `tokens.css` before consuming it.
+- If a new visual value is needed, add the token to `tokens.css` first.
+- Do not create one-off tokens per section (bad: `--home-hero-left-special-gap`).
+- Prefer semantic/scale tokens: `--mw-space-8`, `--mw-radius-panel`, `--mw-gradient-hero`.
+- Token validator enforces this: raw hex or `rgba()` outside `tokens.css` fails.
+- Valid CSS exemptions that do not need tokenization: `0`, `auto`, `inherit`, `currentColor`, `transparent`, `calc()`, `clamp()`, `min()`, `max()`.
 
 ---
 
-## 7. NON-NEGOTIABLE DESIGN RULES
+## 6. Layout Rules
 
-- No inline styles in production UI.
-- No page-specific mini design systems.
-- No local spacing scales.
-- No component-owned hover or focus systems that bypass primitives.
-- No revival of legacy class naming as current truth.
-- No styling logic embedded in metadata or content layers.
+**Page frame reference:** `1440px` (`--mw-page-max`)
 
-Legacy files under `src/styles/_legacy` are not design authority and should not be used to define current rules.
+**Container:** approximately `1240px` (`--mw-container-max`). Use `mw-container` class — do not reinvent container patterns.
+
+**Readable text:** constrained by `--mw-text-max`. Do not stretch readable paragraphs to full container width.
+
+**Section shells:**
+- Normal content sections use `SectionFrame` — owns `<section>`, `mw-container`, padding, heading block, tone/bg.
+- Hero sections use `HeroFrame` — owns hero `<section>`, split layout, copy, actions, chips, visual slot.
+- Do not manually compose `<section>` + container + heading for normal or hero sections.
+- Page body visuals (visual JSX, data-driven panels) stay inside the section body, not the shell.
+
+**CSS prefixes for page sections:** use semantic domain prefixes only:
+
+| Domain | Prefix |
+|---|---|
+| Homepage | `home-*` |
+| Smart Website Systems | `sws-*` |
+| Local SEO Authority | `lsa-*` |
+| Feature pages | `feature-*` |
+| Industry pages | `industry-*` |
+| Case studies | `case-*` |
+| Resources | `resource-*` |
+| Blog | `blog-*` |
+
+**CSS folder ownership:**
+
+| Page/domain | CSS location |
+|---|---|
+| Homepage | `src/styles/pages/home.css` |
+| Flagship service pages | `src/styles/services/[service].css` |
+| Shared service styles | `src/styles/services/services-base.css` |
+| Feature pages | `src/styles/features/features-base.css` |
+| Industry pages | `src/styles/industries/category.css` and `detail.css` |
+| Case studies | `src/styles/case-studies/case-study.css` |
+| Resources | `src/styles/resources/resources.css` |
+| Blog | `src/styles/blog/blog.css` |
+
+Do not create one CSS file per content page. Template/content pages share domain CSS files.
 
 ---
 
-## 8. MENTAL MODEL
+## 7. Component Design Ownership
 
-Use this routing rule before adding styles:
+Active base components and their design responsibilities:
 
-```text
-token value            -> tokens.css
-shared layout / frame  -> layout.css  (SectionFrame, HeroFrame, mw-container)
-reusable atom          -> primitives.css  (Accordion, Tabs, buttons, badges)
-production component   -> components.css  (DecisionPanel, RelatedSection, FAQSection, Header, Footer)
-page-specific visuals  -> domain/page CSS  (home.css, smart-website.css, etc.)
+**`SectionFrame`** (`src/components/layout/`):
+Owns the normal section shell: `<section>`, `mw-container`, padding, tone/background, heading block (kicker, title via `InlineText`, description). Does not own page body visuals.
+
+**`HeroFrame`** (`src/components/layout/`):
+Owns the hero section shell: `<section>`, container, split layout, copy side (title, description, actions, chips), visual slot, texture slot. Does not own page-specific visual internals.
+
+**`DecisionPanel`** (`src/components/conversion/`):
+Owns the final conversion section: heading, actions, reassurance text, expectations, gradient background. All new and rebuilt pages use `DecisionPanel` — not manual CTA markup.
+
+**`FAQSection`** (`src/components/content/`):
+Full reusable FAQ content section. Wraps `SectionFrame` + `Accordion`. Props: `eyebrow`, `title`, `description`, `items`, `initialOpenId`, `tone`, `variant` (stacked / split). Use for all FAQ sections in new/rebuilt pages.
+
+**`RelatedSection`** (`src/components/navigation/`):
+Global related-content section. Injected by domain config wrappers. Page renderers do not render their own related sections. Config: `relatedSection: { enabled?, variant? }`.
+
+**`Accordion`** (`src/components/primitives/`):
+Disclosure primitive only. No section shell, no container, no heading. Used internally by `FAQSection`. Use directly only when `FAQSection` does not apply.
+
+**`Tabs`** (`src/components/primitives/`):
+Tab primitive. Generic API (`items`, `description`, `entries`). No page-specific tab component variants.
+
+**`InlineText`** (`src/components/primitives/`):
+Renders `[[muted:...]]` markers as `.mw-text-muted` spans inside headings and titles. Used internally by `SectionFrame` and `HeroFrame`. Inline use only.
+
+**`SignalDot`**, **`StatusBadge`** (`src/components/primitives/`):
+Status primitives driven by `AccentKey` / `StatusTone` from `src/types/ui.ts`. Color is always paired with a label — never the sole signal.
+
+**`InternalLink`** (`src/global/`):
+Internal link primitive.
+
+**CSS class namespace summary:**
+
+| CSS prefix | Component | CSS file |
+|---|---|---|
+| `mw-section-frame` | `SectionFrame` | `layout.css` |
+| `mw-hero-section` | `HeroFrame` | `layout.css` |
+| `mw-decision-panel` | `DecisionPanel` | `components.css` |
+| `mw-related-section` | `RelatedSection` | `components.css` |
+| `mw-faq-section` | `FAQSection` | `components.css` |
+| `mw-accordion` | `Accordion` | `primitives.css` |
+| `mw-tabs` | `Tabs` | `primitives.css` |
+| `mw-text-muted` | `InlineText [[muted:...]]` | `layout.css` |
+| `mw-btn`, `mw-btn--*` | button primitives | `primitives.css` |
+| `mw-badge`, `mw-badge--*` | badge/eyebrow | `primitives.css` |
+| `mw-animate-*` | motion utilities | `layout.css` |
+
+---
+
+## 8. Page CSS Ownership
+
+Page CSS files own page-specific visual bodies only. They do not own:
+- section shells (owned by `SectionFrame` / `HeroFrame`)
+- heading blocks (owned by `SectionFrame`)
+- FAQ sections (owned by `FAQSection`)
+- final conversion sections (owned by `DecisionPanel`)
+- related sections (owned by `RelatedSection`)
+
+After a page is rebuilt with base components, page CSS should only contain:
+- page-specific card/grid/panel visual rules
+- domain-specific color accents and surface treatments
+- page-specific data visualisations and signal board layouts
+- any custom section visuals that are intentionally unique to that page
+
+Do not duplicate wrapper, heading, CTA, FAQ, or related CSS in page files after migration. Do not use generic names like `.card-grid` or `.process-step` for meaningful page visuals — use domain-prefixed names instead.
+
+---
+
+## 9. Visual Patterns
+
+These are visual pattern families, not mandated reusable components. They describe the vocabulary of layout structures that MindWP pages use.
+
+| Pattern family | Description |
+|---|---|
+| Signal surface | Status/signal panel; active items with state dots and labels |
+| Leak map | Journey-stage leak diagram; flow with highlighted failure points |
+| Ownership boundary | Before/after or fit-filter comparison; two-panel scope definition |
+| System stack / journey rail | Sequential stages or phases with directional flow |
+| Coverage map | Zone or area coverage grid; what is and is not covered |
+| Proof story | Observational scenario or case narrative; before and after context |
+| Workbench / implementation board | Inputs, active work, and output/state display |
+| Fit filter | Strong fit vs poor fit; binary or tiered qualification table |
+| Related rail / list | Related systems, content, or context — compact linked list |
+| Decision panel | Final conversion section; action, reassurance, what-to-expect |
+| FAQ split / stacked | FAQ disclosure in split or stacked layout |
+
+Extract a pattern into a shared component only if it proves reusable across at least two different pages with identical structural requirements. Page-specific visual sections stay custom first.
+
+---
+
+## 10. Typography Rules
+
+**Scale:** Use typography tokens — never hardcode font sizes.
+- Display / hero: `--mw-text-hero`, `--mw-text-h1`
+- Section headings: `--mw-text-h2`, `--mw-text-h2-sm`
+- Sub-headings: `--mw-text-h3`
+- Body copy: `--mw-text-body-lg`, `--mw-text-body`, `--mw-text-body-sm`
+- Labels and kickers: `--mw-text-label`, `--mw-text-label-sm`
+
+**Line heights:** `--mw-leading-tight`, `--mw-leading-heading`, `--mw-leading-snug`, `--mw-leading-body`, `--mw-leading-relaxed`
+
+**Font families:** `--mw-font-sans` (Inter) for product copy; `--mw-font-mono` (JetBrains Mono) for code and machine-style surfaces.
+
+**Rules:**
+- Heading hierarchy must always be clear (`h1` → `h2` → `h3` → body).
+- No all-caps noise except small kicker/label text with clear context.
+- Muted inline text uses `[[muted:...]]` markers in data strings rendered by `InlineText` — do not use `titleMuted` or `headingMuted` props.
+- Readable line lengths — respect `--mw-text-max` for paragraph content.
+- No forced `<br>` line breaks unless intentional and tested across breakpoints.
+- No decorative text gimmicks (outlines, gradient fills, randomly sized words).
+- Dark surfaces must carry correct dark-surface foreground tokens (`--mw-text-on-dark`, `--mw-text-on-dark-muted`).
+
+---
+
+## 11. Color / Surface Rules
+
+**Dark surfaces:**
+Used intentionally to signal depth, ownership, or operational context. Not decorative. Always carry dark-surface foreground tokens. Use `--mw-surface-dark` and gradient variants from `--mw-gradient-*`.
+
+**Light / mist surfaces:**
+Used for breathing room, contrast, or neutral-context sections. Use `--mw-surface-mist`, `--mw-surface-white`.
+
+**Signal colors:**
+`--mw-signal-*` (active, teal, green) and `--mw-risk-*` (warning, error). Signal colors are always paired with a visible label or shape — color alone is never the full signal.
+
+**Gradients:**
+Use gradient tokens (`--mw-gradient-*`). Gradients are quiet, directional, and system-like. No rainbow gradients. No decorative color splashes. Gradient backgrounds must contrast correctly with their foreground text.
+
+**Accent color:**
+Accent is a system signal — it indicates active state, urgency, or structural emphasis. Not decoration.
+
+**Rules:**
+- No raw hex or `rgba()` outside `tokens.css`.
+- No inline `style={{ color: '...' }}` in production TSX.
+- Dark sections must handle contrast explicitly.
+- Status colors are always text-supported.
+
+---
+
+## 12. Motion Rules
+
+Motion system uses `data-js-motion` attribute on `<html>` and `IntersectionObserver` to trigger reveals.
+
+**Classes:** `mw-animate-fade`, `mw-animate-up`, `mw-animate-panel`, `mw-animate-section`, `mw-animate-list`, `mw-animate-stagger`, `mw-animate-line`.
+
+**Rules:**
+- Motion supports clarity and content comprehension. It does not decorate.
+- Use simple reveal motion only: fade, fade-up, stagger, panel slide.
+- No heavy animation libraries. No keyframe sequences that compete with content.
+- Without JS, everything is visible — no motion is required for a functional page.
+- All motion respects `prefers-reduced-motion: reduce` (handled in `layout.css`).
+- Motion must be intentional — if it does not improve comprehension, remove it.
+
+**Invalid motion patterns:**
+- Decorative looping animations
+- Delayed staged reveals for visual effect only
+- Anything that competes with content hierarchy
+
+---
+
+## 13. CTA / Conversion Design
+
+`DecisionPanel` owns the final conversion section on all new and rebuilt pages.
+
+**Design principles:**
+- The final section must clarify what happens next, not hype a benefit.
+- One primary action. Reassurance text below the action. Expectations list (optional).
+- No manual CTA button markup in page renderers — use `DecisionPanel`.
+- Use `buildContactHref()` from `@/lib/contact/contactHref` for action hrefs — no hardcoded `/contact`.
+- Use `PRIMARY_CTA_LABEL` from `@/lib/cta/primaryAction` for the label — no hardcoded strings.
+
+Hero section actions are not conversion CTAs — they support recognition and routing. The final conversion CTA belongs in `DecisionPanel` at the bottom of the page.
+
+---
+
+## 14. Related / FAQ Design
+
+**`RelatedSection`:**
+- Global visual pattern — single server component injected by domain config wrappers.
+- Variants: `standard` (3-col grid), `compact` (list), `rail`.
+- Page renderers do not render their own related sections.
+- Config controls injection via `relatedSection: { enabled?, variant? }` in the domain registry.
+
+**`FAQSection`:**
+- Full FAQ section design owned by `FAQSection`.
+- Variants: `stacked` and `split`. Tone: `white`, `mist`, `dark`.
+- Use `FAQSection` rather than manually composing `SectionFrame` + `Accordion` for new pages.
+
+**`Accordion`:**
+- Disclosure primitive only — no section heading, no container.
+- Do not use raw `<details>` / `<summary>` for FAQ sections in new pages.
+
+---
+
+## 15. Responsive Rules
+
+- Mobile must preserve meaning, not just stack cards.
+- Avoid hiding core decision information or conversion content on mobile.
+- Signal boards and operational panels should collapse to a readable list, not disappear.
+- Journey rails and process flows should re-stack vertically with clear step labels.
+- Spacing uses tokens (`--mw-space-*`) — no hardcoded `px` for spacing in responsive rules.
+- Typography scale is clamp-based — do not override with fixed sizes at breakpoints.
+
+---
+
+## 16. Accessibility Design Rules
+
+- Visible focus states on all interactive elements.
+- Color is never the sole signal — pair with shape, label, or text.
+- Dark and light surfaces must meet readable contrast ratios.
+- `SignalDot` / `StatusBadge` state is always also communicated via label or `aria-label`.
+- Headings follow a logical hierarchy per page — no skipped levels.
+- Interactive controls (Accordion, Tabs) use semantic elements (`<button>`, ARIA roles, ARIA labels).
+- `prefers-reduced-motion` is respected by the motion system.
+- Disabled or placeholder buttons must not appear in the accessibility tree.
+- Do not use `aria-hidden` to hide meaningful content as a substitute for correct structure.
+
+---
+
+## 17. Reuse Rules
+
+**Primitives first.** Before building a page-specific component, check if `SectionFrame`, `HeroFrame`, `Accordion`, `Tabs`, `DecisionPanel`, `FAQSection`, or `RelatedSection` already covers the need.
+
+**Page-specific sections stay custom first.** Do not extract a section into a shared component until the same structural pattern has proven itself across at least two different pages with identical data requirements.
+
+**Extract into a shared component only if:**
+- the same shell/structure is used on two or more distinct pages
+- the data contract is stable and shared
+- extracting it would not reduce the visual distinction between those pages
+
+**Shared component owns shell, page owns narrative body.** `SectionFrame` handles the section wrapper and heading. Page CSS handles the visual body. This boundary must be maintained.
+
+**Avoid premature abstraction.** Over-abstracting pages toward identical templates destroys the visual distinction between MindWP's systems. Each page should look like it belongs to its system, not to a shared template grid.
+
+---
+
+## 18. Legacy Design Notes
+
+The following belong to the old architecture and are not active design rules:
+
+- `rd-*` layout classes (`rd-section`, `rd-container`, `rd-split`, `rd-stack`) — quarantine/delete-later
+- `l-section`, `l-container` — quarantine/delete-later
+- `btn-primary`, `btn-outline` — old button classes; quarantine
+- `foundation.css`, `framework.css` — old CSS layers; deleted
+- `PrimaryCTASection` — quarantine for remaining old consumers; replaced by `DecisionPanel`
+- `RelatedContentSection`, `SmartRelatedSection`, `SmartRelatedSectionClient` — deleted in 6F
+- `SectionShell` — deleted in 6G
+- `src/components/reusable/`, `src/components/sections/` — quarantine; do not import in new/rebuilt files
+- `titleMuted` and `headingMuted` props — replaced by `[[muted:...]]` syntax
+
+These patterns exist only as fallout from unrebuilt pages. For deletion gates and remaining consumers, see `docs/Planning/Legacy-dependency-map.md`.
+
+---
+
+## 19. Mental Model for CSS Decisions
+
+Before writing any CSS or placing any class, route it through this:
+
+```txt
+token value            → tokens.css
+shared layout / frame  → layout.css  (mw-container, SectionFrame, HeroFrame, motion)
+reusable atom          → primitives.css  (Accordion, Tabs, buttons, badges, signals)
+shared component shell → components.css  (DecisionPanel, RelatedSection, FAQSection, Header, Footer)
+page-specific visual   → domain/page CSS  (home.css, smart-website.css, local-seo.css, etc.)
 ```
 
-If a change does not fit one of those layers, stop and place it correctly before editing.
+If a change does not cleanly fit one of those layers, place it correctly before writing it.
 
 ---
 
-## 9. DESIGN AUTHORITY SUMMARY
+## 20. Design Authority Summary
 
-These are the active design truths:
+Active truths:
 
-- the six-layer CSS stack is live: `tokens.css -> reset.css -> typography.css -> layout.css -> primitives.css -> components.css -> domain/page CSS`
-- `--mw-*` tokens drive color, spacing, type, borders, and motion
+- Seven-layer CSS stack: `tokens.css → reset.css → typography.css → layout.css → primitives.css → components.css → page/domain CSS`
+- `--mw-*` tokens drive all color, spacing, typography, borders, shadows, and motion
 - `SectionFrame` owns normal section shells
 - `HeroFrame` owns hero section shells
-- `DecisionPanel` owns final conversion sections
+- `DecisionPanel` owns the final conversion section
 - `FAQSection` owns full FAQ sections
 - `RelatedSection` owns global related-content display, injected by config wrappers
 - `InlineText` renders `[[muted:...]]` markers — no `titleMuted` / `headingMuted` props
-- primitives own reusable interaction surfaces (Accordion, Tabs, buttons, badges)
-- components render with shared styling layers instead of local style systems
-- new components belong in `layout/`, `primitives/`, `conversion/`, `navigation/`, or `content/`
-- `src/components/reusable` and `src/components/sections` are quarantine/delete-later only
+- `Accordion` and `Tabs` are behavior primitives owned by `primitives.css`
+- New components belong in `layout/`, `primitives/`, `conversion/`, `navigation/`, or `content/`
+- Page CSS owns visual bodies only — not shells, headings, FAQ, CTA, or related sections
+- Component styling belongs in CSS, not JSX condition trees or inline styles
 
-Anything outside that model is drift.
+Anything outside this model is drift.
 
-> **Legacy note:** The `rd-*` layout system, `foundation.css`, and `framework.css` are from the old architecture. They remain only as quarantine fallout for unrebuilt pages. They are not active design authority.
----
-
-## 10. UI SYSTEM + COMPONENT ARCHITECTURE ALIGNMENT
-
-This system does NOT treat components as isolated UI blocks.
-
-Components are:
-→ system surfaces  
-→ content structures  
-→ conversion carriers  
-
-They must align with:
-- FOUNDATION (business + positioning)
-- CONTENT (page behavior)
-- CONVERSION (intent + flow)
-- GRAPH (relationships)
-
----
-
-### COMPONENT DESIGN RULES (SYSTEM LEVEL)
-
-- Components must reflect real content structure (not generic layouts)
-- Components must not be created for visual variation only
-- Components must support deterministic rendering (no randomness, no guessing)
-- Components must map to real page sections and narrative flow
-- Components must preserve page-type behavior (landing, system, entry)
-
----
-
-### UI QUALITY RULES (MANDATORY)
-
-Every component must enforce:
-
-Visual Hierarchy
-- clear primary → secondary → tertiary structure
-- scannable layout (no flat blocks)
-
-Layout Behavior
-- avoid repetitive grids as default
-- allow asymmetry where it improves clarity
-- control density (compact / medium / spacious)
-
-Interaction Layer
-- subtle hover states allowed
-- no decorative or unnecessary animation
-- interaction must improve understanding, not distract
-
-Attention Control
-- first visible element must be intentional
-- reading flow must guide progression
-
----
----
-
-### INTERACTION AS SYSTEM BEHAVIOR (CRITICAL)
-
-Interaction is NOT decoration.
-
-Interaction is part of how the component communicates meaning.
-
-Rules:
-
-- Interaction must reinforce structure, not distract from it
-- Interaction must help the user understand relationships (flow, grouping, priority)
-- Interaction must be predictable and consistent across components
-
-Valid interaction patterns:
-
-- hover focus (highlighting one item within a group)
-- progressive disclosure (FAQ, expandable details)
-- emphasis shift (focus moves between items)
-- subtle state feedback (active, selected, highlighted)
-
-Invalid interaction patterns:
-
-- decorative animation with no meaning
-- delayed or staged reveals for visual effect
-- motion that competes with content hierarchy
-
-If interaction does not improve clarity, it must not exist.
-
----
-
-### COMPONENT QUALITY BAR (ANTI-GENERIC RULE)
-
-The system must actively reject generic UI patterns.
-
-Not allowed:
-
-- repeated card grids as default layout
-- flat sections with no hierarchy
-- identical cards with equal visual weight
-- template-style SaaS sections reused across pages
-- components that do not change scanning behavior
-
-Required:
-
-- clear hierarchy (primary → secondary → supporting)
-- intentional layout differences between sections
-- controlled asymmetry where it improves clarity
-- visible grouping based on meaning (not spacing only)
-- variation driven by structure, not styling
-
----
-
-### SCANNING BEHAVIOR RULE
-
-Every component must define how it is scanned.
-
-Examples:
-
-- Grid → peer scanning (no dependency)
-- Stack → top-to-bottom dependency
-- Timeline → directional progression
-- Map → group → item → detail
-
-Rule:
-
-If scanning order is unclear, the component is incorrectly designed.
-
----
-
-### STRUCTURE OVER STYLE RULE
-
-Design decisions must prioritize structure over styling.
-
-- Layout, grouping, and hierarchy come first
-- Color, spacing, and typography support structure
-- Styling must never be used to fake structural differences
-
-If a difference can be removed without changing meaning,
-it is not a structural difference.
-
-### COMPONENT VS SECTION RULE
-
-In MindWP:
-
-Section = content intent + narrative role  
-Component = structural + visual system to render that section  
-
-Rules:
-- Do not design components without section intent
-- Do not design sections without component mapping
-- Component system must follow page flow (not arbitrary placement)
-
----
-
-### VARIANT RULE (STRICT)
-
-Variants are structural differences, not styling changes.
-
-A valid variant must change at least one of:
-- layout structure (grid vs stack vs split)
-- content grouping
-- data requirement
-- semantic meaning
-
-Invalid variants:
-- color-only changes
-- spacing-only changes
-- naming-only differences
-
----
-
-### DATA ALIGNMENT RULE
-
-Components must respect real data.
-
-Rules:
-- Read existing data before adding new props
-- Do not invent props without need
-- Prefer extending existing data structures over creating new ones
-- Content richness must come from real data, not UI placeholders
-
----
-
-### SYSTEM CONSISTENCY RULE
-
-The UI system must:
-
-- scale across all page types
-- prevent visual repetition across pages
-- support controlled uniqueness per page
-- remain predictable for developers
-
----
-
-### FINAL PRINCIPLE
-
-This is NOT a component library.
-
-This is:
-→ a deterministic UI system driven by content, business logic, and conversion flow
-
-Any component that does not support this must be removed or redesigned.
 

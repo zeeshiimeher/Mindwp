@@ -208,6 +208,8 @@ Do not:
 
 ## 8. CSS Architecture
 
+> Long-term visual and design system rules live in `docs/core/DESIGN.md`.
+
 Current/new target structure:
 
 ```txt
