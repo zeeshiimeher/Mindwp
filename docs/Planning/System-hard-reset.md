@@ -186,3 +186,15 @@ Hard reset is complete when:
 - Old UI files are deleted when all consumers are gone.
 
 Non-negotiable: frontend can be in motion during reset, but architecture cannot drift. Data follows section meaning. CSS follows tokens. Validators protect the new system, not old UI.
+
+---
+
+## 9. Active Tracker
+
+| Area | Status | Notes |
+|---|---|---|
+| Baseline pages | Stable | Homepage, SWS, LSA rebuilt and content-aligned |
+| Base components | Stable | SectionFrame layout flexibility audited — no changes needed at this stage |
+| Next target | Pending | AI Lead Handling audit starts at Prompt 3 |
+| Legacy quarantine | Active | PrimaryCTASection and reusable folders remain delete-later; rd-* layout classes are quarantine/delete-later (DESIGN.md) |
+| Open follow-ups | Active | Case-study RelatedSection injection pending; PrimaryCTASection consumers remain across unrebuilt domains |
