@@ -39,7 +39,7 @@ Items below are confirmed deleted and must not appear as active requirements in 
 - **`lsa-cycle` raw section exception** — Resolved in 6L. `SectionFrame` now wraps it correctly.
 - **`CaseStudyTemplate` `RelatedSection` direct import** — Resolved in 6M. No template-owned related exceptions remain.
 - **`CaseStudyTemplate` `PrimaryCTASection` direct import** — Resolved in 6N. Now uses `DecisionPanel`.
-- **`SLUGS_WITH_OWN_RELATED`** — Removed in 6A/6F. Replaced by `options.relatedContent` registry contract.
+- **`SLUGS_WITH_OWN_RELATED`** — Removed in 6A/6F. Replaced by `relatedSection` config: `{ enabled?, variant? }`.
 - **`src/components/sections/types.ts`** — Deleted in 6G. Types inlined into `PrimaryCTASection.tsx`.
 
 ---

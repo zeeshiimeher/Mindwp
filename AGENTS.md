@@ -22,7 +22,7 @@ CONTENT → PATTERN → COMPONENT → VARIANT / CONTROL → RENDER
 1. current scoped user prompt
 2. `docs/Planning/System-hard-reset.md` — architecture rules, build rules, component ownership, CSS rules, build order
 3. `docs/Planning/Legacy-dependency-map.md` — live old dependency map, delete gates
-4. `docs/core/*` for business, writing, content, conversion, design, and system rules; `docs/ops/WORKFLOW.md` for workflow rules
+4. `docs/core/*` for business, writing, content, conversion, design, and system rules
 5. current code
 6. `AGENTS.md` as stable background guidance
 

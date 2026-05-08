@@ -1101,8 +1101,8 @@ Shared base components own their CSS in global files (`layout.css`, `components.
 | `mw-decision-panel` | `components.css` | DecisionPanel |
 | `mw-related-section` | `components.css` | RelatedSection |
 | `mw-faq-section` | `components.css` | FAQSection |
-| `mw-accordion` | `components.css` | Accordion |
-| `mw-tabs` | `components.css` | Tabs |
+| `mw-accordion` | `primitives.css` | Accordion |
+| `mw-tabs` | `primitives.css` | Tabs |
 | `mw-text-muted` | `layout.css` | InlineText `[[muted:...]]` |
 
 After migrating a page to `SectionFrame` / `HeroFrame` / `FAQSection` / `DecisionPanel` / `RelatedSection`, remove the corresponding duplicate wrapper/header/intro/action/FAQ/related CSS from the page CSS file.
