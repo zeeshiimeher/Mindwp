@@ -2,19 +2,17 @@ import { InlineText } from '@/components/primitives/InlineText';
 
 // -- Types --------------------------------------------------------------------
 
-type SectionFrameTone = 'mist' | 'white' | 'dark';
+type SectionFrameTone =
+  | 'mist'
+  | 'white'
+  | 'dark'
+  | 'gradient-dark'
+  | 'gradient-mist'
+  | 'gradient-teal';
 
-/**
- * 'narrow' constrains the heading block to a readable max-width (56ch).
- * Default leaves the header width unconstrained.
- */
-type SectionFrameHeaderWidth = 'default' | 'narrow';
+type SectionFrameLayout = 'stack' | 'split';
 
-/**
- * 'relaxed' increases the gap between the heading block and body content.
- * Default uses the standard content gap.
- */
-type SectionFrameGap = 'default' | 'relaxed';
+type SectionFrameRatio = '50-50' | '40-60' | '60-40';
 
 type SectionFrameHeading = {
   kicker?: string;
@@ -25,8 +23,9 @@ type SectionFrameHeading = {
 export type SectionFrameProps = {
   heading: SectionFrameHeading;
   tone?: SectionFrameTone;
-  headerWidth?: SectionFrameHeaderWidth;
-  gap?: SectionFrameGap;
+  layout?: SectionFrameLayout;
+  ratio?: SectionFrameRatio;
+  contentClassName?: string;
   ariaLabel?: string;
   className?: string;
   children?: React.ReactNode;
@@ -37,15 +36,17 @@ export type SectionFrameProps = {
 /**
  * SectionFrame — standard section wrapper.
  *
- * Owns: <section>, mw-container, heading block (kicker, h2, description), tone,
- * header width, and header–body gap.
+ * Owns: <section>, mw-container, heading block (kicker, h2, description), tone/background,
+ * section padding, and optional split layout.
  * Use [[muted:...]] inline syntax in heading.title for muted segments.
+ * Default layout='stack'. Use layout='split' for side-by-side heading + content columns.
  */
 export function SectionFrame({
   heading,
   tone,
-  headerWidth,
-  gap,
+  layout,
+  ratio,
+  contentClassName,
   ariaLabel,
   className,
   children,
@@ -54,34 +55,53 @@ export function SectionFrame({
     throw new Error('[SectionFrame] requires heading.title');
   }
 
+  const isSplit = layout === 'split';
+
   const sectionClass = [
     'mw-section-frame',
     tone ? `mw-section-frame--${tone}` : null,
-    headerWidth === 'narrow' ? 'mw-section-frame--header-narrow' : null,
-    gap === 'relaxed' ? 'mw-section-frame--gap-relaxed' : null,
+    isSplit ? 'mw-section-frame--layout-split' : 'mw-section-frame--layout-stack',
+    isSplit && ratio ? `mw-section-frame--ratio-${ratio}` : null,
     className ?? null,
   ]
     .filter(Boolean)
     .join(' ');
 
+  const header = (
+    <div className='mw-section-frame__header mw-animate-up'>
+      {heading.kicker && (
+        <div className='mw-section-frame__eyebrow'>
+          <span className='mw-section-frame__eyebrow-dot' aria-hidden={true} />
+          <span>{heading.kicker}</span>
+        </div>
+      )}
+      <h2 className='mw-section-frame__heading'>
+        <InlineText value={heading.title} />
+      </h2>
+      {heading.description && (
+        <p className='mw-section-frame__description'>{heading.description}</p>
+      )}
+    </div>
+  );
+
   return (
     <section className={sectionClass} aria-label={ariaLabel}>
       <div className='mw-container'>
-        <div className='mw-section-frame__header mw-animate-up'>
-          {heading.kicker && (
-            <div className='mw-section-frame__eyebrow'>
-              <span className='mw-section-frame__eyebrow-dot' aria-hidden={true} />
-              <span>{heading.kicker}</span>
+        {isSplit ? (
+          <div className='mw-section-frame__inner'>
+            {header}
+            <div
+              className={['mw-section-frame__content', contentClassName].filter(Boolean).join(' ')}
+            >
+              {children}
             </div>
-          )}
-          <h2 className='mw-section-frame__heading'>
-            <InlineText value={heading.title} />
-          </h2>
-          {heading.description && (
-            <p className='mw-section-frame__description'>{heading.description}</p>
-          )}
-        </div>
-        {children}
+          </div>
+        ) : (
+          <>
+            {header}
+            {children}
+          </>
+        )}
       </div>
     </section>
   );

@@ -37,6 +37,7 @@ MindWP design should feel: **operational, precise, calm, conversion-focused**.
 Every design decision should read like infrastructure, not a brochure.
 
 **Aim for:**
+
 - system-first — surfaces feel like dashboards and operational panels, not landing pages
 - clear before clever — hierarchy and meaning before visual interest
 - quiet authority — typographically strong, not decorative
@@ -44,6 +45,7 @@ Every design decision should read like infrastructure, not a brochure.
 - purposeful contrast — dark surfaces signal depth and ownership, not aesthetics
 
 **Avoid:**
+
 - generic agency look (random card grids, testimonial carousels, stock-photo hero)
 - SaaS dashboard cosplay (fake charts, decorative progress bars, pointless status badges)
 - over-designed process diagrams that obscure rather than clarify
@@ -97,15 +99,15 @@ page/domain CSS → page-specific visual bodies only
 
 **Layer ownership rule:**
 
-| Layer | Contains |
-|---|---|
-| `tokens.css` | all `--mw-*` definitions; raw values only |
-| `reset.css` | browser reset; nothing custom |
-| `typography.css` | font stack, scale, line heights |
-| `layout.css` | `mw-container`, `SectionFrame`, `HeroFrame`, motion classes |
-| `primitives.css` | buttons, badges, Accordion, Tabs, signal/status primitives |
-| `components.css` | DecisionPanel, RelatedSection, FAQSection, Header, Footer |
-| page/domain CSS | page visual classes only |
+| Layer            | Contains                                                    |
+| ---------------- | ----------------------------------------------------------- |
+| `tokens.css`     | all `--mw-*` definitions; raw values only                   |
+| `reset.css`      | browser reset; nothing custom                               |
+| `typography.css` | font stack, scale, line heights                             |
+| `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion classes |
+| `primitives.css` | buttons, badges, Accordion, Tabs, signal/status primitives  |
+| `components.css` | DecisionPanel, RelatedSection, FAQSection, Header, Footer   |
+| page/domain CSS  | page visual classes only                                    |
 
 The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 
@@ -135,6 +137,7 @@ The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 - z-index and breakpoint tokens
 
 **Rules:**
+
 - Do not invent token names. Confirm the token exists in `tokens.css` before consuming it.
 - If a new visual value is needed, add the token to `tokens.css` first.
 - Do not create one-off tokens per section (bad: `--home-hero-left-special-gap`).
@@ -153,6 +156,7 @@ The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 **Readable text:** constrained by `--mw-text-max`. Do not stretch readable paragraphs to full container width.
 
 **Section shells:**
+
 - Normal content sections use `SectionFrame` — owns `<section>`, `mw-container`, padding, heading block, tone/bg.
 - Hero sections use `HeroFrame` — owns hero `<section>`, split layout, copy, actions, chips, visual slot.
 - Do not manually compose `<section>` + container + heading for normal or hero sections.
@@ -160,29 +164,29 @@ The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 
 **CSS prefixes for page sections:** use semantic domain prefixes only:
 
-| Domain | Prefix |
-|---|---|
-| Homepage | `home-*` |
-| Smart Website Systems | `sws-*` |
-| Local SEO Authority | `lsa-*` |
-| Feature pages | `feature-*` |
-| Industry pages | `industry-*` |
-| Case studies | `case-*` |
-| Resources | `resource-*` |
-| Blog | `blog-*` |
+| Domain                | Prefix       |
+| --------------------- | ------------ |
+| Homepage              | `home-*`     |
+| Smart Website Systems | `sws-*`      |
+| Local SEO Authority   | `lsa-*`      |
+| Feature pages         | `feature-*`  |
+| Industry pages        | `industry-*` |
+| Case studies          | `case-*`     |
+| Resources             | `resource-*` |
+| Blog                  | `blog-*`     |
 
 **CSS folder ownership:**
 
-| Page/domain | CSS location |
-|---|---|
-| Homepage | `src/styles/pages/home.css` |
-| Flagship service pages | `src/styles/services/[service].css` |
-| Shared service styles | `src/styles/services/services-base.css` |
-| Feature pages | `src/styles/features/features-base.css` |
-| Industry pages | `src/styles/industries/category.css` and `detail.css` |
-| Case studies | `src/styles/case-studies/case-study.css` |
-| Resources | `src/styles/resources/resources.css` |
-| Blog | `src/styles/blog/blog.css` |
+| Page/domain            | CSS location                                          |
+| ---------------------- | ----------------------------------------------------- |
+| Homepage               | `src/styles/pages/home.css`                           |
+| Flagship service pages | `src/styles/services/[service].css`                   |
+| Shared service styles  | `src/styles/services/services-base.css`               |
+| Feature pages          | `src/styles/features/features-base.css`               |
+| Industry pages         | `src/styles/industries/category.css` and `detail.css` |
+| Case studies           | `src/styles/case-studies/case-study.css`              |
+| Resources              | `src/styles/resources/resources.css`                  |
+| Blog                   | `src/styles/blog/blog.css`                            |
 
 Do not create one CSS file per content page. Template/content pages share domain CSS files.
 
@@ -224,25 +228,26 @@ Internal link primitive.
 
 **CSS class namespace summary:**
 
-| CSS prefix | Component | CSS file |
-|---|---|---|
-| `mw-section-frame` | `SectionFrame` | `layout.css` |
-| `mw-hero-section` | `HeroFrame` | `layout.css` |
-| `mw-decision-panel` | `DecisionPanel` | `components.css` |
-| `mw-related-section` | `RelatedSection` | `components.css` |
-| `mw-faq-section` | `FAQSection` | `components.css` |
-| `mw-accordion` | `Accordion` | `primitives.css` |
-| `mw-tabs` | `Tabs` | `primitives.css` |
-| `mw-text-muted` | `InlineText [[muted:...]]` | `layout.css` |
-| `mw-btn`, `mw-btn--*` | button primitives | `primitives.css` |
-| `mw-badge`, `mw-badge--*` | badge/eyebrow | `primitives.css` |
-| `mw-animate-*` | motion utilities | `layout.css` |
+| CSS prefix                | Component                  | CSS file         |
+| ------------------------- | -------------------------- | ---------------- |
+| `mw-section-frame`        | `SectionFrame`             | `layout.css`     |
+| `mw-hero-section`         | `HeroFrame`                | `layout.css`     |
+| `mw-decision-panel`       | `DecisionPanel`            | `components.css` |
+| `mw-related-section`      | `RelatedSection`           | `components.css` |
+| `mw-faq-section`          | `FAQSection`               | `components.css` |
+| `mw-accordion`            | `Accordion`                | `primitives.css` |
+| `mw-tabs`                 | `Tabs`                     | `primitives.css` |
+| `mw-text-muted`           | `InlineText [[muted:...]]` | `layout.css`     |
+| `mw-btn`, `mw-btn--*`     | button primitives          | `primitives.css` |
+| `mw-badge`, `mw-badge--*` | badge/eyebrow              | `primitives.css` |
+| `mw-animate-*`            | motion utilities           | `layout.css`     |
 
 ---
 
 ## 8. Page CSS Ownership
 
 Page CSS files own page-specific visual bodies only. They do not own:
+
 - section shells (owned by `SectionFrame` / `HeroFrame`)
 - heading blocks (owned by `SectionFrame`)
 - FAQ sections (owned by `FAQSection`)
@@ -250,6 +255,7 @@ Page CSS files own page-specific visual bodies only. They do not own:
 - related sections (owned by `RelatedSection`)
 
 After a page is rebuilt with base components, page CSS should only contain:
+
 - page-specific card/grid/panel visual rules
 - domain-specific color accents and surface treatments
 - page-specific data visualisations and signal board layouts
@@ -263,19 +269,19 @@ Do not duplicate wrapper, heading, CTA, FAQ, or related CSS in page files after 
 
 These are visual pattern families, not mandated reusable components. They describe the vocabulary of layout structures that MindWP pages use.
 
-| Pattern family | Description |
-|---|---|
-| Signal surface | Status/signal panel; active items with state dots and labels |
-| Leak map | Journey-stage leak diagram; flow with highlighted failure points |
-| Ownership boundary | Before/after or fit-filter comparison; two-panel scope definition |
-| System stack / journey rail | Sequential stages or phases with directional flow |
-| Coverage map | Zone or area coverage grid; what is and is not covered |
-| Proof story | Observational scenario or case narrative; before and after context |
-| Workbench / implementation board | Inputs, active work, and output/state display |
-| Fit filter | Strong fit vs poor fit; binary or tiered qualification table |
-| Related rail / list | Related systems, content, or context — compact linked list |
-| Decision panel | Final conversion section; action, reassurance, what-to-expect |
-| FAQ split / stacked | FAQ disclosure in split or stacked layout |
+| Pattern family                   | Description                                                        |
+| -------------------------------- | ------------------------------------------------------------------ |
+| Signal surface                   | Status/signal panel; active items with state dots and labels       |
+| Leak map                         | Journey-stage leak diagram; flow with highlighted failure points   |
+| Ownership boundary               | Before/after or fit-filter comparison; two-panel scope definition  |
+| System stack / journey rail      | Sequential stages or phases with directional flow                  |
+| Coverage map                     | Zone or area coverage grid; what is and is not covered             |
+| Proof story                      | Observational scenario or case narrative; before and after context |
+| Workbench / implementation board | Inputs, active work, and output/state display                      |
+| Fit filter                       | Strong fit vs poor fit; binary or tiered qualification table       |
+| Related rail / list              | Related systems, content, or context — compact linked list         |
+| Decision panel                   | Final conversion section; action, reassurance, what-to-expect      |
+| FAQ split / stacked              | FAQ disclosure in split or stacked layout                          |
 
 Extract a pattern into a shared component only if it proves reusable across at least two different pages with identical structural requirements. Page-specific visual sections stay custom first.
 
@@ -284,6 +290,7 @@ Extract a pattern into a shared component only if it proves reusable across at l
 ## 10. Typography Rules
 
 **Scale:** Use typography tokens — never hardcode font sizes.
+
 - Display / hero: `--mw-text-hero`, `--mw-text-h1`
 - Section headings: `--mw-text-h2`, `--mw-text-h2-sm`
 - Sub-headings: `--mw-text-h3`
@@ -295,6 +302,7 @@ Extract a pattern into a shared component only if it proves reusable across at l
 **Font families:** `--mw-font-sans` (Inter) for product copy; `--mw-font-mono` (JetBrains Mono) for code and machine-style surfaces.
 
 **Rules:**
+
 - Heading hierarchy must always be clear (`h1` → `h2` → `h3` → body).
 - No all-caps noise except small kicker/label text with clear context.
 - Muted inline text uses `[[muted:...]]` markers in data strings rendered by `InlineText` — do not use `titleMuted` or `headingMuted` props.
@@ -323,6 +331,7 @@ Use gradient tokens (`--mw-gradient-*`). Gradients are quiet, directional, and s
 Accent is a system signal — it indicates active state, urgency, or structural emphasis. Not decoration.
 
 **Rules:**
+
 - No raw hex or `rgba()` outside `tokens.css`.
 - No inline `style={{ color: '...' }}` in production TSX.
 - Dark sections must handle contrast explicitly.
@@ -337,6 +346,7 @@ Motion system uses `data-js-motion` attribute on `<html>` and `IntersectionObser
 **Classes:** `mw-animate-fade`, `mw-animate-up`, `mw-animate-panel`, `mw-animate-section`, `mw-animate-list`, `mw-animate-stagger`, `mw-animate-line`.
 
 **Rules:**
+
 - Motion supports clarity and content comprehension. It does not decorate.
 - Use simple reveal motion only: fade, fade-up, stagger, panel slide.
 - No heavy animation libraries. No keyframe sequences that compete with content.
@@ -345,6 +355,7 @@ Motion system uses `data-js-motion` attribute on `<html>` and `IntersectionObser
 - Motion must be intentional — if it does not improve comprehension, remove it.
 
 **Invalid motion patterns:**
+
 - Decorative looping animations
 - Delayed staged reveals for visual effect only
 - Anything that competes with content hierarchy
@@ -356,6 +367,7 @@ Motion system uses `data-js-motion` attribute on `<html>` and `IntersectionObser
 `DecisionPanel` owns the final conversion section on all new and rebuilt pages.
 
 **Design principles:**
+
 - The final section must clarify what happens next, not hype a benefit.
 - One primary action. Reassurance text below the action. Expectations list (optional).
 - No manual CTA button markup in page renderers — use `DecisionPanel`.
@@ -369,17 +381,20 @@ Hero section actions are not conversion CTAs — they support recognition and ro
 ## 14. Related / FAQ Design
 
 **`RelatedSection`:**
+
 - Global visual pattern — single server component injected by domain config wrappers.
 - Variants: `standard` (3-col grid), `compact` (list), `rail`.
 - Page renderers do not render their own related sections.
 - Config controls injection via `relatedSection: { enabled?, variant? }` in the domain registry.
 
 **`FAQSection`:**
+
 - Full FAQ section design owned by `FAQSection`.
 - Variants: `stacked` and `split`. Tone: `white`, `mist`, `dark`.
 - Use `FAQSection` rather than manually composing `SectionFrame` + `Accordion` for new pages.
 
 **`Accordion`:**
+
 - Disclosure primitive only — no section heading, no container.
 - Do not use raw `<details>` / `<summary>` for FAQ sections in new pages.
 
@@ -417,6 +432,7 @@ Hero section actions are not conversion CTAs — they support recognition and ro
 **Page-specific sections stay custom first.** Do not extract a section into a shared component until the same structural pattern has proven itself across at least two different pages with identical data requirements.
 
 **Extract into a shared component only if:**
+
 - the same shell/structure is used on two or more distinct pages
 - the data contract is stable and shared
 - extracting it would not reduce the visual distinction between those pages
@@ -424,12 +440,17 @@ Hero section actions are not conversion CTAs — they support recognition and ro
 **Shared component owns shell, page owns narrative body.** `SectionFrame` handles the section wrapper and heading. Page CSS handles the visual body. This boundary must be maintained.
 
 **SectionFrame shell ownership rules (enforced by validator):**
-- Section background and padding-block are owned by `SectionFrame`. Use the `tone` prop (`mist`/`white`/`dark`). Do not duplicate in page CSS.
-- Header max-width is owned by `SectionFrame`. Use `headerWidth='narrow'` (56ch). Do not set `max-width` on `.mw-section-frame__header` in page CSS.
-- Header–body gap is owned by `SectionFrame`. Use `gap='relaxed'` (4rem). Do not set `margin-bottom` on `.mw-section-frame__header` in page CSS.
-- Text colors for heading/description/eyebrow in dark sections are owned by `tone='dark'`. Do not override in page CSS.
+
+- Section background and padding-block are owned by `SectionFrame`. Use the `tone` prop (`mist` / `white` / `dark` / `gradient-dark` / `gradient-mist` / `gradient-teal`). Do not duplicate in page CSS.
+- Text colors for heading/description/eyebrow in dark/gradient-dark sections are owned by the tone system. Do not override in page CSS.
 - Rebuilt page CSS must NOT contain selectors targeting `.mw-section-frame__header`, `.mw-section-frame__heading`, `.mw-section-frame__description`, or `.mw-section-frame__eyebrow`.
-- Exception: unique gradient backgrounds (not representable as a standard tone) may be set in page CSS. The redundant `padding-block` must still be removed.
+- Page CSS owns only visual body content: cards, grids, panels, data visualisations, textures, domain-specific widgets.
+
+**SectionFrame layout variants:**
+
+- Default: `layout='stack'` — header stacks above body. Existing behavior. No change to current pages.
+- `layout='split'` — header and body in side-by-side columns. Add `ratio` to control column widths (`50-50` / `40-60` / `60-40`).
+- Do not add `headerWidth` or `gap` props. These concepts do not exist in the current API.
 
 **Avoid premature abstraction.** Over-abstracting pages toward identical templates destroys the visual distinction between MindWP's systems. Each page should look like it belongs to its system, not to a shared template grid.
 
@@ -487,5 +508,3 @@ Active truths:
 - Component styling belongs in CSS, not JSX condition trees or inline styles
 
 Anything outside this model is drift.
-
-

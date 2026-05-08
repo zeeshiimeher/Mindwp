@@ -387,7 +387,6 @@
 }
 
 @keyframes mw-pulse-dot {
-
   0%,
   100% {
     opacity: 1;
@@ -416,7 +415,7 @@
 [data-js-motion] .mw-animate-panel,
 [data-js-motion] .mw-animate-section,
 [data-js-motion] .mw-animate-list,
-[data-js-motion] .mw-animate-stagger>* {
+[data-js-motion] .mw-animate-stagger > * {
   opacity: 0;
   transition:
     opacity var(--mw-dur-slow) var(--mw-ease-out),
@@ -433,7 +432,7 @@
   transform: translateY(0.75rem);
 }
 
-[data-js-motion] .mw-animate-stagger>* {
+[data-js-motion] .mw-animate-stagger > * {
   transform: translateY(0.75rem);
 }
 
@@ -452,7 +451,7 @@
 [data-js-motion] .mw-animate-panel.is-visible,
 [data-js-motion] .mw-animate-section.is-visible,
 [data-js-motion] .mw-animate-list.is-visible,
-[data-js-motion] .mw-animate-stagger.is-visible>* {
+[data-js-motion] .mw-animate-stagger.is-visible > * {
   opacity: 1;
   transform: translateY(0);
 }
@@ -464,53 +463,52 @@
 }
 
 /* Stagger delays — first 8 children */
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(1) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(1) {
   transition-delay: 0ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(2) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(2) {
   transition-delay: 60ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(3) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(3) {
   transition-delay: 120ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(4) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(4) {
   transition-delay: 180ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(5) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(5) {
   transition-delay: 240ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(6) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(6) {
   transition-delay: 300ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(7) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(7) {
   transition-delay: 360ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(8) {
+[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(8) {
   transition-delay: 420ms;
 }
 
 /* Reduced motion — force-reveal everything immediately */
 @media (prefers-reduced-motion: reduce) {
-
   [data-js-motion] .mw-animate-fade,
   [data-js-motion] .mw-animate-up,
   [data-js-motion] .mw-animate-panel,
   [data-js-motion] .mw-animate-section,
   [data-js-motion] .mw-animate-list,
-  [data-js-motion] .mw-animate-stagger>*,
+  [data-js-motion] .mw-animate-stagger > *,
   [data-js-motion] .mw-animate-fade.is-visible,
   [data-js-motion] .mw-animate-up.is-visible,
   [data-js-motion] .mw-animate-panel.is-visible,
   [data-js-motion] .mw-animate-section.is-visible,
   [data-js-motion] .mw-animate-list.is-visible,
-  [data-js-motion] .mw-animate-stagger.is-visible>* {
+  [data-js-motion] .mw-animate-stagger.is-visible > * {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -562,20 +560,37 @@
   background: var(--mw-bg-dark);
 }
 
-/* Dark tone text overrides */
-.mw-section-frame--dark .mw-section-frame__heading {
+/* Gradient tone variants */
+.mw-section-frame--gradient-dark {
+  background: var(--mw-gradient-section-dark);
+}
+
+.mw-section-frame--gradient-mist {
+  background: var(--mw-gradient-section-mist);
+}
+
+.mw-section-frame--gradient-teal {
+  background: var(--mw-gradient-section-teal);
+}
+
+/* Dark tone text overrides — applies to both solid dark and gradient-dark */
+.mw-section-frame--dark .mw-section-frame__heading,
+.mw-section-frame--gradient-dark .mw-section-frame__heading {
   color: var(--mw-color-white);
 }
 
-.mw-section-frame--dark .mw-section-frame__heading-muted {
+.mw-section-frame--dark .mw-section-frame__heading-muted,
+.mw-section-frame--gradient-dark .mw-section-frame__heading-muted {
   color: var(--mw-white-50);
 }
 
-.mw-section-frame--dark .mw-section-frame__description {
+.mw-section-frame--dark .mw-section-frame__description,
+.mw-section-frame--gradient-dark .mw-section-frame__description {
   color: var(--mw-white-60);
 }
 
-.mw-section-frame--dark .mw-section-frame__eyebrow {
+.mw-section-frame--dark .mw-section-frame__eyebrow,
+.mw-section-frame--gradient-dark .mw-section-frame__eyebrow {
   color: var(--mw-white-45);
 }
 
@@ -583,14 +598,38 @@
   margin-bottom: var(--mw-space-content-lg);
 }
 
-/* Header width variant — constrains the heading block to a readable width */
-.mw-section-frame--header-narrow .mw-section-frame__header {
-  max-width: 56ch;
+/* ── Split layout variants ── */
+
+.mw-section-frame--layout-split .mw-section-frame__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-gap-cols);
+  align-items: start;
 }
 
-/* Gap variant — relaxed increases heading block bottom gap for visual breathing room */
-.mw-section-frame--gap-relaxed .mw-section-frame__header {
-  margin-bottom: var(--mw-space-16);
+@media (min-width: 980px) {
+  .mw-section-frame--layout-split.mw-section-frame--ratio-50-50 .mw-section-frame__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mw-section-frame--layout-split.mw-section-frame--ratio-40-60 .mw-section-frame__inner {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .mw-section-frame--layout-split.mw-section-frame--ratio-60-40 .mw-section-frame__inner {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  /* Default split (no ratio specified): equal columns */
+  .mw-section-frame--layout-split:not([class*='mw-section-frame--ratio-'])
+    .mw-section-frame__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* In split layout, header has no bottom margin (spacing comes from grid gap) */
+.mw-section-frame--layout-split .mw-section-frame__header {
+  margin-bottom: 0;
 }
 
 .mw-section-frame__eyebrow {

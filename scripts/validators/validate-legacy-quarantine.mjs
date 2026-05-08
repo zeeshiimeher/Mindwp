@@ -74,8 +74,8 @@ const REBUILT_PAGE_CSS_FILES = [
 /**
  * CSS class selectors that page/domain CSS must NOT contain.
  * These belong to the shared SectionFrame shell — overriding them from page CSS
- * violates the shell ownership rule. Use SectionFrame props (tone, headerWidth, gap)
- * instead of page-level overrides.
+ * violates the shell ownership rule. Use SectionFrame tone/layout/ratio props
+ * instead of page-level overrides. Page CSS owns visual bodies only.
  *
  * Allowed: defining .page-class itself (background, border, etc.)
  * Forbidden: compound selectors that target shared SectionFrame internals.
@@ -84,7 +84,7 @@ const FORBIDDEN_CSS_SHELL_OVERRIDES = [
   {
     pattern: /\.mw-section-frame__header\b/,
     label: '.mw-section-frame__header override in rebuilt page CSS',
-    advice: 'Use SectionFrame props (headerWidth, gap) instead of page-level header overrides.',
+    advice: 'Use SectionFrame layout/ratio props instead of page-level header overrides.',
   },
   {
     pattern: /\.mw-section-frame__heading\b/,

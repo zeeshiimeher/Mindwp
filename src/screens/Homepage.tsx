@@ -400,6 +400,7 @@ function PutInPlaceSection() {
         title: putInPlace.heading,
         description: putInPlace.description,
       }}
+      tone='gradient-teal'
       className='home-workbench'
       ariaLabel='Put in place'
     >
@@ -498,7 +499,7 @@ function ClientShiftSection() {
   return (
     <SectionFrame
       heading={{ title: clientShift.heading, description: clientShift.description }}
-      tone='dark'
+      tone='gradient-dark'
       className='home-shift'
       ariaLabel='Client shift'
     >
@@ -579,7 +580,7 @@ function PressurePointsSection() {
         title: pressurePoints.heading,
         description: pressurePoints.description,
       }}
-      tone='dark'
+      tone='gradient-dark'
       className='home-pressure'
       ariaLabel='Pressure points'
     >
@@ -674,6 +675,7 @@ function IndustriesSection() {
         title: industries.heading,
         description: industries.description,
       }}
+      tone='gradient-mist'
       className='home-industries'
       ariaLabel='Industries'
     >

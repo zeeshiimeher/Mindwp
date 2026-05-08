@@ -718,13 +718,7 @@
    ───────────────────────────────────────────── */
 
 .home-workbench {
-  /* unique teal-mist gradient — not a standard tone, page CSS owns background */
-  background: linear-gradient(
-    160deg,
-    var(--mw-bg-mist) 0%,
-    color-mix(in srgb, var(--mw-signal-teal) 4%, var(--mw-bg-mist)) 100%
-  );
-  /* padding-block owned by SectionFrame */
+  /* background owned by SectionFrame (tone='gradient-teal') */
 }
 
 .home-workbench__card {
@@ -983,15 +977,13 @@
    ───────────────────────────────────────────── */
 
 .home-shift {
-  /* unique dark gradient — not standard dark tone, page CSS owns background */
-  background: linear-gradient(160deg, var(--mw-bg-dark) 0%, var(--mw-color-dark-hover) 100%);
+  /* background owned by SectionFrame (tone='gradient-dark') */
   position: relative;
   overflow: hidden;
-  /* padding-block owned by SectionFrame */
   z-index: 1;
 }
 
-/* Grid texture via pseudo element — reusable pattern */
+/* Grid texture via pseudo element — page-specific visual overlay */
 .home-shift::before {
   content: '';
   position: absolute;
@@ -1000,8 +992,6 @@
   opacity: 0.04;
   pointer-events: none;
 }
-
-/* Text colors for dark gradient sections now owned by tone='dark' on SectionFrame */
 
 .home-shift__layout {
   display: grid;
@@ -1221,9 +1211,7 @@
    ───────────────────────────────────────────── */
 
 .home-pressure {
-  /* unique dark gradient — not standard dark tone, page CSS owns background */
-  background: linear-gradient(160deg, var(--mw-bg-dark) 0%, var(--mw-color-dark-mid) 100%);
-  /* padding-block owned by SectionFrame */
+  /* background owned by SectionFrame (tone='gradient-dark') */
 }
 
 .home-pressure__grid {
@@ -1537,9 +1525,7 @@
    ───────────────────────────────────────────── */
 
 .home-industries {
-  /* unique white-to-mist gradient — not a standard tone, page CSS owns background */
-  background: linear-gradient(160deg, var(--mw-color-white) 0%, var(--mw-bg-mist) 100%);
-  /* padding-block owned by SectionFrame */
+  /* background owned by SectionFrame (tone='gradient-mist') */
 }
 
 .home-industries__grid {
