@@ -67,7 +67,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -147,7 +147,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -175,7 +175,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -203,7 +203,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -277,7 +277,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -333,7 +333,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -393,7 +393,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -421,7 +421,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -479,7 +479,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -713,7 +713,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -953,7 +953,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1113,7 +1113,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1185,7 +1185,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1273,7 +1273,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1353,7 +1353,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1513,7 +1513,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1585,7 +1585,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1833,7 +1833,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1913,7 +1913,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2073,7 +2073,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2233,7 +2233,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2313,7 +2313,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2465,7 +2465,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2553,7 +2553,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2633,7 +2633,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2713,7 +2713,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2793,7 +2793,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2953,7 +2953,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -3033,7 +3033,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -3113,7 +3113,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -7979,7 +7979,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8217,7 +8217,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8363,7 +8363,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8417,7 +8417,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8693,7 +8693,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8823,7 +8823,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -9369,7 +9369,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -10481,7 +10481,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -10681,7 +10681,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',

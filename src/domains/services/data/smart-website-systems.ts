@@ -15,7 +15,7 @@ const smartWebsitesFaqItems = [
   {
     question: 'How is this different from getting a new website built?',
     answer:
-      'Most builds stop at how it looks. This connects every enquiry to a real person, logs it, and follows up automatically. The difference shows up in your inbox, not your homepage.',
+      'Most builds stop at how it looks. This captures the enquiry, attaches the right context, and gets it to the right person or connected system. The difference shows up in how work is handled, not just how the homepage looks.',
   },
   {
     question: 'We already spent a lot on our current site. Do we start over?',
@@ -59,7 +59,7 @@ export const smartWebsiteSystemsPage = {
     slug: 'smart-website-systems',
     title: 'Smart Website Systems for Service Businesses',
     description:
-      'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'smart-website-systems',
   systems: ['smart-website-systems'],
@@ -89,7 +89,7 @@ export const smartWebsiteSystemsPage = {
         { label: 'Old enquiry · Tom W.', value: 'Lost', status: 'risk' as const },
       ],
       footerPrimary: 'source attached · CRM ready',
-      footerSecondary: 'uptime 99.98%',
+      footerSecondary: 'next step visible',
     },
   },
   sections: {
@@ -230,7 +230,7 @@ export const smartWebsiteSystemsPage = {
           'Service page structure',
           'Enquiry capture',
           'Form routing',
-          'Visibility setup',
+          'Tracking setup',
         ],
         statusLines: ['Enquiry captured', 'Source attached', 'Next step visible'],
       },
@@ -263,7 +263,7 @@ export const smartWebsiteSystemsPage = {
     coverageLedger: {
       header: {
         kicker: 'What is included',
-        title: 'Everything in scope from day one',
+        title: 'What the website system covers from day one',
         description: 'Not a pick-and-choose list. Every project covers all of this.',
       },
       legend: ['Structure', 'Capture', 'Routing', 'Visibility', 'Protection', 'Handover'],
@@ -315,7 +315,8 @@ export const smartWebsiteSystemsPage = {
           ],
         },
       ],
-      closingStatement: 'Not a pick-and-choose list. Every project covers all of this.',
+      closingStatement:
+        'Every project covers the capture, routing, tracking, protection, and handover needed for the website to work properly.',
     },
     // ── environmentRoster ────────────────────────────────────────────────────
     environmentRoster: {
@@ -339,8 +340,8 @@ export const smartWebsiteSystemsPage = {
           name: 'Appointment-based businesses',
           enquiryTriggers: 'Online booking, phone calls, availability checks',
           operationalNeed:
-            'Booking that shows real availability, automated reminders, no-shows drop without manual chasing',
-          outcomeSignals: ['Online booking', 'Automated reminders', 'Availability visible'],
+            'Booking path connected to real availability, with reminders handled by the connected booking or CRM setup',
+          outcomeSignals: ['Online booking', 'Availability visible', 'Fewer missed appointments'],
           scenario:
             'A dental clinic where patients check availability by ringing. Half the calls go to voicemail. The website has no booking. They go to the practice that let them book at midnight.',
         },
@@ -429,17 +430,17 @@ export const smartWebsiteSystemsPage = {
     // ── proofStory ───────────────────────────────────────────────────────────
     proofStory: {
       header: {
-        kicker: 'Real outcome',
-        title: 'What changed for a real business',
+        kicker: 'Scenario study',
+        title: 'What this can look like for a service business',
         description:
-          "A veterinary clinic had a decent-looking site and regular traffic. Barely any of it converted into actual bookings. Here's what we found.",
+          'A veterinary clinic has a decent-looking site and regular traffic, but very little turns into actual bookings. Here is the kind of handling problem we would look for.',
       },
       proofType: 'Scenario Study',
       context: {
         business: 'Veterinary clinic',
         situation:
           'Decent-looking site, regular traffic. Barely any of it was converting into bookings. Reception was handling everything manually.',
-        constraint: 'No new traffic needed. Fixed existing handling.',
+        constraint: 'Illustrative scenario. Not attributed client work.',
       },
       before: {
         title: 'Before: visitors coming in, almost nothing coming out',
@@ -447,24 +448,24 @@ export const smartWebsiteSystemsPage = {
         bullets: [
           "Vaccinations, dental, emergency — all jammed together. A pet owner looking for one thing had to wade through the rest. Most didn't.",
           "The contact form went somewhere. Reception sometimes checked it. Sometimes didn't. Two-day response was a good week.",
-          'Nobody knew how many people enquired. Or what happened after. The vet had a feeling things were slipping — but no numbers to prove it.',
+          'Nobody knew how many people enquired. Or what happened after. The vet had a feeling things were slipping — but no way to see it clearly.',
         ],
       },
       change: {
         title: 'What changed: services separated, handling connected',
-        body: 'Vaccinations in one place. Dental in another. Emergency in its own spot. Forms going straight to the booking tool. Follow-up running on its own.',
+        body: 'Vaccinations in one place. Dental in another. Emergency in its own spot. Forms going straight to the booking tool.',
         bullets: [
           'Each service pulled apart — its own content, its own booking option. Pet owners land where they need to be. No hunting.',
           'Forms hit the practice management tool directly. Staff saw enquiries the second they arrived.',
-          'Confirmations and reminders ran automatically. Reception stopped having to remember who to chase.',
+          'Confirmations went out automatically. Reception stopped having to remember who to chase.',
         ],
       },
       after: {
-        title: 'After: same traffic, completely different outcome',
-        body: 'Six weeks in, bookings picked up. Not a trickle — actual appointments from people who found what they needed.',
+        title: 'After: same traffic, more of it turning into appointments',
+        body: 'Bookings started coming through from the same visitors — because people could finally find the right service and take the next step.',
         bullets: [
-          'Went from a handful of bookings a month to over forty. Same visitors. Just — people could finally find what they were looking for.',
-          'Response time collapsed. Days became minutes. Enquiries arrived with a notification, not buried in an inbox.',
+          'More bookings from the same traffic. Not new visitors — the same people, now able to find what they came for.',
+          'Response moved from delayed inbox checks to visible notifications and faster pickup.',
           "First time the practice could see which channels actually brought appointments in. Cut the ones that didn't.",
         ],
       },
@@ -483,13 +484,13 @@ export const smartWebsiteSystemsPage = {
           { label: 'Source', value: 'Google Search', status: 'active' as const },
           { label: 'Service', value: 'Roof repair', status: 'active' as const },
           { label: 'Assigned to', value: 'Mark T.', status: 'active' as const },
-          { label: 'Follow-up', value: 'Scheduled', status: 'active' as const },
+          { label: 'Follow-up', value: 'Connected', status: 'active' as const },
           { label: 'Response sent', value: '2 min ago', status: 'clear' as const },
         ],
       },
       effects: [
         {
-          title: 'Ad spend pays for itself',
+          title: 'Ad spend becomes easier to judge',
           before:
             'Traffic clicks through. Nothing gets captured. The spend continues without evidence of return.',
           after:
@@ -570,8 +571,8 @@ export const smartWebsiteSystemsPage = {
         workingOutcomes: [
           'Clear service pages — visitors find what they came for',
           'Every enquiry captured with name, number, and service',
-          'Leads assigned and confirmed automatically',
-          'Follow-up running without anyone having to remember',
+          'Leads routed with the right context',
+          'Connected follow-up ready from the CRM',
           'Tracking showing which channels produce real work',
         ],
       },
