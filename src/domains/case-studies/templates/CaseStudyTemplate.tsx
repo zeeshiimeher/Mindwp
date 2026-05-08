@@ -2,6 +2,7 @@
 // No routing, fetching, or data lookups.
 import React from 'react';
 
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   CaseStudyBusinessImpactSection,
@@ -18,10 +19,10 @@ import {
 } from '@/components/reusable/sections/case-studies';
 import { TestimonialCard } from '@/components/reusable/single';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { env } from '@/env';
 import { buildContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
 import type { CaseStudyMetadata } from './types';
@@ -576,7 +577,7 @@ export function CaseStudyTemplate({
 
       case 'cta':
         return (
-          <PrimaryCTASection
+          <DecisionPanel
             key={`cta-${index}`}
             heading={{
               title: section.heading,
@@ -584,13 +585,13 @@ export function CaseStudyTemplate({
             }}
             actions={[
               {
-                label: 'Get Started',
+                label: PRIMARY_CTA_LABEL,
                 href: buildContactHref({
-                  system: 'case-study',
+                  system: metadata.systems?.[0] ?? 'smart-website-systems',
                   sourceType: 'case-study',
-                  slug: 'case-study-footer',
+                  slug: metadata.slug,
                 }),
-                primary: true,
+                variant: 'primary',
               },
             ]}
           />

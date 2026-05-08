@@ -29,8 +29,8 @@ vi.mock('@/components/system/PageEnforcement', () => ({
   CTARegistryProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
-vi.mock('@/components/sections/PrimaryCTASection', () => ({
-  PrimaryCTASection: ({ heading }: { heading: { title: string } }) => (
+vi.mock('@/components/conversion/DecisionPanel', () => ({
+  DecisionPanel: ({ heading }: { heading: { title: string } }) => (
     <div data-testid='smart-cta'>{heading.title}</div>
   ),
 }));

@@ -10,8 +10,8 @@ import { CaseStudyTemplate } from '@/domains/case-studies/templates/CaseStudyTem
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 
-vi.mock('@/components/sections/PrimaryCTASection', () => ({
-  PrimaryCTASection: ({ heading }: { heading?: { title?: string } }) => (
+vi.mock('@/components/conversion/DecisionPanel', () => ({
+  DecisionPanel: ({ heading }: { heading?: { title?: string } }) => (
     <div data-testid='smart-cta'>{heading?.title ?? 'cta'}</div>
   ),
 }));

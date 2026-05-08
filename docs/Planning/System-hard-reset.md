@@ -2049,3 +2049,21 @@ relatedSection?: {
 ### Results
 - `system:full` — 57/57 validators, 0 warnings
 - `npx next build` — clean
+
+---
+
+## Milestone 6N — CaseStudyTemplate: Replace PrimaryCTASection with DecisionPanel
+
+### Scope
+Narrow pass: replace `PrimaryCTASection` usage inside `CaseStudyTemplate.tsx` `case 'cta'` branch with `DecisionPanel`. No template rebuild. No new sections. No RelatedSection re-addition.
+
+### Changes
+- **`CaseStudyTemplate.tsx`**: `PrimaryCTASection` import removed. `DecisionPanel` imported from `@/components/conversion/DecisionPanel`. `PRIMARY_CTA_LABEL` imported from `@/lib/cta/primaryAction`. `case 'cta'` branch now renders `DecisionPanel` with `heading.title/description` from section data, `label: PRIMARY_CTA_LABEL`, `variant: 'primary'`, `href` via `buildContactHref({ system: metadata.systems[0], sourceType: 'case-study', slug: metadata.slug })`. Hardcoded `'Get Started'` and `slug: 'case-study-footer'` removed.
+- **`CaseStudyTemplate.test.tsx`**: `PrimaryCTASection` mock replaced with `DecisionPanel` mock. `data-testid='smart-cta'` assertions unchanged.
+- **`tests/system/template-safety.test.tsx`**: Same mock swap.
+- **`PrimaryCTASection` file**: Not deleted. ~30 other consumers remain across unrebuilt domains.
+- **`CaseStudyTemplate` quarantine status**: Still quarantined for old visual sections (`SectionWrapper`, `TestimonialCard`, etc). Only CTA and RelatedSection ownership are now resolved.
+
+### Results
+- `system:full` — 57/57 validators, 0 warnings
+- `npx next build` — clean

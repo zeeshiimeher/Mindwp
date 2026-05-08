@@ -184,3 +184,13 @@ These are in `src/components/system/` and use old imports internally:
 ### lsa-cycle raw section — RESOLVED in 6L
 - **Was**: `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx` — raw `<section className='lsa-cycle'>` with a comment noting incompatibility with SectionFrame's standalone header block.
 - **Resolution**: Heading (kicker, h2, description) extracted above the two-column grid; `SectionFrame` now wraps the section with `tone='white'`. CSS layout/copy rules removed. All rebuilt-baseline renderers now use SectionFrame for every normal section. No raw `<section>` remains in new-system renderer files.
+
+---
+
+## Milestone 6N Entries
+
+### CaseStudyTemplate.tsx — PrimaryCTASection direct import (RESOLVED in 6N)
+- **Was**: `src/domains/case-studies/templates/CaseStudyTemplate.tsx` imported and rendered `PrimaryCTASection` directly inside a `case 'cta'` branch with a hardcoded `'Get Started'` label and a hardcoded `slug: 'case-study-footer'`.
+- **Resolution**: `PrimaryCTASection` import replaced with `DecisionPanel` from `@/components/conversion/DecisionPanel`. `PRIMARY_CTA_LABEL` imported from `@/lib/cta/primaryAction`. CTA branch now renders `DecisionPanel` with `variant: 'primary'`, `label: PRIMARY_CTA_LABEL`, and `slug: metadata.slug` (not hardcoded). `PrimaryCTASection` file itself not deleted — ~30 other consumers remain outside this domain.
+- **Tests updated**: `PrimaryCTASection` mock replaced with `DecisionPanel` mock in `CaseStudyTemplate.test.tsx` and `tests/system/template-safety.test.tsx`. `data-testid='smart-cta'` assertions unchanged (DecisionPanel owns that testId by default).
+- **CaseStudyTemplate quarantine status**: Still quarantined for old visual sections (`SectionWrapper`, `TestimonialCard`, `HighlightBlock` etc). Only the CTA and RelatedSection ownership are resolved. Delete gate unchanged.
