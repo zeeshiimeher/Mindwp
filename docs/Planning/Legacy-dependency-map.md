@@ -177,3 +177,11 @@ These are in `src/components/system/` and use old imports internally:
 - **Status**: Quarantine guard added in Milestone 6K. Script exits with error unless invoked with `--manual`.
 - **Why**: The generator scanned `src/components/reusable/` and updated `GLOBAL-COMPONENTS-CATALOG.md`, which was removed from all active pipeline commands (`predev`, `generate:all`, `validate:docs`) in 6K.
 - **Delete gate**: When `src/components/reusable/` is deleted (same as the reusable folder gate above).
+
+---
+
+## Milestone 6L Entries
+
+### lsa-cycle raw section — RESOLVED in 6L
+- **Was**: `src/domains/services/renderers/LocalSeoAuthorityRenderer.tsx` — raw `<section className='lsa-cycle'>` with a comment noting incompatibility with SectionFrame's standalone header block.
+- **Resolution**: Heading (kicker, h2, description) extracted above the two-column grid; `SectionFrame` now wraps the section with `tone='white'`. CSS layout/copy rules removed. All rebuilt-baseline renderers now use SectionFrame for every normal section. No raw `<section>` remains in new-system renderer files.

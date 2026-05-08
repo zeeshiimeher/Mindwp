@@ -2017,3 +2017,19 @@ relatedSection?: {
 - **Test suite reset**: `cta-simulation.test.ts` — removed `validateCorePrimaryCtaSources` import and PrimaryCTASection tests; added DecisionPanel contract test. `system-integrity.test.ts` — replaced `PrimaryCTASection.tsx` with `DecisionPanel.tsx` in integrity targets and null-return test.
 - **LSA SectionFrame audit**: One raw `<section>` in `LocalSeoAuthorityRenderer.tsx` (`lsa-cycle`) confirmed intentional — heading embedded in grid layout, not compatible with SectionFrame's required standalone heading block. Comment added.
 - **Legacy-dependency-map.md**: Added 6K quarantine entries for `CaseStudyTemplate.tsx` RelatedSection pattern and `generate-global-inventory.mjs` quarantine guard.
+
+---
+
+## Milestone 6L — Close SectionFrame + Related Baseline Exceptions
+
+**Status:** Complete (branch: `ui-hard-reset`, date: 2026-05-09)
+
+- **LSA lsa-cycle raw section resolved**: `LocalSeoAuthorityRenderer.tsx` — replaced the only remaining raw `<section className='lsa-cycle'>` with `SectionFrame` (`tone='white'`, `heading` prop with kicker/title/description). Heading (kicker, h2, description) extracted from the two-column grid into SectionFrame's standalone header block. `cycleLabel` tag and `lsa-cycle__phases-grid` remain as children. CSS updated: removed `lsa-cycle__layout`, `lsa-cycle__copy`, `lsa-cycle__copy-kicker`, `lsa-cycle__copy-heading`, `lsa-cycle__copy-description` (all replaced by `mw-section-frame__*` in layout.css). `lsa-cycle__copy-tag` and all phase-grid/phase-card rules kept. All rebuilt-baseline renderers now use SectionFrame for every normal section.
+- **CaseStudyTemplate RelatedSection quarantine confirmed**: CaseStudyTemplate.tsx imports RelatedSection directly via `section.type === 'more'`. All 25 case-study data files include this section. Moving injection to route level would require 25+ content file changes plus template rebuild — not a "small fix". Quarantine stays as-is: `APPROVED_RELATED_OWNERS` in `validate-related-duplication.ts` retains `CaseStudyTemplate.tsx`. Delete gate: when rebuilt with config/wrapper injection.
+- **DecisionPanel contract verified**: `[DecisionPanel] requires at least one primary action` and `[DecisionPanel] requires heading.title` guards confirmed in place. `validate-primary-cta.ts` passed.
+- **SWS renderer lint fix**: `SmartWebsiteSystemsRenderer.tsx` type interface indentation corrected to satisfy prettier (was causing a lingering lint failure from 6K eslint --fix).
+- **CSS old selector audit**: No old `rd-*`, `l-section`, `btn-*`, `scope__` or legacy layout selectors found in rebuilt service/industry renderer files. Existing usage in `blog/page.tsx`, `resources/page.tsx`, and `dev/` is pre-existing and out of scope.
+
+### Results
+- `system:full` — 57/57 validators, 0 warnings (confirmed)
+- `npx next build` — clean (359 pages generated)

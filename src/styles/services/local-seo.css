@@ -1136,47 +1136,8 @@
    9. VISIBILITY CYCLE
    ══════════════════════════════════════════════════════ */
 
-.lsa-cycle {
-    background: var(--mw-bg-page);
-    padding-block: var(--mw-section-block);
-}
-
-.lsa-cycle__layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--mw-space-12);
-    align-items: center;
-}
-
-@media (min-width: 1024px) {
-    .lsa-cycle__layout {
-        grid-template-columns: 5fr 7fr;
-    }
-}
-
-.lsa-cycle__copy-kicker {
-    font-size: var(--mw-text-xs);
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--mw-text-subtle);
-    margin-bottom: var(--mw-space-5);
-}
-
-.lsa-cycle__copy-heading {
-    font-size: var(--mw-text-4xl);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: var(--mw-text-primary);
-}
-
-.lsa-cycle__copy-description {
-    margin-top: var(--mw-space-6);
-    font-size: var(--mw-text-lg);
-    line-height: 1.6;
-    color: var(--mw-text-secondary);
-}
+/* lsa-cycle background/padding provided by .mw-section-frame (tone white).
+   Layout grid and copy heading classes removed — replaced by mw-section-frame__* in layout.css. */
 
 .lsa-cycle__copy-tag {
     display: flex;

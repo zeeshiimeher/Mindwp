@@ -535,37 +535,33 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       </SectionFrame>
 
       {/* -- VISIBILITY CYCLE ------------------------------------------------ */}
-      {/* Raw <section>: heading is embedded inside lsa-cycle__layout grid, not a standalone header. */}
-      {/* SectionFrame requires an extracted heading block -- not compatible with this layout. */}
-      <section className='lsa-cycle' aria-label={ARIA_CYCLE_DOT}>
-        <div className='mw-container'>
-          <div className='lsa-cycle__layout'>
-            <div className='lsa-cycle__copy mw-animate-up'>
-              {visibilityCycle.header.kicker && (
-                <div className='lsa-cycle__copy-kicker'>{visibilityCycle.header.kicker}</div>
-              )}
-              <h2 className='lsa-cycle__copy-heading'>{visibilityCycle.header.title}</h2>
-              <p className='lsa-cycle__copy-description'>
-                {requireHeadingDescription(visibilityCycle.header.description, 'visibility cycle')}
-              </p>
-              <div className='lsa-cycle__copy-tag'>
-                <RefreshCw size={16} aria-hidden='true' />
-                <span>{visibilityCycle.cycleLabel}</span>
-              </div>
-            </div>
-
-            <div className='lsa-cycle__phases-grid mw-animate-panel'>
-              {visibilityCycle.phases.map((phase: { name: string; note: string }, i: number) => (
-                <div key={phase.name} className='lsa-cycle__phase-card'>
-                  <div className='lsa-cycle__phase-num'>0{i + 1}</div>
-                  <div className='lsa-cycle__phase-name'>{phase.name}</div>
-                  <div className='lsa-cycle__phase-note'>{phase.note}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <SectionFrame
+        className='lsa-cycle'
+        tone='white'
+        ariaLabel={ARIA_CYCLE_DOT}
+        heading={{
+          kicker: visibilityCycle.header.kicker,
+          title: visibilityCycle.header.title,
+          description: requireHeadingDescription(
+            visibilityCycle.header.description,
+            'visibility cycle'
+          ),
+        }}
+      >
+        <div className='lsa-cycle__copy-tag mw-animate-up'>
+          <RefreshCw size={16} aria-hidden='true' />
+          <span>{visibilityCycle.cycleLabel}</span>
         </div>
-      </section>
+        <div className='lsa-cycle__phases-grid mw-animate-panel'>
+          {visibilityCycle.phases.map((phase: { name: string; note: string }, i: number) => (
+            <div key={phase.name} className='lsa-cycle__phase-card'>
+              <div className='lsa-cycle__phase-num'>0{i + 1}</div>
+              <div className='lsa-cycle__phase-name'>{phase.name}</div>
+              <div className='lsa-cycle__phase-note'>{phase.note}</div>
+            </div>
+          ))}
+        </div>
+      </SectionFrame>
 
       {/* -- PROOF STORY ----------------------------------------------------- */}
       <SectionFrame
