@@ -313,7 +313,7 @@ export const homepageData: HomepageData = {
     signalSummary: {
       leaking: '2 leaking',
       unowned: '5 unowned',
-      pulling: 'Pulled toward system',
+      pulling: 'Now being handled',
     },
     signalCountLabel: 'UNOWNED',
   },
@@ -407,7 +407,7 @@ export const homepageData: HomepageData = {
       },
       {
         name: 'Local SEO Authority',
-        role: 'Visibility layer',
+        role: 'Get found nearby',
         roleNote: 'Found across the area you serve',
         handles: 'Search presence, map coverage, signal trust',
         accent: 'teal',
@@ -416,7 +416,7 @@ export const homepageData: HomepageData = {
       },
       {
         name: 'AI Lead Handling',
-        role: 'Response layer',
+        role: 'First response, every time',
         roleNote: 'First contact, every time',
         handles: 'Calls, forms, DMs, after hours',
         accent: 'green',
@@ -425,7 +425,7 @@ export const homepageData: HomepageData = {
       },
       {
         name: 'CRM & Automation',
-        role: 'Memory layer',
+        role: 'Nothing gets forgotten',
         roleNote: 'Nothing depends on someone remembering',
         handles: 'Quotes, follow-up, ownership, status',
         accent: 'amber',
@@ -434,7 +434,7 @@ export const homepageData: HomepageData = {
       },
       {
         name: 'Reputation & Review',
-        role: 'Proof layer',
+        role: 'Good work becomes proof',
         roleNote: 'Good work shows up in public',
         handles: 'Review requests, timing, response',
         accent: 'purple',
@@ -443,7 +443,7 @@ export const homepageData: HomepageData = {
       },
       {
         name: 'Revenue Growth',
-        role: 'Improvement layer',
+        role: 'What works gets stronger',
         roleNote: 'What works gets stronger',
         handles: 'Spend, return, repeat work, decisions',
         accent: 'red',
@@ -781,31 +781,31 @@ export const homepageData: HomepageData = {
     implementationPatterns: [
       {
         title: 'Missed call recovery flow',
-        desc: 'Inbound voicemail triggers an SMS reply, logs the enquiry, and routes it into the queue. AI Lead Handling layer.',
+        desc: 'Inbound voicemail triggers an SMS reply, logs the enquiry, and routes it into the queue. AI Lead Handling.',
         flow: ['Voicemail', 'SMS reply', 'Enquiry log', 'Queue'],
         iconKey: 'missed-call-recovery',
       },
       {
         title: 'Lead follow-up sequence',
-        desc: 'Quote sent → 24h check-in → 3d nudge → 7d close-out. On schedule, not by memory. CRM & Automation layer.',
+        desc: 'Quote sent → 24h check-in → 3d nudge → 7d close-out. On schedule, not by memory. CRM & Automation.',
         flow: ['Quote', '+24h', '+3d', '+7d'],
         iconKey: 'follow-up-sequence',
       },
       {
         title: 'Service page structure',
-        desc: 'Service clarity, area coverage, structured capture surface — built so search and humans both understand. Smart Website Systems layer.',
+        desc: 'Service clarity, area coverage, enquiry capture — each page built so visitors and Google both understand. Smart Website Systems.',
         flow: ['Clarity', 'Coverage', 'Capture'],
         iconKey: 'service-page-structure',
       },
       {
         title: 'Review request flow',
-        desc: 'Job marked complete → review request → reminder → review surfaced where it earns trust. Reputation & Review layer.',
+        desc: 'Job marked complete → review request → reminder → review surfaced where it earns trust. Reputation & Review.',
         flow: ['Done', 'Request', 'Remind', 'Display'],
         iconKey: 'review-flow',
       },
       {
         title: 'CRM routing',
-        desc: 'All channels — call, form, DM, email — into one record. Owner sees the queue, not the chaos. CRM & Automation layer.',
+        desc: 'All channels — call, form, DM, email — into one record. Owner sees the queue, not the chaos. CRM & Automation.',
         flow: ['Channel', 'Record', 'Queue'],
         iconKey: 'crm-routing',
       },
@@ -845,6 +845,11 @@ export const homepageData: HomepageData = {
         question: 'What kind of businesses is this for?',
         answer:
           'Established service businesses, or serious new setups, where jobs are worth real money and demand already exists.',
+      },
+      {
+        question: 'Do I need to have systems in place already?',
+        answer:
+          'No. Most businesses we start with have a basic website, disconnected tools, and nothing properly connected yet. Some use spreadsheets. Some have a half-set-up CRM. Some have nothing joined up at all. That is normal. We start with what exists and put the handling in place around it.',
       },
       {
         question: 'How long before we see results?',
