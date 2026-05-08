@@ -25,7 +25,7 @@ const smartWebsitesFaqItems = [
   {
     question: 'Do we need a specific CRM?',
     answer:
-      'No. We build this around whatever CRM platform fits your workflow — enquiries, follow-up, and reporting all in one place. If you already have a setup that works, we can connect that instead.',
+      'No. We build this around whatever CRM platform fits your business — enquiries, follow-up, and reporting all in one place. If you already have a setup that works, we can connect that instead.',
   },
   {
     question: 'Will local people actually find us on Google?',
@@ -418,7 +418,7 @@ export const smartWebsiteSystemsPage = {
           proofPoints: [
             'Enquiry arrives with full context — name, number, what they need.',
             'CRM picks it up automatically. Nothing copied by hand.',
-            "Follow-up continues through connected handling, not from anyone's memory.",
+            'CRM & Automation owns the follow-up from here — on schedule, not from memory.',
           ],
           stateLabel: 'Handoff ready',
         },

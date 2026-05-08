@@ -392,13 +392,13 @@ export const homepageData: HomepageData = {
 
   systemStack: {
     eyebrow: 'The handling system',
-    heading: 'Six layers. [[muted:One connected flow.]]',
+    heading: 'Six parts of the path. [[muted:All connected.]]',
     description:
-      'Each layer handles a part of the path. Together they hold the work from first search to repeat job. No layer depends on someone remembering.',
+      'Each part handles a step. Together they hold the work from first search to repeat job. Nothing depends on someone remembering.',
     systems: [
       {
         name: 'Smart Website System',
-        role: 'The operating surface',
+        role: 'Where enquiries land',
         roleNote: 'Where work lands and routes',
         handles: 'Visitors, service questions, enquiry capture',
         accent: 'cyan',
@@ -494,7 +494,7 @@ export const homepageData: HomepageData = {
   fitFoundations: {
     heading: 'This works best when there is already real demand.',
     description:
-      'Best for established service businesses — or serious new setups — where calls, enquiries, follow-up, visibility, and proof need to work together from day one.',
+      'Best for established service businesses — or serious new setups — where calls come in, enquiries arrive, and jobs are worth real money. Especially where too much is being missed, delayed, or forgotten.',
     strongFit: [
       'Jobs are worth real money',
       'Enquiries come in but get lost',
@@ -528,8 +528,8 @@ export const homepageData: HomepageData = {
       label: 'After',
       stateLabel: 'controlled',
       bullets: [
-        '1 capture surface',
-        'Calls logged in one place',
+        'Calls and forms in one place',
+        'Missed calls recovered, all logged',
         'Follow-up on schedule',
         'Reviews consistently captured',
       ],
@@ -610,42 +610,42 @@ export const homepageData: HomepageData = {
   structureLayers: {
     heading: 'It is not a website project. [[muted:It is what catches the work.]]',
     description:
-      'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, and lead recovery. Connected. Running.',
-    foundation: { title: 'Smart Website / Business Infrastructure' },
+      'The website is what visitors see. Behind it: captured enquiries, triggered follow-up, local visibility, and collected proof. Running. Connected.',
+    foundation: { title: 'Smart Website System' },
     layerStatus: 'Active',
     layers: [
       {
-        title: 'Visibility Layer',
+        title: 'Visibility',
         note: 'Local search, map presence, structured service pages',
         accent: 'cyan',
         iconKey: 'visibility-layer',
       },
       {
-        title: 'Capture Layer',
-        note: 'Calls, forms, DMs — all into one surface',
+        title: 'Capture',
+        note: 'Calls, forms, DMs — all into one place',
         accent: 'teal',
         iconKey: 'capture-layer',
       },
       {
-        title: 'Response Layer',
+        title: 'Response',
         note: 'First response triggered before the lead goes cold',
         accent: 'green',
         iconKey: 'response-layer',
       },
       {
-        title: 'Follow-Up Layer',
+        title: 'Follow-Up',
         note: 'Quote chasing, reminders, ownership',
         accent: 'amber',
         iconKey: 'follow-up-layer',
       },
       {
-        title: 'Proof Layer',
+        title: 'Proof',
         note: 'Reviews requested at the right moment',
         accent: 'purple',
         iconKey: 'proof-layer',
       },
       {
-        title: 'Improvement Layer',
+        title: 'Improvement',
         note: 'What works gets reinforced. Spend tied to real work.',
         accent: 'cyan',
         iconKey: 'improvement-layer',
@@ -748,7 +748,7 @@ export const homepageData: HomepageData = {
       ],
     },
     change: {
-      label: 'System change',
+      label: 'What changed',
       title: 'What changed',
       bullets: [
         'Single capture surface',
@@ -819,12 +819,12 @@ export const homepageData: HomepageData = {
       {
         question: 'What do you build?',
         answer:
-          'Connected business systems for service businesses — Smart Websites, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation, Revenue Growth. Connected, not standalone.',
+          'Smart Websites, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth — built as connected parts for service businesses. Not standalone tools.',
       },
       {
         question: 'How is this different from getting a new website?',
         answer:
-          'A website is a surface. We build the underlying capture, routing, follow-up, visibility, and proof layers — so the surface actually catches the work.',
+          'A website shows the business. What we build makes sure enquiries get captured, routed to the right person, followed up, and tracked. The site is the visible part. This is what runs behind it.',
       },
       {
         question: 'We already have a website. Can you work with that?',
@@ -834,12 +834,12 @@ export const homepageData: HomepageData = {
       {
         question: 'Is SEO included?',
         answer:
-          'Local SEO Authority is one of the systems. It is not a bolt-on — it is part of the visibility layer.',
+          'Local SEO Authority is one of the six parts. It handles local visibility — getting your services found nearby. It is built into the overall approach, not bolted on as an extra.',
       },
       {
         question: 'What about missed calls and follow-up?',
         answer:
-          'Missed call recovery sits with AI Lead Handling — instant reply, enquiry logged. Sequenced follow-up sits with CRM & Automation — quotes chased, reminders sent. Both connect into the website capture layer.',
+          'Missed call recovery sits with AI Lead Handling — instant reply, enquiry logged. Sequenced follow-up sits with CRM & Automation — quotes chased, reminders sent. Both connect into the same capture point as every other enquiry.',
       },
       {
         question: 'What kind of businesses is this for?',
@@ -870,7 +870,7 @@ export const homepageData: HomepageData = {
       title: 'Something here hit close.',
       muted: 'Find where it is breaking.',
       description:
-        'We can map what needs building first, whether you are fixing years of patchwork or setting the foundation properly from day one.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
     actions: [
       {

@@ -291,7 +291,7 @@ export const localSeoAuthorityPage = {
         kicker: 'Fit check',
         title: 'Is this right for your business?',
         description:
-          'Built for established service businesses that want local customers finding them online \u2014 and are willing to commit to the time it takes.',
+          'Built for established service businesses that want local customers finding them online. You do not need a polished website to start \u2014 just real services and a local presence that needs improving.',
       },
       strongFit: {
         label: 'Strong fit',
@@ -307,6 +307,10 @@ export const localSeoAuthorityPage = {
           {
             text: 'Your details are wrong or missing online',
             note: 'Information scattered or inaccurate across the web. You want one correct presence everywhere Google looks.',
+          },
+          {
+            text: 'Your website is basic or not fully built out',
+            note: 'You do not need a polished site to start. Many businesses begin with a basic website and a Google profile with gaps. Local SEO Authority works with what exists and builds from there.',
           },
           {
             text: "You're ready for a long-term approach",
@@ -414,6 +418,12 @@ export const localSeoAuthorityPage = {
           question: 'What is the difference between Local SEO Authority and Reputation & Review?',
           answer:
             'Local SEO Authority treats reviews as one of several trust signals Google uses to verify your business — alongside profile completeness, citations, and service page content. Reputation & Review is a separate system that owns the actual process: requesting reviews from clients, routing negative feedback, monitoring your reputation, and keeping the review flow consistent. One feeds the signal. The other runs the operation.',
+        },
+        {
+          id: 'lsa-faq-13',
+          question: 'We only have a basic website. Can we still benefit from local SEO?',
+          answer:
+            'Yes. Many businesses we work with start with a basic site or a Google profile with gaps. Local SEO Authority begins with what you have — fixing details, improving your Google profile, and separating your services so Google can match them to local searches. A basic website is not a barrier to starting. It is often exactly where the work begins.',
         },
       ],
     },
