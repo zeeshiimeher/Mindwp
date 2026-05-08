@@ -40,6 +40,7 @@ Items below are confirmed deleted and must not appear as active requirements in 
 - **`CaseStudyTemplate` `RelatedSection` direct import** — Resolved in 6M. No template-owned related exceptions remain.
 - **`CaseStudyTemplate` `PrimaryCTASection` direct import** — Resolved in 6N. Now uses `DecisionPanel`.
 - **`SLUGS_WITH_OWN_RELATED`** — Removed in 6A/6F. Replaced by `options.relatedContent` registry contract.
+- **`src/components/sections/types.ts`** — Deleted in 6G. Types inlined into `PrimaryCTASection.tsx`.
 
 ---
 
@@ -48,8 +49,7 @@ Items below are confirmed deleted and must not appear as active requirements in 
 | Old file / pattern | Current consumers | Route / domain | Status | Delete condition |
 |---|---|---|---|---|
 | `src/components/sections/PrimaryCTASection.tsx` | About.tsx, Contact.tsx, BlogPostTemplate, BlogFooterCTA, case-studies/pages/index.tsx, Features pages + 7 renderers, Industries templates + pages, Resources hub/template, Services pages + 14 old renderers, dev/cta-label-contract | all unrebuilt domains + About/Contact | Quarantine delete-later | When all consuming pages are rebuilt and no longer import it |
-| `src/components/sections/types.ts` | PrimaryCTASection.tsx internally | Internal to sections/ | Quarantine delete-later | Same as PrimaryCTASection |
-| `src/components/sections/index.ts` | Barrel (trimmed — only PrimaryCTASection + types) | Internal | Quarantine delete-later | When PrimaryCTASection is deleted |
+| `src/components/sections/index.ts` | Barrel (only PrimaryCTASection) | Internal | Quarantine delete-later | When PrimaryCTASection is deleted |
 | `src/components/reusable/` (entire folder) | Blog templates/UI, Resources templates/pages, CaseStudyTemplate (old visual sections only), Features renderers (7), Industries templates, Services old renderers (14+), About, Contact, dev dashboards, ClusterPageLayout, ActionButtons | All unrebuilt domains + shared system components | Quarantine delete-later | When all consuming pages/components are rebuilt |
 
 ---
@@ -150,7 +150,7 @@ The following are unrebuilt service renderers still importing from reusable/sect
 - All old service renderers (14)
 - dev/cta-label-contract page removed or updated
 
-Note: `SectionShell.tsx` is already deleted (6G) — not a prerequisite. **Then also delete**: `sections/types.ts`, `sections/index.ts`.
+Note: `SectionShell.tsx` and `types.ts` are already deleted (6G). **Then also delete**: `sections/index.ts`.
 
 ### Gate: Delete entire `src/components/sections/` folder
 **Condition**: PrimaryCTASection deletion gate is met.

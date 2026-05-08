@@ -594,15 +594,15 @@ Homepage is the current baseline for the new system. It uses base components for
 2. Leak Diagnosis — `SectionFrame`
 3. Foundation — `SectionFrame`
 4. System Stack — `SectionFrame`
-5. Put In Place — page-local
-6. Fit Foundations — page-local
-7. Client Shift — page-local
-8. Pressure Points — page-local
+5. Put In Place — `SectionFrame` / page-local body
+6. Fit Foundations — `SectionFrame` / page-local body
+7. Client Shift — `SectionFrame` / page-local body
+8. Pressure Points — `SectionFrame` / page-local body
 9. Structure Layers — `SectionFrame`
 10. Industries — `SectionFrame`
-11. Alignment — `SectionFrame` (heading via `HeroFrame`-style — confirm renderer)
+11. Alignment — `SectionFrame`
 12. Proof Story — `SectionFrame`
-13. Implementation Examples — page-local
+13. Implementation Examples — `SectionFrame` / page-local body
 14. FAQ — `FAQSection` (variant: split, tone: white)
 15. CTA — `DecisionPanel`
 
@@ -1354,11 +1354,6 @@ Default rule:
 
 Not yet assigned to a milestone:
 
-- **Homepage landmark** — Remove nested `<main>` landmark inside homepage renderer.
-- **Analytics** — Wire Google Analytics through `NEXT_PUBLIC_ANALYTICS_ID`; remove hardcoded placeholder.
-- **SVG tokens** — Replace hardcoded gradient hex values in SVG elements with token-backed CSS variables.
-- **Footer accessibility** — Remove disabled social buttons from the accessibility tree.
-- **SEO** — Add Twitter/X metadata when SEO system supports it.
 - **Case-study related injection** — `RelatedSection` not yet injected at wrapper/config level for case studies. Add when the case-study domain is rebuilt.
 - **PrimaryCTASection consumers** — ~30 consumers remain across unrebuilt domains (blog, features, industries, resources, old services, About, Contact). Each must be rebuilt before `PrimaryCTASection` can be deleted.
 

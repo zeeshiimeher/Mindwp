@@ -56,7 +56,7 @@ Use these for all new/rebuilt pages. Do not use old reusable/sections components
 - `Tabs` (`src/components/primitives/`) — tab primitive; generic API
 - `InlineText` (`src/components/primitives/`) — renders `[[muted:...]]` markers; inline use only
 - `SignalDot`, `StatusBadge` (`src/components/primitives/`) — status/signal primitives
-- `InternalLink` (`src/components/primitives/`) — internal link primitive
+- `InternalLink` (`src/global/`) — internal link primitive
 
 ## Component Folder Rules
 
