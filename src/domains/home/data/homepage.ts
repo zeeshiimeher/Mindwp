@@ -385,13 +385,13 @@ export const homepageData: HomepageData = {
       { label: 'Tracking', iconKey: 'tracking' },
       { label: 'Proof', iconKey: 'proof' },
     ],
-    foundationTitle: 'Smart Website Systems',
-    foundationNote: 'The working business structure',
+    foundationTitle: 'Connected handling foundation',
+    foundationNote: 'The structure that keeps work moving',
     connectedNote: "These aren't separate problems. They're connected.",
   },
 
   systemStack: {
-    eyebrow: 'The handling system',
+    eyebrow: 'How the work gets handled',
     heading: 'Six parts of the path. [[muted:All connected.]]',
     description:
       'Each part handles a step. Together they hold the work from first search to repeat job. Nothing depends on someone remembering.',
@@ -529,9 +529,9 @@ export const homepageData: HomepageData = {
       stateLabel: 'controlled',
       bullets: [
         'Calls and forms in one place',
-        'Missed calls recovered, all logged',
+        'Missed calls logged for recovery',
         'Follow-up on schedule',
-        'Reviews consistently captured',
+        'Review requests sent at the right time',
       ],
     },
     scatterItems: ['Voicemail', 'Form', 'DM', 'Email', 'Quote PDF', 'Spreadsheet'],
@@ -560,7 +560,7 @@ export const homepageData: HomepageData = {
   pressurePoints: {
     eyebrow: 'Where it breaks',
     heading: 'Six ways work escapes.',
-    description: 'Each one handled by a layer of the system.',
+    description: 'Each one has a clear owner.',
     points: [
       {
         title: 'Cannot be found locally',
@@ -610,8 +610,8 @@ export const homepageData: HomepageData = {
   structureLayers: {
     heading: 'It is not a website project. [[muted:It is what catches the work.]]',
     description:
-      'The website is what visitors see. Behind it: captured enquiries, triggered follow-up, local visibility, and collected proof. Running. Connected.',
-    foundation: { title: 'Smart Website System' },
+      'Visitors see the website. The business needs the rest as well: enquiries captured, replies triggered, follow-up owned, proof requested, and results visible.',
+    foundation: { title: 'Connected business path' },
     layerStatus: 'Active',
     layers: [
       {
@@ -657,7 +657,7 @@ export const homepageData: HomepageData = {
     eyebrow: 'Where this fits',
     heading: 'Five businesses. [[muted:Same shape of leak.]]',
     description:
-      'The names change. The pattern does not. Work comes in. Some of it lands. Most of the rest depends on someone remembering — until a system holds it instead.',
+      'The names change. The pattern does not. Work comes in. Some of it lands. Most of the rest depends on someone remembering — until the next step is owned.',
     scenarios: [
       {
         name: 'Trades & Home Services',
@@ -824,12 +824,12 @@ export const homepageData: HomepageData = {
       {
         question: 'How is this different from getting a new website?',
         answer:
-          'A website shows the business. What we build makes sure enquiries get captured, routed to the right person, followed up, and tracked. The site is the visible part. This is what runs behind it.',
+          'A website shows the business. What we build makes sure enquiries get captured, routed to the right person, followed up, and tracked. The site is the visible part. The rest makes sure the enquiry is handled properly.',
       },
       {
         question: 'We already have a website. Can you work with that?',
         answer:
-          'Often yes. We start by inspecting what exists, locate where it leaks, and put the missing layers in place around it.',
+          'Often yes. We start by inspecting what exists, locate where it leaks, and put the missing handling in place around it.',
       },
       {
         question: 'Is SEO included?',
