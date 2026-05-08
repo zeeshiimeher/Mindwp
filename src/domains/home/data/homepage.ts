@@ -453,7 +453,7 @@ export const homepageData: HomepageData = {
     ],
     footerNote: 'Most businesses already have parts of this. The work is connecting them.',
     footerAction: {
-      label: 'See where your stack is incomplete',
+      label: 'See where the gaps are',
       href: buildContactHref({ system: 'smart-website-systems', sourceType: 'page', slug: 'home' }),
     },
   },
@@ -773,7 +773,7 @@ export const homepageData: HomepageData = {
   },
 
   implementationExamples: {
-    eyebrow: 'Architecture sample board',
+    eyebrow: 'Selected patterns',
     heading: 'What implementation can look like',
     description:
       'Not every business needs the same build. The system is shaped around where work is leaking.',
@@ -854,7 +854,7 @@ export const homepageData: HomepageData = {
       {
         question: 'Do you do ongoing work?',
         answer:
-          'Yes. Infrastructure needs maintenance, observation, and tuning. We can run it or hand it over.',
+          'Yes. Connected systems need maintenance, observation, and tuning. We can run it or hand it over.',
       },
       {
         question: 'How do we start?',
