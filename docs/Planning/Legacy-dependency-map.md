@@ -1,7 +1,7 @@
 # Legacy Dependency Map
 
-> Created: Milestone 6E. Updated as pages are rebuilt.
-> Last updated: Milestone 6N. Latest baseline: Homepage, SWS, LSA rebuilt. CaseStudyTemplate resolved (RelatedSection + PrimaryCTASection). All rebuilt renderers use SectionFrame.
+> Live old-dependency map for quarantine files, remaining consumers, and delete gates.
+> Latest baseline: Homepage, Smart Website Systems, and Local SEO Authority rebuilt. CaseStudyTemplate no longer owns related or final CTA rendering. All rebuilt renderers use SectionFrame.
 
 ## Purpose
 
@@ -10,7 +10,7 @@ This is the live old-dependency map. It answers:
 - Why is it still here and when can it be deleted?
 - What is already deleted/resolved?
 
-This is not a milestone history. See `docs/Planning/System-hard-reset.md` for architecture rules and the compressed milestone summary.
+Stable architecture rules live in `docs/core/*`. Temporary reset context lives in `docs/Planning/System-hard-reset.md`.
 
 ## Quarantine Rules
 

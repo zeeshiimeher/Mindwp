@@ -197,7 +197,7 @@ Examples of generator-owned source outputs include:
 - content registries
 - authority map source
 
-> **Note:** The generated component docs source (`componentDocs.generated.ts`) was removed in Milestone 6D when the component library route was deleted. It is no longer a generated output.
+> **Note:** The generated component docs source (`componentDocs.generated.ts`) was removed when the component library route was deleted. It is no longer a generated output.
 
 ---
 
@@ -233,8 +233,6 @@ Rules:
 - Snapshot and report generation are control-plane concerns, not manual cleanup steps.
 - If generator-owned files changed, regenerate them intentionally rather than relying on one command path to repair state invisibly.
 
-Execution behavior must stay aligned with `docs/ops/WORKFLOW.md`.
-
 ---
 
 ## 11. CONTENT AND GRAPH LOCK RULES
@@ -261,4 +259,4 @@ These rules are non-negotiable:
 9. `src/components/reusable` and `src/components/sections` are quarantine/delete-later. New components go in `layout/`, `primitives/`, `conversion/`, `navigation/`, or `content/`.
 10. `DecisionPanel` owns CTA rendering in rebuilt/new pages. `PrimaryCTASection` is quarantine/delete-later.
 11. `RelatedSection` owns global related-content display. No page-owned related sections. No slug exception lists.
-9. Build, `validate-all`, and `system:full` must stay aligned.
+12. Build, `validate-all`, and `system:full` must stay aligned.

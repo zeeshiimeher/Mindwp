@@ -1,168 +1,79 @@
-# MindWP — Smart Website Systems
+# MindWP
 
-MindWP is a systems-first website platform for service businesses.
+## What This Is
 
-It is not a blog business, affiliate project, ad site, generic agency site, or page-builder portfolio.
+MindWP is a systems-first digital infrastructure consultancy for established service businesses. The site and repo are built around one idea: work already comes in, but too much slips away between being found, contacted, followed up, reviewed, and measured. MindWP connects those weak points so work gets handled properly.
 
-The repo combines:
+Do not describe MindWP as a platform, SaaS product, web design agency, generic marketing agency, or tool reseller.
 
-- a Next.js application
-- domain-owned content registries
-- a deterministic content graph
-- CTA and contact-flow enforcement
-- validators, reports, snapshots, and deploy gates
+## Repo Purpose
 
-The goal is simple:
+- Next.js public site
+- Domain-owned content and registries
+- Canonical graph and metadata system
+- CTA and contact routing
+- Design system and page rendering surfaces
+- Validators, reports, snapshots, and control plane
 
-```text
-One command -> full validation -> safe deploy
-```
+## Documentation Dashboard
 
----
+| Doc | Use When | Owns |
+| --- | --- | --- |
+| `docs/core/FOUNDATION.md` | Defining business truth or system boundaries | Identity, positioning, audience, six systems, hierarchy, boundaries |
+| `docs/core/WRITING.md` | Writing or auditing public copy | Public language, rewrite rules, FLOW -> HANDLING -> RESULT |
+| `docs/core/CONTENT.md` | Deciding what a page is allowed to do | Page roles, funnel roles, content hierarchy |
+| `docs/core/CONVERSION.md` | Changing CTAs or contact flow | CTA intent, labels, placement, contact routing |
+| `docs/core/GRAPH.md` | Changing metadata or related content | Metadata, relationships, related-content rules |
+| `docs/core/DESIGN.md` | Working on UI, CSS, or visual structure | Visual system, CSS ownership, component design |
+| `docs/core/SYSTEM-ARCHITECTURE.md` | Mapping runtime/control-plane ownership | Runtime layers, validation/report flow, build/deploy gates |
+| `docs/core/SYSTEM-RULES.md` | Checking enforceable system locks | Route, SEO, OG, component, design, generated-source, validator locks |
+| `docs/Planning/System-hard-reset.md` | Continuing hard-reset work | Temporary reset state, active build rules, build order |
+| `docs/Planning/Legacy-dependency-map.md` | Removing old UI dependencies | Old dependencies, remaining consumers, delete gates |
+| `AGENTS.md` | Guiding Copilot in this repo | Concise execution rules and scoped reading discipline |
 
-## What MindWP Is
+Do not read every doc for every task. Read the docs relevant to the task.
 
-MindWP positions websites as lead-handling infrastructure, not just design surfaces.
+## Task-Based Reading Guide
 
-The system exists to support:
+- Positioning or content work: `FOUNDATION.md`, `WRITING.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`
+- Public copy rewrite: `FOUNDATION.md`, `WRITING.md`, and relevant page data
+- CTA work: `CONVERSION.md`, relevant page/template, and CTA helpers
+- Related or graph work: `GRAPH.md` and relevant domain config
+- Design or UI work: `DESIGN.md` and relevant components/CSS
+- Architecture or control-plane work: `SYSTEM-ARCHITECTURE.md`, `SYSTEM-RULES.md`, and relevant scripts
+- Legacy cleanup: `Legacy-dependency-map.md`
+- Hard reset work: `System-hard-reset.md` plus relevant stable docs
 
-- enquiry capture
-- follow-up reliability
-- CRM and response flow
-- local visibility
-- review and trust signals
-- conversion clarity
+## Common Commands
 
-Public positioning is controlled by `docs/core/FOUNDATION.md`.
-
----
-
-## What This Repo Is Not
-
-Do not treat this repo as:
-
-- a blog-first content site
-- an SEO content farm
-- a generic WordPress agency website
-- a template showcase
-- a collection of disconnected service pages
-- a place for experimental runtime AI behavior
-
-Content should only be added when it strengthens authority, proof, clarity, or conversion progression.
-
----
-
-## Trusted Command Path
-
-Use these commands only through the intended workflow.
+All commands below exist in `package.json`.
 
 ```bash
 npm install
+npm run dev
+npm run typecheck
+npm run lint
 npm run system:quick
+npm run system:full
 npm run system:regen
-npm run system:full
-npm run dev
-```
-
-Production release must go through:
-
-```bash
+npm run generate:core
+npm run build
 npm run deploy
 ```
 
-`npm run system:full` is the trusted system gate. It validates structure, regenerates required artifacts, runs checks, and confirms the repo is safe to build.
+`npm run system:quick` is the fast development check. `npm run system:full` is the full validation/reporting gate. `npm run build` runs through the safe build path. `npm run deploy` must remain the production release path.
 
-Validators protect structure. Manual review protects authority.
+## Active Architecture Guardrails
 
----
+- Current CSS stack: `tokens.css -> reset.css -> typography.css -> layout.css -> primitives.css -> components.css -> page/domain CSS`
+- `DecisionPanel` is the final conversion component for rebuilt/new pages.
+- `PrimaryCTASection` is quarantine delete-later only for old consumers.
+- `RelatedSection` is global/wrapper-owned; page renderers should not manually own related sections.
+- Approved new component folders: `src/components/layout`, `src/components/primitives`, `src/components/conversion`, `src/components/navigation`, `src/components/content`.
+- Quarantined old folders: `src/components/reusable`, `src/components/sections`.
+- Rebuilt/new code must not use old `rd-*`, `l-section`, or `l-container` patterns.
+- Do not restore deleted workflow docs; use this dashboard and the stable core docs instead.
 
-## Documentation Order
+## Final Principle
 
-Read docs in this order before making meaningful changes:
-
-1. `docs/core/FOUNDATION.md`
-2. `docs/core/WRITING.md`
-3. `docs/core/CONTENT.md`
-4. `docs/core/CONVERSION.md`
-5. `docs/core/GRAPH.md`
-6. `docs/core/SYSTEM-RULES.md`
-7. `docs/core/SYSTEM-ARCHITECTURE.md`
-8. `docs/ops/WORKFLOW.md`
-9. `docs/ops/AUDIT.md`
-10. `docs/ops/CONTENT-INVENTORY.md`
-
-If docs conflict, follow the authority order defined in `FOUNDATION.md`.
-
----
-
-## Main Repo Areas
-
-| Area | Purpose |
-| ---- | ------- |
-| `src/app/` | canonical app routes and route handlers |
-| `src/domains/` | domain-owned content, registries, and content model |
-| `src/components/` | rendering components and system UI surfaces |
-| `src/lib/` | graph, SEO, CTA, contact, reporting, and shared logic |
-| `src/config/` | CTA labels, UI intelligence, environment and policy config |
-| `scripts/` | validators, analyzers, reports, deploy, and system commands |
-| `reports/` | generated validation and audit outputs |
-| `artifacts/` | generated deploy/snapshot outputs |
-| `docs/` | governance, workflow, UI, and planning docs |
-
----
-
-## Hard Rules
-
-- One content item gets one canonical route.
-- Canonical systems, topics, and industries come from registries.
-- Domain data does not own CTA intent.
-- Related content is graph-derived, not manually listed.
-- `/contact` is the only form entry route.
-- `PrimaryCTASection` owns primary page CTA rendering.
-- Components render content; they do not query the graph directly.
-- Generated reports and artifacts are not edited manually.
-- Passing validators does not automatically mean a page is persuasive.
-
----
-
-## Local Development
-
-```bash
-npm run dev
-```
-
-Use quick checks during active work:
-
-```bash
-npm run system:quick
-```
-
-Run the full gate before serious commits, launch checks, or deploy:
-
-```bash
-npm run system:full
-```
-
----
-
-## Deployment
-
-Production deployment is gated.
-
-Use:
-
-```bash
-npm run deploy
-```
-
-Do not bypass the deploy gate with direct platform deploy commands.
-
----
-
-## Final Operating Principle
-
-MindWP is not trying to publish more pages.
-
-It is trying to make a serious service-business owner feel:
-
-> This person understands how leads are lost, handled, followed up, and converted.
+Start from the business owner's visible day: calls, searches, forms, quotes, reviews, jobs, staff, inboxes, and missed follow-up. Use the system model to structure the solution, not to make the buyer decode the architecture.

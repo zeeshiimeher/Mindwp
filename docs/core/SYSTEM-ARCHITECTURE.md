@@ -196,7 +196,6 @@ This layer records validated state and gates release.
 | Validator execution | `scripts/core/validate-all.mjs` |
 | Report export | `scripts/analyzers/export-reports.mjs` |
 | System summary | `scripts/core/system-report.mjs` |
-| Workflow authority | `docs/ops/WORKFLOW.md` |
 
 ---
 
@@ -225,6 +224,5 @@ Read in this order:
 5. `GRAPH.md`
 6. `DESIGN.md`
 7. `SYSTEM-RULES.md`
-8. `../ops/WORKFLOW.md`
 
 This file stays subordinate to the governing docs and exists only as the short architecture map.

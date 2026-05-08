@@ -2,7 +2,7 @@
 
 ## What MindWP Is
 
-- systems-first digital infrastructure consultancy for service businesses
+- systems-first digital infrastructure consultancy for established service businesses
 - not generic web design, not SaaS, not tool reseller, not template business
 - primary goal: qualified enquiries and conversion through structured systems
 - six canonical systems: Smart Website Systems, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth
@@ -20,9 +20,9 @@ CONTENT → PATTERN → COMPONENT → VARIANT / CONTROL → RENDER
 ## Source of Truth Order
 
 1. current scoped user prompt
-2. `docs/Planning/System-hard-reset.md` — architecture rules, build rules, component ownership, CSS rules, build order
-3. `docs/Planning/Legacy-dependency-map.md` — live old dependency map, delete gates
-4. `docs/core/*` for business, writing, content, conversion, design, and system rules
+2. relevant `docs/core/*` authority for the task
+3. `docs/Planning/System-hard-reset.md` for hard-reset page work only
+4. `docs/Planning/Legacy-dependency-map.md` for legacy cleanup only
 5. current code
 6. `AGENTS.md` as stable background guidance
 
@@ -42,6 +42,16 @@ Every new Copilot chat should:
 - avoid broad repo scans unless the prompt asks for repo-wide work
 - produce a short plan before large edits
 - execute within the scoped prompt only
+
+Task-based reading:
+
+- Positioning/content tasks: `FOUNDATION.md`, `WRITING.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`.
+- Design/UI tasks: `DESIGN.md` plus relevant components/CSS.
+- Architecture/control-plane tasks: `SYSTEM-ARCHITECTURE.md`, `SYSTEM-RULES.md`, and relevant scripts.
+- Legacy cleanup: `docs/Planning/Legacy-dependency-map.md`.
+- Hard-reset page work: `docs/Planning/System-hard-reset.md` plus relevant stable docs.
+
+Do not read every doc for every task unless the prompt asks for repo-wide work.
 
 ### Positioning orientation for page work
 

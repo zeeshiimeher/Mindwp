@@ -254,14 +254,14 @@ Disallowed graph owners include:
 
 The graph decides what is valid. The UI decides what is shown.
 
-> **Architecture note:** `RelatedSection` (`src/components/navigation/RelatedSection.tsx`) replaced the old `SmartRelatedSection` → `SmartRelatedSectionClient` → `RelatedContentSection` chain in Milestone 6F. Page renderers must not render their own related sections. Config model:
+> **Architecture note:** `RelatedSection` (`src/components/navigation/RelatedSection.tsx`) is the global related-content display owner. Related content is graph/config-derived and injected by wrappers; page renderers and templates must not manually own related sections unless explicitly documented as an old quarantine case. Config model:
 > ```ts
 > relatedSection?: {
 >   enabled?: boolean;   // default true
 >   variant?: 'standard' | 'rail' | 'compact';  // default 'standard'
 > }
 > ```
-> `SmartRelatedSection`, `SmartRelatedSectionClient`, and `RelatedContentSection` are deleted. `SLUGS_WITH_OWN_RELATED` slug exception lists are forbidden.
+> Slug exception lists are forbidden.
 
 ### Behavior-Safe Output
 
@@ -376,4 +376,4 @@ Consumers must not bypass these constraints.
 - Identity and system boundaries: [./FOUNDATION.md](./FOUNDATION.md)
 - CTA and contact context: [./CONVERSION.md](./CONVERSION.md)
 - Public writing style and related-content language: [./WRITING.md](./WRITING.md)
-- Control plane and validation: `scripts/core/system-manifest.mjs`, `scripts/validators/*`, and [../ops/WORKFLOW.md](../ops/WORKFLOW.md)
+- Control plane and validation: `scripts/core/system-manifest.mjs`, `scripts/validators/*`, and [./SYSTEM-RULES.md](./SYSTEM-RULES.md)
