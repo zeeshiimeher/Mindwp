@@ -182,6 +182,10 @@ Rules:
 
 The services landing page may curate these layers deliberately, but it may not flatten them into equal-weight public positioning.
 
+**Buyer entry points:** Other Tier 1 systems may lead when the buyer's visible pain is direct (visibility, missed calls, follow-up failure). See `FOUNDATION.md` for the entry-point map. This does not change the hierarchy — it reflects how buyers with specific pain arrive at the offer.
+
+**Public path vs. internal hierarchy:** The six canonical systems are the internal and service model. Publicly, they map to a simple path: get found → make the offer clear → capture the enquiry → respond → follow up → turn it into proof. Page copy should support this path, not expose internal taxonomy before the buyer's situation is clear.
+
 ---
 
 ## SEO INTENT SEPARATION

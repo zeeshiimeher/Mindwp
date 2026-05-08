@@ -61,6 +61,85 @@ MindWP does not position itself as:
 The commercial posture is calm, clear, and operational.
 MindWP sells structure before scale and infrastructure before growth.
 
+---
+
+## PUBLIC POSITIONING LAYER
+
+### Internal model vs. public-facing explanation
+
+**Internal model (for docs, architecture, and agent context):**
+MindWP is a systems-first digital infrastructure consultancy with six connected systems.
+
+**Public-facing explanation (for page copy, CTAs, and buyer-facing content):**
+MindWP helps established service businesses stop losing work between the moments where customers find them, contact them, wait for a response, receive quotes, book jobs, leave reviews, and come back later.
+
+**The public idea in plain language:**
+- The business already has activity. Calls, enquiries, jobs, customers, reviews, and staff pressure already exist.
+- The problem is not always lack of demand. The problem is weak handling between moments.
+- Work slips away between search, enquiry, response, follow-up, proof, and repeat business.
+- MindWP connects the weak points so work gets handled properly.
+
+Protect these lines. They are positioning anchors, not decorative copy:
+- "Work Comes In. Too Much Slips Away."
+- "The business is working. The system around it is leaking."
+- "These aren't separate problems. They're connected."
+- "Nothing depends on someone remembering."
+- "Enquiries land somewhere useful."
+
+### Avoid making the buyer decode
+
+Public copy must not ask buyers to parse:
+- infrastructure
+- layers
+- stacks
+- internal architecture
+- taxonomy
+- "systems-first" before the problem is clear
+
+These terms are valid internally. They are not public lead phrases.
+
+The six-system model is the internal structure and the public service offer. But public copy should first show the business path, then introduce systems as the way MindWP handles it.
+
+### Public path (simplified buyer-facing version)
+
+This is how the buyer should understand the journey — not a rewrite of the service hierarchy, just the simplest explanation of the path:
+
+1. Get found locally.
+2. Make the website and service offer clear.
+3. Capture the enquiry.
+4. Respond quickly.
+5. Follow up and keep ownership visible.
+6. Turn good work into proof and better decisions.
+
+The six canonical systems remain the internal and service model. This path is the public-facing simplification that buyers can follow without decoding architecture.
+
+---
+
+## TARGET AUDIENCE
+
+### Who MindWP is for
+
+- Established service businesses with real activity.
+- Businesses with calls, enquiries, jobs, customers, reviews, staff, or repeat work already in motion.
+- Businesses with a basic website, weak website, no proper website, Google Business Profile, WhatsApp enquiries, forms, email, spreadsheets, disconnected tools, or half-used CRM.
+- Businesses where missed handling costs money: a late reply, an unanswered call, a quote that never followed up.
+
+### Who MindWP is not primarily for
+
+- Brand-new businesses with no traction or established demand.
+- Cheap website refresh buyers.
+- Businesses only looking for a one-off campaign.
+- Owners who only want a tool subscription.
+
+### Important: do not imply buyers already have mature systems
+
+Buyers may have no real system yet.
+They may have messy, disconnected tools that were set up years ago.
+They may have a website but very weak handling behind it.
+They may have SEO demand coming in but no structure to capture or convert it.
+
+Public copy must not assume the reader is one step away from a polished operation. Most are managing with workarounds, memory, and luck.
+
 ### Marketing-Adjacent Outcomes
 
 MindWP is not a generic marketing agency. Campaign management, ad spend, generic retainers, and decorative design are not the offer.
@@ -185,6 +264,19 @@ All other Tier 1 systems:
 - may sell independently when user intent is direct
 - must not displace Smart Website as the dominant public service frame
 
+**Public simplification:**
+The website is often where work lands first, so it is the easiest place for the buyer to understand the wider handling problem. Smart Website Systems is the visible anchor, not the owner of every system.
+
+**Entry points by pain:**
+Other systems can lead when the buyer's visible pain is direct:
+- Local SEO Authority leads when the buyer's pain is visibility and local search.
+- AI Lead Handling leads when the buyer's pain is missed calls or slow response.
+- CRM & Automation leads when the buyer's pain is follow-up failure or ownership gaps.
+- Reputation & Review leads when the buyer's pain is trust, review absence, or negative feedback.
+- Revenue Growth leads when the buyer's pain is leaking revenue after enquiries arrive.
+
+Smart Website Systems should not swallow every page. It is the structural center, not the forced entry for buyers who arrive with different pain.
+
 ### Tier Hierarchy Rule
 
 The public service model has three layers:
@@ -200,6 +292,8 @@ They do not become strategic pillars.
 
 `local-seo-authority` may lead when visitor intent is explicitly SEO-led.
 This is a controlled acquisition exception, not a second flagship.
+
+**Important nuance:** LSA can be an entry point for businesses seeking local visibility even if they have a limited website, a weak website, or no proper website yet. Buyer intent for LSA does not require a fully built-out site — it requires a business with an existing local presence that is not being discovered or verified properly. Do not imply LSA is only for businesses that already have strong digital infrastructure.
 
 ---
 
@@ -259,6 +353,21 @@ Example:
 
 A Smart Website page may mention that lead handling continues in CRM after enquiry capture.
 The same page must not turn into a CRM workflow page.
+
+---
+
+## SYSTEM PUBLIC FRAMING
+
+These are the plain-language public descriptions for each canonical system. Use these when writing page copy, heroes, and descriptions. The canonical identifiers and technical scope are unchanged.
+
+| System | Public framing | Avoid |
+| --- | --- | --- |
+| `smart-website-systems` | Website and service pages that catch enquiries and send them to the right next step | "full AI response", "CRM lifecycle", "SEO authority" — these are other systems |
+| `local-seo-authority` | Make nearby customers and Google more able to find, verify, and trust the business | "lead handling", "conversion handling", "review operations" — these are other systems |
+| `ai-lead-handling` | Fast response and routing for calls, forms, DMs, and missed enquiries | Chatbot hype, AI feature-dump, robotic tone |
+| `crm-automation` | Keep every enquiry owned, followed up, and visible | Vague "workflow automation" language |
+| `reputation-review` | Ask for reviews at the right time and route feedback properly | Generic "reputation management" fluff |
+| `revenue-growth` | Find where money leaks after enquiries and improve what is already working | Generic growth marketing positioning |
 
 ---
 

@@ -213,6 +213,50 @@ Best writing feels obvious.
 
 ## 5. LANGUAGE RULES
 
+### Public Starting Points
+
+Public copy should begin with situations and objects the reader already recognises in their working day.
+
+Preferred starting points:
+- calls
+- forms
+- quotes
+- missed replies
+- inboxes
+- reviews
+- jobs
+- staff pressure
+- customers waiting
+- owner memory
+- work slipping away
+
+If a sentence starts with "infrastructure", "layer", "stack", "surface", "architecture", or "system" before the visible problem is established, reverse the order. Problem first, then system framing.
+
+This rule applies to hero sections, section descriptions, and CTA context. It does not restrict technical docs, architecture language, or internal naming.
+
+### Architecture Language in Public Copy
+
+These words are valid internally. Use them carefully in public copy, only after the visible problem is already clear:
+- system (allowed with care; see exception below)
+- layer
+- stack
+- surface
+- infrastructure
+- architecture
+- compounding
+- authority (allowed, but explain as trust signals or search presence, not as an abstract concept)
+
+"Systems-first" is a useful internal framing. In public copy, it should appear after the problem is understood — not as the opening position.
+
+### Protected Phrases
+
+These are positioning anchors. Do not rewrite, dilute, or remove them without a specific editorial reason:
+- "Work Comes In. Too Much Slips Away."
+- "The business is working. The system around it is leaking."
+- "These aren't separate problems. They're connected."
+- "Nothing depends on someone remembering."
+- "Enquiries land somewhere useful."
+
 ### Banned Words
 
 Replace these unless technical clarity requires them:

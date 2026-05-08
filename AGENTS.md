@@ -43,6 +43,18 @@ Every new Copilot chat should:
 - produce a short plan before large edits
 - execute within the scoped prompt only
 
+### Positioning orientation for page work
+
+Before writing or editing any page content, think from the business owner's visible working day:
+
+calls, searches, forms, quotes, reviews, jobs, staff, inboxes, and missed follow-up.
+
+Use the six systems as hidden structure first. Do not lead with internal architecture.
+
+Public copy should make the buyer think: "that happens here" — not "I need to understand this framework first."
+
+If the opening line uses the words infrastructure, layer, stack, surface, or systems-first before the reader's situation is clear, reverse the order.
+
 ## Current New-System Components
 
 Use these for all new/rebuilt pages. Do not use old reusable/sections components:
