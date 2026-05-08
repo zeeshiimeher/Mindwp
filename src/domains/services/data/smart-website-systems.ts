@@ -30,7 +30,7 @@ const smartWebsitesFaqItems = [
   {
     question: 'Will local people actually find us on Google?',
     answer:
-      'Each service gets its own page with wording that matches how people actually search. That gives Google a clear page to show when someone nearby needs that exact service.',
+      'Each service gets its own page with wording that matches how people actually search. That gives Google a clear page to index for local service searches. For full local authority — profile, citations, and ongoing signals — that is what Local SEO Authority builds on top of this foundation.',
   },
   {
     question: "How much upkeep is there once it's running?",
@@ -88,7 +88,7 @@ export const smartWebsiteSystemsPage = {
         { label: 'Booking · Lina R.', value: 'Confirmed', status: 'good' as const },
         { label: 'Old enquiry · Tom W.', value: 'Lost', status: 'risk' as const },
       ],
-      footerPrimary: 'auto-assigned · CRM logged',
+      footerPrimary: 'source attached · CRM ready',
       footerSecondary: 'uptime 99.98%',
     },
   },
@@ -137,7 +137,7 @@ export const smartWebsiteSystemsPage = {
             'No follow-up sequence. Your team is mid-job. Checking back on outstanding enquiries depends on memory.',
           cost: 'Warm leads go cold without a reply. Work that was available disappears without your team knowing.',
           handledState:
-            'Follow-up runs automatically until there is a response. Your team delivers the work — the system handles the chasing.',
+            'CRM Automation runs follow-up until there is a response. Your team delivers the work — the connected system handles the chasing.',
         },
         {
           stage: 'Visibility',
@@ -204,7 +204,7 @@ export const smartWebsiteSystemsPage = {
           },
           {
             label: 'Routing',
-            text: 'The form goes straight into your CRM and follow-up starts without anyone copying details by hand.',
+            text: 'The form goes straight into your CRM. Follow-up continues from there — without anyone copying details by hand.',
           },
           {
             label: 'Upkeep',
@@ -284,7 +284,7 @@ export const smartWebsiteSystemsPage = {
           includedItems: [
             'CRM or booking tool connected from day one — every lead logged on arrival',
             'Automated confirmation sent immediately when an enquiry lands',
-            'Follow-up sequence running without anyone on your team having to remember',
+            'CRM connected with follow-up sequence configured from day one',
             'Every enquiry path tested end to end before launch',
           ],
         },
@@ -412,15 +412,15 @@ export const smartWebsiteSystemsPage = {
         },
         {
           name: 'Follow-up',
-          title: 'Nobody on your team has to remember to chase',
+          title: 'The enquiry is owned from the moment it arrives',
           description:
-            'They reach out. Confirmation goes straight away. No reply? Reminder goes out. Your team does the work. Chasing runs on its own.',
+            'They reach out. The enquiry lands in your CRM with name, number, and service attached. A confirmation goes out immediately. From there, connected handling takes over — your team delivers the work.',
           proofPoints: [
-            'First response in minutes. Even at midnight.',
-            'Reminders the day before an appointment. No-shows drop.',
-            'Keeps going until they respond. Nothing goes cold quietly.',
+            'Enquiry arrives with full context — name, number, what they need.',
+            'CRM picks it up automatically. Nothing copied by hand.',
+            "Follow-up continues through connected handling, not from anyone's memory.",
           ],
-          stateLabel: 'Nothing cold',
+          stateLabel: 'Handoff ready',
         },
       ],
       finalSummary:
@@ -493,14 +493,14 @@ export const smartWebsiteSystemsPage = {
           before:
             'Traffic clicks through. Nothing gets captured. The spend continues without evidence of return.',
           after:
-            'People find what they came for and get in touch. Follow-up runs before it goes cold. Spend that works is visible.',
+            'People find what they came for and get in touch. Follow-up continues through connected handling. Spend that works is visible.',
         },
         {
           title: 'Less chasing, more delivering',
           before:
             'Enquiries live in an inbox. Your team checks it when they remember. Leads go cold between jobs.',
           after:
-            'Enquiries arrive with context attached. Follow-up is handled. Your team focuses on the actual work.',
+            'Enquiries arrive with context attached. Follow-up is owned by the connected system. Your team focuses on the actual work.',
         },
         {
           title: 'Search traffic has somewhere to land',

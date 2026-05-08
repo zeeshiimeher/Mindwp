@@ -176,7 +176,7 @@ export const localSeoAuthorityPage = {
           'Google Business Profile actively maintained. Your business stays eligible for the local pack where most clicks happen.',
           'Details corrected and matched across every directory. Google sees one consistent business.',
           'Monthly work tied to visible changes \u2014 updated content, stronger profiles, growing local presence.',
-          'SEO connected to website clarity. Better rankings also mean better conversion when people actually arrive.',
+          'SEO connected to website clarity. The right visitor arrives — and the website gives them a reason to act.',
         ],
       },
     },
@@ -222,7 +222,7 @@ export const localSeoAuthorityPage = {
         { iconKey: 'file-text' as const, label: 'Service pages' },
         { iconKey: 'building' as const, label: 'Google Business Profile' },
         { iconKey: 'map-pin' as const, label: 'Citations and directories' },
-        { iconKey: 'star' as const, label: 'Reviews and reputation' },
+        { iconKey: 'star' as const, label: 'Review signals' },
         { iconKey: 'search' as const, label: 'Local content' },
         { iconKey: 'file-text' as const, label: 'Reporting' },
         { iconKey: 'refresh-cw' as const, label: 'Ongoing improvement' },
@@ -242,7 +242,7 @@ export const localSeoAuthorityPage = {
       phases: [
         { name: 'Check', note: 'What does Google currently see?' },
         { name: 'Clarify', note: 'Fix details, services, structure.' },
-        { name: 'Build', note: 'Pages, citations, content, reviews.' },
+        { name: 'Build', note: 'Pages, citations, content, review signals.' },
         { name: 'Adjust', note: 'Read the signal. Refine. Repeat.' },
       ],
     },
@@ -408,6 +408,12 @@ export const localSeoAuthorityPage = {
           question: 'What if our website needs rebuilding first?',
           answer:
             "We'll tell you. Sometimes the smartest first step is fixing the website before layering SEO on top. We can handle that directly or guide your team on what to prioritise.",
+        },
+        {
+          id: 'lsa-faq-12',
+          question: 'What is the difference between Local SEO Authority and Reputation & Review?',
+          answer:
+            'Local SEO Authority treats reviews as one of several trust signals Google uses to verify your business — alongside profile completeness, citations, and service page content. Reputation & Review is a separate system that owns the actual process: requesting reviews from clients, routing negative feedback, monitoring your reputation, and keeping the review flow consistent. One feeds the signal. The other runs the operation.',
         },
       ],
     },

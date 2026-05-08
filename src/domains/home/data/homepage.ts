@@ -781,31 +781,31 @@ export const homepageData: HomepageData = {
     implementationPatterns: [
       {
         title: 'Missed call recovery flow',
-        desc: 'Inbound voicemail triggers an SMS reply, logs the enquiry, and routes it into the queue.',
+        desc: 'Inbound voicemail triggers an SMS reply, logs the enquiry, and routes it into the queue. AI Lead Handling layer.',
         flow: ['Voicemail', 'SMS reply', 'Enquiry log', 'Queue'],
         iconKey: 'missed-call-recovery',
       },
       {
         title: 'Lead follow-up sequence',
-        desc: 'Quote sent → 24h check-in → 3d nudge → 7d close-out. On schedule, not by memory.',
+        desc: 'Quote sent → 24h check-in → 3d nudge → 7d close-out. On schedule, not by memory. CRM & Automation layer.',
         flow: ['Quote', '+24h', '+3d', '+7d'],
         iconKey: 'follow-up-sequence',
       },
       {
         title: 'Service page structure',
-        desc: 'Service clarity, area coverage, structured capture surface — built so search and humans both understand.',
+        desc: 'Service clarity, area coverage, structured capture surface — built so search and humans both understand. Smart Website Systems layer.',
         flow: ['Clarity', 'Coverage', 'Capture'],
         iconKey: 'service-page-structure',
       },
       {
         title: 'Review request flow',
-        desc: 'Job marked complete → review request → reminder → review surfaced where it earns trust.',
+        desc: 'Job marked complete → review request → reminder → review surfaced where it earns trust. Reputation & Review layer.',
         flow: ['Done', 'Request', 'Remind', 'Display'],
         iconKey: 'review-flow',
       },
       {
         title: 'CRM routing',
-        desc: 'All channels — call, form, DM, email — into one record. Owner sees the queue, not the chaos.',
+        desc: 'All channels — call, form, DM, email — into one record. Owner sees the queue, not the chaos. CRM & Automation layer.',
         flow: ['Channel', 'Record', 'Queue'],
         iconKey: 'crm-routing',
       },
@@ -839,7 +839,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What about missed calls and follow-up?',
         answer:
-          'Handled by the Capture and Follow-Up layers. Missed call recovery flows, routed enquiries, sequenced replies.',
+          'Missed call recovery sits with AI Lead Handling — instant reply, enquiry logged. Sequenced follow-up sits with CRM & Automation — quotes chased, reminders sent. Both connect into the website capture layer.',
       },
       {
         question: 'What kind of businesses is this for?',
