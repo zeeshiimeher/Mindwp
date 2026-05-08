@@ -254,8 +254,7 @@
    ───────────────────────────────────────────── */
 
 .home-leak {
-  background: var(--mw-bg-mist);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='mist') */
 }
 
 .home-leak__path {
@@ -318,8 +317,7 @@
    ───────────────────────────────────────────── */
 
 .home-foundation {
-  background: var(--mw-color-white);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='white') */
 }
 
 .home-foundation__visual {
@@ -515,9 +513,8 @@
    ───────────────────────────────────────────── */
 
 .home-system-stack {
-  background: var(--mw-color-white);
+  /* background and padding-block owned by SectionFrame (tone='white') */
   border-top: 1px solid var(--mw-border-light);
-  padding-block: var(--mw-section-block);
 }
 
 .home-system-stack__grid {
@@ -721,12 +718,13 @@
    ───────────────────────────────────────────── */
 
 .home-workbench {
+  /* unique teal-mist gradient — not a standard tone, page CSS owns background */
   background: linear-gradient(
     160deg,
     var(--mw-bg-mist) 0%,
     color-mix(in srgb, var(--mw-signal-teal) 4%, var(--mw-bg-mist)) 100%
   );
-  padding-block: var(--mw-section-block);
+  /* padding-block owned by SectionFrame */
 }
 
 .home-workbench__card {
@@ -841,8 +839,7 @@
    ───────────────────────────────────────────── */
 
 .home-fit {
-  background: var(--mw-color-white);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='white') */
 }
 
 .home-fit__cards {
@@ -986,10 +983,11 @@
    ───────────────────────────────────────────── */
 
 .home-shift {
+  /* unique dark gradient — not standard dark tone, page CSS owns background */
   background: linear-gradient(160deg, var(--mw-bg-dark) 0%, var(--mw-color-dark-hover) 100%);
   position: relative;
   overflow: hidden;
-  padding-block: var(--mw-section-block);
+  /* padding-block owned by SectionFrame */
   z-index: 1;
 }
 
@@ -1003,21 +1001,7 @@
   pointer-events: none;
 }
 
-/* SectionFrame heading overrides for dark gradient sections */
-.home-shift .mw-section-frame__heading,
-.home-pressure .mw-section-frame__heading {
-  color: var(--mw-color-white);
-}
-
-.home-shift .mw-section-frame__description,
-.home-pressure .mw-section-frame__description {
-  color: var(--mw-white-60);
-}
-
-.home-shift .mw-section-frame__eyebrow,
-.home-pressure .mw-section-frame__eyebrow {
-  color: var(--mw-white-45);
-}
+/* Text colors for dark gradient sections now owned by tone='dark' on SectionFrame */
 
 .home-shift__layout {
   display: grid;
@@ -1237,8 +1221,9 @@
    ───────────────────────────────────────────── */
 
 .home-pressure {
+  /* unique dark gradient — not standard dark tone, page CSS owns background */
   background: linear-gradient(160deg, var(--mw-bg-dark) 0%, var(--mw-color-dark-mid) 100%);
-  padding-block: var(--mw-section-block);
+  /* padding-block owned by SectionFrame */
 }
 
 .home-pressure__grid {
@@ -1342,8 +1327,7 @@
    ───────────────────────────────────────────── */
 
 .home-structure {
-  background: var(--mw-color-white);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='white') */
 }
 
 .home-structure__layers {
@@ -1553,8 +1537,9 @@
    ───────────────────────────────────────────── */
 
 .home-industries {
+  /* unique white-to-mist gradient — not a standard tone, page CSS owns background */
   background: linear-gradient(160deg, var(--mw-color-white) 0%, var(--mw-bg-mist) 100%);
-  padding-block: var(--mw-section-block);
+  /* padding-block owned by SectionFrame */
 }
 
 .home-industries__grid {
@@ -1696,8 +1681,7 @@
    ───────────────────────────────────────────── */
 
 .home-alignment {
-  background: var(--mw-color-white);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='white') */
 }
 
 .home-alignment__arc-card {
@@ -1794,8 +1778,7 @@
    ───────────────────────────────────────────── */
 
 .home-proof {
-  background: var(--mw-bg-mist);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='mist') */
 }
 
 .home-proof__cards {
@@ -1962,7 +1945,8 @@
    ───────────────────────────────────────────── */
 
 .home-examples {
-  background: var(--mw-color-white);
+  /* background owned by SectionFrame (tone='white') */
+  /* custom padding: intentionally different from section-block */
   padding-block: clamp(5rem, 8vw, 8rem);
 }
 
@@ -2116,8 +2100,7 @@
    ───────────────────────────────────────────── */
 
 .home-faq {
-  background: var(--mw-bg-mist);
-  padding-block: var(--mw-section-block);
+  /* background and padding-block owned by SectionFrame (tone='mist') */
 }
 
 /* ─────────────────────────────────────────────

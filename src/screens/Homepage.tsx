@@ -229,6 +229,7 @@ function LeakDiagnosisSection() {
         title: leakDiagnosis.heading,
         description: leakDiagnosis.description,
       }}
+      tone='mist'
       className='home-leak'
       ariaLabel='Leak diagnosis'
     >
@@ -267,6 +268,7 @@ function FoundationSection() {
         title: foundation.heading,
         description: foundation.description,
       }}
+      tone='white'
       className='home-foundation'
       ariaLabel='Foundation'
     >
@@ -338,6 +340,7 @@ function SystemStackSection() {
         title: systemStack.heading,
         description: systemStack.description,
       }}
+      tone='white'
       className='home-system-stack'
       ariaLabel='System stack'
     >
@@ -495,6 +498,7 @@ function ClientShiftSection() {
   return (
     <SectionFrame
       heading={{ title: clientShift.heading, description: clientShift.description }}
+      tone='dark'
       className='home-shift'
       ariaLabel='Client shift'
     >
@@ -575,6 +579,7 @@ function PressurePointsSection() {
         title: pressurePoints.heading,
         description: pressurePoints.description,
       }}
+      tone='dark'
       className='home-pressure'
       ariaLabel='Pressure points'
     >
@@ -613,6 +618,7 @@ function StructureLayersSection() {
         title: structureLayers.heading,
         description: structureLayers.description,
       }}
+      tone='white'
       className='home-structure'
       ariaLabel='Structure layers'
     >
@@ -958,7 +964,7 @@ function FAQSection() {
       description={faq.description}
       items={faqItems}
       initialOpenId='home-faq-0'
-      tone='white'
+      tone='mist'
       variant='split'
       ariaLabel='Homepage FAQ'
       className='home-faq'

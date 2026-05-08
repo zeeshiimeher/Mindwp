@@ -387,6 +387,7 @@
 }
 
 @keyframes mw-pulse-dot {
+
   0%,
   100% {
     opacity: 1;
@@ -415,7 +416,7 @@
 [data-js-motion] .mw-animate-panel,
 [data-js-motion] .mw-animate-section,
 [data-js-motion] .mw-animate-list,
-[data-js-motion] .mw-animate-stagger > * {
+[data-js-motion] .mw-animate-stagger>* {
   opacity: 0;
   transition:
     opacity var(--mw-dur-slow) var(--mw-ease-out),
@@ -432,7 +433,7 @@
   transform: translateY(0.75rem);
 }
 
-[data-js-motion] .mw-animate-stagger > * {
+[data-js-motion] .mw-animate-stagger>* {
   transform: translateY(0.75rem);
 }
 
@@ -451,7 +452,7 @@
 [data-js-motion] .mw-animate-panel.is-visible,
 [data-js-motion] .mw-animate-section.is-visible,
 [data-js-motion] .mw-animate-list.is-visible,
-[data-js-motion] .mw-animate-stagger.is-visible > * {
+[data-js-motion] .mw-animate-stagger.is-visible>* {
   opacity: 1;
   transform: translateY(0);
 }
@@ -463,52 +464,53 @@
 }
 
 /* Stagger delays — first 8 children */
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(1) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(1) {
   transition-delay: 0ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(2) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(2) {
   transition-delay: 60ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(3) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(3) {
   transition-delay: 120ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(4) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(4) {
   transition-delay: 180ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(5) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(5) {
   transition-delay: 240ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(6) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(6) {
   transition-delay: 300ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(7) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(7) {
   transition-delay: 360ms;
 }
 
-[data-js-motion] .mw-animate-stagger.is-visible > *:nth-child(8) {
+[data-js-motion] .mw-animate-stagger.is-visible>*:nth-child(8) {
   transition-delay: 420ms;
 }
 
 /* Reduced motion — force-reveal everything immediately */
 @media (prefers-reduced-motion: reduce) {
+
   [data-js-motion] .mw-animate-fade,
   [data-js-motion] .mw-animate-up,
   [data-js-motion] .mw-animate-panel,
   [data-js-motion] .mw-animate-section,
   [data-js-motion] .mw-animate-list,
-  [data-js-motion] .mw-animate-stagger > *,
+  [data-js-motion] .mw-animate-stagger>*,
   [data-js-motion] .mw-animate-fade.is-visible,
   [data-js-motion] .mw-animate-up.is-visible,
   [data-js-motion] .mw-animate-panel.is-visible,
   [data-js-motion] .mw-animate-section.is-visible,
   [data-js-motion] .mw-animate-list.is-visible,
-  [data-js-motion] .mw-animate-stagger.is-visible > * {
+  [data-js-motion] .mw-animate-stagger.is-visible>* {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -579,6 +581,16 @@
 
 .mw-section-frame__header {
   margin-bottom: var(--mw-space-content-lg);
+}
+
+/* Header width variant — constrains the heading block to a readable width */
+.mw-section-frame--header-narrow .mw-section-frame__header {
+  max-width: 56ch;
+}
+
+/* Gap variant — relaxed increases heading block bottom gap for visual breathing room */
+.mw-section-frame--gap-relaxed .mw-section-frame__header {
+  margin-bottom: var(--mw-space-16);
 }
 
 .mw-section-frame__eyebrow {

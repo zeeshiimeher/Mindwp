@@ -178,7 +178,7 @@ AI Lead Handling → Reputation feature → Industry category → Landscaping de
 
 | Component | Owns | Rules |
 |---|---|---|
-| `SectionFrame` (layout) | `<section>`, container, heading block (kicker, h2, description), tone | No page-specific classes; children are page body |
+| `SectionFrame` (layout) | `<section>`, container, heading block (kicker, h2, description), tone, header width, header–body gap | Props: `tone` (mist/white/dark), `headerWidth` ('narrow'), `gap` ('relaxed'); no page-specific classes; page CSS must NOT override `mw-section-frame__header/heading/description/eyebrow` |
 | `HeroFrame` (layout) | Hero section, split layout, badge, h1, description, actions, chips, visual slot | No hardcoded contact URLs; visual is a prop |
 | `DecisionPanel` (conversion) | Final conversion section, heading, primary action, expectations, reassurance | Required: `data-testid='smart-cta'`; use `PRIMARY_CTA_LABEL` and `buildContactHref()` |
 | `FAQSection` (content) | Full FAQ section — wraps `SectionFrame` + `Accordion` | Use this, not manual composition |
@@ -249,13 +249,20 @@ tokens.css → reset.css → typography.css → layout.css → primitives.css �
 
 ---
 
+
 ## 14. Validator / Check Rules
 
 | Command | When |
 |---|---|
-| `npm run system:full` | Full validation gate — must pass before release |
+| `npm run lint -- --fix` | First cleanup pass after edits; fixes safe ESLint issues where possible |
+| `npx prettier --write .` | Repo-wide formatting pass after lint fixes |
+| `npm run lint` | Confirm lint is clean after formatting |
 | `npm run system:quick` | Fast development check |
-| `npm run build` | Runs through `build-safe.mjs` which gates on validation |
+| `npm run system:full` | Full validation/report gate — must pass before commit/release |
+| `npm run typecheck` | Confirm TypeScript is clean when edits touch TS/TSX/data contracts |
+| `npm run build` | Final production build check; runs through `build-safe.mjs` if configured |
+
+**Recommended check order after implementation:** run lint auto-fix first, then Prettier repo-wide, then lint again, then `system:full`, then `typecheck` if TS/TSX/data contracts changed, then `build`. Do not hide real failures with formatting churn; fix the cause.
 
 **Key validators and what they block:**
 - `validate-legacy-quarantine` — imports from `reusable`/`sections`, old `PrimaryCTASection`/`SectionShell`/`titleMuted`/`headingMuted`/`RelatedContentSection`, new files in frozen quarantine dirs
@@ -285,6 +292,7 @@ Before auditing or rebuilding any page:
 8. Confirm CTA uses `PRIMARY_CTA_LABEL` + `buildContactHref()`
 9. Confirm `RelatedSection` is not manually rendered
 10. Confirm no imports from quarantine folders
+11. Confirm the expected check sequence before editing: lint fix → Prettier → lint → system:full → typecheck if needed → build
 
 ---
 
@@ -301,3 +309,9 @@ Before auditing or rebuilding any page:
 | Page data storing generated values | Hardcoded CTA labels, contact URLs, or manual related lists |
 | Generic card-grid / process-diagram drift | Equal-weight cards, arrows everywhere, SaaS dashboard cosplay |
 | Writing opens with architecture before situation | "Systems-first" or "infrastructure" before the visible buyer problem is named |
+
+## 17. Work Rules
+- Dont work in Bulk Patches
+- Must work Step by step
+- Partically allowed to read multiple files in parallel for better understand.better avoid parallel reading of multiple files.
+- But execute or make changes Step by Step or task by task in small patches

@@ -190,6 +190,9 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- AUTHORITY DECISION BOARD ---------------------------------------- */}
       <SectionFrame
         className='lsa-decision'
+        tone='mist'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_DECISION_DOT}
         heading={{
           kicker: authorityDecision.header.kicker,
@@ -249,6 +252,8 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       <SectionFrame
         className='lsa-signal-audit'
         tone='white'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_SIGNAL_AUDIT_DOT}
         heading={{
           kicker: signalAudit.header.kicker,
@@ -378,6 +383,9 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- STRUCTURED COMPARISON ------------------------------------------- */}
       <SectionFrame
         className='lsa-comparison'
+        tone='mist'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_COMPARISON_DOT}
         heading={{
           kicker: structuredComparison.header.kicker,
@@ -444,6 +452,8 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       <SectionFrame
         className='lsa-assumptions'
         tone='white'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_ASSUMPTIONS_DOT}
         heading={{
           kicker: assumptions.header.kicker,
@@ -480,6 +490,9 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- COVERAGE MAP ---------------------------------------------------- */}
       <SectionFrame
         className='lsa-coverage-map'
+        tone='mist'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_COVERAGE_MAP_DOT}
         heading={{
           kicker: coverageMap.header.kicker,
@@ -566,6 +579,9 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       {/* -- PROOF STORY ----------------------------------------------------- */}
       <SectionFrame
         className='lsa-proof'
+        tone='mist'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_PROOF_DOT}
         heading={{
           kicker: proofStory.header.kicker,
@@ -627,6 +643,8 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
       <SectionFrame
         className='lsa-fit-filter'
         tone='white'
+        headerWidth='narrow'
+        gap='relaxed'
         ariaLabel={ARIA_FIT_FILTER_DOT}
         heading={{
           kicker: fitFilter.header.kicker,
@@ -672,6 +690,7 @@ export function LocalSeoAuthorityRenderer({ data, slug: _slug }: Props) {
         eyebrow={faq.header.kicker}
         title={faq.header.title}
         items={faq.items}
+        tone='mist'
         className='lsa-faq'
         ariaLabel={ARIA_FAQ_DOT}
         variant='split'

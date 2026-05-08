@@ -423,6 +423,14 @@ Hero section actions are not conversion CTAs — they support recognition and ro
 
 **Shared component owns shell, page owns narrative body.** `SectionFrame` handles the section wrapper and heading. Page CSS handles the visual body. This boundary must be maintained.
 
+**SectionFrame shell ownership rules (enforced by validator):**
+- Section background and padding-block are owned by `SectionFrame`. Use the `tone` prop (`mist`/`white`/`dark`). Do not duplicate in page CSS.
+- Header max-width is owned by `SectionFrame`. Use `headerWidth='narrow'` (56ch). Do not set `max-width` on `.mw-section-frame__header` in page CSS.
+- Header–body gap is owned by `SectionFrame`. Use `gap='relaxed'` (4rem). Do not set `margin-bottom` on `.mw-section-frame__header` in page CSS.
+- Text colors for heading/description/eyebrow in dark sections are owned by `tone='dark'`. Do not override in page CSS.
+- Rebuilt page CSS must NOT contain selectors targeting `.mw-section-frame__header`, `.mw-section-frame__heading`, `.mw-section-frame__description`, or `.mw-section-frame__eyebrow`.
+- Exception: unique gradient backgrounds (not representable as a standard tone) may be set in page CSS. The redundant `padding-block` must still be removed.
+
 **Avoid premature abstraction.** Over-abstracting pages toward identical templates destroys the visual distinction between MindWP's systems. Each page should look like it belongs to its system, not to a shared template grid.
 
 ---

@@ -319,6 +319,8 @@ const ALLOWED_HARDCODED_CONTENT_PROPS = new Set([
   'data-state',
   'data-testid',
   'density',
+  'gap',
+  'headerWidth',
   'href',
   'iconKey',
   'id',

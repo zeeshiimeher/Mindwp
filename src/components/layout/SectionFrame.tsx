@@ -4,6 +4,18 @@ import { InlineText } from '@/components/primitives/InlineText';
 
 type SectionFrameTone = 'mist' | 'white' | 'dark';
 
+/**
+ * 'narrow' constrains the heading block to a readable max-width (56ch).
+ * Default leaves the header width unconstrained.
+ */
+type SectionFrameHeaderWidth = 'default' | 'narrow';
+
+/**
+ * 'relaxed' increases the gap between the heading block and body content.
+ * Default uses the standard content gap.
+ */
+type SectionFrameGap = 'default' | 'relaxed';
+
 type SectionFrameHeading = {
   kicker?: string;
   title: string;
@@ -13,6 +25,8 @@ type SectionFrameHeading = {
 export type SectionFrameProps = {
   heading: SectionFrameHeading;
   tone?: SectionFrameTone;
+  headerWidth?: SectionFrameHeaderWidth;
+  gap?: SectionFrameGap;
   ariaLabel?: string;
   className?: string;
   children?: React.ReactNode;
@@ -23,10 +37,19 @@ export type SectionFrameProps = {
 /**
  * SectionFrame — standard section wrapper.
  *
- * Owns: <section>, mw-container, heading block (kicker, h2, description), tone.
+ * Owns: <section>, mw-container, heading block (kicker, h2, description), tone,
+ * header width, and header–body gap.
  * Use [[muted:...]] inline syntax in heading.title for muted segments.
  */
-export function SectionFrame({ heading, tone, ariaLabel, className, children }: SectionFrameProps) {
+export function SectionFrame({
+  heading,
+  tone,
+  headerWidth,
+  gap,
+  ariaLabel,
+  className,
+  children,
+}: SectionFrameProps) {
   if (!heading.title) {
     throw new Error('[SectionFrame] requires heading.title');
   }
@@ -34,6 +57,8 @@ export function SectionFrame({ heading, tone, ariaLabel, className, children }: 
   const sectionClass = [
     'mw-section-frame',
     tone ? `mw-section-frame--${tone}` : null,
+    headerWidth === 'narrow' ? 'mw-section-frame--header-narrow' : null,
+    gap === 'relaxed' ? 'mw-section-frame--gap-relaxed' : null,
     className ?? null,
   ]
     .filter(Boolean)
