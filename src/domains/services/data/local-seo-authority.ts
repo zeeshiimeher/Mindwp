@@ -170,7 +170,7 @@ export const localSeoAuthorityPage = {
       connectedSide: {
         label: 'Structured local',
         note: 'Connected \u00B7 Compounding',
-        title: 'Pages, profile, citations, content, reviews \u2014 connected.',
+        title: 'Pages, profile, citations, content, review signals \u2014 connected.',
         items: [
           'Each service has its own listing Google can rank for specific searches in your area.',
           'Google Business Profile actively maintained. Your business stays eligible for the local pack where most clicks happen.',
@@ -234,7 +234,7 @@ export const localSeoAuthorityPage = {
         kicker: 'After we start',
         title: 'What happens after we start',
         description:
-          'A repeating cycle: check, clarify, build, adjust. Each loop adds signal. The compounding does the work.',
+          'We check what Google sees, fix what is unclear, build the missing signals, then keep adjusting as the local picture changes.',
       },
       cycleLabel: 'Monthly visibility cycle',
       centerLabel: 'Compounding',
@@ -250,19 +250,19 @@ export const localSeoAuthorityPage = {
     proofStory: {
       header: {
         kicker: 'Scenario study',
-        title: 'What this looked like for a real business',
+        title: 'What this can look like for a local service business',
         description:
-          "A dental practice was paying for ads but invisible in organic search. Here's what was going on and what shifted.",
+          'A dental practice is paying for ads but not showing up in organic search. Here is the kind of local signal problem we would look for.',
       },
       context: {
         label: 'Context',
         title: 'Dental practice paying for ads. Invisible in organic search.',
         description:
-          'Services were separated, Google profile completed, directory details fixed, and organic visibility started growing. No ranking promises \u2014 measured signal, earned over months.',
+          'Services were separated, Google profile completed, directory details fixed, and organic visibility started growing. No ranking promises \u2014 signals built and verified over months.',
         metrics: [
-          { label: 'Services indexed', before: '2 of 9', after: '9 of 9' },
-          { label: 'Profile complete', before: '48%', after: '100%' },
-          { label: 'Citation match', before: '55%', after: '94%' },
+          { label: 'Services indexed', before: 'Partial', after: 'All separated' },
+          { label: 'Profile complete', before: 'Incomplete', after: 'Completed' },
+          { label: 'Citation match', before: 'Inconsistent', after: 'Aligned' },
         ],
       },
       changes: {
@@ -283,7 +283,8 @@ export const localSeoAuthorityPage = {
           { iconKey: 'search' as const, label: 'Local content', note: 'Area context published' },
         ],
       },
-      constraint: 'Story illustrative. No ranking guarantee.',
+      constraint:
+        'Illustrative scenario. Signal states are examples, not measured client data. No ranking guarantee.',
     },
 
     fitFilter: {
