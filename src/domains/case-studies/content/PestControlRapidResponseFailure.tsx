@@ -108,7 +108,6 @@ function buildPestControlRapidResponseFailure(): CaseStudyData {
     processSection,
     testimonialSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

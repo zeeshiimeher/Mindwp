@@ -97,7 +97,6 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
     problemSection,
     solutionSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

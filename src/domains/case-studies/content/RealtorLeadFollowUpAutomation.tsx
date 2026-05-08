@@ -80,7 +80,6 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
     problemSection,
     solutionSection,
     businessImpactSection,
-    { type: 'more' },
     ctaSection,
   ];
 

@@ -65,7 +65,6 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
     { type: 'hero', introHtml: heroIntroHtml },
     problemSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

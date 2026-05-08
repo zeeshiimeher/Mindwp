@@ -95,7 +95,6 @@ function buildFitnessStudioTrialDropOff(): CaseStudyData {
     problemSection,
     solutionSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

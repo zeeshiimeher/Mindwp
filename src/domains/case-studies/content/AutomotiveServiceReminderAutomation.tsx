@@ -81,7 +81,6 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
     problemSection,
     solutionSection,
     businessImpactSection,
-    { type: 'more' },
     ctaSection,
   ];
 

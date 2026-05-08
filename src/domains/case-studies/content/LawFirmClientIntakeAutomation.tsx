@@ -125,7 +125,6 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
     solutionSection,
     resultsSection,
     faqSection,
-    { type: 'more' },
     ctaSection,
   ];
 

@@ -2,7 +2,6 @@
 // No routing, fetching, or data lookups.
 import React from 'react';
 
-import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   CaseStudyBusinessImpactSection,
@@ -125,9 +124,6 @@ export type CaseStudyTemplateSection =
       items: Array<{ question: string; answer: string }>;
     }
   | {
-      type: 'more';
-    }
-  | {
       type: 'cta';
       heading: string;
       body: string;
@@ -147,7 +143,6 @@ const nonDuplicateSectionTypes = new Set([
   'deliverables',
   'faq',
   'cta',
-  'more',
 ]);
 
 const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']>([
@@ -164,7 +159,6 @@ const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']
   'deliverables',
   'workflows',
   'faq',
-  'more',
   'cta',
 ]);
 
@@ -191,7 +185,6 @@ function validateRenderableSection(section: CaseStudyTemplateSection) {
     case 'testimonial':
     case 'business-impact':
     case 'deliverables':
-    case 'more':
     case 'cta':
       return true;
     case 'problem':
@@ -600,16 +593,6 @@ export function CaseStudyTemplate({
                 primary: true,
               },
             ]}
-          />
-        );
-
-      case 'more':
-        return (
-          <RelatedSection
-            key={`more-${index}`}
-            pageId={pageId}
-            pageType='case-study'
-            slug={metadata.slug}
           />
         );
 

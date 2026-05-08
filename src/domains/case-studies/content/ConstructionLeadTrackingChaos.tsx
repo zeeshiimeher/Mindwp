@@ -87,7 +87,6 @@ function buildConstructionLeadTrackingChaos(): CaseStudyData {
     problemSection,
     solutionSection,
     businessImpactSection,
-    { type: 'more' },
     ctaSection,
   ];
 

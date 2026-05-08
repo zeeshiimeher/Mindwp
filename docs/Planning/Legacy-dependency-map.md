@@ -165,12 +165,11 @@ These are in `src/components/system/` and use old imports internally:
 
 ## Milestone 6K Quarantine Entries
 
-### CaseStudyTemplate.tsx — RelatedSection direct import (Quarantine)
-- **File**: `src/domains/case-studies/templates/CaseStudyTemplate.tsx`
-- **Issue**: Template imports and renders `RelatedSection` directly inside a `section.type === 'more'` branch, instead of having RelatedSection injected by a config wrapper.
-- **Why allowed**: The pattern is data-driven (section data controls whether related is shown), but template-owned, not config-owned. Full case-study config/wrapper migration is out of Milestone 6K scope.
-- **Validator exception**: Listed in `APPROVED_RELATED_OWNERS` in `scripts/validators/validate-related-duplication.ts`.
-- **Delete gate**: When CaseStudyTemplate is rebuilt with a config/wrapper pattern (`src/domains/case-studies/config.tsx`) that handles RelatedSection injection globally.
+### CaseStudyTemplate.tsx — RelatedSection direct import (RESOLVED in 6M)
+- **Was**: `src/domains/case-studies/templates/CaseStudyTemplate.tsx` imported and rendered `RelatedSection` directly inside a `section.type === 'more'` branch.
+- **Resolution**: `{ type: 'more' }` pseudo-section removed from all 25 case-study content files. `RelatedSection` import and `case 'more'` render branch removed from `CaseStudyTemplate.tsx`. Type union, `nonDuplicateSectionTypes`, and `renderableCaseStudySectionTypes` sets updated. CaseStudyTemplate remains quarantined for old visual sections and `PrimaryCTASection` — only RelatedSection ownership is resolved.
+- **Validator**: `CaseStudyTemplate.tsx` removed from `APPROVED_RELATED_OWNERS` in `validate-related-duplication.ts`.
+- **Related injection for case studies**: Not yet implemented at wrapper/config level. Can be added when the case-study domain is rebuilt.
 
 ### generate-global-inventory.mjs — Quarantine guard added
 - **File**: `scripts/generators/generate-global-inventory.mjs`

@@ -95,7 +95,6 @@ function buildElectricianQuoteDelay(): CaseStudyData {
     problemSection,
     workflowsSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

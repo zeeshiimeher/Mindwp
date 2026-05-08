@@ -108,7 +108,6 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     processSection,
     resultsSection,
     testimonialSection,
-    { type: 'more' },
     ctaSection,
   ];
 

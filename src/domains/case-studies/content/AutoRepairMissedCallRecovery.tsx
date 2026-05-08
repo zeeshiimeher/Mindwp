@@ -94,7 +94,6 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     problemSection,
     workflowsSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

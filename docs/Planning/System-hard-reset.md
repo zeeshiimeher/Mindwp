@@ -2033,3 +2033,19 @@ relatedSection?: {
 ### Results
 - `system:full` — 57/57 validators, 0 warnings (confirmed)
 - `npx next build` — clean (359 pages generated)
+
+---
+
+## Milestone 6M — Remove Case-Study Template-Owned Related Section
+
+**Status:** Complete (branch: `ui-hard-reset`, date: 2026-05-08)
+
+- **`{ type: 'more' }` removed from 25 case-study data files**: All `src/domains/case-studies/content/*.tsx` files had the `{ type: 'more' }` pseudo-section removed via bulk sed. No narrative/hero/CTA sections were touched.
+- **`RelatedSection` removed from `CaseStudyTemplate.tsx`**: Import removed. `case 'more'` render branch removed. `'more'` removed from `CaseStudyTemplateSection` union type, `nonDuplicateSectionTypes` set, `renderableCaseStudySectionTypes` set, and `validateRenderableSection` switch. Template remains quarantined for old visual sections and `PrimaryCTASection` — only the related ownership is resolved.
+- **`validate-related-duplication.ts` updated**: `CaseStudyTemplate.tsx` removed from `APPROVED_RELATED_OWNERS`. No template-owned related exceptions remain.
+- **Test updated**: `CaseStudyTemplate.test.tsx` — `RelatedSection` mock removed (no longer imported by template).
+- **Case-study related injection**: Not yet implemented at wrapper/config level. Can be added when the case-study domain is rebuilt.
+
+### Results
+- `system:full` — 57/57 validators, 0 warnings
+- `npx next build` — clean

@@ -74,13 +74,10 @@ const report: ViolationEntry[] = [];
 const files = await collectTsxFiles(srcRoot);
 
 // Files approved to import/render RelatedSection.
-// QUARANTINE: CaseStudyTemplate.tsx still imports RelatedSection directly via
-// section-type 'more' pattern. Delete gate: when rebuilt with config/wrapper injection.
-// See docs/Planning/Legacy-dependency-map.md.
+// Only RelatedSection.tsx itself is approved. Config wrappers (src/domains/*/config.tsx)
+// are allowed via the pattern check below.
 const APPROVED_RELATED_OWNERS = [
   'src/components/navigation/RelatedSection.tsx',
-  // quarantine delete-later
-  'src/domains/case-studies/templates/CaseStudyTemplate.tsx',
 ];
 
 function isApprovedRelatedOwner(relativePath: string) {

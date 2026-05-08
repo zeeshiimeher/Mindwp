@@ -116,7 +116,6 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
     processSection,
     testimonialSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

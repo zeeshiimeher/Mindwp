@@ -108,7 +108,6 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
     processSection,
     resultsSection,
     testimonialSection,
-    { type: 'more' },
     ctaSection,
   ];
 

@@ -96,7 +96,6 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     problemSection,
     workflowsSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

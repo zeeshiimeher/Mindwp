@@ -97,7 +97,6 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
     problemSection,
     workflowsSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 

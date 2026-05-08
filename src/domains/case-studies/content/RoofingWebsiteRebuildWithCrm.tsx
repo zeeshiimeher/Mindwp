@@ -125,7 +125,6 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
     solutionSection,
     resultsSection,
     faqSection,
-    { type: 'more' },
     ctaSection,
   ];
 

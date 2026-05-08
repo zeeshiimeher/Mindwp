@@ -35,10 +35,6 @@ vi.mock('@/components/sections/PrimaryCTASection', () => ({
   ),
 }));
 
-vi.mock('@/components/navigation/RelatedSection', () => ({
-  RelatedSection: () => <div>related-section</div>,
-}));
-
 describe('CaseStudyTemplate', () => {
   it('preserves declared section order and renders only the footer CTA', () => {
     render(

@@ -81,7 +81,6 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
     problemSection,
     solutionSection,
     businessImpactSection,
-    { type: 'more' },
     ctaSection,
   ];
 

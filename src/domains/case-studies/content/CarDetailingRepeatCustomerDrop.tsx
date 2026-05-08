@@ -96,7 +96,6 @@ function buildCarDetailingRepeatCustomerDrop(): CaseStudyData {
     problemSection,
     solutionSection,
     resultsSection,
-    { type: 'more' },
     ctaSection,
   ];
 
