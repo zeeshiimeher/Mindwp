@@ -121,20 +121,22 @@ The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 
 **Token groups:**
 
-- color: `--mw-color-*`
-- text/foreground: `--mw-text-primary`, `--mw-text-muted`, `--mw-text-on-dark`, etc.
-- surface: `--mw-surface-*`
+- brand: `--mw-brand-primary`, `--mw-brand-secondary`, `--mw-brand-white`, `--mw-brand-logo-ring` — identity colours for logos/brand assets only; not for use in general page/component CSS
+- color: `--mw-color-dark`, `--mw-color-ink`, `--mw-color-surface-mist`, etc.
+- alpha overlays: `--mw-white-02` through `--mw-white-85` — use instead of raw `rgba(255,255,255,X)`
+- text/foreground: `--mw-text-primary`, `--mw-text-secondary`, `--mw-text-on-dark`, etc.
+- surface: `--mw-bg-page`, `--mw-bg-mist`, `--mw-bg-dark`, `--mw-bg-dark-panel`
 - spacing: `--mw-space-*`
 - typography scale: `--mw-text-hero`, `--mw-text-h1`, `--mw-text-h2`, `--mw-text-body`, `--mw-text-label`
 - font families: `--mw-font-sans` (Inter), `--mw-font-mono` (JetBrains Mono)
 - line heights: `--mw-leading-tight`, `--mw-leading-heading`, `--mw-leading-body`, `--mw-leading-relaxed`
-- width: `--mw-page-max`, `--mw-container-max`, `--mw-content-max`, `--mw-text-max`
+- width: `--mw-frame-max`, `--mw-container-max`, `--mw-container-text`
 - radius: `--mw-radius-*`
-- shadow: `--mw-shadow-*`
-- signal: `--mw-signal-*`, `--mw-risk-*`
+- shadow: `--mw-shadow-*`, glow: `--mw-glow-*`
+- signal: `--mw-signal-*` (core + tints)
 - gradient: `--mw-gradient-*`
-- motion: easing and duration tokens
-- z-index and breakpoint tokens
+- motion: `--mw-dur-*`, `--mw-ease-*`
+- z-index: `--mw-z-*`
 
 **Rules:**
 

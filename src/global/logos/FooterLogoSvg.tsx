@@ -24,7 +24,7 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
     >
       <g>
         {/* Circle - current footer spec (white) */}
-        <circle cx='16' cy='16' r='14' fill='var(--brand-white)' opacity='1'></circle>
+        <circle cx='16' cy='16' r='14' fill='var(--mw-brand-white)' opacity='1'></circle>
 
         {/* Brain/Circuit paths */}
         <path
@@ -47,12 +47,12 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
         ></path>
 
         {/* Connection dots */}
-        <circle cx='11' cy='10' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='10' r='1.5' fill='var(--brand-secondary)'></circle>
-        <circle cx='11' cy='16' r='1.5' fill='var(--brand-secondary)'></circle>
-        <circle cx='21' cy='16' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='11' cy='22' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='22' r='1.5' fill='var(--brand-secondary)'></circle>
+        <circle cx='11' cy='10' r='1.5' fill='var(--mw-brand-primary)'></circle>
+        <circle cx='21' cy='10' r='1.5' fill='var(--mw-brand-secondary)'></circle>
+        <circle cx='11' cy='16' r='1.5' fill='var(--mw-brand-secondary)'></circle>
+        <circle cx='21' cy='16' r='1.5' fill='var(--mw-brand-primary)'></circle>
+        <circle cx='11' cy='22' r='1.5' fill='var(--mw-brand-primary)'></circle>
+        <circle cx='21' cy='22' r='1.5' fill='var(--mw-brand-secondary)'></circle>
 
         {/* Center spark */}
         <circle cx='16' cy='16' r='2' fill='url(#logo-gradient-stroke-footer)'></circle>
@@ -62,7 +62,7 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
       <text
         x='38'
         y='21'
-        fill='var(--brand-white)'
+        fill='var(--mw-brand-white)'
         style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.5px' }}
       >
         Mind
@@ -70,7 +70,7 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
       <text
         x='82'
         y='21'
-        fill='var(--brand-white)'
+        fill='var(--mw-brand-white)'
         style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.5px' }}
       >
         WP
@@ -78,12 +78,12 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
 
       <defs>
         <linearGradient id='logo-gradient-footer' x1='0%' y1='0%' x2='100%' y2='100%'>
-          <stop offset='0%' stopColor='var(--brand-primary)' />
-          <stop offset='100%' stopColor='var(--brand-secondary)' />
+          <stop offset='0%' stopColor='var(--mw-brand-primary)' />
+          <stop offset='100%' stopColor='var(--mw-brand-secondary)' />
         </linearGradient>
         <linearGradient id='logo-gradient-stroke-footer' x1='0%' y1='0%' x2='100%' y2='100%'>
-          <stop offset='0%' stopColor='var(--brand-primary)' />
-          <stop offset='100%' stopColor='var(--brand-secondary)' />
+          <stop offset='0%' stopColor='var(--mw-brand-primary)' />
+          <stop offset='100%' stopColor='var(--mw-brand-secondary)' />
         </linearGradient>
       </defs>
     </svg>

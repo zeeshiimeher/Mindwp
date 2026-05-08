@@ -27,7 +27,7 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
     >
       <g>
         {/* Circle: header-specific fill */}
-        <circle cx='16' cy='16' r='14' fill='var(--brand-logo-ring)' opacity='1'></circle>
+        <circle cx='16' cy='16' r='14' fill='var(--mw-brand-logo-ring)' opacity='1'></circle>
 
         {/* Brain/Circuit paths */}
         <path
@@ -50,12 +50,12 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
         ></path>
 
         {/* Connection dots */}
-        <circle cx='11' cy='10' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='10' r='1.5' fill='var(--brand-secondary)'></circle>
-        <circle cx='11' cy='16' r='1.5' fill='var(--brand-secondary)'></circle>
-        <circle cx='21' cy='16' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='11' cy='22' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='22' r='1.5' fill='var(--brand-secondary)'></circle>
+        <circle cx='11' cy='10' r='1.5' fill='var(--mw-brand-primary)'></circle>
+        <circle cx='21' cy='10' r='1.5' fill='var(--mw-brand-secondary)'></circle>
+        <circle cx='11' cy='16' r='1.5' fill='var(--mw-brand-secondary)'></circle>
+        <circle cx='21' cy='16' r='1.5' fill='var(--mw-brand-primary)'></circle>
+        <circle cx='11' cy='22' r='1.5' fill='var(--mw-brand-primary)'></circle>
+        <circle cx='21' cy='22' r='1.5' fill='var(--mw-brand-secondary)'></circle>
 
         {/* Center spark */}
         <circle cx='16' cy='16' r='2' fill='url(#logo-gradient-stroke-header)'></circle>
@@ -65,7 +65,7 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
       <text
         x='38'
         y='21'
-        fill={isLight ? 'var(--brand-white)' : 'var(--brand-dark)'}
+        fill={isLight ? 'var(--mw-brand-white)' : 'var(--mw-brand-primary)'}
         style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.5px' }}
       >
         Mind
@@ -73,7 +73,7 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
       <text
         x='82'
         y='21'
-        fill={isLight ? 'var(--brand-white)' : 'var(--brand-primary)'}
+        fill={isLight ? 'var(--mw-brand-white)' : 'var(--mw-brand-primary)'}
         style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.5px' }}
       >
         WP
@@ -83,18 +83,21 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
         <linearGradient id='logo-gradient-header' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop
             offset='0%'
-            stopColor={isLight ? 'var(--brand-white-80)' : 'var(--brand-primary)'}
+            stopColor={isLight ? 'var(--mw-brand-white-80)' : 'var(--mw-brand-primary)'}
           />
           <stop
             offset='100%'
-            stopColor={isLight ? 'var(--brand-white-80)' : 'var(--brand-secondary)'}
+            stopColor={isLight ? 'var(--mw-brand-white-80)' : 'var(--mw-brand-secondary)'}
           />
         </linearGradient>
         <linearGradient id='logo-gradient-stroke-header' x1='0%' y1='0%' x2='100%' y2='100%'>
-          <stop offset='0%' stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-primary)'} />
+          <stop
+            offset='0%'
+            stopColor={isLight ? 'var(--mw-brand-white)' : 'var(--mw-brand-primary)'}
+          />
           <stop
             offset='100%'
-            stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-secondary)'}
+            stopColor={isLight ? 'var(--mw-brand-white)' : 'var(--mw-brand-secondary)'}
           />
         </linearGradient>
       </defs>

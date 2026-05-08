@@ -31,9 +31,7 @@ const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 
 /** Files to skip — only tokens.css may contain raw values. */
-const SKIP_FILES = new Set([
-  'tokens.css',
-]);
+const SKIP_FILES = new Set(['tokens.css']);
 
 /** Directories to skip entirely. */
 const SKIP_DIRS = new Set(['_legacy']);
@@ -70,11 +68,11 @@ const FONT_PROPS = new Set(['font-size']);
  */
 function isExemptValue(value) {
   const trimmed = value.trim();
-  if (/^0(px|rem|em)?$/.test(trimmed)) return true;           // zero resets
-  if (trimmed === '1px') return true;                           // border resets
-  if (/var\(--/.test(trimmed)) return true;                    // uses a token
-  if (/calc\(/.test(trimmed)) return true;                     // calc expression
-  if (/clamp\(/.test(trimmed)) return true;                    // clamp expression
+  if (/^0(px|rem|em)?$/.test(trimmed)) return true; // zero resets
+  if (trimmed === '1px') return true; // border resets
+  if (/var\(--/.test(trimmed)) return true; // uses a token
+  if (/calc\(/.test(trimmed)) return true; // calc expression
+  if (/clamp\(/.test(trimmed)) return true; // clamp expression
   if (/^(inherit|initial|auto|unset|revert|none)$/.test(trimmed)) return true;
   return false;
 }
@@ -181,6 +179,18 @@ function scanFile(absPath) {
         line: i + 1,
         rule: 'TOKEN_RAW_HEX',
         message: `Raw hex colour in \`${prop}: ${value}\` — reference a --mw-* token via var() instead.`,
+      });
+    }
+
+    // ── Check 5: old --brand-* names ────────────────────────────────────
+    // Brand tokens were renamed to --mw-brand-*. Flag any CSS still using the
+    // old unprefixed --brand-* names (they are undefined after the rename).
+    if (/var\(--brand-/.test(value)) {
+      violations.push({
+        file: rel,
+        line: i + 1,
+        rule: 'TOKEN_BRAND_OLD_NAME',
+        message: `Old brand token in \`${prop}: ${value}\` — use --mw-brand-* instead of --brand-*.`,
       });
     }
 

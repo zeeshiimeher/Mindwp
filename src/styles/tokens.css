@@ -5,35 +5,58 @@
  * All other CSS files must reference tokens via var(--mw-*).
  *
  * Token layers:
- *   1.  Raw brand palette (dark scale, ink scale, surfaces)
- *   2.  Signal colors + tints
- *   3.  Semantic surface + text + border tokens
- *   4.  Font families
- *   5.  Type scale + leading + tracking
- *   6.  Spacing scale
- *   7.  Layout (containers, section rhythm, hero padding)
- *   8.  Radii
- *   9.  Shadows + glow effects
- *   10. Motion
- *   11. Z-index
- *   12. Gradients
- *   13. Brand identity bridge tokens (used by Logo SVG — do not rename)
- *   14. Shadcn / Radix UI compat shims (consumed by src/components/ui/)
+ *   1.  Brand palette (--mw-brand-* — identity colours, logos, brand assets)
+ *   2.  Core color palette (--mw-color-* dark scale, ink scale, surfaces)
+ *   3.  Signal colors (--mw-signal-*)
+ *   4.  Alpha / overlay utilities (--mw-white-XX)
+ *   5.  Signal tints (color-mix tints referencing signal tokens)
+ *   6.  Semantic surfaces / text / borders
+ *   7.  Font families
+ *   8.  Type scale + leading + tracking
+ *   9.  Spacing scale
+ *  10.  Layout (containers, section rhythm, hero padding)
+ *  11.  Radii
+ *  12.  Shadows + glow effects
+ *  13.  Motion
+ *  14.  Z-index
+ *  15.  Gradients
+ *  16.  Shadcn / Radix UI compat shims
  */
 
 :root {
   /* ══════════════════════════════════════════════════════
-       1. RAW BRAND PALETTE
+       1. BRAND PALETTE
+       --mw-brand-* are the canonical identity colours.
+       Used by logo SVGs and brand assets.
+       Do not use these in general page/component CSS — use
+       the semantic --mw-color-* and --mw-bg-* tokens instead.
+       ══════════════════════════════════════════════════════ */
+
+  --mw-brand-primary: #061323;
+  /* deepest navy — primary brand colour */
+  --mw-brand-secondary: #103e5a;
+  /* blue-teal — secondary brand colour */
+  --mw-brand-primary-mid: #1b2845;
+  /* mid-navy — between primary and secondary */
+  --mw-brand-white: #ffffff;
+  /* brand white */
+  --mw-brand-logo-ring: color-mix(in oklch, var(--mw-signal-cyan) 18%, var(--mw-brand-primary));
+  /* header logo ring tint */
+  --mw-brand-white-80: color-mix(in srgb, var(--mw-brand-white) 80%, transparent);
+  /* logo light-variant gradient stop */
+
+  /* ══════════════════════════════════════════════════════
+       2. CORE COLOR PALETTE
        ══════════════════════════════════════════════════════ */
 
   /* Dark scale — navy/teal brand palette */
-  --mw-color-dark: #061323;
+  --mw-color-dark: var(--mw-brand-primary);
   /* deepest navy — primary bg */
   --mw-color-dark-mid: #071629;
   /* dark mid — hero via colour */
   --mw-color-dark-alt: #081827;
-  /* lighter dark — used on some feature pages */
-  --mw-color-dark-secondary: #103e5a;
+  /* lighter dark — reserved for feature pages */
+  --mw-color-dark-secondary: var(--mw-brand-secondary);
   /* blue-teal dark — gradient end */
   --mw-color-dark-hover: #0e2740;
   /* hover state on dark bg */
@@ -47,7 +70,7 @@
   /* tertiary / label text */
 
   /* Surfaces */
-  --mw-color-white: #ffffff;
+  --mw-color-white: var(--mw-brand-white);
   --mw-color-surface-mist: #f6fafc;
   /* light section background */
   --mw-color-border-light: #e6eef3;
@@ -56,7 +79,7 @@
   /* separator / hover tint */
 
   /* ══════════════════════════════════════════════════════
-       2. SIGNAL COLORS + TINTS
+       3. SIGNAL COLORS
        ══════════════════════════════════════════════════════ */
 
   /* Core signals */
@@ -73,39 +96,72 @@
   --mw-signal-purple: #9b7de0;
   /* proof / reviews */
 
-  /* Signal tints — for panel backgrounds and bordered badges */
-  --mw-signal-cyan-8: color-mix(in oklch, #35c7d8 8%, transparent);
-  --mw-signal-cyan-10: color-mix(in oklch, #35c7d8 10%, transparent);
-  --mw-signal-cyan-14: color-mix(in oklch, #35c7d8 14%, transparent);
-  --mw-signal-cyan-20: color-mix(in oklch, #35c7d8 20%, transparent);
-  --mw-signal-cyan-30: color-mix(in oklch, #35c7d8 30%, transparent);
-  --mw-signal-teal-10: color-mix(in oklch, #14b8a6 10%, transparent);
-  --mw-signal-teal-18: color-mix(in oklch, #14b8a6 18%, transparent);
-  --mw-signal-teal-30: color-mix(in oklch, #14b8a6 30%, transparent);
-  --mw-signal-green-10: color-mix(in oklch, #21b985 10%, transparent);
-  --mw-signal-green-30: color-mix(in oklch, #21b985 30%, transparent);
-  --mw-signal-amber-10: color-mix(in oklch, #f4b740 10%, transparent);
-  --mw-signal-amber-25: color-mix(in oklch, #f4b740 25%, transparent);
-  --mw-signal-amber-30: color-mix(in oklch, #f4b740 30%, transparent);
-  --mw-signal-red-10: color-mix(in oklch, #e76f6f 10%, transparent);
-  --mw-signal-red-25: color-mix(in oklch, #e76f6f 25%, transparent);
-  --mw-signal-red-30: color-mix(in oklch, #e76f6f 30%, transparent);
-  --mw-signal-purple-10: color-mix(in oklch, #9b7de0 10%, transparent);
-  --mw-signal-purple-30: color-mix(in oklch, #9b7de0 30%, transparent);
+  /* ══════════════════════════════════════════════════════
+       4. ALPHA / OVERLAY UTILITIES
+       Use var(--mw-white-XX) in production CSS instead of
+       raw rgba(255,255,255,X).
+       ══════════════════════════════════════════════════════ */
 
-  /* Semantic surface tint — for authority/connected panel gradients on light surfaces */
+  --mw-white-02: rgba(255, 255, 255, 0.02);
+  --mw-white-03: rgba(255, 255, 255, 0.03);
+  --mw-white-04: rgba(255, 255, 255, 0.04);
+  --mw-white-05: rgba(255, 255, 255, 0.05);
+  --mw-white-06: rgba(255, 255, 255, 0.06);
+  --mw-white-08: rgba(255, 255, 255, 0.08);
+  --mw-white-10: rgba(255, 255, 255, 0.1);
+  --mw-white-12: rgba(255, 255, 255, 0.12);
+  --mw-white-15: rgba(255, 255, 255, 0.15);
+  --mw-white-25: rgba(255, 255, 255, 0.25);
+  --mw-white-30: rgba(255, 255, 255, 0.3);
+  --mw-white-35: rgba(255, 255, 255, 0.35);
+  --mw-white-40: rgba(255, 255, 255, 0.4);
+  --mw-white-45: rgba(255, 255, 255, 0.45);
+  --mw-white-50: rgba(255, 255, 255, 0.5);
+  --mw-white-55: rgba(255, 255, 255, 0.55);
+  --mw-white-60: rgba(255, 255, 255, 0.6);
+  --mw-white-65: rgba(255, 255, 255, 0.65);
+  --mw-white-70: rgba(255, 255, 255, 0.7);
+  --mw-white-75: rgba(255, 255, 255, 0.75);
+  --mw-white-80: rgba(255, 255, 255, 0.8);
+  --mw-white-85: rgba(255, 255, 255, 0.85);
+
+  /* ══════════════════════════════════════════════════════
+       5. SIGNAL TINTS
+       Panel backgrounds and bordered badges.
+       ══════════════════════════════════════════════════════ */
+
+  --mw-signal-cyan-8: color-mix(in oklch, var(--mw-signal-cyan) 8%, transparent);
+  --mw-signal-cyan-10: color-mix(in oklch, var(--mw-signal-cyan) 10%, transparent);
+  --mw-signal-cyan-14: color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent);
+  --mw-signal-cyan-20: color-mix(in oklch, var(--mw-signal-cyan) 20%, transparent);
+  --mw-signal-cyan-30: color-mix(in oklch, var(--mw-signal-cyan) 30%, transparent);
+  --mw-signal-teal-10: color-mix(in oklch, var(--mw-signal-teal) 10%, transparent);
+  --mw-signal-teal-18: color-mix(in oklch, var(--mw-signal-teal) 18%, transparent);
+  --mw-signal-teal-30: color-mix(in oklch, var(--mw-signal-teal) 30%, transparent);
+  --mw-signal-green-10: color-mix(in oklch, var(--mw-signal-green) 10%, transparent);
+  --mw-signal-green-30: color-mix(in oklch, var(--mw-signal-green) 30%, transparent);
+  --mw-signal-amber-10: color-mix(in oklch, var(--mw-signal-amber) 10%, transparent);
+  --mw-signal-amber-25: color-mix(in oklch, var(--mw-signal-amber) 25%, transparent);
+  --mw-signal-amber-30: color-mix(in oklch, var(--mw-signal-amber) 30%, transparent);
+  --mw-signal-red-10: color-mix(in oklch, var(--mw-signal-red) 10%, transparent);
+  --mw-signal-red-25: color-mix(in oklch, var(--mw-signal-red) 25%, transparent);
+  --mw-signal-red-30: color-mix(in oklch, var(--mw-signal-red) 30%, transparent);
+  --mw-signal-purple-10: color-mix(in oklch, var(--mw-signal-purple) 10%, transparent);
+  --mw-signal-purple-30: color-mix(in oklch, var(--mw-signal-purple) 30%, transparent);
+
+  /* Semantic surface tint — authority/connected panel gradients on light surfaces */
   --mw-signal-teal-surface: rgba(223, 248, 243, 0.4);
 
   /* ══════════════════════════════════════════════════════
-       3. SEMANTIC SURFACE / TEXT / BORDER TOKENS
+       6. SEMANTIC SURFACE / TEXT / BORDER TOKENS
        ══════════════════════════════════════════════════════ */
 
   /* Backgrounds */
   --mw-bg-page: var(--mw-color-white);
   --mw-bg-mist: var(--mw-color-surface-mist);
   --mw-bg-dark: var(--mw-color-dark);
-  --mw-bg-dark-panel: rgba(255, 255, 255, 0.04);
-  --mw-bg-dark-panel-hover: rgba(255, 255, 255, 0.06);
+  --mw-bg-dark-panel: var(--mw-white-04);
+  --mw-bg-dark-panel-hover: var(--mw-white-06);
 
   /* Text — light surfaces */
   --mw-text-primary: var(--mw-color-ink);
@@ -113,34 +169,27 @@
   --mw-text-subtle: var(--mw-color-ink-subtle);
 
   /* Text — dark surfaces */
-  --mw-text-on-dark: rgba(255, 255, 255, 0.85);
-  --mw-text-on-dark-muted: rgba(255, 255, 255, 0.55);
-  --mw-text-on-dark-dim: rgba(255, 255, 255, 0.35);
+  --mw-text-on-dark: var(--mw-white-85);
+  --mw-text-on-dark-muted: var(--mw-white-55);
+  --mw-text-on-dark-dim: var(--mw-white-35);
   --mw-text-on-dark-strong: var(--mw-color-white);
 
   /* Borders */
   --mw-border-light: var(--mw-color-border-light);
   --mw-border-subtle: rgba(8, 17, 31, 0.08);
-  --mw-border-dark: rgba(255, 255, 255, 0.08);
-  --mw-border-panel: rgba(255, 255, 255, 0.1);
-  --mw-border-signal: color-mix(in oklch, #35c7d8 30%, transparent);
-
-  /* Semantic signal aliases */
-  --mw-signal-active: var(--mw-signal-cyan);
-  --mw-signal-warn: var(--mw-signal-amber);
-  --mw-signal-risk: var(--mw-signal-red);
-  --mw-signal-success: var(--mw-signal-green);
-  --mw-signal-proof: var(--mw-signal-purple);
+  --mw-border-dark: var(--mw-white-08);
+  --mw-border-panel: var(--mw-white-10);
+  --mw-border-signal: color-mix(in oklch, var(--mw-signal-cyan) 30%, transparent);
 
   /* ══════════════════════════════════════════════════════
-       4. FONT FAMILIES
+       7. FONT FAMILIES
        ══════════════════════════════════════════════════════ */
 
   --mw-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mw-font-mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
 
   /* ══════════════════════════════════════════════════════
-       5. TYPE SCALE
+       8. TYPE SCALE
        ══════════════════════════════════════════════════════ */
 
   /* Fluid hero / page headings */
@@ -211,7 +260,7 @@
   --mw-tracking-micro: 0.1em;
 
   /* ══════════════════════════════════════════════════════
-       6. SPACING SCALE
+       9. SPACING SCALE
        ══════════════════════════════════════════════════════ */
 
   --mw-space-px: 1px;
@@ -265,7 +314,7 @@
   /* 40px — standard gap between section header and section content */
 
   /* ══════════════════════════════════════════════════════
-       7. LAYOUT — containers, section rhythm, hero padding
+      10. LAYOUT — containers, section rhythm, hero padding
        ══════════════════════════════════════════════════════ */
 
   /* Frame max — outer page boundary (1440px) */
@@ -296,7 +345,7 @@
   --mw-gap-cols: clamp(1.5rem, 2.5vw, 2.5rem);
 
   /* ══════════════════════════════════════════════════════
-       8. RADII
+      11. RADII
        ══════════════════════════════════════════════════════ */
 
   --mw-radius-xs: 4px;
@@ -317,7 +366,7 @@
   /* rounded-full */
 
   /* ══════════════════════════════════════════════════════
-       9. SHADOWS + GLOW EFFECTS
+      12. SHADOWS + GLOW EFFECTS
        ══════════════════════════════════════════════════════ */
 
   --mw-shadow-soft: 0 4px 30px rgba(8, 17, 31, 0.04);
@@ -326,18 +375,18 @@
   --mw-shadow-panel: 0 16px 48px rgba(8, 17, 31, 0.1);
   --mw-shadow-heavy: 0 32px 80px rgba(8, 17, 31, 0.18);
   --mw-shadow-float: 0 12px 40px rgba(8, 17, 31, 0.08);
-  --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, #35c7d8 35%, transparent);
+  --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, var(--mw-signal-cyan) 35%, transparent);
 
   /* Signal glow — for animated dots and status indicators */
-  --mw-glow-cyan: 0 0 8px #35c7d8;
-  --mw-glow-teal: 0 0 8px #14b8a6;
-  --mw-glow-green: 0 0 8px #21b985;
-  --mw-glow-amber: 0 0 6px #f4b740;
-  --mw-glow-red: 0 0 6px #e76f6f;
-  --mw-glow-purple: 0 0 8px #9b7de0;
+  --mw-glow-cyan: 0 0 8px var(--mw-signal-cyan);
+  --mw-glow-teal: 0 0 8px var(--mw-signal-teal);
+  --mw-glow-green: 0 0 8px var(--mw-signal-green);
+  --mw-glow-amber: 0 0 6px var(--mw-signal-amber);
+  --mw-glow-red: 0 0 6px var(--mw-signal-red);
+  --mw-glow-purple: 0 0 8px var(--mw-signal-purple);
 
   /* ══════════════════════════════════════════════════════
-       10. MOTION
+      13. MOTION
        ══════════════════════════════════════════════════════ */
 
   --mw-dur-fast: 150ms;
@@ -347,7 +396,7 @@
   --mw-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
   /* ══════════════════════════════════════════════════════
-       11. Z-INDEX
+      14. Z-INDEX
        ══════════════════════════════════════════════════════ */
 
   --mw-z-base: 1;
@@ -358,22 +407,22 @@
   --mw-z-toast: 300;
 
   /* ══════════════════════════════════════════════════════
-       12. GRADIENTS
+      15. GRADIENTS
        ══════════════════════════════════════════════════════ */
 
   /* Dark hero gradient — Figma: from-[#061323] via-[#071629] to-[#103E5A] */
   --mw-gradient-hero:
     radial-gradient(
       ellipse at 15% 20%,
-      color-mix(in oklch, #35c7d8 16%, transparent),
+      color-mix(in oklch, var(--mw-signal-cyan) 16%, transparent),
       transparent 45%
     ),
     radial-gradient(
       ellipse at 95% 90%,
-      color-mix(in oklch, #14b8a6 12%, transparent),
+      color-mix(in oklch, var(--mw-signal-teal) 12%, transparent),
       transparent 50%
     ),
-    linear-gradient(135deg, #061323 0%, #103e5a 100%);
+    linear-gradient(135deg, var(--mw-brand-primary) 0%, var(--mw-brand-secondary) 100%);
 
   /* Subtle dot-grid texture overlay — apply at opacity ~0.035 */
   --mw-gradient-grid-texture:
@@ -384,13 +433,17 @@
   --mw-gradient-cta:
     radial-gradient(
       circle at 20% 20%,
-      color-mix(in oklch, #35c7d8 14%, transparent),
+      color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent),
       transparent 30%
     ),
-    linear-gradient(135deg, #061323 0%, #103e5a 100%);
+    linear-gradient(135deg, var(--mw-brand-primary) 0%, var(--mw-brand-secondary) 100%);
 
   /* Light mist gradient (light section transitions) */
-  --mw-gradient-mist: linear-gradient(180deg, #ffffff 0%, #f6fafc 100%);
+  --mw-gradient-mist: linear-gradient(
+    180deg,
+    var(--mw-brand-white) 0%,
+    var(--mw-color-surface-mist) 100%
+  );
 
   /* Section-level shared gradient backgrounds — used by SectionFrame tone variants */
   /* Dark diagonal — for dark narrative/contrast sections */
@@ -413,54 +466,7 @@
   );
 
   /* ══════════════════════════════════════════════════════
-       13. BRAND IDENTITY BRIDGE TOKENS
-       Used by Logo SVG components (src/global/logos/).
-       Do not rename — SVG files reference these by name.
-       ══════════════════════════════════════════════════════ */
-
-  --brand-primary: #061323;
-  --brand-secondary: #103e5a;
-  --brand-primary-mid: #1b2845;
-  --brand-white: #ffffff;
-  --brand-logo-ring: color-mix(in oklch, #35c7d8 18%, #061323);
-
-  /* Opacity variants used by logo SVG paths */
-  --brand-primary-90: color-mix(in srgb, #061323 90%, transparent);
-  --brand-primary-30: color-mix(in srgb, #061323 30%, transparent);
-  --brand-primary-10: color-mix(in srgb, #061323 10%, transparent);
-  --brand-secondary-10: color-mix(in srgb, #103e5a 10%, transparent);
-  --brand-secondary-30: color-mix(in srgb, #103e5a 30%, transparent);
-  --brand-white-90: color-mix(in srgb, #ffffff 90%, transparent);
-  --brand-white-80: color-mix(in srgb, #ffffff 80%, transparent);
-  --brand-white-70: color-mix(in srgb, #ffffff 70%, transparent);
-
-  /* White alpha utility tokens — for rgba overlays in home.css and component surfaces.
-       Use var(--mw-white-XX) in production CSS instead of raw rgba(255,255,255,X). */
-  --mw-white-02: rgba(255, 255, 255, 0.02);
-  --mw-white-03: rgba(255, 255, 255, 0.03);
-  --mw-white-04: rgba(255, 255, 255, 0.04);
-  --mw-white-05: rgba(255, 255, 255, 0.05);
-  --mw-white-06: rgba(255, 255, 255, 0.06);
-  --mw-white-08: rgba(255, 255, 255, 0.08);
-  --mw-white-10: rgba(255, 255, 255, 0.1);
-  --mw-white-12: rgba(255, 255, 255, 0.12);
-  --mw-white-15: rgba(255, 255, 255, 0.15);
-  --mw-white-25: rgba(255, 255, 255, 0.25);
-  --mw-white-30: rgba(255, 255, 255, 0.3);
-  --mw-white-35: rgba(255, 255, 255, 0.35);
-  --mw-white-40: rgba(255, 255, 255, 0.4);
-  --mw-white-45: rgba(255, 255, 255, 0.45);
-  --mw-white-50: rgba(255, 255, 255, 0.5);
-  --mw-white-55: rgba(255, 255, 255, 0.55);
-  --mw-white-60: rgba(255, 255, 255, 0.6);
-  --mw-white-65: rgba(255, 255, 255, 0.65);
-  --mw-white-70: rgba(255, 255, 255, 0.7);
-  --mw-white-75: rgba(255, 255, 255, 0.75);
-  --mw-white-80: rgba(255, 255, 255, 0.8);
-  --mw-white-85: rgba(255, 255, 255, 0.85);
-
-  /* ══════════════════════════════════════════════════════
-       14. SHADCN / RADIX UI COMPAT SHIMS
+      16. SHADCN / RADIX UI COMPAT SHIMS
        Consumed by src/components/ui/ (third-party lib).
        Do NOT use these in production MindWP CSS.
        Do NOT rename — lib components reference them directly.

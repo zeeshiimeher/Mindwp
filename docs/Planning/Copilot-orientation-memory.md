@@ -210,15 +210,15 @@ AI Lead Handling → Reputation feature → Industry category → Landscaping de
 tokens.css → reset.css → typography.css → layout.css → primitives.css → components.css → page/domain CSS → @tailwind
 ```
 
-| Layer            | Owns                                                          |
-| ---------------- | ------------------------------------------------------------- |
-| `tokens.css`     | All `--mw-*` definitions; raw values only                     |
-| `reset.css`      | Browser reset                                                 |
-| `typography.css` | Font stack, type scale, line heights                          |
-| `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion utilities |
-| `primitives.css` | Buttons, badges, Accordion, Tabs, signal/status atoms         |
-| `components.css` | Header, Footer, DecisionPanel, RelatedSection, FAQSection     |
-| page/domain CSS  | Page-specific visual bodies only                              |
+| Layer            | Owns                                                                                                                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tokens.css`     | All `--mw-*` definitions; raw values only. Brand tokens: `--mw-brand-primary/secondary/white` (logo assets only). Alpha utilities: `--mw-white-XX`. Shadcn shims isolated in section 16. |
+| `reset.css`      | Browser reset                                                                                                                                                                            |
+| `typography.css` | Font stack, type scale, line heights                                                                                                                                                     |
+| `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion utilities                                                                                                                            |
+| `primitives.css` | Buttons, badges, Accordion, Tabs, signal/status atoms                                                                                                                                    |
+| `components.css` | Header, Footer, DecisionPanel, RelatedSection, FAQSection                                                                                                                                |
+| page/domain CSS  | Page-specific visual bodies only                                                                                                                                                         |
 
 **Hard rules:**
 
