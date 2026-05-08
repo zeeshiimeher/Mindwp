@@ -254,7 +254,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -361,7 +361,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -451,7 +451,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -527,7 +527,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -575,7 +575,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -1033,7 +1033,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -1745,7 +1745,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -8033,7 +8033,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -8977,7 +8977,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9069,7 +9069,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9123,7 +9123,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9223,7 +9223,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9277,7 +9277,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9537,7 +9537,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9591,7 +9591,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9645,7 +9645,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9699,7 +9699,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9753,7 +9753,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9799,7 +9799,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10197,7 +10197,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10335,7 +10335,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10427,7 +10427,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+            'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',

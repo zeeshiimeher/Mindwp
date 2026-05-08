@@ -159,7 +159,7 @@ Rules:
 - validators protect the current system, not old UI
 - do not weaken validators to silence errors
 - update validators if they enforce old UI assumptions
-- after every big refactor/task/phase, run `system:full` and `build` — both must be clean
+- after every big refactor/task/phase, run `npm run lint -- --fix` `npx prettier --write npm run lint` after that run `system:full` and `build` — both must be clean
 
 Workspace tasks: `system:quick`, `build`, `system:full`, `system:regen` (if explicitly needed).
 
@@ -173,6 +173,7 @@ Workspace tasks: `system:quick`, `build`, `system:full`, `system:regen` (if expl
 - broad new architecture docs
 
 ## Self-Improvement Rule
+
 
 Do not suggest `AGENTS.md` updates during normal task reports.
 

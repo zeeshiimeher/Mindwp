@@ -1,7 +1,14 @@
-import { MessageSquare, Phone, Users } from 'lucide-react';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
+
+// =============================================================================
+// AI Lead Handling — page data
+// Sections: responseGap · connectedVsIsolated · channelStates · handlingPath ·
+//           realMoments · handoffMap · scenarioStudy · scopeGroups · fitFilter · faq
+// =============================================================================
 
 const slug = 'ai-lead-handling';
 
@@ -11,7 +18,7 @@ export const aiLeadHandlingPage = {
     slug,
     title: 'AI Lead Handling for Service Businesses',
     description:
-      "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+      'Enquiries arrive after hours, during jobs, and across multiple channels. AI handles the first response — answering, capturing details, and handing off before interest drops.',
   }),
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time', 'missed-calls', 'lead-capture'],
@@ -21,467 +28,483 @@ export const aiLeadHandlingPage = {
     badge: 'AI Lead Handling',
     title: 'The Enquiry Came In After Hours. Nobody Picked It Up.',
     description:
-      'Someone sends a message at 7pm, asks a booking question on the site, or calls after the team has finished. By morning, the conversation has already moved to a business that replied faster.',
-    list: ['Slow replies', 'Dead by morning', 'No handoff'],
+      'Someone calls after the team has finished. A form lands at 9pm. A chat message sits there until morning. By the time anyone responds, the conversation has moved somewhere faster.',
+    list: ['Missed calls', 'After-hours forms', 'Unanswered messages'],
+    visual: {
+      label: 'Response Surface',
+      subtitle: 'Incoming channels — current state',
+      channels: [
+        { label: 'Missed call', note: 'After hours — no callback', state: 'unhandled' },
+        { label: 'Website form', note: 'Sat 21:14 — unread', state: 'unhandled' },
+        { label: 'Chat message', note: 'Pricing question — open', state: 'unhandled' },
+        { label: 'After-hours call', note: 'AI replied in 12s', state: 'covered' },
+      ],
+      footerUnhandled: '3 unhandled',
+      footerCovered: '1 covered',
+    },
   },
   sections: {
-    foundation: {
-      badge: 'The real problem',
-      title: 'Add AI to a messy process and the mess just moves faster',
-      description:
-        "If enquiry paths are unclear and nobody owns the handoff, automation doesn't help. It just speeds up the confusion.",
-      painPoints: [
-        {
-          before:
-            'AI added. It answers. Then the conversation hits a wall because nothing picks up after.',
-          after:
-            'AI sits inside a path that actually goes somewhere. Answers, captures, hands off. With context.',
-        },
-        {
-          before: 'The bot talks to people. Conversation dies. Nobody owns what comes next.',
-          after:
-            'Every conversation routes somewhere — CRM entry, booking step, named team member.',
-        },
-        {
-          before: 'Sounds good in theory. Visitors end up going in circles.',
-          after: "Four things: answer, capture, route, escalate. That's it.",
-        },
-      ],
-    },
-    featureCategoriesSection: {
-      badge: 'What AI handles',
-      title: 'Three channels where speed matters most',
-      description:
-        'Different businesses need different layers. Depends on how people reach you and where the delay hurts.',
-      columns: 3 as const,
-      variant: 'stacked' as const,
-      items: [
-        {
-          title: 'Website chat',
-          description:
-            'Visitor lands. Has a question. AI answers, helps them find the right service, captures details if they want to go further.',
-          icon: MessageSquare,
-          label: 'Handles:',
-          features: [
-            'First questions answered',
-            'Service guidance',
-            'Booking support',
-            'Detail capture',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          title: 'Phone and missed calls',
-          description:
-            'Calls answered or recovered. Common questions handled. Details captured. Complex ones handed to a person.',
-          icon: Phone,
-          label: 'Handles:',
-          features: ['Call answering', 'Missed call recovery', 'Message capture', 'Call routing'],
-          iconType: 'secondary' as const,
-        },
-        {
-          title: 'Follow-up and repeat questions',
-          description:
-            "Handles the routine stuff — order updates, return queries, basic info. Escalates when it's something a person should deal with.",
-          icon: Users,
-          label: 'Handles:',
-          features: [
-            'Common repeat questions',
-            'Order and update queries',
-            'Knowledge lookups',
-            'Escalation to your team',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-    },
-    comparison: {
+    responseGap: {
       header: {
-        title: 'AI lead handling bolted on vs AI lead handling connected properly',
+        kicker: 'The real problem',
+        title:
+          'The gap is not the technology. [[muted:It is what happens before anyone can respond.]]',
         description:
-          'The difference is not whether AI replies. The difference is whether the reply leads anywhere useful for the customer or your team.',
+          'Most enquiries do not die because the business is uninterested. They die in the gap between arriving and being answered. AI can close that gap — but only if there is something clear on the other side.',
       },
-      items: [
+      primaryGap: {
+        title: 'First response is too slow',
+        situation:
+          'An enquiry arrives while the team is on a job, in a meeting, or finished for the day. Nobody sees it until later. The person who sent it has already tried the next result.',
+        cost: 'Response speed is often the only variable in who gets the work. A slow first response does not delay the decision — it loses it.',
+        handledState:
+          'AI replies within seconds. Enough to acknowledge, collect context, and keep the conversation alive until a person picks it up.',
+      },
+      gaps: [
         {
-          type: 'before' as const,
-          title: 'Bolted-on AI',
-          items: [
-            'The bot answers first questions, then the conversation stalls because no clear handoff exists.',
-            'Website chat, calls, and follow-up all behave differently. The customer has to restart on each channel.',
-            'The AI sounds active, but nothing gets logged properly. Your team still starts cold when they pick it up.',
-            'Escalation rules are vague, so either the bot overreaches or it throws too much back to the team.',
-            'Reporting shows activity, not outcomes. Nobody can tell whether faster response actually recovered revenue.',
-          ],
+          title: 'After-hours enquiries vanish',
+          situation:
+            'Forms, messages, and voicemails that arrive outside business hours wait until morning. By then the conversation is cold or gone.',
+          handledState:
+            'After-hours contacts get an immediate response. Details captured and queued for the team with context already attached.',
         },
         {
-          type: 'after' as const,
-          title: 'Connected AI lead handling',
-          items: [
-            'AI answers, captures details, and moves the conversation into booking, CRM, or a named team handoff.',
-            'Website chat, missed calls, and repeat questions follow one operating path instead of acting like separate tools.',
-            'Your team receives the conversation with context attached, so nobody starts from zero.',
-            'Escalation rules are deliberate. AI handles the repeatable front end and people handle the judgment calls.',
-            'You can see which enquiries were recovered, where speed improved, and how much work stopped leaking away.',
-          ],
-        },
-      ],
-    },
-    processSection: {
-      badge: 'How it fits',
-      title: 'AI at the front. Your team where it matters.',
-      description:
-        "Not replacing people. Making sure nobody waits for a reply that could've been instant.",
-      steps: [
-        {
-          number: '1',
-          title: 'Someone reaches out',
-          description:
-            'Website chat, phone call, missed call, booking page. They expect a response in seconds. Not tomorrow morning.',
+          title: 'Missed calls stay missed',
+          situation:
+            'A call goes unanswered. The caller may leave a voicemail. Most do not. The number sits in a call log nobody checks quickly enough.',
+          handledState:
+            'Missed calls trigger an immediate text acknowledgement. The caller gets a response. The team gets the callback queued with context.',
         },
         {
-          number: '2',
-          title: 'AI handles the first step',
-          description:
-            "Answers the common questions. Collects what's needed. Moves the conversation forward even when nobody's at a desk.",
-        },
-        {
-          number: '3',
-          title: 'Something real happens next',
-          description:
-            'A booking. A CRM entry. A handoff to the right person. Not a dead end. Not a promise to "get back to you."',
-        },
-        {
-          number: '4',
-          title: 'Everything recorded',
-          description:
-            "Conversation details land where the team can see them. Nothing depends on someone's memory.",
+          title: 'AI added to a broken path makes things worse',
+          situation:
+            'AI installed on top of unclear enquiry paths just speeds up the confusion. It answers faster into a dead end.',
+          handledState:
+            'AI sits inside a path that goes somewhere: acknowledgement, detail capture, routing to booking, CRM, or a named person.',
         },
       ],
     },
-    workflowExamples: {
-      badge: 'In practice',
-      title: 'What this looks like during a normal week',
-      description: 'Not theory. Real moments where AI handles what would otherwise fall through.',
-      items: [
+
+    connectedVsIsolated: {
+      header: {
+        kicker: 'Isolated vs connected',
+        title:
+          'The difference is not whether AI replies. [[muted:It is whether the reply leads anywhere.]]',
+        description:
+          'Most businesses that tried AI before and found it unhelpful added it on top of an unclear process. The technology was not the problem.',
+      },
+      leftSide: {
+        label: 'Isolated AI',
+        note: 'Bolted on · No path after first reply',
+      },
+      rightSide: {
+        label: 'Connected AI',
+        note: 'Integrated · Every reply routes forward',
+      },
+      criteria: [
         {
-          trigger: 'A call comes in after hours from someone who needs a quote.',
-          actions: [
-            'Immediate text acknowledging the call',
-            "Captures what they need and when they're free",
+          name: 'First response',
+          left: 'AI replies. Then the conversation stalls — no clear next step.',
+          right: 'AI replies, captures details, and routes the conversation to the next action.',
+        },
+        {
+          name: 'Channel consistency',
+          left: 'Website chat, missed calls, and messages each behave differently. The customer restarts every time.',
+          right: 'All channels follow one handling path. One conversation, one record.',
+        },
+        {
+          name: 'Team context',
+          left: 'Your team picks up the lead cold. No context on what was already discussed.',
+          right: 'Your team receives the conversation with details already captured.',
+        },
+        {
+          name: 'Escalation',
+          left: 'Escalation rules are vague. AI either overreaches or throws everything back.',
+          right: 'Clear rules: AI handles the repeatable front end, people handle judgement calls.',
+        },
+        {
+          name: 'Outcome visibility',
+          left: 'Reports show chat volume. Nobody can see how many enquiries were actually recovered.',
+          right: 'Which contacts were handled, what was routed, what reached the team.',
+        },
+      ],
+    },
+
+    channelStates: {
+      header: {
+        kicker: 'Where it happens',
+        title: 'Three channels where the gap costs you work',
+        description:
+          'Different enquiry types arrive through different channels. Each has the same problem in a different form.',
+      },
+      channels: [
+        {
+          name: 'Phone and missed calls',
+          state: 'unhandled',
+          currentNote:
+            'Calls go unanswered during jobs. Voicemails sit unchecked. Callbacks happen when someone remembers.',
+          handledNote:
+            'Missed calls trigger an immediate text. Details captured. Team has context before calling back.',
+        },
+        {
+          name: 'Website chat and forms',
+          state: 'unhandled',
+          currentNote:
+            'Forms land in a shared inbox. Chat sits open overnight. First reply depends on who checks and when.',
+          handledNote:
+            'Chat answered immediately. Forms acknowledged on receipt. Both logged with the context the team needs.',
+        },
+        {
+          name: 'After-hours messages and DMs',
+          state: 'unhandled',
+          currentNote:
+            'WhatsApp, DMs, and out-of-hours messages wait until morning. The window where interest was highest has closed.',
+          handledNote:
+            'After-hours messages get an immediate response. The conversation stays alive until the team is available.',
+        },
+      ],
+    },
+
+    handlingPath: {
+      header: {
+        kicker: 'How it works',
+        title: 'Channels in. [[muted:One handled path out.]]',
+        description:
+          'Calls, forms, and messages arrive through separate channels. AI handles the first step across all of them and routes each one to the right next action.',
+      },
+      inputs: [
+        { label: 'Phone call or missed call' },
+        { label: 'Website chat or form' },
+        { label: 'After-hours message or DM' },
+      ],
+      junction: {
+        title: 'AI first step',
+        note: 'Acknowledges, answers common questions, captures details, checks fit',
+      },
+      outputs: [
+        {
+          label: 'Booking confirmed',
+          type: 'booking',
+          note: 'Direct path for ready-to-book contacts',
+        },
+        {
+          label: 'CRM entry + follow-up',
+          type: 'crm',
+          note: 'Logged with context for the follow-up sequence',
+        },
+        {
+          label: 'Team escalation',
+          type: 'team',
+          note: 'Conversation handed to a person with full history',
+        },
+      ],
+    },
+
+    realMoments: {
+      header: {
+        kicker: 'In practice',
+        title: 'What this looks like during a normal week',
+        description: 'Not theory. Specific moments where the gap closes instead of costing work.',
+      },
+      examples: [
+        {
+          trigger: 'A call comes in after hours from someone needing a quote.',
+          steps: [
+            'Immediate text acknowledgement sent',
+            'What they need and when they are free — captured',
             'Queued for first thing next morning',
-            'Team has context before they dial back',
+            'Team has full context before calling back',
           ],
         },
         {
-          trigger: 'Visitor on the website asks if they can book a consultation.',
-          actions: [
-            'Chat answers the question straight away',
-            'Offers the booking path',
-            "Collects name, number, and what it's about",
-            "Logged for follow-up if they don't complete",
+          trigger: 'Someone on the website asks about booking a consultation.',
+          steps: [
+            'Question answered immediately',
+            'Booking path offered',
+            'Name, number, and reason collected',
+            'Follow-up queued if they do not complete',
           ],
         },
         {
-          trigger: 'Someone calls with a question about pricing before deciding.',
-          actions: [
-            'AI provides the standard answer',
-            'Checks whether the caller is a good fit',
-            "Passes to a person if it's complex",
+          trigger: 'Someone calls with a pricing question before committing.',
+          steps: [
+            'Standard answer provided',
+            'Fit checked based on what they need',
+            'Complex questions routed to a person',
             'Conversation recorded for continuity',
           ],
         },
         {
-          trigger: 'A lead starts chatting but drops off halfway.',
-          actions: [
-            'Partial details captured',
-            'Moves into a follow-up queue',
-            'Context preserved for whoever picks it up',
-            'Better chance of restarting the conversation later',
-          ],
-        },
-      ],
-      alternatingItems: [
-        {
-          title: 'After-hours missed call',
-          description: 'A call comes in after hours from someone who needs a quote.',
-          points: [
-            'Immediate text acknowledgement',
-            'Details and availability captured',
-            'Queued for morning follow-up',
-            'Team has full context',
-          ],
-        },
-        {
-          title: 'Booking question on the site',
-          description: 'Visitor on the website asks if they can book a consultation.',
-          points: [
-            'Question answered immediately',
-            'Booking path offered',
-            'Key details collected',
-            'Follow-up if not completed',
-          ],
-        },
-        {
-          title: 'Pricing call before commitment',
-          description: 'Someone calls with a question about pricing before deciding.',
-          points: [
-            'Standard answer provided',
-            'Fit checked automatically',
-            'Complex questions go to a person',
-            'Conversation logged for continuity',
-          ],
-        },
-        {
-          title: 'Dropped conversation',
-          description: 'A lead starts chatting but drops off halfway.',
-          points: [
+          trigger: 'A lead starts a chat but drops off halfway through.',
+          steps: [
             'Partial details saved',
-            'Routed to follow-up queue',
-            'Context available for the team',
-            'Chance to restart later',
+            'Moved into follow-up queue',
+            'Context preserved for whoever picks it up',
+            'Better chance of restarting the conversation',
           ],
         },
       ],
     },
-    useCasesSection: {
-      badge: 'Where it helps most',
-      title: 'Businesses where reply speed directly affects revenue',
-      description:
-        'If winning the job depends on who replies first, this is where AI makes a real difference.',
-      cards: [
-        {
-          title: 'Appointment-led businesses',
-          description:
-            'People ask the same five questions before booking. AI handles those instantly. Your team only steps in when judgement is needed.',
-          points: [
-            'Booking queries handled immediately',
-            'Pre-booking questions answered around the clock',
-            'Human involvement only when it matters',
-          ],
-          featured: true,
-        },
-        {
-          title: 'Home and trade services',
-          description:
-            "Quote requests and calls come in during jobs. AI captures the details and routes them. Nothing goes unanswered just because the team's busy.",
-          points: [
-            'Missed calls recovered with instant text-back',
-            'Quote requests captured properly',
-            "After-hours enquiries don't vanish",
-          ],
-        },
-        {
-          title: 'Online shops and product businesses',
-          description:
-            "Simple questions — stock, shipping, returns — handled without waiting for a person. Escalation when it's something more.",
-          points: [
-            'Common questions answered fast',
-            'Product guidance available instantly',
-            'People only involved when needed',
-          ],
-        },
-        {
-          title: 'Professional services',
-          description:
-            'Initial qualification and consultation booking handled before the team gets involved. Saves time for both sides.',
-          points: [
-            'Qualification questions more consistent',
-            'Consultation bookings organised upfront',
-            'Right person gets the right conversation',
-          ],
-        },
-      ],
-    },
-    positioning: {
-      badge: 'What changes',
-      title: 'The difference when first response is covered',
-      description:
-        'Respond faster. Route better. Lose fewer people. Your team handles the conversations that need a human.',
-      tagline: 'Faster first reply. Fewer lost conversations.',
-      narrativeTitle: 'AI takes the front. Your team takes the rest.',
-      narrativeParagraphs: [
-        'For most service businesses, AI should handle the repeatable front-end: answer common questions, collect details, support bookings, clean up the handoff.',
-        "It shouldn't pretend to replace real judgement. Used well, it gives your team a better starting point instead of a cold conversation with no context.",
-      ],
-      features: [
-        {
-          icon: MessageSquare,
-          title: 'Instant first response',
-          description:
-            'Visitors and callers get an answer immediately. They stay engaged instead of moving to whoever replies next.',
-        },
-        {
-          icon: Phone,
-          title: 'Clean handoff to a person',
-          description:
-            'AI knows when to stop. Complex or sensitive conversations go to someone on your team with full context attached.',
-        },
-        {
-          icon: Users,
-          title: 'Nothing starts from zero',
-          description:
-            'Details captured, conversation logged, CRM updated. Whoever picks up the lead knows what happened before them.',
-        },
-      ],
-    },
-    proof: {
+
+    handoffMap: {
       header: {
-        title: 'What changed when after-hours enquiries stopped waiting for the next morning',
+        kicker: 'System boundaries',
+        title: 'What AI hands off — and to what',
         description:
-          'A service business was getting steady evening and weekend enquiries, but too many of them died before the team even saw the conversation. The issue was not demand. It was response speed and handoff clarity.',
+          'AI Lead Handling owns the first step. What happens next belongs to the connected system.',
       },
-      cards: [
+      source: {
+        label: 'AI Lead Handling',
+        responsibilities: [
+          'Instant first response',
+          'Common question handling',
+          'Contact detail capture',
+          'Basic fit check',
+          'Escalation to team when needed',
+        ],
+        statusLines: ['First contact handled', 'Context captured', 'Path clear'],
+      },
+      connections: [
         {
-          title: 'Before: interest arrived when nobody was available',
-          description:
-            'Calls, chat questions, and booking enquiries came in outside working hours. Some people left a message. Most just moved on when they got silence.',
-          points: [
-            'Missed calls sat in the phone log until someone checked them later.',
-            'Website chat captured interest but did not route the conversation into a reliable follow-up path.',
-            'The team started the next morning without context on which enquiry was hottest or what the person needed.',
+          targetSystem: 'CRM & Automation',
+          handoff:
+            'Every handled conversation goes into the CRM with contact details, what was discussed, and the routing decision already attached. CRM Automation owns the follow-up sequence from that point.',
+          boundary:
+            'AI Lead Handling owns the first exchange and context capture. CRM Automation owns the lead lifecycle, follow-up scheduling, and visibility from handoff forward.',
+        },
+        {
+          targetSystem: 'Your team',
+          handoff:
+            'Conversations that need judgement — complex scope, sensitive situations, or high-value enquiries — are escalated to the right person with the full conversation history attached.',
+          boundary:
+            'AI handles the repeatable front end. People handle the calls that require real context, relationship, or decision-making.',
+        },
+        {
+          targetSystem: 'Smart Website Systems',
+          handoff:
+            'The website captures the first enquiry signal — form submissions, chat initiations, call triggers. AI Lead Handling takes the response from that point.',
+          boundary:
+            'Smart Website owns the capture and routing structure. AI Lead Handling owns what happens in the response gap after capture.',
+        },
+      ],
+    },
+
+    scenarioStudy: {
+      header: {
+        kicker: 'Scenario study',
+        title: 'What this can look like for a trade business',
+        description:
+          'A service business was losing steady after-hours enquiries to slow response times. Here is the kind of handling problem the system addresses.',
+      },
+      proofType: 'Scenario Study',
+      context: {
+        label: 'Context',
+        title: 'Busy trade business. Steady evening enquiries. Team unavailable after 6pm.',
+        description:
+          'Calls, forms, and messages arriving after hours were waiting until the next morning. Some came back. Most had already found someone who replied first.',
+        constraint: 'Illustrative scenario. Not attributed client work. No outcome guarantee.',
+      },
+      before: {
+        label: 'Before',
+        title: 'Enquiries arrived when nobody could respond',
+        bullets: [
+          'Missed calls showed up in the call log the next morning. No acknowledgement had been sent.',
+          'Website forms landed in an inbox nobody checked until the day started. Often eight to twelve hours later.',
+          'The team had no way to know which missed contact was the most urgent or most recent.',
+        ],
+      },
+      change: {
+        label: 'What changed',
+        title: 'AI handled the first step. The team handled the rest.',
+        bullets: [
+          'Missed calls triggered an immediate text. The caller knew they had been seen.',
+          'After-hours forms received an acknowledgement within seconds. Key details captured.',
+          'The team started each morning with a clear queue — who contacted them, what they needed, and when.',
+        ],
+      },
+      after: {
+        label: 'After',
+        title: 'Fewer enquiries disappeared before the team could respond',
+        bullets: [
+          'More after-hours contacts stayed in the conversation instead of going cold.',
+          'The team handled the real conversations. AI handled the gap.',
+          'Response speed became consistent across all hours, not just working hours.',
+        ],
+        metrics: [
+          { label: 'After-hours response', before: 'Next morning', after: 'Within seconds' },
+          { label: 'Team context on arrival', before: 'None', after: 'Full conversation' },
+          {
+            label: 'Missed call recovery',
+            before: 'Manual, delayed',
+            after: 'Immediate text-back',
+          },
+        ],
+      },
+    },
+
+    scopeGroups: {
+      header: {
+        kicker: 'What is included',
+        title: 'What gets set up',
+        description:
+          'Exact scope depends on your channels, volume, and what is already in place. These are the common parts.',
+      },
+      groups: [
+        {
+          label: 'Channel setup',
+          items: [
+            'AI trained on your services and business',
+            'Knowledge base connected',
+            'Tone and language matched to your business',
+            'Chat widget or voice integration placed and tested',
           ],
         },
         {
-          title: 'What changed: AI handled the first step and routed the next one',
-          description:
-            'The first response was immediate, questions were handled within clear boundaries, and every conversation moved into booking, CRM, or a named escalation path instead of dying at the first contact.',
-          points: [
-            'After-hours calls triggered an immediate acknowledgement and detail capture.',
-            'Website chat answered repeat questions and collected the context the team needed for the next step.',
-            'Escalation rules pushed sensitive or high-value enquiries to the right person with the conversation history attached.',
+          label: 'Response configuration',
+          items: [
+            'Conversation flows designed and tested',
+            'Missed call recovery configured',
+            'After-hours handling rules set',
+            'Booking integration if relevant',
           ],
-          featured: true,
         },
         {
-          title: 'After: more conversations recovered, fewer leads lost to delay',
-          description:
-            'The team still handled the real conversations. The difference was that those conversations arrived warm, visible, and structured instead of cold, delayed, or lost entirely.',
-          points: [
-            'Fewer missed-call leads disappeared before morning.',
-            'The team could prioritise follow-up based on what the lead had already asked for.',
-            'AI became a front-door response layer, not a gimmick sitting on top of the same broken process.',
+          label: 'Handoff rules',
+          items: [
+            'Escalation rules — when AI stops and a person takes over',
+            'CRM connection and data routing',
+            'Fallback handling for anything outside scope',
+          ],
+        },
+        {
+          label: 'Ongoing',
+          items: [
+            'Reporting on conversations and outcomes',
+            'Refinement based on how enquiries actually arrive',
           ],
         },
       ],
     },
-    checklistSection: {
-      badge: 'Included',
-      title: "What's in the setup",
-      description: 'Exact scope depends on your channels and volume. These are the common parts.',
-      columns: 2 as const,
+
+    fitFilter: {
+      header: {
+        kicker: 'Fit check',
+        title: 'Is this right for your business?',
+        description:
+          'Works when response speed matters, first questions repeat, and a clear next step exists after the first reply.',
+      },
+      strongFit: {
+        label: 'Strong fit',
+        items: [
+          {
+            text: 'Enquiries arrive across more than one channel',
+            note: 'Chat, phone, forms. Enough volume that handling every first contact manually is costing time or losing work.',
+          },
+          {
+            text: 'Slow replies are losing you jobs',
+            note: 'Customers have said it, or your team sees missed calls after the fact. Speed is the issue.',
+          },
+          {
+            text: 'You want AI connected to how you work',
+            note: 'Not a chatbot floating on the website. Something that feeds into your CRM, booking, or team routing.',
+          },
+          {
+            text: 'You want practical, not experimental',
+            note: 'Faster responses, better capture, cleaner handoff. Not a robot for the sake of having one.',
+          },
+        ],
+      },
+      poorFit: {
+        label: 'Probably not the right fit',
+        items: [
+          {
+            text: 'Enquiry volume is very low',
+            note: 'If a handful of leads arrive each week, the investment does not return. Get more enquiries coming in first.',
+          },
+          {
+            text: 'You want to remove people entirely',
+            note: 'AI handles the repeatable front end. Sensitive conversations, complex scope, real relationships — those still need your team.',
+          },
+          {
+            text: 'You want a standalone bot with no connection to anything',
+            note: 'A chatbot that does not route, book, or update your CRM is a dead end. Not what this is.',
+          },
+          {
+            text: 'Enquiry paths are not defined',
+            note: 'AI amplifies what is already there. If the path underneath is unclear, build that first.',
+          },
+        ],
+      },
+    },
+
+    faq: {
+      header: {
+        kicker: 'Common questions',
+        title: 'Questions about AI lead handling',
+        description: 'Straight answers about what AI does and does not do.',
+      },
       items: [
-        'AI trained on your services and business',
-        'Knowledge base connected',
-        'Conversation flows designed and tested',
-        'Tone and language matched to your brand',
-        'Chat widget designed and placed',
-        'Testing and refinement before launch',
-        'Natural language handling',
-        'Multi-language if needed',
-        'Booking integration',
-        'CRM connection and data sync',
-        'Handoff rules — when AI stops and a person takes over',
-        'Escalation rules for urgent, sensitive, or high-value conversations',
-        'Fallback rules for anything the AI is not confident answering',
-        'Reporting on conversations and outcomes',
-        'Ongoing learning and improvement',
-      ],
-    },
-    qualification: {
-      title: 'Is this right for your business?',
-      description:
-        'Works when response speed matters, first questions repeat, and better routing would save real time.',
-      strongFitTitle: 'Strong fit if',
-      strongFitItems: [
         {
-          title: 'You get regular incoming enquiries across more than one channel',
-          description:
-            'Chat, phone, bookings. Enough volume that handling every first response manually is costing time and losing people.',
-        },
-        {
-          title: 'Slow replies are losing you work',
-          description:
-            'Customers have told you they went somewhere else. Or your team sees missed calls after the fact. Either way, speed is the issue.',
-        },
-        {
-          title: 'You want AI connected to how you actually work',
-          description:
-            'CRM, booking, routing. Not a chatbot floating on the website. Something that feeds into what your team already does.',
-        },
-        {
-          title: 'You want practical, not flashy',
-          description:
-            'You want faster responses, better capture, cleaner handoff. Not a talking robot for the sake of it.',
-        },
-      ],
-      notDesignedTitle: 'Not the right fit if',
-      notDesignedItems: [
-        {
-          title: 'Enquiry volume is very low',
-          description:
-            "If you get a handful of leads a week, the investment doesn't pay back. Get more enquiries coming in first.",
-        },
-        {
-          title: 'You want to remove people entirely',
-          description:
-            'AI handles the repeatable front end. Sensitive conversations, complex judgement calls, real relationship building — those still need your team.',
-        },
-        {
-          title: 'You want a standalone bot with no connection to anything',
-          description:
-            "A chatbot that doesn't route, book, or update your CRM is a dead end. Not what this is.",
-        },
-        {
-          title: 'Your enquiry paths are undefined',
-          description:
-            "AI amplifies what's there. If there's nothing clear underneath, build that first. Same problem missed calls and routing have — basics before speed.",
-        },
-      ],
-    },
-    faqSection: {
-      badge: 'Common Questions',
-      title: 'Questions about AI lead handling',
-      description: "Straight answers about what AI does and doesn't do.",
-      faqs: [
-        {
+          id: 'aih-faq-receptionist',
           question: 'Is this replacing my receptionist or team?',
           answer:
-            'No. AI handles the repeatable first step. Anything that needs context, sensitivity, or real judgement still goes to a person.',
+            'No. AI handles the repeatable first step — acknowledging contact, answering common questions, capturing details. Anything that needs context, sensitivity, or real judgement still goes to a person.',
         },
         {
+          id: 'aih-faq-channels',
           question: 'Can it handle both website chat and phone calls?',
           answer:
             'Yes. Setup covers chat, missed call recovery, voice handling, booking support — or a combination. Depends on how your enquiries come in.',
         },
         {
+          id: 'aih-faq-crm',
           question: 'Do we need a CRM?',
           answer:
-            'No, but we usually recommend connecting this to GoHighLevel so chat, calls, follow-up, and reporting stay in one place. If you already have a working setup, we can connect that instead.',
+            'If you already have a CRM or booking setup, we connect to it. If not, we can recommend the simplest setup that keeps conversations, follow-up, and reporting visible in one place.',
         },
         {
+          id: 'aih-faq-wrong-answer',
           question: 'What if the AI gives a wrong answer?',
           answer:
-            "Managed through training, boundaries, and handoff rules. It answers what it's trained to. Anything else goes to your team.",
+            'Managed through training, defined boundaries, and handoff rules. It answers what it is trained to answer. Anything outside that scope goes to your team.',
         },
         {
-          question: 'Is this only for big businesses?',
+          id: 'aih-faq-business-size',
+          question: 'Is this only for large businesses?',
           answer:
-            "No. It's useful for smaller businesses too — especially when missed calls, slow replies, or the same first questions come up over and over.",
+            'No. Useful for smaller businesses too — especially when missed calls, slow replies, or the same first questions come up repeatedly.',
         },
         {
+          id: 'aih-faq-prerequisites',
           question: 'What needs to be in place first?',
           answer:
-            'Clear services, clear enquiry paths, and a sensible follow-up plan. If those are missing, fix them first. Same as missed calls or routing — the basics need to work before you add speed.',
+            'Clear services, clear enquiry paths, and a sensible follow-up plan. If those are missing, build them first. The same as missed calls or routing — the basics need to work before you add speed.',
         },
       ],
     },
   },
+
   cta: {
     heading: {
-      title: 'Find out where speed is killing your pipeline',
+      kicker: 'Final step',
+      title: 'Where is first contact costing you work?',
       description:
-        'How enquiries come in. How long they wait. Where faster response would change things.',
+        'Tell us how enquiries arrive and where responses slow down. We come back with where the gap is and what to cover first.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: PRIMARY_CTA_LABEL,
+        href: buildServiceContactHref({
+          system: 'ai-lead-handling',
+          slug: 'ai-lead-handling',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'How enquiries currently arrive and where they go' },
+      { num: '02', text: 'Where the response gap is biggest' },
+      { num: '03', text: 'What would close it first' },
+    ],
   },
 } satisfies ServicePageData;

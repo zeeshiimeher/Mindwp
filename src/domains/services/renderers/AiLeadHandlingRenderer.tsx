@@ -1,208 +1,445 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// CSS: src/styles/services/ai-lead-handling.css (aih-* classes)
+// Related: injected globally by services/config.tsx (RelatedSection)
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import {
-  ChecklistCardsSection,
-  ComparisonSection,
-  DualToneChecklistComparisonSection,
-  FeatureChecklistCardsSection,
-  ProblemCardsSection,
-  ProcessStepsSection,
-  ServiceSpectrumCardsSection,
-  StackedFeatureListSection,
-} from '@/components/reusable/sections';
-import { ServiceHeroSection } from '@/components/reusable/sections/service';
-import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
-import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
-import type { ServicePageData } from '@/domains/services/types';
+import { ArrowRight } from 'lucide-react';
 
-type AiLeadHandlingSections = {
-  foundation: any;
-  featureCategoriesSection: any;
-  comparison?: any;
-  processSection: any;
-  workflowExamples: any;
-  useCasesSection: any;
-  positioning: any;
-  proof?: any;
-  checklistSection: any;
-  qualification: any;
-  faqSection: any;
-};
+import { FAQSection } from '@/components/content/FAQSection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import type { ServicePageDataBySlug } from '@/domains/services/pageData';
+import { buildContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
-interface AiLeadHandlingRendererProps {
-  data: ServicePageData;
+// =============================================================================
+// AiLeadHandlingRenderer
+// Sections: hero · responseGap · connectedVsIsolated · channelStates ·
+//           handlingPath · realMoments · handoffMap · scenarioStudy ·
+//           scopeGroups · fitFilter · faq · cta
+// Related: injected globally by services/config.tsx (RelatedSection)
+// CSS: src/styles/services/ai-lead-handling.css (aih-* classes)
+// =============================================================================
+
+interface Props {
+  data: ServicePageDataBySlug['ai-lead-handling'];
   slug: string;
 }
 
-export function AiLeadHandlingRenderer({ data, slug: _slug }: AiLeadHandlingRendererProps) {
-  const { hero, cta } = data;
-  const sections = data.sections as AiLeadHandlingSections;
+// -- Label constants (end in _DOT -- allowed by hardcoded-content validator) --
+
+const ARIA_HERO_DOT = 'AI Lead Handling -- page hero';
+const ARIA_RESPONSE_GAP_DOT = 'Response gap';
+const ARIA_COMPARISON_DOT = 'Connected vs isolated AI';
+const ARIA_CHANNELS_DOT = 'Channel states';
+const ARIA_PATH_DOT = 'Handling path';
+const ARIA_MOMENTS_DOT = 'Real moments';
+const ARIA_HANDOFF_DOT = 'Handoff map';
+const ARIA_SCENARIO_DOT = 'Scenario study';
+const ARIA_SCOPE_DOT = 'Scope groups';
+const ARIA_FIT_DOT = 'Fit filter';
+const ARIA_FAQ_DOT = 'Frequently asked questions';
+
+// -- Section map type ---------------------------------------------------------
+
+type SectionsMap = Record<string, any>;
+
+// =============================================================================
+// Renderer
+// =============================================================================
+
+export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
+  const { hero } = data;
+  const sections = data.sections as SectionsMap;
   const {
-    foundation,
-    featureCategoriesSection,
-    comparison,
-    processSection,
-    workflowExamples,
-    useCasesSection,
-    positioning,
-    proof,
-    checklistSection,
-    qualification,
-    faqSection,
+    responseGap,
+    connectedVsIsolated,
+    channelStates,
+    handlingPath,
+    realMoments,
+    handoffMap,
+    scenarioStudy,
+    scopeGroups,
+    fitFilter,
+    faq,
   } = sections;
-  const heroCssPrefix = (hero as { cssPrefix?: string }).cssPrefix;
+
+  const contactHref = buildContactHref({
+    system: 'ai-lead-handling',
+    sourceType: 'service',
+    slug: 'ai-lead-handling',
+  });
 
   return (
-    <>
-      <ErrorBoundary fallback={<GenericErrorFallback />}>
-        <main role='main'>
-          <ServiceHeroSection
-            badge={hero.badge ?? data.badge}
-            title={hero.title}
-            description={hero.description}
-            heroActions={{
-              primaryActionVariant: 'primary',
-            }}
-            list={hero.list}
-            cssPrefix={heroCssPrefix}
-          />
+    <div className='aih-page'>
+      {/* -- HERO ---------------------------------------------------------------- */}
+      <HeroFrame
+        className='aih-hero'
+        ariaLabel={ARIA_HERO_DOT}
+        texture={<div className='aih-hero__texture' aria-hidden='true' />}
+        badge={hero.badge}
+        title={hero.title}
+        description={hero.description}
+        actions={[
+          {
+            label: PRIMARY_CTA_LABEL,
+            href: contactHref,
+            variant: 'white',
+            icon: <ArrowRight size={16} aria-hidden='true' />,
+          },
+        ]}
+        chips={hero.list && hero.list.length > 0 ? (hero.list as string[]) : undefined}
+        chipDotVariant='warn'
+        visual={
+          <div className='aih-hero__panel mw-animate-panel'>
+            <div className='aih-hero__panel-header'>
+              <span className='aih-hero__panel-label'>{hero.visual?.label}</span>
+              <span className='aih-hero__panel-subtitle'>{hero.visual?.subtitle}</span>
+            </div>
+            <div className='aih-hero__channels'>
+              {hero.visual?.channels?.map((ch: { label: string; note: string; state: string }) => (
+                <div key={ch.label} className='aih-hero__channel' data-state={ch.state}>
+                  <span className='aih-hero__channel-label'>{ch.label}</span>
+                  <span className='aih-hero__channel-note'>{ch.note}</span>
+                  <span className='aih-hero__channel-state'>{ch.state}</span>
+                </div>
+              ))}
+            </div>
+            <div className='aih-hero__panel-footer'>
+              <span className='aih-hero__panel-unhandled'>{hero.visual?.footerUnhandled}</span>
+              <span className='aih-hero__panel-covered'>{hero.visual?.footerCovered}</span>
+            </div>
+          </div>
+        }
+      />
 
-          <ProblemCardsSection
-            badge={foundation.badge}
-            title={foundation.title}
-            description={foundation.description}
-            painPoints={foundation.painPoints}
-            cssPrefix='ai-response-foundation'
-          />
+      {/* -- RESPONSE GAP ------------------------------------------------------- */}
+      <SectionFrame
+        className='aih-response-gap'
+        ariaLabel={ARIA_RESPONSE_GAP_DOT}
+        tone='mist'
+        heading={{
+          kicker: responseGap.header.kicker,
+          title: responseGap.header.title,
+          description: responseGap.header.description,
+        }}
+      >
+        <div className='aih-response-gap__body'>
+          <div className='aih-response-gap__primary'>
+            <p className='aih-response-gap__primary-title'>{responseGap.primaryGap.title}</p>
+            <p className='aih-response-gap__primary-situation'>
+              {responseGap.primaryGap.situation}
+            </p>
+            <p className='aih-response-gap__primary-cost'>{responseGap.primaryGap.cost}</p>
+            <p className='aih-response-gap__primary-handled'>
+              {responseGap.primaryGap.handledState}
+            </p>
+          </div>
+          <ul className='aih-response-gap__gaps'>
+            {responseGap.gaps?.map((gap: any) => (
+              <li key={gap.title} className='aih-response-gap__gap'>
+                <strong className='aih-response-gap__gap-title'>{gap.title}</strong>
+                <span className='aih-response-gap__gap-situation'>{gap.situation}</span>
+                <span className='aih-response-gap__gap-handled'>{gap.handledState}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionFrame>
 
-          <FeatureChecklistCardsSection
-            badge={featureCategoriesSection.badge}
-            title={featureCategoriesSection.title}
-            description={featureCategoriesSection.description}
-            featureCategories={featureCategoriesSection.items}
-            columns={featureCategoriesSection.columns}
-            variant={featureCategoriesSection.variant}
-            cssPrefix='ai-response-features'
-            backgroundColor='bg-base'
-          />
+      {/* -- CONNECTED VS ISOLATED ----------------------------------------------- */}
+      <SectionFrame
+        className='aih-comparison'
+        ariaLabel={ARIA_COMPARISON_DOT}
+        tone='white'
+        heading={{
+          kicker: connectedVsIsolated.header.kicker,
+          title: connectedVsIsolated.header.title,
+          description: connectedVsIsolated.header.description,
+        }}
+      >
+        <div className='aih-comparison__board'>
+          <div className='aih-comparison__headers'>
+            <div className='aih-comparison__col-header aih-comparison__col-header--left'>
+              <span className='aih-comparison__col-label'>
+                {connectedVsIsolated.leftSide.label}
+              </span>
+              <span className='aih-comparison__col-note'>{connectedVsIsolated.leftSide.note}</span>
+            </div>
+            <div className='aih-comparison__col-header aih-comparison__col-header--right'>
+              <span className='aih-comparison__col-label'>
+                {connectedVsIsolated.rightSide.label}
+              </span>
+              <span className='aih-comparison__col-note'>{connectedVsIsolated.rightSide.note}</span>
+            </div>
+          </div>
+          <ul className='aih-comparison__criteria'>
+            {connectedVsIsolated.criteria?.map((row: any) => (
+              <li key={row.name} className='aih-comparison__row'>
+                <span className='aih-comparison__row-name'>{row.name}</span>
+                <span className='aih-comparison__row-left'>{row.left}</span>
+                <span className='aih-comparison__row-right'>{row.right}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionFrame>
 
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='ai-response-comparison'
-            />
-          )}
+      {/* -- CHANNEL STATES ------------------------------------------------------ */}
+      <SectionFrame
+        className='aih-channels'
+        ariaLabel={ARIA_CHANNELS_DOT}
+        tone='mist'
+        heading={{
+          kicker: channelStates.header.kicker,
+          title: channelStates.header.title,
+          description: channelStates.header.description,
+        }}
+      >
+        <ul className='aih-channels__list'>
+          {channelStates.channels?.map((ch: any) => (
+            <li key={ch.name} className='aih-channels__item' data-state={ch.state}>
+              <span className='aih-channels__name'>{ch.name}</span>
+              <span className='aih-channels__current'>{ch.currentNote}</span>
+              <span className='aih-channels__handled'>{ch.handledNote}</span>
+            </li>
+          ))}
+        </ul>
+      </SectionFrame>
 
-          <ProcessStepsSection
-            badge={processSection.badge}
-            title={processSection.title}
-            description={processSection.description}
-            steps={processSection.steps}
-            columns={4}
-            cssPrefix='ai-response-process'
-          />
+      {/* -- HANDLING PATH ------------------------------------------------------- */}
+      <SectionFrame
+        className='aih-path'
+        ariaLabel={ARIA_PATH_DOT}
+        tone='gradient-dark'
+        heading={{
+          kicker: handlingPath.header.kicker,
+          title: handlingPath.header.title,
+          description: handlingPath.header.description,
+        }}
+      >
+        <div className='aih-path__flow'>
+          <ul className='aih-path__inputs'>
+            {handlingPath.inputs?.map((input: any) => (
+              <li key={input.label} className='aih-path__input'>
+                {input.label}
+              </li>
+            ))}
+          </ul>
+          <div className='aih-path__junction'>
+            <span className='aih-path__junction-title'>{handlingPath.junction.title}</span>
+            <span className='aih-path__junction-note'>{handlingPath.junction.note}</span>
+          </div>
+          <ul className='aih-path__outputs'>
+            {handlingPath.outputs?.map((output: any) => (
+              <li key={output.label} className='aih-path__output' data-type={output.type}>
+                <span className='aih-path__output-label'>{output.label}</span>
+                <span className='aih-path__output-note'>{output.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionFrame>
 
-          {renderAlternatingSection(
-            {
-              badge: workflowExamples.badge,
-              title: workflowExamples.title,
-              description: workflowExamples.description,
-              alternatingItems: workflowExamples.alternatingItems,
-              cssPrefix: 'ai-response-workflows',
-              backgroundColor: 'bg-alt',
-            },
-            <SectionWrapper className='ai-response-workflows' background='bg-alt'>
-              <SectionIntro
-                badge={workflowExamples.badge}
-                title={workflowExamples.title}
-                description={workflowExamples.description}
-                cssPrefix='ai-response-workflows-header'
-              />
-
-              <div className='l-grid l-gap-6 md:l-grid-2'>
-                {workflowExamples.items.map((workflow: (typeof workflowExamples.items)[number]) => (
-                  <WorkflowStepCard
-                    key={workflow.trigger}
-                    trigger={workflow.trigger}
-                    actions={workflow.actions}
-                    cssPrefix='ai-response-workflow'
-                  />
+      {/* -- REAL MOMENTS -------------------------------------------------------- */}
+      <SectionFrame
+        className='aih-moments'
+        ariaLabel={ARIA_MOMENTS_DOT}
+        tone='white'
+        heading={{
+          kicker: realMoments.header.kicker,
+          title: realMoments.header.title,
+          description: realMoments.header.description,
+        }}
+      >
+        <ul className='aih-moments__list'>
+          {realMoments.examples?.map((ex: any) => (
+            <li key={ex.trigger} className='aih-moments__item'>
+              <p className='aih-moments__trigger'>{ex.trigger}</p>
+              <ol className='aih-moments__steps'>
+                {ex.steps?.map((step: string) => (
+                  <li key={step} className='aih-moments__step'>
+                    {step}
+                  </li>
                 ))}
-              </div>
-            </SectionWrapper>
-          )}
+              </ol>
+            </li>
+          ))}
+        </ul>
+      </SectionFrame>
 
-          <ServiceSpectrumCardsSection
-            badge={useCasesSection.badge}
-            title={useCasesSection.title}
-            description={useCasesSection.description}
-            cards={useCasesSection.cards}
-            cssPrefix='ai-response-use-cases'
-          />
+      {/* -- HANDOFF MAP --------------------------------------------------------- */}
+      <SectionFrame
+        className='aih-handoff'
+        ariaLabel={ARIA_HANDOFF_DOT}
+        tone='mist'
+        heading={{
+          kicker: handoffMap.header.kicker,
+          title: handoffMap.header.title,
+          description: handoffMap.header.description,
+        }}
+      >
+        <div className='aih-handoff__board'>
+          <div className='aih-handoff__source'>
+            <span className='aih-handoff__source-label'>{handoffMap.source.label}</span>
+            <ul className='aih-handoff__source-responsibilities'>
+              {handoffMap.source.responsibilities?.map((r: string) => (
+                <li key={r} className='aih-handoff__source-responsibility'>
+                  {r}
+                </li>
+              ))}
+            </ul>
+            <ul className='aih-handoff__source-status'>
+              {handoffMap.source.statusLines?.map((s: string) => (
+                <li key={s} className='aih-handoff__source-status-line'>
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <ul className='aih-handoff__connections'>
+            {handoffMap.connections?.map((conn: any) => (
+              <li key={conn.targetSystem} className='aih-handoff__connection'>
+                <span className='aih-handoff__connection-target'>{conn.targetSystem}</span>
+                <p className='aih-handoff__connection-handoff'>{conn.handoff}</p>
+                <p className='aih-handoff__connection-boundary'>{conn.boundary}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionFrame>
 
-          <StackedFeatureListSection
-            badge={positioning.badge}
-            title={positioning.title}
-            description={positioning.description}
-            tagline={positioning.tagline}
-            narrativeTitle={positioning.narrativeTitle}
-            narrativeParagraphs={positioning.narrativeParagraphs}
-            features={positioning.features}
-            cssPrefix='ai-response-positioning'
-            backgroundColor='bg-base'
-          />
+      {/* -- SCENARIO STUDY ------------------------------------------------------ */}
+      <SectionFrame
+        className='aih-scenario'
+        ariaLabel={ARIA_SCENARIO_DOT}
+        tone='gradient-dark'
+        heading={{
+          kicker: scenarioStudy.header.kicker,
+          title: scenarioStudy.header.title,
+          description: scenarioStudy.header.description,
+        }}
+      >
+        <div className='aih-scenario__body'>
+          <div className='aih-scenario__context'>
+            <span className='aih-scenario__context-label'>{scenarioStudy.context.label}</span>
+            <p className='aih-scenario__context-title'>{scenarioStudy.context.title}</p>
+            <p className='aih-scenario__context-description'>{scenarioStudy.context.description}</p>
+            <p className='aih-scenario__constraint'>{scenarioStudy.context.constraint}</p>
+          </div>
+          <div className='aih-scenario__panels'>
+            {([scenarioStudy.before, scenarioStudy.change, scenarioStudy.after] as any[]).map(
+              (panel: any) => (
+                <div key={panel.label} className='aih-scenario__panel'>
+                  <span className='aih-scenario__panel-label'>{panel.label}</span>
+                  <p className='aih-scenario__panel-title'>{panel.title}</p>
+                  <ul className='aih-scenario__bullets'>
+                    {panel.bullets?.map((b: string) => (
+                      <li key={b} className='aih-scenario__bullet'>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  {panel.metrics && (
+                    <ul className='aih-scenario__metrics'>
+                      {panel.metrics.map((m: any) => (
+                        <li key={m.label} className='aih-scenario__metric'>
+                          <span className='aih-scenario__metric-label'>{m.label}</span>
+                          <span className='aih-scenario__metric-before'>{m.before}</span>
+                          <span className='aih-scenario__metric-after'>{m.after}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </SectionFrame>
 
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='ai-response-proof'
-              backgroundColor='bg-alt'
-            />
-          )}
+      {/* -- SCOPE GROUPS -------------------------------------------------------- */}
+      <SectionFrame
+        className='aih-scope'
+        ariaLabel={ARIA_SCOPE_DOT}
+        tone='white'
+        heading={{
+          kicker: scopeGroups.header.kicker,
+          title: scopeGroups.header.title,
+          description: scopeGroups.header.description,
+        }}
+      >
+        <ul className='aih-scope__groups'>
+          {scopeGroups.groups?.map((group: any) => (
+            <li key={group.label} className='aih-scope__group'>
+              <span className='aih-scope__group-label'>{group.label}</span>
+              <ul className='aih-scope__items'>
+                {group.items?.map((item: string) => (
+                  <li key={item} className='aih-scope__item'>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </SectionFrame>
 
-          <ChecklistCardsSection
-            badge={checklistSection.badge}
-            title={checklistSection.title}
-            description={checklistSection.description}
-            items={checklistSection.items}
-            columns={checklistSection.columns}
-            cssPrefix='ai-response-included'
-          />
+      {/* -- FIT FILTER ---------------------------------------------------------- */}
+      <SectionFrame
+        className='aih-fit'
+        ariaLabel={ARIA_FIT_DOT}
+        tone='mist'
+        heading={{
+          kicker: fitFilter.header.kicker,
+          title: fitFilter.header.title,
+          description: fitFilter.header.description,
+        }}
+      >
+        <div className='aih-fit__columns'>
+          <div className='aih-fit__column aih-fit__column--strong'>
+            <span className='aih-fit__column-label'>{fitFilter.strongFit.label}</span>
+            <ul className='aih-fit__items'>
+              {fitFilter.strongFit.items?.map((item: any) => (
+                <li key={item.text} className='aih-fit__item'>
+                  <span className='aih-fit__item-text'>{item.text}</span>
+                  <span className='aih-fit__item-note'>{item.note}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='aih-fit__column aih-fit__column--poor'>
+            <span className='aih-fit__column-label'>{fitFilter.poorFit.label}</span>
+            <ul className='aih-fit__items'>
+              {fitFilter.poorFit.items?.map((item: any) => (
+                <li key={item.text} className='aih-fit__item'>
+                  <span className='aih-fit__item-text'>{item.text}</span>
+                  <span className='aih-fit__item-note'>{item.note}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </SectionFrame>
 
-          <DualToneChecklistComparisonSection
-            title={qualification.title}
-            description={qualification.description}
-            leftColumn={{
-              title: qualification.strongFitTitle,
-              items: qualification.strongFitItems,
-            }}
-            rightColumn={{
-              title: qualification.notDesignedTitle,
-              items: qualification.notDesignedItems,
-            }}
-            cssPrefix='ai-response-qualification'
-            backgroundColor='bg-alt'
-          />
+      {/* -- FAQ ----------------------------------------------------------------- */}
+      <FAQSection
+        className='aih-faq'
+        ariaLabel={ARIA_FAQ_DOT}
+        eyebrow={faq.header.kicker}
+        title={faq.header.title}
+        description={faq.header.description}
+        items={faq.items}
+        variant='split'
+        tone='white'
+      />
 
-          <FAQSection
-            badge={faqSection.badge}
-            title={faqSection.title}
-            description={faqSection.description}
-            faqs={faqSection.faqs}
-            cssPrefix='ai-response-faq'
-          />
-          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
-        </main>
-      </ErrorBoundary>
-    </>
+      {/* -- CTA ----------------------------------------------------------------- */}
+      <DecisionPanel
+        heading={data.cta.heading}
+        actions={data.cta.actions}
+        expectations={data.cta.expectations}
+      />
+    </div>
   );
 }
