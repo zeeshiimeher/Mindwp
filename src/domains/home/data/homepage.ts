@@ -529,7 +529,7 @@ export const homepageData: HomepageData = {
       stateLabel: 'controlled',
       bullets: [
         '1 capture surface',
-        'Every call logged',
+        'Calls logged in one place',
         'Follow-up on schedule',
         'Reviews consistently captured',
       ],
@@ -628,7 +628,7 @@ export const homepageData: HomepageData = {
       },
       {
         title: 'Response Layer',
-        note: 'First reply within minutes, every time',
+        note: 'First response triggered before the lead goes cold',
         accent: 'green',
         iconKey: 'response-layer',
       },
@@ -727,8 +727,8 @@ export const homepageData: HomepageData = {
       },
       {
         num: '04',
-        title: 'Runs without you',
-        note: 'Runs quietly. Owner attention only when it matters.',
+        title: 'Runs with less chasing',
+        note: 'The routine parts keep moving. Owner attention goes where it matters.',
         weight: 100,
       },
     ],
@@ -752,7 +752,7 @@ export const homepageData: HomepageData = {
       title: 'What changed',
       bullets: [
         'Single capture surface',
-        'Routing + follow-up automation',
+        'Routing + connected follow-up',
         'Local visibility groundwork',
         'Review request flow on completion',
       ],
@@ -764,12 +764,12 @@ export const homepageData: HomepageData = {
         'Enquiries land in one place',
         'Routing handled automatically',
         'Follow-up happens on schedule',
-        'Reviews coming in steadily',
+        'Review requests sent at the right moment',
       ],
     },
     quote:
-      'We moved from a basic website to something connected. Enquiries land in the right place, follow-up is clearer. The business runs easier now.',
-    quoteAttribution: 'Owner — established service business',
+      'The change is simple: enquiries land somewhere useful, follow-up is visible, and the owner is not relying on memory to keep work moving.',
+    quoteAttribution: 'Scenario — established service business',
   },
 
   implementationExamples: {
