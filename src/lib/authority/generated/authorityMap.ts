@@ -45,17 +45,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'ai-lead-handling': {
       services: [
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -75,7 +75,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -83,7 +83,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -95,15 +95,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Lead Reactivation System for Service Businesses',
           description:
-            'A focused route for old enquiries, dormant leads, and quotes that need a proper follow-up path.',
+            'A focused route for old enquiries, dormant leads and quotes that never had a proper follow-up path.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
         },
         {
+          title: 'Revenue Growth Systems for Service Businesses',
+          description:
+            'Where revenue actually leaks, what is recoverable, and the connected steps that bring it back without bolting on more tools.',
+          slug: 'revenue-growth',
+          path: '/services/revenue-growth',
+          nodeType: 'service',
+        },
+        {
           title: 'Conversion Layer for Service Businesses',
           description:
-            'A focused service page for finding where enquiries stall after people have already shown interest.',
+            'A focused service page for finding where warm enquiries stall after interest already exists.',
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -115,9 +123,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Lead Reactivation System for Service Businesses',
           description:
-            'A focused route for old enquiries, dormant leads, and quotes that need a proper follow-up path.',
+            'A focused route for old enquiries, dormant leads and quotes that never had a proper follow-up path.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Revenue Growth Systems for Service Businesses',
+          description:
+            'Where revenue actually leaks, what is recoverable, and the connected steps that bring it back without bolting on more tools.',
+          slug: 'revenue-growth',
+          path: '/services/revenue-growth',
           nodeType: 'service',
         },
         {
@@ -135,7 +151,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -155,7 +171,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -163,7 +179,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -183,7 +199,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -191,7 +207,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -211,7 +227,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -219,7 +235,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -229,9 +245,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-reactivation-system': {
       services: [
         {
+          title: 'Revenue Growth Systems for Service Businesses',
+          description:
+            'Where revenue actually leaks, what is recoverable, and the connected steps that bring it back without bolting on more tools.',
+          slug: 'revenue-growth',
+          path: '/services/revenue-growth',
+          nodeType: 'service',
+        },
+        {
           title: 'Conversion Layer for Service Businesses',
           description:
-            'A focused service page for finding where enquiries stall after people have already shown interest.',
+            'A focused service page for finding where warm enquiries stall after interest already exists.',
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -254,15 +278,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -271,6 +295,34 @@ export const AUTHORITY_MAP: AuthorityMap = {
     },
     'reputation-review-systems': {
       services: [],
+    },
+    'revenue-growth': {
+      services: [
+        {
+          title: 'Lead Reactivation System for Service Businesses',
+          description:
+            'A focused route for old enquiries, dormant leads and quotes that never had a proper follow-up path.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer for Service Businesses',
+          description:
+            'A focused service page for finding where warm enquiries stall after interest already exists.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development',
+          description:
+            'A focused comparison for deciding between a one-off landing page and a connected conversion path.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
     },
     'service-pages-vs-one-generic-services-page': {
       services: [
@@ -285,7 +337,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -293,7 +345,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -303,25 +355,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'smart-website-systems': {
       services: [
         {
-          title: 'Service Pages vs One Generic Services Page',
-          description:
-            'A focused comparison for deciding when one services page is hiding the buyer intent your website needs to handle.',
-          slug: 'service-pages-vs-one-generic-services-page',
-          path: '/services/service-pages-vs-one-generic-services-page',
-          nodeType: 'service',
-        },
-        {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
         },
         {
+          title: 'Service Pages vs One Generic Services Page',
+          description:
+            'A focused comparison for deciding between a single services page and dedicated pages for each service.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -339,19 +391,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page',
+          title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused comparison for deciding when one services page is hiding the buyer intent your website needs to handle.',
-          slug: 'service-pages-vs-one-generic-services-page',
-          path: '/services/service-pages-vs-one-generic-services-page',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign vs System Rebuild',
+          title: 'Service Pages vs One Generic Services Page',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
-          slug: 'website-redesign-system-rebuild',
-          path: '/services/website-redesign-system-rebuild',
+            'A focused comparison for deciding between a single services page and dedicated pages for each service.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
       ],
@@ -361,15 +413,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -381,7 +433,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -401,17 +453,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Service Pages vs One Generic Services Page',
           description:
-            'A focused comparison for deciding when one services page is hiding the buyer intent your website needs to handle.',
+            'A focused comparison for deciding between a single services page and dedicated pages for each service.',
           slug: 'service-pages-vs-one-generic-services-page',
           path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
-          title: 'System Migration and Platform Consolidation',
+          title: 'WordPress Development for Service Businesses',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'WordPress implementation for service businesses that need a controlled site, not a generic agency build.',
+          slug: 'wordpress-development',
+          path: '/services/wordpress-development',
           nodeType: 'service',
         },
       ],
@@ -429,7 +481,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -437,7 +489,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -451,23 +503,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -487,7 +539,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer for Service Businesses',
           description:
-            'A focused service page for finding where enquiries stall after people have already shown interest.',
+            'A focused service page for finding where warm enquiries stall after interest already exists.',
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -507,7 +559,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -515,7 +567,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -527,23 +579,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -555,7 +607,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -575,23 +627,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -603,7 +655,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -611,7 +663,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -625,7 +677,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -633,7 +685,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -641,7 +693,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -705,7 +757,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -721,7 +773,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -785,23 +837,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -865,23 +917,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -945,7 +997,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -961,7 +1013,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1025,7 +1077,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1033,15 +1085,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1105,7 +1157,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1121,7 +1173,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1193,7 +1245,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -1201,7 +1253,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -1265,7 +1317,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1281,7 +1333,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1345,7 +1397,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1361,7 +1413,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1425,23 +1477,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1505,7 +1557,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1521,7 +1573,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1593,7 +1645,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -1601,7 +1653,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1665,23 +1717,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1745,23 +1797,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1769,19 +1821,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'HVAC peak season case study: more calls held in play during surges',
-          description:
-            'How a Nottingham heating and cooling business stopped losing calls during peak season and made surge weeks feel manageable for the office team.',
-          slug: 'hvac-peak-season-couldnt-keep-up',
-          path: '/case-studies/hvac-peak-season-couldnt-keep-up',
-          nodeType: 'case-study',
-        },
-        {
           title: 'HVAC after-hours call case study: more emergency jobs captured',
           description:
             'How a Manchester heating and cooling business stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
           slug: 'hvac-after-hours-calls-going-cold',
           path: '/case-studies/hvac-after-hours-calls-going-cold',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'HVAC peak season case study: more calls held in play during surges',
+          description:
+            'How a Nottingham heating and cooling business stopped losing calls during peak season and made surge weeks feel manageable for the office team.',
+          slug: 'hvac-peak-season-couldnt-keep-up',
+          path: '/case-studies/hvac-peak-season-couldnt-keep-up',
           nodeType: 'case-study',
         },
         {
@@ -1825,7 +1877,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1841,7 +1893,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1905,7 +1957,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1921,7 +1973,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1985,7 +2037,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1993,7 +2045,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2001,7 +2053,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -2065,7 +2117,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2081,7 +2133,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2145,23 +2197,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -2225,7 +2277,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2241,7 +2293,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2305,7 +2357,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2321,7 +2373,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2385,23 +2437,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -2473,7 +2525,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2481,7 +2533,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -2545,7 +2597,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2561,7 +2613,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2625,7 +2677,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2641,7 +2693,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2705,7 +2757,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2721,7 +2773,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2785,7 +2837,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2801,7 +2853,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2865,7 +2917,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2873,7 +2925,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2881,7 +2933,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -2945,7 +2997,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2961,7 +3013,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -3025,7 +3077,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3041,7 +3093,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -3105,7 +3157,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3121,7 +3173,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -7987,15 +8039,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8033,23 +8085,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8087,7 +8139,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8095,7 +8147,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8133,7 +8185,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8171,7 +8223,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8179,7 +8231,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8225,7 +8277,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8233,7 +8285,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8271,7 +8323,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8279,7 +8331,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8317,7 +8369,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8325,7 +8377,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8369,17 +8421,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page',
+          title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused comparison for deciding when one services page is hiding the buyer intent your website needs to handle.',
-          slug: 'service-pages-vs-one-generic-services-page',
-          path: '/services/service-pages-vs-one-generic-services-page',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
         },
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8425,7 +8477,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8433,7 +8485,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8471,7 +8523,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8479,7 +8531,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8517,7 +8569,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8525,7 +8577,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8563,7 +8615,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8571,7 +8623,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8609,7 +8661,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8617,7 +8669,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8655,7 +8707,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8699,17 +8751,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Service Pages vs One Generic Services Page',
+          title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused comparison for deciding when one services page is hiding the buyer intent your website needs to handle.',
-          slug: 'service-pages-vs-one-generic-services-page',
-          path: '/services/service-pages-vs-one-generic-services-page',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
         },
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8785,7 +8837,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8831,7 +8883,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8839,7 +8891,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration and Platform Consolidation',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8877,7 +8929,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8885,7 +8937,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -8921,9 +8973,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-emergency-call-handling-system': {
       services: [
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8931,15 +8983,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8977,23 +9029,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9031,7 +9083,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9069,23 +9121,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9123,23 +9175,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9177,7 +9229,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9185,7 +9237,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -9223,23 +9275,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9277,23 +9329,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9377,7 +9429,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Service Pages vs One Generic Services Page',
           description:
-            'A focused comparison for deciding when one services page is hiding the buyer intent your website needs to handle.',
+            'A focused comparison for deciding between a single services page and dedicated pages for each service.',
           slug: 'service-pages-vs-one-generic-services-page',
           path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
@@ -9461,7 +9513,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9499,7 +9551,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9537,23 +9589,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9591,23 +9643,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9645,23 +9697,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9699,23 +9751,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9753,15 +9805,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9799,23 +9851,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9851,9 +9903,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'reducing-salon-no-shows-with-automation': {
       services: [
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9861,15 +9913,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9907,7 +9959,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9945,7 +9997,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9983,7 +10035,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10021,7 +10073,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10059,7 +10111,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10097,7 +10149,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10105,7 +10157,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -10141,9 +10193,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-estimate-follow-up-workflow': {
       services: [
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10151,15 +10203,15 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10197,23 +10249,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10251,7 +10303,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10289,7 +10341,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10297,7 +10349,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -10335,23 +10387,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10389,7 +10441,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10427,23 +10479,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
-            'Fast response and routing for calls, forms, DMs, and missed enquiries before good work slips away.',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery Service for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'A focused route for recovering missed calls and routing callers to a useful next step.',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for bringing calls, forms, and messages into clearer ownership and response handling.',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10489,17 +10541,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign vs System Rebuild',
           description:
-            'A focused decision page for separating surface redesign from rebuilding the website path behind enquiries.',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
         },
         {
-          title: 'System Migration and Platform Consolidation',
+          title: 'Service Pages vs One Generic Services Page',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused comparison for deciding between a single services page and dedicated pages for each service.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
       ],
@@ -10535,7 +10587,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10543,7 +10595,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -10581,7 +10633,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Lead Reactivation System for Service Businesses',
           description:
-            'A focused route for old enquiries, dormant leads, and quotes that need a proper follow-up path.',
+            'A focused route for old enquiries, dormant leads and quotes that never had a proper follow-up path.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
@@ -10589,7 +10641,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer for Service Businesses',
           description:
-            'A focused service page for finding where enquiries stall after people have already shown interest.',
+            'A focused service page for finding where warm enquiries stall after interest already exists.',
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -10635,7 +10687,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM & Automation for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up, and visible after it arrives.',
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10643,7 +10695,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website CRM Integration vs Manual Lead Handling',
           description:
-            'A focused comparison for deciding when manual lead handling is no longer enough.',
+            'A focused comparison for deciding when manual lead handling stops being enough.',
           slug: 'website-crm-integration-vs-manual-lead-handling',
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
@@ -10687,19 +10739,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Development for Service Businesses',
+          title: 'Website Redesign vs System Rebuild',
           description:
-            'WordPress implementation for service businesses that need a controlled website path, not a generic agency build.',
-          slug: 'wordpress-development',
-          path: '/services/wordpress-development',
+            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
         },
         {
-          title: 'System Migration and Platform Consolidation',
+          title: 'WordPress Development for Service Businesses',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'WordPress implementation for service businesses that need a controlled site, not a generic agency build.',
+          slug: 'wordpress-development',
+          path: '/services/wordpress-development',
           nodeType: 'service',
         },
       ],
@@ -11644,6 +11696,10 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 50,
   },
   'reputation-review-systems': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'revenue-growth': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },

@@ -9,6 +9,7 @@ import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactiv
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
+import { revenueGrowthPage } from '@/domains/services/data/revenue-growth';
 import { servicePagesVsOneGenericServicesPage } from '@/domains/services/data/service-pages-vs-one-generic-services-page';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
@@ -29,6 +30,7 @@ import { LeadReactivationSystemRenderer } from '@/domains/services/renderers/Lea
 import { LocalSeoAuthorityRenderer } from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
 import { MissedCallRecoverySystemRenderer } from '@/domains/services/renderers/MissedCallRecoverySystemRenderer';
 import { ReputationReviewSystemsRenderer } from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
+import { RevenueGrowthRenderer } from '@/domains/services/renderers/RevenueGrowthRenderer';
 import { ServicePagesDecisionRenderer } from '@/domains/services/renderers/ServicePagesDecisionRenderer';
 import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
 import { SystemMigrationPlatformConsolidationRenderer } from '@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer';
@@ -68,6 +70,7 @@ type ServiceDomainRegistry = {
   'unified-communication-system': ServiceDomainEntry<typeof unifiedCommunicationSystemPage>;
   'local-seo-authority': ServiceDomainEntry<typeof localSeoAuthorityPage>;
   'reputation-review-systems': ServiceDomainEntry<typeof reputationReviewSystemsPage>;
+  'revenue-growth': ServiceDomainEntry<typeof revenueGrowthPage>;
   'crm-infrastructure-implementation': ServiceDomainEntry<typeof crmAutomationPage>;
   'website-crm-integration-vs-manual-lead-handling': ServiceDomainEntry<
     typeof websiteCrmIntegrationVsManualLeadHandlingPage
@@ -127,6 +130,7 @@ export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
     reputationReviewSystemsPage,
     ReputationReviewSystemsRenderer
   ),
+  'revenue-growth': createServiceEntry(revenueGrowthPage, RevenueGrowthRenderer),
   'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, CRMAutomationRenderer),
   'website-crm-integration-vs-manual-lead-handling': createServiceEntry(
     websiteCrmIntegrationVsManualLeadHandlingPage,

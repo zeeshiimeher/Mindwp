@@ -6,110 +6,118 @@ import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { buildServiceContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
+// =============================================================================
+// RevenueGrowthRenderer
+// Shared .feat-* CSS pattern + .rev-page accent.
+// Sections: hero · revenueLeakMap · recoveryPath · systemBridges ·
+//           fitBoundaries · faq · cta
+// =============================================================================
+
 interface Props {
-  data: ServicePageDataBySlug['missed-call-recovery-system'];
+  data: ServicePageDataBySlug['revenue-growth'];
   slug: string;
 }
 
-const ARIA_HERO_DOT = 'Missed Call Recovery -- page hero';
-const ARIA_BOARD_DOT = 'Missed call situations';
-const ARIA_PATH_DOT = 'Recovery sequence';
-const ARIA_ROUTE_DOT = 'Routing check';
-const ARIA_BRIDGE_DOT = 'System bridge';
+const ARIA_HERO_DOT = 'Revenue Growth -- page hero';
+const ARIA_BOARD_DOT = 'Revenue leak map';
+const ARIA_PATH_DOT = 'Recovery rhythm';
+const ARIA_BRIDGE_DOT = 'System bridges';
 const ARIA_FIT_DOT = 'Fit filter';
 const ARIA_FAQ_DOT = 'Frequently asked questions';
 
 const SOURCE_DOT = 'Source';
-const AGE_DOT = 'When';
-const STATE_WORKABLE_DOT = 'Recover';
-const STATE_CAUTION_DOT = 'Light touch';
-const STATE_LEAVE_DOT = 'Suppress';
-const TIMING_DOT = 'Timing';
-const GOOD_DOT = 'Right call';
-const BAD_DOT = 'Wrong call';
+const SIGNAL_DOT = 'Signal';
+const EXPOSURE_DOT = 'Exposure';
+const STATE_DOT = 'State';
+const STATE_WORKABLE_DOT = 'Workable';
+const STATE_CAUTION_DOT = 'Caution';
+const STATE_LEAVE_DOT = 'Leave alone';
+const TIMING_DOT = 'Stage';
 const FIT_LABEL_DOT = 'Fit';
 const NOT_FIT_LABEL_DOT = 'Not a fit';
 const RULE_DOT = 'Rule';
-const BRIDGE_REC_DOT = 'Recovery owns';
-const BRIDGE_PARENT_DOT = 'AI Lead Handling owns';
+const BRIDGE_REV_DOT = 'Revenue Growth owns';
+const BRIDGE_OTHER_DOT = 'Other systems own';
 
 function requireHeadingTitle(t: string | undefined, s: string) {
   if (!t || !t.trim()) throw new Error(`[${s}] Missing heading title`);
   return t;
 }
+
 function stateLabel(state: 'workable' | 'caution' | 'leave') {
   if (state === 'workable') return STATE_WORKABLE_DOT;
   if (state === 'caution') return STATE_CAUTION_DOT;
   return STATE_LEAVE_DOT;
 }
 
-export function MissedCallRecoverySystemRenderer({ data, slug: _slug }: Props) {
+export function RevenueGrowthRenderer({ data, slug: _slug }: Props) {
   const { hero, sections, cta } = data;
-  const { missedCallBoard, recoveryPath, routingMatrix, parentHandoff, fitBoundaries, faq } =
-    sections;
+  const { revenueLeakMap, recoveryPath, systemBridges, fitBoundaries, faq } = sections;
   const primarySystem = data.systems[0];
-  if (!primarySystem) throw new Error('[missed-call-recovery-system] Missing service system');
+  if (!primarySystem) throw new Error('[revenue-growth] Missing service system');
   const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
 
-  const recRows = parentHandoff.rows.filter(r => r.belongsTo === 'recovery');
-  const parentRows = parentHandoff.rows.filter(r => r.belongsTo === 'parent');
+  const revRows = systemBridges.rows.filter(r => r.belongsTo === 'revenue-growth');
+  const otherRows = systemBridges.rows.filter(r => r.belongsTo === 'other-systems');
 
   return (
-    <div className='missed-call-page feat-page'>
+    <div className='rev-page feat-page'>
       <HeroFrame
-        className='missed-call-hero feat-hero'
+        className='rev-hero feat-hero'
         ariaLabel={ARIA_HERO_DOT}
         badge={hero.badge}
         title={hero.title}
         description={hero.description}
         actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
         chips={hero.list}
-        chipDotVariant='warn'
+        chipDotVariant='subtle'
       />
 
+      {/* ── Revenue leak map ── */}
       <SectionFrame
-        heading={missedCallBoard.header}
+        heading={revenueLeakMap.header}
         tone='white'
         className='feat-board'
         ariaLabel={ARIA_BOARD_DOT}
       >
         {(() => {
-          requireHeadingTitle(missedCallBoard.header.title, 'missedCallBoard');
+          requireHeadingTitle(revenueLeakMap.header.title, 'revenueLeakMap');
           return (
             <div className='feat-board__panel'>
               <header className='feat-board__head'>
-                <span className='feat-board__title'>{missedCallBoard.label}</span>
+                <span className='feat-board__title'>{revenueLeakMap.label}</span>
               </header>
               <div className='feat-board__columns'>
                 <span>{SOURCE_DOT}</span>
-                <span>{AGE_DOT}</span>
-                <span>Signal</span>
-                <span>State</span>
+                <span>{SIGNAL_DOT}</span>
+                <span>{EXPOSURE_DOT}</span>
+                <span>{STATE_DOT}</span>
               </div>
               <ul className='feat-board__list'>
-                {missedCallBoard.sources.map(s => (
-                  <li key={s.id} className={`feat-board__row feat-board__row--${s.state}`}>
+                {revenueLeakMap.rows.map(r => (
+                  <li key={r.id} className={`feat-board__row feat-board__row--${r.state}`}>
                     <span className='feat-board__source'>
                       <span
-                        className={`feat-board__dot feat-board__dot--${s.state}`}
+                        className={`feat-board__dot feat-board__dot--${r.state}`}
                         aria-hidden='true'
                       />
-                      {s.origin}
+                      {r.origin}
                     </span>
-                    <span className='feat-board__age'>{s.ageBand}</span>
-                    <span className='feat-board__signal'>{s.signal}</span>
-                    <span className={`feat-board__state feat-board__state--${s.state}`}>
-                      {stateLabel(s.state)}
+                    <span className='feat-board__age'>{r.signal}</span>
+                    <span className='feat-board__signal'>{r.exposure}</span>
+                    <span className={`feat-board__state feat-board__state--${r.state}`}>
+                      {stateLabel(r.state)}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className='feat-board__closing'>{missedCallBoard.closing}</p>
+              <p className='feat-board__closing'>{revenueLeakMap.closing}</p>
             </div>
           );
         })()}
       </SectionFrame>
 
+      {/* ── Recovery rhythm ── */}
       <SectionFrame
         heading={recoveryPath.header}
         tone='mist'
@@ -139,54 +147,24 @@ export function MissedCallRecoverySystemRenderer({ data, slug: _slug }: Props) {
         })()}
       </SectionFrame>
 
+      {/* ── System bridges ── */}
       <SectionFrame
-        heading={routingMatrix.header}
-        tone='gradient-dark'
-        className='feat-ready'
-        ariaLabel={ARIA_ROUTE_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(routingMatrix.header.title, 'routingMatrix');
-          return (
-            <div className='feat-ready__wrap'>
-              <ul className='feat-ready__list'>
-                {routingMatrix.rows.map(r => (
-                  <li key={r.id} className='feat-ready__row'>
-                    <span className='feat-ready__criterion'>{r.criterion}</span>
-                    <span className='feat-ready__good'>
-                      <span className='feat-ready__pill feat-ready__pill--good'>{GOOD_DOT}</span>
-                      {r.good}
-                    </span>
-                    <span className='feat-ready__bad'>
-                      <span className='feat-ready__pill feat-ready__pill--bad'>{BAD_DOT}</span>
-                      {r.bad}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className='feat-ready__closing'>{routingMatrix.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <SectionFrame
-        heading={parentHandoff.header}
+        heading={systemBridges.header}
         tone='white'
         className='feat-bridge'
         ariaLabel={ARIA_BRIDGE_DOT}
       >
         {(() => {
-          requireHeadingTitle(parentHandoff.header.title, 'parentHandoff');
+          requireHeadingTitle(systemBridges.header.title, 'systemBridges');
           return (
             <div className='feat-bridge__wrap'>
               <div className='feat-bridge__columns'>
                 <article className='feat-bridge__col feat-bridge__col--a'>
                   <header className='feat-bridge__head'>
-                    <span className='feat-bridge__label'>{BRIDGE_REC_DOT}</span>
+                    <span className='feat-bridge__label'>{BRIDGE_REV_DOT}</span>
                   </header>
                   <ul className='feat-bridge__items'>
-                    {recRows.map(r => (
+                    {revRows.map(r => (
                       <li key={r.id}>
                         <span className='feat-bridge__bullet' aria-hidden='true' />
                         {r.point}
@@ -196,10 +174,10 @@ export function MissedCallRecoverySystemRenderer({ data, slug: _slug }: Props) {
                 </article>
                 <article className='feat-bridge__col feat-bridge__col--b'>
                   <header className='feat-bridge__head'>
-                    <span className='feat-bridge__label'>{BRIDGE_PARENT_DOT}</span>
+                    <span className='feat-bridge__label'>{BRIDGE_OTHER_DOT}</span>
                   </header>
                   <ul className='feat-bridge__items'>
-                    {parentRows.map(r => (
+                    {otherRows.map(r => (
                       <li key={r.id}>
                         <span className='feat-bridge__bullet' aria-hidden='true' />
                         {r.point}
@@ -209,13 +187,14 @@ export function MissedCallRecoverySystemRenderer({ data, slug: _slug }: Props) {
                 </article>
               </div>
               <p className='feat-bridge__rule'>
-                <strong>{RULE_DOT}.</strong> {parentHandoff.rule}
+                <strong>{RULE_DOT}.</strong> {systemBridges.rule}
               </p>
             </div>
           );
         })()}
       </SectionFrame>
 
+      {/* ── Fit ── */}
       <SectionFrame
         heading={fitBoundaries.header}
         tone='mist'
@@ -264,7 +243,7 @@ export function MissedCallRecoverySystemRenderer({ data, slug: _slug }: Props) {
       />
 
       <DecisionPanel
-        className='missed-call-cta feat-cta'
+        className='rev-cta feat-cta'
         heading={cta.heading}
         actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
         expectations={cta.expectations}

@@ -1,323 +1,350 @@
-import {
-  ArrowRight,
-  BarChart3,
-  Bot,
-  Inbox,
-  Phone,
-  RefreshCcw,
-  Search,
-  Sparkles,
-  Star,
-} from 'lucide-react';
-
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
-import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { FAQSection } from '@/components/content/FAQSection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { Card } from '@/components/ui/card';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { buildContactHref } from '@/lib/contact/contactHref';
-import { getVariantStyles } from '@/lib/ui/variantStyles';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
-const FEATURED_SERVICE_SLUG = 'smart-website-systems' as const;
+// =============================================================================
+// ServicesLanding — services index page
+// Sections: hero · sixSystems · operatingModules · implementationPaths · faq · cta
+// New-system components only. Shared .services-lnd CSS lives in services.css.
+// =============================================================================
 
-const SUPPORTING_SYSTEM_SLUGS = [
-  'local-seo-authority',
-  'ai-lead-handling',
-  'reputation-review-systems',
-] as const;
+const ARIA_HERO = 'Services -- index hero';
+const ARIA_SIX = 'The six connected systems';
+const ARIA_MODULES = 'Operating modules';
+const ARIA_PATHS = 'Implementation paths';
+const ARIA_FAQ = 'Frequently asked questions';
 
-const OPERATIONAL_MODULE_SLUGS = [
-  'missed-call-recovery-system',
-  'lead-reactivation-system',
-  'conversion-layer',
-  'unified-communication-system',
-] as const;
+const ROLE_DOT = 'Role';
+const PARENT_DOT = 'Parent system';
+const TIER_DOT = 'Service path';
 
-type VisibleServiceSlug =
-  | typeof FEATURED_SERVICE_SLUG
-  | (typeof SUPPORTING_SYSTEM_SLUGS)[number]
-  | (typeof OPERATIONAL_MODULE_SLUGS)[number];
+type SystemCardSpec = {
+  slug: string;
+  role: string;
+  summary: string;
+};
 
-const SERVICE_META: Record<
-  VisibleServiceSlug,
+type ModuleCardSpec = {
+  slug: string;
+  parent: string;
+  summary: string;
+};
+
+type PathCardSpec = {
+  slug: string;
+  kind: 'decision' | 'builder';
+  summary: string;
+};
+
+const SIX_SYSTEMS: readonly SystemCardSpec[] = [
   {
-    icon: typeof Sparkles;
-    title: string;
-    description: string;
-  }
-> = {
-  'smart-website-systems': {
-    icon: Sparkles,
-    title: 'Smart Website Systems',
-    description:
-      'Websites and landing pages with integrated automation and CRM. Structured digital foundation.',
+    slug: 'smart-website-systems',
+    role: 'Front door',
+    summary:
+      'The structural layer that captures enquiries, attaches context, and routes the next step. Other systems plug into it.',
   },
-  'conversion-layer': {
-    icon: BarChart3,
-    title: 'Conversion Layer',
-    description:
-      'A focused conversion system for stronger page flow, tighter offer pages, cleaner CTA logic, and clearer enquiry handoff.',
+  {
+    slug: 'local-seo-authority',
+    role: 'Local visibility',
+    summary:
+      'Local discovery, profile authority and service-page presence so the business is found by the right intent in its own area.',
   },
-  'lead-reactivation-system': {
-    icon: RefreshCcw,
-    title: 'Lead Reactivation System',
-    description:
-      'A focused recovery workflow for old enquiries, dormant quotes, and past-customer follow-up that has gone quiet.',
+  {
+    slug: 'ai-lead-handling',
+    role: 'Instant response',
+    summary:
+      'Picks up missed calls, qualifies new enquiries and books in real time so the slow window stops costing work.',
   },
-  'missed-call-recovery-system': {
-    icon: Phone,
-    title: 'Missed Call Recovery System',
-    description:
-      'A focused lead-protection workflow for missed calls, text-back response, and cleaner follow-up handoff.',
+  {
+    slug: 'crm-infrastructure-implementation',
+    role: 'Lead ownership',
+    summary:
+      'Where conversations land, who owns them and how follow-up actually happens. The ledger behind the system.',
   },
-  'unified-communication-system': {
-    icon: Inbox,
-    title: 'Unified Communication System',
-    description:
-      'A focused routing layer for calls, forms, chat, and inbox messages so ownership and next steps stay clear.',
+  {
+    slug: 'reputation-review-systems',
+    role: 'Trust signal',
+    summary:
+      'Steady review generation, calm response and quiet monitoring so reputation reflects the work that has been done.',
   },
-  'local-seo-authority': {
-    icon: Search,
-    title: 'Local Authority & SEO Systems',
-    description: 'Managed local SEO and authority systems for consistent discovery and trust.',
+  {
+    slug: 'revenue-growth',
+    role: 'Recovery rhythm',
+    summary:
+      'Names where revenue is leaking across the connected systems and runs the short, durable rhythm that brings it back.',
   },
-  'reputation-review-systems': {
-    icon: Star,
-    title: 'Reputation & Review Systems',
-    description:
-      'Structured review request, response, escalation, and monitoring workflows to strengthen trust signals.',
-  },
-  'ai-lead-handling': {
-    icon: Bot,
-    title: 'AI Lead Handling Systems',
-    description: 'AI chat and voice assistants for enquiry handling, routing, and support.',
-  },
-};
+];
 
-const PRIMARY_AND_SECONDARY_SERVICE_SLUGS = [
-  FEATURED_SERVICE_SLUG,
-  ...SUPPORTING_SYSTEM_SLUGS,
-  ...OPERATIONAL_MODULE_SLUGS,
-] as const;
+const OPERATING_MODULES: readonly ModuleCardSpec[] = [
+  {
+    slug: 'missed-call-recovery-system',
+    parent: 'AI Lead Handling',
+    summary: 'Closes the gap between a missed call and the first useful reply.',
+  },
+  {
+    slug: 'lead-reactivation-system',
+    parent: 'Revenue Growth',
+    summary: 'Reopens dormant enquiries and quotes that never had a proper follow-up path.',
+  },
+  {
+    slug: 'unified-communication-system',
+    parent: 'CRM & Automation',
+    summary: 'Calls, forms, chat and inbox messages routed so ownership stays clear.',
+  },
+  {
+    slug: 'conversion-layer',
+    parent: 'Smart Website Systems',
+    summary: 'Tighter offer pages, cleaner CTA logic and clearer enquiry handoff.',
+  },
+  {
+    slug: 'system-migration-platform-consolidation',
+    parent: 'Smart Website Systems',
+    summary: 'Consolidates platforms and migrates connected work without losing history.',
+  },
+  {
+    slug: 'website-redesign-system-rebuild',
+    parent: 'Smart Website Systems',
+    summary: 'A redesign that doubles as a system rebuild, not a visual refresh.',
+  },
+];
 
-type ServiceCardData = {
-  slug: VisibleServiceSlug;
-  icon: typeof Sparkles;
-  title: string;
-  description: string;
-  href: string;
-};
+const IMPLEMENTATION_PATHS: readonly PathCardSpec[] = [
+  {
+    slug: 'conversion-funnel-system-vs-landing-page-development',
+    kind: 'decision',
+    summary:
+      'When a connected funnel is the right answer and when a single landing page is enough.',
+  },
+  {
+    slug: 'service-pages-vs-one-generic-services-page',
+    kind: 'decision',
+    summary:
+      'Why service-specific pages outperform one all-purpose services page for local intent.',
+  },
+  {
+    slug: 'website-crm-integration-vs-manual-lead-handling',
+    kind: 'decision',
+    summary: 'The honest comparison between connected CRM handling and manual inbox follow-up.',
+  },
+  {
+    slug: 'wordpress-development',
+    kind: 'builder',
+    summary:
+      'WordPress as the build surface when the connected system needs flexibility and ownership.',
+  },
+  {
+    slug: 'ecommerce',
+    kind: 'builder',
+    summary: 'Connected ecommerce on WooCommerce when product, fulfilment and CRM need to talk.',
+  },
+  {
+    slug: 'divi5',
+    kind: 'builder',
+    summary: 'Divi 5 as the build surface for teams already comfortable inside that ecosystem.',
+  },
+  {
+    slug: 'bricks-builder',
+    kind: 'builder',
+    summary: 'Bricks Builder when performance and developer-led control are the deciding factors.',
+  },
+  {
+    slug: 'elementor',
+    kind: 'builder',
+    summary: 'Elementor when an existing team needs the broadest editorial flexibility.',
+  },
+];
 
-function getServiceCard(slug: VisibleServiceSlug): ServiceCardData | null {
-  const service = SERVICE_REGISTRY[slug];
-  if (!service) return null;
+const FAQ_ITEMS = [
+  {
+    id: 'svc-faq-where-to-start',
+    question: 'Where should we start if we are not sure which system we need?',
+    answer:
+      'Start with the leak that is currently costing the most. The Smart Website Systems page is usually the right entry point, since the other systems plug into it.',
+  },
+  {
+    id: 'svc-faq-many-at-once',
+    question: 'Do we have to take on several systems at once?',
+    answer:
+      'No. Each system is built so it can stand on its own and be layered into the others when it earns its place.',
+  },
+  {
+    id: 'svc-faq-platforms',
+    question: 'Are we locked into a specific platform?',
+    answer:
+      'No. The build surface is chosen for the situation. The connected systems run consistently underneath whatever surface is right for the team.',
+  },
+  {
+    id: 'svc-faq-results',
+    question: 'Will you guarantee specific results?',
+    answer:
+      'No. The work is about durable structure and visible ownership. Outcomes depend on the existing situation and the rhythm a team can hold.',
+  },
+];
 
-  const meta = SERVICE_META[slug];
-  return {
-    slug,
-    icon: meta.icon,
-    title: meta.title,
-    description: meta.description,
-    href: service.path,
-  };
+function getRegistryEntry(slug: string) {
+  return SERVICE_REGISTRY[slug];
 }
 
-function renderServiceCard(service: ServiceCardData) {
-  const Icon = service.icon;
-
+function SystemCard({ spec }: { spec: SystemCardSpec }) {
+  const reg = getRegistryEntry(spec.slug);
+  if (!reg) return null;
   return (
-    <Card key={service.slug} className='service-lnd__card'>
-      <a href={service.href} className='link-primary service-lnd__link'>
-        <div
-          className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
-        >
-          <Icon className={`${getVariantStyles('primary').icon.text}`} aria-hidden='true' />
-        </div>
-        <div className='service-lnd__body'>
-          <h3 className='service-lnd__cardTitle'>{service.title}</h3>
-          <p className='service-lnd__cardText text-sm text-muted-foreground'>
-            {service.description}
-          </p>
-        </div>
-        <div className='service-lnd__cta l-row l-items-center text-primary text-sm'>
-          See the service path <ArrowRight className='service-lnd__ctaIcon' aria-hidden='true' />
-        </div>
-      </a>
-    </Card>
+    <a className='svc-lnd__card svc-lnd__card--system' href={reg.path}>
+      <header className='svc-lnd__cardHead'>
+        <span className='svc-lnd__pill'>{ROLE_DOT}</span>
+        <span className='svc-lnd__role'>{spec.role}</span>
+      </header>
+      <h3 className='svc-lnd__cardTitle'>{reg.title}</h3>
+      <p className='svc-lnd__cardSummary'>{spec.summary}</p>
+      <span className='svc-lnd__cardCta'>See the system</span>
+    </a>
   );
 }
 
-function renderServiceSection(
-  title: string,
-  description: string,
-  slugs: readonly VisibleServiceSlug[],
-  columnsClassName = 'md:l-grid-2 lg:l-grid-3'
-) {
-  const services = slugs
-    .map(getServiceCard)
-    .filter((service): service is ServiceCardData => Boolean(service));
-
+function ModuleCard({ spec }: { spec: ModuleCardSpec }) {
+  const reg = getRegistryEntry(spec.slug);
+  if (!reg) return null;
   return (
-    <section className='l-stack l-stack--loose'>
-      <div className='l-stack'>
-        <h2>{title}</h2>
-        <p className='text-muted-foreground'>{description}</p>
-      </div>
-      <div className={`service-lnd__grid l-grid l-gap-6 ${columnsClassName}`}>
-        {services.map(renderServiceCard)}
-      </div>
-    </section>
+    <a className='svc-lnd__card svc-lnd__card--module' href={reg.path}>
+      <header className='svc-lnd__cardHead'>
+        <span className='svc-lnd__pill'>{PARENT_DOT}</span>
+        <span className='svc-lnd__role'>{spec.parent}</span>
+      </header>
+      <h3 className='svc-lnd__cardTitle'>{reg.badge}</h3>
+      <p className='svc-lnd__cardSummary'>{spec.summary}</p>
+      <span className='svc-lnd__cardCta'>See the module</span>
+    </a>
   );
 }
 
-// Services overview landing
+function PathCard({ spec }: { spec: PathCardSpec }) {
+  const reg = getRegistryEntry(spec.slug);
+  if (!reg) return null;
+  const kindLabel = spec.kind === 'decision' ? 'Decision support' : 'Build surface';
+  return (
+    <a className={`svc-lnd__card svc-lnd__card--path svc-lnd__card--${spec.kind}`} href={reg.path}>
+      <header className='svc-lnd__cardHead'>
+        <span className='svc-lnd__pill'>{TIER_DOT}</span>
+        <span className='svc-lnd__role'>{kindLabel}</span>
+      </header>
+      <h3 className='svc-lnd__cardTitle'>{reg.badge}</h3>
+      <p className='svc-lnd__cardSummary'>{spec.summary}</p>
+      <span className='svc-lnd__cardCta'>Read the path</span>
+    </a>
+  );
+}
+
 export function ServicesLanding() {
-  const featuredService = getServiceCard(FEATURED_SERVICE_SLUG);
+  const contactHref = buildContactHref({
+    system: 'smart-website-systems',
+    sourceType: 'page',
+    slug: 'services',
+  });
 
   return (
-    <>
-      <ErrorBoundary
-        fallback={
-          <div className='svc-err l-row l-items-center l-row-center'>
-            <div className='svc-err__inner'>
-              <h1 className='svc-err__title'>Services Temporarily Unavailable</h1>
-              <p className='svc-err__text'>
-                We&apos;re working to restore this page. Please try again later.
-              </p>
-              <Button href='/' label='Return Home' />
-            </div>
-          </div>
-        }
-      >
-        <CTARegistryProvider
-          pageId='page:services'
-          pageType='page'
-          primarySystem='smart-website-systems'
+    <CTARegistryProvider
+      pageId='page:services'
+      pageType='page'
+      primarySystem='smart-website-systems'
+    >
+      <div className='svc-lnd-page'>
+        <HeroFrame
+          ariaLabel={ARIA_HERO}
+          className='svc-lnd-hero'
+          badge='Services'
+          title='Six Connected Systems. [[muted:One Front Door.]]'
+          description='Each system stands on its own and works harder when the others are in place. The pages below describe what each one actually does and where it fits.'
+          actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
+          chips={['Visibility', 'Response', 'Follow-up', 'Trust', 'Recovery']}
+          chipDotVariant='subtle'
+        />
+
+        <SectionFrame
+          heading={{
+            kicker: 'The Six Systems',
+            title: 'These are the working parts. Each one has a job.',
+            description:
+              'Six connected systems cover visibility, instant response, ownership, trust and recovery. Most teams start with the system carrying the heaviest leak.',
+          }}
+          tone='white'
+          className='svc-lnd-section'
+          ariaLabel={ARIA_SIX}
         >
-          <main role='main'>
-            {/* Hero Section */}
-            <SectionWrapper
-              className='service-lnd service-lnd__hero'
-              background='bg-gradient-surface-muted'
-            >
-              <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
-                <Badge variant='primary'>Services Architecture</Badge>
-                <h1 className='service-lnd__title'>The Main Service Paths We Build First</h1>
-                <p className='service-lnd__subtitle text-muted-foreground text-lg'>
-                  These are the live Tier 1 and Tier 2 service pages: the core front-door website
-                  layer plus the operating systems that strengthen visibility, lead handling,
-                  follow-up, and conversion once the structure is in place.
-                </p>
-              </div>
-            </SectionWrapper>
-
-            {/* Structured Services Sections */}
-            <SectionWrapper className='service-lnd service-lnd__gridSec' background='bg-white'>
-              <div className='l-stack l-stack--loose'>
-                {featuredService && (
-                  <section className='l-stack l-stack--loose'>
-                    <div className='l-stack'>
-                      <h2>Smart Website Systems</h2>
-                      <p className='text-muted-foreground'>
-                        The structural flagship of the services architecture. This is the featured
-                        front-door system that frames the broader website, enquiry, follow-up, and
-                        revenue chain.
-                      </p>
-                    </div>
-                    <Card className='border-2 shadow-xl bg-gradient-surface-muted'>
-                      <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
-                        <div className='l-stack l-stack--loose'>
-                          <div className='l-row l-items-center l-gap-3'>
-                            <div
-                              className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
-                            >
-                              <Sparkles
-                                className={getVariantStyles('primary').icon.text}
-                                aria-hidden='true'
-                              />
-                            </div>
-                            <Badge variant='secondary'>Featured Framework</Badge>
-                          </div>
-                          <div className='l-stack'>
-                            <h3 className='service-lnd__cardTitle'>{featuredService.title}</h3>
-                            <p className='text-muted-foreground text-lg'>
-                              {featuredService.description}
-                            </p>
-                          </div>
-                          <p className='text-sm text-muted-foreground'>
-                            Start here when the website itself has to operate as the commercial
-                            control layer for visibility, response speed, booking, follow-up, and
-                            revenue movement.
-                          </p>
-                          <div>
-                            <Button
-                              href={featuredService.href}
-                              label='Explore Smart Website Systems'
-                              icon={ArrowRight}
-                              showDefaultIcon
-                            />
-                          </div>
-                        </div>
-                        <div className='l-stack l-gap-4'>
-                          <Card className='p-5'>
-                            <h4 className='mb-2'>Why it leads</h4>
-                            <p className='text-sm text-muted-foreground'>
-                              Supporting systems perform better when the website layer already has
-                              clearer service structure, enquiry capture, routing, and conversion
-                              readiness.
-                            </p>
-                          </Card>
-                          <Card className='p-5'>
-                            <h4 className='mb-2'>What sits beneath it</h4>
-                            <p className='text-sm text-muted-foreground'>
-                              Supporting systems address visibility, AI lead handling, reputation,
-                              and revenue improvement. Modules and implementation pages support
-                              narrower workflow or delivery needs within that same structure.
-                            </p>
-                          </Card>
-                        </div>
-                      </div>
-                    </Card>
-                  </section>
-                )}
-
-                {renderServiceSection(
-                  'Core Service Pages',
-                  'This combined listing keeps the main front-door service and the active supporting system pages in one place, without mixing in implementation-only support pages.',
-                  PRIMARY_AND_SECONDARY_SERVICE_SLUGS
-                )}
-              </div>
-            </SectionWrapper>
-          </main>
-
-          {/* Footer CTA Section */}
-          <div className='text-sm text-muted-foreground text-center l-max-w-2xl l-mx-auto pt-6 pb-3'>
-            If one of these service paths already matches the bottleneck you are seeing, the next
-            step is to pressure-test that diagnosis before you invest in the wrong build.
+          <div className='svc-lnd__grid svc-lnd__grid--three'>
+            {SIX_SYSTEMS.map(spec => (
+              <SystemCard key={spec.slug} spec={spec} />
+            ))}
           </div>
-          <PrimaryCTASection
-            heading={{
-              title: 'Need help choosing the service path that actually fixes the bottleneck?',
-              description:
-                'Tell us what is breaking across visibility, response speed, follow-up, or conversion, and we will point you to the service path that fixes the first commercial leak without overbuilding.',
-            }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'smart-website-systems',
-                  sourceType: 'page',
-                  slug: 'service-help',
-                }),
-                primary: true,
-              },
-            ]}
-          />
-        </CTARegistryProvider>
-      </ErrorBoundary>
-    </>
+        </SectionFrame>
+
+        <SectionFrame
+          heading={{
+            kicker: 'Operating Modules',
+            title: 'Focused modules that sit inside the connected systems.',
+            description:
+              'When the leak is narrower than a whole system, a single module is often the cleaner first step.',
+          }}
+          tone='mist'
+          className='svc-lnd-section'
+          ariaLabel={ARIA_MODULES}
+        >
+          <div className='svc-lnd__grid svc-lnd__grid--three'>
+            {OPERATING_MODULES.map(spec => (
+              <ModuleCard key={spec.slug} spec={spec} />
+            ))}
+          </div>
+        </SectionFrame>
+
+        <SectionFrame
+          heading={{
+            kicker: 'Implementation Paths',
+            title: 'Decision support and the build surfaces beneath the work.',
+            description:
+              'Comparison pages for the common forks in the road, plus the platforms used when WordPress is the right base.',
+          }}
+          tone='white'
+          className='svc-lnd-section'
+          ariaLabel={ARIA_PATHS}
+        >
+          <div className='svc-lnd__grid svc-lnd__grid--three'>
+            {IMPLEMENTATION_PATHS.map(spec => (
+              <PathCard key={spec.slug} spec={spec} />
+            ))}
+          </div>
+        </SectionFrame>
+
+        <FAQSection
+          eyebrow='Questions'
+          title='Common questions about choosing a service path.'
+          description='Short answers about where to start, what to combine and what we will not promise.'
+          items={FAQ_ITEMS}
+          tone='mist'
+          variant='split'
+          className='svc-lnd-faq'
+          ariaLabel={ARIA_FAQ}
+        />
+
+        <DecisionPanel
+          className='svc-lnd-cta'
+          heading={{
+            kicker: 'Next Step',
+            title: 'Not sure which path actually fixes the bottleneck?',
+            description:
+              'Tell us what is breaking — visibility, response speed, follow-up or conversion — and we will point to the path that addresses the first leak without overbuilding.',
+          }}
+          actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
+          expectations={[
+            { num: '01', text: 'We hear what is happening right now.' },
+            { num: '02', text: 'We name the first commercial leak honestly.' },
+            { num: '03', text: 'We point to the path that fits, not the biggest build.' },
+          ]}
+        />
+      </div>
+    </CTARegistryProvider>
   );
 }
