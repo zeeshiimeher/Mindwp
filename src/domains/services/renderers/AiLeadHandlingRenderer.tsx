@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// CSS: src/styles/services/ai-lead-handling.css (aih-* classes)
+// CSS: src/styles/services.css (aih-* prefix)
 // Related: injected globally by services/config.tsx (RelatedSection)
 
 import { ArrowRight } from 'lucide-react';
@@ -18,7 +18,7 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 //           handlingPath · realMoments · handoffMap · scenarioStudy ·
 //           scopeGroups · fitFilter · faq · cta
 // Related: injected globally by services/config.tsx (RelatedSection)
-// CSS: src/styles/services/ai-lead-handling.css (aih-* classes)
+// CSS: src/styles/services.css (aih-* prefix)
 // =============================================================================
 
 interface Props {
@@ -36,7 +36,6 @@ const ARIA_PATH_DOT = 'Handling path';
 const ARIA_MOMENTS_DOT = 'Real moments';
 const ARIA_HANDOFF_DOT = 'Handoff map';
 const ARIA_SCENARIO_DOT = 'Scenario study';
-const ARIA_SCOPE_DOT = 'Scope groups';
 const ARIA_FIT_DOT = 'Fit filter';
 const ARIA_FAQ_DOT = 'Frequently asked questions';
 
@@ -59,7 +58,6 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
     realMoments,
     handoffMap,
     scenarioStudy,
-    scopeGroups,
     fitFilter,
     faq,
   } = sections;
@@ -356,33 +354,6 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
             )}
           </div>
         </div>
-      </SectionFrame>
-
-      {/* -- SCOPE GROUPS -------------------------------------------------------- */}
-      <SectionFrame
-        className='aih-scope'
-        ariaLabel={ARIA_SCOPE_DOT}
-        tone='white'
-        heading={{
-          kicker: scopeGroups.header.kicker,
-          title: scopeGroups.header.title,
-          description: scopeGroups.header.description,
-        }}
-      >
-        <ul className='aih-scope__groups'>
-          {scopeGroups.groups?.map((group: any) => (
-            <li key={group.label} className='aih-scope__group'>
-              <span className='aih-scope__group-label'>{group.label}</span>
-              <ul className='aih-scope__items'>
-                {group.items?.map((item: string) => (
-                  <li key={item} className='aih-scope__item'>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
       </SectionFrame>
 
       {/* -- FIT FILTER ---------------------------------------------------------- */}

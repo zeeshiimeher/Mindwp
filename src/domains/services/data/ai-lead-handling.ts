@@ -342,50 +342,6 @@ export const aiLeadHandlingPage = {
       },
     },
 
-    scopeGroups: {
-      header: {
-        kicker: 'What is included',
-        title: 'What gets set up',
-        description:
-          'Exact scope depends on your channels, volume, and what is already in place. These are the common parts.',
-      },
-      groups: [
-        {
-          label: 'Channel setup',
-          items: [
-            'AI trained on your services and business',
-            'Knowledge base connected',
-            'Tone and language matched to your business',
-            'Chat widget or voice integration placed and tested',
-          ],
-        },
-        {
-          label: 'Response configuration',
-          items: [
-            'Conversation flows designed and tested',
-            'Missed call recovery configured',
-            'After-hours handling rules set',
-            'Booking integration if relevant',
-          ],
-        },
-        {
-          label: 'Handoff rules',
-          items: [
-            'Escalation rules — when AI stops and a person takes over',
-            'CRM connection and data routing',
-            'Fallback handling for anything outside scope',
-          ],
-        },
-        {
-          label: 'Ongoing',
-          items: [
-            'Reporting on conversations and outcomes',
-            'Refinement based on how enquiries actually arrive',
-          ],
-        },
-      ],
-    },
-
     fitFilter: {
       header: {
         kicker: 'Fit check',
@@ -444,6 +400,12 @@ export const aiLeadHandlingPage = {
         description: 'Straight answers about what AI does and does not do.',
       },
       items: [
+        {
+          id: 'aih-faq-setup',
+          question: 'What does the setup involve?',
+          answer:
+            'Channel setup: AI trained on your services, knowledge base connected, tone matched to your business, chat or voice integration placed and tested. Response configuration: conversation flows designed, missed call recovery, after-hours handling rules, booking integration if relevant. Handoff rules: escalation triggers, CRM connection, fallback handling. Ongoing: conversation reporting and refinement as your enquiry patterns become clear.',
+        },
         {
           id: 'aih-faq-receptionist',
           question: 'Is this replacing my receptionist or team?',
