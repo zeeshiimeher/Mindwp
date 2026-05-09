@@ -1,27 +1,24 @@
 # MindWP System Hard Reset — Operating Manual
 
-> Temporary operating context for active hard-reset work.
-> Stable business, content, conversion, graph, design, and system rules live in `docs/core/*`.
-> Old dependencies and delete gates live in `docs/Planning/Legacy-dependency-map.md`.
+> Direct operating guide for the current rebuild stage.
+> Use this with `docs/Planning/services-plan.md` and the stable rules in `docs/core/*`.
 
 ---
 
 ## 1. Current State
 
 - Branch: `ui-hard-reset`.
-- Rebuilt baseline-clean: Homepage, Smart Website Systems, Local SEO Authority.
-- Service-domain skeletons staged: AI Lead Handling, CRM & Automation, Reputation & Review, builder/simple pages, supporting pages, and decision pages. See `docs/Planning/services-plan.md` before further service-page work.
-- Base components operational: `SectionFrame`, `HeroFrame`, `DecisionPanel`, `FAQSection`, `Accordion`, `Tabs`, `RelatedSection`, `InlineText`, `SignalDot`, `StatusBadge`.
-- `CaseStudyTemplate` no longer owns related or final CTA rendering, but still depends on old visual sections.
-- `PrimaryCTASection` remains quarantine delete-later for old consumers only.
-- `src/components/reusable/` remains quarantine delete-later for unrebuilt domains.
-- Next priority: service-domain Opus build from `docs/Planning/services-plan.md`, then remaining features, industry category/detail, case study, resource, and blog templates.
+- Homepage, Smart Website Systems, and Local SEO Authority are the current production baselines.
+- Service-domain pages are staged as direct renderer skeletons so Claude Opus can rebuild them without old renderer/data gravity.
+- Service-domain plan: `docs/Planning/services-plan.md`.
+- Old consumers still exist outside the rebuilt baseline and service skeletons. Do not delete quarantine files until all consumers are gone.
+- Next priority: Claude Opus service-domain build by approved group from `services-plan.md`.
 
 ---
 
 ## 2. Active Build Rules
 
-Use stable docs first:
+Use these stable docs for decisions:
 
 - Business and boundaries: `docs/core/FOUNDATION.md`
 - Public writing: `docs/core/WRITING.md`
@@ -58,11 +55,11 @@ New components go only in:
 - `src/components/navigation`
 - `src/components/content`
 
-After each rebuild, remove dead CSS, dead imports, dead conditionals, and orphan files. Do not leave parallel old/new contracts.
+After each Opus rebuild, remove dead CSS, dead imports, dead conditionals, orphan files, and any leftover skeleton placeholders for that page.
 
 ---
 
-## 3. Baseline Page Contracts
+## 3. Current Rebuild Contracts
 
 Homepage:
 
@@ -79,97 +76,85 @@ Local SEO Authority:
 - Uses new-system layout/conversion/content components and page-specific visual sections.
 - CSS: `src/styles/services/local-seo.css`.
 
-For all future rebuilds, data shapes must be semantic and section-specific. Avoid generic `items/cards/steps` when a richer name describes the business meaning.
+For final rebuilds, Claude Opus may change section order, section count, data shape, renderer body JSX, and tone rhythm when it improves the page. Keep the business boundaries and new-system architecture intact.
 
 Service-domain skeletons:
 
 - SWS and LSA stay untouched as production baselines.
-- Reset service renderers use new-system components through a temporary skeleton helper.
-- The skeleton helper is staging only; final pages must converge to the SWS/LSA technique with page-specific visual body JSX and domain CSS.
+- Reset service renderers are direct new-system skeletons using `HeroFrame`, `SectionFrame`, optional `FAQSection`, and `DecisionPanel` inside each actual renderer file.
+- No shared skeleton renderer/helper is allowed for service pages. Each page renderer must be easy for Claude Opus to open and edit directly.
+- Skeleton placeholders are staging rails only; Claude Opus should replace them during the final build.
+- Final pages must replace placeholder bodies with page-specific visual JSX, semantic data groups, and `services.css` rules.
+- `docs/Planning/services-plan.md` owns the service-domain plan and Opus handoff guidance.
 - `services.css` is reset to the shared domain CSS home for future service visual bodies.
 
 ---
 
-## 4. Future Rebuild Contracts
+## 4. Future Domain Rules
 
 Features:
 
 - Explain one capability inside a parent system.
-- Show handoff logic and route back to the parent system.
-- CSS: `src/styles/features/features-base.css`.
+- Do not become full service pages.
+- Route back to the parent system.
 
 Industries:
 
-- Category and detail pages must stay vertical-specific.
-- Detail pages must not read like reusable service pages.
-- CSS: `src/styles/industries/category.css`, `src/styles/industries/detail.css`.
+- Stay vertical-specific.
+- Do not read like reusable service pages.
 
 Case studies:
 
 - Proof assets, not service pages.
+- Be explicit when something is scenario-based instead of real attributed client proof.
 - `CaseStudyTemplate` still needs full visual rebuild.
-- CSS: `src/styles/case-studies/case-study.css`.
 
 Resources:
 
 - Decision-support pages, not BOFU service pages.
 - CTA should stay soft and contextual.
-- CSS: `src/styles/resources/resources.css`.
 
 Blog:
 
 - Diagnose one real situation before routing upward.
-- Must not turn into service pages.
-- CSS: `src/styles/blog/blog.css`.
+- Do not turn into service pages.
 
 ---
 
 ## 5. Legacy Quarantine
 
-For full consumer lists, per-domain cleanup targets, and delete gates, see `docs/Planning/Legacy-dependency-map.md`.
+Do not import these in rebuilt pages:
 
-Summary:
+- `src/components/reusable/`
+- `src/components/sections/`
+- `PrimaryCTASection`
 
-- `PrimaryCTASection` — quarantine delete-later for old consumers.
-- `src/components/sections/` — delete when `PrimaryCTASection` gate is met.
-- `src/components/reusable/` — delete when all consumers are rebuilt.
-- `CaseStudyTemplate` — still quarantined for old visual sections.
+Do not delete them yet. Old consumers still exist.
 
----
-
-## 6. Build Order
-
-Completed baseline:
-
-1. Header/Footer
-2. Homepage
-3. Smart Website Systems
-4. Local SEO Authority
-5. Base organization/enforcement cleanup
-
-Remaining order:
-
-1. Service-domain Opus build by approved group from `docs/Planning/services-plan.md`
-2. Remaining features
-3. Industry category
-4. Landscaping industry detail
-5. Fitness case study
-6. Resource post/template
-7. Blog post/template
-8. Remaining industries
-9. Remaining resources/blogs/case studies
-10. Per-domain cleanup after each rebuild
-11. Legacy/component deletion after consumers are gone
-12. Final validator/test rewrite
-13. Final accessibility/SEO/performance QA
-14. Final visual QA
+Delete only after the matching consumers are rebuilt and `docs/Planning/Legacy-dependency-map.md` confirms the gate is clear.
 
 ---
 
-## 7. Current Open Follow-ups
+## 6. Execution Order
 
-- Case-study related injection: `RelatedSection` is not yet injected at config/wrapper level for case studies. Add when the case-study domain is rebuilt.
-- `PrimaryCTASection` consumers: old consumers remain across blog, features, industries, resources, old services, About, Contact, and dev surfaces. Rebuild or update each before deleting `PrimaryCTASection`.
+1. Claude Opus service-domain build by approved group from `docs/Planning/services-plan.md`.
+2. Features.
+3. Industries.
+4. Case studies.
+5. Resources.
+6. Blog.
+7. Per-domain cleanup after each rebuild.
+8. Legacy deletion after all consumers are gone.
+9. Final validator/test rewrite.
+10. Final accessibility, SEO, performance, and visual QA.
+
+---
+
+## 7. Open Follow-ups
+
+- Case studies still need wrapper/config-level `RelatedSection` injection when that domain is rebuilt.
+- `PrimaryCTASection` still has old consumers outside the rebuilt baseline and service skeletons. Do not delete it yet.
+- `/services` listing still needs rebuild/cleanup after service detail pages are stable.
 
 ---
 
@@ -192,17 +177,18 @@ Hard reset is complete when:
 - Build and system validation pass.
 - Old UI files are deleted when all consumers are gone.
 
-Non-negotiable: frontend can be in motion during reset, but architecture cannot drift. Data follows section meaning. CSS follows tokens. Validators protect the new system, not old UI.
+Non-negotiable: architecture cannot drift. Data follows section meaning. CSS follows tokens. Validators protect the new system, not old UI.
 
 ---
 
 ## 9. Active Tracker
 
-| Area              | Status | Notes                                                                                                                                                                 |
-| ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Baseline pages    | Stable | Homepage, SWS, LSA rebuilt and content-aligned                                                                                                                        |
-| Base components   | Stable | SectionFrame: split layout (layout/ratio) + gradient tones (gradient-dark/mist/teal) added; shell ownership enforced — page CSS owns visual body only                 |
-| Next target       | Active | Service-domain Opus build should start by reviewing `docs/Planning/services-plan.md`                                                                                  |
-| Legacy quarantine | Active | Service detail renderers are staged clean; PrimaryCTASection and reusable folders remain delete-later for other old consumers and the `/services` listing             |
-| Open follow-ups   | Active | Case-study RelatedSection injection pending; PrimaryCTASection consumers remain across unrebuilt domains                                                              |
-| Shell enforcement | Stable | validate-legacy-quarantine blocks page CSS overrides of mw-section-frame\_\_header/heading/description/eyebrow in rebuilt page CSS; no headerWidth or gap props exist |
+| Area              | Status | Direct instruction                                                                                                          |
+| ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| Baseline pages    | Stable | Homepage, SWS, and LSA are production references. Do not change them unless a specific issue is approved.                    |
+| Service skeletons | Active | Direct renderer skeletons are staging rails only. Claude Opus should replace placeholders with final page bodies.            |
+| Service plan      | Active | Read `docs/Planning/services-plan.md` before service-domain work. It owns page grouping, Opus order, and handoff decisions.  |
+| Components        | Stable | Use `HeroFrame`, `SectionFrame`, `FAQSection` where needed, `DecisionPanel`, and config-injected `RelatedSection`.           |
+| CSS               | Active | `services.css` is the shared service-domain CSS home for new service visual bodies. No raw colors outside `tokens.css`.      |
+| Legacy            | Active | `PrimaryCTASection` and reusable folders are delete-later only after all old consumers are rebuilt.                          |
+| Case studies      | Pending | Add wrapper/config-level `RelatedSection` injection when the case-study domain is rebuilt.                                  |

@@ -169,7 +169,7 @@ Color is always paired with a label — never the sole signal.
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | Branch                                   | `ui-hard-reset`                                                                                     |
 | Rebuilt baseline pages                   | Homepage, Smart Website Systems, Local SEO Authority                                                |
-| Service-domain skeletons                 | AI, CRM, Reputation, builder/simple, supporting, and decision service pages staged for Opus rebuild |
+| Direct service-domain skeletons          | AI, CRM, Reputation, builder/simple, supporting, and decision service pages staged for Opus rebuild |
 | `docs/core/*`                            | Stable long-term authority                                                                          |
 | `docs/Planning/System-hard-reset.md`     | Temporary operating manual — retire when reset is complete                                          |
 | `docs/Planning/Legacy-dependency-map.md` | Live delete-gate map — live until all consumers rebuilt                                             |

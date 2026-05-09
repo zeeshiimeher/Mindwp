@@ -2,9 +2,9 @@
 
 ## Purpose
 
-This file is the execution plan for the registered MindWP service detail pages after the service-domain audit. It records the approved page classification, route decisions, reset boundaries, and handoff notes for the staged skeleton pass and later Opus visual rebuild.
+This file is the direct execution plan for the registered MindWP service detail pages.
 
-This is not a milestone log. It is the current execution record for service-domain rebuild work.
+Use it before Claude Opus service-domain work. It defines which pages stay untouched, which pages get rebuilt, which pages stay simple, and which pages are outside the current service-detail rebuild.
 
 ## Final Architecture Principle
 
@@ -23,16 +23,17 @@ Smart Website Systems and Local SEO Authority are the production baseline. They 
 - rebuilt files do not import old reusable or sections folders
 - rebuilt files do not use old `rd-*`, `l-*`, or `btn-*` classes
 
-The skeleton workflow is temporary staging. It is not a second final architecture.
+Current service renderers are direct staging skeletons. Claude Opus should replace placeholders with final page bodies while keeping this production architecture intact.
 
 ## Page Classification
 
 ### 1. Baseline Keep
 
+- Homepage
 - `smart-website-systems` at `/services/smart-website-systems`
 - `local-seo-authority` at `/services/local-seo-authority`
 
-Decision: keep these untouched unless a future audit finds a specific issue. They remain the reference for final production rebuild technique.
+Decision: keep these untouched. They remain the reference for final production rebuild technique.
 
 ### 2. Reset / Tier-1 Rebuild
 
@@ -40,7 +41,7 @@ Decision: keep these untouched unless a future audit finds a specific issue. The
 - `crm-infrastructure-implementation` at `/services/crm-infrastructure-implementation`
 - `reputation-review-systems` at `/services/reputation-review-systems`
 
-These are strategic system pages. They need enough structure for a full Opus rebuild later, but this pass only stages clean data and section shells.
+These are strategic system pages. Claude Opus should rebuild them with full page-specific visual bodies, semantic data groups, and `services.css` rules.
 
 ### 3. Builder / Simple Migration
 
@@ -71,11 +72,9 @@ These support a parent system or a practical implementation path. Most need ligh
 
 These should stay focused. They are decision-support pages, not full strategic system pages.
 
-### 6. Route Decision / Canonical Only
+### 6. Planned New Tier-1 Service Page
 
-- `revenue-growth`
-
-Revenue Growth exists as a canonical system and public concept, but there is no registered `/services/revenue-growth` route today. Do not create the route, data file, renderer, or app page until the user approves that route decision.
+Revenue Growth exists as a canonical system and public concept. Create `/services/revenue-growth` as the final Tier-1 service page after the existing registered service pages are rebuilt and stable.
 
 ## CSS Strategy
 
@@ -84,9 +83,9 @@ Revenue Growth exists as a canonical system and public concept, but there is no 
 - `src/styles/services.css` is the shared service-domain CSS home for newer reset pages.
 - Do not create one CSS file per service page by default.
 - Builder and simple pages should stay visually light.
-- Reset AI-specific detailed CSS from the failed partial design.
-- This skeleton pass should not add final visual section CSS.
-- Later Opus or section-by-section execution may add page-specific visual body CSS into `services.css` with clean prefixes.
+- AI Lead Handling starts from the staged renderer and shared `services.css`, not from previous visual attempts.
+- Final visual section CSS belongs to Claude Opus rebuild work.
+- Claude Opus adds page-specific visual body CSS into `services.css` with clean prefixes.
 
 ## Renderer Comment Rule
 
@@ -95,10 +94,12 @@ Renderer comments must stay minimal. Do not add large blocks for purpose, visual
 Allowed placeholder inside `SectionFrame` bodies only:
 
 ```tsx
-{/* Opus rebuild placeholder: design this section from approved services-plan.md. */}
+{
+  /* Opus rebuild placeholder: design this section from approved services-plan.md. */
+}
 ```
 
-The design brief belongs in this file, not in renderer JSX.
+Claude Opus should use this file for direction and replace renderer placeholders with final section bodies.
 
 ## Reset / Tier-1 Rebuild Group
 
@@ -109,7 +110,7 @@ The design brief belongs in this file, not in renderer JSX.
 - Buyer entry point: calls, forms, DMs, and missed enquiries are arriving but response depends on timing or memory.
 - Plain promise: enquiries get a fast first response and a clear handoff without the owner watching every channel.
 - Visual motif: first-contact control surface.
-- Planned section order: hero, response gap, channel surface, handled path, AI boundary, scenario readiness, fit filter, FAQ, CTA.
+- Starting section direction: hero, response gap, channel surface, handled path, AI boundary, scenario readiness, fit filter, FAQ, CTA.
 - FAQ decision: keep FAQ. The buyer will need clarity around human handoff, AI boundaries, and what counts as a good fit.
 - CTA direction: invite a diagnostic conversation about where first response is failing.
 - Boundary risks: avoid chatbot hype, tool pricing, compliance claims, and making AI own website, SEO, CRM, or review work.
@@ -122,7 +123,7 @@ The design brief belongs in this file, not in renderer JSX.
 - Buyer entry point: leads exist, but nobody can reliably see who owns them, what happened next, or what needs chasing.
 - Plain promise: every enquiry has an owner, a next step, and a visible state.
 - Visual motif: lead ownership board.
-- Planned section order: hero, ownership gap, lead board, follow-up path, status visibility, handoff boundaries, readiness filter, FAQ, CTA.
+- Starting section direction: hero, ownership gap, lead board, follow-up path, status visibility, handoff boundaries, readiness filter, FAQ, CTA.
 - FAQ decision: keep FAQ. Buyers will need clarity around existing tools, team adoption, handoff from forms/calls, and reporting.
 - CTA direction: ask what is being missed after the enquiry arrives.
 - Boundary risks: do not make CRM own first response, website structure, search visibility, or review generation.
@@ -135,7 +136,7 @@ The design brief belongs in this file, not in renderer JSX.
 - Buyer entry point: good work happens, but reviews are inconsistent and negative feedback is not routed early.
 - Plain promise: happy customers are asked at the right time, and sensitive feedback is caught before it becomes public damage.
 - Visual motif: trust signal loop / review recovery board.
-- Planned section order: hero, trust gap, review timing, feedback route, monitoring board, local trust handoff, fit filter, FAQ, CTA.
+- Starting section direction: hero, trust gap, review timing, feedback route, monitoring board, local trust handoff, fit filter, FAQ, CTA.
 - FAQ decision: keep FAQ. Buyers will need clarity around ethical reviews, timing, negative feedback, and Google boundaries.
 - CTA direction: ask where reviews or feedback currently fall through.
 - Boundary risks: do not imply fake reviews, guaranteed ratings, Local SEO ownership, or traffic acquisition.
@@ -148,7 +149,7 @@ The design brief belongs in this file, not in renderer JSX.
 - Route: `/services/elementor`
 - Role: practical builder capability page.
 - Simple page intent: explain when Elementor is an acceptable implementation path inside the wider MindWP model.
-- Recommended section count: 5 to 7 including hero and CTA.
+- Section count: 5 to 7 including hero and CTA.
 - Skeleton approach: hero, fit, delivery path, practical boundaries, next step, CTA.
 - Why not Tier-1: the buyer is choosing or maintaining a build method, not selecting a strategic MindWP system.
 
@@ -157,7 +158,7 @@ The design brief belongs in this file, not in renderer JSX.
 - Route: `/services/divi5`
 - Role: practical builder capability page.
 - Simple page intent: clarify where Divi 5 fits for structured site work without positioning MindWP as a Divi shop.
-- Recommended section count: 5 to 7 including hero and CTA.
+- Section count: 5 to 7 including hero and CTA.
 - Skeleton approach: hero, fit, delivery path, practical boundaries, next step, CTA.
 - Why not Tier-1: it is an implementation option under Smart Website Systems, not a system of its own.
 
@@ -166,7 +167,7 @@ The design brief belongs in this file, not in renderer JSX.
 - Route: `/services/bricks-builder`
 - Role: practical builder capability page.
 - Simple page intent: explain when Bricks is useful for a controlled website build or rebuild.
-- Recommended section count: 5 to 7 including hero and CTA.
+- Section count: 5 to 7 including hero and CTA.
 - Skeleton approach: hero, fit, delivery path, practical boundaries, next step, CTA.
 - Why not Tier-1: it is a build method, not a strategic service pillar.
 
@@ -175,51 +176,44 @@ The design brief belongs in this file, not in renderer JSX.
 ### Conversion Layer
 
 - Role: revenue-growth supporting module.
-- Likely parent system: `revenue-growth`.
-- Recommended treatment: focused feature-like page about what happens after enquiries arrive.
-- Full Opus design: useful later, but lighter than a Tier-1 page.
+- Treatment: focused feature-like page about what happens after enquiries arrive.
+- Opus depth: lighter than a Tier-1 page.
 
 ### Lead Reactivation System
 
 - Role: revenue-growth supporting module.
-- Likely parent system: `revenue-growth`.
-- Recommended treatment: focused page for dormant leads, old quotes, and missed follow-up recovery.
-- Full Opus design: lighter migration is enough unless it becomes a major acquisition page.
+- Treatment: focused page for dormant leads, old quotes, and missed follow-up recovery.
+- Opus depth: light supporting-page rebuild.
 
 ### Missed Call Recovery System
 
 - Role: AI Lead Handling supporting module.
-- Likely parent system: `ai-lead-handling`.
-- Recommended treatment: focused page around unanswered calls and recovery routing.
-- Full Opus design: lighter than the parent AI page.
+- Treatment: focused page around unanswered calls and recovery routing.
+- Opus depth: lighter than the parent AI page.
 
 ### Unified Communication System
 
 - Role: AI Lead Handling supporting module.
-- Likely parent system: `ai-lead-handling`.
-- Recommended treatment: focused page around channel ownership and message routing.
-- Full Opus design: lighter migration is enough.
+- Treatment: focused page around channel ownership and message routing.
+- Opus depth: light supporting-page rebuild.
 
 ### System Migration & Platform Consolidation
 
 - Role: Smart Website implementation pathway.
-- Likely parent system: `smart-website-systems`.
-- Recommended treatment: practical migration/rebuild support page.
-- Full Opus design: not required unless page becomes high priority.
+- Treatment: practical migration/rebuild support page.
+- Opus depth: light practical implementation-page rebuild.
 
 ### WordPress Development
 
 - Role: Smart Website implementation pathway.
-- Likely parent system: `smart-website-systems`.
-- Recommended treatment: practical capability page that avoids generic WordPress agency positioning.
-- Full Opus design: lighter migration is enough.
+- Treatment: practical capability page that avoids generic WordPress agency positioning.
+- Opus depth: light practical capability-page rebuild.
 
 ### Ecommerce
 
 - Role: Smart Website commerce pathway.
-- Likely parent system: `smart-website-systems`.
-- Recommended treatment: practical commerce page focused on enquiry/order handling and operational fit.
-- Full Opus design: lighter migration is enough.
+- Treatment: practical commerce page focused on enquiry/order handling and operational fit.
+- Opus depth: light practical commerce-page rebuild.
 
 ## Decision / Comparison / Narrow Treatment Group
 
@@ -247,22 +241,27 @@ The design brief belongs in this file, not in renderer JSX.
 - Direction: distinguish surface redesign from rebuilding the handling structure behind the site.
 - Keep focused: decision problem, comparison, rebuild triggers, boundaries, CTA.
 
-## Revenue Growth Route Decision
+## Revenue Growth Page Decision
 
-Revenue Growth is a canonical system and may lead when the buyer's pain is leaking revenue after enquiries arrive. It is not currently a registered service detail route.
+Revenue Growth will become a registered Tier-1 service detail page at `/services/revenue-growth`.
 
-Do not create `/services/revenue-growth`, a revenue-growth data file, or a revenue-growth renderer until the user explicitly approves that route.
+Create it after the existing registered service pages are rebuilt and stable.
 
-Until then, revenue-growth service work lives through registered supporting pages such as `conversion-layer` and `lead-reactivation-system`.
+Revenue Growth owns post-enquiry improvement: quote recovery, conversion refinement, repeat customer triggers, reactivation, and spend-to-work visibility.
 
-## Execution Order Recommendation
+Revenue Growth must not become generic growth hacking, ad campaign management, SEO visibility, or guaranteed revenue claims.
 
-1. Reset AI skeleton.
-2. Skeleton CRM and Reputation.
-3. Simple skeleton builder pages.
-4. Skeleton supporting and feature-like pages.
-5. Skeleton comparison and decision pages.
-6. Later Opus visual build by group.
+During the current rebuild, Revenue Growth work is represented through registered supporting pages such as `conversion-layer` and `lead-reactivation-system`. The dedicated Revenue Growth page comes after those existing service-domain pages are stable.
+
+## Execution Order
+
+1. Claude Opus rebuilds AI Lead Handling from the direct renderer skeleton.
+2. Claude Opus rebuilds CRM & Automation and Reputation & Review.
+3. Claude Opus migrates builder/simple pages with light practical flows.
+4. Claude Opus migrates supporting and feature-like pages with lighter treatment than Tier-1 pages.
+5. Claude Opus migrates comparison and decision pages with narrow decision-support structure.
+6. After existing registered service pages are stable, create `/services/revenue-growth` as the final Tier-1 service page.
+7. After each group, remove dead CSS, dead imports, stale placeholders, and old data that is no longer used.
 
 ## Do
 
@@ -273,18 +272,17 @@ Until then, revenue-growth service work lives through registered supporting page
 - Let service config inject `RelatedSection`.
 - Keep builder pages light.
 - Keep decision pages narrow.
-- Add final visual section CSS only in later section execution.
+- Add final visual section CSS during Claude Opus rebuilds, inside `services.css` unless a separate CSS file is explicitly justified later.
+- Create `/services/revenue-growth` after the existing registered service pages are rebuilt and stable.
 
 ## Do Not
 
-- Do not create a Revenue Growth service route.
-- Do not create Revenue Growth service data or a renderer.
 - Do not create one CSS file per service page by default.
 - Do not import from `@/components/reusable/*` or `@/components/sections/*` in reset service renderers.
 - Do not use `PrimaryCTASection` in reset service renderers.
 - Do not manually render `RelatedSection` inside service renderers.
 - Do not hardcode `/contact` or CTA labels.
 - Do not use old `rd-*`, `l-*`, or `btn-*` classes.
-- Do not preserve old detailed AI CSS or partial AI UI structure.
-- Do not place long design briefs in JSX comments.
-- Do not run final Opus-style visual design during the skeleton pass.
+- Do not use previous AI Lead Handling visual attempts as the final design source.
+- Do not treat staging skeletons as final page designs.
+- Do not create the Revenue Growth page before the existing registered service pages are rebuilt and stable.

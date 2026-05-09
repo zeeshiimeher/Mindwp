@@ -42,7 +42,7 @@ Items below are confirmed deleted and must not appear as active requirements in 
 - **`CaseStudyTemplate` `PrimaryCTASection` direct import** — Resolved in 6N. Now uses `DecisionPanel`.
 - **`SLUGS_WITH_OWN_RELATED`** — Removed in 6A/6F. Replaced by `relatedSection` config: `{ enabled?, variant? }`.
 - **`src/components/sections/types.ts`** — Deleted in 6G. Types inlined into `PrimaryCTASection.tsx`.
-- **Service detail renderers old UI imports** — Resolved by service skeleton setup. Reset service detail renderers use new-system components through the temporary `ServiceSkeletonRenderer` staging helper. SWS and LSA remain production baselines.
+- **Service detail renderers old UI imports** — Resolved by service skeleton setup. Reset service detail renderers are direct new-system skeletons using `HeroFrame`, `SectionFrame`, `FAQSection` where needed, and `DecisionPanel`. SWS and LSA remain production baselines.
 
 ---
 

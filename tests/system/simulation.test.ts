@@ -1,95 +1,25 @@
 // @vitest-environment node
 
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { describe, expect, test } from 'vitest';
 
-import { renderServiceSkeletonPage } from '@/domains/services/renderers/ServiceSkeletonRenderer';
-import type { ServicePageData } from '@/domains/services/types';
+const rendererDir = join(process.cwd(), 'src/domains/services/renderers');
+const rejectedFileStem = ['Service', 'Skeleton', 'Renderer'].join('');
+const rejectedRenderFunction = ['render', 'Service', 'Skeleton', 'Page'].join('');
 
-const baseData = {
-    seo: {
-        title: 'Simulation Service',
-        description: 'Simulation service data for system tests.',
-        canonical: '/services/simulation-service',
-    },
-    slug: 'simulation-service',
-    badge: 'Simulation',
-    category: 'System Test',
-    systems: ['smart-website-systems'],
-    topics: ['website-infrastructure'],
-    hero: {
-        badge: 'Simulation',
-        title: 'Simulation Service',
-        description: 'A small service payload used to verify skeleton renderer behavior.',
-        list: ['One', 'Two'],
-    },
-    sections: {
-        firstSection: {
-            header: {
-                kicker: 'First',
-                title: 'First section',
-                description: 'A valid skeleton section.',
-            },
-        },
-        faq: {
-            header: {
-                kicker: 'Questions',
-                title: 'Simulation questions',
-                description: 'A valid FAQ section.',
-            },
-            items: [
-                {
-                    id: 'simulation-faq',
-                    question: 'Does this render?',
-                    answer: 'Yes. The test only verifies the skeleton contract.',
-                },
-            ],
-        },
-    },
-    cta: {
-        heading: {
-            kicker: 'Next Step',
-            title: 'Check the simulation.',
-            description: 'A valid CTA for the skeleton renderer.',
-        },
-        actions: [
-            {
-                label: 'Start a Conversation',
-                href: '/contact?system=smart-website-systems&source=service/simulation-service',
-                primary: true,
-            },
-        ],
-    },
-} satisfies ServicePageData<Record<string, unknown>>;
+describe('system simulation: service renderers', () => {
+  test('reset service renderers stay direct', () => {
+    expect(existsSync(join(rendererDir, `${rejectedFileStem}.tsx`))).toBe(false);
 
-describe('system simulation: service skeleton rendering', () => {
-    test('service skeleton renderer fails fast when section data is missing', () => {
-        expect(() =>
-            renderServiceSkeletonPage({
-                data: baseData,
-                prefix: 'simulation',
-                sections: [{ key: 'missingSection' }],
-            })
-        ).toThrow('[simulation-service] Missing skeleton section: missingSection');
-    });
+    const rendererFiles = readdirSync(rendererDir).filter(fileName => fileName.endsWith('.tsx'));
 
-    test('service skeleton renderer returns a page element when section data is present', () => {
-        const rendered = renderServiceSkeletonPage({
-            data: baseData,
-            prefix: 'simulation',
-            sections: [{ key: 'firstSection' }],
-        });
+    for (const fileName of rendererFiles) {
+      const source = readFileSync(join(rendererDir, fileName), 'utf8');
 
-        expect(rendered).toBeTruthy();
-    });
-
-    test('service skeleton renderer can include FAQ when FAQ data is present', () => {
-        const rendered = renderServiceSkeletonPage({
-            data: baseData,
-            prefix: 'simulation',
-            sections: [{ key: 'firstSection' }],
-            faq: true,
-        });
-
-        expect(rendered).toBeTruthy();
-    });
+      expect(source).not.toContain(rejectedFileStem);
+      expect(source).not.toContain(rejectedRenderFunction);
+    }
+  });
 });
