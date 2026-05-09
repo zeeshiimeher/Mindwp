@@ -81,9 +81,6 @@ export const aiLeadHandlingPage = {
     // VISUAL DIRECTION:
     //   Primary gap: large block, amber left-border, situation → cost → handled state.
     //   Secondary gaps: compact rows beside or below, teal dot on handled-state line.
-    // DATA NEEDED LATER:
-    //   primaryGap { title, situation, cost, handledState }
-    //   gaps[] { title, situation, handledState }
     // BOUNDARY: AI owns first reply and context capture, not CRM lifecycle.
     // DO NOT: Use equal-weight feature cards. Turn into bullet list. Add timeline.
     responseGap: {
@@ -94,6 +91,30 @@ export const aiLeadHandlingPage = {
         description:
           'Most enquiries do not die because the business is uninterested. They die in the gap between arriving and being answered. AI can close that gap — but only if there is something clear on the other side.',
       },
+      primaryGap: {
+        label: 'Primary gap',
+        title: 'The enquiry arrives when nobody can answer',
+        situation:
+          'A call comes in after hours. A form lands at 9pm. A chat message sits open until the next morning. The team does not see it until the working day starts again.',
+        cost: 'By then, the buyer has usually moved on. The window to respond was hours ago.',
+        handledState:
+          'AI replies within seconds. Captures the name, service need, and preferred callback time. The contact is held, not lost.',
+      },
+      gaps: [
+        {
+          label: 'Missed call',
+          title: 'Call rings out. No message. No reply.',
+          situation:
+            'Team is on a job. Call goes to voicemail. Nobody checks until the day is done.',
+          handledState: 'AI sends a reply message. Captures contact details. Routes for callback.',
+        },
+        {
+          label: 'Overnight form',
+          title: 'Form submitted at 9pm. Sits unread until morning.',
+          situation: 'Standard inbox. No automatic acknowledgment. No indication it arrived.',
+          handledState: 'AI confirms receipt, answers the first question, and logs the contact.',
+        },
+      ],
     },
 
     // ── 3. CHANNEL BREAKDOWN ─────────────────────────────────────────────────

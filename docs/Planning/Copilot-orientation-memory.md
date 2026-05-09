@@ -345,12 +345,8 @@ When a page has no Figma/visual reference:
 - Prefix: `aih-*` (AI Lead Handling), `crm-*`, `rep-*`, `rev-*` appended in order
 - Do not create a separate CSS file per service page unless visual complexity clearly requires it
 - `smart-website.css` and `local-seo.css` remain separate (predated domain-bundle strategy)
-- Partically allowed to read multiple files in parallel for better understand.better avoid parallel reading of multiple files.
-- But execute or make changes Step by Step or task by task in small patches
 
----
-
-## 18. Page Rebuild Workflow (No-Figma Pattern)
+## 19. Page Rebuild Workflow (No-Figma Pattern)
 
 When rebuilding a service page from scratch, follow this sequence:
 

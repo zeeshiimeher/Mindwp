@@ -141,18 +141,50 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
           description: requireHeadingDescription(responseGap.header.description, 'responseGap'),
         }}
       >
-        {/*
-          DESIGN INTENT:
-            Show the first-contact gap as an operational incident — not a feature list.
-            One dominant primary-gap panel + two smaller supporting gap cards.
-          VISUAL DIRECTION:
-            Primary gap: large block, amber left-border, situation → cost → handled state.
-            Secondary gaps: compact rows beside or below. Teal dot on handled-state line.
-          DATA NEEDED:
-            responseGap.primaryGap { title, situation, cost, handledState }
-            responseGap.gaps[] { title, situation, handledState }
-          DO NOT: Equal-weight cards. Bullet list. Process timeline. Decorative icons.
-        */}
+        <div className='aih-gap'>
+          {/* Primary incident panel */}
+          <div className='aih-gap__primary'>
+            <div className='aih-gap__primary-label'>
+              <span className='aih-gap__primary-label-dot' aria-hidden='true' />
+              {responseGap.primaryGap.label}
+            </div>
+            <h3 className='aih-gap__primary-title'>{responseGap.primaryGap.title}</h3>
+            <p className='aih-gap__primary-situation'>{responseGap.primaryGap.situation}</p>
+            <div className='aih-gap__primary-cost'>
+              <span className='aih-gap__band-label aih-gap__band-label--cost'>Cost</span>
+              <p className='aih-gap__band-text aih-gap__band-text--cost'>
+                {responseGap.primaryGap.cost}
+              </p>
+            </div>
+            <div className='aih-gap__primary-handled'>
+              <span className='aih-gap__band-label aih-gap__band-label--handled'>Handled</span>
+              <p className='aih-gap__band-text aih-gap__band-text--handled'>
+                {responseGap.primaryGap.handledState}
+              </p>
+            </div>
+          </div>
+
+          {/* Secondary gaps — compact stacked list */}
+          <ul className='aih-gap__secondary' role='list'>
+            {(
+              responseGap.gaps as Array<{
+                label: string;
+                title: string;
+                situation: string;
+                handledState: string;
+              }>
+            ).map(gap => (
+              <li key={gap.label} className='aih-gap__item'>
+                <span className='aih-gap__item-label'>{gap.label}</span>
+                <div className='aih-gap__item-body'>
+                  <p className='aih-gap__item-title'>{gap.title}</p>
+                  <p className='aih-gap__item-situation'>{gap.situation}</p>
+                  <p className='aih-gap__item-handled'>{gap.handledState}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </SectionFrame>
 
       {/* -- CHANNEL BREAKDOWN --------------------------------------------------- */}
