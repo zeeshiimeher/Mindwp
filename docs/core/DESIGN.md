@@ -94,21 +94,20 @@ typography.css  → global type scale
 layout.css      → containers, SectionFrame, HeroFrame, motion utilities
 primitives.css  → buttons, badges, Accordion, Tabs, signal/status atoms
 components.css  → Header, Footer, DecisionPanel, RelatedSection, FAQSection
-services.css    → domain bundle: aih-*, crm-*, rep-*, rev-* service page CSS
-page/domain CSS → remaining page-specific visual bodies (home, smart-website, local-seo)
+page/domain CSS → page-specific visual bodies (home, smart-website, local-seo, services)
 ```
 
 **Layer ownership rule:**
 
-| Layer            | Contains                                                    |
-| ---------------- | ----------------------------------------------------------- |
-| `tokens.css`     | all `--mw-*` definitions; raw values only                   |
-| `reset.css`      | browser reset; nothing custom                               |
-| `typography.css` | font stack, scale, line heights                             |
-| `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion classes |
-| `primitives.css` | buttons, badges, Accordion, Tabs, signal/status primitives  |
-| `components.css` | DecisionPanel, RelatedSection, FAQSection, Header, Footer   |
-| page/domain CSS  | page visual classes only; `services.css` owns rebuilt service page domains (aih-*, crm-*, rep-*, rev-*) |
+| Layer            | Contains                                                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `tokens.css`     | all `--mw-*` definitions; raw values only                                                                                                        |
+| `reset.css`      | browser reset; nothing custom                                                                                                                    |
+| `typography.css` | font stack, scale, line heights                                                                                                                  |
+| `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion classes                                                                                      |
+| `primitives.css` | buttons, badges, Accordion, Tabs, signal/status primitives                                                                                       |
+| `components.css` | DecisionPanel, RelatedSection, FAQSection, Header, Footer                                                                                        |
+| page/domain CSS  | page visual classes only; SWS and LSA keep dedicated CSS files, while `services.css` is the shared domain CSS home for newer reset service pages |
 
 The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 
@@ -180,16 +179,16 @@ The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 
 **CSS folder ownership:**
 
-| Page/domain            | CSS location                                          |
-| ---------------------- | ----------------------------------------------------- |
-| Homepage               | `src/styles/pages/home.css`                           |
-| Flagship service pages | `src/styles/services/[service].css`                   |
-| Shared service styles  | `src/styles/services/services-base.css`               |
-| Feature pages          | `src/styles/features/features-base.css`               |
-| Industry pages         | `src/styles/industries/category.css` and `detail.css` |
-| Case studies           | `src/styles/case-studies/case-study.css`              |
-| Resources              | `src/styles/resources/resources.css`                  |
-| Blog                   | `src/styles/blog/blog.css`                            |
+| Page/domain            | CSS location                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| Homepage               | `src/styles/pages/home.css`                                                  |
+| Flagship service pages | `src/styles/services/smart-website.css`, `src/styles/services/local-seo.css` |
+| Reset service pages    | `src/styles/services.css` shared domain bundle                               |
+| Feature pages          | `src/styles/features/features-base.css`                                      |
+| Industry pages         | `src/styles/industries/category.css` and `detail.css`                        |
+| Case studies           | `src/styles/case-studies/case-study.css`                                     |
+| Resources              | `src/styles/resources/resources.css`                                         |
+| Blog                   | `src/styles/blog/blog.css`                                                   |
 
 Do not create one CSS file per content page. Template/content pages share domain CSS files.
 

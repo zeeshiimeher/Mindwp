@@ -1,89 +1,102 @@
-import { buildServiceSeo } from '../seo';
+import { buildServiceSeo } from '@/domains/services/seo';
+import type { ServicePageData } from '@/domains/services/types';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
-import { conversionLayerPage } from './conversion-layer';
+type HeaderOnlySection = {
+  header: {
+    kicker: string;
+    title: string;
+    description: string;
+  };
+};
+
+type ConversionFunnelDecisionSections = {
+  decisionProblem: HeaderOnlySection;
+  comparison: HeaderOnlySection;
+  chooseStructured: HeaderOnlySection;
+  boundaries: HeaderOnlySection;
+  nextStep: HeaderOnlySection;
+};
 
 const slug = 'conversion-funnel-system-vs-landing-page-development';
+const system = 'revenue-growth';
+const contactHref = buildServiceContactHref({ system, slug });
 
-export const conversionFunnelSystemVsLandingPageDevelopmentPage = {
-  ...conversionLayerPage,
-  slug,
-  seo: buildServiceSeo({
-    slug,
-    title: 'Conversion Funnel System vs Landing Page Development',
-    description:
-      'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
-  }),
-  category: conversionLayerPage.category,
-  badge: 'Conversion Funnel System',
-  hero: {
-    ...conversionLayerPage.hero,
-    badge: 'Conversion Funnel System',
-    title: 'Conversion Funnel System vs Landing Page Development',
-    description:
-      'A landing page can ship without fixing the revenue path around it. This page is for businesses deciding whether they need a single page delivered or the full path from click to follow-up rebuilt as one system.',
-    list: ['Single page', 'Broken path', 'System decision'],
-  },
-  sections: {
-    ...conversionLayerPage.sections,
-    foundation: {
-      ...conversionLayerPage.sections.foundation,
-      badge: 'Problem',
-      title: 'Landing-page development does not solve a broken conversion path by itself',
+export const conversionFunnelSystemVsLandingPageDevelopmentPage: ServicePageData<ConversionFunnelDecisionSections> =
+  {
+    seo: buildServiceSeo({
+      slug,
+      title: 'Conversion Funnel System vs Landing Page Development',
       description:
-        'A well-designed page still underperforms if the offer, CTA fit, and post-submit follow-up stay disconnected. That is why many businesses rebuild pages repeatedly without improving actual conversion.',
+        'A focused comparison for deciding between a one-off landing page and a connected conversion path.',
+    }),
+    slug,
+    badge: 'Funnel Decision',
+    category: 'Decision Support',
+    systems: [system],
+    topics: ['conversion-optimization', 'lead-capture', 'service-page-architecture'],
+    hero: {
+      badge: 'Funnel Decision',
+      title: 'A Landing Page May Not Be Enough.',
+      description:
+        'A page can collect clicks and still fail to move the buyer forward. This decision page should compare a one-off landing page with a connected path that handles the next step.',
+      list: ['Decision support', 'Page path', 'Next step'],
     },
-    funnelBreakpoints: conversionLayerPage.sections.funnelBreakpoints,
-    comparison: {
-      ...conversionLayerPage.sections.comparison,
-      header: {
-        ...conversionLayerPage.sections.comparison.header,
-        title: 'Landing page development vs conversion funnel system',
-        description:
-          'One approach produces a page. The other defines how relevance, proof, action, and follow-up work together after traffic arrives.',
+    sections: {
+      decisionProblem: {
+        header: {
+          kicker: 'Decision Problem',
+          title: 'The question is what happens after the click.',
+          description:
+            'The choice starts with whether the business needs one focused page or a connected path that handles the next step.',
+        },
       },
-      items: [
-        {
-          type: 'before',
-          title: 'Landing page development only',
-          items: [
-            'A new page gets designed and launched, but the wider offer logic, CTA fit, and post-submit experience stay unchanged.',
-            'The page may look sharper while the same follow-up delays, unclear next steps, and drop-off points keep conversion flat.',
-            'The business ends up judging page design in isolation because there is still no system-wide visibility into where action dies.',
-          ],
+      comparison: {
+        header: {
+          kicker: 'Comparison',
+          title: 'A single page and a connected path solve different problems.',
+          description:
+            'A focused comparison can show the trade-off without fabricated metrics or broad claims.',
         },
-        {
-          type: 'after',
-          title: 'Conversion funnel system',
-          items: [
-            'Traffic source, page message, CTA, and follow-up route are treated as one connected path instead of separate projects.',
-            'Each step from arrival to enquiry has a defined role, measurable drop-off points, and a next action that matches buyer intent.',
-            'The business learns whether the leak is on-page, after-submit, or earlier in the offer structure, so improvements stop being guesswork.',
-          ],
+      },
+      chooseStructured: {
+        header: {
+          kicker: 'Choose',
+          title: 'Choose the route that matches the business problem.',
+          description:
+            'A lighter page is enough in some cases. A fuller path is needed when enquiry handling depends on more than one click.',
         },
+      },
+      boundaries: {
+        header: {
+          kicker: 'Boundaries',
+          title: 'This page supports a decision. It is not the full Revenue Growth route.',
+          description:
+            'Revenue Growth remains canonical-only. This page stays narrow and routes to the right next step.',
+        },
+      },
+      nextStep: {
+        header: {
+          kicker: 'Next Step',
+          title: 'The next move depends on where the buyer stalls.',
+          description:
+            'The next step should point toward the right service context rather than forcing every buyer into the same page type.',
+        },
+      },
+    },
+    cta: {
+      heading: {
+        kicker: 'Next Step',
+        title: 'Decide what the page needs to handle.',
+        description:
+          'Tell us what the landing page is meant to do and what happens after someone responds. We will help identify the right route.',
+      },
+      actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
+      expectations: [
+        { num: '01', text: 'We clarify the business decision.' },
+        { num: '02', text: 'We identify whether a single page is enough.' },
+        { num: '03', text: 'We route the next step clearly.' },
       ],
     },
-    comparisonMetrics: {
-      ...conversionLayerPage.sections.comparisonMetrics,
-      title: 'What a funnel system changes that page-only work usually misses',
-      description:
-        'The gains are not just visual. They show up in clarity, response continuity, and the number of visitors who can move forward without confusion.',
-    },
-    processSection: conversionLayerPage.sections.processSection,
-    funnelLevers: conversionLayerPage.sections.funnelLevers,
-    qualification: {
-      ...conversionLayerPage.sections.qualification,
-      title: 'Decision section: when funnel work is the right service choice',
-      description:
-        'Choose the funnel-system route when the business does not just need a page built. It needs the whole path from click to response to work as one system.',
-    },
-    faqSection: conversionLayerPage.sections.faqSection,
-  },
-  cta: {
-    heading: {
-      title: 'See whether the real need is a page build or a full funnel system',
-      description:
-        'We will map where attention drops, where the next-step mismatch begins, and whether page-only work would leave the commercial leak untouched.',
-    },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
-  },
-} satisfies typeof conversionLayerPage;
+  };

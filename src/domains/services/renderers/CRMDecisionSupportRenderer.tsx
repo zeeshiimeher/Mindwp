@@ -5,22 +5,22 @@ import {
 } from '@/domains/services/renderers/ServiceSkeletonRenderer';
 
 interface Props {
-  data: ServicePageDataBySlug['ecommerce'];
+  data: ServicePageDataBySlug['website-crm-integration-vs-manual-lead-handling'];
   slug: string;
 }
 
 const sections = [
-  { key: 'commerceFit', tone: 'white' },
-  { key: 'buyingPath', tone: 'mist' },
-  { key: 'operationalHandoff', tone: 'gradient-mist' },
-  { key: 'platformBoundaries', tone: 'white' },
-  { key: 'nextStep', tone: 'mist' },
+  { key: 'decisionProblem', tone: 'white' },
+  { key: 'comparison', tone: 'mist' },
+  { key: 'chooseCRM', tone: 'white' },
+  { key: 'boundaries', tone: 'mist' },
+  { key: 'nextStep', tone: 'white' },
 ] satisfies readonly ServiceSkeletonSection[];
 
-export function WooCommerceRenderer({ data, slug: _slug }: Props) {
+export function CRMDecisionSupportRenderer({ data, slug: _slug }: Props) {
   return renderServiceSkeletonPage({
     data,
-    prefix: 'ecommerce',
+    prefix: 'crm-decision',
     sections,
     heroChipDotVariant: 'subtle',
   });

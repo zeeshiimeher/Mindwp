@@ -10,11 +10,12 @@
 
 - Branch: `ui-hard-reset`.
 - Rebuilt baseline-clean: Homepage, Smart Website Systems, Local SEO Authority.
+- Service-domain skeletons staged: AI Lead Handling, CRM & Automation, Reputation & Review, builder/simple pages, supporting pages, and decision pages. See `docs/Planning/services-plan.md` before further service-page work.
 - Base components operational: `SectionFrame`, `HeroFrame`, `DecisionPanel`, `FAQSection`, `Accordion`, `Tabs`, `RelatedSection`, `InlineText`, `SignalDot`, `StatusBadge`.
 - `CaseStudyTemplate` no longer owns related or final CTA rendering, but still depends on old visual sections.
 - `PrimaryCTASection` remains quarantine delete-later for old consumers only.
 - `src/components/reusable/` remains quarantine delete-later for unrebuilt domains.
-- Next priority: AI Lead Handling, then industry category, remaining features, case study, resource, and blog templates.
+- Next priority: service-domain Opus build from `docs/Planning/services-plan.md`, then remaining features, industry category/detail, case study, resource, and blog templates.
 
 ---
 
@@ -80,6 +81,13 @@ Local SEO Authority:
 
 For all future rebuilds, data shapes must be semantic and section-specific. Avoid generic `items/cards/steps` when a richer name describes the business meaning.
 
+Service-domain skeletons:
+
+- SWS and LSA stay untouched as production baselines.
+- Reset service renderers use new-system components through a temporary skeleton helper.
+- The skeleton helper is staging only; final pages must converge to the SWS/LSA technique with page-specific visual body JSX and domain CSS.
+- `services.css` is reset to the shared domain CSS home for future service visual bodies.
+
 ---
 
 ## 4. Future Rebuild Contracts
@@ -141,21 +149,20 @@ Completed baseline:
 
 Remaining order:
 
-1. AI Lead Handling feature
-2. Reputation feature
+1. Service-domain Opus build by approved group from `docs/Planning/services-plan.md`
+2. Remaining features
 3. Industry category
 4. Landscaping industry detail
 5. Fitness case study
 6. Resource post/template
 7. Blog post/template
-8. Remaining services/features
-9. Remaining industries
-10. Remaining resources/blogs/case studies
-11. Per-domain cleanup after each rebuild
-12. Legacy/component deletion after consumers are gone
-13. Final validator/test rewrite
-14. Final accessibility/SEO/performance QA
-15. Final visual QA
+8. Remaining industries
+9. Remaining resources/blogs/case studies
+10. Per-domain cleanup after each rebuild
+11. Legacy/component deletion after consumers are gone
+12. Final validator/test rewrite
+13. Final accessibility/SEO/performance QA
+14. Final visual QA
 
 ---
 
@@ -191,11 +198,11 @@ Non-negotiable: frontend can be in motion during reset, but architecture cannot 
 
 ## 9. Active Tracker
 
-| Area              | Status  | Notes                                                                                                                                                                 |
-| ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Baseline pages    | Stable  | Homepage, SWS, LSA rebuilt and content-aligned                                                                                                                        |
-| Base components   | Stable  | SectionFrame: split layout (layout/ratio) + gradient tones (gradient-dark/mist/teal) added; shell ownership enforced — page CSS owns visual body only                 |
-| Next target       | Pending | AI Lead Handling audit starts at Prompt 3                                                                                                                             |
-| Legacy quarantine | Active  | PrimaryCTASection and reusable folders remain delete-later; rd-\* layout classes are quarantine/delete-later (DESIGN.md)                                              |
-| Open follow-ups   | Active  | Case-study RelatedSection injection pending; PrimaryCTASection consumers remain across unrebuilt domains                                                              |
-| Shell enforcement | Stable  | validate-legacy-quarantine blocks page CSS overrides of mw-section-frame\_\_header/heading/description/eyebrow in rebuilt page CSS; no headerWidth or gap props exist |
+| Area              | Status | Notes                                                                                                                                                                 |
+| ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Baseline pages    | Stable | Homepage, SWS, LSA rebuilt and content-aligned                                                                                                                        |
+| Base components   | Stable | SectionFrame: split layout (layout/ratio) + gradient tones (gradient-dark/mist/teal) added; shell ownership enforced — page CSS owns visual body only                 |
+| Next target       | Active | Service-domain Opus build should start by reviewing `docs/Planning/services-plan.md`                                                                                  |
+| Legacy quarantine | Active | Service detail renderers are staged clean; PrimaryCTASection and reusable folders remain delete-later for other old consumers and the `/services` listing             |
+| Open follow-ups   | Active | Case-study RelatedSection injection pending; PrimaryCTASection consumers remain across unrebuilt domains                                                              |
+| Shell enforcement | Stable | validate-legacy-quarantine blocks page CSS overrides of mw-section-frame\_\_header/heading/description/eyebrow in rebuilt page CSS; no headerWidth or gap props exist |

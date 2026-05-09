@@ -1,19 +1,45 @@
-import { AlertTriangle, Bell, GitBranch, MessageSquare, Search, Star } from 'lucide-react';
+import { buildServiceSeo } from '@/domains/services/seo';
+import type { ServicePageData } from '@/domains/services/types';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
-import { buildServiceSeo } from '../seo';
-import type { ServicePageData } from '../types';
+type HeaderOnlySection = {
+  header: {
+    kicker: string;
+    title: string;
+    description: string;
+  };
+};
+
+type FAQSectionData = HeaderOnlySection & {
+  items: Array<{ id: string; question: string; answer: string }>;
+};
+
+type ReputationReviewSections = {
+  trustGap: HeaderOnlySection;
+  reviewTiming: HeaderOnlySection;
+  feedbackRoute: HeaderOnlySection;
+  monitoringBoard: HeaderOnlySection;
+  localTrustHandoff: HeaderOnlySection;
+  fitFilter: HeaderOnlySection;
+  faq: FAQSectionData;
+};
 
 const slug = 'reputation-review-systems';
+const system = 'reputation-review';
+const contactHref = buildServiceContactHref({ system, slug });
 
-export const reputationReviewSystemsPage = {
-  slug,
+export const reputationReviewSystemsPage: ServicePageData<ReputationReviewSections> = {
   seo: buildServiceSeo({
     slug,
-    title: 'Reputation & Review Management for Service Businesses',
+    title: 'Reputation and Review Systems for Service Businesses',
     description:
-      "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+      'Review request timing, feedback routing, and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
   }),
-  systems: ['reputation-review'],
+  slug,
+  badge: 'Reputation & Reviews',
+  category: 'Trust Signals',
+  systems: [system],
   topics: [
     'review-generation',
     'review-automation',
@@ -23,337 +49,103 @@ export const reputationReviewSystemsPage = {
     'feedback-loops',
     'negative-review-response',
   ],
-  badge: 'Reputation & Review Systems',
-  category: 'Trust Systems',
   hero: {
     badge: 'Reputation & Reviews',
-    title: 'Good Work. Hardly Any Proof.',
+    title: 'Good Work Happens. [[muted:The Proof Does Not.]]',
     description:
-      'You finished a quarter of solid work. Customers were happy. Only a few left a review. A less reliable competitor still looks safer online because their proof is easier to see.',
-    list: ['Happy. Silent.', 'Competitors look more trustworthy', 'Trust stays invisible'],
-    cssPrefix: 'reputation-review-hero',
-    backgroundColor: 'bg-gradient-surface-muted',
+      'Jobs finish, customers are happy, and the team moves on. Reviews are asked for late, not at all, or only when someone remembers. Reputation & Review Systems make the ask and feedback route part of the job path.',
+    list: ['Review timing', 'Feedback routing', 'Trust signals'],
   },
   sections: {
-    foundation: {
-      badge: 'Why your reviews are stuck',
-      title: 'Not about asking more. About asking when it counts.',
-      description:
-        "Customer leaves happy. Two weeks pass. Forgotten the business name. That five-star review? Doesn't exist.",
-      painPoints: [
-        {
-          before:
-            "Someone has to remember to ask. They don't. Review count hasn't moved in months.",
-          after:
-            'Request goes out after the job. Right timing. Reviews grow without anyone chasing.',
-        },
-        {
-          before: "One-star notification. That's how you find out someone's unhappy.",
-          after:
-            'Feedback gets routed to the team first. Complaint handled before it goes permanent.',
-        },
-        {
-          before: 'Google, directories, social \u2014 nobody checks. Trust erodes quietly.',
-          after: 'Monitoring catches it. Replies go out. Profile stays managed.',
-        },
-      ],
-    },
-    reviewSystem: {
-      badge: 'How it works',
-      title: 'What it actually does when reviews are working',
-      description:
-        'Depends on your business. When customers are happiest, how they reply, and what should happen when something goes wrong. Four parts.',
-      cards: [
-        {
-          title: 'Ask at the right moment',
-          description:
-            "Not two weeks after the job. Right after the handshake. When they're still feeling it.",
-          points: [
-            'Request sent the same day',
-            'Via the channel the customer actually checks',
-            'Follow-up timing stays consistent without relying on memory',
-          ],
-          featured: true,
-        },
-        {
-          title: 'Catch complaints before they go public',
-          description:
-            'Unhappy feedback gets flagged internally. Not buried. Not ignored. Handled before it turns into a permanent one-star that sits at the top of the profile for months.',
-          points: [
-            'Complaints sent straight to the person who can fix it',
-            'Named owner — not a shared inbox',
-            "Resolved before it becomes someone's first impression of your business",
-          ],
-        },
-        {
-          title: "Keep an eye on what's out there",
-          description:
-            "Google, directories, social. Reviews come in. Some are fair. Some aren't. Responses go out either way.",
-          points: [
-            'Monitoring across the platforms that actually matter for your trade',
-            'Replies that show the business is awake',
-            'Issues reviewed in one place instead of getting discovered by accident',
-          ],
-        },
-        {
-          title: 'Keep fresh proof showing up',
-          description:
-            'Not one burst of reviews and then silence. New proof keeps appearing so the profile looks current, active, and believable.',
-          points: [
-            'Recent jobs keep turning into recent reviews',
-            'Older reviews stop being the whole story',
-            'Prospects see a business that still delivers now',
-          ],
-        },
-      ],
-    },
-    comparison: {
+    trustGap: {
       header: {
-        title: 'Leaving it to chance vs managing it properly',
+        kicker: 'Trust Gap',
+        title: 'The business may be trusted offline but quiet online.',
         description:
-          "Most businesses rely on memory and good intentions. Here's what that looks like next to a business that actually manages its reputation.",
+          'Good completed work does not always become visible proof. The gap appears when nobody asks at the right moment.',
+      },
+    },
+    reviewTiming: {
+      header: {
+        kicker: 'Review Timing',
+        title: 'The right moment to ask is usually after the job is done well.',
+        description:
+          'Review requests work best when timing and handoff are clear, without pressure or fake reputation work.',
+      },
+    },
+    feedbackRoute: {
+      header: {
+        kicker: 'Feedback Route',
+        title: 'Sensitive feedback needs a route before it becomes public damage.',
+        description:
+          'A useful review system separates public review requests from private feedback that needs attention first.',
+      },
+    },
+    monitoringBoard: {
+      header: {
+        kicker: 'Monitoring',
+        title: 'Review signals should be visible, not checked by habit.',
+        description:
+          'Review status, new feedback, follow-up needed, and unresolved risk all need a visible place to land.',
+      },
+    },
+    localTrustHandoff: {
+      header: {
+        kicker: 'Local Trust',
+        title: 'Reviews support local trust, but they are not Local SEO itself.',
+        description:
+          'This page can bridge to Local SEO Authority while keeping review generation and feedback routing as the owning job.',
+      },
+    },
+    fitFilter: {
+      header: {
+        kicker: 'Fit Filter',
+        title: 'Useful when good jobs happen and proof is inconsistent.',
+        description:
+          'The page should qualify buyers who already deliver real service, not businesses looking for shortcuts or fake reviews.',
+      },
+    },
+    faq: {
+      header: {
+        kicker: 'Questions',
+        title: 'Common questions about reputation and reviews.',
+        description:
+          'Short answers for buyers who want review growth without crossing ethical or platform boundaries.',
       },
       items: [
         {
-          type: 'before' as const,
-          title: 'Left to chance',
-          items: [
-            "Reviews requested when someone remembers. Weeks after the job. The customer's already forgotten the company name.",
-            'A one-star review appears. No warning. No chance to fix it first. Hundreds of prospects see it before anyone on the team does.',
-            "No idea what's being said across Google, directories, or social. Trust quietly eroding.",
-            "Public replies are sporadic or missing entirely. To a prospect, it looks like the business doesn't care.",
-            'No view of reputation health. Problems compound in silence until enquiries dry up.',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Managed deliberately',
-          items: [
-            'Requests go out at the right moment. Customers asked while satisfaction is highest. Reviews grow month over month.',
-            'Complaints caught and routed to the team before they go public. Problems resolved, not broadcast.',
-            'Google, directories, and platforms monitored regularly. Nothing surfaces without the team knowing.',
-            'Public replies consistent, professional, and timely. Prospects see a business that pays attention.',
-            'Trust visible. Review trends, response rates, and profile strength tracked.',
-          ],
-        },
-      ],
-    },
-    positioning: {
-      badge: 'What shifts',
-      title: 'When trust stops being accidental',
-      description:
-        'Not about chasing five stars. About making sure the good work you already do shows up where people look before they call.',
-      tagline: 'Turn real work into visible proof.',
-      narrativeTitle: 'For some businesses, trust is the real bottleneck',
-      narrativeParagraphs: [
-        'People find you, then check the reviews. Twelve total. One from 2022. The competitor nearby has eighty recent ones, so they look safer before anyone even calls.',
-        'When requests go out on time, complaints get caught privately, and replies stay current, that gap starts closing month by month. More people trust what they see and get in touch.',
-      ],
-      features: [
-        {
-          title: 'Reviews actually grow',
-          description:
-            'Customers asked at the right time, in the right way. Count moves up month after month without anyone chasing.',
-          icon: Star,
-        },
-        {
-          title: 'Problems caught early',
-          description:
-            "Complaints routed internally before they're posted publicly. The team gets a chance to fix it.",
-          icon: AlertTriangle,
-        },
-        {
-          title: 'Prospects see a business that cares',
-          description:
-            'Recent reviews. Thoughtful replies. A profile that says this business is active, real, and responsive.',
-          icon: Search,
-        },
-      ],
-    },
-    processSection: {
-      badge: 'How it gets built',
-      title: 'Steps. Not guesswork.',
-      description:
-        'Different businesses have different trust gaps. The build adapts. The structure stays the same.',
-      steps: [
-        {
-          number: '1',
-          title: 'Find when customers are happiest',
-          description:
-            "Identify when satisfaction peaks \u2014 right after the service, right after the result. That's when the ask lands.",
-        },
-        {
-          number: '2',
-          title: 'Build the request and routing rules',
-          description:
-            'Happy feedback aimed at a review. Unhappy feedback aimed at your team. Each goes where it should.',
-        },
-        {
-          number: '3',
-          title: 'Set up monitoring and response ownership',
-          description:
-            'Someone is responsible for what people see publicly. Reviews get checked, replies go out, and nothing sits there untouched for weeks.',
-        },
-        {
-          number: '4',
-          title: 'Refine from real results',
-          description:
-            "Track what's working, where trust is still weak. Adjust. Gets sharper over time.",
-        },
-      ],
-    },
-    capabilitySection: {
-      badge: "What's included",
-      title: 'The parts that matter when trust drives enquiries',
-      description: 'Not every business needs all of this. Depends on where your trust gap is.',
-      services: [
-        {
-          title: 'Review request and follow-up',
-          icon: Bell,
-          items: [
-            'Timed requests after each job — sent when satisfaction is highest',
-            'SMS, email, or in-person prompt depending on how the customer communicates',
-            'Follow-up if no response, without overdoing it',
-            'Different handling for different service types if needed',
-          ],
-        },
-        {
-          title: 'Complaint routing and escalation',
-          icon: GitBranch,
-          items: [
-            'Unhappy responses caught and sent to the right person before they go public',
-            'Named ownership — someone is responsible for handling it',
-            'Steps for resolving the issue before it becomes a permanent review',
-            'Visibility across the team so nothing gets buried',
-          ],
-        },
-        {
-          title: 'Monitoring and public response',
-          icon: MessageSquare,
-          items: [
-            'Regular checks across Google, directories, and relevant platforms',
-            'Public replies that are consistent, professional, and timely',
-            'Trust health tracked over time — not just star count',
-            'Ties into local visibility and conversion work where it helps',
-          ],
-        },
-      ],
-    },
-    proof: {
-      header: {
-        title: 'What happened at an auto repair garage',
-        description:
-          'Good mechanics. Loyal regulars. Twelve Google reviews after four years in business. The shop down the road had ninety.',
-      },
-      cards: [
-        {
-          title: 'Before: great work, invisible online',
-          description:
-            'Hundreds of jobs a year. Customers came back. But the review profile was almost empty. Nobody ever asked. The occasional text went out when the owner remembered. Usually too late.',
-          points: [
-            'Twelve reviews in four years. Customers were happy. Just never bothered.',
-            'One bad review from a misunderstanding sat at the top. No reply. That was the first thing anyone saw.',
-          ],
-        },
-        {
-          title: 'What we set up: timed requests with complaint routing',
-          description:
-            'Review request sent after every completed job. Simple rating step — happy customers directed to Google, unhappy responses sent straight to the owner.',
-          points: [
-            "SMS request goes out the same day the car is picked up. That's when satisfaction peaks.",
-            'Negative feedback routed to the owner privately. Handled before it becomes permanent.',
-            'Google profile monitored. Public replies posted within the day.',
-          ],
-          featured: true,
-        },
-        {
-          title: 'After: reviews growing, complaints caught',
-          description:
-            "Three months in, over fifty new reviews. The bad one was buried. Two complaints caught privately that would've gone public.",
-          points: [
-            "Fifty-odd new reviews. All real. All from that week's customers.",
-            "Two complaints caught privately. Would've been one-stars. Weren't.",
-            "Started getting calls from people they'd never spoken to. The profile was doing the work before anyone picked up the phone.",
-          ],
-        },
-      ],
-    },
-    qualification: {
-      title: 'Is this right for your business?',
-      description:
-        'Works when trust is the thing between you and more work. If people find you but hesitate, this is probably why.',
-      strongFitTitle: 'Strong fit if',
-      notDesignedTitle: 'Not the right fit if',
-      strongFitItems: [
-        {
-          title: "You do good work but your reviews don't show it",
-          description:
-            'Customers leave happy. Evidence never shows up online. Competitors with worse service look more credible because they have more proof.',
-        },
-        {
-          title: 'People find you but choose someone else',
-          description:
-            'They check reviews before calling. Yours are thin, old, or inconsistent. The business with eighty recent reviews gets the job.',
-        },
-        {
-          title: 'You want this handled, not hacked together',
-          description:
-            'Not a manual email blast. Timing, routing, monitoring, and responses running together. Managed, not improvised.',
-        },
-      ],
-      notDesignedItems: [
-        {
-          title: 'You want fake or inflated reviews',
-          description:
-            "This builds real trust from real customers. If you want fabricated ratings, this isn't the right service.",
-        },
-        {
-          title: "The team won't act on complaints",
-          description:
-            'Routing feedback to your team only works if someone actually addresses it. If complaints will be ignored either way, the routing changes nothing.',
-        },
-        {
-          title: "Nobody's finding your business yet",
-          description:
-            "If the issue is visibility, not trust, reviews alone won't fix it. Get found first. Then make sure what people see looks right.",
-        },
-      ],
-    },
-    faqSection: {
-      badge: 'FAQ',
-      title: 'Questions about reputation and reviews',
-      description: 'What people ask before they start.',
-      faqs: [
-        {
-          question: 'Can we start this without changing the website?',
+          id: 'rep-faq-fake-reviews',
+          question: 'Do you create reviews for us?',
           answer:
-            'Yes. Review collection and feedback routing work independently. Best results come when the website and trust signals support each other, but you can start here.',
+            'No. The system helps ask real customers at the right time and route feedback properly. It does not create fake reviews.',
         },
         {
-          question: 'Will this actually get us more reviews?',
+          id: 'rep-faq-negative-feedback',
+          question: 'What happens with negative feedback?',
           answer:
-            "Typically, yes. But the point isn't just volume. It's consistent collection, complaint handling, and a profile that looks like a business worth trusting.",
+            'The aim is to route sensitive feedback to the business quickly so it can be handled properly before it becomes a public surprise.',
         },
         {
-          question: 'Do you help with responding to reviews?',
+          id: 'rep-faq-local-seo',
+          question: 'Is this the same as Local SEO?',
           answer:
-            'Yes. How you respond publicly matters as much as the rating. We set response standards and make sure replies go out consistently.',
-        },
-        {
-          question: 'Is this standalone or part of something bigger?',
-          answer:
-            'Either. Some businesses need trust fixed first. Others use it alongside local visibility, website work, or follow-up improvements.',
+            'No. Reviews can support local trust, but Local SEO Authority owns visibility and authority signals. This page owns review request timing and feedback routing.',
         },
       ],
-      cssPrefix: 'reputation-review-faq',
     },
   },
   cta: {
     heading: {
-      title: 'See how you look next to your competitors',
+      kicker: 'Next Step',
+      title: 'Find where proof is slipping.',
       description:
-        "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
+        'Tell us how jobs finish, when customers are asked, and what happens with feedback now. We will look for the simplest review route to put in place.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
+    expectations: [
+      { num: '01', text: 'We look at when good jobs currently finish.' },
+      { num: '02', text: 'We identify where review requests or feedback stall.' },
+      { num: '03', text: 'We outline the review route that fits the business.' },
+    ],
   },
-} satisfies ServicePageData;
+};

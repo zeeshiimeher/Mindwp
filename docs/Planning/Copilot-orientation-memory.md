@@ -165,21 +165,24 @@ Color is always paired with a label — never the sole signal.
 
 ## 9. Current Repo State
 
-| Item                                     | Status                                                     |
-| ---------------------------------------- | ---------------------------------------------------------- |
-| Branch                                   | `ui-hard-reset`                                            |
-| Rebuilt baseline pages                   | Homepage, Smart Website Systems, Local SEO Authority       |
-| `docs/core/*`                            | Stable long-term authority                                 |
-| `docs/Planning/System-hard-reset.md`     | Temporary operating manual — retire when reset is complete |
-| `docs/Planning/Legacy-dependency-map.md` | Live delete-gate map — live until all consumers rebuilt    |
+| Item                                     | Status                                                                                              |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Branch                                   | `ui-hard-reset`                                                                                     |
+| Rebuilt baseline pages                   | Homepage, Smart Website Systems, Local SEO Authority                                                |
+| Service-domain skeletons                 | AI, CRM, Reputation, builder/simple, supporting, and decision service pages staged for Opus rebuild |
+| `docs/core/*`                            | Stable long-term authority                                                                          |
+| `docs/Planning/System-hard-reset.md`     | Temporary operating manual — retire when reset is complete                                          |
+| `docs/Planning/Legacy-dependency-map.md` | Live delete-gate map — live until all consumers rebuilt                                             |
+
+**Service-domain note:** Review `docs/Planning/services-plan.md` before any further service-page work. Skeleton renderers are staging only; final service pages must converge back to the SWS/LSA production technique.
 
 **Remaining rebuild order (from System-hard-reset.md):**
-AI Lead Handling → Reputation feature → Industry category → Landscaping detail → Fitness case study → Resource template → Blog template → remaining services/features/industries → legacy cleanup → final QA.
+Service-domain Opus build by approved group → features → industry category/detail → case study → resource template → blog template → remaining domains → legacy cleanup → final QA.
 
 **Open follow-ups:**
 
 - `RelatedSection` not yet injected at config level for case studies
-- `PrimaryCTASection` consumers remain across all unrebuilt domains
+- `PrimaryCTASection` consumers remain across unrebuilt domains and the `/services` listing page
 
 ---
 
@@ -218,7 +221,7 @@ tokens.css → reset.css → typography.css → layout.css → primitives.css �
 | `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion utilities                                                                                                                            |
 | `primitives.css` | Buttons, badges, Accordion, Tabs, signal/status atoms                                                                                                                                    |
 | `components.css` | Header, Footer, DecisionPanel, RelatedSection, FAQSection                                                                                                                                |
-| page/domain CSS  | Page-specific visual bodies only. `services.css` is the domain bundle for rebuilt service pages — `aih-*`, `crm-*`, `rep-*`, `rev-*` prefixes appended in order.                         |
+| page/domain CSS  | Page-specific visual bodies only. `services.css` is the shared domain bundle for reset service pages; SWS and LSA keep their dedicated CSS files.                                        |
 
 **Hard rules:**
 

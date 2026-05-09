@@ -6,7 +6,7 @@
  * or use old CSS class patterns.
  *
  * Scope: ONLY rebuilt/new files are checked.
- * Old/unrebuilt pages (blog, features, industries, resources, old service renderers)
+ * Old/unrebuilt pages (blog, features, industries, resources, service listing)
  * are explicitly excluded — they may still import old UI until rebuilt.
  *
  * See docs/Planning/Legacy-dependency-map.md for full quarantine rules.
@@ -27,6 +27,7 @@ const NEW_SYSTEM_DIRS = [
   'src/components/conversion',
   'src/components/navigation',
   'src/components/content',
+  'src/domains/services/renderers',
 ].map(d => path.join(root, d));
 
 // ── Individually-named rebuilt files ─────────────────────────────────────────
@@ -69,6 +70,7 @@ const REBUILT_PAGE_CSS_FILES = [
   'src/styles/pages/home.css',
   'src/styles/services/smart-website.css',
   'src/styles/services/local-seo.css',
+  'src/styles/services.css',
 ].map(f => path.join(root, f));
 
 /**

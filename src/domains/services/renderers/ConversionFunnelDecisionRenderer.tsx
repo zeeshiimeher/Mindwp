@@ -5,22 +5,22 @@ import {
 } from '@/domains/services/renderers/ServiceSkeletonRenderer';
 
 interface Props {
-  data: ServicePageDataBySlug['ecommerce'];
+  data: ServicePageDataBySlug['conversion-funnel-system-vs-landing-page-development'];
   slug: string;
 }
 
 const sections = [
-  { key: 'commerceFit', tone: 'white' },
-  { key: 'buyingPath', tone: 'mist' },
-  { key: 'operationalHandoff', tone: 'gradient-mist' },
-  { key: 'platformBoundaries', tone: 'white' },
-  { key: 'nextStep', tone: 'mist' },
+  { key: 'decisionProblem', tone: 'white' },
+  { key: 'comparison', tone: 'mist' },
+  { key: 'chooseStructured', tone: 'white' },
+  { key: 'boundaries', tone: 'mist' },
+  { key: 'nextStep', tone: 'white' },
 ] satisfies readonly ServiceSkeletonSection[];
 
-export function WooCommerceRenderer({ data, slug: _slug }: Props) {
+export function ConversionFunnelDecisionRenderer({ data, slug: _slug }: Props) {
   return renderServiceSkeletonPage({
     data,
-    prefix: 'ecommerce',
+    prefix: 'funnel-decision',
     sections,
     heroChipDotVariant: 'subtle',
   });

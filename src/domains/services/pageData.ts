@@ -19,14 +19,17 @@ import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
 import { AiLeadHandlingRenderer } from '@/domains/services/renderers/AiLeadHandlingRenderer';
 import { BricksBuilderRenderer } from '@/domains/services/renderers/BricksBuilderRenderer';
+import { ConversionFunnelDecisionRenderer } from '@/domains/services/renderers/ConversionFunnelDecisionRenderer';
 import { ConversionLayerRenderer } from '@/domains/services/renderers/ConversionLayerRenderer';
 import { CRMAutomationRenderer } from '@/domains/services/renderers/CRMAutomationRenderer';
+import { CRMDecisionSupportRenderer } from '@/domains/services/renderers/CRMDecisionSupportRenderer';
 import { Divi5Renderer } from '@/domains/services/renderers/Divi5Renderer';
 import { ElementorRenderer } from '@/domains/services/renderers/ElementorRenderer';
 import { LeadReactivationSystemRenderer } from '@/domains/services/renderers/LeadReactivationSystemRenderer';
 import { LocalSeoAuthorityRenderer } from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
 import { MissedCallRecoverySystemRenderer } from '@/domains/services/renderers/MissedCallRecoverySystemRenderer';
 import { ReputationReviewSystemsRenderer } from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
+import { ServicePagesDecisionRenderer } from '@/domains/services/renderers/ServicePagesDecisionRenderer';
 import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
 import { SystemMigrationPlatformConsolidationRenderer } from '@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer';
 import { UnifiedCommunicationSystemRenderer } from '@/domains/services/renderers/UnifiedCommunicationSystemRenderer';
@@ -97,7 +100,7 @@ export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
   'conversion-layer': createServiceEntry(conversionLayerPage, ConversionLayerRenderer),
   'conversion-funnel-system-vs-landing-page-development': createServiceEntry(
     conversionFunnelSystemVsLandingPageDevelopmentPage,
-    ConversionLayerRenderer
+    ConversionFunnelDecisionRenderer
   ),
   'system-migration-platform-consolidation': createServiceEntry(
     systemMigrationPlatformConsolidationPage,
@@ -127,12 +130,12 @@ export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
   'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, CRMAutomationRenderer),
   'website-crm-integration-vs-manual-lead-handling': createServiceEntry(
     websiteCrmIntegrationVsManualLeadHandlingPage,
-    CRMAutomationRenderer
+    CRMDecisionSupportRenderer
   ),
   'ai-lead-handling': createServiceEntry(aiLeadHandlingPage, AiLeadHandlingRenderer),
   'service-pages-vs-one-generic-services-page': createServiceEntry(
     servicePagesVsOneGenericServicesPage,
-    SmartWebsiteSystemsRenderer
+    ServicePagesDecisionRenderer
   ),
   'wordpress-development': createServiceEntry(
     wordpressDevelopmentPage,

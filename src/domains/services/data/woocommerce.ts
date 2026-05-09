@@ -1,195 +1,101 @@
-import {
-  BarChart3,
-  CreditCard,
-  Layers,
-  Package,
-  Search,
-  Shield,
-  ShoppingCart,
-  Truck,
-} from 'lucide-react';
+import { buildServiceSeo } from '@/domains/services/seo';
+import type { ServicePageData } from '@/domains/services/types';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
-import { buildServiceSeo } from '../seo';
-import type { ServicePageData } from '../types';
+type HeaderOnlySection = {
+  header: {
+    kicker: string;
+    title: string;
+    description: string;
+  };
+};
+
+type EcommerceSections = {
+  commerceFit: HeaderOnlySection;
+  buyingPath: HeaderOnlySection;
+  operationalHandoff: HeaderOnlySection;
+  platformBoundaries: HeaderOnlySection;
+  nextStep: HeaderOnlySection;
+};
 
 const slug = 'ecommerce';
+const system = 'smart-website-systems';
+const contactHref = buildServiceContactHref({ system, slug });
 
-export const woocommercePage = {
-  slug,
+export const woocommercePage: ServicePageData<EcommerceSections> = {
   seo: buildServiceSeo({
     slug,
-    title: 'WooCommerce & E-commerce Implementation',
+    title: 'Ecommerce Website Systems for Service Businesses',
     description:
-      "WooCommerce gets your products online. But products listed doesn't mean orders flowing. Here's what most stores miss between the catalog and the sale.",
+      'A practical commerce pathway for service businesses that need product, order, or payment handling connected to the wider website path.',
   }),
-  systems: ['smart-website-systems'],
+  slug,
+  badge: 'Ecommerce',
+  category: 'Commerce Pathway',
+  systems: [system],
   topics: ['website-infrastructure'],
-  badge: 'E-commerce & WooCommerce',
-  category: 'Implementation Services',
   hero: {
-    badge: 'WooCommerce & E-commerce',
-    title: "Products Are Listed. Orders Aren't Coming.",
+    badge: 'Ecommerce',
+    title: 'Buying Online Still Needs Handling.',
     description:
-      "Your WooCommerce store is live. Products photographed, prices set, checkout working. People browse, add things to the cart, and... leave. The store is there. The sales aren't.",
-    list: ['Store live', 'Low orders', 'Abandoned carts'],
-    cssPrefix: 'woocommerce-hero',
+      'Products, payments, deposits, and enquiries can sit beside service work. The page should keep commerce practical and tied to the business path.',
+    list: ['Buying path', 'Order handoff', 'Service fit'],
   },
   sections: {
-    benefitsSection: {
-      badge: 'What Actually Drives Sales',
-      title: "A product catalog isn't a selling machine. What happens around it is.",
-      description:
-        "WooCommerce handles the store mechanics fine. Products, cart, checkout — all working. But a store that gets traffic and doesn't convert has a problem that isn't the catalog.",
-      backgroundColor: 'bg-base' as const,
-      cssPrefix: 'woocommerce-benefits',
-      items: [
-        {
-          icon: ShoppingCart,
-          title: "People browse but don't buy",
-          description:
-            'Products are there. Navigation works. But nothing pushes the visitor from "looking" to "buying." No urgency, no social proof, no reason to act now.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Layers,
-          title: 'Abandoned carts outnumber completed orders',
-          description:
-            'Someone adds to cart and leaves. No reminder email. No follow-up. That sale disappears with no way to recover it.',
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Shield,
-          title: "Repeat customers don't come back automatically",
-          description:
-            'A customer buys once. No follow-up, no thank-you, no reason to return. One-time buyers stay one-time.',
-          iconType: 'secondary' as const,
-        },
-      ],
+    commerceFit: {
+      header: {
+        kicker: 'Fit',
+        title: 'Commerce only helps when the buying path is clear.',
+        description:
+          'Ecommerce belongs on the site when buying, deposit, booking, or order handling genuinely needs it.',
+      },
     },
-    bridge: {
-      title: 'A store works best when the site around it works too',
-      description:
-        'WooCommerce handles the cart and checkout. But the buying decision happens before that — on the product pages, through the navigation, in the trust signals. When the whole site is connected — store, CRM, follow-up, tracking — browsing turns into buying.',
+    buyingPath: {
+      header: {
+        kicker: 'Buying Path',
+        title: 'The customer still needs a clear next step.',
+        description:
+          'Products, deposits, bookings, and quote requests are different paths, not one generic shop pattern.',
+      },
     },
-    whySection: {
-      badge: 'The real question',
-      title: "Is the store the problem — or is it what's missing around it?",
-      description:
-        'WooCommerce is a solid e-commerce foundation. But a store without follow-up, recovery, and customer handling is just a catalog with a checkout button.',
-      columns: 4 as const,
-      backgroundColor: 'bg-alt' as const,
-      cssPrefix: 'woocommerce-why',
-      items: [
-        {
-          title: 'Cart recovery is missing',
-          description:
-            'Someone adds products and leaves. No email, no reminder. That revenue is gone with no attempt to bring it back.',
-        },
-        {
-          title: 'No post-purchase follow-up',
-          description:
-            'Order ships. No check-in, no review request, no cross-sell. Every customer is a one-time buyer by default.',
-        },
-        {
-          title: "You can't see what's working",
-          description:
-            "Traffic comes from somewhere. You don't know which channels produce actual orders.",
-        },
-        {
-          title: 'The store runs in isolation',
-          description:
-            'No CRM, no customer data feeding back into marketing. Every sale is a standalone event.',
-        },
-      ],
+    operationalHandoff: {
+      header: {
+        kicker: 'Handoff',
+        title: 'Orders and enquiries must land somewhere useful.',
+        description:
+          'Bridge to CRM or lead handling only when it clarifies what happens after purchase or enquiry.',
+      },
     },
-    featureSection: {
-      badge: 'What The Build Covers',
-      title: "What a WooCommerce store looks like when it's connected to the business",
-      columns: 3 as const,
-      backgroundColor: 'bg-base' as const,
-      cssPrefix: 'woocommerce-features',
-      categories: [
-        {
-          title: 'Store & Product Setup',
-          icon: ShoppingCart,
-          features: [
-            'Products organised by how people shop',
-            'Mobile-friendly browsing and checkout',
-            'Clear product pages with real information',
-            'Category structure that makes sense',
-            'Search and filter that work',
-            'Trust signals visible throughout',
-          ],
-        },
-        {
-          title: 'Checkout & Payment',
-          icon: CreditCard,
-          features: [
-            'Stripe, PayPal, and other gateways',
-            'Simplified checkout to reduce drop-off',
-            'Guest checkout available',
-            'SSL and security handled',
-            'Tax and shipping calculated automatically',
-            'Discount codes when you need them',
-          ],
-        },
-        {
-          title: 'Order Handling & Fulfilment',
-          icon: Truck,
-          features: [
-            'Shipping zones and rates configured',
-            'Order notifications to your team',
-            'Tracking information sent to customers',
-            'Local pickup where relevant',
-            'Returns process defined',
-            'Fulfilment workflow that matches how you work',
-          ],
-        },
-        {
-          title: 'Customer Follow-Up',
-          icon: Package,
-          features: [
-            'Abandoned cart recovery emails',
-            'Post-purchase thank-you and review requests',
-            'Cross-sell and recommendation logic',
-            'Customer data feeding into your CRM',
-            'Repeat buyer encouragement',
-            'Segmented email follow-up',
-          ],
-        },
-        {
-          title: 'Visibility & Tracking',
-          icon: Search,
-          features: [
-            'Product pages written for search',
-            'Tracking shows where buyers come from',
-            'Conversion tracking on orders',
-            'Google Shopping connection',
-            'Social media integration',
-            "Analytics that show what's actually selling",
-          ],
-        },
-        {
-          title: 'Reporting & Growth',
-          icon: BarChart3,
-          features: [
-            'Sales dashboards you can act on',
-            'Customer behaviour insights',
-            'Top products and revenue trends',
-            'Inventory alerts',
-            'Channel performance comparison',
-            'Data you own and control',
-          ],
-        },
-      ],
+    platformBoundaries: {
+      header: {
+        kicker: 'Boundaries',
+        title: 'The platform is not the strategy.',
+        description:
+          'Keep this page practical. Avoid generic ecommerce feature lists and unsupported revenue claims.',
+      },
+    },
+    nextStep: {
+      header: {
+        kicker: 'Next Step',
+        title: 'The first decision is whether ecommerce belongs here.',
+        description:
+          'The first decision is whether commerce helps the customer take the next step or adds friction.',
+      },
     },
   },
   cta: {
     heading: {
-      title: "Store live but sales aren't happening?",
+      kicker: 'Next Step',
+      title: 'Check whether commerce fits the site.',
       description:
-        "Tell us what's not converting. We'll show you whether it's the store, the checkout, or what's missing around it.",
+        'Tell us what needs to be sold, booked, paid for, or requested. We will check whether ecommerce is the right route.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
+    expectations: [
+      { num: '01', text: 'We look at the buying or booking path.' },
+      { num: '02', text: 'We identify what must happen after purchase or enquiry.' },
+      { num: '03', text: 'We explain the simplest commerce route.' },
+    ],
   },
-} satisfies ServicePageData;
+};

@@ -2,90 +2,94 @@
 
 import { describe, expect, test } from 'vitest';
 
-import {
-    normalizeAlternatingItems,
-    normalizePoints,
-    renderAlternatingSection,
-} from '@/domains/services/renderers/renderAlternatingSection';
+import { renderServiceSkeletonPage } from '@/domains/services/renderers/ServiceSkeletonRenderer';
+import type { ServicePageData } from '@/domains/services/types';
 
-describe('system simulation: fallback-free rendering', () => {
-    test('alternating section renderer fails fast when section data is missing', () => {
-        expect(() => renderAlternatingSection(undefined, null)).toThrow(
-            'renderAlternatingSection requires section data.'
-        );
+const baseData = {
+    seo: {
+        title: 'Simulation Service',
+        description: 'Simulation service data for system tests.',
+        canonical: '/services/simulation-service',
+    },
+    slug: 'simulation-service',
+    badge: 'Simulation',
+    category: 'System Test',
+    systems: ['smart-website-systems'],
+    topics: ['website-infrastructure'],
+    hero: {
+        badge: 'Simulation',
+        title: 'Simulation Service',
+        description: 'A small service payload used to verify skeleton renderer behavior.',
+        list: ['One', 'Two'],
+    },
+    sections: {
+        firstSection: {
+            header: {
+                kicker: 'First',
+                title: 'First section',
+                description: 'A valid skeleton section.',
+            },
+        },
+        faq: {
+            header: {
+                kicker: 'Questions',
+                title: 'Simulation questions',
+                description: 'A valid FAQ section.',
+            },
+            items: [
+                {
+                    id: 'simulation-faq',
+                    question: 'Does this render?',
+                    answer: 'Yes. The test only verifies the skeleton contract.',
+                },
+            ],
+        },
+    },
+    cta: {
+        heading: {
+            kicker: 'Next Step',
+            title: 'Check the simulation.',
+            description: 'A valid CTA for the skeleton renderer.',
+        },
+        actions: [
+            {
+                label: 'Start a Conversation',
+                href: '/contact?system=smart-website-systems&source=service/simulation-service',
+                primary: true,
+            },
+        ],
+    },
+} satisfies ServicePageData<Record<string, unknown>>;
+
+describe('system simulation: service skeleton rendering', () => {
+    test('service skeleton renderer fails fast when section data is missing', () => {
+        expect(() =>
+            renderServiceSkeletonPage({
+                data: baseData,
+                prefix: 'simulation',
+                sections: [{ key: 'missingSection' }],
+            })
+        ).toThrow('[simulation-service] Missing skeleton section: missingSection');
     });
 
-    test('alternating section renderer returns a section when authored items are valid', () => {
-        const rendered = renderAlternatingSection(
-            {
-                title: 'Structured Flow',
-                description: 'Authored alternating section content.',
-                alternatingItems: [
-                    {
-                        title: 'Capture enquiries consistently',
-                        description: 'Route the right next step without silent fallback.',
-                        points: ['Lead context captured correctly', 'Routing rules stay deterministic'],
-                    },
-                ],
-            },
-            null
-        );
+    test('service skeleton renderer returns a page element when section data is present', () => {
+        const rendered = renderServiceSkeletonPage({
+            data: baseData,
+            prefix: 'simulation',
+            sections: [{ key: 'firstSection' }],
+        });
 
         expect(rendered).toBeTruthy();
     });
 
-    test('alternating section renderer returns the provided fallback when authored items collapse', () => {
-        const fallback = 'FALLBACK_SECTION';
-        const rendered = renderAlternatingSection(
-            {
-                title: 'Broken Flow',
-                alternatingItems: [
-                    {
-                        title: 'Only one useful point survives',
-                        description: 'Same sentence repeated.',
-                        points: ['Same sentence repeated.', 'Same sentence repeated.'],
-                    },
-                ],
-            },
-            fallback
-        );
+    test('service skeleton renderer can include FAQ when FAQ data is present', () => {
+        const rendered = renderServiceSkeletonPage({
+            data: baseData,
+            prefix: 'simulation',
+            sections: [{ key: 'firstSection' }],
+            faq: true,
+        });
 
-        expect(rendered).toBe(fallback);
-    });
-
-    test('alternating item normalization removes duplicate and description-matching points', () => {
-        const items = normalizeAlternatingItems([
-            {
-                title: 'The long title should normalize down to the meaningful part only',
-                description: 'Keep the routing visible.',
-                points: [
-                    'Keep the routing visible.',
-                    'Keep the routing visible.',
-                    'Route the next step to the right owner every single time without silent fallback.',
-                    'Route the next step to the right owner every single time without silent fallback.',
-                    'Preserve context for the handoff.',
-                ],
-            },
-        ]);
-
-        expect(items).toHaveLength(1);
-        expect(items[0].title.split(' ').length).toBeLessThanOrEqual(7);
-        expect(items[0].points).toEqual([
-            'Route the next step to the right owner every single time without',
-            'Preserve context for the handoff',
-        ]);
-    });
-
-    test('point normalization caps list length deterministically', () => {
-        const points = normalizePoints([
-            'One',
-            'Two',
-            'Three',
-            'Four',
-            'Five',
-            'Six',
-        ]);
-
-        expect(points).toEqual(['One', 'Two', 'Three', 'Four', 'Five']);
+        expect(rendered).toBeTruthy();
     });
 });

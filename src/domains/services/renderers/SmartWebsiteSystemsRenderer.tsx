@@ -19,9 +19,7 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 // =============================================================================
 
 interface Props {
-  data: ServicePageDataBySlug[
-    | 'smart-website-systems'
-    | 'service-pages-vs-one-generic-services-page'];
+  data: ServicePageDataBySlug['smart-website-systems'];
   slug: string;
 }
 
