@@ -218,7 +218,7 @@ tokens.css → reset.css → typography.css → layout.css → primitives.css �
 | `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion utilities                                                                                                                            |
 | `primitives.css` | Buttons, badges, Accordion, Tabs, signal/status atoms                                                                                                                                    |
 | `components.css` | Header, Footer, DecisionPanel, RelatedSection, FAQSection                                                                                                                                |
-| page/domain CSS  | Page-specific visual bodies only. `services.css` is the domain bundle for rebuilt service pages — `aih-*`, `crm-*`, `rep-*`, `rev-*` prefixes appended in order.                        |
+| page/domain CSS  | Page-specific visual bodies only. `services.css` is the domain bundle for rebuilt service pages — `aih-*`, `crm-*`, `rep-*`, `rev-*` prefixes appended in order.                         |
 
 **Hard rules:**
 
@@ -328,5 +328,38 @@ Before auditing or rebuilding any page:
 
 - Dont work in Bulk Patches
 - Must work Step by step
+
+## 18. Page-Design Workflow (no Figma reference)
+
+When a page has no Figma/visual reference:
+
+1. Plan section purpose and visual intent first (see approved section plan)
+2. Create skeleton renderer with design-intent comments per SectionFrame body
+3. Keep data header-only at first — no arrays until the section visual requires them
+4. Build one section at a time: data fields → renderer JSX → CSS
+5. Run `system:quick` after each section; `system:full` + `build` after all sections
+
+**CSS strategy for service pages:**
+
+- `services.css` is the default domain-level CSS for rebuilt service pages
+- Prefix: `aih-*` (AI Lead Handling), `crm-*`, `rep-*`, `rev-*` appended in order
+- Do not create a separate CSS file per service page unless visual complexity clearly requires it
+- `smart-website.css` and `local-seo.css` remain separate (predated domain-bundle strategy)
 - Partically allowed to read multiple files in parallel for better understand.better avoid parallel reading of multiple files.
 - But execute or make changes Step by Step or task by task in small patches
+
+---
+
+## 18. Page Rebuild Workflow (No-Figma Pattern)
+
+When rebuilding a service page from scratch, follow this sequence:
+
+1. **Planning session** — from business and design logic only. Output: approved section list, design intent per section, visual direction notes, removed sections recorded.
+2. **Skeleton reset** — three files only:
+   - Data file: header-only `{ header: { kicker, title, description } }` per section. No arrays. Keep faq items[] and cta as-is.
+   - Renderer: SectionFrame shells with design-intent JSX comments only. No custom visual bodies. Use `requireHeadingDescription` helper.
+   - CSS: keep shell + hero CSS. Remove old section-specific CSS. Add single placeholder comment for sections 3-N.
+3. **Section-by-section build** — one section at a time, in order. Add data fields, JSX body, and CSS together for the same section before moving on.
+4. **Check sequence after each section** — lint fix → Prettier → lint → system:full → build.
+
+Do not jump ahead to build section visuals during the skeleton phase. The skeleton proves the structure compiles clean before any design work starts.

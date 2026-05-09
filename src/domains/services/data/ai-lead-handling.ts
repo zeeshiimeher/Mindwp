@@ -5,9 +5,31 @@ import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
 // =============================================================================
-// AI Lead Handling — page data
-// Sections: responseGap · connectedVsIsolated · channelStates · handlingPath ·
-//           realMoments · handoffMap · scenarioStudy · scopeGroups · fitFilter · faq
+// AI Lead Handling — page data (skeleton)
+//
+// Approved section order:
+//   1. Hero
+//   2. responseGap      — first-contact gap as operational incident
+//   3. channelBreakdown — dispatch board: three channels, same gap
+//   4. responsePath     — convergence: channels → AI junction → outputs
+//   5. aiBoundary       — scope: what this covers vs what it does not touch
+//   6. scenarioStudy    — scenario study with before/change/after narrative
+//   7. fitFilter        — qualification: strong fit vs poor fit
+//   8. faq
+//   9. cta
+//
+// Removed:
+//   connectedVsIsolated (merged into responsePath description)
+//   channelStates       (replaced by channelBreakdown)
+//   handlingPath        (replaced by responsePath)
+//   handoffMap          (replaced by aiBoundary)
+//   realMoments         (log moments will move into scenarioStudy.change later)
+//   scopeGroups         (removed entirely)
+//
+// Data strategy:
+//   Normal sections carry header-only data now.
+//   Custom visual data will be added section-by-section during design execution.
+//   Do not add arrays/nested fields until the section visual requires them.
 // =============================================================================
 
 const slug = 'ai-lead-handling';
@@ -24,6 +46,12 @@ export const aiLeadHandlingPage = {
   topics: ['lead-response-time', 'missed-calls', 'lead-capture'],
   badge: 'AI Lead Handling',
   category: 'AI Response Systems',
+
+  // ---------------------------------------------------------------------------
+  // Hero
+  // Visual: First-Contact Control Surface panel — channel rows with state
+  // HeroFrame visual slot will be designed in hero execution pass
+  // ---------------------------------------------------------------------------
   hero: {
     badge: 'AI Lead Handling',
     title: 'The Enquiry Came In After Hours. Nobody Picked It Up.',
@@ -31,8 +59,8 @@ export const aiLeadHandlingPage = {
       'Someone calls after the team has finished. A form lands at 9pm. A chat message sits there until morning. By the time anyone responds, the conversation has moved somewhere faster.',
     list: ['Missed calls', 'After-hours forms', 'Unanswered messages'],
     visual: {
-      label: 'Response Surface',
-      subtitle: 'Incoming channels — current state',
+      label: 'Incoming — current state',
+      subtitle: 'First contact surface',
       channels: [
         { label: 'Missed call', note: 'After hours — no callback', state: 'unhandled' },
         { label: 'Website form', note: 'Sat 21:14 — unread', state: 'unhandled' },
@@ -43,7 +71,21 @@ export const aiLeadHandlingPage = {
       footerCovered: '1 covered',
     },
   },
+
   sections: {
+    // ── 2. RESPONSE GAP ──────────────────────────────────────────────────────
+    // DESIGN INTENT:
+    //   Show the first-contact gap as an operational incident — not a feature list.
+    //   One dominant primary-gap panel + two smaller supporting gap cards.
+    //   Dark tone feels like flagged case notes.
+    // VISUAL DIRECTION:
+    //   Primary gap: large block, amber left-border, situation → cost → handled state.
+    //   Secondary gaps: compact rows beside or below, teal dot on handled-state line.
+    // DATA NEEDED LATER:
+    //   primaryGap { title, situation, cost, handledState }
+    //   gaps[] { title, situation, handledState }
+    // BOUNDARY: AI owns first reply and context capture, not CRM lifecycle.
+    // DO NOT: Use equal-weight feature cards. Turn into bullet list. Add timeline.
     responseGap: {
       header: {
         kicker: 'The real problem',
@@ -52,237 +94,104 @@ export const aiLeadHandlingPage = {
         description:
           'Most enquiries do not die because the business is uninterested. They die in the gap between arriving and being answered. AI can close that gap — but only if there is something clear on the other side.',
       },
-      primaryGap: {
-        title: 'First response is too slow',
-        situation:
-          'An enquiry arrives while the team is on a job, in a meeting, or finished for the day. Nobody sees it until later. The person who sent it has already tried the next result.',
-        cost: 'Response speed is often the only variable in who gets the work. A slow first response does not delay the decision — it loses it.',
-        handledState:
-          'AI replies within seconds. Enough to acknowledge, collect context, and keep the conversation alive until a person picks it up.',
-      },
-      gaps: [
-        {
-          title: 'After-hours enquiries vanish',
-          situation:
-            'Forms, messages, and voicemails that arrive outside business hours wait until morning. By then the conversation is cold or gone.',
-          handledState:
-            'After-hours contacts get an immediate response. Details captured and queued for the team with context already attached.',
-        },
-        {
-          title: 'Missed calls stay missed',
-          situation:
-            'A call goes unanswered. The caller may leave a voicemail. Most do not. The number sits in a call log nobody checks quickly enough.',
-          handledState:
-            'Missed calls trigger an immediate text acknowledgement. The caller gets a response. The team gets the callback queued with context.',
-        },
-        {
-          title: 'AI added to a broken path makes things worse',
-          situation:
-            'AI installed on top of unclear enquiry paths just speeds up the confusion. It answers faster into a dead end.',
-          handledState:
-            'AI sits inside a path that goes somewhere: acknowledgement, detail capture, routing to booking, CRM, or a named person.',
-        },
-      ],
     },
 
-    connectedVsIsolated: {
-      header: {
-        kicker: 'Isolated vs connected',
-        title:
-          'The difference is not whether AI replies. [[muted:It is whether the reply leads anywhere.]]',
-        description:
-          'Most businesses that tried AI before and found it unhelpful added it on top of an unclear process. The technology was not the problem.',
-      },
-      leftSide: {
-        label: 'Isolated AI',
-        note: 'Bolted on · No path after first reply',
-      },
-      rightSide: {
-        label: 'Connected AI',
-        note: 'Integrated · Every reply routes forward',
-      },
-      criteria: [
-        {
-          name: 'First response',
-          left: 'AI replies. Then the conversation stalls — no clear next step.',
-          right: 'AI replies, captures details, and routes the conversation to the next action.',
-        },
-        {
-          name: 'Channel consistency',
-          left: 'Website chat, missed calls, and messages each behave differently. The customer restarts every time.',
-          right: 'All channels follow one handling path. One conversation, one record.',
-        },
-        {
-          name: 'Team context',
-          left: 'Your team picks up the lead cold. No context on what was already discussed.',
-          right: 'Your team receives the conversation with details already captured.',
-        },
-        {
-          name: 'Escalation',
-          left: 'Escalation rules are vague. AI either overreaches or throws everything back.',
-          right: 'Clear rules: AI handles the repeatable front end, people handle judgement calls.',
-        },
-        {
-          name: 'Outcome visibility',
-          left: 'Reports show chat volume. Nobody can see how many enquiries were actually recovered.',
-          right: 'Which contacts were handled, what was routed, what reached the team.',
-        },
-      ],
-    },
-
-    channelStates: {
+    // ── 3. CHANNEL BREAKDOWN ─────────────────────────────────────────────────
+    // DESIGN INTENT:
+    //   A single dispatch board — not three floating cards.
+    //   One bordered panel containing rows: channel name | current state | handled state.
+    //   Reader sees all three channels and both states as one status surface.
+    // VISUAL DIRECTION:
+    //   Board header: "Channels · Response state"
+    //   Row columns: Channel | Current (amber) | Handled (teal)
+    //   Rows share borders — they are part of one board, not separate cards.
+    // DATA NEEDED LATER:
+    //   rows[] { channel, currentState, handledState }
+    // DO NOT: Three floating cards. Equal-weight grid. Repeat Section 2.
+    channelBreakdown: {
       header: {
         kicker: 'Where it happens',
-        title: 'Three channels where the gap costs you work',
+        title: 'Three channels. [[muted:The same gap in a different form.]]',
         description:
-          'Different enquiry types arrive through different channels. Each has the same problem in a different form.',
+          'Different channels, same problem. The contact arrives. Nobody can respond in time.',
       },
-      channels: [
-        {
-          name: 'Phone and missed calls',
-          state: 'unhandled',
-          currentLabel: 'Current',
-          currentNote:
-            'Calls go unanswered during jobs. Voicemails sit unchecked. Callbacks happen when someone remembers.',
-          handledLabel: 'Handled',
-          handledNote:
-            'Missed calls trigger an immediate text. Details captured. Team has context before calling back.',
-        },
-        {
-          name: 'Website chat and forms',
-          state: 'unhandled',
-          currentLabel: 'Current',
-          currentNote:
-            'Forms land in a shared inbox. Chat sits open overnight. First reply depends on who checks and when.',
-          handledLabel: 'Handled',
-          handledNote:
-            'Chat answered immediately. Forms acknowledged on receipt. Both logged with the context the team needs.',
-        },
-        {
-          name: 'After-hours messages',
-          state: 'unhandled',
-          currentLabel: 'Current',
-          currentNote:
-            'WhatsApp, DMs, and out-of-hours messages wait until morning. The window where interest was highest has closed.',
-          handledLabel: 'Handled',
-          handledNote:
-            'After-hours messages get an immediate response. The conversation stays alive until the team is available.',
-        },
-      ],
     },
 
-    handlingPath: {
+    // ── 4. RESPONSE PATH ─────────────────────────────────────────────────────
+    // DESIGN INTENT:
+    //   A convergence diagram: channels in → AI Lead Handling junction → outputs out.
+    //   Also carries the connected-vs-isolated idea (replaces removed section):
+    //   isolated AI replies into nothing; connected AI routes to booking/CRM/team.
+    //   The junction block must dominate — it is the central argument.
+    // VISUAL DIRECTION:
+    //   Input list (left): 3 compact rows, amber-tinted border. Secondary.
+    //   Junction (centre): large block, cyan glow, "AI Lead Handling" dominant label.
+    //   Output list (right): 3 rows with destination + one-line note.
+    //     Teal = booking. Cyan = CRM queue + context (NOT follow-up — CRM owns that).
+    //     Neutral = team escalation with full conversation history.
+    // DATA NEEDED LATER:
+    //   inputs[] { label }
+    //   junction { title, note }
+    //   outputs[] { label, type: 'booking'|'crm'|'team', note }
+    // BOUNDARY:
+    //   CRM output label must say "CRM queue + context" NOT "CRM + follow-up".
+    //   Follow-up sequences belong to CRM Automation, not AI Lead Handling.
+    // DO NOT:
+    //   Equal-weight inputs/junction/outputs. Comparison table. SaaS routing diagram.
+    responsePath: {
       header: {
         kicker: 'How it works',
         title: 'Channels in. [[muted:One handled path out.]]',
         description:
-          'Calls, forms, and messages arrive through separate channels. AI handles the first step across all of them and routes each one to the right next action.',
+          'Calls, forms, and messages arrive through separate channels. Isolated AI replies — and the conversation stalls. Connected AI routes each one to the next clear step.',
       },
-      inputs: [
-        { label: 'Phone call or missed call' },
-        { label: 'Website chat or form' },
-        { label: 'After-hours message or DM' },
-      ],
-      junction: {
-        title: 'AI first step',
-        note: 'Acknowledges, answers common questions, captures details, checks fit',
-      },
-      outputs: [
-        {
-          label: 'Booking confirmed',
-          type: 'booking',
-          note: 'Direct path for ready-to-book contacts',
-        },
-        {
-          label: 'CRM entry + follow-up',
-          type: 'crm',
-          note: 'Logged with context for the follow-up sequence',
-        },
-        {
-          label: 'Team escalation',
-          type: 'team',
-          note: 'Conversation handed to a person with full history',
-        },
-      ],
     },
 
-    realMoments: {
+    // ── 5. AI BOUNDARY ───────────────────────────────────────────────────────
+    // DESIGN INTENT:
+    //   Two-column ownership panel. Left = what this covers. Right = what it does not touch.
+    //   Not Fit Filter (that is about business fit). This is about system scope.
+    //   Protects against CRM, SWS, LSA, and chatbot-SaaS drift.
+    // VISUAL DIRECTION:
+    //   Left column: "What this covers" — cyan heading, teal left-border list items.
+    //   Right column: "What it does not touch" — muted heading, subtle list items.
+    //   Items are short, specific action phrases — not prose.
+    // DATA NEEDED LATER:
+    //   owns[] { label }
+    //   doesNotOwn[] { label }
+    // BOUNDARY:
+    //   "Does not own" must include: CRM follow-up sequences, website structure,
+    //   local SEO, review generation, revenue reporting, replacing team judgement.
+    // DO NOT:
+    //   Card-per-item grid. Feature-checklist style. Imply CRM/SWS overlap.
+    aiBoundary: {
       header: {
-        kicker: 'In practice',
-        title: 'What this looks like during a normal week',
-        description: 'Not theory. Specific moments where the gap closes instead of costing work.',
-      },
-      examples: [
-        {
-          trigger: 'A call comes in after hours from someone needing a quote.',
-          response: 'Immediate text sent. The caller knows they have been seen.',
-          capture: 'What they need and when they are free — captured before interest drops.',
-          outcome: 'Queued for the morning. Team has full context before calling back.',
-        },
-        {
-          trigger: 'Someone on the website asks about booking a consultation.',
-          response: 'Question answered immediately. Booking path offered.',
-          capture: 'Name, number, and reason for the enquiry collected.',
-          outcome: 'If they drop off before booking, the follow-up queue gets them.',
-        },
-        {
-          trigger: 'Someone calls with a pricing question before committing.',
-          response: 'Standard pricing context provided. Fit checked based on what they need.',
-          capture: 'Complex questions flagged and routed directly to a person.',
-          outcome: 'Conversation recorded. Whoever picks it up starts with the full picture.',
-        },
-        {
-          trigger: 'A lead starts a chat but drops off halfway through.',
-          response: 'Partial conversation saved. No data lost.',
-          capture: 'What they shared and where they stopped — preserved.',
-          outcome: 'Moved into follow-up queue. Context ready for whoever continues it.',
-        },
-      ],
-    },
-
-    handoffMap: {
-      header: {
-        kicker: 'System boundaries',
-        title: 'What AI hands off — and to what',
+        kicker: 'System scope',
+        title: 'What this covers. [[muted:What it does not touch.]]',
         description:
-          'AI Lead Handling owns the first step. What happens next belongs to the connected system.',
+          'Knowing the boundary makes it more useful, not less. AI handles the first step. The team and connected systems handle everything after.',
       },
-      source: {
-        label: 'AI Lead Handling',
-        responsibilities: [
-          'Instant first response',
-          'Common question handling',
-          'Contact detail capture',
-          'Basic fit check',
-          'Escalation to team when needed',
-        ],
-        statusLines: ['First contact handled', 'Context captured', 'Path clear'],
-      },
-      connections: [
-        {
-          targetSystem: 'CRM & Automation',
-          handoff:
-            'Every handled conversation passes to the CRM with contact details, what was discussed, and the routing decision already attached.',
-          boundary:
-            'AI Lead Handling stops at handoff. CRM Automation owns the lead from that point — follow-up scheduling, lifecycle tracking, and visibility forward.',
-        },
-        {
-          targetSystem: 'Your team',
-          handoff:
-            'Conversations that need judgement — complex scope, sensitive situations, or high-value enquiries — are escalated with the full conversation history attached.',
-          boundary:
-            'AI handles the repeatable front end. People handle the calls that require real context, relationship, or a decision that cannot be scripted.',
-        },
-        {
-          targetSystem: 'Smart Website Systems',
-          handoff:
-            'The website captures the first enquiry signal — form submissions, chat initiations, call triggers. AI Lead Handling takes the response from that point.',
-          boundary:
-            'Smart Website owns the capture structure and routing. AI Lead Handling owns what happens in the response gap — after the signal, before anyone can reply.',
-        },
-      ],
     },
 
+    // ── 6. SCENARIO STUDY ────────────────────────────────────────────────────
+    // DESIGN INTENT:
+    //   Richest section. Shows the system in operational context without fake proof.
+    //   Visible proof-type disclaimer (Scenario Study) — must be prominent.
+    //   Three-part narrative: context → before → change → after.
+    //   The change panel will later include a mini response log (2-3 moment rows).
+    // VISUAL DIRECTION:
+    //   Context block (amber): proof-type label, title, description, constraint italic.
+    //   Before panel: amber-tinted dark card, 3 bullets — what was happening.
+    //   Change panel: 3 bullets + mini log rows: trigger | AI response | outcome.
+    //   After panel: teal-accented dark card, 3 bullets + directional metrics table.
+    // DATA NEEDED LATER:
+    //   proofType
+    //   context { label, title, description, constraint }
+    //   before { label, title, bullets[] }
+    //   change { label, title, bullets[], moments[] { trigger, response, outcome } }
+    //   after { label, title, bullets[], metrics[] { label, before, after } }
+    // DO NOT:
+    //   Present as real client work. Fabricate percentages. Use "we achieved X%".
     scenarioStudy: {
       header: {
         kicker: 'Scenario study',
@@ -290,52 +199,20 @@ export const aiLeadHandlingPage = {
         description:
           'A service business was losing steady after-hours enquiries to slow response times. Here is the kind of handling problem the system addresses.',
       },
-      proofType: 'Scenario Study',
-      context: {
-        label: 'Context',
-        title: 'Busy trade business. Steady evening enquiries. Team unavailable after 6pm.',
-        description:
-          'Calls, forms, and messages arriving after hours were waiting until the next morning. Some came back. Most had already found someone who replied first.',
-        constraint: 'Illustrative scenario. Not attributed client work. No outcome guarantee.',
-      },
-      before: {
-        label: 'Before',
-        title: 'Enquiries arrived when nobody could respond',
-        bullets: [
-          'Missed calls showed up in the call log the next morning. No acknowledgement had been sent.',
-          'Website forms landed in an inbox nobody checked until the day started. Often eight to twelve hours later.',
-          'The team had no way to know which missed contact was the most urgent or most recent.',
-        ],
-      },
-      change: {
-        label: 'What changed',
-        title: 'AI handled the first step. The team handled the rest.',
-        bullets: [
-          'Missed calls triggered an immediate text. The caller knew they had been seen.',
-          'After-hours forms received an acknowledgement within seconds. Key details captured.',
-          'The team started each morning with a clear queue — who contacted them, what they needed, and when.',
-        ],
-      },
-      after: {
-        label: 'After',
-        title: 'Fewer enquiries disappeared before the team could respond',
-        bullets: [
-          'More after-hours contacts stayed in the conversation instead of going cold.',
-          'The team handled the real conversations. AI handled the gap.',
-          'Response speed became consistent across all hours, not just working hours.',
-        ],
-        metrics: [
-          { label: 'After-hours response', before: 'Next morning', after: 'Within seconds' },
-          { label: 'Team context on arrival', before: 'None', after: 'Full conversation' },
-          {
-            label: 'Missed call recovery',
-            before: 'Manual, delayed',
-            after: 'Immediate text-back',
-          },
-        ],
-      },
     },
 
+    // ── 7. FIT FILTER ────────────────────────────────────────────────────────
+    // DESIGN INTENT:
+    //   Two-column qualification panel: strong fit vs poor fit.
+    //   Content is mostly preserved from prior version — it is well-written and honest.
+    //   Visual improvement: column label treatment, teal/muted accent, left-border items.
+    // VISUAL DIRECTION:
+    //   Column labels: eyebrow style, teal for strong / muted for poor.
+    //   Items: left-border accent (teal strong / subtle poor), label + note.
+    // DATA NEEDED LATER (carry existing data from this pass):
+    //   strongFit { label, items[] { text, note } }
+    //   poorFit { label, items[] { text, note } }
+    // DO NOT: Sales hype on strong fit. Scare copy on poor fit. Icons everywhere.
     fitFilter: {
       header: {
         kicker: 'Fit check',
@@ -387,6 +264,7 @@ export const aiLeadHandlingPage = {
       },
     },
 
+    // ── 8. FAQ ───────────────────────────────────────────────────────────────
     faq: {
       header: {
         kicker: 'Common questions',
@@ -440,6 +318,9 @@ export const aiLeadHandlingPage = {
     },
   },
 
+  // ---------------------------------------------------------------------------
+  // CTA
+  // ---------------------------------------------------------------------------
   cta: {
     heading: {
       kicker: 'Final step',

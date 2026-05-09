@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // CSS: src/styles/services.css (aih-* prefix)
 // Related: injected globally by services/config.tsx (RelatedSection)
 
@@ -13,10 +12,21 @@ import { buildContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 // =============================================================================
-// AiLeadHandlingRenderer
-// Sections: hero · responseGap · connectedVsIsolated · channelStates ·
-//           handlingPath · realMoments · handoffMap · scenarioStudy ·
-//           fitFilter · faq · cta
+// AiLeadHandlingRenderer — design skeleton
+//
+// Approved section order:
+//   1. Hero               — HeroFrame
+//   2. responseGap        — SectionFrame / tone: dark
+//   3. channelBreakdown   — SectionFrame / tone: mist
+//   4. responsePath       — SectionFrame / tone: gradient-dark
+//   5. aiBoundary         — SectionFrame / tone: white
+//   6. scenarioStudy      — SectionFrame / tone: gradient-dark
+//   7. fitFilter          — SectionFrame / tone: mist
+//   8. FAQ                — FAQSection / tone: white / variant: split
+//   9. CTA                — DecisionPanel
+//
+// Each SectionFrame body holds a design-intent comment only.
+// Custom visual JSX and CSS will be added section-by-section.
 // Related: injected globally by services/config.tsx (RelatedSection)
 // CSS: src/styles/services.css (aih-* prefix)
 // =============================================================================
@@ -29,19 +39,27 @@ interface Props {
 // -- Label constants (end in _DOT -- allowed by hardcoded-content validator) --
 
 const ARIA_HERO_DOT = 'AI Lead Handling -- page hero';
-const ARIA_RESPONSE_GAP_DOT = 'Response gap';
-const ARIA_COMPARISON_DOT = 'Connected vs isolated AI';
-const ARIA_CHANNELS_DOT = 'Channel states';
-const ARIA_PATH_DOT = 'Handling path';
-const ARIA_MOMENTS_DOT = 'Real moments';
-const ARIA_HANDOFF_DOT = 'Handoff map';
+const ARIA_RESPONSE_GAP_DOT = 'First-contact gap';
+const ARIA_CHANNEL_BREAKDOWN_DOT = 'Channel breakdown';
+const ARIA_RESPONSE_PATH_DOT = 'Connected response path';
+const ARIA_AI_BOUNDARY_DOT = 'AI system boundary';
 const ARIA_SCENARIO_DOT = 'Scenario study';
 const ARIA_FIT_DOT = 'Fit filter';
 const ARIA_FAQ_DOT = 'Frequently asked questions';
 
 // -- Section map type ---------------------------------------------------------
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SectionsMap = Record<string, any>;
+
+// -- Helper -------------------------------------------------------------------
+
+function requireHeadingDescription(description: string | undefined, section: string) {
+  if (!description || description.trim().length === 0) {
+    throw new Error(`[${section}] Invalid data`);
+  }
+  return description;
+}
 
 // =============================================================================
 // Renderer
@@ -50,17 +68,8 @@ type SectionsMap = Record<string, any>;
 export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
   const { hero } = data;
   const sections = data.sections as SectionsMap;
-  const {
-    responseGap,
-    connectedVsIsolated,
-    channelStates,
-    handlingPath,
-    realMoments,
-    handoffMap,
-    scenarioStudy,
-    fitFilter,
-    faq,
-  } = sections;
+  const { responseGap, channelBreakdown, responsePath, aiBoundary, scenarioStudy, fitFilter, faq } =
+    sections;
 
   const contactHref = buildContactHref({
     system: 'ai-lead-handling',
@@ -69,8 +78,18 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
   });
 
   return (
-    <div className='aih-page'>
+    <>
       {/* -- HERO ---------------------------------------------------------------- */}
+      {/*
+        DESIGN INTENT:
+          First-Contact Control Surface. Hero panel shows incoming channel states
+          as operational data — the problem is visible before the heading explains it.
+        VISUAL DIRECTION:
+          Dark glass panel (right slot). Channel rows with state-driven amber/teal accent.
+          Header strip: label + live-indicator dot. Footer: unhandled / covered counts.
+        CSS: aih-hero__panel, aih-hero__channel[data-state], aih-hero__panel-footer
+        NEXT PASS: review channel rows, add live-dot pulse animation, tighten footer.
+      */}
       <HeroFrame
         className='aih-hero'
         ariaLabel={ARIA_HERO_DOT}
@@ -111,213 +130,113 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
         }
       />
 
-      {/* -- RESPONSE GAP ------------------------------------------------------- */}
+      {/* -- RESPONSE GAP -------------------------------------------------------- */}
       <SectionFrame
         className='aih-response-gap'
         ariaLabel={ARIA_RESPONSE_GAP_DOT}
-        tone='mist'
+        tone='dark'
         heading={{
           kicker: responseGap.header.kicker,
           title: responseGap.header.title,
-          description: responseGap.header.description,
+          description: requireHeadingDescription(responseGap.header.description, 'responseGap'),
         }}
       >
-        <div className='aih-response-gap__body'>
-          <div className='aih-response-gap__primary'>
-            <p className='aih-response-gap__primary-title'>{responseGap.primaryGap.title}</p>
-            <p className='aih-response-gap__primary-situation'>
-              {responseGap.primaryGap.situation}
-            </p>
-            <p className='aih-response-gap__primary-cost'>{responseGap.primaryGap.cost}</p>
-            <p className='aih-response-gap__primary-handled'>
-              {responseGap.primaryGap.handledState}
-            </p>
-          </div>
-          <ul className='aih-response-gap__gaps'>
-            {responseGap.gaps?.map((gap: any) => (
-              <li key={gap.title} className='aih-response-gap__gap'>
-                <strong className='aih-response-gap__gap-title'>{gap.title}</strong>
-                <span className='aih-response-gap__gap-situation'>{gap.situation}</span>
-                <span className='aih-response-gap__gap-handled'>{gap.handledState}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/*
+          DESIGN INTENT:
+            Show the first-contact gap as an operational incident — not a feature list.
+            One dominant primary-gap panel + two smaller supporting gap cards.
+          VISUAL DIRECTION:
+            Primary gap: large block, amber left-border, situation → cost → handled state.
+            Secondary gaps: compact rows beside or below. Teal dot on handled-state line.
+          DATA NEEDED:
+            responseGap.primaryGap { title, situation, cost, handledState }
+            responseGap.gaps[] { title, situation, handledState }
+          DO NOT: Equal-weight cards. Bullet list. Process timeline. Decorative icons.
+        */}
       </SectionFrame>
 
-      {/* -- CONNECTED VS ISOLATED ----------------------------------------------- */}
+      {/* -- CHANNEL BREAKDOWN --------------------------------------------------- */}
       <SectionFrame
-        className='aih-comparison'
-        ariaLabel={ARIA_COMPARISON_DOT}
-        tone='white'
-        heading={{
-          kicker: connectedVsIsolated.header.kicker,
-          title: connectedVsIsolated.header.title,
-          description: connectedVsIsolated.header.description,
-        }}
-      >
-        <div className='aih-comparison__board'>
-          <div className='aih-comparison__headers'>
-            <div className='aih-comparison__col-header aih-comparison__col-header--left'>
-              <span className='aih-comparison__col-label'>
-                {connectedVsIsolated.leftSide.label}
-              </span>
-              <span className='aih-comparison__col-note'>{connectedVsIsolated.leftSide.note}</span>
-            </div>
-            <div className='aih-comparison__col-header aih-comparison__col-header--right'>
-              <span className='aih-comparison__col-label'>
-                {connectedVsIsolated.rightSide.label}
-              </span>
-              <span className='aih-comparison__col-note'>{connectedVsIsolated.rightSide.note}</span>
-            </div>
-          </div>
-          <ul className='aih-comparison__criteria'>
-            {connectedVsIsolated.criteria?.map((row: any) => (
-              <li key={row.name} className='aih-comparison__row'>
-                <span className='aih-comparison__row-name'>{row.name}</span>
-                <span className='aih-comparison__row-left'>{row.left}</span>
-                <span className='aih-comparison__row-right'>{row.right}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </SectionFrame>
-
-      {/* -- CHANNEL STATES ------------------------------------------------------ */}
-      <SectionFrame
-        className='aih-channels'
-        ariaLabel={ARIA_CHANNELS_DOT}
+        className='aih-channel-breakdown'
+        ariaLabel={ARIA_CHANNEL_BREAKDOWN_DOT}
         tone='mist'
         heading={{
-          kicker: channelStates.header.kicker,
-          title: channelStates.header.title,
-          description: channelStates.header.description,
+          kicker: channelBreakdown.header.kicker,
+          title: channelBreakdown.header.title,
+          description: requireHeadingDescription(
+            channelBreakdown.header.description,
+            'channelBreakdown'
+          ),
         }}
       >
-        <ul className='aih-channels__list'>
-          {channelStates.channels?.map((ch: any) => (
-            <li key={ch.name} className='aih-channels__item' data-state={ch.state}>
-              <span className='aih-channels__name'>{ch.name}</span>
-              <div className='aih-channels__state-block aih-channels__state-block--before'>
-                <span className='aih-channels__state-label'>{ch.currentLabel}</span>
-                <span className='aih-channels__state-note'>{ch.currentNote}</span>
-              </div>
-              <div className='aih-channels__state-block aih-channels__state-block--after'>
-                <span className='aih-channels__state-label'>{ch.handledLabel}</span>
-                <span className='aih-channels__state-note'>{ch.handledNote}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {/*
+          DESIGN INTENT:
+            Single dispatch board — not three floating cards.
+            One bordered panel, rows: channel name | current state | handled state.
+          VISUAL DIRECTION:
+            Board header: "Channels · Response state".
+            Rows share borders — one board, not separate cards.
+            Current column: amber. Handled column: teal.
+          DATA NEEDED:
+            channelBreakdown.rows[] { channel, currentState, handledState }
+          DO NOT: Three floating equal-weight cards. Repeated before/after card format.
+        */}
       </SectionFrame>
 
-      {/* -- HANDLING PATH ------------------------------------------------------- */}
+      {/* -- RESPONSE PATH ------------------------------------------------------- */}
       <SectionFrame
-        className='aih-path'
-        ariaLabel={ARIA_PATH_DOT}
+        className='aih-response-path'
+        ariaLabel={ARIA_RESPONSE_PATH_DOT}
         tone='gradient-dark'
         heading={{
-          kicker: handlingPath.header.kicker,
-          title: handlingPath.header.title,
-          description: handlingPath.header.description,
+          kicker: responsePath.header.kicker,
+          title: responsePath.header.title,
+          description: requireHeadingDescription(responsePath.header.description, 'responsePath'),
         }}
       >
-        <div className='aih-path__flow'>
-          <ul className='aih-path__inputs'>
-            {handlingPath.inputs?.map((input: any) => (
-              <li key={input.label} className='aih-path__input'>
-                {input.label}
-              </li>
-            ))}
-          </ul>
-          <div className='aih-path__junction'>
-            <span className='aih-path__junction-title'>{handlingPath.junction.title}</span>
-            <span className='aih-path__junction-note'>{handlingPath.junction.note}</span>
-          </div>
-          <ul className='aih-path__outputs'>
-            {handlingPath.outputs?.map((output: any) => (
-              <li key={output.label} className='aih-path__output' data-type={output.type}>
-                <span className='aih-path__output-label'>{output.label}</span>
-                <span className='aih-path__output-note'>{output.note}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/*
+          DESIGN INTENT:
+            Convergence: channels in → AI junction → outputs out.
+            Also carries connected-vs-isolated concept (removed standalone section).
+            The junction block must dominate — it is the central argument.
+          VISUAL DIRECTION:
+            Input list (left): amber-tinted border-left. Secondary weight.
+            Junction (centre): large block, cyan glow, dominant "AI Lead Handling" label.
+            Output list (right): booking=teal, crm=cyan, team=neutral.
+          DATA NEEDED:
+            responsePath.inputs[] { label }
+            responsePath.junction { title, note }
+            responsePath.outputs[] { label, type: 'booking'|'crm'|'team', note }
+          BOUNDARY: CRM output = "CRM queue + context" NOT "CRM + follow-up".
+          DO NOT: Equal-weight columns. Comparison table. Generic SaaS routing diagram.
+        */}
       </SectionFrame>
 
-      {/* -- REAL MOMENTS -------------------------------------------------------- */}
+      {/* -- AI BOUNDARY --------------------------------------------------------- */}
       <SectionFrame
-        className='aih-moments'
-        ariaLabel={ARIA_MOMENTS_DOT}
+        className='aih-boundary'
+        ariaLabel={ARIA_AI_BOUNDARY_DOT}
         tone='white'
         heading={{
-          kicker: realMoments.header.kicker,
-          title: realMoments.header.title,
-          description: realMoments.header.description,
+          kicker: aiBoundary.header.kicker,
+          title: aiBoundary.header.title,
+          description: requireHeadingDescription(aiBoundary.header.description, 'aiBoundary'),
         }}
       >
-        <ul className='aih-moments__list'>
-          {realMoments.examples?.map((ex: any) => (
-            <li key={ex.trigger} className='aih-moments__item'>
-              <p className='aih-moments__trigger'>{ex.trigger}</p>
-              <div className='aih-moments__log'>
-                <div className='aih-moments__log-entry aih-moments__log-entry--response'>
-                  <span className='aih-moments__log-label'>AI response</span>
-                  <span className='aih-moments__log-text'>{ex.response}</span>
-                </div>
-                <div className='aih-moments__log-entry aih-moments__log-entry--capture'>
-                  <span className='aih-moments__log-label'>Captured</span>
-                  <span className='aih-moments__log-text'>{ex.capture}</span>
-                </div>
-                <div className='aih-moments__log-entry aih-moments__log-entry--outcome'>
-                  <span className='aih-moments__log-label'>Team receives</span>
-                  <span className='aih-moments__log-text'>{ex.outcome}</span>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </SectionFrame>
-
-      {/* -- HANDOFF MAP --------------------------------------------------------- */}
-      <SectionFrame
-        className='aih-handoff'
-        ariaLabel={ARIA_HANDOFF_DOT}
-        tone='mist'
-        heading={{
-          kicker: handoffMap.header.kicker,
-          title: handoffMap.header.title,
-          description: handoffMap.header.description,
-        }}
-      >
-        <div className='aih-handoff__board'>
-          <div className='aih-handoff__source'>
-            <span className='aih-handoff__source-label'>{handoffMap.source.label}</span>
-            <ul className='aih-handoff__source-responsibilities'>
-              {handoffMap.source.responsibilities?.map((r: string) => (
-                <li key={r} className='aih-handoff__source-responsibility'>
-                  {r}
-                </li>
-              ))}
-            </ul>
-            <ul className='aih-handoff__source-status'>
-              {handoffMap.source.statusLines?.map((s: string) => (
-                <li key={s} className='aih-handoff__source-status-line'>
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <ul className='aih-handoff__connections'>
-            {handoffMap.connections?.map((conn: any) => (
-              <li key={conn.targetSystem} className='aih-handoff__connection'>
-                <span className='aih-handoff__connection-target'>{conn.targetSystem}</span>
-                <p className='aih-handoff__connection-handoff'>{conn.handoff}</p>
-                <p className='aih-handoff__connection-boundary'>{conn.boundary}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/*
+          DESIGN INTENT:
+            Two-column ownership panel. Left = what this covers. Right = does not touch.
+            Protects against CRM, SWS, LSA, and chatbot-SaaS drift.
+          VISUAL DIRECTION:
+            Left: cyan heading, teal left-border list items.
+            Right: muted heading, subtle list items.
+            Items: short action phrases — not prose.
+          DATA NEEDED:
+            aiBoundary.owns[] { label }
+            aiBoundary.doesNotOwn[] { label }
+          BOUNDARY: "Does not own" must include CRM follow-up sequences and lifecycle.
+          DO NOT: Card-per-item grid. Feature checklist. Imply CRM/SWS overlap.
+        */}
       </SectionFrame>
 
       {/* -- SCENARIO STUDY ------------------------------------------------------ */}
@@ -328,45 +247,23 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
         heading={{
           kicker: scenarioStudy.header.kicker,
           title: scenarioStudy.header.title,
-          description: scenarioStudy.header.description,
+          description: requireHeadingDescription(scenarioStudy.header.description, 'scenarioStudy'),
         }}
       >
-        <div className='aih-scenario__body'>
-          <div className='aih-scenario__context'>
-            <span className='aih-scenario__context-label'>{scenarioStudy.context.label}</span>
-            <p className='aih-scenario__context-title'>{scenarioStudy.context.title}</p>
-            <p className='aih-scenario__context-description'>{scenarioStudy.context.description}</p>
-            <p className='aih-scenario__constraint'>{scenarioStudy.context.constraint}</p>
-          </div>
-          <div className='aih-scenario__panels'>
-            {([scenarioStudy.before, scenarioStudy.change, scenarioStudy.after] as any[]).map(
-              (panel: any) => (
-                <div key={panel.label} className='aih-scenario__panel'>
-                  <span className='aih-scenario__panel-label'>{panel.label}</span>
-                  <p className='aih-scenario__panel-title'>{panel.title}</p>
-                  <ul className='aih-scenario__bullets'>
-                    {panel.bullets?.map((b: string) => (
-                      <li key={b} className='aih-scenario__bullet'>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  {panel.metrics && (
-                    <ul className='aih-scenario__metrics'>
-                      {panel.metrics.map((m: any) => (
-                        <li key={m.label} className='aih-scenario__metric'>
-                          <span className='aih-scenario__metric-label'>{m.label}</span>
-                          <span className='aih-scenario__metric-before'>{m.before}</span>
-                          <span className='aih-scenario__metric-after'>{m.after}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              )
-            )}
-          </div>
-        </div>
+        {/*
+          DESIGN INTENT:
+            Shows system in operational context. Proof-type disclaimer must be visible.
+            Three-part narrative: context → before → change → after.
+            Change panel will include a mini response log (2-3 moment rows) later.
+          VISUAL DIRECTION:
+            Context block (amber): label, title, description, italic constraint.
+            Before panel: amber-tinted dark card, 3 bullets.
+            Change panel: 3 bullets + mini log rows (trigger | response | outcome).
+            After panel: teal-accented dark card, 3 bullets + directional metrics table.
+          DATA NEEDED:
+            scenarioStudy.proofType, context, before, change (with moments[]), after (with metrics[])
+          DO NOT: Present as real client work. Fabricate percentages. Hide constraint disclaimer.
+        */}
       </SectionFrame>
 
       {/* -- FIT FILTER ---------------------------------------------------------- */}
@@ -377,33 +274,21 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
         heading={{
           kicker: fitFilter.header.kicker,
           title: fitFilter.header.title,
-          description: fitFilter.header.description,
+          description: requireHeadingDescription(fitFilter.header.description, 'fitFilter'),
         }}
       >
-        <div className='aih-fit__columns'>
-          <div className='aih-fit__column aih-fit__column--strong'>
-            <span className='aih-fit__column-label'>{fitFilter.strongFit.label}</span>
-            <ul className='aih-fit__items'>
-              {fitFilter.strongFit.items?.map((item: any) => (
-                <li key={item.text} className='aih-fit__item'>
-                  <span className='aih-fit__item-text'>{item.text}</span>
-                  <span className='aih-fit__item-note'>{item.note}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className='aih-fit__column aih-fit__column--poor'>
-            <span className='aih-fit__column-label'>{fitFilter.poorFit.label}</span>
-            <ul className='aih-fit__items'>
-              {fitFilter.poorFit.items?.map((item: any) => (
-                <li key={item.text} className='aih-fit__item'>
-                  <span className='aih-fit__item-text'>{item.text}</span>
-                  <span className='aih-fit__item-note'>{item.note}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        {/*
+          DESIGN INTENT:
+            Honest qualification. Two columns: Strong Fit / Probably Not.
+            Content preserved from prior version — do not replace copy yet.
+          VISUAL DIRECTION:
+            Column labels: eyebrow-style, teal strong / muted poor.
+            Items: left-border accent, label bold, note smaller.
+          DATA SHAPE (already present):
+            fitFilter.strongFit { label, items[] { text, note } }
+            fitFilter.poorFit { label, items[] { text, note } }
+          DO NOT: Sales hype on strong fit. Cards per item. Decorative icons.
+        */}
       </SectionFrame>
 
       {/* -- FAQ ----------------------------------------------------------------- */}
@@ -424,6 +309,6 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
         actions={data.cta.actions}
         expectations={data.cta.expectations}
       />
-    </div>
+    </>
   );
 }
