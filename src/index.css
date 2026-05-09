@@ -21,6 +21,8 @@
 @import './styles/services/smart-website.css';
 @import './styles/services/local-seo.css';
 @import './styles/services.css';
+@import './styles/industries/category.css';
+@import './styles/industries/detail.css';
 
 @tailwind base;
 @tailwind components;

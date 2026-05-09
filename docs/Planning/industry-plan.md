@@ -1,182 +1,146 @@
 # Industry Domain Rebuild Plan
 
-> Working planning file for the industry-domain audit and rebuild.
-> GPT-5.5 will recreate this document after the full industry audit.
-> Until then, use this as the temporary direction guardrail.
+## Purpose
 
-## Current Decision
+Prepare the industry domain for clean final rebuilds by Claude Opus. This plan records the current repo inventory, page-type rules, approved skeleton architecture, and guardrails for the category/detail pages now registered under `/industries/[...slug]`.
 
-Industries will follow the same corrected workflow used for services:
+This pass is a setup pass only. It resets old industry category/detail render gravity, removes old data shapes from the registered pages, and leaves direct skeleton renderers that can be rewritten page by page later.
 
-1. Audit the industry registry, routes, data, renderers, and CSS.
-2. Classify pages as category pages, detail pages, missing pages, or cleanup candidates.
-3. Recreate this file from the audit result.
-4. Reset industry pages to direct renderer skeletons.
-5. Let Claude Opus rebuild final industry pages from this plan.
+## Current Inventory
 
-Old industry data and renderers are inventory only. They are not design blueprints.
+The industry dynamic route is `src/app/industries/[...slug]/page.tsx`. It resolves graph nodes of type `industry-category` and `industry-detail`, then renders registered pages through `src/domains/industries/config.tsx`.
 
-GPT-5.5 should not read or use any external design implementation during the industry audit or skeleton setup. The visual ideas needed for planning are written directly in this document. Do not copy external design code, inline styles, raw colors, Tailwind classes, mock links, local-state patterns, or component structure.
+The registry contains 32 dynamic pages:
 
-## Page Types
+- 6 category pages.
+- 26 detail pages.
 
-### Industry Category Pages
+The separate `/industries` listing route is `src/app/industries/page.tsx`. It is not one of the 32 category/detail pages and is not rebuilt in this pass.
 
-Industry category pages cover a whole group of business types.
+## Final Architecture Principle
 
-They may run 10–12 sections because they need to explain:
+Category/detail industry pages must follow the current MindWP architecture:
 
-- the shared operating pattern across the category
-- where work commonly slips
-- the business types inside the category
-- which MindWP systems usually matter
-- how visitors should choose the closest detail page
-- common objections and fit questions
+CONTENT -> PATTERN -> COMPONENT -> VARIANT / CONTROL -> RENDER
 
-Starting direction:
+Content owns the business meaning. Renderers compose the page directly from semantic data. CSS owns visual treatment. Global related content remains config/wrapper-owned.
 
-1. Hero
-2. Category leak summary panel
-3. Shared operating pattern
-4. Category breakpoints
-5. Business model / operating types
-6. Pathway map by business type
-7. System starting points
-8. Detail industry routes
-9. What changes when handled
-10. Scenario / proof strip
-11. FAQ
-12. CTA
-
-Claude Opus may add, remove, merge, rename, or reorder sections when there is a strong reason. Category pages should stay broader than detail pages.
-
-### Industry Detail Pages
-
-Industry detail pages focus on one business type’s working day.
-
-They should usually run 7–9 sections because they need to stay specific and not become service pages.
-
-Starting direction:
-
-1. Hero
-2. Industry-specific leak pattern
-3. Before / after operating state
-4. What gets put in place
-5. Where to start
-6. Workflow examples / scenario board
-7. Relevant systems
-8. FAQ
-9. CTA
-
-Claude Opus may add, remove, merge, rename, or reorder sections when there is a strong reason. Detail pages should stay tighter than category pages.
-
-The detail-page visual direction below uses a landscaping example. Treat it as a self-contained direction note for detail pages, not a locked layout.
-
-Useful detail-page rhythm:
-
-1. Dark hero with exact industry moment and an operations panel.
-2. Timeline showing where the season or working cycle slips.
-3. Before / after section showing one specific business state change.
-4. Practical pieces section showing what gets put in place.
-5. Where-to-start selector for the first fix.
-6. Workflow / scenario board showing trigger, action, and owner.
-7. Relevant systems list connected to the industry leak.
-8. Scenario / outcome strip with honest proof framing.
-9. FAQ.
-10. Dark CTA.
-
-For landscaping, the useful content pattern is:
-
-- spring gets busy
-- quotes start slipping
-- patio and garden enquiries go quiet
-- maintenance regulars are not reactivated
-- finished work does not become reviews
-- open quote board and reminders make work visible
-- relevant systems include Smart Website Systems, Local SEO Authority, CRM & Automation, and Reputation & Review
-
-For other detail pages, replace the seasonal examples with that industry's working rhythm. Do not force landscaping language onto other industries.
-
-## Visual Direction Rule
-
-This document contains the visual direction needed for audit, skeleton setup, and later rebuild. Do not require Copilot/GPT to know or read any external Figma, Make, or Mindwp-Design source.
-
-Useful category-page ideas:
-
-- dark hero with a “where work leaks” panel
-- shared operating pattern board
-- pathway map / table by business type
-- repeating break-point cards
-- industry route list
-- proof strip
-- split FAQ
-- dark CTA panel
-
-Useful detail-page ideas:
-
-- dark hero with an industry-specific operations panel
-- seasonal or operational leak timeline
-- before / after operating state
-- practical build pieces / workbench table
-- where-to-start selector panel
-- workflow / scenario board
-- relevant systems list
-- scenario / outcome strip
-- split FAQ
-- dark CTA panel
-
-Rebuild all of this inside the real MindWP architecture.
-
-## Architecture Rules
-
-Use:
+Use the current new-system components for category/detail pages:
 
 - `HeroFrame`
 - `SectionFrame`
-- `FAQSection` where useful
+- `FAQSection`
 - `DecisionPanel`
-- config/wrapper-injected related content
-- contact helpers and approved CTA labels
-- token-based CSS only
 
-Do not use:
+Do not use old industry templates, old reusable sections, old section shells, or manual related sections.
 
-- old `reusable/*` imports
-- old `sections/*` imports
-- `PrimaryCTASection`
-- hardcoded `/contact`
-- hardcoded CTA labels
-- old `rd-*`, `l-*`, or `btn-*` classes
-- raw hex or `rgba()` outside `tokens.css`
-- inline styles
-- Tailwind classes in production TSX
-- copied external design implementation code
+## Page Type Rules
 
-## CSS Direction
+Category pages cover a group of business types. They should explain the shared operating pattern, show where enquiries and follow-up commonly slip, and route visitors toward the closest detail page.
 
-Industry visual CSS should live in the approved industry-domain CSS location after the audit confirms the current import structure.
+Detail pages cover one business type. They should stay close to that working day: calls, forms, quotes, bookings, reviews, staff handoff, and missed follow-up.
 
-Do not create one CSS file per industry page by default.
+Industry pages are vertical landing pages. They are not generic service pages, broad guides, or template galleries.
 
-Use clear prefixes after the industry audit confirms naming.
+## Category Page Pattern
 
-## Data Direction
+Category pages may run 10-12 sections because they need to route several business types without becoming a listing page.
 
-Data should describe business meaning, not visual decoration.
+Starting pattern:
 
-Good category data groups may include:
+1. Hero.
+2. Category leak summary.
+3. Shared operating pattern.
+4. Category breakpoints.
+5. Operating models.
+6. Pathway map.
+7. System starting points.
+8. Detail industry routes.
+9. Handled state.
+10. Scenario strip.
+11. FAQ.
+12. Decision panel.
+
+Claude Opus may merge, rename, add, remove, or reorder sections during final rebuild when the page works better. Category pages must remain broader than detail pages.
+
+## Detail Page Pattern
+
+Detail pages should usually run 7-10 sections because the page must stay specific to one business type.
+
+Starting pattern:
+
+1. Hero.
+2. Industry-specific leak pattern.
+3. Leak timeline.
+4. Before / after operating state.
+5. Workbench: what gets put in place.
+6. Starting points.
+7. Workflow examples.
+8. Relevant systems.
+9. Scenario.
+10. FAQ.
+11. Decision panel.
+
+Claude Opus may merge, rename, add, remove, or reorder sections during final rebuild when the page works better. Detail pages must remain tighter and more concrete than category pages.
+
+## Registered Category Pages
+
+- `/industries/automotive-services`
+- `/industries/beauty-personal-care`
+- `/industries/home-services`
+- `/industries/legal-professional-services`
+- `/industries/local-appointment-businesses`
+- `/industries/real-estate-property-services`
+
+## Registered Detail Pages
+
+- `/industries/automotive-services/auto-repair`
+- `/industries/automotive-services/body-shops`
+- `/industries/automotive-services/car-detailing`
+- `/industries/automotive-services/mobile-mechanics`
+- `/industries/beauty-personal-care/aesthetic-cosmetic-clinics`
+- `/industries/beauty-personal-care/hair-salons`
+- `/industries/beauty-personal-care/lash-lift-and-extensions`
+- `/industries/beauty-personal-care/nail-salons`
+- `/industries/beauty-personal-care/small-med-spas`
+- `/industries/home-services/electrical-companies`
+- `/industries/home-services/hvac-companies`
+- `/industries/home-services/landscaping-companies`
+- `/industries/home-services/plumbing-companies`
+- `/industries/home-services/roofing-companies`
+- `/industries/legal-professional-services/accounting-firms`
+- `/industries/legal-professional-services/consultants`
+- `/industries/legal-professional-services/small-law-firms`
+- `/industries/local-appointment-businesses/dental-clinics`
+- `/industries/local-appointment-businesses/driving-schools`
+- `/industries/local-appointment-businesses/repair-shops`
+- `/industries/local-appointment-businesses/small-private-clinics`
+- `/industries/local-appointment-businesses/tattoo-studios`
+- `/industries/real-estate-property-services/home-inspectors`
+- `/industries/real-estate-property-services/mortgage-brokers`
+- `/industries/real-estate-property-services/property-managers`
+- `/industries/real-estate-property-services/realtors`
+
+## Data Strategy
+
+Registered category/detail data must be semantic and header-first. Data should describe page meaning and rebuild intent, not visual decoration.
+
+Category data groups:
 
 - `hero`
-- `sharedPattern`
 - `categoryLeaks`
+- `sharedPattern`
+- `breakpoints`
 - `operatingModels`
+- `pathwayMap`
 - `startingSystems`
 - `detailRoutes`
+- `handledState`
 - `scenarioStrip`
 - `faq`
 - `cta`
 
-Good detail data groups may include:
+Detail data groups:
 
 - `hero`
 - `industryPattern`
@@ -190,25 +154,79 @@ Good detail data groups may include:
 - `faq`
 - `cta`
 
-These are starting directions only. GPT-5.5 should recreate this plan after auditing the real industry registry and current files.
+Do not preserve old component prop data, icon constructors, CSS prefixes, prices, packages, visual props, or hardcoded CTA actions in category/detail data.
+
+## CSS Strategy
+
+Industry CSS belongs in the shared industry CSS files:
+
+- `src/styles/industries/category.css`
+- `src/styles/industries/detail.css`
+
+These files should stay minimal during skeleton setup. Use token-based CSS only. Do not create one CSS file per industry page in this pass.
+
+## /industries Listing Decision
+
+The `/industries` listing page is deliberately left for later. It may still use old listing/catalog structures until its own rebuild pass. Do not use listing debt as a reason to keep old category/detail data or templates.
+
+Only touch the listing if an import path must change to keep the build compiling.
+
+## Claude Opus Freedom Rule
+
+Every registered category/detail page must be easy for Claude Opus to rebuild directly later.
+
+That means:
+
+- each category/detail page has direct semantic data;
+- each category/detail page has a direct explicit renderer;
+- section bodies contain only the skeleton placeholder comment until final rebuild;
+- config may map paths to renderers, but it must not hide pages behind a shared skeleton renderer/helper.
+
+The required placeholder inside each skeleton section body is:
+
+```tsx
+{
+  /* Opus rebuild placeholder: design this section from approved industry-plan.md. */
+}
+```
+
+## Execution Order
+
+1. Recreate this plan from the audit.
+2. Add/import approved industry CSS files.
+3. Replace old industry data types with semantic header-first types.
+4. Reset all 32 registered category/detail data files.
+5. Add direct explicit renderers for all 32 registered category/detail pages.
+6. Update industry config to use the direct renderers while preserving wrapper-owned CTA registry and related content.
+7. Remove old category/detail templates and unused industry-only wrapper utilities when no consumers remain.
+8. Expand validators for the rebuilt industry renderer/CSS surface where needed.
+9. Run targeted searches, lint, system checks, typecheck, and build.
+10. Commit with `ui-hard-reset: prepare industry domain skeletons`.
 
 ## Do
 
-- Audit before editing.
-- Classify category and detail pages before skeleton work.
-- Keep GPT-5.5 focused on repo reality, registry/routes, current industry files, and skeleton setup.
-- Keep category pages broad enough to route multiple industry types.
-- Keep detail pages specific to one business type.
-- Use industry working-day language.
-- Use seasonal, operational, and job-flow visuals when useful.
-- Let Claude Opus change section count, order, names, and data shapes when it improves the page.
+- Keep the dynamic route and registry ownership intact.
+- Keep `/industries` listing rebuild separate.
+- Use `buildIndustryContactHref()` for category/detail conversion links.
+- Use `PRIMARY_CTA_LABEL` for the CTA label.
+- Keep `RelatedSection` wrapper-owned in domain config.
+- Keep category/detail renderers direct and page-specific.
+- Keep skeleton CSS minimal and token-based.
+- Preserve SEO, graph metadata, category/detail route identity, and breadcrumbs.
+- Keep category pages broader than detail pages.
+- Keep detail pages specific to the business type's working day.
 
 ## Do Not
 
-- Do not let old industry data shapes become the rebuild blueprint.
-- Do not copy external design implementation code.
-- Do not ask GPT-5.5 to read external design folders or screenshots during audit or skeleton setup.
-- Do not make industry pages read like generic service pages.
-- Do not make detail pages as broad as category pages.
-- Do not make category pages as thin as simple landing pages.
+- Do not rebuild final industry visuals in the skeleton pass.
+- Do not copy old industry templates.
+- Do not preserve old data shapes.
+- Do not create a shared industry skeleton renderer/helper.
+- Do not preserve `cssPrefix` in category/detail data.
+- Do not preserve icon constructors in category/detail data.
+- Do not preserve hardcoded `/contact`.
+- Do not preserve `Get Started`.
+- Do not manually render `RelatedSection` in page renderers.
+- Do not read or depend on external design folders for this pass.
+- Do not edit the homepage, Smart Website Systems, Local SEO Authority, rebuilt service-domain pages, or `/industries` listing except for compile-only compatibility.
 - Do not add fake proof, fake metrics, or guarantee claims.

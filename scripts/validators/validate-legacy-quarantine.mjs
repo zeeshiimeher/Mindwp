@@ -28,6 +28,7 @@ const NEW_SYSTEM_DIRS = [
   'src/components/navigation',
   'src/components/content',
   'src/domains/services/renderers',
+  'src/domains/industries/renderers',
 ].map(d => path.join(root, d));
 
 // ── Individually-named rebuilt files ─────────────────────────────────────────
@@ -57,6 +58,14 @@ const FORBIDDEN_TEXT_PATTERNS = [
     pattern: /RelatedContentSection/,
     label: 'RelatedContentSection (deleted in 6F; use RelatedSection instead)',
   },
+  {
+    pattern: /IndustryCategoryPageTemplate/,
+    label: 'IndustryCategoryPageTemplate (deleted from rebuilt industry pages)',
+  },
+  {
+    pattern: /IndustryDetailPageTemplate/,
+    label: 'IndustryDetailPageTemplate (deleted from rebuilt industry pages)',
+  },
 ];
 
 // ── Quarantine boundary: no new files allowed in these folders ────────────────
@@ -71,6 +80,8 @@ const REBUILT_PAGE_CSS_FILES = [
   'src/styles/services/smart-website.css',
   'src/styles/services/local-seo.css',
   'src/styles/services.css',
+  'src/styles/industries/category.css',
+  'src/styles/industries/detail.css',
 ].map(f => path.join(root, f));
 
 /**

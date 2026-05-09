@@ -1,16 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
-
-vi.mock('@/domains/industries/templates/IndustryCategoryPageTemplate', () => ({
-  IndustryCategoryPageTemplate: function IndustryCategoryPageTemplate() {
-    return <div data-testid='industry-category-template' />;
-  },
-}));
-
-vi.mock('@/domains/industries/templates/IndustryDetailPageTemplate', () => ({
-  IndustryDetailPageTemplate: function IndustryDetailPageTemplate() {
-    return <div data-testid='industry-detail-template' />;
-  },
-}));
+import { describe, expect, it } from 'vitest';
 
 import {
   clearIndustryRendererOverrides,
@@ -18,7 +6,7 @@ import {
   registerIndustryCategoryRendererOverride,
   registerIndustryDetailRendererOverride,
   renderIndustryPageByPath,
-} from '@/domains/industries/config';
+} from '../config';
 
 describe('industries config resolution', () => {
   it('resolves category and detail entries by canonical path', () => {
@@ -31,7 +19,7 @@ describe('industries config resolution', () => {
     expect(detailEntry?.type).toBe('detail');
   });
 
-  it('renders category page with default renderer when no override exists', () => {
+  it('renders category page with direct default renderer when no override exists', () => {
     clearIndustryRendererOverrides();
 
     const rendered = renderIndustryPageByPath('/industries/beauty-personal-care');
@@ -41,7 +29,22 @@ describe('industries config resolution', () => {
 
     expect(rendered).not.toBeNull();
     expect((rendered as { type?: { name?: string } }).type?.name).toBe('CTARegistryProvider');
-    expect(children?.[0]?.type?.name).toBe('IndustryCategoryPageTemplate');
+    expect(children?.[0]?.type?.name).toBe('BeautyPersonalCareIndustryRenderer');
+  });
+
+  it('renders detail page with direct default renderer when no override exists', () => {
+    clearIndustryRendererOverrides();
+
+    const rendered = renderIndustryPageByPath(
+      '/industries/beauty-personal-care/lash-lift-and-extensions'
+    );
+    const children = (rendered as { props?: { children?: unknown[] } }).props?.children as
+      | Array<{ type?: { name?: string } }>
+      | undefined;
+
+    expect(rendered).not.toBeNull();
+    expect((rendered as { type?: { name?: string } }).type?.name).toBe('CTARegistryProvider');
+    expect(children?.[0]?.type?.name).toBe('LashExtensionsIndustryRenderer');
   });
 
   it('applies registered category renderer override', () => {

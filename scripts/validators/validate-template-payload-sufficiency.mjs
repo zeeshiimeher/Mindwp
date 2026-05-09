@@ -63,7 +63,6 @@ function validateServicePages(pages) {
         );
       }
     }
-
   }
 }
 
@@ -276,8 +275,8 @@ function validateIndustryPages(pages) {
     if (page.type === 'detail') {
       if (
         !page.faq ||
-        !Array.isArray(page.faq.faqs) ||
-        page.faq.faqs.length < industryRules.detailFaqMin
+        !Array.isArray(page.faq.items) ||
+        page.faq.items.length < industryRules.detailFaqMin
       ) {
         pushViolation(
           'industry',

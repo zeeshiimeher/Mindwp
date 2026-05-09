@@ -1,317 +1,178 @@
-import {
-  AlarmClock,
-  Banknote,
-  Building2,
-  CalendarRange,
-  ClipboardList,
-  Clock,
-  HardHat,
-  Home,
-  MessageSquare,
-  RotateCcw,
-  Search,
-  ShieldCheck,
-  Star,
-  Timer,
-} from 'lucide-react';
+import type { IndustryCategoryPageData } from '@/domains/industries/types';
 
-import type { IndustryPageData } from '@/domains/industries/types';
-
-function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
-  const heroData = {
+export const realEstatePropertyServicesIndustryPageData: IndustryCategoryPageData = {
+  seo: {
+    title: 'Real Estate and Property Services Systems',
+    description:
+      'Holding structure for real estate and property service teams: enquiry capture, fast response, follow-up ownership, and local trust.',
+    canonical: '/industries/real-estate-property-services',
+    openGraph: {
+      title: 'Real Estate and Property Services Systems',
+      description:
+        'Enquiry handling, follow-up, and trust structure for real estate and property service teams.',
+    },
+  },
+  slug: 'real-estate-property-services',
+  type: 'category',
+  category: 'real-estate-property-services',
+  hero: {
     badge: 'Property Services',
-    title: 'Property Work Is Won In Minutes And Lost In Months. Both Halves Are Pipeline.',
+    title: 'Real Estate and Property Services [[muted:systems that keep enquiries moving]]',
     description:
-      "Realtors, property managers, mortgage brokers, and inspectors all work on somebody else's timing. The first reply opens the conversation, the later follow-up keeps it moving, and most of the loss happens in the long stretch between those two points.",
-    list: ['Late replies', 'Cold follow-up', 'Silent updates'],
-    cssPrefix: 'real-estate-property-services-hero',
-  };
-
-  const operatingPatternsData = {
-    badge: 'Three Patterns Across The Category',
-    title: 'Different roles, the same three windows that decide everything',
-    description:
-      'Whether the enquiry comes from a buyer, landlord, borrower, tenant, or agent, the same three timing windows keep deciding the result. The roles differ, but the leak usually appears in the same places.',
-    benefits: [
-      {
-        icon: Timer,
-        title: 'The first-response window is shorter than anyone admits',
-        description:
-          'Buyers, landlords, and borrowers usually contact more than one firm at once, even if they do not say so. The first reply that feels personal and timely usually holds the conversation before the rest can catch up.',
-        iconType: 'primary' as const,
-      },
-      {
-        icon: ClipboardList,
-        title: "Pipeline memory lives in someone's head",
-        description:
-          '"Looking in spring" buyers, stalled approvals, agents who used you once, landlords who said "call me next month" — all too easy to lose by the next quiet week. A lot of repeat work goes to whoever remembered the moment, not whoever was better.',
-        iconType: 'secondary' as const,
-      },
-      {
-        icon: RotateCcw,
-        title: 'Silence after the work breaks the next referral',
-        description:
-          'No update, no closing touch, no review request, no reason to remember you at the next decision point. The relationship that should pay back for years can go quiet the day the job is finished.',
-        iconType: 'accent' as const,
-      },
+      'Show where enquiries arrive, where they stall, and which system needs an owner first.',
+    list: [
+      'Calls, forms, and messages land with an owner',
+      'Follow-up is visible before the next busy spell',
+      'Reviews and local proof support the next enquiry',
     ],
-    columns: 3 as const,
-  };
-
-  const decisionChecklistData = {
-    badge: 'Quietly Familiar?',
-    title: 'A few signs the leak is timing and follow-up, not lead volume',
-    description:
-      'If most of these feel familiar, the issue is probably not raw lead volume on its own. It is what happens after the first contact and before the next decision gets made.',
-    items: [
-      'Enquiries arrive while you are mid-viewing, mid-inspection, or out of hours',
-      'Portal or website forms get a reply slower than the buyer expects',
-      'Old leads, stalled cases, or "looking later" buyers are never circled back to',
-      'Past clients only hear from you when something is wrong',
-      'Reviews online do not match the volume of completed work',
-      "Pipeline visibility lives in a notebook, an inbox, or someone's memory",
+  },
+  industries: ['home-inspection', 'mortgage-broker', 'property-management', 'realtor'],
+  systems: [
+    'smart-website-systems',
+    'ai-lead-handling',
+    'crm-automation',
+    'reputation-review',
+    'local-seo-authority',
+  ],
+  topics: ['lead-response-time', 'follow-up', 'pipeline-visibility', 'review-generation'],
+  categoryLeaks: {
+    header: {
+      kicker: 'Leak Map',
+      title: 'Where real estate and property services enquiries slip',
+      description:
+        'Name the contact paths, handoffs, and follow-up points that commonly go quiet across real estate and property service teams.',
+    },
+    items: ['Missed calls', 'Slow reply', 'Unowned follow-up'],
+  },
+  sharedPattern: {
+    header: {
+      kicker: 'Shared Pattern',
+      title: 'How real estate and property services work usually moves',
+      description:
+        'Show the common route from first enquiry to booked work, quote, or appointment.',
+    },
+  },
+  breakpoints: {
+    header: {
+      kicker: 'Breakpoints',
+      title: 'Moments that need a clearer owner',
+      description:
+        'Separate the points that need instant response, human decision, or later follow-up.',
+    },
+  },
+  operatingModels: {
+    header: {
+      kicker: 'Operating Models',
+      title: 'Different ways real estate and property service teams receive demand',
+      description:
+        'Compare urgent calls, planned bookings, quote requests, and review-led trust signals.',
+    },
+  },
+  pathwayMap: {
+    header: {
+      kicker: 'Pathway Map',
+      title: 'How a visitor chooses the closest route',
+      description:
+        'Make the category page help people recognise the business type they actually run.',
+    },
+  },
+  startingSystems: {
+    header: {
+      kicker: 'Starting Systems',
+      title: 'The first systems to inspect',
+      description:
+        'Use the page to decide whether the leak begins with visibility, response, follow-up, reviews, or repeat work.',
+    },
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'crm-automation',
+      'reputation-review',
+      'local-seo-authority',
     ],
-    columns: 2 as const,
-    backgroundColor: 'bg-base',
-    cssPrefix: 'real-estate-property-services-decision-checklist',
-  };
-
-  const spectrumData = {
-    badge: 'Where Property Firms Sit',
-    title: 'Same category, four very different shapes of pipeline',
-    description:
-      'From the outside these businesses can look similar, but the timing pressure is not. Each practice loses work in a slightly different place once the first enquiry has arrived.',
-    cards: [
+  },
+  detailRoutes: {
+    header: {
+      kicker: 'Industry Routes',
+      title: 'Choose the closest business type',
+      description:
+        'Route visitors into the detail page that matches the way work is booked and handled.',
+    },
+    routes: [
       {
-        title: 'Speed-of-response practices',
-        description:
-          'Estate agents and mortgage brokers where the seven-minute window after a portal lead decides the entire deal.',
-        points: [
-          'Portal leads going to whoever rings first',
-          'Weekend enquiries lost by Monday morning',
-          'Mid-viewing missed calls turning cold',
-        ],
-      },
-      {
-        title: 'Reliability-of-update practices',
-        description:
-          'Property managers where landlords and tenants leave because nobody told them what was happening, not because the work was bad.',
-        points: [
-          'Landlords chasing for portfolio updates',
-          'Tenants left wondering on maintenance tickets',
-          'Renewal windows missed before notice arrives',
-        ],
-        featured: true,
-      },
-      {
-        title: 'Calendar-window practices',
-        description:
-          "Home inspectors and surveyors where the booking has to happen inside someone else's deadline or it disappears.",
-        points: [
-          'Booking windows that close in days',
-          'Missed calls during on-site work',
-          'Referring agents lost to silence after delivery',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    cssPrefix: 'real-estate-property-services-spectrum',
-  };
-
-  const systemLayersData = {
-    badge: 'What We Put In Place',
-    title: 'Win the first window, then hold the relationship through every quiet month',
-    description:
-      'You keep doing the work itself. The parts that decide whether an enquiry becomes a deal, and whether a deal turns into a referral or repeat instruction, stop depending on whoever happens to be free at the time.',
-    featureCategories: [
-      {
-        title: 'Be the first response, every time',
-        description:
-          'Web forms, portal leads, missed calls, and out-of-hours enquiries all get a reply that feels personal within minutes. That holds the enquiry until the real conversation can start properly.',
-        icon: MessageSquare,
-        features: [
-          'Same-hour acknowledgement, in your voice',
-          'Out-of-hours and weekend coverage',
-          'Lead held until a person can call back',
-        ],
-      },
-      {
-        title: 'Hold the pipeline you keep forgetting',
-        description:
-          'Old buyers, stalled cases, agents who used you once, and past landlords all stay visible instead of fading into memory. Nudges land on a sensible cycle so the next decision does not happen without you.',
-        icon: Clock,
-        features: [
-          'Stale leads surfaced before competitors call them',
-          'Stage-aware nudges for in-flight cases',
-          'Past clients re-touched at the right moment',
-        ],
-      },
-      {
-        title: 'Keep clients and agents in the loop without extra calls',
-        description:
-          'Status updates go out as bookings, inspections, cases, or maintenance tickets move forward. That cuts down the chasing and makes the whole experience feel steadier to everyone involved.',
-        icon: CalendarRange,
-        features: [
-          'Auto-updates on every status change',
-          'Standard cadence per relationship type',
-          'Tenant, landlord, and agent satisfaction tracked',
-        ],
-      },
-      {
-        title: 'Turn completed work into proof',
-        description:
-          'A review request lands at completion, exchange, or report delivery while the relief is still fresh. That helps the visible proof catch up to the number of deals and instructions already being completed.',
-        icon: ShieldCheck,
-        features: [
-          'Asked once, at the right point',
-          'Tone matched to the relationship',
-          'Reviews catch up to the volume of work',
-        ],
-      },
-      {
-        title: 'Be findable for the work you actually want',
-        description:
-          'Your pages and Google profile line up around postcode, property type, buyer need, or inspection type instead of sounding generic. That makes it easier to be visible at the exact decision moment that matters most.',
-        icon: Search,
-        features: [
-          'Found for area + service type',
-          'Profiles vendors, landlords, and buyers trust',
-          'Less time on enquiries that are not a fit',
-        ],
-      },
-    ],
-    columns: 3 as const,
-  };
-
-  const detailRoutesData = {
-    badge: 'By Practice Type',
-    title: 'Pick the one closest to how you actually run',
-    description:
-      'Same category, different timing windows. Each page stays close to a specific kind of property practice, so you can jump straight to the version that sounds most like your week.',
-    items: [
-      {
-        title: 'Realtors & Estate Agents',
-        description:
-          'For agents where viewing requests, portal leads, and missed calls cool off fast if the reply slips even a little too far.',
-        href: '/industries/real-estate-property-services/realtors',
-        icon: Home,
-      },
-      {
-        title: 'Property Managers',
-        description:
-          'For agencies where landlords lose confidence after slow replies or missing updates, and tenant communication starts breaking trust on both sides.',
-        href: '/industries/real-estate-property-services/property-managers',
-        icon: Building2,
+        title: 'Home Inspectors',
+        href: '/industries/real-estate-property-services/home-inspectors',
+        description: 'Inspection booking, preparation, and handoff.',
       },
       {
         title: 'Mortgage Brokers',
-        description:
-          'For brokers where the case often goes to the person who answered fastest when an offer was live or an approval was needed the same day.',
         href: '/industries/real-estate-property-services/mortgage-brokers',
-        icon: Banknote,
+        description: 'Qualification, consultation requests, and follow-up.',
       },
       {
-        title: 'Home Inspectors',
-        description:
-          'For inspectors where the booking window is tied to offer deadlines, survey dates, and agent coordination that can disappear inside a few days.',
-        href: '/industries/real-estate-property-services/home-inspectors',
-        icon: HardHat,
+        title: 'Property Managers',
+        href: '/industries/real-estate-property-services/property-managers',
+        description: 'Owner, tenant, and maintenance routing.',
+      },
+      {
+        title: 'Realtors',
+        href: '/industries/real-estate-property-services/realtors',
+        description: 'Listing enquiries, viewings, nurture, and local proof.',
       },
     ],
-    backgroundColor: 'bg-muted/20',
-    cssPrefix: 'real-estate-property-services-detail-routes',
-    styleVariant: 'style1' as const,
-  };
-
-  const exploreData = {
-    badge: 'Related',
-    description:
-      'These are the supporting services that keep coming up across the whole category. They all reinforce timing, follow-up, and visibility from slightly different angles.',
-    cards: [
-      {
-        icon: AlarmClock,
-        title: 'Smart Website Systems',
-        description:
-          'Helps you be the first response even when somebody is mid-viewing, on-site, or away from the desk when the enquiry lands.',
-        href: '/services/smart-website-systems',
-        gradient: 'purple',
-        iconBg: 'purple',
-      },
-      {
-        icon: Clock,
-        title: 'CRM & Pipeline Memory',
-        description:
-          'Keeps old buyers, stalled cases, and past clients visible so the next useful follow-up does not depend on memory or luck.',
-        href: '/services/crm-infrastructure-implementation',
-        gradient: 'teal',
-        iconBg: 'teal',
-      },
-      {
-        icon: Star,
-        title: 'Reputation & Review Systems',
-        description:
-          'Gets reviews out often enough that the visible proof starts matching the actual volume of completed work and satisfied clients.',
-        href: '/services/reputation-review-systems',
-        gradient: 'amber',
-        iconBg: 'amber',
-      },
-      {
-        icon: Search,
-        title: 'Local Authority & SEO Systems',
-        description:
-          'Makes it easier to be found for the area and service type you actually cover, not just as another generic property name in the results.',
-        href: '/services/local-seo-authority',
-        gradient: 'blue',
-        iconBg: 'blue',
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    columns: 2 as const,
-  };
-
-  return {
-    seo: {
-      title: 'Real Estate & Property Services — Win The First Minute, Hold The Pipeline',
+  },
+  handledState: {
+    header: {
+      kicker: 'Handled State',
+      title: 'What changes when the gaps are owned',
       description:
-        'For realtors, property managers, mortgage brokers, and inspectors where the leak is in the first-response window and the long pipeline that follows. We put first-minute response, pipeline memory, and follow-up in place across the category.',
-      canonical: '/industries/real-estate-property-services',
+        'Describe the calmer state: enquiries are seen, assigned, followed up, and supported by trust signals.',
     },
-    slug: 'real-estate-property-services',
-    type: 'category',
-    category: 'real-estate-property-services',
-    systems: [
-      'smart-website-systems',
-      'crm-automation',
-      'local-seo-authority',
-      'reputation-review',
+  },
+  scenarioStrip: {
+    header: {
+      kicker: 'Scenario',
+      title: 'A plain example for this category',
+      description:
+        'Use one honest category scenario to show the system working without fake results or guarantee claims.',
+    },
+  },
+  faq: {
+    header: {
+      kicker: 'FAQ',
+      title: 'Questions about real estate and property services systems',
+      description: 'Use answers to qualify fit and point visitors toward the right detail page.',
+    },
+    items: [
+      {
+        id: 'category-fit',
+        question: 'Is this for every business in the category?',
+        answer:
+          'No. The final page should help visitors find the closest business type before they ask for help.',
+      },
+      {
+        id: 'starting-point',
+        question: 'Which system usually comes first?',
+        answer:
+          'The first system depends on where enquiries are being lost: visibility, response, follow-up, reviews, or repeat work.',
+      },
     ],
-    topics: ['lead-response-time', 'follow-up', 'pipeline-visibility', 'review-generation'],
-    industries: ['home-inspection', 'mortgage-broker', 'property-management', 'realtor'],
-    hero: heroData,
-    operatingPatterns: operatingPatternsData,
-    decisionChecklist: decisionChecklistData,
-    spectrum: spectrumData,
-    systemLayers: systemLayersData,
-    detailRoutes: detailRoutesData,
-    explore: exploreData,
-    sectionControls: {
-      subIndustries: {
-        enabled: false,
-      },
-      caseStudies: {
-        enabled: false,
-      },
+  },
+  cta: {
+    heading: {
+      kicker: 'Next Step',
+      title: 'Show us where real estate and property services enquiries slip',
+      description:
+        'Tell us what happens between first contact and booked work. We will map the weak points before recommending a build.',
     },
-    cta: {
-      heading: {
-        title: 'Tell us where the pipeline is leaking',
-        description:
-          'If first responses slip, follow-up goes quiet, or old enquiries never get remembered at the right moment, walk us through the last few weeks and we will show you which window is costing the most work.',
-      },
-      actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    expectations: [
+      { num: '1', text: 'A short read of the current contact paths' },
+      { num: '2', text: 'The system most likely to fix the first leak' },
+      { num: '3', text: 'A clear next move if the fit is right' },
+    ],
+    reassurance: {
+      noSell: 'No generic pitch. Just the parts that need a clearer owner.',
+      tone: 'Quiet, direct, and specific to how the business runs.',
     },
-  };
-}
-
-export const realEstatePropertyServicesIndustryPageData: IndustryPageData =
-  buildRealEstatePropertyServicesIndustryPageData();
+  },
+};

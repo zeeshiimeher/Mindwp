@@ -701,19 +701,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -727,33 +727,41 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
     },
     'aesthetic-cosmetic-clinics': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -763,23 +771,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
@@ -788,46 +804,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -877,15 +877,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
@@ -900,14 +908,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
           slug: 'local-service-page-architecture',
           path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -957,15 +957,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
@@ -982,112 +990,24 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
       ],
     },
     'beauty-personal-care': {
       services: [
-        {
-          title: 'Reputation and Review Systems for Service Businesses',
-          description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Smart Website Systems for Service Businesses',
-          description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-      ],
-      caseStudies: [
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
-      ],
-      resources: [
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'body-shops': {
-      services: [
-        {
-          title: 'Reputation and Review Systems for Service Businesses',
-          description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
         {
           title: 'AI Lead Handling for Service Businesses',
           description:
             'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Reputation and Review Systems for Service Businesses',
+          description:
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
@@ -1101,11 +1021,91 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon review case study: a Google profile that finally matches the salon',
+          description:
+            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
+          slug: 'salon-great-work-going-unseen',
+          path: '/case-studies/salon-great-work-going-unseen',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Law firm consultation case study: more calls becoming clients',
+          description:
+            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
+          slug: 'law-firm-consultations-not-becoming-clients',
+          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'body-shops': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Reputation and Review Systems for Service Businesses',
+          description:
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery System',
+          description:
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -1117,37 +1117,37 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
-            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
-          slug: 'cleaning-enquiries-half-getting-lost',
-          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
             'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
           slug: 'auto-repair-lead-handling-example',
           path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
-          description:
-            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
-          slug: 'auto-reply-funnel',
-          path: '/resources/auto-reply-funnel',
           nodeType: 'resource',
         },
       ],
@@ -1207,6 +1207,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
           title: 'Local Service Page Architecture',
           description:
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
@@ -1214,34 +1230,10 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
       ],
     },
     consultants: {
       services: [
-        {
-          title: 'Smart Website Systems for Service Businesses',
-          description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
         {
           title: 'CRM & Automation for Service Businesses',
           description:
@@ -1258,14 +1250,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -1295,19 +1295,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Local Service Page Architecture',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Sales Pipeline Visibility Framework',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-          slug: 'sales-pipeline-visibility-framework',
-          path: '/resources/sales-pipeline-visibility-framework',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -1341,19 +1341,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -1367,27 +1367,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -1421,19 +1421,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -1447,27 +1447,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -1501,11 +1501,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Garage missed call case study: more enquiries recovered',
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
-            'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been quietly slipping away.',
-          slug: 'garage-morning-rush-missed-calls',
-          path: '/case-studies/garage-morning-rush-missed-calls',
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
           nodeType: 'case-study',
         },
         {
@@ -1517,15 +1517,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
@@ -1542,18 +1550,18 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
       ],
     },
     'hair-salons': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -1563,23 +1571,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
         {
           title: 'Salon review case study: a Google profile that finally matches the salon',
           description:
@@ -1596,44 +1604,52 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
     },
     'home-inspectors': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery System',
+          description:
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
@@ -1642,30 +1658,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
-        {
-          title: 'Website Redesign vs System Rebuild',
-          description:
-            'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
-          slug: 'website-redesign-system-rebuild',
-          path: '/services/website-redesign-system-rebuild',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
       ],
       caseStudies: [
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
           nodeType: 'case-study',
         },
         {
@@ -1676,38 +1684,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
-        {
-          title: 'Construction firm case study: one shared view of every live lead',
-          description:
-            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
-          slug: 'construction-leads-everywhere-untracked',
-          path: '/case-studies/construction-leads-everywhere-untracked',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
-          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -1741,6 +1741,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
@@ -1749,45 +1757,37 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'HVAC after-hours call case study: more emergency jobs captured',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Manchester heating and cooling business stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
-          slug: 'hvac-after-hours-calls-going-cold',
-          path: '/case-studies/hvac-after-hours-calls-going-cold',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
-          description:
-            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
-          slug: 'cleaning-enquiries-half-getting-lost',
-          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
             'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
           slug: 'auto-repair-lead-handling-example',
           path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'HVAC Review Generation Framework',
-          description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
-          nodeType: 'resource',
-        },
-        {
-          title: 'HVAC Lead Handling Example',
-          description:
-            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
-          slug: 'hvac-lead-handling-example',
-          path: '/resources/hvac-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -1883,6 +1883,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
           title: 'Smart Website Systems for Service Businesses',
           description:
             'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
@@ -1890,30 +1898,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
       ],
       caseStudies: [
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -1926,6 +1926,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
@@ -1940,14 +1948,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
           slug: 'local-service-page-architecture',
           path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -1981,19 +1981,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -2007,27 +2007,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2061,11 +2061,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -2087,33 +2087,41 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
     },
     'local-appointment-businesses': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -2123,37 +2131,29 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -2167,27 +2167,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2221,11 +2221,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
-          title: 'Garage missed call case study: more enquiries recovered',
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
-            'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been quietly slipping away.',
-          slug: 'garage-morning-rush-missed-calls',
-          path: '/case-studies/garage-morning-rush-missed-calls',
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
           nodeType: 'case-study',
         },
         {
@@ -2237,15 +2237,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
@@ -2262,18 +2270,18 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
       ],
     },
     'mortgage-brokers': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -2283,23 +2291,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
@@ -2308,46 +2324,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2355,6 +2355,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'nail-salons': {
       services: [
         {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2363,23 +2371,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
@@ -2388,46 +2404,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
         {
           title: 'Local Service Page Architecture',
           description:
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
           slug: 'local-service-page-architecture',
           path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -2477,15 +2477,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
         {
           title: 'Auto Repair Lead Handling Example',
           description:
@@ -2502,26 +2510,10 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
-        {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
       ],
     },
     'property-managers': {
       services: [
-        {
-          title: 'Smart Website Systems for Service Businesses',
-          description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
         {
           title: 'CRM & Automation for Service Businesses',
           description:
@@ -2538,14 +2530,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -2575,25 +2575,33 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Local Service Page Architecture',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Sales Pipeline Visibility Framework',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-          slug: 'sales-pipeline-visibility-framework',
-          path: '/resources/sales-pipeline-visibility-framework',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
     },
     'real-estate-property-services': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -2603,37 +2611,29 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
-          title: 'Law firm consultation case study: more calls becoming clients',
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
           nodeType: 'case-study',
         },
         {
@@ -2647,27 +2647,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2675,6 +2675,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     realtors: {
       services: [
         {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2683,23 +2691,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
@@ -2708,46 +2724,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2755,6 +2755,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'repair-shops': {
       services: [
         {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2763,23 +2771,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
@@ -2788,46 +2804,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2843,6 +2843,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
           title: 'Smart Website Systems for Service Businesses',
           description:
             'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
@@ -2850,30 +2858,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
       ],
       caseStudies: [
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -2887,27 +2887,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
           title: 'Auto Repair Lead Handling Example',
           description:
             'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
           slug: 'auto-repair-lead-handling-example',
           path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Roofing Review Generation System',
-          description:
-            'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
-          slug: 'roofing-review-generation-system',
-          path: '/resources/roofing-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2941,19 +2941,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -2967,33 +2967,41 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
     },
     'small-med-spas': {
       services: [
+        {
+          title: 'AI Lead Handling for Service Businesses',
+          description:
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -3003,23 +3011,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
@@ -3028,46 +3044,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -3101,19 +3101,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -3127,27 +3127,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -3181,19 +3181,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
           nodeType: 'case-study',
         },
         {
@@ -3207,27 +3207,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Roofing Estimate Follow-Up Workflow',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'HVAC Emergency Call Handling System',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Auto Repair Lead Handling Example',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -3263,27 +3263,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -3317,25 +3317,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3371,25 +3371,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3425,25 +3425,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3479,25 +3479,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3533,25 +3533,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3587,25 +3587,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3641,27 +3641,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Nail Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+            'Holding structure for nail salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Lash Lift and Extensions Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs',
+          title: 'Car Detailing Systems',
           description:
-            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -3695,25 +3695,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3749,25 +3749,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Roofing Companies Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3803,25 +3803,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Roofing Companies Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3857,27 +3857,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -3911,25 +3911,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3965,25 +3965,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4019,25 +4019,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote',
+          title: 'Plumbing Companies Systems',
           description:
-            'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4073,25 +4073,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4127,27 +4127,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4181,25 +4181,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote',
+          title: 'Plumbing Companies Systems',
           description:
-            'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4235,25 +4235,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4289,25 +4289,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4343,25 +4343,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4397,25 +4397,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4451,25 +4451,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4505,25 +4505,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Hair Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars',
-          description:
-            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
+          title: 'Body Shops Systems',
           description:
-            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -4541,14 +4541,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'HVAC CRM Pipeline Structure',
-          description:
-            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
-          slug: 'hvac-crm-pipeline-structure',
-          path: '/resources/hvac-crm-pipeline-structure',
-          nodeType: 'resource',
-        },
-        {
           title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
           description:
             'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
@@ -4556,30 +4548,38 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
           nodeType: 'resource',
         },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4613,25 +4613,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4667,27 +4667,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'HVAC Companies Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Systems',
+          description:
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
-          description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4721,25 +4721,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4775,27 +4775,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -4829,27 +4829,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Small Law Firms Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for small law firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Accounting Firms Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Consultants Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -4883,27 +4883,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Small Law Firms Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for small law firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Accounting Firms Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Consultants Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -4937,27 +4937,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -4991,25 +4991,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5045,27 +5045,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Car Detailing Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5099,27 +5099,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5153,25 +5153,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5207,25 +5207,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5261,27 +5261,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5315,25 +5315,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5369,25 +5369,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -5423,27 +5423,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Car Detailing Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5477,27 +5477,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Car Detailing Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5531,25 +5531,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5585,27 +5585,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Plumbing Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5639,27 +5639,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Realtors Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline',
+          title: 'Body Shops Systems',
           description:
-            'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5693,27 +5693,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing Systems',
+          description:
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5747,25 +5747,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5801,25 +5801,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5855,27 +5855,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Roofing Companies Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5909,27 +5909,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'HVAC Companies Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Systems',
+          description:
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
-          description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -5963,27 +5963,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -6017,25 +6017,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6071,25 +6071,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6125,27 +6125,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Roofing Companies Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -6179,25 +6179,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Hair Salons Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
+          title: 'Aesthetic and Cosmetic Clinics Systems',
           description:
-            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -6233,27 +6233,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -6287,25 +6287,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It"',
+          title: 'Consultants Systems',
           description:
-            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
+            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months',
+          title: 'Property Managers Systems',
           description:
-            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+            'Holding structure for property managers: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -6341,25 +6341,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Auto Repair Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It"',
+          title: 'Consultants Systems',
           description:
-            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
+            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months',
+          title: 'Property Managers Systems',
           description:
-            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+            'Holding structure for property managers: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -6395,25 +6395,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6449,25 +6449,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6503,27 +6503,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -6557,25 +6557,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6611,27 +6611,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -6665,25 +6665,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6719,25 +6719,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6773,25 +6773,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6827,25 +6827,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6881,25 +6881,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6935,25 +6935,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6989,25 +6989,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7043,25 +7043,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7097,27 +7097,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -7151,27 +7151,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Nail Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+            'Holding structure for nail salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Lash Lift and Extensions Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs',
+          title: 'Car Detailing Systems',
           description:
-            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7205,27 +7205,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'HVAC Companies Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Systems',
+          description:
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
-          description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7259,25 +7259,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7313,25 +7313,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7367,27 +7367,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Plumbing Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -7421,27 +7421,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Realtors Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline',
+          title: 'Body Shops Systems',
           description:
-            'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -7475,27 +7475,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -7529,27 +7529,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -7583,25 +7583,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7637,25 +7637,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -7691,25 +7691,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7745,25 +7745,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7799,27 +7799,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -7853,25 +7853,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7907,25 +7907,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Hair Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars',
-          description:
-            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
+          title: 'Body Shops Systems',
           description:
-            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -7961,25 +7961,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Hair Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars',
-          description:
-            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
+          title: 'Body Shops Systems',
           description:
-            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8001,25 +8001,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8028,6 +8028,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     },
     'auto-repair-lead-handling-example': {
       services: [
+        {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
         {
           title: 'Smart Website Systems for Service Businesses',
           description:
@@ -8044,38 +8052,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
-        {
-          title: 'Unified Communication for Service Businesses',
-          description:
-            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
-          nodeType: 'service',
-        },
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -8109,27 +8109,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -8155,25 +8155,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8193,25 +8193,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8239,25 +8239,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8293,27 +8293,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Nail Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
+            'Holding structure for nail salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Lash Lift and Extensions Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs',
+          title: 'Car Detailing Systems',
           description:
-            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -8339,25 +8339,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8385,25 +8385,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Roofing Companies Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8439,25 +8439,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8493,25 +8493,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8539,25 +8539,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8585,27 +8585,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Landscapers — Stop Patio Quotes Drifting, Bring Regulars Back',
-          description:
-            'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -8631,27 +8631,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Plumbing Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -8677,25 +8677,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8715,25 +8715,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8769,25 +8769,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8807,25 +8807,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8845,25 +8845,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8899,25 +8899,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8945,27 +8945,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Auto Repair Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -8999,25 +8999,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9053,25 +9053,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9091,25 +9091,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9145,27 +9145,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -9199,27 +9199,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Small Law Firms Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for small law firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Accounting Firms Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Consultants Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -9245,25 +9245,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons — Three-Tap Booking, Same-Hour Cancellation Fills',
+          title: 'Hair Salons Systems',
           description:
-            'For nail salons where booking friction loses same-day clients. We make booking three taps, fill cancellations the same hour, and bring repeat clients back at the right interval.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars',
-          description:
-            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
+          title: 'Body Shops Systems',
           description:
-            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -9299,27 +9299,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9353,27 +9353,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Car Detailing Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9391,25 +9391,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9445,25 +9445,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9483,25 +9483,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9521,27 +9521,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'HVAC Companies Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Systems',
+          description:
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
-          description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9559,27 +9559,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Realtors Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors & Estate Agents — Win The Seven-Minute Window, Then The Pipeline',
+          title: 'Body Shops Systems',
           description:
-            'For estate agents and realtors where deals are decided in the minutes after a portal enquiry. We put first-minute response, callback booking, and pipeline memory in place so you stop losing instructions to whoever rang back fastest.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9613,25 +9613,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9667,25 +9667,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9721,25 +9721,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9775,25 +9775,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9821,25 +9821,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -9875,27 +9875,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Car Detailing Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9929,27 +9929,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing Systems',
+          description:
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9967,25 +9967,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10005,25 +10005,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10043,27 +10043,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -10081,25 +10081,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10119,25 +10119,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10165,27 +10165,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Roofing Companies Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Body Shops Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -10219,25 +10219,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Hair Salons Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Considered Follow-Up, Calm Conversion',
+          title: 'Aesthetic and Cosmetic Clinics Systems',
           description:
-            'For aesthetic and cosmetic clinics where consults go well and then quietly disappear. We put written summaries, day-three and day-seven nurture, and outcome-based reviews in place — calmly.',
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -10273,27 +10273,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -10311,27 +10311,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -10357,25 +10357,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Auto Repair Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Independent Consultants — Stop Losing Engagements To "Let Us Think About It"',
+          title: 'Consultants Systems',
           description:
-            'For independent consultants where discovery calls go well but engagements quietly die in buying committees. We help sharpen the offer, define the next step, and follow up gracefully through long decisions.',
+            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Stop Losing Doors To Slow Replies And Silent Months',
+          title: 'Property Managers Systems',
           description:
-            'For property managers where landlords leave because they got tired of chasing and tenants leave because nobody updated them. We put landlord acknowledgement, tenant updates, and renewal visibility in place so the portfolio stops eroding quietly.',
+            'Holding structure for property managers: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -10411,27 +10411,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
-          description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -10449,25 +10449,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10503,27 +10503,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -10557,25 +10557,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10603,25 +10603,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10657,25 +10657,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10703,25 +10703,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10757,25 +10757,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailers — Stop Losing Saturday DMs To 6pm Reads',
+          title: 'Car Detailing Systems',
           description:
-            'For detailers whose weekend DMs sit unread until evening and whose best regulars quietly stopped booking. Faster first reply, easier slots, and quiet nudges that bring repeat work back.',
+            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10800,27 +10800,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'cleaning-enquiries-half-getting-lost': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Hair Salons Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Body Shops Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Body Shops — Win The Photo Race After A Bump',
-          description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic and Cosmetic Clinics Systems',
+          description:
+            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -10854,27 +10854,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'construction-leads-everywhere-untracked': {
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'Auto Repair Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing Companies Systems',
+          description:
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Landscapers — Stop Patio Quotes Drifting, Bring Regulars Back',
-          description:
-            'For landscapers whose patio quotes drift for six weeks while the homeowner mulls, and whose lapsed regulars never re-engage in spring. Open quote board, friendly check-ins, lapsed-regular nudges.',
-          slug: 'landscaping-companies',
-          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -10908,25 +10908,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'contractor-solid-work-no-reviews': {
       industries: [
         {
-          title: 'Electrical Firms — Catch The Fault Call, Close The EV Quote',
+          title: 'Electrical Companies Systems',
           description:
-            'For electricians whose Sunday-night fault calls go to voicemail and whose EV charger quotes drift over a long weekend. Fault triage, big-ticket chase, reviews on Maps.',
+            'Holding structure for electrical companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'electrical-companies',
           path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10988,25 +10988,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'estate-agent-enquiries-going-to-the-wrong-place': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Realtors Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11022,19 +11022,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Lead Handling Example',
-          description:
-            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
-          slug: 'hvac-lead-handling-example',
-          path: '/resources/hvac-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
           description:
             'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
           slug: 'auto-reply-funnel',
           path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -11081,25 +11081,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'garage-morning-rush-missed-calls': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11135,25 +11135,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-after-hours-calls-going-cold': {
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -11202,25 +11202,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-peak-season-couldnt-keep-up': {
       industries: [
         {
-          title: 'HVAC Firms — Survive The Surge Week, Refill The Service Diary',
+          title: 'HVAC Companies Systems',
           description:
-            'For HVAC firms whose first cold morning buries the line and whose installs never come back for a service. Surge handling, dispatch routing, and install quote chase.',
+            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -11256,25 +11256,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'law-firm-consultations-not-becoming-clients': {
       industries: [
         {
-          title: 'Lash Studios — Refill-Cycle Rebooks, Quiet Win-Backs',
+          title: 'Lash Lift and Extensions Systems',
           description:
-            'For lash techs and studios where loyalty turns on the refill nudge nobody sent. We put cycle-aware rebook prompts, warm win-backs, and reviews from the look she loved in place.',
+            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Dental Clinics — Fix Recall And Treatment Drop-Off, Not Just New Patients',
+          title: 'Dental Clinics Systems',
           description:
-            'For dental clinics where the recall list is long and treatment plans quietly stall. We put two-touch recall, plan follow-up, and warmer first replies in place so the chair fills from the patients you already have.',
+            'Holding structure for dental clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'dental-clinics',
           path: '/industries/local-appointment-businesses/dental-clinics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Driving Schools — Turn "I\'ll Book Next Week" Into Booked Lessons',
+          title: 'Driving Schools Systems',
           description:
-            'For driving schools where enquiries drift instead of booking. We put gentle, scheduled follow-up, easy booking, and review prompts in place so the soft maybes land.',
+            'Holding structure for driving schools: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'driving-schools',
           path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
@@ -11336,25 +11336,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'locksmith-late-night-calls-missed': {
       industries: [
         {
-          title: 'Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote',
+          title: 'Plumbing Companies Systems',
           description:
-            'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11403,25 +11403,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'pest-control-urgent-calls-cant-get-through': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Stop Losing Calls From The Glovebox',
+          title: 'Mobile Mechanics Systems',
           description:
-            'For one-van mechanics whose front desk is a phone in the seat well. Catch missed calls, stop driving to wrong postcodes, and warm up the late-night quotes that went cold.',
+            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11457,25 +11457,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'plumber-emergency-calls-mostly-missed': {
       industries: [
         {
-          title: 'Plumbing Firms — Catch The 7pm Burst, Close The Bathroom Quote',
+          title: 'Plumbing Companies Systems',
           description:
-            'For plumbers whose burst-pipe calls reach the next saved number before they reach you, and whose bathroom refit quotes go silent for a fortnight. After-hours triage, big-ticket chase, reviews on Maps.',
+            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Body Shops Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11524,27 +11524,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-website-looked-fine-work-not-flowing': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Roofing Companies Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies — Stop Re-Roof Quotes Drifting',
+          title: 'Body Shops Systems',
           description:
-            'For roofers who watch big re-roof quotes go quiet for a fortnight while the homeowner sits with three on the kitchen table. Open quote board, friendly check-ins, insurance work in one place.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -11591,27 +11591,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-great-work-going-unseen': {
       industries: [
         {
-          title: 'Auto Repair Shops — Stop Losing Brake Jobs To Voicemail',
+          title: 'Auto Repair Systems',
           description:
-            'For repair shops where the phone hits voicemail mid-job, estimates die in the inbox, and MOT drivers never come back. Plug the gaps in the day without changing how the workshop runs.',
+            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Win The Photo Race After A Bump',
+          title: 'Hair Salons Systems',
           description:
-            'For body shops where damage photos hit three inboxes at once and the slowest reply loses the repair. Faster first reply, cleaner insurance threads, and reviews that finally match the work.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Hair Salons — Win The Saturday DM, Bring Back The Regulars',
+          title: 'Body Shops Systems',
           description:
-            'For hair salons where DMs go to the salon that replied first and regulars quietly forget to rebook. We put first-reply availability, rebook nudges, and review prompts in place so the chair stays full.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
