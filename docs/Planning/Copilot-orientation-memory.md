@@ -218,7 +218,7 @@ tokens.css → reset.css → typography.css → layout.css → primitives.css �
 | `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion utilities                                                                                                                            |
 | `primitives.css` | Buttons, badges, Accordion, Tabs, signal/status atoms                                                                                                                                    |
 | `components.css` | Header, Footer, DecisionPanel, RelatedSection, FAQSection                                                                                                                                |
-| page/domain CSS  | Page-specific visual bodies only                                                                                                                                                         |
+| page/domain CSS  | Page-specific visual bodies only. `services.css` is the domain bundle for rebuilt service pages — `aih-*`, `crm-*`, `rep-*`, `rev-*` prefixes appended in order.                        |
 
 **Hard rules:**
 

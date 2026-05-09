@@ -94,7 +94,8 @@ typography.css  → global type scale
 layout.css      → containers, SectionFrame, HeroFrame, motion utilities
 primitives.css  → buttons, badges, Accordion, Tabs, signal/status atoms
 components.css  → Header, Footer, DecisionPanel, RelatedSection, FAQSection
-page/domain CSS → page-specific visual bodies only
+services.css    → domain bundle: aih-*, crm-*, rep-*, rev-* service page CSS
+page/domain CSS → remaining page-specific visual bodies (home, smart-website, local-seo)
 ```
 
 **Layer ownership rule:**
@@ -107,7 +108,7 @@ page/domain CSS → page-specific visual bodies only
 | `layout.css`     | `mw-container`, `SectionFrame`, `HeroFrame`, motion classes |
 | `primitives.css` | buttons, badges, Accordion, Tabs, signal/status primitives  |
 | `components.css` | DecisionPanel, RelatedSection, FAQSection, Header, Footer   |
-| page/domain CSS  | page visual classes only                                    |
+| page/domain CSS  | page visual classes only; `services.css` owns rebuilt service page domains (aih-*, crm-*, rep-*, rev-*) |
 
 The `src/index.css` imports only this stack in order. No legacy CSS is imported.
 

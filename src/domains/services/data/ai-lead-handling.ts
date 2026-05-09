@@ -141,24 +141,30 @@ export const aiLeadHandlingPage = {
         {
           name: 'Phone and missed calls',
           state: 'unhandled',
+          currentLabel: 'Current',
           currentNote:
             'Calls go unanswered during jobs. Voicemails sit unchecked. Callbacks happen when someone remembers.',
+          handledLabel: 'Handled',
           handledNote:
             'Missed calls trigger an immediate text. Details captured. Team has context before calling back.',
         },
         {
           name: 'Website chat and forms',
           state: 'unhandled',
+          currentLabel: 'Current',
           currentNote:
             'Forms land in a shared inbox. Chat sits open overnight. First reply depends on who checks and when.',
+          handledLabel: 'Handled',
           handledNote:
             'Chat answered immediately. Forms acknowledged on receipt. Both logged with the context the team needs.',
         },
         {
-          name: 'After-hours messages and DMs',
+          name: 'After-hours messages',
           state: 'unhandled',
+          currentLabel: 'Current',
           currentNote:
             'WhatsApp, DMs, and out-of-hours messages wait until morning. The window where interest was highest has closed.',
+          handledLabel: 'Handled',
           handledNote:
             'After-hours messages get an immediate response. The conversation stays alive until the team is available.',
         },
@@ -209,39 +215,27 @@ export const aiLeadHandlingPage = {
       examples: [
         {
           trigger: 'A call comes in after hours from someone needing a quote.',
-          steps: [
-            'Immediate text acknowledgement sent',
-            'What they need and when they are free — captured',
-            'Queued for first thing next morning',
-            'Team has full context before calling back',
-          ],
+          response: 'Immediate text sent. The caller knows they have been seen.',
+          capture: 'What they need and when they are free — captured before interest drops.',
+          outcome: 'Queued for the morning. Team has full context before calling back.',
         },
         {
           trigger: 'Someone on the website asks about booking a consultation.',
-          steps: [
-            'Question answered immediately',
-            'Booking path offered',
-            'Name, number, and reason collected',
-            'Follow-up queued if they do not complete',
-          ],
+          response: 'Question answered immediately. Booking path offered.',
+          capture: 'Name, number, and reason for the enquiry collected.',
+          outcome: 'If they drop off before booking, the follow-up queue gets them.',
         },
         {
           trigger: 'Someone calls with a pricing question before committing.',
-          steps: [
-            'Standard answer provided',
-            'Fit checked based on what they need',
-            'Complex questions routed to a person',
-            'Conversation recorded for continuity',
-          ],
+          response: 'Standard pricing context provided. Fit checked based on what they need.',
+          capture: 'Complex questions flagged and routed directly to a person.',
+          outcome: 'Conversation recorded. Whoever picks it up starts with the full picture.',
         },
         {
           trigger: 'A lead starts a chat but drops off halfway through.',
-          steps: [
-            'Partial details saved',
-            'Moved into follow-up queue',
-            'Context preserved for whoever picks it up',
-            'Better chance of restarting the conversation',
-          ],
+          response: 'Partial conversation saved. No data lost.',
+          capture: 'What they shared and where they stopped — preserved.',
+          outcome: 'Moved into follow-up queue. Context ready for whoever continues it.',
         },
       ],
     },
@@ -268,23 +262,23 @@ export const aiLeadHandlingPage = {
         {
           targetSystem: 'CRM & Automation',
           handoff:
-            'Every handled conversation goes into the CRM with contact details, what was discussed, and the routing decision already attached. CRM Automation owns the follow-up sequence from that point.',
+            'Every handled conversation passes to the CRM with contact details, what was discussed, and the routing decision already attached.',
           boundary:
-            'AI Lead Handling owns the first exchange and context capture. CRM Automation owns the lead lifecycle, follow-up scheduling, and visibility from handoff forward.',
+            'AI Lead Handling stops at handoff. CRM Automation owns the lead from that point — follow-up scheduling, lifecycle tracking, and visibility forward.',
         },
         {
           targetSystem: 'Your team',
           handoff:
-            'Conversations that need judgement — complex scope, sensitive situations, or high-value enquiries — are escalated to the right person with the full conversation history attached.',
+            'Conversations that need judgement — complex scope, sensitive situations, or high-value enquiries — are escalated with the full conversation history attached.',
           boundary:
-            'AI handles the repeatable front end. People handle the calls that require real context, relationship, or decision-making.',
+            'AI handles the repeatable front end. People handle the calls that require real context, relationship, or a decision that cannot be scripted.',
         },
         {
           targetSystem: 'Smart Website Systems',
           handoff:
             'The website captures the first enquiry signal — form submissions, chat initiations, call triggers. AI Lead Handling takes the response from that point.',
           boundary:
-            'Smart Website owns the capture and routing structure. AI Lead Handling owns what happens in the response gap after capture.',
+            'Smart Website owns the capture structure and routing. AI Lead Handling owns what happens in the response gap — after the signal, before anyone can reply.',
         },
       ],
     },
@@ -422,7 +416,7 @@ export const aiLeadHandlingPage = {
           id: 'aih-faq-crm',
           question: 'Do we need a CRM?',
           answer:
-            'If you already have a CRM or booking setup, we connect to it. If not, we can recommend the simplest setup that keeps conversations, follow-up, and reporting visible in one place.',
+            'If you already have a CRM or booking setup, we connect to it. If not, we recommend the simplest place for captured conversations to land so your team can see what came in and what needs attention next.',
         },
         {
           id: 'aih-faq-wrong-answer',

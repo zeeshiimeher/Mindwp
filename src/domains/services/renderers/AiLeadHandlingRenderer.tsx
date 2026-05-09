@@ -16,7 +16,7 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 // AiLeadHandlingRenderer
 // Sections: hero · responseGap · connectedVsIsolated · channelStates ·
 //           handlingPath · realMoments · handoffMap · scenarioStudy ·
-//           scopeGroups · fitFilter · faq · cta
+//           fitFilter · faq · cta
 // Related: injected globally by services/config.tsx (RelatedSection)
 // CSS: src/styles/services.css (aih-* prefix)
 // =============================================================================
@@ -198,8 +198,14 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
           {channelStates.channels?.map((ch: any) => (
             <li key={ch.name} className='aih-channels__item' data-state={ch.state}>
               <span className='aih-channels__name'>{ch.name}</span>
-              <span className='aih-channels__current'>{ch.currentNote}</span>
-              <span className='aih-channels__handled'>{ch.handledNote}</span>
+              <div className='aih-channels__state-block aih-channels__state-block--before'>
+                <span className='aih-channels__state-label'>{ch.currentLabel}</span>
+                <span className='aih-channels__state-note'>{ch.currentNote}</span>
+              </div>
+              <div className='aih-channels__state-block aih-channels__state-block--after'>
+                <span className='aih-channels__state-label'>{ch.handledLabel}</span>
+                <span className='aih-channels__state-note'>{ch.handledNote}</span>
+              </div>
             </li>
           ))}
         </ul>
@@ -254,13 +260,20 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
           {realMoments.examples?.map((ex: any) => (
             <li key={ex.trigger} className='aih-moments__item'>
               <p className='aih-moments__trigger'>{ex.trigger}</p>
-              <ol className='aih-moments__steps'>
-                {ex.steps?.map((step: string) => (
-                  <li key={step} className='aih-moments__step'>
-                    {step}
-                  </li>
-                ))}
-              </ol>
+              <div className='aih-moments__log'>
+                <div className='aih-moments__log-entry aih-moments__log-entry--response'>
+                  <span className='aih-moments__log-label'>AI response</span>
+                  <span className='aih-moments__log-text'>{ex.response}</span>
+                </div>
+                <div className='aih-moments__log-entry aih-moments__log-entry--capture'>
+                  <span className='aih-moments__log-label'>Captured</span>
+                  <span className='aih-moments__log-text'>{ex.capture}</span>
+                </div>
+                <div className='aih-moments__log-entry aih-moments__log-entry--outcome'>
+                  <span className='aih-moments__log-label'>Team receives</span>
+                  <span className='aih-moments__log-text'>{ex.outcome}</span>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
