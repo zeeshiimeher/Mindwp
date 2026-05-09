@@ -134,7 +134,7 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
       <SectionFrame
         className='aih-response-gap'
         ariaLabel={ARIA_RESPONSE_GAP_DOT}
-        tone='dark'
+        tone='white'
         heading={{
           kicker: responseGap.header.kicker,
           title: responseGap.header.title,
@@ -201,18 +201,37 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
           ),
         }}
       >
-        {/*
-          DESIGN INTENT:
-            Single dispatch board — not three floating cards.
-            One bordered panel, rows: channel name | current state | handled state.
-          VISUAL DIRECTION:
-            Board header: "Channels · Response state".
-            Rows share borders — one board, not separate cards.
-            Current column: amber. Handled column: teal.
-          DATA NEEDED:
-            channelBreakdown.rows[] { channel, currentState, handledState }
-          DO NOT: Three floating equal-weight cards. Repeated before/after card format.
-        */}
+        <div className='aih-channel-board'>
+          {/* Column headers */}
+          <div className='aih-channel-board__header' aria-hidden='true'>
+            <span className='aih-channel-board__col-label'>{channelBreakdown.boardLabel}</span>
+            <span className='aih-channel-board__col-label aih-channel-board__col-label--current'>
+              Current
+            </span>
+            <span className='aih-channel-board__col-label aih-channel-board__col-label--handled'>
+              Handled
+            </span>
+          </div>
+
+          {/* Data rows */}
+          {(
+            channelBreakdown.rows as Array<{
+              channel: string;
+              current: string;
+              handled: string;
+            }>
+          ).map(row => (
+            <div key={row.channel} className='aih-channel-board__row'>
+              <p className='aih-channel-board__channel'>{row.channel}</p>
+              <p className='aih-channel-board__state aih-channel-board__state--current'>
+                {row.current}
+              </p>
+              <p className='aih-channel-board__state aih-channel-board__state--handled'>
+                {row.handled}
+              </p>
+            </div>
+          ))}
+        </div>
       </SectionFrame>
 
       {/* -- RESPONSE PATH ------------------------------------------------------- */}

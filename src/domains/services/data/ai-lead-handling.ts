@@ -77,10 +77,10 @@ export const aiLeadHandlingPage = {
     // DESIGN INTENT:
     //   Show the first-contact gap as an operational incident — not a feature list.
     //   One dominant primary-gap panel + two smaller supporting gap cards.
-    //   Dark tone feels like flagged case notes.
+    //   White tone — breathing room after dark hero. Incident reads clearly on light bg.
     // VISUAL DIRECTION:
     //   Primary gap: large block, amber left-border, situation → cost → handled state.
-    //   Secondary gaps: compact rows beside or below, teal dot on handled-state line.
+    //   Secondary gaps: compact rows beside or below, teal border-top on handled line.
     // BOUNDARY: AI owns first reply and context capture, not CRM lifecycle.
     // DO NOT: Use equal-weight feature cards. Turn into bullet list. Add timeline.
     responseGap: {
@@ -120,15 +120,14 @@ export const aiLeadHandlingPage = {
     // ── 3. CHANNEL BREAKDOWN ─────────────────────────────────────────────────
     // DESIGN INTENT:
     //   A single dispatch board — not three floating cards.
-    //   One bordered panel containing rows: channel name | current state | handled state.
-    //   Reader sees all three channels and both states as one status surface.
+    //   One bordered panel containing rows: channel | current state | handled state.
+    //   Reader sees all three channels as one status surface.
     // VISUAL DIRECTION:
-    //   Board header: "Channels · Response state"
-    //   Row columns: Channel | Current (amber) | Handled (teal)
-    //   Rows share borders — they are part of one board, not separate cards.
-    // DATA NEEDED LATER:
-    //   rows[] { channel, currentState, handledState }
-    // DO NOT: Three floating cards. Equal-weight grid. Repeat Section 2.
+    //   Board header row: column labels (Channel · Current · Handled).
+    //   Data rows share borders — one board, not separate cards.
+    //   Current column: amber. Handled column: teal.
+    // BOUNDARY: AI handles first response only. CRM follow-up is not in scope here.
+    // DO NOT: Three floating cards. Equal-weight grid. Repeat Section 2 format.
     channelBreakdown: {
       header: {
         kicker: 'Where it happens',
@@ -136,6 +135,28 @@ export const aiLeadHandlingPage = {
         description:
           'Different channels, same problem. The contact arrives. Nobody can respond in time.',
       },
+      boardLabel: 'Channels · Response state',
+      rows: [
+        {
+          channel: 'Phone and missed calls',
+          current:
+            'Call sits in the log until someone has time to check. By then the window has passed.',
+          handled:
+            'Caller receives a first reply. Enquiry is routed with enough context to act on.',
+        },
+        {
+          channel: 'Website chat and forms',
+          current: 'Form lands in the inbox. No acknowledgment sent. No indication it arrived.',
+          handled:
+            'First reply confirms receipt and answers the immediate question. Contact is captured.',
+        },
+        {
+          channel: 'After-hours messages',
+          current: 'Message sits open until the next working day. Response arrives too late.',
+          handled:
+            'AI replies outside working hours. Details captured. Ready for team review in the morning.',
+        },
+      ],
     },
 
     // ── 4. RESPONSE PATH ─────────────────────────────────────────────────────

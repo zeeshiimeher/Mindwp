@@ -346,6 +346,13 @@ When a page has no Figma/visual reference:
 - Do not create a separate CSS file per service page unless visual complexity clearly requires it
 - `smart-website.css` and `local-seo.css` remain separate (predated domain-bundle strategy)
 
+**Tone rhythm rule:**
+
+- Dark/gradient heroes do not automatically imply a dark second section
+- Rhythm: dark hero → white diagnostic section → mist or gradient midpoint → lighter CTA area
+- AI Lead Handling approved rhythm: dark hero → white → mist → gradient-dark → white → gradient-dark → mist → white (FAQ) → CTA
+- Only stack dark hero + dark second section if there is a specific visual justification
+
 ## 19. Page Rebuild Workflow (No-Figma Pattern)
 
 When rebuilding a service page from scratch, follow this sequence:
