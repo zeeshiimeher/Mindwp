@@ -1,7 +1,7 @@
 # MindWP System Hard Reset — Operating Manual
 
 > Direct operating guide for the current rebuild stage.
-> Use this with `docs/Planning/services-plan.md` and the stable rules in `docs/core/*`.
+> Use this with `docs/Planning/services-plan.md`, `docs/Planning/industry-plan.md`, and the stable rules in `docs/core/*`.
 
 ---
 
@@ -11,6 +11,7 @@
 - Homepage, Smart Website Systems, and Local SEO Authority are the current production baselines.
 - Service-domain pages are staged as direct renderer skeletons so Claude Opus can rebuild them without old renderer/data gravity.
 - Service-domain plan: `docs/Planning/services-plan.md`.
+- Industry-domain plan: `docs/Planning/industry-plan.md`.
 - Old consumers still exist outside the rebuilt baseline and service skeletons. Do not delete quarantine files until all consumers are gone.
 - Next priority: Claude Opus service-domain build by approved group from `services-plan.md`.
 
@@ -88,6 +89,13 @@ Service-domain skeletons:
 - `docs/Planning/services-plan.md` owns the service-domain plan and Opus handoff guidance.
 - `services.css` is reset to the shared domain CSS home for future service visual bodies.
 
+Industry-domain skeletons:
+
+- Industry category/detail pages should be staged as direct renderer skeletons, not through shared skeleton helpers.
+- `docs/Planning/industry-plan.md` owns industry grouping, page-type rules, skeleton setup, and Opus handoff guidance.
+- Category pages are broader vertical group pages; detail pages stay specific to one business type’s working day.
+- Final pages must replace placeholders with page-specific visual JSX, semantic data groups, and approved industry-domain CSS rules.
+
 ---
 
 ## 4. Future Domain Rules
@@ -139,7 +147,7 @@ Delete only after the matching consumers are rebuilt and `docs/Planning/Legacy-d
 
 1. Claude Opus service-domain build by approved group from `docs/Planning/services-plan.md`.
 2. Features.
-3. Industries.
+3. Industries by approved category/detail plan from `docs/Planning/industry-plan.md`.
 4. Case studies.
 5. Resources.
 6. Blog.
@@ -155,6 +163,7 @@ Delete only after the matching consumers are rebuilt and `docs/Planning/Legacy-d
 - Case studies still need wrapper/config-level `RelatedSection` injection when that domain is rebuilt.
 - `PrimaryCTASection` still has old consumers outside the rebuilt baseline and service skeletons. Do not delete it yet.
 - `/services` listing still needs rebuild/cleanup after service detail pages are stable.
+- `/industries` listing should be rebuilt after industry category/detail skeletons are stable.
 
 ---
 
@@ -183,12 +192,16 @@ Non-negotiable: architecture cannot drift. Data follows section meaning. CSS fol
 
 ## 9. Active Tracker
 
-| Area              | Status | Direct instruction                                                                                                          |
-| ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-| Baseline pages    | Stable | Homepage, SWS, and LSA are production references. Do not change them unless a specific issue is approved.                    |
-| Service skeletons | Active | Direct renderer skeletons are staging rails only. Claude Opus should replace placeholders with final page bodies.            |
-| Service plan      | Active | Read `docs/Planning/services-plan.md` before service-domain work. It owns page grouping, Opus order, and handoff decisions.  |
-| Components        | Stable | Use `HeroFrame`, `SectionFrame`, `FAQSection` where needed, `DecisionPanel`, and config-injected `RelatedSection`.           |
-| CSS               | Active | `services.css` is the shared service-domain CSS home for new service visual bodies. No raw colors outside `tokens.css`.      |
-| Legacy            | Active | `PrimaryCTASection` and reusable folders are delete-later only after all old consumers are rebuilt.                          |
-| Case studies      | Pending | Add wrapper/config-level `RelatedSection` injection when the case-study domain is rebuilt.                                  |
+| Area                | Status  | Direct instruction                                                                                                          |
+| ------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Baseline pages      | Stable  | Homepage, SWS, and LSA are production references. Do not change them unless a specific issue is approved.                    |
+| Service skeletons   | Active  | Direct renderer skeletons are staging rails only. Claude Opus should replace placeholders with final page bodies.            |
+| Service plan        | Active  | Read `docs/Planning/services-plan.md` before service-domain work. It owns page grouping, Opus order, and handoff decisions.  |
+| Industry skeletons  | Planned | Industry category/detail pages should follow the same direct renderer skeleton workflow after the industry audit/plan pass.  |
+| Industry plan       | Active  | Read `docs/Planning/industry-plan.md` before industry-domain work. It owns category/detail direction and Opus handoff rules. |
+| Components          | Stable  | Use `HeroFrame`, `SectionFrame`, `FAQSection` where needed, `DecisionPanel`, and config-injected `RelatedSection`.           |
+| CSS                 | Active  | Domain CSS owns visual bodies. No raw colors outside `tokens.css`.                                                          |
+| Legacy              | Active  | `PrimaryCTASection` and reusable folders are delete-later only after all old consumers are rebuilt.                          |
+| Case studies        | Pending | Add wrapper/config-level `RelatedSection` injection when the case-study domain is rebuilt.     
+| Resources        | Pending | pending.     
+| Blog       | Pending | pending.                                  |
