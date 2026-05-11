@@ -24,11 +24,125 @@ export type IndustrySectionHeading = {
   description?: string;
 };
 
+export type IndustryLeakState = 'silent' | 'slow' | 'lost' | 'risk' | 'attention' | 'healthy';
+
+export type IndustryLeakItem = {
+  id: string;
+  leak: string;
+  state: IndustryLeakState;
+  observed: string;
+};
+
+export type IndustryTimelineStep = {
+  id: string;
+  time: string;
+  event: string;
+  leakRisk: 'low' | 'medium' | 'high';
+  owner?: string;
+  detail?: string;
+};
+
+export type IndustryStateColumn = {
+  label: string;
+  items: string[];
+};
+
+export type IndustryWorkbenchItem = {
+  id: string;
+  piece: string;
+  state: 'in-place' | 'planned' | 'optional';
+  owner: string;
+  note?: string;
+};
+
+export type IndustryStartingPoint = {
+  id: string;
+  fix: string;
+  signalIfYou: string;
+  leadingSystem: string;
+};
+
+export type IndustryWorkflowRow = {
+  id: string;
+  trigger: string;
+  action: string;
+  owner: string;
+  channel?: string;
+};
+
+export type IndustryRelevantSystem = {
+  id: string;
+  name: string;
+  role: 'lead' | 'support' | 'optional';
+  why: string;
+};
+
+export type IndustryScenarioBlock = {
+  kind: 'scenario' | 'illustrative' | 'operational-breakdown';
+  label: string;
+  body: string;
+  observedChange?: string;
+};
+
+export type IndustryPathwayBranch = {
+  id: string;
+  segment: string;
+  recognition: string;
+  leadingSystem: string;
+  detailHref: string;
+  detailLabel: string;
+};
+
+export type IndustryOperatingModel = {
+  id: string;
+  label: string;
+  traits: string[];
+  differentiator: string;
+};
+
+export type IndustrySystemMatrixEntry = {
+  systemId: string;
+  systemName: string;
+  status: 'lead' | 'support' | 'later';
+  whyNow: string;
+};
+
+export type IndustryRouteEntry = {
+  detailHref: string;
+  label: string;
+  oneLine: string;
+  leadingSystem: string;
+  state?: IndustryLeakState;
+};
+
+export type IndustryHandledStateItem = {
+  id: string;
+  label: string;
+  state: 'before' | 'after';
+  note: string;
+};
+
 export type IndustrySectionData = {
   header: IndustrySectionHeading;
   items?: string[];
   routes?: IndustryRouteSummary[];
   systems?: string[];
+  // Rich optional semantic fields. Renderers cherry-pick what they need.
+  leaks?: IndustryLeakItem[];
+  timeline?: IndustryTimelineStep[];
+  before?: IndustryStateColumn;
+  after?: IndustryStateColumn;
+  workbench?: IndustryWorkbenchItem[];
+  startingPoints?: IndustryStartingPoint[];
+  workflow?: IndustryWorkflowRow[];
+  relevantSystems?: IndustryRelevantSystem[];
+  scenario?: IndustryScenarioBlock;
+  branches?: IndustryPathwayBranch[];
+  models?: IndustryOperatingModel[];
+  matrix?: IndustrySystemMatrixEntry[];
+  routeEntries?: IndustryRouteEntry[];
+  handled?: IndustryHandledStateItem[];
+  rule?: string;
 };
 
 export type IndustryRouteSummary = {

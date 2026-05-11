@@ -40,7 +40,6 @@ const ROUTE_RULE_DOT = 'Rule';
 const ROUTE_TRIGGER_DOT = 'Trigger';
 const ROUTE_STEPS_DOT = 'Path';
 
-const BOARD_CHANNEL_DOT = 'Channel';
 const BOARD_SCOPE_DOT = 'Scope';
 const BOARD_RECENT_DOT = 'Recent';
 const BOARD_RULE_DOT = 'Rule';
@@ -223,30 +222,30 @@ export function ReputationReviewSystemsRenderer({ data, slug: _slug }: Props) {
               <header className='rep-board__header'>
                 <span className='rep-board__title'>{monitoringBoard.label}</span>
               </header>
-              <div className='rep-board__columns'>
-                <span>{BOARD_CHANNEL_DOT}</span>
-                <span>{BOARD_SCOPE_DOT}</span>
-                <span>{BOARD_RECENT_DOT}</span>
-                <span>State</span>
-              </div>
-              <ul className='rep-board__list'>
+              <ul className='rep-tiles'>
                 {monitoringBoard.rows.map(r => (
-                  <li key={r.id} className={`rep-board__row rep-board__row--${r.state}`}>
-                    <span className='rep-board__channel'>
-                      <span
-                        className={`rep-board__dot rep-board__dot--${r.state}`}
-                        aria-hidden='true'
-                      />
-                      {r.channel}
+                  <li key={r.id} className={`rep-tile rep-tile--${r.state}`}>
+                    <header className='rep-tile__head'>
+                      <span className='rep-tile__channel'>
+                        <span
+                          className={`rep-board__dot rep-board__dot--${r.state}`}
+                          aria-hidden='true'
+                        />
+                        {r.channel}
+                      </span>
+                      <span className={`rep-tile__state rep-tile__state--${r.state}`}>
+                        {r.state}
+                      </span>
+                    </header>
+                    <span className='rep-tile__scope'>
+                      <span className='rep-tile__meta-label'>{BOARD_SCOPE_DOT}</span>
+                      <span className='rep-tile__meta-value'>{r.scope}</span>
                     </span>
-                    <span className='rep-board__scope'>{r.scope}</span>
-                    <span className='rep-board__recent'>
-                      {r.recent}
-                      <em className='rep-board__detail'>{r.detail}</em>
+                    <span className='rep-tile__recent'>
+                      <span className='rep-tile__meta-label'>{BOARD_RECENT_DOT}</span>
+                      <span className='rep-tile__meta-value'>{r.recent}</span>
                     </span>
-                    <span className={`rep-board__state rep-board__state--${r.state}`}>
-                      {r.state}
-                    </span>
+                    <p className='rep-tile__detail'>{r.detail}</p>
                   </li>
                 ))}
               </ul>

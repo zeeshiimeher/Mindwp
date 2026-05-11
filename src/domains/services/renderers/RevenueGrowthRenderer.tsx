@@ -151,42 +151,42 @@ export function RevenueGrowthRenderer({ data, slug: _slug }: Props) {
       <SectionFrame
         heading={systemBridges.header}
         tone='white'
-        className='feat-bridge'
+        className='rev-coord'
         ariaLabel={ARIA_BRIDGE_DOT}
       >
         {(() => {
           requireHeadingTitle(systemBridges.header.title, 'systemBridges');
           return (
-            <div className='feat-bridge__wrap'>
-              <div className='feat-bridge__columns'>
-                <article className='feat-bridge__col feat-bridge__col--a'>
-                  <header className='feat-bridge__head'>
-                    <span className='feat-bridge__label'>{BRIDGE_REV_DOT}</span>
-                  </header>
-                  <ul className='feat-bridge__items'>
-                    {revRows.map(r => (
-                      <li key={r.id}>
-                        <span className='feat-bridge__bullet' aria-hidden='true' />
-                        {r.point}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-                <article className='feat-bridge__col feat-bridge__col--b'>
-                  <header className='feat-bridge__head'>
-                    <span className='feat-bridge__label'>{BRIDGE_OTHER_DOT}</span>
-                  </header>
-                  <ul className='feat-bridge__items'>
-                    {otherRows.map(r => (
-                      <li key={r.id}>
-                        <span className='feat-bridge__bullet' aria-hidden='true' />
-                        {r.point}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+            <div className='rev-coord__wrap'>
+              <article className='rev-coord__hub'>
+                <span className='rev-coord__hub-tag'>{BRIDGE_REV_DOT}</span>
+                <h3 className='rev-coord__hub-title'>Coordinates the recovery loop</h3>
+                <ul className='rev-coord__hub-list'>
+                  {revRows.map(r => (
+                    <li key={r.id} className='rev-coord__hub-item'>
+                      <span className='rev-coord__hub-mark' aria-hidden='true'>
+                        +
+                      </span>
+                      {r.point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+              <div className='rev-coord__satellites'>
+                <span className='rev-coord__satellites-label'>{BRIDGE_OTHER_DOT}</span>
+                <ul className='rev-coord__sat-list'>
+                  {otherRows.map(r => (
+                    <li key={r.id} className='rev-coord__sat'>
+                      <span className='rev-coord__sat-arrow' aria-hidden='true'>
+                        →
+                      </span>
+                      <span className='rev-coord__sat-system'>{r.systemTag ?? ''}</span>
+                      <span className='rev-coord__sat-role'>{r.point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className='feat-bridge__rule'>
+              <p className='rev-coord__rule'>
                 <strong>{RULE_DOT}.</strong> {systemBridges.rule}
               </p>
             </div>

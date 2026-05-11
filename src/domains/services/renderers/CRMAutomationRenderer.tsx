@@ -44,8 +44,6 @@ const PATH_ACTION_DOT = 'What happens';
 const PATH_OWNER_DOT = 'Owner sees';
 const PATH_BOUNDARY_DOT = 'Boundary';
 
-const STATUS_COL_DOT = 'Status';
-const STATUS_MEANING_DOT = 'Meaning';
 const STATUS_TRIGGER_DOT = 'Triggers';
 
 const BOUNDARY_GUARD_DOT = 'Guard';
@@ -238,23 +236,22 @@ export function CRMAutomationRenderer({ data, slug: _slug }: Props) {
           requireHeadingDescription(statusVisibility.header.description, 'statusVisibility');
           return (
             <div className='crm-status'>
-              <div className='crm-status__columns'>
-                <span>{STATUS_COL_DOT}</span>
-                <span>{STATUS_MEANING_DOT}</span>
-                <span>{STATUS_TRIGGER_DOT}</span>
-              </div>
-              <ul className='crm-status__list'>
+              <ul className='crm-status-rail'>
                 {statusVisibility.definitions.map(d => (
-                  <li key={d.id} className={`crm-status__row crm-status__row--${d.signal}`}>
-                    <span className='crm-status__label'>
+                  <li
+                    key={d.id}
+                    className={`crm-status-rail__item crm-status-rail__item--${d.signal}`}
+                  >
+                    <span className={`crm-status-rail__pill crm-status-rail__pill--${d.signal}`}>
                       <span
                         className={`crm-status__dot crm-status__dot--${d.signal}`}
                         aria-hidden='true'
                       />
                       {d.status}
                     </span>
-                    <span className='crm-status__meaning'>{d.meaning}</span>
-                    <span className='crm-status__trigger'>{d.triggers}</span>
+                    <p className='crm-status-rail__meaning'>{d.meaning}</p>
+                    <span className='crm-status-rail__trigger-label'>{STATUS_TRIGGER_DOT}</span>
+                    <span className='crm-status-rail__trigger'>{d.triggers}</span>
                   </li>
                 ))}
               </ul>
@@ -275,25 +272,24 @@ export function CRMAutomationRenderer({ data, slug: _slug }: Props) {
           requireHeadingTitle(handoffBoundaries.header.title, 'handoffBoundaries');
           return (
             <div className='crm-boundary'>
-              <div className='crm-boundary__columns'>
+              <div className='crm-lane'>
                 {handoffBoundaries.columns.map(col => (
-                  <article
-                    key={col.id}
-                    className={`crm-boundary__col crm-boundary__col--${col.scope}`}
-                  >
-                    <header className='crm-boundary__head'>
-                      <span className='crm-boundary__label'>{col.label}</span>
-                      <h3 className='crm-boundary__title'>{col.title}</h3>
+                  <article key={col.id} className={`crm-lane__col crm-lane__col--${col.scope}`}>
+                    <header className='crm-lane__head'>
+                      <span className='crm-lane__label'>{col.label}</span>
+                      <h3 className='crm-lane__title'>{col.title}</h3>
                     </header>
-                    <ul className='crm-boundary__items'>
+                    <ul className='crm-lane__items'>
                       {col.items.map((it, i) => (
-                        <li key={`${col.id}-${i}`}>
-                          <span className='crm-boundary__bullet' aria-hidden='true' />
-                          {it}
+                        <li key={`${col.id}-${i}`} className='crm-lane__item'>
+                          <span aria-hidden='true' className='crm-lane__mark'>
+                            {col.scope === 'crm' ? '+' : '−'}
+                          </span>
+                          <span>{it}</span>
                         </li>
                       ))}
                     </ul>
-                    <p className='crm-boundary__guard'>
+                    <p className='crm-lane__guard'>
                       <strong>{BOUNDARY_GUARD_DOT}.</strong> {col.guard}
                     </p>
                   </article>

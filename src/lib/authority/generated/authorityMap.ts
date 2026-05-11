@@ -675,31 +675,39 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'accounting-firms': {
       services: [
         {
-          title: 'Reputation and Review Systems for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
-          title: 'CRM & Automation for Service Businesses',
+          title: 'Smart Website Systems for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling',
+          title: 'System Migration and Platform Consolidation',
           description:
-            'A focused comparison for deciding when manual lead handling stops being enough.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
@@ -709,19 +717,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
@@ -755,14 +755,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'aesthetic-cosmetic-clinics': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -771,11 +763,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -789,11 +789,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
@@ -843,14 +843,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
-          description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
@@ -858,22 +850,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/unified-communication-system',
           nodeType: 'service',
         },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
-          title: 'Garage missed call case study: more enquiries recovered',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been quietly slipping away.',
-          slug: 'garage-morning-rush-missed-calls',
-          path: '/case-studies/garage-morning-rush-missed-calls',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -884,8 +876,24 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
+          nodeType: 'case-study',
+        },
       ],
       resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
         {
           title: 'HVAC Emergency Call Handling System',
           description:
@@ -900,14 +908,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
           slug: 'auto-repair-lead-handling-example',
           path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
       ],
@@ -941,19 +941,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Garage missed call case study: more enquiries recovered',
           description:
             'How a Leicester garage stopped losing so many callers during the morning rush and recovered work that had been quietly slipping away.',
           slug: 'garage-morning-rush-missed-calls',
           path: '/case-studies/garage-morning-rush-missed-calls',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
         {
@@ -966,6 +966,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
       resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
         {
           title: 'HVAC Emergency Call Handling System',
           description:
@@ -982,26 +990,10 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
       ],
     },
     'beauty-personal-care': {
       services: [
-        {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
         {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
@@ -1018,6 +1010,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
+        {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
@@ -1029,19 +1029,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Salon review case study: a Google profile that finally matches the salon',
           description:
             'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
           slug: 'salon-great-work-going-unseen',
           path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
       ],
@@ -1075,14 +1075,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'body-shops': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -1091,11 +1083,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -1109,11 +1109,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
@@ -1163,91 +1163,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-      ],
-      caseStudies: [
-        {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Salon review case study: a Google profile that finally matches the salon',
-          description:
-            'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
-          slug: 'salon-great-work-going-unseen',
-          path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
-      ],
-      resources: [
-        {
-          title: 'HVAC Emergency Call Handling System',
-          description:
-            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
-          slug: 'hvac-emergency-call-handling-system',
-          path: '/resources/hvac-emergency-call-handling-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    consultants: {
-      services: [
-        {
-          title: 'CRM & Automation for Service Businesses',
-          description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website CRM Integration vs Manual Lead Handling',
-          description:
-            'A focused comparison for deciding when manual lead handling stops being enough.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
@@ -1269,11 +1189,91 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Law firm consultation case study: more calls becoming clients',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    consultants: {
+      services: [
+        {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration and Platform Consolidation',
+          description:
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -1323,19 +1323,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
           title: 'Smart Website Systems for Service Businesses',
           description:
             'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1349,19 +1349,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
       ],
@@ -1395,31 +1395,39 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'driving-schools': {
       services: [
         {
-          title: 'Reputation and Review Systems for Service Businesses',
+          title: 'AI Lead Handling for Service Businesses',
           description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Missed Call Recovery System',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'System Migration and Platform Consolidation',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
       caseStudies: [
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
@@ -1429,19 +1437,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
@@ -1483,19 +1483,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
-          description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -1509,19 +1509,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
           title: 'Construction firm case study: one shared view of every live lead',
           description:
             'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
           slug: 'construction-leads-everywhere-untracked',
           path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -1555,14 +1555,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hair-salons': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -1571,11 +1563,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -1589,19 +1589,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Salon review case study: a Google profile that finally matches the salon',
           description:
             'How a Leeds hair salon stopped letting strong work go unseen on Google and built a steady stream of recent reviews from happy clients.',
           slug: 'salon-great-work-going-unseen',
           path: '/case-studies/salon-great-work-going-unseen',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -1635,11 +1635,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'home-inspectors': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
+          title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
@@ -1651,11 +1651,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1669,19 +1669,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
-          title: 'Law firm consultation case study: more calls becoming clients',
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -1749,19 +1749,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
           title: 'Construction firm case study: one shared view of every live lead',
           description:
             'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
           slug: 'construction-leads-everywhere-untracked',
           path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -1795,19 +1795,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-companies': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
+          title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
-          title: 'Missed Call Recovery System',
-          description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
@@ -1818,22 +1810,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/unified-communication-system',
           nodeType: 'service',
         },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
-          title: 'HVAC after-hours call case study: more emergency jobs captured',
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
-            'How a Manchester heating and cooling business stopped losing so many after-hours emergency calls and kept more urgent work in play on the same evening.',
-          slug: 'hvac-after-hours-calls-going-cold',
-          path: '/case-studies/hvac-after-hours-calls-going-cold',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'HVAC peak season case study: more calls held in play during surges',
-          description:
-            'How a Nottingham heating and cooling business stopped losing calls during peak season and made surge weeks feel manageable for the office team.',
-          slug: 'hvac-peak-season-couldnt-keep-up',
-          path: '/case-studies/hvac-peak-season-couldnt-keep-up',
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
           nodeType: 'case-study',
         },
         {
@@ -1842,6 +1834,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
           slug: 'construction-leads-everywhere-untracked',
           path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -1909,19 +1909,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
           title: 'Construction firm case study: one shared view of every live lead',
           description:
             'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
           slug: 'construction-leads-everywhere-untracked',
           path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -1963,19 +1963,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
           title: 'Smart Website Systems for Service Businesses',
           description:
             'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1989,19 +1989,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
       ],
@@ -2035,27 +2035,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'legal-professional-services': {
       services: [
         {
-          title: 'Reputation and Review Systems for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
-          title: 'CRM & Automation for Service Businesses',
+          title: 'Smart Website Systems for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling',
+          title: 'System Migration and Platform Consolidation',
           description:
-            'A focused comparison for deciding when manual lead handling stops being enough.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2069,19 +2069,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
-          nodeType: 'case-study',
-        },
-        {
           title: 'Construction firm case study: one shared view of every live lead',
           description:
             'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
           slug: 'construction-leads-everywhere-untracked',
           path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Law firm consultation case study: more calls becoming clients',
+          description:
+            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
+          slug: 'law-firm-consultations-not-becoming-clients',
+          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
       ],
@@ -2115,14 +2115,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-appointment-businesses': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2138,6 +2130,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
+        {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
@@ -2149,19 +2149,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
       ],
@@ -2203,14 +2203,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
-          description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
@@ -2218,84 +2210,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/unified-communication-system',
           nodeType: 'service',
         },
-      ],
-      caseStudies: [
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Smart Website Systems for Service Businesses',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Construction firm case study: one shared view of every live lead',
-          description:
-            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
-          slug: 'construction-leads-everywhere-untracked',
-          path: '/case-studies/construction-leads-everywhere-untracked',
-          nodeType: 'case-study',
-        },
-      ],
-      resources: [
-        {
-          title: 'HVAC Emergency Call Handling System',
-          description:
-            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
-          slug: 'hvac-emergency-call-handling-system',
-          path: '/resources/hvac-emergency-call-handling-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local Service Page Architecture',
-          description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-      ],
-    },
-    'mortgage-brokers': {
-      services: [
-        {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
-          title: 'Reputation and Review Systems for Service Businesses',
-          description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Missed Call Recovery System',
-          description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -2309,11 +2229,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
@@ -2352,42 +2272,34 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'nail-salons': {
+    'mortgage-brokers': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
-          title: 'Reputation and Review Systems for Service Businesses',
+          title: 'Smart Website Systems for Service Businesses',
           description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'System Migration and Platform Consolidation',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
       caseStudies: [
-        {
-          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
-          description:
-            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
-          slug: 'cleaning-enquiries-half-getting-lost',
-          path: '/case-studies/cleaning-enquiries-half-getting-lost',
-          nodeType: 'case-study',
-        },
         {
           title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
@@ -2397,15 +2309,31 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
         {
           title: 'HVAC Emergency Call Handling System',
           description:
@@ -2422,12 +2350,84 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
+      ],
+    },
+    'nail-salons': {
+      services: [
         {
-          title: 'Local Service Page Architecture',
+          title: 'Reputation and Review Systems for Service Businesses',
           description:
-            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-          slug: 'local-service-page-architecture',
-          path: '/resources/local-service-page-architecture',
+            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2443,19 +2443,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
-          description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -2515,19 +2515,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'property-managers': {
       services: [
         {
-          title: 'CRM & Automation for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website CRM Integration vs Manual Lead Handling',
-          description:
-            'A focused comparison for deciding when manual lead handling stops being enough.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
@@ -2538,22 +2530,30 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
+        {
+          title: 'System Migration and Platform Consolidation',
+          description:
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
+        {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
         {
           title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
             'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
           slug: 'cleaning-enquiries-half-getting-lost',
           path: '/case-studies/cleaning-enquiries-half-getting-lost',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
         {
@@ -2595,14 +2595,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'real-estate-property-services': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2611,29 +2603,37 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
       caseStudies: [
-        {
-          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
-          description:
-            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
-          slug: 'cleaning-enquiries-half-getting-lost',
-          path: '/case-studies/cleaning-enquiries-half-getting-lost',
-          nodeType: 'case-study',
-        },
         {
           title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
             'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
           slug: 'estate-agent-enquiries-going-to-the-wrong-place',
           path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
+          description:
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
           nodeType: 'case-study',
         },
         {
@@ -2675,14 +2675,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     realtors: {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2691,23 +2683,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
       caseStudies: [
-        {
-          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
-          description:
-            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
-          slug: 'cleaning-enquiries-half-getting-lost',
-          path: '/case-studies/cleaning-enquiries-half-getting-lost',
-          nodeType: 'case-study',
-        },
         {
           title: 'Estate agent enquiry routing case study: faster, sharper replies',
           description:
@@ -2717,11 +2709,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
+          slug: 'cleaning-enquiries-half-getting-lost',
+          path: '/case-studies/cleaning-enquiries-half-getting-lost',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
@@ -2755,14 +2755,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'repair-shops': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -2778,6 +2770,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
+        {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
       ],
       caseStudies: [
         {
@@ -2789,11 +2789,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
@@ -2869,19 +2869,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
-          description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
           title: 'Construction firm case study: one shared view of every live lead',
           description:
             'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
           slug: 'construction-leads-everywhere-untracked',
           path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          description:
+            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
+          slug: 'contractor-solid-work-no-reviews',
+          path: '/case-studies/contractor-solid-work-no-reviews',
           nodeType: 'case-study',
         },
       ],
@@ -2915,27 +2915,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-law-firms': {
       services: [
         {
-          title: 'Reputation and Review Systems for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
-          title: 'CRM & Automation for Service Businesses',
+          title: 'Smart Website Systems for Service Businesses',
           description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling',
+          title: 'System Migration and Platform Consolidation',
           description:
-            'A focused comparison for deciding when manual lead handling stops being enough.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2949,11 +2949,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
@@ -2995,14 +2995,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-med-spas': {
       services: [
         {
-          title: 'AI Lead Handling for Service Businesses',
-          description:
-            'Fast first response for calls, forms, DMs and missed enquiries. AI handles the gap before quotes go cold.',
-          slug: 'ai-lead-handling',
-          path: '/services/ai-lead-handling',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation and Review Systems for Service Businesses',
           description:
             'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
@@ -3011,11 +3003,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'A focused route for unanswered calls — fast reply, useful next step and a clean handoff back to the team.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses',
+          description:
+            'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -3029,11 +3029,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
-          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
-          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
         {
@@ -3075,11 +3075,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-private-clinics': {
       services: [
         {
-          title: 'Reputation and Review Systems for Service Businesses',
+          title: 'Unified Communication for Service Businesses',
           description:
-            'Review request timing, feedback routing and trust signal monitoring for service businesses that do good work but do not capture enough proof.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
@@ -3101,6 +3101,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       caseStudies: [
         {
+          title: 'Estate agent enquiry routing case study: faster, sharper replies',
+          description:
+            'How a Bristol estate agency stopped misrouting sales, lettings, and commercial enquiries and got the right person responding the same morning.',
+          slug: 'estate-agent-enquiries-going-to-the-wrong-place',
+          path: '/case-studies/estate-agent-enquiries-going-to-the-wrong-place',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Cleaning business case study: turning lost enquiries into booked cleans',
           description:
             'How a Reading domestic cleaning business closed the gap between enquiry and reply, and stopped letting half its leads quietly slip away.',
@@ -3109,19 +3117,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Electrical contractor case study: a Google profile that finally shows the work',
+          title: 'Construction firm case study: one shared view of every live lead',
           description:
-            'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
-          slug: 'contractor-solid-work-no-reviews',
-          path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
           nodeType: 'case-study',
         },
       ],
@@ -3163,19 +3163,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Unified Communication for Service Businesses',
+          description:
+            'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+        {
           title: 'Smart Website Systems for Service Businesses',
           description:
             'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration and Platform Consolidation',
-          description:
-            'A practical route for moving scattered website and lead-handling tools into a clearer setup, without losing what still works.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -3189,19 +3189,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
+          title: 'Construction firm case study: one shared view of every live lead',
+          description:
+            'How a Preston construction firm pulled enquiries from five channels into one shared list and stopped losing track of warm leads.',
+          slug: 'construction-leads-everywhere-untracked',
+          path: '/case-studies/construction-leads-everywhere-untracked',
+          nodeType: 'case-study',
+        },
+        {
           title: 'Electrical contractor case study: a Google profile that finally shows the work',
           description:
             'How a Newcastle electrical contractor stopped letting strong work go unseen and built a steady stream of recent reviews from happy customers.',
           slug: 'contractor-solid-work-no-reviews',
           path: '/case-studies/contractor-solid-work-no-reviews',
-          nodeType: 'case-study',
-        },
-        {
-          title: 'Law firm consultation case study: more calls becoming clients',
-          description:
-            'How an Edinburgh family-law firm tightened what happened around each free consultation and started losing fewer clients in the gap.',
-          slug: 'law-firm-consultations-not-becoming-clients',
-          path: '/case-studies/law-firm-consultations-not-becoming-clients',
           nodeType: 'case-study',
         },
       ],
@@ -3263,27 +3263,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -3317,25 +3317,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3371,25 +3371,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3425,25 +3425,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3479,25 +3479,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3533,25 +3533,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3587,25 +3587,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3641,25 +3641,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for nail salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift and Extensions Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3695,25 +3695,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3749,27 +3749,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Landscaping Companies — Enquiry & Follow-up Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'How landscaping companies hold quote enquiries, site-visit bookings, and seasonal follow-up without losing them between calls and crews.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -3803,27 +3803,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Landscaping Companies — Enquiry & Follow-up Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'How landscaping companies hold quote enquiries, site-visit bookings, and seasonal follow-up without losing them between calls and crews.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -3857,25 +3857,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -3911,25 +3911,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3965,25 +3965,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4019,25 +4019,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4073,25 +4073,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4127,25 +4127,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4181,25 +4181,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4235,25 +4235,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4289,25 +4289,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4343,25 +4343,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4397,25 +4397,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4451,25 +4451,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4479,19 +4479,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': {
       resources: [
         {
-          title: 'Lead Response Optimization Checklist for HVAC Businesses',
-          description:
-            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
-          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive CRM Pipeline for Repair Jobs',
           description:
             'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
           slug: 'automotive-crm-pipeline-for-repair-jobs',
           path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
           nodeType: 'resource',
         },
         {
@@ -4505,27 +4505,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4559,25 +4559,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4613,27 +4613,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -4667,25 +4667,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4721,27 +4721,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
+          description:
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Car Detailing Systems',
-          description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4775,27 +4775,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4829,27 +4829,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Small Law Firms Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for small law firms: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4883,27 +4883,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Small Law Firms Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for small law firms: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4937,27 +4937,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -4991,25 +4991,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5045,25 +5045,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5099,25 +5099,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5153,25 +5153,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5207,25 +5207,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5261,25 +5261,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5315,25 +5315,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5369,27 +5369,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -5423,25 +5423,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5477,25 +5477,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5531,25 +5531,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5585,25 +5585,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5639,27 +5639,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Realtors — Lead, Nurture, and Listing Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How realtors hold inbound enquiries, nurture buyers and sellers between transactions, and keep listing momentum.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -5693,25 +5693,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5747,25 +5747,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5801,25 +5801,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5855,25 +5855,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5909,25 +5909,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5963,25 +5963,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6017,25 +6017,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6071,25 +6071,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6125,25 +6125,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6179,27 +6179,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -6233,25 +6233,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6287,27 +6287,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for property managers: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -6341,27 +6341,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for property managers: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -6395,25 +6395,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6449,25 +6449,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6503,27 +6503,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -6557,25 +6557,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6611,25 +6611,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6647,14 +6647,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'What Is a Systems-First Website?',
           description:
             'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
@@ -6662,28 +6654,36 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/what-is-a-systems-first-website',
           nodeType: 'resource',
         },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6719,25 +6719,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6773,25 +6773,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6827,25 +6827,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6881,25 +6881,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6935,25 +6935,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6971,14 +6971,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'What Is a Systems-First Website?',
           description:
             'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
@@ -6986,28 +6978,36 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/what-is-a-systems-first-website',
           nodeType: 'resource',
         },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7043,27 +7043,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -7097,27 +7097,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7151,25 +7151,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for nail salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift and Extensions Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7205,25 +7205,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -7259,27 +7259,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -7313,27 +7313,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -7367,25 +7367,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -7421,27 +7421,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Realtors — Lead, Nurture, and Listing Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How realtors hold inbound enquiries, nurture buyers and sellers between transactions, and keep listing momentum.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -7475,25 +7475,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -7529,27 +7529,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
+          description:
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -7583,27 +7583,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -7637,27 +7637,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -7691,25 +7691,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7745,25 +7745,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7799,27 +7799,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7835,14 +7835,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Conversion Architecture for Service Websites',
           description:
             'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
@@ -7850,28 +7842,36 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/conversion-architecture-for-service-websites',
           nodeType: 'resource',
         },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7881,19 +7881,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'why-slow-lead-response-is-killing-automotive-businesses': {
       resources: [
         {
-          title: 'Lead Response Optimization Checklist for HVAC Businesses',
-          description:
-            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
-          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive CRM Pipeline for Repair Jobs',
           description:
             'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
           slug: 'automotive-crm-pipeline-for-repair-jobs',
           path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
           nodeType: 'resource',
         },
         {
@@ -7907,27 +7907,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7961,27 +7961,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
-          description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -8001,25 +8001,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8055,27 +8055,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -8109,27 +8109,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -8155,25 +8155,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8193,25 +8193,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8239,25 +8239,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8293,25 +8293,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Nail Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for nail salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'nail-salons',
-          path: '/industries/beauty-personal-care/nail-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift and Extensions Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8339,25 +8339,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8385,27 +8385,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Landscaping Companies — Enquiry & Follow-up Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'How landscaping companies hold quote enquiries, site-visit bookings, and seasonal follow-up without losing them between calls and crews.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -8439,25 +8439,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8493,25 +8493,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8539,25 +8539,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8585,27 +8585,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -8631,25 +8631,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -8677,25 +8677,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8715,25 +8715,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8769,25 +8769,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8807,25 +8807,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8845,25 +8845,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8899,25 +8899,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8945,25 +8945,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -8981,14 +8981,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM & Automation for Service Businesses',
-          description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
@@ -8996,30 +8988,38 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/unified-communication-system',
           nodeType: 'service',
         },
+        {
+          title: 'CRM & Automation for Service Businesses',
+          description:
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -9053,27 +9053,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9091,27 +9091,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
+          description:
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Car Detailing Systems',
-          description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9145,27 +9145,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9199,27 +9199,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Small Law Firms Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for small law firms: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'small-law-firms',
-          path: '/industries/legal-professional-services/small-law-firms',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'accounting-firms',
-          path: '/industries/legal-professional-services/accounting-firms',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9245,27 +9245,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
-          description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9299,27 +9299,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -9353,25 +9353,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9391,25 +9391,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9445,25 +9445,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9483,25 +9483,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9521,25 +9521,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9559,27 +9559,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Realtors — Lead, Nurture, and Listing Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How realtors hold inbound enquiries, nurture buyers and sellers between transactions, and keep listing momentum.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -9613,27 +9613,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -9667,27 +9667,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -9721,27 +9721,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -9775,27 +9775,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -9821,27 +9821,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -9875,25 +9875,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9911,14 +9911,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM & Automation for Service Businesses',
-          description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
@@ -9926,28 +9918,36 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/unified-communication-system',
           nodeType: 'service',
         },
+        {
+          title: 'CRM & Automation for Service Businesses',
+          description:
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9967,25 +9967,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10005,25 +10005,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10043,25 +10043,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10081,25 +10081,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10119,25 +10119,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10165,25 +10165,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10201,14 +10201,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM & Automation for Service Businesses',
-          description:
-            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Unified Communication for Service Businesses',
           description:
             'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
@@ -10216,30 +10208,38 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/unified-communication-system',
           nodeType: 'service',
         },
+        {
+          title: 'CRM & Automation for Service Businesses',
+          description:
+            'CRM setup for service businesses that need every enquiry owned, followed up and visible after it arrives.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -10273,27 +10273,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
+          description:
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -10311,25 +10311,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10357,27 +10357,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for consultants: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for property managers: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'property-managers',
-          path: '/industries/real-estate-property-services/property-managers',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -10411,27 +10411,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing Companies Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -10449,25 +10449,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10503,27 +10503,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -10557,25 +10557,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10603,25 +10603,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10657,25 +10657,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10703,25 +10703,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10757,25 +10757,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for car detailing businesses: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10800,27 +10800,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'cleaning-enquiries-half-getting-lost': {
       industries: [
         {
-          title: 'Hair Salons Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hair-salons',
-          path: '/industries/beauty-personal-care/hair-salons',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic and Cosmetic Clinics Systems',
+          title: 'Car Detailing — Booking, Capacity, and Repeat-Visit Systems',
           description:
-            'Holding structure for aesthetic and cosmetic clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'aesthetic-cosmetic-clinics',
-          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+            'How detailing operators hold inbound bookings, manage day-of capacity, and bring past customers back without paid acquisition.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -10854,45 +10854,45 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'construction-leads-everywhere-untracked': {
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
+          description:
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
       resources: [
-        {
-          title: 'CRM Pipeline Architecture',
-          description:
-            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
-          slug: 'crm-pipeline-architecture',
-          path: '/resources/crm-pipeline-architecture',
-          nodeType: 'resource',
-        },
         {
           title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
           description:
             'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
           slug: 'crm-pipeline-automation',
           path: '/resources/crm-pipeline-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Architecture',
+          description:
+            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+          slug: 'crm-pipeline-architecture',
+          path: '/resources/crm-pipeline-architecture',
           nodeType: 'resource',
         },
         {
@@ -10908,25 +10908,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'contractor-solid-work-no-reviews': {
       industries: [
         {
-          title: 'Electrical Companies Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for electrical companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
           slug: 'electrical-companies',
           path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10988,27 +10988,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'estate-agent-enquiries-going-to-the-wrong-place': {
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for realtors: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Realtors — Lead, Nurture, and Listing Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How realtors hold inbound enquiries, nurture buyers and sellers between transactions, and keep listing momentum.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -11022,19 +11022,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
-          description:
-            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
-          slug: 'auto-reply-funnel',
-          path: '/resources/auto-reply-funnel',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Lead Handling Example',
           description:
             'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
           slug: 'hvac-lead-handling-example',
           path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
           nodeType: 'resource',
         },
       ],
@@ -11081,27 +11081,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'garage-morning-rush-missed-calls': {
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Repair Shops — Drop-Off, Quote, and Pickup Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How phone, electronics, and appliance repair shops hold drop-offs, send status updates, and bring customers back for pickup.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Home Inspectors — Booking, Report, and Referral Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How home inspectors hold inbound bookings from agents and buyers, deliver reports promptly, and stay top-of-mind for referral.',
+          slug: 'home-inspectors',
+          path: '/industries/real-estate-property-services/home-inspectors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -11135,27 +11135,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-after-hours-calls-going-cold': {
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -11202,27 +11202,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-peak-season-couldnt-keep-up': {
       industries: [
         {
-          title: 'HVAC Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for HVAC companies: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -11256,27 +11256,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'law-firm-consultations-not-becoming-clients': {
       industries: [
         {
-          title: 'Lash Lift and Extensions Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'lash-lift-and-extensions',
-          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Dental Clinics Systems',
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
           description:
-            'Holding structure for dental clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'dental-clinics',
-          path: '/industries/local-appointment-businesses/dental-clinics',
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Driving Schools Systems',
+          title: 'Small Law Firms — Intake, Conflict-Check, and Matter Systems',
           description:
-            'Holding structure for driving schools: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'driving-schools',
-          path: '/industries/local-appointment-businesses/driving-schools',
+            'How small law firms hold considered enquiries, run conflict checks, and manage matter status without losing the moment.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
       ],
@@ -11336,27 +11336,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'locksmith-late-night-calls-missed': {
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -11403,27 +11403,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'pest-control-urgent-calls-cant-get-through': {
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for mobile mechanics: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -11457,27 +11457,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'plumber-emergency-calls-mostly-missed': {
       industries: [
         {
-          title: 'Plumbing Companies Systems',
+          title: 'Plumbing Companies — Emergency Capture & Dispatch Systems',
           description:
-            'Holding structure for plumbing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How plumbing operators hold after-hours calls, route urgent jobs to the nearest tech, and keep planned work moving through the same system.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair Systems',
+          title: 'Electrical Companies — Emergency & Project Pipeline Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'How electrical operators hold the after-hours fault call, keep planned project quotes moving, and maintain compliance documentation without the office drowning in it.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Driving Schools — Booking, Test-Prep, and Lesson-Block Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'How driving schools hold inbound bookings across multiple instructors, manage lesson blocks, and follow up around the test.',
+          slug: 'driving-schools',
+          path: '/industries/local-appointment-businesses/driving-schools',
           nodeType: 'industry-detail',
         },
       ],
@@ -11524,25 +11524,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-website-looked-fine-work-not-flowing': {
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Roofing Companies — Storm Surge & Inspection Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing Companies Systems',
-          description:
-            'Holding structure for roofing companies: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How roofing operators hold the storm-event call surge, keep inspection-quote conversions on track, and stay in front of insurance work without losing the trail.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11591,25 +11591,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-great-work-going-unseen': {
       industries: [
         {
-          title: 'Auto Repair Systems',
+          title: 'Hair Salons — Booking, Stylist Capacity, and Rebook Systems',
           description:
-            'Holding structure for auto repair shops: enquiry capture, fast response, follow-up ownership, and local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Hair Salons Systems',
-          description:
-            'Holding structure for hair salons: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established hair salons hold inbound bookings, manage stylist capacity, and bring clients back at the right interval.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops Systems',
+          title: 'Auto Repair Shops — Bay-to-Office Systems',
           description:
-            'Holding structure for body shops: enquiry capture, fast response, follow-up ownership, and local trust.',
+            'How established auto repair shops hold inbound calls, manage estimate approvals, and keep returning customers on a service rhythm.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Estimate, Insurance, and Cycle-Time Systems',
+          description:
+            'How collision and body shops hold inbound enquiries, manage insurance threads, and keep cycle time visible across estimates, parts, and pickup.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',

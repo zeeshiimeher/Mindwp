@@ -2,146 +2,329 @@ import type { IndustryDetailPageData } from '@/domains/industries/types';
 
 export const accountingFirmsIndustryPageData: IndustryDetailPageData = {
   seo: {
-    title: 'Accounting Firms Systems',
+    title: 'Accounting Firms — Onboarding, Document, and Year-End Systems',
     description:
-      'Holding structure for accounting firms: enquiry capture, fast response, follow-up ownership, and local trust.',
+      'How accounting firms hold inbound enquiries, run document collection, and stay ahead of year-end and compliance deadlines.',
     canonical: '/industries/legal-professional-services/accounting-firms',
     openGraph: {
-      title: 'Accounting Firms Systems',
-      description: 'Enquiry handling, follow-up, and trust structure for accounting firms.',
+      title: 'Accounting Firms — Onboarding, Document, and Year-End Systems',
+      description: 'Onboarding, documents, and year-end on one operating layer.',
     },
   },
   slug: 'accounting-firms',
   type: 'detail',
   parentSlug: 'legal-professional-services',
   hero: {
-    badge: 'Accounting Firms',
-    title: 'Accounting Firms [[muted:systems that keep enquiries moving]]',
+    badge: 'Professional · Accounting Firms',
+    title: 'Year-end approaching. [[muted:And half the clients haven’t sent their books.]]',
     description:
-      'Show where enquiries arrive, where they stall, and which system needs an owner first.',
+      'Accounting work runs in cycles. The leak is between request and document arrival.',
     list: [
-      'Missed calls are recovered',
-      'Enquiries are sorted by intent',
-      'Follow-up has a visible owner',
+      'Enquiries acknowledged with a clear next step',
+      'Document collection runs with reminders until complete',
+      'Year-end and quarterly cadence runs without manual chasing',
     ],
   },
   industries: ['accounting'],
-  systems: [
-    'smart-website-systems',
-    'ai-lead-handling',
-    'crm-automation',
-    'reputation-review',
-    'local-seo-authority',
-  ],
-  topics: ['follow-up', 'lead-qualification', 'review-generation'],
+  systems: ['ai-lead-handling', 'crm-automation', 'reputation-review', 'smart-website-systems'],
+  topics: ['lead-management', 'follow-up'],
   industryPattern: {
     header: {
-      kicker: 'Leak Pattern',
-      title: 'Accounting Firms leak pattern',
-      description:
-        'Show the exact points where accounting firms lose enquiries, bookings, quotes, or trust.',
+      kicker: 'Where it leaks',
+      title: 'Three places accounting work usually slips',
+      description: 'Most firms see at least two of these.',
     },
-    items: ['First reply', 'Qualification', 'Follow-up'],
+    leaks: [
+      {
+        id: 'docs',
+        leak: 'Documents arrive late or never',
+        state: 'risk',
+        observed: 'A client said they’d send books last week. They didn’t.',
+      },
+      {
+        id: 'first-touch',
+        leak: 'Slow first reply on enquiries',
+        state: 'silent',
+        observed: 'A new business owner enquires. Reply takes a day. They go elsewhere.',
+      },
+      {
+        id: 'year-end',
+        leak: 'Year-end deadlines crowd everyone at once',
+        state: 'attention',
+        observed: 'Three clients send year-end docs in the same week. Capacity strains.',
+      },
+    ],
   },
   leakTimeline: {
     header: {
-      kicker: 'Timeline',
-      title: 'Where the working day loses momentum',
-      description:
-        'Map the moments from first contact through booking, handoff, follow-up, and review request.',
+      kicker: 'A typical month',
+      title: 'How an accounting month moves',
+      description: 'Document chasing is the constant. Year-end and quarter-end peak everything.',
     },
+    timeline: [
+      {
+        id: 'week1',
+        time: 'Week 1',
+        event: 'Reconciliations and document chasing',
+        leakRisk: 'high',
+        owner: 'Bookkeeper',
+      },
+      {
+        id: 'week2',
+        time: 'Week 2',
+        event: 'Reports and partner reviews',
+        leakRisk: 'medium',
+        owner: 'Accountant',
+      },
+      {
+        id: 'week3',
+        time: 'Week 3',
+        event: 'Client meetings and advisory',
+        leakRisk: 'medium',
+        owner: 'Partner',
+      },
+      {
+        id: 'week4',
+        time: 'Week 4',
+        event: 'Compliance filings, tax prep',
+        leakRisk: 'high',
+        owner: 'Accountant',
+      },
+      {
+        id: 'eom',
+        time: 'Month-end / Year-end',
+        event: 'Spike in document requests',
+        leakRisk: 'high',
+        owner: 'Whole team',
+      },
+    ],
   },
   beforeAfter: {
     header: {
-      kicker: 'Operating State',
-      title: 'Before and after the system is owned',
-      description:
-        'Contrast the current drift with a clearer state where enquiries have a next action.',
+      kicker: 'What changes',
+      title: 'The firm, before and after',
+      description: 'Same accountants. A different layer behind document collection.',
+    },
+    before: {
+      label: 'Before',
+      items: [
+        'Documents arrive late',
+        'Slow first replies on enquiries',
+        'Year-end strains capacity',
+        'Status updates batched at month-end',
+        'Reviews depend on the client remembering',
+      ],
+    },
+    after: {
+      label: 'After',
+      items: [
+        'Document checklist with reminders until complete',
+        'Enquiries acknowledged in minutes',
+        'Year-end cadence starts months ahead',
+        'Status updates run automatically',
+        'Review prompt at appropriate moment',
+      ],
     },
   },
   workbench: {
     header: {
-      kicker: 'Workbench',
-      title: 'What gets put in place',
-      description:
-        'List the practical pieces to show: capture, response, routing, follow-up, and proof.',
+      kicker: 'What sits on the workbench',
+      title: 'The pieces that hold a firm together',
+      description: 'In place, planned, optional.',
     },
+    workbench: [
+      {
+        id: 'first-touch',
+        piece: 'Enquiry acknowledgment',
+        state: 'in-place',
+        owner: 'AI Lead Handling',
+      },
+      {
+        id: 'docs',
+        piece: 'Document checklist + reminders',
+        state: 'in-place',
+        owner: 'CRM & Automation',
+      },
+      { id: 'year-end', piece: 'Year-end cadence', state: 'in-place', owner: 'CRM & Automation' },
+      { id: 'status', piece: 'Status updates', state: 'in-place', owner: 'CRM & Automation' },
+      {
+        id: 'review',
+        piece: 'Post-filing review prompt',
+        state: 'planned',
+        owner: 'Reputation & Reviews',
+      },
+      {
+        id: 'sws',
+        piece: 'Service-page integration',
+        state: 'optional',
+        owner: 'Smart Website Systems',
+      },
+    ],
   },
   startingPoints: {
     header: {
-      kicker: 'Starting Points',
-      title: 'Where to start first',
-      description:
-        'Help the reader choose the first fix without turning the page into a service menu.',
+      kicker: 'Where to start',
+      title: 'Three signals, three different first systems',
+      description: 'The leak you actually have decides the first move.',
     },
+    startingPoints: [
+      {
+        id: 'docs',
+        fix: 'Run document collection with reminders',
+        signalIfYou: 'see year-end strained by missing docs',
+        leadingSystem: 'CRM & Automation',
+      },
+      {
+        id: 'first',
+        fix: 'Acknowledge enquiries instantly',
+        signalIfYou: 'lose enquiries to slow first reply',
+        leadingSystem: 'AI Lead Handling',
+      },
+      {
+        id: 'year-end',
+        fix: 'Start year-end cadence months ahead',
+        signalIfYou: 'feel the year-end pile-up every year',
+        leadingSystem: 'CRM & Automation',
+      },
+    ],
   },
   workflowExamples: {
     header: {
-      kicker: 'Examples',
-      title: 'Trigger, action, owner examples',
-      description:
-        'Show a small board of events, next actions, and responsibility for this business type.',
+      kicker: 'How a few moments are handled',
+      title: 'The work the system does without anyone watching',
+      description: 'Plain triggers, plain actions, named owners.',
     },
+    workflow: [
+      {
+        id: 'inquiry',
+        trigger: 'New enquiry submitted',
+        action: 'Acknowledgment with intake link',
+        owner: 'AI Lead Handling',
+        channel: 'Email + SMS',
+      },
+      {
+        id: 'docs',
+        trigger: 'Engagement signed',
+        action: 'Document checklist + daily reminders until complete',
+        owner: 'CRM & Automation',
+        channel: 'Email + SMS',
+      },
+      {
+        id: 'year-end',
+        trigger: '90 days before year-end',
+        action: 'Cadence start: prep, docs, review',
+        owner: 'CRM & Automation',
+        channel: 'Email',
+      },
+      {
+        id: 'status',
+        trigger: 'Filing milestone',
+        action: 'Status update to client',
+        owner: 'CRM & Automation',
+        channel: 'Email',
+      },
+      {
+        id: 'review',
+        trigger: 'Filing complete',
+        action: 'Review prompt',
+        owner: 'Reputation & Reviews',
+        channel: 'Email',
+      },
+    ],
   },
   relevantSystems: {
     header: {
-      kicker: 'Relevant Systems',
-      title: 'Systems most likely to matter',
-      description: 'Connect the page to the systems that solve this specific leak pattern.',
+      kicker: 'How the systems sit',
+      title: 'Lead, support, optional',
+      description: 'Most firms start with documents and year-end cadence.',
     },
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'crm-automation',
-      'reputation-review',
-      'local-seo-authority',
+    systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+    relevantSystems: [
+      {
+        id: 'crm',
+        name: 'CRM & Automation',
+        role: 'lead',
+        why: 'Holds documents, year-end cadence, and status.',
+      },
+      { id: 'aih', name: 'AI Lead Handling', role: 'lead', why: 'Catches enquiries fast.' },
+      {
+        id: 'rep',
+        name: 'Reputation & Reviews',
+        role: 'support',
+        why: 'Reviews trigger after filing.',
+      },
+      {
+        id: 'sws',
+        name: 'Smart Website Systems',
+        role: 'support',
+        why: 'Service pages feed the same operating board.',
+      },
+      {
+        id: 'lsa',
+        name: 'Local SEO Authority',
+        role: 'optional',
+        why: 'Useful for area-specific authority.',
+      },
     ],
   },
   scenario: {
     header: {
-      kicker: 'Scenario',
-      title: 'A plain scenario for this business type',
-      description:
-        'Use one realistic operational example without implying fake client proof or guaranteed results.',
+      kicker: 'A realistic scenario',
+      title: 'A quarter with the layer in place',
+      description: 'Illustrative. No fabricated client. No promised result.',
+    },
+    scenario: {
+      kind: 'scenario',
+      label: 'Illustrative scenario',
+      body: 'A small accounting firm runs a normal quarter. Document checklists run with reminders. Year-end cadence starts 90 days ahead. Status updates fire on milestones. Reviews trigger after filing.',
+      observedChange:
+        'Before, the same quarter would have ended with three clients sending docs at the last minute. With the layer in place, the year-end pile-up is smaller.',
     },
   },
   faq: {
     header: {
-      kicker: 'FAQ',
-      title: 'Questions about accounting firms systems',
-      description:
-        'Use answers to clarify fit, starting point, and what changes after the first build.',
+      kicker: 'Honest questions',
+      title: 'What accounting partners usually ask first',
+      description: 'Direct answers. No hedging.',
     },
     items: [
       {
-        id: 'first-fix',
-        question: 'What should this page help decide?',
-        answer:
-          'It should help the reader identify where enquiries are being lost and which system should be fixed first.',
+        id: 'tools',
+        question: 'We use accounting software and a portal. Do we drop them?',
+        answer: 'No. The operating layer sits beside them.',
       },
       {
-        id: 'proof',
-        question: 'Can this page use results or proof?',
-        answer:
-          'Only when the proof is real. Scenario examples must stay clearly illustrative and honest.',
+        id: 'compliance',
+        question: 'How does this handle privacy and document security?',
+        answer: 'It links to your existing portal — documents stay in your system of record.',
+      },
+      {
+        id: 'voice',
+        question: 'Will replies sound like the firm?',
+        answer: 'Yes — written in the firm’s voice and reviewed before launch.',
+      },
+      {
+        id: 'price',
+        question: 'How is this priced?',
+        answer: 'Per build. We tell you when a smaller build (or none yet) is the right move.',
       },
     ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'Show us where accounting firms enquiries slip',
+      kicker: 'Next step',
+      title: 'Show us where the firm actually leaks',
       description:
-        'Tell us what happens between first contact and booked work. We will map the weak points before recommending a build.',
+        'Tell us about a typical month. We will read it back and name the first system to fix.',
     },
     expectations: [
-      { num: '1', text: 'A short read of the current contact paths' },
-      { num: '2', text: 'The system most likely to fix the first leak' },
-      { num: '3', text: 'A clear next move if the fit is right' },
+      { num: '1', text: 'A short read of where enquiries, documents, and year-end sit today' },
+      { num: '2', text: 'The system most likely to hold the worst gap first' },
+      { num: '3', text: 'A clear next move if the fit is right — or none if it isn’t' },
     ],
     reassurance: {
-      noSell: 'No generic pitch. Just the parts that need a clearer owner.',
-      tone: 'Quiet, direct, and specific to how the business runs.',
+      noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
+      tone: 'Direct, specific to a working accounting firm.',
     },
   },
 };

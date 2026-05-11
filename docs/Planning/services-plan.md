@@ -2,9 +2,9 @@
 
 ## Purpose
 
-This file is the direct execution plan for the registered MindWP service detail pages.
+This file is the service-domain reference for the registered MindWP service detail pages.
 
-Use it before Claude Opus service-domain work. It defines which pages stay untouched, which pages get rebuilt, which pages stay simple, and which pages are outside the current service-detail rebuild.
+Use it for service page roles, system boundaries, CSS ownership, cleanup guidance, and future approved refinements. Service detail pages are already rebuilt; do not treat this as a pending rebuild plan.
 
 ## Final Architecture Principle
 
@@ -23,7 +23,7 @@ Smart Website Systems and Local SEO Authority are the production baseline. They 
 - rebuilt files do not import old reusable or sections folders
 - rebuilt files do not use old `rd-*`, `l-*`, or `btn-*` classes
 
-Current service renderers are direct staging skeletons. Claude Opus should replace placeholders with final page bodies while keeping this production architecture intact.
+Current service renderers are rebuilt direct renderers. Future edits must keep this production architecture intact.
 
 ## Page Classification
 
@@ -41,7 +41,7 @@ Decision: keep these untouched. They remain the reference for final production r
 - `crm-infrastructure-implementation` at `/services/crm-infrastructure-implementation`
 - `reputation-review-systems` at `/services/reputation-review-systems`
 
-These are strategic system pages. Claude Opus should rebuild them with full page-specific visual bodies, semantic data groups, and `services.css` rules.
+These are strategic system pages. They are rebuilt; future edits should preserve page-specific visual bodies, semantic data groups, and `services.css` rules.
 
 ### 3. Builder / Simple Migration
 
@@ -72,9 +72,9 @@ These support a parent system or a practical implementation path. Most need ligh
 
 These should stay focused. They are decision-support pages, not full strategic system pages.
 
-### 6. Planned New Tier-1 Service Page
+### 6. Revenue Growth
 
-Revenue Growth exists as a canonical system and public concept. Create `/services/revenue-growth` as the final Tier-1 service page after the existing registered service pages are rebuilt and stable.
+Revenue Growth is now part of the rebuilt service-domain set at `/services/revenue-growth`.
 
 ## CSS Strategy
 
@@ -83,23 +83,11 @@ Revenue Growth exists as a canonical system and public concept. Create `/service
 - `src/styles/services.css` is the shared service-domain CSS home for newer reset pages.
 - Do not create one CSS file per service page by default.
 - Builder and simple pages should stay visually light.
-- AI Lead Handling starts from the staged renderer and shared `services.css`, not from previous visual attempts.
-- Final visual section CSS belongs to Claude Opus rebuild work.
-- Claude Opus adds page-specific visual body CSS into `services.css` with clean prefixes.
+- Future service CSS refinements stay in the existing service CSS ownership model.
 
 ## Renderer Comment Rule
 
-Renderer comments must stay minimal. Do not add large blocks for purpose, visual intent, data needs, boundaries, or avoid lists inside JSX.
-
-Allowed placeholder inside `SectionFrame` bodies only:
-
-```tsx
-{
-  /* Opus rebuild placeholder: design this section from approved services-plan.md. */
-}
-```
-
-Claude Opus should use this file for direction and replace renderer placeholders with final section bodies.
+Future edits should remove any stale placeholder comments from completed pages and keep renderer comments minimal.
 
 ## Page Blueprint Rule
 
@@ -109,7 +97,7 @@ Each page below defines:
 - Sections: the starting section flow Claude Opus should build from.
 - Instructions: the specific boundaries and design choices to protect.
 
-Section lists are starting directions, not hard locks. Claude Opus may add, remove, merge, rename, or reorder sections when there is a strong reason. It may also change data shapes and renderer body structure when that produces a stronger page. The page role, system ownership, CTA discipline, proof honesty, and CSS rules must stay intact.
+The page blueprints below remain useful role and boundary references. Future edits may change section count, order, names, data shapes, and renderer body structure when that produces a stronger page. The page role, system ownership, CTA discipline, proof honesty, and CSS rules must stay intact.
 
 ## Reset / Tier-1 Rebuild Group
 
@@ -402,17 +390,13 @@ Sections: hero, redesign misconception, side-by-side comparison, when rebuild is
 
 Instructions: keep it decision-focused; do not turn it into a full SWS page.
 
-## Revenue Growth Page Decision
+## Revenue Growth
 
-Revenue Growth will become a registered Tier-1 service detail page at `/services/revenue-growth`.
-
-Create it after the existing registered service pages are rebuilt and stable.
+Revenue Growth is part of the rebuilt service-domain set at `/services/revenue-growth`.
 
 Revenue Growth owns post-enquiry improvement: quote recovery, conversion refinement, repeat customer triggers, reactivation, and spend-to-work visibility.
 
 Revenue Growth must not become generic growth hacking, ad campaign management, SEO visibility, or guaranteed revenue claims.
-
-During the current rebuild, Revenue Growth work is represented through registered supporting pages such as `conversion-layer` and `lead-reactivation-system`. The dedicated Revenue Growth page comes after those existing service-domain pages are stable.
 
 Pattern: revenue leak map / recovery ledger.
 
@@ -420,28 +404,20 @@ Sections: hero, revenue leak after enquiry, quote recovery, conversion refinemen
 
 Instructions: keep it post-enquiry and recovery-focused. Do not make it generic marketing, ad management, SEO, growth hacking, or guaranteed revenue outcomes.
 
-## Execution Order
+## Maintenance Order
 
-1. Claude Opus rebuilds AI Lead Handling from the direct renderer skeleton.
-2. Claude Opus rebuilds CRM & Automation and Reputation & Review.
-3. Claude Opus migrates builder/simple pages with light practical flows.
-4. Claude Opus migrates supporting and feature-like pages with lighter treatment than Tier-1 pages.
-5. Claude Opus migrates comparison and decision pages with narrow decision-support structure.
-6. After existing registered service pages are stable, create `/services/revenue-growth` as the final Tier-1 service page.
-7. After each group, remove dead CSS, dead imports, stale placeholders, and old data that is no longer used.
+1. Keep SWS and LSA stable as production baselines.
+2. Keep rebuilt service detail pages stable.
+3. Rebuild `/services` listing after service detail pages are confirmed stable.
+4. Remove dead CSS, dead imports, stale placeholders, and unused data as they are discovered.
+5. Run validation and build checks after approved service-domain refinements.
 
 ## Do
 
-- Keep SWS and LSA untouched.
-- Use header-first section data for skeleton pages.
-- Use `buildServiceContactHref` and `PRIMARY_CTA_LABEL`.
-- Use `HeroFrame`, `SectionFrame`, `FAQSection`, and `DecisionPanel`.
-- Let service config inject `RelatedSection`.
-- Keep builder pages light.
-- Keep decision pages narrow.
-- Let Claude Opus change section count, section order, section names, and section data shapes when it improves the page.
-- Add final visual section CSS during Claude Opus rebuilds, inside `services.css` unless a separate CSS file is explicitly justified later.
-- Create `/services/revenue-growth` after the existing registered service pages are rebuilt and stable.
+- Preserve semantic page data and page-specific visual bodies.
+- Allow section count, section order, section names, and section data shapes to change when it improves the page.
+- Keep final visual section CSS inside the existing service CSS ownership model.
+- Keep `/services/revenue-growth` as part of the rebuilt Tier-1 service set.
 
 ## Do Not
 
@@ -451,7 +427,4 @@ Instructions: keep it post-enquiry and recovery-focused. Do not make it generic 
 - Do not manually render `RelatedSection` inside service renderers.
 - Do not hardcode `/contact` or CTA labels.
 - Do not use old `rd-*`, `l-*`, or `btn-*` classes.
-- Do not use previous AI Lead Handling visual attempts as the final design source.
-- Do not treat staging skeletons as final page designs.
-- Do not force Claude Opus to preserve the skeleton section order when a better page flow is clear.
-- Do not create the Revenue Growth page before the existing registered service pages are rebuilt and stable.
+- Do not describe completed service pages as pending skeletons.

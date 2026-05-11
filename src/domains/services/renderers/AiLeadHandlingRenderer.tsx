@@ -182,23 +182,46 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
             <div className='aih-channels'>
               <header className='aih-channels__header'>
                 <span className='aih-channels__title'>{CHANNEL_HEADING_DOT}</span>
-              </header>
-              <div className='aih-channels__columns'>
-                <span>{CHANNEL_COL_CHANNEL_DOT}</span>
-                <span>{CHANNEL_COL_ORIGIN_DOT}</span>
-                <span>{CHANNEL_COL_DETAIL_DOT}</span>
-                <span>{CHANNEL_COL_ROUTE_DOT}</span>
-              </div>
-              <ul className='aih-channels__list'>
-                {channelSurface.rows.map(row => (
-                  <li key={row.id} className={`aih-channels__row aih-channels__row--${row.signal}`}>
-                    <span className='aih-channels__channel'>
-                      <span className={`aih-signal aih-signal--${row.signal}`} aria-hidden='true' />
-                      {row.channel}
+                <span className='aih-channels__legend'>
+                  <span className='aih-channels__legend-item'>
+                    <span>{CHANNEL_COL_CHANNEL_DOT}</span>
+                    <span aria-hidden='true' className='aih-channels__legend-arrow'>
+                      →
                     </span>
-                    <span className='aih-channels__origin'>{row.origin}</span>
-                    <span className='aih-channels__detail'>{row.detail}</span>
-                    <span className='aih-channels__route'>{row.routedTo ?? '—'}</span>
+                    <span>{CHANNEL_COL_DETAIL_DOT}</span>
+                    <span aria-hidden='true' className='aih-channels__legend-arrow'>
+                      →
+                    </span>
+                    <span>{CHANNEL_COL_ROUTE_DOT}</span>
+                  </span>
+                </span>
+              </header>
+              <ul className='aih-router'>
+                {channelSurface.rows.map(row => (
+                  <li key={row.id} className={`aih-router__row aih-router__row--${row.signal}`}>
+                    <div className='aih-router__source'>
+                      <span className='aih-router__channel'>
+                        <span
+                          className={`aih-signal aih-signal--${row.signal}`}
+                          aria-hidden='true'
+                        />
+                        {row.channel}
+                      </span>
+                      <span className='aih-router__origin'>
+                        <span aria-hidden='true' className='aih-router__origin-label'>
+                          {CHANNEL_COL_ORIGIN_DOT}:
+                        </span>{' '}
+                        {row.origin}
+                      </span>
+                    </div>
+                    <span aria-hidden='true' className='aih-router__arrow'>
+                      →
+                    </span>
+                    <p className='aih-router__detail'>{row.detail}</p>
+                    <span aria-hidden='true' className='aih-router__arrow'>
+                      →
+                    </span>
+                    <span className='aih-router__route'>{row.routedTo ?? '—'}</span>
                   </li>
                 ))}
               </ul>
@@ -263,27 +286,28 @@ export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
           requireHeadingDescription(aiBoundary.header.description, 'aiBoundary');
           return (
             <div className='aih-boundary'>
-              <div className='aih-boundary__columns'>
-                {aiBoundary.columns.map(col => (
-                  <article
-                    key={col.id}
-                    className={`aih-boundary__col aih-boundary__col--${col.scope}`}
-                  >
-                    <header className='aih-boundary__head'>
-                      <span className='aih-boundary__label'>{col.label}</span>
-                      <h3 className='aih-boundary__title'>{col.title}</h3>
+              <div className='aih-scope'>
+                {aiBoundary.columns.map((col, idx) => (
+                  <article key={col.id} className={`aih-scope__half aih-scope__half--${col.scope}`}>
+                    <header className='aih-scope__head'>
+                      <span className='aih-scope__label'>{col.label}</span>
+                      <h3 className='aih-scope__title'>{col.title}</h3>
                     </header>
-                    <ul className='aih-boundary__items'>
+                    <ul className='aih-scope__tags'>
                       {col.items.map((item, i) => (
-                        <li key={`${col.id}-${i}`} className='aih-boundary__item'>
-                          <span className='aih-boundary__bullet' aria-hidden='true' />
+                        <li key={`${col.id}-${i}`} className='aih-scope__tag'>
                           {item}
                         </li>
                       ))}
                     </ul>
-                    <p className='aih-boundary__guard'>
+                    <p className='aih-scope__guard'>
                       <strong>{BOUNDARY_GUARD_LABEL_DOT}.</strong> {col.guard}
                     </p>
+                    {idx === 0 ? (
+                      <span aria-hidden='true' className='aih-scope__handoff'>
+                        →
+                      </span>
+                    ) : null}
                   </article>
                 ))}
               </div>

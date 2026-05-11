@@ -1,126 +1,195 @@
-import { ArrowRight } from 'lucide-react';
-
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Badge } from '@/components/reusable/single/Badge';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { Card } from '@/components/ui/card';
+import { FAQSection } from '@/components/content/FAQSection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
-import { buildContactHref } from '@/lib/contact/contactHref';
-import { getVariantStyles } from '@/lib/ui/variantStyles';
+import { buildIndustryContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+
+const GROUP_BY_SLUG: Record<string, string> = {
+  'home-services': 'home',
+  'automotive-services': 'auto',
+  'beauty-personal-care': 'beauty',
+  'local-appointment-businesses': 'appt',
+  'real-estate-property-services': 'realestate',
+  'legal-professional-services': 'legal',
+};
+
+const LEAD_SYSTEM_BY_SLUG: Record<string, string> = {
+  'home-services': 'AI Lead Handling',
+  'automotive-services': 'AI Lead Handling',
+  'beauty-personal-care': 'CRM & Automation',
+  'local-appointment-businesses': 'CRM & Automation',
+  'real-estate-property-services': 'CRM & Automation',
+  'legal-professional-services': 'AI Lead Handling',
+};
 
 export default function IndustriesLanding() {
-  const categoryPages = getCategoryIndexIndustries();
+  const categories = getCategoryIndexIndustries();
 
-  const priorityLabels = {
-    primary: 'Primary Focus',
-    expansion: 'Expansion Category',
-    coverage: 'Coverage Category',
-  } as const;
-
-  const renderCategoryCard = (industry: (typeof categoryPages)[number]) => {
-    const Icon = industry.icon;
-    const priorityLabel = priorityLabels[industry.priority ?? 'coverage'];
-
-    return (
-      <Card
-        key={industry.slug}
-        id={`industry-${industry.slug}`}
-        className='p-8 border-2 hover:border-foreground/20 hover:shadow-xl transition-all'
-      >
-        <div className='l-stack l-stack--loose'>
-          <div className='l-row l-items-start l-justify-between l-gap-4'>
-            <div className={`icon-container-lg ${getVariantStyles('primary').icon.bg}`}>
-              <Icon className={getVariantStyles('primary').icon.text} />
-            </div>
-            <Badge variant='secondary'>{priorityLabel}</Badge>
-          </div>
-          <div>
-            <h2 className='mb-2'>{industry.name}</h2>
-            {industry.landingSubtitle && (
-              <p className='text-sm font-medium mb-1'>{industry.landingSubtitle}</p>
-            )}
-            <p className='text-sm text-muted-foreground'>{industry.description}</p>
-          </div>
-          <a
-            href={industry.href}
-            className='link-primary l-row l-items-center l-gap-2 text-primary text-sm'
-          >
-            See the operating model
-            <ArrowRight aria-hidden='true' />
-          </a>
-        </div>
-      </Card>
-    );
-  };
+  const ctaHref = buildIndustryContactHref({
+    system: 'smart-website-systems',
+    slug: 'industries-overview',
+  });
 
   return (
-    <CTARegistryProvider
-      pageId='page:industries'
-      pageType='page'
-      primarySystem='smart-website-systems'
-    >
-      <div className='min-h-screen'>
-        <main>
-          {/* Hero */}
-          <SectionWrapper background='bg-gradient-to-b from-muted/50 to-background'>
-            <div className='text-center l-stack l-stack--loose'>
-              <Badge variant='secondary' context='section'>
-                Industry authority
-              </Badge>
-              <h1>The same enquiries get lost. The same revenue leaks. By industry.</h1>
-              <p className='text-muted-foreground text-lg l-max-w-3xl l-mx-auto'>
-                Missed calls in HVAC, dead web enquiries in roofing, no-show salon clients, stalled
-                legal proposals, untracked real estate referrals. Every category below is organised
-                around the operating moments where service businesses lose money and trust, and the
-                system pattern that closes them.
-              </p>
-            </div>
-          </SectionWrapper>
+    <div className='industry-category-page'>
+      <main>
+        <HeroFrame
+          badge='Industries · Overview'
+          title='The same enquiries get lost. [[muted:By industry, the same way every week.]]'
+          description='Six operating shapes. Each opens with where the week actually breaks for that kind of business — and the system that holds it.'
+          actions={[
+            { label: PRIMARY_CTA_LABEL, href: ctaHref, variant: 'primary' },
+            { label: 'Read where it leaks', href: '#categories', variant: 'ghost' },
+          ]}
+          chips={[
+            { label: 'Home Services' },
+            { label: 'Automotive' },
+            { label: 'Beauty' },
+            { label: 'Appointment' },
+            { label: 'Real Estate' },
+            { label: 'Legal & Professional' },
+          ]}
+          tone='gradient-hero'
+        />
 
-          {/* Industries Grid */}
-          <SectionWrapper background='bg-background'>
-            <div className='l-stack l-stack--loose'>
-              <div className='l-stack'>
-                <h2>Find your operating reality</h2>
-                <p className='text-muted-foreground'>
-                  Each category opens with the live failures that category sees every week, the
-                  active sub-industries, and the supporting system patterns that close those
-                  failures.
-                </p>
-              </div>
-              <div className='l-grid l-gap-8 md:grid-cols-2 xl:grid-cols-2'>
-                {categoryPages.map(renderCategoryCard)}
-              </div>
-            </div>
-          </SectionWrapper>
-
-          {/* CTA */}
-          <div className='text-sm text-muted-foreground text-center l-max-w-2xl l-mx-auto pt-6 pb-3'>
-            If one of these categories matches how the business actually runs, the next step is to
-            map that operating model to the service system that removes the real bottleneck.
-          </div>
-          <PrimaryCTASection
+        <div id='categories'>
+          <SectionFrame
             heading={{
-              title:
-                'Need help identifying which operating-system fix matters most for your industry?',
+              kicker: 'Six operating shapes',
+              title: 'Find the closest working reality',
               description:
-                'Tell us where the handoff breaks across enquiries, follow-up, or delivery, and we will show you which service path fits your operating model, what it should fix first, and where not to overbuild.',
+                'Each card opens a category page tuned to that industry’s week — the leaks, the pattern, the systems that hold.',
             }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'industry',
-                  sourceType: 'industry',
-                  slug: 'industry-help',
-                }),
-                primary: true,
-              },
-            ]}
-          />
-        </main>
-      </div>
-    </CTARegistryProvider>
+            tone='white'
+          >
+            <ul className='icp-routes'>
+              {categories.map(cat => {
+                const group = GROUP_BY_SLUG[cat.slug] ?? 'home';
+                const lead = LEAD_SYSTEM_BY_SLUG[cat.slug] ?? 'CRM & Automation';
+                return (
+                  <li key={cat.slug} className={`icp-routes__item icp-routes__item--${group}`}>
+                    <a className='icp-routes__card' href={cat.href}>
+                      <div className='icp-routes__head'>
+                        <span className='icp-routes__label'>{cat.name}</span>
+                      </div>
+                      <p className='icp-routes__one'>{cat.landingSubtitle ?? cat.description}</p>
+                      <span className='icp-routes__system'>
+                        Lead system · {lead}
+                        <span aria-hidden='true'>→</span>
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </SectionFrame>
+        </div>
+
+        <SectionFrame
+          heading={{
+            kicker: 'How to read these',
+            title: 'Same six systems. [[muted:Different operating shapes.]]',
+            description:
+              'Every category uses the same six systems underneath. The difference is which one leads, which support, and which come later.',
+          }}
+          tone='mist'
+        >
+          <ul className='icp-routes'>
+            <li className='icp-routes__item'>
+              <div className='icp-routes__card'>
+                <div className='icp-routes__head'>
+                  <span className='icp-routes__label'>Speed-led</span>
+                </div>
+                <p className='icp-routes__one'>
+                  Urgent or after-hours work where first reply decides the job. Lead with AI Lead
+                  Handling.
+                </p>
+                <span className='icp-routes__system'>Examples · Home, Auto, Legal intake</span>
+              </div>
+            </li>
+            <li className='icp-routes__item'>
+              <div className='icp-routes__card'>
+                <div className='icp-routes__head'>
+                  <span className='icp-routes__label'>Booking-led</span>
+                </div>
+                <p className='icp-routes__one'>
+                  Appointment shapes where rebook cadence and reminders carry the revenue. Lead with
+                  CRM &amp; Automation.
+                </p>
+                <span className='icp-routes__system'>Examples · Beauty, Appointment</span>
+              </div>
+            </li>
+            <li className='icp-routes__item'>
+              <div className='icp-routes__card'>
+                <div className='icp-routes__head'>
+                  <span className='icp-routes__label'>Cycle-led</span>
+                </div>
+                <p className='icp-routes__one'>
+                  Long engagements with documents, milestones, and past-client recall. Lead with CRM
+                  cadences.
+                </p>
+                <span className='icp-routes__system'>Examples · Real Estate, Accounting</span>
+              </div>
+            </li>
+          </ul>
+        </SectionFrame>
+
+        <FAQSection
+          eyebrow='Honest questions'
+          title='What owners usually ask before opening a category'
+          description='Direct answers. No hedging.'
+          items={[
+            {
+              id: 'fit',
+              question: 'Is the build the same across every industry?',
+              answer:
+                'No. The shape is similar. The lead system and cadence differ by how that industry’s week actually moves.',
+            },
+            {
+              id: 'starting',
+              question: 'Where do most businesses actually start?',
+              answer:
+                'Where the leak hurts most. For most, that is first-reply speed or follow-up reliability.',
+            },
+            {
+              id: 'tools',
+              question: 'We already use a booking or CRM tool. Do we drop it?',
+              answer:
+                'Usually no. The operating layer sits beside what already works and holds the gaps the tool does not cover.',
+            },
+            {
+              id: 'price',
+              question: 'How is this priced?',
+              answer: 'Per build. We tell you when a build is not the right move yet.',
+            },
+          ]}
+          tone='white'
+        />
+
+        <DecisionPanel
+          heading={{
+            kicker: 'Next step',
+            title: 'Tell us how the week actually runs.',
+            description:
+              'A short read of where enquiries, follow-up, and bookings sit today — and the first system likely to hold the worst gap.',
+          }}
+          actions={[{ label: PRIMARY_CTA_LABEL, href: ctaHref, variant: 'primary' }]}
+          expectations={[
+            { num: '1', text: 'A short read of how a normal week moves today' },
+            { num: '2', text: 'The system most likely to hold the worst gap first' },
+            {
+              num: '3',
+              text: 'A clear next move if the fit is right — or none if it isn’t',
+            },
+          ]}
+          reassurance={{
+            noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
+            tone: 'Direct, specific to a working service business.',
+          }}
+        />
+      </main>
+    </div>
   );
 }

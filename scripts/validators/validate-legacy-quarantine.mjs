@@ -82,6 +82,11 @@ const REBUILT_PAGE_CSS_FILES = [
   'src/styles/services.css',
   'src/styles/industries/category.css',
   'src/styles/industries/detail.css',
+  'src/styles/industries/automotive-services.css',
+  'src/styles/industries/local-appointment-businesses.css',
+  'src/styles/industries/real-estate-property-services.css',
+  'src/styles/industries/beauty-personal-care.css',
+  'src/styles/industries/legal-professional-services.css',
 ].map(f => path.join(root, f));
 
 /**

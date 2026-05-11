@@ -2,146 +2,349 @@ import type { IndustryDetailPageData } from '@/domains/industries/types';
 
 export const dentalClinicsIndustryPageData: IndustryDetailPageData = {
   seo: {
-    title: 'Dental Clinics Systems',
+    title: 'Dental Clinics — Booking, Recall, and No-Show Systems',
     description:
-      'Holding structure for dental clinics: enquiry capture, fast response, follow-up ownership, and local trust.',
+      'How dental clinics hold inbound bookings, manage hygiene recalls, and reduce no-show drift across the chair.',
     canonical: '/industries/local-appointment-businesses/dental-clinics',
     openGraph: {
-      title: 'Dental Clinics Systems',
-      description: 'Enquiry handling, follow-up, and trust structure for dental clinics.',
+      title: 'Dental Clinics — Booking, Recall, and No-Show Systems',
+      description: 'Bookings, recalls, and reminders on one operating layer.',
     },
   },
   slug: 'dental-clinics',
   type: 'detail',
   parentSlug: 'local-appointment-businesses',
   hero: {
-    badge: 'Dental Clinics',
-    title: 'Dental Clinics [[muted:systems that keep enquiries moving]]',
+    badge: 'Appointments · Dental',
+    title: 'A six-month recall. [[muted:And nothing reminding the patient until next year.]]',
     description:
-      'Show where enquiries arrive, where they stall, and which system needs an owner first.',
+      'Dental work runs on recall. The chair stays full when the recall rhythm runs cleanly — and goes quiet when it doesn’t.',
     list: [
-      'Missed calls are recovered',
-      'Enquiries are sorted by intent',
-      'Follow-up has a visible owner',
+      'Bookings confirmed reliably day or night',
+      'Hygiene recalls run at the right interval',
+      'Two-step reminders reduce no-show drift',
     ],
   },
   industries: ['dental-clinic'],
-  systems: [
-    'smart-website-systems',
-    'ai-lead-handling',
-    'crm-automation',
-    'reputation-review',
-    'local-seo-authority',
-  ],
-  topics: ['follow-up', 'review-generation', 'booking-systems'],
+  systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+  topics: ['lead-management', 'follow-up', 'review-generation'],
   industryPattern: {
     header: {
-      kicker: 'Leak Pattern',
-      title: 'Dental Clinics leak pattern',
-      description:
-        'Show the exact points where dental clinics lose enquiries, bookings, quotes, or trust.',
+      kicker: 'Where it leaks',
+      title: 'Three places dental enquiries usually slip',
+      description: 'Most clinics will see at least two of these.',
     },
-    items: ['First reply', 'Qualification', 'Follow-up'],
+    leaks: [
+      {
+        id: 'recall-drift',
+        leak: 'Recalls drift past the right interval',
+        state: 'lost',
+        observed:
+          'A patient’s six-month is due. Nothing reminds them. Eighteen months pass before they book again.',
+      },
+      {
+        id: 'no-show',
+        leak: 'No-shows leave the chair empty',
+        state: 'risk',
+        observed:
+          'A booked patient doesn’t arrive. The reminder went out three days ago. The chair sits idle.',
+      },
+      {
+        id: 'after-hours',
+        leak: 'After-hours enquiries sit until morning',
+        state: 'silent',
+        observed:
+          'A new patient enquires at 8pm. Reception sees it the next morning. The slot has already gone elsewhere.',
+      },
+    ],
   },
   leakTimeline: {
     header: {
-      kicker: 'Timeline',
-      title: 'Where the working day loses momentum',
-      description:
-        'Map the moments from first contact through booking, handoff, follow-up, and review request.',
+      kicker: 'A typical day',
+      title: 'How a dental day moves',
+      description: 'Considered enquiries. Quiet rooms. Long recall cycles.',
     },
+    timeline: [
+      {
+        id: 'open',
+        time: '8:00',
+        event: 'Doors open — first appointments',
+        leakRisk: 'low',
+        owner: 'Reception',
+      },
+      {
+        id: 'morning',
+        time: '9:00 — 12:00',
+        event: 'Appointments stack up — phone covers itself when it can',
+        leakRisk: 'medium',
+        owner: 'Reception',
+      },
+      {
+        id: 'lunch',
+        time: '13:00',
+        event: 'Catch-up: callbacks and admin',
+        leakRisk: 'high',
+        owner: 'Reception',
+      },
+      {
+        id: 'afternoon',
+        time: '14:00 — 17:00',
+        event: 'Appointments and aftercare',
+        leakRisk: 'medium',
+        owner: 'Practitioner',
+      },
+      {
+        id: 'close',
+        time: '17:30',
+        event: 'Close out — recalls not always scheduled',
+        leakRisk: 'high',
+        owner: 'Reception',
+      },
+    ],
   },
   beforeAfter: {
     header: {
-      kicker: 'Operating State',
-      title: 'Before and after the system is owned',
-      description:
-        'Contrast the current drift with a clearer state where enquiries have a next action.',
+      kicker: 'What changes',
+      title: 'The clinic, before and after',
+      description: 'Same practitioners. A different layer behind reception.',
+    },
+    before: {
+      label: 'Before',
+      items: [
+        'After-hours enquiries sit until morning',
+        'No-shows take chair time without warning',
+        'Recalls depend on reception remembering',
+        'Reviews depend on the patient remembering',
+        'Treatment plans drift between visits',
+      ],
+    },
+    after: {
+      label: 'After',
+      items: [
+        'Enquiries acknowledged within minutes with a clear next step',
+        'Two-step reminders reduce no-show drift',
+        'Recalls go out automatically at the right interval',
+        'Review prompt goes out at the appropriate moment',
+        'Treatment-plan reminders run alongside the recall rhythm',
+      ],
     },
   },
   workbench: {
     header: {
-      kicker: 'Workbench',
-      title: 'What gets put in place',
-      description:
-        'List the practical pieces to show: capture, response, routing, follow-up, and proof.',
+      kicker: 'What sits on the workbench',
+      title: 'The pieces that hold the day together',
+      description: 'What is in place, what is planned, and what is optional.',
     },
+    workbench: [
+      {
+        id: 'first-touch',
+        piece: 'Enquiry acknowledgment',
+        state: 'in-place',
+        owner: 'AI Lead Handling',
+      },
+      {
+        id: 'reminders',
+        piece: 'Two-step reminders',
+        state: 'in-place',
+        owner: 'CRM & Automation',
+      },
+      {
+        id: 'recall',
+        piece: 'Hygiene recall rhythm',
+        state: 'in-place',
+        owner: 'CRM & Automation',
+      },
+      {
+        id: 'reviews',
+        piece: 'Post-visit review prompt',
+        state: 'in-place',
+        owner: 'Reputation & Reviews',
+      },
+      {
+        id: 'plan-reminders',
+        piece: 'Treatment-plan reminders',
+        state: 'planned',
+        owner: 'CRM & Automation',
+      },
+      {
+        id: 'service-area',
+        piece: 'Service-area visibility',
+        state: 'optional',
+        owner: 'Local SEO Authority',
+      },
+    ],
   },
   startingPoints: {
     header: {
-      kicker: 'Starting Points',
-      title: 'Where to start first',
-      description:
-        'Help the reader choose the first fix without turning the page into a service menu.',
+      kicker: 'Where to start',
+      title: 'Three signals, three different first systems',
+      description: 'The leak you actually have decides the first move.',
     },
+    startingPoints: [
+      {
+        id: 'recall',
+        fix: 'Run hygiene recalls at the right interval',
+        signalIfYou: 'see patients drift past their six-month',
+        leadingSystem: 'CRM & Automation',
+      },
+      {
+        id: 'noshow',
+        fix: 'Reduce no-show drift with two-step reminders',
+        signalIfYou: 'lose chair time most weeks to no-shows',
+        leadingSystem: 'CRM & Automation',
+      },
+      {
+        id: 'after-hours',
+        fix: 'Acknowledge after-hours enquiries instantly',
+        signalIfYou: 'see new patients enquire overnight and go cold',
+        leadingSystem: 'AI Lead Handling',
+      },
+    ],
   },
   workflowExamples: {
     header: {
-      kicker: 'Examples',
-      title: 'Trigger, action, owner examples',
-      description:
-        'Show a small board of events, next actions, and responsibility for this business type.',
+      kicker: 'How a few moments are handled',
+      title: 'The work the system does without anyone watching',
+      description: 'Plain triggers, plain actions, named owners.',
     },
+    workflow: [
+      {
+        id: 'enquiry',
+        trigger: 'Enquiry form submitted',
+        action: 'Acknowledge within 60s with booking link',
+        owner: 'AI Lead Handling',
+        channel: 'SMS / email',
+      },
+      {
+        id: 'reminder',
+        trigger: '48h and 24h before appointment',
+        action: 'Confirmation reminders with reschedule option',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+      {
+        id: 'review',
+        trigger: 'Visit marked complete',
+        action: 'Review request at the appropriate interval',
+        owner: 'Reputation & Reviews',
+        channel: 'SMS',
+      },
+      {
+        id: 'recall',
+        trigger: '5 months since last hygiene visit',
+        action: 'Recall reminder with rebook link',
+        owner: 'CRM & Automation',
+        channel: 'SMS / email',
+      },
+      {
+        id: 'plan',
+        trigger: 'Open treatment plan unscheduled',
+        action: 'Plan reminder with booking link',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+    ],
   },
   relevantSystems: {
     header: {
-      kicker: 'Relevant Systems',
-      title: 'Systems most likely to matter',
-      description: 'Connect the page to the systems that solve this specific leak pattern.',
+      kicker: 'How the systems sit',
+      title: 'Lead, support, optional',
+      description: 'Most dental clinics start with recall and reminders.',
     },
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'crm-automation',
-      'reputation-review',
-      'local-seo-authority',
+    systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+    relevantSystems: [
+      {
+        id: 'crm',
+        name: 'CRM & Automation',
+        role: 'lead',
+        why: 'Holds reminders and the recall rhythm on one board.',
+      },
+      {
+        id: 'aih',
+        name: 'AI Lead Handling',
+        role: 'lead',
+        why: 'Catches after-hours enquiries.',
+      },
+      {
+        id: 'rep',
+        name: 'Reputation & Reviews',
+        role: 'support',
+        why: 'Reviews prompt at the right interval.',
+      },
+      {
+        id: 'sws',
+        name: 'Smart Website Systems',
+        role: 'support',
+        why: 'Booking pages feed the same operating board.',
+      },
+      {
+        id: 'lsa',
+        name: 'Local SEO Authority',
+        role: 'optional',
+        why: 'Useful when local discovery is the bottleneck.',
+      },
     ],
   },
   scenario: {
     header: {
-      kicker: 'Scenario',
-      title: 'A plain scenario for this business type',
-      description:
-        'Use one realistic operational example without implying fake client proof or guaranteed results.',
+      kicker: 'A realistic scenario',
+      title: 'A week with the layer in place',
+      description: 'Illustrative. No fabricated client. No promised result.',
+    },
+    scenario: {
+      kind: 'scenario',
+      label: 'Illustrative scenario',
+      body: 'A two-chair clinic runs a normal week. Recalls go out at the right interval. Two-step reminders the day before reduce no-show drift. After-hours enquiries are acknowledged on landing. Reviews prompt after each visit.',
+      observedChange:
+        'Before, the same week would have had two voicemails to chase, one no-show, and three patients past recall. With the layer in place, the chair stays busier and the desk has fewer threads to follow.',
     },
   },
   faq: {
     header: {
-      kicker: 'FAQ',
-      title: 'Questions about dental clinics systems',
-      description:
-        'Use answers to clarify fit, starting point, and what changes after the first build.',
+      kicker: 'Honest questions',
+      title: 'What clinic owners usually ask first',
+      description: 'Direct answers. No hedging.',
     },
     items: [
       {
-        id: 'first-fix',
-        question: 'What should this page help decide?',
-        answer:
-          'It should help the reader identify where enquiries are being lost and which system should be fixed first.',
+        id: 'tools',
+        question: 'We use a clinic-management platform. Do we drop it?',
+        answer: 'Usually no. The operating layer sits beside it and covers the gaps it does not.',
       },
       {
-        id: 'proof',
-        question: 'Can this page use results or proof?',
+        id: 'compliance',
+        question: 'How does this work with our compliance and consent processes?',
         answer:
-          'Only when the proof is real. Scenario examples must stay clearly illustrative and honest.',
+          'It does not replace your compliance tools. It links to your existing record system so the operating board can see status without duplicating data.',
+      },
+      {
+        id: 'reminders',
+        question: 'Will reminders feel pushy to patients?',
+        answer: 'Set at the right cadence, no. We tune the rhythm to your service mix.',
+      },
+      {
+        id: 'price',
+        question: 'How is this priced?',
+        answer:
+          'Per build, not per feature. We tell you when a smaller build (or none yet) is the right move.',
       },
     ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'Show us where dental clinics enquiries slip',
+      kicker: 'Next step',
+      title: 'Show us where the chair actually leaks',
       description:
-        'Tell us what happens between first contact and booked work. We will map the weak points before recommending a build.',
+        'Tell us about a typical week. We will read it back and name the first system to fix.',
     },
     expectations: [
-      { num: '1', text: 'A short read of the current contact paths' },
-      { num: '2', text: 'The system most likely to fix the first leak' },
-      { num: '3', text: 'A clear next move if the fit is right' },
+      { num: '1', text: 'A short read of where bookings, recalls, and no-shows sit today' },
+      { num: '2', text: 'The system most likely to hold the worst gap first' },
+      { num: '3', text: 'A clear next move if the fit is right — or none if it isn’t' },
     ],
     reassurance: {
-      noSell: 'No generic pitch. Just the parts that need a clearer owner.',
-      tone: 'Quiet, direct, and specific to how the business runs.',
+      noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
+      tone: 'Direct, specific to a working clinic with a real recall rhythm.',
     },
   },
 };

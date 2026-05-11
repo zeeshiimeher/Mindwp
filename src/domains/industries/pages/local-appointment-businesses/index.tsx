@@ -2,182 +2,370 @@ import type { IndustryCategoryPageData } from '@/domains/industries/types';
 
 export const localAppointmentBusinessesIndustryPageData: IndustryCategoryPageData = {
   seo: {
-    title: 'Local Appointment Businesses Systems',
+    title: 'Local Appointment Businesses — Booking, Reminder, and Recall Systems',
     description:
-      'Holding structure for local appointment-based teams: enquiry capture, fast response, follow-up ownership, and local trust.',
+      'How appointment-based local businesses — clinics, schools, repair shops, studios — hold bookings, reduce no-shows, and bring customers back at the right interval.',
     canonical: '/industries/local-appointment-businesses',
     openGraph: {
-      title: 'Local Appointment Businesses Systems',
+      title: 'Local Appointment Businesses — Booking, Reminder, and Recall Systems',
       description:
-        'Enquiry handling, follow-up, and trust structure for local appointment-based teams.',
+        'Where the appointment day leaks and what holds it across five operating shapes.',
     },
   },
   slug: 'local-appointment-businesses',
   type: 'category',
   category: 'local-appointment-businesses',
   hero: {
-    badge: 'Local Appointments',
-    title: 'Local Appointment Businesses [[muted:systems that keep enquiries moving]]',
+    badge: 'Industries · Appointment Businesses',
+    title: 'A diary that fills itself. [[muted:And a phone that doesn’t answer itself.]]',
     description:
-      'Show where enquiries arrive, where they stall, and which system needs an owner first.',
+      'Appointment-based businesses share one shape: the diary fills, runs, and turns over. The leaks live around the diary — calls, reminders, recalls, reviews.',
     list: [
-      'Calls, forms, and messages land with an owner',
-      'Follow-up is visible before the next busy spell',
-      'Reviews and local proof support the next enquiry',
+      'Inbound enquiries acknowledged inside two minutes',
+      'Two-step reminders reduce no-show drift',
+      'Recall and review rhythms run on cadence',
     ],
   },
-  industries: ['tattoo-studio', 'driving-school', 'repair-shop', 'private-clinic', 'dental-clinic'],
-  systems: [
-    'smart-website-systems',
-    'ai-lead-handling',
-    'crm-automation',
-    'reputation-review',
-    'local-seo-authority',
-  ],
-  topics: ['booking-systems', 'follow-up', 'review-generation', 'lead-response-time'],
+  industries: ['dental-clinic', 'driving-school', 'repair-shop', 'private-clinic', 'tattoo-studio'],
+  systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+  topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
   categoryLeaks: {
     header: {
-      kicker: 'Leak Map',
-      title: 'Where local appointment businesses enquiries slip',
-      description:
-        'Name the contact paths, handoffs, and follow-up points that commonly go quiet across local appointment-based teams.',
+      kicker: 'Where it leaks',
+      title: 'Four places the appointment day usually slips',
+      description: 'Most operators see at least three of these.',
     },
-    items: ['Missed calls', 'Slow reply', 'Unowned follow-up'],
+    leaks: [
+      {
+        id: 'calls',
+        leak: 'Phone rings while the practitioner is working',
+        state: 'silent',
+        observed: 'A new customer calls during a consult or session. Voicemail catches it.',
+      },
+      {
+        id: 'noshow',
+        leak: 'No-shows take chair or session time',
+        state: 'risk',
+        observed: 'A booked customer doesn’t arrive. The reminder went out three days ago.',
+      },
+      {
+        id: 'recall',
+        leak: 'Customers drift past the right interval',
+        state: 'lost',
+        observed: 'A regular misses one cycle. Nothing prompts the next visit.',
+      },
+      {
+        id: 'reviews',
+        leak: 'Reviews depend on the customer remembering',
+        state: 'attention',
+        observed: 'Good work goes silent online.',
+      },
+    ],
   },
   sharedPattern: {
     header: {
-      kicker: 'Shared Pattern',
-      title: 'How local appointment businesses work usually moves',
-      description:
-        'Show the common route from first enquiry to booked work, quote, or appointment.',
+      kicker: 'How the day usually moves',
+      title: 'Booking → service → recall',
+      description: 'The shape every appointment business works around.',
     },
+    timeline: [
+      {
+        id: 'booking',
+        time: 'Booking',
+        event: 'Call, form, DM, or walk-in lands',
+        leakRisk: 'high',
+        detail: 'Practitioner often hands-on. First-touch speed matters.',
+      },
+      {
+        id: 'service',
+        time: 'Service',
+        event: 'Appointment runs',
+        leakRisk: 'low',
+        detail: 'The work itself usually goes well. The gaps live around it.',
+      },
+      {
+        id: 'recall',
+        time: 'Recall',
+        event: 'Review, recall, repeat',
+        leakRisk: 'medium',
+        detail: 'Most repeat revenue lives here. Most leaks live here too.',
+      },
+    ],
   },
   breakpoints: {
     header: {
-      kicker: 'Breakpoints',
-      title: 'Moments that need a clearer owner',
-      description:
-        'Separate the points that need instant response, human decision, or later follow-up.',
+      kicker: 'Moments that need an owner',
+      title: 'Where the appointment day actually breaks',
+      description: 'These are the points the system has to hold automatically.',
     },
+    items: [
+      'Inbound call when the practitioner is in session',
+      'After-hours enquiry',
+      'Day-before reminder for the appointment',
+      'Quote / consult to booking transition',
+      'Service complete → review request',
+      'Past customer → recall reminder at the right interval',
+    ],
   },
   operatingModels: {
     header: {
-      kicker: 'Operating Models',
-      title: 'Different ways local appointment-based teams receive demand',
-      description:
-        'Compare urgent calls, planned bookings, quote requests, and review-led trust signals.',
+      kicker: 'How operators differ',
+      title: 'Two operating shapes inside the same category',
+      description: 'Most operators tilt toward one of these two.',
     },
+    models: [
+      {
+        id: 'flow-led',
+        label: 'Flow-led',
+        traits: [
+          'Walk-in and quick-turn bookings mix',
+          'Day-of capacity is a real lever',
+          'Recall is short — weekly or monthly',
+          'Examples: repair shops, driving schools, tattoo studios',
+        ],
+        differentiator: 'Lead systems are AI Lead Handling for first touch and CRM for reminders.',
+      },
+      {
+        id: 'considered-led',
+        label: 'Considered-led',
+        traits: [
+          'Enquiries compare clinics or providers',
+          'Consults precede bookings',
+          'Recall is longer — quarterly or biannual',
+          'Examples: dental clinics, small private clinics',
+        ],
+        differentiator:
+          'Lead systems are AI Lead Handling (calm first reply) and CRM (recall and reminders).',
+      },
+    ],
   },
   pathwayMap: {
     header: {
-      kicker: 'Pathway Map',
-      title: 'How a visitor chooses the closest route',
-      description:
-        'Make the category page help people recognise the business type they actually run.',
+      kicker: 'Choose the closest shape',
+      title: 'Five recognition routes',
+      description: 'Each route opens a detail page tuned to that operating reality.',
     },
+    branches: [
+      {
+        id: 'dental',
+        segment: 'Dental clinic',
+        recognition: 'Six-month recall and chair-time pressure.',
+        leadingSystem: 'CRM & Automation',
+        detailHref: '/industries/local-appointment-businesses/dental-clinics',
+        detailLabel: 'Dental Clinics detail',
+      },
+      {
+        id: 'driving',
+        segment: 'Driving school',
+        recognition: 'Instructors out, phones unattended.',
+        leadingSystem: 'AI Lead Handling',
+        detailHref: '/industries/local-appointment-businesses/driving-schools',
+        detailLabel: 'Driving Schools detail',
+      },
+      {
+        id: 'repair',
+        segment: 'Repair shop',
+        recognition: 'Bench full, customers waiting on status.',
+        leadingSystem: 'CRM & Automation',
+        detailHref: '/industries/local-appointment-businesses/repair-shops',
+        detailLabel: 'Repair Shops detail',
+      },
+      {
+        id: 'clinic',
+        segment: 'Small private clinic',
+        recognition: 'Considered enquiries, treatment-plan rhythm.',
+        leadingSystem: 'AI Lead Handling',
+        detailHref: '/industries/local-appointment-businesses/small-private-clinics',
+        detailLabel: 'Small Private Clinics detail',
+      },
+      {
+        id: 'tattoo',
+        segment: 'Tattoo studio',
+        recognition: 'DM pile, deposit and session rhythm.',
+        leadingSystem: 'AI Lead Handling',
+        detailHref: '/industries/local-appointment-businesses/tattoo-studios',
+        detailLabel: 'Tattoo Studios detail',
+      },
+    ],
   },
   startingSystems: {
     header: {
-      kicker: 'Starting Systems',
-      title: 'The first systems to inspect',
-      description:
-        'Use the page to decide whether the leak begins with visibility, response, follow-up, reviews, or repeat work.',
+      kicker: 'Which systems start where',
+      title: 'How the six systems show up across appointments',
+      description: 'Lead first. Support next. Later as the operation steadies.',
     },
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'crm-automation',
-      'reputation-review',
-      'local-seo-authority',
+    systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+    matrix: [
+      {
+        systemId: 'crm',
+        systemName: 'CRM & Automation',
+        status: 'lead',
+        whyNow: 'Reminders, recall, and the operating board.',
+      },
+      {
+        systemId: 'aih',
+        systemName: 'AI Lead Handling',
+        status: 'lead',
+        whyNow: 'Catches calls and DMs while the practitioner works.',
+      },
+      {
+        systemId: 'rep',
+        systemName: 'Reputation & Reviews',
+        status: 'support',
+        whyNow: 'Reviews trigger when work is freshest.',
+      },
+      {
+        systemId: 'sws',
+        systemName: 'Smart Website Systems',
+        status: 'support',
+        whyNow: 'Booking pages feed the same operating board.',
+      },
+      {
+        systemId: 'lsa',
+        systemName: 'Local SEO Authority',
+        status: 'later',
+        whyNow: 'Useful when local discovery is the bottleneck.',
+      },
+      {
+        systemId: 'rg',
+        systemName: 'Revenue Growth',
+        status: 'later',
+        whyNow: 'Repeat work and recall economics, once steady.',
+      },
     ],
   },
   detailRoutes: {
     header: {
-      kicker: 'Industry Routes',
+      kicker: 'Detail pages',
       title: 'Choose the closest business type',
-      description:
-        'Route visitors into the detail page that matches the way work is booked and handled.',
+      description: 'Each route opens a page tuned to the way that work is booked and handled.',
     },
-    routes: [
+    routeEntries: [
       {
-        title: 'Dental Clinics',
-        href: '/industries/local-appointment-businesses/dental-clinics',
-        description: 'Appointment requests, treatment fit, and reminders.',
+        detailHref: '/industries/local-appointment-businesses/dental-clinics',
+        label: 'Dental Clinics',
+        oneLine: 'Recalls, reminders, no-show drift.',
+        leadingSystem: 'CRM & Automation',
+        state: 'lost',
       },
       {
-        title: 'Driving Schools',
-        href: '/industries/local-appointment-businesses/driving-schools',
-        description: 'Lesson demand, schedule fit, and follow-up.',
+        detailHref: '/industries/local-appointment-businesses/driving-schools',
+        label: 'Driving Schools',
+        oneLine: 'Calls during lessons, block-end rebooks.',
+        leadingSystem: 'AI Lead Handling',
+        state: 'silent',
       },
       {
-        title: 'Repair Shops',
-        href: '/industries/local-appointment-businesses/repair-shops',
-        description: 'Service requests, booking handoff, and trust.',
+        detailHref: '/industries/local-appointment-businesses/repair-shops',
+        label: 'Repair Shops',
+        oneLine: 'Drop-offs, quotes, ready-for-pickup.',
+        leadingSystem: 'CRM & Automation',
+        state: 'attention',
       },
       {
-        title: 'Small Private Clinics',
-        href: '/industries/local-appointment-businesses/small-private-clinics',
-        description: 'Appointment fit, response, and reviews.',
+        detailHref: '/industries/local-appointment-businesses/small-private-clinics',
+        label: 'Small Private Clinics',
+        oneLine: 'Considered enquiries, plans, recall.',
+        leadingSystem: 'AI Lead Handling',
+        state: 'slow',
       },
       {
-        title: 'Tattoo Studios',
-        href: '/industries/local-appointment-businesses/tattoo-studios',
-        description: 'Consultation requests, prep, and booking readiness.',
+        detailHref: '/industries/local-appointment-businesses/tattoo-studios',
+        label: 'Tattoo Studios',
+        oneLine: 'DM pile, deposits, session rebook.',
+        leadingSystem: 'AI Lead Handling',
+        state: 'risk',
       },
     ],
   },
   handledState: {
     header: {
-      kicker: 'Handled State',
-      title: 'What changes when the gaps are owned',
-      description:
-        'Describe the calmer state: enquiries are seen, assigned, followed up, and supported by trust signals.',
+      kicker: 'When the layer holds',
+      title: 'What the day looks like once the gaps are owned',
+      description: 'Same diary. Same hours. Less manual chasing.',
     },
+    handled: [
+      {
+        id: 'calls',
+        label: 'Calls',
+        state: 'after',
+        note: 'Every inbound is acknowledged inside two minutes.',
+      },
+      {
+        id: 'reminders',
+        label: 'Reminders',
+        state: 'after',
+        note: 'Two-step reminders reduce no-show drift.',
+      },
+      {
+        id: 'recall',
+        label: 'Recall',
+        state: 'after',
+        note: 'Recalls go out at the right interval.',
+      },
+      { id: 'reviews', label: 'Reviews', state: 'after', note: 'Reviews trigger after service.' },
+    ],
   },
   scenarioStrip: {
     header: {
-      kicker: 'Scenario',
-      title: 'A plain example for this category',
-      description:
-        'Use one honest category scenario to show the system working without fake results or guarantee claims.',
+      kicker: 'A category scenario',
+      title: 'How a busy week changes',
+      description: 'Illustrative. No fabricated client. No promised result.',
+    },
+    scenario: {
+      kind: 'scenario',
+      label: 'Illustrative scenario',
+      body: 'A multi-room operator runs a normal week. Calls during sessions get text-backs. Two-step reminders go before each appointment. Recalls run on cadence. Reviews trigger after service.',
+      observedChange:
+        'Before, the same week would have produced six voicemails to chase, two no-shows, and several customers past recall. With the layer in place, the diary holds and the desk has fewer threads to follow.',
     },
   },
   faq: {
     header: {
-      kicker: 'FAQ',
-      title: 'Questions about local appointment businesses systems',
-      description: 'Use answers to qualify fit and point visitors toward the right detail page.',
+      kicker: 'Honest questions',
+      title: 'What appointment operators usually ask first',
+      description: 'Direct answers. No hedging.',
     },
     items: [
       {
-        id: 'category-fit',
-        question: 'Is this for every business in the category?',
+        id: 'fit',
+        question: 'Is this the same build for every appointment business?',
         answer:
-          'No. The final page should help visitors find the closest business type before they ask for help.',
+          'No. The shape is similar — booking, service, recall. The lead system differs by operating shape.',
       },
       {
-        id: 'starting-point',
-        question: 'Which system usually comes first?',
+        id: 'starting',
+        question: 'Where do most operators actually start?',
         answer:
-          'The first system depends on where enquiries are being lost: visibility, response, follow-up, reviews, or repeat work.',
+          'Where the leak hurts most. For most, that is busy-desk call coverage plus reminders.',
+      },
+      {
+        id: 'tools',
+        question: 'We already use a booking tool. Do we drop it?',
+        answer: 'Usually no. The operating layer sits beside it.',
+      },
+      {
+        id: 'price',
+        question: 'How is this priced?',
+        answer: 'Per build. We tell you when a build is not the right move yet.',
       },
     ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'Show us where local appointment businesses enquiries slip',
+      kicker: 'Next step',
+      title: 'Show us where the diary actually leaks',
       description:
-        'Tell us what happens between first contact and booked work. We will map the weak points before recommending a build.',
+        'Tell us about a typical week. We will read it back and name the first system to fix.',
     },
     expectations: [
-      { num: '1', text: 'A short read of the current contact paths' },
-      { num: '2', text: 'The system most likely to fix the first leak' },
-      { num: '3', text: 'A clear next move if the fit is right' },
+      { num: '1', text: 'A short read of where bookings, recalls, and reviews sit today' },
+      { num: '2', text: 'The system most likely to hold the worst gap first' },
+      { num: '3', text: 'A clear next move if the fit is right — or none if it isn’t' },
     ],
     reassurance: {
-      noSell: 'No generic pitch. Just the parts that need a clearer owner.',
-      tone: 'Quiet, direct, and specific to how the business runs.',
+      noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
+      tone: 'Direct, specific to an appointment-based operator with a real working week.',
     },
   },
 };

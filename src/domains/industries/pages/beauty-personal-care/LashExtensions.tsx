@@ -2,147 +2,361 @@ import type { IndustryDetailPageData } from '@/domains/industries/types';
 
 export const lashExtensionsIndustryPageData: IndustryDetailPageData = {
   seo: {
-    title: 'Lash Lift and Extensions Systems',
+    title: 'Lash Lift & Extensions — Booking, Fill Cycle, and Retention Systems',
     description:
-      'Holding structure for lash lift and extension studios: enquiry capture, fast response, follow-up ownership, and local trust.',
+      'How lash and brow operators hold inbound bookings, manage fill cycles, and keep clients on a steady visit rhythm.',
     canonical: '/industries/beauty-personal-care/lash-lift-and-extensions',
     openGraph: {
-      title: 'Lash Lift and Extensions Systems',
-      description:
-        'Enquiry handling, follow-up, and trust structure for lash lift and extension studios.',
+      title: 'Lash Lift & Extensions — Booking, Fill Cycle, and Retention Systems',
+      description: 'Bookings, fill-cycle reminders, and retention rhythm in one operating layer.',
     },
   },
   slug: 'lash-lift-and-extensions',
   type: 'detail',
   parentSlug: 'beauty-personal-care',
   hero: {
-    badge: 'Lash Services',
-    title: 'Lash Lift and Extensions [[muted:systems that keep enquiries moving]]',
+    badge: 'Beauty · Lash & Brow',
+    title: 'A lash artist mid-set. [[muted:And a fill enquiry that landed at midnight.]]',
     description:
-      'Show where enquiries arrive, where they stall, and which system needs an owner first.',
+      'Lash work runs on tight cycles — a fill every two or three weeks. Miss the cycle and the client moves to a competitor. Catch it and the chair stays full.',
     list: [
-      'Missed calls are recovered',
-      'Enquiries are sorted by intent',
-      'Follow-up has a visible owner',
+      'Fill bookings confirmed instantly, day or night',
+      'Cycle reminders go out at the right interval per client',
+      'Reviews triggered the moment the client leaves',
     ],
   },
   industries: ['lash-extensions'],
   systems: [
-    'smart-website-systems',
-    'ai-lead-handling',
     'crm-automation',
+    'ai-lead-handling',
     'reputation-review',
+    'smart-website-systems',
     'local-seo-authority',
   ],
-  topics: ['follow-up', 'booking-systems', 'review-generation'],
+  topics: ['lead-management', 'follow-up', 'review-generation'],
   industryPattern: {
     header: {
-      kicker: 'Leak Pattern',
-      title: 'Lash Lift and Extensions leak pattern',
-      description:
-        'Show the exact points where lash lift and extension studios lose enquiries, bookings, quotes, or trust.',
+      kicker: 'Where it leaks',
+      title: 'Three places lash bookings usually slip',
+      description: 'Most lash operators will see at least two of these.',
     },
-    items: ['First reply', 'Qualification', 'Follow-up'],
+    leaks: [
+      {
+        id: 'after-hours',
+        leak: 'After-hours fill enquiries sit until morning',
+        state: 'silent',
+        observed:
+          'A client realises late at night that they need a fill. The DM or form sits. By morning they’ve booked the next artist.',
+      },
+      {
+        id: 'cycle-miss',
+        leak: 'Fill cycle drifts past two weeks',
+        state: 'risk',
+        observed:
+          'The cycle slips. The set falls below the fill threshold. The client books a full set elsewhere.',
+      },
+      {
+        id: 'no-review',
+        leak: 'Reviews depend on the client remembering',
+        state: 'attention',
+        observed: 'Beautiful work goes silent online. Reviews trickle in at random.',
+      },
+    ],
   },
   leakTimeline: {
     header: {
-      kicker: 'Timeline',
-      title: 'Where the working day loses momentum',
-      description:
-        'Map the moments from first contact through booking, handoff, follow-up, and review request.',
+      kicker: 'A typical week',
+      title: 'How a lash artist’s week moves',
+      description: 'Tight cycles. Quiet appointments. Most communication is async.',
     },
+    timeline: [
+      {
+        id: 'monday',
+        time: 'Mon',
+        event: 'Booking enquiries from the weekend',
+        leakRisk: 'medium',
+        owner: 'Artist / desk',
+      },
+      {
+        id: 'mid-week',
+        time: 'Tue — Thu',
+        event: 'Fill appointments stack up',
+        leakRisk: 'low',
+        owner: 'Artist',
+      },
+      {
+        id: 'friday',
+        time: 'Fri',
+        event: 'New full sets and weekend enquiries',
+        leakRisk: 'high',
+        owner: 'Artist',
+      },
+      {
+        id: 'saturday',
+        time: 'Sat',
+        event: 'Walk-in interest from foot traffic',
+        leakRisk: 'medium',
+        owner: 'Desk',
+      },
+      {
+        id: 'sunday',
+        time: 'Sun',
+        event: 'Closed — DMs and bookings still arrive',
+        leakRisk: 'high',
+        owner: 'Nobody',
+      },
+    ],
   },
   beforeAfter: {
     header: {
-      kicker: 'Operating State',
-      title: 'Before and after the system is owned',
-      description:
-        'Contrast the current drift with a clearer state where enquiries have a next action.',
+      kicker: 'What changes',
+      title: 'The cycle, before and after',
+      description: 'Same artist. Same set. A different layer between the client and the calendar.',
+    },
+    before: {
+      label: 'Before',
+      items: [
+        'After-hours enquiries sit unanswered',
+        'Fill cycles drift past the threshold',
+        'No-shows take chair time without warning',
+        'Reviews depend on the client remembering',
+        'Rebook only happens when the client asks',
+      ],
+    },
+    after: {
+      label: 'After',
+      items: [
+        'Bookings confirmed instantly with the next available slot',
+        'Cycle reminders go out at the right interval per client',
+        'Two-step reminders reduce no-show drift',
+        'Review request triggered automatically post-visit',
+        'Rebook prompt offered alongside the review',
+      ],
     },
   },
   workbench: {
     header: {
-      kicker: 'Workbench',
-      title: 'What gets put in place',
-      description:
-        'List the practical pieces to show: capture, response, routing, follow-up, and proof.',
+      kicker: 'What sits on the workbench',
+      title: 'The pieces that hold the week together',
+      description: 'What is in place, what is planned, and what is optional.',
     },
+    workbench: [
+      {
+        id: 'instant-book',
+        piece: 'Instant booking confirmation',
+        state: 'in-place',
+        owner: 'AI Lead Handling',
+      },
+      {
+        id: 'cycle',
+        piece: 'Fill-cycle reminders',
+        state: 'in-place',
+        owner: 'CRM & Automation',
+      },
+      {
+        id: 'no-show',
+        piece: 'Two-step reminders',
+        state: 'in-place',
+        owner: 'CRM & Automation',
+      },
+      {
+        id: 'reviews',
+        piece: 'Post-visit review trigger',
+        state: 'in-place',
+        owner: 'Reputation & Reviews',
+      },
+      {
+        id: 'rebook-prompt',
+        piece: 'Rebook prompt with review',
+        state: 'planned',
+        owner: 'CRM & Automation',
+      },
+      {
+        id: 'service-area',
+        piece: 'Service-area visibility',
+        state: 'optional',
+        owner: 'Local SEO Authority',
+      },
+    ],
   },
   startingPoints: {
     header: {
-      kicker: 'Starting Points',
-      title: 'Where to start first',
-      description:
-        'Help the reader choose the first fix without turning the page into a service menu.',
+      kicker: 'Where to start',
+      title: 'Three signals, three different first systems',
+      description: 'The leak you actually have decides the first move.',
     },
+    startingPoints: [
+      {
+        id: 'after-hours',
+        fix: 'Acknowledge after-hours enquiries instantly',
+        signalIfYou: 'lose bookings to next-morning silence',
+        leadingSystem: 'AI Lead Handling',
+      },
+      {
+        id: 'cycle',
+        fix: 'Run fill-cycle reminders per client',
+        signalIfYou: 'see clients drift past their cycle',
+        leadingSystem: 'CRM & Automation',
+      },
+      {
+        id: 'reviews',
+        fix: 'Trigger reviews automatically post-visit',
+        signalIfYou: 'do beautiful work that goes quiet online',
+        leadingSystem: 'Reputation & Reviews',
+      },
+    ],
   },
   workflowExamples: {
     header: {
-      kicker: 'Examples',
-      title: 'Trigger, action, owner examples',
-      description:
-        'Show a small board of events, next actions, and responsibility for this business type.',
+      kicker: 'How a few moments are handled',
+      title: 'The work the system does without anyone watching',
+      description: 'Plain triggers, plain actions, named owners.',
     },
+    workflow: [
+      {
+        id: 'booking',
+        trigger: 'Booking form or DM submitted',
+        action: 'Confirm slot or offer next available within 60s',
+        owner: 'AI Lead Handling',
+        channel: 'SMS / DM',
+      },
+      {
+        id: 'reminder',
+        trigger: '24h before appointment',
+        action: 'Confirmation reminder',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+      {
+        id: 'review',
+        trigger: 'Service marked complete',
+        action: 'Review request within 30 minutes',
+        owner: 'Reputation & Reviews',
+        channel: 'SMS',
+      },
+      {
+        id: 'cycle',
+        trigger: '12 days since last fill',
+        action: 'Cycle reminder with rebook link',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+      {
+        id: 'lapsed',
+        trigger: '6 weeks since last visit',
+        action: 'Soft re-engagement message',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+    ],
   },
   relevantSystems: {
     header: {
-      kicker: 'Relevant Systems',
-      title: 'Systems most likely to matter',
-      description: 'Connect the page to the systems that solve this specific leak pattern.',
+      kicker: 'How the systems sit',
+      title: 'Lead, support, optional',
+      description: 'A lash artist usually starts with phone cover and cycle reminders.',
     },
     systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
       'crm-automation',
+      'ai-lead-handling',
       'reputation-review',
+      'smart-website-systems',
       'local-seo-authority',
+    ],
+    relevantSystems: [
+      {
+        id: 'crm',
+        name: 'CRM & Automation',
+        role: 'lead',
+        why: 'Holds fill cycles and rebook reminders on one board.',
+      },
+      {
+        id: 'aih',
+        name: 'AI Lead Handling',
+        role: 'lead',
+        why: 'Catches DM and form bookings outside hours.',
+      },
+      {
+        id: 'rep',
+        name: 'Reputation & Reviews',
+        role: 'support',
+        why: 'Reviews trigger the moment the set looks its best.',
+      },
+      {
+        id: 'sws',
+        name: 'Smart Website Systems',
+        role: 'support',
+        why: 'Booking and gallery pages feed the same operating board.',
+      },
+      {
+        id: 'lsa',
+        name: 'Local SEO Authority',
+        role: 'optional',
+        why: 'Useful when local discovery is the bottleneck.',
+      },
     ],
   },
   scenario: {
     header: {
-      kicker: 'Scenario',
-      title: 'A plain scenario for this business type',
-      description:
-        'Use one realistic operational example without implying fake client proof or guaranteed results.',
+      kicker: 'A realistic scenario',
+      title: 'A week with the layer in place',
+      description: 'Illustrative. No fabricated client. No promised result.',
+    },
+    scenario: {
+      kind: 'scenario',
+      label: 'Illustrative scenario',
+      body: 'A solo lash artist runs five fills a day across a week. Sunday DMs are confirmed automatically. Cycle reminders go out at day twelve. Two-step reminders reduce no-show drift. Reviews trigger after each set.',
+      observedChange:
+        'Before, the same week would have lost three Sunday DMs and two clients past their fill threshold. With the layer in place, the calendar fills itself and the queue stays current.',
     },
   },
   faq: {
     header: {
-      kicker: 'FAQ',
-      title: 'Questions about lash lift and extensions systems',
-      description:
-        'Use answers to clarify fit, starting point, and what changes after the first build.',
+      kicker: 'Honest questions',
+      title: 'What lash artists usually ask first',
+      description: 'Direct answers. No hedging.',
     },
     items: [
       {
-        id: 'first-fix',
-        question: 'What should this page help decide?',
+        id: 'solo',
+        question: 'I’m solo. Is this overkill?',
         answer:
-          'It should help the reader identify where enquiries are being lost and which system should be fixed first.',
+          'Often a smaller build is exactly right. The leakiest gap when you’re solo is usually the after-hours DM. We start there.',
       },
       {
-        id: 'proof',
-        question: 'Can this page use results or proof?',
+        id: 'tools',
+        question: 'I already use a booking app. Do I drop it?',
         answer:
-          'Only when the proof is real. Scenario examples must stay clearly illustrative and honest.',
+          'Usually no. The operating layer sits beside it and covers the cycle and review gaps it does not.',
+      },
+      {
+        id: 'feel',
+        question: 'Will the cycle reminders feel pushy?',
+        answer: 'Set at the right cadence, no. Most clients want the nudge.',
+      },
+      {
+        id: 'price',
+        question: 'How is this priced?',
+        answer:
+          'Per build, not per feature. We tell you when a smaller build (or none yet) is the right move.',
       },
     ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'Show us where lash lift and extensions enquiries slip',
+      kicker: 'Next step',
+      title: 'Show us where the cycle actually leaks',
       description:
-        'Tell us what happens between first contact and booked work. We will map the weak points before recommending a build.',
+        'Tell us about a typical week. We will read it back and name the first system to fix.',
     },
     expectations: [
-      { num: '1', text: 'A short read of the current contact paths' },
-      { num: '2', text: 'The system most likely to fix the first leak' },
-      { num: '3', text: 'A clear next move if the fit is right' },
+      { num: '1', text: 'A short read of where bookings and cycles sit today' },
+      { num: '2', text: 'The system most likely to hold the worst gap first' },
+      { num: '3', text: 'A clear next move if the fit is right — or none if it isn’t' },
     ],
     reassurance: {
-      noSell: 'No generic pitch. Just the parts that need a clearer owner.',
-      tone: 'Quiet, direct, and specific to how the business runs.',
+      noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
+      tone: 'Direct, specific to a working lash artist with a real cycle rhythm.',
     },
   },
 };

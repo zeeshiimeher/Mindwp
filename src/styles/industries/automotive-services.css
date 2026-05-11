@@ -1,0 +1,1042 @@
+/* ============================================================
+ * Industry — Automotive Services category + detail pages.
+ *
+ * Page-owned visual bodies for:
+ *   • /industries/automotive-services
+ *   • /industries/automotive-services/auto-repair
+ *   • /industries/automotive-services/body-shops
+ *   • /industries/automotive-services/car-detailing
+ *   • /industries/automotive-services/mobile-mechanics
+ *
+ * Token-based only. No raw colors. No inline styles.
+ * Page-specific signature visuals carry page-specific class prefixes.
+ * Small shared helpers inside this file use the auto- prefix and
+ * are scoped to the automotive group only.
+ * ============================================================ */
+
+/* ─────────────────────────────────────────
+ * Page wrappers
+ * ───────────────────────────────────────── */
+.auto-detail-page,
+.auto-cat-page {
+  background: var(--mw-bg-page);
+}
+
+/* ─────────────────────────────────────────
+ * Shared (within automotive group only) — pills + dots
+ * ───────────────────────────────────────── */
+.auto-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mw-space-1);
+  padding: var(--mw-space-1) var(--mw-space-2);
+  border-radius: var(--mw-radius-pill);
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.auto-pill--silent,
+.auto-pill--lost,
+.auto-pill--risk,
+.auto-pill--high {
+  color: var(--mw-signal-red);
+  background: var(--mw-signal-red-10);
+}
+
+.auto-pill--slow,
+.auto-pill--attention,
+.auto-pill--medium {
+  color: var(--mw-signal-amber);
+  background: var(--mw-signal-amber-10);
+}
+
+.auto-pill--healthy,
+.auto-pill--low,
+.auto-pill--in-place,
+.auto-pill--after {
+  color: var(--mw-signal-green);
+  background: var(--mw-signal-green-10);
+}
+
+.auto-pill--planned,
+.auto-pill--lead {
+  color: var(--mw-signal-teal);
+  background: var(--mw-signal-teal-10);
+}
+
+.auto-pill--support {
+  color: var(--mw-signal-cyan);
+  background: var(--mw-signal-cyan-10);
+}
+
+.auto-pill--later,
+.auto-pill--optional {
+  color: var(--mw-text-subtle);
+  background: var(--mw-bg-mist);
+}
+
+.auto-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-color-ink-subtle);
+  flex-shrink: 0;
+}
+
+.auto-dot--silent,
+.auto-dot--lost,
+.auto-dot--risk,
+.auto-dot--high {
+  background: var(--mw-signal-red);
+}
+
+.auto-dot--slow,
+.auto-dot--attention,
+.auto-dot--medium {
+  background: var(--mw-signal-amber);
+}
+
+.auto-dot--healthy,
+.auto-dot--low {
+  background: var(--mw-signal-green);
+}
+
+/* ─────────────────────────────────────────
+ * Shared — recognition leak strip (used on detail + category)
+ * ───────────────────────────────────────── */
+.auto-leakboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-leakboard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .auto-leakboard--four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .auto-leakboard--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.auto-leakboard__tile {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-top: 3px solid var(--mw-color-ink-subtle);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.auto-leakboard__tile--silent,
+.auto-leakboard__tile--lost,
+.auto-leakboard__tile--risk {
+  border-top-color: var(--mw-signal-red);
+}
+
+.auto-leakboard__tile--slow,
+.auto-leakboard__tile--attention {
+  border-top-color: var(--mw-signal-amber);
+}
+
+.auto-leakboard__tile--healthy {
+  border-top-color: var(--mw-signal-green);
+}
+
+.auto-leakboard__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--mw-space-3);
+}
+
+.auto-leakboard__leak {
+  font-weight: 700;
+  color: var(--mw-text-strong);
+  margin: 0;
+}
+
+.auto-leakboard__observed {
+  color: var(--mw-text-default);
+  margin: 0;
+  font-size: var(--mw-text-small);
+}
+
+/* ─────────────────────────────────────────
+ * Shared — before/after state grid
+ * ───────────────────────────────────────── */
+.auto-state-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-4);
+}
+
+@media (min-width: 720px) {
+  .auto-state-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.auto-state-grid__col {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-3);
+}
+
+.auto-state-grid__col--before {
+  border-left: 3px solid var(--mw-signal-amber);
+}
+
+.auto-state-grid__col--after {
+  border-left: 3px solid var(--mw-signal-green);
+}
+
+.auto-state-grid__label {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-text-subtle);
+  font-weight: 700;
+}
+
+.auto-state-grid__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.auto-state-grid__item {
+  position: relative;
+  padding-left: var(--mw-space-4);
+  color: var(--mw-text-default);
+  font-size: var(--mw-text-small);
+}
+
+.auto-state-grid__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-color-ink-subtle);
+}
+
+.auto-state-grid__col--after .auto-state-grid__item::before {
+  background: var(--mw-signal-green);
+}
+
+.auto-state-grid__col--before .auto-state-grid__item::before {
+  background: var(--mw-signal-amber);
+}
+
+/* ─────────────────────────────────────────
+ * Shared — starting points (3-up signal/fix/system)
+ * ───────────────────────────────────────── */
+.auto-starts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-starts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.auto-starts__option {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.auto-starts__signal {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-text-subtle);
+  font-weight: 700;
+}
+
+.auto-starts__when {
+  font-weight: 600;
+  color: var(--mw-text-default);
+  margin: 0;
+}
+
+.auto-starts__fix {
+  margin: 0;
+  color: var(--mw-text-strong);
+  font-weight: 700;
+}
+
+.auto-starts__system {
+  margin-top: var(--mw-space-2);
+  align-self: flex-start;
+  padding: var(--mw-space-1) var(--mw-space-2);
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-signal-teal-10);
+  color: var(--mw-signal-teal);
+  font-size: var(--mw-text-micro);
+  font-weight: 700;
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+ * Shared — scenario card
+ * ───────────────────────────────────────── */
+.auto-scenario {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-left: 3px solid var(--mw-signal-teal);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-3);
+}
+
+.auto-scenario__label {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-signal-teal);
+  font-weight: 700;
+}
+
+.auto-scenario__body {
+  margin: 0;
+  color: var(--mw-text-default);
+}
+
+.auto-scenario__change {
+  margin: 0;
+  color: var(--mw-text-strong);
+  font-weight: 600;
+  border-top: 1px solid var(--mw-border-light);
+  padding-top: var(--mw-space-3);
+}
+
+/* ============================================================
+ * PAGE — Auto Repair
+ * Signature visual: counter-to-bay operating map.
+ * ============================================================ */
+.auto-repair-counter-board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-4);
+  background: var(--mw-color-ink);
+  border-radius: var(--mw-radius-lg);
+  padding: var(--mw-space-5);
+}
+
+.auto-repair-counter-board__lane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.auto-repair-counter-board__lane-label {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-text-on-dark-subtle);
+  font-weight: 700;
+}
+
+.auto-repair-counter-board__flow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-repair-counter-board__flow {
+    grid-template-columns: repeat(6, 1fr);
+    align-items: stretch;
+  }
+}
+
+.auto-repair-counter-board__node {
+  position: relative;
+  background: var(--mw-white-04);
+  border: 1px solid var(--mw-white-12);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-3);
+  color: var(--mw-color-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-1);
+  min-height: 6rem;
+}
+
+.auto-repair-counter-board__step {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-text-on-dark-subtle);
+  font-weight: 700;
+}
+
+.auto-repair-counter-board__title {
+  font-weight: 700;
+  color: var(--mw-color-white);
+  margin: 0;
+}
+
+.auto-repair-counter-board__owner {
+  margin-top: auto;
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-on-dark-subtle);
+}
+
+.auto-repair-counter-board__node--risk {
+  border-color: var(--mw-signal-red);
+}
+
+.auto-repair-counter-board__node--hold {
+  border-color: var(--mw-signal-amber);
+}
+
+.auto-repair-counter-board__node--ok {
+  border-color: var(--mw-signal-green);
+}
+
+.auto-repair-counter-board__caption {
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-on-dark-subtle);
+  margin: 0;
+}
+
+/* ============================================================
+ * PAGE — Body Shops
+ * Signature visual: repair-stage path.
+ * ============================================================ */
+.body-shop-stage-map {
+  background: var(--mw-color-ink);
+  border-radius: var(--mw-radius-lg);
+  padding: var(--mw-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-4);
+}
+
+.body-shop-stage-map__rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .body-shop-stage-map__rail {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.body-shop-stage-map__stage {
+  background: var(--mw-white-04);
+  border: 1px solid var(--mw-white-15);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+  color: var(--mw-color-white);
+  min-height: 8rem;
+}
+
+.body-shop-stage-map__num {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-signal-teal-10);
+  color: var(--mw-signal-teal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--mw-text-small);
+}
+
+.body-shop-stage-map__name {
+  font-weight: 700;
+  color: var(--mw-color-white);
+  margin: 0;
+}
+
+.body-shop-stage-map__hint {
+  margin: 0;
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-on-dark-subtle);
+}
+
+.body-shop-stage-map__stage--risk {
+  border-color: var(--mw-signal-red);
+}
+
+.body-shop-stage-map__stage--hold {
+  border-color: var(--mw-signal-amber);
+}
+
+.body-shop-stage-map__stage--ok {
+  border-color: var(--mw-signal-green);
+}
+
+.body-shop-stage-map__caption {
+  margin: 0;
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-on-dark-subtle);
+}
+
+/* ============================================================
+ * PAGE — Car Detailing
+ * Signature visual: package-to-repeat loop.
+ * ============================================================ */
+.car-detailing-rhythm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-4);
+}
+
+@media (min-width: 900px) {
+  .car-detailing-rhythm {
+    grid-template-columns: 3fr 2fr;
+    align-items: stretch;
+  }
+}
+
+.car-detailing-rhythm__loop {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-radius: var(--mw-radius-lg);
+  padding: var(--mw-space-5);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  .car-detailing-rhythm__loop {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.car-detailing-rhythm__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+  align-items: flex-start;
+}
+
+.car-detailing-rhythm__step-num {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-signal-teal-10);
+  color: var(--mw-signal-teal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--mw-text-small);
+}
+
+.car-detailing-rhythm__step-title {
+  font-weight: 700;
+  color: var(--mw-text-strong);
+  margin: 0;
+}
+
+.car-detailing-rhythm__step-body {
+  margin: 0;
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-default);
+}
+
+.car-detailing-rhythm__sidecar {
+  background: var(--mw-bg-mist);
+  border-radius: var(--mw-radius-lg);
+  padding: var(--mw-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-3);
+}
+
+.car-detailing-rhythm__sidecar-label {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-signal-teal);
+  font-weight: 700;
+}
+
+.car-detailing-rhythm__sidecar-title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--mw-text-strong);
+}
+
+.car-detailing-rhythm__sidecar-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.car-detailing-rhythm__sidecar-item {
+  display: flex;
+  gap: var(--mw-space-2);
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-default);
+}
+
+.car-detailing-rhythm__sidecar-when {
+  font-weight: 700;
+  color: var(--mw-signal-teal);
+  white-space: nowrap;
+}
+
+/* ============================================================
+ * PAGE — Mobile Mechanics
+ * Signature visual: van/route map.
+ * ============================================================ */
+.mobile-mechanic-route-map {
+  background: var(--mw-color-ink);
+  border-radius: var(--mw-radius-lg);
+  padding: var(--mw-space-5);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-4);
+}
+
+@media (min-width: 900px) {
+  .mobile-mechanic-route-map {
+    grid-template-columns: 5fr 4fr;
+  }
+}
+
+.mobile-mechanic-route-map__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mobile-mechanic-route-map__svg-line {
+  fill: none;
+  stroke: var(--mw-signal-teal);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+.mobile-mechanic-route-map__svg-stop {
+  fill: var(--mw-signal-teal);
+}
+
+.mobile-mechanic-route-map__svg-label {
+  fill: var(--mw-color-white);
+  font-size: var(--mw-text-micro);
+  font-family: inherit;
+}
+
+.mobile-mechanic-route-map__svg-meta {
+  fill: var(--mw-text-on-dark-subtle);
+  font-size: var(--mw-text-micro);
+  font-family: inherit;
+}
+
+.mobile-mechanic-route-map__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.mobile-mechanic-route-map__step {
+  display: flex;
+  gap: var(--mw-space-3);
+  align-items: flex-start;
+  background: var(--mw-white-04);
+  border: 1px solid var(--mw-white-12);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-3);
+}
+
+.mobile-mechanic-route-map__step-num {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-signal-teal);
+  color: var(--mw-color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--mw-text-micro);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mobile-mechanic-route-map__step-title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--mw-color-white);
+  font-size: var(--mw-text-small);
+}
+
+.mobile-mechanic-route-map__step-detail {
+  margin: 0;
+  font-size: var(--mw-text-small);
+  color: var(--mw-text-on-dark-subtle);
+}
+
+/* ============================================================
+ * PAGE — Automotive category
+ * ============================================================ */
+
+/* Signature: operating-shape selector (4 shapes → 4 detail pages). */
+.auto-cat-shape-selector {
+  background: var(--mw-color-ink);
+  border-radius: var(--mw-radius-lg);
+  padding: var(--mw-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-4);
+}
+
+.auto-cat-shape-selector__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-cat-shape-selector__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .auto-cat-shape-selector__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.auto-cat-shape-selector__shape {
+  background: var(--mw-white-04);
+  border: 1px solid var(--mw-white-15);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+  color: var(--mw-color-white);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.auto-cat-shape-selector__shape:hover,
+.auto-cat-shape-selector__shape:focus-visible {
+  border-color: var(--mw-signal-teal);
+  outline: none;
+}
+
+.auto-cat-shape-selector__tag {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-signal-teal);
+  font-weight: 700;
+}
+
+.auto-cat-shape-selector__name {
+  margin: 0;
+  font-weight: 700;
+  font-size: var(--mw-text-h6);
+  color: var(--mw-color-white);
+}
+
+.auto-cat-shape-selector__cue {
+  margin: 0;
+  color: var(--mw-text-on-dark-subtle);
+  font-size: var(--mw-text-small);
+}
+
+.auto-cat-shape-selector__route {
+  margin-top: auto;
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-color-white);
+  font-weight: 700;
+}
+
+.auto-cat-shape-selector__route::after {
+  content: ' →';
+}
+
+.auto-cat-shape-selector__caption {
+  margin: 0;
+  color: var(--mw-text-on-dark-subtle);
+  font-size: var(--mw-text-small);
+}
+
+/* Breakpoints (chip cluster). */
+.auto-cat-breaks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mw-space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.auto-cat-breaks__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mw-space-2);
+  padding: var(--mw-space-2) var(--mw-space-3);
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-radius: var(--mw-radius-pill);
+  color: var(--mw-text-strong);
+  font-size: var(--mw-text-small);
+  font-weight: 600;
+}
+
+/* Operating models (counter-led / cycle-led). */
+.auto-cat-models {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-cat-models {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.auto-cat-models__card {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-3);
+}
+
+.auto-cat-models__label {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-signal-teal);
+  font-weight: 700;
+}
+
+.auto-cat-models__title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--mw-text-strong);
+}
+
+.auto-cat-models__traits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.auto-cat-models__trait {
+  position: relative;
+  padding-left: var(--mw-space-4);
+  color: var(--mw-text-default);
+  font-size: var(--mw-text-small);
+}
+
+.auto-cat-models__trait::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--mw-radius-pill);
+  background: var(--mw-signal-teal);
+}
+
+.auto-cat-models__diff {
+  margin: 0;
+  padding: var(--mw-space-3);
+  background: var(--mw-bg-mist);
+  border-radius: var(--mw-radius-sm);
+  color: var(--mw-text-strong);
+  font-size: var(--mw-text-small);
+}
+
+/* Handled-state strip (after-only acknowledgements). */
+.auto-cat-handled {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-cat-handled {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .auto-cat-handled {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.auto-cat-handled__card {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-left: 3px solid var(--mw-signal-green);
+  border-radius: var(--mw-radius-md);
+  padding: var(--mw-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+}
+
+.auto-cat-handled__label {
+  font-weight: 700;
+  color: var(--mw-text-strong);
+  margin: 0;
+}
+
+.auto-cat-handled__note {
+  margin: 0;
+  color: var(--mw-text-default);
+  font-size: var(--mw-text-small);
+}
+
+/* Detail-route directory (the four paths). */
+.auto-cat-routes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mw-space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .auto-cat-routes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.auto-cat-routes__route {
+  background: var(--mw-color-white);
+  border: 1px solid var(--mw-border-light);
+  border-radius: var(--mw-radius-md);
+  transition: border-color 0.15s ease;
+}
+
+.auto-cat-routes__link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-space-2);
+  padding: var(--mw-space-4);
+  color: inherit;
+  text-decoration: none;
+}
+
+.auto-cat-routes__route:hover,
+.auto-cat-routes__route:focus-within {
+  border-color: var(--mw-signal-teal);
+}
+
+.auto-cat-routes__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--mw-space-2);
+}
+
+.auto-cat-routes__label {
+  font-weight: 700;
+  color: var(--mw-text-strong);
+  margin: 0;
+}
+
+.auto-cat-routes__one {
+  margin: 0;
+  color: var(--mw-text-default);
+  font-size: var(--mw-text-small);
+}
+
+.auto-cat-routes__system {
+  font-size: var(--mw-text-micro);
+  letter-spacing: var(--mw-tracking-label);
+  text-transform: uppercase;
+  color: var(--mw-signal-teal);
+  font-weight: 700;
+}
+
+.auto-cat-routes__arrow::after {
+  content: ' →';
+  color: var(--mw-text-subtle);
+}

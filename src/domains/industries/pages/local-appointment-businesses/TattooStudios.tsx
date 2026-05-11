@@ -2,146 +2,325 @@ import type { IndustryDetailPageData } from '@/domains/industries/types';
 
 export const tattooStudiosIndustryPageData: IndustryDetailPageData = {
   seo: {
-    title: 'Tattoo Studios Systems',
+    title: 'Tattoo Studios — Enquiry, Deposit, and Session Systems',
     description:
-      'Holding structure for tattoo studios: enquiry capture, fast response, follow-up ownership, and local trust.',
+      'How tattoo studios hold artist enquiries, manage deposits, and run multi-session bookings without the front desk drowning in DMs.',
     canonical: '/industries/local-appointment-businesses/tattoo-studios',
     openGraph: {
-      title: 'Tattoo Studios Systems',
-      description: 'Enquiry handling, follow-up, and trust structure for tattoo studios.',
+      title: 'Tattoo Studios — Enquiry, Deposit, and Session Systems',
+      description: 'Enquiries, deposits, and sessions on one operating layer.',
     },
   },
   slug: 'tattoo-studios',
   type: 'detail',
   parentSlug: 'local-appointment-businesses',
   hero: {
-    badge: 'Tattoo Studios',
-    title: 'Tattoo Studios [[muted:systems that keep enquiries moving]]',
+    badge: 'Appointments · Tattoo Studios',
+    title: 'A queue of DMs. [[muted:And the artist is mid-line.]]',
     description:
-      'Show where enquiries arrive, where they stall, and which system needs an owner first.',
+      'The studio runs on artist enquiries, deposits, and multi-session bookings. The desk drowns in DMs. The artist works.',
     list: [
-      'Missed calls are recovered',
-      'Enquiries are sorted by intent',
-      'Follow-up has a visible owner',
+      'Enquiries acknowledged with the artist’s next opening',
+      'Deposit and session reminders run automatically',
+      'Reviews and rebook prompts run after the heal-check',
     ],
   },
   industries: ['tattoo-studio'],
-  systems: [
-    'smart-website-systems',
-    'ai-lead-handling',
-    'crm-automation',
-    'reputation-review',
-    'local-seo-authority',
-  ],
-  topics: ['follow-up', 'booking-systems', 'review-generation'],
+  systems: ['ai-lead-handling', 'crm-automation', 'reputation-review', 'smart-website-systems'],
+  topics: ['lead-management', 'follow-up', 'review-generation'],
   industryPattern: {
     header: {
-      kicker: 'Leak Pattern',
-      title: 'Tattoo Studios leak pattern',
-      description:
-        'Show the exact points where tattoo studios lose enquiries, bookings, quotes, or trust.',
+      kicker: 'Where it leaks',
+      title: 'Three places tattoo enquiries usually slip',
+      description: 'Most studios see at least two of these.',
     },
-    items: ['First reply', 'Qualification', 'Follow-up'],
+    leaks: [
+      {
+        id: 'dm-pile',
+        leak: 'DM and form enquiries pile up',
+        state: 'silent',
+        observed: 'A new client messages on a Tuesday. The artist sees it the following Sunday.',
+      },
+      {
+        id: 'no-deposit',
+        leak: 'Deposit not taken, no booking confirmed',
+        state: 'risk',
+        observed: 'A consult happens. Nothing prompts the deposit. The slot doesn’t lock.',
+      },
+      {
+        id: 'no-rebook',
+        leak: 'Multi-session work drifts without the next booking',
+        state: 'lost',
+        observed: 'A long piece spans four sessions. Session three doesn’t prompt session four.',
+      },
+    ],
   },
   leakTimeline: {
     header: {
-      kicker: 'Timeline',
-      title: 'Where the working day loses momentum',
-      description:
-        'Map the moments from first contact through booking, handoff, follow-up, and review request.',
+      kicker: 'A typical day',
+      title: 'How a tattoo-studio day moves',
+      description: 'Long sessions. Quiet front desk. Big DM volume.',
     },
+    timeline: [
+      {
+        id: 'open',
+        time: '11:00',
+        event: 'Doors open — first session set up',
+        leakRisk: 'low',
+        owner: 'Artist',
+      },
+      {
+        id: 'morning',
+        time: '12:00 — 16:00',
+        event: 'Long session in progress',
+        leakRisk: 'high',
+        owner: 'Artist',
+      },
+      {
+        id: 'midday',
+        time: '16:00',
+        event: 'Break — DMs glanced at',
+        leakRisk: 'medium',
+        owner: 'Artist',
+      },
+      {
+        id: 'evening',
+        time: '17:00 — 21:00',
+        event: 'Second session',
+        leakRisk: 'high',
+        owner: 'Artist',
+      },
+      {
+        id: 'close',
+        time: '21:30',
+        event: 'Close out — DMs piled up',
+        leakRisk: 'high',
+        owner: 'Artist',
+      },
+    ],
   },
   beforeAfter: {
     header: {
-      kicker: 'Operating State',
-      title: 'Before and after the system is owned',
-      description:
-        'Contrast the current drift with a clearer state where enquiries have a next action.',
+      kicker: 'What changes',
+      title: 'The studio, before and after',
+      description: 'Same artists. A different layer behind the DMs.',
+    },
+    before: {
+      label: 'Before',
+      items: [
+        'DMs go unread for days',
+        'Deposits not taken on time',
+        'Multi-session bookings drift',
+        'Reviews depend on the client remembering',
+        'Heal-checks slip',
+      ],
+    },
+    after: {
+      label: 'After',
+      items: [
+        'Enquiries acknowledged with the artist’s next opening',
+        'Deposit prompt with one tap to pay',
+        'Session-end rebook prompts run',
+        'Review prompt after heal-check',
+        'Heal-check reminder runs automatically',
+      ],
     },
   },
   workbench: {
     header: {
-      kicker: 'Workbench',
-      title: 'What gets put in place',
-      description:
-        'List the practical pieces to show: capture, response, routing, follow-up, and proof.',
+      kicker: 'What sits on the workbench',
+      title: 'The pieces that hold a studio together',
+      description: 'In place, planned, optional.',
     },
+    workbench: [
+      {
+        id: 'first-touch',
+        piece: 'DM / form acknowledgment',
+        state: 'in-place',
+        owner: 'AI Lead Handling',
+      },
+      { id: 'deposit', piece: 'Deposit prompt', state: 'in-place', owner: 'CRM & Automation' },
+      { id: 'reminders', piece: 'Session reminders', state: 'in-place', owner: 'CRM & Automation' },
+      {
+        id: 'rebook',
+        piece: 'Session-end rebook prompts',
+        state: 'in-place',
+        owner: 'CRM & Automation',
+      },
+      { id: 'heal', piece: 'Heal-check reminder', state: 'planned', owner: 'CRM & Automation' },
+      {
+        id: 'review',
+        piece: 'Post-heal review prompt',
+        state: 'planned',
+        owner: 'Reputation & Reviews',
+      },
+    ],
   },
   startingPoints: {
     header: {
-      kicker: 'Starting Points',
-      title: 'Where to start first',
-      description:
-        'Help the reader choose the first fix without turning the page into a service menu.',
+      kicker: 'Where to start',
+      title: 'Three signals, three different first systems',
+      description: 'The leak you actually have decides the first move.',
     },
+    startingPoints: [
+      {
+        id: 'dm',
+        fix: 'Acknowledge enquiries instantly',
+        signalIfYou: 'feel the DM pile growing past control',
+        leadingSystem: 'AI Lead Handling',
+      },
+      {
+        id: 'deposit',
+        fix: 'Take deposits without manual chasing',
+        signalIfYou: 'see consults that don’t become bookings',
+        leadingSystem: 'CRM & Automation',
+      },
+      {
+        id: 'rebook',
+        fix: 'Run session-end rebook prompts',
+        signalIfYou: 'have multi-session work that drifts',
+        leadingSystem: 'CRM & Automation',
+      },
+    ],
   },
   workflowExamples: {
     header: {
-      kicker: 'Examples',
-      title: 'Trigger, action, owner examples',
-      description:
-        'Show a small board of events, next actions, and responsibility for this business type.',
+      kicker: 'How a few moments are handled',
+      title: 'The work the system does without anyone watching',
+      description: 'Plain triggers, plain actions, named owners.',
     },
+    workflow: [
+      {
+        id: 'dm',
+        trigger: 'Enquiry submitted',
+        action: 'Reply with artist availability and intake link',
+        owner: 'AI Lead Handling',
+        channel: 'SMS / DM',
+      },
+      {
+        id: 'deposit',
+        trigger: 'Consult completed',
+        action: 'Deposit prompt with one-tap pay',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+      {
+        id: 'reminder',
+        trigger: '48h and 24h before session',
+        action: 'Two-step reminder',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+      {
+        id: 'rebook',
+        trigger: 'Session marked complete',
+        action: 'Next-session rebook prompt',
+        owner: 'CRM & Automation',
+        channel: 'SMS',
+      },
+      {
+        id: 'heal',
+        trigger: '14 days after session',
+        action: 'Heal-check reminder + review prompt',
+        owner: 'Reputation & Reviews',
+        channel: 'SMS',
+      },
+    ],
   },
   relevantSystems: {
     header: {
-      kicker: 'Relevant Systems',
-      title: 'Systems most likely to matter',
-      description: 'Connect the page to the systems that solve this specific leak pattern.',
+      kicker: 'How the systems sit',
+      title: 'Lead, support, optional',
+      description: 'Most studios start with first-touch and deposit.',
     },
-    systems: [
-      'smart-website-systems',
-      'ai-lead-handling',
-      'crm-automation',
-      'reputation-review',
-      'local-seo-authority',
+    systems: ['ai-lead-handling', 'crm-automation', 'reputation-review', 'smart-website-systems'],
+    relevantSystems: [
+      { id: 'aih', name: 'AI Lead Handling', role: 'lead', why: 'Catches DM and form pile-up.' },
+      {
+        id: 'crm',
+        name: 'CRM & Automation',
+        role: 'lead',
+        why: 'Holds deposits, reminders, and session rhythm.',
+      },
+      {
+        id: 'rep',
+        name: 'Reputation & Reviews',
+        role: 'support',
+        why: 'Reviews trigger after heal-check.',
+      },
+      {
+        id: 'sws',
+        name: 'Smart Website Systems',
+        role: 'support',
+        why: 'Artist pages feed the same operating board.',
+      },
+      {
+        id: 'lsa',
+        name: 'Local SEO Authority',
+        role: 'optional',
+        why: 'Useful for local discovery when needed.',
+      },
     ],
   },
   scenario: {
     header: {
-      kicker: 'Scenario',
-      title: 'A plain scenario for this business type',
-      description:
-        'Use one realistic operational example without implying fake client proof or guaranteed results.',
+      kicker: 'A realistic scenario',
+      title: 'A week with the layer in place',
+      description: 'Illustrative. No fabricated client. No promised result.',
+    },
+    scenario: {
+      kind: 'scenario',
+      label: 'Illustrative scenario',
+      body: 'A studio with three resident artists runs a normal week. DM enquiries get acknowledged with availability. Deposits prompt after consult. Session reminders go out. Heal-check and review prompts run after each session.',
+      observedChange:
+        'Before, the same week would have produced a backed-up DM pile, two consults that didn’t book, and a quiet review queue. With the layer in place, the calendar holds and the artists keep working.',
     },
   },
   faq: {
     header: {
-      kicker: 'FAQ',
-      title: 'Questions about tattoo studios systems',
-      description:
-        'Use answers to clarify fit, starting point, and what changes after the first build.',
+      kicker: 'Honest questions',
+      title: 'What studio owners usually ask first',
+      description: 'Direct answers. No hedging.',
     },
     items: [
       {
-        id: 'first-fix',
-        question: 'What should this page help decide?',
-        answer:
-          'It should help the reader identify where enquiries are being lost and which system should be fixed first.',
+        id: 'artist-control',
+        question: 'Does each artist keep control of their bookings?',
+        answer: 'Yes. The board respects per-artist ownership.',
       },
       {
-        id: 'proof',
-        question: 'Can this page use results or proof?',
+        id: 'tools',
+        question: 'We use a booking tool. Do we drop it?',
+        answer: 'Usually no. The operating layer sits beside it.',
+      },
+      {
+        id: 'voice',
+        question: 'Will replies sound like the studio?',
+        answer: 'Yes — replies are written in the studio’s voice and reviewed before launch.',
+      },
+      {
+        id: 'price',
+        question: 'How is this priced?',
         answer:
-          'Only when the proof is real. Scenario examples must stay clearly illustrative and honest.',
+          'Per build, not per feature. We tell you when a smaller build (or none yet) is the right move.',
       },
     ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'Show us where tattoo studios enquiries slip',
+      kicker: 'Next step',
+      title: 'Show us where the calendar actually leaks',
       description:
-        'Tell us what happens between first contact and booked work. We will map the weak points before recommending a build.',
+        'Tell us about a typical week. We will read it back and name the first system to fix.',
     },
     expectations: [
-      { num: '1', text: 'A short read of the current contact paths' },
-      { num: '2', text: 'The system most likely to fix the first leak' },
-      { num: '3', text: 'A clear next move if the fit is right' },
+      { num: '1', text: 'A short read of where DMs, deposits, and sessions sit today' },
+      { num: '2', text: 'The system most likely to hold the worst gap first' },
+      { num: '3', text: 'A clear next move if the fit is right — or none if it isn’t' },
     ],
     reassurance: {
-      noSell: 'No generic pitch. Just the parts that need a clearer owner.',
-      tone: 'Quiet, direct, and specific to how the business runs.',
+      noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
+      tone: 'Direct, specific to a working tattoo studio.',
     },
   },
 };

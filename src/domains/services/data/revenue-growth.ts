@@ -29,6 +29,7 @@ type SequenceStep = {
 type BridgeRow = {
   id: string;
   belongsTo: 'revenue-growth' | 'other-systems';
+  systemTag?: string;
   point: string;
 };
 
@@ -200,22 +201,26 @@ export const revenueGrowthPage: ServicePageData<RevenueGrowthSections> = {
         {
           id: 'sb-04',
           belongsTo: 'other-systems',
-          point: 'Lead Reactivation reopens the dormant enquiry list.',
+          systemTag: 'Lead Reactivation',
+          point: 'Reopens the dormant enquiry list.',
         },
         {
           id: 'sb-05',
           belongsTo: 'other-systems',
-          point: 'AI Lead Handling shortens the response time on new enquiries.',
+          systemTag: 'AI Lead Handling',
+          point: 'Shortens the response time on new enquiries.',
         },
         {
           id: 'sb-06',
           belongsTo: 'other-systems',
-          point: 'CRM & Automation owns ownership and follow-up after a reply.',
+          systemTag: 'CRM & Automation',
+          point: 'Owns ownership and follow-up after a reply.',
         },
         {
           id: 'sb-07',
           belongsTo: 'other-systems',
-          point: 'Reputation & Reviews keeps the trust signal warm in the background.',
+          systemTag: 'Reputation & Reviews',
+          point: 'Keeps the trust signal warm in the background.',
         },
       ],
       rule: 'Revenue Growth names the leak. The connected system fixes it.',

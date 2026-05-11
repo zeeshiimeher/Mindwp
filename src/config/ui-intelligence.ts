@@ -67,22 +67,23 @@ export const RELATED_SECTION_LABELS: Record<
   },
   'industry-detail': {
     services: {
-      title: 'Services for This Industry',
-      description: 'Purpose-built services designed for this industry context.',
+      title: 'Systems That Usually Matter Here',
+      description:
+        'Service paths that connect to this industry’s lead flow, follow-up, and proof gaps.',
     },
     caseStudies: {
-      title: 'Proof It Works',
-      description: 'Real results from businesses in this industry.',
+      title: 'Related Examples',
+      description: 'Relevant examples or scenarios with the proof type made clear.',
     },
     resources: {
-      title: 'Continue Learning',
-      description: 'Resources that go deeper on the challenges this industry faces.',
+      title: 'Helpful Next Reading',
+      description: 'Practical resources for the operating problems this page describes.',
     },
   },
   'industry-category': {
     services: {
-      title: 'Services for This Category',
-      description: 'Services designed for businesses in this category.',
+      title: 'Systems That Support This Category',
+      description: 'Common starting points for businesses in this category.',
     },
   },
 };
@@ -110,12 +111,13 @@ export const RELATED_SECTION_META: Record<ContentNodeType, { title: string; desc
       description: 'The parent and related services that turn this capability into a full system.',
     },
     'industry-detail': {
-      title: 'Action And Proof For This Industry',
-      description: 'Service options first, then the strongest validating proof for this industry.',
+      title: 'Where This Usually Connects Next',
+      description: 'Relevant systems, examples, and next steps for this kind of business.',
     },
     'industry-category': {
-      title: 'Explore This Category',
-      description: 'Sub-industries first, then the strongest service path for this category.',
+      title: 'Choose the Closest Path',
+      description:
+        'Start with the business type or system pattern that looks closest to your working week.',
     },
   };
 
@@ -165,15 +167,15 @@ export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
   },
   'industry-detail': {
     intensity: 'strong',
-    title: 'Need This Built for Your Industry?',
+    title: 'Show Us Where Work Slips',
     description:
-      'We adapt the system to your service model, lead flow, and operational constraints.',
+      'We can map the enquiry, follow-up, and proof gaps around how this kind of business actually runs.',
   },
   'industry-category': {
     intensity: 'mid',
-    title: 'Exploring the Right Fit?',
+    title: 'Find the Right Starting Point',
     description:
-      'We can help you decide which system and rollout path make sense for your business category.',
+      'We can help you identify which leak pattern, business type, or system path should come first.',
   },
 };
 
@@ -203,8 +205,8 @@ export const CLUSTER_PAGE_CONFIG: Record<ClusterType, ClusterPageConfig> = {
     sectionOrder: ['service', 'feature', 'resource', 'case-study', 'blog'],
   },
   industry: {
-    titlePrefix: 'Industry:',
-    description: 'All content for this industry context.',
+    titlePrefix: 'Industry Context:',
+    description: 'Services, examples, and resources connected to this kind of business.',
     sectionOrder: ['service', 'case-study', 'resource', 'blog'],
   },
 };

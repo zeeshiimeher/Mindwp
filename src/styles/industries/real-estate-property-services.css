@@ -1,0 +1,1163 @@
+/* ============================================================
+ * Industry — Real Estate & Property Services category + detail pages.
+ *
+ * Page-owned visual bodies for:
+ *   • /industries/real-estate-property-services
+ *   • /industries/real-estate-property-services/realtors
+ *   • /industries/real-estate-property-services/property-managers
+ *   • /industries/real-estate-property-services/home-inspectors
+ *   • /industries/real-estate-property-services/mortgage-brokers
+ *
+ * Token-based only. No raw colors. No inline styles.
+ * Page-specific signature visuals carry page-specific class prefixes.
+ * Small shared helpers inside this file use the property-detail- /
+ * property-cat- prefixes and are scoped to this category group only.
+ * ============================================================ */
+
+/* ─────────────────────────────────────────
+ * Page wrappers
+ * ───────────────────────────────────────── */
+.property-detail-page,
+.property-cat-page {
+    background: var(--mw-bg-page);
+}
+
+/* ─────────────────────────────────────────
+ * Shared (property group) — pills + dots
+ * ───────────────────────────────────────── */
+.property-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mw-space-1);
+    padding: var(--mw-space-1) var(--mw-space-2);
+    border-radius: var(--mw-radius-pill);
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.property-pill--silent,
+.property-pill--lost,
+.property-pill--risk,
+.property-pill--high {
+    color: var(--mw-signal-red);
+    background: var(--mw-signal-red-10);
+}
+
+.property-pill--slow,
+.property-pill--attention,
+.property-pill--medium {
+    color: var(--mw-signal-amber);
+    background: var(--mw-signal-amber-10);
+}
+
+.property-pill--healthy,
+.property-pill--low,
+.property-pill--in-place,
+.property-pill--after {
+    color: var(--mw-signal-green);
+    background: var(--mw-signal-green-10);
+}
+
+.property-pill--planned,
+.property-pill--lead {
+    color: var(--mw-signal-teal);
+    background: var(--mw-signal-teal-10);
+}
+
+.property-pill--support {
+    color: var(--mw-signal-cyan);
+    background: var(--mw-signal-cyan-10);
+}
+
+.property-pill--later,
+.property-pill--optional {
+    color: var(--mw-text-subtle);
+    background: var(--mw-bg-mist);
+}
+
+.property-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-color-ink-subtle);
+    flex-shrink: 0;
+}
+
+.property-dot--silent,
+.property-dot--lost,
+.property-dot--risk,
+.property-dot--high {
+    background: var(--mw-signal-red);
+}
+
+.property-dot--slow,
+.property-dot--attention,
+.property-dot--medium {
+    background: var(--mw-signal-amber);
+}
+
+.property-dot--healthy,
+.property-dot--low {
+    background: var(--mw-signal-green);
+}
+
+/* ─────────────────────────────────────────
+ * Shared — recognition leak strip (detail + category)
+ * ───────────────────────────────────────── */
+.property-leakboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 720px) {
+    .property-leakboard {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .property-leakboard--four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .property-leakboard--four {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.property-leakboard__tile {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-top: 3px solid var(--mw-color-ink-subtle);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.property-leakboard__tile--silent,
+.property-leakboard__tile--lost,
+.property-leakboard__tile--risk {
+    border-top-color: var(--mw-signal-red);
+}
+
+.property-leakboard__tile--slow,
+.property-leakboard__tile--attention {
+    border-top-color: var(--mw-signal-amber);
+}
+
+.property-leakboard__tile--healthy {
+    border-top-color: var(--mw-signal-green);
+}
+
+.property-leakboard__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--mw-space-3);
+}
+
+.property-leakboard__leak {
+    font-weight: 700;
+    color: var(--mw-text-strong);
+    margin: 0;
+}
+
+.property-leakboard__observed {
+    color: var(--mw-text-default);
+    margin: 0;
+    font-size: var(--mw-text-small);
+}
+
+/* ─────────────────────────────────────────
+ * Shared — before/after state grid
+ * ───────────────────────────────────────── */
+.property-state-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-4);
+}
+
+@media (min-width: 720px) {
+    .property-state-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.property-state-grid__col {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-3);
+}
+
+.property-state-grid__col--before {
+    border-left: 3px solid var(--mw-signal-amber);
+}
+
+.property-state-grid__col--after {
+    border-left: 3px solid var(--mw-signal-green);
+}
+
+.property-state-grid__label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-text-subtle);
+    font-weight: 700;
+}
+
+.property-state-grid__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.property-state-grid__item {
+    position: relative;
+    padding-left: var(--mw-space-4);
+    color: var(--mw-text-default);
+    font-size: var(--mw-text-small);
+}
+
+.property-state-grid__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-color-ink-subtle);
+}
+
+.property-state-grid__col--after .property-state-grid__item::before {
+    background: var(--mw-signal-green);
+}
+
+.property-state-grid__col--before .property-state-grid__item::before {
+    background: var(--mw-signal-amber);
+}
+
+/* ─────────────────────────────────────────
+ * Shared — starting points (3-up signal/fix/system)
+ * ───────────────────────────────────────── */
+.property-starts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 720px) {
+    .property-starts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.property-starts__option {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.property-starts__signal {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-text-subtle);
+    font-weight: 700;
+}
+
+.property-starts__when {
+    font-weight: 600;
+    color: var(--mw-text-default);
+    margin: 0;
+}
+
+.property-starts__fix {
+    margin: 0;
+    color: var(--mw-text-strong);
+    font-weight: 700;
+}
+
+.property-starts__system {
+    margin-top: var(--mw-space-2);
+    align-self: flex-start;
+    padding: var(--mw-space-1) var(--mw-space-2);
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-teal-10);
+    color: var(--mw-signal-teal);
+    font-size: var(--mw-text-micro);
+    font-weight: 700;
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+ * Shared — scenario card
+ * ───────────────────────────────────────── */
+.property-scenario {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-left: 3px solid var(--mw-signal-teal);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-3);
+}
+
+.property-scenario__label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.property-scenario__body {
+    margin: 0;
+    color: var(--mw-text-default);
+}
+
+.property-scenario__change {
+    margin: 0;
+    color: var(--mw-text-strong);
+    font-weight: 600;
+    border-top: 1px solid var(--mw-border-light);
+    padding-top: var(--mw-space-3);
+}
+
+/* ============================================================
+ * PAGE — Realtors
+ * Signature visual: lead-to-showing path (5-step horizontal flow)
+ * with a viewing-day sidecar.
+ * ============================================================ */
+.realtor-lead-to-showing-path {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-radius: var(--mw-radius-lg);
+    padding: var(--mw-space-5);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-4);
+}
+
+@media (min-width: 900px) {
+    .realtor-lead-to-showing-path {
+        grid-template-columns: 5fr 3fr;
+    }
+}
+
+.realtor-lead-to-showing-path__rail {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-2);
+}
+
+@media (min-width: 720px) {
+    .realtor-lead-to-showing-path__rail {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.realtor-lead-to-showing-path__step {
+    background: var(--mw-bg-mist);
+    border: 1px solid var(--mw-border-light);
+    border-top: 3px solid var(--mw-signal-teal);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-1);
+    min-height: 7rem;
+}
+
+.realtor-lead-to-showing-path__num {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.realtor-lead-to-showing-path__title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-text-strong);
+    font-size: var(--mw-text-small);
+}
+
+.realtor-lead-to-showing-path__hint {
+    margin: 0;
+    font-size: var(--mw-text-micro);
+    color: var(--mw-text-default);
+}
+
+.realtor-lead-to-showing-path__sidecar {
+    background: var(--mw-color-ink);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-3);
+}
+
+.realtor-lead-to-showing-path__sidecar-label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.realtor-lead-to-showing-path__sidecar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.realtor-lead-to-showing-path__sidecar-item {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: var(--mw-space-2);
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-on-dark);
+    align-items: baseline;
+}
+
+.realtor-lead-to-showing-path__sidecar-when {
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+}
+
+/* ============================================================
+ * PAGE — Property Managers
+ * Signature visual: maintenance request board with multi-party lanes
+ * (tenant → triage → vendor → owner → close-out → review).
+ * ============================================================ */
+.property-manager-maintenance-board {
+    background: var(--mw-color-ink);
+    border-radius: var(--mw-radius-lg);
+    padding: var(--mw-space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-4);
+}
+
+.property-manager-maintenance-board__lane-label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-text-on-dark-dim);
+    font-weight: 700;
+}
+
+.property-manager-maintenance-board__flow {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-2);
+}
+
+@media (min-width: 720px) {
+    .property-manager-maintenance-board__flow {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .property-manager-maintenance-board__flow {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.property-manager-maintenance-board__node {
+    background: var(--mw-white-04);
+    border: 1px solid var(--mw-white-12);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-3);
+    color: var(--mw-color-white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-1);
+    min-height: 8rem;
+}
+
+.property-manager-maintenance-board__node--tenant {
+    border-left: 3px solid var(--mw-signal-cyan);
+}
+
+.property-manager-maintenance-board__node--triage {
+    border-left: 3px solid var(--mw-signal-amber);
+}
+
+.property-manager-maintenance-board__node--vendor {
+    border-left: 3px solid var(--mw-signal-purple);
+}
+
+.property-manager-maintenance-board__node--owner {
+    border-left: 3px solid var(--mw-signal-teal);
+}
+
+.property-manager-maintenance-board__node--close {
+    border-left: 3px solid var(--mw-signal-green);
+}
+
+.property-manager-maintenance-board__node--review {
+    border-left: 3px solid var(--mw-signal-green);
+}
+
+.property-manager-maintenance-board__step {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-text-on-dark-dim);
+    font-weight: 700;
+}
+
+.property-manager-maintenance-board__title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-color-white);
+}
+
+.property-manager-maintenance-board__owner {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.property-manager-maintenance-board__caption {
+    margin: 0;
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-on-dark-subtle);
+}
+
+.property-manager-maintenance-board__detail {
+    margin: 0;
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-on-dark-subtle);
+}
+
+/* ============================================================
+ * PAGE — Home Inspectors
+ * Signature visual: inspection-to-report path (request → schedule →
+ * inspection → report → follow-up → review) with a delivery card.
+ * ============================================================ */
+.home-inspector-report-handoff {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-radius: var(--mw-radius-lg);
+    padding: var(--mw-space-5);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-4);
+}
+
+@media (min-width: 900px) {
+    .home-inspector-report-handoff {
+        grid-template-columns: 4fr 3fr;
+    }
+}
+
+.home-inspector-report-handoff__path {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-2);
+}
+
+@media (min-width: 720px) {
+    .home-inspector-report-handoff__path {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.home-inspector-report-handoff__step {
+    background: var(--mw-bg-mist);
+    border: 1px solid var(--mw-border-light);
+    border-left: 3px solid var(--mw-signal-cyan);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-1);
+    min-height: 6.5rem;
+}
+
+.home-inspector-report-handoff__num {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-cyan);
+    font-weight: 700;
+}
+
+.home-inspector-report-handoff__title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-text-strong);
+    font-size: var(--mw-text-small);
+}
+
+.home-inspector-report-handoff__hint {
+    margin: 0;
+    font-size: var(--mw-text-micro);
+    color: var(--mw-text-default);
+}
+
+.home-inspector-report-handoff__delivery {
+    background: var(--mw-color-ink);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-3);
+}
+
+.home-inspector-report-handoff__delivery-label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-cyan);
+    font-weight: 700;
+}
+
+.home-inspector-report-handoff__delivery-title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-color-white);
+}
+
+.home-inspector-report-handoff__delivery-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.home-inspector-report-handoff__delivery-item {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    gap: var(--mw-space-2);
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-on-dark);
+    align-items: baseline;
+}
+
+.home-inspector-report-handoff__delivery-bullet {
+    color: var(--mw-signal-cyan);
+    font-weight: 700;
+}
+
+/* ============================================================
+ * PAGE — Mortgage Brokers
+ * Signature visual: document/status path with a document-state checklist
+ * sidecar.
+ * ============================================================ */
+.mortgage-broker-document-status-path {
+    background: var(--mw-color-ink);
+    border-radius: var(--mw-radius-lg);
+    padding: var(--mw-space-5);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-4);
+}
+
+@media (min-width: 900px) {
+    .mortgage-broker-document-status-path {
+        grid-template-columns: 5fr 4fr;
+    }
+}
+
+.mortgage-broker-document-status-path__rail {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-2);
+}
+
+.mortgage-broker-document-status-path__step {
+    background: var(--mw-white-04);
+    border: 1px solid var(--mw-white-12);
+    border-left: 3px solid var(--mw-signal-teal);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-3);
+    display: grid;
+    grid-template-columns: 2.25rem 1fr auto;
+    gap: var(--mw-space-3);
+    align-items: center;
+    color: var(--mw-color-white);
+}
+
+.mortgage-broker-document-status-path__num {
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-teal-10);
+    color: var(--mw-signal-teal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--mw-text-small);
+}
+
+.mortgage-broker-document-status-path__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-0-5);
+}
+
+.mortgage-broker-document-status-path__title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-color-white);
+    font-size: var(--mw-text-small);
+}
+
+.mortgage-broker-document-status-path__hint {
+    margin: 0;
+    font-size: var(--mw-text-micro);
+    color: var(--mw-text-on-dark-subtle);
+}
+
+.mortgage-broker-document-status-path__state {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: var(--mw-space-1) var(--mw-space-2);
+    border-radius: var(--mw-radius-pill);
+}
+
+.mortgage-broker-document-status-path__state--in {
+    background: var(--mw-signal-green-10);
+    color: var(--mw-signal-green);
+}
+
+.mortgage-broker-document-status-path__state--waiting {
+    background: var(--mw-signal-amber-10);
+    color: var(--mw-signal-amber);
+}
+
+.mortgage-broker-document-status-path__state--missing {
+    background: var(--mw-signal-red-10);
+    color: var(--mw-signal-red);
+}
+
+.mortgage-broker-document-status-path__sidecar {
+    background: var(--mw-white-04);
+    border: 1px solid var(--mw-white-12);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-3);
+}
+
+.mortgage-broker-document-status-path__sidecar-label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.mortgage-broker-document-status-path__sidecar-title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-color-white);
+}
+
+.mortgage-broker-document-status-path__doclist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.mortgage-broker-document-status-path__doc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--mw-space-2);
+    padding: var(--mw-space-2) var(--mw-space-3);
+    border-radius: var(--mw-radius-sm);
+    background: var(--mw-white-04);
+    border: 1px solid var(--mw-white-08);
+    color: var(--mw-color-white);
+    font-size: var(--mw-text-small);
+}
+
+.mortgage-broker-document-status-path__doc-name {
+    font-weight: 600;
+}
+
+.mortgage-broker-document-status-path__doc-tag {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: var(--mw-space-0-5) var(--mw-space-2);
+    border-radius: var(--mw-radius-pill);
+}
+
+.mortgage-broker-document-status-path__doc-tag--in {
+    background: var(--mw-signal-green-10);
+    color: var(--mw-signal-green);
+}
+
+.mortgage-broker-document-status-path__doc-tag--waiting {
+    background: var(--mw-signal-amber-10);
+    color: var(--mw-signal-amber);
+}
+
+.mortgage-broker-document-status-path__doc-tag--missing {
+    background: var(--mw-signal-red-10);
+    color: var(--mw-signal-red);
+}
+
+/* ============================================================
+ * CATEGORY PAGE — property operating-shape selector
+ * ============================================================ */
+.property-cat-operating-shape-selector {
+    background: var(--mw-color-ink);
+    border-radius: var(--mw-radius-lg);
+    padding: var(--mw-space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-4);
+}
+
+.property-cat-operating-shape-selector__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-3);
+}
+
+@media (min-width: 720px) {
+    .property-cat-operating-shape-selector__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .property-cat-operating-shape-selector__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.property-cat-operating-shape-selector__shape {
+    background: var(--mw-white-04);
+    border: 1px solid var(--mw-white-15);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+    color: var(--mw-color-white);
+}
+
+.property-cat-operating-shape-selector__tag {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.property-cat-operating-shape-selector__name {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-color-white);
+}
+
+.property-cat-operating-shape-selector__cue {
+    margin: 0;
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-on-dark-subtle);
+}
+
+.property-cat-operating-shape-selector__route {
+    margin-top: auto;
+    padding-top: var(--mw-space-2);
+    font-size: var(--mw-text-small);
+}
+
+.property-cat-operating-shape-selector__route a {
+    color: var(--mw-color-white);
+    text-decoration: underline;
+    text-decoration-color: var(--mw-signal-teal);
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+.property-cat-operating-shape-selector__route a:hover {
+    color: var(--mw-signal-teal);
+}
+
+.property-cat-operating-shape-selector__caption {
+    margin: 0;
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-on-dark-subtle);
+}
+
+/* ─────────────────────────────────────────
+ * Category — breakpoints chip strip
+ * ───────────────────────────────────────── */
+.property-cat-breaks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mw-space-2);
+}
+
+.property-cat-breaks__chip {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-radius: var(--mw-radius-pill);
+    padding: var(--mw-space-2) var(--mw-space-3);
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-strong);
+    font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+ * Category — operating models cards
+ * ───────────────────────────────────────── */
+.property-cat-models {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 720px) {
+    .property-cat-models {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.property-cat-models__card {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-top: 3px solid var(--mw-signal-teal);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.property-cat-models__label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
+
+.property-cat-models__title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--mw-text-strong);
+}
+
+.property-cat-models__traits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-1);
+}
+
+.property-cat-models__trait {
+    position: relative;
+    padding-left: var(--mw-space-3);
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-default);
+}
+
+.property-cat-models__trait::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--mw-radius-pill);
+    background: var(--mw-signal-teal);
+}
+
+.property-cat-models__diff {
+    margin: 0;
+    border-top: 1px solid var(--mw-border-light);
+    padding-top: var(--mw-space-2);
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-strong);
+    font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+ * Category — handled-state strip
+ * ───────────────────────────────────────── */
+.property-cat-handled {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 720px) {
+    .property-cat-handled {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.property-cat-handled__card {
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-left: 3px solid var(--mw-signal-green);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-2);
+}
+
+.property-cat-handled__label {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-green);
+    font-weight: 700;
+}
+
+.property-cat-handled__note {
+    margin: 0;
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-default);
+}
+
+/* ─────────────────────────────────────────
+ * Category — detail routes panel (4-up)
+ * ───────────────────────────────────────── */
+.property-cat-routes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--mw-space-2);
+}
+
+@media (min-width: 720px) {
+    .property-cat-routes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .property-cat-routes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.property-cat-routes__route a {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-space-1);
+    background: var(--mw-color-white);
+    border: 1px solid var(--mw-border-light);
+    border-radius: var(--mw-radius-md);
+    padding: var(--mw-space-4);
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition:
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.property-cat-routes__route a:hover {
+    border-color: var(--mw-signal-teal);
+    transform: translateY(-1px);
+}
+
+.property-cat-routes__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--mw-space-2);
+}
+
+.property-cat-routes__label {
+    font-weight: 700;
+    color: var(--mw-text-strong);
+    margin: 0;
+}
+
+.property-cat-routes__one {
+    margin: 0;
+    font-size: var(--mw-text-small);
+    color: var(--mw-text-default);
+}
+
+.property-cat-routes__system {
+    font-size: var(--mw-text-micro);
+    letter-spacing: var(--mw-tracking-label);
+    text-transform: uppercase;
+    color: var(--mw-signal-teal);
+    font-weight: 700;
+}
