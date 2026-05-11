@@ -8,7 +8,7 @@ import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/registry';
 import type { FeaturePageData } from '@/domains/features/types';
 import { INDUSTRY_CATALOG } from '@/domains/industries/catalog';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
-import type { IndustryPageData } from '@/domains/industries/types';
+import type { IndustryDetailPageData, IndustryPageData } from '@/domains/industries/types';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { getResourceRenderedSectionTypes } from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceData, ResourceSection } from '@/domains/resources/types';
@@ -161,7 +161,7 @@ export function getExpectedCanonical(entry: SystemInvariantEntry) {
     case 'industry-category':
       return `/industries/${entry.slug}`;
     case 'industry-detail':
-      return `/industries/${(entry.data as IndustryPageData).parentSlug}/${entry.slug}`;
+      return `/industries/${(entry.data as IndustryDetailPageData).parentSlug}/${entry.slug}`;
   }
 }
 
@@ -180,11 +180,8 @@ export function getAuthoredSectionTypes(entry: SystemInvariantEntry) {
     return (entry.data as CaseStudyData).sections.map(section => section.type);
   }
 
-  if (
-    (entry.domain === 'industry-category' || entry.domain === 'industry-detail') &&
-    Array.isArray((entry.data as IndustryPageData).sections)
-  ) {
-    return ((entry.data as IndustryPageData).sections ?? []).map(section => section.type);
+  if (entry.domain === 'industry-category' || entry.domain === 'industry-detail') {
+    return [];
   }
 
   return [];
@@ -205,11 +202,8 @@ export function getRenderedSectionTypes(entry: SystemInvariantEntry) {
     return getCaseStudyRenderedSectionTypes((entry.data as CaseStudyData).sections);
   }
 
-  if (
-    (entry.domain === 'industry-category' || entry.domain === 'industry-detail') &&
-    Array.isArray((entry.data as IndustryPageData).sections)
-  ) {
-    return ((entry.data as IndustryPageData).sections ?? []).map(section => section.type);
+  if (entry.domain === 'industry-category' || entry.domain === 'industry-detail') {
+    return [];
   }
 
   return [];

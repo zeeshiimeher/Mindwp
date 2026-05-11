@@ -226,9 +226,7 @@ async function loadIndustryMetadata(slug: string): Promise<ContentMetadata | nul
     topics: industry.topics ?? [],
     systems: industry.systems ?? [],
     tags: industry.industries ?? [],
-    sectionHeadings: (industry.sections ?? [])
-      .map((section: { title?: string }) => section.title)
-      .filter((title: string | undefined): title is string => Boolean(title)),
+    sectionHeadings: [],
     slug,
   };
 }

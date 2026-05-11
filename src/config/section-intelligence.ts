@@ -188,6 +188,45 @@ export const SERVICE_SECTION_TYPES = {
 } as const;
 
 // ---------------------------------------------------------------------------
+// Industries domain — guidance only, not a forced data contract
+// ---------------------------------------------------------------------------
+export const INDUSTRY_PAGE_BEHAVIOR = {
+  'industry-category': {
+    purpose:
+      'Vertical operating map that helps visitors choose the closest business type or operating shape',
+    style: 'Recognition-first, route-oriented, not a directory, not a service page',
+  },
+  'industry-detail': {
+    purpose:
+      'Business-type landing page focused on one working-day leak and the system path that handles it',
+    style: 'Specific, practical, visual, no generic service-page or SaaS/dashboard copy',
+  },
+} as const;
+
+export const INDUSTRY_DETAIL_SECTION_GUIDANCE = {
+  recognition: {
+    purpose: 'Make one business type recognise its actual working-day leak',
+    style: 'Plain, specific, situation-first',
+  },
+  signatureVisual: {
+    purpose: 'Show the core operating problem with a custom page-specific visual',
+    style: 'Operational diagram or visual body, not a SaaS dashboard',
+  },
+  changeState: {
+    purpose: 'Explain what changes when the leak is handled',
+    style: 'Practical before/after or handled-state language, not abstract architecture',
+  },
+  startingPoint: {
+    purpose: 'Show which MindWP system usually starts first',
+    style: 'Simple, boundary-safe, no six-system dump',
+  },
+  scenario: {
+    purpose: 'Illustrative business-day example',
+    style: 'Clearly labelled scenario, no fake metrics or proof inflation',
+  },
+} as const;
+
+// ---------------------------------------------------------------------------
 // Required top-level keys per domain
 // ---------------------------------------------------------------------------
 export const DOMAIN_REQUIRED_KEYS = {
@@ -205,7 +244,8 @@ export const DOMAIN_REQUIRED_KEYS = {
 export const DOMAIN_TONE = {
   services: 'Calm, consultative, problem-first, solution-second',
   features: 'Clear, descriptive, outcome-focused',
-  industries: 'Calm, consultative, industry-aware, problem-first',
+  industries:
+    'Buyer-facing, working-day specific, calm, practical, industry-aware, no SaaS/dashboard language',
   blog: 'Conversational, practical, no hype',
   resources: 'Educational, practical, grounded',
   'case-studies': 'Factual, calm, no exaggeration, no hype',

@@ -29,34 +29,9 @@ const reportPath = path.join(root, 'reports', 'render-alignment-report.json');
 const project = new Project({ tsConfigFilePath: path.join(root, 'tsconfig.json') });
 const strictUnknownFields = !args.has('--warn-unknown-fields');
 
-const INDUSTRY_CATEGORY_RENDER_ORDER = [
-  'hero',
-  'categoryLeaks',
-  'sharedPattern',
-  'breakpoints',
-  'operatingModels',
-  'pathwayMap',
-  'startingSystems',
-  'detailRoutes',
-  'handledState',
-  'scenarioStrip',
-  'faq',
-  'cta',
-];
+const INDUSTRY_CATEGORY_RENDER_ORDER = ['hero', 'faq', 'cta'];
 
-const INDUSTRY_DETAIL_RENDER_ORDER = [
-  'hero',
-  'industryPattern',
-  'leakTimeline',
-  'beforeAfter',
-  'workbench',
-  'startingPoints',
-  'workflowExamples',
-  'relevantSystems',
-  'scenario',
-  'faq',
-  'cta',
-];
+const INDUSTRY_DETAIL_RENDER_ORDER = ['hero', 'faq', 'cta'];
 
 const INDUSTRY_RENDER_KEYS = new Set([
   ...INDUSTRY_CATEGORY_RENDER_ORDER,
