@@ -1,5 +1,4 @@
-/* Industry reset — ready for Opus design pass */
-.industry-reset-note {
-  margin: 0;
-  color: var(--mw-text-subtle);
-}
+/* INDUSTRIES — Home Services
+   Page-specific visual bodies for the Home Services category and its
+   five detail pages. Each page carries its own visual signature.
+   All values resolve through --mw-* tokens. No raw hex, no rgba. */

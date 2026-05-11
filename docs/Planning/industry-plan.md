@@ -7,6 +7,7 @@ The industry domain has been hard-reset to a minimum contract. All 32 pages (6 c
 This is an intentional renderer-first design phase. Claude Opus should rebuild pages directly inside their page renderers and matching category CSS files. Do not recreate the removed data contracts before the visual/page-flow direction is approved.
 
 **Data contract (minimum — enforced by types.ts):**
+
 - `seo`, `slug`, `type`, `category`/`parentSlug`, `hero`, `systems`, `industries` (required on detail), `topics?`, `faq`, `cta`
 - All old canonical section fields removed (`categoryLeaks`, `sharedPattern`, `industryPattern`, `leakTimeline`, etc.)
 - All `*Extras` named exports removed
@@ -29,6 +30,7 @@ Config (renderer map + wrapper): `src/domains/industries/config.tsx`
 Types: `src/domains/industries/types.ts`
 
 **Important config facts:**
+
 - `config.tsx` wraps every page in `CTARegistryProvider` + `RelatedSection`. Pages must NOT render `RelatedSection` themselves.
 - `config.tsx` throws if `systems[0]` is missing — every data file must have at least one system.
 - `page.tsx` uses `hero.badge` for breadcrumb labels and `seo.canonical` for path resolution.
@@ -38,6 +40,7 @@ Types: `src/domains/industries/types.ts`
 During this phase, page-local public content may live inside the page renderer while Claude Opus discovers the final page design.
 
 Allowed during design:
+
 - page-local arrays and objects for visual sections
 - page-local section copy
 - inline SVG/JSX diagrams
@@ -45,6 +48,7 @@ Allowed during design:
 - category CSS files for page/group styling
 
 Not allowed:
+
 - shared full-page scaffolds
 - shared canonical section renderers
 - old industry templates
@@ -79,6 +83,7 @@ After visual approval, stable public content will be extracted back into data fi
 ## Data Contract Rules
 
 ### Detail pages
+
 - `industries` array is **required** (graph validator checks it)
 - `faq` must appear **immediately before** `cta` (content-enforcement validator checks it)
 - `hero.list` must have **exactly 3 items** (badge-length validator checks it)
@@ -86,6 +91,7 @@ After visual approval, stable public content will be extracted back into data fi
 - `seo` must be the **first property** (content-enforcement validator checks it)
 
 ### Category pages
+
 - `industries` is optional
 - Same `hero.list` / `hero.badge` / `seo` rules apply
 
@@ -103,17 +109,53 @@ Per-page and per-category CSS files live in `src/styles/industries/`. Each start
 
 Token names must exist in `src/styles/tokens.css`. No raw hex or `rgba()`. No inline styles.
 
+## Tailwind Allowance (Renderer-First Design Phase Only)
+
+Industry renderers are in renderer-first prototype mode. Tailwind layout utilities are allowed only inside industry renderers (`src/domains/industries/renderers/**`) for layout exploration. Tailwind colour utilities are not allowed — colour, background, state, and brand identity still come from MindWP tokens through category CSS files in `src/styles/industries/`. Arbitrary Tailwind values and inline styles are blocked. After visual approval, Tailwind may either stay or be converted to custom CSS in a separate cleanup pass.
+
+Tailwind v4 is installed (`tailwindcss@^4`, `@tailwindcss/postcss`) and processed through `postcss.config.js`. Utility classes used inside industry renderer TSX compile via the existing build.
+
+**Allowed inside industry renderers:**
+
+- layout: `flex`, `grid`, `block`, `hidden`, `items-*`, `justify-*`, `place-*`, `col-span-*`, `row-span-*`, `order-*`
+- spacing on the standard scale: `gap-4`, `gap-x-6`, `p-6`, `px-4`, `m-2`, `mt-8`
+- sizing on the standard scale: `w-full`, `max-w-3xl`, `min-w-0`, `h-12`, `min-h-screen`
+- responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`, `2xl:`
+- rounded / shadow / border on the standard scale: `rounded-2xl`, `shadow-sm`, `border`, `border-2`
+- typography on the standard scale: `text-sm`, `font-semibold`, `tracking-wide`, `leading-tight`
+- overflow / state / opacity on the standard scale: `overflow-hidden`, `hover:opacity-80`, `opacity-60`
+- simple transitions on the standard scale: `transition`, `transition-colors`, `duration-200`
+
+**Still blocked (enforced by validators):**
+
+- Tailwind colour palette utilities anywhere in industry renderers (`validate-industry-tailwind`):
+  `bg-white`, `text-gray-700`, `bg-slate-100`, `border-blue-200`, `ring-emerald-500`, `from-*`/`to-*`/`via-*`, `divide-*`, `outline-*`, `placeholder-*`, `caret-*`, `accent-*`, `decoration-*`, `fill-*`, `stroke-*`
+- Arbitrary-value Tailwind classes anywhere in industry renderers (`validate-industry-tailwind`):
+  `bg-[#...]`, `text-[#...]`, `border-[#...]`, `p-[37px]`, `m-[12px]`, `w-[420px]`, `h-[64px]`, `shadow-[...]`, `lg:grid-cols-[1.1fr_0.9fr]`
+- Inline `style={{}}` outside renderers (`validate-inline-styles`); inside industry renderers the only acceptable inline-style use is a CSS-variable carrier like `style={{ ['--load']: '15%' } as CSSProperties}`
+- Raw hex / `rgba()` in CSS (`validate-tokens`)
+- hardcoded `/contact` (use `buildIndustryContactHref`)
+- hardcoded CTA labels (use `PRIMARY_CTA_LABEL`)
+- `PrimaryCTASection` (use `DecisionPanel`)
+- manual `RelatedSection` (injected by config wrapper)
+- old `reusable/*` and `sections/*` imports
+- `SectionFrame` shell selector overrides in CSS
+
+If a layout requires an arbitrary grid template (e.g. `lg:grid-cols-[1.1fr_0.9fr]`), define it in the matching category CSS file (`src/styles/industries/<category>.css`) instead of inline in the renderer.
+
+This allowance is scoped to industry renderers only. It does not extend to the rest of `src/`.
+
 ## Inventory
 
 ### Category pages (6)
 
-| Slug | Renderer |
-|---|---|
-| `home-services` | `HomeServicesIndustryRenderer` |
-| `automotive-services` | `AutomotiveServicesIndustryRenderer` |
-| `beauty-personal-care` | `BeautyPersonalCareIndustryRenderer` |
-| `legal-professional-services` | `LegalProfessionalServicesIndustryRenderer` |
-| `local-appointment-businesses` | `LocalAppointmentBusinessesIndustryRenderer` |
+| Slug                            | Renderer                                     |
+| ------------------------------- | -------------------------------------------- |
+| `home-services`                 | `HomeServicesIndustryRenderer`               |
+| `automotive-services`           | `AutomotiveServicesIndustryRenderer`         |
+| `beauty-personal-care`          | `BeautyPersonalCareIndustryRenderer`         |
+| `legal-professional-services`   | `LegalProfessionalServicesIndustryRenderer`  |
+| `local-appointment-businesses`  | `LocalAppointmentBusinessesIndustryRenderer` |
 | `real-estate-property-services` | `RealEstatePropertyServicesIndustryRenderer` |
 
 ### Detail pages (26)
@@ -164,6 +206,7 @@ Category pages should feel like vertical operating maps, not directories.
 Detail pages should feel like one business type's working day, not generic service pages or SaaS dashboards.
 
 Every page should have:
+
 - a buyer-recognition opening
 - one strong signature visual section
 - a clear change-state section
@@ -173,6 +216,7 @@ Every page should have:
 - final `DecisionPanel`
 
 Avoid:
+
 - cloned page rhythm
 - generic card grids
 - tiny dashboard tables
@@ -182,6 +226,7 @@ Avoid:
 - fake proof, fake metrics, or guarantee claims
 
 Use:
+
 - calls, forms, DMs, appointments, quotes, inspections, documents, follow-up, reviews, referrals, bookings, no-shows, staff handoff, office line, counter, bay, crews, site visits, and working-day language.
 
 ## CSS Group Files

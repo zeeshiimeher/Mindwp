@@ -493,6 +493,14 @@ const VALIDATOR_DEFINITIONS = [
     reportFile: 'inline-style-report.json',
   },
   {
+    name: 'validate-industry-tailwind',
+    category: 'structure',
+    command: 'node',
+    args: ['scripts/validators/validate-industry-tailwind.mjs', '--report-json'],
+    blocking: true,
+    reportFile: 'industry-tailwind-report.json',
+  },
+  {
     name: 'validate-docs',
     category: 'docs',
     command: 'node',
@@ -673,6 +681,7 @@ const PRIMARY_REPORT_FILES = [
   'graph-derived-summary.json',
   'graph-report.json',
   'indexing-policy-report.json',
+  'industry-tailwind-report.json',
   'inline-style-report.json',
   'internal-links-report.json',
   'legacy-quarantine-report.json',
