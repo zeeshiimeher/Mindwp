@@ -6,6 +6,17 @@ import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
+const HOURS = [
+  { h: '06', load: 'light' },
+  { h: '08', load: 'steady' },
+  { h: '10', load: 'heavy' },
+  { h: '12', load: 'steady' },
+  { h: '14', load: 'heavy' },
+  { h: '16', load: 'heavy' },
+  { h: '18', load: 'steady' },
+  { h: '20', load: 'light' },
+];
+
 export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
   const primarySystem = data.systems[0];
   if (!primarySystem) {
@@ -13,6 +24,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
   }
   const contactHref = buildIndustryContactHref({ system: primarySystem, slug: data.slug });
   const actions = [{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }] as const;
+
   return (
     <main className='industry-detail-page'>
       <HeroFrame
@@ -23,263 +35,347 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
         chips={data.hero.list}
         chipDotVariant='neutral'
       />
+
+      {/* 1 — Two paths recognition */}
       <SectionFrame
         heading={{
-          kicker: 'Two kinds of work, one phone',
-          title: 'Emergency calls and quoted work should not land in the same holding pattern.',
+          kicker: 'Two calls, two paths',
+          title:
+            'An emergency leak and a bathroom quote [[muted:should not land in the same holding pattern.]]',
           description:
-            'A burst pipe at 9pm and a bathroom-renovation quote both arrive on the same line. They want different things. Treat them the same and the urgent customer rings someone else while the quote sits on a notepad.',
+            'They share a phone line. They want different things. Mixing them is how both jobs slip.',
         }}
         tone='white'
       >
-        <div className='hs-split-2'>
-          <article className='hs-thread hs-thread--lost' aria-label='Emergency call lost'>
-            <header className='hs-thread__head'>
-              <span>Emergency intake · no playbook</span>
-              <span>Outcome · lost</span>
-            </header>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>21:14</span>
-              <div>
-                <span className='hs-thread__author'>Customer</span>
-                <p className='hs-thread__bubble'>
-                  Hi — burst hot-water service in the laundry. Need someone tonight if possible.
-                </p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--system'>
-              <span className='hs-thread__time'>21:14</span>
-              <div>
-                <p className='hs-thread__bubble'>Voicemail · no callback queued</p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>21:31</span>
-              <div>
-                <span className='hs-thread__author'>Customer</span>
-                <p className='hs-thread__bubble'>Are you guys able to come or not?</p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>21:48</span>
-              <div>
-                <span className='hs-thread__author'>Customer</span>
-                <p className='hs-thread__bubble'>Got someone else. Cancel that.</p>
-              </div>
-            </div>
-            <span className='hs-thread__verdict'>Job lost · 34 minutes silent</span>
-          </article>
-          <article className='hs-thread hs-thread--won' aria-label='Emergency call held'>
-            <header className='hs-thread__head'>
-              <span>Emergency intake · with playbook</span>
-              <span>Outcome · held</span>
-            </header>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>21:14</span>
-              <div>
-                <span className='hs-thread__author'>Customer</span>
-                <p className='hs-thread__bubble'>
-                  Hi — burst hot-water service in the laundry. Need someone tonight if possible.
-                </p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--out'>
-              <span className='hs-thread__time'>21:18</span>
-              <div>
-                <span className='hs-thread__author'>Office · auto-ack</span>
-                <p className='hs-thread__bubble'>
-                  Got it. Marking emergency. Liam is on call — paging now with your address.
-                </p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--out'>
-              <span className='hs-thread__time'>21:32</span>
-              <div>
-                <span className='hs-thread__author'>Liam · on-call tech</span>
-                <p className='hs-thread__bubble'>
-                  En route. ETA 22:05. Bringing isolation valves. Reply STOP to cancel.
-                </p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>21:33</span>
-              <div>
-                <span className='hs-thread__author'>Customer</span>
-                <p className='hs-thread__bubble'>Brilliant, thanks. Door open, side gate.</p>
-              </div>
-            </div>
-            <span className='hs-thread__verdict'>Job held · acknowledgement in 4 min</span>
-          </article>
-        </div>
-      </SectionFrame>
-      <SectionFrame
-        heading={{
-          kicker: 'After-hours, in detail',
-          title: 'The leak that decides whether the customer stays a customer.',
-          description:
-            'Same call from above, traced as a system. Each step has an owner, a timestamp, and a written record the customer can see.',
-        }}
-        tone='gradient-mist'
-      >
-        <div className='hs-afterlog'>
-          <header className='hs-afterlog__head'>
-            <span>After-hours playbook · run #4128</span>
-            <span>
-              Status · <strong>Holding</strong>
-            </span>
-          </header>
-          <div className='hs-afterlog__step'>
-            <span className='hs-afterlog__t'>21:14:02</span>
-            <span className='hs-afterlog__node' />
-            <div className='hs-afterlog__what'>
-              <span className='hs-afterlog__title'>Inbound call · ring-out</span>
-              <p className='hs-afterlog__detail'>
-                Voicemail captured. Transcript parsed. Tag <code>EMERGENCY · HWS</code>.
-              </p>
-            </div>
-          </div>
-          <div className='hs-afterlog__step'>
-            <span className='hs-afterlog__t'>21:14:46</span>
-            <span className='hs-afterlog__node' />
-            <div className='hs-afterlog__what'>
-              <span className='hs-afterlog__title'>Customer ack sent</span>
-              <p className='hs-afterlog__detail'>
-                SMS to caller: confirms receipt, names on-call tech, gives a reply path.
-              </p>
-            </div>
-          </div>
-          <div className='hs-afterlog__step hs-afterlog__step--alert'>
-            <span className='hs-afterlog__t'>21:15:11</span>
-            <span className='hs-afterlog__node' />
-            <div className='hs-afterlog__what'>
-              <span className='hs-afterlog__title'>Tech paged</span>
-              <p className='hs-afterlog__detail'>
-                On-call rotation hits Liam. Address, transcript, and a 1-tap accept land on his
-                phone.
-              </p>
-            </div>
-          </div>
-          <div className='hs-afterlog__step hs-afterlog__step--ok'>
-            <span className='hs-afterlog__t'>21:32:08</span>
-            <span className='hs-afterlog__node' />
-            <div className='hs-afterlog__what'>
-              <span className='hs-afterlog__title'>ETA in writing</span>
-              <p className='hs-afterlog__detail'>
-                Tech accepts. ETA <code>22:05</code> sent to customer. Job card opens with full
-                history attached.
-              </p>
-            </div>
-          </div>
-          <div className='hs-afterlog__step hs-afterlog__step--ok'>
-            <span className='hs-afterlog__t'>22:48:30</span>
-            <span className='hs-afterlog__node' />
-            <div className='hs-afterlog__what'>
-              <span className='hs-afterlog__title'>Sign-off captured</span>
-              <p className='hs-afterlog__detail'>
-                Photo, parts, signature on tech phone. Invoice queued. Review request scheduled for
-                the morning, not the night.
-              </p>
-            </div>
-          </div>
-        </div>
-      </SectionFrame>
-      <SectionFrame
-        heading={{
-          kicker: 'The other lane',
-          title: 'Quoted work [[muted:doesn’t lose to the next emergency.]]',
-          description:
-            'Bathroom rebuilds, hot-water replacements, commercial roughs — the lane that needs a quote and a date, kept in its own rhythm.',
-        }}
-        tone='white'
-      >
-        <div className='hs-split-2'>
-          <div className='hs-prose'>
-            <p>
-              The quoted lane has its own intake board. Every enquiry opens with a
-              <strong> quote-stage tag</strong> and a site-visit window the office can keep. Two
-              short follow-ups, plainly written, with an off switch.
+        <div className='grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8'>
+          <article className='hs-surface hs-shadow-card hs-rule-top-red flex flex-col gap-4 rounded-3xl border p-8'>
+            <span className='hs-mono hs-accent-red'>Urgent · 14:32</span>
+            <h3 className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              Burst under the kitchen
+            </h3>
+            <p className='hs-text-secondary leading-relaxed'>
+              Water on the floor. Mains shut off. Caller wants someone on the way inside the hour.
             </p>
-            <p>
-              The dispatcher stops being the bottleneck. Auto-routing carries the obvious cases.
-              They override anything that needs judgement in one tap.
+            <p className='hs-mono hs-text-subtle border-t pt-4 hs-divider-dashed'>
+              Wants speed &middot; not a quote
             </p>
-          </div>
-          <article className='hs-plumbing-lane hs-plumbing-lane--quoted'>
-            <span className='hs-plumbing-lane__label'>Quoted lane</span>
-            <h3 className='hs-plumbing-lane__headline'>The work that needs a quote and a date.</h3>
-            <ol className='hs-plumbing-lane__steps'>
-              <li>Enquiry lands. Captured into the same board with a quote-stage tag.</li>
-              <li>Site visit is booked into a window the office can actually keep.</li>
-              <li>Quote goes out the same day, not after the next emergency.</li>
-              <li>Two short follow-ups, plainly written, with an off switch.</li>
-            </ol>
+          </article>
+          <article className='hs-surface hs-shadow-card hs-rule-top-teal flex flex-col gap-4 rounded-3xl border p-8'>
+            <span className='hs-mono hs-accent-teal'>Quoted · 14:34</span>
+            <h3 className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              Bathroom renovation
+            </h3>
+            <p className='hs-text-secondary leading-relaxed'>
+              Architect drawings attached. Looking at three trades. Wants a thoughtful response, not
+              a same-day visit.
+            </p>
+            <p className='hs-mono hs-text-subtle border-t pt-4 hs-divider-dashed'>
+              Wants clarity &middot; not urgency
+            </p>
           </article>
         </div>
       </SectionFrame>
+
+      {/* 2 — DOMINANT: emergency vs quoted lanes */}
       <SectionFrame
         heading={{
-          kicker: 'What changes',
-          title: 'A line that holds both kinds of work without one drowning the other.',
+          kicker: 'Two-lane handling',
+          title: 'One office, two lanes &mdash; [[muted:running at the same time.]]',
+        }}
+        tone='dark'
+      >
+        <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
+          {[
+            {
+              tint: 'red',
+              label: 'URGENT LANE',
+              title: 'Acknowledge, dispatch, on the way',
+              steps: [
+                { when: '< 1 min', what: 'SMS acknowledgement to the caller' },
+                { when: '< 3 min', what: 'Routed to the nearest on-call plumber' },
+                { when: '< 10 min', what: 'ETA confirmed back to customer' },
+                { when: '< 90 min', what: 'On site, mains made safe' },
+                { when: '+ 24 hrs', what: 'Repair quote, attached to the same thread' },
+              ],
+            },
+            {
+              tint: 'teal',
+              label: 'QUOTED LANE',
+              title: 'Site visit, drawings, considered quote',
+              steps: [
+                { when: 'Day 0', what: 'Auto-reply with intake questions' },
+                { when: 'Day 1', what: 'Site visit booked into the calendar' },
+                { when: 'Day 3', what: 'Quote drafted from photos and drawings' },
+                { when: 'Day 5', what: 'Quote sent with a walkthrough video' },
+                { when: 'Day 9', what: 'Follow-up if no reply, plain language' },
+              ],
+            },
+          ].map(lane => (
+            <article
+              key={lane.tint}
+              className={`hs-surface-dark hs-tint-${lane.tint} flex flex-col gap-5 rounded-3xl border p-7 lg:p-8`}
+            >
+              <header className='flex flex-col gap-2 border-b pb-4 hs-divider-dark'>
+                <span className={`hs-mono-eyebrow hs-accent-${lane.tint}`}>{lane.label}</span>
+                <h3 className='hs-text-on-dark-strong text-2xl font-semibold tracking-tight'>
+                  {lane.title}
+                </h3>
+              </header>
+              <ol className='flex flex-col gap-3'>
+                {lane.steps.map(s => (
+                  <li
+                    key={s.when}
+                    className='hs-text-on-dark hs-grid-when grid items-baseline gap-4 text-sm'
+                  >
+                    <span className={`hs-mono hs-accent-${lane.tint}`}>{s.when}</span>
+                    <span>{s.what}</span>
+                  </li>
+                ))}
+              </ol>
+            </article>
+          ))}
+        </div>
+        <p className='hs-text-on-dark-muted mx-auto mt-8 max-w-2xl text-center text-sm italic'>
+          Same line. Same office. Two completely different calendars.
+        </p>
+      </SectionFrame>
+
+      {/* 3 — After-hours pressure */}
+      <SectionFrame
+        heading={{
+          kicker: 'After hours',
+          title: 'The day the office closes [[muted:is the day leaks happen.]]',
         }}
         tone='mist'
       >
-        <ul className='hs-metrics'>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>After-hours ack</span>
-            <span className='hs-metric__value'>~4 min</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>From silent voicemail</span>
-          </li>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>ETA in writing</span>
-            <span className='hs-metric__value'>Within 20 min</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>Stops the second call</span>
-          </li>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>Quote follow-up</span>
-            <span className='hs-metric__value'>Auto · 2 nudges</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>Was inconsistent</span>
-          </li>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>Dispatcher overrides</span>
-            <span className='hs-metric__value'>1 tap</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>Judgement preserved</span>
-          </li>
-        </ul>
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10'>
+          <div className='hs-text-secondary flex flex-col gap-4 leading-relaxed lg:col-span-5'>
+            <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              Calls don&rsquo;t check the trading hours.
+            </p>
+            <p>
+              Emergency calls cluster around dinner, bedtime, and the first hour after waking. Two
+              of the three are after-hours for most plumbing offices.
+            </p>
+            <p>
+              The line either rings out, or the on-call plumber is asleep with the phone face down.
+            </p>
+          </div>
+
+          <aside className='hs-surface hs-shadow-card flex flex-col gap-4 rounded-3xl border p-7 lg:col-span-7'>
+            <div className='flex items-center justify-between'>
+              <span className='hs-mono hs-accent-amber'>Urgent calls · weekday distribution</span>
+              <span className='hs-mono hs-text-subtle'>06:00 → 20:00</span>
+            </div>
+            <ul className='hs-bar-row flex h-44 items-end justify-between gap-2'>
+              {HOURS.map(hr => (
+                <li key={hr.h} className='flex flex-1 flex-col items-center gap-2'>
+                  <span
+                    className='hs-tint-red hs-bar w-full rounded-md border'
+                    data-load={hr.load}
+                  />
+                  <span className='hs-mono hs-text-subtle'>{hr.h}</span>
+                </li>
+              ))}
+            </ul>
+            <p className='hs-text-secondary text-sm'>
+              The peaks fall outside the office. The line has to keep working without anyone there.
+            </p>
+          </aside>
+        </div>
       </SectionFrame>
+
+      {/* 4 — Quote follow-up not losing to urgent */}
       <SectionFrame
         heading={{
-          kicker: 'How this lands',
-          title: 'AI Lead Handling answers the call. The other systems hand off into it.',
+          kicker: 'The quoted queue',
+          title: 'Quotes don&rsquo;t lose to other plumbers. [[muted:They lose to urgent calls.]]',
         }}
         tone='white'
       >
-        <div className='hs-bridge'>
-          <div className='hs-bridge__copy'>
-            <span className='hs-bridge__label'>Lead system for plumbing</span>
-            <h3 className='hs-bridge__title'>AI Lead Handling</h3>
-            <p className='hs-bridge__note'>
-              Lead handling owns the first response. CRM holds the dispatch board and follow-up.
-              Reputation triggers from sign-off. The website routes intake into the same place.
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10'>
+          <ul className='hs-surface hs-shadow-soft flex flex-col gap-2 rounded-2xl border p-6 lg:col-span-6'>
+            {[
+              { age: '6 days', what: 'Bathroom · Hawthorn · awaiting drawings', stuck: false },
+              { age: '8 days', what: 'Hot water · Caulfield · quote sent · no read', stuck: true },
+              { age: '11 days', what: 'Renovation · Brighton · site visit booked', stuck: false },
+              { age: '12 days', what: 'Pipe relining · Glen Iris · awaiting reply', stuck: true },
+              { age: '14 days', what: 'New build · Mont Albert · awaiting builder', stuck: false },
+            ].map(row => (
+              <li
+                key={row.age}
+                className={`hs-grid-when grid items-center gap-4 rounded-lg border px-4 py-3 ${row.stuck ? 'hs-tint-amber' : 'hs-surface'}`}
+              >
+                <span className={`hs-mono ${row.stuck ? 'hs-accent-amber' : 'hs-text-subtle'}`}>
+                  {row.age}
+                </span>
+                <span className={row.stuck ? 'hs-text-primary' : 'hs-text-secondary'}>
+                  {row.what}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className='hs-text-secondary flex flex-col gap-4 leading-relaxed lg:col-span-6'>
+            <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              Two of these don&rsquo;t need a chase &mdash; three of them do.
+            </p>
+            <p>
+              Without a system, the office can&rsquo;t see the difference. Every quote feels like
+              it&rsquo;s waiting on the customer when half are waiting on the office.
+            </p>
+            <p>
+              Quoted-lane follow-up runs on its own clock. Urgent calls don&rsquo;t reset the quote
+              calendar.
             </p>
           </div>
-          <ul className='hs-bridge__systems'>
-            <li>CRM &amp; Automation</li>
-            <li>Smart Website Systems</li>
-            <li>Reputation &amp; Reviews</li>
-            <li>Local SEO Authority</li>
-          </ul>
         </div>
       </SectionFrame>
+
+      {/* 5 — Same-day-different-paths timeline */}
+      <SectionFrame
+        heading={{
+          kicker: 'A real Tuesday',
+          title: 'Same day, [[muted:two completely different shapes.]]',
+        }}
+        tone='gradient-mist'
+      >
+        <div className='hs-surface flex flex-col gap-5 rounded-3xl border p-7 lg:p-9'>
+          <ol className='hs-text-subtle hs-grid-row-auto grid grid-cols-6 gap-2 text-xs font-mono uppercase tracking-wider'>
+            {['07', '09', '11', '13', '15', '17'].map(h => (
+              <li key={h}>{h}:00</li>
+            ))}
+          </ol>
+          {[
+            {
+              label: 'Urgent',
+              tint: 'red',
+              events: [
+                { time: '08:10', what: 'Burst · Carnegie', span: '1' },
+                { time: '11:40', what: 'Hot water · Bentleigh', span: '1' },
+                { time: '15:20', what: 'Blockage · Murrumbeena', span: '2' },
+              ],
+            },
+            {
+              label: 'Quoted',
+              tint: 'teal',
+              events: [
+                { time: '09:00', what: 'Site visit · Brighton bathroom', span: '2' },
+                { time: '13:30', what: 'Quote drafted · Glen Iris', span: '1' },
+                { time: '16:00', what: 'Follow-up · Hawthorn renovation', span: '1' },
+              ],
+            },
+          ].map(row => (
+            <div
+              key={row.label}
+              className='hs-grid-lane grid items-center gap-4 border-t pt-4 hs-divider-soft'
+            >
+              <span className={`hs-mono hs-accent-${row.tint}`}>{row.label}</span>
+              <ul className='grid grid-cols-6 gap-2'>
+                {row.events.map((e, i) => (
+                  <li
+                    key={i}
+                    className={`hs-tint-${row.tint} hs-dispatch-block flex flex-col gap-0.5 rounded-md border px-3 py-2 text-xs`}
+                    data-span={e.span}
+                  >
+                    <span className={`hs-mono hs-accent-${row.tint}`}>{e.time}</span>
+                    <span className='hs-text-primary'>{e.what}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </SectionFrame>
+
+      {/* 6 — Customer update + review loop */}
+      <SectionFrame
+        heading={{
+          kicker: 'After the job',
+          title: 'A review request [[muted:that respects which job it was.]]',
+        }}
+        tone='white'
+      >
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          {[
+            {
+              when: 'Same day',
+              what: 'Job complete update',
+              body: 'Plumber finishes, the customer gets a clear note: what was done, what to watch.',
+            },
+            {
+              when: 'Day +2',
+              what: 'Review ask',
+              body: 'One short message. Right voice for the job type. Insurance and emergency jobs can opt out.',
+            },
+            {
+              when: 'Day +30',
+              what: 'Quiet check-in',
+              body: 'Soft note for renovation jobs &mdash; everything still running the way you wanted? No upsell.',
+            },
+          ].map(card => (
+            <article
+              key={card.when}
+              className='hs-surface hs-shadow-soft flex flex-col gap-3 rounded-2xl border p-7'
+            >
+              <span className='hs-mono hs-accent-cyan'>{card.when}</span>
+              <h3 className='hs-text-primary text-xl font-semibold tracking-tight'>{card.what}</h3>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{card.body}</p>
+            </article>
+          ))}
+        </div>
+      </SectionFrame>
+
+      {/* 7 — System bridge */}
+      <SectionFrame
+        heading={{
+          kicker: 'The systems behind it',
+          title: 'Three systems separate the lanes [[muted:without doubling the office.]]',
+        }}
+        tone='dark'
+      >
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          {[
+            {
+              system: 'AI Lead Handling',
+              role: 'Picks up urgent calls inside the first ring, after hours and on the day off.',
+            },
+            {
+              system: 'CRM & Automation',
+              role: 'Quoted lane runs on its own follow-up clock without the office holding it.',
+            },
+            {
+              system: 'Reputation & Reviews',
+              role: 'Review requests sent on the right day, in the right voice, for the right job type.',
+            },
+          ].map(card => (
+            <article
+              key={card.system}
+              className='hs-surface-dark flex flex-col gap-3 rounded-2xl border p-7'
+            >
+              <h3 className='hs-text-on-dark-strong text-xl font-semibold tracking-tight'>
+                {card.system}
+              </h3>
+              <p className='hs-text-on-dark-muted leading-relaxed'>{card.role}</p>
+            </article>
+          ))}
+        </div>
+      </SectionFrame>
+
       <FAQSection
         eyebrow={data.faq.header.kicker}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
-        variant='split'
+        tone='white'
       />
+
       <DecisionPanel
-        heading={data.cta.heading}
-        actions={actions}
+        heading={{
+          kicker: data.cta.heading.kicker,
+          title: data.cta.heading.title,
+          description: data.cta.heading.description,
+        }}
+        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'primary' }]}
         expectations={data.cta.expectations}
         reassurance={data.cta.reassurance}
       />

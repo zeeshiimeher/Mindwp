@@ -6,6 +6,54 @@ import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
+const DOT = '\u00b7';
+const EM = '\u2014';
+
+const DISPATCH_LANES = [
+  {
+    lane: 'Service',
+    tint: 'cyan',
+    blocks: [
+      { time: '08:00', what: 'Annual service · Glen Iris', span: '2' },
+      { time: '10:30', what: 'Filter set · Box Hill', span: '1' },
+      { time: '13:00', what: 'Maintenance · Hawthorn', span: '2' },
+    ],
+  },
+  {
+    lane: 'Install',
+    tint: 'teal',
+    blocks: [
+      { time: '07:30', what: 'Split system · Camberwell', span: '4' },
+      { time: '14:30', what: 'Ducted commission · Surrey Hills', span: '2' },
+    ],
+  },
+  {
+    lane: 'Urgent',
+    tint: 'red',
+    blocks: [
+      { time: '09:15', what: 'No cool · Balwyn', span: '1' },
+      { time: '11:45', what: 'No cool · Kew', span: '1' },
+      { time: '15:30', what: 'Compressor · Toorak', span: '2' },
+    ],
+  },
+];
+
+const SEASON_DAYS = [
+  { day: 'Mon', shoulder: 'low', surge: 'mid' },
+  { day: 'Tue', shoulder: 'low', surge: 'high' },
+  { day: 'Wed', shoulder: 'mid', surge: 'peak' },
+  { day: 'Thu', shoulder: 'mid', surge: 'peak' },
+  { day: 'Fri', shoulder: 'low', surge: 'high' },
+];
+
+const DISPATCH_FEED = [
+  { tag: 'URG', detail: 'Balwyn · no cool · baby room', tone: 'red' },
+  { tag: 'SVC', detail: 'Glen Iris · service running 40m over', tone: 'amber' },
+  { tag: 'INS', detail: 'Camberwell · install needs second tech', tone: 'teal' },
+  { tag: 'CALL', detail: 'Kew · no cool · awaiting callback', tone: 'red' },
+  { tag: 'QUOTE', detail: 'Surrey Hills · ducted, follow up tonight', tone: 'cyan' },
+];
+
 export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
   const primarySystem = data.systems[0];
   if (!primarySystem) {
@@ -30,111 +78,84 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
         heading={{
           kicker: 'A booked HVAC day',
           title:
-            'The day&rsquo;s jobs are already booked [[muted:when the urgent call comes in.]]',
+            'The day&rsquo;s jobs are already on the board [[muted:when the urgent call comes in.]]',
           description:
-            'The dispatcher had the day mapped before the kettle boiled. Then the first plant room rings, the office line lights up, and the plan starts moving sideways.',
+            'Service visits, installs, and a no-cool emergency don\u2019t want the same response. The dispatch board doesn\u2019t know that yet.',
         }}
         tone='white'
       >
-        <div className='hs-hvac-open'>
-          <div className='hs-hvac-open__copy'>
-            <p>
-              Service jobs sit on the board next to install commissioning and a quoted retrofit.
-              The crew already knows roughly what their day looks like.
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-12'>
+          <div className='hs-text-secondary flex flex-col gap-5 leading-relaxed lg:col-span-5'>
+            <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              The day was planned at 7am. By 9:15 it has changed twice.
             </p>
             <p>
-              Then a hospitality kitchen calls about a chiller. A landlord calls about a tenant
-              with no heat. The next two hours decide what gets bumped.
+              An annual service is running long. A new install needs the second technician. And a
+              no-cool call from a baby&rsquo;s room just landed.
+            </p>
+            <p>
+              The booked day, the surge call, and the install crew all want the same office at the
+              same time.
             </p>
           </div>
-          <aside className='hs-hvac-open__board' aria-hidden='true'>
-            <header>Dispatch · Wed 07:48</header>
-            <ul>
-              <li>
-                <span>07:30</span>Service · 14 jobs booked
-              </li>
-              <li>
-                <span>08:00</span>Install · commissioning, Albion site
-              </li>
-              <li>
-                <span>09:15</span>Quoted retrofit · stage 2 walkthrough
-              </li>
-              <li className='is-urgent'>
-                <span>07:46</span>Urgent · chiller down · Brunswick venue
-              </li>
-              <li className='is-urgent'>
-                <span>07:51</span>Urgent · no heat · Footscray rental
-              </li>
+
+          <aside className='hs-surface-dark flex flex-col gap-4 rounded-3xl border p-6 lg:col-span-7 lg:p-8'>
+            <span className='hs-mono-eyebrow hs-accent-amber'>Live dispatch {DOT} 09:14</span>
+            <ul className='flex flex-col gap-2'>
+              {DISPATCH_FEED.map(row => (
+                <li
+                  key={row.tag + row.detail}
+                  className='hs-text-on-dark hs-grid-feed-2 grid items-center gap-3 rounded-lg border px-3 py-2.5 text-sm hs-divider-dark'
+                >
+                  <span className={`hs-mono hs-accent-${row.tone}`}>{row.tag}</span>
+                  <span>{row.detail}</span>
+                </li>
+              ))}
             </ul>
           </aside>
         </div>
       </SectionFrame>
 
-      {/* 2 — Dominant: dispatch-day path */}
+      {/* 2 — Dominant: Dispatch-day path */}
       <SectionFrame
         heading={{
-          kicker: 'Dispatch day',
+          kicker: 'Dispatch-day path',
           title:
-            'A booked day, three urgent inserts, [[muted:and where the plan bends without breaking.]]',
+            'Three lanes, one office &mdash; [[muted:and the urgent call cutting across all of them.]]',
         }}
         tone='dark'
       >
-        <div className='hs-hvac-day'>
-          <div className='hs-hvac-day__rail' aria-hidden='true'>
-            <span>07:00</span>
-            <span>09:00</span>
-            <span>11:00</span>
-            <span>13:00</span>
-            <span>15:00</span>
-            <span>17:00</span>
+        <div className='hs-surface-dark flex flex-col gap-6 rounded-3xl border p-6 lg:p-8'>
+          <ol className='hs-text-on-dark-dim grid grid-cols-6 gap-2 pl-24 text-xs font-mono uppercase tracking-wider'>
+            {['07', '09', '11', '13', '15', '17'].map(h => (
+              <li key={h}>{h}:00</li>
+            ))}
+          </ol>
+          <div className='flex flex-col gap-3'>
+            {DISPATCH_LANES.map(lane => (
+              <div
+                key={lane.lane}
+                className='hs-grid-lane grid items-center gap-4 border-t pt-3 hs-divider-dark first:border-t-0 first:pt-0'
+              >
+                <span className={`hs-mono hs-accent-${lane.tint}`}>{lane.lane}</span>
+                <ul className='hs-dispatch-row grid grid-cols-6 gap-2'>
+                  {lane.blocks.map((b, i) => (
+                    <li
+                      key={i}
+                      className={`hs-tint-${lane.tint} hs-dispatch-block flex flex-col gap-0.5 rounded-md border px-3 py-2 text-xs`}
+                      data-span={b.span}
+                    >
+                      <span className={`hs-mono hs-accent-${lane.tint}`}>{b.time}</span>
+                      <span className='hs-text-on-dark'>{b.what}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <div className='hs-hvac-day__lanes'>
-            <div className='hs-hvac-day__lane' data-lane='service'>
-              <span className='hs-hvac-day__lane-label'>Service</span>
-              <div className='hs-hvac-day__blocks'>
-                <span className='hs-hvac-day__block' data-pos='a'>
-                  Boiler service · Northcote
-                </span>
-                <span className='hs-hvac-day__block' data-pos='b'>
-                  Split tune · Carlton
-                </span>
-                <span className='hs-hvac-day__block' data-pos='c'>
-                  Filter swap · Reservoir
-                </span>
-                <span className='hs-hvac-day__block' data-pos='d'>
-                  Annual check · Coburg
-                </span>
-              </div>
-            </div>
-            <div className='hs-hvac-day__lane' data-lane='install'>
-              <span className='hs-hvac-day__lane-label'>Install</span>
-              <div className='hs-hvac-day__blocks'>
-                <span className='hs-hvac-day__block' data-pos='wide-a'>
-                  Albion site · commissioning
-                </span>
-                <span className='hs-hvac-day__block' data-pos='c'>
-                  Snag list · Brunswick
-                </span>
-              </div>
-            </div>
-            <div className='hs-hvac-day__lane' data-lane='urgent'>
-              <span className='hs-hvac-day__lane-label'>Urgent</span>
-              <div className='hs-hvac-day__blocks'>
-                <span className='hs-hvac-day__block hs-hvac-day__block--urgent' data-pos='b'>
-                  Chiller down · venue
-                </span>
-                <span className='hs-hvac-day__block hs-hvac-day__block--urgent' data-pos='d'>
-                  No heat · rental
-                </span>
-                <span className='hs-hvac-day__block hs-hvac-day__block--urgent' data-pos='e'>
-                  Refrigerant alarm · cool room
-                </span>
-              </div>
-            </div>
-          </div>
-          <p className='hs-hvac-day__note'>
-            Each urgent insert moves a service job and a follow-up call. The office holds the new
-            shape so the customer who waited yesterday doesn&rsquo;t wait again today.
+          <p className='hs-text-on-dark-muted text-sm italic'>
+            Service runs over. Install needs the second tech. The urgent call lands in the middle.
+            Same office holding all three.
           </p>
         </div>
       </SectionFrame>
@@ -142,214 +163,210 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 3 — Surge season vs normal week */}
       <SectionFrame
         heading={{
-          kicker: 'First hot week. First cold week.',
-          title: 'Two weeks the calendar treats the same. [[muted:The phones do not.]]',
+          kicker: 'The first hot week',
+          title: 'Normal weeks and surge weeks [[muted:are not the same business.]]',
         }}
         tone='mist'
       >
-        <div className='hs-hvac-season'>
-          <article className='hs-hvac-season__card hs-hvac-season__card--shoulder'>
-            <header>
-              <span className='hs-hvac-season__tag'>Shoulder week</span>
-              <h3>Predictable service rhythm</h3>
-            </header>
-            <ul>
-              <li>Service-led day, two follow-ups, one quote</li>
-              <li>Crew finishes inside dispatch window</li>
-              <li>Office returns calls inside the hour</li>
-            </ul>
-          </article>
-          <article className='hs-hvac-season__card hs-hvac-season__card--surge'>
-            <header>
-              <span className='hs-hvac-season__tag'>Heat-wave week</span>
-              <h3>Every other call is urgent</h3>
-            </header>
-            <ul>
-              <li>Service jobs bumped twice in a day</li>
-              <li>Quoted installs slip a week, then two</li>
-              <li>Voicemail builds while the dispatcher is on the radio</li>
-            </ul>
-          </article>
-          <ol className='hs-hvac-season__bars' aria-label='Indicative weekly call volume'>
-            <li>
-              <span className='hs-hvac-season__bar' data-load='base' />
-              <em>Mon</em>
-            </li>
-            <li>
-              <span className='hs-hvac-season__bar' data-load='base' />
-              <em>Tue</em>
-            </li>
-            <li>
-              <span className='hs-hvac-season__bar' data-load='surge' />
-              <em>Wed</em>
-            </li>
-            <li>
-              <span className='hs-hvac-season__bar' data-load='surge' />
-              <em>Thu</em>
-            </li>
-            <li>
-              <span className='hs-hvac-season__bar' data-load='peak' />
-              <em>Fri</em>
-            </li>
-          </ol>
+        <div className='grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8'>
+          {[
+            {
+              title: 'Shoulder season',
+              tint: 'teal',
+              note: 'Maintenance and installs. The office can hold every call.',
+              field: 'shoulder' as const,
+            },
+            {
+              title: 'Surge week',
+              tint: 'red',
+              note: 'No-cool calls take the line. Maintenance slips. Installs queue.',
+              field: 'surge' as const,
+            },
+          ].map(card => (
+            <article
+              key={card.title}
+              className={`hs-surface hs-shadow-card hs-rule-top-${card.tint} flex flex-col gap-5 rounded-2xl border p-7`}
+            >
+              <div className='flex items-center justify-between'>
+                <h3 className='hs-text-primary text-xl font-semibold tracking-tight'>
+                  {card.title}
+                </h3>
+                <span className={`hs-mono hs-accent-${card.tint}`}>Call volume</span>
+              </div>
+              <ul className='hs-bar-row flex h-40 items-end justify-between gap-2'>
+                {SEASON_DAYS.map(d => (
+                  <li key={d.day} className='flex flex-1 flex-col items-center gap-2'>
+                    <span
+                      className={`hs-tint-${card.tint} hs-bar w-full rounded-md border`}
+                      data-load={d[card.field]}
+                    />
+                    <span className='hs-mono hs-text-subtle'>{d.day}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{card.note}</p>
+            </article>
+          ))}
         </div>
       </SectionFrame>
 
-      {/* 4 — Service / urgent / install handoff */}
+      {/* 4 — Service / Urgent / Install handoff */}
       <SectionFrame
         heading={{
-          kicker: 'Three kinds of HVAC day',
-          title:
-            'Service, urgent and install [[muted:should not all live in the same inbox.]]',
+          kicker: 'Three calls, three hands',
+          title: 'Each call type [[muted:wants a different next step.]]',
         }}
         tone='white'
       >
-        <div className='hs-hvac-streams'>
-          <article>
-            <span className='hs-hvac-streams__num'>01</span>
-            <h3>Service</h3>
-            <p>
-              Booked work. Recurring customers. Predictable parts. Lives on the dispatch board and
-              the maintenance schedule.
-            </p>
-            <span className='hs-hvac-streams__owner'>owns: dispatcher</span>
-          </article>
-          <article>
-            <span className='hs-hvac-streams__num'>02</span>
-            <h3>Urgent</h3>
-            <p>
-              Plant down. No heat. Refrigerant alarm. Needs an ETA in minutes and a tech rerouted
-              without losing the rest of the day.
-            </p>
-            <span className='hs-hvac-streams__owner'>owns: on-call lead</span>
-          </article>
-          <article>
-            <span className='hs-hvac-streams__num'>03</span>
-            <h3>Install</h3>
-            <p>
-              Quoted work. Stage payments. Commissioning. Belongs to a project view, not a
-              voicemail.
-            </p>
-            <span className='hs-hvac-streams__owner'>owns: project lead</span>
-          </article>
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          {[
+            {
+              tag: 'Service',
+              tint: 'cyan',
+              title: 'Confirm and schedule',
+              body: 'Address, last visit, filter set. Office books from the system without ringing the crew.',
+            },
+            {
+              tag: 'Urgent',
+              tint: 'red',
+              title: 'Acknowledge inside the first ring',
+              body: 'Customer hears back inside one minute. Slotted into the day, not stacked on a notepad.',
+            },
+            {
+              tag: 'Install',
+              tint: 'teal',
+              title: 'Quote thread, not a phone call',
+              body: 'Site assessment booked, photos attached, quote drafted from the same thread.',
+            },
+          ].map(card => (
+            <article
+              key={card.tag}
+              className={`hs-surface hs-shadow-soft hs-rule-top-${card.tint} flex flex-col gap-3 rounded-2xl border p-7`}
+            >
+              <span className={`hs-mono hs-accent-${card.tint}`}>{card.tag}</span>
+              <h3 className='hs-text-primary text-xl font-semibold tracking-tight'>{card.title}</h3>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{card.body}</p>
+            </article>
+          ))}
         </div>
       </SectionFrame>
 
       {/* 5 — Office holding the day */}
       <SectionFrame
         heading={{
-          kicker: 'The office holds the day',
-          title:
-            'Six channels meet one desk. [[muted:They do not have to argue for attention.]]',
+          kicker: 'The office side',
+          title: 'One person at a desk [[muted:is not a dispatch system.]]',
         }}
         tone='gradient-mist'
-        layout='split'
-        ratio='40-60'
       >
-        <div className='hs-hvac-desk'>
-          <ul className='hs-hvac-desk__streams'>
-            <li>
-              <span className='hs-hvac-desk__dot' data-tone='cyan' />
-              Inbound calls
-            </li>
-            <li>
-              <span className='hs-hvac-desk__dot' data-tone='teal' />
-              Service requests
-            </li>
-            <li>
-              <span className='hs-hvac-desk__dot' data-tone='amber' />
-              Urgent line
-            </li>
-            <li>
-              <span className='hs-hvac-desk__dot' data-tone='green' />
-              Quote follow-ups
-            </li>
-            <li>
-              <span className='hs-hvac-desk__dot' data-tone='purple' />
-              Service-plan renewals
-            </li>
-            <li>
-              <span className='hs-hvac-desk__dot' data-tone='red' />
-              Supplier callbacks
-            </li>
-          </ul>
-          <div className='hs-hvac-desk__copy'>
-            <p>
-              Each channel has its own job and its own next step. The dispatcher doesn&rsquo;t hear
-              about a quote follow-up the same way they hear about a chiller alarm.
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10'>
+          <div className='hs-text-secondary flex flex-col gap-4 leading-relaxed lg:col-span-5'>
+            <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              The office is doing five jobs at once.
             </p>
             <p>
-              That&rsquo;s the difference between a busy day and a day that runs the office
-              instead of the office running it.
+              Booking the next service. Acknowledging the urgent call. Sending the install quote.
+              Telling the crew the address has changed. Deciding which voicemail to ring back first.
             </p>
+            <p>The system holds four of those. The office only has to do the fifth well.</p>
           </div>
+          <ul className='hs-surface flex flex-col gap-3 rounded-2xl border p-7 lg:col-span-7'>
+            {[
+              { what: 'Inbound rings', who: 'AI Lead Handling', tint: 'cyan' },
+              { what: 'Acknowledgement SMS', who: 'AI Lead Handling', tint: 'cyan' },
+              { what: 'Job thread + photos', who: 'CRM & Automation', tint: 'teal' },
+              { what: 'Quote follow-up', who: 'CRM & Automation', tint: 'teal' },
+              { what: 'Service-plan reminder', who: 'CRM & Automation', tint: 'teal' },
+              { what: 'Review request', who: 'Reputation & Reviews', tint: 'amber' },
+            ].map(row => (
+              <li
+                key={row.what}
+                className='hs-grid-row-auto grid items-center gap-4 border-b pb-3 last:border-b-0 last:pb-0 hs-divider-soft'
+              >
+                <span className='hs-text-primary'>{row.what}</span>
+                <span className={`hs-mono hs-accent-${row.tint}`}>{row.who}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </SectionFrame>
 
       {/* 6 — Service follow-up loop */}
       <SectionFrame
         heading={{
-          kicker: 'Service-plan loop',
-          title: 'The customer who serviced last spring [[muted:hears from you this spring.]]',
+          kicker: 'The follow-up loop',
+          title: 'A finished install [[muted:is the start of the next appointment.]]',
         }}
         tone='white'
       >
-        <div className='hs-hvac-loop'>
-          <ol>
-            <li>
-              <span className='hs-hvac-loop__when'>0&nbsp;months</span>
-              <h3>Service complete</h3>
-              <p>Job notes filed. Service-plan eligibility flagged on the job card.</p>
+        <ol className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4'>
+          {[
+            {
+              when: 'Day +0',
+              what: 'Sign-off',
+              body: 'Job marked complete in the field. Customer sees the running system.',
+            },
+            {
+              when: 'Day +14',
+              what: 'Check-in',
+              body: 'Plain message: anything not running the way you expected? No upsell.',
+            },
+            {
+              when: 'Day +60',
+              what: 'Service plan',
+              body: 'Invitation to the maintenance plan. Off switch built in.',
+            },
+            {
+              when: 'Day +180',
+              what: 'Pre-season',
+              body: 'Reminder before the first hot week. Filter check booked in one tap.',
+            },
+          ].map(step => (
+            <li
+              key={step.when}
+              className='hs-surface hs-shadow-soft flex flex-col gap-3 rounded-2xl border p-6'
+            >
+              <span className='hs-mono hs-accent-cyan'>{step.when}</span>
+              <h3 className='hs-text-primary text-lg font-semibold tracking-tight'>{step.what}</h3>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{step.body}</p>
             </li>
-            <li>
-              <span className='hs-hvac-loop__when'>3&nbsp;months</span>
-              <h3>Light touch</h3>
-              <p>Seasonal tip or maintenance reminder. Nothing pushy, nothing automated-feeling.</p>
-            </li>
-            <li>
-              <span className='hs-hvac-loop__when'>10&nbsp;months</span>
-              <h3>Pre-season nudge</h3>
-              <p>SMS before the first heat-wave or cold snap. Booking link, not a phone tag game.</p>
-            </li>
-            <li>
-              <span className='hs-hvac-loop__when'>12&nbsp;months</span>
-              <h3>Service rebooked</h3>
-              <p>The customer comes back as a known job, not a fresh enquiry.</p>
-            </li>
-          </ol>
-        </div>
+          ))}
+        </ol>
       </SectionFrame>
 
       {/* 7 — System bridge */}
       <SectionFrame
         heading={{
-          kicker: 'How this lands',
-          title: 'The systems that hold the day. [[muted:HVAC stays HVAC.]]',
+          kicker: 'The systems behind it',
+          title: 'Three systems hold the surge week. [[muted:Each one earns its place.]]',
         }}
         tone='dark'
       >
-        <div className='hs-hvac-bridge'>
-          <article>
-            <h3>AI Lead Handling</h3>
-            <p>
-              Every urgent line acknowledged in seconds. The dispatcher only sees the ones that
-              actually need a tech.
-            </p>
-          </article>
-          <article>
-            <h3>CRM &amp; Automation</h3>
-            <p>
-              Service, urgent and install live in three views, not one. The board reflects the day
-              the customer is actually having.
-            </p>
-          </article>
-          <article>
-            <h3>Reputation &amp; Reviews</h3>
-            <p>
-              Review asks land after a job feels good — not three weeks later when the kit is
-              already noisy again.
-            </p>
-          </article>
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          {[
+            {
+              system: 'AI Lead Handling',
+              role: 'No-cool calls get acknowledged inside the first ring, every ring, all week.',
+            },
+            {
+              system: 'CRM & Automation',
+              role: `Holds the install thread, the service plan, the next appointment ${EM} without anyone keeping it in a head.`,
+            },
+            {
+              system: 'Reputation & Reviews',
+              role: 'Asks once after sign-off, plainly written, with an off switch for sensitive jobs.',
+            },
+          ].map(card => (
+            <article
+              key={card.system}
+              className='hs-surface-dark flex flex-col gap-3 rounded-2xl border p-7'
+            >
+              <h3 className='hs-text-on-dark-strong text-xl font-semibold tracking-tight'>
+                {card.system}
+              </h3>
+              <p className='hs-text-on-dark-muted leading-relaxed'>{card.role}</p>
+            </article>
+          ))}
         </div>
       </SectionFrame>
 
@@ -358,11 +375,16 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
-        variant='split'
+        tone='white'
       />
+
       <DecisionPanel
-        heading={data.cta.heading}
-        actions={actions}
+        heading={{
+          kicker: data.cta.heading.kicker,
+          title: data.cta.heading.title,
+          description: data.cta.heading.description,
+        }}
+        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'primary' }]}
         expectations={data.cta.expectations}
         reassurance={data.cta.reassurance}
       />

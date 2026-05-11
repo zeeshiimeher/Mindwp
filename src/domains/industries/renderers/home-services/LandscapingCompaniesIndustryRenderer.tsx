@@ -1,5 +1,3 @@
-import type { CSSProperties } from 'react';
-
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
@@ -8,6 +6,30 @@ import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
+const MONTHS = [
+  { m: 'Jan', load: 'mid', tag: 'Maint' },
+  { m: 'Feb', load: 'mid', tag: 'Maint' },
+  { m: 'Mar', load: 'high', tag: 'Quotes' },
+  { m: 'Apr', load: 'peak', tag: 'Spring' },
+  { m: 'May', load: 'high', tag: 'Build' },
+  { m: 'Jun', load: 'mid', tag: 'Maint' },
+  { m: 'Jul', load: 'low', tag: 'Quiet' },
+  { m: 'Aug', load: 'low', tag: 'Quiet' },
+  { m: 'Sep', load: 'high', tag: 'Reactivate' },
+  { m: 'Oct', load: 'peak', tag: 'Cleanup' },
+  { m: 'Nov', load: 'high', tag: 'Cleanup' },
+  { m: 'Dec', load: 'mid', tag: 'Wrap' },
+];
+
+const FEED_ROWS = [
+  { time: '07:42', what: 'Quote · Hampton · turf and edging', stale: false },
+  { time: '08:15', what: 'Quote · Glen Iris · garden refresh', stale: true },
+  { time: '08:58', what: 'Maintenance · Toorak · monthly', stale: false },
+  { time: '09:33', what: 'Quote · Brighton · paving (3 days)', stale: true },
+  { time: '10:11', what: 'Past client · St Kilda East · re-quote', stale: true },
+  { time: '10:48', what: 'Maintenance · Caulfield · weekly', stale: false },
+];
+
 export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
   const primarySystem = data.systems[0];
   if (!primarySystem) {
@@ -15,6 +37,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
   }
   const contactHref = buildIndustryContactHref({ system: primarySystem, slug: data.slug });
   const actions = [{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }] as const;
+
   return (
     <main className='industry-detail-page'>
       <HeroFrame
@@ -25,268 +48,285 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
         chips={data.hero.list}
         chipDotVariant='neutral'
       />
-      <SectionFrame
-        heading={{
-          kicker: 'In-season pressure',
-          title: 'Spring quote requests arrive while the crew is already on site.',
-          description:
-            'The hedge is half-cut when the next quote enquiry lands. The truck is on the road when a new client tries to book a site visit. The week the operator is busiest is the same week the office is least able to answer.',
-        }}
-        tone='white'
-      >
-        <div className='hs-stack'>
-          <div
-            className='hs-monthbars'
-            role='figure'
-            aria-label='Sample year of intake versus conversion'
-          >
-            <ul className='hs-monthbars__legend'>
-              <li>Intake</li>
-              <li className='is-conv'>Quote → Booked</li>
-              <li className='is-hold'>Off-season hold</li>
-            </ul>
-            <ol className='hs-monthbars__chart'>
-              {[
-                { m: 'Sep', intake: 95, conv: 38, hold: 0 },
-                { m: 'Oct', intake: 88, conv: 52, hold: 0 },
-                { m: 'Nov', intake: 74, conv: 64, hold: 0 },
-                { m: 'Dec', intake: 56, conv: 78, hold: 0 },
-                { m: 'Jan', intake: 48, conv: 70, hold: 0 },
-                { m: 'Feb', intake: 42, conv: 60, hold: 0 },
-                { m: 'Mar', intake: 36, conv: 32, hold: 22 },
-                { m: 'Apr', intake: 28, conv: 18, hold: 34 },
-                { m: 'May', intake: 22, conv: 12, hold: 44 },
-                { m: 'Jun', intake: 18, conv: 8, hold: 56 },
-                { m: 'Jul', intake: 16, conv: 6, hold: 64 },
-                { m: 'Aug', intake: 28, conv: 12, hold: 48 },
-              ].map(row => (
-                <li key={row.m} className='hs-monthbars__col'>
-                  <div className='hs-monthbars__stack'>
-                    <span
-                      className='hs-monthbars__bar'
-                      style={{ ['--h' as string]: `${row.intake}%` } as CSSProperties}
-                    />
-                    <span
-                      className='hs-monthbars__bar hs-monthbars__bar--conv'
-                      style={{ ['--h' as string]: `${row.conv}%` } as CSSProperties}
-                    />
-                    {row.hold > 0 ? (
-                      <span
-                        className='hs-monthbars__bar hs-monthbars__bar--hold'
-                        style={{ ['--h' as string]: `${row.hold}%` } as CSSProperties}
-                      />
-                    ) : null}
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <ol className='hs-monthbars__labels'>
-              <li>Sep</li>
-              <li>Oct</li>
-              <li>Nov</li>
-              <li>Dec</li>
-              <li>Jan</li>
-              <li>Feb</li>
-              <li>Mar</li>
-              <li>Apr</li>
-              <li>May</li>
-              <li>Jun</li>
-              <li>Jul</li>
-              <li>Aug</li>
-            </ol>
-          </div>
-          <p className='hs-body-lede'>
-            Intake spikes in spring. Conversion peaks in summer when the crew is already at full
-            load. The hold rhythm in autumn-winter is what decides whether next spring starts hot or
-            cold.
-          </p>
-        </div>
-      </SectionFrame>
+
+      {/* 1 — Seasonal recognition */}
       <SectionFrame
         heading={{
           kicker: 'A landscaping year',
-          title: 'Twelve months. [[muted:Four pressure shapes.]]',
-        }}
-        tone='gradient-mist'
-      >
-        <div className='hs-landscaping-arc'>
-          <ol className='hs-landscaping-arc__seasons'>
-            <li className='hs-landscaping-arc__season hs-landscaping-arc__season--spring'>
-              <span className='hs-landscaping-arc__months'>Sep — Nov</span>
-              <h3 className='hs-landscaping-arc__name'>Spring</h3>
-              <p className='hs-landscaping-arc__shape'>
-                Quote requests spike. Site visits stack up. Most lost work happens here, in the gap
-                between an enquiry and a callback.
-              </p>
-              <span className='hs-landscaping-arc__pressure'>Intake pressure: high</span>
-            </li>
-            <li className='hs-landscaping-arc__season hs-landscaping-arc__season--summer'>
-              <span className='hs-landscaping-arc__months'>Dec — Feb</span>
-              <h3 className='hs-landscaping-arc__name'>Summer</h3>
-              <p className='hs-landscaping-arc__shape'>
-                The crew is at full load. Quotes from spring need to convert into work without the
-                office stopping to chase them.
-              </p>
-              <span className='hs-landscaping-arc__pressure'>Conversion pressure: high</span>
-            </li>
-            <li className='hs-landscaping-arc__season hs-landscaping-arc__season--autumn'>
-              <span className='hs-landscaping-arc__months'>Mar — May</span>
-              <h3 className='hs-landscaping-arc__name'>Autumn</h3>
-              <p className='hs-landscaping-arc__shape'>
-                Maintenance contracts and clean-ups take over. The right re-contact in March is the
-                difference between a steady winter and a quiet one.
-              </p>
-              <span className='hs-landscaping-arc__pressure'>Re-contact pressure: medium</span>
-            </li>
-            <li className='hs-landscaping-arc__season hs-landscaping-arc__season--winter'>
-              <span className='hs-landscaping-arc__months'>Jun — Aug</span>
-              <h3 className='hs-landscaping-arc__name'>Winter</h3>
-              <p className='hs-landscaping-arc__shape'>
-                The line is quiet. The system that holds last year’s clients now decides next
-                spring. Old enquiries get one plain message, no offer, no countdown.
-              </p>
-              <span className='hs-landscaping-arc__pressure'>Hold pressure: low</span>
-            </li>
-          </ol>
-        </div>
-      </SectionFrame>
-      <SectionFrame
-        heading={{
-          kicker: 'Where the season slips',
-          title: 'A spring enquiry that landed [[muted:between hedge cuts.]]',
+          title:
+            'The work changes shape every quarter. [[muted:The office stays exactly the same.]]',
           description:
-            'A real-shape moment. The phone, the form, and the message that should have arrived four minutes later but did not.',
+            'Spring quote spikes, summer maintenance, autumn cleanup, winter reactivation. Same business, four completely different rhythms.',
         }}
         tone='white'
       >
-        <div className='hs-split-2'>
-          <article className='hs-thread hs-thread--lost' aria-label='Spring enquiry · lost'>
-            <header className='hs-thread__head'>
-              <span>Tue · Spring intake</span>
-              <span>Outcome · lost</span>
-            </header>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>10:42</span>
-              <div>
-                <span className='hs-thread__author'>New caller · 0408…</span>
-                <p className='hs-thread__bubble'>
-                  Hi — looking for a quote on a hedge reshape and side-yard tidy. When could someone
-                  come out?
-                </p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--system'>
-              <span className='hs-thread__time'>10:42</span>
-              <div>
-                <p className='hs-thread__bubble'>Voicemail · office closed for site morning</p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--in'>
-              <span className='hs-thread__time'>11:51</span>
-              <div>
-                <span className='hs-thread__author'>Same caller · web form</span>
-                <p className='hs-thread__bubble'>
-                  Submitted via website. Free Wed afternoon or Thu morning.
-                </p>
-              </div>
-            </div>
-            <div className='hs-thread__msg hs-thread__msg--system'>
-              <span className='hs-thread__time'>16:40</span>
-              <div>
-                <p className='hs-thread__bubble'>Truck back at yard · office staff already gone</p>
-              </div>
-            </div>
-            <span className='hs-thread__verdict'>By Wed 9am, customer rang two competitors</span>
-          </article>
-          <div className='hs-stack'>
-            <p className='hs-prose'>
-              The same caller, same week, with one small change in the operating layer: an
-              acknowledgement and a real callback window arrive while the crew is still on the
-              hedge.
-            </p>
-            <div className='hs-phonemock' aria-label='Auto acknowledgement preview'>
-              <div className='hs-phonemock__bar'>
-                <span>10:46</span>
-                <span>5G</span>
-              </div>
-              <div className='hs-phonemock__msg'>
-                <p className='hs-phonemock__from'>From · Northwood Landscaping</p>
-                <p>
-                  Hi — got your message about the hedge reshape. Crew is on a job in Brunswick this
-                  morning. Tara from the office will call you back between 1pm and 3pm with a
-                  site-visit window. Reply STOP to opt out.
-                </p>
-                <p className='hs-phonemock__time'>SMS · 10:46</p>
-              </div>
-            </div>
-          </div>
+        <div className='hs-text-secondary mx-auto flex max-w-3xl flex-col gap-5 leading-relaxed'>
+          <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+            The crew is on a site. The phone is in the ute. Spring quotes are still coming in.
+          </p>
+          <p>
+            Most landscaping operators run the year by memory. Which clients haven&rsquo;t been
+            quoted yet. Who&rsquo;s due for a hedge cut. Which past customer asked about pavers in
+            September.
+          </p>
+          <p>The system is the inside of the owner&rsquo;s head. That&rsquo;s the leak.</p>
         </div>
       </SectionFrame>
+
+      {/* 2 — DOMINANT: 12-month year arc */}
       <SectionFrame
         heading={{
-          kicker: 'What changes',
-          title: 'A season the office can hold without depending on memory.',
+          kicker: 'The year as one picture',
+          title: 'Twelve months, [[muted:four shapes of work.]]',
+        }}
+        tone='dark'
+      >
+        <div className='hs-surface-dark flex flex-col gap-6 rounded-3xl border p-6 lg:p-8'>
+          <ul className='hs-bar-row flex h-72 items-end justify-between gap-2'>
+            {MONTHS.map(mo => (
+              <li key={mo.m} className='flex flex-1 flex-col items-center gap-2'>
+                <span
+                  className={`hs-tint-${
+                    mo.load === 'peak'
+                      ? 'red'
+                      : mo.load === 'high'
+                        ? 'amber'
+                        : mo.load === 'mid'
+                          ? 'teal'
+                          : 'cyan'
+                  } hs-bar w-full rounded-md border`}
+                  data-load={mo.load}
+                />
+                <span className='hs-mono hs-text-on-dark-muted'>{mo.m}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className='hs-text-on-dark-dim flex justify-between text-xs font-mono'>
+            {MONTHS.map(mo => (
+              <li key={mo.m} className='hidden flex-1 text-center lg:block'>
+                {mo.tag}
+              </li>
+            ))}
+          </ul>
+          <p className='hs-text-on-dark-muted text-center text-sm italic'>
+            Two peaks. One quiet. The office handles all of it the same way.
+          </p>
+        </div>
+      </SectionFrame>
+
+      {/* 3 — Quote requests while crew is out */}
+      <SectionFrame
+        heading={{
+          kicker: 'Spring quote spike',
+          title: 'Quote requests arrive [[muted:while the crew is already on a site.]]',
         }}
         tone='mist'
       >
-        <ul className='hs-metrics'>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>Spring ack time</span>
-            <span className='hs-metric__value'>~4 min</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>From end-of-day callback</span>
-          </li>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>Site visits booked · same week</span>
-            <span className='hs-metric__value'>Most</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>Was hit-or-miss</span>
-          </li>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>Off-season re-contact</span>
-            <span className='hs-metric__value'>Calendar-driven</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>Was forgotten</span>
-          </li>
-          <li className='hs-metric'>
-            <span className='hs-metric__label'>Owner evening admin</span>
-            <span className='hs-metric__value'>Lower</span>
-            <span className='hs-metric__delta hs-metric__delta--up'>Day closes itself</span>
-          </li>
-        </ul>
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10'>
+          <ul className='hs-surface hs-shadow-card flex flex-col gap-2 rounded-2xl border p-6 lg:col-span-7'>
+            {FEED_ROWS.map(row => (
+              <li
+                key={row.time}
+                className={`hs-grid-when grid items-center gap-4 rounded-lg border px-4 py-3 ${row.stale ? 'hs-tint-amber' : 'hs-surface'}`}
+              >
+                <span className={`hs-mono ${row.stale ? 'hs-accent-amber' : 'hs-text-subtle'}`}>
+                  {row.time}
+                </span>
+                <span className={row.stale ? 'hs-text-primary' : 'hs-text-secondary'}>
+                  {row.what}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className='hs-text-secondary flex flex-col gap-4 leading-relaxed lg:col-span-5'>
+            <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
+              Three of those will be lost by tonight.
+            </p>
+            <p>
+              Not because the price was wrong. Because nobody got back to them inside the same day,
+              and the next landscaper did.
+            </p>
+            <p>
+              Quote requests during peak months are time-sensitive in a way the rest of the year
+              isn&rsquo;t.
+            </p>
+          </div>
+        </div>
       </SectionFrame>
+
+      {/* 4 — Maintenance / cleanup / winter rhythms */}
       <SectionFrame
         heading={{
-          kicker: 'How this lands',
-          title: 'The website is the hub. The other systems run from it.',
+          kicker: 'Three rhythms inside the year',
+          title: 'The recurring work [[muted:is what keeps the lights on.]]',
         }}
         tone='white'
       >
-        <div className='hs-bridge'>
-          <div className='hs-bridge__copy'>
-            <span className='hs-bridge__label'>Lead system for landscaping</span>
-            <h3 className='hs-bridge__title'>Smart Website Systems</h3>
-            <p className='hs-bridge__note'>
-              The website is where most landscaping enquiries decide to call. Lead handling answers
-              them. CRM holds the seasonal calendar. Reputation runs after sign-off. Local SEO
-              carries the visibility.
-            </p>
-          </div>
-          <ul className='hs-bridge__systems'>
-            <li>AI Lead Handling</li>
-            <li>CRM &amp; Automation</li>
-            <li>Reputation &amp; Reviews</li>
-            <li>Local SEO Authority</li>
-          </ul>
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          {[
+            {
+              season: 'Maintenance',
+              tint: 'green',
+              title: 'Weekly and monthly visits',
+              body: 'Recurring schedules booked once. The office doesn\u2019t have to remember who\u2019s next.',
+            },
+            {
+              season: 'Cleanup',
+              tint: 'amber',
+              title: 'Autumn and end-of-season',
+              body: 'A four-week wave. Same customers, same scope. Booked from last year\u2019s history, not from scratch.',
+            },
+            {
+              season: 'Reactivation',
+              tint: 'cyan',
+              title: 'Late winter to early spring',
+              body: 'Past clients warmed back up before they go shopping for someone new.',
+            },
+          ].map(card => (
+            <article
+              key={card.season}
+              className={`hs-surface hs-shadow-card hs-rule-top-${card.tint} flex flex-col gap-3 rounded-2xl border p-7`}
+            >
+              <span className={`hs-mono hs-accent-${card.tint}`}>{card.season}</span>
+              <h3 className='hs-text-primary text-xl font-semibold tracking-tight'>{card.title}</h3>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{card.body}</p>
+            </article>
+          ))}
         </div>
       </SectionFrame>
+
+      {/* 5 — Past client loop */}
+      <SectionFrame
+        heading={{
+          kicker: 'The past client loop',
+          title: 'Last year&rsquo;s customers [[muted:are this year&rsquo;s easiest jobs.]]',
+        }}
+        tone='gradient-mist'
+      >
+        <ol className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4'>
+          {[
+            {
+              when: 'Aug',
+              what: 'Soft re-intro',
+              body: 'Plain message before the spring rush. No offer. Just visible again.',
+            },
+            {
+              when: 'Sep',
+              what: 'Cleanup booking',
+              body: 'Pre-fill the same scope as last spring. One reply books the visit.',
+            },
+            {
+              when: 'Oct',
+              what: 'New project nudge',
+              body: 'Anything else they wanted done this year? Open question, no pressure.',
+            },
+            {
+              when: 'Mar',
+              what: 'Maintenance check-in',
+              body: 'Pre-summer note. Hedge cut, irrigation check, bookable in one tap.',
+            },
+          ].map(step => (
+            <li
+              key={step.when}
+              className='hs-surface hs-shadow-soft flex flex-col gap-3 rounded-2xl border p-6'
+            >
+              <span className='hs-mono hs-accent-teal'>{step.when}</span>
+              <h3 className='hs-text-primary text-lg font-semibold tracking-tight'>{step.what}</h3>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </SectionFrame>
+
+      {/* 6 — A year that doesn&rsquo;t depend on memory */}
+      <SectionFrame
+        heading={{
+          kicker: 'Off the owner&rsquo;s head',
+          title: 'Four parts of the year [[muted:that no longer need to be remembered.]]',
+        }}
+        tone='white'
+      >
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4'>
+          {[
+            {
+              what: 'Quote follow-up',
+              body: 'Every spring quote nudged in three days, again at seven, then closed quietly.',
+            },
+            {
+              what: 'Recurring schedules',
+              body: 'Weekly and monthly visits booked once, run forever, paused with one tap.',
+            },
+            {
+              what: 'Past-client window',
+              body: 'August reactivation list pulled from last spring without anyone building it.',
+            },
+            {
+              what: 'Review timing',
+              body: 'Asked once after a finished project. Never on a maintenance visit.',
+            },
+          ].map(card => (
+            <article
+              key={card.what}
+              className='hs-surface-mist flex flex-col gap-3 rounded-2xl border p-6'
+            >
+              <h3 className='hs-text-primary text-lg font-semibold tracking-tight'>{card.what}</h3>
+              <p className='hs-text-secondary text-sm leading-relaxed'>{card.body}</p>
+            </article>
+          ))}
+        </div>
+      </SectionFrame>
+
+      {/* 7 — System bridge */}
+      <SectionFrame
+        heading={{
+          kicker: 'The systems behind it',
+          title: 'Three systems hold the year [[muted:that the owner&rsquo;s head used to.]]',
+        }}
+        tone='dark'
+      >
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          {[
+            {
+              system: 'AI Lead Handling',
+              role: 'Spring quote calls and forms acknowledged the same day, while the crew is on site.',
+            },
+            {
+              system: 'CRM & Automation',
+              role: 'Recurring maintenance, cleanup waves and past-client loops &mdash; all running without memory.',
+            },
+            {
+              system: 'Reputation & Reviews',
+              role: 'A single, well-timed ask after finished projects. Never during maintenance.',
+            },
+          ].map(card => (
+            <article
+              key={card.system}
+              className='hs-surface-dark flex flex-col gap-3 rounded-2xl border p-7'
+            >
+              <h3 className='hs-text-on-dark-strong text-xl font-semibold tracking-tight'>
+                {card.system}
+              </h3>
+              <p className='hs-text-on-dark-muted leading-relaxed'>{card.role}</p>
+            </article>
+          ))}
+        </div>
+      </SectionFrame>
+
       <FAQSection
         eyebrow={data.faq.header.kicker}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
-        variant='split'
+        tone='white'
       />
+
       <DecisionPanel
-        heading={data.cta.heading}
-        actions={actions}
+        heading={{
+          kicker: data.cta.heading.kicker,
+          title: data.cta.heading.title,
+          description: data.cta.heading.description,
+        }}
+        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'primary' }]}
         expectations={data.cta.expectations}
         reassurance={data.cta.reassurance}
       />
