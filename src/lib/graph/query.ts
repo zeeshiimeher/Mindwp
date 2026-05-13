@@ -1,27 +1,26 @@
-import type { AuthorityMapItem } from '../authority/generated/authorityMap';
-import { AUTHORITY_MAP } from '../authority/generated/authorityMap';
 import { getContentGraph } from '../content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
 
 /**
  * GRAPH QUERY API
  *
- * Purpose:
- * Single access point for all graph-derived content relationships.
- * Every UI component and system module reads graph data through
- * these functions — never directly from the authority map or graph.
+ * Design-mode graph query helpers.
  *
- * Rules:
- * - All lookups use the precomputed authority map (zero runtime cost)
- * - Cluster queries scan the full graph by metadata field
- * - Throws when required graph data is missing
- *
- * Consumers: RelatedSection, GraphAwareSidebar, ClusterPageLayout
+ * These helpers are best-effort only. They do not import generated authority
+ * reports and they should not block page composition while the rebuild is in
+ * design mode.
  */
 
 // Re-export for consumers (single import point)
-export type { AuthorityMapItem } from '../authority/generated/authorityMap';
 export type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
+
+export type AuthorityMapItem = {
+  title: string;
+  description?: string;
+  slug: string;
+  path: string;
+  nodeType: ContentNodeType;
+};
 
 // --- Types ---──
 
@@ -38,14 +37,6 @@ export interface RelatedContent {
   caseStudies: RelatedContentItem[];
   industries: RelatedContentItem[];
 }
-
-type RelatedAuthoritySlots = Partial<{
-  services: AuthorityMapItem[];
-  resources: AuthorityMapItem[];
-  blog: AuthorityMapItem[];
-  caseStudies: AuthorityMapItem[];
-  industries: AuthorityMapItem[];
-}>;
 
 export interface ClusterResult {
   key: string;
@@ -169,33 +160,14 @@ function resolveSourceNode(slug: string, type: ContentNodeType) {
   return Object.values(graph).find(node => node.slug === slug && node.type === type) ?? null;
 }
 
-function resolveNodeFromAuthorityItem(item: AuthorityMapItem) {
-  const graph = getContentGraphStrict();
-
-  return (
-    Object.values(graph).find(node => node.path === item.path || node.slug === item.slug) ?? null
-  );
-}
-
 function toRelatedItem(
   sourceNode: ContentGraphNode,
   candidateNode: ContentGraphNode
 ): RelatedContentItem {
-  if (!candidateNode.title || !candidateNode.path || !candidateNode.description) {
-    throw new Error(
-      `Related content candidate is missing required fields for ${candidateNode.id}.`
-    );
-  }
-
   const score = scoreCandidate(sourceNode, candidateNode);
-  if (score <= 0) {
-    throw new Error(
-      `Related content candidate ${candidateNode.id} has no qualifying relationship.`
-    );
-  }
 
   return {
-    title: candidateNode.title,
+    title: candidateNode.title || candidateNode.slug,
     description: candidateNode.description,
     slug: candidateNode.slug,
     path: candidateNode.path,
@@ -208,25 +180,14 @@ function toRelatedItem(
 
 function buildRelatedSlot(
   sourceNode: ContentGraphNode,
-  authorityItems: AuthorityMapItem[] | undefined,
   allowedTypes: ContentNodeType[],
   candidateFilter?: (node: ContentGraphNode) => boolean
 ) {
   const graph = getContentGraphStrict();
 
   const graphNodes = Object.values(graph);
-  const candidateNodes: ContentGraphNode[] = [];
   const seenPaths = new Set<string>();
-
-  for (const item of authorityItems ?? []) {
-    const node = resolveNodeFromAuthorityItem(item);
-    if (!node || seenPaths.has(node.path)) {
-      continue;
-    }
-
-    seenPaths.add(node.path);
-    candidateNodes.push(node);
-  }
+  const candidateNodes: ContentGraphNode[] = [];
 
   for (const node of graphNodes) {
     if (!allowedTypes.includes(node.type)) {
@@ -257,103 +218,61 @@ function buildRelatedSlot(
     .sort(compareRelatedItems);
 }
 
-// --- Authority Map Lookup (precomputed at build time) ---
-
-function fromAuthorityMap(slug: string, type: ContentNodeType): RelatedAuthoritySlots | null {
-  switch (type) {
-    case 'service': {
-      const entry = AUTHORITY_MAP.service[slug];
-      return entry ? { services: entry.services } : null;
-    }
-    case 'feature': {
-      const entry = AUTHORITY_MAP.feature[slug];
-      return entry ? { services: entry.services } : null;
-    }
-    case 'industry-category':
-    case 'industry-detail': {
-      const entry = AUTHORITY_MAP.industry[slug];
-      return entry
-        ? { services: entry.services, caseStudies: entry.caseStudies, resources: entry.resources }
-        : null;
-    }
-    case 'blog': {
-      const entry = AUTHORITY_MAP.blog[slug];
-      return entry ? { resources: entry.resources, industries: entry.industries } : null;
-    }
-    case 'resource': {
-      const entry = AUTHORITY_MAP.resource[slug];
-      return entry ? { services: entry.services, industries: entry.industries } : null;
-    }
-    case 'case-study': {
-      const entry = AUTHORITY_MAP.caseStudy[slug];
-      return entry ? { industries: entry.industries, resources: entry.resources } : null;
-    }
-  }
-}
-
 // --- Query Functions ---
 
 /**
  * Get all related content for a given node.
- * Uses the precomputed authority map (zero runtime cost).
  */
 export function getRelatedContent(slug: string, type: ContentNodeType): RelatedContent {
   const sourceNode = resolveSourceNode(slug, type);
   if (!sourceNode) {
-    throw new Error(`Missing graph source node for ${type}:${slug}.`);
+    return emptyRelated();
   }
-
-  const mapResult = fromAuthorityMap(slug, type) ?? {};
 
   switch (type) {
     case 'service':
       return {
         ...emptyRelated(),
-        services: buildRelatedSlot(sourceNode, mapResult.services, ['service']),
-        resources: buildRelatedSlot(sourceNode, mapResult.resources, ['resource']),
-        industries: buildRelatedSlot(sourceNode, mapResult.industries, ['industry-detail']),
+        services: buildRelatedSlot(sourceNode, ['service']),
+        resources: buildRelatedSlot(sourceNode, ['resource']),
+        industries: buildRelatedSlot(sourceNode, ['industry-detail']),
       };
     case 'feature':
       return {
         ...emptyRelated(),
-        services: buildRelatedSlot(sourceNode, mapResult.services, ['service']),
+        services: buildRelatedSlot(sourceNode, ['service']),
       };
     case 'blog':
       return {
         ...emptyRelated(),
-        resources: buildRelatedSlot(sourceNode, mapResult.resources, ['resource']),
-        industries: buildRelatedSlot(sourceNode, mapResult.industries, ['industry-detail']),
+        resources: buildRelatedSlot(sourceNode, ['resource']),
+        industries: buildRelatedSlot(sourceNode, ['industry-detail']),
       };
     case 'resource':
       return {
         ...emptyRelated(),
-        services: buildRelatedSlot(sourceNode, mapResult.services, ['service']),
-        industries: buildRelatedSlot(sourceNode, mapResult.industries, ['industry-detail']),
+        services: buildRelatedSlot(sourceNode, ['service']),
+        industries: buildRelatedSlot(sourceNode, ['industry-detail']),
       };
     case 'industry-category':
       return {
         ...emptyRelated(),
-        services: buildRelatedSlot(sourceNode, mapResult.services, ['service']),
-        industries: buildRelatedSlot(
-          sourceNode,
-          [],
-          ['industry-detail'],
-          node => node.parent === slug
-        ),
+        services: buildRelatedSlot(sourceNode, ['service']),
+        industries: buildRelatedSlot(sourceNode, ['industry-detail'], node => node.parent === slug),
       };
     case 'industry-detail':
       return {
         ...emptyRelated(),
-        services: buildRelatedSlot(sourceNode, mapResult.services, ['service']),
-        caseStudies: buildRelatedSlot(sourceNode, mapResult.caseStudies, ['case-study']),
-        resources: buildRelatedSlot(sourceNode, mapResult.resources, ['resource']),
+        services: buildRelatedSlot(sourceNode, ['service']),
+        caseStudies: buildRelatedSlot(sourceNode, ['case-study']),
+        resources: buildRelatedSlot(sourceNode, ['resource']),
       };
     case 'case-study':
       return {
         ...emptyRelated(),
-        services: buildRelatedSlot(sourceNode, [], ['service']),
-        resources: buildRelatedSlot(sourceNode, mapResult.resources, ['resource']),
-        industries: buildRelatedSlot(sourceNode, mapResult.industries, ['industry-detail']),
+        services: buildRelatedSlot(sourceNode, ['service']),
+        resources: buildRelatedSlot(sourceNode, ['resource']),
+        industries: buildRelatedSlot(sourceNode, ['industry-detail']),
       };
   }
 }
@@ -365,16 +284,12 @@ export function getTopicCluster(topic: string): ClusterResult {
   const normalized = topic.trim().toLowerCase();
   const graph = getContentGraphStrict();
   if (normalized.length === 0) {
-    throw new Error('getTopicCluster requires a topic slug.');
+    return { key: topic, nodes: [] };
   }
 
   const nodes = Object.values(graph).filter(node =>
     node.topics?.some(t => t.trim().toLowerCase() === normalized)
   );
-
-  if (nodes.length === 0) {
-    throw new Error(`No topic cluster content found for ${topic}.`);
-  }
 
   return { key: topic, nodes };
 }
@@ -386,16 +301,12 @@ export function getSystemCluster(system: string): ClusterResult {
   const normalized = system.trim().toLowerCase();
   const graph = getContentGraphStrict();
   if (normalized.length === 0) {
-    throw new Error('getSystemCluster requires a system slug.');
+    return { key: system, nodes: [] };
   }
 
   const nodes = Object.values(graph).filter(node =>
     node.systems?.some(s => s.trim().toLowerCase() === normalized)
   );
-
-  if (nodes.length === 0) {
-    throw new Error(`No system cluster content found for ${system}.`);
-  }
 
   return { key: system, nodes };
 }
@@ -407,16 +318,12 @@ export function getContentByIndustry(industry: string): ClusterResult {
   const normalized = industry.trim().toLowerCase();
   const graph = getContentGraphStrict();
   if (normalized.length === 0) {
-    throw new Error('getContentByIndustry requires an industry slug.');
+    return { key: industry, nodes: [] };
   }
 
   const nodes = Object.values(graph).filter(node =>
     node.industries?.some(i => i.trim().toLowerCase() === normalized)
   );
-
-  if (nodes.length === 0) {
-    throw new Error(`No industry cluster content found for ${industry}.`);
-  }
 
   return { key: industry, nodes };
 }

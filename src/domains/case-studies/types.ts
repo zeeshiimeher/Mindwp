@@ -1,8 +1,9 @@
-import type { ReactNode } from 'react';
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
 
 import type { CaseStudyTemplateSection } from './templates';
+
+export type DesignModeValue = any;
 
 export type CaseStudySection = CaseStudyTemplateSection;
 
@@ -15,15 +16,12 @@ export interface CaseStudyMetricPreview {
 export interface CaseStudyData {
   slug: string;
   title: string;
-
   industryCategory: string;
   industryLabel: string;
   industries: string[];
   systems: string[];
   topics?: string[];
-
   publishDate: string;
-
   client: string;
   location: string;
   business: string;
@@ -32,59 +30,12 @@ export interface CaseStudyData {
   heroHeadline: string;
   keyMetrics: CaseStudyMetricPreview[];
   tags: string[];
-
   seo: SharedSeoData & {
     openGraph?: OpenGraphData;
   };
-
   sections: CaseStudySection[];
-
-  templateOverrides?: {
-    hero?: {
-      scenarioBadgeLabel?: string;
-    };
-    metrics?: {
-      resultsSectionTitle?: string;
-    };
-    problem?: {
-      challengeBadgeLabel?: string;
-    };
-    solution?: {
-      solutionBadgeLabel?: string;
-    };
-    workflows?: {
-      workflowsBadgeLabel?: string;
-    };
-    deliverables?: {
-      deliverablesBadgeLabel?: string;
-    };
-    process?: {
-      implementationBadgeLabel?: string;
-      implementationSectionTitle?: string;
-      implementationSectionSubtitle?: string;
-    };
-    features?: {
-      techStackBadgeLabel?: string;
-      techStackSectionTitle?: string;
-      techStackSectionSubtitle?: string;
-    };
-    results?: {
-      detailedResultsBadgeLabel?: string;
-      detailedResultsSectionTitle?: string;
-    };
-    testimonial?: {
-      testimonialSectionAriaLabel?: string;
-    };
-    investment?: {
-      investmentBadgeLabel?: string;
-      investmentSectionTitle?: string;
-      investmentFooterNoteHtml?: ReactNode;
-    };
-    cta?: {
-      primaryButtonLabel?: string;
-      metaItems?: { text: string }[];
-    };
-  };
+  templateOverrides?: Record<string, DesignModeValue>;
+  [key: string]: DesignModeValue;
 }
 
 export type CaseStudyTemplateMetadata = Pick<

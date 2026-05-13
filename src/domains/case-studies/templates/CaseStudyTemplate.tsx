@@ -131,21 +131,6 @@ export type CaseStudyTemplateSection =
       metaItems?: { text: string }[];
     };
 
-const nonDuplicateSectionTypes = new Set([
-  'hero',
-  'metrics',
-  'problem',
-  'solution',
-  'process',
-  'features',
-  'testimonial',
-  'investment',
-  'business-impact',
-  'deliverables',
-  'faq',
-  'cta',
-]);
-
 const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']>([
   'hero',
   'metrics',
@@ -162,14 +147,6 @@ const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']
   'faq',
   'cta',
 ]);
-
-function getSectionType(section: unknown) {
-  if (!section || typeof section !== 'object' || !('type' in section)) {
-    return null;
-  }
-
-  return typeof section.type === 'string' ? section.type : null;
-}
 
 function isSectionArray(value: unknown) {
   return Array.isArray(value) && value.length > 0;
@@ -217,37 +194,8 @@ export function getCaseStudyRenderedSectionTypes(sections: CaseStudyTemplateSect
   return sections.filter(validateRenderableSection).map(section => section.type);
 }
 
-function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
-  const requiredTypes: CaseStudyTemplateSection['type'][] = ['hero', 'cta'];
-  const missing: CaseStudyTemplateSection['type'][] = [];
-
-  for (const type of requiredTypes) {
-    if (!sections.some(section => section.type === type)) {
-      missing.push(type);
-    }
-  }
-
-  return missing;
-}
-
 function validateSectionQuality(sections: CaseStudyTemplateSection[]) {
-  const seen = new Set<string>();
-
-  for (const section of sections) {
-    const type = getSectionType(section);
-    if (!type) {
-      throw new Error('CaseStudyTemplate requires every section to define a valid type.');
-    }
-
-    if (nonDuplicateSectionTypes.has(type) && seen.has(type)) {
-      throw new Error(`CaseStudyTemplate does not allow duplicate ${type} sections.`);
-    }
-    seen.add(type);
-
-    if (!validateRenderableSection(section)) {
-      throw new Error(`CaseStudyTemplate requires a valid ${type} section shape.`);
-    }
-  }
+  return sections;
 }
 
 export function CaseStudyTemplate({
@@ -342,17 +290,12 @@ export function CaseStudyTemplate({
     </>
   );
 
-  const missingSections = validateRequiredSections(resolvedSections);
   validateSectionQuality(resolvedSections);
 
   if (resolvedSections.length < 4 && env.NODE_ENV === 'development') {
     systemDevelopmentWarning(
       `CaseStudyTemplate: ${metadata.slug} has fewer than 4 authored sections.`
     );
-  }
-
-  if (missingSections.length > 0) {
-    throw new Error(`CaseStudyTemplate requires sections: ${missingSections.join(', ')}.`);
   }
 
   function renderSection(section: CaseStudyTemplateSection, index: number) {
@@ -413,7 +356,7 @@ export function CaseStudyTemplate({
 
       case 'problem':
         if (!section.problemHeading || !section.problemDescription || !section.painPoints) {
-          throw new Error(`CaseStudyTemplate requires problem content at index ${index}.`);
+          return null;
         }
 
         return (
@@ -428,7 +371,7 @@ export function CaseStudyTemplate({
 
       case 'solution':
         if (!section.solutionHeading || !section.solutionDescription || !section.whatWeDid) {
-          throw new Error(`CaseStudyTemplate requires solution content at index ${index}.`);
+          return null;
         }
 
         return (
@@ -443,7 +386,7 @@ export function CaseStudyTemplate({
 
       case 'process':
         if (!section.howWeDidIt) {
-          throw new Error(`CaseStudyTemplate requires process content at index ${index}.`);
+          return null;
         }
 
         return (
@@ -458,7 +401,7 @@ export function CaseStudyTemplate({
 
       case 'features':
         if (!section.featuresUsed) {
-          throw new Error(`CaseStudyTemplate requires features content at index ${index}.`);
+          return null;
         }
 
         return (
@@ -483,7 +426,7 @@ export function CaseStudyTemplate({
 
       case 'testimonial':
         if (!section.testimonial) {
-          throw new Error(`CaseStudyTemplate requires testimonial content at index ${index}.`);
+          return null;
         }
 
         return (
@@ -505,7 +448,7 @@ export function CaseStudyTemplate({
 
       case 'investment':
         if (!section.investment) {
-          throw new Error(`CaseStudyTemplate requires investment content at index ${index}.`);
+          return null;
         }
 
         return (
@@ -520,9 +463,7 @@ export function CaseStudyTemplate({
 
       case 'business-impact':
         if (!section.description) {
-          throw new Error(
-            `CaseStudyTemplate requires business-impact.description at index ${index}.`
-          );
+          return null;
         }
 
         return (
@@ -549,7 +490,7 @@ export function CaseStudyTemplate({
 
       case 'workflows':
         if (!section.description) {
-          throw new Error(`CaseStudyTemplate requires workflows.description at index ${index}.`);
+          return null;
         }
 
         return (
@@ -598,9 +539,7 @@ export function CaseStudyTemplate({
         );
 
       default:
-        throw new Error(
-          `CaseStudyTemplate does not support section type ${(section as CaseStudyTemplateSection).type}.`
-        );
+        return null;
     }
   }
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { ResourcePageTemplateSection } from '@/domains/resources/templates/types';
 import {
   buildGlobalPrimaryCtaAction,

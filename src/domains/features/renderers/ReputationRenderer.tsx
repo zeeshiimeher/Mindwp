@@ -182,15 +182,22 @@ export default function ReputationRenderer({ data }: ReputationRendererProps) {
               </p>
             </div>
             <div className='l-grid l-gap-8 md:l-grid-2 lg:l-grid-3'>
-              {testimonials.items.map(testimonial => (
-                <TestimonialCard
-                  key={`${testimonial.author}-${testimonial.business}`}
-                  quote={testimonial.quote}
-                  author={testimonial.author}
-                  business={testimonial.business}
-                  rating={testimonial.rating}
-                />
-              ))}
+              {testimonials.items.map(
+                (testimonial: {
+                  quote: string;
+                  author: string;
+                  business: string;
+                  rating?: number;
+                }) => (
+                  <TestimonialCard
+                    key={`${testimonial.author}-${testimonial.business}`}
+                    quote={testimonial.quote}
+                    author={testimonial.author}
+                    business={testimonial.business}
+                    rating={testimonial.rating}
+                  />
+                )
+              )}
             </div>
           </SectionWrapper>
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
 
 export type { BlogCategory } from './categoryRegistry';
@@ -5,66 +6,12 @@ export { BLOG_CATEGORY_REGISTRY } from './categoryRegistry';
 
 import type { BlogCategory } from './categoryRegistry';
 
-export type BlogPostSection =
-  | {
-      type: 'introduction';
-      content: string[];
-    }
-  | {
-      type: 'content';
-      heading: string;
-      content: string | string[];
-      list?: string[];
-      callout?: string;
-    }
-  | {
-      type: 'cta';
-      heading: string;
-      content: string;
-    }
-  | {
-      type: 'callout';
-      callout: string;
-    }
-  | {
-      type: 'takeaways';
-      heading?: string;
-      content?: string | string[];
-      items: string[];
-    }
-  | {
-      type: 'quote';
-      heading?: string;
-      quote: string;
-      attribution?: string;
-    }
-  | {
-      type: 'steps';
-      heading?: string;
-      content?: string | string[];
-      steps: Array<{ label: string; description?: string }>;
-    }
-  | {
-      type: 'checklist';
-      heading?: string;
-      content?: string | string[];
-      items: string[];
-      columns?: 1 | 2;
-    }
-  | {
-      type: 'image';
-      heading?: string;
-      src: string;
-      alt: string;
-      caption?: string;
-    }
-  | {
-      type: 'faq';
-      items: Array<{
-        question: string;
-        answer: string;
-      }>;
-    };
+export type DesignModeValue = any;
+
+export type BlogPostSection = {
+  type: string;
+  [key: string]: DesignModeValue;
+};
 
 export interface BlogPostData {
   slug: string;

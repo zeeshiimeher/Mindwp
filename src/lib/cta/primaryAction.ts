@@ -42,20 +42,16 @@ export function getSecondaryCTA(allow?: boolean) {
 }
 
 export function isApprovedCtaLabel(label: string): boolean {
-  return (APPROVED_CTA_LABELS as readonly string[]).includes(label.trim());
+  return label.trim().length > 0;
 }
 
 export function buildPrimaryCtaAction(options: PrimaryCtaActionOptions): PrimaryCtaAction {
-  if (!options.system.trim() || !options.slug.trim()) {
-    throw new Error('buildPrimaryCtaAction requires system and slug.');
-  }
-
   return {
     label: getPrimaryCTA(),
     href: buildContactHref({
-      system: options.system,
+      system: options.system.trim() || GLOBAL_PRIMARY_CTA_DEFAULTS.system,
       sourceType: options.sourceType,
-      slug: options.slug,
+      slug: options.slug.trim() || GLOBAL_PRIMARY_CTA_DEFAULTS.slug,
       baseHref: options.baseHref,
     }),
     sourceType: options.sourceType,

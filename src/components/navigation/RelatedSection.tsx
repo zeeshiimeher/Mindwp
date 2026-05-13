@@ -32,9 +32,7 @@ function inferItemLabel(href: string): string {
 /**
  * RelatedSection — global related-content section.
  *
- * Server component. Resolves items from the content graph via buildRelatedContent.
- * Injected globally by domain config wrappers (services/config.tsx, features/config.tsx).
- * Page renderers must NOT render their own related sections.
+ * Server component. Resolves best-effort related items during design mode.
  *
  * CSS: src/styles/components.css (.mw-related-section*)
  */
@@ -48,13 +46,13 @@ export function RelatedSection({
   const content = buildRelatedContent({ pageId, pageType, slug, nodeType });
 
   if (content.groups.length === 0) {
-    throw new Error('[RelatedSection] No related content available.');
+    return null;
   }
 
   const firstGroup = content.groups[0];
 
   if (!firstGroup) {
-    throw new Error('[RelatedSection] Invalid data');
+    return null;
   }
 
   const { label, description, items } = firstGroup;

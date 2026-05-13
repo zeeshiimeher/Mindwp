@@ -1,252 +1,40 @@
-# CONVERSION — MindWP
+# Conversion
 
-> Source of truth for CTA ownership, contact context, page-level CTA enforcement, and `/contact` conversion rules.
-> If this file conflicts with [./FOUNDATION.md](./FOUNDATION.md), fix the conflict immediately.
-> This document controls CTA behavior only. Identity, positioning, page roles, and writing voice still come from [./FOUNDATION.md](./FOUNDATION.md), [./CONTENT.md](./CONTENT.md), and [./WRITING.md](./WRITING.md).
+MindWP CTAs should feel diagnostic, specific, and low-pressure.
 
----
+## Current Design-Mode Rule
 
-## USE THIS DOC
+CTA components and helpers may exist, but runtime CTA enforcement must not block page design.
 
-Use this doc when deciding how a page asks for action.
+During design mode:
 
-This document answers:
+- CTAs may live in custom JSX.
+- CTA wording may be shaped around the section/page.
+- Final CTA placement can move while the page is being designed.
+- `DecisionPanel` is useful, but not mandatory for every prototype.
+- Registry/count/position enforcement is deferred.
 
-- which component owns CTA rendering
-- which layer owns CTA intent
-- how contact URLs are generated
-- how `/contact` preserves conversion context
-- where CTA panels may appear
-- what CTA behavior is not allowed
+## CTA Intent
 
----
+Good CTAs should:
 
-## CONVERSION DECISION ORDER
+- follow recognition and proof
+- invite a useful conversation
+- reflect the page's owning problem
+- avoid pressure, hype, or fake urgency
 
-Before adding or changing a CTA, decide in this order:
+Do not invent proof, savings, guarantees, rankings, or results to make a CTA stronger.
 
-1. Confirm the page type from [./CONTENT.md](./CONTENT.md).
-2. Confirm the page behavior from [./FOUNDATION.md](./FOUNDATION.md): landing, system, or entry.
-3. Confirm the CTA intent allowed for that page type.
-4. Confirm the CTA position allowed by the registry.
-5. Confirm the canonical system context.
-6. Confirm the generated contact source.
-7. Confirm the CTA label resolves from `src/config/ctaLabels.ts`.
+## Contact Links
 
-Do not write or hardcode CTA copy before this is clear.
+Use `buildContactHref()` when a stable CTA should preserve source context. During rough design exploration, do not let contact-helper plumbing block section composition.
 
----
+## Deferred
 
-## SYSTEM GUARANTEES
+Rebuild stricter CTA rules later after the approved page system exists:
 
-- `/contact` is the only form entry route.
-- CTA panels render through `DecisionPanel` in rebuilt/new pages.
-- `PrimaryCTASection` is quarantine/delete-later only — used by unrebuilt old pages, not a current architecture pattern.
-- CTA labels resolve through `src/config/ctaLabels.ts`.
-- Contact URLs resolve through `src/lib/contact/contactHref.ts`.
-- Page-level CTA rules enforce intent, position, and panel count through the CTA registry.
-- Route files and domain data files do not own CTA intent.
-- CTA behavior must support the page role; it must not change the page role.
-- A valid CTA contract does not automatically mean the CTA is persuasive, well-timed, or authority-safe.
-
----
-
-## OWNERSHIP BOUNDARIES
-
-### Template and Page Adapter
-
-Templates and page adapters own:
-
-- `pageId`
-- `pageType`
-- CTA intent
-- CTA position
-- page-scoped registry setup through `CTARegistryProvider`
-
-### DecisionPanel (current architecture)
-
-`DecisionPanel` owns CTA rendering, label resolution, contact URL generation, and CTA registration in rebuilt/new pages.
-
-It receives action data from the renderer — no manual final-CTA button markup in page renderers.
-
-File: `src/components/conversion/DecisionPanel.tsx`
-
-### PrimaryCTASection (quarantine — old pages only)
-
-`PrimaryCTASection` is a quarantine/delete-later component used only by unrebuilt old pages.
-
-Do not import `PrimaryCTASection` in rebuilt or new files. It will be deleted once all consumers are rebuilt.
-
-### Contact Builder
-
-`buildContactHref()` owns contextual `/contact` URL generation.
-
-Hardcoded contact query strings are not allowed.
-
----
-
-## CANONICAL CTA CONTRACT
-
-Every production CTA that routes to `/contact` needs:
-
-- one canonical `system`
-- one generated `source`
-- one page identity composed of `pageId` and `pageType`
-
-Canonical source types:
-
-- `service`
-- `feature`
-- `industry`
-- `blog`
-- `resource`
-- `case-study`
-- `page`
-- `global`
-
-`industry-detail` and `industry-category` normalize to `industry` for contact-source generation.
-
-Canonical contact URLs use this shape:
-
-```text
-/contact?system={system}&source={type}/{slug}
-```
-
-Rules:
-
-- `system` must be canonical.
-- `source` must be generated, not manually composed in page content.
-- invalid context throws; silent fallback is not allowed.
-
----
-
-## CTA INTENT MODEL
-
-Default page-intent mapping is owned by `src/lib/page/pageIdentity.ts`.
-
-| Page Type           | Default Intent |
-| ------------------- | -------------- |
-| `service`           | `conversion`   |
-| `feature`           | `comparison`   |
-| `industry-detail`   | `comparison`   |
-| `industry-category` | `comparison`   |
-| `case-study`        | `diagnostic`   |
-| `blog`              | `entry`        |
-| `resource`          | `entry`        |
-| `page`              | `entry`        |
-
-This default may be narrowed by the page template, but it may not break page-level registry rules.
-
-Intent must follow page behavior:
-
-- landing pages may move toward contact, but must not feel like forced sales pages
-- system pages may use conversion intent when the reader is ready to decide
-- entry pages usually diagnose or route before asking for direct contact
-- case studies prove first, ask later
-
-### Hero Actions
-
-Hero sections may include a primary action or routing link.
-
-Hero actions are not conversion CTAs. They support recognition and initial routing — helping the reader move to the right context or next step.
-
-Hero actions do not replace `DecisionPanel`. `DecisionPanel` owns the main page-level conversion CTA and must render in its correct position within the page flow.
-
-Do not interpret the rule against premature conversion as "no action in the hero". The restriction is on conversion escalation before sufficient recognition or proof, not on routing and recognition actions.
-
-### Case Study CTA
-
-Case-study CTAs must stay subordinate to the proof narrative.
-
-Rules:
-
-- CTA appears only at the end of the case study
-- CTA tone stays soft and observational
-- CTA must not interrupt the proof narrative with a pushy escalation
-- CTA should route toward the service, industry, or system context proven by the case study
-
----
-
-## CTA REGISTRY RULES
-
-- `CTARegistryProvider` is required at the page or template boundary.
-- One page gets one page-scoped CTA registry.
-- One page may not render more CTA panels than its page-type rule allows.
-- One page may not render more than one `conversion` CTA.
-- Non-homepage pages may not duplicate a CTA intent.
-- Inline positions may not use `conversion` intent.
-- CTA position must match the page behavior type.
-- A technically valid CTA can still be removed if it weakens page flow.
-
-Runtime owners:
-
-- `src/components/system/PageEnforcement.tsx`
-- `src/lib/cta/ctaRegistry.ts`
-
----
-
-## CTA LABEL RESOLUTION
-
-CTA labels are resolved, not manually invented page by page.
-
-Rules:
-
-- `resolveCtaLabel()` is the primary label resolver.
-- `CTA_LABEL_MAP` and the page-type rule sets in `src/config/ctaLabels.ts` are label authorities.
-- The default contact label remains `Start a Conversation` where the rule set falls back to canonical defaults.
-- Unapproved CTA labels create drift and should be removed.
-- CTA labels must feel like the next natural step for the page, not a generic sales push.
-
----
-
-## CONTACT FLOW
-
-1. A page renders `DecisionPanel` with canonical `system`, `slug`, `pageId`, and `pageType` context.
-2. `DecisionPanel` resolves the CTA label.
-3. `DecisionPanel` generates the contextual `/contact` href.
-4. `/contact` reads `system` and `source` from the URL.
-5. The form preserves that context through render, validation, retry, and submission.
-6. Submission passes complete conversion context onward.
-
-If `system` or `source` is invalid or missing, the conversion contract fails.
-
----
-
-## WHAT IS NOT ALLOWED
-
-- Alternate form entry routes.
-- Hardcoded `/contact?system=...&source=...` strings in production content or templates.
-- Route files rendering `DecisionPanel` or `PrimaryCTASection` directly.
-- Domain data files rendering `DecisionPanel` or `PrimaryCTASection` directly.
-- Inline conversion CTAs.
-- Multiple conversion CTAs on one page.
-- Silent fallback when contact context is invalid.
-- Manual final conversion button markup in rebuilt pages where `DecisionPanel` applies.
-- New imports of `PrimaryCTASection` in rebuilt or new files.
-- CTA copy that makes MindWP sound like a normal website builder, agency, SaaS tool, or template provider.
-- CTAs that ask for conversion before the page has created enough recognition, clarity, or proof.
-- CTA changes made only to improve click volume while weakening authority or trust.
-
----
-
-## ENFORCEMENT MODEL
-
-| Concern                            | Primary Owner                | Enforced By                            |
-| ---------------------------------- | ---------------------------- | -------------------------------------- |
-| CTA owner boundary                 | Page adapters and templates  | `validate-cta-violations.ts`           |
-| CTA placement and duplication      | CTA registry                 | runtime assertions in `ctaRegistry.ts` |
-| Contact context validity           | `buildContactHref()`         | runtime validation in `contactHref.ts` |
-| Label contract                     | `ctaLabels.ts`               | CTA label contract validator           |
-| Conversion URL and `/contact` flow | contact and conversion layer | conversion contract validator          |
-
-Automated enforcement confirms CTA ownership, placement, duplication, labels, and contact context.
-Manual review still owns CTA timing, tone, persuasion, and authority fit.
-
----
-
-## CROSS-REFERENCE MAP
-
-- Page roles and funnel boundaries: [./CONTENT.md](./CONTENT.md)
-- System hierarchy and system vocabulary: [./FOUNDATION.md](./FOUNDATION.md)
-- Public writing style and CTA language: [./WRITING.md](./WRITING.md)
-- Graph routing and related-content context: [./GRAPH.md](./GRAPH.md)
+- canonical labels
+- contact-source contracts
+- CTA registry
+- panel counts
+- CTA position rules

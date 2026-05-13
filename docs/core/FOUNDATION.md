@@ -302,8 +302,8 @@ This is a controlled acquisition exception, not a second flagship.
 1. Every public page resolves to one page type and one page identity.
 2. Every page belongs to one primary system and may declare supporting metadata.
 3. Every page respects its behavior type and writing rules.
-4. Validators and reports confirm structural alignment with the canonical model.
-5. Passing validators does not automatically confirm positioning strength, persuasion, or authority quality.
+4. Design approval comes before final architecture during the rebuild.
+5. Passing checks does not automatically confirm positioning strength, persuasion, or authority quality.
 
 Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md), [./GRAPH.md](./GRAPH.md), and [./CONVERSION.md](./CONVERSION.md).
 
@@ -325,16 +325,15 @@ Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.
 
 ### CTA Ownership
 
-- Page adapters and templates own page identity, CTA intent, and CTA position.
-- `DecisionPanel` owns CTA rendering in rebuilt/new pages. `PrimaryCTASection` is quarantine/delete-later (used only by unrebuilt old pages; do not import in new or rebuilt files).
-- `buildContactHref()` owns contextual contact URL generation.
-- Route files and data files do not own CTA intent.
+- CTAs should follow recognition and proof.
+- `DecisionPanel` and contact helpers are useful production tools, not design-mode gates.
+- CTA registry, position, and label enforcement are deferred until the approved system is rebuilt.
 
 ### Tool Ownership
 
-- `npm run system:full` owns the full-system run.
-- `validate-all.mjs` owns validator orchestration.
-- Reports describe system state; they do not define it.
+- `npm run build` owns production build verification.
+- `npm run check:minimal` owns the light design-mode static check.
+- `npm run check:frontend` owns runtime smoke verification.
 
 ---
 

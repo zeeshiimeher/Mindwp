@@ -665,4 +665,4 @@ If a new session needs fast context, this file should answer:
 - which industries are highest priority
 - which framework topics matter most
 
-The live architecture still belongs to `CONTENT.md`, `GRAPH.md`, runtime registries, and validators.
+The active design-mode architecture belongs to `docs/Planning/design-first-rebuild.md`, `CONTENT.md`, and the current runtime code.

@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { IndustryCategory } from '@/domains/industries/catalog';
+
+export type DesignModeValue = any;
 
 export type IndustrySeoData = {
   title: string;
@@ -12,69 +15,64 @@ export type IndustrySeoData = {
 };
 
 export type IndustryHeroData = {
-  badge: string;
+  badge?: string;
   title: string;
   description: string;
-  list: string[];
+  list?: string[];
+  [key: string]: DesignModeValue;
 };
 
-export type IndustrySectionHeading = {
-  kicker?: string;
-  title: string;
-  description?: string;
-};
-
-export type IndustryFaqItem = {
+export type FAQItem = {
   id: string;
   question: string;
   answer: string;
 };
 
-export type IndustryFaqData = {
-  header: IndustrySectionHeading;
-  items: IndustryFaqItem[];
-};
-
-export type IndustryCtaData = {
+export type CTAConfig = {
   heading: {
     kicker?: string;
     title: string;
     description: string;
   };
-  expectations?: {
-    num?: string;
-    text: string;
-  }[];
-  reassurance?: {
-    noSell?: string;
-    tone?: string;
-  };
+  actions?: Array<{
+    label: string;
+    href: string;
+    primary?: boolean;
+    variant?: string;
+  }>;
+  [key: string]: DesignModeValue;
 };
 
-export type IndustryCategoryPageData = {
+export type IndustryPageDataBase = {
   seo: IndustrySeoData;
   slug: string;
-  type: 'category';
-  category: IndustryCategory;
+  type: 'category' | 'detail';
+  category?: IndustryCategory;
+  parentSlug?: IndustryCategory;
   hero: IndustryHeroData;
   systems: string[];
   industries?: string[];
   topics?: string[];
-  faq: IndustryFaqData;
-  cta: IndustryCtaData;
+  faq: {
+    header: {
+      kicker?: string;
+      title: string;
+      description?: string;
+    };
+    items: FAQItem[];
+  };
+  cta: CTAConfig;
+  [key: string]: DesignModeValue;
 };
 
-export type IndustryDetailPageData = {
-  seo: IndustrySeoData;
-  slug: string;
+export type IndustryCategoryPageData = IndustryPageDataBase & {
+  type: 'category';
+  category: IndustryCategory;
+};
+
+export type IndustryDetailPageData = IndustryPageDataBase & {
   type: 'detail';
   parentSlug: IndustryCategory;
-  hero: IndustryHeroData;
-  systems: string[];
-  industries: string[];
-  topics?: string[];
-  faq: IndustryFaqData;
-  cta: IndustryCtaData;
 };
 
 export type IndustryCategoryRendererProps = {

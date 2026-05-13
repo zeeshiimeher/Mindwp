@@ -1,8 +1,6 @@
 import type { ContentNodeType } from '@/lib/content-graph/types';
 import { normalizePath } from '@/lib/seo/config';
 
-import topicAuthorityScoresReport from '../reports/topic-authority-scores.json';
-
 import { getContentPolicy } from './contentPolicy';
 
 export type IndexingPolicyKind =
@@ -37,21 +35,7 @@ export type ResolvedIndexingPolicy = {
   disallow: boolean;
 };
 
-type TopicAuthorityScoreEntry = {
-  topic: string;
-  score: number;
-};
-
-export const MIN_SCORE_FOR_PUBLIC_TOPIC = 90;
-
-const APPROVED_PUBLIC_TOPICS = new Set(
-  (
-    (topicAuthorityScoresReport as { data?: { scores?: TopicAuthorityScoreEntry[] } }).data
-      ?.scores ?? []
-  )
-    .filter(entry => entry.score >= MIN_SCORE_FOR_PUBLIC_TOPIC)
-    .map(entry => entry.topic)
-);
+const APPROVED_PUBLIC_TOPICS = new Set<string>();
 
 const INDEXABLE_CLASSIFICATIONS = new Set<IndexingClassification>([
   'marketing',

@@ -1,188 +1,123 @@
-# MindWP Repo Agent Instructions
+# MindWP Agent Instructions
+
+## Current Status
+
+MindWP main is being reset for a design-first rebuild.
+
+- The old validator/report/control-plane pipeline has been removed from active use.
+- `Mindwp-Design` is the visual reference and quality source.
+- This main folder is the production-path rebuild target.
+- Design approval comes before final architecture.
+
+Do not recreate the old system to make current pages feel tidy. The current main folder is a rebuild workspace, not production truth.
 
 ## What MindWP Is
 
-- systems-first digital infrastructure consultancy for established service businesses
-- not generic web design, not SaaS, not tool reseller, not template business
-- primary goal: qualified enquiries and conversion through structured systems
-- six canonical systems: Smart Website Systems, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth
+- Systems-first digital infrastructure consultancy for established service businesses.
+- Not a generic web design agency, SaaS product, tool reseller, or template business.
+- Primary goal: qualified enquiries and conversion through visible, reliable business handling.
+- Six business systems: Smart Website Systems, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth.
 
-## Core Architecture
+Public copy starts from the owner's working day: calls, searches, forms, quotes, jobs, reviews, inboxes, staff, missed follow-up. Use internal system structure quietly; do not lead with it before the reader recognises the situation.
 
-CONTENT → PATTERN → COMPONENT → VARIANT / CONTROL → RENDER
+## Build Logic
 
-- content owns business meaning
-- pattern owns section job
-- component owns reusable structure
-- renderer maps prepared data and composes sections
-- CSS owns visuals
-
-## Source of Truth Order
-
-1. current scoped user prompt
-2. relevant `docs/core/*` authority for the task
-3. `docs/Planning/System-hard-reset.md` for hard-reset page work only
-4. `docs/Planning/Legacy-dependency-map.md` for legacy cleanup only
-5. current code
-6. `AGENTS.md` as stable background guidance
-
-Conflict handling:
-
-- Minor implementation differences: follow current prompt and code; mention assumption in report if useful.
-- Material conflicts (business positioning, public copy, page mapping, component ownership, data contracts, validators, irreversible edits): inspect relevant files before editing that part.
-- Do not stop the whole task for small naming, formatting, import, or local implementation differences.
-
-## New Chat Rule
-
-Every new Copilot chat should:
-
-- read the current user prompt carefully
-- identify task type: planning, implementation, review, or setup
-- read only the relevant docs and files for that task
-- avoid broad repo scans unless the prompt asks for repo-wide work
-- produce a short plan before large edits
-- execute within the scoped prompt only
-
-Task-based reading:
-
-- Positioning/content tasks: `FOUNDATION.md`, `WRITING.md`, `CONTENT.md`, `CONVERSION.md`, `GRAPH.md`.
-- Design/UI tasks: `DESIGN.md` plus relevant components/CSS.
-- Architecture/control-plane tasks: `SYSTEM-ARCHITECTURE.md`, `SYSTEM-RULES.md`, and relevant scripts.
-- Legacy cleanup: `docs/Planning/Legacy-dependency-map.md`.
-- Hard-reset page work: `docs/Planning/System-hard-reset.md` plus relevant stable docs.
-
-Do not read every doc for every task unless the prompt asks for repo-wide work.
-
-### Positioning orientation for page work
-
-Before writing or editing any page content, think from the business owner's visible working day:
-
-calls, searches, forms, quotes, reviews, jobs, staff, inboxes, and missed follow-up.
-
-Use the six systems as hidden structure first. Do not lead with internal architecture.
-
-Public copy should make the buyer think: "that happens here" — not "I need to understand this framework first."
-
-If the opening line uses the words infrastructure, layer, stack, surface, or systems-first before the reader's situation is clear, reverse the order.
-
-## Current New-System Components
-
-Use these for all new/rebuilt pages. Do not use old reusable/sections components:
-
-- `SectionFrame` (`src/components/layout/`) — section shell: owns `<section>`, container, heading block, tone/bg
-- `HeroFrame` (`src/components/layout/`) — hero shell: full hero section, split layout, actions, chips, visual slot
-- `DecisionPanel` (`src/components/conversion/`) — final conversion section; replaces `PrimaryCTASection`
-- `FAQSection` (`src/components/content/`) — full FAQ section; wraps SectionFrame + Accordion
-- `RelatedSection` (`src/components/navigation/`) — global related content; injected by domain config wrappers only
-- `Accordion` (`src/components/primitives/`) — disclosure primitive; no section framing
-- `Tabs` (`src/components/primitives/`) — tab primitive; generic API
-- `InlineText` (`src/components/primitives/`) — renders `[[muted:...]]` markers; inline use only
-- `SignalDot`, `StatusBadge` (`src/components/primitives/`) — status/signal primitives
-- `InternalLink` (`src/global/`) — internal link primitive
-
-## Component Folder Rules
-
-Approved new component folders:
-
-- `src/components/layout` — section framing (SectionFrame, HeroFrame)
-- `src/components/primitives` — behavior/accessibility primitives (Accordion, Tabs, InlineText, signals)
-- `src/components/conversion` — final conversion panels (DecisionPanel)
-- `src/components/navigation` — related content, nav helpers (RelatedSection)
-- `src/components/content` — full reusable content sections (FAQSection)
-
-Quarantined (do not import in rebuilt/new files):
-
-- `src/components/reusable` — old system; all unrebuilt domains still depend on it
-- `src/components/sections` — old system; delete when PrimaryCTASection gate is met
-
-## CSS Rules
-
-Current CSS stack (in import order):
-
-```
-tokens.css        → raw values only; all --mw-* token definitions
-reset.css         → browser reset
-typography.css    → global type scale
-layout.css        → containers, SectionFrame, HeroFrame, motion/layout primitives
-primitives.css    → buttons, atoms, Accordion, Tabs, signal/status primitives
-components.css    → Header, Footer, DecisionPanel, RelatedSection, FAQSection
-page/domain CSS   → page-specific visual bodies only
+```text
+BUSINESS REALITY -> PAGE INTENT -> PATTERN LOGIC -> SECTION COMPOSITION -> TAILWIND JSX -> APPROVAL -> EXTRACTION
 ```
 
-Rules:
+1. Business Reality: what is visibly happening in the buyer's business.
+2. Page Intent: what the visitor must recognise, understand, or decide.
+3. Pattern Logic: leak, handoff, stack, split, arc, before/after, priority, fit, proof, scenario, operating map.
+4. Section Composition: the actual section shape.
+5. Tailwind JSX: build the page/section directly.
+6. Approval: user visually approves.
+7. Extraction: only then extract primitives, stable data, validators, SEO/graph/related rules, and tighter types.
 
-- no raw hex or `rgba()` outside `tokens.css`
-- no inline styles
-- no Tailwind classes in production TSX
-- no random hardcoded values — use `--mw-*` tokens only
-- page CSS owns page-specific visuals; shared components own shared CSS in global files
-- do not invent token names; confirm the token exists in `tokens.css` first
+## Design-Mode Allowances
 
-## CTA and Related Rules
+During design mode, agents may use:
 
-- `DecisionPanel` is the final conversion component for all new/rebuilt pages
-- `PrimaryCTASection` is quarantine delete-later — do not use in new/rebuilt files
-- `RelatedSection` is global/wrapper-owned — injected by domain config wrappers
-- Page renderers must NOT manually render related sections
-- No hardcoded `/contact` in rebuilt CTA actions — use `buildContactHref()` from `@/lib/contact/contactHref`
-- Use `PRIMARY_CTA_LABEL` from `@/lib/cta/primaryAction` as the CTA label
+- JSX-owned content
+- local arrays inside page files
+- page-owned section layouts
+- temporary repeated JSX
+- flexible section count
+- full section rewrites
+- Tailwind layout/composition utilities
+- page-local helper components
+- minimal data files
+- broad transitional types
 
-## InlineText / Muted Text Rules
+Good UI matters more than perfect architecture during design mode. Do not preserve old data contracts by making old section fields optional.
 
-- Use `[[muted:...]]` inside title/heading data strings
-- Do not use `titleMuted` prop
-- Do not use `headingMuted` data field
-- Do not put HTML or JSX in data strings
-- `InlineText` is used internally by `SectionFrame` and `HeroFrame`
+## Components
 
-## Content Rules
+Useful components may be used as optional building blocks:
 
-- read `WRITING.md` and `CONTENT.md` before writing or reshaping public content
-- existing data and content is the first source
-- write only operational, specific, non-hype copy
-- do not invent fake metrics, testimonials, guarantees, proof, rankings, or client results
-- do not add service capabilities not supported by the business
-- GoHighLevel is internal and white-label — must not be mentioned publicly
+- `HeroFrame` / `PageHero`
+- `SectionFrame`
+- `FAQSection` / FAQ blocks
+- `DecisionPanel` / CTA blocks
+- `Container`
+- `SectionHeader`
+- `Button`
+- `SignalDot`
+- `Pill` / `Badge`
 
-## Execution Discipline
+These are tools, not gates. No validator or data contract should require every section to use a specific shell during design mode.
 
-- audit before editing: read the current file first
-- bulk work is allowed when the prompt defines scope; inside bulk work, execute task-by-task
-- do not patch unrelated systems in parallel
-- state intended edits before applying large changes
-- run relevant checks after scoped edits
-- report files changed, checks run, and remaining blockers
-- do not create extra planning or memory files unless explicitly asked
+## Styling
 
-## Validators / Tests
+Tailwind is allowed for layout, composition, spacing, responsive behavior, and typography during design mode. Token-aware colors and surfaces are preferred where already available, but color/token enforcement is a later production pass.
 
-- validators protect the current system, not old UI
-- do not weaken validators to silence errors
-- update validators if they enforce old UI assumptions
-- after every big refactor/task/phase, run `npm run lint -- --fix` `npx prettier --write npm run lint` after that run `system:full` and `build` — both must be clean
+Do not let old CSS-only rules block visual exploration.
 
-Workspace tasks: `system:quick`, `build`, `system:full`, `system:regen` (if explicitly needed).
+## Active Commands
 
-## What Not To Create Unless Asked
+- `npm run dev`
+- `npm run build`
+- `npm run lint`
+- `npm run lint:fix`
+- `npm run typecheck`
+- `npm run check:names`
+- `npm run check:minimal`
+- `npm run check:frontend`
 
-- prompt files
-- MCP configs
-- scratch or planning docs
-- nested `AGENTS` files
-- custom agents
-- broad new architecture docs
+Use `check:frontend` after visual/page work to catch browser/runtime crashes.
 
-## Self-Improvement Rule
+## Do Not Bring Back
 
+- `system:full`
+- `system:quick`
+- `validate:all`
+- `build-safe`
+- old validators
+- graph/report/authority gates
+- canonical section contracts
+- old render-alignment checks
+- old dashboard/report system
+- mandatory related-section injection
+- CTA registry enforcement
+- strict token/Tailwind gates during design mode
 
-Do not suggest `AGENTS.md` updates during normal task reports.
+## Safety Rules
 
-Only suggest an update when:
+- Do not publicly mention GoHighLevel, GHL, or HighLevel.
+- Do not invent fake proof, fake metrics, testimonials, rankings, guarantees, or client results.
+- Do not add unsupported service capabilities.
+- Build and frontend smoke should pass after page work.
+- If docs conflict, follow the current scoped user prompt first, then the design-first docs, then current code.
 
-- the same confusion happens more than once
-- the current instruction causes wrong behavior
-- a missing rule creates real implementation risk
-- or the user explicitly asks to improve workspace instructions
+## Reading Discipline
 
-When suggesting: keep it short, explain the reason. Do not edit `AGENTS.md` unless the current prompt explicitly allows it.
+Read only what is relevant to the task. For page/design work, prefer:
 
+- `docs/Planning/design-first-rebuild.md`
+- `docs/core/FOUNDATION.md`
+- `docs/core/WRITING.md`
+- `docs/core/CONTENT.md`
+- `docs/core/CONVERSION.md`
+- `docs/core/DESIGN.md`
+
+Do not revive archived planning docs as active instructions.

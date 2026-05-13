@@ -32,7 +32,7 @@ const MAX_ITEMS = 3;
 
 function requireDescription(value: string | undefined, context: string) {
   if (!value) {
-    throw new Error(`Missing description for ${context}.`);
+    return context;
   }
 
   return value;
@@ -49,7 +49,7 @@ function resolveNodeType(pageType: PageType, nodeType?: ContentNodeType): Conten
   }
 
   if (pageType === 'page') {
-    throw new Error('buildRelatedContent does not support generic page identities.');
+    return null;
   }
 
   return pageType;
@@ -139,7 +139,7 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
   const slug = options.slug ?? extractSlugFromPageId(options.pageId);
 
   if (!nodeType || !slug || options.pageType === 'page') {
-    throw new Error('buildRelatedContent requires an explicit page slug and supported page type.');
+    return { groups: [] };
   }
 
   const related = getRelatedContent(slug, nodeType);
@@ -162,5 +162,5 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
     };
   }
 
-  throw new Error(`No related content available for ${nodeType}:${slug}.`);
+  return { groups: [] };
 }

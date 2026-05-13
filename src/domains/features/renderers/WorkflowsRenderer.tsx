@@ -1,4 +1,4 @@
-import { Workflow } from 'lucide-react';
+import { type LucideIcon, Workflow } from 'lucide-react';
 
 import { ExploreCardsSection } from '@/components/reusable/sections/core';
 import {
@@ -43,27 +43,29 @@ const WorkflowVisual = ({ data }: { data: FeaturePageData }) => {
             </div>
           </div>
 
-          {flow.actions.map((action, index) => {
-            const ActionIcon = action.icon;
-            return (
-              <div key={action.title} className='l-stack l-stack--tight'>
-                <div className='l-row l-row-center'>
-                  <ConnectorIcon className='text-muted-foreground rotate-90' />
-                </div>
-                <div
-                  className={`l-row l-items-center l-gap-3 p-3 rounded-lg ${actionRowClasses[index]}`}
-                >
-                  <div className={`icon-container-sm rounded-full ${actionIconClasses[index]}`}>
-                    <ActionIcon className='text-white' />
+          {flow.actions.map(
+            (action: { icon: LucideIcon; title: string; subtitle: string }, index: number) => {
+              const ActionIcon = action.icon;
+              return (
+                <div key={action.title} className='l-stack l-stack--tight'>
+                  <div className='l-row l-row-center'>
+                    <ConnectorIcon className='text-muted-foreground rotate-90' />
                   </div>
-                  <div className='text-sm'>
-                    <div>{action.title}</div>
-                    <div className='text-xs text-muted-foreground'>{action.subtitle}</div>
+                  <div
+                    className={`l-row l-items-center l-gap-3 p-3 rounded-lg ${actionRowClasses[index]}`}
+                  >
+                    <div className={`icon-container-sm rounded-full ${actionIconClasses[index]}`}>
+                      <ActionIcon className='text-white' />
+                    </div>
+                    <div className='text-sm'>
+                      <div>{action.title}</div>
+                      <div className='text-xs text-muted-foreground'>{action.subtitle}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            }
+          )}
         </div>
       </div>
     </Card>

@@ -229,13 +229,13 @@ Do not invent parallel identifiers, parallel page roles, or parallel relationshi
 
 ## CONTENT FLOW AND RELATIONSHIPS
 
-The canonical content path is:
+The design-mode content path is:
 
 ```text
-domain data -> registry -> content model -> graph -> resolver -> route -> page -> CTA -> validator
+business reality -> page intent -> pattern logic -> section composition -> JSX -> approval -> extraction
 ```
 
-Relationship generation, ranking, and authority handling are defined in [./GRAPH.md](./GRAPH.md).
+Relationship generation, ranking, and authority handling are deferred in [./GRAPH.md](./GRAPH.md).
 
 Content flow must preserve meaning, not just structure:
 
@@ -330,11 +330,11 @@ Case studies may support service conversion, but the case study itself remains a
 
 ### Add a Service or Feature Page
 
-1. Add the owning domain data.
-2. Assign one canonical primary system.
-3. Keep the page inside its tier role.
-4. Let related content derive from metadata.
-5. Validate the touched slice, then run the full gate.
+1. Start from the buyer's visible working problem.
+2. Confirm the owning system and page role.
+3. Compose the strongest page sections in JSX during design mode.
+4. Keep proof honest and system boundaries clear.
+5. Extract stable data after visual approval.
 
 ### Add a Related Content Opportunity
 
@@ -346,17 +346,9 @@ Case studies may support service conversion, but the case study itself remains a
 
 ## ENFORCEMENT MODEL
 
-| Concern                                         | Primary Owner                    | Enforced By                                       |
-| ----------------------------------------------- | -------------------------------- | ------------------------------------------------- |
-| Metadata completeness and canonical identifiers | Domain data and registries       | `validate-content-contract.mjs`                   |
-| Route and page structure                        | Section order and authored flow  | `validate-section-order-consistency.mjs`          |
-| Graph integrity                                 | Content model and graph registry | `validate-graph.ts`                               |
-| Related-content duplication                     | Related-content system           | `validate-related-duplication.ts`                 |
-| Internal link and docs hygiene                  | Content and docs surfaces        | `validate-internal-links.ts`, `validate-docs.mjs` |
-| Behavior and positioning alignment              | Content layer and page type      | System rules + validators                         |
+Design-mode enforcement is intentionally minimal. Manual review owns page intent, authority strength, specificity, page differentiation, and conversion clarity.
 
-Automated enforcement confirms contracts and structure.
-Manual review still owns authority strength, specificity, page differentiation, and conversion clarity.
+Stricter metadata, graph, related-content, and section validators should be rebuilt later around approved designs.
 
 ---
 

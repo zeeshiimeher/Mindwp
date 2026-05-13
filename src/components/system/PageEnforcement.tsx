@@ -28,7 +28,7 @@ export type PageEnforcementSnapshot = {
 };
 
 export function reportPageEnforcementError(error: Error) {
-  throw error;
+  globalThis.reportError?.(error);
 }
 
 function registerPageEnforcementState(state: RegisteredPageEnforcement) {

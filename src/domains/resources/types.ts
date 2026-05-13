@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
 
 import type { ResourcePageTemplateSection } from './templates/types';
@@ -6,6 +7,8 @@ export type { ResourceCategory } from './categoryRegistry';
 export { RESOURCE_CATEGORY_REGISTRY } from './categoryRegistry';
 
 import type { ResourceCategory } from './categoryRegistry';
+
+export type DesignModeValue = any;
 
 export type ResourceCategoryMetadata = {
   id: ResourceCategory;
@@ -35,4 +38,5 @@ export interface ResourceData {
     openGraph?: OpenGraphData;
   };
   sections: ResourceSection[];
+  [key: string]: DesignModeValue;
 }

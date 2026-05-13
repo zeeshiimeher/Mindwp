@@ -1,146 +1,30 @@
-import type { LucideIcon } from 'lucide-react';
-
-export interface SectionIntro {
-  title: string;
-  description?: string;
-  badge?: string;
-}
-
-export interface IconCardItem {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  iconType?: 'primary' | 'secondary' | 'accent';
-  keywords?: string;
-}
-
-export interface ComparisonBlock {
-  type: 'before' | 'after';
-  title: string;
-  items: string[];
-}
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type DesignModeValue = any;
 
 export interface FAQItem {
   question: string;
   answer: string;
-  q?: string;
-  a?: string;
 }
 
-export interface QualificationBlock {
-  header: SectionIntro;
-  strongFitTitle: string;
-  notForTitle: string;
-  strongFit: {
+export type CTAConfig = {
+  heading: {
     title: string;
     description: string;
-  }[];
-  notFor: {
-    title: string;
-    description: string;
-  }[];
-}
-
-export interface ServicePageSections {
-  comparison?: {
-    header: SectionIntro;
-    items: ComparisonBlock[];
+    kicker?: string;
   };
-
-  value?: {
-    header: SectionIntro;
-    items: IconCardItem[];
-  };
-
-  coreLayer?: {
-    header: SectionIntro;
-    cards: {
-      title: string;
-      description: string;
-      points: string[];
-      featured?: boolean;
-    }[];
-  };
-
-  types?: {
-    header: SectionIntro;
-    items: IconCardItem[];
-  };
-
-  included?: {
-    header: SectionIntro;
-    items: string[];
-  };
-
-  process?: {
-    header: SectionIntro;
-    steps: {
-      number: string;
-      title: string;
-      description: string;
-    }[];
-  };
-
-  visibilityFoundations?: {
-    header: SectionIntro;
-    tagline?: string;
-    narrativeTitle: string;
-    body: string;
-    narrativeParagraphs: string[];
-    bullets: string[];
-    highlights: {
+  actions: [
+    {
       label: string;
-      value: string;
-    }[];
-    image: {
-      src: string;
-      alt: string;
-      width?: number;
-      height?: number;
-    };
-    items: IconCardItem[];
-    alternatingItems: {
-      title: string;
-      description: string;
-      points: string[];
-    }[];
-  };
-
-  technologies?: {
-    header: SectionIntro;
-    items: {
-      name: string;
-      description: string;
-      icon: LucideIcon;
-    }[];
-  };
-
-  businessSizes?: {
-    header: SectionIntro;
-    items: {
-      icon: LucideIcon;
-      title: string;
-      benefit: string;
-      description: string;
-      iconType?: 'primary' | 'secondary' | 'accent';
-    }[];
-  };
-
-  concerns?: {
-    header: SectionIntro;
-    items: IconCardItem[];
-  };
-
-  qualification?: QualificationBlock;
-
-  faq?: {
-    header: SectionIntro;
-    items: FAQItem[];
-  };
-}
+      href: string;
+      primary: true;
+      variant?: string;
+    },
+  ];
+  [key: string]: DesignModeValue;
+};
 
 export interface ServicePageData<
-  TSections extends Record<string, unknown> = Record<string, unknown>,
+  TSections extends Record<string, DesignModeValue> = Record<string, DesignModeValue>,
 > {
   slug: string;
   badge: string;
@@ -164,14 +48,5 @@ export interface ServicePageData<
 
   sections: TSections;
 
-  cta: {
-    heading: {
-      title: string;
-      description: string;
-      kicker?: string;
-    };
-    actions: [{ label: string; href: string; primary: true }];
-    expectations?: Array<{ num: string; text: string }>;
-    footer?: { noSell: string; tone: string };
-  };
+  cta: CTAConfig;
 }
