@@ -14,17 +14,7 @@ export type StaticRouteDefinition = {
   showOnHumanSitemap?: boolean;
 };
 
-export const INTERNAL_STATIC_ROUTE_PATHS = new Set([
-  '/dev/system-dashboard',
-  '/system-dashboard',
-  '/dev/system-dashboard/reports/system-report',
-  '/dev/system-dashboard/reports/pipeline-report',
-  '/dev/system-dashboard/reports/validation-report',
-  '/dashboard',
-  '/dev/authority-dashboard',
-  '/dev/cta-label-contract',
-  '/image-dashboard',
-]);
+export const INTERNAL_STATIC_ROUTE_PATHS = new Set(['/image-dashboard']);
 
 export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
   {
@@ -122,75 +112,6 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     title: 'Terms of Service',
     description:
       'Read the terms of service covering engagement expectations, delivery boundaries, and the responsibilities attached to using this site.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:system-dashboard',
-    path: '/dev/system-dashboard',
-    name: 'System Dashboard',
-    title: 'System Dashboard',
-    description:
-      'Unified internal control plane for system health, issue diagnostics, topic authority, and inventory visibility.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:system-dashboard-alias',
-    path: '/system-dashboard',
-    name: 'System Dashboard Alias',
-    title: 'System Dashboard Alias',
-    description:
-      'Legacy alias route that redirects to the unified internal control plane at /dev/system-dashboard.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:system-dashboard-system-report',
-    path: '/dev/system-dashboard/reports/system-report',
-    name: 'System Dashboard System Report',
-    title: 'System Report Viewer',
-    description: 'Internal raw report viewer for the system-report artifact.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:system-dashboard-pipeline-report',
-    path: '/dev/system-dashboard/reports/pipeline-report',
-    name: 'System Dashboard Pipeline Report',
-    title: 'Pipeline Report Viewer',
-    description: 'Internal raw report viewer for the pipeline-report artifact.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:system-dashboard-validation-report',
-    path: '/dev/system-dashboard/reports/validation-report',
-    name: 'System Dashboard Validation Report',
-    title: 'Validation Report Viewer',
-    description: 'Internal raw report viewer for the validation-report artifact.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:client-dashboard',
-    path: '/dashboard',
-    name: 'Performance Dashboard',
-    title: 'Performance Dashboard',
-    description:
-      'Client-facing performance dashboard showing system health, prioritized improvements, and page-level progress in business language.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:authority-dashboard',
-    path: '/dev/authority-dashboard',
-    name: 'Authority Dashboard Redirect',
-    title: 'Authority Dashboard Redirect',
-    description:
-      'Legacy internal authority dashboard route that redirects to the system dashboard control plane.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:cta-label-contract',
-    path: '/dev/cta-label-contract',
-    name: 'CTA Label Contract',
-    title: 'CTA Label Contract',
-    description:
-      'Internal PrimaryCTASection contract surface for deterministic label and href validation.',
     showOnHumanSitemap: false,
   },
   {

@@ -31,11 +31,9 @@ try {
     resolveSourceRoot(),
     path.join(repoRoot, 'config'),
     path.join(repoRoot, 'lib'),
-    path.join(repoRoot, 'scripts', 'core'),
     path.join(repoRoot, 'scripts', 'runners'),
-    path.join(repoRoot, 'scripts', 'lib'),
-    path.join(repoRoot, 'scripts', 'analyzers', 'export-reports.mjs'),
-    path.join(repoRoot, 'scripts', 'validators', 'validate-system-manifest-integrity.ts'),
+    path.join(repoRoot, 'scripts', 'check-names.mjs'),
+    path.join(repoRoot, 'scripts', 'check-frontend.mjs'),
   ].filter(target => fs.existsSync(target));
 
   const args = [...lintTargets, '--ext', '.ts,.tsx,.mjs'];

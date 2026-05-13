@@ -324,7 +324,7 @@ export function CaseStudyTemplate({
   const resolvedTechStackSectionTitle =
     features?.techStackSectionTitle ?? 'Features & Tools We Used';
   const resolvedTechStackSectionSubtitle =
-    features?.techStackSectionSubtitle ?? 'WordPress + GoHighLevel CRM + Integrations';
+    features?.techStackSectionSubtitle ?? 'WordPress + CRM workflows + integrations';
   const resolvedDetailedResultsBadgeLabel =
     results?.detailedResultsBadgeLabel ?? 'Detailed Results';
   const resolvedDetailedResultsSectionTitle =

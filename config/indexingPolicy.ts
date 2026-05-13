@@ -74,8 +74,6 @@ const CLASSIFIED_STATIC_PATHS = new Map<string, IndexingClassification>([
   ['/industries', 'industries'],
   ['/resources', 'resources'],
   ['/services', 'services'],
-  ['/dashboard', 'utility'],
-  ['/system-dashboard', 'dev'],
   ['/components', 'dev'],
   ['/image-dashboard', 'dev'],
 ]);

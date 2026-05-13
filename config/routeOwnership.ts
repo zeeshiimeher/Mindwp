@@ -29,7 +29,6 @@ const STATIC_ROUTE_RULES: RouteOwnershipRule[] = STATIC_ROUTE_DEFINITIONS.map(ro
   owner: 'static-routes',
   kind: 'static',
   exact: route.path,
-  ...(route.path === '/system-dashboard' ? { aliasOf: '/dev/system-dashboard' } : {}),
 }));
 
 export const ROUTE_OWNERSHIP_RULES: RouteOwnershipRule[] = [

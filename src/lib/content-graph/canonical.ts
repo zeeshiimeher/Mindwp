@@ -19,9 +19,7 @@ export type CanonicalSystem = (typeof CANONICAL_SYSTEMS)[number];
  * - response  AI Lead Handling is the response layer. Connects core + operation.
  * - growth    Revenue Growth is the upsell/recovery layer. Connects core + operation.
  *
- * Used by:
- * - scripts/validators/validate-authority-concentration.mjs
- * - reports/authority-map.json reader UIs
+ * Used by graph relationship and scoring helpers.
  */
 export const SYSTEM_TYPES: Record<
   CanonicalSystem,
