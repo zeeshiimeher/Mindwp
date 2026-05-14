@@ -41,7 +41,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
   return (
     <main className='industry-detail-page'>
       <HeroFrame
-        badge={data.hero.badge}
+        eyebrow={data.hero.badge}
         title={data.hero.title}
         description={data.hero.description}
         actions={actions}
@@ -52,7 +52,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 1 — Seasonal recognition */}
       <SectionFrame
         heading={{
-          kicker: 'A landscaping year',
+          eyebrow: 'A landscaping year',
           title:
             'The work changes shape every quarter. [[muted:The office stays exactly the same.]]',
           description:
@@ -76,7 +76,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 2 — DOMINANT: 12-month year arc */}
       <SectionFrame
         heading={{
-          kicker: 'The year as one picture',
+          eyebrow: 'The year as one picture',
           title: 'Twelve months, [[muted:four shapes of work.]]',
         }}
         tone='dark'
@@ -117,7 +117,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 3 — Quote requests while crew is out */}
       <SectionFrame
         heading={{
-          kicker: 'Spring quote spike',
+          eyebrow: 'Spring quote spike',
           title: 'Quote requests arrive [[muted:while the crew is already on a site.]]',
         }}
         tone='mist'
@@ -157,7 +157,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 4 — Maintenance / cleanup / winter rhythms */}
       <SectionFrame
         heading={{
-          kicker: 'Three rhythms inside the year',
+          eyebrow: 'Three rhythms inside the year',
           title: 'The recurring work [[muted:is what keeps the lights on.]]',
         }}
         tone='white'
@@ -198,7 +198,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 5 — Past client loop */}
       <SectionFrame
         heading={{
-          kicker: 'The past client loop',
+          eyebrow: 'The past client loop',
           title: 'Last year&rsquo;s customers [[muted:are this year&rsquo;s easiest jobs.]]',
         }}
         tone='gradient-mist'
@@ -241,7 +241,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 6 — A year that doesn&rsquo;t depend on memory */}
       <SectionFrame
         heading={{
-          kicker: 'Off the owner&rsquo;s head',
+          eyebrow: 'Off the owner&rsquo;s head',
           title: 'Four parts of the year [[muted:that no longer need to be remembered.]]',
         }}
         tone='white'
@@ -279,7 +279,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       {/* 7 — System bridge */}
       <SectionFrame
         heading={{
-          kicker: 'The systems behind it',
+          eyebrow: 'The systems behind it',
           title: 'Three systems hold the year [[muted:that the owner&rsquo;s head used to.]]',
         }}
         tone='dark'
@@ -313,7 +313,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       </SectionFrame>
 
       <FAQSection
-        eyebrow={data.faq.header.kicker}
+        eyebrow={data.faq.header.eyebrow}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
@@ -322,7 +322,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
 
       <DecisionPanel
         heading={{
-          kicker: data.cta.heading.kicker,
+          eyebrow: data.cta.heading.eyebrow,
           title: data.cta.heading.title,
           description: data.cta.heading.description,
         }}

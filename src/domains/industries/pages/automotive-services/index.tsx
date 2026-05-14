@@ -36,7 +36,7 @@ export const automotiveServicesIndustryPageData: IndustryCategoryPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What automotive operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -68,7 +68,7 @@ export const automotiveServicesIndustryPageData: IndustryCategoryPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the automotive day actually leaks',
       description:
         'Tell us what happens between the phone ringing and the bay finishing the job. We will read it back and name the first system to fix.',

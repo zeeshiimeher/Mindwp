@@ -3,13 +3,10 @@
 
 import { ArrowRight, Folder } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Badge } from '@/components/reusable/single/Badge';
-import { Card } from '@/components/ui/card';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import {
   BLOG_CATEGORIES,
   blogPosts,
-  getCategoryColors,
   getCategoryMetadata,
   getCategoryPathAllowlist,
 } from '@/domains/blog/api';
@@ -46,80 +43,79 @@ export function BlogLanding() {
     .filter(cat => categoryPathAllowlist.includes(`/blog/category/${cat.slug}`));
 
   return (
-    <div className='min-h-screen'>
-      <main>
-        {/* HERO */}
-        <SectionWrapper className='blog-hero'>
-          <div className='l-stack l-stack--loose blog-landing__hero'>
-            <Badge variant='secondary' context='hero'>
-              {blogPosts.length} articles
-            </Badge>
+    <main>
+      <SectionFrame
+        ariaLabel='Blog landing hero'
+        tone='mist'
+        heading={{
+          eyebrow: `${blogPosts.length} articles`,
+          title: 'Insights for Smarter Growth',
+          description:
+            'Practical thinking on SEO, automation, AI, and digital strategy — written for service businesses.',
+        }}
+      >
+        <a className='mw-btn mw-btn--primary' href='#latest-articles'>
+          Latest articles
+        </a>
+      </SectionFrame>
 
-            <h1>Insights for Smarter Growth</h1>
+      {categories.length > 0 ? (
+        <SectionFrame
+          ariaLabel='Blog categories'
+          tone='white'
+          heading={{
+            eyebrow: 'Categories',
+            title: 'Browse by Category',
+            description:
+              'Start with the operating problem you are trying to understand, then read the articles that sit under that theme.',
+          }}
+        >
+          <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
+            {categories.map(({ category, slug, count }) => {
+              const categoryMeta = getCategoryMetadata(category);
 
-            <p className='blog-landing__lead'>
-              Practical thinking on SEO, automation, AI, and digital strategy — written for service
-              businesses.
-            </p>
+              return (
+                <a
+                  key={category}
+                  href={`/blog/category/${slug}`}
+                  className='group flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)] transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
+                >
+                  <div className='mb-5 flex items-center justify-between gap-4'>
+                    <span className='grid size-10 place-items-center rounded-full border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] text-[var(--mw-signal-cyan)]'>
+                      <Folder className='size-5' aria-hidden='true' />
+                    </span>
+                    <span className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                      {count} posts
+                    </span>
+                  </div>
+
+                  <h3>{categoryMeta?.name ?? category}</h3>
+                  <p>{categoryMeta?.description ?? 'Articles in this category.'}</p>
+
+                  <span className='mt-auto inline-flex items-center gap-2 pt-5 mw-text-body-sm mw-text-signal-cyan'>
+                    Browse posts
+                    <ArrowRight size={14} aria-hidden='true' />
+                  </span>
+                </a>
+              );
+            })}
           </div>
-        </SectionWrapper>
+        </SectionFrame>
+      ) : null}
 
-        {/* CATEGORIES */}
-        {categories.length > 0 && (
-          <SectionWrapper>
-            <div>
-              <h2 className='blog-section__title blog-section__title--center'>
-                Browse by Category
-              </h2>
-
-              <div className='blog-landing__grid blog-landing__grid--categories'>
-                {categories.map(({ category, slug, count }) => {
-                  const colors = getCategoryColors(category);
-                  return (
-                    <Card key={category} className='blog-landing__card'>
-                      <a
-                        href={`/blog/category/${slug}`}
-                        className='link-primary blog-landing__card-link'
-                      >
-                        <div className='blog-landing__card-top'>
-                          <div className={`icon-container-md ${colors.bg}`}>
-                            <Folder className={`blog-landing__icon ${colors.text}`} />
-                          </div>
-                          <Badge variant='outline' size='sm' context='meta'>
-                            {count} posts
-                          </Badge>
-                        </div>
-
-                        <div>
-                          <h3 className='blog-landing__card-title'>
-                            {getCategoryMetadata(category)?.name ?? category}
-                          </h3>
-                          <p className='blog-landing__card-description'>
-                            {getCategoryMetadata(category)?.description ??
-                              'Articles in this category.'}
-                          </p>
-                        </div>
-
-                        <span className='blog-landing__card-cta'>
-                          Browse posts <ArrowRight aria-hidden='true' />
-                        </span>
-                      </a>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-          </SectionWrapper>
-        )}
-
-        {/* POSTS */}
-        <SectionWrapper className='blog-surface--muted'>
-          <div>
-            <h2 className='blog-section__title'>Latest Articles</h2>
-            <BlogPostsListIsland posts={sortedPosts} postsPerPage={POSTS_PER_PAGE} />
-          </div>
-        </SectionWrapper>
-      </main>
-    </div>
+      <SectionFrame
+        id='latest-articles'
+        ariaLabel='Latest blog articles'
+        tone='mist'
+        heading={{
+          eyebrow: 'Latest articles',
+          title: 'Latest Articles',
+          description:
+            'A working library for service businesses improving visibility, enquiry handling, follow-up, reputation, and growth systems.',
+        }}
+      >
+        <BlogPostsListIsland posts={sortedPosts} postsPerPage={POSTS_PER_PAGE} />
+      </SectionFrame>
+    </main>
   );
 }

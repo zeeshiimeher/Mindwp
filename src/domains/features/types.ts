@@ -1,43 +1,60 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import type { SharedSeoData } from '@/domains/shared/seo';
-
-export type DesignModeValue = any;
-
-export type FAQItem = {
+export interface FAQItem {
   question: string;
   answer: string;
-};
+}
 
 export type CTAConfig = {
+  eyebrow?: string;
   heading: {
+    id?: string;
     title: string;
     description: string;
-    kicker?: string;
+    muted?: string;
+    subtitle?: string;
   };
-  actions: [
-    {
-      label: string;
-      href: string;
-      primary: true;
-      variant?: string;
-    },
-  ];
-  [key: string]: DesignModeValue;
+  actions: Array<{
+    label: string;
+    href: string;
+    primary?: boolean;
+    variant?: string;
+  }>;
+  expectations?: Array<{
+    num?: string;
+    text: string;
+  }>;
+  footer?: {
+    noSell?: string;
+    tone?: string;
+  };
 };
 
-export type FeaturePageData = {
+export interface FeaturePageData {
   slug: string;
-  badge?: string;
-  category?: string;
+  eyebrow: string;
+  category: string;
   systems: string[];
-  topics?: string[];
-  seo: SharedSeoData;
+  topics: string[];
+  industries?: string[];
+  features?: string[];
+
+  seo: import('@/domains/shared/seo').SharedSeoData;
+
   hero: {
-    badge: string;
+    eyebrow?: string;
     title: string;
     description: string;
-    [key: string]: DesignModeValue;
+    list?: string[];
+    visual?: unknown;
   };
-  sections: Record<string, DesignModeValue>;
+
+  faq?: {
+    header?: {
+      eyebrow?: string;
+      title: string;
+      description?: string;
+    };
+    items: FAQItem[];
+  };
+
   cta: CTAConfig;
-};
+}

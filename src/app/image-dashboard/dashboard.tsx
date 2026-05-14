@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import type { ReactNode } from 'react';
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import type { ImageLogEntry, LearningMemory } from '@/lib/image-system/types';
 
 // ─── Data Loaders ───────────────────────────────────────────────────
@@ -75,6 +75,18 @@ const statLabel = 'text-xs font-medium text-zinc-400 uppercase tracking-wider';
 const statValue = 'text-2xl font-bold text-white mt-1';
 
 // ─── Components ─────────────────────────────────────────────────────
+
+function SectionWrapper({
+  className,
+  children,
+}: {
+  padding?: 'none';
+  container?: 'none';
+  className?: string;
+  children: ReactNode;
+}) {
+  return <section className={className}>{children}</section>;
+}
 
 function ScoreBar({ label, value, max }: { label: string; value: number; max: number }) {
   const filledSegments = max > 0 ? Math.round((value / max) * 20) : 0;

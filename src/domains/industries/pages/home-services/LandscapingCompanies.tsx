@@ -37,7 +37,7 @@ export const landscapingCompaniesIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'client-reactivation', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What landscaping operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -70,7 +70,7 @@ export const landscapingCompaniesIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where landscaping enquiries actually slip',
       description:
         'Tell us what happens between the call coming in and the quote going out. We will read it back to you and name the first system to fix.',

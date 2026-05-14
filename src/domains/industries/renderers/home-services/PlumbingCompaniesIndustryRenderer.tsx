@@ -28,7 +28,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
   return (
     <main className='industry-detail-page'>
       <HeroFrame
-        badge={data.hero.badge}
+        eyebrow={data.hero.badge}
         title={data.hero.title}
         description={data.hero.description}
         actions={actions}
@@ -39,7 +39,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 1 — Two paths recognition */}
       <SectionFrame
         heading={{
-          kicker: 'Two calls, two paths',
+          eyebrow: 'Two calls, two paths',
           title:
             'An emergency leak and a bathroom quote [[muted:should not land in the same holding pattern.]]',
           description:
@@ -79,7 +79,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 2 — DOMINANT: emergency vs quoted lanes */}
       <SectionFrame
         heading={{
-          kicker: 'Two-lane handling',
+          eyebrow: 'Two-lane handling',
           title: 'One office, two lanes &mdash; [[muted:running at the same time.]]',
         }}
         tone='dark'
@@ -143,7 +143,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 3 — After-hours pressure */}
       <SectionFrame
         heading={{
-          kicker: 'After hours',
+          eyebrow: 'After hours',
           title: 'The day the office closes [[muted:is the day leaks happen.]]',
         }}
         tone='mist'
@@ -188,7 +188,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 4 — Quote follow-up not losing to urgent */}
       <SectionFrame
         heading={{
-          kicker: 'The quoted queue',
+          eyebrow: 'The quoted queue',
           title: 'Quotes don&rsquo;t lose to other plumbers. [[muted:They lose to urgent calls.]]',
         }}
         tone='white'
@@ -234,7 +234,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 5 — Same-day-different-paths timeline */}
       <SectionFrame
         heading={{
-          kicker: 'A real Tuesday',
+          eyebrow: 'A real Tuesday',
           title: 'Same day, [[muted:two completely different shapes.]]',
         }}
         tone='gradient-mist'
@@ -290,7 +290,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 6 — Customer update + review loop */}
       <SectionFrame
         heading={{
-          kicker: 'After the job',
+          eyebrow: 'After the job',
           title: 'A review request [[muted:that respects which job it was.]]',
         }}
         tone='white'
@@ -328,7 +328,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       {/* 7 — System bridge */}
       <SectionFrame
         heading={{
-          kicker: 'The systems behind it',
+          eyebrow: 'The systems behind it',
           title: 'Three systems separate the lanes [[muted:without doubling the office.]]',
         }}
         tone='dark'
@@ -362,7 +362,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       </SectionFrame>
 
       <FAQSection
-        eyebrow={data.faq.header.kicker}
+        eyebrow={data.faq.header.eyebrow}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
@@ -371,7 +371,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
 
       <DecisionPanel
         heading={{
-          kicker: data.cta.heading.kicker,
+          eyebrow: data.cta.heading.eyebrow,
           title: data.cta.heading.title,
           description: data.cta.heading.description,
         }}

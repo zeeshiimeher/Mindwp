@@ -1,9 +1,31 @@
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Badge } from '@/components/reusable/single/Badge';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import type { ReactNode } from 'react';
+
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroActions } from '@/components/system/HeroActions';
 import { Card } from '@/components/ui/card';
 import { buildContactHref } from '@/lib/contact/contactHref';
+
+function SectionWrapper({
+  background,
+  className,
+  padding,
+  children,
+}: {
+  background?: string;
+  className?: string;
+  padding?: 'none';
+  children: ReactNode;
+}) {
+  return (
+    <section
+      className={[background, padding === 'none' ? 'p-0' : 'py-16', className]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      <div className='mw-container'>{children}</div>
+    </section>
+  );
+}
 
 export function About() {
   return (
@@ -14,9 +36,7 @@ export function About() {
         background='bg-gradient-to-b from-blue-50 to-white'
       >
         <div className='text-center'>
-          <Badge variant='secondary' context='hero'>
-            About MindWP
-          </Badge>
+          <span className='mw-text-eyebrow mw-text-signal-cyan'>About MindWP</span>
           <h1 className='mb-6'>The work is already coming in. It just keeps slipping out.</h1>
           <p className='text-xl text-muted-foreground mb-8'>
             A roofer misses three calls during a job and never hears back from any of them. A salon
@@ -102,7 +122,7 @@ export function About() {
 
       {/* SECTION 6 — CTA → Smart Website Systems */}
       <SectionWrapper className='footer-cta cta' padding='none'>
-        <PrimaryCTASection
+        <DecisionPanel
           heading={{
             title: "Ready to stop losing the work that's already coming in?",
             description:
@@ -116,7 +136,7 @@ export function About() {
                 sourceType: 'page',
                 slug: 'about-footer',
               }),
-              primary: true,
+              variant: 'primary',
             },
           ]}
         />

@@ -1,16 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
-import { Card } from '@/components/ui/card';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import type { ResourceCategory } from '@/domains/resources/types';
 
 export type ResourceCategoryTemplateProps = {
   category: ResourceCategory;
   label: string;
   description?: string;
-  badgeClassName: string;
   count: number;
   resources: Array<{
     title: string;
@@ -26,69 +22,55 @@ export type ResourceCategoryTemplateProps = {
 export default function ResourceCategoryTemplate({
   label,
   description,
-  badgeClassName,
   count,
   resources,
 }: ResourceCategoryTemplateProps) {
   return (
-    <div className='resource-category'>
-      <main>
-        {/* HERO */}
-        <SectionWrapper className='resource-category__hero'>
-          <div className='resource-category__hero-content'>
-            <Badge context='hero' cssPrefix={badgeClassName}>
-              {count} guides
-            </Badge>
+    <main>
+      <SectionFrame
+        ariaLabel={`${label} resources`}
+        tone='mist'
+        heading={{
+          eyebrow: `${count} guides`,
+          title: label,
+          description,
+        }}
+      >
+        {resources.length === 0 ? (
+          <p>No guides published yet.</p>
+        ) : (
+          <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
+            {resources.map(resource => (
+              <article
+                key={resource.url}
+                className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
+              >
+                <div className='mb-4 flex flex-wrap items-center gap-2'>
+                  <p className='mw-text-eyebrow mw-text-signal-cyan'>{resource.categoryLabel}</p>
+                  {resource.freshnessBadge ? (
+                    <span className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                      {resource.freshnessBadge}
+                    </span>
+                  ) : null}
+                </div>
 
-            <h1>{label}</h1>
+                <p className='mw-text-body-sm mw-text-secondary'>
+                  {resource.dateLabel}: {resource.dateText}
+                </p>
+                <h3>{resource.title}</h3>
+                <p>{resource.excerpt}</p>
 
-            <p className='resource-category__description'>{description}</p>
+                <div className='mt-auto pt-5'>
+                  <a className='mw-btn mw-btn--secondary' href={resource.url}>
+                    <span>Read Guide</span>
+                    <ArrowRight size={14} aria-hidden='true' />
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
-        </SectionWrapper>
-
-        {/* GRID */}
-        <SectionWrapper className='resource-category__grid-section'>
-          {resources.length === 0 ? (
-            <p className='resource-category__empty'>No guides published yet.</p>
-          ) : (
-            <div className='resource-category__grid'>
-              {resources.map(resource => (
-                <Card key={resource.url} className='resource-card resource-card--interactive'>
-                  <div className='resource-card__body'>
-                    <div className='resource-card__meta'>
-                      <div className='resource-card__badges'>
-                        <Badge size='sm' context='meta' cssPrefix={badgeClassName}>
-                          {resource.categoryLabel}
-                        </Badge>
-                        {resource.freshnessBadge && (
-                          <Badge variant='secondary' size='sm' context='meta'>
-                            {resource.freshnessBadge}
-                          </Badge>
-                        )}
-                      </div>
-                      <span className='resource-card__date'>
-                        {resource.dateLabel}: {resource.dateText}
-                      </span>
-                    </div>
-
-                    <h3 className='resource-card__title'>{resource.title}</h3>
-                    <p className='resource-card__excerpt'>{resource.excerpt}</p>
-
-                    <Button
-                      href={resource.url}
-                      variant='outline'
-                      label='Read Guide'
-                      icon={ArrowRight}
-                      showDefaultIcon
-                      cssPrefix='btn-block'
-                    />
-                  </div>
-                </Card>
-              ))}
-            </div>
-          )}
-        </SectionWrapper>
-      </main>
-    </div>
+        )}
+      </SectionFrame>
+    </main>
   );
 }

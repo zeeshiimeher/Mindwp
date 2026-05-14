@@ -1,364 +1,190 @@
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-// =============================================================================
-// ReputationReviewSystemsRenderer
-// Sections: hero · trustGap · reviewTiming · feedbackRoute · monitoringBoard ·
-//           localTrustHandoff · fitFilter · faq · cta
-// CSS: src/styles/services.css (rep-* classes)
-// =============================================================================
 
 interface Props {
   data: ServicePageDataBySlug['reputation-review-systems'];
   slug: string;
 }
 
-const ARIA_HERO_DOT = 'Reputation and Reviews -- page hero';
-const ARIA_TRUST_GAP_DOT = 'Trust gap';
-const ARIA_TIMING_DOT = 'Review timing';
-const ARIA_ROUTE_DOT = 'Feedback routing';
-const ARIA_BOARD_DOT = 'Trust signal board';
-const ARIA_BRIDGE_DOT = 'Local trust handoff';
-const ARIA_FIT_DOT = 'Fit filter';
-const ARIA_FAQ_DOT = 'Frequently asked questions';
-
-const SJ_JOB_DOT = 'Job';
-const SJ_FINISHED_DOT = 'Finished';
-const SJ_OUTCOME_DOT = 'Outcome';
-const SJ_PROOF_DOT = 'Proof state';
-
-const TIMING_FIT_BEST_DOT = 'Best';
-const TIMING_FIT_GOOD_DOT = 'Good';
-const TIMING_FIT_AVOID_DOT = 'Avoid';
-
-const ROUTE_RULE_DOT = 'Rule';
-const ROUTE_TRIGGER_DOT = 'Trigger';
-const ROUTE_STEPS_DOT = 'Path';
-
-const BOARD_SCOPE_DOT = 'Scope';
-const BOARD_RECENT_DOT = 'Recent';
-const BOARD_RULE_DOT = 'Rule';
-
-const BRIDGE_REVIEWS_DOT = 'Reviews own';
-const BRIDGE_LSA_DOT = 'Local SEO owns';
-const BRIDGE_RULE_DOT = 'Rule';
-
-const FIT_LABEL_DOT = 'Fit';
-const FIT_NOT_LABEL_DOT = 'Not a fit';
-
-function requireHeadingTitle(t: string | undefined, s: string) {
-  if (!t || !t.trim()) throw new Error(`[${s}] Missing heading title`);
-  return t;
-}
-function requireHeadingDescription(d: string | undefined, s: string) {
-  if (!d || !d.trim()) throw new Error(`[${s}] Missing heading description`);
-  return d;
-}
-
-export function ReputationReviewSystemsRenderer({ data, slug: _slug }: Props) {
-  const { hero, sections, cta } = data;
-  const {
-    trustGap,
-    reviewTiming,
-    feedbackRoute,
-    monitoringBoard,
-    localTrustHandoff,
-    fitFilter,
-    faq,
-  } = sections;
-  const primarySystem = data.systems[0];
-  if (!primarySystem) throw new Error('[reputation-review-systems] Missing service system');
-  const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
-
-  const reviewsRows = localTrustHandoff.rows.filter(r => r.belongsTo === 'reviews');
-  const lsaRows = localTrustHandoff.rows.filter(r => r.belongsTo === 'lsa');
+export default function ReputationReviewSystemsRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <div className='rep-page'>
-      <HeroFrame
-        className='rep-hero'
-        ariaLabel={ARIA_HERO_DOT}
-        badge={hero.badge}
-        title={hero.title}
-        description={hero.description}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-        chips={hero.list}
-        chipDotVariant='warn'
-      />
+    <main>
+      <ReputationReviewSystemsHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <ReputationReviewSystemsRecognitionSection />
+      {faq ? <ReputationReviewSystemsFAQ faq={faq} /> : null}
+      <ReputationReviewSystemsDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-      {/* ── Trust gap ────────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={trustGap.header}
-        tone='white'
-        className='rep-trustGap'
-        ariaLabel={ARIA_TRUST_GAP_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(trustGap.header.title, 'trustGap');
+function ReputationReviewSystemsHero({
+  hero,
+  ctaHref,
+}: {
+  hero: Props['data']['hero'];
+  ctaHref: string;
+}) {
+  return (
+    <HeroFrame
+      ariaLabel='Reputation & Review Systems hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<ReputationReviewSystemsSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function ReputationReviewSystemsSignalPanel({
+  visual,
+}: {
+  visual: Props['data']['hero']['visual'];
+}) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
           return (
-            <div className='rep-jobs'>
-              <header className='rep-jobs__header'>
-                <span className='rep-jobs__title'>{trustGap.label}</span>
-                <span className='rep-jobs__note'>{trustGap.note}</span>
-              </header>
-              <div className='rep-jobs__columns'>
-                <span>{SJ_JOB_DOT}</span>
-                <span>{SJ_FINISHED_DOT}</span>
-                <span>{SJ_OUTCOME_DOT}</span>
-                <span>{SJ_PROOF_DOT}</span>
-              </div>
-              <ul className='rep-jobs__list'>
-                {trustGap.jobs.map(j => (
-                  <li key={j.id} className={`rep-jobs__row rep-jobs__row--${j.proofState}`}>
-                    <span className='rep-jobs__job'>
-                      {j.job}
-                      <em className='rep-jobs__note-line'>{j.note}</em>
-                    </span>
-                    <span className='rep-jobs__finished'>{j.finishedOn}</span>
-                    <span className='rep-jobs__outcome'>{j.outcome}</span>
-                    <span className={`rep-jobs__state rep-jobs__state--${j.proofState}`}>
-                      <span className='rep-jobs__dot' aria-hidden='true' />
-                      {j.proofState.replace(/-/g, ' ')}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
             </div>
           );
-        })()}
-      </SectionFrame>
+        })}
+      </div>
 
-      {/* ── Review timing ─────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={reviewTiming.header}
-        tone='mist'
-        className='rep-reviewTiming'
-        ariaLabel={ARIA_TIMING_DOT}
-      >
-        {(() => {
-          requireHeadingDescription(reviewTiming.header.description, 'reviewTiming');
-          return (
-            <div className='rep-timing'>
-              <ol className='rep-timing__line'>
-                {reviewTiming.moments.map(m => (
-                  <li key={m.id} className={`rep-timing__step rep-timing__step--${m.fit}`}>
-                    <span className='rep-timing__stage'>{m.stage}</span>
-                    <span className='rep-timing__title'>{m.title}</span>
-                    <span className='rep-timing__detail'>{m.detail}</span>
-                    <span className={`rep-timing__fit rep-timing__fit--${m.fit}`}>
-                      <span className='rep-timing__fit-dot' aria-hidden='true' />
-                      {m.fit === 'best'
-                        ? TIMING_FIT_BEST_DOT
-                        : m.fit === 'good'
-                          ? TIMING_FIT_GOOD_DOT
-                          : TIMING_FIT_AVOID_DOT}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-              <p className='rep-timing__closing'>{reviewTiming.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Feedback route (split paths) ──────────────────────────────── */}
-      <SectionFrame
-        heading={feedbackRoute.header}
-        tone='gradient-dark'
-        className='rep-feedbackRoute'
-        ariaLabel={ARIA_ROUTE_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(feedbackRoute.header.title, 'feedbackRoute');
-          return (
-            <div className='rep-route'>
-              <div className='rep-route__paths'>
-                {feedbackRoute.paths.map(p => (
-                  <article key={p.id} className={`rep-route__path rep-route__path--${p.variant}`}>
-                    <header className='rep-route__head'>
-                      <span className='rep-route__label'>{p.label}</span>
-                      <h3 className='rep-route__title'>{p.title}</h3>
-                    </header>
-                    <p className='rep-route__trigger'>
-                      <strong>{ROUTE_TRIGGER_DOT}.</strong> {p.trigger}
-                    </p>
-                    <div className='rep-route__steps-block'>
-                      <span className='rep-route__steps-label'>{ROUTE_STEPS_DOT}</span>
-                      <ol className='rep-route__steps'>
-                        {p.steps.map((s, i) => (
-                          <li key={`${p.id}-${i}`}>{s}</li>
-                        ))}
-                      </ol>
-                    </div>
-                    <p className='rep-route__closing'>{p.closing}</p>
-                  </article>
-                ))}
-              </div>
-              <p className='rep-route__rule'>
-                <strong>{ROUTE_RULE_DOT}.</strong> {feedbackRoute.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Monitoring board ──────────────────────────────────────────── */}
-      <SectionFrame
-        heading={monitoringBoard.header}
-        tone='white'
-        className='rep-monitoringBoard'
-        ariaLabel={ARIA_BOARD_DOT}
-      >
-        {(() => {
-          requireHeadingDescription(monitoringBoard.header.description, 'monitoringBoard');
-          return (
-            <div className='rep-board'>
-              <header className='rep-board__header'>
-                <span className='rep-board__title'>{monitoringBoard.label}</span>
-              </header>
-              <ul className='rep-tiles'>
-                {monitoringBoard.rows.map(r => (
-                  <li key={r.id} className={`rep-tile rep-tile--${r.state}`}>
-                    <header className='rep-tile__head'>
-                      <span className='rep-tile__channel'>
-                        <span
-                          className={`rep-board__dot rep-board__dot--${r.state}`}
-                          aria-hidden='true'
-                        />
-                        {r.channel}
-                      </span>
-                      <span className={`rep-tile__state rep-tile__state--${r.state}`}>
-                        {r.state}
-                      </span>
-                    </header>
-                    <span className='rep-tile__scope'>
-                      <span className='rep-tile__meta-label'>{BOARD_SCOPE_DOT}</span>
-                      <span className='rep-tile__meta-value'>{r.scope}</span>
-                    </span>
-                    <span className='rep-tile__recent'>
-                      <span className='rep-tile__meta-label'>{BOARD_RECENT_DOT}</span>
-                      <span className='rep-tile__meta-value'>{r.recent}</span>
-                    </span>
-                    <p className='rep-tile__detail'>{r.detail}</p>
-                  </li>
-                ))}
-              </ul>
-              <p className='rep-board__rule'>
-                <strong>{BOARD_RULE_DOT}.</strong> {monitoringBoard.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── LSA bridge ────────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={localTrustHandoff.header}
-        tone='mist'
-        className='rep-localTrustHandoff'
-        ariaLabel={ARIA_BRIDGE_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(localTrustHandoff.header.title, 'localTrustHandoff');
-          return (
-            <div className='rep-bridge'>
-              <div className='rep-bridge__columns'>
-                <article className='rep-bridge__col rep-bridge__col--reviews'>
-                  <header className='rep-bridge__head'>
-                    <span className='rep-bridge__label'>{BRIDGE_REVIEWS_DOT}</span>
-                  </header>
-                  <ul className='rep-bridge__items'>
-                    {reviewsRows.map(r => (
-                      <li key={r.id}>
-                        <span className='rep-bridge__bullet' aria-hidden='true' />
-                        {r.point}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-                <article className='rep-bridge__col rep-bridge__col--lsa'>
-                  <header className='rep-bridge__head'>
-                    <span className='rep-bridge__label'>{BRIDGE_LSA_DOT}</span>
-                  </header>
-                  <ul className='rep-bridge__items'>
-                    {lsaRows.map(r => (
-                      <li key={r.id}>
-                        <span className='rep-bridge__bullet' aria-hidden='true' />
-                        {r.point}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              </div>
-              <p className='rep-bridge__rule'>
-                <strong>{BRIDGE_RULE_DOT}.</strong> {localTrustHandoff.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Fit filter ────────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={fitFilter.header}
-        tone='white'
-        className='rep-fitFilter'
-        ariaLabel={ARIA_FIT_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(fitFilter.header.title, 'fitFilter');
-          return (
-            <div className='rep-fit'>
-              <div className='rep-fit__columns'>
-                {fitFilter.columns.map(col => (
-                  <article key={col.id} className={`rep-fit__col rep-fit__col--${col.variant}`}>
-                    <header className='rep-fit__head'>
-                      <span className='rep-fit__label'>
-                        {col.variant === 'fit' ? FIT_LABEL_DOT : FIT_NOT_LABEL_DOT}
-                      </span>
-                      <h3 className='rep-fit__title'>{col.title}</h3>
-                    </header>
-                    <ul className='rep-fit__items'>
-                      {col.signals.map((s, i) => (
-                        <li key={`${col.id}-${i}`}>
-                          <span className='rep-fit__bullet' aria-hidden='true' />
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-              <p className='rep-fit__closing'>{fitFilter.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <FAQSection
-        eyebrow={faq.header.kicker}
-        title={faq.header.title}
-        description={faq.header.description}
-        items={faq.items}
-        tone='mist'
-        variant='split'
-        className='rep-faq'
-        ariaLabel={ARIA_FAQ_DOT}
-      />
-
-      <DecisionPanel
-        className='rep-cta'
-        heading={cta.heading}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
-        expectations={cta.expectations}
-        reassurance={cta.footer}
-      />
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
     </div>
   );
 }
+
+function ReputationReviewSystemsRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function ReputationReviewSystemsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `reputation-review-systems-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Reputation & Review Systems FAQ'
+    />
+  );
+}
+
+function ReputationReviewSystemsDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export { ReputationReviewSystemsRenderer };

@@ -30,7 +30,7 @@ export const drivingSchoolsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up', 'missed-calls'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What school owners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -60,7 +60,7 @@ export const drivingSchoolsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the diary actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

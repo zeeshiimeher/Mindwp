@@ -1,236 +1,109 @@
-import { buildServiceSeo } from '@/domains/services/seo';
-import type { ServicePageData } from '@/domains/services/types';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
-type SectionHeader = { kicker: string; title: string; description?: string };
-type StakeCard = { id: string; num: string; point: string; hint: string };
-type MatrixRow = { id: string; aspect: string; optionA: string; optionB: string };
-type LeansColumn = {
-  id: string;
-  variant: 'a' | 'b';
-  label: string;
-  title: string;
-  signals: string[];
-};
-type HandoffRow = { id: string; when: string; route: string };
+import { buildServiceSeo } from '../seo';
+import type { ServicePageData } from '../types';
 
-type CRMDecisionSections = {
-  decisionStakes: { header: SectionHeader; stakes: StakeCard[] };
-  comparison: {
-    header: SectionHeader;
-    optionALabel: string;
-    optionATitle: string;
-    optionBLabel: string;
-    optionBTitle: string;
-    rows: MatrixRow[];
-  };
-  whenToChoose: { header: SectionHeader; columns: LeansColumn[]; closing: string };
-  handoffNext: { header: SectionHeader; rows: HandoffRow[]; rule: string };
-  faq: { header: SectionHeader; items: Array<{ id: string; question: string; answer: string }> };
-};
+// =============================================================================
+// Website CRM Integration vs Manual Lead Handling — page
+// =============================================================================
 
-const slug = 'website-crm-integration-vs-manual-lead-handling';
-const system = 'crm-automation';
-const contactHref = buildServiceContactHref({ system, slug });
-
-export const websiteCrmIntegrationVsManualLeadHandlingPage: ServicePageData<CRMDecisionSections> = {
+export const websiteCrmIntegrationVsManualLeadHandlingPage = {
   seo: buildServiceSeo({
-    slug,
-    title: 'Website CRM Integration vs Manual Lead Handling',
-    description: 'A focused comparison for deciding when manual lead handling stops being enough.',
-  }),
-  slug,
-  badge: 'CRM Decision',
-  category: 'Decision Support',
-  systems: [system],
-  topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
-  hero: {
-    badge: 'CRM Decision',
-    title: 'Manual Handling Works. [[muted:Until It Does Not.]]',
+    slug: 'website-crm-integration-vs-manual-lead-handling',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'At first, leads can be handled from memory, email and quick replies. As volume grows, the question becomes whether every enquiry still has an owner and a next step.',
-    list: ['Manual handling', 'CRM ownership', 'Follow-up'],
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+  }),
+  slug: 'website-crm-integration-vs-manual-lead-handling',
+  systems: ['crm-automation'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
+  hero: {
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    description:
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    decisionStakes: {
-      header: {
-        kicker: 'What The Decision Controls',
-        title: 'The choice is about ownership, not tools.',
-        description:
-          'A CRM is only useful when the team needs visible ownership and follow-up that does not rely on memory.',
-      },
-      stakes: [
-        {
-          id: 'cs-01',
-          num: '01',
-          point: 'Who owns each enquiry.',
-          hint: 'Named ownership versus "whoever sees it first".',
-        },
-        {
-          id: 'cs-02',
-          num: '02',
-          point: 'Where the conversation lives.',
-          hint: 'Personal inbox versus shared, visible state.',
-        },
-        {
-          id: 'cs-03',
-          num: '03',
-          point: 'What the team can see.',
-          hint: 'Memory and notes versus a visible pipeline.',
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    comparison: {
-      header: {
-        kicker: 'Side By Side',
-        title: 'Manual handling and CRM ownership fail in different places.',
-        description:
-          'Each handles a different range of volume and complexity. The honest comparison helps decide when to switch.',
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
       },
-      optionALabel: 'Option A',
-      optionATitle: 'Manual lead handling',
-      optionBLabel: 'Option B',
-      optionBTitle: 'Website CRM integration',
-      rows: [
-        {
-          id: 'cm-01',
-          aspect: 'Where leads live',
-          optionA: 'Email inboxes, notebooks, memory.',
-          optionB: 'A shared pipeline with named owners.',
-        },
-        {
-          id: 'cm-02',
-          aspect: 'Best fit',
-          optionA: 'Low volume, single owner, short decisions.',
-          optionB: 'Multiple owners, longer decisions, visibility needed.',
-        },
-        {
-          id: 'cm-03',
-          aspect: 'Risk profile',
-          optionA: 'Quiet drops. Forgotten replies. No audit trail.',
-          optionB: 'Operational discipline. Updates required.',
-        },
-        {
-          id: 'cm-04',
-          aspect: 'Setup cost',
-          optionA: 'Almost none. Already running.',
-          optionB: 'Real setup work. Workflow change.',
-        },
-        {
-          id: 'cm-05',
-          aspect: 'Long-term role',
-          optionA: 'Eventually breaks under growth.',
-          optionB: 'Becomes the spine of how leads are handled.',
-        },
-      ],
-    },
-    whenToChoose: {
-      header: {
-        kicker: 'When To Choose Which',
-        title: 'The right answer depends on volume, owners and visibility.',
-        description:
-          'Both routes are honest. The question is what the team can keep up with reliably.',
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
       },
-      columns: [
-        {
-          id: 'a',
-          variant: 'a',
-          label: 'Lean toward manual',
-          title: 'Low volume, single owner, short decisions.',
-          signals: [
-            'A small handful of enquiries per week.',
-            'One owner who actually sees every message.',
-            'Decisions usually close in a single conversation.',
-            'No appetite for new tools right now.',
-          ],
-        },
-        {
-          id: 'b',
-          variant: 'b',
-          label: 'Lean toward CRM',
-          title: 'Multiple owners, longer decisions, visibility needed.',
-          signals: [
-            'Enquiries arrive across multiple channels.',
-            'More than one person needs to see the pipeline.',
-            'Decisions take days or weeks.',
-            'Things are slipping that nobody can name.',
-          ],
-        },
-      ],
-      closing:
-        'Most established service teams cross the line before they realise it. The signs are quiet at first.',
-    },
-    handoffNext: {
-      header: {
-        kicker: 'Where The Next Step Belongs',
-        title: 'The page handles the decision. The next step belongs elsewhere.',
-        description: 'Once the route is chosen, the work moves to the right service area.',
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
       },
-      rows: [
-        {
-          id: 'ch-01',
-          when: 'You need ownership and pipeline visibility.',
-          route: 'CRM & Automation owns the implementation.',
-        },
-        {
-          id: 'ch-02',
-          when: 'You need messages routed to the right owner first.',
-          route: 'Unified Communication sits in front of the CRM.',
-        },
-        {
-          id: 'ch-03',
-          when: 'You need first-response on calls and forms.',
-          route: 'AI Lead Handling owns the live response.',
-        },
-        {
-          id: 'ch-04',
-          when: 'You need quotes and proposals managed inside the pipeline.',
-          route: 'CRM & Automation again — extended scope.',
-        },
-      ],
-      rule: 'This page supports the decision only. The build belongs in CRM & Automation.',
-    },
-    faq: {
-      header: {
-        kicker: 'Questions',
-        title: 'Common questions about CRM versus manual handling.',
-        description: 'Short answers about volume, tools and team change.',
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
       },
-      items: [
-        {
-          id: 'cdec-faq-volume',
-          question: 'Is there a volume threshold?',
-          answer:
-            'No fixed number. Multiple owners and visibility needs usually matter more than raw volume.',
-        },
-        {
-          id: 'cdec-faq-tool',
-          question: 'Which CRM do you use?',
-          answer:
-            'The right CRM depends on the team. The decision page is about whether to use one — not which one.',
-        },
-        {
-          id: 'cdec-faq-change',
-          question: 'Will the team have to change how they work?',
-          answer:
-            'Yes — that is the point. CRM only helps if the team uses it. Workflow change is part of the work.',
-        },
-      ],
-    },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'See where manual handling is actually breaking.',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us how leads are handled today and where things slip. We will look for the point where ownership, follow-up or visibility is the real cost.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
-    expectations: [
-      { num: '01', text: 'We map the current manual path.' },
-      { num: '02', text: 'We identify where ownership breaks.' },
-      { num: '03', text: 'We explain whether CRM is needed yet.' },
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
     ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies ServicePageData;

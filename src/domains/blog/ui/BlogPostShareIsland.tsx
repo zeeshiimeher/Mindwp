@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Check, Copy, Facebook, Linkedin, Mail, Share2, Twitter } from 'lucide-react';
 
-import { Button } from '@/components/reusable/single/Button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -59,7 +58,10 @@ export function BlogPostShareIsland({ title }: BlogPostShareIslandProps) {
       <span className='text-sm text-muted-foreground'>Share:</span>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant='outline' size='sm' label='Share Article' icon={Share2} showDefaultIcon />
+          <button type='button' className='mw-btn mw-btn--secondary'>
+            <Share2 size={14} aria-hidden='true' />
+            <span>Share Article</span>
+          </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align='start'>
           <DropdownMenuLabel>Share</DropdownMenuLabel>

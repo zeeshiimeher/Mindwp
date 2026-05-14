@@ -27,7 +27,7 @@ const takeaways = [
 const problem = {
   description: [
     'Most service businesses have basic analytics installed — they can see page views, traffic sources, and maybe form submission counts. But these metrics do not answer the question that matters: which marketing activities produce paying customers?',
-    'A form submission is not a conversion. A booked appointment is closer. A completed job with payment is the real conversion. Without connecting website data to CRM pipeline outcomes, you cannot distinguish between a page that generates 50 tyre-kicker enquiries and a page that generates 10 leads who become high-value customers.',
+    'A form submission is not a conversion. A booked appointment is closer. A completed job with payment is the real conversion. Without connecting website data to CRM pipeline outcomes, you cannot distinguish between a page that generates 50 tyre-eyebrow enquiries and a page that generates 10 leads who become high-value customers.',
   ],
   causes: [
     'Analytics tracking ends at form submission instead of following through to booked jobs',

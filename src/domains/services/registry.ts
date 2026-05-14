@@ -19,7 +19,7 @@ export const SERVICE_REGISTRY = Object.fromEntries(
       path: data.seo.canonical,
       title: data.seo.title,
       description: data.seo.description,
-      badge: data.badge,
+      badge: data.eyebrow,
       category: data.category,
       systems: data.systems,
       topics: data.topics,

@@ -36,7 +36,7 @@ export const carDetailingIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What detailing operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -69,7 +69,7 @@ export const carDetailingIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the booking flow actually leaks',
       description:
         'Tell us about a busy Saturday and how bookings reach you today. We will read it back and name the first system to fix.',

@@ -1,300 +1,109 @@
-import { buildServiceSeo } from '@/domains/services/seo';
-import type { ServicePageData } from '@/domains/services/types';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
-type SectionHeader = { kicker: string; title: string; description?: string };
-type ChannelRow = {
-  id: string;
-  origin: string;
-  ageBand: string;
-  signal: string;
-  state: 'workable' | 'caution' | 'leave';
-};
-type SequenceStep = { id: string; num: string; timing: string; title: string; detail: string };
-type RuleRow = { id: string; criterion: string; good: string; bad: string };
-type BridgeRow = { id: string; belongsTo: 'unified' | 'parent'; point: string };
-type FitColumn = {
-  id: string;
-  variant: 'fit' | 'not-fit';
-  label: string;
-  title: string;
-  signals: string[];
-};
+import { buildServiceSeo } from '../seo';
+import type { ServicePageData } from '../types';
 
-type UnifiedSections = {
-  channelScatter: { header: SectionHeader; label: string; sources: ChannelRow[]; closing: string };
-  routingPath: { header: SectionHeader; steps: SequenceStep[]; closing: string };
-  handoffRules: { header: SectionHeader; rows: RuleRow[]; closing: string };
-  ownershipBridge: { header: SectionHeader; rows: BridgeRow[]; rule: string };
-  fitBoundaries: { header: SectionHeader; columns: FitColumn[]; closing: string };
-  faq: { header: SectionHeader; items: Array<{ id: string; question: string; answer: string }> };
-};
+// =============================================================================
+// Unified Communication System — page
+// =============================================================================
 
-const slug = 'unified-communication-system';
-const system = 'ai-lead-handling';
-const contactHref = buildServiceContactHref({ system, slug });
-
-export const unifiedCommunicationSystemPage: ServicePageData<UnifiedSections> = {
+export const unifiedCommunicationSystemPage = {
   seo: buildServiceSeo({
-    slug,
-    title: 'Unified Communication for Service Businesses',
+    slug: 'unified-communication-system',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'A focused route for bringing calls, forms and messages into one place with clear ownership and a visible next step.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
-  slug,
-  badge: 'Unified Communication',
-  category: 'Lead Response',
-  systems: [system],
-  topics: ['lead-routing', 'lead-management'],
+  slug: 'unified-communication-system',
+  systems: ['crm-automation'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Unified Communication',
-    title: 'Messages Arrive Everywhere.',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'Calls, forms, email and social messages all hold real enquiries. Unified Communication gives scattered contact routes a clearer place to land and a visible owner.',
-    list: ['Channel scatter', 'Visible owner', 'Clear next step'],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    channelScatter: {
-      header: {
-        kicker: 'Channel Scatter',
-        title: 'The problem is not the volume. It is where messages land.',
-        description:
-          'Most teams already cover the channels. They lose enquiries to inboxes and apps that nobody owns.',
-      },
-      label: 'Where enquiries usually arrive',
-      sources: [
-        {
-          id: 'c-01',
-          origin: 'Website contact form',
-          ageBand: 'Live',
-          signal: 'Owned route. Should always be visible.',
-          state: 'workable',
-        },
-        {
-          id: 'c-02',
-          origin: 'Phone calls',
-          ageBand: 'Live',
-          signal: 'Highest intent. Needs the fastest path.',
-          state: 'workable',
-        },
-        {
-          id: 'c-03',
-          origin: 'Email to a shared address',
-          ageBand: 'Daily',
-          signal: 'Useful if a person owns the inbox each day.',
-          state: 'workable',
-        },
-        {
-          id: 'c-04',
-          origin: 'Social DMs and Messenger',
-          ageBand: 'Sporadic',
-          signal: 'Worth routing if used often. Otherwise let go.',
-          state: 'caution',
-        },
-        {
-          id: 'c-05',
-          origin: 'Personal mobiles and ad-hoc apps',
-          ageBand: 'Hidden',
-          signal: 'No shared visibility. Encourage routing back to owned channels.',
-          state: 'leave',
-        },
-      ],
-      closing:
-        'Unification is about the routes you actually use. Cover those well. Drop the ones nobody watches.',
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    routingPath: {
-      header: {
-        kicker: 'Routing Path',
-        title: 'Every channel needs a clear way in and a clear way on.',
-        description:
-          'A short, predictable path turns scattered channels into a single conversation surface.',
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
       },
-      steps: [
-        {
-          id: 'rp-01',
-          num: '01',
-          timing: 'Arrival',
-          title: 'Every message lands in one shared place.',
-          detail: 'Owned channels feed a single inbox view, not several siloed apps.',
-        },
-        {
-          id: 'rp-02',
-          num: '02',
-          timing: 'Triage',
-          title: 'A clear owner picks each conversation up.',
-          detail: 'Ownership is visible at a glance. Nothing waits for someone to "see it".',
-        },
-        {
-          id: 'rp-03',
-          num: '03',
-          timing: 'Action',
-          title: 'Reply, route or escalate.',
-          detail: 'Most messages get a direct reply. Sensitive ones get escalated by name.',
-        },
-        {
-          id: 'rp-04',
-          num: '04',
-          timing: 'Handoff',
-          title: 'Real opportunities move to CRM ownership.',
-          detail:
-            'When a message becomes an enquiry, it leaves the chat surface and joins the pipeline.',
-        },
-      ],
-      closing:
-        'Three to four steps cover most contact. The rules sit on top of that, not before it.',
-    },
-    handoffRules: {
-      header: {
-        kicker: 'Routing Rules',
-        title: 'Not every message needs the same path.',
-        description:
-          'Simple rules decide what gets a fast reply, what waits, and what reaches a named owner immediately.',
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
       },
-      rows: [
-        {
-          id: 'h-01',
-          criterion: 'New enquiry, normal hours',
-          good: 'Owner sees it within minutes and replies.',
-          bad: 'Sits in a shared inbox with no name attached.',
-        },
-        {
-          id: 'h-02',
-          criterion: 'Existing customer query',
-          good: 'Routed to the person who owns that account.',
-          bad: 'Treated as a new lead and answered from scratch.',
-        },
-        {
-          id: 'h-03',
-          criterion: 'Out-of-hours message',
-          good: 'Acknowledged automatically. Replied to first thing.',
-          bad: 'Stays unread until the inbox is opened the next day.',
-        },
-        {
-          id: 'h-04',
-          criterion: 'Sensitive or urgent message',
-          good: 'Escalated by name to the right person.',
-          bad: 'Treated like every other message.',
-        },
-      ],
-      closing:
-        'The rules are calm. They reduce the chance that anything important sits without an owner.',
-    },
-    ownershipBridge: {
-      header: {
-        kicker: 'System Bridge',
-        title: 'Unified Communication owns the inbox surface. CRM owns the relationship.',
-        description:
-          'This work covers the place messages land. The pipeline beyond that belongs to CRM & Automation.',
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
       },
-      rows: [
-        {
-          id: 'b-01',
-          belongsTo: 'unified',
-          point: 'Pulling owned channels into one shared inbox view.',
-        },
-        {
-          id: 'b-02',
-          belongsTo: 'unified',
-          point: 'Making ownership and reply state visible at a glance.',
-        },
-        {
-          id: 'b-03',
-          belongsTo: 'unified',
-          point: 'Setting routing rules for hours, urgency and account.',
-        },
-        {
-          id: 'b-04',
-          belongsTo: 'parent',
-          point: 'Holding the long pipeline of qualified enquiries.',
-        },
-        { id: 'b-05', belongsTo: 'parent', point: 'Tracking conversations through to a decision.' },
-        { id: 'b-06', belongsTo: 'parent', point: 'Holding the customer relationship over time.' },
-      ],
-      rule: 'Unified Communication clears the front door. CRM & Automation owns the building beyond it.',
-    },
-    fitBoundaries: {
-      header: {
-        kicker: 'Fit Filter',
-        title: 'Useful when channels are scattered and ownership is unclear.',
-        description:
-          'The work pays off when real enquiries are getting lost between inboxes, phones and apps.',
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
       },
-      columns: [
-        {
-          id: 'fit',
-          variant: 'fit',
-          label: 'Strong fit',
-          title: 'Multi-channel teams without a shared inbox.',
-          signals: [
-            'Enquiries arrive across phone, form, email and DMs.',
-            'Nobody can see all messages in one view.',
-            'Ownership shifts depending on who happens to look.',
-            'Customer issues get answered twice or not at all.',
-          ],
-        },
-        {
-          id: 'not-fit',
-          variant: 'not-fit',
-          label: 'Not a fit',
-          title: 'Single-channel teams already in control.',
-          signals: [
-            'Almost every enquiry arrives through one channel.',
-            'A reception or admin owner already routes everything.',
-            'Volume too low for shared-inbox structure to matter.',
-            'No appetite to consolidate channels.',
-          ],
-        },
-      ],
-      closing:
-        'For single-owner, single-channel businesses, this scope is overkill. Keep it simple.',
-    },
-    faq: {
-      header: {
-        kicker: 'Questions',
-        title: 'Common questions about unified communication.',
-        description: 'Short answers about channels, routing and ownership.',
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
       },
-      items: [
-        {
-          id: 'unified-faq-channels',
-          question: 'Does every channel need to be connected?',
-          answer:
-            'No. The aim is to cover the channels that actually carry enquiries. Channels nobody monitors are dropped, not patched in.',
-        },
-        {
-          id: 'unified-faq-personal',
-          question: 'What about personal mobiles?',
-          answer:
-            'Personal-mobile traffic is encouraged back to owned channels. Hidden side-conversations are the main risk.',
-        },
-        {
-          id: 'unified-faq-crm',
-          question: 'Is this CRM?',
-          answer:
-            'No. Unified Communication owns the inbox surface. CRM & Automation owns the pipeline that follows.',
-        },
-        {
-          id: 'unified-faq-tools',
-          question: 'Do you replace existing tools?',
-          answer:
-            'Often, no. The work is about routing and ownership, not adding more tools to the stack.',
-        },
-      ],
-    },
+    ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'See where messages are getting lost.',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us where enquiries usually arrive and how they get owned. We will look at where unification is honest, and where it would just add noise.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
-    expectations: [
-      { num: '01', text: 'We map current contact routes and ownership.' },
-      { num: '02', text: 'We mark which channels deserve unification.' },
-      { num: '03', text: 'We outline the inbox surface and routing rules.' },
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
     ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies ServicePageData;

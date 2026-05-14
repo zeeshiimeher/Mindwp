@@ -1,9 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
 
 import type { CaseStudyTemplateSection } from './templates';
-
-export type DesignModeValue = any;
 
 export type CaseStudySection = CaseStudyTemplateSection;
 
@@ -34,8 +31,8 @@ export interface CaseStudyData {
     openGraph?: OpenGraphData;
   };
   sections: CaseStudySection[];
-  templateOverrides?: Record<string, DesignModeValue>;
-  [key: string]: DesignModeValue;
+  templateOverrides?: Record<string, unknown>;
+  [key: string]: unknown;
 }
 
 export type CaseStudyTemplateMetadata = Pick<

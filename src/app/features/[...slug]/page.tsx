@@ -89,7 +89,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     description: featureSeo.description,
     path: resolved.featureNode.path,
   });
-  const faqSchema = buildFaqSchema(featureData.sections?.faq?.items);
+  const faqSchema = buildFaqSchema(featureData.faq?.items);
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', path: '/' },

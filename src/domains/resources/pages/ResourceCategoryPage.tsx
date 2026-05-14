@@ -1,7 +1,7 @@
 /* Automated resource-category page.
   Handles all category slugs from registry metadata; no per-category components. */
 
-import { getCategoryBySlug, getCategoryColors, resources } from '@/domains/resources/api';
+import { getCategoryBySlug, resources } from '@/domains/resources/api';
 import { ResourceNotFound } from '@/domains/resources/pages/ResourceNotFound';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
@@ -32,7 +32,6 @@ export function ResourceCategoryPage({ params }: ResourceCategoryPageProps) {
       category={categoryData.id}
       label={categoryData.label}
       description={categoryData.description}
-      badgeClassName={getCategoryColors(categoryData.id).badgeClass}
       count={resources.filter(resource => resource.category === categoryData.id).length}
       resources={resources
         .filter(resource => resource.category === categoryData.id)

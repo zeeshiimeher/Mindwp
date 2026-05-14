@@ -1,8 +1,8 @@
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 import InboxRenderer from '@/domains/features/renderers/InboxRenderer';
-import type { FeaturePageData } from '@/domains/features/types';
 
 interface InboxPageProps {
-  data: FeaturePageData;
+  data: FeaturePageDataBySlug['inbox'];
 }
 
 export default function InboxPage({ data }: InboxPageProps) {

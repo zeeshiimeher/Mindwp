@@ -9,37 +9,7 @@
  * All values use var(--mw-*) tokens from tokens.css.
  */
 
-/* ══════════════════════════════════════════════════════
-   LINKS
-   ══════════════════════════════════════════════════════ */
 
-.rd-link {
-    color: var(--mw-signal-cyan);
-    text-decoration: none;
-    border-bottom: 1px solid var(--mw-signal-cyan-30);
-    transition:
-        color var(--mw-dur-fast) var(--mw-ease-out),
-        border-color var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.rd-link:hover {
-    color: color-mix(in oklch, var(--mw-signal-cyan) 75%, var(--mw-color-ink));
-    border-bottom-color: currentColor;
-}
-
-.bg-dark .rd-link,
-.bg-gradient-hero .rd-link,
-.bg-gradient-base .rd-link,
-.bg-gradient-cta .rd-link {
-    color: var(--mw-signal-cyan);
-}
-
-.bg-dark .rd-link:hover,
-.bg-gradient-hero .rd-link:hover,
-.bg-gradient-base .rd-link:hover,
-.bg-gradient-cta .rd-link:hover {
-    color: var(--mw-color-white);
-}
 
 /* ══════════════════════════════════════════════════════
    BUTTONS
@@ -179,196 +149,27 @@
     }
 }
 
-/* ══════════════════════════════════════════════════════
-   CARDS
-   ══════════════════════════════════════════════════════ */
 
-.rd-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--mw-space-3);
-    padding: clamp(1.25rem, 2vw, 1.75rem);
-    background: var(--mw-bg-page);
-    border: 1px solid var(--mw-border-light);
-    border-radius: var(--mw-radius-lg);
-    box-shadow: var(--mw-shadow-card);
-    transition:
-        transform var(--mw-dur-fast) var(--mw-ease-out),
-        box-shadow var(--mw-dur-fast) var(--mw-ease-out),
-        border-color var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.rd-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--mw-shadow-panel);
-    border-color: var(--mw-border-subtle);
-}
-
-/* Dark surface card — glass panel style */
-.bg-dark .rd-card,
-.bg-gradient-hero .rd-card,
-.bg-gradient-base .rd-card,
-.bg-gradient-cta .rd-card {
-    background: var(--mw-bg-dark-panel);
-    border-color: var(--mw-border-panel);
-    color: var(--mw-text-on-dark-strong);
-}
-
-/* ══════════════════════════════════════════════════════
-   PANELS
-   ══════════════════════════════════════════════════════ */
-
-.rd-panel-light {
-    background: var(--mw-bg-page);
-    border: 1px solid var(--mw-border-light);
-    border-radius: var(--mw-radius-panel);
-    box-shadow: var(--mw-shadow-soft);
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-}
-
-.rd-panel-dark {
-    background: var(--mw-bg-dark-panel);
-    border: 1px solid var(--mw-border-panel);
-    border-radius: var(--mw-radius-panel);
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-}
-
-/* ══════════════════════════════════════════════════════
-   BADGES / EYEBROWS
-   ══════════════════════════════════════════════════════ */
-
-/* Eyebrow / kicker style. Used by rd-section-kicker via typography.css.
-   See mw-signal-dot + mw-status-badge (new system) below for signal badges. */
-
-/* ══════════════════════════════════════════════════════
-   SIGNAL DOTS
-   ══════════════════════════════════════════════════════ */
-
-.rd-dot {
-    display: inline-block;
-    width: var(--mw-space-1-5);
-    height: var(--mw-space-1-5);
-    border-radius: var(--mw-radius-pill);
-    background: currentColor;
-    flex-shrink: 0;
-}
-
-.rd-dot--sm {
-    width: var(--mw-space-1);
-    height: var(--mw-space-1);
-}
-
-.rd-dot--lg {
-    width: var(--mw-space-2);
-    height: var(--mw-space-2);
-}
-
-.rd-dot--cyan {
-    color: var(--mw-signal-cyan);
-    box-shadow: var(--mw-glow-cyan);
-}
-
-.rd-dot--teal {
-    color: var(--mw-signal-teal);
-    box-shadow: var(--mw-glow-teal);
-}
-
-.rd-dot--green {
-    color: var(--mw-signal-green);
-    box-shadow: var(--mw-glow-green);
-}
-
-.rd-dot--amber {
-    color: var(--mw-signal-amber);
-    box-shadow: var(--mw-glow-amber);
-}
-
-.rd-dot--red {
-    color: var(--mw-signal-red);
-    box-shadow: var(--mw-glow-red);
-}
-
-.rd-dot--purple {
-    color: var(--mw-signal-purple);
-    box-shadow: var(--mw-glow-purple);
-}
-
-/* Expected fallout — delete when SmartWebsiteSystems + LocalSeoAuthority renderers are rebuilt */
-.rd-dot--good {
-    color: var(--mw-signal-green);
-}
-
-.rd-dot--risk {
-    color: var(--mw-signal-red);
-}
-
-.rd-dot--warn {
-    color: var(--mw-signal-amber);
-}
-
-.rd-dot--info {
-    color: var(--mw-signal-cyan);
-}
-
-.rd-dot--live {
-    animation: mw-pulse-dot 2s ease-in-out infinite;
-}
-
-/* ══════════════════════════════════════════════════════
-   ICON TILES
-   ══════════════════════════════════════════════════════ */
-
-.rd-icon-tile {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: var(--mw-radius-md);
-    background: var(--mw-signal-cyan-8);
-    color: var(--mw-signal-cyan);
-    border: 1px solid var(--mw-signal-cyan-20);
-    flex-shrink: 0;
-}
-
-.rd-icon-tile--lg {
-    width: 2.75rem;
-    height: 2.75rem;
-}
-
-.rd-icon-tile--sm {
-    width: 1.75rem;
-    height: 1.75rem;
-}
-
-.bg-dark .rd-icon-tile,
-.bg-gradient-hero .rd-icon-tile,
-.bg-gradient-base .rd-icon-tile,
-.bg-gradient-cta .rd-icon-tile {
-    background: var(--mw-signal-cyan-10);
-    color: var(--mw-signal-cyan);
-    border-color: var(--mw-signal-cyan-20);
-}
 
 /* ══════════════════════════════════════════════════════
    FORMS
    ══════════════════════════════════════════════════════ */
 
-.rd-field {
+.mw-field {
     display: flex;
     flex-direction: column;
     gap: var(--mw-space-1-5);
 }
 
-.rd-label {
+.mw-label {
     font-size: var(--mw-text-label);
     font-weight: 600;
     color: var(--mw-text-primary);
 }
 
-.rd-input,
-.rd-textarea,
-.rd-select {
+.mw-input,
+.mw-textarea,
+.mw-select {
     width: 100%;
     padding: var(--mw-space-3) var(--mw-space-4);
     border: 1px solid var(--mw-border-light);
@@ -382,101 +183,27 @@
         box-shadow var(--mw-dur-fast) var(--mw-ease-out);
 }
 
-.rd-input:focus,
-.rd-textarea:focus,
-.rd-select:focus {
+.mw-input:focus,
+.mw-textarea:focus,
+.mw-select:focus {
     border-color: var(--mw-signal-cyan);
     box-shadow: var(--mw-shadow-focus);
     outline: none;
 }
 
-.rd-textarea {
+.mw-textarea {
     min-height: 8rem;
     resize: vertical;
 }
 
-/* ══════════════════════════════════════════════════════
-   ACCORDION PRIMITIVE
-   ══════════════════════════════════════════════════════ */
-
-.rd-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: var(--mw-space-2);
-}
-
-.rd-accordion__item {
-    border: 1px solid var(--mw-border-light);
-    border-radius: var(--mw-radius-lg);
-    background: var(--mw-bg-page);
-    overflow: hidden;
-    transition:
-        border-color var(--mw-dur-fast) var(--mw-ease-out),
-        box-shadow var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.rd-accordion__item[data-state="open"] {
-    border-color: var(--mw-signal-cyan-30);
-    box-shadow: var(--mw-shadow-card);
-}
-
-.rd-accordion__trigger {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--mw-space-4);
-    width: 100%;
-    padding: var(--mw-space-4) var(--mw-space-5);
-    background: transparent;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    font-family: var(--mw-font-sans);
-    font-weight: 600;
-    font-size: var(--mw-text-base);
-    color: var(--mw-text-primary);
-    transition: background var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.rd-accordion__trigger:hover {
-    background: var(--mw-signal-cyan-8);
-}
-
-.rd-accordion__icon {
-    flex-shrink: 0;
-    transition: transform var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.rd-accordion__item[data-state="open"] .rd-accordion__icon {
-    transform: rotate(180deg);
-}
-
-.rd-accordion__content {
-    padding: 0 var(--mw-space-5) var(--mw-space-5);
-    color: var(--mw-text-secondary);
-    line-height: var(--mw-leading-relaxed);
-    font-size: var(--mw-text-body-sm);
-}
-
-.rd-accordion__item[data-state="closed"] .rd-accordion__content {
-    display: none;
-}
 
 @media (prefers-reduced-motion: reduce) {
 
-    .rd-card,
     .mw-btn,
-    .rd-link,
-    .rd-input,
-    .rd-textarea,
-    .rd-select,
-    .rd-accordion__item,
-    .rd-accordion__icon {
+    .mw-input,
+    .mw-textarea,
+    .mw-select {
         transition: none !important;
-    }
-
-    .rd-card:hover {
-        transform: none;
     }
 }
 

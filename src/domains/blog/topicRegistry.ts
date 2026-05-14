@@ -71,7 +71,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'lead-qualification': {
     name: 'Lead Qualification',
     description:
-      'Scoring and filtering systems that separate high-intent prospects from tire-kickers.',
+      'Scoring and filtering systems that separate high-intent prospects from poor-fit enquiries.',
   },
   'website-infrastructure': {
     name: 'Website Infrastructure',

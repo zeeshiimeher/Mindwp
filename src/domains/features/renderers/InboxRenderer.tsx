@@ -1,163 +1,179 @@
-import { Inbox as InboxIcon, Mail, MessageSquare } from 'lucide-react';
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 
-import { ExploreCardsSection } from '@/components/reusable/sections/core';
-import {
-  FeatureBenefitsSection,
-  FeatureCapabilitiesSection,
-  FeatureHeroSection,
-  FeatureIconCardsSection,
-  FeaturePainPointsSection,
-  FeatureProcessStepsSection,
-  FeatureUseCasesSection,
-} from '@/components/reusable/sections/features';
-import { Badge } from '@/components/reusable/single/Badge';
-import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { Card } from '@/components/ui/card';
-import type { FeaturePageData } from '@/domains/features/types';
+import { FAQSection } from '@/components/content/FAQSection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
-interface InboxRendererProps {
-  data: FeaturePageData;
+interface Props {
+  data: FeaturePageDataBySlug['inbox'];
 }
 
-export default function InboxRenderer({ data }: InboxRendererProps) {
-  const { hero, sections, cta } = data;
-  const { process, benefits, useCases, faq, explore, capabilities } = sections;
-  const channels = sections.channels;
-  const painPoints = sections.painPoints;
-
-  if (!channels || !painPoints) {
-    throw new Error('Missing section data');
-  }
+export function InboxRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <>
-      <ErrorBoundary fallback={<GenericErrorFallback />}>
-        <main role='main'>
-          <FeatureHeroSection
-            badge={hero.badge}
-            badgeIcon={InboxIcon}
-            title={hero.title}
-            description={hero.description}
-            stats={hero.stats}
-            heroActions={{
-              primaryActionVariant: 'primary',
-              primaryButtonCssPrefix: 'feature-hero__primary-cta',
-            }}
-            visualContent={
-              <Card className='p-8 bg-gradient-surface-muted'>
-                <div className='l-stack'>
-                  <div className='l-row l-items-center l-gap-3 p-3 bg-white rounded-lg shadow-sm border border-gray-200'>
-                    <Mail className='h-6 w-6 text-blue-600' />
-                    <div className='flex-1'>
-                      <p className='text-sm'>New email from John Smith</p>
-                      <p className='text-xs text-muted-foreground'>2 minutes ago</p>
-                    </div>
-                    <Badge variant='outline' size='sm' context='meta'>
-                      Email
-                    </Badge>
-                  </div>
-                  <div className='l-row l-items-center l-gap-3 p-3 bg-white rounded-lg shadow-sm border border-gray-200'>
-                    <MessageSquare className='h-6 w-6 text-green-600' />
-                    <div className='flex-1'>
-                      <p className='text-sm'>SMS from Sarah Johnson</p>
-                      <p className='text-xs text-muted-foreground'>5 minutes ago</p>
-                    </div>
-                    <Badge variant='outline' size='sm' context='meta'>
-                      SMS
-                    </Badge>
-                  </div>
-                  <div className='text-center pt-2'>
-                    <p className='text-sm text-muted-foreground'>
-                      All in one inbox. No app switching. ✨
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            }
-            cssPrefix='inbox-hero'
-            backgroundColor='bg-gradient-to-b from-muted/50 to-background'
-            decorations={[
-              { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
-              { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
-            ]}
-          />
-
-          <FeatureProcessStepsSection
-            badge={process.badge}
-            title={process.title}
-            description={process.description}
-            steps={process.steps}
-            columns={4}
-            cssPrefix='inbox-process'
-            backgroundColor='bg-base'
-          />
-
-          <FeatureBenefitsSection
-            badge={benefits.badge}
-            title={benefits.title}
-            description={benefits.description}
-            benefits={benefits.items}
-            cssPrefix='inbox-benefits'
-          />
-
-          <FeatureUseCasesSection
-            badge={useCases.badge}
-            title={useCases.title}
-            useCases={useCases.items}
-            cssPrefix='inbox-use-cases'
-          />
-
-          <FAQSection
-            badge={faq.badge}
-            title={faq.title}
-            description={faq.description}
-            faqs={faq.items}
-            cssPrefix='inbox-faq'
-            backgroundColor='bg-base'
-          />
-
-          <ExploreCardsSection
-            badge={explore.badge}
-            title={explore.title}
-            description={explore.description}
-            cards={explore.cards}
-            cssPrefix='inbox-explore'
-            backgroundColor='bg-alt'
-          />
-
-          <FeatureIconCardsSection
-            badge={channels.badge}
-            title={channels.title}
-            description={channels.description}
-            items={channels.items}
-            cssPrefix='channels-section'
-          />
-
-          <FeaturePainPointsSection
-            badge={painPoints.badge}
-            title={painPoints.title}
-            painPoints={painPoints.items}
-            cssPrefix='inbox-pain-points'
-            backgroundColor='bg-alt'
-          />
-
-          <FeatureCapabilitiesSection
-            badge={capabilities.badge}
-            title={capabilities.title}
-            description={capabilities.description}
-            featureCategories={capabilities.featureCategories}
-            cssPrefix='inbox-capabilities'
-            columns={capabilities.columns}
-            variant={capabilities.variant}
-            backgroundColor='bg-base'
-          />
-
-          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
-        </main>
-      </ErrorBoundary>
-    </>
+    <main>
+      <InboxHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <InboxRecognitionSection />
+      {faq ? <InboxFAQ faq={faq} /> : null}
+      <InboxDecisionPanel cta={cta} />
+    </main>
   );
 }
+
+function InboxHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='Inbox hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<InboxSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function InboxSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
+          return (
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
+            </div>
+          );
+        })}
+      </div>
+
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
+    </div>
+  );
+}
+
+function InboxRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function InboxFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `smart-website-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Smart Website Systems FAQ'
+    />
+  );
+}
+
+function InboxDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export default InboxRenderer;

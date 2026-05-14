@@ -1,190 +1,190 @@
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 interface Props {
   data: ServicePageDataBySlug['website-redesign-system-rebuild'];
   slug: string;
 }
 
-const ARIA_HERO_DOT = 'Redesign Decision -- page hero';
-const ARIA_STAKES_DOT = 'What the decision controls';
-const ARIA_MATRIX_DOT = 'Side by side comparison';
-const ARIA_LEANS_DOT = 'When to choose which';
-const ARIA_HANDOFF_DOT = 'Where the next step belongs';
-const ARIA_FAQ_DOT = 'Frequently asked questions';
-
-const ASPECT_DOT = 'Aspect';
-
-function requireHeadingTitle(t: string | undefined, s: string) {
-  if (!t || !t.trim()) throw new Error(`[${s}] Missing heading title`);
-  return t;
-}
-
-export function WebsiteRedesignSystemRebuildRenderer({ data, slug: _slug }: Props) {
-  const { hero, sections, cta } = data;
-  const { decisionStakes, comparison, whenToChoose, handoffNext, faq } = sections;
-  const primarySystem = data.systems[0];
-  if (!primarySystem) throw new Error('[redesign-decision] Missing service system');
-  const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
+export default function WebsiteRedesignSystemRebuildRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <div className='redesign-decision-page decision-page'>
-      <HeroFrame
-        className='redesign-decision-hero decision-hero'
-        ariaLabel={ARIA_HERO_DOT}
-        badge={hero.badge}
-        title={hero.title}
-        description={hero.description}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-        chips={hero.list}
-        chipDotVariant='subtle'
-      />
+    <main>
+      <WebsiteRedesignSystemRebuildHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <WebsiteRedesignSystemRebuildRecognitionSection />
+      {faq ? <WebsiteRedesignSystemRebuildFAQ faq={faq} /> : null}
+      <WebsiteRedesignSystemRebuildDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-      <SectionFrame
-        heading={decisionStakes.header}
-        tone='white'
-        className='decision-stakes'
-        ariaLabel={ARIA_STAKES_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(decisionStakes.header.title, 'decisionStakes');
+function WebsiteRedesignSystemRebuildHero({
+  hero,
+  ctaHref,
+}: {
+  hero: Props['data']['hero'];
+  ctaHref: string;
+}) {
+  return (
+    <HeroFrame
+      ariaLabel='Website Redesign & System Rebuild hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<WebsiteRedesignSystemRebuildSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function WebsiteRedesignSystemRebuildSignalPanel({
+  visual,
+}: {
+  visual: Props['data']['hero']['visual'];
+}) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
           return (
-            <div className='decision-stakes__grid'>
-              {decisionStakes.stakes.map(s => (
-                <article key={s.id} className='decision-stakes__card'>
-                  <span className='decision-stakes__num'>{s.num}</span>
-                  <p className='decision-stakes__point'>{s.point}</p>
-                  <p className='decision-stakes__hint'>{s.hint}</p>
-                </article>
-              ))}
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
             </div>
           );
-        })()}
-      </SectionFrame>
+        })}
+      </div>
 
-      <SectionFrame
-        heading={comparison.header}
-        tone='mist'
-        className='decision-matrix'
-        ariaLabel={ARIA_MATRIX_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(comparison.header.title, 'comparison');
-          return (
-            <div className='decision-matrix__panel'>
-              <header className='decision-matrix__head'>
-                <span className='decision-matrix__head-cell'>{ASPECT_DOT}</span>
-                <span className='decision-matrix__head-cell decision-matrix__head-cell--a'>
-                  {comparison.optionALabel}
-                  <span className='decision-matrix__head-title'>{comparison.optionATitle}</span>
-                </span>
-                <span className='decision-matrix__head-cell decision-matrix__head-cell--b'>
-                  {comparison.optionBLabel}
-                  <span className='decision-matrix__head-title'>{comparison.optionBTitle}</span>
-                </span>
-              </header>
-              <ul className='decision-matrix__rows'>
-                {comparison.rows.map(r => (
-                  <li key={r.id} className='decision-matrix__row'>
-                    <span className='decision-matrix__aspect'>{r.aspect}</span>
-                    <span className='decision-matrix__cell decision-matrix__cell--a'>
-                      {r.optionA}
-                    </span>
-                    <span className='decision-matrix__cell decision-matrix__cell--b'>
-                      {r.optionB}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <SectionFrame
-        heading={whenToChoose.header}
-        tone='white'
-        className='decision-leans'
-        ariaLabel={ARIA_LEANS_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(whenToChoose.header.title, 'whenToChoose');
-          return (
-            <div className='decision-leans__wrap'>
-              <div className='decision-leans__columns'>
-                {whenToChoose.columns.map(col => (
-                  <article
-                    key={col.id}
-                    className={`decision-leans__col decision-leans__col--${col.variant}`}
-                  >
-                    <header className='decision-leans__head'>
-                      <span className='decision-leans__label'>{col.label}</span>
-                      <h3 className='decision-leans__title'>{col.title}</h3>
-                    </header>
-                    <ul className='decision-leans__items'>
-                      {col.signals.map((s, i) => (
-                        <li key={`${col.id}-${i}`}>
-                          <span className='decision-leans__bullet' aria-hidden='true' />
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-              <p className='decision-leans__closing'>{whenToChoose.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <SectionFrame
-        heading={handoffNext.header}
-        tone='gradient-dark'
-        className='decision-handoff'
-        ariaLabel={ARIA_HANDOFF_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(handoffNext.header.title, 'handoffNext');
-          return (
-            <div className='decision-handoff__wrap'>
-              <ul className='decision-handoff__rows'>
-                {handoffNext.rows.map(r => (
-                  <li key={r.id} className='decision-handoff__row'>
-                    <span className='decision-handoff__when'>{r.when}</span>
-                    <span className='decision-handoff__route'>{r.route}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className='decision-handoff__rule'>{handoffNext.rule}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <FAQSection
-        eyebrow={faq.header.kicker}
-        title={faq.header.title}
-        description={faq.header.description}
-        items={faq.items}
-        tone='white'
-        variant='split'
-        className='decision-faq'
-        ariaLabel={ARIA_FAQ_DOT}
-      />
-
-      <DecisionPanel
-        className='redesign-decision-cta decision-cta'
-        heading={cta.heading}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
-        expectations={cta.expectations}
-        reassurance={cta.footer}
-      />
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
     </div>
   );
 }
+
+function WebsiteRedesignSystemRebuildRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function WebsiteRedesignSystemRebuildFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `website-redesign-system-rebuild-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Website Redesign & System Rebuild FAQ'
+    />
+  );
+}
+
+function WebsiteRedesignSystemRebuildDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export { WebsiteRedesignSystemRebuildRenderer };

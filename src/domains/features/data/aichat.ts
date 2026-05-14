@@ -1,264 +1,109 @@
-import { Calendar, Clock, Globe, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
-const aiChatFaqItems = [
-  {
-    question: 'How does the chat feature work?',
-    answer:
-      'The chat feature allows visitors to send messages, receive reply suggestions, and interact with your team. All conversations are stored for review.',
-  },
-  {
-    question: 'Can appointments be booked through chat?',
-    answer:
-      'Yes, visitors can request and book appointments directly in the chat window. The system syncs with your calendar.',
-  },
-  {
-    question: 'What happens if a question needs human support?',
-    answer:
-      'The chat feature can route or escalate conversations to a team member for follow-up. Human oversight is always available.',
-  },
-  {
-    question: 'How does chat connect with other features?',
-    answer:
-      'Chat integrates with CRM, calendar, and notifications, helping keep all information organized and accessible.',
-  },
-  {
-    question: 'Is the chat available 24/7?',
-    answer:
-      'Yes, the AI chat is available around the clock to answer visitor questions and capture leads even when your team is offline.',
-  },
-  {
-    question: 'Can I customize the chat appearance?',
-    answer:
-      'Absolutely! You can customize colors, branding, welcome messages, and chat behavior to match your website.',
-  },
-  {
-    question: 'How does it handle multiple languages?',
-    answer:
-      'The AI can respond in multiple languages and detect visitor language preferences automatically.',
-  },
-  {
-    question: 'What analytics are available?',
-    answer:
-      'View detailed analytics on chat conversations, conversion rates, popular questions, and team performance.',
-  },
-  {
-    question: 'How secure is the chat data?',
-    answer:
-      'All chat data is encrypted and stored securely. We comply with data protection regulations and never share personal information.',
-  },
-];
+// =============================================================================
+// AI Chat — page
+// =============================================================================
 
-const slug = 'aichat';
-
-export const aiChatData: FeaturePageData = {
-  slug,
+export const aiChatData = {
   seo: buildFeatureSeo({
-    slug,
-    title: 'AI Chat | Structured Website Conversation Layer',
+    slug: 'aichat',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
+  slug: 'aichat',
   systems: ['ai-lead-handling'],
-  topics: ['lead-response-time'],
-  category: 'Communication',
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Part of AI Lead Handling',
-    title: 'Visitors leave when nobody answers in the moment',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'When a question goes unanswered for hours, the visit ends and the lead picks the next firm. AI chat sits inside AI Lead Handling so first responses happen in the moment, routing reaches the right person, and your team only steps in for conversations that matter.',
-    stats: [
-      { value: '24/7', label: 'Available' },
-      { value: 'Instant', label: 'Responses' },
-      { value: 'Human', label: 'Oversight' },
-      { value: 'Smart', label: 'Automation' },
-    ],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    process: {
-      badge: 'How It Works',
-      title: 'How Structured Chat Operates',
-      description:
-        'A clear communication flow that connects visitor messages to routing, booking, and follow-up inside your wider system.',
-      steps: [
-        {
-          number: '01',
-          title: 'Visitor Arrives',
-          description: 'A visitor opens your website and can interact with chat.',
-        },
-        {
-          number: '02',
-          title: 'Chat Started',
-          description: 'The chat window opens and the visitor can type questions or requests.',
-        },
-        {
-          number: '03',
-          title: 'Team or AI Reply',
-          description: 'Reply suggestions are provided and messages can be routed to your team.',
-        },
-        {
-          number: '04',
-          title: 'Appointment Booking',
-          description:
-            'Conversations can be used to book appointments or hand off to a team member.',
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    benefits: {
-      badge: 'Key Advantages',
-      title: 'What Structured Chat Improves',
-      description:
-        'Structured chat improves communication clarity, captures enquiries consistently, and connects conversations directly to your CRM and booking layers.',
-      items: [
-        {
-          icon: MessageSquare,
-          title: 'Consistent Communication',
-          description:
-            'Chat provides a reliable way for visitors to ask questions and receive responses.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Inbox,
-          title: 'Organized Conversations',
-          description: 'All chat messages are stored and can be reviewed by your team.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Users,
-          title: 'Team Collaboration',
-          description: 'Chats can be routed to the right team member for follow-up.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Calendar,
-          title: 'Appointment Booking',
-          description: 'Visitors can book appointments directly through chat.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Settings,
-          title: 'Feature Integration',
-          description: 'Chat connects with CRM, calendar, and other features.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Clock,
-          title: '24/7 Availability',
-          description: 'AI chat is available anytime to capture leads and answer questions.',
-          iconType: 'accent' as const,
-        },
-      ],
-    },
-    useCases: {
-      badge: 'Feature in Practice',
-      title: 'Structured Chat Within Daily Operations',
-      description:
-        'Examples of how this conversation layer supports daily operations while remaining connected to your Smart Website infrastructure.',
-      scenarioLabel: 'Scenario',
-      solutionLabel: 'AI Solution',
-      items: [
-        {
-          icon: MessageSquare,
-          title: 'Visitor Question',
-          scenario: 'A visitor asks a question about your services.',
-          solution: 'Chat provides a suggested reply and can route the message to your team.',
-          result: 'Visitor receives a timely response.',
-        },
-        {
-          icon: Calendar,
-          title: 'Appointment Request',
-          scenario: 'A visitor wants to book a meeting or call.',
-          solution: 'Chat allows booking directly and syncs with your calendar.',
-          result: 'Appointment is scheduled and confirmed.',
-        },
-        {
-          icon: Users,
-          title: 'Team Handoff',
-          scenario: 'A complex question requires human support.',
-          solution: 'Chat escalates the conversation to a team member for follow-up.',
-          result: 'Team member continues the conversation as needed.',
-        },
-      ],
-    },
-    capabilities: {
-      badge: "What's Included",
-      title: 'Conversation Layer Overview',
-      description: 'Breakdown of how chat functions within your structured website system.',
-      featureCategories: [
-        {
-          icon: MessageSquare,
-          title: 'Chat Functions',
-          description: 'Interactive chat interface with smart reply suggestions and routing',
-          features: [
-            'Text-based chat interface',
-            'Reply suggestions',
-            'Conversation routing',
-            'Message history',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Globe,
-          title: 'Integration Features',
-          description: 'Seamlessly integrate with your CRM, calendar, and team workflows',
-          features: ['CRM sync', 'Calendar booking', 'Team notifications', 'Contact info capture'],
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Users,
-          title: 'User Controls',
-          description: 'Full control over conversations with human oversight and management',
-          features: [
-            'Human handoff',
-            'Conversation review',
-            'Visibility and organization',
-            'Settings management',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-    },
-    faq: {
-      badge: 'Common Questions',
-      title: 'Structured Chat FAQ',
-      description:
-        'Answers to common questions about how this conversation layer operates within your system.',
-      items: aiChatFaqItems,
-    },
-    explore: {
-      badge: 'Explore Related Features',
-      title: 'Complete Your Customer Experience',
-      description: 'Pair chat with these features for the best results',
-      cards: [
-        {
-          icon: Calendar,
-          title: 'Calendars',
-          description: 'Book appointments directly through chat conversations',
-          href: '/features/calendars',
-        },
-        {
-          icon: Inbox,
-          title: 'Unified Inbox',
-          description: 'Manage all customer communications in one place',
-          href: '/features/inbox',
-        },
-        {
-          icon: Users,
-          title: 'CRM',
-          description: 'Track customer interactions and manage relationships',
-          href: '/features/crm',
-        },
-      ],
-    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
+      },
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
+      },
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
+      },
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
+      },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      title: 'Review Your Communication Structure',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies FeaturePageData;

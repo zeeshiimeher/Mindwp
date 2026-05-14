@@ -1,53 +1,18 @@
-// @ts-nocheck
 /* Blog-post UI template.
   Renders from provided props only; routing, slug lookup, and registries stay outside this file. */
-import {
-  ArrowLeft,
-  Award,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  Heart,
-  Phone,
-  Shield,
-  Star,
-  User,
-} from 'lucide-react';
-import type { ReactNode } from 'react';
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import {
-  BlogChecklistSection,
-  BlogImageSection,
-  BlogQuoteSection,
-  BlogStepsSection,
-  BlogTakeawaysSection,
-} from '@/components/reusable/sections/blog';
-import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
-import { Callout } from '@/components/reusable/single/Callout';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
-import { ActionButtons } from '@/components/system/ActionButtons';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { Card } from '@/components/ui/card';
-import {
-  type Author,
-  BLOG_AUTHORS,
-  getCategoryColors,
-  getCategoryMetadata,
-} from '@/domains/blog/api';
+import { type Author, BLOG_AUTHORS, getCategoryMetadata } from '@/domains/blog/api';
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
-
-import { buildContactHref } from '../../../lib/contact/contactHref';
 
 export interface BlogPostTemplateProps {
   pageId: string;
-  // Meta
   title: string;
   slug: string;
   category: BlogCategory;
@@ -58,12 +23,9 @@ export interface BlogPostTemplateProps {
     role: string;
     initials: string;
   };
-  // Content - Flexible sections array
   sections: BlogPostSection[];
   tags?: string[];
-  /** System keys for CTA routing context */
   systems?: string[];
-  /** Resolved featured image path from image system */
   featuredImage?: string | null;
 }
 
@@ -114,17 +76,11 @@ function normalizeCalloutText(text: string): string {
     .trim();
 }
 
-/*
-Defaults (do not hardcode in JSX):
-- `author`: if prop is provided, it is used unchanged; otherwise derived from category using the canonical `authors.ts` registry.
-- `readTime`: if prop is provided, it is used unchanged; otherwise estimated from introduction + sections (≈200 words/min, rounded).
-*/
 function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
   const wordsFromText = (text: string) => (text.match(/[\p{L}\p{N}']+/gu) ?? []).length;
 
   let text = '';
 
-  // Extract text from sections
   sections.forEach(section => {
     switch (section.type) {
       case 'introduction':
@@ -132,11 +88,8 @@ function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
         break;
 
       case 'content': {
-        if (typeof section.content === 'string') {
-          text += section.content + ' ';
-        } else if (Array.isArray(section.content)) {
-          text += section.content.join(' ') + ' ';
-        }
+        if (typeof section.content === 'string') text += section.content + ' ';
+        if (Array.isArray(section.content)) text += section.content.join(' ') + ' ';
         if (section.list) text += section.list.join(' ') + ' ';
         if (section.callout) text += section.callout + ' ';
         break;
@@ -154,12 +107,13 @@ function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
         if (section.attribution) text += section.attribution + ' ';
         break;
 
-      case 'steps': {
+      case 'steps':
         if (typeof section.content === 'string') text += section.content + ' ';
         if (Array.isArray(section.content)) text += section.content.join(' ') + ' ';
-        text += (section.steps ?? []).map(s => `${s.label} ${s.description ?? ''}`).join(' ') + ' ';
+        text +=
+          (section.steps ?? []).map(step => `${step.label} ${step.description ?? ''}`).join(' ') +
+          ' ';
         break;
-      }
 
       case 'checklist':
         if (typeof section.content === 'string') text += section.content + ' ';
@@ -176,12 +130,11 @@ function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
         text += ' ';
         break;
 
-      case 'cta':
       case 'callout':
-        // Keep read time based on editorial content; CTA/callout are short.
-        if (section.type === 'callout') text += section.callout + ' ';
+        text += section.callout + ' ';
         break;
 
+      case 'cta':
       default:
         break;
     }
@@ -193,9 +146,7 @@ function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
 }
 
 export function validateRenderableBlogSection(section: BlogPostSection) {
-  if (!RENDERABLE_BLOG_SECTION_TYPES.has(section.type)) {
-    return false;
-  }
+  if (!RENDERABLE_BLOG_SECTION_TYPES.has(section.type)) return false;
 
   switch (section.type) {
     case 'introduction':
@@ -242,395 +193,309 @@ export function BlogPostTemplate({
   sections,
   tags = [],
   systems,
-  featuredImage,
 }: BlogPostTemplateProps) {
-  // Calculate read time from content
   const effectiveReadTime = readTime || estimateReadTimeFromContent(sections);
-
-  // Get author info
   const effectiveAuthor = author || getAuthorForCategory(category);
-
-  const faqItems: Array<{ question: string; answer: string }> = [];
-  const articleSections: BlogPostSection[] = [];
-
-  for (const section of sections) {
-    if (section.type === 'faq') {
-      faqItems.push(...section.items);
-      articleSections.push(section);
-      continue;
-    }
-
-    articleSections.push(section);
-  }
-
-  if (sections.length < 5 && process.env.NODE_ENV === 'development') {
-    systemDevelopmentWarning(`BlogPostTemplate: ${slug} has fewer than 5 authored sections.`);
-  }
-
-  const faqSchema = buildFaqSchema(faqItems);
-
-  const sidebarCTAData = {
-    heading: 'See where this breakdown sits in the wider system',
-    content:
-      'Use this article as the diagnosis, then trace the service path, handoff, and operating layer that actually fixes it.',
-    features: [
-      { text: 'System-level context', icon: 'check' as const },
-      { text: 'Commercial next steps', icon: 'shield' as const },
-      { text: 'Built for operating teams', icon: 'award' as const },
-    ],
-  };
-
-  const primarySystem = systems?.[0];
-  const resolvedPrimarySystem = primarySystem ?? 'smart-website-systems';
-
-  function renderParagraph(text: string, key: string, className?: string): ReactNode {
-    return (
-      <p key={key} className={className}>
-        {text}
-      </p>
-    );
-  }
-
-  // Function to render a section based on its type
-  function renderSection(section: BlogPostSection, index: number) {
-    switch (section.type) {
-      case 'introduction':
-        if (!section.content || section.content.length === 0) {
-          return null;
-        }
-
-        return (
-          <div key={`introduction-${index}`} className='blog-post__intro'>
-            {section.content.map((para, i) => renderParagraph(para, `intro-${i}`))}
-          </div>
-        );
-
-      case 'content':
-        return (
-          <SectionWrapper
-            key={`content-${index}`}
-            padding='none'
-            container='none'
-            className='blog-post__section l-stack'
-            id={`section-${index}`}
-          >
-            {section.heading && (
-              <SectionIntro
-                title={section.heading}
-                cssPrefix='blog-content-section'
-                alignment='left'
-              />
-            )}
-
-            {section.content &&
-              (typeof section.content === 'string'
-                ? renderParagraph(section.content, `content-${index}`)
-                : section.content.map((p, j) => renderParagraph(p, `content-${index}-${j}`)))}
-
-            {section.list && section.list.length > 0 && (
-              <ul className='blog-post__list'>
-                {section.list.map((item, k) => (
-                  <li key={`list-${index}-${k}`} className='blog-post__list-item'>
-                    <span className='blog-post__bullet' aria-hidden='true' />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {section.callout && (
-              <Callout type='info' className='blog-post__callout'>
-                <p>
-                  <strong>Pro Tip:</strong> {normalizeCalloutText(section.callout)}
-                </p>
-              </Callout>
-            )}
-          </SectionWrapper>
-        );
-
-      case 'callout':
-        return (
-          <Callout key={`callout-${index}`} type='info' className='blog-post__callout'>
-            <p>
-              <strong>Pro Tip:</strong> {normalizeCalloutText(section.callout)}
-            </p>
-          </Callout>
-        );
-
-      case 'cta':
-        return (
-          <PrimaryCTASection
-            key={`cta-${index}`}
-            heading={{
-              title: section.heading,
-              description: section.content,
-            }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({ system: 'blog', sourceType: 'blog', slug: 'blog-footer' }),
-                primary: true,
-              },
-            ]}
-          />
-        );
-
-      case 'takeaways':
-        if (!section.items || section.items.length === 0) {
-          return null;
-        }
-
-        return (
-          <BlogTakeawaysSection
-            key={`takeaways-${index}`}
-            heading={section.heading}
-            content={section.content}
-            items={section.items}
-          />
-        );
-
-      case 'quote':
-        if (!section.quote) {
-          return null;
-        }
-
-        return (
-          <BlogQuoteSection
-            key={`quote-${index}`}
-            heading={section.heading}
-            quote={section.quote}
-            attribution={section.attribution}
-          />
-        );
-
-      case 'steps':
-        if (!section.steps || section.steps.length === 0) {
-          return null;
-        }
-
-        return (
-          <BlogStepsSection
-            key={`steps-${index}`}
-            heading={section.heading}
-            content={section.content}
-            steps={section.steps}
-          />
-        );
-
-      case 'checklist':
-        if (!section.items || section.items.length === 0) {
-          return null;
-        }
-
-        return (
-          <BlogChecklistSection
-            key={`checklist-${index}`}
-            heading={section.heading}
-            content={section.content}
-            items={section.items}
-            columns={section.columns}
-          />
-        );
-
-      case 'image':
-        if (!section.src || !section.alt) {
-          return null;
-        }
-
-        return (
-          <BlogImageSection
-            key={`image-${index}`}
-            heading={section.heading}
-            src={section.src}
-            alt={section.alt}
-            caption={section.caption}
-          />
-        );
-
-      case 'faq':
-        if (!section.items || section.items.length === 0) {
-          return null;
-        }
-
-        return (
-          <FAQSection
-            key={`faq-${index}`}
-            title='Frequently Asked Questions'
-            faqs={section.items}
-            cssPrefix='blog-post__faq'
-            variant='compact'
-          />
-        );
-
-      default:
-        return null;
-    }
-  }
   const categoryMeta = getCategoryMetadata(category);
-  const categoryColors = getCategoryColors(category);
   const categoryLabel = categoryMeta?.name ?? category;
+  const resolvedPrimarySystem = systems?.[0] ?? 'smart-website-systems';
+  const articleSections = sections.filter(validateRenderableBlogSection);
+  const faqItems = sections.flatMap(section => (section.type === 'faq' ? section.items : []));
+  const faqSchema = buildFaqSchema(faqItems);
 
   return (
     <CTARegistryProvider pageId={pageId} pageType='blog' primarySystem={resolvedPrimarySystem}>
-      <div className='min-h-screen'>
-        <main>
-          {/* HERO */}
-          <SectionWrapper
-            className='blog-hero'
-            {...(featuredImage
-              ? {
-                  style: {
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  },
-                }
-              : {})}
-          >
-            <div className='l-stack l-stack--loose blog-post__hero'>
-              <span className={`badge badge--hero ${categoryColors.bg} ${categoryColors.text}`}>
-                {categoryLabel}
+      <main>
+        <SectionFrame
+          ariaLabel={title}
+          tone='mist'
+          heading={{
+            eyebrow: categoryLabel,
+            title,
+            description:
+              'A practical breakdown for service businesses building clearer systems around visibility, enquiries, follow-up, and proof.',
+          }}
+        >
+          <div className='flex flex-wrap items-center gap-3'>
+            <a className='mw-btn mw-btn--secondary' href='/blog'>
+              <ArrowLeft size={14} aria-hidden='true' />
+              <span>Back to Blog</span>
+            </a>
+            <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+              <Calendar size={14} aria-hidden='true' />
+              <span>{publishDate}</span>
+            </span>
+            {effectiveReadTime ? (
+              <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                <Clock size={14} aria-hidden='true' />
+                <span>{effectiveReadTime}</span>
               </span>
+            ) : null}
+            {effectiveAuthor ? (
+              <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                <User size={14} aria-hidden='true' />
+                <span>{effectiveAuthor.name}</span>
+              </span>
+            ) : null}
+          </div>
+        </SectionFrame>
 
-              <SectionIntro
-                title={title}
-                headingLevel='h1'
-                cssPrefix='blog-hero'
-                alignment='center'
-                className='l-max-w-4xl l-mx-auto'
+        <SectionFrame
+          ariaLabel='Article content'
+          tone='white'
+          heading={{
+            eyebrow: 'Article',
+            title: 'Read the breakdown',
+            description:
+              'This clean blog renderer keeps the content visible while the final blog design system is rebuilt.',
+          }}
+        >
+          <div className='grid gap-5'>
+            {articleSections.map((section, index) => (
+              <BlogArticleSection
+                key={`${section.type}-${index}`}
+                section={section}
+                index={index}
               />
+            ))}
+          </div>
 
-              <div className='blog-post__meta'>
-                <div className='blog-post__meta-item'>
-                  <Calendar aria-hidden='true' />
-                  <span>{publishDate}</span>
-                </div>
-                {effectiveReadTime && (
-                  <div className='blog-post__meta-item'>
-                    <Clock aria-hidden='true' />
-                    <span>{effectiveReadTime}</span>
-                  </div>
-                )}
-                {effectiveAuthor && (
-                  <div className='blog-post__meta-item'>
-                    <User aria-hidden='true' />
-                    <span>{effectiveAuthor.name}</span>
-                  </div>
-                )}
-              </div>
-
-              <div className='l-row l-justify-center l-gap-4'>
-                <Button
-                  href='/blog'
-                  variant='secondary'
-                  size='sm'
-                  label='Back to Blog'
-                  icon={ArrowLeft}
-                  iconPosition='left'
-                  showDefaultIcon
-                />
-              </div>
+          {tags.length > 0 ? (
+            <div className='mt-8 flex flex-wrap gap-2'>
+              {tags.map(tag => (
+                <span
+                  key={tag}
+                  className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-          </SectionWrapper>
+          ) : null}
 
-          {/* CONTENT WITH SIDEBAR */}
-          <SectionWrapper background='bg-background'>
-            <div className='blog-post__layout'>
-              {/* Main Content Column */}
-              <div className='blog-post__stack'>
-                {/* Render sections dynamically */}
-                {articleSections.map((section, index) => {
-                  if (!validateRenderableBlogSection(section)) {
-                    return null;
-                  }
+          <div className='mt-8'>
+            <BlogPostShareIsland title={title} />
+          </div>
+        </SectionFrame>
 
-                  return renderSection(section, index);
-                })}
+        <DecisionPanel
+          heading={{
+            eyebrow: 'Next step',
+            title: 'Turn the article into a clear first move.',
+            description:
+              'If this article named a real bottleneck, the next step is to decide what should be fixed first.',
+          }}
+          actions={[
+            {
+              label: 'Start a Conversation',
+              href: buildContactHref({
+                system: resolvedPrimarySystem,
+                sourceType: 'blog',
+                slug,
+              }),
+            },
+          ]}
+          expectations={[
+            { num: '01', text: 'What problem the article points to' },
+            { num: '02', text: 'Where the leak appears in your business' },
+            { num: '03', text: 'What to fix first' },
+          ]}
+          reassurance={{ noSell: 'No hard sell.', tone: 'Practical conversation' }}
+        />
 
-                {tags.length > 0 && (
-                  <div className='blog-post__tags'>
-                    {tags.map(tag => (
-                      <Badge key={tag} variant='outline' size='sm' context='meta'>
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-
-                <BlogPostShareIsland title={title} />
-              </div>
-
-              {/* Sidebar */}
-              <aside>
-                <Card className='blog-post__sidebar-card'>
-                  <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
-                  <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
-
-                  <ActionButtons
-                    allowSecondaryAction
-                    primaryButtonCssPrefix='btn-block'
-                    className='blog-post__sidebar-actions'
-                  />
-
-                  <div className='blog-post__sidebar-features'>
-                    {sidebarCTAData.features.map(
-                      (
-                        feature: {
-                          text: string;
-                          icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
-                        },
-                        _index: number
-                      ) => {
-                        const getIcon = (iconType?: string) => {
-                          switch (iconType) {
-                            case 'phone':
-                              return <Phone className='blog-post__sidebar-feature-icon' />;
-                            case 'shield':
-                              return <Shield className='blog-post__sidebar-feature-icon' />;
-                            case 'award':
-                              return <Award className='blog-post__sidebar-feature-icon' />;
-                            case 'star':
-                              return <Star className='blog-post__sidebar-feature-icon' />;
-                            case 'check':
-                              return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
-                            case 'heart':
-                              return <Heart className='blog-post__sidebar-feature-icon' />;
-                            default:
-                              return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
-                          }
-                        };
-
-                        return (
-                          <div key={feature.text} className='blog-post__sidebar-feature'>
-                            {getIcon(feature.icon)}
-                            <span className='blog-post__sidebar-feature-text'>{feature.text}</span>
-                          </div>
-                        );
-                      }
-                    )}
-                  </div>
-                </Card>
-              </aside>
-            </div>
-          </SectionWrapper>
-          <SectionWrapper padding='none' background='bg-background'>
-            <div className='l-container'>
-              <div className='text-sm text-muted-foreground l-max-w-3xl'>
-                If the pattern in this article already feels expensive, move next into a resource
-                that shows how the same issue gets handled in an operating system before you commit
-                to a service decision.
-              </div>
-            </div>
-          </SectionWrapper>
-          {faqSchema && (
-            <script
-              id='faq-jsonld'
-              type='application/ld+json'
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-          )}
-        </main>
-      </div>
+        {faqSchema ? (
+          <script
+            id='faq-jsonld'
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        ) : null}
+      </main>
     </CTARegistryProvider>
+  );
+}
+
+function BlogArticleSection({ section, index }: { section: BlogPostSection; index: number }) {
+  switch (section.type) {
+    case 'introduction':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Introduction</p>
+          <h3>Context</h3>
+          <div className='grid gap-3'>
+            {section.content.map((paragraph, paragraphIndex) => (
+              <p key={`intro-${paragraphIndex}`}>{paragraph}</p>
+            ))}
+          </div>
+        </article>
+      );
+
+    case 'content':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Section {index + 1}</p>
+          <h3>{section.heading}</h3>
+          {renderContentValue(section.content)}
+          {section.list && section.list.length > 0 ? (
+            <ul className='mt-4 grid gap-3'>
+              {section.list.map(item => (
+                <li
+                  key={item}
+                  className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          {section.callout ? <CalloutBlock text={section.callout} /> : null}
+        </article>
+      );
+
+    case 'callout':
+      return <CalloutBlock text={section.callout} />;
+
+    case 'takeaways':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Takeaways</p>
+          <h3>{section.heading ?? 'Key takeaways'}</h3>
+          {renderContentValue(section.content)}
+          <ul className='mt-4 grid gap-3'>
+            {section.items.map(item => (
+              <li
+                key={item}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </article>
+      );
+
+    case 'quote':
+      return (
+        <blockquote className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          {section.heading ? (
+            <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.heading}</p>
+          ) : null}
+          <p>{section.quote}</p>
+          {section.attribution ? (
+            <footer className='mw-text-secondary'>— {section.attribution}</footer>
+          ) : null}
+        </blockquote>
+      );
+
+    case 'steps':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Steps</p>
+          <h3>{section.heading ?? 'Steps'}</h3>
+          {renderContentValue(section.content)}
+          <ol className='mt-4 grid gap-3'>
+            {section.steps.map(step => (
+              <li
+                key={step.label}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                <strong>{step.label}</strong>
+                {step.description ? <p>{step.description}</p> : null}
+              </li>
+            ))}
+          </ol>
+        </article>
+      );
+
+    case 'checklist':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Checklist</p>
+          <h3>{section.heading ?? 'Checklist'}</h3>
+          {renderContentValue(section.content)}
+          <ul className='mt-4 grid gap-3'>
+            {section.items.map(item => (
+              <li
+                key={item}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </article>
+      );
+
+    case 'image':
+      return (
+        <figure className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          {section.heading ? (
+            <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.heading}</p>
+          ) : null}
+          <img
+            src={section.src}
+            alt={section.alt}
+            className='w-full rounded-[var(--mw-radius-lg)]'
+          />
+          {section.caption ? (
+            <figcaption className='mt-3 mw-text-body-sm mw-text-secondary'>
+              {section.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
+
+    case 'faq':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>FAQ</p>
+          <h3>Frequently Asked Questions</h3>
+          <dl className='grid gap-4'>
+            {section.items.map(item => (
+              <div key={item.question}>
+                <dt>
+                  <strong>{item.question}</strong>
+                </dt>
+                <dd>{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+      );
+
+    case 'cta':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Next step</p>
+          <h3>{section.heading}</h3>
+          <p>{section.content}</p>
+        </article>
+      );
+
+    default:
+      return null;
+  }
+}
+
+function renderContentValue(content: string | string[] | undefined) {
+  if (!content) return null;
+
+  if (typeof content === 'string') return <p>{content}</p>;
+
+  return (
+    <div className='grid gap-3'>
+      {content.map((paragraph, index) => (
+        <p key={`paragraph-${index}`}>{paragraph}</p>
+      ))}
+    </div>
+  );
+}
+
+function CalloutBlock({ text }: { text: string }) {
+  return (
+    <aside className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+      <p className='mw-text-eyebrow mw-text-signal-cyan'>Note</p>
+      <p>{normalizeCalloutText(text)}</p>
+    </aside>
   );
 }

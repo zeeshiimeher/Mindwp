@@ -1,33 +1,36 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export type DesignModeValue = any;
-
 export interface FAQItem {
   question: string;
   answer: string;
 }
 
 export type CTAConfig = {
+  eyebrow?: string;
   heading: {
+    id?: string;
     title: string;
     description: string;
-    kicker?: string;
+    muted?: string;
+    subtitle?: string;
   };
-  actions: [
-    {
-      label: string;
-      href: string;
-      primary: true;
-      variant?: string;
-    },
-  ];
-  [key: string]: DesignModeValue;
+  actions: Array<{
+    label: string;
+    href: string;
+    primary?: boolean;
+    variant?: string;
+  }>;
+  expectations?: Array<{
+    num?: string;
+    text: string;
+  }>;
+  footer?: {
+    noSell?: string;
+    tone?: string;
+  };
 };
 
-export interface ServicePageData<
-  TSections extends Record<string, DesignModeValue> = Record<string, DesignModeValue>,
-> {
+export interface ServicePageData {
   slug: string;
-  badge: string;
+  eyebrow: string;
   category: string;
   systems: string[];
   topics: string[];
@@ -37,16 +40,21 @@ export interface ServicePageData<
   seo: import('@/domains/shared/seo').SharedSeoData;
 
   hero: {
-    badge?: string;
+    eyebrow?: string;
     title: string;
     description: string;
     list?: string[];
-    cssPrefix?: string;
-    backgroundColor?: string;
-    [key: string]: unknown;
+    visual?: unknown;
   };
 
-  sections: TSections;
+  faq?: {
+    header?: {
+      eyebrow?: string;
+      title: string;
+      description?: string;
+    };
+    items: FAQItem[];
+  };
 
   cta: CTAConfig;
 }

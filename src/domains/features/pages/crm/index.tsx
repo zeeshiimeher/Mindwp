@@ -1,8 +1,8 @@
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 import CRMRenderer from '@/domains/features/renderers/CRMRenderer';
-import type { FeaturePageData } from '@/domains/features/types';
 
 interface CRMPageProps {
-  data: FeaturePageData;
+  data: FeaturePageDataBySlug['crm'];
 }
 
 export default function CRMPage({ data }: CRMPageProps) {

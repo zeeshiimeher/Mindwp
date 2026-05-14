@@ -1,13 +1,11 @@
 import { ArrowRight, Calendar } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { Card } from '@/components/ui/card';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import type { BlogPostListItem } from '@/domains/blog/api';
 
 export type BlogCategoryTemplateProps = {
   title: string;
   description: string;
-  badgeClassName: string;
   articleCount: number;
   posts: BlogPostListItem[];
 };
@@ -15,52 +13,63 @@ export type BlogCategoryTemplateProps = {
 export function BlogCategoryTemplate({
   title,
   description,
-  badgeClassName,
   articleCount,
   posts,
 }: BlogCategoryTemplateProps) {
   return (
-    <div className='min-h-screen'>
-      <main>
-        {/* HERO */}
-        <SectionWrapper className='blog-hero'>
-          <div className='l-stack l-stack--loose blog-category__hero'>
-            <span className={`badge badge--hero ${badgeClassName}`}>{articleCount} articles</span>
+    <main>
+      <SectionFrame
+        ariaLabel={`${title} blog category`}
+        tone='mist'
+        heading={{
+          eyebrow: `${articleCount} articles`,
+          title,
+          description,
+        }}
+      >
+        <a className='mw-btn mw-btn--secondary' href='/blog'>
+          View all articles
+        </a>
+      </SectionFrame>
 
-            <h1>{title}</h1>
+      <SectionFrame
+        ariaLabel='Latest category articles'
+        tone='white'
+        heading={{
+          eyebrow: 'Latest articles',
+          title: 'Latest Articles',
+          description:
+            'Practical writing for service businesses building clearer systems around visibility, enquiries, follow-up, and proof.',
+        }}
+      >
+        {posts.length === 0 ? (
+          <p className='text-center mw-text-secondary'>No articles published yet.</p>
+        ) : (
+          <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
+            {posts.map(post => (
+              <article
+                key={post.slug}
+                className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
+              >
+                <h3>{post.title}</h3>
+                <p>{post.seo.description}</p>
 
-            <p className='blog-category__lead'>{description}</p>
+                <div className='mt-4 flex items-center gap-2 mw-text-body-sm mw-text-secondary'>
+                  <Calendar size={14} aria-hidden='true' />
+                  <span>{post.publishDate}</span>
+                </div>
+
+                <div className='mt-auto pt-5'>
+                  <a href={`/blog/${post.slug}`} className='mw-btn mw-btn--secondary'>
+                    <span>Read article</span>
+                    <ArrowRight size={14} aria-hidden='true' />
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
-        </SectionWrapper>
-        {/* POSTS */}
-        <SectionWrapper className='blog-surface--muted'>
-          <h2 className='blog-section__title'>Latest Articles</h2>
-          {posts.length === 0 ? (
-            <p className='text-center text-muted-foreground'>No articles published yet.</p>
-          ) : (
-            <div className='blog-category__grid'>
-              {posts.map(post => (
-                <Card key={post.slug} className='blog-category__card'>
-                  <div className='l-stack'>
-                    <h3 className='blog-category__card-title'>{post.title}</h3>
-
-                    <p className='blog-category__card-description'>{post.seo.description}</p>
-
-                    <div className='blog-category__card-meta'>
-                      <Calendar aria-hidden='true' />
-                      {post.publishDate}
-                    </div>
-
-                    <a href={`/blog/${post.slug}`} className='link-primary blog-landing__card-cta'>
-                      Read article <ArrowRight aria-hidden='true' />
-                    </a>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          )}
-        </SectionWrapper>
-      </main>
-    </div>
+        )}
+      </SectionFrame>
+    </main>
   );
 }

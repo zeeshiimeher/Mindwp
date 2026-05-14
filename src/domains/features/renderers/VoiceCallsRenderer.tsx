@@ -1,170 +1,179 @@
-import { BrainCircuit, CheckCircle2, Phone, PhoneCall } from 'lucide-react';
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { ExploreCardsSection } from '@/components/reusable/sections/core';
-import {
-  FeatureBenefitsSection,
-  FeatureCapabilitiesSection,
-  FeatureHeroSection,
-  FeatureProcessStepsSection,
-  FeatureUseCasesSection,
-} from '@/components/reusable/sections/features';
-import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { Card } from '@/components/ui/card';
-import type { FeaturePageData } from '@/domains/features/types';
-import { getVariantStyles } from '@/lib/ui/variantStyles';
+import { FAQSection } from '@/components/content/FAQSection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
-interface VoiceCallsRendererProps {
-  data: FeaturePageData;
+interface Props {
+  data: FeaturePageDataBySlug['voicecalls'];
 }
 
-export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
-  const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq, explore } = sections;
-  const testimonial = sections.testimonial;
-
-  if (!testimonial) {
-    throw new Error('Missing section data');
-  }
+export function VoiceCallsRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <>
-      <ErrorBoundary fallback={<GenericErrorFallback />}>
-        <main role='main'>
-          <FeatureHeroSection
-            badge={hero.badge}
-            badgeIcon={Phone}
-            title={hero.title}
-            description={hero.description}
-            stats={hero.stats}
-            heroActions={{
-              primaryActionVariant: 'primary',
-              primaryButtonCssPrefix: 'feature-hero__primary-cta',
-            }}
-            visualContent={
-              <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
-                <div className='l-stack l-stack--loose'>
-                  <div className='l-row l-items-center l-gap-4 p-4 bg-green-50 border-2 border-green-200 rounded-lg'>
-                    <div className='w-12 h-12 bg-green-500 rounded-full l-row l-items-center l-row-center animate-pulse'>
-                      <PhoneCall className='w-6 h-6 text-white' />
-                    </div>
-                    <div>
-                      <div className='text-sm text-green-900'>Incoming Call</div>
-                      <div className='text-xs text-green-700'>
-                        Customer: &ldquo;I need an appointment&rdquo;
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className='l-row l-items-center l-gap-4 p-4 bg-blue-50 border-2 border-blue-200 rounded-lg'>
-                    <div className='w-12 h-12 bg-blue-500 rounded-full l-row l-items-center l-row-center'>
-                      <BrainCircuit className='w-6 h-6 text-white' />
-                    </div>
-                    <div>
-                      <div className='text-sm text-blue-900'>AI Assistant</div>
-                      <div className='text-xs text-blue-700'>
-                        &ldquo;I&apos;d be happy to book that for you...&rdquo;
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className='l-row l-items-center l-gap-4 p-4 bg-purple-50 border-2 border-purple-200 rounded-lg'>
-                    <div className='w-12 h-12 bg-purple-500 rounded-full l-row l-items-center l-row-center'>
-                      <CheckCircle2 className='w-6 h-6 text-white' />
-                    </div>
-                    <div>
-                      <div className='text-sm text-purple-900'>Booked</div>
-                      <div className='text-xs text-purple-700'>Tuesday 2pm - Added to calendar</div>
-                    </div>
-                  </div>
-
-                  <div className='text-center pt-4 border-t'>
-                    <div className='l-row l-items-center l-row-center l-gap-2 text-sm text-muted-foreground'>
-                      <CheckCircle2 className={getVariantStyles('success').icon.text} />
-                      Call completed in 45 seconds
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            }
-            cssPrefix='voice-ai-hero'
-            backgroundColor='bg-gradient-surface-soft'
-            decorations={[
-              { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
-              { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
-            ]}
-          />
-
-          <FeatureProcessStepsSection
-            badge={process.badge}
-            title={process.title}
-            description={process.description}
-            steps={process.steps}
-            cssPrefix='voice-ai-process'
-          />
-
-          <FeatureBenefitsSection
-            badge={benefits.badge}
-            title={benefits.title}
-            description={benefits.description}
-            benefits={benefits.items}
-            cssPrefix='voice-ai-benefits'
-            backgroundColor='bg-alt'
-          />
-
-          <FeatureUseCasesSection
-            badge={useCases.badge}
-            title={useCases.title}
-            description={useCases.description}
-            useCases={useCases.items}
-            cssPrefix='voice-ai-use-cases'
-          />
-
-          <FeatureCapabilitiesSection
-            badge={capabilities.badge}
-            title={capabilities.title}
-            featureCategories={capabilities.featureCategories}
-            cssPrefix='voice-ai-features'
-            columns={capabilities.columns}
-            variant={capabilities.variant}
-            backgroundColor='bg-base'
-          />
-
-          <FAQSection
-            badge={faq.badge}
-            title={faq.title}
-            description={faq.description}
-            faqs={faq.items}
-            cssPrefix='voice-ai-faq'
-          />
-
-          <ExploreCardsSection
-            badge={explore.badge}
-            title={explore.title}
-            description={explore.description}
-            cards={explore.cards}
-            cssPrefix='voice-ai-explore'
-            backgroundColor='bg-base'
-          />
-
-          <SectionWrapper className='voice-ai-testimonial' background='bg-gradient-surface-muted'>
-            <TestimonialCard
-              title={testimonial.title}
-              quote={testimonial.quote}
-              author={testimonial.author}
-              business={testimonial.business}
-              rating={testimonial.rating}
-              className='bg-white/80 backdrop-blur shadow-xl'
-            />
-          </SectionWrapper>
-
-          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
-        </main>
-      </ErrorBoundary>
-    </>
+    <main>
+      <VoiceCallsHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <VoiceCallsRecognitionSection />
+      {faq ? <VoiceCallsFAQ faq={faq} /> : null}
+      <VoiceCallsDecisionPanel cta={cta} />
+    </main>
   );
 }
+
+function VoiceCallsHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='Voice Calls hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<VoiceCallsSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function VoiceCallsSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
+          return (
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
+            </div>
+          );
+        })}
+      </div>
+
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
+    </div>
+  );
+}
+
+function VoiceCallsRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function VoiceCallsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `smart-website-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Smart Website Systems FAQ'
+    />
+  );
+}
+
+function VoiceCallsDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export default VoiceCallsRenderer;

@@ -1,7 +1,7 @@
 import { FileText } from 'lucide-react';
 
 import { RESOURCE_REGISTRY } from '@/domains/resources/generatedRegistry';
-import type { ResourceCategory, ResourceCategoryMetadata } from '@/domains/resources/types';
+import type { ResourceCategoryMetadata } from '@/domains/resources/types';
 
 type ResourcesHubData = {
   seo: {
@@ -10,7 +10,7 @@ type ResourcesHubData = {
     canonical: string;
   };
   hero: {
-    badge: string;
+    eyebrow: string;
     title: string;
     description: string;
   };
@@ -20,7 +20,7 @@ type ResourcesHubData = {
     countSuffix: string;
   };
   guides: {
-    badge: string;
+    eyebrow: string;
     title: string;
     description: string;
     initialVisibleCount: number;
@@ -31,7 +31,7 @@ type ResourcesHubData = {
     heading: {
       title: string;
       description: string;
-      kicker?: string;
+      eyebrow?: string;
     };
   };
 };
@@ -48,7 +48,7 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     canonical: '/resources',
   },
   hero: {
-    badge: 'Free Resources',
+    eyebrow: 'Free Resources',
     title: 'Resources That Expose Where Revenue Still Leaks',
     description:
       'Use these guides to identify where visibility, response speed, follow-up, and conversion still depend on guesswork, then move toward the system that fixes it.',
@@ -60,7 +60,7 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     countSuffix: 'guides',
   },
   guides: {
-    badge: 'Featured Guides',
+    eyebrow: 'Featured Guides',
     title: 'Guides that move from symptom to system fix',
     description:
       'Each guide shows what is breaking, what manual fixes look like, and where a structured operating system starts paying back.',
@@ -85,9 +85,6 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
     description:
       'Automations, workflows, and CRM setups that turn enquiries into bookings with less manual follow-up.',
     slug: 'crm-automation',
-    colors: {
-      badgeClass: 'resource-badge resource-badge--crm-automation',
-    },
     icon: 'settings',
     iconComponent: FileText,
   },
@@ -97,9 +94,6 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
     description:
       'Infrastructure-first website strategies that convert visitors into leads with intelligent systems.',
     slug: 'smart-website-systems',
-    colors: {
-      badgeClass: 'resource-badge resource-badge--smart-website-systems',
-    },
     icon: 'globe',
     iconComponent: FileText,
   },
@@ -109,9 +103,6 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
     description:
       'AI-powered lead capture, routing, and follow-up systems that respond faster than any human team.',
     slug: 'ai-lead-handling',
-    colors: {
-      badgeClass: 'resource-badge resource-badge--ai-lead-handling',
-    },
     icon: 'bot',
     iconComponent: FileText,
   },
@@ -121,9 +112,6 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
     description:
       'Strategies to build local search authority, improve rankings, and dominate your service area.',
     slug: 'local-seo-authority',
-    colors: {
-      badgeClass: 'resource-badge resource-badge--local-seo-authority',
-    },
     icon: 'map-pin',
     iconComponent: FileText,
   },
@@ -133,9 +121,6 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
     description:
       'Automated review generation, reputation monitoring, and social proof systems for local businesses.',
     slug: 'reputation-review',
-    colors: {
-      badgeClass: 'resource-badge resource-badge--reputation-review',
-    },
     icon: 'star',
     iconComponent: FileText,
   },
@@ -145,9 +130,6 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
     description:
       'Revenue optimisation strategies including upsells, retention, and customer lifetime value growth.',
     slug: 'revenue-growth',
-    colors: {
-      badgeClass: 'resource-badge resource-badge--revenue-growth',
-    },
     icon: 'trending-up',
     iconComponent: FileText,
   },
@@ -158,13 +140,4 @@ export const categories = RESOURCE_CATEGORIES;
 
 export function getCategoryBySlug(categorySlug: string) {
   return categories.find(category => category.slug === categorySlug);
-}
-
-export function getCategoryColors(category: ResourceCategory) {
-  const metadata = categories.find(cat => cat.id === category);
-  return (
-    metadata?.colors || {
-      badgeClass: 'resource-badge resource-badge--default',
-    }
-  );
 }

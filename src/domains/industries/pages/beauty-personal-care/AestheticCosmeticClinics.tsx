@@ -36,7 +36,7 @@ export const aestheticCosmeticClinicsIndustryPageData: IndustryDetailPageData = 
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What clinic owners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -67,7 +67,7 @@ export const aestheticCosmeticClinicsIndustryPageData: IndustryDetailPageData = 
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the clinic actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

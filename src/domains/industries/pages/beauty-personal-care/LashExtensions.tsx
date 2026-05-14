@@ -36,7 +36,7 @@ export const lashExtensionsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What lash artists usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -68,7 +68,7 @@ export const lashExtensionsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the cycle actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

@@ -1,27 +1,52 @@
-import type { ComponentType } from 'react';
+import type { ReactElement } from 'react';
 
 import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { FEATURE_DOMAIN_REGISTRY, getFeaturePageDataBySlug } from '@/domains/features/registry';
-import type { FeaturePageData } from '@/domains/features/types';
+import { FEATURE_DOMAIN_REGISTRY, type FeaturePageDataBySlug } from '@/domains/features/pageData';
 
-type FeatureEntry<TData extends FeaturePageData = FeaturePageData> = {
-  page: ComponentType<{ data: TData }>;
+type FeatureEntry<TData> = {
+  data: TData;
+  render: (data: TData) => ReactElement;
 };
 
-const createFeatureEntry = <TData extends FeaturePageData>(
-  page: ComponentType<{ data: TData }>
-): FeatureEntry<TData> => ({ page });
+type FeatureDataSlug = keyof typeof FEATURE_DOMAIN_REGISTRY & keyof FeaturePageDataBySlug & string;
+type AnyFeatureEntry = FeatureEntry<FeaturePageDataBySlug[keyof FeaturePageDataBySlug]>;
+
+const createFeatureEntry = <TData,>(
+  data: TData,
+  render: (data: TData) => ReactElement
+): FeatureEntry<TData> => ({ data, render });
+
+function getFeatureDataOrThrow<TSlug extends FeatureDataSlug>(
+  slug: TSlug
+): FeaturePageDataBySlug[TSlug] {
+  const data = FEATURE_DOMAIN_REGISTRY[slug].data;
+
+  if (!data) {
+    throw new Error(`Missing feature page data for slug "${slug}".`);
+  }
+
+  return data as FeaturePageDataBySlug[TSlug];
+}
+
+function buildFeatureEntry<TSlug extends FeatureDataSlug>(slug: TSlug) {
+  const entry = FEATURE_DOMAIN_REGISTRY[slug];
+  const Renderer = entry.renderer as (props: {
+    data: FeaturePageDataBySlug[TSlug];
+  }) => ReactElement;
+
+  return [
+    slug,
+    createFeatureEntry(getFeatureDataOrThrow(slug), data => {
+      return <Renderer data={data} />;
+    }),
+  ] as const;
+}
 
 export const FEATURE_ENTRY_BY_SLUG = Object.fromEntries(
-  Object.entries(FEATURE_DOMAIN_REGISTRY).map(([slug, entry]) => [
-    slug,
-    createFeatureEntry(entry.page),
-  ])
+  (Object.keys(FEATURE_DOMAIN_REGISTRY) as FeatureDataSlug[]).map(slug => buildFeatureEntry(slug))
 ) as {
-  [K in keyof typeof FEATURE_DOMAIN_REGISTRY]: FeatureEntry<
-    (typeof FEATURE_DOMAIN_REGISTRY)[K]['data']
-  >;
+  [K in keyof typeof FEATURE_DOMAIN_REGISTRY]: FeatureEntry<FeaturePageDataBySlug[K]>;
 };
 
 export type FeatureSlug = keyof typeof FEATURE_ENTRY_BY_SLUG;
@@ -31,23 +56,12 @@ export const isFeatureSlug = (slug: string): slug is FeatureSlug => {
 };
 
 export const getFeatureDataBySlug = (slug: FeatureSlug) => {
-  const data = getFeaturePageDataBySlug(slug);
-
-  if (!data) {
-    throw new Error(`Missing feature page data for slug "${slug}".`);
-  }
-
-  return data;
+  return (FEATURE_ENTRY_BY_SLUG[slug] as AnyFeatureEntry).data;
 };
 
-export const getFeaturePageBySlug = (slug: FeatureSlug) => {
-  return FEATURE_ENTRY_BY_SLUG[slug].page;
-};
-
-export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
-  const FeaturePage = getFeaturePageBySlug(slug);
-  const data = getFeatureDataBySlug(slug);
-  const primarySystem = data.systems?.[0];
+export const renderFeaturePageBySlug = (slug: FeatureSlug): ReactElement => {
+  const entry = FEATURE_ENTRY_BY_SLUG[slug] as AnyFeatureEntry;
+  const primarySystem = entry.data.systems?.[0];
 
   if (!primarySystem) {
     throw new Error(`Feature config requires systems[0] for ${slug}.`);
@@ -59,7 +73,7 @@ export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
       pageType='feature'
       primarySystem={primarySystem}
     >
-      <FeaturePage data={data} />
+      {entry.render(entry.data)}
       <RelatedSection pageId={`feature:${slug}`} pageType='feature' slug={slug} />
     </CTARegistryProvider>
   );

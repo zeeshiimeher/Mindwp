@@ -30,7 +30,7 @@ export const mortgageBrokersIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What brokers usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -59,7 +59,7 @@ export const mortgageBrokersIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the application actually stalls',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

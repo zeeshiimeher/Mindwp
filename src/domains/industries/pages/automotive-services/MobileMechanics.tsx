@@ -36,7 +36,7 @@ export const mobileMechanicsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What mobile mechanics usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -69,7 +69,7 @@ export const mobileMechanicsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the day actually leaks',
       description:
         'Tell us about a typical day on the road. We will read it back and name the first system to fix.',

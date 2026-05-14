@@ -1,313 +1,109 @@
-import {
-  BarChart3,
-  Bell,
-  CheckCircle2,
-  Mail,
-  MessageSquare,
-  Shield,
-  Star,
-  TrendingUp,
-  Users,
-} from 'lucide-react';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
-const reputationFaqItems = [
-  {
-    question: 'How does the negative feedback filter work?',
-    answer:
-      "When you send a review request, customers first rate their experience 1-5 stars privately. If they give 4-5 stars, they're directed to leave a public review on Google/Facebook. If 1-3 stars, they're sent to a private feedback form where you can address issues before they become public reviews.",
-  },
-  {
-    question: 'Which review platforms are supported?',
-    answer:
-      'We support Google, Facebook, Yelp, Trustpilot, and more. You can customize which platforms to prioritize based on your industry. Most businesses focus on Google since it impacts local search rankings the most.',
-  },
-  {
-    question: 'Will customers actually leave reviews?',
-    answer:
-      'Yes! Making it easy and asking at the right time dramatically increases review rates. Our clients typically see 10-20% of customers leave reviews when requested, versus 1-2% without automation.',
-  },
-  {
-    question: 'Is this compliant with review platform policies?',
-    answer:
-      "Absolutely. We follow all platform guidelines. You're allowed to ask customers for reviews - you just can't incentivize them or only ask happy customers. Our system requests reviews from everyone and makes the process easier.",
-  },
-  {
-    question: 'How long does it take to see results?',
-    answer:
-      'Most businesses see their first automated reviews within 1-2 weeks. Full reputation improvement typically takes 2-3 months of consistent review collection.',
-  },
-  {
-    question: 'Can I customize the review request messages?',
-    answer:
-      'Yes, you can fully customize email and SMS templates to match your brand voice and include specific instructions for different services.',
-  },
-  {
-    question: 'What if a customer leaves a negative review?',
-    answer:
-      'Our system monitors all reviews and alerts you immediately. You can respond professionally and use the private feedback to improve your service.',
-  },
-  {
-    question: 'How does this affect my online visibility?',
-    answer:
-      'Positive reviews improve your local search rankings, especially on Google. More reviews and higher ratings make your business more visible to potential customers.',
-  },
-  {
-    question: 'Can I track review response times?',
-    answer:
-      'Yes, the dashboard shows response times and provides templates for quick, professional responses to all reviews.',
-  },
-  {
-    question: 'Is there a limit to how many reviews I can collect?',
-    answer:
-      'No limits! You can collect unlimited reviews. We recommend sending requests after every service completion for maximum impact.',
-  },
-];
+// =============================================================================
+// Reputation — page
+// =============================================================================
 
-const slug = 'reputation';
-
-export const reputationData: FeaturePageData = {
-  slug,
+export const reputationData = {
   seo: buildFeatureSeo({
-    slug,
-    title: 'Reputation | Structured Review Management Layer',
+    slug: 'reputation',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
-  systems: ['reputation-review', 'local-seo-authority'],
-  topics: ['review-generation', 'negative-review-response'],
+  slug: 'reputation',
+  systems: ['reputation-review'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Part of Reputation & Review Systems',
-    title: 'Review request and response layer for service businesses',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'Most reviews are missed because nobody asks at the right moment. This layer is part of the Reputation & Review Systems service — it asks every customer at the moment trust is highest, routes responses to the right person, and keeps your visible rating consistent across the platforms buyers actually check.',
-    stats: [
-      { value: '10x', label: 'More Reviews' },
-      { value: '4.8+', label: 'Avg. Star Rating' },
-      { value: '95%', label: 'Response Rate' },
-      { value: 'Auto', label: 'Review Requests' },
-    ],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    process: {
-      badge: 'Simple Process',
-      title: 'How structured review management works',
-      description: 'A simple, repeatable flow from completed service to tracked feedback.',
-      steps: [
-        {
-          icon: Users,
-          number: '01',
-          title: 'Service Completed',
-          description: 'Customer completes appointment or receives service.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Mail,
-          number: '02',
-          title: 'Review Request Sent',
-          description: 'Automated email/SMS asks customers to leave a review.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Star,
-          number: '03',
-          title: 'Leave a Review',
-          description: 'Customer clicks a link to leave a review on supported platforms.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: TrendingUp,
-          number: '04',
-          title: 'Reputation Updated',
-          description: 'New reviews appear in your dashboard for tracking and response.',
-          iconType: 'secondary' as const,
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    benefits: {
-      badge: 'Key Advantages',
-      title: 'What structured review management supports',
-      description:
-        'Clear feedback collection, stronger credibility, and improved local visibility over time.',
-      items: [
-        {
-          icon: Star,
-          title: 'Build Reputation',
-          description: 'Request and collect reviews from customers automatically.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Bell,
-          title: 'Review Alerts',
-          description: 'Get notified of new reviews and respond from your dashboard.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: BarChart3,
-          title: 'Track Reviews',
-          description: 'Monitor your average rating and review trends.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Shield,
-          title: 'Feedback Management',
-          description: 'Collect private feedback to address issues before they go public.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: TrendingUp,
-          title: 'Increase Visibility',
-          description: 'More reviews improve your local search rankings and attract new customers.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Users,
-          title: 'Customer Insights',
-          description: 'Gain valuable insights from customer feedback to improve your services.',
-          iconType: 'accent' as const,
-        },
-      ],
-    },
-    useCases: {
-      badge: 'Feature in Practice',
-      title: 'Where review systems make a difference',
-      description: 'Examples of how structured review requests support daily operations.',
-      solutionLabel: 'Review Solution',
-      items: [
-        {
-          icon: Star,
-          title: 'New Business Reviews',
-          scenario: 'A new business needs to build credibility with reviews.',
-          solution: 'Send review requests after each service to collect feedback.',
-          result: 'Credibility established with consistent reviews.',
-        },
-        {
-          icon: Shield,
-          title: 'Reputation Protection',
-          scenario: 'A customer has a negative experience.',
-          solution: 'Direct negative feedback to a private form for resolution.',
-          result: 'Issues resolved privately, reputation protected.',
-        },
-        {
-          icon: TrendingUp,
-          title: 'Consistent Growth',
-          scenario: 'Business wants to increase review volume over time.',
-          solution: 'Automated requests make it easy for customers to leave reviews.',
-          result: 'Steady increase in reviews and trust.',
-        },
-      ],
-    },
-    capabilities: {
-      badge: "What's Included",
-      title: 'What is included',
-      description: 'Core tools for requesting, tracking, and responding to reviews.',
-      featureCategories: [
-        {
-          icon: Star,
-          title: 'Review Generation',
-          description: 'Automate review requests across multiple platforms with smart timing',
-          features: [
-            'Automated review requests',
-            'Multi-platform (Google, Facebook, Yelp)',
-            'Customizable email/SMS templates',
-            'Smart timing optimization',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Shield,
-          title: 'Reputation Protection',
-          description: 'Protect your online reputation with private feedback and quick responses',
-          features: [
-            'Negative feedback filter',
-            'Private feedback collection',
-            'Review monitoring alerts',
-            'Quick response tools',
-          ],
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: BarChart3,
-          title: 'Analytics & Display',
-          description: 'Track and showcase your reputation with comprehensive analytics',
-          features: [
-            'Reputation dashboard',
-            'Review widgets for website',
-            'Competitor comparison',
-            'Sentiment analysis',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-    },
-    faq: {
-      badge: 'Common Questions',
-      title: 'Review Management Questions',
-      description: 'Clear answers about how review requests and feedback handling work.',
-      items: reputationFaqItems,
-    },
-    explore: {
-      badge: 'Explore Related Features',
-      title: 'Connect review management to the wider system',
-      description: 'Review management works best when connected to CRM, chat, and booking systems.',
-      cards: [
-        {
-          icon: MessageSquare,
-          title: 'AI Chat',
-          description: 'Intelligent conversational AI for instant customer engagement',
-          href: '/features/aichat',
-        },
-        {
-          icon: Users,
-          title: 'CRM',
-          description: 'Centralized contact and communication management',
-          href: '/features/crm',
-        },
-        {
-          icon: CheckCircle2,
-          title: 'Calendars',
-          description: 'Smart scheduling and appointment management system',
-          href: '/features/calendars',
-        },
-      ],
-    },
-    testimonials: {
-      badge: 'Success Stories',
-      title: 'What businesses notice after implementing a review system',
-      description: 'Examples of how structured review requests improve consistency and visibility.',
-      items: [
-        {
-          quote:
-            'Since implementing automated review requests, our Google rating has jumped from 4.2 to 4.8 stars. The best part is how easy it is - we just focus on great service and the system handles the rest.',
-          author: 'Sarah Johnson',
-          business: 'Beautiful Hair Studio',
-          rating: 5,
-        },
-        {
-          quote:
-            "The review management system has been a game-changer for our restaurant. We're getting 3x more reviews and our online reputation has never been stronger.",
-          author: 'Mike Chen',
-          business: 'Golden Dragon Restaurant',
-          rating: 5,
-        },
-        {
-          quote:
-            'What I love most is how the system automatically follows up with customers. It takes the awkwardness out of asking for reviews and makes the whole process professional.',
-          author: 'Dr. Emily Rodriguez',
-          business: 'Rodriguez Dental',
-          rating: 5,
-        },
-      ],
-    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
+      },
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
+      },
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
+      },
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
+      },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      title: 'Discuss structured review management',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies FeaturePageData;

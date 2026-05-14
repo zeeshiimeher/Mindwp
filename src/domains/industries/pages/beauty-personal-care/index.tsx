@@ -36,7 +36,7 @@ export const beautyPersonalCareIndustryPageData: IndustryCategoryPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What beauty operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -68,7 +68,7 @@ export const beautyPersonalCareIndustryPageData: IndustryCategoryPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the beauty day actually leaks',
       description:
         'Tell us what happens between the call and the chair. We will read it back and name the first system to fix.',

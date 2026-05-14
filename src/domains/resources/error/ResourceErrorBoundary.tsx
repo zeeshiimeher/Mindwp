@@ -1,8 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { AlertTriangle } from 'lucide-react';
 
-import { Button } from '@/components/reusable/single/Button';
-
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
@@ -56,7 +54,13 @@ export class ResourceErrorBoundary extends Component<Props, State> {
           <p className='resource-error-boundary__text'>
             We encountered an error while loading this resource. Please try refreshing the page.
           </p>
-          <Button onClick={() => this.setState({ hasError: false })} label='Try Again' />
+          <button
+            type='button'
+            className='mw-btn mw-btn--primary'
+            onClick={() => this.setState({ hasError: false })}
+          >
+            Try Again
+          </button>
         </div>
       );
     }

@@ -31,7 +31,7 @@ export const localAppointmentBusinessesIndustryPageData: IndustryCategoryPageDat
   topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What appointment operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -62,7 +62,7 @@ export const localAppointmentBusinessesIndustryPageData: IndustryCategoryPageDat
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the diary actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

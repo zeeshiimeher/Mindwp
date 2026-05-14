@@ -36,7 +36,7 @@ export const nailSalonsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What nail-salon owners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -67,7 +67,7 @@ export const nailSalonsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the desk actually leaks',
       description:
         'Tell us about a typical Friday. We will read it back and name the first system to fix.',

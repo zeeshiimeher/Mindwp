@@ -37,7 +37,7 @@ export const roofingCompaniesIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'client-reactivation', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What roofing operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -70,7 +70,7 @@ export const roofingCompaniesIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where roofing enquiries get lost after a storm',
       description:
         'Tell us what happens between an inspection request and an install start. We will read it back and name the first system to fix.',

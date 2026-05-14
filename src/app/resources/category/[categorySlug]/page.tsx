@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { categories, getCategoryColors, resources } from '@/domains/resources/api';
+import { categories, resources } from '@/domains/resources/api';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -63,7 +63,6 @@ export default async function Page({ params }: { params: Promise<{ categorySlug:
         category={category.id}
         label={category.label}
         description={category.description}
-        badgeClassName={getCategoryColors(category.id).badgeClass}
         count={resources.filter(resource => resource.category === category.id).length}
         resources={resources
           .filter(resource => resource.category === category.id)

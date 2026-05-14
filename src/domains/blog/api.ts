@@ -26,10 +26,6 @@ export type BlogCategoryMetadata = {
   slug: string;
   name: string;
   description: string;
-  colors: {
-    bg: string;
-    text: string;
-  };
   icon?: string;
 };
 
@@ -67,10 +63,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'Smart Website Systems',
     description:
       'Articles about system-first website architecture, conversion structure, and infrastructure-led web strategy.',
-    colors: {
-      bg: 'blog-category-bg--seo',
-      text: 'blog-category-text--seo',
-    },
     icon: 'search',
   },
   {
@@ -79,10 +71,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'AI Lead Handling',
     description:
       'Articles about lead response automation, missed-call recovery, qualification systems, and AI-assisted communication.',
-    colors: {
-      bg: 'blog-category-bg--ai',
-      text: 'blog-category-text--ai',
-    },
     icon: 'cpu',
   },
   {
@@ -91,10 +79,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'Local Authority SEO',
     description:
       'Articles about local visibility, authority signals, search positioning, and search ecosystem changes.',
-    colors: {
-      bg: 'blog-category-bg--technical-seo',
-      text: 'blog-category-text--technical-seo',
-    },
     icon: 'map-pin',
   },
   {
@@ -103,10 +87,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'CRM Automation',
     description:
       'Articles about CRM workflows, automation systems, lifecycle tracking, and operational visibility.',
-    colors: {
-      bg: 'blog-category-bg--marketing',
-      text: 'blog-category-text--marketing',
-    },
     icon: 'settings',
   },
   {
@@ -115,10 +95,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'Reputation Review',
     description:
       'Articles about review systems, trust signals, reputation workflows, and review-driven authority.',
-    colors: {
-      bg: 'blog-category-bg--content-marketing',
-      text: 'blog-category-text--content-marketing',
-    },
     icon: 'star',
   },
   {
@@ -127,10 +103,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'Home Services Industry',
     description:
       'Industry-specific blog posts for roofing, HVAC, plumbing, and related home service businesses.',
-    colors: {
-      bg: 'blog-category-bg--industry',
-      text: 'blog-category-text--industry',
-    },
     icon: 'briefcase',
   },
   {
@@ -139,10 +111,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'Beauty Personal Care Industry',
     description:
       'Industry-specific blog posts for salons, clinics, med spas, and beauty-led appointment businesses.',
-    colors: {
-      bg: 'blog-category-bg--local-seo',
-      text: 'blog-category-text--local-seo',
-    },
     icon: 'heart',
   },
   {
@@ -151,10 +119,6 @@ export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
     name: 'Future Local Business Tech',
     description:
       'Articles about emerging operational technology, AI shifts, and the future infrastructure of local business growth.',
-    colors: {
-      bg: 'blog-category-bg--industry',
-      text: 'blog-category-text--industry',
-    },
     icon: 'file-text',
   },
 ];
@@ -178,16 +142,6 @@ export function getAllCategorySlugs(): string[] {
 
 export function getCategoryPathAllowlist(): string[] {
   return BLOG_CATEGORIES.map(category => `/blog/category/${category.slug}`);
-}
-
-export function getCategoryColors(category: BlogCategory) {
-  const metadata = getCategoryMetadata(category);
-  return (
-    metadata?.colors || {
-      bg: 'blog-category-bg--industry',
-      text: 'blog-category-text--industry',
-    }
-  );
 }
 
 /* ------------------------------------------------------------------ */

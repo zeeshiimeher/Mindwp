@@ -15,12 +15,13 @@ type SectionFrameLayout = 'stack' | 'split';
 type SectionFrameRatio = '50-50' | '40-60' | '60-40';
 
 type SectionFrameHeading = {
-  kicker?: string;
+  eyebrow?: string;
   title: string;
   description?: string;
 };
 
 export type SectionFrameProps = {
+  id?: string;
   heading: SectionFrameHeading;
   tone?: SectionFrameTone;
   layout?: SectionFrameLayout;
@@ -36,12 +37,13 @@ export type SectionFrameProps = {
 /**
  * SectionFrame — standard section wrapper.
  *
- * Owns: <section>, mw-container, heading block (kicker, h2, description), tone/background,
+ * Owns: <section>, mw-container, heading block (eyebrow, h2, description), tone/background,
  * section padding, and optional split layout.
  * Use [[muted:...]] inline syntax in heading.title for muted segments.
  * Default layout='stack'. Use layout='split' for side-by-side heading + content columns.
  */
 export function SectionFrame({
+  id,
   heading,
   tone,
   layout,
@@ -69,10 +71,10 @@ export function SectionFrame({
 
   const header = (
     <div className='mw-section-frame__header mw-animate-up'>
-      {heading.kicker && (
+      {heading.eyebrow && (
         <div className='mw-section-frame__eyebrow'>
           <span className='mw-section-frame__eyebrow-dot' aria-hidden={true} />
-          <span>{heading.kicker}</span>
+          <span>{heading.eyebrow}</span>
         </div>
       )}
       <h2 className='mw-section-frame__heading'>
@@ -85,7 +87,7 @@ export function SectionFrame({
   );
 
   return (
-    <section className={sectionClass} aria-label={ariaLabel}>
+    <section id={id} className={sectionClass} aria-label={ariaLabel}>
       <div className='mw-container'>
         {isSplit ? (
           <div className='mw-section-frame__inner'>

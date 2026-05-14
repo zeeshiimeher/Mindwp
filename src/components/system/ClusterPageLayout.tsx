@@ -8,7 +8,7 @@
  * - Renders only
  */
 
-import { RelatedCardsSection } from '@/components/reusable/sections/core/RelatedCardsSection';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 // ── Types ────────────────────────────────────────────────────────────
 
 export interface ClusterPageSectionItem {
@@ -59,17 +59,28 @@ export function ClusterPageLayout({
         }
 
         return (
-          <RelatedCardsSection
+          <SectionFrame
             key={section.id}
-            title={section.title}
-            description={section.description}
-            items={section.items.map(item => ({
-              title: item.title,
-              desc: item.description,
-              href: item.href,
-            }))}
-            showArrows
-          />
+            id={section.id}
+            heading={{
+              title: section.title,
+              description: section.description,
+            }}
+            tone='white'
+          >
+            <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
+              {section.items.map(item => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)] transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
+                >
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </a>
+              ))}
+            </div>
+          </SectionFrame>
         );
       })}
     </div>

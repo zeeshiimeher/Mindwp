@@ -1,282 +1,109 @@
-import {
-  Calendar,
-  Database,
-  Globe,
-  Inbox,
-  Layers,
-  Mail,
-  MessageSquare,
-  Settings,
-  Tag,
-  TrendingUp,
-  UserCheck,
-  Users,
-  Workflow,
-} from 'lucide-react';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
-const crmFaqItems = [
-  {
-    question: 'What does the CRM track?',
-    answer: 'The CRM tracks contacts, leads, messages, calls, and emails in one dashboard.',
-  },
-  {
-    question: 'Is the CRM easy to use?',
-    answer: 'Yes. The dashboard is designed for clear navigation and daily use.',
-  },
-  {
-    question: 'How does the CRM connect with other features?',
-    answer:
-      'The CRM integrates with calendars, inbox, and automation tools for a complete overview.',
-  },
-  {
-    question: 'Can I customize my dashboard?',
-    answer: 'You can filter, organize, and adjust views to fit your workflow.',
-  },
-  {
-    question: 'How do I import existing contacts?',
-    answer: 'You can import contacts from CSV files, Google Contacts, or other CRM systems.',
-  },
-  {
-    question: 'Can I set up automated follow-ups?',
-    answer:
-      'Yes, the CRM integrates with automation tools to send follow-up messages based on triggers.',
-  },
-  {
-    question: 'What about data security?',
-    answer: 'All customer data is encrypted and stored securely with regular backups.',
-  },
-  {
-    question: 'Can multiple team members access the CRM?',
-    answer:
-      'Yes, with role-based permissions to control who can view or edit different information.',
-  },
-  {
-    question: 'How does the CRM help with sales?',
-    answer: 'Track leads, set reminders for follow-ups, and monitor conversion rates.',
-  },
-  {
-    question: 'Is there mobile access?',
-    answer: 'Yes, the CRM is fully mobile-responsive for access anywhere.',
-  },
-];
+// =============================================================================
+// CRM — page
+// =============================================================================
 
-const slug = 'crm';
-
-export const crmData: FeaturePageData = {
-  slug,
+export const crmData = {
   seo: buildFeatureSeo({
-    slug,
-    title: 'CRM | Structured Contact and Follow-Up Layer',
+    slug: 'crm',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
+  slug: 'crm',
   systems: ['crm-automation'],
-  topics: ['lead-management', 'crm-visibility'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Part of CRM Automation',
-    title: 'CRM contact and follow-up layer for your service business',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'When enquiries scatter across email, phone, and chat, follow-up slips and revenue leaks. This CRM layer is part of the CRM Automation service — it captures every enquiry, holds the contact history in one place, and makes follow-up the default rather than a chase.',
-    stats: [
-      { value: 'Unified', label: 'Inbox' },
-      { value: 'Complete', label: 'Profiles' },
-      { value: 'Automated', label: 'Follow-ups' },
-      { value: 'Team', label: 'Collaboration' },
-    ],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    process: {
-      badge: 'Simple Process',
-      title: 'How Structured CRM Operates',
-      description:
-        'A clear flow from enquiry capture to organized contact records and structured follow-up.',
-      steps: [
-        {
-          icon: UserCheck,
-          number: '01',
-          title: 'Lead Captured',
-          description: 'Contact info from website form, chat, call, or social media auto-saved',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Database,
-          number: '02',
-          title: 'CRM Record Created',
-          description: 'Complete profile built with all info, tags, and source tracking',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Inbox,
-          number: '03',
-          title: 'Unified Communications',
-          description: 'All emails, texts, calls, and chats appear in one inbox',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Workflow,
-          number: '04',
-          title: 'Automation Triggers',
-          description: 'Follow-up sequences and workflows start automatically',
-          iconType: 'secondary' as const,
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    benefits: {
-      badge: 'Key Advantages',
-      title: 'What Structured CRM Improves',
-      description:
-        'Structured CRM keeps communication visible, organizes contacts consistently, and supports reliable follow-up across your team.',
-      items: [
-        {
-          icon: Inbox,
-          title: 'Unified Inbox',
-          description: 'Access all messages, calls, and emails from one dashboard.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Users,
-          title: 'Contact Profiles',
-          description: 'View and manage leads, customers, and their activity history.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Tag,
-          title: 'Tagging & Segmentation',
-          description: 'Organize contacts with tags for easy filtering.',
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Settings,
-          title: 'Custom Views',
-          description: 'Adjust dashboard views to fit your workflow.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Layers,
-          title: 'Feature Integration',
-          description: 'CRM connects with calendars, inbox, and automation tools.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: TrendingUp,
-          title: 'Lead Tracking',
-          description: 'Monitor lead progress and conversion rates with detailed analytics.',
-          iconType: 'accent' as const,
-        },
-      ],
-    },
-    useCases: {
-      badge: 'Feature in Practice',
-      title: 'Structured CRM Within Daily Operations',
-      description:
-        'Examples of how this CRM layer supports daily operations while remaining connected to your Smart Website infrastructure.',
-      solutionLabel: 'CRM Solution',
-      items: [
-        {
-          icon: Inbox,
-          title: 'Inbox Management',
-          scenario: 'Access all incoming messages and calls in one dashboard.',
-          solution: 'Reply and follow up directly from the unified inbox.',
-          result: 'Maintain consistent communication.',
-        },
-        {
-          icon: Users,
-          title: 'Contact Profiles',
-          scenario: 'Track leads and customers with organized profiles.',
-          solution: 'View contact details, notes, and history.',
-          result: 'Keep information accessible.',
-        },
-        {
-          icon: Tag,
-          title: 'Segmentation',
-          scenario: 'Organize contacts for targeted communication.',
-          solution: 'Use tags to filter and group contacts.',
-          result: 'Send relevant messages easily.',
-        },
-      ],
-    },
-    capabilities: {
-      badge: "What's Included",
-      title: 'CRM Layer Overview',
-      featureCategories: [
-        {
-          icon: Users,
-          title: 'Contacts & Inbox',
-          description: 'Comprehensive contact management with unified communication tracking',
-          features: [
-            'Contact and lead tracking',
-            'Unified inbox for messages, calls, and emails',
-            'Contact details and notes',
-            'Activity history',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Tag,
-          title: 'Tagging & Segmentation',
-          description: 'Organize and segment your contacts for targeted communication',
-          features: [
-            'Tag contacts for organization',
-            'Segment lists for communication',
-            'Filter contacts by tags',
-            'Easy follow-up',
-          ],
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Globe,
-          title: 'Integration',
-          description: 'Seamlessly integrate with your existing tools and workflows',
-          features: [
-            'Connects with calendars',
-            'Works with automation tools',
-            'Syncs with inbox',
-            'Custom dashboard views',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-    },
-    faq: {
-      badge: 'Common Questions',
-      title: 'Structured CRM FAQ',
-      items: crmFaqItems,
-    },
-    explore: {
-      title: 'Explore Related Features',
-      description:
-        'See how other layers connect with CRM to form a complete, structured operating system.',
-      cards: [
-        {
-          icon: MessageSquare,
-          title: 'AI Chat',
-          description: 'Intelligent conversational AI for instant customer engagement',
-          href: '/features/aichat',
-        },
-        {
-          icon: Calendar,
-          title: 'Calendars',
-          description: 'Smart scheduling and appointment management system',
-          href: '/features/calendars',
-        },
-        {
-          icon: Mail,
-          title: 'Inbox',
-          description: 'Unified communication hub for all your messages',
-          href: '/features/inbox',
-        },
-      ],
-    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
+      },
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
+      },
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
+      },
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
+      },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      title: 'Review Your Contact and Follow-Up Structure',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies FeaturePageData;

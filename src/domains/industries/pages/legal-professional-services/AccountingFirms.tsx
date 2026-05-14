@@ -30,7 +30,7 @@ export const accountingFirmsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What accounting partners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -59,7 +59,7 @@ export const accountingFirmsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the firm actually leaks',
       description:
         'Tell us about a typical month. We will read it back and name the first system to fix.',

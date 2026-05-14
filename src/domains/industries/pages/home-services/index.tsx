@@ -37,7 +37,7 @@ export const homeServicesIndustryPageData: IndustryCategoryPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What home-services operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -70,7 +70,7 @@ export const homeServicesIndustryPageData: IndustryCategoryPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where home-services enquiries actually slip',
       description:
         'Tell us what happens between the phone ringing and the crew on the road. We will read it back and name the first system to fix.',

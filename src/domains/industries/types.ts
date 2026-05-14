@@ -30,7 +30,7 @@ export type FAQItem = {
 
 export type CTAConfig = {
   heading: {
-    kicker?: string;
+    eyebrow?: string;
     title: string;
     description: string;
   };
@@ -55,7 +55,7 @@ export type IndustryPageDataBase = {
   topics?: string[];
   faq: {
     header: {
-      kicker?: string;
+      eyebrow?: string;
       title: string;
       description?: string;
     };

@@ -16,7 +16,7 @@ export function HomeInspectorsIndustryRenderer({ data }: IndustryDetailRendererP
   return (
     <main className='industry-detail-page'>
       <HeroFrame
-        badge={data.hero.badge}
+        eyebrow={data.hero.badge}
         title={data.hero.title}
         description={data.hero.description}
         actions={actions}
@@ -25,7 +25,7 @@ export function HomeInspectorsIndustryRenderer({ data }: IndustryDetailRendererP
       />
       <SectionFrame
         heading={{
-          kicker: 'Industry rebuild',
+          eyebrow: 'Industry rebuild',
           title: 'This page is ready for the rebuild.',
           description:
             'The legacy industry section contract has been removed. Rebuild this page directly from the renderer.',
@@ -35,7 +35,7 @@ export function HomeInspectorsIndustryRenderer({ data }: IndustryDetailRendererP
         <p className='industry-reset-note'>Renderer-first rebuild target.</p>
       </SectionFrame>
       <FAQSection
-        eyebrow={data.faq.header.kicker}
+        eyebrow={data.faq.header.eyebrow}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}

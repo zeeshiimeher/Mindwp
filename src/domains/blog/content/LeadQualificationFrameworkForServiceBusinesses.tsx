@@ -32,7 +32,7 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
       type: 'introduction',
       content: [
         'An HVAC company receives twenty enquiries in a week. Five are homeowners requesting emergency repairs. Ten are asking for routine maintenance quotes. Three are sales calls from vendors. Two are competitors checking prices. The office manager treats all twenty the same — reading each one, deciding what it is, and responding in the order they arrived.',
-        'Without a qualification framework, every enquiry consumes the same amount of attention. Emergency repairs that need a same-day response wait behind vendor sales pitches. High-value commercial enquiries receive the same follow-up speed as tyre-kicker price checks. Lead qualification solves this by categorising and scoring enquiries automatically, so the business responds to the right leads first.',
+        'Without a qualification framework, every enquiry consumes the same amount of attention. Emergency repairs that need a same-day response wait behind vendor sales pitches. High-value commercial enquiries receive the same follow-up speed as tyre-eyebrow price checks. Lead qualification solves this by categorising and scoring enquiries automatically, so the business responds to the right leads first.',
       ],
     },
     {

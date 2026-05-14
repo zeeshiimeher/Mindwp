@@ -37,7 +37,7 @@ export const plumbingCompaniesIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'emergency-handling', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What plumbing operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -70,7 +70,7 @@ export const plumbingCompaniesIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where plumbing calls slip after hours',
       description:
         'Tell us what happens between the phone ringing and the truck arriving. We will read it back and name the first system to fix.',

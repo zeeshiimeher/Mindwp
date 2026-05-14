@@ -1,29 +1,12 @@
 // Case-study template renderer only (props in, JSX out).
 // No routing, fetching, or data lookups.
 import React from 'react';
+import { ArrowLeft } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import {
-  CaseStudyBusinessImpactSection,
-  CaseStudyDeliverablesSection,
-  CaseStudyFeaturesSection,
-  CaseStudyHeroSection,
-  CaseStudyInvestmentSection,
-  CaseStudyMetricsSection,
-  CaseStudyProblemSection,
-  CaseStudyProcessSection,
-  CaseStudyResultsSection,
-  CaseStudySolutionSection,
-  CaseStudyWorkflowsSection,
-} from '@/components/reusable/sections/case-studies';
-import { TestimonialCard } from '@/components/reusable/single';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { env } from '@/env';
 import { buildContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-import { systemDevelopmentWarning } from '@/lib/system/runtimeWarnings';
 
 import type { CaseStudyMetadata } from './types';
 
@@ -153,9 +136,7 @@ function isSectionArray(value: unknown) {
 }
 
 function validateRenderableSection(section: CaseStudyTemplateSection) {
-  if (!renderableCaseStudySectionTypes.has(section.type)) {
-    return false;
-  }
+  if (!renderableCaseStudySectionTypes.has(section.type)) return false;
 
   switch (section.type) {
     case 'hero':
@@ -194,25 +175,10 @@ export function getCaseStudyRenderedSectionTypes(sections: CaseStudyTemplateSect
   return sections.filter(validateRenderableSection).map(section => section.type);
 }
 
-function validateSectionQuality(sections: CaseStudyTemplateSection[]) {
-  return sections;
-}
-
 export function CaseStudyTemplate({
   pageId,
   metadata,
   sections,
-  featuredImage,
-  hero,
-  metrics,
-  problem,
-  solution,
-  process: processOverrides,
-  features,
-  results,
-  testimonial,
-  investment,
-  cta: _cta,
 }: {
   pageId: string;
   metadata: CaseStudyMetadata;
@@ -258,300 +224,397 @@ export function CaseStudyTemplate({
   };
 }) {
   const resolvedSections = sections ?? [];
-  const backToCaseStudiesLabel = 'Back to Case Studies';
-  const resolvedResultsSectionTitle = metrics?.resultsSectionTitle ?? 'The Results';
-  const resolvedChallengeBadgeLabel = problem?.challengeBadgeLabel ?? 'The Challenge';
-  const resolvedSolutionBadgeLabel = solution?.solutionBadgeLabel ?? 'The Solution';
-  const resolvedImplementationBadgeLabel =
-    processOverrides?.implementationBadgeLabel ?? 'Implementation';
-  const resolvedImplementationSectionTitle =
-    processOverrides?.implementationSectionTitle ?? 'How We Did It';
-  const resolvedImplementationSectionSubtitle =
-    processOverrides?.implementationSectionSubtitle ?? 'Our step-by-step process over 3 months';
-  const resolvedTechStackBadgeLabel = features?.techStackBadgeLabel ?? 'Technology Stack';
-  const resolvedTechStackSectionTitle =
-    features?.techStackSectionTitle ?? 'Features & Tools We Used';
-  const resolvedTechStackSectionSubtitle =
-    features?.techStackSectionSubtitle ?? 'WordPress + CRM workflows + integrations';
-  const resolvedDetailedResultsBadgeLabel =
-    results?.detailedResultsBadgeLabel ?? 'Detailed Results';
-  const resolvedDetailedResultsSectionTitle =
-    results?.detailedResultsSectionTitle ?? 'Before & After: The Complete Picture';
-  const resolvedScenarioBadgeLabel = hero?.scenarioBadgeLabel ?? 'Implementation Scenario';
-  const resolvedTestimonialSectionAriaLabel =
-    testimonial?.testimonialSectionAriaLabel ?? 'Testimonial';
-  const resolvedInvestmentBadgeLabel = investment?.investmentBadgeLabel ?? 'Investment & ROI';
-  const resolvedInvestmentSectionTitle =
-    investment?.investmentSectionTitle ?? 'What It Cost & What It Returned';
-  const resolvedInvestmentFooterNoteHtml = investment?.investmentFooterNoteHtml ?? (
-    <>
-      <strong>Note:</strong> We work with small businesses on realistic budgets. Contact us for
-      current pricing and available packages.
-    </>
-  );
-
-  validateSectionQuality(resolvedSections);
-
-  if (resolvedSections.length < 4 && env.NODE_ENV === 'development') {
-    systemDevelopmentWarning(
-      `CaseStudyTemplate: ${metadata.slug} has fewer than 4 authored sections.`
-    );
-  }
-
-  function renderSection(section: CaseStudyTemplateSection, index: number) {
-    switch (section.type) {
-      case 'hero':
-        if (featuredImage) {
-          return (
-            <div
-              key={`hero-${index}`}
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <CaseStudyHeroSection
-                backToCaseStudiesLabel={backToCaseStudiesLabel}
-                industry={metadata.industryLabel}
-                duration={metadata.duration}
-                heroHeadline={metadata.heroHeadline}
-                scenarioBadge={resolvedScenarioBadgeLabel}
-                heroIntroHtml={section.introHtml}
-                business={metadata.business}
-                location={metadata.location}
-                completedDate={metadata.completedDate}
-                backgroundColor=''
-              />
-            </div>
-          );
-        }
-
-        return (
-          <CaseStudyHeroSection
-            key={`hero-${index}`}
-            backToCaseStudiesLabel={backToCaseStudiesLabel}
-            industry={metadata.industryLabel}
-            duration={metadata.duration}
-            heroHeadline={metadata.heroHeadline}
-            scenarioBadge={resolvedScenarioBadgeLabel}
-            heroIntroHtml={section.introHtml}
-            business={metadata.business}
-            location={metadata.location}
-            completedDate={metadata.completedDate}
-          />
-        );
-
-      case 'metrics':
-        return (
-          <CaseStudyMetricsSection
-            key={`metrics-${index}`}
-            resultsSectionTitle={resolvedResultsSectionTitle}
-            keyMetrics={section.keyMetrics.map(metric => ({
-              ...metric,
-              icon: 'BarChart3',
-            }))}
-          />
-        );
-
-      case 'problem':
-        if (!section.problemHeading || !section.problemDescription || !section.painPoints) {
-          return null;
-        }
-
-        return (
-          <CaseStudyProblemSection
-            key={`problem-${index}`}
-            challengeBadgeLabel={resolvedChallengeBadgeLabel}
-            problemHeading={section.problemHeading}
-            problemDescription={section.problemDescription}
-            painPoints={section.painPoints}
-          />
-        );
-
-      case 'solution':
-        if (!section.solutionHeading || !section.solutionDescription || !section.whatWeDid) {
-          return null;
-        }
-
-        return (
-          <CaseStudySolutionSection
-            key={`solution-${index}`}
-            solutionBadgeLabel={resolvedSolutionBadgeLabel}
-            solutionHeading={section.solutionHeading}
-            solutionDescription={section.solutionDescription}
-            whatWeDid={section.whatWeDid}
-          />
-        );
-
-      case 'process':
-        if (!section.howWeDidIt) {
-          return null;
-        }
-
-        return (
-          <CaseStudyProcessSection
-            key={`process-${index}`}
-            implementationBadgeLabel={resolvedImplementationBadgeLabel}
-            implementationSectionTitle={resolvedImplementationSectionTitle}
-            implementationSectionSubtitle={resolvedImplementationSectionSubtitle}
-            howWeDidIt={section.howWeDidIt}
-          />
-        );
-
-      case 'features':
-        if (!section.featuresUsed) {
-          return null;
-        }
-
-        return (
-          <CaseStudyFeaturesSection
-            key={`features-${index}`}
-            techStackBadgeLabel={resolvedTechStackBadgeLabel}
-            techStackSectionTitle={resolvedTechStackSectionTitle}
-            techStackSectionSubtitle={resolvedTechStackSectionSubtitle}
-            featuresUsed={section.featuresUsed}
-          />
-        );
-
-      case 'results':
-        return (
-          <CaseStudyResultsSection
-            key={`results-${index}`}
-            detailedResultsBadgeLabel={resolvedDetailedResultsBadgeLabel}
-            detailedResultsSectionTitle={resolvedDetailedResultsSectionTitle}
-            results={section.results}
-          />
-        );
-
-      case 'testimonial':
-        if (!section.testimonial) {
-          return null;
-        }
-
-        return (
-          <SectionWrapper
-            key={`testimonial-${index}`}
-            className='case-study-detail-testimonial text-background'
-            background='bg-gradient-dark'
-            aria-label={resolvedTestimonialSectionAriaLabel}
-          >
-            <TestimonialCard
-              quote={section.testimonial.quote}
-              author={section.testimonial.author}
-              business={section.testimonial.role}
-              rating={5}
-              className='case-study-detail-testimonial__card'
-            />
-          </SectionWrapper>
-        );
-
-      case 'investment':
-        if (!section.investment) {
-          return null;
-        }
-
-        return (
-          <CaseStudyInvestmentSection
-            key={`investment-${index}`}
-            investmentBadgeLabel={resolvedInvestmentBadgeLabel}
-            investmentSectionTitle={resolvedInvestmentSectionTitle}
-            investmentFooterNoteHtml={resolvedInvestmentFooterNoteHtml}
-            investment={section.investment}
-          />
-        );
-
-      case 'business-impact':
-        if (!section.description) {
-          return null;
-        }
-
-        return (
-          <CaseStudyBusinessImpactSection
-            key={`business-impact-${index}`}
-            {...(section.badge !== undefined && { badge: section.badge })}
-            title={section.title}
-            description={section.description}
-            impacts={section.impacts}
-          />
-        );
-
-      case 'deliverables':
-        return (
-          <CaseStudyDeliverablesSection
-            key={`deliverables-${index}`}
-            {...(section.badge !== undefined && { badge: section.badge })}
-            title={section.title}
-            {...(section.description !== undefined && { description: section.description })}
-            items={section.items}
-            {...(section.columns !== undefined && { columns: section.columns })}
-          />
-        );
-
-      case 'workflows':
-        if (!section.description) {
-          return null;
-        }
-
-        return (
-          <CaseStudyWorkflowsSection
-            key={`workflows-${index}`}
-            {...(section.badge !== undefined && { badge: section.badge })}
-            title={section.title}
-            description={section.description}
-            workflows={section.workflows}
-          />
-        );
-
-      case 'faq':
-        return (
-          <FAQSection
-            key={`faq-${index}`}
-            {...(section.badge !== undefined && { badge: section.badge })}
-            {...(section.title !== undefined && { title: section.title })}
-            {...(section.description !== undefined && { description: section.description })}
-            faqs={section.items}
-            cssPrefix='case-study-detail-faq'
-            displayMode='accordion'
-          />
-        );
-
-      case 'cta':
-        return (
-          <DecisionPanel
-            key={`cta-${index}`}
-            heading={{
-              title: section.heading,
-              description: section.body,
-            }}
-            actions={[
-              {
-                label: PRIMARY_CTA_LABEL,
-                href: buildContactHref({
-                  system: metadata.systems?.[0] ?? 'smart-website-systems',
-                  sourceType: 'case-study',
-                  slug: metadata.slug,
-                }),
-                variant: 'primary',
-              },
-            ]}
-          />
-        );
-
-      default:
-        return null;
-    }
-  }
+  const renderedSections = resolvedSections.filter(validateRenderableSection);
+  const primarySystem = metadata.systems?.[0] ?? 'smart-website-systems';
+  const ctaSection = renderedSections.find(section => section.type === 'cta');
 
   return (
-    <CTARegistryProvider
-      pageId={pageId}
-      pageType='case-study'
-      primarySystem={metadata.systems?.[0] ?? 'smart-website-systems'}
-    >
-      <div className='case-study-detail'>
-        {resolvedSections.map((section, index) => renderSection(section, index))}
-      </div>
+    <CTARegistryProvider pageId={pageId} pageType='case-study' primarySystem={primarySystem}>
+      <main>
+        <SectionFrame
+          ariaLabel={`${metadata.business} case study`}
+          tone='mist'
+          heading={{
+            eyebrow: metadata.industryLabel,
+            title: metadata.heroHeadline,
+            description: `${metadata.business}${metadata.location ? ` · ${metadata.location}` : ''}`,
+          }}
+        >
+          <div className='flex flex-wrap items-center gap-3'>
+            <a className='mw-btn mw-btn--secondary' href='/case-studies'>
+              <ArrowLeft size={14} aria-hidden='true' />
+              <span>Back to Case Studies</span>
+            </a>
+            {metadata.duration ? (
+              <span className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                {metadata.duration}
+              </span>
+            ) : null}
+            {metadata.completedDate ? (
+              <span className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                {metadata.completedDate}
+              </span>
+            ) : null}
+          </div>
+        </SectionFrame>
+
+        {renderedSections.length > 0 ? (
+          <SectionFrame
+            ariaLabel='Case study breakdown'
+            tone='white'
+            heading={{
+              eyebrow: 'Breakdown',
+              title: 'What changed in the system',
+              description:
+                'This clean case-study renderer keeps the case content visible while the final case-study design is rebuilt.',
+            }}
+          >
+            <div className='grid gap-5'>
+              {renderedSections
+                .filter(section => section.type !== 'cta')
+                .map((section, index) => (
+                  <CaseStudySectionBlock
+                    key={`${section.type}-${index}`}
+                    section={section}
+                    index={index}
+                  />
+                ))}
+            </div>
+          </SectionFrame>
+        ) : null}
+
+        <DecisionPanel
+          heading={{
+            eyebrow: 'Next step',
+            title:
+              ctaSection?.type === 'cta'
+                ? ctaSection.heading
+                : 'See where this pattern applies to your business.',
+            description:
+              ctaSection?.type === 'cta'
+                ? ctaSection.body
+                : 'If this case study looks familiar, the next step is to find which system change would remove the same friction in your business.',
+          }}
+          actions={[
+            {
+              label: 'Start a Conversation',
+              href: buildContactHref({
+                system: primarySystem,
+                sourceType: 'case-study',
+                slug: metadata.slug,
+              }),
+            },
+          ]}
+          expectations={
+            ctaSection?.type === 'cta' && ctaSection.metaItems?.length
+              ? ctaSection.metaItems.map((item, index) => ({
+                  num: String(index + 1).padStart(2, '0'),
+                  text: item.text,
+                }))
+              : [
+                  { num: '01', text: 'What changed in the case study' },
+                  { num: '02', text: 'Where your current handoff breaks' },
+                  { num: '03', text: 'What should be fixed first' },
+                ]
+          }
+          reassurance={{ noSell: 'No hard sell.', tone: 'Practical review' }}
+        />
+      </main>
     </CTARegistryProvider>
+  );
+}
+
+function CaseStudySectionBlock({
+  section,
+  index,
+}: {
+  section: CaseStudyTemplateSection;
+  index: number;
+}) {
+  switch (section.type) {
+    case 'hero':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Scenario</p>
+          <h3>Starting point</h3>
+          <div>{section.introHtml}</div>
+        </article>
+      );
+
+    case 'metrics':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Metrics</p>
+          <h3>The visible result markers</h3>
+          <div className='grid gap-3 md:grid-cols-3'>
+            {section.keyMetrics.map(metric => (
+              <div
+                key={`${metric.value}-${metric.label}`}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                <strong>{metric.value}</strong>
+                <p>{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      );
+
+    case 'problem':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Problem</p>
+          <h3>{section.problemHeading}</h3>
+          <div className='grid gap-3'>
+            {section.problemDescription?.map(paragraph => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+          {section.painPoints?.length ? (
+            <ul className='mt-4 grid gap-3'>
+              {section.painPoints.map(point => (
+                <li
+                  key={point}
+                  className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </article>
+      );
+
+    case 'solution':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Solution</p>
+          <h3>{section.solutionHeading}</h3>
+          {section.solutionDescription ? <p>{section.solutionDescription}</p> : null}
+          {section.whatWeDid?.length ? (
+            <div className='mt-4 grid gap-3 md:grid-cols-3'>
+              {section.whatWeDid.map(item => (
+                <div
+                  key={item.title}
+                  className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+                >
+                  <strong>{item.title}</strong>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </article>
+      );
+
+    case 'process':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Process</p>
+          <h3>How the change was implemented</h3>
+          <div className='grid gap-3'>
+            {section.howWeDidIt?.map(phase => (
+              <div
+                key={`${phase.phase}-${phase.title}`}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                <p className='mw-text-eyebrow mw-text-signal-cyan'>{phase.phase}</p>
+                <strong>{phase.title}</strong>
+                <p>{phase.description}</p>
+                <p className='mw-text-body-sm mw-text-secondary'>{phase.duration}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      );
+
+    case 'features':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>System pieces</p>
+          <h3>Features and tools used</h3>
+          <div className='grid gap-3 md:grid-cols-2'>
+            {section.featuresUsed?.map(group => (
+              <div
+                key={group.category}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                <strong>{group.category}</strong>
+                <ul className='mt-3 grid gap-2'>
+                  {group.features.map(feature => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </article>
+      );
+
+    case 'results':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Results</p>
+          <h3>Before and after</h3>
+          <div className='grid gap-3 md:grid-cols-2'>
+            {section.results.map(result => (
+              <div
+                key={`${result.title ?? result.metric ?? result.description}-${index}`}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                {result.metric ? (
+                  <p className='mw-text-eyebrow mw-text-signal-cyan'>{result.metric}</p>
+                ) : null}
+                {result.title ? <strong>{result.title}</strong> : null}
+                {result.before || result.after ? (
+                  <p>
+                    {result.before ? `Before: ${result.before}` : ''}
+                    {result.before && result.after ? ' · ' : ''}
+                    {result.after ? `After: ${result.after}` : ''}
+                  </p>
+                ) : null}
+                {result.improvement ? <p>{result.improvement}</p> : null}
+                <p>{result.description}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      );
+
+    case 'testimonial':
+      if (!section.testimonial) return null;
+      return (
+        <blockquote className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Testimonial</p>
+          <p>{section.testimonial.quote}</p>
+          <footer className='mw-text-secondary'>
+            — {section.testimonial.author}, {section.testimonial.role}
+          </footer>
+        </blockquote>
+      );
+
+    case 'investment':
+      if (!section.investment) return null;
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Investment</p>
+          <h3>What it cost and returned</h3>
+          <div className='grid gap-3 md:grid-cols-3'>
+            <MetricCard label='Setup' value={section.investment.setup} />
+            <MetricCard label='Monthly' value={section.investment.monthly} />
+            {section.investment.roi ? (
+              <MetricCard label='ROI' value={section.investment.roi} />
+            ) : null}
+          </div>
+        </article>
+      );
+
+    case 'business-impact':
+      return (
+        <ListSection
+          eyebrow={section.badge ?? 'Business impact'}
+          title={section.title}
+          description={section.description}
+          items={section.impacts}
+        />
+      );
+
+    case 'deliverables':
+      return (
+        <ListSection
+          eyebrow={section.badge ?? 'Deliverables'}
+          title={section.title}
+          description={section.description}
+          items={section.items}
+        />
+      );
+
+    case 'workflows':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.badge ?? 'Workflows'}</p>
+          <h3>{section.title}</h3>
+          {section.description ? <p>{section.description}</p> : null}
+          <div className='mt-4 grid gap-3'>
+            {section.workflows.map(workflow => (
+              <div
+                key={workflow.trigger}
+                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+              >
+                <strong>{workflow.trigger}</strong>
+                <ul className='mt-3 grid gap-2'>
+                  {workflow.actions.map(action => (
+                    <li key={action}>{action}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </article>
+      );
+
+    case 'faq':
+      return (
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.badge ?? 'FAQ'}</p>
+          <h3>{section.title ?? 'Frequently asked questions'}</h3>
+          {section.description ? <p>{section.description}</p> : null}
+          <dl className='mt-4 grid gap-4'>
+            {section.items.map(item => (
+              <div key={item.question}>
+                <dt>
+                  <strong>{item.question}</strong>
+                </dt>
+                <dd>{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+      );
+
+    case 'cta':
+      return null;
+
+    default:
+      return null;
+  }
+}
+
+function MetricCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'>
+      <p className='mw-text-eyebrow mw-text-signal-cyan'>{label}</p>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function ListSection({
+  eyebrow,
+  title,
+  description,
+  items,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  items: string[];
+}) {
+  return (
+    <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+      <p className='mw-text-eyebrow mw-text-signal-cyan'>{eyebrow}</p>
+      <h3>{title}</h3>
+      {description ? <p>{description}</p> : null}
+      <ul className='mt-4 grid gap-3'>
+        {items.map(item => (
+          <li
+            key={item}
+            className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </article>
   );
 }

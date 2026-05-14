@@ -1,228 +1,180 @@
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+
+import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-// =============================================================================
-// ElementorRenderer
-// Sections: hero · capabilityFit · deliveryPath · proofContext · boundaries ·
-//           nextStep · cta
-// CSS: src/styles/services.css (shared .builder-* + .elementor-page accent)
-// =============================================================================
 
 interface Props {
   data: ServicePageDataBySlug['elementor'];
   slug: string;
 }
 
-const ARIA_HERO_DOT = 'Elementor -- page hero';
-const ARIA_FIT_DOT = 'Builder fit';
-const ARIA_PATH_DOT = 'Delivery path';
-const ARIA_PROOF_DOT = 'Operational proof';
-const ARIA_BOUNDARY_DOT = 'Builder vs structure';
-const ARIA_NEXT_DOT = 'Next step routing';
-
-const FIT_LABEL_DOT = 'Fit';
-const NOT_FIT_LABEL_DOT = 'Not a fit';
-const SIGNAL_DOT = 'Signal';
-const NOT_SIGNAL_DOT = 'Not signal';
-const RULE_DOT = 'Rule';
-const ROUTE_DOT = 'Route';
-
-function requireHeadingTitle(t: string | undefined, s: string) {
-  if (!t || !t.trim()) throw new Error(`[${s}] Missing heading title`);
-  return t;
-}
-
-export function ElementorRenderer({ data, slug: _slug }: Props) {
-  const { hero, sections, cta } = data;
-  const { capabilityFit, deliveryPath, proofContext, boundaries, nextStep } = sections;
-  const primarySystem = data.systems[0];
-  if (!primarySystem) throw new Error('[elementor] Missing service system');
-  const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
+export default function ElementorRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <div className='elementor-page builder-page'>
-      <HeroFrame
-        className='elementor-hero builder-hero'
-        ariaLabel={ARIA_HERO_DOT}
-        layout='center'
-        badge={hero.badge}
-        title={hero.title}
-        description={hero.description}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-        chips={hero.list}
-        chipDotVariant='subtle'
-      />
+    <main>
+      <ElementorHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <ElementorRecognitionSection />
+      {faq ? <ElementorFAQ faq={faq} /> : null}
+      <ElementorDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-      <SectionFrame
-        heading={capabilityFit.header}
-        tone='white'
-        className='builder-fit'
-        ariaLabel={ARIA_FIT_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(capabilityFit.header.title, 'capabilityFit');
+function ElementorHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='Elementor hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<ElementorSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function ElementorSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
           return (
-            <div className='builder-fit__panel'>
-              <header className='builder-fit__head'>
-                <span className='builder-fit__title'>{capabilityFit.label}</span>
-              </header>
-              <ul className='builder-fit__list'>
-                {capabilityFit.rows.map(r => (
-                  <li key={r.id} className={`builder-fit__row builder-fit__row--${r.variant}`}>
-                    <span className={`builder-fit__badge builder-fit__badge--${r.variant}`}>
-                      <span className='builder-fit__dot' aria-hidden='true' />
-                      {r.variant === 'fit' ? FIT_LABEL_DOT : NOT_FIT_LABEL_DOT}
-                    </span>
-                    <span className='builder-fit__text'>
-                      <span className='builder-fit__label'>{r.label}</span>
-                      <span className='builder-fit__detail'>{r.detail}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className='builder-fit__closing'>{capabilityFit.closing}</p>
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
             </div>
           );
-        })()}
-      </SectionFrame>
+        })}
+      </div>
 
-      <SectionFrame
-        heading={deliveryPath.header}
-        tone='mist'
-        className='builder-path'
-        ariaLabel={ARIA_PATH_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(deliveryPath.header.title, 'deliveryPath');
-          return (
-            <div className='builder-path__wrap'>
-              <ol className='builder-path__steps'>
-                {deliveryPath.steps.map(s => (
-                  <li key={s.id} className='builder-path__step'>
-                    <span className='builder-path__num'>{s.num}</span>
-                    <span className='builder-path__body'>
-                      <span className='builder-path__title'>{s.title}</span>
-                      <span className='builder-path__detail'>{s.detail}</span>
-                    </span>
-                  </li>
-                ))}
-              </ol>
-              <p className='builder-path__closing'>{deliveryPath.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <SectionFrame
-        heading={proofContext.header}
-        tone='white'
-        className='builder-proof'
-        ariaLabel={ARIA_PROOF_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(proofContext.header.title, 'proofContext');
-          return (
-            <div className='builder-proof__wrap'>
-              <header className='builder-proof__head'>
-                <span className='builder-proof__title'>{proofContext.label}</span>
-              </header>
-              <ul className='builder-proof__list'>
-                {proofContext.checks.map(c => (
-                  <li key={c.id} className='builder-proof__row'>
-                    <span className='builder-proof__label'>{c.label}</span>
-                    <span className='builder-proof__signal builder-proof__signal--good'>
-                      <span className='builder-proof__pill'>{SIGNAL_DOT}</span>
-                      {c.signal}
-                    </span>
-                    <span className='builder-proof__signal builder-proof__signal--bad'>
-                      <span className='builder-proof__pill builder-proof__pill--bad'>
-                        {NOT_SIGNAL_DOT}
-                      </span>
-                      {c.notSignal}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className='builder-proof__closing'>{proofContext.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <SectionFrame
-        heading={boundaries.header}
-        tone='gradient-dark'
-        className='builder-boundary'
-        ariaLabel={ARIA_BOUNDARY_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(boundaries.header.title, 'boundaries');
-          return (
-            <div className='builder-boundary__wrap'>
-              <div className='builder-boundary__columns'>
-                {boundaries.columns.map(col => (
-                  <article
-                    key={col.id}
-                    className={`builder-boundary__col builder-boundary__col--${col.variant}`}
-                  >
-                    <header className='builder-boundary__head'>
-                      <span className='builder-boundary__label'>{col.label}</span>
-                      <h3 className='builder-boundary__title'>{col.title}</h3>
-                    </header>
-                    <ul className='builder-boundary__items'>
-                      {col.items.map((it, i) => (
-                        <li key={`${col.id}-${i}`}>
-                          <span className='builder-boundary__bullet' aria-hidden='true' />
-                          {it}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-              <p className='builder-boundary__rule'>
-                <strong>{RULE_DOT}.</strong> {boundaries.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <SectionFrame
-        heading={nextStep.header}
-        tone='white'
-        className='builder-next'
-        ariaLabel={ARIA_NEXT_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(nextStep.header.title, 'nextStep');
-          return (
-            <div className='builder-next__panel'>
-              <ul className='builder-next__list'>
-                {nextStep.bullets.map((b, i) => (
-                  <li key={`b-${i}`}>
-                    <span className='builder-next__pill'>{ROUTE_DOT}</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <p className='builder-next__closing'>{nextStep.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <DecisionPanel
-        className='elementor-cta builder-cta'
-        heading={cta.heading}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
-        expectations={cta.expectations}
-        reassurance={cta.footer}
-      />
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
     </div>
   );
 }
+
+function ElementorRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function ElementorFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `elementor-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Elementor FAQ'
+    />
+  );
+}
+
+function ElementorDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export { ElementorRenderer };

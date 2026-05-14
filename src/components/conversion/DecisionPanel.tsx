@@ -14,7 +14,7 @@ type DecisionPanelExpectation = {
 };
 
 type DecisionPanelHeading = {
-  kicker?: string;
+  eyebrow?: string;
   title: string;
   subtitle?: string;
   description?: string;
@@ -69,10 +69,10 @@ export function DecisionPanel({
           <div className='mw-decision-panel__texture' aria-hidden='true' />
           <div className='mw-decision-panel__layout'>
             <div className='mw-decision-panel__copy mw-animate-up'>
-              {heading.kicker && (
+              {heading.eyebrow && (
                 <div className='mw-decision-panel__eyebrow'>
                   <span className='mw-decision-panel__eyebrow-dot' aria-hidden='true' />
-                  <span>{heading.kicker}</span>
+                  <span>{heading.eyebrow}</span>
                 </div>
               )}
               <h2 className='mw-decision-panel__title'>

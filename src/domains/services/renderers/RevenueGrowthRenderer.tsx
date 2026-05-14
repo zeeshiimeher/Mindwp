@@ -1,254 +1,180 @@
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-// =============================================================================
-// RevenueGrowthRenderer
-// Shared .feat-* CSS pattern + .rev-page accent.
-// Sections: hero · revenueLeakMap · recoveryPath · systemBridges ·
-//           fitBoundaries · faq · cta
-// =============================================================================
 
 interface Props {
   data: ServicePageDataBySlug['revenue-growth'];
   slug: string;
 }
 
-const ARIA_HERO_DOT = 'Revenue Growth -- page hero';
-const ARIA_BOARD_DOT = 'Revenue leak map';
-const ARIA_PATH_DOT = 'Recovery rhythm';
-const ARIA_BRIDGE_DOT = 'System bridges';
-const ARIA_FIT_DOT = 'Fit filter';
-const ARIA_FAQ_DOT = 'Frequently asked questions';
-
-const SOURCE_DOT = 'Source';
-const SIGNAL_DOT = 'Signal';
-const EXPOSURE_DOT = 'Exposure';
-const STATE_DOT = 'State';
-const STATE_WORKABLE_DOT = 'Workable';
-const STATE_CAUTION_DOT = 'Caution';
-const STATE_LEAVE_DOT = 'Leave alone';
-const TIMING_DOT = 'Stage';
-const FIT_LABEL_DOT = 'Fit';
-const NOT_FIT_LABEL_DOT = 'Not a fit';
-const RULE_DOT = 'Rule';
-const BRIDGE_REV_DOT = 'Revenue Growth owns';
-const BRIDGE_OTHER_DOT = 'Other systems own';
-
-function requireHeadingTitle(t: string | undefined, s: string) {
-  if (!t || !t.trim()) throw new Error(`[${s}] Missing heading title`);
-  return t;
-}
-
-function stateLabel(state: 'workable' | 'caution' | 'leave') {
-  if (state === 'workable') return STATE_WORKABLE_DOT;
-  if (state === 'caution') return STATE_CAUTION_DOT;
-  return STATE_LEAVE_DOT;
-}
-
-export function RevenueGrowthRenderer({ data, slug: _slug }: Props) {
-  const { hero, sections, cta } = data;
-  const { revenueLeakMap, recoveryPath, systemBridges, fitBoundaries, faq } = sections;
-  const primarySystem = data.systems[0];
-  if (!primarySystem) throw new Error('[revenue-growth] Missing service system');
-  const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
-
-  const revRows = systemBridges.rows.filter(r => r.belongsTo === 'revenue-growth');
-  const otherRows = systemBridges.rows.filter(r => r.belongsTo === 'other-systems');
+export default function RevenueGrowthRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <div className='rev-page feat-page'>
-      <HeroFrame
-        className='rev-hero feat-hero'
-        ariaLabel={ARIA_HERO_DOT}
-        badge={hero.badge}
-        title={hero.title}
-        description={hero.description}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-        chips={hero.list}
-        chipDotVariant='subtle'
-      />
+    <main>
+      <RevenueGrowthHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <RevenueGrowthRecognitionSection />
+      {faq ? <RevenueGrowthFAQ faq={faq} /> : null}
+      <RevenueGrowthDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-      {/* ── Revenue leak map ── */}
-      <SectionFrame
-        heading={revenueLeakMap.header}
-        tone='white'
-        className='feat-board'
-        ariaLabel={ARIA_BOARD_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(revenueLeakMap.header.title, 'revenueLeakMap');
+function RevenueGrowthHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='Revenue Growth hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<RevenueGrowthSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function RevenueGrowthSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
           return (
-            <div className='feat-board__panel'>
-              <header className='feat-board__head'>
-                <span className='feat-board__title'>{revenueLeakMap.label}</span>
-              </header>
-              <div className='feat-board__columns'>
-                <span>{SOURCE_DOT}</span>
-                <span>{SIGNAL_DOT}</span>
-                <span>{EXPOSURE_DOT}</span>
-                <span>{STATE_DOT}</span>
-              </div>
-              <ul className='feat-board__list'>
-                {revenueLeakMap.rows.map(r => (
-                  <li key={r.id} className={`feat-board__row feat-board__row--${r.state}`}>
-                    <span className='feat-board__source'>
-                      <span
-                        className={`feat-board__dot feat-board__dot--${r.state}`}
-                        aria-hidden='true'
-                      />
-                      {r.origin}
-                    </span>
-                    <span className='feat-board__age'>{r.signal}</span>
-                    <span className='feat-board__signal'>{r.exposure}</span>
-                    <span className={`feat-board__state feat-board__state--${r.state}`}>
-                      {stateLabel(r.state)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className='feat-board__closing'>{revenueLeakMap.closing}</p>
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
             </div>
           );
-        })()}
-      </SectionFrame>
+        })}
+      </div>
 
-      {/* ── Recovery rhythm ── */}
-      <SectionFrame
-        heading={recoveryPath.header}
-        tone='mist'
-        className='feat-path'
-        ariaLabel={ARIA_PATH_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(recoveryPath.header.title, 'recoveryPath');
-          return (
-            <div className='feat-path__wrap'>
-              <ol className='feat-path__steps'>
-                {recoveryPath.steps.map(s => (
-                  <li key={s.id} className='feat-path__step'>
-                    <span className='feat-path__num'>{s.num}</span>
-                    <span className='feat-path__timing'>
-                      <span className='feat-path__pill'>{TIMING_DOT}</span>
-                      {s.timing}
-                    </span>
-                    <span className='feat-path__title'>{s.title}</span>
-                    <span className='feat-path__detail'>{s.detail}</span>
-                  </li>
-                ))}
-              </ol>
-              <p className='feat-path__closing'>{recoveryPath.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── System bridges ── */}
-      <SectionFrame
-        heading={systemBridges.header}
-        tone='white'
-        className='rev-coord'
-        ariaLabel={ARIA_BRIDGE_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(systemBridges.header.title, 'systemBridges');
-          return (
-            <div className='rev-coord__wrap'>
-              <article className='rev-coord__hub'>
-                <span className='rev-coord__hub-tag'>{BRIDGE_REV_DOT}</span>
-                <h3 className='rev-coord__hub-title'>Coordinates the recovery loop</h3>
-                <ul className='rev-coord__hub-list'>
-                  {revRows.map(r => (
-                    <li key={r.id} className='rev-coord__hub-item'>
-                      <span className='rev-coord__hub-mark' aria-hidden='true'>
-                        +
-                      </span>
-                      {r.point}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-              <div className='rev-coord__satellites'>
-                <span className='rev-coord__satellites-label'>{BRIDGE_OTHER_DOT}</span>
-                <ul className='rev-coord__sat-list'>
-                  {otherRows.map(r => (
-                    <li key={r.id} className='rev-coord__sat'>
-                      <span className='rev-coord__sat-arrow' aria-hidden='true'>
-                        →
-                      </span>
-                      <span className='rev-coord__sat-system'>{r.systemTag ?? ''}</span>
-                      <span className='rev-coord__sat-role'>{r.point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <p className='rev-coord__rule'>
-                <strong>{RULE_DOT}.</strong> {systemBridges.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Fit ── */}
-      <SectionFrame
-        heading={fitBoundaries.header}
-        tone='mist'
-        className='feat-fit'
-        ariaLabel={ARIA_FIT_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(fitBoundaries.header.title, 'fitBoundaries');
-          return (
-            <div className='feat-fit__wrap'>
-              <div className='feat-fit__columns'>
-                {fitBoundaries.columns.map(col => (
-                  <article key={col.id} className={`feat-fit__col feat-fit__col--${col.variant}`}>
-                    <header className='feat-fit__head'>
-                      <span className='feat-fit__label'>
-                        {col.variant === 'fit' ? FIT_LABEL_DOT : NOT_FIT_LABEL_DOT}
-                      </span>
-                      <h3 className='feat-fit__title'>{col.title}</h3>
-                    </header>
-                    <ul className='feat-fit__items'>
-                      {col.signals.map((s, i) => (
-                        <li key={`${col.id}-${i}`}>
-                          <span className='feat-fit__bullet' aria-hidden='true' />
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-              <p className='feat-fit__closing'>{fitBoundaries.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <FAQSection
-        eyebrow={faq.header.kicker}
-        title={faq.header.title}
-        description={faq.header.description}
-        items={faq.items}
-        tone='white'
-        variant='split'
-        className='feat-faq'
-        ariaLabel={ARIA_FAQ_DOT}
-      />
-
-      <DecisionPanel
-        className='rev-cta feat-cta'
-        heading={cta.heading}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
-        expectations={cta.expectations}
-        reassurance={cta.footer}
-      />
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
     </div>
   );
 }
+
+function RevenueGrowthRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function RevenueGrowthFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `revenue-growth-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Revenue Growth FAQ'
+    />
+  );
+}
+
+function RevenueGrowthDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export { RevenueGrowthRenderer };

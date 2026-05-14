@@ -1,314 +1,109 @@
-import {
-  ArrowRight,
-  Calendar,
-  CheckCircle2,
-  Layers,
-  Mail,
-  MessageSquare,
-  Repeat,
-  Settings,
-  Target,
-  Workflow,
-  Zap,
-} from 'lucide-react';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
-const workflowsFaqItems = [
-  {
-    question: 'Do I need technical skills to create workflows?',
-    answer:
-      'No technical skills are required. The workflow builder uses a visual interface to connect triggers and actions. Templates are available for common processes.',
-  },
-  {
-    question: "What's an example of a useful workflow?",
-    answer:
-      'For example, when an appointment is booked, a confirmation message is sent, reminders are scheduled, and a follow-up is delivered. Each step is managed by the workflow and can be reviewed by your team.',
-  },
-  {
-    question: 'Can workflows integrate with my existing tools?',
-    answer:
-      'Workflows can connect with calendars, email platforms, and other tools through integrations. Data stays organized and up to date.',
-  },
-  {
-    question: 'How do I know if workflows are working?',
-    answer:
-      'Activity logs and dashboards show which workflows are running and what actions have been completed. Human oversight is always possible.',
-  },
-  {
-    question: 'Can I create conditional workflows?',
-    answer:
-      'Yes, workflows support conditional logic. For example, send different messages based on appointment type or customer preferences.',
-  },
-  {
-    question: 'What triggers can start a workflow?',
-    answer:
-      'Triggers include form submissions, appointment bookings, time-based events, status changes, and custom conditions.',
-  },
-  {
-    question: 'How many workflows can I create?',
-    answer:
-      'You can create unlimited workflows. Start with templates and customize as needed for your business processes.',
-  },
-  {
-    question: 'Can workflows run automatically?',
-    answer:
-      'Yes, workflows run automatically once set up. You can also manually trigger them or pause/resume as needed.',
-  },
-  {
-    question: 'What actions can workflows perform?',
-    answer:
-      'Actions include sending emails/SMS, updating records, creating tasks, scheduling events, and triggering other workflows.',
-  },
-  {
-    question: 'Is there workflow analytics?',
-    answer:
-      'Yes, detailed analytics show workflow performance, completion rates, and help you optimize your automated processes.',
-  },
-];
+// =============================================================================
+// Workflows — page
+// =============================================================================
 
-const slug = 'workflows';
-
-export const workflowsData: FeaturePageData = {
-  slug,
+export const workflowsData = {
   seo: buildFeatureSeo({
-    slug,
-    title: 'Workflows | Structured Automation Layer',
+    slug: 'workflows',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'Structured workflow automation for follow-ups, reminders, and task routing with clear rules and full team visibility.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
+  slug: 'workflows',
   systems: ['crm-automation'],
-  topics: ['lead-management'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Part of CRM Automation',
-    title: 'Workflow layer that keeps follow-up from slipping',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'Manual follow-up depends on the team remembering. Workflows are part of the CRM Automation service — they turn confirmations, reminders, and task handoffs into rules that run on every enquiry, every booking, every quote, without anyone having to chase.',
-    stats: [
-      { value: 'Auto', label: 'Follow-Ups' },
-      { value: 'Clear', label: 'Rules' },
-      { value: 'Less', label: 'Manual Work' },
-      { value: 'More', label: 'Consistency' },
-    ],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    visualFlow: {
-      title: 'Lead Nurture Workflow',
-      triggerTitle: 'Trigger: Form Submitted',
-      triggerSubtitle: 'New lead captured',
-      actions: [
-        {
-          icon: Mail,
-          title: 'Send welcome email',
-          subtitle: 'Immediately',
-        },
-        {
-          icon: MessageSquare,
-          title: 'Send SMS reminder',
-          subtitle: 'After 2 days',
-        },
-        {
-          icon: CheckCircle2,
-          title: 'Final offer email',
-          subtitle: 'After 7 days',
-        },
-      ],
-      triggerIcon: Target,
-      connectorIcon: ArrowRight,
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    process: {
-      badge: 'How It Works',
-      title: 'How Workflow Automation Works',
-      description:
-        'Clear triggers, defined rules, and automatic actions keep your operations consistent.',
-      steps: [
-        {
-          number: '01',
-          title: 'Action Happens',
-          description: 'A form is submitted, an appointment is booked, or a status changes.',
-          icon: Workflow,
-          iconType: 'primary' as const,
-        },
-        {
-          number: '02',
-          title: 'System Checks Rules',
-          description:
-            'The workflow checks conditions you have defined to decide what should happen next.',
-          icon: Settings,
-          iconType: 'secondary' as const,
-        },
-        {
-          number: '03',
-          title: 'Automatic Actions Run',
-          description: 'Emails, SMS, task creation, or updates are triggered automatically.',
-          icon: Repeat,
-          iconType: 'primary' as const,
-        },
-        {
-          number: '04',
-          title: 'Team Stays Informed',
-          description: 'Your team is notified where needed, with full visibility and control.',
-          icon: Layers,
-          iconType: 'secondary' as const,
-        },
-      ],
-    },
-    benefits: {
-      badge: 'Key Advantages',
-      title: 'Why Use Workflows?',
-      description:
-        'Simple automation that improves reliability, reduces manual work, and keeps your team aligned.',
-      items: [
-        {
-          icon: Workflow,
-          title: 'No Missed Follow-Ups',
-          description:
-            'Every lead, booking, or enquiry triggers the right next step automatically.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Layers,
-          title: 'Clear Process Flow',
-          description: 'Define simple, step-by-step processes so nothing depends on memory.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Settings,
-          title: 'Full Control',
-          description: 'You decide the rules, timing, and conditions behind each automation.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Repeat,
-          title: 'Consistent Experience',
-          description: 'Customers receive confirmations, reminders, and follow-ups every time.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Layers,
-          title: 'Better Team Alignment',
-          description: 'Tasks and notifications keep everyone clear on what needs to happen next.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Zap,
-          title: 'Save Time Daily',
-          description: 'Reduce repetitive admin work so your team can focus on higher-value tasks.',
-          iconType: 'accent' as const,
-        },
-      ],
-    },
-    useCases: {
-      badge: 'Feature in Practice',
-      title: 'Automation in Everyday Use',
-      description: 'Examples of how automation fits into daily business operations.',
-      items: [
-        {
-          icon: Workflow,
-          title: 'New Lead Follow-Up',
-          scenario: 'A visitor submits a contact form.',
-          solution: 'The system sends a confirmation, assigns a task, and schedules reminders.',
-          result: 'No lead is forgotten and response time improves.',
-        },
-        {
-          icon: Repeat,
-          title: 'Appointment Reminders',
-          scenario: 'A customer books an appointment.',
-          solution: 'Automated reminders are sent before the scheduled time.',
-          result: 'Fewer no-shows and better preparation.',
-        },
-        {
-          icon: Layers,
-          title: 'Internal Task Routing',
-          scenario: 'A deal changes stage or a form is submitted.',
-          solution: 'The right team member is notified and tasks are created automatically.',
-          result: 'Clear ownership and faster execution.',
-        },
-      ],
-    },
-    capabilities: {
-      badge: "What's Included",
-      title: 'Automation Feature Overview',
-      featureCategories: [
-        {
-          icon: Workflow,
-          title: 'Flexible Triggers',
-          description: 'Start workflows based on real business events.',
-          features: [
-            'Form submissions',
-            'Appointments booked or completed',
-            'Pipeline stage changes',
-            'Time-based triggers',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Settings,
-          title: 'Automated Actions',
-          description: 'Run multiple actions automatically once triggered.',
-          features: [
-            'Send email or SMS',
-            'Update contact records',
-            'Create and assign tasks',
-            'Schedule follow-ups',
-          ],
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Layers,
-          title: 'Logic & Conditions',
-          description: 'Build simple or advanced logic based on your needs.',
-          features: [
-            'If/else conditions',
-            'Multi-step sequences',
-            'Branching workflows',
-            'Activity tracking',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-      columns: 3 as const,
-      variant: 'stacked' as const,
-    },
-    faq: {
-      badge: 'Common Questions',
-      title: 'Automation Feature FAQ',
-      items: workflowsFaqItems,
-    },
-    explore: {
-      badge: 'Explore Related Features',
-      title: 'Enhance Your Automation',
-      description:
-        'Discover features that work seamlessly with Workflows to create powerful business solutions.',
-      cards: [
-        {
-          icon: Calendar,
-          title: 'Calendars',
-          description: 'Automate appointment booking and scheduling workflows',
-          href: '/features/calendars',
-        },
-        {
-          icon: MessageSquare,
-          title: 'CRM & Follow-Up',
-          description: 'Connect workflows with customer relationship management',
-          href: '/features/crm',
-        },
-        {
-          icon: Zap,
-          title: 'AI Chat',
-          description: 'Automate customer conversations with intelligent chatbots',
-          href: '/features/aichat',
-        },
-      ],
-    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
+      },
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
+      },
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
+      },
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
+      },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      title: 'Ready to Automate Your Follow-Ups?',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'We will map the triggers, rules, and follow-up steps that fit your real operation so leads, bookings, and internal tasks keep moving without manual chasing.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies FeaturePageData;

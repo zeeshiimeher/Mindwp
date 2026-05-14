@@ -65,7 +65,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
   return (
     <main className='industry-detail-page'>
       <HeroFrame
-        badge={data.hero.badge}
+        eyebrow={data.hero.badge}
         title={data.hero.title}
         description={data.hero.description}
         actions={actions}
@@ -76,7 +76,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 1 — Booked day under pressure */}
       <SectionFrame
         heading={{
-          kicker: 'A booked HVAC day',
+          eyebrow: 'A booked HVAC day',
           title:
             'The day&rsquo;s jobs are already on the board [[muted:when the urgent call comes in.]]',
           description:
@@ -119,7 +119,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 2 — Dominant: Dispatch-day path */}
       <SectionFrame
         heading={{
-          kicker: 'Dispatch-day path',
+          eyebrow: 'Dispatch-day path',
           title:
             'Three lanes, one office &mdash; [[muted:and the urgent call cutting across all of them.]]',
         }}
@@ -163,7 +163,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 3 — Surge season vs normal week */}
       <SectionFrame
         heading={{
-          kicker: 'The first hot week',
+          eyebrow: 'The first hot week',
           title: 'Normal weeks and surge weeks [[muted:are not the same business.]]',
         }}
         tone='mist'
@@ -213,7 +213,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 4 — Service / Urgent / Install handoff */}
       <SectionFrame
         heading={{
-          kicker: 'Three calls, three hands',
+          eyebrow: 'Three calls, three hands',
           title: 'Each call type [[muted:wants a different next step.]]',
         }}
         tone='white'
@@ -254,7 +254,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 5 — Office holding the day */}
       <SectionFrame
         heading={{
-          kicker: 'The office side',
+          eyebrow: 'The office side',
           title: 'One person at a desk [[muted:is not a dispatch system.]]',
         }}
         tone='gradient-mist'
@@ -294,7 +294,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 6 — Service follow-up loop */}
       <SectionFrame
         heading={{
-          kicker: 'The follow-up loop',
+          eyebrow: 'The follow-up loop',
           title: 'A finished install [[muted:is the start of the next appointment.]]',
         }}
         tone='white'
@@ -337,7 +337,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       {/* 7 — System bridge */}
       <SectionFrame
         heading={{
-          kicker: 'The systems behind it',
+          eyebrow: 'The systems behind it',
           title: 'Three systems hold the surge week. [[muted:Each one earns its place.]]',
         }}
         tone='dark'
@@ -371,7 +371,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       </SectionFrame>
 
       <FAQSection
-        eyebrow={data.faq.header.kicker}
+        eyebrow={data.faq.header.eyebrow}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
@@ -380,7 +380,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
 
       <DecisionPanel
         heading={{
-          kicker: data.cta.heading.kicker,
+          eyebrow: data.cta.heading.eyebrow,
           title: data.cta.heading.title,
           description: data.cta.heading.description,
         }}

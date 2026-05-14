@@ -1,4 +1,20 @@
-import { SectionWrapper } from '@/components/reusable/primitives';
+import type { ReactNode } from 'react';
+
+function SectionWrapper({
+  background,
+  className,
+  children,
+}: {
+  background?: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className={[background, 'py-16', className].filter(Boolean).join(' ')}>
+      <div className='mw-container'>{children}</div>
+    </section>
+  );
+}
 
 export default function TermsConditions() {
   return (

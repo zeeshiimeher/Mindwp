@@ -4,7 +4,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { getCaseStudyRenderedSectionTypes } from '@/domains/case-studies/templates/CaseStudyTemplate';
 import type { CaseStudyData } from '@/domains/case-studies/types';
-import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/registry';
+import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/pageData';
 import type { FeaturePageData } from '@/domains/features/types';
 import { INDUSTRY_CATALOG } from '@/domains/industries/catalog';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';

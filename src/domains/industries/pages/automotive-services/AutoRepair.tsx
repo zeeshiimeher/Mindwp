@@ -36,7 +36,7 @@ export const autoRepairIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What auto-repair operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -69,7 +69,7 @@ export const autoRepairIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the counter actually leaks',
       description:
         'Tell us about a typical Tuesday. We will read it back and name the first system to fix.',

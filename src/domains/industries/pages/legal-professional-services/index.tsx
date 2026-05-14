@@ -30,7 +30,7 @@ export const legalProfessionalServicesIndustryPageData: IndustryCategoryPageData
   topics: ['lead-management', 'follow-up'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What firm partners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -60,7 +60,7 @@ export const legalProfessionalServicesIndustryPageData: IndustryCategoryPageData
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the engagement actually leaks',
       description:
         'Tell us about a typical month. We will read it back and name the first system to fix.',

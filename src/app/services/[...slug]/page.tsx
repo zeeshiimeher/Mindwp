@@ -102,12 +102,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     path: canonicalPath,
     areaServed: 'UK',
   });
-  const faqSeoSchema = buildFaqSchema(getServiceFaqs(data.sections));
+  const faqSeoSchema = buildFaqSchema(
+    data.faq?.items ?? getServiceFaqs('sections' in data ? data.sections : undefined)
+  );
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: resolved.serviceData.badge, path: canonicalPath },
+    { name: resolved.serviceData.eyebrow, path: canonicalPath },
   ]);
 
   const schemaEntries: Array<{ id: string; schema: Record<string, unknown> }> = [

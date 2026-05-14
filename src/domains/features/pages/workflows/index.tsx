@@ -1,8 +1,8 @@
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 import WorkflowsRenderer from '@/domains/features/renderers/WorkflowsRenderer';
-import type { FeaturePageData } from '@/domains/features/types';
 
 interface WorkflowsPageProps {
-  data: FeaturePageData;
+  data: FeaturePageDataBySlug['workflows'];
 }
 
 export default function WorkflowsPage({ data }: WorkflowsPageProps) {

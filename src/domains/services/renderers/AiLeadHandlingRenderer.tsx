@@ -1,425 +1,180 @@
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-// =============================================================================
-// AiLeadHandlingRenderer
-// Sections: hero · responseGap · channelSurface · handledPath · aiBoundary ·
-//           scenarioReadiness · fitFilter · faq · cta
-// CSS: src/styles/services.css (aih-* classes)
-// =============================================================================
 
 interface Props {
   data: ServicePageDataBySlug['ai-lead-handling'];
   slug: string;
 }
 
-// ── Label constants (end in _DOT) ────────────────────────────────────────────
-const ARIA_HERO_DOT = 'AI Lead Handling -- page hero';
-const ARIA_RESPONSE_GAP_DOT = 'Response gap';
-const ARIA_CHANNEL_SURFACE_DOT = 'Channel surface';
-const ARIA_HANDLED_PATH_DOT = 'Handled path';
-const ARIA_AI_BOUNDARY_DOT = 'AI boundary';
-const ARIA_SCENARIO_DOT = 'Scenario readiness';
-const ARIA_FIT_FILTER_DOT = 'Fit filter';
-const ARIA_FAQ_DOT = 'Frequently asked questions';
-
-const QUEUE_HEADING_DOT = 'Live first-contact queue';
-const QUEUE_CHANNEL_COL_DOT = 'Channel';
-const QUEUE_TIME_COL_DOT = 'Arrived';
-const QUEUE_PREVIEW_COL_DOT = 'Preview';
-const QUEUE_STATE_COL_DOT = 'State';
-const QUEUE_AGE_COL_DOT = 'Waiting';
-const DECAY_HEADING_DOT = 'Cost of silence over time';
-
-const CHANNEL_HEADING_DOT = 'Single handling surface';
-const CHANNEL_COL_CHANNEL_DOT = 'Channel';
-const CHANNEL_COL_ORIGIN_DOT = 'Origin';
-const CHANNEL_COL_DETAIL_DOT = 'How it is handled';
-const CHANNEL_COL_ROUTE_DOT = 'Routed to';
-const SUMMARY_HEADING_DOT = 'Coverage rules';
-
-const PATH_HEADING_DOT = 'From received to routed';
-const PATH_NOTE_LABEL_DOT = 'Boundary';
-
-const BOUNDARY_RULE_LABEL_DOT = 'Rule';
-const BOUNDARY_GUARD_LABEL_DOT = 'Guard';
-
-const SCENARIO_CONTEXT_DOT = 'Context';
-const SCENARIO_BEFORE_DOT = 'Before — typical week';
-const SCENARIO_AFTER_DOT = 'After — same week, handled';
-const SCENARIO_CONSTRAINT_DOT = 'Constraint';
-const SCENARIO_NOTE_DOT = 'Note';
-
-const FIT_LABEL_DOT = 'Fit';
-const FIT_NOT_LABEL_DOT = 'Not yet';
-
-// ── Validator-required helpers ───────────────────────────────────────────────
-function requireHeadingTitle(title: string | undefined, section: string) {
-  if (!title || title.trim().length === 0) {
-    throw new Error(`[${section}] Missing heading title`);
-  }
-  return title;
-}
-
-function requireHeadingDescription(description: string | undefined, section: string) {
-  if (!description || description.trim().length === 0) {
-    throw new Error(`[${section}] Missing heading description`);
-  }
-  return description;
-}
-
-export function AiLeadHandlingRenderer({ data, slug: _slug }: Props) {
-  const { hero, sections, cta } = data;
-  const {
-    responseGap,
-    channelSurface,
-    handledPath,
-    aiBoundary,
-    scenarioReadiness,
-    fitFilter,
-    faq,
-  } = sections;
-  const primarySystem = data.systems[0];
-  if (!primarySystem) {
-    throw new Error('[ai-lead-handling] Missing service system');
-  }
-  const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
+export function AiLeadHandlingRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <div className='aih-page'>
-      <HeroFrame
-        className='aih-hero'
-        ariaLabel={ARIA_HERO_DOT}
-        badge={hero.badge}
-        title={hero.title}
-        description={hero.description}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-        chips={hero.list}
-        chipDotVariant='warn'
-      />
+    <main>
+      <AiLeadHandlingHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <AiLeadHandlingRecognitionSection />
+      {faq ? <AiLeadHandlingFAQ faq={faq} /> : null}
+      <AiLeadHandlingDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-      {/* ── Response Gap ────────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={responseGap.header}
-        tone='white'
-        className='aih-responseGap'
-        ariaLabel={ARIA_RESPONSE_GAP_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(responseGap.header.title, 'responseGap');
+function AiLeadHandlingHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='AI Lead Handling hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<AiLeadHandlingSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function AiLeadHandlingSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
           return (
-            <div className='aih-gap'>
-              <div className='aih-queue' aria-label={QUEUE_HEADING_DOT}>
-                <header className='aih-queue__header'>
-                  <span className='aih-queue__title'>{QUEUE_HEADING_DOT}</span>
-                  <span className='aih-queue__note'>{responseGap.queueNote}</span>
-                </header>
-                <div className='aih-queue__columns'>
-                  <span>{QUEUE_CHANNEL_COL_DOT}</span>
-                  <span>{QUEUE_TIME_COL_DOT}</span>
-                  <span>{QUEUE_PREVIEW_COL_DOT}</span>
-                  <span>{QUEUE_STATE_COL_DOT}</span>
-                  <span>{QUEUE_AGE_COL_DOT}</span>
-                </div>
-                <ul className='aih-queue__list'>
-                  {responseGap.queue.map(row => (
-                    <li key={row.id} className={`aih-queue__row aih-queue__row--${row.state}`}>
-                      <span className='aih-queue__channel'>{row.channel}</span>
-                      <span className='aih-queue__time'>{row.arrived}</span>
-                      <span className='aih-queue__preview'>
-                        {row.preview}
-                        {row.ownerNote ? (
-                          <em className='aih-queue__owner'>{row.ownerNote}</em>
-                        ) : null}
-                      </span>
-                      <span className={`aih-state aih-state--${row.state}`}>
-                        <span className='aih-state__dot' aria-hidden='true' />
-                        {row.state}
-                      </span>
-                      <span className='aih-queue__age'>{row.ageMinutes}m</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className='aih-decay' aria-label={DECAY_HEADING_DOT}>
-                <header className='aih-decay__header'>
-                  <span className='aih-decay__title'>{DECAY_HEADING_DOT}</span>
-                  <span className='aih-decay__caption'>{responseGap.decayCaption}</span>
-                </header>
-                <ol className='aih-decay__bars'>
-                  {responseGap.decay.map(seg => (
-                    <li key={seg.id} className={`aih-decay__bar aih-decay__bar--${seg.intensity}`}>
-                      <div className='aih-decay__meta'>
-                        <span className='aih-decay__range'>{seg.range}</span>
-                        <span className='aih-decay__label'>{seg.label}</span>
-                      </div>
-                      <span className='aih-decay__outcome'>{seg.outcome}</span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
             </div>
           );
-        })()}
-      </SectionFrame>
+        })}
+      </div>
 
-      {/* ── Channel Surface ────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={channelSurface.header}
-        tone='mist'
-        className='aih-channelSurface'
-        ariaLabel={ARIA_CHANNEL_SURFACE_DOT}
-      >
-        {(() => {
-          requireHeadingDescription(channelSurface.header.description, 'channelSurface');
-          return (
-            <div className='aih-channels'>
-              <header className='aih-channels__header'>
-                <span className='aih-channels__title'>{CHANNEL_HEADING_DOT}</span>
-                <span className='aih-channels__legend'>
-                  <span className='aih-channels__legend-item'>
-                    <span>{CHANNEL_COL_CHANNEL_DOT}</span>
-                    <span aria-hidden='true' className='aih-channels__legend-arrow'>
-                      →
-                    </span>
-                    <span>{CHANNEL_COL_DETAIL_DOT}</span>
-                    <span aria-hidden='true' className='aih-channels__legend-arrow'>
-                      →
-                    </span>
-                    <span>{CHANNEL_COL_ROUTE_DOT}</span>
-                  </span>
-                </span>
-              </header>
-              <ul className='aih-router'>
-                {channelSurface.rows.map(row => (
-                  <li key={row.id} className={`aih-router__row aih-router__row--${row.signal}`}>
-                    <div className='aih-router__source'>
-                      <span className='aih-router__channel'>
-                        <span
-                          className={`aih-signal aih-signal--${row.signal}`}
-                          aria-hidden='true'
-                        />
-                        {row.channel}
-                      </span>
-                      <span className='aih-router__origin'>
-                        <span aria-hidden='true' className='aih-router__origin-label'>
-                          {CHANNEL_COL_ORIGIN_DOT}:
-                        </span>{' '}
-                        {row.origin}
-                      </span>
-                    </div>
-                    <span aria-hidden='true' className='aih-router__arrow'>
-                      →
-                    </span>
-                    <p className='aih-router__detail'>{row.detail}</p>
-                    <span aria-hidden='true' className='aih-router__arrow'>
-                      →
-                    </span>
-                    <span className='aih-router__route'>{row.routedTo ?? '—'}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className='aih-summary' aria-label={SUMMARY_HEADING_DOT}>
-                {channelSurface.summary.map(s => (
-                  <div key={s.label} className={`aih-summary__item aih-summary__item--${s.tone}`}>
-                    <span className='aih-summary__label'>{s.label}</span>
-                    <span className='aih-summary__value'>{s.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Handled Path ──────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={handledPath.header}
-        tone='gradient-dark'
-        className='aih-handledPath'
-        ariaLabel={ARIA_HANDLED_PATH_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(handledPath.header.title, 'handledPath');
-          return (
-            <div className='aih-path'>
-              <header className='aih-path__header'>
-                <span className='aih-path__title'>{PATH_HEADING_DOT}</span>
-              </header>
-              <ol className='aih-path__steps'>
-                {handledPath.steps.map(step => (
-                  <li key={step.id} className='aih-path__step'>
-                    <span className='aih-path__index'>{step.index}</span>
-                    <div className='aih-path__body'>
-                      <span className='aih-path__step-title'>{step.title}</span>
-                      <span className='aih-path__detail'>{step.detail}</span>
-                      <span className='aih-path__signal'>
-                        <span className='aih-path__dot' aria-hidden='true' />
-                        {step.signal}
-                      </span>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <p className='aih-path__note'>
-                <strong>{PATH_NOTE_LABEL_DOT}.</strong> {handledPath.boundaryNote}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── AI Boundary ───────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={aiBoundary.header}
-        tone='white'
-        className='aih-aiBoundary'
-        ariaLabel={ARIA_AI_BOUNDARY_DOT}
-      >
-        {(() => {
-          requireHeadingDescription(aiBoundary.header.description, 'aiBoundary');
-          return (
-            <div className='aih-boundary'>
-              <div className='aih-scope'>
-                {aiBoundary.columns.map((col, idx) => (
-                  <article key={col.id} className={`aih-scope__half aih-scope__half--${col.scope}`}>
-                    <header className='aih-scope__head'>
-                      <span className='aih-scope__label'>{col.label}</span>
-                      <h3 className='aih-scope__title'>{col.title}</h3>
-                    </header>
-                    <ul className='aih-scope__tags'>
-                      {col.items.map((item, i) => (
-                        <li key={`${col.id}-${i}`} className='aih-scope__tag'>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <p className='aih-scope__guard'>
-                      <strong>{BOUNDARY_GUARD_LABEL_DOT}.</strong> {col.guard}
-                    </p>
-                    {idx === 0 ? (
-                      <span aria-hidden='true' className='aih-scope__handoff'>
-                        →
-                      </span>
-                    ) : null}
-                  </article>
-                ))}
-              </div>
-              <p className='aih-boundary__rule'>
-                <strong>{BOUNDARY_RULE_LABEL_DOT}.</strong> {aiBoundary.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Scenario / Readiness ──────────────────────────────────────── */}
-      <SectionFrame
-        heading={scenarioReadiness.header}
-        tone='gradient-mist'
-        className='aih-scenarioReadiness'
-        ariaLabel={ARIA_SCENARIO_DOT}
-      >
-        {(() => {
-          const p = scenarioReadiness.panel;
-          return (
-            <article className='aih-scenario'>
-              <header className='aih-scenario__head'>
-                <span className='aih-scenario__label'>{SCENARIO_CONTEXT_DOT}</span>
-                <p className='aih-scenario__context'>{p.context}</p>
-              </header>
-              <div className='aih-scenario__split'>
-                <section className='aih-scenario__col aih-scenario__col--before'>
-                  <span className='aih-scenario__col-label'>{SCENARIO_BEFORE_DOT}</span>
-                  <ul className='aih-scenario__list'>
-                    {p.before.map((b, i) => (
-                      <li key={`b-${i}`}>{b}</li>
-                    ))}
-                  </ul>
-                </section>
-                <section className='aih-scenario__col aih-scenario__col--after'>
-                  <span className='aih-scenario__col-label'>{SCENARIO_AFTER_DOT}</span>
-                  <ul className='aih-scenario__list'>
-                    {p.after.map((a, i) => (
-                      <li key={`a-${i}`}>{a}</li>
-                    ))}
-                  </ul>
-                </section>
-              </div>
-              <footer className='aih-scenario__footer'>
-                <p className='aih-scenario__constraint'>
-                  <strong>{SCENARIO_CONSTRAINT_DOT}.</strong> {p.constraint}
-                </p>
-                <p className='aih-scenario__note'>
-                  <strong>{SCENARIO_NOTE_DOT}.</strong> {p.note}
-                </p>
-              </footer>
-            </article>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Fit Filter ────────────────────────────────────────────────── */}
-      <SectionFrame
-        heading={fitFilter.header}
-        tone='mist'
-        className='aih-fitFilter'
-        ariaLabel={ARIA_FIT_FILTER_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(fitFilter.header.title, 'fitFilter');
-          return (
-            <div className='aih-fit'>
-              <div className='aih-fit__columns'>
-                {fitFilter.columns.map(col => (
-                  <article key={col.id} className={`aih-fit__col aih-fit__col--${col.variant}`}>
-                    <header className='aih-fit__head'>
-                      <span className='aih-fit__label'>
-                        {col.variant === 'fit' ? FIT_LABEL_DOT : FIT_NOT_LABEL_DOT}
-                      </span>
-                      <h3 className='aih-fit__title'>{col.title}</h3>
-                    </header>
-                    <ul className='aih-fit__items'>
-                      {col.signals.map((s, i) => (
-                        <li key={`${col.id}-${i}`} className='aih-fit__item'>
-                          <span className='aih-fit__bullet' aria-hidden='true' />
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-              <p className='aih-fit__closing'>{fitFilter.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <FAQSection
-        eyebrow={faq.header.kicker}
-        title={faq.header.title}
-        description={faq.header.description}
-        items={faq.items}
-        tone='white'
-        variant='split'
-        className='aih-faq'
-        ariaLabel={ARIA_FAQ_DOT}
-      />
-
-      <DecisionPanel
-        className='aih-cta'
-        heading={cta.heading}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
-        expectations={cta.expectations}
-        reassurance={cta.footer}
-      />
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
     </div>
   );
 }
+
+function AiLeadHandlingRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function AiLeadHandlingFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `smart-website-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='AI Lead Handling FAQ'
+    />
+  );
+}
+
+function AiLeadHandlingDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export default AiLeadHandlingRenderer;

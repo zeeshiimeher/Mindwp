@@ -74,7 +74,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
   return (
     <main className='industry-detail-page'>
       <HeroFrame
-        badge={data.hero.badge}
+        eyebrow={data.hero.badge}
         title={data.hero.title}
         description={data.hero.description}
         actions={actions}
@@ -85,7 +85,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S1 — Storm intake recognition */}
       <SectionFrame
         heading={{
-          kicker: 'After a storm',
+          eyebrow: 'After a storm',
           title:
             'The first 72 hours after a storm [[muted:decide the month for a roofing office.]]',
           description:
@@ -148,7 +148,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S2 — DOMINANT storm-to-inspection map */}
       <SectionFrame
         heading={{
-          kicker: 'Storm \u2192 inspection \u2192 quote',
+          eyebrow: 'Storm \u2192 inspection \u2192 quote',
           title:
             'The route every job has to travel &mdash; [[muted:and the two stops where it always stalls.]]',
         }}
@@ -207,7 +207,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S3 — Photo / detail handoff */}
       <SectionFrame
         heading={{
-          kicker: 'On the roof',
+          eyebrow: 'On the roof',
           title: 'Twelve photos in a phone [[muted:are not a job card yet.]]',
         }}
         tone='white'
@@ -275,7 +275,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S4 — Quote silence */}
       <SectionFrame
         heading={{
-          kicker: 'After the quote goes out',
+          eyebrow: 'After the quote goes out',
           title: 'Most lost roofing jobs [[muted:are lost in the silence after the quote.]]',
         }}
         tone='gradient-mist'
@@ -330,7 +330,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S5 — Handled storm week (ribbon) */}
       <SectionFrame
         heading={{
-          kicker: 'A handled storm week',
+          eyebrow: 'A handled storm week',
           title: 'Five days, [[muted:five visible movements.]]',
           description:
             'Same volume of work. Different shape of week. Nothing dropped, nothing held in a head.',
@@ -376,7 +376,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S6 — Review timing (asymmetric editorial) */}
       <SectionFrame
         heading={{
-          kicker: 'After the install',
+          eyebrow: 'After the install',
           title: 'A review request [[muted:that doesn&rsquo;t feel automated.]]',
         }}
         tone='mist'
@@ -421,7 +421,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       {/* S7 — Compact system bridge */}
       <SectionFrame
         heading={{
-          kicker: 'The systems behind it',
+          eyebrow: 'The systems behind it',
           title: 'Three systems carry the storm week.',
         }}
         tone='dark'
@@ -453,7 +453,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       </SectionFrame>
 
       <FAQSection
-        eyebrow={data.faq.header.kicker}
+        eyebrow={data.faq.header.eyebrow}
         title={data.faq.header.title}
         description={data.faq.header.description}
         items={data.faq.items}
@@ -462,7 +462,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
 
       <DecisionPanel
         heading={{
-          kicker: data.cta.heading.kicker,
+          eyebrow: data.cta.heading.eyebrow,
           title: data.cta.heading.title,
           description: data.cta.heading.description,
         }}

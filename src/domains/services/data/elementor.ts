@@ -1,275 +1,109 @@
-import { buildServiceSeo } from '@/domains/services/seo';
-import type { ServicePageData } from '@/domains/services/types';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
-type SectionHeader = { kicker: string; title: string; description?: string };
+import { buildServiceSeo } from '../seo';
+import type { ServicePageData } from '../types';
 
-type FitRow = {
-  id: string;
-  label: string;
-  variant: 'fit' | 'not-fit';
-  detail: string;
-};
+// =============================================================================
+// Elementor — page
+// =============================================================================
 
-type PathStep = {
-  id: string;
-  num: string;
-  title: string;
-  detail: string;
-};
-
-type ProofCheck = {
-  id: string;
-  label: string;
-  signal: string;
-  notSignal: string;
-};
-
-type BoundaryColumn = {
-  id: string;
-  variant: 'builder' | 'structure';
-  label: string;
-  title: string;
-  items: string[];
-};
-
-type ElementorSections = {
-  capabilityFit: {
-    header: SectionHeader;
-    label: string;
-    rows: FitRow[];
-    closing: string;
-  };
-  deliveryPath: {
-    header: SectionHeader;
-    steps: PathStep[];
-    closing: string;
-  };
-  proofContext: {
-    header: SectionHeader;
-    label: string;
-    checks: ProofCheck[];
-    closing: string;
-  };
-  boundaries: {
-    header: SectionHeader;
-    columns: BoundaryColumn[];
-    rule: string;
-  };
-  nextStep: {
-    header: SectionHeader;
-    bullets: string[];
-    closing: string;
-  };
-};
-
-const slug = 'elementor';
-const system = 'smart-website-systems';
-const contactHref = buildServiceContactHref({ system, slug });
-
-export const elementorPage: ServicePageData<ElementorSections> = {
+export const elementorPage = {
   seo: buildServiceSeo({
-    slug,
-    title: 'Elementor Website Implementation',
+    slug: 'elementor',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'Practical Elementor implementation for service businesses that need a controlled website build with a clear enquiry path.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
-  slug,
-  badge: 'Elementor',
-  category: 'Builder Implementation',
-  systems: [system],
-  topics: ['website-infrastructure'],
+  slug: 'elementor',
+  systems: ['smart-website-systems'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Elementor',
-    title: 'Elementor Can Work. [[muted:If The Structure Does.]]',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'Elementor is a build method, not the offer. It can fit when delivery stays controlled and the site has a clear enquiry path.',
-    list: ['Builder fit', 'Controlled build', 'Clear handoff'],
-  },
-  sections: {
-    capabilityFit: {
-      header: {
-        kicker: 'Builder Fit',
-        title: 'Use Elementor when the constraint is real and the path is clear.',
-        description:
-          'A builder is a means, not a brief. Elementor fits when these signals are already in place.',
-      },
-      label: 'When Elementor is the right tool',
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
       rows: [
-        {
-          id: 'fit-01',
-          variant: 'fit',
-          label: 'Existing Elementor site that already runs',
-          detail: 'Refining what is there, not starting from a blank page.',
-        },
-        {
-          id: 'fit-02',
-          variant: 'fit',
-          label: 'In-house team comfortable maintaining pages',
-          detail: 'Edits happen without a developer in the loop every time.',
-        },
-        {
-          id: 'fit-03',
-          variant: 'fit',
-          label: 'Service path and enquiry route already decided',
-          detail: 'The builder implements the path. It does not invent it.',
-        },
-        {
-          id: 'fit-04',
-          variant: 'not-fit',
-          label: 'Heavy custom logic or strict performance budget',
-          detail: 'A different build route handles those constraints better.',
-        },
-        {
-          id: 'fit-05',
-          variant: 'not-fit',
-          label: 'Page structure is the actual problem',
-          detail: 'No builder fixes a structure issue. The work belongs upstream.',
-        },
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
       ],
-      closing: 'Elementor is one route. The site path decides whether it is the right one.',
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
     },
-    deliveryPath: {
-      header: {
-        kicker: 'Delivery',
-        title: 'A controlled build, not a free-form page exercise.',
-        description: 'Elementor work follows the same delivery path as any structured site build.',
+  },
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
+    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
       },
-      steps: [
-        {
-          id: 'p-01',
-          num: '01',
-          title: 'Site path before page design',
-          detail: 'Decide what the site is for and where enquiries should land.',
-        },
-        {
-          id: 'p-02',
-          num: '02',
-          title: 'Page structure agreed in writing',
-          detail: 'Sections, order and intent locked before any visual work.',
-        },
-        {
-          id: 'p-03',
-          num: '03',
-          title: 'Build inside guardrails',
-          detail:
-            'Reusable blocks, fixed type scale, controlled spacing — not freestyle drag-and-drop.',
-        },
-        {
-          id: 'p-04',
-          num: '04',
-          title: 'Enquiry route wired in',
-          detail: 'Forms, calls and follow-up paths connected to the right destinations.',
-        },
-        {
-          id: 'p-05',
-          num: '05',
-          title: 'Handover with editing rules',
-          detail: 'The team gets a small set of safe controls, not the whole canvas.',
-        },
-      ],
-      closing:
-        'Same path as any controlled build. Elementor is the implementation layer, not the brief.',
-    },
-    proofContext: {
-      header: {
-        kicker: 'Proof',
-        title: 'Useful proof is operational, not visual.',
-        description:
-          'A builder portfolio does not say much. The real check is whether the site handles enquiries.',
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
       },
-      label: 'How we judge whether the build worked',
-      checks: [
-        {
-          id: 'pc-01',
-          label: 'Enquiry path',
-          signal: 'A first-time visitor reaches the right next step quickly.',
-          notSignal: 'Visitors guess where to click or scroll.',
-        },
-        {
-          id: 'pc-02',
-          label: 'Editing safety',
-          signal: 'The team can update content without breaking layout.',
-          notSignal: 'Every change asks "is this safe to publish?"',
-        },
-        {
-          id: 'pc-03',
-          label: 'Performance',
-          signal: 'Pages load fast enough on a phone signal.',
-          notSignal: 'Heavy widgets stack up and slow the site down.',
-        },
-        {
-          id: 'pc-04',
-          label: 'Handoff to handling',
-          signal: 'Enquiries land in the right place and get followed up.',
-          notSignal: 'The form posts somewhere nobody reads.',
-        },
-      ],
-      closing: 'Visual polish is a baseline. Whether the site does its job is the proof.',
-    },
-    boundaries: {
-      header: {
-        kicker: 'Boundaries',
-        title: 'What the builder does. What structure does.',
-        description:
-          'Elementor is the build layer. Smart Website Systems owns the structure that decides whether the page works at all.',
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
       },
-      columns: [
-        {
-          id: 'col-builder',
-          variant: 'builder',
-          label: 'Builder layer',
-          title: 'Elementor handles the build.',
-          items: [
-            'Page assembly inside agreed structure.',
-            'Reusable blocks and components.',
-            'Editing controls for the team.',
-            'Visual consistency across the site.',
-          ],
-        },
-        {
-          id: 'col-structure',
-          variant: 'structure',
-          label: 'Structure layer',
-          title: 'Smart Website Systems decides the path.',
-          items: [
-            'Why the site exists and who it is for.',
-            'Page order and how visitors travel through.',
-            'Where enquiries land and how they are handled.',
-            'How the site connects to the rest of the system.',
-          ],
-        },
-      ],
-      rule: 'A builder problem and a structure problem look the same on screen. Only the structure layer fixes the structure problem.',
-    },
-    nextStep: {
-      header: {
-        kicker: 'Next Step',
-        title: 'Start with the question, not the tool.',
-        description:
-          'The first question is whether Elementor is fixed, optional or wrong for the situation.',
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
       },
-      bullets: [
-        'If Elementor is fixed: we work inside it with controlled delivery.',
-        'If Elementor is optional: we check whether the site path needs a different route.',
-        'If structure is the real problem: the work belongs in Smart Website Systems first.',
-      ],
-      closing: 'No tool-loyalty. The shortest honest path to a site that works is the priority.',
-    },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'Check whether Elementor fits the job.',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us what already exists, what needs changing, and whether Elementor is fixed or optional. We will start with the site path, not the builder.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
-    expectations: [
-      { num: '01', text: 'We check the current site and build constraint.' },
-      { num: '02', text: 'We identify whether Elementor is the right route.' },
-      { num: '03', text: 'We explain the simplest next step.' },
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
     ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies ServicePageData;

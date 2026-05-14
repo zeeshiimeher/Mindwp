@@ -1,20 +1,11 @@
-import { type AnchorHTMLAttributes, type ReactNode } from 'react';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Badge } from '@/components/reusable/single/Badge';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { ResourcesGuidesIsland } from './ResourcesGuidesIsland';
-
-type InternalLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
-  href: string;
-  children: ReactNode;
-};
 
 type ResourceCategoryItem = {
   id: string;
@@ -38,14 +29,6 @@ type ResourceItem = {
 const TOPIC_CARD_CTA_LABEL = 'See the problem cluster';
 const GUIDE_CARD_CTA_LABEL = 'Open the system guide';
 
-function InternalLink({ href, children, ...props }: InternalLinkProps) {
-  return (
-    <a href={href} {...props}>
-      {children}
-    </a>
-  );
-}
-
 export function ResourcesHub({
   categoryItems,
   resourceItems,
@@ -61,114 +44,115 @@ export function ResourcesHub({
       pageType='page'
       primarySystem='smart-website-systems'
     >
-      <div className='resources-hub'>
-        <main>
-          {/* Hero Section */}
-          <SectionWrapper className='resources-hub__hero' background='bg-gradient-surface-muted'>
-            <div className='resources-hub__hero-content'>
-              <div className='resources-hub__hero-badge'>
-                <Badge variant='secondary' context='hero'>
-                  <BookOpen className='badge__icon' />
-                  {hubData.hero.badge}
-                </Badge>
-              </div>
-
-              <h1 className='resources-hub__title'>{hubData.hero.title}</h1>
-
-              <p className='resources-hub__subtitle'>{hubData.hero.description}</p>
-            </div>
-          </SectionWrapper>
-
-          {/* Categories */}
-          <SectionWrapper className='resources-hub__topics'>
-            <div className='resources-hub__section-header'>
-              <h2 className='resources-hub__section-title'>{hubData.topics.title}</h2>
-              <p className='resources-hub__section-subtitle'>{hubData.topics.description}</p>
-            </div>
-
-            <div className='resources-hub__topics-grid'>
-              {categoryItems.map(category => {
-                const IconComponent = category.icon;
-                return (
-                  <Card key={category.id} className='resources-hub__topic-card'>
-                    <InternalLink
-                      href={category.href}
-                      className='link-primary resources-hub__topic-link'
-                    >
-                      <div className='resources-hub__topic-top'>
-                        <div className='l-row l-items-center l-gap-3'>
-                          <div className='resources-hub__topic-icon-wrap'>
-                            <IconComponent
-                              className='resources-hub__topic-icon'
-                              aria-hidden='true'
-                            />
-                            <Badge variant='outline' size='sm' context='meta'>
-                              {category.count} {hubData.topics.countSuffix}
-                            </Badge>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='l-stack l-gap-2'>
-                        <h3 className='resources-hub__topic-title'>{category.name}</h3>
-                        <p className='resources-hub__topic-desc'>{category.description}</p>
-                      </div>
-                      <div className='resources-hub__topic-cta'>
-                        {TOPIC_CARD_CTA_LABEL}
-                        <ArrowRight className='resources-hub__topic-arrow' aria-hidden='true' />
-                      </div>
-                    </InternalLink>
-                  </Card>
-                );
-              })}
-            </div>
-          </SectionWrapper>
-
-          {/* Featured Resources */}
-          <SectionWrapper id='guides' className='resources-hub__guides'>
-            <div className='resources-hub__section-header'>
-              <div className='resources-hub__section-badge'>
-                <Badge variant='secondary' context='section'>
-                  {hubData.guides.badge}
-                </Badge>
-              </div>
-              <h2 className='resources-hub__section-title'>{hubData.guides.title}</h2>
-              <p className='resources-hub__section-subtitle'>{hubData.guides.description}</p>
-            </div>
-
-            <ResourcesGuidesIsland
-              resources={resourceItems}
-              initialVisibleCount={hubData.guides.initialVisibleCount}
-              readGuideLabel={GUIDE_CARD_CTA_LABEL}
-              loadMoreLabel={hubData.guides.loadMoreLabel}
-            />
-
-            {/* Coming Soon Cards */}
-            <div className='resources-hub__coming-soon'>
-              <p className='resources-hub__coming-soon-text'>{hubData.guides.comingSoonText}</p>
-            </div>
-          </SectionWrapper>
-
-          {/* CTA Section */}
-          <div className='text-sm text-muted-foreground text-center l-max-w-2xl l-mx-auto pt-6 pb-3'>
-            If one of these guides names the bottleneck clearly, the next step is to map it to the
-            service system that removes the manual handoff behind it.
+      <main>
+        <SectionFrame
+          ariaLabel='Resources hub hero'
+          tone='mist'
+          heading={{
+            eyebrow: hubData.hero.eyebrow,
+            title: hubData.hero.title,
+            description: hubData.hero.description,
+          }}
+        >
+          <div className='flex flex-wrap gap-3'>
+            <a className='mw-btn mw-btn--primary' href='#guides'>
+              Browse guides
+            </a>
+            <a className='mw-btn mw-btn--secondary' href='/services/smart-website-systems'>
+              View service systems
+            </a>
           </div>
-          <PrimaryCTASection
-            heading={hubData.cta.heading}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'resource',
-                  sourceType: 'resource',
-                  slug: 'resource-help',
-                }),
-                primary: true,
-              },
-            ]}
+        </SectionFrame>
+
+        <SectionFrame
+          ariaLabel='Resource topic categories'
+          tone='white'
+          heading={{
+            eyebrow: 'Topics',
+            title: hubData.topics.title,
+            description: hubData.topics.description,
+          }}
+        >
+          <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
+            {categoryItems.map(category => {
+              const IconComponent = category.icon;
+
+              return (
+                <a
+                  key={category.id}
+                  href={category.href}
+                  className='group flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)] transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
+                >
+                  <div className='mb-5 flex items-center justify-between gap-4'>
+                    <span className='grid size-10 place-items-center rounded-full border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] text-[var(--mw-signal-cyan)]'>
+                      <IconComponent className='size-5' aria-hidden='true' />
+                    </span>
+                    <span className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+                      {category.count} {hubData.topics.countSuffix}
+                    </span>
+                  </div>
+
+                  <h3>{category.name}</h3>
+                  <p>{category.description}</p>
+
+                  <span className='mt-auto inline-flex items-center gap-2 pt-5 mw-text-body-sm mw-text-signal-cyan'>
+                    {TOPIC_CARD_CTA_LABEL}
+                    <ArrowRight size={14} aria-hidden='true' />
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </SectionFrame>
+
+        <SectionFrame
+          id='guides'
+          ariaLabel='Featured resource guides'
+          tone='mist'
+          heading={{
+            eyebrow: hubData.guides.eyebrow,
+            title: hubData.guides.title,
+            description: hubData.guides.description,
+          }}
+        >
+          <ResourcesGuidesIsland
+            resources={resourceItems}
+            initialVisibleCount={hubData.guides.initialVisibleCount}
+            readGuideLabel={GUIDE_CARD_CTA_LABEL}
+            loadMoreLabel={hubData.guides.loadMoreLabel}
           />
-        </main>
-      </div>
+
+          <p className='mt-8 mw-text-secondary'>{hubData.guides.comingSoonText}</p>
+        </SectionFrame>
+
+        <SectionFrame
+          ariaLabel='Resources next step'
+          tone='white'
+          heading={{
+            eyebrow: hubData.cta.heading.eyebrow ?? 'Next step',
+            title: hubData.cta.heading.title,
+            description: hubData.cta.heading.description,
+          }}
+        >
+          <div className='grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center'>
+            <p>
+              If one of these guides names the bottleneck clearly, the next step is to map it to the
+              service system that removes the manual handoff behind it.
+            </p>
+            <a
+              className='mw-btn mw-btn--primary'
+              href={buildContactHref({
+                system: 'resource',
+                sourceType: 'resource',
+                slug: 'resource-help',
+              })}
+            >
+              <span>Start a Conversation</span>
+              <ArrowRight size={14} aria-hidden='true' />
+            </a>
+          </div>
+        </SectionFrame>
+      </main>
     </CTARegistryProvider>
   );
 }

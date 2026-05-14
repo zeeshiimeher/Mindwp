@@ -37,7 +37,7 @@ export const electricalCompaniesIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'emergency-handling', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What electrical operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -70,7 +70,7 @@ export const electricalCompaniesIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where electrical work slips between fault and project',
       description:
         'Tell us what happens between the after-hours call and the project quote. We will read it back and name the first system to fix.',

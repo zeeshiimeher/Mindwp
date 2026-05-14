@@ -1,236 +1,109 @@
-import { buildServiceSeo } from '@/domains/services/seo';
-import type { ServicePageData } from '@/domains/services/types';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
-type SectionHeader = { kicker: string; title: string; description?: string };
-type StakeCard = { id: string; num: string; point: string; hint: string };
-type MatrixRow = { id: string; aspect: string; optionA: string; optionB: string };
-type LeansColumn = {
-  id: string;
-  variant: 'a' | 'b';
-  label: string;
-  title: string;
-  signals: string[];
-};
-type HandoffRow = { id: string; when: string; route: string };
+import { buildServiceSeo } from '../seo';
+import type { ServicePageData } from '../types';
 
-type RedesignDecisionSections = {
-  decisionStakes: { header: SectionHeader; stakes: StakeCard[] };
-  comparison: {
-    header: SectionHeader;
-    optionALabel: string;
-    optionATitle: string;
-    optionBLabel: string;
-    optionBTitle: string;
-    rows: MatrixRow[];
-  };
-  whenToChoose: { header: SectionHeader; columns: LeansColumn[]; closing: string };
-  handoffNext: { header: SectionHeader; rows: HandoffRow[]; rule: string };
-  faq: { header: SectionHeader; items: Array<{ id: string; question: string; answer: string }> };
-};
+// =============================================================================
+// Website Redesign & System Rebuild — page
+// =============================================================================
 
-const slug = 'website-redesign-system-rebuild';
-const system = 'smart-website-systems';
-const contactHref = buildServiceContactHref({ system, slug });
-
-export const websiteRedesignSystemRebuildPage: ServicePageData<RedesignDecisionSections> = {
+export const websiteRedesignSystemRebuildPage = {
   seo: buildServiceSeo({
-    slug,
-    title: 'Website Redesign vs System Rebuild',
+    slug: 'website-redesign-system-rebuild',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'A focused comparison for deciding between a surface redesign and a system-level rebuild.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
-  slug,
-  badge: 'Redesign Decision',
-  category: 'Decision Support',
-  systems: [system],
-  topics: ['website-infrastructure', 'service-page-architecture', 'systems-first-websites'],
+  slug: 'website-redesign-system-rebuild',
+  systems: ['smart-website-systems'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Redesign Decision',
-    title: 'A New Look May Not Fix The Leak.',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'A redesign changes how the site looks. A rebuild changes how it works. The honest decision is whether the problem is on the surface — or underneath it.',
-    list: ['Surface vs system', 'Real cost', 'Right scope'],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    decisionStakes: {
-      header: {
-        kicker: 'What The Decision Controls',
-        title: 'The choice is about what is actually broken.',
-        description:
-          'A redesign treats appearance. A rebuild treats how the site routes, captures and follows up. The decision starts with naming the real problem.',
-      },
-      stakes: [
-        {
-          id: 'rs-01',
-          num: '01',
-          point: 'Where the problem lives.',
-          hint: 'On the surface, or in the page paths and capture logic.',
-        },
-        {
-          id: 'rs-02',
-          num: '02',
-          point: 'How long the change holds.',
-          hint: 'A look that ages, or a system that stays useful.',
-        },
-        {
-          id: 'rs-03',
-          num: '03',
-          point: 'How the team will operate it.',
-          hint: 'A nicer brochure, or a working part of the business.',
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    comparison: {
-      header: {
-        kicker: 'Side By Side',
-        title: 'Redesign and rebuild solve different problems.',
-        description:
-          'A redesign is faster and lighter. A rebuild is slower and deeper. Each is honest about a different situation.',
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
       },
-      optionALabel: 'Option A',
-      optionATitle: 'Surface redesign',
-      optionBLabel: 'Option B',
-      optionBTitle: 'System rebuild',
-      rows: [
-        {
-          id: 'rm-01',
-          aspect: 'Scope of change',
-          optionA: 'Visual: typography, imagery, layout polish.',
-          optionB: 'Structural: page paths, capture, ownership.',
-        },
-        {
-          id: 'rm-02',
-          aspect: 'Best fit',
-          optionA: 'The site works. It just looks dated.',
-          optionB: 'The site looks fine. Enquiries still slip.',
-        },
-        {
-          id: 'rm-03',
-          aspect: 'Time and cost',
-          optionA: 'Lower. Faster to ship.',
-          optionB: 'Higher. Touches more of the operation.',
-        },
-        {
-          id: 'rm-04',
-          aspect: 'Result',
-          optionA: 'A modern surface on the same logic.',
-          optionB: 'A site that handles what it could not before.',
-        },
-        {
-          id: 'rm-05',
-          aspect: 'Risk',
-          optionA: 'Same leaks, new wallpaper.',
-          optionB: 'Disruption while the rebuild lands.',
-        },
-      ],
-    },
-    whenToChoose: {
-      header: {
-        kicker: 'When To Choose Which',
-        title: 'The right answer depends on what is actually slipping.',
-        description: 'Both routes are honest. The question is whether the surface is the problem.',
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
       },
-      columns: [
-        {
-          id: 'a',
-          variant: 'a',
-          label: 'Lean toward redesign',
-          title: 'The site works. It just feels behind.',
-          signals: [
-            'Enquiries arrive at a healthy rate.',
-            'Buyers say the brand "looks dated".',
-            'Pages convert; structure is solid.',
-            'No reports of dropped or lost enquiries.',
-          ],
-        },
-        {
-          id: 'b',
-          variant: 'b',
-          label: 'Lean toward rebuild',
-          title: 'The site looks fine. Enquiries still slip.',
-          signals: [
-            'Forms arrive but no one owns the next step.',
-            'Buyers cannot find specific services.',
-            'Calls and emails go to scattered inboxes.',
-            'Recent design work did not change results.',
-          ],
-        },
-      ],
-      closing:
-        'A rebuild often includes a redesign. A redesign rarely turns into a rebuild on its own.',
-    },
-    handoffNext: {
-      header: {
-        kicker: 'Where The Next Step Belongs',
-        title: 'The page handles the decision. The build belongs elsewhere.',
-        description: 'Once the route is chosen, the work moves to the right service area.',
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
       },
-      rows: [
-        {
-          id: 'rh-01',
-          when: 'You decide a rebuild is warranted.',
-          route: 'Smart Website Systems owns the page architecture.',
-        },
-        {
-          id: 'rh-02',
-          when: 'You decide a redesign is enough.',
-          route: 'WordPress Development handles the visual rebuild on the same logic.',
-        },
-        {
-          id: 'rh-03',
-          when: 'You need conversion handled across the site.',
-          route: 'Conversion Layer under Revenue Growth.',
-        },
-        {
-          id: 'rh-04',
-          when: 'You need ownership for what the site captures.',
-          route: 'CRM & Automation owns the lifecycle.',
-        },
-      ],
-      rule: 'This page supports the decision only. The build belongs in Smart Website Systems first.',
-    },
-    faq: {
-      header: {
-        kicker: 'Questions',
-        title: 'Common questions about redesign vs rebuild.',
-        description: 'Short answers about scope, cost and disruption.',
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
       },
-      items: [
-        {
-          id: 'rdec-faq-cost',
-          question: 'Is a rebuild always more expensive?',
-          answer:
-            'Usually, yes. It touches more of the operation. The trade-off is that it changes results, not just appearance.',
-        },
-        {
-          id: 'rdec-faq-overlap',
-          question: 'Can we redesign as part of a rebuild?',
-          answer:
-            'Yes. A rebuild almost always includes a refreshed surface. The reverse is rarely true.',
-        },
-        {
-          id: 'rdec-faq-disrupt',
-          question: 'Will the rebuild disrupt our current site?',
-          answer:
-            'There is some disruption. We stage the work so the live site keeps running through the transition.',
-        },
-      ],
-    },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      kicker: 'Next Step',
-      title: 'See whether the surface is actually the problem.',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us what is slipping today. We will help name whether the issue is on the surface — or underneath it.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: PRIMARY_CTA_LABEL, href: contactHref, primary: true }],
-    expectations: [
-      { num: '01', text: 'We review the current site.' },
-      { num: '02', text: 'We name where leaks are happening.' },
-      { num: '03', text: 'We recommend redesign, rebuild — or both.' },
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
     ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies ServicePageData;

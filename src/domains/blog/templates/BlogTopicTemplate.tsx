@@ -3,13 +3,8 @@
 
 import { ArrowRight, Calendar } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { Card } from '@/components/ui/card';
-import {
-  getCategoryColors,
-  getCategoryMetadata,
-  type TopicHubSectionData,
-} from '@/domains/blog/api';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import { getCategoryMetadata, type TopicHubSectionData } from '@/domains/blog/api';
 import type { TopicMetadata } from '@/domains/blog/topicRegistry';
 
 export type BlogTopicTemplateProps = {
@@ -20,67 +15,81 @@ export type BlogTopicTemplateProps = {
 
 export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemplateProps) {
   return (
-    <div className='min-h-screen'>
-      <main>
-        {/* HERO */}
-        <SectionWrapper className='blog-hero'>
-          <div className='l-stack l-stack--loose blog-category__hero'>
-            <span className='badge badge--hero blog-category-bg--seo blog-category-text--seo'>
-              {totalPosts} {totalPosts === 1 ? 'article' : 'articles'}
-            </span>
+    <main>
+      <SectionFrame
+        ariaLabel={`${topic.name} topic hub`}
+        tone='mist'
+        heading={{
+          eyebrow: `${totalPosts} ${totalPosts === 1 ? 'article' : 'articles'}`,
+          title: topic.name,
+          description: topic.description,
+        }}
+      >
+        <a className='mw-btn mw-btn--secondary' href='/blog'>
+          View all articles
+        </a>
+      </SectionFrame>
 
-            <h1>{topic.name}</h1>
+      {sections.length === 0 ? (
+        <SectionFrame
+          ariaLabel='No topic articles'
+          tone='white'
+          heading={{
+            eyebrow: 'Articles',
+            title: 'No articles published for this topic yet.',
+            description: 'This topic will be filled as the blog library grows.',
+          }}
+        >
+          <a className='mw-btn mw-btn--secondary' href='/blog'>
+            Browse the blog
+          </a>
+        </SectionFrame>
+      ) : (
+        sections.map(section => (
+          <SectionFrame
+            key={section.key}
+            ariaLabel={section.label}
+            tone='white'
+            heading={{
+              eyebrow: 'Topic section',
+              title: section.label,
+              description: 'Related articles grouped by the same operating problem.',
+            }}
+          >
+            <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
+              {section.posts.map(post => {
+                const catMeta = getCategoryMetadata(post.category);
 
-            <p className='blog-category__lead'>{topic.description}</p>
-          </div>
-        </SectionWrapper>
+                return (
+                  <article
+                    key={post.slug}
+                    className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
+                  >
+                    <p className='mw-text-eyebrow mw-text-signal-cyan'>
+                      {catMeta?.name ?? post.category}
+                    </p>
 
-        {/* SECTIONS */}
-        {sections.length === 0 ? (
-          <SectionWrapper className='blog-surface--muted'>
-            <p className='text-center text-muted-foreground'>
-              No articles published for this topic yet.
-            </p>
-          </SectionWrapper>
-        ) : (
-          sections.map(section => (
-            <SectionWrapper key={section.key} className='blog-surface--muted'>
-              <h2 className='blog-section__title'>{section.label}</h2>
-              <div className='blog-category__grid'>
-                {section.posts.map(post => {
-                  const colors = getCategoryColors(post.category);
-                  const catMeta = getCategoryMetadata(post.category);
-                  return (
-                    <Card key={post.slug} className='blog-category__card'>
-                      <div className='l-stack'>
-                        <span className={`badge badge--meta ${colors.bg} ${colors.text}`}>
-                          {catMeta?.name ?? post.category}
-                        </span>
+                    <h3>{post.title}</h3>
+                    <p>{post.seo.description}</p>
 
-                        <h3 className='blog-category__card-title'>{post.title}</h3>
+                    <div className='mt-4 flex items-center gap-2 mw-text-body-sm mw-text-secondary'>
+                      <Calendar size={14} aria-hidden='true' />
+                      <span>{post.publishDate}</span>
+                    </div>
 
-                        <p className='blog-category__card-description'>{post.seo.description}</p>
-
-                        <div className='blog-category__card-meta'>
-                          <Calendar aria-hidden='true' />
-                          {post.publishDate}
-                        </div>
-
-                        <a
-                          href={`/blog/${post.slug}`}
-                          className='link-primary blog-landing__card-cta'
-                        >
-                          Read article <ArrowRight aria-hidden='true' />
-                        </a>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
-            </SectionWrapper>
-          ))
-        )}
-      </main>
-    </div>
+                    <div className='mt-auto pt-5'>
+                      <a href={`/blog/${post.slug}`} className='mw-btn mw-btn--secondary'>
+                        <span>Read article</span>
+                        <ArrowRight size={14} aria-hidden='true' />
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </SectionFrame>
+        ))
+      )}
+    </main>
   );
 }

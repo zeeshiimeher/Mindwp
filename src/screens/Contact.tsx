@@ -6,9 +6,7 @@ import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Button } from '@/components/reusable/single/Button';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -65,12 +63,38 @@ const INITIAL_FORM_STATE = {
   website: '',
 };
 
-const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '';
+const turnstileDisabled =
+  process.env.NODE_ENV === 'development' || process.env.ENABLE_CAPTCHA_SERVICE === 'false';
+const turnstileSiteKey = turnstileDisabled
+  ? ''
+  : (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '');
 
 type ContactProps = {
   initialSystem?: string;
   initialSource?: string;
 };
+
+function SectionWrapper({
+  background,
+  className,
+  padding,
+  children,
+}: {
+  background?: string;
+  className?: string;
+  padding?: 'none';
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      className={[background, padding === 'none' ? 'p-0' : 'py-16', className]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      <div className='mw-container'>{children}</div>
+    </section>
+  );
+}
 
 type ConversionData = {
   submissionId: string;
@@ -296,19 +320,19 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         "A real person reads every enquiry. We'll come back with the right next step — not a generic reply, not a sales call."}
                     </p>
                     <div className='contact-page-success-actions'>
-                      <Button
-                        href='/resources'
-                        variant='outline'
-                        label='Explore Resources While You Wait'
-                      />
-                      <Button
-                        variant='outline'
-                        label='Send Another Message'
+                      <a href='/resources' className='mw-btn mw-btn--ghost'>
+                        Explore Resources While You Wait
+                      </a>
+                      <button
+                        type='button'
+                        className='mw-btn mw-btn--ghost'
                         onClick={() => {
                           setSubmitted(false);
                           setSuccessMessage('');
                         }}
-                      />
+                      >
+                        Send Another Message
+                      </button>
                     </div>
                   </div>
                 ) : (
@@ -628,7 +652,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
 
       {/* Alternative CTA */}
       <SectionWrapper className='cta footer-cta' padding='none'>
-        <PrimaryCTASection
+        <DecisionPanel
           heading={{
             title: 'Need to talk through the right next step?',
             description:
@@ -642,7 +666,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                 sourceType: 'page',
                 slug: 'contact-footer',
               }),
-              primary: true,
+              variant: 'primary',
             },
           ]}
         />

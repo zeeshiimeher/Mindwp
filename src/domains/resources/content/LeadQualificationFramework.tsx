@@ -14,13 +14,13 @@ const hero = {
   subtitle:
     'Lead qualification is the process of determining whether a lead is a good fit for your business before allocating sales time. A qualification framework uses structured criteria — budget, timeline, service match, and location — to score and prioritise leads so your team spends time on the highest-value opportunities.',
   problem:
-    'Your team treats every lead equally, spending the same time on tyre-kickers and premium prospects because there is no system to distinguish between them before the first conversation',
+    'Your team treats every lead equally, spending the same time on tyre-eyebrows and premium prospects because there is no system to distinguish between them before the first conversation',
   promise:
     'You will understand how to build a lead qualification framework that automatically scores and prioritises leads so your team focuses on opportunities most likely to convert into profitable jobs',
 };
 
 const takeaways = [
-  'Qualification separates high-value prospects from tyre-kickers before allocating sales time',
+  'Qualification separates high-value prospects from tyre-eyebrows before allocating sales time',
   'Four qualification criteria: budget fit, timeline urgency, service match, and location coverage',
   'Qualification data can be collected via forms and automation before human contact',
   'Proper qualification improves conversion rate and average job value simultaneously',

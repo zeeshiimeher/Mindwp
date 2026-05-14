@@ -256,7 +256,7 @@ export function ServicesLanding() {
         <HeroFrame
           ariaLabel={ARIA_HERO}
           className='svc-lnd-hero'
-          badge='Services'
+          eyebrow='Services'
           title='Six Connected Systems. [[muted:One Front Door.]]'
           description='Each system stands on its own and works harder when the others are in place. The pages below describe what each one actually does and where it fits.'
           actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
@@ -266,7 +266,7 @@ export function ServicesLanding() {
 
         <SectionFrame
           heading={{
-            kicker: 'The Six Systems',
+            eyebrow: 'The Six Systems',
             title: 'These are the working parts. Each one has a job.',
             description:
               'Six connected systems cover visibility, instant response, ownership, trust and recovery. Most teams start with the system carrying the heaviest leak.',
@@ -284,7 +284,7 @@ export function ServicesLanding() {
 
         <SectionFrame
           heading={{
-            kicker: 'Operating Modules',
+            eyebrow: 'Operating Modules',
             title: 'Focused modules that sit inside the connected systems.',
             description:
               'When the leak is narrower than a whole system, a single module is often the cleaner first step.',
@@ -302,7 +302,7 @@ export function ServicesLanding() {
 
         <SectionFrame
           heading={{
-            kicker: 'Implementation Paths',
+            eyebrow: 'Implementation Paths',
             title: 'Decision support and the build surfaces beneath the work.',
             description:
               'Comparison pages for the common forks in the road, plus the platforms used when WordPress is the right base.',
@@ -332,7 +332,7 @@ export function ServicesLanding() {
         <DecisionPanel
           className='svc-lnd-cta'
           heading={{
-            kicker: 'Next Step',
+            eyebrow: 'Next Step',
             title: 'Not sure which path actually fixes the bottleneck?',
             description:
               'Tell us what is breaking — visibility, response speed, follow-up or conversion — and we will point to the path that addresses the first leak without overbuilding.',

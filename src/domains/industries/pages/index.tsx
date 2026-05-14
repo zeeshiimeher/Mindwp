@@ -36,7 +36,7 @@ export default function IndustriesLanding() {
     <div className='industry-category-page'>
       <main>
         <HeroFrame
-          badge='Industries · Overview'
+          eyebrow='Industries · Overview'
           title='The same enquiries get lost. [[muted:By industry, the same way every week.]]'
           description='Six operating shapes. Each opens with where the week actually breaks for that kind of business — and the system that holds it.'
           actions={[
@@ -57,7 +57,7 @@ export default function IndustriesLanding() {
         <div id='categories'>
           <SectionFrame
             heading={{
-              kicker: 'Six operating shapes',
+              eyebrow: 'Six operating shapes',
               title: 'Find the closest working reality',
               description:
                 'Each card opens a category page tuned to that industry’s week — the leaks, the pattern, the systems that hold.',
@@ -89,7 +89,7 @@ export default function IndustriesLanding() {
 
         <SectionFrame
           heading={{
-            kicker: 'How to read these',
+            eyebrow: 'How to read these',
             title: 'Same six systems. [[muted:Different operating shapes.]]',
             description:
               'Every category uses the same six systems underneath. The difference is which one leads, which support, and which come later.',
@@ -170,7 +170,7 @@ export default function IndustriesLanding() {
 
         <DecisionPanel
           heading={{
-            kicker: 'Next step',
+            eyebrow: 'Next step',
             title: 'Tell us how the week actually runs.',
             description:
               'A short read of where enquiries, follow-up, and bookings sit today — and the first system likely to hold the worst gap.',

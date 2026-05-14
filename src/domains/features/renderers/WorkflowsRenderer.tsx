@@ -1,162 +1,179 @@
-import { type LucideIcon, Workflow } from 'lucide-react';
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 
-import { ExploreCardsSection } from '@/components/reusable/sections/core';
-import {
-  FeatureBenefitsSection,
-  FeatureCapabilitiesSection,
-  FeatureHeroSection,
-  FeatureProcessStepsSection,
-  FeatureUseCasesSection,
-} from '@/components/reusable/sections/features';
-import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
-import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { Card } from '@/components/ui/card';
-import type { FeaturePageData } from '@/domains/features/types';
+import { FAQSection } from '@/components/content/FAQSection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { HeroFrame } from '@/components/layout/HeroFrame';
+import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
-const WorkflowVisual = ({ data }: { data: FeaturePageData }) => {
-  const flow = data.sections.visualFlow;
-  if (!flow) {
-    throw new Error('Missing section data');
-  }
-  const TriggerIcon = flow.triggerIcon;
-  const ConnectorIcon = flow.connectorIcon;
-  const actionRowClasses = ['bg-purple-50', 'bg-green-50', 'bg-orange-50'];
-  const actionIconClasses = ['bg-purple-500', 'bg-green-500', 'bg-orange-500'];
+interface Props {
+  data: FeaturePageDataBySlug['workflows'];
+}
+
+export function WorkflowsRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
-      <div className='l-stack'>
-        <div className='text-center pb-4 border-b'>
-          <h4 className='text-sm'>{flow.title}</h4>
-        </div>
+    <main>
+      <WorkflowsHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <WorkflowsRecognitionSection />
+      {faq ? <WorkflowsFAQ faq={faq} /> : null}
+      <WorkflowsDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-        <div className='l-stack'>
-          <div className='l-row l-items-center l-gap-3 p-3 bg-blue-50 rounded-lg border-2 border-blue-300'>
-            <div className='icon-container-sm bg-blue-500 rounded-full'>
-              <TriggerIcon className='text-white' />
-            </div>
-            <div className='text-sm'>
-              <div className='text-blue-900'>{flow.triggerTitle}</div>
-              <div className='text-xs text-blue-600'>{flow.triggerSubtitle}</div>
-            </div>
-          </div>
+function WorkflowsHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='Workflows hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<WorkflowsSignalPanel visual={hero.visual} />}
+    />
+  );
+}
 
-          {flow.actions.map(
-            (action: { icon: LucideIcon; title: string; subtitle: string }, index: number) => {
-              const ActionIcon = action.icon;
-              return (
-                <div key={action.title} className='l-stack l-stack--tight'>
-                  <div className='l-row l-row-center'>
-                    <ConnectorIcon className='text-muted-foreground rotate-90' />
-                  </div>
-                  <div
-                    className={`l-row l-items-center l-gap-3 p-3 rounded-lg ${actionRowClasses[index]}`}
-                  >
-                    <div className={`icon-container-sm rounded-full ${actionIconClasses[index]}`}>
-                      <ActionIcon className='text-white' />
-                    </div>
-                    <div className='text-sm'>
-                      <div>{action.title}</div>
-                      <div className='text-xs text-muted-foreground'>{action.subtitle}</div>
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-          )}
+function WorkflowsSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
         </div>
+        <StatusBadge variant='active' label='Live' />
       </div>
-    </Card>
-  );
-};
 
-interface WorkflowsRendererProps {
-  data: FeaturePageData;
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
+          return (
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
+            </div>
+          );
+        })}
+      </div>
+
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
+    </div>
+  );
 }
 
-export default function WorkflowsRenderer({ data }: WorkflowsRendererProps) {
-  const { hero, sections, cta } = data;
-  const { process, benefits, useCases, capabilities, faq, explore } = sections;
-
+function WorkflowsRecognitionSection() {
   return (
-    <>
-      <ErrorBoundary fallback={<GenericErrorFallback />}>
-        <main role='main'>
-          <FeatureHeroSection
-            badge={hero.badge}
-            badgeIcon={Workflow}
-            title={hero.title}
-            description={hero.description}
-            stats={hero.stats}
-            heroActions={{
-              primaryActionVariant: 'primary',
-              primaryButtonCssPrefix: 'feature-hero__primary-cta',
-            }}
-            visualContent={<WorkflowVisual data={data} />}
-            cssPrefix='workflows-hero'
-            backgroundColor='bg-gradient-surface-soft'
-            decorations={[
-              { position: 'top-right', color: 'bg-purple-200', size: 'lg' },
-              { position: 'bottom-left', color: 'bg-blue-200', size: 'lg' },
-            ]}
-          />
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
 
-          <FeatureProcessStepsSection
-            badge={process.badge}
-            title={process.title}
-            description={process.description}
-            steps={process.steps}
-            cssPrefix='workflows-process'
-          />
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
 
-          <FeatureBenefitsSection
-            badge={benefits.badge}
-            title={benefits.title}
-            description={benefits.description}
-            benefits={benefits.items}
-            cssPrefix='workflows-benefits'
-            backgroundColor='bg-base'
-          />
-
-          <FeatureUseCasesSection
-            badge={useCases.badge}
-            title={useCases.title}
-            description={useCases.description}
-            useCases={useCases.items}
-            cssPrefix='workflows-use-cases'
-          />
-
-          <FeatureCapabilitiesSection
-            badge={capabilities.badge}
-            title={capabilities.title}
-            featureCategories={capabilities.featureCategories}
-            cssPrefix='workflows-features'
-            columns={capabilities.columns}
-            variant={capabilities.variant}
-            backgroundColor='bg-alt'
-          />
-
-          <FAQSection
-            badge={faq.badge}
-            title={faq.title}
-            faqs={faq.items}
-            cssPrefix='workflows-faq'
-          />
-
-          <ExploreCardsSection
-            badge={explore.badge}
-            title={explore.title}
-            description={explore.description}
-            cards={explore.cards}
-            cssPrefix='workflows-explore'
-            backgroundColor='bg-base'
-          />
-
-          <PrimaryCTASection heading={cta.heading} actions={cta.actions} />
-        </main>
-      </ErrorBoundary>
-    </>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
   );
 }
+
+function WorkflowsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `smart-website-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Smart Website Systems FAQ'
+    />
+  );
+}
+
+function WorkflowsDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export default WorkflowsRenderer;

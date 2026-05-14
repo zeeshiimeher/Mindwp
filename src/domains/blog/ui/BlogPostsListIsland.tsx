@@ -3,9 +3,6 @@
 import { useState } from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 
-import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
-import { Card } from '@/components/ui/card';
 import { type BlogPostListItem, getCategoryMetadata } from '@/domains/blog/api';
 
 type BlogPostsListIslandProps = {
@@ -19,43 +16,48 @@ export function BlogPostsListIsland({ posts, postsPerPage }: BlogPostsListIsland
   const hasMore = visibleCount < posts.length;
 
   if (visiblePosts.length === 0) {
-    return <p className='text-center text-muted-foreground'>No articles published yet.</p>;
+    return <p className='text-center mw-text-secondary'>No articles published yet.</p>;
   }
 
   return (
     <>
-      <div className='blog-landing__grid blog-landing__grid--posts'>
+      <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
         {visiblePosts.map(post => (
-          <Card key={post.slug} className='blog-landing__card'>
-            <div className='l-stack'>
-              <Badge variant='outline' size='sm' context='meta'>
-                {getCategoryMetadata(post.category)?.name ?? post.category}
-              </Badge>
+          <article
+            key={post.slug}
+            className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
+          >
+            <p className='mw-text-eyebrow mw-text-signal-cyan'>
+              {getCategoryMetadata(post.category)?.name ?? post.category}
+            </p>
 
-              <h3 className='blog-landing__card-title'>{post.title}</h3>
+            <h3>{post.title}</h3>
+            <p>{post.seo.description}</p>
 
-              <p className='blog-landing__card-description'>{post.seo.description}</p>
+            <div className='mt-4 flex items-center gap-2 mw-text-body-sm mw-text-secondary'>
+              <Calendar size={14} aria-hidden='true' />
+              <span>{post.publishDate}</span>
+            </div>
 
-              <div className='blog-landing__card-meta'>
-                <Calendar aria-hidden='true' />
-                {post.publishDate}
-              </div>
-
-              <a href={post.url} className='link-primary blog-landing__card-cta'>
-                Read article <ArrowRight aria-hidden='true' />
+            <div className='mt-auto pt-5'>
+              <a href={post.url} className='mw-btn mw-btn--secondary'>
+                <span>Read article</span>
+                <ArrowRight size={14} aria-hidden='true' />
               </a>
             </div>
-          </Card>
+          </article>
         ))}
       </div>
 
       {hasMore && (
-        <div className='blog-landing__load-more'>
-          <Button
-            variant='outline'
-            label='Load more articles'
+        <div className='mt-8 flex justify-center'>
+          <button
+            type='button'
+            className='mw-btn mw-btn--secondary'
             onClick={() => setVisibleCount(prev => prev + postsPerPage)}
-          />
+          >
+            Load more articles
+          </button>
         </div>
       )}
     </>

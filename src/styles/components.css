@@ -160,6 +160,7 @@
 
 /* Breakpoint — reveal desktop nav and actions */
 @media (min-width: 980px) {
+
   .header__nav,
   .header__actions {
     display: inline-flex;
@@ -172,6 +173,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .header,
   .header__nav-link,
   .header__mobile-toggle,
@@ -391,6 +393,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .footer__link,
   .footer__utility-link,
   .footer__social-link {
@@ -435,7 +438,7 @@
   color: var(--mw-text-on-dark-strong);
 }
 
-.hero-split__content .rd-section-kicker {
+.hero-split__content .rd-section-eyebrow {
   margin: 0;
 }
 
@@ -762,11 +765,9 @@
   width: 42rem;
   height: 42rem;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    color-mix(in srgb, var(--mw-signal-cyan) 16%, transparent) 0%,
-    transparent 65%
-  );
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--mw-signal-cyan) 16%, transparent) 0%,
+      transparent 65%);
   top: -14rem;
   right: -8rem;
   pointer-events: none;
@@ -780,11 +781,9 @@
   width: 24rem;
   height: 24rem;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    color-mix(in srgb, var(--mw-signal-teal) 12%, transparent) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--mw-signal-teal) 12%, transparent) 0%,
+      transparent 70%);
   bottom: -8rem;
   left: 5%;
   pointer-events: none;

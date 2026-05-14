@@ -26,7 +26,7 @@ export type HeroFrameAction = {
 };
 
 export type HeroFrameProps = {
-  badge?: string;
+  eyebrow?: string;
   title: string;
   description: string;
   actions: readonly HeroFrameAction[];
@@ -49,7 +49,7 @@ export type HeroFrameProps = {
 /**
  * HeroFrame — full hero section wrapper.
  *
- * Owns: <section>, mw-container, hero split layout, badge, h1, description,
+ * Owns: <section>, mw-container, hero split layout, eyebrow, h1, description,
  * action buttons, chip list, and optional right-side visual slot.
  *
  * Rules:
@@ -60,7 +60,7 @@ export type HeroFrameProps = {
  * - Use [[muted:...]] inline syntax in title for muted segments.
  */
 export function HeroFrame({
-  badge,
+  eyebrow,
   title,
   description,
   actions,
@@ -93,10 +93,10 @@ export function HeroFrame({
       <div className='mw-container'>
         <div className='mw-hero-section__inner'>
           <div className='mw-hero-frame mw-animate-up'>
-            {badge && (
-              <div className='mw-hero-frame__badge'>
-                <span className='mw-hero-frame__badge-dot' aria-hidden='true' />
-                <span className='mw-hero-frame__badge-label'>{badge}</span>
+            {eyebrow && (
+              <div className='mw-hero-frame__eyebrow'>
+                <span className='mw-hero-frame__eyebrow-dot' aria-hidden='true' />
+                <span className='mw-hero-frame__eyebrow-label'>{eyebrow}</span>
               </div>
             )}
             <h1 className='mw-hero-frame__heading'>
@@ -140,7 +140,7 @@ export function HeroFrame({
               <div className='mw-hero-frame__default-visual mw-animate-panel' aria-hidden='true'>
                 <div className='mw-hero-frame__panel'>
                   <div className='mw-hero-frame__panel-header'>
-                    <span className='mw-hero-frame__panel-label'>{badge ?? 'System status'}</span>
+                    <span className='mw-hero-frame__panel-label'>{eyebrow ?? 'System status'}</span>
                     <span className='mw-hero-frame__panel-live'>
                       <span className='mw-hero-frame__panel-live-dot' aria-hidden='true' />
                       <span>Live</span>

@@ -35,7 +35,22 @@ const getResourceNodeBySlug = async (slug: string): Promise<ContentGraphNode | n
 };
 
 function getResourceFaqs(sections: ResourceSection[]): ResourceFAQItem[] {
-  return sections.flatMap(section => (section.type === 'faq' ? (section.items ?? []) : []));
+  return sections.flatMap(section => {
+    if (section.type !== 'faq' || !Array.isArray(section.items)) {
+      return [];
+    }
+
+    return section.items.filter((item): item is ResourceFAQItem => {
+      return (
+        item !== null &&
+        typeof item === 'object' &&
+        'question' in item &&
+        typeof item.question === 'string' &&
+        'answer' in item &&
+        typeof item.answer === 'string'
+      );
+    });
+  });
 }
 
 async function resolveResource(slug: string) {

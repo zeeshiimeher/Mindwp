@@ -29,7 +29,7 @@ const takeaways = [
 const problem = {
   description: [
     'Most service businesses handle leads manually. An enquiry arrives as an email notification. Someone reads it, decides who should respond, and eventually contacts the lead. If they are busy, the lead waits. If they forget, the lead is lost. The process depends entirely on human availability and memory.',
-    'The cost compounds. Slow responses lose leads to competitors. Inconsistent follow-up means some leads get 5 touchpoints and others get none. No qualification means sales time is spent equally on high-value prospects and tyre kickers. Without a framework, lead handling is reactive rather than systematic.',
+    'The cost compounds. Slow responses lose leads to competitors. Inconsistent follow-up means some leads get 5 touchpoints and others get none. No qualification means sales time is spent equally on high-value prospects and tyre eyebrows. Without a framework, lead handling is reactive rather than systematic.',
   ],
   causes: [
     'Enquiries arrive as email notifications without CRM routing',

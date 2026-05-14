@@ -1,296 +1,109 @@
-import {
-  BrainCircuit,
-  Calendar,
-  Clock,
-  Globe,
-  Headphones,
-  MessageSquare,
-  Phone,
-  PhoneForwarded,
-  TrendingUp,
-  Users,
-} from 'lucide-react';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
-const voicecallsFaqItems = [
-  {
-    question: 'How natural does the AI voice sound?',
-    answer:
-      "Our AI uses advanced voice synthesis that sounds remarkably human. Most callers don't realize they're speaking with AI. You can customize the voice, accent, and speaking style to match your brand.",
-  },
-  {
-    question: 'Can it handle complex questions?',
-    answer:
-      "Yes! The AI is trained on your business info and can handle FAQs, pricing, services, and more. For complex inquiries it can't resolve, it smoothly transfers to your team or takes a detailed message.",
-  },
-  {
-    question: "What if the AI doesn't know the answer?",
-    answer:
-      "The AI will politely acknowledge when it needs human help, take a detailed message with the caller's question, and either transfer immediately or schedule a callback.",
-  },
-  {
-    question: 'How quickly can I set it up?',
-    answer:
-      'Most businesses are live within 48 hours. We configure the AI with your business info, FAQs, and calendar, then you test it before going live.',
-  },
-  {
-    question: 'What languages does the AI support?',
-    answer:
-      'The AI supports multiple languages including English, Spanish, French, German, and more. You can configure it for your target audience.',
-  },
-  {
-    question: 'Can it book appointments automatically?',
-    answer:
-      'Yes, the AI can check your calendar availability and book appointments directly during the call, sending confirmations to both you and the customer.',
-  },
-  {
-    question: 'Is the AI HIPAA compliant?',
-    answer:
-      'For healthcare businesses, we offer HIPAA-compliant configurations. The AI can handle sensitive information appropriately and route calls securely.',
-  },
-  {
-    question: 'How much does it cost?',
-    answer:
-      'Pricing starts at $99/month for basic plans, with enterprise options available. Contact us for a custom quote based on your call volume and features needed.',
-  },
-  {
-    question: 'Can it integrate with my existing phone system?',
-    answer:
-      'Yes, it integrates with most business phone systems including VoIP providers, traditional landlines, and cloud-based solutions.',
-  },
-  {
-    question: 'What happens during off-hours?',
-    answer:
-      'The AI receptionist is available 24/7. During off-hours, it can take messages, schedule callbacks, or provide basic information based on your settings.',
-  },
-];
+// =============================================================================
+// Voice Calls — page
+// =============================================================================
 
-const slug = 'voicecalls';
-
-export const voicecallsData: FeaturePageData = {
-  slug,
+export const voicecallsData = {
   seo: buildFeatureSeo({
-    slug,
-    title: 'Voice Calls | AI-Powered Call Handling Layer',
+    slug: 'voicecalls',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
+  slug: 'voicecalls',
   systems: ['ai-lead-handling'],
-  topics: ['missed-calls', 'lead-response-time'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Part of AI Lead Handling',
-    title: 'Calls that ring out are jobs you never knew you lost',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'Every missed call during a job, after hours, or on a busy morning is an enquiry that goes to the next business in the search results. Voice handling sits inside AI Lead Handling so the call gets answered, the booking gets taken, and the message gets to the right person without needing a receptionist on every shift.',
-    stats: [
-      { value: '100%', label: 'Call Answer Rate' },
-      { value: '24/7', label: 'Availability' },
-      { value: '0 sec', label: 'Wait Time' },
-      { value: '95%+', label: 'Customer Satisfaction' },
-    ],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    process: {
-      badge: 'Simple Process',
-      title: 'How AI call handling works',
-      description: 'From incoming call to booking or message capture in a clear, repeatable flow.',
-      steps: [
-        {
-          number: '01',
-          title: 'Call Received',
-          description: 'Customer calls your business number any time.',
-          iconType: 'primary' as const,
-        },
-        {
-          number: '02',
-          title: 'Call Answered',
-          description: 'Call is answered and common questions are handled automatically.',
-          iconType: 'secondary' as const,
-        },
-        {
-          number: '03',
-          title: 'Takes Action',
-          description: 'Book appointments, take messages, or route to your team.',
-          iconType: 'primary' as const,
-        },
-        {
-          number: '04',
-          title: 'Call Logged',
-          description: 'All call data and notes are saved to your dashboard.',
-          iconType: 'secondary' as const,
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    benefits: {
-      badge: 'Key Advantages',
-      title: 'What AI call handling supports',
-      description:
-        'Reduce missed calls, improve booking consistency, and support your team without adding extra admin.',
-      items: [
-        {
-          icon: Clock,
-          title: 'Never Miss a Call',
-          description: 'Answer every call, even after hours.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Calendar,
-          title: 'Book Appointments',
-          description: 'Book appointments directly during the call.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: MessageSquare,
-          title: 'Message Taking',
-          description: 'Take messages and gather information before routing.',
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Users,
-          title: 'Call Routing',
-          description: 'Route calls to the right team member.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: TrendingUp,
-          title: 'Save Time',
-          description: 'Reduce repetitive calls for your team.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Phone,
-          title: '24/7 Availability',
-          description: 'AI receptionist available anytime, anywhere.',
-          iconType: 'accent' as const,
-        },
-      ],
-    },
-    useCases: {
-      badge: 'Real-World Examples',
-      title: 'Where AI call handling helps',
-      description: 'Practical examples of how AI voice support fits into daily operations.',
-      items: [
-        {
-          icon: Headphones,
-          title: 'After-Hours Support',
-          scenario: 'A customer calls after business hours.',
-          solution: 'Call is answered, details are taken, and a callback is scheduled.',
-          result: 'Customer receives support, no missed opportunity.',
-        },
-        {
-          icon: Calendar,
-          title: 'Appointment Booking',
-          scenario: 'A customer wants to book an appointment by phone.',
-          solution: 'Book the appointment directly during the call.',
-          result: 'More bookings, fewer interruptions.',
-        },
-        {
-          icon: PhoneForwarded,
-          title: 'Call Routing',
-          scenario: 'A call needs to reach the right team member.',
-          solution: 'Route the call to the appropriate person or take a message.',
-          result: 'Efficient call handling.',
-        },
-      ],
-    },
-    capabilities: {
-      badge: "What's Included",
-      title: 'What is included',
-      featureCategories: [
-        {
-          icon: BrainCircuit,
-          title: 'Smart Conversations',
-          description:
-            'Advanced AI conversations with natural language processing and multi-language support',
-          features: [
-            'Natural language understanding',
-            'Multi-language support',
-            'Custom voice & personality',
-            'Context-aware responses',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Calendar,
-          title: 'Business Actions',
-          description:
-            'Automate key business tasks like appointment scheduling and message routing',
-          features: [
-            'Appointment scheduling',
-            'Message taking & routing',
-            'FAQ answering',
-            'Lead qualification',
-          ],
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Globe,
-          title: 'Integrations',
-          description:
-            'Seamlessly connect with your existing CRM, calendar, and communication tools',
-          features: [
-            'CRM auto-sync',
-            'Calendar integration',
-            'SMS notifications',
-            'Email summaries',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-      columns: 3 as const,
-      variant: 'stacked' as const,
-    },
-    faq: {
-      badge: 'Common Questions',
-      title: 'Frequently Asked Questions',
-      description: 'Clear answers about how AI voice call handling works.',
-      items: voicecallsFaqItems,
-    },
-    explore: {
-      badge: 'Complete Your Setup',
-      title: 'Connect voice AI to the wider system',
-      description: 'Voice AI works best when connected to CRM, website chat, and booking systems.',
-      cards: [
-        {
-          icon: MessageSquare,
-          title: 'AI Website Chatbot',
-          description: 'Capture leads from website visitors 24/7 with intelligent chat',
-          href: '/features/aichat',
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Users,
-          title: 'CRM & Automation',
-          description: 'Auto-follow up with every lead captured by phone or web',
-          href: '/features/crm',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Globe,
-          title: 'Smart Websites',
-          description: 'Modern website with built-in AI, booking, and automation',
-          href: '/services/smart-website-systems',
-          iconType: 'primary' as const,
-        },
-      ],
-    },
-    testimonial: {
-      title: 'What teams notice when calls stop slipping',
-      quote:
-        'We reduced missed calls and improved booking consistency. The AI handles routine enquiries while our team focuses on service delivery.',
-      author: 'Dr. Sarah Mitchell',
-      business: 'BrightSmile Dental',
-      rating: 5,
-    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
+      },
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
+      },
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
+      },
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
+      },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      title: 'Discuss AI voice call handling',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us how calls are handled now. We will show you where voice AI can stop missed enquiries and tighten call routing.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies FeaturePageData;

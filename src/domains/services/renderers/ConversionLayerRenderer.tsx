@@ -1,275 +1,180 @@
+import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionFrame } from '@/components/layout/SectionFrame';
+import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
-import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
-
-// =============================================================================
-// ConversionLayerRenderer
-// Sections: hero · leakagePattern · decisionSurface · improvementPath ·
-//           parentHandoff · fitBoundaries · faq · cta
-// CSS: src/styles/services.css (cvl-* classes)
-// =============================================================================
 
 interface Props {
   data: ServicePageDataBySlug['conversion-layer'];
   slug: string;
 }
 
-const ARIA_HERO_DOT = 'Conversion Layer -- page hero';
-const ARIA_LEAK_DOT = 'Stall pattern';
-const ARIA_DECIDE_DOT = 'Decision surface';
-const ARIA_FIX_DOT = 'Improvement path';
-const ARIA_BRIDGE_DOT = 'System bridge';
-const ARIA_FIT_DOT = 'Fit filter';
-const ARIA_FAQ_DOT = 'Frequently asked questions';
-
-const STAGE_DOT = 'Stage';
-const LOSS_LABEL_DOT = 'Loss';
-const FIT_LABEL_DOT = 'Fit';
-const NOT_FIT_LABEL_DOT = 'Not a fit';
-const BEFORE_DOT = 'Before';
-const AFTER_DOT = 'After';
-const RULE_DOT = 'Rule';
-const BRIDGE_CONV_DOT = 'Conversion layer owns';
-const BRIDGE_RG_DOT = 'Revenue Growth owns';
-
-function requireHeadingTitle(t: string | undefined, s: string) {
-  if (!t || !t.trim()) throw new Error(`[${s}] Missing heading title`);
-  return t;
-}
-
-export function ConversionLayerRenderer({ data, slug: _slug }: Props) {
-  const { hero, sections, cta } = data;
-  const { leakagePattern, decisionSurface, improvementPath, parentHandoff, fitBoundaries, faq } =
-    sections;
-  const primarySystem = data.systems[0];
-  if (!primarySystem) throw new Error('[conversion-layer] Missing service system');
-  const contactHref = buildServiceContactHref({ system: primarySystem, slug: data.slug });
-
-  const convRows = parentHandoff.rows.filter(r => r.belongsTo === 'conversion');
-  const rgRows = parentHandoff.rows.filter(r => r.belongsTo === 'revenue-growth');
+export default function ConversionLayerRenderer({ data }: Props) {
+  const { hero, cta } = data;
+  const faq = data.faq;
 
   return (
-    <div className='cvl-page'>
-      <HeroFrame
-        className='cvl-hero'
-        ariaLabel={ARIA_HERO_DOT}
-        badge={hero.badge}
-        title={hero.title}
-        description={hero.description}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-        chips={hero.list}
-        chipDotVariant='warn'
-      />
+    <main>
+      <ConversionLayerHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <ConversionLayerRecognitionSection />
+      {faq ? <ConversionLayerFAQ faq={faq} /> : null}
+      <ConversionLayerDecisionPanel cta={cta} />
+    </main>
+  );
+}
 
-      {/* ── Leak pattern ── */}
-      <SectionFrame
-        heading={leakagePattern.header}
-        tone='white'
-        className='cvl-leak'
-        ariaLabel={ARIA_LEAK_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(leakagePattern.header.title, 'leakagePattern');
+function ConversionLayerHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+  return (
+    <HeroFrame
+      ariaLabel='Conversion Layer hero'
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      actions={[
+        {
+          label: 'Start a Conversation',
+          href: ctaHref,
+          variant: 'white',
+          icon: <ArrowRight size={16} aria-hidden='true' />,
+        },
+      ]}
+      chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
+      chipDotVariant='subtle'
+      visual={<ConversionLayerSignalPanel visual={hero.visual} />}
+    />
+  );
+}
+
+function ConversionLayerSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+  if (!visual) return null;
+
+  return (
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
+        <div>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{visual.title}</p>
+          <p className='mw-text-on-dark-muted'>{visual.subtitle}</p>
+        </div>
+        <StatusBadge variant='active' label='Live' />
+      </div>
+
+      <div className='grid gap-3'>
+        {visual.rows.map(row => {
+          const status = String(row.status);
+          const Icon =
+            status === 'leaking' || status === 'risk'
+              ? PhoneOff
+              : status === 'unowned' || status === 'warn'
+                ? FileText
+                : Inbox;
+          const badgeVariant =
+            status === 'leaking' || status === 'risk'
+              ? 'leaking'
+              : status === 'unowned' || status === 'warn'
+                ? 'unowned'
+                : 'handled';
+
           return (
-            <div className='cvl-leak__panel'>
-              <header className='cvl-leak__head'>
-                <span className='cvl-leak__title'>{leakagePattern.label}</span>
-              </header>
-              <ol className='cvl-leak__list'>
-                {leakagePattern.stalls.map((s, i) => (
-                  <li key={s.id} className={`cvl-leak__row cvl-leak__row--${s.loss}`}>
-                    <span className='cvl-leak__num'>{String(i + 1).padStart(2, '0')}</span>
-                    <span className='cvl-leak__stage'>
-                      <span className='cvl-leak__pill'>{STAGE_DOT}</span>
-                      {s.stage}
-                    </span>
-                    <span className='cvl-leak__body'>
-                      <span className='cvl-leak__title-line'>{s.title}</span>
-                      <span className='cvl-leak__detail'>{s.detail}</span>
-                    </span>
-                    <span className={`cvl-leak__loss cvl-leak__loss--${s.loss}`}>
-                      <span className='cvl-leak__dot' aria-hidden='true' />
-                      {LOSS_LABEL_DOT}: {s.loss}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-              <p className='cvl-leak__closing'>{leakagePattern.closing}</p>
+            <div
+              key={row.label}
+              className='grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+            >
+              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
+                <Icon size={15} aria-hidden='true' />
+              </span>
+              <strong className='mw-text-on-dark'>{row.label}</strong>
+              <StatusBadge variant={badgeVariant} label={row.value} />
             </div>
           );
-        })()}
-      </SectionFrame>
+        })}
+      </div>
 
-      {/* ── Decision surface ── */}
-      <SectionFrame
-        heading={decisionSurface.header}
-        tone='mist'
-        className='cvl-decide'
-        ariaLabel={ARIA_DECIDE_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(decisionSurface.header.title, 'decisionSurface');
-          return (
-            <div className='cvl-decide__wrap'>
-              <ol className='cvl-decide__grid'>
-                {decisionSurface.questions.map(q => (
-                  <li key={q.id} className='cvl-decide__card'>
-                    <span className='cvl-decide__num'>{q.num}</span>
-                    <h3 className='cvl-decide__q'>{q.question}</h3>
-                    <p className='cvl-decide__detail'>{q.detail}</p>
-                  </li>
-                ))}
-              </ol>
-              <p className='cvl-decide__closing'>{decisionSurface.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Improvement path (before/after) ── */}
-      <SectionFrame
-        heading={improvementPath.header}
-        tone='gradient-dark'
-        className='cvl-fix'
-        ariaLabel={ARIA_FIX_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(improvementPath.header.title, 'improvementPath');
-          return (
-            <div className='cvl-fix__wrap'>
-              <header className='cvl-fix__head'>
-                <span className='cvl-fix__title'>{improvementPath.label}</span>
-              </header>
-              <ul className='cvl-fix__list'>
-                {improvementPath.fixes.map(f => (
-                  <li key={f.id} className='cvl-fix__row'>
-                    <span className='cvl-fix__area'>{f.area}</span>
-                    <span className='cvl-fix__before'>
-                      <span className='cvl-fix__pill cvl-fix__pill--before'>{BEFORE_DOT}</span>
-                      {f.before}
-                    </span>
-                    <span className='cvl-fix__arrow' aria-hidden='true'>
-                      →
-                    </span>
-                    <span className='cvl-fix__after'>
-                      <span className='cvl-fix__pill cvl-fix__pill--after'>{AFTER_DOT}</span>
-                      {f.after}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className='cvl-fix__closing'>{improvementPath.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Parent handoff bridge ── */}
-      <SectionFrame
-        heading={parentHandoff.header}
-        tone='white'
-        className='cvl-bridge'
-        ariaLabel={ARIA_BRIDGE_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(parentHandoff.header.title, 'parentHandoff');
-          return (
-            <div className='cvl-bridge__wrap'>
-              <div className='cvl-bridge__columns'>
-                <article className='cvl-bridge__col cvl-bridge__col--conv'>
-                  <header className='cvl-bridge__head'>
-                    <span className='cvl-bridge__label'>{BRIDGE_CONV_DOT}</span>
-                  </header>
-                  <ul className='cvl-bridge__items'>
-                    {convRows.map(r => (
-                      <li key={r.id}>
-                        <span className='cvl-bridge__bullet' aria-hidden='true' />
-                        {r.point}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-                <article className='cvl-bridge__col cvl-bridge__col--rg'>
-                  <header className='cvl-bridge__head'>
-                    <span className='cvl-bridge__label'>{BRIDGE_RG_DOT}</span>
-                  </header>
-                  <ul className='cvl-bridge__items'>
-                    {rgRows.map(r => (
-                      <li key={r.id}>
-                        <span className='cvl-bridge__bullet' aria-hidden='true' />
-                        {r.point}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              </div>
-              <p className='cvl-bridge__rule'>
-                <strong>{RULE_DOT}.</strong> {parentHandoff.rule}
-              </p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      {/* ── Fit ── */}
-      <SectionFrame
-        heading={fitBoundaries.header}
-        tone='mist'
-        className='cvl-fit'
-        ariaLabel={ARIA_FIT_DOT}
-      >
-        {(() => {
-          requireHeadingTitle(fitBoundaries.header.title, 'fitBoundaries');
-          return (
-            <div className='cvl-fit__wrap'>
-              <div className='cvl-fit__columns'>
-                {fitBoundaries.columns.map(col => (
-                  <article key={col.id} className={`cvl-fit__col cvl-fit__col--${col.variant}`}>
-                    <header className='cvl-fit__head'>
-                      <span className='cvl-fit__label'>
-                        {col.variant === 'fit' ? FIT_LABEL_DOT : NOT_FIT_LABEL_DOT}
-                      </span>
-                      <h3 className='cvl-fit__title'>{col.title}</h3>
-                    </header>
-                    <ul className='cvl-fit__items'>
-                      {col.signals.map((s, i) => (
-                        <li key={`${col.id}-${i}`}>
-                          <span className='cvl-fit__bullet' aria-hidden='true' />
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-              <p className='cvl-fit__closing'>{fitBoundaries.closing}</p>
-            </div>
-          );
-        })()}
-      </SectionFrame>
-
-      <FAQSection
-        eyebrow={faq.header.kicker}
-        title={faq.header.title}
-        description={faq.header.description}
-        items={faq.items}
-        tone='white'
-        variant='split'
-        className='cvl-faq'
-        ariaLabel={ARIA_FAQ_DOT}
-      />
-
-      <DecisionPanel
-        className='cvl-cta'
-        heading={cta.heading}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref }]}
-        expectations={cta.expectations}
-        reassurance={cta.footer}
-      />
+      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <StatusBadge variant='handled' label={visual.footerPrimary} />
+        <StatusBadge variant='active' label={visual.footerSecondary} />
+      </div>
     </div>
   );
 }
+
+function ConversionLayerRecognitionSection() {
+  return (
+    <SectionFrame
+      id='website-handoff'
+      ariaLabel='Where websites usually fail'
+      tone='mist'
+      heading={{
+        eyebrow: 'Where websites usually fail',
+        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        description:
+          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
+          <h3>The visitor understands the offer</h3>
+          <p>
+            Service pages should answer what the visitor came to check: what you do, who it is for,
+            where it is available, and what happens next.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
+          <h3>The enquiry lands somewhere useful</h3>
+          <p>
+            A form or call should not arrive as a loose message. It should carry source, service,
+            location, and enough context for the next person to act.
+          </p>
+        </article>
+
+        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
+          <h3>The next step has an owner</h3>
+          <p>
+            The difference is not more decoration. It is a visible path from website visit to
+            enquiry, response, follow-up, and booked work.
+          </p>
+        </article>
+      </div>
+    </SectionFrame>
+  );
+}
+
+function ConversionLayerFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+  return (
+    <FAQSection
+      title={faq.header.title}
+      description={faq.header.description}
+      items={faq.items.map((item, index) => ({
+        id: `conversion-layer-faq-${index}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
+      tone='mist'
+      variant='split'
+      ariaLabel='Conversion Layer FAQ'
+    />
+  );
+}
+
+function ConversionLayerDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+  return (
+    <DecisionPanel
+      heading={{
+        title: cta.heading.title,
+        subtitle: cta.heading.muted,
+        description: cta.heading.description,
+      }}
+      actions={cta.actions}
+      expectations={cta.expectations}
+      reassurance={cta.footer}
+    />
+  );
+}
+
+export { ConversionLayerRenderer };

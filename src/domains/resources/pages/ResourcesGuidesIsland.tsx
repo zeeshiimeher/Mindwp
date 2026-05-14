@@ -3,10 +3,6 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
-import { Card } from '@/components/ui/card';
-
 type ResourceListItem = {
   title: string;
   url: string;
@@ -36,42 +32,37 @@ export function ResourcesGuidesIsland({
 
   return (
     <>
-      <div className='resources-hub__guides-grid'>
+      <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
         {visibleResources.map(resource => (
-          <Card key={resource.url} className='resource-card resource-card--interactive'>
-            <div className='resource-card__body'>
-              <div className='resource-card__meta'>
-                <Badge variant='outline' size='sm' context='meta'>
-                  {resource.categoryLabel}
-                </Badge>
-              </div>
+          <article
+            key={resource.url}
+            className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
+          >
+            <p className='mw-text-eyebrow mw-text-signal-cyan'>{resource.categoryLabel}</p>
+            <h3>{resource.title}</h3>
+            <p>{resource.excerpt}</p>
 
-              <h3 className='resource-card__title'>{resource.title}</h3>
-              <p className='resource-card__excerpt'>{resource.excerpt}</p>
-
-              <Button
-                href={resource.url}
-                variant='outline'
-                label={readGuideLabel}
-                icon={ArrowRight}
-                showDefaultIcon
-                cssPrefix='btn-block'
-              />
+            <div className='mt-auto pt-5'>
+              <a className='mw-btn mw-btn--secondary' href={resource.url}>
+                <span>{readGuideLabel}</span>
+                <ArrowRight size={14} aria-hidden='true' />
+              </a>
             </div>
-          </Card>
+          </article>
         ))}
       </div>
 
       {hasMoreResources && (
-        <div className='resources-hub__load-more'>
-          <Button
-            variant='outline'
-            label={loadMoreLabel}
-            cssPrefix='btn-block'
+        <div className='mt-8 flex justify-center'>
+          <button
+            type='button'
+            className='mw-btn mw-btn--secondary'
             onClick={() =>
               setVisibleCount(current => Math.min(current + initialVisibleCount, resources.length))
             }
-          />
+          >
+            {loadMoreLabel}
+          </button>
         </div>
       )}
     </>

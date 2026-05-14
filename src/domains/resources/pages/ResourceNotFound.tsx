@@ -1,21 +1,26 @@
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { Button } from '@/components/reusable/single/Button';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 
 export function ResourceNotFound({ title, description }: { title: string; description: string }) {
   return (
-    <div className='resource-not-found'>
-      <main>
-        <SectionWrapper className='resource-not-found__hero' background='bg-gradient-surface-muted'>
-          <div className='resource-not-found__content'>
-            <h1>{title}</h1>
-            <p className='resource-not-found__description'>{description}</p>
-            <div className='resource-not-found__actions'>
-              <Button href='/resources' label='View all resources' />
-              <Button href='/' variant='outline' label='Go home' />
-            </div>
-          </div>
-        </SectionWrapper>
-      </main>
-    </div>
+    <main>
+      <SectionFrame
+        ariaLabel={title}
+        tone='mist'
+        heading={{
+          eyebrow: 'Resource unavailable',
+          title,
+          description,
+        }}
+      >
+        <div className='flex flex-wrap gap-3'>
+          <a className='mw-btn mw-btn--primary' href='/resources'>
+            View all resources
+          </a>
+          <a className='mw-btn mw-btn--secondary' href='/'>
+            Go home
+          </a>
+        </div>
+      </SectionFrame>
+    </main>
   );
 }

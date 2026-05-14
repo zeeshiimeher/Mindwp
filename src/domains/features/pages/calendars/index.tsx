@@ -1,8 +1,8 @@
+import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 import CalendarsRenderer from '@/domains/features/renderers/CalendarsRenderer';
-import type { FeaturePageData } from '@/domains/features/types';
 
 interface CalendarsPageProps {
-  data: FeaturePageData;
+  data: FeaturePageDataBySlug['calendars'];
 }
 
 export default function CalendarsPage({ data }: CalendarsPageProps) {

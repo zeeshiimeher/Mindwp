@@ -30,7 +30,7 @@ export const smallPrivateClinicsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What clinic owners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -61,7 +61,7 @@ export const smallPrivateClinicsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the diary actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

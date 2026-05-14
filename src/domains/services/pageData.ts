@@ -32,7 +32,7 @@ import { MissedCallRecoverySystemRenderer } from '@/domains/services/renderers/M
 import { ReputationReviewSystemsRenderer } from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
 import { RevenueGrowthRenderer } from '@/domains/services/renderers/RevenueGrowthRenderer';
 import { ServicePagesDecisionRenderer } from '@/domains/services/renderers/ServicePagesDecisionRenderer';
-import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
+import { SmartWebsiteSystemsRenderer } from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
 import { SystemMigrationPlatformConsolidationRenderer } from '@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer';
 import { UnifiedCommunicationSystemRenderer } from '@/domains/services/renderers/UnifiedCommunicationSystemRenderer';
 import { WebsiteRedesignSystemRebuildRenderer } from '@/domains/services/renderers/WebsiteRedesignSystemRebuildRenderer';

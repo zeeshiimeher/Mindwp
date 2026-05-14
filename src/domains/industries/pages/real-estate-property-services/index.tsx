@@ -30,7 +30,7 @@ export const realEstatePropertyServicesIndustryPageData: IndustryCategoryPageDat
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What property operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -60,7 +60,7 @@ export const realEstatePropertyServicesIndustryPageData: IndustryCategoryPageDat
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the pipeline actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

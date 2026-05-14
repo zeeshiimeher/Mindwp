@@ -1,13 +1,10 @@
-import { Clock, TrendingUp } from 'lucide-react';
+import { ArrowRight, Clock, TrendingUp } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
-import { CaseStudyCard } from '@/components/reusable/single';
-import { Badge } from '@/components/reusable/single/Badge';
-import { PrimaryCTASection } from '@/components/sections/PrimaryCTASection';
+import { DecisionPanel } from '@/components/conversion/DecisionPanel';
+import { SectionFrame } from '@/components/layout/SectionFrame';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
-
-import { buildContactHref } from '../../../lib/contact/contactHref';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
@@ -18,123 +15,155 @@ export function CaseStudiesPage() {
       pageType='page'
       primarySystem='smart-website-systems'
     >
-      <div className='min-h-screen'>
-        <main>
-          {/* Hero */}
-          <SectionWrapper background='bg-gradient-surface-muted'>
-            <div className='text-center l-stack l-stack--loose'>
-              <Badge variant='outline'>Customer Success Stories</Badge>
+      <main>
+        <SectionFrame
+          ariaLabel='Case studies hero'
+          tone='mist'
+          heading={{
+            eyebrow: 'Customer Success Stories',
+            title: 'Real Before-And-After System Changes',
+            description:
+              'These case studies show what changed when the website layer, routing, follow-up, visibility, and proof systems were rebuilt around how the business actually runs.',
+          }}
+        >
+          <div className='flex flex-wrap items-center gap-3'>
+            <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+              <TrendingUp size={14} aria-hidden='true' />
+              <span>Growth-focused strategies</span>
+            </span>
+            <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
+              <Clock size={14} aria-hidden='true' />
+              <span>Clear, practical execution</span>
+            </span>
+          </div>
+        </SectionFrame>
 
-              <h1>Real Before-And-After System Changes</h1>
-
-              <p className='text-muted-foreground l-max-w-3xl l-mx-auto'>
-                These case studies show what changed when the website layer, routing, follow-up,
-                visibility, and proof systems were rebuilt around how the business actually runs.
-              </p>
-
-              <div className='l-row l-items-center l-row-center l-gap-8 pt-4 text-sm text-muted-foreground'>
-                <div className='l-row l-items-center l-gap-2'>
-                  <TrendingUp className='case-studies-page__hero-icon case-study-accent--success' />
-                  <span>Proven growth-focused strategies</span>
-                </div>
-                <div className='l-row l-items-center l-gap-2'>
-                  <Clock className='case-studies-page__hero-icon case-study-accent--primary' />
-                  <span>Clear, practical execution</span>
-                </div>
-              </div>
-            </div>
-          </SectionWrapper>
-
-          {/* Case Studies Grid */}
-          <SectionWrapper background='bg-background'>
-            <div className='l-grid l-gap-8 md:l-grid-2 lg:l-grid-3 c-case-study-cards-section__grid'>
+        <SectionFrame
+          ariaLabel='Case study library'
+          tone='white'
+          heading={{
+            eyebrow: 'Case studies',
+            title: 'See the operating change behind the result',
+            description:
+              'Each example focuses on the before state, the system change, and the clearer path created after implementation.',
+          }}
+        >
+          {studies.length === 0 ? (
+            <p className='text-center mw-text-secondary'>Case studies will appear here soon.</p>
+          ) : (
+            <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
               {studies.map(study => (
-                <CaseStudyCard
+                <article
                   key={study.slug}
-                  slug={study.slug}
-                  industry={study.industryLabel}
-                  title={study.business}
-                  location={study.location}
-                  description={study.heroHeadline}
-                  duration={study.duration}
-                  keyMetrics={study.keyMetrics}
-                  tags={study.tags}
-                />
+                  className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
+                >
+                  <p className='mw-text-eyebrow mw-text-signal-cyan'>{study.industryLabel}</p>
+                  <h3>{study.business}</h3>
+                  <p>{study.heroHeadline}</p>
+
+                  <div className='mt-4 grid gap-2 mw-text-body-sm mw-text-secondary'>
+                    {study.location ? <span>{study.location}</span> : null}
+                    {study.duration ? <span>{study.duration}</span> : null}
+                  </div>
+
+                  {study.keyMetrics?.length ? (
+                    <ul className='mt-4 grid gap-2'>
+                      {study.keyMetrics.slice(0, 3).map(metric => (
+                        <li
+                          key={`${metric.value}-${metric.label}`}
+                          className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] px-3 py-2 mw-text-body-sm'
+                        >
+                          <strong>{metric.value}</strong>
+                          <span> {metric.label}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  {study.tags?.length ? (
+                    <div className='mt-4 flex flex-wrap gap-2'>
+                      {study.tags.slice(0, 3).map(tag => (
+                        <span
+                          key={tag}
+                          className='rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  <div className='mt-auto pt-5'>
+                    <a className='mw-btn mw-btn--secondary' href={`/case-studies/${study.slug}`}>
+                      <span>Read case study</span>
+                      <ArrowRight size={14} aria-hidden='true' />
+                    </a>
+                  </div>
+                </article>
               ))}
             </div>
+          )}
+        </SectionFrame>
 
-            {studies.length === 0 && (
-              <div className='text-center py-12'>
-                <p className='text-muted-foreground'>Case studies will appear here soon.</p>
-              </div>
-            )}
-          </SectionWrapper>
-
-          {/* Stats Section (UNCHANGED DESIGN) */}
-          <SectionWrapper background='bg-muted'>
-            <div className='text-center mb-12'>
-              <h2 className='mb-4'>What Our Clients Typically Achieve</h2>
-              <p className='text-muted-foreground'>
-                Results vary by business, but our focus is always sustainable growth.
-              </p>
-            </div>
-
-            <div className='l-grid l-gap-6 case-studies-page__stats-grid'>
-              <div className='case-studies-page__stat-card'>
-                <div className='case-studies-page__stat-title case-study-accent--success'>
-                  Improved visibility
-                </div>
-                <div className='text-sm text-muted-foreground'>Across local search & websites</div>
-              </div>
-
-              <div className='case-studies-page__stat-card'>
-                <div className='case-studies-page__stat-title case-study-accent--primary'>
-                  More enquiries
-                </div>
-                <div className='text-sm text-muted-foreground'>From qualified local traffic</div>
-              </div>
-
-              <div className='case-studies-page__stat-card'>
-                <div className='case-studies-page__stat-title case-study-accent--purple'>
-                  Clear processes
-                </div>
-                <div className='text-sm text-muted-foreground'>Automation that saves time</div>
-              </div>
-
-              <div className='case-studies-page__stat-card'>
-                <div className='case-studies-page__stat-title case-study-accent--success'>
-                  Sustainable growth
-                </div>
-                <div className='text-sm text-muted-foreground'>Without bloated marketing spend</div>
-              </div>
-            </div>
-          </SectionWrapper>
-
-          {/* CTA */}
-          <div className='text-sm text-muted-foreground text-center l-max-w-2xl l-mx-auto pt-6 pb-3'>
-            If the before-and-after pattern in one of these examples feels familiar, the next step
-            is to test whether the same system change would remove the friction in your business.
+        <SectionFrame
+          ariaLabel='Case study patterns'
+          tone='mist'
+          heading={{
+            eyebrow: 'Patterns',
+            title: 'What strong system changes usually create',
+            description:
+              'Results vary by business. The common pattern is clearer visibility, cleaner handoffs, better follow-up, and less work depending on memory.',
+          }}
+        >
+          <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
+            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+              <p className='mw-text-eyebrow mw-text-signal-cyan'>Visibility</p>
+              <h3>Improved visibility</h3>
+              <p>Across local search, service pages, and proof surfaces.</p>
+            </article>
+            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+              <p className='mw-text-eyebrow mw-text-signal-cyan'>Enquiries</p>
+              <h3>More qualified enquiries</h3>
+              <p>From clearer paths and better intent capture.</p>
+            </article>
+            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+              <p className='mw-text-eyebrow mw-text-signal-cyan'>Process</p>
+              <h3>Cleaner processes</h3>
+              <p>Less manual chasing and fewer loose handoffs.</p>
+            </article>
+            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+              <p className='mw-text-eyebrow mw-text-signal-cyan'>Growth</p>
+              <h3>Sustainable growth</h3>
+              <p>Built around the way the business actually operates.</p>
+            </article>
           </div>
-          <PrimaryCTASection
-            heading={{
-              title: 'Want to know which system change would produce this kind of lift for you?',
-              description:
-                "Book a free 20-minute call and we'll map the workflow, handoff, and conversion changes most likely to create the same kind of measurable shift in your business.",
-            }}
-            actions={[
-              {
-                label: 'Get Started',
-                href: buildContactHref({
-                  system: 'smart-website-systems',
-                  sourceType: 'case-study',
-                  slug: 'case-study-help',
-                }),
-                primary: true,
-              },
-            ]}
-          />
-        </main>
-      </div>
+        </SectionFrame>
+
+        <DecisionPanel
+          heading={{
+            eyebrow: 'Next step',
+            title: 'Want to know which system change would matter most for you?',
+            description:
+              'If one of these before-and-after patterns feels familiar, the next step is to test whether the same kind of system change would remove friction in your business.',
+          }}
+          actions={[
+            {
+              label: 'Start a Conversation',
+              href: buildContactHref({
+                system: 'smart-website-systems',
+                sourceType: 'case-study',
+                slug: 'case-study-help',
+              }),
+            },
+          ]}
+          expectations={[
+            { num: '01', text: 'What pattern matches your business' },
+            { num: '02', text: 'Where the current handoff breaks' },
+            { num: '03', text: 'Which system change should come first' },
+          ]}
+          reassurance={{ noSell: 'No hard sell.', tone: 'Practical review' }}
+        />
+      </main>
     </CTARegistryProvider>
   );
 }

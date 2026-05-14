@@ -30,7 +30,7 @@ export const smallLawFirmsIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'follow-up'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What firm partners usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -60,7 +60,7 @@ export const smallLawFirmsIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where the intake actually leaks',
       description:
         'Tell us about a typical week. We will read it back and name the first system to fix.',

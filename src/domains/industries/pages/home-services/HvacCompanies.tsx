@@ -38,7 +38,7 @@ export const hvacCompaniesIndustryPageData: IndustryDetailPageData = {
   topics: ['lead-management', 'client-reactivation', 'review-generation'],
   faq: {
     header: {
-      kicker: 'Honest questions',
+      eyebrow: 'Honest questions',
       title: 'What HVAC operators usually ask first',
       description: 'Direct answers. No hedging.',
     },
@@ -70,7 +70,7 @@ export const hvacCompaniesIndustryPageData: IndustryDetailPageData = {
   },
   cta: {
     heading: {
-      kicker: 'Next step',
+      eyebrow: 'Next step',
       title: 'Show us where HVAC enquiries get lost in the season',
       description:
         'Tell us what happens between a surge-week phone ringing and a quote going out. We will read it back and name the first system to fix.',

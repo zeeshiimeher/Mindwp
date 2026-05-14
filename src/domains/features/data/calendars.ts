@@ -1,266 +1,109 @@
-import { Calendar, Clock, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
-const calendarsFaqItems = [
-  {
-    question: 'Does Calendars sync with Google and Outlook?',
-    answer: 'Yes. Calendars integrates with Google and Outlook for consistent scheduling.',
-  },
-  {
-    question: 'Can I manage multiple staff calendars?',
-    answer:
-      'Each team member has their own calendar. You control hours, services, and availability.',
-  },
-  {
-    question: 'How do reminders work?',
-    answer: 'Clients receive automatic confirmations and reminders for their appointments.',
-  },
-  {
-    question: 'Is Calendars mobile-friendly?',
-    answer: 'Yes. Clients can book and manage appointments from any device.',
-  },
-  {
-    question: 'Can clients reschedule appointments?',
-    answer: 'Yes, clients can easily reschedule or cancel appointments through the booking system.',
-  },
-  {
-    question: 'How do I set up different service types?',
-    answer:
-      'You can create different services with custom durations, prices, and staff assignments.',
-  },
-  {
-    question: 'What about time zone handling?',
-    answer: 'The system automatically handles time zones for accurate scheduling across locations.',
-  },
-  {
-    question: 'Can I block out time for meetings?',
-    answer:
-      'Yes, you can block time slots for internal meetings, breaks, or other non-booking activities.',
-  },
-  {
-    question: 'How do I handle recurring appointments?',
-    answer:
-      'The system supports recurring appointments and automated scheduling for regular clients.',
-  },
-  {
-    question: 'What reporting is available?',
-    answer: 'Detailed reports on bookings, revenue, staff utilization, and client patterns.',
-  },
-];
+// =============================================================================
+// Calendars — page
+// =============================================================================
 
-const slug = 'calendars';
-
-export const calendarsData: FeaturePageData = {
-  slug,
+export const calendarsData = {
   seo: buildFeatureSeo({
-    slug,
-    title: 'Calendars | Structured Online Booking Layer',
+    slug: 'calendars',
+    title: 'Smart Website Systems for Service Businesses',
     description:
-      'Structured online booking integrated into your website system with confirmations, reminders, staff scheduling, and calendar management.',
+      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
-  systems: ['smart-website-systems', 'revenue-growth'],
-  topics: ['booking-automation'],
+  slug: 'calendars',
+  systems: ['crm-automation'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
+  eyebrow: 'Smart Websites',
+  category: 'Website That Works',
   hero: {
-    badge: 'Part of Smart Website Systems',
-    title: 'Enquiries that turn into bookings without a back-and-forth',
+    eyebrow: 'Smart Websites',
+    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
     description:
-      'When a visitor has to email to ask for a slot, most of them never do. Calendars sit inside Smart Website Systems so the booking happens on the page, the confirmations and reminders run themselves, and the team calendar stays in sync with the work coming in.',
-    stats: [
-      { value: 'Online', label: 'Booking' },
-      { value: 'Automated', label: 'Reminders' },
-      { value: 'Team', label: 'Calendars' },
-      { value: 'Integrated', label: 'Features' },
-    ],
+      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
+    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+    visual: {
+      title: 'Live enquiry feed',
+      subtitle: 'Website signals · routed with context',
+      rows: [
+        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
+        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+      ],
+      footerPrimary: 'Source attached',
+      footerSecondary: 'Next step visible',
+    },
   },
-  sections: {
-    process: {
-      badge: 'Simple Process',
-      title: 'How Structured Booking Operates',
-      description: 'A clear, predictable flow from appointment selection to confirmed booking.',
-      steps: [
-        {
-          number: '01',
-          title: 'Online Booking',
-          description: 'Clients book appointments online from your website or landing page.',
-          iconType: 'primary' as const,
-        },
-        {
-          number: '02',
-          title: 'Staff & Service Selection',
-          description: 'Clients select a team member and service from available options.',
-          iconType: 'secondary' as const,
-        },
-        {
-          number: '03',
-          title: 'Automated Reminders',
-          description: 'Automatic confirmations and reminders are sent to clients.',
-          iconType: 'primary' as const,
-        },
-        {
-          number: '04',
-          title: 'Calendar Management',
-          description: 'Manage appointments, rescheduling, and cancellations from your dashboard.',
-          iconType: 'secondary' as const,
-        },
-      ],
+  faq: {
+    header: {
+      title: 'What business owners ask before getting started',
+      description: 'Direct answers. No jargon.',
     },
-    benefits: {
-      badge: 'Feature Highlights',
-      title: 'What Structured Booking Improves',
-      description:
-        'Structured booking reduces manual coordination, improves scheduling clarity, and connects appointments directly to your wider enquiry and follow-up system.',
-      items: [
-        {
-          icon: Calendar,
-          title: 'Book Anytime',
-          description: 'Clients can book appointments online at their convenience.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: MessageSquare,
-          title: 'Automated Reminders',
-          description: 'Automatic confirmations and reminders for every booking.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Users,
-          title: 'Staff Scheduling',
-          description: 'Each team member manages their own calendar.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Settings,
-          title: 'Calendar Sync',
-          description: 'Sync with Google and Outlook for consistent scheduling.',
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Inbox,
-          title: 'Centralized Management',
-          description: 'Manage all bookings from one dashboard.',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Clock,
-          title: 'Buffer Time',
-          description: 'Add buffer time between appointments for preparation and travel.',
-          iconType: 'accent' as const,
-        },
-      ],
-    },
-    useCases: {
-      badge: 'How Calendars Fits',
-      title: 'Structured Booking Within Daily Operations',
-      description:
-        'See how this booking layer supports daily scheduling while remaining connected to your Smart Website infrastructure.',
-      items: [
-        {
-          icon: Calendar,
-          title: 'Daily Scheduling',
-          scenario: 'Clients book appointments online and select available times.',
-          solution: 'Bookings appear instantly in your calendar and dashboard.',
-          result: 'Stay organized and keep track of appointments.',
-        },
-        {
-          icon: Users,
-          title: 'Staff Coordination',
-          scenario: 'Assign appointments to the right team member based on availability.',
-          solution: 'Staff schedules stay synchronized in one shared structure.',
-          result: 'Fewer conflicts and smoother daily operations.',
-        },
-        {
-          icon: Inbox,
-          title: 'Centralized Management',
-          scenario: 'View all bookings in one dashboard.',
-          solution: 'Access appointment details and manage follow-up.',
-          result: 'Consistent organization.',
-        },
-      ],
-    },
-    capabilities: {
-      badge: "What's Included",
-      title: 'Calendars Features',
-      featureCategories: [
-        {
-          icon: Calendar,
-          title: 'Scheduling',
-          description: 'Streamlined appointment booking with calendar integration',
-          features: [
-            'Online appointment booking',
-            'Calendar sync with Google/Outlook',
-            'Staff and service selection',
-            'Automated reminders',
-          ],
-          iconType: 'accent' as const,
-        },
-        {
-          icon: Settings,
-          title: 'Management',
-          description: 'Comprehensive calendar management and team coordination',
-          features: [
-            'Centralized dashboard',
-            'Rescheduling and cancellations',
-            'Team calendar management',
-            'Integration with CRM and messaging',
-          ],
-          iconType: 'secondary' as const,
-        },
-        {
-          icon: Users,
-          title: 'Client Experience',
-          description: 'Seamless booking experience for your clients',
-          features: [
-            'Mobile-friendly booking',
-            'Instant confirmations',
-            'Easy access to appointment details',
-            'Consistent communication',
-          ],
-          iconType: 'primary' as const,
-        },
-      ],
-      columns: 3 as const,
-      variant: 'stacked' as const,
-    },
-    faq: {
-      badge: 'Common Questions',
-      title: 'Frequently Asked Questions',
-      description: 'Common questions about Calendars',
-      items: calendarsFaqItems,
-    },
-    explore: {
-      title: 'Explore Related Features',
-      description:
-        'Discover how our other features work seamlessly with Calendars to create a complete business solution.',
-      cards: [
-        {
-          icon: MessageSquare,
-          title: 'AI Chat',
-          description: 'Intelligent conversational AI for instant customer engagement',
-          href: '/features/aichat',
-        },
-        {
-          icon: Inbox,
-          title: 'CRM',
-          description: 'Centralized contact and communication management',
-          href: '/features/crm',
-        },
-        {
-          icon: Users,
-          title: 'Inbox',
-          description: 'Unified communication hub for all your messages',
-          href: '/features/inbox',
-        },
-      ],
-    },
+    items: [
+      {
+        question: 'How is this different from getting a new website built?',
+        answer:
+          'Most builds stop at how the site looks. A Smart Website System focuses on what happens after someone lands on the site: whether they understand the service, make contact, and get handled properly.',
+      },
+      {
+        question: 'Do we have to start from scratch?',
+        answer:
+          'Not always. If your current site can support the structure, capture points, and handoff layer, we can improve around it. If it cannot, we will say that clearly before recommending a rebuild.',
+      },
+      {
+        question: 'Does this include service pages?',
+        answer:
+          'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
+      },
+      {
+        question: 'Does this connect to our CRM or follow-up system?',
+        answer:
+          'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
+      },
+      {
+        question: 'How long does it usually take?',
+        answer:
+          'A straightforward build usually takes several weeks. The timeline depends on how many services, locations, forms, handoffs, and content decisions need to be handled.',
+      },
+    ],
   },
   cta: {
     heading: {
-      title: 'Review Your Booking Structure',
+      title: 'Something here hit close.',
+      muted: 'Find where it is breaking.',
       description:
-        'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
+        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
     },
-    actions: [{ label: 'Get Started', href: '/contact', primary: true }],
+    actions: [
+      {
+        label: 'Start a Conversation',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'page',
+          slug: 'smart-website-systems',
+        }),
+        primary: true,
+      },
+    ],
+    expectations: [
+      { num: '01', text: 'Where your enquiries are coming from' },
+      { num: '02', text: 'What the page is failing to capture' },
+      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '04', text: 'What to fix first' },
+    ],
+    footer: {
+      noSell: 'No commitment needed.',
+      tone: 'Direct review',
+    },
   },
-};
+} satisfies FeaturePageData;

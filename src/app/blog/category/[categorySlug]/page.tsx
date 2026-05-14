@@ -61,7 +61,6 @@ export default async function Page({ params }: { params: Promise<{ categorySlug:
       <BlogCategoryTemplate
         title={category.name}
         description={category.description || 'Articles in this category.'}
-        badgeClassName={`${category.colors.bg} ${category.colors.text}`}
         articleCount={blogPosts.filter(post => post.category === category.category).length}
         posts={blogPosts.filter(post => post.category === category.category)}
       />
