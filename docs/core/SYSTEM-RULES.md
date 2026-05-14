@@ -1,10 +1,10 @@
 # System Rules
 
-MindWP is currently in design-first rebuild mode.
+MindWP now uses a business-first, conversion-led build system.
 
 ## Active Rule
 
-Design approval comes before final architecture.
+Business reality, buyer recognition, page intent, section quality, and visual trust come before final architecture.
 
 Do not use old validators, data contracts, graph reports, dashboards, section keys, or render-alignment rules as current truth.
 
@@ -17,20 +17,20 @@ Do not use old validators, data contracts, graph reports, dashboards, section ke
 - `npm run build`
 - `npm run check:frontend`
 
-## Design-Mode Rules
+## Build-System Rules
 
 Allowed:
 
-- JSX-owned content
-- local arrays
+- JSX-owned content when it improves page communication
+- local arrays for section-specific content
 - Tailwind layout/composition utilities
 - page-owned sections
 - page-local helper components
-- temporary repeated JSX
+- repeated JSX until a pattern proves it should be extracted
 - flexible section count
-- broad transitional types
+- small, useful types that do not force premature section contracts
 
-Deferred until after approval:
+Rebuilt after approval and proven patterns:
 
 - strict section contracts
 - graph/authority rules
@@ -45,5 +45,5 @@ Deferred until after approval:
 - Do not publicly mention GoHighLevel, GHL, or HighLevel.
 - Do not invent fake proof, metrics, testimonials, guarantees, or rankings.
 - Do not add unsupported capabilities.
-- Keep public copy operational and buyer-first.
+- Keep public copy operational and buyer-first, conversion-led.
 - Use frontend smoke checks for runtime page crashes.

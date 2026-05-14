@@ -21,20 +21,20 @@ Strong MindWP sections often look like:
 
 Avoid generic agency layouts, decorative dashboards, random icon grids, fake charts, and tech-first diagrams.
 
-## Design Mode
+## Build-System Design
 
-Allowed during design mode:
+Allowed in the MindWP build system:
 
 - Tailwind layout/composition utilities
 - JSX-owned content
 - local arrays
 - page-owned sections
 - page-local helper components
-- temporary duplicated JSX
+- repeated JSX until a pattern proves it should be extracted
 - custom section layouts
 - flexible section count
 
-Do not block design work because a section is not using `SectionFrame`, `HeroFrame`, a data file, or a shared renderer. Those can be extracted later.
+Do not block page design work because a section is not using `SectionFrame`, `HeroFrame`, a data file, or a shared renderer. Those can be extracted after approval and proven patterns.
 
 ## Tailwind and Tokens
 

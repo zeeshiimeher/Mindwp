@@ -1,14 +1,14 @@
 # FOUNDATION — MindWP
 
-> Root authority for identity, service hierarchy, vocabulary, positioning, and boundary rules.
-> If any other document conflicts with this file, fix the conflict immediately.
-> This document wins over every other strategy, content, conversion, graph, design, and workflow document.
+> Authority for MindWP’s business identity, buyer, positioning, service hierarchy, vocabulary, and public boundaries.
+> This document defines what MindWP is, who it serves, and how it should be expressed.
+> It does not define implementation architecture, validators, generated reports, or fixed page/section structure.
 
 ---
 
 ## USE THIS DOC
 
-Read this first in any new session before editing strategy, content, page data, CTAs, routes, graph relationships, or public-facing copy.
+Read this first in any new session before editing strategy, positioning, public-facing copy, service language, page intent, CTAs, or buyer-facing content.
 
 This document defines:
 
@@ -22,19 +22,42 @@ This document defines:
 
 ## DOC AUTHORITY ORDER
 
-When documents conflict, follow this order:
+When documents conflict, follow this order for business and public-facing decisions:
 
-1. `FOUNDATION.md` — identity, positioning, service hierarchy, vocabulary, boundaries.
+1. `FOUNDATION.md` — identity, positioning, buyer, service hierarchy, vocabulary, boundaries.
 2. `WRITING.md` — voice, phrasing, rewrite rules, banned language.
 3. `CONTENT.md` — page roles, funnel roles, content behavior.
-4. `CONVERSION.md` — CTA intent, CTA placement, contact routing, conversion rules.
-5. `GRAPH.md` — metadata, relationships, authority routing, content graph behavior.
-6. `DESIGN.md` — visual rules, CSS constraints, component styling behavior.
-7. `SYSTEM-ARCHITECTURE.md` and `SYSTEM-RULES.md` — runtime/control-plane ownership and enforceable locks.
-8. `docs/Planning/*` — temporary reset context and legacy delete gates.
+4. `CONVERSION.md` — CTA intent, contact posture, proof posture, conversion tone.
+5. `DESIGN.md` — visual principles, page quality, section composition, UI direction.
+6. Active planning/build-system docs — current implementation workflow and rebuild rules.
 
-If a lower-priority document conflicts with a higher-priority document, update the lower-priority document.
-Do not reinterpret this document to fit another document.
+Graph, generated reports, validators, strict data contracts, and old control-plane docs are implementation details. They must not override this business identity or force weak page design.
+If another document conflicts with this file, update that document.
+
+---
+
+## MINDWP BUILD SYSTEM
+
+MindWP is a business-first, conversion-led website system.
+
+A page is not successful because it passes structure checks. A page is successful when it reflects the buyer’s reality, creates recognition, communicates clearly, looks premium, builds trust, and moves the right visitor toward enquiry.
+
+The build flow is:
+
+**BUSINESS REALITY → BUYER RECOGNITION → PAGE INTENT → PATTERN → SECTION DESIGN → JSX → APPROVAL → SYSTEMIZATION**
+
+1. **Business Reality** — start with what is actually happening in the buyer’s business.
+2. **Buyer Recognition** — make the visitor feel, “this is exactly our situation.”
+3. **Page Intent** — define what the page must help the visitor understand, believe, or do.
+4. **Pattern** — choose the communication pattern that best explains the reality: leak, handoff, stack, split, arc, before/after, priority, fit, proof, scenario, or operating map.
+5. **Section Design** — design the section shape that makes the pattern clear and visually strong.
+6. **JSX** — build directly with flexible JSX/Tailwind and useful components.
+7. **Approval** — judge the section/page visually, strategically, and commercially.
+8. **Systemization** — after approval, extract stable pieces into shared components, data, types, and validators.
+
+Validators protect approved decisions. They do not decide the page before it exists.
+
+Useful components such as Hero, SectionFrame, FAQ, DecisionPanel, Container, SectionHeader, Button, SignalDot, and Badge may exist, but they are building blocks, not mandatory gates. A section may use a shared component when it helps, or custom page-owned JSX when the idea requires it.
 
 ---
 
@@ -248,7 +271,7 @@ MindWP operates on six canonical systems. These identifiers are fixed in code an
 | `reputation-review`     | Trust layer                               | Review generation, negative feedback routing, reputation monitoring        | Traffic acquisition, website conversion handling, CRM pipelines |
 | `revenue-growth`        | Improvement and recovery layer            | Conversion refinement, recovery workflows, lifecycle optimization          | Core website foundation, local visibility, review operations    |
 
-Source of truth: `src/lib/content-graph/canonical.ts`.
+These canonical identifiers are fixed business and public-service identifiers. Their implementation source may change as the new system is rebuilt.
 
 ---
 
@@ -302,10 +325,10 @@ This is a controlled acquisition exception, not a second flagship.
 1. Every public page resolves to one page type and one page identity.
 2. Every page belongs to one primary system and may declare supporting metadata.
 3. Every page respects its behavior type and writing rules.
-4. Design approval comes before final architecture during the rebuild.
-5. Passing checks does not automatically confirm positioning strength, persuasion, or authority quality.
+4. Business reality, buyer recognition, page intent, and section quality come before final architecture.
+5. Passing checks does not automatically confirm positioning strength, persuasion, visual quality, trust, or conversion clarity.
 
-Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md), [./GRAPH.md](./GRAPH.md), and [./CONVERSION.md](./CONVERSION.md).
+Implementation detail belongs in the active build-system and architecture docs. Those documents must support this business-first system, not override it.
 
 ---
 
@@ -319,20 +342,20 @@ Implementation detail lives in [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.
 
 ### Content Ownership
 
-- Content data belongs to domain-owned registries and page-data surfaces.
-- Canonical metadata belongs to systems, topics, and industries registries.
-- Content relationships derive from metadata, not presentation helpers.
+- During page creation and redesign, sections may own their content directly in JSX.
+- After approval, stable content may be extracted into page-owned data files or shared content surfaces.
+- Content relationships, graph metadata, and related routing are production systems to rebuild after the approved page system is clear.
 
 ### CTA Ownership
 
 - CTAs should follow recognition and proof.
-- `DecisionPanel` and contact helpers are useful production tools, not design-mode gates.
-- CTA registry, position, and label enforcement are deferred until the approved system is rebuilt.
+- `DecisionPanel` and contact helpers are useful production tools, not architecture gates during page creation.
+- CTA registry, position, and label enforcement should be rebuilt only after the approved page system is clear.
 
 ### Tool Ownership
 
 - `npm run build` owns production build verification.
-- `npm run check:minimal` owns the light design-mode static check.
+- `npm run check:minimal` owns the light static check for the current build system.
 - `npm run check:frontend` owns runtime smoke verification.
 
 ---
@@ -548,8 +571,8 @@ Do not open with services, features, tools, or systems before the problem is cle
 
 ## CROSS-REFERENCE MAP
 
-- Content roles and metadata: [./CONTENT.md](./CONTENT.md)
-- Graph ontology and resolver rules: [./GRAPH.md](./GRAPH.md)
-- CTA and contact contracts: [./CONVERSION.md](./CONVERSION.md)
-- Runtime and control-plane locks: [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md), [./SYSTEM-RULES.md](./SYSTEM-RULES.md)
-- Visual system and component design: [./DESIGN.md](./DESIGN.md)
+- Content roles and page behavior: [./CONTENT.md](./CONTENT.md)
+- Writing voice and public copy rules: [./WRITING.md](./WRITING.md)
+- CTA posture and conversion behavior: [./CONVERSION.md](./CONVERSION.md)
+- Visual principles and section composition: [./DESIGN.md](./DESIGN.md)
+- Graph, reports, strict architecture, and validators are rebuilt after the approved page system is clear.

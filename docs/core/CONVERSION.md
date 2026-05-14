@@ -2,16 +2,16 @@
 
 MindWP CTAs should feel diagnostic, specific, and low-pressure.
 
-## Current Design-Mode Rule
+## Current Build-System Rule
 
-CTA components and helpers may exist, but runtime CTA enforcement must not block page design.
+CTA components and helpers may exist, but runtime CTA enforcement must not block page creation.
 
-During design mode:
+In the MindWP build system:
 
 - CTAs may live in custom JSX.
 - CTA wording may be shaped around the section/page.
 - Final CTA placement can move while the page is being designed.
-- `DecisionPanel` is useful, but not mandatory for every prototype.
+- `DecisionPanel` is useful, but not mandatory for every section.
 - Registry/count/position enforcement is deferred.
 
 ## CTA Intent
@@ -27,7 +27,7 @@ Do not invent proof, savings, guarantees, rankings, or results to make a CTA str
 
 ## Contact Links
 
-Use `buildContactHref()` when a stable CTA should preserve source context. During rough design exploration, do not let contact-helper plumbing block section composition.
+Use `buildContactHref()` when a stable CTA should preserve source context. During page creation and section redesign, do not let contact-helper plumbing block section composition.
 
 ## Deferred
 

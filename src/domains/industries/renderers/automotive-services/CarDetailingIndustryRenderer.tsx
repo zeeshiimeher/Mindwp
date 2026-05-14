@@ -26,7 +26,7 @@ export function CarDetailingIndustryRenderer({ data }: IndustryDetailRendererPro
       <SectionFrame
         heading={{
           kicker: 'Industry rebuild',
-          title: 'This page is ready for the Opus design pass.',
+          title: 'This page is ready for the rebuild.',
           description:
             'The legacy industry section contract has been removed. Rebuild this page directly from the renderer.',
         }}

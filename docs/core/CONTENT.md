@@ -1,8 +1,8 @@
 # CONTENT — MindWP
 
-> Source of truth for content hierarchy, page roles, metadata rules, authority rules, and editorial boundaries.
+> Source of truth for page roles, funnel behavior, editorial boundaries, and content intent.
 > If this file conflicts with [./FOUNDATION.md](./FOUNDATION.md), fix the conflict immediately.
-> This document controls page roles and content behavior only. Identity, positioning, service hierarchy, and page-behavior definitions still come from [./FOUNDATION.md](./FOUNDATION.md).
+> This document controls what each page type is allowed to do. Identity, positioning, service hierarchy, and the MindWP build system come from [./FOUNDATION.md](./FOUNDATION.md).
 
 ---
 
@@ -14,7 +14,7 @@ This document answers:
 
 - what role each page type owns
 - what funnel role each page type can support
-- what metadata each page type needs
+- what each page type should help the visitor recognise, understand, or decide
 - where each page type should route next
 - what each page type must not absorb from another page type
 
@@ -24,34 +24,34 @@ This document answers:
 
 Before writing, editing, or adding content, decide in this order:
 
-1. Confirm the page type.
-2. Confirm the behavior type from [./FOUNDATION.md](./FOUNDATION.md): landing, system, or entry.
-3. Confirm the funnel role.
-4. Confirm the primary search intent.
-5. Confirm required metadata.
-6. Confirm CTA behavior from [./CONVERSION.md](./CONVERSION.md).
-7. Confirm related-content behavior from [./GRAPH.md](./GRAPH.md).
+1. Confirm the buyer’s business reality.
+2. Confirm the recognition moment the page must create.
+3. Confirm the page type.
+4. Confirm the behavior type from [./FOUNDATION.md](./FOUNDATION.md): landing, system, or entry.
+5. Confirm the funnel role.
+6. Confirm the primary page intent.
+7. Confirm the pattern that best communicates the idea.
+8. Confirm CTA posture from [./CONVERSION.md](./CONVERSION.md).
 
-Do not write copy until these are clear.
+Metadata, graph relationships, related-content routing, and final data extraction happen after the page or section is approved.
 
 ---
 
 ## SYSTEM GUARANTEES
 
-- Every routed content surface belongs to one canonical page type.
-- Every content node uses canonical metadata from the system, topic, and industry registries.
+- Every routed content surface should have one clear page type.
 - Funnel roles are fixed by page type.
 - BOFU conversion structure belongs to service pages.
 - Other page types escalate upward; they do not absorb service-page behavior.
-- Related content is graph-derived and slot-limited.
-- Metadata, page role, CTA role, and related-content behavior must agree.
-- Structural validation does not prove authority, specificity, or conversion strength.
+- Page type, page intent, CTA posture, and content behavior must agree.
+- Structural validation does not prove authority, specificity, visual quality, or conversion strength.
+- Metadata, graph relationships, related-content routing, and stricter validators are rebuilt after the approved page system is clear.
 
 ---
 
 ## UNIFIED CONTENT HIERARCHY
 
-| Page Type         | Primary Role                      | Funnel Role                 | Required Metadata           | Primary Outcome                               |
+| Page Type         | Primary Role                      | Funnel Role                 | Useful Metadata             | Primary Outcome                               |
 | ----------------- | --------------------------------- | --------------------------- | --------------------------- | --------------------------------------------- |
 | Service           | System decision page              | BOFU                        | `systems[]`                 | conversion-ready service selection            |
 | Feature           | Capability page                   | MOFU                        | `systems[]`                 | explain one system capability in context      |
@@ -62,7 +62,7 @@ Do not write copy until these are clear.
 | Case Study        | Proof page                        | MOFU / proof support        | `systems[]`, `industries[]` | validate the system with implementation proof |
 | Page              | Generic structural page           | context-specific            | page-owned identity         | support navigation or non-domain surfaces     |
 
-Source of truth for canonical identifiers: `src/lib/content-graph/canonical.ts`.
+Canonical identifiers are fixed business and content identifiers. Their implementation source may change as the new system is rebuilt.
 
 ---
 
@@ -204,14 +204,14 @@ If intent and behavior diverge, the page loses clarity and must be corrected.
 
 ## CONTENT SYSTEM INTEGRITY
 
-Content integrity depends on aligned contracts:
+Content integrity depends on aligned meaning:
 
 1. Page type matches page role.
-2. Metadata matches page subject.
-3. CTA behavior matches page role.
-4. Related content resolves from metadata rather than editorial shortcuts.
-5. Page behavior matches its role and positioning.
-6. Content supports authority instead of only satisfying structure.
+2. Page intent matches buyer recognition.
+3. CTA posture matches page role.
+4. Page behavior matches its role and positioning.
+5. Content supports authority, trust, and conversion instead of only satisfying structure.
+6. Metadata and related-content systems are added after the approved page meaning is clear.
 
 Do not invent parallel identifiers, parallel page roles, or parallel relationship systems.
 
@@ -221,7 +221,7 @@ Do not invent parallel identifiers, parallel page roles, or parallel relationshi
 
 - One page owns one primary intent.
 - Topics represent problem spaces, not titles.
-- Metadata supports authority and routing; it does not exist as decorative SEO tagging.
+- Metadata should support authority and routing after approval; it must not drive weak page design before the page meaning is clear.
 - Multiple pages may share a topic only when their search intents differ materially.
 - Search intent targeting must respect the page-type hierarchy instead of overriding it.
 
@@ -229,40 +229,37 @@ Do not invent parallel identifiers, parallel page roles, or parallel relationshi
 
 ## CONTENT FLOW AND RELATIONSHIPS
 
-The design-mode content path is:
+The MindWP content build path is:
 
 ```text
-business reality -> page intent -> pattern logic -> section composition -> JSX -> approval -> extraction
+BUSINESS REALITY → BUYER RECOGNITION → PAGE INTENT → PATTERN → SECTION DESIGN → JSX → APPROVAL → SYSTEMIZATION
 ```
 
-Relationship generation, ranking, and authority handling are deferred in [./GRAPH.md](./GRAPH.md).
+Relationship generation, ranking, and authority handling are rebuilt after the approved page system is clear.
 
 Content flow must preserve meaning, not just structure:
 
-- routing must support conversion progression
+- routing should support conversion progression
 - related content must not break page intent or funnel role
-- only graph-valid candidates may enter related-content display
+- related-content systems should protect the approved page journey, not dictate it before design approval
 
-Manual presentation helpers do not own related-content truth.
+Manual presentation helpers may support a page narrative, but final related-content systems should be rebuilt deliberately after the core page system is approved.
 
 ---
 
-## RELATED CONTENT SLOT SYSTEM
+## RELATED CONTENT SYSTEM — DEFERRED
 
-- Each eligible page gets one related-content zone.
-- The zone shows at most three items.
-- The zone is fed by graph-ranked candidates, not ad hoc editorial lists.
-- Inline editorial links may support the narrative, but they do not replace the related-content system.
+The related-content system is deferred until the approved page system is clear.
 
-Related content must respect page behavior:
+Future related content should respect page behavior:
 
 - Landing pages must not surface unrelated educational chains.
 - Blog pages must not loop into shallow discovery cycles.
-- Service pages must prioritize conversion-relevant content.
-- Case studies must route toward the service, industry, or system context they prove.
+- Service pages should prioritize conversion-relevant content.
+- Case studies should route toward the service, industry, or system context they prove.
 - Resources must not trap readers in endless educational loops.
 
-If related content weakens user progression, remove or reorder it.
+Inline editorial links may support the narrative during page creation. A final graph-ranked related-content system can be rebuilt later if it strengthens user progression.
 
 ---
 
@@ -321,40 +318,42 @@ Case studies may support service conversion, but the case study itself remains a
 
 ### Add Content
 
-1. Choose the correct page type first.
-2. Use canonical identifiers only.
-3. Match the funnel role to the page type.
-4. Keep CTA behavior inside the conversion contract.
-5. Validate metadata, structure, and graph integrity.
-6. Confirm the page adds authority, proof, clarity, or conversion progression. If it only adds volume, do not add it.
+1. Start from the buyer’s business reality.
+2. Confirm the page type and funnel role.
+3. Confirm the buyer recognition moment.
+4. Choose the pattern that best communicates the page intent.
+5. Keep CTA posture inside the conversion contract.
+6. Confirm the page adds authority, proof, clarity, recognition, or conversion progression. If it only adds volume, do not add it.
+7. Extract metadata, data, and relationships after approval.
 
 ### Add a Service or Feature Page
 
 1. Start from the buyer's visible working problem.
 2. Confirm the owning system and page role.
-3. Compose the strongest page sections in JSX during design mode.
+3. Compose the strongest page sections in JSX using the MindWP build system.
 4. Keep proof honest and system boundaries clear.
 5. Extract stable data after visual approval.
 
 ### Add a Related Content Opportunity
 
-1. Improve metadata quality first.
-2. Do not add a manual related-content list as a substitute.
-3. Confirm the resolver can discover the relationship naturally.
+1. Confirm the related opportunity strengthens the approved page journey.
+2. Use inline editorial links only when they support the page narrative.
+3. Rebuild metadata and resolver behavior later if the relationship should become part of the formal related-content system.
 
 ---
 
 ## ENFORCEMENT MODEL
 
-Design-mode enforcement is intentionally minimal. Manual review owns page intent, authority strength, specificity, page differentiation, and conversion clarity.
+Current enforcement is intentionally focused. Manual review owns page intent, buyer recognition, authority strength, specificity, page differentiation, visual quality, and conversion clarity.
 
-Stricter metadata, graph, related-content, and section validators should be rebuilt later around approved designs.
+Stricter metadata, graph, related-content, section, and token validators should be rebuilt later around approved pages and proven patterns.
 
 ---
 
 ## CROSS-REFERENCE MAP
 
-- Identity and system hierarchy: [./FOUNDATION.md](./FOUNDATION.md)
-- Graph and resolver mechanics: [./GRAPH.md](./GRAPH.md)
-- CTA and contact contracts: [./CONVERSION.md](./CONVERSION.md)
+- Identity, system hierarchy, and build logic: [./FOUNDATION.md](./FOUNDATION.md)
 - Public writing style and rewrite rules: [./WRITING.md](./WRITING.md)
+- CTA posture and contact behavior: [./CONVERSION.md](./CONVERSION.md)
+- Visual principles and section composition: [./DESIGN.md](./DESIGN.md)
+- Graph and resolver mechanics are deferred until the approved page system is clear.

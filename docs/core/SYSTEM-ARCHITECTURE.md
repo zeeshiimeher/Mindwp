@@ -1,20 +1,20 @@
 # System Architecture
 
-MindWP main is a design-first rebuild target.
+MindWP main is the business-first, conversion-led rebuild target.
 
 ## Current Flow
 
 ```text
-BUSINESS REALITY -> PAGE INTENT -> PATTERN LOGIC -> SECTION COMPOSITION -> TAILWIND JSX -> APPROVAL -> EXTRACTION
+BUSINESS REALITY → BUYER RECOGNITION → PAGE INTENT → PATTERN → SECTION DESIGN → JSX → APPROVAL → SYSTEMIZATION
 ```
 
 ## Runtime Shape
 
 - `src/app/**` owns routes.
 - `src/domains/**` contains existing domain content and transitional page data.
-- Page renderers may own section composition during design mode.
+- Page renderers may own section composition when the page or section needs custom business communication.
 - Shared components are optional building blocks, not mandatory gates.
-- Data files stay minimal until a page or section is visually approved.
+- Data files stay minimal until a page or section is approved and worth systemizing.
 
 ## Active Commands
 
@@ -29,7 +29,7 @@ BUSINESS REALITY -> PAGE INTENT -> PATTERN LOGIC -> SECTION COMPOSITION -> TAILW
 ## Minimal Safety Stack
 
 - Build must run.
-- TypeScript must not be completely broken.
+- TypeScript must stay useful without forcing premature page/section contracts.
 - Lint should stay clean.
 - Public source/content must not expose hidden internal tool names.
 - Frontend smoke should catch browser/runtime crashes.
