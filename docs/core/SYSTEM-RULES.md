@@ -1,12 +1,16 @@
 # System Rules
 
-MindWP now uses a business-first, conversion-led build system.
+MindWP uses a business-first, conversion-led build system.
 
 ## Active Rule
 
-Business reality, buyer recognition, page intent, section quality, and visual trust come before final architecture.
+Business reality, buyer recognition, page intent, section quality, and visual trust come before extraction.
 
-Do not use old validators, data contracts, graph reports, dashboards, section keys, or render-alignment rules as current truth.
+The active build path is:
+
+```text
+BUSINESS REALITY -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> TYPES / EXTRACTION
+```
 
 ## Active Checks
 
@@ -28,22 +32,21 @@ Allowed:
 - page-local helper components
 - repeated JSX until a pattern proves it should be extracted
 - flexible section count
-- small, useful types that do not force premature section contracts
+- small, useful types that support the current page
 
-Rebuilt after approval and proven patterns:
+Extract after approval:
 
-- strict section contracts
-- graph/authority rules
-- related-content enforcement
-- CTA registry enforcement
-- strict SEO/OG completeness
-- strict token/Tailwind validation
-- report dashboards
+- shared base components
+- stable data groups
+- domain `pageData` entries
+- related-content rules
+- metadata rules
+- tighter types
 
 ## Safety Rules
 
 - Do not publicly mention GoHighLevel, GHL, or HighLevel.
 - Do not invent fake proof, metrics, testimonials, guarantees, or rankings.
 - Do not add unsupported capabilities.
-- Keep public copy operational and buyer-first, conversion-led.
+- Keep public copy operational and buyer-first.
 - Use frontend smoke checks for runtime page crashes.

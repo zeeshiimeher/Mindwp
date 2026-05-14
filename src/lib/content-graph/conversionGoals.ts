@@ -2,8 +2,7 @@
  * Conversion Goal Resolver
  *
  * Pure mapping from ContentNodeType to ConversionGoal + priority.
- * Used by authority map generator, CTA resolver, conversion analyzer,
- * and the journey engine.
+ * Used by CTA resolution, conversion analysis, and journey helpers.
  */
 
 import { getContentPolicy } from '../../../config/contentPolicy';

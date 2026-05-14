@@ -276,7 +276,7 @@ The banned and discouraged words above apply to public-facing copy only.
 They are not forbidden in:
 - internal documents and planning discussions
 - code comments and architecture language
-- component contracts, validator names, and technical naming
+- component contracts, internal check names, and technical naming
 
 Words like "workflow", "pipeline", and "infrastructure" are useful in technical and internal contexts. Public copy should avoid them unless they are the clearest and most precise term available.
 

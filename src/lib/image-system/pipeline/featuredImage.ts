@@ -22,7 +22,7 @@ import { calculateTitleLayout } from './titleLayout';
 
 const logger = createLogger({ label: 'featured-image', mode: 'summary', rootDir: process.cwd() });
 
-/** Calculate adaptive overlay opacity based on image brightness (legacy helper) */
+/** Calculate adaptive overlay opacity based on image brightness. */
 export function calculateOverlayOpacity(brightness: BrightnessResult): number {
   const avg = brightness.average;
 

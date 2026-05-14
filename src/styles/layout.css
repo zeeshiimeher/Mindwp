@@ -1,8 +1,8 @@
 /*
  * LAYOUT — containers, grids, section rhythm, background utilities.
  *
- * Owns: mw-container, rd-section, mw-grid, mw-split, rd-stack, rd-cluster,
- * rd-panel shell, background context classes, foreground utilities,
+ * Owns: mw-container, layout grids, split layouts, stacks, clusters,
+ * panel shell, background context classes, foreground utilities,
  * section header system, motion utilities.
  *
  * No component-specific styles. No buttons. No cards.
@@ -109,18 +109,6 @@
 }
 
 /* ══════════════════════════════════════════════════════
-   STACK + CLUSTER — flex layout utilities
-   ══════════════════════════════════════════════════════ */
-
-.rd-stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mw-space-4);
-}
-
-
-
-/* ══════════════════════════════════════════════════════
    BACKGROUND CONTEXT CLASSES
    Sets background + establishes readable foreground context.
    ══════════════════════════════════════════════════════ */
@@ -145,7 +133,7 @@
   color: var(--mw-text-on-dark-strong);
 }
 
-/* alias for legacy class name used in existing section components */
+/* Compatibility alias used by existing section components */
 .bg-gradient-base {
   background: var(--mw-gradient-hero);
   color: var(--mw-text-on-dark-strong);

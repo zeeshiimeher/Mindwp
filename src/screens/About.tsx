@@ -5,7 +5,7 @@ import { HeroActions } from '@/components/system/HeroActions';
 import { Card } from '@/components/ui/card';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
-function SectionWrapper({
+function PageSection({
   background,
   className,
   padding,
@@ -31,10 +31,7 @@ export function About() {
   return (
     <div className='about-page'>
       {/* SECTION 1 — REALITY (OPENING) */}
-      <SectionWrapper
-        className='about-page-hero'
-        background='bg-gradient-to-b from-blue-50 to-white'
-      >
+      <PageSection className='about-page-hero' background='bg-gradient-to-b from-blue-50 to-white'>
         <div className='text-center'>
           <span className='mw-text-eyebrow mw-text-signal-cyan'>About MindWP</span>
           <h1 className='mb-6'>The work is already coming in. It just keeps slipping out.</h1>
@@ -46,10 +43,10 @@ export function About() {
           </p>
           <HeroActions allowSecondaryAction />
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* SECTION 2 — WHAT WE ACTUALLY DO */}
-      <SectionWrapper>
+      <PageSection>
         <div className='max-w-3xl'>
           <h2 className='mb-6'>What we actually do</h2>
           <p className='text-muted-foreground mb-4'>
@@ -63,10 +60,10 @@ export function About() {
             visibility, the proof.
           </p>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* SECTION 3 — HOW WE THINK (DIFFERENTIATION) */}
-      <SectionWrapper background='bg-base'>
+      <PageSection background='bg-base'>
         <div className='max-w-3xl'>
           <h2 className='mb-6'>How we think about this</h2>
           <p className='text-muted-foreground mb-4'>
@@ -80,10 +77,10 @@ export function About() {
             job. Strong businesses are built when those steps stop dropping each other.
           </p>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* SECTION 4 — WHO THIS IS FOR */}
-      <SectionWrapper>
+      <PageSection>
         <div className='max-w-3xl'>
           <h2 className='mb-6'>Who this is for</h2>
           <Card className='p-8'>
@@ -101,10 +98,10 @@ export function About() {
             </ul>
           </Card>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* SECTION 5 — WHO THIS IS NOT FOR */}
-      <SectionWrapper background='bg-alt'>
+      <PageSection background='bg-alt'>
         <div className='max-w-3xl'>
           <h2 className='mb-6'>Who this is not for</h2>
           <Card className='p-8'>
@@ -118,10 +115,10 @@ export function About() {
             </ul>
           </Card>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* SECTION 6 — CTA → Smart Website Systems */}
-      <SectionWrapper className='footer-cta cta' padding='none'>
+      <PageSection className='footer-cta cta' padding='none'>
         <DecisionPanel
           heading={{
             title: "Ready to stop losing the work that's already coming in?",
@@ -140,7 +137,7 @@ export function About() {
             },
           ]}
         />
-      </SectionWrapper>
+      </PageSection>
     </div>
   );
 }

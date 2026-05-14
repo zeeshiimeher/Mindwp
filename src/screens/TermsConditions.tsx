@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-function SectionWrapper({
+function PageSection({
   background,
   className,
   children,
@@ -19,7 +19,7 @@ function SectionWrapper({
 export default function TermsConditions() {
   return (
     <div className='legal-page legal-terms'>
-      <SectionWrapper className='legal-terms-hero' background='bg-gradient-surface-muted'>
+      <PageSection className='legal-terms-hero' background='bg-gradient-surface-muted'>
         <div className='legal-terms-hero-container'>
           <div className='legal-content text-center'>
             <h1>Terms &amp; Conditions</h1>
@@ -30,9 +30,9 @@ export default function TermsConditions() {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
-      <SectionWrapper className='legal-terms-content'>
+      <PageSection className='legal-terms-content'>
         <div className='legal-terms-content-container'>
           <div className='legal-content'>
             <h2>Services</h2>
@@ -102,7 +102,7 @@ export default function TermsConditions() {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
     </div>
   );
 }

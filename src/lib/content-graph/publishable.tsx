@@ -47,7 +47,7 @@ function assertPublishableNode(
   const primaryCtaMatches = markup.match(/data-testid="smart-cta"/g) ?? [];
 
   if (primaryCtaMatches.length !== 1) {
-    throw new Error(`Publishable node must register exactly one PrimaryCTASection for ${node.id}`);
+    throw new Error(`Publishable node must render exactly one DecisionPanel for ${node.id}`);
   }
 
   if (markup.trim().length === 0) {

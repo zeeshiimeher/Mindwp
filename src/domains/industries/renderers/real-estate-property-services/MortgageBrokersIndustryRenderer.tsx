@@ -28,11 +28,11 @@ export function MortgageBrokersIndustryRenderer({ data }: IndustryDetailRenderer
           eyebrow: 'Industry rebuild',
           title: 'This page is ready for the rebuild.',
           description:
-            'The legacy industry section contract has been removed. Rebuild this page directly from the renderer.',
+            'This page is ready for a focused renderer-owned section pass when the page intent is approved.',
         }}
         tone='white'
       >
-        <p className='industry-reset-note'>Renderer-first rebuild target.</p>
+        <p className='industry-reset-note'>Renderer-owned page section target.</p>
       </SectionFrame>
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

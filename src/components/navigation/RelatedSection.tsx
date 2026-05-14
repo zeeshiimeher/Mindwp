@@ -32,7 +32,7 @@ function inferItemLabel(href: string): string {
 /**
  * RelatedSection — global related-content section.
  *
- * Server component. Resolves best-effort related items during design mode.
+ * Server component. Resolves related items for the current page journey.
  *
  * CSS: src/styles/components.css (.mw-related-section*)
  */

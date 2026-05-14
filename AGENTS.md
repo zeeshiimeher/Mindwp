@@ -1,15 +1,22 @@
 # MindWP Agent Instructions
 
-## Current Status
+## Source Of Truth
 
-MindWP main is being reset for a design-first rebuild.
+MindWP main is the production rebuild workspace for the new business-first site system.
 
-- The old validator/report/control-plane pipeline has been removed from active use.
-- `Mindwp-Design` is the visual reference and quality source.
-- This main folder is the production-path rebuild target.
-- Design approval comes before final architecture.
+The working sequence is:
 
-Do not recreate the old system to make current pages feel tidy. The current main folder is a rebuild workspace, not production truth.
+```text
+BUSINESS REALITY -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> TYPES / EXTRACTION
+```
+
+1. Business Reality: what is visibly happening in the buyer's business.
+2. Page Intent: what the visitor must recognise, understand, or decide.
+3. Pattern: leak, handoff, stack, split, arc, before/after, priority, fit, proof, scenario, or operating map.
+4. Section Design: the actual section shape.
+5. JSX: build the page or section directly.
+6. Approval: user visually approves.
+7. Types / Extraction: extract stable data, primitives, metadata, and tighter types after the pattern proves itself.
 
 ## What MindWP Is
 
@@ -18,60 +25,31 @@ Do not recreate the old system to make current pages feel tidy. The current main
 - Primary goal: qualified enquiries and conversion through visible, reliable business handling.
 - Six business systems: Smart Website Systems, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth.
 
-Public copy starts from the owner's working day: calls, searches, forms, quotes, jobs, reviews, inboxes, staff, missed follow-up. Use internal system structure quietly; do not lead with it before the reader recognises the situation.
+Public copy starts from the owner's working day: calls, searches, forms, quotes, jobs, reviews, inboxes, staff, and missed follow-up. Use internal system structure quietly; do not lead with it before the reader recognises the situation.
 
-## Build Logic
+## Page Build Rules
 
-```text
-BUSINESS REALITY -> PAGE INTENT -> PATTERN LOGIC -> SECTION COMPOSITION -> TAILWIND JSX -> APPROVAL -> EXTRACTION
-```
-
-1. Business Reality: what is visibly happening in the buyer's business.
-2. Page Intent: what the visitor must recognise, understand, or decide.
-3. Pattern Logic: leak, handoff, stack, split, arc, before/after, priority, fit, proof, scenario, operating map.
-4. Section Composition: the actual section shape.
-5. Tailwind JSX: build the page/section directly.
-6. Approval: user visually approves.
-7. Extraction: only then extract primitives, stable data, validators, SEO/graph/related rules, and tighter types.
-
-## Design-Mode Allowances
-
-During design mode, agents may use:
-
-- JSX-owned content
-- local arrays inside page files
-- page-owned section layouts
-- temporary repeated JSX
-- flexible section count
-- full section rewrites
-- Tailwind layout/composition utilities
-- page-local helper components
-- minimal data files
-- broad transitional types
-
-Good UI matters more than perfect architecture during design mode. Do not preserve old data contracts by making old section fields optional.
+- Compose pages and sections in JSX first when the pattern is still being shaped.
+- Page-owned content, local arrays, page-local helpers, and repeated JSX are acceptable while the section is being proven.
+- Extract only after visual approval or repeated use makes the shape stable.
+- Domain `pageData` files connect slug -> data -> renderer.
+- `RelatedSection` belongs in domain/config injection, not inside page bodies or renderers.
+- Use Tailwind utilities plus existing `mw-*` and token classes.
+- Avoid page-specific CSS for migrated pages.
 
 ## Components
 
-Useful components may be used as optional building blocks:
+Approved shared base components:
 
-- `HeroFrame` / `PageHero`
+- `HeroFrame`
 - `SectionFrame`
-- `FAQSection` / FAQ blocks
-- `DecisionPanel` / CTA blocks
-- `Container`
-- `SectionHeader`
-- `Button`
+- `FAQSection`
+- `DecisionPanel`
 - `SignalDot`
-- `Pill` / `Badge`
+- `StatusBadge`
+- `Button` where already part of the current component surface
 
-These are tools, not gates. No validator or data contract should require every section to use a specific shell during design mode.
-
-## Styling
-
-Tailwind is allowed for layout, composition, spacing, responsive behavior, and typography during design mode. Token-aware colors and surfaces are preferred where already available, but color/token enforcement is a later production pass.
-
-Do not let old CSS-only rules block visual exploration.
+These are building blocks, not gates. Use custom JSX when it communicates the business reality better.
 
 ## Active Commands
 
@@ -86,28 +64,14 @@ Do not let old CSS-only rules block visual exploration.
 
 Use `check:frontend` after visual/page work to catch browser/runtime crashes.
 
-## Do Not Bring Back
-
-- `system:full`
-- `system:quick`
-- `validate:all`
-- `build-safe`
-- old validators
-- graph/report/authority gates
-- canonical section contracts
-- old render-alignment checks
-- old dashboard/report system
-- mandatory related-section injection
-- CTA registry enforcement
-- strict token/Tailwind gates during design mode
-
 ## Safety Rules
 
 - Do not publicly mention GoHighLevel, GHL, or HighLevel.
 - Do not invent fake proof, fake metrics, testimonials, rankings, guarantees, or client results.
 - Do not add unsupported service capabilities.
+- Keep service-business buyer focus, conversion clarity, and system-first positioning.
 - Build and frontend smoke should pass after page work.
-- If docs conflict, follow the current scoped user prompt first, then the design-first docs, then current code.
+- If docs conflict, follow the current scoped user prompt first, then these instructions, then current code.
 
 ## Reading Discipline
 
@@ -119,5 +83,3 @@ Read only what is relevant to the task. For page/design work, prefer:
 - `docs/core/CONTENT.md`
 - `docs/core/CONVERSION.md`
 - `docs/core/DESIGN.md`
-
-Do not revive archived planning docs as active instructions.

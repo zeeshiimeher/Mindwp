@@ -2,7 +2,7 @@
 
 > Authority for MindWP’s business identity, buyer, positioning, service hierarchy, vocabulary, and public boundaries.
 > This document defines what MindWP is, who it serves, and how it should be expressed.
-> It does not define implementation architecture, validators, generated reports, or fixed page/section structure.
+> It does not define implementation architecture or fixed page structure.
 
 ---
 
@@ -31,7 +31,7 @@ When documents conflict, follow this order for business and public-facing decisi
 5. `DESIGN.md` — visual principles, page quality, section composition, UI direction.
 6. Active planning/build-system docs — current implementation workflow and rebuild rules.
 
-Graph, generated reports, validators, strict data contracts, and old control-plane docs are implementation details. They must not override this business identity or force weak page design.
+Implementation details must not override this business identity or force weak page design.
 If another document conflicts with this file, update that document.
 
 ---
@@ -53,11 +53,11 @@ The build flow is:
 5. **Section Design** — design the section shape that makes the pattern clear and visually strong.
 6. **JSX** — build directly with flexible JSX/Tailwind and useful components.
 7. **Approval** — judge the section/page visually, strategically, and commercially.
-8. **Systemization** — after approval, extract stable pieces into shared components, data, types, and validators.
+8. **Extraction** — after approval, extract stable pieces into shared components, data, metadata, and tighter types.
 
-Validators protect approved decisions. They do not decide the page before it exists.
+Checks protect approved decisions. They do not decide the page before it exists.
 
-Useful components such as Hero, SectionFrame, FAQ, DecisionPanel, Container, SectionHeader, Button, SignalDot, and Badge may exist, but they are building blocks, not mandatory gates. A section may use a shared component when it helps, or custom page-owned JSX when the idea requires it.
+Useful components such as HeroFrame, SectionFrame, FAQSection, DecisionPanel, Button, SignalDot, and StatusBadge may exist, but they are building blocks, not mandatory gates. A section may use a shared component when it helps, or custom page-owned JSX when the idea requires it.
 
 ---
 
@@ -564,7 +564,7 @@ Do not open with services, features, tools, or systems before the problem is cle
 - Content that can be copied between industries with minimal changes.
 - Educational or blog-style introductions on landing pages.
 - Language that positions MindWP primarily as a website builder.
-- Copy that passes structural validation but weakens authority, specificity, or conversion clarity.
+- Copy that satisfies structure but weakens authority, specificity, or conversion clarity.
 - Case studies that sound generic, invented, over-polished, or disconnected from real operational change.
 
 ---
@@ -575,4 +575,4 @@ Do not open with services, features, tools, or systems before the problem is cle
 - Writing voice and public copy rules: [./WRITING.md](./WRITING.md)
 - CTA posture and conversion behavior: [./CONVERSION.md](./CONVERSION.md)
 - Visual principles and section composition: [./DESIGN.md](./DESIGN.md)
-- Graph, reports, strict architecture, and validators are rebuilt after the approved page system is clear.
+- Related-content, metadata, and tighter types are extracted after the approved page system is clear.

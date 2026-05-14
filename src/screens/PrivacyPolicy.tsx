@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-function SectionWrapper({
+function PageSection({
   background,
   className,
   children,
@@ -19,7 +19,7 @@ function SectionWrapper({
 export default function PrivacyPolicy() {
   return (
     <div className='legal-page legal-privacy'>
-      <SectionWrapper className='legal-privacy-hero' background='bg-gradient-surface-muted'>
+      <PageSection className='legal-privacy-hero' background='bg-gradient-surface-muted'>
         <div className='legal-privacy-hero-container'>
           <div className='legal-content text-center'>
             <h1>Privacy Policy</h1>
@@ -30,9 +30,9 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
-      <SectionWrapper className='legal-privacy-content'>
+      <PageSection className='legal-privacy-content'>
         <div className='legal-privacy-content-container'>
           <div className='legal-content'>
             <h2>Information we collect</h2>
@@ -132,7 +132,7 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
     </div>
   );
 }

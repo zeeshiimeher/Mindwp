@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { IndustryCategory } from '@/domains/industries/catalog';
-
-export type DesignModeValue = any;
 
 export type IndustrySeoData = {
   title: string;
@@ -19,7 +16,7 @@ export type IndustryHeroData = {
   title: string;
   description: string;
   list?: string[];
-  [key: string]: DesignModeValue;
+  [key: string]: unknown;
 };
 
 export type FAQItem = {
@@ -40,7 +37,15 @@ export type CTAConfig = {
     primary?: boolean;
     variant?: string;
   }>;
-  [key: string]: DesignModeValue;
+  expectations?: Array<{
+    num?: string;
+    text: string;
+  }>;
+  reassurance?: {
+    noSell?: string;
+    tone?: string;
+  };
+  [key: string]: unknown;
 };
 
 export type IndustryPageDataBase = {
@@ -62,7 +67,7 @@ export type IndustryPageDataBase = {
     items: FAQItem[];
   };
   cta: CTAConfig;
-  [key: string]: DesignModeValue;
+  [key: string]: unknown;
 };
 
 export type IndustryCategoryPageData = IndustryPageDataBase & {

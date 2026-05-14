@@ -4,11 +4,9 @@ import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
 /**
  * GRAPH QUERY API
  *
- * Design-mode graph query helpers.
- *
- * These helpers are best-effort only. They do not import generated authority
- * reports and they should not block page composition while the rebuild is in
- * design mode.
+ * Runtime relationship helpers used by related-content surfaces.
+ * These helpers should not drive page composition before page intent and
+ * section design are clear.
  */
 
 // Re-export for consumers (single import point)

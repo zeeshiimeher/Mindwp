@@ -1,49 +1,35 @@
-# MindWP Design-First Rebuild
+# MindWP Page Build Workflow
 
 This is the active planning note for the main MindWP folder.
 
-## Current Status
-
-- The main folder is being reset for a design-first rebuild.
-- The old validator/report/control plane has been removed from active workflow.
-- Old canonical section and generated-report type contracts are being stripped back.
-- `Mindwp-Design` is the visual reference and quality source.
-- The main folder is the production-path rebuild target.
-
-## Build Logic
+## Core Flow
 
 ```text
-BUSINESS REALITY -> PAGE INTENT -> PATTERN LOGIC -> SECTION COMPOSITION -> TAILWIND JSX -> APPROVAL -> EXTRACTION
+BUSINESS REALITY -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> TYPES / EXTRACTION
 ```
 
-## Design Mode
+## Working Rules
 
-Allowed during design mode:
+- Start from the buyer's visible working day.
+- Decide the page intent before composing sections.
+- Choose the pattern logic that best explains the problem or decision.
+- Compose the actual section in JSX first.
+- Use Tailwind utilities plus existing `mw-*` and token classes for fast layout and responsive structure.
+- Ask for visual approval before extracting shared primitives or data structures.
+- Keep types broad enough to support the current page, then tighten them when the pattern is stable.
 
-- JSX-owned content
-- local visual arrays
-- page-owned layouts
-- temporary repeated JSX
-- page-local helper components
-- flexible section count
-- full section rewrites
-- Tailwind layout/composition utilities
-- minimal data files
-- broad transitional types
+## Approved Base Components
 
-Do not preserve old architecture by making old section fields optional. Delete old contracts and rebuild strong types later from approved designs.
+- `HeroFrame`
+- `SectionFrame`
+- `FAQSection`
+- `DecisionPanel`
+- `SignalDot`
+- `StatusBadge`
 
-## Page Improvement Workflow
+Use these when they help. Custom page-owned JSX is appropriate when the section needs a specific business explanation.
 
-1. Start with the buyer's visible working day.
-2. Decide the page intent.
-3. Choose the pattern logic.
-4. Compose the actual sections in JSX.
-5. Use Tailwind for fast layout and responsive exploration.
-6. Ask for visual approval.
-7. Extract stable primitives/data only after approval.
-
-## Extraction Later
+## Extraction
 
 After approval, extract only what has proven stable:
 
@@ -51,9 +37,8 @@ After approval, extract only what has proven stable:
 - shared visual components
 - stable data groups
 - production metadata
-- related/graph rules
-- stricter types
-- targeted validators
+- related-content rules
+- tighter types
 
 Extraction is a cleanup phase, not the design starting point.
 
@@ -73,15 +58,3 @@ Extraction is a cleanup phase, not the design starting point.
 - Do not invent proof, metrics, rankings, testimonials, or guarantees.
 - Keep copy operational, specific, and buyer-first.
 - Run build and frontend smoke after meaningful page work.
-
-## Deferred Systems
-
-These are deferred until the design system is approved:
-
-- graph/authority scoring
-- report dashboards
-- section-order validators
-- strict token/Tailwind validators
-- CTA registry enforcement
-- related-content enforcement
-- strict SEO/OG contracts

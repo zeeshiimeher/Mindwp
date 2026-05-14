@@ -33,7 +33,7 @@ Before writing, editing, or adding content, decide in this order:
 7. Confirm the pattern that best communicates the idea.
 8. Confirm CTA posture from [./CONVERSION.md](./CONVERSION.md).
 
-Metadata, graph relationships, related-content routing, and final data extraction happen after the page or section is approved.
+Metadata, relationships, related-content routing, and final data extraction happen after the page or section is approved.
 
 ---
 
@@ -44,8 +44,8 @@ Metadata, graph relationships, related-content routing, and final data extractio
 - BOFU conversion structure belongs to service pages.
 - Other page types escalate upward; they do not absorb service-page behavior.
 - Page type, page intent, CTA posture, and content behavior must agree.
-- Structural validation does not prove authority, specificity, visual quality, or conversion strength.
-- Metadata, graph relationships, related-content routing, and stricter validators are rebuilt after the approved page system is clear.
+- Structure alone does not prove authority, specificity, visual quality, or conversion strength.
+- Metadata, relationships, and related-content routing are extracted after the approved page system is clear.
 
 ---
 
@@ -221,7 +221,7 @@ Do not invent parallel identifiers, parallel page roles, or parallel relationshi
 
 - One page owns one primary intent.
 - Topics represent problem spaces, not titles.
-- Metadata should support authority and routing after approval; it must not drive weak page design before the page meaning is clear.
+- Metadata should support trust and routing after approval; it must not drive weak page design before the page meaning is clear.
 - Multiple pages may share a topic only when their search intents differ materially.
 - Search intent targeting must respect the page-type hierarchy instead of overriding it.
 
@@ -235,7 +235,7 @@ The MindWP content build path is:
 BUSINESS REALITY → BUYER RECOGNITION → PAGE INTENT → PATTERN → SECTION DESIGN → JSX → APPROVAL → SYSTEMIZATION
 ```
 
-Relationship generation, ranking, and authority handling are rebuilt after the approved page system is clear.
+Relationship handling is shaped after the approved page system is clear.
 
 Content flow must preserve meaning, not just structure:
 
@@ -344,9 +344,9 @@ Case studies may support service conversion, but the case study itself remains a
 
 ## ENFORCEMENT MODEL
 
-Current enforcement is intentionally focused. Manual review owns page intent, buyer recognition, authority strength, specificity, page differentiation, visual quality, and conversion clarity.
+Current checks are intentionally focused. Manual review owns page intent, buyer recognition, authority strength, specificity, page differentiation, visual quality, and conversion clarity.
 
-Stricter metadata, graph, related-content, section, and token validators should be rebuilt later around approved pages and proven patterns.
+Metadata, related-content, section data, and token rules should be extracted around approved pages and proven patterns.
 
 ---
 
@@ -356,4 +356,4 @@ Stricter metadata, graph, related-content, section, and token validators should 
 - Public writing style and rewrite rules: [./WRITING.md](./WRITING.md)
 - CTA posture and contact behavior: [./CONVERSION.md](./CONVERSION.md)
 - Visual principles and section composition: [./DESIGN.md](./DESIGN.md)
-- Graph and resolver mechanics are deferred until the approved page system is clear.
+- Related-content mechanics are shaped after the approved page system is clear.

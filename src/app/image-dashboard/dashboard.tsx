@@ -76,7 +76,7 @@ const statValue = 'text-2xl font-bold text-white mt-1';
 
 // ─── Components ─────────────────────────────────────────────────────
 
-function SectionWrapper({
+function DashboardSection({
   className,
   children,
 }: {
@@ -159,7 +159,7 @@ export default function ImageDashboard() {
       ) : (
         <div className='space-y-6'>
           {/* ── Overview Stats ── */}
-          <SectionWrapper
+          <DashboardSection
             padding='none'
             container='none'
             className='grid grid-cols-1 sm:grid-cols-3 gap-4'
@@ -176,10 +176,10 @@ export default function ImageDashboard() {
               <p className={statLabel}>Success Rate (≥8)</p>
               <p className={statValue}>{overview.successRate}%</p>
             </div>
-          </SectionWrapper>
+          </DashboardSection>
 
           {/* ── Score Distribution + Domain Performance ── */}
-          <SectionWrapper
+          <DashboardSection
             padding='none'
             container='none'
             className='grid grid-cols-1 md:grid-cols-2 gap-4'
@@ -207,11 +207,11 @@ export default function ImageDashboard() {
                 <p className='text-sm text-zinc-500'>No domain data yet</p>
               )}
             </div>
-          </SectionWrapper>
+          </DashboardSection>
 
           {/* ── Common Issues ── */}
           {issues.length > 0 && (
-            <SectionWrapper padding='none' container='none' className={card}>
+            <DashboardSection padding='none' container='none' className={card}>
               <h2 className={heading2}>Common Issues</h2>
               <div className='grid grid-cols-2 sm:grid-cols-4 gap-3'>
                 {issues.map(([issue, count]) => (
@@ -224,11 +224,11 @@ export default function ImageDashboard() {
                   </div>
                 ))}
               </div>
-            </SectionWrapper>
+            </DashboardSection>
           )}
 
           {/* ── Recent Images ── */}
-          <SectionWrapper padding='none' container='none' className={card}>
+          <DashboardSection padding='none' container='none' className={card}>
             <h2 className={heading2}>Recent Generations</h2>
             <div className='overflow-x-auto'>
               <table className='w-full text-sm'>
@@ -265,11 +265,11 @@ export default function ImageDashboard() {
                 </tbody>
               </table>
             </div>
-          </SectionWrapper>
+          </DashboardSection>
 
           {/* ── Best Configs (Learning Memory) ── */}
           {Object.keys(memory).length > 0 && (
-            <SectionWrapper padding='none' container='none' className={card}>
+            <DashboardSection padding='none' container='none' className={card}>
               <h2 className={heading2}>Best Configs (Learning Memory)</h2>
               <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {Object.entries(memory).map(([key, config]) => (
@@ -298,7 +298,7 @@ export default function ImageDashboard() {
                   </div>
                 ))}
               </div>
-            </SectionWrapper>
+            </DashboardSection>
           )}
         </div>
       )}

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-function SectionWrapper({
+function PageSection({
   background,
   className,
   children,
@@ -19,7 +19,7 @@ function SectionWrapper({
 export default function CookiePolicy() {
   return (
     <div className='legal-page legal-cookies'>
-      <SectionWrapper className='legal-cookies-hero' background='bg-gradient-surface-muted'>
+      <PageSection className='legal-cookies-hero' background='bg-gradient-surface-muted'>
         <div className='legal-cookies-hero-container'>
           <div className='legal-content text-center'>
             <h1>Cookie Policy</h1>
@@ -30,9 +30,9 @@ export default function CookiePolicy() {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
-      <SectionWrapper className='legal-cookies-content'>
+      <PageSection className='legal-cookies-content'>
         <div className='legal-cookies-content-container'>
           <div className='legal-content'>
             <h2>What cookies are</h2>
@@ -104,7 +104,7 @@ export default function CookiePolicy() {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
     </div>
   );
 }

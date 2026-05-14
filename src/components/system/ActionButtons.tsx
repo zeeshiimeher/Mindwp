@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Button, type ButtonProps } from '@/components/reusable/single/Button';
+import { Button, type ButtonProps } from '@/components/primitives/Button';
 import { usePageIdentity } from '@/components/system/PageEnforcement';
 import { cn } from '@/components/ui/utils';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';

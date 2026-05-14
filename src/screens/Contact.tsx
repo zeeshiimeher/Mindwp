@@ -74,7 +74,7 @@ type ContactProps = {
   initialSource?: string;
 };
 
-function SectionWrapper({
+function PageSection({
   background,
   className,
   padding,
@@ -285,7 +285,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
       )}
 
       {/* Hero Section */}
-      <SectionWrapper
+      <PageSection
         className='contact-page-hero'
         background='bg-gradient-to-b from-blue-50 to-white'
       >
@@ -298,10 +298,10 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* Main Content */}
-      <SectionWrapper className='contact-page-main'>
+      <PageSection className='contact-page-main'>
         <div className='contact-page-main-container-1'>
           <div className='contact-page-main-grid'>
             {/* Contact Form */}
@@ -648,10 +648,10 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </PageSection>
 
       {/* Alternative CTA */}
-      <SectionWrapper className='cta footer-cta' padding='none'>
+      <PageSection className='cta footer-cta' padding='none'>
         <DecisionPanel
           heading={{
             title: 'Need to talk through the right next step?',
@@ -670,7 +670,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
             },
           ]}
         />
-      </SectionWrapper>
+      </PageSection>
     </div>
   );
 }

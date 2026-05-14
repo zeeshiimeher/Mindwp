@@ -8,7 +8,7 @@ import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
-function SectionWrapper({
+function PageSection({
   background,
   className,
   children,
@@ -37,7 +37,7 @@ export function FeaturesLanding() {
       >
         <main>
           {/* Hero Section */}
-          <SectionWrapper
+          <PageSection
             className='feature-lnd feature-lnd__hero'
             background='bg-gradient-surface-muted'
           >
@@ -50,10 +50,10 @@ export function FeaturesLanding() {
                 website system is in place.
               </p>
             </div>
-          </SectionWrapper>
+          </PageSection>
 
           {/* All Features Grid */}
-          <SectionWrapper className='feature-lnd feature-lnd__gridSec' background='bg-white'>
+          <PageSection className='feature-lnd feature-lnd__gridSec' background='bg-white'>
             <div className='feature-lnd__grid l-grid l-gap-6 md:l-grid-2 lg:l-grid-3'>
               {features.map(feature => {
                 const Icon = feature.icon;
@@ -83,7 +83,7 @@ export function FeaturesLanding() {
                 );
               })}
             </div>
-          </SectionWrapper>
+          </PageSection>
 
           {/* CTA Section */}
           <DecisionPanel
