@@ -2,7 +2,7 @@
 
 > Single authority for public-facing language.
 > This document controls wording, rhythm, rewrite behavior, and public copy.
-> Positioning, service hierarchy, and page behavior still come from `FOUNDATION.md`.
+> Positioning, offer architecture, service hierarchy, and page behavior still come from `FOUNDATION.md` and `OFFER-ARCHITECTURE.md`.
 
 ---
 
@@ -13,6 +13,7 @@ Use this doc when writing, rewriting, polishing, or auditing public-facing copy.
 It does not decide:
 
 - what MindWP is
+- what the active offer model is
 - which service owns the page
 - which CTA belongs on the page
 - which graph relationships are valid
@@ -24,15 +25,19 @@ Those decisions come from the governing docs.
 ## NON-NEGOTIABLE WRITING RULES
 
 1. Start with what the reader is experiencing, not what MindWP offers.
-2. Write in FLOW → HANDLING → RESULT, never PAGES → DESIGN → FEATURES.
+2. Write in FLOW → HANDLING → RESULT, never PAGES → DESIGN → FEATURES or SERVICES → TOOLS → FEATURES.
 3. Preserve strong lines. Do not rewrite authority assets just because they can be improved.
 4. Fix weak sections only. Full-page rewrites are rare.
 5. Every important line must describe something visible, audible, measurable, or recognisable.
-6. Avoid builder, agency, SaaS, and hype language.
+6. Avoid builder, agency, SaaS, AI-chatbot, CRM-reseller, rankings-hype, and tool-first language.
 7. Case studies must sound observed, not polished.
 8. Industry pages must feel specific to that industry, not reusable.
 9. CTAs must feel like the next natural step, not a pitch.
 10. If writing makes MindWP sound like a normal web design provider, rewrite it.
+11. Do not revive removed service names, old system models, or service-catalog framing.
+12. Public copy must not mention backend CRM, automation, or white-label platform names.
+13. AI may be part of delivery, but public language must lead with response, handling, routing, and missed enquiries.
+14. CRM may be part of delivery, but public language must lead with ownership, follow-up, status, and next step.
 
 ---
 
@@ -41,9 +46,13 @@ Those decisions come from the governing docs.
 Before writing anything, lock this:
 
 - Follow [./FOUNDATION.md](./FOUNDATION.md).
-- If this file conflicts with `FOUNDATION.md`, follow `FOUNDATION.md`.
+- Follow [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
+- If this file conflicts with `FOUNDATION.md` or `OFFER-ARCHITECTURE.md`, follow the governing doc.
 - Writing direction is FLOW → HANDLING → RESULT.
 - Never default to PAGES → DESIGN → FEATURES.
+- Never default to SERVICES → TOOLS → FEATURES.
+- Use the five active systems only: Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems.
+- Treat Revenue Recovery as a cross-system improvement layer, not a public service page.
 
 Writing controls language and execution. System ownership stays in the governing docs.
 
@@ -184,7 +193,7 @@ Good:
 
 > Leads come in. Nobody follows up.
 
-If content sounds like marketing, SaaS, or agency copy, rewrite it.
+If content sounds like marketing, SaaS, AI-chatbot, CRM-reseller, SEO-hype, or agency copy, rewrite it.
 
 ### Before Writing, Answer
 
@@ -229,6 +238,14 @@ Preferred starting points:
 - customers waiting
 - owner memory
 - work slipping away
+- missed calls
+- slow response
+- scattered messages
+- booking requests
+- quote follow-up
+- next steps
+- local trust
+- proof not collected
 
 If a sentence starts with "infrastructure", "layer", "stack", "surface", "architecture", or "system" before the visible problem is established, reverse the order. Problem first, then system framing.
 
@@ -247,6 +264,21 @@ These words are valid internally. Use them carefully in public copy, only after 
 - authority (allowed, but explain as trust signals or search presence, not as an abstract concept)
 
 "Systems-first" is a useful internal framing. In public copy, it should appear after the problem is understood — not as the opening position.
+
+### Active System Language
+
+Use only the active system names approved in `FOUNDATION.md` and `OFFER-ARCHITECTURE.md`:
+
+- Smart Website Systems
+- Local SEO Authority Systems
+- Lead Response & Handling Systems
+- Follow-Up & CRM Systems
+- Reputation & Review Systems
+
+Revenue Recovery is a cross-system improvement layer, not a primary public service page.
+
+Public copy must not introduce, preserve, or revive removed service names or old system models.
+If older content contains removed service language, rewrite it into the active model.
 
 ### Protected Phrases
 
@@ -267,6 +299,20 @@ Also avoid:
 
 our CRM, our system, our platform, ensures, enables, effectively, empowers, facilitates
 
+Also avoid public tool/vendor framing:
+
+- AI chatbot
+- AI receptionist as the whole offer
+- CRM platform setup
+- all-in-one platform
+- automation platform
+- workflow engine
+- rankings guaranteed
+- dominate Google
+- growth machine
+- backend stack
+- white-label platform
+
 Exception: `system` is allowed for the named offer `Smart Website Systems`, internal architecture, metadata, validation, routing, or when removing it makes the sentence less clear.
 
 ### Scope of Language Rules
@@ -282,18 +328,26 @@ Words like "workflow", "pipeline", and "infrastructure" are useful in technical 
 
 ### Preferred Replacements
 
-| Instead of                     | Write                               |
-| ------------------------------ | ----------------------------------- |
-| comprehensive tracking         | nothing gets missed                 |
-| full visibility                | you can see what's happening        |
-| seamless integration           | it just works                       |
-| automated notification routing | the right person finds out          |
-| automated follow-up sequences  | follow-up happens on its own        |
-| unified platform               | everything in one place             |
-| automated scheduling           | you don't have to remember          |
-| SEO-optimized                  | Google can read it                  |
-| lead capture                   | their details land somewhere useful |
-| automated reminders            | nobody has to chase                 |
+| Instead of                     | Write                                   |
+| ------------------------------ | --------------------------------------- |
+| comprehensive tracking         | nothing gets missed                     |
+| full visibility                | you can see what's happening            |
+| seamless integration           | it just works                           |
+| automated notification routing | the right person finds out              |
+| automated follow-up sequences  | follow-up happens on its own            |
+| unified platform               | everything in one place                 |
+| automated scheduling           | you don't have to remember              |
+| SEO-optimized                  | Google can read it                      |
+| lead capture                   | their details land somewhere useful     |
+| automated reminders            | nobody has to chase                     |
+| AI chatbot                     | fast response when someone reaches out  |
+| AI receptionist                | missed calls get handled                |
+| CRM setup                      | every enquiry has an owner and next step |
+| automation workflow            | follow-up happens without chasing       |
+| pipeline management            | you can see where each enquiry stands   |
+| reputation software            | good work becomes visible proof         |
+| SEO rankings                   | nearby customers can find and verify you |
+| revenue growth                 | value stops leaking after enquiries arrive |
 
 ### Anti-Builder Rule
 
@@ -339,6 +393,45 @@ Bad:
 Good:
 
 > Leads get handled properly.
+
+### Tool and Platform Boundary
+
+Public copy must not mention backend CRM, automation, AI, form, booking, or white-label platform names.
+
+Public copy should sell:
+
+- better handling
+- faster response
+- visible follow-up
+- cleaner ownership
+- less missed work
+- better proof capture
+- practical business clarity
+
+Public copy should not sell:
+
+- the CRM platform
+- automation software
+- the AI tool
+- dashboard features as the main offer
+- integrations as the main offer
+- software setup as the main offer
+
+Wrong:
+
+> We set up your CRM platform and automations.
+
+Right:
+
+> Every enquiry has an owner, a status, and a next step.
+
+Wrong:
+
+> Our AI chatbot handles customer enquiries.
+
+Right:
+
+> Missed calls and forms move into a response path instead of disappearing.
 
 ### Generic Phrase Kill List
 
@@ -542,6 +635,24 @@ CTA should feel like a conversation, not a pitch.
 
 Tell them what happens next. No urgency tactics.
 
+Preferred CTA direction:
+
+- Review my enquiry flow
+- Find where work is slipping
+- Check my website system
+- Map my follow-up gaps
+- Talk through my current setup
+- Request a system review
+
+Avoid:
+
+- Book a demo
+- Start free trial
+- Claim your spot
+- Skyrocket my leads
+- Get a free quote
+- Buy now
+
 ---
 
 ## 10. INDUSTRY AND CROSS-PAGE RULES
@@ -568,6 +679,16 @@ Service pages are industry-agnostic by default.
 
 Use generic service-business language: calls, forms, jobs, customers.
 Do not make a service page sound like it is only for one industry.
+
+Service pages must resolve to one active system:
+
+- Smart Website Systems
+- Local SEO Authority Systems
+- Lead Response & Handling Systems
+- Follow-Up & CRM Systems
+- Reputation & Review Systems
+
+Revenue Recovery may be referenced as an improvement layer, but not as a primary service page.
 
 ### Cross-Page Rules
 
@@ -652,7 +773,7 @@ Answer one question. Use real examples. Help someone understand the decision, fr
 
 One capability, one situation, one fix.
 
-A feature page must feel like a specific fix, not a full offer.
+A feature page must feel like a specific fix inside one active system, not a full offer.
 
 Feature pages may use more capability-specific language than Tier-1 service pages, because they explain one function inside a larger system. Allowed: capability labels, feature and function descriptions, integration context, technical clarity, status and state language, and configuration-style explanation when relevant.
 
@@ -684,6 +805,9 @@ Run after every meaningful write or rewrite.
 - [ ] No SaaS-style feature lists.
 - [ ] No builder framing.
 - [ ] No hype or unsupported superlatives.
+- [ ] No removed service names or old system models.
+- [ ] No backend platform/tool names in public copy.
+- [ ] No AI-chatbot, CRM-reseller, or rankings-guarantee positioning.
 
 ### AI Detection
 
@@ -701,6 +825,8 @@ Run after every meaningful write or rewrite.
 - [ ] CTA feels like a conversation.
 - [ ] FAQ uses the reader's voice.
 - [ ] Page reflects one primary system.
+- [ ] Page reflects one active system from the approved five-system model.
+- [ ] Revenue Recovery is not treated as a primary service page.
 
 ### Builder Check
 
@@ -735,27 +861,55 @@ When unsure, delete.
 
 ## 16. PAGE INTENT REFERENCE
 
-### Smart Website
+### Smart Website Systems
 
-Problem: “My website looks fine but doesn't bring in business.”
-Angle: the website is not ugly; it is not doing enough. No clear next steps. No follow-up.
+Problem:
+“My website looks fine but it does not explain the business clearly or bring in enough useful enquiries.”
 
-### CRM
+Angle:
+The website is not just a design surface. It is the visible control point for offer clarity, trust, enquiry capture, and the next step.
 
-Problem: “Leads come in but some disappear. Nobody knows who's handling what.”
-Angle: first conversation goes fine. Everything after falls apart.
+### Local SEO Authority Systems
 
-### Local SEO
+Problem:
+“Nearby customers search for what we do, but they find or trust someone else first.”
 
-Problem: “People search for what I do. They find my competitors.”
-Angle: the website does not explain what you do or where. Fix the website first, then SEO works.
+Angle:
+Local visibility is not ranking hype. Customers need to find, verify, and trust the business before they enquire.
 
-### Reputation
+### Lead Response & Handling Systems
 
-Problem: “We do great work but our Google reviews don't show it.”
-Angle: work is already good. The missing piece is asking at the right time.
+Problem:
+“Calls, forms, and messages come in, but response is slow, scattered, or missed.”
 
-Each page must clearly reflect one primary system.
+Angle:
+The first response path matters. Missed calls, forms, messages, and booking requests need to land somewhere useful and move quickly.
+
+### Follow-Up & CRM Systems
+
+Problem:
+“Enquiries come in, but nobody knows who owns the next step or whether follow-up happened.”
+
+Angle:
+CRM is behind the scenes. The public problem is ownership, status, follow-up, and not depending on memory.
+
+### Reputation & Review Systems
+
+Problem:
+“We do good work, but our reviews and public proof do not show it.”
+
+Angle:
+Good work should become visible proof. Review requests and feedback routing need to happen at the right time.
+
+### Revenue Recovery Layer
+
+Problem:
+“Value is still leaking after enquiries arrive.”
+
+Angle:
+Revenue Recovery is an improvement layer across the active systems. It is not a primary service page.
+
+Each page must clearly reflect one primary active system.
 If a reader cannot tell what the page is about, rewrite it.
 
 ---
@@ -834,7 +988,7 @@ If every section passes, the content is ready.
 
 ## SYSTEM-LEVEL REFERENCE
 
-Service definitions, boundaries, terminology, and system consistency live in [./FOUNDATION.md](./FOUNDATION.md).
+Service definitions, boundaries, terminology, offer architecture, and system consistency live in [./FOUNDATION.md](./FOUNDATION.md) and [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 ---
 
@@ -852,5 +1006,23 @@ Rules:
 - If a line only exists to satisfy metadata, it does not belong in body copy.
 - No brand-in-content drift where the live system expects neutral content and brand composition in the SEO layer.
 - Writing must stay compatible with system constraints around identity, SEO, OG, CTA, and page behavior.
+
+## OFFER-MODEL VALIDATION
+
+Before finalising public copy, confirm:
+
+- the copy starts with the buyer's real situation
+- the copy uses the active five-system model
+- the copy does not revive removed service names
+- the copy does not mention backend tool/platform names
+- the copy does not make AI the product
+- the copy does not make CRM the product
+- the copy does not promise rankings, reviews, or revenue
+- the copy explains the business path before system taxonomy where needed
+- the copy feels operational, calm, premium, and practical
+
+If any of these fail, rewrite the affected section only.
+
+---
 
 Final rule: protect authority first, improve language second.

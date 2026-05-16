@@ -1,24 +1,24 @@
 import type { LucideIcon } from 'lucide-react';
 import {
+  AlertTriangle,
   ArrowRight,
   BarChart3,
+  Building2,
+  Clock,
   FileText,
   GitBranch,
   Globe,
   Inbox,
+  MapPin,
+  MessageSquare,
   PhoneOff,
+  Quote,
+  RefreshCw,
   Repeat,
   Search,
   Star,
-  AlertTriangle,
-  Building2,
-  MapPin,
-  RefreshCw,
-  Quote,
-  MessageSquare,
-  Workflow,
   UserCheck,
-  Clock,
+  Workflow,
 } from 'lucide-react';
 
 import { FAQSection as FAQSectionComponent } from '@/components/content/FAQSection';
@@ -36,9 +36,6 @@ const HOME_ICON_MAP: Record<HomeIconKey, LucideIcon> = {
   'missed-call': PhoneOff,
   'follow-up-due': Repeat,
 };
-
-
-
 
 export default function Homepage() {
   return (
@@ -371,47 +368,119 @@ function Section3() {
           'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
       }}
     >
-      <div className="grid grid-cols-12 gap-5">
-        <div className="col-span-12 lg:col-span-6 rounded-[20px] bg-white border border-[#E6EEF3] p-9">
-          <div className="flex items-center justify-between mb-6">
-            <span className="text-[#6F8190] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Off-the-shelf SEO</span>
-            <span className="text-[#6F8190]" style={{ fontSize: '11px' }}>Disconnected · Activity-driven</span>
+      <div className='grid grid-cols-12 gap-5'>
+        <div className='col-span-12 lg:col-span-6 rounded-[20px] bg-white border border-[#E6EEF3] p-9'>
+          <div className='flex items-center justify-between mb-6'>
+            <span
+              className='text-[#6F8190] uppercase tracking-[0.18em]'
+              style={{ fontSize: '10.5px', fontWeight: 700 }}
+            >
+              Off-the-shelf SEO
+            </span>
+            <span className='text-[#6F8190]' style={{ fontSize: '11px' }}>
+              Disconnected · Activity-driven
+            </span>
           </div>
-          <div className="text-[#08111F] mb-7" style={{ fontSize: '26px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-            Keyword activity. Reports.<br />Disconnected work.
+          <div
+            className='text-[#08111F] mb-7'
+            style={{ fontSize: '26px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2 }}
+          >
+            Keyword activity. Reports.
+            <br />
+            Disconnected work.
           </div>
-          <div className="relative h-[180px] rounded-xl bg-[#F6FAFC] border border-[#E6EEF3] p-4">
-            {["Keyword list", "Backlink task", "Audit report", "Blog post"].map((label, i) => {
-              const positions = [{ top: '8%', left: '5%' }, { top: '12%', right: '8%' }, { top: '55%', left: '12%' }, { top: '60%', right: '15%' }];
+          <div className='relative h-[180px] rounded-xl bg-[#F6FAFC] border border-[#E6EEF3] p-4'>
+            {['Keyword list', 'Backlink task', 'Audit report', 'Blog post'].map((label, i) => {
+              const positions = [
+                { top: '8%', left: '5%' },
+                { top: '12%', right: '8%' },
+                { top: '55%', left: '12%' },
+                { top: '60%', right: '15%' },
+              ];
               return (
-                <div key={label} className="absolute px-3 py-1.5 rounded-md bg-white border border-[#E6EEF3] text-[#4C5E6F]" style={{ ...positions[i], fontSize: '11.5px' }}>{label}</div>
+                <div
+                  key={label}
+                  className='absolute px-3 py-1.5 rounded-md bg-white border border-[#E6EEF3] text-[#4C5E6F]'
+                  style={{ ...positions[i], fontSize: '11.5px' }}
+                >
+                  {label}
+                </div>
               );
             })}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#6F8190]" style={{ fontSize: '11px', fontStyle: 'italic' }}>nothing connecting them</div>
+            <div
+              className='absolute bottom-3 left-1/2 -translate-x-1/2 text-[#6F8190]'
+              style={{ fontSize: '11px', fontStyle: 'italic' }}
+            >
+              nothing connecting them
+            </div>
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-6 rounded-[20px] bg-gradient-to-br from-[#061323] to-[#103E5A] p-9 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-          <div className="relative">
-            <div className="flex items-center justify-between mb-6">
-              <span className="text-[#35C7D8] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Structured local</span>
-              <span className="text-white/55" style={{ fontSize: '11px' }}>Connected · Compounding</span>
+        <div className='col-span-12 lg:col-span-6 rounded-[20px] bg-gradient-to-br from-[#061323] to-[#103E5A] p-9 relative overflow-hidden'>
+          <div
+            className='absolute inset-0 opacity-[0.06]'
+            style={{
+              backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)',
+              backgroundSize: '24px 24px',
+            }}
+          />
+          <div className='relative'>
+            <div className='flex items-center justify-between mb-6'>
+              <span
+                className='text-[#35C7D8] uppercase tracking-[0.18em]'
+                style={{ fontSize: '10.5px', fontWeight: 700 }}
+              >
+                Structured local
+              </span>
+              <span className='text-white/55' style={{ fontSize: '11px' }}>
+                Connected · Compounding
+              </span>
             </div>
-            <div className="text-white mb-7" style={{ fontSize: '26px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-              Pages, profile, citations,<br />content, reviews — connected.
+            <div
+              className='text-white mb-7'
+              style={{
+                fontSize: '26px',
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
+                lineHeight: 1.2,
+              }}
+            >
+              Pages, profile, citations,
+              <br />
+              content, reviews — connected.
             </div>
 
-            <div className="relative h-[180px] rounded-xl bg-white/[0.03] border border-white/10 p-4">
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 160" fill="none" preserveAspectRatio="none">
-                <path d="M40 80 L130 40 L240 80 L350 40 M130 40 L240 120 M240 80 L130 120" stroke="#35C7D8" strokeOpacity="0.4" strokeWidth="1" strokeDasharray="3 4" />
+            <div className='relative h-[180px] rounded-xl bg-white/[0.03] border border-white/10 p-4'>
+              <svg
+                className='absolute inset-0 w-full h-full'
+                viewBox='0 0 400 160'
+                fill='none'
+                preserveAspectRatio='none'
+              >
+                <path
+                  d='M40 80 L130 40 L240 80 L350 40 M130 40 L240 120 M240 80 L130 120'
+                  stroke='#35C7D8'
+                  strokeOpacity='0.4'
+                  strokeWidth='1'
+                  strokeDasharray='3 4'
+                />
               </svg>
-              {["Pages", "Profile", "Citations", "Content", "Reviews"].map((label, i) => {
+              {['Pages', 'Profile', 'Citations', 'Content', 'Reviews'].map((label, i) => {
                 const positions = [
-                  { top: '40%', left: '8%' }, { top: '20%', left: '32%' }, { top: '40%', left: '57%' }, { top: '20%', right: '8%' }, { top: '70%', left: '40%' }
+                  { top: '40%', left: '8%' },
+                  { top: '20%', left: '32%' },
+                  { top: '40%', left: '57%' },
+                  { top: '20%', right: '8%' },
+                  { top: '70%', left: '40%' },
                 ];
                 return (
-                  <div key={label} className="absolute px-3 py-1.5 rounded-md bg-[#061323]/60 border border-[#35C7D8]/30 text-white/90 backdrop-blur-sm" style={{ ...positions[i], fontSize: '11.5px', fontWeight: 500 }}>{label}</div>
+                  <div
+                    key={label}
+                    className='absolute px-3 py-1.5 rounded-md bg-[#061323]/60 border border-[#35C7D8]/30 text-white/90 backdrop-blur-sm'
+                    style={{ ...positions[i], fontSize: '11.5px', fontWeight: 500 }}
+                  >
+                    {label}
+                  </div>
                 );
               })}
             </div>
@@ -423,14 +492,14 @@ function Section3() {
 }
 function Section4() {
   const cov = [
-    { icon: Globe, label: "Website structure" },
-    { icon: FileText, label: "Service pages" },
-    { icon: Building2, label: "Google Business Profile" },
-    { icon: MapPin, label: "Citations and directories" },
-    { icon: Star, label: "Reviews and reputation" },
-    { icon: Search, label: "Local content" },
-    { icon: FileText, label: "Reporting" },
-    { icon: RefreshCw, label: "Ongoing improvement" },
+    { icon: Globe, label: 'Website structure' },
+    { icon: FileText, label: 'Service pages' },
+    { icon: Building2, label: 'Google Business Profile' },
+    { icon: MapPin, label: 'Citations and directories' },
+    { icon: Star, label: 'Reviews and reputation' },
+    { icon: Search, label: 'Local content' },
+    { icon: FileText, label: 'Reporting' },
+    { icon: RefreshCw, label: 'Ongoing improvement' },
   ];
   return (
     <SectionShell
@@ -444,58 +513,114 @@ function Section4() {
           'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
       }}
     >
-      <div className="rounded-[24px] bg-gradient-to-br from-[#061323] to-[#0E2740] p-10 lg:p-14 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+      <div className='rounded-[24px] bg-gradient-to-br from-[#061323] to-[#0E2740] p-10 lg:p-14 relative overflow-hidden'>
+        <div
+          className='absolute inset-0 opacity-[0.05]'
+          style={{
+            backgroundImage:
+              'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
 
-        <div className="relative">
-          <div className="flex items-center justify-between mb-10">
-            <div className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
-              <span className="text-white" style={{ fontSize: '13px', fontWeight: 600 }}>Local coverage map</span>
+        <div className='relative'>
+          <div className='flex items-center justify-between mb-10'>
+            <div className='flex items-center gap-3'>
+              <span className='w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]' />
+              <span className='text-white' style={{ fontSize: '13px', fontWeight: 600 }}>
+                Local coverage map
+              </span>
             </div>
-            <span className="text-white/45" style={{ fontSize: '11px' }}>08 zones · single owned system</span>
+            <span className='text-white/45' style={{ fontSize: '11px' }}>
+              08 zones · single owned system
+            </span>
           </div>
 
           {/* Service-area concentric */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-            <div className="lg:col-span-1">
-              <div className="relative aspect-square max-w-[300px] mx-auto">
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 300" fill="none">
+          <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 items-center'>
+            <div className='lg:col-span-1'>
+              <div className='relative aspect-square max-w-[300px] mx-auto'>
+                <svg className='absolute inset-0 w-full h-full' viewBox='0 0 300 300' fill='none'>
                   <defs>
-                    <radialGradient id="mapGrad" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#35C7D8" stopOpacity="0.25" />
-                      <stop offset="100%" stopColor="#35C7D8" stopOpacity="0" />
+                    <radialGradient id='mapGrad' cx='50%' cy='50%' r='50%'>
+                      <stop offset='0%' stopColor='#35C7D8' stopOpacity='0.25' />
+                      <stop offset='100%' stopColor='#35C7D8' stopOpacity='0' />
                     </radialGradient>
                   </defs>
-                  <circle cx="150" cy="150" r="140" fill="url(#mapGrad)" stroke="#35C7D8" strokeOpacity="0.2" />
-                  <circle cx="150" cy="150" r="100" fill="none" stroke="#35C7D8" strokeOpacity="0.25" strokeDasharray="3 5" />
-                  <circle cx="150" cy="150" r="60" fill="none" stroke="#35C7D8" strokeOpacity="0.35" strokeDasharray="3 5" />
+                  <circle
+                    cx='150'
+                    cy='150'
+                    r='140'
+                    fill='url(#mapGrad)'
+                    stroke='#35C7D8'
+                    strokeOpacity='0.2'
+                  />
+                  <circle
+                    cx='150'
+                    cy='150'
+                    r='100'
+                    fill='none'
+                    stroke='#35C7D8'
+                    strokeOpacity='0.25'
+                    strokeDasharray='3 5'
+                  />
+                  <circle
+                    cx='150'
+                    cy='150'
+                    r='60'
+                    fill='none'
+                    stroke='#35C7D8'
+                    strokeOpacity='0.35'
+                    strokeDasharray='3 5'
+                  />
                   {[
-                    { x: 150, y: 80 }, { x: 230, y: 130 }, { x: 200, y: 220 },
-                    { x: 90, y: 200 }, { x: 70, y: 110 },
+                    { x: 150, y: 80 },
+                    { x: 230, y: 130 },
+                    { x: 200, y: 220 },
+                    { x: 90, y: 200 },
+                    { x: 70, y: 110 },
                   ].map((p, i) => (
                     <g key={i}>
-                      <circle cx={p.x} cy={p.y} r="4" fill="#35C7D8" />
-                      <circle cx={p.x} cy={p.y} r="10" fill="#35C7D8" fillOpacity="0.2" />
+                      <circle cx={p.x} cy={p.y} r='4' fill='#35C7D8' />
+                      <circle cx={p.x} cy={p.y} r='10' fill='#35C7D8' fillOpacity='0.2' />
                     </g>
                   ))}
                 </svg>
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] border border-[#35C7D8]/40 flex items-center justify-center">
-                  <MapPin size={20} className="text-[#35C7D8]" />
+                <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] border border-[#35C7D8]/40 flex items-center justify-center'>
+                  <MapPin size={20} className='text-[#35C7D8]' />
                 </div>
               </div>
-              <div className="mt-4 text-center">
-                <div className="text-white/55 uppercase tracking-[0.14em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Service area</div>
-                <div className="text-white mt-1" style={{ fontSize: '13.5px', fontWeight: 500 }}>Authority radius</div>
+              <div className='mt-4 text-center'>
+                <div
+                  className='text-white/55 uppercase tracking-[0.14em]'
+                  style={{ fontSize: '10.5px', fontWeight: 700 }}
+                >
+                  Service area
+                </div>
+                <div className='text-white mt-1' style={{ fontSize: '13.5px', fontWeight: 500 }}>
+                  Authority radius
+                </div>
               </div>
             </div>
 
-            <div className="lg:col-span-2 grid grid-cols-2 gap-3">
+            <div className='lg:col-span-2 grid grid-cols-2 gap-3'>
               {cov.map((c, i) => (
-                <div key={c.label} className="flex items-center gap-3 px-4 py-3.5 rounded-lg border border-white/10 bg-white/[0.04]">
-                  <span className="text-[#35C7D8] tabular-nums" style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}>{String(i + 1).padStart(2, '0')}</span>
-                  <div className="w-9 h-9 rounded-md bg-white/[0.04] border border-white/8 flex items-center justify-center text-[#35C7D8]"><c.icon size={15} /></div>
-                  <span className="text-white" style={{ fontSize: '13.5px', fontWeight: 500 }}>{c.label}</span>
+                <div
+                  key={c.label}
+                  className='flex items-center gap-3 px-4 py-3.5 rounded-lg border border-white/10 bg-white/[0.04]'
+                >
+                  <span
+                    className='text-[#35C7D8] tabular-nums'
+                    style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className='w-9 h-9 rounded-md bg-white/[0.04] border border-white/8 flex items-center justify-center text-[#35C7D8]'>
+                    <c.icon size={15} />
+                  </div>
+                  <span className='text-white' style={{ fontSize: '13.5px', fontWeight: 500 }}>
+                    {c.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -507,10 +632,10 @@ function Section4() {
 }
 function Section5() {
   const phases = [
-    { name: "Check", note: "What does Google currently see?", angle: 0 },
-    { name: "Clarify", note: "Fix details, services, structure.", angle: 90 },
-    { name: "Build", note: "Pages, citations, content, reviews.", angle: 180 },
-    { name: "Adjust", note: "Read the signal. Refine. Repeat.", angle: 270 },
+    { name: 'Check', note: 'What does Google currently see?', angle: 0 },
+    { name: 'Clarify', note: 'Fix details, services, structure.', angle: 90 },
+    { name: 'Build', note: 'Pages, citations, content, reviews.', angle: 180 },
+    { name: 'Adjust', note: 'Read the signal. Refine. Repeat.', angle: 270 },
   ];
   return (
     <SectionShell
@@ -524,23 +649,35 @@ function Section5() {
           'A repeating cycle: check, clarify, build, adjust. Each loop adds signal. The compounding does the work.',
       }}
     >
-      <div className="col-span-12 lg:col-span-7">
-        <div className="relative aspect-square max-w-[520px] mx-auto">
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 520 520" fill="none">
+      <div className='col-span-12 lg:col-span-7'>
+        <div className='relative aspect-square max-w-[520px] mx-auto'>
+          <svg className='absolute inset-0 w-full h-full' viewBox='0 0 520 520' fill='none'>
             <defs>
-              <linearGradient id="cycleGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#35C7D8" />
-                <stop offset="100%" stopColor="#14B8A6" />
+              <linearGradient id='cycleGrad' x1='0' y1='0' x2='1' y2='1'>
+                <stop offset='0%' stopColor='#35C7D8' />
+                <stop offset='100%' stopColor='#14B8A6' />
               </linearGradient>
             </defs>
-            <circle cx="260" cy="260" r="200" fill="none" stroke="url(#cycleGrad)" strokeWidth="2" strokeDasharray="6 8" />
-            <circle cx="260" cy="260" r="200" fill="#EEF6FA" fillOpacity="0.4" />
+            <circle
+              cx='260'
+              cy='260'
+              r='200'
+              fill='none'
+              stroke='url(#cycleGrad)'
+              strokeWidth='2'
+              strokeDasharray='6 8'
+            />
+            <circle cx='260' cy='260' r='200' fill='#EEF6FA' fillOpacity='0.4' />
           </svg>
 
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] flex flex-col items-center justify-center text-center">
-            <RefreshCw size={22} className="text-[#35C7D8] mb-2" />
-            <div className="text-white" style={{ fontSize: '14px', fontWeight: 600 }}>Compounding</div>
-            <div className="text-white/50 mt-1" style={{ fontSize: '11px' }}>cycle</div>
+          <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] flex flex-col items-center justify-center text-center'>
+            <RefreshCw size={22} className='text-[#35C7D8] mb-2' />
+            <div className='text-white' style={{ fontSize: '14px', fontWeight: 600 }}>
+              Compounding
+            </div>
+            <div className='text-white/50 mt-1' style={{ fontSize: '11px' }}>
+              cycle
+            </div>
           </div>
 
           {phases.map((p, i) => {
@@ -549,11 +686,30 @@ function Section5() {
             const x = 50 + r * Math.cos(rad);
             const y = 50 + r * Math.sin(rad);
             return (
-              <div key={p.name} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${x}%`, top: `${y}%` }}>
-                <div className="rounded-xl bg-white border border-[#D8E6EE] shadow-[0_8px_24px_rgba(8,17,31,0.08)] p-4 w-[180px] text-center">
-                  <div className="text-[#14B8A6] tabular-nums" style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em' }}>0{i + 1}</div>
-                  <div className="text-[#08111F] mt-1" style={{ fontSize: '17px', fontWeight: 600 }}>{p.name}</div>
-                  <div className="text-[#6F8190] mt-1.5" style={{ fontSize: '11.5px', lineHeight: 1.45 }}>{p.note}</div>
+              <div
+                key={p.name}
+                className='absolute -translate-x-1/2 -translate-y-1/2'
+                style={{ left: `${x}%`, top: `${y}%` }}
+              >
+                <div className='rounded-xl bg-white border border-[#D8E6EE] shadow-[0_8px_24px_rgba(8,17,31,0.08)] p-4 w-[180px] text-center'>
+                  <div
+                    className='text-[#14B8A6] tabular-nums'
+                    style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em' }}
+                  >
+                    0{i + 1}
+                  </div>
+                  <div
+                    className='text-[#08111F] mt-1'
+                    style={{ fontSize: '17px', fontWeight: 600 }}
+                  >
+                    {p.name}
+                  </div>
+                  <div
+                    className='text-[#6F8190] mt-1.5'
+                    style={{ fontSize: '11.5px', lineHeight: 1.45 }}
+                  >
+                    {p.note}
+                  </div>
                 </div>
               </div>
             );
@@ -576,60 +732,117 @@ function Section6() {
           'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
       }}
     >
-      <div className="rounded-[20px] bg-white border border-[#E6EEF3] p-10 lg:p-14 grid grid-cols-12 gap-10 items-center">
-        <div className="col-span-12 lg:col-span-7">
-          <div className="flex items-center gap-2 mb-5">
-            <span className="w-7 h-7 rounded-md bg-[#EEF6FA] text-[#0E2740] flex items-center justify-center"><Quote size={14} /></span>
-            <span className="text-[#6F8190] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Context</span>
+      <div className='rounded-[20px] bg-white border border-[#E6EEF3] p-10 lg:p-14 grid grid-cols-12 gap-10 items-center'>
+        <div className='col-span-12 lg:col-span-7'>
+          <div className='flex items-center gap-2 mb-5'>
+            <span className='w-7 h-7 rounded-md bg-[#EEF6FA] text-[#0E2740] flex items-center justify-center'>
+              <Quote size={14} />
+            </span>
+            <span
+              className='text-[#6F8190] uppercase tracking-[0.18em]'
+              style={{ fontSize: '10.5px', fontWeight: 700 }}
+            >
+              Context
+            </span>
           </div>
-          <div className="text-[#08111F]" style={{ fontSize: '28px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.25 }}>
+          <div
+            className='text-[#08111F]'
+            style={{
+              fontSize: '28px',
+              fontWeight: 600,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.25,
+            }}
+          >
             Dental practice paying for ads. Invisible in organic search.
           </div>
-          <p className="mt-5 text-[#4C5E6F]" style={{ fontSize: '15.5px', lineHeight: 1.65 }}>
-            Services were separated, Google profile completed, directory details fixed, and organic visibility started growing. No ranking promises — measured signal, earned over months.
+          <p className='mt-5 text-[#4C5E6F]' style={{ fontSize: '15.5px', lineHeight: 1.65 }}>
+            Services were separated, Google profile completed, directory details fixed, and organic
+            visibility started growing. No ranking promises — measured signal, earned over months.
           </p>
-          <div className="mt-7 grid grid-cols-3 gap-3">
+          <div className='mt-7 grid grid-cols-3 gap-3'>
             {[
-              { label: "Services indexed", before: "2 of 9", after: "9 of 9" },
-              { label: "Profile complete", before: "48%", after: "100%" },
-              { label: "Citation match", before: "55%", after: "94%" },
-            ].map((m) => (
-              <div key={m.label} className="rounded-lg border border-[#E6EEF3] bg-[#F6FAFC] p-3">
-                <div className="text-[#6F8190]" style={{ fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.06em' }}>{m.label}</div>
-                <div className="mt-1.5 flex items-center gap-2">
-                  <span className="text-[#6F8190] line-through" style={{ fontSize: '11.5px' }}>{m.before}</span>
-                  <span className="text-[#14B8A6]" style={{ fontSize: '13.5px', fontWeight: 600 }}>{m.after}</span>
+              { label: 'Services indexed', before: '2 of 9', after: '9 of 9' },
+              { label: 'Profile complete', before: '48%', after: '100%' },
+              { label: 'Citation match', before: '55%', after: '94%' },
+            ].map(m => (
+              <div key={m.label} className='rounded-lg border border-[#E6EEF3] bg-[#F6FAFC] p-3'>
+                <div
+                  className='text-[#6F8190]'
+                  style={{ fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.06em' }}
+                >
+                  {m.label}
+                </div>
+                <div className='mt-1.5 flex items-center gap-2'>
+                  <span className='text-[#6F8190] line-through' style={{ fontSize: '11.5px' }}>
+                    {m.before}
+                  </span>
+                  <span className='text-[#14B8A6]' style={{ fontSize: '13.5px', fontWeight: 600 }}>
+                    {m.after}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-5">
-          <div className="rounded-2xl bg-gradient-to-br from-[#061323] to-[#103E5A] p-7 relative overflow-hidden">
-            <div className="relative">
-              <span className="text-[#35C7D8] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>What changed</span>
-              <div className="mt-3 text-white" style={{ fontSize: '20px', fontWeight: 600, lineHeight: 1.3, letterSpacing: '-0.015em' }}>
+        <div className='col-span-12 lg:col-span-5'>
+          <div className='rounded-2xl bg-gradient-to-br from-[#061323] to-[#103E5A] p-7 relative overflow-hidden'>
+            <div className='relative'>
+              <span
+                className='text-[#35C7D8] uppercase tracking-[0.18em]'
+                style={{ fontSize: '10.5px', fontWeight: 700 }}
+              >
+                What changed
+              </span>
+              <div
+                className='mt-3 text-white'
+                style={{
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  lineHeight: 1.3,
+                  letterSpacing: '-0.015em',
+                }}
+              >
                 Clearer service visibility. Less dependence on paid clicks for every enquiry.
               </div>
 
-              <div className="mt-6 space-y-2.5">
+              <div className='mt-6 space-y-2.5'>
                 {[
-                  { icon: FileText, label: "Service pages", note: "Treatments separated, intent matched" },
-                  { icon: Building2, label: "Google profile", note: "Categories, services, posts complete" },
-                  { icon: MapPin, label: "Citations", note: "Directory details aligned" },
-                  { icon: Search, label: "Local content", note: "Area context published" },
-                ].map((s) => (
-                  <div key={s.label} className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg border border-white/10 bg-white/[0.03]">
-                    <div className="w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#35C7D8]"><s.icon size={14} /></div>
-                    <div className="flex-1">
-                      <div className="text-white" style={{ fontSize: '12.5px', fontWeight: 600 }}>{s.label}</div>
-                      <div className="text-white/55" style={{ fontSize: '11px' }}>{s.note}</div>
+                  {
+                    icon: FileText,
+                    label: 'Service pages',
+                    note: 'Treatments separated, intent matched',
+                  },
+                  {
+                    icon: Building2,
+                    label: 'Google profile',
+                    note: 'Categories, services, posts complete',
+                  },
+                  { icon: MapPin, label: 'Citations', note: 'Directory details aligned' },
+                  { icon: Search, label: 'Local content', note: 'Area context published' },
+                ].map(s => (
+                  <div
+                    key={s.label}
+                    className='flex items-center gap-3 px-3.5 py-2.5 rounded-lg border border-white/10 bg-white/[0.03]'
+                  >
+                    <div className='w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#35C7D8]'>
+                      <s.icon size={14} />
                     </div>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
+                    <div className='flex-1'>
+                      <div className='text-white' style={{ fontSize: '12.5px', fontWeight: 600 }}>
+                        {s.label}
+                      </div>
+                      <div className='text-white/55' style={{ fontSize: '11px' }}>
+                        {s.note}
+                      </div>
+                    </div>
+                    <span className='w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]' />
                   </div>
                 ))}
               </div>
-              <div className="mt-4 text-white/50" style={{ fontSize: '11px' }}>Story illustrative. No ranking guarantee.</div>
+              <div className='mt-4 text-white/50' style={{ fontSize: '11px' }}>
+                Story illustrative. No ranking guarantee.
+              </div>
             </div>
           </div>
         </div>
@@ -639,11 +852,27 @@ function Section6() {
 }
 function Section7() {
   const stages = [
-    { icon: Globe, label: "Website enquiry", note: "Question or form arrives", tone: "#35C7D8" },
-    { icon: MessageSquare, label: "AI first response", note: "Answers, qualifies, books", tone: "#14B8A6", parent: true },
-    { icon: Workflow, label: "CRM record", note: "Captured with source and intent", tone: "#F4B740" },
-    { icon: UserCheck, label: "Team handoff", note: "Right owner sees the queue", tone: "#21B985" },
-    { icon: Clock, label: "Follow-up", note: "Sequenced, never depending on memory", tone: "#9B7DE0" },
+    { icon: Globe, label: 'Website enquiry', note: 'Question or form arrives', tone: '#35C7D8' },
+    {
+      icon: MessageSquare,
+      label: 'AI first response',
+      note: 'Answers, qualifies, books',
+      tone: '#14B8A6',
+      parent: true,
+    },
+    {
+      icon: Workflow,
+      label: 'CRM record',
+      note: 'Captured with source and intent',
+      tone: '#F4B740',
+    },
+    { icon: UserCheck, label: 'Team handoff', note: 'Right owner sees the queue', tone: '#21B985' },
+    {
+      icon: Clock,
+      label: 'Follow-up',
+      note: 'Sequenced, never depending on memory',
+      tone: '#9B7DE0',
+    },
   ];
   return (
     <SectionShell
@@ -657,33 +886,52 @@ function Section7() {
           'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
       }}
     >
-      <div className="rounded-2xl border border-[#E6EEF3] bg-gradient-to-b from-white to-[#F6FAFC] p-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+      <div className='rounded-2xl border border-[#E6EEF3] bg-gradient-to-b from-white to-[#F6FAFC] p-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-5 gap-4'>
           {stages.map((s, i) => (
-            <div key={i} className="relative">
-              <div className={`rounded-xl p-5 border h-full ${s.parent ? 'bg-[#061323] border-[#35C7D8]/30 text-white' : 'bg-white border-[#E6EEF3]'}`}>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: `${s.tone}1c`, color: s.parent ? '#fff' : s.tone }}>
+            <div key={i} className='relative'>
+              <div
+                className={`rounded-xl p-5 border h-full ${s.parent ? 'bg-[#061323] border-[#35C7D8]/30 text-white' : 'bg-white border-[#E6EEF3]'}`}
+              >
+                <div className='flex items-center gap-2 mb-3'>
+                  <div
+                    className='w-9 h-9 rounded-lg flex items-center justify-center'
+                    style={{ background: `${s.tone}1c`, color: s.parent ? '#fff' : s.tone }}
+                  >
                     <s.icon size={16} />
                   </div>
-                  {s.parent && <span className="text-[#35C7D8] uppercase tracking-[0.14em]" style={{ fontSize: '9.5px', fontWeight: 700 }}>This page</span>}
+                  {s.parent && (
+                    <span
+                      className='text-[#35C7D8] uppercase tracking-[0.14em]'
+                      style={{ fontSize: '9.5px', fontWeight: 700 }}
+                    >
+                      This page
+                    </span>
+                  )}
                 </div>
-                <div className={`${s.parent ? 'text-white' : 'text-[#08111F]'}`} style={{ fontSize: '14.5px', fontWeight: 600 }}>{s.label}</div>
-                <div className={`mt-1.5 ${s.parent ? 'text-white/65' : 'text-[#6F8190]'}`} style={{ fontSize: '12.5px', lineHeight: 1.5 }}>{s.note}</div>
+                <div
+                  className={`${s.parent ? 'text-white' : 'text-[#08111F]'}`}
+                  style={{ fontSize: '14.5px', fontWeight: 600 }}
+                >
+                  {s.label}
+                </div>
+                <div
+                  className={`mt-1.5 ${s.parent ? 'text-white/65' : 'text-[#6F8190]'}`}
+                  style={{ fontSize: '12.5px', lineHeight: 1.5 }}
+                >
+                  {s.note}
+                </div>
               </div>
-
             </div>
           ))}
         </div>
-        <div className="mt-6 text-[#6F8190]" style={{ fontSize: '13px' }}>
+        <div className='mt-6 text-[#6F8190]' style={{ fontSize: '13px' }}>
           Parent: AI Lead Handling · Context: Smart Website Systems, CRM & Automation
         </div>
       </div>
-
     </SectionShell>
   );
 }
-
 
 function HomeFAQ() {
   const { faq } = homepageData;
