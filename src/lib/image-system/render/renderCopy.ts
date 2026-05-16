@@ -12,7 +12,7 @@ const SERVICE_COPY_BY_SLUG: Record<string, RenderCopy> = {
   },
   'smart-website-systems': {
     title: 'Smart Website Systems',
-    subtitle: 'Structured websites built for enquiries, automation, and SEO.',
+    subtitle: 'Structured websites built for enquiries, clarity, and local visibility.',
   },
 };
 

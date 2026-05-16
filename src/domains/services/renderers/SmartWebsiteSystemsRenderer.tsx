@@ -42,7 +42,7 @@ function SmartWebsiteHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaH
       description={hero.description}
       actions={[
         {
-          label: 'Start a Conversation',
+          label: 'Request a System Review',
           href: ctaHref,
           variant: 'white',
           icon: <ArrowRight size={16} aria-hidden='true' />,

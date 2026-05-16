@@ -73,7 +73,7 @@ export const homepageData: HomepageData = {
     description:
       'People find you online. They call, fill in forms, ask for quotes, check reviews, and compare your services. Some of that turns into work. Too much disappears between the first click and the next step.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Request a System Review',
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'global',
@@ -197,7 +197,7 @@ export const homepageData: HomepageData = {
     },
     actions: [
       {
-        label: 'Start a Conversation',
+        label: 'Request a System Review',
         href: buildContactHref({
           system: 'smart-website-systems',
           sourceType: 'page',

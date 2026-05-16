@@ -28,13 +28,13 @@ export function AIChatRenderer({ data }: Props) {
 function AIChatHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
   return (
     <HeroFrame
-      ariaLabel='AI Chat hero'
+      ariaLabel='Response handling hero'
       eyebrow={hero.eyebrow}
       title={hero.title}
       description={hero.description}
       actions={[
         {
-          label: 'Start a Conversation',
+          label: 'Request a System Review',
           href: ctaHref,
           variant: 'white',
           icon: <ArrowRight size={16} aria-hidden='true' />,

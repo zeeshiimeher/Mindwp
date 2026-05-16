@@ -146,7 +146,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               slug: props.currentSlug,
             })}
           >
-            <span>Start a Conversation</span>
+            <span>Request a System Review</span>
             <ArrowRight size={14} aria-hidden='true' />
           </a>
         </SectionShell>

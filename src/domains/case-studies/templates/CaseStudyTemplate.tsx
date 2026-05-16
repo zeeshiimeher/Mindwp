@@ -232,12 +232,13 @@ export function CaseStudyTemplate({
     <CTARegistryProvider pageId={pageId} pageType='case-study' primarySystem={primarySystem}>
       <main>
         <SectionShell
-          ariaLabel={`${metadata.business} case study`}
+          ariaLabel={`${metadata.business} scenario study`}
           tone='mist'
           heading={{
-            eyebrow: metadata.industryLabel,
+            eyebrow: `${metadata.industryLabel} scenario study`,
             title: metadata.heroHeadline,
-            description: `${metadata.business}${metadata.location ? ` · ${metadata.location}` : ''}`,
+            description:
+              'A realistic operating example. It shows the weak point, the system change, and what becomes easier to handle.',
           }}
         >
           <div className='flex flex-wrap items-center gap-3'>
@@ -263,10 +264,10 @@ export function CaseStudyTemplate({
             ariaLabel='Case study breakdown'
             tone='white'
             heading={{
-              eyebrow: 'Breakdown',
+              eyebrow: 'Scenario breakdown',
               title: 'What changed in the system',
               description:
-                'This clean case-study renderer keeps the case content visible while the final case-study design is rebuilt.',
+                'These examples are used for system clarity. They are not presented as measured client proof.',
             }}
           >
             <div className='grid gap-5'>
@@ -297,7 +298,7 @@ export function CaseStudyTemplate({
           }}
           actions={[
             {
-              label: 'Start a Conversation',
+              label: 'Request a System Review',
               href: buildContactHref({
                 system: primarySystem,
                 sourceType: 'case-study',

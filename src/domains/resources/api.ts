@@ -49,7 +49,7 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
   },
   hero: {
     eyebrow: 'Free Resources',
-    title: 'Resources That Expose Where Revenue Still Leaks',
+    title: 'Resources That Expose Where Work Still Leaks',
     description:
       'Use these guides to identify where visibility, response speed, follow-up, and conversion still depend on guesswork, then move toward the system that fixes it.',
   },
@@ -63,11 +63,11 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     eyebrow: 'Featured Guides',
     title: 'Guides that move from symptom to system fix',
     description:
-      'Each guide shows what is breaking, what manual fixes look like, and where a structured operating system starts paying back.',
+      'Each guide shows what is breaking, what manual fixes look like, and where a clearer handling system starts to help.',
     initialVisibleCount: 15,
     loadMoreLabel: 'Load more resources',
     comingSoonText:
-      'More guides are being added for automation, review generation, response handling, and conversion control.',
+      'More guides are being added for website clarity, review timing, response handling, and follow-up.',
   },
   cta: {
     heading: {

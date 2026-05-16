@@ -10,18 +10,12 @@ const GROUP_BY_SLUG: Record<string, string> = {
   'home-services': 'home',
   'automotive-services': 'auto',
   'beauty-personal-care': 'beauty',
-  'local-appointment-businesses': 'appt',
-  'real-estate-property-services': 'realestate',
-  'legal-professional-services': 'legal',
 };
 
 const LEAD_SYSTEM_BY_SLUG: Record<string, string> = {
   'home-services': 'Lead Response & Handling',
   'automotive-services': 'Lead Response & Handling',
   'beauty-personal-care': 'Follow-Up & CRM',
-  'local-appointment-businesses': 'Follow-Up & CRM',
-  'real-estate-property-services': 'Follow-Up & CRM',
-  'legal-professional-services': 'Lead Response & Handling',
 };
 
 export default function IndustriesLanding() {
@@ -38,7 +32,7 @@ export default function IndustriesLanding() {
         <HeroFrame
           eyebrow='Industries · Overview'
           title='The same enquiries get lost. [[muted:By industry, the same way every week.]]'
-          description='Six operating shapes. Each opens with where the week actually breaks for that kind of business — and the system that holds it.'
+          description='Priority industry pages open with where the week actually breaks for that kind of business and the system that holds it.'
           actions={[
             { label: PRIMARY_CTA_LABEL, href: ctaHref, variant: 'primary' },
             { label: 'Read where it leaks', href: '#categories', variant: 'ghost' },
@@ -47,9 +41,6 @@ export default function IndustriesLanding() {
             { label: 'Home Services' },
             { label: 'Automotive' },
             { label: 'Beauty' },
-            { label: 'Appointment' },
-            { label: 'Real Estate' },
-            { label: 'Legal & Professional' },
           ]}
           tone='gradient-hero'
         />
@@ -57,10 +48,10 @@ export default function IndustriesLanding() {
         <div id='categories'>
           <SectionShell
             heading={{
-              eyebrow: 'Six operating shapes',
+              eyebrow: 'Priority industries',
               title: 'Find the closest working reality',
               description:
-                'Each card opens a category page tuned to that industry’s week — the leaks, the pattern, the systems that hold.',
+                'Each card opens a category page tuned to that industry’s week: the leaks, the pattern, and the systems that hold.',
             }}
             tone='white'
           >
@@ -106,7 +97,7 @@ export default function IndustriesLanding() {
                   Urgent or after-hours work where first reply decides the job. Lead with Lead
                   Response &amp; Handling.
                 </p>
-                <span className='icp-routes__system'>Examples · Home, Auto, Legal intake</span>
+                <span className='icp-routes__system'>Examples · Home, Auto repair</span>
               </div>
             </li>
             <li className='icp-routes__item'>
@@ -118,7 +109,7 @@ export default function IndustriesLanding() {
                   Appointment shapes where rebook cadence and reminders carry the value. Lead with
                   Follow-Up &amp; CRM.
                 </p>
-                <span className='icp-routes__system'>Examples · Beauty, Appointment</span>
+                <span className='icp-routes__system'>Examples · Hair salons, small med spas</span>
               </div>
             </li>
             <li className='icp-routes__item'>
@@ -130,7 +121,7 @@ export default function IndustriesLanding() {
                   Long engagements with documents, milestones, and past-client recall. Lead with CRM
                   cadences.
                 </p>
-                <span className='icp-routes__system'>Examples · Real Estate, Accounting</span>
+                <span className='icp-routes__system'>Examples · Quotes, service cycles</span>
               </div>
             </li>
           </ul>

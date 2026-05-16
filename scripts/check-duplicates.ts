@@ -20,7 +20,6 @@ const rendererDirs = ['src/domains/services/renderers', 'src/domains/features/re
 const ignoredLiteralValues = new Set([
   'FAQ',
   'Next step',
-  'Start a Conversation',
   'Read more',
   'Learn More',
   'Live',

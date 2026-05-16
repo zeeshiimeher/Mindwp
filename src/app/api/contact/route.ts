@@ -57,11 +57,17 @@ interface ContactRequestBody {
   captchaToken?: string;
 }
 
-const BUSINESS_TYPE_VALUES = new Set(['local-service', 'agency', 'saas', 'ecommerce', 'other']);
+const BUSINESS_TYPE_VALUES = new Set([
+  'local-service',
+  'field-service',
+  'appointment-service',
+  'trade-contractor',
+  'other',
+]);
 const PRIMARY_GOAL_VALUES = new Set([
   'more-leads',
   'better-conversion',
-  'automation',
+  'follow-up',
   'performance',
   'full-system',
 ]);

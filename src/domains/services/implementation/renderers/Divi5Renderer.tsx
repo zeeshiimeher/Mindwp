@@ -35,7 +35,7 @@ function Divi5Hero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: st
       description={hero.description}
       actions={[
         {
-          label: 'Start a Conversation',
+          label: 'Request a System Review',
           href: ctaHref,
           variant: 'white',
           icon: <ArrowRight size={16} aria-hidden='true' />,

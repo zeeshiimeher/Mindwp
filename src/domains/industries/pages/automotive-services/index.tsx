@@ -4,11 +4,11 @@ export const automotiveServicesIndustryPageData: IndustryCategoryPageData = {
   seo: {
     title: 'Automotive Services — Counter, Cycle, and Capacity Systems',
     description:
-      'How automotive operators — repair shops, body shops, detailers, and mobile mechanics — hold the counter, the cycle, and the day-of capacity board.',
+      'How auto repair operators hold the counter, the cycle, and the day-of capacity board.',
     canonical: '/industries/automotive-services',
     openGraph: {
       title: 'Automotive Services — Counter, Cycle, and Capacity Systems',
-      description: 'Where the automotive day leaks and what holds it across four operating shapes.',
+      description: 'Where the auto repair day leaks and what holds it.',
     },
   },
   slug: 'automotive-services',
@@ -18,14 +18,14 @@ export const automotiveServicesIndustryPageData: IndustryCategoryPageData = {
     badge: 'Industries · Automotive',
     title: 'A bay full of work. [[muted:And a phone nobody can pick up.]]',
     description:
-      'Automotive operators share one tension: hands are busy, the phone keeps ringing, and the next booking is one missed call away. The shape of the leak changes by trade — but the gap between enquiry and confirmation is the same.',
+      'Auto repair operators share one tension: hands are busy, the phone keeps ringing, and the next booking is one missed call away. The gap between enquiry and confirmation is easy to lose.',
     list: [
       'The counter, the bay, and the phone all want the same person',
       'Cycle work needs visible status — internal and external',
       'Repeat customers carry most of the year’s revenue',
     ],
   },
-  industries: ['auto-repair', 'body-shop', 'car-detailing', 'mobile-mechanic'],
+  industries: ['auto-repair'],
   primarySystem: 'follow-up-crm',
   supportingSystems: [
     'lead-response-handling',

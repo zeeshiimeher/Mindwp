@@ -4,11 +4,11 @@ export const beautyPersonalCareIndustryPageData: IndustryCategoryPageData = {
   seo: {
     title: 'Beauty & Personal Care — Booking, Cycle, and Recall Systems',
     description:
-      'How beauty and personal-care operators — salons, lash, nails, med spas, aesthetic clinics — hold bookings, manage visit cycles, and bring clients back at the right interval.',
+      'How hair salons and small med spas hold bookings, manage visit cycles, and bring clients back at the right interval.',
     canonical: '/industries/beauty-personal-care',
     openGraph: {
       title: 'Beauty & Personal Care — Booking, Cycle, and Recall Systems',
-      description: 'Where the beauty day leaks and what holds it across five operating shapes.',
+      description: 'Where the beauty day leaks and what holds it for salons and small med spas.',
     },
   },
   slug: 'beauty-personal-care',
@@ -18,14 +18,14 @@ export const beautyPersonalCareIndustryPageData: IndustryCategoryPageData = {
     badge: 'Industries · Beauty Care',
     title: 'A chair that runs on cycles. [[muted:And a desk that can’t catch every call.]]',
     description:
-      'Beauty operators share one tension: the chair is full, the phone keeps ringing, and the next booking depends on the client coming back at the right interval. The leak is between visit and rebook.',
+      'Beauty operators share one tension: the chair or treatment room is full, the phone keeps ringing, and the next booking depends on the client coming back at the right interval. The leak is between visit and rebook.',
     list: [
       'The chair, the basin, and the phone all want the same person',
       'Cycle and rebook intervals carry most of the year’s revenue',
       'Reviews are short windows that rarely get caught manually',
     ],
   },
-  industries: ['hair-salon', 'nail-salon', 'lash-extensions', 'med-spa', 'aesthetic-clinic'],
+  industries: ['hair-salon', 'med-spa'],
   primarySystem: 'follow-up-crm',
   supportingSystems: [
     'lead-response-handling',

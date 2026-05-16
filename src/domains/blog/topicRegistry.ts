@@ -23,50 +23,50 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'lead-management': {
     name: 'Lead Management',
     description:
-      'Systems and strategies for capturing, routing, qualifying, and converting inbound leads.',
+      'How enquiries are captured, routed, qualified, and followed up.',
   },
   'missed-calls': {
     name: 'Missed Calls',
     description:
-      'Recovering lost revenue from unanswered calls with automated follow-up and AI-powered response systems.',
+      'What happens when calls are unanswered and how the response path can recover.',
   },
   'lead-response-time': {
     name: 'Lead Response Time',
     description:
-      'Why speed-to-lead matters and how automation shrinks response windows to seconds.',
+      'Why response speed matters when calls, forms, and messages arrive.',
   },
   'review-generation': {
     name: 'Review Generation',
-    description: 'Automated workflows that turn completed jobs into five-star reviews at scale.',
+    description: 'How completed work becomes reviews and visible proof at the right time.',
   },
   'booking-automation': {
-    name: 'Booking Automation',
+    name: 'Booking Support',
     description:
-      'Self-service scheduling systems that reduce friction and eliminate back-and-forth booking.',
+      'Booking paths that make the next step easier for customers and teams.',
   },
   'conversion-optimization': {
-    name: 'Conversion Optimization',
+    name: 'Enquiry Conversion',
     description:
-      'Turning more website visitors into leads through structured pages, CTAs, and system-backed funnels.',
+      'Helping visitors understand, trust, and take the right next step.',
   },
   'crm-visibility': {
-    name: 'CRM Visibility',
+    name: 'Follow-Up Visibility',
     description:
-      'Dashboards, pipelines, and reporting that give you full visibility into every lead and deal.',
+      'Seeing who owns each enquiry, what its status is, and what should happen next.',
   },
   'follow-up': {
     name: 'Follow-Up',
     description:
-      'Automated and manual follow-up sequences that keep leads warm and close more deals.',
+      'Follow-up ownership, reminders, and next steps that do not depend on memory.',
   },
   'lead-capture': {
     name: 'Lead Capture',
     description:
-      'Forms, chat widgets, and call tracking systems that capture leads before they bounce.',
+      'Calls, forms, and messages landing somewhere useful.',
   },
   'lead-routing': {
     name: 'Lead Routing',
-    description: 'Intelligent routing rules that send leads to the right person or team instantly.',
+    description: 'Getting each enquiry to the person or place that owns the next step.',
   },
   'lead-qualification': {
     name: 'Lead Qualification',
@@ -83,13 +83,13 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
     description: 'Building websites around operational systems rather than aesthetics alone.',
   },
   'crm-integration': {
-    name: 'CRM Integration',
+    name: 'Website to Follow-Up Handoff',
     description:
-      'Connecting your website, forms, and communication channels directly into your CRM.',
+      'Connecting website enquiries to visible ownership and follow-up.',
   },
   'crm-enabled-websites': {
-    name: 'CRM-Enabled Websites',
-    description: 'Websites that feed data directly into CRM pipelines for full lifecycle tracking.',
+    name: 'Follow-Up Ready Websites',
+    description: 'Websites that send enquiry context into the next step.',
   },
   'service-page-architecture': {
     name: 'Service Page Architecture',
@@ -106,9 +106,9 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
     description: 'End-to-end appointment and scheduling infrastructure for service businesses.',
   },
   'review-automation': {
-    name: 'Review Automation',
+    name: 'Review Request Timing',
     description:
-      'Automated review request workflows triggered by job completion or service delivery.',
+      'Review requests that happen close to completed work.',
   },
   'feedback-loops': {
     name: 'Feedback Loops',
@@ -142,7 +142,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'local-service-pages': {
     name: 'Local Service Pages',
-    description: 'City- and service-specific landing pages that rank locally and convert visitors.',
+    description: 'Local service pages that help nearby customers understand and verify the offer.',
   },
   'local-authority': {
     name: 'Local Authority',
@@ -150,18 +150,18 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
       'Building topical and geographic authority through content, links, and operational proof.',
   },
   'revenue-visibility': {
-    name: 'Revenue Visibility',
+    name: 'Value Visibility',
     description:
-      'Connecting marketing activity to revenue outcomes with end-to-end pipeline tracking.',
+      'Seeing where enquiries, quotes, reviews, and repeat work are still leaking value.',
   },
   'crm-pipeline': {
-    name: 'CRM Pipeline',
+    name: 'Enquiry Status',
     description:
-      'Structured deal stages that give your team clarity on every opportunity from lead to close.',
+      'Clear stages that show where each enquiry or quote stands.',
   },
   'client-reactivation': {
     name: 'Client Reactivation',
-    description: 'Win-back campaigns and automated sequences that re-engage dormant clients.',
+    description: 'Follow-up paths for customers who should hear from the business again.',
   },
   'customer-feedback': {
     name: 'Customer Feedback',
@@ -171,7 +171,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'customer-lifetime-value': {
     name: 'Customer Lifetime Value',
     description:
-      'Strategies and systems that increase the total revenue each customer generates over time.',
+      'Understanding repeat value without turning it into a broad growth promise.',
   },
   'emergency-handling': {
     name: 'Emergency Handling',
@@ -181,7 +181,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'lifetime-value': {
     name: 'Lifetime Value',
     description:
-      'Maximizing per-customer revenue through retention, upsells, and operational excellence.',
+      'Repeat and referral value that becomes easier to see and handle.',
   },
   'negative-reviews': {
     name: 'Negative Reviews',
@@ -190,21 +190,21 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'no-show-reduction': {
     name: 'No-Show Reduction',
-    description: 'Automated reminders and confirmation workflows that reduce appointment no-shows.',
+    description: 'Reminder and confirmation paths that reduce missed appointments.',
   },
   'pipeline-architecture': {
-    name: 'Pipeline Architecture',
+    name: 'Status Architecture',
     description:
-      'Designing CRM pipeline stages that mirror your actual sales and service delivery process.',
+      'Status stages that match how enquiries and quotes actually move.',
   },
   'pipeline-visibility': {
-    name: 'Pipeline Visibility',
-    description: 'Real-time dashboards and alerts that surface pipeline health and bottlenecks.',
+    name: 'Status Visibility',
+    description: 'Seeing bottlenecks before follow-up slips.',
   },
   'revenue-tracking': {
-    name: 'Revenue Tracking',
+    name: 'Value Tracking',
     description:
-      'Attributing revenue back to marketing channels, campaigns, and individual touchpoints.',
+      'Understanding which enquiries and follow-up paths create real work.',
   },
   'service-pages': {
     name: 'Service Pages',
@@ -214,7 +214,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'service-reminders': {
     name: 'Service Reminders',
     description:
-      'Automated reminder sequences for upcoming appointments, follow-ups, and recurring services.',
+      'Reminder paths for appointments, follow-ups, and repeat service moments.',
   },
 };
 

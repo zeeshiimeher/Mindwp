@@ -4,12 +4,11 @@ export const homeServicesIndustryPageData: IndustryCategoryPageData = {
   seo: {
     title: 'Home Services — Field Operator Systems',
     description:
-      'How home service operators with field crews hold inbound calls, dispatch, quotes, and follow-up — across roofing, plumbing, HVAC, electrical, and landscaping.',
+      'How home service operators with field crews hold inbound calls, dispatch, quotes, and follow-up across roofing, plumbing, and HVAC.',
     canonical: '/industries/home-services',
     openGraph: {
       title: 'Home Services — Field Operator Systems',
-      description:
-        'Across plumbing, roofing, HVAC, electrical, and landscaping: where the day leaks and what holds it.',
+      description: 'Across plumbing, roofing, and HVAC: where the day leaks and what holds it.',
     },
   },
   slug: 'home-services',
@@ -26,7 +25,7 @@ export const homeServicesIndustryPageData: IndustryCategoryPageData = {
       'Reviews and local trust drive the next enquiry',
     ],
   },
-  industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
+  industries: ['roofing', 'hvac', 'plumbing'],
   primarySystem: 'lead-response-handling',
   supportingSystems: [
     'follow-up-crm',

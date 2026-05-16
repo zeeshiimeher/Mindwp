@@ -51,7 +51,7 @@ export function BlogLanding() {
           eyebrow: `${blogPosts.length} articles`,
           title: 'Insights for Smarter Growth',
           description:
-            'Practical thinking on SEO, automation, AI, and digital strategy — written for service businesses.',
+            'Practical thinking on website clarity, local visibility, response, follow-up, and proof — written for service businesses.',
         }}
       >
         <a className='mw-btn mw-btn--primary' href='#latest-articles'>

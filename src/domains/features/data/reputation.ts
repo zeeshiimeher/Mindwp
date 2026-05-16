@@ -66,7 +66,7 @@ export const reputationData = {
           'Yes. Service pages are part of the foundation. Each important service needs a clear page that answers the right question and gives the enquiry a clear next step.',
       },
       {
-        question: 'Does this connect to our CRM or follow-up system?',
+        question: 'Does this connect to our follow-up process?',
         answer:
           'That is the point. The website should not just send a form somewhere. It should pass the right context into the place where the enquiry can be handled.',
       },
@@ -86,7 +86,7 @@ export const reputationData = {
     },
     actions: [
       {
-        label: 'Start a Conversation',
+        label: 'Request a System Review',
         href: buildContactHref({
           system: 'smart-website-systems',
           sourceType: 'page',

@@ -23,17 +23,17 @@ declare global {
 }
 
 const BUSINESS_TYPE_OPTIONS = [
-  { value: 'local-service', label: 'Local service business' },
-  { value: 'agency', label: 'Agency' },
-  { value: 'saas', label: 'SaaS' },
-  { value: 'ecommerce', label: 'Ecommerce' },
+  { value: 'local-service', label: 'Established service business' },
+  { value: 'field-service', label: 'Field-service team' },
+  { value: 'appointment-service', label: 'Appointment-led service business' },
+  { value: 'trade-contractor', label: 'Trade or contractor business' },
   { value: 'other', label: 'Other' },
 ] as const;
 
 const PRIMARY_GOAL_OPTIONS = [
   { value: 'more-leads', label: 'More leads' },
   { value: 'better-conversion', label: 'Better conversion' },
-  { value: 'automation', label: 'Automation' },
+  { value: 'follow-up', label: 'Follow-up' },
   { value: 'performance', label: 'Performance' },
   { value: 'full-system', label: 'Full system' },
 ] as const;

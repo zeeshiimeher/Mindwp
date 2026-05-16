@@ -855,14 +855,14 @@ function Section7() {
     { icon: Globe, label: 'Website enquiry', note: 'Question or form arrives', tone: '#35C7D8' },
     {
       icon: MessageSquare,
-      label: 'AI first response',
+      label: 'Fast first response',
       note: 'Answers, qualifies, books',
       tone: '#14B8A6',
       parent: true,
     },
     {
       icon: Workflow,
-      label: 'CRM record',
+      label: 'Follow-up record',
       note: 'Captured with source and intent',
       tone: '#F4B740',
     },
