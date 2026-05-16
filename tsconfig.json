@@ -1,10 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "types": ["vitest/globals", "vitest/importMeta", "@testing-library/jest-dom"],
+    "types": [
+      "vitest/globals",
+      "vitest/importMeta",
+      "@testing-library/jest-dom"
+    ],
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -21,9 +29,15 @@
       }
     ],
     "paths": {
-      "@/components/routing/InternalLink": ["./src/components/routing/InternalLink"],
-      "@/screens/*": ["./src/screens/*"],
-      "@/*": ["./src/*"]
+      "@/components/routing/InternalLink": [
+        "./src/components/routing/InternalLink"
+      ],
+      "@/screens/*": [
+        "./src/screens/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -35,7 +49,6 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "scripts/**/*.ts",
-    "archive/old-sections/TechnologyStackSection.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
@@ -46,6 +59,7 @@
     "src/vite-env.d.ts",
     "src/global/site-wide/formsClient.ts",
     "src/global/site-wide/turnstileClient.ts",
-    "src/global/site-wide/HeaderScripts.tsx"
+    "src/global/site-wide/HeaderScripts.tsx",
+    ".next/dev/types/**/*.ts"
   ]
 }

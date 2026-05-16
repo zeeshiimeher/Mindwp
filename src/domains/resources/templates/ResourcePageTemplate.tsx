@@ -182,10 +182,7 @@ function GenericResourceSection({
       {items.length > 0 ? (
         <ul className='mt-4 grid gap-3'>
           {items.map((item, itemIndex) => (
-            <li
-              key={`${section.type}-item-${itemIndex}`}
-              className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-            >
+            <li key={`${section.type}-item-${itemIndex}`} className='mw-surface-panel p-4'>
               {renderResourceItem(item)}
             </li>
           ))}

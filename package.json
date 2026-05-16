@@ -4,9 +4,15 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
-  "packageManager": "npm@11",
+  "packageManager": "pnpm@11.1.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.6",
     "@radix-ui/react-aspect-ratio": "^1.1.2",
@@ -37,9 +43,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.576.0",
-    "next": "^16.1.6",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "recharts": "^3.7.0",
     "resend": "^6.10.0",
     "satori": "^0.26.0",
@@ -51,15 +57,14 @@
     "@eslint/js": "^9.39.3",
     "@next/bundle-analyzer": "^16.1.6",
     "@playwright/test": "^1.58.1",
-    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/postcss": "4.3.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@types/node": "^20.19.33",
+    "@types/node": "^24.12.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.54.0",
-    "autoprefixer": "^10.4.27",
     "axe-core": "^4.11.1",
     "eslint": "^9.39.3",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -68,10 +73,10 @@
     "eslint-plugin-react-refresh": "^0.5.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "jsdom": "^28.1.0",
+    "playwright": "1.60.0",
     "postcss": "^8.5.8",
-    "postcss-import": "^16.1.1",
     "prettier": "^3.8.1",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "4.3.0",
     "ts-morph": "^27.0.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
@@ -87,13 +92,13 @@
     "check:names": "node scripts/check-names.mjs",
     "check:clean-base": "tsx scripts/check-clean-base.ts",
     "check:domain-registries": "tsx scripts/check-domain-registries.ts",
-    "check:architecture": "npm run check:clean-base && npm run check:domain-registries",
+    "check:architecture": "pnpm run check:clean-base && pnpm run check:domain-registries",
     "check:duplicates": "tsx scripts/check-duplicates.ts",
     "check:style-guidance": "tsx scripts/check-style-guidance.ts",
-    "check:guidance": "npm run check:duplicates && npm run check:style-guidance",
-    "check:minimal": "npm run typecheck && npm run lint && npm run check:names",
-    "check:all": "npm run check:minimal && npm run check:architecture && npm run check:guidance && npm run build",
+    "check:guidance": "pnpm run check:duplicates && pnpm run check:style-guidance",
+    "check:minimal": "pnpm run typecheck && pnpm run lint && pnpm run check:names",
+    "check:all": "pnpm run check:minimal && pnpm run check:architecture && pnpm run check:guidance && pnpm run build",
     "check:frontend": "node scripts/check-frontend.mjs",
-    "check:release": "npm run check:all && npm run check:frontend"
+    "check:release": "pnpm run check:all && pnpm run check:frontend"
   }
 }

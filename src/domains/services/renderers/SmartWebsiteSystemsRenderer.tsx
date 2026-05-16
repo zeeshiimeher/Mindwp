@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
+import { AlertTriangle, ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
@@ -12,10 +12,17 @@ interface Props {
   slug: string;
 }
 
+const smartWebsiteMoments = [
+  { name: 'Discovery', note: 'Found in search', state: 'ok' },
+  { name: 'Capture', note: 'Form submitted', state: 'ok' },
+  { name: 'Response', note: 'Hours pass before reply', state: 'leak', main: true },
+  { name: 'Follow-up', note: 'Nobody owns the chase', state: 'weak' },
+  { name: 'Visibility', note: 'Owner cannot see what happened', state: 'weak' },
+];
+
 export default function SmartWebsiteSystemsRenderer({ data }: Props) {
   const { hero, cta } = data;
   const faq = data.faq;
-
   return (
     <main>
       <SmartWebsiteHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
@@ -113,33 +120,72 @@ function SmartWebsiteRecognitionSection() {
           'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
       }}
     >
-      <div className='grid gap-5 lg:grid-cols-3'>
-        <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
-          <h3>The visitor understands the offer</h3>
-          <p>
-            Service pages should answer what the visitor came to check: what you do, who it is for,
-            where it is available, and what happens next.
-          </p>
-        </article>
+      <div className='rounded-[20px] bg-white border border-[#E6EEF3] p-10 lg:p-14 relative overflow-hidden'>
+        <div className='grid grid-cols-12 gap-4 items-stretch'>
+          {smartWebsiteMoments.map((m, i) => {
+            const dom = m.main;
+            const tone =
+              m.state === 'leak' ? '#E76F6F' : m.state === 'weak' ? '#F4B740' : '#21B985';
+            return (
+              <div
+                key={i}
+                className={`${dom ? 'col-span-12 md:col-span-4' : 'col-span-6 md:col-span-2'} relative`}
+              >
+                <div
+                  className={`h-full rounded-xl p-5 ${dom ? 'bg-gradient-to-br from-[#FDECEC] to-white border border-[#E76F6F]/30 shadow-[0_12px_40px_rgba(231,111,111,0.15)]' : 'bg-[#F6FAFC] border border-[#E6EEF3]'}`}
+                >
+                  <div className='flex items-center justify-between mb-3'>
+                    <span
+                      className='text-[#6F8190] tabular-nums'
+                      style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.12em' }}
+                    >
+                      0{i + 1}
+                    </span>
+                    <span
+                      className='w-1.5 h-1.5 rounded-full'
+                      style={{ background: tone, boxShadow: dom ? `0 0 10px ${tone}` : 'none' }}
+                    />
+                  </div>
+                  <div
+                    className='text-[#08111F]'
+                    style={{
+                      fontSize: dom ? '24px' : '14.5px',
+                      fontWeight: 600,
+                      letterSpacing: '-0.015em',
+                    }}
+                  >
+                    {m.name}
+                  </div>
+                  <div
+                    className={`mt-2 ${dom ? 'text-[#08111F]' : 'text-[#6F8190]'}`}
+                    style={{ fontSize: dom ? '14.5px' : '12px', lineHeight: 1.5 }}
+                  >
+                    {m.note}
+                  </div>
+                  {dom && (
+                    <div
+                      className='mt-5 pt-4 border-t border-[#E76F6F]/20 flex items-center gap-2 text-[#E76F6F]'
+                      style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}
+                    >
+                      <AlertTriangle size={12} /> MAIN LEAK
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
-        <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
-          <h3>The enquiry lands somewhere useful</h3>
-          <p>
-            A form or call should not arrive as a loose message. It should carry source, service,
-            location, and enough context for the next person to act.
-          </p>
-        </article>
-
-        <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
-          <h3>The next step has an owner</h3>
-          <p>
-            The difference is not more decoration. It is a visible path from website visit to
-            enquiry, response, follow-up, and booked work.
-          </p>
-        </article>
+        <div
+          className='mt-8 pt-8 border-t border-[#E6EEF3] flex items-center justify-between text-[#6F8190]'
+          style={{ fontSize: '12.5px' }}
+        >
+          <span>
+            Discovery → Capture → <span className='text-[#E76F6F]'>Response</span> → Follow-up →
+            Visibility
+          </span>
+          <span>Most enquiries die between Capture and Response.</span>
+        </div>
       </div>
     </SectionShell>
   );

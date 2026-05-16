@@ -437,7 +437,7 @@
   margin: 0;
 }
 
-/* Shared inline muted text marker — used via InlineText [[muted:...]] */
+/* InlineText-only muted marker for [[muted:...]] spans. */
 .mw-text-muted {
   color: var(--mw-text-secondary);
 }
@@ -451,7 +451,7 @@
 }
 
 /* ══════════════════════════════════════════════════════
-   HERO SECTION — full hero wrapper + split layout
+   HERO FRAME — full hero wrapper + split layout
    src/components/layout/HeroFrame.tsx
    ══════════════════════════════════════════════════════ */
 

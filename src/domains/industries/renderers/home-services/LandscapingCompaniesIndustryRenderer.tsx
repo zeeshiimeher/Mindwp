@@ -86,14 +86,15 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             {MONTHS.map(mo => (
               <li key={mo.m} className='flex flex-1 flex-col items-center gap-2'>
                 <span
-                  className={`hs-tint-${mo.load === 'peak'
-                    ? 'red'
-                    : mo.load === 'high'
-                      ? 'amber'
-                      : mo.load === 'mid'
-                        ? 'teal'
-                        : 'cyan'
-                    } hs-bar w-full rounded-md border`}
+                  className={`hs-tint-${
+                    mo.load === 'peak'
+                      ? 'red'
+                      : mo.load === 'high'
+                        ? 'amber'
+                        : mo.load === 'mid'
+                          ? 'teal'
+                          : 'cyan'
+                  } hs-bar w-full rounded-md border`}
                   data-load={mo.load}
                 />
                 <span className='hs-mono hs-text-on-dark-muted'>{mo.m}</span>

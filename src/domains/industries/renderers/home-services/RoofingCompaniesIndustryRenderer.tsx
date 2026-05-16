@@ -175,8 +175,9 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             {ROUTE_NODES.map(node => (
               <li
                 key={node.num}
-                className={`hs-surface hs-shadow-card relative flex flex-col gap-3 rounded-2xl border p-6 hs-rule-top-${node.tint} ${node.pos === 'down' ? 'rf-node-down' : 'rf-node-up'
-                  }`}
+                className={`hs-surface hs-shadow-card relative flex flex-col gap-3 rounded-2xl border p-6 hs-rule-top-${node.tint} ${
+                  node.pos === 'down' ? 'rf-node-down' : 'rf-node-up'
+                }`}
               >
                 {node.pin ? (
                   <span

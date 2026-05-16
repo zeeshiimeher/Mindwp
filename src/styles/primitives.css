@@ -100,14 +100,43 @@
 /* Secondary — transparent with border */
 .mw-btn--secondary {
     --_btn-bg: transparent;
-    --_btn-fg: var(--mw-brand-white);
-    --_btn-border: var(--mw-brand-white);
-    --_btn-bg-hover: var(--mw-brand-white);
-    --_btn-border-hover: var(--mw-brand-white);
+    --_btn-fg: var(--mw-bg-brand-primary);
+    --_btn-border: var(--mw-border-light);
+    --_btn-bg-hover: var(--mw-bg-mist);
+    --_btn-border-hover: var(--mw-border-light);
 }
 
 .mw-btn--secondary:hover {
     color: var(--mw-bg-brand-primary);
+}
+
+.mw-bg-brand-primary .mw-btn--secondary,
+.mw-bg-gradient-hero .mw-btn--secondary,
+.mw-bg-gradient-cta .mw-btn--secondary,
+.mw-section-shell--dark .mw-btn--secondary,
+.mw-section-shell--gradient-dark .mw-btn--secondary,
+.mw-hero-frame--gradient-hero .mw-btn--secondary,
+.mw-hero-frame--gradient-dark .mw-btn--secondary,
+.mw-hero-frame--dark .mw-btn--secondary,
+.mw-decision-panel .mw-btn--secondary,
+.footer .mw-btn--secondary {
+    --_btn-fg: var(--mw-brand-white);
+    --_btn-border: var(--mw-white-25);
+    --_btn-bg-hover: var(--mw-white-08);
+    --_btn-border-hover: var(--mw-white-40);
+}
+
+.mw-bg-brand-primary .mw-btn--secondary:hover,
+.mw-bg-gradient-hero .mw-btn--secondary:hover,
+.mw-bg-gradient-cta .mw-btn--secondary:hover,
+.mw-section-shell--dark .mw-btn--secondary:hover,
+.mw-section-shell--gradient-dark .mw-btn--secondary:hover,
+.mw-hero-frame--gradient-hero .mw-btn--secondary:hover,
+.mw-hero-frame--gradient-dark .mw-btn--secondary:hover,
+.mw-hero-frame--dark .mw-btn--secondary:hover,
+.mw-decision-panel .mw-btn--secondary:hover,
+.footer .mw-btn--secondary:hover {
+    color: var(--mw-text-on-dark-strong);
 }
 
 /* ══════════════════════════════════════════════════════

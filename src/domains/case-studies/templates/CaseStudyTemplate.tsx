@@ -12,107 +12,107 @@ import type { CaseStudyMetadata } from './types';
 
 export type CaseStudyTemplateSection =
   | {
-    type: 'hero';
-    introHtml: React.ReactNode;
-  }
+      type: 'hero';
+      introHtml: React.ReactNode;
+    }
   | {
-    type: 'metrics';
-    keyMetrics: Array<{ value: string; label: string; color?: string }>;
-  }
+      type: 'metrics';
+      keyMetrics: Array<{ value: string; label: string; color?: string }>;
+    }
   | {
-    type: 'problem';
-    problemHeading?: string;
-    problemDescription?: string[];
-    painPoints?: string[];
-  }
+      type: 'problem';
+      problemHeading?: string;
+      problemDescription?: string[];
+      painPoints?: string[];
+    }
   | {
-    type: 'solution';
-    solutionHeading?: string;
-    solutionDescription?: string;
-    whatWeDid?: {
+      type: 'solution';
+      solutionHeading?: string;
+      solutionDescription?: string;
+      whatWeDid?: {
+        title: string;
+        description: string;
+        icon: string;
+      }[];
+    }
+  | {
+      type: 'process';
+      howWeDidIt?: {
+        phase: string;
+        title: string;
+        description: string;
+        duration: string;
+      }[];
+    }
+  | {
+      type: 'features';
+      featuresUsed?: {
+        category: string;
+        features: string[];
+      }[];
+    }
+  | {
+      type: 'results';
+      results: {
+        metric?: string;
+        before?: string;
+        after?: string;
+        improvement?: string;
+        title?: string;
+        description: string;
+      }[];
+    }
+  | {
+      type: 'testimonial';
+      testimonial?: {
+        quote: string;
+        author: string;
+        role: string;
+      };
+    }
+  | {
+      type: 'investment';
+      investment?: {
+        setup: string;
+        monthly: string;
+        roi?: string;
+      };
+    }
+  | {
+      type: 'business-impact';
+      badge?: string;
       title: string;
-      description: string;
-      icon: string;
-    }[];
-  }
+      description?: string;
+      impacts: string[];
+    }
   | {
-    type: 'process';
-    howWeDidIt?: {
-      phase: string;
+      type: 'deliverables';
+      badge?: string;
       title: string;
-      description: string;
-      duration: string;
-    }[];
-  }
+      description?: string;
+      items: string[];
+      columns?: 2 | 3 | 4;
+    }
   | {
-    type: 'features';
-    featuresUsed?: {
-      category: string;
-      features: string[];
-    }[];
-  }
+      type: 'workflows';
+      badge?: string;
+      title: string;
+      description?: string;
+      workflows: Array<{ trigger: string; actions: string[] }>;
+    }
   | {
-    type: 'results';
-    results: {
-      metric?: string;
-      before?: string;
-      after?: string;
-      improvement?: string;
+      type: 'faq';
+      badge?: string;
       title?: string;
-      description: string;
-    }[];
-  }
+      description?: string;
+      items: Array<{ question: string; answer: string }>;
+    }
   | {
-    type: 'testimonial';
-    testimonial?: {
-      quote: string;
-      author: string;
-      role: string;
+      type: 'cta';
+      heading: string;
+      body: string;
+      metaItems?: { text: string }[];
     };
-  }
-  | {
-    type: 'investment';
-    investment?: {
-      setup: string;
-      monthly: string;
-      roi?: string;
-    };
-  }
-  | {
-    type: 'business-impact';
-    badge?: string;
-    title: string;
-    description?: string;
-    impacts: string[];
-  }
-  | {
-    type: 'deliverables';
-    badge?: string;
-    title: string;
-    description?: string;
-    items: string[];
-    columns?: 2 | 3 | 4;
-  }
-  | {
-    type: 'workflows';
-    badge?: string;
-    title: string;
-    description?: string;
-    workflows: Array<{ trigger: string; actions: string[] }>;
-  }
-  | {
-    type: 'faq';
-    badge?: string;
-    title?: string;
-    description?: string;
-    items: Array<{ question: string; answer: string }>;
-  }
-  | {
-    type: 'cta';
-    heading: string;
-    body: string;
-    metaItems?: { text: string }[];
-  };
 
 const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']>([
   'hero',
@@ -308,14 +308,14 @@ export function CaseStudyTemplate({
           expectations={
             ctaSection?.type === 'cta' && ctaSection.metaItems?.length
               ? ctaSection.metaItems.map((item, index) => ({
-                num: String(index + 1).padStart(2, '0'),
-                text: item.text,
-              }))
+                  num: String(index + 1).padStart(2, '0'),
+                  text: item.text,
+                }))
               : [
-                { num: '01', text: 'What changed in the case study' },
-                { num: '02', text: 'Where your current handoff breaks' },
-                { num: '03', text: 'What should be fixed first' },
-              ]
+                  { num: '01', text: 'What changed in the case study' },
+                  { num: '02', text: 'Where your current handoff breaks' },
+                  { num: '03', text: 'What should be fixed first' },
+                ]
           }
           reassurance={{ noSell: 'No hard sell.', tone: 'Practical review' }}
         />
@@ -348,10 +348,7 @@ function CaseStudySectionBlock({
           <h3>The visible result markers</h3>
           <div className='grid gap-3 md:grid-cols-3'>
             {section.keyMetrics.map(metric => (
-              <div
-                key={`${metric.value}-${metric.label}`}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <div key={`${metric.value}-${metric.label}`} className='mw-surface-panel p-4'>
                 <strong>{metric.value}</strong>
                 <p>{metric.label}</p>
               </div>
@@ -373,10 +370,7 @@ function CaseStudySectionBlock({
           {section.painPoints?.length ? (
             <ul className='mt-4 grid gap-3'>
               {section.painPoints.map(point => (
-                <li
-                  key={point}
-                  className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-                >
+                <li key={point} className='mw-surface-panel p-4'>
                   {point}
                 </li>
               ))}
@@ -394,10 +388,7 @@ function CaseStudySectionBlock({
           {section.whatWeDid?.length ? (
             <div className='mt-4 grid gap-3 md:grid-cols-3'>
               {section.whatWeDid.map(item => (
-                <div
-                  key={item.title}
-                  className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-                >
+                <div key={item.title} className='mw-surface-panel p-4'>
                   <strong>{item.title}</strong>
                   <p>{item.description}</p>
                 </div>
@@ -414,10 +405,7 @@ function CaseStudySectionBlock({
           <h3>How the change was implemented</h3>
           <div className='grid gap-3'>
             {section.howWeDidIt?.map(phase => (
-              <div
-                key={`${phase.phase}-${phase.title}`}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <div key={`${phase.phase}-${phase.title}`} className='mw-surface-panel p-4'>
                 <p className='mw-text-eyebrow mw-text-signal-cyan'>{phase.phase}</p>
                 <strong>{phase.title}</strong>
                 <p>{phase.description}</p>
@@ -435,10 +423,7 @@ function CaseStudySectionBlock({
           <h3>Features and tools used</h3>
           <div className='grid gap-3 md:grid-cols-2'>
             {section.featuresUsed?.map(group => (
-              <div
-                key={group.category}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <div key={group.category} className='mw-surface-panel p-4'>
                 <strong>{group.category}</strong>
                 <ul className='mt-3 grid gap-2'>
                   {group.features.map(feature => (
@@ -460,7 +445,7 @@ function CaseStudySectionBlock({
             {section.results.map(result => (
               <div
                 key={`${result.title ?? result.metric ?? result.description}-${index}`}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+                className='mw-surface-panel p-4'
               >
                 {result.metric ? (
                   <p className='mw-text-eyebrow mw-text-signal-cyan'>{result.metric}</p>
@@ -537,10 +522,7 @@ function CaseStudySectionBlock({
           {section.description ? <p>{section.description}</p> : null}
           <div className='mt-4 grid gap-3'>
             {section.workflows.map(workflow => (
-              <div
-                key={workflow.trigger}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <div key={workflow.trigger} className='mw-surface-panel p-4'>
                 <strong>{workflow.trigger}</strong>
                 <ul className='mt-3 grid gap-2'>
                   {workflow.actions.map(action => (
@@ -582,7 +564,7 @@ function CaseStudySectionBlock({
 
 function MetricCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'>
+    <div className='mw-surface-panel p-4'>
       <p className='mw-text-eyebrow mw-text-signal-cyan'>{label}</p>
       <strong>{value}</strong>
     </div>
@@ -607,10 +589,7 @@ function ListSection({
       {description ? <p>{description}</p> : null}
       <ul className='mt-4 grid gap-3'>
         {items.map(item => (
-          <li
-            key={item}
-            className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-          >
+          <li key={item} className='mw-surface-panel p-4'>
             {item}
           </li>
         ))}

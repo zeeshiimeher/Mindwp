@@ -1,15 +1,11 @@
 /*
  * INDEX — global CSS entry point.
  *
- * Import order (must not be changed):
- *   1. tokens    — design token source of truth (only file with raw values)
- *   2. reset     — minimal browser normalisation
- *   3. typography — type scale defaults
- *   4. layout    — containers, grids, SectionShell, HeroFrame
- *   5. primitives — buttons, surfaces, signals, forms
- *   6. components — header, footer, RelatedSection, FAQSection, DecisionPanel
- *   7. Tailwind layers last — utility classes must win when used
+ * Tailwind v4 loads first. MindWP foundation styles follow so token,
+ * primitive, and component classes keep their intended cascade.
  */
+
+@import 'tailwindcss';
 
 @import './styles/tokens.css';
 @import './styles/reset.css';
@@ -17,7 +13,3 @@
 @import './styles/layout.css';
 @import './styles/primitives.css';
 @import './styles/components.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

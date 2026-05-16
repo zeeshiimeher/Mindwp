@@ -68,7 +68,7 @@ export function CaseStudiesPage() {
                       {study.keyMetrics.slice(0, 3).map(metric => (
                         <li
                           key={`${metric.value}-${metric.label}`}
-                          className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] px-3 py-2 mw-text-body-sm'
+                          className='mw-surface-panel px-3 py-2 mw-text-body-sm'
                         >
                           <strong>{metric.value}</strong>
                           <span> {metric.label}</span>

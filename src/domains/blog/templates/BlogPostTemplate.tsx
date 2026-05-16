@@ -339,10 +339,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
           {section.list && section.list.length > 0 ? (
             <ul className='mt-4 grid gap-3'>
               {section.list.map(item => (
-                <li
-                  key={item}
-                  className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-                >
+                <li key={item} className='mw-surface-panel p-4'>
                   {item}
                 </li>
               ))}
@@ -363,10 +360,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
           {renderContentValue(section.content)}
           <ul className='mt-4 grid gap-3'>
             {section.items.map(item => (
-              <li
-                key={item}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <li key={item} className='mw-surface-panel p-4'>
                 {item}
               </li>
             ))}
@@ -395,10 +389,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
           {renderContentValue(section.content)}
           <ol className='mt-4 grid gap-3'>
             {section.steps.map(step => (
-              <li
-                key={step.label}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <li key={step.label} className='mw-surface-panel p-4'>
                 <strong>{step.label}</strong>
                 {step.description ? <p>{step.description}</p> : null}
               </li>
@@ -415,10 +406,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
           {renderContentValue(section.content)}
           <ul className='mt-4 grid gap-3'>
             {section.items.map(item => (
-              <li
-                key={item}
-                className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-              >
+              <li key={item} className='mw-surface-panel p-4'>
                 {item}
               </li>
             ))}
