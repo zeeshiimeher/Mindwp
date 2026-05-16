@@ -309,10 +309,36 @@ Allowed direction:
 
 Avoid:
 
-- Book Revenue Growth Systems
+- Book a generic growth service
 - Guarantee more revenue
 - Scale my business now
 - Unlock explosive growth
+
+### Implementation Service Pages
+
+Implementation service pages use Smart Website Systems CTA posture.
+
+CTA direction:
+
+- Check my website system
+- Review my service-page clarity
+- Review my website rebuild path
+- Find where my website loses enquiries
+- Talk through the right implementation path
+
+CTA should imply:
+
+- the implementation choice serves the website system
+- the focus is clarity, trust, enquiry capture, maintainability, and handoff
+- MindWP is not selling a generic builder package
+
+Avoid:
+
+- Get a WordPress quote
+- Build my Elementor site
+- Compare every builder
+- Buy a website package
+- Start a cheap redesign
 
 ---
 

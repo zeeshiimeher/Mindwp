@@ -98,6 +98,22 @@ Every service page must resolve to one active system:
 
 Revenue Recovery must not be created as a primary service page unless the active docs are intentionally updated later.
 
+### Implementation Service
+
+Implementation service pages are implementation pathways under Smart Website Systems.
+
+They may explain WordPress, Elementor, Bricks, Divi, WooCommerce, and website rebuild decisions, but they must resolve upward to Smart Website Systems.
+
+They are allowed to describe practical delivery choices, platform fit, editing, performance, maintainability, content structure, ecommerce needs, and rebuild scope.
+
+They must not:
+
+- become primary active systems
+- become generic builder-agency pages
+- behave like random service catalog pages
+- lead with technology before the business problem is clear
+- disconnect from website clarity, trust, enquiry capture, and handoff improvement
+
 ### Feature
 
 Feature pages explain one capability inside a parent active system.
@@ -412,7 +428,7 @@ Before approving new or edited content, confirm:
 - the page type is clear
 - the funnel role is clear
 - the page resolves into one active system where system ownership is relevant
-- the page does not revive removed service names or old system models
+- the page does not revive removed service names or removed system models
 - Revenue Recovery is not treated as a primary service page
 - the page does not become a generic service catalog
 - the page does not expose internal taxonomy before buyer recognition

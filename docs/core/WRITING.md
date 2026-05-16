@@ -34,7 +34,7 @@ Those decisions come from the governing docs.
 8. Industry pages must feel specific to that industry, not reusable.
 9. CTAs must feel like the next natural step, not a pitch.
 10. If writing makes MindWP sound like a normal web design provider, rewrite it.
-11. Do not revive removed service names, old system models, or service-catalog framing.
+11. Do not revive removed service names, removed system models, or service-catalog framing.
 12. Public copy must not mention backend CRM, automation, or white-label platform names.
 13. AI may be part of delivery, but public language must lead with response, handling, routing, and missed enquiries.
 14. CRM may be part of delivery, but public language must lead with ownership, follow-up, status, and next step.
@@ -53,6 +53,7 @@ Before writing anything, lock this:
 - Never default to SERVICES → TOOLS → FEATURES.
 - Use the five active systems only: Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems.
 - Treat Revenue Recovery as a cross-system improvement layer, not a public service page.
+- Treat implementation service pages as Smart Website Systems implementation pathways, not generic builder or platform-agency pages.
 
 Writing controls language and execution. System ownership stays in the governing docs.
 
@@ -277,7 +278,7 @@ Use only the active system names approved in `FOUNDATION.md` and `OFFER-ARCHITEC
 
 Revenue Recovery is a cross-system improvement layer, not a primary public service page.
 
-Public copy must not introduce, preserve, or revive removed service names or old system models.
+Public copy must not introduce, preserve, or revive removed service names or removed system models.
 If older content contains removed service language, rewrite it into the active model.
 
 ### Protected Phrases
@@ -432,6 +433,51 @@ Wrong:
 Right:
 
 > Missed calls and forms move into a response path instead of disappearing.
+
+### Implementation Service Language
+
+WordPress, Elementor, Bricks, Divi, WooCommerce, and website rebuild pages must read like implementation pathways for Smart Website Systems.
+
+Lead with:
+
+- website clarity
+- service-page clarity
+- trust
+- enquiry capture
+- performance where relevant
+- maintainable editing where relevant
+- handoff into response or follow-up
+- fit for a service-business website system
+
+Do not lead with:
+
+- builder fandom
+- cheap website packages
+- page-count packages
+- generic WordPress agency language
+- template customization
+- plugin stacks
+- platform comparison content for its own sake
+
+Good:
+
+> The builder matters because the website has to stay clear, fast, editable, and connected to the enquiry path.
+
+Bad:
+
+> We build stunning Elementor websites for any business.
+
+### Active System Language By Topic
+
+AI language must lead with response and handling, not AI.
+
+CRM language must lead with ownership, follow-up, status, and next step, not software.
+
+SEO language must lead with find, verify, and trust, not ranking guarantees.
+
+Review language must lead with proof, feedback, and timing, not reputation software.
+
+CTA language must stay diagnostic and should not sound like a demo, free trial, package quote, or platform pitch.
 
 ### Generic Phrase Kill List
 
@@ -805,7 +851,7 @@ Run after every meaningful write or rewrite.
 - [ ] No SaaS-style feature lists.
 - [ ] No builder framing.
 - [ ] No hype or unsupported superlatives.
-- [ ] No removed service names or old system models.
+- [ ] No removed service names or removed system models.
 - [ ] No backend platform/tool names in public copy.
 - [ ] No AI-chatbot, CRM-reseller, or rankings-guarantee positioning.
 

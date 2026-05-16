@@ -479,13 +479,30 @@ The public service model has three layers:
 Supporting modules and implementation pathways do not become strategic pillars.
 They must resolve upward into one active public system.
 
+### Implementation Pathway Rule
+
+Implementation services are active delivery pathways under Smart Website Systems.
+They may have public pages later, but they are not equal primary systems and must not be framed as a separate strategic offer model.
+
+Approved future source direction:
+
+- `domains/services/implementation/wordpress-development`
+- `domains/services/implementation/elementor`
+- `domains/services/implementation/bricks-builder`
+- `domains/services/implementation/divi5`
+- `domains/services/implementation/woocommerce`
+- `domains/services/implementation/website-redesign-system-rebuild`
+
+These pages should explain practical implementation choices through website clarity, trust, enquiry capture, and handoff improvement.
+They should not make MindWP sound like a generic WordPress, Elementor, Bricks, Divi, WooCommerce, or redesign agency.
+
 ### Local SEO Exception
 
 Local SEO Authority may lead when visitor intent is explicitly SEO-led.
 This is a controlled acquisition exception, not a second flagship and not a rankings-promise page.
 
 Important nuance:
-Local SEO Authority can be an entry point for businesses seeking local visibility even if they have a limited website, a weak website, or no proper website yet. Buyer intent for Local SEO Authority does not require a fully built-out site — it requires a business with an existing local presence that is not being discovered or verified properly. Do not imply Local SEO Authority is only for businesses that already have strong digital infrastructure.
+Local SEO Authority can be an entry point for businesses seeking local visibility even if they have a limited website, a weak website, or no proper website yet. Buyer intent for Local SEO Authority does not require a fully built-out site — it requires a business with an existing local presence that is not being discovered or verified properly. Do not imply Local SEO Authority is only for businesses that already have a strong digital setup.
 
 ---
 

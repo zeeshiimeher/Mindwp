@@ -49,6 +49,9 @@ The current active offer model is:
 Revenue Recovery exists only as a cross-system improvement layer.
 It is not a primary public service page right now.
 
+Implementation services are practical delivery pathways under Smart Website Systems.
+They may be sold and explained, but they are not equal primary systems.
+
 The offer should be explained through the buyer's business path:
 
 1. Customers find the business.
@@ -570,7 +573,7 @@ Use Revenue Recovery as:
 
 Do not use Revenue Recovery as:
 
-- a sixth equal service
+- an additional equal service
 - a generic growth marketing page
 - an ads or campaign service
 - a vague revenue promise
@@ -638,6 +641,38 @@ A system card, service page, or homepage section should always answer:
 4. What does this system own?
 5. What does it not own?
 6. What is the next sensible step for the buyer?
+
+---
+
+## IMPLEMENTATION PATHWAYS
+
+Implementation services live under Smart Website Systems because they are ways of delivering the website system, not separate strategic pillars.
+
+Approved future source direction:
+
+- `domains/services/implementation/wordpress-development`
+- `domains/services/implementation/elementor`
+- `domains/services/implementation/bricks-builder`
+- `domains/services/implementation/divi5`
+- `domains/services/implementation/woocommerce`
+- `domains/services/implementation/website-redesign-system-rebuild`
+
+These pages may explain:
+
+- why the implementation path fits a service business
+- how the website becomes clearer and easier to trust
+- how enquiries are captured and handed off
+- what the platform or builder is useful for
+- where the page connects back to Smart Website Systems
+
+They must not:
+
+- sound like generic builder-agency pages
+- become technology comparison or affiliate-style content
+- present implementation services as equal active systems
+- turn MindWP into a disconnected service catalog
+
+Implementation pages should resolve upward into Smart Website Systems in navigation, metadata, graph relationships, CTA logic, and internal linking.
 
 ---
 
@@ -1053,7 +1088,7 @@ If the explanation cannot answer these, it is not ready for page planning.
 
 Do not create or revive:
 
-- old service models
+- removed service models
 - removed system names
 - equal service catalogs
 - generic web design positioning

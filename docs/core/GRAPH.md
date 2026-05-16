@@ -80,7 +80,7 @@ Related content must not turn every page into a generic content hub.
 - Domain/config layers may inject `RelatedSection` where it belongs.
 - Inline editorial links are allowed when they support the current section narrative.
 - Related items must preserve funnel role, page intent, and active system boundaries.
-- Related content must not introduce removed service names or old system models.
+- Related content must not introduce removed service names or removed system models.
 - Related content must not mention backend CRM, automation, AI, or white-label platform names publicly.
 
 During page creation and rebuild work, inline links and hand-picked related content are acceptable if they support the narrative.
@@ -292,9 +292,29 @@ Revenue Recovery must not appear as:
 
 - a primary related-content category
 - a primary service page
-- a sixth equal system
+- an additional equal system
 - a generic growth marketing route
 - a guaranteed revenue claim
+
+### Implementation Services
+
+Implementation service pages relate upward to Smart Website Systems.
+
+They may relate to:
+
+- Smart Website Systems
+- service-page clarity resources
+- website rebuild resources
+- enquiry capture resources
+- implementation guides for the same website-system path
+- proof or scenario studies where the implementation choice mattered
+
+They must not become:
+
+- a separate graph category beside the active systems
+- a generic builder-service cluster
+- a technology comparison loop
+- a service catalog path disconnected from Smart Website Systems
 
 ---
 
@@ -452,8 +472,8 @@ A resolver must never select content only because it shares a keyword.
 Related content must not:
 
 - revive removed service names
-- recreate old service models
-- create a sixth equal system
+- recreate removed service models
+- create an additional equal system
 - treat Revenue Recovery as a primary service page
 - mention backend platform names publicly
 - create AI chatbot/vendor positioning
