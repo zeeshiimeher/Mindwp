@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -23,7 +23,7 @@ export function AccountingFirmsIndustryRenderer({ data }: IndustryDetailRenderer
         chips={data.hero.list}
         chipDotVariant='neutral'
       />
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Industry rebuild',
           title: 'This page is ready for the rebuild.',
@@ -33,7 +33,7 @@ export function AccountingFirmsIndustryRenderer({ data }: IndustryDetailRenderer
         tone='white'
       >
         <p className='mw-text-subtle'>Renderer-owned page section target.</p>
-      </SectionFrame>
+      </SectionShell>
       <FAQSection
         eyebrow={data.faq.header.eyebrow}
         title={data.faq.header.title}

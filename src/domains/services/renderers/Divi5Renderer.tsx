@@ -3,7 +3,7 @@ import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
@@ -102,7 +102,7 @@ function Divi5SignalPanel({ visual }: { visual: Props['data']['hero']['visual'] 
 
 function Divi5RecognitionSection() {
   return (
-    <SectionFrame
+    <SectionShell
       id='website-handoff'
       ariaLabel='Where websites usually fail'
       tone='mist'
@@ -141,7 +141,7 @@ function Divi5RecognitionSection() {
           </p>
         </article>
       </div>
-    </SectionFrame>
+    </SectionShell>
   );
 }
 

@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -50,7 +50,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
       />
 
       {/* 1 — Seasonal recognition */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'A landscaping year',
           title:
@@ -71,10 +71,10 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
           </p>
           <p>The system is the inside of the owner&rsquo;s head. That&rsquo;s the leak.</p>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 2 — DOMINANT: 12-month year arc */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The year as one picture',
           title: 'Twelve months, [[muted:four shapes of work.]]',
@@ -86,15 +86,14 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             {MONTHS.map(mo => (
               <li key={mo.m} className='flex flex-1 flex-col items-center gap-2'>
                 <span
-                  className={`hs-tint-${
-                    mo.load === 'peak'
-                      ? 'red'
-                      : mo.load === 'high'
-                        ? 'amber'
-                        : mo.load === 'mid'
-                          ? 'teal'
-                          : 'cyan'
-                  } hs-bar w-full rounded-md border`}
+                  className={`hs-tint-${mo.load === 'peak'
+                    ? 'red'
+                    : mo.load === 'high'
+                      ? 'amber'
+                      : mo.load === 'mid'
+                        ? 'teal'
+                        : 'cyan'
+                    } hs-bar w-full rounded-md border`}
                   data-load={mo.load}
                 />
                 <span className='hs-mono hs-text-on-dark-muted'>{mo.m}</span>
@@ -112,10 +111,10 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             Two peaks. One quiet. The office handles all of it the same way.
           </p>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 3 — Quote requests while crew is out */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Spring quote spike',
           title: 'Quote requests arrive [[muted:while the crew is already on a site.]]',
@@ -152,10 +151,10 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             </p>
           </div>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 4 — Maintenance / cleanup / winter rhythms */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Three rhythms inside the year',
           title: 'The recurring work [[muted:is what keeps the lights on.]]',
@@ -193,10 +192,10 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 5 — Past client loop */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The past client loop',
           title: 'Last year&rsquo;s customers [[muted:are this year&rsquo;s easiest jobs.]]',
@@ -236,10 +235,10 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             </li>
           ))}
         </ol>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 6 — A year that doesn&rsquo;t depend on memory */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Off the owner&rsquo;s head',
           title: 'Four parts of the year [[muted:that no longer need to be remembered.]]',
@@ -274,10 +273,10 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 7 — System bridge */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The systems behind it',
           title: 'Three systems hold the year [[muted:that the owner&rsquo;s head used to.]]',
@@ -310,7 +309,7 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

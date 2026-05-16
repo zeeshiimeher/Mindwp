@@ -1,4 +1,4 @@
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { Accordion } from '@/components/primitives/Accordion';
 
 // -- Types --------------------------------------------------------------------
@@ -31,7 +31,7 @@ export type FAQSectionProps = {
 /**
  * FAQSection — canonical FAQ section component.
  *
- * Wraps SectionFrame + Accordion. Owns full section structure.
+ * Wraps SectionShell + Accordion. Owns full section structure.
  * No page-specific class names. Use className to add page-scope modifier.
  *
  * Split variant: heading on left, accordion on right.
@@ -54,9 +54,9 @@ export function FAQSection({
   const resolvedInitialOpenId = initialOpenId ?? (defaultOpenFirst ? items[0]?.id : undefined);
 
   if (variant === 'split') {
-    // Split layout: SectionFrame renders heading block; FAQ body is 2-col via modifier
+    // Split layout: SectionShell renders heading block; FAQ body is 2-col via modifier
     return (
-      <SectionFrame
+      <SectionShell
         heading={{ eyebrow: eyebrow, title, description }}
         tone={resolvedTone}
         ariaLabel={ariaLabel}
@@ -67,12 +67,12 @@ export function FAQSection({
         >
           <Accordion items={items} initialOpenId={resolvedInitialOpenId} />
         </div>
-      </SectionFrame>
+      </SectionShell>
     );
   }
 
   return (
-    <SectionFrame
+    <SectionShell
       heading={{ eyebrow: eyebrow, title, description }}
       tone={resolvedTone}
       ariaLabel={ariaLabel}
@@ -81,6 +81,6 @@ export function FAQSection({
       <div className={['mw-faq-section__accordion', accordionClassName].filter(Boolean).join(' ')}>
         <Accordion items={items} initialOpenId={resolvedInitialOpenId} />
       </div>
-    </SectionFrame>
+    </SectionShell>
   );
 }

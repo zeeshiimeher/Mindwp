@@ -56,7 +56,7 @@ npm run build
 
 - Domain `pageData` files connect slug -> data -> renderer.
 - `RelatedSection` is injected by domain/config where used; renderers should not manually add it.
-- Approved shared base components include `HeroFrame`, `SectionFrame`, `FAQSection`, and `DecisionPanel`.
+- Approved shared base components include `HeroFrame`, `SectionShell`, `FAQSection`, and `DecisionPanel`.
 - Tailwind utilities plus existing `mw-*` and token classes are the default styling surface.
 - Migrated pages should not add page-specific CSS unless there is a clear local need.
 - Keep proof honest, system boundaries clear, and copy grounded in operational reality.

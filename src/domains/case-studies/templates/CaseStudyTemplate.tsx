@@ -4,7 +4,7 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
@@ -12,107 +12,107 @@ import type { CaseStudyMetadata } from './types';
 
 export type CaseStudyTemplateSection =
   | {
-      type: 'hero';
-      introHtml: React.ReactNode;
-    }
+    type: 'hero';
+    introHtml: React.ReactNode;
+  }
   | {
-      type: 'metrics';
-      keyMetrics: Array<{ value: string; label: string; color?: string }>;
-    }
+    type: 'metrics';
+    keyMetrics: Array<{ value: string; label: string; color?: string }>;
+  }
   | {
-      type: 'problem';
-      problemHeading?: string;
-      problemDescription?: string[];
-      painPoints?: string[];
-    }
+    type: 'problem';
+    problemHeading?: string;
+    problemDescription?: string[];
+    painPoints?: string[];
+  }
   | {
-      type: 'solution';
-      solutionHeading?: string;
-      solutionDescription?: string;
-      whatWeDid?: {
-        title: string;
-        description: string;
-        icon: string;
-      }[];
-    }
-  | {
-      type: 'process';
-      howWeDidIt?: {
-        phase: string;
-        title: string;
-        description: string;
-        duration: string;
-      }[];
-    }
-  | {
-      type: 'features';
-      featuresUsed?: {
-        category: string;
-        features: string[];
-      }[];
-    }
-  | {
-      type: 'results';
-      results: {
-        metric?: string;
-        before?: string;
-        after?: string;
-        improvement?: string;
-        title?: string;
-        description: string;
-      }[];
-    }
-  | {
-      type: 'testimonial';
-      testimonial?: {
-        quote: string;
-        author: string;
-        role: string;
-      };
-    }
-  | {
-      type: 'investment';
-      investment?: {
-        setup: string;
-        monthly: string;
-        roi?: string;
-      };
-    }
-  | {
-      type: 'business-impact';
-      badge?: string;
+    type: 'solution';
+    solutionHeading?: string;
+    solutionDescription?: string;
+    whatWeDid?: {
       title: string;
-      description?: string;
-      impacts: string[];
-    }
+      description: string;
+      icon: string;
+    }[];
+  }
   | {
-      type: 'deliverables';
-      badge?: string;
+    type: 'process';
+    howWeDidIt?: {
+      phase: string;
       title: string;
-      description?: string;
-      items: string[];
-      columns?: 2 | 3 | 4;
-    }
+      description: string;
+      duration: string;
+    }[];
+  }
   | {
-      type: 'workflows';
-      badge?: string;
-      title: string;
-      description?: string;
-      workflows: Array<{ trigger: string; actions: string[] }>;
-    }
+    type: 'features';
+    featuresUsed?: {
+      category: string;
+      features: string[];
+    }[];
+  }
   | {
-      type: 'faq';
-      badge?: string;
+    type: 'results';
+    results: {
+      metric?: string;
+      before?: string;
+      after?: string;
+      improvement?: string;
       title?: string;
-      description?: string;
-      items: Array<{ question: string; answer: string }>;
-    }
+      description: string;
+    }[];
+  }
   | {
-      type: 'cta';
-      heading: string;
-      body: string;
-      metaItems?: { text: string }[];
+    type: 'testimonial';
+    testimonial?: {
+      quote: string;
+      author: string;
+      role: string;
     };
+  }
+  | {
+    type: 'investment';
+    investment?: {
+      setup: string;
+      monthly: string;
+      roi?: string;
+    };
+  }
+  | {
+    type: 'business-impact';
+    badge?: string;
+    title: string;
+    description?: string;
+    impacts: string[];
+  }
+  | {
+    type: 'deliverables';
+    badge?: string;
+    title: string;
+    description?: string;
+    items: string[];
+    columns?: 2 | 3 | 4;
+  }
+  | {
+    type: 'workflows';
+    badge?: string;
+    title: string;
+    description?: string;
+    workflows: Array<{ trigger: string; actions: string[] }>;
+  }
+  | {
+    type: 'faq';
+    badge?: string;
+    title?: string;
+    description?: string;
+    items: Array<{ question: string; answer: string }>;
+  }
+  | {
+    type: 'cta';
+    heading: string;
+    body: string;
+    metaItems?: { text: string }[];
+  };
 
 const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']>([
   'hero',
@@ -231,7 +231,7 @@ export function CaseStudyTemplate({
   return (
     <CTARegistryProvider pageId={pageId} pageType='case-study' primarySystem={primarySystem}>
       <main>
-        <SectionFrame
+        <SectionShell
           ariaLabel={`${metadata.business} case study`}
           tone='mist'
           heading={{
@@ -256,10 +256,10 @@ export function CaseStudyTemplate({
               </span>
             ) : null}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
         {renderedSections.length > 0 ? (
-          <SectionFrame
+          <SectionShell
             ariaLabel='Case study breakdown'
             tone='white'
             heading={{
@@ -280,7 +280,7 @@ export function CaseStudyTemplate({
                   />
                 ))}
             </div>
-          </SectionFrame>
+          </SectionShell>
         ) : null}
 
         <DecisionPanel
@@ -308,14 +308,14 @@ export function CaseStudyTemplate({
           expectations={
             ctaSection?.type === 'cta' && ctaSection.metaItems?.length
               ? ctaSection.metaItems.map((item, index) => ({
-                  num: String(index + 1).padStart(2, '0'),
-                  text: item.text,
-                }))
+                num: String(index + 1).padStart(2, '0'),
+                text: item.text,
+              }))
               : [
-                  { num: '01', text: 'What changed in the case study' },
-                  { num: '02', text: 'Where your current handoff breaks' },
-                  { num: '03', text: 'What should be fixed first' },
-                ]
+                { num: '01', text: 'What changed in the case study' },
+                { num: '02', text: 'Where your current handoff breaks' },
+                { num: '03', text: 'What should be fixed first' },
+              ]
           }
           reassurance={{ noSell: 'No hard sell.', tone: 'Practical review' }}
         />

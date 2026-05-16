@@ -34,7 +34,7 @@ Allowed in the MindWP build system:
 - custom section layouts
 - flexible section count
 
-Do not block page design work because a section is not using `SectionFrame`, `HeroFrame`, a data file, or a shared renderer. Those can be extracted after approval and proven patterns.
+Do not block page design work because a section is not using `SectionShell`, `HeroFrame`, a data file, or a shared renderer. Those can be extracted after approval and proven patterns.
 
 ## Tailwind and Tokens
 

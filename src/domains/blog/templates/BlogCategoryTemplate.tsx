@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar } from 'lucide-react';
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { BlogPostListItem } from '@/domains/blog/api';
 
 export type BlogCategoryTemplateProps = {
@@ -18,7 +18,7 @@ export function BlogCategoryTemplate({
 }: BlogCategoryTemplateProps) {
   return (
     <main>
-      <SectionFrame
+      <SectionShell
         ariaLabel={`${title} blog category`}
         tone='mist'
         heading={{
@@ -30,9 +30,9 @@ export function BlogCategoryTemplate({
         <a className='mw-btn mw-btn--secondary' href='/blog'>
           View all articles
         </a>
-      </SectionFrame>
+      </SectionShell>
 
-      <SectionFrame
+      <SectionShell
         ariaLabel='Latest category articles'
         tone='white'
         heading={{
@@ -66,7 +66,7 @@ export function BlogCategoryTemplate({
             ))}
           </div>
         )}
-      </SectionFrame>
+      </SectionShell>
     </main>
   );
 }

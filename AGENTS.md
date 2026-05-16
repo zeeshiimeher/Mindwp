@@ -42,7 +42,7 @@ Public copy starts from the owner's working day: calls, searches, forms, quotes,
 Approved shared base components:
 
 - `HeroFrame`
-- `SectionFrame`
+- `SectionShell`
 - `FAQSection`
 - `DecisionPanel`
 - `SignalDot`

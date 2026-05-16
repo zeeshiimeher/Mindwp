@@ -36,7 +36,7 @@ export type HeroFrameProps = {
   tone?: HeroFrameTone;
   /** Hero layout. 'split' = copy + visual columns. 'center' = single centered column (no visual). Defaults to 'split'. */
   layout?: 'split' | 'center';
-  /** Right-side visual panel — page-local content, rendered in mw-hero-section__visual slot. */
+  /** Right-side visual panel — page-local content, rendered in mw-hero-frame__visual slot. */
   visual?: React.ReactNode;
   /** Optional absolute-positioned texture/overlay rendered before the container. */
   texture?: React.ReactNode;
@@ -77,8 +77,8 @@ export function HeroFrame({
     throw new Error('[HeroFrame] requires title');
   }
 
-  const toneClass = tone === 'none' ? '' : ` mw-hero-section--${tone}`;
-  const layoutClass = ` mw-hero-section--layout-${layout}`;
+  const toneClass = tone === 'none' ? '' : ` mw-hero-frame--${tone}`;
+  const layoutClass = ` mw-hero-frame--layout-${layout}`;
 
   // Auto-build a default signal panel from chips when split layout has no visual.
   const renderDefaultVisual = layout === 'split' && !visual && chips && chips.length > 0;
@@ -86,12 +86,12 @@ export function HeroFrame({
 
   return (
     <section
-      className={`mw-hero-section${toneClass}${layoutClass}${className ? ` ${className}` : ''}`}
+      className={`mw-hero-frame${toneClass}${layoutClass}${className ? ` ${className}` : ''}`}
       aria-label={ariaLabel}
     >
       {texture}
       <div className='mw-container'>
-        <div className='mw-hero-section__inner'>
+        <div className='mw-hero-frame__inner'>
           <div className='mw-hero-frame mw-animate-up'>
             {eyebrow && (
               <div className='mw-hero-frame__eyebrow'>
@@ -134,9 +134,9 @@ export function HeroFrame({
               </div>
             )}
           </div>
-          {layout === 'split' && visual && <div className='mw-hero-section__visual'>{visual}</div>}
+          {layout === 'split' && visual && <div className='mw-hero-frame__visual'>{visual}</div>}
           {renderDefaultVisual && defaultChips && (
-            <div className='mw-hero-section__visual'>
+            <div className='mw-hero-frame__visual'>
               <div className='mw-hero-frame__default-visual mw-animate-panel' aria-hidden='true'>
                 <div className='mw-hero-frame__panel'>
                   <div className='mw-hero-frame__panel-header'>

@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -26,7 +26,7 @@ export function ElectricalCompaniesIndustryRenderer({ data }: IndustryDetailRend
       />
 
       {/* 1 — Three streams recognition */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Three streams of work',
           title:
@@ -49,7 +49,7 @@ export function ElectricalCompaniesIndustryRenderer({ data }: IndustryDetailRend
             best work to whichever stream is loudest.
           </p>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

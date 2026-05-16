@@ -3,7 +3,7 @@
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { type Author, BLOG_AUTHORS, getCategoryMetadata } from '@/domains/blog/api';
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
@@ -206,7 +206,7 @@ export function BlogPostTemplate({
   return (
     <CTARegistryProvider pageId={pageId} pageType='blog' primarySystem={resolvedPrimarySystem}>
       <main>
-        <SectionFrame
+        <SectionShell
           ariaLabel={title}
           tone='mist'
           heading={{
@@ -238,9 +238,9 @@ export function BlogPostTemplate({
               </span>
             ) : null}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           ariaLabel='Article content'
           tone='white'
           heading={{
@@ -276,7 +276,7 @@ export function BlogPostTemplate({
           <div className='mt-8'>
             <BlogPostShareIsland title={title} />
           </div>
-        </SectionFrame>
+        </SectionShell>
 
         <DecisionPanel
           heading={{

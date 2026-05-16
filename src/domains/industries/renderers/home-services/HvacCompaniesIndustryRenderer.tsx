@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -74,7 +74,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
       />
 
       {/* 1 — Booked day under pressure */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'A booked HVAC day',
           title:
@@ -114,10 +114,10 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             </ul>
           </aside>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 2 — Dominant: Dispatch-day path */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Dispatch-day path',
           title:
@@ -158,10 +158,10 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             Same office holding all three.
           </p>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 3 — Surge season vs normal week */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The first hot week',
           title: 'Normal weeks and surge weeks [[muted:are not the same business.]]',
@@ -208,10 +208,10 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 4 — Service / Urgent / Install handoff */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Three calls, three hands',
           title: 'Each call type [[muted:wants a different next step.]]',
@@ -249,10 +249,10 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 5 — Office holding the day */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The office side',
           title: 'One person at a desk [[muted:is not a dispatch system.]]',
@@ -289,10 +289,10 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             ))}
           </ul>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 6 — Service follow-up loop */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The follow-up loop',
           title: 'A finished install [[muted:is the start of the next appointment.]]',
@@ -332,10 +332,10 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             </li>
           ))}
         </ol>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 7 — System bridge */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The systems behind it',
           title: 'Three systems hold the surge week. [[muted:Each one earns its place.]]',
@@ -368,7 +368,7 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

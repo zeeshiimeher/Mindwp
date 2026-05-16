@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -83,7 +83,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       />
 
       {/* S1 — Storm intake recognition */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'After a storm',
           title:
@@ -143,10 +143,10 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             </div>
           </div>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* S2 — DOMINANT storm-to-inspection map */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Storm \u2192 inspection \u2192 quote',
           title:
@@ -175,9 +175,8 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             {ROUTE_NODES.map(node => (
               <li
                 key={node.num}
-                className={`hs-surface hs-shadow-card relative flex flex-col gap-3 rounded-2xl border p-6 hs-rule-top-${node.tint} ${
-                  node.pos === 'down' ? 'rf-node-down' : 'rf-node-up'
-                }`}
+                className={`hs-surface hs-shadow-card relative flex flex-col gap-3 rounded-2xl border p-6 hs-rule-top-${node.tint} ${node.pos === 'down' ? 'rf-node-down' : 'rf-node-up'
+                  }`}
               >
                 {node.pin ? (
                   <span
@@ -202,10 +201,10 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             always the same two stops.
           </p>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* S3 — Photo / detail handoff */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'On the roof',
           title: 'Twelve photos in a phone [[muted:are not a job card yet.]]',
@@ -270,10 +269,10 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             </div>
           </div>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* S4 — Quote silence */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'After the quote goes out',
           title: 'Most lost roofing jobs [[muted:are lost in the silence after the quote.]]',
@@ -325,10 +324,10 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             </ul>
           </div>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* S5 — Handled storm week (ribbon) */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'A handled storm week',
           title: 'Five days, [[muted:five visible movements.]]',
@@ -371,10 +370,10 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             })}
           </ol>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* S6 — Review timing (asymmetric editorial) */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'After the install',
           title: 'A review request [[muted:that doesn&rsquo;t feel automated.]]',
@@ -416,10 +415,10 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             ))}
           </ol>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* S7 — Compact system bridge */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The systems behind it',
           title: 'Three systems carry the storm week.',
@@ -450,7 +449,7 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
             </div>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

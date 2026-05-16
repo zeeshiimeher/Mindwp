@@ -20,7 +20,7 @@ BUSINESS REALITY -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL 
 
 ## Current Shared Surfaces
 
-- `src/components/layout`: `HeroFrame`, `SectionFrame`
+- `src/components/layout`: `HeroFrame`, `SectionShell`
 - `src/components/content`: `FAQSection`
 - `src/components/conversion`: `DecisionPanel`
 - `src/components/navigation`: related-content presentation

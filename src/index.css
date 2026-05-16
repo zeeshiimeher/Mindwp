@@ -5,7 +5,7 @@
  *   1. tokens    — design token source of truth (only file with raw values)
  *   2. reset     — minimal browser normalisation
  *   3. typography — type scale defaults
- *   4. layout    — containers, grids, SectionFrame, HeroFrame
+ *   4. layout    — containers, grids, SectionShell, HeroFrame
  *   5. primitives — buttons, surfaces, signals, forms
  *   6. components — header, footer, RelatedSection, FAQSection, DecisionPanel
  *   7. Tailwind layers last — utility classes must win when used

@@ -21,7 +21,7 @@ BUSINESS REALITY -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL 
 ## Approved Base Components
 
 - `HeroFrame`
-- `SectionFrame`
+- `SectionShell`
 - `FAQSection`
 - `DecisionPanel`
 - `SignalDot`

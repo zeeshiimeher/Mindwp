@@ -1,9 +1,9 @@
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 
 export function ResourceNotFound({ title, description }: { title: string; description: string }) {
   return (
     <main>
-      <SectionFrame
+      <SectionShell
         ariaLabel={title}
         tone='mist'
         heading={{
@@ -20,7 +20,7 @@ export function ResourceNotFound({ title, description }: { title: string; descri
             Go home
           </a>
         </div>
-      </SectionFrame>
+      </SectionShell>
     </main>
   );
 }

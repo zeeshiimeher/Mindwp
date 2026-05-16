@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryDetailRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -37,7 +37,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
       />
 
       {/* 1 — Two paths recognition */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Two calls, two paths',
           title:
@@ -74,10 +74,10 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
             </p>
           </article>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 2 — DOMINANT: emergency vs quoted lanes */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'Two-lane handling',
           title: 'One office, two lanes &mdash; [[muted:running at the same time.]]',
@@ -138,10 +138,10 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
         <p className='hs-text-on-dark-muted mx-auto mt-8 max-w-2xl text-center text-sm italic'>
           Same line. Same office. Two completely different calendars.
         </p>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 3 — After-hours pressure */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'After hours',
           title: 'The day the office closes [[muted:is the day leaks happen.]]',
@@ -183,10 +183,10 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
             </p>
           </aside>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 4 — Quote follow-up not losing to urgent */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The quoted queue',
           title: 'Quotes don&rsquo;t lose to other plumbers. [[muted:They lose to urgent calls.]]',
@@ -229,10 +229,10 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
             </p>
           </div>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 5 — Same-day-different-paths timeline */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'A real Tuesday',
           title: 'Same day, [[muted:two completely different shapes.]]',
@@ -285,10 +285,10 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
             </div>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 6 — Customer update + review loop */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'After the job',
           title: 'A review request [[muted:that respects which job it was.]]',
@@ -323,10 +323,10 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       {/* 7 — System bridge */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The systems behind it',
           title: 'Three systems separate the lanes [[muted:without doubling the office.]]',
@@ -359,7 +359,7 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
             </article>
           ))}
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

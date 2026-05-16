@@ -92,6 +92,8 @@
     "check:style-guidance": "tsx scripts/check-style-guidance.ts",
     "check:guidance": "npm run check:duplicates && npm run check:style-guidance",
     "check:minimal": "npm run typecheck && npm run lint && npm run check:names",
-    "check:frontend": "node scripts/check-frontend.mjs"
+    "check:all": "npm run check:minimal && npm run check:architecture && npm run check:guidance && npm run build",
+    "check:frontend": "node scripts/check-frontend.mjs",
+    "check:release": "npm run check:all && npm run check:frontend"
   }
 }

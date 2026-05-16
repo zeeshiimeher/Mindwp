@@ -1,7 +1,7 @@
 /*
  * LAYOUT — containers, grids, section rhythm, background utilities.
  *
- * Owns: mw-container, layout grids, split layouts, SectionFrame,
+ * Owns: mw-container, layout grids, split layouts, SectionShell,
  * HeroFrame, background context classes, and motion utilities.
  *
  * No component-specific styles. No buttons. No cards.
@@ -316,68 +316,68 @@
 
 /* ══════════════════════════════════════════════════════
    SECTION FRAME — full section wrapper
-   src/components/layout/SectionFrame.tsx
+   src/components/layout/SectionShell.tsx
    ══════════════════════════════════════════════════════ */
 
-.mw-section-frame {
+.mw-section-shell {
   padding-block: var(--mw-section-block);
   position: relative;
   overflow: hidden;
 }
 
-.mw-section-frame--mist {
+.mw-section-shell--mist {
   background: var(--mw-bg-mist);
 }
 
-.mw-section-frame--white {
+.mw-section-shell--white {
   background: var(--mw-bg-page);
 }
 
-.mw-section-frame--dark {
+.mw-section-shell--dark {
   background: var(--mw-bg-brand-primary);
 }
 
 /* Gradient tone variants */
-.mw-section-frame--gradient-dark {
+.mw-section-shell--gradient-dark {
   background: var(--mw-gradient-section-dark);
 }
 
-.mw-section-frame--gradient-mist {
+.mw-section-shell--gradient-mist {
   background: var(--mw-gradient-section-mist);
 }
 
-.mw-section-frame--gradient-teal {
+.mw-section-shell--gradient-teal {
   background: var(--mw-gradient-section-teal);
 }
 
 /* Dark tone text overrides — applies to both solid dark and gradient-dark */
-.mw-section-frame--dark .mw-section-frame__heading,
-.mw-section-frame--gradient-dark .mw-section-frame__heading {
+.mw-section-shell--dark .mw-section-shell__heading,
+.mw-section-shell--gradient-dark .mw-section-shell__heading {
   color: var(--mw-brand-white);
 }
 
-.mw-section-frame--dark .mw-section-frame__heading-muted,
-.mw-section-frame--gradient-dark .mw-section-frame__heading-muted {
+.mw-section-shell--dark .mw-section-shell__heading-muted,
+.mw-section-shell--gradient-dark .mw-section-shell__heading-muted {
   color: var(--mw-white-50);
 }
 
-.mw-section-frame--dark .mw-section-frame__description,
-.mw-section-frame--gradient-dark .mw-section-frame__description {
+.mw-section-shell--dark .mw-section-shell__description,
+.mw-section-shell--gradient-dark .mw-section-shell__description {
   color: var(--mw-white-60);
 }
 
-.mw-section-frame--dark .mw-section-frame__eyebrow,
-.mw-section-frame--gradient-dark .mw-section-frame__eyebrow {
+.mw-section-shell--dark .mw-section-shell__eyebrow,
+.mw-section-shell--gradient-dark .mw-section-shell__eyebrow {
   color: var(--mw-white-45);
 }
 
-.mw-section-frame__header {
+.mw-section-shell__header {
   margin-bottom: var(--mw-space-content-lg);
 }
 
 /* ── Split layout variants ── */
 
-.mw-section-frame--layout-split .mw-section-frame__inner {
+.mw-section-shell--layout-split .mw-section-shell__inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--mw-gap-cols);
@@ -385,30 +385,30 @@
 }
 
 @media (min-width: 980px) {
-  .mw-section-frame--layout-split.mw-section-frame--ratio-50-50 .mw-section-frame__inner {
+  .mw-section-shell--layout-split.mw-section-shell--ratio-50-50 .mw-section-shell__inner {
     grid-template-columns: 1fr 1fr;
   }
 
-  .mw-section-frame--layout-split.mw-section-frame--ratio-40-60 .mw-section-frame__inner {
+  .mw-section-shell--layout-split.mw-section-shell--ratio-40-60 .mw-section-shell__inner {
     grid-template-columns: 2fr 3fr;
   }
 
-  .mw-section-frame--layout-split.mw-section-frame--ratio-60-40 .mw-section-frame__inner {
+  .mw-section-shell--layout-split.mw-section-shell--ratio-60-40 .mw-section-shell__inner {
     grid-template-columns: 3fr 2fr;
   }
 
   /* Default split (no ratio specified): equal columns */
-  .mw-section-frame--layout-split:not([class*='mw-section-frame--ratio-']) .mw-section-frame__inner {
+  .mw-section-shell--layout-split:not([class*='mw-section-shell--ratio-']) .mw-section-shell__inner {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 /* In split layout, header has no bottom margin (spacing comes from grid gap) */
-.mw-section-frame--layout-split .mw-section-frame__header {
+.mw-section-shell--layout-split .mw-section-shell__header {
   margin-bottom: 0;
 }
 
-.mw-section-frame__eyebrow {
+.mw-section-shell__eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--mw-space-2);
@@ -420,7 +420,7 @@
   margin-bottom: var(--mw-space-5);
 }
 
-.mw-section-frame__eyebrow-dot {
+.mw-section-shell__eyebrow-dot {
   width: 6px;
   height: 6px;
   border-radius: var(--mw-radius-pill);
@@ -428,7 +428,7 @@
   flex-shrink: 0;
 }
 
-.mw-section-frame__heading {
+.mw-section-shell__heading {
   font-size: var(--mw-text-4xl);
   font-weight: 700;
   line-height: 1.05;
@@ -442,7 +442,7 @@
   color: var(--mw-text-secondary);
 }
 
-.mw-section-frame__description {
+.mw-section-shell__description {
   margin-top: var(--mw-space-5);
   font-size: var(--mw-text-base);
   line-height: 1.65;
@@ -455,7 +455,7 @@
    src/components/layout/HeroFrame.tsx
    ══════════════════════════════════════════════════════ */
 
-.mw-hero-section {
+.mw-hero-frame {
   position: relative;
   overflow: hidden;
   padding-block-start: var(--mw-hero-block-top);
@@ -463,31 +463,31 @@
 }
 
 /* Hero tone variants — default tone is gradient-hero (set via HeroFrame `tone` prop) */
-.mw-hero-section--gradient-hero {
+.mw-hero-frame--gradient-hero {
   background: var(--mw-gradient-hero);
 }
 
-.mw-hero-section--gradient-dark {
+.mw-hero-frame--gradient-dark {
   background: var(--mw-gradient-section-dark);
 }
 
-.mw-hero-section--gradient-teal {
+.mw-hero-frame--gradient-teal {
   background: var(--mw-gradient-section-teal);
 }
 
-.mw-hero-section--dark {
+.mw-hero-frame--dark {
   background: var(--mw-bg-brand-primary);
 }
 
-.mw-hero-section--mist {
+.mw-hero-frame--mist {
   background: var(--mw-bg-mist);
 }
 
-.mw-hero-section--white {
+.mw-hero-frame--white {
   background: var(--mw-bg-page);
 }
 
-.mw-hero-section__inner {
+.mw-hero-frame__inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--mw-gap-cols);
@@ -495,30 +495,30 @@
 }
 
 @media (min-width: 980px) {
-  .mw-hero-section--layout-split .mw-hero-section__inner {
+  .mw-hero-frame--layout-split .mw-hero-frame__inner {
     grid-template-columns: 7fr 5fr;
   }
 }
 
 /* Center layout — single column, centered. Used for builder/platform pages. */
-.mw-hero-section--layout-center .mw-hero-section__inner {
+.mw-hero-frame--layout-center .mw-hero-frame__inner {
   grid-template-columns: 1fr;
   justify-items: center;
   text-align: center;
 }
 
-.mw-hero-section--layout-center .mw-hero-frame {
+.mw-hero-frame--layout-center .mw-hero-frame {
   align-items: center;
   max-width: 64ch;
 }
 
-.mw-hero-section--layout-center .mw-hero-frame__description {
+.mw-hero-frame--layout-center .mw-hero-frame__description {
   max-width: 56ch;
   margin-inline: auto;
 }
 
-.mw-hero-section--layout-center .mw-hero-frame__actions,
-.mw-hero-section--layout-center .mw-hero-frame__chips {
+.mw-hero-frame--layout-center .mw-hero-frame__actions,
+.mw-hero-frame--layout-center .mw-hero-frame__chips {
   justify-content: center;
 }
 

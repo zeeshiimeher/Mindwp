@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { ResourceCategory } from '@/domains/resources/types';
 
 export type ResourceCategoryTemplateProps = {
@@ -27,7 +27,7 @@ export default function ResourceCategoryTemplate({
 }: ResourceCategoryTemplateProps) {
   return (
     <main>
-      <SectionFrame
+      <SectionShell
         ariaLabel={`${label} resources`}
         tone='mist'
         heading={{
@@ -67,7 +67,7 @@ export default function ResourceCategoryTemplate({
             ))}
           </div>
         )}
-      </SectionFrame>
+      </SectionShell>
     </main>
   );
 }

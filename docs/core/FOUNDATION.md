@@ -57,7 +57,7 @@ The build flow is:
 
 Checks protect approved decisions. They do not decide the page before it exists.
 
-Useful components such as HeroFrame, SectionFrame, FAQSection, DecisionPanel, Button, SignalDot, and StatusBadge may exist, but they are building blocks, not mandatory gates. A section may use a shared component when it helps, or custom page-owned JSX when the idea requires it.
+Useful components such as HeroFrame, SectionShell, FAQSection, DecisionPanel, Button, SignalDot, and StatusBadge may exist, but they are building blocks, not mandatory gates. A section may use a shared component when it helps, or custom page-owned JSX when the idea requires it.
 
 ---
 

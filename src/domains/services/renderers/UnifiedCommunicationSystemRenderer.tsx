@@ -3,7 +3,7 @@ import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 
@@ -112,7 +112,7 @@ function UnifiedCommunicationSystemSignalPanel({
 
 function UnifiedCommunicationSystemRecognitionSection() {
   return (
-    <SectionFrame
+    <SectionShell
       id='website-handoff'
       ariaLabel='Where websites usually fail'
       tone='mist'
@@ -151,7 +151,7 @@ function UnifiedCommunicationSystemRecognitionSection() {
           </p>
         </article>
       </div>
-    </SectionFrame>
+    </SectionShell>
   );
 }
 

@@ -3,7 +3,7 @@
 
 import { ArrowRight, Folder } from 'lucide-react';
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import {
   BLOG_CATEGORIES,
   blogPosts,
@@ -44,7 +44,7 @@ export function BlogLanding() {
 
   return (
     <main>
-      <SectionFrame
+      <SectionShell
         ariaLabel='Blog landing hero'
         tone='mist'
         heading={{
@@ -57,10 +57,10 @@ export function BlogLanding() {
         <a className='mw-btn mw-btn--primary' href='#latest-articles'>
           Latest articles
         </a>
-      </SectionFrame>
+      </SectionShell>
 
       {categories.length > 0 ? (
-        <SectionFrame
+        <SectionShell
           ariaLabel='Blog categories'
           tone='white'
           heading={{
@@ -100,10 +100,10 @@ export function BlogLanding() {
               );
             })}
           </div>
-        </SectionFrame>
+        </SectionShell>
       ) : null}
 
-      <SectionFrame
+      <SectionShell
         id='latest-articles'
         ariaLabel='Latest blog articles'
         tone='mist'
@@ -115,7 +115,7 @@ export function BlogLanding() {
         }}
       >
         <BlogPostsListIsland posts={sortedPosts} postsPerPage={POSTS_PER_PAGE} />
-      </SectionFrame>
+      </SectionShell>
     </main>
   );
 }

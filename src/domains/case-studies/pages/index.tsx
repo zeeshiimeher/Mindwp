@@ -1,7 +1,7 @@
 import { ArrowRight, Clock, TrendingUp } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -16,7 +16,7 @@ export function CaseStudiesPage() {
       primarySystem='smart-website-systems'
     >
       <main>
-        <SectionFrame
+        <SectionShell
           ariaLabel='Case studies hero'
           tone='mist'
           heading={{
@@ -36,9 +36,9 @@ export function CaseStudiesPage() {
               <span>Clear, practical execution</span>
             </span>
           </div>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           ariaLabel='Case study library'
           tone='white'
           heading={{
@@ -100,9 +100,9 @@ export function CaseStudiesPage() {
               ))}
             </div>
           )}
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           ariaLabel='Case study patterns'
           tone='mist'
           heading={{
@@ -134,7 +134,7 @@ export function CaseStudiesPage() {
               <p>Built around the way the business actually operates.</p>
             </article>
           </div>
-        </SectionFrame>
+        </SectionShell>
 
         <DecisionPanel
           heading={{

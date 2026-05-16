@@ -2,7 +2,7 @@ import { InlineText } from '@/components/primitives/InlineText';
 
 // -- Types --------------------------------------------------------------------
 
-type SectionFrameTone =
+type SectionShellTone =
   | 'mist'
   | 'white'
   | 'dark'
@@ -10,22 +10,22 @@ type SectionFrameTone =
   | 'gradient-mist'
   | 'gradient-teal';
 
-type SectionFrameLayout = 'stack' | 'split';
+type SectionShellLayout = 'stack' | 'split';
 
-type SectionFrameRatio = '50-50' | '40-60' | '60-40';
+type SectionShellRatio = '50-50' | '40-60' | '60-40';
 
-type SectionFrameHeading = {
+type SectionShellHeading = {
   eyebrow?: string;
   title: string;
   description?: string;
 };
 
-export type SectionFrameProps = {
+export type SectionShellProps = {
   id?: string;
-  heading: SectionFrameHeading;
-  tone?: SectionFrameTone;
-  layout?: SectionFrameLayout;
-  ratio?: SectionFrameRatio;
+  heading: SectionShellHeading;
+  tone?: SectionShellTone;
+  layout?: SectionShellLayout;
+  ratio?: SectionShellRatio;
   contentClassName?: string;
   ariaLabel?: string;
   className?: string;
@@ -35,14 +35,14 @@ export type SectionFrameProps = {
 // -- Component ----------------------------------------------------------------
 
 /**
- * SectionFrame — standard section wrapper.
+ * SectionShell — standard section wrapper.
  *
  * Owns: <section>, mw-container, heading block (eyebrow, h2, description), tone/background,
  * section padding, and optional split layout.
  * Use [[muted:...]] inline syntax in heading.title for muted segments.
  * Default layout='stack'. Use layout='split' for side-by-side heading + content columns.
  */
-export function SectionFrame({
+export function SectionShell({
   id,
   heading,
   tone,
@@ -52,36 +52,36 @@ export function SectionFrame({
   ariaLabel,
   className,
   children,
-}: SectionFrameProps) {
+}: SectionShellProps) {
   if (!heading.title) {
-    throw new Error('[SectionFrame] requires heading.title');
+    throw new Error('[SectionShell] requires heading.title');
   }
 
   const isSplit = layout === 'split';
 
   const sectionClass = [
-    'mw-section-frame',
-    tone ? `mw-section-frame--${tone}` : null,
-    isSplit ? 'mw-section-frame--layout-split' : 'mw-section-frame--layout-stack',
-    isSplit && ratio ? `mw-section-frame--ratio-${ratio}` : null,
+    'mw-section-shell',
+    tone ? `mw-section-shell--${tone}` : null,
+    isSplit ? 'mw-section-shell--layout-split' : 'mw-section-shell--layout-stack',
+    isSplit && ratio ? `mw-section-shell--ratio-${ratio}` : null,
     className ?? null,
   ]
     .filter(Boolean)
     .join(' ');
 
   const header = (
-    <div className='mw-section-frame__header mw-animate-up'>
+    <div className='mw-section-shell__header mw-animate-up'>
       {heading.eyebrow && (
-        <div className='mw-section-frame__eyebrow'>
-          <span className='mw-section-frame__eyebrow-dot' aria-hidden={true} />
+        <div className='mw-section-shell__eyebrow'>
+          <span className='mw-section-shell__eyebrow-dot' aria-hidden={true} />
           <span>{heading.eyebrow}</span>
         </div>
       )}
-      <h2 className='mw-section-frame__heading'>
+      <h2 className='mw-section-shell__heading'>
         <InlineText value={heading.title} />
       </h2>
       {heading.description && (
-        <p className='mw-section-frame__description'>{heading.description}</p>
+        <p className='mw-section-shell__description'>{heading.description}</p>
       )}
     </div>
   );
@@ -90,10 +90,10 @@ export function SectionFrame({
     <section id={id} className={sectionClass} aria-label={ariaLabel}>
       <div className='mw-container'>
         {isSplit ? (
-          <div className='mw-section-frame__inner'>
+          <div className='mw-section-shell__inner'>
             {header}
             <div
-              className={['mw-section-frame__content', contentClassName].filter(Boolean).join(' ')}
+              className={['mw-section-shell__content', contentClassName].filter(Boolean).join(' ')}
             >
               {children}
             </div>

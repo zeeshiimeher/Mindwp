@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -45,7 +45,7 @@ export function ResourcesHub({
       primarySystem='smart-website-systems'
     >
       <main>
-        <SectionFrame
+        <SectionShell
           ariaLabel='Resources hub hero'
           tone='mist'
           heading={{
@@ -62,9 +62,9 @@ export function ResourcesHub({
               View service systems
             </a>
           </div>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           ariaLabel='Resource topic categories'
           tone='white'
           heading={{
@@ -103,9 +103,9 @@ export function ResourcesHub({
               );
             })}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           id='guides'
           ariaLabel='Featured resource guides'
           tone='mist'
@@ -123,9 +123,9 @@ export function ResourcesHub({
           />
 
           <p className='mt-8 mw-text-secondary'>{hubData.guides.comingSoonText}</p>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           ariaLabel='Resources next step'
           tone='white'
           heading={{
@@ -151,7 +151,7 @@ export function ResourcesHub({
               <ArrowRight size={14} aria-hidden='true' />
             </a>
           </div>
-        </SectionFrame>
+        </SectionShell>
       </main>
     </CTARegistryProvider>
   );

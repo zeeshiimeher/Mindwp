@@ -3,7 +3,7 @@
 
 import { ArrowRight, Calendar } from 'lucide-react';
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { getCategoryMetadata, type TopicHubSectionData } from '@/domains/blog/api';
 import type { TopicMetadata } from '@/domains/blog/topicRegistry';
 
@@ -16,7 +16,7 @@ export type BlogTopicTemplateProps = {
 export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemplateProps) {
   return (
     <main>
-      <SectionFrame
+      <SectionShell
         ariaLabel={`${topic.name} topic hub`}
         tone='mist'
         heading={{
@@ -28,10 +28,10 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
         <a className='mw-btn mw-btn--secondary' href='/blog'>
           View all articles
         </a>
-      </SectionFrame>
+      </SectionShell>
 
       {sections.length === 0 ? (
-        <SectionFrame
+        <SectionShell
           ariaLabel='No topic articles'
           tone='white'
           heading={{
@@ -43,10 +43,10 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
           <a className='mw-btn mw-btn--secondary' href='/blog'>
             Browse the blog
           </a>
-        </SectionFrame>
+        </SectionShell>
       ) : (
         sections.map(section => (
-          <SectionFrame
+          <SectionShell
             key={section.key}
             ariaLabel={section.label}
             tone='white'
@@ -84,7 +84,7 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
                 );
               })}
             </div>
-          </SectionFrame>
+          </SectionShell>
         ))
       )}
     </main>

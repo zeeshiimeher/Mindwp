@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import type { IndustryCategoryRendererProps } from '@/domains/industries/types';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -26,7 +26,7 @@ export function HomeServicesIndustryRenderer({ data }: IndustryCategoryRendererP
       />
 
       {/* 1 — Category recognition */}
-      <SectionFrame
+      <SectionShell
         heading={{
           eyebrow: 'The category shape',
           title:
@@ -45,7 +45,7 @@ export function HomeServicesIndustryRenderer({ data }: IndustryCategoryRendererP
             stop relying on memory, missed calls, and one person at a desk holding everything.
           </p>
         </div>
-      </SectionFrame>
+      </SectionShell>
 
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

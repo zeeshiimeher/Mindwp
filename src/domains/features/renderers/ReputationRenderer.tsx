@@ -3,7 +3,7 @@ import { ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
@@ -101,7 +101,7 @@ function ReputationSignalPanel({ visual }: { visual: Props['data']['hero']['visu
 
 function ReputationRecognitionSection() {
   return (
-    <SectionFrame
+    <SectionShell
       id='website-handoff'
       ariaLabel='Where websites usually fail'
       tone='mist'
@@ -140,7 +140,7 @@ function ReputationRecognitionSection() {
           </p>
         </article>
       </div>
-    </SectionFrame>
+    </SectionShell>
   );
 }
 

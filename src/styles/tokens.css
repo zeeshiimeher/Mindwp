@@ -20,442 +20,442 @@
  */
 
 :root {
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        1. FOUNDATION PALETTE
        Raw brand, signal, and overlay ingredients. Page CSS should
        normally reach for usage tokens below.
        ══════════════════════════════════════════════════════ */
 
-     --mw-brand-primary: #061323;
-     /* deepest navy — primary brand colour */
-     --mw-brand-secondary: #103e5a;
-     /* blue-teal — secondary brand colour */
-     --mw-brand-primary-mid: #1b2845;
-     /* mid-navy — between primary and secondary */
-     --mw-brand-white: #ffffff;
-     /* brand white */
-     --mw-brand-logo-ring: color-mix(in oklch, var(--mw-signal-cyan) 18%, var(--mw-brand-primary));
-     /* header logo ring tint */
-     --mw-brand-white-80: color-mix(in srgb, var(--mw-brand-white) 80%, transparent);
-     /* logo light-variant gradient stop */
+  --mw-brand-primary: #061323;
+  /* deepest navy — primary brand colour */
+  --mw-brand-secondary: #103e5a;
+  /* blue-teal — secondary brand colour */
+  --mw-brand-primary-mid: #1b2845;
+  /* mid-navy — between primary and secondary */
+  --mw-brand-white: #ffffff;
+  /* brand white */
+  --mw-brand-logo-ring: color-mix(in oklch, var(--mw-signal-cyan) 18%, var(--mw-brand-primary));
+  /* header logo ring tint */
+  --mw-brand-white-80: color-mix(in srgb, var(--mw-brand-white) 80%, transparent);
+  /* logo light-variant gradient stop */
 
-     /* Signals */
-     --mw-signal-cyan: #35c7d8;
-     /* primary active / CTA accent */
-     --mw-signal-teal: #14b8a6;
-     /* secondary / local SEO */
-     --mw-signal-green: #21b985;
-     /* success / good state */
-     --mw-signal-amber: #f4b740;
-     /* warning / follow-up */
-     --mw-signal-red: #e76f6f;
-     /* risk / lost / error */
-     --mw-signal-purple: #9b7de0;
-     /* proof / reviews */
+  /* Signals */
+  --mw-signal-cyan: #35c7d8;
+  /* primary active / CTA accent */
+  --mw-signal-teal: #14b8a6;
+  /* secondary / local SEO */
+  --mw-signal-green: #21b985;
+  /* success / good state */
+  --mw-signal-amber: #f4b740;
+  /* warning / follow-up */
+  --mw-signal-red: #e76f6f;
+  /* risk / lost / error */
+  --mw-signal-purple: #9b7de0;
+  /* proof / reviews */
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        2. WHITE OVERLAYS
        Use var(--mw-white-XX) in production CSS instead of
        raw rgba(255,255,255,X).
        ══════════════════════════════════════════════════════ */
 
-     --mw-white-02: rgba(255, 255, 255, 0.02);
-     --mw-white-03: rgba(255, 255, 255, 0.03);
-     --mw-white-04: rgba(255, 255, 255, 0.04);
-     --mw-white-05: rgba(255, 255, 255, 0.05);
-     --mw-white-06: rgba(255, 255, 255, 0.06);
-     --mw-white-08: rgba(255, 255, 255, 0.08);
-     --mw-white-10: rgba(255, 255, 255, 0.1);
-     --mw-white-12: rgba(255, 255, 255, 0.12);
-     --mw-white-15: rgba(255, 255, 255, 0.15);
-     --mw-white-25: rgba(255, 255, 255, 0.25);
-     --mw-white-30: rgba(255, 255, 255, 0.3);
-     --mw-white-35: rgba(255, 255, 255, 0.35);
-     --mw-white-40: rgba(255, 255, 255, 0.4);
-     --mw-white-45: rgba(255, 255, 255, 0.45);
-     --mw-white-50: rgba(255, 255, 255, 0.5);
-     --mw-white-55: rgba(255, 255, 255, 0.55);
-     --mw-white-60: rgba(255, 255, 255, 0.6);
-     --mw-white-65: rgba(255, 255, 255, 0.65);
-     --mw-white-70: rgba(255, 255, 255, 0.7);
-     --mw-white-75: rgba(255, 255, 255, 0.75);
-     --mw-white-80: rgba(255, 255, 255, 0.8);
-     --mw-white-85: rgba(255, 255, 255, 0.85);
+  --mw-white-02: rgba(255, 255, 255, 0.02);
+  --mw-white-03: rgba(255, 255, 255, 0.03);
+  --mw-white-04: rgba(255, 255, 255, 0.04);
+  --mw-white-05: rgba(255, 255, 255, 0.05);
+  --mw-white-06: rgba(255, 255, 255, 0.06);
+  --mw-white-08: rgba(255, 255, 255, 0.08);
+  --mw-white-10: rgba(255, 255, 255, 0.1);
+  --mw-white-12: rgba(255, 255, 255, 0.12);
+  --mw-white-15: rgba(255, 255, 255, 0.15);
+  --mw-white-25: rgba(255, 255, 255, 0.25);
+  --mw-white-30: rgba(255, 255, 255, 0.3);
+  --mw-white-35: rgba(255, 255, 255, 0.35);
+  --mw-white-40: rgba(255, 255, 255, 0.4);
+  --mw-white-45: rgba(255, 255, 255, 0.45);
+  --mw-white-50: rgba(255, 255, 255, 0.5);
+  --mw-white-55: rgba(255, 255, 255, 0.55);
+  --mw-white-60: rgba(255, 255, 255, 0.6);
+  --mw-white-65: rgba(255, 255, 255, 0.65);
+  --mw-white-70: rgba(255, 255, 255, 0.7);
+  --mw-white-75: rgba(255, 255, 255, 0.75);
+  --mw-white-80: rgba(255, 255, 255, 0.8);
+  --mw-white-85: rgba(255, 255, 255, 0.85);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        3. SIGNAL TINTS
        Panel backgrounds, callouts, and signal borders.
        ══════════════════════════════════════════════════════ */
 
-     --mw-signal-cyan-8: color-mix(in oklch, var(--mw-signal-cyan) 8%, transparent);
-     --mw-signal-cyan-10: color-mix(in oklch, var(--mw-signal-cyan) 10%, transparent);
-     --mw-signal-cyan-14: color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent);
-     --mw-signal-cyan-20: color-mix(in oklch, var(--mw-signal-cyan) 20%, transparent);
-     --mw-signal-cyan-30: color-mix(in oklch, var(--mw-signal-cyan) 30%, transparent);
-     --mw-signal-teal-10: color-mix(in oklch, var(--mw-signal-teal) 10%, transparent);
-     --mw-signal-teal-18: color-mix(in oklch, var(--mw-signal-teal) 18%, transparent);
-     --mw-signal-teal-30: color-mix(in oklch, var(--mw-signal-teal) 30%, transparent);
-     --mw-signal-green-10: color-mix(in oklch, var(--mw-signal-green) 10%, transparent);
-     --mw-signal-green-30: color-mix(in oklch, var(--mw-signal-green) 30%, transparent);
-     --mw-signal-amber-10: color-mix(in oklch, var(--mw-signal-amber) 10%, transparent);
-     --mw-signal-amber-25: color-mix(in oklch, var(--mw-signal-amber) 25%, transparent);
-     --mw-signal-amber-30: color-mix(in oklch, var(--mw-signal-amber) 30%, transparent);
-     --mw-signal-red-10: color-mix(in oklch, var(--mw-signal-red) 10%, transparent);
-     --mw-signal-red-25: color-mix(in oklch, var(--mw-signal-red) 25%, transparent);
-     --mw-signal-red-30: color-mix(in oklch, var(--mw-signal-red) 30%, transparent);
-     --mw-signal-purple-10: color-mix(in oklch, var(--mw-signal-purple) 10%, transparent);
-     --mw-signal-purple-30: color-mix(in oklch, var(--mw-signal-purple) 30%, transparent);
+  --mw-signal-cyan-8: color-mix(in oklch, var(--mw-signal-cyan) 8%, transparent);
+  --mw-signal-cyan-10: color-mix(in oklch, var(--mw-signal-cyan) 10%, transparent);
+  --mw-signal-cyan-14: color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent);
+  --mw-signal-cyan-20: color-mix(in oklch, var(--mw-signal-cyan) 20%, transparent);
+  --mw-signal-cyan-30: color-mix(in oklch, var(--mw-signal-cyan) 30%, transparent);
+  --mw-signal-teal-10: color-mix(in oklch, var(--mw-signal-teal) 10%, transparent);
+  --mw-signal-teal-18: color-mix(in oklch, var(--mw-signal-teal) 18%, transparent);
+  --mw-signal-teal-30: color-mix(in oklch, var(--mw-signal-teal) 30%, transparent);
+  --mw-signal-green-10: color-mix(in oklch, var(--mw-signal-green) 10%, transparent);
+  --mw-signal-green-30: color-mix(in oklch, var(--mw-signal-green) 30%, transparent);
+  --mw-signal-amber-10: color-mix(in oklch, var(--mw-signal-amber) 10%, transparent);
+  --mw-signal-amber-25: color-mix(in oklch, var(--mw-signal-amber) 25%, transparent);
+  --mw-signal-amber-30: color-mix(in oklch, var(--mw-signal-amber) 30%, transparent);
+  --mw-signal-red-10: color-mix(in oklch, var(--mw-signal-red) 10%, transparent);
+  --mw-signal-red-25: color-mix(in oklch, var(--mw-signal-red) 25%, transparent);
+  --mw-signal-red-30: color-mix(in oklch, var(--mw-signal-red) 30%, transparent);
+  --mw-signal-purple-10: color-mix(in oklch, var(--mw-signal-purple) 10%, transparent);
+  --mw-signal-purple-30: color-mix(in oklch, var(--mw-signal-purple) 30%, transparent);
 
-     /* Semantic surface tint — authority/connected panel gradients on light surfaces */
-     --mw-signal-teal-surface: rgba(223, 248, 243, 0.4);
+  /* Semantic surface tint — authority/connected panel gradients on light surfaces */
+  --mw-signal-teal-surface: rgba(223, 248, 243, 0.4);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        4. USAGE TOKENS
        ══════════════════════════════════════════════════════ */
 
-     /* Backgrounds */
-     --mw-bg-page: var(--mw-brand-white);
-     --mw-bg-mist: #f6fafc;
-     --mw-bg-brand-primary: var(--mw-brand-primary);
-     --mw-bg-brand-secondary: var(--mw-brand-secondary);
-     --mw-bg-brand-primary-mid: var(--mw-brand-primary-mid);
-     --mw-bg-brand-primary-hover: #0e2740;
-     --mw-bg-page-hover: #eef3f6;
-     --mw-glow-decision-cyan: color-mix(in srgb, var(--mw-signal-cyan) 16%, transparent);
-     --mw-glow-decision-teal: color-mix(in srgb, var(--mw-signal-teal) 12%, transparent);
-     --mw-bg-header: color-mix(in srgb, var(--mw-brand-white) 85%, transparent);
-     --mw-bg-header-panel: color-mix(in srgb, var(--mw-brand-white) 96%, transparent);
-     --mw-bg-panel-dark: var(--mw-white-04);
-     --mw-bg-panel-dark-hover: var(--mw-white-06);
+  /* Backgrounds */
+  --mw-bg-page: var(--mw-brand-white);
+  --mw-bg-mist: #f6fafc;
+  --mw-bg-brand-primary: var(--mw-brand-primary);
+  --mw-bg-brand-secondary: var(--mw-brand-secondary);
+  --mw-bg-brand-primary-mid: var(--mw-brand-primary-mid);
+  --mw-bg-brand-primary-hover: #0e2740;
+  --mw-bg-page-hover: #eef3f6;
+  --mw-glow-decision-cyan: color-mix(in srgb, var(--mw-signal-cyan) 16%, transparent);
+  --mw-glow-decision-teal: color-mix(in srgb, var(--mw-signal-teal) 12%, transparent);
+  --mw-bg-header: color-mix(in srgb, var(--mw-brand-white) 85%, transparent);
+  --mw-bg-header-panel: color-mix(in srgb, var(--mw-brand-white) 96%, transparent);
+  --mw-bg-panel-dark: var(--mw-white-04);
+  --mw-bg-panel-dark-hover: var(--mw-white-06);
 
-     /* Text — light surfaces */
-     --mw-text-primary: #08111f;
-     --mw-text-secondary: #4c5e6f;
-     --mw-text-subtle: #6f8190;
+  /* Text — light surfaces */
+  --mw-text-primary: #08111f;
+  --mw-text-secondary: #4c5e6f;
+  --mw-text-subtle: #6f8190;
 
-     /* Text — dark surfaces */
-     --mw-text-on-dark: var(--mw-white-85);
-     --mw-text-on-dark-muted: var(--mw-white-55);
-     --mw-text-on-dark-dim: var(--mw-white-35);
-     --mw-text-on-dark-strong: var(--mw-brand-white);
+  /* Text — dark surfaces */
+  --mw-text-on-dark: var(--mw-white-85);
+  --mw-text-on-dark-muted: var(--mw-white-55);
+  --mw-text-on-dark-dim: var(--mw-white-35);
+  --mw-text-on-dark-strong: var(--mw-brand-white);
 
-     /* Borders */
-     --mw-border-light: #e6eef3;
-     --mw-border-subtle: rgba(8, 17, 31, 0.08);
-     --mw-border-dark: var(--mw-white-08);
-     --mw-border-panel: var(--mw-white-10);
-     --mw-border-signal: color-mix(in oklch, var(--mw-signal-cyan) 30%, transparent);
+  /* Borders */
+  --mw-border-light: #e6eef3;
+  --mw-border-subtle: rgba(8, 17, 31, 0.08);
+  --mw-border-dark: var(--mw-white-08);
+  --mw-border-panel: var(--mw-white-10);
+  --mw-border-signal: color-mix(in oklch, var(--mw-signal-cyan) 30%, transparent);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        5. FONT FAMILIES
        ══════════════════════════════════════════════════════ */
 
-     --mw-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-     --mw-font-mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
+  --mw-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mw-font-mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        6. TYPE SCALE
        ══════════════════════════════════════════════════════ */
 
-     /* Fluid hero / page headings */
-     --mw-text-hero: clamp(3rem, 6.4vw, 4.875rem);
-     /* 48–78px  — main hero h1 */
-     --mw-text-h1: clamp(3rem, 5.5vw, 4rem);
-     /* 48–64px  — page h1 */
-     --mw-text-h1-sm: clamp(2.25rem, 4vw, 3.375rem);
-     /* 36–54px  — resource/blog h1 */
-     --mw-text-h2: clamp(2rem, 3.5vw, 3.25rem);
-     /* 32–52px  — section h2 */
-     --mw-text-h2-sm: clamp(1.75rem, 2.8vw, 2.5rem);
-     /* 28–40px  — sub-section h2 */
-     --mw-text-h3: clamp(1.375rem, 2vw, 2rem);
-     /* 22–32px  — h3 */
+  /* Fluid hero / page headings */
+  --mw-text-hero: clamp(3rem, 6.4vw, 4.875rem);
+  /* 48–78px  — main hero h1 */
+  --mw-text-h1: clamp(3rem, 5.5vw, 4rem);
+  /* 48–64px  — page h1 */
+  --mw-text-h1-sm: clamp(2.25rem, 4vw, 3.375rem);
+  /* 36–54px  — resource/blog h1 */
+  --mw-text-h2: clamp(2rem, 3.5vw, 3.25rem);
+  /* 32–52px  — section h2 */
+  --mw-text-h2-sm: clamp(1.75rem, 2.8vw, 2.5rem);
+  /* 28–40px  — sub-section h2 */
+  --mw-text-h3: clamp(1.375rem, 2vw, 2rem);
+  /* 22–32px  — h3 */
 
-     /* Fixed body / UI sizes */
-     --mw-text-body-lg: 1.125rem;
-     /* 18px — large body / hero description */
-     --mw-text-body: 1.0625rem;
-     /* 17px — standard body */
-     --mw-text-body-sm: 0.875rem;
-     /* 14px — small body / footer copy */
-     --mw-text-label: 0.84375rem;
-     /* Compact navigation label. */
-     --mw-text-label-sm: 0.8125rem;
-     /* 13px — card labels */
-     --mw-text-eyebrow: 0.65625rem;
-     /* 10.5px — section eyebrow / eyebrow */
-     --mw-text-micro: 0.625rem;
-     /* 10px — column headings / micro labels */
-     --mw-text-base: 1rem;
-     /* 16px — body default */
+  /* Fixed body / UI sizes */
+  --mw-text-body-lg: 1.125rem;
+  /* 18px — large body / hero description */
+  --mw-text-body: 1.0625rem;
+  /* 17px — standard body */
+  --mw-text-body-sm: 0.875rem;
+  /* 14px — small body / footer copy */
+  --mw-text-label: 0.84375rem;
+  /* Compact navigation label. */
+  --mw-text-label-sm: 0.8125rem;
+  /* 13px — card labels */
+  --mw-text-eyebrow: 0.65625rem;
+  /* 10.5px — section eyebrow / eyebrow */
+  --mw-text-micro: 0.625rem;
+  /* 10px — column headings / micro labels */
+  --mw-text-base: 1rem;
+  /* 16px — body default */
 
-     /* Utility text scale — mirrors common size names */
-     --mw-text-xs: 0.75rem;
-     /* 12px */
-     --mw-text-sm: 0.875rem;
-     /* 14px */
-     --mw-text-lg: 1.125rem;
-     /* 18px */
-     --mw-text-xl: 1.25rem;
-     /* 20px */
-     --mw-text-2xl: 1.5rem;
-     /* 24px */
-     --mw-text-3xl: 1.875rem;
-     /* 30px */
-     --mw-text-4xl: 2.25rem;
-     /* 36px */
-     --mw-text-5xl: 3rem;
-     /* 48px */
-     --mw-text-6xl: 3.75rem;
-     /* 60px */
+  /* Utility text scale — mirrors common size names */
+  --mw-text-xs: 0.75rem;
+  /* 12px */
+  --mw-text-sm: 0.875rem;
+  /* 14px */
+  --mw-text-lg: 1.125rem;
+  /* 18px */
+  --mw-text-xl: 1.25rem;
+  /* 20px */
+  --mw-text-2xl: 1.5rem;
+  /* 24px */
+  --mw-text-3xl: 1.875rem;
+  /* 30px */
+  --mw-text-4xl: 2.25rem;
+  /* 36px */
+  --mw-text-5xl: 3rem;
+  /* 48px */
+  --mw-text-6xl: 3.75rem;
+  /* 60px */
 
-     /* Line heights */
-     --mw-leading-tight: 1.02;
-     --mw-leading-heading: 1.05;
-     --mw-leading-snug: 1.1;
-     --mw-leading-body: 1.6;
-     --mw-leading-relaxed: 1.65;
+  /* Line heights */
+  --mw-leading-tight: 1.02;
+  --mw-leading-heading: 1.05;
+  --mw-leading-snug: 1.1;
+  --mw-leading-body: 1.6;
+  --mw-leading-relaxed: 1.65;
 
-     /* Letter spacing */
-     --mw-tracking-hero: -0.035em;
-     --mw-tracking-heading: -0.03em;
-     --mw-tracking-tight: -0.01em;
-     --mw-tracking-eyebrow: 0.16em;
-     --mw-tracking-label: 0.14em;
-     --mw-tracking-micro: 0.1em;
+  /* Letter spacing */
+  --mw-tracking-hero: -0.035em;
+  --mw-tracking-heading: -0.03em;
+  --mw-tracking-tight: -0.01em;
+  --mw-tracking-eyebrow: 0.16em;
+  --mw-tracking-label: 0.14em;
+  --mw-tracking-micro: 0.1em;
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
        7. SPACING SCALE
        ══════════════════════════════════════════════════════ */
 
-     --mw-space-px: 1px;
-     --mw-space-0-5: 0.125rem;
-     /*  2px */
-     --mw-space-1: 0.25rem;
-     /*  4px */
-     --mw-space-1-5: 0.375rem;
-     /*  6px */
-     --mw-space-2: 0.5rem;
-     /*  8px */
-     --mw-space-2-5: 0.625rem;
-     /* 10px */
-     --mw-space-3: 0.75rem;
-     /* 12px */
-     --mw-space-3-5: 0.875rem;
-     /* 14px */
-     --mw-space-4: 1rem;
-     /* 16px */
-     --mw-space-5: 1.25rem;
-     /* 20px */
-     --mw-space-6: 1.5rem;
-     /* 24px */
-     --mw-space-7: 1.75rem;
-     /* 28px */
-     --mw-space-8: 2rem;
-     /* 32px */
-     --mw-space-9: 2.25rem;
-     /* 36px */
-     --mw-space-10: 2.5rem;
-     /* 40px */
-     --mw-space-11: 2.75rem;
-     /* 44px */
-     --mw-space-12: 3rem;
-     /* 48px */
-     --mw-space-14: 3.5rem;
-     /* 56px */
-     --mw-space-16: 4rem;
-     /* 64px */
-     --mw-space-20: 5rem;
-     /* 80px */
-     --mw-space-24: 6rem;
-     /* 96px */
-     --mw-space-28: 7rem;
-     /* 112px */
-     --mw-space-32: 8rem;
-     /* 128px */
+  --mw-space-px: 1px;
+  --mw-space-0-5: 0.125rem;
+  /*  2px */
+  --mw-space-1: 0.25rem;
+  /*  4px */
+  --mw-space-1-5: 0.375rem;
+  /*  6px */
+  --mw-space-2: 0.5rem;
+  /*  8px */
+  --mw-space-2-5: 0.625rem;
+  /* 10px */
+  --mw-space-3: 0.75rem;
+  /* 12px */
+  --mw-space-3-5: 0.875rem;
+  /* 14px */
+  --mw-space-4: 1rem;
+  /* 16px */
+  --mw-space-5: 1.25rem;
+  /* 20px */
+  --mw-space-6: 1.5rem;
+  /* 24px */
+  --mw-space-7: 1.75rem;
+  /* 28px */
+  --mw-space-8: 2rem;
+  /* 32px */
+  --mw-space-9: 2.25rem;
+  /* 36px */
+  --mw-space-10: 2.5rem;
+  /* 40px */
+  --mw-space-11: 2.75rem;
+  /* 44px */
+  --mw-space-12: 3rem;
+  /* 48px */
+  --mw-space-14: 3.5rem;
+  /* 56px */
+  --mw-space-16: 4rem;
+  /* 64px */
+  --mw-space-20: 5rem;
+  /* 80px */
+  --mw-space-24: 6rem;
+  /* 96px */
+  --mw-space-28: 7rem;
+  /* 112px */
+  --mw-space-32: 8rem;
+  /* 128px */
 
-     /* Semantic content spacing */
-     --mw-space-content-lg: 2.5rem;
-     /* 40px — standard gap between section header and section content */
+  /* Semantic content spacing */
+  --mw-space-content-lg: 2.5rem;
+  /* 40px — standard gap between section header and section content */
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       8. LAYOUT — containers, section rhythm, hero padding
        ══════════════════════════════════════════════════════ */
 
-     /* Frame max — outer page boundary (1440px) */
-     --mw-frame-max: 1440px;
+  /* Frame max — outer page boundary (1440px) */
+  --mw-frame-max: 1440px;
 
-     /* Inner content container */
-     --mw-container-max: 1240px;
+  /* Inner content container */
+  --mw-container-max: 1240px;
 
-     /* Narrow content container for long-form text pages */
-     --mw-container-text: 820px;
+  /* Narrow content container for long-form text pages */
+  --mw-container-text: 820px;
 
-     /* Responsive horizontal padding */
-     --mw-space-inline: clamp(1.25rem, 3vw, 2rem);
+  /* Responsive horizontal padding */
+  --mw-space-inline: clamp(1.25rem, 3vw, 2rem);
 
-     /* Section vertical rhythm */
-     --mw-section-block: clamp(4rem, 7vw, 7rem);
-     /* py-28 ≈ 112px */
-     --mw-section-compact: clamp(3rem, 5vw, 6rem);
-     --mw-section-spacious: clamp(5rem, 9vw, 9rem);
+  /* Section vertical rhythm */
+  --mw-section-block: clamp(4rem, 7vw, 7rem);
+  /* py-28 ≈ 112px */
+  --mw-section-compact: clamp(3rem, 5vw, 6rem);
+  --mw-section-spacious: clamp(5rem, 9vw, 9rem);
 
-     /* Hero vertical padding */
-     --mw-hero-block-top: clamp(4rem, 6vw, 6rem);
-     /* pt-24 ≈ 96px */
-     --mw-hero-block-bottom: clamp(5rem, 8vw, 8rem);
-     /* pb-32 ≈ 128px */
+  /* Hero vertical padding */
+  --mw-hero-block-top: clamp(4rem, 6vw, 6rem);
+  /* pt-24 ≈ 96px */
+  --mw-hero-block-bottom: clamp(5rem, 8vw, 8rem);
+  /* pb-32 ≈ 128px */
 
-     /* Column gap for multi-column grids */
-     --mw-gap-cols: clamp(1.5rem, 2.5vw, 2.5rem);
+  /* Column gap for multi-column grids */
+  --mw-gap-cols: clamp(1.5rem, 2.5vw, 2.5rem);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       9. RADII
        ══════════════════════════════════════════════════════ */
 
-     --mw-radius-xs: 4px;
-     --mw-radius-sm: 6px;
-     --mw-radius-md: 8px;
-     /* rounded-md */
-     --mw-radius-lg: 12px;
-     /* rounded-xl */
-     --mw-radius-panel: 16px;
-     /* rounded-2xl — main panel radius */
-     --mw-radius-xl: 20px;
-     /* large panel */
-     --mw-radius-2xl: 24px;
-     /* extra-large card/container */
-     --mw-radius-3xl: 32px;
-     /* jumbo container */
-     --mw-radius-pill: 9999px;
-     /* rounded-full */
+  --mw-radius-xs: 4px;
+  --mw-radius-sm: 6px;
+  --mw-radius-md: 8px;
+  /* rounded-md */
+  --mw-radius-lg: 12px;
+  /* rounded-xl */
+  --mw-radius-panel: 16px;
+  /* rounded-2xl — main panel radius */
+  --mw-radius-xl: 20px;
+  /* large panel */
+  --mw-radius-2xl: 24px;
+  /* extra-large card/container */
+  --mw-radius-3xl: 32px;
+  /* jumbo container */
+  --mw-radius-pill: 9999px;
+  /* rounded-full */
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       10. SHADOWS + GLOW EFFECTS
        ══════════════════════════════════════════════════════ */
 
-     --mw-shadow-soft: 0 4px 30px rgba(8, 17, 31, 0.04);
-     /* section card */
-     --mw-shadow-card: 0 8px 24px rgba(8, 17, 31, 0.06);
-     --mw-shadow-panel: 0 16px 48px rgba(8, 17, 31, 0.1);
-     --mw-shadow-sm: var(--mw-shadow-soft);
-     --mw-shadow-md: var(--mw-shadow-card);
-     --mw-shadow-lg: var(--mw-shadow-panel);
-     --mw-shadow-heavy: 0 32px 80px rgba(8, 17, 31, 0.18);
-     --mw-shadow-float: 0 12px 40px rgba(8, 17, 31, 0.08);
-     --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, var(--mw-signal-cyan) 35%, transparent);
+  --mw-shadow-soft: 0 4px 30px rgba(8, 17, 31, 0.04);
+  /* section card */
+  --mw-shadow-card: 0 8px 24px rgba(8, 17, 31, 0.06);
+  --mw-shadow-panel: 0 16px 48px rgba(8, 17, 31, 0.1);
+  --mw-shadow-sm: var(--mw-shadow-soft);
+  --mw-shadow-md: var(--mw-shadow-card);
+  --mw-shadow-lg: var(--mw-shadow-panel);
+  --mw-shadow-heavy: 0 32px 80px rgba(8, 17, 31, 0.18);
+  --mw-shadow-float: 0 12px 40px rgba(8, 17, 31, 0.08);
+  --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, var(--mw-signal-cyan) 35%, transparent);
 
-     /* Signal glow — for animated dots and status indicators */
-     --mw-glow-cyan: 0 0 8px var(--mw-signal-cyan);
-     --mw-glow-teal: 0 0 8px var(--mw-signal-teal);
-     --mw-glow-green: 0 0 8px var(--mw-signal-green);
-     --mw-glow-amber: 0 0 6px var(--mw-signal-amber);
-     --mw-glow-red: 0 0 6px var(--mw-signal-red);
-     --mw-glow-purple: 0 0 8px var(--mw-signal-purple);
+  /* Signal glow — for animated dots and status indicators */
+  --mw-glow-cyan: 0 0 8px var(--mw-signal-cyan);
+  --mw-glow-teal: 0 0 8px var(--mw-signal-teal);
+  --mw-glow-green: 0 0 8px var(--mw-signal-green);
+  --mw-glow-amber: 0 0 6px var(--mw-signal-amber);
+  --mw-glow-red: 0 0 6px var(--mw-signal-red);
+  --mw-glow-purple: 0 0 8px var(--mw-signal-purple);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       11. MOTION
        ══════════════════════════════════════════════════════ */
 
-     --mw-dur-fast: 150ms;
-     --mw-dur-base: 250ms;
-     --mw-dur-slow: 500ms;
-     --mw-ease-out: cubic-bezier(0.2, 0, 0, 1);
-     --mw-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --mw-dur-fast: 150ms;
+  --mw-dur-base: 250ms;
+  --mw-dur-slow: 500ms;
+  --mw-ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --mw-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       12. Z-INDEX
        ══════════════════════════════════════════════════════ */
 
-     --mw-z-base: 1;
-     --mw-z-raised: 5;
-     --mw-z-sticky: 50;
-     --mw-z-overlay: 100;
-     --mw-z-modal: 200;
-     --mw-z-toast: 300;
+  --mw-z-base: 1;
+  --mw-z-raised: 5;
+  --mw-z-sticky: 50;
+  --mw-z-overlay: 100;
+  --mw-z-modal: 200;
+  --mw-z-toast: 300;
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       13. GRADIENTS
        ══════════════════════════════════════════════════════ */
 
-     /* Hero gradient for dark business-reality sections */
-     --mw-gradient-hero:
-          radial-gradient(ellipse at 15% 20%,
-               color-mix(in oklch, var(--mw-signal-cyan) 16%, transparent),
-               transparent 45%),
-          radial-gradient(ellipse at 95% 90%,
-               color-mix(in oklch, var(--mw-signal-teal) 12%, transparent),
-               transparent 50%),
-          linear-gradient(135deg, var(--mw-brand-primary) 0%, var(--mw-brand-secondary) 100%);
+  /* Hero gradient for dark business-reality sections */
+  --mw-gradient-hero:
+    radial-gradient(ellipse at 15% 20%,
+      color-mix(in oklch, var(--mw-signal-cyan) 16%, transparent),
+      transparent 45%),
+    radial-gradient(ellipse at 95% 90%,
+      color-mix(in oklch, var(--mw-signal-teal) 12%, transparent),
+      transparent 50%),
+    linear-gradient(135deg, var(--mw-brand-primary) 0%, var(--mw-brand-secondary) 100%);
 
-     /* Subtle dot-grid texture overlay — apply at opacity ~0.035 */
-     --mw-gradient-grid-texture:
-          linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
+  /* Subtle dot-grid texture overlay — apply at opacity ~0.035 */
+  --mw-gradient-grid-texture:
+    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
 
-     /* CTA section gradient */
-     --mw-gradient-cta:
-          radial-gradient(circle at 20% 20%,
-               color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent),
-               transparent 30%),
-          linear-gradient(135deg, var(--mw-brand-primary) 0%, var(--mw-brand-secondary) 100%);
+  /* CTA section gradient */
+  --mw-gradient-cta:
+    radial-gradient(circle at 20% 20%,
+      color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent),
+      transparent 30%),
+    linear-gradient(135deg, var(--mw-brand-primary) 0%, var(--mw-brand-secondary) 100%);
 
-     /* Light mist gradient (light section transitions) */
-     --mw-gradient-mist: linear-gradient(180deg,
-               var(--mw-brand-white) 0%,
-               var(--mw-bg-mist) 100%);
+  /* Light mist gradient (light section transitions) */
+  --mw-gradient-mist: linear-gradient(180deg,
+      var(--mw-brand-white) 0%,
+      var(--mw-bg-mist) 100%);
 
-     /* Section-level shared gradient backgrounds — used by SectionFrame tone variants */
-     /* Dark diagonal — for dark narrative/contrast sections */
-     --mw-gradient-section-dark: linear-gradient(160deg,
-               var(--mw-bg-brand-primary) 0%,
-               var(--mw-bg-brand-primary-mid) 100%);
-     /* Teal-tinted mist — for process/workbench-style sections */
-     --mw-gradient-section-teal: linear-gradient(160deg,
-               var(--mw-bg-mist) 0%,
-               color-mix(in srgb, var(--mw-signal-teal) 4%, var(--mw-bg-mist)) 100%);
-     /* White-to-mist diagonal — for discovery/index sections */
-     --mw-gradient-section-mist: linear-gradient(160deg,
-               var(--mw-bg-page) 0%,
-               var(--mw-bg-mist) 100%);
+  /* Section-level shared gradient backgrounds — used by SectionShell tone variants */
+  /* Dark diagonal — for dark narrative/contrast sections */
+  --mw-gradient-section-dark: linear-gradient(160deg,
+      var(--mw-bg-brand-primary) 0%,
+      var(--mw-bg-brand-primary-mid) 100%);
+  /* Teal-tinted mist — for process/workbench-style sections */
+  --mw-gradient-section-teal: linear-gradient(160deg,
+      var(--mw-bg-mist) 0%,
+      color-mix(in srgb, var(--mw-signal-teal) 4%, var(--mw-bg-mist)) 100%);
+  /* White-to-mist diagonal — for discovery/index sections */
+  --mw-gradient-section-mist: linear-gradient(160deg,
+      var(--mw-bg-page) 0%,
+      var(--mw-bg-mist) 100%);
 
-     /* ══════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════
       14. SHADCN / RADIX UI COMPAT SHIMS
        Consumed by src/components/ui/ (third-party lib).
        Do NOT use these in production MindWP CSS.
        Do NOT rename — lib components reference them directly.
        ══════════════════════════════════════════════════════ */
 
-     --background: #ffffff;
-     --foreground: oklch(0.145 0 0);
-     --card: #ffffff;
-     --card-foreground: oklch(0.145 0 0);
-     --popover: oklch(1 0 0);
-     --popover-foreground: oklch(0.145 0 0);
-     --primary: #030213;
-     --primary-foreground: oklch(1 0 0);
-     --secondary: oklch(0.95 0.0058 264.53);
-     --secondary-foreground: #030213;
-     --muted: #ececf0;
-     --muted-foreground: #717182;
-     --accent: #e9ebef;
-     --accent-foreground: #030213;
-     --destructive: #d4183d;
-     --destructive-foreground: #ffffff;
-     --border: rgba(0, 0, 0, 0.1);
-     --input: transparent;
-     --input-background: #f3f3f5;
-     --switch-background: #cbced4;
-     --font-weight-medium: 500;
-     --font-weight-normal: 400;
-     --ring: oklch(0.708 0 0);
-     --radius: 0.625rem;
-     --sidebar: oklch(0.985 0 0);
-     --sidebar-foreground: oklch(0.145 0 0);
-     --sidebar-primary: #030213;
-     --sidebar-primary-foreground: oklch(0.985 0 0);
-     --sidebar-accent: oklch(0.97 0 0);
-     --sidebar-accent-foreground: oklch(0.205 0 0);
-     --sidebar-border: oklch(0.922 0 0);
-     --sidebar-ring: oklch(0.708 0 0);
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }

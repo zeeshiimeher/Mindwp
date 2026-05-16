@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
 import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
@@ -55,7 +55,7 @@ export default function IndustriesLanding() {
         />
 
         <div id='categories'>
-          <SectionFrame
+          <SectionShell
             heading={{
               eyebrow: 'Six operating shapes',
               title: 'Find the closest working reality',
@@ -84,10 +84,10 @@ export default function IndustriesLanding() {
                 );
               })}
             </ul>
-          </SectionFrame>
+          </SectionShell>
         </div>
 
-        <SectionFrame
+        <SectionShell
           heading={{
             eyebrow: 'How to read these',
             title: 'Same six systems. [[muted:Different operating shapes.]]',
@@ -134,7 +134,7 @@ export default function IndustriesLanding() {
               </div>
             </li>
           </ul>
-        </SectionFrame>
+        </SectionShell>
 
         <FAQSection
           eyebrow='Honest questions'

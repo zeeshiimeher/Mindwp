@@ -1,7 +1,7 @@
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -264,7 +264,7 @@ export function ServicesLanding() {
           chipDotVariant='subtle'
         />
 
-        <SectionFrame
+        <SectionShell
           heading={{
             eyebrow: 'The Six Systems',
             title: 'These are the working parts. Each one has a job.',
@@ -280,9 +280,9 @@ export function ServicesLanding() {
               <SystemCard key={spec.slug} spec={spec} />
             ))}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           heading={{
             eyebrow: 'Operating Modules',
             title: 'Focused modules that sit inside the connected systems.',
@@ -298,9 +298,9 @@ export function ServicesLanding() {
               <ModuleCard key={spec.slug} spec={spec} />
             ))}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
-        <SectionFrame
+        <SectionShell
           heading={{
             eyebrow: 'Implementation Paths',
             title: 'Decision support and the build surfaces beneath the work.',
@@ -316,7 +316,7 @@ export function ServicesLanding() {
               <PathCard key={spec.slug} spec={spec} />
             ))}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
         <FAQSection
           eyebrow='Questions'

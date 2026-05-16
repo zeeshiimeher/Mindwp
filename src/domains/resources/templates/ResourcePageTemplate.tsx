@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { categories } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
@@ -76,7 +76,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   return (
     <CTARegistryProvider pageId={props.pageId} pageType='resource' primarySystem={primarySystem}>
       <main>
-        <SectionFrame
+        <SectionShell
           ariaLabel={props.title}
           tone='mist'
           heading={{
@@ -101,10 +101,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               </span>
             ) : null}
           </div>
-        </SectionFrame>
+        </SectionShell>
 
         {mainSections.length > 0 ? (
-          <SectionFrame
+          <SectionShell
             ariaLabel='Resource guide content'
             tone='white'
             heading={{
@@ -123,10 +123,10 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 />
               ))}
             </div>
-          </SectionFrame>
+          </SectionShell>
         ) : null}
 
-        <SectionFrame
+        <SectionShell
           ariaLabel='Resource next step'
           tone='mist'
           heading={{
@@ -147,7 +147,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             <span>Start a Conversation</span>
             <ArrowRight size={14} aria-hidden='true' />
           </a>
-        </SectionFrame>
+        </SectionShell>
       </main>
     </CTARegistryProvider>
   );

@@ -779,8 +779,8 @@
   margin-top: var(--mw-space-12);
 }
 
-/* Split variant: heading in SectionFrame header, accordion below but full-width within container */
-.mw-faq-section--split .mw-section-frame__header {
+/* Split variant: heading in SectionShell header, accordion below but full-width within container */
+.mw-faq-section--split .mw-section-shell__header {
   max-width: 36rem;
 }
 

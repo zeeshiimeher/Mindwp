@@ -8,7 +8,7 @@
  * - Renders only
  */
 
-import { SectionFrame } from '@/components/layout/SectionFrame';
+import { SectionShell } from '@/components/layout/SectionShell';
 // ── Types ────────────────────────────────────────────────────────────
 
 export interface ClusterPageSectionItem {
@@ -59,7 +59,7 @@ export function ClusterPageLayout({
         }
 
         return (
-          <SectionFrame
+          <SectionShell
             key={section.id}
             id={section.id}
             heading={{
@@ -80,7 +80,7 @@ export function ClusterPageLayout({
                 </a>
               ))}
             </div>
-          </SectionFrame>
+          </SectionShell>
         );
       })}
     </div>
