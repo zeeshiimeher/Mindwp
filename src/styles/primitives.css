@@ -1,7 +1,7 @@
 /*
  * PRIMITIVES — reusable UI atoms.
  *
- * Owns: buttons, links, cards, panels, badges/eyebrows, status dots,
+ * Owns: buttons, links, cards, panels, eyebrows, status dots,
  * icon tiles, forms, accordion primitive.
  *
  * No layout (no section padding, no containers, no page rhythm).
@@ -209,7 +209,7 @@
 
 /* ══════════════════════════════════════════════════════
    SIGNAL DOT — small colored accent dot, always decorative
-   Used in status rows, badges, eyebrows, footers.
+   Used in status rows, eyebrows, footers.
    ══════════════════════════════════════════════════════ */
 
 .mw-signal-dot {

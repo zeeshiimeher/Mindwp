@@ -85,6 +85,12 @@
     "lint": "node scripts/runners/run-eslint.mjs",
     "lint:fix": "node scripts/runners/run-eslint.mjs --fix",
     "check:names": "node scripts/check-names.mjs",
+    "check:clean-base": "tsx scripts/check-clean-base.ts",
+    "check:domain-registries": "tsx scripts/check-domain-registries.ts",
+    "check:architecture": "npm run check:clean-base && npm run check:domain-registries",
+    "check:duplicates": "tsx scripts/check-duplicates.ts",
+    "check:style-guidance": "tsx scripts/check-style-guidance.ts",
+    "check:guidance": "npm run check:duplicates && npm run check:style-guidance",
     "check:minimal": "npm run typecheck && npm run lint && npm run check:names",
     "check:frontend": "node scripts/check-frontend.mjs"
   }

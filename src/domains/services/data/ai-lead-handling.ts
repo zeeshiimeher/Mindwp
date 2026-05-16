@@ -4,17 +4,17 @@ import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
 // =============================================================================
-// Smart Website Systems — page
+// AI Lead Handling — page
 // =============================================================================
 
 export const aiLeadHandlingPage = {
   seo: buildServiceSeo({
-    slug: 'smart-website-systems',
+    slug: 'ai-lead-handling',
     title: 'Smart Website Systems for Service Businesses',
     description:
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
-  slug: 'smart-website-systems',
+  slug: 'ai-lead-handling',
   systems: ['smart-website-systems'],
   topics: [
     'website-infrastructure',
@@ -88,9 +88,9 @@ export const aiLeadHandlingPage = {
       {
         label: 'Start a Conversation',
         href: buildContactHref({
-          system: 'smart-website-systems',
+          system: 'ai-lead-handling',
           sourceType: 'page',
-          slug: 'smart-website-systems',
+          slug: 'ai-lead-handling',
         }),
         primary: true,
       },
