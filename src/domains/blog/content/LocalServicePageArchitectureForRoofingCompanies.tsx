@@ -16,9 +16,10 @@ export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
   title: 'Local Service Page Architecture for Roofing Companies',
   publishDate: '2025-12-21',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['roofing'],
-  systems: ['local-seo-authority', 'smart-website-systems'],
+  primarySystem: 'local-seo-authority',
+  supportingSystems: ['smart-website-systems'],
   topics: ['local-service-pages'],
   tags: ['Roofing', 'Local Service Pages', 'SEO Architecture', 'Location Pages', 'Local Search'],
   sections: [

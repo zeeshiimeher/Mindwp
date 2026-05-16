@@ -16,9 +16,9 @@ export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
   title: 'Local Visibility Framework for Service Businesses',
   publishDate: '2025-01-11',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: [],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['local-visibility'],
   tags: ['Local Visibility', 'Service Business', 'Local SEO', 'Discovery', 'Search Presence'],
   sections: [

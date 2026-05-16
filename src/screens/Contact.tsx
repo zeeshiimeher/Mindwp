@@ -660,9 +660,9 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
           }}
           actions={[
             {
-              label: 'Get Started',
+              label: 'Request a System Review',
               href: buildContactHref({
-                system: 'contact',
+                system: 'smart-website-systems',
                 sourceType: 'page',
                 slug: 'contact-footer',
               }),

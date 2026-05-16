@@ -117,7 +117,7 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['client-reactivation', 'customer-lifetime-value', 'service-reminders'],
     publishDate: '2025-12-10',
     client: 'Briarwood Heating & Cooling',

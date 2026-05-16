@@ -116,7 +116,7 @@ function buildCarDetailingRepeatCustomerDrop(): CaseStudyData {
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['car-detailing'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['client-reactivation', 'customer-lifetime-value', 'service-reminders'],
     publishDate: '2026-02-08',
     client: 'Apex Auto Detailing',

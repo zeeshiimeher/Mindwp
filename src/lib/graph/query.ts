@@ -1,3 +1,4 @@
+import { getNodeSystems } from '../content-graph/canonical';
 import { getContentGraph } from '../content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
 
@@ -81,7 +82,7 @@ function countOverlap(left?: string[], right?: string[]) {
 }
 
 function scoreCandidate(sourceNode: ContentGraphNode, candidateNode: ContentGraphNode) {
-  const systemOverlap = countOverlap(sourceNode.systems, candidateNode.systems);
+  const systemOverlap = countOverlap(getNodeSystems(sourceNode), getNodeSystems(candidateNode));
   const topicOverlap = countOverlap(sourceNode.topics, candidateNode.topics);
   const industryOverlap = countOverlap(sourceNode.industries, candidateNode.industries);
 
@@ -89,12 +90,7 @@ function scoreCandidate(sourceNode: ContentGraphNode, candidateNode: ContentGrap
 }
 
 function resolvePrimarySystem(sourceNode: ContentGraphNode) {
-  switch (sourceNode.type) {
-    case 'service':
-      return sourceNode.slug;
-    default:
-      return sourceNode.systems?.[0]?.trim().toLowerCase() ?? null;
-  }
+  return sourceNode.primarySystem?.trim().toLowerCase() ?? null;
 }
 
 function hasPrimarySystemMatch(sourceNode: ContentGraphNode, candidateNode: ContentGraphNode) {
@@ -103,7 +99,7 @@ function hasPrimarySystemMatch(sourceNode: ContentGraphNode, candidateNode: Cont
     return false;
   }
 
-  return normalizeTokens(candidateNode.systems).has(primarySystem);
+  return normalizeTokens(getNodeSystems(candidateNode)).has(primarySystem);
 }
 
 function resolveRelationshipType(sourceNode: ContentGraphNode, candidateNode: ContentGraphNode) {
@@ -303,7 +299,7 @@ export function getSystemCluster(system: string): ClusterResult {
   }
 
   const nodes = Object.values(graph).filter(node =>
-    node.systems?.some(s => s.trim().toLowerCase() === normalized)
+    getNodeSystems(node).some(s => s.trim().toLowerCase() === normalized)
   );
 
   return { key: system, nodes };

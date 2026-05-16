@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Automate Lead Handling for Your Salon',
   description:
-    'Our AI Lead Handling systems unify every inquiry channel, respond instantly with self-service booking, and convert more new client inquiries into first appointments — even during your busiest hours.',
+    'Our Lead Response & Handling systems unify every inquiry channel, respond instantly with self-service booking, and convert more new client inquiries into first appointments — even during your busiest hours.',
 };
 
 export const salonLeadHandlingExample: ResourceData = {
@@ -119,12 +119,12 @@ export const salonLeadHandlingExample: ResourceData = {
   title: 'Salon Lead Handling Example',
   description:
     'See how salons use automated lead handling to respond instantly across Instagram, phone, and web, convert inquiries into self-service bookings, and grow new client acquisition by 50%.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-01-21',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['salon'],
   topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const salonLeadHandlingExample: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

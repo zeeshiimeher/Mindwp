@@ -16,9 +16,10 @@ export const conversionTrackingForHvacCompanies: BlogPostData = {
   title: 'Conversion Tracking for HVAC Companies',
   publishDate: '2025-12-29',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['hvac'],
-  systems: ['smart-website-systems', 'crm-automation'],
+  primarySystem: 'smart-website-systems',
+  supportingSystems: ['follow-up-crm'],
   topics: ['conversion-tracking'],
   tags: ['HVAC', 'Conversion Tracking', 'Attribution', 'Marketing Measurement', 'CRM'],
   sections: [

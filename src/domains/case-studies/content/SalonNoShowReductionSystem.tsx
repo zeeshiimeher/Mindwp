@@ -127,7 +127,7 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['no-show-reduction', 'service-reminders', 'booking-systems'],
     publishDate: '2026-01-25',
     client: 'Lumina Hair Studio',

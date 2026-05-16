@@ -128,7 +128,7 @@ function buildDentalClinicMissedAppointments(): CaseStudyData {
     industryCategory: 'healthcare',
     industryLabel: 'Healthcare',
     industries: ['dental-clinic'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['no-show-reduction', 'booking-systems', 'service-reminders'],
     publishDate: '2026-02-15',
     client: 'Marston Dental Care',

@@ -26,7 +26,8 @@ export const realtorsIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['realtor'],
-  systems: ['ai-lead-handling', 'crm-automation', 'reputation-review', 'smart-website-systems'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['follow-up-crm', 'reputation-review-systems', 'smart-website-systems'],
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {

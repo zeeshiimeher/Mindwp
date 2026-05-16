@@ -51,8 +51,8 @@ function getServiceFaqs(sections: unknown): FaqItemInput[] | undefined {
 }
 
 async function resolveService(slugParts?: string[]) {
-  if (!slugParts || slugParts.length !== 1) return null;
-  const slug = slugParts?.[0];
+  if (!slugParts || slugParts.length < 1) return null;
+  const slug = slugParts.join('/');
   if (!slug) return null;
   if (!isServiceSlug(slug)) return null;
   const serviceNode = await getServiceNodeBySlug(slug);
@@ -64,7 +64,7 @@ async function resolveService(slugParts?: string[]) {
 
 export async function generateStaticParams() {
   const nodes = await getServiceGraphNodes();
-  return nodes.map(node => ({ slug: [node.slug] }));
+  return nodes.map(node => ({ slug: node.slug.split('/') }));
 }
 
 export async function generateMetadata({

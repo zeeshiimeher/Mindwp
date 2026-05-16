@@ -16,9 +16,9 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
   title: 'CRM Pipeline Architecture for Service Businesses',
   publishDate: '2025-02-20',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: [],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline', 'pipeline-architecture'],
   tags: [
     'CRM Pipeline',

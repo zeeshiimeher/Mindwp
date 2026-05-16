@@ -1,3 +1,5 @@
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
+
 export interface FAQItem {
   question: string;
   answer: string;
@@ -16,7 +18,7 @@ export type CTAConfig = {
     label: string;
     href: string;
     primary?: boolean;
-    variant?: string;
+    variant?: 'white' | 'primary' | 'ghost';
   }>;
   expectations?: Array<{
     num?: string;
@@ -32,10 +34,12 @@ export interface ServicePageData {
   slug: string;
   eyebrow: string;
   category: string;
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics: string[];
   industries?: string[];
   features?: string[];
+  routePath?: string;
 
   seo: import('@/domains/shared/seo').SharedSeoData;
 
@@ -44,11 +48,21 @@ export interface ServicePageData {
     title: string;
     description: string;
     list?: string[];
-    visual?: unknown;
+    visual?: {
+      title: string;
+      subtitle: string;
+      rows: Array<{
+        label: string;
+        value: string;
+        status: string;
+      }>;
+      footerPrimary: string;
+      footerSecondary: string;
+    };
   };
 
   faq?: {
-    header?: {
+    header: {
       eyebrow?: string;
       title: string;
       description?: string;

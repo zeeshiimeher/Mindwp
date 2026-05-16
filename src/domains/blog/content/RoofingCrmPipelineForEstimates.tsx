@@ -16,9 +16,9 @@ export const roofingCrmPipelineForEstimates: BlogPostData = {
   title: 'Roofing CRM Pipeline for Estimates',
   publishDate: '2025-06-12',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['Roofing', 'CRM Pipeline', 'Estimates', 'Quote Management', 'Automation'],
   sections: [

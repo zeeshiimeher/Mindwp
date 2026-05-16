@@ -16,9 +16,9 @@ export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
   title: 'Why Auto Repair Shops Lose Phone Leads',
   publishDate: '2025-04-09',
   authorKey: 'EDITORIAL',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   industries: ['automotive'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-management'],
   tags: ['Automotive', 'Phone Leads', 'Lead Loss', 'Call Handling', 'Repair Shop'],
   sections: [

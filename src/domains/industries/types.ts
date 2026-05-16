@@ -1,4 +1,5 @@
 import type { IndustryCategory } from '@/domains/industries/catalog';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 
 export type IndustrySeoData = {
   title: string;
@@ -55,7 +56,8 @@ export type IndustryPageDataBase = {
   category?: IndustryCategory;
   parentSlug?: IndustryCategory;
   hero: IndustryHeroData;
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   industries?: string[];
   topics?: string[];
   faq: {

@@ -178,12 +178,12 @@ export const crmPipelineSetupGuideForPlumbingBusinesses: ResourceData = {
   title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
   description:
     'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-04-06',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: ['plumbing'],
   topics: ['crm-pipeline'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -249,9 +249,9 @@ export const crmPipelineSetupGuideForPlumbingBusinesses: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

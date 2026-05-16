@@ -16,9 +16,9 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
   title: 'Local Service Page Architecture for Local Businesses',
   publishDate: '2025-01-27',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: [],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['local-service-pages'],
   tags: ['Local Service Pages', 'Local SEO', 'Landing Pages', 'Geo Targeting', 'Service Business'],
   sections: [

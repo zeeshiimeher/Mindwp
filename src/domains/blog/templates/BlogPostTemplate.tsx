@@ -9,6 +9,7 @@ import { type Author, BLOG_AUTHORS, getCategoryMetadata } from '@/domains/blog/a
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
 import { buildContactHref } from '@/lib/contact/contactHref';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 
 export interface BlogPostTemplateProps {
@@ -25,7 +26,8 @@ export interface BlogPostTemplateProps {
   };
   sections: BlogPostSection[];
   tags?: string[];
-  systems?: string[];
+  primarySystem?: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   featuredImage?: string | null;
 }
 
@@ -45,14 +47,14 @@ const RENDERABLE_BLOG_SECTION_TYPES = new Set<BlogPostSection['type']>([
 ]);
 
 const AUTHOR_KEYS_BY_CATEGORY: Record<BlogCategory, Array<keyof typeof BLOG_AUTHORS>> = {
-  'smart-website-systems': ['TECHNICAL'],
-  'ai-lead-handling': ['TECHNICAL'],
-  'local-authority-seo': ['EDITORIAL'],
-  'crm-automation': ['TECHNICAL'],
-  'reputation-review': ['EDITORIAL'],
-  'home-services-industry': ['INDUSTRY'],
-  'beauty-personal-care-industry': ['INDUSTRY'],
-  'future-local-business-tech': ['EDITORIAL'],
+  'website-clarity': ['TECHNICAL'],
+  'lead-response': ['TECHNICAL'],
+  'local-visibility': ['EDITORIAL'],
+  'follow-up-crm': ['TECHNICAL'],
+  'reviews-proof': ['EDITORIAL'],
+  'implementation-services': ['TECHNICAL'],
+  'industry-examples': ['INDUSTRY'],
+  frameworks: ['EDITORIAL'],
 };
 
 function getAuthorForCategory(category: BlogCategory): AuthorInfo | undefined {
@@ -192,13 +194,13 @@ export function BlogPostTemplate({
   author,
   sections,
   tags = [],
-  systems,
+  primarySystem,
 }: BlogPostTemplateProps) {
   const effectiveReadTime = readTime || estimateReadTimeFromContent(sections);
   const effectiveAuthor = author || getAuthorForCategory(category);
   const categoryMeta = getCategoryMetadata(category);
   const categoryLabel = categoryMeta?.name ?? category;
-  const resolvedPrimarySystem = systems?.[0] ?? 'smart-website-systems';
+  const resolvedPrimarySystem = primarySystem ?? 'smart-website-systems';
   const articleSections = sections.filter(validateRenderableBlogSection);
   const faqItems = sections.flatMap(section => (section.type === 'faq' ? section.items : []));
   const faqSchema = buildFaqSchema(faqItems);

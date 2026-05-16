@@ -115,7 +115,7 @@ function buildCleaningBusinessLeadLoss(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['landscaping'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['lead-response-time', 'follow-up', 'lead-capture'],
     publishDate: '2026-01-30',
     client: 'Brightside Domestic Cleaning',

@@ -7,7 +7,7 @@ import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 export function BeautyPersonalCareIndustryRenderer({ data }: IndustryCategoryRendererProps) {
-  const primarySystem = data.systems[0];
+  const primarySystem = data.primarySystem;
   if (!primarySystem) {
     throw new Error(`[${data.slug}] Missing primary industry system.`);
   }

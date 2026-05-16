@@ -104,7 +104,7 @@ const diy = {
 const finalCta = {
   title: 'Recover Missed Calls for Your Auto Repair Shop',
   description:
-    'Our AI Lead Handling systems send instant text responses to every missed call, route urgent mechanical issues for immediate callback, and provide self-service booking for routine work — capturing revenue that currently drives to competitors.',
+    'Our Lead Response & Handling systems send instant text responses to every missed call, route urgent mechanical issues for immediate callback, and provide self-service booking for routine work — capturing revenue that currently drives to competitors.',
 };
 
 export const missedCallRecoveryForAutoRepair: ResourceData = {
@@ -118,12 +118,12 @@ export const missedCallRecoveryForAutoRepair: ResourceData = {
   title: 'Missed Call Recovery for Auto Repair',
   description:
     'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-02-09',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['automotive'],
   topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -176,9 +176,9 @@ export const missedCallRecoveryForAutoRepair: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

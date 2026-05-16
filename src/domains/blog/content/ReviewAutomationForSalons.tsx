@@ -16,9 +16,9 @@ export const reviewAutomationForSalons: BlogPostData = {
   title: 'Review Automation for Salons',
   publishDate: '2025-11-03',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-automation'],
   tags: ['Salon', 'Review Automation', 'Reputation', 'Client Trust', 'Loyalty'],
   sections: [

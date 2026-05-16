@@ -926,7 +926,7 @@ function Section7() {
           ))}
         </div>
         <div className='mt-6 text-[#6F8190]' style={{ fontSize: '13px' }}>
-          Parent: AI Lead Handling · Context: Smart Website Systems, CRM & Automation
+          Parent: Lead Response & Handling · Context: Smart Website Systems, Follow-Up & CRM
         </div>
       </div>
     </SectionShell>

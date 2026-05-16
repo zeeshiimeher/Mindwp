@@ -16,9 +16,9 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
   title: 'Responding to Negative Reviews Systematically',
   publishDate: '2024-12-17',
   authorKey: 'EDITORIAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: [],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['negative-review-response'],
   tags: [
     'Negative Reviews',

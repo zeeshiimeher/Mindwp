@@ -16,9 +16,9 @@ export const roofingReviewGenerationSystem: BlogPostData = {
   title: 'Roofing Review Generation System',
   publishDate: '2025-07-30',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-generation'],
   tags: ['Roofing', 'Review Generation', 'Google Reviews', 'Local Authority', 'Automation'],
   sections: [

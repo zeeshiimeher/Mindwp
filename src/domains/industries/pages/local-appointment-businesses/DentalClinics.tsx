@@ -26,7 +26,12 @@ export const dentalClinicsIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['dental-clinic'],
-  systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+  primarySystem: 'follow-up-crm',
+  supportingSystems: [
+    'lead-response-handling',
+    'reputation-review-systems',
+    'smart-website-systems',
+  ],
   topics: ['lead-management', 'follow-up', 'review-generation'],
   faq: {
     header: {

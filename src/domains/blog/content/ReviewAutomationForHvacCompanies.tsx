@@ -16,9 +16,9 @@ export const reviewAutomationForHvacCompanies: BlogPostData = {
   title: 'Review Automation for HVAC Companies',
   publishDate: '2025-10-26',
   authorKey: 'TECHNICAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: ['hvac'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-automation'],
   tags: ['HVAC', 'Review Automation', 'Reputation', 'Local Visibility', 'Automation'],
   sections: [

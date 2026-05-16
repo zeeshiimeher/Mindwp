@@ -167,9 +167,9 @@ export const howSmartWebsiteSystemsWork: ResourceData = {
   title: 'How Smart Website Systems Work',
   description:
     'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   publishedAt: '2025-11-03',
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   industries: [],
   topics: ['website-infrastructure'],
   primaryService: 'smart-website-systems',
@@ -240,9 +240,9 @@ export const howSmartWebsiteSystemsWork: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('smart-website-systems'),
-      content: getRelatedResourcesContent('smart-website-systems'),
-      resources: getRelatedResources('smart-website-systems', canonical),
+      heading: getRelatedResourcesHeading('website-clarity'),
+      content: getRelatedResourcesContent('website-clarity'),
+      resources: getRelatedResources('website-clarity', canonical),
     },
   ],
 };

@@ -31,7 +31,7 @@ const FEED_ROWS = [
 ];
 
 export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
-  const primarySystem = data.systems[0];
+  const primarySystem = data.primarySystem;
   if (!primarySystem) {
     throw new Error(`[${data.slug}] Missing primary industry system.`);
   }
@@ -287,11 +287,11 @@ export function LandscapingCompaniesIndustryRenderer({ data }: IndustryDetailRen
         <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
           {[
             {
-              system: 'AI Lead Handling',
+              system: 'Lead Response & Handling',
               role: 'Spring quote calls and forms acknowledged the same day, while the crew is on site.',
             },
             {
-              system: 'CRM & Automation',
+              system: 'Follow-Up & CRM',
               role: 'Recurring maintenance, cleanup waves and past-client loops &mdash; all running without memory.',
             },
             {

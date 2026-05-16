@@ -16,9 +16,9 @@ export const hvacReviewGenerationFramework: BlogPostData = {
   title: 'HVAC Review Generation Framework',
   publishDate: '2025-08-07',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-generation'],
   tags: ['HVAC', 'Review Generation', 'Customer Reviews', 'Local Authority', 'Automation'],
   sections: [

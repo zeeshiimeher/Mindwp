@@ -16,9 +16,9 @@ export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
   title: 'Service Page Architecture for Service Businesses',
   publishDate: '2024-09-04',
   authorKey: 'TECHNICAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['service-page-architecture', 'service-pages'],
   tags: ['Service Pages', 'Website Architecture', 'Lead Capture', 'Conversion', 'Service Business'],
   sections: [

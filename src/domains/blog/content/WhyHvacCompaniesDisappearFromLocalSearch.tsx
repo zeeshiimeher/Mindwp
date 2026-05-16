@@ -16,9 +16,9 @@ export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
   title: 'Why HVAC Companies Disappear From Local Search Without Local Visibility',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['hvac'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['local-visibility'],
   tags: ['HVAC', 'Local Visibility', 'Local Search', 'Google Rankings', 'Reputation'],
   sections: [

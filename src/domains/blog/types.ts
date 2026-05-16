@@ -1,4 +1,5 @@
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 
 export type { BlogCategory } from './categoryRegistry';
 export { BLOG_CATEGORY_REGISTRY } from './categoryRegistry';
@@ -85,7 +86,8 @@ export interface BlogPostData {
   authorKey: string;
   category: BlogCategory;
   industries: string[];
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics: string[];
   relatedServices?: string[];
   layoutType?: string;

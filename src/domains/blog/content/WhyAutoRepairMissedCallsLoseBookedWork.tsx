@@ -16,9 +16,9 @@ export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
   title: 'Why Auto Repair Missed Calls Lose Booked Work',
   publishDate: '2025-05-03',
   authorKey: 'EDITORIAL',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   industries: ['automotive'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['missed-calls'],
   tags: ['Automotive', 'Missed Calls', 'Booked Work', 'Call Recovery', 'Repair Shop'],
   sections: [

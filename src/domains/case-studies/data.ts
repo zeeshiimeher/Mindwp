@@ -16,13 +16,17 @@ export function getLatestCaseStudiesTemplateMetadata(limit = 3): CaseStudyTempla
 }
 
 export function getCaseStudiesTemplateMetadataBySystems(
-  systems: string[],
+  activeSystems: string[],
   limit = 3
 ): CaseStudyTemplateMetadata[] {
-  const systemSet = new Set(systems);
+  const systemSet = new Set(activeSystems);
 
   return sortNewestFirst(
-    caseStudies.filter(study => study.systems.some(system => systemSet.has(system)))
+    caseStudies.filter(study =>
+      [study.primarySystem, ...(study.supportingSystems ?? [])].some(system =>
+        systemSet.has(system)
+      )
+    )
   ).slice(0, limit);
 }
 

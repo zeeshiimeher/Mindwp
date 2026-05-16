@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Automate Lead Handling for Your HVAC Business',
   description:
-    'Our AI Lead Handling systems ensure every HVAC inquiry gets an instant response, emergency calls reach technicians immediately, and no lead is lost during peak season — even after hours.',
+    'Our Lead Response & Handling systems ensure every HVAC inquiry gets an instant response, emergency calls reach technicians immediately, and no lead is lost during peak season — even after hours.',
 };
 
 export const hvacLeadHandlingExample: ResourceData = {
@@ -119,12 +119,12 @@ export const hvacLeadHandlingExample: ResourceData = {
   title: 'HVAC Lead Handling Example',
   description:
     'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-01-17',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['hvac'],
   topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const hvacLeadHandlingExample: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

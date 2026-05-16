@@ -16,9 +16,9 @@ export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
   title: 'HVAC Local Visibility System for Service Areas',
   publishDate: '2026-04-06',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['hvac'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['local-visibility'],
   tags: ['HVAC', 'Local Visibility', 'Service Areas', 'Local SEO', 'Map Pack'],
   sections: [

@@ -93,8 +93,11 @@ function createEntry<TData extends SystemEntryData>(
 }
 
 export function getSystemInvariantEntries(): SystemInvariantEntry[] {
-  const services = Object.values(SERVICE_DOMAIN_REGISTRY).map(entry =>
-    createEntry('service', entry.id, entry.data, 'services', `/services/${entry.slug}`, entry.slug)
+  const serviceEntries = Object.values(SERVICE_DOMAIN_REGISTRY) as Array<
+    (typeof SERVICE_DOMAIN_REGISTRY)[keyof typeof SERVICE_DOMAIN_REGISTRY]
+  >;
+  const services = serviceEntries.map(entry =>
+    createEntry('service', entry.id, entry.data, 'services', entry.routePath, entry.slug)
   );
 
   const features = Object.values(FEATURE_DOMAIN_REGISTRY).map(entry =>

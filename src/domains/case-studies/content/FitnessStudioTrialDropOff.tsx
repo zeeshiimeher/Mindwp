@@ -114,7 +114,7 @@ function buildFitnessStudioTrialDropOff(): CaseStudyData {
     industryCategory: 'fitness-wellness',
     industryLabel: 'Fitness & Wellness',
     industries: ['hair-salon'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['conversion-optimization', 'follow-up', 'customer-lifetime-value'],
     publishDate: '2026-02-18',
     client: 'Pulse Studio',

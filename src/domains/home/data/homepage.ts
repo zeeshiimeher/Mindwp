@@ -137,7 +137,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What do you build?',
         answer:
-          'Smart Websites, Local SEO Authority, AI Lead Handling, CRM & Automation, Reputation & Reviews, Revenue Growth — built as connected parts for service businesses. Not standalone tools.',
+          'Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems — built as connected parts for service businesses. Revenue Recovery is an improvement layer across that path, not a standalone service.',
       },
       {
         question: 'How is this different from getting a new website?',
@@ -152,12 +152,12 @@ export const homepageData: HomepageData = {
       {
         question: 'Is SEO included?',
         answer:
-          'Local SEO Authority is one of the six parts. It handles local visibility — getting your services found nearby. It is built into the overall approach, not bolted on as an extra.',
+          'Local SEO Authority Systems handle local visibility and trust — getting your services found and verified nearby. It is part of the active model, not a rankings add-on.',
       },
       {
         question: 'What about missed calls and follow-up?',
         answer:
-          'Missed call recovery sits with AI Lead Handling — instant reply, enquiry logged. Sequenced follow-up sits with CRM & Automation — quotes chased, reminders sent. Both connect into the same capture point as every other enquiry.',
+          'Missed call recovery sits with Lead Response & Handling — instant reply, enquiry logged. Sequenced follow-up sits with Follow-Up & CRM — quotes chased, reminders sent. Both connect into the same capture point as every other enquiry.',
       },
       {
         question: 'What kind of businesses is this for?',

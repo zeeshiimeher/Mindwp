@@ -108,7 +108,7 @@ type ContentMetadata = {
   title: string;
   summary: string;
   topics: string[];
-  systems: string[];
+  activeSystems: string[];
   tags: string[];
   sectionHeadings: string[];
   slug: string;
@@ -144,14 +144,18 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
 
       const seoDescriptionMatch = content.match(/seo:\s*\{[\s\S]*?description:\s*['"]([^'"]+)['"]/);
       const topicsMatch = content.match(/topics:\s*\[([\s\S]*?)\]/);
-      const systemsMatch = content.match(/systems:\s*\[([\s\S]*?)\]/);
+      const primarySystemMatch = content.match(/primarySystem:\s*['"]([^'"]+)['"]/);
+      const supportingSystemsMatch = content.match(/supportingSystems:\s*\[([\s\S]*?)\]/);
       const tagsMatch = content.match(/tags:\s*\[([\s\S]*?)\]/);
 
       return {
         title,
         summary: seoDescriptionMatch?.[1] ?? '',
         topics: extractArrayValues(topicsMatch?.[1] ?? ''),
-        systems: extractArrayValues(systemsMatch?.[1] ?? ''),
+        activeSystems: [
+          ...(primarySystemMatch?.[1] ? [primarySystemMatch[1]] : []),
+          ...extractArrayValues(supportingSystemsMatch?.[1] ?? ''),
+        ],
         tags: extractArrayValues(tagsMatch?.[1] ?? ''),
         sectionHeadings: headingsMatches.map(m => m[1]),
         slug,
@@ -224,7 +228,7 @@ async function loadIndustryMetadata(slug: string): Promise<ContentMetadata | nul
     title: industry.hero.title,
     summary: industry.seo.description,
     topics: industry.topics ?? [],
-    systems: industry.systems ?? [],
+    activeSystems: [industry.primarySystem, ...(industry.supportingSystems ?? [])],
     tags: industry.industries ?? [],
     sectionHeadings: [],
     slug,
@@ -266,14 +270,18 @@ async function loadContentMetadata(
 
     const seoDescriptionMatch = content.match(/seo:\s*\{[\s\S]*?description:\s*['"]([^'"]+)['"]/);
     const topicsMatch = content.match(/topics:\s*\[([\s\S]*?)\]/);
-    const systemsMatch = content.match(/systems:\s*\[([\s\S]*?)\]/);
+    const primarySystemMatch = content.match(/primarySystem:\s*['"]([^'"]+)['"]/);
+    const supportingSystemsMatch = content.match(/supportingSystems:\s*\[([\s\S]*?)\]/);
     const tagsMatch = content.match(/tags:\s*\[([\s\S]*?)\]/);
 
     return {
       title,
       summary: seoDescriptionMatch?.[1] ?? '',
       topics: extractArrayValues(topicsMatch?.[1] ?? ''),
-      systems: extractArrayValues(systemsMatch?.[1] ?? ''),
+      activeSystems: [
+        ...(primarySystemMatch?.[1] ? [primarySystemMatch[1]] : []),
+        ...extractArrayValues(supportingSystemsMatch?.[1] ?? ''),
+      ],
       tags: extractArrayValues(tagsMatch?.[1] ?? ''),
       sectionHeadings: headingsMatches.map(m => m[1]),
       slug,
@@ -291,7 +299,7 @@ const DEFAULT_TEST_SLUGS: Record<ContentDomain, string> = {
   resources: 'authority-signals-for-local-search',
   industries: 'plumbing', // update when industry content is available
   features: 'crm',
-  services: 'crm-infrastructure-implementation',
+  services: 'follow-up-crm',
 };
 
 // ─── Pipeline Import ────────────────────────────────────────────────
@@ -348,7 +356,7 @@ async function runTestMode(
   logger.info(`📝 Title: ${metadata.title}`);
   logger.info(`🧾 Summary: ${metadata.summary || '(none)'}`);
   logger.info(`🏷️  Topics: ${metadata.topics.join(', ') || '(none)'}`);
-  logger.info(`⚙️  Systems: ${metadata.systems.join(', ') || '(none)'}`);
+  logger.info(`⚙️  Active systems: ${metadata.activeSystems.join(', ') || '(none)'}`);
   logger.info(`🏷️  Tags: ${metadata.tags.join(', ') || '(none)'}`);
   logger.info(`📋 Section Headings: ${metadata.sectionHeadings.join(', ') || '(none)'}`);
   logger.info('');

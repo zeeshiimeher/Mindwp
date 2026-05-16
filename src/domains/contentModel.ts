@@ -16,7 +16,7 @@ export const GRAPH_CONTENT_NODE_TYPES = [
   'case-study',
 ] as const satisfies readonly ContentNodeType[];
 
-export const CLUSTER_HUB_TYPES = ['topic-hub', 'system-hub'] as const;
+export const CLUSTER_HUB_TYPES = ['topic-hub'] as const;
 
 export const DOMAIN_GRAPH_SOURCES: GraphRegistryInput = {
   blogPosts: BLOG_POSTS,

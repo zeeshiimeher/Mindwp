@@ -178,12 +178,12 @@ export const crmPipelineSetupGuideForSalons: ResourceData = {
   title: 'CRM Pipeline Setup Guide for Salons',
   description:
     'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-04-06',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: ['salon'],
   topics: ['crm-pipeline'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -251,9 +251,9 @@ export const crmPipelineSetupGuideForSalons: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

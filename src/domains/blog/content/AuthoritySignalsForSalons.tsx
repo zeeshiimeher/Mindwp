@@ -16,9 +16,10 @@ export const authoritySignalsForSalons: BlogPostData = {
   title: 'Authority Signals for Salons',
   publishDate: '2025-10-10',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['salon'],
-  systems: ['local-seo-authority', 'reputation-review'],
+  primarySystem: 'local-seo-authority',
+  supportingSystems: ['reputation-review-systems'],
   topics: ['local-authority'],
   tags: ['Salon', 'Authority Signals', 'Local SEO', 'Rankings', 'Trust Factors'],
   sections: [

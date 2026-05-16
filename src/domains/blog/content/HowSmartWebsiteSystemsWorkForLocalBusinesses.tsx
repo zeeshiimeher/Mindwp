@@ -16,9 +16,9 @@ export const howSmartWebsiteSystemsWorkForLocalBusinesses: BlogPostData = {
   title: 'How Smart Website Systems Work for Local Businesses',
   publishDate: '2024-07-18',
   authorKey: 'TECHNICAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['website-infrastructure'],
   tags: [
     'Smart Website Systems',

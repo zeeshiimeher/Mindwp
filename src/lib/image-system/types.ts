@@ -112,7 +112,7 @@ export interface ContentMetadata {
   title: string;
   summary: string;
   topics: string[];
-  systems: string[];
+  activeSystems: string[];
   tags: string[];
   sectionHeadings: string[];
   slug: string;

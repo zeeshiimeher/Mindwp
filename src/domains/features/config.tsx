@@ -61,10 +61,10 @@ export const getFeatureDataBySlug = (slug: FeatureSlug) => {
 
 export const renderFeaturePageBySlug = (slug: FeatureSlug): ReactElement => {
   const entry = FEATURE_ENTRY_BY_SLUG[slug] as AnyFeatureEntry;
-  const primarySystem = entry.data.systems?.[0];
+  const primarySystem = entry.data.primarySystem;
 
   if (!primarySystem) {
-    throw new Error(`Feature config requires systems[0] for ${slug}.`);
+    throw new Error(`Feature config requires primarySystem for ${slug}.`);
   }
 
   return (

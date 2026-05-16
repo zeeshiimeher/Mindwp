@@ -16,9 +16,10 @@ export const roofingEstimateFollowUpDelays: BlogPostData = {
   title: 'Roofing Estimate Follow Up Delays',
   publishDate: '2025-05-19',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['ai-lead-handling', 'crm-automation'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['follow-up-crm'],
   topics: ['follow-up'],
   tags: ['Roofing', 'Estimate Follow Up', 'CRM', 'Quote Conversion', 'Automation'],
   sections: [

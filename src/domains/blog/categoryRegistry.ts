@@ -1,59 +1,54 @@
 export const BLOG_CATEGORY_REGISTRY = {
-  'smart-website-systems': {
-    id: 'smart-website-systems',
-    label: 'Smart Website Systems',
-    slug: 'smart-website-systems',
-    description:
-      'Articles about system-first website architecture, conversion structure, and infrastructure-led web strategy.',
+  'website-clarity': {
+    id: 'website-clarity',
+    label: 'Website Clarity',
+    slug: 'website-clarity',
+    description: 'Articles about clearer service pages, enquiry paths, and website trust.',
   },
-  'ai-lead-handling': {
-    id: 'ai-lead-handling',
-    label: 'AI Lead Handling',
-    slug: 'ai-lead-handling',
-    description:
-      'Articles about lead response automation, missed-call recovery, qualification systems, and AI-assisted communication.',
+  'local-visibility': {
+    id: 'local-visibility',
+    label: 'Local Visibility',
+    slug: 'local-visibility',
+    description: 'Articles about nearby customers finding, checking, and trusting a business.',
   },
-  'local-authority-seo': {
-    id: 'local-authority-seo',
-    label: 'Local Authority SEO',
-    slug: 'local-authority-seo',
-    description:
-      'Articles about local visibility, authority signals, search positioning, and search ecosystem changes.',
+  'lead-response': {
+    id: 'lead-response',
+    label: 'Lead Response',
+    slug: 'lead-response',
+    description: 'Articles about calls, forms, messages, response paths, and enquiry routing.',
   },
-  'crm-automation': {
-    id: 'crm-automation',
-    label: 'CRM Automation',
-    slug: 'crm-automation',
+  'follow-up-crm': {
+    id: 'follow-up-crm',
+    label: 'Follow-Up & CRM',
+    slug: 'follow-up-crm',
     description:
-      'Articles about CRM workflows, automation systems, lifecycle tracking, and operational visibility.',
+      'Articles about enquiry ownership, next steps, quote follow-up, and visible status.',
   },
-  'reputation-review': {
-    id: 'reputation-review',
-    label: 'Reputation Review',
-    slug: 'reputation-review',
+  'reviews-proof': {
+    id: 'reviews-proof',
+    label: 'Reviews & Proof',
+    slug: 'reviews-proof',
     description:
-      'Articles about review systems, trust signals, reputation workflows, and review-driven authority.',
+      'Articles about review timing, feedback routing, trust signals, and proof capture.',
   },
-  'home-services-industry': {
-    id: 'home-services-industry',
-    label: 'Home Services Industry',
-    slug: 'home-services-industry',
+  'implementation-services': {
+    id: 'implementation-services',
+    label: 'Implementation Services',
+    slug: 'implementation-services',
     description:
-      'Industry-specific blog posts for roofing, HVAC, plumbing, and related home service businesses.',
+      'Articles about practical website implementation paths under Smart Website Systems.',
   },
-  'beauty-personal-care-industry': {
-    id: 'beauty-personal-care-industry',
-    label: 'Beauty Personal Care Industry',
-    slug: 'beauty-personal-care-industry',
-    description:
-      'Industry-specific blog posts for salons, clinics, med spas, and beauty-led appointment businesses.',
+  'industry-examples': {
+    id: 'industry-examples',
+    label: 'Industry Examples',
+    slug: 'industry-examples',
+    description: 'Industry-specific examples for service businesses.',
   },
-  'future-local-business-tech': {
-    id: 'future-local-business-tech',
-    label: 'Future Local Business Tech',
-    slug: 'future-local-business-tech',
-    description:
-      'Articles about emerging operational technology, AI shifts, and the future infrastructure of local business growth.',
+  frameworks: {
+    id: 'frameworks',
+    label: 'Frameworks',
+    slug: 'frameworks',
+    description: 'Frameworks and decision guides for improving website and enquiry handling.',
   },
 } as const;
 

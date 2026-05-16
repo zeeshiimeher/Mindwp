@@ -16,9 +16,9 @@ export const automotiveReviewGenerationSystem: BlogPostData = {
   title: 'Automotive Review Generation System',
   publishDate: '2025-08-23',
   authorKey: 'TECHNICAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: ['automotive'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-generation'],
   tags: ['Automotive', 'Review Generation', 'Workshop Reputation', 'Google Reviews', 'Automation'],
   sections: [

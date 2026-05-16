@@ -16,9 +16,9 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
   title: 'Why Salons Need Lead Handling Systems',
   publishDate: '2025-07-06',
   authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-management'],
   tags: ['Salon', 'Lead Handling', 'Booking System', 'Enquiry Management', 'Automation'],
   sections: [

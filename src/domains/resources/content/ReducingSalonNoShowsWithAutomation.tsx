@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Reduce No-Shows for Your Salon',
   description:
-    'Our CRM and AI Lead Handling systems automate appointment confirmations, manage waitlists, and implement deposit policies — cutting no-show rates by 60-80% and recovering thousands in monthly revenue.',
+    'Our CRM and Lead Response & Handling systems automate appointment confirmations, manage waitlists, and implement deposit policies — cutting no-show rates by 60-80% and recovering thousands in monthly revenue.',
 };
 
 export const reducingSalonNoShowsWithAutomation: ResourceData = {
@@ -119,12 +119,13 @@ export const reducingSalonNoShowsWithAutomation: ResourceData = {
   title: 'Reducing Salon No-Shows with Automation',
   description:
     'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-02-25',
-  systems: ['crm-automation', 'ai-lead-handling'],
+  primarySystem: 'follow-up-crm',
+  supportingSystems: ['lead-response-handling'],
   industries: ['salon'],
   topics: ['no-show-reduction'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -177,9 +178,9 @@ export const reducingSalonNoShowsWithAutomation: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

@@ -16,9 +16,9 @@ export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
   title: 'What Is a Systems-First Website for Service Businesses',
   publishDate: '2024-07-03',
   authorKey: 'EDITORIAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['systems-first-websites'],
   tags: [
     'Systems-First',

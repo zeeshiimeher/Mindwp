@@ -26,11 +26,11 @@ export const mobileMechanicsIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['mobile-mechanic'],
-  systems: [
-    'ai-lead-handling',
-    'crm-automation',
+  primarySystem: 'lead-response-handling',
+  supportingSystems: [
+    'follow-up-crm',
     'smart-website-systems',
-    'reputation-review',
+    'reputation-review-systems',
     'local-seo-authority',
   ],
   topics: ['lead-management', 'follow-up', 'review-generation'],

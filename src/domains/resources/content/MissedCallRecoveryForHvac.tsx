@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Recover Missed Calls for Your HVAC Business',
   description:
-    'Our AI Lead Handling systems send instant text responses to every missed call, qualify emergencies for immediate callback, and recover the revenue your HVAC business currently loses to voicemail.',
+    'Our Lead Response & Handling systems send instant text responses to every missed call, qualify emergencies for immediate callback, and recover the revenue your HVAC business currently loses to voicemail.',
 };
 
 export const missedCallRecoveryForHvac: ResourceData = {
@@ -119,12 +119,12 @@ export const missedCallRecoveryForHvac: ResourceData = {
   title: 'Missed Call Recovery for HVAC',
   description:
     'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-02-11',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['hvac'],
   topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const missedCallRecoveryForHvac: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

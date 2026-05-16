@@ -167,9 +167,9 @@ export const servicePageArchitectureThatConverts: ResourceData = {
   title: 'Service Page Architecture That Converts',
   description:
     'Learn how to architect service pages that guide visitors through decision paths with search-intent matching, multi-path CTAs, and CRM-connected forms.',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   publishedAt: '2025-11-08',
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   industries: [],
   topics: ['service-page-architecture'],
   primaryService: 'smart-website-systems',
@@ -238,9 +238,9 @@ export const servicePageArchitectureThatConverts: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('smart-website-systems'),
-      content: getRelatedResourcesContent('smart-website-systems'),
-      resources: getRelatedResources('smart-website-systems', canonical),
+      heading: getRelatedResourcesHeading('website-clarity'),
+      content: getRelatedResourcesContent('website-clarity'),
+      resources: getRelatedResources('website-clarity', canonical),
     },
   ],
 };

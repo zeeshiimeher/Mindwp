@@ -100,7 +100,7 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['auto-repair'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['client-reactivation', 'customer-lifetime-value', 'service-reminders'],
     publishDate: '2025-12-15',
     client: 'Halton Motor Works',

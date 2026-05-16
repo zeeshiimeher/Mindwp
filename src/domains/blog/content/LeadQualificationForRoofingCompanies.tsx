@@ -16,11 +16,11 @@ export const leadQualificationForRoofingCompanies: BlogPostData = {
   title: 'Lead Qualification for Roofing Companies',
   publishDate: '2026-01-14',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-qualification'],
-  tags: ['Roofing', 'Lead Qualification', 'Lead Scoring', 'Screening', 'AI Lead Handling'],
+  tags: ['Roofing', 'Lead Qualification', 'Lead Scoring', 'Screening', 'Lead Response & Handling'],
   sections: [
     {
       type: 'introduction',

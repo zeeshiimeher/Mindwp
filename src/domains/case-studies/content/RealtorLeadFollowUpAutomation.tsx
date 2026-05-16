@@ -100,7 +100,7 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
     industryCategory: 'real-estate',
     industryLabel: 'Real Estate',
     industries: ['realtor'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['follow-up', 'lead-management', 'lead-response-time'],
     publishDate: '2026-03-15',
     client: 'Ashford Residential',

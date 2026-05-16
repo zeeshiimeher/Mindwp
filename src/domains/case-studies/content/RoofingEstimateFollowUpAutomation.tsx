@@ -128,7 +128,7 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['follow-up', 'conversion-optimization', 'lead-management'],
     publishDate: '2026-01-20',
     client: 'Northwood Roofing',

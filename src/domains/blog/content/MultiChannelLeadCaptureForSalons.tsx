@@ -16,9 +16,9 @@ export const multiChannelLeadCaptureForSalons: BlogPostData = {
   title: 'Multi Channel Lead Capture for Salons',
   publishDate: '2026-01-30',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-capture'],
   tags: ['Salon', 'Lead Capture', 'Multi Channel', 'Instagram', 'Omnichannel'],
   sections: [

@@ -1,3 +1,4 @@
+import { ACTIVE_SYSTEMS } from './canonical';
 import { getContentGraph } from './registry';
 import type { ContentGraphNode, ContentNodeType } from './types';
 
@@ -13,6 +14,7 @@ export function validateContentGraph(graph: Record<string, ContentGraphNode>): t
   const pathSet = new Set<string>();
 
   let hasSmartWebsiteCore = false;
+  const activeSystems = new Set<string>(ACTIVE_SYSTEMS);
 
   for (const node of nodes) {
     assert(typeof node.id === 'string' && node.id.length > 0, 'Node has empty id');
@@ -30,6 +32,15 @@ export function validateContentGraph(graph: Record<string, ContentGraphNode>): t
     pathSet.add(node.path);
 
     assert(Boolean(node.type), `Node ${node.id} has undefined type`);
+    assert(Boolean(node.primarySystem), `Node ${node.id} is missing primarySystem`);
+    assert(
+      activeSystems.has(String(node.primarySystem)),
+      `Node ${node.id} has invalid primarySystem: ${String(node.primarySystem)}`
+    );
+
+    for (const system of node.supportingSystems ?? []) {
+      assert(activeSystems.has(system), `Node ${node.id} has invalid supportingSystem: ${system}`);
+    }
 
     const nodeType = node.type as ContentNodeType;
     assert(typeof nodeType === 'string' && nodeType.length > 0, `Node ${node.id} has invalid type`);

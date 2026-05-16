@@ -178,12 +178,12 @@ export const reviewAutomationSetupGuideForRoofingCompanies: ResourceData = {
   title: 'Review Automation Setup Guide for Roofing Companies',
   description:
     'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-04-06',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['roofing'],
   topics: ['review-automation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -251,9 +251,9 @@ export const reviewAutomationSetupGuideForRoofingCompanies: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

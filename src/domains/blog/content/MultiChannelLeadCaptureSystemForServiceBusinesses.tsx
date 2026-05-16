@@ -16,15 +16,15 @@ export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
   title: 'Multi Channel Lead Capture System for Service Businesses',
   publishDate: '2024-10-14',
   authorKey: 'TECHNICAL',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   industries: [],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-capture'],
   tags: [
     'Lead Capture',
     'Multi Channel',
     'Service Business',
-    'AI Lead Handling',
+    'Lead Response & Handling',
     'Enquiry Management',
   ],
   sections: [

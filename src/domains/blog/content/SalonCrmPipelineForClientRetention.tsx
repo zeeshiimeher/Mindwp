@@ -16,9 +16,9 @@ export const salonCrmPipelineForClientRetention: BlogPostData = {
   title: 'Salon CRM Pipeline for Client Retention',
   publishDate: '2026-04-06',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Rebooking', 'Automation'],
   sections: [

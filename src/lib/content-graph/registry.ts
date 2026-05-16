@@ -3,7 +3,12 @@ import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 
 import { normalizePath } from '../seo/config';
 
-import { CANONICAL_INDUSTRIES, CANONICAL_SYSTEMS, CANONICAL_TOPICS } from './canonical';
+import {
+  CANONICAL_INDUSTRIES,
+  CANONICAL_SYSTEMS,
+  CANONICAL_TOPICS,
+  getNodeSystems,
+} from './canonical';
 import { resolveConversionGoal } from './conversionGoals';
 import {
   applyDerivedRelationships,
@@ -18,8 +23,6 @@ import type {
   MetadataCarrier,
 } from './types';
 import { validateContentGraph } from './validate';
-
-const BUILDER_SERVICE_SLUGS = new Set(['']);
 
 const canonicalIndustries = new Set<string>(CANONICAL_INDUSTRIES);
 const canonicalSystems = new Set<string>(CANONICAL_SYSTEMS);
@@ -49,7 +52,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
       );
     }
   }
-  for (const system of carrier.systems ?? []) {
+  for (const system of getNodeSystems(carrier)) {
     if (!canonicalSystems.has(system)) {
       throw new Error(
         `Non-canonical system identifier "${system}" on node "${nodeId}". ` +
@@ -69,7 +72,8 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
 
 const getNodeMetadata = (carrier: MetadataCarrier) => ({
   ...(carrier.industries ? { industries: carrier.industries } : {}),
-  ...(carrier.systems ? { systems: carrier.systems } : {}),
+  ...(carrier.primarySystem ? { primarySystem: carrier.primarySystem } : {}),
+  ...(carrier.supportingSystems ? { supportingSystems: carrier.supportingSystems } : {}),
   ...(carrier.topics ? { topics: carrier.topics } : {}),
 });
 
@@ -108,7 +112,7 @@ export function buildGraphIndexes(nodes: ContentGraphNode[]): ContentGraphIndexe
       appendToIndex(industries, industry, node);
     }
 
-    for (const system of node.systems ?? []) {
+    for (const system of getNodeSystems(node)) {
       appendToIndex(systems, system, node);
     }
 
@@ -132,10 +136,6 @@ export function buildContentGraph(
   const graph: Record<string, ContentGraphNode> = {};
 
   for (const service of Object.values(registries.services)) {
-    if (BUILDER_SERVICE_SLUGS.has(service.slug)) {
-      continue;
-    }
-
     const id = `service:${service.slug}`;
     const seoSnapshot = getSeoSnapshot(service as unknown as Record<string, unknown>, service.path);
     graph[id] = {
@@ -146,8 +146,11 @@ export function buildContentGraph(
       ...(service.slug === 'smart-website-systems' ? { coreFramework: true } : {}),
       ...seoSnapshot,
       ...getConversionSnapshot('service'),
-      systems: [service.slug],
-      ...getNodeMetadata({ systems: service.systems, topics: service.topics }),
+      ...getNodeMetadata({
+        primarySystem: service.primarySystem,
+        supportingSystems: service.supportingSystems,
+        topics: service.topics,
+      }),
     };
   }
 
@@ -243,7 +246,8 @@ export function buildContentGraph(
   for (const node of Object.values(graph)) {
     validateIdentifiers(node.id, {
       industries: node.industries,
-      systems: node.systems,
+      primarySystem: node.primarySystem,
+      supportingSystems: node.supportingSystems,
       topics: node.topics,
     });
   }

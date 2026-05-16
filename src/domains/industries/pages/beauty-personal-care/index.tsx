@@ -26,10 +26,10 @@ export const beautyPersonalCareIndustryPageData: IndustryCategoryPageData = {
     ],
   },
   industries: ['hair-salon', 'nail-salon', 'lash-extensions', 'med-spa', 'aesthetic-clinic'],
-  systems: [
-    'crm-automation',
-    'ai-lead-handling',
-    'reputation-review',
+  primarySystem: 'follow-up-crm',
+  supportingSystems: [
+    'lead-response-handling',
+    'reputation-review-systems',
     'smart-website-systems',
     'local-seo-authority',
   ],

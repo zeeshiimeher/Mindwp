@@ -178,12 +178,12 @@ export const localVisibilityOptimizationGuideForHvacCompanies: ResourceData = {
   title: 'Local Visibility Optimization Guide for HVAC Companies',
   description:
     'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-04-06',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['hvac'],
   topics: ['local-visibility'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -249,9 +249,9 @@ export const localVisibilityOptimizationGuideForHvacCompanies: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

@@ -119,12 +119,12 @@ export const roofingReviewGenerationSystem: ResourceData = {
   title: 'Roofing Review Generation System',
   description:
     'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-02-04',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['roofing'],
   topics: ['review-generation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const roofingReviewGenerationSystem: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

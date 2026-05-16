@@ -153,7 +153,7 @@ const faqs = [
 const finalCta = {
   title: 'Qualify Leads Automatically Before They Reach Your Team',
   description:
-    'Our AI Lead Handling system collects qualification data, scores leads on entry, and routes high-value prospects to your team while nurturing the rest automatically.',
+    'Our Lead Response & Handling system collects qualification data, scores leads on entry, and routes high-value prospects to your team while nurturing the rest automatically.',
 };
 
 export const leadQualificationFramework: ResourceData = {
@@ -167,12 +167,12 @@ export const leadQualificationFramework: ResourceData = {
   title: 'Lead Qualification Framework',
   description:
     'Learn how to build a lead qualification framework that scores and prioritises leads automatically so your team focuses on the highest-value opportunities.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-12-03',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['lead-qualification'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -238,9 +238,9 @@ export const leadQualificationFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

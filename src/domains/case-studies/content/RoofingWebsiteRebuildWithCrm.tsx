@@ -145,7 +145,7 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['smart-website-systems'],
+    primarySystem: 'smart-website-systems',
     topics: ['conversion-optimization', 'lead-capture', 'crm-enabled-websites'],
     publishDate: '2026-01-30',
     client: 'Allerton Roofing',

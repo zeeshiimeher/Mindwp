@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
             <p>
               This Privacy Policy explains how MindWP collects, uses, and protects information when
               you visit our website, contact us, or engage our services related to website
-              infrastructure, WordPress implementation, automation, and digital systems.
+              systems, WordPress implementation, enquiry handling, follow-up, and review support.
             </p>
           </div>
         </div>

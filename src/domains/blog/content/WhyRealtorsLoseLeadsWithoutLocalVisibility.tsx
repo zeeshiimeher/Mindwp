@@ -16,9 +16,9 @@ export const whyRealtorsLoseLeadsWithoutLocalVisibility: BlogPostData = {
   title: 'Why Realtors Lose Leads Without Local Visibility',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['realtor'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['local-visibility'],
   tags: ['Realtor', 'Local Visibility', 'Local Search', 'Reputation', 'Lead Generation'],
   sections: [

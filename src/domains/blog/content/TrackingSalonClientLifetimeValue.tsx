@@ -16,9 +16,9 @@ export const trackingSalonClientLifetimeValue: BlogPostData = {
   title: 'Tracking Salon Client Lifetime Value',
   publishDate: '2025-07-22',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['customer-lifetime-value'],
   tags: ['Salon', 'Client Lifetime Value', 'CRM', 'Retention', 'Revenue'],
   sections: [

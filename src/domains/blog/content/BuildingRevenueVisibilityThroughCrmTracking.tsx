@@ -16,9 +16,9 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
   title: 'Building Revenue Visibility Through CRM Tracking',
   publishDate: '2025-02-12',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: [],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['revenue-visibility', 'revenue-tracking'],
   tags: ['Revenue Visibility', 'CRM Tracking', 'Service Business', 'Pipeline', 'Attribution'],
   sections: [

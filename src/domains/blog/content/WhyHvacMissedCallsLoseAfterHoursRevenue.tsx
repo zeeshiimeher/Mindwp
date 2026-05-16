@@ -16,9 +16,9 @@ export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
   title: 'Why HVAC Missed Calls Lose After Hours Revenue',
   publishDate: '2025-04-25',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['missed-calls'],
   tags: ['HVAC', 'Missed Calls', 'After Hours', 'Revenue Loss', 'Emergency Calls'],
   sections: [

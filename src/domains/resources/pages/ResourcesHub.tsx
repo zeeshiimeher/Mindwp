@@ -142,12 +142,12 @@ export function ResourcesHub({
             <a
               className='mw-btn mw-btn--primary'
               href={buildContactHref({
-                system: 'resource',
+                system: 'smart-website-systems',
                 sourceType: 'resource',
                 slug: 'resource-help',
               })}
             >
-              <span>Start a Conversation</span>
+              <span>Request a System Review</span>
               <ArrowRight size={14} aria-hidden='true' />
             </a>
           </div>

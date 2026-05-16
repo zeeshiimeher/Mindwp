@@ -16,9 +16,9 @@ export const salesPipelineVisibilityFramework: BlogPostData = {
   title: 'Sales Pipeline Visibility Framework',
   publishDate: '2025-03-16',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: [],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['pipeline-visibility'],
   tags: ['Pipeline Visibility', 'Sales Pipeline', 'CRM', 'Service Business', 'Forecasting'],
   sections: [

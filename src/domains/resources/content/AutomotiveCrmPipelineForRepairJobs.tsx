@@ -119,12 +119,12 @@ export const automotiveCrmPipelineForRepairJobs: ResourceData = {
   title: 'Automotive CRM Pipeline for Repair Jobs',
   description:
     'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-01-24',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: ['automotive'],
   topics: ['pipeline-architecture'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const automotiveCrmPipelineForRepairJobs: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

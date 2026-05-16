@@ -16,9 +16,9 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
   title: 'Negative Reviews for Auto Repair Shops',
   publishDate: '2025-11-11',
   authorKey: 'EDITORIAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: ['automotive'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['negative-review-response', 'negative-reviews'],
   tags: ['Automotive', 'Negative Reviews', 'Reputation', 'Response Framework', 'Recovery'],
   sections: [

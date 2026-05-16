@@ -132,12 +132,12 @@ export const reviewGenerationSystem: ResourceData = {
   title: 'Review Generation System',
   description:
     'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2025-11-24',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: [],
   topics: ['review-generation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -188,9 +188,9 @@ export const reviewGenerationSystem: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

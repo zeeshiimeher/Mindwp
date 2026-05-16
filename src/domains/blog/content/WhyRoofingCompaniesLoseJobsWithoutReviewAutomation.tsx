@@ -16,9 +16,9 @@ export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = 
   title: 'Why Roofing Companies Lose Jobs Without Review Automation',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: ['roofing'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-automation'],
   tags: ['Roofing', 'Review Automation', 'Reputation', 'Lost Jobs', 'Social Proof'],
   sections: [

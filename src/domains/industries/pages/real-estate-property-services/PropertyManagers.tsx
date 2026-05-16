@@ -26,7 +26,8 @@ export const propertyManagersIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['property-management'],
-  systems: ['ai-lead-handling', 'crm-automation', 'reputation-review', 'smart-website-systems'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['follow-up-crm', 'reputation-review-systems', 'smart-website-systems'],
   topics: ['lead-management', 'follow-up'],
   faq: {
     header: {

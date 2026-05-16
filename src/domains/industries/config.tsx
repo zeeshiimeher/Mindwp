@@ -195,10 +195,10 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
       render: () => {
         const override = CATEGORY_RENDERER_OVERRIDES_BY_SLUG.get(data.slug);
         const renderedPage = override ? override(data) : renderCategoryWithDirectRenderer(data);
-        const primarySystem = data.systems[0];
+        const primarySystem = data.primarySystem;
 
         if (!primarySystem) {
-          throw new Error(`Industry config requires systems[0] for ${data.slug}.`);
+          throw new Error(`Industry config requires primarySystem for ${data.slug}.`);
         }
 
         return (
@@ -226,10 +226,10 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
     render: () => {
       const override = DETAIL_RENDERER_OVERRIDES_BY_PATH.get(path);
       const renderedPage = override ? override(data) : renderDetailWithDirectRenderer(data, path);
-      const primarySystem = data.systems[0];
+      const primarySystem = data.primarySystem;
 
       if (!primarySystem) {
-        throw new Error(`Industry config requires systems[0] for ${data.slug}.`);
+        throw new Error(`Industry config requires primarySystem for ${data.slug}.`);
       }
 
       return (

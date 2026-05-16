@@ -9,8 +9,7 @@ export type IndexingPolicyKind =
   | 'blog-category'
   | 'resource-category'
   | 'blog-topic'
-  | 'topic-hub'
-  | 'system-hub';
+  | 'topic-hub';
 
 export type IndexingClassification =
   | 'marketing'
@@ -21,7 +20,6 @@ export type IndexingClassification =
   | 'industries'
   | 'caseStudies'
   | 'topics'
-  | 'system'
   | 'utility'
   | 'dev';
 
@@ -46,7 +44,6 @@ const INDEXABLE_CLASSIFICATIONS = new Set<IndexingClassification>([
   'industries',
   'caseStudies',
   'topics',
-  'system',
 ]);
 
 const MARKETING_PATHS = new Set(['/', '/about', '/contact', '/cookies', '/privacy', '/terms']);
@@ -159,8 +156,6 @@ function resolveKindClassification(
     case 'topic-hub':
     case 'blog-topic':
       return resolveTopicClassification(kind, routePathForKind);
-    case 'system-hub':
-      return buildPolicy('system', 'explicit');
     default:
       return null;
   }

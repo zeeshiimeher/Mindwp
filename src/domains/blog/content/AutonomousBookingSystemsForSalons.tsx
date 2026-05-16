@@ -16,9 +16,10 @@ export const autonomousBookingSystemsForSalons: BlogPostData = {
   title: 'Autonomous Booking Systems for Salons',
   publishDate: '2026-02-23',
   authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
+  category: 'frameworks',
   industries: ['salon'],
-  systems: ['smart-website-systems', 'crm-automation'],
+  primarySystem: 'smart-website-systems',
+  supportingSystems: ['follow-up-crm'],
   topics: ['booking-automation'],
   tags: ['Salon', 'Autonomous Booking', 'AI', 'Scheduling', 'Future Tech'],
   sections: [

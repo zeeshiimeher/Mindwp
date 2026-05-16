@@ -16,9 +16,9 @@ export const serviceBusinessFollowUpAutomation: BlogPostData = {
   title: 'Service Business Follow Up Automation',
   publishDate: '2024-11-15',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: [],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['follow-up'],
   tags: ['Follow Up', 'Automation', 'Service Business', 'CRM', 'Lead Nurture'],
   sections: [

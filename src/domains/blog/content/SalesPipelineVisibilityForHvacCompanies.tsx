@@ -16,9 +16,9 @@ export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
   title: 'Sales Pipeline Visibility for HVAC Companies',
   publishDate: '2025-12-05',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['hvac'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['pipeline-visibility'],
   tags: ['HVAC', 'Sales Pipeline', 'CRM', 'Forecasting', 'Deal Tracking'],
   sections: [

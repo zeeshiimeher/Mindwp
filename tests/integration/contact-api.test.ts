@@ -307,7 +307,7 @@ describe('integration: contact API', () => {
         headers: validHeaders,
         body: JSON.stringify({
           ...validBody,
-          system: 'ai-lead-handling',
+          system: 'lead-response-handling',
           source: 'page/homepage',
           message: 'Can you send a quote and pricing breakdown for AI lead handling?',
         }),
@@ -325,7 +325,7 @@ describe('integration: contact API', () => {
       1,
       expect.objectContaining({
         to: ['sales@mindwp.com'],
-        subject: '[HIGH] New Lead — ai-lead-handling — page/homepage',
+        subject: '[HIGH] New Lead — lead-response-handling — page/homepage',
         text: expect.stringContaining('Routed To: sales@mindwp.com'),
       })
     );
@@ -360,7 +360,7 @@ describe('integration: contact API', () => {
       expect.objectContaining({
         priority: 'high',
         routedTo: 'sales@mindwp.com',
-        system: 'ai-lead-handling',
+        system: 'lead-response-handling',
         source: 'page/homepage',
       })
     );
@@ -368,7 +368,7 @@ describe('integration: contact API', () => {
       expect.objectContaining({
         priority: 'high',
         routedTo: 'sales@mindwp.com',
-        system: 'ai-lead-handling',
+        system: 'lead-response-handling',
         source: 'page/homepage',
       })
     );

@@ -117,7 +117,7 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],
-    systems: ['smart-website-systems'],
+    primarySystem: 'smart-website-systems',
     topics: ['booking-systems', 'follow-up', 'conversion-optimization'],
     publishDate: '2026-02-10',
     client: 'Mercer Legal',

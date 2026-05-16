@@ -6,6 +6,7 @@ import { categories } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { buildContactHref } from '@/lib/contact/contactHref';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 
 import type { ResourcePageTemplateSection } from './types';
 export type { ResourcePageTemplateSection } from './types';
@@ -42,7 +43,8 @@ export type ResourcePageTemplateProps = {
     description?: string;
   };
   sections: ResourcePageTemplateSection[];
-  systems?: string[];
+  primarySystem?: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   currentSlug: string;
 };
 
@@ -70,7 +72,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
       : 'New'
     : null;
   const dateLabel = props.updatedAt ? 'Updated' : 'Published';
-  const primarySystem = props.systems?.[0] ?? 'smart-website-systems';
+  const primarySystem = props.primarySystem ?? 'smart-website-systems';
   const mainSections = props.sections.filter(validateRenderableResourceSection);
 
   return (

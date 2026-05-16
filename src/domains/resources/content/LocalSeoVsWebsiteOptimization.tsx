@@ -162,9 +162,9 @@ export const localSeoVsWebsiteOptimization: ResourceData = {
   title: 'Local SEO vs Website Optimisation',
   description:
     'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
-  category: 'local-seo-authority',
+  category: 'local-visibility',
   publishedAt: '2026-01-12',
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   industries: [],
   topics: ['local-seo'],
   primaryService: 'local-seo-authority',
@@ -233,9 +233,9 @@ export const localSeoVsWebsiteOptimization: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('local-seo-authority'),
-      content: getRelatedResourcesContent('local-seo-authority'),
-      resources: getRelatedResources('local-seo-authority', canonical),
+      heading: getRelatedResourcesHeading('local-visibility'),
+      content: getRelatedResourcesContent('local-visibility'),
+      resources: getRelatedResources('local-visibility', canonical),
     },
   ],
 };

@@ -16,9 +16,9 @@ export const plumbingCrmPipelineForJobManagement: BlogPostData = {
   title: 'Plumbing CRM Pipeline for Job Management',
   publishDate: '2026-04-06',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['plumbing'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['Plumbing', 'CRM Pipeline', 'Job Management', 'Lead Tracking', 'Automation'],
   sections: [

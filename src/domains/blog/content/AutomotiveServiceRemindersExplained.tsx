@@ -16,9 +16,9 @@ export const automotiveServiceRemindersExplained: BlogPostData = {
   title: 'Automotive Service Reminders Explained',
   publishDate: '2025-06-04',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['automotive'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['service-reminders'],
   tags: ['Automotive', 'Service Reminders', 'CRM', 'Customer Retention', 'Automation'],
   sections: [

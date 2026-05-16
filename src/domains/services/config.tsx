@@ -18,11 +18,11 @@ const createServiceEntry = <TData,>(
 ): ServiceEntry<TData> => ({ data, render });
 
 function renderServiceEntry(slug: ServiceSlug): ReactElement {
-  const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug] as AnyServiceEntry;
-  const primarySystem = (entry.data as { systems?: string[] }).systems?.[0];
+  const entry = SERVICE_ENTRY_BY_SLUG[slug] as AnyServiceEntry;
+  const primarySystem = entry.data.primarySystem;
 
   if (!primarySystem) {
-    throw new Error(`Service config requires systems[0] for ${slug}.`);
+    throw new Error(`Service config requires primarySystem for ${slug}.`);
   }
 
   const registryEntry = SERVICE_DOMAIN_REGISTRY[slug as keyof typeof SERVICE_DOMAIN_REGISTRY];
@@ -81,21 +81,14 @@ export const SERVICE_ENTRY_BY_SLUG = Object.fromEntries(
   [K in keyof typeof SERVICE_DOMAIN_REGISTRY]: ServiceEntry<ServicePageDataBySlug[K]>;
 };
 
-export const SERVICE_ENTRY_ALIASES_BY_SLUG = {} as const;
-
-export const SERVICE_ENTRY_BY_SLUG_WITH_ALIASES = {
-  ...SERVICE_ENTRY_BY_SLUG,
-  ...SERVICE_ENTRY_ALIASES_BY_SLUG,
-} as const;
-
-export type ServiceSlug = keyof typeof SERVICE_ENTRY_BY_SLUG_WITH_ALIASES;
+export type ServiceSlug = keyof typeof SERVICE_ENTRY_BY_SLUG;
 
 export const isServiceSlug = (slug: string): slug is ServiceSlug => {
-  return slug in SERVICE_ENTRY_BY_SLUG_WITH_ALIASES;
+  return slug in SERVICE_ENTRY_BY_SLUG;
 };
 
 export const getServiceDataBySlug = (slug: ServiceSlug) => {
-  return (SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug] as AnyServiceEntry).data;
+  return (SERVICE_ENTRY_BY_SLUG[slug] as AnyServiceEntry).data;
 };
 
 export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {

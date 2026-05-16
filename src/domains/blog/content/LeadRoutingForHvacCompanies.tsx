@@ -16,11 +16,11 @@ export const leadRoutingForHvacCompanies: BlogPostData = {
   title: 'Lead Routing for HVAC Companies',
   publishDate: '2026-01-22',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-routing'],
-  tags: ['HVAC', 'Lead Routing', 'Dispatch', 'Response Time', 'AI Lead Handling'],
+  tags: ['HVAC', 'Lead Routing', 'Dispatch', 'Response Time', 'Lead Response & Handling'],
   sections: [
     {
       type: 'introduction',

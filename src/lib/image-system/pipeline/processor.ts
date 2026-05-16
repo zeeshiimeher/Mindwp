@@ -264,7 +264,7 @@ export async function processImage(
           metadata.title,
           brightness,
           design,
-          metadata.topics[0] ?? metadata.systems[0] ?? metadata.title,
+          metadata.topics[0] ?? metadata.activeSystems[0] ?? metadata.title,
           Object.keys(tuneOverrides).length > 0 ? tuneOverrides : undefined
         );
 
@@ -421,7 +421,7 @@ export async function processImage(
 
       // Update learning systems
       updateContextMemory(
-        metadata.topics[0] ?? metadata.systems[0] ?? metadata.title,
+        metadata.topics[0] ?? metadata.activeSystems[0] ?? metadata.title,
         semanticQuery.query,
         best.image.provider,
         best.relevanceScore
@@ -457,7 +457,7 @@ export async function processImage(
 
       // Update learning systems
       updateContextMemory(
-        metadata.topics[0] ?? metadata.systems[0] ?? metadata.title,
+        metadata.topics[0] ?? metadata.activeSystems[0] ?? metadata.title,
         semanticQuery.query,
         best.image.provider,
         best.relevanceScore

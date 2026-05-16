@@ -44,15 +44,7 @@ Graph behavior must follow:
 
 If this document conflicts with those docs, fix the conflict.
 
-Allowed active system values are:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
-
-Revenue Recovery may appear as an improvement theme or cross-system layer, but it is not a primary public service page and must not become a related-content pillar beside the active systems.
+Allowed active system values and ownership boundaries come from [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Revenue Recovery may appear as an improvement theme or cross-system layer, but it is not a primary public service page and must not become a related-content pillar beside the active systems.
 
 ---
 

@@ -16,9 +16,9 @@ export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
   title: 'Customer Feedback Loop for Plumbing Companies',
   publishDate: '2025-11-19',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['plumbing'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['feedback-loops'],
   tags: ['Plumbing', 'Customer Feedback', 'Feedback Loop', 'Quality', 'Reputation'],
   sections: [

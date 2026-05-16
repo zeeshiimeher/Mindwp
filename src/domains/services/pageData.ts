@@ -1,158 +1,121 @@
-import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
-import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
-import { conversionFunnelSystemVsLandingPageDevelopmentPage } from '@/domains/services/data/conversion-funnel-system-vs-landing-page-development';
-import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
-import { crmAutomationPage } from '@/domains/services/data/crm-automation';
-import { divi5Page } from '@/domains/services/data/divi5';
-import { elementorPage } from '@/domains/services/data/elementor';
-import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
+import { followUpCrmPage } from '@/domains/services/data/follow-up-crm';
+import { leadResponseHandlingPage } from '@/domains/services/data/lead-response-handling';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
-import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
-import { revenueGrowthPage } from '@/domains/services/data/revenue-growth';
-import { servicePagesVsOneGenericServicesPage } from '@/domains/services/data/service-pages-vs-one-generic-services-page';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
-import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
-import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
-import { websiteCrmIntegrationVsManualLeadHandlingPage } from '@/domains/services/data/website-crm-integration-vs-manual-lead-handling';
-import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
-import { woocommercePage } from '@/domains/services/data/woocommerce';
-import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
-import { AiLeadHandlingRenderer } from '@/domains/services/renderers/AiLeadHandlingRenderer';
-import { BricksBuilderRenderer } from '@/domains/services/renderers/BricksBuilderRenderer';
-import { ConversionFunnelDecisionRenderer } from '@/domains/services/renderers/ConversionFunnelDecisionRenderer';
-import { ConversionLayerRenderer } from '@/domains/services/renderers/ConversionLayerRenderer';
-import { CRMAutomationRenderer } from '@/domains/services/renderers/CRMAutomationRenderer';
-import { CRMDecisionSupportRenderer } from '@/domains/services/renderers/CRMDecisionSupportRenderer';
-import { Divi5Renderer } from '@/domains/services/renderers/Divi5Renderer';
-import { ElementorRenderer } from '@/domains/services/renderers/ElementorRenderer';
-import { LeadReactivationSystemRenderer } from '@/domains/services/renderers/LeadReactivationSystemRenderer';
-import { LocalSeoAuthorityRenderer } from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
-import { MissedCallRecoverySystemRenderer } from '@/domains/services/renderers/MissedCallRecoverySystemRenderer';
-import { ReputationReviewSystemsRenderer } from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
-import { RevenueGrowthRenderer } from '@/domains/services/renderers/RevenueGrowthRenderer';
-import { ServicePagesDecisionRenderer } from '@/domains/services/renderers/ServicePagesDecisionRenderer';
-import { SmartWebsiteSystemsRenderer } from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
-import { SystemMigrationPlatformConsolidationRenderer } from '@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer';
-import { UnifiedCommunicationSystemRenderer } from '@/domains/services/renderers/UnifiedCommunicationSystemRenderer';
-import { WebsiteRedesignSystemRebuildRenderer } from '@/domains/services/renderers/WebsiteRedesignSystemRebuildRenderer';
-import { WooCommerceRenderer } from '@/domains/services/renderers/WooCommerceRenderer';
-import { WordPressDevelopmentRenderer } from '@/domains/services/renderers/WordPressDevelopmentRenderer';
+import { bricksBuilderPage } from '@/domains/services/implementation/data/bricks-builder';
+import { divi5Page } from '@/domains/services/implementation/data/divi5';
+import { elementorPage } from '@/domains/services/implementation/data/elementor';
+import { websiteRedesignSystemRebuildPage } from '@/domains/services/implementation/data/website-redesign-system-rebuild';
+import { woocommercePage } from '@/domains/services/implementation/data/woocommerce';
+import { wordpressDevelopmentPage } from '@/domains/services/implementation/data/wordpress-development';
+import BricksBuilderRenderer from '@/domains/services/implementation/renderers/BricksBuilderRenderer';
+import Divi5Renderer from '@/domains/services/implementation/renderers/Divi5Renderer';
+import ElementorRenderer from '@/domains/services/implementation/renderers/ElementorRenderer';
+import WebsiteRedesignSystemRebuildRenderer from '@/domains/services/implementation/renderers/WebsiteRedesignSystemRebuildRenderer';
+import WooCommerceRenderer from '@/domains/services/implementation/renderers/WooCommerceRenderer';
+import WordPressDevelopmentRenderer from '@/domains/services/implementation/renderers/WordPressDevelopmentRenderer';
+import FollowUpCrmRenderer from '@/domains/services/renderers/FollowUpCrmRenderer';
+import LeadResponseHandlingRenderer from '@/domains/services/renderers/LeadResponseHandlingRenderer';
+import LocalSeoAuthorityRenderer from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
+import ReputationReviewSystemsRenderer from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
+import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
 import type { ServicePageData } from '@/domains/services/types';
 
-type ServiceRenderer<TData extends ServicePageData = ServicePageData> = (props: {
-  data: TData;
-  slug: string;
-}) => React.JSX.Element;
+type ServiceRenderer = (props: { data: ServicePageData; slug: string }) => React.JSX.Element;
 
-type ServiceDomainEntry<TData extends ServicePageData = ServicePageData> = {
+type ServiceDomainEntry = {
   id: string;
   slug: string;
-  data: TData;
-  renderer: ServiceRenderer<TData>;
+  data: ServicePageData;
+  renderer: ServiceRenderer;
+  routePath: string;
+  kind: 'primary' | 'implementation';
   options?: {
     relatedSection?: { enabled?: boolean; variant?: 'standard' | 'rail' | 'compact' };
   };
 };
 
-type ServiceDomainRegistry = {
-  'smart-website-systems': ServiceDomainEntry<typeof smartWebsiteSystemsPage>;
-  'conversion-layer': ServiceDomainEntry<typeof conversionLayerPage>;
-  'conversion-funnel-system-vs-landing-page-development': ServiceDomainEntry<
-    typeof conversionFunnelSystemVsLandingPageDevelopmentPage
-  >;
-  'system-migration-platform-consolidation': ServiceDomainEntry<
-    typeof systemMigrationPlatformConsolidationPage
-  >;
-  'website-redesign-system-rebuild': ServiceDomainEntry<typeof websiteRedesignSystemRebuildPage>;
-  'lead-reactivation-system': ServiceDomainEntry<typeof leadReactivationSystemPage>;
-  'missed-call-recovery-system': ServiceDomainEntry<typeof missedCallRecoverySystemPage>;
-  'unified-communication-system': ServiceDomainEntry<typeof unifiedCommunicationSystemPage>;
-  'local-seo-authority': ServiceDomainEntry<typeof localSeoAuthorityPage>;
-  'reputation-review-systems': ServiceDomainEntry<typeof reputationReviewSystemsPage>;
-  'revenue-growth': ServiceDomainEntry<typeof revenueGrowthPage>;
-  'crm-infrastructure-implementation': ServiceDomainEntry<typeof crmAutomationPage>;
-  'website-crm-integration-vs-manual-lead-handling': ServiceDomainEntry<
-    typeof websiteCrmIntegrationVsManualLeadHandlingPage
-  >;
-  'ai-lead-handling': ServiceDomainEntry<typeof aiLeadHandlingPage>;
-  'service-pages-vs-one-generic-services-page': ServiceDomainEntry<
-    typeof servicePagesVsOneGenericServicesPage
-  >;
-  'wordpress-development': ServiceDomainEntry<typeof wordpressDevelopmentPage>;
-  ecommerce: ServiceDomainEntry<typeof woocommercePage>;
-  divi5: ServiceDomainEntry<typeof divi5Page>;
-  'bricks-builder': ServiceDomainEntry<typeof bricksBuilderPage>;
-  elementor: ServiceDomainEntry<typeof elementorPage>;
+const createServiceEntry = (
+  data: ServicePageData,
+  renderer: ServiceRenderer,
+  kind: ServiceDomainEntry['kind'],
+  options?: ServiceDomainEntry['options']
+): ServiceDomainEntry => {
+  const routePath =
+    kind === 'implementation' ? `/services/implementation/${data.slug}` : data.seo.canonical;
+
+  return {
+    id: `service:${kind}:${data.slug}`,
+    slug: kind === 'implementation' ? `implementation/${data.slug}` : data.slug,
+    data: { ...data, routePath, seo: { ...data.seo, canonical: routePath } },
+    renderer,
+    routePath,
+    kind,
+    options,
+  };
 };
 
-const createServiceEntry = <TData extends ServicePageData>(
-  data: TData,
-  renderer: ServiceRenderer<TData>,
-  options?: ServiceDomainEntry['options']
-): ServiceDomainEntry<TData> => ({
-  id: `service:${data.slug}`,
-  slug: data.slug,
-  data,
-  renderer,
-  options,
-});
-
-export const SERVICE_DOMAIN_REGISTRY: ServiceDomainRegistry = {
-  'smart-website-systems': createServiceEntry(smartWebsiteSystemsPage, SmartWebsiteSystemsRenderer),
-  'conversion-layer': createServiceEntry(conversionLayerPage, ConversionLayerRenderer),
-  'conversion-funnel-system-vs-landing-page-development': createServiceEntry(
-    conversionFunnelSystemVsLandingPageDevelopmentPage,
-    ConversionFunnelDecisionRenderer
+export const PRIMARY_SERVICE_DOMAIN_REGISTRY = {
+  'smart-website-systems': createServiceEntry(
+    smartWebsiteSystemsPage,
+    SmartWebsiteSystemsRenderer,
+    'primary'
   ),
-  'system-migration-platform-consolidation': createServiceEntry(
-    systemMigrationPlatformConsolidationPage,
-    SystemMigrationPlatformConsolidationRenderer
+  'local-seo-authority': createServiceEntry(
+    localSeoAuthorityPage,
+    LocalSeoAuthorityRenderer,
+    'primary'
   ),
-  'website-redesign-system-rebuild': createServiceEntry(
-    websiteRedesignSystemRebuildPage,
-    WebsiteRedesignSystemRebuildRenderer
+  'lead-response-handling': createServiceEntry(
+    leadResponseHandlingPage,
+    LeadResponseHandlingRenderer,
+    'primary'
   ),
-  'lead-reactivation-system': createServiceEntry(
-    leadReactivationSystemPage,
-    LeadReactivationSystemRenderer
-  ),
-  'missed-call-recovery-system': createServiceEntry(
-    missedCallRecoverySystemPage,
-    MissedCallRecoverySystemRenderer
-  ),
-  'unified-communication-system': createServiceEntry(
-    unifiedCommunicationSystemPage,
-    UnifiedCommunicationSystemRenderer
-  ),
-  'local-seo-authority': createServiceEntry(localSeoAuthorityPage, LocalSeoAuthorityRenderer),
+  'follow-up-crm': createServiceEntry(followUpCrmPage, FollowUpCrmRenderer, 'primary'),
   'reputation-review-systems': createServiceEntry(
     reputationReviewSystemsPage,
-    ReputationReviewSystemsRenderer
+    ReputationReviewSystemsRenderer,
+    'primary'
   ),
-  'revenue-growth': createServiceEntry(revenueGrowthPage, RevenueGrowthRenderer),
-  'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, CRMAutomationRenderer),
-  'website-crm-integration-vs-manual-lead-handling': createServiceEntry(
-    websiteCrmIntegrationVsManualLeadHandlingPage,
-    CRMDecisionSupportRenderer
-  ),
-  'ai-lead-handling': createServiceEntry(aiLeadHandlingPage, AiLeadHandlingRenderer),
-  'service-pages-vs-one-generic-services-page': createServiceEntry(
-    servicePagesVsOneGenericServicesPage,
-    ServicePagesDecisionRenderer
-  ),
-  'wordpress-development': createServiceEntry(
+} as const satisfies Record<string, ServiceDomainEntry>;
+
+export const IMPLEMENTATION_SERVICE_DOMAIN_REGISTRY = {
+  'implementation/wordpress-development': createServiceEntry(
     wordpressDevelopmentPage,
-    WordPressDevelopmentRenderer
+    WordPressDevelopmentRenderer,
+    'implementation'
   ),
-  ecommerce: createServiceEntry(woocommercePage, WooCommerceRenderer),
-  divi5: createServiceEntry(divi5Page, Divi5Renderer),
-  'bricks-builder': createServiceEntry(bricksBuilderPage, BricksBuilderRenderer),
-  elementor: createServiceEntry(elementorPage, ElementorRenderer),
-} as const;
+  'implementation/elementor': createServiceEntry(
+    elementorPage,
+    ElementorRenderer,
+    'implementation'
+  ),
+  'implementation/bricks-builder': createServiceEntry(
+    bricksBuilderPage,
+    BricksBuilderRenderer,
+    'implementation'
+  ),
+  'implementation/divi5': createServiceEntry(divi5Page, Divi5Renderer, 'implementation'),
+  'implementation/woocommerce': createServiceEntry(
+    woocommercePage,
+    WooCommerceRenderer,
+    'implementation'
+  ),
+  'implementation/website-redesign-system-rebuild': createServiceEntry(
+    websiteRedesignSystemRebuildPage,
+    WebsiteRedesignSystemRebuildRenderer,
+    'implementation'
+  ),
+} as const satisfies Record<string, ServiceDomainEntry>;
+
+export const SERVICE_DOMAIN_REGISTRY = {
+  ...PRIMARY_SERVICE_DOMAIN_REGISTRY,
+  ...IMPLEMENTATION_SERVICE_DOMAIN_REGISTRY,
+} as const satisfies Record<string, ServiceDomainEntry>;
 
 export type ServicePageDataBySlug = {
-  [K in keyof ServiceDomainRegistry]: ServiceDomainRegistry[K]['data'];
+  [K in keyof typeof SERVICE_DOMAIN_REGISTRY]: (typeof SERVICE_DOMAIN_REGISTRY)[K]['data'];
 };
 
 export const SERVICE_PAGE_DATA_BY_SLUG = Object.fromEntries(

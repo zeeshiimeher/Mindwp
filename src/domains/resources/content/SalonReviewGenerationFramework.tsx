@@ -119,12 +119,12 @@ export const salonReviewGenerationFramework: ResourceData = {
   title: 'Salon Review Generation Framework',
   description:
     'See how salons automate review collection with photo prompts, stylist-specific personalisation, and post-appointment timing to build the Google review profile that drives booking decisions.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-02-07',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['salon'],
   topics: ['review-generation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const salonReviewGenerationFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

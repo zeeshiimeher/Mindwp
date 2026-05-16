@@ -15,7 +15,7 @@ export const workflowsData = {
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'workflows',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: [
     'website-infrastructure',
     'lead-capture',

@@ -15,7 +15,7 @@ export const reputationData = {
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'reputation',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: [
     'website-infrastructure',
     'lead-capture',

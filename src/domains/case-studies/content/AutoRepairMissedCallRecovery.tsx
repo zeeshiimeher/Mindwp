@@ -114,7 +114,7 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     industryCategory: 'automotive',
     industryLabel: 'Automotive',
     industries: ['auto-repair'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['missed-calls', 'lead-response-time', 'lead-capture'],
     publishDate: '2026-02-01',
     client: 'Premier Auto Care',

@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Stop Losing Roofing Leads to Missed Calls',
   description:
-    'Our AI Lead Handling systems recover missed calls automatically with instant SMS responses, emergency routing, and callback queue management designed for roofing businesses.',
+    'Our Lead Response & Handling systems recover missed calls automatically with instant SMS responses, emergency routing, and callback queue management designed for roofing businesses.',
 };
 
 export const missedCallRecoveryForRoofing: ResourceData = {
@@ -119,12 +119,12 @@ export const missedCallRecoveryForRoofing: ResourceData = {
   title: 'Missed Call Recovery for Roofing',
   description:
     'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-02-14',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['roofing'],
   topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const missedCallRecoveryForRoofing: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

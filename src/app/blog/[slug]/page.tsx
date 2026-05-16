@@ -102,7 +102,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         publishDate={post.publishDate}
         tags={post.tags}
         sections={post.sections}
-        systems={post.systems}
+        primarySystem={post.primarySystem}
+        supportingSystems={post.supportingSystems}
         featuredImage={getImage(slug, 'blog', 'featured-clean')}
       />
     </>

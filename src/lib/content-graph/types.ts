@@ -1,5 +1,7 @@
 import type { OpenGraphData } from '@/domains/shared/seo';
 
+import type { ActiveSystem } from './canonical';
+
 export type ContentNodeType =
   | 'service'
   | 'industry-category'
@@ -40,7 +42,8 @@ export interface ContentGraphNode {
   vertical?: Vertical;
   coreFramework?: boolean;
   industries?: string[];
-  systems?: string[];
+  primarySystem?: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics?: string[];
   relatesTo?: AttributedEdge[];
   supports?: AttributedEdge[];
@@ -81,7 +84,8 @@ export interface ContentGraph {
 
 export type MetadataCarrier = {
   industries?: string[];
-  systems?: string[];
+  primarySystem?: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics?: string[];
 };
 
@@ -104,7 +108,8 @@ export interface IndexableBlogPost {
   title: string;
   seo: { description: string };
   topics: string[];
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   industries: string[];
   category: string;
 }
@@ -115,7 +120,8 @@ export interface IndexableResource {
   description: string;
   category: string;
   topics?: string[];
-  systems?: string[];
+  primarySystem?: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   industries?: string[];
   seo: { canonical: string; description?: string };
 }
@@ -150,7 +156,13 @@ export interface ResolverDependencies {
     string,
     { slug: string; title: string; seo?: { description?: string }; industries?: string[] }
   >;
-  features: Array<{ slug: string; title: string; description?: string; systems?: string[] }>;
+  features: Array<{
+    slug: string;
+    title: string;
+    description?: string;
+    primarySystem?: ActiveSystem;
+    supportingSystems?: ActiveSystem[];
+  }>;
   industries: Record<
     string,
     {

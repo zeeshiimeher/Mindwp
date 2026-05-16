@@ -162,9 +162,9 @@ export const localVisibilityFramework: ResourceData = {
   title: 'Local Visibility Framework',
   description:
     'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
-  category: 'local-seo-authority',
+  category: 'local-visibility',
   publishedAt: '2025-12-15',
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   industries: [],
   topics: ['local-visibility'],
   primaryService: 'local-seo-authority',
@@ -233,9 +233,9 @@ export const localVisibilityFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('local-seo-authority'),
-      content: getRelatedResourcesContent('local-seo-authority'),
-      resources: getRelatedResources('local-seo-authority', canonical),
+      heading: getRelatedResourcesHeading('local-visibility'),
+      content: getRelatedResourcesContent('local-visibility'),
+      resources: getRelatedResources('local-visibility', canonical),
     },
   ],
 };

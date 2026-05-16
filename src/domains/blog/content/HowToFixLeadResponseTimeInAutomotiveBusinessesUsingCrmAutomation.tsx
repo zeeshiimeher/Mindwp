@@ -5,20 +5,20 @@ export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: B
     title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
     description:
       'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',
-    canonical: '/blog/how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
+    canonical: '/blog/how-to-fix-lead-response-time-in-automotive-businesses-using-follow-up-crm',
     openGraph: {
       title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
       description:
         'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',
     },
   },
-  slug: 'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
+  slug: 'how-to-fix-lead-response-time-in-automotive-businesses-using-follow-up-crm',
   title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
   publishDate: '2026-04-06',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['automotive'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['lead-response-time'],
   tags: ['Automotive', 'CRM Automation', 'Lead Response Time', 'Enquiry Management', 'System'],
   sections: [

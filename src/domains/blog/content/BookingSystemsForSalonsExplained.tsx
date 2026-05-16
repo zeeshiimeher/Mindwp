@@ -16,9 +16,10 @@ export const bookingSystemsForSalonsExplained: BlogPostData = {
   title: 'Booking Systems for Salons Explained',
   publishDate: '2026-01-06',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['smart-website-systems', 'crm-automation'],
+  primarySystem: 'smart-website-systems',
+  supportingSystems: ['follow-up-crm'],
   topics: ['booking-systems'],
   tags: ['Salon', 'Booking Systems', 'Scheduling', 'CRM', 'Infrastructure'],
   sections: [

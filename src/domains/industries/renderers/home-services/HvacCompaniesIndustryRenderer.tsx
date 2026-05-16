@@ -55,7 +55,7 @@ const DISPATCH_FEED = [
 ];
 
 export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
-  const primarySystem = data.systems[0];
+  const primarySystem = data.primarySystem;
   if (!primarySystem) {
     throw new Error(`[${data.slug}] Missing primary industry system.`);
   }
@@ -272,11 +272,11 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
           </div>
           <ul className='hs-surface flex flex-col gap-3 rounded-2xl border p-7 lg:col-span-7'>
             {[
-              { what: 'Inbound rings', who: 'AI Lead Handling', tint: 'cyan' },
-              { what: 'Acknowledgement SMS', who: 'AI Lead Handling', tint: 'cyan' },
-              { what: 'Job thread + photos', who: 'CRM & Automation', tint: 'teal' },
-              { what: 'Quote follow-up', who: 'CRM & Automation', tint: 'teal' },
-              { what: 'Service-plan reminder', who: 'CRM & Automation', tint: 'teal' },
+              { what: 'Inbound rings', who: 'Lead Response & Handling', tint: 'cyan' },
+              { what: 'Acknowledgement SMS', who: 'Lead Response & Handling', tint: 'cyan' },
+              { what: 'Job thread + photos', who: 'Follow-Up & CRM', tint: 'teal' },
+              { what: 'Quote follow-up', who: 'Follow-Up & CRM', tint: 'teal' },
+              { what: 'Service-plan reminder', who: 'Follow-Up & CRM', tint: 'teal' },
               { what: 'Review request', who: 'Reputation & Reviews', tint: 'amber' },
             ].map(row => (
               <li
@@ -345,11 +345,11 @@ export function HvacCompaniesIndustryRenderer({ data }: IndustryDetailRendererPr
         <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
           {[
             {
-              system: 'AI Lead Handling',
+              system: 'Lead Response & Handling',
               role: 'No-cool calls get acknowledged inside the first ring, every ring, all week.',
             },
             {
-              system: 'CRM & Automation',
+              system: 'Follow-Up & CRM',
               role: `Holds the install thread, the service plan, the next appointment ${EM} without anyone keeping it in a head.`,
             },
             {

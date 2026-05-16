@@ -16,9 +16,9 @@ export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
   title: 'Why Booking Systems Need Website Infrastructure',
   publishDate: '2024-09-20',
   authorKey: 'EDITORIAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['booking-systems'],
   tags: [
     'Booking Systems',

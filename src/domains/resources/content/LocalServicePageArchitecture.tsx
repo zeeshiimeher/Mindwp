@@ -162,9 +162,10 @@ export const localServicePageArchitecture: ResourceData = {
   title: 'Local Service Page Architecture',
   description:
     'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
-  category: 'local-seo-authority',
+  category: 'local-visibility',
   publishedAt: '2025-11-10',
-  systems: ['local-seo-authority', 'smart-website-systems'],
+  primarySystem: 'local-seo-authority',
+  supportingSystems: ['smart-website-systems'],
   industries: [],
   topics: ['service-pages', 'local-service-pages'],
   primaryService: 'local-seo-authority',
@@ -235,9 +236,9 @@ export const localServicePageArchitecture: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('local-seo-authority'),
-      content: getRelatedResourcesContent('local-seo-authority'),
-      resources: getRelatedResources('local-seo-authority', canonical),
+      heading: getRelatedResourcesHeading('local-visibility'),
+      content: getRelatedResourcesContent('local-visibility'),
+      resources: getRelatedResources('local-visibility', canonical),
     },
   ],
 };

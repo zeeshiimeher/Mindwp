@@ -16,9 +16,9 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
   title: 'Authority Signals for Local Search',
   publishDate: '2025-02-04',
   authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: [],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['local-authority', 'authority-signals'],
   tags: ['Authority Signals', 'Local Search', 'Local SEO', 'Trust Factors', 'Search Rankings'],
   sections: [

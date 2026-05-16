@@ -25,8 +25,8 @@ export default function CookiePolicy() {
             <h1>Cookie Policy</h1>
             <p>
               This Cookie Policy explains how MindWP uses cookies and similar technologies on our
-              website in connection with our website infrastructure, WordPress implementation,
-              automation, and digital systems services.
+              website in connection with our website systems, WordPress implementation, enquiry
+              handling, follow-up, and review-support services.
             </p>
           </div>
         </div>

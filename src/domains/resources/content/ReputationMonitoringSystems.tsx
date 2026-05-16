@@ -162,12 +162,12 @@ export const reputationMonitoringSystems: ResourceData = {
   title: 'Reputation Monitoring Systems',
   description:
     'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-01-10',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: [],
   topics: ['reputation-monitoring'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -233,9 +233,9 @@ export const reputationMonitoringSystems: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

@@ -16,9 +16,9 @@ export const salonReviewGenerationFramework: BlogPostData = {
   title: 'Salon Review Generation Framework',
   publishDate: '2025-08-15',
   authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-generation'],
   tags: ['Salon', 'Review Generation', 'Online Reputation', 'Google Reviews', 'Automation'],
   sections: [

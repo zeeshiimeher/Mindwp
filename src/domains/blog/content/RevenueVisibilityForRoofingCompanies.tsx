@@ -16,9 +16,9 @@ export const revenueVisibilityForRoofingCompanies: BlogPostData = {
   title: 'Revenue Visibility for Roofing Companies',
   publishDate: '2025-11-27',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['roofing'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['revenue-visibility'],
   tags: ['Roofing', 'Revenue Visibility', 'CRM', 'Pipeline Tracking', 'Reporting'],
   sections: [

@@ -99,7 +99,7 @@ const checklist = [
 const finalCta = {
   title: 'Automate Your Follow-Up and Never Lose a Lead to Silence',
   description:
-    'Our AI Lead Handling system includes stage-based follow-up automation across SMS, email, and WhatsApp. Every lead gets the right message at the right time without manual effort.',
+    'Our Lead Response & Handling system includes stage-based follow-up automation across SMS, email, and WhatsApp. Every lead gets the right message at the right time without manual effort.',
 };
 
 export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
@@ -113,12 +113,12 @@ export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
   title: 'Service Business Follow-Up Automation Guide',
   description:
     'Learn how to build automated follow-up sequences triggered by CRM pipeline stages that ensure every lead receives consistent, timely communication.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-12-27',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['follow-up'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -163,9 +163,9 @@ export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

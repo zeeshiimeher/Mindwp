@@ -119,12 +119,12 @@ export const automotiveServiceReminderAutomation: ResourceData = {
   title: 'Automotive Service Reminder Automation Framework',
   description:
     'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-02-23',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: ['automotive'],
   topics: ['service-reminders'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const automotiveServiceReminderAutomation: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

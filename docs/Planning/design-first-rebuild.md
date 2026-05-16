@@ -29,17 +29,9 @@ This workflow is intentionally design-first. It prevents weak pages from being f
 
 MindWP is a systems-first website and connected handling systems business for established service businesses.
 
-Active public systems:
+The active offer model is owned by `docs/core/OFFER-ARCHITECTURE.md`.
 
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
-
-Revenue Recovery is a cross-system improvement layer only.
-
-Implementation services, including WordPress, Elementor, Bricks, Divi, WooCommerce, and website rebuild paths, sit under Smart Website Systems as implementation pathways. They are not equal primary systems.
+Revenue Recovery is a cross-system improvement layer only. Implementation services sit under Smart Website Systems as implementation pathways, not equal primary systems.
 
 ---
 

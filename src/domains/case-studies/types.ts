@@ -1,4 +1,5 @@
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 
 import type { CaseStudyTemplateSection } from './templates';
 
@@ -16,7 +17,8 @@ export interface CaseStudyData {
   industryCategory: string;
   industryLabel: string;
   industries: string[];
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics?: string[];
   publishDate: string;
   client: string;
@@ -41,7 +43,8 @@ export type CaseStudyTemplateMetadata = Pick<
   | 'seo'
   | 'industryCategory'
   | 'industryLabel'
-  | 'systems'
+  | 'primarySystem'
+  | 'supportingSystems'
   | 'publishDate'
   | 'client'
   | 'location'

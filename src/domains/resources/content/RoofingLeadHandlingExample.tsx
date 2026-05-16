@@ -104,7 +104,7 @@ const diy = {
 const finalCta = {
   title: 'Handle Every Roofing Lead Before Your Competitors Do',
   description:
-    'Our AI Lead Handling systems ensure every roofing enquiry — emergency or planned — receives an instant response, gets qualified automatically, and reaches the right team member within minutes.',
+    'Our Lead Response & Handling systems ensure every roofing enquiry — emergency or planned — receives an instant response, gets qualified automatically, and reaches the right team member within minutes.',
 };
 
 export const roofingLeadHandlingExample: ResourceData = {
@@ -118,12 +118,12 @@ export const roofingLeadHandlingExample: ResourceData = {
   title: 'Roofing Lead Handling Example',
   description:
     'See how roofing companies implement AI-assisted lead handling systems that respond instantly, qualify by job type, and route emergency and quote leads to the right team members.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-01-19',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['roofing'],
   topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -176,9 +176,9 @@ export const roofingLeadHandlingExample: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

@@ -10,8 +10,13 @@ import { chromium } from 'playwright';
 
 const requestedRoutes = [
   '/',
+  '/services',
   '/services/smart-website-systems',
   '/services/local-seo-authority',
+  '/services/lead-response-handling',
+  '/services/follow-up-crm',
+  '/services/reputation-review-systems',
+  '/services/implementation/wordpress-development',
   '/industries',
   '/contact',
 ];

@@ -16,9 +16,9 @@ export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
   title: 'Reputation Monitoring Systems for Service Businesses',
   publishDate: '2024-12-25',
   authorKey: 'TECHNICAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: [],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['reputation-monitoring'],
   tags: [
     'Reputation Monitoring',

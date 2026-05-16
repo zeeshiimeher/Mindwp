@@ -7,10 +7,10 @@ import { Logo } from './Logo';
 
 const PRIMARY_NAV_PATHS = [
   '/services',
-  '/features',
   '/industries',
+  '/resources',
   '/case-studies',
-  '/blog',
+  '/contact',
 ] as const;
 
 export async function Header() {

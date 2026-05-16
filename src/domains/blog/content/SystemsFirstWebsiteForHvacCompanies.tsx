@@ -16,9 +16,9 @@ export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
   title: 'Systems First Website for HVAC Companies',
   publishDate: '2025-09-08',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['systems-first-websites'],
   tags: ['HVAC', 'Systems First', 'Website Infrastructure', 'Lead Generation', 'Automation'],
   sections: [

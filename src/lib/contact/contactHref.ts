@@ -74,7 +74,7 @@ export function isValidContactContext(system: string, source: string) {
     return false;
   }
 
-  return isValidContactSource(source);
+  return isCanonicalContactSystem(system) && isValidContactSource(source);
 }
 
 export function isCanonicalContactSystem(system: string) {

@@ -1,4 +1,5 @@
 import type { OpenGraphData, SharedSeoData } from '@/domains/shared/seo';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 
 import type { ResourcePageTemplateSection } from './templates/types';
 
@@ -25,7 +26,8 @@ export interface ResourceData {
   publishedAt: string;
   updatedAt?: string;
   industries?: string[];
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics: string[];
   primaryService?: string;
   seo: SharedSeoData & {

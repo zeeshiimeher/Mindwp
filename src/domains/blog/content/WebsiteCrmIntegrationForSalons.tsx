@@ -16,9 +16,9 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
   title: 'Website CRM Integration for Salons',
   publishDate: '2025-09-16',
   authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-integration'],
   tags: ['Salon', 'CRM Integration', 'Website', 'Booking', 'Automation'],
   sections: [
@@ -121,7 +121,7 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
       type: 'cta',
       heading: 'Put Salon Enquiries and Bookings Into One CRM System',
       content:
-        'If your salon website, bookings, and follow-up still operate as separate systems, crm-infrastructure-implementation gives you one structured workflow for capture, client history, reminders, and reactivation.',
+        'If your salon website, bookings, and follow-up still operate as separate systems, follow-up-crm gives you one structured workflow for capture, client history, reminders, and reactivation.',
     },
   ],
 };

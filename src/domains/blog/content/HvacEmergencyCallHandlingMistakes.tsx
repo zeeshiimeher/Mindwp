@@ -16,9 +16,10 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
   title: 'HVAC Emergency Call Handling Mistakes',
   publishDate: '2025-05-27',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['ai-lead-handling', 'crm-automation'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['follow-up-crm'],
   topics: ['emergency-handling'],
   tags: ['HVAC', 'Emergency Calls', 'Call Handling', 'Dispatch', 'Triage'],
   sections: [

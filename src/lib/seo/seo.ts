@@ -20,7 +20,7 @@ export const SEO_CONFIG = {
   siteName: 'MindWP',
   separator: ' | ',
   baseUrl: 'https://mindwp.com',
-  tagline: 'Systems That Generate Revenue',
+  tagline: 'Website and Handling Systems for Service Businesses',
   templates: {
     default: '{title} | {site}',
     short: '{title}',

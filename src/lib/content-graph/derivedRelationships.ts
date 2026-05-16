@@ -11,6 +11,7 @@ import { env } from '@/env';
 import { resolveLoggingMode } from '../../../config/loggingConfig.mjs';
 import { createLogger } from '../../../lib/logger/index.mjs';
 
+import { getNodeSystems } from './canonical';
 import { hasOverlap, scoreRelationship } from './scoring';
 import type { AttributedEdge, ContentGraphNode, ContentNodeType } from './types';
 
@@ -103,7 +104,7 @@ export function deriveRelationships(
     if (targetNode.id === sourceNode.id) continue;
 
     // Edge gate: must share at least one system
-    if (!hasOverlap(sourceNode.systems, targetNode.systems)) continue;
+    if (!hasOverlap(getNodeSystems(sourceNode), getNodeSystems(targetNode))) continue;
 
     const edgeType = getEdgeType(sourceNode.type, targetNode.type);
     if (!edgeType) continue;

@@ -16,9 +16,9 @@ export const googleBusinessProfileForHvacCompanies: BlogPostData = {
   title: 'Google Business Profile for HVAC Companies',
   publishDate: '2025-10-02',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['hvac'],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['google-business-profile'],
   tags: ['HVAC', 'Google Business Profile', 'Local SEO', 'Map Rankings', 'Visibility'],
   sections: [

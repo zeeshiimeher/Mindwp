@@ -39,7 +39,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Blog',
     title: 'Blog',
     description:
-      'Technical insights on websites, CRM automation, local authority, and revenue systems for service businesses.',
+      'Practical articles on website clarity, local visibility, lead response, follow-up, and proof for service businesses.',
   },
   {
     key: 'static:case-studies',
@@ -47,12 +47,12 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Case Studies',
     title: 'Case Studies',
     description:
-      'Proof-of-results case studies showing how service businesses improve visibility, lead handling, and revenue systems.',
+      'Case studies, scenarios, and system examples showing how service businesses improve visibility, handling, and proof.',
   },
   {
     key: 'static:contact',
     path: '/contact',
-    name: 'Start a Conversation',
+    name: 'Request a System Review',
     title: 'Contact',
     description:
       'Tell us where things are slipping — missed calls, slow follow-up, leads going cold. We read every message and reply with the right next step within one working day.',
@@ -71,7 +71,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Features Overview',
     title: 'Features',
     description:
-      'Explore the structured feature layers that support lead handling, CRM, booking, and reputation systems.',
+      'Explore supporting modules for response, booking, follow-up, inbox handling, and reviews.',
   },
   {
     key: 'static:industries',
@@ -95,7 +95,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Resources',
     title: 'Resources',
     description:
-      'Guides and frameworks for websites, CRM automation, revenue visibility, and local authority systems.',
+      'Guides and frameworks for website clarity, local visibility, enquiry response, follow-up, reviews, and implementation paths.',
   },
   {
     key: 'static:services',
@@ -103,7 +103,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Services Overview',
     title: 'Services',
     description:
-      'Structured services for smart websites, automation, CRM, reputation, and growth systems.',
+      'Website and handling systems for service businesses, plus implementation pathways under Smart Website Systems.',
   },
   {
     key: 'static:terms',

@@ -81,7 +81,7 @@ function buildLocksmithLateNightMissedLeads(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['plumbing'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['missed-calls', 'emergency-handling', 'lead-response-time'],
     publishDate: '2026-02-05',
     client: 'Northgate Locksmiths',

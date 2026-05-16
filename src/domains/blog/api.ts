@@ -1,3 +1,4 @@
+import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import {
   getAllTopicSlugs,
@@ -33,95 +34,38 @@ export const BLOG_AUTHORS: Record<string, Author> = {
   DEFAULT: {
     key: 'DEFAULT',
     name: 'Editorial Team',
-    role: 'WordPress & AI Specialists',
+    role: 'MindWP',
     initials: 'MW',
   },
   EDITORIAL: {
     key: 'EDITORIAL',
     name: 'Editorial Team',
-    role: 'WordPress & AI Specialists',
+    role: 'MindWP',
     initials: 'MW',
   },
   TECHNICAL: {
     key: 'TECHNICAL',
     name: 'Editorial Team',
-    role: 'WordPress & AI Specialists',
+    role: 'MindWP',
     initials: 'MW',
   },
   INDUSTRY: {
     key: 'INDUSTRY',
     name: 'Editorial Team',
-    role: 'WordPress & AI Specialists',
+    role: 'MindWP',
     initials: 'MW',
   },
 };
 
-export const BLOG_CATEGORIES: BlogCategoryMetadata[] = [
-  {
-    category: 'smart-website-systems',
-    slug: 'smart-website-systems',
-    name: 'Smart Website Systems',
-    description:
-      'Articles about system-first website architecture, conversion structure, and infrastructure-led web strategy.',
-    icon: 'search',
-  },
-  {
-    category: 'ai-lead-handling',
-    slug: 'ai-lead-handling',
-    name: 'AI Lead Handling',
-    description:
-      'Articles about lead response automation, missed-call recovery, qualification systems, and AI-assisted communication.',
-    icon: 'cpu',
-  },
-  {
-    category: 'local-authority-seo',
-    slug: 'local-authority-seo',
-    name: 'Local Authority SEO',
-    description:
-      'Articles about local visibility, authority signals, search positioning, and search ecosystem changes.',
-    icon: 'map-pin',
-  },
-  {
-    category: 'crm-automation',
-    slug: 'crm-automation',
-    name: 'CRM Automation',
-    description:
-      'Articles about CRM workflows, automation systems, lifecycle tracking, and operational visibility.',
-    icon: 'settings',
-  },
-  {
-    category: 'reputation-review',
-    slug: 'reputation-review',
-    name: 'Reputation Review',
-    description:
-      'Articles about review systems, trust signals, reputation workflows, and review-driven authority.',
-    icon: 'star',
-  },
-  {
-    category: 'home-services-industry',
-    slug: 'home-services-industry',
-    name: 'Home Services Industry',
-    description:
-      'Industry-specific blog posts for roofing, HVAC, plumbing, and related home service businesses.',
-    icon: 'briefcase',
-  },
-  {
-    category: 'beauty-personal-care-industry',
-    slug: 'beauty-personal-care-industry',
-    name: 'Beauty Personal Care Industry',
-    description:
-      'Industry-specific blog posts for salons, clinics, med spas, and beauty-led appointment businesses.',
-    icon: 'heart',
-  },
-  {
-    category: 'future-local-business-tech',
-    slug: 'future-local-business-tech',
-    name: 'Future Local Business Tech',
-    description:
-      'Articles about emerging operational technology, AI shifts, and the future infrastructure of local business growth.',
+export const BLOG_CATEGORIES: BlogCategoryMetadata[] = Object.values(BLOG_CATEGORY_REGISTRY).map(
+  category => ({
+    category: category.id,
+    slug: category.slug,
+    name: category.label,
+    description: category.description,
     icon: 'file-text',
-  },
-];
+  })
+);
 
 export const blogPosts: BlogPostListItem[] = Object.values(BLOG_POSTS).map(post => ({
   ...post,

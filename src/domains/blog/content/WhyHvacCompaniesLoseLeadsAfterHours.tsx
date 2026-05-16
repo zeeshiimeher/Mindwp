@@ -16,9 +16,9 @@ export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
   title: 'Why HVAC Companies Lose Leads After Hours',
   publishDate: '2025-04-01',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-management'],
   tags: ['HVAC', 'After Hours', 'Lead Loss', 'Emergency Response', 'Lead Handling'],
   sections: [

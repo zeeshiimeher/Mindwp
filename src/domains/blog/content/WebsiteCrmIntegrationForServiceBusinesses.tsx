@@ -16,9 +16,9 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
   title: 'Website CRM Integration for Service Businesses',
   publishDate: '2024-08-05',
   authorKey: 'TECHNICAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-integration'],
   tags: [
     'CRM Integration',
@@ -137,7 +137,7 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
       type: 'cta',
       heading: 'Build CRM Infrastructure That Handles Leads Properly',
       content:
-        'If manual lead handling is slowing response time and leaking revenue, crm-infrastructure-implementation gives you a structured system for capture, routing, and follow-up instead of another disconnected tool.',
+        'If manual lead handling is slowing response time and leaking revenue, follow-up-crm gives you a structured system for capture, routing, and follow-up instead of another disconnected tool.',
     },
   ],
 };

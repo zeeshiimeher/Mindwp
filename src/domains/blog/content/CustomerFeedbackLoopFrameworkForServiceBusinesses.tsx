@@ -16,9 +16,9 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
   title: 'Customer Feedback Loop Framework for Service Businesses',
   publishDate: '2024-12-09',
   authorKey: 'TECHNICAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: [],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['feedback-loops', 'customer-feedback'],
   tags: ['Customer Feedback', 'Feedback Loop', 'Service Business', 'Service Quality', 'Reputation'],
   sections: [

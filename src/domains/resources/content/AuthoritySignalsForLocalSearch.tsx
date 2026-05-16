@@ -167,9 +167,9 @@ export const authoritySignalsForLocalSearch: ResourceData = {
   title: 'Authority Signals for Local Search',
   description:
     'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
-  category: 'local-seo-authority',
+  category: 'local-visibility',
   publishedAt: '2026-01-07',
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   industries: [],
   topics: ['authority-signals'],
   primaryService: 'local-seo-authority',
@@ -238,9 +238,9 @@ export const authoritySignalsForLocalSearch: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('local-seo-authority'),
-      content: getRelatedResourcesContent('local-seo-authority'),
-      resources: getRelatedResources('local-seo-authority', canonical),
+      heading: getRelatedResourcesHeading('local-visibility'),
+      content: getRelatedResourcesContent('local-visibility'),
+      resources: getRelatedResources('local-visibility', canonical),
     },
   ],
 };

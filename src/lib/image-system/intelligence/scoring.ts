@@ -73,7 +73,7 @@ function extractIntentTerms(metadata: ContentMetadata): string[] {
     metadata.summary,
     metadata.title,
     ...metadata.topics,
-    ...metadata.systems,
+    ...metadata.activeSystems,
     ...metadata.tags,
     ...metadata.sectionHeadings,
   ]
@@ -135,7 +135,12 @@ function scoreSubjectRelevance(
     return 0;
   }
 
-  const searchTerms = [metadata.summary, ...metadata.topics, ...metadata.systems, ...metadata.tags]
+  const searchTerms = [
+    metadata.summary,
+    ...metadata.topics,
+    ...metadata.activeSystems,
+    ...metadata.tags,
+  ]
     .map(t => t.toLowerCase())
     .filter(Boolean);
 

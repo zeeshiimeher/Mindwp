@@ -16,9 +16,9 @@ export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
   title: 'Client Reactivation Systems for Service Businesses',
   publishDate: '2025-02-28',
   authorKey: 'EDITORIAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: [],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['client-reactivation'],
   tags: ['Client Reactivation', 'CRM', 'Service Business', 'Win Back', 'Customer Retention'],
   sections: [

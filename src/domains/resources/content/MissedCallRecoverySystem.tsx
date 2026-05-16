@@ -122,7 +122,7 @@ const faqs = [
 const finalCta = {
   title: 'Recover Every Missed Call Automatically',
   description:
-    'Our AI Lead Handling system detects missed calls instantly, sends automated SMS follow-up within seconds, creates CRM callback tasks, and tracks recovery rates. No missed call goes unrecovered.',
+    'Our Lead Response & Handling system detects missed calls instantly, sends automated SMS follow-up within seconds, creates CRM callback tasks, and tracks recovery rates. No missed call goes unrecovered.',
 };
 
 export const missedCallRecoverySystem: ResourceData = {
@@ -136,12 +136,12 @@ export const missedCallRecoverySystem: ResourceData = {
   title: 'Missed Call Recovery System for Service Businesses',
   description:
     'Learn how to build a missed call recovery system that automatically follows up with every unanswered caller via SMS and callback scheduling to recapture lost revenue.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-11-26',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -192,9 +192,9 @@ export const missedCallRecoverySystem: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

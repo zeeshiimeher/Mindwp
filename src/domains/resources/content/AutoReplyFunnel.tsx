@@ -158,9 +158,9 @@ export const autoReplyFunnel: ResourceData = {
   title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
   description:
     'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-01-28',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-response-time'],
   sections: [
     {
@@ -221,9 +221,9 @@ export const autoReplyFunnel: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

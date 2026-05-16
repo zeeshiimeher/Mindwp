@@ -172,9 +172,9 @@ export const whatIsASystemsFirstWebsite: ResourceData = {
   title: 'What Is a Systems-First Website?',
   description:
     'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   publishedAt: '2025-11-01',
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   industries: [],
   topics: ['systems-first-websites'],
   primaryService: 'smart-website-systems',
@@ -245,9 +245,9 @@ export const whatIsASystemsFirstWebsite: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('smart-website-systems'),
-      content: getRelatedResourcesContent('smart-website-systems'),
-      resources: getRelatedResources('smart-website-systems', canonical),
+      heading: getRelatedResourcesHeading('website-clarity'),
+      content: getRelatedResourcesContent('website-clarity'),
+      resources: getRelatedResources('website-clarity', canonical),
     },
   ],
 };

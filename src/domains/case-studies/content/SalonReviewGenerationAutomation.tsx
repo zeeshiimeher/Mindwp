@@ -83,7 +83,7 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
-    systems: ['reputation-review'],
+    primarySystem: 'reputation-review-systems',
     topics: ['review-generation', 'google-business-profile', 'reputation-monitoring'],
     publishDate: '2026-02-05',
     client: 'Saint Avenue',

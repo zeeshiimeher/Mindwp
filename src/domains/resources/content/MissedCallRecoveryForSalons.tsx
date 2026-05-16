@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Recover Missed Calls for Your Salon',
   description:
-    'Our AI Lead Handling systems send instant booking links to every missed call, differentiate new and existing clients, and recover the appointments your salon loses during busy hours.',
+    'Our Lead Response & Handling systems send instant booking links to every missed call, differentiate new and existing clients, and recover the appointments your salon loses during busy hours.',
 };
 
 export const missedCallRecoveryForSalons: ResourceData = {
@@ -119,12 +119,12 @@ export const missedCallRecoveryForSalons: ResourceData = {
   title: 'Missed Call Recovery for Salons',
   description:
     'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-02-16',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: ['salon'],
   topics: ['missed-calls'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const missedCallRecoveryForSalons: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

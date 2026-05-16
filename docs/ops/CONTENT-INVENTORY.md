@@ -466,7 +466,7 @@ Live related-content behavior is controlled by `docs/core/GRAPH.md` and the grap
 
 ## PUBLISHING ORDER
 
-1. Global system resources for the active five systems.
+1. Global system resources for the active offer model.
 2. Smart Website Systems implementation-path resources where they support commercial pages.
 3. Primary-lane industry resources: roofing, HVAC, and plumbing.
 4. Expansion-lane resources: salons, auto repair, and small med spas.

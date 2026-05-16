@@ -52,19 +52,7 @@ It is not a primary public service page right now.
 Implementation services are practical delivery pathways under Smart Website Systems.
 They may be sold and explained, but they are not equal primary systems.
 
-The offer should be explained through the buyer's business path:
-
-1. Customers find the business.
-2. They check whether they trust it.
-3. The website and service pages make the offer clear.
-4. They call, message, book, or fill a form.
-5. The enquiry lands somewhere useful.
-6. Response happens quickly.
-7. Follow-up and ownership stay visible.
-8. Good work becomes proof, reviews, repeat value, and better decisions.
-
-The active systems support this path.
-The path should usually be easier for the buyer to understand than the system taxonomy.
+The offer should be explained through the public buyer path owned by [./FOUNDATION.md](./FOUNDATION.md). That path should usually be easier for the buyer to understand than the system taxonomy.
 
 ---
 

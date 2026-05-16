@@ -16,9 +16,9 @@ export const googleBusinessProfileSystemArchitecture: BlogPostData = {
   title: 'Google Business Profile System Architecture',
   publishDate: '2025-01-19',
   authorKey: 'TECHNICAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: [],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['google-business-profile'],
   tags: [
     'Google Business Profile',

@@ -16,9 +16,9 @@ export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
   title: 'Why Salons Lose Calls During Service Hours',
   publishDate: '2025-05-11',
   authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['missed-calls'],
   tags: ['Salon', 'Missed Calls', 'Booking', 'Service Hours', 'Call Handling'],
   sections: [

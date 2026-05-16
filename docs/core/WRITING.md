@@ -51,7 +51,7 @@ Before writing anything, lock this:
 - Writing direction is FLOW → HANDLING → RESULT.
 - Never default to PAGES → DESIGN → FEATURES.
 - Never default to SERVICES → TOOLS → FEATURES.
-- Use the five active systems only: Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems.
+- Use only the active system names and ownership model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 - Treat Revenue Recovery as a cross-system improvement layer, not a public service page.
 - Treat implementation service pages as Smart Website Systems implementation pathways, not generic builder or platform-agency pages.
 
@@ -268,13 +268,7 @@ These words are valid internally. Use them carefully in public copy, only after 
 
 ### Active System Language
 
-Use only the active system names approved in `FOUNDATION.md` and `OFFER-ARCHITECTURE.md`:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
+Use only the active system names approved in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 Revenue Recovery is a cross-system improvement layer, not a primary public service page.
 
@@ -726,13 +720,7 @@ Service pages are industry-agnostic by default.
 Use generic service-business language: calls, forms, jobs, customers.
 Do not make a service page sound like it is only for one industry.
 
-Service pages must resolve to one active system:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
+Service pages must resolve to one active system from [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 Revenue Recovery may be referenced as an improvement layer, but not as a primary service page.
 
@@ -871,7 +859,7 @@ Run after every meaningful write or rewrite.
 - [ ] CTA feels like a conversation.
 - [ ] FAQ uses the reader's voice.
 - [ ] Page reflects one primary system.
-- [ ] Page reflects one active system from the approved five-system model.
+- [ ] Page reflects one active system from the approved offer model.
 - [ ] Revenue Recovery is not treated as a primary service page.
 
 ### Builder Check
@@ -1058,7 +1046,7 @@ Rules:
 Before finalising public copy, confirm:
 
 - the copy starts with the buyer's real situation
-- the copy uses the active five-system model
+- the copy follows the active offer model in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
 - the copy does not revive removed service names
 - the copy does not mention backend tool/platform names
 - the copy does not make AI the product

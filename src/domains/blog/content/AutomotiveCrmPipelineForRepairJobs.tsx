@@ -16,9 +16,9 @@ export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
   title: 'Automotive CRM Pipeline for Repair Jobs',
   publishDate: '2025-06-28',
   authorKey: 'TECHNICAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['automotive'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['Automotive', 'CRM Pipeline', 'Repair Jobs', 'Workshop Management', 'Automation'],
   sections: [

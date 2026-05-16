@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Build an Emergency Handling System for Your HVAC Business',
   description:
-    'Our AI Lead Handling and CRM systems create tiered emergency triage that routes critical HVAC calls to on-call technicians immediately — capturing premium-rate work around the clock.',
+    'Our Lead Response & Handling and CRM systems create tiered emergency triage that routes critical HVAC calls to on-call technicians immediately — capturing premium-rate work around the clock.',
 };
 
 export const hvacEmergencyCallHandlingSystem: ResourceData = {
@@ -119,12 +119,13 @@ export const hvacEmergencyCallHandlingSystem: ResourceData = {
   title: 'HVAC Emergency Call Handling System',
   description:
     'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-02-18',
-  systems: ['ai-lead-handling', 'crm-automation'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['follow-up-crm'],
   industries: ['hvac'],
   topics: ['emergency-handling'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +178,9 @@ export const hvacEmergencyCallHandlingSystem: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

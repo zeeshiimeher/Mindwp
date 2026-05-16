@@ -29,62 +29,76 @@ export function Footer() {
           </div>
 
           <div className='footer__column'>
-            <h4 className='footer__heading'>Systems</h4>
+            <h4 className='footer__heading'>Primary Systems</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
-                <InternalLink href='/systems/smart-website-systems' className='footer__link'>
+                <InternalLink href='/services/smart-website-systems' className='footer__link'>
                   Smart Website Systems
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/systems/local-seo-authority' className='footer__link'>
-                  Local SEO Authority
+                <InternalLink href='/services/local-seo-authority' className='footer__link'>
+                  Local SEO Authority Systems
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/systems/ai-lead-handling' className='footer__link'>
-                  AI Lead Handling
+                <InternalLink href='/services/lead-response-handling' className='footer__link'>
+                  Lead Response &amp; Handling Systems
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/systems/crm-automation' className='footer__link'>
-                  CRM &amp; Automation
+                <InternalLink href='/services/follow-up-crm' className='footer__link'>
+                  Follow-Up &amp; CRM Systems
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/systems/reputation-review' className='footer__link'>
-                  Reputation &amp; Reviews
-                </InternalLink>
-              </li>
-              <li className='footer__item'>
-                <InternalLink href='/systems/revenue-growth' className='footer__link'>
-                  Revenue Growth
+                <InternalLink href='/services/reputation-review-systems' className='footer__link'>
+                  Reputation &amp; Review Systems
                 </InternalLink>
               </li>
             </ul>
           </div>
 
           <div className='footer__column'>
-            <h4 className='footer__heading'>Company</h4>
+            <h4 className='footer__heading'>Implementation</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
-                <InternalLink href='/about' className='footer__link'>
-                  About
+                <InternalLink
+                  href='/services/implementation/wordpress-development'
+                  className='footer__link'
+                >
+                  WordPress Development
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/industries' className='footer__link'>
-                  Industries
+                <InternalLink href='/services/implementation/elementor' className='footer__link'>
+                  Elementor
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/case-studies' className='footer__link'>
-                  Case Studies
+                <InternalLink
+                  href='/services/implementation/bricks-builder'
+                  className='footer__link'
+                >
+                  Bricks Builder
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href={primaryAction.href} className='footer__link'>
-                  {primaryAction.label}
+                <InternalLink href='/services/implementation/divi5' className='footer__link'>
+                  Divi
+                </InternalLink>
+              </li>
+              <li className='footer__item'>
+                <InternalLink href='/services/implementation/woocommerce' className='footer__link'>
+                  WooCommerce
+                </InternalLink>
+              </li>
+              <li className='footer__item'>
+                <InternalLink
+                  href='/services/implementation/website-redesign-system-rebuild'
+                  className='footer__link'
+                >
+                  Website Redesign / Rebuild
                 </InternalLink>
               </li>
             </ul>
@@ -133,7 +147,7 @@ export function Footer() {
           </p>
           <span className='footer__status'>
             <span className='footer__status-dot' aria-hidden='true' />
-            All systems operational
+            Website and handling systems for service businesses
           </span>
         </div>
       </div>

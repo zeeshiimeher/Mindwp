@@ -25,8 +25,8 @@ export default function TermsConditions() {
             <h1>Terms &amp; Conditions</h1>
             <p>
               These Terms &amp; Conditions explain how MindWP works with clients across website
-              infrastructure, WordPress implementation, automation, and digital systems services. By
-              engaging our services, you agree to these terms.
+              systems, WordPress implementation, enquiry handling, follow-up, and review-support
+              services. By engaging our services, you agree to these terms.
             </p>
           </div>
         </div>
@@ -38,8 +38,8 @@ export default function TermsConditions() {
             <h2>Services</h2>
             <p>
               We provide professional services that may include strategic planning, website
-              architecture, WordPress implementation, system integrations, workflow automation,
-              technical optimisation, consulting, training, and ongoing refinement. Deliverables,
+              architecture, WordPress implementation, enquiry handling, follow-up structure,
+              review-support setup, consulting, training, and ongoing refinement. Deliverables,
               timelines, scope, and investment are defined in a proposal, statement of work, or
               invoice.
             </p>
@@ -49,7 +49,7 @@ export default function TermsConditions() {
               <li>Provide accurate information, approvals, and feedback in a timely manner.</li>
               <li>
                 Provide required access to systems (hosting, CMS or website admin access,
-                domain/DNS, analytics, CRM, and related platforms) where applicable.
+                domain/DNS, analytics, enquiry records, and related accounts) where applicable.
               </li>
               <li>
                 Ensure you have the rights to use any content, images, logos, and data you provide.

@@ -16,9 +16,9 @@ export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
   title: 'Why Roofing Companies Lose Leads During Storm Season',
   publishDate: '2025-03-24',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-management'],
   tags: ['Roofing', 'Storm Season', 'Lead Loss', 'Lead Response', 'Service Business'],
   sections: [

@@ -16,9 +16,9 @@ export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
   title: 'How Review Automation Improves Local Authority',
   publishDate: '2024-12-01',
   authorKey: 'EDITORIAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: [],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-automation'],
   tags: ['Review Automation', 'Local Authority', 'Reputation', 'Local SEO', 'Trust Signals'],
   sections: [

@@ -116,7 +116,7 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['missed-calls', 'emergency-handling', 'lead-routing'],
     publishDate: '2025-11-01',
     client: 'Thermal Comfort Services',

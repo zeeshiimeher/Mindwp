@@ -144,12 +144,12 @@ export const buildingRevenueVisibilityThroughCrmTracking: ResourceData = {
   title: 'Building Revenue Visibility Through CRM Tracking Guide',
   description:
     'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
-  category: 'revenue-growth',
+  category: 'frameworks',
   publishedAt: '2025-12-31',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: [],
   topics: ['revenue-tracking', 'revenue-visibility'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -209,9 +209,9 @@ export const buildingRevenueVisibilityThroughCrmTracking: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('revenue-growth'),
-      content: getRelatedResourcesContent('revenue-growth'),
-      resources: getRelatedResources('revenue-growth', canonical),
+      heading: getRelatedResourcesHeading('frameworks'),
+      content: getRelatedResourcesContent('frameworks'),
+      resources: getRelatedResources('frameworks', canonical),
     },
   ],
 };

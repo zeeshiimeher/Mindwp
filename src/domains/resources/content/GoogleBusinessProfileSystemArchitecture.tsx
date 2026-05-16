@@ -141,9 +141,9 @@ export const googleBusinessProfileSystemArchitecture: ResourceData = {
   title: 'Google Business Profile System Architecture Guide',
   description:
     'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
-  category: 'local-seo-authority',
+  category: 'local-visibility',
   publishedAt: '2025-11-19',
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   industries: [],
   topics: ['google-business-profile'],
   primaryService: 'local-seo-authority',
@@ -201,9 +201,9 @@ export const googleBusinessProfileSystemArchitecture: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('local-seo-authority'),
-      content: getRelatedResourcesContent('local-seo-authority'),
-      resources: getRelatedResources('local-seo-authority', canonical),
+      heading: getRelatedResourcesHeading('local-visibility'),
+      content: getRelatedResourcesContent('local-visibility'),
+      resources: getRelatedResources('local-visibility', canonical),
     },
   ],
 };

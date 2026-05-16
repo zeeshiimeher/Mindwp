@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Automate Estimate Follow-Up for Your Roofing Business',
   description:
-    'Our CRM and AI Lead Handling systems create automated follow-up sequences that keep your roofing company top of mind during homeowner decision cycles — recovering revenue from estimates that would otherwise go silent.',
+    'Our CRM and Lead Response & Handling systems create automated follow-up sequences that keep your roofing company top of mind during homeowner decision cycles — recovering revenue from estimates that would otherwise go silent.',
 };
 
 export const roofingEstimateFollowUpWorkflow: ResourceData = {
@@ -119,12 +119,13 @@ export const roofingEstimateFollowUpWorkflow: ResourceData = {
   title: 'Roofing Estimate Follow-Up Workflow',
   description:
     'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-02-21',
-  systems: ['ai-lead-handling', 'crm-automation'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['follow-up-crm'],
   industries: ['roofing'],
   topics: ['follow-up'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +178,9 @@ export const roofingEstimateFollowUpWorkflow: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

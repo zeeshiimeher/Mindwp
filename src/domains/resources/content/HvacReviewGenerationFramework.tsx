@@ -119,12 +119,12 @@ export const hvacReviewGenerationFramework: ResourceData = {
   title: 'HVAC Review Generation Framework',
   description:
     'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-02-02',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['hvac'],
   topics: ['review-generation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const hvacReviewGenerationFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

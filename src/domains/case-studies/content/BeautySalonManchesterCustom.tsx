@@ -135,7 +135,7 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['customer-lifetime-value', 'booking-systems', 'client-reactivation'],
     publishDate: '2025-12-20',
     client: 'Velvet & Co.',

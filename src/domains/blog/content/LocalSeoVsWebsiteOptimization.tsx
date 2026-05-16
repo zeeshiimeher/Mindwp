@@ -16,9 +16,9 @@ export const localSeoVsWebsiteOptimization: BlogPostData = {
   title: 'Local SEO vs Website Optimization',
   publishDate: '2025-01-03',
   authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: [],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['local-seo'],
   tags: [
     'Local SEO',

@@ -15,7 +15,7 @@ export const reputationReviewSystemsPage = {
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'reputation-review-systems',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: [
     'website-infrastructure',
     'lead-capture',
@@ -86,11 +86,11 @@ export const reputationReviewSystemsPage = {
     },
     actions: [
       {
-        label: 'Start a Conversation',
+        label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
+          system: 'reputation-review-systems',
           sourceType: 'page',
-          slug: 'smart-website-systems',
+          slug: 'reputation-review-systems',
         }),
         primary: true,
       },

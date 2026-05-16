@@ -10,6 +10,7 @@ import {
 
 import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/pageData';
 import type { FeaturePageData } from '@/domains/features/types';
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
 
 export type FeatureMetadata = {
   slug: string;
@@ -17,7 +18,8 @@ export type FeatureMetadata = {
   title: string;
   description: string;
   icon: LucideIcon;
-  systems?: string[];
+  primarySystem?: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics?: string[];
 };
 
@@ -43,6 +45,7 @@ export const FEATURE_REGISTRY: FeatureMetadata[] = FEATURE_DATA.map(data => ({
   title: data.seo.title,
   description: data.seo.description,
   icon: FEATURE_ICON_BY_SLUG[data.slug as FeatureSlug],
-  systems: data.systems,
+  primarySystem: data.primarySystem,
+  supportingSystems: data.supportingSystems,
   topics: data.topics,
 }));

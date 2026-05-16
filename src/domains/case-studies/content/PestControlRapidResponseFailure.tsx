@@ -127,7 +127,7 @@ function buildPestControlRapidResponseFailure(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['missed-calls', 'emergency-handling', 'lead-response-time'],
     publishDate: '2026-02-02',
     client: 'Sentinel Pest Control',

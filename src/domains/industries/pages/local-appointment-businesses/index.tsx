@@ -27,7 +27,12 @@ export const localAppointmentBusinessesIndustryPageData: IndustryCategoryPageDat
     ],
   },
   industries: ['dental-clinic', 'driving-school', 'repair-shop', 'private-clinic', 'tattoo-studio'],
-  systems: ['crm-automation', 'ai-lead-handling', 'reputation-review', 'smart-website-systems'],
+  primarySystem: 'follow-up-crm',
+  supportingSystems: [
+    'lead-response-handling',
+    'reputation-review-systems',
+    'smart-website-systems',
+  ],
   topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
   faq: {
     header: {

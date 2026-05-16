@@ -100,7 +100,7 @@ MindWP sells better handling before bigger growth claims.
 
 **Internal model for docs, planning, architecture, and agent context:**
 
-MindWP is a systems-first website and connected handling systems business with five active public systems and one cross-system recovery layer.
+MindWP is a systems-first website and connected handling systems business with the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 **Public-facing explanation for page copy, CTAs, and buyer-facing content:**
 
@@ -277,167 +277,23 @@ Rules:
 
 ---
 
-## ACTIVE SYSTEM MAP
+## ACTIVE OFFER SUMMARY
 
-MindWP operates on five active public systems and one cross-system recovery layer.
+MindWP operates through the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
-Use these names in strategy docs, page planning, public-facing service language, and AI instructions unless a later approved docs update changes them.
-
-### 1) Smart Website Systems
-
-Role:
-Flagship website and conversion clarity system.
-
-Owns:
+At a high level, the model covers:
 
 - website and service-page clarity
-- conversion structure
-- enquiry capture paths
-- content flow
-- offer explanation
-- website as the visible control point
+- local visibility and trust
+- fast enquiry response and routing
+- follow-up ownership and status visibility
+- reviews, feedback, and proof capture
 
-Does not own:
+Revenue Recovery is a cross-system improvement layer for value already in motion. It is not a primary service page or equal route/category.
 
-- full local SEO
-- full CRM lifecycle
-- full review system
-- full lead response handling
+Implementation services are active delivery pathways under Smart Website Systems. They are not primary active systems.
 
-Public meaning:
-
-Website and service-page systems that make the offer clear and send enquiries to the right next step.
-
-### 2) Local SEO Authority Systems
-
-Role:
-Local visibility and trust system.
-
-Owns:
-
-- local discovery
-- Google Business Profile direction
-- local search visibility
-- service-area relevance
-- authority signals
-- local trust signals
-
-Does not own:
-
-- generic ranking promises
-- guaranteed SEO outcomes
-- full website conversion
-- full review operations
-
-Public meaning:
-
-Local visibility and trust signals that help nearby customers find, verify, and trust the business.
-
-### 3) Lead Response & Handling Systems
-
-Role:
-Response and routing system.
-
-Owns:
-
-- missed-call recovery
-- fast response
-- enquiry routing
-- call, form, and message handling
-- booking handoff
-- after-hours response logic where relevant
-
-Does not own:
-
-- chatbot hype
-- AI as the product
-- full CRM lifecycle
-- full sales pipeline management
-
-Public meaning:
-
-Fast response and routing for calls, forms, missed calls, messages, and booking requests.
-
-Important:
-
-Do not lead publicly with AI.
-AI may be part of delivery, but public language leads with response, handling, routing, and missed enquiries.
-
-### 4) Follow-Up & CRM Systems
-
-Role:
-Ownership and follow-up visibility system.
-
-Owns:
-
-- enquiry ownership
-- lead status
-- follow-up reminders
-- pipeline visibility
-- next-step tracking
-- reducing dependence on memory or scattered inboxes
-
-Does not own:
-
-- public tool or platform reselling
-- generic automation hype
-- full website conversion
-- full review generation
-
-Public meaning:
-
-A clear place where every enquiry has an owner, a status, and a next step.
-
-Important:
-
-Do not lead publicly with CRM, tool, or platform language.
-CRM exists behind the scenes. Public language should focus on ownership, follow-up, and visibility.
-
-### 5) Reputation & Review Systems
-
-Role:
-Trust and proof system.
-
-Owns:
-
-- review request timing
-- review generation workflows
-- feedback routing
-- reputation visibility
-- trust and proof signals
-- turning completed work into public trust
-
-Does not own:
-
-- fake reviews
-- review manipulation
-- generic reputation software positioning
-- full local SEO
-- full CRM lifecycle
-
-Public meaning:
-
-Review and feedback systems that help good work become visible proof.
-
-### Revenue Recovery Layer
-
-Revenue Recovery is not a primary public service page right now.
-Do not call it a main service system.
-Do not position it as an equal pillar beside the five active systems.
-
-Revenue Recovery is a cross-system improvement layer.
-
-It owns:
-
-- finding where value still leaks after enquiries arrive
-- improving conversion paths
-- improving follow-up and recovery
-- improving repeat, review, and referral value
-- strengthening what is already working
-
-Public meaning:
-
-Ongoing improvement that helps recover value from enquiries, customers, reviews, and follow-up already in motion.
+Use this document for identity and buyer understanding. Use [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for detailed system ownership, non-ownership, implementation pathways, and service hierarchy.
 
 ---
 
@@ -472,7 +328,7 @@ Smart Website Systems should not swallow every page. It is the structural center
 
 The public service model has three layers:
 
-- Active public systems: the five core systems MindWP explains and sells.
+- Active public systems: the active systems MindWP explains and sells.
 - Supporting modules: narrower capabilities that sit inside a system.
 - Implementation pathways: delivery-specific routes, features, or use cases.
 
@@ -484,17 +340,9 @@ They must resolve upward into one active public system.
 Implementation services are active delivery pathways under Smart Website Systems.
 They may have public pages later, but they are not equal primary systems and must not be framed as a separate strategic offer model.
 
-Approved future source direction:
-
-- `domains/services/implementation/wordpress-development`
-- `domains/services/implementation/elementor`
-- `domains/services/implementation/bricks-builder`
-- `domains/services/implementation/divi5`
-- `domains/services/implementation/woocommerce`
-- `domains/services/implementation/website-redesign-system-rebuild`
-
 These pages should explain practical implementation choices through website clarity, trust, enquiry capture, and handoff improvement.
 They should not make MindWP sound like a generic WordPress, Elementor, Bricks, Divi, WooCommerce, or redesign agency.
+Folder direction and detailed implementation ownership live in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) and [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md).
 
 ### Local SEO Exception
 
@@ -565,146 +413,16 @@ The same page must not turn into a Follow-Up & CRM page.
 
 ---
 
-## SYSTEM PUBLIC FRAMING
+## LANGUAGE AUTHORITY
 
-These are the plain-language public descriptions for each active system. Use these when writing page copy, heroes, descriptions, CTAs, and planning notes.
-
-| System | Public framing | Avoid |
-| --- | --- | --- |
-| Smart Website Systems | Website and service-page systems that make the offer clear and send enquiries to the right next step | Claiming ownership of full SEO, full CRM lifecycle, full review operations, or full lead response handling |
-| Local SEO Authority Systems | Local visibility and trust signals that help nearby customers find, verify, and trust the business | Ranking guarantees, SEO tricks, domination language, conversion guarantees |
-| Lead Response & Handling Systems | Fast response and routing for calls, forms, missed calls, messages, and booking requests | Chatbot hype, AI feature dumps, robotic tone, AI as the product |
-| Follow-Up & CRM Systems | A clear place where every enquiry has an owner, a status, and a next step | Public tool/platform reselling, vague workflow automation language, software-first copy |
-| Reputation & Review Systems | Review and feedback systems that help good work become visible proof | Fake reviews, review manipulation, generic reputation software positioning |
-
-Revenue Recovery may be referenced as a cross-system improvement layer, but not as a primary public service page.
-
----
-
-## TERMINOLOGY CONTROL
-
-### Smart Website Language
+This document owns positioning boundaries and public truth.
 
 Use:
 
-- website structure
-- enquiry capture
-- next step
-- page flow
-- clarity
-- service-page clarity
-- visible control point
-
-Avoid:
-
-- rankings
-- pipeline
-- review request
-- traffic guarantee
-- full CRM lifecycle
-- full lead response handling
-
-### Local SEO Language
-
-Use:
-
-- visibility
-- local discovery
-- Google Business Profile
-- authority signals
-- service-area relevance
-- local trust signals
-
-Avoid:
-
-- conversion guarantee
-- CRM workflow
-- review routing
-- rankings guarantee
-- domination language
-
-### Lead Response, Handling, Follow-Up, and CRM Language
-
-Use:
-
-- response
-- routing
-- missed-call recovery
-- enquiry handling
-- booking handoff
-- assignment
-- follow-up
-- ownership
-- status visibility
-- next step
-- pipeline visibility
-
-Avoid:
-
-- AI as the product
-- chatbot hype
-- public backend platform names
-- tool-first CRM language
-- generic automation hype
-- page design
-- rankings
-- review generation
-
-### Reputation Language
-
-Use:
-
-- review generation
-- trust signals
-- response handling
-- feedback routing
-- proof capture
-- completed work becoming visible proof
-
-Avoid:
-
-- traffic acquisition
-- page structure
-- pipeline management
-- fake reviews
-- review manipulation
-
-### Revenue Recovery Language
-
-Use:
-
-- revenue recovery
-- leak recovery
-- conversion improvement
-- follow-up recovery
-- repeat value
-- review value
-- referral value
-- strengthening what is already working
-
-Avoid:
-
-- generic growth marketing
-- explosive growth
-- guaranteed revenue
-- vague growth systems
-- equal-pillar service positioning
-
-### Cross-System Language Guard
-
-Language must not blur system boundaries or collapse positioning into generic web design.
-
-Never introduce:
-
-- generic agency language
-- mixed system terminology in one explanation
-- wording that makes all systems sound the same
-- removed service models
-- backend platform names in public-facing copy
-
-Each system must remain distinct in role, responsibility, and vocabulary.
-
-If a sentence could apply to multiple systems, or makes MindWP sound like a normal web design provider, it is off-position and must be rewritten.
+- [./WRITING.md](./WRITING.md) for vocabulary, phrasing, rewrite rules, banned words, and system-language translation.
+- [./CONVERSION.md](./CONVERSION.md) for CTA labels, diagnostic next steps, and contact posture.
+- [./CONTENT.md](./CONTENT.md) for page roles and funnel behavior.
+- [./DESIGN.md](./DESIGN.md) for visual translation and section composition.
 
 ---
 
@@ -806,7 +524,7 @@ Do not open with services, features, tools, or systems before the problem is cle
 
 ## NOT ALLOWED
 
-- Parallel service models that conflict with the five active systems.
+- Parallel service models that conflict with the active offer model.
 - Equal-weight public positioning that breaks Smart Website gravity or turns MindWP into a service catalog.
 - Page-count pricing as a primary positioning device.
 - Tool-first public positioning that replaces operational outcomes.
@@ -835,7 +553,7 @@ Choose the option most aligned with:
 
 - established service-business buyers
 - practical operational language
-- the five active systems
+- the active offer model in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
 - the public buyer path
 - Smart Website Systems as flagship
 - public tool-name boundaries
@@ -854,4 +572,5 @@ Ask only when the docs genuinely do not define the decision.
 - Offer architecture and active system ownership: [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
 - CTA posture and conversion behavior: [./CONVERSION.md](./CONVERSION.md)
 - Visual principles and section composition: [./DESIGN.md](./DESIGN.md)
-- Related-content, metadata, and tighter types are extracted after the approved page system is clear.
+- Related-content behavior: [./GRAPH.md](./GRAPH.md)
+- Repo mapping and source ownership: [./SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md)

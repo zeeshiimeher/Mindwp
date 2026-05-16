@@ -61,7 +61,7 @@ export function resolveOverlayVariant(
     metadata.summary,
     ...metadata.topics,
     ...metadata.tags,
-    ...metadata.systems,
+    ...metadata.activeSystems,
   ].map(t => t.toLowerCase());
 
   if (allText.some(t => SYSTEM_KEYWORDS.some(k => t.includes(k)))) return 'system';
@@ -225,7 +225,7 @@ export function resolveIllustrationVariant(metadata: ContentMetadata): Illustrat
     metadata.summary,
     ...metadata.topics,
     ...metadata.tags,
-    ...metadata.systems,
+    ...metadata.activeSystems,
   ]
     .join(' ')
     .toLowerCase();

@@ -48,15 +48,7 @@ Conversion behavior must follow:
 
 If this file conflicts with those docs, fix the conflict.
 
-Conversion should support the active five-system model:
-
-1. Smart Website Systems
-2. Local SEO Authority Systems
-3. Lead Response & Handling Systems
-4. Follow-Up & CRM Systems
-5. Reputation & Review Systems
-
-Revenue Recovery is a cross-system improvement layer, not a primary service page or CTA category.
+Conversion should support the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Revenue Recovery is a cross-system improvement layer, not a primary service page or CTA category.
 
 ---
 

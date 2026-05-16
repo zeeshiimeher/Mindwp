@@ -1,3 +1,5 @@
+import type { ActiveSystem } from '@/lib/content-graph/canonical';
+
 export interface FAQItem {
   question: string;
   answer: string;
@@ -32,7 +34,8 @@ export interface FeaturePageData {
   slug: string;
   eyebrow: string;
   category: string;
-  systems: string[];
+  primarySystem: ActiveSystem;
+  supportingSystems?: ActiveSystem[];
   topics: string[];
   industries?: string[];
   features?: string[];

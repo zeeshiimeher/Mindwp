@@ -16,9 +16,9 @@ export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
   title: 'Why Slow Lead Response Is Killing Automotive Businesses',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['automotive'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['lead-response-time'],
   tags: ['Automotive', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Follow-Up'],
   sections: [

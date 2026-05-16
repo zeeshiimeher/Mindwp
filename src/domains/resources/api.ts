@@ -42,9 +42,9 @@ type ResourceCategoryPresentation = ResourceCategoryMetadata & {
 
 export const RESOURCE_HUB_DATA: ResourcesHubData = {
   seo: {
-    title: 'Resources — Automation & CRM Guides for Local Businesses',
+    title: 'Resources — Website and Handling Guides for Service Businesses',
     description:
-      'Free resources, guides, and automation templates for local businesses. CRM automation, workflow setup, and business growth strategies.',
+      'Resources and guides for website clarity, local visibility, response, follow-up, reviews, and implementation decisions.',
     canonical: '/resources',
   },
   hero: {
@@ -80,56 +80,50 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
 
 export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
   {
-    id: 'crm-automation',
-    label: 'Automation & CRM',
-    description:
-      'Automations, workflows, and CRM setups that turn enquiries into bookings with less manual follow-up.',
-    slug: 'crm-automation',
+    id: 'website-clarity',
+    label: 'Website Clarity',
+    description: 'Guides for clearer pages, trust signals, enquiry paths, and website handoff.',
+    slug: 'website-clarity',
     icon: 'settings',
     iconComponent: FileText,
   },
   {
-    id: 'smart-website-systems',
-    label: 'Smart Website Systems',
-    description:
-      'Infrastructure-first website strategies that convert visitors into leads with intelligent systems.',
-    slug: 'smart-website-systems',
+    id: 'local-visibility',
+    label: 'Local Visibility',
+    description: 'Guides for local discovery, verification, service areas, and trust signals.',
+    slug: 'local-visibility',
     icon: 'globe',
     iconComponent: FileText,
   },
   {
-    id: 'ai-lead-handling',
-    label: 'AI Lead Handling',
-    description:
-      'AI-powered lead capture, routing, and follow-up systems that respond faster than any human team.',
-    slug: 'ai-lead-handling',
+    id: 'lead-response',
+    label: 'Lead Response',
+    description: 'Guides for missed calls, forms, messages, booking handoff, and enquiry routing.',
+    slug: 'lead-response',
     icon: 'bot',
     iconComponent: FileText,
   },
   {
-    id: 'local-seo-authority',
-    label: 'Local Authority & SEO',
-    description:
-      'Strategies to build local search authority, improve rankings, and dominate your service area.',
-    slug: 'local-seo-authority',
+    id: 'follow-up-crm',
+    label: 'Follow-Up & CRM',
+    description: 'Guides for enquiry ownership, quote follow-up, status, and next steps.',
+    slug: 'follow-up-crm',
     icon: 'map-pin',
     iconComponent: FileText,
   },
   {
-    id: 'reputation-review',
-    label: 'Reputation & Reviews',
-    description:
-      'Automated review generation, reputation monitoring, and social proof systems for local businesses.',
-    slug: 'reputation-review',
+    id: 'reviews-proof',
+    label: 'Reviews & Proof',
+    description: 'Guides for review timing, feedback routing, visible proof, and local trust.',
+    slug: 'reviews-proof',
     icon: 'star',
     iconComponent: FileText,
   },
   {
-    id: 'revenue-growth',
-    label: 'Revenue Growth',
-    description:
-      'Revenue optimisation strategies including upsells, retention, and customer lifetime value growth.',
-    slug: 'revenue-growth',
+    id: 'frameworks',
+    label: 'Frameworks',
+    description: 'Decision guides and maps for finding what should be fixed first.',
+    slug: 'frameworks',
     icon: 'trending-up',
     iconComponent: FileText,
   },

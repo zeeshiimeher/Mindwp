@@ -225,7 +225,7 @@ export function CaseStudyTemplate({
 }) {
   const resolvedSections = sections ?? [];
   const renderedSections = resolvedSections.filter(validateRenderableSection);
-  const primarySystem = metadata.systems?.[0] ?? 'smart-website-systems';
+  const primarySystem = metadata.primarySystem ?? 'smart-website-systems';
   const ctaSection = renderedSections.find(section => section.type === 'cta');
 
   return (

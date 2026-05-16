@@ -45,6 +45,24 @@ const forbiddenPatterns = [
   { label: 'GoHighLevel', pattern: /\bGoHighLevel\b/g },
   { label: 'HighLevel', pattern: /\bHighLevel\b/g },
   { label: 'GHL', pattern: /\bGHL\b/g },
+  {
+    label: 'removed service id',
+    pattern: /\b(?:ai-lead-handling|crm-automation|revenue-growth|growth-revenue-systems)\b/g,
+  },
+  {
+    label: 'removed service label',
+    pattern: /\b(?:AI Lead Handling|CRM & Automation|Revenue Growth Systems|Revenue Growth)\b/g,
+  },
+  { label: 'removed systems route', pattern: /\/systems\//g },
+  {
+    label: 'removed broad metadata field',
+    pattern: /\bsystems(?:\?: string\[\]|: string\[\]|: \[|\[\])/g,
+  },
+  {
+    label: 'removed six-system language',
+    pattern: /\bsix (?:systems|connected systems|canonical systems)|six-system model/gi,
+  },
+  { label: 'removed positioning phrase', pattern: /\bdigital infrastructure consultancy\b/gi },
 ];
 
 function toRelative(filePath) {

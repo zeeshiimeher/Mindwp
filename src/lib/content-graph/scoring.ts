@@ -23,12 +23,24 @@ export function hasOverlap(a: string[] | undefined, b: string[] | undefined): bo
  * must go through this function. No duplicates allowed.
  */
 export function scoreRelationship(
-  nodeA: { systems?: string[]; topics?: string[]; industries?: string[] },
-  nodeB: { systems?: string[]; topics?: string[]; industries?: string[] }
+  nodeA: {
+    primarySystem?: ActiveSystem;
+    supportingSystems?: ActiveSystem[];
+    topics?: string[];
+    industries?: string[];
+  },
+  nodeB: {
+    primarySystem?: ActiveSystem;
+    supportingSystems?: ActiveSystem[];
+    topics?: string[];
+    industries?: string[];
+  }
 ): number {
   return (
-    overlapCount(nodeA.systems, nodeB.systems) * 3 +
+    overlapCount(getNodeSystems(nodeA), getNodeSystems(nodeB)) * 3 +
     overlapCount(nodeA.topics, nodeB.topics) * 2 +
     overlapCount(nodeA.industries, nodeB.industries) * 1
   );
 }
+import type { ActiveSystem } from './canonical';
+import { getNodeSystems } from './canonical';

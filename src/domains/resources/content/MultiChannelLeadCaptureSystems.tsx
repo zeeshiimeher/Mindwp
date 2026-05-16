@@ -153,7 +153,7 @@ const faqs = [
 const finalCta = {
   title: 'Capture Every Lead From Every Channel',
   description:
-    'Our AI Lead Handling system unifies phone, web, chat, and social leads into one CRM pipeline with automated follow-up on every channel. No lead falls through the cracks.',
+    'Our Lead Response & Handling system unifies phone, web, chat, and social leads into one CRM pipeline with automated follow-up on every channel. No lead falls through the cracks.',
 };
 
 export const multiChannelLeadCaptureSystems: ResourceData = {
@@ -167,12 +167,12 @@ export const multiChannelLeadCaptureSystems: ResourceData = {
   title: 'Multi-Channel Lead Capture Systems',
   description:
     'Learn how to build a multi-channel lead capture system that routes phone, web, chat, and social leads to one CRM pipeline with consistent tracking and follow-up.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-12-20',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['lead-capture'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -238,9 +238,9 @@ export const multiChannelLeadCaptureSystems: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

@@ -2,7 +2,7 @@
 
 > Practical architecture brain for future source cleanup.
 > Business identity and offer ownership come from `FOUNDATION.md` and `OFFER-ARCHITECTURE.md`.
-> Architecture should support the active model instead of preserving old routes, names, or parallel systems.
+> Architecture should support the active model instead of preserving removed routes, names, or parallel systems.
 
 ---
 
@@ -34,13 +34,7 @@ Do not create a `/systems` public route taxonomy unless the governing docs are i
 
 ## ACTIVE ROUTE MODEL
 
-The active public system model is:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
+The active public system model is owned by [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Architecture maps that model to source folders and route ownership.
 
 Revenue Recovery is a cross-system improvement layer only. It is not a primary service route, graph category, or route family.
 
@@ -126,7 +120,7 @@ Graph metadata should use:
 - `topics[]`
 - `proofType` where relevant
 
-Do not use old broad `systems[]` metadata as the strategic source of truth.
+Do not use old broad system-array metadata as the strategic source of truth.
 
 Graph relationships should support the next useful step:
 
@@ -209,7 +203,7 @@ Use `check:frontend` after visual/page work to catch runtime crashes.
 Before approving source cleanup, confirm:
 
 - `src/app/**` has one canonical route per page
-- `domains/services` reflects the five active systems
+- `domains/services` reflects the active system routes
 - `domains/services/implementation` holds implementation pathways under Smart Website Systems
 - route ownership config matches public routes
 - indexing config does not preserve removed routes

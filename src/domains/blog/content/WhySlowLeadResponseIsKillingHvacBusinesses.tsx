@@ -16,9 +16,9 @@ export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
   title: 'Why Slow Lead Response Is Killing HVAC Businesses',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: ['hvac'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['lead-response-time'],
   tags: ['HVAC', 'Lead Response Time', 'CRM Automation', 'Lost Revenue', 'Enquiry Management'],
   sections: [

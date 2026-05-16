@@ -162,12 +162,12 @@ export const customerFeedbackLoopFramework: ResourceData = {
   title: 'Customer Feedback Loop Framework',
   description:
     'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2025-12-13',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: [],
   topics: ['customer-feedback', 'feedback-loops'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -233,9 +233,9 @@ export const customerFeedbackLoopFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

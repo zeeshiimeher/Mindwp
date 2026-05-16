@@ -106,7 +106,7 @@ function buildConstructionLeadTrackingChaos(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['crm-automation'],
+    primarySystem: 'follow-up-crm',
     topics: ['crm-visibility', 'pipeline-visibility', 'lead-management'],
     publishDate: '2026-01-26',
     client: 'Pendle Construction',

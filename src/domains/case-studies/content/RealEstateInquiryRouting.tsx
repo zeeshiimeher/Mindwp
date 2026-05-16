@@ -85,7 +85,7 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
     industryCategory: 'real-estate',
     industryLabel: 'Real Estate',
     industries: ['realtor'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['lead-routing', 'lead-management', 'lead-response-time'],
     publishDate: '2026-02-20',
     client: 'Wessex Property Group',

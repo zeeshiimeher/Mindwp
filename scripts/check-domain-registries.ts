@@ -17,7 +17,8 @@ type PageData = {
     description?: unknown;
     canonical?: unknown;
   };
-  systems?: unknown;
+  primarySystem?: unknown;
+  supportingSystems?: unknown;
   topics?: unknown;
   hero?: {
     title?: unknown;
@@ -62,7 +63,7 @@ function checkRegistry(registryName: string, registry: Record<string, RegistryEn
 
     const data = entry.data as PageData;
 
-    if (data.slug !== entry.slug) {
+    if (data.slug !== entry.slug && !String(entry.slug).startsWith('implementation/')) {
       addFailure(registryName, key, `entry.data.slug must equal entry.slug (${String(entry.slug)})`);
     }
 
@@ -82,8 +83,12 @@ function checkRegistry(registryName: string, registry: Record<string, RegistryEn
       addFailure(registryName, key, 'data.seo.canonical must be a non-empty string');
     }
 
-    if (!Array.isArray(data.systems) || data.systems.length === 0) {
-      addFailure(registryName, key, 'data.systems must be a non-empty array');
+    if (!isNonEmptyString(data.primarySystem)) {
+      addFailure(registryName, key, 'data.primarySystem must be a non-empty string');
+    }
+
+    if (data.supportingSystems !== undefined && !Array.isArray(data.supportingSystems)) {
+      addFailure(registryName, key, 'data.supportingSystems must be an array when present');
     }
 
     if (!Array.isArray(data.topics)) {

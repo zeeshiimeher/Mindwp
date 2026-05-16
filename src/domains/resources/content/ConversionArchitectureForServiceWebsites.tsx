@@ -167,9 +167,9 @@ export const conversionArchitectureForServiceWebsites: ResourceData = {
   title: 'Conversion Architecture for Service Websites',
   description:
     'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   publishedAt: '2025-11-05',
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   industries: [],
   topics: ['conversion-optimization'],
   primaryService: 'smart-website-systems',
@@ -238,9 +238,9 @@ export const conversionArchitectureForServiceWebsites: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('smart-website-systems'),
-      content: getRelatedResourcesContent('smart-website-systems'),
-      resources: getRelatedResources('smart-website-systems', canonical),
+      heading: getRelatedResourcesHeading('website-clarity'),
+      content: getRelatedResourcesContent('website-clarity'),
+      resources: getRelatedResources('website-clarity', canonical),
     },
   ],
 };

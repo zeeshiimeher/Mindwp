@@ -2,7 +2,7 @@
 
 > AI execution rulebook for MindWP.
 > Use this when changing docs, source, content, routes, data, metadata, or page systems.
-> The goal is to prevent future sessions from reviving old strategy or creating parallel models.
+> The goal is to prevent future sessions from reviving removed strategy or creating parallel models.
 
 ---
 
@@ -22,13 +22,7 @@ Checks protect approved decisions. They do not decide the page before it exists.
 
 ## ACTIVE OFFER RULE
 
-Use only the five active public systems:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
+Use only the active public systems defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 Revenue Recovery is a cross-system improvement layer only.
 
@@ -38,13 +32,13 @@ It is not:
 - a route family
 - a graph category
 - a navigation pillar
-- an equal service beside the five active systems
+- an equal service beside the active systems
 
 Implementation services are active implementation pathways under Smart Website Systems, not primary systems.
 
 ---
 
-## DO NOT REVIVE OLD STRATEGY
+## DO NOT REVIVE REMOVED STRATEGY
 
 Do not:
 
@@ -57,7 +51,7 @@ Do not:
 - create a `/systems` public taxonomy unless governing docs are intentionally updated later
 - use removed identifiers in metadata, graph logic, redirects, navigation, or content inventory
 
-If old source or docs conflict with the active model, update them in the relevant cleanup pass. Do not preserve both.
+If removed-source remnants or stale docs conflict with the active model, update them in the relevant cleanup pass. Do not preserve both.
 
 ---
 
@@ -149,7 +143,7 @@ Scenario studies and system examples are allowed only when clearly framed as ill
 - `lib/cta`, `lib/contact`, and `lib/seo` own shared behavior.
 - `config/routeOwnership.ts` and indexing config must align with active routes.
 
-Graph/content metadata should use `primarySystem` and `supportingSystems[]`, not old broad `systems[]` as the strategic source of truth.
+Graph/content metadata should use `primarySystem` and `supportingSystems[]`, not old broad system-array metadata as the strategic source of truth.
 
 Related content injection belongs in config/domain layers, not manually in page bodies after the journey is stable.
 
@@ -189,7 +183,9 @@ If the active docs clearly define the decision and source code is stale, update 
 
 If implementation reality proves a doc is wrong, update the doc and explain why.
 
-Do not ask the user whether to follow old source when the docs already say the old source is obsolete.
+Do not ask the user whether to follow stale source when the docs already define the active direction.
+
+If a task asks for source cleanup, fix repo-wide drift directly. Do not create parallel compatibility code.
 
 ---
 

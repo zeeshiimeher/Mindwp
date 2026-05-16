@@ -16,12 +16,12 @@ const GROUP_BY_SLUG: Record<string, string> = {
 };
 
 const LEAD_SYSTEM_BY_SLUG: Record<string, string> = {
-  'home-services': 'AI Lead Handling',
-  'automotive-services': 'AI Lead Handling',
-  'beauty-personal-care': 'CRM & Automation',
-  'local-appointment-businesses': 'CRM & Automation',
-  'real-estate-property-services': 'CRM & Automation',
-  'legal-professional-services': 'AI Lead Handling',
+  'home-services': 'Lead Response & Handling',
+  'automotive-services': 'Lead Response & Handling',
+  'beauty-personal-care': 'Follow-Up & CRM',
+  'local-appointment-businesses': 'Follow-Up & CRM',
+  'real-estate-property-services': 'Follow-Up & CRM',
+  'legal-professional-services': 'Lead Response & Handling',
 };
 
 export default function IndustriesLanding() {
@@ -67,7 +67,7 @@ export default function IndustriesLanding() {
             <ul className='icp-routes'>
               {categories.map(cat => {
                 const group = GROUP_BY_SLUG[cat.slug] ?? 'home';
-                const lead = LEAD_SYSTEM_BY_SLUG[cat.slug] ?? 'CRM & Automation';
+                const lead = LEAD_SYSTEM_BY_SLUG[cat.slug] ?? 'Follow-Up & CRM';
                 return (
                   <li key={cat.slug} className={`icp-routes__item icp-routes__item--${group}`}>
                     <a className='icp-routes__card' href={cat.href}>
@@ -90,9 +90,9 @@ export default function IndustriesLanding() {
         <SectionShell
           heading={{
             eyebrow: 'How to read these',
-            title: 'Same six systems. [[muted:Different operating shapes.]]',
+            title: 'Same active systems. [[muted:Different operating shapes.]]',
             description:
-              'Every category uses the same six systems underneath. The difference is which one leads, which support, and which come later.',
+              'Every category resolves into the active service model. The difference is which system leads, which support, and which come later.',
           }}
           tone='mist'
         >
@@ -103,8 +103,8 @@ export default function IndustriesLanding() {
                   <span className='icp-routes__label'>Speed-led</span>
                 </div>
                 <p className='icp-routes__one'>
-                  Urgent or after-hours work where first reply decides the job. Lead with AI Lead
-                  Handling.
+                  Urgent or after-hours work where first reply decides the job. Lead with Lead
+                  Response &amp; Handling.
                 </p>
                 <span className='icp-routes__system'>Examples · Home, Auto, Legal intake</span>
               </div>
@@ -115,8 +115,8 @@ export default function IndustriesLanding() {
                   <span className='icp-routes__label'>Booking-led</span>
                 </div>
                 <p className='icp-routes__one'>
-                  Appointment shapes where rebook cadence and reminders carry the revenue. Lead with
-                  CRM &amp; Automation.
+                  Appointment shapes where rebook cadence and reminders carry the value. Lead with
+                  Follow-Up &amp; CRM.
                 </p>
                 <span className='icp-routes__system'>Examples · Beauty, Appointment</span>
               </div>

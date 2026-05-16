@@ -122,12 +122,12 @@ export const respondingToNegativeReviewsSystematically: ResourceData = {
   title: 'Responding to Negative Reviews Systematically Guide',
   description:
     'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-01-05',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: [],
   topics: ['negative-reviews', 'negative-review-response'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -178,9 +178,9 @@ export const respondingToNegativeReviewsSystematically: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

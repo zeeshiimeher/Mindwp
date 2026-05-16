@@ -68,15 +68,7 @@ Metadata, relationships, related-content routing, and final data extraction happ
 
 Canonical identifiers are fixed business and content identifiers. Their implementation source may change as the new system is rebuilt.
 
-Allowed active system values are:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
-
-Revenue Recovery may appear as an improvement layer or content theme, but it is not an allowed primary system for service-page ownership.
+Active system values and ownership rules come from [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Revenue Recovery may appear as an improvement layer or content theme, but it is not an allowed primary system for service-page ownership.
 
 ---
 
@@ -88,13 +80,7 @@ Service pages own BOFU decision support, conversion framing, implementation scop
 
 They are the only page type allowed to carry the full decision/conversion structure.
 
-Every service page must resolve to one active system:
-
-- Smart Website Systems
-- Local SEO Authority Systems
-- Lead Response & Handling Systems
-- Follow-Up & CRM Systems
-- Reputation & Review Systems
+Every service page must resolve to one active system from [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 Revenue Recovery must not be created as a primary service page unless the active docs are intentionally updated later.
 
@@ -215,12 +201,12 @@ They must not absorb BOFU service structure.
 
 ## ACTIVE SYSTEM PAGE HIERARCHY RULE
 
-Public content hierarchy must preserve Smart Website gravity and the active five-system model.
+Public content hierarchy must preserve Smart Website gravity and the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 Rules:
 
 - Smart Website Systems leads the service narrative as the flagship and visible control point.
-- Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems remain active public systems, but they must not flatten the offer into an equal-weight service catalog.
+- Other active systems may lead when their direct pain is the buyer's entry point, but they must not flatten the offer into an equal-weight service catalog.
 - Supporting modules solve narrower operational problems and map upward into one active system.
 - Implementation pathways remain delivery-specific routes and do not present themselves as strategic pillars.
 - Revenue Recovery is a cross-system improvement layer and must not be treated as a primary service page.

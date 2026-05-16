@@ -26,10 +26,10 @@ export const nailSalonsIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['nail-salon'],
-  systems: [
-    'crm-automation',
-    'ai-lead-handling',
-    'reputation-review',
+  primarySystem: 'follow-up-crm',
+  supportingSystems: [
+    'lead-response-handling',
+    'reputation-review-systems',
     'smart-website-systems',
     'local-seo-authority',
   ],

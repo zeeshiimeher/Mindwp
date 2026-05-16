@@ -16,9 +16,9 @@ export const clientReactivationForSalons: BlogPostData = {
   title: 'Client Reactivation for Salons',
   publishDate: '2025-12-13',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['client-reactivation'],
   tags: ['Salon', 'Client Reactivation', 'CRM', 'Revenue Recovery', 'Re-Engagement'],
   sections: [

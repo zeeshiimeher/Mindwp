@@ -101,7 +101,7 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['crm-visibility', 'pipeline-visibility', 'crm-pipeline'],
     publishDate: '2026-02-12',
     client: 'Carter Roofing & Cladding',

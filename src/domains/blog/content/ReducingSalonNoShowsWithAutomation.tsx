@@ -16,9 +16,10 @@ export const reducingSalonNoShowsWithAutomation: BlogPostData = {
   title: 'Reducing Salon No Shows With Automation',
   publishDate: '2025-07-14',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['crm-automation', 'ai-lead-handling'],
+  primarySystem: 'follow-up-crm',
+  supportingSystems: ['lead-response-handling'],
   topics: ['no-show-reduction'],
   tags: ['Salon', 'No Shows', 'Automation', 'SMS Reminders', 'Booking Reliability'],
   sections: [

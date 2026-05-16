@@ -5,7 +5,7 @@ import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_CATEGORY_REGISTRY } from '@/domains/resources/categoryRegistry';
-import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
+import { CANONICAL_TOPICS, getNodeSystems } from '@/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode } from '@/lib/content-graph/types';
 import { normalizePath } from '@/lib/seo/config';
@@ -43,7 +43,7 @@ export interface RouteInventoryEntry {
   };
   indexable: boolean;
   topics: string[];
-  systems: string[];
+  activeSystems: string[];
   industries: string[];
 }
 
@@ -105,7 +105,7 @@ function createEntry(seed: {
   description: string;
   openGraph?: unknown;
   topics?: string[];
-  systems?: string[];
+  activeSystems?: string[];
   industries?: string[];
 }): RouteInventoryEntry {
   const path = normalizePath(seed.path);
@@ -127,7 +127,7 @@ function createEntry(seed: {
     },
     indexable: policy.index,
     topics: seed.topics ?? [],
-    systems: seed.systems ?? [],
+    activeSystems: seed.activeSystems ?? [],
     industries: seed.industries ?? [],
   };
 }
@@ -141,7 +141,7 @@ function createEntryFromNode(node: ContentGraphNode): RouteInventoryEntry {
     description: node.description ?? `${slugTitle(node.slug)} on MindWP.`,
     openGraph: node.openGraph,
     topics: node.topics ?? [],
-    systems: node.systems ?? [],
+    activeSystems: getNodeSystems(node),
     industries: node.industries ?? [],
   });
 }
@@ -205,19 +205,6 @@ function createTopicHubEntries(): RouteInventoryEntry[] {
   );
 }
 
-function createSystemHubEntries(): RouteInventoryEntry[] {
-  return CANONICAL_SYSTEMS.map(system =>
-    createEntry({
-      key: `system-hub:${system}`,
-      kind: 'system-hub',
-      path: `/systems/${system}`,
-      title: `${slugTitle(system)} — System Hub`,
-      description: `Everything about ${slugTitle(system)}: services, insights, case studies, and resources.`,
-      systems: [system],
-    })
-  );
-}
-
 export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
   const snapshotInventory = readSnapshotInventory();
   if (snapshotInventory) {
@@ -233,7 +220,6 @@ export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
     ...createResourceCategoryEntries(),
     ...createBlogTopicEntries(),
     ...createTopicHubEntries(),
-    ...createSystemHubEntries(),
     ...graphEntries,
   ];
 

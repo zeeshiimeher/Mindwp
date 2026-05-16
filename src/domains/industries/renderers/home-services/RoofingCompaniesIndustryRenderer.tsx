@@ -64,7 +64,7 @@ const STORM_WEEK = [
 ];
 
 export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
-  const primarySystem = data.systems[0];
+  const primarySystem = data.primarySystem;
   if (!primarySystem) {
     throw new Error(`[${data.slug}] Missing primary industry system.`);
   }
@@ -428,9 +428,9 @@ export function RoofingCompaniesIndustryRenderer({ data }: IndustryDetailRendere
       >
         <div className='hs-surface-dark mx-auto flex max-w-5xl flex-col items-stretch gap-6 rounded-3xl border p-8 md:flex-row md:items-center md:gap-0 md:p-10'>
           {[
-            { name: 'AI Lead Handling', role: 'Catches the surge inside the first ring.' },
+            { name: 'Lead Response & Handling', role: 'Catches the surge inside the first ring.' },
             {
-              name: 'CRM & Automation',
+              name: 'Follow-Up & CRM',
               role: 'Owns inspection \u2192 quote \u2192 install in one thread.',
             },
             {

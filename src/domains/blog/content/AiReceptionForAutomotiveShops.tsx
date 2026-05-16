@@ -16,9 +16,9 @@ export const aiReceptionForAutomotiveShops: BlogPostData = {
   title: 'AI Reception for Automotive Shops',
   publishDate: '2026-02-15',
   authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
+  category: 'frameworks',
   industries: ['automotive'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-response-time'],
   tags: ['Automotive', 'AI Reception', 'Automated Answering', 'Lead Capture', 'Future Tech'],
   sections: [

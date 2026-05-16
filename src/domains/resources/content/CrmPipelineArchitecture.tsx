@@ -172,12 +172,12 @@ export const crmPipelineArchitecture: ResourceData = {
   title: 'CRM Pipeline Architecture',
   description:
     'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
-  category: 'revenue-growth',
+  category: 'frameworks',
   publishedAt: '2025-11-22',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: [],
   topics: ['pipeline-architecture', 'crm-visibility'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -243,9 +243,9 @@ export const crmPipelineArchitecture: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('revenue-growth'),
-      content: getRelatedResourcesContent('revenue-growth'),
-      resources: getRelatedResources('revenue-growth', canonical),
+      heading: getRelatedResourcesHeading('frameworks'),
+      content: getRelatedResourcesContent('frameworks'),
+      resources: getRelatedResources('frameworks', canonical),
     },
   ],
 };

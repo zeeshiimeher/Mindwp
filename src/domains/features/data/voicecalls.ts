@@ -15,7 +15,7 @@ export const voicecallsData = {
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'voicecalls',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: [
     'website-infrastructure',
     'lead-capture',

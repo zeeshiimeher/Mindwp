@@ -16,9 +16,9 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
   title: 'Local SEO for Roofing Companies Explained',
   publishDate: '2025-09-24',
   authorKey: 'EDITORIAL',
-  category: 'local-authority-seo',
+  category: 'local-visibility',
   industries: ['roofing'],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['local-seo'],
   tags: ['Roofing', 'Local SEO', 'Local Rankings', 'Visibility', 'Search'],
   sections: [

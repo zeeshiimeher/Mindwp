@@ -119,12 +119,12 @@ export const roofingCrmPipelineStructure: ResourceData = {
   title: 'Roofing CRM Pipeline Structure',
   description:
     'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-01-28',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: ['roofing'],
   topics: ['pipeline-architecture'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const roofingCrmPipelineStructure: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

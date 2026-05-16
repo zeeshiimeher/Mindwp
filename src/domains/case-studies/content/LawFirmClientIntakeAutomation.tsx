@@ -145,7 +145,7 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['lead-qualification', 'follow-up', 'lead-management'],
     publishDate: '2026-03-01',
     client: 'Halewood & Partners',

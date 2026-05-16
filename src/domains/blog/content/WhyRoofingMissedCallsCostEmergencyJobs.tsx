@@ -16,9 +16,9 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
   title: 'Why Roofing Missed Calls Cost Emergency Jobs',
   publishDate: '2025-04-17',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['missed-calls'],
   tags: ['Roofing', 'Missed Calls', 'Emergency Jobs', 'Call Recovery', 'Lead Loss'],
   sections: [

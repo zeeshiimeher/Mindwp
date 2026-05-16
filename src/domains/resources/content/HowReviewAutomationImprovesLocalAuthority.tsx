@@ -162,12 +162,12 @@ export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
   title: 'How Review Automation Improves Local Authority Guide',
   description:
     'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2025-12-17',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: [],
   topics: ['review-automation', 'local-authority'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -233,9 +233,9 @@ export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

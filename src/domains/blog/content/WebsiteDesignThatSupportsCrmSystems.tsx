@@ -16,9 +16,9 @@ export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
   title: 'Website Design That Supports CRM Systems',
   publishDate: '2024-08-22',
   authorKey: 'EDITORIAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['crm-enabled-websites'],
   tags: ['CRM-Ready Design', 'Website Design', 'CRM Systems', 'Automation', 'System Architecture'],
   sections: [

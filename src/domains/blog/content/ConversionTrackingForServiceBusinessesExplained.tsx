@@ -16,9 +16,9 @@ export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
   title: 'Conversion Tracking for Service Businesses Explained',
   publishDate: '2024-09-12',
   authorKey: 'TECHNICAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['conversion-tracking'],
   tags: [
     'Conversion Tracking',

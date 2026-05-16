@@ -222,9 +222,9 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
 const CATEGORY_TO_SECTION: Record<string, TopicHubSection> = {
   'smart-website-systems': 'foundations',
   'local-authority-seo': 'foundations',
-  'ai-lead-handling': 'operational-systems',
-  'crm-automation': 'operational-systems',
-  'reputation-review': 'operational-systems',
+  'lead-response-handling': 'operational-systems',
+  'follow-up-crm': 'operational-systems',
+  'reputation-review-systems': 'operational-systems',
   'home-services-industry': 'industry-implementations',
   'beauty-personal-care-industry': 'industry-implementations',
   'future-local-business-tech': 'frameworks',

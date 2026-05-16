@@ -36,8 +36,10 @@ const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
 const FOLLOW_UP_DELAY_MS = 1000 * 60 * 60 * 24;
 const SYSTEM_EMAIL_MAP = {
   'smart-website-systems': 'hello@mindwp.com',
-  'ai-lead-handling': 'sales@mindwp.com',
+  'lead-response-handling': 'sales@mindwp.com',
+  'follow-up-crm': 'hello@mindwp.com',
   'local-seo-authority': 'seo@mindwp.com',
+  'reputation-review-systems': 'hello@mindwp.com',
   default: 'hello@mindwp.com',
 } as const;
 

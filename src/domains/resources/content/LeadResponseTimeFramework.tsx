@@ -153,7 +153,7 @@ const faqs = [
 const finalCta = {
   title: 'Fix Your Response Time With Automated Lead Handling',
   description:
-    'Our AI Lead Handling system responds to every enquiry within seconds, routes urgent requests to the right team, and tracks response time across your entire operation.',
+    'Our Lead Response & Handling system responds to every enquiry within seconds, routes urgent requests to the right team, and tracks response time across your entire operation.',
 };
 
 export const leadResponseTimeFramework: ResourceData = {
@@ -167,12 +167,12 @@ export const leadResponseTimeFramework: ResourceData = {
   title: 'Lead Response Time Framework',
   description:
     'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-12-06',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['lead-response-time'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -238,9 +238,9 @@ export const leadResponseTimeFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

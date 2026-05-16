@@ -16,9 +16,9 @@ export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
   title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['plumbing'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['Plumbing', 'CRM Pipeline', 'Lost Jobs', 'Lead Tracking', 'Revenue Loss'],
   sections: [

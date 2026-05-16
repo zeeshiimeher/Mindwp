@@ -82,7 +82,7 @@ function buildContractorReviewGap(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['electrical'],
-    systems: ['reputation-review'],
+    primarySystem: 'reputation-review-systems',
     topics: ['review-generation', 'google-business-profile', 'reputation-monitoring'],
     publishDate: '2026-01-22',
     client: 'Brookhaven Electrical Contractors',

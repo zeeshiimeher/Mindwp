@@ -16,9 +16,9 @@ export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
   title: 'Why Salons Lose Clients Without a CRM Pipeline',
   publishDate: '2026-04-06',
   authorKey: 'TECHNICAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['Salon', 'CRM Pipeline', 'Client Retention', 'Booking', 'Follow-Up'],
   sections: [

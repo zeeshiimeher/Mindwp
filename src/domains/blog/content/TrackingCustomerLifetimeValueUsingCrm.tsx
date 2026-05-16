@@ -16,9 +16,9 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
   title: 'Tracking Customer Lifetime Value Using CRM',
   publishDate: '2025-03-08',
   authorKey: 'EDITORIAL',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   industries: [],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['customer-lifetime-value', 'lifetime-value'],
   tags: ['Customer Lifetime Value', 'CRM', 'Service Business', 'Retention', 'Analytics'],
   sections: [

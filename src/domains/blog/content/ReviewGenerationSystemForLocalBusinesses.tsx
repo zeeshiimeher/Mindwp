@@ -16,9 +16,9 @@ export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
   title: 'Review Generation System for Local Businesses',
   publishDate: '2024-11-23',
   authorKey: 'TECHNICAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: [],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-generation'],
   tags: ['Review Generation', 'Local Business', 'Reputation', 'Automation', 'Customer Reviews'],
   sections: [

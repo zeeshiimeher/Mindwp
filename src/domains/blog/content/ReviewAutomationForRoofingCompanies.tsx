@@ -16,9 +16,9 @@ export const reviewAutomationForRoofingCompanies: BlogPostData = {
   title: 'Review Automation for Roofing Companies',
   publishDate: '2025-10-18',
   authorKey: 'TECHNICAL',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   industries: ['roofing'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-automation'],
   tags: ['Roofing', 'Review Automation', 'Reputation', 'Local Rankings', 'Automation'],
   sections: [

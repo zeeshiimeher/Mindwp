@@ -119,12 +119,12 @@ export const automotiveReviewGenerationSystem: ResourceData = {
   title: 'Automotive Review Generation System',
   description:
     'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-01-31',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['automotive'],
   topics: ['review-generation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const automotiveReviewGenerationSystem: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

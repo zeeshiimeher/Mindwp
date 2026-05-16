@@ -27,11 +27,11 @@ export const landscapingCompaniesIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['landscaping'],
-  systems: [
-    'smart-website-systems',
-    'ai-lead-handling',
-    'crm-automation',
-    'reputation-review',
+  primarySystem: 'smart-website-systems',
+  supportingSystems: [
+    'lead-response-handling',
+    'follow-up-crm',
+    'reputation-review-systems',
     'local-seo-authority',
   ],
   topics: ['lead-management', 'client-reactivation', 'review-generation'],

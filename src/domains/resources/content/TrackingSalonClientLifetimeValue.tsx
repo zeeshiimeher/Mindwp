@@ -119,12 +119,12 @@ export const trackingSalonClientLifetimeValue: ResourceData = {
   title: 'Tracking Salon Client Lifetime Value',
   description:
     'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-  category: 'revenue-growth',
+  category: 'frameworks',
   publishedAt: '2026-02-28',
-  systems: ['crm-automation', 'revenue-growth'],
+  primarySystem: 'follow-up-crm',
   industries: ['salon'],
   topics: ['lifetime-value'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const trackingSalonClientLifetimeValue: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('revenue-growth'),
-      content: getRelatedResourcesContent('revenue-growth'),
-      resources: getRelatedResources('revenue-growth', canonical),
+      heading: getRelatedResourcesHeading('frameworks'),
+      content: getRelatedResourcesContent('frameworks'),
+      resources: getRelatedResources('frameworks', canonical),
     },
   ],
 };

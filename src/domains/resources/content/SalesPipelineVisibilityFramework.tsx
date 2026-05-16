@@ -162,12 +162,12 @@ export const salesPipelineVisibilityFramework: ResourceData = {
   title: 'Sales Pipeline Visibility Framework',
   description:
     'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-  category: 'revenue-growth',
+  category: 'frameworks',
   publishedAt: '2025-12-10',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: [],
   topics: ['pipeline-visibility'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -235,9 +235,9 @@ export const salesPipelineVisibilityFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('revenue-growth'),
-      content: getRelatedResourcesContent('revenue-growth'),
-      resources: getRelatedResources('revenue-growth', canonical),
+      heading: getRelatedResourcesHeading('frameworks'),
+      content: getRelatedResourcesContent('frameworks'),
+      resources: getRelatedResources('frameworks', canonical),
     },
   ],
 };

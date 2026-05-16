@@ -16,9 +16,9 @@ export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
   title: 'Future CRM Visibility for HVAC Companies',
   publishDate: '2026-03-11',
   authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
+  category: 'frameworks',
   industries: ['hvac'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-visibility'],
   tags: ['HVAC', 'CRM Visibility', 'Predictive Analytics', 'AI Forecasting', 'Future Tech'],
   sections: [

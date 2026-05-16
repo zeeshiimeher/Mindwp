@@ -16,9 +16,9 @@ export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
   title: 'Smart Website Systems for Roofing Companies',
   publishDate: '2025-08-31',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['roofing'],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['website-infrastructure'],
   tags: ['Roofing', 'Website Systems', 'Infrastructure', 'Lead Capture', 'CRM Integration'],
   sections: [

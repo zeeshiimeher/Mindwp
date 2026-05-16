@@ -83,7 +83,7 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],
-    systems: ['ai-lead-handling'],
+    primarySystem: 'lead-response-handling',
     topics: ['emergency-handling', 'missed-calls', 'lead-capture'],
     publishDate: '2025-11-15',
     client: 'AirFlow Mechanical',

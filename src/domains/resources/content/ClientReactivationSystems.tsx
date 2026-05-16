@@ -121,12 +121,12 @@ export const clientReactivationSystems: ResourceData = {
   title: 'Client Reactivation Systems',
   description:
     'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
-  category: 'revenue-growth',
+  category: 'frameworks',
   publishedAt: '2025-11-29',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: [],
   topics: ['client-reactivation'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -181,9 +181,9 @@ export const clientReactivationSystems: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('revenue-growth'),
-      content: getRelatedResourcesContent('revenue-growth'),
-      resources: getRelatedResources('revenue-growth', canonical),
+      heading: getRelatedResourcesHeading('frameworks'),
+      content: getRelatedResourcesContent('frameworks'),
+      resources: getRelatedResources('frameworks', canonical),
     },
   ],
 };

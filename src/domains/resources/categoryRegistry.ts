@@ -1,10 +1,12 @@
 export const RESOURCE_CATEGORY_REGISTRY = {
-  'crm-automation': { label: 'CRM Automation' },
-  'smart-website-systems': { label: 'Smart Website Systems' },
-  'ai-lead-handling': { label: 'AI Lead Handling' },
-  'local-seo-authority': { label: 'Local Authority & SEO' },
-  'reputation-review': { label: 'Reputation & Reviews' },
-  'revenue-growth': { label: 'Revenue Growth' },
+  'website-clarity': { label: 'Website Clarity' },
+  'local-visibility': { label: 'Local Visibility' },
+  'lead-response': { label: 'Lead Response' },
+  'follow-up-crm': { label: 'Follow-Up & CRM' },
+  'reviews-proof': { label: 'Reviews & Proof' },
+  'implementation-services': { label: 'Implementation Services' },
+  'industry-examples': { label: 'Industry Examples' },
+  frameworks: { label: 'Frameworks' },
 } as const;
 
 export type ResourceCategory = keyof typeof RESOURCE_CATEGORY_REGISTRY;

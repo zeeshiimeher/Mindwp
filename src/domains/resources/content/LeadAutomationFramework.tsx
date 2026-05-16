@@ -158,7 +158,7 @@ const faqs = [
 const finalCta = {
   title: 'Build Your Lead Automation Framework',
   description:
-    'Our AI Lead Handling system includes multi-channel capture, intelligent routing, qualification, and automated follow-up sequences. Every lead is handled systematically from first contact to booked job.',
+    'Our Lead Response & Handling system includes multi-channel capture, intelligent routing, qualification, and automated follow-up sequences. Every lead is handled systematically from first contact to booked job.',
 };
 
 export const leadAutomationFramework: ResourceData = {
@@ -172,12 +172,12 @@ export const leadAutomationFramework: ResourceData = {
   title: 'Lead Automation Framework Guide',
   description:
     'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-12-01',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -243,9 +243,9 @@ export const leadAutomationFramework: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

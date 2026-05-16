@@ -16,9 +16,9 @@ export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
   title: 'Why Salons Lose Clients Without Review Automation',
   publishDate: '2026-04-06',
   authorKey: 'EDITORIAL',
-  category: 'beauty-personal-care-industry',
+  category: 'industry-examples',
   industries: ['salon'],
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   topics: ['review-automation'],
   tags: ['Salon', 'Review Automation', 'Reputation', 'Client Acquisition', 'Online Reviews'],
   sections: [

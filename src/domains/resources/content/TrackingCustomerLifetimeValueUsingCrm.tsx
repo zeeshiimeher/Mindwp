@@ -144,12 +144,12 @@ export const trackingCustomerLifetimeValueUsingCrm: ResourceData = {
   title: 'Tracking Customer Lifetime Value Using CRM Guide',
   description:
     'Learn how to calculate and track Customer Lifetime Value using CRM data to make better acquisition, retention, and pricing decisions for your service business.',
-  category: 'revenue-growth',
+  category: 'frameworks',
   publishedAt: '2026-01-03',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: [],
   topics: ['customer-lifetime-value'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -209,9 +209,9 @@ export const trackingCustomerLifetimeValueUsingCrm: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('revenue-growth'),
-      content: getRelatedResourcesContent('revenue-growth'),
-      resources: getRelatedResources('revenue-growth', canonical),
+      heading: getRelatedResourcesHeading('frameworks'),
+      content: getRelatedResourcesContent('frameworks'),
+      resources: getRelatedResources('frameworks', canonical),
     },
   ],
 };

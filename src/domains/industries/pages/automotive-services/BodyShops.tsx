@@ -26,11 +26,11 @@ export const bodyShopsIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['body-shop'],
-  systems: [
-    'crm-automation',
-    'ai-lead-handling',
+  primarySystem: 'follow-up-crm',
+  supportingSystems: [
+    'lead-response-handling',
     'smart-website-systems',
-    'reputation-review',
+    'reputation-review-systems',
     'local-seo-authority',
   ],
   topics: ['lead-management', 'follow-up', 'review-generation'],

@@ -16,9 +16,9 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
   title: 'Why Service Business Websites Fail to Convert',
   publishDate: '2024-06-12',
   authorKey: 'EDITORIAL',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   industries: [],
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: ['conversion-optimization'],
   tags: [
     'Website Conversion',

@@ -147,7 +147,7 @@ const faqs = [
 const finalCta = {
   title: 'Route Leads to the Right Person Automatically',
   description:
-    'Our AI Lead Handling system routes leads based on service type, location, urgency, and team capacity. The right person handles every lead without manual sorting or bottlenecks.',
+    'Our Lead Response & Handling system routes leads based on service type, location, urgency, and team capacity. The right person handles every lead without manual sorting or bottlenecks.',
 };
 
 export const leadRoutingModelsForServiceCompanies: ResourceData = {
@@ -161,12 +161,12 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
   title: 'Lead Routing Models for Service Companies Guide',
   description:
     'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2025-12-08',
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   industries: [],
   topics: ['lead-routing'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -232,9 +232,9 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

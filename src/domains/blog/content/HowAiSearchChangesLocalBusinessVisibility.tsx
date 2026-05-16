@@ -16,9 +16,9 @@ export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
   title: 'How AI Search Changes Local Business Visibility',
   publishDate: '2026-02-07',
   authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
+  category: 'frameworks',
   industries: [],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['local-authority', 'local-visibility'],
   tags: ['AI Search', 'Local Visibility', 'Generative Search', 'Future Trends', 'Local SEO'],
   sections: [

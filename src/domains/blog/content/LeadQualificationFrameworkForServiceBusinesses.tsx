@@ -16,15 +16,15 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
   title: 'Lead Qualification Framework for Service Businesses',
   publishDate: '2024-11-07',
   authorKey: 'TECHNICAL',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   industries: [],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['lead-qualification'],
   tags: [
     'Lead Qualification',
     'Lead Scoring',
     'Service Business',
-    'AI Lead Handling',
+    'Lead Response & Handling',
     'Enquiry Management',
   ],
   sections: [

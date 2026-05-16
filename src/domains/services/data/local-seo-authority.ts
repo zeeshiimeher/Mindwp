@@ -15,7 +15,7 @@ export const localSeoAuthorityPage = {
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'local-seo-authority',
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: [
     'website-infrastructure',
     'lead-capture',
@@ -86,11 +86,11 @@ export const localSeoAuthorityPage = {
     },
     actions: [
       {
-        label: 'Start a Conversation',
+        label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
+          system: 'local-seo-authority',
           sourceType: 'page',
-          slug: 'smart-website-systems',
+          slug: 'local-seo-authority',
         }),
         primary: true,
       },

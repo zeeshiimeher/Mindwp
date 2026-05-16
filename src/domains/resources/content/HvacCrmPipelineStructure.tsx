@@ -119,12 +119,12 @@ export const hvacCrmPipelineStructure: ResourceData = {
   title: 'HVAC CRM Pipeline Structure',
   description:
     'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
-  category: 'crm-automation',
+  category: 'follow-up-crm',
   publishedAt: '2026-01-26',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: ['hvac'],
   topics: ['pipeline-architecture'],
-  primaryService: 'crm-automation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -177,9 +177,9 @@ export const hvacCrmPipelineStructure: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('crm-automation'),
-      content: getRelatedResourcesContent('crm-automation'),
-      resources: getRelatedResources('crm-automation', canonical),
+      heading: getRelatedResourcesHeading('follow-up-crm'),
+      content: getRelatedResourcesContent('follow-up-crm'),
+      resources: getRelatedResources('follow-up-crm', canonical),
     },
   ],
 };

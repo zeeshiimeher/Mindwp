@@ -16,9 +16,9 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
   title: 'Future Local SEO After Google Business Profile Automation',
   publishDate: '2026-03-03',
   authorKey: 'TECHNICAL',
-  category: 'future-local-business-tech',
+  category: 'frameworks',
   industries: ['plumbing'],
-  systems: ['local-seo-authority'],
+  primarySystem: 'local-seo-authority',
   topics: ['google-business-profile'],
   tags: ['Local SEO', 'Google Business Profile', 'Automation', 'AI', 'Future Trends'],
   sections: [

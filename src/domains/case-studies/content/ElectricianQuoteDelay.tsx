@@ -114,7 +114,7 @@ function buildElectricianQuoteDelay(): CaseStudyData {
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['electrical'],
-    systems: ['revenue-growth'],
+    primarySystem: 'follow-up-crm',
     topics: ['lead-response-time', 'follow-up', 'conversion-optimization'],
     publishDate: '2026-01-12',
     client: 'Westridge Electrical',

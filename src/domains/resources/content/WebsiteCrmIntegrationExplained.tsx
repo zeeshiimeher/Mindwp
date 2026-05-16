@@ -119,12 +119,12 @@ export const websiteCrmIntegrationExplained: ResourceData = {
   title: 'Website + CRM Integration Explained',
   description:
     'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
-  category: 'smart-website-systems',
+  category: 'website-clarity',
   publishedAt: '2025-11-15',
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   industries: [],
   topics: ['crm-integration'],
-  primaryService: 'crm-infrastructure-implementation',
+  primaryService: 'follow-up-crm',
   sections: [
     {
       type: 'hero',
@@ -214,14 +214,14 @@ export const websiteCrmIntegrationExplained: ResourceData = {
       type: 'cta',
       heading: 'Build CRM Infrastructure That Captures and Routes Every Lead',
       content: [
-        'crm-infrastructure-implementation turns website enquiries into structured CRM pipeline activity with direct routing, follow-up control, and fewer lost opportunities.',
+        'follow-up-crm turns website enquiries into structured CRM pipeline activity with direct routing, follow-up control, and fewer lost opportunities.',
       ],
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('smart-website-systems'),
-      content: getRelatedResourcesContent('smart-website-systems'),
-      resources: getRelatedResources('smart-website-systems', canonical),
+      heading: getRelatedResourcesHeading('website-clarity'),
+      content: getRelatedResourcesContent('website-clarity'),
+      resources: getRelatedResources('website-clarity', canonical),
     },
   ],
 };

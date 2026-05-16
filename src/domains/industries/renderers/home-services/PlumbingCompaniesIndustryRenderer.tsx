@@ -18,7 +18,7 @@ const HOURS = [
 ];
 
 export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRendererProps) {
-  const primarySystem = data.systems[0];
+  const primarySystem = data.primarySystem;
   if (!primarySystem) {
     throw new Error(`[${data.slug}] Missing primary industry system.`);
   }
@@ -336,11 +336,11 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
         <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
           {[
             {
-              system: 'AI Lead Handling',
+              system: 'Lead Response & Handling',
               role: 'Picks up urgent calls inside the first ring, after hours and on the day off.',
             },
             {
-              system: 'CRM & Automation',
+              system: 'Follow-Up & CRM',
               role: 'Quoted lane runs on its own follow-up clock without the office holding it.',
             },
             {

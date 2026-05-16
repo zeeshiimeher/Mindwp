@@ -9,18 +9,17 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 // =============================================================================
 // ServicesLanding — services index page
-// Sections: hero · sixSystems · operatingModules · implementationPaths · faq · cta
+// Sections: hero · primarySystems · implementationPaths · revenueRecovery · faq · cta
 // New-system components only. Shared .services-lnd CSS lives in services.css.
 // =============================================================================
 
 const ARIA_HERO = 'Services -- index hero';
-const ARIA_SIX = 'The six connected systems';
-const ARIA_MODULES = 'Operating modules';
+const ARIA_PRIMARY = 'Primary systems';
+const ARIA_RECOVERY = 'Revenue recovery layer';
 const ARIA_PATHS = 'Implementation paths';
 const ARIA_FAQ = 'Frequently asked questions';
 
 const ROLE_DOT = 'Role';
-const PARENT_DOT = 'Parent system';
 const TIER_DOT = 'Service path';
 
 type SystemCardSpec = {
@@ -29,19 +28,12 @@ type SystemCardSpec = {
   summary: string;
 };
 
-type ModuleCardSpec = {
-  slug: string;
-  parent: string;
-  summary: string;
-};
-
 type PathCardSpec = {
   slug: string;
-  kind: 'decision' | 'builder';
   summary: string;
 };
 
-const SIX_SYSTEMS: readonly SystemCardSpec[] = [
+const PRIMARY_SYSTEMS: readonly SystemCardSpec[] = [
   {
     slug: 'smart-website-systems',
     role: 'Front door',
@@ -55,107 +47,50 @@ const SIX_SYSTEMS: readonly SystemCardSpec[] = [
       'Local discovery, profile authority and service-page presence so the business is found by the right intent in its own area.',
   },
   {
-    slug: 'ai-lead-handling',
-    role: 'Instant response',
+    slug: 'lead-response-handling',
+    role: 'Response path',
     summary:
       'Picks up missed calls, qualifies new enquiries and books in real time so the slow window stops costing work.',
   },
   {
-    slug: 'crm-infrastructure-implementation',
-    role: 'Lead ownership',
+    slug: 'follow-up-crm',
+    role: 'Follow-up ownership',
     summary:
       'Where conversations land, who owns them and how follow-up actually happens. The ledger behind the system.',
   },
   {
     slug: 'reputation-review-systems',
-    role: 'Trust signal',
+    role: 'Reviews and proof',
     summary:
       'Steady review generation, calm response and quiet monitoring so reputation reflects the work that has been done.',
-  },
-  {
-    slug: 'revenue-growth',
-    role: 'Recovery rhythm',
-    summary:
-      'Names where revenue is leaking across the connected systems and runs the short, durable rhythm that brings it back.',
-  },
-];
-
-const OPERATING_MODULES: readonly ModuleCardSpec[] = [
-  {
-    slug: 'missed-call-recovery-system',
-    parent: 'AI Lead Handling',
-    summary: 'Closes the gap between a missed call and the first useful reply.',
-  },
-  {
-    slug: 'lead-reactivation-system',
-    parent: 'Revenue Growth',
-    summary: 'Reopens dormant enquiries and quotes that never had a proper follow-up path.',
-  },
-  {
-    slug: 'unified-communication-system',
-    parent: 'CRM & Automation',
-    summary: 'Calls, forms, chat and inbox messages routed so ownership stays clear.',
-  },
-  {
-    slug: 'conversion-layer',
-    parent: 'Smart Website Systems',
-    summary: 'Tighter offer pages, cleaner CTA logic and clearer enquiry handoff.',
-  },
-  {
-    slug: 'system-migration-platform-consolidation',
-    parent: 'Smart Website Systems',
-    summary: 'Consolidates platforms and migrates connected work without losing history.',
-  },
-  {
-    slug: 'website-redesign-system-rebuild',
-    parent: 'Smart Website Systems',
-    summary: 'A redesign that doubles as a system rebuild, not a visual refresh.',
   },
 ];
 
 const IMPLEMENTATION_PATHS: readonly PathCardSpec[] = [
   {
-    slug: 'conversion-funnel-system-vs-landing-page-development',
-    kind: 'decision',
-    summary:
-      'When a connected funnel is the right answer and when a single landing page is enough.',
-  },
-  {
-    slug: 'service-pages-vs-one-generic-services-page',
-    kind: 'decision',
-    summary:
-      'Why service-specific pages outperform one all-purpose services page for local intent.',
-  },
-  {
-    slug: 'website-crm-integration-vs-manual-lead-handling',
-    kind: 'decision',
-    summary: 'The honest comparison between connected CRM handling and manual inbox follow-up.',
-  },
-  {
-    slug: 'wordpress-development',
-    kind: 'builder',
+    slug: 'implementation/wordpress-development',
     summary:
       'WordPress as the build surface when the connected system needs flexibility and ownership.',
   },
   {
-    slug: 'ecommerce',
-    kind: 'builder',
-    summary: 'Connected ecommerce on WooCommerce when product, fulfilment and CRM need to talk.',
+    slug: 'implementation/elementor',
+    summary: 'Elementor when an existing team needs broad editorial flexibility.',
   },
   {
-    slug: 'divi5',
-    kind: 'builder',
-    summary: 'Divi 5 as the build surface for teams already comfortable inside that ecosystem.',
-  },
-  {
-    slug: 'bricks-builder',
-    kind: 'builder',
+    slug: 'implementation/bricks-builder',
     summary: 'Bricks Builder when performance and developer-led control are the deciding factors.',
   },
   {
-    slug: 'elementor',
-    kind: 'builder',
-    summary: 'Elementor when an existing team needs the broadest editorial flexibility.',
+    slug: 'implementation/divi5',
+    summary: 'Divi when the team already works comfortably inside that editing surface.',
+  },
+  {
+    slug: 'implementation/woocommerce',
+    summary: 'Connected ecommerce on WooCommerce when product, fulfilment and CRM need to talk.',
+  },
+  {
+    slug: 'implementation/website-redesign-system-rebuild',
+    summary: 'A redesign that doubles as a website-system rebuild, not a visual refresh.',
   },
 ];
 
@@ -164,7 +99,7 @@ const FAQ_ITEMS = [
     id: 'svc-faq-where-to-start',
     question: 'Where should we start if we are not sure which system we need?',
     answer:
-      'Start with the leak that is currently costing the most. The Smart Website Systems page is usually the right entry point, since the other systems plug into it.',
+      'Start with the weak point that is currently easiest to see. Smart Website Systems is often the clearest entry point, but response, follow-up, local visibility, and review gaps can lead too.',
   },
   {
     id: 'svc-faq-many-at-once',
@@ -206,31 +141,14 @@ function SystemCard({ spec }: { spec: SystemCardSpec }) {
   );
 }
 
-function ModuleCard({ spec }: { spec: ModuleCardSpec }) {
-  const reg = getRegistryEntry(spec.slug);
-  if (!reg) return null;
-  return (
-    <a className='svc-lnd__card svc-lnd__card--module' href={reg.path}>
-      <header className='svc-lnd__cardHead'>
-        <span className='svc-lnd__pill'>{PARENT_DOT}</span>
-        <span className='svc-lnd__role'>{spec.parent}</span>
-      </header>
-      <h3 className='svc-lnd__cardTitle'>{reg.badge}</h3>
-      <p className='svc-lnd__cardSummary'>{spec.summary}</p>
-      <span className='svc-lnd__cardCta'>See the module</span>
-    </a>
-  );
-}
-
 function PathCard({ spec }: { spec: PathCardSpec }) {
   const reg = getRegistryEntry(spec.slug);
   if (!reg) return null;
-  const kindLabel = spec.kind === 'decision' ? 'Decision support' : 'Build surface';
   return (
-    <a className={`svc-lnd__card svc-lnd__card--path svc-lnd__card--${spec.kind}`} href={reg.path}>
+    <a className='svc-lnd__card svc-lnd__card--path' href={reg.path}>
       <header className='svc-lnd__cardHead'>
         <span className='svc-lnd__pill'>{TIER_DOT}</span>
-        <span className='svc-lnd__role'>{kindLabel}</span>
+        <span className='svc-lnd__role'>Smart Website Systems</span>
       </header>
       <h3 className='svc-lnd__cardTitle'>{reg.badge}</h3>
       <p className='svc-lnd__cardSummary'>{spec.summary}</p>
@@ -257,8 +175,8 @@ export function ServicesLanding() {
           ariaLabel={ARIA_HERO}
           className='svc-lnd-hero'
           eyebrow='Services'
-          title='Six Connected Systems. [[muted:One Front Door.]]'
-          description='Each system stands on its own and works harder when the others are in place. The pages below describe what each one actually does and where it fits.'
+          title='Website and Handling Systems. [[muted:Built Around Where Work Slips.]]'
+          description='Each service protects a different part of the path: being found, being trusted, making contact, getting a response, staying followed up, and turning good work into proof.'
           actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
           chips={['Visibility', 'Response', 'Follow-up', 'Trust', 'Recovery']}
           chipDotVariant='subtle'
@@ -266,17 +184,17 @@ export function ServicesLanding() {
 
         <SectionShell
           heading={{
-            eyebrow: 'The Six Systems',
+            eyebrow: 'Primary Systems',
             title: 'These are the working parts. Each one has a job.',
             description:
-              'Six connected systems cover visibility, instant response, ownership, trust and recovery. Most teams start with the system carrying the heaviest leak.',
+              'Five primary systems cover website clarity, local visibility, response, follow-up, and reviews. Most teams start with the system carrying the clearest leak.',
           }}
           tone='white'
           className='svc-lnd-section'
-          ariaLabel={ARIA_SIX}
+          ariaLabel={ARIA_PRIMARY}
         >
           <div className='svc-lnd__grid svc-lnd__grid--three'>
-            {SIX_SYSTEMS.map(spec => (
+            {PRIMARY_SYSTEMS.map(spec => (
               <SystemCard key={spec.slug} spec={spec} />
             ))}
           </div>
@@ -284,30 +202,12 @@ export function ServicesLanding() {
 
         <SectionShell
           heading={{
-            eyebrow: 'Operating Modules',
-            title: 'Focused modules that sit inside the connected systems.',
+            eyebrow: 'Implementation Services',
+            title: 'Practical website implementation paths under Smart Website Systems.',
             description:
-              'When the leak is narrower than a whole system, a single module is often the cleaner first step.',
+              'These are active delivery paths for the website system. They are not separate strategic pillars.',
           }}
           tone='mist'
-          className='svc-lnd-section'
-          ariaLabel={ARIA_MODULES}
-        >
-          <div className='svc-lnd__grid svc-lnd__grid--three'>
-            {OPERATING_MODULES.map(spec => (
-              <ModuleCard key={spec.slug} spec={spec} />
-            ))}
-          </div>
-        </SectionShell>
-
-        <SectionShell
-          heading={{
-            eyebrow: 'Implementation Paths',
-            title: 'Decision support and the build surfaces beneath the work.',
-            description:
-              'Comparison pages for the common forks in the road, plus the platforms used when WordPress is the right base.',
-          }}
-          tone='white'
           className='svc-lnd-section'
           ariaLabel={ARIA_PATHS}
         >
@@ -316,6 +216,23 @@ export function ServicesLanding() {
               <PathCard key={spec.slug} spec={spec} />
             ))}
           </div>
+        </SectionShell>
+
+        <SectionShell
+          heading={{
+            eyebrow: 'Revenue Recovery Layer',
+            title: 'A cross-system improvement layer, not a sixth service.',
+            description:
+              'Once activity is visible, Revenue Recovery helps find where value is still leaking across enquiries, follow-up, reviews, and repeat work.',
+          }}
+          tone='white'
+          className='svc-lnd-section'
+          ariaLabel={ARIA_RECOVERY}
+        >
+          <p className='svc-lnd__cardSummary'>
+            It can inform the review, but it does not have its own service route or sit beside the
+            five primary systems.
+          </p>
         </SectionShell>
 
         <FAQSection

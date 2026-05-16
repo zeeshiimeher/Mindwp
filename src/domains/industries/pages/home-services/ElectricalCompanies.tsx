@@ -27,11 +27,11 @@ export const electricalCompaniesIndustryPageData: IndustryDetailPageData = {
     ],
   },
   industries: ['electrical'],
-  systems: [
-    'ai-lead-handling',
-    'crm-automation',
+  primarySystem: 'lead-response-handling',
+  supportingSystems: [
+    'follow-up-crm',
     'smart-website-systems',
-    'reputation-review',
+    'reputation-review-systems',
     'local-seo-authority',
   ],
   topics: ['lead-management', 'emergency-handling', 'review-generation'],

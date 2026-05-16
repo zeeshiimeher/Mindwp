@@ -9,7 +9,8 @@ export function extractBlogMetadata(post: {
   slug: string;
   seo: { description: string };
   topics: string[];
-  systems: string[];
+  primarySystem: string;
+  supportingSystems?: string[];
   tags: string[];
   sections: Array<{ type: string; heading?: string }>;
 }): ContentMetadata {
@@ -23,7 +24,7 @@ export function extractBlogMetadata(post: {
     title: post.title,
     summary: post.seo.description,
     topics: post.topics,
-    systems: post.systems,
+    activeSystems: [post.primarySystem, ...(post.supportingSystems ?? [])],
     tags: post.tags,
     sectionHeadings,
     slug: post.slug,
@@ -37,7 +38,8 @@ export function extractResourceMetadata(resource: {
   description?: string;
   seo?: { description?: string };
   topics?: string[];
-  systems?: string[];
+  primarySystem?: string;
+  supportingSystems?: string[];
   tags?: string[];
   sections?: Array<{ type: string; heading?: string }>;
 }): ContentMetadata {
@@ -51,7 +53,10 @@ export function extractResourceMetadata(resource: {
     title: resource.title,
     summary: resource.seo?.description ?? resource.description ?? '',
     topics: resource.topics ?? [],
-    systems: resource.systems ?? [],
+    activeSystems: [
+      ...(resource.primarySystem ? [resource.primarySystem] : []),
+      ...(resource.supportingSystems ?? []),
+    ],
     tags: resource.tags ?? [],
     sectionHeadings,
     slug: resource.slug,
@@ -76,7 +81,7 @@ export function extractCaseStudyMetadata(caseStudy: {
     title: caseStudy.title,
     summary: caseStudy.seo.description,
     topics: [],
-    systems: [],
+    activeSystems: [],
     tags: caseStudy.tags ?? [],
     sectionHeadings,
     slug: caseStudy.slug,

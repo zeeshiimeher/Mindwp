@@ -1,6 +1,6 @@
 // ─── Semantic Query Generator ───────────────────────────────────────
 // Maps content metadata to visual search queries grounded in the MindWP business:
-// a digital infrastructure consultancy for local service businesses
+// website and handling systems for service businesses
 // (HVAC, plumbing, roofing, salons, dental, automotive, legal, real estate).
 //
 // Images should show REAL service professionals, workplaces, and operations —
@@ -240,7 +240,7 @@ function detectIndustry(metadata: ContentMetadata): string | null {
     metadata.title,
     metadata.summary,
     ...metadata.topics,
-    ...metadata.systems,
+    ...metadata.activeSystems,
     ...metadata.tags,
     ...metadata.sectionHeadings,
   ]
@@ -261,7 +261,7 @@ function findTopicVisuals(metadata: ContentMetadata): string[] {
     metadata.title,
     metadata.summary,
     ...metadata.topics,
-    ...metadata.systems,
+    ...metadata.activeSystems,
     ...metadata.tags,
   ]
     .join(' ')

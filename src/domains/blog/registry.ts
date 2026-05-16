@@ -113,7 +113,7 @@ export const BLOG_POSTS: Record<string, BlogPostData> = {
   'how-ai-search-changes-local-business-visibility': howAiSearchChangesLocalBusinessVisibility,
   'how-review-automation-improves-local-authority': howReviewAutomationImprovesLocalAuthority,
   'how-smart-website-systems-work-for-local-businesses': howSmartWebsiteSystemsWorkForLocalBusinesses,
-  'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation,
+  'how-to-fix-lead-response-time-in-automotive-businesses-using-follow-up-crm': howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation,
   'hvac-crm-pipeline-for-service-companies': hvacCrmPipelineForServiceCompanies,
   'hvac-emergency-call-handling-mistakes': hvacEmergencyCallHandlingMistakes,
   'hvac-local-visibility-system-for-service-areas': hvacLocalVisibilitySystemForServiceAreas,

@@ -5,10 +5,10 @@ import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionShell } from '@/components/layout/SectionShell';
 import { StatusBadge } from '@/components/primitives/StatusBadge';
-import type { ServicePageDataBySlug } from '@/domains/services/pageData';
+import type { ServicePageData } from '@/domains/services/types';
 
 interface Props {
-  data: ServicePageDataBySlug['reputation-review-systems'];
+  data: ServicePageData;
   slug: string;
 }
 

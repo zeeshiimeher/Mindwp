@@ -16,9 +16,9 @@ export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
   title: 'HVAC CRM Pipeline for Service Companies',
   publishDate: '2025-06-20',
   authorKey: 'TECHNICAL',
-  category: 'home-services-industry',
+  category: 'industry-examples',
   industries: ['hvac'],
-  systems: ['crm-automation'],
+  primarySystem: 'follow-up-crm',
   topics: ['crm-pipeline'],
   tags: ['HVAC', 'CRM Pipeline', 'Service Companies', 'Lead Management', 'Automation'],
   sections: [

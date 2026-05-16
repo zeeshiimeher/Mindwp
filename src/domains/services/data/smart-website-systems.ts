@@ -15,7 +15,7 @@ export const smartWebsiteSystemsPage = {
       'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
   }),
   slug: 'smart-website-systems',
-  systems: ['smart-website-systems'],
+  primarySystem: 'smart-website-systems',
   topics: [
     'website-infrastructure',
     'lead-capture',
@@ -86,7 +86,7 @@ export const smartWebsiteSystemsPage = {
     },
     actions: [
       {
-        label: 'Start a Conversation',
+        label: 'Request a System Review',
         href: buildContactHref({
           system: 'smart-website-systems',
           sourceType: 'page',

@@ -177,12 +177,12 @@ export const reviewAutomationSetupGuideForSalons: ResourceData = {
   title: 'Review Automation Setup Guide for Salons',
   description:
     'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
-  category: 'reputation-review',
+  category: 'reviews-proof',
   publishedAt: '2026-04-06',
-  systems: ['reputation-review'],
+  primarySystem: 'reputation-review-systems',
   industries: ['salon'],
   topics: ['review-automation'],
-  primaryService: 'reputation-review',
+  primaryService: 'reputation-review-systems',
   sections: [
     {
       type: 'hero',
@@ -250,9 +250,9 @@ export const reviewAutomationSetupGuideForSalons: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('reputation-review'),
-      content: getRelatedResourcesContent('reputation-review'),
-      resources: getRelatedResources('reputation-review', canonical),
+      heading: getRelatedResourcesHeading('reviews-proof'),
+      content: getRelatedResourcesContent('reviews-proof'),
+      resources: getRelatedResources('reviews-proof', canonical),
     },
   ],
 };

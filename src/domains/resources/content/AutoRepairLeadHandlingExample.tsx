@@ -105,7 +105,7 @@ const diy = {
 const finalCta = {
   title: 'Automate Lead Handling for Your Auto Repair Shop',
   description:
-    'Our AI Lead Handling and Smart Website Systems ensure every inquiry gets an instant response, routine services are bookable online 24/7, and urgent mechanical issues reach your team immediately.',
+    'Our Lead Response & Handling and Smart Website Systems ensure every inquiry gets an instant response, routine services are bookable online 24/7, and urgent mechanical issues reach your team immediately.',
 };
 
 export const autoRepairLeadHandlingExample: ResourceData = {
@@ -119,12 +119,13 @@ export const autoRepairLeadHandlingExample: ResourceData = {
   title: 'Auto Repair Lead Handling Example',
   description:
     'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   publishedAt: '2026-01-14',
-  systems: ['ai-lead-handling', 'smart-website-systems'],
+  primarySystem: 'lead-response-handling',
+  supportingSystems: ['smart-website-systems'],
   industries: ['automotive'],
   topics: ['lead-management'],
-  primaryService: 'ai-lead-handling',
+  primaryService: 'lead-response-handling',
   sections: [
     {
       type: 'hero',
@@ -177,9 +178,9 @@ export const autoRepairLeadHandlingExample: ResourceData = {
     },
     {
       type: 'related-resources',
-      heading: getRelatedResourcesHeading('ai-lead-handling'),
-      content: getRelatedResourcesContent('ai-lead-handling'),
-      resources: getRelatedResources('ai-lead-handling', canonical),
+      heading: getRelatedResourcesHeading('lead-response'),
+      content: getRelatedResourcesContent('lead-response'),
+      resources: getRelatedResources('lead-response', canonical),
     },
   ],
 };

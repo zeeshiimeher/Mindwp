@@ -16,11 +16,17 @@ export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
   title: 'Missed Call Recovery for Service Businesses',
   publishDate: '2024-10-30',
   authorKey: 'EDITORIAL',
-  category: 'ai-lead-handling',
+  category: 'lead-response',
   industries: [],
-  systems: ['ai-lead-handling'],
+  primarySystem: 'lead-response-handling',
   topics: ['missed-calls'],
-  tags: ['Missed Calls', 'Call Recovery', 'Service Business', 'AI Lead Handling', 'Lead Recovery'],
+  tags: [
+    'Missed Calls',
+    'Call Recovery',
+    'Service Business',
+    'Lead Response & Handling',
+    'Lead Recovery',
+  ],
   sections: [
     {
       type: 'introduction',
