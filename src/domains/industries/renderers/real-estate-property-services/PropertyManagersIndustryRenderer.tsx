@@ -32,7 +32,7 @@ export function PropertyManagersIndustryRenderer({ data }: IndustryDetailRendere
         }}
         tone='white'
       >
-        <p className='industry-reset-note'>Renderer-owned page section target.</p>
+        <p className='mw-text-subtle'>Renderer-owned page section target.</p>
       </SectionFrame>
       <FAQSection
         eyebrow={data.faq.header.eyebrow}

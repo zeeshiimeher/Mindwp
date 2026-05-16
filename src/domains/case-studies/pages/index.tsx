@@ -53,10 +53,7 @@ export function CaseStudiesPage() {
           ) : (
             <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
               {studies.map(study => (
-                <article
-                  key={study.slug}
-                  className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
-                >
+                <article key={study.slug} className='flex h-full flex-col mw-surface-card p-6'>
                   <p className='mw-text-eyebrow mw-text-signal-cyan'>{study.industryLabel}</p>
                   <h3>{study.business}</h3>
                   <p>{study.heroHeadline}</p>
@@ -116,22 +113,22 @@ export function CaseStudiesPage() {
           }}
         >
           <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
-            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+            <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Visibility</p>
               <h3>Improved visibility</h3>
               <p>Across local search, service pages, and proof surfaces.</p>
             </article>
-            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+            <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Enquiries</p>
               <h3>More qualified enquiries</h3>
               <p>From clearer paths and better intent capture.</p>
             </article>
-            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+            <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Process</p>
               <h3>Cleaner processes</h3>
               <p>Less manual chasing and fewer loose handoffs.</p>
             </article>
-            <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+            <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Growth</p>
               <h3>Sustainable growth</h3>
               <p>Built around the way the business actually operates.</p>

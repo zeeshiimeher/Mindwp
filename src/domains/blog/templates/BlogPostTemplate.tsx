@@ -319,7 +319,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
   switch (section.type) {
     case 'introduction':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Introduction</p>
           <h3>Context</h3>
           <div className='grid gap-3'>
@@ -332,7 +332,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'content':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Section {index + 1}</p>
           <h3>{section.heading}</h3>
           {renderContentValue(section.content)}
@@ -357,7 +357,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'takeaways':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Takeaways</p>
           <h3>{section.heading ?? 'Key takeaways'}</h3>
           {renderContentValue(section.content)}
@@ -376,7 +376,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'quote':
       return (
-        <blockquote className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <blockquote className='mw-surface-card-soft p-6'>
           {section.heading ? (
             <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.heading}</p>
           ) : null}
@@ -389,7 +389,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'steps':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Steps</p>
           <h3>{section.heading ?? 'Steps'}</h3>
           {renderContentValue(section.content)}
@@ -409,7 +409,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'checklist':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Checklist</p>
           <h3>{section.heading ?? 'Checklist'}</h3>
           {renderContentValue(section.content)}
@@ -428,7 +428,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'image':
       return (
-        <figure className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <figure className='mw-surface-card p-6'>
           {section.heading ? (
             <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.heading}</p>
           ) : null}
@@ -447,7 +447,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'faq':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>FAQ</p>
           <h3>Frequently Asked Questions</h3>
           <dl className='grid gap-4'>
@@ -465,7 +465,7 @@ function BlogArticleSection({ section, index }: { section: BlogPostSection; inde
 
     case 'cta':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card-soft p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Next step</p>
           <h3>{section.heading}</h3>
           <p>{section.content}</p>
@@ -493,7 +493,7 @@ function renderContentValue(content: string | string[] | undefined) {
 
 function CalloutBlock({ text }: { text: string }) {
   return (
-    <aside className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+    <aside className='mw-surface-card-soft p-6'>
       <p className='mw-text-eyebrow mw-text-signal-cyan'>Note</p>
       <p>{normalizeCalloutText(text)}</p>
     </aside>

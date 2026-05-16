@@ -334,7 +334,7 @@ function CaseStudySectionBlock({
   switch (section.type) {
     case 'hero':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Scenario</p>
           <h3>Starting point</h3>
           <div>{section.introHtml}</div>
@@ -343,7 +343,7 @@ function CaseStudySectionBlock({
 
     case 'metrics':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Metrics</p>
           <h3>The visible result markers</h3>
           <div className='grid gap-3 md:grid-cols-3'>
@@ -362,7 +362,7 @@ function CaseStudySectionBlock({
 
     case 'problem':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Problem</p>
           <h3>{section.problemHeading}</h3>
           <div className='grid gap-3'>
@@ -387,7 +387,7 @@ function CaseStudySectionBlock({
 
     case 'solution':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Solution</p>
           <h3>{section.solutionHeading}</h3>
           {section.solutionDescription ? <p>{section.solutionDescription}</p> : null}
@@ -409,7 +409,7 @@ function CaseStudySectionBlock({
 
     case 'process':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Process</p>
           <h3>How the change was implemented</h3>
           <div className='grid gap-3'>
@@ -430,7 +430,7 @@ function CaseStudySectionBlock({
 
     case 'features':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>System pieces</p>
           <h3>Features and tools used</h3>
           <div className='grid gap-3 md:grid-cols-2'>
@@ -453,7 +453,7 @@ function CaseStudySectionBlock({
 
     case 'results':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Results</p>
           <h3>Before and after</h3>
           <div className='grid gap-3 md:grid-cols-2'>
@@ -484,7 +484,7 @@ function CaseStudySectionBlock({
     case 'testimonial':
       if (!section.testimonial) return null;
       return (
-        <blockquote className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <blockquote className='mw-surface-card-soft p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Testimonial</p>
           <p>{section.testimonial.quote}</p>
           <footer className='mw-text-secondary'>
@@ -496,7 +496,7 @@ function CaseStudySectionBlock({
     case 'investment':
       if (!section.investment) return null;
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Investment</p>
           <h3>What it cost and returned</h3>
           <div className='grid gap-3 md:grid-cols-3'>
@@ -531,7 +531,7 @@ function CaseStudySectionBlock({
 
     case 'workflows':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.badge ?? 'Workflows'}</p>
           <h3>{section.title}</h3>
           {section.description ? <p>{section.description}</p> : null}
@@ -555,7 +555,7 @@ function CaseStudySectionBlock({
 
     case 'faq':
       return (
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.badge ?? 'FAQ'}</p>
           <h3>{section.title ?? 'Frequently asked questions'}</h3>
           {section.description ? <p>{section.description}</p> : null}
@@ -601,7 +601,7 @@ function ListSection({
   items: string[];
 }) {
   return (
-    <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+    <article className='mw-surface-card p-6'>
       <p className='mw-text-eyebrow mw-text-signal-cyan'>{eyebrow}</p>
       <h3>{title}</h3>
       {description ? <p>{description}</p> : null}

@@ -41,10 +41,7 @@ export default function ResourceCategoryTemplate({
         ) : (
           <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
             {resources.map(resource => (
-              <article
-                key={resource.url}
-                className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
-              >
+              <article key={resource.url} className='flex h-full flex-col mw-surface-card p-6'>
                 <div className='mb-4 flex flex-wrap items-center gap-2'>
                   <p className='mw-text-eyebrow mw-text-signal-cyan'>{resource.categoryLabel}</p>
                   {resource.freshnessBadge ? (

@@ -73,7 +73,7 @@ export function ClusterPageLayout({
                 <a
                   key={item.href}
                   href={item.href}
-                  className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)] transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
+                  className='mw-surface-card p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
                 >
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>

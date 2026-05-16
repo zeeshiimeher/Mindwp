@@ -61,10 +61,7 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
                 const catMeta = getCategoryMetadata(post.category);
 
                 return (
-                  <article
-                    key={post.slug}
-                    className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
-                  >
+                  <article key={post.slug} className='flex h-full flex-col mw-surface-card p-6'>
                     <p className='mw-text-eyebrow mw-text-signal-cyan'>
                       {catMeta?.name ?? post.category}
                     </p>

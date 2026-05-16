@@ -35,7 +35,7 @@ export function About() {
         <div className='text-center'>
           <span className='mw-text-eyebrow mw-text-signal-cyan'>About MindWP</span>
           <h1 className='mb-6'>The work is already coming in. It just keeps slipping out.</h1>
-          <p className='text-xl text-muted-foreground mb-8'>
+          <p className='text-xl mw-text-secondary mb-8'>
             A roofer misses three calls during a job and never hears back from any of them. A salon
             owner sees a no-show on the morning before payroll. A law firm watches a qualified
             enquiry sit in someone&rsquo;s inbox until the prospect signs with the next firm. None
@@ -49,12 +49,12 @@ export function About() {
       <PageSection>
         <div className='max-w-3xl'>
           <h2 className='mb-6'>What we actually do</h2>
-          <p className='text-muted-foreground mb-4'>
+          <p className='mw-text-secondary mb-4'>
             We fix what breaks between an enquiry and a paying customer. The phone that rings while
             you&rsquo;re on a roof. The form that arrives at 9pm and gets read on Monday. The quote
             that gets sent and never followed up. The five-star job that never asked for a review.
           </p>
-          <p className='text-muted-foreground'>
+          <p className='mw-text-secondary'>
             None of that is a website problem on its own, and none of it is an SEO problem on its
             own. We treat it as one connected job: the website, the routing, the follow-up, the
             visibility, the proof.
@@ -66,12 +66,12 @@ export function About() {
       <PageSection background='bg-base'>
         <div className='max-w-3xl'>
           <h2 className='mb-6'>How we think about this</h2>
-          <p className='text-muted-foreground mb-4'>
+          <p className='mw-text-secondary mb-4'>
             Most agencies sell one piece of the problem. A website. A pack of leads. A new tool. The
             piece works. The business still leaks money in the same places it did before, because
             the gap was never the piece — it was the seam between pieces.
           </p>
-          <p className='text-muted-foreground'>
+          <p className='mw-text-secondary'>
             We work the whole flow: how a customer finds you, what they hit when they land, where
             their enquiry actually ends up, who replies and how fast, and what happens after the
             job. Strong businesses are built when those steps stop dropping each other.
@@ -84,7 +84,7 @@ export function About() {
         <div className='max-w-3xl'>
           <h2 className='mb-6'>Who this is for</h2>
           <Card className='p-8'>
-            <ul className='about-page__dont-list text-foreground'>
+            <ul className='about-page__dont-list mw-text-primary'>
               <li>Service businesses where the work is real and the demand is already there.</li>
               <li>
                 Operators who know exactly which calls and follow-ups are slipping, and want it
@@ -105,7 +105,7 @@ export function About() {
         <div className='max-w-3xl'>
           <h2 className='mb-6'>Who this is not for</h2>
           <Card className='p-8'>
-            <ul className='about-page__dont-list text-foreground'>
+            <ul className='about-page__dont-list mw-text-primary'>
               <li>Anyone shopping for the cheapest template website.</li>
               <li>DIY operators who just need login access to another tool to try.</li>
               <li>Buyers who want a single SaaS product to install and walk away from.</li>

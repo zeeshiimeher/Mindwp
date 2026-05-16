@@ -1,7 +1,7 @@
 /*
  * PRIMITIVES — reusable UI atoms.
  *
- * Owns: buttons, links, cards, panels, eyebrows, status dots,
+ * Owns: buttons, links, surfaces, panels, eyebrows, signal dots,
  * icon tiles, forms, accordion primitive.
  *
  * No layout (no section padding, no containers, no page rhythm).
@@ -16,9 +16,9 @@
    ══════════════════════════════════════════════════════ */
 
 .mw-btn {
-    --_btn-bg: var(--mw-color-dark);
-    --_btn-fg: var(--mw-color-white);
-    --_btn-bg-hover: var(--mw-color-dark-hover);
+    --_btn-bg: var(--mw-bg-brand-primary);
+    --_btn-fg: var(--mw-brand-white);
+    --_btn-bg-hover: var(--mw-bg-brand-primary-hover);
     --_btn-border: transparent;
     --_btn-border-hover: transparent;
 
@@ -63,23 +63,23 @@
 
 /* Primary — dark bg, white text */
 .mw-btn--primary {
-    --_btn-bg: var(--mw-color-dark);
-    --_btn-fg: var(--mw-color-white);
-    --_btn-bg-hover: var(--mw-color-dark-hover);
+    --_btn-bg: var(--mw-bg-brand-primary);
+    --_btn-fg: var(--mw-brand-white);
+    --_btn-bg-hover: var(--mw-bg-brand-primary-hover);
     font-weight: 600;
 }
 
 /* White — white bg, dark text (hero primary button) */
 .mw-btn--white {
-    --_btn-bg: var(--mw-color-white);
-    --_btn-fg: var(--mw-color-dark);
+    --_btn-bg: var(--mw-brand-white);
+    --_btn-fg: var(--mw-bg-brand-primary);
     font-size: var(--mw-text-body-sm);
     font-weight: 600;
     padding: var(--mw-space-4) var(--mw-space-7);
 }
 
 .mw-btn--white:hover {
-    background: var(--mw-color-border-hover);
+    background: var(--mw-bg-page-hover);
 }
 
 /* Ghost text link — underline variant */
@@ -100,14 +100,53 @@
 /* Secondary — transparent with border */
 .mw-btn--secondary {
     --_btn-bg: transparent;
-    --_btn-fg: var(--mw-color-white);
-    --_btn-border: var(--mw-color-white);
-    --_btn-bg-hover: var(--mw-color-white);
-    --_btn-border-hover: var(--mw-color-white);
+    --_btn-fg: var(--mw-brand-white);
+    --_btn-border: var(--mw-brand-white);
+    --_btn-bg-hover: var(--mw-brand-white);
+    --_btn-border-hover: var(--mw-brand-white);
 }
 
 .mw-btn--secondary:hover {
-    color: var(--mw-color-dark);
+    color: var(--mw-bg-brand-primary);
+}
+
+/* ══════════════════════════════════════════════════════
+   SURFACES — shared card and panel skins for JSX builders
+   ══════════════════════════════════════════════════════ */
+
+.mw-surface-card,
+.mw-surface-card-soft,
+.mw-surface-panel,
+.mw-surface-panel-dark,
+.mw-surface-callout {
+    border-radius: var(--mw-radius-xl);
+}
+
+.mw-surface-card {
+    background: var(--mw-bg-page);
+    border: 1px solid var(--mw-border-light);
+    box-shadow: var(--mw-shadow-card);
+}
+
+.mw-surface-card-soft {
+    background: var(--mw-bg-mist);
+    border: 1px solid var(--mw-border-light);
+    box-shadow: var(--mw-shadow-sm);
+}
+
+.mw-surface-panel {
+    background: var(--mw-bg-mist);
+    border: 1px solid var(--mw-border-light);
+}
+
+.mw-surface-panel-dark {
+    background: var(--mw-bg-panel-dark);
+    border: 1px solid var(--mw-border-dark);
+}
+
+.mw-surface-callout {
+    background: var(--mw-signal-cyan-8);
+    border: 1px solid var(--mw-border-signal);
 }
 
 /* Size variants */
@@ -128,7 +167,7 @@
     pointer-events: none;
 }
 
-/* Signal dot accent — Figma: 6px cyan dot with glow, appended after label */
+/* Signal dot accent for CTA labels */
 .mw-btn__dot {
     display: inline-block;
     width: 0.375rem;
@@ -483,7 +522,7 @@
 }
 
 .mw-tabs__tab--active {
-    background: var(--mw-bg-dark);
+    background: var(--mw-bg-brand-primary);
 }
 
 /* Tab icon */

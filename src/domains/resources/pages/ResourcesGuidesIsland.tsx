@@ -34,10 +34,7 @@ export function ResourcesGuidesIsland({
     <>
       <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
         {visibleResources.map(resource => (
-          <article
-            key={resource.url}
-            className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
-          >
+          <article key={resource.url} className='flex h-full flex-col mw-surface-card p-6'>
             <p className='mw-text-eyebrow mw-text-signal-cyan'>{resource.categoryLabel}</p>
             <h3>{resource.title}</h3>
             <p>{resource.excerpt}</p>

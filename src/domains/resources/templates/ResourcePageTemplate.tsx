@@ -166,7 +166,7 @@ function GenericResourceSection({
   const items = getSectionItems(section);
 
   return (
-    <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+    <article className='mw-surface-card p-6'>
       <p className='mw-text-eyebrow mw-text-signal-cyan'>{formatSectionType(section.type)}</p>
       <h3>{heading}</h3>
       {description ? <p>{description}</p> : null}

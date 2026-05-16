@@ -47,10 +47,7 @@ export function BlogCategoryTemplate({
         ) : (
           <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
             {posts.map(post => (
-              <article
-                key={post.slug}
-                className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
-              >
+              <article key={post.slug} className='flex h-full flex-col mw-surface-card p-6'>
                 <h3>{post.title}</h3>
                 <p>{post.seo.description}</p>
 

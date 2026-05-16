@@ -78,7 +78,7 @@ export function BlogLanding() {
                 <a
                   key={category}
                   href={`/blog/category/${slug}`}
-                  className='group flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)] transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
+                  className='group flex h-full flex-col mw-surface-card p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--mw-shadow-md)]'
                 >
                   <div className='mb-5 flex items-center justify-between gap-4'>
                     <span className='grid size-10 place-items-center rounded-full border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] text-[var(--mw-signal-cyan)]'>

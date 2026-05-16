@@ -44,7 +44,7 @@ export function FeaturesLanding() {
             <div className='feature-lnd__heroContent l-stack l-stack--loose'>
               <span className='mw-text-eyebrow mw-text-signal-cyan'>Features Index</span>
               <h1>Feature Layers That Support The Main Build</h1>
-              <p className='text-muted-foreground text-lg'>
+              <p className='mw-text-secondary text-lg'>
                 These feature pages break down the capability layers that support routing,
                 communication, booking, reputation, CRM visibility, and follow-up once the core
                 website system is in place.
@@ -70,7 +70,7 @@ export function FeaturesLanding() {
                       </div>
                       <div className='feature-lnd__body'>
                         <h3 className='feature-lnd__cardTitle'>{feature.title}</h3>
-                        <p className='feature-lnd__cardText text-sm text-muted-foreground'>
+                        <p className='feature-lnd__cardText text-sm mw-text-secondary'>
                           {feature.description}
                         </p>
                       </div>

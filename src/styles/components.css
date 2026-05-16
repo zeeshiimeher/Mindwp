@@ -1,10 +1,9 @@
 /*
  * COMPONENTS — production component-level CSS shells.
  *
- * Owns: header (BEM), footer (BEM), hero-split shell, grid-cards shell.
- * Styled to match Figma Make design.
+ * Owns: header, footer, RelatedSection, FAQSection, and DecisionPanel shells.
  *
- * Does not own: primitives (buttons, badges, cards — those are in primitives.css),
+ * Does not own: primitives (buttons, surfaces, forms — those are in primitives.css),
  * layout rhythm and container utilities.
  *
  * All values use var(--mw-*) tokens from tokens.css.
@@ -12,15 +11,14 @@
 
 /* ══════════════════════════════════════════════════════
    HEADER
-   Figma: sticky top-0 z-50 backdrop-blur-md bg-white/85 border-b border-[#E6EEF3]
-   Inner: max-w-[1240px] mx-auto px-8 h-[76px] flex items-center justify-between
+   Sticky navigation shell.
    ══════════════════════════════════════════════════════ */
 
 .header {
   position: sticky;
   top: 0;
   z-index: var(--mw-z-sticky);
-  background: color-mix(in srgb, var(--mw-color-white) 85%, transparent);
+  background: var(--mw-bg-header);
   backdrop-filter: saturate(150%) blur(12px);
   -webkit-backdrop-filter: saturate(150%) blur(12px);
   border-bottom: 1px solid var(--mw-border-light);
@@ -35,7 +33,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--mw-space-4);
-  /* Figma: height 76px — use min-height so content never clips */
+  /* Stable header height; min-height prevents clipping. */
   min-height: 4.75rem;
   padding-block: var(--mw-space-3);
 }
@@ -64,10 +62,9 @@
 .header__nav-link {
   position: relative;
   font-size: var(--mw-text-label);
-  /* 13.5px — Figma */
+  /* Compact navigation label. */
   font-weight: 500;
   color: var(--mw-text-secondary);
-  /* #4C5E6F — Figma default */
   text-decoration: none;
   padding-block: var(--mw-space-1);
   letter-spacing: 0;
@@ -78,7 +75,6 @@
 
 .header__nav-link:hover {
   color: var(--mw-text-primary);
-  /* #08111F — Figma hover */
   font-weight: 600;
 }
 
@@ -118,7 +114,7 @@
 .header__mobile-panel {
   border-top: 1px solid var(--mw-border-light);
   padding-block: var(--mw-space-4);
-  background: color-mix(in srgb, var(--mw-color-white) 96%, transparent);
+  background: var(--mw-bg-header-panel);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -185,12 +181,11 @@
 
 /* ══════════════════════════════════════════════════════
    FOOTER
-   Figma: bg-[#061323] pt-20 pb-10
-   Grid: 12 col. Brand col-span-5, 3 link cols at col-span-2 each
+   Shared footer shell.
    ══════════════════════════════════════════════════════ */
 
 .footer {
-  background: var(--mw-bg-dark);
+  background: var(--mw-bg-brand-primary);
   color: var(--mw-text-on-dark);
   padding-top: clamp(3.5rem, 6vw, 5rem);
   padding-bottom: clamp(2rem, 4vw, 2.5rem);
@@ -210,7 +205,7 @@
 
 @media (min-width: 980px) {
   .footer__grid {
-    /* Figma ratio: brand ~5 / link-cols ~2 each */
+    /* Brand column stays wider than link columns. */
     grid-template-columns: 2.5fr 1fr 1fr 1fr;
   }
 }
@@ -228,7 +223,7 @@
 }
 
 .footer__description {
-  /* Figma: text-sm white/60 */
+  /* Muted footer copy. */
   color: var(--mw-text-on-dark-muted);
   font-size: var(--mw-text-body-sm);
   line-height: var(--mw-leading-relaxed);
@@ -236,7 +231,7 @@
 }
 
 .footer__heading {
-  /* Figma: 10.5px uppercase tracking-[0.14em] white/45 mb-5 */
+  /* Footer column eyebrow. */
   font-family: var(--mw-font-sans);
   font-size: var(--mw-text-eyebrow);
   font-weight: 600;
@@ -260,7 +255,7 @@
 }
 
 .footer__link {
-  /* Figma: 13.5px white/75 → white on hover */
+  /* Footer link state. */
   color: var(--mw-text-on-dark);
   text-decoration: none;
   font-size: var(--mw-text-label);
@@ -271,7 +266,7 @@
   color: var(--mw-text-on-dark-strong);
 }
 
-/* Separator — Figma: border-b border-white/8 */
+/* Footer separator. */
 .footer__separator {
   height: 1px;
   background: var(--mw-border-dark);
@@ -310,7 +305,7 @@
   opacity: 0.35;
 }
 
-/* Bottom row — Figma: flex justify-between copyright + "All systems operational" */
+/* Footer utility row. */
 .footer__bottom {
   margin-top: var(--mw-space-6);
   padding-top: var(--mw-space-6);
@@ -328,7 +323,7 @@
   margin: 0;
 }
 
-/* Status indicator — Figma: cyan dot + "All systems operational" */
+/* Footer status indicator. */
 .footer__status {
   display: inline-flex;
   align-items: center;
@@ -363,7 +358,7 @@
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  background: var(--mw-bg-dark-panel);
+  background: var(--mw-bg-panel-dark);
   border: 1px solid var(--mw-border-dark);
   border-radius: var(--mw-radius-pill);
   color: var(--mw-text-on-dark);
@@ -374,7 +369,7 @@
 }
 
 .footer__social-link:hover {
-  background: var(--mw-bg-dark-panel-hover);
+  background: var(--mw-bg-panel-dark-hover);
   color: var(--mw-text-on-dark-strong);
 }
 
@@ -398,178 +393,6 @@
   .footer__utility-link,
   .footer__social-link {
     transition: none !important;
-  }
-}
-
-/* ══════════════════════════════════════════════════════
-   HERO SPLIT — section shell
-   ══════════════════════════════════════════════════════ */
-
-.hero-split {
-  position: relative;
-  overflow: hidden;
-  padding-top: var(--mw-hero-block-top);
-  padding-bottom: var(--mw-hero-block-bottom);
-}
-
-.hero-split__inner {
-  display: grid;
-  gap: clamp(2rem, 4vw, 4rem);
-  grid-template-columns: 1fr;
-  align-items: center;
-}
-
-@media (min-width: 980px) {
-  .hero-split__inner {
-    grid-template-columns: 1.1fr 1fr;
-  }
-}
-
-.hero-split__content,
-.hero-split__visual {
-  min-width: 0;
-}
-
-.hero-split__content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--mw-space-6);
-  color: var(--mw-text-on-dark-strong);
-}
-
-/* ══════════════════════════════════════════════════════
-   GRID CARDS — section shell
-   ══════════════════════════════════════════════════════ */
-
-.grid-cards {
-  position: relative;
-}
-
-.grid-cards__list {
-  display: grid;
-  gap: var(--mw-space-4);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 640px) {
-  .grid-cards__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 980px) {
-  .grid-cards__list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ══════════════════════════════════════════════════════
-   RELATED CONTENT — progression variant
-   ══════════════════════════════════════════════════════ */
-
-.related-content__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--mw-border-light);
-  border-radius: var(--mw-radius-xl);
-  overflow: hidden;
-}
-
-/* Row layout override */
-.related-content__card {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr auto;
-  align-items: center;
-  gap: var(--mw-space-5);
-  padding: var(--mw-space-5) var(--mw-space-6);
-  background: var(--mw-bg-page);
-  border: none;
-  border-bottom: 1px solid var(--mw-border-light);
-  border-radius: 0;
-  box-shadow: none;
-  text-decoration: none;
-  transition: background var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.related-content__item:last-child .related-content__card {
-  border-bottom: none;
-}
-
-.related-content__card:hover {
-  background: var(--mw-bg-mist);
-  transform: none;
-  box-shadow: none;
-  border-color: transparent;
-}
-
-.related-content__head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-
-.related-content__index {
-  font-size: var(--mw-text-body);
-  font-weight: 700;
-  color: var(--mw-text-subtle);
-  line-height: 1;
-}
-
-.related-content__step {
-  display: none;
-}
-
-.related-content__body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--mw-space-1);
-}
-
-.related-content__title {
-  font-size: var(--mw-text-body);
-  font-weight: 600;
-  color: var(--mw-text-primary);
-  margin: 0;
-  line-height: var(--mw-leading-snug);
-}
-
-.related-content__summary {
-  font-size: var(--mw-text-label);
-  color: var(--mw-text-secondary);
-  margin: 0;
-  line-height: var(--mw-leading-body);
-}
-
-.related-content__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--mw-space-1-5);
-  font-size: var(--mw-text-label);
-  font-weight: 500;
-  color: var(--mw-text-subtle);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color var(--mw-dur-fast) var(--mw-ease-out);
-}
-
-.related-content__card:hover .related-content__cta {
-  color: var(--mw-text-primary);
-}
-
-@media (max-width: 640px) {
-  .related-content__card {
-    grid-template-columns: 2rem 1fr;
-    gap: var(--mw-space-3);
-    padding: var(--mw-space-4);
-  }
-
-  .related-content__cta {
-    display: none;
   }
 }
 
@@ -649,7 +472,7 @@
   padding: var(--mw-space-1) var(--mw-space-2);
   border-radius: var(--mw-radius-sm);
   background: var(--mw-signal-green-10);
-  color: var(--mw-color-dark-hover);
+  color: var(--mw-bg-brand-primary-hover);
   font-size: var(--mw-text-xs);
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -762,7 +585,7 @@
   height: 42rem;
   border-radius: 50%;
   background: radial-gradient(circle at center,
-      color-mix(in srgb, var(--mw-signal-cyan) 16%, transparent) 0%,
+      var(--mw-glow-decision-cyan) 0%,
       transparent 65%);
   top: -14rem;
   right: -8rem;
@@ -778,7 +601,7 @@
   height: 24rem;
   border-radius: 50%;
   background: radial-gradient(circle at center,
-      color-mix(in srgb, var(--mw-signal-teal) 12%, transparent) 0%,
+      var(--mw-glow-decision-teal) 0%,
       transparent 70%);
   bottom: -8rem;
   left: 5%;
@@ -838,7 +661,7 @@
   font-weight: 700;
   line-height: var(--mw-leading-heading);
   letter-spacing: var(--mw-tracking-heading);
-  color: var(--mw-color-white);
+  color: var(--mw-brand-white);
 }
 
 .mw-decision-panel__title--muted {
@@ -864,7 +687,7 @@
 .mw-decision-panel__expectations {
   grid-column: span 5;
   border-radius: var(--mw-radius-xl);
-  background: var(--mw-bg-dark-panel);
+  background: var(--mw-bg-panel-dark);
   border: 1px solid var(--mw-border-dark);
   padding: var(--mw-space-6);
   backdrop-filter: blur(4px);

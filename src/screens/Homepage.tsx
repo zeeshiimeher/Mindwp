@@ -123,7 +123,7 @@ function HomeRecognitionSection() {
       }}
     >
       <div className='grid gap-5 lg:grid-cols-3'>
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Demand exists</p>
           <h3>People are already showing intent</h3>
           <p>
@@ -132,7 +132,7 @@ function HomeRecognitionSection() {
           </p>
         </article>
 
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Ownership breaks</p>
           <h3>The handoff is where work slips</h3>
           <p>
@@ -141,7 +141,7 @@ function HomeRecognitionSection() {
           </p>
         </article>
 
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>System needed</p>
           <h3>The fix is not one more page</h3>
           <p>

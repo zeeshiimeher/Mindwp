@@ -23,10 +23,7 @@ export function BlogPostsListIsland({ posts, postsPerPage }: BlogPostsListIsland
     <>
       <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
         {visiblePosts.map(post => (
-          <article
-            key={post.slug}
-            className='flex h-full flex-col rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'
-          >
+          <article key={post.slug} className='flex h-full flex-col mw-surface-card p-6'>
             <p className='mw-text-eyebrow mw-text-signal-cyan'>
               {getCategoryMetadata(post.category)?.name ?? post.category}
             </p>

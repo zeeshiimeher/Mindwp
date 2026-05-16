@@ -132,8 +132,20 @@ h6 {
     color: var(--mw-text-on-dark-muted);
 }
 
+.mw-text-on-dark-dim {
+    color: var(--mw-text-on-dark-dim);
+}
+
+.mw-text-on-dark-strong {
+    color: var(--mw-text-on-dark-strong);
+}
+
 .mw-text-signal-cyan {
     color: var(--mw-signal-cyan);
+}
+
+.mw-text-signal-teal {
+    color: var(--mw-signal-teal);
 }
 
 .mw-text-signal-amber {
@@ -146,4 +158,8 @@ h6 {
 
 .mw-text-signal-green {
     color: var(--mw-signal-green);
+}
+
+.mw-text-signal-purple {
+    color: var(--mw-signal-purple);
 }

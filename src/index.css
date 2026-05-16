@@ -5,9 +5,9 @@
  *   1. tokens    — design token source of truth (only file with raw values)
  *   2. reset     — minimal browser normalisation
  *   3. typography — type scale defaults
- *   4. layout    — containers, grids, section rhythm, bg utilities
- *   5. primitives — UI atoms (buttons, badges, cards, forms)
- *   6. components — component shells (header, footer, hero-split)
+ *   4. layout    — containers, grids, SectionFrame, HeroFrame
+ *   5. primitives — buttons, surfaces, signals, forms
+ *   6. components — header, footer, RelatedSection, FAQSection, DecisionPanel
  *   7. Tailwind layers last — utility classes must win when used
  */
 
@@ -17,17 +17,6 @@
 @import './styles/layout.css';
 @import './styles/primitives.css';
 @import './styles/components.css';
-@import './styles/pages/home.css';
-@import './styles/services/smart-website.css';
-@import './styles/services/local-seo.css';
-@import './styles/industries/category.css';
-@import './styles/industries/detail.css';
-@import './styles/industries/home-services.css';
-@import './styles/industries/automotive-services.css';
-@import './styles/industries/local-appointment-businesses.css';
-@import './styles/industries/real-estate-property-services.css';
-@import './styles/industries/beauty-personal-care.css';
-@import './styles/industries/legal-professional-services.css';
 
 @tailwind base;
 @tailwind components;

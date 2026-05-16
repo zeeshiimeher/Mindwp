@@ -55,7 +55,7 @@ export function BlogPostShareIsland({ title }: BlogPostShareIslandProps) {
 
   return (
     <div className='blog-post__share'>
-      <span className='text-sm text-muted-foreground'>Share:</span>
+      <span className='text-sm mw-text-secondary'>Share:</span>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button type='button' className='mw-btn mw-btn--secondary'>

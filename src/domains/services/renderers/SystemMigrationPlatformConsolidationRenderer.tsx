@@ -127,7 +127,7 @@ function SystemMigrationPlatformConsolidationRecognitionSection() {
       }}
     >
       <div className='grid gap-5 lg:grid-cols-3'>
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Visitor clarity</p>
           <h3>The visitor understands the offer</h3>
           <p>
@@ -136,7 +136,7 @@ function SystemMigrationPlatformConsolidationRecognitionSection() {
           </p>
         </article>
 
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Captured with context</p>
           <h3>The enquiry lands somewhere useful</h3>
           <p>
@@ -145,7 +145,7 @@ function SystemMigrationPlatformConsolidationRecognitionSection() {
           </p>
         </article>
 
-        <article className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-sm)]'>
+        <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Owned follow-up</p>
           <h3>The next step has an owner</h3>
           <p>

@@ -292,7 +292,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
         <div className='contact-page-hero-container-1'>
           <div className='contact-page-hero-content text-center'>
             <h1 className='contact-page-hero-heading-1'>{primaryCtaLabel}</h1>
-            <p className='contact-page-hero-text-1 text-xl text-muted-foreground l-container l-container--narrow'>
+            <p className='contact-page-hero-text-1 text-xl mw-text-secondary l-container l-container--narrow'>
               Tell us what you&apos;re trying to fix, improve, or build. We&apos;ll review it and
               reply with the right next step.
             </p>
@@ -315,7 +315,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                     <h2 className='contact-page-success-heading'>
                       Thanks — your message is in. We&apos;ll reply within one working day.
                     </h2>
-                    <p className='contact-page-success-text text-muted-foreground'>
+                    <p className='contact-page-success-text mw-text-secondary'>
                       {successMessage ||
                         "A real person reads every enquiry. We'll come back with the right next step — not a generic reply, not a sales call."}
                     </p>
@@ -337,7 +337,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                   </div>
                 ) : (
                   <>
-                    <p className='contact-page-form-text-1 mb-3 text-sm font-medium text-foreground'>
+                    <p className='contact-page-form-text-1 mb-3 text-sm font-medium mw-text-primary'>
                       Tell us where things are slipping — calls, follow-up, visibility, anything
                       that&apos;s costing you work. A real person reads it and replies within one
                       working day.
@@ -349,12 +349,12 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                       <input type='hidden' name='source' value={normalizedSource} />
 
                       {hasContext ? (
-                        <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                        <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
                           We&apos;ll include your page context with this message so we know what you
                           were looking at.
                         </p>
                       ) : (
-                        <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                        <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
                           We&apos;ll include that you reached out directly if no page context is
                           available.
                         </p>
@@ -407,7 +407,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                             onChange={event =>
                               handleInputChange('businessType', event.target.value)
                             }
-                            className='contact-page-form-input-3 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background'
+                            className='contact-page-form-input-3 mw-select'
                           >
                             <option value=''>Select business type</option>
                             {BUSINESS_TYPE_OPTIONS.map(option => (
@@ -428,7 +428,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                             required
                             value={formState.primaryGoal}
                             onChange={event => handleInputChange('primaryGoal', event.target.value)}
-                            className='contact-page-form-input-4 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background'
+                            className='contact-page-form-input-4 mw-select'
                           >
                             <option value=''>Select primary goal</option>
                             {PRIMARY_GOAL_OPTIONS.map(option => (
@@ -451,7 +451,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                             onChange={event =>
                               handleInputChange('revenueRange', event.target.value)
                             }
-                            className='contact-page-form-input-5 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background'
+                            className='contact-page-form-input-5 mw-select'
                           >
                             <option value=''>Select revenue range</option>
                             {REVENUE_RANGE_OPTIONS.map(option => (
@@ -472,7 +472,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                             required
                             value={formState.timeline}
                             onChange={event => handleInputChange('timeline', event.target.value)}
-                            className='contact-page-form-input-6 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background'
+                            className='contact-page-form-input-6 mw-select'
                           >
                             <option value=''>Select timeline</option>
                             {TIMELINE_OPTIONS.map(option => (
@@ -484,7 +484,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         </div>
                       </div>
 
-                      <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                      <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
                         We use this to prioritize your request and tailor your response.
                       </p>
 
@@ -557,14 +557,14 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         )}
                       </button>
 
-                      <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                      <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
                         ✔ No spam
                         <br />
                         ✔ Personal response
                         <br />✔ Reply within 24 hours
                       </p>
 
-                      <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                      <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
                         We&apos;ll reply to the email you provide with the clearest next step. For
                         urgent matters, email hello@mindwp.com directly.
                       </p>
@@ -591,12 +591,12 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         </div>
                         <div className={`contact-page-info-content-${index + 1}`}>
                           <div
-                            className={`contact-page-info-label-${index + 1} text-sm text-muted-foreground`}
+                            className={`contact-page-info-label-${index + 1} text-sm mw-text-secondary`}
                           >
                             {info.label}
                           </div>
                           <div
-                            className={`contact-page-info-value-${index + 1} font-medium text-foreground`}
+                            className={`contact-page-info-value-${index + 1} font-medium mw-text-primary`}
                           >
                             {info.value}
                           </div>
@@ -637,7 +637,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         {faq.question}
                       </h4>
                       <p
-                        className={`contact-page-faq-answer-${index + 1} text-sm text-muted-foreground`}
+                        className={`contact-page-faq-answer-${index + 1} text-sm mw-text-secondary`}
                       >
                         {faq.answer}
                       </p>
