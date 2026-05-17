@@ -48,7 +48,7 @@ Conversion behavior must follow:
 
 If this file conflicts with those docs, fix the conflict.
 
-Conversion should support the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Revenue Recovery is a cross-system improvement layer, not a primary service page or CTA category.
+Conversion should support the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Revenue Recovery is a cross-system improvement layer, not a primary service page, route, page type, or CTA category.
 
 ---
 
@@ -63,7 +63,7 @@ In the MindWP build system:
 - Final CTA placement can move while the page is being designed.
 - `DecisionPanel` is useful, but not mandatory for every section.
 - Contact helpers are useful, but must not force weak section composition.
-- Registry, count, and position enforcement are deferred until the approved page system exists.
+- Registry, count, and position enforcement are extracted only after the approved page system exists.
 
 The strategic rule matters more than component enforcement:
 
@@ -114,7 +114,7 @@ Good CTAs should:
 - tell the buyer what happens next
 - avoid pressure, hype, or fake urgency
 - make the next step feel practical and safe
-- help the buyer understand what is working, what is leaking, and what should be fixed first
+- help the buyer understand what is working, what is leaking, and what should be fixed first across the website system and connected handling path
 
 Do not invent proof, savings, guarantees, rankings, reviews, or revenue results to make a CTA stronger.
 
@@ -131,6 +131,7 @@ Preferred CTA concepts:
 - Review my enquiry flow
 - Find where work is slipping
 - Check my website system
+- Review my connected handling path
 - Map my follow-up gaps
 - Talk through my current setup
 - Request a system review
@@ -147,7 +148,7 @@ The CTA should usually imply:
 - we will look at the current situation
 - we will identify weak points
 - we will explain what should be fixed first
-- we will not force the buyer into a generic package or platform demo
+- we will not force the buyer into a generic package, platform demo, or builder-service conversation
 
 ---
 
@@ -185,12 +186,12 @@ CTA direction:
 
 - Check my website system
 - Review my service-page clarity
-- Find where my website loses enquiries
+- Find where my website and handling path lose work
 - Review my enquiry path
 
 CTA should imply:
 
-- the website will be reviewed as a clarity and enquiry system
+- the website will be reviewed as a conversion-focused website system connected to the handling path around it
 - the focus is not just visual design
 - the buyer will understand what blocks trust, clarity, or action
 
@@ -308,20 +309,20 @@ Avoid:
 
 ### Implementation Service Pages
 
-Implementation service pages use Smart Website Systems CTA posture.
+Implementation service pages use Smart Website Systems CTA posture because they are active implementation pathways under conversion-focused website systems.
 
 CTA direction:
 
 - Check my website system
 - Review my service-page clarity
 - Review my website rebuild path
-- Find where my website loses enquiries
+- Find where my website and handling path lose work
 - Talk through the right implementation path
 
 CTA should imply:
 
 - the implementation choice serves the website system
-- the focus is clarity, trust, enquiry capture, maintainability, and handoff
+- the focus is clarity, trust, enquiry capture, maintainability, and connected handling
 - MindWP is not selling a generic builder package
 
 Avoid:
@@ -342,7 +343,7 @@ Homepage CTAs should diagnose the whole path, not one random service.
 
 Best direction:
 
-- Review my enquiry flow
+- Review my website and handling path
 - Find where work is slipping
 - Request a system review
 
@@ -368,7 +369,7 @@ Industry page CTAs should connect to that industry's working reality.
 
 Example directions:
 
-- Review how enquiries move through your roofing business
+- Review how work moves from website visit to response, follow-up, and proof in your roofing business
 - Find where HVAC calls and follow-up are slipping
 - Check how salon bookings and reviews are handled
 - Map missed calls and quote follow-up in your shop
@@ -397,7 +398,7 @@ Good direction:
 
 - Use this to review your enquiry path
 - Compare this with your current follow-up process
-- Map this against your website and response flow
+- Map this against your website system and connected handling path
 
 Resources should not trap readers in endless education. They should route upward when the reader is ready.
 
@@ -408,7 +409,7 @@ Case-study CTAs should connect proof to the relevant active system or industry c
 Good direction:
 
 - Review a similar weak point in your business
-- See where this kind of leak may exist in your enquiry flow
+- See where this kind of leak may exist in your website system or connected handling path
 - Talk through a similar system for your business
 
 Case-study CTAs should not overclaim or imply the same outcome is guaranteed.
@@ -522,7 +523,7 @@ Good fit:
 
 - established service business
 - real enquiries or customer activity already exist
-- business wants better handling, clarity, response, follow-up, or proof
+- business wants better website clarity, connected handling, response, follow-up, or proof
 - owner wants practical structure, not just a prettier website
 
 Poor fit:
@@ -576,16 +577,16 @@ Before approving a CTA, confirm:
 - it avoids CRM reseller positioning
 - it avoids rankings or revenue guarantees
 - it does not invent proof
-- it does not treat Revenue Recovery as a primary service page
-- it helps the buyer understand what is working, what is leaking, or what should be fixed first
+- it does not treat Revenue Recovery as a primary service page, route, page type, or CTA category
+- it helps the buyer understand what is working, what is leaking, or what should be fixed first across the website system and connected handling path
 
 If any fail, rewrite the CTA.
 
 ---
 
-## DEFERRED CTA SYSTEMS
+## CTA SYSTEMS — EXTRACT AFTER APPROVAL
 
-Rebuild stricter CTA rules later after the approved page system exists:
+Extract stricter CTA rules after the approved page system exists:
 
 - canonical labels
 - contact-source contracts
@@ -596,7 +597,7 @@ Rebuild stricter CTA rules later after the approved page system exists:
 - CTA-to-active-system mapping
 - CTA-to-page-type mapping
 
-Do not enforce these prematurely.
+Do not enforce these before the page system is approved.
 
 The current priority is approved page meaning, strong section design, and correct conversion intent.
 
@@ -615,7 +616,7 @@ MindWP CTAs must not:
 - use fake urgency
 - use generic agency CTA language as the main strategy
 - use SaaS demo/trial language as the main strategy
-- treat Revenue Recovery as a primary service page
+- treat Revenue Recovery as a primary service page, route, page type, or CTA category
 - create pressure before recognition
 - hide the next step from the buyer
 

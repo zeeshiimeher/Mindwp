@@ -395,7 +395,7 @@ Public copy must not mention backend CRM, automation, AI, form, booking, or whit
 
 Public copy should sell:
 
-- better handling
+- connected handling
 - faster response
 - visible follow-up
 - cleaner ownership
@@ -440,7 +440,7 @@ Lead with:
 - enquiry capture
 - performance where relevant
 - maintainable editing where relevant
-- handoff into response or follow-up
+- connected handling around response, follow-up, reviews, and proof
 - fit for a service-business website system
 
 Do not lead with:
@@ -680,6 +680,7 @@ Preferred CTA direction:
 - Review my enquiry flow
 - Find where work is slipping
 - Check my website system
+- Review my connected handling path
 - Map my follow-up gaps
 - Talk through my current setup
 - Request a system review
@@ -860,7 +861,7 @@ Run after every meaningful write or rewrite.
 - [ ] FAQ uses the reader's voice.
 - [ ] Page reflects one primary system.
 - [ ] Page reflects one active system from the approved offer model.
-- [ ] Revenue Recovery is not treated as a primary service page.
+- [ ] Revenue Recovery is not treated as a primary service page, route, or page type.
 
 ### Builder Check
 
@@ -901,7 +902,7 @@ Problem:
 “My website looks fine but it does not explain the business clearly or bring in enough useful enquiries.”
 
 Angle:
-The website is not just a design surface. It is the visible control point for offer clarity, trust, enquiry capture, and the next step.
+The website is not just a design surface. It is the visible control point for offer clarity, trust, enquiry capture, and the connected handling path around it.
 
 ### Local SEO Authority Systems
 
@@ -1047,6 +1048,7 @@ Before finalising public copy, confirm:
 
 - the copy starts with the buyer's real situation
 - the copy follows the active offer model in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
+- the copy supports conversion-focused website systems with connected handling where the full offer needs to be explained
 - the copy does not revive removed service names
 - the copy does not mention backend tool/platform names
 - the copy does not make AI the product

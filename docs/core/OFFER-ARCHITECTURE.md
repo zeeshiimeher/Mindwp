@@ -34,7 +34,7 @@ Do not turn MindWP into a random service catalog.
 
 ## CORE OFFER DECISION
 
-MindWP sells premium website systems and connected business-handling systems for established service businesses.
+MindWP sells conversion-focused website systems with connected handling for established service businesses.
 
 MindWP does not sell isolated pages, isolated automations, isolated SEO tasks, isolated CRM setup, isolated review software, or disconnected digital services.
 
@@ -79,19 +79,19 @@ Work can slip away when:
 - good work does not become visible proof
 - repeat and referral value is not captured
 
-MindWP builds the website and connected systems around those weak points so work gets handled properly.
+MindWP builds conversion-focused website systems with connected handling around those weak points so work gets handled properly.
 
 ---
 
 ## WHAT MINDWP SELLS
 
-MindWP sells systemized business handling around the website.
+MindWP sells conversion-focused website systems connected to the way service businesses handle response, follow-up, reviews, proof, and recovery.
 
 This includes:
 
-- premium WordPress website systems
+- conversion-focused WordPress website systems
 - service-page clarity
-- conversion-focused enquiry paths
+- conversion-focused enquiry and handling paths
 - local visibility and authority support
 - response and routing systems
 - follow-up and CRM visibility
@@ -166,7 +166,7 @@ It may bridge to those systems when relevant, but it must not absorb them.
 
 #### Public meaning
 
-Website and service-page systems that make the offer clear and send enquiries to the right next step.
+Conversion-focused website and service-page systems that make the offer clear and connect enquiries to the right next step.
 
 #### Buyer problem
 
@@ -583,7 +583,7 @@ The active systems connect through the service-business journey:
 This is the preferred public explanation.
 
 The systems should not be presented as unrelated services.
-They should be presented as connected handling points.
+They should be presented as connected handling points around the website system.
 
 Wrong direction:
 
@@ -591,7 +591,7 @@ Wrong direction:
 
 Right direction:
 
-- “Customers find you, check you, contact you, wait for a response, receive follow-up, and decide whether to trust you again. MindWP builds the website and connected systems around those moments.”
+- “Customers find you, check you, contact you, wait for a response, receive follow-up, and decide whether to trust you again. MindWP builds conversion-focused website systems with connected handling around those moments.”
 
 ---
 
@@ -611,7 +611,7 @@ Avoid structures that read like:
 
 This flattens the strategy and makes MindWP sound generic.
 
-Instead, group the offer around business handling:
+Instead, group the offer around the website system and connected handling:
 
 - make the business easier to find and verify
 - make the offer easier to understand
@@ -634,7 +634,7 @@ A system card, service page, or homepage section should always answer:
 
 ## IMPLEMENTATION PATHWAYS
 
-Implementation services live under Smart Website Systems because they are ways of delivering the website system, not separate strategic pillars.
+Implementation services live under Smart Website Systems because they are ways of delivering conversion-focused website systems, not separate strategic pillars.
 
 Approved future source direction:
 
@@ -745,7 +745,7 @@ The public website must not imply MindWP is a reseller of the backend platform.
 
 Public copy should sell:
 
-- better handling
+- connected handling
 - faster response
 - visible follow-up
 - cleaner ownership
@@ -829,7 +829,7 @@ The homepage should first establish:
 
 - the business already has activity
 - work is slipping between moments
-- the website and connected systems should protect those moments
+- the website system and connected handling should protect those moments
 - MindWP builds the structure around that path
 
 The homepage may introduce the five active systems after the public path is clear.
@@ -841,7 +841,7 @@ Preferred homepage explanation order:
 1. Business reality
 2. Work slipping away
 3. Public buyer path
-4. MindWP's connected system response
+4. MindWP's website system and connected handling response
 5. Active systems
 6. Proof or proof-style examples
 7. Diagnostic CTA
@@ -949,6 +949,7 @@ Better CTA directions:
 - Review my enquiry flow
 - Find where work is slipping
 - Check my website system
+- Review my connected handling path
 - Map my follow-up gaps
 - Talk through my current setup
 - Request a system review
@@ -965,7 +966,7 @@ The CTA promise should be:
 
 - we will help you see what is working
 - what is leaking
-- what should be fixed first
+- what should be fixed first across the website system and connected handling path
 
 ---
 
@@ -978,7 +979,7 @@ They do not prove system thinking.
 
 MindWP should eventually build proof around:
 
-- before/after handling maps
+- before/after website-and-handling maps
 - enquiry flow improvements
 - missed-call recovery examples
 - follow-up visibility examples
@@ -1089,7 +1090,7 @@ Do not create or revive:
 - fake review positioning
 - platform-name public positioning
 
-Do not use Revenue Recovery as a primary service page until the docs explicitly approve it.
+Do not use Revenue Recovery as a primary service page, route, page type, or active system.
 
 ---
 
