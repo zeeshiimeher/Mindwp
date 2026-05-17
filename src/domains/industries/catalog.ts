@@ -10,10 +10,7 @@ import {
   Wrench,
 } from 'lucide-react';
 
-export type IndustryCategory =
-  | 'automotive-services'
-  | 'beauty-personal-care'
-  | 'home-services';
+export type IndustryCategory = 'automotive-services' | 'beauty-personal-care' | 'home-services';
 
 export type IndustryPriority = 'coverage' | 'expansion' | 'primary';
 

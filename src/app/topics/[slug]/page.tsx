@@ -73,6 +73,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const cluster = getTopicCluster(slug);
 
+  // Don't render topic pages with no content
+  if (cluster.nodes.length === 0) {
+    notFound();
+  }
+
   return (
     <ClusterPageLayout
       title={`${CLUSTER_PAGE_CONFIG.topic.titlePrefix} ${formatSlugLabel(slug)}`}

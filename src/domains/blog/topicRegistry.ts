@@ -22,18 +22,15 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'lead-management': {
     name: 'Lead Management',
-    description:
-      'How enquiries are captured, routed, qualified, and followed up.',
+    description: 'How enquiries are captured, routed, qualified, and followed up.',
   },
   'missed-calls': {
     name: 'Missed Calls',
-    description:
-      'What happens when calls are unanswered and how the response path can recover.',
+    description: 'What happens when calls are unanswered and how the response path can recover.',
   },
   'lead-response-time': {
     name: 'Lead Response Time',
-    description:
-      'Why response speed matters when calls, forms, and messages arrive.',
+    description: 'Why response speed matters when calls, forms, and messages arrive.',
   },
   'review-generation': {
     name: 'Review Generation',
@@ -41,28 +38,23 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'booking-automation': {
     name: 'Booking Support',
-    description:
-      'Booking paths that make the next step easier for customers and teams.',
+    description: 'Booking paths that make the next step easier for customers and teams.',
   },
   'conversion-optimization': {
     name: 'Enquiry Conversion',
-    description:
-      'Helping visitors understand, trust, and take the right next step.',
+    description: 'Helping visitors understand, trust, and take the right next step.',
   },
   'crm-visibility': {
     name: 'Follow-Up Visibility',
-    description:
-      'Seeing who owns each enquiry, what its status is, and what should happen next.',
+    description: 'Seeing who owns each enquiry, what its status is, and what should happen next.',
   },
   'follow-up': {
     name: 'Follow-Up',
-    description:
-      'Follow-up ownership, reminders, and next steps that do not depend on memory.',
+    description: 'Follow-up ownership, reminders, and next steps that do not depend on memory.',
   },
   'lead-capture': {
     name: 'Lead Capture',
-    description:
-      'Calls, forms, and messages landing somewhere useful.',
+    description: 'Calls, forms, and messages landing somewhere useful.',
   },
   'lead-routing': {
     name: 'Lead Routing',
@@ -84,8 +76,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'crm-integration': {
     name: 'Website to Follow-Up Handoff',
-    description:
-      'Connecting website enquiries to visible ownership and follow-up.',
+    description: 'Connecting website enquiries to visible ownership and follow-up.',
   },
   'crm-enabled-websites': {
     name: 'Follow-Up Ready Websites',
@@ -107,8 +98,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'review-automation': {
     name: 'Review Request Timing',
-    description:
-      'Review requests that happen close to completed work.',
+    description: 'Review requests that happen close to completed work.',
   },
   'feedback-loops': {
     name: 'Feedback Loops',
@@ -156,8 +146,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'crm-pipeline': {
     name: 'Enquiry Status',
-    description:
-      'Clear stages that show where each enquiry or quote stands.',
+    description: 'Clear stages that show where each enquiry or quote stands.',
   },
   'client-reactivation': {
     name: 'Client Reactivation',
@@ -170,8 +159,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'customer-lifetime-value': {
     name: 'Customer Lifetime Value',
-    description:
-      'Understanding repeat value without turning it into a broad growth promise.',
+    description: 'Understanding repeat value without turning it into a broad growth promise.',
   },
   'emergency-handling': {
     name: 'Emergency Handling',
@@ -180,8 +168,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'lifetime-value': {
     name: 'Lifetime Value',
-    description:
-      'Repeat and referral value that becomes easier to see and handle.',
+    description: 'Repeat and referral value that becomes easier to see and handle.',
   },
   'negative-reviews': {
     name: 'Negative Reviews',
@@ -194,8 +181,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'pipeline-architecture': {
     name: 'Status Architecture',
-    description:
-      'Status stages that match how enquiries and quotes actually move.',
+    description: 'Status stages that match how enquiries and quotes actually move.',
   },
   'pipeline-visibility': {
     name: 'Status Visibility',
@@ -203,8 +189,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'revenue-tracking': {
     name: 'Value Tracking',
-    description:
-      'Understanding which enquiries and follow-up paths create real work.',
+    description: 'Understanding which enquiries and follow-up paths create real work.',
   },
   'service-pages': {
     name: 'Service Pages',
@@ -213,8 +198,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   },
   'service-reminders': {
     name: 'Service Reminders',
-    description:
-      'Reminder paths for appointments, follow-ups, and repeat service moments.',
+    description: 'Reminder paths for appointments, follow-ups, and repeat service moments.',
   },
 };
 

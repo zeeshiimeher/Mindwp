@@ -37,11 +37,7 @@ export default function IndustriesLanding() {
             { label: PRIMARY_CTA_LABEL, href: ctaHref, variant: 'primary' },
             { label: 'Read where it leaks', href: '#categories', variant: 'ghost' },
           ]}
-          chips={[
-            { label: 'Home Services' },
-            { label: 'Automotive' },
-            { label: 'Beauty' },
-          ]}
+          chips={[{ label: 'Home Services' }, { label: 'Automotive' }, { label: 'Beauty' }]}
           tone='gradient-hero'
         />
 
