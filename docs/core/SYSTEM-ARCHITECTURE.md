@@ -185,14 +185,14 @@ If source code conflicts with active docs, update source code during a source-cl
 
 ## ACTIVE COMMANDS
 
-- `npm run dev`
-- `npm run build`
-- `npm run lint`
-- `npm run lint:fix`
-- `npm run typecheck`
-- `npm run check:names`
-- `npm run check:minimal`
-- `npm run check:frontend`
+- `pnpm dev`
+- `pnpm build`
+- `pnpm lint`
+- `pnpm lint:fix`
+- `pnpm typecheck`
+- `pnpm check:names`
+- `pnpm check:minimal`
+- `pnpm check:frontend`
 
 Use `check:frontend` after visual/page work to catch runtime crashes.
 

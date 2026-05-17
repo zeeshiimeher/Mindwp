@@ -96,13 +96,13 @@ Extraction is a cleanup phase, not the design starting point.
 
 ## Active Commands
 
-- `npm run dev`
-- `npm run build`
-- `npm run lint`
-- `npm run typecheck`
-- `npm run check:names`
-- `npm run check:minimal`
-- `npm run check:frontend`
+- `pnpm dev`
+- `pnpm build`
+- `pnpm lint`
+- `pnpm typecheck`
+- `pnpm check:names`
+- `pnpm check:minimal`
+- `pnpm check:frontend`
 
 ---
 

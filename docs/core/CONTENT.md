@@ -47,7 +47,7 @@ Metadata, relationships, related-content routing, and final data extraction happ
 - Other page types escalate upward; they do not absorb service-page behavior.
 - Page type, page intent, CTA posture, and content behavior must agree.
 - Every service, feature, industry, blog, resource, or case-study page must resolve into one active system unless it is a generic structural page.
-- Revenue Recovery is a cross-system improvement layer, not a primary service page or page type.
+- Revenue Recovery is a cross-system improvement layer, not a primary service page, route, or page type.
 - Structure alone does not prove authority, specificity, visual quality, or conversion strength.
 - Metadata, relationships, and related-content routing are extracted after the approved page system is clear.
 
@@ -82,13 +82,13 @@ They are the only page type allowed to carry the full decision/conversion struct
 
 Every service page must resolve to one active system from [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
-Revenue Recovery must not be created as a primary service page unless the active docs are intentionally updated later.
+Revenue Recovery must not be created as a primary service page.
 
 ### Implementation Service
 
-Implementation service pages are implementation pathways under Smart Website Systems.
+Implementation service pages are active implementation pathways under Smart Website Systems.
 
-They may explain WordPress, Elementor, Bricks, Divi, WooCommerce, and website rebuild decisions, but they must resolve upward to Smart Website Systems.
+They may explain WordPress, Elementor, Bricks, Divi, WooCommerce, and website rebuild decisions, but they must resolve upward to conversion-focused website systems, not generic web design or builder-service positioning.
 
 They are allowed to describe practical delivery choices, platform fit, editing, performance, maintainability, content structure, ecommerce needs, and rebuild scope.
 
@@ -98,7 +98,7 @@ They must not:
 - become generic builder-agency pages
 - behave like random service catalog pages
 - lead with technology before the business problem is clear
-- disconnect from website clarity, trust, enquiry capture, and handoff improvement
+- disconnect from website clarity, trust, enquiry capture, and connected handling improvement
 
 ### Feature
 
@@ -124,7 +124,7 @@ Resource pages explain frameworks, architectures, comparisons, checklists, and i
 
 They clarify how the system works without replacing service-page decision support.
 
-Resources may explain Revenue Recovery as a framework or improvement lens, but they must not turn Revenue Recovery into a primary service offer.
+Resources may explain Revenue Recovery as a framework or improvement lens, but they must not turn Revenue Recovery into a primary service offer, route, or category.
 
 A resource should feel useful as a decision-support asset. It must not read like a generic blog post with a stronger title.
 
@@ -209,7 +209,7 @@ Rules:
 - Other active systems may lead when their direct pain is the buyer's entry point, but they must not flatten the offer into an equal-weight service catalog.
 - Supporting modules solve narrower operational problems and map upward into one active system.
 - Implementation pathways remain delivery-specific routes and do not present themselves as strategic pillars.
-- Revenue Recovery is a cross-system improvement layer and must not be treated as a primary service page.
+- Revenue Recovery is a cross-system improvement layer and must not be treated as a primary service page, route, or page type.
 
 The services landing page may curate these layers deliberately, but it may not flatten them into unrelated agency-style services.
 
@@ -286,13 +286,13 @@ Content flow must preserve meaning, not just structure:
 - related content must not break page intent or funnel role
 - related-content systems should protect the approved page journey, not dictate it before design approval
 
-Manual presentation helpers may support a page narrative, but final related-content systems should be rebuilt deliberately after the core page system is approved.
+Manual presentation helpers may support a page narrative, but formal related-content systems should be extracted only after the core page system is approved.
 
 ---
 
-## RELATED CONTENT SYSTEM — DEFERRED
+## RELATED CONTENT SYSTEM — EXTRACT AFTER APPROVAL
 
-The related-content system is deferred until the approved page system is clear.
+The related-content system is extracted after the approved page system is clear.
 
 Future related content should respect page behavior:
 
@@ -304,7 +304,7 @@ Future related content should respect page behavior:
 - Case studies should route toward the active system, industry, or service context they prove.
 - Resources must not trap readers in endless educational loops.
 
-Inline editorial links may support the narrative during page creation. A final graph-ranked related-content system can be rebuilt later if it strengthens user progression.
+Inline editorial links may support the narrative during page creation. A formal graph-ranked related-content system should exist only when it strengthens user progression.
 
 ---
 
@@ -351,7 +351,7 @@ Each case study must make these elements legible:
 - operating context
 - structural problem
 - implemented active system or system combination
-- handoff or workflow change
+- connected handling or workflow change
 - measurable or observable outcome
 - constraint, tradeoff, or decision where available
 
@@ -384,7 +384,7 @@ Case studies may support service conversion, but the case study itself remains a
 
 1. Confirm the related opportunity strengthens the approved page journey.
 2. Use inline editorial links only when they support the page narrative.
-3. Rebuild metadata and resolver behavior later if the relationship should become part of the formal related-content system.
+3. Extract metadata and resolver behavior only when the relationship should become part of the formal related-content system.
 
 ---
 
@@ -403,7 +403,7 @@ Metadata, related-content, section data, and token rules should be extracted aro
 - Public writing style and rewrite rules: [./WRITING.md](./WRITING.md)
 - CTA posture and contact behavior: [./CONVERSION.md](./CONVERSION.md)
 - Visual principles and section composition: [./DESIGN.md](./DESIGN.md)
-- Related-content mechanics are shaped after the approved page system is clear.
+- Related-content mechanics are extracted after the approved page system is clear.
 
 ---
 
@@ -415,7 +415,7 @@ Before approving new or edited content, confirm:
 - the funnel role is clear
 - the page resolves into one active system where system ownership is relevant
 - the page does not revive removed service names or removed system models
-- Revenue Recovery is not treated as a primary service page
+- Revenue Recovery is not treated as a primary service page, route, or page type
 - the page does not become a generic service catalog
 - the page does not expose internal taxonomy before buyer recognition
 - the CTA posture matches the page type

@@ -22,7 +22,7 @@ const eslintBin = path.join(
 );
 
 if (!fs.existsSync(eslintBin)) {
-  throw new Error(`ESLint binary not found at ${eslintBin}. Run npm install at repo root.`);
+  throw new Error(`ESLint binary not found at ${eslintBin}. Run pnpm install at repo root.`);
 }
 
 try {

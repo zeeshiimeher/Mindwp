@@ -92,13 +92,13 @@
     "check:names": "node scripts/check-names.mjs",
     "check:clean-base": "tsx scripts/check-clean-base.ts",
     "check:domain-registries": "tsx scripts/check-domain-registries.ts",
-    "check:architecture": "pnpm run check:clean-base && pnpm run check:domain-registries",
+    "check:architecture": "pnpm check:clean-base && pnpm check:domain-registries",
     "check:duplicates": "tsx scripts/check-duplicates.ts",
     "check:style-guidance": "tsx scripts/check-style-guidance.ts",
-    "check:guidance": "pnpm run check:duplicates && pnpm run check:style-guidance",
-    "check:minimal": "pnpm run typecheck && pnpm run lint && pnpm run check:names",
-    "check:all": "pnpm run check:minimal && pnpm run check:architecture && pnpm run check:guidance && pnpm run build",
+    "check:guidance": "pnpm check:duplicates && pnpm check:style-guidance",
+    "check:minimal": "pnpm typecheck && pnpm lint && pnpm check:names",
+    "check:all": "pnpm check:minimal && pnpm check:architecture && pnpm check:guidance && pnpm build",
     "check:frontend": "node scripts/check-frontend.mjs",
-    "check:release": "pnpm run check:all && pnpm run check:frontend"
+    "check:release": "pnpm check:all && pnpm check:frontend"
   }
 }

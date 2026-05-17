@@ -57,17 +57,17 @@ MindWP sells outcomes, handling, clarity, response, follow-up, reviews, proof, a
 ## Common Commands
 
 ```bash
-npm install
-npm run dev
-npm run typecheck
-npm run lint
-npm run check:names
-npm run check:minimal
-npm run check:frontend
-npm run build
+pnpm install
+pnpm dev
+pnpm typecheck
+pnpm lint
+pnpm check:names
+pnpm check:minimal
+pnpm check:frontend
+pnpm build
 ```
 
-`npm run check:minimal` runs typecheck, lint, and name checks. `npm run check:frontend` starts a local app and smoke-tests key routes. `npm run build` verifies the production build.
+`pnpm check:minimal` runs typecheck, lint, and name checks. `pnpm check:frontend` starts a local app and smoke-tests key routes. `pnpm build` verifies the production build.
 
 ## Architecture Guardrails
 

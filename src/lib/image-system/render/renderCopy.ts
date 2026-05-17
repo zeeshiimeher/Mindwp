@@ -6,10 +6,6 @@ export interface RenderCopy {
 }
 
 const SERVICE_COPY_BY_SLUG: Record<string, RenderCopy> = {
-  'conversion-layer': {
-    title: 'Conversion Layer',
-    subtitle: 'Tighten the page path where attention becomes enquiries.',
-  },
   'smart-website-systems': {
     title: 'Smart Website Systems',
     subtitle: 'Structured websites built for enquiries, clarity, and local visibility.',

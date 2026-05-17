@@ -47,13 +47,14 @@ const forbiddenPatterns = [
   { label: 'GHL', pattern: /\bGHL\b/g },
   {
     label: 'removed service id',
-    pattern: /\b(?:ai-lead-handling|crm-automation|revenue-growth|growth-revenue-systems)\b/g,
+    pattern:
+      /\b(?:ai-lead-handling|crm-automation|revenue-growth|growth-revenue-systems|conversion-layer|lead-reactivation-system|missed-call-recovery-system|unified-communication-system|system-migration-platform-consolidation|conversion-funnel-system-vs-landing-page-development|service-pages-vs-one-generic-services-page|website-crm-integration-vs-manual-lead-handling)\b/g,
   },
   {
     label: 'removed service label',
     pattern: /\b(?:AI Lead Handling|CRM & Automation|Revenue Growth Systems|Revenue Growth)\b/g,
   },
-  { label: 'removed systems route', pattern: /\/systems\//g },
+  { label: 'removed systems route', pattern: /\/systems(?:\/|\b)/g },
   {
     label: 'removed broad metadata field',
     pattern: /\bsystems(?:\?: string\[\]|: string\[\]|: \[|\[\])/g,

@@ -195,12 +195,12 @@ For docs-only passes, run search validation for forbidden drift terms.
 
 For source cleanup or page work, run the relevant checks:
 
-- `npm run lint`
-- `npm run typecheck`
-- `npm run check:names`
-- `npm run check:minimal`
-- `npm run build`
-- `npm run check:frontend`
+- `pnpm lint`
+- `pnpm typecheck`
+- `pnpm check:names`
+- `pnpm check:minimal`
+- `pnpm build`
+- `pnpm check:frontend`
 
 Use `check:frontend` after visual/page work to catch runtime page crashes.
 

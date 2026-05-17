@@ -103,7 +103,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Services Overview',
     title: 'Services',
     description:
-      'Website and handling systems for service businesses, plus implementation pathways under Smart Website Systems.',
+      'Conversion-focused website systems with connected handling for service businesses, plus implementation pathways under Smart Website Systems.',
   },
   {
     key: 'static:terms',

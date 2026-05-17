@@ -60,7 +60,7 @@ export function Footer() {
           </div>
 
           <div className='footer__column'>
-            <h4 className='footer__heading'>Implementation</h4>
+            <h4 className='footer__heading'>Implementation Services</h4>
             <ul className='footer__list'>
               <li className='footer__item'>
                 <InternalLink
@@ -147,7 +147,7 @@ export function Footer() {
           </p>
           <span className='footer__status'>
             <span className='footer__status-dot' aria-hidden='true' />
-            Website and handling systems for service businesses
+            Conversion-focused website systems with connected handling for service businesses
           </span>
         </div>
       </div>

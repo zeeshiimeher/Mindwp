@@ -65,9 +65,9 @@ Useful components such as HeroFrame, SectionShell, FAQSection, DecisionPanel, Bu
 
 ## CORE IDENTITY
 
-MindWP is a systems-first website and connected handling systems business for established service businesses.
+MindWP is a systems-first business that builds conversion-focused website systems with connected handling for established service businesses.
 
-MindWP designs and implements premium website systems and connected business-handling systems that improve:
+MindWP designs and implements website systems and connected handling paths that improve:
 
 - local discovery
 - website and service-page clarity
@@ -100,7 +100,7 @@ MindWP sells better handling before bigger growth claims.
 
 **Internal model for docs, planning, architecture, and agent context:**
 
-MindWP is a systems-first website and connected handling systems business with the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
+MindWP is a systems-first business that builds conversion-focused website systems with connected handling, using the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
 **Public-facing explanation for page copy, CTAs, and buyer-facing content:**
 
@@ -111,7 +111,7 @@ MindWP helps established service businesses stop losing work between the moments
 - The business already has activity. Calls, enquiries, jobs, customers, reviews, and staff pressure already exist.
 - The problem is not always lack of demand. The problem is weak handling between moments.
 - Work slips away between search, website visits, calls, forms, messages, response, follow-up, reviews, and repeat business.
-- MindWP builds the website and connected systems around those weak points so work gets handled properly.
+- MindWP builds conversion-focused website systems with connected handling around those weak points so work gets handled properly.
 
 Protect these lines. They are positioning anchors, not decorative copy:
 
@@ -389,9 +389,9 @@ Implementation detail belongs in the active build-system and architecture docs. 
 
 ### Tool Ownership
 
-- `npm run build` owns production build verification.
-- `npm run check:minimal` owns the light static check for the current build system.
-- `npm run check:frontend` owns runtime smoke verification.
+- `pnpm build` owns production build verification.
+- `pnpm check:minimal` owns the light static check for the current build system.
+- `pnpm check:frontend` owns runtime smoke verification.
 
 ---
 

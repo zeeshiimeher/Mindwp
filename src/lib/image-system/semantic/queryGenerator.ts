@@ -1,6 +1,6 @@
 // ─── Semantic Query Generator ───────────────────────────────────────
 // Maps content metadata to visual search queries grounded in the MindWP business:
-// website and handling systems for service businesses
+// Conversion-focused website systems with connected handling for service businesses
 // (HVAC, plumbing, roofing, salons, dental, automotive, legal, real estate).
 //
 // Images should show REAL service professionals, workplaces, and operations —

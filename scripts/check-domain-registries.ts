@@ -34,6 +34,38 @@ type Failure = {
 
 const failures: Failure[] = [];
 
+const expectedPrimaryServiceSlugs = [
+  'smart-website-systems',
+  'local-seo-authority',
+  'lead-response-handling',
+  'follow-up-crm',
+  'reputation-review-systems',
+] as const;
+
+const expectedImplementationServiceSlugs = [
+  'implementation/wordpress-development',
+  'implementation/elementor',
+  'implementation/bricks-builder',
+  'implementation/divi5',
+  'implementation/woocommerce',
+  'implementation/website-redesign-system-rebuild',
+] as const;
+
+const forbiddenServiceSlugs = new Set([
+  'ai-lead-handling',
+  'crm-automation',
+  'revenue-growth',
+  'growth-revenue-systems',
+  'conversion-layer',
+  'lead-reactivation-system',
+  'missed-call-recovery-system',
+  'unified-communication-system',
+  'system-migration-platform-consolidation',
+  'conversion-funnel-system-vs-landing-page-development',
+  'service-pages-vs-one-generic-services-page',
+  'website-crm-integration-vs-manual-lead-handling',
+]);
+
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
 }
@@ -105,8 +137,43 @@ function checkRegistry(registryName: string, registry: Record<string, RegistryEn
   }
 }
 
+function checkServiceModel() {
+  const serviceKeys = Object.keys(SERVICE_DOMAIN_REGISTRY);
+  const expectedKeys = [...expectedPrimaryServiceSlugs, ...expectedImplementationServiceSlugs];
+
+  for (const expectedKey of expectedKeys) {
+    if (!serviceKeys.includes(expectedKey)) {
+      addFailure('services', expectedKey, 'expected active service slug is missing');
+    }
+  }
+
+  for (const key of serviceKeys) {
+    if (forbiddenServiceSlugs.has(key)) {
+      addFailure('services', key, 'removed service slug must not be active');
+    }
+
+    if (!expectedKeys.includes(key as (typeof expectedKeys)[number])) {
+      addFailure('services', key, 'service slug is not part of the active MindWP model');
+    }
+  }
+
+  for (const implementationKey of expectedImplementationServiceSlugs) {
+    const entry = SERVICE_DOMAIN_REGISTRY[implementationKey];
+    const data = entry?.data as PageData | undefined;
+
+    if (data?.primarySystem !== 'smart-website-systems') {
+      addFailure(
+        'services',
+        implementationKey,
+        'implementation services must map to smart-website-systems'
+      );
+    }
+  }
+}
+
 checkRegistry('services', SERVICE_DOMAIN_REGISTRY);
 checkRegistry('features', FEATURE_DOMAIN_REGISTRY);
+checkServiceModel();
 
 if (failures.length === 0) {
   console.log('check:domain-registries passed.');

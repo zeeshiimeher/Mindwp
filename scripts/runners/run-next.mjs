@@ -177,7 +177,7 @@ function runStartupEnvValidation() {
 
 async function main() {
   if (!fs.existsSync(nextBin)) {
-    throw new Error(`Next binary not found at ${nextBin}. Run npm install in the runtime root.`);
+    throw new Error(`Next binary not found at ${nextBin}. Run pnpm install in the runtime root.`);
   }
 
   const rawArgs = process.argv.slice(2);

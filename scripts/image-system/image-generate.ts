@@ -3,15 +3,15 @@
 // Main entry point for image generation commands
 // Keep the image system seperate ignore image system related files
 // Usage:
-//   npx tsx scripts/image-system/image-generate.ts --mode test --slug <post-slug>
-//   npx tsx scripts/image-system/image-generate.ts --domain blog
-//   npx tsx scripts/image-system/image-generate.ts --domain resources
-//   npx tsx scripts/image-system/image-generate.ts --domain industries
-//   npx tsx scripts/image-system/image-generate.ts --domain case-studies
-//   npx tsx scripts/image-system/image-generate.ts --slug <post-slug>
-//   npx tsx scripts/image-system/image-generate.ts --queue start
-//   npx tsx scripts/image-system/image-generate.ts --queue status
-//   npx tsx scripts/image-system/image-generate.ts --queue resume
+//   pnpm exec tsx scripts/image-system/image-generate.ts --mode test --slug <post-slug>
+//   pnpm exec tsx scripts/image-system/image-generate.ts --domain blog
+//   pnpm exec tsx scripts/image-system/image-generate.ts --domain resources
+//   pnpm exec tsx scripts/image-system/image-generate.ts --domain industries
+//   pnpm exec tsx scripts/image-system/image-generate.ts --domain case-studies
+//   pnpm exec tsx scripts/image-system/image-generate.ts --slug <post-slug>
+//   pnpm exec tsx scripts/image-system/image-generate.ts --queue start
+//   pnpm exec tsx scripts/image-system/image-generate.ts --queue status
+//   pnpm exec tsx scripts/image-system/image-generate.ts --queue resume
 
 import fs from 'fs';
 import path from 'path';
@@ -118,7 +118,7 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
   try {
     const registryPath = path.resolve('src/domains/blog/registry.ts');
     if (!fs.existsSync(registryPath)) {
-      logger.error('Blog registry not found. Run: npm run generate:content-registries');
+      logger.error('Blog registry not found. Run: pnpm generate:content-registries');
       return null;
     }
 
@@ -832,40 +832,40 @@ async function main() {
     logger.info('');
     logger.info('Quick Test Commands (hardcoded default slugs):');
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --mode test                          # blog default'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --mode test                          # blog default'
     );
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default'
     );
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default'
     );
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram'
     );
     logger.info('');
     logger.info('Test with custom slug:');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --slug <slug>');
+    logger.info('  pnpm exec tsx scripts/image-system/image-generate.ts --mode test --slug <slug>');
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>'
     );
     logger.info('');
     logger.info('Regenerate / Fresh:');
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image'
     );
     logger.info(
-      '  npx tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image'
+      '  pnpm exec tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image'
     );
     logger.info('');
     logger.info('Inspect generated images:');
-    logger.info('  npx tsx scripts/image-system/image-inspect.ts');
+    logger.info('  pnpm exec tsx scripts/image-system/image-inspect.ts');
     logger.info('');
     logger.info('Bulk mode:');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --domain blog');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --domain resources');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --domain case-studies');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --domain industries');
+    logger.info('  pnpm exec tsx scripts/image-system/image-generate.ts --domain blog');
+    logger.info('  pnpm exec tsx scripts/image-system/image-generate.ts --domain resources');
+    logger.info('  pnpm exec tsx scripts/image-system/image-generate.ts --domain case-studies');
+    logger.info('  pnpm exec tsx scripts/image-system/image-generate.ts --domain industries');
     logger.info('');
   });
 }

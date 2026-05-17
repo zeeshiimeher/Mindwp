@@ -183,7 +183,7 @@ async function main() {
   );
 
   if (!fs.existsSync(nextBin)) {
-    throw new Error(`Next binary not found at ${nextBin}. Run npm install first.`);
+    throw new Error(`Next binary not found at ${nextBin}. Run pnpm install first.`);
   }
 
   const serverProcess = spawn(nextBin, ['dev', '--webpack', '-p', String(port)], {

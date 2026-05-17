@@ -151,7 +151,7 @@ export default function ImageDashboard() {
           <p className='text-zinc-400 text-sm'>
             No image generation data yet. Run{' '}
             <code className='text-zinc-200 bg-zinc-800 px-1.5 py-0.5 rounded text-xs'>
-              npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
+              pnpm exec tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
             </code>{' '}
             to generate your first images.
           </p>

@@ -88,14 +88,14 @@ These are building blocks, not gates. Use custom JSX when it communicates the bu
 
 ## Active Commands
 
-- `npm run dev`
-- `npm run build`
-- `npm run lint`
-- `npm run lint:fix`
-- `npm run typecheck`
-- `npm run check:names`
-- `npm run check:minimal`
-- `npm run check:frontend`
+- `pnpm dev`
+- `pnpm build`
+- `pnpm lint`
+- `pnpm lint:fix`
+- `pnpm typecheck`
+- `pnpm check:names`
+- `pnpm check:minimal`
+- `pnpm check:frontend`
 
 Use `check:frontend` after visual/page work to catch browser/runtime crashes.
 
