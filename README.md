@@ -1,60 +1,67 @@
 # MindWP
 
-MindWP is a systems-first website and connected handling systems business for established service businesses. The site is built around one idea: work already comes in, but too much slips away between being found, trusted, contacted, answered, followed up, reviewed, and recovered.
+MindWP is the production rebuild workspace for the new MindWP public site.
 
-Do not describe MindWP as a platform, SaaS product, generic web design agency, generic marketing agency, backend tool reseller, AI chatbot vendor, or rankings-hype SEO provider.
+MindWP builds conversion-focused website systems with connected handling for established service businesses. The site should communicate a practical business idea: work already comes in, but too much slips away between being found, trusted, contacted, answered, followed up, reviewed, and recovered.
 
-## Repo Purpose
+This repository contains the Next.js site, domain content, page renderers, route ownership, conversion/contact behavior, graph support, and the documentation used by future AI and human contributors.
 
-- Next.js public site
-- Domain-owned content, page data, and renderer registries
-- Service, implementation-service, feature, industry, blog, resource, and case-study routes
-- CTA and contact routing
-- Shared base components for approved page patterns
-- Runtime smoke checks for build and browser safety
+## What This Repo Is
 
-## Build Workflow
+- Next.js public website for MindWP.
+- Domain-owned page data, renderer registries, and content surfaces.
+- Service, implementation service, feature, industry, blog, resource, and case-study routes.
+- Shared components and styling primitives for approved page patterns and connected-handling surfaces.
+- CTA, contact, SEO, and related-content support.
+- Documentation for strategy, content, design, architecture, and execution guardrails.
+
+MindWP is not a generic web design agency, SaaS product, tool reseller, template business, AI chatbot vendor, or ranking-hype SEO provider.
+
+## Documentation Map
+
+Read only what is relevant to the task.
+
+| Doc | Owns |
+| --- | --- |
+| [AGENTS.md](./AGENTS.md) | Practical instructions for Codex, Copilot Chat, Claude, and other coding agents. |
+| [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md) | MindWP identity, buyer truth, positioning, public path, and build philosophy. |
+| [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md) | Active offer model, service ownership, implementation pathways, and offer drift prevention. |
+| [docs/core/WRITING.md](./docs/core/WRITING.md) | Public language, voice, rewrite behavior, banned phrasing, and applied copy rules. |
+| [docs/core/CONTENT.md](./docs/core/CONTENT.md) | Page roles, funnel behavior, editorial boundaries, and content intent. |
+| [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) | CTA posture, contact behavior, diagnostic conversion, and proof-before-action logic. |
+| [docs/core/DESIGN.md](./docs/core/DESIGN.md) | Visual direction, section composition, interaction taste, and design judgment. |
+| [docs/core/GRAPH.md](./docs/core/GRAPH.md) | Related-content behavior, routing logic, graph metadata, and future resolver rules. |
+| [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) | Mapping the strategy into routes, domains, renderers, components, styles, and graph code. |
+| [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md) | Hard execution guardrails and validation rules. |
+| [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md) | Page rebuild workflow for high-quality design-first AI sessions. |
+| [docs/ops/CONTENT-INVENTORY.md](./docs/ops/CONTENT-INVENTORY.md) | Planning inventory for future content clusters and publishing priorities. |
+
+## Working Philosophy
+
+The active build flow is:
 
 ```text
 BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
 ```
 
-Page decisions start from the buyer's visible working day: calls, searches, forms, quotes, reviews, jobs, staff, inboxes, and missed follow-up. Section design happens in JSX first. Data, types, shared primitives, and metadata are extracted only after a section or page pattern is approved.
+Pages start from the buyer's visible working day: calls, searches, forms, quotes, jobs, reviews, inboxes, staff pressure, and missed follow-up. Components, data files, metadata, CTA rules, and graph relationships are extracted after the page or section pattern is approved.
 
-## Documentation
+## Architecture Overview
 
-| Doc | Use When | Owns |
-| --- | --- | --- |
-| `AGENTS.md` | Guiding agents in this repo | Concise execution rules, scoped reading discipline, commands, and safety rules |
-| `docs/core/FOUNDATION.md` | Defining business truth | Identity, positioning, buyer, public path, boundaries, and build philosophy |
-| `docs/core/OFFER-ARCHITECTURE.md` | Planning services or offer hierarchy | Active offer model, system ownership, Revenue Recovery, and implementation services |
-| `docs/core/WRITING.md` | Writing or auditing public copy | Public language, tone, rewrite rules, vocabulary, and wording boundaries |
-| `docs/core/CONTENT.md` | Deciding what a page is allowed to do | Page roles, funnel behavior, content hierarchy, and page-type permissions |
-| `docs/core/CONVERSION.md` | Changing CTAs or contact flow | CTA posture, diagnostic next steps, contact behavior, and conversion validation |
-| `docs/core/DESIGN.md` | Working on UI or visual structure | Visual direction, section composition, design patterns, and component judgment |
-| `docs/core/GRAPH.md` | Changing related-content behavior | Related-content routing, graph metadata, inline links, and resolver direction |
-| `docs/core/SYSTEM-ARCHITECTURE.md` | Mapping strategy to repo structure | App/domain/component/style/lib/config ownership and route/source alignment |
-| `docs/core/SYSTEM-RULES.md` | Checking execution guardrails | AI do/don't rules, source-cleanup rules, proof boundaries, and validation checks |
-| `docs/Planning/design-first-rebuild.md` | Rebuilding pages | Design-first page workflow and extraction discipline |
-| `docs/ops/CONTENT-INVENTORY.md` | Planning future content | Planning categories, clusters, priority industries, and publishing order |
+- `src/app/**` owns public routes.
+- `src/domains/**` owns domain content, data, renderers, registries, and page-specific domain behavior.
+- `src/domains/services/**` owns active system service pages.
+- `src/domains/services/implementation/**` owns implementation pathways under Smart Website Systems, not separate primary systems.
+- `src/components/**` owns reusable UI surfaces.
+- `src/styles/**` owns tokens, layout primitives, typography, and shared visual rules.
+- `src/lib/content-graph/**` owns graph metadata and related-content behavior.
+- `src/lib/cta/**`, `src/lib/contact/**`, and `src/lib/seo/**` own shared CTA, contact, and SEO behavior.
 
-Read only the docs relevant to the task.
-
-## Offer Summary
-
-The active offer model is owned by `docs/core/OFFER-ARCHITECTURE.md`.
-
-Implementation services are active implementation pathways under Smart Website Systems. They are not primary active systems or equal strategic pillars.
-
-Do not create a public `/systems` taxonomy unless the governing docs are intentionally updated later.
-
-## Public Tool Boundary
-
-Do not publicly mention backend CRM, automation, booking, form, AI, or white-label platform names. Do not publicly mention GoHighLevel, GHL, or HighLevel.
-
-MindWP sells outcomes, handling, clarity, response, follow-up, reviews, proof, and systems. It does not sell tools.
+The detailed architecture contract is in [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md).
 
 ## Common Commands
+
+Use pnpm only.
 
 ```bash
 pnpm install
@@ -67,18 +74,16 @@ pnpm check:frontend
 pnpm build
 ```
 
-`pnpm check:minimal` runs typecheck, lint, and name checks. `pnpm check:frontend` starts a local app and smoke-tests key routes. `pnpm build` verifies the production build.
+Use `pnpm check:frontend` after meaningful page or visual work. Use `pnpm build` before considering production-facing source changes complete.
 
-## Architecture Guardrails
+## High-Level Guardrails
 
-- `src/app/**` owns routes.
-- `src/domains/**` owns domain content, page data, renderers, and registries.
-- `domains/services/implementation/**` is for implementation pathways under Smart Website Systems.
-- Domain `pageData` files connect slug -> data -> renderer.
-- `RelatedSection` is injected by domain/config where used; renderers should not manually add it.
-- Tailwind utilities plus existing `mw-*` and token classes are the default styling surface.
-- Keep proof honest, system boundaries clear, and copy grounded in operational reality.
+- Keep MindWP service-business specific, system-first, conversion-focused, and commercially serious.
+- Do not turn the site into a generic agency menu or builder-service catalog.
+- Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
+- Do not preserve unpublished removed routes or removed names for compatibility.
+- Do not invent proof, metrics, rankings, guarantees, testimonials, or client results.
+- Do not publicly mention backend platform names, tool names, or white-label delivery details as the product.
+- Keep Revenue Recovery as a cross-system improvement layer, not a primary service page, route, page type, graph category, or CTA category.
 
-## Final Principle
-
-Start from the business owner's visible day. Use the system model to structure the solution, not to make the buyer decode the architecture.
+For source work, read [AGENTS.md](./AGENTS.md) first.

@@ -1,48 +1,47 @@
 # DESIGN — MindWP
 
-> Authority for visual direction, section composition, interaction taste, and design-system judgment.
-> Offer ownership comes from `FOUNDATION.md` and `OFFER-ARCHITECTURE.md`.
-> Design must make the business reality visible before it makes the system impressive.
+Authority for visual direction, section composition, interaction taste, and design-system judgment.
 
----
+Design must make the business reality visible before it makes the system impressive. Offer ownership comes from [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Page roles come from [CONTENT.md](./CONTENT.md).
 
-## USE THIS DOC
+## Use This Doc
 
-Use this document when designing or reviewing:
+Use this when designing or reviewing:
 
-- home and service page sections
-- system pages
-- implementation pathway pages
+- homepage sections
+- service pages
+- implementation service pages
 - industry landing pages
 - resource layouts
 - hero sections
-- visual maps, comparison panels, proof sections, CTAs, and page-owned JSX
+- visual maps
+- comparison panels
+- proof sections
+- CTAs
+- page-owned JSX
 
-The purpose is not to enforce one layout. The purpose is to keep MindWP from drifting into generic agency design, SaaS dashboards, template-site sameness, or decorative tech visuals.
+The purpose is not to enforce one layout. The purpose is to keep MindWP from drifting into generic agency layouts, SaaS dashboard imitation, template sameness, decorative tech visuals, or empty icon grids.
 
----
+## Design Philosophy
 
-## DESIGN AUTHORITY
-
-MindWP design starts from the active build flow:
+MindWP design follows:
 
 ```text
 BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
 ```
 
-Design is approved when it helps the buyer recognise:
+Design starts by asking what the buyer should see:
 
-- what is happening in the business
 - where work is slipping
-- what becomes visible
+- where an enquiry lands
 - who owns the next step
-- how the website and connected handling systems improve the situation
+- what becomes visible
+- what changes after the system is built
+- how the website and connected handling path work together
 
-Do not let component availability decide the design. Shared components are useful tools. They are not the strategy.
+Do not let a component library decide the page. Shared components are useful building blocks, not gates.
 
----
-
-## OPERATIONAL DESIGN LANGUAGE
+## Visual Taste
 
 MindWP should feel:
 
@@ -57,105 +56,97 @@ MindWP should feel:
 - service-business specific
 - commercially serious
 
-Visuals should show operating states, not abstract technology.
-
-Good MindWP visual language:
-
-- a missed call becoming a response path
-- a form landing somewhere useful
-- a quote moving from sent to followed up
-- a review request happening after completed work
-- a local search visitor moving from find to trust to enquiry
-- a messy before state becoming a visible owner/status/next step
-
-Weak MindWP visual language:
-
-- decorative dashboards
-- random charts
-- icon grids without business logic
-- generic agency split layouts
-- glossy SaaS product UI
-- abstract network diagrams
-- process steps repeated on every page
-
----
-
-## VISUAL DIRECTION
-
-The visual tone is premium, dark, calm, and precise.
-
-Use contrast, spacing, and hierarchy to create confidence. Do not make the site loud to make it feel important.
+The visual tone should be controlled, dark, calm, and precise. Use contrast, spacing, hierarchy, and quiet detail to create confidence. Do not make the site loud to make it feel important.
 
 Preferred qualities:
 
 - dark controlled surfaces
 - restrained accent color
-- clear typography
-- strong section rhythm
-- visible handoffs
-- scannable operating states
+- sharp but not sterile panels
+- strong typography hierarchy
 - confident whitespace
-- sharp but not sterile cards and panels
-- proof and detail placed where they help decision-making
+- visible connected-handling paths
+- scannable operating states
+- proof placed where it helps decisions
+- section rhythm that changes shape as the argument moves
 
 Avoid:
 
-- bright generic agency gradients
-- template hero blocks
+- generic agency split heroes
+- bright gradient template sections
 - fake analytics screenshots
-- feature grids with no narrative
-- decorative code/tech backgrounds
-- icons as the main explanation
-- oversized process timelines everywhere
-- visual clutter that makes the business logic harder to see
+- glossy SaaS product UI
+- random charts
+- decorative code backgrounds
+- icon grids without business logic
+- repeated process steps on every page
+- oversized cards used as filler
+- abstract tech diagrams that hide the buyer's reality
 
----
+## Operational Design Language
 
-## PREFERRED SECTION PATTERNS
+Visuals should show operating states, not abstract technology.
 
-Choose the section pattern that best explains the page intent.
+Strong MindWP visuals show:
 
-Strong MindWP patterns include:
+- a missed call becoming a response path
+- a form landing somewhere useful
+- a quote moving from sent to followed up
+- a completed job turning into a review request
+- a local search visitor moving from find to trust to enquiry
+- scattered messages becoming owner/status/next step
+- a weak service page becoming a clearer decision path
 
-- dark split hero
+Weak visuals show:
+
+- a dashboard because the topic sounds technical
+- a funnel because the topic sounds like marketing
+- a timeline because the page needs a section
+- a card grid because it is easy
+- icons because the copy is too abstract
+
+## Preferred Patterns
+
+Choose the pattern that explains the page intent.
+
+Useful MindWP patterns:
+
 - leak map
-- diagnostic lane map
+- connected-handling surface
 - operating map
 - signal board
 - featured card plus support cards
 - before/after panel
-- handoff surface
 - priority map
 - fit filter
 - proof stack
 - scenario board
 - ownership table
 - trust path
+- diagnostic lane map
 
-The same pattern should not be repeated across a page unless the repetition creates useful rhythm. If every section becomes cards, the page has lost its shape.
+Do not repeat the same pattern across a page unless the repetition creates useful rhythm. If every section is cards, the page has lost its shape.
 
----
-
-## PATTERN RULES
+## Pattern Rules
 
 ### Leak Maps
 
 Use leak maps when the page must show where work slips away.
 
-They should make the gap visible:
+Good leak moments:
 
 - search to trust
 - website visit to enquiry
 - enquiry to response
 - response to follow-up
 - completed work to review
-- review/proof to repeat value
+- proof to repeat value
 
-Do not make leak maps look like abstract funnels. The buyer should recognise the specific business moment.
+Do not make leak maps abstract funnels. The buyer should recognise the specific business moment.
 
-### Handoff Surfaces
+### Connected-Handling Surfaces
 
-Use handoff surfaces when ownership changes.
+Use connected-handling surfaces when ownership, response, follow-up, review, or proof paths need to be made visible.
 
 Show:
 
@@ -163,11 +154,11 @@ Show:
 - where it lands
 - who or what owns the next step
 - what should happen next
-- what fails when the handoff is unclear
+- what fails when the handling path is unclear
 
 ### Signal Boards
 
-Use signal boards when multiple visible signs prove the same system problem.
+Use signal boards when several visible signs point to the same system problem.
 
 Good signals:
 
@@ -178,7 +169,7 @@ Good signals:
 - inconsistent review requests
 - unclear local trust signals
 
-Do not use signal boards as decorative icon grids. Every signal needs a business meaning.
+Every signal needs business meaning. Do not use signal boards as decorative icon grids.
 
 ### Before/After Panels
 
@@ -200,112 +191,71 @@ After:
 
 ### Operating Maps
 
-Operating maps are for explaining connected systems.
+Operating maps explain how website systems and connected handling work together.
 
-Use them when the page needs to show how local discovery, website clarity, response, follow-up, reviews, proof, and recovery connect.
+Use them to show how local discovery, website clarity, response, follow-up, reviews, proof, and recovery connect. Do not turn them into backend diagrams or public tool explanations.
 
-Do not turn operating maps into backend diagrams or public tool explanations.
+## Design For Active Systems
 
----
+Full system ownership is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Design should translate that ownership into visible business states.
 
-## DESIGN FOR ACTIVE SYSTEMS
+Smart Website Systems:
 
-### Smart Website Systems
+- Show clarity, trust, service-page flow, enquiry capture, and visible next steps.
+- Use service-page clarity maps, website-as-control-point sections, enquiry-to-handling diagrams, and trust placement.
+- Avoid portfolio-first design and page-count package visuals.
 
-Design around clarity, trust, page flow, enquiry capture, and visible next steps.
+Local SEO Authority Systems:
 
-Useful sections:
+- Show find, verify, trust.
+- Use local presence signal boards, service-area relevance maps, and local proof placement.
+- Avoid fake ranking dashboards and domination visuals.
 
-- service-page clarity map
-- website as control point
-- offer confusion before/after
-- enquiry path diagram
-- trust signal placement
+Lead Response & Handling Systems:
 
-Avoid making the page feel like a portfolio or page-count package.
+- Show calls, forms, messages, missed calls, response speed, and routing.
+- Use response path maps, after-hours handling paths, missed-call scenarios, and scattered-source before/after panels.
+- Avoid making AI visuals the hero idea.
 
-### Local SEO Authority Systems
+Follow-Up & CRM Systems:
 
-Design around find, verify, trust.
+- Show owner, status, next step, quote follow-up, and visible responsibility.
+- Use ownership boards, status lane maps, and memory-dependent vs visible follow-up contrasts.
+- Avoid SaaS CRM dashboard imitation.
 
-Useful sections:
+Reputation & Review Systems:
 
-- local presence signal board
-- service-area relevance map
-- Google Business Profile and website trust handoff
-- local proof placement
+- Show completed work becoming proof.
+- Use completed-job-to-review paths, feedback routing surfaces, proof capture boards, and local-trust connections.
+- Avoid fake review counters and guaranteed star visuals.
 
-Avoid ranking dashboards, domination language, and fake SEO charts.
+Revenue Recovery:
 
-### Lead Response & Handling Systems
+- Show value still leaking after enquiries arrive.
+- Treat it as a cross-system improvement layer, never as a primary service page or design pillar.
 
-Design around calls, forms, messages, missed calls, response speed, and routing.
+## Implementation Service Page Design
 
-Useful sections:
-
-- response path map
-- missed-call recovery scenario
-- after-hours handoff
-- scattered enquiry sources before/after
-
-Avoid AI chatbot visuals as the hero idea.
-
-### Follow-Up & CRM Systems
-
-Design around owner, status, next step, follow-up, and quote recovery.
-
-Useful sections:
-
-- ownership board
-- status lane map
-- memory-dependent vs visible follow-up
-- quote follow-up map
-
-Avoid SaaS CRM dashboard imitation.
-
-### Reputation & Review Systems
-
-Design around completed work becoming proof.
-
-Useful sections:
-
-- completed job to review request path
-- feedback routing surface
-- proof capture board
-- local trust handoff
-
-Avoid fake review counters, guaranteed star ratings, and reputation software visuals.
-
-### Revenue Recovery Layer
-
-Revenue Recovery may appear as a cross-system improvement layer.
-
-Use it to show value still leaking after enquiries arrive. Do not design it as a primary service page, pillar, or navigation category.
-
----
-
-## IMPLEMENTATION SERVICE PAGE DESIGN
-
-Implementation pathway pages live under Smart Website Systems.
+Implementation service pages live under Smart Website Systems.
 
 Examples:
 
-- WordPress development
+- WordPress Development
 - Elementor
 - Bricks Builder
 - Divi 5
 - WooCommerce
-- website redesign and system rebuild
+- Website Redesign / System Rebuild
 
-Design these pages as implementation paths for a website system, not as generic builder-service pages.
+Design these pages as website-system implementation pathways.
 
 They should show:
 
-- why this implementation path fits a service business
+- why this path fits a service business
 - what business problem the website must solve
-- how clarity, trust, enquiry capture, and handoff improve
-- what the builder/platform is useful for
-- where the page connects back to Smart Website Systems
+- how clarity, trust, enquiry capture, and connected handling improve
+- what the platform or builder is useful for
+- how the page connects back to Smart Website Systems
 
 They should not:
 
@@ -313,88 +263,94 @@ They should not:
 - compare builders like affiliate content
 - sell cheap build packages
 - make MindWP sound like a generic WordPress agency
-- present implementation services as equal primary systems
+- present implementation paths as equal primary systems
 
----
+## Component Judgment
 
-## COMPONENT JUDGMENT
+Use shared components when they strengthen the approved section.
 
-Use `HeroFrame` when the hero needs a strong, reusable page frame and the content naturally fits the component.
+Useful base components include:
 
-Use `SectionShell` when the section benefits from standard spacing, max-width, and tokenized surface behavior.
-
-Use `FAQSection`, `DecisionPanel`, `SignalDot`, `StatusBadge`, and `Button` when they help the approved section design.
+- `HeroFrame`
+- `SectionShell`
+- `FAQSection`
+- `DecisionPanel`
+- `Button`
+- `SignalDot`
+- `StatusBadge`
+- `InlineText`
+- `Accordion`
+- `Tabs`
 
 Use custom page-owned JSX when:
 
 - the business reality needs a specific layout
 - the section pattern is still being discovered
 - a shared component would flatten the message
-- the visual needs a custom handoff, map, board, or comparison
+- the visual needs a custom map, board, connected-handling surface, comparison, or proof stack
 
 Repeated custom JSX is acceptable while proving the page. Extract after approval.
 
----
+## JSX And Styling Rules
 
-## BUILD-SYSTEM DESIGN
+Allowed during page design:
 
-Allowed in the MindWP build system:
-
-- Tailwind layout and composition utilities
-- JSX-owned content
+- page-owned content
 - local arrays
-- page-owned sections
 - page-local helper components
-- repeated JSX until a pattern proves it should be extracted
+- repeated JSX
 - custom section layouts
+- Tailwind layout and composition utilities
+- existing `mw-*` classes and token classes
 - flexible section count
 
-Do not block page design work because a section is not using `SectionShell`, `HeroFrame`, a data file, or a shared renderer. Those can be extracted after approval and proven patterns.
+Avoid page-specific CSS for migrated pages unless the existing styling surface cannot reasonably express the section.
 
----
+Use tokens and shared primitives where they help, but do not block design work because an approved abstraction does not exist yet.
 
-## TAILWIND AND TOKENS
+## What To Avoid Visually
 
-Use Tailwind for layout, spacing, responsive behavior, and typography while designing.
+Do not use:
 
-Prefer MindWP tokens for colors and surfaces when available. Strict token and raw-color enforcement is deferred until approved designs are stable.
+- generic agency hero plus service grid
+- SaaS dashboard imitation
+- fake analytics
+- decorative tech visuals
+- abstract network diagrams
+- process-step sections repeated across every page
+- icon grids with no business logic
+- testimonial-looking proof without real proof
+- smooth transformation arcs that feel invented
+- over-designed sections that hide the operating point
 
-Future production target:
+If a section could be dropped into any agency website, redesign it around a real MindWP business moment.
 
-- Tailwind for layout and composition.
-- MindWP tokens for colors, surfaces, and signals.
-- Extract stable repeated visual primitives after approval.
+## Approval Standard
 
----
+A section is strong when:
 
-## VISUAL TASTE CHECKLIST
-
-Before approving a section, confirm:
-
-- the buyer can see the business situation without reading every word
+- the buyer can see the situation without reading every word
+- the pattern matches the page intent
 - the section explains one clear idea
-- the visual pattern matches the page intent
-- cards are not being used as filler
-- icons are not replacing business logic
-- the page does not imitate SaaS dashboards
-- the page does not look like a generic agency template
-- fake analytics, fake metrics, and unsupported proof are absent
-- the CTA feels diagnostic and practical
-- the design supports the active system that owns the page
+- the visual supports the active system
+- cards are not filler
+- icons do not replace logic
+- proof is real, clearly framed, or absent
+- CTA posture feels diagnostic
+- the page feels premium without becoming decorative
 
----
+## Extraction After Approval
 
-## EXTRACTION AFTER APPROVAL
+Extraction is cleanup after design approval.
 
-Extraction is a cleanup phase, not the design starting point.
+Extract:
 
-Extract only after the page or section is approved:
-
-- shared primitives
-- stable visual components
+- stable visual primitives
+- repeated section components
 - reusable data groups
 - production metadata
-- related-content rules
+- graph relationships
+- CTA rules
 - tighter types
 
-If extraction weakens the approved section, keep the page-owned JSX until the right abstraction is obvious.
+Do not extract if the abstraction weakens the approved section. Keep page-owned JSX until the right reusable shape is obvious.

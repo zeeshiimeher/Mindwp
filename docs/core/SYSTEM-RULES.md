@@ -1,122 +1,126 @@
 # SYSTEM RULES — MindWP
 
-> AI execution rulebook for MindWP.
-> Use this when changing docs, source, content, routes, data, metadata, or page systems.
-> The goal is to prevent future sessions from reviving removed strategy or creating parallel models.
+AI execution rulebook for MindWP.
 
----
+Use this when changing docs, source, content, routes, data, metadata, graph behavior, or page systems. The goal is to prevent future sessions from reviving removed strategy or creating parallel models.
 
-## ACTIVE BUILD RULE
+## Governing Docs
 
-Business reality, buyer recognition, page intent, section quality, and visual trust come before extraction.
+- Identity and buyer truth: [FOUNDATION.md](./FOUNDATION.md)
+- Active offer model: [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
+- Public language: [WRITING.md](./WRITING.md)
+- Page roles: [CONTENT.md](./CONTENT.md)
+- CTA behavior: [CONVERSION.md](./CONVERSION.md)
+- Design judgment: [DESIGN.md](./DESIGN.md)
+- Graph behavior: [GRAPH.md](./GRAPH.md)
+- Repo mapping: [SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md)
 
-The active build path is:
+Do not ask approval questions that these docs already answer.
 
-```text
-BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
-```
+## Hard Rules
 
-Checks protect approved decisions. They do not decide the page before it exists.
+- Use only the active offer model defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
+- Do not revive removed service names, removed identifiers, or removed offer structures.
+- Do not create parallel offer models.
+- Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
+- Do not preserve unpublished removed routes, aliases, or compatibility wrappers.
+- Do not publicly mention GoHighLevel, GHL, or HighLevel.
+- Do not publicly mention backend CRM, automation, booking, form, AI, or white-label platform names as the product.
+- Do not invent fake proof, fake metrics, testimonials, rankings, guarantees, or client results.
+- Do not add unsupported service capabilities.
+- Do not use non-pnpm workflow instructions in repo docs.
 
----
+## Offer Rules
 
-## ACTIVE OFFER RULE
+Active primary systems are defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
-Use only the active public systems defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
-
-Revenue Recovery is a cross-system improvement layer only.
-
-It is not:
+Revenue Recovery is a cross-system improvement layer only. It is not:
 
 - a primary service page
 - a route family
 - a graph category
 - a navigation pillar
-- an equal service beside the active systems
+- a page type
+- a CTA category
+- an equal system
 
-Implementation services are active implementation pathways under Smart Website Systems, not primary systems.
+Implementation services are active implementation pathways under Smart Website Systems. They support conversion-focused website systems and connected handling, but they are not primary systems or equal strategic pillars.
 
----
+## Page Role Rules
 
-## DO NOT REVIVE REMOVED STRATEGY
+Page roles are defined in [CONTENT.md](./CONTENT.md).
 
-Do not:
+Apply these local guardrails:
 
-- revive removed service names
-- create parallel offer models
-- use a removed offer model
-- preserve removed service categories
-- keep removed routes for unpublished pages
-- create compatibility wrappers for removed routes
-- create a `/systems` public taxonomy unless governing docs are intentionally updated later
-- use removed identifiers in metadata, graph logic, redirects, navigation, or content inventory
+- Service pages are active system decision pages.
+- Implementation service pages are conversion-focused website-system implementation pathways.
+- Feature pages are capabilities inside active systems.
+- Industry pages translate systems into vertical reality.
+- Blogs diagnose.
+- Resources explain frameworks.
+- Case studies prove or illustrate operating change.
 
-If removed-source remnants or stale docs conflict with the active model, update them in the relevant cleanup pass. Do not preserve both.
+Do not turn blogs or resources into BOFU service pages. Do not turn service pages into generic catalogs.
 
----
+## Build-System Rules
 
-## PUBLIC LANGUAGE RULES
-
-Do not publicly mention backend CRM, automation, AI, booking, form, or white-label platform names.
-
-Do not publicly mention GoHighLevel, GHL, or HighLevel.
-
-Public language should sell:
-
-- clarity
-- handling
-- response
-- follow-up ownership
-- visible status
-- reviews and proof
-- local trust
-- revenue recovery from work already in motion
-
-Public language should not sell:
-
-- tools
-- dashboards
-- backend platform setup
-- AI chatbot features
-- CRM software
-- generic automation
-- rankings hacks
-- cheap website packages
-
----
-
-## PAGE ROLE RULES
-
-Service pages are active system decision pages.
-
-Feature pages are capability pages inside one active system.
-
-Implementation service pages are implementation pathways under Smart Website Systems.
-
-Industry pages are vertical landing pages.
-
-Blogs, resources, and case studies support the flow:
+Use:
 
 ```text
-Blog -> Resource -> Industry -> Service
+BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
 ```
 
-Do not:
+Allowed while proving a page:
 
-- turn feature pages into SaaS pages
-- turn service pages into catalog pages
-- turn blogs or resources into BOFU service pages
-- let resources trap readers in endless education
-- treat implementation pages as primary systems
-- treat Revenue Recovery as a CTA category or service page
+- JSX-owned content
+- local arrays
+- Tailwind layout and composition utilities
+- page-owned sections
+- page-local helper components
+- custom connected-handling surfaces where the business reality needs them
+- repeated JSX
+- flexible section count
+- small useful types
 
----
+Extract after approval:
 
-## PROOF AND CLAIMS
+- shared components
+- stable data groups
+- domain `pageData`
+- graph rules
+- CTA rules
+- metadata rules
+- tighter types
 
-Do not create fake proof.
+Shared components are optional building blocks, not mandatory shells.
 
-Forbidden:
+## Source Cleanup Rules
+
+Because the site has not been published, source cleanup should prefer direct correction.
+
+Prefer:
+
+- rename
+- move
+- delete
+- align route ownership
+- align indexing config
+- align graph metadata
+- align renderers and page data
+
+Avoid:
+
+- redirects for unpublished removed names
+- alias routes for old names
+- compatibility wrappers
+- duplicate source models
+- hidden old categories
+
+If active docs clearly define a decision and source is stale, update source during a source-cleanup pass.
+
+## Proof And Claims
+
+Never create:
 
 - invented metrics
 - fabricated testimonials
@@ -127,71 +131,11 @@ Forbidden:
 - guaranteed lead volume
 - fictional client results presented as real
 
-Scenario studies and system examples are allowed only when clearly framed as illustrative or operational examples. They must not imply real attribution or measured outcomes.
+Scenario studies and system examples are allowed only when clearly framed as illustrative or operational examples.
 
----
+## Validation
 
-## ARCHITECTURE RULES
-
-- `src/app/**` owns routes.
-- `src/domains/**` owns domain content, data, renderers, and registries.
-- `domains/services` owns active system service pages.
-- `domains/services/implementation` owns implementation pathway pages.
-- `components/` owns reusable UI surfaces.
-- `styles/` owns tokens, layout, primitives, and typography.
-- `lib/content-graph` owns graph metadata and relationships.
-- `lib/cta`, `lib/contact`, and `lib/seo` own shared behavior.
-- `config/routeOwnership.ts` and indexing config must align with active routes.
-
-Graph/content metadata should use `primarySystem` and `supportingSystems[]`, not old broad system-array metadata as the strategic source of truth.
-
-Related content injection belongs in config/domain layers, not manually in page bodies after the journey is stable.
-
----
-
-## BUILD-SYSTEM RULES
-
-Allowed while proving a page:
-
-- JSX-owned content
-- local arrays for section-specific content
-- Tailwind layout/composition utilities
-- page-owned sections
-- page-local helper components
-- repeated JSX until a pattern proves it should be extracted
-- flexible section count
-- small, useful types that support the current page
-
-Extract after approval:
-
-- shared base components
-- stable data groups
-- domain `pageData` entries
-- related-content rules
-- metadata rules
-- tighter types
-
-Shared components are optional building blocks, not mandatory shells.
-
----
-
-## WHEN CODE AND DOCS CONFLICT
-
-Use docs as authority before asking approval questions.
-
-If the active docs clearly define the decision and source code is stale, update the source code in a source-cleanup pass.
-
-If implementation reality proves a doc is wrong, update the doc and explain why.
-
-Do not ask the user whether to follow stale source when the docs already define the active direction.
-
-If a task asks for source cleanup, fix repo-wide drift directly. Do not create parallel compatibility code.
-
----
-
-## ACTIVE CHECKS
-
-For docs-only passes, run search validation for forbidden drift terms.
+For docs-only passes, run search validation for removed drift terms, backend platform terms, and non-pnpm workflow commands.
 
 For source cleanup or page work, run the relevant checks:
 
@@ -202,22 +146,22 @@ For source cleanup or page work, run the relevant checks:
 - `pnpm build`
 - `pnpm check:frontend`
 
-Use `check:frontend` after visual/page work to catch runtime page crashes.
+Use `pnpm check:frontend` after visual/page work.
 
----
+## Final AI Checklist
 
-## FINAL AI CHECKLIST
+Before finishing, confirm:
 
-Before finishing a MindWP task, confirm:
-
-- no removed service names were revived
+- no source files were changed during docs-only tasks
+- no removed names or old offer structures were revived
 - no parallel offer model was introduced
-- no backend platform name appears publicly
-- no `/systems` taxonomy was created
+- no public backend platform name appears in public copy
+- no public `/systems` route direction was created
 - implementation services still sit under Smart Website Systems
-- Revenue Recovery remains a layer only
-- service pages still resolve to one active system
-- feature pages do not sound like SaaS
-- service pages do not sound like a catalog
+- Revenue Recovery remains a layer only, not a route, page type, graph category, CTA category, or active system
+- service pages resolve to active systems
+- implementation service pages resolve upward to Smart Website Systems
+- feature pages do not sound like SaaS pages
+- service pages do not sound like a generic catalog
 - proof is real, clearly framed, or absent
-- checks or validation appropriate to the task were run
+- appropriate validation was run and reported

@@ -1,80 +1,77 @@
 # SYSTEM ARCHITECTURE — MindWP
 
-> Practical architecture brain for future source cleanup.
-> Business identity and offer ownership come from `FOUNDATION.md` and `OFFER-ARCHITECTURE.md`.
-> Architecture should support the active model instead of preserving removed routes, names, or parallel systems.
+Authority for mapping MindWP strategy into repo structure.
 
----
+This doc explains which parts of the source tree own routes, domain data, renderers, graph behavior, CTA/contact/SEO support, styles, and cleanup. It does not redefine the business strategy or offer model.
 
-## CURRENT BUILD FLOW
+## Governing Context
+
+- Business identity: [FOUNDATION.md](./FOUNDATION.md)
+- Active offer model: [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
+- Page roles: [CONTENT.md](./CONTENT.md)
+- Related-content behavior: [GRAPH.md](./GRAPH.md)
+- Execution guardrails: [SYSTEM-RULES.md](./SYSTEM-RULES.md)
+
+Architecture supports approved page meaning. It should not preserve stale source structures when governing docs define the active direction.
+
+## Build Flow
 
 ```text
 BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
 ```
 
-Architecture follows approved page meaning. It does not decide the page before the business reality and section design are clear.
+Source structure should follow approved page decisions. Do not force weak pages into premature data models, component shells, metadata contracts, or graph rules.
 
----
-
-## TOP-LEVEL OWNERSHIP
+## Top-Level Ownership
 
 - `src/app/**` owns public routes.
-- `src/domains/**` owns domain content, data, renderers, registries, and page-specific domain behavior.
+- `src/domains/**` owns domain content, page data, renderers, registries, and page-specific domain behavior.
 - `src/domains/services/**` owns active system service pages.
-- `src/domains/services/implementation/**` owns implementation pathway pages under Smart Website Systems.
+- `src/domains/services/implementation/**` owns implementation pathways under Smart Website Systems.
 - `src/components/**` owns reusable UI and component surfaces.
 - `src/styles/**` owns tokens, layout primitives, typography, and shared visual rules.
 - `src/lib/content-graph/**` owns graph metadata, relationship helpers, and related-content behavior.
-- `src/lib/cta/**`, `src/lib/contact/**`, and `src/lib/seo/**` own shared CTA, contact, and SEO behavior.
-- `src/config/routeOwnership.ts` and indexing config must align with active routes.
+- `src/lib/cta/**` owns shared CTA behavior.
+- `src/lib/contact/**` owns contact helpers and source-context support.
+- `src/lib/seo/**` owns shared SEO behavior.
+- `src/config/routeOwnership.ts` and indexing config must align with active public routes.
 
-Do not create a `/systems` public route taxonomy unless the governing docs are intentionally updated later.
+Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
 
----
+## Route Ownership
 
-## ACTIVE ROUTE MODEL
+`src/app/**` is the canonical route owner.
 
-The active public system model is owned by [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Architecture maps that model to source folders and route ownership.
+Rules:
 
-Revenue Recovery is a cross-system improvement layer only. It is not a primary service route, graph category, or route family.
+- One content item gets one canonical app route.
+- Duplicate alias routes are not allowed.
+- Removed unpublished names do not need compatibility.
+- Indexing config must not preserve removed route families.
+- Route ownership config must match the active public routes.
 
-Implementation services may exist under:
+Because the site has not been published, prefer direct correction over compatibility.
 
-- `domains/services/implementation/wordpress-development`
-- `domains/services/implementation/elementor`
-- `domains/services/implementation/bricks-builder`
-- `domains/services/implementation/divi5`
-- `domains/services/implementation/woocommerce`
-- `domains/services/implementation/website-redesign-system-rebuild`
+## Domain Responsibilities
 
-These are implementation pathways under Smart Website Systems, not equal primary systems.
+`src/domains/services/**` should describe active system service pages and their renderers.
 
----
+`src/domains/services/implementation/**` should describe implementation pathway pages under Smart Website Systems. These pages may discuss WordPress, Elementor, Bricks, Divi, WooCommerce, and rebuild choices, but their strategic parent remains Smart Website Systems.
 
-## DOMAIN RESPONSIBILITIES
+Domain files should not preserve removed service names, removed categories, stale aliases, or parallel models.
 
-`src/domains/services` should describe active system service pages and their renderers.
+## Page Data And Renderers
 
-Each active system page should have one primary identity, one route owner, one renderer/data path, and one active-system metadata owner.
+Domain `pageData` files connect slug -> data -> renderer after the page shape is stable.
 
-`src/domains/services/implementation` should describe implementation pathway pages. These pages may talk about WordPress, Elementor, Bricks, Divi, WooCommerce, or rebuild implementation choices, but their strategic parent is Smart Website Systems.
-
-Domain files should not preserve removed service names, removed categories, or compatibility aliases.
-
----
-
-## PAGE RENDERERS
-
-Page renderers may own section composition while pages are being proven.
-
-Allowed during page design:
+Allowed while proving a page:
 
 - page-owned content
 - local arrays
 - page-local helper components
 - repeated JSX
 - custom section layouts
-- broad types that do not fight the page
+- broad types that support the page
 
 Extract after approval:
 
@@ -82,33 +79,41 @@ Extract after approval:
 - reusable primitives
 - shared section components
 - metadata contracts
-- stricter types
 - graph relationships
+- stricter types
 
-Renderers should not manually render `RelatedSection` as unmanaged page body content. Related-content injection belongs in config/domain layers when the journey is ready.
+Renderers should not manually add `RelatedSection` as unmanaged body filler. Related-content injection belongs in domain/config layers when the journey is stable.
 
----
+## Component Responsibilities
 
-## COMPONENT RESPONSIBILITIES
+Components are building blocks, not gates.
 
-Shared components are optional building blocks, not mandatory shells.
+Shared surfaces may include:
 
-Current shared surfaces may include:
+- `HeroFrame`
+- `SectionShell`
+- `FAQSection`
+- `DecisionPanel`
+- `Button`
+- `SignalDot`
+- `StatusBadge`
+- `InlineText`
+- `Accordion`
+- `Tabs`
 
-- `src/components/layout`: `HeroFrame`, `SectionShell`
-- `src/components/content`: `FAQSection`
-- `src/components/conversion`: `DecisionPanel`
-- `src/components/navigation`: related-content presentation
-- `src/components/primitives`: small UI primitives
+Use shared components when they strengthen the approved section. Use custom JSX when the section needs a specific leak map, connected-handling surface, signal board, before/after panel, operating map, or proof stack.
 
-Use a shared component when it strengthens the approved section.
-Use custom JSX when the pattern needs a specific leak map, handoff surface, signal board, before/after panel, or operating map.
+Do not force generic card grids because reusable components already exist.
 
-Do not force a generic card grid because a reusable component already exists.
+## Styles
 
----
+`src/styles/**` owns tokens, layout primitives, typography, and shared visual rules.
 
-## CONTENT GRAPH AND METADATA
+Use Tailwind utilities plus existing `mw-*` and token classes for page work. Avoid page-specific CSS for migrated pages unless existing surfaces cannot reasonably express the design.
+
+Stable repeated visual primitives can be extracted after approval.
+
+## Content Graph And Metadata
 
 Graph metadata should use:
 
@@ -120,47 +125,33 @@ Graph metadata should use:
 - `topics[]`
 - `proofType` where relevant
 
-Do not use old broad system-array metadata as the strategic source of truth.
+Graph relationships should support the next useful step and respect [GRAPH.md](./GRAPH.md).
 
-Graph relationships should support the next useful step:
+Implementation pages relate upward to Smart Website Systems. Service pages should not become blog hubs. Resources should not trap readers in education loops. Revenue Recovery appears only as a theme or improvement layer, not a route, page type, or graph category.
 
-```text
-Blog -> Resource -> Industry -> Service
-```
+Graph resolver behavior should be extracted after approved page journeys are clear.
 
-The graph resolver is deferred until approved page journeys are clear. Inline links and hand-picked related content are acceptable during page creation when they support the section narrative.
+## CTA, Contact, And SEO Responsibilities
 
-Service pages should not become blog hubs.
-Resources should not trap readers in education loops.
-Implementation pages should relate upward to Smart Website Systems.
-Revenue Recovery should appear only as a theme or improvement layer.
-
----
-
-## CTA, CONTACT, AND SEO
-
-CTA behavior belongs to the conversion system, not individual page improvisation after approval.
+CTA behavior is governed by [CONVERSION.md](./CONVERSION.md).
 
 During page design:
 
 - CTA copy may live in JSX.
 - CTA placement may move.
 - `DecisionPanel` is useful but optional.
-- contact helpers should not block section composition.
+- contact helpers should not block strong section composition.
 
 After approval:
 
 - stable CTA labels can move into shared helpers or registries
 - source context can be preserved through `buildContactHref()`
-- SEO metadata can be tightened around the approved page identity
+- SEO metadata can be tightened around approved page identity and canonical route ownership
+- indexing config can be aligned with route ownership
 
-SEO and indexing config must follow active routes. Do not index removed aliases or removed service families.
+SEO should follow active routes and canonical page identity.
 
----
-
-## ROUTE CLEANUP RULES
-
-Because the site has not been published, cleanup should prefer direct correction over compatibility.
+## Cleanup Rules
 
 Prefer:
 
@@ -169,21 +160,23 @@ Prefer:
 - direct delete
 - one canonical route per content item
 - updated route ownership and indexing config
+- active metadata fields
 
 Avoid:
 
 - alias routes for removed names
 - redirects for unpublished removed names
-- duplicate app routes
 - compatibility wrappers
 - hidden removed categories
+- duplicate app routes
 - parallel data models
+- old identifiers in graph metadata
 
-If source code conflicts with active docs, update source code during a source-cleanup pass unless implementation reality proves a doc is wrong.
+If source code conflicts with active docs, update source during a source-cleanup task unless implementation reality proves the doc is wrong.
 
----
+## Active Commands
 
-## ACTIVE COMMANDS
+Use pnpm only.
 
 - `pnpm dev`
 - `pnpm build`
@@ -194,21 +187,19 @@ If source code conflicts with active docs, update source code during a source-cl
 - `pnpm check:minimal`
 - `pnpm check:frontend`
 
-Use `check:frontend` after visual/page work to catch runtime crashes.
+Use `pnpm check:frontend` after visual or page work.
 
----
-
-## ARCHITECTURE VALIDATION CHECKLIST
+## Architecture Validation
 
 Before approving source cleanup, confirm:
 
 - `src/app/**` has one canonical route per page
-- `domains/services` reflects the active system routes
-- `domains/services/implementation` holds implementation pathways under Smart Website Systems
+- `src/domains/services/**` reflects active system service pages
+- `src/domains/services/implementation/**` holds implementation pathways under Smart Website Systems
 - route ownership config matches public routes
 - indexing config does not preserve removed routes
 - metadata uses `primarySystem` and `supportingSystems[]`
-- Revenue Recovery is not modeled as a primary route category
-- no public backend platform names leak into source/copy
+- Revenue Recovery is not modeled as a primary route category, page type, or graph category
+- no public backend platform names leak into source or copy
 - related content is injected from config/domain layers when stable
 - page renderers retain custom JSX where it protects approved design

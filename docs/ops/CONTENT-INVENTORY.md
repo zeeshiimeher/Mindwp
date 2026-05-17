@@ -1,34 +1,31 @@
 # CONTENT INVENTORY — MindWP
 
-> Planning inventory for blog, resource, industry, and case-study expansion.
-> Runtime architecture lives in `docs/core/CONTENT.md`, `docs/core/GRAPH.md`, and live registries.
-> This file is for planning, clustering, and execution priority only.
+Planning inventory for future content clusters, priority industries, blog/resource ideas, case-study ideas, and publishing order.
 
----
+This file is not runtime truth. It does not define active systems, routes, graph behavior, canonical topics, or service ownership. Use [../core/CONTENT.md](../core/CONTENT.md), [../core/GRAPH.md](../core/GRAPH.md), [../core/OFFER-ARCHITECTURE.md](../core/OFFER-ARCHITECTURE.md), and live registries for runtime decisions.
 
-## USE THIS DOC
+## Use This Doc
 
-Use this file when you need a compact planning reference for:
+Use this file when planning:
 
-- content flow
-- planning categories
-- archetypes
-- high-value cluster ideas
+- content clusters
+- blog ideas
+- resource ideas
+- case-study ideas
 - priority industries
+- cleanup/rewrite priority
 - publishing order
 
-Do not use this file as runtime truth.
-Do not add content only because this inventory contains a cluster pattern.
+Do not add content only because it appears here. New content must add authority, proof, clarity, recognition, or conversion progression.
 
----
+## Planning Position
 
-## PLANNING POSITION
-
-This inventory helps plan authority expansion.
+This inventory supports authority expansion around MindWP's active model.
 
 It does not decide:
 
 - canonical systems
+- canonical routes
 - canonical industries
 - canonical topics
 - page behavior
@@ -36,47 +33,11 @@ It does not decide:
 - graph relationships
 - publishing approval
 
-Those decisions come from live registries and the governing docs.
+Implementation service content sits under Smart Website Systems. Revenue Recovery may appear as a framework or improvement lens only.
 
----
+## Planning Categories
 
-## CONTENT FLOW
-
-Canonical planning flow:
-
-```text
-Blog -> Resource -> Industry -> Service
-```
-
-Planning meaning:
-
-- Blog captures and diagnoses the problem.
-- Resource explains the framework, comparison, checklist, or implementation lens.
-- Industry contextualizes the framework in a vertical business reality.
-- Service owns the implementation decision and strongest conversion path.
-
-Case studies support industry and service understanding. They do not replace either.
-
-Revenue Recovery may appear as a framework or improvement layer. It is not a service page, content category, or primary system.
-
----
-
-## PLANNING RULES
-
-- One page owns one primary intent.
-- Canonical systems, industries, and topics come from live registries.
-- Topic plus industry combinations must remain unique when search intent is materially the same.
-- Service pages do not link downward into blog content as a primary strategy.
-- New content must add authority, proof, clarity, or conversion progression.
-- If content only adds volume, do not add it.
-- Implementation service content sits under Smart Website Systems.
-- No planning cluster should revive removed service categories, old identifiers, or generic agency service menus.
-
----
-
-## ACTIVE PLANNING CATEGORIES
-
-These are planning categories only. SEO targeting comes from page intent, metadata, and approved runtime registries.
+Allowed planning categories:
 
 | Category | Scope |
 | --- | --- |
@@ -89,293 +50,46 @@ These are planning categories only. SEO targeting comes from page intent, metada
 | Industry Examples | vertical-specific examples, working conditions, timing, urgency, customer behavior, trust concerns |
 | Frameworks | diagnostic models, checklists, operating maps, comparisons, recovery lenses, decision support |
 
----
+No planning category should become a route category automatically.
 
-## BLOG PLANNING
+## Content Flow
 
-### Blog Archetypes
+Planning flow:
 
-| Archetype | Purpose |
-| --- | --- |
-| Problem Analysis | explain why a business problem happens |
-| Industry Breakdown | show how one industry experiences a repeated issue |
-| Framework Breakdown | explain how a business system works conceptually |
-| Operational Mistake | show a repeatable mistake and the better response |
-| Comparison | clarify a decision without turning into affiliate or tool content |
-| Trend Analysis | explain a shift without turning into hype content |
+```text
+Blog -> Resource -> Industry -> Service
+```
 
-### Blog Structure Rules
+Meaning:
 
-Allowed sections:
+- Blog diagnoses the problem.
+- Resource explains the framework, checklist, comparison, or implementation lens.
+- Industry contextualizes the issue in a vertical business reality.
+- Service owns the implementation decision.
+- Case studies support proof and trust.
 
-`introduction`, `content`, `takeaways`, `quote`, `steps`, `checklist`, `image`, `callout`, `faq`, `cta`
+Live related-content behavior is controlled by [../core/GRAPH.md](../core/GRAPH.md).
 
-Rules:
-
-- `cta` should stay final.
-- FAQ should stay rare and appear immediately before `cta` when used.
-- Every article should include an observation plus implication pair.
-- Every article should establish active system context early.
-- Blog posts must not duplicate resource pages with lighter wording.
-- Blog posts must not absorb BOFU service-page structures.
-
-### Core Blog Clusters
-
-#### Smart Website Systems
-
-Topics:
-
-- systems-first websites for service businesses
-- service-page clarity
-- website enquiry capture
-- offer clarity and trust
-- forms and calls landing somewhere useful
-- website-to-response handoff
-- website-to-follow-up handoff
-
-Possible titles:
-
-- What Is a Systems-First Website for Service Businesses
-- Why Service Pages Fail Even When the Website Looks Good
-- How Website Enquiries Should Move From Page to Response
-- Service Page Clarity for Established Service Businesses
-
-#### Local SEO Authority Systems
-
-Topics:
-
-- local discovery
-- Google Business Profile direction
-- local visibility
-- service-area relevance
-- local trust signals
-- reviews as verification signals
-- website and local presence alignment
-
-Possible titles:
-
-- Why Nearby Customers Find You but Still Do Not Enquire
-- Local Visibility Signals Service Businesses Should Fix First
-- How Google Business Profile and Service Pages Work Together
-- Local Trust Signals That Help Customers Verify You
-
-#### Lead Response & Handling Systems
-
-Topics:
-
-- missed calls
-- slow response
-- form handling
-- message routing
-- booking handoff
-- after-hours enquiries
-- response paths for high-intent enquiries
-
-Possible titles:
-
-- Why Service Businesses Miss Enquiries They Already Paid to Attract
-- Missed-Call Recovery for Established Service Businesses
-- How Calls, Forms, and Messages Should Move Into a Response Path
-- What Happens When Response Depends on Whoever Notices First
-
-#### Follow-Up & CRM Systems
-
-Topics:
-
-- follow-up ownership
-- lead status
-- quote follow-up
-- scattered inboxes
-- reminders
-- next-step visibility
-- reducing dependence on memory
-
-Possible titles:
-
-- Why Quote Follow-Up Gets Forgotten in Busy Service Businesses
-- How Every Enquiry Gets an Owner, Status, and Next Step
-- Follow-Up Gaps That Cost Work After the First Response
-- Why a CRM Fails When Ownership Is Still Unclear
-
-#### Reputation & Review Systems
-
-Topics:
-
-- review request timing
-- completed work becoming proof
-- feedback routing
-- public trust signals
-- review response direction
-- local proof
-- reputation visibility
-
-Possible titles:
-
-- Why Happy Customers Still Do Not Leave Reviews
-- How Completed Work Becomes Visible Proof
-- Review Request Timing for Service Businesses
-- Feedback Routing Before Problems Become Public
-
-#### Implementation Services Under Smart Website Systems
-
-Topics:
-
-- WordPress as a website-system implementation path
-- Elementor for service-business website builds
-- Bricks Builder for performance and structured page systems
-- Divi 5 for rebuild and migration pathways
-- WooCommerce for service-business commerce where relevant
-- website redesign as system rebuild
-
-Possible titles:
-
-- WordPress Development as a Website System, Not a Brochure Build
-- Elementor Websites for Service Businesses That Need Better Enquiry Paths
-- Bricks Builder for Service-Page Clarity and Site Structure
-- Website Redesign vs Website System Rebuild
-- WooCommerce for Service Businesses With Real Operational Needs
-
-Implementation content must not sound like generic builder-agency content. It should resolve upward to Smart Website Systems.
-
-#### Industry-Led Content
-
-Priority industry modifiers:
-
-- roofing
-- HVAC
-- plumbing
-- hair salons / salons
-- auto repair
-- small med spas
-
-Typical pattern:
-
-- one problem-led title
-- one response or missed-call title
-- one follow-up title
-- one review or proof title
-- one website or local visibility title
-
-Do not create all patterns automatically. Choose only the industry angles that expose a real business reality.
-
----
-
-## RESOURCE PLANNING
-
-### Resource Archetypes
-
-| Archetype | Purpose |
-| --- | --- |
-| Framework | explain the structure of a system |
-| Workflow | explain a step-by-step operational flow |
-| Diagnostic | explain root causes before the system fix |
-| Industry Example | show how a system appears in one vertical |
-| Comparison | clarify a decision or tradeoff |
-| Implementation Guide | explain a practical implementation path under Smart Website Systems |
-
-Allowed template section types:
-
-`hero`, `takeaways`, `problem`, `business-costs`, `diy`, `solution-cards`, `case`, `comparison`, `templates`, `checklist`, `faq`, `cta`, `related-resources`, `sidebar-cta`
-
-### Global Resource Backlog
-
-#### Smart Website Systems
-
-- How Smart Website Systems Work
-- What Is a Systems-First Website
-- Conversion Architecture for Service Websites
-- Service Page Architecture That Converts
-- Website-to-Response Handoff Map
-- Website-to-Follow-Up Handoff Map
-
-#### Local SEO Authority Systems
-
-- Local Visibility Framework for Service Businesses
-- Google Business Profile System Architecture
-- Local Service Page Architecture
-- Authority Signals for Local Search
-- Find, Verify, Trust: Local Customer Journey Map
-
-#### Lead Response & Handling Systems
-
-- Lead Response Time Framework
-- Multi-Channel Enquiry Capture Systems
-- Enquiry Routing Models
-- Missed-Call Recovery System
-- After-Hours Response Path Checklist
-
-#### Follow-Up & CRM Systems
-
-- Enquiry Ownership Framework
-- Quote Follow-Up System Map
-- Follow-Up Visibility Checklist
-- Customer Reactivation Systems
-- Status and Next-Step Tracking for Service Businesses
-
-#### Reputation & Review Systems
-
-- Review Request Timing System
-- Customer Feedback Loop Framework
-- Responding to Negative Reviews Systematically
-- Reputation Visibility Systems
-- Completed Work to Public Proof Framework
-
-#### Implementation Services
-
-- WordPress Website System Implementation Guide
-- Elementor Website System Implementation Guide
-- Bricks Builder Website System Implementation Guide
-- Divi 5 Rebuild Pathway Guide
-- WooCommerce for Service-Business Website Systems
-- Website Redesign and System Rebuild Checklist
-
-#### Revenue Recovery Frameworks
-
-Revenue Recovery resources may exist as frameworks only.
-
-Possible framework angles:
-
-- Where Value Leaks After Enquiries Arrive
-- Revenue Recovery Map for Service Businesses
-- Follow-Up Recovery Checklist
-- Review and Referral Value Recovery Framework
-- Repeat Value Recovery After Completed Work
-
-These should route into the active systems. They must not become service pages.
-
----
-
-## INDUSTRY CONTEXT RESOURCE PATTERN
-
-For each priority industry, plan around the lenses that genuinely fit.
-
-Possible lenses:
-
-- website clarity
-- local visibility
-- missed-call recovery
-- response path
-- quote or booking follow-up
-- reviews and proof
-- repeat value
-- implementation path where the website system is the central need
+## Priority Industries
 
 Priority industries:
 
 1. roofing
 2. HVAC
 3. plumbing
-4. hair salons / salons
+4. salons / hair salons
 5. auto repair
 6. small med spas
 
-### Industry Notes
+Industry content should be selected by business reality, not generated mechanically.
+
+## Industry Notes
 
 Roofing:
 
 - storm urgency
 - quote follow-up
-- trust and local proof
+- local proof
 - service-area clarity
 - missed calls during busy periods
 
@@ -395,7 +109,7 @@ Plumbing:
 - reviews as trust proof
 - quote and booking handoff
 
-Hair salons / salons:
+Salons / hair salons:
 
 - bookings
 - no-shows
@@ -419,11 +133,165 @@ Small med spas:
 - follow-up
 - reviews and visible credibility
 
----
+## Blog Planning
 
-## CASE STUDY PLANNING
+Blog archetypes:
 
-Each case study should make these visible:
+- Problem Analysis: explain why a business problem happens.
+- Industry Breakdown: show how one industry experiences a repeated issue.
+- Framework Breakdown: explain a system concept in practical terms.
+- Operational Mistake: show a repeatable mistake and the better response.
+- Comparison: clarify a decision without becoming affiliate or tool content.
+- Trend Analysis: explain a shift without hype.
+
+Blog rules:
+
+- Open with a real situation.
+- Diagnose one problem or misconception.
+- Establish active system context early.
+- Route upward to a useful resource, industry page, case study, or service page.
+- Do not duplicate resources with lighter wording.
+- Do not absorb service-page conversion structure.
+
+## Blog Cluster Ideas
+
+Website Clarity:
+
+- What a Website System Means for a Service Business
+- Why Service Pages Fail Even When the Website Looks Good
+- How Website Enquiries Should Move From Page to Response
+- Service Page Clarity for Established Service Businesses
+
+Local Visibility:
+
+- Why Nearby Customers Find You but Still Do Not Enquire
+- Local Visibility Signals Service Businesses Should Fix First
+- How Google Business Profile and Service Pages Work Together
+- Local Trust Signals That Help Customers Verify You
+
+Lead Response:
+
+- Why Service Businesses Miss Enquiries They Already Paid to Attract
+- Missed-Call Recovery for Established Service Businesses
+- How Calls, Forms, and Messages Should Move Into a Response Path
+- What Happens When Response Depends on Whoever Notices First
+
+Follow-Up & CRM:
+
+- Why Quote Follow-Up Gets Forgotten in Busy Service Businesses
+- How Every Enquiry Gets an Owner, Status, and Next Step
+- Follow-Up Gaps That Cost Work After the First Response
+- Why CRM Use Fails When Ownership Is Still Unclear
+
+Reviews & Proof:
+
+- Why Happy Customers Still Do Not Leave Reviews
+- How Completed Work Becomes Visible Proof
+- Review Request Timing for Service Businesses
+- Feedback Routing Before Problems Become Public
+
+Implementation Services:
+
+- WordPress Development as a Website System, Not a Brochure Build
+- Elementor Websites for Service Businesses That Need Better Enquiry Paths
+- Bricks Builder for Service-Page Clarity and Site Structure
+- Website Redesign vs Website System Rebuild
+- WooCommerce for Service Businesses With Real Operational Needs
+
+Industry Examples:
+
+- missed-call patterns by industry
+- quote follow-up by industry
+- booking reliability by industry
+- local trust by industry
+- reviews and proof by industry
+
+Choose only the angles that expose a real business reality.
+
+## Resource Planning
+
+Resource archetypes:
+
+- Framework
+- Diagnostic
+- Checklist
+- Operating Map
+- Comparison
+- Implementation Guide
+- Industry Example
+
+Resource rules:
+
+- Answer one question.
+- Reduce ambiguity.
+- Explain the decision or framework.
+- Route upward when implementation context is appropriate.
+- Do not become direct sales pages.
+
+## Resource Backlog Ideas
+
+Website Clarity:
+
+- How Smart Website Systems Work
+- What Is a Website System for Service Businesses
+- Conversion Architecture for Service Websites
+- Service Page Architecture That Converts
+- Website-to-Response Handoff Map
+- Website-to-Follow-Up Handoff Map
+
+Local Visibility:
+
+- Local Visibility Framework for Service Businesses
+- Google Business Profile Direction Checklist
+- Local Service Page Architecture
+- Authority Signals for Local Search
+- Find, Verify, Trust: Local Customer Journey Map
+
+Lead Response:
+
+- Lead Response Time Framework
+- Multi-Channel Enquiry Capture Map
+- Enquiry Routing Models
+- Missed-Call Recovery System
+- After-Hours Response Path Checklist
+
+Follow-Up & CRM:
+
+- Enquiry Ownership Framework
+- Quote Follow-Up System Map
+- Follow-Up Visibility Checklist
+- Customer Reactivation System Map
+- Status and Next-Step Tracking for Service Businesses
+
+Reviews & Proof:
+
+- Review Request Timing System
+- Customer Feedback Loop Framework
+- Responding to Negative Reviews Systematically
+- Reputation Visibility System
+- Completed Work to Public Proof Framework
+
+Implementation Services:
+
+- WordPress Website System Implementation Guide
+- Elementor Website System Implementation Guide
+- Bricks Builder Website System Implementation Guide
+- Divi 5 Rebuild Pathway Guide
+- WooCommerce for Service-Business Website Systems
+- Website Redesign and System Rebuild Checklist
+
+Frameworks:
+
+- Where Value Leaks After Enquiries Arrive
+- Follow-Up Recovery Checklist
+- Review and Referral Value Recovery Framework
+- Repeat Value Recovery After Completed Work
+
+Frameworks that use Revenue Recovery language should route into active systems and remain improvement lenses.
+
+## Case Study Planning
+
+Case studies should make visible:
 
 - operating context
 - structural problem
@@ -433,7 +301,7 @@ Each case study should make these visible:
 - measurable or observable outcome where real
 - constraint, tradeoff, or decision where available
 
-Case-study ideas should cluster around:
+Case-study clusters:
 
 - website clarity and enquiry capture
 - local visibility and trust
@@ -442,29 +310,34 @@ Case-study ideas should cluster around:
 - follow-up ownership
 - review request timing
 - completed work becoming proof
-- Revenue Recovery as an observed improvement layer, not a service
+- improvement after enquiries arrive
 
-Case studies must feel observed, not polished. If a case study sounds like a generic transformation story, rewrite it around real operational change.
+Do not invent attribution, testimonials, metrics, or client results. Scenario studies and system examples must be clearly framed.
 
-Do not invent attribution, testimonials, metrics, or client results.
+## Cleanup And Rewrite Priority
 
----
+Prioritize cleanup when content:
 
-## LINKING RULES FOR PLANNING
+- sounds like a generic agency
+- leads with tools instead of business reality
+- treats implementation services like equal systems
+- turns Revenue Recovery into a service
+- duplicates another page's search intent
+- uses interchangeable industry wording
+- lacks a useful next step
+- adds volume without authority or proof
 
-- Blog should link upward to the most relevant resource.
+## Linking Rules For Planning
+
+- Blog should link upward to the most relevant resource or decision path.
 - Resource should link to the most relevant industry or service surface.
-- Industry should connect to the relevant active system service layer.
+- Industry should connect to relevant active system service pages.
 - Service may point back to framework resources when useful, but should not become a blog hub.
 - Implementation service content should connect upward to Smart Website Systems.
 - Case studies should route toward the service, industry, or system context they prove.
 - Revenue Recovery framework content should route into active systems, not to a standalone service.
 
-Live related-content behavior is controlled by `docs/core/GRAPH.md` and the graph resolver when implemented.
-
----
-
-## PUBLISHING ORDER
+## Publishing Order
 
 1. Global system resources for the active offer model.
 2. Smart Website Systems implementation-path resources where they support commercial pages.
@@ -472,35 +345,21 @@ Live related-content behavior is controlled by `docs/core/GRAPH.md` and the grap
 4. Expansion-lane resources: salons, auto repair, and small med spas.
 5. Supporting blog clusters that reinforce those resources.
 6. Case studies or scenario studies that validate the strongest live system patterns.
-7. Revenue Recovery framework resources only where they strengthen the active system path.
+7. Revenue Recovery framework resources only where they strengthen active system paths.
 
 Publishing priority should favor proof, differentiation, and conversion progression over content quantity.
 
----
-
-## SIMPLE PRE-PUBLISH CHECK
+## Pre-Publish Check
 
 Before adding a new content item, confirm:
 
 1. The page type is correct.
-2. The system, topic, and industry identifiers are canonical.
+2. The intended system, topic, and industry identifiers are canonical in runtime source.
 3. The item does not duplicate an existing topic-intent lane.
 4. The item links upward into the live hierarchy.
-5. The title and metadata still fit the system role.
-6. The item adds authority, proof, clarity, or conversion progression.
+5. The title and metadata fit the page role.
+6. The item adds authority, proof, clarity, recognition, or conversion progression.
 7. Implementation content resolves to Smart Website Systems.
 8. Revenue Recovery is treated only as a framework or layer.
 
----
-
-## WORKING NOTE
-
-If a new session needs fast context, this file should answer:
-
-- what content types we plan
-- what cluster shapes repeat
-- which industries are highest priority
-- which framework topics matter most
-- how implementation content fits under Smart Website Systems
-
-The active architecture belongs to `docs/core/CONTENT.md`, `docs/core/GRAPH.md`, `docs/core/SYSTEM-ARCHITECTURE.md`, and the current runtime code.
+If the content only adds volume, do not publish it.

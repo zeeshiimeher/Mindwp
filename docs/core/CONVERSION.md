@@ -1,160 +1,96 @@
-
 # CONVERSION — MindWP
 
-> Authority for CTA posture, contact behavior, conversion tone, diagnostic next steps, and proof-before-action logic.
-> This document does not decide the offer model. Offer ownership comes from [./FOUNDATION.md](./FOUNDATION.md) and [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
-> Conversion must support MindWP's active systems without turning the site into SaaS, a tool demo, a generic agency funnel, or a pressure-sales page.
+Authority for CTA posture, contact behavior, diagnostic conversion, and proof-before-action logic.
 
----
+This doc does not define the offer model or page roles. Offer ownership lives in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Page roles live in [CONTENT.md](./CONTENT.md).
 
-## USE THIS DOC
+## Use This Doc
 
-Use this document when planning, writing, designing, or reviewing:
+Use this when planning, writing, designing, or reviewing:
 
 - homepage CTAs
 - service page CTAs
+- implementation service CTAs
 - industry page CTAs
-- blog/resource routing CTAs
-- case-study next steps
+- blog/resource/case-study next steps
 - contact page behavior
 - diagnostic review offers
-- CTA labels
-- CTA placement
-- proof-before-CTA sections
-- conversion logic inside page plans
-
-This document prevents CTA drift.
+- form questions
+- proof-before-action sections
+- CTA placement and tone
 
 MindWP CTAs should feel diagnostic, specific, calm, practical, and low-pressure.
 
-A good MindWP CTA should make the buyer feel:
+The buyer should feel:
 
-> "This will help me understand what is leaking and what should be fixed first."
+> This will help me understand what is leaking and what should be fixed first.
 
 Not:
 
-> "I am being pushed into a demo, package, platform, or sales call."
+> I am being pushed into a demo, package, platform, or sales call.
 
----
+## Core Conversion Posture
 
-## GOVERNING CONTEXT
+MindWP does not convert through pressure. It converts through recognition, clarity, proof, and a practical next step.
 
-Conversion behavior must follow:
-
-- [./FOUNDATION.md](./FOUNDATION.md) for MindWP identity, buyer, public path, and active system hierarchy
-- [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for active system ownership and service boundaries
-- [./WRITING.md](./WRITING.md) for public wording and banned language
-- [./CONTENT.md](./CONTENT.md) for page type and funnel role
-
-If this file conflicts with those docs, fix the conflict.
-
-Conversion should support the active offer model defined in [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Revenue Recovery is a cross-system improvement layer, not a primary service page, route, page type, or CTA category.
-
----
-
-## CURRENT BUILD-SYSTEM RULE
-
-CTA components and helpers may exist, but runtime CTA enforcement must not block page creation.
-
-In the MindWP build system:
-
-- CTAs may live in custom JSX.
-- CTA wording may be shaped around the section or page.
-- Final CTA placement can move while the page is being designed.
-- `DecisionPanel` is useful, but not mandatory for every section.
-- Contact helpers are useful, but must not force weak section composition.
-- Registry, count, and position enforcement are extracted only after the approved page system exists.
-
-The strategic rule matters more than component enforcement:
-
-> CTA intent must match the buyer's situation, the page type, and the active system being explained.
-
----
-
-## CORE CONVERSION POSTURE
-
-MindWP does not convert through pressure.
-MindWP converts through recognition, clarity, proof, and a practical next step.
-
-The conversion posture is:
+The conversion sequence:
 
 1. Show the buyer's real situation.
 2. Name what is slipping away.
-3. Explain what changes when the system is built properly.
-4. Show proof, proof-style reasoning, or a clear operating example.
+3. Explain what changes when the website system and connected handling path work properly.
+4. Show proof, proof-style reasoning, a scenario, or a clear operating example.
 5. Invite the buyer to review the weak point with MindWP.
 
-The CTA should feel like a useful diagnostic conversation, not a sales trap.
+Do not escalate to a strong CTA before the reader understands why the next step matters.
 
-MindWP should avoid:
+## CTA Principles
 
-- fake urgency
-- countdown-style pressure
-- “limited spots” tactics
-- inflated growth promises
-- guaranteed rankings
-- guaranteed revenue
-- guaranteed review outcomes
-- SaaS demo language
-- tool/platform trial language
-- cheap package language
-- AI chatbot/vendor CTA language
-- CRM reseller CTA language
-
----
-
-## CTA INTENT
-
-Good CTAs should:
+Good CTAs:
 
 - follow recognition and proof
-- invite a useful conversation
-- reflect the page's owning problem
-- reflect the page's active system
-- tell the buyer what happens next
-- avoid pressure, hype, or fake urgency
-- make the next step feel practical and safe
-- help the buyer understand what is working, what is leaking, and what should be fixed first across the website system and connected handling path
+- match the page type
+- match the owning active system
+- reflect the buyer's visible problem
+- tell or imply what happens next
+- feel useful even before the buyer is ready to buy
+- help identify what is working, what is leaking, and what should be fixed first
 
-Do not invent proof, savings, guarantees, rankings, reviews, or revenue results to make a CTA stronger.
+Avoid:
 
-If the page has not created recognition yet, do not escalate to a strong CTA too early.
+- fake urgency
+- countdown pressure
+- limited-spots tactics
+- SaaS demo or trial language
+- tool/platform trial language
+- cheap package language
+- AI chatbot/vendor positioning
+- CRM reseller positioning
+- ranking, review, revenue, or lead-volume guarantees
 
----
+## Primary CTA Direction
 
-## PRIMARY CTA DIRECTION
+The strongest MindWP CTA posture is diagnostic.
 
-The strongest CTA direction for MindWP is diagnostic.
+Approved CTA directions:
 
-Preferred CTA concepts:
-
-- Review my enquiry flow
-- Find where work is slipping
 - Check my website system
 - Review my connected handling path
+- Find where work is slipping
+- Review my enquiry flow
 - Map my follow-up gaps
 - Talk through my current setup
 - Request a system review
 - Review my local visibility
 - Check my response path
-- Review my follow-up process
 - Review my proof and reviews
 
-These are not all final labels.
-They are approved CTA directions.
+These are direction examples, not mandatory labels.
 
-The CTA should usually imply:
+The CTA should imply that MindWP will look at the current situation, identify weak points, and explain what should be fixed first.
 
-- we will look at the current situation
-- we will identify weak points
-- we will explain what should be fixed first
-- we will not force the buyer into a generic package, platform demo, or builder-service conversation
+## CTA Language To Avoid
 
----
-
-## CTA LANGUAGE TO AVOID
-
-Avoid generic SaaS, agency, hype, or tool-reseller CTAs:
+Avoid:
 
 - Book a demo
 - Start free trial
@@ -170,380 +106,132 @@ Avoid generic SaaS, agency, hype, or tool-reseller CTAs:
 - See the CRM
 - Launch my AI chatbot
 - Get guaranteed rankings
-- Start your growth machine
 
-Some labels like “Book a call” may be usable in simple UI contexts, but they should not be the main strategic CTA direction unless the page has already explained the diagnostic value of that call.
+"Book a call" may work in simple UI contexts, but it should not be the strategic CTA unless the diagnostic value is already clear.
 
----
+## CTA By Page Type
 
-## CTA BY ACTIVE SYSTEM
+Homepage:
 
-Each active system should have CTA language that reflects its owning problem.
+- Diagnose the whole website and handling path.
+- Do not force the buyer into a narrow service too early.
+- Useful direction: "Check my website system," "Review my connected handling path," "Find where work is slipping," or "Request a system review."
 
-### Smart Website Systems
+Service pages:
 
-CTA direction:
+- Match the owning active system.
+- Support a BOFU decision.
+- Do not turn the page into an adjacent system.
 
-- Check my website system
-- Review my service-page clarity
-- Find where my website and handling path lose work
-- Review my enquiry path
+Implementation service pages:
 
-CTA should imply:
+- Use Smart Website Systems CTA posture.
+- Frame the next step around the right implementation path for a conversion-focused website system.
+- Do not ask for a generic platform quote.
 
-- the website will be reviewed as a conversion-focused website system connected to the handling path around it
-- the focus is not just visual design
-- the buyer will understand what blocks trust, clarity, or action
+Industry pages:
 
-Avoid:
+- Connect to the industry's working reality.
+- Route toward the most relevant active system or whole-system review.
+- Use industry-specific objects: calls, quotes, bookings, emergencies, no-shows, reviews, service areas, and follow-up.
 
-- Get a new website
-- Redesign my website
-- Get a quote for a website
-- Build me a beautiful site
+Blog pages:
 
-### Local SEO Authority Systems
+- Keep CTAs lighter and contextual.
+- Route to a relevant resource, industry page, case study, service page, or diagnostic next step when the reader is problem-aware.
+- Do not behave like BOFU service pages too early.
 
-CTA direction:
+Resource pages:
 
-- Review my local visibility
-- Check my local trust signals
-- See where nearby customers lose trust
-- Review my Google and service-area presence
+- Invite the reader to apply the framework to their business.
+- Route upward when the reader is ready for implementation context.
+- Do not trap readers in more education.
 
-CTA should imply:
+Case studies:
 
-- the business will be reviewed for local discovery and trust
-- the focus is findability, verification, and local authority
-- there are no ranking guarantees
+- Connect proof to a similar weak point.
+- Route to the relevant system, industry, or diagnostic CTA.
+- Do not imply the same outcome is guaranteed.
 
-Avoid:
+Contact page:
 
-- Rank me higher
-- Guarantee my Google ranking
-- Dominate local search
-- Beat my competitors now
+- Behave like a practical system review entry point.
+- Explain what the buyer can send, what MindWP will look at, and what happens next.
 
-### Lead Response & Handling Systems
+## CTA By Active System
 
-CTA direction:
+Use [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for full system ownership. CTA guidance here is intentionally short.
 
-- Check my response path
-- Review my missed-call handling
-- Map where enquiries get delayed
-- Find where calls, forms, or messages disappear
+Smart Website Systems:
 
-CTA should imply:
+- Review website clarity, trust, service-page structure, enquiry path, and the connected handling path around it.
+- Avoid "get a new website" or "build me a beautiful site" as the main CTA.
 
-- response and routing will be reviewed
-- missed calls, forms, messages, and booking requests are the focus
-- AI is not the product
+Local SEO Authority Systems:
 
-Avoid:
+- Review local visibility, verification, service-area relevance, and trust signals.
+- Avoid ranking guarantees and domination language.
 
-- Launch my AI chatbot
-- Book an AI demo
-- Get an AI receptionist
-- Automate all customer conversations
+Lead Response & Handling Systems:
 
-### Follow-Up & CRM Systems
+- Review missed calls, forms, messages, booking requests, response speed, and routing.
+- Avoid AI chatbot/demo language.
 
-CTA direction:
+Follow-Up & CRM Systems:
 
-- Map my follow-up gaps
-- Review my enquiry ownership
-- Check where follow-up depends on memory
-- See where quotes and next steps get lost
+- Review ownership, status, next steps, quote follow-up, and memory-dependent work.
+- Avoid CRM platform/demo language.
 
-CTA should imply:
+Reputation & Review Systems:
 
-- follow-up ownership will be reviewed
-- every enquiry should have a status and next step
-- CRM is behind the scenes, not the public product
+- Review proof, feedback, review request timing, and completed-work-to-trust flow.
+- Avoid guaranteed star ratings or review manipulation.
 
-Avoid:
+Revenue Recovery:
 
-- Set up my CRM
-- See the CRM platform
-- Automate my pipeline
-- Get a workflow demo
+- May support diagnostic framing as a layer.
+- Must not become a primary service page, route, page type, or CTA category.
 
-### Reputation & Review Systems
+## Proof Before CTA
 
-CTA direction:
+Strong CTAs usually need one or more of:
 
-- Review my proof and reviews
-- Check my review request path
-- See where good work fails to become proof
-- Map my feedback and review flow
+- buyer recognition
+- clear problem explanation
+- before/after operating contrast
+- proof or scenario
+- system map
+- trust signal
+- case-study reference
+- fit clarification
 
-CTA should imply:
+A light CTA may appear early if it is genuinely low-pressure and does not interrupt recognition.
 
-- review timing, proof capture, and feedback routing will be reviewed
-- good work should become visible trust
-- no fake review or manipulation claims are allowed
+## Fit And Disqualification
 
-Avoid:
-
-- Get more 5-star reviews guaranteed
-- Fix my reputation instantly
-- Automate all reviews
-- Remove bad reviews
-
-### Revenue Recovery Layer
-
-Revenue Recovery may support CTA framing as a diagnostic layer, but not as a primary service CTA.
-
-Allowed direction:
-
-- Find where value is still leaking
-- Review what happens after enquiries arrive
-- See what should be fixed first
-
-Avoid:
-
-- Book a generic growth service
-- Guarantee more revenue
-- Scale my business now
-- Unlock explosive growth
-
-### Implementation Service Pages
-
-Implementation service pages use Smart Website Systems CTA posture because they are active implementation pathways under conversion-focused website systems.
-
-CTA direction:
-
-- Check my website system
-- Review my service-page clarity
-- Review my website rebuild path
-- Find where my website and handling path lose work
-- Talk through the right implementation path
-
-CTA should imply:
-
-- the implementation choice serves the website system
-- the focus is clarity, trust, enquiry capture, maintainability, and connected handling
-- MindWP is not selling a generic builder package
-
-Avoid:
-
-- Get a WordPress quote
-- Build my Elementor site
-- Compare every builder
-- Buy a website package
-- Start a cheap redesign
-
----
-
-## CTA BY PAGE TYPE
-
-### Homepage
-
-Homepage CTAs should diagnose the whole path, not one random service.
-
-Best direction:
-
-- Review my website and handling path
-- Find where work is slipping
-- Request a system review
-
-The homepage CTA should not force the buyer into a tool demo or a narrow service before they understand the wider system.
-
-### Service Pages
-
-Service page CTAs should match the owning active system.
-
-Rules:
-
-- Smart Website page CTA reviews website clarity and enquiry path.
-- Local SEO page CTA reviews local visibility and trust.
-- Lead Response page CTA reviews response and routing.
-- Follow-Up & CRM page CTA reviews ownership and next steps.
-- Reputation & Review page CTA reviews proof and feedback flow.
-
-A service page CTA must not turn the page into a different system.
-
-### Industry Pages
-
-Industry page CTAs should connect to that industry's working reality.
-
-Example directions:
-
-- Review how work moves from website visit to response, follow-up, and proof in your roofing business
-- Find where HVAC calls and follow-up are slipping
-- Check how salon bookings and reviews are handled
-- Map missed calls and quote follow-up in your shop
-
-Industry CTAs should route toward the most relevant active system or a whole-system review.
-
-### Blog Pages
-
-Blog CTAs should be lighter and contextual.
-
-They may route to:
-
-- a relevant resource
-- a related industry page
-- a case study
-- an active system page
-- a diagnostic CTA if the reader is clearly problem-aware
-
-Blog CTAs must not behave like BOFU service-page CTAs too early.
-
-### Resource Pages
-
-Resource CTAs may invite the reader to apply the framework to their business.
-
-Good direction:
-
-- Use this to review your enquiry path
-- Compare this with your current follow-up process
-- Map this against your website system and connected handling path
-
-Resources should not trap readers in endless education. They should route upward when the reader is ready.
-
-### Case Studies
-
-Case-study CTAs should connect proof to the relevant active system or industry context.
-
-Good direction:
-
-- Review a similar weak point in your business
-- See where this kind of leak may exist in your website system or connected handling path
-- Talk through a similar system for your business
-
-Case-study CTAs should not overclaim or imply the same outcome is guaranteed.
-
-### Contact Page
-
-The contact page should feel like a practical system review entry point.
-
-It should make clear:
-
-- what the buyer can send
-- what MindWP will look at
-- what happens next
-- that the first step is diagnostic
-- that MindWP is not selling a generic package or platform demo
-
----
-
-## PROOF BEFORE CTA
-
-Strong CTA sections usually work better after the page has created one or more of these:
-
-- recognition of the buyer's situation
-- a clear explanation of what is going wrong
-- a before/after operating contrast
-- a proof point
-- a scenario example
-- a system map
-- a trust signal
-- a case-study reference
-- a clear next-step explanation
-
-Do not force a strong CTA before the reader understands why the next step matters.
-
-Exception:
-A light CTA may appear early when it is clearly low-pressure and does not interrupt recognition.
-
----
-
-## CONTACT LINKS
-
-Use `buildContactHref()` when a stable CTA should preserve source context.
-
-During page creation and section redesign, do not let contact-helper plumbing block section composition.
-
-Contact source context should eventually help identify:
-
-- page source
-- active system
-- page type
-- CTA intent
-- section source where useful
-
-But strategic CTA clarity comes first.
-
-A CTA with perfect tracking but weak intent is still a weak CTA.
-
----
-
-## CTA PLACEMENT PRINCIPLES
-
-CTA placement should follow the page's persuasion rhythm.
-
-General pattern:
-
-1. Recognition CTA or light path near the hero when useful.
-2. Diagnostic CTA after the problem is made visible.
-3. Stronger CTA after system explanation and proof.
-4. Final CTA after objections, FAQs, proof, or fit clarification.
-
-Do not add CTAs only to hit a count.
-Do not create CTA repetition that makes the page feel desperate.
-Do not make every section ask for contact.
-
----
-
-## CTA TONE
-
-MindWP CTA tone should be:
-
-- calm
-- specific
-- practical
-- diagnostic
-- commercially serious
-- low-pressure
-- confident without hype
-
-CTA tone should not be:
-
-- urgent
-- loud
-- manipulative
-- exaggerated
-- SaaS-like
-- agency-generic
-- tool-first
-- AI-hyped
-- rankings-hyped
-
----
-
-## FIT AND DISQUALIFICATION
-
-Conversion is not only about more enquiries.
-MindWP should attract buyers who understand the value of system-first work and repel weak-fit buyers who only want cheap execution.
-
-Fit language may clarify:
+Conversion should attract serious service-business buyers and repel poor-fit buyers without sounding arrogant.
 
 Good fit:
 
 - established service business
-- real enquiries or customer activity already exist
-- business wants better website clarity, connected handling, response, follow-up, or proof
-- owner wants practical structure, not just a prettier website
+- real enquiries or customer activity already exists
+- buyer wants better website clarity, connected handling, response, follow-up, or proof
+- owner wants practical structure, not only a prettier website
 
 Poor fit:
 
 - wants the cheapest website package
 - wants guaranteed rankings
 - wants a tool subscription only
-- wants fake reviews or review manipulation
+- wants fake reviews or manipulation
 - wants AI hype instead of practical handling
 - wants a one-off design with no business context
 
-Fit language should be calm and respectful, not arrogant.
+## Form And Contact Experience
 
----
+Forms should support diagnostic conversion.
 
-## FORM AND CONTACT EXPERIENCE
-
-Forms should support the diagnostic posture.
-
-A good MindWP contact form may ask for:
+Useful fields may include:
 
 - business name
 - website URL if available
@@ -554,78 +242,44 @@ A good MindWP contact form may ask for:
 - whether missed calls, forms, follow-up, reviews, or local visibility are the main concern
 - best way to contact the buyer
 
-Do not overload the form.
-Do not ask technical questions too early.
-Do not ask the buyer to know which backend system they need.
+Do not overload the form. Do not ask technical questions too early. Let the buyer describe the problem in plain language.
 
-The form should let the buyer describe the problem in plain language.
+## Contact Links And Helpers
 
----
+Use `buildContactHref()` when stable CTA source context should be preserved.
 
-## CTA VALIDATION CHECKLIST
+During page creation or redesign, contact-helper plumbing should not block strong section composition. Source context can be tightened after approval.
 
-Before approving a CTA, confirm:
+A CTA with perfect tracking but weak intent is still weak.
 
-- it matches the page type
-- it matches the active system
-- it reflects the buyer's visible problem
-- it tells or implies what happens next
-- it feels diagnostic, not pushy
-- it avoids SaaS/demo/trial language
-- it avoids tool/platform language
-- it avoids AI chatbot positioning
-- it avoids CRM reseller positioning
-- it avoids rankings or revenue guarantees
-- it does not invent proof
-- it does not treat Revenue Recovery as a primary service page, route, page type, or CTA category
-- it helps the buyer understand what is working, what is leaking, or what should be fixed first across the website system and connected handling path
+## CTA Extraction After Approval
 
-If any fail, rewrite the CTA.
-
----
-
-## CTA SYSTEMS — EXTRACT AFTER APPROVAL
-
-Extract stricter CTA rules after the approved page system exists:
+Extract stricter CTA systems after approved page journeys exist:
 
 - canonical labels
 - contact-source contracts
 - CTA registry
 - panel counts
-- CTA position rules
-- CTA metadata
-- CTA-to-active-system mapping
-- CTA-to-page-type mapping
+- position rules
+- metadata
+- page-type mapping
+- active-system mapping
 
-Do not enforce these before the page system is approved.
+Do not enforce these before the page meaning and visual rhythm are approved.
 
-The current priority is approved page meaning, strong section design, and correct conversion intent.
+## CTA Validation
 
----
+Before approving a CTA, confirm:
 
-## NOT ALLOWED
+- it matches the page type
+- it matches the owning active system
+- it reflects the buyer's visible problem
+- it tells or implies what happens next
+- it feels diagnostic, not pushy
+- it avoids demo/trial/platform language
+- it avoids AI chatbot and CRM reseller positioning
+- it avoids ranking, revenue, review, or lead-volume guarantees
+- it does not invent proof
+- it keeps Revenue Recovery as a layer only, not a primary service page, route, page type, or CTA category
 
-MindWP CTAs must not:
-
-- promise guaranteed rankings
-- promise guaranteed revenue
-- promise guaranteed reviews
-- sell backend platform names publicly
-- turn AI into the product
-- turn CRM into the product
-- use fake urgency
-- use generic agency CTA language as the main strategy
-- use SaaS demo/trial language as the main strategy
-- treat Revenue Recovery as a primary service page, route, page type, or CTA category
-- create pressure before recognition
-- hide the next step from the buyer
-
----
-
-## CROSS-REFERENCE MAP
-
-- Identity, buyer, public path, and active system hierarchy: [./FOUNDATION.md](./FOUNDATION.md)
-- Offer model and system ownership: [./OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
-- Public writing and banned phrases: [./WRITING.md](./WRITING.md)
-- Page roles and funnel behavior: [./CONTENT.md](./CONTENT.md)
-- Visual section composition and operational design language: [./DESIGN.md](./DESIGN.md)
+If any fail, rewrite the CTA.

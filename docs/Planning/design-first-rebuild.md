@@ -1,10 +1,21 @@
-# MindWP Page Build Workflow
+# Design-First Page Rebuild Workflow
 
-This is the active page-build planning note for the main MindWP folder.
+Workflow note for future Claude Opus, Codex, GPT, Copilot, or other AI page rebuild sessions.
 
-It explains how to build and rebuild pages. It does not replace the offer architecture in `docs/core/FOUNDATION.md` or `docs/core/OFFER-ARCHITECTURE.md`.
+This doc explains how to rebuild MindWP pages without losing the business-first thinking. It references the core docs instead of repeating them.
 
----
+## Read First
+
+For page rebuilds, read:
+
+1. [../core/FOUNDATION.md](../core/FOUNDATION.md) for the build flow, buyer truth, and public path.
+2. [../core/OFFER-ARCHITECTURE.md](../core/OFFER-ARCHITECTURE.md) for active system ownership.
+3. [../core/CONTENT.md](../core/CONTENT.md) for page role and funnel behavior.
+4. [../core/DESIGN.md](../core/DESIGN.md) for visual direction and section judgment.
+5. [../core/WRITING.md](../core/WRITING.md) for public copy.
+6. [../core/CONVERSION.md](../core/CONVERSION.md) for CTA posture.
+
+Read only the parts needed for the page being rebuilt.
 
 ## Core Flow
 
@@ -12,117 +23,147 @@ It explains how to build and rebuild pages. It does not replace the offer archit
 BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
 ```
 
-1. Business Reality: what is visibly happening in the buyer's business.
-2. Buyer Recognition: what the visitor should recognise as their own situation.
-3. Page Intent: what the visitor must understand, believe, or decide.
-4. Pattern: leak, handoff, stack, split, arc, before/after, priority, fit, proof, scenario, or operating map.
-5. Section Design: the actual visual and content shape.
-6. JSX: build the page or section directly.
-7. Approval: judge the page visually, strategically, and commercially.
-8. Systemization: extract stable components, data, metadata, and types after approval.
+This workflow is intentionally design-first. It prevents weak pages from being forced through premature data models, registries, or generic section templates.
 
-This workflow is intentionally design-first. It prevents weak pages from being forced through premature types, registries, or generic section templates.
+## Step 1: Review The Existing Page
 
----
+Before rebuilding, inspect the current page and any page data/renderers that feed it.
 
-## Offer Context For Page Builds
+Identify:
 
-MindWP is a systems-first website and connected handling systems business for established service businesses.
+- what the page currently says
+- what useful intent should survive
+- where it drifts into generic agency, SaaS, tool, builder, or hype language
+- what page type it is
+- which active system owns it
+- what buyer reality it should start from
+- which sections are strong enough to preserve in spirit
+- which sections are structurally weak and should be replaced
 
-The active offer model is owned by `docs/core/OFFER-ARCHITECTURE.md`.
+Do not keep old structure just because it exists. Do not delete useful strategic intent just because the wording is weak.
 
-Revenue Recovery is a cross-system improvement layer only. Implementation services sit under Smart Website Systems as implementation pathways, not equal primary systems.
+## Step 2: Define Page Intent
 
----
+Before JSX, write a short working plan:
 
-## Working Rules
+- buyer situation
+- recognition moment
+- page role
+- owning active system or implementation pathway
+- primary decision the visitor should make
+- main pattern for the page
+- proof or proof-style support available
+- CTA posture
 
-- Start from the buyer's visible working day.
-- Create buyer recognition before explaining the system.
-- Decide the page intent before composing sections.
-- Choose the pattern logic that best explains the problem or decision.
-- Compose the actual section in JSX first.
-- Use Tailwind utilities plus existing `mw-*` and token classes for fast layout and responsive structure.
-- Ask for visual approval before extracting shared primitives or data structures.
-- Keep types broad enough to support the current page, then tighten them when the pattern is stable.
+If the page is an implementation service page, confirm it resolves upward to Smart Website Systems.
 
----
+If Revenue Recovery appears, treat it only as a layer or theme.
 
-## Approved Base Components
+## Step 3: Choose Section Patterns
 
-- `HeroFrame`
-- `SectionShell`
-- `FAQSection`
-- `DecisionPanel`
-- `SignalDot`
-- `StatusBadge`
+Choose section shapes that make the business logic visible.
 
-Use these when they help. Custom page-owned JSX is appropriate when the section needs a specific business explanation.
+Strong MindWP patterns include:
 
----
+- leak map
+- handoff surface
+- signal board
+- before/after panel
+- operating map
+- priority map
+- proof stack
+- fit filter
+- scenario board
+- ownership table
+- trust path
 
-## Patterns To Prefer
+Avoid:
 
-Strong MindWP pages often use:
+- generic agency hero plus card grid
+- random process steps
+- fake analytics
+- SaaS dashboard imitation
+- decorative tech visuals
+- icon grids without business logic
+- builder-first implementation layouts
 
-- leak maps
-- handoff surfaces
-- signal boards
-- before/after panels
-- operating maps
-- priority maps
-- proof stacks
-- fit filters
-- scenario boards
+## Step 4: Create Section Intent Before JSX
 
-Avoid generic agency layouts, SaaS dashboard imitation, fake analytics charts, random icon grids, and process steps repeated across every page.
+For each section, define:
 
----
+- what the buyer should recognise
+- what the section proves or clarifies
+- which visual pattern fits
+- what text must be visible immediately
+- what the next section should make easier to understand
 
-## Extraction
+Do not start with a component name. Start with the business point the section must make.
 
-After approval, extract only what has proven stable:
+## Step 5: Build In Page-Owned JSX
 
-- repeated primitives
-- shared visual components
+Build directly in JSX while the pattern is being proven.
+
+Allowed:
+
+- page-owned content
+- local arrays
+- page-local helper components
+- repeated JSX
+- Tailwind utilities
+- existing `mw-*` and token classes
+- shared components where they help
+
+Use custom JSX when the section needs a specific operating map, handoff, leak board, comparison, or proof layout.
+
+Shared components like `HeroFrame`, `SectionShell`, `FAQSection`, `DecisionPanel`, `Button`, `SignalDot`, `StatusBadge`, `InlineText`, `Accordion`, and `Tabs` are useful tools, not gates.
+
+## Step 6: Review Like A Buyer
+
+After building, review the page visually and commercially:
+
+- Can the buyer recognise their situation quickly?
+- Does the hero open with reality rather than explanation?
+- Does each section add a new job?
+- Does the design show leaks, handoffs, ownership, trust, proof, response, follow-up, or status?
+- Does the page avoid generic agency or SaaS patterns?
+- Does the CTA feel diagnostic?
+- Is proof real, clearly framed, or absent?
+- Does the page fit its active system and page role?
+
+If the page is visually correct but strategically weak, rewrite the section. If the strategy is correct but the section looks generic, redesign the shape.
+
+## Step 7: Extract After Approval
+
+Only after approval, extract:
+
 - stable data groups
-- production metadata
-- related-content rules
+- shared section primitives
+- reusable visual components
+- domain `pageData`
+- metadata contracts
+- CTA rules
+- graph relationships
 - tighter types
 
-Extraction is a cleanup phase, not the design starting point.
+Extraction is not the starting point. It is the cleanup pass after the page proves its pattern.
 
----
+## Hand-Off Prompt Shape For Claude
 
-## Active Commands
+When handing a page rebuild to Claude Opus or another model, include:
 
-- `pnpm dev`
-- `pnpm build`
-- `pnpm lint`
-- `pnpm typecheck`
-- `pnpm check:names`
-- `pnpm check:minimal`
-- `pnpm check:frontend`
+- the page route and current source files
+- the page type and owning active system
+- the buyer situation
+- the recognition moment
+- the main section patterns to consider
+- key copy rules from [../core/WRITING.md](../core/WRITING.md)
+- CTA posture from [../core/CONVERSION.md](../core/CONVERSION.md)
+- clear instruction to build in JSX first and extract after approval
 
----
+Do not hand off only a component list or data schema.
 
-## Safety
+## Validation
 
-- Never mention GoHighLevel, GHL, or HighLevel publicly.
-- Do not invent proof, metrics, rankings, testimonials, or guarantees.
-- Do not revive removed service names or removed offer models.
-- Do not create a `/systems` public taxonomy unless governing docs are intentionally updated later.
-- Keep copy operational, specific, and buyer-first.
-- Run build and frontend smoke after meaningful page work.
+For page work, use the repo commands in [../core/SYSTEM-ARCHITECTURE.md](../core/SYSTEM-ARCHITECTURE.md). Run `pnpm check:frontend` after meaningful visual/page work.
 
----
-
-## Note For Future Page Rebuild Sessions
-
-This note is meant to help Claude, Codex, GPT, Copilot, or another AI rebuild pages without losing the business-first thinking.
-
-Do not start with a data model.
-Do not start with a section count.
-Do not start with a component list.
-
-Start with the business reality, make the buyer recognise it, then design the section that best communicates it.
+For docs-only planning, source validation is not required.
