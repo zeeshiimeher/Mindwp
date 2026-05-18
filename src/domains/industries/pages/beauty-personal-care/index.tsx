@@ -33,7 +33,8 @@ export const beautyPersonalCareIndustryPageData: IndustryCategoryPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the beauty category rebuilt from this base?',
-      description: 'We can shape the next pass around booking rhythm, follow-up pressure, and buyer trust.',
+      description:
+        'We can shape the next pass around booking rhythm, follow-up pressure, and buyer trust.',
     },
     actions: [
       {

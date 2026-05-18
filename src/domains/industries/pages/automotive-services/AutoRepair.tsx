@@ -32,7 +32,8 @@ export const autoRepairIndustryPageData: IndustryDetailPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the auto repair page rebuilt from this base?',
-      description: 'We can take this reset page and rebuild the real story from the first visible operating leak.',
+      description:
+        'We can take this reset page and rebuild the real story from the first visible operating leak.',
     },
     actions: [
       {

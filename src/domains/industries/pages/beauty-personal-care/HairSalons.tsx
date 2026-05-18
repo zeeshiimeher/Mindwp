@@ -32,7 +32,8 @@ export const hairSalonsIndustryPageData: IndustryDetailPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the hair salon page rebuilt from this base?',
-      description: 'We can rebuild it around the real booking rhythm instead of inherited long-form sections.',
+      description:
+        'We can rebuild it around the real booking rhythm instead of inherited long-form sections.',
     },
     actions: [
       {

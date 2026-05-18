@@ -25,7 +25,8 @@ export function PlumbingCompaniesIndustryRenderer({ data }: IndustryDetailRender
         heading={{
           eyebrow: 'Rebuild base',
           title: 'This industry page is back on a clean rebuild base.',
-          description: 'The page now holds only the core frame: hero, one section shell, and one decision point.',
+          description:
+            'The page now holds only the core frame: hero, one section shell, and one decision point.',
         }}
       >
         <div className='mw-surface-card p-6'>

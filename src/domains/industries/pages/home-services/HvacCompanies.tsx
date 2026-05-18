@@ -32,7 +32,8 @@ export const hvacCompaniesIndustryPageData: IndustryDetailPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the HVAC page rebuilt from this base?',
-      description: 'We can rebuild it around the real service-call pressure instead of inherited long-form sections.',
+      description:
+        'We can rebuild it around the real service-call pressure instead of inherited long-form sections.',
     },
     actions: [
       {

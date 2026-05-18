@@ -12,7 +12,6 @@ import type { ContentNodeType, ConversionGoal } from './types';
 const VALID_CONVERSION_GOALS: readonly ConversionGoal[] = [
   'lead',
   'consultation',
-  'demo',
   'email-capture',
   'none',
 ];

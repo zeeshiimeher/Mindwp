@@ -27,7 +27,7 @@ export const CONTENT_POLICY: Record<ContentNodeType, ContentPolicyEntry> = {
     visibility: 'public',
     canonicalRule: 'self',
     authorityWeight: 8,
-    conversionGoal: 'demo',
+    conversionGoal: 'consultation',
     conversionPriority: 80,
     indexingClassification: 'features',
   },

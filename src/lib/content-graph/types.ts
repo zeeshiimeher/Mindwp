@@ -13,7 +13,7 @@ export type ContentNodeType =
 
 export type Vertical = 'roofing-hvac' | 'aesthetic-clinic';
 
-export type ConversionGoal = 'lead' | 'consultation' | 'demo' | 'email-capture' | 'none';
+export type ConversionGoal = 'lead' | 'consultation' | 'email-capture' | 'none';
 
 export type RelationshipSource = 'manual' | 'derived';
 

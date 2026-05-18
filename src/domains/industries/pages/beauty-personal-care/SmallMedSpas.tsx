@@ -32,7 +32,8 @@ export const smallMedSpasIndustryPageData: IndustryDetailPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the small med spa page rebuilt from this base?',
-      description: 'We can rebuild it around the real consultation and follow-up pressure instead of legacy sections.',
+      description:
+        'We can rebuild it around the real consultation and follow-up pressure instead of legacy sections.',
     },
     actions: [
       {

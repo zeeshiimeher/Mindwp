@@ -32,7 +32,8 @@ export const roofingCompaniesIndustryPageData: IndustryDetailPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the roofing page rebuilt from this base?',
-      description: 'We can rebuild it around the real inspection and storm-response pressure instead of legacy sections.',
+      description:
+        'We can rebuild it around the real inspection and storm-response pressure instead of legacy sections.',
     },
     actions: [
       {

@@ -9,13 +9,12 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 // =============================================================================
 // ServicesLanding — services index page
-// Sections: hero · primarySystems · implementationPaths · revenueRecovery · faq · cta
+// Sections: hero · primarySystems · implementationPaths · faq · cta
 // New-system components only. Shared .services-lnd CSS lives in services.css.
 // =============================================================================
 
 const ARIA_HERO = 'Services -- index hero';
 const ARIA_PRIMARY = 'Primary systems';
-const ARIA_RECOVERY = 'Revenue recovery layer';
 const ARIA_PATHS = 'Implementation paths';
 const ARIA_FAQ = 'Frequently asked questions';
 
@@ -178,7 +177,7 @@ export function ServicesLanding() {
           title='Website and Handling Systems. [[muted:Built Around Where Work Slips.]]'
           description='Each service protects a different part of the path: being found, being trusted, making contact, getting a response, staying followed up, and turning good work into proof.'
           actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
-          chips={['Visibility', 'Response', 'Follow-up', 'Trust', 'Recovery']}
+          chips={['Visibility', 'Response', 'Follow-up', 'Trust', 'Proof']}
           chipDotVariant='subtle'
         />
 
@@ -216,23 +215,6 @@ export function ServicesLanding() {
               <PathCard key={spec.slug} spec={spec} />
             ))}
           </div>
-        </SectionShell>
-
-        <SectionShell
-          heading={{
-            eyebrow: 'Revenue Recovery Layer',
-            title: 'A cross-system improvement layer, not a sixth service.',
-            description:
-              'Once activity is visible, Revenue Recovery helps find where value is still leaking across enquiries, follow-up, reviews, and repeat work.',
-          }}
-          tone='white'
-          className='svc-lnd-section'
-          ariaLabel={ARIA_RECOVERY}
-        >
-          <p className='svc-lnd__cardSummary'>
-            It can inform the review, but it does not have its own service route or sit beside the
-            five primary systems.
-          </p>
         </SectionShell>
 
         <FAQSection

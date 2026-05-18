@@ -32,7 +32,8 @@ export const homeServicesIndustryPageData: IndustryCategoryPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the home services rebuild shaped properly?',
-      description: 'We can use this reset base to rebuild the category around the real field-service pressure.',
+      description:
+        'We can use this reset base to rebuild the category around the real field-service pressure.',
     },
     actions: [
       {

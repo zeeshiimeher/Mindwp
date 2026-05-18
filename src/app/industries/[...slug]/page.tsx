@@ -112,7 +112,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const categoryData = getIndustryDataByPath(`/industries/${categorySlug}`);
   const categoryName = categoryData?.hero?.eyebrow ?? toLabelFromSlug(categorySlug);
   const detailName =
-    industry.type === 'detail' ? (industry.hero?.eyebrow ?? toLabelFromSlug(industry.slug)) : undefined;
+    industry.type === 'detail'
+      ? (industry.hero?.eyebrow ?? toLabelFromSlug(industry.slug))
+      : undefined;
 
   const breadcrumbItems = [
     { name: 'Home', path: '/' },

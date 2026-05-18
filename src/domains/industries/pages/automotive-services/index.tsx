@@ -5,7 +5,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 export const automotiveServicesIndustryPageData: IndustryCategoryPageData = {
   seo: {
     title: 'Automotive Services Industry Pages Rebuild Base',
-    description: 'Automotive services category page reset to a clean rebuild base for the next pass.',
+    description:
+      'Automotive services category page reset to a clean rebuild base for the next pass.',
     canonical: '/industries/automotive-services',
     openGraph: {
       title: 'Automotive Services Industry Pages Rebuild Base',
@@ -32,7 +33,8 @@ export const automotiveServicesIndustryPageData: IndustryCategoryPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the automotive rebuild shaped properly?',
-      description: 'We can use this reset base to rebuild the category around the actual operating pressure.',
+      description:
+        'We can use this reset base to rebuild the category around the actual operating pressure.',
     },
     actions: [
       {

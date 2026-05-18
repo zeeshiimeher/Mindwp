@@ -5,7 +5,8 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 export const plumbingCompaniesIndustryPageData: IndustryDetailPageData = {
   seo: {
     title: 'Plumbing Companies Industry Page Rebuild Base',
-    description: 'Plumbing companies industry page reset to a clean rebuild base for the next pass.',
+    description:
+      'Plumbing companies industry page reset to a clean rebuild base for the next pass.',
     canonical: '/industries/home-services/plumbing-companies',
     openGraph: {
       title: 'Plumbing Companies Industry Page Rebuild Base',
@@ -32,7 +33,8 @@ export const plumbingCompaniesIndustryPageData: IndustryDetailPageData = {
     heading: {
       eyebrow: 'Next step',
       title: 'Want the plumbing page rebuilt from this base?',
-      description: 'We can rebuild it around the real after-hours and quote-follow-up pressure instead of legacy sections.',
+      description:
+        'We can rebuild it around the real after-hours and quote-follow-up pressure instead of legacy sections.',
     },
     actions: [
       {
