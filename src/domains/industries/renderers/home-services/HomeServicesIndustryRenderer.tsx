@@ -1,4 +1,3 @@
-import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionShell } from '@/components/layout/SectionShell';
@@ -7,63 +6,44 @@ import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 export function HomeServicesIndustryRenderer({ data }: IndustryCategoryRendererProps) {
-  const primarySystem = data.primarySystem;
-  if (!primarySystem) {
-    throw new Error(`[${data.slug}] Missing primary industry system.`);
-  }
-  const contactHref = buildIndustryContactHref({ system: primarySystem, slug: data.slug });
-  const actions = [{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }] as const;
+  const contactHref = buildIndustryContactHref({ system: data.primarySystem, slug: data.slug });
 
   return (
-    <main className='industry-category-page'>
+    <main>
       <HeroFrame
-        eyebrow={data.hero.badge}
+        ariaLabel='Home services hero'
+        eyebrow={data.hero.eyebrow}
         title={data.hero.title}
-        description={data.hero.description}
-        actions={actions}
-        chips={data.hero.list}
-        chipDotVariant='neutral'
+        description='This category is reset to a clean rebuild base so the next pass can be shaped from buyer reality, section by section.'
+        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
+        tone='gradient-hero'
+        layout='center'
       />
-
-      {/* 1 — Category recognition */}
       <SectionShell
+        ariaLabel='Home services rebuild base'
+        tone='mist'
         heading={{
-          eyebrow: 'The category shape',
-          title:
-            'Field crews on the road, [[muted:office staff holding the day, calls arriving anyway.]]',
-          description:
-            'Plumbing, roofing, HVAC, electrical and landscaping share one operating shape: demand arrives by phone, the team is somewhere else, and the office is one or two people deep.',
+          eyebrow: 'Rebuild base',
+          title: 'This category is back on a clean rebuild base.',
+          description: 'The page now holds only the core frame: hero, one section shell, and one decision point.',
         }}
-        tone='white'
       >
-        <div className='hs-text-secondary mx-auto flex max-w-3xl flex-col gap-5 leading-relaxed'>
-          <p className='hs-text-primary text-2xl font-semibold leading-snug tracking-tight'>
-            The leaks are predictable. The fix is a layer between the call and the crew.
-          </p>
-          <p>
-            Most home-services operators don&rsquo;t need new tools. They need the existing day to
-            stop relying on memory, missed calls, and one person at a desk holding everything.
-          </p>
+        <div className='mw-surface-card p-6'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Category reset</p>
+          <h3>Ready for a fresh category rebuild.</h3>
+          <p>The old long-form sections are removed so the next rebuild can start clean.</p>
         </div>
       </SectionShell>
-
-      <FAQSection
-        eyebrow={data.faq.header.eyebrow}
-        title={data.faq.header.title}
-        description={data.faq.header.description}
-        items={data.faq.items}
-        tone='white'
-      />
-
       <DecisionPanel
         heading={{
-          eyebrow: data.cta.heading.eyebrow,
-          title: data.cta.heading.title,
-          description: data.cta.heading.description,
+          eyebrow: data.decisionPanel.heading.eyebrow,
+          title: data.decisionPanel.heading.title,
+          subtitle: data.decisionPanel.heading.subtitle,
+          description: data.decisionPanel.heading.description,
         }}
-        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'primary' }]}
-        expectations={data.cta.expectations}
-        reassurance={data.cta.reassurance}
+        actions={data.decisionPanel.actions}
+        expectations={data.decisionPanel.expectations}
+        reassurance={data.decisionPanel.footer}
       />
     </main>
   );

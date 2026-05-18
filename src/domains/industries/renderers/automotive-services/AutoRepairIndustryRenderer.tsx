@@ -1,4 +1,3 @@
-import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionShell } from '@/components/layout/SectionShell';
@@ -7,45 +6,44 @@ import { buildIndustryContactHref } from '@/lib/contact/contactHref';
 import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 export function AutoRepairIndustryRenderer({ data }: IndustryDetailRendererProps) {
-  const primarySystem = data.primarySystem;
-  if (!primarySystem) {
-    throw new Error(`[${data.slug}] Missing primary industry system.`);
-  }
-  const contactHref = buildIndustryContactHref({ system: primarySystem, slug: data.slug });
-  const actions = [{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }] as const;
+  const contactHref = buildIndustryContactHref({ system: data.primarySystem, slug: data.slug });
+
   return (
-    <main className='industry-detail-page'>
+    <main>
       <HeroFrame
-        eyebrow={data.hero.badge}
+        ariaLabel='Auto repair hero'
+        eyebrow={data.hero.eyebrow}
         title={data.hero.title}
-        description={data.hero.description}
-        actions={actions}
-        chips={data.hero.list}
-        chipDotVariant='neutral'
+        description='This page is reset to a clean rebuild base so the next pass can rebuild the industry story from the real operating pressure.'
+        actions={[{ label: PRIMARY_CTA_LABEL, href: contactHref, variant: 'white' }]}
+        tone='gradient-hero'
+        layout='center'
       />
       <SectionShell
+        ariaLabel='Auto repair rebuild base'
+        tone='mist'
         heading={{
-          eyebrow: 'Industry rebuild',
-          title: 'This page is ready for the rebuild.',
-          description:
-            'This page is ready for a focused renderer-owned section pass when the page intent is approved.',
+          eyebrow: 'Rebuild base',
+          title: 'This industry page is back on a clean rebuild base.',
+          description: 'The page now holds only the core frame: hero, one section shell, and one decision point.',
         }}
-        tone='white'
       >
-        <p className='mw-text-subtle'>Renderer-owned page section target.</p>
+        <div className='mw-surface-card p-6'>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Industry reset</p>
+          <h3>Ready for a fresh industry rebuild.</h3>
+          <p>The old long-form sections are removed so the next rebuild can start clean.</p>
+        </div>
       </SectionShell>
-      <FAQSection
-        eyebrow={data.faq.header.eyebrow}
-        title={data.faq.header.title}
-        description={data.faq.header.description}
-        items={data.faq.items}
-        variant='split'
-      />
       <DecisionPanel
-        heading={data.cta.heading}
-        actions={actions}
-        expectations={data.cta.expectations}
-        reassurance={data.cta.reassurance}
+        heading={{
+          eyebrow: data.decisionPanel.heading.eyebrow,
+          title: data.decisionPanel.heading.title,
+          subtitle: data.decisionPanel.heading.subtitle,
+          description: data.decisionPanel.heading.description,
+        }}
+        actions={data.decisionPanel.actions}
+        expectations={data.decisionPanel.expectations}
+        reassurance={data.decisionPanel.footer}
       />
     </main>
   );

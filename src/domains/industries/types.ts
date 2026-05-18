@@ -13,40 +13,31 @@ export type IndustrySeoData = {
 };
 
 export type IndustryHeroData = {
-  badge?: string;
+  eyebrow?: string;
   title: string;
-  description: string;
-  list?: string[];
-  [key: string]: unknown;
 };
 
-export type FAQItem = {
-  id: string;
-  question: string;
-  answer: string;
-};
-
-export type CTAConfig = {
+export type IndustryDecisionPanelData = {
   heading: {
     eyebrow?: string;
     title: string;
     description: string;
+    subtitle?: string;
   };
-  actions?: Array<{
+  actions: Array<{
     label: string;
     href: string;
     primary?: boolean;
-    variant?: string;
+    variant?: 'white' | 'primary' | 'ghost';
   }>;
   expectations?: Array<{
     num?: string;
     text: string;
   }>;
-  reassurance?: {
+  footer?: {
     noSell?: string;
     tone?: string;
   };
-  [key: string]: unknown;
 };
 
 export type IndustryPageDataBase = {
@@ -60,16 +51,7 @@ export type IndustryPageDataBase = {
   supportingSystems?: ActiveSystem[];
   industries?: string[];
   topics?: string[];
-  faq: {
-    header: {
-      eyebrow?: string;
-      title: string;
-      description?: string;
-    };
-    items: FAQItem[];
-  };
-  cta: CTAConfig;
-  [key: string]: unknown;
+  decisionPanel: IndustryDecisionPanelData;
 };
 
 export type IndustryCategoryPageData = IndustryPageDataBase & {

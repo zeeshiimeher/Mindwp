@@ -1,88 +1,57 @@
 import type { IndustryDetailPageData } from '@/domains/industries/types';
+import { buildIndustryContactHref } from '@/lib/contact/contactHref';
+import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 export const hvacCompaniesIndustryPageData: IndustryDetailPageData = {
   seo: {
-    title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
-    description:
-      'How HVAC operators hold the heatwave-week call surge, keep maintenance contracts current, and turn a finished install into the next service appointment.',
+    title: 'HVAC Companies Industry Page Rebuild Base',
+    description: 'HVAC companies industry page reset to a clean rebuild base for the next pass.',
     canonical: '/industries/home-services/hvac-companies',
     openGraph: {
-      title: 'HVAC Companies — Seasonal Demand & Maintenance Systems',
-      description:
-        'Surge weeks, service contracts, and follow-up loops handled through one operating layer.',
+      title: 'HVAC Companies Industry Page Rebuild Base',
+      description: 'HVAC companies industry page reset to a clean rebuild base.',
     },
   },
   slug: 'hvac-companies',
   type: 'detail',
   parentSlug: 'home-services',
   hero: {
-    badge: 'Home Services · HVAC',
-    title:
-      'The first 35-degree week breaks the phone. [[muted:Half the calls never get a callback.]]',
-    description:
-      'HVAC demand is seasonal and uneven. The week the temperature spikes, the office is buried. Then four months later the same customers are not on a service plan.',
-    list: [
-      'Surge-week calls held without dropping any',
-      'Service contracts that renew themselves',
-      'Installs that turn into the next appointment, not silence',
-    ],
+    eyebrow: 'Home Services · HVAC',
+    title: 'HVAC Companies Are Back on a Clean Rebuild Base.',
   },
   industries: ['hvac'],
-  primarySystem: 'follow-up-crm',
+  primarySystem: 'lead-response-handling',
   supportingSystems: [
-    'lead-response-handling',
-    'reputation-review-systems',
+    'follow-up-crm',
     'smart-website-systems',
+    'reputation-review-systems',
     'local-seo-authority',
   ],
-  topics: ['lead-management', 'client-reactivation', 'review-generation'],
-  faq: {
-    header: {
-      eyebrow: 'Honest questions',
-      title: 'What HVAC operators usually ask first',
-      description: 'Direct answers. No hedging.',
-    },
-    items: [
-      {
-        id: 'spreadsheet',
-        question: 'We track service plans in a spreadsheet. Do we have to drop it?',
-        answer:
-          'No. The spreadsheet can stay as the source while the new layer pulls from it. We replace the spreadsheet only when it is actively causing missed renewals.',
-      },
-      {
-        id: 'surge',
-        question: 'Will the SMS acknowledgement annoy people who just want to talk?',
-        answer:
-          'It is one short message. It says “we’ve got your call, here is when we will ring back.” People appreciate knowing the company saw the call.',
-      },
-      {
-        id: 'install',
-        question: 'We don’t want to push service plans on people who just bought a system.',
-        answer:
-          'The follow-up at +14 days is a check-in, not an offer. The service-plan invitation comes at +60 days, plainly written, with an off switch.',
-      },
-      {
-        id: 'reviews',
-        question: 'Customers don’t want to be asked for reviews after every visit.',
-        answer: 'The request goes once per job, after sign-off. If they don’t respond, no chase.',
-      },
-    ],
-  },
-  cta: {
+  topics: ['lead-management', 'follow-up', 'review-generation'],
+  decisionPanel: {
     heading: {
       eyebrow: 'Next step',
-      title: 'Show us where HVAC enquiries get lost in the season',
-      description:
-        'Tell us what happens between a surge-week phone ringing and a quote going out. We will read it back and name the first system to fix.',
+      title: 'Want the HVAC page rebuilt from this base?',
+      description: 'We can rebuild it around the real service-call pressure instead of inherited long-form sections.',
     },
-    expectations: [
-      { num: '1', text: 'A short read of where calls and service plans land today' },
-      { num: '2', text: 'The system most likely to fix the worst leak first' },
-      { num: '3', text: 'A clear next move if the fit is right — or none if it isn’t' },
+    actions: [
+      {
+        label: PRIMARY_CTA_LABEL,
+        href: buildIndustryContactHref({
+          system: 'lead-response-handling',
+          slug: 'hvac-companies',
+        }),
+        variant: 'primary',
+      },
     ],
-    reassurance: {
-      noSell: 'No pitch. No package. We will tell you if a build is not the right move yet.',
-      tone: 'Direct, specific to a seasonal HVAC operator.',
+    expectations: [
+      { num: '1', text: 'A focused rebuild direction for this page' },
+      { num: '2', text: 'A sharper buyer-recognition structure' },
+      { num: '3', text: 'A simpler next pass built from clean JSX' },
+    ],
+    footer: {
+      noSell: 'No filler sections. No inherited page drag.',
+      tone: 'Clean rebuild base',
     },
   },
 };
