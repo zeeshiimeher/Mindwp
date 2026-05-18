@@ -46,6 +46,18 @@ Before writing, editing, or adding a page:
 | Case Study | Proof or example page | MOFU / proof support | Prove or illustrate operating change. |
 | Generic Page | Structural site surface | context-specific | Support navigation, contact, legal, or non-domain context. |
 
+## Homepage Role
+
+The homepage should create recognition before explaining the offer model.
+
+Current homepage principles:
+
+- The website is the base layer where search, trust, enquiry capture, response, follow-up, proof, and improvement connect.
+- Traffic without clear services and next steps leaks.
+- The buyer journey should feel like find -> verify -> trust -> contact -> handled -> proof.
+
+These are content principles, not final section order. The homepage must not explain the system stack before the visitor recognises the business problem.
+
 ## Service Pages
 
 Service pages are active system decision pages.
@@ -70,11 +82,17 @@ Service pages must not:
 - sell backend tools or platforms
 - promise guaranteed rankings, revenue, reviews, or lead volume
 
+Smart Website Systems pages should show the website as the visible control point for clarity, trust, enquiry capture, and connected handling. Local SEO Authority pages should connect find -> verify -> trust -> contact, and should make clear that visibility works better when service pages, location relevance, and proof are strong.
+
+Service-page fit and disqualification content is useful when it protects positioning. It should filter out looks-only redesign buyers, cheapest-package shoppers, feature-first buyers, ranking-guarantee seekers, and tool-demo buyers without sounding arrogant.
+
 ## Implementation Service Pages
 
 Implementation service pages are active implementation pathways under Smart Website Systems.
 
 They may explain WordPress, Elementor, Bricks, Divi, WooCommerce, and website redesign/system rebuild decisions. They should translate those choices into website clarity, trust, enquiry capture, maintainability, performance, ecommerce fit, and connected handling.
+
+Implementation pages should explain platform choice only through business fit. The question is not "which builder is best?" The question is whether the implementation path supports a clear, trustworthy, maintainable website system that connects enquiries to handling.
 
 They must not:
 
@@ -141,6 +159,8 @@ Resources must not:
 - turn Revenue Recovery into a primary offer
 - replace service pages as the conversion owner
 
+Useful resource themes include structure before optimisation, local SEO starting with website clarity, visibility maintained over time, traffic leaking without clear next steps, template website versus website system, implementation pathway fit, and fit/not-fit decision support.
+
 ## Case Studies
 
 Case studies prove or illustrate operating change.
@@ -159,7 +179,7 @@ Case studies should show:
 - operating context
 - structural problem
 - what changed
-- connected handling, handoff, or ownership change
+- connected handling or ownership change
 - observable outcome where real
 - constraint, tradeoff, or implementation decision where available
 

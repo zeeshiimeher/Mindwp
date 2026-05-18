@@ -41,6 +41,8 @@ Revenue Recovery is a cross-system improvement layer only.
 
 Implementation services are active implementation pathways under Smart Website Systems.
 
+The website-system idea starts from a current MindWP principle: the website is the base layer that connects search, trust, enquiry capture, response, follow-up, proof, and improvement. It is not the whole business system, but it is the visible place where the buyer can understand the connected handling path.
+
 ## How The Systems Connect
 
 The active systems protect connected moments in a service-business journey:
@@ -55,6 +57,8 @@ The active systems protect connected moments in a service-business journey:
 
 This is the preferred public explanation. The systems should feel connected around the website system and the handling path around it, not listed like agency services.
 
+Do not present the systems as a stack before buyer recognition. Show the business moments first, then introduce the active systems as the way MindWP protects those moments.
+
 ## System Ownership
 
 ### Smart Website Systems
@@ -62,6 +66,8 @@ This is the preferred public explanation. The systems should feel connected arou
 Role:
 
 Smart Website Systems is the flagship website and conversion clarity system. It makes the website a visible control point for offer clarity, trust, enquiry capture, and next-step routing.
+
+ Core mental model: the website should work as part of the business. It should connect to how the business is found, trusted, contacted, followed up with, reviewed, and improved.
 
 Owns:
 
@@ -74,6 +80,7 @@ Owns:
 - form and CTA placement
 - website trust and proof placement
 - website-to-handling connection
+- foundation for connected visibility, response, follow-up, reviews, and proof
 
 Does not own:
 
@@ -110,11 +117,15 @@ Avoid:
 - generic redesign offers
 - portfolio-first positioning
 
+Smart Website Systems should also protect the "structure first, optimisation second" principle. Do not optimize traffic, ads, SEO, or automation around unclear service pages, weak trust, or a website that does not send enquiries into a clear handling path.
+
 ### Local SEO Authority Systems
 
 Role:
 
 Local SEO Authority Systems helps nearby customers find, verify, and trust the business before they enquire.
+
+Core strategic idea: local SEO starts with the website, not around it. Local visibility works better when website structure, service pages, service-area relevance, and trust signals are clear.
 
 Owns:
 
@@ -134,6 +145,7 @@ Does not own:
 - full response handling
 - full review generation
 - fake authority signals
+- disconnected SEO work that ignores website clarity or enquiry handling
 
 Public meaning:
 
@@ -158,6 +170,8 @@ Avoid:
 - domination language
 - SEO hacks
 - traffic-only promises
+
+Local SEO is maintained, not installed. It should not be framed as a one-time trick or rankings shortcut. It connects to Smart Website Systems through clear services and next steps, and to Reputation & Review Systems through proof and trust.
 
 ### Lead Response & Handling Systems
 
@@ -366,6 +380,7 @@ Implementation pages may explain:
 - why the implementation path fits a service business
 - how the website becomes clearer and easier to trust
 - how enquiries are captured and connected into the handling path
+- how the implementation choice supports the website as a business control point
 - maintainability, editing, performance, ecommerce, or rebuild fit where relevant
 - where the page connects back to Smart Website Systems
 
@@ -379,6 +394,8 @@ They must not:
 - disconnect from website clarity, trust, enquiry capture, and connected handling
 
 Implementation pages should resolve upward to Smart Website Systems in navigation, metadata, graph relationships, CTA posture, and internal links.
+
+Implementation choices matter only because they help deliver the website system. A builder, platform, ecommerce setup, or rebuild path is useful when it supports clarity, trust, enquiry capture, maintainability, and connected handling.
 
 ## Public vs Internal Offer Language
 
@@ -469,6 +486,8 @@ The content flow is defined in [CONTENT.md](./CONTENT.md). Related-content behav
 ## Drift Prevention
 
 MindWP must not become a menu of web design, SEO, automation, CRM, AI, reviews, and growth services.
+
+Future page work must not pull the offer into public infrastructure language, automation-first positioning, feature tabs, technology cards, generic lead-management wording, or renderer-led section order.
 
 Every offer explanation should answer:
 

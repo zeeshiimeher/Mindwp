@@ -107,7 +107,7 @@ Plumbing:
 - immediate response
 - service-area clarity
 - reviews as trust proof
-- quote and booking handoff
+- quote and booking handling
 
 Salons / hair salons:
 
@@ -158,16 +158,23 @@ Blog rules:
 Website Clarity:
 
 - What a Website System Means for a Service Business
+- Website as the Control Point for Search, Trust, and Enquiry Handling
 - Why Service Pages Fail Even When the Website Looks Good
+- Template Website vs Website System for Service Businesses
 - How Website Enquiries Should Move From Page to Response
 - Service Page Clarity for Established Service Businesses
+- Structure Before Optimisation: Why Weak Website Foundations Leak Work
 
 Local Visibility:
 
+- Why Local SEO Starts With the Website
+- Visibility Is Maintained, Not Installed
 - Why Nearby Customers Find You but Still Do Not Enquire
+- Why Traffic Leaks When Service Pages and Next Steps Are Unclear
 - Local Visibility Signals Service Businesses Should Fix First
 - How Google Business Profile and Service Pages Work Together
 - Local Trust Signals That Help Customers Verify You
+- Find, Verify, Trust, Contact: The Local Customer Path
 
 Lead Response:
 
@@ -197,6 +204,15 @@ Implementation Services:
 - Bricks Builder for Service-Page Clarity and Site Structure
 - Website Redesign vs Website System Rebuild
 - WooCommerce for Service Businesses With Real Operational Needs
+- Choosing an Implementation Path for a Service-Business Website System
+- When a Builder Choice Matters and When It Does Not
+
+Fit / Not-Fit:
+
+- Who Needs a Website System Instead of a Brochure Redesign
+- When Not to Rebuild Your Website Yet
+- Why Cheapest-Website Comparisons Miss the Real Problem
+- Signs Your Business Needs Connected Handling Before More Traffic
 
 Industry Examples:
 
@@ -234,18 +250,23 @@ Website Clarity:
 
 - How Smart Website Systems Work
 - What Is a Website System for Service Businesses
+- Website as a Business Control Point
 - Conversion Architecture for Service Websites
 - Service Page Architecture That Converts
-- Website-to-Response Handoff Map
-- Website-to-Follow-Up Handoff Map
+- Template Website vs Conversion-Focused Website System
+- Website-to-Response Handling Map
+- Website-to-Follow-Up Handling Map
 
 Local Visibility:
 
 - Local Visibility Framework for Service Businesses
+- Local SEO Starts With Website Structure
+- Visibility Maintenance Checklist
 - Google Business Profile Direction Checklist
 - Local Service Page Architecture
 - Authority Signals for Local Search
 - Find, Verify, Trust: Local Customer Journey Map
+- Traffic Leak Diagnostic for Local Service Pages
 
 Lead Response:
 
@@ -279,10 +300,14 @@ Implementation Services:
 - Divi 5 Rebuild Pathway Guide
 - WooCommerce for Service-Business Website Systems
 - Website Redesign and System Rebuild Checklist
+- Implementation Pathway Fit Checklist
+- Builder Choice Decision Map for Website Systems
 
 Frameworks:
 
 - Where Value Leaks After Enquiries Arrive
+- Structure Before Optimisation Framework
+- Website System Fit Filter
 - Follow-Up Recovery Checklist
 - Review and Referral Value Recovery Framework
 - Repeat Value Recovery After Completed Work
@@ -296,7 +321,7 @@ Case studies should make visible:
 - operating context
 - structural problem
 - active system or system combination deployed
-- handoff change
+- connected handling change
 - ownership or status change
 - measurable or observable outcome where real
 - constraint, tradeoff, or decision where available
@@ -333,7 +358,7 @@ Prioritize cleanup when content:
 - Resource should link to the most relevant industry or service surface.
 - Industry should connect to relevant active system service pages.
 - Service may point back to framework resources when useful, but should not become a blog hub.
-- Implementation service content should connect upward to Smart Website Systems.
+- Implementation service content should connect upward to Smart Website Systems and stay tied to website clarity, enquiry capture, and connected handling.
 - Case studies should route toward the service, industry, or system context they prove.
 - Revenue Recovery framework content should route into active systems, not to a standalone service.
 
@@ -360,6 +385,7 @@ Before adding a new content item, confirm:
 5. The title and metadata fit the page role.
 6. The item adds authority, proof, clarity, recognition, or conversion progression.
 7. Implementation content resolves to Smart Website Systems.
-8. Revenue Recovery is treated only as a framework or layer.
+8. Implementation content stays tied to website clarity, enquiry capture, and connected handling.
+9. Revenue Recovery is treated only as a framework or layer.
 
 If the content only adds volume, do not publish it.

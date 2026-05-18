@@ -42,6 +42,19 @@ Identify:
 
 Do not keep old structure just because it exists. Do not delete useful strategic intent just because the wording is weak.
 
+Existing pages may be reviewed for buyer problems, mental models, warnings, and pattern clues only. They must not dictate final section order, renderer structure, component choice, page data shape, or final copy.
+
+Useful rebuild principles to carry forward:
+
+- website as visible control point
+- traffic leaking without clear service pages or next steps
+- find -> verify -> trust -> contact
+- structure before optimisation
+- implementation choice as business fit
+- fit/not-fit qualification
+
+Avoid public infrastructure language, automation-first positioning, technology cards as filler, process steps everywhere, generic CTAs, and systems explained as a stack before recognition.
+
 ## Step 2: Define Page Intent
 
 Before JSX, write a short working plan:
@@ -66,11 +79,14 @@ Choose section shapes that make the business logic visible.
 Strong MindWP patterns include:
 
 - leak map
-- handoff surface
+- connected-handling surface
+- website-as-control-point map
+- find-verify-trust-contact path
 - signal board
 - before/after panel
 - operating map
 - priority map
+- implementation pathway panel
 - proof stack
 - fit filter
 - scenario board
@@ -113,7 +129,9 @@ Allowed:
 - existing `mw-*` and token classes
 - shared components where they help
 
-Use custom JSX when the section needs a specific operating map, handoff, leak board, comparison, or proof layout.
+Use custom JSX when the section needs a specific operating map, connected-handling surface, leak board, comparison, or proof layout.
+
+For rebuilds based on existing pages, build from current docs and current page intent. Preserve useful thinking, not old section structure.
 
 Shared components like `HeroFrame`, `SectionShell`, `FAQSection`, `DecisionPanel`, `Button`, `SignalDot`, `StatusBadge`, `InlineText`, `Accordion`, and `Tabs` are useful tools, not gates.
 
@@ -124,7 +142,7 @@ After building, review the page visually and commercially:
 - Can the buyer recognise their situation quickly?
 - Does the hero open with reality rather than explanation?
 - Does each section add a new job?
-- Does the design show leaks, handoffs, ownership, trust, proof, response, follow-up, or status?
+- Does the design show leaks, connected handling, ownership, trust, proof, response, follow-up, or status?
 - Does the page avoid generic agency or SaaS patterns?
 - Does the CTA feel diagnostic?
 - Is proof real, clearly framed, or absent?

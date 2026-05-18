@@ -90,7 +90,9 @@ Good-fit buyers may have:
 - reviews that depend on someone remembering
 - a CRM or spreadsheet that does not make ownership visible
 
-MindWP is not primarily for brand-new businesses with no traction, buyers who only want the cheapest website, businesses seeking a tool subscription, or owners who want hype instead of practical operating structure.
+MindWP is especially relevant when the business has meaningful job value, moving parts, visibility investment, and enquiries that need consistent handling.
+
+MindWP is not primarily for brand-new businesses with no traction, buyers who only want the cheapest website, brochure-style redesign projects, looks-only rebuilds, feature-driven builds, short-term marketing experiments, businesses seeking a tool subscription, or owners who want hype instead of practical operating structure.
 
 ## Public Positioning Layer
 
@@ -110,6 +112,27 @@ Strategic anchors:
 
 These lines are authority assets. Use them deliberately. Do not scatter them across every page as decoration.
 
+## Website As Public Control Point
+
+The website is not just a page, brochure, or visual redesign. It is the public control point where several business moments meet:
+
+- search and local visibility
+- trust and proof
+- service-page clarity
+- enquiry capture
+- response and routing
+- follow-up ownership
+- reviews and ongoing improvement
+
+This is why Smart Website Systems remains the public anchor without swallowing the other active systems. The website is often where the buyer can most easily see that the wider handling path is weak.
+
+Current MindWP principles:
+
+- A website must help bring in useful enquiries.
+- A website must connect to what happens after the enquiry.
+- A website should support handling instead of sitting alone.
+- Traffic without clear services, trust, and next steps still leaks.
+
 ## Public Buyer Path
 
 This is the plain-language path the buyer should understand before they have to understand the offer architecture:
@@ -124,6 +147,8 @@ This is the plain-language path the buyer should understand before they have to 
 8. Good work becomes proof, reviews, repeat value, and better decisions.
 
 This path is not a route taxonomy. It is the public mental model. The detailed offer model is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
+
+In plain language: they find you, check you, contact you, the enquiry lands somewhere useful, follow-up is owned, and good work becomes proof.
 
 ## Vocabulary Boundaries
 
@@ -181,7 +206,7 @@ MindWP pages often need to show a business condition, not just describe a benefi
 Useful patterns include:
 
 - leak: where work slips away
-- handoff: where responsibility changes
+- connected handling: where responsibility, response, follow-up, review, or proof paths become visible
 - stack: how several signals compound
 - split: before/after or weak/strong contrast
 - arc: how the buyer moves through the situation

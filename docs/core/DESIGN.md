@@ -113,10 +113,17 @@ Useful MindWP patterns:
 
 - leak map
 - connected-handling surface
+- website-as-control-point map
+- find-verify-trust-contact path
+- enquiry-to-handling path
 - operating map
 - signal board
 - featured card plus support cards
 - before/after panel
+- weak website vs connected website contrast
+- local signal board
+- service-area relevance map
+- implementation pathway panel
 - priority map
 - fit filter
 - proof stack
@@ -125,7 +132,7 @@ Useful MindWP patterns:
 - trust path
 - diagnostic lane map
 
-Do not repeat the same pattern across a page unless the repetition creates useful rhythm. If every section is cards, the page has lost its shape.
+These are possible patterns, not mandatory sections. Do not let existing renderer order, old page structure, or reusable component availability decide the rebuild plan.
 
 ## Pattern Rules
 
@@ -195,6 +202,24 @@ Operating maps explain how website systems and connected handling work together.
 
 Use them to show how local discovery, website clarity, response, follow-up, reviews, proof, and recovery connect. Do not turn them into backend diagrams or public tool explanations.
 
+### Website-As-Control-Point Maps
+
+Use website-as-control-point maps when a page needs to show that the website is not sitting alone.
+
+Show how service-page clarity, trust, enquiry capture, response, follow-up, reviews, proof, and improvement connect around the website. This pattern is especially useful for Smart Website Systems and homepage thinking.
+
+### Find-Verify-Trust-Contact Paths
+
+Use find-verify-trust-contact paths for Local SEO Authority and industry pages where local trust matters.
+
+Show the path from local search to checking the business, reading service/location proof, choosing a next step, and making contact. Do not turn this into a rankings dashboard.
+
+### Implementation Pathway Panels
+
+Use implementation pathway panels when a page must explain WordPress, Elementor, Bricks, Divi, WooCommerce, or rebuild choices.
+
+The panel should make the business fit visible: clarity, maintainability, performance, ecommerce need, editing model, enquiry capture, and connected handling. It should not become a technology card grid or builder comparison table.
+
 ## Design For Active Systems
 
 Full system ownership is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Design should translate that ownership into visible business states.
@@ -203,12 +228,13 @@ Smart Website Systems:
 
 - Show clarity, trust, service-page flow, enquiry capture, and visible next steps.
 - Use service-page clarity maps, website-as-control-point sections, enquiry-to-handling diagrams, and trust placement.
+- Useful future patterns include before/after website contrast, implementation pathway panels, fit filters, common concern handling, and proof/scenario boards.
 - Avoid portfolio-first design and page-count package visuals.
 
 Local SEO Authority Systems:
 
 - Show find, verify, trust.
-- Use local presence signal boards, service-area relevance maps, and local proof placement.
+- Use local presence signal boards, service-area relevance maps, website-foundation-before-visibility contrasts, ongoing maintenance rhythm, and local proof placement.
 - Avoid fake ranking dashboards and domination visuals.
 
 Lead Response & Handling Systems:

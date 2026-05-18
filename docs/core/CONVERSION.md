@@ -74,9 +74,9 @@ The strongest MindWP CTA posture is diagnostic.
 Approved CTA directions:
 
 - Check my website system
-- Review my connected handling path
+- Review my website and handling path
 - Find where work is slipping
-- Review my enquiry flow
+- Review my website and handling path
 - Map my follow-up gaps
 - Talk through my current setup
 - Request a system review
@@ -87,6 +87,8 @@ Approved CTA directions:
 These are direction examples, not mandatory labels.
 
 The CTA should imply that MindWP will look at the current situation, identify weak points, and explain what should be fixed first.
+
+The best diagnostic posture often reviews the website system and connected handling path together: how people find the business, whether they trust it, what they do next, where the enquiry lands, who owns follow-up, and whether good work becomes proof.
 
 ## CTA Language To Avoid
 
@@ -109,13 +111,15 @@ Avoid:
 
 "Book a call" may work in simple UI contexts, but it should not be the strategic CTA unless the diagnostic value is already clear.
 
+"Start a Conversation" is also not a strong default by itself. It can work only when nearby context explains what the conversation will diagnose. Without that context, it is generic agency CTA language.
+
 ## CTA By Page Type
 
 Homepage:
 
 - Diagnose the whole website and handling path.
 - Do not force the buyer into a narrow service too early.
-- Useful direction: "Check my website system," "Review my connected handling path," "Find where work is slipping," or "Request a system review."
+- Useful direction: "Check my website system," "Review my website and handling path," "Find where work is slipping," or "Request a system review."
 
 Service pages:
 
@@ -217,6 +221,9 @@ Good fit:
 - real enquiries or customer activity already exists
 - buyer wants better website clarity, connected handling, response, follow-up, or proof
 - owner wants practical structure, not only a prettier website
+- enquiries need consistent handling
+- the business has moving parts
+- the buyer values long-term stability over short-term experiments
 
 Poor fit:
 
@@ -226,6 +233,9 @@ Poor fit:
 - wants fake reviews or manipulation
 - wants AI hype instead of practical handling
 - wants a one-off design with no business context
+- wants a brochure-style redesign
+- wants feature-driven build decisions
+- wants a generic builder-service comparison
 
 ## Form And Contact Experience
 
@@ -238,7 +248,7 @@ Useful fields may include:
 - industry
 - service area or location
 - current problem area
-- what happens to enquiries today
+- what happens after someone calls, books, messages, or fills a form
 - whether missed calls, forms, follow-up, reviews, or local visibility are the main concern
 - best way to contact the buyer
 
@@ -273,6 +283,7 @@ Before approving a CTA, confirm:
 
 - it matches the page type
 - it matches the owning active system
+- it supports the website system and connected handling path where the page is diagnosing the full journey
 - it reflects the buyer's visible problem
 - it tells or implies what happens next
 - it feels diagnostic, not pushy

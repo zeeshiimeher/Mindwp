@@ -196,6 +196,7 @@ When writing about website systems, lead with what changes:
 - trust signals appear where decisions happen
 - calls, forms, and messages connect into a handling path
 - the website becomes a visible control point
+- the website works as part of the business instead of sitting alone
 
 Avoid:
 
@@ -212,6 +213,12 @@ Wrong:
 Right:
 
 > The website explains the work clearly, builds trust before the call, and connects enquiries into a handling path someone owns.
+
+Useful test:
+
+> A website should help the business bring in and handle enquiries properly.
+
+Do not use that as mandatory final copy. Use it as a test: if the page only talks about design, pages, technology, or traffic, it is missing the MindWP point.
 
 ## Connected Handling Language
 
@@ -283,6 +290,8 @@ Use:
 - service areas are clear
 - local trust signals support the decision
 - Google Business Profile and website signals line up
+- traffic has clear service pages and next steps to land on
+- visibility is maintained over time, not installed once
 
 Avoid:
 
@@ -290,6 +299,16 @@ Avoid:
 - domination language
 - secret tricks
 - traffic-only claims
+- treating Google Business Profile as the whole system
+
+Useful concepts to preserve:
+
+- Local SEO starts with the website.
+- Traffic only helps when services and next steps are clear.
+- If the website does not build trust, local traffic leaks.
+- If service-area relevance is unclear, visibility is weaker.
+
+These are writing principles, not slogans to repeat on every page.
 
 ## Reviews Language
 
@@ -331,6 +350,7 @@ Do not lead with:
 - template customization
 - plugin stacks
 - platform comparison for its own sake
+- feature-driven builds disconnected from the business problem
 
 Good:
 
@@ -339,6 +359,8 @@ Good:
 Bad:
 
 > We build stunning Elementor websites for any business.
+
+Implementation copy should repel looks-only redesign buyers, cheapest-website shoppers, and generic builder-service shoppers. It should attract buyers who want a serious website system that supports clarity, trust, enquiry capture, and connected handling.
 
 ## Case Study Tone
 
@@ -389,6 +411,16 @@ Comparison sections show operating contrast, not mirrored benefit bullets.
 Proof sections show evidence, scenario, or observed change. They should not generalize.
 
 CTA sections should feel like a practical diagnostic conversation. CTA rules live in [CONVERSION.md](./CONVERSION.md).
+
+Avoid:
+
+- public infrastructure language as the lead idea
+- automation as a visible homepage pillar
+- AI as a named public capability
+- workflow language everywhere
+- generic lead-management wording
+- technology cards as filler
+- systems explained as a stack before the reader recognises the problem
 
 ## Numbers And Claims
 

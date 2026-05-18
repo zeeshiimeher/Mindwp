@@ -103,6 +103,7 @@ MindWP sells conversion-focused website systems, clarity, connected handling, re
 - Compose pages and sections in JSX first while the communication pattern is being shaped.
 - Page-owned content, local arrays, helper components, and repeated JSX are acceptable while proving a page.
 - Custom connected-handling surfaces are acceptable when they make ownership, response, follow-up, reviews, or proof easier to see.
+- Existing pages may inform buyer problems and pattern choice, but must not dictate final section order, renderer structure, or final copy.
 - Use Tailwind utilities plus existing `mw-*` and token classes.
 - Avoid page-specific CSS for migrated pages unless no existing styling surface can reasonably solve the problem.
 - Domain `pageData` files connect slug -> data -> renderer after the shape is stable.
