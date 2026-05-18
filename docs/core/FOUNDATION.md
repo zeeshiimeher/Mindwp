@@ -158,7 +158,10 @@ Public copy should lead with calls, forms, quotes, jobs, reviews, staff pressure
 
 Public copy should not lead with infrastructure, stack, backend tools, automations, platform names, technical architecture, or internal taxonomy.
 
+
 The word "system" is allowed because it is central to MindWP. It should still be earned by the problem. First show what is happening, then explain the system that fixes it.
+
+The phrase "connected handling" follows the same rule. Do not lead with it before the working-day problem is visible. First show the calls, forms, messages, quotes, follow-up, reviews, or ownership gaps the buyer recognises. Then use connected handling to name the response, routing, follow-up, ownership, CRM visibility, review request, proof capture, and recovery path around the website.
 
 Detailed public language rules live in [WRITING.md](./WRITING.md).
 

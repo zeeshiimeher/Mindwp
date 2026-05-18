@@ -34,6 +34,7 @@ Read only what is relevant to the task.
 | [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) | Mapping the strategy into routes, domains, renderers, components, styles, and graph code. |
 | [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md) | Hard execution guardrails and validation rules. |
 | [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md) | Page rebuild workflow for high-quality design-first AI sessions. |
+| [docs/Planning/page-rebuild-briefs.md](./docs/Planning/page-rebuild-briefs.md) | Page-level brain transfer for future rebuild planning; not a sitemap, wireframe, section order, or copy deck. |
 | [docs/ops/CONTENT-INVENTORY.md](./docs/ops/CONTENT-INVENTORY.md) | Planning inventory for future content clusters and publishing priorities. |
 
 ## Working Philosophy
@@ -84,6 +85,8 @@ Use `pnpm check:frontend` after meaningful page or visual work. Use `pnpm build`
 - Do not preserve unpublished removed routes or removed names for compatibility.
 - Do not invent proof, metrics, rankings, guarantees, testimonials, or client results.
 - Do not publicly mention backend platform names, tool names, or white-label delivery details as the product.
-- Keep Revenue Recovery as a cross-system improvement layer, not a primary service page, route, page type, graph category, or CTA category.
+- Keep Revenue Recovery as a cross-system improvement layer only; do not model it as a service page, route, page type, graph category, CTA category, navigation pillar, related-content cluster, panel, form, service card, or primary offer.
+- Keep primary service pages distinct: each owns one business moment and should not repeat the full MindWP model or absorb adjacent systems.
+- Keep Lead Response & Handling separate from Follow-Up & CRM in routes, data, metadata, CTA posture, graph relationships, renderer logic, and page copy.
 
 For source work, read [AGENTS.md](./AGENTS.md) first.

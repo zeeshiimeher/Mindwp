@@ -4,6 +4,8 @@ Authority for related-content direction, content relationships, routing logic, g
 
 Graph exists to support the visitor's next useful step. It does not decide the offer model, page role, or page design.
 
+Do not duplicate system definitions here. Use [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for system ownership and use this doc only to decide related-content direction, routing logic, graph metadata, and resolver behavior.
+
 ## Use This Doc
 
 Use this when planning or implementing:
@@ -62,6 +64,8 @@ Resources should not trap readers in education loops. Service pages should not b
 
 Related content must preserve page type, funnel role, page intent, and active system boundaries.
 
+Related content should not make every primary service page repeat the full MindWP model. Each service page owns one business moment. Graph bridges are allowed only when the adjacent item clarifies the current page's owning problem or the next useful step.
+
 ## Active System Relationship Rules
 
 Full system ownership is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Graph rules apply that ownership.
@@ -76,7 +80,9 @@ Follow-Up & CRM Systems may relate to ownership, status, quote follow-up, remind
 
 Reputation & Review Systems may relate to review timing, feedback routing, proof capture, local trust, and completed-work status. It should not become fake review, manipulation, or generic reputation software content.
 
-Revenue Recovery may appear as a theme, improvement lens, or diagnostic idea after the active system is understood. It must not become a primary related-content category, service page, route family, or equal system.
+Revenue Recovery may appear only as a small improvement lens after the active system problem is understood. It must not become a primary related-content category, service page, route family, navigation pillar, graph category, CTA category, or equal system. Do not create Revenue Recovery related-content clusters.
+
+Keep the timing boundary between Lead Response & Handling and Follow-Up & CRM clear. Lead Response & Handling may route to Follow-Up & CRM as the next ownership step, but it owns first response and routing. Follow-Up & CRM may reference response context, but it owns owner, status, reminder, and next-step visibility after first response or quote.
 
 ## Implementation Service Relationships
 
@@ -107,7 +113,7 @@ Homepage:
 
 Service pages:
 
-- Prioritize proof, implementation-relevant resources, relevant industry contexts, and adjacent systems only where the connected handling path matters.
+- Prioritize proof, implementation-relevant resources, relevant industry contexts, and adjacent systems only where they clarify the page's owning business moment or next useful step.
 - Do not send readers into unrelated blogs or early-awareness loops.
 
 Implementation service pages:
@@ -194,9 +200,10 @@ Before adding related content or graph logic, confirm:
 - the related item supports the next useful step
 - the related item does not break page intent
 - the related item does not revive removed offer structures
-- Revenue Recovery remains a layer/theme only
+- Revenue Recovery does not appear as a related-content category, cluster, route family, service page, navigation pillar, CTA category, or equal system
 - implementation service relationships resolve upward to Smart Website Systems
 - the related item does not turn a service page into a blog hub
+- the related item does not make a primary service page repeat the full MindWP model or absorb an adjacent system
 - the related item does not trap a resource reader in education
 
 If any fail, do not add the related item.

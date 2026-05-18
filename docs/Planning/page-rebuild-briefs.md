@@ -4,7 +4,10 @@
 
 Page-level strategy briefs for future rebuild work.
 
+
 This doc is not a final sitemap, section plan, wireframe, or copy deck. It is a brain-transfer layer for Claude, Codex, Copilot, and future GPT sessions before page rebuilds.
+
+If this doc conflicts with the core docs, the core docs win. This doc gives page-level context, not governing strategy.
 
 Use this doc with:
 
@@ -20,7 +23,10 @@ Use this doc with:
 
 The page rebuild should be docs-led, not renderer-led.
 
+
 These briefs explain what each important page must help the buyer understand. They do not define final section order. They do not require exact sections. They do not ask Claude to copy existing pages.
+
+A page brief is not permission to create a rigid section sequence. Claude must still choose section patterns from buyer reality, page intent, design judgment, and the approved docs.
 
 The rebuild process remains:
 
@@ -41,6 +47,9 @@ Meaning:
 - Website systems make the offer clear, build trust, guide visitors, capture enquiries, and create a visible public control point.
 - Connected handling is the response, routing, follow-up, ownership, CRM visibility, review request, proof capture, and recovery path around the website.
 - The page should make the buyer recognise where work slips away before explaining system structure.
+- Connected handling must be earned by buyer recognition; do not lead with the phrase before the working-day problem is visible.
+- Each primary service page must own one business moment and avoid repeating the full MindWP model.
+- Simple CTA labels can be used only when nearby context explains the diagnostic purpose.
 
 Do not let pages become:
 
@@ -57,7 +66,10 @@ Do not let pages become:
 
 Use custom page-owned JSX when the page needs a specific leak map, connected-handling surface, signal board, operating map, fit filter, proof stack, or scenario board.
 
+
 Extract shared components, data shapes, metadata, graph rules, and stricter CTA rules only after the page is approved.
+
+Do not plan pages, sections, CTAs, panels, forms, service cards, routes, or graph relationships around Revenue Recovery. It may appear only as a small improvement lens after the active system problem is already understood.
 
 ## Page Brief Format
 
@@ -231,7 +243,20 @@ The contact page should reduce ambiguity. It should not ask technical questions 
 
 ---
 
+
 # Primary System Service Pages
+
+Primary service pages must stay distinct. Each page owns one business moment and may use the wider connected path only to clarify that moment.
+
+Do not make every service page repeat website + response + follow-up + reviews + recovery in the same way. If every page explains the whole MindWP model, the service pages have blurred.
+
+System timing boundaries:
+
+- Smart Website Systems owns website clarity, trust, service-page structure, enquiry capture, and website-to-handling connection.
+- Local SEO Authority Systems owns local find -> verify -> trust -> contact.
+- Lead Response & Handling Systems owns first response and routing after someone reaches out.
+- Follow-Up & CRM Systems owns owner, status, reminder, and next-step visibility after first response or quote.
+- Reputation & Review Systems owns completed work becoming reviews, feedback, proof, and trust.
 
 ## Smart Website Systems
 
@@ -895,7 +920,11 @@ Before rebuilding a page, confirm:
 - CTA posture is diagnostic
 - proof is real, clearly illustrative, or absent
 - implementation pages resolve upward to Smart Website Systems
-- Revenue Recovery remains a layer only
+- Revenue Recovery is not planned as a page, section, CTA, panel, form, service card, route, graph relationship, or public offer
+- if this is a primary service page, it owns one business moment instead of repeating the full MindWP model
+- if this touches Lead Response or Follow-Up, first response/routing and ownership/status/next steps are kept distinct
+- if the page uses connected handling language, the working-day problem is visible first
+- if the page uses a simple CTA label, nearby context explains the diagnostic purpose
 - design can use page-owned JSX where needed
 
 If any item is unclear, clarify the page brief before writing or coding.

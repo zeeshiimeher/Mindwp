@@ -2,7 +2,9 @@
 
 Authority for page roles, funnel behavior, editorial boundaries, and content intent.
 
-This doc defines what each page type is allowed to do. It references [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for active system ownership instead of repeating full system definitions.
+This doc defines what each page type is allowed to do. It references [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for active system ownership instead of repeating system definitions.
+
+Do not duplicate offer definitions here. Apply the offer model only where it affects page role, funnel behavior, editorial boundaries, and content intent.
 
 ## Use This Doc
 
@@ -73,6 +75,8 @@ They own:
 
 Each service page must resolve to one active primary system from [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
+Each primary service page must own one business moment. It may show connected context, but it must not repeat the full MindWP model, re-explain every active system, or absorb adjacent systems. Use the wider connected path only to clarify the current page’s owning problem.
+
 Service pages must not:
 
 - become generic agency service pages
@@ -83,6 +87,8 @@ Service pages must not:
 - promise guaranteed rankings, revenue, reviews, or lead volume
 
 Smart Website Systems pages should show the website as the visible control point for clarity, trust, enquiry capture, and connected handling. Local SEO Authority pages should connect find -> verify -> trust -> contact, and should make clear that visibility works better when service pages, location relevance, and proof are strong.
+
+Lead Response & Handling and Follow-Up & CRM must stay distinct. Lead Response & Handling owns the first response and routing moment after someone reaches out. Follow-Up & CRM owns ownership, status, reminders, and next steps after the first response or quote exists. Pages may reference each other, but neither page should absorb the other system.
 
 Service-page fit and disqualification content is useful when it protects positioning. It should filter out looks-only redesign buyers, cheapest-package shoppers, feature-first buyers, ranking-guarantee seekers, and tool-demo buyers without sounding arrogant.
 
@@ -203,9 +209,11 @@ Do not make one page absorb another page type's role. A blog should not become a
 
 ## Revenue Recovery Rule
 
-Revenue Recovery is a layer/theme only.
+Revenue Recovery is a layer/theme only. It exists to stop old Revenue Growth strategy from returning as a primary offer.
 
-It may appear in resources, case studies, diagnostics, and improvement framing. It must not become:
+It may appear only as a small improvement lens inside resources, case studies, diagnostics, or optimisation context after the active system problem is already understood.
+
+It must not become:
 
 - a service page
 - a page type
@@ -213,6 +221,10 @@ It may appear in resources, case studies, diagnostics, and improvement framing. 
 - a primary system
 - a CTA category
 - a graph pillar
+- a navigation pillar
+- a content cluster owner
+
+Do not plan content around Revenue Recovery. Plan content around the active system, page type, buyer reality, and funnel role.
 
 ## Content Validation
 

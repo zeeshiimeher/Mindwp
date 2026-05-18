@@ -13,9 +13,11 @@ For page rebuilds, read:
 3. [../core/CONTENT.md](../core/CONTENT.md) for page role and funnel behavior.
 4. [../core/DESIGN.md](../core/DESIGN.md) for visual direction and section judgment.
 5. [../core/WRITING.md](../core/WRITING.md) for public copy.
-6. [../core/CONVERSION.md](../core/CONVERSION.md) for CTA posture.
 
-Read only the parts needed for the page being rebuilt.
+6. [../core/CONVERSION.md](../core/CONVERSION.md) for CTA posture.
+7. [page-rebuild-briefs.md](./page-rebuild-briefs.md) for page-level brain transfer when planning or rebuilding a specific page.
+
+Read only the parts needed for the page being rebuilt. If page briefs conflict with the core docs, the core docs win.
 
 ## Core Flow
 
@@ -42,7 +44,7 @@ Identify:
 
 Do not keep old structure just because it exists. Do not delete useful strategic intent just because the wording is weak.
 
-Existing pages may be reviewed for buyer problems, mental models, warnings, and pattern clues only. They must not dictate final section order, renderer structure, component choice, page data shape, or final copy.
+Existing pages may be reviewed for buyer problems, mental models, warnings, implementation constraints, and pattern clues only. They must not dictate final section order, renderer structure, component choice, page data shape, visual pattern, or final copy.
 
 Useful rebuild principles to carry forward:
 
@@ -70,7 +72,11 @@ Before JSX, write a short working plan:
 
 If the page is an implementation service page, confirm it resolves upward to Smart Website Systems.
 
-If Revenue Recovery appears, treat it only as a layer or theme.
+If the page is a primary service page, confirm the single business moment it owns. It may show connected context, but it must not repeat the full MindWP model or absorb adjacent systems.
+
+Do not plan pages, sections, CTAs, panels, forms, service cards, routes, or graph relationships around Revenue Recovery. It may appear only as a small improvement lens after the active system problem is already understood.
+
+Keep Lead Response & Handling and Follow-Up & CRM separate. Lead Response & Handling owns first response and routing after someone reaches out. Follow-Up & CRM owns owner, status, reminder, and next-step visibility after first response or quote.
 
 ## Step 3: Choose Section Patterns
 
@@ -115,6 +121,8 @@ For each section, define:
 
 Do not start with a component name. Start with the business point the section must make.
 
+Do not convert page briefs directly into a fixed section sequence. A page brief explains what the page must help the buyer understand; section patterns still come from buyer reality, page intent, design judgment, and the active docs.
+
 ## Step 5: Build In Page-Owned JSX
 
 Build directly in JSX while the pattern is being proven.
@@ -147,6 +155,10 @@ After building, review the page visually and commercially:
 - Does the CTA feel diagnostic?
 - Is proof real, clearly framed, or absent?
 - Does the page fit its active system and page role?
+- If it is a primary service page, does it own one business moment instead of repeating the full MindWP model?
+- If it mentions connected handling, has the working-day problem been made visible first?
+- If it uses a simple CTA label, does nearby context explain the diagnostic purpose?
+- If it touches Lead Response or Follow-Up, are first response/routing and ownership/status/next steps kept distinct?
 
 If the page is visually correct but strategically weak, rewrite the section. If the strategy is correct but the section looks generic, redesign the shape.
 
@@ -172,11 +184,13 @@ When handing a page rebuild to Claude Opus or another model, include:
 - the page route and current source files
 - the page type and owning active system
 - the buyer situation
+- the single business moment the page owns, if it is a primary service page
 - the recognition moment
 - the main section patterns to consider
 - key copy rules from [../core/WRITING.md](../core/WRITING.md)
 - CTA posture from [../core/CONVERSION.md](../core/CONVERSION.md)
 - clear instruction to build in JSX first and extract after approval
+- clear instruction that page briefs and existing pages are context, not fixed section orders
 
 Do not hand off only a component list or data schema.
 

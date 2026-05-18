@@ -2,7 +2,9 @@
 
 Authority for what MindWP sells, how the offer is structured, and how service ownership works.
 
-This doc defines the active offer model once. Other docs should reference it instead of repeating long system definitions.
+This doc defines the active offer model once. Other docs should reference it instead of repeating system definitions.
+
+Do not duplicate this doc’s system definitions in other docs. Other docs may apply the offer model to their own job — writing, content, conversion, design, graph, architecture, or rules — but they should link back here for ownership, system names, non-ownership, implementation service status, and Revenue Recovery boundaries.
 
 ## Use This Doc
 
@@ -36,8 +38,6 @@ The active primary systems are:
 5. Reputation & Review Systems
 
 Smart Website Systems is the flagship website system and the clearest public anchor. The other systems are active primary systems too, but they should not turn the site into a random service catalog.
-
-Revenue Recovery is a cross-system improvement layer only.
 
 Implementation services are active implementation pathways under Smart Website Systems.
 
@@ -278,6 +278,8 @@ Avoid:
 - lifecycle jargon before the problem is clear
 - automation as the product
 
+"CRM" may appear in the system name because structured enquiry visibility matters, but public explanation must not lead with software. Lead with ownership, status, follow-up, and next-step visibility before mentioning CRM structure.
+
 ### Reputation & Review Systems
 
 Role:
@@ -331,34 +333,21 @@ Avoid:
 
 ## Revenue Recovery Layer
 
-Revenue Recovery is not a primary system, service page, route category, navigation item, CTA category, or graph category.
+Revenue Recovery is a cross-system improvement layer only. It exists to block old Revenue Growth strategy from returning as a public offer.
 
-It is a cross-system improvement layer used after activity is visible.
+It is not:
 
-It can describe:
+- a primary system
+- a service page
+- a route category
+- a navigation item
+- a CTA category
+- a graph category
+- an equal system beside the active systems
 
-- value still leaking after enquiries arrive
-- weak conversion points
-- poor quote recovery
-- missed repeat opportunities
-- weak review capture
-- disconnected reporting
-- unclear visibility into what is working
+It may appear only as a small improvement lens inside diagnostics, proof, or optimisation context after the active system problem is already understood.
 
-Use it as:
-
-- a closing idea
-- an improvement lens
-- a diagnostic theme
-- a way to explain compounding value after the core systems are understood
-
-Do not use it as:
-
-- an extra service beside the active systems
-- a generic growth marketing offer
-- an ads or campaign service
-- a broad revenue promise
-- a guaranteed ROI claim
+Do not plan pages, routes, navigation, graph categories, CTA categories, or service cards around Revenue Recovery.
 
 ## Implementation Services
 
@@ -451,6 +440,8 @@ A service page must not:
 - absorb adjacent systems
 - use backend platform names publicly
 
+Each primary service page must own one business moment. It may show connected context, but it must not repeat the full MindWP model or re-explain every active system. Use bridges only when they clarify the current page’s owning problem.
+
 Bridge examples:
 
 - Smart Website Systems may mention response or follow-up after enquiry capture, but must not become a CRM page.
@@ -458,6 +449,8 @@ Bridge examples:
 - Lead Response & Handling may mention follow-up ownership after routing, but must not become a full CRM lifecycle page.
 - Follow-Up & CRM may mention completed work triggering review requests, but must not become a reputation page.
 - Reputation & Review may mention local trust, but must not become a full local SEO page.
+
+The timing boundary between Lead Response & Handling and Follow-Up & CRM must stay clear. Lead Response & Handling owns the first response and routing moment after someone reaches out. Follow-Up & CRM owns ownership, status, reminders, and next steps after the first response or quote exists. Pages may reference each other, but neither page should absorb the other system.
 
 ## Homepage Offer Order
 

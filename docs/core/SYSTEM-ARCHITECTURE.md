@@ -4,6 +4,8 @@ Authority for mapping MindWP strategy into repo structure.
 
 This doc explains which parts of the source tree own routes, domain data, renderers, graph behavior, CTA/contact/SEO support, styles, and cleanup. It does not redefine the business strategy or offer model.
 
+Do not duplicate offer definitions here. Use [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for system ownership and use this doc only to map approved strategy into source folders, routes, data, metadata, renderers, graph behavior, CTA/contact/SEO support, styles, and cleanup rules.
+
 ## Governing Context
 
 - Business identity: [FOUNDATION.md](./FOUNDATION.md)
@@ -59,6 +61,10 @@ Because the site has not been published, prefer direct correction over compatibi
 `src/domains/services/implementation/**` should describe implementation pathway pages under Smart Website Systems. These pages may discuss WordPress, Elementor, Bricks, Divi, WooCommerce, and rebuild choices, but their strategic parent remains Smart Website Systems.
 
 Domain files should not preserve removed service names, removed categories, stale aliases, or parallel models.
+
+Each primary service domain should own one business moment. Source files must not make every service page repeat the full MindWP model or absorb adjacent systems. Shared context is allowed only where it clarifies that service page's owning problem or next useful step.
+
+Keep `lead-response-handling` and `follow-up-crm` distinct in routes, data, metadata, graph relationships, and renderers. Lead Response & Handling owns first response and routing after someone reaches out. Follow-Up & CRM owns owner, status, reminder, and next-step visibility after first response or quote. Do not merge their page data, renderer logic, CTA posture, or graph ownership.
 
 ## Page Data And Renderers
 
@@ -127,7 +133,7 @@ Graph metadata should use:
 
 Graph relationships should support the next useful step and respect [GRAPH.md](./GRAPH.md).
 
-Implementation pages relate upward to Smart Website Systems. Service pages should not become blog hubs. Resources should not trap readers in education loops. Revenue Recovery appears only as a theme or improvement layer, not a route, page type, or graph category.
+Implementation pages relate upward to Smart Website Systems. Service pages should not become blog hubs. Resources should not trap readers in education loops. Revenue Recovery must not be modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, or equal system. It may appear only as a small improvement lens after the active system problem is already understood.
 
 Graph resolver behavior should be extracted after approved page journeys are clear.
 
@@ -145,6 +151,7 @@ During page design:
 After approval:
 
 - stable CTA labels can move into shared helpers or registries
+- simple UI labels such as contact or conversation labels may be shared only when surrounding page context preserves the diagnostic CTA purpose
 - source context can be preserved through `buildContactHref()`
 - SEO metadata can be tightened around approved page identity and canonical route ownership
 - indexing config can be aligned with route ownership
@@ -161,6 +168,8 @@ Prefer:
 - one canonical route per content item
 - updated route ownership and indexing config
 - active metadata fields
+- separate route/data ownership for `lead-response-handling` and `follow-up-crm`
+- removal of Revenue Growth or Revenue Recovery route/category/CTA/graph models where they exist as primary structures
 
 Avoid:
 
@@ -196,10 +205,11 @@ Before approving source cleanup, confirm:
 - `src/app/**` has one canonical route per page
 - `src/domains/services/**` reflects active system service pages
 - `src/domains/services/implementation/**` holds implementation pathways under Smart Website Systems
+- `lead-response-handling` and `follow-up-crm` remain separate service domains with distinct ownership, metadata, CTA posture, and graph relationships
 - route ownership config matches public routes
 - indexing config does not preserve removed routes
 - metadata uses `primarySystem` and `supportingSystems[]`
-- Revenue Recovery is not modeled as a primary route category, page type, or graph category
+- Revenue Recovery is not modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, service card, or primary offer
 - no public backend platform names leak into source or copy
 - related content is injected from config/domain layers when stable
 - page renderers retain custom JSX where it protects approved design

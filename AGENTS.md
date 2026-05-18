@@ -2,7 +2,9 @@
 
 This file is for Codex, GitHub Copilot Chat, Claude, and other coding agents working in the MindWP repo.
 
-Follow the current user prompt first. Then follow this file. When you need deeper context, read the relevant core doc instead of guessing.
+Follow the current user prompt first. Then follow this file. This file is the routing layer for AI agents. It tells agents which docs to read, which rules to respect, which commands to use, and which removed models must not return. It is not the full strategy brain.
+
+When you need deeper context, read the relevant core doc instead of guessing. Do not load every doc by default when a smaller task-specific reading set is enough.
 
 ## Source Of Truth
 
@@ -18,9 +20,69 @@ Use this reading order:
 8. [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) for repo mapping and route/domain ownership.
 9. [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md) for hard guardrails and validation.
 
-For page rebuilds, also read [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md).
+For page rebuilds, also read [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md), then [docs/Planning/page-rebuild-briefs.md](./docs/Planning/page-rebuild-briefs.md) when planning or rebuilding a specific page. Page briefs are context, not governing strategy. If they conflict with core docs, core docs win.
 
 Read only what is relevant to the task.
+
+## Task-Based Reading
+
+Use the smallest reading set that fully supports the task.
+
+For positioning, offer, or copy work, read:
+
+- [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md)
+- [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md)
+- [docs/core/WRITING.md](./docs/core/WRITING.md)
+- [docs/core/CONTENT.md](./docs/core/CONTENT.md) when page role matters
+- [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) when CTA or contact behavior matters
+
+For page planning, read:
+
+- [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md)
+- [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md)
+- [docs/core/CONTENT.md](./docs/core/CONTENT.md)
+- [docs/core/DESIGN.md](./docs/core/DESIGN.md)
+- [docs/core/CONVERSION.md](./docs/core/CONVERSION.md)
+- [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md)
+- [docs/Planning/page-rebuild-briefs.md](./docs/Planning/page-rebuild-briefs.md) when the page has a brief
+
+For page implementation or rebuild work, read:
+
+- this file first
+- [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md)
+- [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md)
+- [docs/core/CONTENT.md](./docs/core/CONTENT.md)
+- [docs/core/DESIGN.md](./docs/core/DESIGN.md)
+- [docs/core/WRITING.md](./docs/core/WRITING.md)
+- [docs/core/CONVERSION.md](./docs/core/CONVERSION.md)
+- [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md)
+- [docs/Planning/page-rebuild-briefs.md](./docs/Planning/page-rebuild-briefs.md) when the page has a brief
+- [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) only when source structure, routes, renderers, metadata, graph, or ownership changes
+
+For source cleanup, routes, graph, metadata, or architecture work, read:
+
+- this file first
+- [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md)
+- [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md)
+- [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md)
+- [docs/core/GRAPH.md](./docs/core/GRAPH.md) when graph or related content changes
+- [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) when CTA/contact source changes
+
+For design review or visual section direction, read:
+
+- [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md)
+- [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md)
+- [docs/core/DESIGN.md](./docs/core/DESIGN.md)
+- [docs/core/WRITING.md](./docs/core/WRITING.md) when public copy is visible
+- [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) when CTAs are visible
+
+For docs-only maintenance, read:
+
+- this file first
+- the doc being edited
+- any governing doc the edit depends on
+
+Do not use a broader reading set just because more docs exist. Read enough to stay aligned, then work within the requested scope.
 
 ## What MindWP Is
 
@@ -61,7 +123,7 @@ The active primary systems are:
 - Follow-Up & CRM Systems
 - Reputation & Review Systems
 
-Revenue Recovery is a cross-system improvement layer only. It is not a primary service page, route family, graph category, navigation pillar, or CTA category.
+Revenue Recovery is a cross-system improvement layer only. It is not a primary system, primary service page, route family, graph category, navigation pillar, page type, CTA category, related-content cluster, service card, panel, form, or equal system.
 
 ## Implementation Services
 
@@ -97,13 +159,18 @@ MindWP sells conversion-focused website systems, clarity, connected handling, re
 - Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
 - The site has not been published. Do not preserve unpublished removed routes, aliases, old names, or compatibility wrappers.
 - Prefer direct rename, move, or delete during source cleanup.
+- Keep `lead-response-handling` and `follow-up-crm` separate in routes, data, metadata, CTA posture, graph relationships, renderer logic, and page copy.
+- Remove Revenue Growth or Revenue Recovery route/category/CTA/graph models if they exist as primary structures.
 
 ## Page Build Rules
 
 - Compose pages and sections in JSX first while the communication pattern is being shaped.
 - Page-owned content, local arrays, helper components, and repeated JSX are acceptable while proving a page.
 - Custom connected-handling surfaces are acceptable when they make ownership, response, follow-up, reviews, or proof easier to see.
-- Existing pages may inform buyer problems and pattern choice, but must not dictate final section order, renderer structure, or final copy.
+- Existing pages and page briefs may inform buyer problems, useful ideas, implementation constraints, and pattern clues, but must not dictate final section order, renderer structure, component choice, page data shape, visual pattern, or final copy.
+- Primary service pages must each own one business moment. They may show connected context, but must not repeat the full MindWP model or absorb adjacent systems.
+- Connected handling must be earned by buyer recognition. Do not lead with the phrase before the working-day problem is visible.
+- Simple CTA labels such as contact or conversation labels are allowed only when nearby context explains the diagnostic purpose.
 - Use Tailwind utilities plus existing `mw-*` and token classes.
 - Avoid page-specific CSS for migrated pages unless no existing styling surface can reasonably solve the problem.
 - Domain `pageData` files connect slug -> data -> renderer after the shape is stable.
@@ -133,9 +200,11 @@ These are building blocks, not gates. Use custom JSX when it communicates the bu
 - Do not revive removed service names or removed offer models.
 - Do not create parallel service hierarchies.
 - Do not flatten MindWP into web design, SEO, automation, CRM, AI, reviews, and growth as a generic service menu.
+- Do not make every primary service page explain website + response + follow-up + reviews + recovery in the same way.
 - Do not invent fake proof, metrics, testimonials, rankings, guarantees, or client results.
 - Do not add unsupported service capabilities.
 - Do not make AI, CRM, automation, or backend tools the public product.
+- Do not lead public copy with CRM software; lead with ownership, status, follow-up, and next-step visibility.
 - Do not ask approval questions when the governing docs already answer the decision.
 
 ## Commands
@@ -163,7 +232,9 @@ Before finishing, confirm the task did not:
 - expose backend platform names in public copy
 - turn implementation services into primary systems
 - disconnect implementation services from Smart Website Systems
-- treat Revenue Recovery as a route, page type, graph category, CTA category, active system, or additional pillar
+- blur primary service pages by making them repeat the full MindWP model or absorb adjacent systems
+- merge Lead Response & Handling with Follow-Up & CRM in route, data, metadata, CTA, graph, renderer, or copy ownership
+- treat Revenue Recovery as a route, page type, graph category, CTA category, navigation pillar, related-content cluster, service card, panel, form, active system, or additional pillar
 - add fake proof or unsupported claims
 - use non-pnpm workflow instructions
 

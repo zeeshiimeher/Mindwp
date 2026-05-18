@@ -76,7 +76,6 @@ Approved CTA directions:
 - Check my website system
 - Review my website and handling path
 - Find where work is slipping
-- Review my website and handling path
 - Map my follow-up gaps
 - Talk through my current setup
 - Request a system review
@@ -85,6 +84,8 @@ Approved CTA directions:
 - Review my proof and reviews
 
 These are direction examples, not mandatory labels.
+
+Simple UI labels are allowed when nearby context explains the diagnostic purpose. Labels like "Contact MindWP," "Start a conversation," "Talk to us," or "Send your website" can work as button text, but they must not replace the strategic CTA posture. The section around the button should make clear what MindWP will review, diagnose, or help the buyer understand.
 
 The CTA should imply that MindWP will look at the current situation, identify weak points, and explain what should be fixed first.
 
@@ -109,9 +110,7 @@ Avoid:
 - Launch my AI chatbot
 - Get guaranteed rankings
 
-"Book a call" may work in simple UI contexts, but it should not be the strategic CTA unless the diagnostic value is already clear.
-
-"Start a Conversation" is also not a strong default by itself. It can work only when nearby context explains what the conversation will diagnose. Without that context, it is generic agency CTA language.
+"Book a call," "Contact us," "Start a conversation," and similar simple labels may work as UI labels when the nearby copy explains the diagnostic value. Without that context, they become generic agency CTA language and should not be treated as the strategic CTA.
 
 ## CTA By Page Type
 
@@ -193,8 +192,9 @@ Reputation & Review Systems:
 
 Revenue Recovery:
 
-- May support diagnostic framing as a layer.
-- Must not become a primary service page, route, page type, or CTA category.
+- Must not become a CTA category.
+- Do not create Revenue Recovery CTAs, panels, routes, forms, or service cards.
+- It may appear only as a small improvement lens after the active system problem is already understood.
 
 ## Proof Before CTA
 
@@ -291,6 +291,6 @@ Before approving a CTA, confirm:
 - it avoids AI chatbot and CRM reseller positioning
 - it avoids ranking, revenue, review, or lead-volume guarantees
 - it does not invent proof
-- it keeps Revenue Recovery as a layer only, not a primary service page, route, page type, or CTA category
+- it does not turn Revenue Recovery into a CTA category, service page, route, panel, form, or primary offer
 
 If any fail, rewrite the CTA.

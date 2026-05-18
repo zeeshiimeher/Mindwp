@@ -4,6 +4,8 @@ Authority for public-facing language, voice, rewrite behavior, banned phrasing, 
 
 This doc controls how MindWP sounds. It does not decide identity, offer ownership, page roles, CTA strategy, design, graph behavior, or repo mapping.
 
+Do not duplicate system definitions here. Use [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md) for system ownership and use this doc only to control public language, phrasing, tone, and copy validation.
+
 ## Use This Doc
 
 Use this when writing, rewriting, polishing, or auditing public copy for:
@@ -224,6 +226,8 @@ Do not use that as mandatory final copy. Use it as a test: if the page only talk
 
 Connected handling is public language for response, routing, ownership, follow-up, review requests, proof capture, and recovery around the website.
 
+Connected handling must be earned. Do not open a page or section with the phrase before the buyer recognises the working-day problem. First show the calls, forms, messages, quotes, follow-up, reviews, or ownership gaps. Then use connected handling to name the path around the website.
+
 Use language like:
 
 - the right person finds out
@@ -265,6 +269,8 @@ Bad:
 ## CRM Language
 
 CRM may support delivery, but the public problem is ownership and follow-up.
+
+"CRM" may appear in the system name, but public copy must not lead with software. Explain the business change first: owner, status, next step, follow-up, and visibility. Mention CRM structure only when it helps the buyer understand how those things stay visible.
 
 Lead with:
 
@@ -412,6 +418,8 @@ Proof sections show evidence, scenario, or observed change. They should not gene
 
 CTA sections should feel like a practical diagnostic conversation. CTA rules live in [CONVERSION.md](./CONVERSION.md).
 
+Primary service pages must not all repeat the full MindWP model. Each service page should own one business moment and use the wider connected path only where it clarifies that page's problem. If every service page says website + response + follow-up + reviews + recovery in the same way, the pages have blurred.
+
 Avoid:
 
 - public infrastructure language as the lead idea
@@ -454,6 +462,6 @@ Before approving public copy, confirm:
 - AI, CRM, SEO, and reviews are framed by outcomes, not tools
 - no fake proof or unsupported claims appear
 - implementation pages resolve upward to Smart Website Systems
-- Revenue Recovery remains a layer/theme only
+- Revenue Recovery does not appear as a service, offer category, CTA category, page theme, or public promise
 
 Final rule: protect authority first, improve language second.
