@@ -13,7 +13,6 @@ For page rebuilds, read:
 3. [../core/CONTENT.md](../core/CONTENT.md) for page role and funnel behavior.
 4. [../core/DESIGN.md](../core/DESIGN.md) for visual direction and section judgment.
 5. [../core/WRITING.md](../core/WRITING.md) for public copy.
-
 6. [../core/CONVERSION.md](../core/CONVERSION.md) for CTA posture.
 7. [page-rebuild-briefs.md](./page-rebuild-briefs.md) for page-level brain transfer when planning or rebuilding a specific page.
 

@@ -47,9 +47,12 @@ Revenue Recovery is a cross-system improvement layer only. It exists to block ol
 - a CTA category
 - a related-content cluster
 - a service card
+- a panel
+- a form
+- a public offer
 - an equal system
 
-Do not plan pages, routes, navigation, graph categories, CTA categories, forms, panels, or service cards around Revenue Recovery.
+Do not plan pages, routes, navigation, graph categories, related-content clusters, CTA categories, forms, panels, or service cards around Revenue Recovery.
 
 Implementation services are active implementation pathways under Smart Website Systems. They support conversion-focused website systems and connected handling, but they are not primary systems or equal strategic pillars.
 
@@ -183,7 +186,7 @@ Before finishing, confirm:
 - no public backend platform name appears in public copy
 - no public `/systems` route direction was created
 - implementation services still sit under Smart Website Systems
-- Revenue Recovery is not modeled as a route, page type, graph category, CTA category, navigation pillar, related-content cluster, service card, panel, form, or active system
+- Revenue Recovery is not modeled as a route, page type, graph category, CTA category, navigation pillar, related-content cluster, service card, panel, form, public offer, or active system
 - service pages resolve to active systems
 - primary service pages each own one business moment instead of repeating the full MindWP model
 - Lead Response & Handling and Follow-Up & CRM remain separate in routes, data, metadata, CTA posture, graph relationships, renderer logic, and page copy

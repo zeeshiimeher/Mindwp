@@ -92,6 +92,19 @@ The public idea starts from the owner's working day: calls, searches, forms, quo
 
 MindWP is not a generic web design agency, SaaS product, backend tool reseller, template business, AI chatbot vendor, cheap website package business, or ranking-hype SEO provider.
 
+Core principles to preserve:
+
+- The website works as part of the business, not as a standalone brochure.
+- The website is the visible control point where search, trust, enquiry capture, response, follow-up, proof, reviews, and improvement connect.
+- Search, enquiries, response, follow-up, and reviews should connect from the start, not be bolted on separately.
+- Structure comes before optimisation.
+- Local SEO starts with the website, not around it, and should follow find -> verify -> trust -> contact.
+- Visibility is maintained, not installed.
+- Local visibility only matters if trust becomes contact and contact becomes handled enquiry.
+- Nothing should depend on someone remembering.
+- Implementation choice should be framed through business fit, not builder preference.
+- Fit/not-fit filtering protects the offer.
+
 ## Active Build Flow
 
 ```text
@@ -123,7 +136,7 @@ The active primary systems are:
 - Follow-Up & CRM Systems
 - Reputation & Review Systems
 
-Revenue Recovery is a cross-system improvement layer only. It is not a primary system, primary service page, route family, graph category, navigation pillar, page type, CTA category, related-content cluster, service card, panel, form, or equal system.
+Revenue Recovery is a cross-system improvement layer only. It is not a primary system, primary service page, route family, graph category, navigation pillar, page type, CTA category, related-content cluster, service card, panel, form, public offer, or equal system.
 
 ## Implementation Services
 
@@ -234,7 +247,7 @@ Before finishing, confirm the task did not:
 - disconnect implementation services from Smart Website Systems
 - blur primary service pages by making them repeat the full MindWP model or absorb adjacent systems
 - merge Lead Response & Handling with Follow-Up & CRM in route, data, metadata, CTA, graph, renderer, or copy ownership
-- treat Revenue Recovery as a route, page type, graph category, CTA category, navigation pillar, related-content cluster, service card, panel, form, active system, or additional pillar
+- treat Revenue Recovery as a route, page type, graph category, CTA category, navigation pillar, related-content cluster, service card, panel, form, public offer, active system, or additional pillar
 - add fake proof or unsupported claims
 - use non-pnpm workflow instructions
 

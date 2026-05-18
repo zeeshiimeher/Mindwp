@@ -133,7 +133,7 @@ Graph metadata should use:
 
 Graph relationships should support the next useful step and respect [GRAPH.md](./GRAPH.md).
 
-Implementation pages relate upward to Smart Website Systems. Service pages should not become blog hubs. Resources should not trap readers in education loops. Revenue Recovery must not be modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, or equal system. It may appear only as a small improvement lens after the active system problem is already understood.
+Implementation pages relate upward to Smart Website Systems. Service pages should not become blog hubs. Resources should not trap readers in education loops. Revenue Recovery must not be modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, service card, panel, form, public offer, or equal system. It may appear only as a small improvement lens after the active system problem is already understood.
 
 Graph resolver behavior should be extracted after approved page journeys are clear.
 
@@ -209,7 +209,7 @@ Before approving source cleanup, confirm:
 - route ownership config matches public routes
 - indexing config does not preserve removed routes
 - metadata uses `primarySystem` and `supportingSystems[]`
-- Revenue Recovery is not modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, service card, or primary offer
+- Revenue Recovery is not modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, service card, panel, form, public offer, or primary offer
 - no public backend platform names leak into source or copy
 - related content is injected from config/domain layers when stable
 - page renderers retain custom JSX where it protects approved design

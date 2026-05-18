@@ -67,7 +67,7 @@ Role:
 
 Smart Website Systems is the flagship website and conversion clarity system. It makes the website a visible control point for offer clarity, trust, enquiry capture, and next-step routing.
 
- Core mental model: the website should work as part of the business. It should connect to how the business is found, trusted, contacted, followed up with, reviewed, and improved.
+Core mental model: the website should work as part of the business. It should connect to how the business is found, trusted, contacted, followed up with, reviewed, and improved.
 
 Owns:
 
@@ -338,16 +338,23 @@ Revenue Recovery is a cross-system improvement layer only. It exists to block ol
 It is not:
 
 - a primary system
+- a primary service page
 - a service page
 - a route category
+- a page type
 - a navigation item
 - a CTA category
 - a graph category
+- a related-content cluster
+- a panel
+- a form
+- a service card
+- a public offer
 - an equal system beside the active systems
 
 It may appear only as a small improvement lens inside diagnostics, proof, or optimisation context after the active system problem is already understood.
 
-Do not plan pages, routes, navigation, graph categories, CTA categories, or service cards around Revenue Recovery.
+Do not plan pages, routes, navigation, graph categories, related-content clusters, CTA categories, panels, forms, or service cards around Revenue Recovery.
 
 ## Implementation Services
 

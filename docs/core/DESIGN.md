@@ -257,8 +257,8 @@ Reputation & Review Systems:
 
 Revenue Recovery:
 
-- Show value still leaking after enquiries arrive.
-- Treat it as a cross-system improvement layer, never as a primary service page or design pillar.
+- Show value still leaking after enquiries arrive only inside an active-system context.
+- Treat it as a cross-system improvement lens, never as a primary service page, standalone panel, service card, visual pillar, or design category.
 
 ## Implementation Service Page Design
 

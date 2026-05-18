@@ -33,7 +33,7 @@ It does not decide:
 - graph relationships
 - publishing approval
 
-Implementation service content sits under Smart Website Systems. Revenue Recovery may appear as a framework or improvement lens only.
+Implementation service content sits under Smart Website Systems. Revenue Recovery may appear only as an improvement lens inside active-system content.
 
 ## Planning Categories
 
@@ -312,7 +312,7 @@ Frameworks:
 - Review and Referral Value Recovery Framework
 - Repeat Value Recovery After Completed Work
 
-Frameworks that use Revenue Recovery language should route into active systems and remain improvement lenses.
+Frameworks that use recovery language should route into active systems and remain improvement lenses.
 
 ## Case Study Planning
 
@@ -360,7 +360,7 @@ Prioritize cleanup when content:
 - Service may point back to framework resources when useful, but should not become a blog hub.
 - Implementation service content should connect upward to Smart Website Systems and stay tied to website clarity, enquiry capture, and connected handling.
 - Case studies should route toward the service, industry, or system context they prove.
-- Revenue Recovery framework content should route into active systems, not to a standalone service.
+- Recovery-framework content should route into active systems, not to a standalone service.
 
 ## Publishing Order
 
@@ -370,7 +370,7 @@ Prioritize cleanup when content:
 4. Expansion-lane resources: salons, auto repair, and small med spas.
 5. Supporting blog clusters that reinforce those resources.
 6. Case studies or scenario studies that validate the strongest live system patterns.
-7. Revenue Recovery framework resources only where they strengthen active system paths.
+7. Cross-system improvement resources only where they strengthen active system paths.
 
 Publishing priority should favor proof, differentiation, and conversion progression over content quantity.
 
@@ -386,6 +386,6 @@ Before adding a new content item, confirm:
 6. The item adds authority, proof, clarity, recognition, or conversion progression.
 7. Implementation content resolves to Smart Website Systems.
 8. Implementation content stays tied to website clarity, enquiry capture, and connected handling.
-9. Revenue Recovery is treated only as a framework or layer.
+9. Revenue Recovery is treated only as a cross-system improvement lens inside active-system content.
 
 If the content only adds volume, do not publish it.

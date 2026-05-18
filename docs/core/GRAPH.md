@@ -80,7 +80,7 @@ Follow-Up & CRM Systems may relate to ownership, status, quote follow-up, remind
 
 Reputation & Review Systems may relate to review timing, feedback routing, proof capture, local trust, and completed-work status. It should not become fake review, manipulation, or generic reputation software content.
 
-Revenue Recovery may appear only as a small improvement lens after the active system problem is understood. It must not become a primary related-content category, service page, route family, navigation pillar, graph category, CTA category, or equal system. Do not create Revenue Recovery related-content clusters.
+Revenue Recovery may appear only as a small improvement lens after the active system problem is understood. It must not become a primary related-content category, related-content cluster, service page, page type, route family, navigation pillar, graph category, CTA category, service card, panel, form, public offer, or equal system. Do not create Revenue Recovery related-content clusters.
 
 Keep the timing boundary between Lead Response & Handling and Follow-Up & CRM clear. Lead Response & Handling may route to Follow-Up & CRM as the next ownership step, but it owns first response and routing. Follow-Up & CRM may reference response context, but it owns owner, status, reminder, and next-step visibility after first response or quote.
 
@@ -200,7 +200,7 @@ Before adding related content or graph logic, confirm:
 - the related item supports the next useful step
 - the related item does not break page intent
 - the related item does not revive removed offer structures
-- Revenue Recovery does not appear as a related-content category, cluster, route family, service page, navigation pillar, CTA category, or equal system
+- Revenue Recovery does not appear as a related-content category, cluster, route family, service page, page type, navigation pillar, CTA category, service card, panel, form, public offer, or equal system
 - implementation service relationships resolve upward to Smart Website Systems
 - the related item does not turn a service page into a blog hub
 - the related item does not make a primary service page repeat the full MindWP model or absorb an adjacent system

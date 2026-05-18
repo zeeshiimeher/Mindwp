@@ -177,7 +177,7 @@ At the highest level, the model covers:
 - follow-up ownership and status visibility
 - reviews, feedback, and proof capture
 
-Revenue Recovery is a cross-system improvement layer. It is not a primary service page, page type, route category, navigation item, or equal system.
+Revenue Recovery is a cross-system improvement layer. It is not a primary service page, page type, route category, navigation item, graph category, CTA category, related-content cluster, panel, form, service card, public offer, or equal system.
 
 Implementation services are active implementation pathways under Smart Website Systems. They are not primary systems.
 

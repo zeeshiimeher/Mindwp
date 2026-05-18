@@ -223,6 +223,11 @@ It must not become:
 - a graph pillar
 - a navigation pillar
 - a content cluster owner
+- a related-content cluster
+- a panel
+- a form
+- a service card
+- a public offer
 
 Do not plan content around Revenue Recovery. Plan content around the active system, page type, buyer reality, and funnel role.
 
