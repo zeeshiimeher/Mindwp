@@ -23,7 +23,8 @@ const root = process.cwd();
 const scanRoots = [
   'src',
   'docs',
-  'AGENTS.md',
+  '.claude',
+  'CLAUDE.md',
   'README.md',
   'package.json',
   'src/index.css',

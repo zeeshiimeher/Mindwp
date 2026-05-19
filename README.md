@@ -23,19 +23,20 @@ Read only what is relevant to the task.
 
 | Doc | Owns |
 | --- | --- |
-| [AGENTS.md](./AGENTS.md) | Practical instructions for Codex, Copilot Chat, Claude, and other coding agents. |
+| [CLAUDE.md](./CLAUDE.md) | Main AI orientation, task routing, build flow, and high-level guardrails. |
 | [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md) | MindWP identity, buyer truth, positioning, public path, and build philosophy. |
 | [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md) | Active offer model, service ownership, implementation pathways, and offer drift prevention. |
 | [docs/core/WRITING.md](./docs/core/WRITING.md) | Public language, voice, rewrite behavior, banned phrasing, and applied copy rules. |
 | [docs/core/CONTENT.md](./docs/core/CONTENT.md) | Page roles, funnel behavior, editorial boundaries, and content intent. |
 | [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) | CTA posture, contact behavior, diagnostic conversion, and proof-before-action logic. |
-| [docs/core/DESIGN.md](./docs/core/DESIGN.md) | Visual direction, section composition, interaction taste, and design judgment. |
+| [docs/core/DESIGN.md](./docs/core/DESIGN.md) | Visual direction, UI/page rebuild guidance, visual concepts, token/CSS guidance, and component design judgment. |
 | [docs/core/GRAPH.md](./docs/core/GRAPH.md) | Related-content behavior, routing logic, graph metadata, and future resolver rules. |
 | [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) | Mapping the strategy into routes, domains, renderers, components, styles, and graph code. |
 | [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md) | Hard execution guardrails and validation rules. |
-| [docs/Planning/design-first-rebuild.md](./docs/Planning/design-first-rebuild.md) | Page rebuild workflow for high-quality design-first AI sessions. |
-| [docs/Planning/page-rebuild-briefs.md](./docs/Planning/page-rebuild-briefs.md) | Page-level brain transfer for future rebuild planning; not a sitemap, wireframe, section order, or copy deck. |
 | [docs/ops/CONTENT-INVENTORY.md](./docs/ops/CONTENT-INVENTORY.md) | Planning inventory for future content clusters and publishing priorities. |
+| [.claude/skills](./.claude/skills) | Short workflow helpers for AI-led page planning, rebuild, and review sessions. |
+
+Generated files under `reports/` are diagnostic snapshots only. They are not strategy authority and may contain stale route names or removed offer models from older audits.
 
 ## Working Philosophy
 
@@ -89,4 +90,4 @@ Use `pnpm check:frontend` after meaningful page or visual work. Use `pnpm build`
 - Keep primary service pages distinct: each owns one business moment and should not repeat the full MindWP model or absorb adjacent systems.
 - Keep Lead Response & Handling separate from Follow-Up & CRM in routes, data, metadata, CTA posture, graph relationships, renderer logic, and page copy.
 
-For source work, read [AGENTS.md](./AGENTS.md) first.
+For AI-led planning, docs, source, or page work, read [CLAUDE.md](./CLAUDE.md) first.
