@@ -18,7 +18,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'authority-signals': {
     name: 'Authority Signals',
     description:
-      'How trust indicators, reviews, and local presence signals build search authority for your business.',
+      'How trust indicators, reviews, and local presence help customers or patients verify the business.',
   },
   'lead-management': {
     name: 'Lead Management',
@@ -63,12 +63,12 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'lead-qualification': {
     name: 'Lead Qualification',
     description:
-      'Scoring and filtering systems that separate high-intent prospects from poor-fit enquiries.',
+      'Fit and priority signals that help the right enquiries move to the right next step.',
   },
   'website-infrastructure': {
-    name: 'Website Infrastructure',
+    name: 'Website Foundation',
     description:
-      'The technical foundation — hosting, performance, security — that underpins every conversion system.',
+      'Website clarity, performance, trust, and enquiry readiness before deeper optimization.',
   },
   'systems-first-websites': {
     name: 'Systems-First Websites',
@@ -85,16 +85,17 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'service-page-architecture': {
     name: 'Service Page Architecture',
     description:
-      'Structuring service pages for search visibility, conversion, and local authority.',
+      'Structuring service, treatment, or procedure pages so visitors can understand, trust, and enquire.',
   },
   'conversion-tracking': {
     name: 'Conversion Tracking',
     description:
-      'Measuring what matters — call tracking, form submissions, and attribution across channels.',
+      'Understanding which calls, forms, bookings, and enquiries came from the website path.',
   },
   'booking-systems': {
-    name: 'Booking Systems',
-    description: 'End-to-end appointment and scheduling infrastructure for service businesses.',
+    name: 'Booking Paths',
+    description:
+      'Booking and consultation paths that make the next step clear after the website visit.',
   },
   'review-automation': {
     name: 'Review Request Timing',
@@ -108,27 +109,26 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'negative-review-response': {
     name: 'Negative Review Response',
     description:
-      'Frameworks and workflows for responding to negative reviews professionally and quickly.',
+      'Calm response guidance for negative reviews without turning the issue into public friction.',
   },
   'reputation-monitoring': {
-    name: 'Reputation Monitoring',
+    name: 'Reputation Awareness',
     description:
-      'Tracking your online reputation across Google, Yelp, and industry-specific platforms.',
+      'Keeping review signals and public proof visible enough for the team to respond at the right time.',
   },
   'local-seo': {
-    name: 'Local SEO',
+    name: 'Local Discovery',
     description:
-      'Ranking in local search results through structured content, citations, and authority building.',
+      'Helping nearby customers or patients find, check, and verify the business or practice.',
   },
   'local-visibility': {
     name: 'Local Visibility',
     description:
-      'Being found when and where local customers search — Maps, organic, and directory presence.',
+      'Being findable and trustworthy when nearby customers or patients compare local options.',
   },
   'google-business-profile': {
     name: 'Google Business Profile',
-    description:
-      'Optimizing and managing your Google Business Profile for maximum local visibility.',
+    description: 'Keeping the public profile accurate, useful, and connected to the website path.',
   },
   'local-service-pages': {
     name: 'Local Service Pages',
@@ -137,7 +137,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'local-authority': {
     name: 'Local Authority',
     description:
-      'Building topical and geographic authority through content, links, and operational proof.',
+      'Building local trust through useful pages, reviews, proof, and consistent public signals.',
   },
   'revenue-visibility': {
     name: 'Value Visibility',
@@ -155,16 +155,16 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'customer-feedback': {
     name: 'Customer Feedback',
     description:
-      'Collecting and acting on customer feedback to improve service delivery and retention.',
+      'Collecting feedback at the right moment so the team can learn before asking for public proof.',
   },
   'customer-lifetime-value': {
     name: 'Customer Lifetime Value',
     description: 'Understanding repeat value without turning it into a broad growth promise.',
   },
   'emergency-handling': {
-    name: 'Emergency Handling',
+    name: 'After-Hours Handling',
     description:
-      "After-hours and emergency call routing systems for service businesses that can't miss urgent requests.",
+      'Calm after-hours response paths for enquiries that arrive when the team is busy or unavailable.',
   },
   'lifetime-value': {
     name: 'Lifetime Value',
@@ -173,7 +173,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'negative-reviews': {
     name: 'Negative Reviews',
     description:
-      'Turning negative reviews into opportunities through response frameworks and service recovery.',
+      'Understanding negative feedback and responding without overpromising or escalating publicly.',
   },
   'no-show-reduction': {
     name: 'No-Show Reduction',
@@ -194,7 +194,7 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
   'service-pages': {
     name: 'Service Pages',
     description:
-      'High-converting service pages built for local search and designed to drive action.',
+      'Service, treatment, or procedure pages that make the offer clear enough to enquire.',
   },
   'service-reminders': {
     name: 'Service Reminders',
@@ -204,14 +204,15 @@ const TOPIC_METADATA: Record<string, Omit<TopicMetadata, 'slug'>> = {
 
 /** Maps blog category → topic hub section for grouping posts. */
 const CATEGORY_TO_SECTION: Record<string, TopicHubSection> = {
-  'smart-website-systems': 'foundations',
-  'local-authority-seo': 'foundations',
-  'lead-response-handling': 'operational-systems',
+  'website-clarity': 'foundations',
+  'local-visibility': 'foundations',
+  'lead-response': 'operational-systems',
   'follow-up-crm': 'operational-systems',
-  'reputation-review-systems': 'operational-systems',
-  'home-services-industry': 'industry-implementations',
-  'beauty-personal-care-industry': 'industry-implementations',
-  'future-local-business-tech': 'frameworks',
+  'reviews-proof': 'operational-systems',
+  'implementation-services': 'frameworks',
+  'home-services-examples': 'industry-implementations',
+  'healthcare-practice-examples': 'industry-implementations',
+  frameworks: 'frameworks',
 };
 
 export const SECTION_LABELS: Record<TopicHubSection, string> = {

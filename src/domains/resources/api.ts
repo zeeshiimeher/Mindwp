@@ -82,7 +82,8 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
   {
     id: 'website-clarity',
     label: 'Website Clarity',
-    description: 'Guides for clearer pages, trust signals, enquiry paths, and website handoff.',
+    description:
+      'Articles and guides about clearer service, treatment, or procedure pages, trust signals, enquiry or booking paths, and website front-door clarity.',
     slug: 'website-clarity',
     icon: 'settings',
     iconComponent: FileText,
@@ -90,7 +91,8 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
   {
     id: 'local-visibility',
     label: 'Local Visibility',
-    description: 'Guides for local discovery, verification, service areas, and trust signals.',
+    description:
+      'Articles and guides about nearby customers or patients finding, checking, and trusting a business, clinic, or practice.',
     slug: 'local-visibility',
     icon: 'globe',
     iconComponent: FileText,
@@ -98,7 +100,8 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
   {
     id: 'lead-response',
     label: 'Lead Response',
-    description: 'Guides for missed calls, forms, messages, booking handoff, and enquiry routing.',
+    description:
+      'Articles and guides about calls, forms, messages, booking requests, consultation requests, response paths, and enquiry routing.',
     slug: 'lead-response',
     icon: 'bot',
     iconComponent: FileText,
@@ -106,7 +109,8 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
   {
     id: 'follow-up-crm',
     label: 'Follow-Up & CRM',
-    description: 'Guides for enquiry ownership, quote follow-up, status, and next steps.',
+    description:
+      'Articles and guides about ownership, next steps, quote follow-up, consultation follow-up, reminders, and visible status.',
     slug: 'follow-up-crm',
     icon: 'map-pin',
     iconComponent: FileText,
@@ -114,15 +118,44 @@ export const RESOURCE_CATEGORIES: ResourceCategoryPresentation[] = [
   {
     id: 'reviews-proof',
     label: 'Reviews & Proof',
-    description: 'Guides for review timing, feedback routing, visible proof, and local trust.',
+    description:
+      'Articles and guides about review timing, feedback routing, trust signals, public proof, and completed work or patient experience becoming visible.',
     slug: 'reviews-proof',
     icon: 'star',
     iconComponent: FileText,
   },
   {
+    id: 'implementation-services',
+    label: 'Implementation Services',
+    description:
+      'Articles and guides about practical website implementation paths under Smart Website Systems.',
+    slug: 'implementation-services',
+    icon: 'settings',
+    iconComponent: FileText,
+  },
+  {
+    id: 'home-services-examples',
+    label: 'Home Services Examples',
+    description:
+      'Home-service examples showing how website clarity, local trust, enquiries, quotes, follow-up, reviews, and proof work in real service-business conditions.',
+    slug: 'home-services-examples',
+    icon: 'file-text',
+    iconComponent: FileText,
+  },
+  {
+    id: 'healthcare-practice-examples',
+    label: 'Healthcare Practice Examples',
+    description:
+      'Specialist-clinic and private-practice examples where the website acts as the practice front door for patient trust, service/treatment clarity, booking, consultation follow-up, reviews, and proof.',
+    slug: 'healthcare-practice-examples',
+    icon: 'file-text',
+    iconComponent: FileText,
+  },
+  {
     id: 'frameworks',
     label: 'Frameworks',
-    description: 'Decision guides and maps for finding what should be fixed first.',
+    description:
+      'Frameworks, maps, checklists, and decision guides for understanding what should be fixed first.',
     slug: 'frameworks',
     icon: 'trending-up',
     iconComponent: FileText,

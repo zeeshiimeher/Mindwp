@@ -17,7 +17,8 @@ const RESOURCE_CATEGORY_LABEL_BY_ID = new Map<ResourceCategory, string>([
   ['follow-up-crm', 'Follow-Up & CRM'],
   ['reviews-proof', 'Reviews & Proof'],
   ['implementation-services', 'Implementation Services'],
-  ['industry-examples', 'Industry Examples'],
+  ['home-services-examples', 'Home Services Examples'],
+  ['healthcare-practice-examples', 'Healthcare Practice Examples'],
   ['frameworks', 'Frameworks'],
 ]);
 

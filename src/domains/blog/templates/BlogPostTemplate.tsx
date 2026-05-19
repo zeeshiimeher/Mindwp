@@ -53,7 +53,8 @@ const AUTHOR_KEYS_BY_CATEGORY: Record<BlogCategory, Array<keyof typeof BLOG_AUTH
   'follow-up-crm': ['TECHNICAL'],
   'reviews-proof': ['EDITORIAL'],
   'implementation-services': ['TECHNICAL'],
-  'industry-examples': ['INDUSTRY'],
+  'home-services-examples': ['INDUSTRY'],
+  'healthcare-practice-examples': ['INDUSTRY'],
   frameworks: ['EDITORIAL'],
 };
 

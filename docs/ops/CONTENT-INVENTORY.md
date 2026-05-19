@@ -47,7 +47,7 @@ Allowed planning categories:
 | Follow-Up & CRM | ownership, status, next steps, quote follow-up, consultation follow-up, reminders, visible follow-up |
 | Reviews & Proof | review request timing, feedback routing, trust signals, proof capture, completed work or patient experience becoming visible |
 | Implementation Services | WordPress, Elementor, Bricks, Divi, WooCommerce, redesign and rebuild pathways under Smart Website Systems |
-| Industry Examples | vertical-specific examples, working conditions, timing, customer or patient behavior, trust concerns, booking or enquiry patterns |
+| Home Services Examples | home-service examples, working conditions, timing, customer behavior, trust concerns, enquiries, quotes, follow-up, reviews, and proof |
 | Healthcare Practice Examples | specialist-clinic and private-practice examples where the website acts as the practice front door for trust, service/treatment clarity, booking, consultation follow-up, reviews, and proof |
 | Frameworks | diagnostic models, checklists, operating maps, comparisons, recovery lenses, decision support |
 
@@ -332,7 +332,7 @@ Fit / Not-Fit:
 - Why Cheapest-Website Comparisons Miss the Real Problem
 - Signs Your Business Needs Connected Handling Before More Traffic
 
-Industry Examples:
+Home Services Examples:
 
 - missed-call patterns by industry
 - quote follow-up by industry

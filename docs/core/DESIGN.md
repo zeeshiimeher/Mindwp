@@ -163,7 +163,36 @@ Bad reasons to update tokens/CSS:
 - because the old page used a class
 - because the builder wants to redesign the whole system before proving pages
 
+
 Existing styles are the starting base, not the design ceiling.
+
+## Motion And Reveal Behavior
+
+MindWP already has a global reveal system for one-time in-view animation. Use the existing `mw-animate-*` classes when motion supports section rhythm, visual hierarchy, or proof/showcase surfaces.
+
+Preferred reveal classes:
+
+- `mw-animate-section`
+- `mw-animate-list`
+- `mw-animate-stagger`
+- `mw-animate-fade`
+- `mw-animate-up`
+- `mw-animate-panel`
+- `mw-animate-line`
+
+Motion should be subtle, calm, and purposeful. Use it to help sections enter cleanly, reveal operating maps, stagger proof or signal cards, bring website showcase visuals into view, and make diagnostic CTA panels feel intentional.
+
+Do not animate every element. Do not add a new animation library, page-local observer, scroll-jacking pattern, aggressive parallax, cursor effect, constant loop, fake dashboard motion, or loading delay unless the user explicitly approves it.
+
+The motion contract:
+
+- content remains visible without JavaScript
+- animations run once when elements enter view
+- reduced-motion users are respected
+- no section depends on animation to be understood
+- motion supports the business point instead of decorating weak content
+
+Good motion makes the page feel premium and alive. Weak motion makes the page feel like a template, SaaS demo, or visual trick.
 
 ## First Three Pages Standard
 
@@ -400,7 +429,7 @@ Good fit filters help exclude:
 
 These concepts were extracted from early MindWP visual experiments and current page explorations. They are not final sections, fixed layouts, or JSX to copy.
 
-Use them as design logic an AI may adapt, combine, redesign, or replace when they help explain the approved page strategy.
+Use them as design logic an AI may adapt, combine, redesign, or replace when they help explain the approved page strategy. Existing reveal classes may be used to bring these surfaces into view, but motion must remain secondary to the business point.
 
 Do not copy old JSX or old section order. Copy the design logic only: signal, leak, ownership, contrast, path, layer, scenario, proof, or diagnostic next step.
 
@@ -850,6 +879,7 @@ Allowed during page design:
 - custom section layouts
 - Tailwind layout and composition utilities
 - existing `mw-*` classes and token classes
+- existing `mw-animate-*` reveal classes where subtle one-time motion supports the section
 - flexible section count
 - custom layouts inside `SectionShell`
 - custom visuals inside `HeroFrame`
@@ -924,6 +954,8 @@ Do not use:
 - testimonial-looking proof without real proof
 - smooth transformation arcs that feel invented
 - over-designed sections that hide the operating point
+- motion that distracts from the operating point
+- looping or scroll-jacking animation patterns
 - builder-first implementation layouts
 - technology cards as filler
 - abstract systems stack before buyer recognition
@@ -957,6 +989,7 @@ After designing a page, check:
 - Does CTA context explain why the next step is useful?
 - Is proof real, clearly illustrative, or absent?
 - Does the page feel calm, premium, and operational?
+- Does any motion feel subtle, one-time, and supportive rather than decorative or distracting?
 - Does the page avoid copying old renderer order?
 
 ## Extraction After Approval
