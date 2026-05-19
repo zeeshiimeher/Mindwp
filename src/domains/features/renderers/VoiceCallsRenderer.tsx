@@ -8,7 +8,7 @@ import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
 interface Props {
-  data: FeaturePageDataBySlug['voicecalls'];
+  data: FeaturePageDataBySlug['voice-calls'];
 }
 
 export function VoiceCallsRenderer({ data }: Props) {

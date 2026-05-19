@@ -20,16 +20,16 @@ export function CaseStudiesPage() {
           ariaLabel='Case studies hero'
           tone='mist'
           heading={{
-            eyebrow: 'Customer Success Stories',
-            title: 'Real Before-And-After System Changes',
+            eyebrow: 'Case Studies',
+            title: 'Scenario Studies and Work Examples',
             description:
-              'These case studies show what changed when the website layer, routing, follow-up, visibility, and proof systems were rebuilt around how the business actually runs.',
+              'These entries are a reset base for approved scenario studies and future proof. They show the business situation, the weak handoff, and the system path without implying client results.',
           }}
         >
           <div className='flex flex-wrap items-center gap-3'>
             <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
               <TrendingUp size={14} aria-hidden='true' />
-              <span>Growth-focused strategies</span>
+              <span>Scenario-style examples</span>
             </span>
             <span className='inline-flex items-center gap-2 rounded-full border border-[var(--mw-border-light)] px-3 py-1 mw-text-body-sm'>
               <Clock size={14} aria-hidden='true' />
@@ -43,9 +43,9 @@ export function CaseStudiesPage() {
           tone='white'
           heading={{
             eyebrow: 'Case studies',
-            title: 'See the operating change behind the result',
+            title: 'See the operating change behind the scenario',
             description:
-              'Each example focuses on the before state, the system change, and the clearer path created after implementation.',
+              'Each example focuses on the before state, the system change, and the clearer path that would need to be reviewed.',
           }}
         >
           {studies.length === 0 ? (
@@ -115,22 +115,22 @@ export function CaseStudiesPage() {
           <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
             <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Visibility</p>
-              <h3>Improved visibility</h3>
+              <h3>Visibility to review</h3>
               <p>Across local search, service pages, and proof surfaces.</p>
             </article>
             <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Enquiries</p>
-              <h3>More qualified enquiries</h3>
+              <h3>Clearer enquiries</h3>
               <p>From clearer paths and better intent capture.</p>
             </article>
             <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Process</p>
-              <h3>Cleaner processes</h3>
+              <h3>Cleaner handoffs</h3>
               <p>Less manual chasing and fewer loose handoffs.</p>
             </article>
             <article className='mw-surface-card p-6'>
               <p className='mw-text-eyebrow mw-text-signal-cyan'>Growth</p>
-              <h3>Sustainable growth</h3>
+              <h3>Better ownership</h3>
               <p>Built around the way the business actually operates.</p>
             </article>
           </div>
@@ -141,7 +141,7 @@ export function CaseStudiesPage() {
             eyebrow: 'Next step',
             title: 'Want to know which system change would matter most for you?',
             description:
-              'If one of these before-and-after patterns feels familiar, the next step is to test whether the same kind of system change would remove friction in your business.',
+              'If one of these patterns feels familiar, the next step is to test whether the same kind of system change would remove friction in your business.',
           }}
           actions={[
             {

@@ -73,15 +73,6 @@ const nextConfig = {
       'system/**/*',
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/case-study/:slug',
-        destination: '/case-studies/:slug',
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     return [
       {

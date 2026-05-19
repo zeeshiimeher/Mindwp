@@ -6,7 +6,7 @@ Use before editing one page. This skill is for planning only.
 
 1. Read `CLAUDE.md`.
 2. Read the task-relevant core docs, usually `FOUNDATION.md`, `OFFER-ARCHITECTURE.md`, `CONTENT.md`, `DESIGN.md`, `WRITING.md`, and `CONVERSION.md`.
-3. Confirm which page is being rebuilt and what business moment it owns.
+3. Confirm which page is being rebuilt and what business, practice, or patient-decision moment it owns.
 4. Inspect the target page route, renderer, page data, local components, shared components, and relevant styles/tokens.
 5. Treat old pages and existing renderer order as context, not authority.
 6. For later pages, inspect approved rebuilt pages for design standard and rhythm, but do not copy their inner section patterns too closely.
@@ -17,8 +17,9 @@ Use before editing one page. This skill is for planning only.
 Return a concise page plan with:
 
 - page role and owning system/context
-- buyer recognition moment
+- buyer, practice, or patient-recognition moment
 - what the page must not become
+- for specialist clinic pages, what medical/software/compliance/treatment-claim drift must be avoided
 - soft section plan
 - visual direction and pattern choices
 - how this page will feel meaningfully different from previous approved pages

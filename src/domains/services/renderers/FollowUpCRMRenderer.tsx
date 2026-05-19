@@ -12,7 +12,7 @@ interface Props {
   slug: string;
 }
 
-export default function FollowUpCrmRenderer({ data }: Props) {
+export default function FollowUpCRMRenderer({ data }: Props) {
   const { hero, cta } = data;
   const faq = data.faq;
 
@@ -177,4 +177,4 @@ function FollowUpCrmDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
   );
 }
 
-export { FollowUpCrmRenderer };
+export { FollowUpCRMRenderer };

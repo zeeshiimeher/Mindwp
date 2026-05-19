@@ -47,22 +47,6 @@
       "generatedAt": "2026-04-07T01:18:29.401Z"
     }
   },
-  "appointment-business-booking-automation": {
-    "featured-clean": {
-      "file": "public/images/case-studies/appointment-business-booking-automation-raw.webp",
-      "hash": "9cb8b9b991d17000",
-      "provider": "pexels",
-      "imageId": "6812445",
-      "generatedAt": "2026-04-07T01:19:04.742Z"
-    },
-    "featured-overlay": {
-      "file": "public/images/case-studies/appointment-business-booking-automation.webp",
-      "hash": "9cb8b9b991d17000",
-      "provider": "pexels",
-      "imageId": "6812445",
-      "generatedAt": "2026-04-07T01:19:04.742Z"
-    }
-  },
   "crm-pipeline-architecture": {
     "featured-clean": {
       "file": "public/images/resources/crm-pipeline-architecture-raw.webp",
@@ -127,22 +111,6 @@
       "generatedAt": "2026-04-07T02:02:02.091Z"
     }
   },
-  "realtor-lead-follow-up-automation": {
-    "featured-clean": {
-      "file": "public/images/case-studies/realtor-lead-follow-up-automation-raw.webp",
-      "hash": "a7233161221c5000",
-      "provider": "pexels",
-      "imageId": "7180908",
-      "generatedAt": "2026-04-07T02:22:58.836Z"
-    },
-    "featured-overlay": {
-      "file": "public/images/case-studies/realtor-lead-follow-up-automation.webp",
-      "hash": "a7233161221c5000",
-      "provider": "pexels",
-      "imageId": "7180908",
-      "generatedAt": "2026-04-07T02:22:58.836Z"
-    }
-  },
   "calendars": {
     "featured-clean": {
       "file": "public/images/features/calendars-raw.webp",
@@ -175,22 +143,6 @@
       "generatedAt": "2026-04-07T02:25:04.756Z"
     }
   },
-  "beauty-personal-care/hair-salons": {
-    "featured-clean": {
-      "file": "public/images/industries/beauty-personal-care/hair-salons-raw.webp",
-      "hash": "796d6d4fc783c800",
-      "provider": "unsplash",
-      "imageId": "-THiqda3iGM",
-      "generatedAt": "2026-04-07T02:25:21.899Z"
-    },
-    "featured-overlay": {
-      "file": "public/images/industries/beauty-personal-care/hair-salons.webp",
-      "hash": "796d6d4fc783c800",
-      "provider": "unsplash",
-      "imageId": "-THiqda3iGM",
-      "generatedAt": "2026-04-07T02:25:21.900Z"
-    }
-  },
   "hvac-review-generation-framework": {
     "featured-clean": {
       "file": "public/images/resources/hvac-review-generation-framework-raw.webp",
@@ -205,22 +157,6 @@
       "provider": "pexels",
       "imageId": "8297362",
       "generatedAt": "2026-04-07T02:27:04.600Z"
-    }
-  },
-  "hvac-emergency-lead-routing": {
-    "featured-clean": {
-      "file": "public/images/case-studies/hvac-emergency-lead-routing-raw.webp",
-      "hash": "4743432531191400",
-      "provider": "pexels",
-      "imageId": "7709141",
-      "generatedAt": "2026-04-07T02:43:50.072Z"
-    },
-    "featured-overlay": {
-      "file": "public/images/case-studies/hvac-emergency-lead-routing.webp",
-      "hash": "4743432531191400",
-      "provider": "pexels",
-      "imageId": "7709141",
-      "generatedAt": "2026-04-07T02:43:50.072Z"
     }
   }
 }

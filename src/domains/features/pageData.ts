@@ -3,7 +3,7 @@ import { calendarsData } from '@/domains/features/data/calendars';
 import { crmData } from '@/domains/features/data/crm';
 import { inboxData } from '@/domains/features/data/inbox';
 import { reputationData } from '@/domains/features/data/reputation';
-import { voicecallsData } from '@/domains/features/data/voicecalls';
+import { voiceCallsData } from '@/domains/features/data/voice-calls';
 import { workflowsData } from '@/domains/features/data/workflows';
 import { AIChatRenderer } from '@/domains/features/renderers/AIChatRenderer';
 import { CalendarsRenderer } from '@/domains/features/renderers/CalendarsRenderer';
@@ -26,7 +26,7 @@ export type FeatureDomainEntry<TData extends FeaturePageData = FeaturePageData> 
 };
 
 type FeatureDomainRegistry = {
-  voicecalls: FeatureDomainEntry<typeof voicecallsData>;
+  'voice-calls': FeatureDomainEntry<typeof voiceCallsData>;
   aichat: FeatureDomainEntry<typeof aiChatData>;
   reputation: FeatureDomainEntry<typeof reputationData>;
   inbox: FeatureDomainEntry<typeof inboxData>;
@@ -46,7 +46,7 @@ const createFeatureEntry = <TData extends FeaturePageData>(
 });
 
 export const FEATURE_DOMAIN_REGISTRY: FeatureDomainRegistry = {
-  voicecalls: createFeatureEntry(voicecallsData, VoiceCallsRenderer),
+  'voice-calls': createFeatureEntry(voiceCallsData, VoiceCallsRenderer),
   aichat: createFeatureEntry(aiChatData, AIChatRenderer),
   reputation: createFeatureEntry(reputationData, ReputationRenderer),
   inbox: createFeatureEntry(inboxData, InboxRenderer),

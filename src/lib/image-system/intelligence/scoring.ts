@@ -46,12 +46,17 @@ const FIELD_SERVICE_TERMS = [
   'customer home',
   'air conditioning',
   'hvac',
-  'salon',
-  'stylist',
-  'barber',
   'plumber',
-  'electrician',
   'roof',
+  'foundation',
+  'septic',
+  'arborist',
+  'clinic',
+  'dental',
+  'orthodontic',
+  'dermatology',
+  'hearing',
+  'optometry',
 ];
 
 const RESOURCE_OPERATION_TERMS = [

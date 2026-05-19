@@ -24,8 +24,9 @@ Do not ask approval questions that these docs already answer.
 - Use only the active offer model defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 - Do not revive removed service names, removed identifiers, or removed offer structures.
 - Do not create parallel offer models.
-- Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
+- Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
 - Do not preserve unpublished removed routes, aliases, or compatibility wrappers.
+- Do not add inactive industry lanes, public topic hubs, public system taxonomies, or portfolio aliases during cleanup.
 - Do not publicly mention GoHighLevel, GHL, or HighLevel.
 - Do not publicly mention backend CRM, automation, booking, form, AI, or white-label platform names as the product.
 - Do not invent fake proof, fake metrics, testimonials, rankings, guarantees, or client results.
@@ -134,7 +135,7 @@ Avoid:
 
 If active docs clearly define a decision and source is stale, update source during a source-cleanup pass.
 
-If source still contains Revenue Growth, Revenue Recovery as a primary structure, old `/systems` taxonomy, old AI Lead Handling naming, old CRM & Automation naming, or merged Lead Response/Follow-Up ownership, correct the source to match the active docs rather than preserving compatibility.
+If source still contains Revenue Growth, Revenue Recovery as a primary structure, old `/systems` or `/topics` route families, portfolio aliases, old AI Lead Handling naming, old CRM & Automation naming, or merged Lead Response/Follow-Up ownership, correct the source to match the active docs rather than preserving compatibility.
 
 ## Proof And Claims
 
@@ -184,7 +185,7 @@ Before finishing, confirm:
 - no removed names or old offer structures were revived
 - no parallel offer model was introduced
 - no public backend platform name appears in public copy
-- no public `/systems` route direction was created
+- no public `/systems`, `/topics`, or `/portfolio` route direction was created
 - implementation services still sit under Smart Website Systems
 - Revenue Recovery is not modeled as a route, page type, graph category, CTA category, navigation pillar, related-content cluster, service card, panel, form, public offer, or active system
 - service pages resolve to active systems

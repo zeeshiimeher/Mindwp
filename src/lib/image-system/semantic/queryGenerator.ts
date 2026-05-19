@@ -1,7 +1,7 @@
 // ─── Semantic Query Generator ───────────────────────────────────────
 // Maps content metadata to visual search queries grounded in the MindWP business:
 // Conversion-focused website systems with connected handling for service businesses
-// (HVAC, plumbing, roofing, salons, dental, automotive, legal, real estate).
+// and specialist clinics in the approved Home Services and Healthcare Practices lanes.
 //
 // Images should show REAL service professionals, workplaces, and operations —
 // not abstract dashboards, generic tech screens, or corporate stock photos.
@@ -17,14 +17,18 @@ const INDUSTRY_KEYWORDS: Record<string, string[]> = {
   hvac: ['hvac', 'heating', 'air conditioning', 'cooling', 'furnace', 'ventilation'],
   plumbing: ['plumb', 'pipe', 'drain', 'water heater', 'leak'],
   roofing: ['roof', 'shingle', 'gutter', 'storm damage'],
-  electrical: ['electric', 'wiring', 'circuit', 'panel'],
-  landscaping: ['landscape', 'lawn', 'garden', 'outdoor'],
-  salon: ['salon', 'hair', 'beauty', 'stylist', 'barber', 'nail', 'lash', 'spa', 'aesthetic'],
-  dental: ['dental', 'dentist', 'orthodont', 'clinic'],
-  automotive: ['auto', 'car', 'mechanic', 'vehicle', 'body shop', 'detailing'],
-  'real-estate': ['real estate', 'realtor', 'property', 'mortgage', 'home inspector'],
-  legal: ['law', 'legal', 'attorney', 'solicitor', 'lawyer'],
-  healthcare: ['health', 'medical', 'clinic', 'patient', 'doctor'],
+  foundation: ['foundation', 'structural repair', 'basement repair'],
+  septic: ['septic', 'wastewater', 'tank service'],
+  tree: ['tree service', 'arborist', 'tree removal'],
+  dental: ['dental', 'dentist', 'dental implant', 'clinic'],
+  orthodontic: ['orthodontic', 'orthodontist', 'braces', 'aligners'],
+  dermatology: ['dermatology', 'skin clinic', 'dermatologist'],
+  'ent-sinus': ['ent', 'sinus', 'ear nose throat'],
+  podiatry: ['podiatry', 'foot clinic', 'podiatrist'],
+  hearing: ['hearing aid', 'audiology', 'hearing clinic'],
+  physiotherapy: ['physiotherapy', 'physical therapy', 'rehab clinic'],
+  optometry: ['optometry', 'eye clinic', 'optometrist'],
+  orthopedic: ['orthopedic', 'orthopaedic', 'sports injury clinic'],
 };
 
 const SLUG_INDUSTRY_HINTS: Record<string, string> = {
@@ -32,20 +36,20 @@ const SLUG_INDUSTRY_HINTS: Record<string, string> = {
   plumber: 'plumbing',
   dental: 'dental',
   dentist: 'dental',
-  salon: 'salon',
-  spa: 'salon',
+  orthodontic: 'orthodontic',
+  dermatology: 'dermatology',
+  sinus: 'ent-sinus',
+  podiatry: 'podiatry',
+  hearing: 'hearing',
+  physiotherapy: 'physiotherapy',
+  optometry: 'optometry',
+  orthopedic: 'orthopedic',
   roofing: 'roofing',
   roofer: 'roofing',
   hvac: 'hvac',
-  electrical: 'electrical',
-  electrician: 'electrical',
-  landscaping: 'landscaping',
-  mechanic: 'automotive',
-  automotive: 'automotive',
-  realtor: 'real-estate',
-  'real-estate': 'real-estate',
-  legal: 'legal',
-  lawyer: 'legal',
+  foundation: 'foundation',
+  septic: 'septic',
+  arborist: 'tree',
 };
 
 // Visual search terms for each detected industry — these produce RELEVANT stock photos
@@ -68,21 +72,20 @@ const INDUSTRY_VISUALS: Record<string, string[]> = {
     'roof repair team working',
     'professional roofer installing shingles',
   ],
-  electrical: [
-    'electrician working on electrical panel',
-    'electrical contractor residential wiring',
-    'professional electrician tools',
+  foundation: [
+    'foundation repair specialist inspecting basement wall',
+    'foundation repair contractor reviewing home exterior',
+    'structural repair team inspecting residential foundation',
   ],
-  landscaping: [
-    'professional landscaper maintaining garden',
-    'landscaping team working residential yard',
-    'lawn care professional mowing',
+  septic: [
+    'septic service technician at residential property',
+    'septic maintenance truck outside home',
+    'septic service professional reviewing system access',
   ],
-  salon: [
-    'hair stylist working with client in salon',
-    'modern hair salon interior',
-    'beauty salon professional styling hair',
-    'salon receptionist booking appointment',
+  tree: [
+    'tree service crew assessing residential tree',
+    'arborist consulting homeowner outside',
+    'tree care professional inspecting property',
   ],
   dental: [
     'modern dental practice reception area',
@@ -90,26 +93,45 @@ const INDUSTRY_VISUALS: Record<string, string[]> = {
     'dentist office front desk welcoming patient',
     'dental hygienist with patient',
   ],
-  automotive: [
-    'auto mechanic working under car hood',
-    'car repair shop professional mechanic',
-    'automotive service center workshop',
-    'mechanic inspecting car in garage',
+  orthodontic: [
+    'orthodontic clinic consultation room',
+    'orthodontist discussing treatment with patient',
+    'modern orthodontic practice reception',
   ],
-  'real-estate': [
-    'real estate agent showing house to couple',
-    'realtor discussing property with clients',
-    'property viewing open house',
+  dermatology: [
+    'dermatology clinic reception area',
+    'dermatologist consulting patient in clinic',
+    'skin clinic front desk',
   ],
-  legal: [
-    'lawyer consulting with client in office',
-    'law firm office meeting room',
-    'solicitor reviewing documents with client',
+  'ent-sinus': [
+    'ENT clinic consultation room',
+    'ear nose throat clinic reception',
+    'specialist clinic consultation with patient',
   ],
-  healthcare: [
-    'medical receptionist greeting patient',
-    'healthcare clinic waiting room modern',
-    'doctor consulting patient in office',
+  podiatry: [
+    'podiatry clinic reception area',
+    'podiatrist consulting patient',
+    'foot clinic treatment room',
+  ],
+  hearing: [
+    'hearing aid clinic consultation',
+    'audiology clinic reception area',
+    'hearing specialist consulting patient',
+  ],
+  physiotherapy: [
+    'physiotherapy clinic treatment area',
+    'physical therapist consulting patient',
+    'rehab clinic reception area',
+  ],
+  optometry: [
+    'optometry clinic reception area',
+    'optometrist consulting patient',
+    'eye clinic front desk',
+  ],
+  orthopedic: [
+    'orthopedic clinic consultation room',
+    'orthopedic specialist consulting patient',
+    'sports injury clinic reception area',
   ],
 };
 
@@ -318,16 +340,21 @@ const EMOTION_MAP: Record<string, string> = {
 };
 
 const SUBJECT_MAP: Record<string, string> = {
-  automotive: 'mechanic at service desk',
   dental: 'dental receptionist',
-  salon: 'stylist with client',
   plumbing: 'plumber workshop',
   hvac: 'hvac technician',
   roofing: 'construction worker rooftop',
-  electrical: 'electrician at control panel',
-  'real-estate': 'real estate agent with client',
-  legal: 'lawyer at desk',
-  healthcare: 'medical professional',
+  foundation: 'foundation repair specialist',
+  septic: 'septic service technician',
+  tree: 'arborist with homeowner',
+  orthodontic: 'orthodontic clinic receptionist',
+  dermatology: 'dermatology clinic receptionist',
+  'ent-sinus': 'ENT clinic specialist',
+  podiatry: 'podiatry clinic receptionist',
+  hearing: 'audiology clinic specialist',
+  physiotherapy: 'physiotherapy clinic team',
+  optometry: 'optometry clinic receptionist',
+  orthopedic: 'orthopedic clinic specialist',
 };
 
 /** Human-priority keywords to boost people-focused results */

@@ -25,7 +25,7 @@ Do not invent new service categories unless governing docs are intentionally upd
 
 ## Core Offer Decision
 
-MindWP sells conversion-focused website systems with connected handling for established service businesses.
+MindWP sells conversion-focused website systems with connected handling for established service businesses and specialist clinics.
 
 MindWP does not sell isolated websites, isolated automations, isolated SEO tasks, isolated CRM setup, isolated review software, or disconnected digital services.
 

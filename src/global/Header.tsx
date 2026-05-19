@@ -5,13 +5,7 @@ import { HeaderMobileMenuIsland } from './HeaderMobileMenuIsland';
 import { InternalLink } from './InternalLink';
 import { Logo } from './Logo';
 
-const PRIMARY_NAV_PATHS = [
-  '/services',
-  '/industries',
-  '/resources',
-  '/case-studies',
-  '/contact',
-] as const;
+const PRIMARY_NAV_PATHS = ['/services', '/industries', '/resources', '/contact'] as const;
 
 export async function Header() {
   const { primaryAction } = buildGlobalPrimaryCtaLinks();

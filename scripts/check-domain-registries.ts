@@ -1,7 +1,9 @@
 #!/usr/bin/env tsx
 /* eslint-disable no-console */
 
+import { CASE_STUDY_REGISTRY } from '../src/domains/case-studies/registry';
 import { FEATURE_DOMAIN_REGISTRY } from '../src/domains/features/pageData';
+import { INDUSTRY_REGISTRY } from '../src/domains/industries/registry';
 import { SERVICE_DOMAIN_REGISTRY } from '../src/domains/services/pageData';
 
 type RegistryEntry = {
@@ -51,6 +53,50 @@ const expectedImplementationServiceSlugs = [
   'implementation/website-redesign-system-rebuild',
 ] as const;
 
+const expectedFeatureSlugs = [
+  'inbox',
+  'voice-calls',
+  'calendars',
+  'reputation',
+  'crm',
+  'workflows',
+  'aichat',
+] as const;
+
+const expectedIndustrySlugs = [
+  'home-services',
+  'healthcare-practices',
+  'home-services/hvac-companies',
+  'home-services/plumbing-companies',
+  'home-services/roofing-companies',
+  'home-services/foundation-repair-companies',
+  'home-services/septic-services-companies',
+  'home-services/tree-service-companies',
+  'healthcare-practices/dental-implant-clinics',
+  'healthcare-practices/orthodontic-clinics',
+  'healthcare-practices/oral-surgery-clinics',
+  'healthcare-practices/dermatology-clinics',
+  'healthcare-practices/ent-sinus-clinics',
+  'healthcare-practices/podiatry-clinics',
+  'healthcare-practices/hearing-aid-clinics',
+  'healthcare-practices/physiotherapy-clinics',
+  'healthcare-practices/optometry-clinics',
+  'healthcare-practices/orthopedic-clinics',
+] as const;
+
+const expectedCaseStudySlugs = [
+  'hvac-seasonal-enquiry-follow-up',
+  'plumbing-website-to-response-path',
+  'roofing-quote-follow-up',
+  'foundation-repair-consultation-path',
+  'septic-service-reminder-and-repeat-booking',
+  'dental-implant-consultation-follow-up',
+  'orthodontic-treatment-enquiry-path',
+  'dermatology-booking-and-trust-path',
+  'ent-sinus-consultation-request-path',
+  'hearing-aid-clinic-follow-up-and-reviews',
+] as const;
+
 const forbiddenServiceSlugs = new Set([
   'ai-lead-handling',
   'crm-automation',
@@ -72,6 +118,20 @@ function isNonEmptyString(value: unknown): value is string {
 
 function addFailure(registry: string, key: string, message: string) {
   failures.push({ registry, key, message });
+}
+
+function checkExactKeys(registryName: string, actualKeys: string[], expectedKeys: readonly string[]) {
+  for (const expectedKey of expectedKeys) {
+    if (!actualKeys.includes(expectedKey)) {
+      addFailure(registryName, expectedKey, 'expected approved slug is missing');
+    }
+  }
+
+  for (const key of actualKeys) {
+    if (!expectedKeys.includes(key)) {
+      addFailure(registryName, key, 'slug is not part of the approved active inventory');
+    }
+  }
 }
 
 function checkRegistry(registryName: string, registry: Record<string, RegistryEntry>) {
@@ -141,19 +201,11 @@ function checkServiceModel() {
   const serviceKeys = Object.keys(SERVICE_DOMAIN_REGISTRY);
   const expectedKeys = [...expectedPrimaryServiceSlugs, ...expectedImplementationServiceSlugs];
 
-  for (const expectedKey of expectedKeys) {
-    if (!serviceKeys.includes(expectedKey)) {
-      addFailure('services', expectedKey, 'expected active service slug is missing');
-    }
-  }
+  checkExactKeys('services', serviceKeys, expectedKeys);
 
   for (const key of serviceKeys) {
     if (forbiddenServiceSlugs.has(key)) {
       addFailure('services', key, 'removed service slug must not be active');
-    }
-
-    if (!expectedKeys.includes(key as (typeof expectedKeys)[number])) {
-      addFailure('services', key, 'service slug is not part of the active MindWP model');
     }
   }
 
@@ -171,14 +223,53 @@ function checkServiceModel() {
   }
 }
 
+function checkFeatureModel() {
+  checkExactKeys('features', Object.keys(FEATURE_DOMAIN_REGISTRY), expectedFeatureSlugs);
+}
+
+function checkIndustryModel() {
+  const industryKeys = Object.keys(INDUSTRY_REGISTRY);
+  checkExactKeys('industries', industryKeys, expectedIndustrySlugs);
+
+  for (const [key, data] of Object.entries(INDUSTRY_REGISTRY)) {
+    if (data.seo?.canonical !== `/industries/${key}`) {
+      addFailure('industries', key, `canonical must be /industries/${key}`);
+    }
+  }
+}
+
+function checkCaseStudyModel() {
+  const caseStudyKeys = Object.keys(CASE_STUDY_REGISTRY);
+  checkExactKeys('case-studies', caseStudyKeys, expectedCaseStudySlugs);
+
+  for (const [key, data] of Object.entries(CASE_STUDY_REGISTRY)) {
+    if (data.slug !== key) {
+      addFailure('case-studies', key, 'data.slug must equal registry key');
+    }
+
+    if (data.seo?.canonical !== `/case-studies/${key}`) {
+      addFailure('case-studies', key, `canonical must be /case-studies/${key}`);
+    }
+
+    if (data.client !== 'Scenario study') {
+      addFailure('case-studies', key, 'wave-1 entries must stay clearly marked as scenarios');
+    }
+  }
+}
+
 checkRegistry('services', SERVICE_DOMAIN_REGISTRY);
 checkRegistry('features', FEATURE_DOMAIN_REGISTRY);
 checkServiceModel();
+checkFeatureModel();
+checkIndustryModel();
+checkCaseStudyModel();
 
 if (failures.length === 0) {
   console.log('check:domain-registries passed.');
   console.log(`- services: ${Object.keys(SERVICE_DOMAIN_REGISTRY).length} entries`);
   console.log(`- features: ${Object.keys(FEATURE_DOMAIN_REGISTRY).length} entries`);
+  console.log(`- industries: ${Object.keys(INDUSTRY_REGISTRY).length} entries`);
+  console.log(`- case studies: ${Object.keys(CASE_STUDY_REGISTRY).length} entries`);
   process.exit(0);
 }
 

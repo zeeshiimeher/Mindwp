@@ -179,7 +179,7 @@ They should make clear what kind of evidence they contain:
 
 - Real Case Study: real client work with real attribution or measured/observable outcomes.
 - Scenario Study: realistic operational scenario, clearly illustrative.
-- System Example: plausible example showing system logic, clearly not client proof.
+- Website Showcase: approved website/work example focused on visible structure and proof, not invented outcomes.
 - Operational Breakdown: explanation of what changed operationally without public attribution.
 
 Only real case studies may imply measured client outcomes or "we helped this client" language.

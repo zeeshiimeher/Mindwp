@@ -105,7 +105,7 @@ async function main() {
     },
     {
       domain: 'case-studies',
-      path: 'public/images/case-studies/appointment-business-booking-automation/featured.webp',
+      path: 'public/images/case-studies/hvac-seasonal-enquiry-follow-up/featured.webp',
     },
     {
       domain: 'resources',

@@ -12,7 +12,7 @@ interface Props {
   slug: string;
 }
 
-export default function LocalSeoAuthorityRenderer({ data }: Props) {
+export default function LocalSEOAuthorityRenderer({ data }: Props) {
   const { hero, cta } = data;
   const faq = data.faq;
 
@@ -183,4 +183,4 @@ function LocalSeoAuthorityDecisionPanel({ cta }: { cta: Props['data']['cta'] }) 
   );
 }
 
-export { LocalSeoAuthorityRenderer };
+export { LocalSEOAuthorityRenderer };

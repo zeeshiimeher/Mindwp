@@ -8,14 +8,12 @@ import { PRIMARY_CTA_LABEL } from '@/lib/cta/primaryAction';
 
 const GROUP_BY_SLUG: Record<string, string> = {
   'home-services': 'home',
-  'automotive-services': 'auto',
-  'beauty-personal-care': 'beauty',
+  'healthcare-practices': 'healthcare',
 };
 
 const LEAD_SYSTEM_BY_SLUG: Record<string, string> = {
   'home-services': 'Lead Response & Handling',
-  'automotive-services': 'Lead Response & Handling',
-  'beauty-personal-care': 'Follow-Up & CRM',
+  'healthcare-practices': 'Smart Website Systems',
 };
 
 export default function IndustriesLanding() {
@@ -37,7 +35,7 @@ export default function IndustriesLanding() {
             { label: PRIMARY_CTA_LABEL, href: ctaHref, variant: 'primary' },
             { label: 'Read where it leaks', href: '#categories', variant: 'ghost' },
           ]}
-          chips={[{ label: 'Home Services' }, { label: 'Automotive' }, { label: 'Beauty' }]}
+          chips={[{ label: 'Home Services' }, { label: 'Healthcare Practices' }]}
           tone='gradient-hero'
         />
 
@@ -93,7 +91,7 @@ export default function IndustriesLanding() {
                   Urgent or after-hours work where first reply decides the job. Lead with Lead
                   Response &amp; Handling.
                 </p>
-                <span className='icp-routes__system'>Examples · Home, Auto repair</span>
+                <span className='icp-routes__system'>Examples · HVAC, plumbing, roofing</span>
               </div>
             </li>
             <li className='icp-routes__item'>
@@ -105,7 +103,9 @@ export default function IndustriesLanding() {
                   Appointment shapes where rebook cadence and reminders carry the value. Lead with
                   Follow-Up &amp; CRM.
                 </p>
-                <span className='icp-routes__system'>Examples · Hair salons, small med spas</span>
+                <span className='icp-routes__system'>
+                  Examples · Dental implants, dermatology, hearing aids
+                </span>
               </div>
             </li>
             <li className='icp-routes__item'>

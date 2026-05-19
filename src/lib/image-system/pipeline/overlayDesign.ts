@@ -44,20 +44,19 @@ const ANALYTICAL_KEYWORDS = [
 const LOCAL_INDUSTRY_KEYWORDS = [
   'plumbing',
   'hvac',
-  'salon',
   'roofing',
+  'foundation',
+  'septic',
+  'tree',
   'dental',
-  'cleaning',
-  'landscaping',
-  'electrical',
-  'painting',
-  'pest',
-  'locksmith',
-  'carpet',
-  'moving',
-  'towing',
-  'spa',
-  'beauty',
+  'orthodontic',
+  'dermatology',
+  'sinus',
+  'podiatry',
+  'hearing',
+  'physiotherapy',
+  'optometry',
+  'orthopedic',
 ];
 
 /** Resolve overlay variant from content metadata and domain */
@@ -168,11 +167,11 @@ const DOMAIN_ACCENTS: Record<ContentDomain, string> = {
 };
 
 const INDUSTRY_PALETTES: Array<{ keywords: string[]; accent: string }> = [
-  { keywords: ['plumbing', 'hvac', 'electrical', 'roofing'], accent: '#3b82f6' },
-  { keywords: ['salon', 'beauty', 'spa', 'massage'], accent: '#a855f7' },
-  { keywords: ['legal', 'finance', 'accounting', 'insurance'], accent: '#94a3b8' },
-  { keywords: ['dental', 'medical', 'health', 'chiropractic'], accent: '#06b6d4' },
-  { keywords: ['cleaning', 'landscaping', 'pest'], accent: '#22c55e' },
+  { keywords: ['plumbing', 'hvac', 'roofing', 'foundation', 'septic', 'tree'], accent: '#3b82f6' },
+  {
+    keywords: ['dental', 'orthodontic', 'dermatology', 'sinus', 'hearing', 'optometry'],
+    accent: '#06b6d4',
+  },
 ];
 
 void DOMAIN_ACCENTS;

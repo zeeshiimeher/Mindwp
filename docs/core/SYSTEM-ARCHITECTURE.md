@@ -38,7 +38,7 @@ Source structure should follow approved page decisions. Do not force weak pages 
 - `src/lib/seo/**` owns shared SEO behavior.
 - `src/config/routeOwnership.ts` and indexing config must align with active public routes.
 
-Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
+Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
 
 ## Route Ownership
 
@@ -51,6 +51,8 @@ Rules:
 - Removed unpublished names do not need compatibility.
 - Indexing config must not preserve removed route families.
 - Route ownership config must match the active public routes.
+- Active industry route families are Home Services and Healthcare Practices only.
+- `/case-studies` is the proof/work hub. Do not add `/portfolio`.
 
 Because the site has not been published, prefer direct correction over compatibility.
 

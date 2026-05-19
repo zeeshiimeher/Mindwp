@@ -3,15 +3,24 @@ import type { ComponentType, ReactElement } from 'react';
 import { RelatedSection } from '@/components/navigation/RelatedSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
-import { AutomotiveServicesIndustryRenderer } from '@/domains/industries/renderers/automotive-services/AutomotiveServicesIndustryRenderer';
-import { AutoRepairIndustryRenderer } from '@/domains/industries/renderers/automotive-services/AutoRepairIndustryRenderer';
-import { BeautyPersonalCareIndustryRenderer } from '@/domains/industries/renderers/beauty-personal-care/BeautyPersonalCareIndustryRenderer';
-import { HairSalonsIndustryRenderer } from '@/domains/industries/renderers/beauty-personal-care/HairSalonsIndustryRenderer';
-import { SmallMedSpasIndustryRenderer } from '@/domains/industries/renderers/beauty-personal-care/SmallMedSpasIndustryRenderer';
+import { DentalImplantClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/DentalImplantClinicsIndustryRenderer';
+import { DermatologyClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/DermatologyClinicsIndustryRenderer';
+import { EntSinusClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/EntSinusClinicsIndustryRenderer';
+import { HealthcarePracticesIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/HealthcarePracticesIndustryRenderer';
+import { HearingAidClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/HearingAidClinicsIndustryRenderer';
+import { OptometryClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/OptometryClinicsIndustryRenderer';
+import { OralSurgeryClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/OralSurgeryClinicsIndustryRenderer';
+import { OrthodonticClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/OrthodonticClinicsIndustryRenderer';
+import { OrthopedicClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/OrthopedicClinicsIndustryRenderer';
+import { PhysiotherapyClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/PhysiotherapyClinicsIndustryRenderer';
+import { PodiatryClinicsIndustryRenderer } from '@/domains/industries/renderers/healthcare-practices/PodiatryClinicsIndustryRenderer';
+import { FoundationRepairCompaniesIndustryRenderer } from '@/domains/industries/renderers/home-services/FoundationRepairCompaniesIndustryRenderer';
 import { HomeServicesIndustryRenderer } from '@/domains/industries/renderers/home-services/HomeServicesIndustryRenderer';
 import { HvacCompaniesIndustryRenderer } from '@/domains/industries/renderers/home-services/HvacCompaniesIndustryRenderer';
 import { PlumbingCompaniesIndustryRenderer } from '@/domains/industries/renderers/home-services/PlumbingCompaniesIndustryRenderer';
 import { RoofingCompaniesIndustryRenderer } from '@/domains/industries/renderers/home-services/RoofingCompaniesIndustryRenderer';
+import { SepticServicesCompaniesIndustryRenderer } from '@/domains/industries/renderers/home-services/SepticServicesCompaniesIndustryRenderer';
+import { TreeServiceCompaniesIndustryRenderer } from '@/domains/industries/renderers/home-services/TreeServiceCompaniesIndustryRenderer';
 import type {
   IndustryCategoryPageData,
   IndustryCategoryRendererProps,
@@ -48,18 +57,28 @@ const CATEGORY_RENDERER_OVERRIDES_BY_SLUG = new Map<string, CategoryRenderer>();
 const DETAIL_RENDERER_OVERRIDES_BY_PATH = new Map<string, DetailRenderer>();
 
 const CATEGORY_RENDERERS_BY_SLUG: Record<string, CategoryRendererComponent> = {
-  'automotive-services': AutomotiveServicesIndustryRenderer,
-  'beauty-personal-care': BeautyPersonalCareIndustryRenderer,
   'home-services': HomeServicesIndustryRenderer,
+  'healthcare-practices': HealthcarePracticesIndustryRenderer,
 };
 
 const DETAIL_RENDERERS_BY_PATH: Record<string, DetailRendererComponent> = {
-  '/industries/automotive-services/auto-repair': AutoRepairIndustryRenderer,
-  '/industries/beauty-personal-care/hair-salons': HairSalonsIndustryRenderer,
-  '/industries/beauty-personal-care/small-med-spas': SmallMedSpasIndustryRenderer,
   '/industries/home-services/hvac-companies': HvacCompaniesIndustryRenderer,
   '/industries/home-services/plumbing-companies': PlumbingCompaniesIndustryRenderer,
   '/industries/home-services/roofing-companies': RoofingCompaniesIndustryRenderer,
+  '/industries/home-services/foundation-repair-companies':
+    FoundationRepairCompaniesIndustryRenderer,
+  '/industries/home-services/septic-services-companies': SepticServicesCompaniesIndustryRenderer,
+  '/industries/home-services/tree-service-companies': TreeServiceCompaniesIndustryRenderer,
+  '/industries/healthcare-practices/dental-implant-clinics': DentalImplantClinicsIndustryRenderer,
+  '/industries/healthcare-practices/orthodontic-clinics': OrthodonticClinicsIndustryRenderer,
+  '/industries/healthcare-practices/oral-surgery-clinics': OralSurgeryClinicsIndustryRenderer,
+  '/industries/healthcare-practices/dermatology-clinics': DermatologyClinicsIndustryRenderer,
+  '/industries/healthcare-practices/ent-sinus-clinics': EntSinusClinicsIndustryRenderer,
+  '/industries/healthcare-practices/podiatry-clinics': PodiatryClinicsIndustryRenderer,
+  '/industries/healthcare-practices/hearing-aid-clinics': HearingAidClinicsIndustryRenderer,
+  '/industries/healthcare-practices/physiotherapy-clinics': PhysiotherapyClinicsIndustryRenderer,
+  '/industries/healthcare-practices/optometry-clinics': OptometryClinicsIndustryRenderer,
+  '/industries/healthcare-practices/orthopedic-clinics': OrthopedicClinicsIndustryRenderer,
 };
 
 const getCategoryDataBySlug = (slug: string) => {

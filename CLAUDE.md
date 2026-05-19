@@ -6,11 +6,11 @@ Follow the current user prompt first. Then follow this file. When deeper context
 
 ## MindWP In One Line
 
-MindWP builds conversion-focused website systems with connected handling for established service businesses.
+MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics.
 
 The repo is docs-led, not old-page-led. Existing pages, renderers, page data, and planning notes are context. They are not authority when they conflict with the core docs.
 
-Public explanation starts from the owner's working day: calls, searches, forms, quotes, jobs, reviews, inboxes, staff pressure, and missed follow-up. The system model should help structure the answer; it should not make the buyer decode internal architecture before they recognise their situation.
+Public explanation starts from the owner's or practice manager's working day: calls, searches, forms, quotes, bookings, consultation requests, jobs, appointments, reviews, inboxes, staff pressure, and missed follow-up. The system model should help structure the answer; it should not make the buyer decode internal architecture before they recognise their situation.
 
 ## Active Offer Model
 
@@ -34,7 +34,7 @@ Use this flow for page planning and rebuild work:
 BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
 ```
 
-Start with what is visibly happening in the buyer's business. Create recognition before explaining the system. Build page and section patterns in JSX while they are being proven. Extract data, reusable primitives, metadata, graph rules, and tighter types only after approval.
+Start with what is visibly happening in the buyer's business, clinic, or practice. Create recognition before explaining the system. Build page and section patterns in JSX while they are being proven. Extract data, reusable primitives, metadata, graph rules, and tighter types only after approval.
 
 Plan before editing. For page rebuilds, produce a page plan and get approval before changing JSX, page data, styles, or shared components.
 
@@ -135,7 +135,7 @@ Generated files under `reports/` are diagnostic snapshots, not governing docs. T
 ## Hard Boundaries
 
 - Do not revive removed service names or old offer models.
-- Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
+- Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
 - Do not expose backend platform names as the public product.
 - Do not mention GoHighLevel, GHL, or HighLevel in public copy.
 - Do not turn implementation services into primary systems.
@@ -143,6 +143,7 @@ Generated files under `reports/` are diagnostic snapshots, not governing docs. T
 - Do not make every service page repeat the full MindWP model.
 - Do not invent fake proof, metrics, testimonials, rankings, guarantees, or client results.
 - Do not use page briefs, old pages, components, data files, or renderer order as strategy authority.
+- Do not turn specialist clinic pages into medical software, EMR, compliance, hospital operations, generic doctor marketing, or treatment-claim pages.
 
 ## Commands
 
@@ -157,6 +158,9 @@ pnpm typecheck
 pnpm check:names
 pnpm check:minimal
 pnpm check:frontend
+pnpm check:domain-registries
+pnpm check:clean-base
+pnpm check:architecture
 ```
 
 Use `pnpm check:frontend` after visual or page work. For docs-only work, run the requested search validation and any requested pnpm checks.

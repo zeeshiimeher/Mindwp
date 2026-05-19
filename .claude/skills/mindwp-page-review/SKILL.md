@@ -14,11 +14,13 @@ Use after a page rebuild or when asked to review a page.
 
 Check:
 
-- buyer recognition
+- buyer, practice, or patient-recognition
 - section clarity
 - operational design
 - generic agency/SaaS/AI/SEO/tool drift
+- for specialist clinic pages, medical software, EMR, compliance, generic doctor marketing, treatment-claim, or patient-result drift
 - CTA posture
+- whether clinic CTAs stay diagnostic around trust, booking, consultation follow-up, reviews, and proof instead of promising medical outcomes
 - visual rhythm
 - mobile risk
 - token/component consistency
@@ -29,3 +31,5 @@ Check:
 - whether the page helps establish or follow the first-three-pages design standard
 
 Report findings first, ordered by impact, with file/line references when possible.
+
+For specialist clinic pages, include a short note on whether the page treats the website as the practice front door and avoids medical/software/compliance/treatment-claim drift.

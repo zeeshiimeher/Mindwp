@@ -47,10 +47,8 @@
   "booking-automation": {
     "queries": [
       "dental receptionist laptop person natural lighting real business client interaction service delivery professional working environment",
-      "automotive mechanic at service desk calendar person natural lighting customer handling service operations next steps real business professional working environment",
-      "automotive mechanic at service desk calendar person natural lighting consultation teamwork business discussion real professional working environment",
-      "salon stylist with client laptop hair person natural lighting field service technician customer location real business professional working environment",
-      "salon stylist with client laptop hair person natural lighting on site tools field service technician equipment customer location real professional job"
+      "orthodontic clinic receptionist calendar person natural lighting customer handling service operations next steps real business professional working environment",
+      "hearing aid clinic specialist calendar person natural lighting consultation teamwork practice discussion real professional working environment"
     ],
     "provider": "unsplash",
     "avgScore": 62,
@@ -58,8 +56,8 @@
   },
   "lead-management": {
     "queries": [
-      "automotive mechanic at service desk office person natural lighting",
-      "automotive mechanic at service desk office person natural lighting customer handling service operations next steps real business professional working environment"
+      "hvac technician office person natural lighting",
+      "foundation repair specialist office person natural lighting customer handling service operations next steps real business professional working environment"
     ],
     "provider": "pexels",
     "avgScore": 60,

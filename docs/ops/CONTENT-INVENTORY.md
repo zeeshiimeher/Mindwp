@@ -75,6 +75,8 @@ Live related-content behavior is controlled by [../core/GRAPH.md](../core/GRAPH.
 
 Current planning priority is organized into two approved lanes. This is planning direction only; live routes are decided by source registries and governing docs.
 
+Active public industry lanes are Home Services and Healthcare Practices only. Do not add inactive lanes, `/topics`, `/systems`, or `/portfolio` routes from this inventory.
+
 Home Services priority examples:
 
 1. HVAC companies

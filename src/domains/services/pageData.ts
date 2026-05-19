@@ -15,9 +15,9 @@ import ElementorRenderer from '@/domains/services/implementation/renderers/Eleme
 import WebsiteRedesignSystemRebuildRenderer from '@/domains/services/implementation/renderers/WebsiteRedesignSystemRebuildRenderer';
 import WooCommerceRenderer from '@/domains/services/implementation/renderers/WooCommerceRenderer';
 import WordPressDevelopmentRenderer from '@/domains/services/implementation/renderers/WordPressDevelopmentRenderer';
-import FollowUpCrmRenderer from '@/domains/services/renderers/FollowUpCrmRenderer';
+import FollowUpCRMRenderer from '@/domains/services/renderers/FollowUpCRMRenderer';
 import LeadResponseHandlingRenderer from '@/domains/services/renderers/LeadResponseHandlingRenderer';
-import LocalSeoAuthorityRenderer from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
+import LocalSEOAuthorityRenderer from '@/domains/services/renderers/LocalSEOAuthorityRenderer';
 import ReputationReviewSystemsRenderer from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
 import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
 import type { ServicePageData } from '@/domains/services/types';
@@ -64,7 +64,7 @@ export const PRIMARY_SERVICE_DOMAIN_REGISTRY = {
   ),
   'local-seo-authority': createServiceEntry(
     localSeoAuthorityPage,
-    LocalSeoAuthorityRenderer,
+    LocalSEOAuthorityRenderer,
     'primary'
   ),
   'lead-response-handling': createServiceEntry(
@@ -72,7 +72,7 @@ export const PRIMARY_SERVICE_DOMAIN_REGISTRY = {
     LeadResponseHandlingRenderer,
     'primary'
   ),
-  'follow-up-crm': createServiceEntry(followUpCrmPage, FollowUpCrmRenderer, 'primary'),
+  'follow-up-crm': createServiceEntry(followUpCrmPage, FollowUpCRMRenderer, 'primary'),
   'reputation-review-systems': createServiceEntry(
     reputationReviewSystemsPage,
     ReputationReviewSystemsRenderer,

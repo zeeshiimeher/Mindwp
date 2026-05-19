@@ -26,7 +26,7 @@ export type FeatureMetadata = {
 type FeatureSlug = keyof typeof FEATURE_DOMAIN_REGISTRY;
 
 const FEATURE_ICON_BY_SLUG: Record<FeatureSlug, LucideIcon> = {
-  voicecalls: Phone,
+  'voice-calls': Phone,
   aichat: MessageSquare,
   reputation: Badge,
   inbox: Database,

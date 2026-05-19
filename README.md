@@ -2,7 +2,7 @@
 
 MindWP is the production rebuild workspace for the new MindWP public site.
 
-MindWP builds conversion-focused website systems with connected handling for established service businesses. The site should communicate a practical business idea: work already comes in, but too much slips away between being found, trusted, contacted, answered, followed up, reviewed, and recovered.
+MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics. The site should communicate a practical business idea: work already comes in, but too much slips away between being found, trusted, contacted, answered, followed up, reviewed, and recovered.
 
 This repository contains the Next.js site, domain content, page renderers, route ownership, conversion/contact behavior, graph support, and the documentation used by future AI and human contributors.
 
@@ -10,7 +10,7 @@ This repository contains the Next.js site, domain content, page renderers, route
 
 - Next.js public website for MindWP.
 - Domain-owned page data, renderer registries, and content surfaces.
-- Service, implementation service, feature, industry, blog, resource, and case-study routes.
+- Service, implementation service, feature, approved industry, blog, resource, and case-study routes.
 - Shared components and styling primitives for approved page patterns and connected-handling surfaces.
 - CTA, contact, SEO, and related-content support.
 - Documentation for strategy, content, design, architecture, and execution guardrails.
@@ -82,7 +82,7 @@ Use `pnpm check:frontend` after meaningful page or visual work. Use `pnpm build`
 
 - Keep MindWP service-business specific, system-first, conversion-focused, and commercially serious.
 - Do not turn the site into a generic agency menu or builder-service catalog.
-- Do not create a public `/systems` taxonomy unless governing docs are intentionally updated.
+- Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
 - Do not preserve unpublished removed routes or removed names for compatibility.
 - Do not invent proof, metrics, rankings, guarantees, testimonials, or client results.
 - Do not publicly mention backend platform names, tool names, or white-label delivery details as the product.

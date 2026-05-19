@@ -1,6 +1,6 @@
 import { followUpCrmPage } from '@/domains/services/data/follow-up-crm';
-import FollowUpCrmRenderer from '@/domains/services/renderers/FollowUpCrmRenderer';
+import FollowUpCRMRenderer from '@/domains/services/renderers/FollowUpCRMRenderer';
 
 export default function FollowUpCrmPage() {
-  return <FollowUpCrmRenderer data={followUpCrmPage} slug='follow-up-crm' />;
+  return <FollowUpCRMRenderer data={followUpCrmPage} slug='follow-up-crm' />;
 }

@@ -295,9 +295,9 @@ async function loadContentMetadata(
 
 const DEFAULT_TEST_SLUGS: Record<ContentDomain, string> = {
   blog: 'lead-response-time-for-service-businesses',
-  'case-studies': 'appointment-business-booking-automation',
+  'case-studies': 'hvac-seasonal-enquiry-follow-up',
   resources: 'authority-signals-for-local-search',
-  industries: 'plumbing', // update when industry content is available
+  industries: 'home-services/plumbing-companies',
   features: 'crm',
   services: 'follow-up-crm',
 };
