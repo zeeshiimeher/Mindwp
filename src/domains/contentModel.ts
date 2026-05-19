@@ -16,8 +16,6 @@ export const GRAPH_CONTENT_NODE_TYPES = [
   'case-study',
 ] as const satisfies readonly ContentNodeType[];
 
-export const CLUSTER_HUB_TYPES = ['topic-hub'] as const;
-
 export const DOMAIN_GRAPH_SOURCES: GraphRegistryInput = {
   blogPosts: BLOG_POSTS,
   caseStudies: CASE_STUDY_REGISTRY,
@@ -41,6 +39,5 @@ export const RESOLVER_DEPENDENCY_SOURCES = {
 
 export const CONTENT_MODEL_BOUNDARIES = {
   graphNodeTypes: GRAPH_CONTENT_NODE_TYPES,
-  clusterHubTypes: CLUSTER_HUB_TYPES,
   graphSources: ['blogPosts', 'caseStudies', 'features', 'industries', 'resources', 'services'],
 } as const;

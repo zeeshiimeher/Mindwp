@@ -162,19 +162,21 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
   },
   features: {
     preferredScenes: [
-      'professional using business software on laptop',
-      'clean modern workspace with technology',
-      'business person reviewing dashboard on screen',
-      'organized desk with laptop and notebook',
-      'professional focused on computer screen',
+      'business owner reviewing customer enquiries on laptop',
+      'service team checking next steps at planning desk',
+      'front desk staff handling customer messages',
+      'organized service business workspace with phone and laptop',
+      'professional reviewing website enquiry details',
     ],
     avoidScenes: [
       'abstract illustrations',
       'generic stock photos',
       'cartoon or flat design',
       'crowded group photos',
+      'tool screenshots',
+      'dashboard mockups',
     ],
-    description: 'clean professional technology in real workspace environments',
+    description: 'service-business capability context, messages, scheduling, and follow-up work',
   },
   services: {
     preferredScenes: [
@@ -205,7 +207,7 @@ export const DOMAIN_CATEGORIES: Record<ContentDomain, string[]> = {
   ],
   'case-studies': ['real business', 'client interaction', 'service delivery'],
   industries: ['field service', 'technician', 'tools', 'equipment', 'customer location'],
-  features: ['software usage', 'dashboard', 'workflow'],
+  features: ['customer handling', 'service operations', 'next steps'],
   services: ['consultation', 'teamwork', 'business discussion'],
 };
 
@@ -291,7 +293,15 @@ export const PLACEMENT_CONFIG = {
   minSectionWordsForImage: 300,
   blogPlacementAfterSection: 2,
   blogMinWordsForContent: 350,
-  triggerKeywords: ['framework', 'workflow', 'architecture', 'process', 'pipeline', 'system'],
+  triggerKeywords: [
+    'framework',
+    'handling',
+    'ownership',
+    'process',
+    'response',
+    'follow-up',
+    'system',
+  ],
 } as const;
 
 // ─── Diagram Configuration ──────────────────────────────────────────

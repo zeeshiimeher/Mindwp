@@ -10,7 +10,7 @@ import {
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { extractSEOInput } from '@/lib/seo/resolveMetadata';
-import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
+import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 import { buildSEO } from '@/lib/seo/seo';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -81,14 +81,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     notFound();
   }
 
-  const featureSeo = getFeatureDataBySlug(resolved.slug).seo;
   const featureData = getFeatureDataBySlug(resolved.slug);
 
-  const featureSchema = buildSoftwareApplicationSchema({
-    name: featureSeo.title || formatFeatureTitle(resolved.featureNode.slug),
-    description: featureSeo.description,
-    path: resolved.featureNode.path,
-  });
   const faqSchema = buildFaqSchema(featureData.faq?.items);
 
   const breadcrumbSchema = buildBreadcrumbSchema([
@@ -98,7 +92,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   ]);
 
   const schemaEntries: Array<{ id: string; schema: Record<string, unknown> }> = [
-    { id: 'feature-jsonld', schema: featureSchema },
     ...(faqSchema ? [{ id: 'feature-faq-jsonld', schema: faqSchema }] : []),
     { id: 'feature-breadcrumb-jsonld', schema: breadcrumbSchema },
   ];

@@ -8,8 +8,7 @@ export type IndexingPolicyKind =
   | 'static'
   | 'blog-category'
   | 'resource-category'
-  | 'blog-topic'
-  | 'topic-hub';
+  | 'blog-topic';
 
 export type IndexingClassification =
   | 'marketing'
@@ -32,8 +31,6 @@ export type ResolvedIndexingPolicy = {
   follow: boolean;
   disallow: boolean;
 };
-
-const APPROVED_PUBLIC_TOPICS = new Set<string>();
 
 const INDEXABLE_CLASSIFICATIONS = new Set<IndexingClassification>([
   'marketing',
@@ -87,36 +84,11 @@ function buildPolicy(
   };
 }
 
-function getTopicSlugFromPath(path: string): string {
-  return normalizePath(path).split('/').filter(Boolean).at(-1) ?? '';
-}
-
-export function isPublicTopic(slug: string): boolean {
-  return APPROVED_PUBLIC_TOPICS.has(slug);
-}
-
-export function getApprovedPublicTopics(): string[] {
-  return Array.from(APPROVED_PUBLIC_TOPICS).sort((left, right) => left.localeCompare(right));
-}
-
-function resolveTopicClassification(
-  kind: IndexingPolicyKind,
-  path: string
-): ResolvedIndexingPolicy {
-  const slug = getTopicSlugFromPath(path);
-
-  if (kind === 'blog-topic') {
-    return buildPolicy('topics', 'explicit', {
-      index: false,
-      follow: true,
-      disallow: true,
-    });
-  }
-
+function resolveBlogTopicClassification(): ResolvedIndexingPolicy {
   return buildPolicy('topics', 'explicit', {
-    index: isPublicTopic(slug),
+    index: false,
     follow: true,
-    disallow: !isPublicTopic(slug),
+    disallow: true,
   });
 }
 
@@ -137,10 +109,7 @@ function resolveStaticClassification(path: string): ResolvedIndexingPolicy {
   return buildPolicy('utility', 'fallback');
 }
 
-function resolveKindClassification(
-  kind: IndexingPolicyKind,
-  routePathForKind: string
-): ResolvedIndexingPolicy | null {
+function resolveKindClassification(kind: IndexingPolicyKind): ResolvedIndexingPolicy | null {
   if (CONTENT_NODE_TYPE_SET.has(kind)) {
     return buildPolicy(
       getContentPolicy(kind as ContentNodeType).indexingClassification,
@@ -153,9 +122,8 @@ function resolveKindClassification(
       return buildPolicy('blog', 'explicit');
     case 'resource-category':
       return buildPolicy('resources', 'explicit');
-    case 'topic-hub':
     case 'blog-topic':
-      return resolveTopicClassification(kind, routePathForKind);
+      return resolveBlogTopicClassification();
     default:
       return null;
   }
@@ -172,7 +140,7 @@ export function resolveIndexingPolicy(
   }
 
   return (
-    resolveKindClassification(kind, path) ??
+    resolveKindClassification(kind) ??
     buildPolicy('utility', 'fallback', {
       index: false,
       follow: false,

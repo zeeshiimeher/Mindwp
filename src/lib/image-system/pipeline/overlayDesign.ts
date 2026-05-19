@@ -19,7 +19,18 @@ import type {
 
 // ─── Variant Resolution ─────────────────────────────────────────────
 
-const SYSTEM_KEYWORDS = ['system', 'workflow', 'pipeline', 'automation', 'integration', 'ai-lead'];
+const SYSTEM_KEYWORDS = [
+  'system',
+  'response',
+  'handling',
+  'missed-call',
+  'missed call',
+  'follow-up',
+  'follow up',
+  'ownership',
+  'proof',
+  'local trust',
+];
 const ANALYTICAL_KEYWORDS = [
   'metrics',
   'conversion',
@@ -90,7 +101,7 @@ const ICON_RULES: Array<{ keywords: string[]; icon: string }> = [
   { keywords: ['booking', 'appointment', 'schedule', 'calendar'], icon: 'calendar' },
   { keywords: ['review', 'rating', 'testimonial', 'reputation'], icon: 'star' },
   { keywords: ['analytics', 'data', 'metrics', 'tracking', 'authority', 'signals'], icon: 'chart' },
-  { keywords: ['automation', 'system', 'workflow', 'pipeline'], icon: 'gear' },
+  { keywords: ['system', 'handling', 'follow-up', 'follow up', 'ownership'], icon: 'gear' },
   { keywords: ['seo', 'search', 'ranking', 'visibility'], icon: 'search' },
 ];
 
@@ -234,7 +245,9 @@ export function resolveIllustrationVariant(metadata: ContentMetadata): Illustrat
     return 'calendar';
   }
 
-  if (['pipeline', 'routing', 'crm'].some(keyword => text.includes(keyword))) {
+  if (
+    ['pipeline', 'routing', 'crm', 'ownership', 'handling'].some(keyword => text.includes(keyword))
+  ) {
     return 'pipeline';
   }
 
@@ -263,21 +276,21 @@ export function resolveIllustrationVariant(metadata: ContentMetadata): Illustrat
     return 'chat';
   }
 
-  return 'dashboard';
+  return 'signals';
 }
 
 export function resolveTextStyle(metadata: ContentMetadata, domain: ContentDomain): TextStyle {
-  if (domain === 'services' || domain === 'features') return 'saas';
+  if (domain === 'services' || domain === 'features') return 'signal';
 
   if (domain === 'blog') {
     const title = metadata.title.toLowerCase();
     const isProblemTitle = ['problem', 'mistake', 'slow', 'stuck', 'broken', 'leak', 'missed'].some(
       keyword => title.includes(keyword)
     );
-    return isProblemTitle ? 'hook' : 'saas';
+    return isProblemTitle ? 'hook' : 'signal';
   }
 
-  return 'saas';
+  return 'signal';
 }
 
 export function resolveVisualTreatment(slug: string): VisualTreatment {

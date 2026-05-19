@@ -52,7 +52,11 @@ function hasTriggerKeyword(heading: string): boolean {
 /** Determine image type based on section context */
 function determineImageType(heading: string): 'contextual' | 'diagram' | 'chart' {
   const lower = heading.toLowerCase();
-  if (['workflow', 'pipeline', 'process', 'architecture', 'system'].some(k => lower.includes(k))) {
+  if (
+    ['handling', 'ownership', 'process', 'architecture', 'system', 'response', 'follow-up'].some(
+      k => lower.includes(k)
+    )
+  ) {
     return 'diagram';
   }
   if (['metric', 'performance', 'comparison', 'rate', 'conversion'].some(k => lower.includes(k))) {

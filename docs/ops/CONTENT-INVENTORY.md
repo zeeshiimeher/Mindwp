@@ -41,13 +41,14 @@ Allowed planning categories:
 
 | Category | Scope |
 | --- | --- |
-| Website Clarity | website system thinking, service-page clarity, enquiry capture, trust signals, conversion structure |
-| Local Visibility | local discovery, Google Business Profile direction, service-area relevance, local proof, find-and-verify behavior |
-| Lead Response | missed calls, forms, messages, booking requests, routing, response paths, after-hours handling |
-| Follow-Up & CRM | ownership, status, next steps, quote follow-up, reminders, visible follow-up |
-| Reviews & Proof | review request timing, feedback routing, trust signals, proof capture, completed work becoming visible |
+| Website Clarity | website system thinking, service, treatment, or procedure-page clarity, enquiry or booking capture, trust signals, conversion structure |
+| Local Visibility | local discovery, Google Business Profile direction, service-area relevance, clinic/practice relevance where approved, local proof, find-and-verify behavior |
+| Lead Response | missed calls, forms, messages, booking requests, consultation requests, routing, response paths, after-hours handling where relevant |
+| Follow-Up & CRM | ownership, status, next steps, quote follow-up, consultation follow-up, reminders, visible follow-up |
+| Reviews & Proof | review request timing, feedback routing, trust signals, proof capture, completed work or patient experience becoming visible |
 | Implementation Services | WordPress, Elementor, Bricks, Divi, WooCommerce, redesign and rebuild pathways under Smart Website Systems |
-| Industry Examples | vertical-specific examples, working conditions, timing, urgency, customer behavior, trust concerns |
+| Industry Examples | vertical-specific examples, working conditions, timing, customer or patient behavior, trust concerns, booking or enquiry patterns |
+| Healthcare Practice Examples | specialist-clinic and private-practice examples where the website acts as the practice front door for trust, service/treatment clarity, booking, consultation follow-up, reviews, and proof |
 | Frameworks | diagnostic models, checklists, operating maps, comparisons, recovery lenses, decision support |
 
 No planning category should become a route category automatically.
@@ -72,66 +73,181 @@ Live related-content behavior is controlled by [../core/GRAPH.md](../core/GRAPH.
 
 ## Priority Industries
 
-Priority industries:
+Current planning priority is organized into two approved lanes. This is planning direction only; live routes are decided by source registries and governing docs.
 
-1. roofing
-2. HVAC
-3. plumbing
-4. salons / hair salons
-5. auto repair
-6. small med spas
+Home Services priority examples:
 
-Industry content should be selected by business reality, not generated mechanically.
+1. HVAC companies
+2. plumbing companies
+3. roofing companies
+4. foundation repair companies
+5. septic services companies
+6. tree service companies
+
+Healthcare Practices priority examples:
+
+1. dental implant clinics
+2. orthodontic clinics
+3. oral surgery clinics
+4. dermatology clinics
+5. ENT / sinus clinics
+6. podiatry clinics
+7. hearing aid / audiology clinics
+8. physiotherapy clinics
+9. optometry clinics
+10. orthopedic clinics
+
+Removed from current priority planning:
+
+- salons / hair salons
+- auto repair
+- small med spas
+- gyms / fitness
+- generic medical practices
+- urgent care clinics
+- weight-loss / TRT clinics
+- addiction treatment centers
+- mental health clinics
+- IVF / fertility clinics
+
+Industry content should be selected by business reality, patient/practice reality where relevant, proof potential, and conversion progression — not generated mechanically.
 
 ## Industry Notes
 
+Home Services:
+
+HVAC:
+
+- seasonal demand
+- maintenance and tune-up follow-up
+- local trust
+- fast response
+- service-area clarity
+
+Plumbing:
+
+- urgent local search without making the page purely emergency-led
+- response path clarity
+- service-area clarity
+- reviews as trust proof
+- quote and booking handling
+
 Roofing:
 
-- storm urgency
+- storm urgency where relevant
 - quote follow-up
 - local proof
 - service-area clarity
 - missed calls during busy periods
 
-HVAC:
+Foundation repair:
 
-- seasonal demand
-- emergency calls
-- maintenance and tune-up follow-up
+- high-trust, high-value enquiry
+- fear and uncertainty around property damage
+- consultation and inspection follow-up
+- proof, process clarity, and financing questions
+- local trust and service-area relevance
+
+Septic services:
+
+- scheduled maintenance and reminder opportunities
+- local search and service-area relevance
+- booking reliability
+- review trust
+- repeat service and follow-up
+
+Tree services:
+
+- safety and property-risk concerns
+- estimate follow-up
 - local trust
-- fast response
+- proof and before/after visibility
+- storm-related demand without making the page purely emergency-led
 
-Plumbing:
+Healthcare Practices:
 
-- urgent local search
-- immediate response
-- service-area clarity
-- reviews as trust proof
-- quote and booking handling
+Dental implant clinics:
 
-Salons / hair salons:
+- high-value treatment enquiries
+- patient trust and treatment explanation
+- consultation booking
+- financing questions
+- follow-up after consults
+- reviews and proof sensitivity
 
-- bookings
-- no-shows
-- repeat visits
-- reviews and social proof
-- local discovery and trust
+Orthodontic clinics:
 
-Auto repair:
+- parent and patient research
+- consultation booking
+- treatment acceptance follow-up
+- payment-plan questions
+- reviews and local trust
 
-- trust and quote clarity
-- missed calls
-- status updates
-- follow-up
-- reviews after completed work
+Oral surgery clinics:
 
-Small med spas:
+- referral and direct-patient trust
+- procedure clarity
+- booking and consultation handling
+- anxiety-reducing proof and process explanation
+- careful no-claims language
 
-- trust and proof sensitivity
-- appointment enquiries
-- service clarity
-- follow-up
-- reviews and visible credibility
+Dermatology clinics:
+
+- condition/service clarity
+- local trust and provider credibility
+- appointment booking
+- reviews and proof
+- avoid unsupported treatment-result claims
+
+ENT / sinus clinics:
+
+- specialist trust
+- symptom-to-service clarity
+- consultation requests
+- follow-up and booking reliability
+- reviews and provider proof
+
+Podiatry clinics:
+
+- local condition/service search
+- appointment booking
+- service and treatment clarity
+- patient trust
+- follow-up and reviews
+
+Hearing aid / audiology clinics:
+
+- high-consideration purchase
+- testing and consultation booking
+- lifecycle follow-up
+- reminders and after-care
+- reviews and trust proof
+
+Physiotherapy clinics:
+
+- appointment volume
+- insurance and service clarity
+- follow-up across treatment plans
+- reviews and local trust
+- multi-location clarity where relevant
+
+Optometry clinics:
+
+- eye exam booking
+- service and product clarity
+- local trust
+- reminders and repeat visits
+- reviews and proof
+
+Orthopedic clinics:
+
+- specialist trust
+- consultation and referral path clarity
+- procedure/service explanation
+- follow-up visibility
+- careful no-claims language
+
+Healthcare practice pages should treat the website as the practice front door. They should not become medical software, EMR, compliance, hospital operations, or treatment-claim pages.
 
 ## Blog Planning
 
@@ -222,6 +338,16 @@ Industry Examples:
 - local trust by industry
 - reviews and proof by industry
 
+Healthcare Practice Examples:
+
+- Why specialist clinic websites need to explain the treatment path before the booking
+- How clinic enquiry and consultation requests slip away after the website visit
+- Why patient trust depends on service, treatment, and provider clarity
+- How reviews and proof help patients choose a specialist clinic
+- What happens when clinic follow-up depends on memory
+- The website as the front door for small and growing clinics
+- Patient booking paths that should not feel like generic contact forms
+
 Choose only the angles that expose a real business reality.
 
 ## Resource Planning
@@ -292,6 +418,16 @@ Reviews & Proof:
 - Reputation Visibility System
 - Completed Work to Public Proof Framework
 
+Healthcare Practices:
+
+- Specialist Clinic Website Front Door Checklist
+- Patient Trust and Booking Path Map
+- Treatment and Procedure Page Clarity Checklist
+- Clinic Consultation Follow-Up Map
+- Healthcare Practice Review and Proof Framework
+- Practice Website-to-Booking Handling Map
+- Small Clinic Local Trust Checklist
+
 Implementation Services:
 
 - WordPress Website System Implementation Guide
@@ -318,12 +454,12 @@ Frameworks that use recovery language should route into active systems and remai
 
 Case studies should make visible:
 
-- operating context
+- operating context, practice context, or scenario context
 - structural problem
 - active system or system combination deployed
-- connected handling change
+- connected handling, booking, consultation, or follow-up change
 - ownership or status change
-- measurable or observable outcome where real
+- measurable or observable outcome where real, without inventing revenue, ranking, treatment, or patient-result claims
 - constraint, tradeoff, or decision where available
 
 Case-study clusters:
@@ -336,6 +472,10 @@ Case-study clusters:
 - review request timing
 - completed work becoming proof
 - improvement after enquiries arrive
+- patient trust and booking clarity
+- consultation follow-up
+- treatment or procedure-page clarity
+- patient experience becoming visible proof
 
 Do not invent attribution, testimonials, metrics, or client results. Scenario studies and system examples must be clearly framed.
 
@@ -349,6 +489,8 @@ Prioritize cleanup when content:
 - turns Revenue Recovery into a service
 - duplicates another page's search intent
 - uses interchangeable industry wording
+- treats clinic pages like generic doctor marketing or medical software pages
+- makes unsupported medical, treatment, compliance, or patient-result claims
 - lacks a useful next step
 - adds volume without authority or proof
 
@@ -356,7 +498,7 @@ Prioritize cleanup when content:
 
 - Blog should link upward to the most relevant resource or decision path.
 - Resource should link to the most relevant industry or service surface.
-- Industry should connect to relevant active system service pages.
+- Industry should connect to relevant active system service pages, with healthcare practice pages routing around trust, booking, consultation follow-up, reviews, and proof where relevant.
 - Service may point back to framework resources when useful, but should not become a blog hub.
 - Implementation service content should connect upward to Smart Website Systems and stay tied to website clarity, enquiry capture, and connected handling.
 - Case studies should route toward the service, industry, or system context they prove.
@@ -366,8 +508,8 @@ Prioritize cleanup when content:
 
 1. Global system resources for the active offer model.
 2. Smart Website Systems implementation-path resources where they support commercial pages.
-3. Primary-lane industry resources: roofing, HVAC, and plumbing.
-4. Expansion-lane resources: salons, auto repair, and small med spas.
+3. Primary Home Services lane resources: HVAC, plumbing, roofing, foundation repair, septic services, and tree services.
+4. Primary Healthcare Practices lane resources: dental implants, orthodontics, oral surgery, dermatology, ENT / sinus, podiatry, hearing aid / audiology, physiotherapy, optometry, and orthopedics.
 5. Supporting blog clusters that reinforce those resources.
 6. Case studies or scenario studies that validate the strongest live system patterns.
 7. Cross-system improvement resources only where they strengthen active system paths.
@@ -387,5 +529,6 @@ Before adding a new content item, confirm:
 7. Implementation content resolves to Smart Website Systems.
 8. Implementation content stays tied to website clarity, enquiry capture, and connected handling.
 9. Revenue Recovery is treated only as a cross-system improvement lens inside active-system content.
+10. Healthcare practice content avoids unsupported medical, treatment, compliance, or patient-result claims and stays focused on trust, clarity, booking, consultation follow-up, reviews, and proof.
 
 If the content only adds volume, do not publish it.

@@ -34,8 +34,8 @@ export const RELATED_SECTION_LABELS: Record<
   },
   resource: {
     services: {
-      title: 'The Service Behind This',
-      description: 'Services that connect directly to what this resource covers.',
+      title: 'Where This Connects',
+      description: 'Relevant system paths connected to what this resource helps diagnose.',
     },
     industries: {
       title: 'Industries Using This',
@@ -54,14 +54,14 @@ export const RELATED_SECTION_LABELS: Record<
   },
   service: {
     services: {
-      title: 'Related Services',
-      description: 'Services that work alongside this one to support your wider system.',
+      title: 'Connected Next Steps',
+      description: 'Adjacent system context without widening this page into a full menu.',
     },
   },
   feature: {
     services: {
-      title: 'Services This Supports',
-      description: 'The services that use this capability.',
+      title: 'Where This Capability Fits',
+      description: 'System paths where this capability may support enquiry handling.',
     },
   },
   'industry-detail': {
@@ -102,12 +102,12 @@ export const RELATED_SECTION_META: Record<ContentNodeType, { title: string; desc
       description: 'One service path and supporting resources that carry this proof forward.',
     },
     service: {
-      title: 'Related Services',
-      description: 'Services that support the same decision path without widening the page scope.',
+      title: 'Connected Next Steps',
+      description: 'System paths that support the same decision without widening the page scope.',
     },
     feature: {
-      title: 'Services This Supports',
-      description: 'The parent and related services that turn this capability into a full system.',
+      title: 'Where This Capability Fits',
+      description: 'Relevant system context for deciding whether this capability belongs here.',
     },
     'industry-detail': {
       title: 'Where This Usually Connects Next',
@@ -154,15 +154,15 @@ export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
   },
   service: {
     intensity: 'strong',
-    title: 'Ready to Put This in Place?',
+    title: 'Review the Right Next Step',
     description:
-      'We can scope the right system, the implementation path, and what it should support in your business.',
+      'We can review the weak point, the implementation path, and what should be fixed first.',
   },
   feature: {
     intensity: 'mid',
-    title: 'Want to See This in Your Workflow?',
+    title: 'Review Where This Fits',
     description:
-      'We can show how this capability fits into the wider system and whether it belongs in your stack.',
+      'We can look at where this capability belongs in the wider website and handling path.',
   },
   'industry-detail': {
     intensity: 'strong',
@@ -176,49 +176,4 @@ export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
     description:
       'We can help you identify which leak pattern, business type, or system path should come first.',
   },
-};
-
-// ── Cluster Page Config ──────────────────────────────────────────────
-
-export type ClusterType = 'topic' | 'system' | 'industry';
-
-interface ClusterPageConfig {
-  titlePrefix: string;
-  description: string;
-  sectionOrder: ContentNodeType[];
-}
-
-/**
- * Config for auto-generated cluster pages.
- * sectionOrder determines which content types appear first.
- */
-export const CLUSTER_PAGE_CONFIG: Record<ClusterType, ClusterPageConfig> = {
-  topic: {
-    titlePrefix: 'Everything About',
-    description: 'All content related to this topic, organized by type.',
-    sectionOrder: ['service', 'resource', 'case-study', 'blog', 'industry-detail'],
-  },
-  system: {
-    titlePrefix: 'System:',
-    description: 'All content powered by this system.',
-    sectionOrder: ['service', 'feature', 'resource', 'case-study', 'blog'],
-  },
-  industry: {
-    titlePrefix: 'Industry Context:',
-    description: 'Services, examples, and resources connected to this kind of business.',
-    sectionOrder: ['service', 'case-study', 'resource', 'blog'],
-  },
-};
-
-/**
- * Display labels for content types in cluster page section headings.
- */
-export const CONTENT_TYPE_LABELS: Record<ContentNodeType, string> = {
-  service: 'Services',
-  feature: 'Features',
-  'industry-detail': 'Industry Pages',
-  'industry-category': 'Industry Categories',
-  'case-study': 'Case Studies',
-  resource: 'Resources',
-  blog: 'Blog Posts',
 };

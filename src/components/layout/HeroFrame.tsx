@@ -79,20 +79,17 @@ export function HeroFrame({
 
   const toneClass = tone === 'none' ? '' : ` mw-hero-frame--${tone}`;
   const layoutClass = ` mw-hero-frame--layout-${layout}`;
-
-  // Auto-build a default signal panel from chips when split layout has no visual.
-  const renderDefaultVisual = layout === 'split' && !visual && chips && chips.length > 0;
-  const defaultChips = renderDefaultVisual ? chips : null;
+  const noVisualClass = layout === 'split' && !visual ? ' mw-hero-frame--no-visual' : '';
 
   return (
     <section
-      className={`mw-hero-frame${toneClass}${layoutClass}${className ? ` ${className}` : ''}`}
+      className={`mw-hero-frame${toneClass}${layoutClass}${noVisualClass}${className ? ` ${className}` : ''}`}
       aria-label={ariaLabel}
     >
       {texture}
       <div className='mw-container'>
-        <div className='mw-hero-frame__inner'>
-          <div className='mw-hero-frame mw-animate-up'>
+        <div className='mw-hero-frame__layout'>
+          <div className='mw-hero-frame__inner mw-animate-up'>
             {eyebrow && (
               <div className='mw-hero-frame__eyebrow'>
                 <span className='mw-hero-frame__eyebrow-dot' aria-hidden='true' />
@@ -135,42 +132,6 @@ export function HeroFrame({
             )}
           </div>
           {layout === 'split' && visual && <div className='mw-hero-frame__visual'>{visual}</div>}
-          {renderDefaultVisual && defaultChips && (
-            <div className='mw-hero-frame__visual'>
-              <div className='mw-hero-frame__default-visual mw-animate-panel' aria-hidden='true'>
-                <div className='mw-hero-frame__panel'>
-                  <div className='mw-hero-frame__panel-header'>
-                    <span className='mw-hero-frame__panel-label'>{eyebrow ?? 'System status'}</span>
-                    <span className='mw-hero-frame__panel-live'>
-                      <span className='mw-hero-frame__panel-live-dot' aria-hidden='true' />
-                      <span>Live</span>
-                    </span>
-                  </div>
-                  <ul className='mw-hero-frame__panel-list'>
-                    {defaultChips.map((chip, i) => {
-                      const label = typeof chip === 'string' ? chip : chip.label;
-                      const variant =
-                        typeof chip === 'string' ? chipDotVariant : (chip.accent ?? chipDotVariant);
-                      return (
-                        <li
-                          key={`dv-${label}-${i}`}
-                          className={`mw-hero-frame__panel-row mw-hero-frame__panel-row--${variant}`}
-                        >
-                          <span className='mw-hero-frame__panel-dot' aria-hidden='true' />
-                          <span className='mw-hero-frame__panel-row-label'>{label}</span>
-                          <span className='mw-hero-frame__panel-row-state'>Connected</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <div className='mw-hero-frame__panel-footer'>
-                    <span>Connected systems</span>
-                    <span>Operating</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>

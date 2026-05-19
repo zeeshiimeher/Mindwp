@@ -137,7 +137,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What do you build?',
         answer:
-          'Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems — built as connected parts for service businesses. Revenue Recovery is an improvement layer across that path, not a standalone service.',
+          'Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems, built as connected parts for service businesses.',
       },
       {
         question: 'How is this different from getting a new website?',

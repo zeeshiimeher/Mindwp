@@ -1,10 +1,10 @@
 // ─── Resource Diagram Generator ─────────────────────────────────────
-// Generates clean SVG diagrams from workflow/pipeline steps
+// Generates clean SVG diagrams from handling or process steps
 
 import { DIAGRAM_CONFIG } from '../config';
 import type { DiagramData, DiagramNode } from '../types';
 
-/** Extract workflow steps from section content */
+/** Extract handling or process steps from section content */
 export function extractDiagramSteps(
   sections: Array<{
     type: string;
@@ -17,7 +17,7 @@ export function extractDiagramSteps(
   for (const section of sections) {
     if (section.type === 'steps' && section.steps && section.steps.length >= 3) {
       return {
-        title: section.heading ?? 'Workflow',
+        title: section.heading ?? 'Handling Path',
         nodes: section.steps.map((step, i) => ({ label: step.label, index: i })),
       };
     }

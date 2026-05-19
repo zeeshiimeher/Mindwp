@@ -26,7 +26,17 @@ function inferItemLabel(href: string): string {
   if (href.startsWith('/resources/')) return 'Resource';
   if (href.startsWith('/industries/')) return 'Industry';
   if (href.startsWith('/blog/')) return 'Article';
+  if (href.startsWith('/case-studies/')) return 'Proof';
   return 'Related';
+}
+
+function inferItemCtaLabel(href: string): string {
+  if (href.startsWith('/services/')) return 'Review system';
+  if (href.startsWith('/resources/')) return 'View resource';
+  if (href.startsWith('/blog/')) return 'Read article';
+  if (href.startsWith('/industries/')) return 'View industry context';
+  if (href.startsWith('/case-studies/')) return 'View proof';
+  return 'View next step';
 }
 
 /**
@@ -79,7 +89,7 @@ export function RelatedSection({
                 <div className='mw-related-section__connect-label'>Connection</div>
                 <div className='mw-related-section__reason'>{item.description}</div>
                 <span className='mw-related-section__cta'>
-                  View system
+                  {inferItemCtaLabel(item.href)}
                   <ArrowRight size={14} aria-hidden='true' />
                 </span>
               </a>

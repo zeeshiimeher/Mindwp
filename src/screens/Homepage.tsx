@@ -36,16 +36,23 @@
  * 7. What Changes When the Path Is Connected.
  *    Before/after operating state.
  *
- * 8. How This Shows Up in Real Service Businesses.
- *    Scenario board with realistic examples, no fake proof.
+ * 8. How This Shows Up in Real Service Businesses and Specialist Clinics.
+ *    Scenario board with realistic examples, including service-business and clinic/practice moments.
+ *    No fake proof, fake metrics, or unsupported medical/treatment claims.
  *
- * 9. Built for Established Service Businesses.
- *    Fit/not-fit filter.
+ * 9. Selected Work / Website Showcases.
+ *    Add a premium, interactive proof-style section that can showcase website images,
+ *    screenshots, or project visuals without turning the homepage into a portfolio-first page.
+ *    This section should feel like evidence of clarity, trust, booking/enquiry flow,
+ *    and practice/business front-door quality — not a generic design gallery.
  *
- * 10. Practical Website Delivery With System Thinking Behind It.
+ * 10. Built for Established Service Businesses and Specialist Clinics.
+ *     Fit/not-fit filter.
+ *
+ * 11. Practical Website Delivery With System Thinking Behind It.
  *     Founder/team/build credibility without resume drift.
  *
- * 11. If Your Website Is Not Supporting Enquiries Properly, It Is Worth Reviewing.
+ * 12. If Your Website Is Not Supporting Enquiries Properly, It Is Worth Reviewing.
  *     Final diagnostic CTA.
  *
  * Component and content guidance:
@@ -56,6 +63,14 @@
  * - Keep main homepage section content inside this JSX while the page is being proven.
  * - Use page-owned JSX inside sections to create leak maps, operating paths,
  *   connected-handling surfaces, before/after panels, scenario boards, and fit filters.
+ * - Add a homepage work/showcase section only if it supports the page argument.
+ *   It may show website screenshots or project visuals in an interactive carousel,
+ *   stacked gallery, filterable strip, or featured-work surface.
+ * - The work/showcase section should connect each image to a business point:
+ *   clearer service/treatment pages, trust above the fold, enquiry or booking paths,
+ *   local proof, review/proof placement, or connected handling.
+ * - Do not create a separate Portfolio navigation item for now. Proof/work may be
+ *   linked from the footer and can live under the case-studies/work route model later.
  * - Do not force new homepage section content into the data file yet.
  * - DecisionPanel content can stay in the homepage data file.
  * - FAQSection content can stay in the homepage data file.
@@ -67,7 +82,7 @@
  * Visual direction:
  * Calm, premium, operational. Use leak maps, website-as-control-point maps,
  * connected-handling surfaces, before/after panels, scenario boards,
- * fit filters, and diagnostic CTA panels.
+ * interactive website showcase surfaces, fit filters, and diagnostic CTA panels.
  *
  * CTA posture:
  * Diagnostic, low-pressure, practical.
@@ -75,7 +90,8 @@
  * Find where work is slipping, Request a system review.
  *
  * Avoid:
- * Generic agency homepage, portfolio-first page, SaaS dashboard imitation,
+ * Generic agency homepage, portfolio-first page, visual gallery without business meaning,
+ * SaaS dashboard imitation,
  * AI/automation-first framing, SEO ranking hype, CRM/tool reseller language,
  * generic service cards, process steps everywhere, fake proof, old renderer order.
  *
@@ -83,6 +99,9 @@
  * Existing JSX is context only. Preserve useful intent, not old structure.
  * Rebuild from buyer recognition first. Do not treat this as fixed copy,
  * final section copy, or a rigid wireframe.
+ * If a work/showcase section is added, treat it as proof support, not as the main
+ * positioning device. The homepage should still lead with business recognition,
+ * website-as-front-door logic, and connected handling.
  */
 import type { LucideIcon } from 'lucide-react';
 import {

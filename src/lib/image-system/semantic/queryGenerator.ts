@@ -141,7 +141,7 @@ const TOPIC_VISUALS: Record<string, string[]> = {
     'service team in office discussing customer schedule',
   ],
   pipeline: [
-    'whiteboard with business workflow notes',
+    'whiteboard with customer handling notes',
     'team planning customer jobs on schedule board',
     'small business owner organizing daily schedule',
   ],
@@ -199,16 +199,16 @@ const TOPIC_VISUALS: Record<string, string[]> = {
     'business enquiry form on laptop screen',
     'new customer enquiry notification on phone',
   ],
-  // Automation & systems
+  // Handling paths and systems
   automation: [
-    'business owner working efficiently on laptop',
-    'service business team workflow morning briefing',
+    'business owner working through customer follow up on laptop',
+    'service business team planning next steps in morning briefing',
     'organized professional workspace with laptop and phone',
   ],
   system: [
-    'well organized modern business workspace',
-    'service professional with organized digital tools',
-    'efficient business operations at desk',
+    'organized enquiry handling desk',
+    'service professional reviewing next steps',
+    'business owner checking customer messages and notes',
   ],
   // Follow-up & outreach
   'follow up': [
@@ -287,8 +287,8 @@ interface ContentIntent {
 }
 
 const INTENT_KEYWORDS: Record<string, string> = {
-  pipeline: 'workflow',
-  automation: 'efficiency',
+  pipeline: 'customer path',
+  automation: 'follow-up ownership',
   crm: 'customer management',
   booking: 'scheduling',
   scheduling: 'scheduling',
@@ -305,8 +305,10 @@ const INTENT_KEYWORDS: Record<string, string> = {
 };
 
 const EMOTION_MAP: Record<string, string> = {
-  workflow: 'efficiency',
-  efficiency: 'productivity',
+  'customer path': 'clarity',
+  'follow-up ownership': 'control',
+  workflow: 'clarity',
+  efficiency: 'control',
   scheduling: 'organization',
   trust: 'confidence',
   visibility: 'growth',
@@ -413,8 +415,10 @@ function extractIntent(metadata: ContentMetadata, industry: string | null): Cont
 
 const CONTEXT_MAP: Record<string, string[]> = {
   'customer management': ['customer messages', 'dispatch desk', 'customer service'],
-  workflow: ['schedule board', 'organized workflow', 'service operations'],
-  efficiency: ['laptop', 'organized workflow', 'service workspace'],
+  'customer path': ['schedule board', 'customer handling notes', 'service operations'],
+  'follow-up ownership': ['phone', 'customer notes', 'next step list'],
+  workflow: ['schedule board', 'customer handling notes', 'service operations'],
+  efficiency: ['laptop', 'customer handling notes', 'service workspace'],
   scheduling: ['calendar', 'appointment book', 'reception desk'],
   reputation: ['happy customer', 'handshake', 'storefront'],
   visibility: ['storefront', 'signage', 'street'],
@@ -579,7 +583,7 @@ export function generateSemanticQueries(
     }
   }
 
-  // ── Strategy 7: Fallback — workspace/abstract (score 2) ───────────
+  // ── Strategy 7: Fallback — grounded service-business context (score 2) ───────────
   if (candidates.length < 3) {
     candidates.push(
       {

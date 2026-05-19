@@ -22,7 +22,7 @@ For detailed offer ownership, read [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.
 
 ## Core Identity
 
-MindWP builds conversion-focused website systems with connected handling for established service businesses.
+MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics.
 
 The phrase matters:
 
@@ -31,7 +31,7 @@ The phrase matters:
 
 MindWP is not only a website builder. It is not only enquiry handling. It builds the website system and the connected handling path so work does not slip away between being found, trusted, contacted, answered, followed up, reviewed, and recovered.
 
-MindWP should feel practical, operational, calm, premium, business-aware, system-first, conversion-focused, credible, service-business specific, and commercially serious.
+MindWP should feel practical, operational, calm, premium, business-aware, system-first, conversion-focused, credible, specific to service businesses and specialist clinics, and commercially serious.
 
 ## What MindWP Is Not
 
@@ -53,7 +53,7 @@ MindWP sells conversion-focused website systems, visible clarity, and connected 
 
 ## Buyer Truth
 
-The buyer is usually an established service business owner or operator.
+The buyer is usually an established service business owner, operator, clinic owner, or practice manager.
 
 Their business already has activity:
 
@@ -61,9 +61,9 @@ Their business already has activity:
 - searches
 - website visits
 - forms
-- quotes
-- jobs
-- customers
+- quotes, consultations, or treatment enquiries
+- jobs, appointments, or patient visits
+- customers, clients, or patients
 - reviews
 - staff pressure
 - repeat work
@@ -71,13 +71,13 @@ Their business already has activity:
 
 The problem is not always lack of demand. The problem is weak handling between moments.
 
-Work slips away when nearby customers cannot find or verify the business, service pages do not create trust, calls are missed, forms land in the wrong place, messages are scattered, response is slow, nobody owns follow-up, reviews are not requested, and completed work fails to become proof.
+Work slips away when nearby customers or patients cannot find or verify the business, service or treatment pages do not create trust, calls are missed, forms land in the wrong place, messages are scattered, response is slow, nobody owns follow-up, reviews are not requested, and completed work, appointments, or patient outcomes fail to become proof.
 
 Public copy should make the buyer feel: "This is exactly what happens here."
 
 ## Target Audience
 
-MindWP is for established service businesses with real operational activity and visible leakage around enquiries, response, follow-up, proof, and repeat value.
+MindWP is for established service businesses and specialist clinics with real operational activity and visible leakage around enquiries, bookings, consultations, response, follow-up, proof, and repeat value.
 
 Good-fit buyers may have:
 
@@ -86,13 +86,13 @@ Good-fit buyers may have:
 - local search presence that does not turn into enough trust or enquiries
 - missed calls or slow response
 - forms, emails, WhatsApp messages, and calls landing in separate places
-- quotes sent but not followed up
+- quotes, consultations, or treatment enquiries that are not followed up
 - reviews that depend on someone remembering
 - a CRM or spreadsheet that does not make ownership visible
 
-MindWP is especially relevant when the business has meaningful job value, moving parts, visibility investment, and enquiries that need consistent handling.
+MindWP is especially relevant when the business or clinic has meaningful job, case, or patient value; moving parts; visibility investment; and enquiries that need consistent handling.
 
-MindWP is not primarily for brand-new businesses with no traction, buyers who only want the cheapest website, brochure-style redesign projects, looks-only rebuilds, feature-driven builds, short-term marketing experiments, businesses seeking a tool subscription, or owners who want hype instead of practical operating structure.
+MindWP is not primarily for brand-new businesses or clinics with no traction, buyers who only want the cheapest website, brochure-style redesign projects, looks-only rebuilds, feature-driven builds, short-term marketing experiments, businesses seeking a tool subscription, or owners who want hype instead of practical operating structure.
 
 ## Public Positioning Layer
 
@@ -100,7 +100,7 @@ The internal model is system-first. The public explanation starts from the buyer
 
 Public-facing idea:
 
-The business already has work moving. Customers search, check, call, fill forms, ask questions, wait for replies, receive quotes, finish jobs, leave feedback, and come back later. Too much value slips away between those moments. MindWP builds the website system and connected handling path around them.
+The business or clinic already has work moving. Customers or patients search, check, call, fill forms, ask questions, wait for replies, book consultations, receive quotes or treatment information, complete jobs or appointments, leave feedback, and come back later. Too much value slips away between those moments. MindWP builds the website system and connected handling path around them.
 
 Strategic anchors:
 
@@ -114,12 +114,12 @@ These lines are authority assets. Use them deliberately. Do not scatter them acr
 
 ## Website As Public Control Point
 
-The website is not just a page, brochure, or visual redesign. It is the public control point where several business moments meet:
+The website is not just a page, brochure, or visual redesign. For many service businesses and small or growing clinics, it is the front door and public control point where several business moments meet:
 
 - search and local visibility
 - trust and proof
-- service-page clarity
-- enquiry capture
+- service, treatment, or procedure-page clarity
+- enquiry, booking, or consultation capture
 - response and routing
 - follow-up ownership
 - reviews and ongoing improvement
@@ -133,14 +133,16 @@ Current MindWP principles:
 - A website should support handling instead of sitting alone.
 - Traffic without clear services, trust, and next steps still leaks.
 
+For specialist clinics and private practices, the website is often the practice front door. It must help patients understand the service or treatment, trust the provider, choose the right next step, book or enquire confidently, and stay connected after contact. MindWP should not frame this as hospital software, EMR implementation, medical claims, or healthcare platform reselling. The public language stays focused on trust, clarity, booking, response, follow-up, reviews, and proof.
+
 ## Public Buyer Path
 
 This is the plain-language path the buyer should understand before they have to understand the offer architecture:
 
-1. Customers find the business.
+1. Customers or patients find the business or clinic.
 2. They check whether they trust it.
-3. The website and service pages make the offer clear.
-4. They call, message, book, or fill a form.
+3. The website and service, treatment, or procedure pages make the offer clear.
+4. They call, message, book, request a consultation, or fill a form.
 5. The enquiry lands somewhere useful.
 6. Response happens quickly.
 7. Follow-up and ownership stay visible.
@@ -148,13 +150,13 @@ This is the plain-language path the buyer should understand before they have to 
 
 This path is not a route taxonomy. It is the public mental model. The detailed offer model is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
 
-In plain language: they find you, check you, contact you, the enquiry lands somewhere useful, follow-up is owned, and good work becomes proof.
+In plain language: they find you, check you, contact you, book or enquire, the enquiry lands somewhere useful, follow-up is owned, and good work or patient experience becomes proof.
 
 ## Vocabulary Boundaries
 
 Use internal system language for planning and architecture. Translate it before public copy.
 
-Public copy should lead with calls, forms, quotes, jobs, reviews, staff pressure, missed replies, owner memory, local trust, proof, response, status, and next steps.
+Public copy should lead with calls, forms, quotes, consultations, bookings, jobs, appointments, reviews, staff pressure, missed replies, owner memory, local trust, patient trust, proof, response, status, and next steps.
 
 Public copy should not lead with infrastructure, stack, backend tools, automations, platform names, technical architecture, or internal taxonomy.
 
@@ -171,9 +173,9 @@ MindWP's active offer model is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHIT
 
 At the highest level, the model covers:
 
-- website and service-page clarity
+- website and service, treatment, or procedure-page clarity
 - local visibility and trust
-- fast enquiry response and routing
+- fast enquiry, booking, and consultation response and routing
 - follow-up ownership and status visibility
 - reviews, feedback, and proof capture
 
@@ -233,6 +235,8 @@ Before writing or planning, answer:
 6. What should the visitor do next?
 
 If those answers are unclear, read the relevant docs before inventing structure.
+
+When the page or section is for a specialist clinic, translate the same questions into clinic reality: what patients are trying to understand, what makes them trust the provider, where booking or consultation requests stall, who follows up, and how patient experience becomes reviews and proof. Do not turn clinic pages into medical software, hospital operations, compliance, or treatment-claim pages.
 
 ## Authority Map
 

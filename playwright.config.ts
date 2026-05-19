@@ -38,7 +38,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && NODE_ENV=production npm start',
+    command: 'pnpm build && NODE_ENV=production pnpm start',
     env: playwrightWebServerEnv,
     port: playwrightPort,
     reuseExistingServer: !env.CI,

@@ -16,7 +16,7 @@ export function getIllustration(type: IllustrationVariant) {
       return <ChatUI />;
     case 'flow':
       return <FlowUI />;
-    case 'dashboard':
+    case 'signals':
     default:
       return <DashboardUI />;
   }

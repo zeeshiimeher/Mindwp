@@ -104,6 +104,8 @@ Begin with working-day objects and moments:
 - messages
 - quotes
 - bookings
+- consultation requests
+- appointments
 - missed replies
 - reviews
 - completed jobs
@@ -112,6 +114,7 @@ Begin with working-day objects and moments:
 - scattered inboxes
 - staff pressure
 - local trust
+- patient trust
 - proof not collected
 - follow-up nobody owns
 
@@ -194,9 +197,9 @@ Use replacements as direction, not mandatory exact copy.
 When writing about website systems, lead with what changes:
 
 - the offer becomes easier to understand
-- service pages make the next step clear
+- service, treatment, or procedure pages make the next step clear
 - trust signals appear where decisions happen
-- calls, forms, and messages connect into a handling path
+- calls, forms, messages, bookings, and consultation requests connect into a handling path
 - the website becomes a visible control point
 - the website works as part of the business instead of sitting alone
 
@@ -215,6 +218,8 @@ Wrong:
 Right:
 
 > The website explains the work clearly, builds trust before the call, and connects enquiries into a handling path someone owns.
+
+For specialist clinics and private practices, the website should be treated as the practice front door. It should help patients understand the service or treatment, trust the provider, choose the right next step, and move into a booking or consultation path without turning the page into medical software, EMR, compliance, or treatment-claim language.
 
 Useful test:
 
@@ -236,6 +241,8 @@ Use language like:
 - quotes do not depend on memory
 - review requests happen at the right time
 - good work becomes proof
+- consultation requests are followed up
+- patient experience becomes visible proof
 
 Do not make the buyer learn backend architecture before they understand the business problem.
 
@@ -326,6 +333,7 @@ Use:
 - review requests happen after the right moment
 - feedback routes to the right place
 - public trust reflects completed work
+- patient experience becomes visible proof where clinic context is approved
 
 Avoid:
 
@@ -392,13 +400,13 @@ Specificity is not adding the industry name to generic copy. It is showing:
 
 - timing pressure
 - decision speed
-- customer behavior
+- customer or patient behavior
 - trust concerns
 - enquiry patterns
-- quote or booking patterns
+- quote, booking, appointment, or consultation patterns
 - review/proof expectations
 
-Roofing may involve storm urgency and quote follow-up. HVAC may involve seasonal demand and emergency calls. Salons may involve bookings, no-shows, repeat visits, and reviews. Those realities should shape the copy.
+Roofing may involve storm urgency and quote follow-up. HVAC may involve seasonal demand and emergency calls. Specialist clinics may involve patient trust, treatment or procedure clarity, booking confidence, consultation follow-up, and reviews. Those realities should shape the copy.
 
 ## Section Rhythm
 
@@ -461,6 +469,7 @@ Before approving public copy, confirm:
 - no backend platform names appear publicly
 - AI, CRM, SEO, and reviews are framed by outcomes, not tools
 - no fake proof or unsupported claims appear
+- clinic copy does not make unsupported medical, treatment, compliance, or patient-result claims
 - implementation pages resolve upward to Smart Website Systems
 - Revenue Recovery does not appear as a service, offer category, CTA category, page theme, or public promise
 

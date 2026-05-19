@@ -41,7 +41,7 @@ const DefaultFallback = ({ error }: { error: Error }) => (
   <div className='p-4 text-center'>
     <h2>Something went wrong.</h2>
     <p>{error.message}</p>
-    <RetryButtonIsland className='btn btn-primary' label='Reload Page' />
+    <RetryButtonIsland className='mw-btn mw-btn--primary' label='Reload Page' />
   </div>
 );
 

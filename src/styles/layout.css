@@ -357,7 +357,9 @@
 }
 
 .mw-section-shell--dark .mw-section-shell__heading-muted,
-.mw-section-shell--gradient-dark .mw-section-shell__heading-muted {
+.mw-section-shell--gradient-dark .mw-section-shell__heading-muted,
+.mw-section-shell--dark .mw-section-shell__heading .mw-text-muted,
+.mw-section-shell--gradient-dark .mw-section-shell__heading .mw-text-muted {
   color: var(--mw-white-50);
 }
 
@@ -487,7 +489,7 @@
   background: var(--mw-bg-page);
 }
 
-.mw-hero-frame__inner {
+.mw-hero-frame__layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--mw-gap-cols);
@@ -495,19 +497,24 @@
 }
 
 @media (min-width: 980px) {
-  .mw-hero-frame--layout-split .mw-hero-frame__inner {
+  .mw-hero-frame--layout-split .mw-hero-frame__layout {
     grid-template-columns: 7fr 5fr;
+  }
+
+  .mw-hero-frame--layout-split.mw-hero-frame--no-visual .mw-hero-frame__layout {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 72ch;
   }
 }
 
 /* Center layout — single column, centered. Used for builder/platform pages. */
-.mw-hero-frame--layout-center .mw-hero-frame__inner {
+.mw-hero-frame--layout-center .mw-hero-frame__layout {
   grid-template-columns: 1fr;
   justify-items: center;
   text-align: center;
 }
 
-.mw-hero-frame--layout-center .mw-hero-frame {
+.mw-hero-frame--layout-center .mw-hero-frame__inner {
   align-items: center;
   max-width: 64ch;
 }
@@ -522,128 +529,12 @@
   justify-content: center;
 }
 
-/* ── Default hero visual (auto-built from chips when no visual prop) ───── */
-.mw-hero-frame__default-visual {
-  display: block;
-}
-
-.mw-hero-frame__panel {
-  border: 1px solid var(--mw-border-panel);
-  border-radius: var(--mw-radius-panel);
-  background: var(--mw-bg-panel-dark);
-  padding: var(--mw-space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--mw-space-4);
-  box-shadow: var(--mw-shadow-card);
-}
-
-.mw-hero-frame__panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mw-hero-frame__panel-label {
-  font-size: var(--mw-text-label);
-  letter-spacing: var(--mw-tracking-label);
-  text-transform: uppercase;
-  color: var(--mw-text-on-dark-muted);
-}
-
-.mw-hero-frame__panel-live {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--mw-space-2);
-  font-size: var(--mw-text-label-sm);
-  color: var(--mw-text-on-dark);
-}
-
-.mw-hero-frame__panel-live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--mw-radius-pill);
-  background: var(--mw-signal-green);
-  box-shadow: var(--mw-glow-green);
-}
-
-.mw-hero-frame__panel-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--mw-space-3);
-}
-
-.mw-hero-frame__panel-row {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: var(--mw-space-3);
-  padding: var(--mw-space-3) var(--mw-space-3-5);
-  background: var(--mw-white-04);
-  border: 1px solid var(--mw-border-panel);
-  border-radius: var(--mw-radius-md);
-}
-
-.mw-hero-frame__panel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--mw-radius-pill);
-  background: var(--mw-text-on-dark-dim);
-}
-
-.mw-hero-frame__panel-row--warn .mw-hero-frame__panel-dot {
-  background: var(--mw-signal-amber);
-  box-shadow: var(--mw-glow-amber);
-}
-
-.mw-hero-frame__panel-row--risk .mw-hero-frame__panel-dot {
-  background: var(--mw-signal-red);
-  box-shadow: var(--mw-glow-red);
-}
-
-.mw-hero-frame__panel-row--cyan .mw-hero-frame__panel-dot {
-  background: var(--mw-signal-cyan);
-  box-shadow: var(--mw-glow-cyan);
-}
-
-.mw-hero-frame__panel-row--teal .mw-hero-frame__panel-dot {
-  background: var(--mw-signal-teal);
-  box-shadow: var(--mw-glow-teal);
-}
-
-.mw-hero-frame__panel-row-label {
-  font-size: var(--mw-text-body-sm);
-  color: var(--mw-text-on-dark-strong);
-}
-
-.mw-hero-frame__panel-row-state {
-  font-size: var(--mw-text-label-sm);
-  color: var(--mw-text-on-dark-muted);
-  letter-spacing: var(--mw-tracking-label);
-  text-transform: uppercase;
-}
-
-.mw-hero-frame__panel-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: var(--mw-text-label-sm);
-  color: var(--mw-text-on-dark-muted);
-  letter-spacing: var(--mw-tracking-label);
-  text-transform: uppercase;
-  padding-top: var(--mw-space-2);
-  border-top: 1px solid var(--mw-border-panel);
-}
-
 /* ══════════════════════════════════════════════════════
    HERO FRAME — shared hero copy-side block
    src/components/layout/HeroFrame.tsx
    ══════════════════════════════════════════════════════ */
 
-.mw-hero-frame {
+.mw-hero-frame__inner {
   display: flex;
   flex-direction: column;
 }

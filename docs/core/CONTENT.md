@@ -54,9 +54,9 @@ The homepage should create recognition before explaining the offer model.
 
 Current homepage principles:
 
-- The website is the base layer where search, trust, enquiry capture, response, follow-up, proof, and improvement connect.
+- The website is the base layer where search, trust, enquiry or booking capture, response, follow-up, proof, and improvement connect.
 - Traffic without clear services and next steps leaks.
-- The buyer journey should feel like find -> verify -> trust -> contact -> handled -> proof.
+- The buyer or patient journey should feel like find -> verify -> trust -> contact or book -> handled -> proof.
 
 These are content principles, not final section order. The homepage must not explain the system stack before the visitor recognises the business problem.
 
@@ -86,7 +86,7 @@ Service pages must not:
 - sell backend tools or platforms
 - promise guaranteed rankings, revenue, reviews, or lead volume
 
-Smart Website Systems pages should show the website as the visible control point for clarity, trust, enquiry capture, and connected handling. Local SEO Authority pages should connect find -> verify -> trust -> contact, and should make clear that visibility works better when service pages, location relevance, and proof are strong.
+Smart Website Systems pages should show the website as the visible control point for clarity, trust, enquiry or booking capture, and connected handling. Local SEO Authority pages should connect find -> verify -> trust -> contact or book, and should make clear that visibility works better when service, treatment, procedure, or location pages and proof are strong.
 
 Lead Response & Handling and Follow-Up & CRM must stay distinct. Lead Response & Handling owns the first response and routing moment after someone reaches out. Follow-Up & CRM owns ownership, status, reminders, and next steps after the first response or quote exists. Pages may reference each other, but neither page should absorb the other system.
 
@@ -96,9 +96,9 @@ Service-page fit and disqualification content is useful when it protects positio
 
 Implementation service pages are active implementation pathways under Smart Website Systems.
 
-They may explain WordPress, Elementor, Bricks, Divi, WooCommerce, and website redesign/system rebuild decisions. They should translate those choices into website clarity, trust, enquiry capture, maintainability, performance, ecommerce fit, and connected handling.
+They may explain WordPress, Elementor, Bricks, Divi, WooCommerce, and website redesign/system rebuild decisions. They should translate those choices into website clarity, trust, enquiry or booking capture, maintainability, performance, ecommerce fit where relevant, and connected handling.
 
-Implementation pages should explain platform choice only through business fit. The question is not "which builder is best?" The question is whether the implementation path supports a clear, trustworthy, maintainable website system that connects enquiries to handling.
+Implementation pages should explain platform choice only through business fit. The question is not "which builder is best?" The question is whether the implementation path supports a clear, trustworthy, maintainable website system that connects enquiries, bookings, or consultation requests to handling.
 
 They must not:
 
@@ -124,9 +124,11 @@ Feature pages must not:
 
 ## Industry Pages
 
-Industry detail pages translate MindWP systems into vertical reality.
+Industry detail pages translate MindWP systems into vertical reality for service businesses, specialist clinics, and private practices.
 
-They should lead with working conditions, urgency, customer behavior, decision speed, trust concerns, enquiry patterns, follow-up pressure, and review/proof expectations.
+They should lead with working conditions, timing, customer or patient behavior, decision speed, trust concerns, enquiry, booking, or consultation patterns, follow-up pressure, and review/proof expectations.
+
+Healthcare and specialist clinic industry pages should behave like landing pages for the practice front door. They should make the patient's decision path visible: what the patient is trying to understand, what makes them trust the provider, what service, treatment, or procedure page needs to explain, how booking or consultation requests are handled, what follow-up should not depend on memory, and how patient experience becomes reviews or proof. They must not become hospital software pages, EMR implementation pages, medical-claims pages, or generic doctor marketing pages.
 
 If an industry page can apply to another industry with minimal changes, it is invalid.
 
@@ -137,6 +139,8 @@ Industry pages must not:
 - use interchangeable hero logic
 - create new offer categories
 - expose internal system taxonomy before recognition
+- make unsupported medical, treatment, compliance, or patient-outcome claims
+- present healthcare pages as software, EMR, or platform implementation
 
 ## Blog Pages
 
@@ -182,11 +186,11 @@ Only real case studies may imply measured client outcomes or "we helped this cli
 
 Case studies should show:
 
-- operating context
+- operating context, practice context, or scenario context
 - structural problem
 - what changed
-- connected handling or ownership change
-- observable outcome where real
+- connected handling, booking, follow-up, or ownership change
+- observable outcome where real, without inventing treatment, revenue, ranking, or patient-result claims
 - constraint, tradeoff, or implementation decision where available
 
 ## Funnel Role Boundaries
@@ -201,7 +205,7 @@ Meaning:
 
 - Blogs diagnose.
 - Resources explain frameworks.
-- Industry pages translate systems into vertical reality.
+- Industry pages translate systems into vertical reality, including service-business and specialist-clinic realities where approved.
 - Service pages own the implementation decision.
 - Case studies support trust and proof.
 
@@ -242,6 +246,7 @@ Before approving content, confirm:
 - the page does not revive removed names or old offer structures
 - the page does not become a generic service catalog
 - the page creates buyer recognition before system explanation
+- clinic pages create patient/practice recognition before system explanation
 - the CTA posture matches [CONVERSION.md](./CONVERSION.md)
 - related-content direction supports the next useful step
 - metadata and graph rules are extracted after the page meaning is approved

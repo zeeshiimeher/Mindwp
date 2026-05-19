@@ -5,7 +5,7 @@ import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_CATEGORY_REGISTRY } from '@/domains/resources/categoryRegistry';
-import { CANONICAL_TOPICS, getNodeSystems } from '@/lib/content-graph/canonical';
+import { getNodeSystems } from '@/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode } from '@/lib/content-graph/types';
 import { normalizePath } from '@/lib/seo/config';
@@ -192,19 +192,6 @@ function createBlogTopicEntries(): RouteInventoryEntry[] {
     );
 }
 
-function createTopicHubEntries(): RouteInventoryEntry[] {
-  return CANONICAL_TOPICS.map(topic =>
-    createEntry({
-      key: `topic-hub:${topic}`,
-      kind: 'topic-hub',
-      path: `/topics/${topic}`,
-      title: `${slugTitle(topic)} — Topic Hub`,
-      description: `Everything about ${slugTitle(topic)}: services, insights, case studies, and resources.`,
-      topics: [topic],
-    })
-  );
-}
-
 export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
   const snapshotInventory = readSnapshotInventory();
   if (snapshotInventory) {
@@ -219,7 +206,6 @@ export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
     ...createBlogCategoryEntries(),
     ...createResourceCategoryEntries(),
     ...createBlogTopicEntries(),
-    ...createTopicHubEntries(),
     ...graphEntries,
   ];
 

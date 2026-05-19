@@ -143,7 +143,7 @@ export function Footer() {
 
         <div className='footer__bottom'>
           <p className='footer__copyright'>
-            © {currentYear} MindWP. Connected systems for service businesses.
+            © {currentYear} MindWP. Conversion-focused website systems with connected handling.
           </p>
           <span className='footer__status'>
             <span className='footer__status-dot' aria-hidden='true' />

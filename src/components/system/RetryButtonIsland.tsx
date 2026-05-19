@@ -7,7 +7,7 @@ type RetryButtonIslandProps = {
 };
 
 export function RetryButtonIsland({
-  className = 'btn btn-primary',
+  className = 'mw-btn mw-btn--primary',
   label,
   type = 'button',
 }: RetryButtonIslandProps) {

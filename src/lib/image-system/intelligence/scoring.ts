@@ -64,7 +64,8 @@ const RESOURCE_OPERATION_TERMS = [
   'appointment',
   'notebook',
   'planning',
-  'workflow',
+  'handling',
+  'next step',
   'service business',
 ];
 

@@ -27,14 +27,6 @@ type FAQSchemaInput = {
   questions: Array<{ question: string; answer: string }>;
 };
 
-type SoftwareApplicationSchemaInput = {
-  name: string;
-  description: string;
-  path: string;
-  applicationCategory?: string;
-  operatingSystem?: string;
-};
-
 function assertSchemaShape(schema: Record<string, unknown>) {
   if (typeof schema['@context'] !== 'string' || schema['@context'].trim().length === 0) {
     throw new Error('Invalid schema: missing @context');
@@ -114,27 +106,4 @@ export function buildServiceSchema({ name, description, path, areaServed }: Serv
 export function buildFAQSchema({ questions }: FAQSchemaInput) {
   const schema = buildFaqSchemaFromItems(questions);
   return schema ? assertSchemaShape(schema) : schema;
-}
-
-export function buildSoftwareApplicationSchema({
-  name,
-  description,
-  path,
-  applicationCategory = 'BusinessApplication',
-  operatingSystem = 'Web Browser',
-}: SoftwareApplicationSchemaInput) {
-  return assertSchemaShape({
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name,
-    description,
-    url: toAbsoluteUrl(path),
-    applicationCategory,
-    operatingSystem,
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: SITE_ORIGIN,
-    },
-  });
 }

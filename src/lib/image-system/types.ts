@@ -142,9 +142,9 @@ export type OverlayVariant = 'editorial' | 'system' | 'analytical' | 'results' |
 
 export type VisualMode = 'real' | 'illustration';
 
-export type TextStyle = 'saas' | 'hook';
+export type TextStyle = 'signal' | 'hook';
 
-export type IllustrationVariant = 'dashboard' | 'pipeline' | 'calendar' | 'chat' | 'flow';
+export type IllustrationVariant = 'signals' | 'pipeline' | 'calendar' | 'chat' | 'flow';
 
 export type VisualTreatment = 'clean' | 'highlight' | 'frame' | 'depth';
 

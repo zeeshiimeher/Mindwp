@@ -7,8 +7,7 @@ export type RouteOwner =
   | 'content-graph'
   | 'blog-category-registry'
   | 'resource-category-registry'
-  | 'blog-topic-registry'
-  | 'topic-hub-registry';
+  | 'blog-topic-registry';
 
 export type RouteOwnershipRule = {
   owner: RouteOwner;
@@ -46,11 +45,6 @@ export const ROUTE_OWNERSHIP_RULES: RouteOwnershipRule[] = [
     owner: 'blog-topic-registry',
     kind: 'blog-topic',
     prefix: '/blog/topic/',
-  },
-  {
-    owner: 'topic-hub-registry',
-    kind: 'topic-hub',
-    prefix: '/topics/',
   },
   {
     owner: 'content-graph',

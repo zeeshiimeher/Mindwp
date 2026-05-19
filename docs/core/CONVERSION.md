@@ -134,9 +134,9 @@ Implementation service pages:
 
 Industry pages:
 
-- Connect to the industry's working reality.
+- Connect to the industry's working reality, including specialist-clinic and private-practice reality where relevant.
 - Route toward the most relevant active system or whole-system review.
-- Use industry-specific objects: calls, quotes, bookings, emergencies, no-shows, reviews, service areas, and follow-up.
+- Use industry-specific objects: calls, quotes, bookings, consultation requests, appointments, reviews, service areas, patient trust, and follow-up.
 
 Blog pages:
 
@@ -213,12 +213,12 @@ A light CTA may appear early if it is genuinely low-pressure and does not interr
 
 ## Fit And Disqualification
 
-Conversion should attract serious service-business buyers and repel poor-fit buyers without sounding arrogant.
+Conversion should attract serious service-business and specialist-clinic buyers and repel poor-fit buyers without sounding arrogant.
 
 Good fit:
 
-- established service business
-- real enquiries or customer activity already exists
+- established service business or specialist clinic
+- real enquiries, bookings, patient interest, or customer activity already exists
 - buyer wants better website clarity, connected handling, response, follow-up, or proof
 - owner wants practical structure, not only a prettier website
 - enquiries need consistent handling
@@ -243,13 +243,13 @@ Forms should support diagnostic conversion.
 
 Useful fields may include:
 
-- business name
+- business or clinic name
 - website URL if available
-- industry
+- industry or practice type
 - service area or location
 - current problem area
-- what happens after someone calls, books, messages, or fills a form
-- whether missed calls, forms, follow-up, reviews, or local visibility are the main concern
+- what happens after someone calls, books, requests a consultation, messages, or fills a form
+- whether missed calls, forms, bookings, follow-up, reviews, or local visibility are the main concern
 - best way to contact the buyer
 
 Do not overload the form. Do not ask technical questions too early. Let the buyer describe the problem in plain language.
@@ -285,6 +285,7 @@ Before approving a CTA, confirm:
 - it matches the owning active system
 - it supports the website system and connected handling path where the page is diagnosing the full journey
 - it reflects the buyer's visible problem
+- for clinic pages, it reflects the practice's visible patient trust, booking, consultation, or follow-up problem without making medical or treatment-result claims
 - it tells or implies what happens next
 - it feels diagnostic, not pushy
 - it avoids demo/trial/platform language
