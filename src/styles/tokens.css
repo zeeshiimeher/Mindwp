@@ -345,6 +345,12 @@
   --mw-shadow-float: 0 12px 40px rgba(8, 17, 31, 0.08);
   /* Lifted panels on dark gradient surfaces (hero/feature visual panels). */
   --mw-shadow-dark-lg: 0 24px 60px rgba(0, 0, 0, 0.32);
+  /* Premium light-section card shadow, softer and wider than --mw-shadow-card */
+  --mw-shadow-card-soft-lg: 0 8px 48px rgba(8, 17, 31, 0.06);
+  /* Foundation card — dark surface with cyan-tinted depth (Mindwp-Design Foundation pattern) */
+  --mw-shadow-foundation:
+    0 24px 64px rgba(8, 17, 31, 0.28),
+    0 0 40px color-mix(in oklch, var(--mw-signal-cyan) 6%, transparent);
   --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, var(--mw-signal-cyan) 35%, transparent);
 
   /* Signal glow — for animated dots and status indicators */

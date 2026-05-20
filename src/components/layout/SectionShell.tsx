@@ -37,6 +37,15 @@ export type SectionShellProps = {
 /**
  * SectionShell — standard section wrapper.
  *
+ * @deprecated for new pages. Standardising every section's outer envelope (padding, heading
+ * slot, eyebrow position, description ch-width) is the source of the homepage's visual
+ * monotony. New pages should write raw `<section>` JSX with Tailwind + `mw-*` classes so each
+ * section can own its silhouette. Kept in the file because existing baseline renderers
+ * (SmartWebsiteSystemsRenderer, LocalSEOAuthorityRenderer, LeadResponseHandlingRenderer,
+ * FollowUpCRMRenderer, ReputationReviewSystemsRenderer, and features/industries/etc.) still
+ * import it; those renderers will be rebuilt one at a time and migrate off SectionShell when
+ * they do. Do not use for new homepage / SWS / Local SEO rebuilds.
+ *
  * Owns: <section>, mw-container, heading block (eyebrow, h2, description), tone/background,
  * section padding, and optional split layout.
  * Use [[muted:...]] inline syntax in heading.title for muted segments.

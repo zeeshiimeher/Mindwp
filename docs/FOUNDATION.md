@@ -221,7 +221,7 @@ Useful patterns include:
 - scenario: a day-in-the-business moment
 - operating map: how website, response, follow-up, reviews, and recovery connect
 
-Visual rules live in [DESIGN.md](./DESIGN.md).
+Visual rules live in the [WORKFLOW.md](./WORKFLOW.md) design loop.
 
 ## How Future AI Should Think
 
@@ -242,11 +242,11 @@ When the page or section is for a specialist clinic, translate the same question
 
 - Offer ownership: [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
 - Public language: [WRITING.md](./WRITING.md)
-- Page roles: [CONTENT.md](./CONTENT.md)
-- CTA behavior: [CONVERSION.md](./CONVERSION.md)
-- Visual and section design: [DESIGN.md](./DESIGN.md)
-- Related content: [GRAPH.md](./GRAPH.md)
-- Repo mapping: [SYSTEM-ARCHITECTURE.md](./SYSTEM-ARCHITECTURE.md)
-- Execution guardrails: [SYSTEM-RULES.md](./SYSTEM-RULES.md)
+- Page roles: [PAGES.md](./PAGES.md)
+- CTA behavior: [PAGES.md](./PAGES.md)
+- Visual and section design: the [WORKFLOW.md](./WORKFLOW.md) design loop
+- Related content: [PAGES.md](./PAGES.md)
+- Repo mapping: [REPO.md](./REPO.md)
+- Execution guardrails: [CLAUDE.md](../CLAUDE.md)
 
 Foundation owns the business truth. Other docs apply that truth in their local domains.

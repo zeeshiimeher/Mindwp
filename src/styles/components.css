@@ -787,3 +787,93 @@
 .mw-faq-section--split .mw-faq-section__accordion {
   margin-top: var(--mw-space-10);
 }
+/* ============================================================
+   Homepage / page-owned utility classes
+   Added during the cross-folder design loop (see docs/WORKFLOW.md).
+   Use freely from raw <section> JSX. Each class encapsulates a
+   recurring Mindwp-Design pattern so page JSX stays readable.
+   ============================================================ */
+
+/* Dot-grid texture overlays. Apply as a child element with absolute positioning. */
+.mw-grid-texture-32 {
+  background-image: var(--mw-gradient-grid-texture);
+  background-size: 32px 32px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.mw-grid-texture-72 {
+  background-image: var(--mw-gradient-grid-texture);
+  background-size: 72px 72px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+/* Hero radial wash — paint the same dual-radial+linear that --mw-gradient-hero
+   carries, but as a stand-alone overlay layer for use behind the hero content
+   when the base bg already has its own treatment. */
+.mw-hero-wash {
+  background-image:
+    radial-gradient(ellipse at 15% 20%,
+      color-mix(in oklch, var(--mw-signal-cyan) 16%, transparent),
+      transparent 45%),
+    radial-gradient(ellipse at 95% 90%,
+      color-mix(in oklch, var(--mw-signal-teal) 12%, transparent),
+      transparent 50%);
+  pointer-events: none;
+}
+
+/* Glow halo discs — soft blurred radial behind a card to add depth on dark sections.
+   Use with absolute positioning and the .mw-glow-halo--* color variant. */
+.mw-glow-halo {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.mw-glow-halo--cyan {
+  background: color-mix(in oklch, var(--mw-signal-cyan) 15%, transparent);
+}
+
+.mw-glow-halo--teal {
+  background: color-mix(in oklch, var(--mw-signal-teal) 15%, transparent);
+}
+
+.mw-glow-halo--green {
+  background: color-mix(in oklch, var(--mw-signal-green) 15%, transparent);
+}
+
+.mw-glow-halo--purple {
+  background: color-mix(in oklch, var(--mw-signal-purple) 15%, transparent);
+}
+
+/* Lane-board top accent stripe — solid → faded horizontal gradient bar.
+   Set the accent color via inline style or a per-lane custom-property,
+   e.g. style={{ '--mw-lane-color': 'var(--mw-signal-teal)' }} */
+.mw-lane-accent {
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    var(--mw-lane-color, var(--mw-signal-cyan)),
+    color-mix(in oklch, var(--mw-lane-color, var(--mw-signal-cyan)) 12%, transparent)
+  );
+}
+
+/* Handoff chip — small round white card sitting on a lane divider with shadow.
+   The dot of a 3-lane operating board where the handoff is supposed to happen. */
+.mw-handoff-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: var(--mw-bg-page);
+  border: 1px solid var(--mw-border-light);
+  box-shadow: 0 4px 16px rgba(8, 17, 31, 0.08);
+  color: var(--mw-text-subtle);
+  font-size: 14px;
+  line-height: 1;
+}

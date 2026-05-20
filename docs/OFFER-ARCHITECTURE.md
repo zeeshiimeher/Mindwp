@@ -481,7 +481,7 @@ Industry pages translate the active systems into vertical working reality. They 
 
 Blogs diagnose. Resources explain frameworks. Case studies prove or illustrate operating change. Service pages own the implementation decision.
 
-The content flow is defined in [CONTENT.md](./CONTENT.md). Related-content behavior is defined in [GRAPH.md](./GRAPH.md).
+The content flow is defined in [PAGES.md](./PAGES.md). Related-content behavior is defined in [PAGES.md](./PAGES.md).
 
 ## Drift Prevention
 

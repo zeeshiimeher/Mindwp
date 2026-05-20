@@ -1,97 +1,61 @@
 # MindWP
 
-MindWP is the production rebuild workspace for the new MindWP public site.
+Production Next.js workspace for the MindWP public site.
 
-MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics. The site should communicate a practical business idea: work already comes in, but too much slips away between being found, trusted, contacted, answered, followed up, reviewed, and recovered.
+MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics. Public anchor: **"Work Comes In. Too Much Slips Away."**
 
-This repository contains the Next.js site, domain content, page renderers, route ownership, conversion/contact behavior, graph support, and the documentation used by future AI and human contributors.
+## Two Folders
 
-## What This Repo Is
+- `Mindwp/` (this repo) — production Next.js site, strategy docs, validators.
+- `Mindwp-Design/` (sibling Vite project) — visual design sandbox. Pages are designed there first, then ported here.
 
-- Next.js public website for MindWP.
-- Domain-owned page data, renderer registries, and content surfaces.
-- Service, implementation service, feature, approved industry, blog, resource, and case-study routes.
-- Shared components and styling primitives for approved page patterns and connected-handling surfaces.
-- CTA, contact, SEO, and related-content support.
-- Documentation for strategy, content, design, architecture, and execution guardrails.
+Full design loop in [docs/WORKFLOW.md](./docs/WORKFLOW.md).
 
-MindWP is not a generic web design agency, SaaS product, tool reseller, template business, AI chatbot vendor, or ranking-hype SEO provider.
+## Doc Map
 
-## Documentation Map
-
-Read only what is relevant to the task.
-
-| Doc | Owns |
+| Doc | Purpose |
 | --- | --- |
-| [CLAUDE.md](./CLAUDE.md) | Main AI orientation, task routing, build flow, and high-level guardrails. |
-| [docs/core/FOUNDATION.md](./docs/core/FOUNDATION.md) | MindWP identity, buyer truth, positioning, public path, and build philosophy. |
-| [docs/core/OFFER-ARCHITECTURE.md](./docs/core/OFFER-ARCHITECTURE.md) | Active offer model, service ownership, implementation pathways, and offer drift prevention. |
-| [docs/core/WRITING.md](./docs/core/WRITING.md) | Public language, voice, rewrite behavior, banned phrasing, and applied copy rules. |
-| [docs/core/CONTENT.md](./docs/core/CONTENT.md) | Page roles, funnel behavior, editorial boundaries, and content intent. |
-| [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) | CTA posture, contact behavior, diagnostic conversion, and proof-before-action logic. |
-| [docs/core/DESIGN.md](./docs/core/DESIGN.md) | Visual direction, UI/page rebuild guidance, visual concepts, token/CSS guidance, and component design judgment. |
-| [docs/core/GRAPH.md](./docs/core/GRAPH.md) | Related-content behavior, routing logic, graph metadata, and resolver rules. |
-| [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) | Mapping the strategy into routes, domains, renderers, components, styles, and graph code. |
-| [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md) | Hard execution guardrails and validation rules. |
-| [docs/ops/CONTENT-INVENTORY.md](./docs/ops/CONTENT-INVENTORY.md) | Planning inventory for approved content clusters and publishing priorities. |
-| [.claude/skills](./.claude/skills) | Short workflow helpers for AI-led page planning, rebuild, and review sessions. |
+| [CLAUDE.md](./CLAUDE.md) | Main AI orientation, hard rules, banned terms, command list. |
+| [docs/FOUNDATION.md](./docs/FOUNDATION.md) | Identity, buyer truth, positioning, public path. |
+| [docs/OFFER-ARCHITECTURE.md](./docs/OFFER-ARCHITECTURE.md) | Active 5-system offer model, ownership boundaries, implementation pathways. |
+| [docs/WRITING.md](./docs/WRITING.md) | Voice, banned phrases, working-day vocabulary, applied copy rules. |
+| [docs/PAGES.md](./docs/PAGES.md) | Page roles + CTA posture. |
+| [docs/REPO.md](./docs/REPO.md) | Source structure, validators, what controls what. |
+| [docs/WORKFLOW.md](./docs/WORKFLOW.md) | Cross-folder design loop. |
 
-Generated files under `reports/` are diagnostic snapshots only. They are not strategy authority and may contain stale route names or removed offer models from older audits.
-
-## Working Philosophy
-
-The active build flow is:
-
-```text
-BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
-```
-
-Pages start from the buyer's visible working day: calls, searches, forms, quotes, jobs, reviews, inboxes, staff pressure, and missed follow-up. Components, data files, metadata, CTA rules, and graph relationships are extracted after the page or section pattern is approved.
+Generated files under `reports/` are diagnostic snapshots only, not strategy authority.
 
 ## Architecture Overview
 
-- `src/app/**` owns public routes.
-- `src/domains/**` owns domain content, data, renderers, registries, and page-specific domain behavior.
-- `src/domains/services/**` owns active system service pages.
-- `src/domains/services/implementation/**` owns implementation pathways under Smart Website Systems, not separate primary systems.
-- `src/components/**` owns reusable UI surfaces.
-- `src/styles/**` owns tokens, layout primitives, typography, and shared visual rules.
-- `src/lib/content-graph/**` owns graph metadata and related-content behavior.
-- `src/lib/cta/**`, `src/lib/contact/**`, and `src/lib/seo/**` own shared CTA, contact, and SEO behavior.
+- `src/app/**` — public Next.js routes (one canonical route per page).
+- `src/domains/**` — domain content, page data, renderers, registries.
+- `src/screens/**` — top-level page shells (Homepage, About, Contact, etc.).
+- `src/components/**` — shared UI primitives. `HeroFrame` is the recommended hero. `SectionShell` is `@deprecated` for new pages — use raw `<section>` JSX.
+- `src/styles/**` — tokens, layout primitives, typography, shared visual rules. The `mw-*` classes and `var(--mw-*)` tokens are the default during production work.
+- `src/lib/**` — content-graph, CTA, contact, SEO helpers.
 
-The detailed architecture contract is in [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md).
+Full source map in [docs/REPO.md](./docs/REPO.md).
 
-## Common Commands
-
-Use pnpm only. `package.json` scripts are the command authority; this section mirrors the common commands from that file.
+## Commands
 
 ```bash
 pnpm install
 pnpm dev
+pnpm build
 pnpm typecheck
 pnpm lint
-pnpm check:names
-pnpm check:domain-registries
-pnpm check:clean-base
-pnpm check:architecture
-pnpm check:minimal
-pnpm check:frontend
-pnpm build
+pnpm check:names         # strict — blocks banned terms
+pnpm check:clean-base    # warn-only (exits 0)
+pnpm check:baseline      # the fast post-rebuild gate
+pnpm check:strict        # opt-in old hard gate
+pnpm test:smoke          # Playwright smoke (port 3001, safe with pnpm dev running)
+pnpm check:frontend      # 28-route runtime smoke (collides with pnpm dev)
 ```
 
-Use `pnpm check:frontend` after meaningful page or visual work. Use `pnpm build` before considering production-facing source changes complete.
+Use pnpm only.
 
-## High-Level Guardrails
+## Working Philosophy
 
-- Keep MindWP service-business specific, system-first, conversion-focused, and commercially serious.
-- Do not turn the site into a generic agency menu or builder-service catalog.
-- Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
-- Public topic hubs are not active. `topics[]` may exist only as internal metadata for relevance and graph scoring.
-- Do not preserve unpublished removed routes or removed names for compatibility.
-- Do not invent proof, metrics, rankings, guarantees, testimonials, or client results.
-- Do not publicly mention backend platform names, tool names, or white-label delivery details as the product.
-- Keep Revenue Recovery as a cross-system improvement layer only; do not model it as a service page, route, page type, graph category, CTA category, navigation pillar, related-content cluster, panel, form, service card, or primary offer.
-- Keep primary service pages distinct: each owns one business moment and should not repeat the full MindWP model or absorb adjacent systems.
-- Keep Lead Response & Handling separate from Follow-Up & CRM in routes, data, metadata, CTA posture, graph relationships, renderer logic, and page copy.
+Pages are designed in `Mindwp-Design/` first (raw `<section>`, inline hex, fast Vite dev loop), then ported here with `HeroFrame` for the hero and raw `<section>` for body sections. During the port, inline hex is converted to `mw-*` classes / `var(--mw-*)` tokens where matched; new tokens are added to `src/styles/tokens.css` when a recurring pattern needs one.
 
-For AI-led planning, docs, source, or page work, read [CLAUDE.md](./CLAUDE.md) first.
+For full AI orientation, read [CLAUDE.md](./CLAUDE.md).

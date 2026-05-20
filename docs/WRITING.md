@@ -20,7 +20,7 @@ Use this when writing, rewriting, polishing, or auditing public copy for:
 - CTAs and contact context
 - SEO-facing descriptions where public tone matters
 
-Offer ownership is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Page roles are defined in [CONTENT.md](./CONTENT.md). CTA posture is defined in [CONVERSION.md](./CONVERSION.md).
+Offer ownership is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Page roles are defined in [PAGES.md](./PAGES.md). CTA posture is defined in [PAGES.md](./PAGES.md).
 
 ## Writing Contract
 
@@ -426,7 +426,7 @@ Comparison sections show operating contrast, not mirrored benefit bullets.
 
 Proof sections show evidence, scenario, or observed change. They should not generalize.
 
-CTA sections should feel like a practical diagnostic conversation. CTA rules live in [CONVERSION.md](./CONVERSION.md).
+CTA sections should feel like a practical diagnostic conversation. CTA rules live in [PAGES.md](./PAGES.md).
 
 Primary service pages must not all repeat the full MindWP model. Each service page should own one business moment and use the wider connected path only where it clarifies that page's problem. If every service page says website + response + follow-up + reviews + recovery in the same way, the pages have blurred.
 
@@ -465,8 +465,8 @@ Before approving public copy, confirm:
 - the reader's situation appears before MindWP's offer
 - the language feels practical and observable
 - the page follows the active offer ownership from [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md)
-- the page role matches [CONTENT.md](./CONTENT.md)
-- the CTA tone matches [CONVERSION.md](./CONVERSION.md)
+- the page role matches [PAGES.md](./PAGES.md)
+- the CTA tone matches [PAGES.md](./PAGES.md)
 - no removed service names or old offer structures appear
 - no backend platform names appear publicly
 - AI, CRM, SEO, and reviews are framed by outcomes, not tools

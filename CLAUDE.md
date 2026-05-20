@@ -1,20 +1,16 @@
 # CLAUDE.md
 
-Main AI orientation file for MindWP. Claude, Codex, Copilot Chat, and other coding agents should read this first, then read only the task-relevant docs.
+Main orientation for any AI working on MindWP. Read this first. Read the task-relevant doc next.
 
-Follow the current user prompt first. Then follow this file. When deeper context is needed, use the core docs instead of guessing.
-
-## MindWP In One Line
+## Identity
 
 MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics.
 
-The repo is docs-led, not old-page-led. Existing pages, renderers, page data, and planning notes are context. They are not authority when they conflict with the core docs.
-
-Public explanation starts from the owner's or practice manager's working day: calls, searches, forms, quotes, bookings, consultation requests, jobs, appointments, reviews, inboxes, staff pressure, and missed follow-up. The system model should help structure the answer; it should not make the buyer decode internal architecture before they recognise their situation.
+Public anchor headline: **"Work Comes In. Too Much Slips Away."** Use this as the lead recognition line on the homepage and as the rhetorical spine throughout the site. The longer identity sentence above belongs in `FOUNDATION.md` and the About context — not as a hero headline.
 
 ## Active Offer Model
 
-The five active primary systems are:
+Five active primary systems. Smart Website Systems is the flagship and the visual hub on the homepage.
 
 1. Smart Website Systems
 2. Local SEO Authority Systems
@@ -22,160 +18,98 @@ The five active primary systems are:
 4. Follow-Up & CRM Systems
 5. Reputation & Review Systems
 
-Revenue Recovery is only a cross-system improvement layer. It must not become a primary system, route, service page, graph category, CTA category, navigation pillar, panel, card, form, related-content cluster, or public offer.
+Revenue Recovery is a cross-system improvement **lens** only — never a service page, route, CTA category, panel, navigation pillar, or related-content cluster.
 
-Implementation services sit under Smart Website Systems. WordPress, Elementor, Bricks, Divi, WooCommerce, and website rebuild pages are implementation pathways, not primary systems or generic builder-agency offers.
+Implementation services (WordPress, Elementor, Bricks, Divi, WooCommerce, website rebuild) sit **under Smart Website Systems**. They are pathways, not primary systems.
 
-## Build Flow
+Full ownership boundaries live in [docs/OFFER-ARCHITECTURE.md](./docs/OFFER-ARCHITECTURE.md).
 
-Use this flow for page planning and rebuild work:
+## Hard Banned Terms
 
-```text
-BUSINESS REALITY -> BUYER RECOGNITION -> PAGE INTENT -> PATTERN -> SECTION DESIGN -> JSX -> APPROVAL -> SYSTEMIZATION
+Protected by `pnpm check:names` (this validator stays strict — it blocks builds):
+
+- Vendor names: GoHighLevel, GHL, HighLevel
+- Removed offer names: "AI Lead Handling", "CRM & Automation", "Revenue Growth", "Revenue Growth Systems"
+- Removed slugs: `ai-lead-handling`, `crm-automation`, `revenue-growth`, `growth-revenue-systems`, `aichat`, `workflows`
+- Removed routes: `/systems`, `/topics`, `/blog/topic`, `/portfolio`
+- "Revenue Recovery" as a structure (page, route, category, panel — the words may appear in copy only as a cross-system lens)
+- "six systems", "six connected systems", "digital infrastructure consultancy"
+
+Design freely otherwise.
+
+## Voice
+
+Lead with working-day objects: calls, forms, quotes, bookings, consultation requests, missed replies, follow-up nobody owns, reviews not requested. No fake metrics, testimonials, rankings, or client outcomes. Full guide in [docs/WRITING.md](./docs/WRITING.md).
+
+## Design Freedom
+
+The previous repo discipline standardized every section through `SectionShell` + token-only styling and produced visually flat pages. That has been reset:
+
+- **Body sections** — write raw `<section>` JSX with Tailwind + `mw-*` classes. Each section owns its silhouette.
+- **Hero** — use `HeroFrame` with the right-side `visual` slot. Good pattern, keep it.
+- **`SectionShell`** is `@deprecated` for new pages. Existing baseline renderers still import it; they migrate off when their page's turn to rebuild comes.
+- **`mw-*` classes and `var(--mw-*)` tokens are the default** during production work. If a recurring Figma-Make pattern needs a token that doesn't exist yet, add it to `src/styles/tokens.css`. Inline hex / inline `style={}` stays available as an escape hatch for one-offs.
+- **Validators are advisory** except `check:names`. `check:clean-base` now warns and exits 0 — use `pnpm check:strict` if you want the old hard gate.
+
+## Design Workflow
+
+Two folders, two jobs. **Design + review + revise in `Mindwp-Design/`. Port to `Mindwp/` only when the user explicitly authorizes it.** Full guide in [docs/WORKFLOW.md](./docs/WORKFLOW.md).
+
+1. **Plan in `Mindwp/`** — strategy, page intent, what business moment the page owns, what CTA, what's in / not in. Plans live in chat or in `docs/PAGES.md` if durable.
+2. **Design in `Mindwp-Design/`** (the sibling Vite project) — `src/app/components/*.tsx`. No validators, no shells, light token discipline (use `theme.css` brand vars where they match; inline hex otherwise). Use active 5-system names — see `Mindwp-Design/README-active-model.md`. Iterate fast in `pnpm dev`.
+3. **Review + revise in `Mindwp-Design/`** — show the user the sandbox dev server, take feedback, revise the sandbox JSX. Repeat until the user signals satisfaction. Do **not** port during this phase.
+4. **Port to `Mindwp/`** only when the user says "port this now" — copy the final JSX to `src/screens/<Page>.tsx`, swap shells (`HeroFrame` for hero, raw `<section>` for body), convert remaining hex → tokens/`mw-*` classes where matched, swap demo router (`onNav={setPage}`) for Next.js `<Link>` / `<a href>`.
+5. **Validate the port** — `pnpm check:names && pnpm typecheck && pnpm test:smoke`.
+
+The discipline: validator-passing in production is not a substitute for visual approval. The user approves the sandbox first.
+
+## Five-System Visual Rule
+
+On the homepage the five systems are **never** rendered as five equal tiles or a 2×3 grid. SWS is the visual flagship/hub. The other four sit as connected protections around it. Two acceptable layouts:
+
+- **Flagship row + 4-cell stack** (a featured SWS card on top, the other four arranged 2×2 or 3+1 below; the Mindwp-Design `SixSystemStack` pattern adapted to five).
+- **Hub + 4 orbital positions** (with an actual connecting graphic — not whitespace between cards).
+
+## Doc Map
+
 ```
-
-Start with what is visibly happening in the buyer's business, clinic, or practice. Create recognition before explaining the system. Build page and section patterns in JSX while they are being proven. Extract data, reusable primitives, metadata, graph rules, and tighter types only after approval.
-
-Plan before editing. For page rebuilds, produce a page plan and get approval before changing JSX, page data, styles, or shared components.
-
-## Page Rebuild Workflow
-
-Use this workflow for each major page rebuild:
-
-1. Understand the positioning and active offer model from `CLAUDE.md` and the relevant core docs.
-2. Confirm which page is being rebuilt and what business moment it owns.
-3. Make a page plan before editing.
-4. Decide the high-level section sequence and make sure the page will not visually repeat previous approved pages too closely.
-5. Create the render base first: set up the page-level use of existing shared components such as `HeroFrame`, `SectionShell`, `DecisionPanel`, and `FAQSection` where useful.
-6. Decide section titles, descriptions, tone, variants, props, and whether any section needs a custom class or background treatment.
-7. Do not build inner body JSX until the render shape is clear.
-8. After the render shape is approved or clearly established, design the inner section content with page-owned JSX, Tailwind, and direct section content inside `SectionShell` where appropriate.
-9. Run validation and report what changed.
-
-For the first three pages — Homepage, Smart Website Systems, and Local SEO Authority Systems — there are no fully approved designed pages yet. These pages establish the base design standard. Shared component, token, or CSS improvements are allowed only during this baseline phase when clearly justified by the approved design direction in `docs/Planning/Design-Direction.md`.
-
-After these three pages are approved, later page rebuilds should treat `HeroFrame`, `SectionShell`, `DecisionPanel`, `FAQSection`, tokens, and shared CSS as stable unless the user explicitly approves a design-system change.
-
-Later pages should inspect approved rebuilt pages for design rhythm. Pages can share shells and rhythm, but primary visual arguments must feel distinct.
-
-## Active Rebuild Memory
-
-Captured so future sessions do not re-audit the full repo for every task:
-
-- `docs/Planning/Website-Rebuild.md` — phase structure, sequence, and acceptance criteria.
-- `docs/Planning/Website-memory-and-plan.md` — current phase status, branch, decisions, and next-session handoff.
-- `docs/Planning/Design-Direction.md` — proposed visual baseline for Homepage, Smart Website Systems, and Local SEO Authority. Locks in after those three pages are approved.
-- `docs/Planning/Repo-Map.md` — durable repo structure, ownership, validator behavior, and reset-base constraints from the Phase 2 audit. Read this before exploring source folders from scratch.
-
-## Task-Based Reading
-
-Use the smallest reading set that fully supports the task.
-
-For positioning, offer, or copy work:
-
-- `docs/core/FOUNDATION.md`
-- `docs/core/OFFER-ARCHITECTURE.md`
-- `docs/core/WRITING.md`
-- `docs/core/CONTENT.md` when page role matters
-- `docs/core/CONVERSION.md` when CTA or contact behavior matters
-
-For page planning:
-
-- `docs/core/FOUNDATION.md`
-- `docs/core/OFFER-ARCHITECTURE.md`
-- `docs/core/CONTENT.md`
-- `docs/core/DESIGN.md`
-- `docs/core/WRITING.md`
-- `docs/core/CONVERSION.md`
-- `docs/ops/CONTENT-INVENTORY.md` only for planning inventory, never runtime truth
-
-For page implementation or rebuild work:
-
-- this file first
-- `docs/core/FOUNDATION.md`
-- `docs/core/OFFER-ARCHITECTURE.md`
-- `docs/core/CONTENT.md`
-- `docs/core/DESIGN.md`
-- `docs/core/WRITING.md`
-- `docs/core/CONVERSION.md`
-- `docs/core/SYSTEM-ARCHITECTURE.md` only when source structure, routes, renderers, metadata, graph, or ownership changes
-- `docs/core/SYSTEM-RULES.md` for guardrails and validation
-
-For design review or visual section direction:
-
-- `docs/core/FOUNDATION.md`
-- `docs/core/OFFER-ARCHITECTURE.md`
-- `docs/core/DESIGN.md`
-- `docs/core/WRITING.md` when public copy is visible
-- `docs/core/CONVERSION.md` when CTAs are visible
-
-For source cleanup, routes, graph, metadata, or architecture work:
-
-- `docs/core/OFFER-ARCHITECTURE.md`
-- `docs/core/SYSTEM-ARCHITECTURE.md`
-- `docs/core/SYSTEM-RULES.md`
-- `docs/core/GRAPH.md` when graph or related content changes
-- `docs/core/CONVERSION.md` when CTA/contact source changes
-
-For docs-only maintenance:
-
-- this file first
-- the doc being edited
-- any governing doc the edit depends on
-
-## Doc Ownership
-
-- `README.md` = lightweight repo overview
-- `CLAUDE.md` = main AI orientation and task routing
-- `docs/core/FOUNDATION.md` = identity, buyer truth, positioning, public path, build philosophy
-- `docs/core/OFFER-ARCHITECTURE.md` = active offer model, system ownership, implementation services, Revenue Recovery boundary
-- `docs/core/WRITING.md` = voice, public language, copy rules
-- `docs/core/CONTENT.md` = page roles, funnel behavior, editorial boundaries
-- `docs/core/CONVERSION.md` = CTA/contact behavior
-- `docs/core/DESIGN.md` = visual direction, UI/page rebuild design, visual concepts, tokens/CSS/component design judgment
-- `docs/core/GRAPH.md` = related content, graph metadata, routing logic
-- `docs/core/SYSTEM-ARCHITECTURE.md` = strategy-to-repo mapping
-- `docs/core/SYSTEM-RULES.md` = hard execution guardrails and validation expectations
-- `docs/ops/CONTENT-INVENTORY.md` = planning inventory only
-- `.claude/skills/**` = workflow helpers only
-
-Generated files under `reports/` are diagnostic snapshots, not governing docs. They may contain stale route names, removed systems, or historical audit output. Do not use them as strategy, route, offer, graph, CTA, or page-rebuild authority unless the report has just been regenerated for the current active model.
-
-## Hard Boundaries
-
-- Do not revive removed service names or old offer models.
-- Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
-- Public topic hubs are not active. Keep `topics[]` as internal metadata only; do not create topic routes, topic templates, topic ownership, topic indexing, navigation paths, or public topic hubs.
-- Do not expose backend platform names as the public product.
-- Do not mention GoHighLevel, GHL, or HighLevel in public copy.
-- Do not turn implementation services into primary systems.
-- Do not merge Lead Response & Handling with Follow-Up & CRM.
-- Do not make every service page repeat the full MindWP model.
-- Do not invent fake proof, metrics, testimonials, rankings, guarantees, or client results.
-- Do not use page briefs, old pages, components, data files, or renderer order as strategy authority.
-- Do not turn specialist clinic pages into medical software, EMR, compliance, hospital operations, generic doctor marketing, or treatment-claim pages.
+README.md                         Repo overview
+CLAUDE.md                         This file — AI orientation
+docs/FOUNDATION.md                Identity, buyer truth, positioning, public path
+docs/OFFER-ARCHITECTURE.md        Active offer model, system ownership, implementation services
+docs/WRITING.md                   Voice, banned phrases, working-day vocabulary, applied copy rules
+docs/PAGES.md                     Page roles + CTA posture (merged CONTENT + CONVERSION essentials)
+docs/REPO.md                      Source structure, validators, what controls what
+docs/WORKFLOW.md                  Cross-folder design loop (Mindwp ↔ Mindwp-Design)
+```
 
 ## Commands
 
 Use pnpm only.
 
-`package.json` scripts are the command authority. Keep this list synchronized when scripts change.
-
-```bash
-pnpm dev
-pnpm build
+```
+pnpm dev                # local dev (port 3000)
+pnpm build              # production build
+pnpm typecheck          # tsc --noEmit
 pnpm lint
-pnpm lint:fix
-pnpm typecheck
-pnpm check:names
-pnpm check:minimal
-pnpm check:baseline
-pnpm check:frontend
+pnpm check:names        # strict: blocks banned terms — strategy drift gate
+pnpm check:clean-base   # warn-only (exits 0)
 pnpm check:domain-registries
-pnpm check:clean-base
-pnpm check:architecture
-pnpm test
-pnpm test:smoke
+pnpm check:baseline     # typecheck + lint + check:names + check:domain-registries (the fast post-rebuild pair)
+pnpm check:strict       # check:baseline + check:clean-base — old hard gate, opt-in
+pnpm check:frontend     # 28-route Playwright runtime smoke (locks against running dev server)
+pnpm test:smoke         # Playwright smoke suite on port 3001 (safe with pnpm dev running)
 ```
 
-After a page rebuild, run `pnpm check:baseline` (fast). After visual or page work, run `pnpm test:smoke` and/or `pnpm check:frontend`. `check:frontend` is locked against a running `pnpm dev` server; if dev is running, prefer `test:smoke`. For docs-only work, run the requested search validation and any requested pnpm checks.
+After a page rebuild: `pnpm check:baseline` (fast), then `pnpm test:smoke` (visual / runtime sanity).
+
+## Hard Boundaries
+
+- Use only the active 5-system model. Do not revive removed names.
+- Do not create public `/systems`, `/topics`, or `/portfolio` route families.
+- Do not expose backend platform names as the public product.
+- Do not turn implementation services into primary systems.
+- Do not merge Lead Response & Handling with Follow-Up & CRM (they own different timing moments).
+- Do not make every primary service page repeat the full MindWP model — each owns one business moment.
+- Do not invent proof, metrics, testimonials, rankings, guarantees, or client outcomes.
+- Do not turn specialist clinic pages into medical software, EMR, compliance, or treatment-claim pages.

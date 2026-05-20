@@ -2,357 +2,1340 @@
  * Homepage — MindWP
  *
  * Long-form homepage for established service businesses and specialist clinics.
- * Opens with recognition that work already comes in, but too much slips away
- * between being found, trusted, contacted, answered, followed up, reviewed,
- * and recovered.
+ * Public anchor: "Work Comes In. Too Much Slips Away."
  *
- * Page argument:
- *  - The website is the visible control point for service businesses, and the
- *    practice front door for specialist clinics.
- *  - Connected handling around the website makes sure calls, forms, quotes,
- *    and consultation requests are owned, answered, followed up, and turned
- *    into proof.
- *  - The five active primary systems form one connected operating path with
- *    five named protections — never an equal-tile catalog.
+ * Section arc:
+ *   01  Hero — HeroFrame + custom signal surface in visual slot
+ *   02  Leak diagnosis — 3-lane handoff board (Found / Captured / Proven)
+ *   03  Foundation — 3-layer stacked website system (surface / underneath / foundation)
+ *   04  Five protections — flagship SWS + 4 connected protections (2x2)
+ *   05  Fit / Not for — diagnostic two-column panel
+ *   06  FAQ — FAQSection
+ *   07  Final CTA — DecisionPanel
  *
- * Section index:
- *   01  Hero with operating signal surface         (dark, HeroFrame)
- *   02  Leak map                                   (light mist)
- *   03  Website as public control point            (light gradient + dark inner panel)
- *   04  Normal website vs connected system         (white)
- *   05  What conversion-focused actually means     (mist)
- *   06  Connected handling path                    (gradient-teal)
- *   07  Five protections, one connected path       (gradient-dark — single body anchor)
- *   08  What changes when the path is connected    (gradient-mist)
- *   09  How this shows up — service + clinic       (gradient-teal)
- *   10  Selected website-system surfaces           (white + dark inner panels)
- *   11  Fit / not fit                              (mist)
- *   12  Practical delivery, system thinking        (white)
- *   13  FAQ                                        (mist)
- *   14  Final diagnostic CTA                       (light section bg, DecisionPanel container is dark)
- *
- * Data scope:
- *  - homepage.ts holds hero text/chips/actions, FAQ items, DecisionPanel content.
- *  - Everything else (operating maps, leak map, contrast, mechanisms, handling
- *    path, five protections, positive states, scenarios, selected surfaces,
- *    fit filter, credibility) lives in this file as page-owned arrays and JSX.
- *
- * Visual rules:
- *  - Mostly white/mist/light-gradient. One full dark body section (07).
- *  - Strong dark inner panels are allowed inside light sections (03, 10).
- *  - No inline hex values — tokens only via var(--mw-*) or [var(--mw-*)].
- *  - mw-animate-line used at most twice (02 leak rail, 06 handling rail).
- *  - Lucide icons at strokeWidth 1.5; sizes 14–16 in small surfaces, 20 max.
- *  - No fake metrics, screenshots, client names, testimonials, or outcomes.
- *  - "Selected Website-System Surfaces" is proof-supportive, not portfolio.
- *
- * Existing patterns:
- *  - This file replaces the prior Section2–Section7 sketches wholesale.
- *  - No portfolio route or /portfolio navigation exists; nothing here creates one.
+ * Design source: ports the Mindwp-Design Hero / LeakDiagnosis / Foundation /
+ * SixSystemStack components, with sandbox inline hex converted to mw-* tokens
+ * where matched. See docs/WORKFLOW.md for the cross-folder design loop.
  */
 import {
-  AlertTriangle,
   ArrowRight,
   Check,
+  Clock,
   FileText,
+  Globe,
+  History,
   Inbox,
   type LucideIcon,
+  MapPin,
+  PhoneCall,
   PhoneOff,
   Repeat,
   Search,
+  Star,
+  Workflow,
 } from 'lucide-react';
 
 import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
-import { SectionShell } from '@/components/layout/SectionShell';
-import { StatusBadge } from '@/components/primitives/StatusBadge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { homepageData } from '@/domains/home/data/homepage';
 
 // =============================================================================
-// Page-owned data — kept in JSX so the data file can stay minimal.
+// 01 · Hero signal surface (visual prop for HeroFrame)
 // =============================================================================
 
-type SignalStatus = 'leaking' | 'unowned';
+type HeroSignalStatus = 'leaking' | 'unowned';
 
-const HOME_HERO_SIGNALS: ReadonlyArray<{
+const HERO_SIGNALS: ReadonlyArray<{
   icon: LucideIcon;
   label: string;
   note: string;
-  status: SignalStatus;
+  status: HeroSignalStatus;
 }> = [
-  {
-    icon: Search,
-    label: 'Local search',
-    note: 'Found, but not clearly answered',
-    status: 'unowned',
-  },
+  { icon: Search, label: 'Local search', note: 'Postcode N6 — page 3', status: 'unowned' },
   {
     icon: FileText,
     label: 'Service page visit',
-    note: 'Interest without enough direction',
+    note: 'Bathrooms — 02:14 dwell',
     status: 'unowned',
   },
-  { icon: Inbox, label: 'Form enquiry', note: 'Arrives without ownership', status: 'unowned' },
-  {
-    icon: PhoneOff,
-    label: 'Missed call',
-    note: 'No response path after the ring',
-    status: 'leaking',
-  },
-  {
-    icon: Repeat,
-    label: 'Follow-up due',
-    note: 'The next step depends on memory',
-    status: 'leaking',
-  },
+  { icon: Inbox, label: 'Form enquiry', note: 'Sat 09:14 — unread', status: 'leaking' },
+  { icon: PhoneOff, label: 'Missed call', note: '11:42 — no callback', status: 'leaking' },
+  { icon: Clock, label: 'Follow-up due', note: 'Today — nobody owns it', status: 'unowned' },
 ];
 
-type LeakState = 'leak' | 'weak' | 'ok';
+function HeroSignalSurface() {
+  const leakingCount = HERO_SIGNALS.filter(s => s.status === 'leaking').length;
+  const unownedCount = HERO_SIGNALS.filter(s => s.status === 'unowned').length;
 
-const HOME_LEAK_STATES: ReadonlyArray<{
+  return (
+    <div className='relative w-full'>
+      <div
+        className='rounded-2xl border p-6 backdrop-blur-sm'
+        style={{
+          borderColor: 'var(--mw-white-12)',
+          backgroundImage:
+            'linear-gradient(to bottom right, var(--mw-white-06), var(--mw-white-02))',
+          boxShadow: 'var(--mw-shadow-dark-lg)',
+        }}
+      >
+        <div
+          className='flex items-center justify-between mb-5 pb-5 border-b'
+          style={{ borderColor: 'var(--mw-white-10)' }}
+        >
+          <div>
+            <div
+              className='mw-text-eyebrow'
+              style={{ color: 'var(--mw-white-45)', fontWeight: 700 }}
+            >
+              Signal Surface
+            </div>
+            <div
+              className='mt-1'
+              style={{
+                color: 'var(--mw-brand-white)',
+                fontSize: '21px',
+                fontWeight: 600,
+                letterSpacing: '-0.01em',
+              }}
+            >
+              What your business looks like today
+            </div>
+          </div>
+          <div className='text-right'>
+            <div
+              className='mw-text-eyebrow mb-0.5'
+              style={{ color: 'var(--mw-white-40)', fontWeight: 600 }}
+            >
+              Signals
+            </div>
+            <div
+              className='tabular-nums'
+              style={{
+                color: 'var(--mw-brand-white)',
+                fontSize: '34px',
+                fontWeight: 700,
+                letterSpacing: '-0.03em',
+                lineHeight: 1,
+              }}
+            >
+              {String(HERO_SIGNALS.length).padStart(2, '0')}
+            </div>
+          </div>
+        </div>
+
+        <ul className='space-y-2'>
+          {HERO_SIGNALS.map((s, i) => {
+            const Icon = s.icon;
+            const isLeaking = s.status === 'leaking';
+            return (
+              <li
+                key={s.label}
+                className='grid grid-cols-12 items-center gap-3 px-4 py-4 rounded-lg border transition-colors'
+                style={
+                  isLeaking
+                    ? {
+                        borderColor: 'var(--mw-signal-red-25)',
+                        backgroundColor:
+                          'color-mix(in oklch, var(--mw-signal-red) 4%, transparent)',
+                      }
+                    : {
+                        borderColor: 'var(--mw-white-08)',
+                        backgroundColor: 'var(--mw-white-02)',
+                      }
+                }
+              >
+                <div className='col-span-1'>
+                  <span
+                    className='tabular-nums'
+                    style={{
+                      color: 'var(--mw-white-30)',
+                      fontSize: '10.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                    }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <div className='col-span-1'>
+                  <div
+                    className='w-9 h-9 rounded-md border flex items-center justify-center'
+                    style={
+                      isLeaking
+                        ? {
+                            backgroundColor: 'var(--mw-signal-red-10)',
+                            borderColor: 'var(--mw-signal-red-30)',
+                            color: 'var(--mw-signal-red)',
+                          }
+                        : {
+                            backgroundColor: 'var(--mw-white-06)',
+                            borderColor: 'var(--mw-white-12)',
+                            color: 'var(--mw-white-80)',
+                          }
+                    }
+                  >
+                    <Icon size={15} strokeWidth={1.5} aria-hidden='true' />
+                  </div>
+                </div>
+                <div className='col-span-7 min-w-0'>
+                  <div
+                    className='truncate'
+                    style={{
+                      color: 'var(--mw-brand-white)',
+                      fontSize: '15.5px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {s.label}
+                  </div>
+                  <div
+                    className='truncate mt-0.5'
+                    style={{
+                      color: isLeaking
+                        ? 'color-mix(in oklch, var(--mw-signal-red) 65%, transparent)'
+                        : 'var(--mw-white-60)',
+                      fontSize: '13px',
+                    }}
+                  >
+                    {s.note}
+                  </div>
+                </div>
+                <div className='col-span-3 flex justify-end'>
+                  {isLeaking ? (
+                    <span
+                      className='inline-flex items-center gap-1 px-2 py-1 rounded-full border'
+                      style={{
+                        backgroundColor: 'var(--mw-signal-red-10)',
+                        color: 'var(--mw-signal-red)',
+                        borderColor: 'var(--mw-signal-red-30)',
+                        fontSize: '9.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                      }}
+                    >
+                      <span
+                        className='w-1 h-1 rounded-full'
+                        style={{
+                          backgroundColor: 'var(--mw-signal-red)',
+                          boxShadow: 'var(--mw-glow-red)',
+                        }}
+                      />
+                      LEAKING
+                    </span>
+                  ) : (
+                    <span
+                      className='inline-flex items-center gap-1 px-2 py-1 rounded-full border'
+                      style={{
+                        backgroundColor: 'var(--mw-signal-amber-10)',
+                        color: 'var(--mw-signal-amber)',
+                        borderColor: 'var(--mw-signal-amber-25)',
+                        fontSize: '9.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                      }}
+                    >
+                      <span
+                        className='w-1 h-1 rounded-full'
+                        style={{ backgroundColor: 'var(--mw-signal-amber)' }}
+                      />
+                      UNOWNED
+                    </span>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div
+          className='mt-5 pt-4 border-t grid grid-cols-3 gap-3'
+          style={{ borderColor: 'var(--mw-white-08)' }}
+        >
+          <div className='flex items-center gap-1.5'>
+            <span
+              className='w-1.5 h-1.5 rounded-full'
+              style={{ backgroundColor: 'var(--mw-signal-red)' }}
+            />
+            <span style={{ color: 'var(--mw-signal-red)', fontSize: '12px', fontWeight: 600 }}>
+              {leakingCount} leaking
+            </span>
+          </div>
+          <div className='text-center' style={{ color: 'var(--mw-white-50)', fontSize: '12px' }}>
+            {unownedCount} unowned
+          </div>
+          <div
+            className='flex items-center justify-end gap-1.5'
+            style={{ color: 'var(--mw-signal-cyan)', fontSize: '12px', fontWeight: 600 }}
+          >
+            <span
+              className='w-1.5 h-1.5 rounded-full animate-pulse'
+              style={{
+                backgroundColor: 'var(--mw-signal-cyan)',
+                boxShadow: 'var(--mw-glow-cyan)',
+              }}
+            />
+            Pulled toward system
+          </div>
+        </div>
+      </div>
+
+      <div
+        className='mw-glow-halo mw-glow-halo--cyan'
+        style={{ bottom: '-1.5rem', left: '-1rem', right: '3rem', height: '3rem' }}
+        aria-hidden='true'
+      />
+    </div>
+  );
+}
+
+// =============================================================================
+// 02 · Leak diagnosis — 3-lane handoff board
+// =============================================================================
+
+const LEAK_LANES: ReadonlyArray<{
   label: string;
-  note: string;
-  state: LeakState;
-  main?: boolean;
-}> = [
-  { label: 'Discovery', note: 'Searched and found', state: 'ok' },
-  { label: 'Capture', note: 'Form or call submitted', state: 'ok' },
-  { label: 'Response', note: 'Hours pass before a reply', state: 'leak', main: true },
-  { label: 'Follow-up', note: 'Nobody owns the chase', state: 'weak' },
-  { label: 'Visibility', note: 'Owner cannot see what happened', state: 'weak' },
-];
-
-const HOME_CONTROL_LAYERS: ReadonlyArray<{
-  eyebrow: string;
-  title: string;
-  accent: 'cyan' | 'teal' | 'green';
-  points: ReadonlyArray<string>;
+  accent: string;
+  stageSummary: string;
+  mainLeak: string;
+  moments: ReadonlyArray<{ icon: LucideIcon; title: string; note: string }>;
 }> = [
   {
-    eyebrow: 'Visible layer',
-    title: 'The website',
-    accent: 'cyan',
-    points: [
-      'Service, treatment, or procedure pages',
-      'Trust signals where decisions form',
-      'Clear next step for each visitor',
-      'Local and practice relevance',
+    label: 'Found',
+    accent: 'var(--mw-signal-teal)',
+    stageSummary: 'Demand arrives. Not all of it lands.',
+    mainLeak: 'Found by some. Missed by the rest.',
+    moments: [
+      {
+        icon: Search,
+        title: 'Local search incomplete',
+        note: 'A competitor shows first. The right business sits on page two — or not at all.',
+      },
+      {
+        icon: FileText,
+        title: "Service pages don't answer the question",
+        note: "Visitor lands, reads a paragraph, can't tell if it's the right team. Closes the tab.",
+      },
     ],
   },
   {
-    eyebrow: 'Handling layer',
-    title: 'Around the website',
-    accent: 'teal',
-    points: [
-      'Enquiry routing and source context',
-      'Owner and status on every active item',
-      'Fast response, even after hours',
-      'Follow-up visibility, not memory',
+    label: 'Captured',
+    accent: 'var(--mw-signal-amber)',
+    stageSummary: 'Enquiries arrive. The handoffs break.',
+    mainLeak: 'Comes in. Nobody owns the full picture.',
+    moments: [
+      {
+        icon: Inbox,
+        title: 'Enquiries land in the wrong place',
+        note: 'Form to one inbox. Call to a phone. Message somewhere else.',
+      },
+      {
+        icon: Clock,
+        title: 'First response is too slow',
+        note: 'The lead cools before anyone picks it up.',
+      },
+      {
+        icon: History,
+        title: 'Follow-up depends on memory',
+        note: 'Old quotes go quiet. Jobs go to whoever replies first.',
+      },
     ],
   },
   {
-    eyebrow: 'Improvement layer',
-    title: 'Maintained over time',
-    accent: 'green',
-    points: [
-      'Completed work captured as proof',
-      'Pages tuned where they leak',
-      'Local signals aligned with the website',
-      'Reviews requested at the right time',
+    label: 'Proven',
+    accent: 'var(--mw-signal-purple)',
+    stageSummary: 'Good work happens. Evidence disappears.',
+    mainLeak: 'Job done. Proof never captured.',
+    moments: [
+      {
+        icon: Star,
+        title: 'Review moment passes unused',
+        note: 'Job complete, customer happy — nobody asked at the right moment.',
+      },
+      {
+        icon: Repeat,
+        title: 'No loop back into the system',
+        note: 'Completed work and patient experience never become visible proof.',
+      },
     ],
   },
 ];
 
-const HOME_CONTRAST_NORMAL: ReadonlyArray<string> = [
-  'Service pages list what you do',
-  'Enquiries land in a shared inbox',
-  'Whoever sees it first replies — eventually',
-  'Quote goes out, then nothing depends on memory',
-  'Reviews happen when someone remembers',
-  'Owner has no view of what is in motion',
+function HomeLeakDiagnosis() {
+  return (
+    <section
+      id='recognition'
+      className='py-24'
+      style={{ backgroundColor: 'var(--mw-bg-mist)' }}
+      aria-label='Where work usually slips'
+    >
+      <div className='max-w-[1240px] mx-auto px-8'>
+        <div className='grid grid-cols-12 gap-10 mb-16'>
+          <div className='col-span-12 lg:col-span-6'>
+            <div
+              className='mw-text-eyebrow uppercase mb-5'
+              style={{
+                color: 'var(--mw-text-subtle)',
+                letterSpacing: '0.16em',
+                fontSize: '11.5px',
+                fontWeight: 600,
+              }}
+            >
+              What is actually happening
+            </div>
+            <h2
+              style={{
+                color: 'var(--mw-text-primary)',
+                fontSize: '52px',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              The business is working.
+              <br />
+              <span style={{ color: 'var(--mw-text-secondary)' }}>
+                The system around it is leaking.
+              </span>
+            </h2>
+            <p
+              className='mt-6 max-w-[480px]'
+              style={{ color: 'var(--mw-text-subtle)', fontSize: '15.5px', lineHeight: 1.7 }}
+            >
+              None of these gaps looks dramatic alone. Together, they decide whether demand becomes
+              booked work, kept appointments, proof, and repeat enquiries.
+            </p>
+          </div>
+          <div className='col-span-12 lg:col-span-5 lg:col-start-8 flex items-end'>
+            <p style={{ color: 'var(--mw-text-secondary)', fontSize: '17px', lineHeight: 1.65 }}>
+              Not a dramatic failure. A steady drip across the path from someone searching online to
+              a job done and a review captured. Each step works on its own. The handoffs between
+              them do not.
+            </p>
+          </div>
+        </div>
+
+        <div
+          className='relative rounded-2xl overflow-hidden border'
+          style={{
+            backgroundColor: 'var(--mw-bg-page)',
+            borderColor: 'var(--mw-border-light)',
+            boxShadow: 'var(--mw-shadow-card-soft-lg)',
+          }}
+        >
+          {/* Lane header strip */}
+          <div
+            className='hidden lg:grid grid-cols-3 border-b'
+            style={{ borderColor: 'var(--mw-border-light)' }}
+          >
+            {LEAK_LANES.map((lane, i) => (
+              <div
+                key={lane.label}
+                className='flex items-center gap-3 px-10 py-4'
+                style={{
+                  borderRight:
+                    i < LEAK_LANES.length - 1 ? '1px solid var(--mw-border-light)' : 'none',
+                  background: `color-mix(in oklch, ${lane.accent} 3%, transparent)`,
+                }}
+              >
+                <span
+                  className='w-2 h-2 rounded-full shrink-0'
+                  style={{
+                    background: lane.accent,
+                    boxShadow: `0 0 8px color-mix(in oklch, ${lane.accent} 60%, transparent)`,
+                  }}
+                />
+                <span
+                  style={{
+                    color: lane.accent,
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                  }}
+                >
+                  {lane.label.toUpperCase()}
+                </span>
+                <span
+                  className='truncate ml-1'
+                  style={{ color: 'var(--mw-text-subtle)', fontSize: '12px' }}
+                >
+                  — {lane.stageSummary}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Three lanes */}
+          <div
+            className='grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x'
+            style={{ borderColor: 'var(--mw-border-light)' }}
+          >
+            {LEAK_LANES.map((lane, i) => (
+              <div key={lane.label} className='relative p-6 lg:p-10 flex flex-col'>
+                {/* Top accent stripe */}
+                <div
+                  className='mw-lane-accent absolute top-0 left-0 right-0'
+                  style={{ ['--mw-lane-color' as string]: lane.accent }}
+                />
+
+                {/* Stage label — mobile only */}
+                <div className='flex items-center gap-2 mb-5 lg:hidden'>
+                  <span className='w-2 h-2 rounded-full' style={{ background: lane.accent }} />
+                  <span
+                    style={{
+                      color: lane.accent,
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                    }}
+                  >
+                    {lane.label.toUpperCase()}
+                  </span>
+                </div>
+
+                <div
+                  className='mb-7'
+                  style={{
+                    color: 'var(--mw-text-primary)',
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    lineHeight: 1.25,
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  {lane.mainLeak}
+                </div>
+
+                <div className='space-y-5 flex-1'>
+                  {lane.moments.map(m => {
+                    const Icon = m.icon;
+                    return (
+                      <div key={m.title} className='flex gap-3.5'>
+                        <div
+                          className='w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5'
+                          style={{
+                            background: `color-mix(in oklch, ${lane.accent} 7%, transparent)`,
+                            border: `1px solid color-mix(in oklch, ${lane.accent} 16%, transparent)`,
+                            color: lane.accent,
+                          }}
+                        >
+                          <Icon size={14} strokeWidth={1.5} aria-hidden='true' />
+                        </div>
+                        <div>
+                          <div
+                            style={{
+                              color: 'var(--mw-text-primary)',
+                              fontSize: '15px',
+                              fontWeight: 600,
+                              lineHeight: 1.3,
+                            }}
+                          >
+                            {m.title}
+                          </div>
+                          <div
+                            className='mt-1'
+                            style={{
+                              color: 'var(--mw-text-subtle)',
+                              fontSize: '13.5px',
+                              lineHeight: 1.55,
+                            }}
+                          >
+                            {m.note}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className='mt-8 flex items-center gap-2'>
+                  <span className='w-1.5 h-1.5 rounded-full' style={{ background: lane.accent }} />
+                  <span style={{ color: lane.accent, fontSize: '11.5px', fontWeight: 700 }}>
+                    {lane.moments.length} gaps in this stage
+                  </span>
+                </div>
+
+                {/* Handoff arrow chip between lanes */}
+                {i < LEAK_LANES.length - 1 && (
+                  <div
+                    className='mw-handoff-chip hidden lg:flex absolute z-10'
+                    style={{ right: '-1.25rem', top: '50%', transform: 'translateY(-50%)' }}
+                    aria-hidden='true'
+                  >
+                    →
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom strip */}
+          <div
+            className='border-t px-6 lg:px-10 py-7 lg:py-8'
+            style={{
+              borderColor: 'var(--mw-border-light)',
+              backgroundImage:
+                'linear-gradient(to right, color-mix(in oklch, var(--mw-bg-mist) 50%, var(--mw-bg-page)), var(--mw-bg-page))',
+            }}
+          >
+            <div className='grid grid-cols-12 gap-6 items-center'>
+              <div className='col-span-12 lg:col-span-8'>
+                <div
+                  style={{
+                    color: 'var(--mw-text-primary)',
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    lineHeight: 1.3,
+                    letterSpacing: '-0.02em',
+                  }}
+                >
+                  Seven gaps. Three handoffs. Together they decide how much of what comes in
+                  actually becomes paid work or kept appointments.
+                </div>
+                <div
+                  className='mt-3'
+                  style={{
+                    color: 'var(--mw-text-secondary)',
+                    fontSize: '15px',
+                    lineHeight: 1.65,
+                  }}
+                >
+                  This is the shape of the leak. Not a dramatic failure — it is the space between
+                  each step where the handoff breaks.
+                </div>
+              </div>
+              <div className='col-span-12 lg:col-span-4 flex lg:justify-end'>
+                <div
+                  className='inline-flex items-center gap-2.5 px-5 py-3.5 rounded-xl border'
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(to right, color-mix(in oklch, var(--mw-signal-cyan) 12%, transparent), color-mix(in oklch, var(--mw-signal-teal) 8%, transparent))',
+                    borderColor: 'var(--mw-signal-cyan-30)',
+                    color: 'var(--mw-brand-secondary)',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                  }}
+                >
+                  <span
+                    className='w-2 h-2 rounded-full'
+                    style={{
+                      background: 'var(--mw-signal-cyan)',
+                      boxShadow: 'var(--mw-glow-cyan)',
+                    }}
+                  />
+                  The fix is the system between the steps
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =============================================================================
+// 03 · Foundation — 3-layer stacked website system
+// =============================================================================
+
+const FOUNDATION_MIDDLE: ReadonlyArray<{ icon: LucideIcon; label: string; note: string }> = [
+  { icon: Inbox, label: 'Capture', note: 'All channels in' },
+  { icon: Workflow, label: 'Routing', note: 'Right person, right time' },
+  { icon: Repeat, label: 'Follow-up', note: 'On schedule, not memory' },
+  { icon: History, label: 'Tracking', note: "What's working" },
+  { icon: Star, label: 'Proof', note: 'Reviews at the moment' },
 ];
 
-const HOME_CONTRAST_CONNECTED: ReadonlyArray<string> = [
-  'Pages explain the work and the next step',
-  'Enquiries land with context, source, and owner',
-  'First response happens fast and is logged',
-  'Quote and consultation follow-up runs without anyone chasing',
-  'Reviews are requested at the right moment',
-  'Owner sees every active enquiry and where it stands',
-];
+function HomeFoundation() {
+  return (
+    <section
+      className='py-28'
+      style={{ backgroundColor: 'var(--mw-bg-page)' }}
+      aria-label='The website is the surface; the structure underneath catches the work'
+    >
+      <div className='max-w-[1240px] mx-auto px-8'>
+        <div className='grid grid-cols-12 gap-10 items-center'>
+          <div className='col-span-12 lg:col-span-5'>
+            <div
+              className='mw-text-eyebrow uppercase mb-5'
+              style={{
+                color: 'var(--mw-signal-teal)',
+                letterSpacing: '0.16em',
+                fontSize: '11.5px',
+                fontWeight: 600,
+              }}
+            >
+              Foundation
+            </div>
+            <h2
+              style={{
+                color: 'var(--mw-text-primary)',
+                fontSize: '48px',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              The website is the surface.
+              <br />
+              <span style={{ color: 'var(--mw-text-secondary)' }}>
+                The structure underneath is what catches the work.
+              </span>
+            </h2>
+            <p
+              className='mt-7 max-w-[460px]'
+              style={{
+                color: 'var(--mw-text-secondary)',
+                fontSize: '16px',
+                lineHeight: 1.65,
+              }}
+            >
+              A website alone does not fix missed calls, slow replies, scattered forms, or invisible
+              follow-up. But it is often the first place those problems show up.
+            </p>
+          </div>
 
-const HOME_CONVERSION_MECHANISMS: ReadonlyArray<{
-  num: string;
-  label: string;
-  note: string;
-}> = [
-  {
-    num: '01',
-    label: 'Clarity',
-    note: 'Service, treatment, or procedure pages explain the work in plain language',
-  },
-  { num: '02', label: 'Trust', note: 'Proof and signals appear where hesitation usually happens' },
-  {
-    num: '03',
-    label: 'Intent-matched CTA',
-    note: 'The next step matches what the visitor came to do',
-  },
-  { num: '04', label: 'Handoff', note: 'The enquiry lands with context, source, and owner' },
-  { num: '05', label: 'Improvement', note: 'Pages and paths are maintained, not relaunched' },
-];
+          <div className='col-span-12 lg:col-span-7'>
+            {/* Top — visible surface */}
+            <div
+              className='rounded-2xl p-6'
+              style={{
+                backgroundColor: 'var(--mw-bg-page)',
+                border: '2px solid var(--mw-border-light)',
+                boxShadow: 'var(--mw-shadow-card)',
+              }}
+            >
+              <div className='flex items-center gap-4 mb-5'>
+                <div
+                  className='w-12 h-12 rounded-xl flex items-center justify-center'
+                  style={{
+                    backgroundColor: 'var(--mw-bg-mist)',
+                    border: '1px solid var(--mw-border-light)',
+                    color: 'var(--mw-text-secondary)',
+                  }}
+                >
+                  <Globe size={20} strokeWidth={1.5} aria-hidden='true' />
+                </div>
+                <div className='flex-1'>
+                  <div
+                    className='mw-text-eyebrow uppercase'
+                    style={{
+                      color: 'var(--mw-text-subtle)',
+                      letterSpacing: '0.14em',
+                      fontSize: '10.5px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Surface
+                  </div>
+                  <div
+                    className='mt-0.5'
+                    style={{
+                      color: 'var(--mw-text-primary)',
+                      fontSize: '16px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Visible website
+                  </div>
+                </div>
+                <div style={{ color: 'var(--mw-text-subtle)', fontSize: '12.5px' }}>
+                  What the visitor sees
+                </div>
+              </div>
+              <div className='grid grid-cols-3 gap-2'>
+                {['Service pages', 'Local coverage', 'Contact & enquiry'].map(item => (
+                  <div
+                    key={item}
+                    className='rounded-lg px-3 py-2.5 text-center'
+                    style={{
+                      backgroundColor: 'var(--mw-bg-mist)',
+                      border: '1px solid var(--mw-border-light)',
+                      color: 'var(--mw-text-secondary)',
+                      fontSize: '12px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
 
-const HOME_HANDLING_STAGES: ReadonlyArray<{
-  num: string;
-  label: string;
-  note: string;
-}> = [
-  { num: '01', label: 'Enquiry arrives', note: 'Call, form, message, or booking request' },
-  { num: '02', label: 'First response', note: 'Fast, even after hours' },
-  { num: '03', label: 'Source recorded', note: 'Where it came from and what they wanted' },
-  { num: '04', label: 'Owner sees it', note: 'The right person, not a shared inbox' },
-  { num: '05', label: 'Follow-up runs', note: 'Quote chased, reminder sent, status updated' },
-  { num: '06', label: 'Proof captured', note: 'Review requested when the work is done' },
-];
+            {/* connector */}
+            <div className='flex flex-col items-center gap-1 my-2'>
+              <div
+                className='w-px h-5'
+                style={{
+                  backgroundColor: 'color-mix(in oklch, var(--mw-border-light) 80%, transparent)',
+                }}
+              />
+              <div
+                className='mw-text-eyebrow uppercase'
+                style={{
+                  color: 'var(--mw-text-subtle)',
+                  letterSpacing: '0.12em',
+                  fontSize: '9px',
+                  fontWeight: 700,
+                }}
+              >
+                underneath
+              </div>
+              <div
+                className='w-px h-5'
+                style={{
+                  backgroundColor: 'color-mix(in oklch, var(--mw-border-light) 80%, transparent)',
+                }}
+              />
+            </div>
 
-type ProtectionAccent = 'cyan' | 'teal' | 'amber' | 'green' | 'purple';
+            {/* Middle — working layers */}
+            <div
+              className='rounded-2xl p-6'
+              style={{
+                backgroundImage:
+                  'linear-gradient(to bottom, color-mix(in oklch, var(--mw-signal-cyan) 8%, var(--mw-bg-page)), var(--mw-bg-mist))',
+                border: '2px solid var(--mw-signal-cyan-30)',
+                boxShadow: '0 4px 20px color-mix(in oklch, var(--mw-signal-cyan) 10%, transparent)',
+              }}
+            >
+              <div
+                className='mw-text-eyebrow uppercase mb-4'
+                style={{
+                  color: 'color-mix(in oklch, var(--mw-signal-cyan) 70%, var(--mw-brand-primary))',
+                  letterSpacing: '0.14em',
+                  fontSize: '10.5px',
+                  fontWeight: 700,
+                }}
+              >
+                What runs underneath
+              </div>
+              <div className='grid grid-cols-2 sm:grid-cols-5 gap-3'>
+                {FOUNDATION_MIDDLE.map(m => {
+                  const Icon = m.icon;
+                  return (
+                    <div
+                      key={m.label}
+                      className='rounded-xl p-4 flex flex-col items-center text-center gap-2'
+                      style={{
+                        backgroundColor: 'var(--mw-bg-page)',
+                        border:
+                          '1px solid color-mix(in oklch, var(--mw-signal-cyan) 18%, transparent)',
+                        boxShadow: '0 2px 8px rgba(8, 17, 31, 0.04)',
+                      }}
+                    >
+                      <div
+                        className='w-11 h-11 rounded-lg flex items-center justify-center'
+                        style={{
+                          backgroundColor:
+                            'color-mix(in oklch, var(--mw-signal-cyan) 14%, transparent)',
+                          color:
+                            'color-mix(in oklch, var(--mw-signal-cyan) 50%, var(--mw-brand-primary))',
+                        }}
+                      >
+                        <Icon size={18} strokeWidth={1.5} aria-hidden='true' />
+                      </div>
+                      <div
+                        style={{
+                          color: 'var(--mw-brand-secondary)',
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {m.label}
+                      </div>
+                      <div
+                        style={{
+                          color: 'var(--mw-text-secondary)',
+                          fontSize: '11px',
+                          lineHeight: 1.35,
+                        }}
+                      >
+                        {m.note}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
 
-type ProtectionCardData = {
-  slug: string;
-  title: string;
-  label: string;
-  note: string;
-};
+            {/* connector */}
+            <div className='flex flex-col items-center gap-1 my-2'>
+              <div
+                className='w-px h-5'
+                style={{
+                  backgroundColor: 'color-mix(in oklch, var(--mw-border-light) 80%, transparent)',
+                }}
+              />
+              <div
+                className='w-1.5 h-1.5 rounded-full'
+                style={{
+                  backgroundColor: 'var(--mw-signal-cyan)',
+                  boxShadow: 'var(--mw-glow-cyan)',
+                }}
+              />
+              <div
+                className='w-px h-5'
+                style={{
+                  backgroundColor: 'color-mix(in oklch, var(--mw-border-light) 80%, transparent)',
+                }}
+              />
+            </div>
 
-const HOME_PROTECTION_HUB: ProtectionCardData = {
+            {/* Bottom — foundation */}
+            <div
+              className='relative rounded-2xl p-7 overflow-hidden'
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, var(--mw-brand-primary), var(--mw-brand-secondary))',
+                border:
+                  '1px solid var(--mw-signal-cyan-20, color-mix(in oklch, var(--mw-signal-cyan) 20%, transparent))',
+                boxShadow: 'var(--mw-shadow-foundation)',
+              }}
+            >
+              <div className='mw-grid-texture-32 absolute inset-0' aria-hidden='true' />
+              <div className='relative flex items-center gap-4'>
+                <div
+                  className='w-12 h-12 rounded-xl flex items-center justify-center'
+                  style={{
+                    backgroundColor: 'var(--mw-white-08)',
+                    border: '1px solid var(--mw-white-15)',
+                  }}
+                >
+                  <div
+                    className='w-2.5 h-2.5 rounded-full'
+                    style={{
+                      backgroundColor: 'var(--mw-signal-cyan)',
+                      boxShadow: '0 0 12px var(--mw-signal-cyan)',
+                    }}
+                  />
+                </div>
+                <div className='flex-1'>
+                  <div
+                    className='mw-text-eyebrow uppercase'
+                    style={{
+                      color: 'var(--mw-white-50)',
+                      letterSpacing: '0.14em',
+                      fontSize: '10.5px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Foundation
+                  </div>
+                  <div
+                    className='mt-0.5'
+                    style={{
+                      color: 'var(--mw-brand-white)',
+                      fontSize: '16px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Smart Website Systems
+                  </div>
+                </div>
+                <div style={{ color: 'var(--mw-white-55)', fontSize: '12.5px' }}>
+                  The working business structure
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =============================================================================
+// 04 · Five protections — flagship SWS + 4 connected protections (2x2)
+// =============================================================================
+
+const FLAGSHIP = {
+  icon: Globe,
+  name: 'Smart Website Systems',
+  role: 'The operating surface',
+  role_note: 'Where work lands, routes, and converts',
+  handles:
+    'Visitors, service questions, enquiry capture, page clarity — the central surface everything else connects to',
+  state: 'Foundation',
+  accent: 'var(--mw-signal-cyan)',
   slug: 'smart-website-systems',
-  title: 'Smart Website Systems',
-  label: 'Where decisions form',
-  note: 'Service, treatment, and procedure pages carry clarity, trust, and the next step.',
 };
 
-const HOME_PROTECTION_OUTER: ReadonlyArray<ProtectionCardData & { accent: ProtectionAccent }> = [
-  {
-    slug: 'local-seo-authority',
-    accent: 'teal',
-    title: 'Local SEO Authority',
-    label: 'Found and verified',
-    note: 'Nearby customers and patients find the business and verify it before they enquire.',
-  },
-  {
-    slug: 'lead-response-handling',
-    accent: 'amber',
-    title: 'Lead Response & Handling',
-    label: 'First response and routing',
-    note: 'Calls, forms, and messages reach the right person fast — and do not get lost after hours.',
-  },
-  {
-    slug: 'follow-up-crm',
-    accent: 'green',
-    title: 'Follow-Up & CRM',
-    label: 'Owned next step',
-    note: 'Every enquiry has an owner, a status, and a next step that does not depend on memory.',
-  },
-  {
-    slug: 'reputation-review-systems',
-    accent: 'purple',
-    title: 'Reputation & Review',
-    label: 'Work becomes proof',
-    note: 'Completed work, appointments, and outcomes turn into visible trust at the right time.',
-  },
-];
-
-// Static accent class maps so Tailwind JIT detects every literal.
-const PROTECTION_ACCENT_EYEBROW: Record<ProtectionAccent, string> = {
-  cyan: 'text-[var(--mw-signal-cyan)]',
-  teal: 'text-[var(--mw-signal-teal)]',
-  amber: 'text-[var(--mw-signal-amber)]',
-  green: 'text-[var(--mw-signal-green)]',
-  purple: 'text-[var(--mw-signal-purple)]',
-};
-
-const PROTECTION_ACCENT_DOT: Record<ProtectionAccent, string> = {
-  cyan: 'bg-[var(--mw-signal-cyan)] shadow-[var(--mw-glow-cyan)]',
-  teal: 'bg-[var(--mw-signal-teal)] shadow-[var(--mw-glow-teal)]',
-  amber: 'bg-[var(--mw-signal-amber)] shadow-[var(--mw-glow-amber)]',
-  green: 'bg-[var(--mw-signal-green)] shadow-[var(--mw-glow-green)]',
-  purple: 'bg-[var(--mw-signal-purple)] shadow-[var(--mw-glow-purple)]',
-};
-
-const CONTROL_LAYER_ACCENT_EYEBROW: Record<'cyan' | 'teal' | 'green', string> = {
-  cyan: 'text-[var(--mw-signal-cyan)]',
-  teal: 'text-[var(--mw-signal-teal)]',
-  green: 'text-[var(--mw-signal-green)]',
-};
-
-const CONTROL_LAYER_ACCENT_DOT: Record<'cyan' | 'teal' | 'green', string> = {
-  cyan: 'bg-[var(--mw-signal-cyan)]',
-  teal: 'bg-[var(--mw-signal-teal)]',
-  green: 'bg-[var(--mw-signal-green)]',
-};
-
-const HOME_POSITIVE_STATES: ReadonlyArray<string> = [
-  'Enquiries land somewhere useful, not in a shared inbox',
-  'First response happens fast, even after hours',
-  'Every active enquiry has an owner and a status',
-  'Quote and consultation follow-up does not depend on memory',
-  'Reviews are requested at the right moment, not chased later',
-  'Owner sees what came in, what got handled, and what is still moving',
-];
-
-const HOME_SCENARIOS: ReadonlyArray<{
-  label: string;
-  title: string;
-  beats: ReadonlyArray<string>;
+const PROTECTIONS: ReadonlyArray<{
+  icon: LucideIcon;
+  name: string;
+  journeyStage: string;
+  handles: string;
+  state: string;
+  accent: string;
+  slug: string;
 }> = [
   {
-    label: 'Illustrative scenario · Roofing',
-    title: 'Storm passes. The phone does not stop.',
-    beats: [
-      'Search traffic spikes overnight. The website shows the right service area.',
-      'Form quotes pile up while crews are still out on jobs.',
-      'Missed calls get a fast acknowledgement instead of going cold.',
-      'Each quote has an owner, a follow-up reminder, and a visible status.',
-      'Once the job is done, a review request goes out at the right moment.',
-    ],
+    icon: MapPin,
+    name: 'Local SEO Authority Systems',
+    journeyStage: 'Found',
+    handles: 'Local search presence, service-area relevance, signal trust',
+    state: 'Broadcasting',
+    accent: 'var(--mw-signal-teal)',
+    slug: 'local-seo-authority',
   },
   {
-    label: 'Illustrative scenario · Specialist clinic',
-    title: 'A patient researches their treatment options.',
-    beats: [
-      'The procedure page explains what the treatment involves and what to expect.',
-      'A consultation request lands with practice context, not just a name.',
-      'The right team member sees it without it sitting in a shared inbox.',
-      'Pre-appointment follow-up does not depend on someone remembering.',
-      'After the appointment, the practice front door earns its next review.',
-    ],
+    icon: PhoneCall,
+    name: 'Lead Response & Handling Systems',
+    journeyStage: 'Answered',
+    handles: 'Calls, forms, missed calls, messages, after-hours response',
+    state: 'First response',
+    accent: 'var(--mw-signal-amber)',
+    slug: 'lead-response-handling',
+  },
+  {
+    icon: Workflow,
+    name: 'Follow-Up & CRM Systems',
+    journeyStage: 'Followed Up',
+    handles: 'Owner, status, next step, quote and consultation follow-up',
+    state: 'Tracking',
+    accent: 'var(--mw-signal-green)',
+    slug: 'follow-up-crm',
+  },
+  {
+    icon: Star,
+    name: 'Reputation & Review Systems',
+    journeyStage: 'Proven',
+    handles: 'Review request timing, feedback routing, completed work as proof',
+    state: 'Accumulating',
+    accent: 'var(--mw-signal-purple)',
+    slug: 'reputation-review-systems',
   },
 ];
 
-const HOME_SELECTED_FEATURED_PARTS: ReadonlyArray<{ label: string; note: string }> = [
-  { label: 'Problem & intent', note: 'What the visitor came to understand' },
-  { label: 'Plain-language explanation', note: 'What the service or treatment actually is' },
-  { label: 'Proof placement', note: 'Trust signals where hesitation usually happens' },
-  { label: 'Intent-matched CTA', note: 'Call, form, booking, or consultation request' },
-  { label: 'Handoff', note: 'Context, source, and owner sent with the enquiry' },
-];
+function HomeProtections() {
+  return (
+    <section
+      className='py-20'
+      style={{
+        backgroundColor: 'var(--mw-bg-page)',
+        borderTop: '1px solid var(--mw-bg-page-hover)',
+      }}
+      aria-label='One website system, four connected protections around it'
+    >
+      <div className='max-w-[1240px] mx-auto px-8'>
+        <div className='grid grid-cols-12 gap-10 mb-14'>
+          <div className='col-span-12 lg:col-span-6'>
+            <div
+              className='mw-text-eyebrow uppercase mb-5'
+              style={{
+                color: 'var(--mw-text-subtle)',
+                letterSpacing: '0.16em',
+                fontSize: '11.5px',
+                fontWeight: 600,
+              }}
+            >
+              The handling system
+            </div>
+            <h2
+              style={{
+                color: 'var(--mw-text-primary)',
+                fontSize: '52px',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              One website system.
+              <br />
+              <span style={{ color: 'var(--mw-text-secondary)' }}>
+                Four connected protections around it.
+              </span>
+            </h2>
+          </div>
+          <div className='col-span-12 lg:col-span-5 lg:col-start-8 flex items-end'>
+            <p style={{ color: 'var(--mw-text-secondary)', fontSize: '17px', lineHeight: 1.65 }}>
+              Smart Website Systems is the flagship — where decisions form. The four protections
+              around it handle what happens before, during, and after the enquiry. None depends on
+              someone remembering.
+            </p>
+          </div>
+        </div>
 
-const HOME_SELECTED_TRUST_LABELS: ReadonlyArray<string> = [
-  'Local service area',
-  'Verified business or practice',
-  'Real recent work',
-  'Response within minutes',
-];
+        {/* Flagship — Smart Website Systems anchors the grid */}
+        <div className='mb-5'>
+          <div
+            className='relative rounded-2xl p-7'
+            style={{
+              backgroundImage:
+                'linear-gradient(to right, color-mix(in oklch, var(--mw-signal-cyan) 4%, var(--mw-bg-page)), var(--mw-bg-page))',
+              border: '2px solid var(--mw-signal-cyan-30)',
+              boxShadow: '0 4px 30px color-mix(in oklch, var(--mw-signal-cyan) 8%, transparent)',
+            }}
+          >
+            <div
+              className='absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl'
+              style={{
+                backgroundImage:
+                  'linear-gradient(to bottom, var(--mw-signal-cyan), var(--mw-signal-teal))',
+              }}
+            />
+            <div className='flex items-start justify-between gap-6 flex-wrap'>
+              <div className='flex items-start gap-5'>
+                <div
+                  className='w-14 h-14 rounded-xl flex items-center justify-center shrink-0'
+                  style={{
+                    backgroundColor: 'color-mix(in oklch, var(--mw-signal-cyan) 10%, transparent)',
+                    border: '1px solid var(--mw-signal-cyan-30)',
+                    color: 'var(--mw-signal-cyan)',
+                  }}
+                >
+                  <FLAGSHIP.icon size={22} strokeWidth={1.5} aria-hidden='true' />
+                </div>
+                <div>
+                  <div className='flex items-center gap-3 mb-1'>
+                    <span
+                      className='inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border'
+                      style={{
+                        backgroundColor: 'var(--mw-signal-cyan-10)',
+                        borderColor: 'var(--mw-signal-cyan-30)',
+                        color: 'var(--mw-brand-secondary)',
+                        fontSize: '10.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                      }}
+                    >
+                      <span
+                        className='w-1.5 h-1.5 rounded-full'
+                        style={{
+                          backgroundColor: 'var(--mw-signal-cyan)',
+                          boxShadow: 'var(--mw-glow-cyan)',
+                        }}
+                      />
+                      Flagship · {FLAGSHIP.state}
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      color: 'var(--mw-text-primary)',
+                      fontSize: '22px',
+                      fontWeight: 700,
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    {FLAGSHIP.name}
+                  </div>
+                  <div
+                    className='mt-1'
+                    style={{
+                      color: 'var(--mw-text-secondary)',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {FLAGSHIP.role} ·{' '}
+                    <span style={{ color: 'var(--mw-text-subtle)' }}>{FLAGSHIP.role_note}</span>
+                  </div>
+                </div>
+              </div>
+              <div className='max-w-[440px]'>
+                <div
+                  className='mw-text-eyebrow uppercase mb-1.5'
+                  style={{
+                    color: 'var(--mw-text-subtle)',
+                    letterSpacing: '0.14em',
+                    fontSize: '9.5px',
+                    fontWeight: 700,
+                  }}
+                >
+                  What it handles
+                </div>
+                <div
+                  style={{
+                    color: 'var(--mw-text-primary)',
+                    fontSize: '14.5px',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {FLAGSHIP.handles}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-const HOME_SELECTED_HANDOFF_ROWS: ReadonlyArray<{ field: string; value: string }> = [
-  { field: 'Source', value: 'Service page' },
-  { field: 'Intent', value: 'Quote request' },
-  { field: 'Owner', value: 'Routed' },
-  { field: 'Status', value: 'Active' },
-];
+        {/* Customer / patient journey rail */}
+        <div
+          className='mb-4 hidden lg:flex items-center rounded-xl px-6 py-3.5 overflow-hidden'
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, var(--mw-bg-mist), var(--mw-bg-page), var(--mw-bg-mist))',
+            border: '1px solid var(--mw-border-light)',
+          }}
+        >
+          {['Found', 'Understood', 'Captured', 'Answered', 'Followed up', 'Proven'].map(
+            (step, i) => (
+              <div key={step} className='flex items-center shrink-0'>
+                <span
+                  style={{
+                    color: 'var(--mw-text-secondary)',
+                    fontSize: '12.5px',
+                    fontWeight: 600,
+                  }}
+                >
+                  {step}
+                </span>
+                {i < 5 && (
+                  <span
+                    className='mx-3'
+                    style={{ color: 'var(--mw-border-light)', fontSize: '12px' }}
+                  >
+                    →
+                  </span>
+                )}
+              </div>
+            )
+          )}
+          <span
+            className='ml-auto shrink-0 pl-6'
+            style={{
+              color: 'var(--mw-text-subtle)',
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+            }}
+          >
+            Customer or patient journey
+          </span>
+        </div>
 
-const HOME_FIT_FOR: ReadonlyArray<string> = [
+        {/* Four protections — 2x2 grid */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+          {PROTECTIONS.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <a
+                key={s.name}
+                href={`/services/${s.slug}`}
+                className='group relative rounded-2xl p-7 overflow-hidden transition-all hover:shadow-[0_8px_30px_rgba(8,17,31,0.06)]'
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to bottom, var(--mw-bg-page), color-mix(in oklch, var(--mw-bg-mist) 50%, var(--mw-bg-page)))',
+                  border: '1px solid var(--mw-border-light)',
+                }}
+              >
+                <div
+                  className='absolute left-0 top-0 bottom-0 w-0.5 rounded-l-2xl'
+                  style={{ background: s.accent }}
+                />
+
+                <div className='flex items-start justify-between mb-5'>
+                  <span
+                    className='inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full'
+                    style={{
+                      background: `color-mix(in oklch, ${s.accent} 7%, transparent)`,
+                      border: `1px solid color-mix(in oklch, ${s.accent} 18%, transparent)`,
+                      color: s.accent,
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                    }}
+                  >
+                    <span className='w-1 h-1 rounded-full' style={{ background: s.accent }} />
+                    {s.journeyStage}
+                  </span>
+                  <span
+                    className='tabular-nums'
+                    style={{
+                      color: 'var(--mw-text-subtle)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      letterSpacing: '0.12em',
+                    }}
+                  >
+                    0{i + 2}
+                  </span>
+                </div>
+
+                <div className='flex items-start gap-4'>
+                  <div
+                    className='w-12 h-12 rounded-xl flex items-center justify-center shrink-0'
+                    style={{
+                      background: `color-mix(in oklch, ${s.accent} 8%, transparent)`,
+                      border: `1px solid color-mix(in oklch, ${s.accent} 20%, transparent)`,
+                      color: s.accent,
+                    }}
+                  >
+                    <Icon size={20} strokeWidth={1.5} aria-hidden='true' />
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        color: 'var(--mw-text-primary)',
+                        fontSize: '17px',
+                        fontWeight: 600,
+                        lineHeight: 1.3,
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      {s.name}
+                    </div>
+                    <div
+                      className='mt-2'
+                      style={{
+                        color: 'var(--mw-text-secondary)',
+                        fontSize: '14.5px',
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {s.handles}
+                    </div>
+                  </div>
+                </div>
+
+                <div className='mt-5 flex items-center gap-1.5'>
+                  <span className='w-1.5 h-1.5 rounded-full' style={{ background: s.accent }} />
+                  <span style={{ color: s.accent, fontSize: '11px', fontWeight: 600 }}>
+                    {s.state}
+                  </span>
+                </div>
+
+                <div
+                  className='absolute left-5 right-5 bottom-0 h-px'
+                  style={{
+                    backgroundImage: `linear-gradient(90deg, transparent, color-mix(in oklch, ${s.accent} 50%, transparent), transparent)`,
+                  }}
+                />
+              </a>
+            );
+          })}
+        </div>
+
+        <div className='mt-10 flex items-center justify-between flex-wrap gap-4 px-2'>
+          <div style={{ color: 'var(--mw-text-secondary)', fontSize: '14px' }}>
+            Most businesses already have parts of this. The work is connecting them.
+          </div>
+          <a
+            href='#cta'
+            className='inline-flex items-center gap-2 pb-1 transition-colors'
+            style={{
+              color: 'var(--mw-text-primary)',
+              borderBottom:
+                '1px solid color-mix(in oklch, var(--mw-text-primary) 30%, transparent)',
+              fontSize: '13.5px',
+              fontWeight: 600,
+            }}
+          >
+            See where your stack is incomplete
+            <ArrowRight size={14} strokeWidth={1.5} aria-hidden='true' />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =============================================================================
+// 05 · Fit / Not for — diagnostic two-column panel
+// =============================================================================
+
+const FIT_FOR: ReadonlyArray<string> = [
   'Established service business or specialist clinic',
   'Real enquiries, jobs, appointments, or consultations already exist',
   'Quote, booking, or follow-up handling has visible gaps',
@@ -360,7 +1343,7 @@ const HOME_FIT_FOR: ReadonlyArray<string> = [
   'Long-term stability and compounding trust matter more than a launch event',
 ];
 
-const HOME_FIT_NOT_FOR: ReadonlyArray<string> = [
+const FIT_NOT_FOR: ReadonlyArray<string> = [
   'Cheapest possible website package',
   'Guaranteed rankings or "dominate Google" expectations',
   'AI chatbot framed as the offer instead of practical handling',
@@ -368,846 +1351,153 @@ const HOME_FIT_NOT_FOR: ReadonlyArray<string> = [
   'Healthcare buyer expecting EMR, compliance, or treatment-outcome claims',
 ];
 
-// =============================================================================
-// Page
-// =============================================================================
-
-export default function Homepage() {
-  return (
-    <CTARegistryProvider pageId='page:home' pageType='page' primarySystem='smart-website-systems'>
-      <main>
-        <HomeHero />
-        <HomeLeakMap />
-        <HomeControlPoint />
-        <HomeContrast />
-        <HomeConversionMeans />
-        <HomeConnectedHandling />
-        <HomeFiveProtections />
-        <HomeWhatChanges />
-        <HomeScenarios />
-        <HomeSelectedSurfaces />
-        <HomeFit />
-        <HomeCredibility />
-        <HomeFAQ />
-        <HomeCTA />
-      </main>
-    </CTARegistryProvider>
-  );
-}
-
-// =============================================================================
-// 01 · Hero
-// =============================================================================
-
-function HomeHero() {
-  const { hero } = homepageData;
-
-  return (
-    <HeroFrame
-      ariaLabel='Homepage hero'
-      eyebrow={hero.eyebrow}
-      title={hero.heading}
-      description={hero.description}
-      actions={[
-        {
-          label: hero.primaryAction.label,
-          href: hero.primaryAction.href,
-          variant: 'white',
-          icon: <ArrowRight size={16} strokeWidth={1.5} aria-hidden='true' />,
-        },
-        {
-          label: hero.secondaryAction.label,
-          href: hero.secondaryAction.href,
-          variant: 'ghost',
-          icon: <ArrowRight size={14} strokeWidth={1.5} aria-hidden='true' />,
-        },
-      ]}
-      chips={hero.chips.map(chip => ({ label: chip.label, accent: chip.accent }))}
-      visual={<HomeHeroSignalSurface />}
-    />
-  );
-}
-
-function HomeHeroSignalSurface() {
-  const leakingCount = HOME_HERO_SIGNALS.filter(signal => signal.status === 'leaking').length;
-  const unownedCount = HOME_HERO_SIGNALS.filter(signal => signal.status === 'unowned').length;
-
-  return (
-    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)] mw-animate-up'>
-      <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
-        <div>
-          <p className='mw-text-eyebrow text-[var(--mw-signal-cyan)]'>Signal surface</p>
-          <p className='mt-1 text-sm text-[var(--mw-text-on-dark-muted)]'>
-            What your business looks like today
-          </p>
-        </div>
-        <div className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] px-3 py-2 text-right'>
-          <p className='mw-text-eyebrow text-[var(--mw-text-on-dark-muted)]'>Signals</p>
-          <strong className='block text-lg leading-tight tabular-nums text-[var(--mw-text-on-dark-strong)]'>
-            {String(HOME_HERO_SIGNALS.length).padStart(2, '0')}
-          </strong>
-        </div>
-      </div>
-
-      <ul className='mw-animate-stagger grid gap-3'>
-        {HOME_HERO_SIGNALS.map((signal, index) => {
-          const Icon = signal.icon;
-          return (
-            <li
-              key={signal.label}
-              className='grid grid-cols-[auto_auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
-            >
-              <span className='tabular-nums text-xs text-[var(--mw-text-on-dark-muted)]'>
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
-                <Icon size={15} strokeWidth={1.5} aria-hidden='true' />
-              </span>
-              <span className='min-w-0'>
-                <strong className='block text-sm font-medium text-[var(--mw-text-on-dark-strong)]'>
-                  {signal.label}
-                </strong>
-                <span className='block text-xs text-[var(--mw-text-on-dark-muted)]'>
-                  {signal.note}
-                </span>
-              </span>
-              <StatusBadge
-                variant={signal.status}
-                label={signal.status === 'leaking' ? 'Leaking' : 'Unowned'}
-              />
-            </li>
-          );
-        })}
-      </ul>
-
-      <div className='mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--mw-white-10)] pt-4'>
-        <div className='flex items-center gap-2'>
-          <StatusBadge variant='leaking' label={`${leakingCount} leaking`} />
-          <StatusBadge variant='unowned' label={`${unownedCount} unowned`} />
-        </div>
-        <span className='text-xs text-[var(--mw-text-on-dark-muted)]'>Ready to be handled</span>
-      </div>
-    </div>
-  );
-}
-
-// =============================================================================
-// 02 · Leak Map
-// =============================================================================
-
-function HomeLeakMap() {
-  return (
-    <SectionShell
-      id='recognition'
-      ariaLabel='Where work usually slips'
-      tone='mist'
-      heading={{
-        eyebrow: 'Where work usually slips',
-        title: 'The business is working. [[muted:The system around it is leaking.]]',
-        description:
-          'Not one dramatic failure. A steady drip across the path from search to job done or appointment kept. Each step works on its own. The handoffs between them do not.',
-      }}
-    >
-      <div className='relative overflow-hidden rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-soft)] lg:p-10 mw-animate-up'>
-        <svg
-          className='mw-animate-line pointer-events-none absolute inset-x-10 top-[7rem] hidden lg:block'
-          viewBox='0 0 100 1'
-          preserveAspectRatio='none'
-          style={{ height: '2px' }}
-          aria-hidden='true'
-        >
-          <line x1='2' y1='0.5' x2='98' y2='0.5' stroke='var(--mw-border-light)' strokeWidth='1' />
-        </svg>
-
-        <ol className='relative grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-3'>
-          {HOME_LEAK_STATES.map((step, index) => {
-            const isMain = !!step.main;
-            const stateClass =
-              step.state === 'leak'
-                ? 'border-[var(--mw-signal-red-30)] bg-[var(--mw-signal-red-10)]'
-                : step.state === 'weak'
-                  ? 'border-[var(--mw-signal-amber-25)] bg-[var(--mw-bg-mist)]'
-                  : 'border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)]';
-            const dotClass =
-              step.state === 'leak'
-                ? 'bg-[var(--mw-signal-red)] shadow-[var(--mw-glow-red)]'
-                : step.state === 'weak'
-                  ? 'bg-[var(--mw-signal-amber)]'
-                  : 'bg-[var(--mw-signal-green)]';
-            return (
-              <li
-                key={step.label}
-                className={`relative rounded-[var(--mw-radius-lg)] border p-5 ${stateClass} ${
-                  isMain ? 'shadow-[var(--mw-shadow-card)]' : ''
-                }`}
-              >
-                <div className='mb-3 flex items-center justify-between'>
-                  <span className='mw-text-eyebrow tabular-nums text-[var(--mw-text-subtle)]'>
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <span className={`size-2 rounded-full ${dotClass}`} aria-hidden='true' />
-                </div>
-                <div
-                  className={`font-semibold text-[var(--mw-text-primary)] ${
-                    isMain ? 'text-xl' : 'text-base'
-                  }`}
-                >
-                  {step.label}
-                </div>
-                <div
-                  className={`mt-2 ${
-                    isMain
-                      ? 'text-sm text-[var(--mw-text-primary)]'
-                      : 'text-xs text-[var(--mw-text-subtle)]'
-                  }`}
-                >
-                  {step.note}
-                </div>
-                {isMain && (
-                  <div className='mw-text-eyebrow mt-5 flex items-center gap-2 border-t border-[var(--mw-signal-red-30)] pt-4 text-[var(--mw-signal-red)]'>
-                    <AlertTriangle size={12} strokeWidth={1.5} aria-hidden='true' />
-                    Main leak
-                  </div>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-
-        <div className='mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--mw-border-light)] pt-6 text-sm text-[var(--mw-text-subtle)]'>
-          <span>
-            Discovery → Capture →{' '}
-            <span className='font-medium text-[var(--mw-signal-red)]'>Response</span> → Follow-up →
-            Visibility
-          </span>
-          <span>Most enquiries die between capture and response.</span>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 03 · Website as Public Control Point / Practice Front Door
-// =============================================================================
-
-function HomeControlPoint() {
-  return (
-    <SectionShell
-      ariaLabel='Website as public control point and practice front door'
-      tone='gradient-mist'
-      heading={{
-        eyebrow: 'Website as control point',
-        title: 'Not just a page. [[muted:The visible front door.]]',
-        description:
-          'For service businesses it is the public control point. For specialist clinics it is the practice front door. Either way, it sits where search, trust, enquiry, response, follow-up, and proof meet.',
-      }}
-    >
-      <div className='relative overflow-hidden rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-6 lg:p-10 mw-animate-up'>
-        <div
-          className='pointer-events-none absolute inset-0 opacity-[0.06]'
-          aria-hidden='true'
-          style={{
-            backgroundImage: 'var(--mw-gradient-grid-texture)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-        <div className='relative grid gap-4 lg:grid-cols-3'>
-          {HOME_CONTROL_LAYERS.map(layer => (
-            <div
-              key={layer.title}
-              className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-10)] bg-[var(--mw-white-04)] p-5'
-            >
-              <p className={`mw-text-eyebrow ${CONTROL_LAYER_ACCENT_EYEBROW[layer.accent]}`}>
-                {layer.eyebrow}
-              </p>
-              <h3 className='mt-2 text-xl font-semibold text-[var(--mw-text-on-dark-strong)]'>
-                {layer.title}
-              </h3>
-              <ul className='mt-4 space-y-2'>
-                {layer.points.map(point => (
-                  <li
-                    key={point}
-                    className='flex items-start gap-2 text-sm text-[var(--mw-text-on-dark-muted)]'
-                  >
-                    <span
-                      className={`mt-1.5 size-1.5 shrink-0 rounded-full ${CONTROL_LAYER_ACCENT_DOT[layer.accent]}`}
-                      aria-hidden='true'
-                    />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 04 · Normal Website vs Connected Website System
-// =============================================================================
-
-function HomeContrast() {
-  return (
-    <SectionShell
-      ariaLabel='Normal website vs connected website system'
-      tone='white'
-      heading={{
-        eyebrow: 'Built differently',
-        title: 'A website that exists. [[muted:Or a website that carries the work.]]',
-        description:
-          'Same pages on the surface. Different operating state behind them. The contrast is not pretty design vs ugly design — it is whether the work coming in actually gets handled.',
-      }}
-    >
-      <div className='grid gap-5 lg:grid-cols-2'>
-        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 lg:p-8'>
-          <div className='mb-5 flex items-center justify-between'>
-            <p className='mw-text-eyebrow text-[var(--mw-signal-red)]'>Normal website</p>
-            <span className='size-2 rounded-full bg-[var(--mw-signal-red)]' aria-hidden='true' />
-          </div>
-          <ul className='space-y-3'>
-            {HOME_CONTRAST_NORMAL.map(point => (
-              <li
-                key={point}
-                className='flex items-start gap-3 text-sm text-[var(--mw-text-secondary)]'
-              >
-                <span
-                  className='mt-2 size-1 shrink-0 rounded-full bg-[var(--mw-signal-red)]'
-                  aria-hidden='true'
-                />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-signal-teal-30)] bg-[var(--mw-signal-teal-10)] p-6 lg:p-8'>
-          <div className='mb-5 flex items-center justify-between'>
-            <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>Connected website system</p>
-            <span className='size-2 rounded-full bg-[var(--mw-signal-teal)]' aria-hidden='true' />
-          </div>
-          <ul className='space-y-3'>
-            {HOME_CONTRAST_CONNECTED.map(point => (
-              <li
-                key={point}
-                className='flex items-start gap-3 text-sm text-[var(--mw-text-primary)]'
-              >
-                <span
-                  className='mt-2 size-1 shrink-0 rounded-full bg-[var(--mw-signal-teal)]'
-                  aria-hidden='true'
-                />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 05 · What Conversion-Focused Actually Means
-// =============================================================================
-
-function HomeConversionMeans() {
-  return (
-    <SectionShell
-      ariaLabel='What conversion-focused actually means'
-      tone='mist'
-      heading={{
-        eyebrow: 'What conversion-focused means',
-        title: 'Not a slogan. [[muted:Five working mechanisms.]]',
-        description:
-          'Conversion-focused is not a label on a redesign. It is what the website system has to do to turn a found visitor into a handled enquiry.',
-      }}
-    >
-      <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-5'>
-        {HOME_CONVERSION_MECHANISMS.map(mechanism => (
-          <div
-            key={mechanism.num}
-            className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-5'
-          >
-            <p className='mw-text-eyebrow tabular-nums text-[var(--mw-signal-teal)]'>
-              {mechanism.num}
-            </p>
-            <h3 className='mt-2 font-semibold text-[var(--mw-text-primary)]'>{mechanism.label}</h3>
-            <p className='mt-2 text-sm text-[var(--mw-text-subtle)]'>{mechanism.note}</p>
-          </div>
-        ))}
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 06 · Connected Handling Path
-// =============================================================================
-
-function HomeConnectedHandling() {
-  return (
-    <SectionShell
-      ariaLabel='Connected handling after the enquiry'
-      tone='gradient-teal'
-      heading={{
-        eyebrow: 'After the enquiry',
-        title: 'Six steps. [[muted:One connected path.]]',
-        description:
-          'Most enquiries do not fail at the website. They fail in the hours and days after. Connected handling makes sure the next step is visible, owned, and reliable.',
-      }}
-    >
-      <div className='relative rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-soft)] lg:p-10 mw-animate-up'>
-        <svg
-          className='mw-animate-line pointer-events-none absolute inset-x-10 top-[6.5rem] hidden lg:block'
-          viewBox='0 0 100 1'
-          preserveAspectRatio='none'
-          style={{ height: '2px' }}
-          aria-hidden='true'
-        >
-          <line
-            x1='2'
-            y1='0.5'
-            x2='98'
-            y2='0.5'
-            stroke='var(--mw-signal-teal-30)'
-            strokeWidth='1'
-            strokeDasharray='3 4'
-          />
-        </svg>
-        <ol className='relative grid grid-cols-1 gap-4 lg:grid-cols-6 lg:gap-3'>
-          {HOME_HANDLING_STAGES.map(stage => (
-            <li
-              key={stage.num}
-              className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
-            >
-              <div className='mb-3 flex items-center justify-between'>
-                <span className='mw-text-eyebrow tabular-nums text-[var(--mw-signal-teal)]'>
-                  {stage.num}
-                </span>
-                <span
-                  className='size-1.5 rounded-full bg-[var(--mw-signal-teal)]'
-                  aria-hidden='true'
-                />
-              </div>
-              <div className='text-sm font-medium text-[var(--mw-text-primary)]'>{stage.label}</div>
-              <div className='mt-1 text-xs leading-snug text-[var(--mw-text-subtle)]'>
-                {stage.note}
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 07 · Five Protections, One Connected Path  (single full dark body section)
-// =============================================================================
-
-function HomeFiveProtections() {
-  return (
-    <SectionShell
-      ariaLabel='Five protections in one connected path'
-      tone='gradient-dark'
-      heading={{
-        eyebrow: 'Five protections, one path',
-        title: 'One website system. [[muted:Four connected protections around it.]]',
-        description:
-          'Not five separate services. One connected operating path with five named protections — held together by the website system at the centre.',
-      }}
-    >
-      <div className='relative overflow-hidden rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary-mid)] p-6 lg:p-12 mw-animate-up'>
-        <div
-          className='pointer-events-none absolute inset-0 opacity-[0.05]'
-          aria-hidden='true'
-          style={{
-            backgroundImage: 'var(--mw-gradient-grid-texture)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-
-        {/* Desktop constellation: SWS centred, four protections at top/right/bottom/left. */}
-        <div className='relative hidden lg:block'>
-          <div className='grid grid-cols-3 grid-rows-3 gap-6'>
-            <div className='col-start-2 row-start-1 self-end'>
-              <ProtectionCard
-                data={HOME_PROTECTION_OUTER[0]}
-                accent={HOME_PROTECTION_OUTER[0].accent}
-              />
-            </div>
-            <div className='col-start-1 row-start-2 self-center'>
-              <ProtectionCard
-                data={HOME_PROTECTION_OUTER[3]}
-                accent={HOME_PROTECTION_OUTER[3].accent}
-              />
-            </div>
-            <div className='col-start-2 row-start-2 self-center'>
-              <ProtectionCard data={HOME_PROTECTION_HUB} accent='cyan' hub />
-            </div>
-            <div className='col-start-3 row-start-2 self-center'>
-              <ProtectionCard
-                data={HOME_PROTECTION_OUTER[1]}
-                accent={HOME_PROTECTION_OUTER[1].accent}
-              />
-            </div>
-            <div className='col-start-2 row-start-3 self-start'>
-              <ProtectionCard
-                data={HOME_PROTECTION_OUTER[2]}
-                accent={HOME_PROTECTION_OUTER[2].accent}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile vertical path in connected order. */}
-        <div className='relative space-y-3 lg:hidden'>
-          <ProtectionCard
-            data={HOME_PROTECTION_OUTER[0]}
-            accent={HOME_PROTECTION_OUTER[0].accent}
-          />
-          <ProtectionCard data={HOME_PROTECTION_HUB} accent='cyan' hub />
-          <ProtectionCard
-            data={HOME_PROTECTION_OUTER[1]}
-            accent={HOME_PROTECTION_OUTER[1].accent}
-          />
-          <ProtectionCard
-            data={HOME_PROTECTION_OUTER[2]}
-            accent={HOME_PROTECTION_OUTER[2].accent}
-          />
-          <ProtectionCard
-            data={HOME_PROTECTION_OUTER[3]}
-            accent={HOME_PROTECTION_OUTER[3].accent}
-          />
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-function ProtectionCard({
-  data,
-  accent,
-  hub = false,
-}: {
-  data: ProtectionCardData;
-  accent: ProtectionAccent;
-  hub?: boolean;
-}) {
-  const borderClass = hub
-    ? 'border-[var(--mw-signal-cyan-30)] shadow-[var(--mw-shadow-dark-lg)]'
-    : 'border-[var(--mw-border-panel)]';
-  return (
-    <a
-      href={`/services/${data.slug}`}
-      className={`group block rounded-[var(--mw-radius-lg)] border bg-[var(--mw-white-04)] p-5 transition-colors hover:bg-[var(--mw-white-06)] ${borderClass}`}
-    >
-      <div className='flex items-center justify-between'>
-        <p className={`mw-text-eyebrow ${PROTECTION_ACCENT_EYEBROW[accent]}`}>{data.label}</p>
-        <span
-          className={`size-2 rounded-full ${PROTECTION_ACCENT_DOT[accent]}`}
-          aria-hidden='true'
-        />
-      </div>
-      <h3
-        className={`mt-2 font-semibold text-[var(--mw-text-on-dark-strong)] ${
-          hub ? 'text-lg' : 'text-base'
-        }`}
-      >
-        {data.title}
-      </h3>
-      <p className='mt-2 text-sm leading-snug text-[var(--mw-text-on-dark-muted)]'>{data.note}</p>
-    </a>
-  );
-}
-
-// =============================================================================
-// 08 · What Changes When The Path Is Connected
-// =============================================================================
-
-function HomeWhatChanges() {
-  return (
-    <SectionShell
-      ariaLabel='What changes when the path is connected'
-      tone='gradient-mist'
-      heading={{
-        eyebrow: 'What changes',
-        title: 'Less leakage. [[muted:More work actually handled.]]',
-        description:
-          'The visible change is calm: fewer dropped enquiries, fewer chased quotes, fewer review requests forgotten. The harder change is that the owner can finally see what the business is doing day to day.',
-      }}
-    >
-      <ul className='grid gap-3 sm:grid-cols-2'>
-        {HOME_POSITIVE_STATES.map(state => (
-          <li
-            key={state}
-            className='flex items-start gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-signal-teal-30)] bg-[var(--mw-signal-teal-10)] p-4'
-          >
-            <span className='mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--mw-signal-teal-30)] text-[var(--mw-signal-teal)]'>
-              <Check size={11} strokeWidth={2.25} aria-hidden='true' />
-            </span>
-            <span className='text-sm text-[var(--mw-text-primary)]'>{state}</span>
-          </li>
-        ))}
-      </ul>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 09 · How This Shows Up — Service Businesses & Specialist Clinics
-// =============================================================================
-
-function HomeScenarios() {
-  return (
-    <SectionShell
-      ariaLabel='How this shows up in service businesses and specialist clinics'
-      tone='gradient-teal'
-      heading={{
-        eyebrow: 'How this shows up',
-        title: 'In service businesses. [[muted:In specialist clinics.]]',
-        description:
-          'Two working days. Different industries, same operating problem — and the same connected handling around the website.',
-      }}
-    >
-      <div className='grid gap-5 lg:grid-cols-2'>
-        {HOME_SCENARIOS.map(scenario => (
-          <article
-            key={scenario.title}
-            className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-soft)] lg:p-8'
-          >
-            <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>{scenario.label}</p>
-            <h3 className='mt-3 text-xl font-semibold text-[var(--mw-text-primary)]'>
-              {scenario.title}
-            </h3>
-            <ol className='mt-5 space-y-3'>
-              {scenario.beats.map((beat, index) => (
-                <li key={beat} className='flex items-start gap-3 text-[var(--mw-text-secondary)]'>
-                  <span className='mw-text-eyebrow mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] tabular-nums text-[var(--mw-text-subtle)]'>
-                    {index + 1}
-                  </span>
-                  <span className='text-sm leading-relaxed'>{beat}</span>
-                </li>
-              ))}
-            </ol>
-          </article>
-        ))}
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 10 · Selected Website-System Surfaces  (proof-supportive, not portfolio)
-// =============================================================================
-
-function HomeSelectedSurfaces() {
-  return (
-    <SectionShell
-      ariaLabel='Selected website-system surfaces'
-      tone='white'
-      heading={{
-        eyebrow: 'Selected surfaces',
-        title: 'Examples of the surface design [[muted:we build into website systems.]]',
-        description:
-          'Not finished case studies. Selected patterns — service-page anatomy, trust placement, and enquiry handoff. The website surface is one part; the handling around it makes it work.',
-      }}
-    >
-      <div className='grid gap-5 lg:grid-cols-3'>
-        <article className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-card)] lg:col-span-2 lg:p-8'>
-          <p className='mw-text-eyebrow text-[var(--mw-signal-cyan)]'>Service-page anatomy</p>
-          <h3 className='mt-2 text-xl font-semibold text-[var(--mw-text-primary)]'>
-            Where decisions form on a service or treatment page
-          </h3>
-          <div className='mt-6 rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-5 lg:p-6 mw-animate-up'>
-            <div className='flex items-center gap-1.5 border-b border-[var(--mw-white-10)] pb-3'>
-              <span className='size-2 rounded-full bg-[var(--mw-white-15)]' aria-hidden='true' />
-              <span className='size-2 rounded-full bg-[var(--mw-white-15)]' aria-hidden='true' />
-              <span className='size-2 rounded-full bg-[var(--mw-white-15)]' aria-hidden='true' />
-            </div>
-            <ul className='mt-4 space-y-3'>
-              {HOME_SELECTED_FEATURED_PARTS.map(part => (
-                <li
-                  key={part.label}
-                  className='flex items-start justify-between gap-4 rounded-[var(--mw-radius-md)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
-                >
-                  <div>
-                    <div className='text-sm font-medium text-[var(--mw-text-on-dark-strong)]'>
-                      {part.label}
-                    </div>
-                    <div className='mt-0.5 text-xs text-[var(--mw-text-on-dark-muted)]'>
-                      {part.note}
-                    </div>
-                  </div>
-                  <span
-                    className='mt-1 size-1.5 shrink-0 rounded-full bg-[var(--mw-signal-cyan)]'
-                    aria-hidden='true'
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </article>
-
-        <div className='grid gap-5'>
-          <article className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-card)]'>
-            <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>Trust band</p>
-            <h3 className='mt-2 font-semibold text-[var(--mw-text-primary)]'>
-              Signals placed where hesitation forms
-            </h3>
-            <ul className='mt-4 space-y-2 rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-4'>
-              {HOME_SELECTED_TRUST_LABELS.map(label => (
-                <li
-                  key={label}
-                  className='flex items-center gap-2 rounded-[var(--mw-radius-md)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-2 text-xs text-[var(--mw-text-on-dark-muted)]'
-                >
-                  <span
-                    className='size-1.5 rounded-full bg-[var(--mw-signal-teal)]'
-                    aria-hidden='true'
-                  />
-                  {label}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-card)]'>
-            <p className='mw-text-eyebrow text-[var(--mw-signal-green)]'>Enquiry handoff</p>
-            <h3 className='mt-2 font-semibold text-[var(--mw-text-primary)]'>
-              Context travels with the enquiry
-            </h3>
-            <ul className='mt-4 space-y-2 rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-4'>
-              {HOME_SELECTED_HANDOFF_ROWS.map(row => (
-                <li
-                  key={row.field}
-                  className='flex items-center justify-between rounded-[var(--mw-radius-md)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-2'
-                >
-                  <span className='mw-text-eyebrow text-[var(--mw-text-on-dark-muted)]'>
-                    {row.field}
-                  </span>
-                  <span className='text-xs font-medium text-[var(--mw-text-on-dark-strong)]'>
-                    {row.value}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
-      </div>
-      <p className='mt-6 max-w-2xl text-sm text-[var(--mw-text-subtle)]'>
-        These are illustrative surface patterns, not specific client deliverables. No real
-        screenshots, names, or outcomes are implied.
-      </p>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 11 · Fit / Not Fit
-// =============================================================================
-
 function HomeFit() {
   return (
-    <SectionShell
-      ariaLabel='Who this is built for'
-      tone='mist'
-      heading={{
-        eyebrow: 'Built for',
-        title:
-          'Established service businesses. [[muted:Specialist clinics that take their practice seriously.]]',
-        description:
-          'The work suits operators where moving parts already exist and the cost of leakage is real. It does not suit looks-only, rankings-only, or AI-hype buyers.',
-      }}
+    <section
+      className='py-24'
+      style={{ backgroundColor: 'var(--mw-bg-mist)' }}
+      aria-label='Who this is built for'
     >
-      <div className='grid gap-5 lg:grid-cols-2'>
-        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-signal-teal-30)] bg-[var(--mw-signal-teal-10)] p-6 lg:p-8'>
-          <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>For</p>
-          <ul className='mt-4 space-y-3'>
-            {HOME_FIT_FOR.map(item => (
-              <li
-                key={item}
-                className='flex items-start gap-3 text-sm text-[var(--mw-text-primary)]'
-              >
-                <span className='mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--mw-signal-teal-30)] text-[var(--mw-signal-teal)]'>
-                  <Check size={11} strokeWidth={2.25} aria-hidden='true' />
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
+      <div className='max-w-[1240px] mx-auto px-8'>
+        <div className='grid grid-cols-12 gap-10 mb-12'>
+          <div className='col-span-12 lg:col-span-6'>
+            <div
+              className='mw-text-eyebrow uppercase mb-5'
+              style={{
+                color: 'var(--mw-text-subtle)',
+                letterSpacing: '0.16em',
+                fontSize: '11.5px',
+                fontWeight: 600,
+              }}
+            >
+              Built for
+            </div>
+            <h2
+              style={{
+                color: 'var(--mw-text-primary)',
+                fontSize: '44px',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              Established service businesses.
+              <br />
+              <span style={{ color: 'var(--mw-text-secondary)' }}>
+                Specialist clinics that take their practice seriously.
+              </span>
+            </h2>
+          </div>
+          <div className='col-span-12 lg:col-span-5 lg:col-start-8 flex items-end'>
+            <p
+              style={{
+                color: 'var(--mw-text-secondary)',
+                fontSize: '16px',
+                lineHeight: 1.65,
+              }}
+            >
+              The work suits operators where moving parts already exist and the cost of leakage is
+              real. It does not suit looks-only, rankings-only, or AI-hype buyers.
+            </p>
+          </div>
         </div>
-        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 lg:p-8'>
-          <p className='mw-text-eyebrow text-[var(--mw-signal-red)]'>Not for</p>
-          <ul className='mt-4 space-y-3'>
-            {HOME_FIT_NOT_FOR.map(item => (
-              <li
-                key={item}
-                className='flex items-start gap-3 text-sm text-[var(--mw-text-secondary)]'
-              >
-                <span className='mw-text-eyebrow mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border border-[var(--mw-signal-red-30)] bg-[var(--mw-signal-red-10)] tabular-nums text-[var(--mw-signal-red)]'>
-                  ×
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
+
+        <div className='grid gap-5 lg:grid-cols-2'>
+          <div
+            className='rounded-2xl p-6 lg:p-8'
+            style={{
+              backgroundColor: 'var(--mw-signal-teal-10)',
+              border: '1px solid var(--mw-signal-teal-30)',
+            }}
+          >
+            <p
+              className='mw-text-eyebrow uppercase'
+              style={{
+                color: 'var(--mw-signal-teal)',
+                letterSpacing: '0.16em',
+                fontSize: '11.5px',
+                fontWeight: 700,
+              }}
+            >
+              For
+            </p>
+            <ul className='mt-4 space-y-3'>
+              {FIT_FOR.map(item => (
+                <li
+                  key={item}
+                  className='flex items-start gap-3'
+                  style={{
+                    color: 'var(--mw-text-primary)',
+                    fontSize: '14.5px',
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <span
+                    className='mt-0.5 grid size-5 shrink-0 place-items-center rounded-full'
+                    style={{
+                      backgroundColor: 'var(--mw-signal-teal-30)',
+                      color: 'var(--mw-signal-teal)',
+                    }}
+                  >
+                    <Check size={11} strokeWidth={2.25} aria-hidden='true' />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div
+            className='rounded-2xl p-6 lg:p-8'
+            style={{
+              backgroundColor: 'var(--mw-bg-page)',
+              border: '1px solid var(--mw-border-light)',
+            }}
+          >
+            <p
+              className='mw-text-eyebrow uppercase'
+              style={{
+                color: 'var(--mw-signal-red)',
+                letterSpacing: '0.16em',
+                fontSize: '11.5px',
+                fontWeight: 700,
+              }}
+            >
+              Not for
+            </p>
+            <ul className='mt-4 space-y-3'>
+              {FIT_NOT_FOR.map(item => (
+                <li
+                  key={item}
+                  className='flex items-start gap-3'
+                  style={{
+                    color: 'var(--mw-text-secondary)',
+                    fontSize: '14.5px',
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <span
+                    className='mw-text-eyebrow mt-0.5 grid size-5 shrink-0 place-items-center rounded-full tabular-nums'
+                    style={{
+                      backgroundColor: 'var(--mw-signal-red-10)',
+                      border: '1px solid var(--mw-signal-red-30)',
+                      color: 'var(--mw-signal-red)',
+                    }}
+                  >
+                    ×
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </SectionShell>
+    </section>
   );
 }
 
 // =============================================================================
-// 12 · Practical Delivery With System Thinking Behind It
-// =============================================================================
-
-function HomeCredibility() {
-  return (
-    <SectionShell
-      ariaLabel='How the work runs'
-      tone='white'
-      heading={{
-        eyebrow: 'How the work runs',
-        title: 'Practical delivery. [[muted:System thinking behind it.]]',
-        description:
-          'We work directly with the owner or practice manager. The aim is operating change, not a prettier site or another tool subscription.',
-      }}
-    >
-      <div className='grid max-w-4xl gap-8 lg:grid-cols-2'>
-        <div>
-          <p className='mw-text-eyebrow text-[var(--mw-signal-cyan)]'>Working belief</p>
-          <p className='mt-3 text-base leading-relaxed text-[var(--mw-text-primary)]'>
-            A website is one visible part of how a service business or specialist clinic actually
-            runs. Build it as part of the system that captures, routes, follows up, and improves —
-            not as a separate project.
-          </p>
-        </div>
-        <div>
-          <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>How an engagement starts</p>
-          <ol className='mt-3 space-y-2 text-sm leading-relaxed text-[var(--mw-text-primary)]'>
-            <li className='flex gap-3'>
-              <span className='tabular-nums text-[var(--mw-text-subtle)]'>01</span>
-              Review the current site and handling path.
-            </li>
-            <li className='flex gap-3'>
-              <span className='tabular-nums text-[var(--mw-text-subtle)]'>02</span>
-              Map where work is leaking and what to fix first.
-            </li>
-            <li className='flex gap-3'>
-              <span className='tabular-nums text-[var(--mw-text-subtle)]'>03</span>
-              Put the website system and connected handling in place.
-            </li>
-          </ol>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-// =============================================================================
-// 13 · FAQ
+// 06 · FAQ
 // =============================================================================
 
 function HomeFAQ() {
@@ -1230,7 +1520,7 @@ function HomeFAQ() {
 }
 
 // =============================================================================
-// 14 · Final Diagnostic CTA  (DecisionPanel handles its own dark inner container)
+// 07 · Final diagnostic CTA
 // =============================================================================
 
 function HomeCTA() {
@@ -1248,5 +1538,57 @@ function HomeCTA() {
       expectationsLabel='What we will look at'
       reassurance={cta.footer}
     />
+  );
+}
+
+// =============================================================================
+// Hero
+// =============================================================================
+
+function HomeHero() {
+  const { hero } = homepageData;
+  return (
+    <HeroFrame
+      ariaLabel='Homepage hero'
+      eyebrow={hero.eyebrow}
+      title={hero.heading}
+      description={hero.description}
+      actions={[
+        {
+          label: hero.primaryAction.label,
+          href: hero.primaryAction.href,
+          variant: 'white',
+          icon: <ArrowRight size={16} strokeWidth={1.5} aria-hidden='true' />,
+        },
+        {
+          label: hero.secondaryAction.label,
+          href: hero.secondaryAction.href,
+          variant: 'ghost',
+          icon: <ArrowRight size={14} strokeWidth={1.5} aria-hidden='true' />,
+        },
+      ]}
+      chips={hero.chips.map(chip => ({ label: chip.label, accent: chip.accent }))}
+      visual={<HeroSignalSurface />}
+    />
+  );
+}
+
+// =============================================================================
+// Page
+// =============================================================================
+
+export default function Homepage() {
+  return (
+    <CTARegistryProvider pageId='page:home' pageType='page' primarySystem='smart-website-systems'>
+      <main>
+        <HomeHero />
+        <HomeLeakDiagnosis />
+        <HomeFoundation />
+        <HomeProtections />
+        <HomeFit />
+        <HomeFAQ />
+        <HomeCTA />
+      </main>
+    </CTARegistryProvider>
   );
 }
