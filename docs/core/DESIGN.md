@@ -629,26 +629,6 @@ Avoid:
 - image-heavy pages that feel like a template
 - using illustrations to hide weak content
 
-## Image System Quarantine
-
-The repo image system is internal and experimental. It may help test assets, but it is not public design authority and must not train page tone, layout, or section design.
-
-Public design authority remains this file.
-
-Do not copy image-system dashboard, analytics, workflow, SaaS, AI/tool, fake dashboard, fake metrics, generic stock, or screen-mockup tone into public page rebuilds. `/image-dashboard` is a dev/internal/noindex surface and is gated by `ENABLE_DEV_DASHBOARD`.
-
-Use imagery when it helps the buyer understand the business reality faster or makes the page feel more custom without weakening clarity.
-
-For the first three pages, it is acceptable for each page to have one primary custom visual/illustration section and one or two subtle background treatments if they strengthen the design.
-
-Examples:
-
-- Homepage: operating path illustration, leakage surface, or website-control-point visual.
-- Smart Website Systems: website-as-control-point illustration or weak-site vs connected-site contrast.
-- Local SEO Authority: local find-verify-trust-contact path, service-area signal map, or local trust surface.
-
-Background images should be subtle and controlled. They should not reduce readability or make the page feel busy.
-
 ## Design For Active Systems
 
 Full system ownership is defined in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Design should translate that ownership into visible business states.

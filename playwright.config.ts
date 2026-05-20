@@ -8,7 +8,6 @@ const playwrightWebServerEnv = Object.fromEntries(
   Object.entries(
     buildProcessEnv({
       PORT: String(playwrightPort),
-      ENABLE_DEV_DASHBOARD: 'false',
       SUPPRESS_DIRTY_WORKSPACE_WARNING: '1',
       NEXT_PUBLIC_TURNSTILE_SITE_KEY:
         env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || 'test-turnstile-site-key',

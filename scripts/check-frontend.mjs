@@ -209,7 +209,6 @@ async function main() {
     env: {
       ...process.env,
       PORT: String(port),
-      ENABLE_DEV_DASHBOARD: 'false',
       SUPPRESS_DIRTY_WORKSPACE_WARNING: '1',
       ENABLE_CAPTCHA_SERVICE: 'false',
       NEXT_PUBLIC_TURNSTILE_SITE_KEY: '',

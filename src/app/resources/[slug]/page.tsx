@@ -7,7 +7,6 @@ import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
-import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { extractSEOInput, resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -132,7 +131,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         sections={resource.sections}
         primarySystem={resource.primarySystem}
         supportingSystems={resource.supportingSystems}
-        featuredImage={getImage(slug, 'resources', 'featured-clean')}
       />
     </>
   );

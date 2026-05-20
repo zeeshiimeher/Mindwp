@@ -5,7 +5,6 @@ import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
-import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -87,7 +86,6 @@ export async function CaseStudyDetailPage({ params }: { params: Promise<{ slug: 
         pageId={`case-study:${slug}`}
         metadata={caseStudy}
         sections={caseStudy.sections}
-        featuredImage={getImage(slug, 'case-studies', 'featured-clean')}
         {...(caseStudy.templateOverrides ?? {})}
       />
     </>

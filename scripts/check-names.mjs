@@ -24,7 +24,6 @@ const skippedDirNames = new Set([
 const skippedPathParts = [
   ['src', 'app', 'dev'],
   ['src', 'app', 'dashboard'],
-  ['src', 'app', 'image-dashboard'],
 ];
 
 const allowedExtensions = new Set([

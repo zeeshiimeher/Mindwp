@@ -46,7 +46,6 @@ const CLASSIFIED_STATIC_PATHS = new Map<string, IndexingClassification>([
   ['/resources', 'resources'],
   ['/services', 'services'],
   ['/components', 'dev'],
-  ['/image-dashboard', 'dev'],
 ]);
 
 const CONTENT_NODE_TYPES: ContentNodeType[] = [

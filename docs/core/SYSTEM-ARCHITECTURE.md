@@ -163,16 +163,6 @@ After approval:
 
 SEO should follow active routes and canonical page identity.
 
-## Image System Quarantine
-
-`src/lib/image-system/**`, `scripts/image-system/**`, and `/image-dashboard` are internal and experimental. They are not public design authority. [DESIGN.md](./DESIGN.md) controls public page visuals.
-
-Rules:
-
-- `/image-dashboard` is dev/internal/noindex and gated by `ENABLE_DEV_DASHBOARD`.
-- The image-system dashboard, analytics screens, workflow screens, fake dashboards, generic stock imagery, AI/tool visuals, and SaaS-like screens must not guide public page rebuilds.
-- The image system may support asset experiments only after page strategy and design direction are approved.
-
 ## Cleanup Rules
 
 Prefer:

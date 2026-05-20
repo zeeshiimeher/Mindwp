@@ -6,7 +6,6 @@ import { BLOG_AUTHORS } from '@/domains/blog/api';
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
-import { getImage } from '@/lib/image-system/resolver';
 import { extractSEOInput, resolveMetadata } from '@/lib/seo/resolveMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 import { buildSEO } from '@/lib/seo/seo';
@@ -104,7 +103,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         sections={post.sections}
         primarySystem={post.primarySystem}
         supportingSystems={post.supportingSystems}
-        featuredImage={getImage(slug, 'blog', 'featured-clean')}
       />
     </>
   );

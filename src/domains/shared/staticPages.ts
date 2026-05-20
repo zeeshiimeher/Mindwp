@@ -14,8 +14,6 @@ export type StaticRouteDefinition = {
   showOnHumanSitemap?: boolean;
 };
 
-export const INTERNAL_STATIC_ROUTE_PATHS = new Set(['/image-dashboard']);
-
 export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
   {
     key: 'static:home',
@@ -112,15 +110,6 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     title: 'Terms of Service',
     description:
       'Read the terms of service covering engagement expectations, delivery boundaries, and the responsibilities attached to using this site.',
-    showOnHumanSitemap: false,
-  },
-  {
-    key: 'static:image-dashboard',
-    path: '/image-dashboard',
-    name: 'Image Dashboard',
-    title: 'Image Dashboard',
-    description:
-      'Internal experimental image-system dashboard for generation scores, operational issues, and image learning memory.',
     showOnHumanSitemap: false,
   },
   {
