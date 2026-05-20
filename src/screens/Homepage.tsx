@@ -2,106 +2,179 @@
  * HOMEPAGE REBUILD BRIEF — MindWP
  *
  * Purpose:
- * Create recognition that established service businesses already have activity,
- * but work slips away between being found, trusted, contacted, answered,
- * followed up, reviewed, and improved.
+ * Create recognition that established service businesses and specialist clinics
+ * already have activity, but work slips away between being found, trusted,
+ * contacted, answered, followed up, reviewed, and improved.
+ *
+ * For service businesses, this means calls, forms, quotes, bookings, jobs,
+ * reviews, staff pressure, and missed follow-up.
+ *
+ * For specialist clinics, this means patient trust, treatment or procedure
+ * clarity, consultation requests, bookings, appointments, follow-up, reviews,
+ * and proof — without medical claims, treatment-result claims, compliance
+ * claims, EMR/software framing, or generic doctor marketing.
  *
  * Page argument:
  * MindWP builds conversion-focused website systems with connected handling.
- * The website is the visible control point. Connected handling protects the
- * response, routing, follow-up, ownership, CRM visibility, review request,
- * proof capture, and improvement path around the website.
+ * The website is the public control point / practice front door. It is where
+ * search, trust, service/treatment clarity, enquiry or booking capture,
+ * response, follow-up, proof, and improvement connect.
+ *
+ * Connected handling protects the response, routing, ownership, follow-up,
+ * CRM visibility, review request, proof capture, and improvement path around
+ * the website.
+ *
+ * Homepage length and section direction:
+ * The homepage should be a substantial page, not a short landing page. It needs
+ * enough room to create recognition, show the connected path, explain the five
+ * active systems, make service-business and clinic relevance visible, support
+ * proof/work, filter fit, build credibility, and end with a diagnostic CTA.
+ *
+ * The section sequence below is strategic direction, not a rigid wireframe or
+ * final section count. Claude may merge, split, rename, reorder, or reshape
+ * sections if the homepage argument becomes stronger, but the final page should
+ * still feel complete, premium, and long-form enough to carry the full MindWP
+ * positioning.
  *
  * Soft section direction:
  * 1. Work Comes In. Too Much Slips Away.
- *    Hero recognition around website system + connected handling.
+ *    Hero recognition around the website system and connected handling path.
+ *    Make both service-business and specialist-clinic reality visible without
+ *    making the hero feel broad or generic.
  *
  * 2. Traffic Does Not Help If the Path After It Is Unclear.
  *    Leak map showing where search, website, contact, response, follow-up,
- *    and proof break.
+ *    reviews, and proof break.
  *
  * 3. The Website Is the Visible Control Point.
- *    Website as base layer connecting search, trust, enquiry, response,
- *    follow-up, proof.
+ *    Website as the base layer connecting search, trust, enquiry, booking,
+ *    response, follow-up, proof, and improvement.
  *
- * 4. Built to Match How Your Business Actually Runs.
- *    Difference between a normal website and a conversion-focused website system.
+ * 4. Built to Match How Your Business or Practice Actually Runs.
+ *    Contrast a normal website with a conversion-focused website system.
+ *    Show operating fit, not a generic website-redesign pitch.
  *
  * 5. From First Enquiry to Reliable Follow-Up.
- *    Connected handling surface: contact paths, routing, ownership, follow-up.
+ *    Connected handling surface: contact paths, routing, ownership, response,
+ *    follow-up, review/proof request, and visibility.
  *
  * 6. Five Systems. One Connected Path.
- *    Active systems as connected business moments, not service cards.
+ *    Active systems as connected business moments, not generic service cards.
+ *    Do not make this feel like a service catalog or internal taxonomy.
  *
  * 7. What Changes When the Path Is Connected.
- *    Before/after operating state.
+ *    Before/after operating state: scattered activity vs visible path.
+ *    Avoid revenue promises, fake metrics, or exaggerated transformation claims.
  *
  * 8. How This Shows Up in Real Service Businesses and Specialist Clinics.
- *    Scenario board with realistic examples, including service-business and clinic/practice moments.
- *    No fake proof, fake metrics, or unsupported medical/treatment claims.
+ *    Scenario board with realistic examples from home services and practices.
+ *    Clearly frame illustrative scenarios. No fake proof, fake metrics,
+ *    invented client results, unsupported patient outcomes, or treatment claims.
  *
- * 9. Selected Work / Website Showcases.
- *    Add a premium, interactive proof-style section that can showcase website images,
- *    screenshots, or project visuals without turning the homepage into a portfolio-first page.
- *    This section should feel like evidence of clarity, trust, booking/enquiry flow,
- *    and practice/business front-door quality — not a generic design gallery.
+ * 9. Selected Work / Website Showcase.
+ *    Add a premium proof-style section only if it supports the page argument.
+ *    It may show website screenshots, project visuals, or selected surfaces,
+ *    but each item must connect to a business point:
+ *    - clearer service, treatment, or procedure pages
+ *    - trust above the fold
+ *    - enquiry, booking, or consultation paths
+ *    - local proof or review placement
+ *    - practice/business front-door quality
+ *    - connected handling around the website
+ *
+ *    This must not become a portfolio-first section, generic design gallery,
+ *    fake case study, or visual decoration.
  *
  * 10. Built for Established Service Businesses and Specialist Clinics.
- *     Fit/not-fit filter.
+ *     Fit/not-fit filter. Filter out cheapest-website buyers, looks-only
+ *     redesigns, feature-first buyers, ranking-guarantee seekers, tool-demo
+ *     buyers, and unsupported healthcare/software/compliance expectations.
  *
  * 11. Practical Website Delivery With System Thinking Behind It.
- *     Founder/team/build credibility without resume drift.
+ *     Founder/team/build credibility without resume drift, builder fandom,
+ *     or generic WordPress-agency positioning.
  *
  * 12. If Your Website Is Not Supporting Enquiries Properly, It Is Worth Reviewing.
- *     Final diagnostic CTA.
+ *     Final diagnostic CTA. The next step should feel like a useful review
+ *     of the website and handling path, not a sales push.
  *
  * Component and content guidance:
  * - Keep HeroFrame for the homepage hero.
  * - Keep HeroFrame text, chips, and actions in the homepage data file.
- * - Use a custom homepage visual inside HeroFrame; the visual JSX can live in this render file.
+ * - Use a custom homepage visual inside HeroFrame; the visual JSX can live
+ *   in this render file.
  * - Use SectionShell as the outer wrapper for major sections where useful.
- * - Keep main homepage section content inside this JSX while the page is being proven.
+ * - Keep main homepage section content inside this JSX while the page is
+ *   being proven.
  * - Use page-owned JSX inside sections to create leak maps, operating paths,
- *   connected-handling surfaces, before/after panels, scenario boards, and fit filters.
+ *   connected-handling surfaces, website-as-control-point maps, before/after
+ *   panels, scenario boards, showcase surfaces, and fit filters.
  * - Add a homepage work/showcase section only if it supports the page argument.
- *   It may show website screenshots or project visuals in an interactive carousel,
- *   stacked gallery, filterable strip, or featured-work surface.
- * - The work/showcase section should connect each image to a business point:
- *   clearer service/treatment pages, trust above the fold, enquiry or booking paths,
- *   local proof, review/proof placement, or connected handling.
- * - Do not create a separate Portfolio navigation item for now. Proof/work may be
- *   linked from the footer and can live under the case-studies/work route model later.
+ * - The work/showcase section should behave as proof support, not as the main
+ *   positioning device.
+ * - Do not create a Portfolio navigation item or /portfolio route.
+ * - Proof/work should align with the /case-studies proof/work hub direction.
  * - Do not force new homepage section content into the data file yet.
  * - DecisionPanel content can stay in the homepage data file.
  * - FAQSection content can stay in the homepage data file.
  * - Use DecisionPanel for the final diagnostic CTA if it fits.
  * - Use FAQSection only if the FAQs answer real buyer hesitation.
- * - Do not let existing components force generic card grids, repeated process steps,
- *   or old renderer order.
+ * - Do not include FAQ just because old pages had one.
+ * - Do not let existing components force generic card grids, repeated process
+ *   steps, old renderer order, or weak section rhythm.
  *
  * Visual direction:
- * Calm, premium, operational. Use leak maps, website-as-control-point maps,
- * connected-handling surfaces, before/after panels, scenario boards,
- * interactive website showcase surfaces, fit filters, and diagnostic CTA panels.
+ * Calm, premium, operational, specific, and commercially serious.
+ * Use leak maps, website-as-control-point maps, connected-handling surfaces,
+ * before/after operating panels, scenario boards, selective proof/showcase
+ * surfaces, fit filters, and diagnostic CTA panels.
+ *
+ * Selective imagery is allowed when it supports the section argument.
+ * Avoid random stock photos, fake dashboards, SaaS UI, AI robot visuals,
+ * generic laptop mockups, decorative charts, or image-heavy gallery behavior.
+ *
+ * Motion direction:
+ * Use only existing reveal/motion classes where useful:
+ * mw-animate-section, mw-animate-list, mw-animate-stagger, mw-animate-fade,
+ * mw-animate-up, mw-animate-panel, mw-animate-line.
+ *
+ * Motion should be subtle, one-time, and supportive. No new animation library,
+ * scroll-jacking, cursor effects, parallax gimmicks, fake dashboard motion,
+ * looping animation, or loading delay.
  *
  * CTA posture:
  * Diagnostic, low-pressure, practical.
- * Good directions: Check my website system, Review my website and handling path,
- * Find where work is slipping, Request a system review.
+ *
+ * Good directions:
+ * - Check my website system
+ * - Review my website and handling path
+ * - Find where work is slipping
+ * - Request a system review
+ *
+ * Simple UI labels may work only when nearby copy explains the diagnostic value.
  *
  * Avoid:
- * Generic agency homepage, portfolio-first page, visual gallery without business meaning,
- * SaaS dashboard imitation,
- * AI/automation-first framing, SEO ranking hype, CRM/tool reseller language,
- * generic service cards, process steps everywhere, fake proof, old renderer order.
+ * Generic agency homepage, portfolio-first page, visual gallery without business
+ * meaning, SaaS dashboard imitation, AI/automation-first framing, SEO ranking
+ * hype, CRM/tool reseller language, generic service cards, process steps
+ * everywhere, fake proof, fake metrics, unsupported medical/treatment claims,
+ * old renderer order, and visuals without business meaning.
  *
  * Rebuild instruction:
  * Existing JSX is context only. Preserve useful intent, not old structure.
- * Rebuild from buyer recognition first. Do not treat this as fixed copy,
- * final section copy, or a rigid wireframe.
- * If a work/showcase section is added, treat it as proof support, not as the main
- * positioning device. The homepage should still lead with business recognition,
- * website-as-front-door logic, and connected handling.
+ * Rebuild from buyer/practice recognition first.
+ * Do not treat this as final copy, fixed section copy, or a rigid wireframe.
+ *
+ * First create the render shape: HeroFrame setup, SectionShell sequence,
+ * section titles/descriptions/tone, CTA placement, and any needed custom class
+ * or background-treatment decisions.
+ *
+ * Then design the inner section content with page-owned JSX.
+ *
+ * Since this is one of the first three baseline pages, shared component, token,
+ * or CSS improvements are allowed only when clearly justified by the homepage
+ * design direction. Report page-owned changes, shared component changes,
+ * token/CSS changes, and design-system implications separately.
  */
 import type { LucideIcon } from 'lucide-react';
 import {

@@ -1,3 +1,188 @@
+/**
+ * SMART WEBSITE SYSTEMS REBUILD BRIEF — MindWP
+ *
+ * Purpose:
+ * Help an established service business or specialist clinic recognise that the
+ * website may look acceptable while the decision path is still weak. The page
+ * should make clear that Smart Website Systems is not a generic website design
+ * service, builder package, or portfolio page. It is the flagship website and
+ * conversion-clarity system: the public control point / practice front door
+ * where clarity, trust, enquiry or booking capture, and the handoff into
+ * connected handling become visible.
+ *
+ * Page role:
+ * Smart Website Systems is a primary service page and BOFU decision-support
+ * page. It owns the website decision: structure, service/treatment/procedure
+ * clarity, conversion flow, trust/proof placement, enquiry and booking paths,
+ * CTA placement, and the website-to-handling connection.
+ *
+ * It may reference local visibility, response, follow-up, reviews, proof, and
+ * improvement only where they clarify the website's role. It must not absorb
+ * Local SEO Authority Systems, Lead Response & Handling Systems,
+ * Follow-Up & CRM Systems, or Reputation & Review Systems.
+ *
+ * Audience reality:
+ * - Service businesses: calls, forms, quotes, bookings, jobs, service pages,
+ *   local trust, reviews, staff pressure, and missed follow-up.
+ * - Specialist clinics: patient trust, treatment/procedure clarity,
+ *   consultation requests, bookings, appointments, follow-up, reviews, and
+ *   proof — without medical claims, treatment-result claims, compliance claims,
+ *   EMR/software framing, or generic doctor marketing.
+ *
+ * Page length and section direction:
+ * This should be a substantial service page, not a short sales page. It should
+ * have enough depth to create recognition, explain the website-system decision,
+ * show ownership boundaries, connect the website to handling, explain practical
+ * implementation pathways, filter fit, answer hesitation, and end with a
+ * diagnostic CTA.
+ *
+ * The section sequence below is strategic direction, not a rigid wireframe or
+ * final section count. Claude may merge, split, rename, reorder, or reshape
+ * sections if the service-page argument becomes stronger, but the final page
+ * should still feel complete, premium, commercially serious, and specific to
+ * Smart Website Systems.
+ *
+ * Soft section direction:
+ * 1. Hero — Your Website May Look Fine. The Path May Still Be Leaking.
+ *    Open with buyer/practice recognition, not “we build websites.” Frame the
+ *    website as the public control point / practice front door where service,
+ *    treatment, trust, enquiry, booking, and handoff decisions start to form.
+ *
+ * 2. The Website Is Where Trust and Next Steps Form.
+ *    Show how people decide whether they understand the service, trust the
+ *    business/provider, see relevance, and know what to do next.
+ *
+ * 3. Normal Website vs Website System.
+ *    Contrast a website that exists with a website that carries the path.
+ *    Avoid “bad design vs good design.” Show weak operating path vs clear
+ *    operating path.
+ *
+ * 4. Service, Treatment, or Procedure Page Decision Path.
+ *    Show how page-level clarity works: problem/search intent, explanation,
+ *    proof/trust, hesitation, CTA, and handoff. This section should make Smart
+ *    Website Systems feel concrete instead of generic.
+ *
+ * 5. What Smart Website Systems Owns.
+ *    Define ownership clearly: website structure, service/treatment/procedure
+ *    clarity, conversion flow, proof placement, enquiry/booking paths, CTA
+ *    placement, maintainability, and website-to-handling connection.
+ *
+ *    Also show what it does not replace: full local SEO operations, full lead
+ *    response handling, full CRM lifecycle, full review generation, or complete
+ *    business automation.
+ *
+ * 6. Structure First. Optimisation Second.
+ *    Carry forward the useful old-page principle. Do not pour traffic, tools,
+ *    SEO, ads, automation, or follow-up around unclear service pages, weak
+ *    trust, or a website that does not send enquiries into a clear next step.
+ *
+ * 7. The Website Should Connect Into the Handling Path.
+ *    Show calls, forms, bookings, and consultation requests moving from the
+ *    website into useful context, routing, owner/status/next step, and follow-up
+ *    visibility. Keep this as website-to-handoff context; do not turn the page
+ *    into Lead Response, CRM, or automation positioning.
+ *
+ * 8. Implementation Pathways Under Smart Website Systems.
+ *    WordPress Development, Elementor, Bricks Builder, Divi 5, WooCommerce, and
+ *    Website Redesign/System Rebuild may appear here as implementation pathways.
+ *    Explain them through business fit, clarity, trust, enquiry/booking paths,
+ *    maintainability, and performance — not builder fandom or a tech-stack grid.
+ *
+ * 9. What Changes After the Website Is Rebuilt as a System.
+ *    Show operating change without fake metrics: clearer service/treatment pages,
+ *    proof placed where hesitation happens, CTAs that match intent, enquiries
+ *    landing with context, and a website that is easier to improve.
+ *
+ * 10. Selected Website Surfaces / Proof Support.
+ *     Include selected work, screenshots, or website surfaces only if they prove
+ *     a business point: clearer service pages, stronger trust, better enquiry or
+ *     booking path, practice-front-door quality, proof placement, or handoff
+ *     clarity. Do not turn this into a portfolio-first gallery.
+ *
+ * 11. Fit / Not Fit.
+ *     Good fit: established service businesses and specialist clinics with real
+ *     activity, meaningful enquiry/job/patient value, unclear pages, weak trust,
+ *     poor handoff, or local proof needs.
+ *
+ *     Not fit: cheapest-website buyers, looks-only redesigns, builder-first
+ *     buyers, ranking-guarantee seekers, tool-demo buyers, businesses with no
+ *     real activity, or healthcare buyers expecting software/compliance/treatment
+ *     outcome claims.
+ *
+ * 12. FAQ.
+ *     Use FAQ only for real buying hesitation: what a Smart Website System is,
+ *     how it differs from a normal website project, whether an existing website
+ *     can be improved, how implementation choices are made, and what the review
+ *     looks at. Do not let FAQ absorb Local SEO, CRM, AI, or review-service scope.
+ *
+ * 13. Final Diagnostic CTA.
+ *     Close with a practical review of the website and handling path. The CTA
+ *     should feel useful and diagnostic, not like a sales push, package quote,
+ *     SaaS demo, or generic contact form.
+ *
+ * Component and content guidance:
+ * - Use HeroFrame for the service hero if it helps the page argument.
+ * - Use SectionShell as the outer wrapper for major sections where useful.
+ * - Use page-owned JSX for website-control maps, service-page anatomy,
+ *   ownership boundaries, structure-first panels, handoff paths, implementation
+ *   pathway selectors, before/after operating states, proof surfaces, and fit
+ *   filters.
+ * - Do not force all section content into the data file while the page is being
+ *   proven. Hero, FAQ, and DecisionPanel content may stay in data if useful.
+ * - Use DecisionPanel for the final diagnostic CTA if it fits.
+ * - Use FAQSection only if the questions answer real buying hesitation.
+ * - Do not let old renderer order, existing data shape, or reusable components
+ *   force generic cards, technology grids, process steps, or weak section rhythm.
+ *
+ * Visual direction:
+ * Calm, premium, operational, specific, and commercially serious. Use website-
+ * as-control-point maps, normal-vs-system contrast, service-page anatomy,
+ * ownership maps, structure-first panels, enquiry-to-handoff paths,
+ * implementation pathway selectors, before/after operating panels, selective
+ * proof surfaces, fit filters, and diagnostic CTA panels.
+ *
+ * Selective imagery is allowed when it supports business meaning. Avoid random
+ * stock photos, fake dashboards, SaaS UI, AI robot visuals, generic laptop
+ * mockups, decorative charts, generic tech-stack sections, and image-heavy
+ * gallery behavior.
+ *
+ * CTA posture:
+ * Diagnostic, low-pressure, practical.
+ *
+ * Good directions:
+ * - Review my website system
+ * - Check my website and handling path
+ * - Find where the website is leaking
+ * - Request a system review
+ *
+ * Simple UI labels may work only when nearby copy explains the diagnostic value.
+ *
+ * Avoid:
+ * Generic web design agency page, cheap WordPress package page, builder-fan
+ * page, portfolio-first page, technology stack grid, full connected-handling
+ * service page, SaaS dashboard imitation, AI/automation-first framing, SEO
+ * ranking hype, CRM/tool reseller language, generic service cards, fake proof,
+ * fake metrics, unsupported medical/treatment claims, and old renderer order.
+ *
+ * Rebuild instruction:
+ * Existing JSX and old SWS content are context only. Preserve useful intent,
+ * not old structure. The old page had useful ideas — website works as part of
+ * the business, normal website vs system, structure first / optimisation second,
+ * implementation pathways, fit filter, and FAQ — but it leaned too far toward
+ * infrastructure, WordPress/tool framing, technology sections, and generic
+ * foundations. Carry forward the good ideas in the current MindWP language.
+ *
+ * First create the render shape: HeroFrame setup, SectionShell sequence,
+ * section titles/descriptions/tone, CTA placement, and any needed custom class
+ * or background-treatment decisions.
+ *
+ * Then design the inner section content with page-owned JSX.
+ *
+ * Since this is one of the first three baseline pages, shared component, token,
+ * or CSS improvements are allowed only when clearly justified by the Smart
+ * Website Systems design direction. Report page-owned changes, shared component
+ * changes, token/CSS changes, and design-system implications separately.
+ */
 import { AlertTriangle, ArrowRight, FileText, Inbox, PhoneOff } from 'lucide-react';
 
 import { FAQSection } from '@/components/content/FAQSection';
