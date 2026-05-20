@@ -5,10 +5,11 @@ Use after a page rebuild or when asked to review a page.
 ## Workflow
 
 1. Read `CLAUDE.md`.
-2. Read the relevant core docs, especially `OFFER-ARCHITECTURE.md`, `CONTENT.md`, `DESIGN.md`, `WRITING.md`, and `CONVERSION.md`.
-3. Inspect the rebuilt page, route, renderer, page data, shared components, and styles.
-4. If this is not one of the first three pages, compare against approved rebuilt pages for design rhythm and section-pattern variety.
-5. Review only. Do not rewrite or edit unless explicitly asked.
+2. Read `docs/Planning/Design-Direction.md` for the baseline visual standard against which approved pages are measured, and `docs/Planning/Website-memory-and-plan.md` for phase status.
+3. Read the relevant core docs, especially `OFFER-ARCHITECTURE.md`, `CONTENT.md`, `DESIGN.md`, `WRITING.md`, and `CONVERSION.md`.
+4. Inspect the rebuilt page, route, renderer, page data, shared components, and styles.
+5. If this is not one of the first three pages, compare against approved rebuilt pages for design rhythm and section-pattern variety.
+6. Review only. Do not rewrite or edit unless explicitly asked.
 
 ## Review Focus
 

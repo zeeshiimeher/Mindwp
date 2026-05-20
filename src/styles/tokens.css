@@ -343,6 +343,8 @@
   --mw-shadow-lg: var(--mw-shadow-panel);
   --mw-shadow-heavy: 0 32px 80px rgba(8, 17, 31, 0.18);
   --mw-shadow-float: 0 12px 40px rgba(8, 17, 31, 0.08);
+  /* Lifted panels on dark gradient surfaces (hero/feature visual panels). */
+  --mw-shadow-dark-lg: 0 24px 60px rgba(0, 0, 0, 0.32);
   --mw-shadow-focus: 0 0 0 3px color-mix(in oklch, var(--mw-signal-cyan) 35%, transparent);
 
   /* Signal glow — for animated dots and status indicators */

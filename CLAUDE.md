@@ -52,11 +52,20 @@ Use this workflow for each major page rebuild:
 8. After the render shape is approved or clearly established, design the inner section content with page-owned JSX, Tailwind, and direct section content inside `SectionShell` where appropriate.
 9. Run validation and report what changed.
 
-For the first three pages — Homepage, Smart Website Systems, and Local SEO Authority Systems — there are no fully approved designed pages yet. These pages establish the base design standard. Shared component, token, or CSS improvements are allowed only during this baseline phase when clearly justified by the approved plan.
+For the first three pages — Homepage, Smart Website Systems, and Local SEO Authority Systems — there are no fully approved designed pages yet. These pages establish the base design standard. Shared component, token, or CSS improvements are allowed only during this baseline phase when clearly justified by the approved design direction in `docs/Planning/Design-Direction.md`.
 
 After these three pages are approved, later page rebuilds should treat `HeroFrame`, `SectionShell`, `DecisionPanel`, `FAQSection`, tokens, and shared CSS as stable unless the user explicitly approves a design-system change.
 
-Later pages should inspect approved rebuilt pages for design rhythm and avoid making more than about 20% of their inner section patterns feel identical unless the reuse is intentionally approved.
+Later pages should inspect approved rebuilt pages for design rhythm. Pages can share shells and rhythm, but primary visual arguments must feel distinct.
+
+## Active Rebuild Memory
+
+Captured so future sessions do not re-audit the full repo for every task:
+
+- `docs/Planning/Website-Rebuild.md` — phase structure, sequence, and acceptance criteria.
+- `docs/Planning/Website-memory-and-plan.md` — current phase status, branch, decisions, and next-session handoff.
+- `docs/Planning/Design-Direction.md` — proposed visual baseline for Homepage, Smart Website Systems, and Local SEO Authority. Locks in after those three pages are approved.
+- `docs/Planning/Repo-Map.md` — durable repo structure, ownership, validator behavior, and reset-base constraints from the Phase 2 audit. Read this before exploring source folders from scratch.
 
 ## Task-Based Reading
 

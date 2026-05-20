@@ -5,12 +5,13 @@ Use before editing one page. This skill is for planning only.
 ## Workflow
 
 1. Read `CLAUDE.md`.
-2. Read the task-relevant core docs, usually `FOUNDATION.md`, `OFFER-ARCHITECTURE.md`, `CONTENT.md`, `DESIGN.md`, `WRITING.md`, and `CONVERSION.md`.
-3. Confirm which page is being rebuilt and what business, practice, or patient-decision moment it owns.
-4. Inspect the target page route, renderer, page data, local components, shared components, and relevant styles/tokens.
-5. Treat old pages and existing renderer order as context, not authority.
-6. For later pages, inspect approved rebuilt pages for design standard and rhythm, but do not copy their inner section patterns too closely.
-7. Do not edit files.
+2. Read `docs/Planning/Website-memory-and-plan.md` for current phase status and accepted decisions. Read `docs/Planning/Design-Direction.md` for the active baseline. Read `docs/Planning/Repo-Map.md` instead of exploring source folders from scratch.
+3. Read the task-relevant core docs, usually `FOUNDATION.md`, `OFFER-ARCHITECTURE.md`, `CONTENT.md`, `DESIGN.md`, `WRITING.md`, and `CONVERSION.md`.
+4. Confirm which page is being rebuilt and what business, practice, or patient-decision moment it owns.
+5. Inspect the target page route, renderer, page data, local components, shared components, and relevant styles/tokens.
+6. Treat old pages and existing renderer order as context, not authority.
+7. For later pages, inspect approved rebuilt pages for design standard and rhythm, but do not copy their inner section patterns too closely.
+8. Do not edit files.
 
 ## Output
 

@@ -54,6 +54,9 @@ This does not mean Claude should ask one small question at a time. Claude should
 Core docs
 = stable business, offer, content, writing, conversion, design, graph, architecture, and execution truth.
 
+docs/core/DESIGN.md
+= durable design authority and guardrails.
+
 CLAUDE.md
 = AI routing file. It should tell Claude what to read and how to work without repeating all core docs.
 
@@ -62,6 +65,9 @@ CLAUDE.md
 
 docs/Planning/Website-Rebuild.md
 = broad rebuild phases, approved phase status, design-system baseline direction, and high-level rebuild sequence.
+
+docs/Planning/Design-Direction.md
+= active Phase 3 design direction proposal/baseline memory until Homepage, Smart Website Systems, and Local SEO Authority prove what should be merged into durable design docs or kept as approved baseline memory.
 
 docs/Planning/Website-memory-and-plan.md
 = working memory, session notes, current decisions, repo discoveries, and next-session handoff.
@@ -193,6 +199,34 @@ This is one of the most important phases. Claude should not blindly update CSS, 
   - key surface/card/layout primitives
   - reveal/motion classes
 
+- Tailwind section examples, UI experiments, landing-page snippets, or visual prototypes if they exist in the repo
+
+### Reference-Only Visual Inventory
+
+If the repo contains Tailwind section examples, landing-page snippets, UI experiments, or visual prototypes, Claude may inspect them during Phase 3 as visual reference only.
+
+They may help with:
+
+- spacing
+- layout rhythm
+- surface treatment
+- responsive behavior
+- interaction ideas
+- section composition
+
+They must not control:
+
+- MindWP positioning
+- page structure
+- content strategy
+- renderer order
+- data shape
+- component architecture
+- service boundaries
+- CTA strategy
+
+Claude should extract useful visual principles, not copy sections blindly.
+
 ### Plan
 
 Claude should propose a compact but useful design plan covering:
@@ -226,7 +260,7 @@ Claude should propose a compact but useful design plan covering:
 
 A design direction proposal that is detailed enough for the user to review, revise, and approve before base implementation.
 
-The proposal should explain what kind of website Claude intends to build: visual personality, surfaces, gradients/backgrounds, section rhythm, interactivity, icons, proof treatment, motion, and component/token needs. It should be summary-style in chat, with fuller planning notes saved in `docs/Planning/` if useful.
+The proposal should explain what kind of website Claude intends to build: visual personality, surfaces, gradients/backgrounds, section rhythm, interactivity, icons, proof treatment, motion, and component/token needs. It should be summary-style in chat, with fuller planning notes saved in `docs/Planning/` if useful. If `docs/Planning/Design-Direction.md` exists, treat it as proposed baseline memory until the first three pages prove which decisions should become durable.
 
 ## Phase 4 — Design-System Base Implementation
 
@@ -288,14 +322,20 @@ Summary only:
 
 ### Goal
 
-After the design direction and base implementation are clearer, optimize the AI brain-transfer system so future sessions can work efficiently without context clutter and without needing long repeated prompts.
+After the design direction, repo audit, and base implementation are clearer, optimize the AI brain-transfer system so future sessions can work efficiently without context clutter, repeated full-code audits, or long repeated prompts.
+
+This phase should convert useful audit findings into durable system memory. Claude may update, rewrite, or create focused docs when that makes future work faster and safer.
 
 ### Possible Edits
 
 - `CLAUDE.md`
 - `.claude/skills/**`
+- `docs/core/SYSTEM-ARCHITECTURE.md`
+- `docs/core/SYSTEM-RULES.md`
+- `docs/core/GRAPH.md` if graph/routing memory needs clarification
 - `docs/Planning/Website-Rebuild.md`
 - `docs/Planning/Website-memory-and-plan.md`
+- optional focused system-memory docs inside `docs/Planning/`
 - optional focused planning docs inside `docs/Planning/`
 
 ### Update Direction
@@ -305,12 +345,19 @@ After the design direction and base implementation are clearer, optimize the AI 
 - Planning docs should hold phase status and active rebuild memory.
 - Renderer comments should remain page-specific rebuild briefs.
 - Core docs should not be duplicated into routing docs.
+- Architecture and system-rule docs may be rewritten or tightened if the audit finds they are stale, too verbose, incomplete, or inefficient for future Claude sessions.
+- System-memory docs may be created inside `docs/Planning/` to capture durable repo understanding, design-system baseline decisions, route/component ownership, or validation expectations so future sessions do not need to re-audit the whole codebase.
+- New docs should be focused and useful, not documentation bloat.
+- After Homepage, Smart Website Systems, and Local SEO Authority are rebuilt and approved, review `docs/Planning/Design-Direction.md` and decide what should be merged into `docs/core/DESIGN.md`, kept as approved baseline memory, or removed.
+- Prefer concise maps, ownership tables, accepted decisions, and current-state summaries over long explanations.
 
 ### Do Not Do
 
 - Do not bloat `CLAUDE.md`.
 - Do not paste full strategy into skills.
 - Do not duplicate core docs.
+- Do not make future sessions re-read or re-audit the whole repo when a concise system-memory doc can carry the durable understanding.
+- Do not create broad docs without a clear owner or future use.
 - Do not rebuild pages in this phase.
 
 
@@ -321,6 +368,7 @@ Summary only:
 - docs updated
 - workflow clarified
 - what future Claude sessions should read per task type
+- what repo/system understanding was captured so future sessions can avoid repeated full audits
 - how context clutter was reduced
 - docs updated after execution
 - phase checklist result and any self-revisions made
@@ -348,6 +396,11 @@ This is a proposal phase only. Claude must not install dependencies, add package
 ### Do Not Do
 
 - Do not install packages.
+- Do Not create clutter 
+- Do not keep duplication stuff in docs 
+- core positioning docs can stay mostly as it is 
+- other all docs or .md files can be updated or may be fully recreated as well.
+- keep less doc files.
 - Do not run package installation commands.
 - Do not add new libraries without approval.
 - Do not add heavy validators that block page design freedom.

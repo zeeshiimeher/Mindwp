@@ -40,6 +40,26 @@ const allowedExtensions = new Set([
   '.txt',
 ]);
 
+// Extensions where source-code comment syntax should be neutralized before
+// scanning. Renderer brief blocks use forbidden terms as negative guardrails
+// ("avoid /portfolio routes", "no revenue-recovery framing"). Those briefs
+// teach Claude what NOT to ship; the words must be allowed inside comments.
+// Markdown is not stripped because the prose IS the meaningful content.
+const codeCommentExtensions = new Set(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.css']);
+
+/**
+ * Replace /* ... *\/ and // ... comments with same-length whitespace.
+ * Preserves byte positions so line/column reports remain accurate.
+ * Approximate (does not parse strings) — acceptable here because the
+ * forbidden patterns target distinctive identifiers, not punctuation that
+ * could collide with string-embedded "//".
+ */
+function neutralizeCodeComments(text) {
+  let next = text.replace(/\/\*[\s\S]*?\*\//g, match => match.replace(/[^\n]/g, ' '));
+  next = next.replace(/\/\/[^\n]*/g, match => ' '.repeat(match.length));
+  return next;
+}
+
 const forbiddenPatterns = [
   { label: 'GoHighLevel', pattern: /\bGoHighLevel\b/g },
   { label: 'HighLevel', pattern: /\bHighLevel\b/g },
@@ -148,7 +168,9 @@ const matches = [];
 
 for (const scanRoot of scanRoots) {
   for (const filePath of walk(scanRoot)) {
-    const text = fs.readFileSync(filePath, 'utf8');
+    const rawText = fs.readFileSync(filePath, 'utf8');
+    const ext = path.extname(filePath);
+    const text = codeCommentExtensions.has(ext) ? neutralizeCodeComments(rawText) : rawText;
 
     for (const { label, pattern } of forbiddenPatterns) {
       pattern.lastIndex = 0;

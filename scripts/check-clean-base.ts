@@ -106,13 +106,20 @@ const rules: Rule[] = [
     patterns: [/\bRelatedSection\b/g],
   },
   {
+    // Code-symbol rule: prevents copying SmartWebsite* helper component names
+    // into other source files. Doc references (planning notes, briefs,
+    // SYSTEM-ARCHITECTURE.md, skills) name these files legitimately and must
+    // not be flagged.
     name: 'copied Smart Website helper names',
+    appliesTo: relativePath => relativePath.startsWith('src/'),
     isAllowed: relativePath =>
       relativePath === 'src/domains/services/renderers/SmartWebsiteSystemsRenderer.tsx',
     patterns: smartWebsiteHelperNames.map(name => new RegExp(`\\b${name}\\b`, 'g')),
   },
   {
+    // Same scope rationale as above: code-symbol duplication guard for src/.
     name: 'copied Smart Website registry names',
+    appliesTo: relativePath => relativePath.startsWith('src/'),
     isAllowed: relativePath => smartWebsiteRegistryAllowedFiles.has(relativePath),
     patterns: smartWebsiteRegistryNames.map(name => new RegExp(`\\b${name}\\b`, 'g')),
   },
