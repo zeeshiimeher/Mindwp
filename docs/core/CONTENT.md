@@ -114,6 +114,8 @@ Feature pages explain one capability inside one active system.
 
 They may use capability-specific language, integration context, status/state language, and practical configuration detail when needed. Their risk is SaaS drift, not capability clarity.
 
+Canonical feature slugs are `/features/inbox`, `/features/voice-calls`, `/features/calendars`, `/features/reputation`, `/features/crm`, `/features/handling-paths`, and `/features/website-chat`. `/features/aichat` and `/features/workflows` are removed unpublished slugs and must not be preserved through aliases, redirects, shims, registry keys, imports, or placeholders.
+
 Feature pages must not:
 
 - present the feature as the whole offer
@@ -183,6 +185,8 @@ They should make clear what kind of evidence they contain:
 - Operational Breakdown: explanation of what changed operationally without public attribution.
 
 Only real case studies may imply measured client outcomes or "we helped this client" language.
+
+Scenario studies must be visibly illustrative. They must not use result labels that imply real client outcomes, testimonials, ROI, investment return, rankings, revenue, patient outcomes, or fake before/after proof. Use labels such as "Illustrative scenario," "Operating change," "What became clearer," "Before / clearer path," "What the path protects," and "What this example shows."
 
 Case studies should show:
 

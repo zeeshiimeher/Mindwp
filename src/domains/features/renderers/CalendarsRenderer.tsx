@@ -103,13 +103,13 @@ function CalendarsRecognitionSection() {
   return (
     <SectionShell
       id='website-handoff'
-      ariaLabel='Where websites usually fail'
+      ariaLabel='Feature support path'
       tone='mist'
       heading={{
-        eyebrow: 'Where websites usually fail',
-        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        eyebrow: 'Feature support path',
+        title: 'The capability matters when the path around it is clear.',
         description:
-          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+          'Feature pages stay tied to the system they support: what arrives, who sees it, what happens next, and where follow-up stays visible.',
       }}
     >
       <div className='grid gap-5 lg:grid-cols-3'>
@@ -156,7 +156,7 @@ function CalendarsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
       }))}
       tone='mist'
       variant='split'
-      ariaLabel='Smart Website Systems FAQ'
+      ariaLabel='Feature FAQ'
     />
   );
 }

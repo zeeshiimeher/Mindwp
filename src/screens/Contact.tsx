@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
-import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { CheckCircle2, Clock, Loader2, Mail, Send } from 'lucide-react';
 
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { Card } from '@/components/ui/card';
@@ -22,44 +22,34 @@ declare global {
   }
 }
 
-const BUSINESS_TYPE_OPTIONS = [
-  { value: 'local-service', label: 'Established service business' },
-  { value: 'field-service', label: 'Field-service team' },
-  { value: 'appointment-service', label: 'Appointment-led service business' },
-  { value: 'trade-contractor', label: 'Trade or contractor business' },
-  { value: 'other', label: 'Other' },
+const MAIN_CONCERN_OPTIONS = [
+  { value: 'website-clarity', label: 'Website clarity' },
+  { value: 'local-visibility', label: 'Local visibility' },
+  { value: 'missed-calls-forms-messages', label: 'Missed calls, forms, or messages' },
+  { value: 'follow-up-crm-visibility', label: 'Follow-up / CRM visibility' },
+  { value: 'reviews-proof', label: 'Reviews / proof' },
+  { value: 'not-sure-yet', label: 'Not sure yet' },
 ] as const;
 
-const PRIMARY_GOAL_OPTIONS = [
-  { value: 'more-leads', label: 'More leads' },
-  { value: 'better-conversion', label: 'Better conversion' },
-  { value: 'follow-up', label: 'Follow-up' },
-  { value: 'performance', label: 'Performance' },
-  { value: 'full-system', label: 'Full system' },
-] as const;
-
-const REVENUE_RANGE_OPTIONS = [
-  { value: 'under-1k', label: 'Under $1k / month' },
-  { value: '1k-5k', label: '$1k-$5k / month' },
-  { value: '5k-20k', label: '$5k-$20k / month' },
-  { value: '20k-plus', label: '$20k+ / month' },
-] as const;
-
-const TIMELINE_OPTIONS = [
-  { value: 'asap', label: 'ASAP' },
-  { value: 'this-month', label: 'This month' },
-  { value: '1-3-months', label: '1-3 months' },
-  { value: 'exploring', label: 'Just exploring' },
+const PREFERRED_CONTACT_METHOD_OPTIONS = [
+  { value: 'email', label: 'Email' },
+  { value: 'phone', label: 'Phone' },
+  { value: 'text-message', label: 'Text message' },
+  { value: 'whatsapp', label: 'WhatsApp' },
 ] as const;
 
 const INITIAL_FORM_STATE = {
   name: '',
   email: '',
+  phone: '',
+  organizationName: '',
+  websiteUrl: '',
+  industryType: '',
+  mainConcern: '',
+  slippingNow: '',
+  afterContact: '',
+  preferredContactMethod: '',
   message: '',
-  businessType: '',
-  primaryGoal: '',
-  revenueRange: '',
-  timeline: '',
   website: '',
 };
 
@@ -103,7 +93,7 @@ type ConversionData = {
 };
 
 function trackConversion(data: ConversionData) {
-  // future: Google Analytics / Meta Pixel / CRM
+  // Optional analytics hook for submitted diagnostic reviews.
   void data;
 }
 
@@ -219,7 +209,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
       setFormState(INITIAL_FORM_STATE);
       setCaptchaToken('');
       setSuccessMessage(
-        "Your request has been analyzed and routed to the right specialist. We'll respond with next steps within 24 hours."
+        "Your request is in. We'll review the current path and reply with a practical next step within one working day."
       );
       setSubmitted(true);
     } catch (error) {
@@ -241,21 +231,9 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
       link: 'mailto:hello@mindwp.com',
     },
     {
-      icon: Phone,
-      label: 'Phone',
-      value: '+44 20 1234 5678',
-      link: 'tel:+442012345678',
-    },
-    {
-      icon: MapPin,
-      label: 'Office',
-      value: 'London, United Kingdom',
-      link: null,
-    },
-    {
       icon: Clock,
-      label: 'Hours',
-      value: 'Mon-Fri: 9am-6pm GMT',
+      label: 'Response window',
+      value: 'Within one working day',
       link: null,
     },
   ];
@@ -263,15 +241,17 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
   const faqs = [
     {
       question: 'How quickly can you respond?',
-      answer: 'We aim to respond to all enquiries within 24 hours on business days.',
+      answer: 'We aim to respond to review requests within one working day.',
     },
     {
       question: 'What happens after I send a message?',
-      answer: 'We review the context, route it correctly, and reply with the clearest next step.',
+      answer:
+        'We read the context, look at the current website or handling path where available, and reply with the clearest next step.',
     },
     {
       question: 'What information should I prepare?',
-      answer: "Just your business goals and current challenges. We'll guide the rest.",
+      answer:
+        'Send the business or clinic name, website if available, what is slipping, and what usually happens after someone contacts you.',
     },
   ];
 
@@ -293,8 +273,8 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
           <div className='contact-page-hero-content text-center'>
             <h1 className='contact-page-hero-heading-1'>{primaryCtaLabel}</h1>
             <p className='contact-page-hero-text-1 text-xl mw-text-secondary l-container l-container--narrow'>
-              Tell us what you&apos;re trying to fix, improve, or build. We&apos;ll review it and
-              reply with the right next step.
+              Send the business or clinic context, the website if there is one, and where the
+              current path is slipping. We&apos;ll review it and reply with a practical next step.
             </p>
           </div>
         </div>
@@ -313,11 +293,11 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                       <CheckCircle2 className='text-green-600' size={48} />
                     </div>
                     <h2 className='contact-page-success-heading'>
-                      Thanks — your message is in. We&apos;ll reply within one working day.
+                      Thanks, your message is in. We&apos;ll reply within one working day.
                     </h2>
                     <p className='contact-page-success-text mw-text-secondary'>
                       {successMessage ||
-                        "A real person reads every enquiry. We'll come back with the right next step — not a generic reply, not a sales call."}
+                        "A real person reads every enquiry. We'll come back with the right next step, not a generic reply or sales call."}
                     </p>
                     <div className='contact-page-success-actions'>
                       <a href='/resources' className='mw-btn mw-btn--ghost'>
@@ -338,9 +318,8 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                 ) : (
                   <>
                     <p className='contact-page-form-text-1 mb-3 text-sm font-medium mw-text-primary'>
-                      Tell us where things are slipping — calls, follow-up, visibility, anything
-                      that&apos;s costing you work. A real person reads it and replies within one
-                      working day.
+                      Use this as a system review entry point, not a quote request. Tell us what is
+                      slipping now and what usually happens after someone reaches out.
                     </p>
                     <h2 className='contact-page-form-heading-1 mb-6'>{secondaryCtaLabel}</h2>
 
@@ -396,65 +375,90 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
 
                       <div className='contact-page-form-field-3 grid gap-4 md:grid-cols-2'>
                         <div>
-                          <Label htmlFor='businessType' className='contact-page-form-label-3'>
-                            Business Type *
+                          <Label htmlFor='phone' className='contact-page-form-label-3'>
+                            Phone
                           </Label>
-                          <select
-                            id='businessType'
-                            name='businessType'
+                          <Input
+                            id='phone'
+                            name='phone'
+                            type='tel'
+                            placeholder='Optional'
+                            autoComplete='tel'
+                            value={formState.phone}
+                            onChange={event => handleInputChange('phone', event.target.value)}
+                            className='contact-page-form-input-3'
+                          />
+                        </div>
+
+                        <div>
+                          <Label htmlFor='organizationName' className='contact-page-form-label-4'>
+                            Business or Clinic Name *
+                          </Label>
+                          <Input
+                            id='organizationName'
+                            name='organizationName'
+                            type='text'
+                            placeholder='Company or clinic name'
                             required
-                            value={formState.businessType}
+                            autoComplete='organization'
+                            value={formState.organizationName}
                             onChange={event =>
-                              handleInputChange('businessType', event.target.value)
+                              handleInputChange('organizationName', event.target.value)
                             }
-                            className='contact-page-form-input-3 mw-select'
-                          >
-                            <option value=''>Select business type</option>
-                            {BUSINESS_TYPE_OPTIONS.map(option => (
-                              <option key={option.value} value={option.value}>
-                                {option.label}
-                              </option>
-                            ))}
-                          </select>
+                            className='contact-page-form-input-4'
+                          />
                         </div>
 
                         <div>
-                          <Label htmlFor='primaryGoal' className='contact-page-form-label-4'>
-                            Primary Goal *
+                          <Label htmlFor='websiteUrl' className='contact-page-form-label-5'>
+                            Website URL
                           </Label>
-                          <select
-                            id='primaryGoal'
-                            name='primaryGoal'
-                            required
-                            value={formState.primaryGoal}
-                            onChange={event => handleInputChange('primaryGoal', event.target.value)}
-                            className='contact-page-form-input-4 mw-select'
-                          >
-                            <option value=''>Select primary goal</option>
-                            {PRIMARY_GOAL_OPTIONS.map(option => (
-                              <option key={option.value} value={option.value}>
-                                {option.label}
-                              </option>
-                            ))}
-                          </select>
+                          <Input
+                            id='websiteUrl'
+                            name='websiteUrl'
+                            type='url'
+                            placeholder='https://example.com'
+                            autoComplete='url'
+                            value={formState.websiteUrl}
+                            onChange={event => handleInputChange('websiteUrl', event.target.value)}
+                            className='contact-page-form-input-5'
+                          />
                         </div>
 
                         <div>
-                          <Label htmlFor='revenueRange' className='contact-page-form-label-5'>
-                            Revenue Range *
+                          <Label htmlFor='industryType' className='contact-page-form-label-6'>
+                            Industry or Practice Type *
                           </Label>
-                          <select
-                            id='revenueRange'
-                            name='revenueRange'
+                          <Input
+                            id='industryType'
+                            name='industryType'
+                            type='text'
+                            placeholder='HVAC, dental implant clinic, roofing, etc.'
                             required
-                            value={formState.revenueRange}
+                            value={formState.industryType}
                             onChange={event =>
-                              handleInputChange('revenueRange', event.target.value)
+                              handleInputChange('industryType', event.target.value)
                             }
-                            className='contact-page-form-input-5 mw-select'
+                            className='contact-page-form-input-6'
+                          />
+                        </div>
+                      </div>
+
+                      <div className='contact-page-form-field-4 grid gap-4 md:grid-cols-2'>
+                        <div>
+                          <Label htmlFor='mainConcern' className='contact-page-form-label-7'>
+                            Main Concern *
+                          </Label>
+                          <select
+                            id='mainConcern'
+                            name='mainConcern'
+                            required
+                            value={formState.mainConcern}
+                            onChange={event => handleInputChange('mainConcern', event.target.value)}
+                            className='contact-page-form-input-7 mw-select'
                           >
-                            <option value=''>Select revenue range</option>
-                            {REVENUE_RANGE_OPTIONS.map(option => (
+                            <option value=''>Select main concern</option>
+                            {MAIN_CONCERN_OPTIONS.map(option => (
                               <option key={option.value} value={option.value}>
                                 {option.label}
                               </option>
@@ -463,19 +467,24 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                         </div>
 
                         <div>
-                          <Label htmlFor='timeline' className='contact-page-form-label-6'>
-                            Timeline *
+                          <Label
+                            htmlFor='preferredContactMethod'
+                            className='contact-page-form-label-8'
+                          >
+                            Preferred Contact Method *
                           </Label>
                           <select
-                            id='timeline'
-                            name='timeline'
+                            id='preferredContactMethod'
+                            name='preferredContactMethod'
                             required
-                            value={formState.timeline}
-                            onChange={event => handleInputChange('timeline', event.target.value)}
-                            className='contact-page-form-input-6 mw-select'
+                            value={formState.preferredContactMethod}
+                            onChange={event =>
+                              handleInputChange('preferredContactMethod', event.target.value)
+                            }
+                            className='contact-page-form-input-8 mw-select'
                           >
-                            <option value=''>Select timeline</option>
-                            {TIMELINE_OPTIONS.map(option => (
+                            <option value=''>Select contact method</option>
+                            {PREFERRED_CONTACT_METHOD_OPTIONS.map(option => (
                               <option key={option.value} value={option.value}>
                                 {option.label}
                               </option>
@@ -485,7 +494,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                       </div>
 
                       <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
-                        We use this to prioritize your request and tailor your response.
+                        We use this to understand the current path before replying.
                       </p>
 
                       <div className='hidden' aria-hidden='true'>
@@ -502,23 +511,54 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                       </div>
 
                       <div className='contact-page-form-field-7'>
-                        <Label htmlFor='message' className='contact-page-form-label-7'>
-                          Message *
+                        <Label htmlFor='slippingNow' className='contact-page-form-label-9'>
+                          What is slipping right now? *
                         </Label>
                         <Textarea
-                          id='message'
-                          name='message'
-                          placeholder='Tell us what you need, what page brought you here, or what you want to discuss.'
+                          id='slippingNow'
+                          name='slippingNow'
+                          placeholder='Missed calls, unclear website pages, slow replies, quote follow-up, weak local visibility, reviews, or something else.'
                           rows={6}
                           required
-                          value={formState.message}
-                          onChange={event => handleInputChange('message', event.target.value)}
+                          value={formState.slippingNow}
+                          onChange={event => handleInputChange('slippingNow', event.target.value)}
                           className='contact-page-form-textarea-1'
                         />
                       </div>
 
+                      <div className='contact-page-form-field-8'>
+                        <Label htmlFor='afterContact' className='contact-page-form-label-10'>
+                          What happens after someone calls, books, messages, or fills a form? *
+                        </Label>
+                        <Textarea
+                          id='afterContact'
+                          name='afterContact'
+                          placeholder='Who sees it, who replies, where it is recorded, and how follow-up happens now.'
+                          rows={5}
+                          required
+                          value={formState.afterContact}
+                          onChange={event => handleInputChange('afterContact', event.target.value)}
+                          className='contact-page-form-textarea-2'
+                        />
+                      </div>
+
+                      <div className='contact-page-form-field-9'>
+                        <Label htmlFor='message' className='contact-page-form-label-11'>
+                          Anything else we should know?
+                        </Label>
+                        <Textarea
+                          id='message'
+                          name='message'
+                          placeholder='Optional context, page source, or constraints.'
+                          rows={4}
+                          value={formState.message}
+                          onChange={event => handleInputChange('message', event.target.value)}
+                          className='contact-page-form-textarea-3'
+                        />
+                      </div>
+
                       {turnstileSiteKey ? (
-                        <div className='contact-page-form-field-8'>
+                        <div className='contact-page-form-field-10'>
                           <div
                             className='cf-turnstile'
                             data-sitekey={turnstileSiteKey}
@@ -558,10 +598,11 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                       </button>
 
                       <p className='contact-page-form-text-1 text-sm mw-text-secondary'>
-                        ✔ No spam
+                        No spam
                         <br />
-                        ✔ Personal response
-                        <br />✔ Reply within 24 hours
+                        Personal response
+                        <br />
+                        Reply within one working day
                       </p>
 
                       <p className='contact-page-form-text-1 text-sm mw-text-secondary'>

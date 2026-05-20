@@ -3,11 +3,9 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-import { env } from '@/env';
 import { SERVICES } from '@/global/site-wide/services';
 import { normalizeContactContext } from '@/lib/contact/contactHref';
 import { logConversion } from '@/lib/conversions/logConversion';
-import { SITE_ORIGIN } from '@/lib/seo/config';
 
 export const runtime = 'nodejs';
 
@@ -23,58 +21,53 @@ function requireConfiguredValue(value: string | undefined, variableName: string)
 
 const mailConfig = SERVICES.mail.enabled
   ? {
-      client: new Resend(requireConfiguredValue(env.RESEND_API_KEY, 'RESEND_API_KEY')),
-      contactEmail: requireConfiguredValue(env.CONTACT_EMAIL, 'CONTACT_EMAIL'),
-      contactFromEmail: requireConfiguredValue(env.CONTACT_FROM_EMAIL, 'CONTACT_FROM_EMAIL'),
+      client: new Resend(requireConfiguredValue(process.env.RESEND_API_KEY, 'RESEND_API_KEY')),
+      contactEmail: requireConfiguredValue(process.env.CONTACT_EMAIL, 'CONTACT_EMAIL'),
+      contactFromEmail: requireConfiguredValue(
+        process.env.CONTACT_FROM_EMAIL,
+        'CONTACT_FROM_EMAIL'
+      ),
     }
   : null;
 const turnstileSecretKey = SERVICES.captcha.enabled
-  ? requireConfiguredValue(env.TURNSTILE_SECRET_KEY, 'TURNSTILE_SECRET_KEY')
+  ? requireConfiguredValue(process.env.TURNSTILE_SECRET_KEY, 'TURNSTILE_SECRET_KEY')
   : undefined;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
-const FOLLOW_UP_DELAY_MS = 1000 * 60 * 60 * 24;
-const SYSTEM_EMAIL_MAP = {
-  'smart-website-systems': 'hello@mindwp.com',
-  'lead-response-handling': 'sales@mindwp.com',
-  'follow-up-crm': 'hello@mindwp.com',
-  'local-seo-authority': 'seo@mindwp.com',
-  'reputation-review-systems': 'hello@mindwp.com',
-  default: 'hello@mindwp.com',
-} as const;
+const configuredSiteOrigin =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.NEXT_PUBLIC_SITE_ORIGIN ??
+  process.env.NEXT_PUBLIC_APP_URL;
 
 interface ContactRequestBody {
   name?: string;
   email?: string;
+  phone?: string;
+  organizationName?: string;
+  websiteUrl?: string;
+  industryType?: string;
+  mainConcern?: string;
+  slippingNow?: string;
+  afterContact?: string;
+  preferredContactMethod?: string;
   message?: string;
-  businessType?: string;
-  primaryGoal?: string;
-  revenueRange?: string;
-  timeline?: string;
   system?: string;
   source?: string;
   website?: string;
   captchaToken?: string;
 }
 
-const BUSINESS_TYPE_VALUES = new Set([
-  'local-service',
-  'field-service',
-  'appointment-service',
-  'trade-contractor',
-  'other',
+const MAIN_CONCERN_VALUES = new Set([
+  'website-clarity',
+  'local-visibility',
+  'missed-calls-forms-messages',
+  'follow-up-crm-visibility',
+  'reviews-proof',
+  'not-sure-yet',
 ]);
-const PRIMARY_GOAL_VALUES = new Set([
-  'more-leads',
-  'better-conversion',
-  'follow-up',
-  'performance',
-  'full-system',
-]);
-const REVENUE_RANGE_VALUES = new Set(['under-1k', '1k-5k', '5k-20k', '20k-plus']);
-const TIMELINE_VALUES = new Set(['asap', 'this-month', '1-3-months', 'exploring']);
+const PREFERRED_CONTACT_METHOD_VALUES = new Set(['email', 'phone', 'text-message', 'whatsapp']);
 
-function normalizeLeadField(value: string | undefined, allowedValues: Set<string>) {
+function normalizeSelectField(value: string | undefined, allowedValues: Set<string>) {
   const normalizedValue = value?.trim();
 
   if (!normalizedValue || !allowedValues.has(normalizedValue)) {
@@ -84,118 +77,8 @@ function normalizeLeadField(value: string | undefined, allowedValues: Set<string
   return normalizedValue;
 }
 
-function formatLeadField(value: string | undefined) {
+function formatReviewField(value: string | undefined) {
   return value ?? 'Not provided';
-}
-
-function classifyLead({
-  system,
-  message,
-  revenueRange,
-  timeline,
-}: {
-  system: string;
-  message: string;
-  revenueRange?: string;
-  timeline?: string;
-}) {
-  const normalizedMessage = message.toLowerCase();
-
-  if (revenueRange === '20k-plus' && timeline === 'asap') {
-    return { priority: 'high' as const };
-  }
-
-  if (/(price|cost|quote)/.test(normalizedMessage)) {
-    return { priority: 'high' as const };
-  }
-
-  if (message.length > 100) {
-    return { priority: 'medium' as const };
-  }
-
-  void system;
-  return { priority: 'low' as const };
-}
-
-function getRoutedEmail(system: string) {
-  return SYSTEM_EMAIL_MAP[system as keyof typeof SYSTEM_EMAIL_MAP] ?? SYSTEM_EMAIL_MAP.default;
-}
-
-function getPriorityMessage(priority: 'high' | 'medium' | 'low') {
-  if (priority === 'high') {
-    return "We're prioritizing your request and will respond shortly.";
-  }
-
-  if (priority === 'medium') {
-    return 'Our team is reviewing your request.';
-  }
-
-  return "We'll get back to you within 24 hours.";
-}
-
-function getFollowUpMessage(priority: 'high' | 'medium' | 'low') {
-  if (priority === 'high') {
-    return 'Just checking in — we can help you get this resolved quickly.';
-  }
-
-  return "If you're still looking for a solution, I'd be happy to help.";
-}
-
-function scheduleFollowUpEmail({
-  submissionId,
-  name,
-  email,
-  system,
-  priority,
-  routedTo,
-}: {
-  submissionId: string;
-  name: string;
-  email: string;
-  system: string;
-  priority: 'high' | 'medium' | 'low';
-  routedTo: string;
-}) {
-  if (!mailConfig) {
-    return;
-  }
-
-  console.log('[FOLLOW UP SCHEDULED]', {
-    submissionId,
-    email,
-    priority,
-  });
-
-  const timer = setTimeout(async () => {
-    try {
-      const { error } = await mailConfig.client.emails.send({
-        from: `MindWP <${mailConfig.contactFromEmail}>`,
-        to: [email],
-        subject: 'Just checking in — MindWP',
-        replyTo: routedTo,
-        text: `Hi ${name},
-
-Just following up on your request about:
-${system}
-
-${getFollowUpMessage(priority)}
-
-Feel free to reply anytime.
-
-— MindWP`,
-      });
-
-      if (error) {
-        console.warn('[FOLLOW UP FAILED]', submissionId);
-      }
-    } catch {
-      console.warn('[FOLLOW UP FAILED]', submissionId);
-    }
-  }, FOLLOW_UP_DELAY_MS);
-
-  if (typeof timer === 'object' && timer && 'unref' in timer && typeof timer.unref === 'function') {
-    timer.unref();
-  }
 }
 
 function isValidContactEmail(email: string) {
@@ -228,7 +111,8 @@ function isAllowedOrigin(request: Request) {
   }
 
   const requestOrigin = new URL(request.url).origin;
-  return origin === requestOrigin || origin === SITE_ORIGIN;
+  const configuredOrigin = configuredSiteOrigin ? new URL(configuredSiteOrigin).origin : null;
+  return origin === requestOrigin || origin === configuredOrigin;
 }
 
 function getClientAddress(request: Request) {
@@ -279,7 +163,7 @@ async function verifyTurnstileToken(request: Request, captchaToken: string) {
     return true;
   }
 
-  if (env.NODE_ENV !== 'production' && SERVICES.debug.bypassCaptchaInDev) {
+  if (process.env.NODE_ENV !== 'production' && SERVICES.debug.bypassCaptchaInDev) {
     return true;
   }
 
@@ -318,22 +202,38 @@ export async function POST(request: Request) {
   const body = (await request.json()) as ContactRequestBody;
   const name = body.name?.trim();
   const email = body.email?.trim();
+  const phone = body.phone?.trim();
+  const organizationName = body.organizationName?.trim();
+  const websiteUrl = body.websiteUrl?.trim();
+  const industryType = body.industryType?.trim();
+  const slippingNow = body.slippingNow?.trim();
+  const afterContact = body.afterContact?.trim();
   const message = body.message?.trim();
   const website = body.website?.trim();
   const captchaToken = body.captchaToken?.trim();
   const userAgent = request.headers.get('user-agent')?.trim() || 'unknown';
   const ip = getClientAddress(request);
   const timestamp = new Date().toISOString();
-  const businessType = normalizeLeadField(body.businessType, BUSINESS_TYPE_VALUES);
-  const primaryGoal = normalizeLeadField(body.primaryGoal, PRIMARY_GOAL_VALUES);
-  const revenueRange = normalizeLeadField(body.revenueRange, REVENUE_RANGE_VALUES);
-  const timeline = normalizeLeadField(body.timeline, TIMELINE_VALUES);
+  const mainConcern = normalizeSelectField(body.mainConcern, MAIN_CONCERN_VALUES);
+  const preferredContactMethod = normalizeSelectField(
+    body.preferredContactMethod,
+    PREFERRED_CONTACT_METHOD_VALUES
+  );
 
   if (website) {
     return createErrorResponse('Spam detected.', 400, submissionId);
   }
 
-  if (!name || !email || !message) {
+  if (
+    !name ||
+    !email ||
+    !organizationName ||
+    !industryType ||
+    !mainConcern ||
+    !slippingNow ||
+    !afterContact ||
+    !preferredContactMethod
+  ) {
     return createErrorResponse('Missing fields', 400, submissionId);
   }
 
@@ -354,27 +254,21 @@ export async function POST(request: Request) {
     );
   }
 
-  const { priority } = classifyLead({
-    system,
-    message: message ?? '',
-    revenueRange,
-    timeline,
-  });
-  const routedTo = getRoutedEmail(system);
-  const priorityLabel = priority.toUpperCase();
-  const priorityMessage = getPriorityMessage(priority);
-
   console.info('[CONTACT] Incoming', {
     submissionId,
     name,
     email,
+    phone,
     system,
     source,
+    organizationName,
+    websiteUrl,
+    industryType,
+    mainConcern,
+    preferredContactMethod,
+    slippingNowLength: slippingNow.length,
+    afterContactLength: afterContact.length,
     messageLength: message?.length ?? 0,
-    businessType,
-    primaryGoal,
-    revenueRange,
-    timeline,
     hasCaptchaToken: Boolean(captchaToken),
     websiteFilled: Boolean(website),
     timestamp,
@@ -414,31 +308,37 @@ export async function POST(request: Request) {
   try {
     const { data, error } = await mailConfig.client.emails.send({
       from: `Website <${mailConfig.contactFromEmail}>`,
-      to: [routedTo || mailConfig.contactEmail],
-      subject: `[${priorityLabel}] New Lead — ${system} — ${source}`,
+      to: [mailConfig.contactEmail],
+      subject: `New System Review Request - ${system} - ${source}`,
       replyTo: email,
       text: `Submission ID: ${submissionId}
-    Priority: ${priorityLabel}
-    Routed To: ${routedTo}
 
     --------------------
 
 Name: ${name}
 Email: ${email}
+Phone: ${formatReviewField(phone)}
+Preferred Contact Method: ${formatReviewField(preferredContactMethod)}
 
 System: ${system}
 Source: ${source}
 
-BUSINESS INFO:
-- Type: ${formatLeadField(businessType)}
-- Goal: ${formatLeadField(primaryGoal)}
-- Revenue: ${formatLeadField(revenueRange)}
-- Timeline: ${formatLeadField(timeline)}
+DIAGNOSTIC CONTEXT:
+- Business or Clinic: ${organizationName}
+- Website URL: ${formatReviewField(websiteUrl)}
+- Industry or Practice Type: ${industryType}
+- Main Concern: ${mainConcern}
+
+WHAT IS SLIPPING:
+${slippingNow}
+
+WHAT HAPPENS AFTER CONTACT:
+${afterContact}
 
     --------------------
 
-Message:
-${message}
+Additional Context:
+${formatReviewField(message)}
 
     --------------------
 
@@ -465,22 +365,20 @@ Metadata:
     const { error: autoError } = await mailConfig.client.emails.send({
       from: `MindWP <${mailConfig.contactFromEmail}>`,
       to: [email],
-      subject: 'We received your request — MindWP',
-      replyTo: routedTo,
+      subject: 'We received your system review request - MindWP',
+      replyTo: mailConfig.contactEmail,
       text: `Hi ${name},
 
 Thanks for reaching out.
 
-We've received your request regarding:
-${system}
+We've received your system review request for:
+${organizationName}
 
-${priorityMessage}
+We'll review the context you sent, including the current website or handling path where available, and reply with a practical next step within one working day.
 
-We'll review your request and get back to you soon.
+If something urgent changes, reply to this email with the update.
 
-If your request is urgent, feel free to reply to this email.
-
-— MindWP`,
+- MindWP`,
     });
 
     if (autoError) {
@@ -489,16 +387,6 @@ If your request is urgent, feel free to reply to this email.
       console.log('[AUTO RESPONSE SENT]', {
         submissionId,
         email,
-        priority,
-      });
-
-      scheduleFollowUpEmail({
-        submissionId,
-        name,
-        email,
-        system,
-        priority,
-        routedTo,
       });
     }
 
@@ -507,8 +395,8 @@ If your request is urgent, feel free to reply to this email.
       system,
       source,
       email,
-      priority,
-      routedTo,
+      mainConcern,
+      preferredContactMethod,
       timestamp: new Date().toISOString(),
     });
 
@@ -518,8 +406,8 @@ If your request is urgent, feel free to reply to this email.
       source,
       email,
       timestamp,
-      priority,
-      routedTo,
+      mainConcern,
+      preferredContactMethod,
     });
 
     return NextResponse.json({

@@ -25,6 +25,7 @@ Do not ask approval questions that these docs already answer.
 - Do not revive removed service names, removed identifiers, or removed offer structures.
 - Do not create parallel offer models.
 - Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
+- Public topic hubs are removed. `topics[]` is internal metadata only and must not create public routes, public templates, route ownership, indexing entries, navigation paths, or generated public inventory entries.
 - Do not preserve unpublished removed routes, aliases, or compatibility wrappers.
 - Do not add inactive industry lanes, public topic hubs, public system taxonomies, or portfolio aliases during cleanup.
 - Do not publicly mention GoHighLevel, GHL, or HighLevel.
@@ -151,6 +152,7 @@ Never create:
 - fictional client results presented as real
 
 Scenario studies and system examples are allowed only when clearly framed as illustrative or operational examples.
+Scenario studies must not render real-result labels such as Results, ROI, Testimonial, investment return, or fake before/after proof. Only real case studies may use measured outcome, testimonial, ROI, attribution, or client-result language.
 
 ## CTA And Public Language Rules
 
@@ -171,6 +173,9 @@ For source cleanup or page work, run the relevant checks:
 - `pnpm lint`
 - `pnpm typecheck`
 - `pnpm check:names`
+- `pnpm check:domain-registries`
+- `pnpm check:clean-base`
+- `pnpm check:architecture`
 - `pnpm check:minimal`
 - `pnpm build`
 - `pnpm check:frontend`

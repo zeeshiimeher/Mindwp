@@ -4,41 +4,36 @@ import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 // =============================================================================
-// AI Chat — page
+// Handling Paths — page
 // =============================================================================
 
-export const aiChatData = {
+export const handlingPathsData = {
   seo: buildFeatureSeo({
-    slug: 'aichat',
-    title: 'Smart Website Systems for Service Businesses',
+    slug: 'handling-paths',
+    title: 'Handling Paths for Follow-Up and CRM Visibility',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'Handling paths that make ownership, status, and next steps visible after enquiries, quotes, bookings, or consultation requests arrive.',
   }),
-  slug: 'aichat',
-  primarySystem: 'lead-response-handling',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  slug: 'handling-paths',
+  primarySystem: 'follow-up-crm',
+  supportingSystems: ['lead-response-handling'],
+  topics: ['follow-up', 'crm-visibility', 'lead-routing', 'pipeline-visibility'],
+  eyebrow: 'Handling paths',
+  category: 'Follow-up visibility',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'Handling paths',
+    title: 'The Enquiry Arrives. [[muted:The Next Step Still Needs An Owner.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'Handling paths show what should happen after a call, form, booking, quote, or consultation request so follow-up does not depend on memory.',
+    list: ['Owner visible', 'Status clear', 'Next step tracked'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Handling path',
+      subtitle: 'Arrived · assigned · followed up',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'Quote sent', value: 'Needs next step', status: 'unowned' as const },
+        { label: 'Owner assigned', value: 'Visible', status: 'handled' as const },
+        { label: 'No reminder set', value: 'At risk', status: 'leaking' as const },
+        { label: 'Follow-up due', value: 'Tracked', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +74,26 @@ export const aiChatData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review the handling path.',
+      muted: 'Find where follow-up loses ownership.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review what happens after enquiries arrive and where ownership, status, or next steps become unclear.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'follow-up-crm',
+          sourceType: 'feature',
+          slug: 'handling-paths',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'Where ownership becomes unclear' },
+      { num: '02', text: 'Which next steps depend on memory' },
+      { num: '03', text: 'Where response should hand off to follow-up' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

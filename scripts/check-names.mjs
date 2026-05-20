@@ -55,6 +55,17 @@ const forbiddenPatterns = [
     pattern: /\b(?:AI Lead Handling|CRM & Automation|Revenue Growth Systems|Revenue Growth)\b/g,
   },
   { label: 'removed systems route', pattern: /\/systems(?:\/|\b)/g },
+  { label: 'removed topics route', pattern: /\/topics(?:\/|\b)/g },
+  { label: 'removed blog topic route', pattern: /\/blog\/topic(?:\/|\b)/g },
+  { label: 'removed portfolio route', pattern: /\/portfolio(?:\/|\b)/g },
+  { label: 'removed aichat feature slug', pattern: /\baichat\b/g },
+  { label: 'removed workflows feature slug', pattern: /\bworkflows\b/g },
+  { label: 'removed public topic registry', pattern: /\btopicRegistry\b/g },
+  { label: 'removed public topic template', pattern: /\bBlogTopicTemplate\b/g },
+  {
+    label: 'Revenue Recovery public structure',
+    pattern: /\bRevenue Recovery\b|\brevenue-recovery\b|\brevenueRecovery\b/g,
+  },
   {
     label: 'removed broad metadata field',
     pattern: /\bsystems(?:\?: string\[\]|: string\[\]|: \[|\[\])/g,

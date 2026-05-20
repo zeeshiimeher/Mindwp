@@ -8,27 +8,27 @@ import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
 interface Props {
-  data: FeaturePageDataBySlug['aichat'];
+  data: FeaturePageDataBySlug['handling-paths'];
 }
 
-export function AIChatRenderer({ data }: Props) {
+export function HandlingPathsRenderer({ data }: Props) {
   const { hero, cta } = data;
   const faq = data.faq;
 
   return (
     <main>
-      <AIChatHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
-      <AIChatRecognitionSection />
-      {faq ? <AIChatFAQ faq={faq} /> : null}
-      <AIChatDecisionPanel cta={cta} />
+      <HandlingPathsHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <HandlingPathsRecognitionSection />
+      {faq ? <HandlingPathsFAQ faq={faq} /> : null}
+      <HandlingPathsDecisionPanel cta={cta} />
     </main>
   );
 }
 
-function AIChatHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+function HandlingPathsHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
   return (
     <HeroFrame
-      ariaLabel='Response handling hero'
+      ariaLabel='Handling paths hero'
       eyebrow={hero.eyebrow}
       title={hero.title}
       description={hero.description}
@@ -42,12 +42,12 @@ function AIChatHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: s
       ]}
       chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
       chipDotVariant='subtle'
-      visual={<AIChatSignalPanel visual={hero.visual} />}
+      visual={<HandlingPathsSignalPanel visual={hero.visual} />}
     />
   );
 }
 
-function AIChatSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+function HandlingPathsSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
   if (!visual) return null;
 
   return (
@@ -99,17 +99,17 @@ function AIChatSignalPanel({ visual }: { visual: Props['data']['hero']['visual']
   );
 }
 
-function AIChatRecognitionSection() {
+function HandlingPathsRecognitionSection() {
   return (
     <SectionShell
       id='website-handoff'
-      ariaLabel='Where websites usually fail'
+      ariaLabel='Feature support path'
       tone='mist'
       heading={{
-        eyebrow: 'Where websites usually fail',
-        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        eyebrow: 'Feature support path',
+        title: 'The capability matters when the path around it is clear.',
         description:
-          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+          'Feature pages stay tied to the system they support: what arrives, who sees it, what happens next, and where follow-up stays visible.',
       }}
     >
       <div className='grid gap-5 lg:grid-cols-3'>
@@ -144,7 +144,7 @@ function AIChatRecognitionSection() {
   );
 }
 
-function AIChatFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+function HandlingPathsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
   return (
     <FAQSection
       title={faq.header.title}
@@ -156,12 +156,12 @@ function AIChatFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
       }))}
       tone='mist'
       variant='split'
-      ariaLabel='Smart Website Systems FAQ'
+      ariaLabel='Handling paths FAQ'
     />
   );
 }
 
-function AIChatDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+function HandlingPathsDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
   return (
     <DecisionPanel
       heading={{
@@ -176,4 +176,4 @@ function AIChatDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
   );
 }
 
-export default AIChatRenderer;
+export default HandlingPathsRenderer;

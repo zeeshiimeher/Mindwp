@@ -1,5 +1,6 @@
 // ─── Image System Main Exports ──────────────────────────────────────
-// Central export point for the MindWP automated image pipeline
+// Internal experimental image pipeline. Do not use dashboard, analytics,
+// workflow, SaaS, or tool-screen tone from this folder as public page direction.
 
 // Types
 export type {

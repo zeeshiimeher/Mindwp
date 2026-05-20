@@ -94,11 +94,11 @@ export type CaseStudyTemplateSection =
       columns?: 2 | 3 | 4;
     }
   | {
-      type: 'workflows';
+      type: 'handling-paths';
       badge?: string;
       title: string;
       description?: string;
-      workflows: Array<{ trigger: string; actions: string[] }>;
+      paths: Array<{ trigger: string; actions: string[] }>;
     }
   | {
       type: 'faq';
@@ -126,7 +126,7 @@ const renderableCaseStudySectionTypes = new Set<CaseStudyTemplateSection['type']
   'investment',
   'business-impact',
   'deliverables',
-  'workflows',
+  'handling-paths',
   'faq',
   'cta',
 ]);
@@ -162,8 +162,8 @@ function validateRenderableSection(section: CaseStudyTemplateSection) {
       return isSectionArray(section.results);
     case 'investment':
       return Boolean(section.investment);
-    case 'workflows':
-      return isSectionArray(section.workflows);
+    case 'handling-paths':
+      return isSectionArray(section.paths);
     case 'faq':
       return isSectionArray(section.items);
     default:
@@ -224,7 +224,13 @@ export function CaseStudyTemplate({
   };
 }) {
   const resolvedSections = sections ?? [];
-  const renderedSections = resolvedSections.filter(validateRenderableSection);
+  const isScenarioStudy = metadata.client === 'Scenario study';
+  const renderedSections = resolvedSections
+    .filter(validateRenderableSection)
+    .filter(
+      section =>
+        !isScenarioStudy || !['metrics', 'testimonial', 'investment'].includes(section.type)
+    );
   const primarySystem = metadata.primarySystem ?? 'smart-website-systems';
   const ctaSection = renderedSections.find(section => section.type === 'cta');
 
@@ -232,13 +238,14 @@ export function CaseStudyTemplate({
     <CTARegistryProvider pageId={pageId} pageType='case-study' primarySystem={primarySystem}>
       <main>
         <SectionShell
-          ariaLabel={`${metadata.business} scenario study`}
+          ariaLabel={`${metadata.business} ${isScenarioStudy ? 'illustrative scenario' : 'case study'}`}
           tone='mist'
           heading={{
-            eyebrow: `${metadata.industryLabel} scenario study`,
+            eyebrow: `${metadata.industryLabel} ${isScenarioStudy ? 'illustrative scenario' : 'case study'}`,
             title: metadata.heroHeadline,
-            description:
-              'A realistic operating example. It shows the weak point, the system change, and what becomes easier to handle.',
+            description: isScenarioStudy
+              ? 'A realistic operating example. It shows the weak point, the system change, and what becomes easier to handle.'
+              : 'A case study showing the operating context, system change, and observed outcome.',
           }}
         >
           <div className='flex flex-wrap items-center gap-3'>
@@ -264,10 +271,11 @@ export function CaseStudyTemplate({
             ariaLabel='Case study breakdown'
             tone='white'
             heading={{
-              eyebrow: 'Scenario breakdown',
-              title: 'What changed in the system',
-              description:
-                'These examples are used for system clarity. They are not presented as measured client proof.',
+              eyebrow: isScenarioStudy ? 'Scenario breakdown' : 'Case study breakdown',
+              title: isScenarioStudy ? 'What this example shows' : 'What changed in the system',
+              description: isScenarioStudy
+                ? 'These examples are used for system clarity. They are not presented as measured client proof.'
+                : 'The sections below describe the operating change and the evidence available for this case study.',
             }}
           >
             <div className='grid gap-5'>
@@ -278,6 +286,7 @@ export function CaseStudyTemplate({
                     key={`${section.type}-${index}`}
                     section={section}
                     index={index}
+                    isScenarioStudy={isScenarioStudy}
                   />
                 ))}
             </div>
@@ -294,7 +303,7 @@ export function CaseStudyTemplate({
             description:
               ctaSection?.type === 'cta'
                 ? ctaSection.body
-                : 'If this case study looks familiar, the next step is to find which system change would remove the same friction in your business.',
+                : `If this ${isScenarioStudy ? 'example' : 'case study'} looks familiar, the next step is to find which system change would remove the same friction in your business.`,
           }}
           actions={[
             {
@@ -313,7 +322,12 @@ export function CaseStudyTemplate({
                   text: item.text,
                 }))
               : [
-                  { num: '01', text: 'What changed in the case study' },
+                  {
+                    num: '01',
+                    text: isScenarioStudy
+                      ? 'What this example shows'
+                      : 'What changed in the case study',
+                  },
                   { num: '02', text: 'Where your current handoff breaks' },
                   { num: '03', text: 'What should be fixed first' },
                 ]
@@ -328,15 +342,19 @@ export function CaseStudyTemplate({
 function CaseStudySectionBlock({
   section,
   index,
+  isScenarioStudy,
 }: {
   section: CaseStudyTemplateSection;
   index: number;
+  isScenarioStudy: boolean;
 }) {
   switch (section.type) {
     case 'hero':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Scenario</p>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>
+            {isScenarioStudy ? 'Illustrative scenario' : 'Starting context'}
+          </p>
           <h3>Starting point</h3>
           <div>{section.introHtml}</div>
         </article>
@@ -345,7 +363,7 @@ function CaseStudySectionBlock({
     case 'metrics':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Metrics</p>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>Measured markers</p>
           <h3>The visible result markers</h3>
           <div className='grid gap-3 md:grid-cols-3'>
             {section.keyMetrics.map(metric => (
@@ -361,7 +379,9 @@ function CaseStudySectionBlock({
     case 'problem':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Problem</p>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>
+            {isScenarioStudy ? 'Before / clearer path' : 'Problem'}
+          </p>
           <h3>{section.problemHeading}</h3>
           <div className='grid gap-3'>
             {section.problemDescription?.map(paragraph => (
@@ -383,7 +403,9 @@ function CaseStudySectionBlock({
     case 'solution':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Solution</p>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>
+            {isScenarioStudy ? 'Operating change' : 'Solution'}
+          </p>
           <h3>{section.solutionHeading}</h3>
           {section.solutionDescription ? <p>{section.solutionDescription}</p> : null}
           {section.whatWeDid?.length ? (
@@ -402,8 +424,12 @@ function CaseStudySectionBlock({
     case 'process':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Process</p>
-          <h3>How the change was implemented</h3>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>
+            {isScenarioStudy ? 'Path change' : 'Process'}
+          </p>
+          <h3>
+            {isScenarioStudy ? 'How the path becomes clearer' : 'How the change was implemented'}
+          </h3>
           <div className='grid gap-3'>
             {section.howWeDidIt?.map(phase => (
               <div key={`${phase.phase}-${phase.title}`} className='mw-surface-panel p-4'>
@@ -421,7 +447,7 @@ function CaseStudySectionBlock({
       return (
         <article className='mw-surface-card p-6'>
           <p className='mw-text-eyebrow mw-text-signal-cyan'>System pieces</p>
-          <h3>Features and tools used</h3>
+          <h3>{isScenarioStudy ? 'Relevant system pieces' : 'Features and tools used'}</h3>
           <div className='grid gap-3 md:grid-cols-2'>
             {section.featuresUsed?.map(group => (
               <div key={group.category} className='mw-surface-panel p-4'>
@@ -440,8 +466,10 @@ function CaseStudySectionBlock({
     case 'results':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Results</p>
-          <h3>Before and after</h3>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>
+            {isScenarioStudy ? 'What became clearer' : 'Results'}
+          </p>
+          <h3>{isScenarioStudy ? 'Before / clearer path' : 'Before and after'}</h3>
           <div className='grid gap-3 md:grid-cols-2'>
             {section.results.map(result => (
               <div
@@ -454,9 +482,13 @@ function CaseStudySectionBlock({
                 {result.title ? <strong>{result.title}</strong> : null}
                 {result.before || result.after ? (
                   <p>
-                    {result.before ? `Before: ${result.before}` : ''}
-                    {result.before && result.after ? ' · ' : ''}
-                    {result.after ? `After: ${result.after}` : ''}
+                    {result.before
+                      ? `${isScenarioStudy ? 'Before path' : 'Before'}: ${result.before}`
+                      : ''}
+                    {result.before && result.after ? ' / ' : ''}
+                    {result.after
+                      ? `${isScenarioStudy ? 'Clearer path' : 'After'}: ${result.after}`
+                      : ''}
                   </p>
                 ) : null}
                 {result.improvement ? <p>{result.improvement}</p> : null}
@@ -474,7 +506,7 @@ function CaseStudySectionBlock({
           <p className='mw-text-eyebrow mw-text-signal-cyan'>Testimonial</p>
           <p>{section.testimonial.quote}</p>
           <footer className='mw-text-secondary'>
-            — {section.testimonial.author}, {section.testimonial.role}
+            - {section.testimonial.author}, {section.testimonial.role}
           </footer>
         </blockquote>
       );
@@ -515,18 +547,18 @@ function CaseStudySectionBlock({
         />
       );
 
-    case 'workflows':
+    case 'handling-paths':
       return (
         <article className='mw-surface-card p-6'>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.badge ?? 'Workflows'}</p>
+          <p className='mw-text-eyebrow mw-text-signal-cyan'>{section.badge ?? 'Handling paths'}</p>
           <h3>{section.title}</h3>
           {section.description ? <p>{section.description}</p> : null}
           <div className='mt-4 grid gap-3'>
-            {section.workflows.map(workflow => (
-              <div key={workflow.trigger} className='mw-surface-panel p-4'>
-                <strong>{workflow.trigger}</strong>
+            {section.paths.map(path => (
+              <div key={path.trigger} className='mw-surface-panel p-4'>
+                <strong>{path.trigger}</strong>
                 <ul className='mt-3 grid gap-2'>
-                  {workflow.actions.map(action => (
+                  {path.actions.map(action => (
                     <li key={action}>{action}</li>
                   ))}
                 </ul>

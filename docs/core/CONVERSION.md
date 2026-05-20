@@ -160,6 +160,7 @@ Contact page:
 
 - Behave like a practical system review entry point.
 - Explain what the buyer can send, what MindWP will look at, and what happens next.
+- Do not behave like revenue qualification, a SaaS demo request, a quote request, or a generic lead-generation form.
 
 ## CTA By Active System
 
@@ -252,7 +253,7 @@ Useful fields may include:
 - whether missed calls, forms, bookings, follow-up, reviews, or local visibility are the main concern
 - best way to contact the buyer
 
-Do not overload the form. Do not ask technical questions too early. Let the buyer describe the problem in plain language.
+Do not require revenue range, generic growth goals, or package-selection fields. Do not overload the form. Do not ask technical questions too early. Let the buyer describe the problem in plain language.
 
 ## Contact Links And Helpers
 

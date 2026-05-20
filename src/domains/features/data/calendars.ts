@@ -10,35 +10,29 @@ import type { FeaturePageData } from '../types';
 export const calendarsData = {
   seo: buildFeatureSeo({
     slug: 'calendars',
-    title: 'Smart Website Systems for Service Businesses',
+    title: 'Booking and Appointment Visibility for Service Businesses',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'Booking and appointment visibility that keeps next steps clear without turning the page into scheduling software.',
   }),
   slug: 'calendars',
   primarySystem: 'follow-up-crm',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  topics: ['booking-systems', 'booking-automation', 'no-show-reduction', 'follow-up'],
+  eyebrow: 'Booking visibility',
+  category: 'Next-step visibility',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'Booking visibility',
+    title: 'The Booking Is Requested. [[muted:The Next Step Needs To Stay Visible.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'Calendars help when appointment requests, consultation bookings, confirmations, and follow-up are visible in one practical path.',
+    list: ['Booking visible', 'Confirmation clear', 'Next step tracked'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Booking path',
+      subtitle: 'Requested · confirmed · followed up',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'Booking requested', value: 'Captured', status: 'handled' as const },
+        { label: 'Confirmation missing', value: 'At risk', status: 'leaking' as const },
+        { label: 'Owner unclear', value: 'Unowned', status: 'unowned' as const },
+        { label: 'Next step due', value: 'Tracked', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +73,26 @@ export const calendarsData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review the booking path.',
+      muted: 'Find where appointments lose visibility.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review how booking requests, confirmations, reminders, and next steps stay visible.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'follow-up-crm',
+          sourceType: 'feature',
+          slug: 'calendars',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'Where booking requests arrive' },
+      { num: '02', text: 'Which confirmations or reminders are unclear' },
+      { num: '03', text: 'Where follow-up should be visible' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

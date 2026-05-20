@@ -79,16 +79,16 @@
       "generatedAt": "2026-04-07T01:39:10.507Z"
     }
   },
-  "workflows": {
+  "handling-paths": {
     "featured-clean": {
-      "file": "public/images/features/workflows-raw.webp",
+      "file": "public/images/features/handling-paths-raw.webp",
       "hash": "38387663335d6000",
       "provider": "pexels",
       "imageId": "6870305",
       "generatedAt": "2026-04-07T02:01:37.967Z"
     },
     "featured-overlay": {
-      "file": "public/images/features/workflows.webp",
+      "file": "public/images/features/handling-paths.webp",
       "hash": "38387663335d6000",
       "provider": "pexels",
       "imageId": "6870305",

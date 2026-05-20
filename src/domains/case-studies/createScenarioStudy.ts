@@ -41,18 +41,15 @@ export function createScenarioStudy(input: {
       { type: 'hero', introHtml: input.summary },
       {
         type: 'problem',
-        problemHeading: 'What was breaking',
+        problemHeading: 'Before / clearer path',
         problemDescription: [input.problem],
         painPoints: ['Illustrative scenario only. No client result or metric is implied.'],
       },
       {
-        type: 'results',
-        results: [
-          {
-            title: 'What changed',
-            description: input.change,
-          },
-        ],
+        type: 'business-impact',
+        badge: 'What became clearer',
+        title: 'Operating change',
+        impacts: [input.change],
       },
       {
         type: 'cta',

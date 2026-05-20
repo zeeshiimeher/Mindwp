@@ -1,6 +1,6 @@
 # GRAPH — MindWP
 
-Authority for related-content direction, content relationships, routing logic, graph metadata, and future resolver behavior.
+Authority for related-content direction, content relationships, routing logic, graph metadata, and resolver behavior.
 
 Graph exists to support the visitor's next useful step. It does not decide the offer model, page role, or page design.
 
@@ -20,7 +20,7 @@ Use this when planning or implementing:
 - implementation service relationships
 - case-study routing
 - graph metadata
-- future graph resolvers
+- resolver contracts and resolver rules
 
 Offer ownership comes from [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Page roles come from [CONTENT.md](./CONTENT.md).
 
@@ -162,7 +162,7 @@ Inline links should not:
 
 ## Metadata Direction
 
-A future graph resolver may use:
+Resolver contract fields may include:
 
 - `pageType`
 - `funnelRole`
@@ -174,9 +174,9 @@ A future graph resolver may use:
 - `relatedIntent`
 - `nextStepIntent`
 
-Metadata should be extracted after the approved page meaning is clear. Do not force metadata early if it weakens page design or content quality.
+Metadata should be extracted after the approved page meaning is clear. `topics[]` is internal metadata only; it must not create public topic routes, public topic templates, public route ownership, public indexing entries, navigation paths, or topic hubs. Do not force metadata early if it weakens page design or content quality.
 
-## Future Resolver Rules
+## Resolver Rules
 
 A resolver should rank related content by:
 

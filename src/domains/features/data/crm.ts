@@ -10,35 +10,29 @@ import type { FeaturePageData } from '../types';
 export const crmData = {
   seo: buildFeatureSeo({
     slug: 'crm',
-    title: 'Smart Website Systems for Service Businesses',
+    title: 'Follow-Up and CRM Visibility for Service Businesses',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'CRM visibility framed around owner, status, and next step rather than platform setup.',
   }),
   slug: 'crm',
   primarySystem: 'follow-up-crm',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  topics: ['crm-visibility', 'crm-pipeline', 'pipeline-visibility', 'follow-up'],
+  eyebrow: 'CRM visibility',
+  category: 'Follow-up visibility',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'CRM visibility',
+    title: 'The Enquiry Exists. [[muted:Owner, Status, And Next Step Need To Be Visible.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'CRM support matters when it shows who owns each enquiry, where it stands, and what should happen next.',
+    list: ['Owner visible', 'Status clear', 'Next step tracked'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Follow-up view',
+      subtitle: 'Owner · status · next step',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'New enquiry', value: 'Captured', status: 'handled' as const },
+        { label: 'Owner missing', value: 'Unowned', status: 'unowned' as const },
+        { label: 'Quote sent', value: 'Needs follow-up', status: 'leaking' as const },
+        { label: 'Next step', value: 'Tracked', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +73,26 @@ export const crmData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review follow-up visibility.',
+      muted: 'Find where owner, status, or next step disappears.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review how enquiries, quotes, and bookings stay owned after the first response.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'follow-up-crm',
+          sourceType: 'feature',
+          slug: 'crm',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'Where ownership becomes unclear' },
+      { num: '02', text: 'Which statuses are missing' },
+      { num: '03', text: 'Which next steps depend on memory' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

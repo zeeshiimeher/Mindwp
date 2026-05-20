@@ -8,27 +8,27 @@ import { StatusBadge } from '@/components/primitives/StatusBadge';
 import type { FeaturePageDataBySlug } from '@/domains/features/pageData';
 
 interface Props {
-  data: FeaturePageDataBySlug['workflows'];
+  data: FeaturePageDataBySlug['website-chat'];
 }
 
-export function WorkflowsRenderer({ data }: Props) {
+export function WebsiteChatRenderer({ data }: Props) {
   const { hero, cta } = data;
   const faq = data.faq;
 
   return (
     <main>
-      <WorkflowsHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
-      <WorkflowsRecognitionSection />
-      {faq ? <WorkflowsFAQ faq={faq} /> : null}
-      <WorkflowsDecisionPanel cta={cta} />
+      <WebsiteChatHero hero={hero} ctaHref={cta.actions[0]?.href ?? '/contact'} />
+      <WebsiteChatRecognitionSection />
+      {faq ? <WebsiteChatFAQ faq={faq} /> : null}
+      <WebsiteChatDecisionPanel cta={cta} />
     </main>
   );
 }
 
-function WorkflowsHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
+function WebsiteChatHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref: string }) {
   return (
     <HeroFrame
-      ariaLabel='Workflows hero'
+      ariaLabel='Response handling hero'
       eyebrow={hero.eyebrow}
       title={hero.title}
       description={hero.description}
@@ -42,12 +42,12 @@ function WorkflowsHero({ hero, ctaHref }: { hero: Props['data']['hero']; ctaHref
       ]}
       chips={Array.isArray(hero.list) ? hero.list.map(label => ({ label })) : undefined}
       chipDotVariant='subtle'
-      visual={<WorkflowsSignalPanel visual={hero.visual} />}
+      visual={<WebsiteChatSignalPanel visual={hero.visual} />}
     />
   );
 }
 
-function WorkflowsSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
+function WebsiteChatSignalPanel({ visual }: { visual: Props['data']['hero']['visual'] }) {
   if (!visual) return null;
 
   return (
@@ -99,17 +99,17 @@ function WorkflowsSignalPanel({ visual }: { visual: Props['data']['hero']['visua
   );
 }
 
-function WorkflowsRecognitionSection() {
+function WebsiteChatRecognitionSection() {
   return (
     <SectionShell
       id='website-handoff'
-      ariaLabel='Where websites usually fail'
+      ariaLabel='Feature support path'
       tone='mist'
       heading={{
-        eyebrow: 'Where websites usually fail',
-        title: 'The page looks fine. [[muted:The enquiry has nowhere reliable to go.]]',
+        eyebrow: 'Feature support path',
+        title: 'The capability matters when the path around it is clear.',
         description:
-          'A smart website does more than present services. It gives each enquiry a place to land, enough context to be handled, and a clear next step after contact.',
+          'Feature pages stay tied to the system they support: what arrives, who sees it, what happens next, and where follow-up stays visible.',
       }}
     >
       <div className='grid gap-5 lg:grid-cols-3'>
@@ -144,7 +144,7 @@ function WorkflowsRecognitionSection() {
   );
 }
 
-function WorkflowsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
+function WebsiteChatFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
   return (
     <FAQSection
       title={faq.header.title}
@@ -156,12 +156,12 @@ function WorkflowsFAQ({ faq }: { faq: NonNullable<Props['data']['faq']> }) {
       }))}
       tone='mist'
       variant='split'
-      ariaLabel='Smart Website Systems FAQ'
+      ariaLabel='Website chat FAQ'
     />
   );
 }
 
-function WorkflowsDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
+function WebsiteChatDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
   return (
     <DecisionPanel
       heading={{
@@ -176,4 +176,4 @@ function WorkflowsDecisionPanel({ cta }: { cta: Props['data']['cta'] }) {
   );
 }
 
-export default WorkflowsRenderer;
+export default WebsiteChatRenderer;

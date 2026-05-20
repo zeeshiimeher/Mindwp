@@ -1,5 +1,6 @@
 // ─── Image System Configuration ─────────────────────────────────────
-// Constants and configuration for the MindWP image pipeline
+// Internal experimental image pipeline. This folder is not public design
+// authority; docs/core/DESIGN.md controls public page visuals.
 
 import { env } from '@/env';
 

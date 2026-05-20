@@ -53,6 +53,8 @@ Rules:
 - Route ownership config must match the active public routes.
 - Active industry route families are Home Services and Healthcare Practices only.
 - `/case-studies` is the proof/work hub. Do not add `/portfolio`.
+- Public topic hubs are removed. Keep `topics[]` only as internal graph/relevance metadata; do not create `/topics`, `/blog/topic`, topic templates, topic ownership rules, topic indexing entries, navigation paths, or generated public topic inventory entries.
+- Canonical feature slugs include `/features/website-chat` and `/features/handling-paths`. The unpublished `/features/aichat` and `/features/workflows` names are removed and must not be preserved through aliases, shims, redirects, registry keys, data filenames, renderer names, or imports.
 
 Because the site has not been published, prefer direct correction over compatibility.
 
@@ -134,6 +136,7 @@ Graph metadata should use:
 - `proofType` where relevant
 
 Graph relationships should support the next useful step and respect [GRAPH.md](./GRAPH.md).
+`topics[]` is internal metadata only. It must not create public topic route families or public topic hubs.
 
 Implementation pages relate upward to Smart Website Systems. Service pages should not become blog hubs. Resources should not trap readers in education loops. Revenue Recovery must not be modeled as a route, page type, graph category, navigation pillar, CTA category, related-content cluster, service card, panel, form, public offer, or equal system. It may appear only as a small improvement lens after the active system problem is already understood.
 
@@ -159,6 +162,16 @@ After approval:
 - indexing config can be aligned with route ownership
 
 SEO should follow active routes and canonical page identity.
+
+## Image System Quarantine
+
+`src/lib/image-system/**`, `scripts/image-system/**`, and `/image-dashboard` are internal and experimental. They are not public design authority. [DESIGN.md](./DESIGN.md) controls public page visuals.
+
+Rules:
+
+- `/image-dashboard` is dev/internal/noindex and gated by `ENABLE_DEV_DASHBOARD`.
+- The image-system dashboard, analytics screens, workflow screens, fake dashboards, generic stock imagery, AI/tool visuals, and SaaS-like screens must not guide public page rebuilds.
+- The image system may support asset experiments only after page strategy and design direction are approved.
 
 ## Cleanup Rules
 
@@ -187,7 +200,7 @@ If source code conflicts with active docs, update source during a source-cleanup
 
 ## Active Commands
 
-Use pnpm only.
+Use pnpm only. `package.json` scripts are the command authority.
 
 - `pnpm dev`
 - `pnpm build`
@@ -197,6 +210,9 @@ Use pnpm only.
 - `pnpm check:names`
 - `pnpm check:minimal`
 - `pnpm check:frontend`
+- `pnpm check:domain-registries`
+- `pnpm check:clean-base`
+- `pnpm check:architecture`
 
 Use `pnpm check:frontend` after visual or page work.
 

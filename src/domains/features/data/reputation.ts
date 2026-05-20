@@ -10,35 +10,29 @@ import type { FeaturePageData } from '../types';
 export const reputationData = {
   seo: buildFeatureSeo({
     slug: 'reputation',
-    title: 'Smart Website Systems for Service Businesses',
+    title: 'Review and Reputation Visibility for Service Businesses',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'Review, proof, and feedback visibility that helps completed work become trust without review manipulation.',
   }),
   slug: 'reputation',
   primarySystem: 'reputation-review-systems',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  topics: ['review-generation', 'review-automation', 'feedback-loops', 'reputation-monitoring'],
+  eyebrow: 'Reviews and proof',
+  category: 'Proof visibility',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'Reviews and proof',
+    title: 'Good Work Happens. [[muted:Proof Still Depends On Someone Remembering.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'Reputation support works when review requests, feedback, and proof have timing and ownership after the work is done.',
+    list: ['Review timing clear', 'Feedback routed', 'Proof visible'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Review path',
+      subtitle: 'Completed work · feedback · proof',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'Job completed', value: 'Ready', status: 'handled' as const },
+        { label: 'Review request', value: 'Not sent', status: 'leaking' as const },
+        { label: 'Feedback owner', value: 'Unclear', status: 'unowned' as const },
+        { label: 'Proof captured', value: 'Visible', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +73,26 @@ export const reputationData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review the review and proof path.',
+      muted: 'Find where good work stops becoming visible.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review when review requests happen, where feedback goes, and what proof is missing.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'reputation-review-systems',
+          sourceType: 'feature',
+          slug: 'reputation',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'When review requests should happen' },
+      { num: '02', text: 'Where feedback should route' },
+      { num: '03', text: 'Which proof is not becoming visible' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

@@ -94,7 +94,7 @@ export function FeaturesLanding() {
             }}
             actions={[
               {
-                label: 'Get Started',
+                label: 'Request a System Review',
                 href: buildContactHref({
                   system: 'smart-website-systems',
                   sourceType: 'feature',

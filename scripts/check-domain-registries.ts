@@ -1,7 +1,11 @@
 #!/usr/bin/env tsx
 /* eslint-disable no-console */
 
+import fs from 'node:fs';
+import path from 'node:path';
+
 import { CASE_STUDY_REGISTRY } from '../src/domains/case-studies/registry';
+import { FEATURE_OWNERSHIP } from '../src/domains/features/ownership';
 import { FEATURE_DOMAIN_REGISTRY } from '../src/domains/features/pageData';
 import { INDUSTRY_REGISTRY } from '../src/domains/industries/registry';
 import { SERVICE_DOMAIN_REGISTRY } from '../src/domains/services/pageData';
@@ -59,8 +63,24 @@ const expectedFeatureSlugs = [
   'calendars',
   'reputation',
   'crm',
-  'workflows',
-  'aichat',
+  'handling-paths',
+  'website-chat',
+] as const;
+
+const forbiddenPublicRoutePaths = [
+  'src/app/systems',
+  'src/app/topics',
+  'src/app/blog/topic',
+  'src/app/portfolio',
+] as const;
+
+const forbiddenOldFeaturePaths = [
+  'src/domains/features/data/aichat.ts',
+  'src/domains/features/data/workflows.ts',
+  'src/domains/features/renderers/AIChatRenderer.tsx',
+  'src/domains/features/renderers/WorkflowsRenderer.tsx',
+  'src/domains/features/pages/aichat',
+  'src/domains/features/pages/workflows',
 ] as const;
 
 const expectedIndustrySlugs = [
@@ -118,6 +138,10 @@ function isNonEmptyString(value: unknown): value is string {
 
 function addFailure(registry: string, key: string, message: string) {
   failures.push({ registry, key, message });
+}
+
+function existsFromRoot(relativePath: string) {
+  return fs.existsSync(path.join(process.cwd(), relativePath));
 }
 
 function checkExactKeys(registryName: string, actualKeys: string[], expectedKeys: readonly string[]) {
@@ -225,6 +249,34 @@ function checkServiceModel() {
 
 function checkFeatureModel() {
   checkExactKeys('features', Object.keys(FEATURE_DOMAIN_REGISTRY), expectedFeatureSlugs);
+
+  for (const key of expectedFeatureSlugs) {
+    const entry = FEATURE_DOMAIN_REGISTRY[key];
+    const ownership = FEATURE_OWNERSHIP[key];
+    const data = entry?.data as PageData | undefined;
+
+    if (!ownership) {
+      addFailure('features', key, 'feature ownership entry is missing');
+      continue;
+    }
+
+    if (data?.primarySystem !== ownership.primarySystem) {
+      addFailure('features', key, `primarySystem must be ${ownership.primarySystem}`);
+    }
+
+    const dataSupporting = Array.isArray(data?.supportingSystems)
+      ? [...data.supportingSystems].sort().join('|')
+      : '';
+    const expectedSupporting = [
+      ...('supportingSystems' in ownership ? (ownership.supportingSystems ?? []) : []),
+    ]
+      .sort()
+      .join('|');
+
+    if (dataSupporting !== expectedSupporting) {
+      addFailure('features', key, 'supportingSystems must match feature ownership');
+    }
+  }
 }
 
 function checkIndustryModel() {
@@ -257,12 +309,21 @@ function checkCaseStudyModel() {
   }
 }
 
+function checkForbiddenStructure() {
+  for (const relativePath of [...forbiddenPublicRoutePaths, ...forbiddenOldFeaturePaths]) {
+    if (existsFromRoot(relativePath)) {
+      addFailure('structure', relativePath, 'removed public route or old feature file still exists');
+    }
+  }
+}
+
 checkRegistry('services', SERVICE_DOMAIN_REGISTRY);
 checkRegistry('features', FEATURE_DOMAIN_REGISTRY);
 checkServiceModel();
 checkFeatureModel();
 checkIndustryModel();
 checkCaseStudyModel();
+checkForbiddenStructure();
 
 if (failures.length === 0) {
   console.log('check:domain-registries passed.');

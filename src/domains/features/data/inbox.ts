@@ -10,35 +10,29 @@ import type { FeaturePageData } from '../types';
 export const inboxData = {
   seo: buildFeatureSeo({
     slug: 'inbox',
-    title: 'Smart Website Systems for Service Businesses',
+    title: 'Enquiry Inbox Visibility for Service Businesses',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'A practical view of calls, forms, and messages so enquiries do not disappear into scattered inboxes.',
   }),
   slug: 'inbox',
-  primarySystem: 'follow-up-crm',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  primarySystem: 'lead-response-handling',
+  topics: ['lead-capture', 'lead-routing', 'lead-response-time', 'crm-visibility'],
+  eyebrow: 'Enquiry visibility',
+  category: 'Message handling',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'Enquiry visibility',
+    title: 'Messages Arrive. [[muted:Nobody Has A Clear View.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'Inbox visibility is useful when calls, forms, and messages land somewhere the team can see, respond to, and hand off.',
+    list: ['Messages visible', 'Response owner clear', 'Next step recorded'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Enquiry view',
+      subtitle: 'Calls · forms · messages',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'Contact form', value: 'Captured', status: 'handled' as const },
+        { label: 'Missed call', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Email enquiry', value: 'Unowned', status: 'unowned' as const },
+        { label: 'Message replied', value: 'Handled', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +73,26 @@ export const inboxData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review where enquiries land.',
+      muted: 'Find where messages become invisible.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review how calls, forms, and messages are seen, answered, and handed off.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'lead-response-handling',
+          sourceType: 'feature',
+          slug: 'inbox',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'Where calls, forms, and messages land' },
+      { num: '02', text: 'Who sees them first' },
+      { num: '03', text: 'Which enquiries go unowned' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

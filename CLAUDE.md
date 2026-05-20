@@ -136,6 +136,7 @@ Generated files under `reports/` are diagnostic snapshots, not governing docs. T
 
 - Do not revive removed service names or old offer models.
 - Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
+- Public topic hubs are not active. Keep `topics[]` as internal metadata only; do not create topic routes, topic templates, topic ownership, topic indexing, navigation paths, or public topic hubs.
 - Do not expose backend platform names as the public product.
 - Do not mention GoHighLevel, GHL, or HighLevel in public copy.
 - Do not turn implementation services into primary systems.
@@ -148,6 +149,8 @@ Generated files under `reports/` are diagnostic snapshots, not governing docs. T
 ## Commands
 
 Use pnpm only.
+
+`package.json` scripts are the command authority. Keep this list synchronized when scripts change.
 
 ```bash
 pnpm dev

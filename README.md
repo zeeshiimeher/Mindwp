@@ -30,10 +30,10 @@ Read only what is relevant to the task.
 | [docs/core/CONTENT.md](./docs/core/CONTENT.md) | Page roles, funnel behavior, editorial boundaries, and content intent. |
 | [docs/core/CONVERSION.md](./docs/core/CONVERSION.md) | CTA posture, contact behavior, diagnostic conversion, and proof-before-action logic. |
 | [docs/core/DESIGN.md](./docs/core/DESIGN.md) | Visual direction, UI/page rebuild guidance, visual concepts, token/CSS guidance, and component design judgment. |
-| [docs/core/GRAPH.md](./docs/core/GRAPH.md) | Related-content behavior, routing logic, graph metadata, and future resolver rules. |
+| [docs/core/GRAPH.md](./docs/core/GRAPH.md) | Related-content behavior, routing logic, graph metadata, and resolver rules. |
 | [docs/core/SYSTEM-ARCHITECTURE.md](./docs/core/SYSTEM-ARCHITECTURE.md) | Mapping the strategy into routes, domains, renderers, components, styles, and graph code. |
 | [docs/core/SYSTEM-RULES.md](./docs/core/SYSTEM-RULES.md) | Hard execution guardrails and validation rules. |
-| [docs/ops/CONTENT-INVENTORY.md](./docs/ops/CONTENT-INVENTORY.md) | Planning inventory for future content clusters and publishing priorities. |
+| [docs/ops/CONTENT-INVENTORY.md](./docs/ops/CONTENT-INVENTORY.md) | Planning inventory for approved content clusters and publishing priorities. |
 | [.claude/skills](./.claude/skills) | Short workflow helpers for AI-led page planning, rebuild, and review sessions. |
 
 Generated files under `reports/` are diagnostic snapshots only. They are not strategy authority and may contain stale route names or removed offer models from older audits.
@@ -63,7 +63,7 @@ The detailed architecture contract is in [docs/core/SYSTEM-ARCHITECTURE.md](./do
 
 ## Common Commands
 
-Use pnpm only.
+Use pnpm only. `package.json` scripts are the command authority; this section mirrors the common commands from that file.
 
 ```bash
 pnpm install
@@ -71,6 +71,9 @@ pnpm dev
 pnpm typecheck
 pnpm lint
 pnpm check:names
+pnpm check:domain-registries
+pnpm check:clean-base
+pnpm check:architecture
 pnpm check:minimal
 pnpm check:frontend
 pnpm build
@@ -83,6 +86,7 @@ Use `pnpm check:frontend` after meaningful page or visual work. Use `pnpm build`
 - Keep MindWP service-business specific, system-first, conversion-focused, and commercially serious.
 - Do not turn the site into a generic agency menu or builder-service catalog.
 - Do not create public `/systems`, `/topics`, or `/portfolio` route families unless governing docs are intentionally updated.
+- Public topic hubs are not active. `topics[]` may exist only as internal metadata for relevance and graph scoring.
 - Do not preserve unpublished removed routes or removed names for compatibility.
 - Do not invent proof, metrics, rankings, guarantees, testimonials, or client results.
 - Do not publicly mention backend platform names, tool names, or white-label delivery details as the product.

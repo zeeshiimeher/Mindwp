@@ -3,12 +3,7 @@ import { normalizePath } from '@/lib/seo/config';
 
 import { getContentPolicy } from './contentPolicy';
 
-export type IndexingPolicyKind =
-  | ContentNodeType
-  | 'static'
-  | 'blog-category'
-  | 'resource-category'
-  | 'blog-topic';
+export type IndexingPolicyKind = ContentNodeType | 'static' | 'blog-category' | 'resource-category';
 
 export type IndexingClassification =
   | 'marketing'
@@ -18,7 +13,6 @@ export type IndexingClassification =
   | 'features'
   | 'industries'
   | 'caseStudies'
-  | 'topics'
   | 'utility'
   | 'dev';
 
@@ -40,7 +34,6 @@ const INDEXABLE_CLASSIFICATIONS = new Set<IndexingClassification>([
   'features',
   'industries',
   'caseStudies',
-  'topics',
 ]);
 
 const MARKETING_PATHS = new Set(['/', '/about', '/contact', '/cookies', '/privacy', '/terms']);
@@ -84,14 +77,6 @@ function buildPolicy(
   };
 }
 
-function resolveBlogTopicClassification(): ResolvedIndexingPolicy {
-  return buildPolicy('topics', 'explicit', {
-    index: false,
-    follow: true,
-    disallow: true,
-  });
-}
-
 function resolveStaticClassification(path: string): ResolvedIndexingPolicy {
   if (MARKETING_PATHS.has(path)) {
     return buildPolicy('marketing', 'explicit');
@@ -122,8 +107,6 @@ function resolveKindClassification(kind: IndexingPolicyKind): ResolvedIndexingPo
       return buildPolicy('blog', 'explicit');
     case 'resource-category':
       return buildPolicy('resources', 'explicit');
-    case 'blog-topic':
-      return resolveBlogTopicClassification();
     default:
       return null;
   }

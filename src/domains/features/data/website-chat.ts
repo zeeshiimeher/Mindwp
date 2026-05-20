@@ -4,41 +4,35 @@ import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 // =============================================================================
-// Workflows — page
+// Website Chat — page
 // =============================================================================
 
-export const workflowsData = {
+export const websiteChatData = {
   seo: buildFeatureSeo({
-    slug: 'workflows',
-    title: 'Smart Website Systems for Service Businesses',
+    slug: 'website-chat',
+    title: 'Website Chat Response Path for Service Businesses',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'Website chat and contact messages that move into a response path without turning the offer into an AI chatbot product.',
   }),
-  slug: 'workflows',
-  primarySystem: 'follow-up-crm',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  slug: 'website-chat',
+  primarySystem: 'lead-response-handling',
+  topics: ['lead-capture', 'lead-routing', 'lead-response-time', 'website-infrastructure'],
+  eyebrow: 'Website chat',
+  category: 'Response path',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'Website chat',
+    title: 'The Message Starts On The Website. [[muted:The Response Still Needs A Path.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'Website chat is useful only when the question, contact details, and next step land somewhere the team can actually handle.',
+    list: ['Question captured', 'Response path visible', 'Next step owned'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Website chat path',
+      subtitle: 'Question captured · response visible',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'Website chat opened', value: 'Question visible', status: 'unowned' as const },
+        { label: 'Contact details shared', value: 'Captured', status: 'handled' as const },
+        { label: 'No reply owner', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Next step assigned', value: 'Owned', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +73,26 @@ export const workflowsData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review the website chat response path.',
+      muted: 'Find where messages stall.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review how website messages arrive, who sees them, and what happens next.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'lead-response-handling',
+          sourceType: 'feature',
+          slug: 'website-chat',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'Where chat and contact messages arrive' },
+      { num: '02', text: 'Who owns the first response' },
+      { num: '03', text: 'What gets lost before follow-up' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

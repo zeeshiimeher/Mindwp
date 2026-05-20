@@ -1,17 +1,21 @@
 import { notFound } from 'next/navigation';
 
 import { resolveSEO } from '@/lib/seo/seoResolver';
-import { getIsSystemEnabled } from '@/system/isSystemEnabled';
+import { getIsDevDashboardEnabled } from '@/system/isDevDashboardEnabled';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
 
 export async function generateMetadata() {
+  if (!getIsDevDashboardEnabled()) {
+    return {};
+  }
+
   return resolveSEO({ path: '/image-dashboard', type: 'static', slug: 'image-dashboard' });
 }
 
 export default async function Page() {
-  if (!getIsSystemEnabled()) {
+  if (!getIsDevDashboardEnabled()) {
     notFound();
   }
 

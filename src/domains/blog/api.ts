@@ -1,14 +1,5 @@
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { BLOG_POSTS } from '@/domains/blog/registry';
-import {
-  getAllTopicSlugs,
-  getSectionForCategory,
-  getTopicMetadata,
-  SECTION_LABELS,
-  SECTION_ORDER,
-  type TopicHubSection,
-  type TopicMetadata,
-} from '@/domains/blog/topicRegistry';
 import type { BlogCategory, BlogPostData } from '@/domains/blog/types';
 
 export type Author = {
@@ -86,55 +77,4 @@ export function getAllCategorySlugs(): string[] {
 
 export function getCategoryPathAllowlist(): string[] {
   return BLOG_CATEGORIES.map(category => `/blog/category/${category.slug}`);
-}
-
-/* ------------------------------------------------------------------ */
-/*  Topic Hub Utilities                                               */
-/* ------------------------------------------------------------------ */
-
-export type TopicHubSectionData = {
-  key: TopicHubSection;
-  label: string;
-  posts: BlogPostListItem[];
-};
-
-export function getTopicBySlug(slug: string): TopicMetadata | undefined {
-  return getTopicMetadata(slug);
-}
-
-export function getallTopicSlugs(): string[] {
-  return getAllTopicSlugs();
-}
-
-export function getTopicPathAllowlist(): string[] {
-  return getAllTopicSlugs().map(slug => `/blog/topic/${slug}`);
-}
-
-/** Returns posts matching a topic, sorted newest-first. */
-export function getPostsForTopic(topic: string): BlogPostListItem[] {
-  return blogPosts
-    .filter(post => post.topics.includes(topic))
-    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
-}
-
-/**
- * Groups posts for a topic into ordered sections based on each post's category.
- * Empty sections are omitted.
- */
-export function getTopicHubSections(topic: string): TopicHubSectionData[] {
-  const posts = getPostsForTopic(topic);
-
-  const buckets = new Map<TopicHubSection, BlogPostListItem[]>();
-  for (const post of posts) {
-    const section = getSectionForCategory(post.category);
-    const list = buckets.get(section) ?? [];
-    list.push(post);
-    buckets.set(section, list);
-  }
-
-  return SECTION_ORDER.filter(key => buckets.has(key)).map(key => ({
-    key,
-    label: SECTION_LABELS[key],
-    posts: buckets.get(key) as BlogPostListItem[],
-  }));
 }

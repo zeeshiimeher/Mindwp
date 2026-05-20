@@ -23,7 +23,7 @@ export function CaseStudiesPage() {
             eyebrow: 'Case Studies',
             title: 'Scenario Studies and Work Examples',
             description:
-              'These entries are a reset base for approved scenario studies and future proof. They show the business situation, the weak handoff, and the system path without implying client results.',
+              'These entries are a reset base for approved scenario studies and approved proof. They show the business situation, the weak handoff, and the system path without implying client results.',
           }}
         >
           <div className='flex flex-wrap items-center gap-3'>
@@ -92,7 +92,9 @@ export function CaseStudiesPage() {
 
                   <div className='mt-auto pt-5'>
                     <a className='mw-btn mw-btn--secondary' href={`/case-studies/${study.slug}`}>
-                      <span>Read case study</span>
+                      <span>
+                        {study.client === 'Scenario study' ? 'Read scenario' : 'Read case study'}
+                      </span>
                       <ArrowRight size={14} aria-hidden='true' />
                     </a>
                   </div>
@@ -109,7 +111,7 @@ export function CaseStudiesPage() {
             eyebrow: 'Patterns',
             title: 'What strong system changes usually create',
             description:
-              'Results vary by business. The common pattern is clearer visibility, cleaner handoffs, better follow-up, and less work depending on memory.',
+              'Examples vary by business. The common pattern is clearer visibility, cleaner handoffs, better follow-up, and less work depending on memory.',
           }}
         >
           <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
@@ -129,7 +131,7 @@ export function CaseStudiesPage() {
               <p>Less manual chasing and fewer loose handoffs.</p>
             </article>
             <article className='mw-surface-card p-6'>
-              <p className='mw-text-eyebrow mw-text-signal-cyan'>Growth</p>
+              <p className='mw-text-eyebrow mw-text-signal-cyan'>Ownership</p>
               <h3>Better ownership</h3>
               <p>Built around the way the business actually operates.</p>
             </article>

@@ -55,7 +55,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Request a System Review',
     title: 'Contact',
     description:
-      'Tell us where things are slipping — missed calls, slow follow-up, leads going cold. We read every message and reply with the right next step within one working day.',
+      'Request a practical system review for website clarity, local visibility, missed calls or messages, follow-up visibility, and reviews or proof.',
   },
   {
     key: 'static:cookies',
@@ -120,7 +120,7 @@ export const STATIC_ROUTE_CONTENT: StaticRouteDefinition[] = [
     name: 'Image Dashboard',
     title: 'Image Dashboard',
     description:
-      'Internal image-system dashboard for generation scores, operational issues, and image learning memory.',
+      'Internal experimental image-system dashboard for generation scores, operational issues, and image learning memory.',
     showOnHumanSitemap: false,
   },
   {

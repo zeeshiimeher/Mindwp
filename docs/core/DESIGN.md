@@ -629,6 +629,14 @@ Avoid:
 - image-heavy pages that feel like a template
 - using illustrations to hide weak content
 
+## Image System Quarantine
+
+The repo image system is internal and experimental. It may help test assets, but it is not public design authority and must not train page tone, layout, or section design.
+
+Public design authority remains this file.
+
+Do not copy image-system dashboard, analytics, workflow, SaaS, AI/tool, fake dashboard, fake metrics, generic stock, or screen-mockup tone into public page rebuilds. `/image-dashboard` is a dev/internal/noindex surface and is gated by `ENABLE_DEV_DASHBOARD`.
+
 Use imagery when it helps the buyer understand the business reality faster or makes the page feel more custom without weakening clarity.
 
 For the first three pages, it is acceptable for each page to have one primary custom visual/illustration section and one or two subtle background treatments if they strengthen the design.
@@ -649,7 +657,7 @@ Smart Website Systems:
 
 - Show clarity, trust, service-page flow, enquiry capture, and visible next steps.
 - Use service-page clarity maps, website-as-control-point sections, enquiry-to-handling diagrams, and trust placement.
-- Useful future patterns include before/after website contrast, implementation pathway panels, fit filters, common concern handling, and proof/scenario boards.
+- Approved pattern options include before/after website contrast, implementation pathway panels, fit filters, common concern handling, and proof/scenario boards.
 - Avoid portfolio-first design and page-count package visuals.
 
 Local SEO Authority Systems:

@@ -17,9 +17,9 @@ const FEATURE_COPY_BY_SLUG: Record<string, RenderCopy> = {
     title: 'Online Booking',
     subtitle: 'Structured booking flows connected to your operating system.',
   },
-  workflows: {
-    title: 'Workflow Automation',
-    subtitle: 'Automated follow-up and task movement without losing control.',
+  'handling-paths': {
+    title: 'Handling Paths',
+    subtitle: 'Follow-up movement without losing ownership.',
   },
 };
 

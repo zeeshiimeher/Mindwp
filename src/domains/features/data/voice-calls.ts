@@ -10,35 +10,29 @@ import type { FeaturePageData } from '../types';
 export const voiceCallsData = {
   seo: buildFeatureSeo({
     slug: 'voice-calls',
-    title: 'Smart Website Systems for Service Businesses',
+    title: 'Voice Call Response Paths for Service Businesses',
     description:
-      'Websites that capture enquiries, route them with context, and connect the next step clearly. Built for service businesses losing leads between the website and follow-up.',
+      'Call and missed-call response paths that help enquiries land somewhere useful without AI receptionist positioning.',
   }),
   slug: 'voice-calls',
   primarySystem: 'lead-response-handling',
-  topics: [
-    'website-infrastructure',
-    'lead-capture',
-    'conversion-optimization',
-    'crm-enabled-websites',
-    'service-pages',
-  ],
-  eyebrow: 'Smart Websites',
-  category: 'Website That Works',
+  topics: ['missed-calls', 'lead-response-time', 'emergency-handling', 'lead-routing'],
+  eyebrow: 'Voice calls',
+  category: 'Response path',
   hero: {
-    eyebrow: 'Smart Websites',
-    title: 'The Website Looks Fine. [[muted:The Enquiry Still Slips.]]',
+    eyebrow: 'Voice calls',
+    title: 'The Phone Rings. [[muted:The Response Path Decides What Happens Next.]]',
     description:
-      'A smart website is not only a better-looking page. It gives the visitor a clear answer, captures the enquiry with context, and makes the next step visible before the lead goes cold.',
-    list: ['Clear service path', 'Captured enquiry', 'Owned follow-up'],
+      'Calls and missed calls need a practical path for response, routing, and handoff while the team is busy.',
+    list: ['Missed call visible', 'Response path clear', 'Handoff recorded'],
     visual: {
-      title: 'Live enquiry feed',
-      subtitle: 'Website signals · routed with context',
+      title: 'Call response path',
+      subtitle: 'Missed call · reply · handoff',
       rows: [
-        { label: 'Service page visit', value: 'Intent visible', status: 'unowned' as const },
-        { label: 'Quote form submitted', value: 'Captured', status: 'handled' as const },
-        { label: 'Missed call from mobile', value: 'Needs response', status: 'leaking' as const },
-        { label: 'Follow-up reminder', value: 'Owned', status: 'handled' as const },
+        { label: 'Missed call', value: 'Needs response', status: 'leaking' as const },
+        { label: 'Caller context', value: 'Captured', status: 'handled' as const },
+        { label: 'Reply owner', value: 'Unclear', status: 'unowned' as const },
+        { label: 'Next step', value: 'Recorded', status: 'handled' as const },
       ],
       footerPrimary: 'Source attached',
       footerSecondary: 'Next step visible',
@@ -79,26 +73,26 @@ export const voiceCallsData = {
   },
   cta: {
     heading: {
-      title: 'Something here hit close.',
-      muted: 'Find where it is breaking.',
+      title: 'Review the call response path.',
+      muted: 'Find where missed calls stall.',
       description:
-        'We can map what needs fixing first — whether you are patching years of workarounds or starting clean.',
+        'We can review what happens when calls are missed, answered, or handed to the next person.',
     },
     actions: [
       {
         label: 'Request a System Review',
         href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'page',
-          slug: 'smart-website-systems',
+          system: 'lead-response-handling',
+          sourceType: 'feature',
+          slug: 'voice-calls',
         }),
         primary: true,
       },
     ],
     expectations: [
-      { num: '01', text: 'Where your enquiries are coming from' },
-      { num: '02', text: 'What the page is failing to capture' },
-      { num: '03', text: 'Where visitors drop before contact' },
+      { num: '01', text: 'What happens when calls are missed' },
+      { num: '02', text: 'Who owns the first response' },
+      { num: '03', text: 'Where the handoff should be visible' },
       { num: '04', text: 'What to fix first' },
     ],
     footer: {

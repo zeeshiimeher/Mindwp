@@ -5,9 +5,10 @@ import {
   type LucideIcon,
   MessageSquare,
   Phone,
-  Workflow,
+  Route,
 } from 'lucide-react';
 
+import { FEATURE_OWNERSHIP } from '@/domains/features/ownership';
 import { FEATURE_DOMAIN_REGISTRY } from '@/domains/features/pageData';
 import type { FeaturePageData } from '@/domains/features/types';
 import type { ActiveSystem } from '@/lib/content-graph/canonical';
@@ -20,6 +21,8 @@ export type FeatureMetadata = {
   icon: LucideIcon;
   primarySystem?: ActiveSystem;
   supportingSystems?: ActiveSystem[];
+  publicMeaning: string;
+  avoid: string;
   topics?: string[];
 };
 
@@ -27,10 +30,10 @@ type FeatureSlug = keyof typeof FEATURE_DOMAIN_REGISTRY;
 
 const FEATURE_ICON_BY_SLUG: Record<FeatureSlug, LucideIcon> = {
   'voice-calls': Phone,
-  aichat: MessageSquare,
+  'website-chat': MessageSquare,
   reputation: Badge,
   inbox: Database,
-  workflows: Workflow,
+  'handling-paths': Route,
   calendars: Calendar,
   crm: Database,
 };
@@ -47,5 +50,7 @@ export const FEATURE_REGISTRY: FeatureMetadata[] = FEATURE_DATA.map(data => ({
   icon: FEATURE_ICON_BY_SLUG[data.slug as FeatureSlug],
   primarySystem: data.primarySystem,
   supportingSystems: data.supportingSystems,
+  publicMeaning: FEATURE_OWNERSHIP[data.slug as FeatureSlug].publicMeaning,
+  avoid: FEATURE_OWNERSHIP[data.slug as FeatureSlug].avoid,
   topics: data.topics,
 }));

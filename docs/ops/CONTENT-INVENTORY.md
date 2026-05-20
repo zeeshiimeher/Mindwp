@@ -1,6 +1,6 @@
 # CONTENT INVENTORY — MindWP
 
-Planning inventory for future content clusters, priority industries, blog/resource ideas, case-study ideas, and publishing order.
+Planning inventory for approved-after-review content clusters, priority industries, blog/resource ideas, case-study ideas, and publishing order.
 
 This file is not runtime truth. It does not define active systems, routes, graph behavior, canonical topics, or service ownership. Use [../core/CONTENT.md](../core/CONTENT.md), [../core/GRAPH.md](../core/GRAPH.md), [../core/OFFER-ARCHITECTURE.md](../core/OFFER-ARCHITECTURE.md), and live registries for runtime decisions.
 
@@ -32,6 +32,8 @@ It does not decide:
 - CTA behavior
 - graph relationships
 - publishing approval
+
+Topics may appear here only as planning or internal metadata ideas. They are not public route families, topic hubs, navigation paths, route ownership, indexing entries, or runtime authority.
 
 Implementation service content sits under Smart Website Systems. Revenue Recovery may appear only as an improvement lens inside active-system content.
 

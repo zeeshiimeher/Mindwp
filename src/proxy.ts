@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { getIsSystemEnabled } from '@/system/isSystemEnabled';
+import { getIsDevDashboardEnabled } from '@/system/isDevDashboardEnabled';
 
 const PROTECTED_PREFIXES = ['/dev/'];
 const PROTECTED_EXACT_PATHS = new Set(['/image-dashboard']);
@@ -15,7 +15,7 @@ export function proxy(request: NextRequest) {
 
   if (!isProtected) return NextResponse.next();
 
-  if (!getIsSystemEnabled()) {
+  if (!getIsDevDashboardEnabled()) {
     return NextResponse.rewrite(new URL('/not-found', request.url));
   }
 

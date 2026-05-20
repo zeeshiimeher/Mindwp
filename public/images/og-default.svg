@@ -62,13 +62,13 @@
 
     <!-- Accent pills -->
     <rect x="674" y="384" rx="12" ry="12" width="122" height="26" fill="url(#accent)" fill-opacity="0.95"/>
-    <text x="735" y="402" text-anchor="middle" font-size="13" class="mono" fill="#ffffff" opacity="0.95">WordPress</text>
+    <text x="735" y="402" text-anchor="middle" font-size="13" class="mono" fill="#ffffff" opacity="0.95">Website</text>
 
     <rect x="674" y="420" rx="12" ry="12" width="140" height="26" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
-    <text x="744" y="438" text-anchor="middle" font-size="13" class="mono" fill="#ffffff" opacity="0.92">Automation</text>
+    <text x="744" y="438" text-anchor="middle" font-size="13" class="mono" fill="#ffffff" opacity="0.92">Handling</text>
 
     <rect x="674" y="456" rx="12" ry="12" width="72" height="26" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
-    <text x="710" y="474" text-anchor="middle" font-size="13" class="mono" fill="#ffffff" opacity="0.92">AI</text>
+    <text x="710" y="474" text-anchor="middle" font-size="13" class="mono" fill="#ffffff" opacity="0.92">Proof</text>
 
     <!-- Simple circuit nodes -->
     <g opacity="0.9">
@@ -88,7 +88,7 @@
   <!-- Headline + positioning -->
   <text x="200" y="152" font-size="26" class="subtitle" fill="#ffffff" opacity="0.92">MindWP</text>
   <text x="200" y="220" font-size="64" class="title" fill="#ffffff">Smart Websites</text>
-  <text x="200" y="264" font-size="22" class="body" fill="#ffffff" opacity="0.86">Built on WordPress. Automated with workflows. Enhanced with AI.</text>
+  <text x="200" y="264" font-size="22" class="body" fill="#ffffff" opacity="0.86">Conversion-focused website systems with connected handling.</text>
 
   <!-- Value line (premium agency) -->
   <g transform="translate(200 312)" opacity="0.92">

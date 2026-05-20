@@ -1,5 +1,3 @@
-import { env } from '@/env';
-
 /**
  * Global service toggles (infra control only).
  *
@@ -11,10 +9,10 @@ import { env } from '@/env';
 
 export const SERVICES = {
   mail: {
-    enabled: env.ENABLE_MAIL_SERVICE === 'true',
+    enabled: process.env.ENABLE_MAIL_SERVICE !== 'false',
   },
   captcha: {
-    enabled: env.ENABLE_CAPTCHA_SERVICE === 'true',
+    enabled: process.env.ENABLE_CAPTCHA_SERVICE !== 'false',
     provider: 'turnstile',
   },
   contactForm: {

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import fs from 'node:fs';
 
-import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_CATEGORY_REGISTRY } from '@/domains/resources/categoryRegistry';
@@ -176,22 +175,6 @@ function createResourceCategoryEntries(): RouteInventoryEntry[] {
   );
 }
 
-function createBlogTopicEntries(): RouteInventoryEntry[] {
-  return getallTopicSlugs()
-    .map(slug => getTopicBySlug(slug))
-    .filter((topic): topic is NonNullable<typeof topic> => topic != null)
-    .map(topic =>
-      createEntry({
-        key: `blog-topic:${topic.slug}`,
-        kind: 'blog-topic',
-        path: `/blog/topic/${topic.slug}`,
-        title: `${topic.name} – Expert Insights & Resources`,
-        description: topic.description,
-        topics: [topic.slug],
-      })
-    );
-}
-
 export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
   const snapshotInventory = readSnapshotInventory();
   if (snapshotInventory) {
@@ -205,7 +188,6 @@ export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
     ...createStaticEntries(),
     ...createBlogCategoryEntries(),
     ...createResourceCategoryEntries(),
-    ...createBlogTopicEntries(),
     ...graphEntries,
   ];
 

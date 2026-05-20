@@ -6,8 +6,8 @@ export interface ConversionLogData {
   source: string;
   email: string;
   timestamp: string;
-  priority: 'high' | 'medium' | 'low';
-  routedTo: string;
+  mainConcern: string;
+  preferredContactMethod: string;
 }
 
 export function logConversion(data: ConversionLogData) {

@@ -390,6 +390,8 @@ They should show:
 
 Do not imply fictional examples are real client work. Do not invent metrics, testimonials, attribution, or before/after results.
 
+Scenario studies must use illustrative labels. Avoid "Results," "ROI," "Testimonial," "What it cost and returned," and fake before/after framing unless the page is a real case study with real evidence.
+
 Use constraints, tradeoffs, ordinary operational details, and client language where available.
 
 ## Industry Specificity
