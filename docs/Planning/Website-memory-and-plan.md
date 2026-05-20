@@ -20,7 +20,7 @@ Branch parent: `ui-hard-reset`. The branch holds all baseline window work (Phase
 | 4 — Design-system base implementation | Done | Added `--mw-shadow-dark-lg` token. SectionShell `texture` slot and mass hex conversion explicitly deferred to page rebuilds. |
 | 5 — AI workflow + doc optimization | Done | Validator false-positives fixed; durable repo/design memory captured; CLAUDE.md aligned. |
 | 5.5 — Tooling/dep/skill proposal | Done | Approved actions applied: `check:baseline` + `test` + `test:smoke` scripts added, `screenshot-sections.mjs` migrated to `mw-animate-*`, Playwright smoke suite created in `tests/smoke/`. No dependencies installed. No external Claude skills installed. |
-| 6 — Homepage rebuild | Not started | First page to rebuild. Plan before editing. |
+| 6 — Homepage rebuild | Done | 14-section long-form page rebuilt from approved plan. `src/screens/Homepage.tsx` + `src/domains/home/data/homepage.ts` overwritten. One full dark body section (Section 07 Five Protections). Dark inner panels in Sections 03 and 10. Validation green; smoke suite 23/23 pass. |
 | 7 — Smart Website Systems rebuild | Not started |  |
 | 8 — Local SEO Authority rebuild | Not started |  |
 | 9 — Remaining primary service pages | Not started | Lead Response & Handling, Follow-Up & CRM, Reputation & Review. |
@@ -92,6 +92,31 @@ None currently. Phase 3 design-direction calls were all accepted in Phase 4. Any
 - `.claude/skills/mindwp-page-plan/SKILL.md` — pointer added (Phase 5).
 - `.claude/skills/mindwp-page-rebuild/SKILL.md` — pointer added (Phase 5).
 - `.claude/skills/mindwp-page-review/SKILL.md` — pointer added (Phase 5).
+- `src/screens/Homepage.tsx` — full rewrite as 14-section long-form page (Phase 6).
+- `src/domains/home/data/homepage.ts` — trimmed: `hero.signals` / `signalSummary` / `signalCountLabel` removed and moved into JSX; `HomeIconKey` type removed; FAQ #1 reframed to drop the 5-system enumeration; FAQ #4 SEO answer tightened; CTA `expectations` #4 rewritten to a positive-state line; hero eyebrow updated to "Service Businesses & Specialist Clinics"; hero description softened to cover quotes and consultations.
+
+## Phase 6 Execution Summary
+
+**14 sections in approved order** (D L L L L L D L L L L L L L by full-section background):
+
+01 Hero (HeroFrame, gradient-hero) · 02 Leak Map (mist) · 03 Website as Public Control Point (gradient-mist + dark inner panel) · 04 Normal vs Connected (white) · 05 What Conversion-Focused Actually Means (mist) · 06 Connected Handling Path (gradient-teal) · 07 Five Protections, One Path (gradient-dark — single body anchor) · 08 What Changes (gradient-mist) · 09 Scenarios — service business + specialist clinic (gradient-teal) · 10 Selected Website-System Surfaces (white + dark inner panels) · 11 Fit / Not Fit (mist) · 12 Practical Delivery (white) · 13 FAQ (mist, split variant) · 14 Final Diagnostic CTA (DecisionPanel — light section bg, dark inner container).
+
+**Visual decisions:**
+- Five Protections (Section 07) implemented as a desktop "plus" constellation (SWS at hub centre; 4 outer protections at top/right/bottom/left) and a mobile vertical stack in connected order. Never a 5-tile grid.
+- `mw-animate-line` used exactly twice — Section 02 leak rail, Section 06 handling rail.
+- Dot-grid texture overlays applied to the two sections with dark inner panels (03 and 07) and once on Section 07's full dark surface.
+- Selected surfaces framed as illustrative patterns with a small "not specific deliverables" disclaimer; uses a faint browser-chrome dots motif but no fake URL bar, no fake screenshots, no client names, no logos, no metrics.
+
+**Data-file changes:** strictly trimmed. Only HeroFrame text/chips/actions, FAQ items, and DecisionPanel content remain in `homepageData`. All section content, leak states, mechanisms, handling stages, protection labels, positive states, scenarios, selected-surface annotations, and fit lists live page-locally inside `Homepage.tsx`.
+
+**Shared component/token/CSS changes:** none in Phase 6. No `SectionShell` API additions. No new tokens. The only design-system change in the baseline window remains the Phase 4 `--mw-shadow-dark-lg` token addition, which the rebuilt page exercises.
+
+**Validation:** `pnpm check:baseline` green (typecheck + lint + check:names + check:clean-base + check:domain-registries). `pnpm build` green. `pnpm test:smoke` 23/23 passing including the three homepage-specific tests (clean load, primary heading, diagnostic CTA visible). `pnpm check:frontend` blocked by an unrelated user-local `pnpm dev` server on PID 34466 — smoke suite covers the same load/hydration/console-error class on the rebuilt homepage and all key routes.
+
+**Things to review visually:**
+- Section 07 constellation on mobile vs desktop — the desktop plus layout depends on parent height; if it looks cramped at intermediate widths consider tightening the inner padding.
+- The "browser-chrome dots" framing on Section 10's featured surface — confirm it reads as a stylistic frame and not as an implied real screenshot.
+- Section 03's dark inner panel inside a light section is the page's first "depth without darkness" treatment; verify the contrast feels intentional, not abrupt, when scrolling from Section 02.
 
 ## Smoke Suite Behavior
 

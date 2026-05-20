@@ -1,15 +1,8 @@
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
-import type { AccentKey, StatusTone } from '@/types/ui';
+import type { AccentKey } from '@/types/ui';
 
 export type { AccentKey };
-
-export type HomeIconKey =
-  | 'local-search'
-  | 'service-page'
-  | 'form-enquiry'
-  | 'missed-call'
-  | 'follow-up-due';
 
 export type HomepageData = {
   seo: {
@@ -25,14 +18,6 @@ export type HomepageData = {
     primaryAction: { label: string; href: string };
     secondaryAction: { label: string; href: string };
     chips: Array<{ label: string; accent: AccentKey }>;
-    signals: Array<{
-      label: string;
-      note: string;
-      status: Extract<StatusTone, 'unowned' | 'leaking'>;
-      iconKey: HomeIconKey;
-    }>;
-    signalSummary: { leaking: string; unowned: string; pulling: string };
-    signalCountLabel: string;
   };
 
   faq: {
@@ -68,10 +53,10 @@ export const homepageData: HomepageData = {
   },
 
   hero: {
-    eyebrow: 'For Service Businesses',
+    eyebrow: 'Service Businesses & Specialist Clinics',
     heading: 'Work Comes In. [[muted:Too Much Slips Away.]]',
     description:
-      'People find you online. They call, fill in forms, ask for quotes, check reviews, and compare your services. Some of that turns into work. Too much disappears between the first click and the next step.',
+      'People find you online. They call, fill in forms, request quotes or consultations, check reviews, and compare what you do. Some of it turns into work. Too much disappears between the first click and the next step.',
     primaryAction: {
       label: 'Request a System Review',
       href: buildContactHref({
@@ -90,44 +75,6 @@ export const homepageData: HomepageData = {
       { label: 'Follow-up', accent: 'amber' },
       { label: 'Proof', accent: 'green' },
     ],
-    signals: [
-      {
-        label: 'Local search',
-        note: 'Found, but not clearly answered',
-        status: 'unowned',
-        iconKey: 'local-search',
-      },
-      {
-        label: 'Service page visit',
-        note: 'Interest without enough direction',
-        status: 'unowned',
-        iconKey: 'service-page',
-      },
-      {
-        label: 'Form enquiry',
-        note: 'Arrives without ownership',
-        status: 'unowned',
-        iconKey: 'form-enquiry',
-      },
-      {
-        label: 'Missed call',
-        note: 'No response path after the ring',
-        status: 'leaking',
-        iconKey: 'missed-call',
-      },
-      {
-        label: 'Follow-up due',
-        note: 'The next step depends on memory',
-        status: 'leaking',
-        iconKey: 'follow-up-due',
-      },
-    ],
-    signalSummary: {
-      leaking: '2 leaking',
-      unowned: '3 unowned',
-      pulling: 'Ready to be handled',
-    },
-    signalCountLabel: 'SIGNALS',
   },
 
   faq: {
@@ -137,7 +84,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What do you build?',
         answer:
-          'Smart Website Systems, Local SEO Authority Systems, Lead Response & Handling Systems, Follow-Up & CRM Systems, and Reputation & Review Systems, built as connected parts for service businesses.',
+          'Conversion-focused website systems and the connected handling around them — for established service businesses and specialist clinics. The website carries the decision path. The handling around it makes sure calls, forms, quotes, and consultation requests are answered, routed, owned, followed up, and turned into proof. The point is that the work coming in actually turns into work won, not that another tool gets added to the stack.',
       },
       {
         question: 'How is this different from getting a new website?',
@@ -152,7 +99,7 @@ export const homepageData: HomepageData = {
       {
         question: 'Is SEO included?',
         answer:
-          'Local SEO Authority Systems handle local visibility and trust — getting your services found and verified nearby. It is part of the active model, not a rankings add-on.',
+          'Local visibility and trust are part of how the website system works, not a separate package. The website, the local profile, the service or treatment pages, and the proof have to tell the same story to nearby customers — that is what we build. We do not chase rankings as a goal in themselves.',
       },
       {
         question: 'What about missed calls and follow-up?',
@@ -162,7 +109,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What kind of businesses is this for?',
         answer:
-          'Established service businesses, or serious new setups, where jobs are worth real money and demand already exists.',
+          'Established service businesses and specialist clinics where work already comes in, jobs or appointments are worth real money, and handling between moments has visible gaps.',
       },
       {
         question: 'Do I need to have systems in place already?',
@@ -210,7 +157,7 @@ export const homepageData: HomepageData = {
       { num: '01', text: 'Where work is coming in today' },
       { num: '02', text: 'What is being held — and what is not' },
       { num: '03', text: 'What to fix first' },
-      { num: '04', text: 'What it would mean for revenue' },
+      { num: '04', text: 'What changes when the path is connected' },
     ],
     footer: {
       noSell: 'No hard sell.',

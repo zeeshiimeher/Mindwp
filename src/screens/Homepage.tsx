@@ -1,238 +1,403 @@
 /**
- * HOMEPAGE REBUILD BRIEF — MindWP
+ * Homepage — MindWP
  *
- * Purpose:
- * Create recognition that established service businesses and specialist clinics
- * already have activity, but work slips away between being found, trusted,
- * contacted, answered, followed up, reviewed, and improved.
- *
- * For service businesses, this means calls, forms, quotes, bookings, jobs,
- * reviews, staff pressure, and missed follow-up.
- *
- * For specialist clinics, this means patient trust, treatment or procedure
- * clarity, consultation requests, bookings, appointments, follow-up, reviews,
- * and proof — without medical claims, treatment-result claims, compliance
- * claims, EMR/software framing, or generic doctor marketing.
+ * Long-form homepage for established service businesses and specialist clinics.
+ * Opens with recognition that work already comes in, but too much slips away
+ * between being found, trusted, contacted, answered, followed up, reviewed,
+ * and recovered.
  *
  * Page argument:
- * MindWP builds conversion-focused website systems with connected handling.
- * The website is the public control point / practice front door. It is where
- * search, trust, service/treatment clarity, enquiry or booking capture,
- * response, follow-up, proof, and improvement connect.
+ *  - The website is the visible control point for service businesses, and the
+ *    practice front door for specialist clinics.
+ *  - Connected handling around the website makes sure calls, forms, quotes,
+ *    and consultation requests are owned, answered, followed up, and turned
+ *    into proof.
+ *  - The five active primary systems form one connected operating path with
+ *    five named protections — never an equal-tile catalog.
  *
- * Connected handling protects the response, routing, ownership, follow-up,
- * CRM visibility, review request, proof capture, and improvement path around
- * the website.
+ * Section index:
+ *   01  Hero with operating signal surface         (dark, HeroFrame)
+ *   02  Leak map                                   (light mist)
+ *   03  Website as public control point            (light gradient + dark inner panel)
+ *   04  Normal website vs connected system         (white)
+ *   05  What conversion-focused actually means     (mist)
+ *   06  Connected handling path                    (gradient-teal)
+ *   07  Five protections, one connected path       (gradient-dark — single body anchor)
+ *   08  What changes when the path is connected    (gradient-mist)
+ *   09  How this shows up — service + clinic       (gradient-teal)
+ *   10  Selected website-system surfaces           (white + dark inner panels)
+ *   11  Fit / not fit                              (mist)
+ *   12  Practical delivery, system thinking        (white)
+ *   13  FAQ                                        (mist)
+ *   14  Final diagnostic CTA                       (light section bg, DecisionPanel container is dark)
  *
- * Homepage length and section direction:
- * The homepage should be a substantial page, not a short landing page. It needs
- * enough room to create recognition, show the connected path, explain the five
- * active systems, make service-business and clinic relevance visible, support
- * proof/work, filter fit, build credibility, and end with a diagnostic CTA.
+ * Data scope:
+ *  - homepage.ts holds hero text/chips/actions, FAQ items, DecisionPanel content.
+ *  - Everything else (operating maps, leak map, contrast, mechanisms, handling
+ *    path, five protections, positive states, scenarios, selected surfaces,
+ *    fit filter, credibility) lives in this file as page-owned arrays and JSX.
  *
- * The section sequence below is strategic direction, not a rigid wireframe or
- * final section count. Claude may merge, split, rename, reorder, or reshape
- * sections if the homepage argument becomes stronger, but the final page should
- * still feel complete, premium, and long-form enough to carry the full MindWP
- * positioning.
+ * Visual rules:
+ *  - Mostly white/mist/light-gradient. One full dark body section (07).
+ *  - Strong dark inner panels are allowed inside light sections (03, 10).
+ *  - No inline hex values — tokens only via var(--mw-*) or [var(--mw-*)].
+ *  - mw-animate-line used at most twice (02 leak rail, 06 handling rail).
+ *  - Lucide icons at strokeWidth 1.5; sizes 14–16 in small surfaces, 20 max.
+ *  - No fake metrics, screenshots, client names, testimonials, or outcomes.
+ *  - "Selected Website-System Surfaces" is proof-supportive, not portfolio.
  *
- * Soft section direction:
- * 1. Work Comes In. Too Much Slips Away.
- *    Hero recognition around the website system and connected handling path.
- *    Make both service-business and specialist-clinic reality visible without
- *    making the hero feel broad or generic.
- *
- * 2. Traffic Does Not Help If the Path After It Is Unclear.
- *    Leak map showing where search, website, contact, response, follow-up,
- *    reviews, and proof break.
- *
- * 3. The Website Is the Visible Control Point.
- *    Website as the base layer connecting search, trust, enquiry, booking,
- *    response, follow-up, proof, and improvement.
- *
- * 4. Built to Match How Your Business or Practice Actually Runs.
- *    Contrast a normal website with a conversion-focused website system.
- *    Show operating fit, not a generic website-redesign pitch.
- *
- * 5. From First Enquiry to Reliable Follow-Up.
- *    Connected handling surface: contact paths, routing, ownership, response,
- *    follow-up, review/proof request, and visibility.
- *
- * 6. Five Systems. One Connected Path.
- *    Active systems as connected business moments, not generic service cards.
- *    Do not make this feel like a service catalog or internal taxonomy.
- *
- * 7. What Changes When the Path Is Connected.
- *    Before/after operating state: scattered activity vs visible path.
- *    Avoid revenue promises, fake metrics, or exaggerated transformation claims.
- *
- * 8. How This Shows Up in Real Service Businesses and Specialist Clinics.
- *    Scenario board with realistic examples from home services and practices.
- *    Clearly frame illustrative scenarios. No fake proof, fake metrics,
- *    invented client results, unsupported patient outcomes, or treatment claims.
- *
- * 9. Selected Work / Website Showcase.
- *    Add a premium proof-style section only if it supports the page argument.
- *    It may show website screenshots, project visuals, or selected surfaces,
- *    but each item must connect to a business point:
- *    - clearer service, treatment, or procedure pages
- *    - trust above the fold
- *    - enquiry, booking, or consultation paths
- *    - local proof or review placement
- *    - practice/business front-door quality
- *    - connected handling around the website
- *
- *    This must not become a portfolio-first section, generic design gallery,
- *    fake case study, or visual decoration.
- *
- * 10. Built for Established Service Businesses and Specialist Clinics.
- *     Fit/not-fit filter. Filter out cheapest-website buyers, looks-only
- *     redesigns, feature-first buyers, ranking-guarantee seekers, tool-demo
- *     buyers, and unsupported healthcare/software/compliance expectations.
- *
- * 11. Practical Website Delivery With System Thinking Behind It.
- *     Founder/team/build credibility without resume drift, builder fandom,
- *     or generic WordPress-agency positioning.
- *
- * 12. If Your Website Is Not Supporting Enquiries Properly, It Is Worth Reviewing.
- *     Final diagnostic CTA. The next step should feel like a useful review
- *     of the website and handling path, not a sales push.
- *
- * Component and content guidance:
- * - Keep HeroFrame for the homepage hero.
- * - Keep HeroFrame text, chips, and actions in the homepage data file.
- * - Use a custom homepage visual inside HeroFrame; the visual JSX can live
- *   in this render file.
- * - Use SectionShell as the outer wrapper for major sections where useful.
- * - Keep main homepage section content inside this JSX while the page is
- *   being proven.
- * - Use page-owned JSX inside sections to create leak maps, operating paths,
- *   connected-handling surfaces, website-as-control-point maps, before/after
- *   panels, scenario boards, showcase surfaces, and fit filters.
- * - Add a homepage work/showcase section only if it supports the page argument.
- * - The work/showcase section should behave as proof support, not as the main
- *   positioning device.
- * - Do not create a Portfolio navigation item or /portfolio route.
- * - Proof/work should align with the /case-studies proof/work hub direction.
- * - Do not force new homepage section content into the data file yet.
- * - DecisionPanel content can stay in the homepage data file.
- * - FAQSection content can stay in the homepage data file.
- * - Use DecisionPanel for the final diagnostic CTA if it fits.
- * - Use FAQSection only if the FAQs answer real buyer hesitation.
- * - Do not include FAQ just because old pages had one.
- * - Do not let existing components force generic card grids, repeated process
- *   steps, old renderer order, or weak section rhythm.
- *
- * Visual direction:
- * Calm, premium, operational, specific, and commercially serious.
- * Use leak maps, website-as-control-point maps, connected-handling surfaces,
- * before/after operating panels, scenario boards, selective proof/showcase
- * surfaces, fit filters, and diagnostic CTA panels.
- *
- * Selective imagery is allowed when it supports the section argument.
- * Avoid random stock photos, fake dashboards, SaaS UI, AI robot visuals,
- * generic laptop mockups, decorative charts, or image-heavy gallery behavior.
- *
- * Motion direction:
- * Use only existing reveal/motion classes where useful:
- * mw-animate-section, mw-animate-list, mw-animate-stagger, mw-animate-fade,
- * mw-animate-up, mw-animate-panel, mw-animate-line.
- *
- * Motion should be subtle, one-time, and supportive. No new animation library,
- * scroll-jacking, cursor effects, parallax gimmicks, fake dashboard motion,
- * looping animation, or loading delay.
- *
- * CTA posture:
- * Diagnostic, low-pressure, practical.
- *
- * Good directions:
- * - Check my website system
- * - Review my website and handling path
- * - Find where work is slipping
- * - Request a system review
- *
- * Simple UI labels may work only when nearby copy explains the diagnostic value.
- *
- * Avoid:
- * Generic agency homepage, portfolio-first page, visual gallery without business
- * meaning, SaaS dashboard imitation, AI/automation-first framing, SEO ranking
- * hype, CRM/tool reseller language, generic service cards, process steps
- * everywhere, fake proof, fake metrics, unsupported medical/treatment claims,
- * old renderer order, and visuals without business meaning.
- *
- * Rebuild instruction:
- * Existing JSX is context only. Preserve useful intent, not old structure.
- * Rebuild from buyer/practice recognition first.
- * Do not treat this as final copy, fixed section copy, or a rigid wireframe.
- *
- * First create the render shape: HeroFrame setup, SectionShell sequence,
- * section titles/descriptions/tone, CTA placement, and any needed custom class
- * or background-treatment decisions.
- *
- * Then design the inner section content with page-owned JSX.
- *
- * Since this is one of the first three baseline pages, shared component, token,
- * or CSS improvements are allowed only when clearly justified by the homepage
- * design direction. Report page-owned changes, shared component changes,
- * token/CSS changes, and design-system implications separately.
+ * Existing patterns:
+ *  - This file replaces the prior Section2–Section7 sketches wholesale.
+ *  - No portfolio route or /portfolio navigation exists; nothing here creates one.
  */
-import type { LucideIcon } from 'lucide-react';
 import {
   AlertTriangle,
   ArrowRight,
-  BarChart3,
-  Building2,
-  Clock,
+  Check,
   FileText,
-  GitBranch,
-  Globe,
   Inbox,
-  MapPin,
-  MessageSquare,
+  type LucideIcon,
   PhoneOff,
-  Quote,
-  RefreshCw,
   Repeat,
   Search,
-  Star,
-  UserCheck,
-  Workflow,
 } from 'lucide-react';
 
-import { FAQSection as FAQSectionComponent } from '@/components/content/FAQSection';
+import { FAQSection } from '@/components/content/FAQSection';
 import { DecisionPanel } from '@/components/conversion/DecisionPanel';
 import { HeroFrame } from '@/components/layout/HeroFrame';
 import { SectionShell } from '@/components/layout/SectionShell';
 import { StatusBadge } from '@/components/primitives/StatusBadge';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { type HomeIconKey, homepageData } from '@/domains/home/data/homepage';
+import { homepageData } from '@/domains/home/data/homepage';
 
-const HOME_ICON_MAP: Record<HomeIconKey, LucideIcon> = {
-  'local-search': Search,
-  'service-page': FileText,
-  'form-enquiry': Inbox,
-  'missed-call': PhoneOff,
-  'follow-up-due': Repeat,
+// =============================================================================
+// Page-owned data — kept in JSX so the data file can stay minimal.
+// =============================================================================
+
+type SignalStatus = 'leaking' | 'unowned';
+
+const HOME_HERO_SIGNALS: ReadonlyArray<{
+  icon: LucideIcon;
+  label: string;
+  note: string;
+  status: SignalStatus;
+}> = [
+  {
+    icon: Search,
+    label: 'Local search',
+    note: 'Found, but not clearly answered',
+    status: 'unowned',
+  },
+  {
+    icon: FileText,
+    label: 'Service page visit',
+    note: 'Interest without enough direction',
+    status: 'unowned',
+  },
+  { icon: Inbox, label: 'Form enquiry', note: 'Arrives without ownership', status: 'unowned' },
+  {
+    icon: PhoneOff,
+    label: 'Missed call',
+    note: 'No response path after the ring',
+    status: 'leaking',
+  },
+  {
+    icon: Repeat,
+    label: 'Follow-up due',
+    note: 'The next step depends on memory',
+    status: 'leaking',
+  },
+];
+
+type LeakState = 'leak' | 'weak' | 'ok';
+
+const HOME_LEAK_STATES: ReadonlyArray<{
+  label: string;
+  note: string;
+  state: LeakState;
+  main?: boolean;
+}> = [
+  { label: 'Discovery', note: 'Searched and found', state: 'ok' },
+  { label: 'Capture', note: 'Form or call submitted', state: 'ok' },
+  { label: 'Response', note: 'Hours pass before a reply', state: 'leak', main: true },
+  { label: 'Follow-up', note: 'Nobody owns the chase', state: 'weak' },
+  { label: 'Visibility', note: 'Owner cannot see what happened', state: 'weak' },
+];
+
+const HOME_CONTROL_LAYERS: ReadonlyArray<{
+  eyebrow: string;
+  title: string;
+  accent: 'cyan' | 'teal' | 'green';
+  points: ReadonlyArray<string>;
+}> = [
+  {
+    eyebrow: 'Visible layer',
+    title: 'The website',
+    accent: 'cyan',
+    points: [
+      'Service, treatment, or procedure pages',
+      'Trust signals where decisions form',
+      'Clear next step for each visitor',
+      'Local and practice relevance',
+    ],
+  },
+  {
+    eyebrow: 'Handling layer',
+    title: 'Around the website',
+    accent: 'teal',
+    points: [
+      'Enquiry routing and source context',
+      'Owner and status on every active item',
+      'Fast response, even after hours',
+      'Follow-up visibility, not memory',
+    ],
+  },
+  {
+    eyebrow: 'Improvement layer',
+    title: 'Maintained over time',
+    accent: 'green',
+    points: [
+      'Completed work captured as proof',
+      'Pages tuned where they leak',
+      'Local signals aligned with the website',
+      'Reviews requested at the right time',
+    ],
+  },
+];
+
+const HOME_CONTRAST_NORMAL: ReadonlyArray<string> = [
+  'Service pages list what you do',
+  'Enquiries land in a shared inbox',
+  'Whoever sees it first replies — eventually',
+  'Quote goes out, then nothing depends on memory',
+  'Reviews happen when someone remembers',
+  'Owner has no view of what is in motion',
+];
+
+const HOME_CONTRAST_CONNECTED: ReadonlyArray<string> = [
+  'Pages explain the work and the next step',
+  'Enquiries land with context, source, and owner',
+  'First response happens fast and is logged',
+  'Quote and consultation follow-up runs without anyone chasing',
+  'Reviews are requested at the right moment',
+  'Owner sees every active enquiry and where it stands',
+];
+
+const HOME_CONVERSION_MECHANISMS: ReadonlyArray<{
+  num: string;
+  label: string;
+  note: string;
+}> = [
+  {
+    num: '01',
+    label: 'Clarity',
+    note: 'Service, treatment, or procedure pages explain the work in plain language',
+  },
+  { num: '02', label: 'Trust', note: 'Proof and signals appear where hesitation usually happens' },
+  {
+    num: '03',
+    label: 'Intent-matched CTA',
+    note: 'The next step matches what the visitor came to do',
+  },
+  { num: '04', label: 'Handoff', note: 'The enquiry lands with context, source, and owner' },
+  { num: '05', label: 'Improvement', note: 'Pages and paths are maintained, not relaunched' },
+];
+
+const HOME_HANDLING_STAGES: ReadonlyArray<{
+  num: string;
+  label: string;
+  note: string;
+}> = [
+  { num: '01', label: 'Enquiry arrives', note: 'Call, form, message, or booking request' },
+  { num: '02', label: 'First response', note: 'Fast, even after hours' },
+  { num: '03', label: 'Source recorded', note: 'Where it came from and what they wanted' },
+  { num: '04', label: 'Owner sees it', note: 'The right person, not a shared inbox' },
+  { num: '05', label: 'Follow-up runs', note: 'Quote chased, reminder sent, status updated' },
+  { num: '06', label: 'Proof captured', note: 'Review requested when the work is done' },
+];
+
+type ProtectionAccent = 'cyan' | 'teal' | 'amber' | 'green' | 'purple';
+
+type ProtectionCardData = {
+  slug: string;
+  title: string;
+  label: string;
+  note: string;
 };
+
+const HOME_PROTECTION_HUB: ProtectionCardData = {
+  slug: 'smart-website-systems',
+  title: 'Smart Website Systems',
+  label: 'Where decisions form',
+  note: 'Service, treatment, and procedure pages carry clarity, trust, and the next step.',
+};
+
+const HOME_PROTECTION_OUTER: ReadonlyArray<ProtectionCardData & { accent: ProtectionAccent }> = [
+  {
+    slug: 'local-seo-authority',
+    accent: 'teal',
+    title: 'Local SEO Authority',
+    label: 'Found and verified',
+    note: 'Nearby customers and patients find the business and verify it before they enquire.',
+  },
+  {
+    slug: 'lead-response-handling',
+    accent: 'amber',
+    title: 'Lead Response & Handling',
+    label: 'First response and routing',
+    note: 'Calls, forms, and messages reach the right person fast — and do not get lost after hours.',
+  },
+  {
+    slug: 'follow-up-crm',
+    accent: 'green',
+    title: 'Follow-Up & CRM',
+    label: 'Owned next step',
+    note: 'Every enquiry has an owner, a status, and a next step that does not depend on memory.',
+  },
+  {
+    slug: 'reputation-review-systems',
+    accent: 'purple',
+    title: 'Reputation & Review',
+    label: 'Work becomes proof',
+    note: 'Completed work, appointments, and outcomes turn into visible trust at the right time.',
+  },
+];
+
+// Static accent class maps so Tailwind JIT detects every literal.
+const PROTECTION_ACCENT_EYEBROW: Record<ProtectionAccent, string> = {
+  cyan: 'text-[var(--mw-signal-cyan)]',
+  teal: 'text-[var(--mw-signal-teal)]',
+  amber: 'text-[var(--mw-signal-amber)]',
+  green: 'text-[var(--mw-signal-green)]',
+  purple: 'text-[var(--mw-signal-purple)]',
+};
+
+const PROTECTION_ACCENT_DOT: Record<ProtectionAccent, string> = {
+  cyan: 'bg-[var(--mw-signal-cyan)] shadow-[var(--mw-glow-cyan)]',
+  teal: 'bg-[var(--mw-signal-teal)] shadow-[var(--mw-glow-teal)]',
+  amber: 'bg-[var(--mw-signal-amber)] shadow-[var(--mw-glow-amber)]',
+  green: 'bg-[var(--mw-signal-green)] shadow-[var(--mw-glow-green)]',
+  purple: 'bg-[var(--mw-signal-purple)] shadow-[var(--mw-glow-purple)]',
+};
+
+const CONTROL_LAYER_ACCENT_EYEBROW: Record<'cyan' | 'teal' | 'green', string> = {
+  cyan: 'text-[var(--mw-signal-cyan)]',
+  teal: 'text-[var(--mw-signal-teal)]',
+  green: 'text-[var(--mw-signal-green)]',
+};
+
+const CONTROL_LAYER_ACCENT_DOT: Record<'cyan' | 'teal' | 'green', string> = {
+  cyan: 'bg-[var(--mw-signal-cyan)]',
+  teal: 'bg-[var(--mw-signal-teal)]',
+  green: 'bg-[var(--mw-signal-green)]',
+};
+
+const HOME_POSITIVE_STATES: ReadonlyArray<string> = [
+  'Enquiries land somewhere useful, not in a shared inbox',
+  'First response happens fast, even after hours',
+  'Every active enquiry has an owner and a status',
+  'Quote and consultation follow-up does not depend on memory',
+  'Reviews are requested at the right moment, not chased later',
+  'Owner sees what came in, what got handled, and what is still moving',
+];
+
+const HOME_SCENARIOS: ReadonlyArray<{
+  label: string;
+  title: string;
+  beats: ReadonlyArray<string>;
+}> = [
+  {
+    label: 'Illustrative scenario · Roofing',
+    title: 'Storm passes. The phone does not stop.',
+    beats: [
+      'Search traffic spikes overnight. The website shows the right service area.',
+      'Form quotes pile up while crews are still out on jobs.',
+      'Missed calls get a fast acknowledgement instead of going cold.',
+      'Each quote has an owner, a follow-up reminder, and a visible status.',
+      'Once the job is done, a review request goes out at the right moment.',
+    ],
+  },
+  {
+    label: 'Illustrative scenario · Specialist clinic',
+    title: 'A patient researches their treatment options.',
+    beats: [
+      'The procedure page explains what the treatment involves and what to expect.',
+      'A consultation request lands with practice context, not just a name.',
+      'The right team member sees it without it sitting in a shared inbox.',
+      'Pre-appointment follow-up does not depend on someone remembering.',
+      'After the appointment, the practice front door earns its next review.',
+    ],
+  },
+];
+
+const HOME_SELECTED_FEATURED_PARTS: ReadonlyArray<{ label: string; note: string }> = [
+  { label: 'Problem & intent', note: 'What the visitor came to understand' },
+  { label: 'Plain-language explanation', note: 'What the service or treatment actually is' },
+  { label: 'Proof placement', note: 'Trust signals where hesitation usually happens' },
+  { label: 'Intent-matched CTA', note: 'Call, form, booking, or consultation request' },
+  { label: 'Handoff', note: 'Context, source, and owner sent with the enquiry' },
+];
+
+const HOME_SELECTED_TRUST_LABELS: ReadonlyArray<string> = [
+  'Local service area',
+  'Verified business or practice',
+  'Real recent work',
+  'Response within minutes',
+];
+
+const HOME_SELECTED_HANDOFF_ROWS: ReadonlyArray<{ field: string; value: string }> = [
+  { field: 'Source', value: 'Service page' },
+  { field: 'Intent', value: 'Quote request' },
+  { field: 'Owner', value: 'Routed' },
+  { field: 'Status', value: 'Active' },
+];
+
+const HOME_FIT_FOR: ReadonlyArray<string> = [
+  'Established service business or specialist clinic',
+  'Real enquiries, jobs, appointments, or consultations already exist',
+  'Quote, booking, or follow-up handling has visible gaps',
+  'Owner wants practical structure, not a prettier website',
+  'Long-term stability and compounding trust matter more than a launch event',
+];
+
+const HOME_FIT_NOT_FOR: ReadonlyArray<string> = [
+  'Cheapest possible website package',
+  'Guaranteed rankings or "dominate Google" expectations',
+  'AI chatbot framed as the offer instead of practical handling',
+  'Looks-only redesign with no business context',
+  'Healthcare buyer expecting EMR, compliance, or treatment-outcome claims',
+];
+
+// =============================================================================
+// Page
+// =============================================================================
 
 export default function Homepage() {
   return (
     <CTARegistryProvider pageId='page:home' pageType='page' primarySystem='smart-website-systems'>
       <main>
         <HomeHero />
-        <HomeRecognitionSection />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
+        <HomeLeakMap />
+        <HomeControlPoint />
+        <HomeContrast />
+        <HomeConversionMeans />
+        <HomeConnectedHandling />
+        <HomeFiveProtections />
+        <HomeWhatChanges />
+        <HomeScenarios />
+        <HomeSelectedSurfaces />
+        <HomeFit />
+        <HomeCredibility />
         <HomeFAQ />
-        <HomeDecisionPanel />
+        <HomeCTA />
       </main>
     </CTARegistryProvider>
   );
 }
+
+// =============================================================================
+// 01 · Hero
+// =============================================================================
 
 function HomeHero() {
   const { hero } = homepageData;
@@ -243,897 +408,833 @@ function HomeHero() {
       eyebrow={hero.eyebrow}
       title={hero.heading}
       description={hero.description}
-      texture=''
       actions={[
         {
           label: hero.primaryAction.label,
           href: hero.primaryAction.href,
           variant: 'white',
-          icon: <ArrowRight size={16} aria-hidden='true' />,
+          icon: <ArrowRight size={16} strokeWidth={1.5} aria-hidden='true' />,
         },
         {
           label: hero.secondaryAction.label,
           href: hero.secondaryAction.href,
           variant: 'ghost',
-          icon: <ArrowRight size={14} aria-hidden='true' />,
+          icon: <ArrowRight size={14} strokeWidth={1.5} aria-hidden='true' />,
         },
       ]}
       chips={hero.chips.map(chip => ({ label: chip.label, accent: chip.accent }))}
-      visual={<SignalSurface />}
+      visual={<HomeHeroSignalSurface />}
     />
   );
 }
 
-function SignalSurface() {
-  const { hero } = homepageData;
+function HomeHeroSignalSurface() {
+  const leakingCount = HOME_HERO_SIGNALS.filter(signal => signal.status === 'leaking').length;
+  const unownedCount = HOME_HERO_SIGNALS.filter(signal => signal.status === 'unowned').length;
 
   return (
-    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)]'>
+    <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-06)] p-5 shadow-[var(--mw-shadow-dark-lg)] mw-animate-up'>
       <div className='mb-5 flex items-start justify-between gap-4 border-b border-[var(--mw-white-10)] pb-4'>
         <div>
-          <p className='mw-text-eyebrow mw-text-signal-cyan'>Signal Surface</p>
-          <p className='mw-text-on-dark-muted'>What your business looks like today</p>
+          <p className='mw-text-eyebrow text-[var(--mw-signal-cyan)]'>Signal surface</p>
+          <p className='mt-1 text-sm text-[var(--mw-text-on-dark-muted)]'>
+            What your business looks like today
+          </p>
         </div>
-        <div className='rounded-[var(--mw-radius-xl)] border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] px-4 py-3 text-right'>
-          <p className='mw-text-eyebrow mw-text-on-dark-muted'>{hero.signalCountLabel}</p>
-          <strong className='mw-text-on-dark'>
-            {String(hero.signals.length).padStart(2, '0')}
+        <div className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] px-3 py-2 text-right'>
+          <p className='mw-text-eyebrow text-[var(--mw-text-on-dark-muted)]'>Signals</p>
+          <strong className='block text-lg leading-tight tabular-nums text-[var(--mw-text-on-dark-strong)]'>
+            {String(HOME_HERO_SIGNALS.length).padStart(2, '0')}
           </strong>
         </div>
       </div>
 
-      <div className='grid gap-3'>
-        {hero.signals.map((signal, index) => {
-          const Icon = HOME_ICON_MAP[signal.iconKey];
-
+      <ul className='mw-animate-stagger grid gap-3'>
+        {HOME_HERO_SIGNALS.map((signal, index) => {
+          const Icon = signal.icon;
           return (
-            <div
+            <li
               key={signal.label}
               className='grid grid-cols-[auto_auto_1fr_auto] items-center gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
             >
-              <span className='mw-text-on-dark-muted'>{String(index + 1).padStart(2, '0')}</span>
+              <span className='tabular-nums text-xs text-[var(--mw-text-on-dark-muted)]'>
+                {String(index + 1).padStart(2, '0')}
+              </span>
               <span className='grid size-8 place-items-center rounded-full border border-[var(--mw-white-12)] bg-[var(--mw-white-08)] text-[var(--mw-signal-cyan)]'>
-                <Icon size={15} aria-hidden='true' />
+                <Icon size={15} strokeWidth={1.5} aria-hidden='true' />
               </span>
-              <span>
-                <strong className='block mw-text-on-dark'>{signal.label}</strong>
-                <span className='mw-text-on-dark-muted'>{signal.note}</span>
+              <span className='min-w-0'>
+                <strong className='block text-sm font-medium text-[var(--mw-text-on-dark-strong)]'>
+                  {signal.label}
+                </strong>
+                <span className='block text-xs text-[var(--mw-text-on-dark-muted)]'>
+                  {signal.note}
+                </span>
               </span>
-              <StatusBadge variant={signal.status} label={signal.status.toUpperCase()} />
-            </div>
+              <StatusBadge
+                variant={signal.status}
+                label={signal.status === 'leaking' ? 'Leaking' : 'Unowned'}
+              />
+            </li>
           );
         })}
-      </div>
+      </ul>
 
-      <div className='mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--mw-white-10)] pt-4'>
-        <StatusBadge variant='leaking' label={hero.signalSummary.leaking} />
-        <StatusBadge variant='unowned' label={hero.signalSummary.unowned} />
-        <StatusBadge variant='handled' label={hero.signalSummary.pulling} />
+      <div className='mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--mw-white-10)] pt-4'>
+        <div className='flex items-center gap-2'>
+          <StatusBadge variant='leaking' label={`${leakingCount} leaking`} />
+          <StatusBadge variant='unowned' label={`${unownedCount} unowned`} />
+        </div>
+        <span className='text-xs text-[var(--mw-text-on-dark-muted)]'>Ready to be handled</span>
       </div>
     </div>
   );
 }
 
-function HomeRecognitionSection() {
-  const middle = [
-    { icon: Inbox, label: 'Capture', note: 'All channels in' },
-    { icon: GitBranch, label: 'Routing', note: 'Right person, right time' },
-    { icon: Repeat, label: 'Follow-up', note: 'On schedule, not memory' },
-    { icon: BarChart3, label: 'Tracking', note: "What's working" },
-    { icon: Star, label: 'Proof', note: 'Reviews at the moment' },
-  ];
+// =============================================================================
+// 02 · Leak Map
+// =============================================================================
+
+function HomeLeakMap() {
   return (
     <SectionShell
       id='recognition'
-      ariaLabel='What is actually happening'
-      layout='split'
-      ratio='40-60'
-      heading={{
-        eyebrow: 'What is actually happening',
-        title: 'The business is working. [[muted:The system around it is leaking.]]',
-        description:
-          'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
-      }}
-    >
-      <div className='col-span-12 lg:col-span-7'>
-        {/* Top — visible surface */}
-        <div className='rounded-2xl border-2 border-[#E6EEF3] bg-white p-6 shadow-[0_8px_32px_rgba(8,17,31,0.07)]'>
-          <div className='flex items-center gap-4 mb-5'>
-            <div className='w-12 h-12 rounded-xl bg-[#F6FAFC] border border-[#D8E6EE] flex items-center justify-center text-[#4C5E6F]'>
-              <Globe size={20} />
-            </div>
-            <div className='flex-1'>
-              <div
-                className='text-[#6F8190] uppercase tracking-[0.14em]'
-                style={{ fontSize: '10.5px', fontWeight: 600 }}
-              >
-                Surface
-              </div>
-              <div className='text-[#08111F] mt-0.5' style={{ fontSize: '16px', fontWeight: 600 }}>
-                Visible website
-              </div>
-            </div>
-            <div className='text-[#6F8190]' style={{ fontSize: '12.5px' }}>
-              What the visitor sees
-            </div>
-          </div>
-          <div className='grid grid-cols-3 gap-2'>
-            {['Service pages', 'Local coverage', 'Contact & enquiry'].map(item => (
-              <div
-                key={item}
-                className='rounded-lg bg-[#F6FAFC] border border-[#E6EEF3] px-3 py-2.5 text-center'
-              >
-                <div className='text-[#4C5E6F]' style={{ fontSize: '12px', fontWeight: 500 }}>
-                  {item}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* connector */}
-        <div className='flex flex-col items-center gap-1 my-2'>
-          <div className='w-px h-5 bg-[#C8D8E4]' />
-          <div
-            className='text-[#6F8190] uppercase tracking-[0.12em]'
-            style={{ fontSize: '9px', fontWeight: 700 }}
-          >
-            underneath
-          </div>
-          <div className='w-px h-5 bg-[#C8D8E4]' />
-        </div>
-
-        {/* Middle — working layers */}
-        <div className='rounded-2xl border-2 border-[#35C7D8]/40 bg-gradient-to-b from-[#EBF9FB] to-[#F6FCFD] p-6 shadow-[0_4px_20px_rgba(53,199,216,0.10)]'>
-          <div
-            className='text-[#0E7D8C] uppercase tracking-[0.14em] mb-4'
-            style={{ fontSize: '10.5px', fontWeight: 700 }}
-          >
-            What runs underneath
-          </div>
-          <div className='grid grid-cols-5 gap-3'>
-            {middle.map(m => (
-              <div
-                key={m.label}
-                className='rounded-xl bg-white border border-[#D0EFF4] p-4 flex flex-col items-center text-center gap-2 shadow-[0_2px_8px_rgba(8,17,31,0.04)]'
-              >
-                <div className='w-11 h-11 rounded-lg bg-[#35C7D8]/14 text-[#0E6879] flex items-center justify-center'>
-                  <m.icon size={18} />
-                </div>
-                <div className='text-[#0E2740]' style={{ fontSize: '12.5px', fontWeight: 600 }}>
-                  {m.label}
-                </div>
-                <div className='text-[#4C5E6F]' style={{ fontSize: '11px', lineHeight: 1.35 }}>
-                  {m.note}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* connector */}
-        <div className='flex flex-col items-center gap-1 my-2'>
-          <div className='w-px h-5 bg-[#C8D8E4]' />
-          <div className='w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]' />
-          <div className='w-px h-5 bg-[#C8D8E4]' />
-        </div>
-
-        {/* Bottom — foundation */}
-        <div className='rounded-2xl bg-gradient-to-br from-[#061323] to-[#103E5A] p-7 border border-[#35C7D8]/20 shadow-[0_24px_64px_rgba(8,17,31,0.28),0_0_40px_rgba(53,199,216,0.06)]'>
-          <div className='flex items-center gap-4'>
-            <div className='w-12 h-12 rounded-xl bg-white/8 border border-white/15 flex items-center justify-center'>
-              <div className='w-2.5 h-2.5 rounded-full bg-[#35C7D8] shadow-[0_0_12px_#35C7D8]' />
-            </div>
-            <div className='flex-1'>
-              <div
-                className='text-white/50 uppercase tracking-[0.14em]'
-                style={{ fontSize: '10.5px', fontWeight: 600 }}
-              >
-                Foundation
-              </div>
-              <div className='text-white mt-0.5' style={{ fontSize: '16px', fontWeight: 600 }}>
-                Smart Website Systems
-              </div>
-            </div>
-            <div className='text-white/55' style={{ fontSize: '12.5px' }}>
-              The working business structure
-            </div>
-          </div>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-function Section2() {
-  const smartWebsiteMoments = [
-    { name: 'Discovery', note: 'Found in search', state: 'ok' },
-    { name: 'Capture', note: 'Form submitted', state: 'ok' },
-    { name: 'Response', note: 'Hours pass before reply', state: 'leak', main: true },
-    { name: 'Follow-up', note: 'Nobody owns the chase', state: 'weak' },
-    { name: 'Visibility', note: 'Owner cannot see what happened', state: 'weak' },
-  ];
-  return (
-    <SectionShell
-      id='recognition'
-      ariaLabel='What is actually happening'
+      ariaLabel='Where work usually slips'
       tone='mist'
       heading={{
-        eyebrow: 'What is actually happening',
+        eyebrow: 'Where work usually slips',
         title: 'The business is working. [[muted:The system around it is leaking.]]',
         description:
-          'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
+          'Not one dramatic failure. A steady drip across the path from search to job done or appointment kept. Each step works on its own. The handoffs between them do not.',
       }}
     >
-      <div className='rounded-[20px] bg-white border border-[#E6EEF3] p-10 lg:p-14 relative overflow-hidden'>
-        <div className='grid grid-cols-12 gap-4 items-stretch'>
-          {smartWebsiteMoments.map((m, i) => {
-            const dom = m.main;
-            const tone =
-              m.state === 'leak' ? '#E76F6F' : m.state === 'weak' ? '#F4B740' : '#21B985';
+      <div className='relative overflow-hidden rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-soft)] lg:p-10 mw-animate-up'>
+        <svg
+          className='mw-animate-line pointer-events-none absolute inset-x-10 top-[7rem] hidden lg:block'
+          viewBox='0 0 100 1'
+          preserveAspectRatio='none'
+          style={{ height: '2px' }}
+          aria-hidden='true'
+        >
+          <line x1='2' y1='0.5' x2='98' y2='0.5' stroke='var(--mw-border-light)' strokeWidth='1' />
+        </svg>
+
+        <ol className='relative grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-3'>
+          {HOME_LEAK_STATES.map((step, index) => {
+            const isMain = !!step.main;
+            const stateClass =
+              step.state === 'leak'
+                ? 'border-[var(--mw-signal-red-30)] bg-[var(--mw-signal-red-10)]'
+                : step.state === 'weak'
+                  ? 'border-[var(--mw-signal-amber-25)] bg-[var(--mw-bg-mist)]'
+                  : 'border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)]';
+            const dotClass =
+              step.state === 'leak'
+                ? 'bg-[var(--mw-signal-red)] shadow-[var(--mw-glow-red)]'
+                : step.state === 'weak'
+                  ? 'bg-[var(--mw-signal-amber)]'
+                  : 'bg-[var(--mw-signal-green)]';
             return (
-              <div
-                key={i}
-                className={`${dom ? 'col-span-12 md:col-span-4' : 'col-span-6 md:col-span-2'} relative`}
+              <li
+                key={step.label}
+                className={`relative rounded-[var(--mw-radius-lg)] border p-5 ${stateClass} ${
+                  isMain ? 'shadow-[var(--mw-shadow-card)]' : ''
+                }`}
               >
-                <div
-                  className={`h-full rounded-xl p-5 ${dom ? 'bg-gradient-to-br from-[#FDECEC] to-white border border-[#E76F6F]/30 shadow-[0_12px_40px_rgba(231,111,111,0.15)]' : 'bg-[#F6FAFC] border border-[#E6EEF3]'}`}
-                >
-                  <div className='flex items-center justify-between mb-3'>
-                    <span
-                      className='text-[#6F8190] tabular-nums'
-                      style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.12em' }}
-                    >
-                      0{i + 1}
-                    </span>
-                    <span
-                      className='w-1.5 h-1.5 rounded-full'
-                      style={{ background: tone, boxShadow: dom ? `0 0 10px ${tone}` : 'none' }}
-                    />
-                  </div>
-                  <div
-                    className='text-[#08111F]'
-                    style={{
-                      fontSize: dom ? '24px' : '14.5px',
-                      fontWeight: 600,
-                      letterSpacing: '-0.015em',
-                    }}
-                  >
-                    {m.name}
-                  </div>
-                  <div
-                    className={`mt-2 ${dom ? 'text-[#08111F]' : 'text-[#6F8190]'}`}
-                    style={{ fontSize: dom ? '14.5px' : '12px', lineHeight: 1.5 }}
-                  >
-                    {m.note}
-                  </div>
-                  {dom && (
-                    <div
-                      className='mt-5 pt-4 border-t border-[#E76F6F]/20 flex items-center gap-2 text-[#E76F6F]'
-                      style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}
-                    >
-                      <AlertTriangle size={12} /> MAIN LEAK
-                    </div>
-                  )}
+                <div className='mb-3 flex items-center justify-between'>
+                  <span className='mw-text-eyebrow tabular-nums text-[var(--mw-text-subtle)]'>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className={`size-2 rounded-full ${dotClass}`} aria-hidden='true' />
                 </div>
-              </div>
+                <div
+                  className={`font-semibold text-[var(--mw-text-primary)] ${
+                    isMain ? 'text-xl' : 'text-base'
+                  }`}
+                >
+                  {step.label}
+                </div>
+                <div
+                  className={`mt-2 ${
+                    isMain
+                      ? 'text-sm text-[var(--mw-text-primary)]'
+                      : 'text-xs text-[var(--mw-text-subtle)]'
+                  }`}
+                >
+                  {step.note}
+                </div>
+                {isMain && (
+                  <div className='mw-text-eyebrow mt-5 flex items-center gap-2 border-t border-[var(--mw-signal-red-30)] pt-4 text-[var(--mw-signal-red)]'>
+                    <AlertTriangle size={12} strokeWidth={1.5} aria-hidden='true' />
+                    Main leak
+                  </div>
+                )}
+              </li>
             );
           })}
-        </div>
+        </ol>
 
-        <div
-          className='mt-8 pt-8 border-t border-[#E6EEF3] flex items-center justify-between text-[#6F8190]'
-          style={{ fontSize: '12.5px' }}
-        >
+        <div className='mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--mw-border-light)] pt-6 text-sm text-[var(--mw-text-subtle)]'>
           <span>
-            Discovery → Capture → <span className='text-[#E76F6F]'>Response</span> → Follow-up →
+            Discovery → Capture →{' '}
+            <span className='font-medium text-[var(--mw-signal-red)]'>Response</span> → Follow-up →
             Visibility
           </span>
-          <span>Most enquiries die between Capture and Response.</span>
+          <span>Most enquiries die between capture and response.</span>
         </div>
       </div>
     </SectionShell>
   );
 }
-function Section3() {
+
+// =============================================================================
+// 03 · Website as Public Control Point / Practice Front Door
+// =============================================================================
+
+function HomeControlPoint() {
   return (
     <SectionShell
-      id='recognition'
-      ariaLabel='What is actually happening'
+      ariaLabel='Website as public control point and practice front door'
+      tone='gradient-mist'
       heading={{
-        eyebrow: 'What is actually happening',
-        title: 'Off-the-shelf SEO vs local visibility that holds',
+        eyebrow: 'Website as control point',
+        title: 'Not just a page. [[muted:The visible front door.]]',
         description:
-          'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
+          'For service businesses it is the public control point. For specialist clinics it is the practice front door. Either way, it sits where search, trust, enquiry, response, follow-up, and proof meet.',
       }}
     >
-      <div className='grid grid-cols-12 gap-5'>
-        <div className='col-span-12 lg:col-span-6 rounded-[20px] bg-white border border-[#E6EEF3] p-9'>
-          <div className='flex items-center justify-between mb-6'>
-            <span
-              className='text-[#6F8190] uppercase tracking-[0.18em]'
-              style={{ fontSize: '10.5px', fontWeight: 700 }}
-            >
-              Off-the-shelf SEO
-            </span>
-            <span className='text-[#6F8190]' style={{ fontSize: '11px' }}>
-              Disconnected · Activity-driven
-            </span>
-          </div>
-          <div
-            className='text-[#08111F] mb-7'
-            style={{ fontSize: '26px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2 }}
-          >
-            Keyword activity. Reports.
-            <br />
-            Disconnected work.
-          </div>
-          <div className='relative h-[180px] rounded-xl bg-[#F6FAFC] border border-[#E6EEF3] p-4'>
-            {['Keyword list', 'Backlink task', 'Audit report', 'Blog post'].map((label, i) => {
-              const positions = [
-                { top: '8%', left: '5%' },
-                { top: '12%', right: '8%' },
-                { top: '55%', left: '12%' },
-                { top: '60%', right: '15%' },
-              ];
-              return (
-                <div
-                  key={label}
-                  className='absolute px-3 py-1.5 rounded-md bg-white border border-[#E6EEF3] text-[#4C5E6F]'
-                  style={{ ...positions[i], fontSize: '11.5px' }}
-                >
-                  {label}
-                </div>
-              );
-            })}
-            <div
-              className='absolute bottom-3 left-1/2 -translate-x-1/2 text-[#6F8190]'
-              style={{ fontSize: '11px', fontStyle: 'italic' }}
-            >
-              nothing connecting them
-            </div>
-          </div>
-        </div>
-
-        <div className='col-span-12 lg:col-span-6 rounded-[20px] bg-gradient-to-br from-[#061323] to-[#103E5A] p-9 relative overflow-hidden'>
-          <div
-            className='absolute inset-0 opacity-[0.06]'
-            style={{
-              backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
-            }}
-          />
-          <div className='relative'>
-            <div className='flex items-center justify-between mb-6'>
-              <span
-                className='text-[#35C7D8] uppercase tracking-[0.18em]'
-                style={{ fontSize: '10.5px', fontWeight: 700 }}
-              >
-                Structured local
-              </span>
-              <span className='text-white/55' style={{ fontSize: '11px' }}>
-                Connected · Compounding
-              </span>
-            </div>
-            <div
-              className='text-white mb-7'
-              style={{
-                fontSize: '26px',
-                fontWeight: 600,
-                letterSpacing: '-0.02em',
-                lineHeight: 1.2,
-              }}
-            >
-              Pages, profile, citations,
-              <br />
-              content, reviews — connected.
-            </div>
-
-            <div className='relative h-[180px] rounded-xl bg-white/[0.03] border border-white/10 p-4'>
-              <svg
-                className='absolute inset-0 w-full h-full'
-                viewBox='0 0 400 160'
-                fill='none'
-                preserveAspectRatio='none'
-              >
-                <path
-                  d='M40 80 L130 40 L240 80 L350 40 M130 40 L240 120 M240 80 L130 120'
-                  stroke='#35C7D8'
-                  strokeOpacity='0.4'
-                  strokeWidth='1'
-                  strokeDasharray='3 4'
-                />
-              </svg>
-              {['Pages', 'Profile', 'Citations', 'Content', 'Reviews'].map((label, i) => {
-                const positions = [
-                  { top: '40%', left: '8%' },
-                  { top: '20%', left: '32%' },
-                  { top: '40%', left: '57%' },
-                  { top: '20%', right: '8%' },
-                  { top: '70%', left: '40%' },
-                ];
-                return (
-                  <div
-                    key={label}
-                    className='absolute px-3 py-1.5 rounded-md bg-[#061323]/60 border border-[#35C7D8]/30 text-white/90 backdrop-blur-sm'
-                    style={{ ...positions[i], fontSize: '11.5px', fontWeight: 500 }}
-                  >
-                    {label}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-function Section4() {
-  const cov = [
-    { icon: Globe, label: 'Website structure' },
-    { icon: FileText, label: 'Service pages' },
-    { icon: Building2, label: 'Google Business Profile' },
-    { icon: MapPin, label: 'Citations and directories' },
-    { icon: Star, label: 'Reviews and reputation' },
-    { icon: Search, label: 'Local content' },
-    { icon: FileText, label: 'Reporting' },
-    { icon: RefreshCw, label: 'Ongoing improvement' },
-  ];
-  return (
-    <SectionShell
-      id='recognition'
-      ariaLabel='What is actually happening'
-      tone='mist'
-      heading={{
-        eyebrow: 'section eyebrow',
-        title: 'What we handle for your local visibility',
-        description:
-          'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
-      }}
-    >
-      <div className='rounded-[24px] bg-gradient-to-br from-[#061323] to-[#0E2740] p-10 lg:p-14 relative overflow-hidden'>
+      <div className='relative overflow-hidden rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-6 lg:p-10 mw-animate-up'>
         <div
-          className='absolute inset-0 opacity-[0.05]'
+          className='pointer-events-none absolute inset-0 opacity-[0.06]'
+          aria-hidden='true'
           style={{
-            backgroundImage:
-              'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
+            backgroundImage: 'var(--mw-gradient-grid-texture)',
+            backgroundSize: '32px 32px',
           }}
         />
-
-        <div className='relative'>
-          <div className='flex items-center justify-between mb-10'>
-            <div className='flex items-center gap-3'>
-              <span className='w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]' />
-              <span className='text-white' style={{ fontSize: '13px', fontWeight: 600 }}>
-                Local coverage map
-              </span>
-            </div>
-            <span className='text-white/45' style={{ fontSize: '11px' }}>
-              08 zones · single owned system
-            </span>
-          </div>
-
-          {/* Service-area concentric */}
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 items-center'>
-            <div className='lg:col-span-1'>
-              <div className='relative aspect-square max-w-[300px] mx-auto'>
-                <svg className='absolute inset-0 w-full h-full' viewBox='0 0 300 300' fill='none'>
-                  <defs>
-                    <radialGradient id='mapGrad' cx='50%' cy='50%' r='50%'>
-                      <stop offset='0%' stopColor='#35C7D8' stopOpacity='0.25' />
-                      <stop offset='100%' stopColor='#35C7D8' stopOpacity='0' />
-                    </radialGradient>
-                  </defs>
-                  <circle
-                    cx='150'
-                    cy='150'
-                    r='140'
-                    fill='url(#mapGrad)'
-                    stroke='#35C7D8'
-                    strokeOpacity='0.2'
-                  />
-                  <circle
-                    cx='150'
-                    cy='150'
-                    r='100'
-                    fill='none'
-                    stroke='#35C7D8'
-                    strokeOpacity='0.25'
-                    strokeDasharray='3 5'
-                  />
-                  <circle
-                    cx='150'
-                    cy='150'
-                    r='60'
-                    fill='none'
-                    stroke='#35C7D8'
-                    strokeOpacity='0.35'
-                    strokeDasharray='3 5'
-                  />
-                  {[
-                    { x: 150, y: 80 },
-                    { x: 230, y: 130 },
-                    { x: 200, y: 220 },
-                    { x: 90, y: 200 },
-                    { x: 70, y: 110 },
-                  ].map((p, i) => (
-                    <g key={i}>
-                      <circle cx={p.x} cy={p.y} r='4' fill='#35C7D8' />
-                      <circle cx={p.x} cy={p.y} r='10' fill='#35C7D8' fillOpacity='0.2' />
-                    </g>
-                  ))}
-                </svg>
-                <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] border border-[#35C7D8]/40 flex items-center justify-center'>
-                  <MapPin size={20} className='text-[#35C7D8]' />
-                </div>
-              </div>
-              <div className='mt-4 text-center'>
-                <div
-                  className='text-white/55 uppercase tracking-[0.14em]'
-                  style={{ fontSize: '10.5px', fontWeight: 700 }}
-                >
-                  Service area
-                </div>
-                <div className='text-white mt-1' style={{ fontSize: '13.5px', fontWeight: 500 }}>
-                  Authority radius
-                </div>
-              </div>
-            </div>
-
-            <div className='lg:col-span-2 grid grid-cols-2 gap-3'>
-              {cov.map((c, i) => (
-                <div
-                  key={c.label}
-                  className='flex items-center gap-3 px-4 py-3.5 rounded-lg border border-white/10 bg-white/[0.04]'
-                >
-                  <span
-                    className='text-[#35C7D8] tabular-nums'
-                    style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <div className='w-9 h-9 rounded-md bg-white/[0.04] border border-white/8 flex items-center justify-center text-[#35C7D8]'>
-                    <c.icon size={15} />
-                  </div>
-                  <span className='text-white' style={{ fontSize: '13.5px', fontWeight: 500 }}>
-                    {c.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-function Section5() {
-  const phases = [
-    { name: 'Check', note: 'What does Google currently see?', angle: 0 },
-    { name: 'Clarify', note: 'Fix details, services, structure.', angle: 90 },
-    { name: 'Build', note: 'Pages, citations, content, reviews.', angle: 180 },
-    { name: 'Adjust', note: 'Read the signal. Refine. Repeat.', angle: 270 },
-  ];
-  return (
-    <SectionShell
-      id='recognition'
-      ariaLabel='What is actually happening'
-      layout='split'
-      heading={{
-        eyebrow: 'What is actually happening',
-        title: 'What happens after we start',
-        description:
-          'A repeating cycle: check, clarify, build, adjust. Each loop adds signal. The compounding does the work.',
-      }}
-    >
-      <div className='col-span-12 lg:col-span-7'>
-        <div className='relative aspect-square max-w-[520px] mx-auto'>
-          <svg className='absolute inset-0 w-full h-full' viewBox='0 0 520 520' fill='none'>
-            <defs>
-              <linearGradient id='cycleGrad' x1='0' y1='0' x2='1' y2='1'>
-                <stop offset='0%' stopColor='#35C7D8' />
-                <stop offset='100%' stopColor='#14B8A6' />
-              </linearGradient>
-            </defs>
-            <circle
-              cx='260'
-              cy='260'
-              r='200'
-              fill='none'
-              stroke='url(#cycleGrad)'
-              strokeWidth='2'
-              strokeDasharray='6 8'
-            />
-            <circle cx='260' cy='260' r='200' fill='#EEF6FA' fillOpacity='0.4' />
-          </svg>
-
-          <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] flex flex-col items-center justify-center text-center'>
-            <RefreshCw size={22} className='text-[#35C7D8] mb-2' />
-            <div className='text-white' style={{ fontSize: '14px', fontWeight: 600 }}>
-              Compounding
-            </div>
-            <div className='text-white/50 mt-1' style={{ fontSize: '11px' }}>
-              cycle
-            </div>
-          </div>
-
-          {phases.map((p, i) => {
-            const r = 38;
-            const rad = ((p.angle - 90) * Math.PI) / 180;
-            const x = 50 + r * Math.cos(rad);
-            const y = 50 + r * Math.sin(rad);
-            return (
-              <div
-                key={p.name}
-                className='absolute -translate-x-1/2 -translate-y-1/2'
-                style={{ left: `${x}%`, top: `${y}%` }}
-              >
-                <div className='rounded-xl bg-white border border-[#D8E6EE] shadow-[0_8px_24px_rgba(8,17,31,0.08)] p-4 w-[180px] text-center'>
-                  <div
-                    className='text-[#14B8A6] tabular-nums'
-                    style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em' }}
-                  >
-                    0{i + 1}
-                  </div>
-                  <div
-                    className='text-[#08111F] mt-1'
-                    style={{ fontSize: '17px', fontWeight: 600 }}
-                  >
-                    {p.name}
-                  </div>
-                  <div
-                    className='text-[#6F8190] mt-1.5'
-                    style={{ fontSize: '11.5px', lineHeight: 1.45 }}
-                  >
-                    {p.note}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-function Section6() {
-  return (
-    <SectionShell
-      id='recognition'
-      ariaLabel='What is actually happening'
-      tone='dark'
-      heading={{
-        eyebrow: 'What is actually happening',
-        title: 'The business is working. [[muted:The system around it is leaking.]]',
-        description:
-          'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
-      }}
-    >
-      <div className='rounded-[20px] bg-white border border-[#E6EEF3] p-10 lg:p-14 grid grid-cols-12 gap-10 items-center'>
-        <div className='col-span-12 lg:col-span-7'>
-          <div className='flex items-center gap-2 mb-5'>
-            <span className='w-7 h-7 rounded-md bg-[#EEF6FA] text-[#0E2740] flex items-center justify-center'>
-              <Quote size={14} />
-            </span>
-            <span
-              className='text-[#6F8190] uppercase tracking-[0.18em]'
-              style={{ fontSize: '10.5px', fontWeight: 700 }}
+        <div className='relative grid gap-4 lg:grid-cols-3'>
+          {HOME_CONTROL_LAYERS.map(layer => (
+            <div
+              key={layer.title}
+              className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-white-10)] bg-[var(--mw-white-04)] p-5'
             >
-              Context
-            </span>
-          </div>
-          <div
-            className='text-[#08111F]'
-            style={{
-              fontSize: '28px',
-              fontWeight: 600,
-              letterSpacing: '-0.02em',
-              lineHeight: 1.25,
-            }}
-          >
-            Dental practice paying for ads. Invisible in organic search.
-          </div>
-          <p className='mt-5 text-[#4C5E6F]' style={{ fontSize: '15.5px', lineHeight: 1.65 }}>
-            Services were separated, Google profile completed, directory details fixed, and organic
-            visibility started growing. No ranking promises — measured signal, earned over months.
-          </p>
-          <div className='mt-7 grid grid-cols-3 gap-3'>
-            {[
-              { label: 'Services indexed', before: '2 of 9', after: '9 of 9' },
-              { label: 'Profile complete', before: '48%', after: '100%' },
-              { label: 'Citation match', before: '55%', after: '94%' },
-            ].map(m => (
-              <div key={m.label} className='rounded-lg border border-[#E6EEF3] bg-[#F6FAFC] p-3'>
-                <div
-                  className='text-[#6F8190]'
-                  style={{ fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.06em' }}
-                >
-                  {m.label}
-                </div>
-                <div className='mt-1.5 flex items-center gap-2'>
-                  <span className='text-[#6F8190] line-through' style={{ fontSize: '11.5px' }}>
-                    {m.before}
-                  </span>
-                  <span className='text-[#14B8A6]' style={{ fontSize: '13.5px', fontWeight: 600 }}>
-                    {m.after}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className='col-span-12 lg:col-span-5'>
-          <div className='rounded-2xl bg-gradient-to-br from-[#061323] to-[#103E5A] p-7 relative overflow-hidden'>
-            <div className='relative'>
-              <span
-                className='text-[#35C7D8] uppercase tracking-[0.18em]'
-                style={{ fontSize: '10.5px', fontWeight: 700 }}
-              >
-                What changed
-              </span>
-              <div
-                className='mt-3 text-white'
-                style={{
-                  fontSize: '20px',
-                  fontWeight: 600,
-                  lineHeight: 1.3,
-                  letterSpacing: '-0.015em',
-                }}
-              >
-                Clearer service visibility. Less dependence on paid clicks for every enquiry.
-              </div>
-
-              <div className='mt-6 space-y-2.5'>
-                {[
-                  {
-                    icon: FileText,
-                    label: 'Service pages',
-                    note: 'Treatments separated, intent matched',
-                  },
-                  {
-                    icon: Building2,
-                    label: 'Google profile',
-                    note: 'Categories, services, posts complete',
-                  },
-                  { icon: MapPin, label: 'Citations', note: 'Directory details aligned' },
-                  { icon: Search, label: 'Local content', note: 'Area context published' },
-                ].map(s => (
-                  <div
-                    key={s.label}
-                    className='flex items-center gap-3 px-3.5 py-2.5 rounded-lg border border-white/10 bg-white/[0.03]'
+              <p className={`mw-text-eyebrow ${CONTROL_LAYER_ACCENT_EYEBROW[layer.accent]}`}>
+                {layer.eyebrow}
+              </p>
+              <h3 className='mt-2 text-xl font-semibold text-[var(--mw-text-on-dark-strong)]'>
+                {layer.title}
+              </h3>
+              <ul className='mt-4 space-y-2'>
+                {layer.points.map(point => (
+                  <li
+                    key={point}
+                    className='flex items-start gap-2 text-sm text-[var(--mw-text-on-dark-muted)]'
                   >
-                    <div className='w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#35C7D8]'>
-                      <s.icon size={14} />
-                    </div>
-                    <div className='flex-1'>
-                      <div className='text-white' style={{ fontSize: '12.5px', fontWeight: 600 }}>
-                        {s.label}
-                      </div>
-                      <div className='text-white/55' style={{ fontSize: '11px' }}>
-                        {s.note}
-                      </div>
-                    </div>
-                    <span className='w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]' />
-                  </div>
-                ))}
-              </div>
-              <div className='mt-4 text-white/50' style={{ fontSize: '11px' }}>
-                Story illustrative. No ranking guarantee.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-function Section7() {
-  const stages = [
-    { icon: Globe, label: 'Website enquiry', note: 'Question or form arrives', tone: '#35C7D8' },
-    {
-      icon: MessageSquare,
-      label: 'Fast first response',
-      note: 'Answers, qualifies, books',
-      tone: '#14B8A6',
-      parent: true,
-    },
-    {
-      icon: Workflow,
-      label: 'Follow-up record',
-      note: 'Captured with source and intent',
-      tone: '#F4B740',
-    },
-    { icon: UserCheck, label: 'Team handoff', note: 'Right owner sees the queue', tone: '#21B985' },
-    {
-      icon: Clock,
-      label: 'Follow-up',
-      note: 'Sequenced, never depending on memory',
-      tone: '#9B7DE0',
-    },
-  ];
-  return (
-    <SectionShell
-      id='recognition'
-      ariaLabel='What is actually happening'
-      tone='mist'
-      heading={{
-        eyebrow: 'Where it fits',
-        title: 'It belongs inside the handling system, [[not beside it.]]',
-        description:
-          'Not a dramatic failure. A steady drip across the path from someone searching online to a job done and a review captured. Each step works on its own. The handoffs between them do not.',
-      }}
-    >
-      <div className='rounded-2xl border border-[#E6EEF3] bg-gradient-to-b from-white to-[#F6FAFC] p-8'>
-        <div className='grid grid-cols-1 lg:grid-cols-5 gap-4'>
-          {stages.map((s, i) => (
-            <div key={i} className='relative'>
-              <div
-                className={`rounded-xl p-5 border h-full ${s.parent ? 'bg-[#061323] border-[#35C7D8]/30 text-white' : 'bg-white border-[#E6EEF3]'}`}
-              >
-                <div className='flex items-center gap-2 mb-3'>
-                  <div
-                    className='w-9 h-9 rounded-lg flex items-center justify-center'
-                    style={{ background: `${s.tone}1c`, color: s.parent ? '#fff' : s.tone }}
-                  >
-                    <s.icon size={16} />
-                  </div>
-                  {s.parent && (
                     <span
-                      className='text-[#35C7D8] uppercase tracking-[0.14em]'
-                      style={{ fontSize: '9.5px', fontWeight: 700 }}
-                    >
-                      This page
-                    </span>
-                  )}
-                </div>
-                <div
-                  className={`${s.parent ? 'text-white' : 'text-[#08111F]'}`}
-                  style={{ fontSize: '14.5px', fontWeight: 600 }}
-                >
-                  {s.label}
-                </div>
-                <div
-                  className={`mt-1.5 ${s.parent ? 'text-white/65' : 'text-[#6F8190]'}`}
-                  style={{ fontSize: '12.5px', lineHeight: 1.5 }}
-                >
-                  {s.note}
-                </div>
-              </div>
+                      className={`mt-1.5 size-1.5 shrink-0 rounded-full ${CONTROL_LAYER_ACCENT_DOT[layer.accent]}`}
+                      aria-hidden='true'
+                    />
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
-        <div className='mt-6 text-[#6F8190]' style={{ fontSize: '13px' }}>
-          Parent: Lead Response & Handling · Context: Smart Website Systems, Follow-Up & CRM
+      </div>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 04 · Normal Website vs Connected Website System
+// =============================================================================
+
+function HomeContrast() {
+  return (
+    <SectionShell
+      ariaLabel='Normal website vs connected website system'
+      tone='white'
+      heading={{
+        eyebrow: 'Built differently',
+        title: 'A website that exists. [[muted:Or a website that carries the work.]]',
+        description:
+          'Same pages on the surface. Different operating state behind them. The contrast is not pretty design vs ugly design — it is whether the work coming in actually gets handled.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-2'>
+        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-6 lg:p-8'>
+          <div className='mb-5 flex items-center justify-between'>
+            <p className='mw-text-eyebrow text-[var(--mw-signal-red)]'>Normal website</p>
+            <span className='size-2 rounded-full bg-[var(--mw-signal-red)]' aria-hidden='true' />
+          </div>
+          <ul className='space-y-3'>
+            {HOME_CONTRAST_NORMAL.map(point => (
+              <li
+                key={point}
+                className='flex items-start gap-3 text-sm text-[var(--mw-text-secondary)]'
+              >
+                <span
+                  className='mt-2 size-1 shrink-0 rounded-full bg-[var(--mw-signal-red)]'
+                  aria-hidden='true'
+                />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-signal-teal-30)] bg-[var(--mw-signal-teal-10)] p-6 lg:p-8'>
+          <div className='mb-5 flex items-center justify-between'>
+            <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>Connected website system</p>
+            <span className='size-2 rounded-full bg-[var(--mw-signal-teal)]' aria-hidden='true' />
+          </div>
+          <ul className='space-y-3'>
+            {HOME_CONTRAST_CONNECTED.map(point => (
+              <li
+                key={point}
+                className='flex items-start gap-3 text-sm text-[var(--mw-text-primary)]'
+              >
+                <span
+                  className='mt-2 size-1 shrink-0 rounded-full bg-[var(--mw-signal-teal)]'
+                  aria-hidden='true'
+                />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </SectionShell>
   );
 }
 
+// =============================================================================
+// 05 · What Conversion-Focused Actually Means
+// =============================================================================
+
+function HomeConversionMeans() {
+  return (
+    <SectionShell
+      ariaLabel='What conversion-focused actually means'
+      tone='mist'
+      heading={{
+        eyebrow: 'What conversion-focused means',
+        title: 'Not a slogan. [[muted:Five working mechanisms.]]',
+        description:
+          'Conversion-focused is not a label on a redesign. It is what the website system has to do to turn a found visitor into a handled enquiry.',
+      }}
+    >
+      <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-5'>
+        {HOME_CONVERSION_MECHANISMS.map(mechanism => (
+          <div
+            key={mechanism.num}
+            className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-5'
+          >
+            <p className='mw-text-eyebrow tabular-nums text-[var(--mw-signal-teal)]'>
+              {mechanism.num}
+            </p>
+            <h3 className='mt-2 font-semibold text-[var(--mw-text-primary)]'>{mechanism.label}</h3>
+            <p className='mt-2 text-sm text-[var(--mw-text-subtle)]'>{mechanism.note}</p>
+          </div>
+        ))}
+      </div>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 06 · Connected Handling Path
+// =============================================================================
+
+function HomeConnectedHandling() {
+  return (
+    <SectionShell
+      ariaLabel='Connected handling after the enquiry'
+      tone='gradient-teal'
+      heading={{
+        eyebrow: 'After the enquiry',
+        title: 'Six steps. [[muted:One connected path.]]',
+        description:
+          'Most enquiries do not fail at the website. They fail in the hours and days after. Connected handling makes sure the next step is visible, owned, and reliable.',
+      }}
+    >
+      <div className='relative rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-soft)] lg:p-10 mw-animate-up'>
+        <svg
+          className='mw-animate-line pointer-events-none absolute inset-x-10 top-[6.5rem] hidden lg:block'
+          viewBox='0 0 100 1'
+          preserveAspectRatio='none'
+          style={{ height: '2px' }}
+          aria-hidden='true'
+        >
+          <line
+            x1='2'
+            y1='0.5'
+            x2='98'
+            y2='0.5'
+            stroke='var(--mw-signal-teal-30)'
+            strokeWidth='1'
+            strokeDasharray='3 4'
+          />
+        </svg>
+        <ol className='relative grid grid-cols-1 gap-4 lg:grid-cols-6 lg:gap-3'>
+          {HOME_HANDLING_STAGES.map(stage => (
+            <li
+              key={stage.num}
+              className='rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] p-4'
+            >
+              <div className='mb-3 flex items-center justify-between'>
+                <span className='mw-text-eyebrow tabular-nums text-[var(--mw-signal-teal)]'>
+                  {stage.num}
+                </span>
+                <span
+                  className='size-1.5 rounded-full bg-[var(--mw-signal-teal)]'
+                  aria-hidden='true'
+                />
+              </div>
+              <div className='text-sm font-medium text-[var(--mw-text-primary)]'>{stage.label}</div>
+              <div className='mt-1 text-xs leading-snug text-[var(--mw-text-subtle)]'>
+                {stage.note}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 07 · Five Protections, One Connected Path  (single full dark body section)
+// =============================================================================
+
+function HomeFiveProtections() {
+  return (
+    <SectionShell
+      ariaLabel='Five protections in one connected path'
+      tone='gradient-dark'
+      heading={{
+        eyebrow: 'Five protections, one path',
+        title: 'One website system. [[muted:Four connected protections around it.]]',
+        description:
+          'Not five separate services. One connected operating path with five named protections — held together by the website system at the centre.',
+      }}
+    >
+      <div className='relative overflow-hidden rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary-mid)] p-6 lg:p-12 mw-animate-up'>
+        <div
+          className='pointer-events-none absolute inset-0 opacity-[0.05]'
+          aria-hidden='true'
+          style={{
+            backgroundImage: 'var(--mw-gradient-grid-texture)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+
+        {/* Desktop constellation: SWS centred, four protections at top/right/bottom/left. */}
+        <div className='relative hidden lg:block'>
+          <div className='grid grid-cols-3 grid-rows-3 gap-6'>
+            <div className='col-start-2 row-start-1 self-end'>
+              <ProtectionCard
+                data={HOME_PROTECTION_OUTER[0]}
+                accent={HOME_PROTECTION_OUTER[0].accent}
+              />
+            </div>
+            <div className='col-start-1 row-start-2 self-center'>
+              <ProtectionCard
+                data={HOME_PROTECTION_OUTER[3]}
+                accent={HOME_PROTECTION_OUTER[3].accent}
+              />
+            </div>
+            <div className='col-start-2 row-start-2 self-center'>
+              <ProtectionCard data={HOME_PROTECTION_HUB} accent='cyan' hub />
+            </div>
+            <div className='col-start-3 row-start-2 self-center'>
+              <ProtectionCard
+                data={HOME_PROTECTION_OUTER[1]}
+                accent={HOME_PROTECTION_OUTER[1].accent}
+              />
+            </div>
+            <div className='col-start-2 row-start-3 self-start'>
+              <ProtectionCard
+                data={HOME_PROTECTION_OUTER[2]}
+                accent={HOME_PROTECTION_OUTER[2].accent}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile vertical path in connected order. */}
+        <div className='relative space-y-3 lg:hidden'>
+          <ProtectionCard
+            data={HOME_PROTECTION_OUTER[0]}
+            accent={HOME_PROTECTION_OUTER[0].accent}
+          />
+          <ProtectionCard data={HOME_PROTECTION_HUB} accent='cyan' hub />
+          <ProtectionCard
+            data={HOME_PROTECTION_OUTER[1]}
+            accent={HOME_PROTECTION_OUTER[1].accent}
+          />
+          <ProtectionCard
+            data={HOME_PROTECTION_OUTER[2]}
+            accent={HOME_PROTECTION_OUTER[2].accent}
+          />
+          <ProtectionCard
+            data={HOME_PROTECTION_OUTER[3]}
+            accent={HOME_PROTECTION_OUTER[3].accent}
+          />
+        </div>
+      </div>
+    </SectionShell>
+  );
+}
+
+function ProtectionCard({
+  data,
+  accent,
+  hub = false,
+}: {
+  data: ProtectionCardData;
+  accent: ProtectionAccent;
+  hub?: boolean;
+}) {
+  const borderClass = hub
+    ? 'border-[var(--mw-signal-cyan-30)] shadow-[var(--mw-shadow-dark-lg)]'
+    : 'border-[var(--mw-border-panel)]';
+  return (
+    <a
+      href={`/services/${data.slug}`}
+      className={`group block rounded-[var(--mw-radius-lg)] border bg-[var(--mw-white-04)] p-5 transition-colors hover:bg-[var(--mw-white-06)] ${borderClass}`}
+    >
+      <div className='flex items-center justify-between'>
+        <p className={`mw-text-eyebrow ${PROTECTION_ACCENT_EYEBROW[accent]}`}>{data.label}</p>
+        <span
+          className={`size-2 rounded-full ${PROTECTION_ACCENT_DOT[accent]}`}
+          aria-hidden='true'
+        />
+      </div>
+      <h3
+        className={`mt-2 font-semibold text-[var(--mw-text-on-dark-strong)] ${
+          hub ? 'text-lg' : 'text-base'
+        }`}
+      >
+        {data.title}
+      </h3>
+      <p className='mt-2 text-sm leading-snug text-[var(--mw-text-on-dark-muted)]'>{data.note}</p>
+    </a>
+  );
+}
+
+// =============================================================================
+// 08 · What Changes When The Path Is Connected
+// =============================================================================
+
+function HomeWhatChanges() {
+  return (
+    <SectionShell
+      ariaLabel='What changes when the path is connected'
+      tone='gradient-mist'
+      heading={{
+        eyebrow: 'What changes',
+        title: 'Less leakage. [[muted:More work actually handled.]]',
+        description:
+          'The visible change is calm: fewer dropped enquiries, fewer chased quotes, fewer review requests forgotten. The harder change is that the owner can finally see what the business is doing day to day.',
+      }}
+    >
+      <ul className='grid gap-3 sm:grid-cols-2'>
+        {HOME_POSITIVE_STATES.map(state => (
+          <li
+            key={state}
+            className='flex items-start gap-3 rounded-[var(--mw-radius-lg)] border border-[var(--mw-signal-teal-30)] bg-[var(--mw-signal-teal-10)] p-4'
+          >
+            <span className='mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--mw-signal-teal-30)] text-[var(--mw-signal-teal)]'>
+              <Check size={11} strokeWidth={2.25} aria-hidden='true' />
+            </span>
+            <span className='text-sm text-[var(--mw-text-primary)]'>{state}</span>
+          </li>
+        ))}
+      </ul>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 09 · How This Shows Up — Service Businesses & Specialist Clinics
+// =============================================================================
+
+function HomeScenarios() {
+  return (
+    <SectionShell
+      ariaLabel='How this shows up in service businesses and specialist clinics'
+      tone='gradient-teal'
+      heading={{
+        eyebrow: 'How this shows up',
+        title: 'In service businesses. [[muted:In specialist clinics.]]',
+        description:
+          'Two working days. Different industries, same operating problem — and the same connected handling around the website.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-2'>
+        {HOME_SCENARIOS.map(scenario => (
+          <article
+            key={scenario.title}
+            className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-soft)] lg:p-8'
+          >
+            <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>{scenario.label}</p>
+            <h3 className='mt-3 text-xl font-semibold text-[var(--mw-text-primary)]'>
+              {scenario.title}
+            </h3>
+            <ol className='mt-5 space-y-3'>
+              {scenario.beats.map((beat, index) => (
+                <li key={beat} className='flex items-start gap-3 text-[var(--mw-text-secondary)]'>
+                  <span className='mw-text-eyebrow mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border border-[var(--mw-border-light)] bg-[var(--mw-bg-mist)] tabular-nums text-[var(--mw-text-subtle)]'>
+                    {index + 1}
+                  </span>
+                  <span className='text-sm leading-relaxed'>{beat}</span>
+                </li>
+              ))}
+            </ol>
+          </article>
+        ))}
+      </div>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 10 · Selected Website-System Surfaces  (proof-supportive, not portfolio)
+// =============================================================================
+
+function HomeSelectedSurfaces() {
+  return (
+    <SectionShell
+      ariaLabel='Selected website-system surfaces'
+      tone='white'
+      heading={{
+        eyebrow: 'Selected surfaces',
+        title: 'Examples of the surface design [[muted:we build into website systems.]]',
+        description:
+          'Not finished case studies. Selected patterns — service-page anatomy, trust placement, and enquiry handoff. The website surface is one part; the handling around it makes it work.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-3'>
+        <article className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-card)] lg:col-span-2 lg:p-8'>
+          <p className='mw-text-eyebrow text-[var(--mw-signal-cyan)]'>Service-page anatomy</p>
+          <h3 className='mt-2 text-xl font-semibold text-[var(--mw-text-primary)]'>
+            Where decisions form on a service or treatment page
+          </h3>
+          <div className='mt-6 rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-5 lg:p-6 mw-animate-up'>
+            <div className='flex items-center gap-1.5 border-b border-[var(--mw-white-10)] pb-3'>
+              <span className='size-2 rounded-full bg-[var(--mw-white-15)]' aria-hidden='true' />
+              <span className='size-2 rounded-full bg-[var(--mw-white-15)]' aria-hidden='true' />
+              <span className='size-2 rounded-full bg-[var(--mw-white-15)]' aria-hidden='true' />
+            </div>
+            <ul className='mt-4 space-y-3'>
+              {HOME_SELECTED_FEATURED_PARTS.map(part => (
+                <li
+                  key={part.label}
+                  className='flex items-start justify-between gap-4 rounded-[var(--mw-radius-md)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-3'
+                >
+                  <div>
+                    <div className='text-sm font-medium text-[var(--mw-text-on-dark-strong)]'>
+                      {part.label}
+                    </div>
+                    <div className='mt-0.5 text-xs text-[var(--mw-text-on-dark-muted)]'>
+                      {part.note}
+                    </div>
+                  </div>
+                  <span
+                    className='mt-1 size-1.5 shrink-0 rounded-full bg-[var(--mw-signal-cyan)]'
+                    aria-hidden='true'
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+
+        <div className='grid gap-5'>
+          <article className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-card)]'>
+            <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>Trust band</p>
+            <h3 className='mt-2 font-semibold text-[var(--mw-text-primary)]'>
+              Signals placed where hesitation forms
+            </h3>
+            <ul className='mt-4 space-y-2 rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-4'>
+              {HOME_SELECTED_TRUST_LABELS.map(label => (
+                <li
+                  key={label}
+                  className='flex items-center gap-2 rounded-[var(--mw-radius-md)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-2 text-xs text-[var(--mw-text-on-dark-muted)]'
+                >
+                  <span
+                    className='size-1.5 rounded-full bg-[var(--mw-signal-teal)]'
+                    aria-hidden='true'
+                  />
+                  {label}
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 shadow-[var(--mw-shadow-card)]'>
+            <p className='mw-text-eyebrow text-[var(--mw-signal-green)]'>Enquiry handoff</p>
+            <h3 className='mt-2 font-semibold text-[var(--mw-text-primary)]'>
+              Context travels with the enquiry
+            </h3>
+            <ul className='mt-4 space-y-2 rounded-[var(--mw-radius-lg)] border border-[var(--mw-border-panel)] bg-[var(--mw-bg-brand-primary)] p-4'>
+              {HOME_SELECTED_HANDOFF_ROWS.map(row => (
+                <li
+                  key={row.field}
+                  className='flex items-center justify-between rounded-[var(--mw-radius-md)] border border-[var(--mw-white-08)] bg-[var(--mw-white-04)] px-3 py-2'
+                >
+                  <span className='mw-text-eyebrow text-[var(--mw-text-on-dark-muted)]'>
+                    {row.field}
+                  </span>
+                  <span className='text-xs font-medium text-[var(--mw-text-on-dark-strong)]'>
+                    {row.value}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </div>
+      <p className='mt-6 max-w-2xl text-sm text-[var(--mw-text-subtle)]'>
+        These are illustrative surface patterns, not specific client deliverables. No real
+        screenshots, names, or outcomes are implied.
+      </p>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 11 · Fit / Not Fit
+// =============================================================================
+
+function HomeFit() {
+  return (
+    <SectionShell
+      ariaLabel='Who this is built for'
+      tone='mist'
+      heading={{
+        eyebrow: 'Built for',
+        title:
+          'Established service businesses. [[muted:Specialist clinics that take their practice seriously.]]',
+        description:
+          'The work suits operators where moving parts already exist and the cost of leakage is real. It does not suit looks-only, rankings-only, or AI-hype buyers.',
+      }}
+    >
+      <div className='grid gap-5 lg:grid-cols-2'>
+        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-signal-teal-30)] bg-[var(--mw-signal-teal-10)] p-6 lg:p-8'>
+          <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>For</p>
+          <ul className='mt-4 space-y-3'>
+            {HOME_FIT_FOR.map(item => (
+              <li
+                key={item}
+                className='flex items-start gap-3 text-sm text-[var(--mw-text-primary)]'
+              >
+                <span className='mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--mw-signal-teal-30)] text-[var(--mw-signal-teal)]'>
+                  <Check size={11} strokeWidth={2.25} aria-hidden='true' />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='rounded-[var(--mw-radius-2xl)] border border-[var(--mw-border-light)] bg-[var(--mw-bg-page)] p-6 lg:p-8'>
+          <p className='mw-text-eyebrow text-[var(--mw-signal-red)]'>Not for</p>
+          <ul className='mt-4 space-y-3'>
+            {HOME_FIT_NOT_FOR.map(item => (
+              <li
+                key={item}
+                className='flex items-start gap-3 text-sm text-[var(--mw-text-secondary)]'
+              >
+                <span className='mw-text-eyebrow mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border border-[var(--mw-signal-red-30)] bg-[var(--mw-signal-red-10)] tabular-nums text-[var(--mw-signal-red)]'>
+                  ×
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 12 · Practical Delivery With System Thinking Behind It
+// =============================================================================
+
+function HomeCredibility() {
+  return (
+    <SectionShell
+      ariaLabel='How the work runs'
+      tone='white'
+      heading={{
+        eyebrow: 'How the work runs',
+        title: 'Practical delivery. [[muted:System thinking behind it.]]',
+        description:
+          'We work directly with the owner or practice manager. The aim is operating change, not a prettier site or another tool subscription.',
+      }}
+    >
+      <div className='grid max-w-4xl gap-8 lg:grid-cols-2'>
+        <div>
+          <p className='mw-text-eyebrow text-[var(--mw-signal-cyan)]'>Working belief</p>
+          <p className='mt-3 text-base leading-relaxed text-[var(--mw-text-primary)]'>
+            A website is one visible part of how a service business or specialist clinic actually
+            runs. Build it as part of the system that captures, routes, follows up, and improves —
+            not as a separate project.
+          </p>
+        </div>
+        <div>
+          <p className='mw-text-eyebrow text-[var(--mw-signal-teal)]'>How an engagement starts</p>
+          <ol className='mt-3 space-y-2 text-sm leading-relaxed text-[var(--mw-text-primary)]'>
+            <li className='flex gap-3'>
+              <span className='tabular-nums text-[var(--mw-text-subtle)]'>01</span>
+              Review the current site and handling path.
+            </li>
+            <li className='flex gap-3'>
+              <span className='tabular-nums text-[var(--mw-text-subtle)]'>02</span>
+              Map where work is leaking and what to fix first.
+            </li>
+            <li className='flex gap-3'>
+              <span className='tabular-nums text-[var(--mw-text-subtle)]'>03</span>
+              Put the website system and connected handling in place.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </SectionShell>
+  );
+}
+
+// =============================================================================
+// 13 · FAQ
+// =============================================================================
+
 function HomeFAQ() {
   const { faq } = homepageData;
-  const faqItems = faq.items.map((item, index) => ({
-    id: `home-faq-${index}`,
-    question: item.question,
-    answer: item.answer,
-  }));
-
   return (
-    <FAQSectionComponent
+    <FAQSection
+      ariaLabel='Frequently asked questions'
+      eyebrow='Questions'
       title={faq.heading}
       description={faq.description}
-      items={faqItems}
+      items={faq.items.map((item, index) => ({
+        id: `home-faq-${index + 1}`,
+        question: item.question,
+        answer: item.answer,
+      }))}
       tone='mist'
       variant='split'
-      ariaLabel='Homepage FAQ'
     />
   );
 }
 
-function HomeDecisionPanel() {
-  const { cta } = homepageData;
+// =============================================================================
+// 14 · Final Diagnostic CTA  (DecisionPanel handles its own dark inner container)
+// =============================================================================
 
+function HomeCTA() {
+  const { cta } = homepageData;
   return (
     <DecisionPanel
       heading={{
@@ -1142,8 +1243,9 @@ function HomeDecisionPanel() {
         subtitle: cta.heading.muted,
         description: cta.heading.description,
       }}
-      actions={cta.actions}
+      actions={cta.actions.map(action => ({ label: action.label, href: action.href }))}
       expectations={cta.expectations}
+      expectationsLabel='What we will look at'
       reassurance={cta.footer}
     />
   );
