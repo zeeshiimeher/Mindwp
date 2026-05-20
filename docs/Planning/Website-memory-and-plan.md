@@ -19,7 +19,7 @@ Branch parent: `ui-hard-reset`. The branch holds all baseline window work (Phase
 | 3 — Design direction | Done (proposed) | Captured in `Design-Direction.md`. Locks in after first three pages approve. |
 | 4 — Design-system base implementation | Done | Added `--mw-shadow-dark-lg` token. SectionShell `texture` slot and mass hex conversion explicitly deferred to page rebuilds. |
 | 5 — AI workflow + doc optimization | Done | Validator false-positives fixed; durable repo/design memory captured; CLAUDE.md aligned. |
-| 5.5 — Tooling/dep/skill proposal | Not started |  |
+| 5.5 — Tooling/dep/skill proposal | Done | Approved actions applied: `check:baseline` + `test` + `test:smoke` scripts added, `screenshot-sections.mjs` migrated to `mw-animate-*`, Playwright smoke suite created in `tests/smoke/`. No dependencies installed. No external Claude skills installed. |
 | 6 — Homepage rebuild | Not started | First page to rebuild. Plan before editing. |
 | 7 — Smart Website Systems rebuild | Not started |  |
 | 8 — Local SEO Authority rebuild | Not started |  |
@@ -79,14 +79,31 @@ None currently. Phase 3 design-direction calls were all accepted in Phase 4. Any
 - `src/styles/tokens.css` — added `--mw-shadow-dark-lg` token (Phase 4).
 - `scripts/check-names.mjs` — comment stripping for source files (Phase 5).
 - `scripts/check-clean-base.ts` — scope Smart-Website symbol rules to `src/` (Phase 5).
+- `scripts/screenshot-sections.mjs` — migrated stale `rd-animate-*` selectors to current `mw-animate-*` set (Phase 5.5).
+- `package.json` — added `check:baseline`, `test`, `test:smoke` scripts (Phase 5.5).
+- `tests/smoke/helpers.ts` — error/heading assertion helpers (Phase 5.5).
+- `tests/smoke/homepage.spec.ts` — homepage clean-load, heading, CTA tests (Phase 5.5).
+- `tests/smoke/routes.spec.ts` — core / service / renamed-feature / removed-route tests (Phase 5.5).
 - `CLAUDE.md` — grammar fix, alignment, pointer block (Phase 5).
 - `docs/Planning/Website-Rebuild.md` — user edits (pre-Phase 5; treat as governing).
 - `docs/Planning/Design-Direction.md` — Phase 3 + Phase 4 + Phase 5 updates.
-- `docs/Planning/Website-memory-and-plan.md` — this file (Phase 5).
-- `docs/Planning/Repo-Map.md` — created in Phase 5.
+- `docs/Planning/Website-memory-and-plan.md` — this file (Phase 5, 5.5).
+- `docs/Planning/Repo-Map.md` — created Phase 5, updated Phase 5.5 with smoke-suite + command table.
 - `.claude/skills/mindwp-page-plan/SKILL.md` — pointer added (Phase 5).
 - `.claude/skills/mindwp-page-rebuild/SKILL.md` — pointer added (Phase 5).
 - `.claude/skills/mindwp-page-review/SKILL.md` — pointer added (Phase 5).
+
+## Smoke Suite Behavior
+
+`pnpm test:smoke` runs three specs in `tests/smoke/`:
+
+- `homepage.spec.ts` — clean load (no runtime/hydration/console errors), visible primary heading, primary diagnostic CTA visible.
+- `routes.spec.ts` — load + primary heading on core (9), primary service (5), renamed feature (2) routes; 404 enforcement on removed (4) routes.
+- `helpers.ts` — shared error/heading helpers, mirrors the ignore lists from `scripts/check-frontend.mjs`.
+
+23 tests total. ~20–60 s on first run after a fresh build. Boots production server via `playwright.config.ts` (port 3001) — does **not** collide with a running `pnpm dev` server.
+
+`pnpm check:frontend` uses `next dev` and is single-instance-locked by the project runner. If `pnpm dev` is already running, `check:frontend` will refuse to start; either stop the dev server or rely on `pnpm test:smoke` instead (covers the same load-error class but smaller route set).
 
 ## Next-Session Handoff
 
@@ -103,7 +120,7 @@ If you are about to rebuild a page:
 1. Run the `mindwp-page-plan` skill workflow.
 2. Confirm with the user that the plan is good before editing.
 3. Run the `mindwp-page-rebuild` skill workflow.
-4. Validate with `pnpm check:minimal` and `pnpm check:architecture`. Run `pnpm check:frontend` after visual work.
+4. Validate with `pnpm check:baseline`. After visual work, run `pnpm test:smoke` (fast) and/or `pnpm check:frontend` (broader 28-route check, but locks against a running `pnpm dev` server).
 5. Update this file with what changed.
 
 If you are about to change the design system (tokens, shared components, shared CSS):

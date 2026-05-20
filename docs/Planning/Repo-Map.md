@@ -53,7 +53,8 @@ src/
   global/                           Header, Footer, Logo, RevealMotion island
   index.css                         tailwind, then tokens → reset → typography → layout → primitives → components
 config/                             routeOwnership, indexingPolicy, contentPolicy, env schema
-scripts/                            check-names, check-clean-base, check-domain-registries, check-frontend, check-style-guidance
+scripts/                            check-names, check-clean-base, check-domain-registries, check-frontend, check-style-guidance, screenshot-sections
+tests/smoke/                        Playwright smoke specs — homepage.spec.ts, routes.spec.ts, helpers.ts
 docs/core/                          10 governing docs
 docs/Planning/                      rebuild memory (this folder)
 docs/ops/CONTENT-INVENTORY.md       planning inventory, never runtime
@@ -107,8 +108,10 @@ docs/ops/CONTENT-INVENTORY.md       planning inventory, never runtime
 | `pnpm check:domain-registries` | Domain registry integrity | Strict |
 | `pnpm check:architecture` | `check:clean-base && check:domain-registries` |  |
 | `pnpm check:minimal` | `typecheck && lint && check:names` |  |
-| `pnpm check:frontend` | Frontend-targeted checks; run after visual work | Slower |
+| `pnpm check:baseline` | `check:minimal && check:architecture` | Fast — the per-rebuild validation pair. Use after every page rebuild before heavier checks. |
+| `pnpm check:frontend` | Boots `next dev` on a free port and runs Playwright across 28 routes for hydration / console / fatal-body checks | Slower. Single-instance lock — collides with an existing `pnpm dev` server on the same project. |
 | `pnpm build` | Next.js production build | Slow; not needed for token-only CSS changes |
+| `pnpm test` / `pnpm test:smoke` | Playwright smoke suite in `tests/smoke/`. Boots `pnpm build && pnpm start` on port 3001 via `playwright.config.ts`. Production mode — does not collide with `pnpm dev` | Slow first run (build), fast on reuse |
 | `pnpm check:guidance` | `check:duplicates && check:style-guidance` |  |
 | `pnpm check:all` | `check:minimal && check:architecture && check:guidance && build` | Slow; use before release |
 
@@ -142,6 +145,7 @@ Current branch is the post-`ui-hard-reset` rebuild baseline.
 
 ```
 pnpm dev                     local dev (next, webpack, port 3000)
+pnpm start                   next start (port via -p or env)
 pnpm build                   production build
 pnpm typecheck               tsc --noEmit
 pnpm lint                    eslint
@@ -154,9 +158,12 @@ pnpm check:duplicates        duplicate detection
 pnpm check:style-guidance    style guidance
 pnpm check:guidance          duplicates + style-guidance
 pnpm check:minimal           typecheck + lint + check:names
-pnpm check:frontend          frontend checks (slower)
+pnpm check:baseline          minimal + architecture — the per-rebuild validation pair
+pnpm check:frontend          28-route runtime smoke (slower; locks against pnpm dev)
 pnpm check:all               minimal + architecture + guidance + build (slow)
 pnpm check:release           all + frontend
+pnpm test                    playwright test (boots production server via playwright.config.ts)
+pnpm test:smoke              playwright test tests/smoke (subset of pnpm test)
 ```
 
 Always pnpm. Never npm/yarn/bun.

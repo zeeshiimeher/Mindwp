@@ -4,7 +4,7 @@
  * Captures one screenshot per <section> element on a given page.
  * - Targets every <section> tag — no IDs or renderer changes needed.
  * - Uses element.screenshot() so each image is cropped exactly to the section bounds.
- * - Disables CSS animations so rd-animate-up elements are visible.
+ * - Disables CSS animations so mw-animate-up elements are visible.
  * - Splits sections taller than MAX_VIEWPORT_HEIGHT into top/bottom chunks.
  *
  * Usage:
@@ -34,7 +34,8 @@ await page.setViewportSize({ width: VIEWPORT_WIDTH, height: VIEWPORT_HEIGHT });
 console.log(`Opening: ${url}`);
 await page.goto(url, { waitUntil: 'networkidle' });
 
-// Disable all CSS transitions and animations so rd-animate-up content is visible
+// Disable all CSS transitions and animations so mw-animate-* reveal classes
+// render their final visible state.
 await page.addStyleTag({
     content: `
     *, *::before, *::after {
@@ -43,9 +44,20 @@ await page.addStyleTag({
       transition-duration: 0s !important;
       transition-delay: 0s !important;
     }
-    .rd-animate-up, .rd-animate-stagger > * {
+    .mw-animate-fade,
+    .mw-animate-up,
+    .mw-animate-panel,
+    .mw-animate-section,
+    .mw-animate-list,
+    .mw-animate-stagger > * {
       opacity: 1 !important;
       transform: none !important;
+    }
+    .mw-animate-line path,
+    .mw-animate-line line,
+    .mw-animate-line polyline {
+      stroke-dasharray: none !important;
+      stroke-dashoffset: 0 !important;
     }
   `,
 });
@@ -65,14 +77,24 @@ for (let i = 0; i < sections.length; i++) {
     await page.waitForTimeout(100);
 
     // Derive a filename from the section's BEM class.
-    // Sections render as: rd-section bg-* rd-animate-section [bem-name] [modifier]
-    // Skip utility prefixes to get the first real BEM block name.
-    const SKIP = new Set(['rd-section', 'rd-animate-section', 'rd-section--compact']);
+    // Sections render with mw-section-shell / mw-hero-frame plus tone/animate
+    // modifiers. Skip utility prefixes to get the first real BEM block name.
+    const SKIP = new Set([
+        'mw-section-shell',
+        'mw-hero-frame',
+        'mw-decision-panel',
+        'mw-animate-section',
+        'mw-animate-fade',
+        'mw-animate-up',
+        'mw-animate-panel',
+        'mw-animate-list',
+        'mw-animate-stagger',
+    ]);
     const classAttr = await el.getAttribute('class') ?? '';
     const bemClass = classAttr
         .split(' ')
         .map(c => c.trim())
-        .filter(c => c && !c.startsWith('rd-') && !c.startsWith('bg-') && !SKIP.has(c) && !c.includes('--'))
+        .filter(c => c && !c.startsWith('mw-bg-') && !c.startsWith('bg-') && !SKIP.has(c) && !c.includes('--'))
         .find(c => c.length > 0) ?? `section-${i + 1}`;
 
     const padded = String(i + 1).padStart(2, '0');

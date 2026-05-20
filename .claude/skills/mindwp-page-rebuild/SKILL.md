@@ -21,6 +21,14 @@ Use only after a page plan has been approved.
 9. Keep inner section patterns distinct. For later pages, Pages can share shells and rhythm, but primary visual arguments must feel distinct.
 10. Do not invent proof, metrics, testimonials, rankings, guarantees, client results, treatment outcomes, compliance claims, or patient-result claims.
 
+## Validation
+
+Run in this order after the rebuild:
+
+1. `pnpm check:baseline` — fast `typecheck + lint + check:names + check:architecture` pair.
+2. `pnpm test:smoke` — Playwright smoke suite in `tests/smoke/` (boots production server on port 3001; does not collide with `pnpm dev`).
+3. `pnpm check:frontend` — broader 28-route runtime smoke. Skip if `pnpm dev` is already running on the project (single-instance lock); rely on the smoke suite plus a manual dev-server inspection in that case.
+
 ## Output
 
 Summarize changed files, how the approved plan was implemented, render-shape decisions, inner-section design decisions, any shared component/token changes, and validation results.

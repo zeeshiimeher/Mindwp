@@ -169,10 +169,13 @@ pnpm lint:fix
 pnpm typecheck
 pnpm check:names
 pnpm check:minimal
+pnpm check:baseline
 pnpm check:frontend
 pnpm check:domain-registries
 pnpm check:clean-base
 pnpm check:architecture
+pnpm test
+pnpm test:smoke
 ```
 
-Use `pnpm check:frontend` after visual or page work. For docs-only work, run the requested search validation and any requested pnpm checks.
+After a page rebuild, run `pnpm check:baseline` (fast). After visual or page work, run `pnpm test:smoke` and/or `pnpm check:frontend`. `check:frontend` is locked against a running `pnpm dev` server; if dev is running, prefer `test:smoke`. For docs-only work, run the requested search validation and any requested pnpm checks.
