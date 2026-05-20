@@ -56,7 +56,7 @@ The previous repo discipline standardized every section through `SectionShell` +
 Two folders, two jobs. **Design + review + revise in `Mindwp-Design/`. Port to `Mindwp/` only when the user explicitly authorizes it.** Full guide in [docs/WORKFLOW.md](./docs/WORKFLOW.md).
 
 1. **Plan in `Mindwp/`** — strategy, page intent, what business moment the page owns, what CTA, what's in / not in. Plans live in chat or in `docs/PAGES.md` if durable.
-2. **Design in `Mindwp-Design/`** (the sibling Vite project) — `src/app/components/*.tsx`. No validators, no shells, light token discipline (use `theme.css` brand vars where they match; inline hex otherwise). Use active 5-system names — see `Mindwp-Design/README-active-model.md`. Iterate fast in `pnpm dev`.
+2. **Design in `Mindwp-Design/`** (Vite sandbox folder at `Mindwp-Design/`) — `src/app/components/*.tsx`. No validators, no shells, light token discipline (use `theme.css` brand vars where they match; inline hex otherwise). Use active 5-system names — see `Mindwp-Design/README-active-model.md`. Iterate fast in `pnpm dev`.
 3. **Review + revise in `Mindwp-Design/`** — show the user the sandbox dev server, take feedback, revise the sandbox JSX. Repeat until the user signals satisfaction. Do **not** port during this phase.
 4. **Port to `Mindwp/`** only when the user says "port this now" — copy the final JSX to `src/screens/<Page>.tsx`, swap shells (`HeroFrame` for hero, raw `<section>` for body), convert remaining hex → tokens/`mw-*` classes where matched, swap demo router (`onNav={setPage}`) for Next.js `<Link>` / `<a href>`.
 5. **Validate the port** — `pnpm check:names && pnpm typecheck && pnpm test:smoke`.

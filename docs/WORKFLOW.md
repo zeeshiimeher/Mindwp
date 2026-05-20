@@ -4,9 +4,9 @@ How pages get designed and shipped at MindWP. The canonical workflow going forwa
 
 ## Why Two Folders
 
-`Mindwp/` (this repo) accumulated heavy structural discipline — token-only styling, two shell components that standardize every section's silhouette, validators that block builds on drift terms, and 10+ governing docs. That environment is correct for production, but it suppresses design. Three Homepage rebuilds inside this folder produced visually flat results.
+`Mindwp/` (this repo, production code at the root) accumulated heavy structural discipline — token-only styling, two shell components that standardize every section's silhouette, validators that block builds on drift terms, and 10+ governing docs. That environment is correct for production, but it suppresses design. Three Homepage rebuilds inside this folder produced visually flat results.
 
-`Mindwp-Design/` (sibling Vite project at `/Users/zeeshansadiq/Projects/Mindwp-Design/`) is a separate sandbox. No validators. No shells. Light token discipline only (a small `theme.css` aligned to Mindwp's brand + signal palette — see `Mindwp-Design/README-active-model.md`). Inline hex, inline `style={}`, raw `<section>` JSX, fast `pnpm dev`. The Figma Make sessions that produced the Hero / LeakDiagnosis / Foundation / SixSystemStack designs work there.
+`Mindwp/Mindwp-Design/` is a Vite sandbox nested inside this same repo, on the same branch. No validators. No shells. Light token discipline only (a small `theme.css` aligned to Mindwp's brand + signal palette — see `Mindwp-Design/README-active-model.md`). Inline hex, inline `style={}`, raw `<section>` JSX, fast `pnpm dev`. The Figma Make sessions that produced the Hero / LeakDiagnosis / Foundation / SixSystemStack designs work there.
 
 Splitting them is the answer. **Plan in `Mindwp/`. Design + review + revise in `Mindwp-Design/`. Port only when satisfied.**
 

@@ -7,7 +7,7 @@ MindWP builds conversion-focused website systems with connected handling for est
 ## Two Folders
 
 - `Mindwp/` (this repo) — production Next.js site, strategy docs, validators.
-- `Mindwp-Design/` (sibling Vite project) — visual design sandbox. Pages are designed there first, then ported here.
+- `Mindwp-Design/` (Vite sandbox subfolder in this repo) — visual design sandbox. Pages are designed there first, then ported here.
 
 Full design loop in [docs/WORKFLOW.md](./docs/WORKFLOW.md).
 

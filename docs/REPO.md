@@ -74,7 +74,7 @@ docs/                               6 governing docs (flat — no core/, Plannin
 | Section pattern (legacy) | `SectionShell` — `@deprecated` for new pages; existing baseline renderers still use it |
 | Tokens | `src/styles/tokens.css` is the source of value truth |
 | Reveal/motion | `RevealMotion` island + `mw-animate-*` + `data-js-motion` + IntersectionObserver |
-| Cross-folder design source | `Mindwp-Design/` (sibling Vite project) — see WORKFLOW.md |
+| Cross-folder design source | `Mindwp-Design/` (Vite sandbox subfolder in this repo) — see WORKFLOW.md |
 
 ## Active Offer (Source-Verified)
 

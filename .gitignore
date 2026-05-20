@@ -9,6 +9,7 @@ reports/
 tmp/
 pids/
 logs/
+dist/
 
 # Tooling caches
 .vite/
