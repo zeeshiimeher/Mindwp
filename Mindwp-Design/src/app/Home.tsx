@@ -6,16 +6,16 @@
  *
  * Section arc:
  *  01  Hero — "Work Comes In. Too Much Slips Away." + signal surface
- *  02  Leak audit — bento grid with featured critical leak + 6 supporting incident cards; phase as colored chips, no timeline
+ *  02  Operating leak map — central dominant leak + 6 satellite incidents on a custom map surface with SVG connectors and FOUND/CAPTURED/PROVEN zone labels
  *  03  Website as control point — original v1 3-layer stacked surface (Surface → Underneath → Foundation)
- *  04  Normal vs Connected — white 2-column contrast
- *  05  Connected handling path — 6-stage horizontal with dashed SVG rail (teal-grounded)
+ *  04  Split operating table — scattered fragments (offset, dashed) vs aligned path (vertical rail) on one wide panel
+ *  05  Connected handling path — featured "Every channel reaches the response surface" handoff card + 4 supporting handling states (2x2)
  *  06  Five Protections, One Connected Path — FULL DARK constellation, SWS hub + 4 outer
- *  07  What Changes — single audit-style panel with 5 shift rows (icon + title + before→after diff)
- *  08  How This Shows Up — flagship Roofing scenario + 4 supporting scenarios in 2x2 (Plumbing / Foundation / Dental implants / Dermatology); each card has a project-image placeholder
- *  09  Selected surfaces — light section + STRONG dark inner panel, 3 layer cards
+ *  07  Positive operating state board — featured anchor state ("Every enquiry has somewhere to land") + 4 small positive-state tiles (calm green/teal)
+ *  08  How This Shows Up — flagship Roofing scenario + 4 supporting scenarios in 2x2; each card uses an abstract dark surface preview (no "to be added" placeholder)
+ *  09  Selected surfaces — asymmetric dark inner panel: large Service-page anatomy diagram + 2 stacked smaller surfaces (Trust band, Enquiry handoff)
  *  10  Fit / Not for — diagnostic two-column panel
- *  11  Practical Delivery — 3-step engagement
+ *  11  Engagement path — 3 connected step nodes on a horizontal gradient rail, centered icons
  *  12  FAQ — accordion
  *  13  Final diagnostic CTA — dark CTA panel
  *
@@ -328,205 +328,182 @@ function HeroSignalSurface() {
 }
 
 // ============================================================================
-// SECTION 02 — Leak audit
-// Bento-style diagnostic. Seven leak incidents arranged with the critical one
-// featured (large card). Each card carries a phase tag (Found / Captured /
-// Proven) as a colored chip — no timeline, no numbered steps, no rail.
+// SECTION 02 — Operating leak map
+// A custom "map surface" inside one light panel: 1 central dominant leak +
+// 6 satellite incidents grouped under 3 zone labels (FOUND / CAPTURED /
+// PROVEN). Faint SVG connectors point from each satellite to the central
+// leak. No card grid, no timeline, no numbered steps.
 // ============================================================================
 
-type LeakSeverity = 'critical' | 'high' | 'medium';
-type LeakIncident = {
-  phase: 'Found' | 'Captured' | 'Proven';
-  phaseColor: string;
-  severity: LeakSeverity;
+type LeakZone = 'FOUND' | 'CAPTURED' | 'PROVEN';
+
+type LeakNode = {
+  zone: LeakZone;
   icon: LucideIcon;
   title: string;
   note: string;
 };
 
-const LEAK_INCIDENTS: ReadonlyArray<LeakIncident> = [
-  // CRITICAL — featured
+const ZONE_COLOR: Record<LeakZone, string> = {
+  FOUND: '#14B8A6',
+  CAPTURED: '#F4B740',
+  PROVEN: '#9B7DE0',
+};
+
+const DOMINANT_LEAK = {
+  zone: 'CAPTURED' as LeakZone,
+  icon: Clock,
+  title: 'First response is too slow',
+  note: 'Visitor compares three businesses before anyone replies. By then the decision is already moving away from yours.',
+};
+
+// 6 satellite incidents arranged around the dominant. desktop positions are
+// pinned via inline style; mobile stacks grouped by zone.
+type SatellitePos = { top: string; left: string };
+type Satellite = LeakNode & { pos: SatellitePos };
+
+const SATELLITES: ReadonlyArray<Satellite> = [
+  // FOUND zone — top-left arc
   {
-    phase: 'Captured',
-    phaseColor: '#F4B740',
-    severity: 'critical',
-    icon: Clock,
-    title: 'First response is too slow',
-    note: 'The enquiry cools while it sits. By the time someone picks it up, the visitor has already booked elsewhere. This is where most enquiries die.',
-  },
-  // HIGH — Captured supporting
-  {
-    phase: 'Captured',
-    phaseColor: '#F4B740',
-    severity: 'high',
-    icon: Inbox,
-    title: 'Enquiries land in scattered places',
-    note: 'Form to one inbox. Call to a phone. Consultation request to a separate booking tool. No single owner sees the queue.',
-  },
-  {
-    phase: 'Captured',
-    phaseColor: '#F4B740',
-    severity: 'high',
-    icon: History,
-    title: 'Follow-up depends on memory',
-    note: 'Quotes go quiet on Friday. Consultations get forgotten on Monday. Jobs go to whoever replies first.',
-  },
-  // MEDIUM — Found
-  {
-    phase: 'Found',
-    phaseColor: '#14B8A6',
-    severity: 'medium',
+    zone: 'FOUND',
     icon: Search,
-    title: 'Local search shows the wrong business first',
-    note: 'A competitor takes the top spot. The right business sits on page two — or never shows for the search a patient or customer actually typed.',
+    title: 'Visitor compares three businesses before anyone replies',
+    note: 'Local search shows the wrong business first; the right one sits on page two.',
+    pos: { top: '6%', left: '4%' },
   },
   {
-    phase: 'Found',
-    phaseColor: '#14B8A6',
-    severity: 'medium',
+    zone: 'FOUND',
     icon: FileText,
-    title: 'Service or treatment pages do not answer the question',
-    note: 'Visitor lands, reads a paragraph, cannot tell if this is the right team or the right procedure. Closes the tab before deciding.',
+    title: 'Service or treatment page does not answer the question',
+    note: 'Visitor reads a paragraph, cannot tell if this is the right team. Closes the tab.',
+    pos: { top: '8%', left: '36%' },
   },
-  // MEDIUM — Proven
+  // CAPTURED zone — sides of the dominant
   {
-    phase: 'Proven',
-    phaseColor: '#9B7DE0',
-    severity: 'medium',
+    zone: 'CAPTURED',
+    icon: Inbox,
+    title: 'Form lands in an inbox nobody checks on weekends',
+    note: 'Saturday morning enquiry sits unread until Tuesday — competitor replied within the hour.',
+    pos: { top: '38%', left: '2%' },
+  },
+  {
+    zone: 'CAPTURED',
+    icon: History,
+    title: 'Quote sent. Nobody owns Monday follow-up.',
+    note: 'Friday quote goes quiet over the weekend. By Wednesday the lead has booked elsewhere.',
+    pos: { top: '38%', left: '76%' },
+  },
+  // PROVEN zone — bottom arc
+  {
+    zone: 'PROVEN',
     icon: Star,
-    title: 'Review moment passes unused',
-    note: 'Job complete, customer happy, appointment over, patient relieved — and nobody asked at the right moment.',
+    title: 'Review moment passes after the job or appointment',
+    note: 'Customer happy, patient relieved — and nobody asked while the experience was fresh.',
+    pos: { top: '74%', left: '8%' },
   },
   {
-    phase: 'Proven',
-    phaseColor: '#9B7DE0',
-    severity: 'medium',
+    zone: 'PROVEN',
     icon: Repeat,
-    title: 'No loop back into the system',
-    note: 'Completed work and patient experience never become visible proof on the website, the local profile, or the next visitor’s decision.',
+    title: 'Proof never returns to the website',
+    note: 'Completed work and patient experience never show up where the next visitor decides.',
+    pos: { top: '74%', left: '64%' },
   },
 ];
 
-function LeakCard({ incident, featured = false }: { incident: LeakIncident; featured?: boolean }) {
-  const Icon = incident.icon;
-  const sev = incident.severity;
-  const sevColor = sev === 'critical' ? '#E76F6F' : sev === 'high' ? '#F4B740' : '#9CA3B0';
-  const sevLabel = sev === 'critical' ? 'CRITICAL' : sev === 'high' ? 'HIGH' : 'WEAK';
-
+function ZoneLabel({
+  label,
+  pos,
+}: {
+  label: LeakZone;
+  pos: { top?: string; bottom?: string; left?: string; right?: string };
+}) {
+  const c = ZONE_COLOR[label];
   return (
     <div
-      className={featured ? 'h-full rounded-2xl p-7 lg:p-9 relative overflow-hidden' : 'h-full rounded-xl p-5'}
-      style={
-        featured
-          ? {
-              background: 'linear-gradient(to bottom right, #FFFFFF, #FDF3F3)',
-              border: '1px solid #E76F6F50',
-              boxShadow:
-                '0 16px 48px rgba(231,111,111,0.10), 0 0 0 1px rgba(231,111,111,0.04)',
-            }
-          : {
-              background: '#FFFFFF',
-              border: '1px solid #E6EEF3',
-            }
-      }
+      className="hidden lg:inline-flex absolute items-center gap-2 px-3 py-1.5 rounded-full"
+      style={{
+        ...pos,
+        background: `${c}10`,
+        border: `1px solid ${c}40`,
+        backdropFilter: 'blur(4px)',
+      }}
     >
-      {featured && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse at 0% 0%, rgba(231,111,111,0.06) 0%, transparent 55%)',
-          }}
-        />
-      )}
-      <div className="relative">
-        {/* Tag row */}
-        <div className="flex items-center justify-between mb-4">
-          <span
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
-            style={{
-              background: `${incident.phaseColor}14`,
-              border: `1px solid ${incident.phaseColor}38`,
-              color: incident.phaseColor,
-              fontSize: '10px',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-            }}
-          >
-            <span
-              className="w-1 h-1 rounded-full"
-              style={{ background: incident.phaseColor }}
-            />
-            {incident.phase.toUpperCase()}
-          </span>
-          <span
-            className="inline-flex items-center gap-1"
-            style={{
-              color: sevColor,
-              fontSize: '10px',
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-            }}
-          >
-            <span
-              className={sev === 'critical' ? 'animate-pulse' : ''}
-              style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '999px',
-                background: sevColor,
-                boxShadow: sev === 'critical' ? `0 0 8px ${sevColor}` : 'none',
-                display: 'inline-block',
-              }}
-            />
-            {sevLabel}
-          </span>
-        </div>
+      <span
+        className="w-1.5 h-1.5 rounded-full"
+        style={{ background: c, boxShadow: `0 0 6px ${c}` }}
+      />
+      <span
+        className="uppercase"
+        style={{
+          color: c,
+          fontSize: '10.5px',
+          fontWeight: 700,
+          letterSpacing: '0.16em',
+        }}
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
 
-        {/* Icon */}
+function SatelliteNode({ s }: { s: Satellite }) {
+  const c = ZONE_COLOR[s.zone];
+  const Icon = s.icon;
+  return (
+    <div
+      className="rounded-xl bg-white p-4 lg:absolute"
+      style={{
+        ...('lg:absolute' && {}), // placeholder
+        width: '21%',
+        minWidth: '210px',
+        top: s.pos.top,
+        left: s.pos.left,
+        border: '1px solid #E6EEF3',
+        boxShadow: '0 4px 16px rgba(8,17,31,0.05)',
+      }}
+    >
+      <div className="flex items-center gap-2 mb-2">
         <div
-          className={featured ? 'w-12 h-12 rounded-xl flex items-center justify-center mb-5' : 'w-9 h-9 rounded-lg flex items-center justify-center mb-3'}
+          className="w-7 h-7 rounded-md flex items-center justify-center shrink-0"
           style={{
-            background: `${incident.phaseColor}14`,
-            border: `1px solid ${incident.phaseColor}30`,
-            color: incident.phaseColor,
+            background: `${c}14`,
+            border: `1px solid ${c}30`,
+            color: c,
           }}
         >
-          <Icon size={featured ? 22 : 16} />
+          <Icon size={13} />
         </div>
-
-        {/* Title */}
-        <div
-          className="text-[#08111F]"
+        <span
+          className="uppercase"
           style={{
-            fontSize: featured ? '24px' : '15px',
+            color: c,
+            fontSize: '9px',
             fontWeight: 700,
-            lineHeight: 1.2,
-            letterSpacing: '-0.015em',
+            letterSpacing: '0.14em',
           }}
         >
-          {incident.title}
-        </div>
-
-        {/* Note */}
-        <p
-          className="mt-3 text-[#4C5E6F]"
-          style={{
-            fontSize: featured ? '15.5px' : '13px',
-            lineHeight: featured ? 1.6 : 1.5,
-          }}
-        >
-          {incident.note}
-        </p>
+          {s.zone}
+        </span>
+      </div>
+      <div
+        className="text-[#08111F]"
+        style={{ fontSize: '13px', fontWeight: 600, lineHeight: 1.35, letterSpacing: '-0.005em' }}
+      >
+        {s.title}
+      </div>
+      <div
+        className="mt-1.5 text-[#6F8190]"
+        style={{ fontSize: '11.5px', lineHeight: 1.5 }}
+      >
+        {s.note}
       </div>
     </div>
   );
 }
 
 function SectionLeak() {
-  const [critical, ...supporting] = LEAK_INCIDENTS;
-  const capturedSupport = supporting.slice(0, 2); // Captured x2
-  const tail = supporting.slice(2); // Found x2 + Proven x2
+  const DC = ZONE_COLOR[DOMINANT_LEAK.zone]; // dominant color (Captured/amber)
 
   return (
     <section id="leak" className="bg-[#F6FAFC] py-24">
@@ -538,7 +515,7 @@ function SectionLeak() {
               className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
-              Leak audit
+              Operating leak map
             </div>
             <h2
               className="text-[#08111F]"
@@ -563,111 +540,399 @@ function SectionLeak() {
           </div>
           <div className="col-span-12 lg:col-span-5 lg:col-start-8 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '17px', lineHeight: 1.65 }}>
-              Not a dramatic failure. A steady drip across the path from someone searching
-              online to a job done or an appointment kept and a review captured. Each step
-              works on its own. The handoffs between them do not.
+              Map the path from search to a job done or appointment kept and a review
+              captured. One leak sits at the centre. Six smaller ones drain into it.
             </p>
           </div>
         </div>
 
-        {/* Audit overview strip — three summary chips, no phase ordering */}
+        {/* Outer map panel */}
         <div
-          className="mb-6 rounded-xl bg-white border border-[#E6EEF3] px-5 lg:px-6 py-4 flex flex-wrap items-center justify-between gap-3"
-          style={{ boxShadow: '0 2px 12px rgba(8,17,31,0.03)' }}
+          className="relative rounded-3xl overflow-hidden"
+          style={{
+            background:
+              'linear-gradient(180deg, #FFFFFF 0%, #F9FCFD 100%)',
+            border: '1px solid #E6EEF3',
+            boxShadow: '0 12px 60px rgba(8,17,31,0.06)',
+          }}
         >
-          <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
-            <span
-              className="uppercase tracking-[0.16em] text-[#0E2740]"
-              style={{ fontSize: '10.5px', fontWeight: 700 }}
-            >
-              Diagnostic overview
-            </span>
+          {/* Map header strip */}
+          <div
+            className="flex flex-wrap items-center justify-between gap-3 px-6 lg:px-10 py-4 border-b"
+            style={{ borderColor: '#E6EEF3' }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
+              <span
+                className="uppercase tracking-[0.16em] text-[#0E2740]"
+                style={{ fontSize: '10.5px', fontWeight: 700 }}
+              >
+                Where work is slipping
+              </span>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              {(['FOUND', 'CAPTURED', 'PROVEN'] as LeakZone[]).map(z => {
+                const c = ZONE_COLOR[z];
+                return (
+                  <span
+                    key={z}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                    style={{
+                      background: `${c}10`,
+                      border: `1px solid ${c}38`,
+                      color: c,
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                    }}
+                  >
+                    <span
+                      className="w-1 h-1 rounded-full"
+                      style={{ background: c }}
+                    />
+                    {z}
+                  </span>
+                );
+              })}
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full"
+                style={{
+                  background: '#E76F6F12',
+                  border: '1px solid #E76F6F38',
+                  color: '#C04A4A',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F] shadow-[0_0_6px_#E76F6F] animate-pulse" />
+                1 critical
+              </span>
+            </div>
           </div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6FAFC] border border-[#E6EEF3] text-[#4C5E6F]"
-              style={{ fontSize: '12px', fontWeight: 600 }}
-            >
-              3 stages
-            </span>
-            <span
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6FAFC] border border-[#E6EEF3] text-[#4C5E6F]"
-              style={{ fontSize: '12px', fontWeight: 600 }}
-            >
-              7 gaps
-            </span>
-            <span
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+
+          {/* Desktop map surface */}
+          <div
+            className="relative hidden lg:block"
+            style={{
+              height: '640px',
+              background:
+                'radial-gradient(ellipse at 50% 50%, rgba(231,111,111,0.05) 0%, transparent 55%)',
+            }}
+          >
+            {/* Subtle dotted grid wash */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-[0.4]"
               style={{
-                background: '#E76F6F12',
-                border: '1px solid #E76F6F38',
-                color: '#C04A4A',
-                fontSize: '12px',
-                fontWeight: 700,
+                backgroundImage:
+                  'radial-gradient(circle, #C8D8E4 1px, transparent 1px)',
+                backgroundSize: '24px 24px',
+              }}
+              aria-hidden="true"
+            />
+
+            {/* SVG connectors — each satellite reaches the central dominant */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="leakConnector" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stopColor="#6F8190" stopOpacity="0.0" />
+                  <stop offset="60%" stopColor="#E76F6F" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#E76F6F" stopOpacity="0.55" />
+                </linearGradient>
+              </defs>
+              {/* Approximate satellite centres (in percent) → dominant (50%, 50%) */}
+              {[
+                { x: 12, y: 16 },
+                { x: 44, y: 18 },
+                { x: 10, y: 48 },
+                { x: 86, y: 48 },
+                { x: 18, y: 84 },
+                { x: 74, y: 84 },
+              ].map((p, i) => (
+                <line
+                  key={i}
+                  x1={p.x}
+                  y1={p.y}
+                  x2={50}
+                  y2={50}
+                  stroke="url(#leakConnector)"
+                  strokeWidth="0.18"
+                  strokeDasharray="0.6 0.7"
+                />
+              ))}
+            </svg>
+
+            {/* Zone labels */}
+            <ZoneLabel label="FOUND" pos={{ top: '22px', left: '24px' }} />
+            <ZoneLabel label="CAPTURED" pos={{ top: '22px', right: '24px' }} />
+            <ZoneLabel label="PROVEN" pos={{ bottom: '22px', left: '50%' }} />
+
+            {/* Central dominant leak */}
+            <div
+              className="absolute"
+              style={{
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '32%',
+                maxWidth: '380px',
               }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F] shadow-[0_0_6px_#E76F6F] animate-pulse" />
-              1 critical leak
-            </span>
-          </div>
-        </div>
+              {/* Glow halo */}
+              <div
+                className="absolute -inset-6 rounded-full pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(circle, rgba(231,111,111,0.18) 0%, transparent 70%)',
+                  filter: 'blur(20px)',
+                }}
+                aria-hidden="true"
+              />
+              <div
+                className="relative rounded-2xl p-7"
+                style={{
+                  background: 'linear-gradient(to bottom right, #FFFFFF, #FDF3F3)',
+                  border: '1.5px solid #E76F6F55',
+                  boxShadow:
+                    '0 24px 60px rgba(231,111,111,0.18), 0 0 0 1px rgba(231,111,111,0.08)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                    style={{
+                      background: `${DC}18`,
+                      border: `1px solid ${DC}45`,
+                      color: DC,
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                    }}
+                  >
+                    <span className="w-1 h-1 rounded-full" style={{ background: DC }} />
+                    {DOMINANT_LEAK.zone}
+                  </span>
+                  <span
+                    className="inline-flex items-center gap-1"
+                    style={{
+                      color: '#E76F6F',
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                    }}
+                  >
+                    <span
+                      className="inline-block w-1.5 h-1.5 rounded-full bg-[#E76F6F] animate-pulse"
+                      style={{ boxShadow: '0 0 8px #E76F6F' }}
+                    />
+                    CRITICAL
+                  </span>
+                </div>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                  style={{
+                    background: '#E76F6F14',
+                    border: '1px solid #E76F6F30',
+                    color: '#E76F6F',
+                  }}
+                >
+                  <DOMINANT_LEAK.icon size={22} />
+                </div>
+                <div
+                  className="text-[#08111F]"
+                  style={{
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.015em',
+                  }}
+                >
+                  {DOMINANT_LEAK.title}
+                </div>
+                <p
+                  className="mt-3 text-[#4C5E6F]"
+                  style={{ fontSize: '14px', lineHeight: 1.55 }}
+                >
+                  {DOMINANT_LEAK.note}
+                </p>
+              </div>
+            </div>
 
-        {/* Bento — featured critical card + 2 captured-support cards in top row,
-            then 4 supporting cards (Found x2, Proven x2) in a 4-column band below. */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
-          {/* Featured critical leak card (spans 6 cols, taller) */}
-          <div className="lg:col-span-6">
-            <LeakCard incident={critical} featured />
-          </div>
-
-          {/* Two captured-supporting cards stacked into the remaining 6 cols */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
-            {capturedSupport.map(inc => (
-              <LeakCard key={inc.title} incident={inc} />
+            {/* Satellites */}
+            {SATELLITES.map(s => (
+              <SatelliteNode key={s.title} s={s} />
             ))}
           </div>
 
-          {/* Bottom band — 4 cards: Found x2 + Proven x2 */}
-          <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-            {tail.map(inc => (
-              <LeakCard key={inc.title} incident={inc} />
-            ))}
-          </div>
-        </div>
+          {/* Mobile: collapse into vertical list grouped by zone */}
+          <div className="lg:hidden p-6 space-y-8">
+            {/* Dominant first */}
+            <div
+              className="rounded-2xl p-6"
+              style={{
+                background: 'linear-gradient(to bottom right, #FFFFFF, #FDF3F3)',
+                border: '1.5px solid #E76F6F55',
+                boxShadow: '0 16px 48px rgba(231,111,111,0.12)',
+              }}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                  style={{
+                    background: `${DC}18`,
+                    border: `1px solid ${DC}45`,
+                    color: DC,
+                    fontSize: '10px',
+                    fontWeight: 700,
+                    letterSpacing: '0.14em',
+                  }}
+                >
+                  {DOMINANT_LEAK.zone}
+                </span>
+                <span
+                  style={{
+                    color: '#E76F6F',
+                    fontSize: '10px',
+                    fontWeight: 700,
+                    letterSpacing: '0.14em',
+                  }}
+                >
+                  · CRITICAL
+                </span>
+              </div>
+              <div
+                className="text-[#08111F]"
+                style={{ fontSize: '20px', fontWeight: 700, lineHeight: 1.2 }}
+              >
+                {DOMINANT_LEAK.title}
+              </div>
+              <p
+                className="mt-2 text-[#4C5E6F]"
+                style={{ fontSize: '13.5px', lineHeight: 1.55 }}
+              >
+                {DOMINANT_LEAK.note}
+              </p>
+            </div>
 
-        {/* Bottom summary strip */}
-        <div className="mt-8 rounded-2xl bg-white border border-[#E6EEF3] px-6 lg:px-10 py-7 lg:py-8 shadow-[0_4px_24px_rgba(8,17,31,0.04)]">
-          <div className="grid grid-cols-12 gap-6 items-center">
-            <div className="col-span-12 lg:col-span-8">
+            {(['FOUND', 'CAPTURED', 'PROVEN'] as LeakZone[]).map(zone => {
+              const items = SATELLITES.filter(s => s.zone === zone);
+              if (items.length === 0) return null;
+              const c = ZONE_COLOR[zone];
+              return (
+                <div key={zone}>
+                  <div
+                    className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full mb-3"
+                    style={{
+                      background: `${c}10`,
+                      border: `1px solid ${c}38`,
+                    }}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ background: c }}
+                    />
+                    <span
+                      className="uppercase"
+                      style={{
+                        color: c,
+                        fontSize: '10px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                      }}
+                    >
+                      {zone}
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    {items.map(s => {
+                      const Icon = s.icon;
+                      return (
+                        <div
+                          key={s.title}
+                          className="rounded-xl bg-white p-4"
+                          style={{
+                            border: '1px solid #E6EEF3',
+                            boxShadow: '0 4px 16px rgba(8,17,31,0.04)',
+                          }}
+                        >
+                          <div className="flex items-center gap-2 mb-2">
+                            <div
+                              className="w-7 h-7 rounded-md flex items-center justify-center"
+                              style={{
+                                background: `${c}14`,
+                                border: `1px solid ${c}30`,
+                                color: c,
+                              }}
+                            >
+                              <Icon size={13} />
+                            </div>
+                          </div>
+                          <div
+                            className="text-[#08111F]"
+                            style={{ fontSize: '13.5px', fontWeight: 600, lineHeight: 1.35 }}
+                          >
+                            {s.title}
+                          </div>
+                          <div
+                            className="mt-1.5 text-[#6F8190]"
+                            style={{ fontSize: '12.5px', lineHeight: 1.5 }}
+                          >
+                            {s.note}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom summary strip */}
+          <div
+            className="px-6 lg:px-10 py-6 border-t flex flex-wrap items-center justify-between gap-4"
+            style={{
+              borderColor: '#E6EEF3',
+              background: 'linear-gradient(to right, #F9FCFD, #FFFFFF)',
+            }}
+          >
+            <div className="max-w-[640px]">
               <div
                 className="text-[#08111F]"
                 style={{
-                  fontSize: '22px',
+                  fontSize: '17px',
                   fontWeight: 700,
                   lineHeight: 1.3,
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '-0.01em',
                 }}
               >
-                Seven gaps. Three handoffs. Together they decide how much of what comes
-                in actually becomes paid work or kept appointments.
+                Seven leak points. One critical drain in the middle.
               </div>
               <div
-                className="text-[#4C5E6F] mt-3"
-                style={{ fontSize: '15px', lineHeight: 1.65 }}
+                className="text-[#4C5E6F] mt-1.5"
+                style={{ fontSize: '13.5px', lineHeight: 1.55 }}
               >
-                This is the shape of the leak. Not a dramatic failure — it is the space
-                between each step where the handoff breaks.
+                Together they decide how much of what comes in actually becomes paid
+                work or a kept appointment.
               </div>
             </div>
-            <div className="col-span-12 lg:col-span-4 flex lg:justify-end">
-              <div
-                className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-[#35C7D8]/12 to-[#14B8A6]/8 border border-[#35C7D8]/30 text-[#0E2740]"
-                style={{ fontSize: '14px', fontWeight: 700 }}
-              >
-                <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_10px_#35C7D8]" />
-                The fix is the system between the steps
-              </div>
+            <div
+              className="inline-flex items-center gap-2.5 px-4 py-3 rounded-xl"
+              style={{
+                background:
+                  'linear-gradient(to right, rgba(53,199,216,0.12), rgba(20,184,166,0.06))',
+                border: '1px solid rgba(53,199,216,0.30)',
+                color: '#0E2740',
+                fontSize: '13px',
+                fontWeight: 700,
+              }}
+            >
+              <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_10px_#35C7D8]" />
+              The fix is the system between the steps
             </div>
           </div>
         </div>
@@ -857,22 +1122,45 @@ function SectionControlPoint() {
 // "Built to Match How Your Business or Practice Actually Runs."
 // ============================================================================
 
-const NORMAL_POINTS = [
-  'Service pages list what you do',
-  'Enquiries land in a shared inbox',
-  'Whoever sees it first replies — eventually',
-  'Quote or consultation goes out, then nothing depends on memory',
-  'Reviews happen when someone remembers',
-  'Owner has no view of what is in motion',
-];
+// Paired contrast rows — same topics, different operating states. The visual
+// difference (scattered vs aligned silhouette) does the work, not the text.
+type ContrastTopic = {
+  topic: string;
+  normal: string;
+  connected: string;
+};
 
-const CONNECTED_POINTS = [
-  'Pages explain the work and the next step',
-  'Enquiries land with context, source, and an owner',
-  'First response happens fast and is logged',
-  'Quote and consultation follow-up runs without anyone chasing',
-  'Reviews are requested at the right moment',
-  'Owner sees every active enquiry and where it stands',
+const CONTRAST_TOPICS: ReadonlyArray<ContrastTopic> = [
+  {
+    topic: 'Page clarity',
+    normal: 'Service pages list what you do',
+    connected: 'Pages explain the work and the next step',
+  },
+  {
+    topic: 'Enquiry capture',
+    normal: 'Form to one inbox, call to a phone, message somewhere else',
+    connected: 'Every channel lands on one capture surface with context',
+  },
+  {
+    topic: 'First response',
+    normal: 'Whoever sees it first replies — eventually',
+    connected: 'Fast first response, logged with source and owner',
+  },
+  {
+    topic: 'Follow-up',
+    normal: 'Quote goes out, then it depends on memory',
+    connected: 'Follow-up runs on schedule without anyone chasing',
+  },
+  {
+    topic: 'Review / proof',
+    normal: 'Reviews happen when someone remembers',
+    connected: 'Review request fires at the moment work is done',
+  },
+  {
+    topic: 'Owner visibility',
+    normal: 'No view of what is in motion',
+    connected: 'Owner sees every active enquiry and where it stands',
+  },
 ];
 
 function SectionContrast() {
@@ -896,7 +1184,9 @@ function SectionContrast() {
                 letterSpacing: '-0.03em',
               }}
             >
-              Built to match how your business or practice actually runs.
+              A website that exists.
+              <br />
+              <span className="text-[#4C5E6F]">A system that carries the work.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
@@ -904,60 +1194,219 @@ function SectionContrast() {
               className="text-[#4C5E6F]"
               style={{ fontSize: '16px', lineHeight: 1.65 }}
             >
-              Same pages on the surface. Different operating state behind them. The
-              contrast is not pretty design vs ugly design — it is whether the work coming
-              in actually gets handled.
+              Same pages on the surface. Different operating state behind them. Six
+              moments where the contrast becomes visible.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-2">
-          <div className="rounded-2xl border border-[#E6EEF3] bg-[#F6FAFC] p-8">
-            <div className="mb-5 flex items-center justify-between">
-              <p
+        {/* Split operating table — scattered fragments on left, aligned path on right */}
+        <div
+          className="relative rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-2"
+          style={{
+            background: 'linear-gradient(90deg, #FCFDFE 0%, #F6FAFC 50%, #F0FCF9 100%)',
+            border: '1px solid #E6EEF3',
+            boxShadow: '0 12px 60px rgba(8,17,31,0.05)',
+          }}
+        >
+          {/* LEFT — Normal: scattered fragments */}
+          <div className="relative px-6 lg:px-10 py-10 lg:py-12 border-b lg:border-b-0 lg:border-r" style={{ borderColor: '#E6EEF3' }}>
+            <div className="flex items-center justify-between mb-8">
+              <span
                 className="uppercase tracking-[0.16em]"
-                style={{ color: '#E76F6F', fontSize: '11.5px', fontWeight: 700 }}
+                style={{ color: '#6F8190', fontSize: '11px', fontWeight: 700 }}
               >
                 Normal website
-              </p>
-              <span className="w-2 h-2 rounded-full bg-[#E76F6F]" />
+              </span>
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                style={{
+                  background: '#E76F6F12',
+                  border: '1px solid #E76F6F38',
+                  color: '#C04A4A',
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  letterSpacing: '0.14em',
+                }}
+              >
+                <span className="w-1 h-1 rounded-full bg-[#E76F6F]" />
+                SCATTERED
+              </span>
             </div>
-            <ul className="space-y-3">
-              {NORMAL_POINTS.map(p => (
-                <li
-                  key={p}
-                  className="flex items-start gap-3 text-[#4C5E6F]"
-                  style={{ fontSize: '14.5px', lineHeight: 1.55 }}
-                >
-                  <span className="mt-2 size-1 shrink-0 rounded-full bg-[#E76F6F]" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
+
+            <div className="relative" style={{ minHeight: '420px' }}>
+              {CONTRAST_TOPICS.map((t, i) => {
+                // Manual offsets: alternating horizontal positions, slight rotation.
+                const offsets = [
+                  { left: '0%', top: '0px', rotate: '-1.2deg' },
+                  { left: '18%', top: '74px', rotate: '0.9deg' },
+                  { left: '4%', top: '152px', rotate: '-0.6deg' },
+                  { left: '24%', top: '228px', rotate: '1.2deg' },
+                  { left: '6%', top: '306px', rotate: '-0.9deg' },
+                  { left: '18%', top: '380px', rotate: '0.4deg' },
+                ];
+                const o = offsets[i];
+                return (
+                  <div
+                    key={t.topic}
+                    className="absolute"
+                    style={{
+                      left: o.left,
+                      top: o.top,
+                      transform: `rotate(${o.rotate})`,
+                      width: '78%',
+                      maxWidth: '320px',
+                    }}
+                  >
+                    <div
+                      className="rounded-lg bg-white px-4 py-3"
+                      style={{
+                        border: '1px dashed #C8D8E4',
+                        boxShadow: '0 4px 14px rgba(8,17,31,0.05)',
+                      }}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F]" />
+                        <span
+                          className="uppercase"
+                          style={{
+                            color: '#9CA3B0',
+                            fontSize: '9.5px',
+                            fontWeight: 700,
+                            letterSpacing: '0.14em',
+                          }}
+                        >
+                          {t.topic}
+                        </span>
+                      </div>
+                      <div
+                        className="text-[#4C5E6F]"
+                        style={{ fontSize: '13px', lineHeight: 1.4 }}
+                      >
+                        {t.normal}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="rounded-2xl border border-[#14B8A6]/30 bg-[#14B8A6]/[0.06] p-8">
-            <div className="mb-5 flex items-center justify-between">
-              <p
+          {/* RIGHT — Connected: aligned path with vertical rail */}
+          <div className="relative px-6 lg:px-10 py-10 lg:py-12">
+            <div className="flex items-center justify-between mb-8">
+              <span
                 className="uppercase tracking-[0.16em]"
-                style={{ color: '#14B8A6', fontSize: '11.5px', fontWeight: 700 }}
+                style={{ color: '#0E7D8C', fontSize: '11px', fontWeight: 700 }}
               >
-                Connected website system
-              </p>
-              <span className="w-2 h-2 rounded-full bg-[#14B8A6] shadow-[0_0_8px_#14B8A6]" />
+                Connected system
+              </span>
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                style={{
+                  background: '#14B8A615',
+                  border: '1px solid #14B8A638',
+                  color: '#0E7D8C',
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  letterSpacing: '0.14em',
+                }}
+              >
+                <span className="w-1 h-1 rounded-full bg-[#14B8A6] shadow-[0_0_6px_#14B8A6]" />
+                ALIGNED
+              </span>
             </div>
-            <ul className="space-y-3">
-              {CONNECTED_POINTS.map(p => (
-                <li
-                  key={p}
-                  className="flex items-start gap-3 text-[#08111F]"
-                  style={{ fontSize: '14.5px', lineHeight: 1.55 }}
-                >
-                  <span className="mt-2 size-1 shrink-0 rounded-full bg-[#14B8A6]" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
+
+            <div className="relative" style={{ minHeight: '420px' }}>
+              {/* Vertical alignment rail */}
+              <div
+                className="absolute left-[18px] top-0 bottom-0 w-px"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to bottom, transparent, #14B8A6 12%, #14B8A6 88%, transparent)',
+                }}
+                aria-hidden="true"
+              />
+
+              <div className="space-y-3 relative">
+                {CONTRAST_TOPICS.map(t => (
+                  <div key={t.topic} className="flex items-start gap-4">
+                    {/* Rail node */}
+                    <div className="relative pt-3 shrink-0" style={{ width: '36px' }}>
+                      <span
+                        className="absolute left-[12px] w-[14px] h-[14px] rounded-full flex items-center justify-center"
+                        style={{
+                          background: '#FFFFFF',
+                          border: '2px solid #14B8A6',
+                          boxShadow: '0 0 0 3px rgba(20,184,166,0.10)',
+                        }}
+                      >
+                        <span className="w-1 h-1 rounded-full bg-[#14B8A6]" />
+                      </span>
+                    </div>
+                    <div
+                      className="flex-1 rounded-lg bg-white px-4 py-3"
+                      style={{
+                        border: '1px solid #D0EFF4',
+                        boxShadow: '0 4px 14px rgba(20,184,166,0.06)',
+                      }}
+                    >
+                      <div className="flex items-center justify-between mb-1">
+                        <span
+                          className="uppercase"
+                          style={{
+                            color: '#0E7D8C',
+                            fontSize: '9.5px',
+                            fontWeight: 700,
+                            letterSpacing: '0.14em',
+                          }}
+                        >
+                          {t.topic}
+                        </span>
+                        <span
+                          className="inline-flex items-center gap-1"
+                          style={{
+                            color: '#0E7D8C',
+                            fontSize: '9px',
+                            fontWeight: 700,
+                            letterSpacing: '0.14em',
+                          }}
+                        >
+                          <span className="w-1 h-1 rounded-full bg-[#14B8A6]" />
+                          OWNED
+                        </span>
+                      </div>
+                      <div
+                        className="text-[#08111F]"
+                        style={{ fontSize: '13.5px', fontWeight: 500, lineHeight: 1.4 }}
+                      >
+                        {t.connected}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom strip spans both columns */}
+          <div
+            className="lg:col-span-2 px-6 lg:px-10 py-5 border-t flex flex-wrap items-center justify-between gap-3"
+            style={{
+              borderColor: '#E6EEF3',
+              background: 'linear-gradient(to right, #F9FCFD, #FFFFFF)',
+            }}
+          >
+            <span className="text-[#4C5E6F]" style={{ fontSize: '14px', lineHeight: 1.55 }}>
+              Same pages on the surface. One is scattered. The other is aligned.
+            </span>
+            <span
+              className="inline-flex items-center gap-1.5"
+              style={{ color: '#0E7D8C', fontSize: '12px', fontWeight: 700 }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6] shadow-[0_0_8px_#14B8A6]" />
+              The connected side is what gets built
+            </span>
           </div>
         </div>
       </div>
@@ -966,27 +1415,62 @@ function SectionContrast() {
 }
 
 // ============================================================================
-// SECTION 05 — Connected handling path (6 stages)
-// "From First Enquiry to Reliable Follow-Up."
+// SECTION 05 — Connected handling path
+// Featured "First response" card with a Call/Form/Message/Consultation →
+// Response surface → Owner handoff strip + 4 supporting handling states in
+// a 2×2 grid below. Teal-grounded light surface.
 // ============================================================================
 
-const HANDLING_STAGES: ReadonlyArray<{ num: string; label: string; note: string }> = [
-  { num: '01', label: 'Enquiry arrives', note: 'Call, form, message, booking or consultation request' },
-  { num: '02', label: 'First response', note: 'Fast, even after hours' },
-  { num: '03', label: 'Source recorded', note: 'Where it came from and what they wanted' },
-  { num: '04', label: 'Owner sees it', note: 'The right person — not a shared inbox' },
-  { num: '05', label: 'Follow-up runs', note: 'Quote chased, reminder sent, status updated' },
-  { num: '06', label: 'Proof captured', note: 'Review requested when the work is done' },
+const HANDLING_CHANNELS = [
+  { icon: PhoneCall, label: 'Call' },
+  { icon: Inbox, label: 'Form' },
+  { icon: FileText, label: 'Message' },
+  { icon: HeartPulse, label: 'Consultation' },
+];
+
+type SupportingHandling = {
+  icon: LucideIcon;
+  label: string;
+  note: string;
+};
+
+const SUPPORTING_HANDLING: ReadonlyArray<SupportingHandling> = [
+  {
+    icon: MapPin,
+    label: 'Source and context recorded',
+    note: 'Which page, which campaign, which intent — captured with the enquiry, not lost.',
+  },
+  {
+    icon: Workflow,
+    label: 'Right person sees it',
+    note: 'Routed by service area, treatment, or urgency. Not a shared inbox.',
+  },
+  {
+    icon: Repeat,
+    label: 'Follow-up is scheduled',
+    note: 'Quote chased on a known cadence. Consultation reminders fire automatically.',
+  },
+  {
+    icon: Star,
+    label: 'Proof / review request triggered',
+    note: 'When the job is marked done or the appointment is kept, the review request goes out.',
+  },
 ];
 
 function SectionHandling() {
   return (
-    <section className="bg-gradient-to-b from-[#F6FAFC] to-white py-24">
+    <section
+      className="py-24"
+      style={{
+        background:
+          'linear-gradient(180deg, #EBF9FB 0%, #F6FCFD 50%, #FFFFFF 100%)',
+      }}
+    >
       <div className="max-w-[1240px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-10 mb-14">
+        <div className="grid grid-cols-12 gap-10 mb-12">
           <div className="col-span-12 lg:col-span-7">
             <div
-              className="text-[#14B8A6] uppercase tracking-[0.16em] mb-5"
+              className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
               After the enquiry
@@ -1000,72 +1484,278 @@ function SectionHandling() {
                 letterSpacing: '-0.03em',
               }}
             >
-              From first enquiry.
+              First response is the critical moment.
               <br />
-              <span className="text-[#4C5E6F]">To reliable follow-up.</span>
+              <span className="text-[#4C5E6F]">Everything else protects it.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
+            <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
               Most enquiries do not fail at the website. They fail in the hours and days
-              after. Connected handling makes sure the next step is visible, owned, and
-              reliable.
+              after. Connected handling protects the enquiry from disappearing.
             </p>
           </div>
         </div>
 
-        <div className="relative rounded-2xl bg-white border border-[#E6EEF3] p-6 lg:p-10 shadow-[0_8px_48px_rgba(8,17,31,0.06)]">
-          <svg
-            className="pointer-events-none absolute inset-x-10 top-[6.5rem] hidden lg:block"
-            viewBox="0 0 100 1"
-            preserveAspectRatio="none"
-            style={{ height: '2px' }}
-            aria-hidden="true"
-          >
-            <line
-              x1="2"
-              y1="0.5"
-              x2="98"
-              y2="0.5"
-              stroke="#14B8A6"
-              strokeOpacity="0.3"
-              strokeWidth="1"
-              strokeDasharray="3 4"
-            />
-          </svg>
-          <ol className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-3">
-            {HANDLING_STAGES.map(stage => (
-              <li
-                key={stage.num}
-                className="rounded-xl border border-[#E6EEF3] bg-[#F6FAFC] p-4"
+        {/* Featured handoff card */}
+        <div
+          className="relative rounded-3xl overflow-hidden p-7 lg:p-10 mb-5"
+          style={{
+            background:
+              'linear-gradient(135deg, #FFFFFF 0%, #EBF9FB 50%, #DFF8F3 100%)',
+            border: '1.5px solid #35C7D845',
+            boxShadow:
+              '0 20px 56px rgba(53,199,216,0.15), 0 0 0 1px rgba(53,199,216,0.05)',
+          }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                'radial-gradient(ellipse at 100% 0%, rgba(53,199,216,0.18) 0%, transparent 50%)',
+            }}
+          />
+
+          <div className="relative grid grid-cols-12 gap-8 items-center">
+            {/* Left text column */}
+            <div className="col-span-12 lg:col-span-5">
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full mb-5"
+                style={{
+                  background: '#35C7D814',
+                  border: '1px solid #35C7D845',
+                  color: '#0E7D8C',
+                  fontSize: '10.5px',
+                  fontWeight: 700,
+                  letterSpacing: '0.16em',
+                }}
               >
-                <div className="mb-3 flex items-center justify-between">
-                  <span
-                    className="tabular-nums uppercase tracking-[0.14em]"
-                    style={{ color: '#14B8A6', fontSize: '10.5px', fontWeight: 700 }}
+                <span className="w-1 h-1 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />
+                CRITICAL MOMENT
+              </span>
+              <h3
+                className="text-[#08111F] mb-3"
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                Every channel reaches the same response surface
+              </h3>
+              <p
+                className="text-[#4C5E6F]"
+                style={{ fontSize: '14.5px', lineHeight: 1.6 }}
+              >
+                Calls, forms, messages, and consultation requests all land on one
+                surface — with source, context, and an owner attached. No shared
+                inbox. No delay while someone figures out who replies.
+              </p>
+            </div>
+
+            {/* Right handoff strip: Channels → Response surface → Owner */}
+            <div className="col-span-12 lg:col-span-7">
+              <div
+                className="rounded-2xl p-5 lg:p-6"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D0EFF4',
+                  boxShadow: '0 8px 24px rgba(8,17,31,0.04)',
+                }}
+              >
+                {/* Channels row */}
+                <div
+                  className="uppercase tracking-[0.14em] mb-3"
+                  style={{ color: '#9CA3B0', fontSize: '9.5px', fontWeight: 700 }}
+                >
+                  Channels in
+                </div>
+                <div className="grid grid-cols-4 gap-2">
+                  {HANDLING_CHANNELS.map(c => {
+                    const Icon = c.icon;
+                    return (
+                      <div
+                        key={c.label}
+                        className="rounded-lg px-2 py-2.5 text-center"
+                        style={{
+                          background: '#F6FAFC',
+                          border: '1px solid #E6EEF3',
+                        }}
+                      >
+                        <div
+                          className="w-7 h-7 rounded-md flex items-center justify-center mx-auto mb-1.5"
+                          style={{
+                            background: '#FFFFFF',
+                            border: '1px solid #D0EFF4',
+                            color: '#0E7D8C',
+                          }}
+                        >
+                          <Icon size={13} />
+                        </div>
+                        <div
+                          className="text-[#4C5E6F]"
+                          style={{ fontSize: '11px', fontWeight: 600 }}
+                        >
+                          {c.label}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Connector: SVG path with downward arrow */}
+                <div className="flex justify-center my-3">
+                  <svg width="100%" height="28" viewBox="0 0 200 28" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="handoffFlow" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stopColor="#35C7D8" stopOpacity="0.0" />
+                        <stop offset="100%" stopColor="#35C7D8" stopOpacity="0.6" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M 30 0 Q 30 14, 100 14 Q 170 14, 170 0 M 100 14 L 100 26 M 95 21 L 100 26 L 105 21"
+                      fill="none"
+                      stroke="url(#handoffFlow)"
+                      strokeWidth="1.2"
+                    />
+                  </svg>
+                </div>
+
+                {/* Response surface — central pill */}
+                <div
+                  className="rounded-xl px-4 py-3 flex items-center gap-3 mb-3"
+                  style={{
+                    background:
+                      'linear-gradient(to right, rgba(53,199,216,0.16), rgba(20,184,166,0.10))',
+                    border: '1px solid #35C7D850',
+                  }}
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8] animate-pulse" />
+                  <div className="flex-1 min-w-0">
+                    <div
+                      className="uppercase tracking-[0.14em]"
+                      style={{ color: '#0E7D8C', fontSize: '9.5px', fontWeight: 700 }}
+                    >
+                      Response surface
+                    </div>
+                    <div
+                      className="text-[#08111F]"
+                      style={{ fontSize: '13.5px', fontWeight: 700, letterSpacing: '-0.005em' }}
+                    >
+                      Fast first reply · logged · routed
+                    </div>
+                  </div>
+                </div>
+
+                {/* Owner row */}
+                <div className="flex items-center gap-2">
+                  <div
+                    className="flex-1 rounded-lg px-3 py-2 flex items-center gap-2"
+                    style={{
+                      background: '#F6FAFC',
+                      border: '1px solid #E6EEF3',
+                    }}
                   >
-                    {stage.num}
+                    <div
+                      className="w-6 h-6 rounded-md flex items-center justify-center"
+                      style={{
+                        background: '#21B98515',
+                        border: '1px solid #21B98540',
+                        color: '#21B985',
+                      }}
+                    >
+                      <CheckCircle2 size={12} />
+                    </div>
+                    <div
+                      className="text-[#08111F]"
+                      style={{ fontSize: '12.5px', fontWeight: 600 }}
+                    >
+                      Owner · next step
+                    </div>
+                    <span
+                      className="ml-auto inline-flex items-center gap-1 px-2 py-0.5 rounded-full"
+                      style={{
+                        background: '#21B98512',
+                        border: '1px solid #21B98538',
+                        color: '#0F7A57',
+                        fontSize: '9.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                      }}
+                    >
+                      OWNED
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 2x2 supporting handling states */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+          {SUPPORTING_HANDLING.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={s.label}
+                className="relative rounded-2xl bg-white p-6 flex gap-4 overflow-hidden"
+                style={{
+                  border: '1px solid #E6EEF3',
+                  boxShadow: '0 4px 16px rgba(8,17,31,0.04)',
+                }}
+              >
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-0.5"
+                  style={{ background: '#14B8A6' }}
+                />
+                <div className="flex flex-col items-center gap-2 shrink-0 pt-1">
+                  <span
+                    className="tabular-nums"
+                    style={{
+                      color: '#9CA3B0',
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                    }}
+                  >
+                    0{i + 2}
                   </span>
-                  <span className="size-1.5 rounded-full bg-[#14B8A6]" />
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{
+                      background:
+                        'linear-gradient(to bottom right, rgba(53,199,216,0.16), rgba(20,184,166,0.08))',
+                      border: '1px solid #35C7D830',
+                      color: '#0E7D8C',
+                    }}
+                  >
+                    <Icon size={16} />
+                  </div>
                 </div>
-                <div
-                  className="text-[#08111F]"
-                  style={{ fontSize: '14.5px', fontWeight: 600 }}
-                >
-                  {stage.label}
+                <div className="min-w-0">
+                  <div
+                    className="text-[#08111F]"
+                    style={{
+                      fontSize: '15.5px',
+                      fontWeight: 700,
+                      lineHeight: 1.25,
+                      letterSpacing: '-0.005em',
+                    }}
+                  >
+                    {s.label}
+                  </div>
+                  <div
+                    className="mt-1.5 text-[#4C5E6F]"
+                    style={{ fontSize: '13px', lineHeight: 1.55 }}
+                  >
+                    {s.note}
+                  </div>
                 </div>
-                <div
-                  className="mt-1 text-[#6F8190]"
-                  style={{ fontSize: '12.5px', lineHeight: 1.5 }}
-                >
-                  {stage.note}
-                </div>
-              </li>
-            ))}
-          </ol>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -1348,73 +2038,71 @@ function SectionFiveSystems() {
 }
 
 // ============================================================================
-// SECTION 07 — What changes when the path is connected
-// Single audit-style panel listing 5 operating shifts as horizontal rows.
-// Each row: icon + title + description (left ~65%) | before→after diff (right ~35%).
-// Distinct from Section 5 (staged-rail), Section 6 (constellation), and
-// Section 8 (flagship+2x2).
+// SECTION 07 — Positive operating state board
+// Featured "Every enquiry has somewhere to land" tile + 4 smaller positive
+// states. Calm green/teal-tinted board. Each tile shows: state label + one
+// muted "used to" micro-line + one stronger "now" line. Not a table, not a
+// before/after list. After the dark constellation this should feel like
+// relief and control.
 // ============================================================================
 
-type OperatingShift = {
+type PositiveState = {
   icon: LucideIcon;
-  title: string;
-  description: string;
-  before: string;
-  after: string;
+  label: string;
+  used: string; // muted micro-line, what used to happen
+  now: string; // stronger line, what now happens
 };
 
-const OPERATING_SHIFTS: ReadonlyArray<OperatingShift> = [
+const FEATURED_STATE: PositiveState = {
+  icon: Inbox,
+  label: 'Every enquiry has somewhere to land',
+  used: 'Form to one inbox. Call to a phone. Consultation to a booking tool.',
+  now: 'One capture surface holds every channel, with source and owner attached.',
+};
+
+const SMALL_STATES: ReadonlyArray<PositiveState> = [
   {
-    icon: Inbox,
-    title: 'Enquiries arrive in one place',
-    description:
-      'Calls, forms, messages, and consultation requests all land on a single surface with source, context, and an owner attached.',
-    before: '3 inboxes + booking tool',
-    after: 'One capture surface',
-  },
-  {
-    icon: Workflow,
-    title: 'Routed, not relayed',
-    description:
-      'The enquiry reaches the right person without three manual forwards in between.',
-    before: 'Manual relay',
-    after: 'Right person, right time',
+    icon: CheckCircle2,
+    label: 'Every active enquiry has an owner',
+    used: 'Whoever picked up the call last',
+    now: 'A named person, visible on the enquiry',
   },
   {
     icon: Repeat,
-    title: 'Follow-up runs on schedule',
-    description:
-      'Quotes get chased. Consultations get reminders. None of it depends on memory.',
-    before: 'When someone remembers',
-    after: 'On time, every time',
+    label: 'Follow-up has a visible next step',
+    used: 'Memory and Friday goodwill',
+    now: 'Scheduled, owned, not chased',
   },
   {
     icon: Star,
-    title: 'Reviews captured at the right moment',
-    description:
-      'The request goes out when the work is fresh and the customer or patient is happy.',
-    before: 'By accident, if at all',
-    after: 'On request, on schedule',
+    label: 'Completed work becomes proof',
+    used: 'Review depended on who remembered',
+    now: 'Captured at the right moment',
   },
   {
     icon: Activity,
-    title: 'Owner can see what is in motion',
-    description:
-      'A clear view of every active enquiry — who owns it, where it stands, what comes next.',
-    before: 'No visibility',
-    after: 'Clear picture',
+    label: 'The owner can see what is in motion',
+    used: 'No view of active work',
+    now: 'Clear picture, refreshed daily',
   },
 ];
 
 function SectionShift() {
+  const FeaturedIcon = FEATURED_STATE.icon;
   return (
-    <section className="bg-white py-28">
+    <section
+      className="py-28"
+      style={{
+        background:
+          'linear-gradient(180deg, #FFFFFF 0%, #F0FCF9 60%, #F6FAFC 100%)',
+      }}
+    >
       <div className="max-w-[1240px] mx-auto px-8">
         {/* Section header */}
         <div className="grid grid-cols-12 gap-10 mb-12">
           <div className="col-span-12 lg:col-span-7">
             <div
-              className="text-[#14B8A6] uppercase tracking-[0.16em] mb-5"
+              className="text-[#0F7A57] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
               What changes
@@ -1435,173 +2123,213 @@ function SectionShift() {
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              The visible change is calm: fewer dropped enquiries, fewer chased quotes,
-              fewer review requests forgotten. The harder change is that the owner can
-              finally see what the business or practice is doing day to day.
+              Not a list of features. Five operating states that become true once the
+              website system and connected handling are in place.
             </p>
           </div>
         </div>
 
-        {/* Single shift-list panel — 5 horizontal rows */}
-        <div
-          className="rounded-2xl bg-white overflow-hidden"
-          style={{
-            border: '1px solid #E6EEF3',
-            boxShadow: '0 8px 48px rgba(8,17,31,0.06)',
-          }}
-        >
-          {/* Top header strip inside the panel */}
-          <div
-            className="flex flex-wrap items-center justify-between gap-3 px-6 lg:px-8 py-4 border-b"
-            style={{
-              borderColor: '#E6EEF3',
-              background: 'linear-gradient(to right, #F9FCFD, #FFFFFF)',
-            }}
-          >
-            <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
-              <span
-                className="uppercase tracking-[0.16em] text-[#0E2740]"
-                style={{ fontSize: '10.5px', fontWeight: 700 }}
-              >
-                Operating shifts
-              </span>
-            </div>
-            <span
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+        {/* Asymmetric state board: featured tile (col-7) + 2x2 small tiles (col-5) */}
+        <div className="grid grid-cols-12 gap-4 lg:gap-5">
+          {/* Featured */}
+          <div className="col-span-12 lg:col-span-7">
+            <div
+              className="relative h-full rounded-3xl overflow-hidden p-8 lg:p-10"
               style={{
-                background: '#F6FAFC',
-                border: '1px solid #E6EEF3',
-                color: '#4C5E6F',
-                fontSize: '11.5px',
-                fontWeight: 600,
+                background:
+                  'linear-gradient(135deg, #FFFFFF 0%, #DFF8F3 60%, #C9F5EA 100%)',
+                border: '1.5px solid #21B98540',
+                boxShadow:
+                  '0 24px 60px rgba(33,185,133,0.18), 0 0 0 1px rgba(33,185,133,0.05)',
               }}
             >
-              {OPERATING_SHIFTS.length} changes · none depends on memory
-            </span>
-          </div>
-
-          {/* Shift rows */}
-          <div className="divide-y" style={{ borderColor: '#EEF3F6' }}>
-            {OPERATING_SHIFTS.map((shift, i) => {
-              const Icon = shift.icon;
-              return (
-                <div
-                  key={shift.title}
-                  className="grid grid-cols-12 gap-6 px-6 lg:px-8 py-6 lg:py-7 transition-colors hover:bg-[#F9FCFD]"
+              {/* soft glow */}
+              <div
+                className="absolute -top-10 -right-10 w-40 h-40 rounded-full pointer-events-none"
+                style={{
+                  background: 'rgba(33,185,133,0.18)',
+                  filter: 'blur(50px)',
+                }}
+                aria-hidden="true"
+              />
+              <div className="relative">
+                <span
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full mb-6"
+                  style={{
+                    background: '#21B98515',
+                    border: '1px solid #21B98545',
+                    color: '#0F7A57',
+                    fontSize: '10.5px',
+                    fontWeight: 700,
+                    letterSpacing: '0.16em',
+                  }}
                 >
-                  {/* Left: icon + index + title + description */}
-                  <div className="col-span-12 lg:col-span-7 flex gap-5">
-                    <div className="flex flex-col items-center gap-2 shrink-0">
-                      <span
-                        className="tabular-nums uppercase tracking-[0.14em] text-[#9CA3B0]"
-                        style={{ fontSize: '10px', fontWeight: 700 }}
-                      >
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                        style={{
-                          background:
-                            'linear-gradient(to bottom right, rgba(53,199,216,0.16), rgba(20,184,166,0.08))',
-                          border: '1px solid #35C7D830',
-                          color: '#0E7D8C',
-                        }}
-                      >
-                        <Icon size={18} />
-                      </div>
+                  <span className="w-1 h-1 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
+                  ANCHOR STATE
+                </span>
+
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
+                  style={{
+                    background:
+                      'linear-gradient(to bottom right, rgba(33,185,133,0.22), rgba(20,184,166,0.12))',
+                    border: '1px solid #21B98555',
+                    color: '#0F7A57',
+                  }}
+                >
+                  <FeaturedIcon size={24} />
+                </div>
+
+                <h3
+                  className="text-[#08111F]"
+                  style={{
+                    fontSize: '30px',
+                    fontWeight: 700,
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.025em',
+                  }}
+                >
+                  {FEATURED_STATE.label}
+                </h3>
+
+                {/* Two-line shift inside featured: muted "used to" then strong "now" */}
+                <div className="mt-7 space-y-3">
+                  <div
+                    className="rounded-lg px-4 py-3"
+                    style={{
+                      background: '#FFFFFF80',
+                      border: '1px dashed #C8D8E4',
+                    }}
+                  >
+                    <div
+                      className="uppercase tracking-[0.14em] mb-1"
+                      style={{ color: '#9CA3B0', fontSize: '9.5px', fontWeight: 700 }}
+                    >
+                      Used to
                     </div>
-                    <div className="min-w-0 pt-1">
-                      <h3
-                        className="text-[#08111F]"
-                        style={{
-                          fontSize: '17px',
-                          fontWeight: 700,
-                          lineHeight: 1.25,
-                          letterSpacing: '-0.01em',
-                        }}
-                      >
-                        {shift.title}
-                      </h3>
-                      <p
-                        className="mt-1.5 text-[#4C5E6F]"
-                        style={{ fontSize: '13.5px', lineHeight: 1.55 }}
-                      >
-                        {shift.description}
-                      </p>
+                    <div
+                      className="text-[#6F8190]"
+                      style={{ fontSize: '14px', lineHeight: 1.5 }}
+                    >
+                      {FEATURED_STATE.used}
                     </div>
                   </div>
-
-                  {/* Right: before → after diff */}
-                  <div className="col-span-12 lg:col-span-5 flex items-center lg:justify-end">
+                  <div
+                    className="rounded-lg px-4 py-3.5"
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1px solid #21B98540',
+                      boxShadow: '0 6px 18px rgba(33,185,133,0.08)',
+                    }}
+                  >
                     <div
-                      className="flex items-center gap-3 w-full rounded-xl px-4 py-3"
+                      className="uppercase tracking-[0.14em] mb-1 flex items-center gap-1.5"
+                      style={{ color: '#0F7A57', fontSize: '9.5px', fontWeight: 700 }}
+                    >
+                      <span className="w-1 h-1 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
+                      Now
+                    </div>
+                    <div
+                      className="text-[#08111F]"
+                      style={{ fontSize: '15px', fontWeight: 600, lineHeight: 1.45 }}
+                    >
+                      {FEATURED_STATE.now}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 4 small positive states in 2x2 */}
+          <div className="col-span-12 lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+            {SMALL_STATES.map(s => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.label}
+                  className="relative h-full rounded-2xl bg-white p-5 flex flex-col"
+                  style={{
+                    border: '1px solid #D0EFF4',
+                    boxShadow: '0 4px 16px rgba(20,184,166,0.06)',
+                  }}
+                >
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div
+                      className="w-9 h-9 rounded-lg flex items-center justify-center"
                       style={{
-                        background: '#F9FCFD',
-                        border: '1px solid #EEF3F6',
+                        background:
+                          'linear-gradient(to bottom right, rgba(33,185,133,0.16), rgba(20,184,166,0.08))',
+                        border: '1px solid #21B98530',
+                        color: '#0F7A57',
                       }}
                     >
-                      <div className="flex-1 min-w-0">
-                        <div
-                          className="uppercase tracking-[0.14em] text-[#9CA3B0] mb-1"
-                          style={{ fontSize: '9px', fontWeight: 700 }}
-                        >
-                          Before
-                        </div>
-                        <div
-                          className="line-through truncate"
-                          style={{ color: '#6F8190', fontSize: '13px' }}
-                        >
-                          {shift.before}
-                        </div>
-                      </div>
-                      <span
-                        className="shrink-0"
-                        style={{ color: '#9CA3B0', fontSize: '14px' }}
-                      >
-                        →
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <div
-                          className="uppercase tracking-[0.14em] mb-1"
-                          style={{ color: '#0E7D8C', fontSize: '9px', fontWeight: 700 }}
-                        >
-                          After
-                        </div>
-                        <div
-                          className="truncate"
-                          style={{ color: '#08111F', fontSize: '13px', fontWeight: 700 }}
-                        >
-                          {shift.after}
-                        </div>
-                      </div>
+                      <Icon size={15} />
                     </div>
+                    <span
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full"
+                      style={{
+                        background: '#21B98510',
+                        color: '#0F7A57',
+                        fontSize: '9px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                      }}
+                    >
+                      <span className="w-1 h-1 rounded-full bg-[#21B985]" />
+                      NOW
+                    </span>
+                  </div>
+                  <h4
+                    className="text-[#08111F] mb-2"
+                    style={{
+                      fontSize: '14.5px',
+                      fontWeight: 700,
+                      lineHeight: 1.25,
+                      letterSpacing: '-0.005em',
+                    }}
+                  >
+                    {s.label}
+                  </h4>
+                  <div
+                    className="text-[#9CA3B0] mb-1"
+                    style={{ fontSize: '11.5px', lineHeight: 1.4 }}
+                  >
+                    {s.used}
+                  </div>
+                  <div
+                    className="text-[#08111F] mt-auto"
+                    style={{ fontSize: '12.5px', fontWeight: 600, lineHeight: 1.45 }}
+                  >
+                    {s.now}
                   </div>
                 </div>
               );
             })}
           </div>
+        </div>
 
-          {/* Bottom strip inside panel */}
-          <div
-            className="flex flex-wrap items-center justify-between gap-3 px-6 lg:px-8 py-5 border-t"
-            style={{
-              borderColor: '#E6EEF3',
-              background: 'linear-gradient(to right, #F9FCFD, #FFFFFF)',
-            }}
+        {/* Lower strip */}
+        <div
+          className="mt-6 rounded-xl px-6 py-5 flex flex-wrap items-center justify-between gap-3"
+          style={{
+            background: 'linear-gradient(to right, #DFF8F3, #FFFFFF)',
+            border: '1px solid #21B98530',
+          }}
+        >
+          <span
+            className="text-[#0E2740]"
+            style={{ fontSize: '15px', fontWeight: 600, lineHeight: 1.55 }}
           >
-            <span className="text-[#4C5E6F]" style={{ fontSize: '14px', lineHeight: 1.6 }}>
-              The visible change is calm. The underlying change is that the owner can see
-              the business or practice running.
-            </span>
-            <span
-              className="inline-flex items-center gap-1.5"
-              style={{ color: '#0E7D8C', fontSize: '12px', fontWeight: 700 }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
-              What the system holds
-            </span>
-          </div>
+            The visible change is calm. The owner can finally see the work moving.
+          </span>
+          <span
+            className="inline-flex items-center gap-1.5"
+            style={{ color: '#0F7A57', fontSize: '12px', fontWeight: 700 }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_8px_#21B985]" />
+            Held by the system
+          </span>
         </div>
       </div>
     </section>
@@ -1622,6 +2350,7 @@ type Scenario = {
   leaks: ReadonlyArray<string>;
   needs: ReadonlyArray<string>;
   tone: string;
+  surface: SurfaceVariant; // abstract preview block; later swap for real <img />
 };
 
 const FEATURED_SCENARIO: Scenario = {
@@ -1637,6 +2366,7 @@ const FEATURED_SCENARIO: Scenario = {
   ],
   needs: ['Missed-call recovery', 'Quote follow-up', 'Local visibility'],
   tone: '#F4B740',
+  surface: 'page',
 };
 
 const SUPPORTING_SCENARIOS: ReadonlyArray<Scenario> = [
@@ -1653,6 +2383,7 @@ const SUPPORTING_SCENARIOS: ReadonlyArray<Scenario> = [
     ],
     needs: ['Unified capture', 'Routing', 'Response speed'],
     tone: '#35C7D8',
+    surface: 'handoff',
   },
   {
     icon: ShieldCheck,
@@ -1667,6 +2398,7 @@ const SUPPORTING_SCENARIOS: ReadonlyArray<Scenario> = [
     ],
     needs: ['Owned follow-up', 'Proposal tracking', 'Status visibility'],
     tone: '#14B8A6',
+    surface: 'timeline',
   },
   {
     icon: HeartPulse,
@@ -1681,6 +2413,7 @@ const SUPPORTING_SCENARIOS: ReadonlyArray<Scenario> = [
     ],
     needs: ['Procedure clarity', 'Consultation routing', 'Reminder flow'],
     tone: '#9B7DE0',
+    surface: 'signal',
   },
   {
     icon: Sparkles,
@@ -1695,29 +2428,276 @@ const SUPPORTING_SCENARIOS: ReadonlyArray<Scenario> = [
     ],
     needs: ['Review timing', 'Visible proof', 'Repeat-care flow'],
     tone: '#21B985',
+    surface: 'review',
   },
 ];
 
-function ScenarioImagePlaceholder({ tone, height }: { tone: string; height: string }) {
+// Abstract scenario surface preview — a small dark-on-light visual block that
+// stands in for a future project image. Each scenario uses a slightly different
+// composition (page anatomy, signal feed, handoff strip, timeline, signal panel)
+// so the section doesn't read as 5 identical placeholders. Replace with a real
+// <img /> when project assets exist; the abstract block is the visible UI in
+// the meantime — no "to be added" text.
+type SurfaceVariant = 'page' | 'signal' | 'handoff' | 'timeline' | 'review';
+
+function ScenarioSurface({
+  variant,
+  tone,
+  height,
+}: {
+  variant: SurfaceVariant;
+  tone: string;
+  height: string;
+}) {
   return (
     <div
-      className="mt-6 rounded-xl flex items-center justify-center"
+      className="rounded-xl overflow-hidden relative"
       style={{
         height,
-        background: `linear-gradient(135deg, ${tone}08, #F6FAFC)`,
-        border: `1px dashed ${tone}40`,
+        background: 'linear-gradient(135deg, #061323 0%, #0E2740 100%)',
+        border: '1px solid rgba(255,255,255,0.10)',
+        boxShadow: `0 12px 32px rgba(8,17,31,0.20), 0 0 24px ${tone}14`,
       }}
     >
-      <div className="text-center">
-        <div
-          className="uppercase tracking-[0.16em] mb-1"
-          style={{ color: tone, fontSize: '10px', fontWeight: 700 }}
+      {/* faint accent wash */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse at 100% 0%, ${tone}24 0%, transparent 55%)`,
+        }}
+        aria-hidden="true"
+      />
+      {/* dotted grid wash */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.4]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)',
+          backgroundSize: '16px 16px',
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Browser chrome bar */}
+      <div
+        className="relative flex items-center gap-1.5 px-3 py-2 border-b"
+        style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+        <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+        <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+        <span
+          className="ml-2"
+          style={{ color: tone, fontSize: '8.5px', fontWeight: 700, letterSpacing: '0.18em' }}
         >
-          Project image
-        </div>
-        <div className="text-[#9CA3B0]" style={{ fontSize: '11px' }}>
-          To be added
-        </div>
+          {variant.toUpperCase()}
+        </span>
+      </div>
+
+      <div className="relative p-3.5 flex flex-col gap-2">
+        {variant === 'page' && (
+          <>
+            <div className="h-1.5 rounded-full bg-white/15" style={{ width: '60%' }} />
+            <div
+              className="h-3 rounded"
+              style={{
+                background: `linear-gradient(to right, ${tone}38, ${tone}10)`,
+                width: '80%',
+              }}
+            />
+            <div className="grid grid-cols-3 gap-2 mt-1.5">
+              <div className="h-7 rounded bg-white/[0.06] border border-white/10" />
+              <div className="h-7 rounded bg-white/[0.06] border border-white/10" />
+              <div className="h-7 rounded bg-white/[0.06] border border-white/10" />
+            </div>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="h-1 rounded-full bg-white/12 flex-1" />
+              <div
+                className="h-3 px-2 rounded inline-flex items-center"
+                style={{ background: `${tone}28`, border: `1px solid ${tone}50` }}
+              >
+                <span style={{ color: tone, fontSize: '7.5px', fontWeight: 700 }}>CTA</span>
+              </div>
+            </div>
+          </>
+        )}
+        {variant === 'signal' && (
+          <>
+            <div className="flex items-center gap-1.5">
+              <div className="h-1.5 rounded-full bg-white/15 flex-1" />
+              <span style={{ color: tone, fontSize: '7.5px', fontWeight: 700 }}>
+                ●●●
+              </span>
+            </div>
+            {[0, 1, 2].map(i => (
+              <div
+                key={i}
+                className="flex items-center gap-2 px-2 py-1.5 rounded"
+                style={{
+                  background: i === 1 ? `${tone}10` : 'rgba(255,255,255,0.04)',
+                  border: `1px solid ${i === 1 ? `${tone}40` : 'rgba(255,255,255,0.08)'}`,
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{ background: i === 1 ? tone : '#9CA3B0' }}
+                />
+                <div className="h-1 rounded-full bg-white/15 flex-1" />
+                <div className="h-1 rounded-full bg-white/10" style={{ width: '14px' }} />
+              </div>
+            ))}
+          </>
+        )}
+        {variant === 'handoff' && (
+          <>
+            <div className="flex items-center gap-1.5">
+              <div
+                className="h-5 rounded flex items-center justify-center px-1.5"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                  fontSize: '7px',
+                  color: '#FFFFFF99',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                }}
+              >
+                CALL
+              </div>
+              <div
+                className="h-5 rounded flex items-center justify-center px-1.5"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                  fontSize: '7px',
+                  color: '#FFFFFF99',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                }}
+              >
+                FORM
+              </div>
+              <div
+                className="h-5 rounded flex items-center justify-center px-1.5"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                  fontSize: '7px',
+                  color: '#FFFFFF99',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                }}
+              >
+                MSG
+              </div>
+            </div>
+            <div className="flex justify-center" style={{ color: '#FFFFFF55', fontSize: '10px' }}>
+              ↓
+            </div>
+            <div
+              className="h-6 rounded flex items-center justify-center"
+              style={{
+                background: `linear-gradient(to right, ${tone}40, ${tone}18)`,
+                border: `1px solid ${tone}55`,
+              }}
+            >
+              <span
+                style={{
+                  color: tone,
+                  fontSize: '8px',
+                  fontWeight: 700,
+                  letterSpacing: '0.18em',
+                }}
+              >
+                RESPONSE · OWNED
+              </span>
+            </div>
+          </>
+        )}
+        {variant === 'timeline' && (
+          <>
+            <div className="flex items-center gap-1">
+              {[0, 1, 2, 3, 4].map(i => (
+                <div key={i} className="flex items-center flex-1">
+                  <div
+                    className="w-2 h-2 rounded-full shrink-0"
+                    style={{
+                      background: i === 2 ? tone : 'rgba(255,255,255,0.25)',
+                      boxShadow: i === 2 ? `0 0 6px ${tone}` : 'none',
+                    }}
+                  />
+                  {i < 4 && (
+                    <div
+                      className="h-px flex-1"
+                      style={{ background: 'rgba(255,255,255,0.15)' }}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="space-y-1.5 mt-1">
+              <div className="flex gap-1.5">
+                <div className="h-1 rounded-full bg-white/15" style={{ width: '20%' }} />
+                <div className="h-1 rounded-full bg-white/10 flex-1" />
+              </div>
+              <div className="flex gap-1.5">
+                <div className="h-1 rounded-full bg-white/15" style={{ width: '50%' }} />
+                <div className="h-1 rounded-full bg-white/10" style={{ width: '20%' }} />
+              </div>
+              <div
+                className="h-3 rounded flex items-center px-2"
+                style={{
+                  background: `${tone}18`,
+                  border: `1px solid ${tone}40`,
+                }}
+              >
+                <span style={{ color: tone, fontSize: '7px', fontWeight: 700 }}>
+                  FOLLOW-UP DUE
+                </span>
+              </div>
+            </div>
+          </>
+        )}
+        {variant === 'review' && (
+          <>
+            <div className="flex items-center gap-1.5">
+              {[0, 1, 2, 3, 4].map(i => (
+                <span
+                  key={i}
+                  className="w-2.5 h-2.5"
+                  style={{
+                    color: tone,
+                    fontSize: '10px',
+                    lineHeight: 1,
+                  }}
+                >
+                  ★
+                </span>
+              ))}
+              <span style={{ color: '#FFFFFF66', fontSize: '8px', fontWeight: 700 }}>
+                · captured
+              </span>
+            </div>
+            <div className="space-y-1 mt-1">
+              <div className="h-1 rounded-full bg-white/15" style={{ width: '90%' }} />
+              <div className="h-1 rounded-full bg-white/15" style={{ width: '70%' }} />
+            </div>
+            <div className="flex items-center gap-1.5 mt-1">
+              <div
+                className="h-3 rounded flex items-center px-2"
+                style={{
+                  background: `${tone}18`,
+                  border: `1px solid ${tone}40`,
+                }}
+              >
+                <span style={{ color: tone, fontSize: '7px', fontWeight: 700 }}>
+                  PROOF · LIVE
+                </span>
+              </div>
+              <div className="h-1 rounded-full bg-white/10 flex-1" />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
@@ -1798,7 +2778,9 @@ function FeaturedScenarioCard({ scenario }: { scenario: Scenario }) {
           {scenario.description}
         </p>
 
-        <ScenarioImagePlaceholder tone={scenario.tone} height="180px" />
+        <div className="mt-6">
+          <ScenarioSurface variant={scenario.surface} tone={scenario.tone} height="180px" />
+        </div>
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
@@ -1907,7 +2889,9 @@ function SupportingScenarioCard({ scenario }: { scenario: Scenario }) {
         {scenario.description}
       </p>
 
-      <ScenarioImagePlaceholder tone={scenario.tone} height="120px" />
+      <div className="mt-4">
+        <ScenarioSurface variant={scenario.surface} tone={scenario.tone} height="110px" />
+      </div>
 
       <div className="mt-5 pt-5 border-t border-[#EEF3F6]">
         <div
@@ -2017,52 +3001,11 @@ function SectionScenarios() {
 
 // ============================================================================
 // SECTION 09 — Selected surfaces (illustrative)
-// Light section + STRONG dark inner panel containing 3 horizontal cards:
-// Service-page anatomy / Trust band / Enquiry handoff — each with a bullet list.
-// (Adopted from the v2 Control Point pattern.)
+// Light section + STRONG dark inner panel. Asymmetric layout: one large
+// "Service-page anatomy" surface (col-span-7) showing a stylized page with
+// labeled zones; two smaller surfaces stacked on the right (col-span-5)
+// for Trust band + Enquiry handoff. Visual annotations replace bullet lists.
 // ============================================================================
-
-const SURFACE_PATTERNS: ReadonlyArray<{
-  eyebrow: string;
-  title: string;
-  accent: string;
-  points: ReadonlyArray<string>;
-}> = [
-  {
-    eyebrow: 'Service- or treatment-page anatomy',
-    title: 'Where decisions form on the page',
-    accent: '#35C7D8',
-    points: [
-      'Problem & intent — what the visitor came to understand',
-      'Plain-language explanation of the work',
-      'Proof placement where hesitation usually happens',
-      'Intent-matched CTA — call, form, booking, or consultation',
-      'Handoff — context, source, and owner sent with the enquiry',
-    ],
-  },
-  {
-    eyebrow: 'Trust band',
-    title: 'Signals where hesitation forms',
-    accent: '#14B8A6',
-    points: [
-      'Local service area and coverage clarity',
-      'Verified business or practice signals',
-      'Real recent work referenced where it counts',
-      'Response within minutes, not hours',
-    ],
-  },
-  {
-    eyebrow: 'Enquiry handoff',
-    title: 'Context travels with the enquiry',
-    accent: '#21B985',
-    points: [
-      'Source — which page or channel it came from',
-      'Intent — quote, booking, consultation, or question',
-      'Owner — the person routed to act on it',
-      'Status — active, in follow-up, or closed',
-    ],
-  },
-];
 
 function SectionSurfaces() {
   return (
@@ -2088,21 +3031,29 @@ function SectionSurfaces() {
                 letterSpacing: '-0.03em',
               }}
             >
-              Examples of the surface design{' '}
+              The kind of surface design{' '}
               <span className="text-[#4C5E6F]">we build into website systems.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              Not finished case studies. Selected patterns — service or treatment-page
-              anatomy, trust placement, and enquiry handoff. The website surface is one
-              part; the handling around it makes it work.
+              Not finished case studies. Three abstract surface patterns — page anatomy,
+              trust placement, enquiry handoff. The website surface is one part; the
+              handling around it makes it work.
             </p>
           </div>
         </div>
 
-        {/* Dark inner panel doing the visual work inside a light section */}
-        <div className="relative overflow-hidden rounded-3xl border border-[#0E2740]/30 bg-gradient-to-br from-[#061323] to-[#103E5A] p-8 lg:p-14 shadow-[0_24px_64px_rgba(8,17,31,0.28),0_0_40px_rgba(53,199,216,0.06)]">
+        {/* Dark inner panel — asymmetric layout */}
+        <div
+          className="relative overflow-hidden rounded-3xl p-6 lg:p-12"
+          style={{
+            background: 'linear-gradient(to bottom right, #061323, #103E5A)',
+            border: '1px solid rgba(14,39,64,0.30)',
+            boxShadow:
+              '0 24px 64px rgba(8,17,31,0.28), 0 0 40px rgba(53,199,216,0.06)',
+          }}
+        >
           <div
             className="absolute inset-0 opacity-[0.05] pointer-events-none"
             style={{
@@ -2110,56 +3061,318 @@ function SectionSurfaces() {
                 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
               backgroundSize: '32px 32px',
             }}
+            aria-hidden="true"
           />
-          <div className="relative grid gap-4 lg:grid-cols-3">
-            {SURFACE_PATTERNS.map(pattern => (
+
+          <div className="relative grid grid-cols-12 gap-4 lg:gap-5">
+            {/* LARGE — Service-page anatomy (col-span-7) */}
+            <div
+              className="col-span-12 lg:col-span-7 rounded-2xl p-6 lg:p-7 relative overflow-hidden"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.10)',
+              }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />
+                <span
+                  className="uppercase tracking-[0.14em]"
+                  style={{ color: '#35C7D8', fontSize: '10.5px', fontWeight: 700 }}
+                >
+                  Service- or treatment-page anatomy
+                </span>
+              </div>
+              <h3
+                className="text-white mb-5"
+                style={{
+                  fontSize: '20px',
+                  fontWeight: 700,
+                  letterSpacing: '-0.01em',
+                  lineHeight: 1.25,
+                }}
+              >
+                Where decisions form on the page
+              </h3>
+
+              {/* Stylized page surface with labeled zones */}
               <div
-                key={pattern.title}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-7"
+                className="rounded-xl p-4 lg:p-5"
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                }}
+              >
+                {/* Browser chrome dots */}
+                <div
+                  className="flex items-center gap-1.5 pb-3 mb-4 border-b"
+                  style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                </div>
+
+                {/* Hero / intent zone */}
+                <div className="flex gap-3 mb-3">
+                  <span
+                    className="shrink-0 inline-flex items-center px-2 py-0.5 rounded h-fit"
+                    style={{
+                      background: 'rgba(53,199,216,0.14)',
+                      border: '1px solid rgba(53,199,216,0.30)',
+                      color: '#35C7D8',
+                      fontSize: '8.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.16em',
+                    }}
+                  >
+                    01 · INTENT
+                  </span>
+                  <div className="flex-1 space-y-1.5">
+                    <div className="h-2 rounded-full bg-white/20" style={{ width: '70%' }} />
+                    <div className="h-1.5 rounded-full bg-white/10" style={{ width: '55%' }} />
+                  </div>
+                </div>
+
+                {/* Plain-language explanation zone */}
+                <div className="flex gap-3 mb-3">
+                  <span
+                    className="shrink-0 inline-flex items-center px-2 py-0.5 rounded h-fit"
+                    style={{
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.12)',
+                      color: 'rgba(255,255,255,0.65)',
+                      fontSize: '8.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.16em',
+                    }}
+                  >
+                    02 · EXPLAIN
+                  </span>
+                  <div className="flex-1 space-y-1">
+                    <div className="h-1.5 rounded-full bg-white/15" style={{ width: '92%' }} />
+                    <div className="h-1.5 rounded-full bg-white/12" style={{ width: '88%' }} />
+                    <div className="h-1.5 rounded-full bg-white/10" style={{ width: '60%' }} />
+                  </div>
+                </div>
+
+                {/* Proof placement zone */}
+                <div
+                  className="flex gap-3 mb-3 p-2.5 rounded"
+                  style={{
+                    background: 'rgba(20,184,166,0.08)',
+                    border: '1px solid rgba(20,184,166,0.22)',
+                  }}
+                >
+                  <span
+                    className="shrink-0 inline-flex items-center px-2 py-0.5 rounded h-fit"
+                    style={{
+                      background: 'rgba(20,184,166,0.18)',
+                      border: '1px solid rgba(20,184,166,0.35)',
+                      color: '#14B8A6',
+                      fontSize: '8.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.16em',
+                    }}
+                  >
+                    03 · PROOF
+                  </span>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {['Local', 'Verified', 'Recent', '★★★★★'].map(t => (
+                      <span
+                        key={t}
+                        className="px-1.5 py-0.5 rounded"
+                        style={{
+                          background: 'rgba(255,255,255,0.06)',
+                          border: '1px solid rgba(255,255,255,0.10)',
+                          color: 'rgba(255,255,255,0.70)',
+                          fontSize: '9px',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA + handoff zone */}
+                <div
+                  className="flex gap-3 items-center p-2.5 rounded"
+                  style={{
+                    background:
+                      'linear-gradient(to right, rgba(53,199,216,0.16), rgba(20,184,166,0.08))',
+                    border: '1px solid rgba(53,199,216,0.30)',
+                  }}
+                >
+                  <span
+                    className="shrink-0 inline-flex items-center px-2 py-0.5 rounded h-fit"
+                    style={{
+                      background: 'rgba(53,199,216,0.22)',
+                      border: '1px solid rgba(53,199,216,0.40)',
+                      color: '#35C7D8',
+                      fontSize: '8.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.16em',
+                    }}
+                  >
+                    04 · CTA
+                  </span>
+                  <div className="flex-1 flex items-center gap-2">
+                    <div
+                      className="px-2.5 py-1 rounded"
+                      style={{
+                        background: '#FFFFFF',
+                        color: '#061323',
+                        fontSize: '10px',
+                        fontWeight: 700,
+                      }}
+                    >
+                      Request a review
+                    </div>
+                    <span className="text-white/40" style={{ fontSize: '10px' }}>
+                      →
+                    </span>
+                    <span
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded"
+                      style={{
+                        background: 'rgba(33,185,133,0.18)',
+                        border: '1px solid rgba(33,185,133,0.40)',
+                        color: '#21B985',
+                        fontSize: '8.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                      }}
+                    >
+                      <span className="w-1 h-1 rounded-full bg-[#21B985]" />
+                      HANDOFF · OWNER
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column — two stacked smaller surfaces */}
+            <div className="col-span-12 lg:col-span-5 grid grid-cols-1 gap-4 lg:gap-5">
+              {/* Trust band */}
+              <div
+                className="rounded-2xl p-6 relative overflow-hidden"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                }}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span
-                    className="w-1.5 h-1.5 rounded-full"
-                    style={{
-                      background: pattern.accent,
-                      boxShadow: `0 0 6px ${pattern.accent}`,
-                    }}
-                  />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6] shadow-[0_0_6px_#14B8A6]" />
                   <span
                     className="uppercase tracking-[0.14em]"
-                    style={{ color: pattern.accent, fontSize: '10.5px', fontWeight: 700 }}
+                    style={{ color: '#14B8A6', fontSize: '10.5px', fontWeight: 700 }}
                   >
-                    {pattern.eyebrow}
+                    Trust band
                   </span>
                 </div>
                 <h3
-                  className="text-white"
+                  className="text-white mb-4"
                   style={{
-                    fontSize: '20px',
+                    fontSize: '15px',
                     fontWeight: 700,
-                    letterSpacing: '-0.01em',
-                    lineHeight: 1.25,
+                    letterSpacing: '-0.005em',
+                    lineHeight: 1.3,
                   }}
                 >
-                  {pattern.title}
+                  Signals placed where hesitation forms
                 </h3>
-                <ul className="mt-5 space-y-2.5">
-                  {pattern.points.map(p => (
-                    <li
-                      key={p}
-                      className="flex items-start gap-2.5 text-white/65"
-                      style={{ fontSize: '13.5px', lineHeight: 1.55 }}
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    { label: 'Local service area', icon: MapPin },
+                    { label: 'Verified', icon: ShieldCheck },
+                    { label: 'Real recent work', icon: Star },
+                    { label: 'Reply within minutes', icon: Clock },
+                  ].map(t => {
+                    const Icon = t.icon;
+                    return (
+                      <span
+                        key={t.label}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
+                        style={{
+                          background: 'rgba(255,255,255,0.05)',
+                          border: '1px solid rgba(20,184,166,0.30)',
+                          color: 'rgba(255,255,255,0.85)',
+                          fontSize: '10.5px',
+                          fontWeight: 600,
+                        }}
+                      >
+                        <Icon size={10} color="#14B8A6" />
+                        {t.label}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Enquiry handoff */}
+              <div
+                className="rounded-2xl p-6 relative overflow-hidden"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
+                  <span
+                    className="uppercase tracking-[0.14em]"
+                    style={{ color: '#21B985', fontSize: '10.5px', fontWeight: 700 }}
+                  >
+                    Enquiry handoff
+                  </span>
+                </div>
+                <h3
+                  className="text-white mb-4"
+                  style={{
+                    fontSize: '15px',
+                    fontWeight: 700,
+                    letterSpacing: '-0.005em',
+                    lineHeight: 1.3,
+                  }}
+                >
+                  Context travels with the enquiry
+                </h3>
+                <div className="space-y-1.5">
+                  {[
+                    { k: 'Source', v: 'Service page · roofing' },
+                    { k: 'Intent', v: 'Quote request' },
+                    { k: 'Owner', v: 'Routed · M. Patel' },
+                    { k: 'Status', v: 'Active · follow-up due' },
+                  ].map(row => (
+                    <div
+                      key={row.k}
+                      className="flex items-center justify-between rounded px-3 py-1.5"
+                      style={{
+                        background: 'rgba(255,255,255,0.04)',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                      }}
                     >
                       <span
-                        className="mt-1.5 w-1.5 h-1.5 shrink-0 rounded-full"
-                        style={{ background: pattern.accent }}
-                      />
-                      {p}
-                    </li>
+                        className="uppercase tracking-[0.14em]"
+                        style={{
+                          color: 'rgba(255,255,255,0.50)',
+                          fontSize: '9px',
+                          fontWeight: 700,
+                        }}
+                      >
+                        {row.k}
+                      </span>
+                      <span
+                        className="text-white"
+                        style={{ fontSize: '11.5px', fontWeight: 600 }}
+                      >
+                        {row.v}
+                      </span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
@@ -2343,115 +3556,132 @@ const DELIVERY_STEPS: ReadonlyArray<{
 
 function SectionDelivery() {
   return (
-    <section className="bg-gradient-to-b from-[#F6FAFC] to-white py-24">
+    <section className="bg-white py-20">
       <div className="max-w-[1240px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-10 mb-14">
+        <div className="grid grid-cols-12 gap-10 mb-12">
           <div className="col-span-12 lg:col-span-7">
             <div
               className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
-              How the work runs
+              How an engagement starts
             </div>
             <h2
               className="text-[#08111F]"
               style={{
-                fontSize: '50px',
+                fontSize: '44px',
                 fontWeight: 700,
-                lineHeight: 1.05,
-                letterSpacing: '-0.03em',
+                lineHeight: 1.1,
+                letterSpacing: '-0.025em',
               }}
             >
               Practical delivery.
-              <br />
-              <span className="text-[#4C5E6F]">System thinking behind it.</span>
+              <span className="text-[#4C5E6F]"> System thinking behind it.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
+            <p className="text-[#4C5E6F]" style={{ fontSize: '15.5px', lineHeight: 1.6 }}>
               We work directly with the owner or practice manager. The aim is operating
               change, not a prettier site or another tool subscription.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {DELIVERY_STEPS.map((step, i) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={step.num}
-                className="relative rounded-2xl bg-white border-2 p-8 flex flex-col"
-                style={{ borderColor: `${step.accent}28` }}
-              >
+        {/* Engagement path — 3 steps with a thin connector line running through them */}
+        <div className="relative">
+          {/* Connector line — runs horizontally across the 3 cards on desktop */}
+          <div
+            className="hidden lg:block absolute left-[16%] right-[16%] pointer-events-none"
+            style={{
+              top: '52px',
+              height: '2px',
+              backgroundImage:
+                'linear-gradient(to right, #35C7D8 0%, #F4B740 50%, #21B985 100%)',
+              opacity: 0.55,
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {DELIVERY_STEPS.map((step, i) => {
+              const Icon = step.icon;
+              return (
                 <div
-                  className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                  style={{
-                    background: `linear-gradient(90deg, ${step.accent}, ${step.accent}40)`,
-                  }}
-                />
-                <div className="flex items-center justify-between mb-6">
-                  <span
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full"
-                    style={{
-                      background: `${step.accent}14`,
-                      border: `1px solid ${step.accent}35`,
-                      color: step.accent,
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                    }}
-                  >
-                    Step {step.num}
-                  </span>
+                  key={step.num}
+                  className="relative flex flex-col items-center text-center px-2"
+                >
+                  {/* Connector node (large circle sitting on the rail) */}
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    className="relative w-[88px] h-[88px] rounded-full flex items-center justify-center mb-5"
                     style={{
-                      background: `${step.accent}12`,
-                      border: `1px solid ${step.accent}28`,
-                      color: step.accent,
+                      background: '#FFFFFF',
+                      border: `2px solid ${step.accent}`,
+                      boxShadow: `0 0 0 6px ${step.accent}14, 0 12px 28px rgba(8,17,31,0.06)`,
                     }}
                   >
-                    <Icon size={20} />
-                  </div>
-                </div>
-                <div
-                  className="text-[#08111F]"
-                  style={{
-                    fontSize: '20px',
-                    fontWeight: 700,
-                    lineHeight: 1.25,
-                    letterSpacing: '-0.01em',
-                  }}
-                >
-                  {step.title}
-                </div>
-                <p
-                  className="mt-4 text-[#4C5E6F] flex-1"
-                  style={{ fontSize: '14.5px', lineHeight: 1.6 }}
-                >
-                  {step.body}
-                </p>
-                {i < DELIVERY_STEPS.length - 1 && (
-                  <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 items-center justify-center rounded-full bg-white border border-[#E6EEF3] shadow-sm z-10">
-                    <span className="text-[#6F8190]" style={{ fontSize: '10px' }}>
-                      →
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center"
+                      style={{
+                        background: `${step.accent}14`,
+                        color: step.accent,
+                      }}
+                    >
+                      <Icon size={22} />
+                    </div>
+                    <span
+                      className="absolute -bottom-2 px-2 py-0.5 rounded-full"
+                      style={{
+                        background: step.accent,
+                        color: '#FFFFFF',
+                        fontSize: '10.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                      }}
+                    >
+                      STEP {step.num}
                     </span>
                   </div>
-                )}
-              </div>
-            );
-          })}
+                  <h3
+                    className="text-[#08111F] mb-2"
+                    style={{
+                      fontSize: '17px',
+                      fontWeight: 700,
+                      lineHeight: 1.25,
+                      letterSpacing: '-0.005em',
+                      maxWidth: '280px',
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="text-[#4C5E6F]"
+                    style={{
+                      fontSize: '13.5px',
+                      lineHeight: 1.55,
+                      maxWidth: '280px',
+                    }}
+                  >
+                    {step.body}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="mt-8 rounded-xl bg-white border border-[#E6EEF3] px-6 py-4 flex items-center justify-between">
-          <span className="text-[#6F8190]" style={{ fontSize: '13px' }}>
-            We do not optimise around unclear service pages or an unowned handling path.
-            Structure first, optimisation second.
+        <div
+          className="mt-12 rounded-xl px-6 py-4 flex flex-wrap items-center justify-between gap-3"
+          style={{
+            background: '#F6FAFC',
+            border: '1px solid #E6EEF3',
+          }}
+        >
+          <span className="text-[#4C5E6F]" style={{ fontSize: '13.5px', lineHeight: 1.55 }}>
+            Structure first, optimisation second. No campaign work over unclear pages or
+            an unowned handling path.
           </span>
           <span
-            className="inline-flex items-center gap-1.5 text-[#21B985]"
-            style={{ fontSize: '12px', fontWeight: 600 }}
+            className="inline-flex items-center gap-1.5"
+            style={{ color: '#0F7A57', fontSize: '12px', fontWeight: 700 }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
             Operating change
