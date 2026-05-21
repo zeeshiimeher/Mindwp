@@ -31,6 +31,8 @@ export default [
       'tmp/',
       'logs/',
       '_workspace/',
+      // Vite design sandbox — has its own toolchain and lint rules
+      'Mindwp-Design/',
     ],
   },
   js.configs.recommended,

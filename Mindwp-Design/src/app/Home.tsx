@@ -4,19 +4,23 @@
  * Single-file homepage render. All 12 sections inline. Replaces the
  * previously-separate components/Hero, components/LeakDiagnosis, etc.
  *
- * Section arc (per the 12-section brief):
- *  01  Work Comes In. Too Much Slips Away.            (hero + signal surface)
- *  02  Traffic Does Not Help If the Path Is Unclear.  (3-lane leak handoff board)
- *  03  The Website Is the Visible Control Point.      (3-layer stacked surface)
- *  04  Built to Match How the Business Actually Runs. (normal vs connected contrast)
- *  05  From First Enquiry to Reliable Follow-Up.      (6-stage connected handling path)
- *  06  Five Systems. One Connected Path.              (flagship SWS + 4 protections)
- *  07  What Changes When the Path Is Connected.       (dark before/after panel)
- *  08  How This Shows Up — Service Business + Clinic. (two illustrative scenario cards)
- *  09  Selected Surfaces (illustrative).              (service-page anatomy preview)
- *  10  Built for Established Service Businesses and Specialist Clinics. (fit / not for)
- *  11  Practical Delivery With System Thinking.       (3-step engagement)
- *  12  Final diagnostic CTA.                          (dark CTA panel)
+ * Section arc:
+ *  01  Hero — "Work Comes In. Too Much Slips Away." + signal surface
+ *  02  Leak audit — bento grid with featured critical leak + 6 supporting incident cards; phase as colored chips, no timeline
+ *  03  Website as control point — original v1 3-layer stacked surface (Surface → Underneath → Foundation)
+ *  04  Normal vs Connected — white 2-column contrast
+ *  05  Connected handling path — 6-stage horizontal with dashed SVG rail (teal-grounded)
+ *  06  Five Protections, One Connected Path — FULL DARK constellation, SWS hub + 4 outer
+ *  07  What Changes — single audit-style panel with 5 shift rows (icon + title + before→after diff)
+ *  08  How This Shows Up — flagship Roofing scenario + 4 supporting scenarios in 2x2 (Plumbing / Foundation / Dental implants / Dermatology); each card has a project-image placeholder
+ *  09  Selected surfaces — light section + STRONG dark inner panel, 3 layer cards
+ *  10  Fit / Not for — diagnostic two-column panel
+ *  11  Practical Delivery — 3-step engagement
+ *  12  FAQ — accordion
+ *  13  Final diagnostic CTA — dark CTA panel
+ *
+ * Section 6 is the only full dark body section — the constellation anchor. Section 7
+ * (was previously dark) is now light to avoid two consecutive dark sections.
  *
  * Voice + content per /Users/zeeshansadiq/Projects/Mindwp/docs/WRITING.md and
  * /Users/zeeshansadiq/Projects/Mindwp/docs/FOUNDATION.md. Active 5-system model
@@ -51,6 +55,8 @@ import {
   Repeat,
   ScanSearch,
   Search,
+  ShieldCheck,
+  Sparkles,
   Star,
   Wrench,
   Workflow,
@@ -322,83 +328,217 @@ function HeroSignalSurface() {
 }
 
 // ============================================================================
-// SECTION 02 — Leak diagnosis (3-lane handoff board)
-// "Traffic Does Not Help If the Path After It Is Unclear."
+// SECTION 02 — Leak audit
+// Bento-style diagnostic. Seven leak incidents arranged with the critical one
+// featured (large card). Each card carries a phase tag (Found / Captured /
+// Proven) as a colored chip — no timeline, no numbered steps, no rail.
 // ============================================================================
 
-const LEAK_LANES = [
+type LeakSeverity = 'critical' | 'high' | 'medium';
+type LeakIncident = {
+  phase: 'Found' | 'Captured' | 'Proven';
+  phaseColor: string;
+  severity: LeakSeverity;
+  icon: LucideIcon;
+  title: string;
+  note: string;
+};
+
+const LEAK_INCIDENTS: ReadonlyArray<LeakIncident> = [
+  // CRITICAL — featured
   {
-    label: 'Found',
-    accent: '#14B8A6',
-    stageSummary: 'Demand arrives. Not all of it lands.',
-    mainLeak: 'Found by some. Missed by the rest.',
-    moments: [
-      {
-        icon: Search,
-        title: 'Local search shows the wrong business first',
-        note: 'A competitor takes the top spot. The right business sits on page two — or never shows for the search a patient or customer actually typed.',
-      },
-      {
-        icon: FileText,
-        title: 'Service or treatment pages do not answer the question',
-        note: 'Visitor lands, reads a paragraph, cannot tell if this is the right team or the right procedure. Closes the tab before deciding.',
-      },
-    ],
+    phase: 'Captured',
+    phaseColor: '#F4B740',
+    severity: 'critical',
+    icon: Clock,
+    title: 'First response is too slow',
+    note: 'The enquiry cools while it sits. By the time someone picks it up, the visitor has already booked elsewhere. This is where most enquiries die.',
+  },
+  // HIGH — Captured supporting
+  {
+    phase: 'Captured',
+    phaseColor: '#F4B740',
+    severity: 'high',
+    icon: Inbox,
+    title: 'Enquiries land in scattered places',
+    note: 'Form to one inbox. Call to a phone. Consultation request to a separate booking tool. No single owner sees the queue.',
   },
   {
-    label: 'Captured',
-    accent: '#F4B740',
-    stageSummary: 'Enquiries arrive. The handoffs break.',
-    mainLeak: 'Comes in. Nobody owns the full picture.',
-    moments: [
-      {
-        icon: Inbox,
-        title: 'Enquiries land in the wrong place',
-        note: 'Form to one inbox. Call to a phone. Consultation request to a separate booking tool. No single owner sees the queue.',
-      },
-      {
-        icon: Clock,
-        title: 'First response is too slow',
-        note: 'The enquiry cools while it sits. By the time someone picks it up, the visitor has already booked elsewhere.',
-      },
-      {
-        icon: History,
-        title: 'Follow-up depends on memory',
-        note: 'Quotes go quiet on Friday. Consultations get forgotten on Monday. Jobs and appointments go to whoever replies first.',
-      },
-    ],
+    phase: 'Captured',
+    phaseColor: '#F4B740',
+    severity: 'high',
+    icon: History,
+    title: 'Follow-up depends on memory',
+    note: 'Quotes go quiet on Friday. Consultations get forgotten on Monday. Jobs go to whoever replies first.',
+  },
+  // MEDIUM — Found
+  {
+    phase: 'Found',
+    phaseColor: '#14B8A6',
+    severity: 'medium',
+    icon: Search,
+    title: 'Local search shows the wrong business first',
+    note: 'A competitor takes the top spot. The right business sits on page two — or never shows for the search a patient or customer actually typed.',
   },
   {
-    label: 'Proven',
-    accent: '#9B7DE0',
-    stageSummary: 'Good work happens. Evidence disappears.',
-    mainLeak: 'Job done. Proof never captured.',
-    moments: [
-      {
-        icon: Star,
-        title: 'Review moment passes unused',
-        note: 'Job complete, customer happy, appointment over, patient relieved — and nobody asked at the right moment.',
-      },
-      {
-        icon: Repeat,
-        title: 'No loop back into the system',
-        note: 'Completed work and patient experience never become visible proof on the website, the local profile, or the next visitor’s decision.',
-      },
-    ],
+    phase: 'Found',
+    phaseColor: '#14B8A6',
+    severity: 'medium',
+    icon: FileText,
+    title: 'Service or treatment pages do not answer the question',
+    note: 'Visitor lands, reads a paragraph, cannot tell if this is the right team or the right procedure. Closes the tab before deciding.',
+  },
+  // MEDIUM — Proven
+  {
+    phase: 'Proven',
+    phaseColor: '#9B7DE0',
+    severity: 'medium',
+    icon: Star,
+    title: 'Review moment passes unused',
+    note: 'Job complete, customer happy, appointment over, patient relieved — and nobody asked at the right moment.',
+  },
+  {
+    phase: 'Proven',
+    phaseColor: '#9B7DE0',
+    severity: 'medium',
+    icon: Repeat,
+    title: 'No loop back into the system',
+    note: 'Completed work and patient experience never become visible proof on the website, the local profile, or the next visitor’s decision.',
   },
 ];
 
+function LeakCard({ incident, featured = false }: { incident: LeakIncident; featured?: boolean }) {
+  const Icon = incident.icon;
+  const sev = incident.severity;
+  const sevColor = sev === 'critical' ? '#E76F6F' : sev === 'high' ? '#F4B740' : '#9CA3B0';
+  const sevLabel = sev === 'critical' ? 'CRITICAL' : sev === 'high' ? 'HIGH' : 'WEAK';
+
+  return (
+    <div
+      className={featured ? 'h-full rounded-2xl p-7 lg:p-9 relative overflow-hidden' : 'h-full rounded-xl p-5'}
+      style={
+        featured
+          ? {
+              background: 'linear-gradient(to bottom right, #FFFFFF, #FDF3F3)',
+              border: '1px solid #E76F6F50',
+              boxShadow:
+                '0 16px 48px rgba(231,111,111,0.10), 0 0 0 1px rgba(231,111,111,0.04)',
+            }
+          : {
+              background: '#FFFFFF',
+              border: '1px solid #E6EEF3',
+            }
+      }
+    >
+      {featured && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse at 0% 0%, rgba(231,111,111,0.06) 0%, transparent 55%)',
+          }}
+        />
+      )}
+      <div className="relative">
+        {/* Tag row */}
+        <div className="flex items-center justify-between mb-4">
+          <span
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+            style={{
+              background: `${incident.phaseColor}14`,
+              border: `1px solid ${incident.phaseColor}38`,
+              color: incident.phaseColor,
+              fontSize: '10px',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+            }}
+          >
+            <span
+              className="w-1 h-1 rounded-full"
+              style={{ background: incident.phaseColor }}
+            />
+            {incident.phase.toUpperCase()}
+          </span>
+          <span
+            className="inline-flex items-center gap-1"
+            style={{
+              color: sevColor,
+              fontSize: '10px',
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+            }}
+          >
+            <span
+              className={sev === 'critical' ? 'animate-pulse' : ''}
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '999px',
+                background: sevColor,
+                boxShadow: sev === 'critical' ? `0 0 8px ${sevColor}` : 'none',
+                display: 'inline-block',
+              }}
+            />
+            {sevLabel}
+          </span>
+        </div>
+
+        {/* Icon */}
+        <div
+          className={featured ? 'w-12 h-12 rounded-xl flex items-center justify-center mb-5' : 'w-9 h-9 rounded-lg flex items-center justify-center mb-3'}
+          style={{
+            background: `${incident.phaseColor}14`,
+            border: `1px solid ${incident.phaseColor}30`,
+            color: incident.phaseColor,
+          }}
+        >
+          <Icon size={featured ? 22 : 16} />
+        </div>
+
+        {/* Title */}
+        <div
+          className="text-[#08111F]"
+          style={{
+            fontSize: featured ? '24px' : '15px',
+            fontWeight: 700,
+            lineHeight: 1.2,
+            letterSpacing: '-0.015em',
+          }}
+        >
+          {incident.title}
+        </div>
+
+        {/* Note */}
+        <p
+          className="mt-3 text-[#4C5E6F]"
+          style={{
+            fontSize: featured ? '15.5px' : '13px',
+            lineHeight: featured ? 1.6 : 1.5,
+          }}
+        >
+          {incident.note}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function SectionLeak() {
+  const [critical, ...supporting] = LEAK_INCIDENTS;
+  const capturedSupport = supporting.slice(0, 2); // Captured x2
+  const tail = supporting.slice(2); // Found x2 + Proven x2
+
   return (
     <section id="leak" className="bg-[#F6FAFC] py-24">
       <div className="max-w-[1240px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-10 mb-16">
+        {/* Section header */}
+        <div className="grid grid-cols-12 gap-10 mb-10">
           <div className="col-span-12 lg:col-span-6">
             <div
               className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
-              Traffic does not help if the path is unclear
+              Leak audit
             </div>
             <h2
               className="text-[#08111F]"
@@ -417,8 +557,8 @@ function SectionLeak() {
               className="mt-6 text-[#6F8190] max-w-[480px]"
               style={{ fontSize: '15.5px', lineHeight: 1.7 }}
             >
-              None of these gaps looks dramatic alone. Together, they decide whether demand
-              becomes booked work, kept appointments, proof, and repeat enquiries.
+              None of these gaps looks dramatic alone. Together, they decide whether
+              demand becomes booked work, kept appointments, proof, and repeat enquiries.
             </p>
           </div>
           <div className="col-span-12 lg:col-span-5 lg:col-start-8 flex items-end">
@@ -430,168 +570,103 @@ function SectionLeak() {
           </div>
         </div>
 
-        <div className="relative rounded-2xl bg-white border border-[#E6EEF3] overflow-hidden shadow-[0_8px_48px_rgba(8,17,31,0.06)]">
-          <div className="hidden lg:grid grid-cols-3 border-b border-[#E6EEF3]">
-            {LEAK_LANES.map((lane, i) => (
+        {/* Audit overview strip — three summary chips, no phase ordering */}
+        <div
+          className="mb-6 rounded-xl bg-white border border-[#E6EEF3] px-5 lg:px-6 py-4 flex flex-wrap items-center justify-between gap-3"
+          style={{ boxShadow: '0 2px 12px rgba(8,17,31,0.03)' }}
+        >
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
+            <span
+              className="uppercase tracking-[0.16em] text-[#0E2740]"
+              style={{ fontSize: '10.5px', fontWeight: 700 }}
+            >
+              Diagnostic overview
+            </span>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6FAFC] border border-[#E6EEF3] text-[#4C5E6F]"
+              style={{ fontSize: '12px', fontWeight: 600 }}
+            >
+              3 stages
+            </span>
+            <span
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6FAFC] border border-[#E6EEF3] text-[#4C5E6F]"
+              style={{ fontSize: '12px', fontWeight: 600 }}
+            >
+              7 gaps
+            </span>
+            <span
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+              style={{
+                background: '#E76F6F12',
+                border: '1px solid #E76F6F38',
+                color: '#C04A4A',
+                fontSize: '12px',
+                fontWeight: 700,
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F] shadow-[0_0_6px_#E76F6F] animate-pulse" />
+              1 critical leak
+            </span>
+          </div>
+        </div>
+
+        {/* Bento — featured critical card + 2 captured-support cards in top row,
+            then 4 supporting cards (Found x2, Proven x2) in a 4-column band below. */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
+          {/* Featured critical leak card (spans 6 cols, taller) */}
+          <div className="lg:col-span-6">
+            <LeakCard incident={critical} featured />
+          </div>
+
+          {/* Two captured-supporting cards stacked into the remaining 6 cols */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+            {capturedSupport.map(inc => (
+              <LeakCard key={inc.title} incident={inc} />
+            ))}
+          </div>
+
+          {/* Bottom band — 4 cards: Found x2 + Proven x2 */}
+          <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+            {tail.map(inc => (
+              <LeakCard key={inc.title} incident={inc} />
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom summary strip */}
+        <div className="mt-8 rounded-2xl bg-white border border-[#E6EEF3] px-6 lg:px-10 py-7 lg:py-8 shadow-[0_4px_24px_rgba(8,17,31,0.04)]">
+          <div className="grid grid-cols-12 gap-6 items-center">
+            <div className="col-span-12 lg:col-span-8">
               <div
-                key={lane.label}
-                className="flex items-center gap-3 px-10 py-4"
+                className="text-[#08111F]"
                 style={{
-                  borderRight: i < LEAK_LANES.length - 1 ? '1px solid #E6EEF3' : 'none',
-                  background: `${lane.accent}06`,
+                  fontSize: '22px',
+                  fontWeight: 700,
+                  lineHeight: 1.3,
+                  letterSpacing: '-0.02em',
                 }}
               >
-                <span
-                  className="w-2 h-2 rounded-full shrink-0"
-                  style={{ background: lane.accent, boxShadow: `0 0 8px ${lane.accent}90` }}
-                />
-                <span
-                  style={{
-                    color: lane.accent,
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    letterSpacing: '0.12em',
-                  }}
-                >
-                  {lane.label.toUpperCase()}
-                </span>
-                <span
-                  className="text-[#6F8190] truncate ml-1"
-                  style={{ fontSize: '12px' }}
-                >
-                  — {lane.stageSummary}
-                </span>
+                Seven gaps. Three handoffs. Together they decide how much of what comes
+                in actually becomes paid work or kept appointments.
               </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#E6EEF3]">
-            {LEAK_LANES.map((lane, i) => (
-              <div key={lane.label} className="relative p-6 lg:p-10 flex flex-col">
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{
-                    background: `linear-gradient(90deg, ${lane.accent}, ${lane.accent}20)`,
-                  }}
-                />
-
-                <div className="flex items-center gap-2 mb-5 lg:hidden">
-                  <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ background: lane.accent }}
-                  />
-                  <span
-                    style={{
-                      color: lane.accent,
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      letterSpacing: '0.1em',
-                    }}
-                  >
-                    {lane.label.toUpperCase()}
-                  </span>
-                </div>
-
-                <div
-                  className="text-[#08111F] mb-7"
-                  style={{
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    lineHeight: 1.25,
-                    letterSpacing: '-0.01em',
-                  }}
-                >
-                  {lane.mainLeak}
-                </div>
-
-                <div className="space-y-5 flex-1">
-                  {lane.moments.map(m => {
-                    const Icon = m.icon;
-                    return (
-                      <div key={m.title} className="flex gap-3.5">
-                        <div
-                          className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                          style={{
-                            background: `${lane.accent}12`,
-                            border: `1px solid ${lane.accent}28`,
-                            color: lane.accent,
-                          }}
-                        >
-                          <Icon size={14} />
-                        </div>
-                        <div>
-                          <div
-                            className="text-[#08111F]"
-                            style={{ fontSize: '15px', fontWeight: 600, lineHeight: 1.3 }}
-                          >
-                            {m.title}
-                          </div>
-                          <div
-                            className="text-[#6F8190] mt-1"
-                            style={{ fontSize: '13.5px', lineHeight: 1.55 }}
-                          >
-                            {m.note}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="mt-8 flex items-center gap-2">
-                  <span
-                    className="w-1.5 h-1.5 rounded-full"
-                    style={{ background: lane.accent }}
-                  />
-                  <span
-                    style={{ color: lane.accent, fontSize: '11.5px', fontWeight: 700 }}
-                  >
-                    {lane.moments.length} gaps in this stage
-                  </span>
-                </div>
-
-                {i < LEAK_LANES.length - 1 && (
-                  <div className="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-white border border-[#E6EEF3] shadow-[0_4px_16px_rgba(8,17,31,0.08)] z-10">
-                    <span className="text-[#6F8190]" style={{ fontSize: '14px' }}>
-                      →
-                    </span>
-                  </div>
-                )}
+              <div
+                className="text-[#4C5E6F] mt-3"
+                style={{ fontSize: '15px', lineHeight: 1.65 }}
+              >
+                This is the shape of the leak. Not a dramatic failure — it is the space
+                between each step where the handoff breaks.
               </div>
-            ))}
-          </div>
-
-          <div className="border-t border-[#E6EEF3] px-6 lg:px-10 py-7 lg:py-8 bg-gradient-to-r from-[#F9FCFD] to-white">
-            <div className="grid grid-cols-12 gap-6 items-center">
-              <div className="col-span-12 lg:col-span-8">
-                <div
-                  className="text-[#08111F]"
-                  style={{
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    lineHeight: 1.3,
-                    letterSpacing: '-0.02em',
-                  }}
-                >
-                  Seven gaps. Three handoffs. Together they decide how much of what comes
-                  in actually becomes paid work or kept appointments.
-                </div>
-                <div
-                  className="text-[#4C5E6F] mt-3"
-                  style={{ fontSize: '15px', lineHeight: 1.65 }}
-                >
-                  This is the shape of the leak. Not a dramatic failure — it is the space
-                  between each step where the handoff breaks.
-                </div>
-              </div>
-              <div className="col-span-12 lg:col-span-4 flex lg:justify-end">
-                <div
-                  className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-[#35C7D8]/12 to-[#14B8A6]/8 border border-[#35C7D8]/30 text-[#0E2740]"
-                  style={{ fontSize: '14px', fontWeight: 700 }}
-                >
-                  <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_10px_#35C7D8]" />
-                  The fix is the system between the steps
-                </div>
+            </div>
+            <div className="col-span-12 lg:col-span-4 flex lg:justify-end">
+              <div
+                className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-[#35C7D8]/12 to-[#14B8A6]/8 border border-[#35C7D8]/30 text-[#0E2740]"
+                style={{ fontSize: '14px', fontWeight: 700 }}
+              >
+                <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_10px_#35C7D8]" />
+                The fix is the system between the steps
               </div>
             </div>
           </div>
@@ -603,7 +678,8 @@ function SectionLeak() {
 
 // ============================================================================
 // SECTION 03 — The website is the visible control point
-// 3-layer stacked surface (Surface / What runs underneath / Foundation)
+// Original v1 design: 3-layer stacked surface (Surface → Underneath → Foundation)
+// with vertical connectors between layers.
 // ============================================================================
 
 const CONTROL_MIDDLE: ReadonlyArray<{ icon: LucideIcon; label: string; note: string }> = [
@@ -997,292 +1073,272 @@ function SectionHandling() {
 }
 
 // ============================================================================
-// SECTION 06 — Five systems. One connected path.
-// Flagship SWS + 4 protections (2x2)
+// SECTION 06 — Five protections, one connected path (FULL DARK ANCHOR)
+// Orbital constellation: SWS hub centered with 4 outer protections at
+// top/right/bottom/left, connected by dashed SVG cross lines. Grid-texture
+// overlay + radial cyan wash. (Swapped in from HomeV2.)
 // ============================================================================
 
-const FLAGSHIP_SYS = {
-  icon: Globe,
-  name: 'Smart Website Systems',
-  role: 'The operating surface',
-  role_note: 'Where work lands, routes, and converts',
-  handles:
-    'Visitors, service or treatment questions, enquiry and consultation capture, page clarity — the central surface everything else connects to',
-  state: 'Foundation',
-  accent: '#35C7D8',
+type ProtectionAccent = 'cyan' | 'teal' | 'amber' | 'green' | 'purple';
+
+const ACCENT_HEX: Record<ProtectionAccent, string> = {
+  cyan: '#35C7D8',
+  teal: '#14B8A6',
+  amber: '#F4B740',
+  green: '#21B985',
+  purple: '#9B7DE0',
 };
 
-const PROTECTION_SYSTEMS: ReadonlyArray<{
+const PROTECTION_HUB = {
+  icon: Globe,
+  name: 'Smart Website Systems',
+  label: 'Where decisions form',
+  note: 'Service, treatment, and procedure pages carry clarity, trust, and the next step.',
+  accent: 'cyan' as ProtectionAccent,
+};
+
+const PROTECTION_OUTER: ReadonlyArray<{
   icon: LucideIcon;
   name: string;
-  journeyStage: string;
-  handles: string;
-  state: string;
-  accent: string;
+  label: string;
+  note: string;
+  accent: ProtectionAccent;
 }> = [
   {
     icon: MapPin,
-    name: 'Local SEO Authority Systems',
-    journeyStage: 'Found',
-    handles: 'Local search presence, service-area relevance, signal trust',
-    state: 'Broadcasting',
-    accent: '#14B8A6',
+    name: 'Local SEO Authority',
+    label: 'Found and verified',
+    note: 'Nearby customers and patients find the business and verify it before they enquire.',
+    accent: 'teal',
   },
   {
     icon: PhoneCall,
-    name: 'Lead Response & Handling Systems',
-    journeyStage: 'Answered',
-    handles: 'Calls, forms, missed calls, messages, after-hours response',
-    state: 'First response',
-    accent: '#F4B740',
+    name: 'Lead Response & Handling',
+    label: 'First response and routing',
+    note: 'Calls, forms, and messages reach the right person fast — and do not get lost after hours.',
+    accent: 'amber',
   },
   {
     icon: Workflow,
-    name: 'Follow-Up & CRM Systems',
-    journeyStage: 'Followed Up',
-    handles: 'Owner, status, next step, quote and consultation follow-up',
-    state: 'Tracking',
-    accent: '#21B985',
+    name: 'Follow-Up & CRM',
+    label: 'Owned next step',
+    note: 'Every enquiry has an owner, a status, and a next step that does not depend on memory.',
+    accent: 'green',
   },
   {
     icon: Star,
-    name: 'Reputation & Review Systems',
-    journeyStage: 'Proven',
-    handles: 'Review request timing, feedback routing, completed work and patient experience as proof',
-    state: 'Accumulating',
-    accent: '#9B7DE0',
+    name: 'Reputation & Review',
+    label: 'Work becomes proof',
+    note: 'Completed work, appointments, and outcomes turn into visible trust at the right time.',
+    accent: 'purple',
   },
 ];
 
+function ProtectionCard({
+  icon: Icon,
+  name,
+  label,
+  note,
+  accent,
+  hub,
+}: {
+  icon: LucideIcon;
+  name: string;
+  label: string;
+  note: string;
+  accent: ProtectionAccent;
+  hub?: boolean;
+}) {
+  const color = ACCENT_HEX[accent];
+  return (
+    <div
+      className="relative rounded-2xl border p-6"
+      style={{
+        borderColor: hub ? `${color}55` : 'rgba(255,255,255,0.1)',
+        boxShadow: hub
+          ? `0 24px 60px rgba(0,0,0,0.32), 0 0 50px ${color}22`
+          : 'none',
+        background: hub
+          ? `linear-gradient(180deg, ${color}10, rgba(255,255,255,0.04))`
+          : 'rgba(255,255,255,0.04)',
+      }}
+    >
+      <div className="flex items-center justify-between mb-3">
+        <span
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border"
+          style={{
+            borderColor: `${color}45`,
+            background: `${color}14`,
+            color,
+            fontSize: '10px',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+          }}
+        >
+          <span
+            className="w-1 h-1 rounded-full"
+            style={{ background: color, boxShadow: `0 0 6px ${color}` }}
+          />
+          {hub ? 'Flagship' : label}
+        </span>
+        <div
+          className="w-10 h-10 rounded-lg flex items-center justify-center"
+          style={{ background: `${color}14`, border: `1px solid ${color}40`, color }}
+        >
+          <Icon size={18} />
+        </div>
+      </div>
+      <div
+        className="text-white"
+        style={{
+          fontSize: hub ? '20px' : '17px',
+          fontWeight: 700,
+          letterSpacing: '-0.01em',
+        }}
+      >
+        {name}
+      </div>
+      {!hub && (
+        <div
+          className="mt-1"
+          style={{ color, fontSize: '12px', fontWeight: 600, letterSpacing: '0.04em' }}
+        >
+          {label}
+        </div>
+      )}
+      <p className="mt-3 text-white/65" style={{ fontSize: '13.5px', lineHeight: 1.55 }}>
+        {note}
+      </p>
+    </div>
+  );
+}
+
 function SectionFiveSystems() {
   return (
-    <section className="bg-white py-20 border-t border-[#EEF3F6]">
-      <div className="max-w-[1240px] mx-auto px-8">
+    <section
+      className="relative py-28 overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, #061323 0%, #0E2740 100%)' }}
+    >
+      <div
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
+      <div
+        className="absolute inset-0 opacity-[0.12] pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse at 50% 50%, #35C7D8 0%, transparent 45%)',
+        }}
+      />
+      <div className="relative max-w-[1240px] mx-auto px-8">
         <div className="grid grid-cols-12 gap-10 mb-14">
-          <div className="col-span-12 lg:col-span-6">
+          <div className="col-span-12 lg:col-span-7">
             <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
+              className="text-white/55 uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
-              The handling system
+              Five protections, one path
             </div>
             <h2
-              className="text-[#08111F]"
+              className="text-white"
               style={{
-                fontSize: '52px',
+                fontSize: '54px',
                 fontWeight: 700,
                 lineHeight: 1.05,
                 letterSpacing: '-0.03em',
               }}
             >
-              Five systems.
+              One website system.
               <br />
-              <span className="text-[#4C5E6F]">One connected path.</span>
+              <span className="text-white/55">Four connected protections around it.</span>
             </h2>
           </div>
-          <div className="col-span-12 lg:col-span-5 lg:col-start-8 flex items-end">
-            <p className="text-[#4C5E6F]" style={{ fontSize: '17px', lineHeight: 1.65 }}>
-              Smart Website Systems is the flagship — where decisions form. The four
-              protections around it handle what happens before, during, and after the
-              enquiry. None depends on someone remembering.
+          <div className="col-span-12 lg:col-span-5 flex items-end">
+            <p className="text-white/65" style={{ fontSize: '16.5px', lineHeight: 1.65 }}>
+              Not five separate services. One connected operating path with five named
+              protections — held together by the website system at the centre. None depends
+              on someone remembering.
             </p>
           </div>
         </div>
 
-        {/* Flagship row */}
-        <div className="mb-5">
-          <div className="relative rounded-2xl border-2 border-[#35C7D8]/30 bg-gradient-to-r from-[#F6FCFD] to-white p-7 shadow-[0_4px_30px_rgba(53,199,216,0.08)]">
-            <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-[#35C7D8] to-[#14B8A6]" />
-            <div className="flex items-start justify-between gap-6 flex-wrap">
-              <div className="flex items-start gap-5">
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
-                  style={{
-                    background: `${FLAGSHIP_SYS.accent}18`,
-                    border: `1px solid ${FLAGSHIP_SYS.accent}40`,
-                    color: FLAGSHIP_SYS.accent,
-                  }}
-                >
-                  <FLAGSHIP_SYS.icon size={22} />
-                </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-1">
-                    <span
-                      className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#35C7D8]/12 border border-[#35C7D8]/30 text-[#0E2740]"
-                      style={{
-                        fontSize: '10.5px',
-                        fontWeight: 700,
-                        letterSpacing: '0.1em',
-                      }}
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />
-                      Flagship · {FLAGSHIP_SYS.state}
-                    </span>
-                  </div>
-                  <div
-                    className="text-[#08111F]"
-                    style={{ fontSize: '22px', fontWeight: 700, letterSpacing: '-0.01em' }}
-                  >
-                    {FLAGSHIP_SYS.name}
-                  </div>
-                  <div
-                    className="mt-1 text-[#4C5E6F]"
-                    style={{ fontSize: '14px', fontWeight: 500 }}
-                  >
-                    {FLAGSHIP_SYS.role} ·{' '}
-                    <span className="text-[#6F8190]">{FLAGSHIP_SYS.role_note}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="max-w-[440px]">
-                <div
-                  className="text-[#6F8190] uppercase tracking-[0.14em] mb-1.5"
-                  style={{ fontSize: '9.5px', fontWeight: 700 }}
-                >
-                  What it handles
-                </div>
-                <div className="text-[#08111F]" style={{ fontSize: '14.5px', lineHeight: 1.6 }}>
-                  {FLAGSHIP_SYS.handles}
-                </div>
-              </div>
+        {/* Desktop constellation — SWS centered, 4 outer protections at top/right/bottom/left */}
+        <div className="relative hidden lg:block">
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            aria-hidden="true"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id="connect-grad" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="#35C7D8" stopOpacity="0.25" />
+                <stop offset="50%" stopColor="#35C7D8" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#35C7D8" stopOpacity="0.25" />
+              </linearGradient>
+            </defs>
+            <line
+              x1="50%"
+              y1="0%"
+              x2="50%"
+              y2="100%"
+              stroke="url(#connect-grad)"
+              strokeWidth="1"
+              strokeDasharray="4 6"
+            />
+            <line
+              x1="0%"
+              y1="50%"
+              x2="100%"
+              y2="50%"
+              stroke="url(#connect-grad)"
+              strokeWidth="1"
+              strokeDasharray="4 6"
+            />
+          </svg>
+
+          <div className="relative grid grid-cols-3 grid-rows-3 gap-6">
+            <div className="col-start-2 row-start-1 self-end">
+              <ProtectionCard {...PROTECTION_OUTER[0]} />
+            </div>
+            <div className="col-start-1 row-start-2 self-center">
+              <ProtectionCard {...PROTECTION_OUTER[3]} />
+            </div>
+            <div className="col-start-2 row-start-2 self-center">
+              <ProtectionCard {...PROTECTION_HUB} hub />
+            </div>
+            <div className="col-start-3 row-start-2 self-center">
+              <ProtectionCard {...PROTECTION_OUTER[1]} />
+            </div>
+            <div className="col-start-2 row-start-3 self-start">
+              <ProtectionCard {...PROTECTION_OUTER[2]} />
             </div>
           </div>
         </div>
 
-        {/* Journey rail */}
-        <div className="mb-4 hidden lg:flex items-center bg-gradient-to-r from-[#F6FAFC] via-white to-[#F6FAFC] border border-[#E6EEF3] rounded-xl px-6 py-3.5 overflow-hidden">
-          {['Found', 'Understood', 'Captured', 'Answered', 'Followed up', 'Proven'].map(
-            (step, i) => (
-              <div key={step} className="flex items-center shrink-0">
-                <span
-                  className="text-[#4C5E6F]"
-                  style={{ fontSize: '12.5px', fontWeight: 600 }}
-                >
-                  {step}
-                </span>
-                {i < 5 && (
-                  <span
-                    className="text-[#C8D8E4] mx-3"
-                    style={{ fontSize: '12px' }}
-                  >
-                    →
-                  </span>
-                )}
-              </div>
-            )
-          )}
-          <span
-            className="ml-auto text-[#6F8190] shrink-0 pl-6"
-            style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em' }}
-          >
-            Customer or patient journey
-          </span>
+        {/* Mobile vertical path in connected order */}
+        <div className="relative space-y-3 lg:hidden">
+          <ProtectionCard {...PROTECTION_OUTER[0]} />
+          <ProtectionCard {...PROTECTION_HUB} hub />
+          <ProtectionCard {...PROTECTION_OUTER[1]} />
+          <ProtectionCard {...PROTECTION_OUTER[2]} />
+          <ProtectionCard {...PROTECTION_OUTER[3]} />
         </div>
 
-        {/* 2×2 protections */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {PROTECTION_SYSTEMS.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div
-                key={s.name}
-                className="relative rounded-2xl border border-[#E6EEF3] bg-gradient-to-b from-white to-[#F9FCFD] p-7 overflow-hidden hover:border-[#D8E6EE] hover:shadow-[0_8px_30px_rgba(8,17,31,0.06)] transition-all"
-              >
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-0.5 rounded-l-2xl"
-                  style={{ background: s.accent }}
-                />
-
-                <div className="flex items-start justify-between mb-5">
-                  <span
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
-                    style={{
-                      background: `${s.accent}12`,
-                      border: `1px solid ${s.accent}30`,
-                      color: s.accent,
-                      fontSize: '10px',
-                      fontWeight: 700,
-                      letterSpacing: '0.1em',
-                    }}
-                  >
-                    <span className="w-1 h-1 rounded-full" style={{ background: s.accent }} />
-                    {s.journeyStage}
-                  </span>
-                  <span
-                    className="text-[#6F8190] tabular-nums"
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                    }}
-                  >
-                    0{i + 2}
-                  </span>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                    style={{
-                      background: `${s.accent}14`,
-                      border: `1px solid ${s.accent}33`,
-                      color: s.accent,
-                    }}
-                  >
-                    <Icon size={20} />
-                  </div>
-                  <div>
-                    <div
-                      className="text-[#08111F]"
-                      style={{
-                        fontSize: '17px',
-                        fontWeight: 600,
-                        lineHeight: 1.3,
-                        letterSpacing: '-0.01em',
-                      }}
-                    >
-                      {s.name}
-                    </div>
-                    <div
-                      className="mt-2 text-[#4C5E6F]"
-                      style={{ fontSize: '14.5px', lineHeight: 1.6 }}
-                    >
-                      {s.handles}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-5 flex items-center gap-1.5">
-                  <span
-                    className="w-1.5 h-1.5 rounded-full"
-                    style={{ background: s.accent }}
-                  />
-                  <span style={{ color: s.accent, fontSize: '11px', fontWeight: 600 }}>
-                    {s.state}
-                  </span>
-                </div>
-
-                <div
-                  className="absolute left-5 right-5 bottom-0 h-px"
-                  style={{
-                    backgroundImage: `linear-gradient(90deg, transparent, ${s.accent}50, transparent)`,
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-10 flex items-center justify-between flex-wrap gap-4 px-2">
-          <div className="text-[#4C5E6F]" style={{ fontSize: '14px' }}>
-            Most businesses already have parts of this. The work is connecting them.
+        <div className="mt-12 flex items-center justify-between flex-wrap gap-4">
+          <div className="text-white/55" style={{ fontSize: '14px' }}>
+            Most businesses and practices already have parts of this. The work is connecting
+            them.
           </div>
           <a
             href="#cta"
-            className="inline-flex items-center gap-2 text-[#08111F] border-b border-[#08111F]/30 hover:border-[#08111F] pb-1"
+            className="inline-flex items-center gap-2 text-white border-b border-white/30 hover:border-white pb-1"
             style={{ fontSize: '13.5px', fontWeight: 600 }}
           >
-            See where your stack is incomplete
+            Review my website system
             <ArrowRight size={14} />
           </a>
         </div>
@@ -1293,175 +1349,258 @@ function SectionFiveSystems() {
 
 // ============================================================================
 // SECTION 07 — What changes when the path is connected
-// Dark before/after panel
+// Single audit-style panel listing 5 operating shifts as horizontal rows.
+// Each row: icon + title + description (left ~65%) | before→after diff (right ~35%).
+// Distinct from Section 5 (staged-rail), Section 6 (constellation), and
+// Section 8 (flagship+2x2).
 // ============================================================================
 
-const SHIFT_BEFORE = [
-  'Voicemail and messages, checked when someone gets to it',
-  'Enquiries split across three inboxes and a booking tool',
-  'Quotes sent, never followed up',
-  'Reviews depend on whoever remembers to ask',
-  'No clear view of what is in motion',
-];
+type OperatingShift = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  before: string;
+  after: string;
+};
 
-const SHIFT_AFTER: ReadonlyArray<{ icon: LucideIcon; title: string; before: string; after: string }> = [
-  { icon: Inbox, title: 'Enquiries arrive in one place', before: '3 inboxes', after: '1 surface' },
-  { icon: Workflow, title: 'Nothing gets lost in the handoff', before: 'Manual relay', after: 'Routed' },
-  { icon: Repeat, title: 'Follow-up happens on schedule', before: 'When remembered', after: 'On time' },
-  { icon: Star, title: 'Reviews captured at the right moment', before: 'By accident', after: 'On request' },
-  { icon: Activity, title: 'Owner sees what is in motion', before: 'No visibility', after: 'Clear' },
+const OPERATING_SHIFTS: ReadonlyArray<OperatingShift> = [
+  {
+    icon: Inbox,
+    title: 'Enquiries arrive in one place',
+    description:
+      'Calls, forms, messages, and consultation requests all land on a single surface with source, context, and an owner attached.',
+    before: '3 inboxes + booking tool',
+    after: 'One capture surface',
+  },
+  {
+    icon: Workflow,
+    title: 'Routed, not relayed',
+    description:
+      'The enquiry reaches the right person without three manual forwards in between.',
+    before: 'Manual relay',
+    after: 'Right person, right time',
+  },
+  {
+    icon: Repeat,
+    title: 'Follow-up runs on schedule',
+    description:
+      'Quotes get chased. Consultations get reminders. None of it depends on memory.',
+    before: 'When someone remembers',
+    after: 'On time, every time',
+  },
+  {
+    icon: Star,
+    title: 'Reviews captured at the right moment',
+    description:
+      'The request goes out when the work is fresh and the customer or patient is happy.',
+    before: 'By accident, if at all',
+    after: 'On request, on schedule',
+  },
+  {
+    icon: Activity,
+    title: 'Owner can see what is in motion',
+    description:
+      'A clear view of every active enquiry — who owns it, where it stands, what comes next.',
+    before: 'No visibility',
+    after: 'Clear picture',
+  },
 ];
 
 function SectionShift() {
   return (
-    <section className="bg-gradient-to-br from-[#061323] to-[#0E2740] pt-32 pb-28 relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
-        }}
-      />
-      <div className="relative max-w-[1240px] mx-auto px-8">
-        <div className="max-w-[680px] mb-16">
-          <h2
-            className="text-white"
-            style={{
-              fontSize: '52px',
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
-            }}
-          >
-            What changes when the path is connected.
-          </h2>
-          <p
-            className="mt-6 text-white/65"
-            style={{ fontSize: '16.5px', lineHeight: 1.65 }}
-          >
-            The visible change is calm: fewer dropped enquiries, fewer chased quotes, fewer
-            review requests forgotten. The harder change is that the owner can finally see
-            what the business is doing day to day.
-          </p>
+    <section className="bg-white py-28">
+      <div className="max-w-[1240px] mx-auto px-8">
+        {/* Section header */}
+        <div className="grid grid-cols-12 gap-10 mb-12">
+          <div className="col-span-12 lg:col-span-7">
+            <div
+              className="text-[#14B8A6] uppercase tracking-[0.16em] mb-5"
+              style={{ fontSize: '11.5px', fontWeight: 600 }}
+            >
+              What changes
+            </div>
+            <h2
+              className="text-[#08111F]"
+              style={{
+                fontSize: '52px',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              Less leakage.
+              <br />
+              <span className="text-[#4C5E6F]">More work actually handled.</span>
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-5 flex items-end">
+            <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
+              The visible change is calm: fewer dropped enquiries, fewer chased quotes,
+              fewer review requests forgotten. The harder change is that the owner can
+              finally see what the business or practice is doing day to day.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-0 items-stretch relative">
-          {/* Before */}
-          <div className="col-span-12 lg:col-span-5 rounded-2xl lg:rounded-r-none border border-white/12 bg-white/[0.04] p-9 relative overflow-hidden">
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  'radial-gradient(ellipse at 0% 100%, rgba(231,111,111,0.07) 0%, transparent 60%)',
-              }}
-            />
-            <div className="relative">
-              <div className="flex items-center justify-between mb-8">
-                <span
-                  className="text-white/80 uppercase tracking-[0.16em]"
-                  style={{ fontSize: '11px', fontWeight: 700 }}
-                >
-                  Before
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E76F6F]/12 text-[#E76F6F] border border-[#E76F6F]/25"
-                  style={{ fontSize: '10px', fontWeight: 700 }}
-                >
-                  <span className="w-1 h-1 rounded-full bg-[#E76F6F]" /> scattered
-                </span>
-              </div>
-              <div className="space-y-3">
-                {SHIFT_BEFORE.map(item => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3.5 p-5 rounded-lg border border-white/[0.09] bg-[#E76F6F]/[0.04]"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F]/70 mt-2 shrink-0" />
-                    <span className="text-white/85" style={{ fontSize: '15.5px', lineHeight: 1.55 }}>
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden lg:flex col-span-12 lg:col-span-2 flex-col items-center justify-center relative z-10">
-            <div className="w-px flex-1 bg-gradient-to-b from-transparent via-white/15 to-transparent" />
-            <div className="w-11 h-11 rounded-full bg-[#0E2740] border border-[#35C7D8]/50 flex items-center justify-center shadow-[0_0_28px_rgba(53,199,216,0.35)]">
-              <span className="text-[#35C7D8]" style={{ fontSize: '18px' }}>
-                →
+        {/* Single shift-list panel — 5 horizontal rows */}
+        <div
+          className="rounded-2xl bg-white overflow-hidden"
+          style={{
+            border: '1px solid #E6EEF3',
+            boxShadow: '0 8px 48px rgba(8,17,31,0.06)',
+          }}
+        >
+          {/* Top header strip inside the panel */}
+          <div
+            className="flex flex-wrap items-center justify-between gap-3 px-6 lg:px-8 py-4 border-b"
+            style={{
+              borderColor: '#E6EEF3',
+              background: 'linear-gradient(to right, #F9FCFD, #FFFFFF)',
+            }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
+              <span
+                className="uppercase tracking-[0.16em] text-[#0E2740]"
+                style={{ fontSize: '10.5px', fontWeight: 700 }}
+              >
+                Operating shifts
               </span>
             </div>
-            <div className="w-px flex-1 bg-gradient-to-b from-transparent via-white/15 to-transparent" />
+            <span
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+              style={{
+                background: '#F6FAFC',
+                border: '1px solid #E6EEF3',
+                color: '#4C5E6F',
+                fontSize: '11.5px',
+                fontWeight: 600,
+              }}
+            >
+              {OPERATING_SHIFTS.length} changes · none depends on memory
+            </span>
           </div>
 
-          {/* After */}
-          <div className="col-span-12 lg:col-span-5 rounded-2xl lg:rounded-l-none border border-[#35C7D8]/25 bg-gradient-to-br from-[#071C35] to-[#061323] p-9 relative overflow-hidden shadow-[0_0_60px_rgba(53,199,216,0.08)]">
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  'radial-gradient(ellipse at 100% 0%, rgba(53,199,216,0.12) 0%, transparent 60%)',
-              }}
-            />
-            <div className="relative">
-              <div className="flex items-center justify-between mb-8">
-                <span
-                  className="text-[#35C7D8] uppercase tracking-[0.16em]"
-                  style={{ fontSize: '11px', fontWeight: 700 }}
+          {/* Shift rows */}
+          <div className="divide-y" style={{ borderColor: '#EEF3F6' }}>
+            {OPERATING_SHIFTS.map((shift, i) => {
+              const Icon = shift.icon;
+              return (
+                <div
+                  key={shift.title}
+                  className="grid grid-cols-12 gap-6 px-6 lg:px-8 py-6 lg:py-7 transition-colors hover:bg-[#F9FCFD]"
                 >
-                  After
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#14B8A6]/18 text-[#35C7D8] border border-[#35C7D8]/20"
-                  style={{ fontSize: '10px', fontWeight: 600 }}
-                >
-                  <span className="w-1 h-1 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />{' '}
-                  controlled
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                {SHIFT_AFTER.map(s => {
-                  const Icon = s.icon;
-                  return (
-                    <div
-                      key={s.title}
-                      className="flex items-center gap-4 p-5 rounded-xl border border-white/12 bg-white/[0.05]"
-                    >
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#35C7D8]/25 to-[#14B8A6]/16 border border-[#35C7D8]/30 flex items-center justify-center text-[#35C7D8] shrink-0">
+                  {/* Left: icon + index + title + description */}
+                  <div className="col-span-12 lg:col-span-7 flex gap-5">
+                    <div className="flex flex-col items-center gap-2 shrink-0">
+                      <span
+                        className="tabular-nums uppercase tracking-[0.14em] text-[#9CA3B0]"
+                        style={{ fontSize: '10px', fontWeight: 700 }}
+                      >
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <div
+                        className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                        style={{
+                          background:
+                            'linear-gradient(to bottom right, rgba(53,199,216,0.16), rgba(20,184,166,0.08))',
+                          border: '1px solid #35C7D830',
+                          color: '#0E7D8C',
+                        }}
+                      >
                         <Icon size={18} />
                       </div>
+                    </div>
+                    <div className="min-w-0 pt-1">
+                      <h3
+                        className="text-[#08111F]"
+                        style={{
+                          fontSize: '17px',
+                          fontWeight: 700,
+                          lineHeight: 1.25,
+                          letterSpacing: '-0.01em',
+                        }}
+                      >
+                        {shift.title}
+                      </h3>
+                      <p
+                        className="mt-1.5 text-[#4C5E6F]"
+                        style={{ fontSize: '13.5px', lineHeight: 1.55 }}
+                      >
+                        {shift.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right: before → after diff */}
+                  <div className="col-span-12 lg:col-span-5 flex items-center lg:justify-end">
+                    <div
+                      className="flex items-center gap-3 w-full rounded-xl px-4 py-3"
+                      style={{
+                        background: '#F9FCFD',
+                        border: '1px solid #EEF3F6',
+                      }}
+                    >
                       <div className="flex-1 min-w-0">
-                        <div className="text-white" style={{ fontSize: '16px', fontWeight: 600 }}>
-                          {s.title}
+                        <div
+                          className="uppercase tracking-[0.14em] text-[#9CA3B0] mb-1"
+                          style={{ fontSize: '9px', fontWeight: 700 }}
+                        >
+                          Before
                         </div>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span
-                            className="text-white/40 line-through"
-                            style={{ fontSize: '13px' }}
-                          >
-                            {s.before}
-                          </span>
-                          <span className="text-white/35" style={{ fontSize: '12px' }}>
-                            →
-                          </span>
-                          <span
-                            className="text-[#35C7D8]"
-                            style={{ fontSize: '13px', fontWeight: 700 }}
-                          >
-                            {s.after}
-                          </span>
+                        <div
+                          className="line-through truncate"
+                          style={{ color: '#6F8190', fontSize: '13px' }}
+                        >
+                          {shift.before}
+                        </div>
+                      </div>
+                      <span
+                        className="shrink-0"
+                        style={{ color: '#9CA3B0', fontSize: '14px' }}
+                      >
+                        →
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div
+                          className="uppercase tracking-[0.14em] mb-1"
+                          style={{ color: '#0E7D8C', fontSize: '9px', fontWeight: 700 }}
+                        >
+                          After
+                        </div>
+                        <div
+                          className="truncate"
+                          style={{ color: '#08111F', fontSize: '13px', fontWeight: 700 }}
+                        >
+                          {shift.after}
                         </div>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom strip inside panel */}
+          <div
+            className="flex flex-wrap items-center justify-between gap-3 px-6 lg:px-8 py-5 border-t"
+            style={{
+              borderColor: '#E6EEF3',
+              background: 'linear-gradient(to right, #F9FCFD, #FFFFFF)',
+            }}
+          >
+            <span className="text-[#4C5E6F]" style={{ fontSize: '14px', lineHeight: 1.6 }}>
+              The visible change is calm. The underlying change is that the owner can see
+              the business or practice running.
+            </span>
+            <span
+              className="inline-flex items-center gap-1.5"
+              style={{ color: '#0E7D8C', fontSize: '12px', fontWeight: 700 }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
+              What the system holds
+            </span>
           </div>
         </div>
       </div>
@@ -1471,46 +1610,359 @@ function SectionShift() {
 
 // ============================================================================
 // SECTION 08 — How this shows up: service business + specialist clinic
-// Two illustrative scenarios (featured + supporting)
+// Flagship + 2x2 grid. 5 scenarios total (1 featured roofing + 4 supporting).
+// Each card carries an image placeholder for future project images.
 // ============================================================================
 
-const SCENARIOS = [
+type Scenario = {
+  icon: LucideIcon;
+  eyebrow: string;
+  title: string;
+  description: string;
+  leaks: ReadonlyArray<string>;
+  needs: ReadonlyArray<string>;
+  tone: string;
+};
+
+const FEATURED_SCENARIO: Scenario = {
+  icon: Hammer,
+  eyebrow: 'Service business · Roofing',
+  title: 'Storm passes. The phone does not stop.',
+  description:
+    'Search traffic surges overnight. Quote requests and missed calls pile up while crews are still on jobs. Connected handling decides whether those leads turn into work won — or go cold by next Tuesday.',
+  leaks: [
+    'Missed call while crew is on a job',
+    'Quote sent Friday — no follow-up Monday',
+    'Job done — review moment missed',
+  ],
+  needs: ['Missed-call recovery', 'Quote follow-up', 'Local visibility'],
+  tone: '#F4B740',
+};
+
+const SUPPORTING_SCENARIOS: ReadonlyArray<Scenario> = [
   {
-    icon: Hammer,
-    label: 'Illustrative scenario · Service business',
-    audience: 'Service business (e.g. roofing or HVAC)',
-    week: 'Storm passes. The phone does not stop.',
+    icon: Wrench,
+    eyebrow: 'Service business · Plumbing',
+    title: 'Same-day call. Wrong inbox.',
+    description:
+      'Urgent enquiries hit voicemail, form, and message channels at the same time. Without a single owner, the fastest team to reply wins the job — and it isn’t always yours.',
     leaks: [
-      'Missed call while crew is on a job',
-      'Quote sent Friday — no follow-up Monday',
-      'Job done Thursday — review moment missed',
+      'Calls and forms split across channels',
+      'No single owner sees the queue',
+      'Job goes to whoever replies first',
     ],
-    needs: ['Response handling', 'Quote follow-up', 'Local visibility'],
-    tone: '#F4B740',
+    needs: ['Unified capture', 'Routing', 'Response speed'],
+    tone: '#35C7D8',
+  },
+  {
+    icon: ShieldCheck,
+    eyebrow: 'Service business · Foundation repair',
+    title: 'High-trust quote. Slow inspection follow-up.',
+    description:
+      'Owners ask for inspections and quotes that take time to scope. The leak isn’t the first reply — it’s the days between site visit and proposal where the lead cools and chooses someone else.',
+    leaks: [
+      'Inspection scheduled, then quiet',
+      'Quote drafted, never sent',
+      'Owner forgets to circle back',
+    ],
+    needs: ['Owned follow-up', 'Proposal tracking', 'Status visibility'],
+    tone: '#14B8A6',
   },
   {
     icon: HeartPulse,
-    label: 'Illustrative scenario · Specialist clinic',
-    audience: 'Specialist clinic (e.g. dental implants or dermatology)',
-    week: 'A patient researches their treatment options.',
+    eyebrow: 'Specialist clinic · Dental implants',
+    title: 'Patient researches. Practice does not follow up.',
+    description:
+      'Patients spend weeks comparing providers and costs. The procedure page may be unclear, the consultation request may land in a shared inbox, the reminder may never happen.',
     leaks: [
       'Procedure page does not explain what to expect',
-      'Consultation request sits in a shared inbox',
-      'Pre-appointment follow-up depends on memory',
+      'Consultation request sits in shared inbox',
+      'Pre-appointment reminder depends on memory',
     ],
-    needs: ['Practice front-door clarity', 'Consultation routing', 'Review request timing'],
+    needs: ['Procedure clarity', 'Consultation routing', 'Reminder flow'],
     tone: '#9B7DE0',
+  },
+  {
+    icon: Sparkles,
+    eyebrow: 'Specialist clinic · Dermatology',
+    title: 'Appointment kept. Review never asked.',
+    description:
+      'The patient came, was seen, left happy. Without a review request at the right moment, the practice front door earns no new trust for the next visitor — and the repeat-care prompt depends on memory.',
+    leaks: [
+      'Job done — review moment passes',
+      'No proof signal on the website',
+      'Repeat-care depends on memory',
+    ],
+    needs: ['Review timing', 'Visible proof', 'Repeat-care flow'],
+    tone: '#21B985',
   },
 ];
 
+function ScenarioImagePlaceholder({ tone, height }: { tone: string; height: string }) {
+  return (
+    <div
+      className="mt-6 rounded-xl flex items-center justify-center"
+      style={{
+        height,
+        background: `linear-gradient(135deg, ${tone}08, #F6FAFC)`,
+        border: `1px dashed ${tone}40`,
+      }}
+    >
+      <div className="text-center">
+        <div
+          className="uppercase tracking-[0.16em] mb-1"
+          style={{ color: tone, fontSize: '10px', fontWeight: 700 }}
+        >
+          Project image
+        </div>
+        <div className="text-[#9CA3B0]" style={{ fontSize: '11px' }}>
+          To be added
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FeaturedScenarioCard({ scenario }: { scenario: Scenario }) {
+  const Icon = scenario.icon;
+  return (
+    <div
+      className="h-full rounded-2xl p-7 lg:p-9 relative overflow-hidden flex flex-col"
+      style={{
+        background: `linear-gradient(to bottom, #FFFFFF, ${scenario.tone}0A)`,
+        border: `2px solid ${scenario.tone}45`,
+        boxShadow: `0 16px 48px ${scenario.tone}15, 0 0 0 1px ${scenario.tone}08`,
+      }}
+    >
+      <div
+        className="absolute top-0 left-0 right-0 h-[3px]"
+        style={{
+          background: `linear-gradient(90deg, ${scenario.tone}, ${scenario.tone}22)`,
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse at 100% 0%, ${scenario.tone}10 0%, transparent 55%)`,
+        }}
+      />
+      <div className="relative flex-1 flex flex-col">
+        <div className="flex items-center gap-4 mb-5">
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+            style={{
+              background: `${scenario.tone}18`,
+              border: `1px solid ${scenario.tone}40`,
+              color: scenario.tone,
+            }}
+          >
+            <Icon size={24} />
+          </div>
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full"
+            style={{
+              background: `${scenario.tone}14`,
+              border: `1px solid ${scenario.tone}38`,
+              color: scenario.tone,
+              fontSize: '10.5px',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+            }}
+          >
+            <span className="w-1 h-1 rounded-full" style={{ background: scenario.tone }} />
+            Featured · most common
+          </span>
+        </div>
+        <h3
+          className="text-[#08111F] mb-3"
+          style={{
+            fontSize: '26px',
+            fontWeight: 700,
+            lineHeight: 1.15,
+            letterSpacing: '-0.02em',
+          }}
+        >
+          {scenario.title}
+        </h3>
+        <div
+          className="uppercase tracking-[0.14em] text-[#6F8190] mb-2"
+          style={{ fontSize: '10px', fontWeight: 700 }}
+        >
+          {scenario.eyebrow}
+        </div>
+        <p
+          className="text-[#4C5E6F]"
+          style={{ fontSize: '14.5px', lineHeight: 1.6 }}
+        >
+          {scenario.description}
+        </p>
+
+        <ScenarioImagePlaceholder tone={scenario.tone} height="180px" />
+
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <div
+              className="uppercase tracking-[0.14em] text-[#6F8190] mb-3"
+              style={{ fontSize: '9.5px', fontWeight: 700 }}
+            >
+              Where it leaks
+            </div>
+            <ul className="space-y-2">
+              {scenario.leaks.map(l => (
+                <li
+                  key={l}
+                  className="flex items-start gap-2.5 text-[#4C5E6F]"
+                  style={{ fontSize: '13px', lineHeight: 1.5 }}
+                >
+                  <span
+                    className="mt-1.5 w-1.5 h-1.5 shrink-0 rounded-full"
+                    style={{ background: scenario.tone }}
+                  />
+                  {l}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div
+              className="uppercase tracking-[0.14em] text-[#6F8190] mb-3"
+              style={{ fontSize: '9.5px', fontWeight: 700 }}
+            >
+              What it needs
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {scenario.needs.map(n => (
+                <span
+                  key={n}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white border text-[#08111F]"
+                  style={{
+                    borderColor: '#E6EEF3',
+                    fontSize: '11.5px',
+                    fontWeight: 500,
+                  }}
+                >
+                  <span
+                    className="w-1 h-1 rounded-full"
+                    style={{ background: scenario.tone }}
+                  />
+                  {n}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SupportingScenarioCard({ scenario }: { scenario: Scenario }) {
+  const Icon = scenario.icon;
+  return (
+    <div
+      className="h-full rounded-2xl bg-white border p-6 flex flex-col relative overflow-hidden"
+      style={{
+        borderColor: '#E6EEF3',
+        boxShadow: '0 4px 16px rgba(8,17,31,0.04)',
+      }}
+    >
+      <div
+        className="absolute left-0 top-0 bottom-0 w-0.5"
+        style={{ background: scenario.tone }}
+      />
+      <div className="flex items-center gap-3 mb-3">
+        <div
+          className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+          style={{
+            background: `${scenario.tone}14`,
+            border: `1px solid ${scenario.tone}33`,
+            color: scenario.tone,
+          }}
+        >
+          <Icon size={17} />
+        </div>
+        <div
+          className="uppercase tracking-[0.14em] text-[#6F8190]"
+          style={{ fontSize: '9.5px', fontWeight: 700 }}
+        >
+          {scenario.eyebrow}
+        </div>
+      </div>
+      <h3
+        className="text-[#08111F] mb-2"
+        style={{
+          fontSize: '17px',
+          fontWeight: 700,
+          lineHeight: 1.2,
+          letterSpacing: '-0.01em',
+        }}
+      >
+        {scenario.title}
+      </h3>
+      <p
+        className="text-[#4C5E6F]"
+        style={{ fontSize: '13.5px', lineHeight: 1.55 }}
+      >
+        {scenario.description}
+      </p>
+
+      <ScenarioImagePlaceholder tone={scenario.tone} height="120px" />
+
+      <div className="mt-5 pt-5 border-t border-[#EEF3F6]">
+        <div
+          className="uppercase tracking-[0.14em] text-[#6F8190] mb-2.5"
+          style={{ fontSize: '9.5px', fontWeight: 700 }}
+        >
+          Where it leaks
+        </div>
+        <ul className="space-y-1.5 mb-4">
+          {scenario.leaks.map(l => (
+            <li
+              key={l}
+              className="flex items-start gap-2 text-[#4C5E6F]"
+              style={{ fontSize: '12.5px', lineHeight: 1.45 }}
+            >
+              <span
+                className="mt-1.5 w-1 h-1 shrink-0 rounded-full"
+                style={{ background: scenario.tone }}
+              />
+              {l}
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap gap-1">
+          {scenario.needs.map(n => (
+            <span
+              key={n}
+              className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#F6FAFC] border text-[#4C5E6F]"
+              style={{
+                borderColor: '#E6EEF3',
+                fontSize: '10.5px',
+                fontWeight: 500,
+              }}
+            >
+              <span
+                className="w-1 h-1 rounded-full"
+                style={{ background: scenario.tone }}
+              />
+              {n}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SectionScenarios() {
   return (
-    <section className="bg-gradient-to-b from-white to-[#F6FAFC] py-24">
+    <section className="bg-gradient-to-b from-[#F6FAFC] to-white py-24">
       <div className="max-w-[1240px] mx-auto px-8">
         <div className="grid grid-cols-12 gap-10 mb-14">
           <div className="col-span-12 lg:col-span-7">
             <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
+              className="text-[#14B8A6] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
               How this shows up
@@ -1531,149 +1983,33 @@ function SectionScenarios() {
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              Two working days. Different industries, same operating problem — and the same
-              connected handling around the website. Names of work change. The shape of the
-              leak does not.
+              Five working days. Different industries, same operating shape — and the same
+              connected handling around the website. Names of work change. The shape of
+              the leak does not.
             </p>
           </div>
         </div>
 
+        {/* Flagship + 2x2 grid: 1 featured roofing scenario + 4 supporting */}
         <div className="grid grid-cols-12 gap-5">
-          {SCENARIOS.map((s, i) => {
-            const Icon = s.icon;
-            const featured = i === 0;
-            return (
-              <div
-                key={s.audience}
-                className={featured ? 'col-span-12 lg:col-span-7' : 'col-span-12 lg:col-span-5'}
-              >
-                <div
-                  className="h-full rounded-2xl border-2 p-9 relative overflow-hidden"
-                  style={{
-                    background:
-                      featured
-                        ? 'linear-gradient(to bottom, #ffffff, #FFFBF0)'
-                        : 'linear-gradient(to bottom, #ffffff, #FAF7FF)',
-                    borderColor: `${s.tone}30`,
-                    boxShadow: `0 12px 40px ${s.tone}10`,
-                  }}
-                >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{
-                      background: `linear-gradient(90deg, ${s.tone}, ${s.tone}20)`,
-                    }}
-                  />
-                  <div className="flex items-center gap-4 mb-6">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: `${s.tone}18`,
-                        border: `1px solid ${s.tone}35`,
-                        color: s.tone,
-                      }}
-                    >
-                      <Icon size={24} />
-                    </div>
-                    <div>
-                      <div
-                        className="text-[#6F8190] uppercase tracking-[0.14em]"
-                        style={{ fontSize: '10px', fontWeight: 700 }}
-                      >
-                        {s.label}
-                      </div>
-                      <div
-                        className="text-[#08111F]"
-                        style={{
-                          fontSize: '20px',
-                          fontWeight: 700,
-                          letterSpacing: '-0.01em',
-                        }}
-                      >
-                        {s.audience}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="p-5 rounded-xl mb-6"
-                    style={{
-                      background: `${s.tone}08`,
-                      border: `1px solid ${s.tone}20`,
-                    }}
-                  >
-                    <div
-                      className="text-[#6F8190] uppercase tracking-[0.14em] mb-2"
-                      style={{ fontSize: '9px', fontWeight: 700 }}
-                    >
-                      What a common week looks like
-                    </div>
-                    <p
-                      className="text-[#08111F]"
-                      style={{ fontSize: '15px', fontWeight: 600, lineHeight: 1.4 }}
-                    >
-                      {s.week}
-                    </p>
-                  </div>
-
-                  <div
-                    className="text-[#6F8190] uppercase tracking-[0.14em] mb-3"
-                    style={{ fontSize: '9.5px', fontWeight: 700 }}
-                  >
-                    Where it leaks
-                  </div>
-                  <div className="space-y-2 mb-7">
-                    {s.leaks.map(l => (
-                      <div key={l} className="flex items-start gap-2.5">
-                        <span
-                          className="w-1.5 h-1.5 rounded-full mt-2 shrink-0"
-                          style={{ background: s.tone }}
-                        />
-                        <span
-                          className="text-[#4C5E6F]"
-                          style={{ fontSize: '13.5px', lineHeight: 1.5 }}
-                        >
-                          {l}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="pt-6 border-t" style={{ borderColor: `${s.tone}20` }}>
-                    <div
-                      className="text-[#6F8190] uppercase tracking-[0.14em] mb-3"
-                      style={{ fontSize: '9.5px', fontWeight: 700 }}
-                    >
-                      What it needs
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {s.needs.map(n => (
-                        <span
-                          key={n}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6FAFC] border border-[#E6EEF3] text-[#08111F]"
-                          style={{ fontSize: '12px', fontWeight: 500 }}
-                        >
-                          <span
-                            className="w-1.5 h-1.5 rounded-full"
-                            style={{ background: s.tone }}
-                          />
-                          {n}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          <div className="col-span-12 lg:col-span-5">
+            <FeaturedScenarioCard scenario={FEATURED_SCENARIO} />
+          </div>
+          <div className="col-span-12 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {SUPPORTING_SCENARIOS.map(s => (
+              <SupportingScenarioCard key={s.title} scenario={s} />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-8 rounded-xl bg-[#F6FAFC] border border-[#E6EEF3] px-8 py-5 text-center">
-          <span className="text-[#4C5E6F]" style={{ fontSize: '15px', lineHeight: 1.6 }}>
-            Illustrative scenarios — not named clients. The pattern is real; the details
-            here are typical, not measured.
-          </span>
-        </div>
+        <p
+          className="mt-10 max-w-2xl text-[#6F8190]"
+          style={{ fontSize: '13.5px', lineHeight: 1.6 }}
+        >
+          Illustrative scenarios — not named clients. The pattern is real; the details
+          here are typical, not measured. Project images shown above the card description
+          when they are added.
+        </p>
       </div>
     </section>
   );
@@ -1681,34 +2017,59 @@ function SectionScenarios() {
 
 // ============================================================================
 // SECTION 09 — Selected surfaces (illustrative)
-// "Selected Work / Website Showcase" — single anatomy card, no fake screenshots
+// Light section + STRONG dark inner panel containing 3 horizontal cards:
+// Service-page anatomy / Trust band / Enquiry handoff — each with a bullet list.
+// (Adopted from the v2 Control Point pattern.)
 // ============================================================================
 
-const ANATOMY_PARTS = [
-  { label: 'Problem & intent', note: 'What the visitor or patient came to understand' },
-  { label: 'Plain-language explanation', note: 'What the service, treatment, or procedure actually is' },
-  { label: 'Proof placement', note: 'Trust signals where hesitation usually happens' },
-  { label: 'Intent-matched CTA', note: 'Call, form, booking, or consultation request' },
-  { label: 'Handoff', note: 'Context, source, and owner sent with the enquiry' },
-];
-
-const TRUST_LABELS = [
-  'Local service area',
-  'Verified business or practice',
-  'Real recent work',
-  'Response within minutes',
-];
-
-const HANDOFF_ROWS = [
-  { field: 'Source', value: 'Service page' },
-  { field: 'Intent', value: 'Quote request' },
-  { field: 'Owner', value: 'Routed' },
-  { field: 'Status', value: 'Active' },
+const SURFACE_PATTERNS: ReadonlyArray<{
+  eyebrow: string;
+  title: string;
+  accent: string;
+  points: ReadonlyArray<string>;
+}> = [
+  {
+    eyebrow: 'Service- or treatment-page anatomy',
+    title: 'Where decisions form on the page',
+    accent: '#35C7D8',
+    points: [
+      'Problem & intent — what the visitor came to understand',
+      'Plain-language explanation of the work',
+      'Proof placement where hesitation usually happens',
+      'Intent-matched CTA — call, form, booking, or consultation',
+      'Handoff — context, source, and owner sent with the enquiry',
+    ],
+  },
+  {
+    eyebrow: 'Trust band',
+    title: 'Signals where hesitation forms',
+    accent: '#14B8A6',
+    points: [
+      'Local service area and coverage clarity',
+      'Verified business or practice signals',
+      'Real recent work referenced where it counts',
+      'Response within minutes, not hours',
+    ],
+  },
+  {
+    eyebrow: 'Enquiry handoff',
+    title: 'Context travels with the enquiry',
+    accent: '#21B985',
+    points: [
+      'Source — which page or channel it came from',
+      'Intent — quote, booking, consultation, or question',
+      'Owner — the person routed to act on it',
+      'Status — active, in follow-up, or closed',
+    ],
+  },
 ];
 
 function SectionSurfaces() {
   return (
-    <section className="bg-white py-24">
+    <section
+      className="py-24"
+      style={{ background: 'linear-gradient(180deg, #F6FAFC 0%, #FFFFFF 100%)' }}
+    >
       <div className="max-w-[1240px] mx-auto px-8">
         <div className="grid grid-cols-12 gap-10 mb-14">
           <div className="col-span-12 lg:col-span-7">
@@ -1740,118 +2101,65 @@ function SectionSurfaces() {
           </div>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {/* Featured anatomy card */}
-          <article className="rounded-2xl border border-[#E6EEF3] bg-white p-8 shadow-[0_8px_32px_rgba(8,17,31,0.07)] lg:col-span-2">
-            <p
-              className="uppercase tracking-[0.16em]"
-              style={{ color: '#35C7D8', fontSize: '11px', fontWeight: 700 }}
-            >
-              Service- or treatment-page anatomy
-            </p>
-            <h3
-              className="mt-2 text-[#08111F]"
-              style={{ fontSize: '22px', fontWeight: 700, letterSpacing: '-0.01em' }}
-            >
-              Where decisions form on a service or treatment page
-            </h3>
-            <div className="mt-6 rounded-xl border border-[#0E2740]/40 bg-gradient-to-br from-[#061323] to-[#103E5A] p-6">
-              <div className="flex items-center gap-1.5 border-b border-white/10 pb-3">
-                <span className="size-2 rounded-full bg-white/15" />
-                <span className="size-2 rounded-full bg-white/15" />
-                <span className="size-2 rounded-full bg-white/15" />
+        {/* Dark inner panel doing the visual work inside a light section */}
+        <div className="relative overflow-hidden rounded-3xl border border-[#0E2740]/30 bg-gradient-to-br from-[#061323] to-[#103E5A] p-8 lg:p-14 shadow-[0_24px_64px_rgba(8,17,31,0.28),0_0_40px_rgba(53,199,216,0.06)]">
+          <div
+            className="absolute inset-0 opacity-[0.05] pointer-events-none"
+            style={{
+              backgroundImage:
+                'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+              backgroundSize: '32px 32px',
+            }}
+          />
+          <div className="relative grid gap-4 lg:grid-cols-3">
+            {SURFACE_PATTERNS.map(pattern => (
+              <div
+                key={pattern.title}
+                className="rounded-2xl border border-white/10 bg-white/[0.04] p-7"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{
+                      background: pattern.accent,
+                      boxShadow: `0 0 6px ${pattern.accent}`,
+                    }}
+                  />
+                  <span
+                    className="uppercase tracking-[0.14em]"
+                    style={{ color: pattern.accent, fontSize: '10.5px', fontWeight: 700 }}
+                  >
+                    {pattern.eyebrow}
+                  </span>
+                </div>
+                <h3
+                  className="text-white"
+                  style={{
+                    fontSize: '20px',
+                    fontWeight: 700,
+                    letterSpacing: '-0.01em',
+                    lineHeight: 1.25,
+                  }}
+                >
+                  {pattern.title}
+                </h3>
+                <ul className="mt-5 space-y-2.5">
+                  {pattern.points.map(p => (
+                    <li
+                      key={p}
+                      className="flex items-start gap-2.5 text-white/65"
+                      style={{ fontSize: '13.5px', lineHeight: 1.55 }}
+                    >
+                      <span
+                        className="mt-1.5 w-1.5 h-1.5 shrink-0 rounded-full"
+                        style={{ background: pattern.accent }}
+                      />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="mt-4 space-y-3">
-                {ANATOMY_PARTS.map(p => (
-                  <li
-                    key={p.label}
-                    className="flex items-start justify-between gap-4 rounded-md border border-white/8 bg-white/[0.04] px-3 py-3"
-                  >
-                    <div>
-                      <div
-                        className="text-white"
-                        style={{ fontSize: '14px', fontWeight: 600 }}
-                      >
-                        {p.label}
-                      </div>
-                      <div
-                        className="mt-0.5 text-white/55"
-                        style={{ fontSize: '12.5px' }}
-                      >
-                        {p.note}
-                      </div>
-                    </div>
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-
-          {/* Trust band + handoff side cards */}
-          <div className="grid gap-5">
-            <article className="rounded-2xl border border-[#E6EEF3] bg-white p-7 shadow-[0_8px_32px_rgba(8,17,31,0.07)]">
-              <p
-                className="uppercase tracking-[0.16em]"
-                style={{ color: '#14B8A6', fontSize: '11px', fontWeight: 700 }}
-              >
-                Trust band
-              </p>
-              <h3
-                className="mt-2 text-[#08111F]"
-                style={{ fontSize: '15px', fontWeight: 600 }}
-              >
-                Signals placed where hesitation forms
-              </h3>
-              <ul className="mt-4 space-y-2 rounded-lg border border-[#0E2740]/40 bg-gradient-to-br from-[#061323] to-[#103E5A] p-4">
-                {TRUST_LABELS.map(l => (
-                  <li
-                    key={l}
-                    className="flex items-center gap-2 rounded-md border border-white/8 bg-white/[0.04] px-3 py-2 text-white/65"
-                    style={{ fontSize: '12.5px' }}
-                  >
-                    <span className="size-1.5 rounded-full bg-[#14B8A6] shadow-[0_0_6px_#14B8A6]" />
-                    {l}
-                  </li>
-                ))}
-              </ul>
-            </article>
-
-            <article className="rounded-2xl border border-[#E6EEF3] bg-white p-7 shadow-[0_8px_32px_rgba(8,17,31,0.07)]">
-              <p
-                className="uppercase tracking-[0.16em]"
-                style={{ color: '#21B985', fontSize: '11px', fontWeight: 700 }}
-              >
-                Enquiry handoff
-              </p>
-              <h3
-                className="mt-2 text-[#08111F]"
-                style={{ fontSize: '15px', fontWeight: 600 }}
-              >
-                Context travels with the enquiry
-              </h3>
-              <ul className="mt-4 space-y-2 rounded-lg border border-[#0E2740]/40 bg-gradient-to-br from-[#061323] to-[#103E5A] p-4">
-                {HANDOFF_ROWS.map(r => (
-                  <li
-                    key={r.field}
-                    className="flex items-center justify-between rounded-md border border-white/8 bg-white/[0.04] px-3 py-2"
-                  >
-                    <span
-                      className="uppercase tracking-[0.14em] text-white/55"
-                      style={{ fontSize: '10px', fontWeight: 700 }}
-                    >
-                      {r.field}
-                    </span>
-                    <span
-                      className="text-white"
-                      style={{ fontSize: '12.5px', fontWeight: 600 }}
-                    >
-                      {r.value}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+            ))}
           </div>
         </div>
 
