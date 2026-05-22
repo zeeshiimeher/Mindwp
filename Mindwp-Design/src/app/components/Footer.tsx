@@ -1,6 +1,6 @@
 export function Footer() {
   const cols = [
-    { title: "Services", items: ["Smart Website Systems", "Local SEO Authority", "AI Lead Handling", "CRM & Automation", "Reputation & Reviews", "Revenue Growth"] },
+    { title: "Services", items: ["Smart Website Systems", "Local SEO Authority", "Lead Response & Handling", "Follow-Up & CRM", "Reputation & Review Systems"] },
     { title: "Company", items: ["About", "Case Studies", "Start a Conversation"] },
     { title: "Resources", items: ["Resource Hub", "Blog", "Discuss Your Project"] },
   ];

@@ -12,11 +12,11 @@ const groups: DropdownGroup[] = [
   {
     label: "Services",
     items: [
-      { id: "sws", label: "Smart Websites", note: "Enquiry capture & conversion structure" },
-      { id: "lsa", label: "Local SEO", note: "Local visibility & authority signals" },
-      { id: "ai-lead-handling", label: "AI Lead Handling", note: "First response & missed-call recovery" },
-      { id: "ai-chat", label: "AI Chat", note: "On-site visitor question handling" },
-      { id: "reviews", label: "Reputation & Reviews", note: "Review generation & monitoring" },
+      { id: "sws", label: "Smart Website Systems", note: "Enquiry capture & conversion structure" },
+      { id: "lsa", label: "Local SEO Authority", note: "Local visibility & authority signals" },
+      { id: "ai-lead-handling", label: "Lead Response & Handling", note: "First response & missed-call recovery" },
+      { id: "ai-chat", label: "Follow-Up & CRM", note: "Owned next step, scheduled follow-up" },
+      { id: "reviews", label: "Reputation & Review Systems", note: "Review generation & monitoring" },
     ],
   },
   {
