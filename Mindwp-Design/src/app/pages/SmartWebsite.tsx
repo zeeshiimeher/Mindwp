@@ -667,45 +667,6 @@ function SWSCta() {
   );
 }
 
-// 15. RELATED SERVICES
-function Related() {
-  const items = [
-    { tag: "Connected system", title: "AI Lead Handling", note: "First response and missed-call recovery after enquiry capture." },
-    { tag: "Connected system", title: "CRM & Automation", note: "Ownership, follow-up, and visibility after the enquiry lands." },
-    { tag: "Connected system", title: "Local SEO Authority", note: "Clear service pages give local visibility work something to build from." },
-    { tag: "Resource", title: "Service Pages vs One Generic Services Page", note: "Why service-specific structure earns trust and search." },
-    { tag: "Resource", title: "Conversion Architecture for Service Websites", note: "How structure, capture, and routing work together." },
-  ];
-  return (
-    <section className="bg-[#F6FAFC] py-32">
-      <div className="max-w-[1240px] mx-auto px-8">
-        <div className="max-w-[760px] mb-14">
-          <h2 className="text-[#08111F]" style={{ fontSize: '46px', fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.03em' }}>Related</h2>
-        </div>
-        <div className="relative">
-          <div className="hidden md:block absolute left-8 right-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#35C7D8]/30 to-transparent" />
-          <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
-            {items.map((it, i) => (
-              <a key={it.title} href="#" className="rounded-2xl bg-white border border-[#E6EEF3] p-7 hover:shadow-[0_12px_40px_rgba(8,17,31,0.08)] transition-shadow group">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[#0E2740] uppercase tracking-[0.18em] px-2 py-1 rounded bg-[#EEF6FA]" style={{ fontSize: '10px', fontWeight: 700 }}>{it.tag}</span>
-                  <span className="w-2 h-2 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
-                </div>
-                <div className="text-[#08111F] mb-2" style={{ fontSize: '17px', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.25 }}>{it.title}</div>
-                <div className="text-[#6F8190] uppercase tracking-[0.14em] mb-1.5 mt-3" style={{ fontSize: '9.5px', fontWeight: 700 }}>Why this connects</div>
-                <p className="text-[#4C5E6F] mb-5" style={{ fontSize: '13px', lineHeight: 1.55 }}>{it.note}</p>
-                <span className="inline-flex items-center gap-1.5 text-[#0E2740] group-hover:text-[#08111F]" style={{ fontSize: '13px', fontWeight: 600 }}>
-                  Continue <ArrowRight size={14} />
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function SmartWebsite() {
   return (
     <main>
@@ -722,7 +683,6 @@ export function SmartWebsite() {
       <FitFilter />
       <SWSFaq />
       <SWSCta />
-      <Related />
     </main>
   );
 }
