@@ -1,37 +1,35 @@
 /**
  * Home.tsx — MindWP design-sandbox homepage (consolidated)
  *
- * Single-file homepage render. All 12 sections inline. Replaces the
- * previously-separate components/Hero, components/LeakDiagnosis, etc.
+ * Single-file homepage render used to prove the sandbox design before any
+ * production port. All major homepage sections live inline so section geometry,
+ * copy, and visual rhythm can be reviewed together.
  *
- * Section arc:
- *  01  Hero — "Work Comes In. Too Much Slips Away." + signal surface
- *  02  Operating leak map — central dominant leak + 6 satellite incidents on a custom map surface with SVG connectors and FOUND/CAPTURED/PROVEN zone labels
- *  03  Website as control point — original v1 3-layer stacked surface (Surface → Underneath → Foundation)
- *  04  Split operating table — scattered fragments (offset, dashed) vs aligned path (vertical rail); mist section bg
- *  05  Connected handling path — featured handoff card (channels → response surface → owner) + 4 supporting handling states (2x2); mist
- *  06  Five Protections, One Connected Path — FULL DARK constellation, SWS hub + 4 outer
- *  07  Positive operating state board — featured anchor state + 4 small positive-state tiles (calm green/teal); white
- *  08  Scenario ledger — single white panel with 5 horizontal scenario rows (Roofing taller); each row has industry badge + trigger + leak + protection + abstract surface preview
- *  09  Selected surfaces — light panel with page-mock canvas + 4 numbered annotation labels + 2 compact modules (Trust band, Enquiry handoff); no dark inner panel
- *  10  Fit / Not for — diagnostic two-column panel; white
- *  11  Review desk — split panel: "What we review" 5-row checklist (left) + "How the work moves" 3 status cards (right); mist section
- *  12  FAQ — accordion
- *  13  Final diagnostic CTA — dark CTA panel
+ * Current section arc:
+ *  01  Hero — "Work Comes In. Too Much Slips Away." + working-day signal surface
+ *  02  Where work slips — found, contacted, and finished work losing momentum between steps
+ *  03  Website as control point — visible front door with one quiet handling line underneath
+ *  04  Same business, two websites — shallow site vs connected website system
+ *  05  Local SEO Authority — local trust, service-area coverage, reviews, and listing consistency
+ *  06  After contact handling — form, call, quote follow-up, and consultation request paths
+ *  07  Five Protections, One Connected Path — dark system-anchor section
+ *  08  What compounds — ongoing improvement from real working weeks
+ *  09  Scenario showcase — five illustrative working situations with varied output surfaces
+ *  10  Selected website craft — service/treatment page surface with trust, CTA, and handoff context
+ *  11  Fit / Not for — qualification panel for serious service businesses and specialist clinics
+ *  12  Review, not a pitch — practical review path before the final CTA
+ *  13  FAQ — practical buying questions
+ *  14  Final diagnostic CTA — dark close
  *
- * Section 6 is the only full dark body section — the constellation anchor. Section 7
- * (was previously dark) is now light to avoid two consecutive dark sections.
+ * Voice + content per /Users/zeeshansadiq/Projects/Mindwp/docs/WRITING.md.
+ * Active 5-system model only. Working-day objects: calls, forms, quotes,
+ * bookings, consultation requests, missed replies, follow-up, reviews. No fake
+ * metrics, fabricated testimonials, ranking guarantees, or medical/treatment
+ * outcome claims.
  *
- * Voice + content per /Users/zeeshansadiq/Projects/Mindwp/docs/WRITING.md and
- * /Users/zeeshansadiq/Projects/Mindwp/docs/FOUNDATION.md. Active 5-system model
- * (no banned terms — see README-active-model.md). Working-day objects: calls,
- * forms, quotes, bookings, consultation requests, missed replies, follow-up,
- * reviews. No fake metrics, no fabricated testimonials, no medical/treatment
- * claims for clinic context.
- *
- * Design language inherited from the prior sandbox components — inline style
- * with hex + var(--mw-*) tokens from theme.css. Each section owns its own
- * geometry; no shared shell.
+ * Design note: this sandbox intentionally keeps page-owned JSX and section-owned
+ * geometry. Do not extract shared section components or port into production
+ * until the homepage is visually approved.
  */
 import {
   Activity,
@@ -68,7 +66,7 @@ import { type ReactNode, useState } from 'react';
 // "Work Comes In. Too Much Slips Away."
 // ============================================================================
 
-type HeroSignalStatus = 'leaking' | 'unowned';
+type HeroSignalStatus = 'missed' | 'waiting';
 
 const HERO_SIGNALS: ReadonlyArray<{
   icon: LucideIcon;
@@ -76,11 +74,11 @@ const HERO_SIGNALS: ReadonlyArray<{
   note: string;
   status: HeroSignalStatus;
 }> = [
-    { icon: Search, label: 'Local search', note: 'Postcode N6 — page 3', status: 'unowned' },
-    { icon: FileText, label: 'Service page visit', note: 'Bathrooms — 02:14 dwell', status: 'unowned' },
-    { icon: Inbox, label: 'Form enquiry', note: 'Sat 09:14 — unread', status: 'leaking' },
-    { icon: PhoneOff, label: 'Missed call', note: '11:42 — no callback', status: 'leaking' },
-    { icon: Clock, label: 'Consultation request', note: 'Today — nobody owns it', status: 'unowned' },
+    { icon: Search, label: 'Local search', note: 'Found on page two — competitor first', status: 'waiting' },
+    { icon: FileText, label: 'Service page visit', note: 'Read the page, did not enquire', status: 'waiting' },
+    { icon: Inbox, label: 'Form enquiry', note: 'Saturday morning — still unread', status: 'missed' },
+    { icon: PhoneOff, label: 'Missed call', note: 'Mid-morning — no callback yet', status: 'missed' },
+    { icon: Clock, label: 'Consultation request', note: 'In since this morning, no reply', status: 'waiting' },
   ];
 
 function SectionHero() {
@@ -124,10 +122,10 @@ function SectionHero() {
             className="mt-8 text-white/70 max-w-[560px]"
             style={{ fontSize: '18px', lineHeight: 1.6 }}
           >
-            People find you online. They call, fill in forms, request quotes or
-            consultations, check reviews, and compare what you do. Some of it turns into
-            booked work or kept appointments. Too much disappears between the first click
-            and the next step.
+            People find you online. They call, fill in forms, ask for quotes or
+            consultations, check reviews, and compare what you do. Some of it becomes
+            booked work or kept appointments. Too much disappears between the first
+            click and the next step.
           </p>
 
           <div className="mt-10 flex items-center gap-7 flex-wrap">
@@ -136,7 +134,7 @@ function SectionHero() {
               className="inline-flex items-center gap-2 bg-white text-[#061323] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors"
               style={{ fontSize: '15px', fontWeight: 600 }}
             >
-              Request a System Review
+              Request a Website Review
               <ArrowRight size={16} />
             </a>
             <a
@@ -144,7 +142,7 @@ function SectionHero() {
               className="inline-flex items-center gap-2 text-white/85 hover:text-white border-b border-white/25 pb-1"
               style={{ fontSize: '14px', fontWeight: 500 }}
             >
-              See where work is slipping
+              See where work slips
               <ArrowRight size={14} />
             </a>
           </div>
@@ -183,8 +181,8 @@ function SectionHero() {
 }
 
 function HeroSignalSurface() {
-  const leakingCount = HERO_SIGNALS.filter(s => s.status === 'leaking').length;
-  const unownedCount = HERO_SIGNALS.filter(s => s.status === 'unowned').length;
+  const missedCount = HERO_SIGNALS.filter(s => s.status === 'missed').length;
+  const waitingCount = HERO_SIGNALS.filter(s => s.status === 'waiting').length;
 
   return (
     <div className="relative w-full">
@@ -195,7 +193,7 @@ function HeroSignalSurface() {
               className="text-white/45 uppercase tracking-[0.16em]"
               style={{ fontSize: '10px', fontWeight: 700 }}
             >
-              Signal Surface
+              Today&rsquo;s working day
             </div>
             <div
               className="text-white mt-1"
@@ -214,7 +212,7 @@ function HeroSignalSurface() {
                 textTransform: 'uppercase',
               }}
             >
-              Signals
+              Moments
             </div>
             <div
               className="text-white"
@@ -228,11 +226,11 @@ function HeroSignalSurface() {
         <div className="space-y-2">
           {HERO_SIGNALS.map((s, i) => {
             const Icon = s.icon;
-            const isLeaking = s.status === 'leaking';
+            const isMissed = s.status === 'missed';
             return (
               <div
                 key={s.label}
-                className={`grid grid-cols-12 items-center gap-3 px-4 py-4 rounded-lg border transition-colors ${isLeaking
+                className={`grid grid-cols-12 items-center gap-3 px-4 py-4 rounded-lg border transition-colors ${isMissed
                   ? 'border-[#E76F6F]/[0.22] bg-[#E76F6F]/[0.04]'
                   : 'border-white/8 bg-white/[0.02] hover:bg-white/[0.04]'
                   }`}
@@ -247,7 +245,7 @@ function HeroSignalSurface() {
                 </div>
                 <div className="col-span-1">
                   <div
-                    className={`w-9 h-9 rounded-md border flex items-center justify-center ${isLeaking
+                    className={`w-9 h-9 rounded-md border flex items-center justify-center ${isMissed
                       ? 'bg-[#E76F6F]/10 border-[#E76F6F]/[0.28] text-[#E76F6F]'
                       : 'bg-white/[0.06] border-white/14 text-white/80'
                       }`}
@@ -263,27 +261,27 @@ function HeroSignalSurface() {
                     {s.label}
                   </div>
                   <div
-                    className={`truncate mt-0.5 ${isLeaking ? 'text-[#E76F6F]/65' : 'text-white/60'}`}
+                    className={`truncate mt-0.5 ${isMissed ? 'text-[#E76F6F]/65' : 'text-white/60'}`}
                     style={{ fontSize: '13px' }}
                   >
                     {s.note}
                   </div>
                 </div>
                 <div className="col-span-3 flex justify-end">
-                  {isLeaking ? (
+                  {isMissed ? (
                     <span
                       className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#E76F6F]/12 text-[#E76F6F] border border-[#E76F6F]/[0.28]"
                       style={{ fontSize: '9.5px', fontWeight: 700, letterSpacing: '0.1em' }}
                     >
                       <span className="w-1 h-1 rounded-full bg-[#E76F6F] shadow-[0_0_5px_#E76F6F]" />{' '}
-                      LEAKING
+                      MISSED
                     </span>
                   ) : (
                     <span
                       className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#F4B740]/10 text-[#F4B740] border border-[#F4B740]/25"
                       style={{ fontSize: '9.5px', fontWeight: 700, letterSpacing: '0.1em' }}
                     >
-                      <span className="w-1 h-1 rounded-full bg-[#F4B740]" /> UNOWNED
+                      <span className="w-1 h-1 rounded-full bg-[#F4B740]" /> WAITING
                     </span>
                   )}
                 </div>
@@ -296,18 +294,18 @@ function HeroSignalSurface() {
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F]" />
             <span className="text-[#E76F6F]" style={{ fontSize: '12px', fontWeight: 600 }}>
-              {leakingCount} leaking
+              {missedCount} missed
             </span>
           </div>
           <div className="text-white/50 text-center" style={{ fontSize: '12px' }}>
-            {unownedCount} unowned
+            {waitingCount} waiting
           </div>
           <div
             className="flex items-center justify-end gap-1.5 text-[#35C7D8]"
             style={{ fontSize: '12px', fontWeight: 600 }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8] animate-pulse" />
-            Pulled toward system
+            Where MindWP picks up
           </div>
         </div>
       </div>
@@ -318,43 +316,151 @@ function HeroSignalSurface() {
 }
 
 // ============================================================================
-// SECTION 02 — Operating leak map
-// One dominant leak (First response is too slow) shown clearly + four
-// surrounding leaks across the journey (FOUND → CAPTURED → PROVEN). Clean
-// editorial grid, no floating positions, no SVG connectors, no zone overlay.
+// SECTION 02 — Where work slips
+// Recognition section: the business is already being found, contacted, and
+// trusted after work is done — but momentum slips between those moments.
+// Keep this as the problem-recognition section, not a build/explanation section.
 // ============================================================================
 
+// — Section 02 layer illustrations (illustrator-style flat SVGs) ——————————————
+
+function PageLayerIcon() {
+  return (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 60 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect x="8" y="8" width="44" height="44" rx="4" fill="#F4FBFC" stroke="#0E7D8C" strokeWidth="1.5" />
+      <rect x="12" y="12" width="36" height="14" rx="2" fill="#0E7D8C" opacity="0.12" />
+      <line x1="15" y1="16.5" x2="34" y2="16.5" stroke="#0E7D8C" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="15" y1="21" x2="28" y2="21" stroke="#0E7D8C" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
+      <line x1="12" y1="32" x2="44" y2="32" stroke="#0E7D8C" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
+      <line x1="12" y1="36" x2="40" y2="36" stroke="#0E7D8C" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
+      <rect x="12" y="42" width="18" height="6" rx="1.5" fill="#08111F" />
+      <line x1="16" y1="45" x2="26" y2="45" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function HandlingLayerIcon() {
+  return (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 60 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Central handling hub */}
+      <circle cx="30" cy="30" r="11" fill="#FEF6E4" stroke="#9A6F12" strokeWidth="1.5" />
+      <circle cx="30" cy="30" r="3.5" fill="#9A6F12" />
+      {/* Phone — top */}
+      <circle cx="30" cy="10" r="4.5" fill="#FFFFFF" stroke="#9A6F12" strokeWidth="1.5" />
+      <line x1="30" y1="15" x2="30" y2="18" stroke="#9A6F12" strokeWidth="1.2" strokeDasharray="1.2 1.5" />
+      {/* Form — bottom left */}
+      <rect x="6" y="42" width="10" height="8" rx="1.5" fill="#FFFFFF" stroke="#9A6F12" strokeWidth="1.5" />
+      <line x1="9" y1="46" x2="13" y2="46" stroke="#9A6F12" strokeWidth="1" strokeLinecap="round" opacity="0.55" />
+      <line x1="17" y1="42" x2="22" y2="38" stroke="#9A6F12" strokeWidth="1.2" strokeDasharray="1.2 1.5" />
+      {/* Message — bottom right */}
+      <path
+        d="M 44 42 L 52 42 C 53 42, 53.5 42.5, 53.5 43.5 L 53.5 47.5 C 53.5 48.5, 53 49, 52 49 L 48 49 L 45 52 L 45 49 L 44 49 C 43 49, 42.5 48.5, 42.5 47.5 L 42.5 43.5 C 42.5 42.5, 43 42, 44 42 Z"
+        fill="#FFFFFF"
+        stroke="#9A6F12"
+        strokeWidth="1.5"
+      />
+      <line x1="43" y1="42" x2="38" y2="38" stroke="#9A6F12" strokeWidth="1.2" strokeDasharray="1.2 1.5" />
+      {/* Owned check badge */}
+      <circle cx="46" cy="14" r="5.5" fill="#21B985" />
+      <path
+        d="M 43.5 14 L 45.2 15.7 L 48.5 12.4"
+        stroke="#FFFFFF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  );
+}
+
+function ProofLayerIcon() {
+  return (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 60 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect x="8" y="18" width="44" height="34" rx="3" fill="#F4FBFC" stroke="#0F7A57" strokeWidth="1.5" />
+      <line x1="12" y1="24" x2="28" y2="24" stroke="#0F7A57" strokeWidth="1.2" strokeLinecap="round" opacity="0.45" />
+      <line x1="12" y1="28" x2="34" y2="28" stroke="#0F7A57" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
+      {/* Review block on page */}
+      <rect x="12" y="34" width="36" height="14" rx="2" fill="#F4B74018" stroke="#F4B740" strokeWidth="1" />
+      {/* 5 stars */}
+      {[17, 23, 29, 35, 41].map(cx => (
+        <path
+          key={cx}
+          d={`M ${cx} 38 L ${cx + 0.8} 39.6 L ${cx + 2.5} 39.9 L ${cx + 1.2} 41 L ${cx + 1.5} 42.7 L ${cx} 41.8 L ${cx - 1.5} 42.7 L ${cx - 1.2} 41 L ${cx - 2.5} 39.9 L ${cx - 0.8} 39.6 Z`}
+          fill="#F4B740"
+        />
+      ))}
+      {/* Returning arrow loop — review comes back to the page */}
+      <path
+        d="M 48 12 Q 54 12, 54 18 Q 54 24, 46 24"
+        stroke="#0F7A57"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M 48 21 L 46 24 L 49 26"
+        stroke="#0F7A57"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  );
+}
+
 function SectionLeak() {
-  const surroundingLeaks = [
+  const layers = [
     {
-      zone: 'FOUND',
-      zoneColor: '#14B8A6',
-      icon: FileText,
-      title: 'Service or treatment page does not answer the question',
-      note: 'Visitor reads a paragraph, cannot tell if this is the right team. Closes the tab.',
+      n: '01',
+      tone: '#0E7D8C',
+      label: 'Found, then unsure',
+      title: 'The page gets the visit, but not enough confidence to act.',
+      body:
+        'Someone finds the business, reads the service or treatment page, checks reviews, and still leaves because the next step is not clear enough.',
+      icon: <PageLayerIcon />,
     },
     {
-      zone: 'CAPTURED',
-      zoneColor: '#F4B740',
-      icon: Inbox,
-      title: 'Form lands in an inbox nobody checks',
-      note: 'Saturday enquiry sits unread until Tuesday — competitor replied within the hour.',
+      n: '02',
+      tone: '#9A6F12',
+      label: 'Contacted, then waiting',
+      title: 'The form, call, quote, or consultation request arrives — then slows down.',
+      body:
+        'A weekend form waits. A missed call has no callback. A quote goes out Friday and Monday depends on memory.',
+      icon: <HandlingLayerIcon />,
     },
     {
-      zone: 'CAPTURED',
-      zoneColor: '#F4B740',
-      icon: History,
-      title: 'Quote sent. Nobody owns the follow-up.',
-      note: 'Friday quote goes quiet over the weekend. By Wednesday the lead has booked elsewhere.',
+      n: '03',
+      tone: '#0F7A57',
+      label: 'Finished, then forgotten',
+      title: 'The work goes well, but the trust never makes it back to the website.',
+      body:
+        'The job ends well, the appointment is kept, or the patient leaves reassured — and the moment to ask for a review or share the work quietly passes.',
+      icon: <ProofLayerIcon />,
     },
-    {
-      zone: 'PROVEN',
-      zoneColor: '#9B7DE0',
-      icon: Star,
-      title: 'Review moment passes after the job',
-      note: 'Customer happy, patient relieved — and nobody asked while the experience was fresh.',
-    },
-  ] as const;
+  ];
 
   return (
     <section id="leak" className="section bg-page-mist">
@@ -363,14 +469,16 @@ function SectionLeak() {
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 lg:col-span-7">
             <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 600 }}
+              className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-5"
+              style={{ fontSize: '11.5px', fontWeight: 700 }}
             >
-              Where work disappears
+              Where work slips
             </div>
             <h2 className="text-[#08111F]">
-              The business is working.{' '}
-              <span className="text-[#4C5E6F]">The system around it is leaking.</span>
+              The work is already there.{' '}
+              <span className="text-[#4C5E6F]">
+                It slips between the moments.
+              </span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
@@ -378,145 +486,83 @@ function SectionLeak() {
               className="text-[#4C5E6F]"
               style={{ fontSize: '16px', lineHeight: 1.65 }}
             >
-              None of these gaps looks dramatic alone. Compounded across a working week,
-              they decide how much of what comes in actually becomes paid work or a kept
-              appointment.
+              More traffic is not the whole answer. Most established businesses and
+              practices already have searches, calls, forms, quotes, appointments,
+              and good work happening. The weak point is what happens between them.
             </p>
           </div>
         </div>
 
-        {/* Dominant leak — full-width hero block */}
-        <div
-          className="relative rounded-2xl overflow-hidden"
-          style={{
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #FDF3F3 100%)',
-            border: '1.5px solid #E76F6F55',
-            boxShadow: '0 24px 60px rgba(231,111,111,0.14)',
-          }}
-        >
-          <div
-            className="absolute -top-16 -right-16 w-80 h-80 rounded-full pointer-events-none"
-            style={{
-              background: 'rgba(231,111,111,0.18)',
-              filter: 'blur(60px)',
-            }}
-            aria-hidden="true"
-          />
-          <div className="relative grid grid-cols-12 gap-6 lg:gap-10 items-center p-8 lg:p-12">
-            <div className="col-span-12 lg:col-span-2 flex lg:justify-start">
-              <div
-                className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center"
-                style={{
-                  background: '#E76F6F14',
-                  border: '1px solid #E76F6F30',
-                  color: '#E76F6F',
-                }}
-              >
-                <Clock size={28} />
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-10">
-              <div className="flex items-center gap-2 mb-3">
-                <span
-                  className="w-1.5 h-1.5 rounded-full bg-[#E76F6F]"
-                  style={{ boxShadow: '0 0 8px #E76F6F' }}
-                />
-                <span
-                  className="text-[#E76F6F] uppercase"
-                  style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.16em' }}
-                >
-                  The critical leak
-                </span>
-              </div>
-              <h3
-                className="text-[#08111F]"
-                style={{
-                  fontSize: 'clamp(22px, 2.6vw, 30px)',
-                  fontWeight: 700,
-                  lineHeight: 1.2,
-                  letterSpacing: '-0.018em',
-                }}
-              >
-                First response is too slow.
-              </h3>
-              <p
-                className="mt-3 text-[#4C5E6F] max-w-3xl"
-                style={{ fontSize: '15px', lineHeight: 1.65 }}
-              >
-                Visitors compare three businesses or providers before anyone replies. By
-                the time the first reply goes out, the decision is already moving away.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Three connected layers */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
+          {layers.map((layer, i) => (
+            <div
+              key={i}
+              className="rounded-2xl bg-white overflow-hidden h-full flex flex-col"
+              style={{
+                border: '1px solid #E6EEF3',
+                boxShadow: '0 10px 28px rgba(8,17,31,0.06)',
+              }}
+            >
+              {/* Top tone accent bar */}
+              <div className="h-1" style={{ background: layer.tone }} aria-hidden="true" />
 
-        {/* Four surrounding leaks — clean grid, no connectors, no zone overlay */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-          {surroundingLeaks.map((leak, i) => {
-            const Icon = leak.icon;
-            return (
-              <div
-                key={i}
-                className="rounded-xl bg-white p-5 lg:p-6 flex flex-col"
-                style={{
-                  border: '1px solid #E6EEF3',
-                  boxShadow: '0 4px 14px rgba(8,17,31,0.04)',
-                }}
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <div
-                    className="w-8 h-8 rounded-md flex items-center justify-center"
-                    style={{
-                      background: `${leak.zoneColor}14`,
-                      border: `1px solid ${leak.zoneColor}30`,
-                      color: leak.zoneColor,
-                    }}
-                  >
-                    <Icon size={14} />
-                  </div>
+              <div className="p-7 lg:p-8 flex-1 flex flex-col">
+                {/* Step number + illustration */}
+                <div className="flex items-start justify-between mb-6">
                   <span
-                    style={{
-                      color: leak.zoneColor,
-                      fontSize: '9.5px',
-                      fontWeight: 700,
-                      letterSpacing: '0.16em',
-                    }}
+                    className="text-[#9CA3B0] tabular-nums"
+                    style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.04em' }}
                   >
-                    {leak.zone}
+                    {layer.n}
                   </span>
+                  <div className="shrink-0">{layer.icon}</div>
                 </div>
+
+                {/* Eyebrow label in layer tone */}
                 <div
-                  className="text-[#08111F]"
+                  className="uppercase tracking-[0.14em] mb-2"
+                  style={{ color: layer.tone, fontSize: '10.5px', fontWeight: 700 }}
+                >
+                  {layer.label}
+                </div>
+
+                {/* Title */}
+                <div
+                  className="text-[#08111F] mb-3"
                   style={{
-                    fontSize: '14.5px',
+                    fontSize: '18px',
                     fontWeight: 700,
-                    lineHeight: 1.35,
-                    letterSpacing: '-0.005em',
+                    lineHeight: 1.3,
+                    letterSpacing: '-0.012em',
                   }}
                 >
-                  {leak.title}
+                  {layer.title}
                 </div>
-                <div
-                  className="mt-2 text-[#6F8190]"
-                  style={{ fontSize: '12.5px', lineHeight: 1.55 }}
+
+                {/* Body */}
+                <p
+                  className="text-[#6F8190]"
+                  style={{ fontSize: '13.5px', lineHeight: 1.65 }}
                 >
-                  {leak.note}
-                </div>
+                  {layer.body}
+                </p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
-        {/* Quiet closing line — no chip cluster, no badge */}
+        {/* Quiet closing line */}
         <p
           className="text-[#4C5E6F] max-w-2xl"
           style={{ fontSize: '14.5px', lineHeight: 1.65 }}
         >
-          The fix is not another page.{' '}
+          The work is not lost at one point.{' '}
           <span className="text-[#08111F] font-medium">
-            It is the system that holds the path between them.
+            It slips between handoffs.
           </span>
         </p>
+
       </div>
     </section>
   );
@@ -548,18 +594,18 @@ function SectionControlPoint() {
               className="mt-7 text-[#4C5E6F] max-w-[460px]"
               style={{ fontSize: '16px', lineHeight: 1.65 }}
             >
-              For a service business it is the public control point. For a specialist
-              clinic it is the practice front door. Either way, it sits where search,
-              trust, service or treatment clarity, enquiry or consultation capture,
-              response, follow-up, and proof meet.
+              For a service business this is the public control point. For a specialist
+              clinic it is the practice front door. It sits where people decide whether
+              to call, fill the form, or ask for a consultation — and whether to trust
+              you with the work.
             </p>
             <p
               className="mt-4 text-[#6F8190] max-w-[460px]"
               style={{ fontSize: '14.5px', lineHeight: 1.6 }}
             >
-              The site does not fix missed calls, scattered forms, or invisible follow-up
-              on its own. But it is the place those problems first become visible — and
-              the place the system around them gets connected.
+              It doesn&rsquo;t fix missed calls or scattered forms on its own. But it
+              is the first place those problems show up — and the place where what
+              visitors see can connect to what happens next.
             </p>
           </div>
 
@@ -825,7 +871,7 @@ function SectionControlPoint() {
                 >
                   <span style={{ fontWeight: 700 }}>Behind it —</span>{' '}
                   <span className="text-[#4C5E6F]">
-                    one connected path for capture, routing, follow-up, status, and proof.
+                    what happens after the enquiry, designed as part of the same site.
                   </span>
                 </span>
               </div>
@@ -869,8 +915,8 @@ function SectionContrast() {
               style={{ fontSize: '16px', lineHeight: 1.65 }}
             >
               On the left, what most local websites are — clean, generic, and quiet
-              once the visitor leaves. On the right, what a connected website system
-              looks like in the same trade.
+              once the visitor leaves. On the right, the same trade with a website
+              built to carry the enquiry forward.
             </p>
           </div>
         </div>
@@ -1428,7 +1474,7 @@ function ConnectedWebsiteSurface() {
           style={{ fontSize: '12.5px', fontWeight: 600 }}
         >
           The work continues after the click —{' '}
-          <span className="text-[#0E7D8C]">routed, replied, followed up, proved.</span>
+          <span className="text-[#0E7D8C]">a real person replies, and the follow-up is on the calendar.</span>
         </span>
       </div>
     </div>
@@ -1436,11 +1482,9 @@ function ConnectedWebsiteSurface() {
 }
 
 // ============================================================================
-// SECTION 04.5 — Local visibility bridge (Local SEO authority commercial section)
-// Discovery-path surface: shows that people often find the business locally,
-// then must trust it and find a clear next step. Bridges visibility into the
-// enquiry/handling chapter that follows. Distinct from the leak map and the
-// constellation — this is a horizontal "found-to-contact" journey.
+// SECTION 05 — Local SEO Authority
+// Local discovery, service-area coverage, review signal, and listing consistency.
+// No ranking promises, no fake Google dashboard, and no dominant website mockup.
 // ============================================================================
 
 function SectionLocalVisibility() {
@@ -1459,15 +1503,15 @@ function SectionLocalVisibility() {
             <h2 className="text-[#08111F]">
               Local visibility is not a ranking.{' '}
               <span className="text-[#4C5E6F]">
-                It is consistent trust, said the same way everywhere.
+                It is the same trustworthy details, everywhere.
               </span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              People decide locally before they trust. Visibility holds when the website,
-              the listing, the reviews, and the service-area story all tell the same
-              story.
+              Nearby customers and patients need to find you and verify you before they
+              enquire. Local visibility holds when the website, the listing, reviews, and
+              service-area pages all line up — and stay lined up.
             </p>
           </div>
         </div>
@@ -1490,7 +1534,7 @@ function SectionLocalVisibility() {
                 className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-3"
                 style={{ fontSize: '10px', fontWeight: 700 }}
               >
-                Entry signal
+                How they find you
               </div>
               <div
                 className="text-[#08111F] mb-2"
@@ -1504,9 +1548,9 @@ function SectionLocalVisibility() {
                 Where the visit starts.
               </div>
               <p className="text-[#6F8190]" style={{ fontSize: '13px', lineHeight: 1.65 }}>
-                Local search, &ldquo;near me&rdquo;, emergency intent, treatment research.
-                The local pack decides who gets clicked first — and whether the right
-                business is even seen.
+                Local search, &ldquo;near me&rdquo;, an emergency at 9pm, or a patient
+                researching a treatment. The local pack decides who gets clicked first —
+                and whether you are even on the page.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-7">
@@ -1586,7 +1630,7 @@ function SectionLocalVisibility() {
             </div>
           </div>
 
-          {/* BOTTOM — Authority ecosystem: three editorial zones, no website mockup, no fake metrics */}
+          {/* BOTTOM — Three local trust zones: three editorial zones, no website mockup, no fake metrics */}
           <div>
             <div
               className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-6"
@@ -1631,8 +1675,8 @@ function SectionLocalVisibility() {
                   className="text-[#6F8190] mb-3"
                   style={{ fontSize: '12.5px', lineHeight: 1.6 }}
                 >
-                  Service-area pages and schema match the postcodes the business actually
-                  works in — so the listing earns trust in each.
+                  Service-area pages match the postcodes you actually work in. The
+                  Google Business Profile, the website, and the directories all agree.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {['N1', 'N6', 'N8', 'N10', 'N16', 'N22'].map(p => (
@@ -1671,7 +1715,7 @@ function SectionLocalVisibility() {
                       className="text-[#9CA3B0] uppercase tracking-[0.12em]"
                       style={{ fontSize: '9px', fontWeight: 700 }}
                     >
-                      Review signal
+                      Reviews
                     </div>
                     <div
                       className="text-[#08111F]"
@@ -1689,8 +1733,8 @@ function SectionLocalVisibility() {
                   className="text-[#6F8190] mb-3"
                   style={{ fontSize: '12.5px', lineHeight: 1.6 }}
                 >
-                  Reviews captured at the moment of completed work and returned to the
-                  pages where the next visitor decides — not buried in a footer.
+                  Reviews asked for when the job or appointment ends well, and shown
+                  next to the work — not buried in a footer.
                 </p>
                 <div className="space-y-1.5">
                   {['Google Business Profile', 'Trustpilot', 'Checkatrade or sector-specific'].map(
@@ -1726,7 +1770,7 @@ function SectionLocalVisibility() {
                       className="text-[#9CA3B0] uppercase tracking-[0.12em]"
                       style={{ fontSize: '9px', fontWeight: 700 }}
                     >
-                      Listing parity
+                      Listings
                     </div>
                     <div
                       className="text-[#08111F]"
@@ -1744,8 +1788,8 @@ function SectionLocalVisibility() {
                   className="text-[#6F8190] mb-3"
                   style={{ fontSize: '12.5px', lineHeight: 1.6 }}
                 >
-                  Business name, hours, phone, and service line consistent across the
-                  website and every directory the business sits on.
+                  Name, hours, phone number, and services match across the website,
+                  the Google profile, and every directory. No conflicting details.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {['Name', 'Hours', 'Phone', 'Areas', 'Service lines'].map(p => (
@@ -1773,193 +1817,733 @@ function SectionLocalVisibility() {
           </div>
         </div>
 
-        {/* Quiet closing line */}
-        <p
-          className="text-[#08111F] max-w-3xl"
-          style={{ fontSize: '15px', fontWeight: 500, lineHeight: 1.6 }}
-        >
-          Local visibility holds when the page, the listing, the reviews, and the service
-          area all tell the same story.{' '}
-          <span className="text-[#4C5E6F]">
-            That is the work behind the listing — not a ranking promise.
-          </span>
-        </p>
       </div>
     </section>
   );
 }
 
 // ============================================================================
-// SECTION 06 — After the enquiry
-// One realistic enquiry shown end-to-end (source, owner, reply, follow-up,
-// review) instead of a channels-funnel diagram. A single quiet supporting
-// line replaces the 2x2 supporting handling states grid.
+// SECTION 06 — After contact handling
+// Four contact paths — form enquiry, missed call, quote follow-up, and
+// consultation request — shown as distinct practical handling surfaces.
 // ============================================================================
 
 type AfterContactKey = 'form' | 'call' | 'quote' | 'consultation';
 
-type AfterContactScenario = {
+type AfterContactPath = {
   key: AfterContactKey;
   label: string;
+  qualifier: string;
   icon: LucideIcon;
-  sourceTag: string;
-  sourceTitle: string;
-  steps: ReadonlyArray<{
-    icon: LucideIcon;
-    label: string;
-    detail: string;
-    time: string;
-  }>;
-  footnote: string;
+  zoneColor: string;
 };
 
-const AFTER_CONTACT_SCENARIOS: ReadonlyArray<AfterContactScenario> = [
+const AFTER_CONTACT_PATHS: ReadonlyArray<AfterContactPath> = [
   {
     key: 'form',
     label: 'Form enquiry',
+    qualifier: 'From the website',
     icon: Inbox,
-    sourceTag: 'Form enquiry · /services/boiler-repair',
-    sourceTitle: 'Boiler not heating · N6 · today',
-    steps: [
-      {
-        icon: MapPin,
-        label: 'Source recorded',
-        detail: 'Service page · /boiler-repair · North London',
-        time: '11:42',
-      },
-      {
-        icon: Workflow,
-        label: 'Routed to the right engineer',
-        detail: 'M. Patel — on duty, N6 area',
-        time: '11:43',
-      },
-      {
-        icon: PhoneCall,
-        label: 'First reply sent',
-        detail: 'Call + SMS confirmation · seven minutes after the form',
-        time: '11:49',
-      },
-      {
-        icon: Repeat,
-        label: 'Follow-up scheduled',
-        detail: 'If no reply by 14:00 — auto-chase, owned by M. Patel',
-        time: 'Auto',
-      },
-    ],
-    footnote: 'Form, page, intent, and owner travel with the enquiry — no shared inbox.',
+    zoneColor: '#0E7D8C',
   },
   {
     key: 'call',
-    label: 'Phone call / missed call',
+    label: 'Phone & missed calls',
+    qualifier: 'Inbound calls',
     icon: PhoneCall,
-    sourceTag: 'Inbound call · service-line tracked',
-    sourceTitle: 'Sat 09:14 — missed call from N8',
-    steps: [
-      {
-        icon: PhoneOff,
-        label: 'Missed call captured',
-        detail: 'Caller ID logged · service line tracked · area matched to N8',
-        time: '09:14',
-      },
-      {
-        icon: FileText,
-        label: 'Auto SMS sent',
-        detail: '“Sorry we missed you — we will call back inside 15 minutes.” Same line, every time.',
-        time: '09:14',
-      },
-      {
-        icon: Workflow,
-        label: 'Routed for callback',
-        detail: 'On-call engineer notified · context attached · no shared voicemail',
-        time: '09:15',
-      },
-      {
-        icon: CheckCircle2,
-        label: 'Callback completed',
-        detail: 'Engineer rang back · job booked for the same afternoon',
-        time: '09:23',
-      },
-    ],
-    footnote:
-      'Out-of-hours and weekend calls are not lost — they re-enter the same handling path.',
+    zoneColor: '#E76F6F',
   },
   {
     key: 'quote',
     label: 'Quote follow-up',
+    qualifier: 'After the quote',
     icon: History,
-    sourceTag: 'Quote sent · roofing repair',
-    sourceTitle: 'Friday quote · awaiting response',
-    steps: [
-      {
-        icon: FileText,
-        label: 'Quote issued and logged',
-        detail: 'Sent Friday afternoon · status set to Awaiting · owner attached',
-        time: 'Fri',
-      },
-      {
-        icon: Repeat,
-        label: 'Soft follow-up scheduled',
-        detail: 'Polite check-in queued for Monday morning if no reply',
-        time: 'Mon',
-      },
-      {
-        icon: PhoneCall,
-        label: 'Owner check-in',
-        detail: 'M. Patel rings before mid-week with a clear next step',
-        time: 'Wed',
-      },
-      {
-        icon: CheckCircle2,
-        label: 'Status visible',
-        detail: 'Quote stays Awaiting, Booked, or Closed — never silently lost',
-        time: 'Live',
-      },
-    ],
-    footnote: 'Quotes do not drift into the weekend. The chase is owned, paced, and visible.',
+    zoneColor: '#9A6F12',
   },
   {
     key: 'consultation',
     label: 'Consultation request',
+    qualifier: 'Clinical intake',
     icon: HeartPulse,
-    sourceTag: 'Consultation request · /implants',
-    sourceTitle: 'Implant consultation · pre-visit booked',
-    steps: [
-      {
-        icon: FileText,
-        label: 'Request captured',
-        detail: 'Procedure page · intent: implants · pre-visit form attached',
-        time: 'Tue',
-      },
-      {
-        icon: Workflow,
-        label: 'Routed to clinical lead',
-        detail: 'Reviewed by the right clinician before scheduling — not by reception',
-        time: 'Tue',
-      },
-      {
-        icon: PhoneCall,
-        label: 'Pre-visit call',
-        detail: 'Plain-language explanation of procedure, recovery, and cost',
-        time: 'Wed',
-      },
-      {
-        icon: Repeat,
-        label: 'Pre-visit reminder',
-        detail: 'Appointment reminder + prep notes sent the day before',
-        time: '24h',
-      },
-    ],
-    footnote:
-      'Clinical requests are not treated like generic enquiries — they get routed and prepared.',
+    zoneColor: '#6B4FB8',
   },
 ];
 
+// — Per-path SVG illustrations (illustrator-style, one per scenario) ————————
+
+function FormEnquiryIllustration() {
+  return (
+    <svg
+      width="80"
+      height="80"
+      viewBox="0 0 80 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect
+        x="14"
+        y="12"
+        width="42"
+        height="52"
+        rx="4"
+        fill="#F4FBFC"
+        stroke="#0E7D8C"
+        strokeWidth="1.5"
+      />
+      <line x1="22" y1="24" x2="44" y2="24" stroke="#0E7D8C" strokeWidth="1.5" strokeLinecap="round" opacity="0.65" />
+      <line x1="22" y1="34" x2="48" y2="34" stroke="#0E7D8C" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
+      <line x1="22" y1="42" x2="44" y2="42" stroke="#0E7D8C" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
+      <line x1="22" y1="50" x2="40" y2="50" stroke="#0E7D8C" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
+      <circle cx="58" cy="56" r="12" fill="#21B985" />
+      <path
+        d="M 52 56 L 56 60 L 64 52"
+        stroke="#FFFFFF"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  );
+}
+
+function CallRecoveryIllustration() {
+  return (
+    <svg
+      width="80"
+      height="80"
+      viewBox="0 0 80 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect
+        x="18"
+        y="12"
+        width="28"
+        height="46"
+        rx="5"
+        fill="#FDF3F3"
+        stroke="#E76F6F"
+        strokeWidth="1.5"
+      />
+      <line x1="24" y1="20" x2="40" y2="20" stroke="#E76F6F" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <rect x="22" y="28" width="20" height="22" rx="2" fill="#E76F6F" opacity="0.08" />
+      <circle cx="44" cy="16" r="6" fill="#E76F6F" />
+      <line x1="41" y1="16" x2="47" y2="16" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="44" y1="13" x2="44" y2="19" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M 36 54 C 36 52, 38 50, 40 50 L 60 50 C 62 50, 64 52, 64 54 L 64 62 C 64 64, 62 66, 60 66 L 50 66 L 46 70 L 46 66 L 40 66 C 38 66, 36 64, 36 62 Z"
+        fill="#0E7D8C"
+      />
+      <line x1="41" y1="56" x2="59" y2="56" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+      <line x1="41" y1="60" x2="55" y2="60" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  );
+}
+
+function QuoteFollowupIllustration() {
+  return (
+    <svg
+      width="80"
+      height="80"
+      viewBox="0 0 80 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect
+        x="14"
+        y="14"
+        width="38"
+        height="50"
+        rx="3"
+        fill="#FEF6E4"
+        stroke="#9A6F12"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M 44 14 L 52 14 L 52 22 Z"
+        fill="#FFFFFF"
+        stroke="#9A6F12"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <line x1="20" y1="30" x2="42" y2="30" stroke="#9A6F12" strokeWidth="2" strokeLinecap="round" opacity="0.55" />
+      <line x1="20" y1="38" x2="44" y2="38" stroke="#9A6F12" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+      <line x1="20" y1="46" x2="38" y2="46" stroke="#9A6F12" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+      <line x1="20" y1="54" x2="40" y2="54" stroke="#9A6F12" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+      <circle cx="62" cy="22" r="4.5" fill="#21B985" />
+      <line x1="62" y1="27" x2="62" y2="40" stroke="#C8D8E4" strokeWidth="1.5" />
+      <circle cx="62" cy="44" r="5" fill="#F4B740" stroke="#FFFFFF" strokeWidth="1.5" />
+      <line x1="62" y1="49" x2="62" y2="62" stroke="#C8D8E4" strokeWidth="1.5" strokeDasharray="2 2" />
+      <circle cx="62" cy="66" r="4.5" fill="#FFFFFF" stroke="#C8D8E4" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function ConsultationIntakeIllustration() {
+  return (
+    <svg
+      width="80"
+      height="80"
+      viewBox="0 0 80 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect
+        x="16"
+        y="18"
+        width="38"
+        height="48"
+        rx="3"
+        fill="#FBF9FE"
+        stroke="#6B4FB8"
+        strokeWidth="1.5"
+      />
+      <rect
+        x="26"
+        y="14"
+        width="18"
+        height="8"
+        rx="2"
+        fill="#FFFFFF"
+        stroke="#6B4FB8"
+        strokeWidth="1.5"
+      />
+      <line x1="22" y1="30" x2="44" y2="30" stroke="#6B4FB8" strokeWidth="1.5" strokeLinecap="round" opacity="0.55" />
+      <line x1="22" y1="38" x2="40" y2="38" stroke="#6B4FB8" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+      <path
+        d="M 35 50 C 35 48, 33 47, 31 47 C 29 47, 27 49, 27 51 C 27 54, 35 60, 35 60 C 35 60, 43 54, 43 51 C 43 49, 41 47, 39 47 C 37 47, 35 48, 35 50 Z"
+        fill="#6B4FB8"
+        opacity="0.2"
+      />
+      <path
+        d="M 35 50 C 35 48, 33 47, 31 47 C 29 47, 27 49, 27 51 C 27 54, 35 60, 35 60 C 35 60, 43 54, 43 51 C 43 49, 41 47, 39 47 C 37 47, 35 48, 35 50 Z"
+        stroke="#6B4FB8"
+        strokeWidth="1.5"
+        fill="none"
+      />
+      <circle cx="60" cy="58" r="10" fill="#FFFFFF" stroke="#6B4FB8" strokeWidth="1.5" />
+      <line x1="60" y1="53" x2="60" y2="58" stroke="#6B4FB8" strokeWidth="2" strokeLinecap="round" />
+      <line x1="60" y1="58" x2="64" y2="60" stroke="#6B4FB8" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+// — Per-path surfaces (each has a distinct internal treatment) ——————————————
+
+function FormEnquirySurface() {
+  return (
+    <div>
+      {/* Header */}
+      <div
+        className="flex items-start justify-between gap-4 mb-6 pb-5 border-b"
+        style={{ borderColor: '#EEF3F6' }}
+      >
+        <div className="min-w-0">
+          <div
+            className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-1"
+            style={{ fontSize: '10px', fontWeight: 700 }}
+          >
+            Form enquiry
+          </div>
+          <h3
+            className="text-[#08111F]"
+            style={{
+              fontSize: 'clamp(20px, 2vw, 24px)',
+              fontWeight: 700,
+              letterSpacing: '-0.012em',
+              lineHeight: 1.2,
+            }}
+          >
+            Boiler not heating — N6, today
+          </h3>
+          <div
+            className="mt-1 text-[#6F8190]"
+            style={{ fontSize: '12.5px', fontWeight: 500 }}
+          >
+            Arrived 11:42 from /services/boiler-repair
+          </div>
+        </div>
+        <div className="shrink-0">
+          <FormEnquiryIllustration />
+        </div>
+      </div>
+
+      {/* Labeled field grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
+        {[
+          { label: 'Source page', value: '/services/boiler-repair' },
+          { label: 'What they need', value: 'Emergency · same-day' },
+          { label: 'Area', value: 'North London · N6' },
+          { label: 'Replying', value: 'M. Patel — on duty' },
+          { label: 'First reply', value: 'Sent 11:49 — seven minutes later' },
+          { label: 'Next step', value: 'Chase by 14:00 if no reply' },
+        ].map((field, i) => (
+          <div key={i}>
+            <div
+              className="text-[#9CA3B0] uppercase tracking-[0.12em] mb-1"
+              style={{ fontSize: '9px', fontWeight: 700 }}
+            >
+              {field.label}
+            </div>
+            <div
+              className="text-[#0E2740]"
+              style={{ fontSize: '13.5px', fontWeight: 500, lineHeight: 1.45 }}
+            >
+              {field.value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Footnote */}
+      <div className="mt-7 pt-5 border-t" style={{ borderColor: '#EEF3F6' }}>
+        <p className="text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
+          Where it came from, why they got in touch, and who&rsquo;s replying — all
+          attached to the enquiry, not sitting in a shared inbox.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function CallRecoverySurface() {
+  return (
+    <div>
+      {/* Header */}
+      <div
+        className="flex items-start justify-between gap-4 mb-6 pb-5 border-b"
+        style={{ borderColor: '#EEF3F6' }}
+      >
+        <div className="min-w-0">
+          <div
+            className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-1"
+            style={{ fontSize: '10px', fontWeight: 700 }}
+          >
+            Missed call recovery
+          </div>
+          <h3
+            className="text-[#08111F]"
+            style={{
+              fontSize: 'clamp(20px, 2vw, 24px)',
+              fontWeight: 700,
+              letterSpacing: '-0.012em',
+              lineHeight: 1.2,
+            }}
+          >
+            Saturday 09:14 — missed call from N8
+          </h3>
+          <div
+            className="mt-1 text-[#6F8190]"
+            style={{ fontSize: '12.5px', fontWeight: 500 }}
+          >
+            Out-of-hours · service line tracked
+          </div>
+        </div>
+        <div className="shrink-0">
+          <CallRecoveryIllustration />
+        </div>
+      </div>
+
+      {/* Three event blocks — each visually distinct, including an SMS bubble in the middle */}
+      <div className="space-y-3">
+        {/* Missed call */}
+        <div
+          className="rounded-lg p-4 flex items-start gap-3"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(231,111,111,0.06), transparent)',
+            border: '1px solid rgba(231,111,111,0.22)',
+          }}
+        >
+          <div
+            className="w-9 h-9 rounded-md flex items-center justify-center shrink-0"
+            style={{
+              background: '#E76F6F14',
+              border: '1px solid #E76F6F30',
+              color: '#E76F6F',
+            }}
+          >
+            <PhoneOff size={14} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
+              Inbound call — missed
+            </div>
+            <p
+              className="mt-0.5 text-[#6F8190]"
+              style={{ fontSize: '12px', lineHeight: 1.55 }}
+            >
+              Number logged · service line tracked · area matched to N8.
+            </p>
+          </div>
+          <span
+            className="text-[#9CA3B0] shrink-0 tabular-nums"
+            style={{ fontSize: '11px', fontWeight: 600 }}
+          >
+            09:14
+          </span>
+        </div>
+
+        {/* Auto SMS with bubble */}
+        <div
+          className="rounded-lg p-4"
+          style={{
+            background: 'linear-gradient(135deg, #F4FBFC 0%, #FFFFFF 100%)',
+            border: '1px solid #D0EFF4',
+          }}
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <div
+              className="w-9 h-9 rounded-md flex items-center justify-center shrink-0"
+              style={{
+                background: 'linear-gradient(135deg, #35C7D8, #14B8A6)',
+                color: '#FFFFFF',
+              }}
+            >
+              <FileText size={14} />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div
+                className="text-[#08111F]"
+                style={{ fontSize: '13.5px', fontWeight: 700 }}
+              >
+                Text sent back
+              </div>
+              <div
+                className="mt-0.5 text-[#6F8190]"
+                style={{ fontSize: '11.5px', fontWeight: 500 }}
+              >
+                Same line, every time
+              </div>
+            </div>
+            <span
+              className="text-[#9CA3B0] shrink-0 tabular-nums"
+              style={{ fontSize: '11px', fontWeight: 600 }}
+            >
+              09:14
+            </span>
+          </div>
+          {/* SMS bubble */}
+          <div
+            className="rounded-xl rounded-tl-sm px-3.5 py-2.5 ml-12"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #D0EFF4',
+              color: '#0E2740',
+              fontSize: '12.5px',
+              lineHeight: 1.5,
+            }}
+          >
+            <span style={{ fontStyle: 'italic' }}>
+              &ldquo;Sorry we missed you — calling you back inside 15 minutes.&rdquo;
+            </span>
+          </div>
+        </div>
+
+        {/* Callback completed */}
+        <div
+          className="rounded-lg p-4 flex items-start gap-3"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(33,185,133,0.06), transparent)',
+            border: '1px solid rgba(33,185,133,0.25)',
+          }}
+        >
+          <div
+            className="w-9 h-9 rounded-md flex items-center justify-center shrink-0"
+            style={{
+              background: '#21B98514',
+              border: '1px solid #21B98540',
+              color: '#0F7A57',
+            }}
+          >
+            <CheckCircle2 size={14} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
+              Callback completed — job booked
+            </div>
+            <p
+              className="mt-0.5 text-[#6F8190]"
+              style={{ fontSize: '12px', lineHeight: 1.55 }}
+            >
+              On-call engineer rang back · booked for the same afternoon.
+            </p>
+          </div>
+          <span
+            className="text-[#9CA3B0] shrink-0 tabular-nums"
+            style={{ fontSize: '11px', fontWeight: 600 }}
+          >
+            09:23
+          </span>
+        </div>
+      </div>
+
+      {/* Footnote */}
+      <div className="mt-6 pt-5 border-t" style={{ borderColor: '#EEF3F6' }}>
+        <p className="text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
+          Weekend and after-hours calls don&rsquo;t disappear into voicemail. They
+          come back into the same handling, with the right person calling back.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function QuoteFollowupSurface() {
+  const steps = [
+    { label: 'Sent', sub: 'Fri 15:20', state: 'done' as const },
+    { label: 'Soft chase', sub: 'Mon 10:00', state: 'done' as const },
+    { label: 'Owner check', sub: 'Wed', state: 'active' as const },
+    { label: 'Decision', sub: 'Pending', state: 'pending' as const },
+  ];
+  return (
+    <div>
+      {/* Header */}
+      <div
+        className="flex items-start justify-between gap-4 mb-6 pb-5 border-b"
+        style={{ borderColor: '#EEF3F6' }}
+      >
+        <div className="min-w-0">
+          <div
+            className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-1"
+            style={{ fontSize: '10px', fontWeight: 700 }}
+          >
+            Quote follow-up
+          </div>
+          <h3
+            className="text-[#08111F]"
+            style={{
+              fontSize: 'clamp(20px, 2vw, 24px)',
+              fontWeight: 700,
+              letterSpacing: '-0.012em',
+              lineHeight: 1.2,
+            }}
+          >
+            Roofing repair — Friday quote
+          </h3>
+          <div
+            className="mt-1 text-[#6F8190]"
+            style={{ fontSize: '12.5px', fontWeight: 500 }}
+          >
+            Sent Friday afternoon · owned by M. Patel
+          </div>
+        </div>
+        <div className="shrink-0">
+          <QuoteFollowupIllustration />
+        </div>
+      </div>
+
+      {/* Horizontal proposal track */}
+      <div className="relative mb-6 px-1">
+        <div
+          className="absolute left-2 right-2 top-[7px] h-px"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, #21B985 0%, #21B985 33%, #F4B740 33%, #F4B740 50%, #C8D8E4 50%, #C8D8E4 100%)',
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative grid grid-cols-4 gap-2">
+          {steps.map((step, i) => {
+            const isDone = step.state === 'done';
+            const isActive = step.state === 'active';
+            return (
+              <div key={i} className="flex flex-col">
+                <span
+                  className="w-[14px] h-[14px] rounded-full flex items-center justify-center"
+                  style={{
+                    background: '#FFFFFF',
+                    border: isDone
+                      ? '2px solid #21B985'
+                      : isActive
+                        ? '2px solid #F4B740'
+                        : '2px solid #C8D8E4',
+                    boxShadow: isActive
+                      ? '0 0 0 4px rgba(244,183,64,0.18)'
+                      : isDone
+                        ? '0 0 6px rgba(33,185,133,0.40)'
+                        : 'none',
+                  }}
+                  aria-hidden="true"
+                >
+                  {isDone && (
+                    <span
+                      className="w-2 h-2 rounded-full"
+                      style={{ background: '#21B985' }}
+                    />
+                  )}
+                  {isActive && (
+                    <span
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ background: '#F4B740' }}
+                    />
+                  )}
+                </span>
+                <div className="mt-2.5">
+                  <div
+                    className="text-[#0E2740]"
+                    style={{ fontSize: '12px', fontWeight: 700 }}
+                  >
+                    {step.label}
+                  </div>
+                  <div
+                    className="text-[#9CA3B0]"
+                    style={{ fontSize: '10.5px', fontWeight: 500 }}
+                  >
+                    {step.sub}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Owner note — quiet, not a testimonial */}
+      <div
+        className="rounded-lg p-4"
+        style={{ background: '#F9FCFD', border: '1px solid #EEF3F6' }}
+      >
+        <div
+          className="text-[#9CA3B0] uppercase tracking-[0.12em] mb-1.5"
+          style={{ fontSize: '9px', fontWeight: 700 }}
+        >
+          Owner note · Wed
+        </div>
+        <p
+          className="text-[#0E2740]"
+          style={{ fontSize: '13px', fontWeight: 500, lineHeight: 1.55 }}
+        >
+          Spoke briefly — they need a decision from the insurer. Re-scheduled the next
+          check-in for Friday morning. Quote stays open, not silently lost.
+        </p>
+      </div>
+
+      {/* Footnote */}
+      <div className="mt-6 pt-5 border-t" style={{ borderColor: '#EEF3F6' }}>
+        <p className="text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
+          Quotes don&rsquo;t drift into the weekend. Someone picks up the chase on a
+          known pace, and the status stays visible to the owner.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ConsultationIntakeSurface() {
+  return (
+    <div>
+      {/* Header */}
+      <div
+        className="flex items-start justify-between gap-4 mb-6 pb-5 border-b"
+        style={{ borderColor: '#EEF3F6' }}
+      >
+        <div className="min-w-0">
+          <div
+            className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-1"
+            style={{ fontSize: '10px', fontWeight: 700 }}
+          >
+            Consultation intake
+          </div>
+          <h3
+            className="text-[#08111F]"
+            style={{
+              fontSize: 'clamp(20px, 2vw, 24px)',
+              fontWeight: 700,
+              letterSpacing: '-0.012em',
+              lineHeight: 1.2,
+            }}
+          >
+            Implant consultation — pre-visit booked
+          </h3>
+          <div
+            className="mt-1 text-[#6F8190]"
+            style={{ fontSize: '12.5px', fontWeight: 500 }}
+          >
+            From /implants · routed before reception
+          </div>
+        </div>
+        <div className="shrink-0">
+          <ConsultationIntakeIllustration />
+        </div>
+      </div>
+
+      {/* Three intake blocks */}
+      <div className="space-y-3">
+        <div
+          className="rounded-lg p-4"
+          style={{ background: '#FBF9FE', border: '1px solid #DCD0F0' }}
+        >
+          <div
+            className="text-[#6B4FB8] uppercase tracking-[0.12em] mb-1.5"
+            style={{ fontSize: '9.5px', fontWeight: 700 }}
+          >
+            Request arrived · Tuesday
+          </div>
+          <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
+            From the implants page, with the pre-visit form filled in
+          </div>
+        </div>
+
+        <div
+          className="rounded-lg p-4"
+          style={{ background: '#FFFFFF', border: '1px solid #EEF3F6' }}
+        >
+          <div className="flex items-center justify-between gap-3 mb-1.5">
+            <div
+              className="text-[#9CA3B0] uppercase tracking-[0.12em]"
+              style={{ fontSize: '9.5px', fontWeight: 700 }}
+            >
+              Reviewed by clinical lead · same day
+            </div>
+            <span className="text-[#6B4FB8]" style={{ fontSize: '11px', fontWeight: 600 }}>
+              Dr. A. Patel
+            </span>
+          </div>
+          <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
+            The right clinician sees the request before reception schedules anything.
+          </div>
+        </div>
+
+        <div
+          className="rounded-lg p-4"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(33,185,133,0.06), transparent)',
+            border: '1px solid rgba(33,185,133,0.25)',
+          }}
+        >
+          <div
+            className="text-[#0F7A57] uppercase tracking-[0.12em] mb-1.5"
+            style={{ fontSize: '9.5px', fontWeight: 700 }}
+          >
+            Pre-visit reminder · 24h before
+          </div>
+          <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
+            Appointment reminder and prep notes go out the day before — automatically.
+          </div>
+        </div>
+      </div>
+
+      {/* Footnote */}
+      <div className="mt-6 pt-5 border-t" style={{ borderColor: '#EEF3F6' }}>
+        <p className="text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
+          Consultation requests don&rsquo;t sit in a shared inbox waiting to be
+          spotted. They reach the right clinician before scheduling.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function SectionHandling() {
   const [activeContact, setActiveContact] = useState<AfterContactKey>('form');
-  const scenario =
-    AFTER_CONTACT_SCENARIOS.find(s => s.key === activeContact) ??
-    AFTER_CONTACT_SCENARIOS[0];
-  const SourceIcon = scenario.icon;
 
   return (
     <section className="section bg-page-white">
@@ -1973,170 +2557,105 @@ function SectionHandling() {
               After contact
             </div>
             <h2 className="text-[#08111F]">
-              Every contact path lands somewhere.{' '}
+              Different ways in.{' '}
               <span className="text-[#4C5E6F]">
-                The handling around the website holds them all.
+                The same handling around the website.
               </span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              Most enquiries do not fail at the website. They fail in the hours and days
-              after — different shape per channel, but the same handling protects each.
+              Most enquiries don&rsquo;t fail on the website. They fail in the hours
+              and days after — when nobody is sure who picks them up, or when Monday
+              depends on memory.
             </p>
           </div>
         </div>
 
-        {/* Tab list — quiet pill row, no dashboard chrome */}
-        <div
-          className="flex flex-wrap gap-2 mb-6"
-          role="tablist"
-          aria-label="After-contact handling scenarios"
-        >
-          {AFTER_CONTACT_SCENARIOS.map(s => {
-            const Icon = s.icon;
-            const isActive = s.key === activeContact;
-            return (
-              <button
-                key={s.key}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => setActiveContact(s.key)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full transition-colors"
-                style={{
-                  background: isActive ? '#08111F' : '#FFFFFF',
-                  border: isActive ? '1px solid #08111F' : '1px solid #E6EEF3',
-                  color: isActive ? '#FFFFFF' : '#4C5E6F',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                }}
-              >
-                <Icon size={13} />
-                {s.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Active scenario — same calm card shape across tabs */}
+        {/* Handling desk — side rail (col-4) + active surface (col-8) */}
         <div
           className="rounded-2xl bg-white overflow-hidden mb-6"
           style={{
             border: '1px solid #D0EFF4',
-            boxShadow: '0 18px 48px rgba(20,184,166,0.10)',
+            boxShadow: '0 24px 64px rgba(20,184,166,0.10)',
           }}
         >
-          {/* Header */}
-          <div
-            className="px-6 lg:px-8 py-4 border-b flex items-center gap-3"
-            style={{ borderColor: '#EEF3F6', background: '#F9FCFD' }}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            {/* Side rail */}
             <div
-              className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-              style={{
-                background: '#0E7D8C14',
-                border: '1px solid #0E7D8C40',
-                color: '#0E7D8C',
-              }}
+              className="lg:col-span-4 p-5 lg:p-6 border-b lg:border-b-0 lg:border-r"
+              style={{ borderColor: '#EEF3F6', background: '#F9FCFD' }}
+              role="tablist"
+              aria-label="Contact paths"
             >
-              <SourceIcon size={16} />
-            </div>
-            <div className="min-w-0">
               <div
-                className="text-[#9CA3B0] uppercase tracking-[0.14em] truncate"
-                style={{ fontSize: '9.5px', fontWeight: 700 }}
+                className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-3 hidden lg:block"
+                style={{ fontSize: '10px', fontWeight: 700 }}
               >
-                {scenario.sourceTag}
+                Contact paths
               </div>
-              <div
-                className="text-[#08111F] truncate"
-                style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '-0.005em' }}
-              >
-                {scenario.sourceTitle}
-              </div>
-            </div>
-          </div>
-
-          {/* Body — handling steps as quiet editorial rows */}
-          <div className="p-6 lg:p-8">
-            <div className="space-y-4">
-              {scenario.steps.map((row, i) => {
-                const Icon = row.icon;
-                return (
-                  <div
-                    key={`${scenario.key}-${i}`}
-                    className="flex items-start gap-4 pb-4 last:pb-0 border-b last:border-b-0"
-                    style={{ borderColor: '#EEF3F6' }}
-                  >
-                    <div
-                      className="w-9 h-9 rounded-md flex items-center justify-center shrink-0"
+              <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-1 px-1 lg:mx-0 lg:px-0">
+                {AFTER_CONTACT_PATHS.map(p => {
+                  const Icon = p.icon;
+                  const isActive = p.key === activeContact;
+                  return (
+                    <button
+                      key={p.key}
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      onClick={() => setActiveContact(p.key)}
+                      className="relative rounded-lg text-left transition-colors shrink-0 lg:shrink"
                       style={{
-                        background:
-                          'linear-gradient(135deg, rgba(53,199,216,0.16), rgba(20,184,166,0.08))',
-                        border: '1px solid #35C7D830',
-                        color: '#0E7D8C',
+                        background: isActive ? '#FFFFFF' : 'transparent',
+                        border: isActive ? '1px solid #D0EFF4' : '1px solid transparent',
+                        boxShadow: isActive ? '0 6px 16px rgba(20,184,166,0.10)' : 'none',
+                        cursor: 'pointer',
+                        padding: '10px 14px 10px 16px',
                       }}
                     >
-                      <Icon size={14} />
-                    </div>
-                    <div className="min-w-0 flex-1">
+                      <span
+                        className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full"
+                        style={{
+                          background: isActive ? p.zoneColor : 'transparent',
+                        }}
+                        aria-hidden="true"
+                      />
+                      <div className="flex items-center gap-2 mb-1">
+                        <Icon size={13} color={isActive ? p.zoneColor : '#6F8190'} />
+                        <span
+                          className="uppercase tracking-[0.14em]"
+                          style={{
+                            color: isActive ? p.zoneColor : '#9CA3B0',
+                            fontSize: '9.5px',
+                            fontWeight: 700,
+                          }}
+                        >
+                          {p.qualifier}
+                        </span>
+                      </div>
                       <div
                         className="text-[#08111F]"
-                        style={{
-                          fontSize: '14px',
-                          fontWeight: 700,
-                          letterSpacing: '-0.005em',
-                          lineHeight: 1.3,
-                        }}
+                        style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.3 }}
                       >
-                        {row.label}
+                        {p.label}
                       </div>
-                      <div
-                        className="mt-0.5 text-[#4C5E6F]"
-                        style={{ fontSize: '12.5px', lineHeight: 1.55 }}
-                      >
-                        {row.detail}
-                      </div>
-                    </div>
-                    <span
-                      className="text-[#9CA3B0] shrink-0 tabular-nums"
-                      style={{ fontSize: '11px', fontWeight: 600 }}
-                    >
-                      {row.time}
-                    </span>
-                  </div>
-                );
-              })}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
 
-          {/* Footer — per-scenario footnote */}
-          <div
-            className="px-6 lg:px-8 py-4 border-t"
-            style={{ borderColor: '#EEF3F6', background: '#FCFEFE' }}
-          >
-            <p
-              className="text-[#6F8190]"
-              style={{ fontSize: '12.5px', lineHeight: 1.55 }}
-            >
-              {scenario.footnote}
-            </p>
+            {/* Active surface — fixed min-height so switching tabs does not shift the page */}
+            <div className="lg:col-span-8 p-6 lg:p-10 lg:min-h-[640px]">
+              {activeContact === 'form' && <FormEnquirySurface />}
+              {activeContact === 'call' && <CallRecoverySurface />}
+              {activeContact === 'quote' && <QuoteFollowupSurface />}
+              {activeContact === 'consultation' && <ConsultationIntakeSurface />}
+            </div>
           </div>
         </div>
 
-        {/* Quiet closing line */}
-        <p
-          className="text-[#4C5E6F] max-w-3xl"
-          style={{ fontSize: '14.5px', lineHeight: 1.65 }}
-        >
-          Form, call, quote, consultation —{' '}
-          <span className="text-[#08111F] font-medium">
-            different shape per channel, the same handling around the website.
-          </span>{' '}
-          Nothing depends on someone remembering.
-        </p>
       </div>
     </section>
   );
@@ -2162,8 +2681,8 @@ const ACCENT_HEX: Record<ProtectionAccent, string> = {
 const PROTECTION_HUB = {
   icon: Globe,
   name: 'Smart Website Systems',
-  label: 'Where decisions form',
-  note: 'Service, treatment, and procedure pages carry clarity, trust, and the next step.',
+  label: 'Where the decision happens',
+  note: 'Service, treatment, and procedure pages that explain the work clearly, build trust, and lead to a clear next step.',
   accent: 'cyan' as ProtectionAccent,
 };
 
@@ -2177,29 +2696,29 @@ const PROTECTION_OUTER: ReadonlyArray<{
     {
       icon: MapPin,
       name: 'Local SEO Authority',
-      label: 'Found and verified',
-      note: 'Nearby customers and patients find the business and verify it before they enquire.',
+      label: 'People find and verify you',
+      note: 'Nearby customers and patients can find you and trust what they see before they pick up the phone.',
       accent: 'teal',
     },
     {
       icon: PhoneCall,
       name: 'Lead Response & Handling',
-      label: 'First response and routing',
-      note: 'Calls, forms, and messages reach the right person fast — and do not get lost after hours.',
+      label: 'The enquiry lands somewhere',
+      note: 'Calls, forms, and messages reach the right person fast — and don’t disappear into voicemail after hours.',
       accent: 'amber',
     },
     {
       icon: Workflow,
       name: 'Follow-Up & CRM',
-      label: 'Owned next step',
-      note: 'Every enquiry has an owner, a status, and a next step that does not depend on memory.',
+      label: 'Someone owns what happens next',
+      note: 'Quotes, reminders, and consultation requests have a named person behind them and a clear next step.',
       accent: 'green',
     },
     {
       icon: Star,
       name: 'Reputation & Review',
-      label: 'Work becomes proof',
-      note: 'Completed work, appointments, and outcomes turn into visible trust at the right time.',
+      label: 'Good work becomes visible trust',
+      note: 'Reviews and finished work return to the page where the next visitor decides — not buried in a folder.',
       accent: 'purple',
     },
   ];
@@ -2285,8 +2804,9 @@ function FiveSystemsFlagship() {
           className="text-white/60"
           style={{ fontSize: '12.5px', lineHeight: 1.5 }}
         >
-          The other four protections sit{' '}
-          <span className="text-white">around this one</span> — connected, not separate.
+          The other four sit{' '}
+          <span className="text-white">around this one</span> — working together, not
+          sold separately.
         </div>
       </div>
     </div>
@@ -2392,18 +2912,17 @@ function SectionFiveSystems() {
               className="text-white/55 uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
-              Five protections, one path
+              Five connected systems
             </div>
             <h2 className="text-white">
-              One website system.{' '}
-              <span className="text-white/55">Four connected protections around it.</span>
+              Smart Website Systems at the centre.{' '}
+              <span className="text-white/55">Four more systems built around it.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-white/65" style={{ fontSize: '16.5px', lineHeight: 1.65 }}>
-              Not five separate services. One connected operating path with five named
-              protections — held together by the website system at the centre. None depends
-              on someone remembering.
+              Not five services to buy separately. Five connected systems that work
+              as one — held together by the website where the buyer already decides.
             </p>
           </div>
         </div>
@@ -2425,15 +2944,15 @@ function SectionFiveSystems() {
 
         <div className="mt-12 flex items-center justify-between flex-wrap gap-4">
           <div className="text-white/55" style={{ fontSize: '14px' }}>
-            Most businesses and practices already have parts of this. The work is connecting
-            them.
+            Most businesses and clinics already have parts of this. The work is
+            making them work as one.
           </div>
           <a
             href="#cta"
             className="inline-flex items-center gap-2 text-white border-b border-white/30 hover:border-white pb-1"
             style={{ fontSize: '13.5px', fontWeight: 600 }}
           >
-            Review my website system
+            Request a Website Review
             <ArrowRight size={14} />
           </a>
         </div>
@@ -2454,24 +2973,32 @@ function SectionFiveSystems() {
 function SectionShift() {
   const phases = [
     {
+      n: '01',
       when: 'In the first weeks',
+      title: 'The bleeding stops.',
       body:
-        'The bleeding stops. Calls do not vanish into voicemail, weekend forms do not sit unread, and quotes have an owner before the page closes. The website looks the same; what happens after it does not.',
+        'Calls don’t vanish into voicemail. Saturday forms don’t sit unread. Quotes have a name behind them before the page closes.',
     },
     {
+      n: '02',
       when: 'By the third month',
+      title: 'Follow-up has a rhythm.',
       body:
-        'Follow-up has a rhythm of its own. Quotes get a polite chase without anyone remembering. Consultation requests reach the right clinician before reception touches them. The owner stops carrying handoffs in their head.',
+        'Quotes get a polite chase without anyone remembering. Consultation requests reach the right clinician before reception sees them.',
     },
     {
+      n: '03',
       when: 'By the sixth month',
+      title: 'Good work shows up on the page.',
       body:
-        'Proof returns to the pages — real, recent, and placed where the next visitor hesitates. The listing tells the same story everywhere. Local visibility holds when a competitor flares up because the trust under the listing is real, not paid for.',
+        'Recent reviews and finished jobs land next to the services they describe. The listing, the website, and the directories tell the same story.',
     },
     {
+      n: '04',
       when: 'After the first year',
+      title: 'The website gets sharper, not replaced.',
       body:
-        'Good work compounds. Pages get sharper because real questions and real objections feed back into them. Repeat-care and returning clients show up in the same handling path as new ones. The system improves with use, not with relaunches.',
+        'Real questions, objections, and patterns feed back into the pages and the handling. You don’t need a redesign — you keep what you have, working better.',
     },
   ];
 
@@ -2489,43 +3016,55 @@ function SectionShift() {
             </div>
             <h2 className="text-[#08111F]">
               Not a launch event.{' '}
-              <span className="text-[#4C5E6F]">An operating layer that improves with use.</span>
+              <span className="text-[#4C5E6F]">
+                Something that gets sharper with use.
+              </span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              Connected handling is not a relaunch with bigger numbers afterwards. It is
-              the same operating layer, quietly improving the work week the website
-              already serves.
+              Working with us isn&rsquo;t a relaunch with bigger numbers afterwards.
+              The same calls, forms, and consultations come in — quietly less of it
+              disappears, week by week.
             </p>
           </div>
         </div>
 
-        {/* Two-column editorial spread — no dominant card, no four-card grid, no lifecycle rail */}
-        <div className="grid grid-cols-12 gap-10 lg:gap-16">
-          {/* LEFT — typographic anchor + owner-view note */}
+        {/* Two-column editorial spread */}
+        <div className="grid grid-cols-12 gap-10 lg:gap-12">
+          {/* LEFT — strengthened typographic anchor */}
           <div className="col-span-12 lg:col-span-5">
-            <div
-              className="text-[#08111F]"
-              style={{
-                fontSize: 'clamp(22px, 2.4vw, 28px)',
-                fontWeight: 700,
-                letterSpacing: '-0.018em',
-                lineHeight: 1.25,
-              }}
-            >
-              The owner stops carrying the handoffs in their head.
+            <div className="relative lg:pl-5">
+              <span
+                className="hidden lg:block absolute left-0 top-1 bottom-3 w-[3px] rounded-full"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #21B985 0%, rgba(33,185,133,0.10) 100%)',
+                }}
+                aria-hidden="true"
+              />
+              <div
+                className="text-[#08111F]"
+                style={{
+                  fontSize: 'clamp(26px, 2.8vw, 34px)',
+                  fontWeight: 700,
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.18,
+                }}
+              >
+                The owner stops carrying the handoffs in their head.
+              </div>
+              <p
+                className="mt-5 text-[#4C5E6F]"
+                style={{ fontSize: '15.5px', lineHeight: 1.7 }}
+              >
+                The shift is rarely loud. Mondays start calmer. Friday quotes stop
+                disappearing into the weekend. The website looks the same; what happens
+                after it does not.
+              </p>
             </div>
-            <p
-              className="mt-5 text-[#4C5E6F]"
-              style={{ fontSize: '15px', lineHeight: 1.7 }}
-            >
-              The shift is rarely loud. Mondays start calmer. Friday quotes stop
-              disappearing into the weekend. The website looks the same; what happens
-              after it does not. That is the change worth measuring.
-            </p>
 
-            {/* Quiet owner-view note — editorial framing, not a testimonial */}
+            {/* Quiet owner-view editorial note — descriptive, no testimonial */}
             <div
               className="mt-8 pt-6 border-t"
               style={{ borderColor: '#E6EEF3' }}
@@ -2541,65 +3080,77 @@ function SectionShift() {
                 style={{ fontSize: '13.5px', lineHeight: 1.65 }}
               >
                 The same calls and forms still come in. They just stop becoming a pile by
-                Tuesday. Mondays start measurably quieter — not because there is less
-                work, but because none of it is waiting to be remembered.
+                Tuesday — because none of it is waiting to be remembered.
               </p>
             </div>
           </div>
 
-          {/* RIGHT — editorial progression, no cards, no icons, no chrome */}
+          {/* RIGHT — four scannable editorial rows */}
           <div className="col-span-12 lg:col-span-7">
-            <ol className="relative space-y-8">
-              <span
-                className="absolute left-[3px] top-2 bottom-2 w-px hidden lg:block"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(to bottom, transparent, #21B985 12%, rgba(33,185,133,0.20) 88%, transparent)',
-                }}
-                aria-hidden="true"
-              />
+            <div className="space-y-3">
               {phases.map((p, i) => (
-                <li key={i} className="relative lg:pl-8">
-                  <span
-                    className="hidden lg:block absolute left-0 top-[7px] w-2 h-2 rounded-full"
-                    style={{
-                      background: '#21B985',
-                      boxShadow: '0 0 0 4px rgba(33,185,133,0.12)',
-                    }}
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="text-[#0F7A57] uppercase tracking-[0.14em] mb-2"
-                    style={{ fontSize: '10.5px', fontWeight: 700 }}
-                  >
-                    {p.when}
+                <div
+                  key={i}
+                  className="rounded-xl bg-white p-6 lg:p-7 flex items-start gap-5 lg:gap-7"
+                  style={{
+                    border: '1px solid #E6EEF3',
+                    boxShadow: '0 3px 10px rgba(8,17,31,0.03)',
+                  }}
+                >
+                  {/* Time-phase label column */}
+                  <div className="shrink-0 hidden sm:block" style={{ width: '128px' }}>
+                    <div
+                      className="text-[#0F7A57]"
+                      style={{
+                        fontSize: '22px',
+                        fontWeight: 700,
+                        letterSpacing: '-0.01em',
+                        lineHeight: 1,
+                      }}
+                    >
+                      {p.n}
+                    </div>
+                    <div
+                      className="mt-2 text-[#6F8190] uppercase tracking-[0.14em]"
+                      style={{ fontSize: '9.5px', fontWeight: 700 }}
+                    >
+                      {p.when}
+                    </div>
                   </div>
-                  <p
-                    className="text-[#0E2740]"
-                    style={{
-                      fontSize: '15.5px',
-                      lineHeight: 1.7,
-                      fontWeight: 500,
-                    }}
-                  >
-                    {p.body}
-                  </p>
-                </li>
+
+                  {/* Content column */}
+                  <div className="min-w-0 flex-1">
+                    {/* Mobile-only label inline */}
+                    <div
+                      className="sm:hidden mb-2 text-[#0F7A57] uppercase tracking-[0.14em]"
+                      style={{ fontSize: '10px', fontWeight: 700 }}
+                    >
+                      {p.n} · {p.when}
+                    </div>
+                    <div
+                      className="text-[#08111F]"
+                      style={{
+                        fontSize: '17px',
+                        fontWeight: 700,
+                        letterSpacing: '-0.012em',
+                        lineHeight: 1.25,
+                      }}
+                    >
+                      {p.title}
+                    </div>
+                    <p
+                      className="mt-2 text-[#6F8190]"
+                      style={{ fontSize: '13.5px', lineHeight: 1.65 }}
+                    >
+                      {p.body}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </ol>
+            </div>
           </div>
         </div>
 
-        {/* Quiet closing line */}
-        <p
-          className="mt-12 text-[#08111F] max-w-3xl"
-          style={{ fontSize: '15px', fontWeight: 500, lineHeight: 1.65 }}
-        >
-          The website does not get replaced every two years.{' '}
-          <span className="text-[#4C5E6F]">
-            It gets sharper because real working weeks feed back into it.
-          </span>
-        </p>
       </div>
     </section>
   );
@@ -3208,7 +3759,7 @@ function SectionScenarios() {
       audience: 'Service business',
       tone: '#0E7D8C',
       dot: '#35C7D8',
-      copy: 'A same-day call hits voicemail, form, and message channel at once. Three inboxes, no single owner — the job goes to whoever replies first. One capture surface with fast first reply ends the scramble.',
+      copy: 'A burst-pipe call hits voicemail at 8am while the engineer is on another job. Without a callback line, it goes to whoever in the trade answers first. With one — a text goes out in seconds and the work stays.',
     },
     {
       surface: <FoundationSurface />,
@@ -3216,7 +3767,7 @@ function SectionScenarios() {
       audience: 'Service business',
       tone: '#0E7D8C',
       dot: '#14B8A6',
-      copy: 'Inspection on Tuesday, the proposal follow-up quietly drifts. Quote drafted, never sent. Owned follow-up means status is visible on every active quote and the chase happens before the lead cools.',
+      copy: 'Inspection happens Tuesday. The written proposal drifts to Friday. Without follow-up, the lead cools by Monday — and the insurer never gets the document. With it, the chase is paced and the status stays open.',
     },
     {
       surface: <DentalSurface />,
@@ -3224,7 +3775,7 @@ function SectionScenarios() {
       audience: 'Specialist clinic',
       tone: '#6B4FB8',
       dot: '#9B7DE0',
-      copy: 'A patient compares three providers and the consultation request sits in a shared inbox. Procedure clarity above the fold, routed handling, and pre-visit follow-up keep the consultation from drifting elsewhere.',
+      copy: 'A patient compares three clinics on a Sunday. If the implant page doesn’t explain procedure, recovery, and cost plainly, the consultation request goes elsewhere. If it does — and a clinician follows up — it stays.',
     },
     {
       surface: <DermatologySurface />,
@@ -3232,7 +3783,7 @@ function SectionScenarios() {
       audience: 'Specialist clinic',
       tone: '#0F7A57',
       dot: '#21B985',
-      copy: 'Appointment kept. Patient happy. The review moment is missed and proof never returns to the website. A timed review request turns the visit into visible trust for the next visitor.',
+      copy: 'Appointment kept. Patient happy. Without a timed review request, the moment passes and the website never reflects the experience. With one, the next visitor sees real feedback from real visits.',
     },
   ];
 
@@ -3250,13 +3801,14 @@ function SectionScenarios() {
             </div>
             <h2 className="text-[#08111F]">
               Different trades.{' '}
-              <span className="text-[#4C5E6F]">Same connected pattern.</span>
+              <span className="text-[#4C5E6F]">Same kind of moment.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              How a connected website system shows up across service businesses and
-              specialist clinics — same operating shape, different page surfaces.
+              Illustrative working-day moments across service businesses and specialist
+              clinics. Same shape underneath — different pages, different patients,
+              different jobs.
             </p>
           </div>
         </div>
@@ -3309,8 +3861,9 @@ function SectionScenarios() {
                 style={{ fontSize: '14.5px', lineHeight: 1.65 }}
               >
                 Calls hit voicemail. The Friday quote goes quiet over the weekend. The
-                connected path protects missed-call recovery, owned quote follow-up, and
-                local visibility that survives the next storm.
+                same website looks busy on Monday, but half the work has gone elsewhere.
+                With missed-call recovery, owned quote follow-up, and a listing that
+                holds in a storm, fewer of those jobs disappear.
               </p>
             </div>
             <div
@@ -3378,14 +3931,6 @@ function SectionScenarios() {
           ))}
         </div>
 
-        {/* Quiet footer note */}
-        <p
-          className="text-[#6F8190] max-w-2xl"
-          style={{ fontSize: '13px', lineHeight: 1.6 }}
-        >
-          Illustrative scenarios across trades — same connected handling around the
-          website. Not named client results.
-        </p>
       </div>
     </section>
   );
@@ -3410,17 +3955,18 @@ function SectionSurfaces() {
               className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
               style={{ fontSize: '11.5px', fontWeight: 600 }}
             >
-              Selected surfaces
+              What a page looks like
             </div>
             <h2 className="text-[#08111F]">
               The kind of pages{' '}
-              <span className="text-[#4C5E6F]">we build into website systems.</span>
+              <span className="text-[#4C5E6F]">we actually build.</span>
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              A real service-page surface — designed to answer intent, carry trust, and
-              hand off cleanly to the handling system around it.
+              A real service page, written for a real local trade. Clear intent at the
+              top, trust where the visitor is deciding, a call to action that matches
+              what they came for, and a route back to the rest of the business.
             </p>
           </div>
         </div>
@@ -3730,15 +4276,12 @@ function SectionSurfaces() {
           </div>
         </div>
 
-        {/* One quiet supporting note — italic marginalia, no chips, no spec table */}
+        {/* One quiet supporting note — italic marginalia */}
         <p
-          className="text-[#6F8190] mx-auto max-w-3xl text-center"
-          style={{ fontSize: '14.5px', lineHeight: 1.75, fontStyle: 'italic' }}
+          className="text-[#6F8190] mx-auto max-w-2xl text-center"
+          style={{ fontSize: '14px', lineHeight: 1.7, fontStyle: 'italic' }}
         >
-          Every service or treatment page carries the same four things — an intent line,
-          plain-language explanation, proof placed where hesitation forms, and an
-          intent-matched call to action that hands off to the handling system. Illustrative,
-          not a client screenshot.
+          An illustrative page, showing the kind of structure we build.
         </p>
       </div>
     </section>
@@ -3752,25 +4295,26 @@ function SectionSurfaces() {
 // ============================================================================
 
 const FIT_FOR_LIST = [
-  'Established service business or specialist clinic where work already comes in',
-  'Real enquiries, jobs, appointments, or consultation requests already exist',
-  'Quote, booking, or follow-up handling has visible gaps',
-  'Owner wants practical structure, not a prettier website',
-  'Long-term stability and compounding trust matter more than a launch event',
+  'An established service business or specialist clinic with real activity already',
+  'Real enquiries, jobs, appointments, or consultation requests already come in',
+  'Quotes, bookings, or follow-up have visible gaps between them',
+  'The owner wants practical structure, not a prettier website',
+  'Long-term stability matters more than a launch event',
 ];
 
 const FIT_NOT_FOR_LIST = [
-  'Cheapest possible website package',
-  'Guaranteed rankings or “dominate Google” expectations',
-  'AI chatbot framed as the offer instead of practical handling',
-  'Looks-only redesign with no business context',
-  'Healthcare buyer expecting EMR, compliance, or treatment-outcome claims',
+  'Looking for the cheapest possible website',
+  'Wanting guaranteed rankings or quick traffic promises',
+  'Buying a chatbot or AI tool as the main offer',
+  'Asking for a looks-only redesign with no business context',
+  'Healthcare buyer needing EMR, clinical compliance, or treatment-outcome claims',
 ];
 
 function SectionFit() {
   return (
     <section className="section bg-page-mist">
       <div className="container section-stack">
+        {/* Header — heading + one concise paragraph (no right-side recognition panel) */}
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 lg:col-span-7">
             <div
@@ -3782,107 +4326,84 @@ function SectionFit() {
             <h2 className="text-[#08111F]">
               Built for established service businesses and specialist clinics.
             </h2>
-            <p
-              className="mt-6 text-[#4C5E6F]"
-              style={{ fontSize: '16.5px', lineHeight: 1.65 }}
-            >
-              The work suits operators where moving parts already exist and the cost of
-              leakage is real. It does not suit looks-only redesigns, ranking-guarantee
-              seekers, or AI-hype buyers.
-            </p>
-            <p
-              className="mt-4 text-[#6F8190]"
-              style={{ fontSize: '14.5px', lineHeight: 1.6 }}
-            >
-              We do not create demand from zero. We make sure the demand you already have
-              stops slipping before it becomes paid work or a kept appointment.
-            </p>
           </div>
-
-          {/* Right balance — a quiet "good fit usually means" panel that supports buyer fit */}
           <div className="col-span-12 lg:col-span-5 flex items-end">
-            <div
-              className="rounded-2xl bg-white p-6 w-full"
-              style={{
-                border: '1px solid #E6EEF3',
-                boxShadow: '0 6px 20px rgba(8,17,31,0.04)',
-              }}
+            <p
+              className="text-[#4C5E6F]"
+              style={{ fontSize: '16px', lineHeight: 1.65 }}
             >
-              <div
-                className="text-[#9CA3B0] uppercase tracking-[0.18em] mb-1"
-                style={{ fontSize: '10px', fontWeight: 700 }}
-              >
-                A good fit usually means
-              </div>
-              <div
-                className="text-[#08111F] mb-4"
-                style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '-0.005em' }}
-              >
-                You recognise four of these.
-              </div>
-              <ul className="space-y-3">
-                {[
-                  'Enquiries already come in — the website is not the bottleneck.',
-                  'Calls, forms, or quotes lose momentum after the first reply.',
-                  'Follow-up depends on memory, not a system.',
-                  'Reviews and proof are real but underused on the site.',
-                  'The owner wants practical structure, not a prettier site.',
-                ].map(line => (
-                  <li key={line} className="flex items-start gap-3">
-                    <span
-                      className="w-1 h-5 rounded-full bg-[#14B8A6] shrink-0 mt-0.5"
-                      aria-hidden="true"
-                    />
-                    <span
-                      className="text-[#4C5E6F]"
-                      style={{ fontSize: '13px', lineHeight: 1.55 }}
-                    >
-                      {line}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <div
-                className="mt-5 pt-4 border-t text-[#6F8190]"
-                style={{ borderColor: '#EEF3F6', fontSize: '11.5px', lineHeight: 1.55 }}
-              >
-                If three or more sound familiar, this is built for the operating state
-                you&rsquo;re already in.
-              </div>
-            </div>
+              We don&rsquo;t create demand from zero. We make sure the demand you
+              already have stops slipping before it becomes paid work or a kept
+              appointment. Honest both ways — who this is for, and who it isn&rsquo;t.
+            </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 lg:col-span-8 rounded-2xl bg-gradient-to-br from-[#C9F5EA] to-[#E8FAF5] border border-[#21B985]/35 p-9 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#21B985]/5 -translate-y-1/2 translate-x-1/4" />
-            <div className="relative">
-              <div className="flex items-center gap-2.5 mb-2">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#21B985] text-white shadow-[0_0_12px_rgba(33,185,133,0.4)]">
-                  <Check size={14} strokeWidth={3} />
-                </span>
-                <span
-                  className="text-[#08111F]"
-                  style={{ fontSize: '18px', fontWeight: 700 }}
+        {/* Two authoritative columns — Strong fit / Probably not right */}
+        <div className="grid grid-cols-12 gap-5 lg:gap-6">
+          {/* STRONG FIT — calmer teal palette, left accent rail, no bright mint */}
+          <div
+            className="col-span-12 lg:col-span-7 relative rounded-2xl overflow-hidden"
+            style={{
+              background: 'linear-gradient(180deg, #FFFFFF 0%, #F4FBF8 100%)',
+              border: '1px solid #C9EDDB',
+              boxShadow: '0 16px 40px rgba(33,185,133,0.10)',
+            }}
+          >
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1"
+              style={{ background: 'linear-gradient(180deg, #21B985, #0F7A57)' }}
+              aria-hidden="true"
+            />
+
+            <div className="p-8 lg:p-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                  style={{
+                    background: 'rgba(33,185,133,0.10)',
+                    border: '1px solid rgba(33,185,133,0.35)',
+                    color: '#0F7A57',
+                  }}
                 >
-                  Strong fit
-                </span>
+                  <Check size={16} strokeWidth={3} />
+                </div>
+                <div>
+                  <div
+                    className="text-[#0F7A57] uppercase tracking-[0.16em]"
+                    style={{ fontSize: '10.5px', fontWeight: 700 }}
+                  >
+                    Strong fit
+                  </div>
+                  <div
+                    className="text-[#08111F]"
+                    style={{
+                      fontSize: '20px',
+                      fontWeight: 700,
+                      letterSpacing: '-0.012em',
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    When this is the right work
+                  </div>
+                </div>
               </div>
-              <p
-                className="text-[#0E4A30] mb-6"
-                style={{ fontSize: '13.5px', lineHeight: 1.6 }}
-              >
-                Demand already exists but too much slips before it becomes paid work or a
-                kept appointment. These businesses and practices get the most from a
-                connected operating layer.
-              </p>
-              <ul className="space-y-3.5">
+
+              <ul className="divide-y" style={{ borderColor: '#E1F0E9' }}>
                 {FIT_FOR_LIST.map(f => (
-                  <li key={f} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] mt-2 shrink-0" />
+                  <li
+                    key={f}
+                    className="flex items-start gap-3 py-3.5 first:pt-0 last:pb-0"
+                    style={{ borderColor: '#E1F0E9' }}
+                  >
                     <span
-                      className="text-[#0E1F15]"
-                      style={{ fontSize: '15.5px', lineHeight: 1.55 }}
+                      className="w-1.5 h-1.5 rounded-full bg-[#21B985] shrink-0 mt-2"
+                      style={{ boxShadow: '0 0 6px rgba(33,185,133,0.50)' }}
+                      aria-hidden="true"
+                    />
+                    <span
+                      className="text-[#0E2E2A]"
+                      style={{ fontSize: '14.5px', lineHeight: 1.55, fontWeight: 500 }}
                     >
                       {f}
                     </span>
@@ -3892,43 +4413,86 @@ function SectionFit() {
             </div>
           </div>
 
+          {/* PROBABLY NOT RIGHT — respectful slate palette, same dimensional treatment */}
           <div
-            className="col-span-12 lg:col-span-4 rounded-2xl p-9 relative"
+            className="col-span-12 lg:col-span-5 relative rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(180deg, #F6F8FA 0%, #EEF2F5 100%)',
-              border: '1px solid #D8DDE3',
+              background: 'linear-gradient(180deg, #FFFFFF 0%, #F6F8FA 100%)',
+              border: '1px solid #DDE2E8',
+              boxShadow: '0 12px 32px rgba(8,17,31,0.05)',
             }}
           >
-            <div className="flex items-center gap-2.5 mb-2">
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white border border-[#D0DCE5] text-[#6F8190]">
-                <Minus size={14} strokeWidth={3} />
-              </span>
-              <span
-                className="text-[#08111F]"
-                style={{ fontSize: '17px', fontWeight: 600 }}
-              >
-                Probably not right
-              </span>
-            </div>
-            <p
-              className="text-[#6F8190] mb-6"
-              style={{ fontSize: '12.5px', lineHeight: 1.55 }}
-            >
-              Tell us early — it saves time on both sides.
-            </p>
-            <ul className="divide-y" style={{ borderColor: '#D8DDE3' }}>
-              {FIT_NOT_FOR_LIST.map(f => (
-                <li key={f} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0" style={{ borderColor: '#D8DDE3' }}>
-                  <span className="w-1 h-5 rounded-full bg-[#9CA3B0] mt-0.5 shrink-0" />
-                  <span
-                    className="text-[#4C5E6F]"
-                    style={{ fontSize: '14px', lineHeight: 1.55 }}
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1"
+              style={{ background: 'linear-gradient(180deg, #9CA3B0, #6F8190)' }}
+              aria-hidden="true"
+            />
+
+            <div className="p-8 lg:p-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                  style={{
+                    background: 'rgba(111,129,144,0.10)',
+                    border: '1px solid rgba(111,129,144,0.35)',
+                    color: '#6F8190',
+                  }}
+                >
+                  <Minus size={16} strokeWidth={3} />
+                </div>
+                <div>
+                  <div
+                    className="text-[#6F8190] uppercase tracking-[0.16em]"
+                    style={{ fontSize: '10.5px', fontWeight: 700 }}
                   >
-                    {f}
-                  </span>
-                </li>
-              ))}
-            </ul>
+                    Probably not right
+                  </div>
+                  <div
+                    className="text-[#08111F]"
+                    style={{
+                      fontSize: '20px',
+                      fontWeight: 700,
+                      letterSpacing: '-0.012em',
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    When to say so early
+                  </div>
+                </div>
+              </div>
+
+              <ul className="divide-y" style={{ borderColor: '#E6EAEF' }}>
+                {FIT_NOT_FOR_LIST.map(f => (
+                  <li
+                    key={f}
+                    className="flex items-start gap-3 py-3.5 first:pt-0 last:pb-0"
+                    style={{ borderColor: '#E6EAEF' }}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full bg-[#9CA3B0] shrink-0 mt-2"
+                      aria-hidden="true"
+                    />
+                    <span
+                      className="text-[#4C5E6F]"
+                      style={{ fontSize: '14px', lineHeight: 1.55 }}
+                    >
+                      {f}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div
+                className="mt-6 pt-5 border-t text-[#6F8190]"
+                style={{
+                  borderColor: '#E6EAEF',
+                  fontSize: '12px',
+                  lineHeight: 1.55,
+                }}
+              >
+                Tell us early — it saves time on both sides.
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -3948,29 +4512,29 @@ type ReviewLine = { label: string; note: string };
 
 const REVIEW_AREAS: ReadonlyArray<ReviewLine> = [
   {
-    label: 'The visible website',
+    label: 'The actual website',
     note:
-      'Service or treatment pages, intent matching, plain-language explanation, the path to a clear next step.',
+      'Service or treatment pages, how clearly they answer the real question, and whether the next step is obvious.',
   },
   {
-    label: 'Local trust',
+    label: 'Local visibility and trust',
     note:
-      'Local visibility, service-area signals, where proof sits relative to the moment hesitation forms.',
+      'Whether nearby customers and patients can find you, recognise you, and decide to trust you before they enquire.',
   },
   {
-    label: 'How enquiries actually land',
+    label: 'Where enquiries actually arrive',
     note:
-      'Where calls, forms, and consultation requests end up — and who owns them once they do.',
+      'Where calls, forms, and consultation requests end up — and whether anyone is sure who replies first.',
   },
   {
     label: 'First response and follow-up',
     note:
-      'How fast the first reply goes out, and whether quotes, reminders, and consultations get chased without anyone remembering.',
+      'How fast the first reply goes out, and whether quotes, reminders, and consultations get chased on a real cadence.',
   },
   {
-    label: 'Proof that returns to the page',
+    label: 'Reviews and visible work',
     note:
-      'Whether good work becomes reviews, references, and visible trust on the pages that need it.',
+      'Whether finished jobs and kept appointments become reviews and references on the pages that need them.',
   },
 ];
 
@@ -3980,17 +4544,17 @@ const REVIEW_DELIVERABLES: ReadonlyArray<Deliverable> = [
   {
     title: 'A clear picture of where work is slipping',
     body:
-      'Not a generic audit. Specific surfaces, specific moments, written so a non-marketing reader can act on it.',
+      'Not a generic audit. Specific pages, specific moments — written so the owner can read it and act on it.',
   },
   {
     title: 'A short list of what to fix first',
     body:
-      'The two or three changes that protect the most demand for the least disruption — ranked, not exhaustive.',
+      'The two or three changes that protect the most enquiries for the least disruption. Ranked, not exhaustive.',
   },
   {
     title: 'A practical plan for what to rebuild and what to connect',
     body:
-      'What needs new structure. What only needs wiring. Honest about what is worth doing and what is not.',
+      'What needs new structure. What only needs wiring. Honest about what is worth doing — and what is not.',
   },
 ];
 
@@ -4013,9 +4577,9 @@ function SectionDelivery() {
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '15.5px', lineHeight: 1.65 }}>
-              A short working session with the owner or practice manager. We inspect the
-              website and the handling path together — calmly, in real terms, with the
-              specifics on the table. No discovery deck, no three-step ritual.
+              A short working session with the owner or practice manager. We look at
+              the actual website and what happens after the enquiry — calmly, with
+              real specifics. No discovery deck. No three-step ritual.
             </p>
           </div>
         </div>
@@ -4061,13 +4625,14 @@ function SectionDelivery() {
                   lineHeight: 1.2,
                 }}
               >
-                Five surfaces, in plain conversation.
+                Five things, in plain conversation.
               </h3>
               <p
                 className="mt-3 text-[#4C5E6F]"
                 style={{ fontSize: '14px', lineHeight: 1.6 }}
               >
-                We walk through them on a call together. Specifics, not generalities.
+                We walk through them together on a call. Real examples from your
+                business — not generic audit talk.
               </p>
 
               <ul className="mt-8 relative">
@@ -4232,8 +4797,8 @@ function SectionDelivery() {
                   className="mt-1 text-[#6F8190]"
                   style={{ fontSize: '13px', lineHeight: 1.55 }}
                 >
-                  Quiet, practical, and only paid for if you choose to take it forward.
-                  No pitch deck, no sales chase, no upsell.
+                  Practical and useful whether you work with us afterwards or not. No
+                  pitch deck. No sales chase. No upsell.
                 </div>
               </div>
             </div>
@@ -4264,35 +4829,35 @@ function SectionDelivery() {
 const FAQ_ITEMS = [
   {
     q: 'What do you build?',
-    a: 'Conversion-focused website systems and the connected handling around them — for established service businesses and specialist clinics. The website carries the decision path. The handling around it makes sure calls, forms, quotes, and consultation requests are answered, routed, owned, followed up, and turned into proof.',
+    a: 'Conversion-focused websites for established service businesses and specialist clinics — plus what happens around the website after someone contacts you. Calls, forms, quote requests, and consultation requests get answered, picked up by name, followed up, and turned into reviews.',
   },
   {
     q: 'How is this different from getting a new website?',
-    a: 'A website shows the business. What we build makes sure enquiries get captured, routed to the right person, followed up, and tracked. The site is the visible part. The rest makes sure the enquiry is handled properly.',
+    a: 'A website shows the business. What we build also makes sure the enquiry gets to the right person, gets a reply, and gets a follow-up. The site is the visible part. The rest is what stops good enquiries from quietly disappearing.',
   },
   {
-    q: 'We already have a website. Can you work with that?',
-    a: 'Often yes. We start by inspecting what exists, locate where it leaks, and put the missing handling in place around it. A full rebuild is not always needed.',
+    q: 'We already have a website. Do we need a rebuild?',
+    a: 'Not always. We start by looking at what you already have, finding where work slips, and putting the missing pieces in place around it. Sometimes the website needs rebuilding. Often it just needs reshaping and connecting.',
   },
   {
     q: 'Is SEO included?',
-    a: 'Local visibility and trust are part of how the website system works, not a separate package. The website, the local profile, the service or treatment pages, and the proof have to tell the same story to nearby customers — that is what we build.',
+    a: 'Local visibility is part of how the website works — not a separate package. The site, the Google Business Profile, the service or treatment pages, and the reviews need to tell the same story to nearby customers. That is what we build, and what we keep maintained.',
   },
   {
     q: 'What about missed calls and follow-up?',
-    a: 'Missed call recovery sits with Lead Response & Handling — instant reply, enquiry logged. Sequenced follow-up sits with Follow-Up & CRM — quotes chased, reminders sent. Both connect into the same capture point as every other enquiry.',
+    a: 'Missed-call recovery sits with Lead Response & Handling — a same-line text goes back instantly, the engineer or clinician calls back. Quote follow-up and consultation reminders sit with Follow-Up & CRM — paced chasing, not memory.',
   },
   {
     q: 'What kind of businesses is this for?',
-    a: 'Established service businesses and specialist clinics where work already comes in, jobs or appointments are worth real money, and handling between moments has visible gaps.',
+    a: 'Established service businesses and specialist clinics where work already comes in, the value of each job or appointment is real, and the handling between the call and the booked work has visible gaps.',
   },
   {
     q: 'How long before we see results?',
-    a: 'Stop the bleeding in weeks. Groundwork in months. Compounding takes longer — that is the point.',
+    a: 'Fewer missed enquiries inside a few weeks. A calmer working week inside a few months. The compounding takes longer — that is the point.',
   },
   {
     q: 'How do we start?',
-    a: 'Start a conversation. We map where work is leaking and what to put in place first.',
+    a: 'A short review of your website and what happens after the enquiry. We tell you where work is slipping and what to fix first — whether you work with us or not.',
   },
 ];
 
@@ -4360,10 +4925,10 @@ function SectionFAQ() {
 // ============================================================================
 
 const CTA_EXPECTATIONS = [
-  { num: '01', text: 'Where work is coming in today' },
-  { num: '02', text: 'What is being held — and what is not' },
-  { num: '03', text: 'What to fix first' },
-  { num: '04', text: 'What changes when the path is connected' },
+  { num: '01', text: 'Where work is already coming in today' },
+  { num: '02', text: 'What is getting answered — and what is not' },
+  { num: '03', text: 'What to fix first, and what to leave' },
+  { num: '04', text: 'What changes once the gaps are closed' },
 ];
 
 function SectionCTA() {
@@ -4396,18 +4961,17 @@ function SectionCTA() {
                 <span className="text-white/85 uppercase">Start here</span>
               </div>
               <h2 className="text-white">
-                If your website is not supporting enquiries properly,{' '}
-                <span className="text-white/55">it is worth reviewing.</span>
+                If the website isn&rsquo;t carrying enquiries properly,{' '}
+                <span className="text-white/55">it is worth a look.</span>
               </h2>
 
               <p
                 className="mt-6 text-white/65 max-w-[540px]"
                 style={{ fontSize: '16.5px', lineHeight: 1.65 }}
               >
-                We start by reviewing the website and the handling path together — how
-                people find the business or practice, whether they trust it, what they do
-                next, where the enquiry lands, who owns follow-up, and whether good work
-                becomes proof.
+                Let&rsquo;s look at your website and what happens after the enquiry —
+                together. How people find you, whether they trust what they see, where
+                the call or form arrives, and what happens in the days after.
               </p>
 
               <a
@@ -4415,7 +4979,7 @@ function SectionCTA() {
                 className="mt-9 inline-flex items-center gap-2.5 bg-white text-[#061323] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors"
                 style={{ fontSize: '15px', fontWeight: 600 }}
               >
-                Request a System Review
+                Request a Website Review
                 <ArrowRight size={16} />
               </a>
             </div>
