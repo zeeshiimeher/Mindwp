@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-type Page = "home" | "sws" | "lsa" | "ai-lead-handling" | "ai-chat" | "reviews" | "industries" | "landscaping" | "fitness-case" | "resource" | "blog";
+type Page = "home" | "sws" | "lsa" | "ai-lead-handling" | "follow-up-crm" | "reviews" | "industries" | "landscaping" | "fitness-case" | "resource" | "blog";
 
 type DropdownGroup = {
   label: string;
@@ -15,7 +15,7 @@ const groups: DropdownGroup[] = [
       { id: "sws", label: "Smart Website Systems", note: "Enquiry capture & conversion structure" },
       { id: "lsa", label: "Local SEO Authority", note: "Local visibility & authority signals" },
       { id: "ai-lead-handling", label: "Lead Response & Handling", note: "First response & missed-call recovery" },
-      { id: "ai-chat", label: "Follow-Up & CRM", note: "Owned next step, scheduled follow-up" },
+      { id: "follow-up-crm", label: "Follow-Up & CRM", note: "Owned next step, scheduled follow-up" },
       { id: "reviews", label: "Reputation & Review Systems", note: "Review generation & monitoring" },
     ],
   },

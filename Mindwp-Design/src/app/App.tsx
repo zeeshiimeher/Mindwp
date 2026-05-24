@@ -5,7 +5,7 @@ import { Home } from "./Home";
 import { SmartWebsite } from "./pages/SmartWebsite";
 import { LocalSEO } from "./pages/LocalSEO";
 import { AILeadHandling } from "./pages/AILeadHandling";
-import { AIChat } from "./pages/AIChat";
+import { FollowUpCRM } from "./pages/FollowUpCRM";
 import { Reviews } from "./pages/Reviews";
 import { IndustriesPage } from "./pages/Industries";
 import { Landscaping } from "./pages/Landscaping";
@@ -18,7 +18,7 @@ type Page =
   | "sws"
   | "lsa"
   | "ai-lead-handling"
-  | "ai-chat"
+  | "follow-up-crm"
   | "reviews"
   | "industries"
   | "landscaping"
@@ -40,7 +40,7 @@ export default function App() {
       {page === "sws" && <SmartWebsite />}
       {page === "lsa" && <LocalSEO />}
       {page === "ai-lead-handling" && <AILeadHandling />}
-      {page === "ai-chat" && <AIChat />}
+      {page === "follow-up-crm" && <FollowUpCRM />}
       {page === "reviews" && <Reviews />}
       {page === "industries" && <IndustriesPage />}
       {page === "landscaping" && <Landscaping />}

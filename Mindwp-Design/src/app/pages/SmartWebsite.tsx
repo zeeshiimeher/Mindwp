@@ -23,7 +23,7 @@
  * Voice + content per the project writing rules. No fake clients, no fake
  * metrics, no testimonials, no ranking promises, no treatment-outcome claims.
  */
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -66,8 +66,8 @@ function SectionHero() {
         }}
       />
 
-      <div className="container relative grid grid-cols-12 gap-8 lg:gap-10 items-center">
-        <div className="col-span-12 lg:col-span-5">
+      <div className="container relative grid grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="col-span-12 lg:col-span-7">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
             <span
@@ -78,13 +78,14 @@ function SectionHero() {
             </span>
           </div>
 
-          <h1 className="text-white">
-            A better website is not just a better-looking page.{' '}
-            <span className="text-white/45">It carries the decision.</span>
+          <h1 className="text-white" style={{ letterSpacing: '-0.022em' }}>
+            A better website is not just a better-looking page.
+            <br className="hidden sm:block" />
+            <span className="text-white/45"> It carries the decision.</span>
           </h1>
 
           <p
-            className="mt-8 text-white/70 max-w-[540px]"
+            className="mt-8 text-white/70 max-w-[620px]"
             style={{ fontSize: '18px', lineHeight: 1.6 }}
           >
             Smart Website Systems are built for established service businesses
@@ -112,7 +113,7 @@ function SectionHero() {
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-3 max-w-md">
+          <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-3 max-w-xl">
             {[
               'Service & treatment pages',
               'Trust where decisions happen',
@@ -129,7 +130,7 @@ function SectionHero() {
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-7 relative">
+        <div className="col-span-12 lg:col-span-5 relative">
           <div className="absolute -inset-8 rounded-full bg-[#35C7D8]/[0.08] blur-3xl pointer-events-none" />
           <HeroTreatmentPage />
         </div>
@@ -287,7 +288,7 @@ function HeroTreatmentPage() {
                 style={{ fontSize: '12.5px', fontWeight: 700 }}
               >
                 <PhoneCall size={11} color="#0F7A57" />
-                020 7946 1138
+                Call the practice
               </span>
             </div>
             <div
@@ -404,32 +405,28 @@ function SectionWhyFails() {
   return (
     <section className="section bg-page-mist">
       <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
-            <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 700 }}
-            >
-              Two kinds of website
-            </div>
-            <h2 className="text-[#08111F]">
-              A website that exists{' '}
-              <span className="text-[#4C5E6F]">
-                is not the same as a website that carries the decision.
-              </span>
-            </h2>
+        <div className="text-center mx-auto max-w-3xl">
+          <div
+            className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
+            style={{ fontSize: '11.5px', fontWeight: 700 }}
+          >
+            Two kinds of website
           </div>
-          <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
-              Most websites for established service businesses and clinics look
-              fine at a glance. They are quietly thin in the places that
-              actually matter — and visitors read that thinness before they
-              ever fill in a form.
-            </p>
-          </div>
+          <h2 className="text-[#08111F]">
+            A website that exists{' '}
+            <span className="text-[#4C5E6F]">
+              is not the same as a website that carries the decision.
+            </span>
+          </h2>
+          <p
+            className="mt-6 text-[#4C5E6F] mx-auto max-w-2xl"
+            style={{ fontSize: '16px', lineHeight: 1.65 }}
+          >
+            Most websites for established service businesses and clinics look
+            fine at a glance. They are quietly thin in the places that actually
+            matter — and visitors read that thinness before they ever fill in a
+            form.
+          </p>
         </div>
 
         {/* Two editorial panels, side by side */}
@@ -814,160 +811,135 @@ const DECISION_LAYERS: ReadonlyArray<DecisionLayer> = [
 function SectionPageCraft() {
   return (
     <section className="section bg-page-mist">
-      <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
-            <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 700 }}
-            >
-              How a single page earns the next step
-            </div>
-            <h2 className="text-[#08111F]">
-              A service or treatment page{' '}
-              <span className="text-[#4C5E6F]">
-                is a decision stack, not a brochure.
-              </span>
-            </h2>
-          </div>
-          <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
-              Visitors do not read a page top to bottom. They drop in already
-              asking specific questions. A serious service page answers those
-              questions in the order they get asked — and shows the answer in
-              the place it belongs on the page.
-            </p>
-          </div>
-        </div>
-
-        {/* Two-column composition: editorial decision-stack on left, page-anatomy panel on right */}
-        <div className="relative grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div className="container">
+        {/* Two-column composition: left holds the framing copy and the
+            supporting page-anatomy artifact (below the description); right
+            holds the decision-stack reading list. */}
+        <div className="relative grid grid-cols-12 gap-10 lg:gap-14 items-start">
           <div
             className="absolute -inset-10 rounded-[40px] pointer-events-none hidden lg:block"
             style={{
               background:
-                'radial-gradient(ellipse at 75% 35%, rgba(53,199,216,0.10), transparent 65%)',
+                'radial-gradient(ellipse at 25% 30%, rgba(53,199,216,0.10), transparent 65%)',
               filter: 'blur(60px)',
             }}
             aria-hidden="true"
           />
 
-          {/* LEFT — decision stack as editorial entries */}
-          <div className="relative col-span-12 lg:col-span-6">
-            <div
-              className="rounded-2xl overflow-hidden bg-white"
-              style={{
-                border: '1px solid #E6EEF3',
-                boxShadow: '0 16px 44px rgba(8,17,31,0.07)',
-              }}
-            >
+          {/* LEFT — eyebrow, title, description, then the page-anatomy artifact */}
+          <div className="relative col-span-12 lg:col-span-5">
+            <div className="lg:sticky lg:top-24">
               <div
-                className="px-7 py-5 flex items-center justify-between border-b"
-                style={{ borderColor: '#EEF3F6', background: '#F9FCFD' }}
+                className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
+                style={{ fontSize: '11.5px', fontWeight: 700 }}
               >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="w-1.5 h-1.5 rounded-full bg-[#35C7D8]"
-                    style={{ boxShadow: '0 0 8px #35C7D8' }}
-                  />
-                  <span
-                    className="text-[#08111F] uppercase tracking-[0.16em]"
-                    style={{ fontSize: '10.5px', fontWeight: 700 }}
-                  >
-                    The decision stack
-                  </span>
-                </div>
-                <span
-                  className="text-[#9CA3B0] tabular-nums"
-                  style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.14em' }}
-                >
-                  05 LAYERS · IN ORDER
-                </span>
+                How a single page earns the next step
               </div>
+              <h2 className="text-[#08111F]">
+                A service or treatment page{' '}
+                <span className="text-[#4C5E6F]">
+                  is a decision stack, not a brochure.
+                </span>
+              </h2>
+              <p
+                className="mt-6 text-[#4C5E6F]"
+                style={{ fontSize: '16px', lineHeight: 1.65 }}
+              >
+                Visitors do not read a page top to bottom. They drop in already
+                asking specific questions. A serious service page answers those
+                questions in the order they get asked — and shows the answer in
+                the place it belongs on the page.
+              </p>
 
-              <ul>
-                {DECISION_LAYERS.map((layer, i) => (
-                  <li
-                    key={layer.n}
-                    className="px-7 py-7 lg:px-8 lg:py-8 relative"
-                    style={
-                      i < DECISION_LAYERS.length - 1
-                        ? { borderBottom: '1px dashed #E6EEF3' }
-                        : undefined
-                    }
-                  >
-                    <span
-                      className="absolute left-0 top-7 lg:top-8 bottom-7 lg:bottom-8 w-1 rounded-r-full"
-                      style={{ background: layer.accent }}
-                      aria-hidden="true"
-                    />
-                    <div className="flex items-start gap-5 pl-3 lg:pl-4">
-                      <span
-                        className="relative shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
-                        style={{
-                          background: '#08111F',
-                          color: '#35C7D8',
-                          fontSize: '13px',
-                          fontWeight: 700,
-                          letterSpacing: '0.06em',
-                          boxShadow: `0 0 0 4px ${layer.accent}, 0 8px 20px rgba(8,17,31,0.18)`,
-                        }}
-                      >
-                        {layer.n}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <div
-                          className="uppercase tracking-[0.16em]"
-                          style={{ color: layer.tone, fontSize: '10.5px', fontWeight: 700 }}
-                        >
-                          {layer.stage}
-                        </div>
-                        <div
-                          className="mt-1.5 text-[#4C5E6F]"
-                          style={{ fontSize: '13.5px', lineHeight: 1.55, fontStyle: 'italic' }}
-                        >
-                          &ldquo;{layer.visitorQ}&rdquo;
-                        </div>
-                        <div
-                          className="mt-3 text-[#08111F]"
-                          style={{
-                            fontSize: '17px',
-                            fontWeight: 700,
-                            lineHeight: 1.3,
-                            letterSpacing: '-0.012em',
-                          }}
-                        >
-                          {layer.pageTitle}
-                        </div>
-                        <p
-                          className="mt-1.5 text-[#4C5E6F]"
-                          style={{ fontSize: '13.5px', lineHeight: 1.6 }}
-                        >
-                          {layer.pageBody}
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-10">
+                <div
+                  className="text-[#9CA3B0] uppercase tracking-[0.16em] mb-3"
+                  style={{ fontSize: '10.5px', fontWeight: 700 }}
+                >
+                  One page, five layers
+                </div>
+                <PageAnatomyPanel />
+                <p
+                  className="mt-5 text-[#6F8190]"
+                  style={{ fontSize: '12.5px', fontStyle: 'italic' }}
+                >
+                  An illustrative page anatomy — the same five layers, shown as
+                  page sections.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* RIGHT — page anatomy preview */}
-          <div className="relative col-span-12 lg:col-span-6">
-            <div className="lg:sticky lg:top-24">
-              <PageAnatomyPanel />
-              <p
-                className="mt-5 text-[#6F8190] text-center"
-                style={{ fontSize: '12.5px', fontStyle: 'italic' }}
-              >
-                An illustrative page anatomy — the same five layers, shown as
-                page sections.
-              </p>
-            </div>
+          {/* RIGHT — decision stack reading list */}
+          <div className="relative col-span-12 lg:col-span-7">
+            <ul className="relative">
+              <span
+                className="absolute left-[23px] top-3 bottom-3 w-px hidden md:block"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to bottom, transparent, #C6E8EF 10%, #C6E8EF 90%, transparent)',
+                }}
+                aria-hidden="true"
+              />
+              {DECISION_LAYERS.map((layer, i) => (
+                <li
+                  key={layer.n}
+                  className="relative py-6 lg:py-7 first:pt-0"
+                  style={
+                    i < DECISION_LAYERS.length - 1
+                      ? { borderBottom: '1px dashed #DDE6EC' }
+                      : undefined
+                  }
+                >
+                  <div className="flex items-start gap-5">
+                    <span
+                      className="relative shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
+                      style={{
+                        background: '#08111F',
+                        color: '#35C7D8',
+                        fontSize: '13px',
+                        fontWeight: 700,
+                        letterSpacing: '0.06em',
+                        boxShadow: `0 0 0 4px ${layer.accent}, 0 8px 20px rgba(8,17,31,0.18)`,
+                      }}
+                    >
+                      {layer.n}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div
+                        className="uppercase tracking-[0.16em]"
+                        style={{ color: layer.tone, fontSize: '10.5px', fontWeight: 700 }}
+                      >
+                        {layer.stage}
+                      </div>
+                      <div
+                        className="mt-1.5 text-[#4C5E6F]"
+                        style={{ fontSize: '13.5px', lineHeight: 1.55, fontStyle: 'italic' }}
+                      >
+                        &ldquo;{layer.visitorQ}&rdquo;
+                      </div>
+                      <div
+                        className="mt-3 text-[#08111F]"
+                        style={{
+                          fontSize: '17px',
+                          fontWeight: 700,
+                          lineHeight: 1.3,
+                          letterSpacing: '-0.012em',
+                        }}
+                      >
+                        {layer.pageTitle}
+                      </div>
+                      <p
+                        className="mt-1.5 text-[#4C5E6F] max-w-[560px]"
+                        style={{ fontSize: '13.5px', lineHeight: 1.6 }}
+                      >
+                        {layer.pageBody}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -1486,31 +1458,27 @@ function SectionHandlingEdge() {
   return (
     <section className="section bg-page-mist">
       <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
-            <div
-              className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 700 }}
-            >
-              Where the website ends
-            </div>
-            <h2 className="text-[#08111F]">
-              The website does not run the business.{' '}
-              <span className="text-[#4C5E6F]">
-                It hands the enquiry forward, with context attached.
-              </span>
-            </h2>
+        <div className="text-center mx-auto max-w-3xl">
+          <div
+            className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-5"
+            style={{ fontSize: '11.5px', fontWeight: 700 }}
+          >
+            Where the website ends
           </div>
-          <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
-              First reply, sequenced follow-up, reviews — those belong to other
-              systems. The website&rsquo;s job is to deliver the enquiry already
-              explained, so the next step does not start cold.
-            </p>
-          </div>
+          <h2 className="text-[#08111F]">
+            The website does not run the business.{' '}
+            <span className="text-[#4C5E6F]">
+              It hands the enquiry forward, with context attached.
+            </span>
+          </h2>
+          <p
+            className="mt-6 text-[#4C5E6F] mx-auto max-w-2xl"
+            style={{ fontSize: '16px', lineHeight: 1.65 }}
+          >
+            First reply, sequenced follow-up, reviews — those belong to other
+            systems. The website&rsquo;s job is to deliver the enquiry already
+            explained, so the next step does not start cold.
+          </p>
         </div>
 
         <div
@@ -1565,6 +1533,7 @@ function SectionHandlingEdge() {
                   { k: 'Service area', v: 'W1 · Central London' },
                   { k: 'Asked about', v: 'Consultation availability this week' },
                   { k: 'Channel', v: 'Form on treatment page' },
+                  { k: 'Received', v: 'Tuesday 09:42 · working hours' },
                 ].map(row => (
                   <li
                     key={row.k}
@@ -1697,140 +1666,278 @@ function SectionHandlingEdge() {
 }
 
 // ============================================================================
-// SECTION 07 — Trust placement
-// Editorial vertical spine. Tall illustrative page silhouette on the left
-// marks five zones where trust earns its keep; the right side reads each
-// placement as a short editorial paragraph.
+// SECTION 07 — Trust before the click
+// A single focused "page moment" composition. One immersive scrolled-into
+// view of a real service page right where the visitor decides — trust lives
+// inline in the page body, beside the things it protects. No labels, no
+// 5-up grid, no anatomy diagram. The placement itself is the message.
 // ============================================================================
 
-type TrustPlacement = {
-  n: string;
-  location: string;
-  label: string;
-  body: string;
-  tone: string;
-};
-
-const TRUST_PLACEMENTS: ReadonlyArray<TrustPlacement> = [
-  {
-    n: '01',
-    location: 'At the moment of hesitation',
-    label: 'Reviews where the visitor pauses.',
-    body:
-      'A real review beside the part of the page where most visitors slow down — not a star rating buried in the header.',
-    tone: '#9A6F12',
-  },
-  {
-    n: '02',
-    location: 'Beside the risk',
-    label: 'Credentials where they actually matter.',
-    body:
-      'Registrations, insurance, and certifications placed next to the work that involves the risk — not in a quiet line in the footer.',
-    tone: '#14B8A6',
-  },
-  {
-    n: '03',
-    location: 'On the local decision',
-    label: 'Service area near the area question.',
-    body:
-      'Named neighbourhoods and travel coverage on the same screen as the booking or quote — the visitor should not have to scroll to check.',
-    tone: '#0F7A57',
-  },
-  {
-    n: '04',
-    location: 'Before the call to action',
-    label: 'Proof in the run-up to the click.',
-    body:
-      'Finished work, written warranty, and real photos — the last few inches before the button, not a separate gallery page.',
-    tone: '#0E7D8C',
-  },
-  {
-    n: '05',
-    location: 'Before the form',
-    label: 'Reassurance where the visitor types.',
-    body:
-      'A short line explaining what happens next, who replies, and how soon — placed right above the fields, where the visitor is still deciding.',
-    tone: '#0E2740',
-  },
-];
-
-function TrustPageSilhouette() {
+function PageMomentArtifact() {
   return (
-    <svg
-      viewBox="0 0 320 600"
-      className="w-full h-auto"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Outer page frame */}
-      <rect x="4" y="4" width="312" height="592" rx="10" fill="#FFFFFF" stroke="#E6EEF3" strokeWidth="1.5" />
+    <div className="relative">
+      {/* Soft halo behind the composition */}
+      <div
+        className="absolute -inset-6 lg:-inset-10 rounded-[40px] pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 60%, rgba(53,199,216,0.14), transparent 65%)',
+          filter: 'blur(60px)',
+        }}
+        aria-hidden="true"
+      />
 
-      {/* Header strip */}
-      <rect x="16" y="16" width="288" height="20" rx="4" fill="#F6FAFC" />
-      <rect x="22" y="22" width="50" height="8" rx="2" fill="#08111F" />
-      <rect x="260" y="22" width="40" height="8" rx="3" fill="#0E2740" />
+      <div
+        className="relative rounded-2xl overflow-hidden bg-white"
+        style={{
+          border: '1px solid #D8E6EE',
+          boxShadow:
+            '0 36px 80px rgba(8,17,31,0.12), 0 0 0 1px rgba(53,199,216,0.05)',
+        }}
+      >
+        {/* Quiet browser-style strip — frames it as a real page view */}
+        <div
+          className="flex items-center gap-1.5 px-5 py-3 border-b"
+          style={{ borderColor: '#EEF3F6', background: '#F6FAFC' }}
+        >
+          <span className="w-2 h-2 rounded-full" style={{ background: '#E76F6F66' }} />
+          <span className="w-2 h-2 rounded-full" style={{ background: '#F4B74066' }} />
+          <span className="w-2 h-2 rounded-full" style={{ background: '#21B98566' }} />
+          <span
+            className="ml-3 px-2.5 py-0.5 rounded-full inline-flex items-center gap-1.5"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E6EEF3',
+              color: '#6F8190',
+              fontSize: '10.5px',
+              fontWeight: 600,
+            }}
+          >
+            <ShieldCheck size={10} color="#21B985" />
+            /treatments/consultation
+          </span>
+          <span
+            className="ml-auto text-[#9CA3B0] uppercase tracking-[0.14em]"
+            style={{ fontSize: '9.5px', fontWeight: 700 }}
+          >
+            Scrolled mid-page · the click moment
+          </span>
+        </div>
 
-      {/* Hero */}
-      <rect x="16" y="48" width="288" height="80" rx="6" fill="#F4FBFC" stroke="#D0EFF4" strokeWidth="1" />
-      <rect x="28" y="62" width="40" height="8" rx="4" fill="#D0EFF4" />
-      <rect x="28" y="80" width="220" height="14" rx="3" fill="#08111F" />
-      <rect x="28" y="104" width="160" height="8" rx="2" fill="#4C5E6F" opacity="0.5" />
+        {/* Page body — one continuous flow, no labelled sub-cards */}
+        <div className="px-6 lg:px-12 py-8 lg:py-12">
+          <div className="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Body content — the reading column */}
+            <div className="col-span-12 lg:col-span-8 space-y-6">
+              <div>
+                <div
+                  className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-2"
+                  style={{ fontSize: '11px', fontWeight: 700 }}
+                >
+                  Specialist consultation
+                </div>
+                <h3
+                  className="text-[#08111F]"
+                  style={{
+                    fontSize: 'clamp(20px, 2.2vw, 26px)',
+                    fontWeight: 700,
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.018em',
+                  }}
+                >
+                  What the first consultation covers — and what you can ask.
+                </h3>
+              </div>
 
-      {/* ZONE 01 — review near hesitation */}
-      <rect x="16" y="142" width="288" height="60" rx="6" fill="#FFFBEC" stroke="#F4B740" strokeWidth="1" strokeOpacity="0.5" />
-      {[26, 36, 46, 56, 66].map(x => (
-        <path
-          key={x}
-          d={`M ${x} 155 L ${x + 1.6} 158 L ${x + 4.6} 158.6 L ${x + 2.4} 160.8 L ${x + 3} 163.6 L ${x} 162 L ${x - 3} 163.6 L ${x - 2.4} 160.8 L ${x - 4.6} 158.6 L ${x - 1.6} 158 Z`}
-          fill="#F4B740"
-        />
-      ))}
-      <rect x="84" y="156" width="60" height="6" rx="2" fill="#9A6F12" opacity="0.55" />
-      <rect x="28" y="174" width="240" height="6" rx="2" fill="#4C5E6F" opacity="0.5" />
-      <rect x="28" y="186" width="180" height="6" rx="2" fill="#4C5E6F" opacity="0.4" />
-      <circle cx="312" cy="172" r="9" fill="#9A6F12" />
-      <text x="312" y="175.5" textAnchor="middle" fontSize="9" fontWeight="700" fill="#FFFFFF">01</text>
+              <div className="space-y-2.5">
+                {[92, 86, 78].map((w, i) => (
+                  <span
+                    key={i}
+                    className="block h-2 rounded-full"
+                    style={{ background: '#E6EEF3', width: `${w}%` }}
+                    aria-hidden="true"
+                  />
+                ))}
+              </div>
 
-      {/* ZONE 02 — credentials beside the risk */}
-      <rect x="16" y="216" width="288" height="50" rx="6" fill="#F0FBF8" stroke="#14B8A6" strokeWidth="1" strokeOpacity="0.4" />
-      <rect x="28" y="232" width="58" height="18" rx="9" fill="#FFFFFF" stroke="#14B8A6" strokeWidth="1" strokeOpacity="0.55" />
-      <rect x="94" y="232" width="68" height="18" rx="9" fill="#FFFFFF" stroke="#14B8A6" strokeWidth="1" strokeOpacity="0.55" />
-      <rect x="170" y="232" width="56" height="18" rx="9" fill="#FFFFFF" stroke="#14B8A6" strokeWidth="1" strokeOpacity="0.55" />
-      <rect x="234" y="232" width="60" height="18" rx="9" fill="#FFFFFF" stroke="#14B8A6" strokeWidth="1" strokeOpacity="0.55" />
-      <circle cx="312" cy="240" r="9" fill="#14B8A6" />
-      <text x="312" y="243.5" textAnchor="middle" fontSize="9" fontWeight="700" fill="#FFFFFF">02</text>
+              {/* Inline review — sitting naturally in the read flow, beside
+                  the moment of hesitation */}
+              <div
+                className="rounded-xl p-5 flex gap-4"
+                style={{
+                  background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFBEC 100%)',
+                  border: '1px solid #F0DBA8',
+                  boxShadow: '0 6px 20px rgba(244,183,64,0.10)',
+                }}
+              >
+                <div className="shrink-0 pt-0.5">
+                  <div className="flex items-center gap-0.5">
+                    {[0, 1, 2, 3, 4].map(i => (
+                      <Star key={i} size={11} fill="#F4B740" color="#F4B740" />
+                    ))}
+                  </div>
+                  <div
+                    className="mt-1 text-[#9A6F12] uppercase tracking-[0.14em]"
+                    style={{ fontSize: '9.5px', fontWeight: 700 }}
+                  >
+                    Verified
+                  </div>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p
+                    className="text-[#08111F]"
+                    style={{
+                      fontSize: '14px',
+                      lineHeight: 1.55,
+                      fontWeight: 500,
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    &ldquo;Clear from the first call. The consultant explained
+                    every step before anything was booked.&rdquo;
+                  </p>
+                  <div
+                    className="mt-1.5 text-[#6F8190]"
+                    style={{ fontSize: '11.5px', fontWeight: 600 }}
+                  >
+                    — Patient review, last quarter
+                  </div>
+                </div>
+              </div>
 
-      {/* ZONE 03 — service area / local decision */}
-      <rect x="16" y="280" width="288" height="56" rx="6" fill="#F4FBF8" stroke="#0F7A57" strokeWidth="1" strokeOpacity="0.35" />
-      <rect x="28" y="292" width="64" height="10" rx="3" fill="#0F7A57" opacity="0.7" />
-      <rect x="28" y="308" width="240" height="6" rx="2" fill="#4C5E6F" opacity="0.5" />
-      <rect x="28" y="320" width="180" height="6" rx="2" fill="#6F8190" opacity="0.4" />
-      <circle cx="312" cy="304" r="9" fill="#0F7A57" />
-      <text x="312" y="307.5" textAnchor="middle" fontSize="9" fontWeight="700" fill="#FFFFFF">03</text>
+              <div className="space-y-2.5">
+                {[88, 74].map((w, i) => (
+                  <span
+                    key={i}
+                    className="block h-2 rounded-full"
+                    style={{ background: '#E6EEF3', width: `${w}%` }}
+                    aria-hidden="true"
+                  />
+                ))}
+              </div>
 
-      {/* ZONE 04 — proof before CTA */}
-      <rect x="16" y="350" width="288" height="50" rx="6" fill="#EFFAFC" stroke="#0E7D8C" strokeWidth="1" strokeOpacity="0.35" />
-      <rect x="28" y="362" width="80" height="26" rx="4" fill="#FFFFFF" stroke="#0E7D8C" strokeWidth="1" strokeOpacity="0.45" />
-      <rect x="118" y="362" width="80" height="26" rx="4" fill="#FFFFFF" stroke="#0E7D8C" strokeWidth="1" strokeOpacity="0.45" />
-      <rect x="208" y="362" width="80" height="26" rx="4" fill="#FFFFFF" stroke="#0E7D8C" strokeWidth="1" strokeOpacity="0.45" />
-      <circle cx="312" cy="375" r="9" fill="#0E7D8C" />
-      <text x="312" y="378.5" textAnchor="middle" fontSize="9" fontWeight="700" fill="#FFFFFF">04</text>
+              {/* Inline credentials — chips sitting in the body, beside the risk */}
+              <div className="flex flex-wrap items-center gap-2">
+                {[
+                  { label: 'GMC registered', icon: ShieldCheck },
+                  { label: 'Indemnity in place', icon: ShieldCheck },
+                  { label: 'Consultant-led', icon: Stars },
+                ].map(t => {
+                  const Icon = t.icon;
+                  return (
+                    <span
+                      key={t.label}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white"
+                      style={{
+                        border: '1px solid #C6E8EF',
+                        color: '#0E7D8C',
+                        fontSize: '11.5px',
+                        fontWeight: 600,
+                      }}
+                    >
+                      <Icon size={11} />
+                      {t.label}
+                    </span>
+                  );
+                })}
+              </div>
 
-      {/* CTA button — the click moment */}
-      <rect x="16" y="412" width="288" height="40" rx="6" fill="#08111F" />
-      <rect x="28" y="428" width="110" height="8" rx="3" fill="#35C7D8" />
+              {/* Local area inline note — beside the area question */}
+              <div
+                className="flex items-start gap-2.5 text-[#0E2740]"
+                style={{ fontSize: '13px', fontWeight: 600 }}
+              >
+                <MapPin size={14} color="#0F7A57" className="mt-0.5 shrink-0" />
+                <span>
+                  Central London · W1 · Marylebone &amp; nearby —{' '}
+                  <span className="text-[#4C5E6F] font-medium">
+                    same-week appointments
+                  </span>
+                </span>
+              </div>
+            </div>
 
-      {/* ZONE 05 — reassurance before form */}
-      <rect x="16" y="464" width="288" height="124" rx="6" fill="#F9FCFD" stroke="#0E2740" strokeWidth="1" strokeOpacity="0.2" />
-      <rect x="28" y="476" width="240" height="8" rx="2" fill="#4C5E6F" opacity="0.6" />
-      <rect x="28" y="490" width="180" height="6" rx="2" fill="#6F8190" opacity="0.4" />
-      <rect x="28" y="510" width="264" height="20" rx="4" fill="#FFFFFF" stroke="#E6EEF3" strokeWidth="1" />
-      <rect x="28" y="536" width="264" height="20" rx="4" fill="#FFFFFF" stroke="#E6EEF3" strokeWidth="1" />
-      <rect x="28" y="562" width="100" height="20" rx="4" fill="#08111F" />
-      <circle cx="312" cy="488" r="9" fill="#0E2740" />
-      <text x="312" y="491.5" textAnchor="middle" fontSize="9" fontWeight="700" fill="#FFFFFF">05</text>
-    </svg>
+            {/* CTA column — sits beside the body where the decision happens */}
+            <div className="col-span-12 lg:col-span-4">
+              <div
+                className="rounded-xl p-6 lg:p-7"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #FFFFFF 0%, #F4FBFC 100%)',
+                  border: '1px solid #C6E8EF',
+                  boxShadow: '0 12px 32px rgba(14,125,140,0.10)',
+                }}
+              >
+                <div
+                  className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-3"
+                  style={{ fontSize: '9.5px', fontWeight: 700 }}
+                >
+                  Take the next step
+                </div>
+
+                <a
+                  href="#"
+                  className="block w-full text-center rounded-md px-4 py-3"
+                  style={{
+                    background: '#08111F',
+                    color: '#FFFFFF',
+                    fontSize: '13.5px',
+                    fontWeight: 700,
+                  }}
+                >
+                  Request a consultation
+                </a>
+
+                {/* Reassurance — right above the form */}
+                <p
+                  className="mt-4 text-[#4C5E6F]"
+                  style={{ fontSize: '12px', lineHeight: 1.55 }}
+                >
+                  A coordinator replies the same working day — usually within
+                  an hour or two. No clinical promises before the consult.
+                </p>
+
+                {/* Form preview — sits below the reassurance */}
+                <div className="mt-5 space-y-2">
+                  <div
+                    className="rounded-md px-3 py-2 text-[#9CA3B0]"
+                    style={{
+                      background: '#F6FAFC',
+                      border: '1px solid #E6EEF3',
+                      fontSize: '11.5px',
+                    }}
+                  >
+                    Your name
+                  </div>
+                  <div
+                    className="rounded-md px-3 py-2 text-[#9CA3B0]"
+                    style={{
+                      background: '#F6FAFC',
+                      border: '1px solid #E6EEF3',
+                      fontSize: '11.5px',
+                    }}
+                  >
+                    How to reach you
+                  </div>
+                </div>
+              </div>
+
+              {/* Secondary route — beside, not below the form */}
+              <div
+                className="mt-4 flex items-center gap-2 text-[#0E2740]"
+                style={{ fontSize: '12.5px', fontWeight: 600 }}
+              >
+                <PhoneCall size={12} color="#0F7A57" />
+                <span>Call the practice</span>
+                <span className="text-[#9CA3B0]" style={{ fontWeight: 500 }}>
+                  · working hours
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1838,130 +1945,52 @@ function SectionLocalTrust() {
   return (
     <section className="section bg-page-white">
       <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
-            <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 700 }}
-            >
-              Trust placement, not trust pages
-            </div>
-            <h2 className="text-[#08111F]">
-              Most trust is built{' '}
-              <span className="text-[#4C5E6F]">
-                before anyone fills in a form.
-              </span>
-            </h2>
+        {/* Centered, stacked header — keeps the page rhythm calm before the
+            single dominant artifact below. */}
+        <div className="text-center mx-auto max-w-3xl">
+          <div
+            className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
+            style={{ fontSize: '11.5px', fontWeight: 700 }}
+          >
+            Trust where the decision happens
           </div>
-          <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
-              Reviews on a separate page, a stale Google listing, and a
-              credential line in the footer all leave the visitor doing the
-              trust work themselves. The website should do most of that work
-              quietly, near the moments where decisions actually get made.
-            </p>
-          </div>
+          <h2 className="text-[#08111F]">
+            Most trust is built{' '}
+            <span className="text-[#4C5E6F]">
+              before anyone fills in a form.
+            </span>
+          </h2>
+          <p
+            className="mt-6 text-[#4C5E6F] mx-auto max-w-2xl"
+            style={{ fontSize: '16px', lineHeight: 1.65 }}
+          >
+            Reviews on a separate page, a credential line in the footer, and a
+            generic contact form leave the visitor doing the trust work
+            themselves. A serious page places the proof beside the question,
+            quietly — and the visitor never has to look for it.
+          </p>
         </div>
 
-        {/* Editorial split: page silhouette on left, 5 trust placements on right */}
-        <div className="grid grid-cols-12 gap-8 lg:gap-14 items-start">
-          {/* LEFT — tall page silhouette with 5 marker dots */}
-          <div className="col-span-12 lg:col-span-5">
-            <div className="lg:sticky lg:top-24">
-              <div className="mx-auto" style={{ maxWidth: '380px' }}>
-                <TrustPageSilhouette />
-              </div>
-              <p
-                className="mt-5 text-[#6F8190] text-center"
-                style={{ fontSize: '12.5px', fontStyle: 'italic' }}
-              >
-                One page, top to bottom — with five places where trust earns
-                its keep.
-              </p>
-            </div>
-          </div>
+        {/* The single focused composition. Trust is shown placed inside the
+            natural flow of a real page — not labelled, not numbered, not
+            broken into sub-cards. The placement itself is the message. */}
+        <PageMomentArtifact />
 
-          {/* RIGHT — five editorial entries with a thin spine */}
-          <div className="col-span-12 lg:col-span-7">
-            <ul className="relative">
-              <span
-                className="absolute left-[14px] top-4 bottom-4 w-px hidden md:block"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(to bottom, transparent, #C6E8EF 8%, #C6E8EF 92%, transparent)',
-                }}
-                aria-hidden="true"
-              />
-              {TRUST_PLACEMENTS.map((p, i) => (
-                <li
-                  key={p.n}
-                  className="relative pl-0 md:pl-14 py-7"
-                  style={
-                    i < TRUST_PLACEMENTS.length - 1
-                      ? { borderBottom: '1px dashed #E6EEF3' }
-                      : undefined
-                  }
-                >
-                  {/* Numbered marker on the spine */}
-                  <span
-                    className="md:absolute left-0 top-7 inline-flex md:flex w-7 h-7 rounded-full items-center justify-center mb-3 md:mb-0"
-                    style={{
-                      background: '#08111F',
-                      color: '#35C7D8',
-                      fontSize: '10.5px',
-                      fontWeight: 700,
-                      letterSpacing: '0.06em',
-                      boxShadow: `0 0 0 4px ${p.tone}1A, 0 6px 16px rgba(8,17,31,0.16)`,
-                    }}
-                  >
-                    {p.n}
-                  </span>
-                  <div
-                    className="uppercase tracking-[0.16em]"
-                    style={{ color: p.tone, fontSize: '10.5px', fontWeight: 700 }}
-                  >
-                    {p.location}
-                  </div>
-                  <div
-                    className="mt-2 text-[#08111F]"
-                    style={{
-                      fontSize: '19px',
-                      fontWeight: 700,
-                      lineHeight: 1.3,
-                      letterSpacing: '-0.012em',
-                    }}
-                  >
-                    {p.label}
-                  </div>
-                  <p
-                    className="mt-2 text-[#4C5E6F]"
-                    style={{ fontSize: '14px', lineHeight: 1.65 }}
-                  >
-                    {p.body}
-                  </p>
-                </li>
-              ))}
-            </ul>
-
-            <p
-              className="mt-8 text-[#4C5E6F]"
-              style={{ fontSize: '13.5px', lineHeight: 1.7 }}
-            >
-              Local visibility lives in its own offer —{' '}
-              <span className="text-[#08111F] font-medium">
-                Local SEO Authority Systems
-              </span>{' '}
-              — and review collection is the work of{' '}
-              <span className="text-[#08111F] font-medium">
-                Reputation &amp; Review Systems
-              </span>
-              . Both feed the website. The placement on the page belongs here.
-            </p>
-          </div>
-        </div>
+        {/* Closing reference paragraph — kept verbatim, centered */}
+        <p
+          className="text-[#4C5E6F] mx-auto max-w-3xl text-center"
+          style={{ fontSize: '13.5px', lineHeight: 1.7 }}
+        >
+          Local visibility lives in its own offer —{' '}
+          <span className="text-[#08111F] font-medium">
+            Local SEO Authority Systems
+          </span>{' '}
+          — and review collection is the work of{' '}
+          <span className="text-[#08111F] font-medium">
+            Reputation &amp; Review Systems
+          </span>
+          . Both feed the website. The placement on the page belongs here.
+        </p>
       </div>
     </section>
   );
@@ -2023,30 +2052,26 @@ function SectionImplementation() {
   return (
     <section className="section bg-page-mist">
       <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
-            <div
-              className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 700 }}
-            >
-              How a Smart Website System is built
-            </div>
-            <h2 className="text-[#08111F]">
-              Six implementation pathways{' '}
-              <span className="text-[#4C5E6F]">— chosen for the work, not the brochure.</span>
-            </h2>
+        <div className="text-center mx-auto max-w-3xl">
+          <div
+            className="text-[#0E7D8C] uppercase tracking-[0.16em] mb-5"
+            style={{ fontSize: '11.5px', fontWeight: 700 }}
+          >
+            How a Smart Website System is built
           </div>
-          <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
-              These are how the website system gets built or rebuilt — not the
-              point of the page. We choose based on what the team already
-              edits, what the existing site can keep, and what the next two
-              years of editing actually look like.
-            </p>
-          </div>
+          <h2 className="text-[#08111F]">
+            Six implementation pathways{' '}
+            <span className="text-[#4C5E6F]">— chosen for the work, not the brochure.</span>
+          </h2>
+          <p
+            className="mt-6 text-[#4C5E6F] mx-auto max-w-2xl"
+            style={{ fontSize: '16px', lineHeight: 1.65 }}
+          >
+            These are how the website system gets built or rebuilt — not the
+            point of the page. We choose based on what the team already edits,
+            what the existing site can keep, and what the next two years of
+            editing actually look like.
+          </p>
         </div>
 
         <div
@@ -2306,27 +2331,23 @@ function SectionFit() {
   return (
     <section className="section bg-page-white">
       <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
-            <div
-              className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
-              style={{ fontSize: '11.5px', fontWeight: 700 }}
-            >
-              Fit
-            </div>
-            <h2 className="text-[#08111F]">
-              Built for established service businesses and specialist clinics.
-            </h2>
+        <div className="text-center mx-auto max-w-3xl">
+          <div
+            className="text-[#6F8190] uppercase tracking-[0.16em] mb-5"
+            style={{ fontSize: '11.5px', fontWeight: 700 }}
+          >
+            Fit
           </div>
-          <div className="col-span-12 lg:col-span-5 flex items-end">
-            <p
-              className="text-[#4C5E6F]"
-              style={{ fontSize: '16px', lineHeight: 1.65 }}
-            >
-              We are honest both ways — who this work is for, and who it
-              isn&rsquo;t. Saying so early saves time on both sides.
-            </p>
-          </div>
+          <h2 className="text-[#08111F]">
+            Built for established service businesses and specialist clinics.
+          </h2>
+          <p
+            className="mt-6 text-[#4C5E6F] mx-auto max-w-2xl"
+            style={{ fontSize: '16px', lineHeight: 1.65 }}
+          >
+            We are honest both ways — who this work is for, and who it
+            isn&rsquo;t. Saying so early saves time on both sides.
+          </p>
         </div>
 
         <div className="grid grid-cols-12 gap-5 lg:gap-6">
@@ -2581,14 +2602,246 @@ function SectionFAQ() {
 // Diagnostic close. No hard sell, no fake audit, no guarantee.
 // ============================================================================
 
-const REVIEW_AREAS = [
-  { num: '01', text: 'The website itself — structure, pages, and clarity' },
-  { num: '02', text: 'Service or treatment pages — and the questions they answer' },
-  { num: '03', text: 'Local trust — area cues, registrations, listings, and reviews' },
-  { num: '04', text: 'Enquiry paths — forms, calls, and what the next step receives' },
-  { num: '05', text: 'Proof placement — where it lives now versus where it should' },
-  { num: '06', text: 'What to fix first — short list, ranked, not exhaustive' },
-];
+function ReviewSnapshotIllustration() {
+  return (
+    <div
+      className="relative w-full"
+      style={{ aspectRatio: '5 / 6' }}
+      aria-hidden="true"
+    >
+      {/* Soft background halo */}
+      <div
+        className="absolute inset-0 rounded-[28px]"
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 45%, rgba(53,199,216,0.22), transparent 65%)',
+          filter: 'blur(20px)',
+        }}
+      />
+
+      {/* Page mockup — small, white, sits in the middle of the stage */}
+      <div
+        className="absolute"
+        style={{
+          left: '22%',
+          right: '22%',
+          top: '6%',
+          bottom: '6%',
+          background: '#FFFFFF',
+          borderRadius: '14px',
+          border: '1px solid rgba(255,255,255,0.55)',
+          boxShadow:
+            '0 30px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(53,199,216,0.12)',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Tiny browser strip */}
+        <div
+          className="flex items-center gap-1 px-3 py-2"
+          style={{
+            background: '#F6FAFC',
+            borderBottom: '1px solid #EEF3F6',
+          }}
+        >
+          <span className="block w-1.5 h-1.5 rounded-full" style={{ background: '#E76F6F66' }} />
+          <span className="block w-1.5 h-1.5 rounded-full" style={{ background: '#F4B74066' }} />
+          <span className="block w-1.5 h-1.5 rounded-full" style={{ background: '#21B98566' }} />
+        </div>
+
+        {/* Hero block */}
+        <div className="px-3 pt-3">
+          <div
+            className="rounded-md p-2.5"
+            style={{
+              background: 'linear-gradient(135deg, #F4FBFC 0%, #FFFFFF 100%)',
+              border: '1px solid #E6EEF3',
+            }}
+          >
+            <span
+              className="block h-1 rounded-full"
+              style={{ background: '#08111F', width: '70%' }}
+            />
+            <span
+              className="block h-1 rounded-full mt-1.5"
+              style={{ background: '#C6CFD8', width: '50%' }}
+            />
+            <span
+              className="inline-block h-1.5 rounded-full mt-2"
+              style={{ background: '#35C7D8', width: '24px' }}
+            />
+          </div>
+        </div>
+
+        {/* Body lines */}
+        <div className="px-3 pt-3 space-y-1.5">
+          {[88, 76, 82, 64].map((w, i) => (
+            <span
+              key={i}
+              className="block h-1 rounded-full"
+              style={{ background: '#E1E6EC', width: `${w}%` }}
+            />
+          ))}
+        </div>
+
+        {/* Inline trust band */}
+        <div className="px-3 pt-3">
+          <div
+            className="rounded-md p-2 flex items-center gap-1"
+            style={{
+              background: 'rgba(244,183,64,0.10)',
+              border: '1px solid rgba(244,183,64,0.40)',
+            }}
+          >
+            {[0, 1, 2, 3, 4].map(i => (
+              <span
+                key={i}
+                className="block w-1.5 h-1.5"
+                style={{
+                  background: '#F4B740',
+                  clipPath:
+                    'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* CTA pill */}
+        <div className="px-3 pt-3">
+          <div
+            className="rounded-md flex items-center justify-center"
+            style={{
+              background: '#08111F',
+              height: '20px',
+            }}
+          >
+            <span
+              className="block h-1 rounded-full"
+              style={{ background: '#35C7D8', width: '40%' }}
+            />
+          </div>
+        </div>
+
+        {/* Form preview */}
+        <div className="px-3 pt-3 space-y-1.5">
+          <span
+            className="block rounded-sm"
+            style={{ background: '#F6FAFC', border: '1px solid #E6EEF3', height: '10px' }}
+          />
+          <span
+            className="block rounded-sm"
+            style={{ background: '#F6FAFC', border: '1px solid #E6EEF3', height: '10px' }}
+          />
+        </div>
+      </div>
+
+      {/* Annotation marker 1 — Clarity (upper left) */}
+      <Marker
+        style={{ left: '4%', top: '14%' }}
+        color="#35C7D8"
+        label="Clarity"
+        align="left"
+      />
+
+      {/* Annotation marker 2 — Trust (mid right) */}
+      <Marker
+        style={{ right: '4%', top: '44%' }}
+        color="#F4B740"
+        label="Trust"
+        align="right"
+      />
+
+      {/* Annotation marker 3 — Next step (lower left) */}
+      <Marker
+        style={{ left: '4%', bottom: '20%' }}
+        color="#21B985"
+        label="Next step"
+        align="left"
+      />
+
+      {/* Floating "noted" check mark — a small visual flourish */}
+      <div
+        className="absolute"
+        style={{ right: '8%', bottom: '10%' }}
+      >
+        <div
+          className="w-8 h-8 rounded-full flex items-center justify-center"
+          style={{
+            background: '#FFFFFF',
+            border: '1px solid rgba(33,185,133,0.50)',
+            boxShadow: '0 10px 24px rgba(33,185,133,0.30)',
+            color: '#0F7A57',
+          }}
+        >
+          <Check size={14} strokeWidth={3} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Marker({
+  style,
+  color,
+  label,
+  align,
+}: {
+  style: CSSProperties;
+  color: string;
+  label: string;
+  align: 'left' | 'right';
+}) {
+  return (
+    <div className="absolute flex items-center gap-2" style={style}>
+      {align === 'right' && (
+        <span
+          className="inline-flex items-center px-2 py-1 rounded-full uppercase tracking-[0.14em]"
+          style={{
+            background: '#FFFFFF',
+            color: '#08111F',
+            fontSize: '9px',
+            fontWeight: 700,
+            boxShadow: '0 6px 14px rgba(0,0,0,0.25)',
+          }}
+        >
+          {label}
+        </span>
+      )}
+      <span
+        className="relative inline-flex items-center justify-center"
+        style={{ width: '14px', height: '14px' }}
+      >
+        <span
+          className="absolute inset-0 rounded-full"
+          style={{ background: color, opacity: 0.25 }}
+        />
+        <span
+          className="relative rounded-full"
+          style={{
+            width: '8px',
+            height: '8px',
+            background: color,
+            boxShadow: `0 0 12px ${color}`,
+          }}
+        />
+      </span>
+      {align === 'left' && (
+        <span
+          className="inline-flex items-center px-2 py-1 rounded-full uppercase tracking-[0.14em]"
+          style={{
+            background: '#FFFFFF',
+            color: '#08111F',
+            fontSize: '9px',
+            fontWeight: 700,
+            boxShadow: '0 6px 14px rgba(0,0,0,0.25)',
+          }}
+        >
+          {label}
+        </span>
+      )}
+    </div>
+  );
+}
 
 function SectionCTA() {
   return (
@@ -2652,45 +2905,9 @@ function SectionCTA() {
             </div>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="rounded-2xl bg-white/[0.07] border border-white/16 p-8 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
-                <div
-                  className="text-white/55 uppercase tracking-[0.14em] mb-5"
-                  style={{ fontSize: '10.5px', fontWeight: 600 }}
-                >
-                  What we review together
-                </div>
-                <div className="space-y-3">
-                  {REVIEW_AREAS.map(s => (
-                    <div
-                      key={s.num}
-                      className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.06] border border-white/10"
-                    >
-                      <span
-                        className="text-[#35C7D8] shrink-0"
-                        style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em' }}
-                      >
-                        {s.num}
-                      </span>
-                      <span
-                        className="text-white/90"
-                        style={{ fontSize: '14.5px', lineHeight: 1.5 }}
-                      >
-                        {s.text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div
-                  className="mt-5 pt-5 border-t border-white/10 flex items-center justify-between text-white/50"
-                  style={{ fontSize: '12px' }}
-                >
-                  <span>A 60–90 minute working session.</span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />
-                    Calm conversation
-                  </span>
-                </div>
-              </div>
+              {/* Illustration: a page being reviewed — visual primitive, not
+                  a reading panel. Different from the homepage CTA's text list. */}
+              <ReviewSnapshotIllustration />
             </div>
           </div>
         </div>
