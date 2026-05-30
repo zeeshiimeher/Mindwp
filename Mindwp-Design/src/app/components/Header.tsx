@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-type Page = "home" | "sws" | "lsa" | "ai-lead-handling" | "follow-up-crm" | "reviews" | "industries" | "landscaping" | "fitness-case" | "resource" | "blog";
+type Page = "home" | "sws" | "lsa" | "ai-lead-handling" | "follow-up-crm" | "reviews" | "industries" | "landscaping" | "fitness-case" | "resource" | "blog" | "wordpress" | "elementor" | "bricks" | "divi" | "rebuild" | "woocommerce";
 
 type DropdownGroup = {
   label: string;
@@ -17,6 +17,17 @@ const groups: DropdownGroup[] = [
       { id: "ai-lead-handling", label: "Lead Response & Handling", note: "First response & missed-call recovery" },
       { id: "follow-up-crm", label: "Follow-Up & CRM", note: "Owned next step, scheduled follow-up" },
       { id: "reviews", label: "Reputation & Review Systems", note: "Review generation & monitoring" },
+    ],
+  },
+  {
+    label: "Build paths",
+    items: [
+      { id: "wordpress", label: "WordPress Development", note: "The base. The website system on top." },
+      { id: "elementor", label: "Elementor", note: "Built with structure, not just style." },
+      { id: "bricks", label: "Bricks Builder", note: "Performance-aware page craft." },
+      { id: "divi", label: "Divi 5", note: "Modernise without leaving Divi." },
+      { id: "rebuild", label: "Website Rebuild", note: "Fixes more than how it looks." },
+      { id: "woocommerce", label: "WooCommerce", note: "Built for the buying decision." },
     ],
   },
   {
@@ -141,7 +152,7 @@ export function Header({ page, onNav }: { page: Page; onNav: (p: Page) => void }
           className="inline-flex items-center gap-2 bg-[#061323] hover:bg-[#0E2740] text-white rounded-full px-5 py-2.5 transition-colors"
           style={{ fontSize: "13.5px", fontWeight: 500 }}
         >
-          Start a Conversation
+          Request a Website Review
           <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_6px_#35C7D8]" />
         </a>
       </div>

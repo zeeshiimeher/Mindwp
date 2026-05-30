@@ -28,6 +28,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
+  ChevronRight,
   Clock,
   Compass,
   FileText,
@@ -41,6 +42,25 @@ import {
   Stars,
   Star,
 } from 'lucide-react';
+
+type Page =
+  | 'home'
+  | 'sws'
+  | 'lsa'
+  | 'ai-lead-handling'
+  | 'follow-up-crm'
+  | 'reviews'
+  | 'industries'
+  | 'landscaping'
+  | 'fitness-case'
+  | 'resource'
+  | 'blog'
+  | 'wordpress'
+  | 'elementor'
+  | 'bricks'
+  | 'divi'
+  | 'rebuild'
+  | 'woocommerce';
 
 // ============================================================================
 // SECTION 01 — Hero / flagship positioning
@@ -168,7 +188,7 @@ function HeroTreatmentPage() {
             }}
           >
             <ShieldCheck size={10} color="#21B985" />
-            /treatments/sleep-apnoea
+            /services/specialist-consultation
           </span>
         </div>
 
@@ -194,7 +214,7 @@ function HeroTreatmentPage() {
               }}
             >
               <MapPin size={9} />
-              CENTRAL LONDON CLINIC
+              NAMED LOCAL AREA · SPECIALIST PRACTICE
             </div>
             <div
               className="text-[#08111F]"
@@ -205,14 +225,14 @@ function HeroTreatmentPage() {
                 letterSpacing: '-0.018em',
               }}
             >
-              Specialist sleep apnoea assessment — consultant-led, in one visit.
+              Specialist consultation — what the visit covers and what to expect.
             </div>
             <div
               className="mt-2 text-[#4C5E6F]"
               style={{ fontSize: '13.5px', lineHeight: 1.55 }}
             >
               What the consultation includes, what to bring, and the next steps
-              if treatment is right for you.
+              after the visit.
             </div>
           </div>
 
@@ -228,18 +248,15 @@ function HeroTreatmentPage() {
               {[0, 1, 2, 3, 4].map(i => (
                 <Star key={i} size={11} fill="#F4B740" color="#F4B740" />
               ))}
-              <span className="ml-1 text-[#0E2740]" style={{ fontSize: '12.5px', fontWeight: 700 }}>
-                4.9
-              </span>
-              <span className="ml-1 text-[#6F8190]" style={{ fontSize: '11px', fontWeight: 600 }}>
-                · Verified patient reviews
+              <span className="ml-2 text-[#6F8190]" style={{ fontSize: '11px', fontWeight: 600 }}>
+                Recent practice-experience reviews
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-1.5">
               {[
-                { label: 'GMC registered', icon: ShieldCheck },
-                { label: 'Same-week consults', icon: Clock },
-                { label: 'Central + W1 area', icon: MapPin },
+                { label: 'Registered practice', icon: ShieldCheck },
+                { label: 'Consultation availability shown', icon: Clock },
+                { label: 'Local area covered', icon: MapPin },
               ].map(t => {
                 const Icon = t.icon;
                 return (
@@ -288,14 +305,14 @@ function HeroTreatmentPage() {
                 style={{ fontSize: '12.5px', fontWeight: 700 }}
               >
                 <PhoneCall size={11} color="#0F7A57" />
-                Call the practice
+                Direct line to the practice
               </span>
             </div>
             <div
               className="mt-3 text-[#6F8190]"
               style={{ fontSize: '11.5px', fontWeight: 500 }}
             >
-              Reaches the consultation coordinator — page, area, and reason
+              Reaches the practice coordinator — page, area, and reason
               attached.
             </div>
           </div>
@@ -1529,11 +1546,11 @@ function SectionHandlingEdge() {
 
               <ul className="mt-7 space-y-3">
                 {[
-                  { k: 'Source page', v: '/treatments/sleep-apnoea' },
-                  { k: 'Service area', v: 'W1 · Central London' },
-                  { k: 'Asked about', v: 'Consultation availability this week' },
-                  { k: 'Channel', v: 'Form on treatment page' },
-                  { k: 'Received', v: 'Tuesday 09:42 · working hours' },
+                  { k: 'Source page', v: 'Service or treatment page' },
+                  { k: 'Service area', v: 'Named local area' },
+                  { k: 'Asked about', v: 'Quote / consultation / callback request' },
+                  { k: 'Channel', v: 'Form or call path' },
+                  { k: 'Received', v: 'During working hours' },
                 ].map(row => (
                   <li
                     key={row.k}
@@ -1790,17 +1807,15 @@ function PageMomentArtifact() {
                       fontSize: '14px',
                       lineHeight: 1.55,
                       fontWeight: 500,
-                      fontStyle: 'italic',
                     }}
                   >
-                    &ldquo;Clear from the first call. The consultant explained
-                    every step before anything was booked.&rdquo;
+                    Recent practice-experience review placed beside the CTA — sits where the visitor is deciding whether to act.
                   </p>
                   <div
                     className="mt-1.5 text-[#6F8190]"
                     style={{ fontSize: '11.5px', fontWeight: 600 }}
                   >
-                    — Patient review, last quarter
+                    — Recent practice-experience review
                   </div>
                 </div>
               </div>
@@ -1819,9 +1834,9 @@ function PageMomentArtifact() {
               {/* Inline credentials — chips sitting in the body, beside the risk */}
               <div className="flex flex-wrap items-center gap-2">
                 {[
-                  { label: 'GMC registered', icon: ShieldCheck },
-                  { label: 'Indemnity in place', icon: ShieldCheck },
-                  { label: 'Consultant-led', icon: Stars },
+                  { label: 'Registered practice', icon: ShieldCheck },
+                  { label: 'Cover in place', icon: ShieldCheck },
+                  { label: 'Credentials placed near the CTA', icon: Stars },
                 ].map(t => {
                   const Icon = t.icon;
                   return (
@@ -1849,9 +1864,9 @@ function PageMomentArtifact() {
               >
                 <MapPin size={14} color="#0F7A57" className="mt-0.5 shrink-0" />
                 <span>
-                  Central London · W1 · Marylebone &amp; nearby —{' '}
+                  Named local area covered —{' '}
                   <span className="text-[#4C5E6F] font-medium">
-                    same-week appointments
+                    appointment availability shown
                   </span>
                 </span>
               </div>
@@ -1893,8 +1908,8 @@ function PageMomentArtifact() {
                   className="mt-4 text-[#4C5E6F]"
                   style={{ fontSize: '12px', lineHeight: 1.55 }}
                 >
-                  A coordinator replies the same working day — usually within
-                  an hour or two. No clinical promises before the consult.
+                  A coordinator replies during working hours, with what you
+                  can expect at the consult. No clinical promises before the consultation.
                 </p>
 
                 {/* Form preview — sits below the reassurance */}
@@ -2009,46 +2024,54 @@ type Pathway = {
   fit: string;
 };
 
-const PATHWAYS: ReadonlyArray<Pathway> = [
+type PathwayWithId = Pathway & { id?: Page };
+
+const PATHWAYS: ReadonlyArray<PathwayWithId> = [
   {
     n: '01',
+    id: 'wordpress',
     name: 'WordPress Development',
     use: 'Custom build on the platform most service businesses and clinics already run.',
     fit: 'When the site needs serious page work, custom blocks, and long-term editability.',
   },
   {
     n: '02',
+    id: 'elementor',
     name: 'Elementor',
     use: 'Refined Elementor builds where the team needs to keep editing pages themselves.',
     fit: 'When in-house editing is part of the operating reality, not a fight against the builder.',
   },
   {
     n: '03',
+    id: 'bricks',
     name: 'Bricks Builder',
     use: 'Bricks builds where performance, clean markup, and structured design matter.',
     fit: 'When the existing site is slow, fragile, or weighed down by past plugins.',
   },
   {
     n: '04',
+    id: 'divi',
     name: 'Divi 5',
     use: 'Divi 5 rebuilds for sites already on Divi that need a serious page-craft pass.',
     fit: 'When the team is on Divi and the platform decision is not the question.',
   },
   {
     n: '05',
+    id: 'woocommerce',
     name: 'WooCommerce',
     use: 'Service-led WooCommerce where bookings, deposits, or simple products belong with the site.',
     fit: 'When payments, deposits, or product lines sit alongside the service or treatment work.',
   },
   {
     n: '06',
+    id: 'rebuild',
     name: 'Website Redesign / System Rebuild',
     use: 'Full rebuild of an existing site that has outgrown its structure and trust.',
     fit: 'When the current site is the bottleneck and the work needs to start over cleanly.',
   },
 ];
 
-function SectionImplementation() {
+function SectionImplementation({ onNav }: { onNav?: (p: Page) => void }) {
   return (
     <section className="section bg-page-mist">
       <div className="container section-stack">
@@ -2108,62 +2131,83 @@ function SectionImplementation() {
               What we build with it
             </div>
             <div
-              className="col-span-4 text-[#0E7D8C] uppercase tracking-[0.14em]"
+              className="col-span-3 text-[#0E7D8C] uppercase tracking-[0.14em]"
               style={{ fontSize: '10px', fontWeight: 700 }}
             >
               When it fits
             </div>
+            <div className="col-span-1" />
           </div>
 
-          {PATHWAYS.map((p, i) => (
-            <div
-              key={p.n}
-              className={`grid grid-cols-12 gap-6 px-6 lg:px-8 py-6 items-start ${
-                i < PATHWAYS.length - 1 ? 'border-b' : ''
-              }`}
-              style={{ borderColor: '#EEF3F6' }}
-            >
-              <div className="col-span-12 md:col-span-1">
-                <span
-                  className="text-[#6F8190] tabular-nums"
-                  style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.14em' }}
-                >
-                  {p.n}
-                </span>
-              </div>
-              <div className="col-span-12 md:col-span-3">
+          {PATHWAYS.map((p, i) => {
+            const isClickable = !!(p.id && onNav);
+            const content = (
+              <div
+                className={`grid grid-cols-12 gap-6 px-6 lg:px-8 py-6 items-start w-full ${
+                  i < PATHWAYS.length - 1 ? 'border-b' : ''
+                } ${isClickable ? 'transition-colors hover:bg-[#F9FCFD] text-left' : ''}`}
+                style={{ borderColor: '#EEF3F6' }}
+              >
+                <div className="col-span-12 md:col-span-1">
+                  <span
+                    className="text-[#6F8190] tabular-nums"
+                    style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.14em' }}
+                  >
+                    {p.n}
+                  </span>
+                </div>
+                <div className="col-span-12 md:col-span-3">
+                  <div
+                    className="text-[#08111F]"
+                    style={{
+                      fontSize: '16px',
+                      fontWeight: 700,
+                      letterSpacing: '-0.01em',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {p.name}
+                  </div>
+                </div>
                 <div
-                  className="text-[#08111F]"
-                  style={{
-                    fontSize: '16px',
-                    fontWeight: 700,
-                    letterSpacing: '-0.01em',
-                    lineHeight: 1.3,
-                  }}
+                  className="col-span-12 md:col-span-4 text-[#4C5E6F]"
+                  style={{ fontSize: '13.5px', lineHeight: 1.65 }}
                 >
-                  {p.name}
+                  {p.use}
+                </div>
+                <div className="col-span-12 md:col-span-3">
+                  <span
+                    className="inline-flex items-start gap-2 text-[#08111F]"
+                    style={{ fontSize: '13px', lineHeight: 1.6, fontWeight: 500 }}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] mt-2 shrink-0"
+                      style={{ boxShadow: '0 0 6px rgba(53,199,216,0.5)' }}
+                    />
+                    {p.fit}
+                  </span>
+                </div>
+                <div className="hidden md:flex col-span-1 items-center justify-end">
+                  {isClickable && (
+                    <ChevronRight size={16} className="text-[#9CA3B0]" />
+                  )}
                 </div>
               </div>
-              <div
-                className="col-span-12 md:col-span-4 text-[#4C5E6F]"
-                style={{ fontSize: '13.5px', lineHeight: 1.65 }}
-              >
-                {p.use}
-              </div>
-              <div className="col-span-12 md:col-span-4">
-                <span
-                  className="inline-flex items-start gap-2 text-[#08111F]"
-                  style={{ fontSize: '13px', lineHeight: 1.6, fontWeight: 500 }}
+            );
+
+            if (isClickable) {
+              return (
+                <button
+                  key={p.n}
+                  onClick={() => onNav!(p.id!)}
+                  className="block w-full"
                 >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] mt-2 shrink-0"
-                    style={{ boxShadow: '0 0 6px rgba(53,199,216,0.5)' }}
-                  />
-                  {p.fit}
-                </span>
-              </div>
-            </div>
-          ))}
+                  {content}
+                </button>
+              );
+            }
+            return <div key={p.n}>{content}</div>;
+          })}
         </div>
 
         <p
@@ -2245,9 +2289,9 @@ function SectionAfterLaunch() {
               What changes after launch
             </div>
             <h2 className="text-white">
-              No guaranteed numbers.{' '}
+              After launch,{' '}
               <span className="text-white/55">
-                Real changes in how the website actually behaves.
+                the website behaves differently.
               </span>
             </h2>
           </div>
@@ -2920,7 +2964,7 @@ function SectionCTA() {
 // Page export
 // ============================================================================
 
-export function SmartWebsite() {
+export function SmartWebsite({ onNav }: { onNav?: (p: Page) => void } = {}) {
   return (
     <main>
       <SectionHero />
@@ -2930,7 +2974,7 @@ export function SmartWebsite() {
       <SectionBuyingPaths />
       <SectionHandlingEdge />
       <SectionLocalTrust />
-      <SectionImplementation />
+      <SectionImplementation onNav={onNav} />
       <SectionAfterLaunch />
       <SectionFit />
       <SectionFAQ />

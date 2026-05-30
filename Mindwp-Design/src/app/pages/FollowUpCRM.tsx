@@ -4,11 +4,11 @@ import { ArrowRight, UserCheck, Clock, CalendarDays, MessageSquare, FileText, Ch
 // 01 HERO
 function FUHero() {
   const enquiries = [
-    { icon: FileText, tone: "#21B985", state: "QUOTE SENT", label: "Bathroom refit · awaiting reply", status: "Follow-up due Friday", owner: "Owner: Sophie" },
-    { icon: MessageSquare, tone: "#35C7D8", state: "CONSULTATION", label: "Implant patient enquiry", status: "Reminder scheduled", owner: "Owner: Dr Patel" },
-    { icon: Phone, tone: "#F4B740", state: "CALLBACK", label: "Roof job · promised callback", status: "Due today", owner: "Owner: Amir" },
-    { icon: CalendarDays, tone: "#0F7A57", state: "BOOKING", label: "Annual service appointment", status: "Confirmation pending", owner: "Owner: Office" },
-    { icon: CheckCircle2, tone: "#14B8A6", state: "COMPLETED", label: "Kitchen install · finished Tuesday", status: "Ready for review handoff", owner: "Owner: Sophie" },
+    { icon: FileText, tone: "#21B985", state: "QUOTE SENT", label: "Bathroom refit · awaiting reply", status: "Follow-up due Friday", owner: "Owner: Quote owner" },
+    { icon: MessageSquare, tone: "#35C7D8", state: "CONSULTATION", label: "Consultation request", status: "Reminder scheduled", owner: "Owner: Practice coordinator" },
+    { icon: Phone, tone: "#F4B740", state: "CALLBACK", label: "Roof job · promised callback", status: "Due today", owner: "Owner: Service manager" },
+    { icon: CalendarDays, tone: "#0F7A57", state: "BOOKING", label: "Annual service appointment", status: "Confirmation pending", owner: "Owner: Office team" },
+    { icon: CheckCircle2, tone: "#14B8A6", state: "COMPLETED", label: "Kitchen install · finished Tuesday", status: "Ready for review handoff", owner: "Owner: Quote owner" },
   ];
   return (
     <section className="relative bg-gradient-to-br from-[#061A1F] via-[#072A22] to-[#0A3A2A] overflow-hidden">
@@ -29,7 +29,7 @@ function FUHero() {
           </p>
           <div className="mt-10 flex items-center gap-7 flex-wrap">
             <a href="#cta" className="inline-flex items-center gap-2 bg-white text-[#061A1F] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors" style={{ fontSize: '15px', fontWeight: 600 }}>
-              Start a Conversation <ArrowRight size={16} />
+              Review my follow-up path <ArrowRight size={16} />
             </a>
             <a href="#where" className="inline-flex items-center gap-2 text-white/85 hover:text-white" style={{ fontSize: '14px', fontWeight: 600 }}>
               See where follow-up slips <ArrowRight size={14} />
@@ -54,7 +54,7 @@ function FUHero() {
                 <div className="text-white mt-1" style={{ fontSize: '17px', fontWeight: 600 }}>This morning · owner view</div>
               </div>
               <span className="inline-flex items-center gap-1.5 text-[#21B985]" style={{ fontSize: '11px', fontWeight: 600 }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" /> In view
+                <span className="w-1.5 h-1.5 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" /> Five states
               </span>
             </div>
             <div className="space-y-2">
@@ -89,7 +89,7 @@ function FUWhereBreaks() {
   const moments = [
     { icon: Eye, tone: "#9D7CF8", title: "Proposal viewed — no follow-up", note: "The customer opened it three times. Nobody picked up the thread." },
     { icon: Phone, tone: "#E76F6F", title: "Callback promised — not logged", note: "A verbal commitment in the morning. Forgotten by the afternoon." },
-    { icon: CalendarDays, tone: "#0F7A57", title: "Appointment booked — reminder forgotten", note: "The patient turned up the wrong week. Nobody had confirmed." },
+    { icon: CalendarDays, tone: "#0F7A57", title: "Appointment booked — reminder forgotten", note: "The visitor turned up the wrong week — nobody had confirmed." },
     { icon: MessageSquare, tone: "#0468A8", title: "Consultation reply sent — no next task", note: "First reply went out. The enquiry slid off the list." },
     { icon: Clock, tone: "#6F8190", title: "Lead said \"next month\" — disappeared", note: "A real future enquiry. No place to live until then." },
     { icon: Star, tone: "#7C4DCF", title: "Job completed — no review handoff", note: "Good work. Thanked in person. Then nothing happened with it." },
@@ -464,6 +464,20 @@ function FUPaths() {
             );
           })}
         </div>
+
+        {/* Upstream handoff note — Follow-Up & CRM receives, not handles first reply */}
+        <div className="mt-7 lg:mt-9 rounded-2xl bg-[#F9FCFD] border border-[#BCE0CD]/60 px-7 py-5 flex items-start gap-4">
+          <div className="w-10 h-10 rounded-md bg-[#E5F4EC] border border-[#BCE0CD] text-[#0F7A57] flex items-center justify-center shrink-0">
+            <ArrowRight size={15} />
+          </div>
+          <div className="flex-1">
+            <div className="text-[#0F7A57] uppercase tracking-[0.16em] mb-1" style={{ fontSize: '10px', fontWeight: 700 }}>Upstream handoff</div>
+            <p className="text-[#08111F]" style={{ fontSize: '14px', lineHeight: 1.55 }}>
+              <span className="font-semibold">Receives from Lead Response &amp; Handling.</span>{' '}
+              <span className="text-[#4C5E6F]">Missed-call handoff, form/message context, and the conversation summary all travel into Follow-Up &amp; CRM so the next step starts with what already happened.</span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -658,6 +672,7 @@ function FUScope() {
       items: [
         'Active enquiry record',
         'Source and context',
+        'Communication history',
         'A named owner',
         'A current status',
         'The next task with a due time',
@@ -676,6 +691,7 @@ function FUScope() {
         'Bookings and appointments',
         'Consultations',
         'Callbacks promised in conversation',
+        'No-response check-ins',
         'Long-cycle "not yet" enquiries',
       ],
     },
@@ -688,7 +704,7 @@ function FUScope() {
       heading: 'Handoffs & visibility',
       summary: 'The system passes work cleanly — and the owner can see across all of it.',
       items: [
-        'Lead Response handoff (in)',
+        'Lead Response handoff (in) — missed-call + conversation context',
         'Review request handoff (out)',
         'Owner / practice-manager view',
         'A simple daily and weekly view',
@@ -890,8 +906,9 @@ function FUFitFaq() {
     { q: "Can it handle quote follow-up?", a: "Yes. Sent date, follow-up window, owner, and previous touches all live on the record — and the right reminder reaches the owner in time to do something about it." },
     { q: "Can it handle appointment reminders?", a: "Yes. Bookings, consultations, and appointment-style visits each get their own confirmation and reminder pattern — built around the practice's actual day, not a generic template." },
     { q: "How does it connect to Lead Response?", a: "Lead Response & Handling Systems take care of the first reply and the handoff. This system takes the enquiry from there — opening the record, attaching the owner, and scheduling the next step." },
+    { q: "Does this include missed-call replies or conversation handling?", a: "Those usually sit in Lead Response & Handling. Follow-Up & CRM receives the outcome — the enquiry, caller context, appointment request, quote request, or conversation summary — and makes sure the next step is owned." },
     { q: "How does it connect to Reviews?", a: "When completed work is marked done, the system hands the enquiry over to Reputation & Review Systems — so the right review ask is sent at the right moment, with the right context." },
-    { q: "What happens first?", a: "A follow-up review — where active enquiries live today, where ownership is unclear, where quotes go cold, where reminders miss. Then we agree the first paths to set up, in order of return." },
+    { q: "What happens first?", a: "A follow-up review — where active enquiries live today, where ownership is unclear, where quotes go cold, where reminders miss. Then we agree which next-step path should be tightened first." },
   ];
 
   return (

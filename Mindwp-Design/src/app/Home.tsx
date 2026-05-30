@@ -651,7 +651,7 @@ function SectionControlPoint() {
                   }}
                 >
                   <ShieldCheck size={9} color="#21B985" />
-                  yourbusiness.co.uk
+                  example service page
                 </span>
               </div>
 
@@ -671,7 +671,7 @@ function SectionControlPoint() {
                     className="text-[#08111F]"
                     style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '-0.005em' }}
                   >
-                    Northwell Roofing
+                    Example service site
                   </span>
                 </div>
                 <div className="hidden sm:flex items-center gap-3">
@@ -728,7 +728,7 @@ function SectionControlPoint() {
                       }}
                     >
                       <MapPin size={9} />
-                      NORTH LONDON · STORM RESPONSE
+                      NAMED LOCAL AREA · STORM RESPONSE
                     </div>
                     <div
                       className="text-[#08111F]"
@@ -740,13 +740,13 @@ function SectionControlPoint() {
                       }}
                     >
                       Roof gone after the storm?
-                      <span className="text-[#0E7D8C]"> We&rsquo;re out today.</span>
+                      <span className="text-[#0E7D8C]"> Quote request path visible.</span>
                     </div>
                     <p
                       className="mt-2 text-[#4C5E6F]"
                       style={{ fontSize: '12px', lineHeight: 1.5 }}
                     >
-                      Emergency repair, full reroof, insurance work. A real local
+                      Emergency repair, full reroof, insurance work. A local
                       crew, not a call centre.
                     </p>
                     <div className="mt-4 flex items-center gap-2.5 flex-wrap">
@@ -759,7 +759,7 @@ function SectionControlPoint() {
                           fontWeight: 700,
                         }}
                       >
-                        Get a same-day quote
+                        Request a quote
                         <ArrowRight size={11} />
                       </span>
                       <span
@@ -767,7 +767,7 @@ function SectionControlPoint() {
                         style={{ fontSize: '10.5px', fontWeight: 600 }}
                       >
                         <PhoneCall size={10} color="#0E7D8C" />
-                        020 7946 0214
+                        Speak to the team
                       </span>
                     </div>
                   </div>
@@ -787,24 +787,17 @@ function SectionControlPoint() {
                           <Star key={i} size={10} fill="#F4B740" color="#F4B740" />
                         ))}
                         <span
-                          className="ml-1 text-[#08111F]"
-                          style={{ fontSize: '11px', fontWeight: 700 }}
-                        >
-                          4.9
-                        </span>
-                        <span
                           className="ml-auto text-[#6F8190]"
                           style={{ fontSize: '9.5px', fontWeight: 600 }}
                         >
-                          312 reviews
+                          Recent verified reviews
                         </span>
                       </div>
                       <div
                         className="mt-2 text-[#4C5E6F]"
                         style={{ fontSize: '10.5px', lineHeight: 1.5 }}
                       >
-                        &ldquo;Came out the morning after the storm. Tarped the roof,
-                        scheduled the full repair the same week.&rdquo;
+                        Review snippet placed beside the CTA — sits where the visitor is deciding whether to act.
                       </div>
                       <div className="mt-2.5 pt-2.5 border-t flex items-center justify-between" style={{ borderColor: '#EEF3F6' }}>
                         <span
@@ -812,13 +805,13 @@ function SectionControlPoint() {
                           style={{ fontSize: '9.5px', fontWeight: 700 }}
                         >
                           <CheckCircle2 size={10} />
-                          Verified
+                          Recent
                         </span>
                         <span
                           className="text-[#6F8190]"
                           style={{ fontSize: '9.5px', fontWeight: 600 }}
                         >
-                          N6 · N8 · N10
+                          Local area covered
                         </span>
                       </div>
                     </div>
@@ -847,8 +840,8 @@ function SectionControlPoint() {
                   className="inline-flex items-center gap-1.5 text-[#0F7A57]"
                   style={{ fontSize: '10px', fontWeight: 700 }}
                 >
-                  <span className="w-1 h-1 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
-                  Open · responding now
+                  <span className="w-1 h-1 rounded-full bg-[#21B985]" />
+                  Response path active
                 </span>
               </div>
 
@@ -991,7 +984,7 @@ function ShallowWebsiteSurface() {
               fontWeight: 600,
             }}
           >
-            cooperplumbing.co.uk
+            example service site
           </span>
         </div>
 
@@ -1004,7 +997,7 @@ function ShallowWebsiteSurface() {
             className="text-[#08111F]"
             style={{ fontSize: '12.5px', fontWeight: 700, letterSpacing: '-0.005em' }}
           >
-            Cooper Plumbing
+            Example service site
           </span>
           <div className="hidden sm:flex items-center gap-4">
             {['Home', 'Services', 'About', 'Contact'].map(n => (
@@ -1030,7 +1023,7 @@ function ShallowWebsiteSurface() {
               letterSpacing: '-0.018em',
             }}
           >
-            Plumbing services in North London.
+            Plumbing services in your local area.
           </div>
           <p
             className="mt-2 text-[#6F8190] max-w-[380px]"
@@ -1082,7 +1075,7 @@ function ShallowWebsiteSurface() {
             className="text-[#6F8190]"
             style={{ fontSize: '11.5px', lineHeight: 1.55 }}
           >
-            Family-run plumbers serving North London for over twenty years. Fully
+            Family-run plumbers serving the local area for over twenty years. Fully
             qualified team and competitive rates.
           </p>
         </div>
@@ -1128,7 +1121,7 @@ function ShallowWebsiteSurface() {
                 className="text-[#4C5E6F]"
                 style={{ fontSize: '10.5px', fontWeight: 600 }}
               >
-                020 7946 0214
+                Contact route
               </div>
             </div>
             <div>
@@ -1142,7 +1135,7 @@ function ShallowWebsiteSurface() {
                 className="text-[#4C5E6F]"
                 style={{ fontSize: '10.5px', fontWeight: 600 }}
               >
-                info@cooperplumbing.co.uk
+                Generic enquiry address
               </div>
             </div>
             <div>
@@ -1165,7 +1158,7 @@ function ShallowWebsiteSurface() {
             style={{ borderColor: '#EEF3F6' }}
           >
             <span className="text-[#9CA3B0]" style={{ fontSize: '9.5px' }}>
-              © Cooper Plumbing
+              © Example service site
             </span>
             <span className="text-[#9CA3B0]" style={{ fontSize: '9.5px' }}>
               Privacy · Terms
@@ -1219,7 +1212,7 @@ function ConnectedWebsiteSurface() {
             }}
           >
             <ShieldCheck size={9} color="#21B985" />
-            cooperplumbing.co.uk
+            example service site
           </span>
         </div>
 
@@ -1239,7 +1232,7 @@ function ConnectedWebsiteSurface() {
               className="text-[#08111F]"
               style={{ fontSize: '12.5px', fontWeight: 700, letterSpacing: '-0.005em' }}
             >
-              Cooper Plumbing
+              Example service site
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-4">
@@ -1263,7 +1256,7 @@ function ConnectedWebsiteSurface() {
             }}
           >
             <PhoneCall size={9} />
-            020 7946 0214
+            Phone route visible
           </span>
         </div>
 
@@ -1296,7 +1289,7 @@ function ConnectedWebsiteSurface() {
               }}
             >
               <MapPin size={9} />
-              N1 — N22 · 24h response
+              NAMED LOCAL AREA · RESPONSE PATH ACTIVE
             </div>
             <div
               className="text-[#08111F]"
@@ -1307,8 +1300,8 @@ function ConnectedWebsiteSurface() {
                 letterSpacing: '-0.018em',
               }}
             >
-              Emergency plumber in North London —{' '}
-              <span className="text-[#0E7D8C]">today, not tomorrow.</span>
+              Emergency plumber in your local area —{' '}
+              <span className="text-[#0E7D8C]">availability route visible.</span>
             </div>
             <p
               className="mt-2 text-[#4C5E6F] max-w-[420px]"
@@ -1327,7 +1320,7 @@ function ConnectedWebsiteSurface() {
                   fontWeight: 700,
                 }}
               >
-                Get a same-day quote
+                Request a quote
                 <ArrowRight size={11} />
               </span>
               <span
@@ -1341,7 +1334,7 @@ function ConnectedWebsiteSurface() {
                 }}
               >
                 <PhoneCall size={11} color="#0E7D8C" />
-                020 7946 0214
+                Direct line
               </span>
             </div>
           </div>
@@ -1350,9 +1343,9 @@ function ConnectedWebsiteSurface() {
         {/* Service tiles with proof per card */}
         <div className="px-6 lg:px-8 py-5 grid grid-cols-3 gap-2.5">
           {[
-            { name: 'Boiler repair', stars: '4.9', meta: 'Same-day' },
-            { name: 'Burst pipe', stars: '4.9', meta: '90-min ETA' },
-            { name: 'No hot water', stars: '4.8', meta: 'Today' },
+            { name: 'Boiler repair', meta: 'Quote path visible' },
+            { name: 'Burst pipe', meta: 'Urgent route' },
+            { name: 'No hot water', meta: 'Quote path visible' },
           ].map(s => (
             <div
               key={s.name}
@@ -1372,16 +1365,10 @@ function ConnectedWebsiteSurface() {
               <div className="mt-1 flex items-center gap-1">
                 <Star size={9} color="#F4B740" fill="#F4B740" />
                 <span
-                  className="text-[#0E2740]"
-                  style={{ fontSize: '10px', fontWeight: 700 }}
-                >
-                  {s.stars}
-                </span>
-                <span
                   className="ml-1 text-[#6F8190]"
                   style={{ fontSize: '9.5px', fontWeight: 600 }}
                 >
-                  · {s.meta}
+                  {s.meta}
                 </span>
               </div>
             </div>
@@ -1399,21 +1386,21 @@ function ConnectedWebsiteSurface() {
               style={{ fontSize: '10.5px', fontWeight: 700 }}
             >
               <CheckCircle2 size={10} />
-              Gas Safe registered
+              Registered
             </span>
             <span className="text-[#D0EFF4]">·</span>
             <span
               className="inline-flex items-center gap-1 text-[#0E2740]"
               style={{ fontSize: '10.5px', fontWeight: 600 }}
             >
-              312 reviews
+              Recent verified reviews
             </span>
             <span className="text-[#D0EFF4]">·</span>
             <span
               className="inline-flex items-center gap-1 text-[#0E2740]"
               style={{ fontSize: '10.5px', fontWeight: 600 }}
             >
-              Insured to £2M
+              Insured
             </span>
           </div>
         </div>
@@ -1425,18 +1412,17 @@ function ConnectedWebsiteSurface() {
               <Star key={i} size={10} fill="#F4B740" color="#F4B740" />
             ))}
             <span
-              className="ml-1 text-[#08111F]"
-              style={{ fontSize: '11px', fontWeight: 700 }}
+              className="ml-1 text-[#6F8190]"
+              style={{ fontSize: '11px', fontWeight: 600 }}
             >
-              4.9
+              Recent verified review
             </span>
           </div>
           <div
             className="text-[#4C5E6F]"
             style={{ fontSize: '12px', lineHeight: 1.5 }}
           >
-            &ldquo;Pipe burst at 7am. Booked at 7:20. Engineer on site by 8:40 with a
-            fixed quote. Sorted.&rdquo;
+            Review snippet placed beside the CTA — where the visitor is deciding whether to act.
           </div>
         </div>
 
@@ -1449,14 +1435,14 @@ function ConnectedWebsiteSurface() {
             className="text-[#6F8190]"
             style={{ fontSize: '10px', fontWeight: 600 }}
           >
-            © Cooper Plumbing · N1—N22
+            © Example service site · local area covered
           </span>
           <span
             className="inline-flex items-center gap-1 text-[#0F7A57]"
             style={{ fontSize: '10px', fontWeight: 700 }}
           >
-            <span className="w-1 h-1 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
-            Replying now
+            <span className="w-1 h-1 rounded-full bg-[#21B985]" />
+            Response path active
           </span>
         </div>
       </div>
@@ -1577,14 +1563,14 @@ function SectionLocalVisibility() {
                     style={{ fontSize: '10px', fontWeight: 600 }}
                   >
                     <MapPin size={9} />
-                    N6
+                    Local
                   </span>
                 </div>
                 <div className="space-y-1.5">
                   {[
-                    { name: 'Listing one', rating: '4.6', highlight: false },
-                    { name: 'Listing two — the right business', rating: '4.9', highlight: true },
-                    { name: 'Listing three', rating: '4.4', highlight: false },
+                    { name: 'Listing one', rating: 'recent reviews', highlight: false },
+                    { name: 'Listing two — the right business', rating: 'recent reviews', highlight: true },
+                    { name: 'Listing three', rating: 'few reviews', highlight: false },
                   ].map((l, i) => (
                     <div
                       key={i}
@@ -1667,7 +1653,7 @@ function SectionLocalVisibility() {
                         letterSpacing: '-0.005em',
                       }}
                     >
-                      Real coverage, named locally.
+                      Coverage matched to the work, named locally.
                     </div>
                   </div>
                 </div>
@@ -1679,7 +1665,7 @@ function SectionLocalVisibility() {
                   Google Business Profile, the website, and the directories all agree.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {['N1', 'N6', 'N8', 'N10', 'N16', 'N22'].map(p => (
+                  {['Area 1', 'Area 2', 'Area 3', 'Area 4', 'Area 5', 'Area 6'].map(p => (
                     <span
                       key={p}
                       className="inline-flex items-center px-2 py-0.5 rounded-md"
@@ -1725,7 +1711,7 @@ function SectionLocalVisibility() {
                         letterSpacing: '-0.005em',
                       }}
                     >
-                      Recent, consistent, real.
+                      Recent, consistent, owned.
                     </div>
                   </div>
                 </div>
@@ -1863,7 +1849,7 @@ const AFTER_CONTACT_PATHS: ReadonlyArray<AfterContactPath> = [
   {
     key: 'consultation',
     label: 'Consultation request',
-    qualifier: 'Clinical intake',
+    qualifier: 'Consultation request',
     icon: HeartPulse,
     zoneColor: '#6B4FB8',
   },
@@ -2059,13 +2045,13 @@ function FormEnquirySurface() {
               lineHeight: 1.2,
             }}
           >
-            Boiler not heating — N6, today
+            Repair enquiry — named local area
           </h3>
           <div
             className="mt-1 text-[#6F8190]"
             style={{ fontSize: '12.5px', fontWeight: 500 }}
           >
-            Arrived 11:42 from /services/boiler-repair
+            Arrived during working hours from a service page
           </div>
         </div>
         <div className="shrink-0">
@@ -2076,12 +2062,12 @@ function FormEnquirySurface() {
       {/* Labeled field grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
         {[
-          { label: 'Source page', value: '/services/boiler-repair' },
-          { label: 'What they need', value: 'Emergency · same-day' },
-          { label: 'Area', value: 'North London · N6' },
-          { label: 'Replying', value: 'M. Patel — on duty' },
-          { label: 'First reply', value: 'Sent 11:49 — seven minutes later' },
-          { label: 'Next step', value: 'Chase by 14:00 if no reply' },
+          { label: 'Source page', value: 'Service or treatment page' },
+          { label: 'What they need', value: 'Quote request · time-sensitive' },
+          { label: 'Area', value: 'Named local area' },
+          { label: 'Replying', value: 'Service manager — owner attached' },
+          { label: 'First reply', value: 'Acknowledged while still fresh' },
+          { label: 'Next step', value: 'Chase visible if no reply' },
         ].map((field, i) => (
           <div key={i}>
             <div
@@ -2135,13 +2121,13 @@ function CallRecoverySurface() {
               lineHeight: 1.2,
             }}
           >
-            Saturday 09:14 — missed call from N8
+            Weekend missed call — recovered with context
           </h3>
           <div
             className="mt-1 text-[#6F8190]"
             style={{ fontSize: '12.5px', fontWeight: 500 }}
           >
-            Out-of-hours · service line tracked
+            After-hours · service line tracked
           </div>
         </div>
         <div className="shrink-0">
@@ -2178,14 +2164,14 @@ function CallRecoverySurface() {
               className="mt-0.5 text-[#6F8190]"
               style={{ fontSize: '12px', lineHeight: 1.55 }}
             >
-              Number logged · service line tracked · area matched to N8.
+              Caller logged · service line tracked · area attached.
             </p>
           </div>
           <span
-            className="text-[#9CA3B0] shrink-0 tabular-nums"
+            className="text-[#9CA3B0] shrink-0"
             style={{ fontSize: '11px', fontWeight: 600 }}
           >
-            09:14
+            After-hours
           </span>
         </div>
 
@@ -2222,10 +2208,10 @@ function CallRecoverySurface() {
               </div>
             </div>
             <span
-              className="text-[#9CA3B0] shrink-0 tabular-nums"
+              className="text-[#9CA3B0] shrink-0"
               style={{ fontSize: '11px', fontWeight: 600 }}
             >
-              09:14
+              Acknowledged
             </span>
           </div>
           {/* SMS bubble */}
@@ -2240,7 +2226,7 @@ function CallRecoverySurface() {
             }}
           >
             <span style={{ fontStyle: 'italic' }}>
-              &ldquo;Sorry we missed you — calling you back inside 15 minutes.&rdquo;
+              &ldquo;Sorry we missed you — someone on the team has been notified and will follow up.&rdquo;
             </span>
           </div>
         </div>
@@ -2266,20 +2252,20 @@ function CallRecoverySurface() {
           </div>
           <div className="min-w-0 flex-1">
             <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
-              Callback completed — job booked
+              Callback ownership attached
             </div>
             <p
               className="mt-0.5 text-[#6F8190]"
               style={{ fontSize: '12px', lineHeight: 1.55 }}
             >
-              On-call engineer rang back · booked for the same afternoon.
+              Service team owns the call route · the right person follows up with context.
             </p>
           </div>
           <span
-            className="text-[#9CA3B0] shrink-0 tabular-nums"
+            className="text-[#9CA3B0] shrink-0"
             style={{ fontSize: '11px', fontWeight: 600 }}
           >
-            09:23
+            Owned
           </span>
         </div>
       </div>
@@ -2297,9 +2283,9 @@ function CallRecoverySurface() {
 
 function QuoteFollowupSurface() {
   const steps = [
-    { label: 'Sent', sub: 'Fri 15:20', state: 'done' as const },
-    { label: 'Soft chase', sub: 'Mon 10:00', state: 'done' as const },
-    { label: 'Owner check', sub: 'Wed', state: 'active' as const },
+    { label: 'Sent', sub: 'Owner attached', state: 'done' as const },
+    { label: 'Soft chase', sub: 'Scheduled', state: 'done' as const },
+    { label: 'Owner check', sub: 'This week', state: 'active' as const },
     { label: 'Decision', sub: 'Pending', state: 'pending' as const },
   ];
   return (
@@ -2325,13 +2311,13 @@ function QuoteFollowupSurface() {
               lineHeight: 1.2,
             }}
           >
-            Roofing repair — Friday quote
+            Quote sent — chase path visible
           </h3>
           <div
             className="mt-1 text-[#6F8190]"
             style={{ fontSize: '12.5px', fontWeight: 500 }}
           >
-            Sent Friday afternoon · owned by M. Patel
+            Sent during working hours · quote owner attached
           </div>
         </div>
         <div className="shrink-0">
@@ -2414,14 +2400,14 @@ function QuoteFollowupSurface() {
           className="text-[#9CA3B0] uppercase tracking-[0.12em] mb-1.5"
           style={{ fontSize: '9px', fontWeight: 700 }}
         >
-          Owner note · Wed
+          Owner note · this week
         </div>
         <p
           className="text-[#0E2740]"
           style={{ fontSize: '13px', fontWeight: 500, lineHeight: 1.55 }}
         >
-          Spoke briefly — they need a decision from the insurer. Re-scheduled the next
-          check-in for Friday morning. Quote stays open, not silently lost.
+          Spoke briefly — they are waiting on a decision. Re-scheduled the next check-in
+          on a defined cadence. Quote stays open, not silently lost.
         </p>
       </div>
 
@@ -2449,7 +2435,7 @@ function ConsultationIntakeSurface() {
             className="text-[#9CA3B0] uppercase tracking-[0.14em] mb-1"
             style={{ fontSize: '10px', fontWeight: 700 }}
           >
-            Consultation intake
+            Consultation request
           </div>
           <h3
             className="text-[#08111F]"
@@ -2460,13 +2446,13 @@ function ConsultationIntakeSurface() {
               lineHeight: 1.2,
             }}
           >
-            Implant consultation — pre-visit booked
+            Consultation request — pre-visit context attached
           </h3>
           <div
             className="mt-1 text-[#6F8190]"
             style={{ fontSize: '12.5px', fontWeight: 500 }}
           >
-            From /implants · routed before reception
+            From a treatment page · practice enquiry route
           </div>
         </div>
         <div className="shrink-0">
@@ -2484,10 +2470,10 @@ function ConsultationIntakeSurface() {
             className="text-[#6B4FB8] uppercase tracking-[0.12em] mb-1.5"
             style={{ fontSize: '9.5px', fontWeight: 700 }}
           >
-            Request arrived · Tuesday
+            Request arrived · during practice hours
           </div>
           <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
-            From the implants page, with the pre-visit form filled in
+            From the treatment page, with the pre-visit form filled in
           </div>
         </div>
 
@@ -2500,14 +2486,14 @@ function ConsultationIntakeSurface() {
               className="text-[#9CA3B0] uppercase tracking-[0.12em]"
               style={{ fontSize: '9.5px', fontWeight: 700 }}
             >
-              Reviewed by clinical lead · same day
+              Briefed by the practice team
             </div>
             <span className="text-[#6B4FB8]" style={{ fontSize: '11px', fontWeight: 600 }}>
-              Dr. A. Patel
+              Practice clinician
             </span>
           </div>
           <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
-            The right clinician sees the request before reception schedules anything.
+            The right person on the practice team is briefed before scheduling — without sitting in a shared inbox.
           </div>
         </div>
 
@@ -2523,10 +2509,10 @@ function ConsultationIntakeSurface() {
             className="text-[#0F7A57] uppercase tracking-[0.12em] mb-1.5"
             style={{ fontSize: '9.5px', fontWeight: 700 }}
           >
-            Pre-visit reminder · 24h before
+            Pre-visit reminder · day before
           </div>
           <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>
-            Appointment reminder and prep notes go out the day before — automatically.
+            Appointment reminder and prep notes go out the day before the visit.
           </div>
         </div>
       </div>
@@ -2535,7 +2521,7 @@ function ConsultationIntakeSurface() {
       <div className="mt-6 pt-5 border-t" style={{ borderColor: '#EEF3F6' }}>
         <p className="text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
           Consultation requests don&rsquo;t sit in a shared inbox waiting to be
-          spotted. They reach the right clinician before scheduling.
+          spotted. They reach the right person on the practice team with context attached.
         </p>
       </div>
     </div>
@@ -2984,7 +2970,7 @@ function SectionShift() {
       when: 'By the third month',
       title: 'Follow-up has a rhythm.',
       body:
-        'Quotes get a polite chase without anyone remembering. Consultation requests reach the right clinician before reception sees them.',
+        'Quotes get a polite chase without anyone remembering. Consultation requests reach the right person on the practice team without sitting in a shared inbox.',
     },
     {
       n: '03',
@@ -3195,7 +3181,7 @@ function RoofingSurface() {
           }}
         >
           <ShieldCheck size={9} color="#21B985" />
-          roofing site · emergency
+          example roofing page
         </span>
       </div>
 
@@ -3240,14 +3226,14 @@ function RoofingSurface() {
             }}
           >
             Roof gone after the storm?{' '}
-            <span className="text-[#9A6F12]">We&rsquo;re out today.</span>
+            <span className="text-[#9A6F12]">Quote request path visible.</span>
           </div>
           <p
             className="mt-2 text-[#4C5E6F] max-w-[420px]"
             style={{ fontSize: '12.5px', lineHeight: 1.5 }}
           >
-            Emergency tarp, repair, and full reroof. Real local crews. Same-day quote
-            on storm-week jobs.
+            Emergency tarp, repair, and full reroof. Local crew. Quote follows during
+            working hours.
           </p>
           <div className="mt-4 flex items-center gap-2.5 flex-wrap">
             <span
@@ -3259,7 +3245,7 @@ function RoofingSurface() {
                 fontWeight: 700,
               }}
             >
-              Get a same-day quote
+              Request a quote
               <ArrowRight size={11} />
             </span>
             <span
@@ -3267,7 +3253,7 @@ function RoofingSurface() {
               style={{ fontSize: '11px', fontWeight: 600 }}
             >
               <PhoneCall size={10} color="#9A6F12" />
-              020 7946 0214
+              Direct line
             </span>
           </div>
         </div>
@@ -3283,24 +3269,18 @@ function RoofingSurface() {
             <Star key={i} size={10} fill="#F4B740" color="#F4B740" />
           ))}
           <span
-            className="ml-1 text-[#08111F]"
-            style={{ fontSize: '11px', fontWeight: 700 }}
-          >
-            4.9
-          </span>
-          <span
             className="ml-2 text-[#6F8190]"
             style={{ fontSize: '10.5px', fontWeight: 600 }}
           >
-            312 reviews · Verified · N6—N10
+            Recent verified reviews · Local area covered
           </span>
         </div>
         <span
           className="inline-flex items-center gap-1.5 text-[#0F7A57]"
           style={{ fontSize: '10px', fontWeight: 700 }}
         >
-          <span className="w-1 h-1 rounded-full bg-[#21B985] shadow-[0_0_6px_#21B985]" />
-          Replying now
+          <span className="w-1 h-1 rounded-full bg-[#21B985]" />
+          Response path active
         </span>
       </div>
     </div>
@@ -3343,14 +3323,14 @@ function PlumbingSurface() {
               className="text-[#08111F] truncate"
               style={{ fontSize: '11.5px', fontWeight: 700 }}
             >
-              Engineer · same-day cover
+              Service team · call route
             </div>
             <div
               className="text-[#0F7A57] flex items-center gap-1"
               style={{ fontSize: '9.5px', fontWeight: 600 }}
             >
               <span className="w-1 h-1 rounded-full bg-[#21B985]" />
-              On duty · N6
+              On duty · named local area
             </div>
           </div>
         </div>
@@ -3361,7 +3341,7 @@ function PlumbingSurface() {
             className="text-center text-[#9CA3B0]"
             style={{ fontSize: '9.5px', fontWeight: 600 }}
           >
-            Missed call · Sat 09:14
+            Missed call · after-hours
           </div>
 
           <div className="flex justify-end">
@@ -3374,7 +3354,7 @@ function PlumbingSurface() {
                 lineHeight: 1.45,
               }}
             >
-              Sorry we missed you. Calling back in 15 minutes — burst pipe, no water?
+              Sorry we missed you — someone on the team has been notified. What can we help with?
             </div>
           </div>
 
@@ -3389,7 +3369,7 @@ function PlumbingSurface() {
                 border: '1px solid #E6EEF3',
               }}
             >
-              Yes please — burst pipe upstairs.
+              Burst pipe upstairs — fairly urgent.
             </div>
           </div>
 
@@ -3403,7 +3383,7 @@ function PlumbingSurface() {
                 lineHeight: 1.45,
               }}
             >
-              On my way — 25 minutes. Stay safe.
+              Passed through with your details. The right person on the team will follow up.
             </div>
           </div>
         </div>
@@ -3423,7 +3403,7 @@ function PlumbingSurface() {
             className="text-[#0F7A57]"
             style={{ fontSize: '9.5px', fontWeight: 700 }}
           >
-            +9 min
+            Owner attached
           </span>
         </div>
       </div>
@@ -3484,10 +3464,10 @@ function FoundationSurface() {
       {/* Document body */}
       <div className="px-4 py-3 space-y-2.5">
         {[
-          { label: 'Site visit', value: 'Completed · Tuesday' },
+          { label: 'Site visit', value: 'Completed during the working week' },
           { label: 'Findings', value: 'Settling at front bay; minor crack pattern' },
           { label: 'Recommended scope', value: 'Underpinning to bay; monitor adjacent' },
-          { label: 'Validity', value: '14 days from issue' },
+          { label: 'Validity', value: 'Stated on the proposal' },
         ].map((row, i) => (
           <div key={i}>
             <div
@@ -3521,14 +3501,14 @@ function FoundationSurface() {
           className="text-[#08111F]"
           style={{ fontSize: '11px', fontWeight: 600 }}
         >
-          M. Patel · Principal engineer
+          Quote owner · Principal engineer
         </div>
         <div
           className="mt-2 text-[#6F8190] flex items-center justify-between gap-2"
           style={{ fontSize: '9.5px', fontWeight: 600 }}
         >
           <span>Sent · with client</span>
-          <span>Owner: chase Mon 10:00</span>
+          <span>Owner: chase scheduled</span>
         </div>
       </div>
     </div>
@@ -3569,14 +3549,14 @@ function DentalSurface() {
             lineHeight: 1.3,
           }}
         >
-          Implant consultation
+          Consultation visit
         </div>
         <div
           className="mt-1 text-[#6F8190] flex items-center gap-2"
           style={{ fontSize: '10.5px', fontWeight: 600 }}
         >
           <Clock size={10} />
-          Thursday · 10:30 · 45 minutes
+          Consultation availability shown
         </div>
       </div>
 
@@ -3591,8 +3571,8 @@ function DentalSurface() {
           </div>
           <div className="space-y-1">
             {[
-              'Procedure step by step',
-              'Recovery timing and care',
+              'What the visit covers',
+              'What to expect on the day',
               'Indicative cost range',
             ].map((line, i) => (
               <div
@@ -3618,7 +3598,7 @@ function DentalSurface() {
             With you on the day
           </div>
           <div className="text-[#08111F]" style={{ fontSize: '11.5px', fontWeight: 600 }}>
-            Dr. A. Patel · Clinical lead
+            Practice clinician
           </div>
         </div>
       </div>
@@ -3629,7 +3609,7 @@ function DentalSurface() {
         style={{ borderColor: '#EEF3F6', background: '#FCFEFE' }}
       >
         <span className="text-[#6F8190]" style={{ fontSize: '9.5px', fontWeight: 600 }}>
-          Reminder · 24h before
+          Reminder · day before the visit
         </span>
         <span
           className="inline-flex items-center gap-1 text-[#6B4FB8]"
@@ -3775,7 +3755,7 @@ function SectionScenarios() {
       audience: 'Specialist clinic',
       tone: '#6B4FB8',
       dot: '#9B7DE0',
-      copy: 'A patient compares three clinics on a Sunday. If the implant page doesn’t explain procedure, recovery, and cost plainly, the consultation request goes elsewhere. If it does — and a clinician follows up — it stays.',
+      copy: 'A nearby buyer compares three clinics on a Sunday. If the treatment page does not explain what the visit covers, what to expect, and indicative cost plainly, the consultation request goes elsewhere. If it does — and the practice team follows up — it stays.',
     },
     {
       surface: <DermatologySurface />,
@@ -3783,7 +3763,7 @@ function SectionScenarios() {
       audience: 'Specialist clinic',
       tone: '#0F7A57',
       dot: '#21B985',
-      copy: 'Appointment kept. Patient happy. Without a timed review request, the moment passes and the website never reflects the experience. With one, the next visitor sees real feedback from real visits.',
+      copy: 'Appointment kept. The communication experience landed well. Without a timed review request, the moment passes and the website never reflects it. With one, recent practice-experience reviews land beside the page that needs them.',
     },
   ];
 
@@ -3800,7 +3780,7 @@ function SectionScenarios() {
               Selected scenarios
             </div>
             <h2 className="text-[#08111F]">
-              Different trades.{' '}
+              Different services.{' '}
               <span className="text-[#4C5E6F]">Same kind of moment.</span>
             </h2>
           </div>
@@ -4031,7 +4011,7 @@ function SectionSurfaces() {
                   className="text-[#08111F]"
                   style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '-0.005em' }}
                 >
-                  Northwell Heating
+                  Example service site
                 </span>
               </div>
               <div className="hidden sm:flex items-center gap-4">
@@ -4054,7 +4034,7 @@ function SectionSurfaces() {
                   fontWeight: 700,
                 }}
               >
-                Same-day quote
+                Request a quote
               </span>
             </div>
 
@@ -4081,7 +4061,7 @@ function SectionSurfaces() {
                   }}
                 >
                   <MapPin size={9} />
-                  NORTH LONDON
+                  NAMED LOCAL AREA
                 </div>
                 <div
                   className="text-[#08111F]"
@@ -4092,13 +4072,13 @@ function SectionSurfaces() {
                     letterSpacing: '-0.018em',
                   }}
                 >
-                  Same-day boiler repair — engineer at your door, not a callback.
+                  Boiler repair — quote path visible, not just a callback form.
                 </div>
                 <div
                   className="mt-2 text-[#4C5E6F]"
                   style={{ fontSize: '13.5px', lineHeight: 1.55 }}
                 >
-                  Gas Safe registered. Local. Fixed-price quotes before any work starts.
+                  Registered. Local. Fixed-price quotes before any work starts.
                 </div>
               </div>
 
@@ -4136,24 +4116,18 @@ function SectionSurfaces() {
                     <Star key={i} size={12} fill="#F4B740" color="#F4B740" />
                   ))}
                   <span
-                    className="ml-1 text-[#0E2740]"
-                    style={{ fontSize: '13px', fontWeight: 700 }}
-                  >
-                    4.9
-                  </span>
-                  <span
-                    className="ml-1 text-[#6F8190]"
+                    className="ml-2 text-[#6F8190]"
                     style={{ fontSize: '11.5px', fontWeight: 600 }}
                   >
-                    · 312 verified reviews
+                    Recent verified reviews placed beside the CTA
                   </span>
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5">
                   {[
-                    { label: 'Gas Safe', icon: ShieldCheck },
-                    { label: 'N1—N22', icon: MapPin },
-                    { label: 'Insured to £2M', icon: CheckCircle2 },
-                    { label: 'Reply in minutes', icon: Clock },
+                    { label: 'Registered', icon: ShieldCheck },
+                    { label: 'Local area covered', icon: MapPin },
+                    { label: 'Insured', icon: CheckCircle2 },
+                    { label: 'Response path active', icon: Clock },
                   ].map(t => {
                     const Icon = t.icon;
                     return (
@@ -4194,7 +4168,7 @@ function SectionSurfaces() {
                       fontWeight: 700,
                     }}
                   >
-                    Get a same-day quote
+                    Request a quote
                     <ArrowRight size={13} />
                   </span>
                   <span
@@ -4202,14 +4176,14 @@ function SectionSurfaces() {
                     style={{ fontSize: '13px', fontWeight: 700 }}
                   >
                     <PhoneCall size={12} color="#0F7A57" />
-                    020 7946 0214
+                    Speak to the team
                   </span>
                 </div>
                 <div
                   className="mt-3 text-[#6F8190]"
                   style={{ fontSize: '12px', fontWeight: 500 }}
                 >
-                  Goes to the engineer on duty — captured, owned, routed, and replied to fast.
+                  Goes to the right person on the team — captured, owned, routed, and replied to with context.
                 </div>
               </div>
             </div>
@@ -4234,7 +4208,7 @@ function SectionSurfaces() {
                   style={{ fontSize: '13px', fontWeight: 700 }}
                 >
                   <MapPin size={12} color="#0E7D8C" />
-                  N1—N22 · same-day cover
+                  Local area covered · response path active
                 </div>
                 <p
                   className="text-[#6F8190]"
@@ -4845,7 +4819,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What about missed calls and follow-up?',
-    a: 'Missed-call recovery sits with Lead Response & Handling — a same-line text goes back instantly, the engineer or clinician calls back. Quote follow-up and consultation reminders sit with Follow-Up & CRM — paced chasing, not memory.',
+    a: 'Missed-call recovery sits with Lead Response & Handling — a same-line text goes back while the enquiry is still fresh, and the right person on the team follows up. Quote follow-up and consultation reminders sit with Follow-Up & CRM — paced chasing, not memory.',
   },
   {
     q: 'What kind of businesses is this for?',
@@ -4853,7 +4827,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How long before we see results?',
-    a: 'Fewer missed enquiries inside a few weeks. A calmer working week inside a few months. The compounding takes longer — that is the point.',
+    a: 'Fewer missed enquiries once the response paths are in place. A calmer working week as ownership and follow-up settle in. The compounding takes longer — that is the point.',
   },
   {
     q: 'How do we start?',
@@ -4925,10 +4899,11 @@ function SectionFAQ() {
 // ============================================================================
 
 const CTA_EXPECTATIONS = [
-  { num: '01', text: 'Where work is already coming in today' },
-  { num: '02', text: 'What is getting answered — and what is not' },
-  { num: '03', text: 'What to fix first, and what to leave' },
-  { num: '04', text: 'What changes once the gaps are closed' },
+  { num: '01', text: 'The website — how clearly each page carries the decision' },
+  { num: '02', text: 'Local visibility — whether nearby buyers find and trust you' },
+  { num: '03', text: 'First response — what gets answered and what slips' },
+  { num: '04', text: 'Follow-up — who owns the next step after the reply' },
+  { num: '05', text: 'Reviews — where good work becomes visible proof' },
 ];
 
 function SectionCTA() {
@@ -4987,26 +4962,32 @@ function SectionCTA() {
             <div className="col-span-12 lg:col-span-5">
               <div className="rounded-2xl bg-white/[0.07] border border-white/16 p-8 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
                 <div
-                  className="text-white/55 uppercase tracking-[0.14em] mb-5"
+                  className="text-white/55 uppercase tracking-[0.14em] mb-2"
                   style={{ fontSize: '10.5px', fontWeight: 600 }}
                 >
-                  What we will look at
+                  What we will look at — across the five systems
                 </div>
-                <div className="space-y-3">
+                <div
+                  className="text-white/55 mb-5"
+                  style={{ fontSize: '12.5px', lineHeight: 1.5 }}
+                >
+                  Website, local visibility, response, follow-up, and reviews — read together, not in isolation.
+                </div>
+                <div className="space-y-2.5">
                   {CTA_EXPECTATIONS.map(s => (
                     <div
                       key={s.num}
-                      className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.06] border border-white/10"
+                      className="flex items-center gap-4 p-3.5 rounded-xl bg-white/[0.06] border border-white/10"
                     >
                       <span
                         className="text-[#35C7D8] shrink-0"
-                        style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em' }}
+                        style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em' }}
                       >
                         {s.num}
                       </span>
                       <span
                         className="text-white/90"
-                        style={{ fontSize: '15.5px', lineHeight: 1.5 }}
+                        style={{ fontSize: '14px', lineHeight: 1.45 }}
                       >
                         {s.text}
                       </span>

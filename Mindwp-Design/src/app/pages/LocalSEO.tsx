@@ -22,7 +22,7 @@ function LSAHero() {
           </p>
           <div className="mt-10 flex items-center gap-7 flex-wrap">
             <a href="#cta" className="inline-flex items-center gap-2 bg-white text-[#061323] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors" style={{ fontSize: '15px', fontWeight: 600 }}>
-              Start a Conversation <ArrowRight size={16} />
+              Review my local visibility <ArrowRight size={16} />
             </a>
           </div>
           <div className="mt-12 flex items-center gap-2 flex-wrap">
@@ -40,58 +40,49 @@ function LSAHero() {
           <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent p-6">
             <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/8">
               <div>
-                <div className="text-white/45 uppercase tracking-[0.16em]" style={{ fontSize: '10px', fontWeight: 700 }}>Local Presence</div>
-                <div className="text-white mt-1" style={{ fontSize: '17px', fontWeight: 600 }}>Postcode N6 · 3 mi radius</div>
+                <div className="text-white/45 uppercase tracking-[0.16em]" style={{ fontSize: '10px', fontWeight: 700 }}>Local trust signal check</div>
+                <div className="text-white mt-1" style={{ fontSize: '17px', fontWeight: 600 }}>Named local area</div>
               </div>
               <span className="inline-flex items-center gap-1.5 text-[#F4B740]" style={{ fontSize: '11px', fontWeight: 600 }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F4B740] shadow-[0_0_6px_#F4B740]" /> Weak
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F4B740]" /> Pieces not in step
               </span>
             </div>
 
-            {/* Map pack indicator */}
+            {/* What a nearby buyer sees */}
             <div className="mb-3 p-4 rounded-lg border border-white/8 bg-white/[0.02]">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-white/50 uppercase tracking-[0.14em]" style={{ fontSize: '10px', fontWeight: 700 }}>Local pack visibility</span>
-                <span className="text-[#E76F6F]" style={{ fontSize: '10.5px', fontWeight: 600 }}>Not shown</span>
+                <span className="text-white/50 uppercase tracking-[0.14em]" style={{ fontSize: '10px', fontWeight: 700 }}>What a nearby buyer sees first</span>
+                <span className="text-[#F4B740]" style={{ fontSize: '10.5px', fontWeight: 600 }}>Mixed</span>
               </div>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="space-y-2">
                 {[
-                  { label: "Competitor A", state: "ok" },
-                  { label: "Competitor B", state: "ok" },
-                  { label: "Competitor C", state: "ok" },
+                  { label: 'Listing details inconsistent', tone: '#F4B740' },
+                  { label: 'Review activity not visible', tone: '#E76F6F' },
+                  { label: 'Service pages missing', tone: '#F4B740' },
                 ].map((m, i) => (
-                  <div key={i} className="px-2.5 py-2 rounded-md bg-white/[0.04] border border-white/8">
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <span className="w-1 h-1 rounded-full bg-[#21B985]" />
-                      <span className="text-white/45" style={{ fontSize: '9.5px', fontWeight: 600 }}>POS {i + 1}</span>
-                    </div>
-                    <div className="text-white/85 truncate" style={{ fontSize: '11px' }}>{m.label}</div>
+                  <div key={i} className="px-3 py-2 rounded-md bg-white/[0.04] border border-white/8 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: m.tone, boxShadow: `0 0 6px ${m.tone}` }} />
+                    <span className="text-white/85 flex-1 truncate" style={{ fontSize: '11.5px' }}>{m.label}</span>
                   </div>
                 ))}
-              </div>
-              <div className="mt-2 px-2.5 py-2 rounded-md border border-[#E76F6F]/30 bg-[#FDECEC]/5">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F] shadow-[0_0_6px_#E76F6F]" />
-                  <span className="text-[#E76F6F]" style={{ fontSize: '11px', fontWeight: 600 }}>You — not shown nearby</span>
-                </div>
               </div>
             </div>
 
             {/* Other signals */}
             <div className="grid grid-cols-2 gap-2">
               {[
-                { label: "Services listed", value: "2 of 7", state: "warn" },
-                { label: "Listings agree", value: "62%", state: "warn" },
-                { label: "Reviews this month", value: "0", state: "risk" },
-                { label: "Service area", value: "Partial", state: "warn" },
+                { label: 'Service area', value: 'Service area unclear', state: 'warn' },
+                { label: 'Listings', value: 'Listing details inconsistent', state: 'warn' },
+                { label: 'Reviews', value: 'Review activity not visible', state: 'risk' },
+                { label: 'Local proof', value: 'Local proof thin', state: 'warn' },
               ].map((s) => {
-                const tone = s.state === "risk" ? "#E76F6F" : "#F4B740";
+                const tone = s.state === 'risk' ? '#E76F6F' : '#F4B740';
                 return (
                   <div key={s.label} className="px-3 py-2.5 rounded-md border border-white/8 bg-white/[0.02]">
-                    <div className="text-white/45" style={{ fontSize: '10px' }}>{s.label}</div>
-                    <div className="flex items-center justify-between mt-1">
-                      <span className="text-white" style={{ fontSize: '14px', fontWeight: 600 }}>{s.value}</span>
-                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: tone, boxShadow: `0 0 6px ${tone}` }} />
+                    <div className="text-white/45 uppercase tracking-[0.12em]" style={{ fontSize: '9px', fontWeight: 600 }}>{s.label}</div>
+                    <div className="flex items-center justify-between mt-1 gap-2">
+                      <span className="text-white" style={{ fontSize: '11.5px', fontWeight: 600, lineHeight: 1.3 }}>{s.value}</span>
+                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: tone }} />
                     </div>
                   </div>
                 );
@@ -305,7 +296,7 @@ function LSATrustQuadrant() {
             Trust is built in four places.
           </h2>
           <p className="mt-6 text-[#4C5E6F]" style={{ fontSize: '17px', lineHeight: 1.6 }}>
-            Each one either reinforces the same choice or breaks it. None of them have to be perfect. They have to point the same way.
+            Each one either reinforces the same choice or breaks it. None of them have to be perfect. They have to support the same decision.
           </p>
         </div>
 
@@ -451,7 +442,7 @@ function LSAMaintenanceContrast() {
             <div className="relative">
               <div className="flex items-center justify-between mb-6">
                 <span className="text-[#35C7D8] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Steady local presence</span>
-                <span className="text-white/55" style={{ fontSize: '11px' }}>Connected · Compounding</span>
+                <span className="text-white/55" style={{ fontSize: '11px' }}>Connected · Maintained</span>
               </div>
               <div className="text-white mb-7" style={{ fontSize: '26px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
                 Listings, pages, reviews,<br />service areas — kept in step.
@@ -515,7 +506,7 @@ function LSACoverageMap() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#35C7D8] shadow-[0_0_8px_#35C7D8]" />
                 <span className="text-white" style={{ fontSize: '13px', fontWeight: 600 }}>Local coverage map</span>
               </div>
-              <span className="text-white/45" style={{ fontSize: '11px' }}>Eight handled areas · one connected picture</span>
+              <span className="text-white/45" style={{ fontSize: '11px' }}>The pieces local buyers actually compare</span>
             </div>
 
             {/* Service-area concentric */}
@@ -605,7 +596,7 @@ function LSAWebsiteFirst() {
   ];
 
   const flow = [
-    { label: 'Local search', note: '"invisalign N6", "emergency plumber near me"', icon: Search },
+    { label: 'Local search', note: '"clear aligner consultation near me", "emergency plumber near me"', icon: Search },
     { label: 'Listing chosen', note: 'The local pack returns three options. One gets the click.', icon: Globe },
     { label: 'Page lands', note: 'The visitor arrives on the website — three seconds to confirm.', icon: MousePointerClick },
   ];
@@ -777,7 +768,7 @@ function VisibilityCycle() {
 
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-gradient-to-br from-[#061323] to-[#103E5A] flex flex-col items-center justify-center text-center">
                 <RefreshCw size={22} className="text-[#35C7D8] mb-2" />
-                <div className="text-white" style={{ fontSize: '14px', fontWeight: 600 }}>Compounding</div>
+                <div className="text-white" style={{ fontSize: '14px', fontWeight: 600 }}>Maintained</div>
                 <div className="text-white/50 mt-1" style={{ fontSize: '11px' }}>cycle</div>
               </div>
 
@@ -810,20 +801,20 @@ function LSAInPractice() {
     "Listing and page said different things",
     "Service area missing from the page itself",
     "Reviews tucked under a separate tab",
-    "Treatment buried on a generic services page",
+    "Service or treatment buried on a generic services page",
     "One generic contact form, no matter the intent",
   ];
   const aligned = [
     "Listing brought into agreement with the page",
     "A page named the way the search is phrased",
     "Service area named in the page body",
-    "Recent reviews placed beside the treatment they describe",
+    "Recent reviews placed beside the service or treatment they describe",
     "A form that asks the specific question",
   ];
   const easier = [
-    "They see the treatment named in the page title",
-    "They see their neighbourhood named on the page",
-    "Recent local work confirms it is a real fit",
+    "They see the service or treatment named in the page title",
+    "They see their named local area on the page",
+    "Recent reviews and service-area signals support the decision",
     "The next step matches what brought them in",
     "They have what they need to act — without guessing",
   ];
@@ -838,7 +829,7 @@ function LSAInPractice() {
             <span className="text-[#4C5E6F]">has a clear place to land.</span>
           </h2>
           <p className="mt-6 text-[#4C5E6F]" style={{ fontSize: '16.5px', lineHeight: 1.65 }}>
-            An illustrative scenario at a specialist dental practice. What shifts when the pieces a buyer checks stop contradicting each other.
+            An illustrative scenario at an established local provider — service business or specialist clinic. What shifts when the pieces a buyer checks stop contradicting each other.
           </p>
         </div>
 
@@ -854,10 +845,10 @@ function LSAInPractice() {
                   <span className="text-[#35C7D8] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>The scenario</span>
                 </div>
                 <div className="text-white" style={{ fontSize: '22px', fontWeight: 700, letterSpacing: '-0.015em', lineHeight: 1.25 }}>
-                  Specialist dental practice. Real demand nearby. The pieces do not agree.
+                  Established local provider. Real demand nearby. The pieces do not agree.
                 </div>
                 <p className="mt-2 text-white/55" style={{ fontSize: '13px', lineHeight: 1.6 }}>
-                  An established practice with patients searching locally — but the pieces a nearby patient checks are not yet pointing the same way.
+                  An established service business or specialist clinic with nearby buyers searching locally — but the pieces a nearby buyer checks are not yet supporting the same decision.
                 </p>
               </div>
               <div className="col-span-12 md:col-span-5">
@@ -1021,7 +1012,7 @@ function LSAFaq() {
     { q: "What if the website needs fixing first?", a: "Often it does. Listings cannot fix a page the visitor walks away from. If the service or service-area pages are weak, that is the first work." },
     { q: "How do reviews connect to this?", a: "Reviews influence both the listing decision and the page decision. We place recent reviews where someone is deciding — beside the service or treatment, not under a separate tab." },
     { q: "How does this connect to enquiries?", a: "A local search has to land somewhere. We keep the listing, the page, and the next step asking for the same kind of contact." },
-    { q: "What happens first?", a: "A review of what a nearby buyer currently sees. Then we agree what to correct first, in order of return." },
+    { q: "What happens first?", a: "A review of what a nearby buyer currently sees. Then we agree what to fix first." },
   ];
   return (
     <section className="bg-[#F6FAFC] py-32">

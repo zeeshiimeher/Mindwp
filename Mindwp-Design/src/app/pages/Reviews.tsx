@@ -28,7 +28,7 @@ function RVHero() {
           </p>
           <div className="mt-10 flex items-center gap-7 flex-wrap">
             <a href="#cta" className="inline-flex items-center gap-2 bg-white text-[#0A0A1F] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors" style={{ fontSize: '15px', fontWeight: 600 }}>
-              Start a Conversation <ArrowRight size={16} />
+              Review my reputation path <ArrowRight size={16} />
             </a>
           </div>
           <div className="mt-12 flex items-center gap-2 flex-wrap">
@@ -104,7 +104,7 @@ function RVWhereProofStops() {
       tagColor: '#9A6F12',
       tagBg: '#FCF5E2',
       rotate: -0.6,
-      moment: 'A real five-star review landed on the platform. The service page does not show it.',
+      moment: 'A useful review lands on the platform, but never reaches the relevant page.',
       lost: 'Proof off the page.',
     },
     {
@@ -112,7 +112,7 @@ function RVWhereProofStops() {
       tagColor: '#B23B3B',
       tagBg: '#FDECEC',
       rotate: 1.5,
-      moment: 'A patient was unhappy with the reception communication. It became a public complaint.',
+      moment: 'A concern about communication has no clear private route, so it risks becoming public first.',
       lost: 'No private route existed.',
     },
     {
@@ -143,7 +143,7 @@ function RVWhereProofStops() {
             <span className="text-[#4C5E6F]">The proof scatters.</span>
           </h2>
           <p className="mt-6 text-[#4C5E6F]" style={{ fontSize: '17px', lineHeight: 1.6 }}>
-            Six ordinary moments from one good month. Each one was real. None of them made it to the next visitor — because no one owns the path between the work and the proof.
+            Six common moments from a normal month. Each one is familiar. None of them made it to the next visitor — because no one owns the path between the work and the proof.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ function RVWhereProofStops() {
               <span className="text-[#0F7A57] uppercase tracking-[0.16em]" style={{ fontSize: '10px', fontWeight: 700 }}>The good work that did happen</span>
             </div>
             <div className="text-[#08111F]" style={{ fontSize: '26px', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-              A real working month. Jobs done. Patients seen. Work finished well.
+              A typical working month. Jobs done. Appointments kept. Work finished well.
             </div>
             <p className="mt-3 text-[#4C5E6F]" style={{ fontSize: '14.5px', lineHeight: 1.65 }}>
               And then — nothing made it back to the next visitor.
@@ -184,7 +184,7 @@ function RVWhereProofStops() {
                   <span className="uppercase tracking-[0.16em]" style={{ color: s.tagColor, fontSize: '9.5px', fontWeight: 700 }}>{s.tag}</span>
                 </span>
                 <p className="mt-2 text-[#08111F]" style={{ fontSize: '14px', lineHeight: 1.55, fontStyle: 'italic' }}>
-                  &ldquo;{s.moment}&rdquo;
+                  {s.moment}
                 </p>
                 <div className="mt-4 pt-3 border-t border-[#EEF3F6] flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F] shadow-[0_0_5px_#E76F6F]" />
@@ -198,7 +198,7 @@ function RVWhereProofStops() {
           <div className="relative mt-12 pt-8 border-t border-[#EEF3F6] grid grid-cols-12 gap-5 items-start">
             <div className="col-span-12 md:col-span-8">
               <p className="text-[#08111F]" style={{ fontSize: '15.5px', lineHeight: 1.65 }}>
-                <span className="font-semibold">Six real moments. Six places the proof slipped.</span>{' '}
+                <span className="font-semibold">Six common proof-loss moments.</span>{' '}
                 <span className="text-[#4C5E6F]">Most reputation loss is not bad work — it is good work that nobody carried forward.</span>
               </p>
             </div>
@@ -232,7 +232,7 @@ function RVRightMoment() {
 
   const criteria = [
     { label: 'Recency', note: 'How fresh the work is in their mind.' },
-    { label: 'Warmth', note: 'How positive the moment naturally is.' },
+    { label: 'Context', note: 'Whether the request has a clear reason and context.' },
     { label: 'Appropriateness', note: 'Whether asking now respects the relationship.' },
   ];
 
@@ -282,7 +282,7 @@ function RVRightMoment() {
 
                 <div className="mt-7 pt-5 border-t border-white/10">
                   <p className="text-white" style={{ fontSize: '14px', lineHeight: 1.65, fontWeight: 600 }}>
-                    If the moment is wrong, the ask is not sent.
+                    The request is tied to a real completed experience, not an arbitrary cadence.
                   </p>
                   <p className="text-white/55 mt-1" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
                     No arbitrary 14-day cadence. No quota.
@@ -370,7 +370,7 @@ function RVPath() {
       n: '04',
       icon: Eye,
       label: 'New reviews are monitored',
-      note: 'Someone sees them within a working day — including the ones that need a thoughtful reply.',
+      note: 'Reviews that need a reply have a responsible owner — including the ones that need a thoughtful reply.',
     },
     {
       n: '05',
@@ -809,7 +809,7 @@ function RVScope() {
       items: [
         { label: 'Private feedback route', note: 'Open to every customer. Goes to the responsible person, not a generic inbox.' },
         { label: 'Response ownership', note: 'Who replies, in what tone — so the reply sounds like the business.' },
-        { label: 'Review monitoring', note: 'New reviews seen within a working day, including the ones that need a thoughtful reply.' },
+        { label: 'Review monitoring', note: 'Review response ownership is clear, including the ones that need a thoughtful reply.' },
         { label: 'Concern visibility', note: 'Issues raised privately become a record of how the business responded.' },
       ],
     },
@@ -911,8 +911,8 @@ function RVChanges() {
           <div className="col-span-12 lg:col-span-5">
             <div className="text-[#6F8190] uppercase tracking-[0.18em] mb-5" style={{ fontSize: '11px', fontWeight: 700 }}>What changes over time</div>
             <h2 className="text-[#08111F]" style={{ fontSize: '50px', fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-              Reputation stops being{' '}
-              <span className="text-[#4C5E6F]">a last-minute campaign.</span>
+              Reputation becomes part of{' '}
+              <span className="text-[#4C5E6F]">how good work carries forward.</span>
             </h2>
             <p className="mt-6 text-[#4C5E6F]" style={{ fontSize: '16.5px', lineHeight: 1.65 }}>
               No promise of a rating jump or a guaranteed number of reviews. Just steady, ethical changes that the business and the next visitor can both feel.

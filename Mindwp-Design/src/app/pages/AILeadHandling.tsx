@@ -4,11 +4,11 @@ import { ArrowRight, AlertTriangle, Plus, Minus, Phone, MessageSquare, FileText,
 // 01 HERO
 function LRHHero() {
   const arrivals = [
-    { icon: Phone, tone: "#E76F6F", state: "MISSED CALL", label: "Roofing quote — BS8", when: "07:43 · team on site" },
-    { icon: FileText, tone: "#F4B740", state: "NEW ENQUIRY", label: "Form: kitchen fit", when: "08:12 · needs reply" },
-    { icon: AlertTriangle, tone: "#E76F6F", state: "URGENT", label: "Gas — no hot water", when: "08:47 · flagged" },
-    { icon: Calendar, tone: "#21B985", state: "READY FOR TEAM", label: "Implant consult request", when: "09:14 · for Sarah" },
-    { icon: MessageSquare, tone: "#9CA3B0", state: "AFTER HOURS", label: "Weekend message", when: "Sun 22:18 · kept warm" },
+    { icon: Phone, tone: "#E76F6F", state: "MISSED CALL", label: "Roofing quote request", when: "Morning · while team is on site" },
+    { icon: FileText, tone: "#F4B740", state: "NEW ENQUIRY", label: "Kitchen fit enquiry", when: "Morning · needs first reply" },
+    { icon: AlertTriangle, tone: "#E76F6F", state: "TIME-SENSITIVE", label: "Heating issue", when: "Morning · surfaced earlier" },
+    { icon: Calendar, tone: "#21B985", state: "READY FOR TEAM", label: "Consultation request", when: "During clinic hours · practice team" },
+    { icon: MessageSquare, tone: "#9CA3B0", state: "AFTER-HOURS", label: "Weekend message", when: "After-hours · kept warm" },
   ];
   return (
     <section className="relative bg-gradient-to-br from-[#061323] via-[#071629] to-[#0F1E3C] overflow-hidden">
@@ -29,7 +29,7 @@ function LRHHero() {
           </p>
           <div className="mt-10 flex items-center gap-7 flex-wrap">
             <a href="#cta" className="inline-flex items-center gap-2 bg-white text-[#061323] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors" style={{ fontSize: '15px', fontWeight: 600 }}>
-              Start a Conversation <ArrowRight size={16} />
+              Review my response path <ArrowRight size={16} />
             </a>
           </div>
           <div className="mt-12 flex items-center gap-2 flex-wrap">
@@ -48,10 +48,10 @@ function LRHHero() {
             <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/8">
               <div>
                 <div className="text-white/45 uppercase tracking-[0.16em]" style={{ fontSize: '10px', fontWeight: 700 }}>Enquiry arrivals</div>
-                <div className="text-white mt-1" style={{ fontSize: '17px', fontWeight: 600 }}>This morning · five moments</div>
+                <div className="text-white mt-1" style={{ fontSize: '17px', fontWeight: 600 }}>Typical enquiry moments</div>
               </div>
               <span className="inline-flex items-center gap-1.5 text-[#F4B740]" style={{ fontSize: '11px', fontWeight: 600 }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F4B740] shadow-[0_0_6px_#F4B740]" /> In view
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F4B740] shadow-[0_0_6px_#F4B740]" /> Five paths
               </span>
             </div>
             <div className="space-y-2">
@@ -127,7 +127,7 @@ function LRHWhereCold() {
         <div className="max-w-[820px] mb-16">
           <div className="text-[#6F8190] uppercase tracking-[0.18em] mb-5" style={{ fontSize: '11px', fontWeight: 700 }}>Where enquiries go cold</div>
           <h2 className="text-[#08111F]" style={{ fontSize: '52px', fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-            Real enquiries die{' '}
+            Real enquiries go cold{' '}
             <span className="text-[#4C5E6F]">in ordinary moments.</span>
           </h2>
           <p className="mt-6 text-[#4C5E6F]" style={{ fontSize: '17px', lineHeight: 1.6 }}>
@@ -144,24 +144,24 @@ function LRHWhereCold() {
               <div className="relative">
                 <div className="flex items-center gap-2 mb-5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#E76F6F] shadow-[0_0_8px_#E76F6F]" />
-                  <span className="text-[#E76F6F] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>The missed call that started Monday</span>
+                  <span className="text-[#E76F6F] uppercase tracking-[0.18em]" style={{ fontSize: '10.5px', fontWeight: 700 }}>The call that rolled to voicemail</span>
                 </div>
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-12 h-12 rounded-lg bg-[#E76F6F]/15 border border-[#E76F6F]/30 flex items-center justify-center text-[#E76F6F]">
                     <Phone size={18} />
                   </div>
                   <div>
-                    <div className="text-white/55 uppercase tracking-[0.12em]" style={{ fontSize: '10px', fontWeight: 700 }}>Monday 07:43</div>
+                    <div className="text-white/55 uppercase tracking-[0.12em]" style={{ fontSize: '10px', fontWeight: 700 }}>Monday morning</div>
                     <div className="text-white" style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.015em' }}>Voicemail caught it.</div>
                   </div>
                 </div>
                 <p className="text-white/70" style={{ fontSize: '14.5px', lineHeight: 1.65 }}>
-                  A roofing customer rang at 07:43. The team was on a job in the next area. The call rolled to voicemail. No callback was set up.
+                  A call rolled to voicemail while the team was out. No callback was set up.
                 </p>
                 <div className="mt-6 pt-5 border-t border-white/10">
-                  <div className="text-white/45 uppercase tracking-[0.14em] mb-2" style={{ fontSize: '10px', fontWeight: 700 }}>By 09:15</div>
+                  <div className="text-white/45 uppercase tracking-[0.14em] mb-2" style={{ fontSize: '10px', fontWeight: 700 }}>By mid-morning</div>
                   <p className="text-white" style={{ fontSize: '15px', fontWeight: 600, lineHeight: 1.5 }}>
-                    They had called the next listing — and booked.
+                    By the time someone called back, the enquiry had gone cold.
                   </p>
                 </div>
                 <div className="mt-7 pt-5 border-t border-white/10 text-white/55" style={{ fontSize: '12px', lineHeight: 1.55 }}>
@@ -220,7 +220,7 @@ function LRHFirstResponse() {
       soft: '#EEF7F8',
       border: '#C6E8EF',
       label: 'Acknowledge',
-      note: 'Someone has seen the enquiry — said so within minutes, not hours.',
+      note: 'Someone has seen the enquiry — said so while it is still fresh.',
     },
     {
       n: '02',
@@ -335,7 +335,7 @@ function LRHPaths() {
       tag: 'PATH 01',
       name: 'Missed call',
       arrived: 'A call rolled to voicemail while the team was on a job.',
-      move: 'A text back within minutes — acknowledging the call and asking what they needed.',
+      move: 'A text back acknowledged quickly — acknowledging the call and asking what they needed.',
       goes: 'Back to the team with context — not a missed-number row to chase later.',
     },
     {
@@ -344,8 +344,8 @@ function LRHPaths() {
       soft: '#FCF5E2',
       border: '#F0DDA0',
       tag: 'PATH 02',
-      name: 'Urgent request',
-      arrived: 'An emergency — gas, water, electrical, urgent treatment, no-heat in winter.',
+      name: 'Time-sensitive request',
+      arrived: 'A time-sensitive enquiry — gas, water, electrical, urgent practice enquiry, no-heat in winter.',
       move: 'Identify how urgent it is. Tell the customer someone is moving — they are not guessing.',
       goes: 'Flagged to whoever covers on-call, with what is safe to advise already collected.',
     },
@@ -464,22 +464,35 @@ function LRHPaths() {
 
 // 05 HOW THE FIRST CONVERSATION IS HANDLED
 function LRHConversation() {
-  type Turn = { from: 'customer' | 'reply'; text: string; meta?: string };
+  type Turn = { from: 'customer' | 'reply'; text: string; meta?: string; annotation?: string };
   const turns: Turn[] = [
-    { from: 'customer', text: 'Hi — no hot water since this morning. Can someone come out today?', meta: 'Monday morning · from a missed-call text back' },
-    { from: 'reply', text: 'Got your message — someone has been notified. Quick check: do you have heat as well, or just hot water?' },
-    { from: 'customer', text: 'Just hot water. Heat works.' },
-    { from: 'reply', text: 'Thanks. Same-day cover is usually possible for that. Gas or electric boiler, if you know?' },
-    { from: 'customer', text: 'Gas combi.' },
-    { from: 'reply', text: 'Got it — passed to the engineer on cover. He will call you in the next half hour.' },
+    {
+      from: 'customer',
+      text: 'Hi — saw the missed call. Still need someone to come out today if possible?',
+      meta: 'From a missed-call text-back path',
+    },
+    {
+      from: 'reply',
+      text: 'Got your message — someone on the team has been notified. Quick check: is this an urgent issue or can it wait until later today?',
+      annotation: 'Acknowledge · one useful question',
+    },
+    {
+      from: 'customer',
+      text: 'Pretty urgent — water leak.',
+    },
+    {
+      from: 'reply',
+      text: "Thanks for confirming. I've passed this through with the details you've shared. The right person on the team will follow up shortly.",
+      annotation: 'Context to the team · warm handoff',
+    },
   ];
 
   const summary = [
-    { label: 'Issue', value: 'No hot water · gas combi' },
-    { label: 'Urgency', value: 'Same-day cover' },
-    { label: 'Owner', value: 'Engineer on cover' },
-    { label: 'Context carried', value: 'Address from earlier form · callback within 30 min' },
-    { label: 'First reply', value: 'Within minutes of the missed call' },
+    { label: 'Issue', value: 'Captured from the customer\'s own words' },
+    { label: 'Urgency', value: 'Surfaced before the handoff' },
+    { label: 'Owner', value: 'Attached — a named person on the team' },
+    { label: 'Context carried', value: 'Source page, area, and earlier replies' },
+    { label: 'First reply', value: 'Acknowledged while the enquiry is still fresh' },
   ];
 
   return (
@@ -497,7 +510,7 @@ function LRHConversation() {
         </div>
 
         <div className="grid grid-cols-12 gap-5 lg:gap-7 items-stretch">
-          {/* LEFT — conversation */}
+          {/* LEFT — illustrative first-reply pattern (not a fake transcript) */}
           <div className="col-span-12 lg:col-span-7">
             <div className="h-full rounded-[20px] bg-[#F9FCFD] border border-[#E6EEF3] p-7 lg:p-8" style={{ boxShadow: '0 16px 48px rgba(8,17,31,0.06)' }}>
               <div className="flex items-center justify-between mb-6 pb-5 border-b border-[#EEF3F6]">
@@ -506,14 +519,17 @@ function LRHConversation() {
                     <MessageSquare size={13} />
                   </div>
                   <div>
-                    <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>Smith Plumbing</div>
-                    <div className="text-[#9CA3B0]" style={{ fontSize: '11px' }}>SMS · first reply path</div>
+                    <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>Service team</div>
+                    <div className="text-[#9CA3B0]" style={{ fontSize: '11px' }}>Example first-reply pattern · SMS path</div>
                   </div>
                 </div>
-                <span className="text-[#9CA3B0]" style={{ fontSize: '11px' }}>Monday morning</span>
+                <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#F4B740]/10 border border-[#F4B740]/30" style={{ fontSize: '9.5px', fontWeight: 700, letterSpacing: '0.14em' }}>
+                  <span className="w-1 h-1 rounded-full bg-[#F4B740]" />
+                  <span className="text-[#9A6F12] uppercase">Illustrative</span>
+                </span>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {turns.map((t, i) => (
                   <div key={i} className={`flex ${t.from === 'reply' ? 'justify-end' : 'justify-start'}`}>
                     <div className={`max-w-[78%] ${t.from === 'reply' ? 'order-2' : ''}`}>
@@ -521,7 +537,7 @@ function LRHConversation() {
                         <div className="text-[#9CA3B0] mb-1.5" style={{ fontSize: '10.5px', fontWeight: 600 }}>{t.meta}</div>
                       )}
                       <div
-                        className="px-4 py-3 rounded-2xl"
+                        className="px-4 py-3 rounded-2xl relative"
                         style={
                           t.from === 'reply'
                             ? { background: 'linear-gradient(180deg, #FFF8E2 0%, #FEF6E2 100%)', border: '1px solid #F0DDA0', color: '#08111F' }
@@ -535,14 +551,36 @@ function LRHConversation() {
                           {t.from === 'reply' ? 'First reply' : 'Customer'}
                         </span>
                       </div>
+                      {t.annotation && (
+                        <div className={`mt-2 ${t.from === 'reply' ? 'text-right' : 'text-left'}`}>
+                          <span
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                            style={{
+                              background: '#FFFFFF',
+                              border: '1px dashed #F0DDA0',
+                              color: '#9A6F12',
+                              fontSize: '10px',
+                              fontWeight: 700,
+                              letterSpacing: '0.12em',
+                            }}
+                          >
+                            <span className="w-1 h-1 rounded-full bg-[#F4B740]" />
+                            <span className="uppercase">{t.annotation}</span>
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
+
+              <div className="mt-6 pt-5 border-t border-[#EEF3F6] text-[#6F8190]" style={{ fontSize: '12px', lineHeight: 1.6 }}>
+                Pattern, not transcript. The wording is shaped to the business and the path the enquiry came through — never a generic template, never an exact-time promise.
+              </div>
             </div>
           </div>
 
-          {/* RIGHT — handoff summary */}
+          {/* RIGHT — handoff summary (the team picks up) */}
           <div className="col-span-12 lg:col-span-5">
             <div className="h-full rounded-[20px] bg-gradient-to-br from-[#061323] to-[#0E2740] p-7 lg:p-8 relative overflow-hidden">
               <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
@@ -567,7 +605,7 @@ function LRHConversation() {
                 </div>
 
                 <div className="mt-6 pt-5 border-t border-white/10 text-white/55" style={{ fontSize: '12px', lineHeight: 1.6 }}>
-                  The engineer picks up a customer he already knows something about — not a number on a missed-call list.
+                  The right person on the team picks up a customer they already know something about — not a number on a missed-call list.
                 </div>
               </div>
             </div>
@@ -576,7 +614,7 @@ function LRHConversation() {
 
         <div className="mt-9">
           <p className="text-[#4C5E6F] max-w-[840px]" style={{ fontSize: '14.5px', lineHeight: 1.65 }}>
-            The replies are not pretending to be the team. They are making sure the team is still the next step.
+            The replies are not pretending to be the team. They are making sure the customer hears something while the enquiry is still alive — and that the team picks up the conversation already in motion.
           </p>
         </div>
       </div>
@@ -587,7 +625,7 @@ function LRHConversation() {
 // 06 SUPPORT LAYER, NOT REPLACEMENT
 function LRHSupport() {
   const system = [
-    { icon: CheckCircle2, label: 'Acknowledges quickly', note: 'A short, human reply within minutes of the enquiry.' },
+    { icon: CheckCircle2, label: 'Acknowledges quickly', note: 'A short, human reply while the enquiry is still fresh.' },
     { icon: MessageSquare, label: 'Asks the right first question', note: 'Enough to know what the team needs to bring.' },
     { icon: AlertTriangle, label: 'Surfaces urgency', note: 'Emergencies are flagged. Quotes wait their turn.' },
     { icon: FileText, label: 'Collects useful context', note: 'Name, address, scope, timing, the detail they forgot.' },
@@ -803,12 +841,12 @@ function LRHConnects() {
 // 08 WHAT CHANGES WHEN RESPONSE IS HANDLED
 function LRHOutcomes() {
   const outcomes = [
-    { icon: Phone, title: 'Missed calls are acknowledged in minutes', note: 'Not by Monday — and not by an auto-reply pretending to be a person.' },
-    { icon: FileText, title: 'After-hours forms get a real first reply', note: 'A short, human response — not silence until the office reopens.' },
-    { icon: AlertTriangle, title: 'Urgent enquiries are flagged on arrival', note: 'Whoever covers the on-call rota knows before the next call lands.' },
+    { icon: Phone, title: 'Missed calls have a response path', note: 'Not silence until Monday — and not an auto-reply pretending to be a person.' },
+    { icon: FileText, title: 'After-hours forms are not left without a first move', note: 'A short, human response — not silence until the office reopens.' },
+    { icon: AlertTriangle, title: 'Time-sensitive enquiries are surfaced earlier', note: 'Whoever covers the on-call rota is notified with context.' },
     { icon: MessageSquare, title: 'Quote and consultation requests come ready', note: 'Missing detail collected, the right next question asked.' },
-    { icon: User, title: 'The team picks up enquiries already warm', note: 'A name, a context, a clear next step — not just a row in an inbox.' },
-    { icon: CheckCircle2, title: 'Nothing disappears without an owner', note: 'Every path has a person attached to it before the customer drifts.' },
+    { icon: User, title: 'The team picks up enquiries already warm', note: 'A named owner, a context, a clear next step — not just a row in an inbox.' },
+    { icon: CheckCircle2, title: 'Handled paths have a clear owner', note: 'Every path has a person attached to it before the customer drifts.' },
   ];
 
   return (
@@ -920,12 +958,12 @@ function LRHFaq() {
   const faqs = [
     { q: "Does this replace my team?", a: "No. The team still handles the work, the quotes, the clinical decisions, and the final calls. The system handles the first reply and the handoff — so the team doesn't pick up cold." },
     { q: "Will replies sound robotic?", a: "The first reply is short and human — plain language. It says someone has seen the enquiry, asks one useful thing, and passes it on. It is not pretending to be the team." },
-    { q: "Can it handle missed calls?", a: "Yes. A missed call gets a text back acknowledging it, asking what is needed, and surfacing the urgency. The customer hears something within minutes — not Monday morning." },
-    { q: "What happens with urgent enquiries?", a: "Urgent enquiries — gas, water, electrical, emergency treatment — are flagged the moment they arrive. Whoever covers on-call is notified directly." },
+    { q: "Can it handle missed calls?", a: "Yes. A missed call gets a text back acknowledging it, asking what is needed, and surfacing the urgency. The customer hears something while the enquiry is still fresh — not Monday morning." },
+    { q: "What happens with urgent enquiries?", a: "Time-sensitive enquiries — gas, water, electrical, urgent practice enquiry — are surfaced earlier. Whoever covers on-call is notified with context." },
     { q: "Can it handle quote or consultation requests?", a: "Yes. It acknowledges the request, asks the missing detail, and routes the enquiry to the right diary or person — with context already collected." },
     { q: "How does this connect with Follow-Up & CRM?", a: "This system handles the first response and the handoff. Once the enquiry is owned by a person, Follow-Up & CRM Systems own what happens next — quote chases, appointment confirmations, post-visit work." },
     { q: "What needs to be clear before this works well?", a: "A small amount of structure: who handles which enquiry type, what counts as urgent, what detail is usually missing. Most businesses already have the answers — we map them so the first reply makes sense." },
-    { q: "What happens first?", a: "A review of the current response paths — calls, forms, messages, quote requests, consultations — and where they go cold. Then we agree the first paths to handle, in order of return." },
+    { q: "What happens first?", a: "A review of the current response paths — calls, forms, messages, quote requests, consultations — and where they go cold. Then we agree which path to handle first." },
   ];
   return (
     <section className="bg-white py-32">
@@ -968,7 +1006,7 @@ function LRHCta() {
                 <span className="text-white/55">are slipping through.</span>
               </h2>
               <p className="mt-6 text-white/65 max-w-[560px]" style={{ fontSize: '16.5px', lineHeight: 1.65 }}>
-                We review the response paths — calls, forms, messages, quote requests, consultations — and where they go cold. Then we agree the first paths to handle, in order of return.
+                We review the response paths — calls, forms, messages, quote requests, consultations — and where they go cold. Then we agree which path to handle first.
               </p>
               <a href="#" className="mt-9 inline-flex items-center gap-2 bg-white text-[#061323] hover:bg-[#EEF6FA] rounded-full px-7 py-4 transition-colors" style={{ fontSize: '15px', fontWeight: 600 }}>
                 Review my response path <ArrowRight size={16} />
