@@ -43,9 +43,7 @@ When the design ports to the production code at the repo root, `pnpm check:names
 
 ## Homepage Files
 
-The homepage now lives as a single consolidated render file at `src/app/Home.tsx` (13 sections) with a second variant at `src/app/HomeV2.tsx` (14 sections, longer-form, per the v2 plan). Both render directly from `src/app/App.tsx` based on the `page` state.
-
-The previously-separate `components/Hero.tsx`, `LeakDiagnosis.tsx`, `Foundation.tsx`, `SixSystemStack.tsx`, etc. have all been merged into those Home files. Only `components/Header.tsx` and `components/Footer.tsx` remain as standalone reusable layout shells.
+The homepage now lives as a single consolidated render file at `src/app/Home.tsx` .
 
 ## Sandbox Legacy Pages
 
@@ -72,4 +70,4 @@ No fake metrics, testimonials, rankings, or client outcomes. Plausibly specific 
 
 ## What Stays In This Folder
 
-This README. Theme.css. Sandbox components and pages. Vite config. That's it. Strategy docs, validators, page-role rules, voice rules — all live in `../docs/` and `../CLAUDE.md`. When you need them, read them in the production folder.
+This README. Theme.css. Sandbox components and pages. Vite config. That's it. Strategy docs, validators, page-role rules, voice rules — all live in `../docs/` and `../CLAUDE.md`. When you need them or told to read.

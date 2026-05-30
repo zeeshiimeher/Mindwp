@@ -2651,7 +2651,7 @@ function SectionHandling() {
 // SECTION 06 — Five protections, one connected path (FULL DARK ANCHOR)
 // Orbital constellation: SWS hub centered with 4 outer protections at
 // top/right/bottom/left, connected by dashed SVG cross lines. Grid-texture
-// overlay + radial cyan wash. (Swapped in from HomeV2.)
+// overlay + radial cyan wash.
 // ============================================================================
 
 type ProtectionAccent = 'cyan' | 'teal' | 'amber' | 'green' | 'purple';

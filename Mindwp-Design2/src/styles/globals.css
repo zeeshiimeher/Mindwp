@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import './theme.css';
+
+/* ============================================================================
+   MindWP color tokens mapped into Tailwind's color scale so common brand
+   and signal colors are available as bg-mw-* / text-mw-* / border-mw-*
+   utilities instead of raw hex. Tokens in theme.css remain the source of truth.
+   ============================================================================ */
+@theme {
+  --color-mw-navy: #061323;
+  --color-mw-navy-mid: #1b2845;
+  --color-mw-deep: #103e5a;
+
+  --color-mw-cyan: #35c7d8;
+  --color-mw-teal: #14b8a6;
+  --color-mw-amber: #f4b740;
+  --color-mw-green: #21b985;
+  --color-mw-purple: #9b7de0;
+  --color-mw-red: #e76f6f;
+
+  --color-mw-ink: #08111f;
+  --color-mw-text: #4c5e6f;
+  --color-mw-subtle: #6f8190;
+
+  --color-mw-mist: #f6fafc;
+  --color-mw-light: #f9fcfd;
+  --color-mw-line: #e6eef3;
+}
