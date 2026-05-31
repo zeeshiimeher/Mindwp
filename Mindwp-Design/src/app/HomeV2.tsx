@@ -928,84 +928,27 @@ function LocalVisibility() {
 
 // ============================================================================
 // SECTION 06 — Different ways in (mist)
-// Four contact routes shown at once as four colour-coded handling LANES, each
-// its own scenario (form=teal record, missed-call=red handoff, quote=green
-// status, consultation=purple intake), all converging into one "owned handling"
-// hub on the right. No tabs — the variety is visible at a glance.
+// Convergence is the message: four compact, colour-distinct entry points funnel
+// (visible merge lines) into ONE dominant, rich "owned handling" outcome —
+// captured -> owned -> followed up, nothing lost in a shared inbox. The four
+// are the setup; the owned-handling result is the payoff and the design weight.
 // ============================================================================
 
-type Lane = {
-  id: 'form' | 'call' | 'quote' | 'consult';
-  color: string;
-  tint: string;
-  icon: LucideIcon;
-  qualifier: string;
-  label: string;
-  outcome: string;
-};
-
-const HANDLING_LANES: ReadonlyArray<Lane> = [
-  { id: 'form', color: '#0E7D8C', tint: '#F3FAFB', icon: Inbox, qualifier: 'From the website', label: 'Form enquiry', outcome: 'Owned' },
-  { id: 'call', color: '#C2554E', tint: '#FDF4F3', icon: PhoneCall, qualifier: 'Inbound calls', label: 'Phone & missed calls', outcome: 'Called back' },
-  { id: 'quote', color: '#0F7A57', tint: '#F1FAF5', icon: History, qualifier: 'After the quote', label: 'Quote follow-up', outcome: 'Resolved' },
-  { id: 'consult', color: '#6B4FB8', tint: '#F7F4FD', icon: Calendar, qualifier: 'Consultation request', label: 'Consultation request', outcome: 'Routed' },
+const ENTRY_PATHS = [
+  { color: '#0E7D8C', icon: Inbox, qualifier: 'From the website', label: 'Form enquiry' },
+  { color: '#C2554E', icon: PhoneCall, qualifier: 'Inbound calls', label: 'Phone & missed calls' },
+  { color: '#0F7A57', icon: History, qualifier: 'After the quote', label: 'Quote follow-up' },
+  { color: '#6B4FB8', icon: Calendar, qualifier: 'Consultation request', label: 'Consultation request' },
 ];
 
-// Each lane foregrounds a different object: a captured record, a missed-call
-// handoff, a quote status, a consultation intake.
-function LaneArtifact({ id }: { id: Lane['id'] }) {
-  if (id === 'form') {
-    return (
-      <div className="flex items-center gap-2 flex-wrap">
-        {['Source page', 'Service', 'Named area'].map(f => (
-          <span key={f} className="inline-flex items-center px-2 py-1 rounded-md bg-white" style={{ color: '#0E2740', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}>{f}</span>
-        ))}
-        <span className="inline-flex items-center gap-1 text-[#0E7D8C]" style={{ fontSize: '11px', fontWeight: 700 }}><CheckCircle2 size={12} /> captured with context</span>
-      </div>
-    );
-  }
-  if (id === 'call') {
-    const nodes = [
-      { icon: PhoneOff, c: '#C2554E', bg: '#FBE9E8', t: 'Missed' },
-      { icon: MessageSquare, c: '#0E7D8C', bg: '#E3F6F4', t: 'Text back' },
-      { icon: PhoneCall, c: '#0F7A57', bg: '#E6F8F0', t: 'Callback' },
-    ];
-    return (
-      <div className="flex items-center gap-1.5 flex-wrap">
-        {nodes.map((n, i) => {
-          const Icon = n.icon;
-          return (
-            <span key={i} className="inline-flex items-center gap-1.5">
-              <span className="inline-flex items-center gap-1.5 rounded-full pl-1.5 pr-2.5 py-1 bg-white" style={{ boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}>
-                <span className="w-5 h-5 rounded-full flex items-center justify-center" style={{ background: n.bg, color: n.c }}><Icon size={11} /></span>
-                <span className="text-[#0E2740]" style={{ fontSize: '10.5px', fontWeight: 700 }}>{n.t}</span>
-              </span>
-              {i < 2 && <ArrowRight size={12} color="#C2554E" className="opacity-50" />}
-            </span>
-          );
-        })}
-      </div>
-    );
-  }
-  if (id === 'quote') {
-    return (
-      <div className="flex items-center gap-2 flex-wrap">
-        <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-white" style={{ color: '#0E2740', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}><FileText size={11} color="#0F7A57" /> Quote sent · reminder set</span>
-        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: '#FFF6E6', color: '#9A6F12', fontSize: '10.5px', fontWeight: 700 }}><span className="w-1.5 h-1.5 rounded-full bg-[#F4B740]" /> Status: Awaiting reply</span>
-      </div>
-    );
-  }
-  return (
-    <div className="flex items-center gap-2 flex-wrap">
-      {['Interest', 'Preferred time'].map(f => (
-        <span key={f} className="inline-flex items-center px-2 py-1 rounded-md bg-white" style={{ color: '#0E2740', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}>{f}</span>
-      ))}
-      <span className="inline-flex items-center gap-1 text-[#6B4FB8]" style={{ fontSize: '11px', fontWeight: 700 }}><MessageSquare size={12} /> intake confirmed</span>
-    </div>
-  );
-}
+const OWNED_STAGES = [
+  { n: '01', icon: Inbox, title: 'Captured with context', detail: 'Logged with where it came from and what they need — never a bare line in a shared inbox.' },
+  { n: '02', icon: CheckCircle2, title: 'Owned by a named person', detail: 'A service manager, coordinator, or on-call engineer picks it up. It is someone’s job, not everyone’s.' },
+  { n: '03', icon: Repeat, title: 'Followed up on a cadence', detail: 'Chased on a real schedule until it is resolved — booked, kept, or closed. Not left to memory.' },
+];
 
 function HandlingPaths() {
+  const funnelX = [13, 38, 62, 87];
   return (
     <section className="section bg-page-mist overflow-hidden">
       <div className="container">
@@ -1026,32 +969,24 @@ function HandlingPaths() {
           </div>
         </div>
 
-        {/* Four routes in, converging into one owned-handling hub */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch">
-          {/* the four lanes */}
-          <div className="lg:col-span-8 space-y-3">
-            {HANDLING_LANES.map(lane => {
-              const Icon = lane.icon;
+        {/* Four entry points → funnel → one dominant owned-handling outcome */}
+        <div className="max-w-[1000px] mx-auto">
+          {/* FOUR ENTRY POINTS — compact, colour-distinct (the setup) */}
+          <div className="flex items-center gap-3 mb-4">
+            <span className="uppercase tracking-[0.16em] text-[#9CA3B0]" style={{ fontSize: '10px', fontWeight: 700 }}>Four ways an enquiry arrives</span>
+            <span className="h-px flex-1" style={{ background: '#E1E9EC' }} />
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+            {ENTRY_PATHS.map(p => {
+              const Icon = p.icon;
               return (
-                <div key={lane.id} className="relative rounded-xl overflow-hidden" style={{ background: lane.tint, boxShadow: '0 6px 18px rgba(8,17,31,0.05)' }}>
-                  <span className="absolute left-0 top-0 bottom-0 w-1" style={{ background: lane.color }} aria-hidden="true" />
-                  <div className="grid grid-cols-12 items-center gap-x-4 gap-y-3 pl-5 pr-4 py-4">
-                    {/* route identity */}
-                    <div className="col-span-12 lg:col-span-4 flex items-center gap-3">
-                      <span className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#FFFFFF', color: lane.color, boxShadow: `0 3px 10px ${lane.color}1F` }}><Icon size={17} /></span>
-                      <div className="min-w-0">
-                        <div className="uppercase tracking-[0.12em]" style={{ color: lane.color, fontSize: '9px', fontWeight: 700 }}>{lane.qualifier}</div>
-                        <div className="text-[#08111F]" style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.25 }}>{lane.label}</div>
-                      </div>
-                    </div>
-                    {/* its own artifact */}
-                    <div className="col-span-12 lg:col-span-6 min-w-0">
-                      <LaneArtifact id={lane.id} />
-                    </div>
-                    {/* outcome → toward the hub */}
-                    <div className="col-span-12 lg:col-span-2 flex items-center justify-start lg:justify-end gap-1.5">
-                      <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full" style={{ background: `${lane.color}14`, color: lane.color, fontSize: '10px', fontWeight: 700 }}><CheckCircle2 size={11} /> {lane.outcome}</span>
-                      <ArrowRight size={14} color={lane.color} className="hidden lg:block shrink-0" />
+                <div key={p.label} className="relative rounded-xl bg-white px-4 py-4 lg:py-5 overflow-hidden" style={{ boxShadow: '0 8px 22px rgba(8,17,31,0.06)' }}>
+                  <span className="absolute left-0 right-0 top-0 h-1" style={{ background: p.color }} aria-hidden="true" />
+                  <div className="flex items-center gap-3">
+                    <span className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: `${p.color}14`, color: p.color }}><Icon size={18} /></span>
+                    <div className="min-w-0">
+                      <div className="uppercase tracking-[0.1em]" style={{ color: p.color, fontSize: '8.5px', fontWeight: 700 }}>{p.qualifier}</div>
+                      <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700, lineHeight: 1.2 }}>{p.label}</div>
                     </div>
                   </div>
                 </div>
@@ -1059,37 +994,80 @@ function HandlingPaths() {
             })}
           </div>
 
-          {/* the owned-handling hub — every route lands here */}
-          <div className="lg:col-span-4">
-            <div className="relative rounded-2xl h-full p-7 overflow-hidden bg-white flex flex-col" style={{ border: '1px solid #C7EBEF', boxShadow: '0 24px 60px rgba(20,184,166,0.14)' }}>
-              <span className="absolute left-0 right-0 top-0 h-1.5" style={{ background: 'linear-gradient(to right, #35C7D8, #14B8A6)' }} aria-hidden="true" />
-              <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.16), transparent 65%)', filter: 'blur(40px)' }} aria-hidden="true" />
-              <div className="relative">
-                <div className="uppercase tracking-[0.16em] text-[#0E7D8C]" style={{ fontSize: '10px', fontWeight: 700 }}>Where every route lands</div>
-                <h3 className="text-[#08111F] mt-2.5" style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.015em', lineHeight: 1.2 }}>Owned handling — not a shared inbox.</h3>
-                <p className="text-[#4C5E6F] mt-3" style={{ fontSize: '13px', lineHeight: 1.6 }}>Whichever way it arrives, the same thing happens to it.</p>
+          {/* FUNNEL — the four streams merge into one (desktop) */}
+          <div className="hidden lg:block relative h-[78px]" aria-hidden="true">
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {ENTRY_PATHS.map((p, i) => (
+                <path key={i} d={`M ${funnelX[i]} 4 C ${funnelX[i]} 58, 50 42, 50 98`} stroke={p.color} strokeWidth="1.6" fill="none" vectorEffect="non-scaling-stroke" opacity="0.5" />
+              ))}
+            </svg>
+            {ENTRY_PATHS.map((p, i) => (
+              <span key={i} className="absolute top-0 w-2 h-2 rounded-full -translate-x-1/2" style={{ left: `${funnelX[i]}%`, background: p.color }} />
+            ))}
+            <span className="absolute left-1/2 bottom-0 w-3.5 h-3.5 rounded-full -translate-x-1/2 translate-y-1/2 z-10" style={{ background: '#0E7D8C', boxShadow: '0 0 0 5px rgba(20,184,166,0.16), 0 0 14px rgba(20,184,166,0.5)' }} />
+          </div>
+
+          {/* mobile converge cue */}
+          <div className="lg:hidden flex flex-col items-center py-5" aria-hidden="true">
+            <ArrowRight size={20} className="rotate-90 text-[#0E7D8C]" />
+            <span className="mt-1 uppercase tracking-[0.16em] text-[#9CA3B0]" style={{ fontSize: '9px', fontWeight: 700 }}>they all converge</span>
+          </div>
+
+          {/* OWNED HANDLING — the dominant, rich outcome (the payoff) */}
+          <div className="relative rounded-2xl bg-white overflow-hidden" style={{ border: '1px solid #C7EBEF', boxShadow: '0 40px 96px rgba(20,184,166,0.16)' }}>
+            <span className="absolute left-0 right-0 top-0 h-1.5" style={{ background: 'linear-gradient(to right, #0E7D8C, #14B8A6, #35C7D8)' }} aria-hidden="true" />
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[420px] h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(20,184,166,0.16), transparent 70%)', filter: 'blur(40px)' }} aria-hidden="true" />
+            {/* header */}
+            <div className="relative px-7 lg:px-10 pt-9 pb-6">
+              <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                <div className="inline-flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]" style={{ boxShadow: '0 0 8px #14B8A6' }} />
+                  <span className="uppercase tracking-[0.16em] text-[#0E7D8C]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Where every route lands</span>
+                </div>
+                <div className="inline-flex items-center gap-2">
+                  <span className="text-[#9CA3B0]" style={{ fontSize: '10px', fontWeight: 600 }}>fed by all four</span>
+                  <span className="flex items-center gap-1">{ENTRY_PATHS.map(p => <span key={p.label} className="w-2 h-2 rounded-full" style={{ background: p.color }} />)}</span>
+                </div>
               </div>
-              <div className="relative mt-5 space-y-2.5">
-                {[
-                  { icon: Inbox, t: 'Captured with context', n: 'not a bare email in a pile' },
-                  { icon: CheckCircle2, t: 'Picked up by a named person', n: 'someone owns it' },
-                  { icon: Repeat, t: 'Followed up on a cadence', n: 'not left to memory' },
-                ].map(r => {
-                  const RIcon = r.icon;
-                  return (
-                    <div key={r.t} className="flex items-start gap-2.5 rounded-xl px-3.5 py-2.5" style={{ background: '#F4FBFC' }}>
-                      <span className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: '#FFFFFF', color: '#0E7D8C', boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}><RIcon size={13} /></span>
-                      <div>
-                        <div className="text-[#08111F]" style={{ fontSize: '12.5px', fontWeight: 700 }}>{r.t}</div>
-                        <div className="text-[#6F8190]" style={{ fontSize: '11px' }}>{r.n}</div>
+              <h3 className="text-[#08111F]" style={{ fontSize: 'clamp(23px, 2.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                Owned handling —{' '}
+                <span className="text-[#4C5E6F]">not a shared inbox no one watches.</span>
+              </h3>
+              <p className="mt-3 text-[#4C5E6F] max-w-[60ch]" style={{ fontSize: '14.5px', lineHeight: 1.6 }}>
+                Whichever way the enquiry arrives, the same thing happens to it — every time.
+              </p>
+            </div>
+            {/* the captured → owned → followed-up flow (the rich core) */}
+            <div className="relative px-7 lg:px-10 pb-9">
+              <div className="flex flex-col lg:flex-row items-stretch gap-3 lg:gap-2">
+                {OWNED_STAGES.flatMap((s, i) => {
+                  const Icon = s.icon;
+                  const stage = (
+                    <div key={s.n} className="lg:flex-1 rounded-xl p-5 lg:p-6" style={{ background: 'linear-gradient(180deg, #F4FBFC 0%, #FFFFFF 100%)', boxShadow: '0 6px 18px rgba(8,17,31,0.05)' }}>
+                      <div className="flex items-center gap-2.5 mb-3">
+                        <span className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#FFFFFF', color: '#0E7D8C', boxShadow: '0 3px 10px rgba(20,184,166,0.12)' }}><Icon size={17} /></span>
+                        <span className="mw2-numeral text-[#CFE3E8]" style={{ fontSize: '22px' }}>{s.n}</span>
                       </div>
+                      <div className="text-[#08111F]" style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '-0.01em' }}>{s.title}</div>
+                      <p className="mt-1.5 text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>{s.detail}</p>
                     </div>
                   );
+                  if (i === OWNED_STAGES.length - 1) return [stage];
+                  return [
+                    stage,
+                    <div key={`${s.n}-arrow`} className="flex items-center justify-center shrink-0" aria-hidden="true">
+                      <ArrowRight size={18} className="rotate-90 lg:rotate-0 text-[#14B8A6]" />
+                    </div>,
+                  ];
                 })}
               </div>
-              <div className="relative mt-auto pt-5 text-[#6F8190]" style={{ fontSize: '11.5px', lineHeight: 1.5 }}>
-                Four ways in, one place they land — so nothing falls into an inbox no one watches.
-              </div>
+            </div>
+            {/* payoff footer */}
+            <div className="relative px-7 lg:px-10 py-5 border-t flex flex-wrap items-center justify-between gap-3" style={{ borderColor: '#EAF4F6', background: 'linear-gradient(to right, #F4FBFC, #FFFFFF)' }}>
+              <span className="inline-flex items-center gap-2 text-[#0F7A57]" style={{ fontSize: '13px', fontWeight: 700 }}>
+                <CheckCircle2 size={15} /> Four ways in, one place they land.
+              </span>
+              <span className="text-[#6F8190]" style={{ fontSize: '12.5px' }}>Nothing falls into an inbox no one watches.</span>
             </div>
           </div>
         </div>
