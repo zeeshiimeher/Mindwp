@@ -297,7 +297,7 @@ const SLIP_MOMENTS: ReadonlyArray<{
       tone: '#0E7D8C',
       tag: 'Found, then unsure',
       title: 'The page gets the visit, but not the confidence to act.',
-      body: 'Someone finds the business, reads the service or treatment page, checks the reviews — and still leaves, because the next step is not clear enough to take.',
+      body: 'They read the page, check the reviews — and still leave, because the next step isn’t clear enough to act on.',
       icon: Search,
       slip: 'Visit ends · no enquiry',
     },
@@ -306,7 +306,7 @@ const SLIP_MOMENTS: ReadonlyArray<{
       tone: '#9A6F12',
       tag: 'Contacted, then waiting',
       title: 'The form, call, or quote arrives — then the momentum stalls.',
-      body: 'A weekend form sits unread. A mid-job call rings out with no callback. A quote goes out Friday and Monday runs on memory.',
+      body: 'A weekend form sits unread. A mid-job call rings out. A quote goes out Friday — and Monday runs on memory.',
       icon: Inbox,
       slip: 'Reply waiting · hours later',
     },
@@ -315,7 +315,7 @@ const SLIP_MOMENTS: ReadonlyArray<{
       tone: '#0F7A57',
       tag: 'Finished, then forgotten',
       title: 'The work goes well, but the trust never makes it back to the site.',
-      body: 'The job lands, the appointment is kept, the patient leaves reassured — and the moment to ask for a review or follow up quietly passes.',
+      body: 'The job lands well, the appointment’s kept — and the moment to ask for a review quietly passes.',
       icon: Star,
       slip: 'No review asked',
     },
@@ -766,7 +766,7 @@ function TwoWebsites() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           <div className="relative flex flex-col">
             <div className="mb-3 inline-flex items-baseline gap-2">
-              <span className="uppercase tracking-[0.14em] text-[#9CA3B0]" style={{ fontSize: '11px', fontWeight: 700 }}>Shallow site</span>
+              <span className="uppercase tracking-[0.14em] text-[#6F8190]" style={{ fontSize: '11px', fontWeight: 700 }}>Shallow site</span>
               <span className="text-[#9CA3B0]" style={{ fontSize: '12.5px' }}>— ends at the form</span>
             </div>
             <ShallowSite />
@@ -800,22 +800,18 @@ function TwoWebsites() {
 
 // ============================================================================
 // SECTION 05 — Local visibility (white)
-// Silhouette: a calm, legible find -> hold path. ONE clear reading order — the
-// search-entry surface is the start, a single arrow moves into three quiet,
-// evenly-aligned, numbered "what holds it" factors. Reduced decoration so the
-// eye goes entry -> factors without hunting.
+// Technique: ONE unified local-profile / knowledge-panel artifact. Finding (the
+// search/map header) and verifying (identity + the three holding factors +
+// "one story" footer) live on the SAME connected surface — a single focal
+// object, not two zones bridged by an arrow.
 // ============================================================================
 
 function LocalVisibility() {
-  const holds = [
-    { icon: MapPin, color: '#0E7D8C', tagBg: '#14B8A614', kicker: 'Service area', title: 'Coverage matched to the work.', note: 'Service-area pages match the postcodes you actually work in — profile, website, and directories all agree.', chips: ['Area 1', 'Area 2', 'Area 3', 'Area 4'] },
-    { icon: CheckCircle2, color: '#0F7A57', tagBg: '#21B98514', kicker: 'Listings', title: 'The same story everywhere.', note: 'Name, hours, phone, and services match across the website, the Google profile, and every directory.', chips: ['Name', 'Hours', 'Phone', 'Service lines'] },
-    { icon: Star, color: '#9A6F12', tagBg: '#F4B74014', kicker: 'Reviews', title: 'Recent, consistent, owned.', note: 'Reviews asked for when the job or appointment ends well, and shown next to the work — not in a footer.', chips: ['Google Business Profile', 'Trustpilot', 'Sector-specific'] },
-  ];
   return (
     <section className="section bg-page-white">
-      <div className="container section-stack">
-        <div className="grid grid-cols-12 gap-8 lg:gap-10">
+      <div className="container">
+        {/* Header */}
+        <div className="grid grid-cols-12 gap-8 lg:gap-10 mb-12 lg:mb-14">
           <div className="col-span-12 lg:col-span-7">
             <div className="section-kicker" style={{ color: '#0E7D8C' }}>Local SEO Authority</div>
             <span className="mw2-rule mt-5" style={{ color: '#0E7D8C' }} />
@@ -826,79 +822,102 @@ function LocalVisibility() {
           </div>
           <div className="col-span-12 lg:col-span-5 flex items-end">
             <p className="text-[#4C5E6F]" style={{ fontSize: '16px', lineHeight: 1.65 }}>
-              Nearby customers and patients find you, then verify you, before they enquire. It holds when the search
-              moment leads into details that line up — and stay lined up.
+              Nearby customers and patients find you, then verify you, before they enquire. It holds when the listing,
+              the reviews, and the service-area details all line up — and stay lined up.
             </p>
           </div>
         </div>
 
-        {/* find -> hold: entry surface, one arrow, three calm numbered factors */}
-        <div className="grid grid-cols-12 gap-y-6 lg:gap-x-4 items-center">
-          {/* START — the search moment */}
-          <div className="col-span-12 lg:col-span-5">
-            <div className="uppercase tracking-[0.16em] mb-3 inline-flex items-center gap-2" style={{ color: '#14B8A6', fontSize: '10px', fontWeight: 700 }}>
-              <Search size={12} /> Where the visit starts
-            </div>
-            <div className="rounded-2xl bg-white p-4 lg:p-5" style={{ border: '1px solid #E6EEF3', boxShadow: '0 16px 44px rgba(8,17,31,0.08)' }}>
-              <div className="rounded-full px-3.5 py-2.5 flex items-center gap-2 mb-3" style={{ background: '#F6FAFC' }}>
-                <Search size={12} color="#6F8190" />
-                <span className="text-[#08111F]" style={{ fontSize: '12px', fontWeight: 600 }}>emergency plumber near me</span>
-                <span className="ml-auto inline-flex items-center gap-1 text-[#9CA3B0] shrink-0" style={{ fontSize: '10px', fontWeight: 600 }}><MapPin size={9} /> Local</span>
+        {/* ONE local profile: found and verified on the same surface */}
+        <div className="relative max-w-[920px] mx-auto">
+          <div className="absolute -inset-x-8 -top-4 -bottom-4 rounded-[44px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 22%, rgba(20,184,166,0.12), transparent 72%)', filter: 'blur(56px)' }} aria-hidden="true" />
+          <div className="relative rounded-2xl bg-white overflow-hidden" style={{ border: '1px solid #D8E6EE', boxShadow: '0 36px 90px rgba(8,17,31,0.12)' }}>
+            {/* FOUND — the local search / map moment */}
+            <div className="relative h-[164px] overflow-hidden" style={{ background: 'linear-gradient(160deg, #EAF7F8 0%, #F4FBFC 100%)' }}>
+              <div className="absolute inset-0 opacity-50" style={{ backgroundImage: 'linear-gradient(#D6EAEC 1px, transparent 1px), linear-gradient(90deg, #D6EAEC 1px, transparent 1px)', backgroundSize: '34px 34px' }} aria-hidden="true" />
+              <div className="absolute left-0 right-0 top-[64%] h-[6px]" style={{ background: '#FFFFFF', opacity: 0.7 }} aria-hidden="true" />
+              <div className="absolute top-0 bottom-0 left-[26%] w-[6px]" style={{ background: '#FFFFFF', opacity: 0.7 }} aria-hidden="true" />
+              <div className="absolute top-[-10%] bottom-[-10%] right-[24%] w-[5px] rotate-[14deg]" style={{ background: '#FFFFFF', opacity: 0.55 }} aria-hidden="true" />
+              {[['16%', '32%'], ['74%', '22%'], ['62%', '80%'], ['36%', '84%']].map(([l, t], i) => (
+                <span key={i} className="absolute" style={{ left: l, top: t }} aria-hidden="true"><MapPin size={14} fill="#C9E0E3" color="#A9C6CB" /></span>
+              ))}
+              {/* the business pin (highlighted) */}
+              <div className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div className="px-2.5 py-1 rounded-md mb-1.5 whitespace-nowrap" style={{ background: '#08111F', color: '#FFFFFF', fontSize: '10px', fontWeight: 700, boxShadow: '0 6px 14px rgba(8,17,31,0.25)' }}>Your Business · Open now</div>
+                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center" style={{ boxShadow: '0 0 0 4px rgba(20,184,166,0.18), 0 8px 20px rgba(20,184,166,0.30)', color: '#14B8A6' }}><MapPin size={20} fill="#14B8A6" color="#FFFFFF" /></span>
               </div>
-              <div className="space-y-2">
-                {[
-                  { name: 'A local listing', meta: 'reviews · local', highlight: false },
-                  { name: 'Your business — the obvious choice', meta: 'recent verified reviews · area covered', highlight: true },
-                  { name: 'Another listing', meta: 'few reviews', highlight: false },
-                ].map((l, i) => (
-                  <div key={i} className="relative rounded-lg px-3 py-2.5 flex items-center gap-3 overflow-hidden" style={{ background: l.highlight ? 'linear-gradient(135deg, #FFFFFF, #ECF9FB)' : '#F9FBFC', boxShadow: l.highlight ? '0 6px 16px rgba(20,184,166,0.12)' : 'none' }}>
-                    {l.highlight && <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full" style={{ background: '#14B8A6' }} />}
-                    <span className="w-8 h-8 rounded-md flex items-center justify-center shrink-0" style={{ background: l.highlight ? '#14B8A6' : '#EEF3F6', color: l.highlight ? '#FFFFFF' : '#9CA3B0' }}><MapPin size={14} /></span>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-[#08111F] truncate" style={{ fontSize: '12.5px', fontWeight: l.highlight ? 700 : 600 }}>{l.name}</div>
-                      <div className="flex items-center gap-1 mt-0.5"><Star size={8} fill={l.highlight ? '#F4B740' : '#9CA3B0'} color={l.highlight ? '#F4B740' : '#9CA3B0'} /><span className="text-[#6F8190]" style={{ fontSize: '9.5px', fontWeight: 600 }}>{l.meta}</span></div>
-                    </div>
-                    {l.highlight && <ArrowRight size={12} color="#0E7D8C" />}
-                  </div>
+              {/* search chip */}
+              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full px-3 py-2" style={{ background: '#FFFFFF', boxShadow: '0 6px 18px rgba(8,17,31,0.10)' }}>
+                <Search size={12} color="#6F8190" />
+                <span className="text-[#08111F]" style={{ fontSize: '11.5px', fontWeight: 600 }}>emergency plumber near me</span>
+                <span className="ml-1 inline-flex items-center gap-1 text-[#0E7D8C]" style={{ fontSize: '9.5px', fontWeight: 700 }}><span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]" /> Local</span>
+              </div>
+            </div>
+
+            {/* IDENTITY — who they found + the first trust read */}
+            <div className="flex items-center gap-4 px-6 lg:px-8 py-5 border-b" style={{ borderColor: '#EEF3F6' }}>
+              <span className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #14B8A6, #0E7D8C)', color: '#FFFFFF', boxShadow: '0 8px 20px rgba(20,184,166,0.30)' }}><MapPin size={22} /></span>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[#08111F]" style={{ fontSize: '18px', fontWeight: 700, letterSpacing: '-0.01em' }}>Your Business</span>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full" style={{ background: '#E6F8F0', color: '#0F7A57', fontSize: '9px', fontWeight: 700 }}><CheckCircle2 size={10} /> VERIFIED</span>
+                </div>
+                <div className="text-[#6F8190]" style={{ fontSize: '12.5px' }}>Emergency plumber · Service-area business</div>
+              </div>
+              <div className="hidden sm:flex flex-col items-end shrink-0">
+                <div className="flex items-center gap-0.5">{[0, 1, 2, 3, 4].map(i => <Star key={i} size={12} fill="#F4B740" color="#F4B740" />)}</div>
+                <div className="text-[#9CA3B0] mt-0.5" style={{ fontSize: '10px', fontWeight: 600 }}>recent verified reviews</div>
+              </div>
+            </div>
+
+            {/* HELD IN PLACE — three verification layers, same card */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: '#EEF3F6' }}>
+              <div className="p-6 lg:p-7">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#14B8A614', color: '#0E7D8C' }}><MapPin size={15} /></span>
+                  <span className="uppercase tracking-[0.12em] text-[#9CA3B0]" style={{ fontSize: '9px', fontWeight: 700 }}>Service area</span>
+                </div>
+                <div className="text-[#08111F] mb-2.5" style={{ fontSize: '14px', fontWeight: 700 }}>Coverage matched to the work.</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {['Area 1', 'Area 2', 'Area 3', 'Area 4', '+ more'].map(a => (
+                    <span key={a} className="inline-flex items-center px-2 py-0.5 rounded-md" style={{ background: '#F0FAFB', color: '#0E7D8C', fontSize: '10.5px', fontWeight: 700 }}>{a}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="p-6 lg:p-7">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#21B98514', color: '#0F7A57' }}><ShieldCheck size={15} /></span>
+                  <span className="uppercase tracking-[0.12em] text-[#9CA3B0]" style={{ fontSize: '9px', fontWeight: 700 }}>The details</span>
+                </div>
+                <div className="text-[#08111F] mb-2.5" style={{ fontSize: '14px', fontWeight: 700 }}>The same story everywhere.</div>
+                <div className="space-y-1.5">
+                  {['Name', 'Hours', 'Phone', 'Service lines'].map(d => (
+                    <div key={d} className="flex items-center gap-1.5 text-[#4C5E6F]" style={{ fontSize: '11.5px', fontWeight: 600 }}><CheckCircle2 size={12} color="#21B985" /> {d}</div>
+                  ))}
+                </div>
+              </div>
+              <div className="p-6 lg:p-7">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#F4B74014', color: '#9A6F12' }}><Star size={15} /></span>
+                  <span className="uppercase tracking-[0.12em] text-[#9CA3B0]" style={{ fontSize: '9px', fontWeight: 700 }}>Reviews</span>
+                </div>
+                <div className="text-[#08111F] mb-2.5" style={{ fontSize: '14px', fontWeight: 700 }}>Recent, asked for, owned.</div>
+                <div className="space-y-1.5">
+                  {['Google Business Profile', 'Trustpilot', 'Sector-specific'].map(p => (
+                    <div key={p} className="flex items-center gap-1.5 text-[#4C5E6F]" style={{ fontSize: '11.5px', fontWeight: 600 }}><span className="w-1.5 h-1.5 rounded-full" style={{ background: '#9A6F12' }} /> {p}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* ONE STORY — kept current across every source */}
+            <div className="flex flex-wrap items-center justify-between gap-3 px-6 lg:px-8 py-4 border-t" style={{ borderColor: '#D0EFF4', background: 'linear-gradient(to right, #F4FBFC, #FFFFFF)' }}>
+              <div className="flex items-center gap-2 flex-wrap">
+                {['Website', 'Google profile', 'Directories'].map(s => (
+                  <span key={s} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white" style={{ color: '#0E7D8C', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 8px rgba(8,17,31,0.05)' }}><CheckCircle2 size={11} /> {s}</span>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* the single directional move */}
-          <div className="col-span-12 lg:col-span-1 flex lg:flex-col items-center justify-center gap-2">
-            <span className="hidden lg:block uppercase tracking-[0.18em] text-[#9CA3B0]" style={{ fontSize: '8.5px', fontWeight: 700 }}>then</span>
-            <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0" style={{ boxShadow: '0 8px 18px rgba(8,17,31,0.10)', color: '#0E7D8C' }}>
-              <ArrowRight size={17} className="rotate-90 lg:rotate-0" />
-            </span>
-          </div>
-
-          {/* HOLD — three calm, aligned, numbered factors */}
-          <div className="col-span-12 lg:col-span-6">
-            <div className="uppercase tracking-[0.16em] mb-1 inline-flex items-center gap-2" style={{ color: '#0F7A57', fontSize: '10px', fontWeight: 700 }}>
-              <ShieldCheck size={12} /> What holds the listing in place
-            </div>
-            <div className="divide-y" style={{ borderColor: '#EEF3F6' }}>
-              {holds.map((h, i) => {
-                const Icon = h.icon;
-                return (
-                  <div key={h.kicker} className="flex items-start gap-4 py-4" style={{ borderColor: '#EEF3F6' }}>
-                    <div className="flex items-center gap-3 shrink-0">
-                      <span className="mw2-numeral text-[#D6E1E9] tabular-nums w-7 text-right" style={{ fontSize: '22px' }}>{i + 1}</span>
-                      <span className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: h.tagBg, color: h.color }}><Icon size={18} /></span>
-                    </div>
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      <div className="text-[#08111F]" style={{ fontSize: '15.5px', fontWeight: 700, letterSpacing: '-0.005em' }}>{h.title}</div>
-                      <p className="mt-1 text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>{h.note}</p>
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        {h.chips.map(c => (
-                          <span key={c} className="inline-flex items-center px-2 py-0.5 rounded-md" style={{ background: `${h.color}0F`, color: h.color, fontSize: '10.5px', fontWeight: 600 }}>{c}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              <span className="text-[#4C5E6F]" style={{ fontSize: '12.5px', fontWeight: 600 }}>One set of details — and they stay lined up.</span>
             </div>
           </div>
         </div>
@@ -909,245 +928,84 @@ function LocalVisibility() {
 
 // ============================================================================
 // SECTION 06 — Different ways in (mist)
-// Narrow path-selector rail + wide detail panel that runs toward the edge. Each
-// of the four paths is its OWN scenario: its own signal colour (form teal,
-// missed-call red, quote green, consultation purple) AND its own artifact —
-// a captured record, a missed-call handoff sequence, a quote status board, and
-// a consultation intake card. Not a recoloured template.
+// Four contact routes shown at once as four colour-coded handling LANES, each
+// its own scenario (form=teal record, missed-call=red handoff, quote=green
+// status, consultation=purple intake), all converging into one "owned handling"
+// hub on the right. No tabs — the variety is visible at a glance.
 // ============================================================================
 
-type HandlingPath = {
+type Lane = {
   id: 'form' | 'call' | 'quote' | 'consult';
+  color: string;
+  tint: string;
+  icon: LucideIcon;
   qualifier: string;
   label: string;
-  icon: LucideIcon;
-  color: string;
-  headline: string;
-  sub: string;
-  steps: { title: string; note: string }[];
-  footnote: string;
+  outcome: string;
 };
 
-const HANDLING_PATHS: ReadonlyArray<HandlingPath> = [
-  {
-    id: 'form',
-    qualifier: 'From the website',
-    label: 'Form enquiry',
-    icon: Inbox,
-    color: '#0E7D8C',
-    headline: 'Repair enquiry — named local area',
-    sub: 'Arrived during working hours from a service page',
-    steps: [
-      { title: 'Captured', note: 'Logged the moment it lands' },
-      { title: 'Acknowledged', note: 'Replied while still fresh' },
-      { title: 'Owned', note: 'A named person follows up' },
-    ],
-    footnote: 'Where it came from, why they got in touch, and who is replying — all attached to the enquiry, not sitting in a shared inbox.',
-  },
-  {
-    id: 'call',
-    qualifier: 'Inbound calls',
-    label: 'Phone & missed calls',
-    icon: PhoneCall,
-    color: '#C2554E',
-    headline: 'Weekend missed call — recovered with context',
-    sub: 'After-hours · service line tracked',
-    steps: [
-      { title: 'Caught', note: 'Missed call detected' },
-      { title: 'Texted back', note: 'Acknowledged in seconds' },
-      { title: 'Called back', note: 'Owned, not forgotten' },
-    ],
-    footnote: 'Weekend and after-hours calls do not disappear into voicemail. They come back into the same handling, with the right person calling back.',
-  },
-  {
-    id: 'quote',
-    qualifier: 'After the quote',
-    label: 'Quote follow-up',
-    icon: History,
-    color: '#0F7A57',
-    headline: 'Quote sent Friday — follow-up already set',
-    sub: 'The deciding window is after the quote goes out',
-    steps: [
-      { title: 'Logged', note: 'Quote captured with a date' },
-      { title: 'Followed up', note: 'Scheduled, not improvised' },
-      { title: 'Resolved', note: 'Status always visible' },
-    ],
-    footnote: 'Most quotes are won or lost in the follow-up nobody owns. Here the next step is booked the moment the quote is sent.',
-  },
-  {
-    id: 'consult',
-    qualifier: 'Consultation request',
-    label: 'Consultation request',
-    icon: Calendar,
-    color: '#6B4FB8',
-    headline: 'New patient consultation — intake routed',
-    sub: 'The first reply sets the tone before anyone has spoken',
-    steps: [
-      { title: 'Captured', note: 'Request with full context' },
-      { title: 'Confirmed', note: 'Acknowledged immediately' },
-      { title: 'Routed', note: 'To the right person' },
-    ],
-    footnote: 'A consultation request is a relationship starting. The first reply is handled the same way, every time, for every new patient or client.',
-  },
+const HANDLING_LANES: ReadonlyArray<Lane> = [
+  { id: 'form', color: '#0E7D8C', tint: '#F3FAFB', icon: Inbox, qualifier: 'From the website', label: 'Form enquiry', outcome: 'Owned' },
+  { id: 'call', color: '#C2554E', tint: '#FDF4F3', icon: PhoneCall, qualifier: 'Inbound calls', label: 'Phone & missed calls', outcome: 'Called back' },
+  { id: 'quote', color: '#0F7A57', tint: '#F1FAF5', icon: History, qualifier: 'After the quote', label: 'Quote follow-up', outcome: 'Resolved' },
+  { id: 'consult', color: '#6B4FB8', tint: '#F7F4FD', icon: Calendar, qualifier: 'Consultation request', label: 'Consultation request', outcome: 'Routed' },
 ];
 
-// — Per-path artifacts: each foregrounds a different object —————————————————
-
-function FormArtifact() {
-  const fields = [
-    { k: 'Source page', v: '/services/emergency-callout' },
-    { k: 'Service', v: 'Emergency repair' },
-    { k: 'Area', v: 'Named local area' },
-    { k: 'Via', v: 'Website form' },
-  ];
-  return (
-    <div className="rounded-xl p-5" style={{ background: '#F3FAFB' }}>
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2.5">
-          <span className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: '#FFFFFF', color: '#0E7D8C', boxShadow: '0 3px 10px rgba(8,17,31,0.06)' }}><Inbox size={16} /></span>
-          <div>
-            <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>Website enquiry — captured</div>
-            <div className="text-[#6F8190]" style={{ fontSize: '11px' }}>Logged with context, not a bare email</div>
-          </div>
-        </div>
-        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ background: '#0E7D8C', color: '#FFFFFF', fontSize: '9px', fontWeight: 700, letterSpacing: '0.08em' }}><CheckCircle2 size={10} /> LOGGED</span>
-      </div>
-      <div className="grid grid-cols-2 gap-2.5">
-        {fields.map(f => (
-          <div key={f.k} className="rounded-lg p-3" style={{ background: '#FFFFFF', boxShadow: '0 2px 8px rgba(8,17,31,0.04)' }}>
-            <div className="uppercase tracking-[0.1em] text-[#9CA3B0]" style={{ fontSize: '8.5px', fontWeight: 700 }}>{f.k}</div>
-            <div className="text-[#0E2740] truncate" style={{ fontSize: '12.5px', fontWeight: 600 }}>{f.v}</div>
-          </div>
+// Each lane foregrounds a different object: a captured record, a missed-call
+// handoff, a quote status, a consultation intake.
+function LaneArtifact({ id }: { id: Lane['id'] }) {
+  if (id === 'form') {
+    return (
+      <div className="flex items-center gap-2 flex-wrap">
+        {['Source page', 'Service', 'Named area'].map(f => (
+          <span key={f} className="inline-flex items-center px-2 py-1 rounded-md bg-white" style={{ color: '#0E2740', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}>{f}</span>
         ))}
+        <span className="inline-flex items-center gap-1 text-[#0E7D8C]" style={{ fontSize: '11px', fontWeight: 700 }}><CheckCircle2 size={12} /> captured with context</span>
       </div>
-      <div className="mt-3 space-y-2">
-        <div className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5" style={{ background: '#FFFFFF', boxShadow: '0 2px 8px rgba(8,17,31,0.04)' }}>
-          <span className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: '#E6F8F0', color: '#0F7A57' }}><CheckCircle2 size={14} /></span>
-          <span className="text-[#08111F] flex-1" style={{ fontSize: '12.5px', fontWeight: 600 }}>Owner assigned — service manager</span>
-          <span className="text-[#0F7A57]" style={{ fontSize: '10.5px', fontWeight: 700 }}>Owned</span>
-        </div>
-        <div className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5" style={{ background: '#F9FCFD' }}>
-          <span className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: '#EEF3F6', color: '#6F8190' }}><History size={14} /></span>
-          <span className="text-[#4C5E6F] flex-1" style={{ fontSize: '12.5px', fontWeight: 500 }}>Chase set if it goes quiet</span>
-          <span className="text-[#9CA3B0]" style={{ fontSize: '10.5px', fontWeight: 600 }}>Tracked</span>
-        </div>
+    );
+  }
+  if (id === 'call') {
+    const nodes = [
+      { icon: PhoneOff, c: '#C2554E', bg: '#FBE9E8', t: 'Missed' },
+      { icon: MessageSquare, c: '#0E7D8C', bg: '#E3F6F4', t: 'Text back' },
+      { icon: PhoneCall, c: '#0F7A57', bg: '#E6F8F0', t: 'Callback' },
+    ];
+    return (
+      <div className="flex items-center gap-1.5 flex-wrap">
+        {nodes.map((n, i) => {
+          const Icon = n.icon;
+          return (
+            <span key={i} className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 rounded-full pl-1.5 pr-2.5 py-1 bg-white" style={{ boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}>
+                <span className="w-5 h-5 rounded-full flex items-center justify-center" style={{ background: n.bg, color: n.c }}><Icon size={11} /></span>
+                <span className="text-[#0E2740]" style={{ fontSize: '10.5px', fontWeight: 700 }}>{n.t}</span>
+              </span>
+              {i < 2 && <ArrowRight size={12} color="#C2554E" className="opacity-50" />}
+            </span>
+          );
+        })}
       </div>
-    </div>
-  );
-}
-
-function CallArtifact() {
-  const steps = [
-    { icon: PhoneOff, ring: '#E76F6F', chipText: '#C2554E', title: 'Inbound call — missed', note: 'After-hours · service line tracked · area attached.' },
-    { icon: MessageSquare, ring: '#14B8A6', chipText: '#0E7D8C', title: 'Text sent back, same line', bubble: 'Sorry we missed you — someone on the team has been notified and will call you straight back.' },
-    { icon: PhoneCall, ring: '#21B985', chipText: '#0F7A57', title: 'Callback owned', note: 'Assigned to the on-call engineer, with the context.' },
-  ];
+    );
+  }
+  if (id === 'quote') {
+    return (
+      <div className="flex items-center gap-2 flex-wrap">
+        <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-white" style={{ color: '#0E2740', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}><FileText size={11} color="#0F7A57" /> Quote sent · reminder set</span>
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: '#FFF6E6', color: '#9A6F12', fontSize: '10.5px', fontWeight: 700 }}><span className="w-1.5 h-1.5 rounded-full bg-[#F4B740]" /> Status: Awaiting reply</span>
+      </div>
+    );
+  }
   return (
-    <div className="rounded-xl p-5" style={{ background: '#FDF4F3' }}>
-      <div className="flex items-center justify-between mb-4">
-        <span className="uppercase tracking-[0.14em]" style={{ color: '#C2554E', fontSize: '9.5px', fontWeight: 700 }}>Missed-call recovery</span>
-        <span className="text-[#9CA3B0]" style={{ fontSize: '10.5px', fontWeight: 600 }}>handoff, in order</span>
-      </div>
-      <div className="relative pl-8">
-        <span className="absolute left-[14px] top-3 bottom-3 w-px" style={{ background: 'linear-gradient(to bottom, #E76F6F, #14B8A6, #21B985)' }} aria-hidden="true" />
-        <div className="space-y-3">
-          {steps.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div key={i} className="relative">
-                <span className="absolute -left-8 top-1.5 w-[28px] h-[28px] rounded-full bg-white flex items-center justify-center" style={{ boxShadow: `0 0 0 3px ${s.ring}22`, color: s.chipText }}><Icon size={13} /></span>
-                <div className="rounded-lg px-3.5 py-2.5" style={{ background: '#FFFFFF', boxShadow: '0 2px 8px rgba(8,17,31,0.05)' }}>
-                  <div className="text-[#08111F]" style={{ fontSize: '12.5px', fontWeight: 700 }}>{s.title}</div>
-                  {s.note && <div className="text-[#6F8190] mt-0.5" style={{ fontSize: '11.5px', lineHeight: 1.45 }}>{s.note}</div>}
-                  {s.bubble && <div className="mt-2 rounded-xl rounded-tl-sm px-3 py-2" style={{ background: 'linear-gradient(135deg, #35C7D8, #14B8A6)', color: '#FFFFFF', fontSize: '11.5px', lineHeight: 1.45 }}>{s.bubble}</div>}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function QuoteArtifact() {
-  return (
-    <div className="rounded-xl p-5" style={{ background: '#F1FAF5' }}>
-      <div className="rounded-lg p-4 mb-3" style={{ background: '#FFFFFF', boxShadow: '0 3px 10px rgba(8,17,31,0.05)' }}>
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <span className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#E6F8F0', color: '#0F7A57' }}><FileText size={16} /></span>
-            <div className="min-w-0">
-              <div className="text-[#08111F] truncate" style={{ fontSize: '13px', fontWeight: 700 }}>Fixed-price quote — emergency callout</div>
-              <div className="text-[#6F8190]" style={{ fontSize: '11px' }}>Sent Friday · logged with a next date</div>
-            </div>
-          </div>
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full shrink-0" style={{ background: '#FFF6E6', color: '#9A6F12', fontSize: '9px', fontWeight: 700 }}><span className="w-1.5 h-1.5 rounded-full bg-[#F4B740]" /> AWAITING</span>
-        </div>
-      </div>
-      <div className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 mb-3" style={{ background: '#FFFFFF', boxShadow: '0 2px 8px rgba(8,17,31,0.04)' }}>
-        <span className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: '#EEF3F6', color: '#6F8190' }}><History size={14} /></span>
-        <span className="text-[#08111F] flex-1" style={{ fontSize: '12.5px', fontWeight: 600 }}>Follow-up reminder scheduled</span>
-        <span className="text-[#9CA3B0]" style={{ fontSize: '10.5px', fontWeight: 600 }}>not memory</span>
-      </div>
-      <div className="rounded-lg p-3.5" style={{ background: '#FFFFFF', boxShadow: '0 2px 8px rgba(8,17,31,0.04)' }}>
-        <div className="uppercase tracking-[0.12em] text-[#9CA3B0] mb-2" style={{ fontSize: '8.5px', fontWeight: 700 }}>Status — always on the board</div>
-        <div className="flex items-center gap-2">
-          {[{ s: 'Won', active: false }, { s: 'Awaiting', active: true }, { s: 'Lost', active: false }].map(st => (
-            <span key={st.s} className="flex-1 text-center rounded-md py-1.5" style={{ background: st.active ? '#0F7A57' : '#F3F6F8', color: st.active ? '#FFFFFF' : '#9CA3B0', fontSize: '11px', fontWeight: 700 }}>{st.s}</span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ConsultArtifact() {
-  const fields = [
-    { k: 'Treatment interest', v: 'Implant consultation' },
-    { k: 'Preferred time', v: 'Weekday evening' },
-    { k: 'Area', v: 'Named local area' },
-    { k: 'Notes', v: 'Kept with the request' },
-  ];
-  return (
-    <div className="rounded-xl p-5" style={{ background: '#F7F4FD' }}>
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2.5">
-          <span className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: '#FFFFFF', color: '#6B4FB8', boxShadow: '0 3px 10px rgba(8,17,31,0.06)' }}><Calendar size={16} /></span>
-          <div>
-            <div className="text-[#08111F]" style={{ fontSize: '13.5px', fontWeight: 700 }}>Consultation intake</div>
-            <div className="text-[#6F8190]" style={{ fontSize: '11px' }}>The first reply sets the tone</div>
-          </div>
-        </div>
-        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ background: '#6B4FB8', color: '#FFFFFF', fontSize: '9px', fontWeight: 700, letterSpacing: '0.08em' }}>NEW PATIENT</span>
-      </div>
-      <div className="space-y-2">
-        {fields.map(f => (
-          <div key={f.k} className="flex items-center gap-3 rounded-lg px-3.5 py-2.5" style={{ background: '#FFFFFF', boxShadow: '0 2px 8px rgba(8,17,31,0.04)' }}>
-            <span className="uppercase tracking-[0.08em] text-[#9CA3B0] shrink-0" style={{ fontSize: '9px', fontWeight: 700, width: 112 }}>{f.k}</span>
-            <span className="text-[#0E2740] truncate" style={{ fontSize: '12.5px', fontWeight: 600 }}>{f.v}</span>
-          </div>
-        ))}
-      </div>
-      <div className="mt-3 grid grid-cols-2 gap-2">
-        <div className="rounded-lg px-3 py-2.5 flex items-center gap-2" style={{ background: '#E3F6F4' }}>
-          <MessageSquare size={13} color="#0E7D8C" />
-          <span className="text-[#0E2740]" style={{ fontSize: '11.5px', fontWeight: 600 }}>Confirmation sent</span>
-        </div>
-        <div className="rounded-lg px-3 py-2.5 flex items-center gap-2" style={{ background: '#E6F8F0' }}>
-          <CheckCircle2 size={13} color="#0F7A57" />
-          <span className="text-[#0E2740]" style={{ fontSize: '11.5px', fontWeight: 600 }}>Routed to coordinator</span>
-        </div>
-      </div>
+    <div className="flex items-center gap-2 flex-wrap">
+      {['Interest', 'Preferred time'].map(f => (
+        <span key={f} className="inline-flex items-center px-2 py-1 rounded-md bg-white" style={{ color: '#0E2740', fontSize: '11px', fontWeight: 600, boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}>{f}</span>
+      ))}
+      <span className="inline-flex items-center gap-1 text-[#6B4FB8]" style={{ fontSize: '11px', fontWeight: 700 }}><MessageSquare size={12} /> intake confirmed</span>
     </div>
   );
 }
 
 function HandlingPaths() {
-  const [active, setActive] = useState<HandlingPath['id']>(HANDLING_PATHS[0].id);
-  const path = HANDLING_PATHS.find(p => p.id === active) ?? HANDLING_PATHS[0];
-  const PathIcon = path.icon;
-
   return (
     <section className="section bg-page-mist overflow-hidden">
       <div className="container">
@@ -1168,81 +1026,70 @@ function HandlingPaths() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-          {/* Narrow selector rail */}
-          <div className="lg:col-span-4" role="tablist" aria-label="Contact paths">
-            <div className="uppercase tracking-[0.14em] text-[#9CA3B0] mb-3 hidden lg:block" style={{ fontSize: '10px', fontWeight: 700 }}>Contact paths</div>
-            <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-1 px-1 lg:mx-0 lg:px-0">
-              {HANDLING_PATHS.map(p => {
-                const PIcon = p.icon;
-                const isActive = p.id === active;
-                return (
-                  <button
-                    key={p.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={isActive}
-                    onClick={() => setActive(p.id)}
-                    className="relative rounded-xl text-left transition-colors shrink-0 lg:shrink"
-                    style={{
-                      background: isActive ? '#FFFFFF' : 'transparent',
-                      boxShadow: isActive ? `0 10px 26px ${p.color}1F` : 'none',
-                      padding: '14px 16px 14px 18px',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    <span className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full" style={{ background: isActive ? p.color : 'transparent' }} aria-hidden="true" />
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: isActive ? `${p.color}14` : '#EEF3F6', color: isActive ? p.color : '#9CA3B0' }}><PIcon size={13} /></span>
-                      <span className="uppercase tracking-[0.14em]" style={{ color: isActive ? p.color : '#9CA3B0', fontSize: '9.5px', fontWeight: 700 }}>{p.qualifier}</span>
+        {/* Four routes in, converging into one owned-handling hub */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch">
+          {/* the four lanes */}
+          <div className="lg:col-span-8 space-y-3">
+            {HANDLING_LANES.map(lane => {
+              const Icon = lane.icon;
+              return (
+                <div key={lane.id} className="relative rounded-xl overflow-hidden" style={{ background: lane.tint, boxShadow: '0 6px 18px rgba(8,17,31,0.05)' }}>
+                  <span className="absolute left-0 top-0 bottom-0 w-1" style={{ background: lane.color }} aria-hidden="true" />
+                  <div className="grid grid-cols-12 items-center gap-x-4 gap-y-3 pl-5 pr-4 py-4">
+                    {/* route identity */}
+                    <div className="col-span-12 lg:col-span-4 flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#FFFFFF', color: lane.color, boxShadow: `0 3px 10px ${lane.color}1F` }}><Icon size={17} /></span>
+                      <div className="min-w-0">
+                        <div className="uppercase tracking-[0.12em]" style={{ color: lane.color, fontSize: '9px', fontWeight: 700 }}>{lane.qualifier}</div>
+                        <div className="text-[#08111F]" style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.25 }}>{lane.label}</div>
+                      </div>
                     </div>
-                    <div className="text-[#08111F]" style={{ fontSize: '14.5px', fontWeight: 700, lineHeight: 1.3 }}>{p.label}</div>
-                  </button>
-                );
-              })}
-            </div>
+                    {/* its own artifact */}
+                    <div className="col-span-12 lg:col-span-6 min-w-0">
+                      <LaneArtifact id={lane.id} />
+                    </div>
+                    {/* outcome → toward the hub */}
+                    <div className="col-span-12 lg:col-span-2 flex items-center justify-start lg:justify-end gap-1.5">
+                      <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full" style={{ background: `${lane.color}14`, color: lane.color, fontSize: '10px', fontWeight: 700 }}><CheckCircle2 size={11} /> {lane.outcome}</span>
+                      <ArrowRight size={14} color={lane.color} className="hidden lg:block shrink-0" />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* Wide detail panel — its own scenario, tinted by the path's signal colour, runs toward the edge */}
-          <div className="lg:col-span-8 lg:-mr-[max(0px,calc((100vw-1366px)/2))]">
-            <div className="rounded-2xl rounded-r-none bg-white p-6 lg:p-10 lg:min-h-[560px]" style={{ border: `1px solid ${path.color}33`, boxShadow: `0 24px 64px ${path.color}14` }}>
-              {/* header */}
-              <div className="flex items-start justify-between gap-4 mb-6 pb-5 border-b" style={{ borderColor: '#EEF3F6' }}>
-                <div className="min-w-0">
-                  <div className="uppercase tracking-[0.14em] mb-1.5" style={{ color: path.color, fontSize: '10px', fontWeight: 700 }}>{path.qualifier}</div>
-                  <h3 className="text-[#08111F]" style={{ fontSize: 'clamp(20px, 2vw, 25px)', fontWeight: 700, letterSpacing: '-0.012em', lineHeight: 1.2 }}>{path.headline}</h3>
-                  <div className="mt-1.5 text-[#6F8190]" style={{ fontSize: '12.5px', fontWeight: 500 }}>{path.sub}</div>
-                </div>
-                <span className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${path.color}14`, color: path.color }}>
-                  <PathIcon size={22} />
-                </span>
+          {/* the owned-handling hub — every route lands here */}
+          <div className="lg:col-span-4">
+            <div className="relative rounded-2xl h-full p-7 overflow-hidden bg-white flex flex-col" style={{ border: '1px solid #C7EBEF', boxShadow: '0 24px 60px rgba(20,184,166,0.14)' }}>
+              <span className="absolute left-0 right-0 top-0 h-1.5" style={{ background: 'linear-gradient(to right, #35C7D8, #14B8A6)' }} aria-hidden="true" />
+              <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.16), transparent 65%)', filter: 'blur(40px)' }} aria-hidden="true" />
+              <div className="relative">
+                <div className="uppercase tracking-[0.16em] text-[#0E7D8C]" style={{ fontSize: '10px', fontWeight: 700 }}>Where every route lands</div>
+                <h3 className="text-[#08111F] mt-2.5" style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.015em', lineHeight: 1.2 }}>Owned handling — not a shared inbox.</h3>
+                <p className="text-[#4C5E6F] mt-3" style={{ fontSize: '13px', lineHeight: 1.6 }}>Whichever way it arrives, the same thing happens to it.</p>
               </div>
-
-              {/* the path's own artifact — record / handoff sequence / status board / intake */}
-              {active === 'form' && <FormArtifact />}
-              {active === 'call' && <CallArtifact />}
-              {active === 'quote' && <QuoteArtifact />}
-              {active === 'consult' && <ConsultArtifact />}
-
-              {/* 01→02→03 handled sequence — in the path's colour */}
-              <div className="mt-7 pt-6 border-t" style={{ borderColor: '#EEF3F6' }}>
-                <div className="uppercase tracking-[0.14em] text-[#9CA3B0] mb-4" style={{ fontSize: '9.5px', fontWeight: 700 }}>Handled in three steps</div>
-                <div className="grid sm:grid-cols-3 gap-3">
-                  {path.steps.map((s, i) => (
-                    <div key={s.title} className="rounded-xl p-4" style={{ background: '#F9FCFD' }}>
-                      <div className="flex items-center gap-2" style={{ color: path.color }}>
-                        <span className="mw2-numeral" style={{ fontSize: '20px' }}>{String(i + 1).padStart(2, '0')}</span>
-                        <span className="h-[2px] flex-1 rounded-full" style={{ background: `${path.color}40` }} />
+              <div className="relative mt-5 space-y-2.5">
+                {[
+                  { icon: Inbox, t: 'Captured with context', n: 'not a bare email in a pile' },
+                  { icon: CheckCircle2, t: 'Picked up by a named person', n: 'someone owns it' },
+                  { icon: Repeat, t: 'Followed up on a cadence', n: 'not left to memory' },
+                ].map(r => {
+                  const RIcon = r.icon;
+                  return (
+                    <div key={r.t} className="flex items-start gap-2.5 rounded-xl px-3.5 py-2.5" style={{ background: '#F4FBFC' }}>
+                      <span className="w-7 h-7 rounded-md flex items-center justify-center shrink-0" style={{ background: '#FFFFFF', color: '#0E7D8C', boxShadow: '0 2px 6px rgba(8,17,31,0.05)' }}><RIcon size={13} /></span>
+                      <div>
+                        <div className="text-[#08111F]" style={{ fontSize: '12.5px', fontWeight: 700 }}>{r.t}</div>
+                        <div className="text-[#6F8190]" style={{ fontSize: '11px' }}>{r.n}</div>
                       </div>
-                      <div className="mt-2.5 text-[#08111F]" style={{ fontSize: '13px', fontWeight: 700 }}>{s.title}</div>
-                      <div className="mt-0.5 text-[#6F8190]" style={{ fontSize: '11.5px', lineHeight: 1.45 }}>{s.note}</div>
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
-
-              {/* footnote */}
-              <p className="mt-6 text-[#6F8190]" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>{path.footnote}</p>
+              <div className="relative mt-auto pt-5 text-[#6F8190]" style={{ fontSize: '11.5px', lineHeight: 1.5 }}>
+                Four ways in, one place they land — so nothing falls into an inbox no one watches.
+              </div>
             </div>
           </div>
         </div>
@@ -1439,10 +1286,10 @@ function Compounds() {
                   </span>
                 </div>
                 {/* step card */}
-                <div className="mt-5 rounded-2xl bg-white p-6 flex-1" style={{ border: '1px solid #E6EEF3', boxShadow: '0 8px 24px rgba(8,17,31,0.05)' }}>
+                <div className="mt-5 rounded-2xl bg-white p-6 flex-1 flex flex-col" style={{ border: '1px solid #E6EEF3', boxShadow: '0 8px 24px rgba(8,17,31,0.05)' }}>
                   <div className="uppercase tracking-[0.14em]" style={{ color: step.color, fontSize: '10px', fontWeight: 700 }}>{step.when}</div>
                   <h3 className="mt-2 text-[#08111F]" style={{ fontSize: '18px', fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.25 }}>{step.title}</h3>
-                  <p className="mt-2.5 text-[#6F8190]" style={{ fontSize: '13px', lineHeight: 1.6 }}>{step.body}</p>
+                  <p className="mt-2.5 text-[#6F8190] flex-1" style={{ fontSize: '13px', lineHeight: 1.6 }}>{step.body}</p>
                   <div className="mt-4 inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full" style={{ background: `${step.color}12` }}>
                     <span className="w-1.5 h-1.5 rounded-full" style={{ background: step.color }} />
                     <span style={{ color: step.color, fontSize: '11px', fontWeight: 600 }}>{step.chip}</span>
@@ -1506,7 +1353,7 @@ function ScenarioShell({
         <p className="mt-3 text-[#4C5E6F]" style={{ fontSize: '14px', lineHeight: 1.6 }}>{moment}</p>
       </div>
       {/* believable artifact */}
-      <div className="relative px-7 lg:px-8">{children}</div>
+      <div className="relative px-7 lg:px-8 flex-1 flex flex-col justify-center">{children}</div>
       {/* 01/02/03 handled sequence */}
       <div className="relative mt-auto p-7 lg:p-8 pt-6">
         <div className="uppercase tracking-[0.14em] text-[#9CA3B0] mb-3.5" style={{ fontSize: '9.5px', fontWeight: 700 }}>How it&rsquo;s handled</div>
