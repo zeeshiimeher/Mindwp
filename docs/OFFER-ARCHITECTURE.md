@@ -1,6 +1,8 @@
 # OFFER ARCHITECTURE — MindWP
 
-Authority for what MindWP sells, how the offer is structured, and how service ownership works.
+Authority for how the offer is **structured** — the five systems, what each owns and doesn't own, where implementation services sit, and the Revenue Recovery boundary.
+
+The **commercial** side of the offer — the concrete product the buyer buys, pricing/proof posture, market, and differentiation — lives in [STRATEGY.md](./STRATEGY.md). This doc is the structure; STRATEGY is the sell. Identity is in [FOUNDATION.md](./FOUNDATION.md).
 
 This doc defines the active offer model once. Other docs should reference it instead of repeating system definitions.
 
@@ -26,6 +28,8 @@ Do not invent new service categories unless governing docs are intentionally upd
 ## Core Offer Decision
 
 MindWP sells conversion-focused website systems with connected handling for established service businesses and specialist clinics.
+
+**The concrete public product is the Smart Website System: a website with the lead handling built in** — it makes the offer clear and builds trust, captures the enquiry, responds fast, owns the follow-up, and turns good work into proof. The differentiator vs every other web designer is that **the handling is built in, not bolted on** — most websites stop at the contact form; this one carries the enquiry the whole way through. (Full offer + proof + pricing posture: [STRATEGY.md](./STRATEGY.md).) The bundle is delivered on a connected backend platform that is **never named publicly** and is never the hero.
 
 MindWP does not sell isolated websites, isolated automations, isolated SEO tasks, isolated CRM setup, isolated review software, or disconnected digital services.
 
@@ -461,19 +465,9 @@ The timing boundary between Lead Response & Handling and Follow-Up & CRM must st
 
 ## Homepage Offer Order
 
-The homepage should not open as a service catalog.
+The homepage does not open as a service catalog. It leads with recognition, **states the concrete offer early (by section 3), shows real proof, and gives a clear next step.** The five systems appear as connected architecture (SWS flagship), not a service menu.
 
-Preferred order:
-
-1. Business reality.
-2. Work slipping away.
-3. Public buyer path.
-4. Website system plus connected handling.
-5. Active systems.
-6. Proof, scenario, or operating examples.
-7. Diagnostic CTA.
-
-This is offer-order guidance, not a fixed section list.
+The actual homepage section spine is defined and locked in [PAGES.md](./PAGES.md) — defer to it. This section only fixes the offer-ownership constraints: don't bury the offer, don't open as a catalog, protect the five-system hierarchy, and don't turn Revenue Recovery into a section.
 
 ## Industry And Content Connection
 

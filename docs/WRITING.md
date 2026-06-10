@@ -41,6 +41,8 @@ SERVICES -> TOOLS -> FEATURES
 
 Good MindWP writing feels observed. It sounds like someone watched the business for a day and noticed where work slipped away.
 
+But recognition is the opening, not the whole page. **Reach the concrete offer and real proof quickly** — the previous site lingered too long in philosophy and never told the buyer plainly what they get or showed them it works. After the reader sees their situation, name what the smart website actually does and show the work. Don't make them read an essay to find the offer.
+
 Bad:
 
 > We provide comprehensive digital solutions that streamline lead management.
@@ -412,11 +414,13 @@ Roofing may involve storm urgency and quote follow-up. HVAC may involve seasonal
 
 ## Section Rhythm
 
-Every page should move through:
+A useful underlying arc — **not a rigid template to stamp on every page:**
 
 ```text
-Recognition -> Friction -> Clarity -> Trust -> Action
+Recognition -> Friction -> Clarity (the offer) -> Proof -> Action
 ```
+
+This is a guide for where copy energy goes, not a fixed section list or order. Pages should vary their structure and silhouette (see [DESIGN.md](./DESIGN.md)) — applying the identical rhythm to every page is exactly what made the old site feel templated. What every page must do is reach the **offer** and show real **proof** before the strong CTA; how it gets there can differ.
 
 Hero sections create recognition. They should not teach the whole system.
 
@@ -439,6 +443,27 @@ Avoid:
 - generic lead-management wording
 - technology cards as filler
 - systems explained as a stack before the reader recognises the problem
+
+## Offer, Proof, And Pricing Language
+
+These three were weak or missing on the old site. They now carry the sell. Commercial detail lives in [STRATEGY.md](./STRATEGY.md); this is how to *say* it.
+
+**Offer.** State plainly what the buyer gets. The smart website is the website *and* the handling built into it — it brings work in and makes sure it doesn't slip away. Lead with the difference, not the philosophy:
+
+> Good: Most websites stop at the contact form. Ours carries the enquiry the whole way through — answered, owned, followed up, and turned into proof.
+> Weak: We deliver connected handling across the customer lifecycle.
+
+**Proof.** Point at real work, never invented results. Talk about what's *visible* in a build, not numbers that aren't real:
+
+> Good: A finished roofing site we built — clear service areas, the quote path in view, reviews placed beside the decision.
+> Banned: Increased leads 240%. Rated 4.9 by 312 customers.
+
+Label demonstration builds and anonymised work honestly (see [PAGES.md](./PAGES.md)). Founder authority is stated modestly and truthfully: "shipping service-business websites since 2015," "a small senior team." No faces, no fabricated bios.
+
+**Pricing.** A calm scope/price *posture*, not a tier wall. Help the buyer self-qualify on budget without pressure:
+
+> Good: Fixed-scope, from a clear starting point — you'll know what's included before we start.
+> Avoid: Plans from $99/mo! · Cheapest websites in town · custom quote required (hidden).
 
 ## Numbers And Claims
 

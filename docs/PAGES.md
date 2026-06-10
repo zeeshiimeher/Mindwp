@@ -1,177 +1,154 @@
 # PAGES — MindWP
 
-Page roles, funnel behavior, and CTA posture in one doc. Merges the load-bearing bullets from the previous `CONTENT.md` and `CONVERSION.md`.
+Information architecture, page roles, the locked homepage spine, and CTA posture.
 
-Offer ownership lives in [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Voice lives in [WRITING.md](./WRITING.md). Hard rules live in [CLAUDE.md](../CLAUDE.md).
+Offer structure: [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Commercial plan: [STRATEGY.md](./STRATEGY.md). Voice: [WRITING.md](./WRITING.md). Look: [DESIGN.md](./DESIGN.md).
 
-## Content Decision Order
+## Page decision order
 
-Before writing or adding a page:
+Before designing any page: confirm (1) the buyer's business reality, (2) the recognition moment, (3) the page type + primary intent, (4) the owning active system where relevant, (5) the funnel role, (6) what real proof it shows, (7) the next step. Then plan sections and build in Figma ([WORKFLOW.md](./WORKFLOW.md)).
 
-1. Confirm the buyer's business reality.
-2. Confirm the recognition moment.
-3. Confirm the page type and primary intent.
-4. Confirm the owning active system where relevant.
-5. Confirm the funnel role.
-6. Choose the communication pattern.
-7. Shape the section design.
-8. Build JSX in `Mindwp-Design/` first (see [WORKFLOW.md](./WORKFLOW.md)), port to `Mindwp/` after.
+## Information architecture
 
-## Page Type Hierarchy
+The previous site had no Work, About, or Pricing surfaces — three things a buyer needs to convert. They are now first-class.
 
-| Page Type | Primary Role | Funnel Role | Primary Outcome |
+Primary nav (labels settle during design):
+
+- **What we build** — the five systems (SWS flagship) + implementation pathways under SWS.
+- **Work** — proof: demonstration builds + anonymised real work. **New, load-bearing.**
+- **Industries** — Home Services + Healthcare Practices lanes.
+- **About** — the builder, the team, the since-2015 craft, the process. **New.**
+- **Pricing / How it works** — what's included, how a project runs, the scope/price posture. **New.**
+- **Resources / Blog** — discovery.
+- **Contact / Start** — the review entry point.
+
+```
+Home
+├─ What we build
+│   ├─ Smart Website Systems (flagship)
+│   ├─ Local SEO Authority Systems
+│   ├─ Lead Response & Handling Systems
+│   ├─ Follow-Up & CRM Systems
+│   ├─ Reputation & Review Systems
+│   └─ Implementation (under SWS): WordPress · Elementor · Bricks · Divi · WooCommerce · Website Rebuild
+├─ Work (case studies + demonstration builds)
+├─ Industries
+│   ├─ Home Services (hub) → Roofing* · HVAC · Plumbing · Foundation Repair · Septic · Tree Service
+│   └─ Healthcare Practices (hub) → Dental Implant* · Orthodontic · Oral Surgery · Dermatology · ENT/Sinus · Podiatry · Hearing Aid · Physiotherapy · Optometry · Orthopedic
+├─ About
+├─ Pricing / How it works
+├─ Resources / Blog
+└─ Contact / Start
+```
+`*` = front-door verticals, built deepest first.
+
+No public `/systems`, `/topics`, or `/portfolio` route families. Revenue Recovery is never a page, route, or nav item.
+
+## Page type hierarchy
+
+| Page Type | Role | Funnel | Primary outcome |
 | --- | --- | --- | --- |
-| Service | Active system decision page | BOFU | Decide whether this system should be reviewed or built. |
-| Implementation Service | Website-system implementation pathway | BOFU / commercial | Explain a practical build path under Smart Website Systems. |
-| Feature | Capability page inside one active system | MOFU | Explain one capability without becoming a separate offer. |
-| Industry Detail | Vertical application page | late MOFU / controlled BOFU | Translate active systems into one industry's working reality. |
-| Industry Category | Navigation and grouping page | MOFU | Help visitors find relevant vertical pathways. |
-| Blog | Problem discovery page | TOFU / MOFU | Diagnose one problem, misconception, pattern, or tradeoff. |
-| Resource | Framework or decision-support page | MOFU | Explain a method, map, checklist, comparison, or lens. |
-| Case Study | Proof or example page | MOFU / proof support | Prove or illustrate operating change. |
-| Generic Page | Structural site surface | context-specific | Support navigation, contact, legal, non-domain context. |
+| Home | Whole-system entry | TOFU→BOFU | Recognise the problem, grasp the offer, see proof, request a review |
+| Service | Active-system decision page | BOFU | Decide this system is worth reviewing/building |
+| Implementation Service | Build-path page under SWS | BOFU / commercial | Capture tool-intent, move up to the Smart Website System |
+| Industry Detail | Vertical lead-gen landing page | MOFU→BOFU | Recognise their vertical, see a build, enquire |
+| Industry Hub | Lane grouping page | MOFU | Route to the right vertical |
+| **Work / Case study** | **Proof** | **MOFU / proof** | **Believe MindWP can deliver** |
+| **About** | **Authority / trust** | **MOFU / trust** | **Trust the builder behind it** |
+| **Pricing / How it works** | **Commercial qualification** | **BOFU** | **Self-qualify on scope/budget, see the process** |
+| Feature | Capability inside one system | MOFU | Explain one capability without becoming an offer |
+| Blog | Problem discovery | TOFU/MOFU | Diagnose one problem, route upward |
+| Resource | Framework / decision support | MOFU | Reduce ambiguity, route to a system or proof |
 
-## Homepage
+## Homepage — LOCKED 16-section spine
 
-Create recognition before explaining the offer model. The lead is the buyer's working day, not the system stack.
+Owner-approved, all full-weight. Lead with recognition, state the offer by §03, show real work at §08, founder authority at §12, pricing signal at §16. Visual archetypes follow [DESIGN.md](./DESIGN.md) — real artifacts, varied silhouettes, no faux-UI.
 
-Public anchor headline: **"Work Comes In. Too Much Slips Away."**
+| # | Section | Job |
+| --- | --- | --- |
+| 01 | Hero — "Work comes in. Too much slips away." | Recognition + dual CTA; working-day timeline strip (not a queue panel) |
+| 02 | Where work slips | Three leak moments; editorial cards + small SVG each, no fake meters |
+| 03 | What we actually build | State the offer plainly — website system + handling around it |
+| 04 | Anatomy of a page that converts | Show craft; annotated *neutral* finished page, A/B/C callouts |
+| 05 | After the enquiry | Handling story in one pass: missed call → first reply → owner → follow-up → review |
+| 06 | Five systems | Offer architecture; calm rows, SWS flagship, no "control surface" |
+| 07 | Found & trusted nearby | Local trust; editorial split + simplified SVG map, generic labels |
+| 08 | The work | Proof of craft; gallery of demonstration builds (roofing, HVAC, dental implant, dermatology) |
+| 09 | Two industries, one pattern | Front-door bridge: home-services vs clinic scenario → lane hubs |
+| 10 | Statement band | Rhythm reset: "Nothing depends on someone remembering." |
+| 11 | What changes over time | Expectation setting; SVG step ladder (weeks / months / a year) |
+| 12 | Built by builders | Real trust; shipping service-business sites since 2015, small senior team — true/safe claims only |
+| 13 | Honest about the fit | Qualification; column contrast |
+| 14 | We start with a review | Offer + what you keep; editorial split + sample-report secondary CTA |
+| 15 | FAQ | Objections; quiet accordion |
+| 16 | Final CTA | Dark close, whole-system; dual CTA + quiet pricing-signal line |
 
-Buyer or patient journey to evoke visually: find → verify → trust → contact / book → handled → proof.
+At least one of §04/§05/§07 is an SVG illustration/diagram rather than a browser mockup. §08 builds are real demonstration builds, never captioned as client results.
 
-Five-system visual rule: SWS is the visual flagship/hub. The other four sit as connected protections around it. **Never** five equal tiles or a 2×3 grid. Two acceptable patterns:
+## Service pages
 
-- **Flagship row + 4-cell stack** (the `Mindwp-Design` `SixSystemStack` pattern adapted to five — SWS featured on top, the other four arranged 2×2 or 3+1 below with a journey rail).
-- **Hub + 4 orbital positions** (with an actual connecting graphic, not whitespace between cards).
+Active-system decision pages. Each owns **one business moment** and shows connected context only when it clarifies that moment — never repeats the full model or absorbs adjacent systems. Boundaries (clarity/trust/capture = SWS; find→verify = Local SEO; first response = Lead Response; ownership/follow-up = Follow-Up & CRM; review timing/proof = Reputation) per [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md). Each ends with proof and a diagnostic CTA. Not generic agency catalogs, tutorials, or platform-reseller pages.
 
-## Service Pages
+## Implementation pages
 
-Active system decision pages. Each primary service page owns **one business moment** and shows connected context only when it clarifies that owning moment. It must not repeat the full MindWP model or absorb adjacent systems.
+WordPress, Elementor, Bricks, Divi, WooCommerce, Website Rebuild — **commercial priorities**, not afterthoughts (they capture tool-intent search). Explain platform choice through business fit (clarity, maintainability, performance, ecommerce, enquiry capture, connected handling), resolve upward to Smart Website Systems. The tool is the route, not the value. Never affiliate-style comparisons or cheap-package pages.
 
-Boundaries that must stay clear:
+## Industry pages
 
-- **Smart Website Systems** owns clarity, trust, enquiry capture, and the website-as-control-point story.
-- **Local SEO Authority** owns find → verify → trust → contact. Local SEO starts with the website; mention website clarity, don't become a website page.
-- **Lead Response & Handling** owns first response and routing after someone reaches out.
-- **Follow-Up & CRM** owns ownership, status, reminders, and next steps after the first response or quote exists.
-- **Reputation & Review** owns review request timing, feedback routing, and completed work becoming proof.
+Two lanes only: **Home Services** and **Healthcare Practices**. Each detail page is a **real lead-gen landing page** — leads with that vertical's working conditions (timing, customer/patient behaviour, decision speed, trust concerns, enquiry/booking patterns, follow-up pressure, review expectations) and is anchored by a demonstration build. If a page could be applied to another vertical by swapping the name, it's invalid.
 
-Service pages must not become generic agency catalogs, tutorials, blog hubs, or platform-reseller pages.
+**Front-door strategy:** Roofing + Dental Implant Clinics built deepest first and double as demonstration-build showcases; the two lane hubs next; remaining 14 from a strong shared template, lighter, expanded over time. Healthcare pages treat the website as the **practice front door** — patient trust, treatment clarity, booking, consultation follow-up, reviews. Never medical software, EMR, compliance, hospital ops, or treatment-claim pages.
 
-## Implementation Service Pages
+## Work / Case studies (new)
 
-WordPress, Elementor, Bricks, Divi, WooCommerce, website redesign / system rebuild. Active **pathways** under Smart Website Systems.
+The proof surface. Demonstration builds shown big; anonymised real client work where names can't be used; named where permission exists. Label each clearly: **Demonstration build** · **Anonymised client work** · **Operational breakdown**. Only real client work with real evidence may imply measured outcomes — and only with permission. Never "Results / ROI / 287% increase" on illustrative work. Show visible structure and craft, not invented numbers.
 
-They may explain platform choice through business fit — clarity, maintainability, performance, ecommerce, enquiry capture, connected handling. They must not lead with technology, become affiliate-style platform comparisons, sell cheap packages, or disconnect from Smart Website Systems.
+## About (new)
 
-## Feature Pages
+The authority surface. The builder, the since-2015 craft, the small senior team, the way projects run. Real, modest, verifiable. No stock photography, no invented bios, no faces required. This is where trust in *the person* is built.
 
-Capability pages inside one active system. Canonical feature slugs: `/features/inbox`, `/features/voice-calls`, `/features/calendars`, `/features/reputation`, `/features/crm`, `/features/handling-paths`, `/features/website-chat`. The unpublished `/features/aichat` and `/features/workflows` slugs are removed and must not return.
+## Pricing / How it works (new)
 
-Feature pages may use capability language, integration context, and configuration detail when needed. The risk is SaaS drift, not capability clarity.
+The commercial-qualification surface. What's included in a Smart Website System, how a project runs, and a scope/price **posture** (e.g. fixed-scope, from a clear starting point) so buyers self-qualify without a wall of tiers. Honest about who it's for. Not a discount-led packages page.
 
-## Industry Pages
+## Blog & Resources
 
-Active public industry families: **Home Services** and **Healthcare Practices** only. 16 detail slugs total under those two umbrellas. No other industry route families.
-
-Industry pages translate the active systems into vertical working reality. They lead with working conditions, timing, customer or patient behavior, decision speed, trust concerns, enquiry/booking patterns, follow-up pressure, review/proof expectations.
-
-Healthcare practice pages: treat the website as the **practice front door**. Cover patient trust, treatment / procedure clarity, booking, consultation follow-up, reviews, and proof. Do not turn into medical software, EMR, compliance, hospital operations, or treatment-claim pages.
-
-If an industry page could be applied to another industry with minimal changes, it is invalid.
-
-## Blog & Resource Pages
-
-**Blogs diagnose.** One problem, misconception, operating pattern, or tradeoff per post. Open with a real situation. Route upward to a relevant resource, industry page, case study, or service page.
-
-**Resources explain frameworks.** Maps, checklists, comparisons, decision logic, diagnostic models, implementation guidance. Reduce ambiguity. Route to active system pages or proof when the reader is implementation-ready.
-
-Neither becomes a BOFU service page.
-
-## Case Studies
-
-Make clear what kind of evidence each one is:
-
-- **Real Case Study** — real client work with real attribution or measured/observable outcomes.
-- **Scenario Study** — realistic operational scenario, clearly illustrative.
-- **Website Showcase** — approved work example focused on visible structure and proof, not invented outcomes.
-- **Operational Breakdown** — explanation of what changed operationally without public attribution.
-
-Only real case studies may imply measured outcomes. Scenario studies must use labels like "Illustrative scenario," "Operating change," "What became clearer," "What this example shows." Never "Results," "ROI," "Testimonial," "287% increase."
-
-## Funnel Progression
-
-```
-Blog → Resource → Industry → Service
-```
-
-Blogs diagnose. Resources explain frameworks. Industry pages translate. Service pages own the implementation decision. Case studies support trust and proof.
-
-Do not make one page absorb another's role.
+**Blogs diagnose** one problem each; open with a real situation; route upward. **Resources explain frameworks** (maps, checklists, decision logic); route to a system or proof when implementation-ready. Neither becomes a BOFU service page. Funnel: Blog → Resource → Industry → Service, with Work/About/Pricing supporting trust and conversion throughout.
 
 ---
 
-# CTA Posture
+# CTA posture
 
-MindWP CTAs feel diagnostic, specific, calm, practical, low-pressure. The buyer should feel: "This will help me understand what is leaking and what should be fixed first." Not: "I am being pushed into a demo."
+Diagnostic, specific, calm, low-pressure — and now **multi-path with a commercial signal** (the old site's single soft CTA under-converted).
 
-## Conversion Sequence
+## The paths
 
-1. Show the buyer's real situation.
-2. Name what is slipping away.
-3. Explain what changes when the website system and connected handling path work properly.
-4. Show proof, proof-style reasoning, scenario, or operating example.
-5. Invite the buyer to review the weak point with MindWP.
+- **Primary — "Request a Website Review":** the diagnostic entry point. We look at the current site + handling path and show where work is slipping.
+- **Secondary — "See the work" / "See a sample review":** a lower-commitment path for buyers not ready to talk → routes to Work or a sample diagnostic.
+- **Commercial signal:** one quiet pricing/scope line near the primary CTA (esp. homepage §16 and the Pricing page) so buyers self-qualify on budget. Quiet, not a tier wall.
 
-Don't escalate to a strong CTA before the reader understands why the next step matters.
+## Conversion sequence (any page)
 
-## Approved CTA Directions
+Show the buyer's situation → name what's slipping → state what the smart website changes → show real proof → invite the review. Don't escalate to the strong CTA before the buyer understands why it matters.
 
-- Check my website system
-- Review my website and handling path
-- Find where work is slipping
-- Map my follow-up gaps
-- Talk through my current setup
-- Request a system review
-- Review my local visibility
-- Check my response path
-- Review my proof and reviews
+## CTA by page type
 
-These are direction examples, not mandatory labels. Short UI labels ("Contact MindWP," "Start a conversation") may be used as button text when nearby copy carries the diagnostic meaning.
+- **Home:** whole-system review + see-work secondary + pricing signal.
+- **Service:** review matched to the owning system.
+- **Implementation:** Smart Website System posture, framed around the right build path.
+- **Industry:** the vertical's working reality → relevant system or whole-system review; see-the-build secondary.
+- **Work:** "could yours work like this?" → review.
+- **Pricing:** start the review / talk through scope.
+- **Blog/Resource:** lighter, contextual; route to resource/industry/service.
 
-## CTAs To Avoid
+## CTAs to avoid
 
-Book a demo · Start free trial · Claim your spot · Skyrocket my leads · Get a free quote · Buy now · Unlock growth · Get more leads now · Dominate Google · Automate my business · Try the platform · See the CRM · Launch my AI chatbot · Get guaranteed rankings.
+Book a demo · Start free trial · Get a free quote · Skyrocket my leads · Dominate Google · Automate my business · Get guaranteed rankings · Try the platform · See the CRM. No ranking/revenue/response-time/review-volume guarantees.
 
-## CTA By Page Type
+## Form fields
 
-- **Homepage**: diagnose the whole website + handling path. Don't force into a narrow service too early.
-- **Service pages**: match the owning active system. Support a BOFU decision.
-- **Implementation service pages**: Smart Website Systems CTA posture. Frame around the right implementation path for a conversion-focused website system.
-- **Industry pages**: connect to the industry's working reality. Route to the most relevant active system or whole-system review.
-- **Blog pages**: lighter, contextual. Route to a resource, industry page, case study, or service page.
-- **Resource pages**: invite the reader to apply the framework. Route upward when implementation-ready.
-- **Case studies**: connect proof to a similar weak point. Route to the relevant system or diagnostic CTA.
-- **Contact page**: practical system review entry point. Explain what the buyer can send and what MindWP will look at.
+Useful: business or clinic name, website URL, industry/practice type, service area, current problem area (missed calls / follow-up / reviews / local visibility), what happens after enquiries arrive, best way to contact. Do **not** require revenue range, growth goals, or package selection. Let the buyer describe the problem in plain language.
 
-## Form Fields
+## Proof & claims
 
-Useful fields: business or clinic name, website URL, industry or practice type, service area, current problem area, what happens after enquiries arrive, main concern (missed calls / follow-up / reviews / local visibility), best way to contact.
-
-Do not require revenue range, generic growth goals, package-selection. Do not overload. Let the buyer describe the problem in plain language.
-
-## Proof And Claims
-
-Numbers allowed when their type is clear: sourced benchmark, clearly framed diagnostic estimate, or real measured result. Never invented client results, guaranteed outcomes, fabricated rankings, unsupported revenue claims, or review guarantees.
-
-## CTA Validation Checklist
-
-- Matches page type and owning active system.
-- Reflects the buyer's visible problem.
-- Tells or implies what happens next.
-- Feels diagnostic, not pushy.
-- Avoids demo/trial/platform language.
-- Avoids AI chatbot and CRM reseller positioning.
-- Avoids ranking, revenue, review, or lead-volume guarantees.
-- Does not invent proof.
-- Does not turn Revenue Recovery into a CTA category, page, panel, or form.
+Real demonstration builds and real (named/anonymised) work, shown as craft. Numbers only when their type is clear (sourced benchmark, clearly framed estimate, or real measured result). Never invented results, guaranteed outcomes, fabricated rankings, or review guarantees. Revenue Recovery is never a CTA category, page, panel, or form.

@@ -1,181 +1,82 @@
-# WORKFLOW — Cross-Folder Design Loop
+# WORKFLOW — Figma-First Design Loop
 
-How pages get designed and shipped at MindWP. The canonical workflow going forward.
+How pages get made right now. **We design the whole site in Figma first. Code comes later.**
 
-## Why Two Folders
+This replaces the old React-sandbox → port → validate workflow. That code machinery (the `Mindwp-Design` Vite sandbox, porting to `Mindwp/src`, `pnpm check:names`/typecheck/smoke) is **deferred to the build phase** and lives, for reference only, in `docs/archive/`. Do not work in code until the full design is approved.
 
-`Mindwp/` (this repo, production code at the root) accumulated heavy structural discipline — token-only styling, two shell components that standardize every section's silhouette, validators that block builds on drift terms, and 10+ governing docs. That environment is correct for production, but it suppresses design. Three Homepage rebuilds inside this folder produced visually flat results.
+## The phase we're in
 
-`Mindwp/Mindwp-Design/` is a Vite sandbox nested inside this same repo, on the same branch. No validators. No shells. Light token discipline only (a small `theme.css` aligned to Mindwp's brand + signal palette — see `Mindwp-Design/README-active-model.md`). Inline hex, inline `style={}`, raw `<section>` JSX, fast `pnpm dev`. The Figma Make sessions that produced the Hero / LeakDiagnosis / Foundation / SixSystemStack designs work there.
+1. **Design every page in Figma**, page by page, to an approved standard.
+2. Only after the design is signed off do we build the code.
 
-Splitting them is the answer. **Plan in `Mindwp/`. Design + review + revise in `Mindwp-Design/`. Port only when satisfied.**
+The Figma file is `Mindwp2026` (`GXcpV37YaecLcJ23UG616g`). Existing frames there — the Figma Make draft, the rebuilt Home, the Smart Website page — are **research into craft level, not templates to clone.** The standard is [DESIGN.md](./DESIGN.md), not those frames.
 
-## The Loop (Sandbox-First)
-
-The port is a separate, **explicit, user-triggered** step. Do not auto-port a finished design. The user inspects the sandbox version, requests revisions until they're satisfied, and then says "port this." Until then, all visual iteration stays in `Mindwp-Design/`.
+## The per-page loop
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│ 1. Plan in Mindwp/                                                  │
-│    Which business moment does the page own?                         │
-│    What's the recognition?                                          │
-│    What's the CTA?                                                  │
-│    What's in / not in?                                              │
-│    Plans live in chat or in docs/PAGES.md (durable decisions).      │
-└─────────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────────┐
-│ 2. Design in Mindwp-Design/src/app/                                 │
-│    Adapt an existing components/<Name>.tsx, or write a fresh one.   │
-│    Raw <section>, inline style, glow halos, custom shadows.         │
-│    Use var(--mw-*) tokens from theme.css when colors match the      │
-│    Mindwp palette; inline hex is fine for everything else.          │
-│    Use active 5-system names (see README-active-model.md).          │
-│    Iterate in pnpm dev until the page reads well.                   │
-└─────────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────────┐
-│ 3. Review + revise in Mindwp-Design                                 │
-│    User scrolls the sandbox dev server and flags problems.          │
-│    Each revision happens in the sandbox JSX — no production         │
-│    code touched yet.                                                │
-│    Repeat until the user signals satisfaction.                      │
-└─────────────────────────────────────────────────────────────────────┘
-                              ↓
-                    [user says "port this now"]
-                              ↓
-┌─────────────────────────────────────────────────────────────────────┐
-│ 4. Port to Mindwp/src/screens/<Page>.tsx                            │
-│    Hero  → HeroFrame with custom visual in `visual` slot.           │
-│    Body  → raw <section> JSX (NOT SectionShell).                    │
-│    Style → convert remaining inline hex to var(--mw-*) + mw-*       │
-│            classes where matched. Add new tokens for recurring      │
-│            patterns. Inline hex stays only for genuine one-offs.    │
-│    Names → confirm active 5-system names throughout.                │
-│    Links → swap onNav={setPage} for Next.js <Link> / <a href>.      │
-└─────────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────────┐
-│ 5. Validate the port                                                │
-│    pnpm check:names       — must pass (strategy drift gate)         │
-│    pnpm typecheck         — must pass                               │
-│    pnpm lint              — must pass                               │
-│    pnpm test:smoke        — Playwright on port 3001                 │
-│    (pnpm check:clean-base is warn-only — review warnings, no block) │
-└─────────────────────────────────────────────────────────────────────┘
+1. SECTION PLAN
+   Pull the page's job, owning system, and section spine from
+   PAGES.md + STRATEGY.md. For the homepage the 16-section spine is
+   already locked in PAGES.md. Confirm each section's job + visual
+   archetype before building. No "plain placeholder" sections.
+            ↓
+2. BUILD IN FIGMA
+   Design the page in the Figma file, section by section, to the
+   DESIGN.md genre: real artifacts (work screenshots, device frames,
+   diagrams, SVG illustration), varied silhouettes, no faux-UI, no
+   fake proof, offer stated early, real proof shown.
+            ↓
+3. REVIEW
+   Show the owner the Figma frames (screenshots / the live file).
+   The owner flags what's off.
+            ↓
+4. ONE TWEAK PASS
+   One focused pass of section rebuilds + tweaks per the owner's
+   feedback. Then the page is done for this round.
+            ↓
+        next page
 ```
 
-The discipline shift: **design lives in the sandbox until the user explicitly authorizes the port.** Do not let validator-passing in production substitute for visual approval.
+**One review pass per page** is the agreed rhythm (the owner's instruction). Get the section plan and the genre right *before* building so the single pass is about refinement, not rescue.
 
-## Phase 1 — Plan
+## Section plan (Phase 1 of each page)
 
-Plans live in the chat or, for durable decisions, in `docs/PAGES.md`. A plan covers:
+A section plan confirms, per section:
 
-- **Business moment** — which one of: find / verify / trust / contact / book / handled / proof.
-- **Owning system** — which of the five active systems (or "whole picture" for the homepage).
-- **Recognition** — the working-day moment the visitor should see themselves in.
-- **Section sequence** (rough, not final) — what arc the page argues.
-- **CTA posture** — diagnostic, matching the owning system.
-- **What's in / not in** — protects boundaries (e.g. Local SEO page must not absorb response/follow-up).
+- **Job** — what this section must make the visitor recognise, understand, believe, or do.
+- **Owning system** — which of the five (or "whole picture" for the homepage), respecting boundaries from [OFFER-ARCHITECTURE.md](./OFFER-ARCHITECTURE.md).
+- **Visual archetype** — the silhouette (editorial split, work-frame gallery, statement band, diagram, ladder, comparison columns…), chosen to **differ from its neighbours**.
+- **Artifact** — the real thing it shows (which build, what diagram, what SVG). Never a placeholder.
+- **Proof + next step** — where proof appears and where the page moves the buyer.
 
-No JSX in this phase. No edits to `src/`.
+Decisions that should persist live here in the docs; working notes can stay in chat.
 
-## Phase 2 — Design in `Mindwp-Design/`
+## Building in Figma (Phase 2)
 
-Open `Mindwp-Design/` in a separate terminal and run `pnpm dev`.
+Build directly in the `Mindwp2026` file. Apply [DESIGN.md](./DESIGN.md) without exception:
 
-Two starting points:
+- Real artifacts over faux-UI — every time.
+- Vary silhouettes; no card-grid spine, no repeated dark-glow anchors.
+- State the offer early; show real work; give a clear next step.
+- Use the demonstration builds as the proof motif (roofing, dental implant, etc.).
+- Decide the palette + type scale early (warm, confident, senior-studio — not tech-startup) and hold it across pages.
 
-1. **Adapt an existing component.** The folder contains roughly a dozen draft components from prior Figma Make sessions: `Hero.tsx`, `LeakDiagnosis.tsx`, `Foundation.tsx`, `SixSystemStack.tsx`, `PutInPlace.tsx`, `FitFoundations.tsx`, `ClientShift.tsx`, `Capabilities.tsx`, `Infrastructure.tsx`, `Industries.tsx`, `Visibility.tsx`, `CaseStudy.tsx`, `Examples.tsx`, `FAQ.tsx`, `CTA.tsx`, `Footer.tsx`, plus several pages. `SixSystemStack.tsx` has been updated to the active 5-system model. Some older pages (`AILeadHandling.tsx`, `AIChat.tsx`, etc.) still use pre-reset names — see `Mindwp-Design/README-active-model.md` for the rename map and use active names in new work.
-2. **Write a fresh component.** New file in `src/app/components/`. Raw `<section>`. Inline `style={...}`. Use `var(--mw-*)` tokens from `Mindwp-Design/src/app/theme.css` when colors match the brand palette; inline hex is fine for everything else. Whatever Tailwind utility classes the sandbox supports.
+Screenshot frames at legible resolution for review. Keep the file organised so the owner can scroll a coherent page, not scattered fragments.
 
-Goals during this phase:
+## Rebuild order
 
-- Each section has a **distinct geometry** (not all rounded-card grids).
-- Hero leads with the working day, not the system stack.
-- The five-system visual respects the visual rule from `docs/PAGES.md` (flagship + connected protections, never five equal tiles).
-- Copy uses plausibly specific details ("Postcode N6 — page 3", "Sat 09:14 — unread") — illustrative texture, not invented client outcomes.
-- Inline glow halos, custom shadows, lane-board accents, handoff arrow chips are all welcome.
-- Use active 5-system names. See `Mindwp-Design/README-active-model.md`.
+1. **Home** (locked 16-section spine — [PAGES.md](./PAGES.md))
+2. **Smart Website Systems** (flagship service)
+3. The other four service pages
+4. Front-door industries: **Roofing**, **Dental Implant Clinics**, then the two lane hubs
+5. Implementation pages (tool-intent capture)
+6. **Work**, **About**, **Pricing / How it works**, **Contact** (the new proof + conversion surfaces)
+7. Remaining 14 industries (shared template), Resources/Blog
 
-Iterate. Show the user. Revise. Repeat. Stay in this phase until the user signals they're satisfied.
+## When the design is approved → code (later)
 
-## Phase 3 — Port to `Mindwp/` (only when the user says so)
+Only after the full design is signed off do we move to code. At that point the archived build workflow applies: rebuild in production from the approved Figma designs, convert to tokens/components, wire real navigation, and run the validators (`check:names`, typecheck, lint, smoke). Until then, **no code.**
 
-Open the source file you're porting to (e.g. `src/screens/Homepage.tsx`) and rewrite it from the Mindwp-Design source. The port is mechanical, with five disciplined conversions:
+## When to skip the loop
 
-### 3a. Hero shell
-
-The hero uses `HeroFrame` from `@/components/layout/HeroFrame`. Pass the custom right-side visual as the `visual` prop. Body sections do **not** use `SectionShell` — they are raw `<section>` JSX, each with its own padding/bg/container.
-
-### 3b. Style → tokens + classes
-
-For each inline value in the sandbox JSX, look for a token equivalent in `src/styles/tokens.css` and use it. Common conversions:
-
-| Inline value (sandbox) | Production replacement |
-| --- | --- |
-| `#061323`, `#103E5A` brand colors | `var(--mw-brand-primary)`, `var(--mw-brand-secondary)` |
-| `#35C7D8` cyan | `var(--mw-signal-cyan)` |
-| `#14B8A6` teal | `var(--mw-signal-teal)` |
-| `#F4B740` amber | `var(--mw-signal-amber)` |
-| `#E76F6F` red | `var(--mw-signal-red)` |
-| `#9B7DE0` purple | `var(--mw-signal-purple)` |
-| `#21B985` green | `var(--mw-signal-green)` |
-| `#F6FAFC`, `#FFFFFF`, `#E6EEF3`, `#6F8190`, `#4C5E6F` | mist / page / border-light / text-subtle / text-secondary tokens — check `tokens.css` |
-| `shadow-[0_24px_60px_rgba(0,0,0,0.25)]` | `shadow-[var(--mw-shadow-dark-lg)]` |
-| 32px or 72px grid texture overlays | `mw-grid-texture-*` utility classes |
-| Cyan/teal/green/amber blur halos | `mw-glow-halo--*` utility classes |
-| Lane-board top accent stripes | `mw-lane-accent` (or kept inline if one-off) |
-| Round handoff chip on a divider | `mw-handoff-chip` |
-
-For recurring values that have no token yet, **add a token** to `tokens.css` or a utility class to `layout.css` / `components.css`. Inline hex stays available for one-off values that don't justify a token.
-
-### 3c. Banned-name rewrite
-
-The sandbox uses pre-reset names. The port must rewrite them:
-
-| Sandbox name | Active model name | Slug |
-| --- | --- | --- |
-| Smart Website System(s) | Smart Website Systems | `smart-website-systems` |
-| Local SEO Authority | Local SEO Authority Systems | `local-seo-authority` |
-| AI Lead Handling | Lead Response & Handling Systems | `lead-response-handling` |
-| CRM & Automation | Follow-Up & CRM Systems | `follow-up-crm` |
-| Reputation & Review | Reputation & Review Systems | `reputation-review-systems` |
-| Revenue Growth | **DROP** entirely — Revenue Recovery is a lens only | — |
-
-Any journey rail (`Found → Understood → Captured → Answered → Followed up → Proven → Improved`) should drop "Improved" or rename it to "Maintained" — Revenue Growth is gone.
-
-### 3d. Router stubs → real navigation
-
-Sandbox internal nav uses `onNav={setPage}` with a useState page switcher. Production uses Next.js `<Link>` from `next/link` or plain `<a href="/services/local-seo-authority">`. Convert per-link during the port.
-
-### 3e. Page providers
-
-Keep `CTARegistryProvider` from `@/components/system/PageEnforcement` wrapping the `<main>` — it's wired into route metadata. Other registry/provider wrappers stay too.
-
-## Phase 4 — Validate
-
-```bash
-pnpm check:names        # must pass
-pnpm typecheck          # must pass
-pnpm lint               # must pass
-pnpm test:smoke         # ~20 routes Playwright runtime smoke
-```
-
-`pnpm check:clean-base` is now warn-only and won't block. Read the warnings; they often point at residual sandbox patterns worth tidying.
-
-If `tests/smoke/homepage.spec.ts` (or the equivalent for the page you're porting) asserts old heading text and you changed it, update the assertion.
-
-## Smoke Test Updates
-
-`tests/smoke/homepage.spec.ts` currently asserts the Phase-6 Homepage heading. After porting a new homepage, update the heading assertion to match the new H1 (likely "Work Comes In. Too Much Slips Away.").
-
-## What This Workflow Replaces
-
-- The old "BUSINESS REALITY → ... → JSX → APPROVAL → SYSTEMIZATION" build flow (which put design last and inside a shell sandwich).
-- The four `.claude/skills/mindwp-page-plan|rebuild|review` skill files (deleted; their workflow is now this doc).
-- `docs/Planning/Design-Direction.md`, `Website-Rebuild.md`, and `Website-memory-and-plan.md` (deleted; phase planning gives way to "design in sandbox, port when good").
-
-## When To Avoid The Loop
-
-For trivial changes — copy tweaks, link fixes, small CTA wording, a single icon swap — edit directly in `Mindwp/`. The cross-folder loop is for **new pages and significant redesigns**, not micro-edits.
+For a tiny tweak to one already-approved section, just make the change in Figma. The full per-page loop is for designing or significantly reworking a page.

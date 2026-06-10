@@ -2,12 +2,11 @@
 
 Production Next.js workspace for the MindWP public site.
 
-MindWP builds conversion-focused website systems with connected handling for established service businesses and specialist clinics. Public anchor: **"Work Comes In. Too Much Slips Away."**
+MindWP builds **smart websites** — conversion-focused websites with lead handling built in — for established service businesses and specialist clinics, sold globally across English-speaking markets. Public anchor: **"Work Comes In. Too Much Slips Away."**
 
-## Two Folders
+## Current phase: Figma-first
 
-- `Mindwp/` (this repo) — production Next.js site, strategy docs, validators.
-- `Mindwp-Design/` (Vite sandbox subfolder in this repo) — visual design sandbox. Pages are designed there first, then ported here.
+The whole site is being **designed in Figma first**; the code/build phase comes after the design is approved. The production code below (Next.js, validators, the `Mindwp-Design` sandbox) is the **later build phase** — not active work right now.
 
 Full design loop in [docs/WORKFLOW.md](./docs/WORKFLOW.md).
 
@@ -15,17 +14,21 @@ Full design loop in [docs/WORKFLOW.md](./docs/WORKFLOW.md).
 
 | Doc | Purpose |
 | --- | --- |
-| [CLAUDE.md](./CLAUDE.md) | Main AI orientation, hard rules, banned terms, command list. |
-| [docs/FOUNDATION.md](./docs/FOUNDATION.md) | Identity, buyer truth, positioning, public path. |
-| [docs/OFFER-ARCHITECTURE.md](./docs/OFFER-ARCHITECTURE.md) | Active 5-system offer model, ownership boundaries, implementation pathways. |
-| [docs/WRITING.md](./docs/WRITING.md) | Voice, banned phrases, working-day vocabulary, applied copy rules. |
-| [docs/PAGES.md](./docs/PAGES.md) | Page roles + CTA posture. |
-| [docs/REPO.md](./docs/REPO.md) | Source structure, validators, what controls what. |
-| [docs/WORKFLOW.md](./docs/WORKFLOW.md) | Cross-folder design loop. |
+| [CLAUDE.md](./CLAUDE.md) | Main AI orientation, current phase, hard rules, banned terms. |
+| [docs/FOUNDATION.md](./docs/FOUNDATION.md) | Identity, buyer truth, positioning. |
+| [docs/STRATEGY.md](./docs/STRATEGY.md) | Commercial plan: market, offer, proof, conversion, industries. |
+| [docs/OFFER-ARCHITECTURE.md](./docs/OFFER-ARCHITECTURE.md) | Five-system structure, ownership, implementation pathways. |
+| [docs/DESIGN.md](./docs/DESIGN.md) | Visual genre spec — the quality standard. |
+| [docs/PAGES.md](./docs/PAGES.md) | IA/sitemap, page roles, locked homepage spine, CTA posture. |
+| [docs/WRITING.md](./docs/WRITING.md) | Voice, public language, offer/proof/pricing copy. |
+| [docs/WORKFLOW.md](./docs/WORKFLOW.md) | Figma-first design loop + per-page review process. |
+| [docs/archive/](./docs/archive/) | Superseded docs (ai-description, website-planning, REPO) — deferred. |
 
 Generated files under `reports/` are diagnostic snapshots only, not strategy authority.
 
-## Architecture Overview
+## Architecture Overview (later code/build phase)
+
+The following describes the production codebase, which we return to **after** the Figma design is approved.
 
 - `src/app/**` — public Next.js routes (one canonical route per page).
 - `src/domains/**` — domain content, page data, renderers, registries.
@@ -34,9 +37,9 @@ Generated files under `reports/` are diagnostic snapshots only, not strategy aut
 - `src/styles/**` — tokens, layout primitives, typography, shared visual rules. The `mw-*` classes and `var(--mw-*)` tokens are the default during production work.
 - `src/lib/**` — content-graph, CTA, contact, SEO helpers.
 
-Full source map in [docs/REPO.md](./docs/REPO.md).
+Full source map in [docs/archive/REPO.md](./docs/archive/REPO.md) (deferred to the build phase).
 
-## Commands
+## Commands (later code/build phase)
 
 ```bash
 pnpm install
@@ -56,6 +59,6 @@ Use pnpm only.
 
 ## Working Philosophy
 
-Pages are designed in `Mindwp-Design/` first (raw `<section>`, inline hex, fast Vite dev loop), then ported here with `HeroFrame` for the hero and raw `<section>` for body sections. During the port, inline hex is converted to `mw-*` classes / `var(--mw-*)` tokens where matched; new tokens are added to `src/styles/tokens.css` when a recurring pattern needs one.
+Right now: **design the whole site in Figma first** to the standard in [docs/DESIGN.md](./docs/DESIGN.md), one page at a time, with one review pass each. Only once the design is approved do we build it in code (the architecture and commands above).
 
 For full AI orientation, read [CLAUDE.md](./CLAUDE.md).
