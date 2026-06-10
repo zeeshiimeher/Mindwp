@@ -18,6 +18,9 @@ import { Bricks } from "./pages/Bricks";
 import { Divi } from "./pages/Divi";
 import { Rebuild } from "./pages/Rebuild";
 import { Woocommerce } from "./pages/Woocommerce";
+import { HomeServices } from "./pages/HomeServices";
+import { Plumbing } from "./pages/Plumbing";
+import { HomeV2 } from "./HomeV2";
 
 type Page =
   | "home"
@@ -36,10 +39,14 @@ type Page =
   | "bricks"
   | "divi"
   | "rebuild"
-  | "woocommerce";
+  | "woocommerce"
+  | "home-services"
+  | "plumbing"
+  | "home-v2";
 
 export default function App() {
-  const [page, setPage] = useState<Page>("home");
+  // TODO: revert to "home"
+  const [page, setPage] = useState<Page>("home-v2");
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
@@ -49,6 +56,7 @@ export default function App() {
     <div className="min-h-screen bg-white text-[#08111F]">
       <Header page={page} onNav={setPage} />
       {page === "home" && <Home />}
+      {page === "home-v2" && <HomeV2 />}
       {page === "sws" && <SmartWebsite onNav={setPage} />}
       {page === "lsa" && <LocalSEO />}
       {page === "ai-lead-handling" && <AILeadHandling />}
@@ -65,6 +73,8 @@ export default function App() {
       {page === "divi" && <Divi onNav={setPage} />}
       {page === "rebuild" && <Rebuild onNav={setPage} />}
       {page === "woocommerce" && <Woocommerce onNav={setPage} />}
+      {page === "home-services" && <HomeServices onNav={setPage} />}
+      {page === "plumbing" && <Plumbing onNav={setPage} />}
       <Footer onNav={setPage} />
     </div>
   );

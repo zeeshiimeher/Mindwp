@@ -1,0 +1,46 @@
+/* ============================================================================
+   theme-v2.css — Home V2 sandbox layer
+   ----------------------------------------------------------------------------
+   A THIN, additive layer on top of theme.css for the Home V2 rebuild. It only
+   EXTENDS the base token system — it never redefines a --mw-* token, a base
+   element rule, or an existing .section / .bg-page-* / .container utility.
+
+   Scope: one brand dark-anchor background + a few "boxless" silhouette helpers
+   (top hairline divider, short accent rule, oversized index numeral).
+   No animation. No mw-animate-*. No token redefinition.
+
+   The dark-anchor gradient is read verbatim from Home.tsx SectionHero
+   (bg-gradient-to-br from-[#061323] via-[#071629] to-[#103E5A]) so V2 dark
+   anchors match v1 exactly. Per-section overlays (radial glow, faint grid)
+   stay inline in the JSX so each anchor can tune its own depth.
+   ============================================================================ */
+
+/* Brand dark anchor — base gradient only (matches the v1 hero). */
+.mw2-anchor-dark {
+  background: linear-gradient(to bottom right, #061323 0%, #071629 50%, #103e5a 100%);
+}
+
+/* Top hairline divider — boxless separation with no containing panel. */
+.mw2-hairline {
+  border-top: 1px solid var(--mw-border-light);
+}
+
+/* Short accent rule — a stub bar under a kicker or numeral. Color comes from
+   the element's `color` (set a Tailwind text-* class or inline color). */
+.mw2-rule {
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+/* Oversized index numeral — for boxless 01→0n sequences (§2 slips, §8 compounds).
+   Size is set per-use with a Tailwind/inline font-size; this only fixes weight,
+   leading, tracking, and tabular figures. */
+.mw2-numeral {
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}

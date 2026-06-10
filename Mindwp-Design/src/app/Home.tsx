@@ -1,36 +1,3 @@
-/**
- * Home.tsx — MindWP design-sandbox homepage (consolidated)
- *
- * Single-file homepage render used to prove the sandbox design before any
- * production port. All major homepage sections live inline so section geometry,
- * copy, and visual rhythm can be reviewed together.
- *
- * Current section arc:
- *  01  Hero — "Work Comes In. Too Much Slips Away." + working-day signal surface
- *  02  Where work slips — found, contacted, and finished work losing momentum between steps
- *  03  Website as control point — visible front door with one quiet handling line underneath
- *  04  Same business, two websites — shallow site vs connected website system
- *  05  Local SEO Authority — local trust, service-area coverage, reviews, and listing consistency
- *  06  After contact handling — form, call, quote follow-up, and consultation request paths
- *  07  Five Protections, One Connected Path — dark system-anchor section
- *  08  What compounds — ongoing improvement from real working weeks
- *  09  Scenario showcase — five illustrative working situations with varied output surfaces
- *  10  Selected website craft — service/treatment page surface with trust, CTA, and handoff context
- *  11  Fit / Not for — qualification panel for serious service businesses and specialist clinics
- *  12  Review, not a pitch — practical review path before the final CTA
- *  13  FAQ — practical buying questions
- *  14  Final diagnostic CTA — dark close
- *
- * Voice + content per /Users/zeeshansadiq/Projects/Mindwp/docs/WRITING.md.
- * Active 5-system model only. Working-day objects: calls, forms, quotes,
- * bookings, consultation requests, missed replies, follow-up, reviews. No fake
- * metrics, fabricated testimonials, ranking guarantees, or medical/treatment
- * outcome claims.
- *
- * Design note: this sandbox intentionally keeps page-owned JSX and section-owned
- * geometry. Do not extract shared section components or port into production
- * until the homepage is visually approved.
- */
 import {
   Activity,
   ArrowRight,

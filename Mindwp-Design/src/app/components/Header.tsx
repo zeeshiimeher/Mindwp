@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-type Page = "home" | "sws" | "lsa" | "ai-lead-handling" | "follow-up-crm" | "reviews" | "industries" | "landscaping" | "fitness-case" | "resource" | "blog" | "wordpress" | "elementor" | "bricks" | "divi" | "rebuild" | "woocommerce";
+type Page = "home" | "sws" | "lsa" | "ai-lead-handling" | "follow-up-crm" | "reviews" | "industries" | "landscaping" | "fitness-case" | "resource" | "blog" | "wordpress" | "elementor" | "bricks" | "divi" | "rebuild" | "woocommerce" | "home-services" | "plumbing" | "home-v2";
 
 type DropdownGroup = {
   label: string;
@@ -34,6 +34,8 @@ const groups: DropdownGroup[] = [
     label: "Industries",
     items: [
       { id: "industries", label: "All Industries", note: "Overview of sectors served" },
+      { id: "home-services", label: "Home Services", note: "Calls, quotes & follow-up for field trades" },
+      { id: "plumbing", label: "Plumbing", note: "Emergency calls & enquiry handling" },
       { id: "landscaping", label: "Landscaping", note: "Industry case example" },
     ],
   },
